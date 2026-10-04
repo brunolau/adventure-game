@@ -60,3 +60,12 @@ a oporné body podľa location_families a landmark_layouts. Zmeny nedosiahnite
 len farebným filtrom. Kabína Funitelu je hrateľná scéna; film dolnej lanovky
 sa nepočíta ako ďalšia lokalita. Reálne názvy rezortu sú podložené zdrojmi;
 podoba a program 2035 zostávajú fikciou, nie tvrdením o skutočnej prevádzke.
+
+Doplnky k handoffu (2026-10-05)
+ARCHITECTURE.md               Záväzná implementačná architektúra: Godot 4.7 .NET (C#),
+                             oddelené jadro pravidiel LastBell.Core, kľúče textov a lokalizácia.
+ART_DIRECTION.md             Záväzný výtvarný štýl A (ručne maľovaný) a pravidlo reálnych
+                             lokalít: každý exteriér vychádza zo skutočného miesta.
+LOCATIONS_REGISTER.csv       Evidencia skutočných miest, zdrojových fotografií a licencií
+                             použitých pre každú scénu.
+ISSUES.md                    Rozpory nájdené počas implementácie a ich riešenie.
