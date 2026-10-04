@@ -1,0 +1,630 @@
+"""Text-key scheme shared by the LastBell localization tools.
+
+This module is the Python mirror of the key table in design-doc/ARCHITECTURE.md
+("Text keys and localization") and of the C# `TextKeys` helper in LastBell.Core.
+Both sides must build identical keys, so change them together.
+
+Keys are derived from ids in game.json; spaces inside ids are kept as-is
+(for example "topic.ELA.ambient 1.label").
+
+Scheme extensions (strings that are player-visible but have no row in the
+ARCHITECTURE.md table) are marked with `extension=True` on their entries:
+
+    game.title                          game.json "title" (title screen)
+    puzzle.<id>.left.<n> / .right.<n>   matching-puzzle option labels, n from 1
+    journal.clue.<puzzleId>             journal_contract.clues (prefix "Pxx: " removed)
+
+Speaker prefixes: epilogue lines and puzzle wrong/success lines are stored in
+game.json as "SPEAKER: text". When SPEAKER is a known speaker id (a character
+or a non-actor speaker), the prefix is split off: the table holds only the text,
+and the presentation shows the speaker name via char.<SPEAKER>.name. Core must
+apply the same split (see `split_speaker_prefix`).
+
+Era cards (era.<year>.card / era.<year>.date) and the journal tab names are
+hand-written in ui.csv; check_strings.py verifies them against game.json.
+"""
+from __future__ import annotations
+
+import csv
+import io
+import json
+import re
+from collections import Counter
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable, Iterator
+
+REPO_ROOT = Path(__file__).resolve().parent.parent
+CANONICAL_GAME_JSON = REPO_ROOT / "design-doc" / "game.json"
+SYNCED_GAME_JSON = REPO_ROOT / "src" / "game" / "data" / "game.json"
+DIALOGUES_CSV = REPO_ROOT / "design-doc" / "dialogues.csv"
+LOCALIZATION_DIR = REPO_ROOT / "src" / "game" / "localization"
+
+TABLE_DIALOGUE = "dialogue"
+TABLE_WORLD = "world"
+TABLE_UI = "ui"
+TABLE_FILE_NAMES = {TABLE_DIALOGUE: "dialogue.csv", TABLE_WORLD: "world.csv", TABLE_UI: "ui.csv"}
+GENERATED_TABLES = (TABLE_DIALOGUE, TABLE_WORLD)
+
+SOURCE_LOCALE = "sk"
+HEADER = ("keys", SOURCE_LOCALE, "en")
+
+SPEAKER_PREFIX_PATTERN = re.compile(r"^([A-Z][A-Z0-9_]*): (.+)$", re.DOTALL)
+PUZZLE_ID_PREFIX_PATTERN = re.compile(r"^(P\d+): (.+)$", re.DOTALL)
+PLACEHOLDER_PATTERN = re.compile(r"\{([A-Za-z_][A-Za-z0-9_]*)\}")
+# ui.<area>.<name>; the name may contain data enums such as "cable_A6".
+UI_KEY_PATTERN = re.compile(r"^ui\.[a-z0-9_]+\.[A-Za-z0-9_]+$")
+
+PUZZLE_OPTION_SIDES = ("left", "right")
+
+# Journal tabs in journal_contract.tabs order -> ui.csv keys.
+JOURNAL_TAB_KEYS = (
+    "ui.journal.tab_goals",
+    "ui.journal.tab_findings",
+    "ui.journal.tab_people",
+    "ui.journal.tab_time_map",
+    "ui.journal.tab_album",
+)
+
+# UI keys the handoff mandates explicitly (menu entries, verbatim system messages,
+# controls named in PRIBEH_A_PRAVIDLA.txt). check_strings.py requires them in ui.csv.
+REQUIRED_UI_KEYS = (
+    "ui.menu.new_game",
+    "ui.menu.continue",
+    "ui.menu.load",
+    "ui.menu.save",
+    "ui.menu.settings",
+    "ui.menu.album",
+    "ui.menu.credits",
+    "ui.menu.help",
+    "ui.menu.quit",
+    "ui.pause.title",
+    "ui.save.slot",
+    "ui.save.slot_empty",
+    "ui.save.autosave",
+    "ui.save.checkpoint_finale",
+    "ui.save.overwrite_confirm",
+    "ui.save.corrupted",
+    "ui.settings.language",
+    "ui.settings.volume_master",
+    "ui.settings.volume_music",
+    "ui.settings.volume_ambience",
+    "ui.settings.volume_sfx",
+    "ui.settings.volume_voice",
+    "ui.settings.text_speed",
+    "ui.settings.subtitles",
+    "ui.settings.subtitle_size",
+    "ui.settings.fullscreen",
+    "ui.settings.windowed",
+    "ui.settings.reduced_motion",
+    "ui.settings.high_contrast_labels",
+    "ui.settings.hotspot_key_hint",
+    "ui.inventory.title",
+    "ui.inventory.tab_archived",
+    "ui.journal.title",
+    "ui.journal.state_open",
+    "ui.journal.state_in_progress",
+    "ui.journal.state_done",
+    "ui.map.title",
+    "ui.map.node",
+    "ui.hint.title",
+    "ui.hint.level_1",
+    "ui.hint.level_2",
+    "ui.hint.level_3",
+    "ui.puzzle.confirm",
+    "ui.puzzle.reset",
+    "ui.puzzle.close",
+    "ui.puzzle.hint_fill",
+    "ui.cutscene.skip_prompt",
+    "ui.cutscene.the_end",
+    "ui.travel.finish_ride",
+    "ui.tutorial.left_click",
+    "ui.tutorial.right_click",
+    "ui.tutorial.space",
+    "ui.system.path_blocked",
+) + JOURNAL_TAB_KEYS
+
+
+# --------------------------------------------------------------------------- key builders
+# Keep these in sync with LastBell.Core TextKeys and ARCHITECTURE.md.
+
+def room_name(room_id: str) -> str:
+    return f"room.{room_id}.name"
+
+
+def hotspot_name(hotspot_id: str) -> str:
+    return f"hotspot.{hotspot_id}.name"
+
+
+def hotspot_look(hotspot_id: str) -> str:
+    """Fallback key; a hotspot look normally uses its look_line_id."""
+    return f"hotspot.{hotspot_id}.look"
+
+
+def hotspot_look_variant(hotspot_id: str, n: int) -> str:
+    """Fallback key for look_variants[n-1]; normally the variant's line_id is used."""
+    return f"hotspot.{hotspot_id}.look.{n}"
+
+
+def exit_label(exit_id: str) -> str:
+    return f"exit.{exit_id}.label"
+
+
+def exit_locked(exit_id: str) -> str:
+    return f"exit.{exit_id}.locked"
+
+
+def connection_label(from_room: str, to_room: str) -> str:
+    return f"conn.{from_room}.{to_room}.label"
+
+
+def connection_locked(from_room: str, to_room: str) -> str:
+    return f"conn.{from_room}.{to_room}.locked"
+
+
+def item_name(item_id: str) -> str:
+    return f"item.{item_id}.name"
+
+
+def item_look(item_id: str) -> str:
+    """Fallback key; an item look normally uses its look_line_id (e.g. "item.PHONE")."""
+    return f"item.{item_id}.look"
+
+
+def item_purpose(item_id: str) -> str:
+    return f"item.{item_id}.purpose"
+
+
+def action_label(action_id: str) -> str:
+    return f"action.{action_id}.label"
+
+
+def action_journal(action_id: str) -> str:
+    return f"action.{action_id}.journal"
+
+
+def action_objective(action_id: str) -> str:
+    return f"action.{action_id}.objective"
+
+
+def character_name(character_id: str) -> str:
+    return f"char.{character_id}.name"
+
+
+def topic_label(topic_id: str) -> str:
+    return f"topic.{topic_id}.label"
+
+
+def quest_title(quest_id: str) -> str:
+    return f"quest.{quest_id}.title"
+
+
+def quest_goal(quest_id: str) -> str:
+    return f"quest.{quest_id}.goal"
+
+
+def quest_reward(quest_id: str) -> str:
+    return f"quest.{quest_id}.reward"
+
+
+def quest_hint(quest_id: str, n: int) -> str:
+    return f"quest.{quest_id}.hint.{n}"
+
+
+def puzzle_title(puzzle_id: str) -> str:
+    return f"puzzle.{puzzle_id}.title"
+
+
+def puzzle_clue(puzzle_id: str) -> str:
+    return f"puzzle.{puzzle_id}.clue"
+
+
+def puzzle_wrong(puzzle_id: str) -> str:
+    return f"puzzle.{puzzle_id}.wrong"
+
+
+def puzzle_success(puzzle_id: str) -> str:
+    return f"puzzle.{puzzle_id}.success"
+
+
+def puzzle_confirm(puzzle_id: str) -> str:
+    return f"puzzle.{puzzle_id}.confirm"
+
+
+def era_card(year: int) -> str:
+    return f"era.{year}.card"
+
+
+def era_date(year: int) -> str:
+    return f"era.{year}.date"
+
+
+def epilogue_shot(n: int) -> str:
+    return f"epilogue.{n}.shot"
+
+
+def epilogue_line(n: int) -> str:
+    return f"epilogue.{n}.line"
+
+
+# Scheme extensions (see module docstring).
+
+def game_title() -> str:
+    return "game.title"
+
+
+def puzzle_option(puzzle_id: str, side: str, n: int) -> str:
+    if side not in PUZZLE_OPTION_SIDES:
+        raise ValueError(f"unknown puzzle option side: {side}")
+    return f"puzzle.{puzzle_id}.{side}.{n}"
+
+
+def journal_clue(puzzle_id: str) -> str:
+    return f"journal.clue.{puzzle_id}"
+
+
+# --------------------------------------------------------------------------- helpers
+
+def speaker_ids(game: dict) -> set[str]:
+    """All ids that may appear as a line speaker."""
+    ids = {character["id"] for character in game.get("characters", [])}
+    ids.update(game.get("non_actor_speakers", {}).keys())
+    return ids
+
+
+def split_speaker_prefix(text: str, known_speakers: set[str]) -> tuple[str | None, str]:
+    """Split "SPEAKER: text" when SPEAKER is a known speaker id; otherwise return (None, text)."""
+    match = SPEAKER_PREFIX_PATTERN.match(text)
+    if match and match.group(1) in known_speakers:
+        return match.group(1), match.group(2)
+    return None, text
+
+
+def placeholders(text: str) -> Counter:
+    return Counter(PLACEHOLDER_PATTERN.findall(text))
+
+
+def load_json(path: Path) -> dict:
+    return json.loads(path.read_bytes().decode("utf-8"))
+
+
+# --------------------------------------------------------------------------- entries
+
+@dataclass(frozen=True)
+class TextEntry:
+    """One player-visible string with its stable key."""
+
+    key: str
+    text: str
+    table: str
+    field: str  # normalized JSON path of the source field, e.g. "rooms[].hotspots[].look"
+    source: str  # concrete JSON path for diagnostics, e.g. "rooms[S01].hotspots[S01.tools].look"
+    speaker: str | None = None
+    line_id: str | None = None  # set when the key is a line_id from the data
+    extension: bool = False  # key not covered by the ARCHITECTURE.md table
+
+
+def iter_text_entries(game: dict) -> Iterator[TextEntry]:
+    """Yield every keyed, player-visible string of game.json in a stable order."""
+    known_speakers = speaker_ids(game)
+    world = TABLE_WORLD
+    dialogue = TABLE_DIALOGUE
+
+    def line_entries(lines: Iterable[dict], field: str, source: str) -> Iterator[TextEntry]:
+        # A spoken line without line_id has no key in the scheme; it is skipped here and
+        # reported by audit_fields() as a visible string without a key.
+        for index, line in enumerate(lines):
+            line_id = line.get("line_id")
+            if line_id:
+                yield TextEntry(line_id, line["text"], dialogue, field, f"{source}[{index}]",
+                                speaker=line.get("speaker"), line_id=line_id)
+
+    if isinstance(game.get("title"), str):
+        yield TextEntry(game_title(), game["title"], world, "title", "title", extension=True)
+
+    # Speaker display names: characters and non-actor speakers share the char.<id>.name key.
+    for character in game.get("characters", []):
+        yield TextEntry(character_name(character["id"]), character["name"], world,
+                        "characters[].name", f"characters[{character['id']}].name")
+    for speaker_id, name in game.get("non_actor_speakers", {}).items():
+        yield TextEntry(character_name(speaker_id), name, world,
+                        "non_actor_speakers.*", f"non_actor_speakers.{speaker_id}")
+
+    for room in game.get("rooms", []):
+        room_id = room["id"]
+        room_src = f"rooms[{room_id}]"
+        yield TextEntry(room_name(room_id), room["name"], world, "rooms[].name", f"{room_src}.name")
+        yield from line_entries(room.get("first_entry", []), "rooms[].first_entry[].text", f"{room_src}.first_entry")
+        for hotspot in room.get("hotspots", []):
+            hotspot_id = hotspot["id"]
+            src = f"{room_src}.hotspots[{hotspot_id}]"
+            yield TextEntry(hotspot_name(hotspot_id), hotspot["name"], world,
+                            "rooms[].hotspots[].name", f"{src}.name")
+            look_line_id = hotspot.get("look_line_id")
+            yield TextEntry(look_line_id or hotspot_look(hotspot_id), hotspot["look"], world,
+                            "rooms[].hotspots[].look", f"{src}.look", line_id=look_line_id)
+            for n, variant in enumerate(hotspot.get("look_variants", []), start=1):
+                variant_line_id = variant.get("line_id")
+                yield TextEntry(variant_line_id or hotspot_look_variant(hotspot_id, n), variant["text"], world,
+                                "rooms[].hotspots[].look_variants[].text", f"{src}.look_variants[{n - 1}]",
+                                line_id=variant_line_id)
+        for room_exit in room.get("exits", []):
+            exit_id = room_exit["id"]
+            src = f"{room_src}.exits[{exit_id}]"
+            yield TextEntry(exit_label(exit_id), room_exit["label"], world, "rooms[].exits[].label", f"{src}.label")
+            yield TextEntry(exit_locked(exit_id), room_exit["locked_look"], world,
+                            "rooms[].exits[].locked_look", f"{src}.locked_look")
+
+    for connection in game.get("connections", []):
+        a, b = connection["from"], connection["to"]
+        src = f"connections[{a}->{b}]"
+        yield TextEntry(connection_label(a, b), connection["label"], world, "connections[].label", f"{src}.label")
+        yield TextEntry(connection_locked(a, b), connection["locked_look"], world,
+                        "connections[].locked_look", f"{src}.locked_look")
+
+    for item in game.get("items", []):
+        item_id = item["id"]
+        src = f"items[{item_id}]"
+        yield TextEntry(item_name(item_id), item["name"], world, "items[].name", f"{src}.name")
+        look_line_id = item.get("look_line_id")
+        yield TextEntry(look_line_id or item_look(item_id), item["look"], world, "items[].look", f"{src}.look",
+                        line_id=look_line_id)
+        yield TextEntry(item_purpose(item_id), item["purpose"], world, "items[].purpose", f"{src}.purpose")
+
+    for action in game.get("actions", []):
+        action_id = action["id"]
+        src = f"actions[{action_id}]"
+        yield TextEntry(action_label(action_id), action["label"], world, "actions[].label", f"{src}.label")
+        yield TextEntry(action_journal(action_id), action["journal_text"], world,
+                        "actions[].journal_text", f"{src}.journal_text")
+        if action.get("objective"):
+            yield TextEntry(action_objective(action_id), action["objective"], world,
+                            "actions[].objective", f"{src}.objective")
+        yield from line_entries(action.get("lines", []), "actions[].lines[].text", f"{src}.lines")
+
+    for character in game.get("characters", []):
+        for topic in character.get("ambient_topics", []):
+            topic_id = topic["id"]
+            src = f"characters[{character['id']}].ambient_topics[{topic_id}]"
+            yield TextEntry(topic_label(topic_id), topic["label"], world,
+                            "characters[].ambient_topics[].label", f"{src}.label")
+            yield from line_entries(topic.get("lines", []), "characters[].ambient_topics[].lines[].text",
+                                    f"{src}.lines")
+
+    for cutscene in game.get("cutscenes", []):
+        for index, beat in enumerate(cutscene.get("beats", [])):
+            yield from line_entries(beat.get("lines", []), "cutscenes[].beats[].lines[].text",
+                                    f"cutscenes[{cutscene['id']}].beats[{index}].lines")
+
+    for quest in game.get("quests", []):
+        quest_id = quest["id"]
+        src = f"quests[{quest_id}]"
+        yield TextEntry(quest_title(quest_id), quest["title"], world, "quests[].title", f"{src}.title")
+        yield TextEntry(quest_goal(quest_id), quest["goal"], world, "quests[].goal", f"{src}.goal")
+        if quest.get("reward"):
+            yield TextEntry(quest_reward(quest_id), quest["reward"], world, "quests[].reward", f"{src}.reward")
+        for n, hint in enumerate(quest.get("hints", []), start=1):
+            yield TextEntry(quest_hint(quest_id, n), hint, world, "quests[].hints[]", f"{src}.hints[{n - 1}]")
+
+    for puzzle in game.get("puzzles", []):
+        puzzle_id = puzzle["id"]
+        src = f"puzzles[{puzzle_id}]"
+        yield TextEntry(puzzle_title(puzzle_id), puzzle["title"], world, "puzzles[].title", f"{src}.title")
+        yield TextEntry(puzzle_clue(puzzle_id), puzzle["clue"], world, "puzzles[].clue", f"{src}.clue")
+        speaker, text = split_speaker_prefix(puzzle["wrong_line"], known_speakers)
+        yield TextEntry(puzzle_wrong(puzzle_id), text, world, "puzzles[].wrong_line", f"{src}.wrong_line",
+                        speaker=speaker)
+        speaker, text = split_speaker_prefix(puzzle["success_line"], known_speakers)
+        yield TextEntry(puzzle_success(puzzle_id), text, world, "puzzles[].success_line", f"{src}.success_line",
+                        speaker=speaker)
+        controls = puzzle.get("controls", {})
+        if controls.get("confirm_label"):
+            yield TextEntry(puzzle_confirm(puzzle_id), controls["confirm_label"], world,
+                            "puzzles[].controls.confirm_label", f"{src}.controls.confirm_label")
+        for side in PUZZLE_OPTION_SIDES:
+            for n, option in enumerate(controls.get(side, []), start=1):
+                yield TextEntry(puzzle_option(puzzle_id, side, n), str(option), world,
+                                f"puzzles[].controls.{side}[]", f"{src}.controls.{side}[{n - 1}]", extension=True)
+
+    puzzle_ids = {puzzle["id"] for puzzle in game.get("puzzles", [])}
+    for index, clue in enumerate(game.get("journal_contract", {}).get("clues", [])):
+        match = PUZZLE_ID_PREFIX_PATTERN.match(clue)
+        if match and match.group(1) in puzzle_ids:  # otherwise reported by audit_fields()
+            yield TextEntry(journal_clue(match.group(1)), match.group(2), world, "journal_contract.clues[]",
+                            f"journal_contract.clues[{index}]", extension=True)
+
+    for n, shot in enumerate(game.get("epilogue", []), start=1):
+        src = f"epilogue[{n - 1}]"
+        yield TextEntry(epilogue_shot(n), shot["shot"], world, "epilogue[].shot", f"{src}.shot")
+        speaker, text = split_speaker_prefix(shot["line"], known_speakers)
+        yield TextEntry(epilogue_line(n), text, world, "epilogue[].line", f"{src}.line", speaker=speaker)
+
+
+def expected_ui_scheme_keys(game: dict) -> list[str]:
+    """Keys that game.json implies but that live in the hand-written ui.csv."""
+    keys: list[str] = []
+    for era in game.get("eras", []):
+        keys += [era_card(era["year"]), era_date(era["year"])]
+    keys += list(REQUIRED_UI_KEYS)
+    return keys
+
+
+# --------------------------------------------------------------------------- field audit
+# Every string leaf in game.json is classified so that a new or renamed field
+# cannot silently become a visible string without a key.
+
+KEYED_FIELDS = frozenset({
+    "title",
+    "rooms[].name",
+    "rooms[].first_entry[].text",
+    "rooms[].hotspots[].name",
+    "rooms[].hotspots[].look",
+    "rooms[].hotspots[].look_variants[].text",
+    "rooms[].exits[].label",
+    "rooms[].exits[].locked_look",
+    "characters[].name",
+    "characters[].ambient_topics[].label",
+    "characters[].ambient_topics[].lines[].text",
+    "non_actor_speakers.*",
+    "items[].name",
+    "items[].look",
+    "items[].purpose",
+    "actions[].label",
+    "actions[].objective",
+    "actions[].journal_text",
+    "actions[].lines[].text",
+    "puzzles[].title",
+    "puzzles[].clue",
+    "puzzles[].wrong_line",
+    "puzzles[].success_line",
+    "puzzles[].controls.confirm_label",
+    "puzzles[].controls.left[]",
+    "puzzles[].controls.right[]",
+    "quests[].title",
+    "quests[].goal",
+    "quests[].reward",
+    "quests[].hints[]",
+    "cutscenes[].beats[].lines[].text",
+    "connections[].label",
+    "connections[].locked_look",
+    "journal_contract.clues[]",
+    "epilogue[].shot",
+    "epilogue[].line",
+})
+
+# Shown to the player through hand-written ui.csv keys (verified by check_strings.py).
+UI_TABLE_FIELDS = frozenset({
+    "eras[].date",  # era.<year>.date
+    "journal_contract.tabs[]",  # JOURNAL_TAB_KEYS
+})
+
+# Ids, references, enums, asset paths and design-only notes: never shown to the player.
+INTERNAL_FIELDS = frozenset({
+    "version", "language", "source_note", "revision_note", "epilogue_rules",
+    "rooms[].id", "rooms[].district", "rooms[].art_brief", "rooms[].ambience", "rooms[].blocking_note",
+    "rooms[].background_asset", "rooms[].music", "rooms[].camera_family", "rooms[].layer_order[]",
+    "rooms[].npc_ids[]", "rooms[].first_entry[].speaker", "rooms[].first_entry[].line_id",
+    "rooms[].hotspots[].id", "rooms[].hotspots[].kind", "rooms[].hotspots[].hide_after[]",
+    "rooms[].hotspots[].visible_after[]", "rooms[].hotspots[].look_line_id", "rooms[].hotspots[].character_id",
+    "rooms[].hotspots[].look_variants[].after", "rooms[].hotspots[].look_variants[].line_id",
+    "rooms[].exits[].id", "rooms[].exits[].to", "rooms[].exits[].travel", "rooms[].exits[].requires_done[]",
+    "characters[].id", "characters[].age", "characters[].role", "characters[].voice", "characters[].design",
+    "characters[].rooms[]", "characters[].ambient_topics[].id", "characters[].ambient_topics[].requires_done[]",
+    "characters[].ambient_topics[].lines[].speaker", "characters[].ambient_topics[].lines[].line_id",
+    "items[].id", "items[].origin", "items[].disposition", "items[].icon", "items[].look_line_id",
+    "actions[].id", "actions[].room", "actions[].target", "actions[].kind", "actions[].selected_item",
+    "actions[].gives[]", "actions[].requires_done[]", "actions[].requires_items[]", "actions[].consumes[]",
+    "actions[].excluded_done[]", "actions[].quest", "actions[].puzzle", "actions[].cutscene",
+    "actions[].animation", "actions[].sfx", "actions[].commit_policy", "actions[].staging.rule",
+    "actions[].staging.guest_speakers[]", "actions[].lines[].speaker", "actions[].lines[].line_id",
+    "puzzles[].id", "puzzles[].controls.type", "puzzles[].controls.row_origin",
+    "puzzles[].controls.column_origin", "puzzles[].solution[]", "puzzles[].initial[]",
+    "quests[].id", "quests[].type", "quests[].actions[]", "quests[].completion", "quests[].optional_followups[]",
+    "cutscenes[].id", "cutscenes[].beats[].shot", "cutscenes[].beats[].lines[].speaker",
+    "cutscenes[].beats[].lines[].line_id",
+    "connections[].from", "connections[].to", "connections[].travel", "connections[].requires_done[]",
+    "initial_state.room", "initial_state.inventory[]", "initial_state.visited[]", "initial_state.selected_item",
+    "initial_state.mode",
+    "eras[].anchor", "eras[].unlocked_by",
+    "epilogue[].quest", "epilogue[].after",
+    "journal_contract.auto_entries", "journal_contract.pinning",
+})
+
+INTERNAL_SUBTREES = (
+    "special_transitions", "postgame", "creative_lock", "bible_sections", "causal_effects", "sources",
+    "acceptance", "anchor_nodes", "location_families", "cache_contract", "butterfly_effects",
+    "landmark_layouts", "visual_variant_layers", "travel_contract", "stats",
+)
+
+# Objects whose keys are data (ids), normalized to "*".
+DYNAMIC_KEY_OBJECTS = frozenset({"non_actor_speakers"})
+
+
+def iter_string_leaves(game: dict) -> Iterator[tuple[str, str]]:
+    """Yield (normalized_path, value) for every string leaf of game.json."""
+
+    def walk(value, path: str):
+        if isinstance(value, dict):
+            for key, child in value.items():
+                segment = "*" if path in DYNAMIC_KEY_OBJECTS else key
+                yield from walk(child, f"{path}.{segment}" if path else segment)
+        elif isinstance(value, list):
+            for child in value:
+                yield from walk(child, f"{path}[]")
+        elif isinstance(value, str):
+            yield path, value
+
+    yield from walk(game, "")
+
+
+def classify_field(path: str) -> str:
+    """Return "keyed", "ui", "internal" or "unclassified" for a normalized path."""
+    if path in KEYED_FIELDS:
+        return "keyed"
+    if path in UI_TABLE_FIELDS:
+        return "ui"
+    if path in INTERNAL_FIELDS:
+        return "internal"
+    root = re.split(r"[.\[]", path, maxsplit=1)[0]
+    if root in INTERNAL_SUBTREES:
+        return "internal"
+    return "unclassified"
+
+
+def audit_fields(game: dict, entries: Iterable[TextEntry]) -> list[str]:
+    """Report string fields that are neither keyed nor known to be internal, and
+    keyed fields where some strings did not receive a key."""
+    problems: list[str] = []
+    leaf_counts: Counter = Counter()
+    examples: dict[str, str] = {}
+    for path, value in iter_string_leaves(game):
+        kind = classify_field(path)
+        if kind == "keyed":
+            leaf_counts[path] += 1
+        elif kind == "unclassified":
+            leaf_counts[f"?{path}"] += 1
+            examples.setdefault(path, value)
+    entry_counts = Counter(entry.field for entry in entries)
+    for path in sorted(p for p in leaf_counts if p.startswith("?")):
+        field = path[1:]
+        problems.append(f"unclassified string field '{field}' ({leaf_counts[path]}x), "
+                        f"e.g. {examples[field][:80]!r}: add it to KEYED_FIELDS or INTERNAL_FIELDS")
+    for path in sorted(p for p in leaf_counts if not p.startswith("?")):
+        if leaf_counts[path] != entry_counts.get(path, 0):
+            problems.append(f"field '{path}': {leaf_counts[path]} strings but {entry_counts.get(path, 0)} keyed")
+    return problems
+
+
+# --------------------------------------------------------------------------- CSV I/O
+
+def format_csv_field(value: str) -> str:
+    """Quote a field when needed (comma, quote, CR/LF, or leading/trailing whitespace)."""
+    if value == "" or not (any(c in value for c in ',"\r\n') or value != value.strip()):
+        return value
+    return '"' + value.replace('"', '""') + '"'
+
+
+def format_table(header: Iterable[str], rows: Iterable[Iterable[str]]) -> str:
+    """Serialize a translation table: comma-delimited, LF line ends, minimal quoting."""
+    lines = [",".join(format_csv_field(field) for field in header)]
+    lines += [",".join(format_csv_field(field) for field in row) for row in rows]
+    return "\n".join(lines) + "\n"
+
+
+def read_table(path: Path) -> tuple[list[str], list[list[str]]]:
+    """Read a translation table as (header, rows). Raises ValueError on encoding problems."""
+    raw = path.read_bytes()
+    if raw.startswith(b"\xef\xbb\xbf"):
+        raise ValueError(f"{path.name}: starts with a UTF-8 BOM")
+    try:
+        text = raw.decode("utf-8")
+    except UnicodeDecodeError as error:
+        raise ValueError(f"{path.name}: not valid UTF-8 ({error})") from error
+    reader = csv.reader(io.StringIO(text, newline=""), delimiter=",", quotechar='"', strict=True)
+    try:
+        table = list(reader)
+    except csv.Error as error:
+        raise ValueError(f"{path.name}: CSV parse error at line {reader.line_num}: {error}") from error
+    if not table:
+        raise ValueError(f"{path.name}: empty file")
+    return table[0], table[1:]

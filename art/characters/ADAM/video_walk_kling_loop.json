@@ -1,0 +1,20 @@
+{
+  "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+  "usd": 0.35,
+  "prompt": "The man walks in place, as if on a treadmill, with a natural relaxed walking cycle: legs stepping and arms swinging in alternation, bag swaying slightly. He stays in exactly the same spot in the centre of the frame and keeps facing right in profile. Seamless loop. The camera is completely static: no pan, no zoom, no camera shake. The background stays a perfectly flat uniform green the whole time, with no floor, no shadow and nothing else appearing. Same hand-painted style throughout.",
+  "input": "video_in_profile.png",
+  "tail_image": true,
+  "seconds": 5.0,
+  "resolution": "1080p",
+  "arguments": {
+    "prompt": "The man walks in place, as if on a treadmill, with a natural relaxed walking cycle: legs stepping and arms swinging in alternation, bag swaying slightly. He stays in exactly the same spot in the centre of the frame and keeps facing right in profile. Seamless loop. The camera is completely static: no pan, no zoom, no camera shake. The background stays a perfectly flat uniform green the whole time, with no floor, no shadow and nothing else appearing. Same hand-painted style throughout.",
+    "duration": "5",
+    "negative_prompt": "camera movement, zoom, pan, walking out of frame, moving across the frame, background change, floor, shadow, extra people, extra limbs, morphing, text, watermark, blur",
+    "cfg_scale": 0.6
+  },
+  "outputs": [
+    "video_walk_kling_loop.mp4"
+  ],
+  "seed": null,
+  "description": null
+}

@@ -1,0 +1,22 @@
+{
+  "model": "fal-ai/wan/v2.2-a14b/image-to-video",
+  "usd": 0.405,
+  "prompt": "The man walks in place, as if on a treadmill, with a natural relaxed walking cycle: legs stepping and arms swinging in alternation, bag swaying slightly. He stays in exactly the same spot in the centre of the frame and keeps facing right in profile. Seamless loop. The camera is completely static: no pan, no zoom, no camera shake. The background stays a perfectly flat uniform green the whole time, with no floor, no shadow and nothing else appearing. Same hand-painted style throughout.",
+  "input": "video_in_profile.png",
+  "tail_image": false,
+  "seconds": 5.0625,
+  "resolution": "720p",
+  "arguments": {
+    "prompt": "The man walks in place, as if on a treadmill, with a natural relaxed walking cycle: legs stepping and arms swinging in alternation, bag swaying slightly. He stays in exactly the same spot in the centre of the frame and keeps facing right in profile. Seamless loop. The camera is completely static: no pan, no zoom, no camera shake. The background stays a perfectly flat uniform green the whole time, with no floor, no shadow and nothing else appearing. Same hand-painted style throughout.",
+    "num_frames": 81,
+    "frames_per_second": 16,
+    "resolution": "720p",
+    "negative_prompt": "camera movement, zoom, pan, walking out of frame, moving across the frame, background change, floor, shadow, extra people, extra limbs, morphing, text, watermark, blur",
+    "aspect_ratio": "auto"
+  },
+  "outputs": [
+    "video_walk_wan.mp4"
+  ],
+  "seed": 1974169850,
+  "description": null
+}

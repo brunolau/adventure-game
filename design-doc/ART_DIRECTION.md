@@ -60,6 +60,21 @@ Other product decisions (2026-10-05): subtitles only for now (voice line ids sta
 AI-generated original music per era + free CC0 sound effects and ambience; the player-facing title stays
 *Posledný zvonec* (an English localization would be *The Last Bell*), the code name is LastBell. All attributions go to `art/source/CREDITS.md` and the game's credits screen.
 
+### Decisions taken during location research (2026-10-05)
+
+- **Art licence:** backgrounds painted from CC BY-SA sources are adaptations; all game artwork is therefore
+  released under **CC BY-SA 4.0** (code licence is separate). NC-derived pieces are additionally non-commercial.
+- **Real place names as plain lettering are allowed** where the handoff names the real place (Grand Jasná,
+  ROTUNDA, CHOPOK, ZŠ Sokolíkova, stop names). **Company logos and brands are not** (TMR, GOPASS, TESLA,
+  shop chains, cabin liveries' logos): paint unbranded equivalents.
+- **Third-party artworks** visible in reference photos (sculptures, murals, the Rotunda dragon) are omitted
+  or replaced by neutral elements. Identifiable people in references are always painted out.
+- **Post-era objects** visible in references are removed for earlier eras (newer towers, PVC windows,
+  renovated cladding, red canopies of later date); see each register row's notes.
+- Chorvátsky Grob exteriors are painted in **Čierna Voda** (a part of the municipality) where licensed
+  imagery exists. The fictional Atlas pavilion stands on the gravel plateau ~50 m east of the Rotunda.
+- Open for the product owner: the 1982 tram anachronism at the Dúbravka stop (ISSUES.md ART-DUBEXT).
+
 ## 3. Locations register (keep it current)
 
 `design-doc/LOCATIONS_REGISTER.csv` records the real place behind every room. One row per room:
