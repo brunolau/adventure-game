@@ -1,0 +1,53 @@
+Implementuj celú point-and-click adventúru Posledný zvonec podľa tohto balíka.
+
+Najprv načítaj README.txt, PRIBEH_A_PRAVIDLA.txt a game.json. Spusti obsahovú
+validáciu. Prečítaj walkthrough.json a runtime_contract.ts. Nepovažuj iba prvú
+kapitolu alebo funkčný inventár za dokončenú hru.
+
+Dodaj 68 navigovateľných scén, všetkých 127 akcií, 78 predmetov, 9 kompletných
+vedľajších úloh, 5 definovaných puzzle modalov a 9 scénických sekvencií.
+Postavy a repliky čítaj z dát. Žiadne LLM generovanie dialógov počas hrania.
+Príbeh, riešenia, ceny ani odmeny neimprovizuj. Hra nemá ekonomiku peňazí;
+materiál je vlastný, požičaný, riadne vydaný alebo výslovne darovaný.
+
+Ovládanie je záväzné. Jeden logický ľavý klik bez voľby slovies. Pravý klik
+prezerá cieľ, nad voľnou plochou otvára inventár, pri vybratom predmete ho
+najprv zruší. Space ukáže všetky viditeľné interaktívne objekty. Hover text
+predmetovej akcie existuje výhradne pri práve vykonateľnom pravidle. Neplatný
+predmetový klik je úplný no-op, zachová výber a neprehrá odmietaciu hlášku.
+
+Vybuduj data-driven jadro oddelené od renderera. Referenčný TypeScript určuje
+správanie; nie je to povinná knižnica ani celé hotové UI. Spoločný resolver
+musí rozhodovať hover aj klik, po dochodení sa podmienky overia znovu.
+Transakcia spotreby/predmetu/flagov/save je atómová a nezávisí od dopozerania
+cutscény. Opakovaný klik ani load nesmie duplikovať predmet.
+
+Zachovaj Tónove veky 12/25/50. V 1982 je žiak, jeho dedo Oto zabezpečuje
+technické oprávnenia. V 1995 už Tóno pracuje na škole. V 2020 nie je dôchodca.
+Stretnutia E02/E11/D07 a predmetový reťazec E04 až J05 sú povinné a osobné.
+Schránka nie je náhodný loot: hráč presne vidí uloženie aj vyzdvihnutie toho
+istého kusu na tom istom mieste po 38 rokoch. Stav BF_TREE a BF_JANA je pevný,
+nemá sa generovať všeobecný butterfly simulator.
+
+Jasná musí pôsobiť ako Jasná. Prvá cesta hore vedie cez platný lístok,
+Bielu Púť, Priehybu a samostatnú kabínu Funitelu na Chopok. V hre sa navštívi
+Grand Jasná, Vrbické pleso a Rotunda. Atlas je samostatná fiktívna výstava;
+jeho chronotechnika nie je riadením lanoviek. Vypnutie Atlasu nezruší návrat.
+
+Grafiku vytvor podľa rooms.art_brief, actors.design, assets.csv, rodín kamier
+a presných hotspotov. Pracovné geometrické bloky sú iba vývojová pomôcka.
+Finálny build musí byť čitateľná kreslená adventúra s animovaným hrdinom,
+plnohodnotným inventárom, dialógmi, mapou, denníkom, nápovedou a ukladaním.
+
+Počas implementácie používaj interné míľniky:
+1. Celý prológ G01–G11 s input resolverom a save/load.
+2. Import a priechod všetkými main aj side dátami bez grafických blokád.
+3. Rovnaké miesta v troch rokoch, skrýša, Tóno a dve príčinné zmeny.
+4. Všetky finálne obrazy, animácie, titulky, zvuk a prístupnosť.
+5. Akceptačné testy a nový priechod bez debug pridávania predmetov.
+Tieto míľniky nie sú alternatívne rozsahy. Výsledkom má byť celá hra.
+
+Ak technické obmedzenie vyžaduje zmenu enginu, build systému alebo spôsobu
+preloadu, urob ju bez zmeny príbehu. Ak by zmena zasiahla dejovú logiku,
+eviduj konkrétny rozpor a uprav obidve vrstvy konzistentne; nevytváraj ďalší
+quest alebo náhradné riešenie len preto, že sa implementuje ľahšie.

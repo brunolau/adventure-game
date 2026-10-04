@@ -1,0 +1,31 @@
+﻿id,test,expected
+AT01,Nová hra má PHONE a nič ďalšie; G01 dá TOOLS presne raz.,Po opätovnom kliku na pôvodnú brašnu nevznikne druhý predmet.
+AT02,Vybrať BALL a ukázať na kazetový mechanizmus.,"Žiadny akčný text; klik nemení stav, neminie loptu a nevykoná chôdzu."
+AT03,Vybrať BELT_NEW a ukázať na mechanizmus pred a po splnení relevantného stavu.,Text iba pri dostupnej B06; po nej B06 už nikdy neexistuje.
+AT04,"Pravý klik: objekt, voľná plocha, vybraný predmet, predmet v zásuvke.","Postupne prezretie, inventár, zrušenie výberu, prezretie predmetu bez zatvorenia zásuvky."
+AT05,Stlačiť Space v každej z 68 scén.,"Menovky všetkých viditeľných NPC, props vrátane ambientných a východov; žiadny skrytý objekt."
+AT06,Space so zvoleným predmetom a so zlou dvojicou.,"Meno objektu ostane, ale akčná veta zostane prázdna; platné ciele majú jemný obrys."
+AT07,"Kliknúť nesprávne riešenie P01–P05 desaťkrát, zavrieť, načítať a správne dokončiť.","Žiadna spotreba, trest ani blokovanie. Správna transakcia prebehne raz."
+AT08,P02 vyriešiť pri 200-percentnej mierke HUD a bez zvuku.,Diskrétne otáčanie funguje bez drag presnosti; registračné symboly zostanú čitateľné.
+AT09,Zostaviť B10/B11 a I04/I05 v opačnom poradí výberu predmetov.,"Symetrický vstup vedie na rovnaký action ID, spotrebu aj produkt."
+AT10,Dokončiť mapu pred kazetou a potom v druhom save kazetu pred mapou.,Obe poradia fungujú; B22 vyžaduje kompletné obe línie.
+AT11,Prvý vstup do Ivanky a opakovaný návrat do všetkých odomknutých epoch.,"Žiadna strata inventára, žiadny duplikát a vždy dostupná cesta späť."
+AT12,"Skúsiť mapou preskočiť zamknutý kabinet, pumpu alebo komoru.",Fast travel vyhodnotí aktuálnu dosiahnuteľnosť a nepovolí obídenie gate.
+AT13,Dokončiť iba hlavné akcie z initial_state.,F17 je dosiahnuteľné bez jediného Q action a všetky štyri dôkazy sa vrátia v postgame.
+AT14,"Pred finále nemať dokončený žiadny side quest, po titulkoch urobiť všetkých deväť.",Každý zdroj a NPC je stále dostupný; nové epilógové zábery sa doplnia bez opakovania finálnej transakcie.
+AT15,Vložiť dôkazy do finálnych portov vo všetkých 24 permutáciách.,"F16 sa odomkne vždy, nikdy skôr než sú všetky štyri; výber zanikne pri spotrebe."
+AT16,Preskočiť všetkých sedem cutscén a porovnať save s nepreskočeným priechodom.,"Rovnaké inventory, done, unlocked era, room po presune a odmeny."
+AT17,Uložiť/obnoviť hru po každej main akcii a v strede prehrávania F11.,Žiadna druhá odmena; pokračovanie na správnom line_id alebo bezpečné preskočenie.
+AT18,Importovať poškodený save a save s neznámym predmetom.,Čitateľné odmietnutie bez mutácie otvorenej hry; žiadne tiché doplnenie.
+AT19,Prejsť celú hru len klávesnicou a titulkami.,"Žiadny povinný tón, farba, dvojklik ani pravé tlačidlo bez alternatívy."
+AT20,Prejsť cez všetky hotspoty pri 1280 × 720 a 1920 × 1080.,"Správne škálovanie, žiadne nečitateľné prekryvy HUD, zachované min. hit area."
+AT21,"Porovnať S15, S43, S47 pred a po príslušných causal_effects.","Práve uvedené vizuálne a zvukové zmeny, žiadne samovoľné nové questy."
+AT22,Spam dvojklikom na výdaj predmetu a posledný titulok rozhovoru.,Atómová transakcia raz; žiadny prepad kliku pod modal.
+AT23,"Otvoriť menu, alt-tab alebo čakať 30 minút pred F09.","Nevzniká smrť ani časový fail; výmaz je príbehový stav, nie časovač."
+AT24,Release obsahový audit.,"68 navigovateľných scén, všetky action/line IDs a deväť úplných side questov; žiadne placeholdery ani dodatočne vymyslený príbeh."
+AT25,"Navštív pred zásahom S17/S55, urob E10 a vráť sa.","Predchádzajúca fotografia 2020 je nezmenená, fyzické scény majú presne nové varianty stromu a múrika; hráč nestojí v nepriechodnom bode."
+AT26,"Ulož pohár E08, prejdi 1995 a vyzdvihni D05 v 2020; opakovane sa vráť do 1982.",Jediná item lineage bez duplikovania; zdroj sa nevydá druhýkrát a mladý pohár už nejde vybrať.
+AT27,Porovnaj všetky tri stretnutia s Tónom pred a po E02/E11/D07.,"Rozpoznávanie má presné podmienky, veky 12/25/50 a nemennú podobu okna. Žiadny povinný text sa nevygeneruje."
+AT28,Dokonči príbeh bez Q9C a potom Q9C vrátane Q9D/E/F.,"Oba priechody fungujú; zmenia sa presné rekvizity a texty v troch obdobiach, nie prístup k main dôkazom."
+AT29,Skús ísť z Bielej Púte priamo k Rotunde pred J02/J03/J04.,"Neexistuje obchádzajúci edge. Prvý výjazd má oba úseky aj samostatnú kabínu, spätný lístok ostáva použiteľný."
+AT30,Dokonči J05/F09 a cestuj lanovkami späť.,"Zápis Atlasu je vypnutý, bežná doprava rezortu funguje ďalej."

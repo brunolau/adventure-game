@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dúbravka Backgrounds</title>
+<style>
+  :root { --bg: #15171c; --fg: #e8e6e1; --muted: #9a9890; --card: #1e2128; --accent: #e0a458; --line: #2c3038; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif; }
+  main { max-width: 1500px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: end; justify-content: space-between; }
+  h1 { font-size: 22px; margin: 0; }
+  p.note { color: var(--muted); margin: 4px 0 0; font-size: 13px; }
+  .toggle { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+  .toggle button { background: none; color: var(--fg); border: 0; padding: 6px 14px; font: inherit; cursor: pointer; }
+  .toggle button[aria-pressed="true"] { background: var(--accent); color: #1a1408; }
+  section { margin-top: 32px; }
+  h2 { font-size: 17px; margin: 0 0 2px; color: var(--accent); }
+  section p { margin: 0 0 10px; color: var(--muted); font-size: 13px; }
+  .pair { display: grid; grid-template-columns: 1fr 2.2fr; gap: 12px; align-items: start; }
+  figure { margin: 0; background: var(--card); border-radius: 8px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; }
+  figure img.px { image-rendering: pixelated; }
+  figcaption { padding: 6px 10px; font-size: 12px; color: var(--muted); }
+  @media (max-width: 720px) { .pair { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1>Dúbravka: hand-painted backgrounds</h1>
+      <p class="note">Style A, Nano Banana Pro edit on fal.ai. Source photos from Wikimedia Commons, credits in <code>source/CREDITS.md</code>.</p>
+    </div>
+    <div class="toggle" role="group" aria-label="Render style">
+      <button type="button" data-mode="painted" aria-pressed="true">Painted</button>
+      <button type="button" data-mode="pixel" aria-pressed="false">Pixel 480×270</button>
+    </div>
+  </header>
+  <div id="scenes"></div>
+</main>
+<script>
+  const scenes = [
+    ["entrance", "sokolikova2_02.jpg", "ZŠ Sokolíkova: main entrance", "Canopy and ramp partly reimagined."],
+    ["side-path", "sokolikova2_04.jpg", "ZŠ Sokolíkova: side path", "Very faithful."],
+    ["sokolikova-street", "sokolikova-block_flickr.jpg", "Sokolíkova street: panel blocks", "Source photo is CC BY-NC-SA (non-commercial only)."],
+    ["sokolikova-yard", "sokolikova-yard_flickr.jpg", "Sokolíkova: old walled courtyard ihrisko", "Source photo is CC BY-NC-SA (non-commercial only)."],
+    ["hurikan", "sokolikova-block_flickr.jpg", "Hurikán (INVENTED, not the real look)", "No usable photo exists. Built from the OpenStreetMap layout: pub, tennis court, paved court, playground. The towers are too tall; real blocks there are 4 storeys. Left: reference photo used only for the surroundings."],
+    ["tram-stop", "tram-stop_svantnerova.jpg", "Švantnerova tram stop", "Tram destination text is gibberish."],
+    ["dom-kultury", "dom-kultury.jpg", "Dom kultúry Dúbravka", ""],
+    ["stara-dubravka", "stara-dubravka.jpg", "Stará Dúbravka: old village street", "Slightly looser brushwork than the others."],
+    ["kaverna", "kaverna-1.jpg", "Kaverna I: military cavern in the forest", "Grille rendered as a gate in front of the arch."],
+  ];
+  const root = document.getElementById("scenes");
+  root.innerHTML = scenes.map(([id, src, title, note]) => `
+    <section>
+      <h2>${title}</h2>${note ? `<p>${note}</p>` : "<p>&nbsp;</p>"}
+      <div class="pair">
+        <figure><a href="../source/${src}" target="_blank"><img src="../source/${src}" alt="Original photo"></a><figcaption>Original photo</figcaption></figure>
+        <figure><a class="out" data-id="${id}" href="${id}.png" target="_blank"><img class="out" data-id="${id}" src="${id}.png" alt="${title}"></a><figcaption>Game screen, click for full size</figcaption></figure>
+      </div>
+    </section>`).join("");
+  function setMode(mode) {
+    document.querySelectorAll(".toggle button").forEach(b => b.setAttribute("aria-pressed", b.dataset.mode === mode));
+    document.querySelectorAll("img.out").forEach(img => {
+      const f = mode === "pixel" ? `${img.dataset.id}-pixel.png` : `${img.dataset.id}.png`;
+      img.src = f; img.classList.toggle("px", mode === "pixel"); img.parentElement.href = f;
+    });
+    try { localStorage.setItem("bg-mode", mode); } catch (e) {}
+  }
+  document.querySelectorAll(".toggle button").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
+  let saved = "painted"; try { saved = localStorage.getItem("bg-mode") || "painted"; } catch (e) {}
+  setMode(saved);
+</script>
+</body>
+</html>

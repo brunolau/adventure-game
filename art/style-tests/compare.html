@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Style Tests</title>
+<style>
+  :root { --bg: #15171c; --fg: #e8e6e1; --muted: #9a9890; --card: #1e2128; --accent: #e0a458; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 system-ui, sans-serif; }
+  main { max-width: 1500px; margin: 0 auto; padding: 24px 16px 64px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  h2 { font-size: 18px; margin: 40px 0 12px; color: var(--accent); }
+  p.note { color: var(--muted); margin: 0 0 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+  figure { margin: 0; background: var(--card); border-radius: 8px; overflow: hidden; }
+  figure img { display: block; width: 100%; height: auto; cursor: zoom-in; }
+  figure img.px { image-rendering: pixelated; }
+  figcaption { padding: 10px 12px; }
+  figcaption b { display: block; }
+  figcaption span { color: var(--muted); font-size: 13px; }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>ZŠ Sokolíkova: style tests</h1>
+  <p class="note">Source photos: "Sokolíkova 2 02/04.jpg" by Wizzard, Wikimedia Commons, CC BY-SA 4.0. Generated with Nano Banana Pro edit on fal.ai. Click any image to open it full size.</p>
+
+  <h2>Scene 1: Main entrance</h2>
+  <div class="grid">
+    <figure><a href="../source/sokolikova2_02.jpg" target="_blank"><img src="../source/sokolikova2_02.jpg" alt=""></a>
+      <figcaption><b>Original photo</b><span>2016, Wikimedia Commons</span></figcaption></figure>
+    <figure><a href="entrance_painted-90s.png" target="_blank"><img src="entrance_painted-90s.png" alt=""></a>
+      <figcaption><b>A: Hand-painted</b><span>Best looking. The canopy and ramp were partly reimagined.</span></figcaption></figure>
+    <figure><a href="entrance_illustrated.png" target="_blank"><img src="entrance_illustrated.png" alt=""></a>
+      <figcaption><b>B: Illustrated / comic</b><span>Most faithful to the real building. Sign has a typo ("Braitslova"), fixable.</span></figcaption></figure>
+    <figure><a href="entrance_pixel-from-painted.png" target="_blank"><img class="px" src="entrance_pixel-from-painted.png" alt=""></a>
+      <figcaption><b>C: Pixel art 480×270</b><span>A converted to true low-res pixels, 40 colours.</span></figcaption></figure>
+    <figure><a href="entrance_pixel-art.png" target="_blank"><img src="entrance_pixel-art.png" alt=""></a>
+      <figcaption><b>Rejected: direct pixel-art prompt</b><span>Model mostly posterized the photo and kept the heavy trees.</span></figcaption></figure>
+  </div>
+
+  <h2>Scene 2: Side path</h2>
+  <div class="grid">
+    <figure><a href="../source/sokolikova2_04.jpg" target="_blank"><img src="../source/sokolikova2_04.jpg" alt=""></a>
+      <figcaption><b>Original photo</b><span>2016, Wikimedia Commons</span></figcaption></figure>
+    <figure><a href="side-path_painted-90s.png" target="_blank"><img src="side-path_painted-90s.png" alt=""></a>
+      <figcaption><b>A: Hand-painted</b><span>Very faithful here.</span></figcaption></figure>
+    <figure><a href="side-path_illustrated.png" target="_blank"><img src="side-path_illustrated.png" alt=""></a>
+      <figcaption><b>B: Illustrated / comic</b></figcaption></figure>
+    <figure><a href="side-path_pixel-from-painted.png" target="_blank"><img class="px" src="side-path_pixel-from-painted.png" alt=""></a>
+      <figcaption><b>C: Pixel art 480×270</b><span>A converted to true low-res pixels, 40 colours.</span></figcaption></figure>
+  </div>
+</main>
+</body>
+</html>
