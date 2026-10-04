@@ -52,9 +52,13 @@ Mapillary (needs a token). **Forbidden:** Google Maps / Street View / Earth imag
 derived content), press or stock photos without a free licence, and identifiable faces of real
 private people (paint people out or replace them with generic figures).
 
-Licence handling: prefer CC0 / public domain / CC BY / CC BY-SA. CC BY-NC(-SA) sources are allowed
-only while the game is non-commercial; every such use is flagged in the register so it can be replaced
-before a commercial release. All attributions go to `art/source/CREDITS.md` and the game's credits screen.
+Licence handling: prefer CC0 / public domain / CC BY / CC BY-SA. **Decision 2026-10-05: the game is released
+free and non-commercial**, so CC BY-NC(-SA) sources are allowed with attribution; every such use is still
+flagged in the register so it can be replaced if that ever changes. Derived artwork inherits share-alike terms.
+
+Other product decisions (2026-10-05): subtitles only for now (voice line ids stay ready for later AI voices);
+AI-generated original music per era + free CC0 sound effects and ambience; the player-facing title stays
+*Posledný zvonec* (an English localization would be *The Last Bell*), the code name is LastBell. All attributions go to `art/source/CREDITS.md` and the game's credits screen.
 
 ## 3. Locations register (keep it current)
 
