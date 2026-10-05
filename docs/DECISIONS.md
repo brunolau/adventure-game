@@ -253,3 +253,17 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
   (presentation-only override, game.json untouched).
 - **4-8: recommendations accepted** — Čierna Voda for the Chorvátsky Grob scenes, S04 strip-mall base kept,
   Atlas pavilion on the plateau east of the Rotunda, JANA20 laptop as recommended, no TESLA lettering.
+
+## Control changes from the product owner (2026-10-05) — override CODING_AGENT_START.txt where they differ
+
+1. **Walking is a bit faster** (natural, not rushed); the walk animation playback follows the speed so feet do not slide.
+2. **Double-click skips the walk:** double-click on a hotspot, NPC, exit or floor puts the hero at the destination
+   at once and continues exactly as if the walk had ended (conditions re-checked on arrival, as before).
+3. **Hover label at the cursor, not in the bottom HUD:** the contextual action name appears next to the (big) cursor
+   in large outlined text, like the Polda games (reference: `art/source/owner_refs/ui_rG0q3FH.png`, local only).
+   The selected-item rule stays: an item-use label appears only when the combination is executable.
+4. **Custom, bigger cursor**, painted in style A, contextual by target kind (default/walk, use/take, talk, exit with
+   direction, item selected), scaled with resolution.
+5. **Space is hold-to-show, not a toggle:** while Space is held, small round markers appear on all visible
+   interactive hotspots (including atmospheric ones) — markers only, no text labels; releasing Space hides them
+   (reference: `art/source/owner_refs/ui_cOw4kTJ.png`, local only). Touch: two-finger hold shows them.
