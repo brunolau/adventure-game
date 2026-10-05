@@ -58,3 +58,19 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
 - S41 must look like that real view: road leading in with the wooden bridge railing on the left, the steel pylon and
   rope overhead, the gondola station building, the Hotel Pošta chalet in the middle distance, spruces, the rocky slope
   with the stone retaining wall on the right — in WINTER (owner decision: Jasná is winter).
+
+## Update 2026-10-06 (owner): Dúbravka corrections
+
+- **S17 school yard (and S55 2020, S61 1982):** layout per the owner's satellite view (`imgur_vLrYd9c.jpg`, map
+  screenshot → layout pointer only): the red clay running track ("antuka") is on the LEFT, with grass inside it; the
+  fence must be turned 90°; behind that fence: in 2020 a football pitch (artificial turf), in 1995 and earlier a
+  concrete playground with basketball baskets. School walls plain yellowish in 1982/1995 (earlier note).
+- **S18 / S62:** use the owner-loved style-test painting `art/backgrounds/sokolikova-street.png` (Sokolíkova panel
+  row, sunset, red car) as the base, keeping its look; add Zita's kiosk (1995) / the larger shop window (1982).
+- **`art/backgrounds/sokolikova-yard.png`** (walled courtyard ihrisko between the blocks) must be in the game: a new
+  walk-through room next to the school yard / kiosk courtyard (needs the content-overlay room support; follow-up).
+- **S11 / S51 / S57 = Švantnerova stop on M. Schneidra-Trnavského:** the road rises slightly uphill; tram tracks to
+  the right of the road (1995: on concrete panels); panel-block layout as in the references; on the right a bluish
+  low **medical centre** (there since the early 1980s → also in 1982). References: `imgur_gnv1VFF.jpg` (a friend's
+  photo, **usable directly**), `imhd_svantnerova_1995.jpg` and `imhd_svantnerova_7951.jpg` (imhd.sk, copyrighted →
+  look only; no brands Lukoil/Tesco/Dr.Max).
