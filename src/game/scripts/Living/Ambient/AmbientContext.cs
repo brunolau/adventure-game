@@ -31,8 +31,11 @@ public sealed class SpriteSource
     /// <summary>Optional frame names.</summary>
     public IReadOnlyList<string> FrameNames { get; init; } = Array.Empty<string>();
 
-    /// <summary>Texture region of a cell (horizontal strip).</summary>
-    public Rect2 Region(int frame) => Frames <= 1 ? new Rect2(Vector2.Zero, Cell) : new Rect2(Math.Clamp(frame, 0, Frames - 1) * Cell.X, 0, Cell.X, Cell.Y);
+    /// <summary>Cells per row (sheets may be row-major grids, see <see cref="SpriteSheet"/>).</summary>
+    public int Columns { get; init; } = int.MaxValue;
+
+    /// <summary>Texture region of a cell (strip or row-major grid).</summary>
+    public Rect2 Region(int frame) => Frames <= 1 ? new Rect2(Vector2.Zero, Cell) : SpriteSheet.GridRegion(frame, Frames, Columns, Cell);
 
     /// <summary>Cells whose names start with a prefix (e.g. "fly" → fly_0..fly_3), in sheet order.</summary>
     public int[] Named(string prefix)
@@ -104,6 +107,7 @@ public sealed class AmbientContext
                     Cell = sheet.Cell,
                     Pivot = pivot ?? sheet.Pivot,
                     Frames = sheet.Frames,
+                    Columns = sheet.Columns,
                     Fps = sheet.Fps,
                     FrameNames = sheet.FrameNames,
                 };

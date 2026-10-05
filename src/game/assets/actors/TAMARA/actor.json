@@ -1,0 +1,313 @@
+{
+  "id": "TAMARA",
+  "source": "art/characters/TAMARA",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (counter/table variants: centre of the cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1330,
+        520
+      ],
+      "cell": [
+        266,
+        520
+      ],
+      "pivot": [
+        133,
+        516
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        3154,
+        521
+      ],
+      "cell": [
+        166,
+        521
+      ],
+      "pivot": [
+        83,
+        516
+      ],
+      "frames": 19,
+      "columns": 19
+    },
+    "idle_fidget": {
+      "file": "idle_fidget_sheet.webp",
+      "json": "idle_fidget_sheet.json",
+      "size": [
+        3096,
+        1046
+      ],
+      "cell": [
+        172,
+        523
+      ],
+      "pivot": [
+        86,
+        518
+      ],
+      "frames": 36,
+      "columns": 18
+    },
+    "npc_table": {
+      "file": "npc_table_sheet.webp",
+      "json": "npc_table_sheet.json",
+      "size": [
+        1330,
+        286
+      ],
+      "cell": [
+        266,
+        286
+      ],
+      "pivot": [
+        133,
+        286
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle_table": {
+      "file": "idle_table_sheet.webp",
+      "json": "idle_table_sheet.json",
+      "size": [
+        3154,
+        286
+      ],
+      "cell": [
+        166,
+        286
+      ],
+      "pivot": [
+        83,
+        286
+      ],
+      "frames": 19,
+      "columns": 19
+    },
+    "idle_fidget_table": {
+      "file": "idle_fidget_table_sheet.webp",
+      "json": "idle_fidget_table_sheet.json",
+      "size": [
+        3096,
+        576
+      ],
+      "cell": [
+        172,
+        288
+      ],
+      "pivot": [
+        86,
+        288
+      ],
+      "frames": 36,
+      "columns": 18
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true,
+      "frames": [
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c16",
+        "c15",
+        "c14",
+        "c13",
+        "c12",
+        "c11",
+        "c10",
+        "c09",
+        "blink",
+        "c07",
+        "c06",
+        "c05",
+        "c04",
+        "c03",
+        "c02",
+        "c01",
+        "c00",
+        "c01",
+        "c02",
+        "c03",
+        "c04",
+        "c05",
+        "c06",
+        "c07"
+      ],
+      "fps": 8.0,
+      "note": "calm ping-pong of the video idle; its blink cell is in the sheet's blink_frames"
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    },
+    "idle_fidget": {
+      "sheet": "idle_fidget",
+      "loop": false,
+      "every_s": [
+        10,
+        20
+      ],
+      "note": "the whole 6 s video idle (a glance down and back); starts and ends on the idle loop's first cell"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S43, temporary repair table of the travelling workshop in the hotel lobby (not hotel staff). Optional table variant (cut at a table top) if the painter puts the table in front of her.",
+  "variants": {
+    "table": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_table",
+          "loop": true,
+          "frames": [
+            "c08",
+            "c09",
+            "c10",
+            "c11",
+            "c12",
+            "c13",
+            "c14",
+            "c15",
+            "c16",
+            "c17",
+            "c16",
+            "c15",
+            "c14",
+            "c13",
+            "c12",
+            "c11",
+            "c10",
+            "c09",
+            "blink",
+            "c07",
+            "c06",
+            "c05",
+            "c04",
+            "c03",
+            "c02",
+            "c01",
+            "c00",
+            "c01",
+            "c02",
+            "c03",
+            "c04",
+            "c05",
+            "c06",
+            "c07"
+          ],
+          "fps": 8.0,
+          "note": "calm ping-pong of the video idle; its blink cell is in the sheet's blink_frames"
+        },
+        "idle_still": {
+          "sheet": "npc_table",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_table",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_table",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_table",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        },
+        "idle_fidget": {
+          "sheet": "idle_fidget_table",
+          "loop": false,
+          "every_s": [
+            10,
+            20
+          ],
+          "note": "the whole 6 s video idle (a glance down and back); starts and ends on the idle loop's first cell"
+        }
+      },
+      "note": "behind a table: figure cut at the table top (pivot = centre of the cut edge); place the pivot on the painted table's top edge (data/ambient/actors.json sill_y)"
+    }
+  },
+  "default_variant": null
+}

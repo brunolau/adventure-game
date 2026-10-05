@@ -1,0 +1,189 @@
+{
+  "id": "JANA95",
+  "source": "art/characters/JANA95",
+  "person": "JANA",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512.0,
+  "pivot": "feet centre (seated: lowest point of the seat / feet), 4 px above the cell bottom; window and laptop variants: centre of the sill / laptop bottom edge",
+  "staging": "standing",
+  "sheets": {
+    "idle_q9c": {
+      "file": "idle_q9c_sheet.webp",
+      "json": "idle_q9c_sheet.json",
+      "size": [
+        3816,
+        1048
+      ],
+      "cell": [
+        318,
+        524
+      ],
+      "pivot": [
+        159,
+        520
+      ],
+      "frames": 24,
+      "columns": 12,
+      "rows": 2
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        3920,
+        1566
+      ],
+      "cell": [
+        196,
+        522
+      ],
+      "pivot": [
+        98,
+        518
+      ],
+      "frames": 48,
+      "columns": 20,
+      "rows": 3
+    },
+    "npc_q9c": {
+      "file": "npc_q9c_sheet.webp",
+      "json": "npc_q9c_sheet.json",
+      "size": [
+        1590,
+        524
+      ],
+      "cell": [
+        318,
+        524
+      ],
+      "pivot": [
+        159,
+        520
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    },
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1590,
+        524
+      ],
+      "cell": [
+        318,
+        524
+      ],
+      "pivot": [
+        159,
+        520
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the idle loop blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S15. Variant q9c (after Q9C, BF_JANA): she also carries a multimeter.",
+  "variants": {
+    "q9c": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_q9c",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_q9c",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_q9c",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the idle loop blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_q9c",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_q9c",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "after Q9C (BF_JANA): prop variant; idle = breathing loop with a built-in blink (no video)"
+    }
+  },
+  "default_variant": null
+}

@@ -1,0 +1,53 @@
+{
+ "blink": {
+  "shift_dy_dx": [
+   -2,
+   0
+  ],
+  "height_ratio": 1.0009,
+  "changed_px_in_region": 5893,
+  "mean_abs_diff_outside_region": 6.33,
+  "share_changed_outside_region": 0.0438,
+  "threshold": 18.0,
+  "cells_differ_outside_band_px": 0
+ },
+ "talk_a": {
+  "shift_dy_dx": [
+   0,
+   0
+  ],
+  "height_ratio": 1.0009,
+  "changed_px_in_region": 5366,
+  "mean_abs_diff_outside_region": 6.21,
+  "share_changed_outside_region": 0.0116,
+  "threshold": 30.0,
+  "mouth_window": [
+   996,
+   70
+  ],
+  "cells_differ_outside_band_px": 0
+ },
+ "talk_b": {
+  "shift_dy_dx": [
+   0,
+   0
+  ],
+  "height_ratio": 1.0009,
+  "changed_px_in_region": 6632,
+  "mean_abs_diff_outside_region": 5.18,
+  "share_changed_outside_region": 0.0125,
+  "threshold": 30.0,
+  "mouth_window": [
+   996,
+   70
+  ],
+  "cells_differ_outside_band_px": 0
+ },
+ "gesture": {
+  "shift_dy_dx": [
+   -2,
+   0
+  ],
+  "feet_line_delta_px": 0
+ }
+}

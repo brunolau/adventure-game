@@ -1,0 +1,143 @@
+{
+  "name": "npc_counter",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    300,
+    286
+  ],
+  "pivot": [
+    150,
+    286
+  ],
+  "scale": 0.2457,
+  "height_px": 512,
+  "playback_fps": 8,
+  "sources": [
+    "key:sheet_npc_3q.png",
+    "patch[eyes [0.0533, 0.1177]]:pose_blink_nb2.png",
+    "patch[mouth [0.1209, 0.224]]:pose_talk_a_nb2.png",
+    "patch[mouth [0.1209, 0.224]]:pose_talk_o_nb2.png",
+    "patch:pose_gesture_nb2.png"
+  ],
+  "face_landmarks": {
+    "figure_box": [
+      590,
+      184,
+      1193,
+      2268
+    ],
+    "eye_y": 375.6,
+    "mouth_y": 509.8,
+    "bands_px": {
+      "eyes": [
+        295,
+        429
+      ],
+      "mouth": [
+        436,
+        651
+      ]
+    },
+    "bands_frac": {
+      "eyes": [
+        0.0533,
+        0.1177
+      ],
+      "mouth": [
+        0.1209,
+        0.224
+      ]
+    }
+  },
+  "edit_reports": {
+    "blink": {
+      "shift_dy_dx": [
+        -2,
+        1
+      ],
+      "colour_fit": [
+        [
+          0.936,
+          14.7
+        ],
+        [
+          0.95,
+          12.1
+        ],
+        [
+          0.956,
+          10.6
+        ]
+      ],
+      "changed_px": 5885,
+      "mean_abs_diff_outside_band_after_fit": 6.41
+    },
+    "talk_a": {
+      "shift_dy_dx": [
+        -2,
+        1
+      ],
+      "colour_fit": [
+        [
+          0.962,
+          9.2
+        ],
+        [
+          0.969,
+          8.8
+        ],
+        [
+          0.977,
+          7.7
+        ]
+      ],
+      "changed_px": 12438,
+      "mean_abs_diff_outside_band_after_fit": 5.51
+    },
+    "talk_b": {
+      "shift_dy_dx": [
+        -2,
+        1
+      ],
+      "colour_fit": [
+        [
+          0.949,
+          12.0
+        ],
+        [
+          0.958,
+          10.8
+        ],
+        [
+          0.967,
+          9.2
+        ]
+      ],
+      "changed_px": 10330,
+      "mean_abs_diff_outside_band_after_fit": 5.89
+    },
+    "gesture": {
+      "shift_dy_dx": [
+        0,
+        0
+      ],
+      "height_ratio": 1.001,
+      "changed_px_in_region": 273894,
+      "mean_abs_diff_outside_region": 58.81,
+      "share_changed_outside_region": 1.0
+    }
+  },
+  "pivot_is_sill_line": true,
+  "visible_fraction_of_figure": 0.55,
+  "figure_height_px": 512.0,
+  "source_sheet": "npc_sheet.png",
+  "glass": false,
+  "glass_params": null,
+  "placement": "Place the pivot (bottom centre, the cut edge) exactly on the top edge of the painted window sill; scale like the full figure (figure_height_px is the full standing height the bust belongs to). Draw above the background, below the window frame overlay if there is one."
+}

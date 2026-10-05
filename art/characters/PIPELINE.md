@@ -284,3 +284,195 @@ in `masters/`, every paid output with its sidecar in `prod/`. Local build: `art/
 | transitions x 6 (Hailuo Pro) + reach_high retake | 3.36 |
 | mask edits on 4 key poses + 3 crouch video frames (NB2 1K) | 0.56 |
 | **total** | **7.71** |
+
+## 12. 2035 NPC batch (2026-10-05): NINA, TAMARA, BORIS, SARA, ROBOT, VIKTOR, IVAN, TURISTA
+
+Budget USD 15, spent **USD 9.20** (53 calls, spend-log scope `characters/<ID>/`). Tool: `art/tools/npc_prod.py`
+(paid `sheet`, `pose`, `video`; free `prep`, `stills`, `idle`, `calm`, `cut`, `export`, `review`). Shipped:
+`src/game/assets/actors/<ID>/` (actor.json + lossy-RGB/lossless-alpha WebP grids of at most 4096 px with
+`columns`/`rows`, imported by Godot 4.7.2 headless). Masters: `art/characters/<ID>/` (`npc_set/`, `idle_calm/`,
+`idle_hailuo/`, `table/` or `counter/`, `face_zoom.jpg`, `idle_strip.jpg`, `idle_face_strip.jpg`). In-engine
+check: `build/screens/npc2035/<room>_0n.png` (S41-S68 on the dev blockout; idles animate, grid cells correct).
+
+- **Base sheets** (Pro 2K, ADAM's keyed 3/4 sprite as cast anchor): 8/8 usable first time; ages, alpine-summer
+  2035 clothes and props as briefed, no logos. The ROBOT came out facing left and was mirrored (raw kept as
+  `sheet_npc_3q_raw_faces_left.png`). A brief with `"pronoun": "it"` gets machine prompts (no human proportion
+  rules; face edits address light eyes and a light-dot mouth).
+- **Face bands found from the edits:** eyes = peak of the blink edit's changed rows 3-14 % below the figure top,
+  mouth = peak of the talk edit's changes 3-10 % of the height below the eyes. Centroids failed: NB2 also
+  re-renders collars and hair, and the first build put the mouth band on the neck (TAMARA, IVAN, TURISTA showed
+  closed mouths). NB2 changes 7-10 % of the pixels outside the face at mean 7-9/255, so whole-frame swaps would
+  flicker; outside the bands the frames are pixel-identical (`stills` prints the changed row spans).
+- **NB2 defects caught by looking:** VIKTOR's 'oh' grew a full grey beard (retake with "keep the very short dark
+  stubble"); TAMARA's gesture raised the far arm but left the hanging hand (three hands); SARA's open-palm gesture
+  added a third hand because both hands held props. Rule: a gesture must use a free hand or the hand that holds
+  the prop, say which hand stays where, and say "exactly two arms and two hands".
+- **Gesture frames** keep every pixel the edit did not change (pixel-diff patch over the base, legs IoU >= 0.988).
+- **Machines:** NB2 re-renders the whole robot shell on a face edit (diff > 40 on most rows), so blink and mouth
+  frames take only the inside of the dark glass face panel (convex hull of the largest dark region, rim kept),
+  split between eyes and mouth by the two largest glowing blobs. The ROBOT sprite is its real size: 85 cm shell +
+  wheels = 249 px at the 512 px = 175 cm adult scale, 344 px with the antenna (`height_px` 344).
+- **Video idles (Hailuo-02 Pro 1080p, 6 s, start = end):** feet planted (leg band <= 2.2/255 vs frame 0) and loop
+  closure 0.001-0.006 on all kept clips. Every human glanced or bowed down for 2-3 s mid-clip although the prompt
+  forbids it, which looks mechanical when looped every 6 s. Shipped therefore (TAMARA, BORIS, SARA, VIKTOR, IVAN,
+  TURISTA): `idle` = `calm` = ping-pong of the frames within 4/255 (head band) of frame 0 on both sides of the
+  loop point, every 3rd frame at 8 fps (2.25-4.75 s), rotated to start on source frame 0, plus one blink cell (the
+  still blink transplanted onto the frame-0 cell, listed in `blink_frames`, shown in ~70 % of loops by the
+  engine); `idle_fidget` = the whole clip (cell 0 = the same frame), played every 10-20 s. NINA and ROBOT ship the
+  whole clip as `idle` (no glance down; both blink in it).
+- **A magenta canvas makes Hailuo spin the figure:** NINA (green coat, magenta key) turned a full 360 degrees in
+  two Pro clips despite "does not turn around, does not rotate" (ELA in section 10 also turned toward profile on
+  magenta; none of the seven green-canvas clips turned). On a flat **blue** canvas the same prompt held the pose.
+  Use blue video canvases for green-wearing characters (`npc_prod.py video ... --image <blue canvas> --bg blue`;
+  blue keys cleanly against dark green). `frames.key_kind` read video blue (2, 1, 249) as magenta (R > G) and
+  keyed nothing; fixed with a margin (magenta needs min(R, B) > G + 64).
+- **Staging variants** (free cuts, pivot = centre of the cut edge, `pivot_is_sill_line`): SARA `counter` (42 % of
+  the figure above a ~97 cm counter), TAMARA / BORIS / VIKTOR `table` (55 %, ~76-80 cm table), for the still
+  set, idle and idle_fidget; default stays the full figure (rooms not painted yet, ISSUES ART-2035-01).
+
+| spend | USD |
+|---|---|
+| 8 base sheets (Pro 2K) | 1.20 |
+| 24 face edits (NB2 1K) + VIKTOR 'oh' retake | 2.00 |
+| 8 gestures (NB2 2K) + TAMARA, SARA retakes | 1.20 |
+| 8 video idles (Hailuo Pro) + 2 NINA retakes (magenta, then blue) | 4.80 |
+| **total** | **9.20** |
+
+## Ageing cast run (2026-10-05): TONO82 / TONO / TONO20, JANA82 / JANA95 / JANA20 / JANA35, MIRA60 / MIRA95, OTO / OTO82
+
+Budget USD 22, spent **USD 14.55** (91 calls, spend-log prefixes `characters/likeness/` and `characters/<ID>/` from
+2026-10-05T04:34). Scripts: `art/tools/ageing_cast.py` (paid: `lineup`, `split`, `base`, `edit`, `plate`, `video`,
+`briefs`; task guard over the spend log) and `art/tools/ageing_build.py` (free: `faces`, `canvas`, `headwarp`, `build`,
+`export`, `likeness`). Briefs: `art/characters/characters.json` (with `likeness_group` / `likeness_core`).
+
+- **Likeness first.** One Pro 2K 16:9 age-progression sheet per person (`art/characters/likeness/<PERSON>/lineup.png`,
+  all ages side by side in the house 3/4 view, same scale); each per-age base is a Pro 2K 3:4 sheet with the lineup
+  figure of that age as the FIRST (identity) reference and a cast anchor as the second (ADAM for Tóno and Oto, DANA for
+  Jana, the approved MIRA20 sheet for Mira). Final check: `likeness/<PERSON>/<PERSON>_likeness_final.jpg` (shipped
+  stills at their real relative size + enlarged heads).
+- **Style drift.** The first Jana lineup came out as a flat, outlined mobile-game look and every base inherited it
+  (rejected, `rejected/`); with DANA as the cast anchor and an explicit "painterly, natural-sized eyes, no ink outlines"
+  line (`PAINTERLY`) it matches the cast. Mira at 20 came out matronly; "petite, slim, not stout" fixed it.
+- **Seated figures.** Pro and NB2 paint a seated man with a head 1/7 of the *seated* height (three tries, same pose:
+  the fixed seed reproduces the composition), which in the game makes him either a giant or a pin-head. Fix: NB2 seat
+  edit of the standing likeness figure, then a local head warp (x1.3 about the chin, identity below the collar line)
+  applied identically to the base and every edit (`ageing_build.py headwarp`), scaled so the head matches TONO20.
+  Seats are part of the sprite (chair / stool + satchel).
+- **Face frames** (NB2 1K): eye / mouth boxes are found from *blurred* differences (the 1K edits are softer and a pixel
+  off at every edge, so plain differences light up the whole outline); only changed pixels inside the boxes are
+  transplanted. Body pixel-identical to idle in the PNG masters and in the shipped sheets (still sheets are lossless
+  WebP: lossy q92 differed by up to 15 levels between cells, a visible shimmer when talk frames alternate).
+- **Idle loops**: Hailuo-02 **Pro** 1080p, 6 s, start = end, 48 frames at 8 fps; video px are mapped back through the
+  canvas transform (no per-frame recentring), then a global shift + per-channel gain so frame 0 meets the still
+  (feet stable within 1 px, loop closure error 2-6/255). Window busts were filmed on the upper body only (sharper
+  bust). The Q9C prop variants (JANA95 multimeter, JANA35 old drawing) idle with a breathing warp + built-in blink.
+- **JANA20** is a webcam portrait: keyed portrait + painted home plate (Q9C plate: labelled refurbished laptops), the
+  video idle composited onto either plate, and a `laptop` variant (Pro laptop prop with a magenta screen, every frame
+  perspective-warped into it; 180 px wide, about 1.7x real size so her face reads).
+- **Spend log lock**: `fal_api.log_spend` now serialises appends with a lock file (`spend-log.csv.lock`).
+
+| spend | USD |
+|---|---:|
+| likeness lineups (4 + Jana retake) | 0.75 |
+| base sheets (11 + Jana x4 / Mira60 / Tóno x2 retakes; Tóno NB2 seat edit) | 2.82 |
+| JANA20 plates + laptop | 0.42 |
+| face frames + gestures (11 + Tóno redo) | 4.32 |
+| Q9C variants (JANA95, JANA35: prop + gesture) | 0.48 |
+| Hailuo Pro idle loops (11 + Tóno redo) | 5.76 |
+| **total** (rejected work: Jana style 0.75, Tóno proportions 1.29, Mira60 0.15) | **14.55** |
+
+## 1960 / 1982 NPC batch (2026-10-05): BOZO, BERTA, POSTA, LIDA, RUDO, SKLAD, VERA60, DOBRO, RUZENA, MARTA82, SIMON
+
+Budget USD 18, spent **USD 11.11** (80 calls, all under `characters/<ID>/` in the spend log, cross-checked against the
+sidecar JSONs). Ivanka pri Dunaji June 1960 (S31-S37) and Dúbravka December 1982 (S60-S66). Paid calls: `npcs.py`
+(new: `pose ... seated`, `fix --instruction`, `pose --model pro`, a light guard on gesture / seated edits against the
+style line's "dappled shadows"). Local build: **`art/tools/npc_build.py`** (`base`, `canvas`, `bands`, `stills`, `idle`,
+`bust`, `export`, `review`; per-character settings in `art/characters/<ID>/build.json`, review sheets in
+`art/characters/<ID>/review/`). Exported to `src/game/assets/actors/<ID>/` in the NPC format (actor.json + sheets),
+every WebP a grid of at most 4096 px (`columns` / `rows` in the sheet JSON, read by the grid-aware `SpriteSheet`).
+
+- **Base sheets**: Pro 2K with ADAM's 3/4 sprite as cast anchor, 11 of 11 on model first try (ages and era clothes
+  right). Local design fixes, no paid retake: SKLAD's "blue" work clothes came out lilac-grey (hue rotated to workwear
+  blue); BOZO's timetable carried invented Latin letters (paper interior re-filled); RUZENA's boots looked like modern
+  sheepskin boots (one NB2 1K boots edit, feet band taken wholesale below 82 % of the height). RUDO's costume was only
+  mildly oversized: an NB2 "make it too big" edit drew four arms (rejected); the second (arms down, sleeves over the
+  hands) is the base. SIMON (green coat) uses the magenta key.
+- **Seated VERA60**: NB2 seat edit duplicated the drawing board and added sun spots (rejected); Pro edit of the
+  standing sheet is clean (one board on her lap, case on the bench). The bench is part of every frame. Pro kept the
+  head size but lengthened the seated body (seated = 0.93 of standing height); the sprite is scaled to 0.86 of 512 px
+  as a compromise (head ~8 % smaller than her standing sheet), `actor.json height_px` = 440 so labels sit above her head.
+- **Face frames**: NB2 1K blink / 'ah' / 'oh' transplanted in tight eye and mouth bands (`build.json`). New: the edit is
+  **colour-matched to the base** before the transplant (per-channel gain + offset on the head outside the band):
+  NB2 1K often shifts the whole picture (BOZO's blink edit turned his navy jacket brown and warmed the skin), which
+  would pop on every blink. Bodies are pixel-identical outside the bands (checked per cell). SKLAD's first 'oh' edit
+  grew a beard (retake); for SKLAD and SIMON the mouth transplant is limited to a soft window around the mouth.
+- **Gestures**: NB2 2K, 10/11 usable first time. MARTA82 v1 had two clipboards; both retakes move the one clipboard
+  into her other hand (NB2 insisted), so her gesture swaps hands for its 1.2 s hold. BOZO's gesture re-painted the
+  timetable hand with a lime smear: only the arm band (10-50 % of the height) is taken from the edit.
+- **Hailuo idle loops** (768p, 6 s, start = end, 36 frames, ~6 fps): 7/11 good first time. Male figures in uniform or
+  waistcoat (BOZO, POSTA) turned to the camera or to a full profile even when told not to, twice each; what worked was
+  a **minimal-motion prompt** ("stands completely still ... gazing at one fixed point; only the chest rises and falls,
+  one blink"). SKLAD v1 reached out sideways and DOBRO v1 bowed his head (both retaken once). Video cells are aligned
+  to the still idle (Hailuo canvases centre the bounding box, the stills the torso: up to 14 px offset, now 0) so the
+  switch to talk frames does not jump. MARTA82's thin pencil vanished with the 1 px matte choke: `video_choke: 0`.
+- **Counters / windows**: POSTA (S33 counter), RUZENA (S62 serving window), SKLAD (S35 issue hatch) and MARTA82
+  (S65 counter) get `window` / `counter` bust variants (cut at 48 % / 45 % of the height) of both the still set and
+  the video idle, POSTA and RUZENA also `window_glass`; default stays the full figure (ISSUES ART-6082-02).
+- **Checks**: WebP grids decode at the expected size, Godot 4.7.2 headless import OK (no errors), and every room
+  (S31-S35, S37, S60, S62, S65, S66) was screenshotted in a real window with the dev blockout: all actors load, idle
+  grids play the right cells (`build/screens/m2chars/`).
+
+| spend | USD |
+|---|---:|
+| base sheets (11 x Pro) | 1.65 |
+| design fixes: RUDO costume (2 NB2 2K, first rejected), RUZENA boots (NB2 1K) | 0.32 |
+| VERA60 seat: NB2 (rejected) + Pro | 0.27 |
+| face frames (33 x NB2 1K) + SKLAD 'oh' retake | 2.72 |
+| gestures (11 x NB2 2K) + 2 MARTA82 retakes | 1.56 |
+| Hailuo idle loops (11) + 6 retakes (BOZO x2, POSTA x2, SKLAD, DOBRO) | 4.59 |
+| **total** (rejected work 2.18) | **11.11** |
+
+## 1995 NPC batch (2026-10-05): LEA95, SONA, ZITA, EMIL, PALI, VIERA, ARCHIVAR, FOTO, TRH, MILADA, JURO, JURAJ, DEZI
+
+Budget USD 20, spent **USD 13.16** (91 paid calls, spend-log assets `characters/<ID>/...`; rejected work USD 3.02).
+Tool: `art/tools/npc_batch.py` (paid `sheet`, `faces`, `face`, `gesture`, `video` in a small thread pool with a
+serialised spend log and an in-flight budget reservation; free `build`, `idle`, `busts`, `review`, `export`). Briefs
+(English, June 1995, mid-90s Bratislava clothing, no logos, ages locked) in `characters.json`; all 13 speak in
+conversations (ambient topics + quest lines), so all 13 have a Hailuo video idle.
+
+- **Base sheets** (Pro 2K, ADAM's keyed 3/4 sprite as cast anchor): 13/13 usable first time. SONA (11) is painted
+  with child proportions (`CHILD_RULES`) and exported at **420 px** standing height (adults 512 px; `height_px` in
+  actor.json), so she stands ~0.82 of Adam. LEA95 (dark green dress) is magenta-keyed.
+- **Face frames** (NB2 1K blink / 'ah' / 'oh'): eye and mouth bands are found per character from the edits
+  themselves (blink diff rows = eye line, 'ah' diff rows = mouth line, searched only inside the head window) and
+  transplanted with `patch_face`: colour-matched (moment matching on head pixels outside the band; a regression
+  slope flattened the contrast of the softer 1K edits), base silhouette and alpha kept, band edges faded, key-coloured
+  edit pixels skipped (DEZI's glasses, JURAJ's cheek showed green specks before). Bodies are bit-identical to idle
+  below the head in all four face frames (checked per cell). VIERA's first blink edit was washed out with a green cast
+  (retake).
+- **Gestures** (NB2 2K, transplanted as changed-pixels-only so the unchanged body does not flicker): 11/13 first time.
+  JURAJ v1 kept the closed sketchbook under his arm and grew a second one; JURO v1 pressed something phone-like to his
+  ear. Retakes that say "the one sketchbook ... nothing is left under his arm" / "holds the headphones out" worked.
+- **Hailuo idle loops** (768p, 6 s, start = end; 36 frames over 141 source frames, 6.13 fps): only 5/13 good with the
+  brief's prompt ("... does not turn, does not look down"): LEA95, TRH and DEZI turned to the camera, SONA, MILADA,
+  JURO and JURAJ bowed their heads, PALI and FOTO looked down sideways, ZITA's pencil vanished from behind her ear for
+  ~1.5 s. One retake each with a **positive-only minimal-motion prompt** (stands completely still, keeps the same
+  pose, only slow breathing and one blink, eyes stay on the right edge of the frame, the prop stays where it is) fixed
+  all ten. Video canvases put the torso centre (= the still set's pivot x) on the canvas centre, so idle frame 0 and
+  the still idle differ by <= 2 px in outline (matte choke). Key colour painted into enclosed gaps (MILADA's arm and
+  waist) is cleared on video frames only when it is not on the outer edge (`_video_key`).
+- **Staging**: every NPC rect in S14-S29 is standing size (150 x 320), so the default is the full standing figure.
+  Extra free variants: ZITA `window` / `window_glass` (kiosk, cut at 50 %), TRH `counter` (behind his market table,
+  58 %), MILADA `counter` (sewing table, 55 %); select them per room in `data/ambient/actors.json` (`variant`,
+  `sill_y` = top edge of the painted counter / sill) once the backgrounds exist (ISSUES ART-1995-01).
+- **Export**: lossless WebP still sheets, q92 WebP idle grids (18 x 2, EMIL/DEZI 12 x 3; `columns` / `rows` in each
+  JSON), every sheet <= 4096 px; 12.6 MB for 13 actors. Godot 4.7.2 headless import without errors; S17, S18, S19 and
+  S25 screenshotted in a real window (dev blockout): sheets load and the grid cells play (`build/screens/npc1995/`).
+
+| spend | USD |
+|---|---:|
+| base sheets (13 x Pro 2K) | 1.95 |
+| face frames (39 x NB2 1K) + VIERA blink retake | 3.20 |
+| gestures (13 x NB2 2K) + JURO, JURAJ retakes | 1.80 |
+| Hailuo idle loops (13) + 10 retakes | 6.21 |
+| **total** | **13.16** |

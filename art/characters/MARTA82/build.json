@@ -1,0 +1,29 @@
+{
+  "base_source": "sheet_npc_3q.png",
+  "fix": null,
+  "posture": "standing",
+  "eye_band": [
+    0.078,
+    0.106
+  ],
+  "mouth_band": [
+    0.12,
+    0.166
+  ],
+  "head_frac": 0.2,
+  "bust": {
+    "visible": 0.48,
+    "glass": false,
+    "aliases": [
+      "counter"
+    ],
+    "default": null
+  },
+  "notes": "S65 supply store room, December 1982 (indoors). Full figure by default; 'counter' bust if the painting puts her behind the issue counter (sill_y = counter top).",
+  "video_choke": 0,
+  "video_note": "choke 0: the thin yellow pencil disappears with the default 1 px matte choke on the 768p video",
+  "frame_sources": {
+    "gesture": "pose_gesture_nb2_v3.png"
+  },
+  "gesture_note": "v1 had two clipboards (rejected); v2/v3 move the one clipboard to the other hand (NB2 insisted twice), v3 used"
+}

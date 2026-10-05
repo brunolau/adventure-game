@@ -1,0 +1,39 @@
+{
+  "name": "npc",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    376,
+    449
+  ],
+  "pivot": [
+    188,
+    445
+  ],
+  "scale": 0.2236,
+  "height_px": 512,
+  "playback_fps": 8,
+  "posture": "seated",
+  "eye_band": [
+    0.074,
+    0.1
+  ],
+  "mouth_band": [
+    0.112,
+    0.154
+  ],
+  "sources": [
+    "key:base.png",
+    "patch:pose_blink_nb2.png",
+    "patch:pose_talk_nb2.png",
+    "patch:pose_talk_oh_nb2.png",
+    "key:pose_gesture_nb2.png"
+  ],
+  "seated_height_px": 440.3,
+  "height_note": "height_px is the standing-equivalent figure height (scale from the head size of the standing sheet); the seated sprite itself is seated_height_px tall"
+}

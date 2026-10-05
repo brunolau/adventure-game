@@ -1,0 +1,78 @@
+{
+  "name": "idle",
+  "frames": [
+    "c00",
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "blink",
+    "c07",
+    "c08",
+    "c09"
+  ],
+  "cell": [
+    172,
+    286
+  ],
+  "pivot": [
+    86,
+    286
+  ],
+  "playback_fps": 8.0,
+  "blink_frames": [
+    7
+  ],
+  "sequence": [
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "c08",
+    "c07",
+    "blink",
+    "c05",
+    "c04",
+    "c03",
+    "c02",
+    "c01",
+    "c00",
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05"
+  ],
+  "loop_seconds": 2.25,
+  "scale": 0.5933,
+  "height_px": 512,
+  "source_frames": [
+    123,
+    126,
+    129,
+    132,
+    135,
+    138,
+    0,
+    3,
+    6,
+    9
+  ],
+  "calm_window": {
+    "from": 121,
+    "to": 10,
+    "of": 141,
+    "threshold": 4.0,
+    "step": 3,
+    "blink_alignment_dy_dx": [
+      0,
+      0
+    ]
+  },
+  "note": "ping-pong of the calm frames around the clip's loop point; play 'sequence' (names)",
+  "pivot_is_sill_line": true,
+  "visible_fraction": 0.55,
+  "cut_from": "idle_sheet.png"
+}

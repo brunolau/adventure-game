@@ -1,0 +1,102 @@
+{
+  "name": "idle",
+  "frames": [
+    "c00",
+    "c01",
+    "blink",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15"
+  ],
+  "cell": [
+    174,
+    286
+  ],
+  "pivot": [
+    87,
+    286
+  ],
+  "playback_fps": 8.0,
+  "blink_frames": [
+    2
+  ],
+  "sequence": [
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c14",
+    "c13",
+    "c12",
+    "c11",
+    "c10",
+    "c09",
+    "c08",
+    "c07",
+    "c06",
+    "c05",
+    "c04",
+    "c03",
+    "c02",
+    "blink",
+    "c00"
+  ],
+  "loop_seconds": 3.75,
+  "scale": 0.5919,
+  "height_px": 512,
+  "source_frames": [
+    138,
+    0,
+    3,
+    6,
+    9,
+    12,
+    15,
+    18,
+    21,
+    24,
+    27,
+    30,
+    33,
+    36,
+    39,
+    42
+  ],
+  "calm_window": {
+    "from": 136,
+    "to": 42,
+    "of": 141,
+    "threshold": 4.0,
+    "step": 3,
+    "blink_alignment_dy_dx": [
+      1,
+      0
+    ]
+  },
+  "note": "ping-pong of the calm frames around the clip's loop point; play 'sequence' (names)",
+  "pivot_is_sill_line": true,
+  "visible_fraction": 0.55,
+  "cut_from": "idle_sheet.png"
+}

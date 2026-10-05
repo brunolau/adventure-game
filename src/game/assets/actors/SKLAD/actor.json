@@ -1,0 +1,249 @@
+{
+  "id": "SKLAD",
+  "source": "art/characters/SKLAD",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "posture": "standing",
+  "era": 1960,
+  "room": "S35",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (bust variants: centre of the cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1850,
+        521
+      ],
+      "cell": [
+        370,
+        521
+      ],
+      "pivot": [
+        185,
+        517
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        2808,
+        1554
+      ],
+      "cell": [
+        234,
+        518
+      ],
+      "pivot": [
+        117,
+        514
+      ],
+      "frames": 36,
+      "grid": [
+        12,
+        3
+      ]
+    },
+    "npc_bust": {
+      "file": "npc_bust_sheet.webp",
+      "json": "npc_bust_sheet.json",
+      "size": [
+        1850,
+        235
+      ],
+      "cell": [
+        370,
+        235
+      ],
+      "pivot": [
+        185,
+        235
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle_bust": {
+      "file": "idle_bust_sheet.webp",
+      "json": "idle_bust_sheet.json",
+      "size": [
+        2808,
+        696
+      ],
+      "cell": [
+        234,
+        232
+      ],
+      "pivot": [
+        117,
+        232
+      ],
+      "frames": 36,
+      "grid": [
+        12,
+        3
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose; aligned to the still pivot) or cross-fade ~80 ms; video cells are slightly softer than the stills.",
+  "notes": "S35 workshop yard, 1960 (June). Blue work jacket (Pro painted lilac-grey; hue corrected locally). Full figure in the yard by default; 'window' / 'counter' bust if the painting puts him behind the issue hatch (sill_y = hatch sill).",
+  "variants": {
+    "window": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_bust",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_bust",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_bust",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_bust",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_bust",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "bust cut at the sill / counter line, no glass treatment"
+    },
+    "counter": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_bust",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_bust",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_bust",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_bust",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_bust",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "same as 'window': bust standing behind a counter"
+    }
+  },
+  "default_variant": null,
+  "bust_visible_fraction": 0.45
+}

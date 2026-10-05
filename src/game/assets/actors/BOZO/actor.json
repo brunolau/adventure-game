@@ -1,0 +1,103 @@
+{
+  "id": "BOZO",
+  "source": "art/characters/BOZO",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "posture": "standing",
+  "era": 1960,
+  "room": "S31",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (bust variants: centre of the cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1760,
+        520
+      ],
+      "cell": [
+        352,
+        520
+      ],
+      "pivot": [
+        176,
+        516
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        3420,
+        1042
+      ],
+      "cell": [
+        190,
+        521
+      ],
+      "pivot": [
+        95,
+        517
+      ],
+      "frames": 36,
+      "grid": [
+        18,
+        2
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose; aligned to the still pivot) or cross-fade ~80 ms; video cells are slightly softer than the stills.",
+  "notes": "S31 station halt, 1960 (June). Plain navy uniform without insignia. Standing on the platform."
+}

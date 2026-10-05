@@ -27,6 +27,9 @@ public partial class PortalChooser : ModalScreen
         SetTitle(Ui.T("ui.travel.choose_era"));
         list = Ui.VBox(12);
         Body.AddChild(Ui.Scroll(list));
+        // FitHeight measures the list, not the scroll area (whose minimum height is 0): without this the
+        // panel shrank to the title row and no era button was visible (docs/MILESTONE2.md, bug M2-01).
+        FitTarget = list;
     }
 
     /// <inheritdoc />

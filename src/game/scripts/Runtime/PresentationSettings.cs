@@ -39,6 +39,13 @@ public static class PresentationSettings
     /// <summary>Multiplier of cutscene beats' duration_min_s (1 = as authored; the debug harness uses 0).</summary>
     public static float CutsceneMinDurationScale { get; set; } = 1f;
 
+    /// <summary>
+    /// Developer notes on screen (the stage direction on a cutscene card without its painting, the
+    /// placeholder puzzle's solve button). Off for players, also in debug builds such as play.bat;
+    /// only the QA harness flag <c>--dev</c> turns it on (ISSUES INT-06).
+    /// </summary>
+    public static bool DevNotes { get; set; }
+
     /// <summary>Room fade duration in seconds (each direction).</summary>
     public static float RoomFadeSeconds { get; set; } = 0.35f;
 

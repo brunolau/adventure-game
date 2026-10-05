@@ -1,0 +1,183 @@
+{
+  "blink": {
+    "shift_dy_dx": [
+      0,
+      -1
+    ],
+    "bottom_delta": 2,
+    "height_ratio": 1.0016
+  },
+  "talk_a": {
+    "shift_dy_dx": [
+      -2,
+      1
+    ],
+    "bottom_delta": 0,
+    "height_ratio": 1.0016
+  },
+  "talk_b": {
+    "shift_dy_dx": [
+      -2,
+      0
+    ],
+    "bottom_delta": 0,
+    "height_ratio": 1.0016
+  },
+  "gesture": {
+    "shift_dy_dx": [
+      -2,
+      0
+    ],
+    "bottom_delta": 0,
+    "height_ratio": 1.001
+  },
+  "video": {
+    "source_frames": [
+      0,
+      3,
+      6,
+      9,
+      12,
+      15,
+      18,
+      21,
+      24,
+      26,
+      29,
+      32,
+      35,
+      38,
+      41,
+      44,
+      47,
+      50,
+      53,
+      56,
+      59,
+      62,
+      65,
+      68,
+      70,
+      73,
+      76,
+      79,
+      82,
+      85,
+      88,
+      91,
+      94,
+      97,
+      100,
+      103,
+      106,
+      109,
+      112,
+      115,
+      118,
+      120,
+      123,
+      126,
+      129,
+      132,
+      135,
+      138
+    ],
+    "video_frames": 142,
+    "video_size": [
+      1080,
+      1080
+    ],
+    "shift_dy_dx": [
+      0,
+      -3
+    ],
+    "gain_rgb": [
+      1.018,
+      1.028,
+      1.028
+    ],
+    "frame0_mean_abs_diff": 5.9
+  },
+  "faces": {
+    "eye_box": [
+      905,
+      334,
+      1031,
+      420
+    ],
+    "mouth_box": [
+      933,
+      461,
+      1014,
+      537
+    ]
+  },
+  "sheets": {
+    "npc": {
+      "cell": [
+        196,
+        523
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle": {
+      "cell": [
+        196,
+        523
+      ],
+      "frames": 48,
+      "grid": [
+        0,
+        0
+      ]
+    },
+    "npc_bust": {
+      "cell": [
+        196,
+        236
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle_bust": {
+      "cell": [
+        196,
+        235
+      ],
+      "frames": 48,
+      "grid": [
+        20,
+        3
+      ]
+    },
+    "npc_bust_glass": {
+      "cell": [
+        196,
+        236
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle_bust_glass": {
+      "cell": [
+        196,
+        235
+      ],
+      "frames": 48,
+      "grid": [
+        20,
+        3
+      ]
+    }
+  }
+}

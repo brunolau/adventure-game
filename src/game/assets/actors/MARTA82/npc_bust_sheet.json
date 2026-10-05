@@ -1,0 +1,43 @@
+{
+  "name": "npc_bust",
+  "frames": 5,
+  "cell": [
+    282,
+    251
+  ],
+  "pivot": [
+    141,
+    251
+  ],
+  "scale": 0.2467,
+  "height_px": 512,
+  "playback_fps": 8,
+  "posture": "standing",
+  "eye_band": [
+    0.078,
+    0.106
+  ],
+  "mouth_band": [
+    0.12,
+    0.166
+  ],
+  "pivot_is_sill_line": true,
+  "visible_fraction_of_figure": 0.48,
+  "figure_height_px": 512.0,
+  "source_sheet": "npc_sheet.png",
+  "glass": false,
+  "placement": "Place the pivot (bottom centre, the cut edge) exactly on the top edge of the painted window sill; scale like the full figure (figure_height_px is the full standing height the bust belongs to). Draw above the background, below the window frame overlay if there is one.",
+  "file": "npc_bust_sheet.webp",
+  "frame_names": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "oneshot": false,
+  "stride_px_per_s": null,
+  "loop": false,
+  "columns": 5,
+  "rows": 1
+}

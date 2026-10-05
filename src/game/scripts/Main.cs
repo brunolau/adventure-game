@@ -54,7 +54,7 @@ public partial class Main : Node
         AddChild(HudHost);
         LivingHost = new Node { Name = "LivingHost" };
         AddChild(LivingHost);
-        AddChild(new MusicPlayer { Name = "MusicPlayer" });
+        AddChild(new Audio.AudioService { Name = "AudioService" }); // music, ambience, sfx, voice (scripts/Audio)
 
         LoadExtensions();
 

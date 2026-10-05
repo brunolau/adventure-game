@@ -6,9 +6,11 @@ mask on while speaking), the gesture and the idle motion come from each brief in
 
 Subcommands (paid, logged to art/spend-log.csv, refused once the task budget would be exceeded):
   sheet  <char>                       base sheet: Pro 2K 3:4, cast anchor = ADAM keyed 3/4 sprite
-  pose   <char> blink|talk|talk_oh|gesture --base SHEET
+  pose   <char> blink|talk|talk_oh|gesture|seated --base SHEET
                                       NB2 edit (face frames 1K, gesture 2K); talk/talk_oh switch to the masked
                                       variants for masked characters
+  fix    <char> --base SHEET --instruction TEXT --out NAME
+                                      NB2 edit that changes one design detail (keeps the rest)
   video  <char> --image CANVAS        Hailuo-02 768p 6 s idle loop (start = end frame)
 
 Budget: --budget USD over --budget-scope prefixes (comma-separated) counted from --budget-since (ISO time).
@@ -70,6 +72,19 @@ GESTURE_PROMPT = (
     "same place. Change only the pose of the arms and hands: {gesture} Keep the head, the face{mask_word}, the hair, "
     "the body, the legs and the feet unchanged, and keep the whole figure inside the frame."
 )
+
+SEATED_PROMPT = (
+    "Edit the first image: the same character, same face, same hair, same clothes, same colours, same scale, same "
+    "flat green background, the same three-quarter view facing right. Change only the posture: {seated} Keep the "
+    "whole figure, including the seat, inside the frame."
+)
+
+# Seated characters (brief 'posture': 'seated'): gesture edits keep the seat instead of the standing feet.
+LIGHT_GUARD = ("Keep the soft even lighting of the first image: no dappled light spots, sun patches or leaf shadows on the "
+               "character, the clothes or the seat.")
+
+SEATED_GESTURE_SWAP = ("standing on the same spot with the feet in exactly the same place",
+                       "sitting on the same seat in exactly the same place, the seat and the feet unchanged")
 
 IDLE_SUFFIX = (
     " The character keeps the same position, facing and scale. Seamless loop. The camera is completely static. The "
@@ -155,6 +170,13 @@ def cmd_pose(args: argparse.Namespace) -> None:
         if not words["gesture"]:
             sys.exit(f"{args.char} has no 'gesture' in characters.json")
         template, res = GESTURE_PROMPT, args.res or "2K"
+        if brief.get("posture") == "seated":
+            template = template.replace(*SEATED_GESTURE_SWAP)
+        template += " " + LIGHT_GUARD
+    elif args.pose == "seated":
+        if not brief.get("seated"):
+            sys.exit(f"{args.char} has no 'seated' in characters.json")
+        template, res = SEATED_PROMPT.replace("{seated}", brief["seated"]) + " " + LIGHT_GUARD, args.res or "2K"
     else:
         name = args.pose + ("_masked" if brief.get("masked") and args.pose.startswith("talk") else "")
         template, res = FACE_PROMPTS[name], args.res or "1K"
@@ -162,8 +184,20 @@ def cmd_pose(args: argparse.Namespace) -> None:
               + chars.STYLE_A)
     prompt = chars.recolour_key_words(prompt, key)
     out = args.out or f"pose_{args.pose}_nb2"
-    paths = edit(args, "nb2", prompt, [Path(args.base).resolve()], "3:4", res, f"characters/{args.char}/{out}",
+    paths = edit(args, args.model, prompt, [Path(args.base).resolve()], "3:4", res, f"characters/{args.char}/{out}",
                  CHAR_ROOT / args.char / out)
+    print("\n".join(str(p) for p in paths))
+
+
+def cmd_fix(args: argparse.Namespace) -> None:
+    """Design-fidelity fix of a sheet (one NB2 edit with a free-text instruction, e.g. era-correct boots)."""
+    brief = load_brief(args.char)
+    key = key_of(brief)
+    prompt = (KEEP.format(**words_of(brief)) + " and change ONLY this: " + args.instruction + " Do not move or "
+              "redraw anything else. " + chars.key_background(key) + " " + chars.STYLE_FOR_CHARACTER + chars.STYLE_A)
+    prompt = chars.recolour_key_words(prompt, key)
+    paths = edit(args, "nb2", prompt, [Path(args.base).resolve()], "3:4", args.res,
+                 f"characters/{args.char}/{args.out}", CHAR_ROOT / args.char / args.out)
     print("\n".join(str(p) for p in paths))
 
 
@@ -204,11 +238,20 @@ def main() -> None:
 
     p = sub.add_parser("pose")
     p.add_argument("char")
-    p.add_argument("pose", choices=["blink", "talk", "talk_oh", "gesture"])
+    p.add_argument("pose", choices=["blink", "talk", "talk_oh", "gesture", "seated"])
     p.add_argument("--base", required=True)
+    p.add_argument("--model", choices=chars.IMAGE_MODELS, default="nb2")
     p.add_argument("--res")
     p.add_argument("--out")
     p.set_defaults(func=cmd_pose)
+
+    p = sub.add_parser("fix")
+    p.add_argument("char")
+    p.add_argument("--base", required=True)
+    p.add_argument("--instruction", required=True)
+    p.add_argument("--res", default="2K")
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=cmd_fix)
 
     p = sub.add_parser("video")
     p.add_argument("char")

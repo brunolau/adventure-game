@@ -1,0 +1,31 @@
+{
+  "base_source": "sheet_npc_3q.png",
+  "fix": "sklad_blue",
+  "posture": "standing",
+  "eye_band": [
+    0.066,
+    0.095
+  ],
+  "mouth_band": [
+    0.111,
+    0.166
+  ],
+  "head_frac": 0.2,
+  "bust": {
+    "visible": 0.45,
+    "glass": false,
+    "aliases": [
+      "counter"
+    ],
+    "default": null
+  },
+  "notes": "S35 workshop yard, 1960 (June). Blue work jacket (Pro painted lilac-grey; hue corrected locally). Full figure in the yard by default; 'window' / 'counter' bust if the painting puts him behind the issue hatch (sill_y = hatch sill).",
+  "frame_sources": {
+    "talk_b": "pose_talk_oh_nb2_v2.png"
+  },
+  "patch_threshold": {
+    "talk_a": 30.0,
+    "talk_b": 30.0
+  },
+  "mouth_window_px": 70
+}

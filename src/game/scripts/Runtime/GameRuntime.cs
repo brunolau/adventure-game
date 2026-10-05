@@ -101,6 +101,9 @@ public partial class GameRuntime : Node
     /// <summary>Raised when the puzzle modal closed (solved or not).</summary>
     public event Action? PuzzleClosed;
 
+    /// <summary>Raised after every answer submitted to the open puzzle (action id, result; audio feedback).</summary>
+    public event Action<string, PuzzleSubmitResult>? PuzzleSubmitted;
+
     /// <summary>Raised when the whole session was replaced (new game, load): rebuild everything.</summary>
     public event Action? SessionReplaced;
 
@@ -211,6 +214,7 @@ public partial class GameRuntime : Node
         if (OpenPuzzleActionId is null) return null;
         var actionId = OpenPuzzleActionId;
         var result = Session.SubmitPuzzle(actionId, answer);
+        PuzzleSubmitted?.Invoke(actionId, result);
         if (result.Solved)
         {
             OpenPuzzleActionId = null;

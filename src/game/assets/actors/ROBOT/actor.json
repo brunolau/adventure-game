@@ -1,0 +1,94 @@
+{
+  "id": "ROBOT",
+  "source": "art/characters/ROBOT",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 344,
+  "pivot": "centre of the wheels' ground contact, 4 px above the cell bottom",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1210,
+        352
+      ],
+      "cell": [
+        242,
+        352
+      ],
+      "pivot": [
+        121,
+        348
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        3048,
+        1068
+      ],
+      "cell": [
+        254,
+        356
+      ],
+      "pivot": [
+        127,
+        352
+      ],
+      "frames": 36,
+      "columns": 12
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S41, waits on the pavement at the Biela Púť lower station. Sprite height is the robot's real size next to the 512 px adults (shell and wheels about 85 cm); talk = the light-dot 'smile' changes, blink = the light eyes dim."
+}

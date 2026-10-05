@@ -164,7 +164,9 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
         if (result is null) return;
         var (speaker, text) = Ui.SplitSpeaker(result.Feedback);
         string shown = (speaker is null ? "" : Ui.SpeakerName(speaker) + ": ") + text;
-        if (result.Solved) UiRoot.Instance?.Toasts.Show(shown, "", 4.5);
+        // The success line is spoken in the scene as a subtitle before the action's own lines
+        // (milestone-1 polish item 5: it used to be a toast).
+        if (result.Solved) LastBell.Game.Presentation.DialoguePresenter.Instance?.ShowPreface(new LastBell.Core.Text.TextRef(result.Feedback.Key, text), speaker ?? GameRuntime.HeroId);
         else
         {
             feedback.Text = shown;

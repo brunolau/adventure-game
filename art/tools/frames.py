@@ -53,7 +53,7 @@ def key_kind(key: np.ndarray) -> str:
     r, g, b = key
     if g > max(r, b):
         return "green"
-    if min(r, b) > g:
+    if min(r, b) > g + 64:  # a margin: video blue (2, 1, 249) has R > G and must not read as magenta
         return "magenta"
     return "blue"
 

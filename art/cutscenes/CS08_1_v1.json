@@ -1,0 +1,20 @@
+{
+  "shot": "CS08_1",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "usd": 0.15,
+  "seed": null,
+  "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: place reference: the real walled school yard of ZS Sokolikova in Bratislava-Dubravka Image 2: prop reference: the phone screenshot of the yard before the change: bare asphalt Image 3: prop reference: Adam's smartphone Image 4: a finished exterior painting from our game; use it only for the painting technique, brushwork, palette and line quality, not for its content\n\nShot: The same school yard from the same fixed camera in three times, in ONE wide image that changes seamlessly from left to right like a time-lapse panorama (soft vertical transitions, no hard borders): on the left early December 1982 - thin snow, bare branches, a thin young linden sapling protected by a fresh square enclosure of wooden laths, a new low red-brick wall beside it; in the middle June 1995 - the linden has a young green crown, children's chalk on the ground; on the right autumn 2020 - a big mature linden with a wide golden crown shading a bench and the old low brick wall, with green grass where asphalt used to be. In the lower right corner Adam's hand holds his phone; its screen shows the old screenshot of the same corner as bare hot asphalt without a tree.\n\nLight and time: Each part in the light of its season: cold white December, warm June, golden October; the light blends across the image.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a cinematic 16:9 film frame with a clear focal point and depth (foreground, subject, background), painted full-bleed to all four edges (never paint black letterbox bars or a border: the game adds its own bars later and they cover the top tenth and the bottom fifth of the image, with the subtitles), so keep faces, hands and the key object inside the middle band. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "references": [
+    "art/source/rooms/S17/walled-courtyard-sokolikova_carl-eric-2012_NC.jpg",
+    "art/cutscenes/refs/item_PHOTO2020.png",
+    "art/cutscenes/refs/item_PHONE.png",
+    "src/game/assets/bg/S07.webp"
+  ],
+  "at": "2026-10-05T06:13:28",
+  "exported": {
+    "path": "src/game/assets/cutscenes/CS08_1.webp",
+    "crop": null,
+    "at": "2026-10-05T06:15:43"
+  }
+}

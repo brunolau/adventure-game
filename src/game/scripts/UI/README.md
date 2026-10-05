@@ -37,8 +37,8 @@ every other key from the scene, and the backdrop swallows clicks (AT22).
 | `Map/MapScreen.cs` | era sheets, rooms as nodes by distance from the time node, regions (`region.<district>.name`), connections, fast travel via `Navigation.FastTravel`. |
 | `Menus/*` | main menu (+emblem), pause, hints (progressive levels), save/load (8 slots, quick, autosave, thumbnails, overwrite/delete/load confirmations, corrupt files via Core's validation), settings (audio buses, text speed, auto-advance, subtitles, size, language, window mode, HUD scale 100–200 %, reduced motion, high-contrast labels, cursor highlight, tips), help, credits (`assets/ui/credits.json`), portal chooser, album. |
 | `Puzzles/PuzzleModal.cs`, `Puzzles/PuzzleControls.cs` | modal framework for every `puzzles[].controls.type`: matching (P01, P04), rotate_overlay (P02), digits (P03), grid_choice (P05). Drafts stored through Core on every change, reset, hint, "fill in correctly" when `Puzzles.CanFill`, no timers. Option pictures for P01: `assets/ui/puzzle_glyphs.json`. |
-| `Cutscenes/CutscenePlayer.cs` | letterbox, beat picture `res://assets/cutscenes/<CS>_<n>.webp` (n from 1) or a styled card (debug builds print the shot as a dev note), finale end card, skip button. |
-| `Cutscenes/EraCardView.cs`, `Cutscenes/EndingSequence.cs` | era title card; epilogue shots (`res://assets/epilogue/<n>.webp` or a card with the caption) → rolling credits → postgame note. |
+| `Cutscenes/CutscenePlayer.cs`, `Cutscenes/CutsceneCamera.cs` | letterbox, beat picture `res://assets/cutscenes/<CS>_<n>.webp` (n from 1) or a styled card (debug builds print the shot as a dev note), finale end card, skip button. Optional pan / zoom per beat from `res://data/cutscene_camera.json` (start and end rect of the 1920x1080 picture, over the beat's `duration_min_s`; reduced motion shows the end rect; written by `art/tools/cutscenes.py camera`, see `art/cutscenes/README.md`). |
+| `Cutscenes/EraCardView.cs`, `Cutscenes/EndingSequence.cs` | era title card; epilogue shots (`res://assets/cutscenes/EPILOGUE_<n>.webp`, else `res://assets/epilogue/<n>.webp`, else a card with the caption) → rolling credits → postgame note. |
 | `Settings/UiSettings.cs` | `user://settings.cfg`, applied to `PresentationSettings`, audio buses, window and locale. |
 | `Diagnostics/UiDebug.cs` | QA steps for screenshots (only with harness args). |
 
@@ -70,8 +70,8 @@ Steps (repeatable, 0.4 s apart): `main_menu`, `pause`, `settings[:tab]`, `save`,
 
 ## Known gaps
 
-- No painted UI art yet (frames, panels, menu background "closed bag on a table", cutscene and
-  epilogue pictures); everything is drawn with style boxes and vector glyphs.
+- No painted UI art yet (frames, panels, menu background "closed bag on a table"); everything is drawn with
+  style boxes and vector glyphs. Cutscene and epilogue pictures exist (31 frames, `art/cutscenes/README.md`).
 - No key rebinding UI (the controls tab lists the bindings); no save import/export; no play time.
 - No touch layer (long press = look) yet.
 - No UI sounds.

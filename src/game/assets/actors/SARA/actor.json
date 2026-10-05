@@ -1,0 +1,321 @@
+{
+  "id": "SARA",
+  "source": "art/characters/SARA",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (counter/table variants: centre of the cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1230,
+        520
+      ],
+      "cell": [
+        246,
+        520
+      ],
+      "pivot": [
+        123,
+        516
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        2618,
+        1040
+      ],
+      "cell": [
+        238,
+        520
+      ],
+      "pivot": [
+        119,
+        516
+      ],
+      "frames": 21,
+      "columns": 11
+    },
+    "idle_fidget": {
+      "file": "idle_fidget_sheet.webp",
+      "json": "idle_fidget_sheet.json",
+      "size": [
+        3168,
+        1560
+      ],
+      "cell": [
+        264,
+        520
+      ],
+      "pivot": [
+        132,
+        516
+      ],
+      "frames": 36,
+      "columns": 12
+    },
+    "npc_counter": {
+      "file": "npc_counter_sheet.webp",
+      "json": "npc_counter_sheet.json",
+      "size": [
+        1230,
+        219
+      ],
+      "cell": [
+        246,
+        219
+      ],
+      "pivot": [
+        123,
+        219
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle_counter": {
+      "file": "idle_counter_sheet.webp",
+      "json": "idle_counter_sheet.json",
+      "size": [
+        2618,
+        438
+      ],
+      "cell": [
+        238,
+        219
+      ],
+      "pivot": [
+        119,
+        219
+      ],
+      "frames": 21,
+      "columns": 11
+    },
+    "idle_fidget_counter": {
+      "file": "idle_fidget_counter_sheet.webp",
+      "json": "idle_fidget_counter_sheet.json",
+      "size": [
+        3168,
+        657
+      ],
+      "cell": [
+        264,
+        219
+      ],
+      "pivot": [
+        132,
+        219
+      ],
+      "frames": 36,
+      "columns": 12
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true,
+      "frames": [
+        "c05",
+        "c06",
+        "c07",
+        "c08",
+        "c09",
+        "c10",
+        "c11",
+        "c12",
+        "c13",
+        "c14",
+        "c15",
+        "c16",
+        "c17",
+        "c18",
+        "c19",
+        "c18",
+        "c17",
+        "c16",
+        "c15",
+        "c14",
+        "c13",
+        "c12",
+        "c11",
+        "c10",
+        "c09",
+        "c08",
+        "c07",
+        "c06",
+        "blink",
+        "c04",
+        "c03",
+        "c02",
+        "c01",
+        "c00",
+        "c01",
+        "c02",
+        "c03",
+        "c04"
+      ],
+      "fps": 8.0,
+      "note": "calm ping-pong of the video idle; its blink cell is in the sheet's blink_frames"
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    },
+    "idle_fidget": {
+      "sheet": "idle_fidget",
+      "loop": false,
+      "every_s": [
+        10,
+        20
+      ],
+      "note": "the whole 6 s video idle (a glance down and back); starts and ends on the idle loop's first cell"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S46, at the small service counter of the visitor centre: counter variant (cut at the counter top) is provided; default is the full figure because the room is not painted yet.",
+  "variants": {
+    "counter": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_counter",
+          "loop": true,
+          "frames": [
+            "c05",
+            "c06",
+            "c07",
+            "c08",
+            "c09",
+            "c10",
+            "c11",
+            "c12",
+            "c13",
+            "c14",
+            "c15",
+            "c16",
+            "c17",
+            "c18",
+            "c19",
+            "c18",
+            "c17",
+            "c16",
+            "c15",
+            "c14",
+            "c13",
+            "c12",
+            "c11",
+            "c10",
+            "c09",
+            "c08",
+            "c07",
+            "c06",
+            "blink",
+            "c04",
+            "c03",
+            "c02",
+            "c01",
+            "c00",
+            "c01",
+            "c02",
+            "c03",
+            "c04"
+          ],
+          "fps": 8.0,
+          "note": "calm ping-pong of the video idle; its blink cell is in the sheet's blink_frames"
+        },
+        "idle_still": {
+          "sheet": "npc_counter",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_counter",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_counter",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_counter",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        },
+        "idle_fidget": {
+          "sheet": "idle_fidget_counter",
+          "loop": false,
+          "every_s": [
+            10,
+            20
+          ],
+          "note": "the whole 6 s video idle (a glance down and back); starts and ends on the idle loop's first cell"
+        }
+      },
+      "note": "behind a service counter: bust cut at the counter top (pivot = centre of the cut edge); place the pivot on the painted counter's top edge (data/ambient/actors.json sill_y)"
+    }
+  },
+  "default_variant": null
+}

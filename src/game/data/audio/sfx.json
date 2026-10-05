@@ -1,0 +1,243 @@
+{
+ "note": "Sound effects: ids used by game.json actions[].sfx (item_soft, paper, tool_click, soft_success) and UI/game events (events: event name -> sound id, raised by scripts/Audio/AudioService.cs). Files are loudness-matched; db/pitch/cooldown are applied at play time. Built by art/tools/audio_build.py.",
+ "sounds": {
+  "item_soft": {
+   "files": [
+    "sfx/item_soft_1.ogg",
+    "sfx/item_soft_2.ogg",
+    "sfx/item_soft_3.ogg",
+    "sfx/item_soft_4.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.05,
+   "cooldown": 0.1
+  },
+  "paper": {
+   "files": [
+    "sfx/paper_1.ogg",
+    "sfx/paper_2.ogg",
+    "sfx/paper_3.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.04,
+   "cooldown": 0.1
+  },
+  "tool_click": {
+   "files": [
+    "sfx/tool_click_1.ogg",
+    "sfx/tool_click_2.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.04,
+   "cooldown": 0.1
+  },
+  "soft_success": {
+   "files": [
+    "sfx/soft_success_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.3
+  },
+  "ui_click": {
+   "files": [
+    "sfx/ui_click_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.03,
+   "cooldown": 0.04
+  },
+  "ui_hover": {
+   "files": [
+    "sfx/ui_hover_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.05,
+   "cooldown": 0.06
+  },
+  "ui_toggle": {
+   "files": [
+    "sfx/ui_toggle_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.05
+  },
+  "ui_slider": {
+   "files": [
+    "sfx/ui_slider_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.05
+  },
+  "item_select": {
+   "files": [
+    "sfx/item_select_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.05
+  },
+  "item_deselect": {
+   "files": [
+    "sfx/item_deselect_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.05
+  },
+  "item_added": {
+   "files": [
+    "sfx/item_added_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.2
+  },
+  "new_goal": {
+   "files": [
+    "sfx/new_goal_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.5
+  },
+  "inventory_open": {
+   "files": [
+    "sfx/inventory_open_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.03,
+   "cooldown": 0.1
+  },
+  "inventory_close": {
+   "files": [
+    "sfx/inventory_close_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.03,
+   "cooldown": 0.1
+  },
+  "journal_open": {
+   "files": [
+    "sfx/journal_open_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.1
+  },
+  "journal_close": {
+   "files": [
+    "sfx/journal_close_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.1
+  },
+  "map_open": {
+   "files": [
+    "sfx/map_open_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.1
+  },
+  "map_close": {
+   "files": [
+    "sfx/map_close_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.1
+  },
+  "pause_open": {
+   "files": [
+    "sfx/pause_open_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.1
+  },
+  "pause_close": {
+   "files": [
+    "sfx/pause_close_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.1
+  },
+  "puzzle_open": {
+   "files": [
+    "sfx/puzzle_open_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.02,
+   "cooldown": 0.2
+  },
+  "puzzle_success": {
+   "files": [
+    "sfx/puzzle_success_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.5
+  },
+  "puzzle_fail": {
+   "files": [
+    "sfx/puzzle_fail_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.5
+  },
+  "era_transition": {
+   "files": [
+    "sfx/era_transition_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 1.0
+  },
+  "cutscene_start": {
+   "files": [
+    "sfx/cutscene_start_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 1.0
+  },
+  "saved": {
+   "files": [
+    "sfx/saved_1.ogg"
+   ],
+   "db": 0,
+   "pitch": 0.0,
+   "cooldown": 0.5
+  }
+ },
+ "events": {
+  "ui_click": "ui_click",
+  "ui_hover": "ui_hover",
+  "ui_toggle": "ui_toggle",
+  "ui_slider": "ui_slider",
+  "item_select": "item_select",
+  "item_deselect": "item_deselect",
+  "item_added": "item_added",
+  "new_goal": "new_goal",
+  "inventory_open": "inventory_open",
+  "inventory_close": "inventory_close",
+  "journal_open": "journal_open",
+  "journal_close": "journal_close",
+  "map_open": "map_open",
+  "map_close": "map_close",
+  "pause_open": "pause_open",
+  "pause_close": "pause_close",
+  "puzzle_open": "puzzle_open",
+  "puzzle_success": "puzzle_success",
+  "puzzle_fail": "puzzle_fail",
+  "era_transition": "era_transition",
+  "cutscene_start": "cutscene_start",
+  "saved": "saved"
+ }
+}

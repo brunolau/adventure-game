@@ -1,0 +1,20 @@
+{
+  "_comment": "Cutscene beat camera moves (presentation only, written by art/tools/cutscenes.py camera from art/tools/cutscene_shots.py). Rects are [x, y, w, h] in the 1920x1080 frame: the part of the picture that fills the view at the start ('from') and at the end ('to') of the move, cover-fitted to the screen; a rect may reach up to 10 % of its height above or below the picture (shown black, under the letterbox bars). 'seconds' (default: the beat's duration_min_s) and 'ease' (in_out | out | linear, default in_out). Reduced motion shows the 'to' rect without moving.",
+  "CS01_1": {"from": [0, 0, 1920, 1080], "to": [240, 120, 1440, 810]},
+  "CS01_2": {"from": [480, 60, 1440, 810], "to": [0, 0, 1920, 1080]},
+  "CS01_3": {"from": [480, 220, 1440, 810], "to": [0, 220, 1440, 810]},
+  "CS02_1": {"from": [0, 0, 1920, 1080], "to": [0, 150, 1440, 810]},
+  "CS02_2": {"from": [0, 100, 1440, 810], "to": [480, 100, 1440, 810]},
+  "CS03_1": {"from": [0, 0, 1920, 1080], "to": [0, 250, 1440, 810]},
+  "CS03_2": {"from": [0, 0, 1920, 1080], "to": [480, 160, 1440, 810]},
+  "CS05_1": {"from": [0, 160, 1440, 810], "to": [480, 100, 1440, 810]},
+  "CS05_2": {"from": [0, 0, 1920, 1080], "to": [480, 270, 1440, 810]},
+  "CS06_1": {"from": [0, 0, 1920, 1080], "to": [240, 100, 1440, 810]},
+  "CS07_3": {"from": [0, 0, 1920, 1080], "to": [240, 60, 1440, 810]},
+  "CS07_4": {"from": [0, 120, 1440, 810], "to": [0, 0, 1920, 1080]},
+  "CS07_5": {"from": [0, 0, 1920, 1080], "to": [0, 90, 1600, 900]},
+  "CS08_1": {"from": [0, 270, 1440, 810], "to": [480, 270, 1440, 810]},
+  "CS08_2": {"from": [0, 0, 1920, 1080], "to": [400, 270, 1440, 810]},
+  "CS09_1": {"from": [0, -108, 1920, 1080], "to": [480, 200, 1440, 810]},
+  "CS09_2": {"from": [0, 0, 1920, 1080], "to": [160, 60, 1440, 810]}
+}

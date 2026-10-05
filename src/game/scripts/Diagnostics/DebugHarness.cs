@@ -19,7 +19,7 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--room &lt;id&gt;</c>, <c>--replay &lt;n&gt;</c>, <c>--play &lt;n&gt;</c> (walkthrough actions up to step n through the input path),
 /// <c>--act &lt;actionId&gt;</c> (repeatable),
 /// <c>--screenshot &lt;path.png&gt;</c>, <c>--frames &lt;k&gt;</c>, <c>--interval &lt;ms&gt;</c>, <c>--wait &lt;ms&gt;</c>,
-/// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|wait:ms|mouse:x,y|rmouse:x,y|keyev:Space</c> (repeatable, in order;
+/// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|wait:ms|mouse:x,y|rmouse:x,y|keyev:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>keyev</c> inject real input events through Godot's pipeline, GUI first),
 /// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--labels</c>, <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
@@ -77,7 +77,7 @@ public partial class DebugHarness : Node
         var game = GameRuntime.Instance;
         game.AutosaveEnabled = Has("autosave");
         var stage = WorldStage.Instance!;
-        if (Has("dev")) stage.DevOverlay = true;
+        if (Has("dev")) stage.DevOverlay = PresentationSettings.DevNotes = true;
         if (Has("fast-text"))
         {
             PresentationSettings.TextCharsPerSecond = 0;
@@ -89,11 +89,13 @@ public partial class DebugHarness : Node
             presenter.LineShown += l => Log($"line {l.Line.LineId} [{l.Line.SpeakerId}] {l.Speaker}: {l.Text}");
         try
         {
+            HookContentQa(); // ContentQa.cs: --real / --play-all / --play-side / --shots / --coverage
             PrepareState(game);
             await WaitUntil(() => stage.IsSettled && stage.IsFadedIn, 10);
             if (Has("acceptance"))
             {
-                await RunPrologueAcceptance();
+                if (Get("acceptance") is not "m2") await RunPrologueAcceptance();
+                if (Get("acceptance") is not "m1") await RunContentAcceptance(); // ContentAcceptance.cs (milestone 2)
                 Quit(acceptanceFailures > 0 ? 1 : 0);
                 return;
             }
@@ -103,7 +105,8 @@ public partial class DebugHarness : Node
                 game.Update(GameRules.ToggleHotspots);
             }
             var acts = new List<string>();
-            if (Get("play") is not null)
+            if (Has("play-all")) acts.AddRange(WalkthroughReplayer.LoadMainRoute().Select(st => st.Action).Where(a => !game.State.IsDone(a)));
+            else if (Get("play") is not null)
             {
                 // The first n walkthrough actions through the normal input path (walk, click, travel).
                 int skip = Get("replay") is not null ? (int)GetNumber("replay", 0) : 0;
@@ -113,8 +116,12 @@ public partial class DebugHarness : Node
             for (int i = 0; i < acts.Count; i++)
             {
                 await SkipLines(15);
+                await Interleave(acts[i]);
                 await PerformAct(acts[i]);
             }
+            if (Has("play-all") || Has("play-side")) await RunSideAndPostgame();
+            if (Has("coverage")) WriteCoverage();
+            if (Has("play-all") || Has("play-side")) { Quit(qaFailures.Count + blockers.Count > 0 ? 1 : 0); return; }
             if (Has("skip-lines")) await SkipLines(15);
             foreach (var input in args.TryGetValue("input", out var inputs) ? inputs : new List<string>()) await PerformInput(input);
             Log(Summary(game.State));
@@ -131,7 +138,8 @@ public partial class DebugHarness : Node
         {
             Log("ERROR " + ex.Message);
             GD.PushError(ex.ToString());
-            if (Has("screenshot") || Has("quit-after") || Has("acceptance")) Quit(1);
+            if (Has("coverage")) { qaFailures.Add("aborted: " + ex.Message); WriteCoverage(); }
+            if (Has("screenshot") || Has("quit-after") || Has("acceptance") || Has("play-all") || Has("play-side")) Quit(1);
         }
     }
 
@@ -183,6 +191,7 @@ public partial class DebugHarness : Node
         var content = game.Content;
         var action = content.FindAction(actionId) ?? throw new InvalidOperationException("unknown action " + actionId);
         if (game.State.IsDone(actionId)) throw new InvalidOperationException($"act {actionId}: already done");
+        if (realInput) { await PerformActReal(actionId); return; } // RealInputDriver.cs
         CancelSelectionLikeAPlayer();
         if (!action.IsInventoryAction && action.Room != game.State.Room) await TravelTo(action.Room);
 
@@ -260,6 +269,11 @@ public partial class DebugHarness : Node
                 // GUI controls get it first, then the InputRouter (_UnhandledInput).
                 await RawMouse(Point(), kind == "mouse" ? MouseButton.Left : MouseButton.Right);
                 break;
+            case "tap" or "longpress" or "twotap":
+                // Real touch events (Godot emulates finger 0 as a mouse): tap = left, long press = right,
+                // two-finger tap = Space (PlayerInput/TouchGestures.cs).
+                await RawTouch(Point(), kind);
+                break;
             case "keyev" when Enum.TryParse<Key>(value, true, out var key):
                 // A real key press + release (InputMap actions, GUI shortcuts).
                 foreach (bool pressed in new[] { true, false })
@@ -272,6 +286,19 @@ public partial class DebugHarness : Node
                 throw new InvalidOperationException("unknown --input " + input);
         }
         Log($"input {input} -> mode={GameRuntime.Instance.State.Mode} focus={InteractionController.Instance?.FocusedId ?? "-"} gui_focus={GetViewport().GuiGetFocusOwner()?.Name ?? "-"} labels={GameRuntime.Instance.State.HotspotLabels} room={GameRuntime.Instance.State.Room}");
+        await Frames(2);
+    }
+
+    private async Task RawTouch(Vector2 canvasPoint, string kind)
+    {
+        var at = GetTree().Root.GetFinalTransform() * canvasPoint;
+        var second = at + new Vector2(120, 0);
+        Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 0, Position = at, Pressed = true });
+        if (kind == "twotap") Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 1, Position = second, Pressed = true });
+        await Frames(2);
+        if (kind == "longpress") await Seconds(PlayerInput.TouchGestures.LongPressSeconds + 0.25);
+        if (kind == "twotap") Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 1, Position = second, Pressed = false });
+        Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 0, Position = at, Pressed = false });
         await Frames(2);
     }
 
@@ -320,6 +347,7 @@ public partial class DebugHarness : Node
 
     private async Task SkipLines(double timeout)
     {
+        if (realInput) { await WaitLinesReal(timeout * 4); return; } // lines play out by auto-advance
         var game = GameRuntime.Instance;
         var deadline = Time.GetTicksMsec() + timeout * 1000;
         while (Time.GetTicksMsec() < deadline)

@@ -10,6 +10,10 @@ Subcommands:
   key1   RAW.png ID               free: key a single-icon image and write the master + 256 px icon
   export ID ...                   free: copy 256 px icons to src/game/assets/items/<ID>.webp
   board  OUT.png ID ...           free: review board (256 px on light, dark and slot backgrounds, plus 64 px)
+  fix    RAW.png --changes TEXT    paid: NB2 edit of a raw sheet (2K 16:9) or cell (--aspect 1:1, 1K) keeping the rest
+  cropcell RAW.png CELL OUT.png   free: one grid cell on a square green canvas (input for fix --aspect 1:1)
+  stylegrid OUT.png [ID ...]      free: approved icons on green in a 4 x 2 grid (style reference for `sheet --style-ref`)
+  contact OUT.png                 free: contact sheet of every game.json item icon (256 px + 64 px strip)
 
 Masters: art/items/<ID>.png (512 px, transparent) and art/items/raw/*.png (generator output + sidecar JSON).
 """
@@ -27,6 +31,7 @@ from PIL import Image, ImageDraw
 import chars
 import fal_api
 import frames
+import item_briefs
 
 ART = fal_api.ART
 REPO = ART.parent
@@ -63,6 +68,9 @@ ICON_BRIEFS = {
              "diagonally: a clean glass tube with two shiny silver end caps and an intact thin straight wire through "
              "the middle; one end cap is stamped '2A'."),
 }
+
+ICON_BRIEFS.update(item_briefs.BRIEFS)  # the 70 icons after the prologue (milestone 2 batch)
+PROLOGUE_IDS = ["PHONE", "TOOLS", "ORDER", "GROCERIES", "SHEDKEY", "CHRONO", "FUSE_OLD", "FUSE"]
 
 ICON_RULES = (
     "Consistent rendering for every icon: the same slightly elevated three-quarter camera angle looking a little "
@@ -125,18 +133,28 @@ def cmd_sheet(args: argparse.Namespace) -> None:
         where = "Top row" if r == 0 else "Bottom row"
         listing.append(where + ", left to right: " + " ".join(f"({i + 1 + 4 * r}) {ICON_BRIEFS[i_id]}"
                                                                for i, i_id in enumerate(row)))
+    if len(ids) < 8:
+        listing.append(f"Only these {len(ids)} icons: the remaining cells of the bottom row stay empty green.")
+    if args.style_ref:
+        ref_note = (" The SECOND reference image shows eight finished inventory icons of the same game on the same "
+                    "green: match their camera angle, light direction, darker painted outline, brushwork, level of "
+                    "detail, colour palette and visual size exactly, but do not copy any of their objects; paint "
+                    "only the objects described here. ")
+        refs = [key_canvas((1600, 900)), Path(args.style_ref).resolve()]
+    else:
+        ref_note = (" The SECOND reference image shows our hero's bag as painted in our game; use it for the "
+                    "painting technique of all icons and paint the service bag (icon 2) as exactly this bag. ")
+        refs = [key_canvas((1600, 900)), bag_reference()]
     prompt = (
         "Edit the first image, a flat chroma-key green canvas: paint separate inventory icons for a classic 1990s "
         "point-and-click adventure game on it, arranged in a neat grid of 4 columns and 2 rows, evenly spaced, each "
         "object centred in its own cell with generous green margin around it, no object touching or overlapping "
         "another, all at a similar visual size (each object fills about 70% of its cell). " + " ".join(listing) +
-        " The SECOND reference image shows our hero's bag as painted in our game; use it for the painting technique "
-        "of all icons and paint the service bag (icon 2) as exactly this bag. " + ICON_RULES + " " +
+        ref_note + ICON_RULES + " " +
         chars.key_background("green").replace("The character must", "Every object must").replace(
             "on the character", "on the objects") + " " + chars.STYLE_A)
     name = args.out or "items_sheet"
-    paths = run_edit(args, prompt, [key_canvas((1600, 900)), bag_reference()], "16:9", "2K", f"items/{name}",
-                     RAW / name)
+    paths = run_edit(args, prompt, refs, "16:9", "2K", f"items/{name}", RAW / name)
     print("\n".join(str(p) for p in paths))
 
 
@@ -190,6 +208,8 @@ def cmd_cut(args: argparse.Namespace) -> None:
         cells.setdefault(cell, np.zeros((h, w), bool))
         cells[cell] |= labels == index
     for cell, item_id in enumerate(ids):
+        if item_id == "_":  # cell taken from another source
+            continue
         if cell not in cells:
             print(item_id, "MISSING")
             continue
@@ -235,6 +255,90 @@ def cmd_board(args: argparse.Namespace) -> None:
     print(args.out, board.size)
 
 
+def cmd_fix(args: argparse.Namespace) -> None:
+    """Paid: edit an existing raw sheet (or cell) in place - fix text, details or chain consistency, keep the rest."""
+    grid = ("a sheet of finished inventory icons for our game on a flat chroma-key green background, in a grid of "
+            "4 columns and 2 rows (icons 1-4 in the top row and 5-8 in the bottom row, left to right)"
+            if args.aspect == "16:9" else "one finished inventory icon for our game on a flat chroma-key green "
+            "background")
+    ref_note = ""
+    if args.ref:
+        ref_note = (" The SECOND reference image shows another finished icon of the same game; use it only for "
+                    "the object it shows, as described in the changes. ")
+    prompt = (f"Edit this image: it is {grid}. Keep every icon, its position, size, angle, painting style, darker "
+              "painted outline, lighting and colours and the flat green background exactly as they are, except for "
+              "these changes: " + args.changes + ref_note + " Any lettering that remains must be either exactly the "
+              "words given here or tiny and illegible; do not add any other words, no English words. " +
+              chars.STYLE_A)
+    refs = [Path(args.raw).resolve()] + ([Path(args.ref).resolve()] if args.ref else [])
+    res = "2K" if args.aspect == "16:9" else "1K"
+    paths = run_edit(args, prompt, refs, args.aspect, res, f"items/{args.out}", RAW / args.out)
+    print("\n".join(str(p) for p in paths))
+
+
+def cmd_cropcell(args: argparse.Namespace) -> None:
+    """Free: crop one cell (0-7) of a 4 x 2 raw sheet onto a square flat-green canvas (input for `fix --aspect 1:1`)."""
+    img = Image.open(args.raw).convert("RGB")
+    w, h = img.size
+    c, r = args.cell % 4, args.cell // 4
+    cell = img.crop((c * w // 4, r * h // 2, (c + 1) * w // 4, (r + 1) * h // 2))
+    side = max(cell.size) + 80
+    canvas = Image.new("RGB", (side, side), (0, 255, 0))
+    canvas.paste(cell, ((side - cell.width) // 2, (side - cell.height) // 2))
+    canvas.resize((1024, 1024), Image.Resampling.LANCZOS).save(args.out)
+    print(args.out)
+
+
+def cmd_stylegrid(args: argparse.Namespace) -> None:
+    """Free: the approved icons on the key green in a 4 x 2 grid (style reference for later sheets)."""
+    ids = args.ids or PROLOGUE_IDS
+    canvas = Image.new("RGB", (1600, 900), (0, 255, 0))
+    cw, ch = 400, 450
+    for n, item_id in enumerate(ids[:8]):
+        icon = Image.open(ITEMS / f"{item_id}.png").convert("RGBA").resize((300, 300), Image.Resampling.LANCZOS)
+        x = (n % 4) * cw + (cw - 300) // 2
+        y = (n // 4) * ch + (ch - 300) // 2
+        canvas.paste(icon, (x, y), icon)
+    canvas.save(args.out)
+    print(args.out)
+
+
+def cmd_contact(args: argparse.Namespace) -> None:
+    """Free: every icon of game.json items[] at 256 px on the slot colour with its id, plus a 64 px strip."""
+    game = json.loads((REPO / "src" / "game" / "data" / "game.json").read_text(encoding="utf-8"))
+    ids = [item["id"] for item in game["items"]]
+    cols = 13
+    rows = (len(ids) + cols - 1) // cols
+    cell_w, cell_h = 270, 292
+    per_small = 40
+    small_rows = (len(ids) + per_small - 1) // per_small
+    sheet = Image.new("RGB", (cols * cell_w + 10, rows * cell_h + 10 + small_rows * 74 + 10), (64, 58, 54))
+    draw = ImageDraw.Draw(sheet)
+    slot = (92, 70, 50)
+    missing = []
+    for n, item_id in enumerate(ids):
+        x, y = 10 + (n % cols) * cell_w, 10 + (n // cols) * cell_h
+        tile = Image.new("RGBA", (256, 256), slot + (255,))
+        path = GAME_ITEMS / f"{item_id}.webp"
+        if path.exists():
+            icon = Image.open(path).convert("RGBA")
+            tile.alpha_composite(icon)
+            small = icon.resize((64, 64), Image.Resampling.LANCZOS)
+        else:
+            missing.append(item_id)
+            ImageDraw.Draw(tile).line((0, 0, 255, 255), fill=(200, 40, 40, 255), width=6)
+            small = None
+        sheet.paste(tile.convert("RGB"), (x, y))
+        draw.text((x + 4, y + 260), f"{n + 1:02d} {item_id}", fill=(240, 232, 214))
+        sx, sy = 10 + (n % per_small) * 87, 10 + rows * cell_h + (n // per_small) * 74
+        stile = Image.new("RGBA", (64, 64), slot + (255,))
+        if small is not None:
+            stile.alpha_composite(small)
+        sheet.paste(stile.convert("RGB"), (sx, sy))
+    sheet.save(args.out, optimize=True)
+    print(args.out, sheet.size, "missing:", missing or "none")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--budget", type=float, default=0.0)
@@ -245,6 +349,7 @@ def main() -> None:
     p = sub.add_parser("sheet")
     p.add_argument("--ids", required=True)
     p.add_argument("--out")
+    p.add_argument("--style-ref", help="finished icons on green (stylegrid); default: the ADAM bag crop")
     p.set_defaults(func=cmd_sheet)
     p = sub.add_parser("single")
     p.add_argument("id", choices=ICON_BRIEFS)
@@ -266,6 +371,25 @@ def main() -> None:
     p.add_argument("out")
     p.add_argument("ids", nargs="+")
     p.set_defaults(func=cmd_board)
+    p = sub.add_parser("fix")
+    p.add_argument("raw")
+    p.add_argument("--changes", required=True)
+    p.add_argument("--ref")
+    p.add_argument("--aspect", default="16:9", choices=["16:9", "1:1"])
+    p.add_argument("--out", required=True)
+    p.set_defaults(func=cmd_fix)
+    p = sub.add_parser("cropcell")
+    p.add_argument("raw")
+    p.add_argument("cell", type=int)
+    p.add_argument("out")
+    p.set_defaults(func=cmd_cropcell)
+    p = sub.add_parser("stylegrid")
+    p.add_argument("out")
+    p.add_argument("ids", nargs="*")
+    p.set_defaults(func=cmd_stylegrid)
+    p = sub.add_parser("contact")
+    p.add_argument("out")
+    p.set_defaults(func=cmd_contact)
     args = parser.parse_args()
     args.func(args)
 

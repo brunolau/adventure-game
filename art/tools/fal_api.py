@@ -97,12 +97,36 @@ def logged_spend(scope_prefix: str = "") -> float:
 
 
 def log_spend(model: str, asset: str, usd: float) -> None:
-    new_file = not SPEND_LOG.exists()
-    with SPEND_LOG.open("a", newline="", encoding="utf-8") as handle:
-        writer = csv.writer(handle)
-        if new_file:
-            writer.writerow(["timestamp", "model", "asset", "usd"])
-        writer.writerow([datetime.datetime.now().isoformat(timespec="seconds"), model, asset, f"{usd:.3f}"])
+    # Parallel processes append to the same log; an exclusive lock file serialises the appends (one row was lost
+    # in an unlocked batch of ~24 parallel calls, PIPELINE.md section 10). A stale lock (> 20 s) is broken.
+    lock = SPEND_LOG.with_name(SPEND_LOG.name + ".lock")
+    fd, deadline = None, time.time() + 60
+    while fd is None:
+        try:
+            fd = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        except FileExistsError:
+            try:
+                if time.time() - lock.stat().st_mtime > 20:
+                    lock.unlink()
+            except OSError:
+                pass
+            if time.time() > deadline:
+                break
+            time.sleep(0.05)
+    try:
+        new_file = not SPEND_LOG.exists()
+        with SPEND_LOG.open("a", newline="", encoding="utf-8") as handle:
+            writer = csv.writer(handle)
+            if new_file:
+                writer.writerow(["timestamp", "model", "asset", "usd"])
+            writer.writerow([datetime.datetime.now().isoformat(timespec="seconds"), model, asset, f"{usd:.3f}"])
+    finally:
+        if fd is not None:
+            os.close(fd)
+            try:
+                lock.unlink()
+            except OSError:
+                pass
 
 
 class BudgetExceeded(RuntimeError):

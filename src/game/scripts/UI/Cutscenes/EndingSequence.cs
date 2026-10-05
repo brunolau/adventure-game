@@ -14,7 +14,8 @@ namespace LastBell.Game.UI.Cutscenes;
 /// Esc skips to the credits); without any completed episode the credits roll directly. Then the
 /// credits roll and, the first time, the postgame note (free play in the stabilised windows).
 /// From the album it can be replayed with the episodes completed since. Pure presentation: no rule
-/// state changes. Pictures: <c>res://assets/epilogue/&lt;n&gt;.webp</c> (n from 1, data order) or a styled
+/// state changes. Pictures: <c>res://assets/cutscenes/EPILOGUE_&lt;n&gt;.webp</c> (n from 1, data order; see
+/// <see cref="ShotPath"/>) or a styled
 /// card with the shot caption.
 /// </summary>
 public partial class EndingSequence : ModalScreen
@@ -45,6 +46,11 @@ public partial class EndingSequence : ModalScreen
     protected override void Build()
     {
         Panel.AddThemeStyleboxOverride("panel", new StyleBoxFlat { BgColor = new Color(0, 0, 0, 0) });
+        // The panel covers almost the whole screen: let clicks on it reach _GuiInput (click = next shot);
+        // a PanelContainer stops them by default, so "click goes on" never worked (docs/MILESTONE2.md, bug M2-02).
+        Panel.MouseFilter = MouseFilterEnum.Pass;
+        for (Node? n = Body; n is not null && n != Panel; n = n.GetParent())
+            if (n is Control c) c.MouseFilter = MouseFilterEnum.Pass;
         picture = new TextureRect
         {
             ExpandMode = TextureRect.ExpandModeEnum.IgnoreSize,
@@ -97,7 +103,7 @@ public partial class EndingSequence : ModalScreen
             return;
         }
         var shot = shots[index];
-        string path = $"res://assets/epilogue/{shot.Index + 1}.webp";
+        string path = ShotPath(shot.Index);
         var texture = ResourceLoader.Exists(path) ? GD.Load<Texture2D>(path) : null;
         picture.Texture = texture;
         picture.Visible = texture is not null;
@@ -112,6 +118,16 @@ public partial class EndingSequence : ModalScreen
             Body.Modulate = new Color(1, 1, 1, 0);
             CreateTween().TweenProperty(Body, "modulate:a", 1f, 0.6f);
         }
+    }
+
+    /// <summary>
+    /// Picture of an epilogue shot (index from 0, data order): <c>res://assets/cutscenes/EPILOGUE_&lt;n&gt;.webp</c>
+    /// (painted with the cutscene frames, art/tools/cutscenes.py), else the older <c>res://assets/epilogue/&lt;n&gt;.webp</c>.
+    /// </summary>
+    public static string ShotPath(int index)
+    {
+        string painted = $"res://assets/cutscenes/EPILOGUE_{index + 1}.webp";
+        return ResourceLoader.Exists(painted) ? painted : $"res://assets/epilogue/{index + 1}.webp";
     }
 
     private void RollCredits()

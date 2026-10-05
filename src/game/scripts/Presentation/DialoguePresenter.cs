@@ -35,6 +35,10 @@ public partial class DialoguePresenter : Node
     private string? cutsceneId;
     private int cutsceneBeat = -1;
     private bool menuOpen;
+    private PlaybackLine? preface;
+
+    /// <summary>Line id of a presentation-only preface line (<see cref="ShowPreface"/>).</summary>
+    public const string PrefaceLineId = "preface";
     private PlaceholderTopicMenu placeholderMenu = null!;
     private PlaceholderCutsceneFrame placeholderCutscene = null!;
 
@@ -71,6 +75,7 @@ public partial class DialoguePresenter : Node
 
     private void ResetAll()
     {
+        preface = null;
         HideLine();
         HideBark();
         if (menuOpen) { Menu.Close(); menuOpen = false; }
@@ -86,7 +91,16 @@ public partial class DialoguePresenter : Node
         var state = game.State;
         var current = Playback.Current(game.Content, state);
 
-        if (current?.LineId != shown?.LineId)
+        if (preface is not null)
+        {
+            // A preface line (e.g. a puzzle's success line) plays before Core's queued lines.
+            if (!ReferenceEquals(shown, preface))
+            {
+                HideLine();
+                ShowLine(preface);
+            }
+        }
+        else if (current?.LineId != shown?.LineId)
         {
             HideLine();
             if (current is not null)
@@ -187,13 +201,40 @@ public partial class DialoguePresenter : Node
             speakingActor?.SetTalking(false);
             return;
         }
+        if (ReferenceEquals(shown, preface))
+        {
+            preface = null;
+            HideLine();
+            return;
+        }
         var game = GameRuntime.Instance;
         game.Update(s => Playback.Advance(game.Content, s));
     }
 
+    /// <summary>
+    /// Shows a presentation-only line as a normal subtitle before Core's queued lines (the puzzle
+    /// modal's success line, "ADAM: Tri tvary, tri zhody. Hotovo."): same view, speaker tag, talk
+    /// animation, reveal and auto-advance; a click / Enter advances it, Esc skips it with the rest.
+    /// It changes no rules state.
+    /// </summary>
+    public void ShowPreface(TextRef text, string speakerId)
+    {
+        if (TextService.Get(text).Length == 0) return;
+        var content = GameRuntime.Instance.Content;
+        preface = new PlaybackLine(PrefaceLineId, speakerId, content.SpeakerName(speakerId), text, LineSource.Action, "", -1, 0);
+    }
+
+    /// <summary>True while a preface line is pending or on screen.</summary>
+    public bool HasPreface => preface is not null;
+
     /// <summary>Esc: skip the rest of the cutscene, or every queued dialogue line.</summary>
     public void Skip()
     {
+        if (preface is not null)
+        {
+            preface = null;
+            HideLine();
+        }
         var game = GameRuntime.Instance;
         if (shown?.IsCutscene == true) game.Update(s => Playback.SkipCutscene(game.Content, s));
         else game.Update(Playback.SkipAll);

@@ -1,0 +1,91 @@
+{
+  "name": "npc",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    360,
+    520
+  ],
+  "pivot": [
+    180,
+    516
+  ],
+  "scale": 0.2493,
+  "height_px": 512,
+  "playback_fps": 8,
+  "face_bands": {
+    "eye_y_frac": 0.0769,
+    "mouth_y_frac": 0.1417,
+    "blink_band": [
+      0.0413,
+      0.1028
+    ],
+    "talk_band": [
+      0.1093,
+      0.1935
+    ],
+    "shift_blink": [
+      -2,
+      0
+    ],
+    "shift_talk": [
+      -2,
+      0
+    ]
+  },
+  "sources": [
+    "key:sheet_npc_3q.png",
+    "patch:pose_blink_nb2.png",
+    "patch:pose_talk_nb2.png",
+    "patch:pose_talk_oh_nb2.png",
+    "patch:pose_gesture_nb2.png"
+  ],
+  "reports": {
+    "blink": {
+      "shift_dy_dx": [
+        -2,
+        0
+      ],
+      "height_ratio": 1.001,
+      "changed_px_in_region": 5841,
+      "mean_abs_diff_outside_region": 6.53,
+      "share_changed_outside_region": 0.0582
+    },
+    "talk_a": {
+      "shift_dy_dx": [
+        -2,
+        0
+      ],
+      "height_ratio": 1.001,
+      "changed_px_in_region": 8790,
+      "mean_abs_diff_outside_region": 6.99,
+      "share_changed_outside_region": 0.064
+    },
+    "talk_b": {
+      "shift_dy_dx": [
+        -1,
+        -2
+      ],
+      "height_ratio": 1.0015,
+      "changed_px_in_region": 11753,
+      "mean_abs_diff_outside_region": 8.71,
+      "share_changed_outside_region": 0.1065
+    },
+    "gesture": {
+      "shift_dy_dx": [
+        -2,
+        0
+      ],
+      "height_ratio": 1.001,
+      "changed_px_in_region": 147669,
+      "mean_abs_diff_outside_region": 83.33,
+      "share_changed_outside_region": 1.0,
+      "leg_iou": 0.9968
+    }
+  }
+}

@@ -42,7 +42,7 @@ public partial class PlaceholderPuzzlePanel : Control, IPuzzleView
         close = PlaceholderStyle.Button(TextService.Ui("ui.puzzle.close"));
         close.Pressed += () => GameRuntime.Instance.ClosePuzzle();
         buttons.AddChild(close);
-        if (OS.IsDebugBuild())
+        if (PresentationSettings.DevNotes)
         {
             var solve = PlaceholderStyle.Button(TextService.Ui("ui.dev.solve"));
             solve.Pressed += Solve;

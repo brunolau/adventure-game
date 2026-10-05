@@ -1,0 +1,29 @@
+{
+  "shot": "CS04_2",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "usd": 0,
+  "seed": null,
+  "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: the metal archive box from the previous frame: paint exactly this box in all three panels Image 2: place reference for the right panel: the volunteer point in autumn 2020 (our painting) Image 3: a finished interior painting from our game; use it only for the painting technique, brushwork, palette and line quality, not for its content\n\nShot: A short visual montage in ONE image: a horizontal triptych of three tall panels side by side, separated by thin dark gutters, each showing the same grey-green metal archive box with brass corners from the same angle. Left panel: the box on a home shelf in a private archive of the 1960s, between folders and a desk lamp. Middle panel: the box on a metal shelf of a school archive in 1995, with a handwritten index card tucked under its handle. Right panel: the box packed in a blue plastic crate at a volunteer pick-up point in 2020, with a pump bottle of hand sanitizer and a stack of paper lists beside it. Three different hands rest on the box in the three panels: a young woman's hand, an older woman's hand, a man's hand.\n\nLight and time: Each panel in the light of its era: warm lamp light, afternoon school light, cool autumn daylight.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a cinematic 16:9 film frame with a clear focal point and depth (foreground, subject, background), painted full-bleed to all four edges (never paint black letterbox bars or a border: the game adds its own bars later and they cover the top tenth and the bottom fifth of the image, with the subtitles), so keep faces, hands and the key object inside the middle band. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "references": [
+    "src/game/assets/cutscenes/CS04_1.webp",
+    "src/game/assets/bg/S03.webp",
+    "src/game/assets/bg/S10.webp"
+  ],
+  "at": "2026-10-05T06:21:41",
+  "retouch_of": "CS04_2_v1.png",
+  "retouch_boxes": [
+    [
+      1168,
+      918,
+      1352,
+      990
+    ]
+  ],
+  "retouch_note": "blank the stray label text Matika '95",
+  "exported": {
+    "path": "src/game/assets/cutscenes/CS04_2.webp",
+    "crop": null,
+    "at": "2026-10-05T06:22:09"
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "name": "idle",
+  "frames": 17,
+  "cell": [
+    174,
+    520
+  ],
+  "pivot": [
+    87,
+    516
+  ],
+  "playback_fps": 8.0,
+  "blink_frames": [
+    10
+  ],
+  "sequence": [
+    "c09",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15",
+    "c14",
+    "c13",
+    "c12",
+    "c11",
+    "c10",
+    "blink",
+    "c08",
+    "c07",
+    "c06",
+    "c05",
+    "c04",
+    "c03",
+    "c02",
+    "c01",
+    "c00",
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08"
+  ],
+  "loop_seconds": 3.75,
+  "scale": 0.5926,
+  "height_px": 512,
+  "calm_window": {
+    "from": 113,
+    "to": 19,
+    "of": 141,
+    "threshold": 4.0,
+    "step": 3,
+    "blink_alignment_dy_dx": [
+      0,
+      0
+    ]
+  },
+  "note": "ping-pong of the calm frames around the clip's loop point; play 'sequence' (names)",
+  "file": "idle_sheet.webp",
+  "frame_names": [
+    "c00",
+    "c01",
+    "c02",
+    "c03",
+    "c04",
+    "c05",
+    "c06",
+    "c07",
+    "c08",
+    "c09",
+    "blink",
+    "c10",
+    "c11",
+    "c12",
+    "c13",
+    "c14",
+    "c15"
+  ],
+  "oneshot": false,
+  "stride_px_per_s": null,
+  "loop": true,
+  "pivot_is_sill_line": false,
+  "columns": 17,
+  "rows": 1
+}

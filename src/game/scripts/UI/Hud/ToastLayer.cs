@@ -1,5 +1,8 @@
+using System;
 using System.Collections.Generic;
 using Godot;
+using LastBell.Game.Runtime;
+using LastBell.Game.World;
 using LastBell.Game.UI.Settings;
 using LastBell.Game.UI.Theme;
 
@@ -8,7 +11,11 @@ namespace LastBell.Game.UI.Hud;
 /// <summary>
 /// Short, mouse-transparent notices at the top of the screen (item added, saved, new goal ...) and
 /// the small autosave indicator in the top-right corner. Nothing here blocks input or covers the
-/// scene for long (the goal card fades after a few seconds).
+/// scene for long (the goal card fades after a few seconds). The column never sits on the room's
+/// hotspots: it takes the first free slot of top-centre, top-right, top-left and the band below the
+/// prop row (the handoff blocking puts every prop rect in a row at y 150-250, ISSUES ART-BLOCK-01),
+/// chosen against the current room's visible targets whenever a notice appears or the room changes
+/// (docs/MILESTONE2.md, milestone-1 polish item 5).
 /// </summary>
 public partial class ToastLayer : Control
 {
@@ -16,6 +23,14 @@ public partial class ToastLayer : Control
     private Label autosave = null!;
     private double autosaveLeft;
     private readonly List<(Control Toast, double Left)> toasts = new();
+    private const float ColumnWidth = 760f;
+    private string placedFor = "";
+
+    /// <summary>The column's current rect in canvas pixels (1920x1080 base, after the HUD scale); for QA checks.</summary>
+    public Rect2 ColumnCanvasRect => new(column.GetGlobalTransformWithCanvas().Origin, column.Size * column.GetGlobalTransformWithCanvas().Scale);
+
+    /// <summary>Number of notices on screen (QA checks).</summary>
+    public int Count => toasts.Count;
 
     /// <inheritdoc />
     public override void _Ready()
@@ -24,11 +39,9 @@ public partial class ToastLayer : Control
         MouseFilter = MouseFilterEnum.Ignore;
         column = Ui.VBox(10);
         column.MouseFilter = MouseFilterEnum.Ignore;
-        column.SetAnchorsAndOffsetsPreset(LayoutPreset.CenterTop);
-        column.GrowHorizontal = GrowDirection.Both;
-        column.OffsetTop = 24;
-        column.OffsetLeft = -460;
-        column.OffsetRight = 460;
+        column.SetAnchorsAndOffsetsPreset(LayoutPreset.TopLeft);
+        column.Position = new Vector2(580, 24);
+        column.Size = new Vector2(ColumnWidth, 0);
         AddChild(column);
         autosave = Ui.Label(Ui.T("ui.system.autosaved"), "OnDarkCaption");
         autosave.SetAnchorsAndOffsetsPreset(LayoutPreset.TopRight);
@@ -65,6 +78,7 @@ public partial class ToastLayer : Control
         column.AddChild(panel);
         if (column.GetChildCount() > 3) DropOldest();
         toasts.Add((panel, seconds));
+        placedFor = "";
         if (!UiSettings.ReducedMotion)
         {
             panel.Modulate = new Color(1, 1, 1, 0);
@@ -87,9 +101,55 @@ public partial class ToastLayer : Control
         toasts.RemoveAt(0);
     }
 
+    /// <summary>
+    /// Picks the slot with the least overlap with the visible targets of the current room (their
+    /// rects and the label strip above them), in canvas pixels; earlier slots win ties.
+    /// </summary>
+    private void Place()
+    {
+        var room = WorldStage.Instance?.Current;
+        string key = (room?.RoomId ?? "-") + "|" + toasts.Count + "|" + Size;
+        if (key == placedFor) return;
+        placedFor = key;
+        var scale = GetGlobalTransformWithCanvas().Scale.X;
+        if (scale <= 0) scale = 1;
+        var canvas = Size * scale;
+        float width = Math.Min(ColumnWidth * scale, canvas.X - 56);
+        float height = Math.Max(column.Size.Y * scale, 130 * scale);
+        var slots = new[]
+        {
+            new Vector2((canvas.X - width) / 2, 24),
+            new Vector2(canvas.X - width - 28, 64),
+            new Vector2(28, 24),
+            new Vector2((canvas.X - width) / 2, 268),
+            new Vector2(canvas.X - width - 28, 268),
+        };
+        var obstacles = new List<Rect2>();
+        if (room is not null)
+            foreach (var t in room.Targets)
+                obstacles.Add(t.Rect.Merge(new Rect2(t.LabelAnchor - new Vector2(90, 40), new Vector2(180, 44))));
+        Vector2 best = slots[0];
+        float bestArea = float.MaxValue;
+        foreach (var slot in slots)
+        {
+            var r = new Rect2(slot, new Vector2(width, height));
+            float area = 0;
+            foreach (var o in obstacles)
+                if (r.Intersects(o)) area += r.Intersection(o).Area;
+            if (area < bestArea - 0.5f) { bestArea = area; best = slot; }
+        }
+        column.Position = best / scale;
+        column.Size = new Vector2(width / scale, 0);
+    }
+
     /// <inheritdoc />
     public override void _Process(double delta)
     {
+        // Notices wait while a cutscene plays (they used to cover the cutscene card) and run on afterwards.
+        bool hold = GameRuntime.Instance is { IsReady: true } g && g.State.Mode == LastBell.Core.State.GameMode.Cutscene;
+        column.Visible = !hold;
+        if (hold) return;
+        if (toasts.Count > 0) Place();
         for (int i = toasts.Count - 1; i >= 0; i--)
         {
             var (toast, left) = toasts[i];

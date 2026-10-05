@@ -1,0 +1,20 @@
+{
+  "shot": "CS01_1",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "usd": 0.15,
+  "seed": null,
+  "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: place reference: the ZVON workshop (our painting of room S10, autumn 2020), seen out of focus behind the phone Image 2: the old family photograph that hangs in grandmother Mira's house: grandmother Mira and the boy Adam at the sea, with a slightly crooked horizon Image 3: prop reference: Adam's smartphone Image 4: character reference: our hero Adam (front and side view)\n\nShot: Extreme close-up over Adam's shoulder: his hand (blue work-jacket cuff) holds his smartphone in the dim workshop. The phone screen fills the centre of the frame and shows a photo preview of the old family photograph (image 2): the white-haired grandmother and the small boy at the sea, crooked horizon. Below each of the two people there is a tiny name tag drawn as a short blank white label. Something is wrong: the grandmother's figure and her label are smearing and flaking away like wet paint running down and chips of paint missing, revealing blank grey, while the boy and his label stay perfectly crisp. The screen glow lights his fingers; behind, out of focus, the workbench and the cold blue glow of the round brass ring on the wall.\n\nLight and time: Late afternoon in October, warm low sunbeams through the small window mixed with the cold blue glow of the ring; shallow depth of field.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a cinematic 16:9 film frame with a clear focal point and depth (foreground, subject, background); the top tenth and the bottom fifth of the image will be covered by black letterbox bars and subtitles, so keep faces, hands and the key object inside the middle band. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "references": [
+    "src/game/assets/bg/S10.webp",
+    "art/cutscenes/refs/crop_S06_135_165_240_245.png",
+    "art/cutscenes/refs/item_PHONE.png",
+    "art/cutscenes/refs/char_ADAM.png"
+  ],
+  "at": "2026-10-05T06:09:53",
+  "exported": {
+    "path": "src/game/assets/cutscenes/CS01_1.webp",
+    "crop": "212,106,2540,1416",
+    "at": "2026-10-05T06:11:01"
+  }
+}

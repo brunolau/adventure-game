@@ -1,0 +1,415 @@
+{
+  "id": "JANA20",
+  "source": "art/characters/JANA20",
+  "person": "JANA",
+  "view": "front, webcam portrait inside a laptop screen",
+  "height_px": 142,
+  "pivot": "feet centre (seated: lowest point of the seat / feet), 4 px above the cell bottom; window and laptop variants: centre of the sill / laptop bottom edge",
+  "staging": "screen",
+  "sheets": {
+    "idle_laptop_q9c": {
+      "file": "idle_laptop_q9c_sheet.webp",
+      "json": "idle_laptop_q9c_sheet.json",
+      "size": [
+        3948,
+        450
+      ],
+      "cell": [
+        188,
+        150
+      ],
+      "pivot": [
+        94,
+        146
+      ],
+      "frames": 48,
+      "columns": 21,
+      "rows": 3
+    },
+    "idle_laptop": {
+      "file": "idle_laptop_sheet.webp",
+      "json": "idle_laptop_sheet.json",
+      "size": [
+        3948,
+        450
+      ],
+      "cell": [
+        188,
+        150
+      ],
+      "pivot": [
+        94,
+        146
+      ],
+      "frames": 48,
+      "columns": 21,
+      "rows": 3
+    },
+    "idle_screen_q9c": {
+      "file": "idle_screen_q9c_sheet.webp",
+      "json": "idle_screen_q9c_sheet.json",
+      "size": [
+        3840,
+        1608
+      ],
+      "cell": [
+        480,
+        268
+      ],
+      "pivot": [
+        240,
+        268
+      ],
+      "frames": 48,
+      "columns": 8,
+      "rows": 6
+    },
+    "idle_screen": {
+      "file": "idle_screen_sheet.webp",
+      "json": "idle_screen_sheet.json",
+      "size": [
+        3840,
+        1608
+      ],
+      "cell": [
+        480,
+        268
+      ],
+      "pivot": [
+        240,
+        268
+      ],
+      "frames": 48,
+      "columns": 8,
+      "rows": 6
+    },
+    "laptop_q9c": {
+      "file": "laptop_q9c_sheet.webp",
+      "json": "laptop_q9c_sheet.json",
+      "size": [
+        940,
+        150
+      ],
+      "cell": [
+        188,
+        150
+      ],
+      "pivot": [
+        94,
+        146
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    },
+    "laptop": {
+      "file": "laptop_sheet.webp",
+      "json": "laptop_sheet.json",
+      "size": [
+        940,
+        150
+      ],
+      "cell": [
+        188,
+        150
+      ],
+      "pivot": [
+        94,
+        146
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    },
+    "screen_q9c": {
+      "file": "screen_q9c_sheet.webp",
+      "json": "screen_q9c_sheet.json",
+      "size": [
+        2400,
+        268
+      ],
+      "cell": [
+        480,
+        268
+      ],
+      "pivot": [
+        240,
+        268
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    },
+    "screen": {
+      "file": "screen_sheet.webp",
+      "json": "screen_sheet.json",
+      "size": [
+        2400,
+        268
+      ],
+      "cell": [
+        480,
+        268
+      ],
+      "pivot": [
+        240,
+        268
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle_laptop",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "laptop",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "laptop",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the idle loop blinks by itself)"
+    },
+    "talk": {
+      "sheet": "laptop",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "laptop",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S54: she is not in the room; she is a live video portrait on a laptop on the bench. Default variant 'laptop' (an open laptop showing her); 'screen' = the flat portrait for compositing into a painted screen. Variant q9c: refurbished laptops with labels on the shelf behind her.",
+  "variants": {
+    "laptop": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_laptop",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "laptop",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "laptop",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the idle loop blinks by itself)"
+        },
+        "talk": {
+          "sheet": "laptop",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "laptop",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "an open laptop on the bench showing Jana's video call; pivot = bottom centre of the laptop, place it on the painted bench top (placement sill_y)"
+    },
+    "screen": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_screen",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "screen",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "screen",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the idle loop blinks by itself)"
+        },
+        "talk": {
+          "sheet": "screen",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "screen",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "the flat 16:9 video frame only, to composite into a painted screen (placement sill_y = screen bottom, scale = screen width / cell width)"
+    },
+    "laptop_q9c": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_laptop_q9c",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "laptop_q9c",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "laptop_q9c",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the idle loop blinks by itself)"
+        },
+        "talk": {
+          "sheet": "laptop_q9c",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "laptop_q9c",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "after Q9C (BF_JANA): refurbished laptops with labels behind her"
+    },
+    "screen_q9c": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_screen_q9c",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "screen_q9c",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "screen_q9c",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the idle loop blinks by itself)"
+        },
+        "talk": {
+          "sheet": "screen_q9c",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "screen_q9c",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "after Q9C, flat video frame"
+    }
+  },
+  "default_variant": "laptop"
+}

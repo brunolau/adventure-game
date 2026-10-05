@@ -1,0 +1,40 @@
+{
+  "name": "npc",
+  "frames": 5,
+  "cell": [
+    376,
+    449
+  ],
+  "pivot": [
+    188,
+    445
+  ],
+  "scale": 0.2236,
+  "height_px": 512,
+  "playback_fps": 8,
+  "posture": "seated",
+  "eye_band": [
+    0.074,
+    0.1
+  ],
+  "mouth_band": [
+    0.112,
+    0.154
+  ],
+  "seated_height_px": 440.3,
+  "height_note": "height_px is the standing-equivalent figure height (scale from the head size of the standing sheet); the seated sprite itself is seated_height_px tall",
+  "file": "npc_sheet.webp",
+  "frame_names": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "oneshot": false,
+  "stride_px_per_s": null,
+  "loop": false,
+  "pivot_is_sill_line": false,
+  "columns": 5,
+  "rows": 1
+}

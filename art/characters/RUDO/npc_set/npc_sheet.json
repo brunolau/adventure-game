@@ -1,0 +1,37 @@
+{
+  "name": "npc",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    428,
+    521
+  ],
+  "pivot": [
+    214,
+    517
+  ],
+  "scale": 0.2402,
+  "height_px": 512,
+  "playback_fps": 8,
+  "posture": "standing",
+  "eye_band": [
+    0.095,
+    0.125
+  ],
+  "mouth_band": [
+    0.145,
+    0.196
+  ],
+  "sources": [
+    "key:base.png",
+    "patch:pose_blink_nb2.png",
+    "patch:pose_talk_nb2.png",
+    "patch:pose_talk_oh_nb2.png",
+    "key:pose_gesture_nb2.png"
+  ]
+}

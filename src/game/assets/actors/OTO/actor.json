@@ -1,0 +1,98 @@
+{
+  "id": "OTO",
+  "source": "art/characters/OTO",
+  "person": "OTO",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512.0,
+  "pivot": "feet centre (seated: lowest point of the seat / feet), 4 px above the cell bottom; window and laptop variants: centre of the sill / laptop bottom edge",
+  "staging": "standing",
+  "sheets": {
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        4000,
+        1566
+      ],
+      "cell": [
+        200,
+        522
+      ],
+      "pivot": [
+        100,
+        518
+      ],
+      "frames": 48,
+      "columns": 20,
+      "rows": 3
+    },
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1220,
+        523
+      ],
+      "cell": [
+        244,
+        523
+      ],
+      "pivot": [
+        122,
+        519
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the idle loop blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S36 (1960)."
+}

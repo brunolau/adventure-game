@@ -1,0 +1,103 @@
+{
+  "id": "BERTA",
+  "source": "art/characters/BERTA",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "posture": "standing",
+  "era": 1960,
+  "room": "S32",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (bust variants: centre of the cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1360,
+        520
+      ],
+      "cell": [
+        272,
+        520
+      ],
+      "pivot": [
+        136,
+        516
+      ],
+      "frames": 5,
+      "grid": [
+        5,
+        1
+      ]
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        3816,
+        1034
+      ],
+      "cell": [
+        212,
+        517
+      ],
+      "pivot": [
+        106,
+        513
+      ],
+      "frames": 36,
+      "grid": [
+        18,
+        2
+      ]
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose; aligned to the still pivot) or cross-fade ~80 ms; video cells are slightly softer than the stills.",
+  "notes": "S32 village square, 1960 (June). Basket on her near forearm."
+}

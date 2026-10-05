@@ -1,0 +1,165 @@
+{
+ "tracks": {
+  "1960": {
+   "file": "music/1960.ogg",
+   "source": "1960__lyria_v1",
+   "bpm": 95.38,
+   "beats_per_bar": 3,
+   "loop_start": 22.0517,
+   "loop_end": 131.4468,
+   "length": 131.447,
+   "loop_seconds": 109.4,
+   "lufs": -16.0,
+   "peak_dbfs": -4.0,
+   "junction_jump_ratio": 0.58,
+   "match_score": -0.154,
+   "intro_seconds": 22.05
+  },
+  "1982": {
+   "file": "music/1982.ogg",
+   "source": "1982__lyria_v2",
+   "bpm": 90.18,
+   "beats_per_bar": 4,
+   "loop_start": 26.6133,
+   "loop_end": 133.0415,
+   "length": 133.041,
+   "loop_seconds": 106.43,
+   "lufs": -16.0,
+   "peak_dbfs": -3.9,
+   "junction_jump_ratio": 3.47,
+   "match_score": 0.239,
+   "intro_seconds": 26.61
+  },
+  "1995": {
+   "file": "music/1995.ogg",
+   "source": "1995__lyria_v1",
+   "bpm": 105.0,
+   "beats_per_bar": 4,
+   "loop_start": 25.1429,
+   "loop_end": 134.8552,
+   "length": 134.855,
+   "loop_seconds": 109.71,
+   "lufs": -16.0,
+   "peak_dbfs": -3.8,
+   "junction_jump_ratio": 1.91,
+   "match_score": 0.402,
+   "intro_seconds": 25.14
+  },
+  "2020": {
+   "file": "music/2020.ogg",
+   "source": "2020__lyria_v1",
+   "bpm": 80.0,
+   "beats_per_bar": 4,
+   "loop_start": 29.9698,
+   "loop_end": 119.9679,
+   "length": 119.968,
+   "loop_seconds": 90.0,
+   "lufs": -16.0,
+   "peak_dbfs": -4.3,
+   "junction_jump_ratio": 2.46,
+   "match_score": 0.101,
+   "intro_seconds": 29.97
+  },
+  "2035": {
+   "file": "music/2035.ogg",
+   "source": "2035__lyria_v1",
+   "bpm": 90.0,
+   "beats_per_bar": 4,
+   "loop_start": 29.3333,
+   "loop_end": 122.6647,
+   "length": 122.665,
+   "loop_seconds": 93.33,
+   "lufs": -16.0,
+   "peak_dbfs": -4.3,
+   "junction_jump_ratio": 1.52,
+   "match_score": 0.082,
+   "intro_seconds": 29.33
+  },
+  "menu": {
+   "file": "music/menu.ogg",
+   "source": "menu__lyria_v2",
+   "bpm": 84.0,
+   "beats_per_bar": 4,
+   "loop_start": 34.2796,
+   "loop_end": 139.992,
+   "length": 139.992,
+   "loop_seconds": 105.71,
+   "lufs": -16.0,
+   "peak_dbfs": -4.7,
+   "junction_jump_ratio": 2.98,
+   "match_score": -0.221,
+   "intro_seconds": 34.28
+  },
+  "puzzle": {
+   "file": "music/puzzle.ogg",
+   "source": "puzzle__lyria_v1",
+   "bpm": 90.0,
+   "beats_per_bar": 4,
+   "loop_start": 30.6502,
+   "loop_end": 121.3033,
+   "length": 121.303,
+   "loop_seconds": 90.65,
+   "lufs": -16.0,
+   "peak_dbfs": -3.3,
+   "junction_jump_ratio": 1.39,
+   "match_score": 0.235,
+   "intro_seconds": 30.65
+  },
+  "tension": {
+   "file": "music/tension.ogg",
+   "source": "tension__lyria_v2",
+   "bpm": 100.0,
+   "beats_per_bar": 4,
+   "loop_start": 20.3805,
+   "loop_end": 116.3785,
+   "length": 116.379,
+   "loop_seconds": 96.0,
+   "lufs": -16.0,
+   "peak_dbfs": -3.9,
+   "junction_jump_ratio": 1.12,
+   "match_score": 0.757,
+   "intro_seconds": 20.38
+  },
+  "epilogue": {
+   "file": "music/epilogue.ogg",
+   "source": "epilogue__lyria_v3",
+   "bpm": 80.0,
+   "beats_per_bar": 4,
+   "loop_start": 36.7314,
+   "loop_end": 147.7295,
+   "length": 147.729,
+   "loop_seconds": 111.0,
+   "lufs": -16.0,
+   "peak_dbfs": -4.7,
+   "junction_jump_ratio": 1.64,
+   "match_score": -0.007,
+   "intro_seconds": 36.73
+  }
+ },
+ "crossfade_seconds": 2.0,
+ "cues": {
+  "menu": "music/menu.ogg",
+  "puzzle": "music/puzzle.ogg",
+  "tension": "music/tension.ogg",
+  "epilogue": "music/epilogue.ogg"
+ },
+ "cutscenes": {
+  "CS06": "tension",
+  "CS07": "epilogue"
+ },
+ "rooms": {
+  "S48": [
+   {
+    "cue": "tension",
+    "until": "F17"
+   }
+  ],
+  "S49": [
+   {
+    "cue": "tension",
+    "until": "F17"
+   }
+  ]
+ },
+ "note": "Loop points in seconds: the engine plays the file once from 0, then loops from loop_start to the end of the file (= loop_end; a one-beat crossfade is baked in). Built by art/tools/audio_master.py."
+}

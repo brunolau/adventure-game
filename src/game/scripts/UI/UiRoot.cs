@@ -363,11 +363,23 @@ public partial class UiRoot : Control
     {
         CloseAllModals();
         Toasts.ClearAll();
-        endingPending = false;
-        SyncMode();
         var game = GameRuntime.Instance;
+        // A save made while the finale's lines or its cutscene play (autosave after F17, quit in CS07)
+        // still owes the ending: it plays once that playback is over (docs/MILESTONE2.md, bug M2-03).
+        endingPending = IsFinalePlaying(game);
+        SyncMode();
         // A brand-new game: the first-start tips (once).
         if (game.State.Done.Length == 0 && !UiSettings.TipsShown && OS.GetCmdlineUserArgs().Length == 0) tips.Start();
+    }
+
+    private static bool IsFinalePlaying(GameRuntime game)
+    {
+        var unlock = game.Content.FindAction(game.Content.Data.Postgame.Unlock);
+        var s = game.State;
+        if (unlock is null || !s.IsDone(unlock.Id) || s.ActiveLineId is null) return false;
+        bool Finale(string id) => id.StartsWith("action." + unlock.Id + ".", StringComparison.Ordinal) ||
+                                  (unlock.Cutscene is { } cs && id.StartsWith("cutscene." + cs + ".", StringComparison.Ordinal));
+        return Finale(s.ActiveLineId) || s.PlaybackQueue.Any(Finale);
     }
 
     private void OnInventoryChanged(IReadOnlyList<string> added, IReadOnlyList<string> removed)

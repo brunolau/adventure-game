@@ -9,16 +9,27 @@ using LastBell.Game.World;
 namespace LastBell.Game.PlayerInput;
 
 /// <summary>
-/// Maps raw input (mouse, keyboard; touch arrives as emulated mouse) onto <see cref="LogicalCommand"/>s
+/// Maps raw input (mouse, keyboard, touch) onto <see cref="LogicalCommand"/>s
 /// and routes them by Core's top mode: world/inventory → <see cref="InteractionController"/>,
 /// dialogue lines and cutscenes → <see cref="DialoguePresenter"/>, overlays → Core close/escape.
 /// It reads only unhandled input, so HUD and UI controls get their clicks first.
 /// One logical left click is one action (no verb choice).
+/// Touch: Godot emulates the first finger as a mouse (device <see cref="InputEvent.DeviceIdEmulation"/>), so the GUI
+/// still gets taps first; the emulated events that reach the world feed <see cref="TouchGestures"/>
+/// (tap = Primary, long press = Secondary, two-finger tap = ToggleLabels) instead of acting on press.
 /// </summary>
 public partial class InputRouter : Node2D
 {
     /// <summary>The singleton router.</summary>
     public static InputRouter? Instance { get; private set; }
+
+    private readonly TouchGestures touch = new();
+
+    private const int EmulatedDevice = (int)InputEvent.DeviceIdEmulation;
+
+    private static double Now => Time.GetTicksMsec() / 1000.0;
+
+    private Vector2 ToCanvas(Vector2 viewportPosition) => GetCanvasTransform().AffineInverse() * viewportPosition;
 
     /// <inheritdoc />
     public override void _Ready()
@@ -29,11 +40,32 @@ public partial class InputRouter : Node2D
     }
 
     /// <inheritdoc />
+    public override void _Input(InputEvent e)
+    {
+        // Extra fingers are not emulated as a mouse; count them for the two-finger tap (never handled here).
+        if (e is InputEventScreenTouch { Index: > 0 } st && (touch.Active || !st.Pressed))
+            touch.Touch(st.Index, ToCanvas(st.Position), st.Pressed, Now);
+    }
+
+    /// <inheritdoc />
+    public override void _Process(double delta)
+    {
+        if (touch.Poll(Now) is { } gesture) Dispatch(gesture.Command, gesture.Position);
+    }
+
+    /// <inheritdoc />
     public override void _UnhandledInput(InputEvent e)
     {
-        if (e is InputEventMouseMotion)
+        if (e is InputEventMouseMotion motion)
         {
+            if (motion.Device == EmulatedDevice) touch.Drag(0, ToCanvas(motion.Position));
             InteractionController.Instance?.PointerMoved(GetGlobalMousePosition());
+            return;
+        }
+        if (e is InputEventMouseButton { Device: EmulatedDevice, ButtonIndex: MouseButton.Left } finger)
+        {
+            if (touch.Touch(0, ToCanvas(finger.Position), finger.Pressed, Now) is { } gesture) Dispatch(gesture.Command, gesture.Position);
+            GetViewport().SetInputAsHandled();
             return;
         }
         if (e is InputEventMouseButton mb && mb.Pressed && !mb.IsEcho())

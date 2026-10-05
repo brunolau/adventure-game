@@ -6,7 +6,10 @@ using Godot;
 
 namespace LastBell.Game.Living.Actors;
 
-/// <summary>One horizontal-strip sprite sheet (frame i at x = i * cell width).</summary>
+/// <summary>
+/// One sprite sheet: a horizontal strip or a row-major grid of equal cells (frame i at column i % Columns,
+/// row i / Columns). Grids keep every sheet at most 4096 px wide for mobile GPUs (ISSUES LIVING-04 / BUILD-01).
+/// </summary>
 public sealed class SpriteSheet
 {
     /// <summary>Sheet texture.</summary>
@@ -20,6 +23,9 @@ public sealed class SpriteSheet
 
     /// <summary>Number of cells.</summary>
     public required int Frames { get; init; }
+
+    /// <summary>Cells per row (JSON <c>columns</c>, else the texture width / cell width; a strip has Columns == Frames).</summary>
+    public int Columns { get; init; } = int.MaxValue;
 
     /// <summary>Authored playback rate.</summary>
     public float Fps { get; init; } = 8f;
@@ -40,7 +46,27 @@ public sealed class SpriteSheet
     public bool PivotIsSillLine { get; init; }
 
     /// <summary>Region of a frame in the texture.</summary>
-    public Rect2 Region(int frame) => new(Math.Clamp(frame, 0, Frames - 1) * Cell.X, 0, Cell.X, Cell.Y);
+    public Rect2 Region(int frame) => GridRegion(frame, Frames, Columns, Cell);
+
+    /// <summary>Region of cell <paramref name="frame"/> in a row-major grid with <paramref name="columns"/> cells per row.</summary>
+    public static Rect2 GridRegion(int frame, int frames, int columns, Vector2 cell)
+    {
+        int i = Math.Clamp(frame, 0, Math.Max(0, frames - 1));
+        int cols = Math.Max(1, columns);
+        return new Rect2(i % cols * cell.X, i / cols * cell.Y, cell.X, cell.Y);
+    }
+
+    /// <summary>
+    /// Cells per row of a sheet: JSON <c>columns</c> (or <c>grid: [columns, rows]</c>), else as many cells as fit
+    /// in the texture width (a strip gives frames, a grid its column count).
+    /// </summary>
+    public static int ColumnsOf(JsonObject meta, Texture2D texture, Vector2 cell, int frames)
+    {
+        int columns = meta.Int("columns", 0);
+        if (columns <= 0 && meta["grid"] is JsonArray grid && grid.Count >= 1 && grid[0] is JsonValue g && g.TryGetValue(out int gc)) columns = gc;
+        if (columns <= 0 && cell.X > 0) columns = (int)(texture.GetWidth() / cell.X + 0.01f);
+        return Math.Clamp(columns, 1, Math.Max(1, frames));
+    }
 
     private static readonly Dictionary<string, SpriteSheet?> Cache = new(StringComparer.Ordinal);
 
@@ -56,6 +82,7 @@ public sealed class SpriteSheet
             var cell = meta.Vec("cell");
             int frames = Math.Max(1, meta.Int("frames", 1));
             if (cell.X <= 0 || cell.Y <= 0) cell = new Vector2(texture.GetWidth() / (float)frames, texture.GetHeight());
+            int columns = ColumnsOf(meta, texture, cell, frames);
             var names = meta.Strings("frame_names");
             var rest = new List<int>();
             var mouth = meta.Strings("mouth_sequence");
@@ -67,6 +94,7 @@ public sealed class SpriteSheet
                 Cell = new Vector2I((int)cell.X, (int)cell.Y),
                 Pivot = meta.Vec("pivot", new Vector2(cell.X / 2, cell.Y)),
                 Frames = frames,
+                Columns = columns,
                 Fps = meta.Num("playback_fps", 8f),
                 StridePxPerSecond = meta.NumOrNull("stride_px_per_s"),
                 FrameNames = names,

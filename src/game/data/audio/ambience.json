@@ -1,0 +1,2317 @@
+{
+ "note": "Room ambience (rooms[].ambience of game.json realised as layers). kind loop = seamless bed, spot = one-shot takes fired every [min,max] s from a random x (canvas px). db is relative to the normalised file (beds -24 LUFS, spots -22 LUFS). after/until: action ids. Built by art/tools/audio_build.py.",
+ "library": {
+  "clock_wall": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/clock_wall.ogg"
+   ],
+   "seconds": 23.98
+  },
+  "clocks_many": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/clocks_many.ogg"
+   ],
+   "seconds": 30.0
+  },
+  "lawnmower_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/lawnmower_far.ogg"
+   ],
+   "seconds": 24.5
+  },
+  "leaves_wind": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/leaves_wind.ogg"
+   ],
+   "seconds": 67.5
+  },
+  "wind_soft": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/wind_soft.ogg"
+   ],
+   "seconds": 67.5
+  },
+  "wind_mountain": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/wind_mountain.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "wind_window": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/wind_window.ogg"
+   ],
+   "seconds": 67.5
+  },
+  "wind_attic": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/wind_attic.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "fridge_hum": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/fridge_hum.ogg"
+   ],
+   "seconds": 23.5
+  },
+  "transformer_hum": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/transformer_hum.ogg"
+   ],
+   "seconds": 25.5
+  },
+  "fluorescent_hum": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/fluorescent_hum.ogg"
+   ],
+   "seconds": 52.5
+  },
+  "ventilation": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/ventilation.ogg"
+   ],
+   "seconds": 57.5
+  },
+  "fan_electric": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/fan_electric.ogg"
+   ],
+   "seconds": 47.5
+  },
+  "server_fans": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/server_fans.ogg"
+   ],
+   "seconds": 26.5
+  },
+  "water_lapping": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/water_lapping.ogg"
+   ],
+   "seconds": 56.5
+  },
+  "water_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/water_far.ogg"
+   ],
+   "seconds": 56.5
+  },
+  "river": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/river.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "fountain": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/fountain.ogg"
+   ],
+   "seconds": 67.5
+  },
+  "birds_suburb": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/birds_suburb.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "countryside": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/countryside.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "sparrows": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/sparrows.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "chickens": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/chickens.ogg"
+   ],
+   "seconds": 39.5
+  },
+  "playground": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/playground.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "playground_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/playground_far.ogg"
+   ],
+   "seconds": 67.5
+  },
+  "school_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/school_far.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "walla_room": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/walla_room.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "walla_muffled": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/walla_muffled.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "walla_small": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/walla_small.ogg"
+   ],
+   "seconds": 25.5
+  },
+  "market": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/market.ogg"
+   ],
+   "seconds": 72.5
+  },
+  "city_morning": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/city_morning.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "city_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/city_far.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "street_muffled": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/street_muffled.ogg"
+   ],
+   "seconds": 54.5
+  },
+  "town_square": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/town_square.ogg"
+   ],
+   "seconds": 54.5
+  },
+  "lobby": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/lobby.ogg"
+   ],
+   "seconds": 57.5
+  },
+  "tourists": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/tourists.ogg"
+   ],
+   "seconds": 30.47
+  },
+  "cable_car_hum": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/cable_car_hum.ogg"
+   ],
+   "seconds": 62.5
+  },
+  "cable_car_far": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/cable_car_far.ogg"
+   ],
+   "seconds": 62.5
+  },
+  "cabin_interior": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/cabin_interior.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "funicular": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/funicular.ogg"
+   ],
+   "seconds": 57.5
+  },
+  "tape_hiss": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/tape_hiss.ogg"
+   ],
+   "seconds": 46.5
+  },
+  "underpass": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/underpass.ogg"
+   ],
+   "seconds": 75.5
+  },
+  "kettle_glass": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/kettle_glass.ogg"
+   ],
+   "seconds": 57.5
+  },
+  "teletype": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/teletype.ogg"
+   ],
+   "seconds": 75.5
+  },
+  "tram_city": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/tram_city.ogg"
+   ],
+   "seconds": 77.5
+  },
+  "projector": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/projector.ogg"
+   ],
+   "seconds": 35.5
+  },
+  "drip_room": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/drip_room.ogg"
+   ],
+   "seconds": 35.5
+  },
+  "room_tone": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/room_tone.ogg"
+   ],
+   "seconds": 37.5
+  },
+  "slow_pulse": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/slow_pulse.ogg"
+   ],
+   "seconds": 24.0
+  },
+  "instrument_pulse": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/instrument_pulse.ogg"
+   ],
+   "seconds": 16.0
+  },
+  "morse": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/morse.ogg"
+   ],
+   "seconds": 37.5
+  },
+  "four_tones": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/four_tones.ogg"
+   ],
+   "seconds": 16.0
+  },
+  "drum_loop_muffled": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/drum_loop_muffled.ogg"
+   ],
+   "seconds": 20.0
+  },
+  "valve_clicks": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/valve_clicks.ogg"
+   ],
+   "seconds": 24.0
+  },
+  "radio_1982": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/radio_1982.ogg"
+   ],
+   "seconds": 106.43
+  },
+  "radio_1995": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/radio_1995.ogg"
+   ],
+   "seconds": 109.71
+  },
+  "radio_2020": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/radio_2020.ogg"
+   ],
+   "seconds": 90.0
+  },
+  "accordion_busker": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/accordion_busker.ogg"
+   ],
+   "seconds": 109.4
+  },
+  "video_quiet": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/video_quiet.ogg"
+   ],
+   "seconds": 93.33
+  },
+  "phone_call_laptop": {
+   "kind": "loop",
+   "files": [
+    "ambience/beds/phone_call_laptop.ogg"
+   ],
+   "seconds": 17.2
+  },
+  "dog_bark": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/dog_bark_1.ogg",
+    "ambience/spots/dog_bark_2.ogg",
+    "ambience/spots/dog_bark_3.ogg",
+    "ambience/spots/dog_bark_4.ogg"
+   ]
+  },
+  "van_reverse": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/van_reverse_1.ogg"
+   ]
+  },
+  "bag_rustle": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/bag_rustle_1.ogg"
+   ]
+  },
+  "pen_writing": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/pen_writing_1.ogg"
+   ]
+  },
+  "shop_bell": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/shop_bell_1.ogg",
+    "ambience/spots/shop_bell_2.ogg"
+   ]
+  },
+  "doorbell_two_tone": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/doorbell_two_tone_1.ogg",
+    "ambience/spots/doorbell_two_tone_2.ogg"
+   ]
+  },
+  "phone_speaker": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/phone_speaker_1.ogg",
+    "ambience/spots/phone_speaker_2.ogg",
+    "ambience/spots/phone_speaker_3.ogg"
+   ]
+  },
+  "phone_vibrate": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/phone_vibrate_1.ogg"
+   ]
+  },
+  "bus_pass": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/bus_pass_1.ogg"
+   ]
+  },
+  "bicycle_bell": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/bicycle_bell_1.ogg"
+   ]
+  },
+  "bike_pass": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/bike_pass_1.ogg"
+   ]
+  },
+  "floor_creak": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/floor_creak_1.ogg",
+    "ambience/spots/floor_creak_2.ogg",
+    "ambience/spots/floor_creak_3.ogg",
+    "ambience/spots/floor_creak_4.ogg",
+    "ambience/spots/floor_creak_5.ogg"
+   ]
+  },
+  "metal_shimmer": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/metal_shimmer_1.ogg"
+   ]
+  },
+  "ball_bounce": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/ball_bounce_1.ogg"
+   ]
+  },
+  "footsteps_reverb": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/footsteps_reverb_1.ogg",
+    "ambience/spots/footsteps_reverb_2.ogg"
+   ]
+  },
+  "keys": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/keys_1.ogg"
+   ]
+  },
+  "chalk": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/chalk_1.ogg",
+    "ambience/spots/chalk_2.ogg"
+   ]
+  },
+  "kids_whisper": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/kids_whisper_1.ogg",
+    "ambience/spots/kids_whisper_2.ogg",
+    "ambience/spots/kids_whisper_3.ogg"
+   ]
+  },
+  "cupboard_creak": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/cupboard_creak_1.ogg",
+    "ambience/spots/cupboard_creak_2.ogg"
+   ]
+  },
+  "metal_tone": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/metal_tone_1.ogg",
+    "ambience/spots/metal_tone_2.ogg"
+   ]
+  },
+  "whistle_far": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/whistle_far_1.ogg"
+   ]
+  },
+  "kids_laugh": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/kids_laugh_1.ogg"
+   ]
+  },
+  "newspaper": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/newspaper_1.ogg"
+   ]
+  },
+  "blind_rattle": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/blind_rattle_1.ogg",
+    "ambience/spots/blind_rattle_2.ogg",
+    "ambience/spots/blind_rattle_3.ogg"
+   ]
+  },
+  "spring": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/spring_1.ogg"
+   ]
+  },
+  "coins": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/coins_1.ogg",
+    "ambience/spots/coins_2.ogg",
+    "ambience/spots/coins_3.ogg"
+   ]
+  },
+  "drawer": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/drawer_1.ogg",
+    "ambience/spots/drawer_2.ogg",
+    "ambience/spots/drawer_3.ogg",
+    "ambience/spots/drawer_4.ogg"
+   ]
+  },
+  "metal_drawer": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/metal_drawer_1.ogg",
+    "ambience/spots/metal_drawer_2.ogg",
+    "ambience/spots/metal_drawer_3.ogg"
+   ]
+  },
+  "stamp": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/stamp_1.ogg"
+   ]
+  },
+  "scissors": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/scissors_1.ogg",
+    "ambience/spots/scissors_2.ogg",
+    "ambience/spots/scissors_3.ogg",
+    "ambience/spots/scissors_4.ogg"
+   ]
+  },
+  "sewing_machine": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/sewing_machine_1.ogg",
+    "ambience/spots/sewing_machine_2.ogg",
+    "ambience/spots/sewing_machine_3.ogg"
+   ]
+  },
+  "cassette_click": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/cassette_click_1.ogg",
+    "ambience/spots/cassette_click_2.ogg",
+    "ambience/spots/cassette_click_3.ogg",
+    "ambience/spots/cassette_click_4.ogg"
+   ]
+  },
+  "skateboard": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/skateboard_1.ogg"
+   ]
+  },
+  "ship_horn": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/ship_horn_1.ogg"
+   ]
+  },
+  "steam_train": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/steam_train_1.ogg",
+    "ambience/spots/steam_train_2.ogg"
+   ]
+  },
+  "tram_bell": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/tram_bell_1.ogg"
+   ]
+  },
+  "tram_pass": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/tram_pass_1.ogg",
+    "ambience/spots/tram_pass_2.ogg"
+   ]
+  },
+  "tram_brakes": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/tram_brakes_1.ogg",
+    "ambience/spots/tram_brakes_2.ogg"
+   ]
+  },
+  "piano_tuning": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/piano_tuning_1.ogg"
+   ]
+  },
+  "footsteps_wood": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/footsteps_wood_1.ogg",
+    "ambience/spots/footsteps_wood_2.ogg"
+   ]
+  },
+  "handcart": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/handcart_1.ogg",
+    "ambience/spots/handcart_2.ogg"
+   ]
+  },
+  "door_creak": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/door_creak_1.ogg",
+    "ambience/spots/door_creak_2.ogg"
+   ]
+  },
+  "file_rasp": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/file_rasp_1.ogg"
+   ]
+  },
+  "pencil": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/pencil_1.ogg",
+    "ambience/spots/pencil_2.ogg",
+    "ambience/spots/pencil_3.ogg"
+   ]
+  },
+  "metal_chord": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/metal_chord_1.ogg"
+   ]
+  },
+  "suitcase": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/suitcase_1.ogg"
+   ]
+  },
+  "cups": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/cups_1.ogg",
+    "ambience/spots/cups_2.ogg",
+    "ambience/spots/cups_3.ogg",
+    "ambience/spots/cups_4.ogg"
+   ]
+  },
+  "page_turn": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/page_turn_1.ogg"
+   ]
+  },
+  "ticket_print": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/ticket_print_1.ogg"
+   ]
+  },
+  "door_chime": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/door_chime_1.ogg"
+   ]
+  },
+  "banner_flap": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/banner_flap_1.ogg",
+    "ambience/spots/banner_flap_2.ogg"
+   ]
+  },
+  "mop": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/mop_1.ogg"
+   ]
+  },
+  "cart_squeak": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/cart_squeak_1.ogg"
+   ]
+  },
+  "glass_jars": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/glass_jars_1.ogg",
+    "ambience/spots/glass_jars_2.ogg",
+    "ambience/spots/glass_jars_3.ogg",
+    "ambience/spots/glass_jars_4.ogg"
+   ]
+  },
+  "sack": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/sack_1.ogg",
+    "ambience/spots/sack_2.ogg",
+    "ambience/spots/sack_3.ogg"
+   ]
+  },
+  "wood_knock": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/wood_knock_1.ogg",
+    "ambience/spots/wood_knock_2.ogg"
+   ]
+  },
+  "wood_jostle": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/wood_jostle_1.ogg",
+    "ambience/spots/wood_jostle_2.ogg",
+    "ambience/spots/wood_jostle_3.ogg"
+   ]
+  },
+  "hiking_steps": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/hiking_steps_1.ogg",
+    "ambience/spots/hiking_steps_2.ogg"
+   ]
+  },
+  "phone_ring": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/phone_ring_1.ogg"
+   ]
+  },
+  "pa_chime": {
+   "kind": "spot",
+   "files": [
+    "ambience/spots/pa_chime_1.ogg"
+   ]
+  }
+ },
+ "rooms": {
+  "S01": {
+   "layers": [
+    {
+     "sound": "clock_wall",
+     "db": 0
+    },
+    {
+     "sound": "lawnmower_far",
+     "db": -9
+    },
+    {
+     "sound": "radio_2020",
+     "db": -14
+    }
+   ]
+  },
+  "S02": {
+   "layers": [
+    {
+     "sound": "leaves_wind",
+     "db": 0
+    },
+    {
+     "sound": "birds_suburb",
+     "db": -8
+    },
+    {
+     "sound": "dog_bark",
+     "db": -8,
+     "every": [
+      10,
+      26
+     ],
+     "x": [
+      100,
+      700
+     ]
+    },
+    {
+     "sound": "van_reverse",
+     "db": -16,
+     "every": [
+      30,
+      60
+     ]
+    }
+   ]
+  },
+  "S03": {
+   "layers": [
+    {
+     "sound": "walla_room",
+     "db": -4
+    },
+    {
+     "sound": "wind_soft",
+     "db": -16
+    },
+    {
+     "sound": "bag_rustle",
+     "db": -6,
+     "every": [
+      6,
+      14
+     ]
+    },
+    {
+     "sound": "pen_writing",
+     "db": -10,
+     "every": [
+      10,
+      22
+     ]
+    }
+   ]
+  },
+  "S04": {
+   "layers": [
+    {
+     "sound": "fridge_hum",
+     "db": -5
+    },
+    {
+     "sound": "birds_suburb",
+     "db": -14
+    },
+    {
+     "sound": "shop_bell",
+     "db": -9,
+     "every": [
+      18,
+      40
+     ]
+    }
+   ]
+  },
+  "S05": {
+   "layers": [
+    {
+     "sound": "leaves_wind",
+     "db": 0
+    },
+    {
+     "sound": "birds_suburb",
+     "db": -12
+    },
+    {
+     "sound": "doorbell_two_tone",
+     "db": -16,
+     "every": [
+      45,
+      90
+     ]
+    }
+   ]
+  },
+  "S06": {
+   "layers": [
+    {
+     "sound": "leaves_wind",
+     "db": -3
+    },
+    {
+     "sound": "kettle_glass",
+     "db": -18
+    },
+    {
+     "sound": "phone_speaker",
+     "db": -12,
+     "every": [
+      8,
+      18
+     ]
+    }
+   ]
+  },
+  "S07": {
+   "layers": [
+    {
+     "sound": "wind_soft",
+     "db": 0
+    },
+    {
+     "sound": "bus_pass",
+     "db": -10,
+     "every": [
+      22,
+      45
+     ]
+    },
+    {
+     "sound": "phone_vibrate",
+     "db": -14,
+     "every": [
+      25,
+      55
+     ]
+    }
+   ]
+  },
+  "S08": {
+   "layers": [
+    {
+     "sound": "water_lapping",
+     "db": -2
+    },
+    {
+     "sound": "birds_suburb",
+     "db": -6
+    },
+    {
+     "sound": "bike_pass",
+     "db": -10,
+     "every": [
+      22,
+      45
+     ]
+    },
+    {
+     "sound": "bicycle_bell",
+     "db": -14,
+     "every": [
+      35,
+      75
+     ]
+    }
+   ]
+  },
+  "S09": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -8
+    },
+    {
+     "sound": "floor_creak",
+     "db": -6,
+     "every": [
+      6,
+      15
+     ]
+    },
+    {
+     "sound": "metal_shimmer",
+     "db": -12,
+     "every": [
+      15,
+      30
+     ]
+    }
+   ]
+  },
+  "S10": {
+   "layers": [
+    {
+     "sound": "transformer_hum",
+     "db": -6
+    },
+    {
+     "sound": "slow_pulse",
+     "db": -8
+    }
+   ]
+  },
+  "S11": {
+   "layers": [
+    {
+     "sound": "city_morning",
+     "db": 0
+    },
+    {
+     "sound": "tram_bell",
+     "db": -8,
+     "every": [
+      15,
+      35
+     ]
+    },
+    {
+     "sound": "tram_pass",
+     "db": -6,
+     "every": [
+      35,
+      70
+     ]
+    }
+   ]
+  },
+  "S12": {
+   "layers": [
+    {
+     "sound": "sparrows",
+     "db": -4
+    },
+    {
+     "sound": "playground_far",
+     "db": -6
+    },
+    {
+     "sound": "ball_bounce",
+     "db": -12,
+     "every": [
+      8,
+      20
+     ]
+    }
+   ]
+  },
+  "S13": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -8
+    },
+    {
+     "sound": "school_far",
+     "db": -10
+    },
+    {
+     "sound": "footsteps_reverb",
+     "db": -8,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "keys",
+     "db": -10,
+     "every": [
+      15,
+      35
+     ]
+    }
+   ]
+  },
+  "S14": {
+   "layers": [
+    {
+     "sound": "clock_wall",
+     "db": -8
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "kids_whisper",
+     "db": -12,
+     "every": [
+      15,
+      30
+     ]
+    },
+    {
+     "sound": "chalk",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S15": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -8
+    },
+    {
+     "sound": "cupboard_creak",
+     "db": -10,
+     "every": [
+      15,
+      35
+     ]
+    },
+    {
+     "sound": "metal_tone",
+     "db": -12,
+     "every": [
+      12,
+      30
+     ]
+    }
+   ]
+  },
+  "S16": {
+   "layers": [
+    {
+     "sound": "tape_hiss",
+     "db": -6
+    },
+    {
+     "sound": "school_far",
+     "db": -14
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    }
+   ]
+  },
+  "S17": {
+   "layers": [
+    {
+     "sound": "playground",
+     "db": 0
+    },
+    {
+     "sound": "kids_laugh",
+     "db": -8,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "ball_bounce",
+     "db": -8,
+     "every": [
+      6,
+      15
+     ]
+    },
+    {
+     "sound": "whistle_far",
+     "db": -14,
+     "every": [
+      25,
+      60
+     ]
+    }
+   ]
+  },
+  "S18": {
+   "layers": [
+    {
+     "sound": "city_morning",
+     "db": -8
+    },
+    {
+     "sound": "radio_1995",
+     "db": -10
+    },
+    {
+     "sound": "newspaper",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "blind_rattle",
+     "db": -12,
+     "every": [
+      20,
+      45
+     ]
+    }
+   ]
+  },
+  "S19": {
+   "layers": [
+    {
+     "sound": "city_far",
+     "db": -8
+    },
+    {
+     "sound": "accordion_busker",
+     "db": -10
+    },
+    {
+     "sound": "tram_pass",
+     "db": -6,
+     "every": [
+      40,
+      80
+     ]
+    },
+    {
+     "sound": "tram_bell",
+     "db": -12,
+     "every": [
+      25,
+      60
+     ]
+    }
+   ]
+  },
+  "S20": {
+   "layers": [
+    {
+     "sound": "radio_1995",
+     "db": -8
+    },
+    {
+     "sound": "fan_electric",
+     "db": -8
+    },
+    {
+     "sound": "spring",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S21": {
+   "layers": [
+    {
+     "sound": "town_square",
+     "db": 0
+    },
+    {
+     "sound": "bus_pass",
+     "db": -10,
+     "every": [
+      20,
+      40
+     ]
+    },
+    {
+     "sound": "coins",
+     "db": -12,
+     "every": [
+      10,
+      30
+     ]
+    }
+   ]
+  },
+  "S22": {
+   "layers": [
+    {
+     "sound": "street_muffled",
+     "db": -10
+    },
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "page_turn",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "shop_bell",
+     "db": -12,
+     "every": [
+      30,
+      60
+     ]
+    }
+   ]
+  },
+  "S23": {
+   "layers": [
+    {
+     "sound": "clock_wall",
+     "db": -8
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "drawer",
+     "db": -10,
+     "every": [
+      12,
+      30
+     ]
+    },
+    {
+     "sound": "stamp",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S24": {
+   "layers": [
+    {
+     "sound": "drip_room",
+     "db": -8
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "scissors",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S25": {
+   "layers": [
+    {
+     "sound": "market",
+     "db": 0
+    },
+    {
+     "sound": "coins",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "tram_pass",
+     "db": -14,
+     "every": [
+      40,
+      80
+     ]
+    }
+   ]
+  },
+  "S26": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "sewing_machine",
+     "db": -8,
+     "every": [
+      6,
+      16
+     ]
+    },
+    {
+     "sound": "scissors",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S27": {
+   "layers": [
+    {
+     "sound": "drum_loop_muffled",
+     "db": -6
+    },
+    {
+     "sound": "tape_hiss",
+     "db": -16
+    },
+    {
+     "sound": "cassette_click",
+     "db": -10,
+     "every": [
+      20,
+      40
+     ]
+    }
+   ]
+  },
+  "S28": {
+   "layers": [
+    {
+     "sound": "underpass",
+     "db": 0
+    },
+    {
+     "sound": "footsteps_reverb",
+     "db": -8,
+     "every": [
+      8,
+      18
+     ]
+    },
+    {
+     "sound": "skateboard",
+     "db": -8,
+     "every": [
+      20,
+      45
+     ]
+    }
+   ]
+  },
+  "S29": {
+   "layers": [
+    {
+     "sound": "fan_electric",
+     "db": -6
+    },
+    {
+     "sound": "morse",
+     "db": -10
+    }
+   ]
+  },
+  "S30": {
+   "layers": [
+    {
+     "sound": "river",
+     "db": 0
+    },
+    {
+     "sound": "instrument_pulse",
+     "db": -14
+    },
+    {
+     "sound": "ship_horn",
+     "db": -14,
+     "every": [
+      60,
+      120
+     ]
+    }
+   ]
+  },
+  "S31": {
+   "layers": [
+    {
+     "sound": "countryside",
+     "db": -4
+    },
+    {
+     "sound": "clock_wall",
+     "db": -12
+    },
+    {
+     "sound": "steam_train",
+     "db": -8,
+     "every": [
+      40,
+      80
+     ]
+    }
+   ]
+  },
+  "S32": {
+   "layers": [
+    {
+     "sound": "countryside",
+     "db": -2
+    },
+    {
+     "sound": "chickens",
+     "db": -8
+    },
+    {
+     "sound": "bicycle_bell",
+     "db": -10,
+     "every": [
+      20,
+      45
+     ]
+    }
+   ]
+  },
+  "S33": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "teletype",
+     "db": -12
+    },
+    {
+     "sound": "stamp",
+     "db": -6,
+     "every": [
+      8,
+      18
+     ]
+    },
+    {
+     "sound": "pen_writing",
+     "db": -10,
+     "every": [
+      10,
+      20
+     ]
+    }
+   ]
+  },
+  "S34": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "piano_tuning",
+     "db": -8,
+     "every": [
+      4,
+      9
+     ]
+    },
+    {
+     "sound": "footsteps_wood",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S35": {
+   "layers": [
+    {
+     "sound": "chickens",
+     "db": -6
+    },
+    {
+     "sound": "countryside",
+     "db": -10
+    },
+    {
+     "sound": "handcart",
+     "db": -10,
+     "every": [
+      25,
+      50
+     ]
+    },
+    {
+     "sound": "door_creak",
+     "db": -10,
+     "every": [
+      20,
+      45
+     ]
+    }
+   ]
+  },
+  "S36": {
+   "layers": [
+    {
+     "sound": "clocks_many",
+     "db": 0
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "file_rasp",
+     "db": -12,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S37": {
+   "layers": [
+    {
+     "sound": "countryside",
+     "db": -2
+    },
+    {
+     "sound": "leaves_wind",
+     "db": -4
+    },
+    {
+     "sound": "pencil",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S38": {
+   "layers": [
+    {
+     "sound": "wind_soft",
+     "db": -10
+    },
+    {
+     "sound": "drip_room",
+     "db": -8
+    },
+    {
+     "sound": "valve_clicks",
+     "db": -10
+    }
+   ]
+  },
+  "S39": {
+   "layers": [
+    {
+     "sound": "fan_electric",
+     "db": -8
+    },
+    {
+     "sound": "metal_chord",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    },
+    {
+     "sound": "pencil",
+     "db": -12,
+     "every": [
+      15,
+      30
+     ]
+    }
+   ]
+  },
+  "S40": {
+   "layers": [
+    {
+     "sound": "wind_attic",
+     "db": -4
+    },
+    {
+     "sound": "floor_creak",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S41": {
+   "layers": [
+    {
+     "sound": "cable_car_hum",
+     "db": -4
+    },
+    {
+     "sound": "tourists",
+     "db": -8
+    },
+    {
+     "sound": "leaves_wind",
+     "db": -10
+    }
+   ]
+  },
+  "S42": {
+   "layers": [
+    {
+     "sound": "fountain",
+     "db": -8
+    },
+    {
+     "sound": "tourists",
+     "db": -14
+    },
+    {
+     "sound": "suitcase",
+     "db": -8,
+     "every": [
+      12,
+      25
+     ]
+    },
+    {
+     "sound": "door_creak",
+     "db": -14,
+     "every": [
+      20,
+      40
+     ]
+    }
+   ]
+  },
+  "S43": {
+   "layers": [
+    {
+     "sound": "lobby",
+     "db": -4
+    },
+    {
+     "sound": "ventilation",
+     "db": -12
+    },
+    {
+     "sound": "cups",
+     "db": -10,
+     "every": [
+      8,
+      18
+     ]
+    }
+   ]
+  },
+  "S44": {
+   "layers": [
+    {
+     "sound": "ventilation",
+     "db": -12
+    },
+    {
+     "sound": "video_quiet",
+     "db": -16
+    },
+    {
+     "sound": "page_turn",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S45": {
+   "layers": [
+    {
+     "sound": "water_lapping",
+     "db": -4
+    },
+    {
+     "sound": "leaves_wind",
+     "db": -4
+    },
+    {
+     "sound": "hiking_steps",
+     "db": -10,
+     "every": [
+      15,
+      35
+     ]
+    }
+   ]
+  },
+  "S46": {
+   "layers": [
+    {
+     "sound": "walla_small",
+     "db": -8
+    },
+    {
+     "sound": "ticket_print",
+     "db": -8,
+     "every": [
+      15,
+      30
+     ]
+    },
+    {
+     "sound": "door_chime",
+     "db": -12,
+     "every": [
+      25,
+      50
+     ]
+    }
+   ]
+  },
+  "S47": {
+   "layers": [
+    {
+     "sound": "wind_window",
+     "db": -6
+    },
+    {
+     "sound": "cable_car_far",
+     "db": -14
+    },
+    {
+     "sound": "projector",
+     "db": -10
+    }
+   ]
+  },
+  "S48": {
+   "layers": [
+    {
+     "sound": "server_fans",
+     "db": -6
+    },
+    {
+     "sound": "wind_window",
+     "db": -14
+    }
+   ]
+  },
+  "S49": {
+   "layers": [
+    {
+     "sound": "four_tones",
+     "db": -10
+    },
+    {
+     "sound": "wind_window",
+     "db": -12
+    }
+   ]
+  },
+  "S50": {
+   "layers": [
+    {
+     "sound": "wind_mountain",
+     "db": -2
+    },
+    {
+     "sound": "tourists",
+     "db": -12
+    }
+   ]
+  },
+  "S51": {
+   "layers": [
+    {
+     "sound": "tram_city",
+     "db": -4
+    },
+    {
+     "sound": "walla_muffled",
+     "db": -12
+    }
+   ]
+  },
+  "S52": {
+   "layers": [
+    {
+     "sound": "wind_soft",
+     "db": -4
+    },
+    {
+     "sound": "city_far",
+     "db": -10
+    }
+   ]
+  },
+  "S53": {
+   "layers": [
+    {
+     "sound": "fluorescent_hum",
+     "db": -6
+    },
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "phone_ring",
+     "db": -14,
+     "every": [
+      30,
+      60
+     ]
+    }
+   ]
+  },
+  "S54": {
+   "layers": [
+    {
+     "sound": "ventilation",
+     "db": -6
+    },
+    {
+     "sound": "phone_call_laptop",
+     "db": -14
+    }
+   ]
+  },
+  "S55": {
+   "layers": [
+    {
+     "sound": "wind_soft",
+     "db": 0
+    },
+    {
+     "sound": "leaves_wind",
+     "db": -4,
+     "after": "E10"
+    },
+    {
+     "sound": "birds_suburb",
+     "db": -6,
+     "after": "E10"
+    }
+   ]
+  },
+  "S56": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "phone_vibrate",
+     "db": -12,
+     "every": [
+      25,
+      50
+     ]
+    },
+    {
+     "sound": "wood_knock",
+     "db": -10,
+     "every": [
+      10,
+      20
+     ]
+    }
+   ]
+  },
+  "S57": {
+   "layers": [
+    {
+     "sound": "city_far",
+     "db": -10
+    },
+    {
+     "sound": "wind_soft",
+     "db": -12
+    },
+    {
+     "sound": "radio_1982",
+     "db": -10
+    },
+    {
+     "sound": "tram_brakes",
+     "db": -8,
+     "every": [
+      30,
+      60
+     ]
+    }
+   ]
+  },
+  "S58": {
+   "layers": [
+    {
+     "sound": "sparrows",
+     "db": -4
+    },
+    {
+     "sound": "school_far",
+     "db": -10
+    },
+    {
+     "sound": "banner_flap",
+     "db": -10,
+     "every": [
+      10,
+      20
+     ]
+    }
+   ]
+  },
+  "S59": {
+   "layers": [
+    {
+     "sound": "school_far",
+     "db": -14
+    },
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "footsteps_reverb",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "mop",
+     "db": -10,
+     "every": [
+      15,
+      30
+     ]
+    },
+    {
+     "sound": "pa_chime",
+     "db": -16,
+     "every": [
+      45,
+      90
+     ]
+    }
+   ]
+  },
+  "S60": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -12
+    },
+    {
+     "sound": "radio_1982",
+     "db": -12
+    },
+    {
+     "sound": "chalk",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    },
+    {
+     "sound": "newspaper",
+     "db": -14,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S61": {
+   "layers": [
+    {
+     "sound": "wind_soft",
+     "db": -2
+    },
+    {
+     "sound": "cart_squeak",
+     "db": -10,
+     "every": [
+      25,
+      50
+     ]
+    },
+    {
+     "sound": "ball_bounce",
+     "db": -14,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S62": {
+   "layers": [
+    {
+     "sound": "radio_1982",
+     "db": -14
+    },
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "glass_jars",
+     "db": -12,
+     "every": [
+      12,
+      25
+     ]
+    },
+    {
+     "sound": "door_creak",
+     "db": -12,
+     "every": [
+      25,
+      50
+     ]
+    }
+   ]
+  },
+  "S63": {
+   "layers": [
+    {
+     "sound": "clock_wall",
+     "db": -6
+    },
+    {
+     "sound": "room_tone",
+     "db": -10
+    }
+   ]
+  },
+  "S64": {
+   "layers": [
+    {
+     "sound": "radio_1982",
+     "db": -12
+    },
+    {
+     "sound": "file_rasp",
+     "db": -10,
+     "every": [
+      10,
+      20
+     ]
+    },
+    {
+     "sound": "wood_knock",
+     "db": -10,
+     "every": [
+      10,
+      25
+     ]
+    }
+   ]
+  },
+  "S65": {
+   "layers": [
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "stamp",
+     "db": -8,
+     "every": [
+      10,
+      20
+     ]
+    },
+    {
+     "sound": "metal_drawer",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    },
+    {
+     "sound": "newspaper",
+     "db": -12,
+     "every": [
+      15,
+      30
+     ]
+    }
+   ]
+  },
+  "S66": {
+   "layers": [
+    {
+     "sound": "water_far",
+     "db": -14
+    },
+    {
+     "sound": "room_tone",
+     "db": -10
+    },
+    {
+     "sound": "sack",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    },
+    {
+     "sound": "wood_jostle",
+     "db": -12,
+     "every": [
+      15,
+      30
+     ]
+    }
+   ]
+  },
+  "S67": {
+   "layers": [
+    {
+     "sound": "funicular",
+     "db": -4
+    },
+    {
+     "sound": "wind_mountain",
+     "db": -8
+    },
+    {
+     "sound": "hiking_steps",
+     "db": -10,
+     "every": [
+      12,
+      25
+     ]
+    }
+   ]
+  },
+  "S68": {
+   "layers": [
+    {
+     "sound": "cabin_interior",
+     "db": -4
+    },
+    {
+     "sound": "wind_window",
+     "db": -12
+    },
+    {
+     "sound": "walla_small",
+     "db": -14
+    }
+   ]
+  }
+ }
+}

@@ -385,8 +385,10 @@ public partial class Room : Node2D
         if (!layers.TryGetValue("prop_state_variants", out var layer)) return;
         var state = GameRuntime.Instance.State;
         var patches = Overrides.StatePatches.Where(p => p.After.All(state.IsDone) && !p.Until.Any(state.IsDone)).ToList();
+        // Blockout rooms also list their active causal effects (dev aid until the art shows them).
+        var causal = HasBackgroundArt ? new List<LastBell.Core.Rules.ActiveCausalEffect>() : view.CausalEffects.Where(c => !c.DeferredUntilReentry).ToList();
         string signature = string.Join("|", view.VariantLayers.Where(v => v.Visible).Select(v => v.Layer.Asset)) + "#" +
-                           string.Join("|", patches.Select(p => p.Texture));
+                           string.Join("|", patches.Select(p => p.Texture)) + "#" + string.Join("|", causal.Select(c => c.Index));
         if (signature == variantSignature) return;
         variantSignature = signature;
         foreach (var child in layer.GetChildren()) child.QueueFree();
@@ -398,6 +400,15 @@ public partial class Room : Node2D
                 layer.AddChild(FitSprite(texture, System.IO.Path.GetFileNameWithoutExtension(variant.Layer.Asset)));
             else
                 layer.AddChild(new DevVariantMarker { AssetName = variant.Layer.Asset, Index = index++ });
+        }
+        foreach (var effect in causal)
+        {
+            layer.AddChild(new DevVariantMarker
+            {
+                Index = index,
+                Text = TextService.Ui("ui.dev.causal_active", ("after", effect.Effect.After), ("change", effect.Effect.Change)),
+            });
+            index += 2;
         }
         // art_overrides.json state patches (props the hero changed himself, e.g. a bag taken off a shelf).
         foreach (var patch in patches)

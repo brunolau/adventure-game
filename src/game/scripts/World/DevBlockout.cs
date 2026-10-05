@@ -107,13 +107,23 @@ public partial class DevVariantMarker : Node2D
     /// <summary>Stack index (markers are listed top-right).</summary>
     public int Index { get; set; }
 
+    /// <summary>Text to show instead of the missing-asset line (e.g. an active causal effect).</summary>
+    public string? Text { get; set; }
+
     /// <inheritdoc />
     public override void _Draw()
     {
         var font = ThemeDB.FallbackFont;
-        string text = TextService.Ui("ui.dev.variant_missing", ("asset", AssetName));
+        string text = Text ?? TextService.Ui("ui.dev.variant_missing", ("asset", AssetName));
         var pos = new Vector2(1900 - 640, 40 + Index * 30);
-        DrawRect(new Rect2(pos - new Vector2(8, 22), new Vector2(648, 28)), new Color(0.2f, 0.1f, 0.3f, 0.7f));
-        DrawString(font, pos, text, HorizontalAlignment.Left, 630, 18, new Color(1f, 0.85f, 1f));
+        if (Text is null)
+        {
+            DrawRect(new Rect2(pos - new Vector2(8, 22), new Vector2(648, 28)), new Color(0.2f, 0.1f, 0.3f, 0.7f));
+            DrawString(font, pos, text, HorizontalAlignment.Left, 630, 18, new Color(1f, 0.85f, 1f));
+            return;
+        }
+        // A causal-effect note takes two rows (Room advances the index by 2).
+        DrawRect(new Rect2(pos - new Vector2(8, 22), new Vector2(648, 58)), new Color(0.05f, 0.22f, 0.25f, 0.75f));
+        DrawMultilineString(font, pos - new Vector2(0, 2), text, HorizontalAlignment.Left, 630, 15, 2, new Color(0.8f, 1f, 0.95f));
     }
 }
