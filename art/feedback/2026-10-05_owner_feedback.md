@@ -48,3 +48,13 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
   comes from a friend's hard drive and the friend **allowed its use** → may be used **directly** as a reference image
   input for S07. Credit: "reference photo: a friend of the product owner, used with permission" (no name). It stays
   local (not redistributed in the public repo) unless the owner asks otherwise.
+
+## Update 2026-10-06 (owner): new S41 references
+
+- `imgur_TXI6i3E.jpg` and `imgur_8l08ndF.jpg` (Biela Púť: access road with the wooden bridge railing, gondola pylon,
+  Hotel Pošta chalet and the gondola station; summer): the owner states they come from **another friend's private
+  archive, used with permission** → may be used **directly** as reference image inputs for S41 (painted in winter).
+  Credit: "reference photos: a friend of the product owner, used with permission" (no name). Kept local only.
+- S41 must look like that real view: road leading in with the wooden bridge railing on the left, the steel pylon and
+  rope overhead, the gondola station building, the Hotel Pošta chalet in the middle distance, spruces, the rocky slope
+  with the stone retaining wall on the right — in WINTER (owner decision: Jasná is winter).
