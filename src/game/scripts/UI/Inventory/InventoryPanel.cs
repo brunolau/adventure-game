@@ -31,7 +31,6 @@ public partial class InventoryPanel : Control
     private ItemIcon detailIcon = null!;
     private Label detailName = null!;
     private Label detailLook = null!;
-    private Label detailPurpose = null!;
     private Label detailHint = null!;
     private Button selectButton = null!;
     private Button lookButton = null!;
@@ -66,11 +65,9 @@ public partial class InventoryPanel : Control
         head.AddChild(detailName);
         d.AddChild(head);
         detailLook = Ui.Para("", "ItalicLabel");
-        detailPurpose = Ui.Para("", "CaptionLabel");
         detailHint = Ui.Para("", "CaptionLabel");
         detailHint.AddThemeColorOverride("font_color", UiTheme.Focus);
         d.AddChild(detailLook);
-        d.AddChild(detailPurpose);
         d.AddChild(detailHint);
         var actions = Ui.HBox(10);
         selectButton = Ui.Button(Ui.T("ui.inventory.select"), OnSelectButton);
@@ -257,9 +254,7 @@ public partial class InventoryPanel : Control
         detailIcon.SetItem(view.Icon, name, view.IsArchived);
         detailName.Text = name;
         detailLook.Text = TextService.Get(view.Look);
-        string purpose = TextService.Get(view.Purpose);
-        detailPurpose.Text = purpose.Length > 0 ? Ui.T("ui.inventory.purpose", ("purpose", purpose)) : "";
-        detailPurpose.Visible = purpose.Length > 0;
+        // items[].purpose is a design note (what the item is for); players see only the name and Adam's look.
         bool somethingSelected = state.SelectedItem is not null;
         detailHint.Text = view.IsSelected ? Ui.T("ui.inventory.combine_hint")
             : somethingSelected ? ""

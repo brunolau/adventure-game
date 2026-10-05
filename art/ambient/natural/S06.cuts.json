@@ -1,0 +1,125 @@
+{
+  "room": "S06",
+  "source": "src/game/assets/bg_natural/S06.webp",
+  "note": "Natural S06 cut-outs (art/tools/ambient_cut.py --natural S06): the geraniums in the kitchen window box, the grapevine on its trellis and the old fruit tree in the back garden (wind sway).",
+  "items": [
+    {
+      "name": "geraniums",
+      "rect": [
+        222,
+        478,
+        336,
+        180
+      ],
+      "rules": [
+        {
+          "hue": [
+            340,
+            12
+          ],
+          "sat": [
+            0.45,
+            1
+          ],
+          "val": [
+            0.35,
+            1
+          ]
+        },
+        {
+          "hue": [
+            60,
+            170
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.15,
+            0.85
+          ]
+        }
+      ],
+      "feather": 0.8
+    },
+    {
+      "name": "vine",
+      "rect": [
+        1455,
+        335,
+        330,
+        185
+      ],
+      "rules": [
+        {
+          "hue": [
+            32,
+            78
+          ],
+          "sat": [
+            0.4,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        },
+        {
+          "hue": [
+            215,
+            295
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.1,
+            0.8
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "tree",
+      "rect": [
+        1560,
+        30,
+        360,
+        390
+      ],
+      "rules": [
+        {
+          "hue": [
+            14,
+            56
+          ],
+          "sat": [
+            0.45,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1455,
+            335
+          ],
+          [
+            1785,
+            580
+          ]
+        ]
+      ],
+      "feather": 1.2
+    }
+  ]
+}

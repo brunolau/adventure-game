@@ -1,0 +1,126 @@
+{
+  "room": "S02",
+  "source": "src/game/assets/bg_natural/S02.webp",
+  "note": "Natural S02 cut-outs (art/tools/ambient_cut.py --natural S02): the yellow birch (left), the orange maple (right) - wind sway layers; a sky mask for drifting clouds.",
+  "items": [
+    {
+      "name": "birch",
+      "rect": [
+        140,
+        40,
+        310,
+        420
+      ],
+      "rules": [
+        {
+          "hue": [
+            34,
+            64
+          ],
+          "sat": [
+            0.4,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        }
+      ],
+      "feather": 1.2
+    },
+    {
+      "name": "maple",
+      "rect": [
+        1580,
+        25,
+        340,
+        345
+      ],
+      "rules": [
+        {
+          "hue": [
+            8,
+            40
+          ],
+          "sat": [
+            0.5,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "feather": 1.2
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        270
+      ],
+      "rules": [
+        {
+          "hue": [
+            180,
+            240
+          ],
+          "sat": [
+            0.08,
+            0.7
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.12
+          ],
+          "val": [
+            0.85,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            720,
+            260
+          ],
+          [
+            1370,
+            290
+          ]
+        ],
+        [
+          [
+            1370,
+            120
+          ],
+          [
+            1920,
+            270
+          ]
+        ]
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        280
+      ],
+      "scale": 0.5
+    }
+  ]
+}

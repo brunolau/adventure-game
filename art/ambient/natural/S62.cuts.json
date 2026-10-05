@@ -1,0 +1,30 @@
+{
+  "room": "S62",
+  "source": "src/game/assets/bg_natural/S62.webp",
+  "note": "Natural S62 cut-outs (art/tools/ambient_cut.py --natural S62): the carpet hanging over the drying rack (hanging sway), the bare linden's branches (dark twigs against the block), the pale December sky as the clouds' mask.",
+  "items": [
+    {
+      "name": "carpet",
+      "rect": [858, 398, 132, 140],
+      "include": [[[862, 402], [988, 536]]],
+      "feather": 0.8,
+      "clean": 0
+    },
+    {
+      "name": "linden_branches",
+      "rect": [1330, 0, 590, 460],
+      "rules": [ { "hue": [0, 45], "sat": [0.15, 1], "val": [0.08, 0.5] } ],
+      "feather": 0.6,
+      "clean": 0
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [0, 0, 660, 320],
+      "rules": [ { "sat": [0, 0.14], "val": [0.78, 1] } ],
+      "include": [[[0, 0], [660, 0], [660, 300], [380, 300], [370, 250], [0, 250]]],
+      "scale": 0.5,
+      "feather": 2
+    }
+  ]
+}

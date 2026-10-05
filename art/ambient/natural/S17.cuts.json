@@ -1,0 +1,169 @@
+{
+  "room": "S17",
+  "source": "src/game/assets/bg_natural/S17.webp",
+  "note": "Natural S17 cut-outs (art/tools/ambient_cut.py --natural S17): the weak linden's sparse crown (base state, before E10), the poplar and the tree tops of the estate above the court fence, and a sky mask for the clouds. The healthy crown after E10 is cut from the variant overlay by art/ambient/natural/S17_variant_cut.py (linden_healthy.webp, explicit pos in the ambient file).",
+  "items": [
+    {
+      "name": "linden_weak",
+      "rect": [
+        480,
+        80,
+        300,
+        352
+      ],
+      "rules": [
+        {
+          "hue": [
+            60,
+            125
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.2,
+            1
+          ]
+        },
+        {
+          "hue": [
+            42,
+            60
+          ],
+          "sat": [
+            0.42,
+            1
+          ],
+          "val": [
+            0.2,
+            0.85
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "poplar",
+      "rect": [
+        1268,
+        50,
+        115,
+        268
+      ],
+      "rules": [
+        {
+          "hue": [
+            45,
+            150
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.15,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "trees_back",
+      "rect": [
+        1380,
+        205,
+        540,
+        112
+      ],
+      "rules": [
+        {
+          "hue": [
+            55,
+            160
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.12,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        200
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.1,
+            1
+          ],
+          "val": [
+            0.55,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.12
+          ],
+          "val": [
+            0.85,
+            1
+          ]
+        }
+      ],
+      "scale": 0.5,
+      "feather": 2,
+      "include": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            132
+          ],
+          [
+            1655,
+            132
+          ],
+          [
+            1655,
+            180
+          ],
+          [
+            1250,
+            168
+          ],
+          [
+            0,
+            68
+          ]
+        ]
+      ]
+    }
+  ]
+}

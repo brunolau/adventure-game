@@ -165,7 +165,8 @@ in parallel batches of 5-10 rooms.
 
 - **Turn it on for players:** in `src/game/project.godot` set `[last_bell] presentation/blocking="natural"`. Only
   rooms that have a `data/blocking/<room>.json` change.
-- **Add a room:**
+- **Add a room:** the complete per-room checklist, schema and commands are in `art/tools/PAINTING.md` "Natural mode"
+  (per-NPC staging, occluders, foreground mask, state overlays, ambient, audio, `derive_era.py` for camera families). Short form:
   1. Write `src/game/data/blocking/<room>.json`.
   2. Write `art/prompts/natural/<room>.txt` and `art/prompts/natural/<room>.sketch.json`.
   3. Run `art/tools/paint_natural.py prompt` and then `paint ... --scope bg_natural/ --budget <usd>`.

@@ -125,6 +125,7 @@ public sealed class AmbientContext
 
     private static JsonObject? manifest;
     private static bool manifestLoaded;
+    private static readonly Dictionary<string, JsonObject?> FolderManifests = new(StringComparer.Ordinal);
 
     /// <summary>
     /// Placement info that art/tools/ambient_cut.py recorded for a cut-out or mask
@@ -141,6 +142,16 @@ public sealed class AmbientContext
         string clean = path.StartsWith(AssetRoot, StringComparison.Ordinal) ? path[AssetRoot.Length..] : path;
         int slash = clean.IndexOf('/');
         if (slash < 0) return null;
+        int last = clean.LastIndexOf('/');
+        if (last > slash)
+        {
+            // A sub-folder with its own manifest, e.g. "S05/natural/vine.webp" -> assets/ambient/S05/natural/manifest.json
+            // (natural re-blocking cut-outs, art/tools/ambient_cut.py --natural; the shared manifest stays the template's).
+            string folder = clean[..last];
+            if (!FolderManifests.TryGetValue(folder, out var local))
+                FolderManifests[folder] = local = Json.Load(AssetRoot + folder + "/manifest.json", warnIfMissing: false);
+            return local.Obj("items").Obj(System.IO.Path.GetFileNameWithoutExtension(clean[(last + 1)..]));
+        }
         string room = clean[..slash];
         string name = System.IO.Path.GetFileNameWithoutExtension(clean[(slash + 1)..]);
         return manifest.Obj("rooms").Obj(room).Obj("items").Obj(name);

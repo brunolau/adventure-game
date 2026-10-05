@@ -267,3 +267,5 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
 5. **Space is hold-to-show, not a toggle:** while Space is held, small round markers appear on all visible
    interactive hotspots (including atmospheric ones) — markers only, no text labels; releasing Space hides them
    (reference: `art/source/owner_refs/ui_cOw4kTJ.png`, local only). Touch: two-finger hold shows them.
+
+**Status 2026-10-05: implemented** (ISSUES INT-08): walk speed x1.25 (Settings: walk speed 100/125/150 %), double click / double tap / double Enter / Shift+Enter skip, hover label at the cursor, painted contextual cursor set (art/ui/cursors, USD 0.12), Space hold-to-show markers (two-finger hold on touch, HUD eye press-and-hold). Screenshots: build/screens/controls/.

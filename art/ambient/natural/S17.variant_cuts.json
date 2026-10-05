@@ -1,0 +1,13 @@
+{
+  "room": "S17",
+  "note": "Healthy linden crown after E10 (variant overlay variants_natural/S17_healthy_linden.webp at 250,0), for the wind-sway layer linden_healthy_sway (if_done E10). Cut with art/ambient/natural/S17.variant_cuts.py S17.",
+  "overlays": [ { "texture": "variants_natural/S17_healthy_linden.webp", "pos": [250, 0] } ],
+  "items": [
+    {
+      "name": "linden_healthy",
+      "rect": [280, 0, 680, 345],
+      "rules": [ { "hue": [55, 130], "sat": [0.25, 1], "val": [0.12, 1] }, { "hue": [42, 55], "sat": [0.45, 1], "val": [0.2, 0.8] } ],
+      "feather": 1.0
+    }
+  ]
+}

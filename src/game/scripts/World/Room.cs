@@ -63,6 +63,9 @@ public partial class Room : Node2D
     private DevBlockout? devOverlay;
     private bool devOverlayVisible;
     private string? variantSignature;
+    private Texture2D? backgroundTexture;
+    private Node2D? npcsBack;
+    private Node2D? npcsFront;
 
     /// <summary>Room id.</summary>
     public string RoomId { get; private set; } = "";
@@ -159,6 +162,7 @@ public partial class Room : Node2D
             AddChild(ActorsLayer);
         }
         Ambient.Actors = ActorsLayer;
+        if (Blocking is not null) AddNaturalStaging(Blocking);
         if (Labels is null)
         {
             Labels = new HotspotLabelLayer { Name = "hotspot_labels" };
@@ -274,6 +278,7 @@ public partial class Room : Node2D
         if (!string.IsNullOrEmpty(asset) && ResourceLoader.Exists(path) && GD.Load<Texture2D>(path) is { } texture)
         {
             HasBackgroundArt = true;
+            backgroundTexture = texture;
             root.AddChild(FitSprite(texture, "Art"));
         }
         else
@@ -293,11 +298,62 @@ public partial class Room : Node2D
         return root;
     }
 
+    /// <summary>
+    /// Natural blocking extras around the y-sorted actor layer: the occluders (polygons of the painting, y-sorted
+    /// with the actors at their baseline) and, only when an NPC asks for it, the fixed-depth NPC layers right
+    /// below ("npcs_back") and above ("npcs_front") the actor layer (both still below the foreground mask).
+    /// </summary>
+    private void AddNaturalStaging(RoomBlocking blocking)
+    {
+        foreach (var occluder in blocking.Occluders)
+        {
+            var texture = backgroundTexture;
+            if (occluder.Texture is { } asset)
+            {
+                string path = "res://assets/" + asset;
+                texture = ResourceLoader.Exists(path) ? GD.Load<Texture2D>(path) : null;
+                if (texture is null) GD.PushWarning($"Room {RoomId}: occluder texture {asset} not found");
+            }
+            if (texture is null) continue; // blockout room: nothing to cut
+            var size = texture.GetSize();
+            var sx = size.X / CanvasSize.X;
+            var sy = size.Y / CanvasSize.Y;
+            var node = new Polygon2D
+            {
+                Name = "Occluder_" + occluder.Id,
+                Position = new Vector2(0, occluder.BaselineY), // y-sort key; the polygon stays in canvas coordinates
+                Texture = texture,
+                Polygon = occluder.Polygon.Select(p => new Vector2(p.X, p.Y - occluder.BaselineY)).ToArray(),
+                UV = occluder.Polygon.Select(p => new Vector2(p.X * sx, p.Y * sy)).ToArray(),
+            };
+            ActorsLayer.AddChild(node);
+        }
+        bool back = blocking.Npcs.Values.Any(n => n.Depth == NpcDepth.Back);
+        bool front = blocking.Npcs.Values.Any(n => n.Depth == NpcDepth.Front);
+        if (!back && !front) return;
+        var parent = ActorsLayer.GetParent();
+        if (back)
+        {
+            npcsBack = new Node2D { Name = "npcs_back" };
+            parent.AddChild(npcsBack);
+            parent.MoveChild(npcsBack, ActorsLayer.GetIndex());
+        }
+        if (front)
+        {
+            npcsFront = new Node2D { Name = "npcs_front" };
+            parent.AddChild(npcsFront);
+            parent.MoveChild(npcsFront, ActorsLayer.GetIndex() + 1);
+        }
+    }
+
+    /// <summary>The hero and every NPC actor, wherever their depth layer is.</summary>
+    public IEnumerable<Actor> AllActors => npcs.Values.Prepend(Hero);
+
     private void AddAmbientHost()
     {
         Ambient = new AmbientHost { Name = "AmbientHost", RoomId = View.RoomId, Era = View.Era, Room = this };
         // A natural blocking has its own painting: the template's ambient layers are cut from the old one.
-        if (Blocking is not null) Ambient.DataPathOverride = Blocking.AmbientData ?? RoomBlocking.Folder + "ambient/" + RoomId + ".json";
+        if (Blocking is not null) Ambient.DataPathOverride = Blocking.AmbientDataPath;
         AddChild(Ambient);
     }
 
@@ -394,7 +450,13 @@ public partial class Room : Node2D
             var staging = Blocking is not null && Blocking.Npcs.TryGetValue(npc.Id, out var st) ? st : null;
             if (staging?.Feet is { } stagedFeet) feet = stagedFeet;
             var actor = new Actor { ScaleOverride = staging?.Scale };
-            ActorsLayer.AddChild(actor);
+            var parent = staging?.Depth switch
+            {
+                NpcDepth.Back => npcsBack,
+                NpcDepth.Front => npcsFront,
+                _ => null,
+            } ?? ActorsLayer;
+            parent.AddChild(actor);
             actor.Setup(new ActorContext(npc.CharacterId, false, RoomId, view.Era, npc.Id, rect), Perspective, feet);
             actor.FaceTowards(new Vector2(CanvasSize.X / 2, feet.Y));
             npcs[npc.Id] = actor;
@@ -416,6 +478,28 @@ public partial class Room : Node2D
         int index = 0;
         foreach (var variant in view.VariantLayers.Where(v => v.Visible))
         {
+            if (Blocking is not null)
+            {
+                // The template overlay belongs to the template painting; a natural room draws its own (or a dev marker).
+                if (Blocking.VariantLayer(variant.Layer.Asset) is not { } natural)
+                {
+                    GD.PushWarning($"Room {RoomId}: natural blocking maps no overlay for {variant.Layer.Asset}");
+                    layer.AddChild(new DevVariantMarker { AssetName = variant.Layer.Asset, Index = index++ });
+                    continue;
+                }
+                if (natural.Texture is null) continue; // the natural painting needs no overlay for this change
+                string naturalPath = "res://assets/" + natural.Texture;
+                if (!ResourceLoader.Exists(naturalPath) || GD.Load<Texture2D>(naturalPath) is not { } naturalTexture)
+                {
+                    layer.AddChild(new DevVariantMarker { AssetName = natural.Texture, Index = index++ });
+                    continue;
+                }
+                string name = System.IO.Path.GetFileNameWithoutExtension(natural.Texture);
+                layer.AddChild(natural.Position is { } pos
+                    ? new Sprite2D { Name = name, Texture = naturalTexture, Centered = false, Position = pos }
+                    : FitSprite(naturalTexture, name));
+                continue;
+            }
             string path = "res://assets/" + variant.Layer.Asset;
             if (ResourceLoader.Exists(path) && GD.Load<Texture2D>(path) is { } texture)
                 layer.AddChild(FitSprite(texture, System.IO.Path.GetFileNameWithoutExtension(variant.Layer.Asset)));

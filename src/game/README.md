@@ -63,7 +63,7 @@ player-visible text only comes from the CSV tables through `TextService`.
       npcs_and_adam_sorted_by_feet_y   y-sorted actors (Hero_ADAM, Npc_<ID>), position = feet
       foreground_mask           res://assets/fg/<id>.webp (or art_overrides foreground_mask)
       ambient_front             living world: in front of everything (AmbientHost.Front)
-      hotspot_labels            HotspotLabelLayer: Space labels, item-valid outlines, Tab focus
+      hotspot_labels            HotspotLabelLayer: Space-held markers (QA --labels: text labels), item-valid outlines, Tab focus
       hud                       marker only (the HUD is the persistent HudHost below)
       DevOverlay                F3 / --dev: rects and walk polygon above painted art
     TransitionOverlay (CanvasLayer 50)   fade + placeholder era card
@@ -131,24 +131,31 @@ game/load: rebuild everything), `Saved`, `LoadFailed(slot, TextRef)`. Godot sign
 `TextService.Get(key, fallback)` / `Get(TextRef)` returns `Tr(key)`, or the Slovak fallback when the
 table has no entry. `TextService.Ui("ui.area.name", ("placeholder", value))` for ui.csv keys.
 
-## Input (CODING_AGENT_START.txt)
+## Input (CODING_AGENT_START.txt + owner control changes 2026-10-05, docs/DECISIONS.md, ISSUES INT-08)
 
 | input | logical command | world / inventory | dialogue line / cutscene | topic menu | overlays |
 |---|---|---|---|---|---|
 | left click | Primary | the one logical action (resolver) | advance | buttons | UI |
+| double click / double tap (same target, ≤ `PresentationSettings.DoubleClickSeconds` 0.35 s; floor ≤ 40 px) | Primary ×2 | skip the walk: the hero is put at the destination (`Actor.FinishWalk`), arrival re-resolves through Core and runs once; the second press never submits again and is not passed to a line the first one started | — | — | — |
 | right click | Secondary | look at target; empty floor: inventory; selected item: cancel first | advance | — | — |
-| Space | ToggleLabels | labels of all visible hotspots incl. atmospheric ones and exits (Core toggles in `world` mode only, as `runtime_contract.ts`; in the open drawer Space does nothing) | advance | — | — |
+| Space (hold) | ShowMarkers / HideMarkers | while held: a painted round marker on every visible hotspot incl. atmospheric ones and exits (arrow badge), no text; release (or window focus loss) hides them (Core `GameRules.SetHotspots`: show in `world` mode only, hide in any mode; in the open drawer Space does nothing). HUD eye button: press and hold. Touch: two-finger hold | advance | — | — |
 | Tab / Shift+Tab | FocusNext/Previous | cycle targets (NPCs, progress props, atmospheric, exits) | — | GUI focus | GUI focus |
-| Enter | Confirm | left click on the focused target | advance | GUI accept | GUI |
+| Enter | Confirm | left click on the focused target; Enter twice quickly = skip the walk | advance | GUI accept | GUI |
+| Shift+Enter | ConfirmSkip | left click on the focused target and skip the walk | advance | — | — |
 | Backspace | Back | right click on the focused target (or empty floor) | — | leave | — |
 | Esc | Cancel | cancel selection, else pause (GameRules.Escape) | skip cutscene / queued lines | leave | close |
 | I / J / M / H / T | Inventory / Journal / Map / Hint / Travel | open (T: era chooser at anchor nodes) | — | — | J/M close |
 | F3 / F5 / F9 | DevOverlay / QuickSave / QuickLoad | dev conveniences | | | |
 
 Hover text comes from `Session.Hover(hit)`: the name always, the action sentence only while an item
-is selected and Core says the rule is executable. An invalid item click resolves to `None`: no walk,
+is selected and Core says the rule is executable; nothing over empty floor. It is drawn **next to the cursor**
+(`UI/Hud/HoverLabel.cs`, large outlined Alegreya, flips left / up near the edges, hidden over GUI controls); the bottom
+HUD strip no longer shows it. Keyboard focus (Tab) shows the same label at the focused target. The cursor is the painted
+contextual set (`UI/Hud/CursorSet.cs`, `CursorLayer.cs`): pointer (floor), hand (action), speech (dialogue), magnifier
+(look-only), exit arrow by side, the selected item's icon, hourglass while lines / cutscenes / transitions play; hardware
+cursors sized to the window (64/96/128 px), system cursor as fallback. An invalid item click resolves to `None`: no walk,
 no text, the selection stays. Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
-two-finger tap = Space; the GUI gets emulated taps first, gestures fire on release in the world.
+two-finger hold = Space held, double tap = double click; the GUI gets emulated taps first, gestures fire on release in the world.
 
 ## Room build, movement, perspective
 
@@ -158,7 +165,9 @@ two-finger tap = Space; the GUI gets emulated taps first, gestures fire on relea
 - `WalkArea`: deterministic polygon pathfinding (straight line or visibility graph over reflex
   corners, A*); no NavigationServer.
 - Perspective: scale 0.80 at the top of the walk band → 1.00 at the bottom (feet y), overridable
-  per room in `art_overrides.json` (`actor_scale`, `walk_band`). Walk speed = visual stride × scale.
+  per room in `art_overrides.json` (`actor_scale`, `walk_band`). Walk speed = visual stride × scale × the hero's
+  `PresentationSettings.WalkSpeedFactor` (default 1.25, owner 2026-10-05; Settings → Accessibility → walk speed 100/125/150 %);
+  the sprite visual plays the walk cycle at the same factor, so the feet do not slide.
 - NPCs stand at their hotspot rect's bottom centre (+ `npc_feet` nudge ≤ 40 px).
 - Walking to an NPC: every NPC interaction point in the data lies straight below the NPC, so the hero
   stands beside the NPC instead (`Room.ApproachPoint`: `NpcApproachGap` px left or right of the rect,
@@ -184,7 +193,7 @@ two-finger tap = Space; the GUI gets emulated taps first, gestures fire on relea
 | `--replay <n>` | replay walkthrough steps 1..n through Core rules (same as the Core tests); checks inventory and room per step |
 | `--play <n>` | perform walkthrough actions (after `--replay`, up to step n) through the **input path**: travel by clicking exits / portals, select items, click targets, choose topics, solve puzzles |
 | `--act <actionId>` | (repeatable) resolve + commit one action through the input path; travels to its room first |
-| `--input <spec>` | (repeatable, in order) `key:<LogicalCommand>`, `select:<ITEM>`, `portal:<year>`, `click:x,y`, `rclick:x,y`, `hover:x,y`, `wait:<ms>`; real Godot input events (GUI first, then the InputRouter): `mouse:x,y` (left), `rmouse:x,y` (right), `keyev:<Godot Key>` (e.g. `keyev:Space`), touch `tap:x,y`, `longpress:x,y`, `twotap:x,y` — coordinates are canvas px (1920x1080) at any window size |
+| `--input <spec>` | (repeatable, in order) `key:<LogicalCommand>`, `select:<ITEM>`, `portal:<year>`, `click:x,y`, `rclick:x,y`, `hover:x,y`, `wait:<ms>`; real Godot input events (GUI first, then the InputRouter): `mouse:x,y` (left), `rmouse:x,y` (right), `dblclick:x,y` (two left clicks), `move:x,y` (mouse motion: hover label, cursor), `keyev:<Godot Key>` (press + release), `keydown:<Key>` / `keyup:<Key>` (e.g. `keydown:Space` holds the markers for a screenshot), touch `tap:x,y`, `longpress:x,y`, `twotap:x,y` (two-finger hold and release) — coordinates are canvas px (1920x1080) at any window size |
 | `--acceptance [m1\|m2]` | in-engine acceptance checks through real input events; both sets by default. `m1`: the prologue input rules (right click, Space, invalid item no-op, re-check on arrival, save/load without duplicates, P01, arrival in S11; `scripts/Diagnostics/PrologueAcceptance.cs`, docs/MILESTONE1.md). `m2`: the acceptance_tests.csv rows beyond the prologue (AT02-AT09, AT11, AT12, AT15-AT26, AT29 and parts of AT19/AT24; `ContentAcceptance.cs`, docs/MILESTONE2.md). Prints `HARNESS PASS/FAIL`, exit code 1 on a failure. Frame-timed m1 checks want `--time-scale` ≤ 4 in a window |
 | `--real` | acts (`--act`, `--play`) use real Godot input events only: the target is clicked at a point where the room's hit test returns it and no GUI control is on top (else `HARNESS BLOCKER`), items are picked from the drawer's slot buttons, topics from the topic menu's buttons, puzzles by clicking the modal's controls and confirm button, portals with T and the era button; lines play out by auto-advance (`scripts/Diagnostics/RealInputDriver.cs`) |
 | `--play-all` | (implies `--real`) all 94 main actions, the ending (epilogue shots, credits, postgame note by clicks/keys), all 33 side actions after the credits, then the postgame checks (era tour through the portals, cable cars after F09, re-entry of every room with a triggered causal effect / variant layer, album replay of the ending, CS07 replay from the journal); exit code 1 on a blocker or failure (`ContentQa.cs`) |
@@ -197,7 +206,10 @@ two-finger tap = Space; the GUI gets emulated taps first, gestures fire on relea
 | `--coverage <file.json>` (`--coverage-label <text>`) | what the run verified (actions with order and save/load result, quests, puzzles, cutscene beats, line ids, look texts, rooms, eras, variant layers, causal effects, butterflies, cache, ending shot counts, postgame, blockers, click retries, failures); `python tools/m2_coverage.py <files>` turns them into the docs/MILESTONE2.md tables |
 | `--screenshot <path.png>` | after everything is settled (+`--wait`, default 400 ms) save the viewport and quit; needs a window |
 | `--frames <k>` `--interval <ms>` | k screenshots `<name>_00.png …` (or `{n}` in the path) every interval ms |
-| `--labels` | turn on the Space labels |
+| `--labels` | QA text labels of every visible target (the pre-2026-10-05 Space labels, for art review; players only get markers) |
+| `--markers` | the Space markers on (as if Space were held) |
+| `--soft-cursor` | also draw the cursor in software, so `--screenshot` shows it (hardware cursors are not in viewport captures) |
+| `--targets` | print every target of the room (`HARNESS target <id> kind rect point anchor`) |
 | `--blocking natural\|template` | natural re-blocking proposal: rooms with `data/blocking/<room>.json` use its presentation geometry and `assets/bg_natural/<room>.webp` (`World/RoomBlocking.cs`; project setting `last_bell/presentation/blocking`, default `template`; validator `tools/check_blocking.py`; docs/reblock/README.md) |
 | `--dev` | dev overlay over painted art; also `PresentationSettings.DevNotes` (stage directions on cutscene cards without a painting, the placeholder puzzle's solve button) — off for players, also in debug builds such as play.bat |
 | `--lines` | print every shown line (`HARNESS line <id> [speaker] name: text`) |
@@ -219,7 +231,7 @@ Examples:
 <console exe> --headless --path src/game -- --replay 94 --quit-after 1
 # the prologue through the real input path (walking, clicks, puzzle, special transition)
 <console exe> --headless --path src/game -- --fast-text --play 11 --quit-after 1
-# blockout + labels screenshot
+# blockout + QA text labels screenshot (players see markers: --markers or --input keydown:Space)
 <console exe> --path src/game --resolution 1920x1080 -- --room S02 --labels --screenshot build/screens/S02.png
 # walk animation frames
 <console exe> --path src/game --resolution 1920x1080 -- --skip-lines --input click:1600,1000 --frames 4 --interval 220 --screenshot build/screens/walk.png

@@ -52,7 +52,7 @@ def main():
             f'<a href="{rel(p)}" target="_blank"><img loading="lazy" src="{rel(p)}" alt=""></a>'
             for p in photos_for(rid, row)) or '<p class="muted">no reference photo (reconstruction or type reference)</p>'
         paint = (f'<a href="{rel(painting)}" target="_blank"><img loading="lazy" src="{rel(painting)}" alt=""></a>'
-                 f'<span class="tag">{"natural layout" if kind == "bg_natural" else "painted"}</span>'
+                 f'<span class="tag">{"game painting (natural blocking, default)" if kind == "bg_natural" else "template painting (old blocking)"}</span>'
                  if painting else '<p class="muted">not painted yet</p>')
         nc = "nc" if "NC" in row.get("license", "") else ""
         sections.append(f"""
@@ -90,7 +90,7 @@ img {{ display:block; width:100%; height:auto; border-radius:6px; }}
 @media (max-width:760px) {{ .cols {{ grid-template-columns:1fr; }} }}
 </style></head><body><main>
 <h1>Posledný zvonec: real locations</h1>
-<p class="lead">68 rooms from design-doc/LOCATIONS_REGISTER.csv. Left: licensed reference photos of the real place. Right: the game painting (if done). Click any image for full size.</p>
+<p class="lead">68 rooms from design-doc/LOCATIONS_REGISTER.csv. Left: licensed reference photos of the real place. Right: the game painting (the natural-blocking painting from src/game/assets/bg_natural, the game default since milestone 3; the template painting only where no natural one exists). Click any image for full size.</p>
 <input id="q" placeholder="filter: Dúbravka, S17, Jasná, photo, reconstruction…">
 {''.join(sections)}
 </main>

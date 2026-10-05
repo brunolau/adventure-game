@@ -1,0 +1,106 @@
+{
+  "room": "S13",
+  "source": "src/game/assets/bg_natural/S13.webp",
+  "note": "Natural S13 cut-outs (art/tools/ambient_cut.py --natural S13): the sunny maple / lime crowns of the forecourt seen through the glazed left facade wall, for a wind-sway layer in data/blocking/ambient/S13.json. Only foliage pixels inside the glass panes (include polygon); the bronze frames and the yellow wall stay in the painting. door_glass_mask = the two glass panes of the middle double door (mask for the corridor silhouettes).",
+  "items": [
+    {
+      "name": "window_trees",
+      "rect": [
+        0,
+        236,
+        300,
+        340
+      ],
+      "rules": [
+        {
+          "hue": [
+            46,
+            80
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.4,
+            1
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            0,
+            236
+          ],
+          [
+            298,
+            270
+          ],
+          [
+            298,
+            576
+          ],
+          [
+            0,
+            576
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "door_glass_mask",
+      "kind": "mask",
+      "rect": [
+        860,
+        385,
+        205,
+        165
+      ],
+      "rules": [
+        {}
+      ],
+      "include": [
+        [
+          [
+            868,
+            393
+          ],
+          [
+            944,
+            393
+          ],
+          [
+            944,
+            541
+          ],
+          [
+            868,
+            541
+          ]
+        ],
+        [
+          [
+            978,
+            393
+          ],
+          [
+            1054,
+            393
+          ],
+          [
+            1054,
+            541
+          ],
+          [
+            978,
+            541
+          ]
+        ]
+      ],
+      "feather": 1.5,
+      "scale": 0.5
+    }
+  ]
+}

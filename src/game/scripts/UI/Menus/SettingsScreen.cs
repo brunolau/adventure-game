@@ -128,6 +128,9 @@ public partial class SettingsScreen : ModalScreen
                 content.AddChild(ToggleRow(Ui.T("ui.settings.reduced_motion"), Ui.T("ui.settings.reduced_motion_desc"), () => UiSettings.ReducedMotion, v => UiSettings.ReducedMotion = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.high_contrast_labels"), Ui.T("ui.settings.high_contrast_labels_desc"), () => UiSettings.HighContrastLabels, v => UiSettings.HighContrastLabels = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.cursor_highlight"), "", () => UiSettings.CursorHighlight, v => UiSettings.CursorHighlight = v));
+                content.AddChild(ChoiceRow(Ui.T("ui.settings.walk_speed"),
+                    new[] { (Ui.T("ui.settings.walk_speed_calm"), 100), (Ui.T("ui.settings.text_speed_normal"), 125), (Ui.T("ui.settings.walk_speed_brisk"), 150) },
+                    () => UiSettings.WalkSpeedPercent, v => UiSettings.WalkSpeedPercent = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.hotspot_key_hint"), Ui.T("ui.settings.hotspot_key_hint_desc"), () => UiSettings.HotspotKeyHint, v => UiSettings.HotspotKeyHint = v));
                 var tips = Ui.Button(Ui.T("ui.settings.reset_tips"), () =>
                 {

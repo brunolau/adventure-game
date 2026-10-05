@@ -1,0 +1,83 @@
+{
+  "room": "S01",
+  "source": "src/game/assets/bg_natural/S01.webp",
+  "note": "Natural S01 cut-outs (art/tools/ambient_cut.py --natural S01): the yellow birch seen through the small window and the two autumn trees seen through the open garage door, for wind sway.",
+  "items": [
+    {
+      "name": "window_birch",
+      "rect": [
+        612,
+        372,
+        92,
+        190
+      ],
+      "rules": [
+        {
+          "hue": [
+            34,
+            60
+          ],
+          "sat": [
+            0.5,
+            1
+          ],
+          "val": [
+            0.55,
+            1
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            614,
+            374
+          ],
+          [
+            698,
+            560
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "door_trees",
+      "rect": [
+        935,
+        300,
+        450,
+        270
+      ],
+      "rules": [
+        {
+          "hue": [
+            26,
+            60
+          ],
+          "sat": [
+            0.42,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            938,
+            300
+          ],
+          [
+            1378,
+            570
+          ]
+        ]
+      ],
+      "feather": 1.0
+    }
+  ]
+}

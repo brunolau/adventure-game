@@ -63,7 +63,7 @@ public partial class PlaceholderActorVisual : Node2D, IActorVisual
     /// <inheritdoc />
     public override void _Process(double delta)
     {
-        time += (float)delta;
+        time += (float)delta * (walking && GetParent() is Actor actor ? actor.WalkFactor : 1f);
         if (gestureTime > 0) gestureTime = MathF.Max(0, gestureTime - (float)delta);
         QueueRedraw();
     }

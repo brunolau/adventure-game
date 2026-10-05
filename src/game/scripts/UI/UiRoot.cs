@@ -32,7 +32,7 @@ namespace LastBell.Game.UI;
 /// ending) and blocks world keys while one is open, and applies the HUD scale.
 /// Layers: this control (unscaled) holds the cutscene frame and subtitles; <c>Scaled</c> holds the
 /// HUD and all screens and is scaled by the HUD scale setting; CanvasLayer 60 holds the era card
-/// (above the world's transition fade), CanvasLayer 70 the cursor item.
+/// (above the world's transition fade), CanvasLayer 70 the hover label at the cursor and the contextual cursor.
 /// </summary>
 public partial class UiRoot : Control
 {
@@ -67,6 +67,9 @@ public partial class UiRoot : Control
 
     /// <summary>The HUD (and hover view).</summary>
     public HudView Hud { get; private set; } = null!;
+
+    /// <summary>The hover label at the cursor (owner control changes 2026-10-05).</summary>
+    public HoverLabel HoverLabel { get; private set; } = null!;
 
     /// <summary>Notices.</summary>
     public ToastLayer Toasts { get; private set; } = null!;
@@ -143,6 +146,9 @@ public partial class UiRoot : Control
         eraLayer.AddChild(eraCard);
         var cursorLayer = new CanvasLayer { Name = "CursorLayer", Layer = 70 };
         AddChild(cursorLayer);
+        HoverLabel = new HoverLabel { Name = "HoverLabel" };
+        cursorLayer.AddChild(HoverLabel);
+        HoverLabel.Init(Hud);
         cursor = new CursorLayer { Name = "Cursor" };
         cursorLayer.AddChild(cursor);
 

@@ -1,0 +1,16 @@
+{
+  "room": "S60",
+  "source": "src/game/assets/bg_natural/S60.webp",
+  "note": "Natural S60 cut-outs (art/tools/ambient_cut.py --natural S60): the coloured (non-white) part of the window view as a mask for the children crossing the snowy sports yard (white mullions, sky and snow excluded by saturation).",
+  "items": [
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [1530, 185, 390, 545],
+      "rules": [ { "sat": [0.08, 1] } ],
+      "include": [ [[1536, 262], [1920, 190], [1920, 728], [1536, 590]] ],
+      "feather": 1.5,
+      "scale": 0.5
+    }
+  ]
+}

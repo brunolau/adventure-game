@@ -176,20 +176,28 @@ public sealed class AudioCatalog
         if (root["rooms"] is JsonObject rooms)
         {
             foreach (var (roomId, node) in rooms)
-            {
-                var layers = new List<AmbienceLayer>();
-                foreach (var entry in (node as JsonObject)?["layers"] as JsonArray ?? new JsonArray())
-                {
-                    if (entry is not JsonObject o || Str(o["sound"]) is not { } sound) continue;
-                    if (!AmbienceLibrary.ContainsKey(sound)) Warnings.Add($"ambience {roomId}: unknown sound {sound}");
-                    var (emin, emax) = Range(o["every"], 8f, 20f);
-                    var (xmin, xmax) = Range(o["x"], 200f, 1720f);
-                    layers.Add(new AmbienceLayer(sound, Num(o["db"], 0f), emin, emax, xmin, xmax, Num(o["pitch"], 0.04f),
-                        Str(o["after"]), Str(o["until"])));
-                }
-                RoomAmbience[roomId] = layers;
-            }
+                RoomAmbience[roomId] = ParseAmbienceLayers(roomId, (node as JsonObject)?["layers"] as JsonArray);
         }
+    }
+
+    /// <summary>
+    /// Parses ambience layers in the ambience.json room schema
+    /// (<c>[{ "sound": id, "db": 0, "every": [min, max], "x": [min, max], "pitch": 0.04, "after": id, "until": id }]</c>);
+    /// also used for a natural blocking's <c>audio.ambience</c> override (World/RoomBlocking.cs).
+    /// </summary>
+    public List<AmbienceLayer> ParseAmbienceLayers(string roomId, JsonArray? entries)
+    {
+        var layers = new List<AmbienceLayer>();
+        foreach (var entry in entries ?? new JsonArray())
+        {
+            if (entry is not JsonObject o || Str(o["sound"]) is not { } sound) continue;
+            if (!AmbienceLibrary.ContainsKey(sound)) Warnings.Add($"ambience {roomId}: unknown sound {sound}");
+            var (emin, emax) = Range(o["every"], 8f, 20f);
+            var (xmin, xmax) = Range(o["x"], 200f, 1720f);
+            layers.Add(new AmbienceLayer(sound, Num(o["db"], 0f), emin, emax, xmin, xmax, Num(o["pitch"], 0.04f),
+                Str(o["after"]), Str(o["until"])));
+        }
+        return layers;
     }
 
     private void LoadSfx(JsonObject? root)

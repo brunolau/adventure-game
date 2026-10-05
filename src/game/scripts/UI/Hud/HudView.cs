@@ -20,8 +20,10 @@ namespace LastBell.Game.UI.Hud;
 /// mouse-transparent. The selected item is announced in a chip with a cancel cross (an alternative to
 /// the right click, AT19). HUD buttons only send logical commands through <see cref="WorldInput"/>
 /// and never take keyboard focus (Tab stays with the scene's target list).
-/// Also implements <see cref="IHoverView"/>: the hover name and the action sentence (only when
-/// Core says the item rule is executable) are shown in the strip centre.
+/// Also implements <see cref="IHoverView"/>: it keeps the current hover payload (<see cref="CurrentHover"/>,
+/// <see cref="HoverChanged"/>) for the label at the cursor (<see cref="HoverLabel"/>, owner control changes 2026-10-05:
+/// no hover text in the strip any more) and the inventory drawer's hover line. The strip centre only shows the
+/// optional "hold Space" key hint. The eye button shows the markers while it is held, like Space.
 /// </summary>
 public partial class HudView : Control, IHoverView
 {
@@ -29,8 +31,6 @@ public partial class HudView : Control, IHoverView
     public const float StripHeight = 82;
 
     private Control strip = null!;
-    private Label hoverName = null!;
-    private Label hoverAction = null!;
     private Label keyHint = null!;
     private VBoxContainer centre = null!;
     private bool? narrowLayout;
@@ -77,7 +77,10 @@ public partial class HudView : Control, IHoverView
         left.OffsetBottom = -8;
         strip.AddChild(left);
         left.AddChild(HudButton(GlyphKind.Bag, "ui.hud.inventory", "I", () => WorldInput.Dispatch(LogicalCommand.Inventory)));
-        eyeButton = HudButton(GlyphKind.Eye, "ui.hud.show_hotspots", "Space", () => WorldInput.Dispatch(LogicalCommand.ToggleLabels));
+        // Hold to show, like Space (press = markers on, release = off).
+        eyeButton = HudButton(GlyphKind.Eye, "ui.hud.show_hotspots", "Space", () => { });
+        eyeButton.ButtonDown += () => WorldInput.Dispatch(LogicalCommand.ShowMarkers);
+        eyeButton.ButtonUp += () => WorldInput.Dispatch(LogicalCommand.HideMarkers);
         left.AddChild(eyeButton);
 
         chip = new PanelContainer { ThemeTypeVariation = "DarkPanel", MouseFilter = MouseFilterEnum.Ignore };
@@ -97,7 +100,7 @@ public partial class HudView : Control, IHoverView
         left.AddChild(chip);
         chip.Visible = false;
 
-        // Centre: hover text / key hint.
+        // Centre: key hint (the hover text is at the cursor, HoverLabel).
         centre = Ui.VBox(0);
         centre.MouseFilter = MouseFilterEnum.Ignore;
         centre.Alignment = BoxContainer.AlignmentMode.Center;
@@ -105,23 +108,10 @@ public partial class HudView : Control, IHoverView
         centre.OffsetLeft = 560;
         centre.OffsetRight = -560;
         strip.AddChild(centre);
-        hoverName = Ui.Label("", "OnDarkLabel");
-        hoverName.HorizontalAlignment = HorizontalAlignment.Center;
-        hoverName.AddThemeFontOverride("font", UiTheme.BodyBold);
-        hoverName.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
-        hoverAction = Ui.Label("", "SpeakerLabel");
-        hoverAction.HorizontalAlignment = HorizontalAlignment.Center;
-        hoverAction.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
-        hoverAction.AddThemeFontSizeOverride("font_size", 25);
         keyHint = Ui.Label(Ui.T("ui.hud.hotspot_key_hint"), "OnDarkCaption");
         keyHint.HorizontalAlignment = HorizontalAlignment.Center;
-        foreach (var l in new[] { hoverName, hoverAction, keyHint })
-        {
-            l.AddThemeColorOverride("font_outline_color", new Color(0, 0, 0, 0.85f));
-            l.AddThemeConstantOverride("outline_size", 6);
-        }
-        centre.AddChild(hoverName);
-        centre.AddChild(hoverAction);
+        keyHint.AddThemeColorOverride("font_outline_color", new Color(0, 0, 0, 0.85f));
+        keyHint.AddThemeConstantOverride("outline_size", 6);
         centre.AddChild(keyHint);
 
         // Right group (ends left of the right exit zone).
@@ -143,7 +133,6 @@ public partial class HudView : Control, IHoverView
         right.AddChild(HudButton(GlyphKind.Map, "ui.hud.map", "M", () => WorldInput.Dispatch(LogicalCommand.Map)));
         right.AddChild(HudButton(GlyphKind.Menu, "ui.hud.menu", "Esc", OpenPause));
 
-        UpdateHoverLabels();
     }
 
     private static Button HudButton(GlyphKind glyph, string key, string hotkey, Action pressed)
@@ -219,7 +208,7 @@ public partial class HudView : Control, IHoverView
                 centre.OffsetRight = -560;
             }
         }
-        keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && !hoverName.Visible && !hoverAction.Visible && !state.HotspotLabels;
+        keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels;
     }
 
     // ------------------------------------------------------------------ IHoverView
@@ -228,7 +217,6 @@ public partial class HudView : Control, IHoverView
     public void ShowHover(HoverPayload payload)
     {
         CurrentHover = payload;
-        UpdateHoverLabels();
         HoverChanged?.Invoke();
     }
 
@@ -237,7 +225,6 @@ public partial class HudView : Control, IHoverView
     {
         if (CurrentHover is null) return;
         CurrentHover = null;
-        UpdateHoverLabels();
         HoverChanged?.Invoke();
     }
 
@@ -250,13 +237,4 @@ public partial class HudView : Control, IHoverView
         return (name, action);
     }
 
-    private void UpdateHoverLabels()
-    {
-        if (hoverName is null) return;
-        var (name, action) = Texts(CurrentHover);
-        hoverName.Text = name;
-        hoverName.Visible = name.Length > 0;
-        hoverAction.Text = action;
-        hoverAction.Visible = action.Length > 0;
-    }
 }

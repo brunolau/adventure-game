@@ -1,0 +1,187 @@
+{
+ "room": "S21",
+ "source": "src/game/assets/bg_natural/S21.webp",
+ "note": "Natural S21 cut-outs and masks (art/tools/ambient_cut.py --natural S21) for src/game/data/blocking/ambient/S21.json.",
+ "items": [
+  {
+   "name": "trees",
+   "rect": [
+    930,
+    95,
+    690,
+    360
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
+      135
+     ],
+     "sat": [
+      0.28,
+      1
+     ],
+     "val": [
+      0.22,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0,
+   "exclude": [
+    [
+     [
+      1418,
+      380
+     ],
+     [
+      1450,
+      700
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "water",
+   "rect": [
+    1000,
+    590,
+    300,
+    60
+   ],
+   "rules": [
+    {
+     "hue": [
+      180,
+      230
+     ],
+     "sat": [
+      0.1,
+      0.8
+     ],
+     "val": [
+      0.45,
+      1
+     ]
+    },
+    {
+     "sat": [
+      0,
+      0.12
+     ],
+     "val": [
+      0.85,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      1030,
+      560
+     ],
+     [
+      1110,
+      640
+     ]
+    ],
+    [
+     [
+      1265,
+      570
+     ],
+     [
+      1350,
+      640
+     ]
+    ],
+    [
+     [
+      1138,
+      490
+     ],
+     [
+      1172,
+      640
+     ]
+    ]
+   ],
+   "feather": 0.8,
+   "pad": 4
+  },
+  {
+   "name": "street_mask",
+   "kind": "mask",
+   "rect": [
+    1490,
+    400,
+    430,
+    105
+   ],
+   "rules": [
+    {
+     "val": [
+      0,
+      1
+     ]
+    }
+   ],
+   "except": [
+    {
+     "hue": [
+      340,
+      30
+     ],
+     "sat": [
+      0.35,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      1795,
+      255
+     ],
+     [
+      1812,
+      505
+     ]
+    ]
+   ],
+   "feather": 0.8,
+   "scale": 1.0
+  },
+  {
+   "name": "sky_mask",
+   "kind": "mask",
+   "rect": [
+    0,
+    0,
+    1920,
+    300
+   ],
+   "rules": [
+    {
+     "hue": [
+      188,
+      232
+     ],
+     "sat": [
+      0.12,
+      0.8
+     ],
+     "val": [
+      0.6,
+      1
+     ]
+    }
+   ],
+   "feather": 1.5,
+   "grow": -1,
+   "scale": 0.5
+  }
+ ]
+}

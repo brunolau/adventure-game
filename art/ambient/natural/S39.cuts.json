@@ -1,0 +1,12 @@
+{
+  "room": "S39",
+  "source": "src/game/assets/bg_natural/S39.webp",
+  "note": "Natural S39 cut-outs (art/tools/ambient_cut.py --natural S39): the reeds and grass seen through the small window (glazing bars excluded) and through the open door, for a gentle wind sway.",
+  "items": [
+    { "name": "window_reeds", "rect": [306, 366, 162, 166],
+      "rules": [ { "hue": [45, 130], "sat": [0.25, 1], "val": [0.25, 1] } ],
+      "exclude": [ [[380, 360], [398, 540]], [[300, 425], [470, 440]] ], "feather": 1.0 },
+    { "name": "door_grass", "rect": [124, 420, 72, 340],
+      "rules": [ { "hue": [45, 130], "sat": [0.25, 1], "val": [0.3, 1] } ], "feather": 1.0 }
+  ]
+}

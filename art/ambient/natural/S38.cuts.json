@@ -1,0 +1,254 @@
+{
+  "room": "S38",
+  "source": "src/game/assets/bg_natural/S38.webp",
+  "note": "Natural S38 cut-outs (art/tools/ambient_cut.py --natural S38): the canal water (the open water between the hut, the pump, the seedlings of the model, the reeds and the sluice, as rectangles) for the water shader and as a mask for the ducks, the reed tuft (prop S38.ambient 2) and the willows/poplars across the canal for wind sway, and a sky mask for clouds.",
+  "items": [
+    {
+      "name": "water",
+      "rect": [
+        0,
+        500,
+        1920,
+        98
+      ],
+      "rules": [],
+      "feather": 0.8,
+      "clean": 0,
+      "pad": 4,
+      "add": [
+        [
+          [
+            0,
+            507
+          ],
+          [
+            292,
+            588
+          ]
+        ],
+        [
+          [
+            975,
+            507
+          ],
+          [
+            1418,
+            570
+          ]
+        ],
+        [
+          [
+            1726,
+            507
+          ],
+          [
+            1752,
+            588
+          ]
+        ],
+        [
+          [
+            1903,
+            507
+          ],
+          [
+            1920,
+            588
+          ]
+        ],
+        [
+          [
+            772,
+            509
+          ],
+          [
+            800,
+            548
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "water_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        500,
+        1920,
+        98
+      ],
+      "rules": [],
+      "feather": 0.8,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        490,
+        1920,
+        120
+      ],
+      "scale": 1.0,
+      "add": [
+        [
+          [
+            0,
+            507
+          ],
+          [
+            292,
+            588
+          ]
+        ],
+        [
+          [
+            975,
+            507
+          ],
+          [
+            1418,
+            570
+          ]
+        ],
+        [
+          [
+            1726,
+            507
+          ],
+          [
+            1752,
+            588
+          ]
+        ],
+        [
+          [
+            1903,
+            507
+          ],
+          [
+            1920,
+            588
+          ]
+        ],
+        [
+          [
+            772,
+            509
+          ],
+          [
+            800,
+            548
+          ]
+        ]
+      ],
+      "clean": 0
+    },
+    {
+      "name": "reeds",
+      "rect": [
+        1420,
+        470,
+        310,
+        210
+      ],
+      "rules": [
+        {
+          "hue": [
+            25,
+            120
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.2,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "far_trees",
+      "rect": [
+        1020,
+        60,
+        900,
+        410
+      ],
+      "rules": [
+        {
+          "hue": [
+            40,
+            130
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.15,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        400
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.05,
+            0.75
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.14
+          ],
+          "val": [
+            0.88,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            260,
+            170
+          ],
+          [
+            800,
+            400
+          ]
+        ]
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        400
+      ],
+      "scale": 0.5
+    }
+  ]
+}

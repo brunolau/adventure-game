@@ -1,0 +1,81 @@
+{
+ "room": "S58",
+ "source": "src/game/assets/bg_natural/S58.webp",
+ "note": "Natural S58 cut-outs: the thin bare branches in the top-left and top-right corners (wind sway).",
+ "items": [
+  {
+   "name": "branches_tl",
+   "rect": [
+    0,
+    0,
+    420,
+    250
+   ],
+   "rules": [
+    {
+     "hue": [
+      0,
+      50
+     ],
+     "sat": [
+      0.25,
+      1
+     ],
+     "luma": [
+      0.0,
+      0.42
+     ]
+    }
+   ],
+   "clean": 0,
+   "feather": 0.6,
+   "exclude": [
+    [
+     [
+      245,
+      80
+     ],
+     [
+      375,
+      138
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "branches_tr",
+   "rect": [
+    1560,
+    0,
+    360,
+    190
+   ],
+   "rules": [
+    {
+     "hue": [
+      0,
+      75
+     ],
+     "luma": [
+      0.0,
+      0.5
+     ]
+    }
+   ],
+   "clean": 0,
+   "feather": 0.6,
+   "exclude": [
+    [
+     [
+      1560,
+      0
+     ],
+     [
+      1795,
+      190
+     ]
+    ]
+   ]
+  }
+ ]
+}

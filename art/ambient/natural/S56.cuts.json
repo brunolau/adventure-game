@@ -1,0 +1,85 @@
+{
+ "room": "S56",
+ "source": "src/game/assets/bg_natural/S56.webp",
+ "note": "Natural S56 cut-outs: the autumn trees of the school yard beyond the building corner (wind sway) and the sky there (cloud mask).",
+ "items": [
+  {
+   "name": "yard_trees",
+   "rect": [
+    1305,
+    240,
+    615,
+    470
+   ],
+   "rules": [
+    {
+     "hue": [
+      12,
+      62
+     ],
+     "sat": [
+      0.32,
+      1
+     ],
+     "val": [
+      0.28,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      1305,
+      480
+     ],
+     [
+      1920,
+      720
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "sky_mask",
+   "rect": [
+    1305,
+    0,
+    615,
+    520
+   ],
+   "rules": [
+    {
+     "hue": [
+      188,
+      238
+     ],
+     "sat": [
+      0.1,
+      0.85
+     ],
+     "val": [
+      0.5,
+      1
+     ]
+    }
+   ],
+   "kind": "mask",
+   "feather": 1.5,
+   "clean": 1,
+   "exclude": [
+    [
+     [
+      1570,
+      60
+     ],
+     [
+      1920,
+      420
+     ]
+    ]
+   ]
+  }
+ ]
+}

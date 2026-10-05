@@ -41,8 +41,14 @@ public partial class Actor : Node2D
     /// <summary>Current perspective scale.</summary>
     public float CurrentScale => Scale.X;
 
-    /// <summary>Optional speed multiplier (e.g. fast walk on double click later).</summary>
+    /// <summary>Optional extra speed multiplier (1 = normal).</summary>
     public float SpeedMultiplier { get; set; } = 1f;
+
+    /// <summary>
+    /// The hero walks <see cref="Runtime.PresentationSettings.WalkSpeedFactor"/> times the sheet stride (NPCs 1);
+    /// the sprite visual plays the walk cycle at the same factor, so the feet stay planted.
+    /// </summary>
+    public float WalkFactor => IsHero ? Runtime.PresentationSettings.WalkSpeedFactor : 1f;
 
     /// <summary>Point above the head in canvas px (speaker tags, look bubbles).</summary>
     public Vector2 HeadPosition => Position + new Vector2(0, -Visual.HeightPx * CurrentScale);
@@ -112,6 +118,34 @@ public partial class Actor : Node2D
         if (!wasWalking) WalkingChanged?.Invoke(true);
     }
 
+    /// <summary>
+    /// Double-click skip: puts the feet on the path's last waypoint at once, facing along the last leg, and then
+    /// behaves exactly like a walk that ended (walking off, <see cref="WalkingChanged"/>, the arrival callback).
+    /// Returns false when the actor is not walking.
+    /// </summary>
+    public bool FinishWalk()
+    {
+        if (path.Count == 0) return false;
+        var previous = Position;
+        var last = Position;
+        foreach (var p in path)
+        {
+            if (p.DistanceSquaredTo(last) > 1f) previous = last;
+            last = p;
+        }
+        var leg = last - previous;
+        if (leg.LengthSquared() > 1f) facing = leg.Normalized();
+        path.Clear();
+        Position = last;
+        UpdateScale();
+        Visual.SetLocomotion(false, facing);
+        WalkingChanged?.Invoke(false);
+        var callback = onArrived;
+        onArrived = null;
+        callback?.Invoke();
+        return true;
+    }
+
     /// <summary>Stops walking without running the arrival callback.</summary>
     public void Stop()
     {
@@ -129,7 +163,7 @@ public partial class Actor : Node2D
     public override void _Process(double delta)
     {
         if (path.Count == 0) return;
-        float step = Visual.WalkSpeedPxPerSecond * CurrentScale * SpeedMultiplier * (float)delta;
+        float step = Visual.WalkSpeedPxPerSecond * CurrentScale * SpeedMultiplier * WalkFactor * (float)delta;
         while (step > 0 && path.Count > 0)
         {
             var target = path.Peek();

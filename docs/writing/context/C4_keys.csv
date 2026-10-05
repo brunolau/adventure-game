@@ -1,0 +1,864 @@
+keys,sk_current,kind,speaker
+action.F01.label,Vysvetliť príchod cez fond Z-17,label,
+action.F01.001,Ste Adam Hruška. Vaše meno sa práve rozpadá v zozname návštevníkov.,line,NINA
+action.F01.002,Som tu. V Jasnej. To by sa dalo zapísať pomerne jasne.,line,ADAM
+action.F01.003,Atlas hosťuje výstavu v Grand Jasná a merací pavilón pri Chopku. Náš vlastný chronotechnický hardvér niekto zle nastavil. Lanovky s tým nesúvisia.,line,NINA
+action.F01.004,Viktor?,line,ADAM
+action.F01.005,"Nechal bežať spätný zápis napriek môjmu varovaniu. Potrebujeme pôvodné doklady, lokálnu čítačku od Tamary v lobby a kartu fondu od Borisa v hotelovom salóne. Sára v klientskom centre vám vybaví povolenie aj dopravu.",line,NINA
+action.F01.objective,V Grand Jasná získaj čítačku a katalóg; v klientskom centre Biela Púť riadny servisný vstup aj lístok.,goal,
+action.F01.journal,V Grand Jasná získaj čítačku a katalóg; v klientskom centre Biela Púť riadny servisný vstup aj lístok.,goal,
+action.F02.label,Požičať čítačku na pôvodnú kazetu,label,
+action.F02.001,Nina ma poslala kvôli pôvodnej školskej kazete.,line,ADAM
+action.F02.002,"Toto číta analóg aj servisnú pamäť. Vezmi si lokálnu čítačku. Kávu ti dám, keď sa prestanú strácať mená na objednávkach.",line,TAMARA
+action.F02.003,Som rozhodne motivovaný.,line,ADAM
+action.F02.004,"Kazetu nechaj pôvodnú. Čítať, nekorigovať.",line,TAMARA
+action.F02.journal,Dokončené: Požičať čítačku na pôvodnú kazetu.,goal,
+action.F03.label,Dohľadať fond podľa protokolu Z-17,label,
+action.F03.001,"Dokument súhlasí. Toto je verejná katalógová karta, spojenie medzi rokmi. Súkromné nahrávky sprístupňuje poverená kurátorka v servisnom režime.",line,BORIS
+action.F03.002,Čo Atlas odmietol ako prvé?,line,ADAM
+action.F03.003,"Nesúhlasné mená, pauzy v reči, smiech. A jednu správu pani Kormanovej. Bola príliš nejednoznačná.",line,BORIS
+action.F03.004,Ale bola jeho.,line,ADAM
+action.F03.005,A preto mala zostať.,line,BORIS
+action.F03.objective,Predlož katalógovú kartu na recepcii Atlasu.,goal,
+action.F03.journal,Predlož katalógovú kartu na recepcii Atlasu.,goal,
+action.F04.label,Vybaviť schválený servisný vstup,label,
+action.F04.001,Nina potvrdila servisný prístup do výstavného pavilónu. Tu je preukaz a riadny spiatočný lístok na oba úseky.,line,SARA
+action.F04.002,Ktorou cestou?,line,ADAM
+action.F04.003,"Z Bielej Púte na Priehybu, tam prestup na Funitel na Chopok. Vstup na galériu je pri Rotunde. Všetko dnes premáva za vhodných podmienok.",line,SARA
+action.F04.004,Výborne. Žiadne preskakovanie turniketov ani rokov.,line,ADAM
+action.F04.005,Na návrat si lístok nechajte.,line,SARA
+action.F04.objective,Použi lístok na čítačke pri dolnej stanici Biela Púť.,goal,
+action.F04.journal,Použi lístok na čítačke pri dolnej stanici Biela Púť.,goal,
+action.J02.label,Overiť spiatočný lístok a nastúpiť na Priehybu,label,
+action.J02.001,Lístok platný.,line,SYSTEM
+action.J02.002,Prvá etapa je Biela Púť–Priehyba. Tento nástup sa dá vysvetliť aj bez fyzikálneho výskumu.,line,ADAM
+action.J02.objective,Na Priehybe prestúp na Funitel smer Chopok.,goal,
+action.J02.journal,Na Priehybe prestúp na Funitel smer Chopok.,goal,
+action.J03.label,Nastúpiť na Funitel smer Chopok,label,
+action.J03.001,Lístok platí aj tu. Nech sa páči. Po príchode sa dvere normálne otvoria.,line,IVAN
+action.J03.002,Takýto vzťah k dverám mi dnes vyhovuje.,line,ADAM
+action.J03.objective,V kabíne si môžeš prezrieť krajinu a porozprávať sa s Milošom; potom dokonči jazdu.,goal,
+action.J03.journal,V kabíne si môžeš prezrieť krajinu a porozprávať sa s Milošom; potom dokonči jazdu.,goal,
+action.J04.label,Dokončiť jazdu a vystúpiť na Chopku,label,
+action.J04.001,Hore je to vždy trochu iný svet.,line,TURISTA
+action.J04.002,"Dnes dúfam, že len trochu.",line,ADAM
+action.J04.003,"Príchod do stanice. Prosíme, vystupujte po otvorení dverí.",line,SYSTEM
+action.J04.objective,Pri Rotunde zaznamenaj panel normalizácie a pokračuj do vlastného pavilónu Atlasu.,goal,
+action.J04.journal,Pri Rotunde zaznamenaj panel normalizácie a pokračuj do vlastného pavilónu Atlasu.,goal,
+action.F05.label,Zaznamenať pravidlo normalizácie,label,
+action.F05.001,Fotografujem len verejný technický panel. Rozdiel rovná sa zahodiť.,line,ADAM
+action.F05.002,Presný opak Mirkinej pôvodnej vety. To nie je chyba v pamäti. To je chyba v pravidle.,line,ADAM
+action.F05.journal,Dokončené: Zaznamenať pravidlo normalizácie.,goal,
+action.F06.label,Porovnať pôvodné stopy a servisný buffer,label,
+action.F06.001,Prístup k obnovovaciemu buffru povoľujem. Súkromný záznam prehráme len Viktorovi.,line,NINA_REMOTE
+action.F06.002,"Pripájam čítačku. Kazeta, pôvodné pravidlo, chyba filtra.",line,ADAM
+action.F06.003,Zadržaný obsah je možné obnoviť. Prepnite fyzický výstup na MONITOR.,line,SYSTEM
+action.F06.004,Tu je diagnostika aj pôvodná správa jeho mamy. Export je lokálny. A ešte potrebujeme referenčnú stopu pri Vrbickom plese.,line,NINA_REMOTE
+action.F06.005,Nie ďalší zdroj prepisovania.,line,ADAM
+action.F06.006,Presne. Senzor len číta.,line,NINA_REMOTE
+action.F06.objective,Chronometrom odmeraj pasívny referenčný senzor pri Vrbickom plese.,goal,
+action.F06.journal,Chronometrom odmeraj pasívny referenčný senzor pri Vrbickom plese.,goal,
+action.F07.label,Zachytiť miestnu referenčnú stopu,label,
+action.F07.001,Stojím na chodníku pri Vrbickom plese. Chronometer načíta vlastný pasívny stojan výstavy.,line,ADAM
+action.F07.002,Miestna referenčná stopa 2035 uložená.,line,SYSTEM
+action.F07.003,"Pleso sme nechali presne také, aké bolo.",line,ADAM
+action.F07.objective,Vráť sa lanovkami do servisného pavilónu a priprav obnovovací postup.,goal,
+action.F07.journal,Vráť sa lanovkami do servisného pavilónu a priprav obnovovací postup.,goal,
+action.F08.label,Pripraviť podpísaný obnovovací postup,label,
+action.F08.001,Pôvodné pravidlo a miestna referencia sú zhodné. Postup podpísaný.,line,NINA_REMOTE
+action.F08.002,"Zachovať výnimky, obnoviť zadržané záznamy, potom vypnúť spätný zápis.",line,ADAM
+action.F08.003,"Najprv strešný prepínač do režimu MONITOR. Je to oddelený signálový výstup, nie napájanie serverov.",line,NINA_REMOTE
+action.F08.004,Dobre. Žiadne náhodné vyťahovanie káblov.,line,ADAM
+action.F08.objective,Na strešnej terase prepnúť oddelený signálový výstup na MONITOR.,goal,
+action.F08.journal,Na strešnej terase prepnúť oddelený signálový výstup na MONITOR.,goal,
+action.J05.label,Zapojiť Tónov zachovaný návratový mostík,label,
+action.J05.001,"Izolovaný konektor Atlasu. Otov mostík, Tónova lastovička. Tridsaťosem rokov dobre uložených.",line,ADAM
+action.J05.002,Kontakt je stabilný. MONITOR už vie obísť chybný zápisový príkaz.,line,NINA_REMOTE
+action.J05.003,Tá detská mapa doviedla až sem.,line,ADAM
+action.J05.objective,Prepnúť vlastný výstup Atlasu na MONITOR.,goal,
+action.J05.journal,Prepnúť vlastný výstup Atlasu na MONITOR.,goal,
+action.F09.label,Prepnúť výstup do režimu MONITOR,label,
+action.F09.001,"ZÁPIS vypnutý, MONITOR zapnutý.",line,ADAM
+action.F09.002,Retroaktívny zápis pozastavený. Buffer zachovaný.,line,SYSTEM
+action.F09.003,Máme pokoj na opravu. Už nič ďalšie nemizne.,line,NINA_REMOTE
+action.F09.004,Toto je veľmi príjemný druh ticha.,line,ADAM
+action.F09.objective,Pri termináli potvrď servisnú cestu do synchronizačnej komory.,goal,
+action.F09.journal,Pri termináli potvrď servisnú cestu do synchronizačnej komory.,goal,
+action.F10.label,Overiť režim MONITOR a otvoriť komoru,label,
+action.F10.001,Hardvérový stav MONITOR potvrdený. Prístup do komory povolený.,line,SYSTEM
+action.F10.002,"Viktor je vnútri. Musí vedieť, čo systém zahodil. Potom vložíme štyri dôkazy.",line,NINA_REMOTE
+action.F10.003,Dnes mu poviem aj tie prestávky medzi vetami.,line,ADAM
+action.F10.objective,V komore ukáž Viktorovi nezmenenú správu jeho mamy.,goal,
+action.F10.journal,V komore ukáž Viktorovi nezmenenú správu jeho mamy.,goal,
+action.F11.label,Prehrať Viktorovi Leinu pôvodnú správu,label,
+action.F11.001,"Vypol si zápis. Vieš, koľko sa toho môže stratiť?",line,VIKTOR
+action.F11.002,"Viem, čo sa stratilo už teraz. Vypočujte si originál.",line,ADAM
+action.F11.003,"Viktor? To som ja. Len ti volám. Nemusíš nič opravovať. Keď budeš mať čas, ozvi sa.",line,LEA_REC
+action.F11.004,V upravenej verzii zostalo len ozvi sa.,line,VIKTOR
+action.F11.005,"Pauza nebola chyba. Ani to, že vám nechcela nič zadať.",line,ADAM
+action.F11.006,"Nina ma varovala. Nechal som skúšku bežať, lebo som chcel veriť výsledku.",line,VIKTOR
+action.F11.007,"Ešte vieme obnoviť to, čo zostalo v buffri.",line,ADAM
+action.F11.008,"Súhlasím. Zastavíme zápis, vrátime originály. A zverejním, čo som urobil.",line,VIKTOR
+action.F11.objective,"Vlož do označených portov Pôvod, Hlas, Súhlas a Návrat príslušné dôkazy.",goal,
+action.F11.journal,"Vlož do označených portov Pôvod, Hlas, Súhlas a Návrat príslušné dôkazy.",goal,
+action.F12.label,Vložiť overený odtlačok 1960,label,
+action.F12.001,PÔVOD: potvrdený.,line,SYSTEM
+action.F12.002,"Pravidlo, ktoré tu bolo skôr než normalizátor.",line,ADAM
+action.F12.journal,Dokončené: Vložiť overený odtlačok 1960.,goal,
+action.F13.label,Vložiť pôvodnú školskú kazetu 1995,label,
+action.F13.001,HLAS: potvrdený.,line,SYSTEM
+action.F13.002,A môžem povedať aj niečo normálne?,line,ADAM10
+action.F13.003,Dnes áno. A necháme to celé.,line,ADAM
+action.F13.journal,Dokončené: Vložiť pôvodnú školskú kazetu 1995.,goal,
+action.F14.label,Vložiť potvrdené odovzdanie 2020,label,
+action.F14.001,SÚHLAS: potvrdený.,line,SYSTEM
+action.F14.002,"Uchovať, nie vymazať. Podpísané skutočnými ľuďmi.",line,ADAM
+action.F14.journal,Dokončené: Vložiť potvrdené odovzdanie 2020.,goal,
+action.F15.label,Vložiť obnovovací postup 2035,label,
+action.F15.001,NÁVRAT: pripravený.,line,SYSTEM
+action.F15.002,"Postup podpísaný, zápis mechanicky zastavený.",line,ADAM
+action.F15.journal,Dokončené: Vložiť obnovovací postup 2035.,goal,
+action.F16.label,Overiť štyri svedectvá,label,
+action.F16.001,"Kedysi som si myslel, že poriadok znamená jedinú správnu verziu.",line,VIKTOR
+action.F16.002,"Začnime tým, že necháme ľuďom tie ich.",line,ADAM
+action.F16.003,Obnova pripravená. Potvrďte posledný krok.,line,SYSTEM
+action.F16.objective,Potvrď obnovu pôvodných záznamov. Vedľajšie úlohy zostanú dostupné aj po titulkoch.,goal,
+action.F16.journal,Potvrď obnovu pôvodných záznamov. Vedľajšie úlohy zostanú dostupné aj po titulkoch.,goal,
+action.F17.label,Obnoviť záznamy a vrátiť sa domov,label,
+action.F17.001,Volám sa Adam Hruška. Bol som tam. A som aj tu.,line,ADAM
+action.F17.002,Súhlas s obnovou potvrdený.,line,VIKTOR
+action.F17.003,Pôvodné záznamy obnovené. Retroaktívny zápis vypnutý.,line,SYSTEM
+action.F17.objective,Príbeh je dokončený. Pokračovať môžeš v zachovaných časových oknách; vedľajšie úlohy sa nestrácajú.,goal,
+action.F17.journal,Príbeh je dokončený. Pokračovať môžeš v zachovaných časových oknách; vedľajšie úlohy sa nestrácajú.,goal,
+action.Q8A.label,Prevziať opis nejasnej adresy,label,
+action.Q8A.001,Príjemca: opravovňa pri lavičke so psom. Súradnice sa nezhodujú s dnešným stavom.,line,ROBOT
+action.Q8A.002,Overím príjemcu. Balík si zatiaľ nechajte.,line,ADAM
+action.Q8A.003,Rozumná deľba práce zaznamenaná.,line,ROBOT
+action.Q8A.journal,Dokončené: Prevziať opis nejasnej adresy.,goal,
+action.Q8B.label,Porovnať starú adresu s lavičkou,label,
+action.Q8B.001,Na lavičke pri plese je pes a nápis Druhý život. To bol vonkajší stôl Tamarinej putovnej dielne.,line,ADAM
+action.Q8B.002,"Dnes pracuje v lobby hotela. Najprv sa jej spýtam, či balík skutočne čaká.",line,ADAM
+action.Q8B.journal,Dokončené: Porovnať starú adresu s lavičkou.,goal,
+action.Q8C.label,Overiť príjemcu starej doručovacej adresy,label,
+action.Q8C.001,"Áno, objednala som tú sadu. Vlani sme boli pri lavičke pri plese, tento rok nás výstava pozvala do Grandu. Tu je potvrdenie príjemkyne aj nový bod odovzdania.",line,TAMARA
+action.Q8C.002,"Očko dostane údaje, ktoré nepotrebujú lokálnu spomienku.",line,ADAM
+action.Q8C.objective,Dones potvrdenie Očkovi na Bielej Púti.,goal,
+action.Q8C.journal,Dones potvrdenie Očkovi na Bielej Púti.,goal,
+action.Q8D.label,Odovzdať overené doručovacie údaje,label,
+action.Q8D.001,Príjemkyňa potvrdená. Nový bod: opravársky stôl v lobby hotela Grand Jasná.,line,ROBOT
+action.Q8D.002,Na posledných sto metrov niekedy treba človeka.,line,ADAM
+action.Q8D.003,Poďakovanie zaradené mimo navigačných údajov. Uchovám ho.,line,ROBOT
+action.Q8D.journal,Dokončené: Odovzdať overené doručovacie údaje.,goal,
+action.Q9F.label,Spýtať sa na pokračovanie Janinho návrhu,label,
+action.Q9F.001,"Tu je môj prvý výkres. Vedľa fotografie notebookov z roku 2020 a mien ľudí, ktorí pomáhali.",line,JANA35
+action.Q9F.002,Žiadna zmena sveta na počkanie.,line,ADAM
+action.Q9F.003,"Nie. Len veľa malých vecí, ktoré by bez toho možno nevznikli.",line,JANA35
+action.Q9F.004,To stačí.,line,ADAM
+action.Q9F.journal,Dokončené: Spýtať sa na pokračovanie Janinho návrhu.,goal,
+room.S41.name,Biela Púť pri dolnej stanici,name,
+entry.S41.001,Budúcnosť. Jasná. Na cestovanie sa tu stále používa aj lano. Je dobré mať zálohu.,line,ADAM
+hotspot.S41.ROBOT.name,Doručovací robot Očko,name,
+look.S41.ROBOT,"Očko má zásielku aj zásadu, že odhad nie je adresa.",look,
+hotspot.S41.ambient 1.name,Lavičky,name,
+look.S41.ambient 1,Budúcnosť má stále rovnaký problém s pohodlím.,look,
+hotspot.S41.ambient 2.name,Tabuľa smerov,name,
+look.S41.ambient 2,"Biela Púť, Priehyba, Chopok. Tri fyzické miesta v jednom roku. To znie oddychovo.",look,
+hotspot.S41.gate.name,Čítačka platného lístka,name,
+look.S41.gate,Bežný nástup na úsek Biela Púť–Priehyba. Lístok vydá Sára ako riadne zabezpečenú dopravu výstavy.,look,
+exit.S41.to_S42.label,Pred hotelom Grand Jasná,name,
+exit.S41.to_S67.label,Priehyba pri prestupe na Funitel,name,
+exit.S41.to_S67.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,look,
+conn.S41.S42.label,Pred hotelom Grand Jasná,name,
+conn.S41.S67.label,Lanovka Biela Púť–Priehyba,name,
+conn.S41.S67.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,look,
+room.S42.name,Pred hotelom Grand Jasná,name,
+entry.S42.001,"Grand. Keď už riešim veľký problém, môžem sa pri tom aspoň tváriť ubytovane.",line,ADAM
+hotspot.S42.NINA.name,Nina Švecová,name,
+look.S42.NINA,"Nina vyzerá, že už tri hodiny vysvetľuje samozrejmú vec niekomu s vyšším rozpočtom.",look,
+hotspot.S42.ambient 1.name,Tieň stromu,name,
+look.S42.ambient 1,Dobrá technológia. Funguje aj bez registrácie.,look,
+hotspot.S42.ambient 2.name,Batožinový vozík,name,
+look.S42.ambient 2,Pohyblivé úložisko vecí bez potreby hesla.,look,
+exit.S42.to_S41.label,Biela Púť pri dolnej stanici,name,
+exit.S42.to_S43.label,Lobby hotela Grand Jasná,name,
+exit.S42.to_S44.label,Výstavný salón hotela Grand Jasná,name,
+exit.S42.to_S45.label,Chodník pri Vrbickom plese,name,
+exit.S42.to_S46.label,Klientske centrum Biela Púť,name,
+conn.S42.S43.label,Opravárenská kaviareň Druhý život,name,
+conn.S42.S44.label,Verejná čitáreň záznamov,name,
+conn.S42.S45.label,Chodník pri Vrbickom plese,name,
+conn.S42.S46.label,Recepcia centra Atlas,name,
+room.S43.name,Lobby hotela Grand Jasná,name,
+entry.S43.001,"Opravársky stôl v hoteli. Konečne miesto, kde je na dovolenke aj pokazený magnetofón.",line,ADAM
+hotspot.S43.TAMARA.name,Tamara Kráľová,name,
+look.S43.TAMARA,"Tamara rozoberá veci tak, aby sa dali aj zložiť.",look,
+hotspot.S43.ambient 1.name,Kávovar,name,
+look.S43.ambient 1,Vie pripraviť kávu aj vypísať dlhý opis svojich pocitov.,look,
+hotspot.S43.ambient 2.name,Police súčiastok,name,
+look.S43.ambient 2,Tamara vedie systém: bude sa to hodiť a hľadala som to včera.,look,
+exit.S43.to_S42.label,Pred hotelom Grand Jasná,name,
+room.S44.name,Výstavný salón hotela Grand Jasná,name,
+entry.S44.001,Salón prenajatý archívu. Niektoré spomienky si konečne doprajú hotel.,line,ADAM
+hotspot.S44.BORIS.name,Boris Urban,name,
+look.S44.BORIS,"Boris sa na chýbajúci záznam pozerá ako na človeka, ktorému niekto neposlal pozvánku.",look,
+hotspot.S44.JANA35.name,Jana Vargová,name,
+look.S44.JANA35,"Jana prišla zo školy na výstavu, tentoraz po desaťročiach a úplne dobrovoľne.",look,
+hotspot.S44.ambient 1.name,Papierové knihy,name,
+look.S44.ambient 1,Žiadna sa mi zatiaľ nepokúsila zmeniť odsek sama.,look,
+hotspot.S44.ambient 2.name,Záložka,name,
+look.S44.ambient 2,Pasívna pamäťová technológia. Výborná životnosť.,look,
+exit.S44.to_S42.label,Pred hotelom Grand Jasná,name,
+room.S46.name,Klientske centrum Biela Púť,name,
+entry.S46.001,"Infocentrum. Dobrý začiatok pre človeka, ktorý má problém už s dnešným dátumom.",line,ADAM
+hotspot.S46.SARA.name,Sára Vrbová,name,
+look.S46.SARA,"Sára vie, že pri poruche databázy je pero významná technológia.",look,
+hotspot.S46.ambient 1.name,Návštevnícky poriadok,name,
+look.S46.ambient 1,Najväčšie písmo má zákaz kávy. Zásahy do času sa zmestili nižšie.,look,
+hotspot.S46.ambient 2.name,Fikus,name,
+look.S46.ambient 2,Rastlina našťastie odmieta štandardizovaný tvar.,look,
+exit.S46.to_S42.label,Pred hotelom Grand Jasná,name,
+room.S67.name,Priehyba pri prestupe na Funitel,name,
+entry.S67.001,"Priehyba. Tentoraz prestupujem do kabíny, nie do dejín.",line,ADAM
+hotspot.S67.IVAN.name,Ivan Horský,name,
+look.S67.IVAN,Ivan považuje dopravu hore a späť za bežný deň. Obdivujem tú istotu.,look,
+hotspot.S67.ambient 1.name,Mapa dvoch úsekov,name,
+look.S67.ambient 1,"Najprv Biela Púť–Priehyba, potom Funitel Priehyba–Chopok. Prestup je skutočný, nie hádanka.",look,
+hotspot.S67.ambient 2.name,Madlo,name,
+look.S67.ambient 2,Užitočný vynález vo všetkých časových líniách.,look,
+hotspot.S67.boarding.name,Nástup na Funitel,name,
+look.S67.boarding,Druhý úsek je Priehyba–Chopok. Ivan potvrdí nástup; prechod sa odohrá bez časového testu.,look,
+exit.S67.to_S41.label,Biela Púť pri dolnej stanici,name,
+exit.S67.to_S41.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,look,
+exit.S67.to_S68.label,Kabína Funitelu medzi Priehybou a Chopkom,name,
+exit.S67.to_S68.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,look,
+conn.S67.S68.label,Nastúpiť na Funitel,name,
+conn.S67.S68.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,look,
+room.S68.name,Kabína Funitelu medzi Priehybou a Chopkom,name,
+entry.S68.001,"Konečne doprava, kde všetci cestujú do rovnakého času.",line,ADAM
+hotspot.S68.TURISTA.name,Miloš Polák,name,
+look.S68.TURISTA,"Miloš si nezapisuje nadmorskú výšku. Fotí si mraky, ktoré sa mu páčia.",look,
+hotspot.S68.ambient 1.name,Panoráma svahov,name,
+look.S68.ambient 1,Les a svahy sa pomaly posúvajú. Výhľad sa nemení na časový limit.,look,
+hotspot.S68.ambient 2.name,Schéma kabíny,name,
+look.S68.ambient 2,Funitel je iný typ lanovky než dolný úsek. Ani budúcnosť ich nezliala do jedného vagóna.,look,
+hotspot.S68.arrival.name,Príchod do vrcholovej stanice,name,
+look.S68.arrival,"Keď kabína dôjde do stanice, dvere otvorí obsluha. Pokyn Dokončiť jazdu preskočí panoramatickú slučku a privedie kabínu do normálneho príjazdu.",look,
+exit.S68.to_S47.label,Chopok pri Rotunde,name,
+exit.S68.to_S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.",look,
+exit.S68.to_S67.label,Priehyba pri prestupe na Funitel,name,
+exit.S68.to_S67.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,look,
+conn.S68.S47.label,Príchod na Chopok,name,
+conn.S68.S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.",look,
+room.S47.name,Chopok pri Rotunde,name,
+entry.S47.001,Rotunda. Aj dejiny tu majú výhľad. Teraz im ešte vrátiť obsah.,line,ADAM
+hotspot.S47.ambient 1.name,Prázdny rám,name,
+look.S47.ambient 1,Popis je bezchybný. Človek chýba.,look,
+hotspot.S47.ambient 2.name,Vitrína zvončeka,name,
+look.S47.ambient 2,Obyčajný školský zvonček s neobyčajne dlhým dosahom.,look,
+hotspot.S47.filter.name,Panel normalizácie,name,
+look.S47.filter,"Pred: hlas, pauza, smiech, dve odlišné mená. Po: jeden stručný údaj. Zariadenie označilo rozdiel za chybu, nie za súčasť života.",look,
+look.S47.filter.variant1,Panel teraz uchováva pôvodnú stopu aj rozdiely; žiadne automatické zhadzovanie nezhody.,look,
+exit.S47.to_S48.label,Servisný pavilón výstavy Atlas,name,
+exit.S47.to_S48.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,look,
+exit.S47.to_S68.label,Kabína Funitelu medzi Priehybou a Chopkom,name,
+exit.S47.to_S68.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.",look,
+conn.S47.S48.label,Servisná miestnosť Atlasu,name,
+conn.S47.S48.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,look,
+room.S48.name,Servisný pavilón výstavy Atlas,name,
+entry.S48.001,Táto technika patrí výstave. Na lanovku nesiaham. Tú budem ešte potrebovať.,line,ADAM
+hotspot.S48.ambient 1.name,Káble,name,
+look.S48.ambient 1,Aj v budúcnosti sú tri navyše a jeden krátky.,look,
+hotspot.S48.ambient 2.name,Papierová poznámka,name,
+look.S48.ambient 2,NEVYPÍNAŤ NASLEPO. NINA. Papier stále drží infraštruktúru.,look,
+hotspot.S48.terminal.name,Servisný terminál,name,
+look.S48.terminal,"Lokálna čítačka, porovnanie surového a upraveného záznamu, export servisnej opravy. Nina povoľuje diagnostiku, nie mazanie.",look,
+exit.S48.to_S47.label,Chopok pri Rotunde,name,
+exit.S48.to_S47.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,look,
+exit.S48.to_S49.label,Chronokomora pavilónu Atlas,name,
+exit.S48.to_S49.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,look,
+exit.S48.to_S50.label,Vyhliadková terasa pri Rotunde,name,
+exit.S48.to_S50.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,look,
+conn.S48.S49.label,Synchronizačná komora,name,
+conn.S48.S49.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,look,
+conn.S48.S50.label,Strešná servisná terasa,name,
+conn.S48.S50.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,look,
+room.S45.name,Chodník pri Vrbickom plese,name,
+entry.S45.001,"Pleso. Konečne niečo, čo vie odrážať bez toho, aby upravovalo originál.",line,ADAM
+hotspot.S45.ambient 1.name,Hladina plesa,name,
+look.S45.ambient 1,Odraz nie je totožný s krajinou. Napriek tomu má právo tu byť.,look,
+hotspot.S45.ambient 2.name,Turistické značenie,name,
+look.S45.ambient 2,Značka aspoň nesľubuje skratku cez tri časové obdobia.,look,
+hotspot.S45.bench.name,Lavička so psom,name,
+look.S45.bench,Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Tamara sem kedysi chodila s putovnou dielňou; tento rok je jej stôl v hotelovom lobby.,look,
+hotspot.S45.sensor.name,Pasívny stojan pri chodníku,name,
+look.S45.sensor,Vlastný pasívny senzor výstavy Atlas na verejnom chodníku. Na meranie netreba vstúpiť do plesa ani meniť jeho okolie.,look,
+exit.S45.to_S42.label,Pred hotelom Grand Jasná,name,
+room.S50.name,Vyhliadková terasa pri Rotunde,name,
+entry.S50.001,"Pekný výhľad. Bolo by dobré, keby sa dali zachovať aj všetci, čo sa naň pozerajú.",line,ADAM
+hotspot.S50.ambient 1.name,Tatry,name,
+look.S50.ambient 1,Tie by bola škoda zjednodušiť na trojuholník.,look,
+hotspot.S50.ambient 2.name,Plné zábradlie,name,
+look.S50.ambient 2,Budúcnosť má aj zábradlia. Dobré rozhodnutie.,look,
+hotspot.S50.bridge.name,Oddelený návratový konektor Atlasu,name,
+look.S50.bridge,Keramický mostík obchádza len chybný zápisový príkaz ZVONu. Skrinka nie je nijako zapojená do riadenia lanoviek.,look,
+hotspot.S50.switch.name,Prepínač zápisu,name,
+look.S50.switch,ZÁPIS mení minulosť; MONITOR iba číta a dovolí obnoviť zadržané údaje. Mechanický prepínač obíde chybný softvérový príkaz.,look,
+look.S50.switch.variant1,Prepínač je mechanicky zaistený v režime MONITOR. V tejto hre sa už nedá vrátiť na ZÁPIS.,look,
+exit.S50.to_S48.label,Servisný pavilón výstavy Atlas,name,
+exit.S50.to_S48.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,look,
+room.S49.name,Chronokomora pavilónu Atlas,name,
+entry.S49.001,Sme na Chopku. Minulosť je pod nami len obrazne. Technicky ju mám stále v brašni.,line,ADAM
+hotspot.S49.VIKTOR.name,Viktor Korman,name,
+look.S49.VIKTOR,"Viktor nespal a veľmi chce, aby to malo zmysel. Nebezpečná kombinácia pri veľkom vypínači.",look,
+hotspot.S49.ambient 1.name,Pohár vody,name,
+look.S49.ambient 1,Viktor si ho nalial pred spustením. Ešte sa nenapil.,look,
+hotspot.S49.ambient 2.name,Núdzová lampa,name,
+look.S49.ambient 2,Alarm bliká pomaly. Nikde nebeží skrytý odpočet.,look,
+hotspot.S49.confirm.name,Panel obnovy,name,
+look.S49.confirm,Štyri vstupy a veľké tlačidlo. Bez fyzického režimu MONITOR a súhlasu obsluhy obnova nezačne.,look,
+look.S49.confirm.variant1,Obnova skončila. Retroaktívny zápis je vypnutý a zostane vypnutý.,look,
+hotspot.S49.port_consent.name,Port Súhlas,name,
+look.S49.port_consent,Sem patrí obojstranne potvrdené odovzdanie z roku 2020.,look,
+hotspot.S49.port_origin.name,Port Pôvod,name,
+look.S49.port_origin,Sem patrí overený odtlačok z roku 1960.,look,
+hotspot.S49.port_return.name,Port Návrat,name,
+look.S49.port_return,"Sem patrí servisný postup z roku 2035, ktorý vie obnoviť záznam bez prepisu života.",look,
+hotspot.S49.port_voice.name,Port Hlas,name,
+look.S49.port_voice,"Sem patrí pôvodná školská kazeta z roku 1995, nie jej zhrnutie.",look,
+exit.S49.to_S48.label,Servisný pavilón výstavy Atlas,name,
+exit.S49.to_S48.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,look,
+topic.BORIS.ambient 1.001,Všetko má digitálnu kópiu. To nie je tá istá veta.,line,BORIS
+topic.BORIS.ambient 1.002,"Dnes som veľmi rád, že ju rozlišujete.",line,ADAM
+topic.BORIS.ambient 1.label,Je všetko digitálne?,topic_label,
+topic.BORIS.ambient 2.001,Dvaja ľudia si môžu ten istý deň pamätať inak. Archív má uniesť oboch.,line,BORIS
+topic.BORIS.ambient 2.002,Niekto tam dal príliš úzke police.,line,ADAM
+topic.BORIS.ambient 2.label,Nezhodné spomienky,topic_label,
+topic.IVAN.ambient 1.001,Dolný úsek ste prišli z Bielej Púte. Teraz Funitel na Chopok. Spiatočný lístok si nechajte.,line,IVAN
+topic.IVAN.ambient 1.002,Dnes sa spiatočných vecí držím.,line,ADAM
+topic.IVAN.ambient 1.label,Ktorou ďalej?,topic_label,
+topic.IVAN.ambient 2.001,"Dnešná jazda je povolená, podmienky sú dobré. Pri zmene by rozhodovala obsluha.",line,IVAN
+topic.IVAN.ambient 2.002,Výborne. Nemám chuť opravovať vietor.,line,ADAM
+topic.IVAN.ambient 2.label,Počasie,topic_label,
+topic.JANA35.ambient 1.001,"Máte taký výraz, akoby ste sem zablúdili už druhýkrát.",line,JANA35
+topic.JANA35.ambient 1.002,"To je presnejší odhad, než by som vedel potvrdiť.",line,ADAM
+topic.JANA35.ambient 1.label,Poznáme sa?,topic_label,
+topic.NINA.after.001,Pôvodné záznamy zostali oddelené od úprav. A správa o incidente je verejná.,line,NINA
+topic.NINA.after.002,Aj tá nepohodlná časť?,line,ADAM
+topic.NINA.after.003,Práve tá.,line,NINA
+topic.NINA.after.label,Po incidente,topic_label,
+topic.NINA.ambient 1.001,Áno. Stále robí zoznamy. Len už na ne píše aj dovolenka.,line,NINA
+topic.NINA.ambient 1.002,Tak predsa sa niečo zlepšilo.,line,ADAM
+topic.NINA.ambient 1.label,Vaša mama je Ela?,topic_label,
+topic.NINA.ambient 2.001,"Výstava zbiera aj spomienky na výlety. Grand poskytol miesto na verejnú časť, pri Chopku máme vlastný dočasný pavilón.",line,NINA
+topic.NINA.ambient 2.002,A lanovka dodala slušný dôvod sa cestou chvíľu pozerať z okna.,line,ADAM
+topic.NINA.ambient 2.label,Prečo práve Jasná?,topic_label,
+topic.ROBOT.ambient 1.001,Doručené zásielky: deväťdesiatdeväť percent. Pokoj: neznáma veličina.,line,ROBOT
+topic.ROBOT.ambient 1.002,To máme podobné.,line,ADAM
+topic.ROBOT.ambient 1.label,Ako sa darí?,topic_label,
+topic.ROBOT.ambient 2.001,Tie svetlá znamenajú úsmev?,line,ADAM
+topic.ROBOT.ambient 2.002,Znamenajú dostatočný stav batérie. Vplyv na náladu je pravdepodobný.,line,ROBOT
+topic.ROBOT.ambient 2.label,Váš úsmev,topic_label,
+topic.SARA.ambient 1.001,Odkiaľ prichádzate?,line,SARA
+topic.SARA.ambient 1.002,Z komplikovaného dátumu.,line,ADAM
+topic.SARA.ambient 1.003,Dám služobná návšteva.,line,SARA
+topic.SARA.ambient 1.label,Návšteva z minulosti,topic_label,
+topic.SARA.ambient 2.001,"Keď miznú mená v systéme, zapisujem ich sem.",line,SARA
+topic.SARA.ambient 2.002,To je možno najdôležitejší server v budove.,line,ADAM
+topic.SARA.ambient 2.label,Papierová evidencia,topic_label,
+topic.TAMARA.ambient 1.001,Káva je oprava človeka dočasným spôsobom.,line,TAMARA
+topic.TAMARA.ambient 1.002,Máte aj trvalejší zásah?,line,ADAM
+topic.TAMARA.ambient 1.003,Zatvárame o šiestej.,line,TAMARA
+topic.TAMARA.ambient 1.label,Káva alebo oprava?,topic_label,
+topic.TAMARA.ambient 2.001,"Kazeta aspoň ukáže, že sa niečo krúti.",line,TAMARA
+topic.TAMARA.ambient 2.002,V tom máme veľa spoločného.,line,ADAM
+topic.TAMARA.ambient 2.label,Staré médiá,topic_label,
+topic.TURISTA.ambient 1.001,Lebo aj tá patrila k výletu.,line,TURISTA
+topic.TURISTA.ambient 1.002,Dnes ste zhrnuli jednu dosť drahú poruchu.,line,ADAM
+topic.TURISTA.ambient 1.label,Prečo si fotíte aj hmlu?,topic_label,
+topic.TURISTA.ambient 2.001,"S otcom. Nepamätám si, kde sme jedli. Pamätám si, že sa smial.",line,TURISTA
+topic.TURISTA.ambient 2.002,To znie ako tá správna časť spomienky.,line,ADAM
+topic.TURISTA.ambient 2.label,Boli ste tu dávno?,topic_label,
+topic.VIKTOR.after.001,"Ten záznam som si nechal celý. Aj chvíľu, keď nepovie nič.",line,VIKTOR
+topic.VIKTOR.after.002,To ticho je vaše.,line,ADAM
+topic.VIKTOR.after.003,"Viem. Ďakujem, že si sa ho nepokúsil opraviť.",line,VIKTOR
+topic.VIKTOR.after.label,Čo zostalo z vašej mamy,topic_label,
+topic.VIKTOR.ambient 1.001,"Keď človek odíde, zostanú útržky. Chcel som, aby sa dali spojiť.",line,VIKTOR
+topic.VIKTOR.ambient 1.002,Spojiť sa dajú aj bez odstrihnutia okrajov.,line,ADAM
+topic.VIKTOR.ambient 1.003,"To hovoríš teraz. Keď ti zostane jediná nahrávka, začneš počítať každý šum.",line,VIKTOR
+topic.VIKTOR.ambient 1.label,Prečo to robíte?,topic_label,
+topic.VIKTOR.ambient 2.001,"Záznamy dostanú pôvod, verzie a možnosť nesúhlasiť. A ja zverejním, čo som spustil.",line,VIKTOR
+topic.VIKTOR.ambient 2.002,Dobre. Začnime tým vypínačom.,line,ADAM
+topic.VIKTOR.ambient 2.label,Čo bude po oprave?,topic_label,
+item.READER,Číta analógový vstup aj servisné pamäte. Nepotrebuje cloud ani sieť.,look,
+item.READER.name,Lokálna zvuková čítačka,name,
+item.READER.purpose,Porovnať pôvodnú kazetu a zachovaný surový fond.,goal,
+item.CATALOG,"Verejný záznam spája 1960, 1995 a 2020. Katalogizačný záznam nie je prístup k súkromným správam.",look,
+item.CATALOG.name,Katalógová karta fondu Z-17,name,
+item.CATALOG.purpose,Legitímny servisný vstup s Ninou.,goal,
+item.LIFT_TICKET,"Riadne zabezpečený lístok Biela Púť–Priehyba a Priehyba–Chopok, vrátane návratu. Bez limitu počtu herných návratov v tomto príbehovom dni.",look,
+item.LIFT_TICKET.name,Spiatočný lístok na oba úseky,name,
+item.LIFT_TICKET.purpose,"Použiť čítačku bežného turniketu, bez obchádzania kontroly.",goal,
+item.PASS,Nina schválila diagnostiku fondu. Sára eviduje aj papierovú kópiu mena.,look,
+item.PASS.name,Servisný návštevnícky preukaz,name,
+item.PASS.purpose,Vstup do galérie a servisnej miestnosti.,goal,
+item.FILTER_PHOTO,Telefónna snímka s označením chyby: ROZDIEL = ZAHODIŤ. V zápisníku je aj textový prepis.,look,
+item.FILTER_PHOTO.name,Záznam panelu normalizácie,name,
+item.FILTER_PHOTO.purpose,Porovnanie nesprávneho pravidla s pôvodným návrhom.,goal,
+item.DIAGNOSTIC,"Vymazané údaje sú do potvrdenia zápisu zadržiavané v buffri. Obnova je možná, ak sa výstup prepne do režimu MONITOR.",look,
+item.DIAGNOSTIC.name,Diagnostický protokol,name,
+item.DIAGNOSTIC.purpose,Bezpečný servisný postup.,goal,
+item.LEA_MESSAGE,Záznam z 2032 zostal v izolovanom servisnom buffri. Prístup povolila poverená kurátorka pri záchrane fondu; prehráva sa Viktorovi v súkromí.,look,
+item.LEA_MESSAGE.name,Leina nezmenená hlasová správa,name,
+item.LEA_MESSAGE.purpose,"Viktor pochopí, čo normalizátor vymazáva.",goal,
+item.PULSE,Pasívna referenčná stopa okolia Vrbického plesa uložená v chronometri. Miestna stabilita bez akéhokoľvek zásahu do vody.,look,
+item.PULSE.name,Miestna referenčná stopa,name,
+item.PULSE.purpose,Výpočet návratovej adresy Atlasu 2035.,goal,
+item.PATCH,Nina schválila servisný balík ZACHOVAŤ VÝNIMKY. Obnovuje zadržané pôvodné údaje a vypína retroaktívny zápis.,look,
+item.PATCH.name,Podpísaný obnovovací postup,name,
+item.PATCH.purpose,Dôkaz Návrat 2035.,goal,
+item.DELIVERY_NOTE,Zásielka pre putovnú opravovňu pri lavičke so psom; minuloročný opis dočasného stanoviska pri plese.,look,
+item.DELIVERY_NOTE.name,Očkova doručovacia požiadavka,name,
+item.DELIVERY_NOTE.purpose,Nájsť súčasného príjemcu bez hádania.,goal,
+item.DELIVERY_OK,Tamara potvrdila oprávnenie príjemkyne a nový bod odovzdania v lobby Grand Jasná.,look,
+item.DELIVERY_OK.name,Potvrdenie opravovne,name,
+item.DELIVERY_OK.purpose,Odovzdať Očkovi.,goal,
+quest.M12.goal,Legitímne prečítať servisný buffer a nájsť chybný filter.,goal,
+quest.M12.hint.1,Nina čaká pred Grand Jasná; výstava je v hoteli aj pri Rotunde.,hint,
+quest.M12.hint.2,"V lobby získaj čítačku, v salóne katalóg a v klientskom centre preukaz so spiatočným lístkom. Na Chopok vedú dva úseky.",hint,
+quest.M12.hint.3,Nina pred hotelom → kazeta na Tamaru v lobby → potvrdené odovzdanie na Borisa vo výstavnom salóne → katalógová karta na Sáru v klientskom centre → spiatočný lístok na čítačku pri dolnej stanici → nástup na Funitel na Priehybe → dokončiť jazdu → telefón na panel pri Rotunde → zvuková čítačka na servisný terminál v pavilóne Atlas.,hint,
+quest.M12.title,Prístup do Atlasu,name,
+quest.M13.goal,Pripraviť návrat a mechanicky zabrániť ďalšiemu výmazu.,goal,
+quest.M13.hint.1,Pasívny referenčný stojan je pri Vrbickom plese.,hint,
+quest.M13.hint.2,Po príprave postupu treba aj Tónov zachovaný mostík do oddeleného zariadenia Atlasu.,hint,
+quest.M13.hint.3,Chronometer na pasívny stojan pri chodníku → referenčná stopa na servisný terminál → návratový mostík na oddelený konektor Atlasu → klik prepínač MONITOR → potvrdiť servisný terminál.,hint,
+quest.M13.title,Zastaviť zápis,name,
+quest.M14.goal,"Viktor musí vypočuť záznam, ktorý sám nechal skrátiť.",goal,
+quest.M14.hint.1,Súkromná pôvodná správa je určená Viktorovi.,hint,
+quest.M14.hint.2,Nevyberaj správnu repliku z hádanky. Použi získaný pôvodný zvukový záznam na Viktora.,hint,
+quest.M14.hint.3,Leina hlasová správa na Viktora v chronokomore. Všetky ďalšie emócie a súhlas sa odohrajú pevne podľa scenára.,hint,
+quest.M14.title,Čo z hlasu zostalo,name,
+quest.M15.goal,Obnoviť zadržané údaje a vrátiť sa k Mire.,goal,
+quest.M15.hint.1,Každý zo štyroch portov má názov z pôvodnej platne.,hint,
+quest.M15.hint.2,"Pôvod je odtlačok, Hlas kazeta, Súhlas odovzdanie, Návrat servisný postup.",hint,
+quest.M15.hint.3,"Overený odtlačok → Pôvod; kazeta → Hlas; potvrdené odovzdanie → Súhlas; obnovovací postup → Návrat. Roky svedectiev: 1960, 1995, 2020, 2035. Potom klikni Obnoviť záznamy.",hint,
+quest.M15.title,Štyria svedkovia,name,
+quest.Q8.goal,Overiť príjemcu zásielky podľa ľudského opisu miesta.,goal,
+quest.Q8.hint.1,Očko čaká na Bielej Púti so starým opisom adresy.,hint,
+quest.Q8.hint.2,Lavička pri Vrbickom plese patrila putovnej dielni; Tamara je teraz v Grand Jasná.,hint,
+quest.Q8.hint.3,Očko pri dolnej stanici → lavička pri Vrbickom plese → doručovacia požiadavka na Tamaru v lobby → potvrdenie opravovne na Očko.,hint,
+quest.Q8.reward,Očkova ďakovná karta a doručená krabica pri opravárskom stole v hotelovom lobby.,goal,
+quest.Q8.title,Adresa nie je len súradnica,name,
+puzzle.P04.clue,Porty aj predmety obsahujú názov a rok; rovnaké informácie sú v zápisníku.,clue,
+puzzle.P04.left.1,Pôvod,option,
+puzzle.P04.left.2,Hlas,option,
+puzzle.P04.left.3,Súhlas,option,
+puzzle.P04.left.4,Návrat,option,
+puzzle.P04.right.1,2020,option,
+puzzle.P04.right.2,1960,option,
+puzzle.P04.right.3,2035,option,
+puzzle.P04.right.4,1995,option,
+puzzle.P04.success,Štyri nezávislé svedectvá overené. Obnova pripravená.,line,SYSTEM
+puzzle.P04.title,Priradenie štyroch svedectiev,name,
+puzzle.P04.wrong,Rok a označenie nesedia. Originály ostávajú bezpečne na mieste.,line,ADAM
+journal.clue.P04,"Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035",clue,
+cutscene.CS01.01.001,"Adam, na tej starej fotke nám vypadol kúsok farby.",line,MIRA20
+cutscene.CS01.01.002,"To nie je farba. Babka, drž sa pri telefóne.",line,ADAM
+cutscene.CS01.02.001,Nositeľ a obsah stabilizované. Referencia 1995.,line,SYSTEM
+cutscene.CS01.02.002,Ja som chcel opraviť poistku.,line,ADAM
+cutscene.CS01.03.001,Toto nie je vedľajšia ulica. Toto je vedľajšie desaťročie.,line,ADAM
+cutscene.CS02.01.001,"Už sa neponáhľaj, Adam. Máme čas.",line,LEA95
+cutscene.CS02.01.002,A môžem povedať aj niečo normálne?,line,ADAM10
+cutscene.CS02.01.003,Práve preto nahrávame.,line,LEA95
+cutscene.CS02.02.001,"Myslel som si, že toto zabudnem. Len som to dlho nepočul.",line,ADAM
+cutscene.CS03.01.001,Ivanka pri Dunaji. 6. júna 1960.,line,SYSTEM
+cutscene.CS03.01.002,"Pôjdem za človekom, ktorý ešte nevie, že je moja babka.",line,ADAM
+cutscene.CS03.02.001,"A urobím to skôr, než to nebude vedieť ani neskôr.",line,ADAM
+cutscene.CS04.01.001,"Čo sa nezhoduje, necháme vedľa seba. Nevyhodíme to.",line,MIRA60
+cutscene.CS04.01.002,Toto bude treba raz niekomu povedať ešte raz.,line,ADAM
+cutscene.CS04.02.001,Jeden predmet. Niekoľko rúk. Žiadna z nich nie je chyba v zázname.,line,NARRATOR
+cutscene.CS05.01.001,Následný správca fondu: Atlas. Jasná. Rok 2035.,line,SYSTEM
+cutscene.CS05.01.002,"Tak už viem, kde sa minulosť kazí.",line,ADAM
+cutscene.CS05.02.001,A nezabudni sa vrátiť.,line,MIRA20
+cutscene.CS05.02.002,To mám tentoraz napísané aj na prístroji.,line,ADAM
+cutscene.CS06.01.001,"Ten hlas tam bol celý čas. Len som ho nechcel nechať taký, aký bol.",line,VIKTOR
+cutscene.CS06.02.001,"Opravil som z nej všetko, čo som si mal nechať.",line,VIKTOR
+cutscene.CS06.02.002,Záznam tam ešte je.,line,ADAM
+cutscene.CS06.02.003,Tak ho nechajme celý.,line,VIKTOR
+cutscene.CS07.01.001,Buffer obnovený. Spätný zápis trvalo vypnutý.,line,SYSTEM
+cutscene.CS07.01.002,"Mená sú späť. Aj tie, ktoré si navzájom odporujú.",line,NINA_REMOTE
+cutscene.CS07.01.003,Výborne. Konečne to vyzerá ako ľudia.,line,ADAM
+cutscene.CS07.02.001,Zverejním celý postup aj svoje rozhodnutie pokračovať. Originály zostanú oddelené od úprav.,line,VIKTOR
+cutscene.CS07.02.002,"A ďalšiu zmenu schvália aj tí, ktorých sa týka.",line,NINA_REMOTE
+cutscene.CS07.03.001,Adam? Už mi ideš po správnom telefóne?,line,MIRA20
+cutscene.CS07.03.002,Áno. A aj po správnom roku.,line,ADAM
+cutscene.CS07.03.003,Nákup si nechal dobre.,line,MIRA20
+cutscene.CS07.03.004,Zachránil som aj trochu viac.,line,ADAM
+cutscene.CS07.03.005,Všimla som si.,line,MIRA20
+cutscene.CS07.04.001,"Čaj ti spravím, keď bude možné prísť normálne.",line,MIRA20
+cutscene.CS07.04.002,Tentoraz počkám.,line,ADAM
+cutscene.CS07.05.001,Nie všetko treba opraviť. Niečo si treba nechať.,line,NARRATOR
+cutscene.CS08.01.001,"Tri dosky. Jedna odklonená cesta vozíka. A o desaťročia miesto, kde môžu ľudia sedieť.",line,ADAM
+cutscene.CS08.01.002,"Takto vyzerá čas, keď sa neopravuje naraz celý.",line,ADAM
+cutscene.CS08.02.001,"A miesto, ktoré sme potrebovali, nezmizlo.",line,ADAM
+cutscene.CS09.01.001,Do kopca po lane. Na dnes príjemne zrozumiteľný princíp.,line,ADAM
+cutscene.CS09.02.001,Priehyba. Prestup na Funitel smer Chopok.,line,SYSTEM
+epilogue.1.line,"Konečne jedna vec, ktorú nechcel meniť.",line,LENKA
+epilogue.1.shot,Bodka v 2020 leží pri červenej loptičke.,caption,
+epilogue.2.line,"Vidíte? Netreba mať účet, stačí mať písmená.",line,JOZEF
+epilogue.2.shot,Jozef prečíta veľký oznam ďalšiemu susedovi.,caption,
+epilogue.3.line,Aj ten vzadu tam patrí.,line,ADAM
+epilogue.3.shot,Budúca galéria ukáže celý tím na Soninej fotografii.,caption,
+epilogue.4.line,Niektoré melódie sa oplatí nechať dohrať.,line,TAMARA
+epilogue.4.shot,Tamara na chvíľu prestane opravovať a počúva Štyri zastávky.,caption,
+epilogue.5.line,Nie paneláky. Susedia.,line,NINA
+epilogue.5.shot,Reprodukcia Jurajovho podchodu v galérii; svetlá ostanú rozdielne.,caption,
+epilogue.6.line,Doručené. Bez pečiatky by som tomu tiež veril.,line,ALOJZ
+epilogue.6.shot,Béla za oknom pošty; Alojz zavrie knihu bez zhonu.,caption,
+epilogue.7.line,"Žiaden strach, miláčik! Tentoraz mám aj druhú stranu.",line,RUDO
+epilogue.7.shot,"Rudo na skúške konečne povie celú prvú vetu, Lída drží smiech.",caption,
+epilogue.8.line,Údaj nemá doručovaciu funkciu. Uchovám ho.,line,ROBOT
+epilogue.8.shot,Očko v kaviarni dostane od Tamary papierovú kartičku ĎAKUJEM.,caption,
+epilogue.9.line,"Začalo sa to tým, že som to mohla vysvetliť vlastnými slovami.",line,JANA35
+epilogue.9.shot,"Tri rovnaké Janine gestá pri výkrese 1982, notebooku 2020 a vitríne v Grand Jasná 2035.",caption,
+char.ADAM.name,Adam Hruška,name,
+char.BORIS.name,Boris Urban,name,
+char.IVAN.name,Ivan Horský,name,
+char.JANA35.name,Jana Vargová,name,
+char.NINA.name,Nina Švecová,name,
+char.ROBOT.name,Doručovací robot Očko,name,
+char.SARA.name,Sára Vrbová,name,
+char.TAMARA.name,Tamara Kráľová,name,
+char.TURISTA.name,Miloš Polák,name,
+char.VIKTOR.name,Viktor Korman,name,
+game.title,Posledný zvonec,name,
+char.ADAM10.name,Adam vo veku 10 rokov zo záznamu 1995,name,
+char.ALENA.name,Alena Svobodová,name,
+char.ALOJZ.name,Alojz Baran,name,
+char.BODKA.name,Pes Bodka,name,
+char.FERO.name,Fero Lánik,name,
+char.KAROL.name,Karol Merta,name,
+char.LEA_REC.name,Lea Kormanová zo záznamu 2032,name,
+char.NARRATOR.name,Záverečné titulky,name,
+char.NINA_REMOTE.name,Nina cez servisný kanál,name,
+char.STEFAN.name,Štefan Haluška,name,
+char.SYSTEM.name,Text zariadenia,name,
+ui.common.ok,OK,ui,
+ui.common.yes,Áno,ui,
+ui.common.no,Nie,ui,
+ui.common.cancel,Zrušiť,ui,
+ui.common.back,Späť,ui,
+ui.common.close,Zavrieť,ui,
+ui.common.confirm,Potvrdiť,ui,
+ui.common.apply,Použiť,ui,
+ui.common.on,Zapnuté,ui,
+ui.common.off,Vypnuté,ui,
+ui.common.loading,Načítava sa…,ui,
+ui.common.press_any_key,Stlač ľubovoľný kláves,ui,
+ui.menu.new_game,Nová hra,ui,
+ui.menu.continue,Pokračovať,ui,
+ui.menu.load,Načítať,ui,
+ui.menu.save,Uložiť,ui,
+ui.menu.settings,Nastavenia,ui,
+ui.menu.album,Album,ui,
+ui.menu.help,Pomoc,ui,
+ui.menu.credits,Titulky,ui,
+ui.menu.quit,Ukončiť,ui,
+ui.menu.new_game_confirm,Začať novú hru? Postup od posledného uloženia sa stratí.,ui,
+ui.menu.quit_confirm,Naozaj chceš ukončiť hru?,ui,
+ui.menu.version,Verzia {version},ui,
+ui.pause.title,Pauza,ui,
+ui.pause.resume,Pokračovať v hre,ui,
+ui.pause.save,Uložiť hru,ui,
+ui.pause.load,Načítať hru,ui,
+ui.pause.settings,Nastavenia,ui,
+ui.pause.help,Pomoc,ui,
+ui.pause.main_menu,Hlavné menu,ui,
+ui.pause.main_menu_confirm,Vrátiť sa do hlavného menu? Postup od posledného uloženia sa stratí.,ui,
+ui.pause.quit,Ukončiť hru,ui,
+ui.pause.quit_confirm,Ukončiť hru? Postup od posledného uloženia sa stratí.,ui,
+ui.save.title_save,Uložiť hru,ui,
+ui.save.title_load,Načítať hru,ui,
+ui.save.manual_section,Uložené hry,ui,
+ui.save.autosave_section,Automatické uloženia,ui,
+ui.save.slot,Pozícia {n},ui,
+ui.save.slot_empty,Prázdna pozícia,ui,
+ui.save.autosave,Automatické uloženie {n},ui,
+ui.save.checkpoint_finale,Kontrolný bod pred finále,ui,
+ui.save.slot_summary,{place} · {year},ui,
+ui.save.saved_at,Uložené {datetime},ui,
+ui.save.playtime,Herný čas {time},ui,
+ui.save.overwrite_confirm,Prepísať uloženú hru na pozícii {n}?,ui,
+ui.save.overwrite,Prepísať,ui,
+ui.save.delete,Vymazať,ui,
+ui.save.delete_confirm,Naozaj vymazať uloženú hru na pozícii {n}?,ui,
+ui.save.load_confirm,Načítať túto hru? Postup od posledného uloženia sa stratí.,ui,
+ui.save.saving,Ukladá sa…,ui,
+ui.save.saved,Hra je uložená.,ui,
+ui.save.save_failed,Hru sa nepodarilo uložiť. Skús to znova alebo vyber inú pozíciu.,ui,
+ui.save.cannot_save_now,Teraz sa nedá uložiť. Skús to po dokončení aktuálnej akcie.,ui,
+ui.save.corrupted,Chybný súbor uloženia. Aktuálna hra zostala otvorená.,ui,
+ui.save.corrupted_slot,Chybný súbor uloženia,ui,
+ui.save.newer_version,Uloženie pochádza z novšej verzie hry a nedá sa načítať. Aktuálna hra zostala otvorená.,ui,
+ui.save.migrated,Uloženie zo staršej verzie hry bolo prevedené na novú verziu.,ui,
+ui.save.no_saves,Zatiaľ nemáš uloženú žiadnu hru.,ui,
+ui.save.export,Exportovať uloženie,ui,
+ui.save.import,Importovať uloženie,ui,
+ui.save.export_done,Uloženie je exportované.,ui,
+ui.save.import_done,Uloženie je importované.,ui,
+ui.save.import_failed,Súbor sa nepodarilo importovať. Aktuálna hra zostala otvorená.,ui,
+ui.settings.title,Nastavenia,ui,
+ui.settings.tab_audio,Zvuk,ui,
+ui.settings.tab_display,Obraz,ui,
+ui.settings.tab_text,Text a titulky,ui,
+ui.settings.tab_controls,Ovládanie,ui,
+ui.settings.tab_accessibility,Prístupnosť,ui,
+ui.settings.language,Jazyk,ui,
+ui.settings.language_sk,Slovenčina,ui,
+ui.settings.language_en,English,ui,
+ui.settings.volume_master,Celková hlasitosť,ui,
+ui.settings.volume_music,Hudba,ui,
+ui.settings.volume_ambience,Zvuky prostredia,ui,
+ui.settings.volume_sfx,Efekty,ui,
+ui.settings.volume_voice,Hlasy,ui,
+ui.settings.volume_value,{percent} %,ui,
+ui.settings.mute_unfocused,"Stlmiť zvuk, keď okno hry nie je aktívne",ui,
+ui.settings.text_speed,Rýchlosť textu,ui,
+ui.settings.text_speed_slow,Pomalá,ui,
+ui.settings.text_speed_normal,Normálna,ui,
+ui.settings.text_speed_fast,Rýchla,ui,
+ui.settings.text_speed_instant,Okamžitá,ui,
+ui.settings.auto_advance,Automatické pokračovanie titulkov,ui,
+ui.settings.auto_advance_speed,Rýchlosť automatického pokračovania,ui,
+ui.settings.subtitles,Zobrazovať titulky,ui,
+ui.settings.subtitle_size,Veľkosť titulkov,ui,
+ui.settings.subtitle_size_value,{size} px,ui,
+ui.settings.subtitle_preview,Takto budú vyzerať titulky.,ui,
+ui.settings.subtitle_background,Kontrastné pozadie titulkov,ui,
+ui.settings.speaker_names,Zobrazovať meno hovoriaceho,ui,
+ui.settings.window_mode,Zobrazenie,ui,
+ui.settings.fullscreen,Celá obrazovka,ui,
+ui.settings.windowed,V okne,ui,
+ui.settings.vsync,Vertikálna synchronizácia,ui,
+ui.settings.hud_scale,Veľkosť rozhrania,ui,
+ui.settings.cursor_highlight,Zvýraznený kurzor,ui,
+ui.settings.walk_speed,Rýchlosť chôdze,ui,
+ui.settings.walk_speed_calm,Pokojná,ui,
+ui.settings.walk_speed_brisk,Svižná,ui,
+ui.settings.reduced_motion,Obmedziť pohyb,ui,
+ui.settings.reduced_motion_desc,"Vypne paralaxu, trasenie a záblesky. Presun časom nahradí stmavnutie s názvom roku.",ui,
+ui.settings.high_contrast_labels,Kontrastné menovky objektov,ui,
+ui.settings.high_contrast_labels_desc,Popis pri kurzore dostane tmavé pozadie a väčšie písmo.,ui,
+ui.settings.hotspot_key_hint,Pripomínať kláves na zobrazenie objektov,ui,
+ui.settings.hotspot_key_hint_desc,"Spodný panel pripomenie, že podržaný Space ukáže všetky miesta, na ktoré sa dá kliknúť.",ui,
+ui.settings.reset_tips,Znova zobraziť úvodné rady,ui,
+ui.settings.reset_defaults,Obnoviť predvolené,ui,
+ui.settings.reset_confirm,Vrátiť všetky nastavenia na predvolené hodnoty?,ui,
+ui.settings.restart_required,Zmena sa prejaví po reštarte hry.,ui,
+ui.controls.title,Ovládanie,ui,
+ui.controls.left_click,"Ľavý klik – akcia, chôdza, rozhovor",ui,
+ui.controls.right_click,"Pravý klik – prezrieť objekt, na voľnom mieste inventár",ui,
+ui.controls.right_click_selected,Pravý klik s vybratým predmetom – zrušiť výber,ui,
+ui.controls.space,Space (podržať) – ukázať značky na všetkých miestach na kliknutie,ui,
+ui.controls.double_click,Dvojklik – preskočiť chôdzu (Adam je hneď na mieste),ui,
+ui.controls.inventory,I – inventár,ui,
+ui.controls.map,M – mapa,ui,
+ui.controls.journal,J – denník,ui,
+ui.controls.hint,H – nápoveda,ui,
+ui.controls.escape,Esc – zavrieť panel alebo pauza,ui,
+ui.controls.enter,Enter – pokračovať v titulku,ui,
+ui.controls.tab,Tab – prechádzať zoznam objektov,ui,
+ui.controls.shift_enter,Shift+Enter alebo dvakrát Enter – vykonať a preskočiť chôdzu,ui,
+ui.tutorial.left_click,Ľavým klikom vykonáš akciu.,ui,
+ui.tutorial.right_click,Pravým prezrieš objekt; na voľnom mieste otvoríš inventár.,ui,
+ui.tutorial.space,"Kým držíš Space, značky ukážu všetky miesta, na ktoré môžeš kliknúť.",ui,
+ui.tutorial.help_menu,Tieto rady nájdeš aj v menu Pomoc.,ui,
+ui.tutorial.touch_tap,Ťuknutím vykonáš akciu.,ui,
+ui.tutorial.touch_hold,Podržaním prsta prezrieš objekt.,ui,
+ui.tutorial.touch_eye,"Podrž dva prsty na obrazovke (alebo tlačidlo Oko) a uvidíš všetky miesta, na ktoré môžeš ťuknúť.",ui,
+ui.tutorial.got_it,Rozumiem,ui,
+ui.hud.inventory,Brašna,ui,
+ui.hud.journal,Denník,ui,
+ui.hud.map,Mapa,ui,
+ui.hud.hint,Nápoveda,ui,
+ui.hud.menu,Menu,ui,
+ui.hud.show_hotspots,Oko,ui,
+ui.hud.hotspots_on,Zobrazené všetky miesta na kliknutie,ui,
+ui.hud.hotspots_off,Zobrazenie miest vypnuté,ui,
+ui.hud.hotspot_key_hint,"Podrž Space – ukážu sa miesta, na ktoré sa dá kliknúť",ui,
+ui.hud.current_goal,Aktuálny cieľ,ui,
+ui.hud.hide_goal,Skryť cieľ,ui,
+ui.hud.goal_updated,Nový cieľ v denníku,ui,
+ui.inventory.title,Brašna,ui,
+ui.inventory.tab_items,Predmety,ui,
+ui.inventory.tab_archived,Archivované,ui,
+ui.inventory.empty,Brašna je prázdna.,ui,
+ui.inventory.archived_empty,Zatiaľ tu nie sú žiadne archivované dokumenty.,ui,
+ui.inventory.archived_badge,Archivované,ui,
+ui.inventory.purpose,Účel: {purpose},ui,
+ui.inventory.selected,Vybraný predmet: {item},ui,
+ui.inventory.selection_cleared,Výber zrušený,ui,
+ui.inventory.combine,Spojiť predmety,ui,
+ui.inventory.combine_hint,Vyber druhý predmet.,ui,
+ui.inventory.look_hint,Pravým klikom predmet prezrieš.,ui,
+ui.inventory.item_added,Do brašny pribudlo: {item},ui,
+ui.inventory.item_removed,Z brašny ubudlo: {item},ui,
+ui.inventory.evidence_returned,Dôkazy sú späť v brašni.,ui,
+ui.inventory.scroll_up,Posunúť nahor,ui,
+ui.inventory.scroll_down,Posunúť nadol,ui,
+ui.inventory.page,{current}/{total},ui,
+ui.journal.title,Denník,ui,
+ui.journal.tab_goals,Ciele,ui,
+ui.journal.tab_findings,Zistenia,ui,
+ui.journal.tab_people,Ľudia,ui,
+ui.journal.tab_time_map,Mapa času,ui,
+ui.journal.tab_album,Album,ui,
+ui.journal.main_story,Hlavný príbeh,ui,
+ui.journal.side_quests,Vedľajšie úlohy,ui,
+ui.journal.state_open,Nesplnená,ui,
+ui.journal.state_in_progress,Rozpracovaná,ui,
+ui.journal.state_done,Hotová,ui,
+ui.journal.pin,Pripnúť,ui,
+ui.journal.unpin,Odopnúť,ui,
+ui.journal.pinned_main,Pripnutá hlavná úloha,ui,
+ui.journal.pinned_side,Pripnutá vedľajšia úloha,ui,
+ui.journal.observations,Pozorovania,ui,
+ui.journal.clues,Vodidlá k hádankám,ui,
+ui.journal.transcripts,Prepisy rozhovorov,ui,
+ui.journal.progress_log,Záznamy postupu,ui,
+ui.journal.reward,Odmena: {reward},ui,
+ui.journal.empty,Zatiaľ tu nič nie je.,ui,
+ui.journal.new_entry,Nový záznam v denníku,ui,
+ui.journal.people_empty,Zatiaľ si nikoho nestretol.,ui,
+ui.journal.time_map_current,Práve si tu,ui,
+ui.journal.time_map_locked,Zatiaľ neotvorené časové okno,ui,
+ui.journal.album_empty,"Album sa zaplní, keď pomôžeš ľuďom vo vedľajších úlohách.",ui,
+ui.journal.replay_ending,Znova prehrať záver,ui,
+ui.map.title,Mapa,ui,
+ui.map.node,Uzol,ui,
+ui.map.node_tooltip,Rýchly presun k časovému uzlu tohto roku,ui,
+ui.map.fast_travel,Rýchly presun,ui,
+ui.map.travel_to,Presunúť sa: {place},ui,
+ui.map.you_are_here,Tu si,ui,
+ui.map.unvisited,Nenavštívené miesto,ui,
+ui.map.unreachable,Sem sa teraz nedostaneš.,ui,
+ui.map.fast_travel_rule,"Rýchly presun vedie len na navštívené miesta, kam sa práve dá dostať.",ui,
+ui.map.sheet_year,Rok {year},ui,
+ui.map.legend,Legenda,ui,
+ui.travel.walk,Pešo,ui,
+ui.travel.map_transition,Skrátený presun,ui,
+ui.travel.car_transition,Autom,ui,
+ui.travel.cable_A6,Kabínkovou lanovkou,ui,
+ui.travel.board_funitel,Nástup do Funitelu,ui,
+ui.travel.arrive_funitel,Výstup z Funitelu,ui,
+ui.travel.finish_ride,Dokončiť jazdu,ui,
+ui.travel.choose_era,Kam sa presunieš?,ui,
+ui.travel.era_option,Rok {year},ui,
+ui.travel.era_locked,Toto časové okno ešte nie je otvorené.,ui,
+ui.travel.era_current,Tu sa práve nachádzaš,ui,
+ui.travel.jump,Presunúť sa,ui,
+ui.travel.new_era_unlocked,Otvorilo sa nové časové okno: {year},ui,
+era.1960.card,Ivanka pri Dunaji,ui,
+era.1960.date,6. júna 1960,ui,
+era.1982.card,Dúbravka,ui,
+era.1982.date,7. decembra 1982,ui,
+era.1995.card,Bratislava,ui,
+era.1995.date,15. júna 1995,ui,
+era.2020.card,Chorvátsky Grob a Dúbravka,ui,
+era.2020.date,29. októbra 2020,ui,
+era.2035.card,Jasná,ui,
+era.2035.date,6. júna 2035,ui,
+ui.hint.title,Nápoveda,ui,
+ui.hint.level_1,Smer,ui,
+ui.hint.level_2,Postup,ui,
+ui.hint.level_3,Riešenie,ui,
+ui.hint.next,Ďalšia nápoveda,ui,
+ui.hint.show_solution,Ukázať presné riešenie,ui,
+ui.hint.main_quest,Hlavná úloha,ui,
+ui.hint.side_quest,Vedľajšia úloha,ui,
+ui.hint.choose_quest,K čomu chceš poradiť?,ui,
+ui.hint.none,Teraz nie je k dispozícii žiadna nápoveda.,ui,
+ui.hint.all_done,Všetko podstatné je hotové.,ui,
+ui.puzzle.confirm,Potvrdiť,ui,
+ui.puzzle.reset,Začať odznova,ui,
+ui.puzzle.close,Zavrieť,ui,
+ui.puzzle.hint_fill,Vyplniť správne,ui,
+ui.puzzle.hint_fill_done,Riešenie je vyplnené. Potvrď ho ako bežný pokus.,ui,
+ui.puzzle.clue,Vodidlo,ui,
+ui.puzzle.rotate_left,Otočiť doľava,ui,
+ui.puzzle.rotate_right,Otočiť doprava,ui,
+ui.puzzle.rotation_value,{degrees}°,ui,
+ui.puzzle.digit,Číslica {n},ui,
+ui.puzzle.digit_up,Zvýšiť,ui,
+ui.puzzle.digit_down,Znížiť,ui,
+ui.puzzle.grid_cell,"Rad {row}, stĺpec {column}",ui,
+ui.puzzle.match_instruction,Vyber položku vľavo a potom k nej patriacu položku vpravo.,ui,
+ui.puzzle.match_clear,Zrušiť spojenie,ui,
+ui.dialogue.continue,Pokračovať,ui,
+ui.dialogue.end,Ukončiť rozhovor,ui,
+ui.dialogue.topics,Témy,ui,
+ui.dialogue.transcript,Prepis rozhovoru,ui,
+ui.dialogue.history,História titulkov,ui,
+ui.dialogue.recording_year,Záznam z roku {year},ui,
+ui.cutscene.skip,Preskočiť,ui,
+ui.cutscene.skip_prompt,Scénu preskočíš klávesom Esc.,ui,
+ui.cutscene.skip_confirm,Preskočiť scénu? Postup v hre ostane rovnaký.,ui,
+ui.cutscene.resume_title,Hra sa obnovila po prerušení,ui,
+ui.cutscene.resume_question,Dokončiť rozohranú scénu alebo ju preskočiť?,ui,
+ui.cutscene.resume_play,Dokončiť scénu,ui,
+ui.cutscene.the_end,Koniec príbehu,ui,
+ui.credits.title,Titulky,ui,
+ui.credits.photo_sources,Zdroje fotografií a licencie,ui,
+ui.credits.thanks,Ďakujeme za hranie.,ui,
+ui.postgame.free_play,"Príbeh je uzavretý. Stabilizované časové okná ostávajú otvorené, aby si mohol dokončiť vedľajšie úlohy.",ui,
+ui.postgame.continue,Pokračovať vo voľnom hraní,ui,
+ui.a11y.hotspot_list,Zoznam objektov,ui,
+ui.a11y.group_characters,Postavy,ui,
+ui.a11y.group_progress,Dôležité objekty,ui,
+ui.a11y.group_ambient,Ostatné objekty,ui,
+ui.a11y.group_exits,Východy,ui,
+ui.a11y.exit,Východ: {label},ui,
+ui.a11y.locked,Zatiaľ zamknuté,ui,
+ui.system.path_blocked,"Len o krok bokom, tadiaľto sa nedostanem.",ui,
+ui.system.loading_scene,Načítava sa scéna…,ui,
+ui.system.autosaved,Automaticky uložené,ui,
+ui.system.invalid_state,Hra narazila na chybný stav a vráti sa k poslednému funkčnému kontrolnému bodu.,ui,
+ui.system.return_to_checkpoint,Vrátiť sa ku kontrolnému bodu,ui,
+ui.system.content_error,Chyba v obsahu hry: chýba {id} ({path}).,ui,
+ui.system.error_title,Chyba,ui,
+ui.system.unknown_error,Nastala neočakávaná chyba.,ui,
+ui.dev.blockout,Vývojový náčrt {room}: {name} ({era}) – maľované pozadie zatiaľ chýba,ui,
+ui.dev.variant_missing,Stavový variant bez maľby: {asset},ui,
+ui.dev.causal_active,Príčinná zmena po {after}: {change},ui,
+ui.dev.solve,Vyriešiť (iba vývoj),ui,
+ui.dev.quick_saved,Rýchle uloženie hotové.,ui,
+ui.dev.no_save,Uložená hra neexistuje.,ui,
+ui.controls.back,Backspace – prezrieť objekt vybraný klávesom Tab,ui,
+ui.controls.travel,T – presun v čase pri časovom uzle,ui,
+ui.cutscene.scene_n,Scéna {n},ui,
+ui.dev.shot,Záber (vývojová poznámka): {shot},ui,
+ui.dialogue.heard,už prebraté,ui,
+ui.inventory.deselect,Zrušiť výber,ui,
+ui.inventory.look,Prezrieť,ui,
+ui.inventory.select,Vybrať,ui,
+ui.journal.scene_n,Scéna {n},ui,
+ui.journal.scenes,Prehrať scény znova,ui,
+ui.save.quick,Rýchle uloženie,ui,
+ui.settings.tips_reset_done,Úvodné rady sa zobrazia pri ďalšej novej hre.,ui,
+ui.credits.fonts,Písma,ui,
+ui.credits.engine,Herný engine,ui,
+region.Chorvátsky Grob.name,Chorvátsky Grob,ui,
+region.Čierna Voda.name,Čierna Voda,ui,
+region.Dúbravka.name,Dúbravka,ui,
+region.Karlova Ves.name,Karlova Ves,ui,
+region.Staré Mesto.name,Staré Mesto,ui,
+region.Ružinov.name,Ružinov,ui,
+region.Petržalka.name,Petržalka,ui,
+region.Ivanka pri Dunaji.name,Ivanka pri Dunaji,ui,
+region.Biela Púť.name,Biela Púť,ui,
+region.Grand Jasná.name,Grand Jasná,ui,
+region.Vrbické pleso.name,Vrbické pleso,ui,
+region.Chopok.name,Chopok,ui,
+region.Priehyba.name,Priehyba,ui,
+region.Funitel.name,Funitel,ui,
+ui.credits.music,Hudba (pôvodná hudba vytvorená pomocou AI),ui,
+ui.credits.sounds,Zvukové efekty a prostredie (CC0),ui,

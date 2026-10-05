@@ -1,0 +1,105 @@
+{
+  "room": "S55",
+  "note": "The big autumn linden after E10 (variant overlay variants_natural/S55_linden_and_wall.webp at 0,0), for the wind-sway layer linden_sway (if_done E10). Cut with art/ambient/natural/S17.variant_cuts.py S55.",
+  "overlays": [
+    {
+      "texture": "variants_natural/S55_linden_and_wall.webp",
+      "pos": [
+        0,
+        0
+      ]
+    }
+  ],
+  "items": [
+    {
+      "name": "linden_big",
+      "rect": [
+        130,
+        0,
+        1010,
+        470
+      ],
+      "rules": [
+        {
+          "hue": [
+            28,
+            110
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0,
+      "include": [
+        [
+          [
+            236,
+            0
+          ],
+          [
+            1130,
+            0
+          ],
+          [
+            1095,
+            70
+          ],
+          [
+            1040,
+            160
+          ],
+          [
+            1000,
+            250
+          ],
+          [
+            960,
+            330
+          ],
+          [
+            930,
+            365
+          ],
+          [
+            700,
+            372
+          ],
+          [
+            650,
+            300
+          ],
+          [
+            560,
+            300
+          ],
+          [
+            480,
+            362
+          ],
+          [
+            260,
+            362
+          ],
+          [
+            150,
+            330
+          ],
+          [
+            140,
+            120
+          ],
+          [
+            180,
+            50
+          ]
+        ]
+      ]
+    }
+  ]
+}

@@ -14,30 +14,85 @@ namespace LastBell.Game.World;
 /// <param name="LabelAnchor">Space label anchor.</param>
 public sealed record BlockingTarget(Rect2? Rect, Vector2? InteractionPoint, Vector2? LabelAnchor);
 
-/// <summary>Staging of one NPC in a natural blocking.</summary>
+/// <summary>How an NPC is drawn relative to the hero, the occluders and the y-sorted ambient sprites.</summary>
+public enum NpcDepth
+{
+    /// <summary>Y-sorted by the feet with the hero, the occluders and the y-sorted ambient layers (default).</summary>
+    Auto,
+    /// <summary>Always behind the hero and every occluder (a bust inside a window, a figure deep in a doorway).</summary>
+    Back,
+    /// <summary>Always in front of the hero and every occluder, still below the foreground mask.</summary>
+    Front,
+}
+
+/// <summary>Staging of one NPC in a natural blocking (replaces data/ambient/actors.json's placement for this room).</summary>
 /// <param name="Feet">Feet centre in canvas px (null = bottom centre of the hotspot rect).</param>
 /// <param name="Scale">Absolute actor scale (null = room perspective at the feet).</param>
-public sealed record BlockingNpc(Vector2? Feet, float? Scale);
+/// <param name="Variant">Staging name as written in the file: <c>standing</c>, <c>seated</c>, <c>behind_counter</c>,
+/// <c>window_bust</c>, <c>window_bust_glass</c> or any variant name of the actor's <c>actor.json</c>; resolved by
+/// <c>ActorAnimationSet.ResolveStaging</c> (null = the manifest default).</param>
+/// <param name="SillY">Canvas y of the painted cut line (window sill, counter or table top) a bust variant stands on.</param>
+/// <param name="OffsetX">Horizontal nudge of the sprite in canvas px.</param>
+/// <param name="Facing">"left", "right" or null (face the room centre / the hero).</param>
+/// <param name="Depth">Draw order relative to the hero and the occluders.</param>
+public sealed record BlockingNpc(Vector2? Feet, float? Scale, string? Variant = null, float? SillY = null, float OffsetX = 0f,
+    string? Facing = null, NpcDepth Depth = NpcDepth.Auto);
+
+/// <summary>
+/// A piece of the painting that is drawn in front of actors standing behind it (a counter front, a pillar, a
+/// bench back): the <paramref name="Polygon"/> of <paramref name="Texture"/> (a full-frame 1920x1080 image,
+/// null = the room's background painting), y-sorted with the actors at <paramref name="BaselineY"/> (actors whose
+/// feet are above that line are hidden behind it, actors below it walk in front of it).
+/// </summary>
+/// <param name="Id">Name (debug).</param>
+/// <param name="Polygon">Canvas polygon.</param>
+/// <param name="BaselineY">Sort line: the canvas y where the object stands on the floor.</param>
+/// <param name="Texture">Full-frame asset relative to res://assets/ (null = the background painting).</param>
+public sealed record BlockingOccluder(string Id, IReadOnlyList<Vector2> Polygon, float BaselineY, string? Texture);
+
+/// <summary>
+/// The natural replacement of one game.json <c>visual_variant_layers</c> asset: a full-frame overlay
+/// (<paramref name="Position"/> null) or a smaller patch at a canvas position; <paramref name="Texture"/> null = draw
+/// nothing (the natural painting needs no overlay for this change; the file says why).
+/// </summary>
+/// <param name="Texture">Asset relative to res://assets/, or null.</param>
+/// <param name="Position">Top-left canvas position of a patch, or null for a full-frame overlay.</param>
+public sealed record BlockingVariantLayer(string? Texture, Vector2? Position);
+
+/// <summary>Presentation-only audio of a natural room (e.g. the bus at the 1982 stop S57).</summary>
+/// <param name="AmbienceLayers">Layers in the data/audio/ambience.json room schema, or null = keep ambience.json.</param>
+/// <param name="AddToTemplate">true: the layers are added to ambience.json's; false: they replace them.</param>
+/// <param name="Music">Music asset or cue replacing rooms[].music (music.json room overrides still win), or null.</param>
+public sealed record BlockingAudio(JsonArray? AmbienceLayers, bool AddToTemplate, string? Music);
 
 /// <summary>
 /// Natural re-blocking of a room (<c>res://data/blocking/&lt;room&gt;.json</c>): presentation-only
 /// geometry that replaces the game.json template rects, interaction points, label anchors, walk
-/// polygon, exit zones, NPC feet and the perspective range, plus the background painted for it.
-/// Ids, conditions and every rule stay in game.json / Core: Core never reads positions.
-/// Applied only when <see cref="Enabled"/> (project setting <c>last_bell/presentation/blocking</c>
-/// = <c>"natural"</c>, or the QA flag <c>--blocking natural</c>); default off until the product
-/// owner approves it (docs/reblock/README.md). When a blocking applies, the room's
-/// <c>art_overrides.json</c> entries (nudges, npc_feet, state patches, perspective) are ignored,
-/// because they belong to the template painting; the blocking file carries its own.
-/// Schema (all fields optional except <c>room</c>):
+/// polygon, exit zones, NPC staging and the perspective range, plus the painting, foreground mask,
+/// occluders, state overlays, ambient layers and audio made for it. Ids, conditions and every rule stay
+/// in game.json / Core: Core never reads positions. Applied per room when <see cref="Enabled"/> (project
+/// setting <c>last_bell/presentation/blocking</c> = <c>"natural"</c>, or the QA flag
+/// <c>--blocking natural</c>): a room with a blocking file uses it, a room without one keeps the template.
+/// When a blocking applies, the room's template-painting data is ignored (art_overrides.json nudges,
+/// npc_feet, state patches and perspective; data/ambient/actors.json placements; data/ambient/&lt;room&gt;.json;
+/// the template visual_variant_layers assets), because it belongs to the template painting.
+/// Schema (all fields optional except <c>room</c>; validator tools/check_blocking.py, recipe art/tools/PAINTING.md):
 /// <code>
 /// { "version": 1, "room": "S05", "background": "bg_natural/S05.webp",
 ///   "walk_polygon": [[x, y], ...], "walk_band": [top, bottom], "actor_scale": [top, bottom], "spawn": [x, y],
 ///   "hotspots": { "S05.tray": { "rect": [x, y, w, h], "interaction_point": [x, y], "label_anchor": [x, y] } },
 ///   "exits":    { "S05.to_S02": { "rect": [...], "interaction_point": [...], "label_anchor": [...] } },
-///   "npcs":     { "S03.ELA": { "feet": [x, y], "scale": 0.5 } },
-///   "foreground_mask": "fg_natural/S05.webp", "ambient": "res://data/blocking/ambient/S05.json",
-///   "state_patches": [ { "texture": "...", "pos": [x, y], "after": ["G04"], "until": [] } ] }
+///   "npcs":     { "S13.TONO": { "feet": [x, y], "scale": 0.6, "variant": "seated", "sill_y": 600, "offset_x": 0,
+///                               "facing": "left", "z": "auto|back|front" } },
+///   "foreground_mask": "fg_natural/S05.webp",
+///   "occluders": [ { "id": "counter", "polygon": [[x, y], ...], "baseline": 700, "texture": null } ],
+///   "variant_layers": { "variants/S17_healthy_linden.webp": "variants_natural/S17_healthy_linden.webp",
+///                       "variants/S55_linden_and_wall.webp": { "texture": "variants_natural/S55_linden.webp", "pos": [x, y] },
+///                       "variants/S06_family_restored.webp": null },
+///   "state_patches": [ { "texture": "variants_natural/...", "pos": [x, y], "after": ["G04"], "until": [] } ],
+///   "ambient": "res://data/blocking/ambient/S05.json",
+///   "audio": { "ambience": [ { "sound": "bus_pass", "db": -6, "every": [20, 40] } ], "ambience_mode": "replace|add",
+///              "music": "music/1982.ogg" } }
 /// </code>
 /// </summary>
 public sealed class RoomBlocking
@@ -45,7 +100,7 @@ public sealed class RoomBlocking
     /// <summary>Folder of the blocking files.</summary>
     public const string Folder = "res://data/blocking/";
 
-    /// <summary>Project setting that turns natural blocking on ("natural") or off ("template", default).</summary>
+    /// <summary>Project setting that turns natural blocking on ("natural", default since milestone 3) or off ("template").</summary>
     public const string ProjectSetting = "last_bell/presentation/blocking";
 
     private static readonly Dictionary<string, RoomBlocking?> Cache = new(StringComparer.Ordinal);
@@ -58,7 +113,8 @@ public sealed class RoomBlocking
     /// <summary>Room id.</summary>
     public string RoomId { get; private init; } = "";
 
-    /// <summary>Background asset relative to res://assets/ (null = game.json background).</summary>
+    /// <summary>Background asset relative to res://assets/ (default: the convention bg_natural/&lt;room&gt;.webp; a
+    /// missing file shows the dev blockout, never the template painting, whose geometry does not match).</summary>
     public string? Background { get; private init; }
 
     /// <summary>Walk polygon replacing game.json's (null = keep).</summary>
@@ -79,14 +135,27 @@ public sealed class RoomBlocking
     /// <summary>NPC staging by hotspot id.</summary>
     public IReadOnlyDictionary<string, BlockingNpc> Npcs { get; private init; } = new Dictionary<string, BlockingNpc>();
 
-    /// <summary>Foreground mask asset relative to res://assets/ (null = none).</summary>
+    /// <summary>Foreground mask asset relative to res://assets/ (null = the convention fg_natural/&lt;room&gt;.webp).</summary>
     public string? ForegroundMask { get; private init; }
 
-    /// <summary>Ambient data file for the natural painting (null = no ambient layers: the template ones are cut from the old painting).</summary>
+    /// <summary>Ambient data file for the natural painting (null = the convention, see <see cref="AmbientDataPath"/>).</summary>
     public string? AmbientData { get; private init; }
+
+    /// <summary>Ambient data file actually used: <see cref="AmbientData"/> or data/blocking/ambient/&lt;room&gt;.json
+    /// (the template's data/ambient/&lt;room&gt;.json is cut from the old painting and never used here).</summary>
+    public string AmbientDataPath => AmbientData ?? Folder + "ambient/" + RoomId + ".json";
 
     /// <summary>State patches drawn over the natural painting.</summary>
     public IReadOnlyList<StatePatch> StatePatches { get; private init; } = Array.Empty<StatePatch>();
+
+    /// <summary>Occluders cut from the painting, y-sorted with the actors.</summary>
+    public IReadOnlyList<BlockingOccluder> Occluders { get; private init; } = Array.Empty<BlockingOccluder>();
+
+    /// <summary>Natural replacements of the room's visual_variant_layers, by their game.json asset path.</summary>
+    public IReadOnlyDictionary<string, BlockingVariantLayer> VariantLayers { get; private init; } = new Dictionary<string, BlockingVariantLayer>();
+
+    /// <summary>Presentation-only audio override (null = data/audio as for the template).</summary>
+    public BlockingAudio? Audio { get; private init; }
 
     /// <summary>The room's blocking when natural blocking is enabled and a file exists, else null.</summary>
     public static RoomBlocking? For(string roomId)
@@ -110,6 +179,9 @@ public sealed class RoomBlocking
     /// <summary>Geometry of a target, or null when the blocking keeps game.json's.</summary>
     public BlockingTarget? Target(string id) => Targets.TryGetValue(id, out var t) ? t : null;
 
+    /// <summary>The natural replacement of a visual_variant_layers asset, or null when the file maps none.</summary>
+    public BlockingVariantLayer? VariantLayer(string templateAsset) => VariantLayers.TryGetValue(templateAsset, out var v) ? v : null;
+
     private static RoomBlocking? Load(string roomId)
     {
         string path = Folder + roomId + ".json";
@@ -131,7 +203,17 @@ public sealed class RoomBlocking
             if (root["npcs"] is JsonObject n)
             {
                 foreach (var (id, node) in n)
-                    if (node is JsonObject o) npcs[id] = new BlockingNpc(ReadVec2(o["feet"]), o["scale"] is JsonValue s ? (float)s.GetValue<double>() : null);
+                {
+                    if (node is not JsonObject o) continue;
+                    var depth = (o["z"]?.GetValue<string>() ?? "auto").ToLowerInvariant() switch
+                    {
+                        "back" or "behind" => NpcDepth.Back,
+                        "front" => NpcDepth.Front,
+                        _ => NpcDepth.Auto,
+                    };
+                    npcs[id] = new BlockingNpc(ReadVec2(o["feet"]), ReadFloat(o["scale"]), o["variant"]?.GetValue<string>(),
+                        ReadFloat(o["sill_y"]), ReadFloat(o["offset_x"]) ?? 0f, o["facing"]?.GetValue<string>(), depth);
+                }
             }
             var patches = new List<StatePatch>();
             if (root["state_patches"] is JsonArray sp)
@@ -141,6 +223,41 @@ public sealed class RoomBlocking
                     if (pv is not JsonObject po || po["texture"]?.GetValue<string>() is not { } tex) continue;
                     patches.Add(new StatePatch(tex, ReadVec2(po["pos"]) ?? Vector2.Zero, ReadStrings(po["after"]), ReadStrings(po["until"])));
                 }
+            }
+            var occluders = new List<BlockingOccluder>();
+            if (root["occluders"] is JsonArray oc)
+            {
+                int index = 0;
+                foreach (var ov in oc)
+                {
+                    index++;
+                    if (ov is not JsonObject oo || oo["polygon"] is not JsonArray poly) continue;
+                    var points = poly.Select(ReadVec2).Where(p => p is not null).Select(p => p!.Value).ToList();
+                    if (points.Count < 3) continue;
+                    float baseline = ReadFloat(oo["baseline"]) ?? points.Max(p => p.Y);
+                    occluders.Add(new BlockingOccluder(oo["id"]?.GetValue<string>() ?? $"occluder_{index}", points, baseline,
+                        oo["texture"]?.GetValue<string>()));
+                }
+            }
+            var variantLayers = new Dictionary<string, BlockingVariantLayer>(StringComparer.Ordinal);
+            if (root["variant_layers"] is JsonObject vl)
+            {
+                foreach (var (asset, node) in vl)
+                {
+                    variantLayers[asset] = node switch
+                    {
+                        null => new BlockingVariantLayer(null, null),
+                        JsonObject vo => new BlockingVariantLayer(vo["texture"]?.GetValue<string>(), ReadVec2(vo["pos"])),
+                        _ => new BlockingVariantLayer(node.GetValue<string>() is { Length: > 0 } t && t != "none" ? t : null, null),
+                    };
+                }
+            }
+            BlockingAudio? audio = null;
+            if (root["audio"] is JsonObject au)
+            {
+                audio = new BlockingAudio(au["ambience"] is JsonArray layers ? (JsonArray)layers.DeepClone() : null,
+                    string.Equals(au["ambience_mode"]?.GetValue<string>(), "add", StringComparison.OrdinalIgnoreCase),
+                    au["music"]?.GetValue<string>());
             }
             List<IReadOnlyList<int>>? polygon = null;
             if (root["walk_polygon"] is JsonArray wp)
@@ -152,7 +269,7 @@ public sealed class RoomBlocking
             return new RoomBlocking
             {
                 RoomId = roomId,
-                Background = root["background"]?.GetValue<string>(),
+                Background = root["background"]?.GetValue<string>() ?? $"bg_natural/{roomId}.webp",
                 WalkPolygon = polygon,
                 WalkBand = ReadVec2(root["walk_band"]),
                 ActorScale = ReadVec2(root["actor_scale"]),
@@ -162,6 +279,9 @@ public sealed class RoomBlocking
                 ForegroundMask = root["foreground_mask"]?.GetValue<string>(),
                 AmbientData = root["ambient"]?.GetValue<string>(),
                 StatePatches = patches,
+                Occluders = occluders,
+                VariantLayers = variantLayers,
+                Audio = audio,
             };
         }
         catch (Exception ex) when (ex is JsonException or InvalidOperationException or FormatException)
@@ -170,6 +290,9 @@ public sealed class RoomBlocking
             return null;
         }
     }
+
+    private static float? ReadFloat(JsonNode? n) =>
+        n is JsonValue v && v.GetValueKind() == JsonValueKind.Number ? (float)v.GetValue<double>() : null;
 
     private static Rect2? ReadRect(JsonNode? n) =>
         n is JsonArray a && a.Count >= 4 && a.All(v => v is not null)

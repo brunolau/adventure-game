@@ -113,6 +113,8 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
     /// <summary>Name of the clip on screen (QA / debug).</summary>
     public string CurrentClip => current?.Name ?? "";
 
+    private float WalkFactor => (GetParent() as Actor)?.WalkFactor ?? 1f;
+
     private float SideStride => set.Get("walk_right")?.Sheet.StridePxPerSecond is { } s && s > 1 ? s : 272f;
 
     private float AbsoluteScale => placement?.Scale ?? (GetParent() as Node2D)?.Scale.X ?? 1f;
@@ -207,7 +209,8 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
         {
             var wanted = PickBaseClip();
             if (wanted != current) Switch(wanted, crossFade: true);
-            float rate = current.Name.StartsWith("walk", StringComparison.Ordinal) ? walkRate : 1f;
+            // The hero's walk speed factor (PresentationSettings.WalkSpeedFactor) speeds the cycle up with the ground speed.
+            float rate = current.Name.StartsWith("walk", StringComparison.Ordinal) ? walkRate * WalkFactor : 1f;
             float before = clipTime;
             clipTime += dt * rate;
             if (current.Loop && current.Length > 0 && (int)(clipTime / current.Length) != (int)(before / current.Length)) OnLoopWrapped();

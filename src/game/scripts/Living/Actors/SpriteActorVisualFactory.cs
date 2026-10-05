@@ -13,7 +13,7 @@ public sealed class SpriteActorVisualFactory : IActorVisualFactory
     public IActorVisual? TryCreate(ActorContext context)
     {
         if (!ActorAnimationSet.Exists(context.CharacterId)) return null;
-        var placement = context.IsHero ? null : ActorStaging.PlacementFor(context.RoomId, context.CharacterId);
+        var placement = context.IsHero ? null : PlacementFor(context);
         string? variant = context.IsHero
             ? (ActorStaging.HeroWearsMask(context.RoomId, context.Era) ? "mask2020" : null)
             : NpcVariant(context, placement);
@@ -24,6 +24,24 @@ public sealed class SpriteActorVisualFactory : IActorVisualFactory
             return null;
         }
         return new SpriteActorVisual(set, placement);
+    }
+
+    /// <summary>
+    /// NPC staging: a room with a natural blocking (World/RoomBlocking.cs) stages its NPCs from the blocking file's
+    /// <c>npcs</c> entry (variant, sill line, offset, facing; the absolute scale is the Actor's ScaleOverride) and
+    /// ignores data/ambient/actors.json's placement, whose sill heights belong to the template painting. An NPC the
+    /// blocking does not stage gets the default sheets. Other rooms keep actors.json.
+    /// </summary>
+    private static ActorPlacement? PlacementFor(ActorContext context)
+    {
+        if (RoomBlocking.For(context.RoomId) is not { } blocking) return ActorStaging.PlacementFor(context.RoomId, context.CharacterId);
+        if (context.HotspotId is null || !blocking.Npcs.TryGetValue(context.HotspotId, out var staging)) return null;
+        if (!ActorAnimationSet.TryResolveStaging(context.CharacterId, staging.Variant, out var variant))
+        {
+            GD.PushWarning($"Living: {context.RoomId} blocking stages {context.CharacterId} as '{staging.Variant}', which its actor.json does not have (default sheets used)");
+            variant = null;
+        }
+        return new ActorPlacement(variant, staging.SillY, null, staging.OffsetX, staging.Facing);
     }
 
     /// <summary>

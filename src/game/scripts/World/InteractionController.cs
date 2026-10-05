@@ -14,12 +14,23 @@ namespace LastBell.Game.World;
 /// arrival (conditions re-checked) and only executes when the resolution is still the same.
 /// An invalid item click resolves to None and is a complete no-op (no walk, no text, selection kept).
 /// Also owns keyboard focus (Tab / Shift+Tab over the accessible order, Enter = left, Backspace = right).
+/// Double click (owner control changes 2026-10-05): a second left press on the same target (floor: within
+/// <see cref="PresentationSettings.DoubleClickSlopPx"/>) within <see cref="PresentationSettings.DoubleClickSeconds"/> puts
+/// the hero at the end of his walk at once (<see cref="Actor.FinishWalk"/>) and the flow continues exactly as if the walk
+/// had ended: Core is asked again on arrival and the action / exit runs once. The second press never submits again, so
+/// a double click can never commit twice. Keyboard: Enter twice on the same focus, or Shift+Enter. Touch: double tap.
 /// </summary>
 public partial class InteractionController : Node
 {
     private sealed record Pending(Hit Hit, PointerButton Button, Resolution Resolution, Vector2 FacePoint);
 
+    private sealed record Press(double Time, Vector2 Position, string Key);
+
     private Pending? pending;
+    private Press? lastPress;
+    private (double Time, Vector2 Position)? lastWorldPress;
+    private (double Time, string Id)? lastConfirm;
+    private double lastWorldConfirm = -10;
     private int focusIndex = -1;
     private string? focusRoom;
 
@@ -51,14 +62,62 @@ public partial class InteractionController : Node
     public override void _Ready()
     {
         Instance = this;
-        GameRuntime.Instance.SessionReplaced += () => { pending = null; ClearFocus(); HoverPresenter.Hide(); };
-        GameRuntime.Instance.RoomChanged += (_, _) => { pending = null; ClearFocus(); HoverPresenter.Hide(); };
-        GameRuntime.Instance.ModeChanged += (mode, _) => { if (mode is not (GameMode.World or GameMode.Inventory)) HoverPresenter.Hide(); };
+        GameRuntime.Instance.SessionReplaced += () => { pending = null; ResetDoubleClick(); ClearFocus(); HoverPresenter.Hide(); };
+        GameRuntime.Instance.RoomChanged += (_, _) => { pending = null; ResetDoubleClick(); ClearFocus(); HoverPresenter.Hide(); };
+        GameRuntime.Instance.ModeChanged += (mode, _) =>
+        {
+            ResetDoubleClick(); // a press pair never spans a mode change (drawer, line, overlay)
+            if (mode is not (GameMode.World or GameMode.Inventory)) HoverPresenter.Hide();
+        };
     }
 
     private static GameRuntime Game => GameRuntime.Instance;
 
     private static Room? CurrentRoom => WorldStage.Instance is { IsSettled: true } s ? s.Current : null;
+
+    private static double Now => Time.GetTicksMsec() / 1000.0;
+
+    /// <summary>Forgets the first press of a pair: any other input in between makes the next press a single one.</summary>
+    private void ResetDoubleClick()
+    {
+        lastPress = null;
+        lastConfirm = null;
+    }
+
+    /// <summary>Double-click identity of a hit: the target id, or "floor" for floor and empty background.</summary>
+    private static string PressKey(Hit hit) => hit switch
+    {
+        Hit.Hotspot h => "h:" + h.Id,
+        Hit.Exit e => "e:" + e.Id,
+        Hit.Floor or Hit.Empty => "floor",
+        _ => "",
+    };
+
+    /// <summary>
+    /// True for the second press of a world double click (near the first, within the threshold): the router does not
+    /// pass it on to a line that the first press started.
+    /// </summary>
+    public bool IsDoubleClickFollowUp(Vector2? position) =>
+        lastWorldPress is { } p && position is { } at && Now - p.Time <= PresentationSettings.DoubleClickSeconds &&
+        p.Position.DistanceTo(at) <= PresentationSettings.DoubleClickSlopPx * 2;
+
+    /// <summary>True for an Enter right after an Enter that acted in the world (double Enter).</summary>
+    public bool IsConfirmFollowUp() => Now - lastWorldConfirm <= PresentationSettings.DoubleClickSeconds;
+
+    /// <summary>
+    /// Double-click skip: when the hero walks, he is put at the destination and the arrival runs now (re-resolved
+    /// through Core). Returns false when he does not walk (the first press already acted or was a no-op).
+    /// </summary>
+    public bool SkipWalk()
+    {
+        var room = CurrentRoom;
+        if (room is null || !room.Hero.IsWalking) return false;
+        WalkSkipped?.Invoke();
+        return room.Hero.FinishWalk();
+    }
+
+    /// <summary>Raised right before a double click / Shift+Enter skips the walk (QA).</summary>
+    public event System.Action? WalkSkipped;
 
     // ------------------------------------------------------------------ pointer
 
@@ -68,7 +127,23 @@ public partial class InteractionController : Node
         var room = CurrentRoom;
         if (room is null) return;
         ClearFocus();
-        Submit(room.HitTest(canvasPosition), button, canvasPosition);
+        var hit = room.HitTest(canvasPosition);
+        if (button == PointerButton.Left && AcceptsWorldInput(Game.State))
+        {
+            string key = PressKey(hit);
+            bool second = lastPress is { } last && key.Length > 0 && last.Key == key &&
+                          Now - last.Time <= PresentationSettings.DoubleClickSeconds &&
+                          (key != "floor" || last.Position.DistanceTo(canvasPosition) <= PresentationSettings.DoubleClickSlopPx);
+            lastPress = second ? null : new Press(Now, canvasPosition, key); // a third press starts a new pair
+            lastWorldPress = (Now, canvasPosition);
+            if (second)
+            {
+                SkipWalk();
+                return;
+            }
+        }
+        else ResetDoubleClick();
+        Submit(hit, button, canvasPosition);
     }
 
     /// <summary>Pointer moved: update the hover text from Core's resolver.</summary>
@@ -91,6 +166,7 @@ public partial class InteractionController : Node
         var room = CurrentRoom;
         if (room is null || !AcceptsWorldInput(state)) return;
         DialoguePresenter.Instance?.HideBark();
+        if (hit is Hit.Item) ResetDoubleClick(); // an inventory slot press splits a world press pair
 
         // Left click on non-walkable background walks to the closest walkable point.
         if (hit is Hit.Empty && button == PointerButton.Left && state.SelectedItem is null && pointer is { } p)
@@ -222,19 +298,32 @@ public partial class InteractionController : Node
         var order = room.View.AccessibleOrder.Where(id => room.TryGetTarget(id, out _)).ToList();
         if (order.Count == 0) return;
         if (focusRoom != room.RoomId) { focusIndex = -1; focusRoom = room.RoomId; }
+        ResetDoubleClick();
         int current = room.Labels.FocusedId is { } f ? order.IndexOf(f) : -1;
         focusIndex = current < 0 ? (direction > 0 ? 0 : order.Count - 1) : (current + direction + order.Count) % order.Count;
         room.Labels.FocusedId = order[focusIndex];
         if (room.TryGetTarget(order[focusIndex], out var target))
-            HoverPresenter.Show(Game.Session.Hover(target.ToHit()), target.LabelAnchor + new Vector2(0, 40), Game.State.SelectedItem is not null, true);
+            HoverPresenter.Show(Game.Session.Hover(target.ToHit()), target.LabelAnchor, Game.State.SelectedItem is not null, true);
     }
 
-    /// <summary>Enter: left click on the focused target (no focus: nothing).</summary>
-    public void ConfirmFocused()
+    /// <summary>
+    /// Enter: left click on the focused target (no focus: nothing). A second Enter on the same focus within the
+    /// double-click threshold, or <paramref name="skipWalk"/> (Shift+Enter), skips the walk like a double click.
+    /// </summary>
+    public void ConfirmFocused(bool skipWalk = false)
     {
         var room = CurrentRoom;
         if (room?.Labels.FocusedId is not { } id || !room.TryGetTarget(id, out var target)) return;
+        bool second = lastConfirm is { } last && last.Id == id && Now - last.Time <= PresentationSettings.DoubleClickSeconds;
+        lastConfirm = second ? null : (Now, id);
+        lastWorldConfirm = Now;
+        if (second)
+        {
+            SkipWalk();
+            return;
+        }
         Submit(target.ToHit(), PointerButton.Left);
+        if (skipWalk) SkipWalk();
     }
 
     /// <summary>Backspace: right click on the focused target, or on empty floor (inventory / cancel selection).</summary>

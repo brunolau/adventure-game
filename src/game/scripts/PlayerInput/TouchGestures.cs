@@ -6,7 +6,9 @@ namespace LastBell.Game.PlayerInput;
 /// <summary>
 /// Touch gestures for phones and tablets (docs/BUILD.md, CODING_AGENT_START input table):
 /// tap = left click (<see cref="LogicalCommand.Primary"/>), long press = right click
-/// (<see cref="LogicalCommand.Secondary"/>), two-finger tap = Space (<see cref="LogicalCommand.ToggleLabels"/>).
+/// (<see cref="LogicalCommand.Secondary"/>), two-finger hold = Space held: the markers show while two fingers touch
+/// (<see cref="LogicalCommand.ShowMarkers"/> when the second finger goes down, <see cref="LogicalCommand.HideMarkers"/>
+/// when fewer than two remain; owner override 2026-10-05). A double tap is two taps, recognised by the world as a double click.
 /// A finger that moves further than <see cref="SlopPx"/> becomes a drag: it only moves the hover pointer
 /// and releases without an action. Pure state machine: positions are canvas px, times are seconds; the
 /// <see cref="InputRouter"/> feeds it and dispatches what it returns.
@@ -32,6 +34,7 @@ public sealed class TouchGestures
     private bool moved;
     private bool longPressFired;
     private bool active;
+    private bool markers;
 
     /// <summary>True while at least one finger touches the screen.</summary>
     public bool Active => active;
@@ -55,14 +58,23 @@ public sealed class TouchGestures
             }
             down[index] = position;
             maxFingers = Mathf.Max(maxFingers, down.Count);
+            if (down.Count >= 2 && !markers && !longPressFired)
+            {
+                markers = true;
+                return new Gesture(LogicalCommand.ShowMarkers, startPosition);
+            }
             return null;
         }
         down.Remove(index);
+        if (markers && down.Count < 2)
+        {
+            markers = false;
+            if (down.Count == 0) active = false;
+            return new Gesture(LogicalCommand.HideMarkers, startPosition);
+        }
         if (down.Count > 0 || !active) return null;
         active = false;
-        if (longPressFired || moved) return null;
-        if (maxFingers >= 2)
-            return now - startTime <= TwoFingerTapSeconds ? new Gesture(LogicalCommand.ToggleLabels, startPosition) : null;
+        if (longPressFired || moved || maxFingers >= 2) return null;
         return new Gesture(LogicalCommand.Primary, startPosition);
     }
 
@@ -87,5 +99,6 @@ public sealed class TouchGestures
     {
         down.Clear();
         active = false;
+        markers = false;
     }
 }

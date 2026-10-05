@@ -1,0 +1,18 @@
+{
+  "room": "S46",
+  "source": "src/game/assets/bg_natural/S46.webp",
+  "note": "Natural S46 cut-outs (art/tools/ambient_cut.py --natural S46): spruces outside the window wall and the entrance (wind sway), the window sky (cloud mask) and the entrance glass (passer-by mask).",
+  "items": [
+    { "name": "window_spruces", "rect": [1460, 290, 285, 410],
+      "rules": [ { "hue": [70, 175], "sat": [0.25, 1], "val": [0.1, 0.75] } ], "feather": 1.0, "pad": 4 },
+    { "name": "window_sky_mask", "kind": "mask", "rect": [1460, 290, 420, 160],
+      "rules": [ { "hue": [185, 235], "sat": [0.12, 1], "val": [0.5, 1] }, { "sat": [0, 0.12], "val": [0.85, 1] } ],
+      "exclude": [ [[1740, 390], [1920, 460]] ],
+      "feather": 1.0, "mask_rect": [1455, 285, 430, 170], "scale": 1.0 },
+    { "name": "door_spruces", "rect": [66, 426, 186, 276],
+      "rules": [ { "hue": [20, 175], "sat": [0.25, 1], "val": [0.1, 0.7] } ],
+      "exclude": [ [[150, 420], [168, 705]] ], "feather": 1.0, "pad": 4 },
+    { "name": "door_glass_mask", "kind": "mask", "rect": [66, 426, 186, 276],
+      "exclude": [ [[150, 420], [168, 705]] ], "feather": 1.0, "mask_rect": [60, 420, 200, 285], "scale": 1.0 }
+  ]
+}

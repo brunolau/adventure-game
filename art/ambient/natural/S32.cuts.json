@@ -1,0 +1,174 @@
+{
+  "room": "S32",
+  "source": "src/game/assets/bg_natural/S32.webp",
+  "note": "Natural S32 cut-outs (art/tools/ambient_cut.py --natural S32): the linden canopy top left, the big linden top right, the trees around the chapel (chapel excluded), and a sky mask for drifting clouds.",
+  "items": [
+    {
+      "name": "canopy_left",
+      "rect": [
+        0,
+        0,
+        430,
+        420
+      ],
+      "rules": [
+        {
+          "hue": [
+            38,
+            130
+          ],
+          "sat": [
+            0.22,
+            1
+          ],
+          "val": [
+            0.1,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "canopy_right",
+      "rect": [
+        1490,
+        0,
+        430,
+        470
+      ],
+      "rules": [
+        {
+          "hue": [
+            38,
+            130
+          ],
+          "sat": [
+            0.22,
+            1
+          ],
+          "val": [
+            0.1,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "trees_center",
+      "rect": [
+        610,
+        0,
+        600,
+        470
+      ],
+      "rules": [
+        {
+          "hue": [
+            45,
+            130
+          ],
+          "sat": [
+            0.22,
+            1
+          ],
+          "val": [
+            0.1,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            770,
+            40
+          ],
+          [
+            1032,
+            520
+          ]
+        ],
+        [
+          [
+            1010,
+            380
+          ],
+          [
+            1210,
+            470
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        330
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.05,
+            0.75
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.16
+          ],
+          "val": [
+            0.86,
+            1
+          ]
+        }
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        330
+      ],
+      "scale": 0.5,
+      "exclude": [
+        [
+          [
+            778,
+            195
+          ],
+          [
+            1028,
+            330
+          ]
+        ],
+        [
+          [
+            855,
+            50
+          ],
+          [
+            945,
+            200
+          ]
+        ]
+      ]
+    }
+  ]
+}

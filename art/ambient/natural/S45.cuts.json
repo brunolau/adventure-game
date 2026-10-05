@@ -1,0 +1,439 @@
+{
+  "room": "S45",
+  "source": "src/game/assets/bg_natural/S45.webp",
+  "note": "Natural S45 cut-outs (art/tools/ambient_cut.py --natural S45): sky mask, the open lake water (ripples, duck mask), reed clumps, the rowan branches, the right spruce and the dark foreground grass blades at the bottom corners (front plane: drawn in front of the hero). Also a cumulus cloud of the S45 sky as a midday cloud sprite for the 2035 rooms.",
+  "items": [
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        300
+      ],
+      "rules": [
+        {
+          "hue": [
+            190,
+            235
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.18
+          ],
+          "val": [
+            0.82,
+            1
+          ]
+        }
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        310
+      ],
+      "scale": 0.5
+    },
+    {
+      "name": "lake",
+      "rect": [
+        280,
+        530,
+        1060,
+        170
+      ],
+      "include": [
+        [
+          [
+            285,
+            534
+          ],
+          [
+            1335,
+            534
+          ],
+          [
+            1335,
+            600
+          ],
+          [
+            1300,
+            690
+          ],
+          [
+            585,
+            690
+          ],
+          [
+            565,
+            610
+          ],
+          [
+            285,
+            600
+          ]
+        ]
+      ],
+      "exclude": [
+        [
+          [
+            292,
+            540
+          ],
+          [
+            575,
+            722
+          ]
+        ],
+        [
+          [
+            1198,
+            515
+          ],
+          [
+            1312,
+            722
+          ]
+        ]
+      ],
+      "feather": 1.0,
+      "pad": 4
+    },
+    {
+      "name": "lake_mask",
+      "kind": "mask",
+      "rect": [
+        280,
+        530,
+        1060,
+        170
+      ],
+      "include": [
+        [
+          [
+            285,
+            534
+          ],
+          [
+            1335,
+            534
+          ],
+          [
+            1335,
+            600
+          ],
+          [
+            1300,
+            690
+          ],
+          [
+            585,
+            690
+          ],
+          [
+            565,
+            610
+          ],
+          [
+            285,
+            600
+          ]
+        ]
+      ],
+      "exclude": [
+        [
+          [
+            292,
+            540
+          ],
+          [
+            575,
+            722
+          ]
+        ],
+        [
+          [
+            1198,
+            515
+          ],
+          [
+            1312,
+            722
+          ]
+        ]
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        280,
+        520,
+        1060,
+        190
+      ],
+      "scale": 1.0
+    },
+    {
+      "name": "reeds_left",
+      "rect": [
+        0,
+        545,
+        300,
+        175
+      ],
+      "rules": [
+        {
+          "hue": [
+            45,
+            115
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "reeds_right",
+      "rect": [
+        1305,
+        560,
+        615,
+        165
+      ],
+      "rules": [
+        {
+          "hue": [
+            45,
+            115
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1515,
+            400
+          ],
+          [
+            1560,
+            725
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "rowan",
+      "rect": [
+        0,
+        0,
+        470,
+        330
+      ],
+      "rules": [
+        {
+          "hue": [
+            55,
+            140
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.12,
+            1
+          ]
+        },
+        {
+          "hue": [
+            15,
+            45
+          ],
+          "sat": [
+            0.2,
+            0.8
+          ],
+          "val": [
+            0.1,
+            0.6
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "spruce_right",
+      "rect": [
+        1680,
+        0,
+        240,
+        730
+      ],
+      "rules": [
+        {
+          "hue": [
+            60,
+            175
+          ],
+          "sat": [
+            0.15,
+            1
+          ],
+          "val": [
+            0.05,
+            0.75
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            1835,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            730
+          ],
+          [
+            1690,
+            730
+          ],
+          [
+            1740,
+            560
+          ],
+          [
+            1712,
+            555
+          ],
+          [
+            1775,
+            380
+          ],
+          [
+            1745,
+            372
+          ],
+          [
+            1805,
+            200
+          ],
+          [
+            1785,
+            195
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "blades_left",
+      "rect": [
+        0,
+        790,
+        340,
+        290
+      ],
+      "rules": [
+        {
+          "hue": [
+            40,
+            170
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0,
+            0.32
+          ]
+        }
+      ],
+      "feather": 0.8
+    },
+    {
+      "name": "blades_right",
+      "rect": [
+        1560,
+        790,
+        360,
+        290
+      ],
+      "rules": [
+        {
+          "hue": [
+            40,
+            170
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0,
+            0.32
+          ]
+        }
+      ],
+      "feather": 0.8
+    },
+    {
+      "name": "cloud_b",
+      "rect": [
+        1230,
+        45,
+        450,
+        155
+      ],
+      "rules": [
+        {
+          "sat": [
+            0,
+            0.3
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        }
+      ],
+      "feather": 1.2,
+      "clean": 1,
+      "pad": 6
+    }
+  ]
+}

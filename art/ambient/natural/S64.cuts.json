@@ -1,0 +1,82 @@
+{
+ "room": "S64",
+ "source": "src/game/assets/bg_natural/S64.webp",
+ "note": "Natural S64 cut-outs: the bare winter trees of the school yard beyond the building corner (dark branches, wind sway) and the sky there (cloud mask).",
+ "items": [
+  {
+   "name": "yard_branches",
+   "rect": [
+    1305,
+    250,
+    615,
+    235
+   ],
+   "rules": [
+    {
+     "hue": [
+      0,
+      75
+     ],
+     "luma": [
+      0.0,
+      0.5
+     ]
+    }
+   ],
+   "clean": 0,
+   "feather": 0.6,
+   "exclude": [
+    [
+     [
+      1570,
+      60
+     ],
+     [
+      1920,
+      400
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "sky_mask",
+   "rect": [
+    1305,
+    0,
+    615,
+    520
+   ],
+   "rules": [
+    {
+     "hue": [
+      188,
+      238
+     ],
+     "sat": [
+      0.1,
+      0.85
+     ],
+     "val": [
+      0.5,
+      1
+     ]
+    }
+   ],
+   "kind": "mask",
+   "feather": 1.5,
+   "clean": 1,
+   "exclude": [
+    [
+     [
+      1570,
+      60
+     ],
+     [
+      1920,
+      420
+     ]
+    ]
+   ]
+  }
+ ]
+}

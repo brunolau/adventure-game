@@ -1,0 +1,24 @@
+{
+  "room": "S16",
+  "source": "src/game/assets/bg_natural/S16.webp",
+  "note": "Natural S16 cut-outs (art/tools/ambient_cut.py --natural S16): the crown of the young tree in the inner atrium seen through the window (wind sway) and the four glass panes of the window as a mask for pupils crossing the atrium.",
+  "items": [
+    {
+      "name": "atrium_tree",
+      "rect": [1095, 415, 100, 125],
+      "rules": [ { "hue": [50, 110], "sat": [0.3, 1], "val": [0.35, 1] } ],
+      "include": [ [[1098, 418], [1192, 418], [1192, 535], [1098, 535]] ],
+      "feather": 1.0
+    },
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [1068, 326, 272, 268],
+      "rules": [ {} ],
+      "include": [ [[1073, 331], [1191, 331], [1191, 394], [1073, 394]], [[1073, 406], [1191, 406], [1191, 589], [1073, 589]],
+                   [[1216, 331], [1334, 331], [1334, 394], [1216, 394]], [[1216, 406], [1334, 406], [1334, 589], [1216, 589]] ],
+      "feather": 1.2,
+      "scale": 0.5
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "room": "S49",
+  "source": "src/game/assets/bg_natural/S49.webp",
+  "note": "Natural S49 cut-outs (art/tools/ambient_cut.py --natural S49): the window sky (clouds) and the window glass (birds outside).",
+  "items": [
+    { "name": "window_sky_mask", "kind": "mask", "rect": [708, 258, 805, 140],
+      "rules": [ { "hue": [185, 235], "sat": [0.2, 1], "val": [0.45, 1] }, { "sat": [0, 0.15], "val": [0.85, 1] } ],
+      "exclude": [ [[1010, 315], [1180, 400]] ],
+      "feather": 1.0, "mask_rect": [700, 250, 820, 155], "scale": 1.0 },
+    { "name": "window_glass_mask", "kind": "mask", "rect": [708, 258, 805, 300],
+      "exclude": [ [[760, 505], [890, 620]], [[1090, 540], [1175, 620]] ],
+      "feather": 0.8, "mask_rect": [700, 250, 820, 315], "scale": 1.0 }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "room": "S44",
+  "source": "src/game/assets/bg_natural/S44.webp",
+  "note": "Natural S44 cut-outs (art/tools/ambient_cut.py --natural S44): the sheer curtains (draught sway), the spruces and slopes seen through the windows (wind sway) and the window sky (cloud mask).",
+  "items": [
+    { "name": "curtain_left", "rect": [0, 262, 120, 440],
+      "rules": [ { "sat": [0, 0.35], "val": [0.6, 1] } ], "feather": 1.2 },
+    { "name": "curtain_right", "rect": [400, 262, 150, 440],
+      "rules": [ { "sat": [0, 0.35], "val": [0.6, 1] } ], "feather": 1.2 },
+    { "name": "window_trees", "rect": [55, 300, 355, 395],
+      "rules": [ { "hue": [60, 175], "sat": [0.2, 1], "val": [0.1, 0.85] } ],
+      "exclude": [ [[0, 262], [120, 702]], [[400, 262], [550, 702]] ], "feather": 1.0 },
+    { "name": "window_sky_mask", "kind": "mask", "rect": [55, 290, 355, 200],
+      "rules": [ { "hue": [185, 235], "sat": [0.15, 1], "val": [0.5, 1] } ],
+      "exclude": [ [[0, 262], [120, 702]], [[400, 262], [550, 702]] ],
+      "feather": 1.0, "mask_rect": [50, 285, 365, 210], "scale": 1.0 }
+  ]
+}

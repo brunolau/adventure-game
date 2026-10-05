@@ -1,0 +1,16 @@
+{
+  "room": "S63",
+  "source": "src/game/assets/bg_natural/S63.webp",
+  "note": "Natural S63 cut-outs (art/tools/ambient_cut.py --natural S63): the window glass panes (inside the timber frame) as a clip mask for the snowfall and the crows outside.",
+  "items": [
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [1216, 262, 345, 330],
+      "rules": [ {} ],
+      "include": [ [[1220, 272], [1372, 272], [1372, 582], [1220, 582]], [[1404, 272], [1552, 272], [1552, 582], [1404, 582]] ],
+      "feather": 1.2,
+      "scale": 0.5
+    }
+  ]
+}

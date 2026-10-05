@@ -1,0 +1,23 @@
+{
+  "room": "S14",
+  "source": "src/game/assets/bg_natural/S14.webp",
+  "note": "Natural S14 cut-outs (art/tools/ambient_cut.py --natural S14): the poplars and limes of the sports yard seen through the ribbon window (above the lawn line; white mullions excluded by saturation), for a wind-sway layer; the window glass as a mask for the far-away children on the yard and the birds.",
+  "items": [
+    {
+      "name": "window_trees",
+      "rect": [1535, 225, 385, 280],
+      "rules": [ { "hue": [55, 110], "sat": [0.26, 1], "val": [0.3, 1] } ],
+      "include": [ [[1535, 262], [1920, 190], [1920, 505], [1535, 505]] ],
+      "feather": 1.0
+    },
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [1530, 185, 390, 545],
+      "rules": [ { "sat": [0.08, 1] } ],
+      "include": [ [[1536, 262], [1920, 190], [1920, 728], [1536, 590]] ],
+      "feather": 1.5,
+      "scale": 0.5
+    }
+  ]
+}

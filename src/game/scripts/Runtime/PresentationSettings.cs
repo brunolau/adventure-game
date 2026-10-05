@@ -48,10 +48,33 @@ public static class PresentationSettings
 
     /// <summary>
     /// Natural re-blocking (World/RoomBlocking.cs, data/blocking/&lt;room&gt;.json): true / false forces it,
-    /// null (default) follows the project setting <c>last_bell/presentation/blocking</c> ("template" unless
+    /// null (default) follows the project setting <c>last_bell/presentation/blocking</c> ("natural" since milestone 3; "template" unless
     /// approved). The QA flag <c>--blocking natural|template</c> sets it. Takes effect on the next room build.
     /// </summary>
     public static bool? NaturalBlocking { get; set; }
+
+    /// <summary>
+    /// The hero's walk speed factor over the sheets' authored stride (product owner 2026-10-05: "a bit faster,
+    /// not unnatural"). The one place for it: <see cref="LastBell.Game.World.Actor"/> multiplies the ground speed and
+    /// the sprite visual multiplies the walk cycle's playback rate by the same factor, so planted feet never slide.
+    /// The settings UI offers 1.0 / 1.25 / 1.5 (ui.settings.walk_speed).
+    /// </summary>
+    public static float WalkSpeedFactor { get; set; } = DefaultWalkSpeedFactor;
+
+    /// <summary>Default of <see cref="WalkSpeedFactor"/> (+25 %).</summary>
+    public const float DefaultWalkSpeedFactor = 1.25f;
+
+    /// <summary>Longest gap between the two presses of a double click / double tap / double Enter that skips the walk.</summary>
+    public static float DoubleClickSeconds { get; set; } = 0.35f;
+
+    /// <summary>Largest distance (canvas px) between the two presses of a double click on the floor.</summary>
+    public static float DoubleClickSlopPx { get; set; } = 40f;
+
+    /// <summary>
+    /// QA only (harness flag <c>--labels</c>): draw the old text labels of every visible target instead of the
+    /// Space markers, for art review screenshots. Players never see text labels for all targets at once.
+    /// </summary>
+    public static bool QaTextLabels { get; set; }
 
     /// <summary>Room fade duration in seconds (each direction).</summary>
     public static float RoomFadeSeconds { get; set; } = 0.35f;

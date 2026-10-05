@@ -18,10 +18,10 @@ public static class HoverPresenter
     private static IHoverView? View => UiBus.Hover ?? Placeholder;
 
     /// <summary>Shows hover info at a canvas position.</summary>
-    public static void Show(HoverInfo info, Vector2 position, bool itemSelected, bool fromKeyboard)
+    public static void Show(HoverInfo info, Vector2 position, bool itemSelected, bool fromKeyboard, bool fromInventory = false)
     {
         if (info.Name.IsEmpty && info.ActionLabel.IsEmpty) { Hide(); return; }
-        View?.ShowHover(new HoverPayload(info, position, itemSelected, fromKeyboard));
+        View?.ShowHover(new HoverPayload(info, position, itemSelected, fromKeyboard, fromInventory));
     }
 
     /// <summary>Hides the hover text.</summary>

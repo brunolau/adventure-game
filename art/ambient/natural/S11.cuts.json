@@ -1,0 +1,129 @@
+{
+ "room": "S11",
+ "source": "src/game/assets/bg_natural/S11.webp",
+ "note": "Natural S11 cut-outs (art/tools/ambient_cut.py --natural S11): the green lindens at the left beyond the road and the trees at the right beyond the tracks (wind sway), and the blue sky (mask for the drifting clouds).",
+ "items": [
+  {
+   "name": "trees_left",
+   "rect": [
+    0,
+    118,
+    392,
+    330
+   ],
+   "rules": [
+    {
+     "hue": [
+      52,
+      145
+     ],
+     "sat": [
+      0.22,
+      1
+     ],
+     "val": [
+      0.2,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "trees_right",
+   "rect": [
+    1588,
+    205,
+    332,
+    240
+   ],
+   "rules": [
+    {
+     "hue": [
+      52,
+      145
+     ],
+     "sat": [
+      0.22,
+      1
+     ],
+     "val": [
+      0.2,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "sky_mask",
+   "rect": [
+    0,
+    0,
+    1920,
+    440
+   ],
+   "rules": [
+    {
+     "hue": [
+      188,
+      238
+     ],
+     "sat": [
+      0.1,
+      0.85
+     ],
+     "val": [
+      0.5,
+      1
+     ]
+    }
+   ],
+   "kind": "mask",
+   "feather": 1.5,
+   "clean": 1,
+   "exclude": [
+    [
+     [
+      340,
+      240
+     ],
+     [
+      960,
+      440
+     ]
+    ],
+    [
+     [
+      700,
+      50
+     ],
+     [
+      870,
+      440
+     ]
+    ],
+    [
+     [
+      1130,
+      80
+     ],
+     [
+      1600,
+      440
+     ]
+    ],
+    [
+     [
+      1800,
+      0
+     ],
+     [
+      1850,
+      440
+     ]
+    ]
+   ]
+  }
+ ]
+}

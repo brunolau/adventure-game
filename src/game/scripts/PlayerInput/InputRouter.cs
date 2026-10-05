@@ -16,7 +16,11 @@ namespace LastBell.Game.PlayerInput;
 /// One logical left click is one action (no verb choice).
 /// Touch: Godot emulates the first finger as a mouse (device <see cref="InputEvent.DeviceIdEmulation"/>), so the GUI
 /// still gets taps first; the emulated events that reach the world feed <see cref="TouchGestures"/>
-/// (tap = Primary, long press = Secondary, two-finger tap = ToggleLabels) instead of acting on press.
+/// (tap = Primary, long press = Secondary, two-finger hold = markers) instead of acting on press.
+/// Space is hold-to-show (owner override 2026-10-05): press = <see cref="LogicalCommand.ShowMarkers"/>, release (seen in
+/// <c>_Input</c>, so no GUI can swallow it) or losing the window focus = <see cref="LogicalCommand.HideMarkers"/>.
+/// The second press of a world double click (or double Enter) that already acted is not passed on to a line that
+/// started from it (no accidental skip of the first line).
 /// </summary>
 public partial class InputRouter : Node2D
 {
@@ -37,14 +41,40 @@ public partial class InputRouter : Node2D
         Instance = this;
         InputActions.EnsureDefaults();
         ProcessMode = ProcessModeEnum.Always;
+        // A save made while Space was held carries the markers flag: a loaded game starts without them.
+        if (GameRuntime.Instance is { } game)
+            game.SessionReplaced += () => Callable.From(ClearStaleMarkers).CallDeferred();
     }
+
+    /// <summary>True while Space (or two fingers, or the HUD eye) holds the markers on.</summary>
+    public bool MarkersHeld { get; private set; }
 
     /// <inheritdoc />
     public override void _Input(InputEvent e)
     {
-        // Extra fingers are not emulated as a mouse; count them for the two-finger tap (never handled here).
+        // Extra fingers are not emulated as a mouse; count them for the two-finger hold (never handled here).
         if (e is InputEventScreenTouch { Index: > 0 } st && (touch.Active || !st.Pressed))
-            touch.Touch(st.Index, ToCanvas(st.Position), st.Pressed, Now);
+        {
+            if (touch.Touch(st.Index, ToCanvas(st.Position), st.Pressed, Now) is { } g && g.Command is LogicalCommand.ShowMarkers or LogicalCommand.HideMarkers)
+                Dispatch(g.Command, g.Position);
+            return;
+        }
+        // Space released: always hide, whatever has the focus.
+        if (e is InputEventKey { Pressed: false } key && key.IsAction(InputActions.ToggleLabels) && MarkersHeld)
+            Dispatch(LogicalCommand.HideMarkers, null);
+    }
+
+    private void ClearStaleMarkers()
+    {
+        var game = GameRuntime.Instance;
+        if (game.IsReady && game.State.HotspotLabels && !MarkersHeld && !PresentationSettings.QaTextLabels)
+            game.Update(s => GameRules.SetHotspots(s, false));
+    }
+
+    /// <inheritdoc />
+    public override void _Notification(int what)
+    {
+        if (what == NotificationApplicationFocusOut && MarkersHeld) Dispatch(LogicalCommand.HideMarkers, null);
     }
 
     /// <inheritdoc />
@@ -93,6 +123,13 @@ public partial class InputRouter : Node2D
         if (!game.IsReady) return;
         var stage = WorldStage.Instance;
         if (command == LogicalCommand.DevOverlay) { ToggleDevOverlay(); return; }
+        if (command == LogicalCommand.HideMarkers)
+        {
+            // Release hides in every mode and also during a transition: markers never stay stuck on.
+            MarkersHeld = false;
+            if (game.State.HotspotLabels && !PresentationSettings.QaTextLabels) game.Update(s => GameRules.SetHotspots(s, false));
+            return;
+        }
         if (stage is null || stage.Transitioning) return;
         var state = game.State;
         var controller = InteractionController.Instance;
@@ -108,7 +145,11 @@ public partial class InputRouter : Node2D
                 if (command is LogicalCommand.Cancel or LogicalCommand.Back) game.Update(LastBell.Core.Rules.Dialogue.CloseMenu);
                 break;
             case GameMode.Dialogue or GameMode.Cutscene:
-                if (command is LogicalCommand.Primary or LogicalCommand.Secondary or LogicalCommand.Confirm or LogicalCommand.ToggleLabels)
+                // The second press of a double click / double Enter that started this line belongs to the world action.
+                if (command == LogicalCommand.Primary && controller?.IsDoubleClickFollowUp(position) == true) break;
+                if (command is LogicalCommand.Confirm or LogicalCommand.ConfirmSkip && controller?.IsConfirmFollowUp() == true) break;
+                if (command is LogicalCommand.Primary or LogicalCommand.Secondary or LogicalCommand.Confirm or LogicalCommand.ConfirmSkip
+                    or LogicalCommand.ToggleLabels or LogicalCommand.ShowMarkers)
                     presenter?.Advance();
                 else if (command == LogicalCommand.Cancel)
                     presenter?.Skip();
@@ -125,7 +166,7 @@ public partial class InputRouter : Node2D
         }
     }
 
-    private static void RouteWorld(LogicalCommand command, Vector2? position, InteractionController? controller)
+    private void RouteWorld(LogicalCommand command, Vector2? position, InteractionController? controller)
     {
         var game = GameRuntime.Instance;
         switch (command)
@@ -135,6 +176,13 @@ public partial class InputRouter : Node2D
                 break;
             case LogicalCommand.ToggleLabels:
                 game.Update(GameRules.ToggleHotspots);
+                break;
+            case LogicalCommand.ShowMarkers:
+                MarkersHeld = true;
+                game.Update(s => GameRules.SetHotspots(s, true)); // world mode only (Core); the open drawer ignores it
+                break;
+            case LogicalCommand.ConfirmSkip:
+                controller?.ConfirmFocused(skipWalk: true);
                 break;
             case LogicalCommand.FocusNext:
                 controller?.MoveFocus(+1);
@@ -206,7 +254,7 @@ public static class WorldInput
     public static void HoverItem(string itemId, Vector2 canvasPosition)
     {
         var game = GameRuntime.Instance;
-        HoverPresenter.Show(game.Session.Hover(new Hit.Item(itemId)), canvasPosition, game.State.SelectedItem is not null, false);
+        HoverPresenter.Show(game.Session.Hover(new Hit.Item(itemId)), canvasPosition, game.State.SelectedItem is not null, false, fromInventory: true);
     }
 
     /// <summary>Hide the hover text.</summary>

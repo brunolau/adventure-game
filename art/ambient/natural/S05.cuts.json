@@ -1,0 +1,17 @@
+{
+  "room": "S05",
+  "source": "src/game/assets/bg_natural/S05.webp",
+  "note": "Natural S05 cut-outs (art/tools/ambient_cut.py --natural S05): the old vine's foliage and grapes on the trellis above the picket fence, for a wind-sway layer in data/blocking/ambient/S05.json.",
+  "items": [
+    {
+      "name": "vine",
+      "rect": [995, 285, 385, 225],
+      "rules": [
+        { "hue": [30, 75], "sat": [0.4, 1], "val": [0.3, 1] },
+        { "hue": [200, 285], "sat": [0.25, 1], "val": [0.08, 0.75] }
+      ],
+      "except": [ { "hue": [0, 30] } ],
+      "feather": 1.0
+    }
+  ]
+}

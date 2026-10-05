@@ -1,0 +1,11 @@
+{
+  "room": "S34",
+  "source": "src/game/assets/bg_natural/S34.webp",
+  "note": "Natural S34 cut-outs (art/tools/ambient_cut.py --natural S34): the two open halves of the red stage curtain below the valance, for a slow hanging sway (draught from the open door).",
+  "items": [
+    { "name": "curtain_left", "rect": [378, 300, 245, 290],
+      "rules": [ { "hue": [330, 30], "sat": [0.25, 1], "val": [0.08, 0.75] } ], "feather": 1.0 },
+    { "name": "curtain_right", "rect": [1200, 300, 232, 290],
+      "rules": [ { "hue": [330, 30], "sat": [0.25, 1], "val": [0.08, 0.75] } ], "feather": 1.0 }
+  ]
+}

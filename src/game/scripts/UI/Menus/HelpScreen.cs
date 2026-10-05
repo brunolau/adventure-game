@@ -10,9 +10,9 @@ public partial class HelpScreen : ModalScreen
     /// <summary>The control lines (ui.csv), shared with the settings' controls tab.</summary>
     public static readonly string[] ControlKeys =
     {
-        "ui.controls.left_click", "ui.controls.right_click", "ui.controls.right_click_selected", "ui.controls.space",
+        "ui.controls.left_click", "ui.controls.right_click", "ui.controls.right_click_selected", "ui.controls.space", "ui.controls.double_click",
         "ui.controls.inventory", "ui.controls.journal", "ui.controls.map", "ui.controls.hint", "ui.controls.travel",
-        "ui.controls.escape", "ui.controls.enter", "ui.controls.tab", "ui.controls.back",
+        "ui.controls.escape", "ui.controls.enter", "ui.controls.shift_enter", "ui.controls.tab", "ui.controls.back",
     };
 
     /// <summary>Godot constructor.</summary>

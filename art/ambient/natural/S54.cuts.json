@@ -1,0 +1,23 @@
+{
+  "room": "S54",
+  "source": "src/game/assets/bg_natural/S54.webp",
+  "note": "Natural S54 cut-outs (art/tools/ambient_cut.py --natural S54): the orange autumn maple crowns seen through the fixed left casement and the open right gap of the window (white plastic frame excluded by saturation), for a wind-sway layer; the window glass as a mask for falling leaves and birds.",
+  "items": [
+    {
+      "name": "window_trees",
+      "rect": [1216, 262, 345, 330],
+      "rules": [ { "hue": [18, 50], "sat": [0.32, 1], "val": [0.3, 1] } ],
+      "include": [ [[1218, 264], [1558, 264], [1558, 590], [1218, 590]] ],
+      "feather": 1.0
+    },
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [1216, 262, 345, 330],
+      "rules": [ {} ],
+      "include": [ [[1218, 270], [1380, 270], [1380, 586], [1218, 586]], [[1396, 270], [1556, 270], [1556, 586], [1396, 586]] ],
+      "feather": 1.2,
+      "scale": 0.5
+    }
+  ]
+}

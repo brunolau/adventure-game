@@ -1,0 +1,164 @@
+{
+  "room": "S67",
+  "source": "src/game/assets/bg_natural/S67.webp",
+  "note": "Natural S67 cut-outs (art/tools/ambient_cut.py --natural S67): the daylight opening at the left end of the hall (sky mask for clouds). Also the docked black cabin 1 as a sprite for the passing cabin in the S68 window view.",
+  "items": [
+    {
+      "name": "opening_sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        160,
+        520
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.15,
+            1
+          ],
+          "val": [
+            0.5,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        0,
+        0,
+        170,
+        530
+      ],
+      "scale": 1.0
+    },
+    {
+      "name": "cabin_sprite",
+      "rect": [
+        235,
+        190,
+        560,
+        525
+      ],
+      "rules": [
+        {
+          "val": [
+            0,
+            0.5
+          ]
+        },
+        {
+          "hue": [
+            180,
+            240
+          ],
+          "sat": [
+            0.05,
+            0.6
+          ],
+          "val": [
+            0.25,
+            0.7
+          ]
+        }
+      ],
+      "feather": 1.0,
+      "pad": 4,
+      "include": [
+        [
+          [
+            268,
+            345
+          ],
+          [
+            702,
+            345
+          ],
+          [
+            732,
+            420
+          ],
+          [
+            738,
+            640
+          ],
+          [
+            702,
+            708
+          ],
+          [
+            268,
+            708
+          ],
+          [
+            238,
+            640
+          ],
+          [
+            242,
+            420
+          ]
+        ],
+        [
+          [
+            340,
+            200
+          ],
+          [
+            378,
+            200
+          ],
+          [
+            378,
+            345
+          ],
+          [
+            340,
+            345
+          ]
+        ],
+        [
+          [
+            598,
+            200
+          ],
+          [
+            636,
+            200
+          ],
+          [
+            636,
+            345
+          ],
+          [
+            598,
+            345
+          ]
+        ],
+        [
+          [
+            360,
+            255
+          ],
+          [
+            620,
+            255
+          ],
+          [
+            620,
+            305
+          ],
+          [
+            360,
+            305
+          ]
+        ]
+      ]
+    }
+  ]
+}

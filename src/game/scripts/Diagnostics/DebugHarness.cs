@@ -19,9 +19,10 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--room &lt;id&gt;</c>, <c>--replay &lt;n&gt;</c>, <c>--play &lt;n&gt;</c> (walkthrough actions up to step n through the input path),
 /// <c>--act &lt;actionId&gt;</c> (repeatable),
 /// <c>--screenshot &lt;path.png&gt;</c>, <c>--frames &lt;k&gt;</c>, <c>--interval &lt;ms&gt;</c>, <c>--wait &lt;ms&gt;</c>,
-/// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|wait:ms|mouse:x,y|rmouse:x,y|keyev:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
-/// <c>mouse</c>/<c>rmouse</c>/<c>keyev</c> inject real input events through Godot's pipeline, GUI first),
-/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--blocking natural|template</c>, <c>--labels</c>, <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
+/// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
+/// <c>mouse</c>/<c>rmouse</c>/<c>dblclick</c>/<c>move</c>/<c>keyev</c>/<c>keydown</c>/<c>keyup</c> inject real input events through Godot's pipeline, GUI first),
+/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
+/// <c>--markers</c> (Space markers on, as if Space were held), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
 /// (resolver, walking, re-resolve on arrival, commit). Autosave is off unless <c>--autosave</c>.
 /// Prints <c>HARNESS ...</c> lines to stdout for scripts.
@@ -78,6 +79,8 @@ public partial class DebugHarness : Node
         game.AutosaveEnabled = Has("autosave");
         var stage = WorldStage.Instance!;
         if (Has("dev")) stage.DevOverlay = PresentationSettings.DevNotes = true;
+        if (Has("labels")) PresentationSettings.QaTextLabels = true; // review screenshots: text labels of every target
+        if (Has("soft-cursor")) LastBell.Game.UI.Hud.CursorLayer.SoftwareCursor = true;
         if (Get("blocking") is { } blocking) // natural re-blocking (World/RoomBlocking.cs, docs/reblock/README.md)
         {
             PresentationSettings.NaturalBlocking = blocking == "natural";
@@ -104,7 +107,10 @@ public partial class DebugHarness : Node
                 Quit(acceptanceFailures > 0 ? 1 : 0);
                 return;
             }
-            if (Has("labels") && !game.State.HotspotLabels)
+            if (Has("targets") && stage.Current is { } shown) // QA: target rects and interaction points of the room
+                foreach (var t in shown.Targets)
+                    Log($"target {t.Id} kind={t.Kind} rect={t.Rect} point={t.InteractionPoint} anchor={t.LabelAnchor}");
+            if ((Has("labels") || Has("markers")) && !game.State.HotspotLabels)
             {
                 await SkipLines(5);
                 game.Update(GameRules.ToggleHotspots);
@@ -265,6 +271,25 @@ public partial class DebugHarness : Node
             case "hover":
                 Godot.Input.WarpMouse(GetTree().Root.GetFinalTransform() * Point());
                 InteractionController.Instance?.PointerMoved(Point());
+                break;
+            case "move":
+                // A real mouse motion event (hover label, cursor shape).
+                {
+                    var vp = GetTree().Root.GetFinalTransform() * Point();
+                    Godot.Input.WarpMouse(vp);
+                    Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = vp, GlobalPosition = vp });
+                    await Frames(2);
+                }
+                break;
+            case "dblclick":
+                // Two real left clicks at the same point, well inside the double-click threshold.
+                await RawMouse(Point(), MouseButton.Left);
+                await RawMouse(Point(), MouseButton.Left);
+                break;
+            case "keydown" or "keyup" when Enum.TryParse<Key>(value, true, out var held):
+                // Half a key press: e.g. keydown:Space holds the markers on for a screenshot.
+                Godot.Input.ParseInputEvent(new InputEventKey { Keycode = held, PhysicalKeycode = held, Pressed = kind == "keydown" });
+                await Frames(1);
                 break;
             case "wait":
                 await Seconds(double.Parse(value, CultureInfo.InvariantCulture) / 1000.0);

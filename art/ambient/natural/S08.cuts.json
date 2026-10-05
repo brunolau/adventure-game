@@ -1,0 +1,289 @@
+{
+  "room": "S08",
+  "source": "src/game/assets/bg_natural/S08.webp",
+  "note": "Natural S08 cut-outs (art/tools/ambient_cut.py --natural S08): the pond's water (ripples and glints) and its mask (ducks swim only on the water), the dry reeds on both shores, the rusty ferns at the railing (the ball's spot is excluded so the swaying ferns never bring the ball back after Q1B), the dry grass left of the bench, a sky mask for the clouds.",
+  "items": [
+    {
+      "name": "water",
+      "rect": [
+        0,
+        300,
+        1920,
+        150
+      ],
+      "rules": [
+        {
+          "hue": [
+            48,
+            200
+          ],
+          "sat": [
+            0.02,
+            0.22
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        }
+      ],
+      "feather": 0.8,
+      "clean": 1,
+      "pad": 4
+    },
+    {
+      "name": "water_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        300,
+        1920,
+        150
+      ],
+      "rules": [
+        {
+          "hue": [
+            48,
+            200
+          ],
+          "sat": [
+            0.02,
+            0.22
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        }
+      ],
+      "feather": 0.8,
+      "grow": -2,
+      "mask_rect": [
+        0,
+        296,
+        1920,
+        160
+      ],
+      "scale": 1.0
+    },
+    {
+      "name": "reeds_far",
+      "rect": [
+        0,
+        268,
+        1920,
+        70
+      ],
+      "rules": [
+        {
+          "hue": [
+            18,
+            50
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.35,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1230,
+            175
+          ],
+          [
+            1700,
+            230
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "reeds_near",
+      "rect": [
+        0,
+        340,
+        1920,
+        140
+      ],
+      "rules": [
+        {
+          "hue": [
+            18,
+            50
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.35,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1800,
+            320
+          ],
+          [
+            1830,
+            480
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "ferns",
+      "rect": [
+        860,
+        560,
+        640,
+        150
+      ],
+      "rules": [
+        {
+          "hue": [
+            6,
+            30
+          ],
+          "sat": [
+            0.5,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            955,
+            460
+          ],
+          [
+            995,
+            700
+          ]
+        ],
+        [
+          [
+            1350,
+            460
+          ],
+          [
+            1392,
+            700
+          ]
+        ],
+        [
+          [
+            1238,
+            655
+          ],
+          [
+            1334,
+            745
+          ]
+        ],
+        [
+          [
+            930,
+            470
+          ],
+          [
+            1405,
+            508
+          ]
+        ],
+        [
+          [
+            930,
+            562
+          ],
+          [
+            1405,
+            592
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "grass_left",
+      "rect": [
+        0,
+        590,
+        450,
+        190
+      ],
+      "rules": [
+        {
+          "hue": [
+            30,
+            62
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        172
+      ],
+      "rules": [],
+      "add": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            172
+          ],
+          [
+            0,
+            172
+          ]
+        ]
+      ],
+      "feather": 2,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        180
+      ],
+      "scale": 0.5
+    }
+  ]
+}

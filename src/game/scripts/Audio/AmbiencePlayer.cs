@@ -56,10 +56,32 @@ public partial class AmbiencePlayer : Node
     /// <summary>Overall level offset (ducking for overlays, silence for the main menu).</summary>
     public void SetLevel(float db) => masterTargetDb = db;
 
+    private readonly Dictionary<string, List<AmbienceLayer>> naturalLayers = new(StringComparer.Ordinal);
+
+    /// <summary>
+    /// All layers of a room: ambience.json's, or, for a room with a natural blocking that has an
+    /// <c>audio.ambience</c> override (World/RoomBlocking.cs, e.g. the bus at the 1982 stop S57), the override
+    /// (<c>ambience_mode</c> "replace", default) or ambience.json's plus the override ("add"). Presentation only.
+    /// </summary>
+    public IReadOnlyList<AmbienceLayer> LayersOf(string roomId)
+    {
+        var template = Catalog.RoomAmbience.TryGetValue(roomId, out var l) ? l : new List<AmbienceLayer>();
+        if (LastBell.Game.World.RoomBlocking.For(roomId)?.Audio is not { AmbienceLayers: { } entries } audio) return template;
+        string key = roomId + (audio.AddToTemplate ? "+" : "=");
+        if (!naturalLayers.TryGetValue(key, out var merged))
+        {
+            var own = Catalog.ParseAmbienceLayers(roomId, entries);
+            merged = audio.AddToTemplate ? template.Concat(own).ToList() : own;
+            naturalLayers[key] = merged;
+        }
+        return merged;
+    }
+
     /// <summary>The layers of a room that apply in a state (after/until conditions).</summary>
     public IReadOnlyList<AmbienceLayer> ActiveLayers(string roomId, GameState? state)
     {
-        if (!Catalog.RoomAmbience.TryGetValue(roomId, out var layers)) return Array.Empty<AmbienceLayer>();
+        var layers = LayersOf(roomId);
+        if (layers.Count == 0) return Array.Empty<AmbienceLayer>();
         return layers.Where(l => (l.After is null || (state?.IsDone(l.After) ?? false)) &&
                                  (l.Until is null || !(state?.IsDone(l.Until) ?? false))).ToList();
     }

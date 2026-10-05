@@ -217,6 +217,19 @@ public sealed class ControlRulesTests
     }
 
     [Fact]
+    public void Space_hold_shows_markers_only_in_world_mode_and_release_always_hides_them()
+    {
+        var s = GameRules.SetHotspots(C.InitialState, true);
+        Assert.True(s.HotspotLabels);
+        Assert.Same(s, GameRules.SetHotspots(s, true));
+        Assert.False(GameRules.SetHotspots(s, false).HotspotLabels);
+        var dialogue = C.InitialState with { Mode = GameMode.Dialogue };
+        Assert.False(GameRules.SetHotspots(dialogue, true).HotspotLabels);
+        Assert.False(GameRules.SetHotspots(s with { Mode = GameMode.Cutscene }, false).HotspotLabels);
+        Assert.False(GameRules.SetHotspots(s with { Mode = GameMode.Inventory } with { HotspotLabels = false }, true).HotspotLabels);
+    }
+
+    [Fact]
     public void Hotspot_list_contains_every_visible_hotspot_including_atmospheric_and_all_exits_but_no_hidden_one()
     {
         var before = GameRules.HotspotList(C, C.InitialState);

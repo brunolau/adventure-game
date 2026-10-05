@@ -1,0 +1,100 @@
+{
+ "room": "S28",
+ "source": "src/game/assets/bg_natural/S28.webp",
+ "note": "Natural S28 cut-outs and masks (art/tools/ambient_cut.py --natural S28) for src/game/data/blocking/ambient/S28.json.",
+ "items": [
+  {
+   "name": "bush_left",
+   "rect": [
+    0,
+    500,
+    520,
+    300
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
+      135
+     ],
+     "sat": [
+      0.28,
+      1
+     ],
+     "val": [
+      0.22,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0,
+   "exclude": [
+    [
+     [
+      130,
+      340
+     ],
+     [
+      512,
+      624
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "bush_right",
+   "rect": [
+    1440,
+    360,
+    480,
+    680
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
+      135
+     ],
+     "sat": [
+      0.28,
+      1
+     ],
+     "val": [
+      0.22,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0,
+   "except": [
+    {
+     "val": [
+      0,
+      0.2
+     ]
+    }
+   ]
+  },
+  {
+   "name": "road_mask",
+   "kind": "mask",
+   "rect": [
+    0,
+    0,
+    1920,
+    58
+   ],
+   "rules": [
+    {
+     "val": [
+      0.42,
+      1
+     ]
+    }
+   ],
+   "feather": 0.6,
+   "clean": 0,
+   "scale": 1.0
+  }
+ ]
+}

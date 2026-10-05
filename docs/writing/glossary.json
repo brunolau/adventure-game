@@ -1,0 +1,968 @@
+{
+  "about": "Machine-readable part of docs/writing/GLOSSARY.md, used by tools/check_rewrite.py. Regexes are Python 're' syntax. 'names' and 'places' are case-sensitive, 'terms', 'deprecated', 'jargon' and 'anachronisms' are case-insensitive. Edit GLOSSARY.md and this file together; run 'python tools/check_rewrite.py --self-test' after every change.",
+  "limits": {
+    "line": {
+      "soft": 110,
+      "hard": 160
+    },
+    "look": {
+      "soft": 110,
+      "hard": 160
+    },
+    "name": {
+      "soft": 32,
+      "hard": 50
+    },
+    "label": {
+      "soft": 45,
+      "hard": 60
+    },
+    "topic_label": {
+      "soft": 28,
+      "hard": 40
+    },
+    "goal": {
+      "soft": 100,
+      "hard": 140
+    },
+    "hint": {
+      "soft": 200,
+      "hard": 360
+    },
+    "clue": {
+      "soft": 130,
+      "hard": 160
+    },
+    "option": {
+      "soft": 20,
+      "hard": 24
+    },
+    "caption": {
+      "soft": 90,
+      "hard": 110
+    }
+  },
+  "strict_kinds": [
+    "goal",
+    "hint",
+    "clue",
+    "label",
+    "option"
+  ],
+  "names": {
+    "Adam": "\\bAdam\\w*",
+    "Mira": "\\bMir\\w*|\\b[Bb]abk\\w*|Hrušk\\w*",
+    "Tóno": "\\bTón\\w*|\\bAnton\\w*",
+    "Oto": "\\bOt(o|a|ovi|om|ov|ova|ovo|ove|ovu|ovom|ovho|ovmu|ovej|ových|ovi)\\b|\\b[Dd]ed(o|a|ovi|om|ko|kovi)\\b|\\bBielik\\w*",
+    "Ela": "\\bEl(a|y|e|u|ou|in|ina|ino|ine|inu|inej|inho|inmu|inom|iným)\\b|\\bŠvec\\w*",
+    "Dana": "\\bDan(a|y|e|u|ou|in|ina|ino|ine|inu|inej|inho)\\b",
+    "Roman": "\\bRoman\\w*",
+    "Lenka": "\\bLenk\\w*",
+    "Bodka": "\\bBodk\\w*",
+    "Jozef": "\\bJozef\\w*",
+    "Jana": "\\bJan(a|y|e|u|ou|in|ina|ino|ine|inu|inej|inho|inmu|inom)\\b|\\bVargov\\w*",
+    "Lea": "\\bLe(a|y|i|u|ou|in|ina|ino|ine|inu|inej|inho)\\b|\\bKormanov\\w*",
+    "Viktor": "\\bViktor\\w*",
+    "Nina": "\\bNin(a|y|e|u|ou|in|ina|ino|ine|inu|inej|inho)\\b",
+    "Soňa": "\\bSo[ňn]\\w*",
+    "Zita": "\\bZit\\w*",
+    "Emil": "\\bEmil\\w*",
+    "Pali": "\\bPal(i|iho|imu|im|ov\\w*)\\b",
+    "Viera": "\\bVier(a|y|e|u|ou|in\\w*)\\b",
+    "Karol": "\\bKarol\\w*",
+    "Alena": "\\bAlen\\w*",
+    "Fero": "\\bFer(o|a|ovi|om|ov\\w*)\\b",
+    "Milada": "\\bMilad\\w*",
+    "Juro": "\\bJur(o|a|ovi|om|ov\\w*)\\b",
+    "Juraj": "\\bJuraj\\w*",
+    "Dezider": "\\bDezi\\w*",
+    "Božo": "\\bBož(o|a|ovi|om|idar\\w*)\\b",
+    "Berta": "\\bBert\\w*",
+    "Alojz": "\\bAlojz\\w*",
+    "Béla": "\\bBél\\w*",
+    "Lída": "\\bLíd\\w*",
+    "Rudo": "\\bRud(o|a|ovi|om|olf\\w*|ov\\w*)\\b",
+    "Štefan": "\\bŠtefan\\w*",
+    "Vera": "\\bVer(a|y|e|u|ou|in\\w*)\\b",
+    "Tamara": "\\bTamar\\w*",
+    "Boris": "\\bBoris\\w*",
+    "Sára": "\\bSár\\w*",
+    "Očko": "\\bOčk\\w*",
+    "Ivan": "\\bIvan(a|ovi|om)?\\b",
+    "Miloš": "\\bMiloš\\w*",
+    "Dobrovič": "\\bDobrovič\\w*",
+    "Ružena": "\\bRužen\\w*",
+    "Marta": "\\bMart(a|y|e|u|ou|in\\w*)\\b",
+    "Šimon": "\\bŠimon\\w*"
+  },
+  "places": {
+    "Chorvátsky Grob": "\\bGrob\\w*",
+    "Čierna Voda": "Čiern\\w* Vod\\w*",
+    "Dúbravka": "Dúbrav\\w*",
+    "Sokolíkova": "Sokolíkov\\w*",
+    "Karlova Ves": "Karlov\\w*",
+    "Staré Mesto": "Star\\w* Mest\\w*",
+    "Ružinov": "Ružinov\\w*",
+    "Miletičova": "Miletič\\w*",
+    "Petržalka": "Petržal\\w*",
+    "Dunaj": "\\bDunaj\\w*",
+    "Ivanka pri Dunaji": "\\bIvank\\w*",
+    "Jasná": "\\bJasn(á|ej|ú|ou)\\b",
+    "Biela Púť": "Biel\\w* Pú\\w*",
+    "Priehyba": "Priehyb\\w*",
+    "Chopok": "\\bChop\\w*",
+    "Rotunda": "Rotund\\w*",
+    "Grand Jasná": "\\bGrand\\w*",
+    "Vrbické pleso": "Vrbick\\w*",
+    "Funitel": "Funitel\\w*",
+    "Atlas": "\\bAtlas\\w*"
+  },
+  "terms": {
+    "ZVON": "\\bZVON\\w*",
+    "chronometer": "chronomet\\w*",
+    "kazeta": "\\bkaze\\w*",
+    "magnetofón": "magnetofón\\w*",
+    "remienok": "remien\\w*|remienk\\w*",
+    "poistka": "\\bpoist\\w*",
+    "mostík": "\\bmostík\\w*",
+    "pohár": "\\bpoh[áa]r\\w*",
+    "dutina": "\\bdutin\\w*",
+    "múrik": "\\bmúrik\\w*",
+    "lipa": "\\blip(a|y|e|u|ou|ami|ách|ovom)\\b|\\bsadenic\\w*",
+    "ohrádka": "\\bohrád\\w*",
+    "vozík": "\\bvozík\\w*",
+    "lastovička": "\\blastovič\\w*",
+    "metronóm": "metronóm\\w*",
+    "cievka": "\\bciev\\w*",
+    "fólia": "\\bfóli\\w*",
+    "mapa": "\\bmap(a|y|e|u|ou|ách)\\b",
+    "negatív": "\\bnegatív\\w*",
+    "pozitív": "\\bpozitív\\w*",
+    "konektor": "\\bkonektor\\w*",
+    "adaptér": "\\badaptér\\w*",
+    "návlek": "\\bnávl[eé]?[kč]\\w*",
+    "prepojka": "\\bprepoj\\w*",
+    "odtlačok": "\\bodtlač\\w*",
+    "platňa": "\\bplat[ňn]\\w*",
+    "rydlo": "\\brydl\\w*",
+    "registračný list": "\\bregistr\\w*",
+    "uhlový papier": "\\buhlov\\w*",
+    "schránka": "\\bschrán\\w*",
+    "manžeta": "\\bmanžet\\w*",
+    "koža": "\\bkož\\w*",
+    "nity": "\\bnit(y|ov|mi|ami)?\\b",
+    "dierovač": "\\bdierova\\w*",
+    "pumpa": "\\bpump\\w*",
+    "kľúč": "\\bkľúč\\w*",
+    "protokol": "\\bprotokol\\w*",
+    "čítačka": "\\bčítač\\w*",
+    "katalógová karta": "\\bkatalóg\\w*",
+    "lístok": "\\blíst(ok|ka|ku|kom|ky)\\b",
+    "preukaz": "\\bpreukaz\\w*",
+    "MONITOR": "\\bMONITOR\\w*",
+    "ZÁPIS": "\\bZÁPIS\\w*",
+    "zásobník": "\\bzásobník\\w*|\\bbuff\\w*",
+    "spätný zápis": "\\bspätn\\w* zápis\\w*|\\bretroaktív\\w*",
+    "normalizátor": "\\bnormaliz\\w*",
+    "krieda": "\\bkried\\w*",
+    "loptička": "\\bloptič\\w*",
+    "oznam": "\\boznam\\w*",
+    "scenár": "\\bscenár\\w*",
+    "schéma": "\\bschém\\w*",
+    "noty": "\\bnot(y|ami|ách)\\b",
+    "váha": "\\bváh\\w*",
+    "svorka": "\\bsvork\\w*",
+    "krmivo": "\\bkrmiv\\w*|\\bsemen\\w*|\\bsemien\\w*|\\bzmes\\w*",
+    "miska": "\\bmisk\\w*",
+    "terminál": "\\btermin[áa]l\\w*",
+    "prepínač": "\\bprepína\\w*|\\bprepn\\w*",
+    "port": "\\bport\\w*",
+    "senzor": "\\bsenzor\\w*|\\bstojan\\w*",
+    "fotografia": "\\bfoto\\w*|\\bsnímk\\w*",
+    "Pôvod": "\\bpôvod\\w*",
+    "Hlas": "\\bhlas\\w*",
+    "Súhlas": "\\bsúhlas\\w*",
+    "Návrat": "\\bnávrat\\w*"
+  },
+  "deprecated": [
+    {
+      "pattern": "\\bMirk\\w*",
+      "use": "Mira / Mirin (texty hry), babka (Adam), pani Hrušková (susedia a známi)"
+    },
+    {
+      "pattern": "\\bbuff\\w*",
+      "use": "návratový zásobník / zásobník (aj v roku 2035 a v hlásení prístroja)"
+    },
+    {
+      "pattern": "\\bretroaktív\\w*",
+      "use": "spätný zápis"
+    },
+    {
+      "pattern": "\\bnávlečk\\w*",
+      "use": "izolačný návlek"
+    },
+    {
+      "pattern": "\\bPalov\\w*",
+      "use": "Pali, Paliho, Palimu; Paliho opravovňa"
+    },
+    {
+      "pattern": "\\bDezi(ho|mu|m)?\\b",
+      "use": "Dezider, Dezidera, Deziderovi (Dezi iba v reči jeho kamarátov)"
+    },
+    {
+      "pattern": "\\bprepisov\\w* papier\\w*",
+      "use": "uhlový papier"
+    },
+    {
+      "pattern": "\\bslučk\\w*",
+      "use": "meracia cievka"
+    },
+    {
+      "pattern": "\\bčasostroj\\w*",
+      "use": "chronometer / ZVON"
+    },
+    {
+      "pattern": "Žiaden strach miláčik",
+      "use": "Žiaden strach, miláčik (s čiarkou)"
+    },
+    {
+      "pattern": "\\bpriehľadn\\w* map\\w*",
+      "use": "priehľadná fólia K-17"
+    },
+    {
+      "pattern": "\\bsynchronizačn\\w* komor\\w*",
+      "use": "chronokomora (S49)"
+    },
+    {
+      "pattern": "\\bchronotechnick\\w*",
+      "use": "prístroj, technika výstavy"
+    },
+    {
+      "pattern": "\\bspomienkov\\w* kotv\\w*",
+      "use": "pamäť nositeľa (hlásenie chronometra)"
+    }
+  ],
+  "jargon": [
+    "\\bherný\\w*|\\bherné\\w*|\\bhern(á|ej|ú|ou)\\b",
+    "\\bv hre\\b|\\bhr(a|y|u|ou) (ne)?(skracuje|umožňuje|dovolí)",
+    "\\bhráč\\w*",
+    "mimo obrazu",
+    "\\bfiktívn\\w*",
+    "\\bpixel\\w*|\\bzoom\\w*",
+    "\\bquest\\w*|\\bNPC\\b|\\bhotspot\\w*",
+    "servisn\\w* krok\\w*",
+    "\\b(pôvodn|základn|časov|nov)\\w* líni\\w*",
+    "motýl\\w* efekt\\w*|butterfly",
+    "\\bfinál\\w*",
+    "\\bklik\\w*",
+    "\\binventár(i|a|om|e|u)?\\b",
+    "\\bkombinác\\w*",
+    "\\bodblok\\w*|\\bodomkn\\w* časov\\w*",
+    "\\bhádank\\w*",
+    "\\bdôkaz (Pôvod|Hlas|Súhlas|Návrat)\\b",
+    "\\bmedzičasov\\w*",
+    "\\blegitímn\\w*|\\bautorizovan\\w*",
+    "\\bjeho fyzick\\w* podob\\w*|\\bfyzick\\w* podob\\w* prístupov\\w*",
+    "\\bv denníku\\b"
+  ],
+  "anachronisms": {
+    "eras": [
+      1960,
+      1982
+    ],
+    "speakers_exempt": [
+      "ADAM",
+      "SYSTEM"
+    ],
+    "patterns": [
+      "\\bokej\\b|\\bok\\b|\\bfajn\\b",
+      "\\bstres\\w*",
+      "\\bmobil\\w*|\\binternet\\w*|\\be-?mail\\w*|\\bonline\\b",
+      "\\baplikáci\\w*|\\bsoftvér\\w*|\\bserver\\w*|\\bcloud\\w*|\\bdisplej\\w*",
+      "\\bmanažér\\w*|\\bmanaž\\w*|\\bimidž\\w*|\\bsuper\\b"
+    ]
+  },
+  "protected": [
+    {
+      "id": "P01-shapes",
+      "why": "P01 solution: three shapes, colour does not matter",
+      "keys": [
+        "look.S10.panel",
+        "action.G10.003"
+      ],
+      "require": [
+        "(?i)kruh",
+        "(?i)trojuholník",
+        "(?i)štvor"
+      ]
+    },
+    {
+      "id": "P01-colour",
+      "why": "P01: colours are not the rule",
+      "keys": [
+        "look.S10.panel",
+        "puzzle.P01.clue"
+      ],
+      "require": [
+        "(?i)far(b|ieb)"
+      ]
+    },
+    {
+      "id": "P01-match",
+      "why": "P01: match equal shapes",
+      "keys": [
+        "puzzle.P01.clue",
+        "action.G10.objective",
+        "action.G10.journal",
+        "quest.M02.hint.3"
+      ],
+      "require": [
+        "(?i)tvar"
+      ]
+    },
+    {
+      "id": "P02-marks",
+      "why": "P02: the three registration marks",
+      "keys": [
+        "puzzle.P02.clue",
+        "item.OVERLAY",
+        "puzzle.P02.success"
+      ],
+      "require": [
+        "(?i)dierk",
+        "(?i)kríž",
+        "(?i)štvor"
+      ]
+    },
+    {
+      "id": "P02-180",
+      "why": "P02 solution: rotate 180°",
+      "keys": [
+        "puzzle.P02.clue",
+        "journal.clue.P02",
+        "quest.M06.hint.3"
+      ],
+      "require": [
+        "180"
+      ]
+    },
+    {
+      "id": "P02-three-marks",
+      "why": "P02: three marks named on the overlay",
+      "keys": [
+        "action.B15.004",
+        "puzzle.P02.confirm"
+      ],
+      "require": [
+        "(tri|3) \\w*\\s?značk|značk"
+      ]
+    },
+    {
+      "id": "P03-words",
+      "why": "P03 clue text exactly as painted on the school yard panel",
+      "keys": [
+        "look.S17.rhythm",
+        "puzzle.P03.clue"
+      ],
+      "require": [
+        "TRI VLNY",
+        "DVA ÚDERY",
+        "ŠESŤ DIELIKOV"
+      ]
+    },
+    {
+      "id": "P03-digits",
+      "why": "P03 solution 3–2–6",
+      "keys": [
+        "look.S17.rhythm",
+        "journal.clue.P03",
+        "action.B19.objective",
+        "action.B19.journal",
+        "quest.M07.hint.3"
+      ],
+      "require": [
+        "3\\s*[–—-]\\s*2\\s*[–—-]\\s*6"
+      ]
+    },
+    {
+      "id": "P03-spoken-words",
+      "why": "P03: Adam reads the painted clue aloud",
+      "keys": [
+        "action.B19.001"
+      ],
+      "require": [
+        "(?i)tri\\W+vln",
+        "(?i)dva\\W+úder",
+        "(?i)šesť\\W+diel"
+      ]
+    },
+    {
+      "id": "P03-spoken-digits",
+      "why": "P03: Adam sets the three digits",
+      "keys": [
+        "action.B22.001"
+      ],
+      "require": [
+        "(?i)(tri|3)\\W+(dva|2)\\W+(šesť|6)"
+      ]
+    },
+    {
+      "id": "P03-source",
+      "why": "Dezider tells where the three digits are and who has the metronome",
+      "keys": [
+        "action.B17.003"
+      ],
+      "require": [
+        "Emil",
+        "metronóm",
+        "(?i)tri (číslic|čísl)|3 číslic",
+        "(?i)školsk\\w* dvor"
+      ]
+    },
+    {
+      "id": "P03-wrong",
+      "why": "wrong line points to the school yard drawing",
+      "keys": [
+        "puzzle.P03.wrong",
+        "look.S30.dial"
+      ],
+      "require": [
+        "(?i)školsk\\w* dvor"
+      ]
+    },
+    {
+      "id": "P03-success",
+      "why": "the address found by P03",
+      "keys": [
+        "puzzle.P03.success",
+        "cutscene.CS03.01.001"
+      ],
+      "require": [
+        "Ivank",
+        "6\\. júna 1960"
+      ]
+    },
+    {
+      "id": "P05-row-col-ordinal",
+      "why": "P05 solution: second row from the top, third stone from the left",
+      "keys": [
+        "action.E08.001",
+        "item.CACHEMAP",
+        "puzzle.P05.clue",
+        "look.S61.niche"
+      ],
+      "require": [
+        "(?i)druh\\w*\\s+rad\\w*",
+        "(?i)tre[tť]\\w*\\s+(kame\\w*|stĺp\\w*)",
+        "(?i)zhora",
+        "(?i)zľava"
+      ]
+    },
+    {
+      "id": "P05-row-col-numbers",
+      "why": "P05 solution: row 2, column 3",
+      "keys": [
+        "action.E11.006",
+        "action.D05.002",
+        "puzzle.P05.wrong",
+        "item.KEEPERNOTE",
+        "journal.clue.P05",
+        "quest.M11C.hint.3"
+      ],
+      "require": [
+        "(?i)rad\\w*\\s*(č\\.\\s*)?(dva|2)\\b|(druh\\w*|2\\.)\\s+rad",
+        "(?i)stĺp\\w*\\s*(č\\.\\s*)?(tri|3)\\b|(tre[tť]\\w*|3\\.)\\s+(stĺp|kame)"
+      ]
+    },
+    {
+      "id": "P05-grid",
+      "why": "P05 grid size 3 × 4",
+      "keys": [
+        "item.KEEPERNOTE",
+        "journal.clue.P05"
+      ],
+      "require": [
+        "3\\s*×\\s*4"
+      ]
+    },
+    {
+      "id": "P04-meanings",
+      "why": "P04: the four meanings",
+      "keys": [
+        "look.S39.plate",
+        "action.I13.001",
+        "action.F11.objective",
+        "action.F11.journal",
+        "journal.clue.P04",
+        "quest.M15.hint.2",
+        "quest.M15.hint.3"
+      ],
+      "require": [
+        "(?i)pôvod",
+        "(?i)\\bhlas",
+        "(?i)súhlas",
+        "(?i)návrat"
+      ]
+    },
+    {
+      "id": "P04-years",
+      "why": "P04 solution: Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035",
+      "keys": [
+        "journal.clue.P04",
+        "quest.M15.hint.3"
+      ],
+      "require": [
+        "1960",
+        "1995",
+        "2020",
+        "2035"
+      ]
+    },
+    {
+      "id": "P04-chain",
+      "why": "the chain shown by the device before 2035 opens",
+      "keys": [
+        "action.C05.001"
+      ],
+      "require": [
+        "(?i)pôvod",
+        "1960",
+        "(?i)hlas",
+        "1995",
+        "(?i)súhlas",
+        "2020",
+        "Atlas",
+        "Jasn",
+        "2035"
+      ]
+    },
+    {
+      "id": "P04-port-origin",
+      "why": "port Pôvod takes the 1960 imprint",
+      "keys": [
+        "look.S49.port_origin"
+      ],
+      "require": [
+        "odtlač",
+        "1960"
+      ]
+    },
+    {
+      "id": "P04-port-voice",
+      "why": "port Hlas takes the 1995 tape",
+      "keys": [
+        "look.S49.port_voice"
+      ],
+      "require": [
+        "kazet",
+        "1995"
+      ]
+    },
+    {
+      "id": "P04-port-consent",
+      "why": "port Súhlas takes the 2020 handover",
+      "keys": [
+        "look.S49.port_consent"
+      ],
+      "require": [
+        "odovzdan",
+        "2020"
+      ]
+    },
+    {
+      "id": "P04-port-return",
+      "why": "port Návrat takes the 2035 procedure",
+      "keys": [
+        "look.S49.port_return"
+      ],
+      "require": [
+        "postup",
+        "2035"
+      ]
+    },
+    {
+      "id": "P04-system",
+      "why": "device confirms each port by its name",
+      "keys": [
+        "action.F12.001"
+      ],
+      "require": [
+        "PÔVOD"
+      ]
+    },
+    {
+      "id": "P04-system-2",
+      "why": "device confirms each port by its name",
+      "keys": [
+        "action.F13.001"
+      ],
+      "require": [
+        "HLAS"
+      ]
+    },
+    {
+      "id": "P04-system-3",
+      "why": "device confirms each port by its name",
+      "keys": [
+        "action.F14.001"
+      ],
+      "require": [
+        "SÚHLAS"
+      ]
+    },
+    {
+      "id": "P04-system-4",
+      "why": "device confirms each port by its name",
+      "keys": [
+        "action.F15.001"
+      ],
+      "require": [
+        "NÁVRAT"
+      ]
+    },
+    {
+      "id": "rule-sentence",
+      "why": "Mira's 1960 rule engraved on the plate; quoted later",
+      "keys": [
+        "look.S39.plate",
+        "action.I13.001"
+      ],
+      "require": [
+        "(?i)rôzne údaje neznamenajú neplatné údaje"
+      ]
+    },
+    {
+      "id": "normalizer-rule",
+      "why": "the faulty Atlas rule, opposite of Mira's sentence",
+      "keys": [
+        "item.FILTER_PHOTO"
+      ],
+      "require": [
+        "ROZDIEL = ZAHODIŤ"
+      ]
+    },
+    {
+      "id": "normalizer-rule-spoken",
+      "why": "Adam reads the faulty rule",
+      "keys": [
+        "action.F05.001"
+      ],
+      "require": [
+        "(?i)rozdiel",
+        "(?i)zahodi"
+      ]
+    },
+    {
+      "id": "codes-K17",
+      "why": "annex number on the photo; Viera's shelf mark",
+      "keys": [
+        "action.B14.003",
+        "action.B14.objective",
+        "action.B14.journal",
+        "action.B15.label",
+        "action.B15.001",
+        "item.CALPHOTO",
+        "item.OVERLAY.name"
+      ],
+      "require": [
+        "K-17"
+      ]
+    },
+    {
+      "id": "codes-Z17",
+      "why": "registration number of Mira's box, 1960 to 2035",
+      "keys": [
+        "action.I16.001",
+        "action.C03.001",
+        "item.HANDOVER",
+        "item.CHAIN",
+        "item.CATALOG.name",
+        "action.F01.label",
+        "action.F03.label",
+        "look.S15.register.variant1"
+      ],
+      "require": [
+        "Z-17"
+      ]
+    },
+    {
+      "id": "password",
+      "why": "Tóno's recognition sentence",
+      "keys": [
+        "action.E02.010",
+        "action.E11.001",
+        "action.D07.001",
+        "action.E11.label",
+        "quest.M11C.hint.1",
+        "quest.M11C.hint.3"
+      ],
+      "require": [
+        "(?i)lastovička sa vracia"
+      ]
+    },
+    {
+      "id": "years-38",
+      "why": "the jar waited 38 years (1982 to 2020)",
+      "keys": [
+        "action.D05.002",
+        "action.D06.002",
+        "action.J05.001",
+        "item.SEALED_OLD.name",
+        "quest.M11C.title",
+        "item.JAR.purpose"
+      ],
+      "require": [
+        "(?i)38|tridsaťosem|tridsiatich ôsmich"
+      ]
+    },
+    {
+      "id": "years-13",
+      "why": "13 years for Tóno between 1982 and 1995",
+      "keys": [
+        "action.E11.007"
+      ],
+      "require": [
+        "(?i)13|trinásť"
+      ]
+    },
+    {
+      "id": "tono-ages",
+      "why": "Tóno was 12, now 50",
+      "keys": [
+        "action.D07.002"
+      ],
+      "require": [
+        "(?i)12|dvanásť",
+        "(?i)50|päťdesiat"
+      ]
+    },
+    {
+      "id": "jozef-hours",
+      "why": "the help line hours on the flyer",
+      "keys": [
+        "item.FLYER"
+      ],
+      "require": [
+        "9–17|9-17"
+      ]
+    },
+    {
+      "id": "date-1982",
+      "why": "the 1982 address read in 2020",
+      "keys": [
+        "action.D04.001",
+        "look.S54.log",
+        "item.LOG1982"
+      ],
+      "require": [
+        "1982",
+        "7\\. ?decem|7\\. ?12\\.|[Ss]iedm\\w* decem"
+      ]
+    },
+    {
+      "id": "date-1982-spoken",
+      "why": "Adam reads the date from the log",
+      "keys": [
+        "action.D03.001"
+      ],
+      "require": [
+        "1982",
+        "(?i)siedm\\w*|7\\.",
+        "Oto",
+        "Anton|Tón"
+      ]
+    },
+    {
+      "id": "lea-normalized",
+      "why": "what the normalizer left of Lea's message",
+      "keys": [
+        "action.F11.004"
+      ],
+      "require": [
+        "(?i)ozvi sa"
+      ]
+    },
+    {
+      "id": "monitor",
+      "why": "the switch position that stops the erasing",
+      "keys": [
+        "action.F06.003",
+        "action.F08.003",
+        "action.F08.objective",
+        "action.F08.journal",
+        "action.F09.001",
+        "action.F10.001",
+        "action.J05.objective",
+        "action.J05.journal",
+        "look.S50.switch",
+        "action.F09.label",
+        "action.F10.label",
+        "item.DIAGNOSTIC",
+        "quest.M13.hint.3"
+      ],
+      "require": [
+        "MONITOR"
+      ]
+    }
+  ],
+  "verbatim": [
+    {
+      "keys": [
+        "action.F11.003"
+      ],
+      "text": "Viktor? To som ja. Len ti volám. Nemusíš nič opravovať. Keď budeš mať čas, ozvi sa.",
+      "why": "Lea's original message (story twist, PRIBEH_A_PRAVIDLA)"
+    },
+    {
+      "keys": [
+        "action.D07.006"
+      ],
+      "text": "Nečakal som. Žil som. Len som si pamätal miesto.",
+      "why": "Tóno's line quoted in the story bible"
+    },
+    {
+      "keys": [
+        "cutscene.CS07.04.001"
+      ],
+      "text": "Čaj ti spravím, keď bude možné prísť normálne.",
+      "why": "last line of the game (story bible)"
+    },
+    {
+      "keys": [
+        "cutscene.CS07.04.002"
+      ],
+      "text": "Tentoraz počkám.",
+      "why": "last line of the game (story bible)"
+    },
+    {
+      "keys": [
+        "journal.clue.P04"
+      ],
+      "text": "Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035",
+      "why": "P04 solution in the journal"
+    },
+    {
+      "keys": [
+        "puzzle.P01.left.1",
+        "puzzle.P01.right.2"
+      ],
+      "text": "kruh",
+      "why": "P01 option = solution value"
+    },
+    {
+      "keys": [
+        "puzzle.P01.left.2",
+        "puzzle.P01.right.3"
+      ],
+      "text": "trojuholník",
+      "why": "P01 option = solution value"
+    },
+    {
+      "keys": [
+        "puzzle.P01.left.3",
+        "puzzle.P01.right.1"
+      ],
+      "text": "štvorec",
+      "why": "P01 option = solution value"
+    },
+    {
+      "keys": [
+        "puzzle.P04.left.1"
+      ],
+      "text": "Pôvod",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.left.2"
+      ],
+      "text": "Hlas",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.left.3"
+      ],
+      "text": "Súhlas",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.left.4"
+      ],
+      "text": "Návrat",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.right.1"
+      ],
+      "text": "2020",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.right.2"
+      ],
+      "text": "1960",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.right.3"
+      ],
+      "text": "2035",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "puzzle.P04.right.4"
+      ],
+      "text": "1995",
+      "why": "P04 option"
+    },
+    {
+      "keys": [
+        "game.title"
+      ],
+      "text": "Posledný zvonec",
+      "why": "title"
+    },
+    {
+      "keys": [
+        "action.Q7C.001"
+      ],
+      "text": "Žiaden strach, miláčik!",
+      "why": "first line of Rudo's play (quoted by Lea, script cover, epilogue)",
+      "substring": true
+    },
+    {
+      "keys": [
+        "epilogue.7.line"
+      ],
+      "text": "Žiaden strach, miláčik!",
+      "why": "first line of Rudo's play",
+      "substring": true
+    },
+    {
+      "keys": [
+        "look.S45.bench"
+      ],
+      "text": "DRUHÝ ŽIVOT",
+      "why": "sign on the bench that identifies Tamara's workshop",
+      "substring": true
+    },
+    {
+      "keys": [
+        "action.Q4A.001",
+        "action.Q4B.001",
+        "action.Q4C.002",
+        "item.SCORE",
+        "quest.Q4.title"
+      ],
+      "text": "Štyri zastávky",
+      "why": "title of Emil's song",
+      "substring": true
+    }
+  ]
+}

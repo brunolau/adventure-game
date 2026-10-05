@@ -1,0 +1,10 @@
+{
+  "room": "S36",
+  "source": "src/game/assets/bg_natural/S36.webp",
+  "note": "Natural S36 cut-outs (art/tools/ambient_cut.py --natural S36): the leaves of the tree seen through the right window, for a gentle wind sway (glazing bars excluded).",
+  "items": [
+    { "name": "window_leaves", "rect": [912, 364, 214, 120],
+      "rules": [ { "hue": [55, 130], "sat": [0.25, 1], "val": [0.25, 1] } ],
+      "exclude": [ [[1008, 360], [1024, 490]], [[905, 452], [1130, 470]] ], "feather": 1.0 }
+  ]
+}

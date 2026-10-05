@@ -13,8 +13,14 @@ public enum LogicalCommand
     Primary,
     /// <summary>Right click at a canvas position: look / inventory / cancel selection.</summary>
     Secondary,
-    /// <summary>Space: toggle labels of all visible hotspots and exits.</summary>
+    /// <summary>Toggle the hotspot markers (QA <c>key:ToggleLabels</c>); Space itself is hold-to-show (<see cref="ShowMarkers"/>).</summary>
     ToggleLabels,
+    /// <summary>Space pressed / two fingers down / HUD eye pressed: show the markers of every visible target (world mode).</summary>
+    ShowMarkers,
+    /// <summary>Space released / fingers lifted / HUD eye released: hide the markers (any mode).</summary>
+    HideMarkers,
+    /// <summary>Shift+Enter: left click on the focused target and skip the walk (as a double click).</summary>
+    ConfirmSkip,
     /// <summary>Tab: focus the next target (accessible order).</summary>
     FocusNext,
     /// <summary>Shift+Tab: focus the previous target.</summary>
@@ -46,8 +52,10 @@ public enum LogicalCommand
 /// <summary>Input map action names and their default bindings (registered at startup, rebindable by the settings UI).</summary>
 public static class InputActions
 {
-    /// <summary>Space.</summary>
+    /// <summary>Space (hold: markers; the action name is kept for saved key bindings).</summary>
     public const string ToggleLabels = "lb_toggle_labels";
+    /// <summary>Shift+Enter.</summary>
+    public const string ConfirmSkip = "lb_confirm_skip";
     /// <summary>Tab.</summary>
     public const string FocusNext = "lb_focus_next";
     /// <summary>Shift+Tab.</summary>
@@ -80,7 +88,8 @@ public static class InputActions
     {
         (FocusPrevious, LogicalCommand.FocusPrevious),
         (FocusNext, LogicalCommand.FocusNext),
-        (ToggleLabels, LogicalCommand.ToggleLabels),
+        (ToggleLabels, LogicalCommand.ShowMarkers), // released: HideMarkers (InputRouter._Input)
+        (ConfirmSkip, LogicalCommand.ConfirmSkip), // before Confirm: Shift+Enter also matches Enter
         (Confirm, LogicalCommand.Confirm),
         (Back, LogicalCommand.Back),
         (Cancel, LogicalCommand.Cancel),
@@ -100,6 +109,7 @@ public static class InputActions
         Add(ToggleLabels, Key.Space);
         Add(FocusPrevious, Key.Tab, shift: true);
         Add(FocusNext, Key.Tab);
+        Add(ConfirmSkip, Key.Enter, shift: true);
         Add(Confirm, Key.Enter, false, Key.KpEnter);
         Add(Back, Key.Backspace);
         Add(Cancel, Key.Escape);
@@ -111,7 +121,7 @@ public static class InputActions
         Add(DevOverlay, Key.F3);
         Add(QuickSave, Key.F5);
         Add(QuickLoad, Key.F9);
-        // Space is the labels key in the world and in the open inventory (CODING_AGENT_START input table);
+        // Space is the markers key (hold) in the world and in the open inventory (CODING_AGENT_START input table);
         // Godot's built-in ui_accept also contains Space, so a focused inventory slot or HUD button would
         // swallow it as "press". GUI accept stays on Enter / keypad Enter.
         foreach (var e in InputMap.ActionGetEvents("ui_accept"))

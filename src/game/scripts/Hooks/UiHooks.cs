@@ -51,8 +51,9 @@ public enum UiPanel
 /// <param name="Info">Core hover info: Name, ActionLabel (non-empty with a selected item only for an executable rule) and the resolution.</param>
 /// <param name="ScreenPosition">Pointer or focus position in canvas px.</param>
 /// <param name="ShowAction">True when the action sentence should be shown (a selected item is on the cursor).</param>
-/// <param name="FromKeyboard">True when it comes from keyboard focus (Tab).</param>
-public sealed record HoverPayload(HoverInfo Info, Vector2 ScreenPosition, bool ShowAction, bool FromKeyboard);
+/// <param name="FromKeyboard">True when it comes from keyboard focus (Tab): the label sits at the target, not at the cursor.</param>
+/// <param name="FromInventory">True for an inventory slot (the drawer shows it in its own hover line, not at the cursor).</param>
+public sealed record HoverPayload(HoverInfo Info, Vector2 ScreenPosition, bool ShowAction, bool FromKeyboard, bool FromInventory = false);
 
 /// <summary>A line of dialogue / cutscene / first entry ready to show.</summary>
 /// <param name="Line">Core playback line.</param>

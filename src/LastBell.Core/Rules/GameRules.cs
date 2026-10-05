@@ -218,9 +218,19 @@ public static class GameRules
         }
     }
 
-    /// <summary><c>toggleHotspots</c>: Space toggles all labels, only in world mode.</summary>
+    /// <summary><c>toggleHotspots</c>: toggles the hotspot markers, only in world mode (HUD eye button, QA).</summary>
     public static GameState ToggleHotspots(GameState state) =>
         state.Mode == GameMode.World ? state with { HotspotLabels = !state.HotspotLabels } : state;
+
+    /// <summary>
+    /// Hold-to-show hotspot markers (product owner override 2026-10-05, ISSUES INT-08): pressing Space shows them, only
+    /// in world mode; releasing Space hides them in every mode (a release must never leave them stuck on).
+    /// </summary>
+    public static GameState SetHotspots(GameState state, bool shown)
+    {
+        if (shown) return state.Mode == GameMode.World && !state.HotspotLabels ? state with { HotspotLabels = true } : state;
+        return state.HotspotLabels ? state with { HotspotLabels = false } : state;
+    }
 
     /// <summary>
     /// <c>hotspotList</c>: every visible hotspot (NPCs, progress and purely atmospheric props) followed

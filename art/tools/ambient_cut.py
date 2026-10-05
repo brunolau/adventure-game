@@ -11,6 +11,14 @@ Reads art/ambient/cuts.json and writes src/game/assets/ambient/**:
 Re-run it whenever a background is repainted:  python art/tools/ambient_cut.py [--only S02] [--preview]
 It records the SHA-1 of each source background in assets/ambient/manifest.json, and `--check` reports cut-outs
 whose background changed since they were cut.
+
+Natural re-blocking (per room, art/tools/PAINTING.md "Natural mode"; nothing shared is touched):
+  python art/tools/ambient_cut.py --natural S05 [--preview]
+reads art/ambient/natural/<room>.cuts.json (a list of items, same format as one room of cuts.json), cuts from
+src/game/assets/bg_natural/<room>.webp and writes src/game/assets/ambient/<room>/natural/<name>.webp plus that folder's
+own manifest.json (pos, size, mask_rect, patch_pos; read by AmbientContext.CutInfo for paths "<room>/natural/<name>").
+Reference them in data/blocking/ambient/<room>.json as "<room>/natural/<name>.webp". `--natural S05 --check` reports
+whether the painting changed since the cut.
 """
 from __future__ import annotations
 
@@ -183,7 +191,7 @@ def build_room_item(room: str, item: dict, rgb_full: np.ndarray, preview: bool) 
             PREVIEW.mkdir(parents=True, exist_ok=True)
             bgc = Image.new("RGBA", img.size, (255, 0, 255, 255))
             bgc.alpha_composite(img)
-            bgc.convert("RGB").save(PREVIEW / f"{room}_{name}.png")
+            bgc.convert("RGB").save(PREVIEW / f"{room.replace('/', '_')}_{name}.png")
     elif kind == "mask":
         scale = item.get("scale", 0.5)
         full = np.zeros(rgb_full.shape[:2], dtype=np.float32)
@@ -204,7 +212,7 @@ def build_room_item(room: str, item: dict, rgb_full: np.ndarray, preview: bool) 
             a = Image.fromarray((sub * 160).astype(np.uint8), "L")
             tint.putalpha(a)
             base.alpha_composite(tint)
-            base.convert("RGB").save(PREVIEW / f"{room}_{name}.png")
+            base.convert("RGB").save(PREVIEW / f"{room.replace('/', '_')}_{name}.png")
     return info
 
 
@@ -272,13 +280,47 @@ def build_shared() -> None:
     (common / "cat_walk_sheet.json").write_text(json.dumps(keep, indent=2), encoding="utf-8")
 
 
+def cut_natural(room: str, preview: bool, check: bool) -> None:
+    """Per-room cut of a natural re-blocking painting into assets/ambient/<room>/natural/ with its own manifest."""
+    spec_path = ART / "ambient" / "natural" / f"{room}.cuts.json"
+    bg_path = ROOT / "src" / "game" / "assets" / "bg_natural" / f"{room}.webp"
+    folder = OUT / room / "natural"
+    manifest_path = folder / "manifest.json"
+    if not bg_path.exists():
+        raise SystemExit(f"missing {bg_path.relative_to(ROOT)} (export the natural painting first)")
+    if check:
+        old = json.loads(manifest_path.read_text(encoding="utf-8")).get("bg_sha1") if manifest_path.exists() else None
+        print(f"{room} natural: {'ok' if old == sha1(bg_path) else 'STALE (re-run ambient_cut.py --natural ' + room + ')'}")
+        return
+    if not spec_path.exists():
+        raise SystemExit(f"write {spec_path.relative_to(ROOT)} first (a list of cut items, see art/ambient/cuts.json)")
+    spec = json.loads(spec_path.read_text(encoding="utf-8"))
+    items = spec.get("items", []) if isinstance(spec, dict) else spec
+    rgb = np.asarray(Image.open(bg_path).convert("RGB"))
+    infos = {}
+    for item in items:
+        infos[item["name"]] = build_room_item(f"{room}/natural", item, rgb, preview)
+        if "patch_pos" in infos[item["name"]]:
+            infos[item["name"] + "_patch"] = {"kind": "patch", "pos": infos[item["name"]]["patch_pos"]}
+        print(f"{room}/natural/{item['name']}", infos[item["name"]])
+    folder.mkdir(parents=True, exist_ok=True)
+    manifest_path.write_text(json.dumps({"room": room, "source": bg_path.relative_to(ROOT).as_posix(),
+                                         "bg_sha1": sha1(bg_path), "items": infos}, indent=2), encoding="utf-8")
+    print(f"{manifest_path.relative_to(ROOT)}: {len(infos)} item(s)")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--only", help="room id")
     parser.add_argument("--preview", action="store_true", help="write previews to art/ambient/preview/")
     parser.add_argument("--shared", action="store_true", help="also rebuild the shared sprites")
     parser.add_argument("--check", action="store_true", help="report rooms whose background changed since cutting")
+    parser.add_argument("--natural", metavar="ROOM", help="cut the natural painting bg_natural/<ROOM>.webp from "
+                                                          "art/ambient/natural/<ROOM>.cuts.json")
     args = parser.parse_args()
+    if args.natural:
+        cut_natural(args.natural, args.preview, args.check)
+        return
     spec = json.loads(SPEC.read_text(encoding="utf-8"))
     manifest_path = OUT / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else {"rooms": {}}

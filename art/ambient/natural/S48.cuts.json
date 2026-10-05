@@ -1,0 +1,18 @@
+{
+  "room": "S48",
+  "source": "src/game/assets/bg_natural/S48.webp",
+  "note": "Natural S48 cut-outs (art/tools/ambient_cut.py --natural S48): sky mask for clouds, the dwarf pine on both sides of the path (wind sway).",
+  "items": [
+    { "name": "sky_mask", "kind": "mask", "rect": [0, 0, 1190, 360],
+      "rules": [ { "hue": [190, 235], "sat": [0.25, 1], "val": [0.45, 1] }, { "sat": [0, 0.18], "val": [0.82, 1] } ],
+      "exclude": [ [[530, 260], [800, 400]], [[30, 315], [140, 400]] ],
+      "feather": 1.5, "grow": -1, "mask_rect": [0, 0, 1200, 370], "scale": 0.5 },
+    { "name": "pines_left", "rect": [0, 640, 530, 440],
+      "rules": [ { "hue": [60, 160], "sat": [0.3, 1], "val": [0.12, 0.75] } ],
+      "exclude": [ [[300, 770], [570, 870]] ], "feather": 1.0 },
+    { "name": "pines_right", "rect": [1600, 770, 320, 310],
+      "rules": [ { "hue": [60, 160], "sat": [0.3, 1], "val": [0.12, 0.75] } ], "feather": 1.0 },
+    { "name": "pines_back", "rect": [980, 580, 220, 120],
+      "rules": [ { "hue": [60, 160], "sat": [0.3, 1], "val": [0.12, 0.75] } ], "feather": 1.0 }
+  ]
+}

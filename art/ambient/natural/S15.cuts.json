@@ -1,0 +1,148 @@
+{
+  "room": "S15",
+  "source": "src/game/assets/bg_natural/S15.webp",
+  "note": "Natural S15 cut-outs (art/tools/ambient_cut.py --natural S15): the sunny maple crowns seen through the SW window (glass area only; the honey timber frame is excluded by hue) for a wind-sway layer; the window glass as a clip mask for the street traffic and the birds. road_mask = the pale street and pavement strip between the tree trunks (a passing car shows only there, so it passes behind the trees).",
+  "items": [
+    {
+      "name": "window_trees",
+      "rect": [
+        1214,
+        264,
+        346,
+        322
+      ],
+      "rules": [
+        {
+          "hue": [
+            50,
+            110
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            1216,
+            266
+          ],
+          [
+            1558,
+            266
+          ],
+          [
+            1558,
+            584
+          ],
+          [
+            1216,
+            584
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "window_mask",
+      "kind": "mask",
+      "rect": [
+        1214,
+        264,
+        346,
+        322
+      ],
+      "rules": [
+        {}
+      ],
+      "include": [
+        [
+          [
+            1216,
+            266
+          ],
+          [
+            1558,
+            266
+          ],
+          [
+            1558,
+            584
+          ],
+          [
+            1216,
+            584
+          ]
+        ]
+      ],
+      "feather": 1.2,
+      "scale": 0.5,
+      "except": [
+        {
+          "hue": [
+            15,
+            42
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.25,
+            0.97
+          ]
+        }
+      ]
+    },
+    {
+      "name": "road_mask",
+      "kind": "mask",
+      "rect": [
+        1214,
+        500,
+        346,
+        84
+      ],
+      "rules": [
+        {
+          "sat": [
+            0,
+            0.26
+          ],
+          "val": [
+            0.55,
+            1
+          ]
+        }
+      ],
+      "include": [
+        [
+          [
+            1216,
+            500
+          ],
+          [
+            1558,
+            500
+          ],
+          [
+            1558,
+            584
+          ],
+          [
+            1216,
+            584
+          ]
+        ]
+      ],
+      "feather": 1.2,
+      "scale": 0.5
+    }
+  ]
+}

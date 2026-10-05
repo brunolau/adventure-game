@@ -1,0 +1,11 @@
+{
+  "room": "S35",
+  "source": "src/game/assets/bg_natural/S35.webp",
+  "note": "Natural S35 cut-outs (art/tools/ambient_cut.py --natural S35): the tree crown top left behind the store annex and the park trees above the long roofs.",
+  "items": [
+    { "name": "tree_left", "rect": [0, 0, 400, 330],
+      "rules": [ { "hue": [40, 135], "sat": [0.22, 1], "val": [0.15, 1] } ], "feather": 1.0 },
+    { "name": "trees_back", "rect": [960, 0, 700, 175],
+      "rules": [ { "hue": [42, 165], "sat": [0.2, 1], "val": [0.12, 1] } ], "feather": 1.0 }
+  ]
+}

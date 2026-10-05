@@ -1,0 +1,59 @@
+{
+ "room": "S12",
+ "source": "src/game/assets/bg_natural/S12.webp",
+ "note": "Natural S12 cut-outs: the green crowns hanging into the top-left and top-right corners (wind sway).",
+ "items": [
+  {
+   "name": "crown_tl",
+   "rect": [
+    0,
+    0,
+    520,
+    330
+   ],
+   "rules": [
+    {
+     "hue": [
+      52,
+      145
+     ],
+     "sat": [
+      0.22,
+      1
+     ],
+     "val": [
+      0.2,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "crown_tr",
+   "rect": [
+    1530,
+    0,
+    390,
+    300
+   ],
+   "rules": [
+    {
+     "hue": [
+      52,
+      145
+     ],
+     "sat": [
+      0.22,
+      1
+     ],
+     "val": [
+      0.2,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  }
+ ]
+}

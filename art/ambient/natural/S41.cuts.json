@@ -1,0 +1,172 @@
+{
+  "room": "S41",
+  "source": "src/game/assets/bg_natural/S41.webp",
+  "note": "Natural S41 cut-outs (art/tools/ambient_cut.py --natural S41): sky mask for drifting clouds, the spruces on the rocky slope and the grass verge for wind sway. Also a cumulus cloud cut from the S41 sky (white with blue-grey shading) as a midday cloud sprite for all 2035 Jasna/Chopok rooms (the shared common/cloud_* are warm late-afternoon clouds).",
+  "items": [
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        330
+      ],
+      "rules": [
+        {
+          "hue": [
+            190,
+            235
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.18
+          ],
+          "val": [
+            0.82,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            990,
+            95
+          ],
+          [
+            1215,
+            140
+          ]
+        ],
+        [
+          [
+            1085,
+            95
+          ],
+          [
+            1120,
+            330
+          ]
+        ]
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        340
+      ],
+      "scale": 0.5
+    },
+    {
+      "name": "spruces_right",
+      "rect": [
+        1690,
+        20,
+        230,
+        420
+      ],
+      "rules": [
+        {
+          "hue": [
+            80,
+            175
+          ],
+          "sat": [
+            0.2,
+            1
+          ],
+          "val": [
+            0.08,
+            0.62
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "grass_verge",
+      "rect": [
+        240,
+        500,
+        980,
+        85
+      ],
+      "rules": [
+        {
+          "hue": [
+            50,
+            110
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            892,
+            500
+          ],
+          [
+            918,
+            585
+          ]
+        ],
+        [
+          [
+            1080,
+            500
+          ],
+          [
+            1125,
+            585
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "cloud_a",
+      "rect": [
+        140,
+        20,
+        440,
+        180
+      ],
+      "rules": [
+        {
+          "sat": [
+            0,
+            0.3
+          ],
+          "val": [
+            0.6,
+            1
+          ]
+        }
+      ],
+      "feather": 1.2,
+      "clean": 1,
+      "pad": 6
+    }
+  ]
+}

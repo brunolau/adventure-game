@@ -1,0 +1,131 @@
+{
+ "room": "S25",
+ "source": "src/game/assets/bg_natural/S25.webp",
+ "note": "Natural S25 cut-outs and masks (art/tools/ambient_cut.py --natural S25) for src/game/data/blocking/ambient/S25.json.",
+ "items": [
+  {
+   "name": "trees",
+   "rect": [
+    1560,
+    175,
+    360,
+    340
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
+      135
+     ],
+     "sat": [
+      0.28,
+      1
+     ],
+     "val": [
+      0.22,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "umbrella",
+   "rect": [
+    955,
+    280,
+    530,
+    155
+   ],
+   "include": [
+    [
+     [
+      958,
+      432
+     ],
+     [
+      1482,
+      432
+     ],
+     [
+      1345,
+      285
+     ],
+     [
+      1105,
+      285
+     ]
+    ]
+   ],
+   "except": [
+    {
+     "hue": [
+      200,
+      260
+     ],
+     "sat": [
+      0.08,
+      0.5
+     ]
+    }
+   ],
+   "feather": 1.0,
+   "clean": 1
+  },
+  {
+   "name": "parsley",
+   "rect": [
+    1160,
+    660,
+    240,
+    140
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
+      135
+     ],
+     "sat": [
+      0.28,
+      1
+     ],
+     "val": [
+      0.22,
+      1
+     ]
+    }
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "sky_mask",
+   "kind": "mask",
+   "rect": [
+    0,
+    0,
+    1920,
+    290
+   ],
+   "rules": [
+    {
+     "hue": [
+      188,
+      232
+     ],
+     "sat": [
+      0.12,
+      0.8
+     ],
+     "val": [
+      0.6,
+      1
+     ]
+    }
+   ],
+   "feather": 1.5,
+   "grow": -1,
+   "scale": 0.5
+  }
+ ]
+}

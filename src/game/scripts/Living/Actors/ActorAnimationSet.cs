@@ -221,6 +221,40 @@ public sealed class ActorAnimationSet
 
     private static readonly Dictionary<string, string?> DefaultVariants = new(StringComparer.Ordinal);
 
+    /// <summary>
+    /// Resolves a natural-blocking staging name (data/blocking/&lt;room&gt;.json <c>npcs.*.variant</c>) to an
+    /// actor.json variant. Generic names: <c>standing</c> (the <c>full</c> variant, else the default sheets of a
+    /// standing figure), <c>seated</c> (a <c>seated</c> variant, else the default sheets of a figure whose manifest
+    /// says <c>staging</c>/<c>posture</c> "seated"), <c>behind_counter</c> (<c>counter</c>, else <c>table</c>),
+    /// <c>window_bust</c> (<c>window</c>), <c>window_bust_glass</c> (<c>window_glass</c>); any other name must be a
+    /// variant of the manifest. <paramref name="variant"/> null = the default sheets. Same rule as
+    /// tools/check_blocking.py <c>resolve_staging</c>. Returns false when the actor has no such staging.
+    /// </summary>
+    public static bool TryResolveStaging(string characterId, string? staging, out string? variant)
+    {
+        variant = null;
+        if (string.IsNullOrEmpty(staging) || staging == "default") return true;
+        var manifest = Json.Load(FolderOf(characterId) + "/actor.json", warnIfMissing: false);
+        if (manifest is null) return false;
+        var variants = manifest.Obj("variants");
+        bool Has(string name) => variants.Obj(name) is not null;
+        // "posture" may carry a note after a semicolon ("standing; variants: counter").
+        string pose = (manifest.Str("posture") ?? manifest.Str("staging") ?? "standing").Split(';')[0].Trim();
+        bool plainDefault = manifest.Str("default_variant") is null;
+        string? pick = staging switch
+        {
+            "standing" => Has("full") ? "full" : plainDefault && pose == "standing" ? "" : null,
+            "seated" => Has("seated") ? "seated" : plainDefault && pose == "seated" ? "" : null,
+            "behind_counter" => Has("counter") ? "counter" : Has("table") ? "table" : null,
+            "window_bust" => Has("window") ? "window" : null,
+            "window_bust_glass" => Has("window_glass") ? "window_glass" : null,
+            _ => Has(staging) ? staging : null,
+        };
+        if (pick is null) return false;
+        variant = pick.Length == 0 ? null : pick;
+        return true;
+    }
+
     private static ActorAnimationSet LoadDirectional(string id, string folder, JsonObject manifest, string? variant)
     {
         var set = new ActorAnimationSet(id, variant) { IsDirectional = true, HeightPx = manifest.Num("standing_height_px", 512) };

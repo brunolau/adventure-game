@@ -1,0 +1,10 @@
+{
+  "room": "S33",
+  "source": "src/game/assets/bg_natural/S33.webp",
+  "note": "Natural S33 cut-outs (art/tools/ambient_cut.py --natural S33): the lindens of the village green seen through the window to the square (glazing bars excluded), for a gentle wind sway.",
+  "items": [
+    { "name": "window_trees", "rect": [452, 305, 182, 270],
+      "rules": [ { "hue": [45, 130], "sat": [0.25, 1], "val": [0.25, 1] } ],
+      "exclude": [ [[518, 300], [534, 580]] ], "feather": 1.0 }
+  ]
+}

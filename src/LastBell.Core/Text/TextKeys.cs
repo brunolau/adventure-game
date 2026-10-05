@@ -236,14 +236,14 @@ public static class UiText
     public static TextRef SaveCorrupt => new(TextKeys.Ui("save", "corrupted"), "Chybný súbor uloženia. Aktuálna hra zostala otvorená.");
 
     /// <summary>No path to the interaction point (a navmesh bug, never a puzzle).</summary>
-    public static TextRef PathBlocked => new(TextKeys.Ui("system", "path_blocked"), "Len o krok bokom, tadiaľto sa nedostanem.");
+    public static TextRef PathBlocked => new(TextKeys.Ui("system", "path_blocked"), "Tadiaľto neprejdem.");
 
     /// <summary>First-start help bubble 1.</summary>
     public static TextRef HelpLeftClick => new(TextKeys.Ui("tutorial", "left_click"), "Ľavým klikom vykonáš akciu.");
 
     /// <summary>First-start help bubble 2.</summary>
-    public static TextRef HelpRightClick => new(TextKeys.Ui("tutorial", "right_click"), "Pravým prezrieš objekt; na voľnom mieste otvoríš inventár.");
+    public static TextRef HelpRightClick => new(TextKeys.Ui("tutorial", "right_click"), "Pravým klikom prezrieš objekt; na voľnom mieste otvoríš brašnu.");
 
     /// <summary>First-start help bubble 3.</summary>
-    public static TextRef HelpSpace => new(TextKeys.Ui("tutorial", "space"), "Space ukáže všetky miesta, na ktoré môžeš kliknúť.");
+    public static TextRef HelpSpace => new(TextKeys.Ui("tutorial", "space"), "Kým držíš Space, značky ukážu všetky miesta, na ktoré môžeš kliknúť.");
 }

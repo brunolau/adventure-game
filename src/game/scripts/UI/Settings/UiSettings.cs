@@ -68,6 +68,9 @@ public static class UiSettings
     /// <summary>High-contrast hotspot labels.</summary>
     public static bool HighContrastLabels { get; set; }
 
+    /// <summary>Hero walk speed in percent of the sheets' stride: 100 calm, 125 normal (default), 150 brisk.</summary>
+    public static int WalkSpeedPercent { get; set; } = 125;
+
     /// <summary>A ring that highlights the mouse cursor.</summary>
     public static bool CursorHighlight { get; set; }
 
@@ -106,6 +109,7 @@ public static class UiSettings
         ReducedMotion = (bool)cfg.GetValue("access", "reduced_motion", ReducedMotion);
         HighContrastLabels = (bool)cfg.GetValue("access", "high_contrast_labels", HighContrastLabels);
         CursorHighlight = (bool)cfg.GetValue("access", "cursor_highlight", CursorHighlight);
+        WalkSpeedPercent = Math.Clamp((int)cfg.GetValue("access", "walk_speed", WalkSpeedPercent), 100, 150);
         HotspotKeyHint = (bool)cfg.GetValue("access", "hotspot_key_hint", HotspotKeyHint);
         TipsShown = (bool)cfg.GetValue("tips", "shown", TipsShown);
     }
@@ -129,6 +133,7 @@ public static class UiSettings
         cfg.SetValue("access", "reduced_motion", ReducedMotion);
         cfg.SetValue("access", "high_contrast_labels", HighContrastLabels);
         cfg.SetValue("access", "cursor_highlight", CursorHighlight);
+        cfg.SetValue("access", "walk_speed", WalkSpeedPercent);
         cfg.SetValue("access", "hotspot_key_hint", HotspotKeyHint);
         cfg.SetValue("tips", "shown", TipsShown);
         if (cfg.Save(FilePath) != Error.Ok) GD.PushWarning("UiSettings: cannot write " + FilePath);
@@ -152,6 +157,7 @@ public static class UiSettings
         ReducedMotion = false;
         HighContrastLabels = false;
         CursorHighlight = false;
+        WalkSpeedPercent = 125;
         HotspotKeyHint = true;
     }
 
@@ -190,6 +196,7 @@ public static class UiSettings
         PresentationSettings.SpeakerNames = SpeakerNames;
         PresentationSettings.ReducedMotion = ReducedMotion;
         PresentationSettings.HighContrastLabels = HighContrastLabels;
+        PresentationSettings.WalkSpeedFactor = Math.Clamp(WalkSpeedPercent, 100, 150) / 100f;
         if (TextService.Locale != Locale) TextService.SetLocale(Locale);
         if (applyWindow && DisplayServer.GetName() != "headless")
         {

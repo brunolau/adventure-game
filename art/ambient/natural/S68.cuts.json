@@ -1,0 +1,14 @@
+{
+  "room": "S68",
+  "source": "src/game/assets/bg_natural/S68.webp",
+  "note": "Natural S68 cut-outs (art/tools/ambient_cut.py --natural S68): the window sky (cloud mask) and the window glass (mask for the passing cabin and the birds outside).",
+  "items": [
+    { "name": "window_sky_mask", "kind": "mask", "rect": [130, 235, 1690, 450],
+      "rules": [ { "hue": [185, 235], "sat": [0.2, 1], "val": [0.45, 1] }, { "sat": [0, 0.15], "val": [0.85, 1] } ],
+      "exclude": [ [[555, 230], [583, 570]], [[990, 230], [1018, 570]], [[1450, 230], [1590, 700]], [[0, 565], [1920, 700]] ],
+      "feather": 1.0, "mask_rect": [125, 230, 1700, 460], "scale": 1.0 },
+    { "name": "window_glass_mask", "kind": "mask", "rect": [130, 235, 1320, 332],
+      "exclude": [ [[553, 230], [585, 570]], [[988, 230], [1020, 570]], [[1180, 240], [1450, 420]] ],
+      "feather": 1.0, "mask_rect": [125, 230, 1330, 342], "scale": 1.0 }
+  ]
+}

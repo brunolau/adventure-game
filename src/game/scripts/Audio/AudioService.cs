@@ -186,6 +186,8 @@ public partial class AudioService : Node
                 if (afterOk && untilOk) return Catalog.ResolveCue(o.Cue);
             }
         }
+        // A natural blocking may replace the room's music (presentation only; World/RoomBlocking.cs audio.music).
+        if (LastBell.Game.World.RoomBlocking.For(roomId)?.Audio?.Music is { Length: > 0 } natural) return Catalog.ResolveCue(natural);
         var room = GameRuntime.Instance.Content.FindRoom(roomId);
         return room?.Music ?? "";
     }
@@ -375,7 +377,7 @@ public partial class AudioService : Node
         {
             Check("music " + room.Id, room.Music);
             var layers = ambience.ActiveLayers(room.Id, null).ToList();
-            var all = Catalog.RoomAmbience.TryGetValue(room.Id, out var l) ? l : new List<AmbienceLayer>();
+            var all = ambience.LayersOf(room.Id).ToList(); // incl. a natural blocking's audio override
             string desc = string.Join(", ", all.Select(x => x.Sound + (x.After is not null ? $"[after {x.After}]" : "") + (x.Until is not null ? $"[until {x.Until}]" : "")));
             string over = Catalog.RoomMusic.TryGetValue(room.Id, out var o) && o.Count > 0
                 ? " (+" + string.Join(", ", o.Select(x => $"{x.Cue}{(x.After is not null ? " after " + x.After : "")}{(x.Until is not null ? " until " + x.Until : "")}")) + ")" : "";

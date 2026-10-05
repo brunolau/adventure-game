@@ -1,0 +1,319 @@
+keys,sk_new,note
+action.F01.label,Prichádzam kvôli fondu Z-17,
+action.F01.001,Adam Hruška? Vaše meno sa mi práve rozpadá v zozname návštevníkov.,
+action.F01.002,Zatiaľ som tu celý. Čo sa to deje?,
+action.F01.003,Atlas má výstavu v hoteli a pavilón hore na Chopku. Náš prístroj spätne prepisuje záznamy ľudí. Lanovky za to nemôžu.,"replaced 'chronotechnický hardvér' (deprecated) by 'náš prístroj'; explains spätný zápis in plain words; editor: 'pavilón pri Chopku' -> 'hore na Chopku'; 'Lanovky s tým nesúvisia' -> spoken 'Lanovky za to nemôžu'; moved: Grand Jasná (Nina stands in front of the hotel, the room name says it), Jasná"
+action.F01.004,Kto ho tak nastavil?,data problem: Adam asked 'Viktor?' although no earlier text introduces Viktor to him; now Adam asks who and Nina names Viktor in .005
+action.F01.005,"Viktor Korman, náš zakladateľ. Nechal ho bežať aj po mojom varovaní. Potrebujete čítačku od Tamary, kartu fondu od Borisa a od Sáry preukaz s lístkom.","current text exceeded the 160 hard limit; places of Tamara/Boris/Sára moved to the objective; 'pôvodné doklady' dropped (the player already carries them); editor: Sára also gives the ticket (original 'povolenie aj dopravu'), restored; places of Tamara/Boris/Sára are in the objective"
+action.F01.objective,"V hoteli Grand Jasná získaj čítačku a katalógovú kartu, potom v klientskom centre Biela Púť preukaz a lístok.",editor: shortened; editor: shortened
+action.F01.journal,"V hoteli Grand Jasná získaj čítačku a katalógovú kartu, potom v klientskom centre Biela Púť preukaz a lístok.",
+action.F02.label,Požičať si čítačku na pôvodnú kazetu,
+action.F02.001,Posiela ma Nina. Potrebujem prečítať túto starú školskú kazetu.,
+action.F02.002,"Vezmi si túto čítačku, prečíta kazetu aj servisnú pamäť. Kávu dostaneš, až mi z objednávok prestanú miznúť mená.",editor: Tamara now clearly hands the reader over (the player receives it here)
+action.F02.003,Tak to sa poponáhľam.,replaced calque 'Som rozhodne motivovaný' (style guide 3.2)
+action.F02.004,"Kazetu len čítaj, nič na nej neopravuj. Je to originál.","keeps 'čítať, nekorigovať'"
+action.F02.journal,Tamara mi požičala čítačku na pôvodnú kazetu.,
+action.F03.label,Nájsť fond Z-17 podľa protokolu,
+action.F03.001,Protokol sedí. Tu je katalógová karta fondu. Súkromné nahrávky otvorí len kurátorka v servisnom režime.,
+action.F03.002,Čo z fondu Atlas vyradil ako prvé?,
+action.F03.003,"Mená, ktoré si odporovali, pauzy v reči, smiech. A jednu správu pani Kormanovej. Vraj bola príliš nejednoznačná.",
+action.F03.004,Lea Kormanová? Viktorova mama?,"'Ale bola jeho.' did not follow; Adam met Lea in 1995 and just heard Viktor's surname from Nina, so he connects them"
+action.F03.005,Áno. A práve preto mala zostať celá.,
+action.F03.objective,Ukáž katalógovú kartu Sáre v klientskom centre Biela Púť.,data problem: 'recepcia Atlasu' does not exist; F04 happens with Sára in Klientske centrum Biela Púť (S46); editor: shortened; drop: Atlas
+action.F03.journal,Ukáž katalógovú kartu Sáre v klientskom centre Biela Púť.,drop: Atlas
+action.F04.label,Vybaviť si servisný preukaz a lístok,
+action.F04.001,Nina vám potvrdila servisný vstup do pavilónu. Tu je preukaz a spiatočný lístok na oba úseky lanovky.,
+action.F04.002,Ako sa tam dostanem?,
+action.F04.003,"Kabínkou na Priehybu, tam prestúpite na Funitel na Chopok. Pavilón je pri Rotunde. Dnes všetko premáva.",
+action.F04.004,"Obyčajný prestup, žiadny skok cez desaťročia. To sa mi páči.","editor: smoother than 'Cesta, pri ktorej nepreskakujem roky, len prestupujem'"
+action.F04.005,"Lístok si nechajte, platí aj späť.",
+action.F04.objective,Prilož lístok k čítačke pri dolnej stanici na Bielej Púti.,
+action.F04.journal,Prilož lístok k čítačke pri dolnej stanici na Bielej Púti.,
+action.J02.label,Priložiť lístok a ísť kabínkou na Priehybu,"'nastúpiť na Priehybu' was wrong (one boards the cabin, not the station)"
+action.J02.002,"Prvý úsek: Biela Púť – Priehyba. Obyčajná kabínka, žiadne uzlové hodiny.","editor: avoids a third 'travel I finally understand' joke (CS09, entry S68); contrasts with the time node at Biela Púť"
+action.J03.001,"Lístok platí aj tu, nech sa páči. Dvere sa otvoria, až keď kabína príde hore.","editor: Ivan stays at Priehyba, so not 'keď prídeme hore'"
+action.J03.002,"Dvere, ktoré sa otvárajú až v cieli. Presne to dnes potrebujem.",
+action.J03.objective,Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.,
+action.J03.journal,Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.,
+action.J04.objective,Pri Rotunde odfoť telefónom panel normalizácie a potom choď do servisného pavilónu Atlasu.,
+action.J04.journal,Pri Rotunde odfoť telefónom panel normalizácie a potom choď do servisného pavilónu Atlasu.,
+action.F05.label,Odfotiť panel normalizácie,
+action.F05.001,"Panel je verejný, tak si ho odfotím. Je na ňom napísané: ROZDIEL = ZAHODIŤ.",editor: the painted rule in capitals as on the panel (GLOSSARY 6.2)
+action.F05.002,Presný opak babkinej vety. Chyba nie je v spomienkach. Je v pravidle.,removed deprecated 'Mirkinej'; Adam says babka
+action.F05.journal,"Panel normalizácie je odfotený: ROZDIEL = ZAHODIŤ, presný opak Mirinho pravidla.",
+action.F06.label,Porovnať pôvodnú kazetu so zásobníkom,
+action.F06.001,Prístup k návratovému zásobníku vám povoľujem. Súkromný záznam pustíme iba Viktorovi.,buffer -> návratový zásobník (glossary)
+action.F06.002,"Pripájam čítačku. Kazeta, babkino pravidlo a fotka chybného panelu.",
+action.F06.003,Zadržané údaje možno obnoviť. Prepnite výstup na MONITOR.,
+action.F06.004,Diagnostiku aj pôvodnú správu Viktorovej mamy máte v čítačke. Ešte treba stopu zo stojana pri Vrbickom plese.,"editor: introduces the stand, which .006 then calls 'ten stojan'"
+action.F06.005,"Dúfam, že to nie je ďalší prístroj, ktorý niečo prepisuje.",
+action.F06.006,Nie je. Ten stojan iba meria.,
+action.F06.objective,Pri Vrbickom plese prilož chronometer k pasívnemu stojanu a zachyť referenčnú stopu.,
+action.F06.journal,Pri Vrbickom plese prilož chronometer k pasívnemu stojanu a zachyť referenčnú stopu.,
+action.F07.001,Stojan výstavy na chodníku pri plese. Chronometer si z neho prečíta stopu tohto miesta.,editor: avoids repeating 'iba meria' of F06.006; place said as 'pri plese' (the player stands in Chodník pri Vrbickom plese); drop: Vrbické pleso
+action.F07.003,"A pleso zostalo presne také, aké bolo.",
+action.F07.objective,Vráť sa lanovkami do servisného pavilónu a nahraj referenčnú stopu do terminálu.,'priprav obnovovací postup' made concrete: the next action is the stop on the terminal (F08)
+action.F07.journal,Vráť sa lanovkami do servisného pavilónu a nahraj referenčnú stopu do terminálu.,
+action.F08.label,Nahrať referenčnú stopu do terminálu,
+action.F08.001,Pravidlo z roku 1960 aj miestna stopa sedia. Obnovovací postup som podpísala.,
+action.F08.002,"Takže: výnimky nechať, zadržané záznamy vrátiť a spätný zápis vypnúť.",
+action.F08.003,"Na terase je prepínač, dajte ho na MONITOR. Je to samostatný výstup, servery ani lanovky ním nevypnete.","'strešný' replaced: the switch is on Vyhliadková terasa pri Rotunde, not on a roof; 'Najprv' dropped because the bridge (J05) must come before the switch; editor: word order"
+action.F08.004,Rozumiem. Žiadne vyťahovanie káblov naslepo.,
+action.F08.objective,Na terase pri Rotunde prepni výstup Atlasu na MONITOR.,"data note: F09 also needs the bridge (J05) first; the objective, like the original, names only the switch; look.S50.bridge and hint M13.2 point to the bridge"
+action.F08.journal,Na terase pri Rotunde prepni výstup Atlasu na MONITOR.,
+action.J05.001,"Samostatný konektor Atlasu. Otov mostík s Tónovou lastovičkou, tridsaťosem rokov v suchu.",
+action.J05.002,Kontakt drží. Teraz už MONITOR obíde chybný príkaz na zápis.,
+action.J05.003,"Až sem ma doviedla mapa, ktorú nakreslil dvanásťročný Tóno.",editor: perfective verb
+action.J05.objective,Teraz prepni prepínač Atlasu na MONITOR.,editor: names the hotspot (Prepínač zápisu); editor: names the switch the player clicks next
+action.J05.journal,Teraz prepni prepínač Atlasu na MONITOR.,
+action.F09.002,Spätný zápis pozastavený. Zásobník zachovaný.,
+action.F09.003,Už nič nemizne. Máme čas na opravu.,
+action.F09.objective,V pavilóne potvrď na servisnom termináli vstup do chronokomory.,deprecated 'synchronizačná komora' -> chronokomora
+action.F09.journal,V pavilóne potvrď na servisnom termináli vstup do chronokomory.,
+action.F10.001,Režim MONITOR potvrdený. Vstup do komory povolený.,
+action.F10.002,"Viktor je vnútri. Najprv musí počuť, čo systém zahodil. Potom vložíme štyri dôkazy.",
+action.F10.003,Pustím mu celý záznam. Aj s prestávkami medzi vetami.,
+action.F10.objective,V chronokomore pusti Viktorovi nezmenenú správu jeho mamy.,
+action.F10.journal,V chronokomore pusti Viktorovi nezmenenú správu jeho mamy.,
+action.F11.001,"Vypli ste zápis. Viete, koľko sa toho teraz môže stratiť?",Viktor -> Adam: vy (VOICES)
+action.F11.002,"Viem, čo sa už stratilo. Vypočujte si originál.",
+action.F11.004,V upravenej verzii zostalo len „ozvi sa“.,
+action.F11.005,"Tie pauzy neboli chyba. Ani to, že od vás nič nechcela.",
+action.F11.007,"To, čo ostalo v zásobníku, sa ešte dá vrátiť.",
+action.F11.008,"Súhlasím. Zápis vypneme natrvalo a originály vrátime. A zverejním, čo som urobil.",editor: the write is already paused by the switch (F09); 'Zastavíme zápis' contradicted that
+action.F11.objective,"Do portov Pôvod, Hlas, Súhlas a Návrat vlož dôkazy, ktoré k nim patria.",
+action.F11.journal,"Do portov Pôvod, Hlas, Súhlas a Návrat vlož dôkazy, ktoré k nim patria.",
+action.F12.label,Vložiť overený odtlačok z roku 1960,
+action.F12.002,Babkino pravidlo. Bolo tu dávno pred normalizátorom.,
+action.F12.journal,Overený odtlačok z roku 1960 je v porte Pôvod.,
+action.F13.label,Vložiť pôvodnú školskú kazetu z roku 1995,
+action.F13.003,Dnes áno. A zostane to celé.,
+action.F13.journal,Pôvodná školská kazeta z roku 1995 je v porte Hlas.,
+action.F14.label,Vložiť potvrdené odovzdanie z roku 2020,
+action.F14.002,"Uchovať, nie vymazať. Podpísali to ľudia, ktorí pri tom naozaj boli.",
+action.F14.journal,Potvrdené odovzdanie z roku 2020 je v porte Súhlas.,
+action.F15.label,Vložiť obnovovací postup z roku 2035,
+action.F15.002,Postup je podpísaný a zápis zastavený prepínačom.,
+action.F15.journal,Podpísaný obnovovací postup z roku 2035 je v porte Návrat.,
+action.F16.001,"Myslel som si, že poriadok znamená jednu správnu verziu.",
+action.F16.002,Ľudia majú svoje verzie. Nechajme im ich.,
+action.F16.objective,Potvrď na paneli obnovu pôvodných záznamov. Vedľajšie úlohy môžeš dokončiť aj po konci príbehu.,editor: 'vedľajšie úlohy počkajú aj po titulkoch' was awkward
+action.F16.journal,Potvrď na paneli obnovu pôvodných záznamov. Vedľajšie úlohy môžeš dokončiť aj po konci príbehu.,
+action.F17.002,Potvrdzujem súhlas s obnovou.,
+action.F17.003,Pôvodné záznamy obnovené. Spätný zápis vypnutý.,retroaktívny -> spätný zápis (glossary)
+action.F17.objective,"Príbeh sa skončil. Časové okná ostávajú otvorené, takže môžeš dokončiť vedľajšie úlohy.",
+action.F17.journal,"Príbeh sa skončil. Časové okná ostávajú otvorené, takže môžeš dokončiť vedľajšie úlohy.",
+action.Q8A.label,Kam máte doručiť balík?,dialogue choice where Očko answers first: now Adam's question
+action.Q8A.001,Príjemca: opravovňa pri lavičke so psom. Na týchto súradniciach dnes žiadna opravovňa nie je.,
+action.Q8A.002,Skúsim to zistiť. Balík si zatiaľ nechajte.,
+action.Q8A.journal,"Očko hľadá príjemcu: opravovňu pri lavičke so psom. Zistím, kde je dnes.",
+action.Q8B.001,Keramický pes a nápis DRUHÝ ŽIVOT. Tu mala Tamara stôl svojej putovnej dielne.,
+action.Q8B.002,"Teraz je v lobby hotela. Spýtam sa jej, či ten balík naozaj patrí jej.",editor: idiom ('čaká na ňu' -> 'patrí jej')
+action.Q8B.journal,Lavička so psom patrila Tamarinej dielni. Tamara je teraz v lobby hotela Grand Jasná.,
+action.Q8C.label,Ukázať Tamare Očkovu požiadavku,
+action.Q8C.001,"Áno, ten balík je môj. Vlani som mala stôl pri plese, tento rok som v Grande. Tu máš potvrdenie s novou adresou.","current text exceeded the 160 hard limit; editor: 'tú sadu' named a set the player never heard of, now 'ten balík' as in Q8A"
+action.Q8C.002,"Očko dostane adresu, pri ktorej si nemusí pamätať, kto kde vlani sedel.",
+action.Q8D.label,Dať Očkovi potvrdenie opravovne,
+action.Q8D.003,Poďakovanie nemá navigačnú hodnotu. Uchovám ho aj tak.,
+action.Q8D.journal,Očko má novú adresu: Tamarin opravársky stôl v lobby hotela Grand Jasná.,
+action.Q9F.label,"Jana, čo je s vašou schémou?","Jana answers first: the label is Adam's question (vy, Jana is 65)"
+action.Q9F.001,"Tu visí môj prvý výkres z roku 1982. Vedľa je fotka notebookov z roku 2020 a mená ľudí, ktorí pomáhali.",
+action.Q9F.002,Takže žiadna zmena sveta zo dňa na deň.,
+action.Q9F.journal,"Jana vystavuje svoj prvý výkres vedľa notebookov z roku 2020 a mien ľudí, ktorí pomáhali.",
+entry.S41.001,Jasná o pätnásť rokov neskôr. Hore sa stále jazdí po lane. Upokojujúce.,
+look.S41.ROBOT,"Doručovací robot Očko. Balík má, len nevie, komu patrí.",editor: name restored
+look.S41.ambient 1,Lavičky sú aj v roku 2035 tvrdé. Niektoré veci pokrok nerieši.,
+look.S41.ambient 2,"Biela Púť, Priehyba, Chopok. Tri miesta a všetky v tom istom roku. Oddych.",
+look.S41.gate,Turniket kabínkovej lanovky na Priehybu. Lístok mi vybaví Sára v klientskom centre.,
+exit.S41.to_S67.locked,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: 'riadny spiatočný lístok' sounded official; now says where Sára is
+conn.S41.S67.label,Lanovka Biela Púť – Priehyba,typography: spaced en dash in route names
+conn.S41.S67.locked,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: same as exit.S41.to_S67.locked
+entry.S42.001,"Hotel Grand Jasná. Ubytovaný tu nie som, ale problém mám aspoň primerane veľký.",
+look.S42.NINA,"Nina vyzerá, akoby už tri hodiny vysvetľovala samozrejmú vec niekomu s väčším rozpočtom.","editor: 'vyzerá, že vysvetľuje' -> 'vyzerá, akoby vysvetľovala'"
+look.S42.ambient 2,Úložisko na kolieskach. Heslo nepýta.,
+conn.S42.S43.label,Lobby hotela Grand Jasná,map label now equals the room name; 'Opravárenská kaviareň' contradicted the lobby repair table
+conn.S42.S44.label,Výstavný salón hotela Grand Jasná,map label now equals the room name ('Verejná čitáreň záznamov' named no real place)
+conn.S42.S46.label,Klientske centrum Biela Púť,data problem: 'Recepcia centra Atlas' sent the player to a non-existent Atlas reception
+look.S43.ambient 1,"Kávovar s displejom. Kým urobí kávu, vypíše mi, ako sa cíti.",
+look.S43.ambient 2,Tamarin systém má dve police: „raz sa to zíde“ a „včera som to hľadala“.,
+entry.S44.001,Hotelový salón plný archívnych krabíc. Aj spomienky si raz zaslúžia hotel.,
+look.S44.JANA35,"Jana. Kedysi stála so schémou na školskej výstavke, dnes prišla na výstavu sama a dobrovoľne.",editor: 'prišla zo školy na výstavu' read as if she came from school today
+look.S44.ambient 1,Papierové knihy. Žiadna zatiaľ sama od seba neprepísala ani riadok.,
+look.S46.SARA,"Sára má pri počítači aj pero. Keď databáza zlyhá, pero nie.",
+look.S46.ambient 1,Návštevnícky poriadok. Najväčším písmom: zákaz kávy. O cestovaní v čase ani slovo.,
+look.S46.ambient 2,Fikus rastie každým listom inam. Nikto ho nezarovnal.,
+entry.S67.001,"Priehyba. Tentoraz prestupujem len na inú lanovku, nie do iného roku.",editor: 'prestupujem do dejín' is not idiomatic
+look.S67.IVAN,Pre Ivana je cesta hore a späť obyčajný pracovný deň. Závidím mu.,
+look.S67.ambient 1,"Najprv Biela Púť – Priehyba, potom Funitel Priehyba – Chopok. Jeden prestup, nič zložité.",
+look.S67.ambient 2,"Madlo. Užitočný vynález v každom roku, ktorý som dnes navštívil.",
+look.S67.boarding,Funitel na Chopok. Ivan mi skontroluje lístok a môžem nastúpiť.,
+exit.S67.to_S41.locked,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: same as exit.S41.to_S67.locked
+exit.S67.to_S68.locked,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,
+conn.S67.S68.label,Funitel na Chopok,
+conn.S67.S68.locked,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,
+look.S68.ambient 1,"Les a svahy pomaly plávajú pod nami. Nikam sa neponáhľajú, ani ja.",
+look.S68.ambient 2,Funitel je iný typ lanovky ako kabínka zdola. Širší a vo vetre pokojnejší.,
+look.S68.arrival,"Vrcholová stanica sa blíži. Dvere sa otvoria, až keď kabína zastaví.",removed design note about skipping the panorama loop
+exit.S68.to_S47.locked,"Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",removed 'Klik Dokončiť jazdu' (jargon)
+exit.S68.to_S67.locked,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,
+conn.S68.S47.locked,"Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",
+entry.S47.001,"Rotunda. Výstava Atlasu tu má krásny výhľad. Škoda, že z nej miznú ľudia.",
+look.S47.filter,"Pravidlo panelu: ROZDIEL = ZAHODIŤ. Pred úpravou hlas, pauza, smiech a dve mená, po nej jeden suchý údaj.",added the painted rule ROZDIEL = ZAHODIŤ (GLOSSARY 6.2 lists it for this key)
+look.S47.filter.variant1,Panel teraz ukazuje pôvodnú stopu aj všetky rozdiely. Nič sa automaticky nezahadzuje.,
+exit.S47.to_S48.locked,Do pavilónu ma bez servisného preukazu od Sáry nepustia.,replaced design jargon 'servisný krok / v denníku'
+exit.S47.to_S68.locked,"Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",
+conn.S47.S48.label,Servisný pavilón výstavy Atlas,map label now equals the room name
+conn.S47.S48.locked,Do pavilónu ma bez servisného preukazu od Sáry nepustia.,
+look.S48.ambient 1,Káble. Aj v roku 2035 sú tri navyše a jeden prikrátky.,
+look.S48.ambient 2,Lístok s nápisom NEVYPÍNAŤ NASLEPO. NINA. Najdôležitejší pokyn v miestnosti je stále napísaný rukou.,editor: 'papier' twice in one line
+look.S48.terminal,"Servisný terminál. Sem pripojím čítačku a porovnám pôvodný záznam s upraveným. Nina povolila diagnostiku, nie mazanie.",editor: shortened
+exit.S48.to_S47.locked,Do pavilónu ma bez servisného preukazu od Sáry nepustia.,
+exit.S48.to_S49.locked,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",
+exit.S48.to_S50.locked,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",
+conn.S48.S49.label,Chronokomora pavilónu Atlas,deprecated 'Synchronizačná komora'; now equals the room name
+conn.S48.S49.locked,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",
+conn.S48.S50.label,Vyhliadková terasa pri Rotunde,'Strešná servisná terasa' contradicted the room S50; now equals the room name
+conn.S48.S50.locked,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",
+entry.S45.001,Vrbické pleso. Odráža všetko a nič neupravuje. Atlas by sa mohol učiť.,
+look.S45.ambient 1,Odraz nie je presne ako krajina. Aj tak sem patrí.,
+look.S45.ambient 2,Turistická značka. Sľubuje jednu trasu a jeden čas. To je mi sympatické.,
+look.S45.bench,"Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Tu mávala Tamara putovnú dielňu, dnes má stôl v lobby hotela.",editor: missing verb
+look.S45.sensor,"Stojan výstavy Atlas, ktorý iba meria. Chronometrom ho načítam priamo z chodníka.",
+look.S50.bridge,Návratový konektor Atlasu. Keramický mostík zapojený sem obíde chybný príkaz na zápis. Lanovky sú oddelené.,"editor: comma splice fixed; this look is the clue for the bridge, so 'keramický mostík' is named plainly"
+look.S50.switch,"Páčka má dve polohy. ZÁPIS mení minulosť, MONITOR iba číta a dovolí vrátiť zadržané údaje.",editor: grammar
+look.S50.switch.variant1,Prepínač je zaistený na MONITOR. Na ZÁPIS ho už nikto neprepne.,removed 'v tejto hre' (jargon)
+exit.S50.to_S48.locked,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",
+look.S49.VIKTOR,"Viktor nespal a veľmi chce, aby to celé malo zmysel. Taký človek by nemal stáť pri veľkom vypínači.",editor: clearer than 'Pri veľkom vypínači je to nebezpečné'
+look.S49.ambient 2,Núdzová lampa bliká pomaly a pokojne. Nikde nebeží žiadny odpočet.,editor: matches the hotspot name Núdzová lampa
+look.S49.confirm,Panel obnovy: štyri porty a veľké tlačidlo. Bez režimu MONITOR a bez Viktorovho súhlasu sa obnova nespustí.,"editor: 'súhlas obsluhy' is Viktor's consent (F17.002), said plainly"
+look.S49.confirm.variant1,Obnova skončila. Spätný zápis je vypnutý a už vypnutý zostane.,
+look.S49.port_consent,Port Súhlas. Sem patrí potvrdené odovzdanie z roku 2020.,
+look.S49.port_origin,Port Pôvod. Sem patrí overený odtlačok z roku 1960.,
+look.S49.port_return,Port Návrat. Sem patrí obnovovací postup z roku 2035.,
+look.S49.port_voice,"Port Hlas. Sem patrí pôvodná školská kazeta z roku 1995, nie jej zhrnutie.",
+exit.S49.to_S48.locked,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",
+topic.BORIS.ambient 1.002,"Dnes som rád, že ten rozdiel poznáte.",
+topic.BORIS.ambient 2.002,Tak niekto v Atlase kúpil príliš úzke police.,
+topic.BORIS.ambient 2.label,Čo keď sa spomienky líšia?,editor: full question
+topic.IVAN.ambient 1.001,"Z Bielej Púte ste prišli kabínkou, teraz pôjdete Funitelom na Chopok. Spiatočný lístok si nechajte.",
+topic.IVAN.ambient 1.002,Všetko spiatočné si dnes držím oboma rukami.,
+topic.IVAN.ambient 1.label,Kadiaľ ďalej?,
+topic.IVAN.ambient 2.001,"Dnes je dobre, jazdí sa. Keby sa to zmenilo, dozviete sa to odo mňa.",
+topic.IVAN.ambient 2.label,Aké je hore počasie?,
+topic.JANA35.ambient 1.002,"Ten odhad je presnejší, než by ste si mysleli.",
+topic.NINA.after.label,Čo je teraz s Atlasom?,
+topic.NINA.ambient 1.001,Áno. Stále píše zoznamy. Len teraz je na nich aj dovolenka.,
+topic.NINA.ambient 2.001,"Výstava zbiera aj spomienky na výlety. Verejná časť je v hoteli, na Chopku máme dočasný pavilón.",editor: 'pri Chopku' -> 'na Chopku' (the pavilion is by the Rotunda on Chopok); moved: Grand Jasná (she stands in front of it)
+topic.NINA.ambient 2.002,A cestou hore má každý dôvod chvíľu sa pozerať z okna.,
+topic.SARA.ambient 1.003,Napíšem: služobná návšteva.,fixed broken Slovak 'Dám služobná návšteva' (style guide 3.3)
+topic.SARA.ambient 1.label,Zapíšete si ma?,
+topic.SARA.ambient 2.001,"Keď mená miznú zo systému, zapisujem ich sem perom.",
+topic.SARA.ambient 2.label,Načo vám je ten zošit?,
+topic.TAMARA.ambient 1.001,Káva je dočasná oprava človeka.,
+topic.TAMARA.ambient 1.002,A trvalejšiu opravu máš?,Adam -> Tamara: ty (VOICES); the old line used vy
+topic.TAMARA.ambient 1.003,Áno. Zatvárame o šiestej.,
+topic.TAMARA.ambient 2.001,"Na kazete aspoň vidíš, že sa niečo točí.",
+topic.TAMARA.ambient 2.002,Mne sa dnes tiež všetko točí.,
+topic.TAMARA.ambient 2.label,Prečo práve kazety?,
+topic.TURISTA.ambient 1.002,Tú vetu by som rád niekomu hore zopakoval.,
+topic.TURISTA.ambient 2.label,Boli ste tu už niekedy?,editor: 'Boli ste tu dávno?' is not idiomatic
+topic.VIKTOR.after.003,"Viem. Ďakujem, že ste sa ho nepokúsili opraviť.",Viktor -> Adam: vy (VOICES)
+topic.VIKTOR.after.label,A správa vašej mamy?,
+topic.VIKTOR.ambient 1.002,"Spojiť sa dajú aj bez toho, aby ste im odstrihli okraje.",
+topic.VIKTOR.ambient 1.003,"To hovoríte teraz. Keď vám zostane jediná nahrávka, začnete počítať každý šum.",Viktor -> Adam: vy (VOICES)
+topic.VIKTOR.ambient 2.002,Dobre. Začnime tými štyrmi portmi.,"editor: topic is available after F11, when the switch is already on MONITOR; 'Začnime tým vypínačom' contradicted that; the ports are the next step"
+item.READER,Malá čítačka od Tamary. Prečíta kazetu aj servisnú pamäť a sieť nepotrebuje.,
+item.READER.purpose,Prečítať pôvodnú kazetu na servisnom termináli.,
+item.CATALOG,"Verejná karta fondu Z-17 s rokmi 1960, 1995 a 2020. K súkromným nahrávkam ma nepustí.",
+item.CATALOG.purpose,"Vybaviť si u Sáry servisný vstup, ktorý schválila Nina.",
+item.LIFT_TICKET,"Lístok na kabínku Biela Púť – Priehyba aj Funitel Priehyba – Chopok, tam aj späť. Platí celý deň.",removed design note about unlimited returns; 'platí celý deň' keeps the fact in-world
+item.LIFT_TICKET.purpose,Priložiť k čítačke pri turnikete a nastúpiť na lanovku.,
+item.PASS,Nina mi schválila diagnostiku fondu. Sára si moje meno zapísala aj perom.,
+item.PASS.purpose,Vstup do servisného pavilónu Atlasu.,
+item.FILTER_PHOTO,Fotka panelu z telefónu: ROZDIEL = ZAHODIŤ. Pravidlo som si prepísal aj do poznámok.,
+item.FILTER_PHOTO.purpose,Porovnať chybné pravidlo s Mirinou pôvodnou vetou.,
+item.DIAGNOSTIC,"Vymazané údaje čakajú v zásobníku, kým sa zápis nepotvrdí. Keď výstup prepnem na MONITOR, dajú sa vrátiť.",
+item.DIAGNOSTIC.purpose,Pripraviť s Ninou bezpečný obnovovací postup.,
+item.LEA_MESSAGE,"Leina správa z roku 2032, celá a bez úprav. Prežila v zásobníku. Nina ju dovolila pustiť iba Viktorovi.",
+item.LEA_MESSAGE.purpose,"Pustiť Viktorovi, aby počul, čo normalizátor vymazal.",
+item.PULSE,Stopa okolia Vrbického plesa uložená v chronometri. Pri meraní som sa vody ani nedotkol.,
+item.PULSE.purpose,Vypočítať v termináli Atlasu bezpečný návrat z roku 2035.,
+item.PATCH,"Postup ZACHOVAŤ VÝNIMKY, podpísaný Ninou. Vráti zadržané údaje a vypne spätný zápis.",
+item.PATCH.purpose,Dôkaz návratu z roku 2035 pre port Návrat.,'Dôkaz Návrat' -> dôkaz návratu (glossary)
+item.DELIVERY_NOTE,Očkova požiadavka: zásielka pre opravovňu pri lavičke so psom. Ten opis je ešte z minulého roka.,
+item.DELIVERY_NOTE.purpose,"Zistiť, kde je príjemca dnes.",
+item.DELIVERY_OK,"Tamara potvrdila, že zásielka je jej, a novú adresu: lobby hotela Grand Jasná.",
+quest.M12.goal,Získaj povolený prístup k zásobníku Atlasu a nájdi chybné pravidlo.,
+quest.M12.hint.1,Nina čaká pred hotelom Grand Jasná. Výstava Atlasu je v hoteli aj hore pri Rotunde.,
+quest.M12.hint.2,"Tamara ti požičia čítačku na kazetu, Boris podľa potvrdeného odovzdania nájde katalógovú kartu a Sára na ňu vydá preukaz s lístkom.","editor: level 2 now names the items in order (STYLE_GUIDE 6.10); F01.005 no longer says which document Boris needs; editor: level 2 now names the item each person needs, in order (STYLE_GUIDE 6.10), since F01.005 no longer says which document Boris needs; drop: Chopok, prestup (the route is told by Sára and the J02 objective); editor: level 2 now names the item each person needs, in order (STYLE_GUIDE 6.10), since F01.005 no longer says which document Boris needs; drop: Chopok (the route is told by Sára and the F04/J02 objectives)"
+quest.M12.hint.3,Nina pred hotelom → pôvodná školská kazeta na Tamaru v lobby → potvrdené odovzdanie 2020 na Borisa v salóne → katalógová karta na Sáru v klientskom centre → spiatočný lístok na čítačku pri dolnej stanici → nástup na Funitel na Priehybe → dokončiť jazdu → telefón na panel normalizácie pri Rotunde → zvuková čítačka na servisný terminál v pavilóne Atlasu.,
+quest.M13.goal,Priprav bezpečný návrat a prepínačom zastav ďalšie mazanie.,
+quest.M13.hint.1,Choď k Vrbickému plesu. Na chodníku stojí pasívny stojan výstavy.,
+quest.M13.hint.2,Chronometrom zachyť stopu pri plese a nahraj ju do terminálu. Potom zapoj Tónov mostík do konektora Atlasu na terase a prepni na MONITOR.,
+quest.M13.hint.3,Chronometer na pasívny stojan pri Vrbickom plese → referenčná stopa na servisný terminál → zachovaný návratový mostík na oddelený konektor Atlasu na terase → prepínač zápisu na MONITOR → servisný terminál potvrdí vstup do chronokomory.,
+quest.M14.goal,"Pusti Viktorovi záznam, ktorý sám nechal skrátiť.",
+quest.M14.hint.1,Leina pôvodná správa patrí Viktorovi. Viktor je v chronokomore.,
+quest.M14.hint.2,Viktora nepresvedčíš slovami. Pusti mu Leinu pôvodnú hlasovú správu.,removed meta comment about picking a reply
+quest.M14.hint.3,Leina nezmenená hlasová správa → Viktor v chronokomore. Rozhovor a Viktorov súhlas s obnovou prídu potom samy.,drop: scenár; meta remark about the fixed script removed
+quest.M15.goal,Obnov zadržané údaje a vráť sa k Mire.,
+quest.M15.hint.1,Štyri porty sa volajú podľa slov na pôvodnej platni z roku 1960.,
+quest.M15.hint.2,"Pôvod je overený odtlačok, Hlas školská kazeta, Súhlas potvrdené odovzdanie a Návrat obnovovací postup.",
+quest.M15.hint.3,"Overený odtlačok → port Pôvod, školská kazeta → port Hlas, potvrdené odovzdanie → port Súhlas, obnovovací postup → port Návrat → na paneli obnovy priraď roky: Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035 → potvrď obnovu.",
+quest.Q8.goal,"Pomôž Očkovi nájsť príjemcu, ktorého adresa je len opis miesta.",
+quest.Q8.hint.2,"Prezri lavičku so psom pri Vrbickom plese. Patrila putovnej dielni Tamary, ktorá je teraz v lobby hotela Grand Jasná.",
+quest.Q8.hint.3,Rozhovor s Očkom pri dolnej stanici → lavička so psom pri Vrbickom plese → Očkova požiadavka na Tamaru v lobby → potvrdenie opravovne na Očka.,
+puzzle.P04.clue,Port aj predmet nesú názov a rok. To isté mám v zápisníku.,
+puzzle.P04.success,Štyri nezávislé svedectvá overené.,editor: 'Obnova pripravená' is said again by F16.003 right after
+puzzle.P04.wrong,Rok k tomu portu nesedí. Správny je na predmete aj v mojich poznámkach.,
+cutscene.CS01.01.002,"To nie je farba. Babka, nezavesuj.",
+cutscene.CS01.02.002,Ja som chcel len vymeniť poistku.,
+cutscene.CS01.03.001,Tú zastávku poznám. Len rok nesedí.,
+cutscene.CS02.02.001,"Myslel som, že som to zabudol. Len som to dlho nepočul.","old line said 'I thought I would forget this', which contradicts the second sentence"
+cutscene.CS03.01.002,"Idem za ženou, ktorá ešte nevie, že raz bude moja babka.",
+cutscene.CS03.02.001,"A musím to stihnúť, kým jej meno nezmizne aj z neskorších rokov.",the old line was unparseable; meaning taken from the shot (register flickers with an empty name)
+cutscene.CS04.01.002,Túto vetu bude raz treba niekomu zopakovať.,
+cutscene.CS04.02.001,Jeden predmet. Veľa rúk. Ani jedna z nich nie je chyba v zázname.,
+cutscene.CS05.02.002,Tentoraz to mám napísané aj na prístroji.,
+cutscene.CS06.02.001,"Vyčistil som z nej presne to, čo som si mal nechať.",
+cutscene.CS07.01.001,Údaje zo zásobníka vrátené. Spätný zápis trvalo vypnutý.,
+cutscene.CS07.01.003,"Konečne to vyzerá ako ľudia, nie ako tabuľka.",
+cutscene.CS07.02.001,"Zverejním celý postup aj to, že som pokračoval napriek varovaniu. Originály budú oddelené od úprav.",
+cutscene.CS07.03.001,Adam? Už ťa počujem bez ozveny.,'po správnom telefóne' made no sense; picks up the echo from CS05
+cutscene.CS07.03.002,Áno. A volám aj zo správneho roku.,
+cutscene.CS07.03.003,"Nákup si mi nechal presne tam, kde mal byť.",
+cutscene.CS08.01.001,"Tri dosky a vozík, ktorý chodí trochu oklukou. O pár desaťročí tu bude miesto, kde si ľudia sadnú.",
+cutscene.CS08.01.002,"Takto sa opravuje čas. Po kúsku, nie naraz.",
+cutscene.CS08.02.001,A múrik s našou skrýšou zostal stáť.,
+cutscene.CS09.01.001,"Hore po lane. Pod nami les, v kabínke ticho.",editor: plain caption; the 'travel I finally understand' joke is already in entry.S68
+epilogue.1.line,"Konečne loptička, ktorú nechce vymeniť za inú.",
+epilogue.1.shot,Bodka leží pri červenej loptičke.,drop: 2020 (the shot shows 2020 anyway; wording from STYLE_GUIDE 6.13)
+epilogue.2.line,Vidíte? Netreba žiadny účet. Stačí veľké písmo.,"editor: 'stačí mať písmená' was unclear; Jozef wanted big print, not an app"
+epilogue.3.shot,V galérii visí Sonina fotografia celého družstva.,
+epilogue.4.shot,Tamara na chvíľu prestane opravovať a počúva „Štyri zastávky“.,editor: song title in quotes
+epilogue.5.shot,V galérii visí reprodukcia Jurajovej maľby z podchodu. Každé okno svieti inak.,
+epilogue.6.shot,Béla sedí za oknom pošty. Alojz pokojne zatvorí knihu.,editor: 'zavrie knihu bez zhonu' was stiff
+epilogue.7.shot,Rudo na skúške konečne dopovie celú repliku. Lída zadržiava smiech.,
+epilogue.8.line,Kartička nemá doručovaciu funkciu. Uchovám ju.,editor: the shot shows the paper card; 'Údaj' was vague
+epilogue.8.shot,Očko dostane pri Tamarinom stole papierovú kartičku ĎAKUJEM.,'v kaviarni' -> Tamara's table in the lobby (consistency)
+epilogue.9.shot,"Tri razy to isté Janino gesto: pri výkrese 1982, pri notebookoch 2020, pri vitríne 2035.",drop: Grand Jasná
+char.ADAM10.name,"Adam (10 rokov, nahrávka 1995)",GLOSSARY 9 recommended label
+char.BODKA.name,Bodka,GLOSSARY 9 recommended label
+char.LEA_REC.name,Lea Kormanová (správa z roku 2032),GLOSSARY 9 recommended label
+char.NARRATOR.name,Rozprávač,GLOSSARY 9 recommended label
+char.NINA_REMOTE.name,Nina (na diaľku),GLOSSARY 9 recommended label
+char.SYSTEM.name,Zariadenie,GLOSSARY 9 recommended label
+ui.menu.credits,Autori,'Titulky' collided with subtitles (Text a titulky)
+ui.save.checkpoint_finale,Kontrolný bod pred záverom,
+ui.controls.right_click,"Pravý klik – prezrieť objekt, na voľnom mieste otvoriť brašnu",the HUD calls the inventory Brašna; editor: verb restored
+ui.controls.inventory,I – brašna,the HUD calls the inventory Brašna
+ui.controls.enter,Enter – ďalší titulok,
+ui.tutorial.right_click,Pravým klikom prezrieš objekt; na voľnom mieste otvoríš brašnu.,
+ui.hud.hotspots_off,Miesta na kliknutie sú skryté,
+ui.travel.board_funitel,Nástup na Funitel,matches the hotspot name and GLOSSARY 3.1
+ui.travel.era_current,Práve si tu,same wording as ui.journal.time_map_current
+ui.puzzle.hint_fill_done,Riešenie je vyplnené. Stačí ho potvrdiť.,
+ui.cutscene.skip_confirm,Preskočiť scénu? Postup sa nezmení.,
+ui.credits.title,Autori,same as ui.menu.credits
+ui.postgame.free_play,"Príbeh sa skončil. Časové okná ostávajú otvorené, takže môžeš dokončiť vedľajšie úlohy.",
+ui.system.path_blocked,Tadiaľto neprejdem.,
+ui.credits.music,"Hudba (pôvodná, vytvorená pomocou AI)",

@@ -161,8 +161,8 @@ public partial class DebugHarness
         await TravelToReal("S16");
         await SelectItemReal("BELT_NEW", keepDrawerOpen: false);
         string beltLabel = ItemLabel(new Hit.Hotspot("S16.deck"));
-        await KeyReal(Godot.Key.Space);
-        bool labelsOn = game.State.HotspotLabels;
+        await KeyEdge(Godot.Key.Space, true); // Space is hold-to-show (owner override 2026-10-05, ISSUES INT-08)
+        bool labelsOn = game.State.HotspotLabels && CurrentRoom.Labels.MarkersVisible;
         await Frames(3);
         var outlines = CurrentRoom.Targets.ToList();
         bool outlineRule = outlines.All(t => t.ValidForSelectedItem == (ItemLabel(t.ToHit()).Length > 0));
@@ -170,7 +170,7 @@ public partial class DebugHarness
         string wrongLabel = outlines.Where(t => t.Id != "S16.deck").Select(t => ItemLabel(t.ToHit())).FirstOrDefault(l => l.Length > 0) ?? "";
         Check("AT06_labels_with_item_only_valid_targets_outlined", labelsOn && outlineRule && deckOutlined && wrongLabel.Length == 0,
               $"labels={labelsOn} rule={outlineRule} deck_outlined={deckOutlined} wrong_label='{wrongLabel}'");
-        await KeyReal(Godot.Key.Space);
+        await KeyEdge(Godot.Key.Space, false);
         await ClickTarget("S16.deck");
         await WaitUntil(() => game.State.IsDone("B06"), 20);
         await WaitLinesReal(20);
@@ -465,19 +465,23 @@ public partial class DebugHarness
             };
             game.ReplaceState(st); // dev jump: labels and hit areas only depend on done, not on how the hero got here
             await Settle();
-            await KeyReal(Godot.Key.Space);
+            // Space held: a marker on every visible target, no text labels; released: none (owner override 2026-10-05).
+            await KeyEdge(Godot.Key.Space, true);
             await Frames(2);
             var expectedIds = GameRules.HotspotList(content, game.State).Select(h => h.Id).OrderBy(x => x).ToList();
             var shownIds = CurrentRoom.Targets.Select(t => t.Id).OrderBy(x => x).ToList();
-            bool labels = game.State.HotspotLabels && expectedIds.SequenceEqual(shownIds) && CurrentRoom.Targets.All(t => TextService.Get(t.Name).Length > 0);
-            await KeyReal(Godot.Key.Space);
+            var markedIds = CurrentRoom.Labels.MarkedIds.OrderBy(x => x).ToList();
+            bool labels = game.State.HotspotLabels && expectedIds.SequenceEqual(shownIds) && expectedIds.SequenceEqual(markedIds) &&
+                          CurrentRoom.Labels.TextLabelsDrawn == 0 && CurrentRoom.Targets.All(t => TextService.Get(t.Name).Length > 0);
+            await KeyEdge(Godot.Key.Space, false);
+            labels &= !game.State.HotspotLabels && CurrentRoom.Labels.MarkedIds.Count == 0;
             bool clickable = true;
             foreach (var t in CurrentRoom.Targets.ToList()) clickable &= await FindClickPoint(t.Id) is not null;
             if (labels && clickable) roomsOk++;
             else bad.Add($"{room.Id}(labels={labels},clickable={clickable})");
         }
         var size = DisplayServer.GetName() == "headless" ? "headless" : DisplayServer.WindowGetSize().ToString();
-        Check("AT05_space_labels_all_68_rooms", bad.All(b => b.Contains("labels=True")), $"{roomsOk}/{content.Rooms.Count} rooms ok; {string.Join(" ", bad)}");
+        Check("AT05_space_markers_all_68_rooms", bad.All(b => b.Contains("labels=True")), $"{roomsOk}/{content.Rooms.Count} rooms ok; {string.Join(" ", bad)}");
         Check("AT20_every_target_clickable_" + size.Replace(" ", ""), blockers.Count == blockersBefore, $"{blockers.Count - blockersBefore} target(s) without a clickable point at {size}");
 
         Log($"acceptance m2: {acceptanceFailures - failuresBefore} failure(s)");

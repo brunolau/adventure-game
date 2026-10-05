@@ -69,6 +69,139 @@ public partial class DebugHarness
 
     private static int Count(GameState s, string item) => s.Inventory.Count(i => i == item);
 
+    /// <summary>Half a key press (hold / release), a real input event.</summary>
+    private async Task KeyEdge(Key key, bool pressed)
+    {
+        Godot.Input.ParseInputEvent(new InputEventKey { Keycode = key, PhysicalKeycode = key, Pressed = pressed });
+        await Frames(2);
+    }
+
+    /// <summary>A point on the walkable floor (hit test: floor) at least <paramref name="minDistance"/> px from the hero.</summary>
+    private static Vector2? FloorPointAway(float minDistance)
+    {
+        var room = CurrentRoom;
+        var feet = room.Hero.Feet;
+        for (int y = 1040; y >= 300; y -= 40)
+            for (int x = 120; x <= 1800; x += 60)
+            {
+                var p = new Vector2(x, y);
+                if (room.HitTest(p) is Hit.Floor && p.DistanceTo(feet) >= minDistance && room.Walk.FindPath(feet, p) is not null) return p;
+            }
+        return null;
+    }
+
+    /// <summary>Owner control changes 2026-10-05: hold Space, hover label at the cursor, contextual cursor, double click.</summary>
+    private async Task RunControlChecks()
+    {
+        var game = GameRuntime.Instance;
+        var presenter = DialoguePresenter.Instance!;
+        var room = CurrentRoom;
+        var hero = room.Hero;
+
+        // ---------------------------------------------------------------- Space: hold to show markers (no text), release hides
+        var layer = room.Labels;
+        int targets = room.Targets.Count();
+        await KeyEdge(Godot.Key.Space, true);
+        await Frames(2);
+        bool held = game.State.HotspotLabels && layer.MarkersVisible;
+        int marked = layer.MarkedIds.Count;
+        int texts = layer.TextLabelsDrawn;
+        var expected = GameRules.HotspotList(game.Content, game.State).Select(h => h.Id).OrderBy(x => x, StringComparer.Ordinal);
+        bool all = layer.MarkedIds.OrderBy(x => x, StringComparer.Ordinal).SequenceEqual(expected);
+        await Frames(10); // still held: no toggle back
+        bool stillHeld = game.State.HotspotLabels;
+        await KeyEdge(Godot.Key.Space, false);
+        await Frames(2);
+        Check("space_hold_shows_markers_release_hides", held && stillHeld && all && marked == targets && texts == 0 && !game.State.HotspotLabels && layer.MarkedIds.Count == 0,
+              $"held={held} still={stillHeld} markers={marked}/{targets} all={all} text_labels={texts} after_release={game.State.HotspotLabels}");
+
+        // ---------------------------------------------------------------- hover label at the cursor and the contextual cursor
+        var ui = LastBell.Game.UI.UiRoot.Instance;
+        if (ui is not null && room.TryGetTarget("S01.ambient 2", out var look))
+        {
+            var lookPoint = await FindClickPoint(look.Id) ?? look.Rect.GetCenter();
+            await MoveMouse(lookPoint);
+            await Frames(3);
+            string shown = ui.HoverLabel.ShownName;
+            var rect = ui.HoverLabel.ShownRect;
+            var lookCursor = LastBell.Game.UI.Hud.CursorSet.Current;
+            var floor = FloorPointAway(0) ?? new Vector2(960, 1000);
+            await MoveMouse(floor);
+            await Frames(3);
+            string onFloor = ui.HoverLabel.ShownName;
+            var floorCursor = LastBell.Game.UI.Hud.CursorSet.Current;
+            Check("hover_label_at_cursor_not_in_hud", shown == TextService.Get(look.Name) && shown.Length > 0 && !rect.HasPoint(lookPoint) &&
+                  rect.Position.X >= 0 && rect.End.X <= Room.CanvasSize.X && rect.End.Y <= Room.CanvasSize.Y && onFloor.Length == 0,
+                  $"label='{shown}' rect={rect} pointer={lookPoint} floor_label='{onFloor}'");
+            var exitHit = room.Targets.FirstOrDefault(t => t.Kind == TargetKind.Exit);
+            var exitCursor = LastBell.Game.UI.Hud.CursorKind.Pointer;
+            if (exitHit is not null && await FindClickPoint(exitHit.Id) is { } ep)
+            {
+                await MoveMouse(ep);
+                await Frames(3);
+                exitCursor = LastBell.Game.UI.Hud.CursorSet.Current;
+            }
+            Check("contextual_cursor", lookCursor == LastBell.Game.UI.Hud.CursorKind.Look && floorCursor == LastBell.Game.UI.Hud.CursorKind.Pointer &&
+                  exitCursor.ToString().StartsWith("Exit", StringComparison.Ordinal),
+                  $"look={lookCursor} floor={floorCursor} exit={exitCursor}");
+        }
+
+        // ---------------------------------------------------------------- double click on the floor: the hero is there at once
+        if (FloorPointAway(400) is { } dest)
+        {
+            int skips = 0;
+            void OnSkip() => skips++;
+            InteractionController.Instance!.WalkSkipped += OnSkip;
+            await RawMouse(dest, MouseButton.Left);
+            await RawMouse(dest, MouseButton.Left);
+            await Frames(1);
+            InteractionController.Instance!.WalkSkipped -= OnSkip;
+            var target = room.Walk.Clamp(dest);
+            Check("double_click_floor_skips_walk", skips == 1 && !hero.IsWalking && hero.Feet.DistanceTo(target) < 3f,
+                  $"skips={skips} walking={hero.IsWalking} feet={hero.Feet} target={target}");
+        }
+
+        // ---------------------------------------------------------------- double click on a look-only prop: placed at its point, the look runs once
+        if (room.TryGetTarget("S01.ambient 2", out var prop) && await FindClickPoint(prop.Id) is { } pp)
+        {
+            presenter.HideBark();
+            var far = FloorPointAway(500); // stand away from the prop first (a double click on the floor gets him there)
+            if (far is { } f) { await RawMouse(f, MouseButton.Left); await RawMouse(f, MouseButton.Left); await Frames(2); }
+            int done = game.State.Done.Length;
+            await RawMouse(pp, MouseButton.Left);
+            await RawMouse(pp, MouseButton.Left);
+            await Frames(2);
+            Check("double_click_prop_arrives_and_acts_once", !hero.IsWalking && hero.Feet.DistanceTo(prop.InteractionPoint) < 3f && presenter.IsShowingBark &&
+                  game.State.Done.Length == done && !InteractionController.Instance!.HasPending,
+                  $"walking={hero.IsWalking} feet={hero.Feet} point={prop.InteractionPoint} bark={presenter.IsShowingBark} pending={InteractionController.Instance!.HasPending}");
+            presenter.HideBark();
+        }
+
+        // ---------------------------------------------------------------- Shift+Enter on the focused exit: skip the walk, travel once
+        var exit = room.Targets.FirstOrDefault(t => t.Kind == TargetKind.Exit && t.Unlocked && game.Session.Resolve(t.ToHit(), PointerButton.Left) is Resolution.Travel);
+        if (exit is not null)
+        {
+            string from = game.State.Room;
+            int changes = 0;
+            void OnRoom(string a, string? b) => changes++;
+            game.RoomChanged += OnRoom;
+            if (await FindClickPoint(exit.Id) is { } xp)
+            {
+                // double click on the exit
+                await RawMouse(xp, MouseButton.Left);
+                await RawMouse(xp, MouseButton.Left);
+                await Frames(1);
+                bool placed = hero.Feet.DistanceTo(exit.InteractionPoint) < 3f && !hero.IsWalking;
+                await WaitUntil(() => game.State.Room != from && WorldStage.Instance!.IsSettled && WorldStage.Instance.IsFadedIn, 20);
+                await Settle();
+                game.RoomChanged -= OnRoom;
+                Check("double_click_exit_skips_walk_travels_once", placed && game.State.Room != from && changes == 1,
+                      $"placed={placed} room={game.State.Room} room_changes={changes}");
+            }
+            else game.RoomChanged -= OnRoom;
+        }
+    }
+
     private async Task RunPrologueAcceptance()
     {
         var game = GameRuntime.Instance;
@@ -93,12 +226,9 @@ public partial class DebugHarness
         await Key(Godot.Key.I);
         Check("inventory_key_closes", game.State.Mode == GameMode.World, $"mode={game.State.Mode}");
 
-        // ---------------------------------------------------------------- Space toggles labels (world)
-        bool before = game.State.HotspotLabels;
-        await Key(Godot.Key.Space);
-        bool on = game.State.HotspotLabels;
-        await Key(Godot.Key.Space);
-        Check("space_toggles_labels", on == !before && game.State.HotspotLabels == before, $"before={before} after1={on} after2={game.State.HotspotLabels}");
+        // ---------------------------------------------------------------- owner control changes (Space hold, hover label, cursor, double click)
+        // Replaces the old check "space_toggles_labels" (owner override 2026-10-05, ISSUES INT-08).
+        await RunControlChecks();
 
         // ---------------------------------------------------------------- invalid item click: complete no-op
         await FromReplay(1); // G01 done, TOOLS in the bag, still in S01
