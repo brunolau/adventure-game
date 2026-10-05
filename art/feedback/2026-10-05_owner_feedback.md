@@ -28,3 +28,13 @@ licensed photos of the exact views below (Commons geosearch, Openverse, KartaVie
 
 Open questions sent back to the owner: are the imgur photos the owner's own (then usable directly)? What did the
 real entry hall (S13/S53/S59) look like?
+
+## Update 2026-10-05 (owner): permission for the imgur photos
+
+The owner granted permission to use all imgur photos he supplied. Applied as follows:
+- `imgur_2tyAMxf.jpg` (S08, pond from the pump track): **may be used directly** as a reference image input.
+- `imgur_wrRxN8x.jpg` (S07) and `imgur_d7UwYm6.jpg` (S41) are **Google Street View screenshots** (Street View UI and
+  capture date visible). The owner's permission cannot cover Google's imagery, whose terms forbid derived content,
+  so they stay **location pointers only**. S07 was matched to licensed KartaView frames of the same stop.
+- The images stay out of the public repository (`art/source/owner_refs/` is git-ignored) unless the owner confirms
+  he took them himself and releases them under a free licence.
