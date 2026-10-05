@@ -101,6 +101,11 @@ never as Slovak-derived identifiers. The code name of the project is **LastBell*
   passes and what does not.
 - C# style: nullable enabled, file-scoped namespaces, records for immutable data, `System.Text.Json`, no reflection
   magic; public APIs documented with XML comments. Namespaces `LastBell.Core.*`, `LastBell.Game.*`.
+- **Never disturb the person using the computer** (owner request 2026-10-06): QA runs open their window
+  off-screen without focus (automatic for any QA argument, `scripts/Diagnostics/QaWindow.cs`) and never move the
+  real cursor. Drive the game only with Godot-level input (the harness flags); never use OS-level input tools
+  (SendInput, pyautogui, mouse/keyboard window messages, SetCursorPos) and never bring windows to the front.
+  `--visible` and `--warp-mouse` are only for runs the product owner explicitly asks to watch.
 - HTTP user agent for any web/API calls: `LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/adventure-game)`.
 - Paid generation (fal.ai, key in env `FAL_KEY` or Windows HKCU\Environment) only within the budget your task states;
   log every paid call in `art/spend-log.csv`.

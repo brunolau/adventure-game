@@ -277,14 +277,14 @@ public partial class DebugHarness : Node
                 GameRuntime.Instance.Update(st => Navigation.UsePortal(GameRuntime.Instance.Content, st, int.Parse(value, CultureInfo.InvariantCulture)));
                 break;
             case "hover":
-                Godot.Input.WarpMouse(GetTree().Root.GetFinalTransform() * Point());
+                QaWindow.WarpMouse(GetTree().Root.GetFinalTransform() * Point());
                 InteractionController.Instance?.PointerMoved(Point());
                 break;
             case "move":
                 // A real mouse motion event (hover label, cursor shape).
                 {
                     var vp = GetTree().Root.GetFinalTransform() * Point();
-                    Godot.Input.WarpMouse(vp);
+                    QaWindow.WarpMouse(vp);
                     Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = vp, GlobalPosition = vp });
                     await Frames(2);
                 }
@@ -344,7 +344,7 @@ public partial class DebugHarness : Node
     {
         // Input events carry window pixels; the root viewport maps them back through its stretch transform.
         var viewportPoint = GetTree().Root.GetFinalTransform() * canvasPoint;
-        Godot.Input.WarpMouse(viewportPoint);
+        QaWindow.WarpMouse(viewportPoint);
         Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = viewportPoint, GlobalPosition = viewportPoint });
         await Frames(2);
         foreach (bool pressed in new[] { true, false })

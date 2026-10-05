@@ -41,7 +41,7 @@ public partial class DebugHarness
     private async Task MoveMouse(Vector2 canvasPoint)
     {
         var viewportPoint = GetTree().Root.GetFinalTransform() * canvasPoint;
-        Godot.Input.WarpMouse(viewportPoint);
+        QaWindow.WarpMouse(viewportPoint);
         Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = viewportPoint, GlobalPosition = viewportPoint });
         await Frames(2);
     }
@@ -56,12 +56,12 @@ public partial class DebugHarness
     private async Task RawMouseReal(Vector2 canvasPoint, MouseButton button)
     {
         var viewportPoint = GetTree().Root.GetFinalTransform() * canvasPoint;
-        Godot.Input.WarpMouse(viewportPoint);
+        QaWindow.WarpMouse(viewportPoint);
         Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = viewportPoint, GlobalPosition = viewportPoint });
         await Frames(2);
         foreach (bool pressed in new[] { true, false })
         {
-            Godot.Input.WarpMouse(viewportPoint);
+            QaWindow.WarpMouse(viewportPoint);
             Godot.Input.ParseInputEvent(new InputEventMouseMotion { Position = viewportPoint, GlobalPosition = viewportPoint });
             Godot.Input.ParseInputEvent(new InputEventMouseButton
             {
