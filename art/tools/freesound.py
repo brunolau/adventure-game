@@ -22,7 +22,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[2]
 CACHE = ROOT / "art" / "candidates" / "audio" / "freesound"
 REGISTRY = ROOT / "art" / "source" / "audio_sources.json"
-UA = {"User-Agent": "LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/adventure-game)"}
+UA = {"User-Agent": "LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/game-lastbell)"}
 SORTS = {"score": "score", "downloads": "num_downloads desc", "rating": "avg_rating desc"}
 
 

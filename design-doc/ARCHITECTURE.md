@@ -106,6 +106,10 @@ never as Slovak-derived identifiers. The code name of the project is **LastBell*
   real cursor. Drive the game only with Godot-level input (the harness flags); never use OS-level input tools
   (SendInput, pyautogui, mouse/keyboard window messages, SetCursorPos) and never bring windows to the front.
   `--visible` and `--warp-mouse` are only for runs the product owner explicitly asks to watch.
-- HTTP user agent for any web/API calls: `LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/adventure-game)`.
+  Launch every Godot QA run (windowed or headless) through `python tools/qa_godot.py <Godot arguments>` (not the console
+  exe): it creates the window hidden from the start (a plain launch shows it mid-screen for about a second before
+  QaWindow moves it), mutes it (`--audible` to hear it), caps it at 60 fps and lowers its CPU priority. Do not
+  start QA windows minimized: a minimized Godot window stops drawing and screenshot runs hang.
+- HTTP user agent for any web/API calls: `LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/game-lastbell)`.
 - Paid generation (fal.ai, key in env `FAL_KEY` or Windows HKCU\Environment) only within the budget your task states;
   log every paid call in `art/spend-log.csv`.

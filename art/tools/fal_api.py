@@ -25,7 +25,7 @@ from PIL import Image
 
 ART = Path(__file__).resolve().parent.parent
 SPEND_LOG = ART / "spend-log.csv"
-USER_AGENT = "LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/adventure-game)"
+USER_AGENT = "LastBell-ArtPipeline/0.1 (+https://github.com/brunolau/game-lastbell)"
 QUEUE_BASE = "https://queue.fal.run"
 
 # Documented prices (USD) taken from fal.ai model pages on 2026-10-05.
