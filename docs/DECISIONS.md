@@ -241,3 +241,15 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
 ---
 
 24 decisions: 8 block painting, 5 block release, 11 cosmetic.
+
+---
+
+## Answers from the product owner (2026-10-05)
+
+- **1. Hotspot re-blocking: b, for ALL 68 rooms** — the 57 unpainted rooms and S01-S11 are re-blocked naturally
+  and repainted (S03/S05 pilot accepted). Natural blocking becomes the default once every room has a blocking file.
+- **2. NPC staging: follow the brief** — the proposed staging table above is accepted.
+- **3. S57: b** — bus at the Dúbravka stop in December 1982 with the tram line under construction; bus ambience
+  (presentation-only override, game.json untouched).
+- **4-8: recommendations accepted** — Čierna Voda for the Chorvátsky Grob scenes, S04 strip-mall base kept,
+  Atlas pavilion on the plateau east of the Rotunda, JANA20 laptop as recommended, no TESLA lettering.
