@@ -2,6 +2,8 @@ using System.Linq;
 using Godot;
 using LastBell.Core.Rules;
 using LastBell.Core.State;
+using LastBell.Core.Text;
+using LastBell.Core.Views;
 using LastBell.Game.Hooks;
 using LastBell.Game.Presentation;
 using LastBell.Game.Runtime;
@@ -64,6 +66,9 @@ public partial class InteractionController : Node
         Instance = this;
         GameRuntime.Instance.SessionReplaced += () => { pending = null; ResetDoubleClick(); ClearFocus(); HoverPresenter.Hide(); };
         GameRuntime.Instance.RoomChanged += (_, _) => { pending = null; ResetDoubleClick(); ClearFocus(); HoverPresenter.Hide(); };
+        // The hover sentence belongs to the selection it was resolved with: when a successful use clears the cursor item
+        // (PT-F09 / PT-S16) the old "use X on Y" text goes away; the next pointer motion resolves the hover again.
+        GameRuntime.Instance.SelectionChanged += _ => HoverPresenter.Hide();
         GameRuntime.Instance.ModeChanged += (mode, _) =>
         {
             ResetDoubleClick(); // a press pair never spans a mode change (drawer, line, overlay)
@@ -152,9 +157,25 @@ public partial class InteractionController : Node
         var room = CurrentRoom;
         if (room is null || !AcceptsWorldInput(Game.State)) { HoverPresenter.Hide(); return; }
         var hit = room.HitTest(canvasPosition);
+        if (room.TimeNodeTakes(canvasPosition, hit))
+        {
+            // The painted clock of an anchor node opens the era chooser (DECISIONS, ISSUES PT-F10).
+            HoverPresenter.Show(new HoverInfo(Room.TimeNodeName, TextRef.Empty, new Resolution.None()), canvasPosition, false, false);
+            return;
+        }
         if (hit is Hit.Floor or Hit.Empty) { HoverPresenter.Hide(); return; }
-        HoverPresenter.Show(Game.Session.Hover(hit), canvasPosition, Game.State.SelectedItem is not null, false);
+        var info = Game.Session.Hover(hit);
+        // Owner control change 6 (2026-10-06): with an item on the cursor only a valid combination gets a label (Core's
+        // action sentence for an executable item rule); every other hotspot, NPC or exit shows nothing.
+        if (Game.State.SelectedItem is not null && !IsItemUse(info.Resolution)) { HoverPresenter.Hide(); return; }
+        HoverPresenter.Show(info, canvasPosition, Game.State.SelectedItem is not null, false);
     }
+
+    /// <summary>
+    /// True when a left-click resolution with the selected item is an executable item use on a scene target (Core
+    /// <see cref="Resolution.Action"/>; owner control change 6: the only hover label and Tab stop while an item is selected).
+    /// </summary>
+    public static bool IsItemUse(Resolution resolution) => resolution is Resolution.Action a && !a.ActionDef.IsInventoryAction;
 
     /// <summary>
     /// Submits a hit with a logical button: the single entry point for world interactions (also used
@@ -167,6 +188,36 @@ public partial class InteractionController : Node
         if (room is null || !AcceptsWorldInput(state)) return;
         DialoguePresenter.Instance?.HideBark();
         if (hit is Hit.Item) ResetDoubleClick(); // an inventory slot press splits a world press pair
+
+        // Owner control change 6 (2026-10-06): a press into the scene outside the open drawer closes the drawer. With an
+        // item picked there, a right click only closes it and keeps the item on the cursor for the scene (a further right
+        // click, drawer closed, cancels the selection as before); a left click closes it and then resolves normally (a
+        // valid target uses the item, an invalid one stays a complete no-op that keeps the selection).
+        if (state.Mode == GameMode.Inventory && hit is not Hit.Item)
+        {
+            if (button == PointerButton.Right && state.SelectedItem is not null)
+            {
+                CloseInventory();
+                return;
+            }
+            if (button == PointerButton.Left) CloseInventory();
+        }
+
+        // The painted node clock: walk there, then the same era chooser as the HUD clock button (PT-F10).
+        if (button == PointerButton.Left && room.TimeNode is { } node &&
+            room.TimeNodeTakes(pointer ?? (node.HotspotId is not null ? node.Rect.GetCenter() : new Vector2(-1, -1)), hit))
+        {
+            CloseInventory();
+            pending = null;
+            var nodeFace = node.Rect.GetCenter();
+            WalkHero(room, node.InteractionPoint, () =>
+            {
+                if (CurrentRoom != room || room.TimeNode is null || Game.State.Mode != GameMode.World) return;
+                room.Hero.FaceTowards(nodeFace);
+                UiBus.RequestOpen(UiPanel.Portal);
+            });
+            return;
+        }
 
         // Left click on non-walkable background walks to the closest walkable point.
         if (hit is Hit.Empty && button == PointerButton.Left && state.SelectedItem is null && pointer is { } p)
@@ -295,8 +346,16 @@ public partial class InteractionController : Node
     {
         var room = CurrentRoom;
         if (room is null || !AcceptsWorldInput(Game.State)) return;
-        var order = room.View.AccessibleOrder.Where(id => room.TryGetTarget(id, out _)).ToList();
-        if (order.Count == 0) return;
+        // With an item selected Tab cycles only the targets where it has an executable use (owner control change 6).
+        bool itemSelected = Game.State.SelectedItem is not null;
+        var order = room.View.AccessibleOrder
+            .Where(id => room.TryGetTarget(id, out var t) && (!itemSelected || IsItemUse(Game.Session.Resolve(t.ToHit(), PointerButton.Left))))
+            .ToList();
+        if (order.Count == 0)
+        {
+            if (room.Labels.FocusedId is not null) { ClearFocus(); HoverPresenter.Hide(); }
+            return;
+        }
         if (focusRoom != room.RoomId) { focusIndex = -1; focusRoom = room.RoomId; }
         ResetDoubleClick();
         int current = room.Labels.FocusedId is { } f ? order.IndexOf(f) : -1;

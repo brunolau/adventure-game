@@ -202,6 +202,147 @@ public partial class DebugHarness
         }
     }
 
+    /// <summary>A point of the target that the room's hit test returns and no GUI control covers (no blocker logged), or null.</summary>
+    private async Task<Vector2?> ScenePoint(string targetId)
+    {
+        var room = CurrentRoom;
+        if (!room.TryGetTarget(targetId, out var target)) return null;
+        var want = target.ToHit();
+        foreach (var (fx, fy) in new[]
+                 {
+                     (0.5f, 0.5f), (0.5f, 0.3f), (0.5f, 0.7f), (0.3f, 0.5f), (0.7f, 0.5f), (0.25f, 0.25f), (0.75f, 0.25f),
+                     (0.25f, 0.75f), (0.75f, 0.75f), (0.5f, 0.12f), (0.5f, 0.88f), (0.12f, 0.5f), (0.88f, 0.5f),
+                 })
+        {
+            var p = target.Rect.Position + new Vector2(target.Rect.Size.X * fx, target.Rect.Size.Y * fy);
+            if (p.X < 1 || p.Y < 1 || p.X > Room.CanvasSize.X - 1 || p.Y > Room.CanvasSize.Y - 1 || !Equals(room.HitTest(p), want)) continue;
+            await MoveMouse(p);
+            if (HoveredGui() is null && !(LastBell.Game.UI.UiRoot.Instance?.ScreenCovers(p) ?? false)) return p;
+        }
+        return null;
+    }
+
+    /// <summary>
+    /// Owner control change 6 (2026-10-06, ISSUES INT-09): a right click outside the open drawer closes it and keeps the
+    /// picked item; with an item selected only valid combinations get a hover label, a Space marker and a Tab stop;
+    /// without one every visible target does. S05 with GROCERIES (after G03): the tray is the one valid target among
+    /// four props and three exits.
+    /// </summary>
+    private async Task RunSelectionControlChecks()
+    {
+        var game = GameRuntime.Instance;
+        var presenter = DialoguePresenter.Instance!;
+        var ui = LastBell.Game.UI.UiRoot.Instance;
+        await FromReplay(3);
+        await TravelTo("S05");
+        await Settle();
+        var room = CurrentRoom;
+        var hero = room.Hero;
+        const string valid = "S05.tray";
+
+        // ---------------------------------------------------------------- without a selection: every target hovers, gets a marker and a Tab stop
+        var all = room.Targets.Select(t => t.Id).OrderBy(x => x, StringComparer.Ordinal).ToList();
+        int hovered = 0;
+        var unlabelled = new List<string>();
+        if (ui is not null)
+            foreach (var id in all)
+            {
+                if (await ScenePoint(id) is not { } p) { unlabelled.Add(id + "(no point)"); continue; }
+                await MoveMouse(p);
+                await Frames(2);
+                if (ui.HoverLabel.ShownName.Length > 0) hovered++;
+                else unlabelled.Add(id);
+            }
+        Check("no_selection_every_target_hover_label", ui is not null && hovered == all.Count,
+              $"{hovered}/{all.Count} labelled; missing [{string.Join(",", unlabelled)}]");
+        await KeyEdge(Godot.Key.Space, true);
+        await Frames(2);
+        var markedAll = room.Labels.MarkedIds.OrderBy(x => x, StringComparer.Ordinal).ToList();
+        await KeyEdge(Godot.Key.Space, false);
+        Check("no_selection_space_marks_every_target", markedAll.SequenceEqual(all), $"marked {markedAll.Count}/{all.Count}");
+        var focusedAll = new HashSet<string>(StringComparer.Ordinal);
+        for (int i = 0; i < all.Count + 1; i++)
+        {
+            await Key(Godot.Key.Tab);
+            if (InteractionController.Instance!.FocusedId is { } f) focusedAll.Add(f);
+        }
+        InteractionController.Instance!.ClearFocus();
+        Check("no_selection_tab_cycles_every_target", focusedAll.Count == room.View.AccessibleOrder.Count(id => room.TryGetTarget(id, out _)),
+              $"focused {focusedAll.Count}");
+
+        // ---------------------------------------------------------------- pick the item in the drawer, right click outside: drawer closes, item stays
+        var invalid = room.Targets.FirstOrDefault(t => t.Kind == TargetKind.Prop && t.Id != valid)?.Id ?? "S05.shed_door";
+        bool picked = await ClickSlotReal("GROCERIES");
+        await Frames(2);
+        bool drawerOpen = game.State.Mode == GameMode.Inventory && game.State.SelectedItem == "GROCERIES";
+        var outside = await ScenePoint(invalid);
+        var feet = hero.Feet;
+        if (outside is { } o) await RawMouseReal(o, MouseButton.Right);
+        await Frames(4);
+        Check("right_click_outside_drawer_closes_keeps_selection", picked && drawerOpen && outside is not null && game.State.Mode == GameMode.World &&
+              game.State.SelectedItem == "GROCERIES" && !presenter.IsShowingBark && !hero.IsWalking && hero.Feet == feet,
+              $"picked={picked} drawer_open_before={drawerOpen} point={outside} mode={game.State.Mode} selected={game.State.SelectedItem} bark={presenter.IsShowingBark}");
+
+        // ---------------------------------------------------------------- with the item: only the valid target gets a label, a marker and a Tab stop
+        string validName = "", validAction = "", invalidName = "", exitName = "";
+        var invalidCursor = LastBell.Game.UI.Hud.CursorKind.Pointer;
+        if (ui is not null)
+        {
+            if (await ScenePoint(valid) is { } vp) { await MoveMouse(vp); await Frames(2); validName = ui.HoverLabel.ShownName; validAction = ui.HoverLabel.ShownAction; }
+            if (await ScenePoint(invalid) is { } ip) { await MoveMouse(ip); await Frames(2); invalidName = ui.HoverLabel.ShownName + ui.HoverLabel.ShownAction; invalidCursor = LastBell.Game.UI.Hud.CursorSet.Current; }
+            var exitId = room.Targets.FirstOrDefault(t => t.Kind == TargetKind.Exit)?.Id;
+            if (exitId is not null && await ScenePoint(exitId) is { } ep) { await MoveMouse(ep); await Frames(2); exitName = ui.HoverLabel.ShownName + ui.HoverLabel.ShownAction; }
+        }
+        bool cursorChecked = DisplayServer.GetName() == "headless" || invalidCursor == LastBell.Game.UI.Hud.CursorKind.Item;
+        Check("with_selection_only_valid_target_hover_label", validName.Length > 0 && validAction.Length > 0 && invalidName.Length == 0 && exitName.Length == 0 && cursorChecked,
+              $"valid='{validName} / {validAction}' invalid='{invalidName}' exit='{exitName}' cursor_over_invalid={invalidCursor}");
+        await KeyEdge(Godot.Key.Space, true);
+        await Frames(2);
+        var markedWith = room.Labels.MarkedIds.ToList();
+        bool layerOn = room.Labels.MarkersVisible;
+        await KeyEdge(Godot.Key.Space, false);
+        Check("with_selection_space_marks_only_valid_targets", layerOn && markedWith.SequenceEqual(new[] { valid }),
+              $"marked [{string.Join(",", markedWith)}]");
+        var focusedWith = new HashSet<string>(StringComparer.Ordinal);
+        for (int i = 0; i < 3; i++)
+        {
+            await Key(Godot.Key.Tab);
+            if (InteractionController.Instance!.FocusedId is { } f) focusedWith.Add(f);
+        }
+        InteractionController.Instance!.ClearFocus();
+        Check("with_selection_tab_cycles_only_valid_targets", focusedWith.SetEquals(new[] { valid }), $"focused [{string.Join(",", focusedWith)}]");
+
+        // ---------------------------------------------------------------- further right click (drawer closed) cancels the selection
+        if (outside is { } o2) await RawMouseReal(o2, MouseButton.Right);
+        await Frames(3);
+        Check("right_click_after_drawer_closed_cancels_selection", game.State.SelectedItem is null && game.State.Mode == GameMode.World,
+              $"selected={game.State.SelectedItem} mode={game.State.Mode}");
+
+        // ---------------------------------------------------------------- left click outside the drawer: closes it; invalid target = no-op, valid one uses the item
+        await ClickSlotReal("GROCERIES");
+        await Frames(2);
+        var before = game.State;
+        feet = hero.Feet;
+        var invalidPoint = await ScenePoint(invalid);
+        if (invalidPoint is { } ipt) await RawMouseReal(ipt, MouseButton.Left);
+        await Frames(6);
+        Check("left_click_outside_drawer_closes_invalid_noop", invalidPoint is not null && game.State.Mode == GameMode.World && game.State.SelectedItem == "GROCERIES" &&
+              !hero.IsWalking && hero.Feet == feet && !presenter.IsShowingBark && game.State.ActiveLineId is null && game.State.Done.SequenceEqual(before.Done),
+              $"mode={game.State.Mode} selected={game.State.SelectedItem} walking={hero.IsWalking} bark={presenter.IsShowingBark}");
+        await ClickSlotReal("GROCERIES"); // drawer open again with the item picked
+        await Frames(2);
+        bool reopened = game.State.Mode == GameMode.Inventory;
+        var validPoint = await ScenePoint(valid);
+        if (validPoint is { } vpt) await RawMouseReal(vpt, MouseButton.Left);
+        await Frames(2);
+        bool closedOnClick = game.State.Mode != GameMode.Inventory;
+        await WaitUntil(() => game.State.IsDone("G04"), 20);
+        Check("left_click_outside_drawer_valid_target_uses_item", reopened && validPoint is not null && closedOnClick && game.State.IsDone("G04") &&
+              !game.State.Has("GROCERIES"), $"reopened={reopened} closed={closedOnClick} G04={game.State.IsDone("G04")}");
+        await SkipLines(15);
+        await Settle();
+    }
+
     private async Task RunPrologueAcceptance()
     {
         var game = GameRuntime.Instance;
@@ -229,6 +370,9 @@ public partial class DebugHarness
         // ---------------------------------------------------------------- owner control changes (Space hold, hover label, cursor, double click)
         // Replaces the old check "space_toggles_labels" (owner override 2026-10-05, ISSUES INT-08).
         await RunControlChecks();
+
+        // ---------------------------------------------------------------- owner control change 6 (2026-10-06): drawer close on right click, valid-only hover / markers / Tab
+        await RunSelectionControlChecks();
 
         // ---------------------------------------------------------------- invalid item click: complete no-op
         await FromReplay(1); // G01 done, TOOLS in the bag, still in S01

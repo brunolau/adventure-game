@@ -23,7 +23,7 @@ public partial class ShadowLayer : Node2D
             if (actor.Visual is { CastsShadow: false }) continue;
             float s = actor.CurrentScale;
             DrawSetTransform(actor.Position, 0, new Vector2(1f, 0.28f));
-            DrawCircle(Vector2.Zero, 70f * s, new Color(0, 0, 0, 0.28f));
+            DrawCircle(Vector2.Zero, 70f * s, new Color(0, 0, 0, 0.28f * actor.Modulate.A)); // guests fade in and out
             DrawSetTransform(Vector2.Zero, 0, Vector2.One);
         }
     }
@@ -32,7 +32,8 @@ public partial class ShadowLayer : Node2D
 /// <summary>
 /// Layer "hotspot_labels": while Space is held (Core <c>HotspotLabels</c>, owner override 2026-10-05, ISSUES INT-08) a
 /// small painted round marker on every visible hotspot (NPCs, progress and purely atmospheric props) and exit (exits
-/// get the arrow badge) — markers only, no text; a subtle pulse unless reduced motion is on. Also the subtle outline of
+/// get the arrow badge) — markers only, no text; a subtle pulse unless reduced motion is on. While an item is selected
+/// only the targets where it has an executable use get a marker (owner control change 6, 2026-10-06). Also the subtle outline of
 /// targets valid for the selected item and the keyboard focus outline (the focused target's label is the hover label,
 /// drawn at the target by the UI). The QA flag <c>--labels</c> (<see cref="PresentationSettings.QaTextLabels"/>) draws the
 /// old text labels of all targets instead, for art review. It only draws what the room's current view says is visible.
@@ -69,7 +70,14 @@ public partial class HotspotLabelLayer : Node2D
 
     /// <summary>Target ids that get a marker now (QA; empty while Space is not held).</summary>
     public System.Collections.Generic.IReadOnlyList<string> MarkedIds =>
-        MarkersVisible ? Room.Targets.Select(t => t.Id).ToList() : System.Array.Empty<string>();
+        MarkersVisible ? Room.Targets.Where(IsMarkable).Select(t => t.Id).ToList() : System.Array.Empty<string>();
+
+    /// <summary>
+    /// Whether a target gets a Space marker (owner control change 6, 2026-10-06): without a selected item every visible
+    /// target; with one only the targets where Core says the item has an executable use (<see cref="TargetInfo.ValidForSelectedItem"/>).
+    /// </summary>
+    public static bool IsMarkable(TargetInfo t) =>
+        GameRuntime.Instance.State.SelectedItem is null || t.ValidForSelectedItem;
 
     /// <summary>Number of text labels drawn now (QA: 0 unless <c>--labels</c>).</summary>
     public int TextLabelsDrawn =>
@@ -130,8 +138,17 @@ public partial class HotspotLabelLayer : Node2D
         {
             if (t.ValidForSelectedItem) DrawRect(t.Rect.Grow(4), new Color(1f, 0.95f, 0.6f, 0.55f), false, 2f);
             if (t.Id == focusedId) DrawRect(t.Rect.Grow(6), new Color(1f, 1f, 1f, 0.95f), false, 4f);
-            if (markers) DrawMarker(t);
+            if (markers) { if (IsMarkable(t)) DrawMarker(t); }
             else if (qaText) DrawTextLabel(t);
+        }
+        // The painted node clock without a game.json hotspot (PT-F10) gets a marker too (not in MarkedIds: Core targets only).
+        // Not while an item is selected: the clock is never an item target.
+        if (Room.TimeNode is { HotspotId: null } node && GameRuntime.Instance.State.SelectedItem is null)
+        {
+            var info = new TargetInfo("time_node", TargetKind.Prop, Room.TimeNodeName, node.Rect, node.InteractionPoint,
+                new Vector2(node.Rect.GetCenter().X, node.Rect.Position.Y - 10), false, false, true);
+            if (markers) DrawMarker(info);
+            else if (qaText) DrawTextLabel(info);
         }
     }
 

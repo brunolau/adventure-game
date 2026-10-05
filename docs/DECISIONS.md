@@ -270,6 +270,21 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
 5. **Space is hold-to-show, not a toggle:** while Space is held, small round markers appear on all visible
    interactive hotspots (including atmospheric ones) — markers only, no text labels; releasing Space hides them
    (reference: `art/source/owner_refs/ui_cOw4kTJ.png`, local only). Touch: two-finger hold shows them.
+6. **Using items from the bag (owner, 2026-10-06: "you misread my instruction about using stuff from inventory"):**
+   when the player picks an item in the open bag (e.g. "Servisná brašna") and right-clicks anywhere outside the bag
+   panel, the panel closes and the item stays selected for use in the scene; a further right click (panel closed)
+   cancels the selection as before. A left click into the scene outside the panel also closes it and resolves normally
+   (a valid target uses the item; an invalid one stays a complete no-op that keeps the selection, no refusal line).
+   A right click inside the panel keeps its behaviour (look at the item). **With an item selected only valid
+   combinations come up:** the hover label appears only over a target where Core says the item rule is executable
+   (any other hotspot, NPC or exit shows no label, the cursor stays the item cursor), Space / two-finger hold shows
+   markers only on those targets, and Tab cycles only them. Without a selection every visible target hovers, gets a
+   marker and a Tab stop as before (owner's example: 6 objects on screen, no selection: all 6; item selected: only
+   the valid combination). Overrides the handoff's AT06 wording "the object name stays" for invalid pairs.
+
+**Status 2026-10-06 (item 6): implemented** (ISSUES INT-09): `InteractionController` (drawer close on a scene press,
+valid-only hover and Tab), `HotspotLabelLayer` (valid-only markers); acceptance m1 `RunSelectionControlChecks`, m2 AT06.
+Screenshots: build/screens/selection/.
 
 **Status 2026-10-05: implemented** (ISSUES INT-08): walk speed x1.25 (Settings: walk speed 100/125/150 %), double click / double tap / double Enter / Shift+Enter skip, hover label at the cursor, painted contextual cursor set (art/ui/cursors, USD 0.12), Space hold-to-show markers (two-finger hold on touch, HUD eye press-and-hold). Screenshots: build/screens/controls/.
 

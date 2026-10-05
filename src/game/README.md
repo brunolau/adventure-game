@@ -137,24 +137,34 @@ table has no entry. `TextService.Ui("ui.area.name", ("placeholder", value))` for
 |---|---|---|---|---|---|
 | left click | Primary | the one logical action (resolver) | advance | buttons | UI |
 | double click / double tap (same target, ≤ `PresentationSettings.DoubleClickSeconds` 0.35 s; floor ≤ 40 px) | Primary ×2 | skip the walk: the hero is put at the destination (`Actor.FinishWalk`), arrival re-resolves through Core and runs once; the second press never submits again and is not passed to a line the first one started | — | — | — |
-| right click | Secondary | look at target; empty floor: inventory; selected item: cancel first | advance | — | — |
-| Space (hold) | ShowMarkers / HideMarkers | while held: a painted round marker on every visible hotspot incl. atmospheric ones and exits (arrow badge), no text; release (or window focus loss) hides them (Core `GameRules.SetHotspots`: show in `world` mode only, hide in any mode; in the open drawer Space does nothing). HUD eye button: press and hold. Touch: two-finger hold | advance | — | — |
-| Tab / Shift+Tab | FocusNext/Previous | cycle targets (NPCs, progress props, atmospheric, exits) | — | GUI focus | GUI focus |
+| right click | Secondary | look at target; empty floor: inventory; selected item: cancel first; open bag with an item picked: a right click outside the panel only closes it and keeps the item (owner item 6, INT-09) | advance | — | — |
+| Space (hold) | ShowMarkers / HideMarkers | while held: a painted round marker on every visible hotspot incl. atmospheric ones and exits (arrow badge), no text; release (or window focus loss) hides them (Core `GameRules.SetHotspots`: show in `world` mode only, hide in any mode; in the open drawer Space does nothing). With a selected item only the targets where it has an executable use get a marker (owner item 6, INT-09). HUD eye button: press and hold. Touch: two-finger hold | advance | — | — |
+| Tab / Shift+Tab | FocusNext/Previous | cycle targets (NPCs, progress props, atmospheric, exits; with a selected item only its valid targets) | — | GUI focus | GUI focus |
 | Enter | Confirm | left click on the focused target; Enter twice quickly = skip the walk | advance | GUI accept | GUI |
 | Shift+Enter | ConfirmSkip | left click on the focused target and skip the walk | advance | — | — |
 | Backspace | Back | right click on the focused target (or empty floor) | — | leave | — |
-| Esc | Cancel | cancel selection, else pause (GameRules.Escape) | skip cutscene / queued lines | leave | close |
+| Esc | Cancel | cancel selection, else pause (GameRules.Escape) | skip this line; a second Esc within 0.5 s skips the rest of the cutscene / all queued lines (PT-F13; that second Esc never opens the pause or closes the returning topic menu) | leave | close |
 | I / J / M / H / T | Inventory / Journal / Map / Hint / Travel | open (T: era chooser at anchor nodes) | — | — | J/M close |
 | F3 / F5 / F9 | DevOverlay / QuickSave / QuickLoad | dev conveniences | | | |
 
-Hover text comes from `Session.Hover(hit)`: the name always, the action sentence only while an item
-is selected and Core says the rule is executable; nothing over empty floor. It is drawn **next to the cursor**
-(`UI/Hud/HoverLabel.cs`, large outlined Alegreya, flips left / up near the edges, hidden over GUI controls); the bottom
-HUD strip no longer shows it. Keyboard focus (Tab) shows the same label at the focused target. The cursor is the painted
+Hover text comes from `Session.Hover(hit)`: without a selected item the name of every target; with a selected item a label
+(name + action sentence) only over a target where Core says the item rule is executable, nothing over any other target
+(owner control change 6, 2026-10-06, ISSUES INT-09); nothing over empty floor. A left click into the scene closes the open bag
+and then resolves normally. It is drawn **next to the cursor**
+(`UI/Hud/HoverLabel.cs`, large outlined Alegreya, flips left / up near the edges, hidden over GUI controls, over the open
+bag's bar and detail card and while any screen is open, `UiRoot.ScreenCovers`, PT-S23); the bottom HUD strip no longer
+shows it. Keyboard focus (Tab) shows the same label at the focused target. The cursor is the painted
 contextual set (`UI/Hud/CursorSet.cs`, `CursorLayer.cs`): pointer (floor), hand (action), speech (dialogue), magnifier
 (look-only), exit arrow by side, the selected item's icon, hourglass while lines / cutscenes / transitions play; hardware
 cursors sized to the window (64/96/128 px), system cursor as fallback. An invalid item click resolves to `None`: no walk,
-no text, the selection stays. Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
+no text, the selection stays; a successful item use clears it (Core `CommitAction`, PT-F09 / PT-S16). After a topic's
+lines the same conversation's topic menu opens again until "Ukončiť rozhovor" / Esc or until no topic is left
+(`DialoguePresenter` + Core `Dialogue.ReturnToMenu`, PT-S17). Notices (`UI/Hud/ToastLayer.cs`) are queued while lines
+play and while any screen is open (bag, puzzle, journal, map, pause, menus, hints, ending), at most three at once; beside
+an open topic menu only in a slot that does not touch it (PT-S22, M5-05). Screens show their own confirmations in the
+title row (`ModalScreen.ShowStatus`, e.g. "Uložené"). The main menu shows the game version from project.godot
+`application/config/version` (0.1.0; the export presets leave their version fields empty and take the same number;
+game.json `version` is the internal content data version, M5-03). Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
 two-finger hold = Space held, double tap = double click; the GUI gets emulated taps first, gestures fire on release in the world.
 
 ## Room build, movement, perspective
@@ -177,10 +187,31 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 - NPC labels (Space, Tab focus) sit 18 px above the drawn figure (`Room.PlaceNpcLabels`, `Actor.HeadPosition`), not at
   the template `label_anchor`; an art_overrides `label_anchor` still wins (ISSUES INT-07).
 - NPC sprite variants can switch after an action: `data/ambient/actors.json` `variants_after` (Jana after Q9C, ART-AGE-04).
+- Hero clothing per room: `data/ambient/actors.json` `hero_mask2020_rooms` (2020 face mask) and `hero_coat1982_rooms`
+  (December 1982 winter coat in the exteriors S57, S58, S61, S62, S64, S66 and S65; ISSUES PT-S20), resolved by
+  `ActorStaging.HeroVariant`; the variant sheets (`assets/actors/ADAM/*_mask2020`, `*_coat1982`) share the default
+  sheets' timing and geometry rules.
 - State patches (`art_overrides.json` `rooms.<id>.state_patches`: texture, top-left `pos`, `after` /
   `until` action ids) are drawn above the background in `prop_state_variants`, immediately, for props
   the hero changed himself (S01 bag taken, S05 groceries on the tray, S05 shed unlocked; ISSUES ART-VAR-01).
 - Hero spawn: the interaction point of the exit leading back to the previous room, else `spawn`.
+- Props the hero uses: the natural blocking puts the use point beside the object (not in front of it), so it stays
+  visible while he reaches sideways (PT-S06, M5-04, staging pass 2026-10-05); a child NPC may get a wider
+  `approach_gap` (S60 Jana, PT-S24).
+- Speakers who are not in the room (`actions[].staging.rule`, ISSUES PT-S18; `World/GuestStage.cs`): **guests**
+  (blocking `guests.<action>`: character, `enter` point at the nearest exit, `stand` point, staging `variant`,
+  `facing`, `delay`) walk in with the action's first line, their own lines wait until they stand (at most 6 s, a
+  click hurries them), and they walk out and are removed when the action's lines end (S40 I17 Mira 60; S61 E08
+  Tóno 82 + Oto 82). They are temporary actors (`Room.Guests`, hotspot id `guest:<ID>`), never Core NPCs; a character
+  who stands in the room as an NPC is never moved or doubled. **Remote speakers** (`data/staging/remote_speakers.json`:
+  phone, recording, radio = service channel, device) get a `SpeakerIndicator` badge beside the hero or above the
+  action's target instead of a body; the subtitle name tag sits above it. Walk cycles of the guests: three-quarter
+  `walk_right` sheets in their actor.json (`art/tools/guest_walks.py`); TONO82 has a `guest_standing` variant.
+- Time node (PT-F10, DECISIONS "The painted S11 clock is the time node"): blocking `time_node` (own `rect`, or
+  `hotspot` = a game.json hotspot whose plain left click Core resolves as a look) in S10, S11, S31, S51, S57; while
+  Core lists portal targets in the room, a click walks there and opens the same era chooser as the HUD clock (T);
+  hover label `ui.travel.time_node`, hand cursor, a Space marker for the own-rect clocks. Right click still looks;
+  item uses on a bound hotspot (D04, C05) still work.
 - Transitions: exits fade out → `Navigation.Travel` → build → era card on era change → fade in.
   Special transitions, portals and fast travel follow Core's room change; the old room stays visible
   while the action's own lines/cutscene play, the new room appears before its first-entry lines.

@@ -168,8 +168,12 @@ public partial class DebugHarness
         bool outlineRule = outlines.All(t => t.ValidForSelectedItem == (ItemLabel(t.ToHit()).Length > 0));
         bool deckOutlined = outlines.Any(t => t.Id == "S16.deck" && t.ValidForSelectedItem);
         string wrongLabel = outlines.Where(t => t.Id != "S16.deck").Select(t => ItemLabel(t.ToHit())).FirstOrDefault(l => l.Length > 0) ?? "";
-        Check("AT06_labels_with_item_only_valid_targets_outlined", labelsOn && outlineRule && deckOutlined && wrongLabel.Length == 0,
-              $"labels={labelsOn} rule={outlineRule} deck_outlined={deckOutlined} wrong_label='{wrongLabel}'");
+        // Owner control change 6 (2026-10-06, ISSUES INT-09): with an item selected only valid targets get a Space marker.
+        var markedWithItem = CurrentRoom.Labels.MarkedIds.OrderBy(x => x, StringComparer.Ordinal).ToList();
+        var validIds = outlines.Where(t => t.ValidForSelectedItem).Select(t => t.Id).OrderBy(x => x, StringComparer.Ordinal).ToList();
+        bool onlyValidMarked = markedWithItem.SequenceEqual(validIds) && markedWithItem.Contains("S16.deck");
+        Check("AT06_labels_with_item_only_valid_targets_outlined", labelsOn && outlineRule && deckOutlined && wrongLabel.Length == 0 && onlyValidMarked,
+              $"labels={labelsOn} rule={outlineRule} deck_outlined={deckOutlined} wrong_label='{wrongLabel}' marked=[{string.Join(",", markedWithItem)}] of {outlines.Count}");
         await KeyEdge(Godot.Key.Space, false);
         await ClickTarget("S16.deck");
         await WaitUntil(() => game.State.IsDone("B06"), 20);
