@@ -40,6 +40,42 @@
       ],
       "frames": 36,
       "columns": 12
+    },
+    "npc_snow": {
+      "file": "npc_sheet_snow.webp",
+      "json": "npc_sheet_snow.json",
+      "size": [
+        1210,
+        352
+      ],
+      "cell": [
+        242,
+        352
+      ],
+      "pivot": [
+        121,
+        348
+      ],
+      "frames": 5,
+      "columns": 5
+    },
+    "idle_snow": {
+      "file": "idle_sheet_snow.webp",
+      "json": "idle_sheet_snow.json",
+      "size": [
+        3048,
+        1068
+      ],
+      "cell": [
+        254,
+        356
+      ],
+      "pivot": [
+        127,
+        352
+      ],
+      "frames": 36,
+      "columns": 12
     }
   },
   "animations": {
@@ -87,6 +123,58 @@
       "hold_ms": 1200,
       "oneshot": true,
       "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "variants": {
+    "snow": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_snow",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_snow",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_snow",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_snow",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_snow",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "winter S41 (Jasna 2035 is winter, owner 2026-10-06): the same robot with a little fresh snow on its lid; sheets *_snow.webp made locally from the default sheets (same cells, pivots and timing)"
     }
   },
   "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",

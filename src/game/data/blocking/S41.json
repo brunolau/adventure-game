@@ -1,59 +1,234 @@
 {
   "version": 1,
   "room": "S41",
-  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
-  "note": "Owner feedback 2026-10-05: the Jasna arrival screen is the view in front of Hotel Posta near the gondola valley station at Biela Put. Camera ~1.7 m high on the paved plaza in front of the station, looking along the access road to the steep-gabled wooden chalet (Hotel Posta, middle distance); horizon y ~420; the plaza's back edge (benches, signpost, turnstiles) stands on y ~700-712 (~140 px per metre there), the station facade on y ~600, the pylon foot on y ~545. Perspective s(y) = (y - 420) / 595. Wooden bridge railing over the stream along the left side of the road, the gondola line passes over a steel pylon right of centre and over the camera, the station with its glass entrance and turnstiles on the right, a rocky spruce slope behind it.",
+  "status": "natural re-blocking, WINTER repaint from the owner's friend's photos (owner 2026-10-06: the summer S41 was rejected; Jasna 2035 is winter)",
+  "note": "THE REAL VIEW of the owner's reference photos (art/source/owner_refs/imgur_TXI6i3E.jpg, a friend's private archive, used with permission, not redistributed): standing on the access road to Hotel Posta at Biela Put, looking along it. The photo maps to the frame as game = (photo - (244, 124)) * 1.15. Camera ~2.8 m above the road (the photographer's height, measured from the people in the photo), horizon y ~347; perspective s(y) = (y - 347) / 839, i.e. ~99 px per metre at the road's far walkable end (y 612) and ~240 px per metre at the bottom. Left: the snowy verge with two benches, the stream with boulders and the arched wooden footbridge with its X-lattice railing; middle distance: the steep-gabled wooden chalet of Hotel Posta at the end of the road; right: the stone-clad retaining wall along the road with a gap and three granite steps up to the groomed snow field (piste run-out), the ticket gate in the gap mouth, the signpost on the wall top, the white bullwheel housing and low hall of the gondola station behind the fence, the steel tube pylon at the right edge and the two ropes with cabins, the rocky slope under snow. Walkable: the ploughed asphalt only (snow banks on both sides stay outside).",
   "background": "bg_natural/S41.webp",
-  "walk_polygon": [[0, 1015], [0, 735], [190, 722], [600, 708], [610, 664], [745, 664], [790, 704], [955, 706], [972, 728], [1435, 730], [1450, 720], [1600, 724], [1920, 742], [1920, 1015]],
-  "walk_band": [664, 1015],
-  "actor_scale": [0.41, 1.0],
-  "spawn": [760, 880],
+  "walk_polygon": [
+    [
+      93,
+      1015
+    ],
+    [
+      138,
+      962
+    ],
+    [
+      203,
+      912
+    ],
+    [
+      268,
+      860
+    ],
+    [
+      338,
+      806
+    ],
+    [
+      408,
+      752
+    ],
+    [
+      476,
+      700
+    ],
+    [
+      526,
+      660
+    ],
+    [
+      565,
+      624
+    ],
+    [
+      800,
+      614
+    ],
+    [
+      1040,
+      616
+    ],
+    [
+      1080,
+      690
+    ],
+    [
+      1100,
+      705
+    ],
+    [
+      1135,
+      750
+    ],
+    [
+      1160,
+      800
+    ],
+    [
+      1165,
+      850
+    ],
+    [
+      1250,
+      1015
+    ]
+  ],
+  "walk_band": [
+    612,
+    1015
+  ],
+  "actor_scale": [
+    0.32,
+    0.8
+  ],
+  "spawn": [
+    820,
+    900
+  ],
   "hotspots": {
     "S41.ambient 1": {
-      "rect": [190, 585, 400, 118],
-      "interaction_point": [390, 780],
-      "label_anchor": [390, 575],
-      "reason": "two wooden park benches on the plaza's back edge in front of the bridge railing (seat backs y ~585, feet y ~700)"
+      "rect": [
+        30,
+        600,
+        360,
+        165
+      ],
+      "interaction_point": [
+        410,
+        790
+      ],
+      "label_anchor": [
+        210,
+        590
+      ],
+      "reason": "two snow-capped wooden benches on the cleared left verge between the road and the stream, facing the road (far bench feet y ~690, near bench feet y ~760)"
     },
     "S41.ambient 2": {
-      "rect": [840, 330, 130, 155],
-      "interaction_point": [905, 775],
-      "label_anchor": [905, 320],
-      "reason": "the three arrow boards of the direction signpost (Biela Put / Priehyba / Chopok) on its tall post, post foot y ~705"
+      "rect": [
+        1096,
+        278,
+        180,
+        112
+      ],
+      "interaction_point": [
+        1070,
+        700
+      ],
+      "label_anchor": [
+        1186,
+        428
+      ],
+      "reason": "the three arrow boards (PRIEHYBA / BIELA PUT / CHOPOK) of the direction signpost standing on the wall top at the far edge of the steps' gap (post foot y ~574); label below the boards so it does not collide with the station exit label"
     },
     "S41.gate": {
-      "rect": [1160, 545, 155, 165],
-      "interaction_point": [1238, 778],
-      "label_anchor": [1238, 535],
-      "reason": "the turnstile ticket gates with the card reader pillar at the front of the station forecourt (top y ~550, feet y ~710)"
+      "rect": [
+        1098,
+        540,
+        125,
+        255
+      ],
+      "interaction_point": [
+        1060,
+        750
+      ],
+      "label_anchor": [
+        1160,
+        530
+      ],
+      "reason": "the ticket gate in the mouth of the wall gap: the card reader pillar on the road side (feet y ~718) and the stainless turnstile with glass wings across the gap (feet y 728-790), the start of the walkway to the station. The hero stands left of it on the road and reaches right, so the reader stays visible (staging rule M5-04 / PT-S06)"
     },
     "S41.ROBOT": {
-      "rect": [960, 588, 160, 235],
-      "interaction_point": [1040, 860],
-      "reason": "the delivery robot waits on the plaza pavement between the signpost and the turnstiles"
+      "rect": [
+        540,
+        586,
+        122,
+        175
+      ],
+      "interaction_point": [
+        720,
+        790
+      ],
+      "reason": "the delivery robot waits at the left edge of the ploughed road between the benches and the exhibition stand (sprite box at its feet scale)"
     }
   },
   "npcs": {
     "S41.ROBOT": {
-      "variant": "standing",
-      "feet": [1040, 822],
+      "variant": "snow",
+      "feet": [
+        600,
+        760
+      ],
       "z": "auto",
-      "reason": "art brief: Ocko waits on the pavement (robot sprite at its real size, perspective scale)"
+      "reason": "art brief: Ocko waits on the pavement; robot sprite at its real size, perspective scale; winter: actor.json variant \"snow\" (a little fresh snow on its lid)"
     }
   },
   "exits": {
     "S41.to_S42": {
-      "rect": [600, 560, 160, 104],
-      "interaction_point": [675, 690],
-      "label_anchor": [675, 548],
-      "reason": "the access road leaves the plaza between the bridge railing and the signpost towards the hotels (Hotel Grand Jasna)"
+      "rect": [
+        780,
+        352,
+        230,
+        150
+      ],
+      "interaction_point": [
+        800,
+        630
+      ],
+      "label_anchor": [
+        895,
+        342
+      ],
+      "reason": "the access road continues past Hotel Posta towards Hotel Grand Jasna (S42): the far end of the road; the hero walks to the far end of the ploughed road"
     },
     "S41.to_S67": {
-      "rect": [1390, 365, 165, 235],
-      "interaction_point": [1470, 772],
-      "label_anchor": [1470, 355],
-      "reason": "the glass entrance of the gondola valley station behind the turnstiles (cable ride to Priehyba after J02)"
+      "rect": [
+        1252,
+        262,
+        260,
+        120
+      ],
+      "interaction_point": [
+        1120,
+        745
+      ],
+      "label_anchor": [
+        1382,
+        252
+      ],
+      "reason": "the gondola valley station (bullwheel housing and boarding hall) behind the fence; the way in is through the ticket gate and up the steps in the wall gap, so the hero walks to the gate mouth (cable ride to Priehyba after J02)"
     }
   },
-  "state_patches": []
+  "time_node": {
+    "rect": [
+      438,
+      430,
+      84,
+      216
+    ],
+    "interaction_point": [
+      560,
+      662
+    ],
+    "reason": "the fictional Atlas exhibition stand of 2035 (art brief: the time node is a fictional exhibition stand, not resort equipment): a slim light-wood pillar with a round clock face on the verge at the bridge head. Like the painted clocks of S11/S57: while Core lists portal targets here a click walks to it and opens the era chooser (HUD clock button / T stays)"
+  },
+  "state_patches": [],
+  "audio": {
+    "ambience": [
+      {
+        "sound": "cable_car_hum",
+        "db": -4
+      },
+      {
+        "sound": "tourists",
+        "db": -10
+      },
+      {
+        "sound": "wind_mountain",
+        "db": -12
+      }
+    ],
+    "ambience_mode": "replace",
+    "reason": "winter (owner 2026-10-06: Jasna is winter): the summer bed leaves_wind (rustling leaves) of game.json rooms[].ambience is replaced by the mountain wind; gondola hum and tourists stay"
+  }
 }

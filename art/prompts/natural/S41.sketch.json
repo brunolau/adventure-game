@@ -1,6 +1,6 @@
 {
- "note": "S41 natural blocking (src/game/data/blocking/S41.json): plaza in front of the gondola valley station by Hotel Posta, Biela Put. Camera ~1.7 m, horizon y ~420, plaza back edge y ~700-712, station facade on y ~600, pylon foot y ~545.",
- "background": "#9cc8ec",
+ "background": "#a9cbe9",
+ "note": "S41 winter (owner photos 2026-10-06): blocking traced from the friend's photo of the access road at Biela Put (aligned: game = (photo - (244, 124)) * 1.15); horizon y ~347, camera ~2.8 m. Flat colour blocks only.",
  "shapes": [
   {
    "type": "rect",
@@ -8,228 +8,288 @@
     0,
     0,
     1920,
-    440
-   ],
-   "fill": "#a3cdee",
-   "note": "sky"
-  },
-  {
-   "type": "ellipse",
-   "box": [
-    160,
-    60,
-    420,
-    120
-   ],
-   "fill": "#f2f5f8",
-   "note": "cumulus cloud"
-  },
-  {
-   "type": "ellipse",
-   "box": [
-    700,
-    30,
-    360,
     110
    ],
-   "fill": "#eef2f6",
-   "note": "cumulus cloud"
+   "fill": "#7fb1e2",
+   "note": "deep clear winter sky"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    110,
+    1920,
+    90
+   ],
+   "fill": "#9cc3ea"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    200,
+    1920,
+    140
+   ],
+   "fill": "#bfd8ef",
+   "note": "pale sky near the horizon"
   },
   {
    "type": "poly",
    "points": [
     [
-     0,
-     360
+     470,
+     302
     ],
     [
-     180,
-     300
+     530,
+     264
     ],
     [
-     380,
-     250
+     575,
+     249
     ],
     [
-     560,
-     270
+     622,
+     257
     ],
     [
-     760,
-     215
-    ],
-    [
-     980,
-     250
-    ],
-    [
-     1160,
-     230
-    ],
-    [
-     1320,
+     662,
      280
     ],
     [
-     1500,
-     300
-    ],
-    [
-     1920,
-     330
-    ],
-    [
-     1920,
-     520
-    ],
-    [
-     0,
-     520
+     705,
+     302
     ]
    ],
-   "fill": "#6f8f84",
-   "note": "green-grey ridge of the Low Tatras in the distance"
+   "fill": "#e9eff6",
+   "note": "distant snowy summit"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     575,
+     249
+    ],
+    [
+     598,
+     276
+    ],
+    [
+     584,
+     302
+    ],
+    [
+     662,
+     302
+    ],
+    [
+     622,
+     257
+    ]
+   ],
+   "fill": "#b3c3d8"
   },
   {
    "type": "poly",
    "points": [
     [
      0,
-     430
-    ],
-    [
-     60,
-     380
-    ],
-    [
-     110,
-     420
-    ],
-    [
-     170,
-     360
-    ],
-    [
-     230,
-     410
-    ],
-    [
-     300,
-     350
-    ],
-    [
-     360,
-     400
-    ],
-    [
-     430,
-     340
-    ],
-    [
-     500,
-     400
-    ],
-    [
-     560,
-     370
-    ],
-    [
-     620,
-     410
-    ],
-    [
-     980,
-     400
-    ],
-    [
-     1040,
-     360
-    ],
-    [
-     1100,
-     410
-    ],
-    [
-     1160,
-     380
-    ],
-    [
-     1220,
-     420
-    ],
-    [
-     1920,
-     420
-    ],
-    [
-     1920,
-     600
-    ],
-    [
-     0,
-     600
-    ]
-   ],
-   "fill": "#2f5a3e",
-   "note": "dark spruce forest behind the buildings"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     1620,
-     600
-    ],
-    [
-     1640,
      300
     ],
     [
-     1700,
-     210
-    ],
-    [
-     1780,
-     170
-    ],
-    [
-     1920,
+     0,
      140
     ],
     [
-     1920,
-     640
+     25,
+     108
+    ],
+    [
+     50,
+     130
+    ],
+    [
+     78,
+     98
+    ],
+    [
+     105,
+     132
+    ],
+    [
+     135,
+     112
+    ],
+    [
+     165,
+     140
+    ],
+    [
+     200,
+     128
+    ],
+    [
+     235,
+     152
+    ],
+    [
+     265,
+     150
+    ],
+    [
+     300,
+     178
+    ],
+    [
+     345,
+     190
+    ],
+    [
+     390,
+     204
+    ],
+    [
+     430,
+     218
+    ],
+    [
+     470,
+     228
+    ],
+    [
+     510,
+     238
+    ],
+    [
+     560,
+     252
+    ],
+    [
+     600,
+     300
     ]
    ],
-   "fill": "#a39a88",
-   "note": "rocky slope with grey limestone boulders on the right"
+   "fill": "#2e4a40",
+   "note": "left forested hillside, dark spruces with snow on the branches"
   },
   {
    "type": "poly",
    "points": [
     [
+     990,
+     335
+    ],
+    [
+     995,
+     252
+    ],
+    [
+     1035,
+     240
+    ],
+    [
+     1080,
+     226
+    ],
+    [
+     1125,
+     232
+    ],
+    [
+     1180,
+     214
+    ],
+    [
+     1240,
+     224
+    ],
+    [
+     1300,
+     212
+    ],
+    [
+     1360,
+     220
+    ],
+    [
+     1420,
+     204
+    ],
+    [
+     1500,
+     198
+    ],
+    [
+     1560,
+     188
+    ],
+    [
+     1620,
+     184
+    ],
+    [
+     1690,
+     172
+    ],
+    [
+     1720,
+     335
+    ]
+   ],
+   "fill": "#2e4a40",
+   "note": "spruce forest behind the station"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1130,
+     214
+    ],
+    [
+     1180,
+     212
+    ],
+    [
+     1262,
+     332
+    ],
+    [
+     1205,
+     336
+    ]
+   ],
+   "fill": "#e8eef5",
+   "note": "groomed ski piste cut through the forest, coming down to the station"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1380,
+     334
+    ],
+    [
+     1440,
+     292
+    ],
+    [
+     1520,
+     262
+    ],
+    [
+     1600,
+     236
+    ],
+    [
      1700,
-     210
-    ],
-    [
-     1730,
-     120
-    ],
-    [
-     1760,
-     200
+     206
     ],
     [
      1800,
-     90
-    ],
-    [
-     1840,
-     180
-    ],
-    [
-     1880,
-     70
+     182
     ],
     [
      1920,
@@ -237,822 +297,2969 @@
     ],
     [
      1920,
-     230
-    ],
-    [
-     1700,
-     240
-    ]
-   ],
-   "fill": "#2c5238",
-   "note": "spruces on top of the rocky slope"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    520,
-    1920,
-    240
-   ],
-   "fill": "#80aa58",
-   "note": "grass verges"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    440,
-    250,
-    100
-   ],
-   "fill": "#e5e6e1",
-   "note": "low modern white building far left"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    470,
-    250,
-    40
-   ],
-   "fill": "#7fa0b6",
-   "note": "its ribbon of glazing"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     470,
-     520
-    ],
-    [
-     470,
-     360
-    ],
-    [
-     580,
-     250
-    ],
-    [
-     690,
-     360
-    ],
-    [
-     690,
-     520
-    ]
-   ],
-   "fill": "#c8a478",
-   "note": "Hotel Posta: left steep gable of the wooden chalet"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     660,
-     520
-    ],
-    [
-     660,
-     330
-    ],
-    [
-     800,
-     210
-    ],
-    [
-     940,
-     330
-    ],
-    [
-     940,
-     520
-    ]
-   ],
-   "fill": "#cfab7d",
-   "note": "right, bigger steep gable"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     455,
-     370
-    ],
-    [
-     580,
-     240
-    ],
-    [
-     705,
-     370
-    ],
-    [
-     690,
-     375
-    ],
-    [
-     580,
-     262
-    ],
-    [
-     470,
-     375
-    ]
-   ],
-   "fill": "#5f6872",
-   "note": "grey roof edge, left gable"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     640,
-     340
-    ],
-    [
-     800,
-     196
-    ],
-    [
-     960,
-     340
-    ],
-    [
-     940,
      345
     ],
     [
-     800,
-     220
-    ],
-    [
-     660,
+     1380,
      345
     ]
    ],
-   "fill": "#5f6872",
-   "note": "grey roof edge, right gable"
+   "fill": "#e4eaf1",
+   "note": "steep rocky slope under snow, grey boulders showing"
   },
   {
-   "type": "rect",
+   "type": "ellipse",
    "box": [
-    480,
-    420,
-    450,
-    18
+    1490,
+    286,
+    34,
+    15
    ],
-   "fill": "#6b4429",
-   "note": "dark timber balcony"
+   "fill": "#8f969e"
   },
   {
-   "type": "rect",
+   "type": "ellipse",
    "box": [
-    480,
-    470,
-    450,
-    18
+    1560,
+    268,
+    26,
+    12
    ],
-   "fill": "#6b4429",
-   "note": "dark timber balcony"
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1636,
+    248,
+    36,
+    15
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1700,
+    282,
+    30,
+    13
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1772,
+    230,
+    38,
+    17
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1846,
+    258,
+    32,
+    15
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1880,
+    196,
+    28,
+    13
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1606,
+    304,
+    24,
+    10
+   ],
+   "fill": "#8f969e"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1520,
+    316,
+    30,
+    11
+   ],
+   "fill": "#8f969e"
   },
   {
    "type": "poly",
    "points": [
     [
-     600,
-     708
+     1846,
+     205
     ],
     [
-     610,
-     664
+     1876,
+     104
     ],
     [
-     680,
-     520
+     1906,
+     205
+    ]
+   ],
+   "fill": "#2e4a40",
+   "note": "spruce on the slope top"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1890,
+     190
     ],
     [
-     720,
-     520
+     1912,
+     118
     ],
     [
-     745,
-     664
+     1920,
+     190
+    ]
+   ],
+   "fill": "#2e4a40"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    290,
+    442,
+    18
+   ],
+   "fill": "#f2f6fa",
+   "note": "snow on the flat roof"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    308,
+    442,
+    108
+   ],
+   "fill": "#d3d8de",
+   "note": "low white modern building"
+  },
+  {
+   "type": "rect",
+   "box": [
+    110,
+    330,
+    262,
+    78
+   ],
+   "fill": "#5d7a93",
+   "note": "glass ribbon"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    296,
+    110,
+    14
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    310,
+    110,
+    42
+   ],
+   "fill": "#c6a888"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     112,
+     382
+    ],
+    [
+     170,
+     344
+    ],
+    [
+     238,
+     382
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "snowy roof of the small wooden hut"
+  },
+  {
+   "type": "rect",
+   "box": [
+    124,
+    382,
+    102,
+    58
+   ],
+   "fill": "#6c4b31",
+   "note": "small wooden hut"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     330,
+     472
+    ],
+    [
+     372,
+     336
+    ],
+    [
+     418,
+     300
+    ],
+    [
+     466,
+     318
+    ],
+    [
+     518,
+     380
+    ],
+    [
+     562,
+     472
+    ]
+   ],
+   "fill": "#4b6a5c",
+   "note": "young snow-laden spruces and shrubs"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     372,
+     336
+    ],
+    [
+     418,
+     300
+    ],
+    [
+     466,
+     318
+    ],
+    [
+     490,
+     350
+    ],
+    [
+     440,
+     330
+    ],
+    [
+     400,
+     345
+    ]
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     560,
+     432
+    ],
+    [
+     560,
+     362
+    ],
+    [
+     622,
+     346
+    ],
+    [
+     702,
+     350
+    ],
+    [
+     762,
+     364
     ],
     [
      790,
-     704
+     432
     ]
    ],
-   "fill": "#8e9093",
-   "note": "asphalt access road running away to the chalet"
+   "fill": "#e6ecf3",
+   "note": "snow-covered hedge in front of the hotel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     606,
+     308
+    ],
+    [
+     644,
+     256
+    ],
+    [
+     782,
+     251
+    ],
+    [
+     798,
+     306
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "snow on the left wing roof"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     606,
+     309
+    ],
+    [
+     798,
+     307
+    ]
+   ],
+   "color": "#4f3d2e",
+   "width": 5
   },
   {
    "type": "rect",
    "box": [
-    1300,
-    230,
-    500,
-    370
+    614,
+    310,
+    182,
+    54
    ],
-   "fill": "#3c4249",
-   "note": "gondola valley station: dark grey metal and glass"
+   "fill": "#e5d4b0",
+   "note": "left wing: cream walls, timber"
   },
   {
    "type": "rect",
    "box": [
-    1300,
-    300,
-    500,
-    34
+    624,
+    323,
+    166,
+    24
    ],
-   "fill": "#c6332d",
-   "note": "red band along the station facade"
+   "fill": "#4a3a2e",
+   "note": "window row"
   },
   {
    "type": "rect",
    "box": [
-    1290,
-    200,
-    420,
-    40
+    656,
+    244,
+    9,
+    16
    ],
-   "fill": "#2e3339",
-   "note": "flat roof edge of the bullwheel hall"
+   "fill": "#8a7c6e",
+   "note": "chimney"
   },
   {
    "type": "rect",
    "box": [
-    1390,
-    365,
-    165,
-    235
+    654,
+    240,
+    13,
+    6
    ],
-   "fill": "#7e9db3",
-   "note": "glass entrance doors under a canopy"
+   "fill": "#f2f6fa"
   },
   {
    "type": "rect",
    "box": [
-    1370,
-    345,
-    205,
-    22
+    676,
+    244,
+    9,
+    16
    ],
-   "fill": "#2b2f35",
+   "fill": "#8a7c6e",
+   "note": "chimney"
+  },
+  {
+   "type": "rect",
+   "box": [
+    674,
+    240,
+    13,
+    6
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    728,
+    244,
+    9,
+    16
+   ],
+   "fill": "#8a7c6e",
+   "note": "chimney"
+  },
+  {
+   "type": "rect",
+   "box": [
+    726,
+    240,
+    13,
+    6
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     770,
+     262
+    ],
+    [
+     912,
+     202
+    ],
+    [
+     1008,
+     298
+    ],
+    [
+     986,
+     306
+    ],
+    [
+     912,
+     226
+    ],
+    [
+     834,
+     302
+    ],
+    [
+     800,
+     302
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "main chalet: very steep snowy gable roof"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     834,
+     302
+    ],
+    [
+     912,
+     226
+    ],
+    [
+     986,
+     306
+    ]
+   ],
+   "fill": "#c6925a",
+   "note": "timber gable front"
+  },
+  {
+   "type": "rect",
+   "box": [
+    862,
+    262,
+    98,
+    9
+   ],
+   "fill": "#5a3b26",
+   "note": "timber balcony"
+  },
+  {
+   "type": "rect",
+   "box": [
+    850,
+    284,
+    124,
+    10
+   ],
+   "fill": "#5a3b26",
+   "note": "timber balcony"
+  },
+  {
+   "type": "rect",
+   "box": [
+    834,
+    302,
+    156,
+    62
+   ],
+   "fill": "#b5844d",
+   "note": "ground floor"
+  },
+  {
+   "type": "rect",
+   "box": [
+    846,
+    318,
+    82,
+    11
+   ],
+   "fill": "#5a3b26",
    "note": "entrance canopy"
   },
   {
    "type": "rect",
    "box": [
-    1600,
-    380,
-    170,
-    180
+    852,
+    330,
+    70,
+    34
    ],
-   "fill": "#56708a",
-   "note": "large glazing of the boarding hall"
+   "fill": "#3c3a39",
+   "note": "glazed entrance"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     962,
+     294
+    ],
+    [
+     1012,
+     268
+    ],
+    [
+     1074,
+     318
+    ],
+    [
+     1060,
+     324
+    ],
+    [
+     1012,
+     288
+    ],
+    [
+     976,
+     302
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "right wing roof"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     976,
+     302
+    ],
+    [
+     1012,
+     288
+    ],
+    [
+     1060,
+     324
+    ],
+    [
+     1060,
+     364
+    ],
+    [
+     976,
+     364
+    ]
+   ],
+   "fill": "#c6925a",
+   "note": "right wing gable"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     796,
+     364
+    ],
+    [
+     820,
+     192
+    ],
+    [
+     846,
+     364
+    ]
+   ],
+   "fill": "#2b4538",
+   "note": "tall spruce in front of the hotel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1062,
+     332
+    ],
+    [
+     1083,
+     214
+    ],
+    [
+     1104,
+     332
+    ]
+   ],
+   "fill": "#2b4538",
+   "note": "tall spruce"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     740,
+     396
+    ],
+    [
+     772,
+     368
+    ],
+    [
+     982,
+     366
+    ],
+    [
+     962,
+     394
+    ]
+   ],
+   "fill": "#8b9199",
+   "note": "ploughed forecourt in front of the hotel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     1080
+    ],
+    [
+     0,
+     925
+    ],
+    [
+     200,
+     805
+    ],
+    [
+     380,
+     695
+    ],
+    [
+     500,
+     615
+    ],
+    [
+     560,
+     550
+    ],
+    [
+     650,
+     470
+    ],
+    [
+     745,
+     398
+    ],
+    [
+     962,
+     394
+    ],
+    [
+     958,
+     402
+    ],
+    [
+     975,
+     450
+    ],
+    [
+     1010,
+     510
+    ],
+    [
+     1050,
+     570
+    ],
+    [
+     1095,
+     650
+    ],
+    [
+     1130,
+     700
+    ],
+    [
+     1170,
+     750
+    ],
+    [
+     1205,
+     800
+    ],
+    [
+     1270,
+     900
+    ],
+    [
+     1340,
+     1000
+    ],
+    [
+     1396,
+     1080
+    ]
+   ],
+   "fill": "#767d85",
+   "note": "ploughed asphalt access road, walkable"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     925
+    ],
+    [
+     200,
+     805
+    ],
+    [
+     380,
+     695
+    ],
+    [
+     500,
+     615
+    ],
+    [
+     560,
+     550
+    ],
+    [
+     650,
+     470
+    ],
+    [
+     745,
+     398
+    ],
+    [
+     732,
+     396
+    ],
+    [
+     600,
+     456
+    ],
+    [
+     570,
+     470
+    ],
+    [
+     480,
+     528
+    ],
+    [
+     420,
+     556
+    ],
+    [
+     300,
+     618
+    ],
+    [
+     200,
+     646
+    ],
+    [
+     100,
+     686
+    ],
+    [
+     0,
+     716
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "left verge: ploughed snow bank"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     0,
+     925
+    ],
+    [
+     200,
+     805
+    ],
+    [
+     380,
+     695
+    ],
+    [
+     500,
+     615
+    ],
+    [
+     560,
+     550
+    ],
+    [
+     650,
+     470
+    ],
+    [
+     745,
+     398
+    ]
+   ],
+   "color": "#c9d6e4",
+   "width": 7,
+   "note": "toe of the snow bank"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     716
+    ],
+    [
+     100,
+     686
+    ],
+    [
+     200,
+     646
+    ],
+    [
+     282,
+     622
+    ],
+    [
+     262,
+     640
+    ],
+    [
+     150,
+     690
+    ],
+    [
+     40,
+     742
+    ],
+    [
+     0,
+     760
+    ]
+   ],
+   "fill": "#3a5662",
+   "note": "dark mountain stream"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    0,
+    628,
+    80,
+    42
+   ],
+   "fill": "#e8eef5"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    86,
+    604,
+    64,
+    32
+   ],
+   "fill": "#e8eef5"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    0,
+    742,
+    86,
+    44
+   ],
+   "fill": "#e8eef5"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    150,
+    648,
+    52,
+    26
+   ],
+   "fill": "#e8eef5"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    60,
+    676,
+    58,
+    26
+   ],
+   "fill": "#e8eef5"
+  },
+  {
+   "type": "rect",
+   "box": [
+    268,
+    566,
+    142,
+    60
+   ],
+   "fill": "#b5bcc5",
+   "note": "concrete bridge abutment"
+  },
+  {
+   "type": "rect",
+   "box": [
+    268,
+    558,
+    142,
+    10
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     8,
+     470
+    ],
+    [
+     8,
+     586
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 8
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     92,
+     470
+    ],
+    [
+     92,
+     586
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 8
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     176,
+     470
+    ],
+    [
+     176,
+     586
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 8
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     258,
+     470
+    ],
+    [
+     258,
+     586
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 8
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     476
+    ],
+    [
+     330,
+     574
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 8
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     8,
+     476
+    ],
+    [
+     92,
+     584
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     92,
+     470
+    ],
+    [
+     176,
+     582
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     176,
+     466
+    ],
+    [
+     258,
+     580
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     258,
+     468
+    ],
+    [
+     330,
+     574
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     8,
+     584
+    ],
+    [
+     92,
+     470
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     92,
+     582
+    ],
+    [
+     176,
+     466
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     176,
+     580
+    ],
+    [
+     258,
+     468
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     258,
+     578
+    ],
+    [
+     330,
+     472
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     0,
+     486
+    ],
+    [
+     80,
+     471
+    ],
+    [
+     160,
+     463
+    ],
+    [
+     250,
+     463
+    ],
+    [
+     330,
+     473
+    ],
+    [
+     400,
+     489
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 10,
+   "note": "arched top rail of the wooden footbridge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     0,
+     479
+    ],
+    [
+     80,
+     464
+    ],
+    [
+     160,
+     456
+    ],
+    [
+     250,
+     456
+    ],
+    [
+     330,
+     466
+    ],
+    [
+     400,
+     482
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 6,
+   "note": "snow on the rail"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     0,
+     590
+    ],
+    [
+     330,
+     575
+    ]
+   ],
+   "color": "#5d4330",
+   "width": 12,
+   "note": "bridge deck beam"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     490
+    ],
+    [
+     600,
+     447
+    ]
+   ],
+   "color": "#946437",
+   "width": 7,
+   "note": "timber railing along the stream"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     484
+    ],
+    [
+     600,
+     441
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 5
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     546
+    ],
+    [
+     570,
+     520
+    ]
+   ],
+   "color": "#946437",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     490
+    ],
+    [
+     420,
+     540
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     420,
+     476
+    ],
+    [
+     510,
+     530
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     510,
+     462
+    ],
+    [
+     570,
+     520
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     330,
+     546
+    ],
+    [
+     420,
+     476
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     420,
+     540
+    ],
+    [
+     510,
+     462
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     510,
+     530
+    ],
+    [
+     600,
+     447
+    ]
+   ],
+   "color": "#946437",
+   "width": 6
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     962,
+     392
+    ],
+    [
+     1005,
+     430
+    ],
+    [
+     1060,
+     480
+    ],
+    [
+     1130,
+     535
+    ],
+    [
+     1215,
+     600
+    ],
+    [
+     1330,
+     690
+    ],
+    [
+     1510,
+     800
+    ],
+    [
+     1700,
+     920
+    ],
+    [
+     1840,
+     1000
+    ],
+    [
+     1920,
+     1050
+    ],
+    [
+     1920,
+     345
+    ],
+    [
+     1380,
+     345
+    ],
+    [
+     1250,
+     362
+    ],
+    [
+     960,
+     376
+    ]
+   ],
+   "fill": "#f2f6fa",
+   "note": "groomed snow field (piste run-out) above the retaining wall"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1010,
+     408
+    ],
+    [
+     1920,
+     520
+    ]
+   ],
+   "color": "#dfe7f0",
+   "width": 4
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1060,
+     452
+    ],
+    [
+     1920,
+     610
+    ]
+   ],
+   "color": "#dfe7f0",
+   "width": 4
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1130,
+     510
+    ],
+    [
+     1920,
+     720
+    ]
+   ],
+   "color": "#dfe7f0",
+   "width": 4
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1220,
+     580
+    ],
+    [
+     1920,
+     840
+    ]
+   ],
+   "color": "#dfe7f0",
+   "width": 4
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1330,
+     668
+    ],
+    [
+     1920,
+     960
+    ]
+   ],
+   "color": "#dfe7f0",
+   "width": 4
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1240,
+     380
+    ],
+    [
+     1920,
+     450
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 5,
+   "note": "wooden fence, upper rail"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1246,
+     400
+    ],
+    [
+     1920,
+     474
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 5,
+   "note": "lower rail, half in the snow"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1270,
+     377.0882352941176
+    ],
+    [
+     1270,
+     419.0882352941176
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1335,
+     383.77941176470586
+    ],
+    [
+     1335,
+     425.77941176470586
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1405,
+     390.9852941176471
+    ],
+    [
+     1405,
+     432.9852941176471
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1485,
+     399.22058823529414
+    ],
+    [
+     1485,
+     441.22058823529414
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1565,
+     407.45588235294116
+    ],
+    [
+     1565,
+     449.45588235294116
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1655,
+     416.72058823529414
+    ],
+    [
+     1655,
+     458.72058823529414
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1745,
+     425.9852941176471
+    ],
+    [
+     1745,
+     467.9852941176471
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1835,
+     435.25
+    ],
+    [
+     1835,
+     477.25
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1912,
+     443.1764705882353
+    ],
+    [
+     1912,
+     485.1764705882353
+    ]
+   ],
+   "color": "#5a4232",
+   "width": 6
+  },
+  {
+   "type": "rect",
+   "box": [
+    1430,
+    304,
+    330,
+    17
+   ],
+   "fill": "#2c3a4a",
+   "note": "dark glass roof of the station hall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1430,
+    300,
+    330,
+    6
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1430,
+    321,
+    330,
+    4
+   ],
+   "fill": "#e07a2e",
+   "note": "thin orange band"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1430,
+    325,
+    330,
+    70
+   ],
+   "fill": "#edf0f3",
+   "note": "station hall, white walls, no posters"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1255,
+     302
+    ],
+    [
+     1272,
+     280
+    ],
+    [
+     1322,
+     268
+    ],
+    [
+     1420,
+     272
+    ],
+    [
+     1442,
+     300
+    ],
+    [
+     1432,
+     346
+    ],
+    [
+     1260,
+     346
+    ]
+   ],
+   "fill": "#dce1e7",
+   "note": "white-grey bullwheel housing at the station end"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1272,
+     280
+    ],
+    [
+     1322,
+     268
+    ],
+    [
+     1420,
+     272
+    ],
+    [
+     1410,
+     280
+    ],
+    [
+     1322,
+     276
+    ]
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1260,
+    346,
+    172,
+    32
+   ],
+   "fill": "#46505b",
+   "note": "boarding level under the housing"
   },
   {
    "type": "rect",
    "box": [
     1300,
-    600,
-    520,
-    112
+    348,
+    40,
+    30
    ],
-   "fill": "#a8a39a",
-   "note": "station forecourt paving"
+   "fill": "#d9652b",
+   "note": "a parked gondola cabin"
   },
   {
    "type": "poly",
    "points": [
     [
-     1800,
-     722
+     1752,
+     0
     ],
     [
-     1800,
-     330
+     1842,
+     0
     ],
     [
-     1850,
-     250
+     1856,
+     470
     ],
     [
-     1920,
+     1760,
+     470
+    ]
+   ],
+   "fill": "#bac2ca",
+   "note": "steel tube pylon"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1814,
+     0
+    ],
+    [
+     1842,
+     0
+    ],
+    [
+     1856,
+     470
+    ],
+    [
+     1832,
+     470
+    ]
+   ],
+   "fill": "#8c959e"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     20
+    ],
+    [
+     1842,
+     20
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     56
+    ],
+    [
+     1842,
+     56
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     92
+    ],
+    [
+     1842,
+     92
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     128
+    ],
+    [
+     1842,
+     128
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     164
+    ],
+    [
+     1842,
+     164
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
      200
     ],
     [
-     1920,
-     742
+     1842,
+     200
     ]
    ],
-   "fill": "#a19886",
-   "note": "rocky slope with grey limestone boulders and a few young spruces at the right edge, behind a low grey concrete retaining wall"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1800,
-    640,
-    120,
-    90
-   ],
-   "fill": "#c9c7c0",
-   "note": "low grey concrete retaining wall at the foot of the rocky slope"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1088,
-    120,
-    26,
-    430
-   ],
-   "fill": "#8e979f",
-   "note": "steel tube pylon of the gondola line"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1000,
-    100,
-    200,
-    22
-   ],
-   "fill": "#7f878f",
-   "note": "pylon crossarm"
-  },
-  {
-   "type": "rect",
-   "box": [
-    990,
-    122,
-    70,
-    16
-   ],
-   "fill": "#5b6168",
-   "note": "sheave train left"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1140,
-    122,
-    70,
-    16
-   ],
-   "fill": "#5b6168",
-   "note": "sheave train right"
+   "color": "#6f7880",
+   "width": 3
   },
   {
    "type": "line",
    "points": [
     [
-     1300,
-     250
+     1822,
+     236
+    ],
+    [
+     1842,
+     236
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     272
+    ],
+    [
+     1842,
+     272
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     308
+    ],
+    [
+     1842,
+     308
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     344
+    ],
+    [
+     1842,
+     344
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     380
+    ],
+    [
+     1842,
+     380
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     416
+    ],
+    [
+     1842,
+     416
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1822,
+     452
+    ],
+    [
+     1842,
+     452
+    ]
+   ],
+   "color": "#6f7880",
+   "width": 3
+  },
+  {
+   "type": "rect",
+   "box": [
+    1718,
+    462,
+    144,
+    36
+   ],
+   "fill": "#a8afb7",
+   "note": "pylon foundation"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1712,
+    456,
+    156,
+    10
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1495,
+     0
+    ],
+    [
+     1365,
+     236
+    ]
+   ],
+   "color": "#343a42",
+   "width": 4,
+   "note": "gondola rope (uphill)"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1762,
+     0
+    ],
+    [
+     1522,
+     222
+    ]
+   ],
+   "color": "#343a42",
+   "width": 4,
+   "note": "gondola rope (downhill)"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1438,
+     104
+    ],
+    [
+     1440,
+     128
+    ]
+   ],
+   "color": "#343a42",
+   "width": 4
+  },
+  {
+   "type": "rect",
+   "box": [
+    1414,
+    126,
+    54,
+    58
+   ],
+   "fill": "#d9652b",
+   "radius": 12,
+   "note": "gondola cabin hanging on the rope (unbranded)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1418,
+    136,
+    46,
+    22
+   ],
+   "fill": "#3a4d5d"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1655,
+     99
+    ],
+    [
+     1657,
+     128
+    ]
+   ],
+   "color": "#343a42",
+   "width": 4
+  },
+  {
+   "type": "rect",
+   "box": [
+    1626,
+    126,
+    64,
+    70
+   ],
+   "fill": "#d9652b",
+   "radius": 14,
+   "note": "second cabin, closer"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1631,
+    138,
+    54,
+    26
+   ],
+   "fill": "#3a4d5d"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     958,
+     402
+    ],
+    [
+     975,
+     450
+    ],
+    [
+     1010,
+     510
+    ],
+    [
+     1050,
+     570
+    ],
+    [
+     1095,
+     650
+    ],
+    [
+     1130,
+     700
     ],
     [
      1170,
-     124
+     750
     ],
     [
-     1080,
-     0
-    ]
-   ],
-   "color": "#2a2a2a",
-   "width": 3,
-   "note": "haul rope from the station over the pylon and over the camera"
-  },
-  {
-   "type": "line",
-   "points": [
-    [
-     1420,
-     250
+     1205,
+     800
     ],
     [
-     1030,
-     124
+     1270,
+     900
     ],
     [
-     880,
-     0
-    ]
-   ],
-   "color": "#2a2a2a",
-   "width": 3,
-   "note": "second rope"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    600,
-    600,
-    100
-   ],
-   "fill": "#6f8c96",
-   "note": "stream bank and water below the bridge, far left"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    548,
-    600,
-    14
-   ],
-   "fill": "#8a5a34",
-   "note": "wooden bridge railing: top rail"
-  },
-  {
-   "type": "line",
-   "points": [
-    [
-     0,
-     562
+     1340,
+     1000
     ],
     [
-     60,
-     690
-    ],
-    [
-     120,
-     562
-    ],
-    [
-     180,
-     690
-    ],
-    [
-     240,
-     562
-    ],
-    [
-     300,
-     690
-    ],
-    [
-     360,
-     562
-    ],
-    [
-     420,
-     690
-    ],
-    [
-     480,
-     562
-    ],
-    [
-     540,
-     690
-    ],
-    [
-     600,
-     562
-    ]
-   ],
-   "color": "#8a5a34",
-   "width": 10,
-   "note": "X lattice of the railing"
-  },
-  {
-   "type": "rect",
-   "box": [
-    0,
-    690,
-    600,
-    14
-   ],
-   "fill": "#7a4e2e",
-   "note": "railing bottom rail"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     0,
+     1396,
      1080
     ],
     [
-     0,
-     735
+     1920,
+     1080
     ],
     [
-     190,
-     722
+     1920,
+     1050
     ],
     [
-     600,
-     708
+     1840,
+     1000
     ],
     [
-     610,
-     664
+     1700,
+     920
     ],
     [
-     745,
-     664
-    ],
-    [
-     790,
-     704
-    ],
-    [
-     1150,
-     708
+     1510,
+     800
     ],
     [
      1330,
-     716
+     690
     ],
     [
-     1600,
-     722
+     1215,
+     600
     ],
     [
-     1920,
-     742
+     1130,
+     535
     ],
     [
-     1920,
-     1080
-    ]
-   ],
-   "fill": "#b4aea4",
-   "note": "plaza of light grey concrete pavers (the walk area)"
-  },
-  {
-   "type": "grid",
-   "box": [
-    0,
-    740,
-    1920,
-    340
-   ],
-   "cols": 24,
-   "rows": 6,
-   "color": "#a59f95",
-   "width": 2
-  },
-  {
-   "type": "rect",
-   "box": [
-    200,
-    625,
-    180,
-    18
-   ],
-   "fill": "#8a5a34",
-   "note": "bench 1 seat back"
-  },
-  {
-   "type": "rect",
-   "box": [
-    200,
-    660,
-    180,
-    16
-   ],
-   "fill": "#8a5a34",
-   "note": "bench 1 seat"
-  },
-  {
-   "type": "rect",
-   "box": [
-    210,
-    676,
-    10,
-    26
-   ],
-   "fill": "#4a4f55"
-  },
-  {
-   "type": "rect",
-   "box": [
-    360,
-    676,
-    10,
-    26
-   ],
-   "fill": "#4a4f55"
-  },
-  {
-   "type": "rect",
-   "box": [
-    400,
-    625,
-    180,
-    18
-   ],
-   "fill": "#8a5a34",
-   "note": "bench 2 seat back"
-  },
-  {
-   "type": "rect",
-   "box": [
-    400,
-    660,
-    180,
-    16
-   ],
-   "fill": "#8a5a34",
-   "note": "bench 2 seat"
-  },
-  {
-   "type": "rect",
-   "box": [
-    410,
-    676,
-    10,
-    26
-   ],
-   "fill": "#4a4f55"
-  },
-  {
-   "type": "rect",
-   "box": [
-    560,
-    676,
-    10,
-    26
-   ],
-   "fill": "#4a4f55"
-  },
-  {
-   "type": "rect",
-   "box": [
-    898,
-    330,
-    14,
-    378
-   ],
-   "fill": "#5a4029",
-   "note": "tall signpost"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     845,
-     340
+     1060,
+     480
     ],
     [
-     945,
-     340
+     1005,
+     430
     ],
     [
-     968,
-     360
-    ],
-    [
-     945,
-     380
-    ],
-    [
-     845,
-     380
-    ]
-   ],
-   "fill": "#4a3626",
-   "note": "arrow board 1 pointing right"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     965,
+     962,
      392
-    ],
-    [
-     865,
-     392
-    ],
-    [
-     842,
-     412
-    ],
-    [
-     865,
-     432
-    ],
-    [
-     965,
-     432
     ]
    ],
-   "fill": "#4a3626",
-   "note": "arrow board 2 pointing left"
-  },
-  {
-   "type": "poly",
-   "points": [
-    [
-     845,
-     444
-    ],
-    [
-     945,
-     444
-    ],
-    [
-     968,
-     464
-    ],
-    [
-     945,
-     484
-    ],
-    [
-     845,
-     484
-    ]
-   ],
-   "fill": "#4a3626",
-   "note": "arrow board 3 pointing right"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1165,
-    560,
-    40,
-    150
-   ],
-   "fill": "#7d868d",
-   "note": "card reader pillar"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1172,
-    580,
-    26,
-    20
-   ],
-   "fill": "#3fbf5a",
-   "note": "green reader light"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1205,
-    610,
-    110,
-    18
-   ],
-   "fill": "#a7b0b7",
-   "note": "turnstile arms / glass gate wings"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1240,
-    590,
-    14,
-    120
-   ],
-   "fill": "#7d868d",
-   "note": "gate post"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1298,
-    590,
-    14,
-    120
-   ],
-   "fill": "#7d868d",
-   "note": "gate post"
-  },
-  {
-   "type": "rect",
-   "box": [
-    1745,
-    412,
-    70,
-    316
-   ],
-   "fill": "#d9ba8b",
-   "note": "slim light-wood exhibition pillar of the 2035 exhibition (time node), no text"
+   "fill": "#8b847d",
+   "note": "stone-clad retaining wall (irregular grey-brown stones)"
   },
   {
    "type": "ellipse",
    "box": [
-    1752,
-    450,
-    56,
-    56
+    1000,
+    440,
+    22,
+    12
    ],
-   "fill": "#3aa6a0",
-   "note": "round abstract emblem"
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1040,
+    500,
+    26,
+    14
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1090,
+    545,
+    30,
+    16
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1290,
+    720,
+    44,
+    26
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1350,
+    800,
+    52,
+    30
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1420,
+    760,
+    46,
+    26
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1400,
+    880,
+    60,
+    34
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1480,
+    840,
+    56,
+    30
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1540,
+    930,
+    70,
+    40
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1620,
+    900,
+    60,
+    34
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1600,
+    1000,
+    74,
+    44
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1700,
+    980,
+    70,
+    40
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1780,
+    1030,
+    70,
+    40
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1460,
+    960,
+    60,
+    36
+   ],
+   "fill": "#6f6862"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1130,
+     700
+    ],
+    [
+     1182,
+     574
+    ],
+    [
+     1262,
+     637
+    ],
+    [
+     1205,
+     800
+    ]
+   ],
+   "fill": "#a9afb6",
+   "note": "three granite steps up through a gap in the wall"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1143,
+     668
+    ],
+    [
+     1219,
+     759
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1156,
+     637
+    ],
+    [
+     1233,
+     718
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1169,
+     605
+    ],
+    [
+     1248,
+     678
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     962,
+     392
+    ],
+    [
+     1005,
+     430
+    ],
+    [
+     1060,
+     480
+    ],
+    [
+     1130,
+     535
+    ],
+    [
+     1182,
+     574
+    ]
+   ],
+   "color": "#eef2f6",
+   "width": 14,
+   "note": "snow on the concrete coping"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1262,
+     637
+    ],
+    [
+     1330,
+     690
+    ],
+    [
+     1510,
+     800
+    ],
+    [
+     1700,
+     920
+    ],
+    [
+     1840,
+     1000
+    ],
+    [
+     1920,
+     1050
+    ]
+   ],
+   "color": "#eef2f6",
+   "width": 16
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     958,
+     404
+    ],
+    [
+     975,
+     452
+    ],
+    [
+     1010,
+     512
+    ],
+    [
+     1050,
+     572
+    ],
+    [
+     1095,
+     652
+    ],
+    [
+     1130,
+     702
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 14,
+   "note": "low ploughed snow ridge at the wall foot"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1205,
+     802
+    ],
+    [
+     1270,
+     902
+    ],
+    [
+     1340,
+     1002
+    ],
+    [
+     1396,
+     1082
+    ]
+   ],
+   "color": "#f2f6fa",
+   "width": 20
+  },
+  {
+   "type": "rect",
+   "box": [
+    1108,
+    552,
+    26,
+    166
+   ],
+   "fill": "#2b3036",
+   "note": "card reader pillar"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1113,
+    566,
+    16,
+    11
+   ],
+   "fill": "#63e08a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1146,
+    590,
+    20,
+    140
+   ],
+   "fill": "#c4ccd4",
+   "note": "stainless gate post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1192,
+    625,
+    22,
+    165
+   ],
+   "fill": "#c4ccd4",
+   "note": "stainless gate post"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1166,
+     640
+    ],
+    [
+     1192,
+     668
+    ],
+    [
+     1192,
+     742
+    ],
+    [
+     1166,
+     714
+    ]
+   ],
+   "fill": "#a8cde0",
+   "note": "glass gate wings"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1184,
+     282
+    ],
+    [
+     1184,
+     576
+    ]
+   ],
+   "color": "#6b4a30",
+   "width": 9,
+   "note": "signpost post standing on the wall top"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1100,
+     288
+    ],
+    [
+     1252,
+     288
+    ],
+    [
+     1272,
+     303
+    ],
+    [
+     1252,
+     318
+    ],
+    [
+     1100,
+     318
+    ]
+   ],
+   "fill": "#4a3424",
+   "note": "arrow board PRIEHYBA"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1124,
+     322
+    ],
+    [
+     1270,
+     322
+    ],
+    [
+     1270,
+     352
+    ],
+    [
+     1124,
+     352
+    ],
+    [
+     1104,
+     337
+    ]
+   ],
+   "fill": "#4a3424",
+   "note": "arrow board BIELA PUT"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1100,
+     356
+    ],
+    [
+     1252,
+     356
+    ],
+    [
+     1272,
+     371
+    ],
+    [
+     1252,
+     386
+    ],
+    [
+     1100,
+     386
+    ]
+   ],
+   "fill": "#4a3424",
+   "note": "arrow board CHOPOK"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1100,
+    282,
+    172,
+    6
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    452,
+    446,
+    56,
+    190
+   ],
+   "fill": "#d8ba8b",
+   "note": "slim light-wood exhibition pillar"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    446,
+    452,
+    68,
+    68
+   ],
+   "fill": "#2fb3b0",
+   "note": "round turquoise clock ring"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    456,
+    462,
+    48,
+    48
+   ],
+   "fill": "#f4f1e8",
+   "note": "clock face"
+  },
+  {
+   "type": "rect",
+   "box": [
+    440,
+    632,
+    80,
+    12
+   ],
+   "fill": "#8d949c",
+   "note": "base plate"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    450,
+    436,
+    60,
+    18
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    214,
+    622,
+    152,
+    24
+   ],
+   "fill": "#8a5a35",
+   "note": "far bench backrest"
+  },
+  {
+   "type": "rect",
+   "box": [
+    214,
+    652,
+    152,
+    14
+   ],
+   "fill": "#8a5a35",
+   "note": "far bench seat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    214,
+    616,
+    152,
+    8
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    214,
+    648,
+    152,
+    6
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     222,
+     666
+    ],
+    [
+     222,
+     690
+    ]
+   ],
+   "color": "#3e3a36",
+   "width": 6
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     356,
+     666
+    ],
+    [
+     356,
+     690
+    ]
+   ],
+   "color": "#3e3a36",
+   "width": 6
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    664,
+    186,
+    32
+   ],
+   "fill": "#8a5a35",
+   "note": "near bench backrest"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    704,
+    186,
+    18
+   ],
+   "fill": "#8a5a35",
+   "note": "near bench seat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    656,
+    186,
+    10
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    700,
+    186,
+    7
+   ],
+   "fill": "#f2f6fa"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     50,
+     722
+    ],
+    [
+     50,
+     760
+    ]
+   ],
+   "color": "#3e3a36",
+   "width": 7
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     214,
+     722
+    ],
+    [
+     214,
+     760
+    ]
+   ],
+   "color": "#3e3a36",
+   "width": 7
   }
  ]
 }

@@ -1,37 +1,50 @@
 {
   "room": "S41",
   "source": "src/game/assets/bg_natural/S41.webp",
-  "bg_sha1": "6b240ca040561e4617290231baa66bef69bc63ef",
+  "bg_sha1": "34f720f0b03c29c1f16c89afc83f0a8a90e2b570",
   "items": {
-    "sky_mask": {
-      "kind": "mask",
-      "mask_rect": [
-        0,
-        0,
-        1920,
-        340
-      ]
-    },
-    "spruces_right": {
+    "spruces_bridge": {
       "kind": "cutout",
       "pos": [
-        1678,
-        8
+        318,
+        148
       ],
       "size": [
-        254,
-        444
+        269,
+        306
       ]
     },
-    "grass_verge": {
+    "spruce_hotel": {
       "kind": "cutout",
       "pos": [
-        228,
-        488
+        760,
+        208
       ],
       "size": [
-        1004,
-        109
+        106,
+        174
+      ]
+    },
+    "spruce_slope": {
+      "kind": "cutout",
+      "pos": [
+        1826,
+        88
+      ],
+      "size": [
+        106,
+        144
+      ]
+    },
+    "stream": {
+      "kind": "cutout",
+      "pos": [
+        -12,
+        548
+      ],
+      "size": [
+        474,
+        199
       ]
     },
     "cloud_a": {
@@ -45,5 +58,6 @@
         192
       ]
     }
-  }
+  },
+  "note": "cloud_a: summer cumulus cut from the June S41 (2026-10-05), kept unchanged as a shared sprite of the other 2035 rooms; cabin_winter / skier_* drawn by a local script (S41.md)"
 }

@@ -1,0 +1,38 @@
+{
+  "room": "S41",
+  "version": "winter_v5",
+  "kind": "fix",
+  "from_version": "winter_v1",
+  "box_game_px": [
+    540,
+    110,
+    550,
+    330
+  ],
+  "instruction": "(free re-composite of the paid v4 fix output (raw) onto v1 with a taller box: the model drew the main A-frame gable tip at y ~150; feather 48 master px, but 10 px on the lower-left edges (x < 800, y > 330) so the old deck on stilts of v1 does not ghost through the new hedge)",
+  "feather_master_px": "48 (10 on the lower-left edges)",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": null,
+  "usd": 0.0,
+  "scope": "bg_natural/S41_winter/",
+  "spend_log_asset": null,
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (a winter scene). Make exactly this local change: (free re-composite of the paid v4 fix output with a taller box: the model drew the main A-frame gable tip at y ~150) Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours, the snow and the light exactly as in image 1. Images 2 and 3 are summer photos of the real place (image 2 from exactly the camera of image 1, image 3 from a little further along the road): use them only for the real shape of what you change, keep the winter of image 1. No people, no animals, no cars, no text, no logos, no frames. Image 4 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image1_blocked": false,
+  "image_urls": [
+    "art/masters/bg_natural/S41_winter_v1.png",
+    "art/source/owner_refs/_S41_aligned_TXI6i3E.png",
+    "art/source/owner_refs/imgur_8l08ndF.jpg",
+    "art/backgrounds/tram-stop.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S41_winter_S41_winter_v4_fix_raw.png",
+  "started": "2026-10-06T01:13:05",
+  "model_description": null,
+  "output_size": [
+    2752,
+    1536
+  ]
+}
