@@ -1,0 +1,22 @@
+# S27 Kazetovy klub v suterene (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S27.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S27.sketch.json (vaulted cellar box, camera ~2.4 m, horizon y 300, back wall foot y 760).
+#refs: art/source/rooms/S27/type-ref_basement-youth-club_1986.jpg ; art/source/rooms/S27/type-ref_cassette-rack_prop.jpg ; art/source/rooms/S27/mileticova_1950s-estate_block-base_window-view_2007.jpg
+#style: src/game/assets/bg_natural/S24.webp
+Place: a basement club room under a 1950s socialist-realist block of the Mileticova estate in Ruzinov, Bratislava. Image 2 is a 1986 photo of a real basement youth club (a whitewashed barrel vault, painted brick walls, a heavy wooden door): use it for the vaulted cellar and the mood, without its people and furniture. Image 3 is a real rack full of audio cassettes (paint the cassettes without any brand names or legible labels). Image 4 is the real estate block: its ochre-grey plastered base, the grass strip and the sidewalk - this is what the small high basement window shows at ground level outside (no people, no cars).
+
+Brief: an invented clubroom of tape collectors: the collector stands at his headphones (he is added later as a sprite), a catalogue of tapes, a simple cross-adapter. Thursday 15 June 1995, a sunny afternoon outside: a soft beam of daylight falls from the small high window, warm light from a lamp, dust in the beam; a cosy, slightly messy cellar.
+
+Camera: standing at the back of the cellar, about 2.4 m high, looking straight at the end wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); a whitewashed barrel vault curves over the room; vertical lines stay vertical. Keep this exact geometry from the sketch: the end wall from the floor line at y 760 up to the curved top of the vault (y 300 at the corners x 300 and x 1620, y 192 in the middle); the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).
+
+What the sketch blocks are, left to right: the left side wall covered with grey egg-carton acoustic panels; the heavy wooden basement door standing ajar with daylight from the stairs behind it; floor-standing racks full of audio cassettes; the big band poster on the end wall; the small high barred basement window under the vault with the grass, the sidewalk and the block base outside, and the soft beam of daylight falling from it; a plain whitewashed brick wall; the listening table with a twin cassette deck, an amplifier with two glowing VU meters, a fat ring-binder catalogue of tapes and an empty cassette case; two big wooden speaker boxes stacked on the right; a second band poster on the right side wall; a worn grey concrete floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S27.ambient 1}: a big poster of an invented 1990s rock band: a hand-drawn illustration of guitars and three cartoon musicians, its title in illegible jagged scribble lettering (no real band, no readable words).
+2. {rect:S27.ambient 2}: an empty, open, transparent cassette case lying on the listening table.
+The ajar basement door is {exit:S27.to_S25}.
+
+Walkable floor: {walk} is the open concrete floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no boxes, no cables, no chairs, no crates. Only the beam of daylight, soft shadows and a few scuff marks.
+{npc_zones} The collector stands in front of this plain whitewashed brick wall in the beam of light, between the poster and the listening table.
+
+Fiction rules: the club, its members and the bands are invented: no real band names, no brand names on cassettes or devices (no BASF, Maxell, TDK, Denon, TESLA), no legible text anywhere, no house numbers outside, no people, no animals. Paper shows only illegible scribbles, no digits.

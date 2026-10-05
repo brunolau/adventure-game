@@ -1,0 +1,384 @@
+{
+ "room": "S67",
+ "notes": "Natural S67 (bg_natural/S67.webp): the Funitel boarding hall at Priehyba. The hubs of the conveyor tyres on the guide rail turn (rotor spokes), dust motes drift in the daylight from the open end of the hall, clouds drift past the opening, the green arrow lamp of the boarding gate blinks, two alpine choughs peck on the platform by the opening and fly off when Adam comes close. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "dust_light",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    0,
+    300,
+    700,
+    420
+   ],
+   "count": 22,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "gate_lamp",
+   "type": "flicker",
+   "mode": "blink",
+   "pos": [
+    938,
+    601
+   ],
+   "size": [
+    30,
+    30
+   ],
+   "texture": "builtin:glow",
+   "color": "#7dff9a",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.6,
+   "period_s": 1.4,
+   "duty": 0.5
+  },
+  {
+   "id": "opening_clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    20,
+    300
+   ],
+   "count": 2,
+   "speed_px_s": 4,
+   "scale": [
+    0.14,
+    0.252
+   ],
+   "alpha": 0.75,
+   "x_span": [
+    -60,
+    200
+   ],
+   "mask": "S67/natural/opening_sky_mask.webp"
+  },
+  {
+   "id": "choughs",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 2,
+   "ground": [
+    [
+     30,
+     760
+    ],
+    [
+     420,
+     800
+    ]
+   ],
+   "scale": 0.13,
+   "modulate": "#2f2f36",
+   "flee_radius": 300,
+   "return_s": [
+    14,
+    28
+   ],
+   "exit": [
+    [
+     -120,
+     420
+    ],
+    [
+     -60,
+     200
+    ]
+   ]
+  },
+  {
+   "id": "tyre_00",
+   "type": "rotor",
+   "pivot": [
+    25,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_01",
+   "type": "rotor",
+   "pivot": [
+    95,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_02",
+   "type": "rotor",
+   "pivot": [
+    165,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_03",
+   "type": "rotor",
+   "pivot": [
+    235,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_04",
+   "type": "rotor",
+   "pivot": [
+    305,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_05",
+   "type": "rotor",
+   "pivot": [
+    375,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_06",
+   "type": "rotor",
+   "pivot": [
+    445,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_07",
+   "type": "rotor",
+   "pivot": [
+    515,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_08",
+   "type": "rotor",
+   "pivot": [
+    585,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_09",
+   "type": "rotor",
+   "pivot": [
+    655,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_10",
+   "type": "rotor",
+   "pivot": [
+    725,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_11",
+   "type": "rotor",
+   "pivot": [
+    795,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_12",
+   "type": "rotor",
+   "pivot": [
+    865,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_13",
+   "type": "rotor",
+   "pivot": [
+    935,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_14",
+   "type": "rotor",
+   "pivot": [
+    1005,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_15",
+   "type": "rotor",
+   "pivot": [
+    1075,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_16",
+   "type": "rotor",
+   "pivot": [
+    1145,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_17",
+   "type": "rotor",
+   "pivot": [
+    1215,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_18",
+   "type": "rotor",
+   "pivot": [
+    1285,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  },
+  {
+   "id": "tyre_19",
+   "type": "rotor",
+   "pivot": [
+    1355,
+    145
+   ],
+   "length": 9,
+   "tail": 9,
+   "width": 3,
+   "color": "#5d6166",
+   "mode": "sweep",
+   "period_s": 0.9
+  }
+ ]
+}

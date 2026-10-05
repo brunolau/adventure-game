@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "room": "S11",
+  "status": "natural re-blocking (docs/DECISIONS.md item 1, owner feedback 2026-10-05: the old Dubravka stop with the brown tube shelter and a red-cream Tatra T3); base of camera family L_STOP (S57 1982, S51 2020 are derived with identical anchors, walk_band and actor_scale)",
+  "note": "Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615. The platform (X -3.6..1.6 m) runs from the bottom to the vanishing point: the long brown steel-tube shelter (solid back wall X -3.4, front tubes X -1.8, Z 6-20) with the bench inside at the left, the stop post with clock, stop plate and timetable case at the shelter's near front corner (Z 6.1), the light edge strip and the track at the right with the T3 standing at the platform (front at Z 10.5). The road (west carriageway) lies below the platform's left edge; the near-left ramp leads down to the zebra crossing towards the school.",
+  "background": "bg_natural/S11.webp",
+  "walk_polygon": [[0, 1015], [1449, 1015], [1230, 672], [928, 670], [850, 828], [339, 814], [65, 970], [0, 1000]],
+  "walk_band": [670, 1015],
+  "actor_scale": [0.44, 1.0],
+  "spawn": [1010, 900],
+  "anchors": {
+    "curb": [262, 792],
+    "track_line": [1524, 813],
+    "clock_frame": [785, 134]
+  },
+  "hotspots": {
+    "S11.ambient 1": {
+      "rect": [728, 452, 116, 136],
+      "interaction_point": [835, 862],
+      "label_anchor": [786, 442],
+      "reason": "glazed timetable case at eye height on the stop post at the shelter's near front corner (case H 1.15-1.75 m, Z 6.1 m)"
+    },
+    "S11.ambient 2": {
+      "rect": [488, 538, 238, 222],
+      "interaction_point": [905, 762],
+      "label_anchor": [600, 528],
+      "reason": "the wooden slat bench along the inside of the shelter's back wall (Z 7-10 m); the gum sits under its seat"
+    }
+  },
+  "exits": {
+    "S11.to_S12": {
+      "rect": [40, 780, 215, 150],
+      "interaction_point": [205, 915],
+      "label_anchor": [150, 770],
+      "reason": "the short ramp at the near left down to the zebra crossing over the west carriageway, towards the school"
+    },
+    "S11.to_S18": {
+      "rect": [930, 520, 250, 140],
+      "interaction_point": [1075, 690],
+      "label_anchor": [1055, 510],
+      "reason": "the platform continues past the shelter to its far end and the path to the housing-estate yard"
+    },
+    "S11.to_S19": {
+      "rect": [1265, 270, 330, 355],
+      "interaction_point": [1215, 700],
+      "label_anchor": [1430, 262],
+      "reason": "the red-cream tram standing at the platform: board it towards Karlova Ves"
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,749 @@
+{
+  "room": "S27",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2126024445,
+  "usd": 0.15,
+  "started": "2026-10-05T10:29:16",
+  "spend_log_asset": "bg_natural/S27/S27_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S27.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a basement club room under a 1950s socialist-realist block of the Mileticova estate in Ruzinov, Bratislava. Image 2 is a 1986 photo of a real basement youth club (a whitewashed barrel vault, painted brick walls, a heavy wooden door): use it for the vaulted cellar and the mood, without its people and furniture. Image 3 is a real rack full of audio cassettes (paint the cassettes without any brand names or legible labels). Image 4 is the real estate block: its ochre-grey plastered base, the grass strip and the sidewalk - this is what the small high basement window shows at ground level outside (no people, no cars).\n\nBrief: an invented clubroom of tape collectors: the collector stands at his headphones (he is added later as a sprite), a catalogue of tapes, a simple cross-adapter. Thursday 15 June 1995, a sunny afternoon outside: a soft beam of daylight falls from the small high window, warm light from a lamp, dust in the beam; a cosy, slightly messy cellar.\n\nCamera: standing at the back of the cellar, about 2.4 m high, looking straight at the end wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); a whitewashed barrel vault curves over the room; vertical lines stay vertical. Keep this exact geometry from the sketch: the end wall from the floor line at y 760 up to the curved top of the vault (y 300 at the corners x 300 and x 1620, y 192 in the middle); the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).\n\nWhat the sketch blocks are, left to right: the left side wall covered with grey egg-carton acoustic panels; the heavy wooden basement door standing ajar with daylight from the stairs behind it; floor-standing racks full of audio cassettes; the big band poster on the end wall; the small high barred basement window under the vault with the grass, the sidewalk and the block base outside, and the soft beam of daylight falling from it; a plain whitewashed brick wall; the listening table with a twin cassette deck, an amplifier with two glowing VU meters, a fat ring-binder catalogue of tapes and an empty cassette case; two big wooden speaker boxes stacked on the right; a second band poster on the right side wall; a worn grey concrete floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 812-964, y 390-586 of the 1920x1080 frame (42-50 % from the left, 36-54 % from the top): a big poster of an invented 1990s rock band: a hand-drawn illustration of guitars and three cartoon musicians, its title in illegible jagged scribble lettering (no real band, no readable words).\n2. the block of the layout sketch at x 1355-1451, y 565-631 of the 1920x1080 frame (71-76 % from the left, 52-58 % from the top): an empty, open, transparent cassette case lying on the listening table.\nThe ajar basement door is the area of the layout sketch at x 314-498, y 360-765 of the 1920x1080 frame (16-26 % from the left, 33-71 % from the top).\n\nWalkable floor: the band at x 20-1900, y 785-1015 of the 1920x1080 frame (1-99 % from the left, 73-94 % from the top) is the open concrete floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no boxes, no cables, no chairs, no crates. Only the beam of daylight, soft shadows and a few scuff marks.\nNPC zone at x 965-1115, y 436-794 of the 1920x1080 frame (50-58 % from the left, 40-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 792. The collector stands in front of this plain whitewashed brick wall in the beam of light, between the poster and the listening table.\n\nFiction rules: the club, its members and the bands are invented: no real band names, no brand names on cassettes or devices (no BASF, Maxell, TDK, Denon, TESLA), no legible text anywhere, no house numbers outside, no people, no animals. Paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S27_sketch.png (rendered from art/prompts/natural/S27.sketch.json, model geometry)",
+    "art/source/rooms/S27/type-ref_basement-youth-club_1986.jpg",
+    "art/source/rooms/S27/type-ref_cassette-rack_prop.jpg",
+    "art/source/rooms/S27/mileticova_1950s-estate_block-base_window-view_2007.jpg",
+    "src/game/assets/bg_natural/S24.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S27 natural: vaulted cellar box, camera 2.4 m, horizon y 300, back wall foot y 760.",
+    "background": "#ece6d8",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            236
+          ],
+          [
+            1620,
+            256
+          ],
+          [
+            300,
+            256
+          ],
+          [
+            0,
+            236
+          ]
+        ],
+        "fill": "#ece6d8",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            236
+          ],
+          [
+            300,
+            256
+          ],
+          [
+            300,
+            760
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#d8cfbe",
+        "note": "left side wall (receding)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            236
+          ],
+          [
+            1620,
+            256
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ]
+        ],
+        "fill": "#d8cfbe",
+        "note": "right side wall (receding)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          256,
+          1320,
+          504
+        ],
+        "fill": "#e4dccb",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            760
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#7a6e62",
+        "note": "floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            256
+          ],
+          [
+            300,
+            300
+          ],
+          [
+            420,
+            250
+          ],
+          [
+            600,
+            215
+          ],
+          [
+            800,
+            196
+          ],
+          [
+            960,
+            192
+          ],
+          [
+            1120,
+            196
+          ],
+          [
+            1320,
+            215
+          ],
+          [
+            1500,
+            250
+          ],
+          [
+            1620,
+            300
+          ],
+          [
+            1620,
+            256
+          ]
+        ],
+        "fill": "#ece6d8",
+        "note": "whitewashed barrel vault"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            300
+          ],
+          [
+            420,
+            250
+          ],
+          [
+            600,
+            215
+          ],
+          [
+            800,
+            196
+          ],
+          [
+            960,
+            192
+          ],
+          [
+            1120,
+            196
+          ],
+          [
+            1320,
+            215
+          ],
+          [
+            1500,
+            250
+          ],
+          [
+            1620,
+            300
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            300,
+            760
+          ]
+        ],
+        "fill": "#e4dccb",
+        "note": "whitewashed brick back wall under the vault"
+      },
+      {
+        "type": "grid",
+        "box": [
+          300,
+          300,
+          1320,
+          460
+        ],
+        "cols": 22,
+        "rows": 16,
+        "color": "#d6cdb9",
+        "width": 1,
+        "note": "faint brick joints"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            20,
+            348
+          ],
+          [
+            290,
+            334
+          ],
+          [
+            290,
+            610
+          ],
+          [
+            20,
+            734
+          ]
+        ],
+        "fill": "#9a8c7a",
+        "note": "grey egg-carton acoustic panels on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1680,
+            400
+          ],
+          [
+            1780,
+            414
+          ],
+          [
+            1780,
+            607
+          ],
+          [
+            1680,
+            569
+          ]
+        ],
+        "fill": "#c86a3a",
+        "note": "second band poster on the right side wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          318,
+          370,
+          176,
+          390
+        ],
+        "fill": "#5a4a3a",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          382,
+          152,
+          378
+        ],
+        "fill": "#6e5a3e",
+        "note": "heavy wooden basement door, ajar"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            440,
+            382
+          ],
+          [
+            482,
+            382
+          ],
+          [
+            482,
+            760
+          ],
+          [
+            440,
+            760
+          ]
+        ],
+        "fill": "#f2e6c6",
+        "note": "daylight from the stairs through the ajar door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          850,
+          228,
+          220,
+          100
+        ],
+        "fill": "#c9dbe6",
+        "note": "small high basement window at ground level outside: grass, the sidewalk and the ochre base of the 1950s block"
+      },
+      {
+        "type": "rect",
+        "box": [
+          850,
+          288,
+          220,
+          40
+        ],
+        "fill": "#8aa060",
+        "note": "outside: grass and pavement"
+      },
+      {
+        "type": "bars",
+        "box": [
+          850,
+          228,
+          220,
+          100
+        ],
+        "step": 44,
+        "bar": 6,
+        "fill": "#3a3a38",
+        "vertical": true,
+        "note": "window bars"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            870,
+            330
+          ],
+          [
+            1050,
+            330
+          ],
+          [
+            1170,
+            760
+          ],
+          [
+            760,
+            760
+          ]
+        ],
+        "fill": "#efe6cc",
+        "note": "soft beam of daylight falling from the window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          411,
+          280,
+          349
+        ],
+        "fill": "#3a3430",
+        "note": "floor-standing racks full of cassette tapes"
+      },
+      {
+        "type": "bars",
+        "box": [
+          528,
+          419,
+          264,
+          333
+        ],
+        "step": 14,
+        "bar": 9,
+        "fill": "#c8c0b0",
+        "vertical": false,
+        "note": "rows of cassette spines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          818,
+          395,
+          140,
+          186
+        ],
+        "fill": "#d8a03a",
+        "note": "big band poster of an invented rock band (drawn guitars, illegible lettering)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          838,
+          420,
+          100,
+          110
+        ],
+        "fill": "#6a3a8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1130,
+          611,
+          330,
+          18
+        ],
+        "fill": "#6a4a32",
+        "note": "listening table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1140,
+          629,
+          10,
+          131
+        ],
+        "fill": "#4a3220"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1440,
+          629,
+          10,
+          131
+        ],
+        "fill": "#4a3220"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          549,
+          130,
+          62
+        ],
+        "fill": "#2e2e30",
+        "note": "twin cassette deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1160,
+          565,
+          50,
+          30
+        ],
+        "fill": "#c8c4bc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1220,
+          565,
+          50,
+          30
+        ],
+        "fill": "#c8c4bc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          505,
+          130,
+          44
+        ],
+        "fill": "#3a3a3c",
+        "note": "amplifier with two glowing VU meters"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1165,
+          515,
+          36,
+          22
+        ],
+        "fill": "#e8c060"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1225,
+          515,
+          36,
+          22
+        ],
+        "fill": "#e8c060"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1295,
+          575,
+          56,
+          36
+        ],
+        "fill": "#3a6a9a",
+        "note": "fat ring-binder catalogue of tapes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1365,
+          585,
+          76,
+          26
+        ],
+        "fill": "#cfd8dc",
+        "note": "an empty open transparent cassette case"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          566,
+          140,
+          194
+        ],
+        "fill": "#5a3e28",
+        "note": "two big wooden speaker boxes stacked"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1500,
+          596,
+          80,
+          80
+        ],
+        "fill": "#2a2a2c"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1515,
+          686,
+          50,
+          50
+        ],
+        "fill": "#2a2a2c"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S27.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Basement club under a 1950s block of the Mileticova estate, camera ~2.4 m at the back of the cellar: one-point box, horizon y 300, back wall foot line y 760 (~194 px per metre), whitewashed barrel vault with its crown at y 192. Perspective s(y) = (y - 300) / 715. The ajar basement door with daylight from the stairs is the exit (S25); the high window under the vault shows the sidewalk and the block base; cassette racks, the band poster, Juro at the plain wall, the listening table with the deck, the catalogue and the empty cassette case, the speaker boxes on the right.",
+    "background": "bg_natural/S27.webp",
+    "walk_polygon": [
+      [
+        312,
+        785
+      ],
+      [
+        1610,
+        785
+      ],
+      [
+        1900,
+        975
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        975
+      ]
+    ],
+    "walk_band": [
+      785,
+      1015
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      410,
+      890
+    ],
+    "hotspots": {
+      "S27.ambient 1": {
+        "rect": [
+          812,
+          390,
+          152,
+          196
+        ],
+        "interaction_point": [
+          888,
+          850
+        ],
+        "label_anchor": [
+          888,
+          382
+        ],
+        "reason": "poster of an invented band on the back wall"
+      },
+      "S27.ambient 2": {
+        "rect": [
+          1355,
+          565,
+          96,
+          66
+        ],
+        "interaction_point": [
+          1400,
+          850
+        ],
+        "label_anchor": [
+          1403,
+          557
+        ],
+        "reason": "empty open cassette case lying on the listening table"
+      },
+      "S27.JURO": {
+        "rect": [
+          965,
+          436,
+          150,
+          358
+        ],
+        "interaction_point": [
+          1040,
+          880
+        ],
+        "label_anchor": [
+          1040,
+          428
+        ],
+        "reason": "Juro standing at the plain wall between the poster and his listening table"
+      }
+    },
+    "npcs": {
+      "S27.JURO": {
+        "variant": "standing",
+        "feet": [
+          1040,
+          792
+        ],
+        "scale": 0.688,
+        "reason": "standing collector with headphones round his neck (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S27.to_S25": {
+        "rect": [
+          314,
+          360,
+          184,
+          405
+        ],
+        "interaction_point": [
+          406,
+          825
+        ],
+        "label_anchor": [
+          406,
+          352
+        ],
+        "reason": "ajar basement door, the stairs up to the courtyard and the market"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S27"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S27.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:30:07"
+  }
+}

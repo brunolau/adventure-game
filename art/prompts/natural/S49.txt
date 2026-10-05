@@ -1,0 +1,28 @@
+# S49 Chronokomora pavilónu Atlas (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S49.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S49.sketch.json, designed after the approved cutscene frames CS06_1 / CS06_2.
+# Style reference: the accepted natural S48 exterior of the same pavilion.
+#refs: src/game/assets/cutscenes/CS06_1.webp ; art/source/rooms/S49/chopok-summit_rotunda-silhouette-from-east_2016-09.jpg ; art/source/rooms/S48/chopok-summit_plateau-rotunda-from-east_2016-09.jpg
+#style: src/game/assets/bg_natural/S48.webp
+Place: the inner room (chronochamber) of the fictional temporary Atlas pavilion on the gravel plateau east of the real Rotunda on Chopok (2,004 m), Low Tatras, Slovakia. Image 2 is an approved painting from our game of this very room: light larch wood-panelled walls, a brushed-steel console plate with engraved symbols (circle, cross, square, triangle), an amber emergency lamp above it, a big window with the Rotunda complex outside, a wooden table with a brass desk lamp and a glass of water (ignore the man; keep the room's look). Images 3 and 4 are photos of the real view west from the plateau: the Rotunda (stone base, glass drum, red ring roof) between the long dark station wings on stilts, the grey rocky plateau. Paint this room from a new camera as described below, with the real Rotunda in the window so it is clear where we are.
+
+Brief: the fictional interior of the same exhibition pavilion: four ports and Viktor at a table; through the window the silhouette of the Rotunda shows where we are. Bright midday light from the big window, warm light from the desk lamp, a calm, tense, quiet room. No hidden countdown, no science-fiction look: simple wood, steel and cables.
+
+Camera: standing in the room, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the low timber ceiling with beams down to y ~200; the wood-panelled back wall with a darker wainscot (y 560-700) down to the plank floor at y 700; the long steel console plate at x 72-578 (y 370-514) with the four ports in a row; the amber emergency lamp at x 295-353 (y 255-327); the big window at x 700-1520 (y 250-565) with the Rotunda in its middle-right; the wooden table at x 720-1265 with its top's back edge at y 605 and a solid wooden front panel down to y ~790; the restore console at x 1595-1805 (top y 520-600, foot y ~728); the wooden door at the right edge (x 1815-1920, y 380-725); the plank floor from y 700 to the bottom edge.
+
+What the sketch blocks are: the low timber ceiling with beams; the light larch wood-panelled walls and the darker wainscot; the big window to the west with the real Rotunda complex on the plateau under a blue sky (the long dark station wings on stilts, the stone base, the glass drum with its red ring roof, the grey rocky plateau, a few snow patches); the wooden table with a solid front panel, a brass desk lamp and a glass of water on its top; the free-standing restore console; the wooden door; the worn wooden plank floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S49.port_origin}: on the steel console plate, a round metal socket with an engraved circle symbol above it.
+2. {rect:S49.port_voice}: next to it a narrow slot (the size of an audio cassette) with an engraved cross symbol.
+3. {rect:S49.port_consent}: next to it a square socket with an engraved square symbol.
+4. {rect:S49.port_return}: next to it a socket with an engraved triangle symbol.
+5. {rect:S49.confirm}: the restore console: a steel pedestal with a slanted control top holding four small green input lamps in a row, a key switch and one big round red push button.
+6. {rect:S49.ambient 1}: a plain glass of water standing on the table, full and untouched.
+7. {rect:S49.ambient 2}: an amber emergency lamp in a protective wire cage on a wall bracket above the console plate.
+{npc_zones}
+{exit:S49.to_S48} is the wooden door at the right edge.
+
+Walkable floor: {walk} is the worn wooden plank floor - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no boxes, no cables, no people. Only daylight from the window and soft shadows.
+
+Fiction rules: the ports, the restore console and the pavilion are fictional; no logos, no brand names, no readable text or digits anywhere (only the four engraved symbols). No people (Viktor is a separate sprite), no animals.

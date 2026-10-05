@@ -1,0 +1,714 @@
+{
+  "room": "S43",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035431,
+  "usd": 0.15,
+  "started": "2026-10-05T10:21:02",
+  "spend_log_asset": "bg_natural/S43/S43_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S43.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the lobby of the real Hotel Grand Jasná in Jasná, Low Tatras, Slovakia (a large renovated mountain hotel). The real lobby: a grey stone-textured feature wall behind the reception with spaced metal letters RECEPTION, a long white curved reception counter whose front is made of thin horizontal ribs, a vase of red and orange flowers on the counter, grey stone floor tiles, a light ceiling with round recessed downlights; next to it the lobby bar lounge, a long bright room with beige upholstered armchairs around small round light-wood tables, colourful contemporary paintings on warm white walls and light sheer curtains at the windows. Image 2 is a photo of the hotel's surroundings: spruce forest and the green Chopok slopes, which are what the windows and the glass entrance show.\n\nBrief: the lobby of the existing hotel in 2035 (grounded near future: it looks like today). Tamara has a temporary repair table \"Druhý život\" as an accompanying programme of the exhibition: a small, homely workshop corner in the lobby, clearly not the hotel reception. In the background the normal reception and some luggage. Daylight of a bright June midday comes through the windows and the entrance, warm interior light from the downlights.\n\nCamera: standing in the lobby, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to the cove line at y ~250; the back wall from y 262 to the floor line at y 700; the glazed entrance doors at x 60-260 (y 405-705); the grey stone feature wall at x 300-920 with the lettering at y ~330-360; the white reception counter at x 320-930 (top y 600, front foot y ~745); Tamara's table at x 960-1260 (top edge y 610-626, cloth to the floor at y ~774); the parts shelves at x 1260-1430 (top y 385, foot y 700); the lounge from x 1450 to the right edge; the grey stone floor from y 700 to the bottom edge.\n\nWhat the sketch blocks are: the light ceiling with downlights and a cove line; the warm white back wall; the glazed entrance doors with daylight and spruces outside; the grey stone feature wall with the spaced lettering RECEPTION; the long white curved ribbed reception counter with red and orange flowers in a vase and the back of a flat screen on it (no receptionist); two suitcases (dark red and blue) standing beside the counter; a plain stretch of wall behind Tamara's table; Tamara's repair table with a teal cloth hanging to the floor in front, a small old radio being repaired, a desk lamp and a few small tools on the top, and a small wooden plaque on the cloth reading \"DRUHÝ ŽIVOT\"; the open wooden shelving unit; the lounge wall with two colourful paintings; a tall window with light curtains showing the spruce forest and green slopes; the lounge side counter; two beige armchairs and a small round table; the grey stone floor tiles.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1470-1605, y 495-645 of the 1920x1080 frame (77-84 % from the left, 46-60 % from the top): a sleek modern self-service coffee machine (dark grey, a small glowing display, a cup under the spout) on the lounge's side counter, a stack of white cups beside it.\n2. the block of the layout sketch at x 1260-1430, y 385-700 of the 1920x1080 frame (66-74 % from the left, 36-65 % from the top): Tamara's open wooden shelving unit full of labelled boxes, small drawers and trays of spare parts: old radio valves, knobs, cables, screws, small electronic boards (labels are illegible scribbles).\nNPC zone at x 1040-1180, y 478-628 of the 1920x1080 frame (54-61 % from the left, 44-58 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a table: paint the table's top edge as one straight horizontal line exactly at y 624 across x 1010-1210, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\nthe area of the layout sketch at x 60-260, y 420-705 of the 1920x1080 frame (3-14 % from the left, 39-65 % from the top) is the glazed entrance doors.\n\nWalkable floor: the band at x 0-1920, y 718-1015 of the 1920x1080 frame (0-100 % from the left, 66-94 % from the top) is the grey stone floor tiles - one continuous flat surface with no step, no rug, no edge and no change of material inside it, and nothing standing on it: no low tables, no chairs, no plants, no luggage, no people. Only light reflections, soft shadows and tile joints.\n\nFiction rules: the only lettering in the picture is RECEPTION on the stone wall and DRUHÝ ŽIVOT on Tamara's plaque - no hotel logo, no stars, no brand names, no price lists; the paintings are abstract colourful works of our own (no copies of real artworks). No people (no receptionist, no guests), no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S43_sketch.png (rendered from art/prompts/natural/S43.sketch.json, model geometry)",
+    "art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg",
+    "src/game/assets/bg_natural/S41.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S43 natural blocking (src/game/data/blocking/S43.json): Hotel Grand Jasna lobby, camera ~1.6 m, horizon y ~470, back wall foot y ~700, reception counter front y ~740, Tamara's table top y 624 (sill), table front y ~770.",
+    "background": "#e9e1d3",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          250
+        ],
+        "fill": "#efeae2",
+        "note": "light ceiling with recessed round downlights"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          380,
+          120,
+          40,
+          14
+        ],
+        "fill": "#fffbe8",
+        "note": "downlight"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          760,
+          120,
+          40,
+          14
+        ],
+        "fill": "#fffbe8",
+        "note": "downlight"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1140,
+          120,
+          40,
+          14
+        ],
+        "fill": "#fffbe8",
+        "note": "downlight"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1520,
+          120,
+          40,
+          14
+        ],
+        "fill": "#fffbe8",
+        "note": "downlight"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          240,
+          1920,
+          22
+        ],
+        "fill": "#d8cfc0",
+        "note": "ceiling cove line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          262,
+          1920,
+          438
+        ],
+        "fill": "#efe6d6",
+        "note": "warm white back wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          420,
+          200,
+          285
+        ],
+        "fill": "#a9c2cf",
+        "note": "glazed entrance doors: daylight, spruces outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          155,
+          420,
+          10,
+          285
+        ],
+        "fill": "#8b949b",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          50,
+          405,
+          220,
+          18
+        ],
+        "fill": "#8b949b",
+        "note": "door frame head"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          262,
+          620,
+          440
+        ],
+        "fill": "#8e8f8d",
+        "note": "grey stone-textured feature wall behind the reception"
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          330,
+          360,
+          30
+        ],
+        "fill": "#d9d6cf",
+        "note": "spaced metal lettering RECEPTION"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            700
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#a9aaa6",
+        "note": "grey stone floor tiles"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            320,
+            600
+          ],
+          [
+            900,
+            600
+          ],
+          [
+            930,
+            620
+          ],
+          [
+            930,
+            745
+          ],
+          [
+            320,
+            745
+          ]
+        ],
+        "fill": "#f6f4ef",
+        "note": "long white curved reception counter with a ribbed front"
+      },
+      {
+        "type": "bars",
+        "box": [
+          320,
+          625,
+          610,
+          120
+        ],
+        "step": 14,
+        "bar": 4,
+        "fill": "#dcd8d0",
+        "vertical": false,
+        "note": "horizontal ribs of the counter front"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          520,
+          70,
+          80
+        ],
+        "fill": "#cf3a2a",
+        "note": "red and orange flowers in a vase on the counter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          565,
+          70,
+          35
+        ],
+        "fill": "#3a3d42",
+        "note": "flat screen on the counter, seen from behind"
+      },
+      {
+        "type": "rect",
+        "box": [
+          940,
+          640,
+          60,
+          100
+        ],
+        "fill": "#7a3b2e",
+        "note": "suitcase"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          670,
+          55,
+          75
+        ],
+        "fill": "#3d5a7a",
+        "note": "suitcase"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1020,
+          380,
+          210,
+          90
+        ],
+        "fill": "#e7dfcf",
+        "note": "plain wall behind Tamara (keep empty)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          960,
+          624,
+          300,
+          150
+        ],
+        "fill": "#3f6e6a",
+        "note": "Tamara's repair table: top at y 624, a teal cloth hanging to the floor in front"
+      },
+      {
+        "type": "rect",
+        "box": [
+          955,
+          610,
+          310,
+          16
+        ],
+        "fill": "#b48a5a",
+        "note": "table top edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          975,
+          575,
+          60,
+          35
+        ],
+        "fill": "#6d6d6d",
+        "note": "small radio being repaired"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          560,
+          18,
+          50
+        ],
+        "fill": "#3a3a3a",
+        "note": "desk lamp"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          680,
+          110,
+          40
+        ],
+        "fill": "#d9c7a0",
+        "note": "small wooden plaque on the cloth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1260,
+          385,
+          170,
+          315
+        ],
+        "fill": "#9a7a55",
+        "note": "open shelving unit"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1260,
+          385,
+          170,
+          315
+        ],
+        "step": 62,
+        "bar": 10,
+        "fill": "#6b4f33",
+        "vertical": false,
+        "note": "its shelves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1275,
+          410,
+          60,
+          35
+        ],
+        "fill": "#c9a24a",
+        "note": "box of parts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1345,
+          470,
+          70,
+          38
+        ],
+        "fill": "#4f81bd",
+        "note": "tray of parts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1280,
+          540,
+          65,
+          35
+        ],
+        "fill": "#c0504d",
+        "note": "box of parts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1350,
+          600,
+          60,
+          40
+        ],
+        "fill": "#9bbb59",
+        "note": "box of parts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          262,
+          470,
+          438
+        ],
+        "fill": "#f3ebdc",
+        "note": "lounge wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1490,
+          290,
+          120,
+          90
+        ],
+        "fill": "#e07a3a",
+        "note": "colourful abstract painting"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          300,
+          90,
+          110
+        ],
+        "fill": "#3a8fb0",
+        "note": "colourful painting"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1760,
+          280,
+          160,
+          330
+        ],
+        "fill": "#b9d0c4",
+        "note": "tall window with the spruce forest and green slopes outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1740,
+          262,
+          30,
+          440
+        ],
+        "fill": "#f7f3ea",
+        "note": "light curtain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1900,
+          262,
+          20,
+          440
+        ],
+        "fill": "#f7f3ea",
+        "note": "light curtain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1460,
+          640,
+          160,
+          60
+        ],
+        "fill": "#cfc3ad",
+        "note": "side counter of the lounge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1490,
+          520,
+          85,
+          120
+        ],
+        "fill": "#2f3236",
+        "note": "self-service coffee machine"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          540,
+          40,
+          26
+        ],
+        "fill": "#7fb0d0",
+        "note": "its small display"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1585,
+          600,
+          22,
+          40
+        ],
+        "fill": "#ffffff",
+        "note": "stack of cups"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          600,
+          110,
+          100
+        ],
+        "fill": "#c9b79c",
+        "note": "beige upholstered armchair"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1790,
+          600,
+          110,
+          100
+        ],
+        "fill": "#c9b79c",
+        "note": "beige upholstered armchair"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1745,
+          640,
+          60,
+          20
+        ],
+        "fill": "#d9b98a",
+        "note": "small round light-wood table"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          760,
+          1920,
+          320
+        ],
+        "cols": 16,
+        "rows": 4,
+        "color": "#9a9b97",
+        "width": 2
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S43.json",
+  "blocking": {
+    "version": 1,
+    "room": "S43",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Owner feedback 2026-10-05 (real lobby, looked at only): grey stone feature wall with RECEPTION lettering, long white curved ribbed reception counter, grey stone floor tiles, flowers on the counter; the lobby bar with rows of beige armchairs, round tables, colourful paintings and light curtains. Camera ~1.6 m high in the lobby, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), the reception counter front stands on y ~740, Tamara's repair table front on y ~770. Perspective s(y) = (y - 470) / 545. Left: the glazed entrance (exit), the reception; centre-right: Tamara's temporary repair table 'Druhy zivot' with the parts shelves behind it; right: the lobby bar lounge with the self-service coffee machine, armchairs and windows to the spruce forest.",
+    "background": "bg_natural/S43.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        718
+      ],
+      [
+        290,
+        718
+      ],
+      [
+        320,
+        752
+      ],
+      [
+        930,
+        752
+      ],
+      [
+        955,
+        782
+      ],
+      [
+        1265,
+        782
+      ],
+      [
+        1290,
+        752
+      ],
+      [
+        1920,
+        756
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      718,
+      1015
+    ],
+    "actor_scale": [
+      0.46,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S43.ambient 1": {
+        "rect": [
+          1470,
+          495,
+          135,
+          150
+        ],
+        "interaction_point": [
+          1537,
+          810
+        ],
+        "label_anchor": [
+          1537,
+          485
+        ],
+        "reason": "the self-service coffee machine on the lounge's side counter (counter top y ~640)"
+      },
+      "S43.ambient 2": {
+        "rect": [
+          1260,
+          385,
+          170,
+          315
+        ],
+        "interaction_point": [
+          1345,
+          810
+        ],
+        "label_anchor": [
+          1345,
+          375
+        ],
+        "reason": "Tamara's open shelving unit with boxes and trays of spare parts, standing behind and right of her table (foot y ~700)"
+      },
+      "S43.TAMARA": {
+        "rect": [
+          1040,
+          478,
+          140,
+          150
+        ],
+        "interaction_point": [
+          1110,
+          830
+        ],
+        "reason": "Tamara behind her repair table (bust cut at the table top y 624)"
+      }
+    },
+    "npcs": {
+      "S43.TAMARA": {
+        "variant": "behind_counter",
+        "feet": [
+          1110,
+          740
+        ],
+        "sill_y": 624,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Tamara behind her temporary repair table (table variant cut at the table top)"
+      }
+    },
+    "exits": {
+      "S43.to_S42": {
+        "rect": [
+          60,
+          420,
+          200,
+          285
+        ],
+        "interaction_point": [
+          160,
+          800
+        ],
+        "label_anchor": [
+          190,
+          410
+        ],
+        "reason": "the glazed entrance doors in the back wall, left of the reception, out to the forecourt"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S43.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:21:50"
+  }
+}

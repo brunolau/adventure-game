@@ -1,0 +1,733 @@
+{
+  "room": "S02",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020202,
+  "usd": 0.15,
+  "started": "2026-10-05T10:37:53",
+  "spend_log_asset": "bg_natural/S02/S02_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S02.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Jaseňová, a living street of new family houses in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real street: a narrow light-concrete shared-surface street without pavements, every plot with a different fence right at its edge (grey horizontal slat fences, red-brick pillars with grey metal panels on a cream rendered plinth, split-block pillars with mesh panels, thuja hedges), narrow strips of decorative gravel, white and red-orange flat-roofed cubic houses behind small front gardens. Paint these real house and fence types; the plots are invented, not copies of particular houses.\n\nBrief: an invented residential street: houses, different fences, a courier's van on the right, an open pedestrian walkway; no real house numbers. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, long soft shadows, a yellow birch and an orange maple, a few fallen leaves on the concrete.\n\nCamera: standing on the street, about 2.2 m high, looking straight across at the opposite plots, which run parallel to the picture; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the fences stand at y 726 (brick pillars 1.45 m high, cap at y ~485; slat fences 1.8 m, top at y ~427); a narrow gravel strip with a low concrete edging between the fences and the street (y 726-750); the street from y 750 down to the bottom edge; the houses behind the fences stand on y ~589-600 with their flat roofs at y ~170-190; sky above.\n\nWhat the sketch blocks are, left to right: the left neighbour's fence - red-brick pillars with cream caps and grey metal panels on a cream rendered plinth - with a red-orange flat-roofed cube house and a yellow birch behind it; a narrow paved footpath between two plots leading away into the distance; Adam's plot: a grey horizontal slat fence, the wide open sliding driveway gate, a concrete driveway up to his white flat-roofed bungalow whose sectional garage door is rolled up (dim garage inside, a workbench glimpsed, no person), a white rendered gate pillar, more slat fence; the right neighbour's split-block plinth with a dark green thuja hedge behind mesh panels and a pale grey two-storey cube house; an orange maple; the rear part of a white courier van parked on the street at the right edge, seen from the side, with an orange stripe, the invented name ŠUP on its side and its rear door swung open.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 86-158, y 428-500 of the 1920x1080 frame (4-8 % from the left, 40-46 % from the top): a glazed ochre ceramic owl sitting on the cap of a brick fence pillar, big round eyes.\n2. the block of the layout sketch at x 1180-1244, y 460-542 of the 1920x1080 frame (61-65 % from the left, 43-50 % from the top): a dark grey metal mailbox fixed to the white gate pillar, three colourful advertising leaflets sticking out of its slot under a small crossed-out \"no advertising\" pictogram sticker (no readable text).\nAdam's open driveway gate is the area of the layout sketch at x 720-1170, y 560-730 of the 1920x1080 frame (38-61 % from the left, 52-68 % from the top); the footpath between the plots is the area of the layout sketch at x 430-600, y 560-735 of the 1920x1080 frame (22-31 % from the left, 52-68 % from the top); the street continues out of the left edge (the area of the layout sketch at x 0-60, y 770-1015 of the 1920x1080 frame (0-3 % from the left, 71-94 % from the top)) and the right edge (the area of the layout sketch at x 1860-1920, y 810-1015 of the 1920x1080 frame (97-100 % from the left, 75-94 % from the top)).\n\nWalkable floor: the band at x 0-1920, y 738-1015 of the 1920x1080 frame (0-100 % from the left, 68-94 % from the top) is the light concrete shared-surface street - one continuous flat surface with no kerb, no step and no change of material inside it, and nothing standing on it except the van at the right edge: no cars, no bins, no poles, no bikes, no people. Only light, long shadows, a manhole cover and a few fallen leaves.\nNPC zone at x 1245-1395, y 455-800 of the 1920x1080 frame (65-73 % from the left, 42-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 800. NPC zone at x 255-405, y 458-803 of the 1920x1080 frame (13-21 % from the left, 42-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 803. (Lenka with her dog will stand there on the street in front of the left fence; Roman the courier at the van's open rear door.)\n\nFiction rules: no house numbers, no names on mailboxes or bells, no real courier company livery or logo (the van only shows the invented name ŠUP), no readable text on stickers or leaflets, no licence plate text. No people, no animals, no other cars.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S02_sketch.png (rendered from art/prompts/natural/S02.sketch.json, model geometry)",
+    "art/source/rooms/S02/jasenova_street_mm_explorer.jpg",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S02 natural blocking (src/game/data/blocking/S02.json): Jasenova (Cierna Voda), camera 2.2 m on the shared-surface street looking across at the opposite plots, horizon y 360, fences at 10 m (y 726), houses at 16 m; generated from a pinhole model (painter scratchpad tools/persp.py).",
+    "background": "#a9c9e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          400
+        ],
+        "fill": "#a9c9e6",
+        "note": "sky with a few white clouds"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          184,
+          420,
+          391
+        ],
+        "fill": "#d0603c",
+        "note": "left neighbour: red-orange rendered flat-roofed cubic house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          340,
+          100,
+          137
+        ],
+        "fill": "#4a5560",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          340,
+          130,
+          137
+        ],
+        "fill": "#4a5560",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          173,
+          720,
+          416
+        ],
+        "fill": "#f1efe9",
+        "note": "Adam's white flat-roofed bungalow"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          163,
+          720,
+          31
+        ],
+        "fill": "#c9c6be",
+        "note": "flat roof edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          810,
+          360,
+          270,
+          229
+        ],
+        "fill": "#3b3632",
+        "note": "Adam's garage: sectional door rolled up, dim garage inside (workbench glimpsed)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          350,
+          140,
+          135
+        ],
+        "fill": "#4a5560",
+        "note": "window with grey frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1460,
+          131,
+          460,
+          458
+        ],
+        "fill": "#cfd3d6",
+        "note": "right neighbour: pale grey two-storey cube with dark window frames"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1520,
+          194,
+          120,
+          135
+        ],
+        "fill": "#4a5560",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1720,
+          194,
+          160,
+          135
+        ],
+        "fill": "#4a5560",
+        "note": "window"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          140,
+          120,
+          300,
+          330
+        ],
+        "fill": "#d8b23a",
+        "note": "yellow birch behind the left fence"
+      },
+      {
+        "type": "rect",
+        "box": [
+          280,
+          380,
+          16,
+          300
+        ],
+        "fill": "#e8e4dc",
+        "note": "white birch trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1600,
+          60,
+          320,
+          300
+        ],
+        "fill": "#d9782e",
+        "note": "orange maple behind the right house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          575,
+          1920,
+          151
+        ],
+        "fill": "#8fb05a",
+        "note": "front gardens (lawn, shrubs) behind the fences"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            700,
+            726
+          ],
+          [
+            1180,
+            726
+          ],
+          [
+            1100,
+            589
+          ],
+          [
+            790,
+            589
+          ]
+        ],
+        "fill": "#c8c3b8",
+        "note": "Adam's concrete driveway from the gate to the garage"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            420,
+            726
+          ],
+          [
+            600,
+            726
+          ],
+          [
+            700,
+            470
+          ],
+          [
+            690,
+            470
+          ]
+        ],
+        "fill": "#c9c2b2",
+        "note": "narrow paved footpath between two plots, leading away"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          651,
+          420,
+          75
+        ],
+        "fill": "#e6d3b0",
+        "note": "cream rendered plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          20,
+          485,
+          40,
+          241
+        ],
+        "fill": "#b5552f",
+        "note": "red brick pillar with a cream cap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          16,
+          476,
+          48,
+          17
+        ],
+        "fill": "#ece2cf",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          220,
+          485,
+          40,
+          241
+        ],
+        "fill": "#b5552f",
+        "note": "red brick pillar with a cream cap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          216,
+          476,
+          48,
+          17
+        ],
+        "fill": "#ece2cf",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          485,
+          40,
+          241
+        ],
+        "fill": "#b5552f",
+        "note": "red brick pillar with a cream cap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          396,
+          476,
+          48,
+          17
+        ],
+        "fill": "#ece2cf",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          510,
+          160,
+          141
+        ],
+        "fill": "#6c7378",
+        "note": "grey metal fence panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          260,
+          510,
+          140,
+          141
+        ],
+        "fill": "#6c7378",
+        "note": "grey metal fence panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          427,
+          100,
+          299
+        ],
+        "fill": "#7d858a",
+        "note": "Adam's grey horizontal slat fence"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          418,
+          60,
+          308
+        ],
+        "fill": "#e9e6df",
+        "note": "white rendered gate pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          427,
+          210,
+          299
+        ],
+        "fill": "#7d858a",
+        "note": "grey horizontal slat fence"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          643,
+          470,
+          83
+        ],
+        "fill": "#9a9a94",
+        "note": "split-block plinth of the right neighbour"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          460,
+          470,
+          183
+        ],
+        "fill": "#56704a",
+        "note": "dark green thuja hedge behind mesh panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          726,
+          1920,
+          24
+        ],
+        "fill": "#cdbfa2",
+        "note": "narrow strip of decorative gravel and a low concrete edging along the fences"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          749,
+          1920,
+          331
+        ],
+        "fill": "#c3c1bb",
+        "note": "the light concrete shared-surface street (walk band)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          92,
+          434,
+          60,
+          62
+        ],
+        "fill": "#b9842e",
+        "note": "ochre glazed ceramic owl on the pillar cap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1184,
+          466,
+          54,
+          70
+        ],
+        "fill": "#3e4246",
+        "note": "dark grey mailbox on the gate pillar, leaflets sticking out"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          314,
+          450,
+          413
+        ],
+        "fill": "#f2f2ee",
+        "note": "white courier van, rear part, seen from the side, parked at the far edge of the street"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          464,
+          450,
+          40
+        ],
+        "fill": "#e8782a",
+        "note": "orange stripe along the van with the invented name ŠUP"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1400,
+          354,
+          70,
+          373
+        ],
+        "fill": "#e2e2dc",
+        "note": "the van's open rear door swung out"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1560,
+          677,
+          110,
+          110
+        ],
+        "fill": "#2a2a2a",
+        "note": "rear wheel"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S02.json",
+  "blocking": {
+    "version": 1,
+    "room": "S02",
+    "status": "natural re-blocking (product-owner decision 2026-10-05); owner feedback: paths are narrower in reality (the shared-surface street is the only walkway)",
+    "note": "Jasenova, a living street of new family houses in Cierna Voda: camera 2.2 m standing on the concrete shared-surface street, looking straight across at the opposite plots; horizon y 360, pinhole f 1663 px so s(y) = (y - 360) / 655 like S03/S05. The visible walk band is the far half of the ~5.5 m street (5.6-9.4 m, y 1015-750), a narrow gravel strip at the fence foot (y 726-750), fences at 10 m (y 726, 166 px per metre), houses at 16-17 m. Left to right: the left neighbour's red-brick pillars with grey panels (ceramic owl on a pillar cap) and red-orange cube house, a narrow paved footpath between two plots (to the old core / Mira), Adam's grey slat fence with the open driveway gate and the driveway up to his white bungalow's open garage (S01), the white gate pillar with the mailbox, the right neighbour's split-block plinth and thuja hedge with Roman's courier van parked in front (its rear part, rear door open).",
+    "background": "bg_natural/S02.webp",
+    "walk_polygon": [
+      [
+        0,
+        762
+      ],
+      [
+        430,
+        760
+      ],
+      [
+        470,
+        738
+      ],
+      [
+        580,
+        738
+      ],
+      [
+        610,
+        760
+      ],
+      [
+        710,
+        760
+      ],
+      [
+        740,
+        738
+      ],
+      [
+        1150,
+        738
+      ],
+      [
+        1180,
+        760
+      ],
+      [
+        1395,
+        760
+      ],
+      [
+        1395,
+        805
+      ],
+      [
+        1920,
+        805
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      738,
+      1015
+    ],
+    "actor_scale": [
+      0.58,
+      1.0
+    ],
+    "spawn": [
+      940,
+      900
+    ],
+    "hotspots": {
+      "S02.ambient 1": {
+        "rect": [
+          86,
+          428,
+          72,
+          72
+        ],
+        "interaction_point": [
+          125,
+          800
+        ],
+        "label_anchor": [
+          125,
+          418
+        ],
+        "reason": "glazed ceramic owl sitting on the cap of a brick fence pillar of the left neighbour"
+      },
+      "S02.ambient 2": {
+        "rect": [
+          1180,
+          460,
+          64,
+          82
+        ],
+        "interaction_point": [
+          1212,
+          790
+        ],
+        "label_anchor": [
+          1172,
+          452
+        ],
+        "reason": "dark grey mailbox on Adam's white gate pillar, a crossed-out no-advertising sticker and leaflets sticking out"
+      },
+      "S02.ROMAN": {
+        "rect": [
+          1245,
+          455,
+          150,
+          345
+        ],
+        "interaction_point": [
+          1150,
+          830
+        ],
+        "label_anchor": [
+          1320,
+          445
+        ],
+        "reason": "Roman the courier standing at the open rear door of his van"
+      },
+      "S02.LENKA": {
+        "rect": [
+          255,
+          458,
+          150,
+          345
+        ],
+        "interaction_point": [
+          500,
+          830
+        ],
+        "label_anchor": [
+          330,
+          448
+        ],
+        "reason": "Lenka with Bodka on the lead, standing on the street in front of the left neighbour's fence"
+      }
+    },
+    "npcs": {
+      "S02.ROMAN": {
+        "variant": "standing",
+        "feet": [
+          1320,
+          800
+        ],
+        "scale": 0.67,
+        "reason": "standing at his van (DECISIONS item 2: standing)"
+      },
+      "S02.LENKA": {
+        "variant": "standing",
+        "feet": [
+          330,
+          803
+        ],
+        "scale": 0.68,
+        "facing": "right",
+        "reason": "standing with the dog on the street (DECISIONS item 2: standing)"
+      }
+    },
+    "exits": {
+      "S02.to_S01": {
+        "rect": [
+          720,
+          560,
+          450,
+          170
+        ],
+        "interaction_point": [
+          940,
+          760
+        ],
+        "label_anchor": [
+          940,
+          550
+        ],
+        "reason": "Adam's open driveway gate; the driveway leads to his garage (the garage's open door shows this street, S01)"
+      },
+      "S02.to_S03": {
+        "rect": [
+          0,
+          770,
+          60,
+          245
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          190,
+          760
+        ],
+        "reason": "the street continues out of the left edge towards Javorova alej and the park"
+      },
+      "S02.to_S05": {
+        "rect": [
+          430,
+          560,
+          170,
+          175
+        ],
+        "interaction_point": [
+          520,
+          755
+        ],
+        "label_anchor": [
+          515,
+          550
+        ],
+        "reason": "narrow paved footpath between two plots, a short cut to the old core on Pezinska (Mira)"
+      },
+      "S02.to_S51": {
+        "rect": [
+          1860,
+          810,
+          60,
+          205
+        ],
+        "interaction_point": [
+          1855,
+          905
+        ],
+        "label_anchor": [
+          1700,
+          800
+        ],
+        "reason": "the street continues out of the right edge to the main road and the bus stop (car/bus transition to Dubravka)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S02.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:38:35"
+  }
+}

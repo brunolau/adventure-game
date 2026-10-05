@@ -1,0 +1,25 @@
+# S30 Nabrezny merací pristresok (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S30.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S30.sketch.json (riverside path, camera ~2.2 m, horizon y ~360, railing on y 700).
+#refs: art/source/rooms/S30/tyrsovo-nabrezie_path_railing_castle-view_2008.jpg ; art/source/rooms/S30/petrzalka-bank_view-across-danube_2008.jpg
+#style: src/game/assets/bg_natural/S19.webp
+Place: Tyrsovo nabrezie, the real Petrzalka embankment of the Danube in Bratislava, as it was in 1995. Images 2-3 are photos of this real place: the riverside path with grass, the wide Danube, and across the river the castle hill with Bratislava castle (a big square palace with four corner towers and a red roof) above the Old Town, the tall slender spire of St Martin's cathedral, the old houses along the far embankment, and Most SNP on the left: the bridge deck with its single slanted pylon carrying the round saucer restaurant on top. Paint this view in 1995: no moored restaurant boat with brands at our bank, no modern riverside buildings of the 2000s across the river, no cranes, no billboards.
+
+Brief: an invented service shelter by the Danube with an isolated demo circuit, three mechanical number wheels, a stand for a measuring coil and a small table for a metronome; the water behind the railing. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, sparkling water, a blue sky with a few white clouds.
+
+Camera: standing on the riverside path, about 2.2 m high, looking straight across the river; the embankment railing runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the far bank at y 380; the river from y 380 to the railing; the green steel railing standing on y 700 with its top rail at y 528; a narrow grass strip y 700-740; the path from y 740 to the bottom edge; the canopy roof at y 280-320 on two posts standing on y 700; the workbench top at y 577 with its front legs on y 730.
+
+What the sketch blocks are, left to right: Most SNP with its slanted pylon and saucer top and its stay cables, the bridge deck spanning to the left; white clouds; a white Danube riverboat of the period on the river; the green castle hill with Bratislava castle; the spire of St Martin's cathedral; the old town houses along the far bank; the green steel embankment railing with posts and two rails in front of the water; the small open service canopy on the right: a sloping corrugated metal roof on two steel posts, under it a sturdy wooden workbench carrying the empty round coil holder on a short post, the isolated demo circuit (a wooden board with insulated wires, terminals and a small lamp) and a grey steel box with three big mechanical number wheels; the small round wooden metronome table standing left of the canopy; the asphalt path.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S30.coil}: an empty round steel holder ring with a small keyed notch, mounted upright on a short post on the workbench (no coil in it yet).
+2. {rect:S30.metro}: a small round wooden table on one leg with a painted white circle mark on its top (empty - no metronome on it yet).
+3. {rect:S30.dial}: a grey steel box with three big mechanical number wheels side by side, each showing 0.
+4. {rect:S30.ambient 1}: a white Danube passenger riverboat of the 1990s with a red funnel stripe sailing on the river (no name, no lettering).
+5. {rect:S30.ambient 2}: a stretch of the green-painted steel embankment railing with the water behind it.
+The path runs out of the left edge ({exit:S30.to_S28}).
+
+Walkable floor: {walk} is the open asphalt riverside path - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no benches, no bins, no bollards, no bicycles, no lamp posts. Only sunlight, soft shadows and a few cracks.
+{npc_zones}
+
+Fiction rules: the service canopy, the demo circuit, the number wheels, the coil holder and the table are fictional props; no signs or lettering on them, no boat names, no restaurant signage, no brands, no people, no animals. The only digits in the picture are the three zeros on the number wheels.

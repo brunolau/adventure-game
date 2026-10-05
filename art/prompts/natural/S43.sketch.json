@@ -1,0 +1,537 @@
+{
+ "note": "S43 natural blocking (src/game/data/blocking/S43.json): Hotel Grand Jasna lobby, camera ~1.6 m, horizon y ~470, back wall foot y ~700, reception counter front y ~740, Tamara's table top y 624 (sill), table front y ~770.",
+ "background": "#e9e1d3",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    250
+   ],
+   "fill": "#efeae2",
+   "note": "light ceiling with recessed round downlights"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    380,
+    120,
+    40,
+    14
+   ],
+   "fill": "#fffbe8",
+   "note": "downlight"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    760,
+    120,
+    40,
+    14
+   ],
+   "fill": "#fffbe8",
+   "note": "downlight"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1140,
+    120,
+    40,
+    14
+   ],
+   "fill": "#fffbe8",
+   "note": "downlight"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1520,
+    120,
+    40,
+    14
+   ],
+   "fill": "#fffbe8",
+   "note": "downlight"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    240,
+    1920,
+    22
+   ],
+   "fill": "#d8cfc0",
+   "note": "ceiling cove line"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    262,
+    1920,
+    438
+   ],
+   "fill": "#efe6d6",
+   "note": "warm white back wall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    60,
+    420,
+    200,
+    285
+   ],
+   "fill": "#a9c2cf",
+   "note": "glazed entrance doors: daylight, spruces outside"
+  },
+  {
+   "type": "rect",
+   "box": [
+    155,
+    420,
+    10,
+    285
+   ],
+   "fill": "#8b949b",
+   "note": "door frame"
+  },
+  {
+   "type": "rect",
+   "box": [
+    50,
+    405,
+    220,
+    18
+   ],
+   "fill": "#8b949b",
+   "note": "door frame head"
+  },
+  {
+   "type": "rect",
+   "box": [
+    300,
+    262,
+    620,
+    440
+   ],
+   "fill": "#8e8f8d",
+   "note": "grey stone-textured feature wall behind the reception"
+  },
+  {
+   "type": "rect",
+   "box": [
+    430,
+    330,
+    360,
+    30
+   ],
+   "fill": "#d9d6cf",
+   "note": "spaced metal lettering RECEPTION"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     1080
+    ],
+    [
+     0,
+     700
+    ],
+    [
+     1920,
+     700
+    ],
+    [
+     1920,
+     1080
+    ]
+   ],
+   "fill": "#a9aaa6",
+   "note": "grey stone floor tiles"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     320,
+     600
+    ],
+    [
+     900,
+     600
+    ],
+    [
+     930,
+     620
+    ],
+    [
+     930,
+     745
+    ],
+    [
+     320,
+     745
+    ]
+   ],
+   "fill": "#f6f4ef",
+   "note": "long white curved reception counter with a ribbed front"
+  },
+  {
+   "type": "bars",
+   "box": [
+    320,
+    625,
+    610,
+    120
+   ],
+   "step": 14,
+   "bar": 4,
+   "fill": "#dcd8d0",
+   "vertical": false,
+   "note": "horizontal ribs of the counter front"
+  },
+  {
+   "type": "rect",
+   "box": [
+    560,
+    520,
+    70,
+    80
+   ],
+   "fill": "#cf3a2a",
+   "note": "red and orange flowers in a vase on the counter"
+  },
+  {
+   "type": "rect",
+   "box": [
+    400,
+    565,
+    70,
+    35
+   ],
+   "fill": "#3a3d42",
+   "note": "flat screen on the counter, seen from behind"
+  },
+  {
+   "type": "rect",
+   "box": [
+    940,
+    640,
+    60,
+    100
+   ],
+   "fill": "#7a3b2e",
+   "note": "suitcase"
+  },
+  {
+   "type": "rect",
+   "box": [
+    880,
+    670,
+    55,
+    75
+   ],
+   "fill": "#3d5a7a",
+   "note": "suitcase"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1020,
+    380,
+    210,
+    90
+   ],
+   "fill": "#e7dfcf",
+   "note": "plain wall behind Tamara (keep empty)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    960,
+    624,
+    300,
+    150
+   ],
+   "fill": "#3f6e6a",
+   "note": "Tamara's repair table: top at y 624, a teal cloth hanging to the floor in front"
+  },
+  {
+   "type": "rect",
+   "box": [
+    955,
+    610,
+    310,
+    16
+   ],
+   "fill": "#b48a5a",
+   "note": "table top edge"
+  },
+  {
+   "type": "rect",
+   "box": [
+    975,
+    575,
+    60,
+    35
+   ],
+   "fill": "#6d6d6d",
+   "note": "small radio being repaired"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1190,
+    560,
+    18,
+    50
+   ],
+   "fill": "#3a3a3a",
+   "note": "desk lamp"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1060,
+    680,
+    110,
+    40
+   ],
+   "fill": "#d9c7a0",
+   "note": "small wooden plaque on the cloth"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1260,
+    385,
+    170,
+    315
+   ],
+   "fill": "#9a7a55",
+   "note": "open shelving unit"
+  },
+  {
+   "type": "bars",
+   "box": [
+    1260,
+    385,
+    170,
+    315
+   ],
+   "step": 62,
+   "bar": 10,
+   "fill": "#6b4f33",
+   "vertical": false,
+   "note": "its shelves"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1275,
+    410,
+    60,
+    35
+   ],
+   "fill": "#c9a24a",
+   "note": "box of parts"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1345,
+    470,
+    70,
+    38
+   ],
+   "fill": "#4f81bd",
+   "note": "tray of parts"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1280,
+    540,
+    65,
+    35
+   ],
+   "fill": "#c0504d",
+   "note": "box of parts"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1350,
+    600,
+    60,
+    40
+   ],
+   "fill": "#9bbb59",
+   "note": "box of parts"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1450,
+    262,
+    470,
+    438
+   ],
+   "fill": "#f3ebdc",
+   "note": "lounge wall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1490,
+    290,
+    120,
+    90
+   ],
+   "fill": "#e07a3a",
+   "note": "colourful abstract painting"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1640,
+    300,
+    90,
+    110
+   ],
+   "fill": "#3a8fb0",
+   "note": "colourful painting"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1760,
+    280,
+    160,
+    330
+   ],
+   "fill": "#b9d0c4",
+   "note": "tall window with the spruce forest and green slopes outside"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1740,
+    262,
+    30,
+    440
+   ],
+   "fill": "#f7f3ea",
+   "note": "light curtain"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1900,
+    262,
+    20,
+    440
+   ],
+   "fill": "#f7f3ea",
+   "note": "light curtain"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1460,
+    640,
+    160,
+    60
+   ],
+   "fill": "#cfc3ad",
+   "note": "side counter of the lounge"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1490,
+    520,
+    85,
+    120
+   ],
+   "fill": "#2f3236",
+   "note": "self-service coffee machine"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1500,
+    540,
+    40,
+    26
+   ],
+   "fill": "#7fb0d0",
+   "note": "its small display"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1585,
+    600,
+    22,
+    40
+   ],
+   "fill": "#ffffff",
+   "note": "stack of cups"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1640,
+    600,
+    110,
+    100
+   ],
+   "fill": "#c9b79c",
+   "note": "beige upholstered armchair"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1790,
+    600,
+    110,
+    100
+   ],
+   "fill": "#c9b79c",
+   "note": "beige upholstered armchair"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1745,
+    640,
+    60,
+    20
+   ],
+   "fill": "#d9b98a",
+   "note": "small round light-wood table"
+  },
+  {
+   "type": "grid",
+   "box": [
+    0,
+    760,
+    1920,
+    320
+   ],
+   "cols": 16,
+   "rows": 4,
+   "color": "#9a9b97",
+   "width": 2
+  }
+ ]
+}

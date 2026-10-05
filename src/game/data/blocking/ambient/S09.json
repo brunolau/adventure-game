@@ -1,0 +1,127 @@
+{
+ "room": "S09",
+ "notes": "Natural S09 ambient (bg_natural/S09.webp): dust motes turning in the long sunbeam from the open outer door, the bare bulb swinging slightly on its cord, the yellow tree and hedge outside the door moving in the wind, a leaf now and then blowing in over the threshold, the blue glow of the round frame in the back room breathing (and spilling faintly through the doorway). Cut-outs: art/ambient/natural/S09.cuts.json -> assets/ambient/S09/natural/.",
+ "layers": [
+  {
+   "id": "door_tree",
+   "type": "sway",
+   "texture": "S09/natural/door_tree.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.3,
+   "wavelength_px": 90,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "bulb_patch",
+   "type": "cutout",
+   "texture": "S09/natural/bulb_patch.webp"
+  },
+  {
+   "id": "bulb",
+   "type": "sway",
+   "texture": "S09/natural/bulb.webp",
+   "anchor": 0.0,
+   "hang": true,
+   "amp_px": 1.4,
+   "freq": 0.18,
+   "wavelength_px": 600,
+   "flutter_px": 0.1,
+   "gust": 0.4
+  },
+  {
+   "id": "leaves_in",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    40,
+    420,
+    200,
+    140
+   ],
+   "rate": 0.1,
+   "size": [
+    11,
+    16
+   ],
+   "speed_x": [
+    20,
+    55
+   ],
+   "speed_y": [
+    40,
+    65
+   ],
+   "land_y": [
+    815,
+    1000
+   ],
+   "rest_s": [
+    5,
+    9
+   ]
+  },
+  {
+   "id": "dust_beam",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    220,
+    240,
+    900,
+    700
+   ],
+   "count": 45,
+   "size": [
+    4,
+    8.5
+   ],
+   "alpha_range": [
+    0.25,
+    0.8
+   ],
+   "color": "#fff0c4"
+  },
+  {
+   "id": "portal_glow",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1790,
+    470
+   ],
+   "size": [
+    260,
+    260
+   ],
+   "color": "#8fc8ff",
+   "min": 0.15,
+   "max": 0.4,
+   "period_s": 3.4
+  },
+  {
+   "id": "portal_spill",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1640,
+    350,
+    250,
+    470
+   ],
+   "color": "#5f9eff",
+   "min": 0.03,
+   "max": 0.1,
+   "period_s": 0.9
+  }
+ ]
+}

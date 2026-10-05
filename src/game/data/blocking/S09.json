@@ -1,0 +1,127 @@
+{
+  "version": 1,
+  "room": "S09",
+  "status": "natural re-blocking (product-owner decision 2026-10-05)",
+  "note": "Anteroom of Mira's old garden workshop (the outbuilding in the street line of the S05 property): camera ~2.2 m inside, looking straight at the long whitewashed wall (foot y 790, ~230 px per metre, horizon ~y 284); hero 1.7 m at the wall = scale 0.77 (perspective compressed to 1.05 at the front). The outer plank door at the left opens to the sunny brick pavement of Pezinska (S05); the worn table with the locked brass case stands against the wall (case on the table, as the brief says), old suitcases stacked on the floor beside it, three old skis leaning on the wall, the tall shelving unit of school teaching aids with the school globe on top, the doorway to the back room (S10, blue glow) at the right.",
+  "background": "bg_natural/S09.webp",
+  "walk_polygon": [
+    [
+      20,
+      812
+    ],
+    [
+      1900,
+      812
+    ],
+    [
+      1900,
+      1015
+    ],
+    [
+      20,
+      1015
+    ]
+  ],
+  "walk_band": [
+    812,
+    1015
+  ],
+  "actor_scale": [
+    0.79,
+    1.05
+  ],
+  "spawn": [
+    300,
+    920
+  ],
+  "hotspots": {
+    "S09.case": {
+      "rect": [
+        422,
+        515,
+        218,
+        100
+      ],
+      "interaction_point": [
+        531,
+        850
+      ],
+      "label_anchor": [
+        531,
+        505
+      ],
+      "reason": "closed old brass instrument case with a handle and clasps on the worn table (a little brass bell stands beside it - ZVON)"
+    },
+    "S09.ambient 1": {
+      "rect": [
+        1022,
+        305,
+        118,
+        488
+      ],
+      "interaction_point": [
+        1080,
+        850
+      ],
+      "label_anchor": [
+        1080,
+        295
+      ],
+      "reason": "three old wooden skis leaning on the wall"
+    },
+    "S09.ambient 2": {
+      "rect": [
+        1292,
+        178,
+        148,
+        138
+      ],
+      "interaction_point": [
+        1366,
+        850
+      ],
+      "label_anchor": [
+        1366,
+        168
+      ],
+      "reason": "school globe on top of the shelving unit of school teaching aids"
+    }
+  },
+  "exits": {
+    "S09.to_S05": {
+      "rect": [
+        24,
+        342,
+        262,
+        470
+      ],
+      "interaction_point": [
+        155,
+        840
+      ],
+      "label_anchor": [
+        155,
+        332
+      ],
+      "reason": "the open outer door to the street (Mira's gate, S05)"
+    },
+    "S09.to_S10": {
+      "rect": [
+        1630,
+        342,
+        262,
+        470
+      ],
+      "interaction_point": [
+        1760,
+        840
+      ],
+      "label_anchor": [
+        1760,
+        332
+      ],
+      "reason": "the inner doorway to the back room (ZVON workshop, S10)"
+    }
+  },
+  "state_patches": []
+}

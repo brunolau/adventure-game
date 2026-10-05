@@ -1,0 +1,25 @@
+# S50 Vyhliadková terasa pri Rotunde (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S50.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S50.sketch.json (roof terrace, looking north-east over the glass railing).
+# Style reference: the accepted natural S48 (same summit, same day).
+#refs: art/source/rooms/S50/rotunda-terrace_deck-glass-railing_2016-09.jpg ; art/source/rooms/S50/rotunda-terrace_chopok-peak_2016-09.jpg ; art/source/rooms/S50/chopok_view-north-funitel-high-tatras_2017-08.jpg
+#style: src/game/assets/bg_natural/S48.webp
+Place: the roof viewing terrace of the real Rotunda complex on the summit of Chopok (2,004 m), Low Tatras, Slovakia. Image 2 is a photo of this terrace: a weathered wooden deck and a railing of glass panels on steel posts above a solid dark grey parapet (ignore the dragon sculpture, the artificial grass, the bunting and the people). Image 3 shows the same railing with dark metal letters CHOPOK standing on it and the rocky peak of Chopok beyond. Image 4 is the real north view from the summit: the Funitel line with its pylons going down the slope, the forested ridges, the Liptov basin with a lake far below and the jagged High Tatras on the horizon. Paint this real terrace; the Atlas pavilion below it is invented (light larch cladding, white panels, flat roof).
+
+Brief: the viewing setting of the real Rotunda as inspiration; the exact layout of the terrace is an artistic 2035 interpretation. A separately labelled low-voltage Atlas cabinet stands beside the pavilion, clearly never a lift control. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky with white clouds, crisp light, the summit slopes rocky with dwarf pine and white snow patches still lying near the top, the distance slightly hazy.
+
+Camera: standing on the deck, about 2.1 m high, looking north-east over the railing; vertical lines stay vertical; the horizon is at y ~380. Keep this exact geometry from the sketch: the High Tatras on the horizon at x 150-1100 (peaks y ~260-300); the Liptov basin, the forested ridges and the rocky summit slope from y 380 down behind the railing; a Funitel pylon and its ropes going down at the far left; the Chopok peak rising on the right (top at x ~1500, y ~150); the roof and upper wall of the Atlas pavilion seen below through the glass at x 1240-1590 (roof edge y ~530); the railing along the whole width: steel handrail at y ~540, glass panels down to the parapet top at y ~625, the solid dark parapet down to the deck at y 720; the opening at the left end with the top of the steel stairs; the wooden deck from y 720 to the bottom edge.
+
+What the sketch blocks are: the deep blue sky with white clouds; the High Tatras with snow streaks; the hazy Liptov basin with a lake; forested ridges; the rocky summit slope with dwarf pine and snow patches; a Funitel pylon with its ropes; the rocky Chopok peak; the Atlas pavilion's roof below; the glass railing with steel posts and handrail; the solid dark parapet; dark metal letters CHOPOK standing on the handrail; the top of the external steel stairs with its own handrail at the left end; the weathered wooden deck boards.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S50.ambient 1}: the jagged rocky peaks of the High Tatras on the far northern horizon, with streaks of snow, above the hazy Liptov basin.
+2. {rect:S50.ambient 2}: a section of the railing right in front: clear glass panels on brushed-steel posts above the solid dark grey parapet.
+3. {rect:S50.switch}: a grey steel outdoor electrical cabinet standing on the deck, with a yellow label plate on top and a big black mechanical rotary switch on its door; the two switch positions are marked with the small words "ZÁPIS" and "MONITOR".
+4. {rect:S50.bridge}: on its own short steel post beside the cabinet, a small separate grey box with its lid open, holding a white ceramic bridge link (like an old porcelain fuse) between two brass terminals; a black cable runs from it to the cabinet.
+{npc_zones}
+{exit:S50.to_S48} is the top of the external steel stairs going down at the left end.
+
+Walkable floor: {walk} is the weathered wooden deck - one continuous flat surface with no step and nothing standing on it: no benches, no planters, no sculptures, no bins, no people. Only sunlight, soft shadows and board joints.
+
+Fiction rules: leave out the dragon sculpture and the bunting of the photos; the cabinet and the connector are fictional; no company logos (no TMR), no brand names; the only lettering is CHOPOK on the railing and ZÁPIS / MONITOR on the switch. No people, no animals.

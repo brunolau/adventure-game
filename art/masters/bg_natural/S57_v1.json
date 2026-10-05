@@ -1,0 +1,278 @@
+{
+  "room": "S57",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S11",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S11_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1982601,
+  "usd": 0.15,
+  "scope": "bg_natural/S57/",
+  "spend_log_asset": "bg_natural/S57/S57_v1_derive",
+  "started": "2026-10-05T10:06:19",
+  "prompt_file": "art/prompts/natural/S57.era.txt",
+  "blocking_file": "src/game/data/blocking/S57.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dúbravská zastávka in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'curb' stays exactly at x 262, y 792 (14 % from the left, 73 % from the top). The fixed landmark 'track_line' stays exactly at x 1524, y 813 (79 % from the left, 75 % from the top). The fixed landmark 'clock_frame' stays exactly at x 785, y 134 (41 % from the left, 12 % from the top).\n\nEra changes: the same place on an early-December afternoon in 1982, cold and calm: pale low winter sun through a thin haze, soft long shadows, bare grey-brown trees and lindens, a thin layer of old snow lying on the lawns, along the kerbs, on the roofs and in the corners of the platform, the platform itself mostly clear and damp. The tram line to Dubravka does NOT exist yet - it is being built:\n- The track bed at the right is a building site: fresh gravel, the near track only partly laid (new concrete sleepers with rails on part of its length, then bare sleepers), the far track only a gravel bed with stacks of concrete sleepers and rails lying beside it, no overhead wires; the grey traction poles already stand but carry no wires. A low red-and-white striped wooden construction barrier runs along the platform's right edge, with one small white board on it with the black words STAVBA ELEKTRIČKOVEJ TRATE.\n- No tram: where the 1995 tram stood, paint the building site, the bare trees and the far road behind it.\n- The platform slabs are new concrete; the low road-side wall with its railing and its chipped end at the ramp are the same.\n- An older, simpler shelter stands in exactly the same place and footprint: a plain dark green steel frame with a flat roof and clear glass panels, a simple wooden bench inside; through its glass the road behind shows.\n- On the west carriageway at the left, beyond the low wall, an articulated city bus of the period (Ikarus 280 type: boxy, cream-white upper body and dark red lower body, big flat windscreen, no logos, no number, blank destination box) waits at a temporary bus stop, its front towards the camera, its front part fully visible between the left frame edge and the shelter, the rest hidden behind the shelter; a small round temporary bus-stop sign on a post beside it (bus pictogram only).\n- The stop post in the same place carries the same round brass clock on top, a small white plate with a bus pictogram, and a small glazed case with a paper timetable.\n- Beyond the building site at the right, on the green strip, a large red slogan billboard on two legs faces the stop, with neat white capital letters: ZA SPOLOČNÚ BUDÚCNOSŤ.\n- One or two period cars (small boxy 1970s sedans, beige and pale blue) parked on the far road at the right. No people.\nEverything else built (the platform, the ramp and zebra crossing, the road, the panel towers, the shopping pavilion) stays exactly where it is.\n\nInteractive props of 1982:\n1. the box labelled 'Dobové heslo' in image 2 (x 1600-1870, y 318-458 of the 1920x1080 frame (83-97 % from the left, 29-42 % from the top)): the red slogan billboard with the white words ZA SPOLOČNÚ BUDÚCNOSŤ, the whole billboard inside the box.\n2. the box labelled 'Papierový poriadok' in image 2 (x 728-844, y 452-588 of the 1920x1080 frame (38-44 % from the left, 42-54 % from the top)): the small glazed case on the stop post with a typed paper timetable (illegible lines, no digits).\nthe box labelled 'exit: Pred ZŠ Sokolíkova v roku 1982' in image 2 (x 40-255, y 780-930 of the 1920x1080 frame (2-13 % from the left, 72-86 % from the top)) is the ramp and zebra crossing at the near left (towards the school). the box labelled 'exit: Sídliskový obchod v roku 1982' in image 2 (x 930-1180, y 520-660 of the 1920x1080 frame (48-61 % from the left, 48-61 % from the top)) is the far end of the platform.\n\nWalkable floor: the band at x 0-1449, y 670-1015 of the 1920x1080 frame (0-75 % from the left, 62-94 % from the top) stays the open, flat platform with nothing standing on it, only light, shadows and a few small patches of old snow at its edges.\nThis room has no NPC zones.\n\nFiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop signs, no number plates, no people, no animals. Apart from the two inscriptions asked for above, any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S11_v1.png (model geometry)",
+    "S11_v1.png + S57 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor curb": {
+        "at": [
+          262,
+          792
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.559,
+        "ok": true
+      },
+      "anchor track_line": {
+        "at": [
+          1524,
+          813
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.689,
+        "ok": true
+      },
+      "anchor clock_frame": {
+        "at": [
+          785,
+          134
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.934,
+        "ok": true
+      },
+      "exit S57.to_S58": {
+        "at": [
+          147.5,
+          855.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.951,
+        "ok": true
+      },
+      "exit S57.to_S62": {
+        "at": [
+          1055.0,
+          590.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.299,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S57_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S57",
+    "family_base": "S11",
+    "status": "natural re-blocking, camera family L_STOP: derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale); docs/DECISIONS.md item 3 option B",
+    "note": "Same L_STOP camera as the base S11 (Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615.) December 1982 (decision 3b): the tram line is under construction - the platform slabs are laid, the track bed is a building site behind a red-and-white barrier; an older simple shelter stands on the later shelter's footprint; an unbranded articulated bus waits at a temporary stop on the west carriageway at the left; a red slogan billboard stands on the green strip beyond the building site at the right.",
+    "background": "bg_natural/S57.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        1449,
+        1015
+      ],
+      [
+        1230,
+        672
+      ],
+      [
+        928,
+        670
+      ],
+      [
+        850,
+        828
+      ],
+      [
+        339,
+        814
+      ],
+      [
+        65,
+        970
+      ],
+      [
+        0,
+        1000
+      ]
+    ],
+    "walk_band": [
+      670,
+      1015
+    ],
+    "actor_scale": [
+      0.44,
+      1.0
+    ],
+    "spawn": [
+      1010,
+      900
+    ],
+    "anchors": {
+      "curb": [
+        262,
+        792
+      ],
+      "track_line": [
+        1524,
+        813
+      ],
+      "clock_frame": [
+        785,
+        134
+      ]
+    },
+    "hotspots": {
+      "S57.ambient 1": {
+        "rect": [
+          1600,
+          318,
+          270,
+          140
+        ],
+        "interaction_point": [
+          1205,
+          760
+        ],
+        "label_anchor": [
+          1735,
+          308
+        ],
+        "reason": "red period slogan billboard on two legs on the green strip beyond the building site, facing the stop"
+      },
+      "S57.ambient 2": {
+        "rect": [
+          728,
+          452,
+          116,
+          136
+        ],
+        "interaction_point": [
+          835,
+          862
+        ],
+        "label_anchor": [
+          786,
+          442
+        ],
+        "reason": "paper timetable in the small glazed case on the stop post (same place as the 1995 timetable)"
+      }
+    },
+    "exits": {
+      "S57.to_S58": {
+        "rect": [
+          40,
+          780,
+          215,
+          150
+        ],
+        "interaction_point": [
+          205,
+          915
+        ],
+        "label_anchor": [
+          205,
+          770
+        ],
+        "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12)"
+      },
+      "S57.to_S62": {
+        "rect": [
+          930,
+          520,
+          250,
+          140
+        ],
+        "interaction_point": [
+          1075,
+          690
+        ],
+        "label_anchor": [
+          1055,
+          510
+        ],
+        "reason": "the far end of the platform and the path to the housing-estate shop (same place as S11.to_S18)"
+      }
+    },
+    "audio": {
+      "ambience": [
+        {
+          "sound": "city_far",
+          "db": -10
+        },
+        {
+          "sound": "wind_soft",
+          "db": -12
+        },
+        {
+          "sound": "radio_1982",
+          "db": -12
+        },
+        {
+          "sound": "bus_pass",
+          "db": -6,
+          "every": [
+            25,
+            50
+          ],
+          "x": [
+            0,
+            700
+          ]
+        }
+      ],
+      "ambience_mode": "replace",
+      "reason": "docs/DECISIONS.md item 3b: no tram in Dubravka in 1982 - the tram brakes of ambience.json S57 are replaced by a bus passing; the transistor radio of the brief stays"
+    },
+    "state_patches": []
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S57.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:07:14"
+  }
+}

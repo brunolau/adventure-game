@@ -1,0 +1,23 @@
+# S46 Klientske centrum Biela Púť (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S46.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S46.sketch.json (same camera height as the hotel interiors).
+# Style reference: the accepted natural S43 lobby (same resort, same day, same light).
+#refs: art/source/rooms/S46/tourist-information-centre_balestrand.jpg ; art/source/rooms/S41/biela-put_centrum-jasna-hotel-grand_2015.jpg
+#style: src/game/assets/bg_natural/S43.webp
+Place: the client centre (ticket and information office) at Biela Púť in Jasná, Low Tatras, Slovakia. Image 2 is a photo of a real tourist information centre of this type: brochure racks full of leaflets, self-service computer terminals, a light-wood counter, a bright simple interior. Image 3 shows what the windows look out on: the Biela Púť plaza with a big dark wooden chalet, spruce forest and the green ski slopes of the Low Tatras. Paint a bright modern mountain-resort client centre of this type - not a copy of the photo.
+
+Brief: a real type of client centre with its real name; Sára is the invented contact person of the guest exhibition: besides the normal information she has a small service counter. She issues the approved visitor pass and a proper return lift ticket. Bright June midday daylight through the window wall and the entrance, white ceiling light panels.
+
+Camera: standing in the client centre, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to its edge at y ~235; the back wall with a pale larch-wood cladding band (y 600-700) down to the floor at y 700; the glazed entrance at x 60-255 (y 405-705); the lift-status screen at x 300-590 (y 300-420); two self-service terminals at x 320-550 (y 470-735); the brochure racks at x 620-830 (y 400-735); the small service counter at x 870-1200 with its top's back edge at y 595 and a solid teal front panel to y ~790; the rules board at x 1245-1405 (y 330-535); the window wall at x 1450-1890 (y 280-700); the ficus in its pot in the right corner (pot foot y ~735); the floor from y 700 to the bottom edge.
+
+What the sketch blocks are: the white ceiling with square light panels; the light warm-grey wall and the pale larch cladding band; the glazed entrance doors with the sunny plaza outside; a wall screen showing the lift status as coloured dots and simple lift pictograms (no text, no digits); two modern self-service ticket terminals with touch screens; tall brochure racks full of colourful leaflets (no readable text); a plain stretch of wall behind Sára; the small service counter (light top, teal front panel with a light-wood edge) with a small ticket printer and an open paper visitor book on it; the window wall with mullions showing the plaza, the dark wooden chalet, spruces and the green slope; the light grey stone-look floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S46.ambient 1}: a framed visitor rules board on the wall: at the top a big red crossed-out coffee-cup pictogram, below it many rows of tiny illegible print.
+2. {rect:S46.ambient 2}: a big healthy ficus with glossy dark green leaves in a light ceramic pot, standing in the window corner.
+{npc_zones}
+{exit:S46.to_S42} is the glazed entrance doors.
+
+Walkable floor: {walk} is the light grey stone-look floor - one continuous flat surface with no step, no mat, no edge and nothing standing on it: no queue barriers, no stands, no bins, no people. Only light reflections, soft shadows and tile joints.
+
+Fiction rules: no company logos or brand names (no TMR, no GOPASS), no price lists, no readable text anywhere (leaflets and print are illegible); the only symbol is the coffee-cup pictogram. No people, no animals.

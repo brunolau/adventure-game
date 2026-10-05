@@ -1,0 +1,834 @@
+{
+  "room": "S38",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1378502814,
+  "usd": 0.15,
+  "started": "2026-10-05T10:29:11",
+  "spend_log_asset": "bg_natural/S38/S38_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S38.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the bank of the Sursky kanal at the south-west edge of Ivanka pri Dunaji, Slovakia, in 1960 (the drainage canal was dug in 1941-43). Image 2 is the real place: a straight canal between grassy embankments with a dirt track along the bank, open flat fields and willow bushes (photographed in December - paint it as June: lush grass, reeds, full leaves). Image 3 shows an old sluice on the same canal: stone-block piers and a riveted iron gate frame (use only as the period water-engineering detail for the small sluice far down the canal). The small pump hut with its hand pump and the irrigation demonstration model are invented, built in the plain style of a 1950s village utility hut.\n\nBrief: an invented hut beside an irrigation model at the edge of the village; a hand demonstration pump, a bucket, the locked door of the measuring room. A sunny late afternoon on 6 June 1960, warm low sunlight from the left, long soft shadows, a big summer sky with a few clouds, water glinting in the canal.\n\nCamera: standing on the dirt track about 1.9 m high, looking across the canal, which runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~430. Keep this exact geometry from the sketch: the hut's front wall faces the camera squarely and meets the ground at y 660 (eaves y ~355, roof ridge y ~180); the pump plinth and the model stand on the bank at y ~690; the canal water runs across from y ~555 to y ~598, behind the hut, the pump and the model; the dirt track and its grass verges fill everything below y 690.\n\nWhat the sketch blocks are, left to right: a wide summer sky; flat green fields to the horizon with willows and poplars and the far-off spire of the village church on the left horizon; the small pump hut - brick with worn lime plaster, a red tiled gable roof, a thin iron vent pipe, a small wooden-framed window, a weathered plank door with a padlock on a hasp and a concrete threshold step; the cast-iron demonstration hand pump with a long handle on a small concrete plinth, its spout leading into the irrigation demonstration model - a long wooden trough on trestles with small channels and rows of seedlings; a galvanised bucket on the ground under the pump; the canal with calm water, the near bank with grass and reeds, the far embankment and a row of poplars and willow bushes; a small old sluice with stone piers and a riveted iron frame far down the canal on the right; a big tuft of tall grass and reed maces on the bank on the right; the packed-earth dirt track with two wheel ruts and grass verges.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 805-965, y 498-695 of the 1920x1080 frame (42-50 % from the left, 46-64 % from the top): the old cast-iron hand pump with a long curved handle on its small concrete plinth, the spout leading into the wooden trough; a few drops at the spout.\n2. the block of the layout sketch at x 445-567, y 418-578 of the 1920x1080 frame (23-30 % from the left, 39-54 % from the top): the upper part of the closed weathered plank door of the measuring room with an old padlock on a hasp at handle height.\n3. the block of the layout sketch at x 888-966, y 640-710 of the 1920x1080 frame (46-50 % from the left, 59-66 % from the top): a galvanised metal bucket standing on the ground under the pump.\n4. the block of the layout sketch at x 1450-1722, y 500-668 of the 1920x1080 frame (76-90 % from the left, 46-62 % from the top): a big tuft of tall grass and reeds with a few brown reed maces, growing on the canal bank.\nThe lower part of the door and its concrete threshold step are the area of the layout sketch at x 440-572, y 578-682 of the 1920x1080 frame (23-30 % from the left, 54-63 % from the top); the dirt track continues out of the left edge (the area of the layout sketch at x 0-60, y 712-1007 of the 1920x1080 frame (0-3 % from the left, 66-93 % from the top)) towards the village.\n\nWalkable floor: the band at x 0-1920, y 688-1015 of the 1920x1080 frame (0-100 % from the left, 64-94 % from the top) is the packed-earth dirt track with its grass verges - flat ground with no kerb, no ditch, no step and nothing standing on it: no stones, no posts, no buckets, no tools. Only earth, grass, light and shadows.\nThis room has no NPC zones.\n\nFiction rules: no signs on the hut, no water-authority names, no numbers, no posters, no slogans, no people, no animals, no cars or tractors.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S38_sketch.png (rendered from art/prompts/natural/S38.sketch.json, model geometry)",
+    "art/source/rooms/S38/sursky_canal_village_edge_rios_2018.jpg",
+    "art/source/rooms/S38/sursky_canal_sluice_blatina.jpg",
+    "art/masters/bg_natural/S32_v1.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S38 natural blocking (src/game/data/blocking/S38.json): bank of the Sursky kanal at the SW edge of Ivanka pri Dunaji, camera ~1.9 m on the dirt track, horizon y 430, s(y) = (y - 430) / 585; invented pump hut on the near bank (foot y 660), demonstration hand pump and irrigation model beside it, canal across the middle distance (water y ~555-598), fields beyond.",
+    "background": "#b4d0ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          430
+        ],
+        "fill": "#b4d0ea",
+        "note": "wide summer sky over the flat Danubian lowland"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          405,
+          1920,
+          160
+        ],
+        "fill": "#a9bd6e",
+        "note": "flat fields to the horizon (wheat and maize, green in June)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            430
+          ],
+          [
+            60,
+            380
+          ],
+          [
+            140,
+            372
+          ],
+          [
+            230,
+            400
+          ],
+          [
+            330,
+            380
+          ],
+          [
+            420,
+            410
+          ],
+          [
+            470,
+            440
+          ],
+          [
+            0,
+            450
+          ]
+        ],
+        "fill": "#6f9446",
+        "note": "willows and poplars far left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            180,
+            420
+          ],
+          [
+            186,
+            360
+          ],
+          [
+            192,
+            420
+          ]
+        ],
+        "fill": "#8a8a8a",
+        "note": "far-off church spire of the village on the horizon"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1250,
+            440
+          ],
+          [
+            1300,
+            390
+          ],
+          [
+            1380,
+            380
+          ],
+          [
+            1470,
+            395
+          ],
+          [
+            1560,
+            380
+          ],
+          [
+            1660,
+            400
+          ],
+          [
+            1760,
+            385
+          ],
+          [
+            1920,
+            395
+          ],
+          [
+            1920,
+            455
+          ],
+          [
+            1250,
+            455
+          ]
+        ],
+        "fill": "#6f9446",
+        "note": "row of poplars and willow bushes along the far canal bank"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          515,
+          1920,
+          50
+        ],
+        "fill": "#86a85a",
+        "note": "far grassy embankment of the canal"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            562
+          ],
+          [
+            1920,
+            554
+          ],
+          [
+            1920,
+            594
+          ],
+          [
+            0,
+            600
+          ]
+        ],
+        "fill": "#7f9fb2",
+        "note": "calm water of the Sursky kanal (straight drainage canal)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            598
+          ],
+          [
+            1920,
+            592
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            0,
+            700
+          ]
+        ],
+        "fill": "#7ea052",
+        "note": "near embankment of the canal, grass and reeds, the hut stands on its top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1780,
+          528,
+          26,
+          70
+        ],
+        "fill": "#a69e90",
+        "note": "old sluice far down the canal: stone pier"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1860,
+          528,
+          26,
+          70
+        ],
+        "fill": "#a69e90",
+        "note": "stone pier"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1780,
+          512,
+          106,
+          12
+        ],
+        "fill": "#4f6a8a",
+        "note": "riveted iron frame of the sluice gate"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            280,
+            360
+          ],
+          [
+            530,
+            180
+          ],
+          [
+            780,
+            360
+          ]
+        ],
+        "fill": "#a14f37",
+        "note": "tiled gable roof of the invented pump hut"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          352,
+          460,
+          308
+        ],
+        "fill": "#e2d6bc",
+        "note": "small brick hut with worn lime plaster, front facing the track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          625,
+          460,
+          35
+        ],
+        "fill": "#a89a84",
+        "note": "plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          440,
+          40,
+          40
+        ],
+        "fill": "#b5643f",
+        "note": "patch of bare brick"
+      },
+      {
+        "type": "rect",
+        "box": [
+          445,
+          418,
+          122,
+          244
+        ],
+        "fill": "#6e5034",
+        "note": "weathered plank door of the measuring room, padlock hasp at handle height"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          525,
+          16,
+          26
+        ],
+        "fill": "#2f2f33",
+        "note": "padlock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          436,
+          660,
+          140,
+          22
+        ],
+        "fill": "#b4ac9c",
+        "note": "concrete threshold step"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          450,
+          120,
+          110
+        ],
+        "fill": "#f0eadc",
+        "note": "small window with a wooden frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          610,
+          460,
+          100,
+          90
+        ],
+        "fill": "#4c5a62"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            740,
+            360
+          ],
+          [
+            740,
+            230
+          ]
+        ],
+        "color": "#5a5450",
+        "width": 10,
+        "note": "thin iron vent pipe"
+      },
+      {
+        "type": "rect",
+        "box": [
+          960,
+          598,
+          420,
+          30
+        ],
+        "fill": "#8a6440",
+        "note": "irrigation demonstration model: long wooden trough on trestles with small channels and rows of seedlings"
+      },
+      {
+        "type": "rect",
+        "box": [
+          970,
+          590,
+          400,
+          10
+        ],
+        "fill": "#6f9a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          980,
+          628,
+          14,
+          64
+        ],
+        "fill": "#6b4a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1350,
+          628,
+          14,
+          64
+        ],
+        "fill": "#6b4a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1160,
+          628,
+          14,
+          64
+        ],
+        "fill": "#6b4a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          820,
+          650,
+          120,
+          40
+        ],
+        "fill": "#a8a296",
+        "note": "small concrete plinth of the pump"
+      },
+      {
+        "type": "rect",
+        "box": [
+          855,
+          520,
+          40,
+          132
+        ],
+        "fill": "#3e4a52",
+        "note": "cast-iron demonstration hand pump"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            875,
+            525
+          ],
+          [
+            830,
+            505
+          ],
+          [
+            815,
+            510
+          ]
+        ],
+        "color": "#3e4a52",
+        "width": 10,
+        "note": "pump handle"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            895,
+            560
+          ],
+          [
+            950,
+            572
+          ],
+          [
+            962,
+            596
+          ]
+        ],
+        "color": "#3e4a52",
+        "width": 10,
+        "note": "spout leading into the trough"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          848,
+          508,
+          54,
+          22
+        ],
+        "fill": "#3e4a52"
+      },
+      {
+        "type": "rect",
+        "box": [
+          895,
+          655,
+          64,
+          50
+        ],
+        "fill": "#a9adb0",
+        "note": "galvanised bucket on the ground beside the pump"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          895,
+          648,
+          64,
+          16
+        ],
+        "fill": "#7c8286"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1450,
+            665
+          ],
+          [
+            1470,
+            560
+          ],
+          [
+            1500,
+            600
+          ],
+          [
+            1530,
+            505
+          ],
+          [
+            1560,
+            590
+          ],
+          [
+            1600,
+            520
+          ],
+          [
+            1630,
+            600
+          ],
+          [
+            1670,
+            540
+          ],
+          [
+            1700,
+            610
+          ],
+          [
+            1720,
+            665
+          ]
+        ],
+        "fill": "#6e9a44",
+        "note": "big tuft of tall grass and reeds on the bank"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1500,
+            665
+          ],
+          [
+            1540,
+            540
+          ],
+          [
+            1560,
+            665
+          ]
+        ],
+        "fill": "#86ae52"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1590,
+          506,
+          14,
+          40
+        ],
+        "fill": "#7a5a34",
+        "note": "reed mace head"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          690,
+          1920,
+          390
+        ],
+        "fill": "#86a85a",
+        "note": "grass verge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            760
+          ],
+          [
+            1920,
+            740
+          ],
+          [
+            1920,
+            960
+          ],
+          [
+            0,
+            990
+          ]
+        ],
+        "fill": "#b9a07a",
+        "note": "packed-earth dirt track along the canal bank (the walk band)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            860
+          ],
+          [
+            1920,
+            840
+          ],
+          [
+            1920,
+            852
+          ],
+          [
+            0,
+            872
+          ]
+        ],
+        "fill": "#86a85a",
+        "note": "grass strip between the wheel ruts"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S38.json",
+  "blocking": {
+    "version": 1,
+    "room": "S38",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Bank of the Sursky kanal at the south-west edge of Ivanka pri Dunaji, June 1960. Camera ~1.9 m high on the dirt track along the near bank, looking SE across the canal: horizon y 430, perspective s(y) = (y - 430) / 585 (hero 1.7 m = 512 px at y 1015; ~118 px per metre at the hut, foot y 660). The invented pump hut stands on the near bank between the track and the water, its door facing the track; beside it the demonstration hand pump on a small plinth pours into a wooden irrigation model, the bucket stands under the pump, a tuft of tall grass and reeds grows at the bank on the right. The canal runs across the middle distance behind them (water y ~555-598), fields and poplars beyond. The measuring-room door is split as in S05: its upper part is the S38.door hotspot, its lower part and the threshold step are the exit to S39. The walk polygon is the track and the grass verge in front of the hut, the pump and the model, with a lobe to the threshold.",
+    "background": "bg_natural/S38.webp",
+    "walk_polygon": [
+      [
+        0,
+        708
+      ],
+      [
+        430,
+        708
+      ],
+      [
+        438,
+        688
+      ],
+      [
+        572,
+        688
+      ],
+      [
+        580,
+        708
+      ],
+      [
+        800,
+        708
+      ],
+      [
+        800,
+        722
+      ],
+      [
+        985,
+        722
+      ],
+      [
+        985,
+        708
+      ],
+      [
+        1920,
+        708
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      688,
+      1015
+    ],
+    "actor_scale": [
+      0.441,
+      1.0
+    ],
+    "spawn": [
+      1100,
+      900
+    ],
+    "hotspots": {
+      "S38.pump": {
+        "rect": [
+          805,
+          498,
+          160,
+          197
+        ],
+        "interaction_point": [
+          880,
+          760
+        ],
+        "label_anchor": [
+          880,
+          488
+        ],
+        "reason": "cast-iron demonstration hand pump on its small concrete plinth beside the hut, spout into the irrigation model"
+      },
+      "S38.door": {
+        "rect": [
+          445,
+          418,
+          122,
+          160
+        ],
+        "interaction_point": [
+          505,
+          735
+        ],
+        "label_anchor": [
+          505,
+          408
+        ],
+        "reason": "upper part of the weathered plank door of the measuring room with the padlock hasp"
+      },
+      "S38.ambient 1": {
+        "rect": [
+          888,
+          640,
+          78,
+          70
+        ],
+        "interaction_point": [
+          930,
+          770
+        ],
+        "label_anchor": [
+          930,
+          632
+        ],
+        "reason": "galvanised bucket standing on the ground under the pump"
+      },
+      "S38.ambient 2": {
+        "rect": [
+          1450,
+          500,
+          272,
+          168
+        ],
+        "interaction_point": [
+          1585,
+          770
+        ],
+        "label_anchor": [
+          1585,
+          490
+        ],
+        "reason": "big tuft of tall grass and reeds growing on the canal bank right of the irrigation model"
+      }
+    },
+    "exits": {
+      "S38.to_S37": {
+        "rect": [
+          0,
+          712,
+          60,
+          295
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          135,
+          702
+        ],
+        "reason": "the dirt track leads back out of the left edge towards the village and the manor park"
+      },
+      "S38.to_S39": {
+        "rect": [
+          440,
+          578,
+          132,
+          104
+        ],
+        "interaction_point": [
+          505,
+          712
+        ],
+        "label_anchor": [
+          505,
+          700
+        ],
+        "reason": "lower part of the measuring-room door and its concrete threshold step (the door leaf above is the S38.door hotspot)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S38.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:29:50"
+  }
+}

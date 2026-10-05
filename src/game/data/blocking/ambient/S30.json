@@ -1,0 +1,120 @@
+{
+ "room": "S30",
+ "notes": "Natural S30: ripples and glints on the Danube, ducks drifting along behind the railing, gulls crossing the sky, clouds over the castle hill.",
+ "layers": [
+  {
+   "id": "danube",
+   "type": "water",
+   "texture": "S30/natural/water.webp",
+   "amp_px": 1.4,
+   "speed": 0.9,
+   "glint": 0.5,
+   "glint_color": "#fff6dc"
+  },
+  {
+   "id": "ducks",
+   "type": "tween_path",
+   "sheet": "common/duck_sheet",
+   "fps": 0.8,
+   "path": [
+    [
+     -60,
+     655
+    ],
+    [
+     1980,
+     650
+    ]
+   ],
+   "speed_px_s": 16,
+   "scale": 0.32,
+   "flock": 2,
+   "flock_spread": [
+    45,
+    4
+   ],
+   "bob_px": 0.8,
+   "bob_hz": 0.5,
+   "direction": "random",
+   "every_s": [
+    5,
+    15
+   ],
+   "start_s": [
+    0,
+    1
+   ],
+   "reduced_motion": "freeze",
+   "mask": "S30/natural/water_mask.webp",
+   "prewarm_s": 45
+  },
+  {
+   "id": "gulls",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     90
+    ],
+    [
+     700,
+     60
+    ],
+    [
+     1400,
+     80
+    ],
+    [
+     2000,
+     50
+    ]
+   ],
+   "speed_px_s": 230,
+   "scale": 0.1,
+   "flock": 2,
+   "flock_spread": [
+    60,
+    22
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    10,
+    120
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "x_span": [
+    0,
+    1920
+   ],
+   "alpha": 0.7,
+   "mask": "S30/natural/sky_mask.webp"
+  }
+ ]
+}

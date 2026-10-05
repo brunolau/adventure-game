@@ -1,0 +1,1089 @@
+{
+  "room": "S28",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1490668551,
+  "usd": 0.15,
+  "started": "2026-10-05T10:32:38",
+  "spend_log_asset": "bg_natural/S28/S28_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S28.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a pedestrian underpass of the Petrzalka housing estate under Rusovska cesta, Bratislava. Image 2 is a photo of exactly this type of real Petrzalka underpass: a weathered light grey concrete headwall carrying the road above (an edge beam and a railing on top), a wide rectangular tunnel mouth with a long straight tunnel and a bright exit at its far end, concrete stairs with a black steel handrail climbing the embankment beside the wall on the right, bushes and an asphalt path in front. Paint this real place as it was on a summer day in 1995: green bushes instead of the winter branches, no leaf litter, no graffiti tags.\n\nBrief: a well-lit pedestrian underpass with a legal art panel, a young artist (he is added later as a sprite), old pasted posters and tiles. No threatening stereotypes about the district: it is a friendly, sunny, ordinary place. Thursday 15 June 1995, a sunny afternoon: warm sunlight from the left on the concrete, the tunnel inside brightly lit by fluorescent tubes on white tiles.\n\nCamera: standing on the asphalt path in front of the underpass, about 2.2 m high, looking straight at the headwall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the headwall stands on the ground at y 705 and rises to the edge beam at y 56-120 with the road railing on top; the tunnel mouth from x 640 to x 1240 with its top at y 320; the stairs start at the ground at x 1340-1440 and climb to the upper right corner; the asphalt fills the ground from y 705 to the bottom edge, the green embankment the lower right corner.\n\nWhat the sketch blocks are, left to right: a green bush at the far left; old torn layered paper posters pasted on the concrete (illegible); the legal art panel: a big dark green chalkboard in a simple wooden frame on the wall, with a white chalk drawing of three Petrzalka panel blocks with their windows still empty (not lit), and a chalk ledge below; a plain strip of concrete wall; the bright tunnel mouth: inside, white tiled walls of slightly different whites, fluorescent tubes on the ceiling, a tiled floor and the bright far exit; a drain grating across the tunnel mouth; a skateboard leaning against the wall right of the tunnel; the concrete stairs with the black handrail climbing the embankment along the wall; green bushes and grass on the embankment; the asphalt path in the foreground.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 138-504, y 346-614 of the 1920x1080 frame (7-26 % from the left, 32-57 % from the top): the legal art panel: a large dark green chalkboard in a wooden frame with a white chalk sketch of three panel blocks, all their little windows dark and empty.\n2. the block of the layout sketch at x 648-808, y 345-680 of the 1920x1080 frame (34-42 % from the left, 32-63 % from the top): the white wall tiles inside the tunnel mouth, each tile a slightly different white, clean and bright under the fluorescent light.\n3. the block of the layout sketch at x 1248-1338, y 588-720 of the 1920x1080 frame (65-70 % from the left, 54-67 % from the top): a well-used skateboard with a red deck and yellow wheels leaning upright against the wall.\nThe tunnel is the area of the layout sketch at x 812-1112, y 330-695 of the 1920x1080 frame (42-58 % from the left, 31-64 % from the top); the stairs are the area of the layout sketch at x 1340-1760, y 300-705 of the 1920x1080 frame (70-92 % from the left, 28-65 % from the top); the path runs out of the left edge (the area of the layout sketch at x 0-60, y 728-1015 of the 1920x1080 frame (0-3 % from the left, 67-94 % from the top)).\n\nWalkable floor: the band at x 20-1580, y 690-1015 of the 1920x1080 frame (1-82 % from the left, 64-94 % from the top) is the open asphalt path and the tunnel floor - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no bins, no posts, no bags, no bottles, no rubbish. Only sunlight, soft shadows and a few cracks.\nNPC zone at x 497-637, y 434-724 of the 1920x1080 frame (26-33 % from the left, 40-67 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 722. The artist stands in front of this plain strip of concrete between his panel and the tunnel.\n\nFiction rules: the art panel, the posters and the artist are invented: no graffiti tags, no legible text on the posters (illegible scribbles only), no ads, no exchange-office signs, no street names, no people, no animals. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S28_sketch.png (rendered from art/prompts/natural/S28.sketch.json, model geometry)",
+    "art/source/rooms/S28/type-ref_housing-estate-underpass_stairs.jpg",
+    "src/game/assets/bg_natural/S19.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S28 natural: underpass portal from the path, camera 2.2 m, horizon y 360, headwall foot y 705.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          60
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky above the road"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1280,
+          -80,
+          520,
+          200
+        ],
+        "fill": "#6e9346",
+        "note": "tree crowns above the road"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          30,
+          1920,
+          26
+        ],
+        "fill": "#3a3a38",
+        "note": "railing of the road (Rusovska cesta) on top of the underpass"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          6,
+          1920,
+          28
+        ],
+        "step": 24,
+        "bar": 4,
+        "fill": "#3a3a38",
+        "vertical": true,
+        "note": "railing bars"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          56,
+          1920,
+          54
+        ],
+        "fill": "#d4d2cc",
+        "note": "projecting concrete edge beam of the road deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          110,
+          1920,
+          595
+        ],
+        "fill": "#c9c7c0",
+        "note": "weathered light grey concrete headwall of the underpass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          110,
+          1920,
+          10
+        ],
+        "fill": "#a9a7a0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          316,
+          600,
+          389
+        ],
+        "fill": "#e8ecea",
+        "note": "mouth of the pedestrian tunnel: bright white-tiled walls inside, lit"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            316
+          ],
+          [
+            880,
+            420
+          ],
+          [
+            880,
+            650
+          ],
+          [
+            640,
+            705
+          ]
+        ],
+        "fill": "#dfe5e4",
+        "note": "left inner tiled wall of the tunnel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1240,
+            316
+          ],
+          [
+            1000,
+            420
+          ],
+          [
+            1000,
+            650
+          ],
+          [
+            1240,
+            705
+          ]
+        ],
+        "fill": "#d6dcdb",
+        "note": "right inner tiled wall of the tunnel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            316
+          ],
+          [
+            1240,
+            316
+          ],
+          [
+            1000,
+            420
+          ],
+          [
+            880,
+            420
+          ]
+        ],
+        "fill": "#c8ceca",
+        "note": "tunnel ceiling"
+      },
+      {
+        "type": "grid",
+        "box": [
+          650,
+          360,
+          210,
+          320
+        ],
+        "cols": 7,
+        "rows": 10,
+        "color": "#bfc8c6",
+        "width": 1,
+        "note": "white wall tiles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          420,
+          120,
+          230
+        ],
+        "fill": "#f6f4e8",
+        "note": "bright far exit of the tunnel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            705
+          ],
+          [
+            1240,
+            705
+          ],
+          [
+            1000,
+            650
+          ],
+          [
+            880,
+            650
+          ]
+        ],
+        "fill": "#b8b4a8",
+        "note": "tiled floor of the tunnel"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            760,
+            350
+          ],
+          [
+            900,
+            410
+          ]
+        ],
+        "color": "#fffde8",
+        "width": 6,
+        "note": "fluorescent tube on the tunnel ceiling"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1120,
+            350
+          ],
+          [
+            990,
+            410
+          ]
+        ],
+        "color": "#fffde8",
+        "width": 6,
+        "note": "fluorescent tube"
+      },
+      {
+        "type": "rect",
+        "box": [
+          30,
+          420,
+          90,
+          130
+        ],
+        "fill": "#d8c8a0",
+        "note": "old torn layered posters pasted on the concrete (illegible)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          50,
+          440,
+          60,
+          50
+        ],
+        "fill": "#b85a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          500,
+          70,
+          40
+        ],
+        "fill": "#5a7a9a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          138,
+          348,
+          364,
+          264
+        ],
+        "fill": "#6a5032",
+        "note": "wooden frame of the legal art panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          360,
+          340,
+          240
+        ],
+        "fill": "#2f4a3e",
+        "note": "dark green chalkboard panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          175,
+          440,
+          70,
+          140
+        ],
+        "fill": "#8a9a92",
+        "note": "chalk drawing: panel block"
+      },
+      {
+        "type": "rect",
+        "box": [
+          265,
+          400,
+          90,
+          180
+        ],
+        "fill": "#8a9a92",
+        "note": "chalk drawing: tall panel block"
+      },
+      {
+        "type": "rect",
+        "box": [
+          375,
+          460,
+          90,
+          120
+        ],
+        "fill": "#8a9a92",
+        "note": "chalk drawing: panel block"
+      },
+      {
+        "type": "grid",
+        "box": [
+          270,
+          410,
+          80,
+          160
+        ],
+        "cols": 4,
+        "rows": 8,
+        "color": "#2f4a3e",
+        "width": 3
+      },
+      {
+        "type": "grid",
+        "box": [
+          180,
+          450,
+          60,
+          120
+        ],
+        "cols": 3,
+        "rows": 6,
+        "color": "#2f4a3e",
+        "width": 3
+      },
+      {
+        "type": "grid",
+        "box": [
+          380,
+          470,
+          80,
+          100
+        ],
+        "cols": 4,
+        "rows": 5,
+        "color": "#2f4a3e",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          600,
+          340,
+          10
+        ],
+        "fill": "#5a4228",
+        "note": "chalk ledge"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -80,
+          520,
+          200,
+          220
+        ],
+        "fill": "#5f8a3c",
+        "note": "green bush at the left corner"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1262,
+            600
+          ],
+          [
+            1300,
+            596
+          ],
+          [
+            1322,
+            708
+          ],
+          [
+            1284,
+            712
+          ]
+        ],
+        "fill": "#c8402a",
+        "note": "skateboard leaning against the wall (red deck, yellow wheels)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1268,
+          610,
+          12,
+          12
+        ],
+        "fill": "#e8c040"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1302,
+          700,
+          12,
+          12
+        ],
+        "fill": "#e8c040"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1440,
+            705
+          ],
+          [
+            1920,
+            330
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            1600,
+            1080
+          ]
+        ],
+        "fill": "#6e8a44",
+        "note": "green embankment with grass right of the stairs"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1340,
+            705
+          ],
+          [
+            1440,
+            705
+          ],
+          [
+            1920,
+            330
+          ],
+          [
+            1920,
+            250
+          ]
+        ],
+        "fill": "#d6d2c8",
+        "note": "concrete stairs climbing the embankment to street level (route to the garage row)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1892,
+            272
+          ],
+          [
+            1920,
+            272
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1864,
+            294
+          ],
+          [
+            1920,
+            294
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1836,
+            316
+          ],
+          [
+            1920,
+            316
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1808,
+            338
+          ],
+          [
+            1910,
+            338
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1780,
+            360
+          ],
+          [
+            1882,
+            360
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1752,
+            382
+          ],
+          [
+            1853,
+            382
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1724,
+            404
+          ],
+          [
+            1825,
+            404
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1696,
+            426
+          ],
+          [
+            1797,
+            426
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1668,
+            448
+          ],
+          [
+            1769,
+            448
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1640,
+            470
+          ],
+          [
+            1741,
+            470
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1612,
+            492
+          ],
+          [
+            1713,
+            492
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1583,
+            514
+          ],
+          [
+            1684,
+            514
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1555,
+            536
+          ],
+          [
+            1656,
+            536
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1527,
+            558
+          ],
+          [
+            1628,
+            558
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1499,
+            580
+          ],
+          [
+            1600,
+            580
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1471,
+            602
+          ],
+          [
+            1572,
+            602
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1443,
+            624
+          ],
+          [
+            1544,
+            624
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1415,
+            646
+          ],
+          [
+            1516,
+            646
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1387,
+            668
+          ],
+          [
+            1487,
+            668
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1359,
+            690
+          ],
+          [
+            1459,
+            690
+          ]
+        ],
+        "color": "#aaa498",
+        "width": 4,
+        "note": "stair tread edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1330,
+            600
+          ],
+          [
+            1920,
+            160
+          ]
+        ],
+        "color": "#2a2a2a",
+        "width": 6,
+        "note": "black steel handrail"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1700,
+          560,
+          300,
+          300
+        ],
+        "fill": "#5f8a3c",
+        "note": "bushes on the embankment below the stairs"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            705
+          ],
+          [
+            1440,
+            705
+          ],
+          [
+            1600,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#7d7b78",
+        "note": "asphalt path in front of the underpass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          701,
+          600,
+          14
+        ],
+        "fill": "#5a5856",
+        "note": "drain grating at the tunnel mouth"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S28.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Petrzalka pedestrian underpass under Rusovska cesta seen from the asphalt path in front of its portal, after the owner's reference type-ref_housing-estate-underpass_stairs.jpg: camera ~2.2 m, horizon y 360, the headwall stands on y 705 (~157 px per metre). Perspective s(y) = (y - 360) / 655. The lit white-tiled tunnel leads through to the embankment (S30), the stairs climb the embankment on the right to the garage row (S29); the legal chalk panel and old posters on the left wing wall, Juraj at the plain concrete beside the panel, his skateboard leaning right of the tunnel.",
+    "background": "bg_natural/S28.webp",
+    "walk_polygon": [
+      [
+        20,
+        718
+      ],
+      [
+        640,
+        718
+      ],
+      [
+        700,
+        690
+      ],
+      [
+        1180,
+        690
+      ],
+      [
+        1240,
+        718
+      ],
+      [
+        1430,
+        718
+      ],
+      [
+        1520,
+        860
+      ],
+      [
+        1580,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      690,
+      1015
+    ],
+    "actor_scale": [
+      0.5,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S28.mural": {
+        "rect": [
+          138,
+          346,
+          366,
+          268
+        ],
+        "interaction_point": [
+          320,
+          800
+        ],
+        "label_anchor": [
+          321,
+          338
+        ],
+        "reason": "the legal chalk art panel on the left wing wall"
+      },
+      "S28.ambient 1": {
+        "rect": [
+          648,
+          345,
+          160,
+          335
+        ],
+        "interaction_point": [
+          740,
+          760
+        ],
+        "label_anchor": [
+          728,
+          690
+        ],
+        "reason": "white wall tiles inside the tunnel mouth (left inner wall)"
+      },
+      "S28.ambient 2": {
+        "rect": [
+          1248,
+          588,
+          90,
+          132
+        ],
+        "interaction_point": [
+          1290,
+          790
+        ],
+        "label_anchor": [
+          1293,
+          580
+        ],
+        "reason": "Juraj's skateboard leaning against the wall right of the tunnel"
+      },
+      "S28.JURAJ": {
+        "rect": [
+          497,
+          434,
+          140,
+          290
+        ],
+        "interaction_point": [
+          567,
+          820
+        ],
+        "label_anchor": [
+          567,
+          426
+        ],
+        "reason": "Juraj standing at the plain concrete between the panel and the tunnel"
+      }
+    },
+    "npcs": {
+      "S28.JURAJ": {
+        "variant": "standing",
+        "feet": [
+          567,
+          722
+        ],
+        "scale": 0.553,
+        "reason": "standing young artist beside his panel (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S28.to_S21": {
+        "rect": [
+          0,
+          728,
+          60,
+          287
+        ],
+        "interaction_point": [
+          70,
+          890
+        ],
+        "label_anchor": [
+          135,
+          716
+        ],
+        "reason": "the path runs out of the left edge (bus stop, back to the centre)"
+      },
+      "S28.to_S30": {
+        "rect": [
+          812,
+          330,
+          300,
+          365
+        ],
+        "interaction_point": [
+          960,
+          740
+        ],
+        "label_anchor": [
+          960,
+          322
+        ],
+        "reason": "through the lit tunnel towards the Danube embankment"
+      },
+      "S28.to_S29": {
+        "rect": [
+          1340,
+          300,
+          420,
+          405
+        ],
+        "interaction_point": [
+          1395,
+          760
+        ],
+        "label_anchor": [
+          1560,
+          292
+        ],
+        "reason": "up the stairs on the embankment to the garage row"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S28"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S28.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:33:31"
+  }
+}

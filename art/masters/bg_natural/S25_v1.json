@@ -1,0 +1,858 @@
+{
+  "room": "S25",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 392929639,
+  "usd": 0.15,
+  "started": "2026-10-05T10:24:05",
+  "spend_log_asset": "bg_natural/S25/S25_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S25.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Trhovisko Mileticova, the real open-air market on Mileticova street in Ruzinov, Bratislava, as it was in 1995. Images 2-4 are photos of this real market: image 2 the stalls under tarps and umbrellas on cracked asphalt in front of the low white market hall with its small square tower; image 3 the tall old red-brick chimney that rises beside the market; image 4 the market's edge on Mileticova with the chimney and trees (dashcam photo, use it for the layout only). Paint this real place in 1995: remove the post-1995 residential tower behind the hall and every other high-rise there, all billboards, brand umbrellas (no Pepsi, no Corgon, no brand names at all), satellite dishes and modern cars.\n\nBrief: a stylised market: the work table of a seller of small electronics, and next to it a vegetable stall with a red-and-white umbrella. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, fresh green trees, a blue sky, June vegetables (tomatoes, cucumbers, new potatoes, kohlrabi, parsley, a few strawberries).\n\nCamera: standing in an aisle of the market, about 2.2 m high, looking straight at the two stalls, which stand side by side parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: both stall tables have their front legs on y 800 and their table tops at 0.8 m with the front edge as one straight horizontal line at y 640; the market hall and the two-storey building stand on y 500; the asphalt fills the ground from y 500 to the bottom edge.\n\nWhat the sketch blocks are, left to right: the two-storey cream market-edge building with small shop units and a dark passage through its ground floor (the Pasaz Mileticova), a short aisle of asphalt leading to it; a far stall with a blue tarp and clothes racks; the electronics seller's folding table under a plain grey-blue tarp on two poles, with boxes of plugs, connectors, cables, old radio parts and cassettes, a plain cloth hanging down its front; the low white market hall with a grey pitched roof and a small square tower with windows; the tall old red-brick chimney with iron bands, its top cut by the frame; the vegetable stall with its crates under the big red-and-white umbrella; far stalls with green tarps; trees along Mileticova and an ochre 1950s socialist-realist estate block beyond; cracked grey asphalt in the foreground.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 805-925, y 548-643 of the 1920x1080 frame (42-48 % from the left, 51-60 % from the top): a small old mechanical shop scale with a round dial and a steel weighing pan, standing on the right end of the electronics table.\n2. the block of the layout sketch at x 1022-1162, y 566-646 of the 1920x1080 frame (53-61 % from the left, 52-60 % from the top): bunches of fresh green curly parsley standing upright in a wooden crate at the front corner of the vegetable stall.\n3. the block of the layout sketch at x 960-1480, y 282-432 of the 1920x1080 frame (50-77 % from the left, 26-40 % from the top): the big red-and-white striped market umbrella (plain, no lettering) over the vegetable stall.\nThe passage through the building at the end of the short aisle is the area of the layout sketch at x 250-440, y 340-640 of the 1920x1080 frame (13-23 % from the left, 31-59 % from the top). The aisle runs out of the left edge (the area of the layout sketch at x 0-60, y 762-1015 of the 1920x1080 frame (0-3 % from the left, 71-94 % from the top)) and the right edge (the area of the layout sketch at x 1860-1920, y 762-1015 of the 1920x1080 frame (97-100 % from the left, 71-94 % from the top)).\n\nWalkable floor: the band at x 20-1900, y 642-1015 of the 1920x1080 frame (1-99 % from the left, 59-94 % from the top) is the open cracked grey asphalt of the market aisle - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no crates, no boxes, no bins, no carts, no people, no pigeons. Only sunlight, shadows of the umbrella and the tarps, a few cracks and a squashed cabbage leaf.\nNPC zone at x 622-778, y 448-644 of the 1920x1080 frame (32-41 % from the left, 41-60 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 640 across x 592-808, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\n\nFiction rules: the electronics seller's table and the vegetable stall are invented; no stall names, no price signs with digits, no brand names or logos anywhere (no Pepsi, no Corgon, no ads, no billboards), no people, no animals. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S25_sketch.png (rendered from art/prompts/natural/S25.sketch.json, model geometry)",
+    "art/source/rooms/S25/mileticova_market_stalls_hall_2017.jpg",
+    "art/source/rooms/S25/mileticova_market_chimney_landmark_2013.jpg",
+    "art/source/rooms/S25/mileticova_street_market-fence_chimney_kartaview_2020.jpg",
+    "src/game/assets/bg_natural/S19.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S25 natural: market aisle, camera 2.2 m, horizon y 360, stall front legs y 800, table tops y 640.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          520
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1530,
+            0
+          ],
+          [
+            1600,
+            0
+          ],
+          [
+            1606,
+            480
+          ],
+          [
+            1524,
+            480
+          ]
+        ],
+        "fill": "#a85a3a",
+        "note": "tall old red-brick chimney beside the market (landmark)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1526,
+          10,
+          78,
+          470
+        ],
+        "step": 40,
+        "bar": 5,
+        "fill": "#8a4a30",
+        "vertical": false,
+        "note": "chimney iron bands"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          120,
+          280,
+          380
+        ],
+        "fill": "#d8c49a",
+        "note": "1950s socialist-realist estate block across Mileticova (ochre plaster)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1650,
+          140,
+          260,
+          320
+        ],
+        "cols": 6,
+        "rows": 6,
+        "color": "#a89470",
+        "width": 2
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1580,
+          200,
+          360,
+          330
+        ],
+        "fill": "#6e9346",
+        "note": "trees along Mileticova street"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          330,
+          880,
+          170
+        ],
+        "fill": "#efece4",
+        "note": "low white market hall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            620,
+            335
+          ],
+          [
+            1540,
+            335
+          ],
+          [
+            1490,
+            275
+          ],
+          [
+            670,
+            275
+          ]
+        ],
+        "fill": "#8c7e6e",
+        "note": "grey pitched roof of the hall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          150,
+          130,
+          190
+        ],
+        "fill": "#efece4",
+        "note": "small square tower of the market hall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            975,
+            155
+          ],
+          [
+            1135,
+            155
+          ],
+          [
+            1055,
+            110
+          ]
+        ],
+        "fill": "#8c7e6e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1020,
+          190,
+          30,
+          50
+        ],
+        "fill": "#7a8a9a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1065,
+          190,
+          30,
+          50
+        ],
+        "fill": "#7a8a9a"
+      },
+      {
+        "type": "bars",
+        "box": [
+          660,
+          380,
+          840,
+          90
+        ],
+        "step": 70,
+        "bar": 40,
+        "fill": "#9aa4ac",
+        "vertical": true,
+        "note": "hall windows and doors"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          190,
+          640,
+          310
+        ],
+        "fill": "#e8dcbc",
+        "note": "two-storey cream market-edge building with small shop units"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          170,
+          640,
+          24
+        ],
+        "fill": "#a5482f",
+        "note": "roof edge"
+      },
+      {
+        "type": "bars",
+        "box": [
+          20,
+          230,
+          600,
+          70
+        ],
+        "step": 90,
+        "bar": 50,
+        "fill": "#8a9aa6",
+        "vertical": true,
+        "note": "first-floor windows"
+      },
+      {
+        "type": "rect",
+        "box": [
+          270,
+          350,
+          140,
+          150
+        ],
+        "fill": "#3a3430",
+        "note": "dark passage through the building (Pasaz Mileticova)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            270,
+            352
+          ],
+          [
+            410,
+            352
+          ],
+          [
+            340,
+            330
+          ]
+        ],
+        "fill": "#e8dcbc"
+      },
+      {
+        "type": "bars",
+        "box": [
+          20,
+          380,
+          230,
+          110
+        ],
+        "step": 76,
+        "bar": 56,
+        "fill": "#6a5a48",
+        "vertical": true,
+        "note": "shop unit doors and windows"
+      },
+      {
+        "type": "bars",
+        "box": [
+          430,
+          380,
+          200,
+          110
+        ],
+        "step": 66,
+        "bar": 48,
+        "fill": "#6a5a48",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          500,
+          1920,
+          580
+        ],
+        "fill": "#8f8b84",
+        "note": "asphalt of the market aisles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          30,
+          540,
+          210,
+          90
+        ],
+        "fill": "#5a7a9a",
+        "note": "far stall with a blue tarp roof and clothes racks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          560,
+          190,
+          70
+        ],
+        "fill": "#7a6a5a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          530,
+          360,
+          110
+        ],
+        "fill": "#7a9a5a",
+        "note": "far stalls with green tarp roofs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1510,
+          560,
+          340,
+          80
+        ],
+        "fill": "#8a7a6a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          466,
+          300,
+          10,
+          500
+        ],
+        "fill": "#5a5a58",
+        "note": "tarp pole"
+      },
+      {
+        "type": "rect",
+        "box": [
+          926,
+          300,
+          10,
+          500
+        ],
+        "fill": "#5a5a58",
+        "note": "tarp pole"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            440,
+            300
+          ],
+          [
+            960,
+            300
+          ],
+          [
+            940,
+            336
+          ],
+          [
+            460,
+            336
+          ]
+        ],
+        "fill": "#7d8a90",
+        "note": "plain grey-blue tarp roof over Fero's table"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            621
+          ],
+          [
+            930,
+            621
+          ],
+          [
+            936,
+            640
+          ],
+          [
+            464,
+            640
+          ]
+        ],
+        "fill": "#8a6a48",
+        "note": "top of Fero's folding table (seen from above)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          464,
+          640,
+          472,
+          160
+        ],
+        "fill": "#5a6a7a",
+        "note": "plain cloth hanging down the front of Fero's table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          590,
+          110,
+          40
+        ],
+        "fill": "#4a4a48",
+        "note": "boxes of plugs, connectors and cables"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          600,
+          40,
+          30
+        ],
+        "fill": "#c8a060"
+      },
+      {
+        "type": "rect",
+        "box": [
+          780,
+          596,
+          30,
+          34
+        ],
+        "fill": "#6a6a68",
+        "note": "old radio parts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          815,
+          572,
+          100,
+          58
+        ],
+        "fill": "#c9c4b8",
+        "note": "small mechanical shop scale with a steel pan, stuck"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          822,
+          560,
+          86,
+          22
+        ],
+        "fill": "#d8d4cc",
+        "note": "scale pan"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1216,
+          300,
+          9,
+          330
+        ],
+        "fill": "#d8d4cc",
+        "note": "umbrella pole"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            960,
+            410
+          ],
+          [
+            1480,
+            410
+          ],
+          [
+            1350,
+            290
+          ],
+          [
+            1090,
+            290
+          ]
+        ],
+        "fill": "#d33a2c",
+        "note": "big red-and-white market umbrella over the vegetable stall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1090,
+            290
+          ],
+          [
+            1150,
+            290
+          ],
+          [
+            1060,
+            410
+          ],
+          [
+            960,
+            410
+          ]
+        ],
+        "fill": "#f2eee8"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1260,
+            290
+          ],
+          [
+            1310,
+            290
+          ],
+          [
+            1390,
+            410
+          ],
+          [
+            1290,
+            410
+          ]
+        ],
+        "fill": "#f2eee8"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            990,
+            621
+          ],
+          [
+            1450,
+            621
+          ],
+          [
+            1456,
+            640
+          ],
+          [
+            984,
+            640
+          ]
+        ],
+        "fill": "#9a7a52",
+        "note": "vegetable stall table top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          984,
+          640,
+          472,
+          160
+        ],
+        "fill": "#7a5a3a",
+        "note": "wooden crates stacked under the stall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1170,
+          580,
+          90,
+          45
+        ],
+        "fill": "#c8402a",
+        "note": "crate of tomatoes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1270,
+          584,
+          80,
+          40
+        ],
+        "fill": "#5a8a3a",
+        "note": "crate of cucumbers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1360,
+          580,
+          80,
+          44
+        ],
+        "fill": "#c8a05a",
+        "note": "crate of new potatoes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          574,
+          125,
+          60
+        ],
+        "fill": "#3f8a3a",
+        "note": "bunches of fresh parsley in a wooden crate at the front corner"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S25.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Trhovisko Mileticova seen from an aisle of the market: camera ~2.2 m, horizon y 360, the two stall tables' front legs stand on y 800 (~200 px per metre), table tops at 0.8 m (front edge y 640). Perspective s(y) = (y - 360) / 655. Fero stands behind his electronics table (counter bust cut at y 640), the stuck scale on its right end; the vegetable stall with the red-and-white umbrella and the parsley next to it; behind them the low white market hall with its little tower and the old brick chimney; the passage through the two-storey market-edge building at the left (S26) at the end of a short aisle; the aisle runs out of the right edge towards the estate (S27).",
+    "background": "bg_natural/S25.webp",
+    "walk_polygon": [
+      [
+        20,
+        752
+      ],
+      [
+        240,
+        752
+      ],
+      [
+        292,
+        642
+      ],
+      [
+        420,
+        642
+      ],
+      [
+        452,
+        752
+      ],
+      [
+        462,
+        808
+      ],
+      [
+        1470,
+        808
+      ],
+      [
+        1490,
+        752
+      ],
+      [
+        1900,
+        752
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      642,
+      1015
+    ],
+    "actor_scale": [
+      0.43,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S25.scale": {
+        "rect": [
+          805,
+          548,
+          120,
+          95
+        ],
+        "interaction_point": [
+          860,
+          880
+        ],
+        "label_anchor": [
+          865,
+          540
+        ],
+        "reason": "small mechanical shop scale on the right end of Fero's table"
+      },
+      "S25.ambient 1": {
+        "rect": [
+          1022,
+          566,
+          140,
+          80
+        ],
+        "interaction_point": [
+          1090,
+          880
+        ],
+        "label_anchor": [
+          1092,
+          558
+        ],
+        "reason": "bunches of parsley in a crate at the front corner of the vegetable stall"
+      },
+      "S25.ambient 2": {
+        "rect": [
+          960,
+          282,
+          520,
+          150
+        ],
+        "interaction_point": [
+          1220,
+          880
+        ],
+        "label_anchor": [
+          1220,
+          274
+        ],
+        "reason": "red-and-white umbrella over the vegetable stall"
+      },
+      "S25.TRH": {
+        "rect": [
+          622,
+          448,
+          156,
+          196
+        ],
+        "interaction_point": [
+          700,
+          880
+        ],
+        "label_anchor": [
+          700,
+          440
+        ],
+        "reason": "Fero behind his table, seen down to the table top"
+      }
+    },
+    "npcs": {
+      "S25.TRH": {
+        "variant": "behind_counter",
+        "feet": [
+          700,
+          770
+        ],
+        "scale": 0.626,
+        "sill_y": 640,
+        "reason": "DECISIONS item 2: Fero behind his market table (counter bust cut at the table top y 640)"
+      }
+    },
+    "exits": {
+      "S25.to_S21": {
+        "rect": [
+          0,
+          762,
+          60,
+          253
+        ],
+        "interaction_point": [
+          70,
+          890
+        ],
+        "label_anchor": [
+          135,
+          750
+        ],
+        "reason": "the aisle runs out of the left edge (tram towards the centre)"
+      },
+      "S25.to_S26": {
+        "rect": [
+          250,
+          340,
+          190,
+          300
+        ],
+        "interaction_point": [
+          356,
+          672
+        ],
+        "label_anchor": [
+          356,
+          332
+        ],
+        "reason": "short aisle to the passage through the market-edge building (Pasaz Mileticova)"
+      },
+      "S25.to_S27": {
+        "rect": [
+          1860,
+          762,
+          60,
+          253
+        ],
+        "interaction_point": [
+          1850,
+          890
+        ],
+        "label_anchor": [
+          1760,
+          750
+        ],
+        "reason": "the aisle runs out of the right edge towards the estate blocks on Mileticova"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S25"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S25.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:24:48"
+  }
+}

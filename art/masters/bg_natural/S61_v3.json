@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 1,
+  "box_game_px": [
+    200.0,
+    600.0,
+    600.0,
+    165.0
+  ],
+  "instruction": "Paint the hand cart's wheel tracks: two long, clearly visible, parallel muddy brown tyre tracks on the wet dark asphalt and through the thin snow, running from the two wheels of the hand cart horizontally to the right, along the front kerb of the small grass bed, and the upper track runs over the corner of the bed and passes within a hand's width of the young linden's stem, where the snow in the bed is pressed flat and muddy. The tracks look like the cart was just pushed past the sapling. Keep the hand cart itself, the sapling, its wooden stake and rubber tie, the bench and everything else unchanged. No people, no text.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 1289381915,
+  "usd": 0.15,
+  "scope": "bg_natural/S61/",
+  "spend_log_asset": "bg_natural/S61/S61_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Paint the hand cart's wheel tracks: two long, clearly visible, parallel muddy brown tyre tracks on the wet dark asphalt and through the thin snow, running from the two wheels of the hand cart horizontally to the right, along the front kerb of the small grass bed, and the upper track runs over the corner of the bed and passes within a hand's width of the young linden's stem, where the snow in the bed is pressed flat and muddy. The tracks look like the cart was just pushed past the sapling. Keep the hand cart itself, the sapling, its wooden stake and rubber tie, the bench and everything else unchanged. No people, no text. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S61_v1.png",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S61_S61_v3_fix_raw.png",
+  "started": "2026-10-05T10:14:56",
+  "model_description": "",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dvor lipa a servisný múrik in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 1250, y 180 (65 % from the left, 17 % from the top). The fixed landmark 'tree_trunk' stays exactly at x 620, y 690 (32 % from the left, 64 % from the top). The fixed landmark 'service_niche' stays exactly at x 1155, y 626 (60 % from the left, 58 % from the top). The fixed landmark 'pipe_axis' stays exactly at x 1382, y 705 (72 % from the left, 65 % from the top).\n\nEra changes: the same school yard thirteen years earlier, on an early-December afternoon in 1982. Winter: every tree is bare - the trees of the estate behind the court, the poplar and the woods of the hill show only grey-brown branches and twigs, no leaves; the grass of the bank, the lawn and the grass bed is dull winter green-brown with thin patches of fresh snow; thin snow lies in places on the asphalt edges, on the roof edge, on the wall coping and on the bench; a pale, low winter sun under a high hazy sky, cold light, long soft shadows. The school is only eight years old: the same building with the same windows, its plain pale-yellow render clean and fresh, no stains. The tall panel block at the right is young and clean. The basketball backboard is older painted wood with the same netless hoop.\nOn the yard: the art panel of 1995 is NOT there yet - in its place stands the hand cart (prop 4). The linden is a freshly planted young sapling (prop 2) instead of the 1995 tree. The low red-brick service wall is brand new: crisp clean bricks, sharp mortar joints, a clean concrete coping. The red pipe elbow is freshly painted bright red and stands a little taller out of the ground.\n\nInteractive props of 1982:\n1. the box labelled 'Servisná dutina v múriku' in image 2 (x 1070-1240, y 560-685 of the 1920x1080 frame (56-65 % from the left, 52-63 % from the top)): the inset panel of 3 rows x 4 columns of grey stone blocks in the new brick wall; the stone in the SECOND row from the top and the THIRD column from the left is taken out and lies flat on the wall coping just above, so that a small dark, dry square cavity is open in its place; the other eleven stones are in place.\n2. the box labelled 'Mladá lipa' in image 2 (x 535-705, y 300-695 of the 1920x1080 frame (28-37 % from the left, 28-64 % from the top)): a young, freshly planted linden sapling in the same grass bed at the same trunk spot (x 620, y 690): a thin straight stem about one and a half times the height of the bench backrest above the bench, tied to a wooden support stake with a strip of rubber, a few thin bare twigs at the top, no leaves; a small ring of dark loose soil around its foot.\n3. the box labelled 'Červené potrubné koleno' in image 2 (x 1335-1435, y 598-712 of the 1920x1080 frame (70-75 % from the left, 55-66 % from the top)): the freshly painted bright red water-pipe elbow rising from the ground at the right end of the wall and bending sideways towards it, ending in a flange.\n4. the box labelled 'Ručný vozík' in image 2 (x 185-425, y 565-700 of the 1920x1080 frame (10-22 % from the left, 52-65 % from the top)): a loaded two-wheeled steel hand cart with a wooden box body and two long handles, standing on the asphalt, loaded with a few bags and laths; from its wheels a pair of muddy wheel ruts in the thin snow runs to the right along the kerb of the grass bed, passing right next to the sapling's stem.\nThe asphalt runs out of the left edge (the box labelled 'exit: Pred ZŠ Sokolíkova v roku 1982' in image 2 (x 0-60, y 722-912 of the 1920x1080 frame (0-3 % from the left, 67-84 % from the top))), out of the bottom-left corner towards the camera (the box labelled 'exit: Tóno a dedo pri servisnom okne v roku 1982' in image 2 (x 0-260, y 930-1015 of the 1920x1080 frame (0-14 % from the left, 86-94 % from the top))) and out of the right edge (the box labelled 'exit: Školský záhradný sklad v roku 1982' in image 2 (x 1860-1920, y 722-1015 of the 1920x1080 frame (97-100 % from the left, 67-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays open asphalt with nothing standing on it: thin patches of snow and wet dark asphalt, faded court lines, no objects.\nThis room has no NPC zones.\n\nFiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no murals, no graffiti. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S61",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S61.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:15:27"
+  }
+}

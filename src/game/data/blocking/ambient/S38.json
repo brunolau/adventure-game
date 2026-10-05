@@ -1,0 +1,16 @@
+{
+  "room": "S38",
+  "notes": "Natural S38 ambient (bg_natural/S38.webp): ripples and glints on the canal (water shader on the cut water), a pair of ducks paddling along the canal now and then (inside the water mask), drops falling from the pump spout into the irrigation model (brief: drops, the valve's regular click), wind in the reed tuft and in the willows and poplars across the canal, clouds drifting in the summer sky.",
+  "layers": [
+    { "id": "clouds", "type": "clouds", "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [30, 220], "count": 3, "speed_px_s": 5, "scale": [0.2, 0.34], "alpha": 0.5, "mask": "S38/natural/sky_mask.webp" },
+    { "id": "far_trees", "type": "sway", "texture": "S38/natural/far_trees.webp", "anchor": 1.0, "amp_px": 2.0, "freq": 0.22, "wavelength_px": 170, "flutter_px": 0.8 },
+    { "id": "water", "type": "water", "texture": "S38/natural/water.webp", "amp_px": 1.3, "speed": 0.8, "glint": 0.45, "glint_color": "#fff6dc" },
+    { "id": "ducks", "type": "tween_path", "sheet": "common/duck_sheet", "fps": 0.8, "path": [[-60, 548], [1980, 540]], "speed_px_s": 14, "scale": 0.22,
+      "flock": 2, "flock_spread": [40, 3], "bob_px": 0.8, "bob_hz": 0.5, "direction": "random", "every_s": [20, 45], "start_s": [0, 2],
+      "reduced_motion": "freeze", "mask": "S38/natural/water_mask.webp", "prewarm_s": 30 },
+    { "id": "reeds", "type": "sway", "texture": "S38/natural/reeds.webp", "anchor": 1.0, "amp_px": 2.6, "freq": 0.36, "wavelength_px": 60, "flutter_px": 0.9 },
+    { "id": "pump_drops", "type": "particles", "preset": "rain", "emit_rect": [961, 588, 8, 4], "rate": 1.4, "size": [6, 9], "speed_x": [0, 0],
+      "speed_y": [150, 210], "lifetime": [0.07, 0.11], "alpha_range": [0.45, 0.75], "color": "#d8ecf4", "emit_jitter": [1, 1] }
+  ]
+}

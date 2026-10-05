@@ -1,0 +1,265 @@
+{
+  "room": "S53",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S13",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S13_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 29971553,
+  "usd": 0.15,
+  "scope": "bg_natural/S53/",
+  "spend_log_asset": "bg_natural/S53/S53_v1_derive",
+  "started": "2026-10-05T10:01:54",
+  "prompt_file": "art/prompts/natural/S53.era.txt",
+  "blocking_file": "src/game/data/blocking/S53.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Vstupná chodba in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'terrazzo_line' stays exactly at x 960, y 700 (50 % from the left, 65 % from the top). The fixed landmark 'left_window' stays exactly at x 239, y 421 (12 % from the left, 39 % from the top). The fixed landmark 'middle_door' stays exactly at x 960, y 534 (50 % from the left, 49 % from the top).\n\nEra changes: the same entrance hall 25 years later, on Thursday 29 October 2020 at about half past three in the afternoon, during the pandemic, when the school is closed to pupils. Outside the glass the forecourt trees are in autumn colours (yellow and orange leaves, some already bare twigs) under a pale autumn sky; the sunlight through the glazed wall is lower, paler and cooler than in June, with softer, longer light patches on the floor, and the ceiling fluorescent tubes are switched on. The glazed facade wall keeps exactly the same divisions and the same door, but its old bronze steel frames are now plain white aluminium frames. The walls keep their plain soft yellow paint and darker dado, a little more scuffed; no murals.\nNew in 2020: a tall free-standing transparent plexiglass screen in clear panels on thin chrome feet stands across the back of the hall, right behind the caretaker's desk, from the desk's right end to the cloakroom's right end, about 1.9 m high: through it the middle double door, the right door and the cloakroom cages are still visible, but the cloakroom bench under it is empty (no slippers) and a red-and-white barrier tape is stretched across the middle double door behind the screen. A sheet of paper (the pick-up permit, illegible scribbles) is taped on the plexiglass in front of the middle door. On the caretaker's desk: two or three cardboard boxes with returned teaching aids instead of the visitor book; the green lamp and the telephone stay. Beside the entrance door, against the glazed wall near the floor, a slim grey stand with a hand-sanitiser dispenser. On the back wall beside the left door, a small notice with simple hand-washing pictograms (no text). The key cabinet stays. Everything built - walls, doors, door frames, the clock, the ceiling fittings, the doorway and staircase at the right, the terrazzo floor - stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Plexisklo' in image 2 (x 800-1120, y 405-721 of the 1920x1080 frame (42-58 % from the left, 38-67 % from the top)): the clear plexiglass screen panel in front of the middle double door, with its chrome edge profile, faint reflections and the taped permit sheet.\n2. the box labelled 'Krabica pomôcok' in image 2 (x 372-634, y 512-612 of the 1920x1080 frame (19-33 % from the left, 47-57 % from the top)): two or three brown cardboard boxes standing on the caretaker's desk, filled with returned teaching aids (rulers, a globe stand, books, a small microscope), one with a paper label of illegible scribbles.\nThe glazed entrance double door stays the box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 30-190, y 290-835 of the 1920x1080 frame (2-10 % from the left, 27-77 % from the top)). The open doorway with the staircase at the right stays the box labelled 'exit: Fyzikálny kabinet v roku 2020' in image 2 (x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 718-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) stays the open polished terrazzo floor in front of the plexiglass screen, with nothing standing on it.\nThis room has no NPC zones.\n\nFiction rules: no logos, no brand names, no school name, no readable text anywhere (the permit and labels are illegible scribbles, no digits), no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S13_v1.png (model geometry)",
+    "S13_v1.png + S53 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor terrazzo_line": {
+        "at": [
+          960,
+          700
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.806,
+        "ok": true
+      },
+      "anchor left_window": {
+        "at": [
+          239,
+          421
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.663,
+        "ok": true
+      },
+      "anchor middle_door": {
+        "at": [
+          960,
+          534
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.553,
+        "ok": true
+      },
+      "exit S53.to_S52": {
+        "at": [
+          110.0,
+          562.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.734,
+        "ok": true
+      },
+      "exit S53.to_S54": {
+        "at": [
+          1786.0,
+          571.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.977,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S53_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S53",
+    "status": "natural re-blocking, L_HALL 2020 derived from the accepted S13 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S13",
+    "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 29 October 2020: a free-standing plexiglass screen on chrome feet stands across the back of the hall at 8.95 m (feet y 721, x 650-1622, 1.9 m high): the classroom doors and the cloakroom are behind it (closed zone); the service route is the right corridor to the physics cabinet (S54). Return boxes on the caretaker's desk; sanitiser stand by the entrance.",
+    "background": "bg_natural/S53.webp",
+    "walk_polygon": [
+      [
+        15,
+        868
+      ],
+      [
+        292,
+        722
+      ],
+      [
+        372,
+        722
+      ],
+      [
+        378,
+        776
+      ],
+      [
+        628,
+        776
+      ],
+      [
+        662,
+        732
+      ],
+      [
+        1630,
+        732
+      ],
+      [
+        1648,
+        718
+      ],
+      [
+        1880,
+        845
+      ],
+      [
+        1905,
+        860
+      ],
+      [
+        1905,
+        1015
+      ],
+      [
+        15,
+        1015
+      ]
+    ],
+    "walk_band": [
+      716,
+      1015
+    ],
+    "actor_scale": [
+      0.55,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S53.ambient 1": {
+        "rect": [
+          800,
+          405,
+          320,
+          316
+        ],
+        "interaction_point": [
+          960,
+          775
+        ],
+        "label_anchor": [
+          960,
+          395
+        ],
+        "reason": "the plexiglass screen panel in front of the middle (classroom) door, with the taped pick-up permit sheet"
+      },
+      "S53.ambient 2": {
+        "rect": [
+          372,
+          512,
+          262,
+          100
+        ],
+        "interaction_point": [
+          503,
+          800
+        ],
+        "label_anchor": [
+          503,
+          502
+        ],
+        "reason": "cardboard return boxes for borrowed teaching aids on the caretaker's desk"
+      }
+    },
+    "npcs": {},
+    "exits": {
+      "S53.to_S52": {
+        "rect": [
+          30,
+          290,
+          160,
+          545
+        ],
+        "interaction_point": [
+          125,
+          885
+        ],
+        "label_anchor": [
+          192,
+          280
+        ],
+        "reason": "glazed entrance double door (same as S13.to_S12)"
+      },
+      "S53.to_S54": {
+        "rect": [
+          1690,
+          306,
+          192,
+          530
+        ],
+        "interaction_point": [
+          1782,
+          862
+        ],
+        "label_anchor": [
+          1728,
+          298
+        ],
+        "reason": "open doorway to the corridor and staircase up to the physics cabinet = the approved separate service route (same as S13.to_S15)"
+      }
+    },
+    "state_patches": [],
+    "anchors": {
+      "terrazzo_line": [
+        960,
+        700
+      ],
+      "left_window": [
+        239,
+        421
+      ],
+      "middle_door": [
+        960,
+        534
+      ]
+    },
+    "family_base": "S13"
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S53.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:02:34"
+  }
+}

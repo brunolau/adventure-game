@@ -1,0 +1,23 @@
+# S56 Skolnicke servisne okno v roku 2020 (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S56.json; composition art/prompts/natural/S56.sketch.json (frontal facade 9 m away).
+# Base of L_WINDOW (S64 1982 derived). The window is the last ground-floor window before the corner seen in S52 v2.
+#refs: art/source/rooms/S56/school-ground-floor-windows_wizzard-2016_original.jpg ; src/game/assets/bg_natural/S52.webp
+#style: art/backgrounds/sokolikova-street.png
+Place: the ground floor of the primary school ZS Sokolikova 2 in Bratislava-Dubravka, Slovakia, on its south-west facade, at its last ground-floor window before the building corner: the school caretaker's service window. Image 2 is a photo of this real facade (2016): ribbon windows with white PVC frames, walls and plinth clad in small grey-and-white mosaic tiles. Image 3 is our own painting of the school entrance in the same autumn 2020: this window is its last window before the corner at the far right; keep the same facade, colours and light.
+
+Brief: a close-up of the service window on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left falling straight onto the facade, soft shadows, yellow and orange autumn trees in the school yard beyond the corner, a few fallen leaves on the path. The window is closed; behind its glass is the caretaker's small workshop (dim: shelves with tools, a lamp, a workbench), the caretaker himself will be added later as a separate character, so the glass shows no person. The window has a deeper reveal and a protruding light stone sill; on the sill at its left end stands a small dark metal ornament in the shape of a swallow (a flat sheet-metal cut-out, slightly chipped). Behind the left pane, on the inner sill, a hand-repaired wooden birdhouse (patched with a lighter new board, a few nails).
+
+Camera: eye level 1.7 m, looking straight at the facade, which is parallel to the picture (vertical lines vertical, horizontal lines horizontal); horizon at y 503. Keep this exact geometry from the sketch: the path along the facade from y 881 to the bottom edge; the grey mosaic plinth from y 690 to y 881; the service window's opening x 797-1223, y 192-681 with its white frame, a central mullion at x ~1010, a transom at y ~320 with two small top panes; the top edge of the stone sill as one straight horizontal line at y 681 across x 781-1240; two neighbouring ribbon windows at the left (x 338-724 and a part of one at the far left); the building corner at x 1292; beyond it the school yard: asphalt, a wire-mesh fence, autumn trees, blue sky, a panel tower block far away.
+
+What the sketch blocks are: the facade wall clad in small grey-and-white mosaic tiles up to the top edge (the upper floor is above the picture); the two neighbouring windows with plain narrow sills; the service window with its deep reveal, white PVC frame, two big panes and two small top panes; its stone sill; the swallow ornament; the birdhouse behind the left pane; the building corner; the school yard; the concrete path along the bottom.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S56.ambient 1}: the protruding light stone sill and, at its left end, the small dark metal swallow ornament standing on it (a sheet-metal swallow with spread tail, a little chipped).
+2. {rect:S56.ambient 2}: the hand-repaired wooden birdhouse standing on the inner sill behind the left pane, seen through the glass (pitched roof, round entrance hole, one lighter new board).
+{npc_zones}
+The path continues out of the left edge back to the school entrance ({exit:S56.to_S52}).
+
+Walkable floor: {walk} is the concrete path along the facade - one continuous flat surface with no kerb, step, edge or change of material inside it, and nothing standing on it: no bins, no bags, no leaves piles, no people. Only light, shadows and a few fallen leaves.
+{anchors}
+
+Fiction rules: no readable text, no logos, no house numbers, no posters. No people (the window glass shows only the dim workshop and soft reflections), no animals (the swallow is a metal ornament). Any paper shows only illegible scribbles, no digits.

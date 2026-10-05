@@ -1,0 +1,631 @@
+{
+  "room": "S68",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035681,
+  "usd": 0.15,
+  "started": "2026-10-05T10:48:48",
+  "spend_log_asset": "bg_natural/S68/S68_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S68.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: inside a cabin of the real Funitel Priehyba–Chopok in Jasná, Low Tatras, Slovakia, in motion over the north slope of Chopok. Image 2 is a photo inside a real Funitel cabin of the same type (big window panes in sturdy frames, a padded bench, the ropes outside). Image 3 shows the real Jasná Funitel cabin from outside (black, twin hangers, big tinted windows) and the green slopes. Image 4 shows the real view from this line: the forested slopes falling to Demänovská dolina and the wide Liptov plain with a lake in the distance, the next cabin on the ropes. Paint this cabin interior and this real view.\n\nBrief: a real big-capacity Funitel cabin as the visual base: wide windows, a bench, frames and handrails. The view outside passes slowly. The doors never open during the ride; one gets off only on arrival. Wednesday 6 June 2035, bright midday: deep blue sky with white clouds outside, sunlight coming in through the windows, a calm, slightly hazy distance.\n\nCamera: standing in the cabin, about 1.6 m high, looking straight across at the long window wall, which is parallel to the picture; vertical lines stay vertical; the horizon (the far Liptov plain) is at y ~370. Keep this exact geometry from the sketch: the light ceiling with an LED strip and a steel handrail at y ~196-210; three big window panes at x 130-1450 (y 235-565) divided by two dark frame pillars at x 555-583 and 990-1018; the dark red padded bench under the windows (backrest y 587-640, seat y 640-690, front panel to the floor at y ~765); the downhill end panel with its door at the left edge (x 0-135); the panel with the scheme poster at x 1450-1580; the closed sliding double doors with tall glass panels at x 1580-1820; the uphill end panel at the right edge; the dark grey floor from y ~765 to the bottom edge.\n\nWhat the sketch blocks are: the light grey ceiling with an LED light strip; the brushed-steel ceiling handrail; the dark grey window frames and sill; the view through the windows: blue sky with white clouds, the far valley and the Liptov plain with a lake, the dark spruce forest of the near slope below, the haul ropes running diagonally up to the right; in the right pane the upper slope of Chopok rising, with the summit station and the round Rotunda (a red ring on top) far up the line; the downhill end panel with a door leaf and a small window; the panel with the framed scheme poster; the closed sliding doors; the uphill end panel; the anti-slip dark grey floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 580-990, y 235-550 of the 1920x1080 frame (30-52 % from the left, 22-51 % from the top): the big middle window pane with the wide view: the forested north slope of Chopok below, Demänovská dolina and the Liptov plain with a lake in the hazy distance.\n2. the block of the layout sketch at x 1185-1440, y 235-445 of the 1920x1080 frame (62-75 % from the left, 22-41 % from the top): in the upper right window pane, the summit station of Chopok with the round glass Rotunda and its red ring roof, seen far up the line where the ropes lead.\n3. the block of the layout sketch at x 1460-1565, y 300-450 of the 1920x1080 frame (76-82 % from the left, 28-42 % from the top): a small framed poster with a simple drawing of the Funitel cabin hanging from its two hangers on twin ropes, and coloured arrows; no text.\nNPC zone at x 345-495, y 455-815 of the 1920x1080 frame (18-26 % from the left, 42-75 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 815.\nthe area of the layout sketch at x 0-120, y 240-770 of the 1920x1080 frame (0-6 % from the left, 22-71 % from the top) is the downhill end panel with its door. the area of the layout sketch at x 1580-1820, y 235-770 of the 1920x1080 frame (82-95 % from the left, 22-71 % from the top) is the closed sliding double doors.\n\nWalkable floor: the band at x 0-1920, y 770-1015 of the 1920x1080 frame (0-100 % from the left, 71-94 % from the top) is the anti-slip dark grey cabin floor - one continuous flat surface with no step and nothing standing on it: no luggage, no poles, no people. Only sunlight patches from the windows and soft shadows.\n\nFiction rules: no cabin livery, no logos, no brand names (no JASNÁ, no TMR), no warning stickers with text, no readable text anywhere. No people (the passenger is a separate sprite), no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S68_sketch.png (rendered from art/prompts/natural/S68.sketch.json, model geometry)",
+    "art/source/rooms/S68/funitel-cabin-interior_parnitha.jpg",
+    "art/source/rooms/S68/jasna-funitel-cabin_summer_2015-08.jpg",
+    "art/source/rooms/S68/jasna-funitel-line-view-from-chopok_2015-08.jpg",
+    "src/game/assets/bg_natural/S67.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S68 natural blocking (src/game/data/blocking/S68.json): inside a Funitel cabin, camera ~1.6 m, horizon y ~370, bench under the windows on the floor at y ~760.",
+    "background": "#3a3e44",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          200
+        ],
+        "fill": "#d9dcde",
+        "note": "light grey cabin ceiling with a soft LED strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          200,
+          60,
+          1500,
+          18
+        ],
+        "fill": "#f6f8f8",
+        "note": "LED light strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          196,
+          1920,
+          14
+        ],
+        "fill": "#b9bec2",
+        "note": "brushed-steel ceiling handrail running along the cabin"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          210,
+          1920,
+          30
+        ],
+        "fill": "#2f3338",
+        "note": "dark grey window header frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          235,
+          1320,
+          330
+        ],
+        "fill": "#9fc6e6",
+        "note": "three big window panes: blue sky, white clouds, the forested slopes of Chopok below, Demanovska dolina and the Liptov plain in the distance"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            130,
+            400
+          ],
+          [
+            400,
+            380
+          ],
+          [
+            700,
+            360
+          ],
+          [
+            1000,
+            372
+          ],
+          [
+            1300,
+            360
+          ],
+          [
+            1450,
+            368
+          ],
+          [
+            1450,
+            565
+          ],
+          [
+            130,
+            565
+          ]
+        ],
+        "fill": "#6f8f6a",
+        "note": "the far valley and the Liptov plain with a lake, hazy"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            130,
+            470
+          ],
+          [
+            500,
+            440
+          ],
+          [
+            900,
+            470
+          ],
+          [
+            1200,
+            430
+          ],
+          [
+            1450,
+            440
+          ],
+          [
+            1450,
+            565
+          ],
+          [
+            130,
+            565
+          ]
+        ],
+        "fill": "#3f6a44",
+        "note": "dark spruce forest of the near slope sliding past below"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1250,
+            360
+          ],
+          [
+            1320,
+            300
+          ],
+          [
+            1440,
+            245
+          ],
+          [
+            1440,
+            360
+          ]
+        ],
+        "fill": "#8f9a86",
+        "note": "the upper slope of Chopok rising in the right pane"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          262,
+          70,
+          40
+        ],
+        "fill": "#3a3f48",
+        "note": "the summit station with the round Rotunda (red ring) far up the line"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1318,
+          250,
+          34,
+          20
+        ],
+        "fill": "#c4342c"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            130,
+            520
+          ],
+          [
+            1450,
+            260
+          ]
+        ],
+        "color": "#2b2b2b",
+        "width": 3,
+        "note": "the haul ropes outside the window"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            130,
+            540
+          ],
+          [
+            1450,
+            280
+          ]
+        ],
+        "color": "#2b2b2b",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          555,
+          235,
+          28,
+          330
+        ],
+        "fill": "#2f3338",
+        "note": "window frame pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          235,
+          28,
+          330
+        ],
+        "fill": "#2f3338",
+        "note": "window frame pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          210,
+          135,
+          560
+        ],
+        "fill": "#33373c",
+        "note": "downhill end panel of the cabin with its door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          18,
+          250,
+          95,
+          500
+        ],
+        "fill": "#4a5058",
+        "note": "door leaf with a small window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          30,
+          270,
+          70,
+          160
+        ],
+        "fill": "#8fb2cf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          210,
+          130,
+          560
+        ],
+        "fill": "#33373c",
+        "note": "panel between the windows and the sliding doors"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1460,
+          300,
+          105,
+          150
+        ],
+        "fill": "#e9e6dd",
+        "note": "framed cabin scheme poster"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          330,
+          65,
+          70
+        ],
+        "fill": "#4f81bd",
+        "note": "simple drawing of the cabin and its twin hangers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1580,
+          235,
+          240,
+          535
+        ],
+        "fill": "#4a5058",
+        "note": "closed sliding double doors with tall glass panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1595,
+          255,
+          100,
+          420
+        ],
+        "fill": "#9cc0dc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1705,
+          255,
+          100,
+          420
+        ],
+        "fill": "#9cc0dc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1820,
+          210,
+          100,
+          580
+        ],
+        "fill": "#33373c",
+        "note": "uphill end panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          565,
+          1320,
+          22
+        ],
+        "fill": "#2f3338",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          640,
+          1320,
+          50
+        ],
+        "fill": "#7a2f35",
+        "note": "padded bench seat in dark red"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          587,
+          1320,
+          55
+        ],
+        "fill": "#6b2a30",
+        "note": "padded backrest under the windows"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          690,
+          1320,
+          75
+        ],
+        "fill": "#2a2d31",
+        "note": "bench front panel down to the floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            790
+          ],
+          [
+            130,
+            765
+          ],
+          [
+            1580,
+            765
+          ],
+          [
+            1840,
+            790
+          ],
+          [
+            1920,
+            800
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#5c6168",
+        "note": "anti-slip dark grey cabin floor"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          800,
+          1920,
+          280
+        ],
+        "cols": 24,
+        "rows": 2,
+        "color": "#555a60",
+        "width": 2
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S68.json",
+  "blocking": {
+    "version": 1,
+    "room": "S68",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Inside a moving Funitel cabin of the Priehyba-Chopok line (type-reference: the Parnitha Funitel interior; cabin shape and colour from the real Jasna cabins; the view from the real line down to Demanovska dolina and Liptov). Camera ~1.6 m high in the cabin, looking across at the long window wall (about 2.5 m away); horizon y ~370 (the far Liptov plain); the padded bench under the windows stands on the floor at y ~760 (~185 px per metre there). Perspective s(y) = (y - 371) / 644, a close interior. Left: the downhill end panel with its door (back to Priehyba); centre: three big window panes over the padded bench; right: the cabin scheme poster on the panel beside the closed sliding doors (exit on arrival); the summit station of Chopok comes into view in the right window pane (arrival hotspot). The tourist stands holding the ceiling rail in front of the left pane.",
+    "background": "bg_natural/S68.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        790
+      ],
+      [
+        130,
+        770
+      ],
+      [
+        1570,
+        770
+      ],
+      [
+        1840,
+        790
+      ],
+      [
+        1920,
+        800
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      770,
+      1015
+    ],
+    "actor_scale": [
+      0.62,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S68.ambient 1": {
+        "rect": [
+          580,
+          235,
+          410,
+          315
+        ],
+        "interaction_point": [
+          785,
+          860
+        ],
+        "label_anchor": [
+          785,
+          225
+        ],
+        "reason": "the big middle window pane: the forested north slope of Chopok sliding past below, Demanovska dolina and the Liptov plain in the distance"
+      },
+      "S68.arrival": {
+        "rect": [
+          1185,
+          235,
+          255,
+          210
+        ],
+        "interaction_point": [
+          1300,
+          860
+        ],
+        "label_anchor": [
+          1312,
+          225
+        ],
+        "reason": "the upper part of the right window pane, where the Chopok summit station with the round Rotunda comes into view up the line"
+      },
+      "S68.ambient 2": {
+        "rect": [
+          1460,
+          300,
+          105,
+          150
+        ],
+        "interaction_point": [
+          1510,
+          870
+        ],
+        "label_anchor": [
+          1512,
+          290
+        ],
+        "reason": "the framed cabin scheme poster on the panel between the windows and the sliding doors"
+      },
+      "S68.TURISTA": {
+        "rect": [
+          345,
+          455,
+          150,
+          360
+        ],
+        "interaction_point": [
+          420,
+          880
+        ],
+        "reason": "the tourist Milos stands in front of the left window pane, holding the ceiling rail"
+      }
+    },
+    "npcs": {
+      "S68.TURISTA": {
+        "variant": "standing",
+        "feet": [
+          420,
+          815
+        ],
+        "z": "auto",
+        "reason": "the actor note: a standing passenger in the Funitel cabin"
+      }
+    },
+    "exits": {
+      "S68.to_S67": {
+        "rect": [
+          0,
+          240,
+          120,
+          530
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          150,
+          230
+        ],
+        "reason": "the downhill end panel of the cabin with its door (back to Priehyba once the cabin is in the station)"
+      },
+      "S68.to_S47": {
+        "rect": [
+          1580,
+          235,
+          240,
+          535
+        ],
+        "interaction_point": [
+          1700,
+          870
+        ],
+        "label_anchor": [
+          1700,
+          225
+        ],
+        "reason": "the closed sliding doors of the cabin, opened by the attendant on arrival at the summit (after J04)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S68.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:49:26"
+  }
+}

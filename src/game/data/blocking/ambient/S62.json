@@ -1,0 +1,198 @@
+{
+ "room": "S62",
+ "notes": "Natural S62 (bg_natural/S62.webp, early December 1982, the S18 courtyard camera). Light snow falling, pale clouds drifting over the far blocks (sky mask), the old carpet on the drying rack stirring in the wind, the bare linden's twigs swaying, crows crossing the winter sky, sparrows hopping on the path (they fly off when Adam comes near), a neighbour's shadow behind a loggia window.",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    100,
+    250
+   ],
+   "count": 3,
+   "speed_px_s": 4,
+   "scale": [
+    0.14,
+    0.22
+   ],
+   "alpha": 0.35,
+   "modulate": "#e8e6e2",
+   "x_span": [
+    -200,
+    700
+   ],
+   "mask": "S62/natural/sky_mask.webp"
+  },
+  {
+   "id": "snow",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    0,
+    -30,
+    1920,
+    20
+   ],
+   "rate": 4.0,
+   "size": [
+    6,
+    11
+   ],
+   "speed_y": [
+    28,
+    55
+   ],
+   "wind": 18,
+   "alpha_range": [
+    0.75,
+    1.0
+   ],
+   "lifetime": [
+    14,
+    22
+   ],
+   "max": 140
+  },
+  {
+   "id": "carpet_sway",
+   "type": "sway",
+   "texture": "S62/natural/carpet.webp",
+   "anchor": 0.0,
+   "amp_px": 2.2,
+   "freq": 0.35,
+   "wavelength_px": 90,
+   "flutter_px": 0.6,
+   "gust": 0.4
+  },
+  {
+   "id": "linden_twigs",
+   "type": "sway",
+   "texture": "S62/natural/linden_branches.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "crows",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 8,
+   "path": [
+    [
+     -60,
+     140
+    ],
+    [
+     400,
+     100
+    ],
+    [
+     700,
+     40
+    ],
+    [
+     1000,
+     -60
+    ]
+   ],
+   "speed_px_s": 180,
+   "scale": 0.08,
+   "flock": 2,
+   "flock_spread": [
+    70,
+    25
+   ],
+   "bob_px": 5,
+   "modulate": "#2b2b30",
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    4,
+    10
+   ]
+  },
+  {
+   "id": "sparrows",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     880,
+     772
+    ],
+    [
+     1180,
+     790
+    ]
+   ],
+   "scale": 0.1,
+   "modulate": "#9a7e62",
+   "flee_radius": 280,
+   "return_s": [
+    12,
+    24
+   ],
+   "exit": [
+    [
+     1100,
+     200
+    ],
+    [
+     700,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "loggia_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1240,
+     350
+    ],
+    [
+     1305,
+     350
+    ]
+   ],
+   "speed_px_s": 9,
+   "scale": 0.24,
+   "modulate": "#2c2a30",
+   "alpha": 0.35,
+   "direction": "random",
+   "every_s": [
+    20,
+    45
+   ],
+   "start_s": [
+    3,
+    9
+   ],
+   "clip": [
+    1245,
+    262,
+    52,
+    82
+   ]
+  }
+ ]
+}

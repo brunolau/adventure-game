@@ -1,0 +1,1106 @@
+{
+  "room": "S19",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1937325758,
+  "usd": 0.15,
+  "started": "2026-10-05T09:57:36",
+  "spend_log_asset": "bg_natural/S19/S19_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S19.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the tram stop Namestie sv. Frantiska on Karloveska street in Karlova Ves, Bratislava, Slovakia. Images 2-3 are photos of this real tram line: a concrete tram platform with a dark green steel-and-glass shelter with a flat roof, red-and-white steel railings, tram tracks on concrete sleepers, the wide Karloveska road, catenary poles and wires, red street lamps; image 4 shows the real view from here: a green slope with trees and the Karlova Ves housing estate of 1970s-80s prefabricated panel blocks on it. Paint this real place as it was in 1995: the panel blocks are NOT renovated yet - plain grey-beige concrete panel facades with rows of small windows and loggias, no colourful insulation, no satellite dishes; no tower cranes, no towers under construction, no billboards, no advertising.\n\nBrief: an extended tram platform; under the glass shelter stands an accordion player (he is added later as a sprite); a small folding table beside him with a wooden mechanical metronome; the view of the slope and the panel blocks. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, fresh full-green trees, a blue sky with a few white clouds.\n\nCamera: standing on the platform, about 2.2 m high, looking straight across the tracks at the slope; the platform's back edge and the tracks run parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the platform's back edge with its light concrete edge strip at y 790-800; the double tram track behind it from y 700 to 790 (four rails at y 712, 730, 755 and 781); the red-and-white railing on the far side of the tracks standing on y 700 with its top rail at y 544; the far carriageway of the road at y 626-676; the green slope with trees from y ~360 to 612; the panel blocks on the slope above; the shelter from its roof (y 285-318) down to the platform at y 800.\n\nWhat the sketch blocks are, left to right: sky; four long panel blocks on the slope; tree crowns on the slope; two grey catenary poles on the far side of the tracks and the overhead wires; the red-and-white railing with a gap at x 1520-1640 where a zebra crossing leads over both tracks to concrete steps with a handrail climbing the slope; the dark green glazed tram shelter (glass back wall with green mullions, a flat dark roof, two green front posts at its corners) standing on the platform; inside it a simple wooden bench along the back glass; the wide light grey concrete platform with slab joints in the foreground.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 520-705, y 690-825 of the 1920x1080 frame (27-37 % from the left, 64-76 % from the top): a worn black accordion case lying open on the platform at the musician's feet, its lid standing open, red velvet lining, a few coins inside.\n2. the block of the layout sketch at x 912-976, y 596-660 of the 1920x1080 frame (48-51 % from the left, 55-61 % from the top): a white paper cup on the small folding table, with a hand-written paper label stuck on it that is crossed out (illegible scribbles, no digits).\nNext to the cup on the same small wooden folding table stands a classic wooden pyramid-shaped mechanical metronome with a brass pendulum (keep it exactly at its block, left of the cup).\nThe zebra crossing over the tracks and the steps up the slope are the area of the layout sketch at x 1510-1660, y 540-800 of the 1920x1080 frame (79-86 % from the left, 50-74 % from the top). The platform continues out of the left edge (the area of the layout sketch at x 0-60, y 815-1015 of the 1920x1080 frame (0-3 % from the left, 75-94 % from the top)) and the right edge (the area of the layout sketch at x 1860-1920, y 815-1015 of the 1920x1080 frame (97-100 % from the left, 75-94 % from the top)).\n\nWalkable floor: the band at x 20-1900, y 805-1015 of the 1920x1080 frame (1-99 % from the left, 75-94 % from the top) is the open concrete platform - one continuous flat surface of large light grey concrete slabs with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no benches, no bins, no poles, no lamp posts, no signs, no bags. Only sunlight, soft shadows of the shelter and a few slab joints.\nNPC zone at x 700-850, y 452-817 of the 1920x1080 frame (36-44 % from the left, 42-76 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 812. The musician stands under the shelter roof in front of the back glass, between the accordion case and the folding table.\n\nFiction rules: the stop is unnamed - no stop name sign, no line numbers, no timetable text, no advertising on the shelter or anywhere, no tram in the picture, no cars, no people, no animals. The only object on the folding table besides the metronome is the paper cup. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S19_sketch.png (rendered from art/prompts/natural/S19.sketch.json, model geometry)",
+    "art/source/rooms/S19/karloveska_nam-sv-frantiska_stop_2011.jpg",
+    "art/source/rooms/S19/karloveska_nad-luckami_stop_2007.jpg",
+    "art/source/rooms/S19/karloveska_view_slope_panel-blocks_2011.jpg",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S19 natural: platform across the track, camera 2.2 m, horizon y 360, platform back edge y 800.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          330
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          95,
+          500,
+          300
+        ],
+        "fill": "#cfc8b6",
+        "note": "unrenovated grey-beige concrete panel block on the slope (1995: no insulation, no colours)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          10,
+          113,
+          480,
+          270
+        ],
+        "step": 39,
+        "bar": 9,
+        "fill": "#9f988a",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          590,
+          150,
+          460,
+          250
+        ],
+        "fill": "#cfc8b6",
+        "note": "unrenovated grey-beige concrete panel block on the slope (1995: no insulation, no colours)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          600,
+          168,
+          440,
+          220
+        ],
+        "step": 37,
+        "bar": 9,
+        "fill": "#9f988a",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          1130,
+          60,
+          380,
+          300
+        ],
+        "fill": "#cfc8b6",
+        "note": "unrenovated grey-beige concrete panel block on the slope (1995: no insulation, no colours)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1140,
+          78,
+          360,
+          270
+        ],
+        "step": 34,
+        "bar": 9,
+        "fill": "#9f988a",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          1590,
+          125,
+          330,
+          270
+        ],
+        "fill": "#cfc8b6",
+        "note": "unrenovated grey-beige concrete panel block on the slope (1995: no insulation, no colours)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1600,
+          143,
+          310,
+          240
+        ],
+        "step": 34,
+        "bar": 9,
+        "fill": "#9f988a",
+        "vertical": false
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            380
+          ],
+          [
+            300,
+            350
+          ],
+          [
+            700,
+            395
+          ],
+          [
+            1100,
+            360
+          ],
+          [
+            1500,
+            372
+          ],
+          [
+            1920,
+            352
+          ],
+          [
+            1920,
+            612
+          ],
+          [
+            0,
+            612
+          ]
+        ],
+        "fill": "#7f9a52",
+        "note": "grass slope with trees and bushes below the blocks"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          30,
+          328,
+          180,
+          144
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          250,
+          366,
+          160,
+          128
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          425,
+          334,
+          190,
+          152
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          815,
+          362,
+          170,
+          136
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          990,
+          338,
+          180,
+          144
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1285,
+          344,
+          190,
+          152
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1730,
+          338,
+          180,
+          144
+        ],
+        "fill": "#5f7f3c",
+        "note": "tree crown on the slope"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1555,
+            612
+          ],
+          [
+            1650,
+            612
+          ],
+          [
+            1640,
+            400
+          ],
+          [
+            1600,
+            400
+          ]
+        ],
+        "fill": "#c2bcae",
+        "note": "concrete steps with a handrail climbing the slope to the estate (route to the repair shop)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          612,
+          1920,
+          14
+        ],
+        "fill": "#b5afa3",
+        "note": "far pavement"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          626,
+          1920,
+          50
+        ],
+        "fill": "#7b7c7e",
+        "note": "Karloveska road, far carriageway (cars pass later)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          676,
+          1920,
+          26
+        ],
+        "fill": "#9aa36a",
+        "note": "narrow grass strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          702,
+          1920,
+          88
+        ],
+        "fill": "#8d8476",
+        "note": "double tram track bed (concrete sleepers, gravel)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          706,
+          1920,
+          84
+        ],
+        "step": 40,
+        "bar": 14,
+        "fill": "#a39a8a",
+        "vertical": true,
+        "note": "sleepers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          710,
+          1920,
+          5
+        ],
+        "fill": "#4c4642",
+        "note": "rail far track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          728,
+          1920,
+          5
+        ],
+        "fill": "#4c4642",
+        "note": "rail far track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          752,
+          1920,
+          6
+        ],
+        "fill": "#4c4642",
+        "note": "rail near track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          778,
+          1920,
+          7
+        ],
+        "fill": "#4c4642",
+        "note": "rail near track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          788,
+          1920,
+          12
+        ],
+        "fill": "#e9e6dc",
+        "note": "light concrete edge strip of the platform"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1520,
+          676,
+          120,
+          112
+        ],
+        "step": 24,
+        "bar": 12,
+        "fill": "#efede6",
+        "vertical": false,
+        "note": "pedestrian crossing over the tracks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          230,
+          250,
+          14,
+          450
+        ],
+        "fill": "#6e7a72",
+        "note": "catenary pole beside the far track"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          250,
+          14,
+          450
+        ],
+        "fill": "#6e7a72",
+        "note": "catenary pole beside the far track"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            0,
+            262
+          ],
+          [
+            1920,
+            262
+          ]
+        ],
+        "color": "#3b3b3b",
+        "width": 2,
+        "note": "overhead wire"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            0,
+            282
+          ],
+          [
+            1920,
+            282
+          ]
+        ],
+        "color": "#3b3b3b",
+        "width": 2
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          553,
+          1520,
+          142
+        ],
+        "step": 16,
+        "bar": 5,
+        "fill": "#efeee8",
+        "vertical": true,
+        "note": "white railing bars"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          544,
+          1520,
+          9
+        ],
+        "fill": "#c0392b",
+        "note": "red top rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          650,
+          1520,
+          7
+        ],
+        "fill": "#c0392b",
+        "note": "red lower rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          116,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          232,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          348,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          464,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          580,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          696,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          812,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          928,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1044,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1160,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1276,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1392,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1508,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1640,
+          553,
+          280,
+          142
+        ],
+        "step": 16,
+        "bar": 5,
+        "fill": "#efeee8",
+        "vertical": true,
+        "note": "white railing bars"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          544,
+          280,
+          9
+        ],
+        "fill": "#c0392b",
+        "note": "red top rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          650,
+          280,
+          7
+        ],
+        "fill": "#c0392b",
+        "note": "red lower rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1756,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1872,
+          544,
+          9,
+          156
+        ],
+        "fill": "#b0322a",
+        "note": "red railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          314,
+          630,
+          486
+        ],
+        "fill": "#a9c4cc",
+        "note": "back glass wall of the shelter (the railing and slope show faintly through)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          380,
+          314,
+          630,
+          486
+        ],
+        "step": 158,
+        "bar": 12,
+        "fill": "#2f5e3a",
+        "vertical": true,
+        "note": "green mullions"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          464,
+          630,
+          10
+        ],
+        "fill": "#2f5e3a",
+        "note": "glass transom bar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          284,
+          670,
+          32
+        ],
+        "fill": "#3d4a40",
+        "note": "flat shelter roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          378,
+          314,
+          18,
+          493
+        ],
+        "fill": "#2f5e3a",
+        "note": "left post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          994,
+          314,
+          18,
+          493
+        ],
+        "fill": "#2f5e3a",
+        "note": "right post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          420,
+          709,
+          200,
+          14
+        ],
+        "fill": "#8a6a48",
+        "note": "wooden bench seat along the back glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          723,
+          10,
+          78
+        ],
+        "fill": "#4a4a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          723,
+          10,
+          78
+        ],
+        "fill": "#4a4a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          800,
+          1920,
+          280
+        ],
+        "fill": "#c9c5b9",
+        "note": "concrete platform slabs = walk band"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          800,
+          1920,
+          280
+        ],
+        "cols": 12,
+        "rows": 3,
+        "color": "#b6b1a3",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          858,
+          650,
+          128,
+          12
+        ],
+        "fill": "#a07a4e",
+        "note": "small folding table top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          866,
+          662,
+          7,
+          150
+        ],
+        "fill": "#6e4c2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          972,
+          662,
+          7,
+          150
+        ],
+        "fill": "#6e4c2e"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            880,
+            650
+          ],
+          [
+            912,
+            650
+          ],
+          [
+            902,
+            594
+          ],
+          [
+            890,
+            594
+          ]
+        ],
+        "fill": "#7a4a2a",
+        "note": "wooden pyramid metronome (background prop)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            928,
+            650
+          ],
+          [
+            960,
+            650
+          ],
+          [
+            964,
+            612
+          ],
+          [
+            924,
+            612
+          ]
+        ],
+        "fill": "#f4f0e2",
+        "note": "paper cup with a crossed-out label"
+      },
+      {
+        "type": "rect",
+        "box": [
+          530,
+          702,
+          170,
+          66
+        ],
+        "fill": "#8e2a2a",
+        "note": "open lid of the black accordion case (red velvet lining)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          526,
+          766,
+          178,
+          50
+        ],
+        "fill": "#26262c",
+        "note": "black accordion case body lying open on the platform, a few coins inside"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S19.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Tram stop Nam. sv. Frantiska on Karloveska seen from the wide concrete platform across the double track: camera ~2.2 m on the platform, horizon y 360, the platform's back edge (railing, shelter foot) at y 800 (~200 px per metre). Perspective s(y) = (y - 360) / 655. Behind the platform's open edge: the double track, a red-white railing (foot y 700), Karloveska, the green slope with the unrenovated Karlova Ves panel blocks. Emil stands under the green glazed shelter, the accordion case lies open on the platform at his feet, the folding table with the metronome and the paper cup stands right of him under the roof; the zebra crossing at the gap in the railing leads over the track to the steps up the slope (S20).",
+    "background": "bg_natural/S19.webp",
+    "walk_polygon": [
+      [
+        20,
+        805
+      ],
+      [
+        1900,
+        805
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      805,
+      1015
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      1180,
+      920
+    ],
+    "hotspots": {
+      "S19.ambient 1": {
+        "rect": [
+          520,
+          690,
+          185,
+          135
+        ],
+        "interaction_point": [
+          615,
+          880
+        ],
+        "label_anchor": [
+          612,
+          682
+        ],
+        "reason": "open black accordion case lying on the platform at Emil's feet"
+      },
+      "S19.ambient 2": {
+        "rect": [
+          912,
+          596,
+          64,
+          64
+        ],
+        "interaction_point": [
+          945,
+          880
+        ],
+        "label_anchor": [
+          944,
+          588
+        ],
+        "reason": "paper cup with a crossed-out label on the folding table right of Emil"
+      },
+      "S19.EMIL": {
+        "rect": [
+          700,
+          452,
+          150,
+          365
+        ],
+        "interaction_point": [
+          775,
+          900
+        ],
+        "label_anchor": [
+          775,
+          444
+        ],
+        "reason": "Emil standing under the shelter roof in front of the back glass"
+      }
+    },
+    "npcs": {
+      "S19.EMIL": {
+        "variant": "standing",
+        "feet": [
+          775,
+          812
+        ],
+        "scale": 0.69,
+        "reason": "brief: the accordionist under the shelter (standing sprite; DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S19.to_S11": {
+        "rect": [
+          0,
+          815,
+          60,
+          200
+        ],
+        "interaction_point": [
+          70,
+          910
+        ],
+        "label_anchor": [
+          135,
+          803
+        ],
+        "reason": "the platform continues out of the left edge (tram towards Dubravka)"
+      },
+      "S19.to_S20": {
+        "rect": [
+          1510,
+          540,
+          150,
+          260
+        ],
+        "interaction_point": [
+          1580,
+          850
+        ],
+        "label_anchor": [
+          1585,
+          532
+        ],
+        "reason": "zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky estate"
+      },
+      "S19.to_S21": {
+        "rect": [
+          1860,
+          815,
+          60,
+          200
+        ],
+        "interaction_point": [
+          1850,
+          910
+        ],
+        "label_anchor": [
+          1785,
+          803
+        ],
+        "reason": "the platform continues out of the right edge (tram towards the centre)"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S19"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S19.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T09:58:29"
+  }
+}

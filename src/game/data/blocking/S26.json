@@ -1,0 +1,154 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Small clothes-repair shop in the Pasaz Mileticova, camera ~2.4 m at the back of the shop looking at the passage front: one-point box, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling y 217. Perspective s(y) = (y - 300) / 715. Milada stands behind the sewing table (feet y 770, bust cut at the table top's front edge y 640); the sewing machine is on the table's left part, the tin of buttons on its right end; the dress form stands on the floor at the back right; the glazed door to the passage is the exit.",
+ "background": "bg_natural/S26.webp",
+ "walk_polygon": [
+  [
+   312,
+   786
+  ],
+  [
+   764,
+   786
+  ],
+  [
+   770,
+   818
+  ],
+  [
+   1312,
+   818
+  ],
+  [
+   1318,
+   790
+  ],
+  [
+   1610,
+   790
+  ],
+  [
+   1900,
+   975
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   1000
+  ],
+  [
+   240,
+   940
+  ],
+  [
+   330,
+   800
+  ]
+ ],
+ "walk_band": [
+  786,
+  1015
+ ],
+ "actor_scale": [
+  0.68,
+  1.0
+ ],
+ "spawn": [
+  410,
+  890
+ ],
+ "hotspots": {
+  "S26.ambient 1": {
+   "rect": [
+    1340,
+    450,
+    140,
+    335
+   ],
+   "interaction_point": [
+    1410,
+    860
+   ],
+   "label_anchor": [
+    1410,
+    442
+   ],
+   "reason": "tailor's dress form on a tripod stand at the back right"
+  },
+  "S26.ambient 2": {
+   "rect": [
+    1160,
+    576,
+    120,
+    72
+   ],
+   "interaction_point": [
+    1220,
+    880
+   ],
+   "label_anchor": [
+    1220,
+    568
+   ],
+   "reason": "open tin box of buttons on the right end of the sewing table"
+  },
+  "S26.MILADA": {
+   "rect": [
+    985,
+    440,
+    150,
+    206
+   ],
+   "interaction_point": [
+    1060,
+    890
+   ],
+   "label_anchor": [
+    1060,
+    432
+   ],
+   "reason": "Milada behind the sewing table, seen down to the table top"
+  }
+ },
+ "npcs": {
+  "S26.MILADA": {
+   "variant": "behind_counter",
+   "feet": [
+    1060,
+    770
+   ],
+   "scale": 0.657,
+   "sill_y": 648,
+   "reason": "DECISIONS item 2: Milada behind the sewing table (counter bust cut at the painted table top front edge y 648, measured on v1)"
+  }
+ },
+ "exits": {
+  "S26.to_S25": {
+   "rect": [
+    314,
+    345,
+    184,
+    420
+   ],
+   "interaction_point": [
+    406,
+    825
+   ],
+   "label_anchor": [
+    406,
+    337
+   ],
+   "reason": "glazed shop door to the passage and the market"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S26"
+}

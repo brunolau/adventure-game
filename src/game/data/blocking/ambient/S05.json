@@ -1,7 +1,17 @@
 {
  "room": "S05",
- "notes": "Natural re-blocking ambient (bg_natural/S05.webp, docs/reblock/README.md): vine leaves falling onto the pavement, a cat walking along the top rail of the picket fence, a shadow moving behind the lace curtain of the right window. No sway layers yet (the template vine/grass textures are cut from bg/S05.webp).",
+ "notes": "Natural re-blocking ambient (bg_natural/S05.webp, docs/reblock/README.md): vine leaves falling onto the pavement, a cat walking along the top rail of the picket fence, a shadow moving behind the lace curtain of the right window. Wind sway on the vine foliage cut from the natural painting (art/ambient/natural/S05.cuts.json, art/tools/ambient_cut.py --natural S05 -> assets/ambient/S05/natural/).",
  "layers": [
+  {
+   "id": "vine_sway",
+   "type": "sway",
+   "texture": "S05/natural/vine.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.8
+  },
   {
    "id": "vine_leaves",
    "type": "particles",

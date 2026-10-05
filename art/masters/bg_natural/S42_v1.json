@@ -1,0 +1,1108 @@
+{
+  "room": "S42",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035421,
+  "usd": 0.15,
+  "started": "2026-10-05T10:04:02",
+  "spend_log_asset": "bg_natural/S42/S42_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S42.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the paved forecourt on the east side of Hotel Grand Jasná in Jasná, Demänovská dolina, Low Tatras, Slovakia. Image 2 is a photo of this exact place: the forecourt path of warm grey concrete pavers, a low natural-stone wall with shrubs, young spruces, the big renovated hotel on the right (dark slate mansard roofs, light beige walls, timber balconies, a big triangular gable with a dark red-brown timber trim), the glass and steel structure of the Grand gondola station at the left edge, and the green Chopok ridge with its summit buildings in the centre. Image 3 shows the same hotel in its setting. Paint this real place.\n\nBrief: the exterior of the real Hotel Grand Jasná, based on its recognisable shape, in the near future (6 June 2035, grounded: it looks like today, a little newer). The fictional exhibition \"Pamäť obyčajných dní\" has a temporary info stand on the forecourt (a roll-up banner and a small leaflet table); its organiser Atlas is not the hotel operator. Bright early-summer midday in the mountains, the same light as image 5: deep blue sky, a few white clouds, crisp sun from the upper left, fresh green meadows on the ridge, dark spruces, no snow.\n\nCamera: standing on the forecourt, about 1.7 m high, looking south-south-west to Chopok; vertical lines stay vertical; the horizon is at y ~440. Keep this exact geometry from the sketch: the Chopok ridge between x 300 and 1360 (summit y ~230); the gondola station glass structure at the left edge (x 0-240, roof y 285, foot y 705); the low stone wall at y 655-712 with a gap for the footpath at x 640-765; the hotel's lower wing on the right (roof y 300-380, foot y ~694) and its main block with the big gable (gable tip y 45-60, foot y ~700); the forecourt paving from y ~705 down to the bottom edge.\n\nWhat the sketch blocks are: sky; the Chopok ridge (green alpine meadows, grey rock, the summit buildings as tiny dots); dark spruce forest of the valley; the glass and steel gondola station structure at the left edge (no lettering, no logo); a paved side path leading away past it; low shrubs and young spruces behind the stone wall; the low natural-stone wall; the gravel footpath leading through the gap in the wall into the forest, with a small plain wooden trail post; the hotel's lower wing (light beige render, timber balcony band, two windows, a glazed side door under a small canopy); a small stone water feature basin with a thin trickle of water by the wall of the wing; the main block with the big gable, its windows and a lettering band on the gable; the main entrance glass doors under a wooden canopy; the forecourt paving.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 300-560, y 470-740 of the 1920x1080 frame (16-29 % from the left, 44-69 % from the top): a big old spruce standing behind the stone wall (trunk foot y ~690) and the cool pool of its shade lying on the paving in front of the wall.\n2. the block of the layout sketch at x 1440-1580, y 462-724 of the 1920x1080 frame (75-82 % from the left, 43-67 % from the top): a classic brass hotel luggage trolley with a curved top bar, carrying a dark red and a blue suitcase, standing on the paving beside the main entrance.\nNPC zone at x 835-965, y 470-770 of the 1920x1080 frame (43-50 % from the left, 44-71 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 770.\nthe area of the layout sketch at x 0-60, y 712-1015 of the 1920x1080 frame (0-3 % from the left, 66-94 % from the top) is where the forecourt continues out of the left edge. the area of the layout sketch at x 130-260, y 560-652 of the 1920x1080 frame (7-14 % from the left, 52-60 % from the top) is the paved side path leading away past the gondola station. the area of the layout sketch at x 650-760, y 560-652 of the 1920x1080 frame (34-40 % from the left, 52-60 % from the top) is the gravel footpath into the forest. the area of the layout sketch at x 1190-1315, y 425-694 of the 1920x1080 frame (62-68 % from the left, 39-64 % from the top) is the glazed side door of the lower wing. the area of the layout sketch at x 1615-1785, y 380-700 of the 1920x1080 frame (84-93 % from the left, 35-65 % from the top) is the main entrance.\nThe exhibition's info stand right of the NPC zone: a light roll-up banner with only a simple turquoise circle emblem (no text) and a small wooden leaflet table with a few illegible leaflets.\n\nWalkable floor: the band at x 0-1920, y 652-1015 of the 1920x1080 frame (0-100 % from the left, 60-94 % from the top) is the forecourt of warm grey concrete pavers - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no bins, no bollards, no benches, no planters, no lamp posts, no cars, no people. Only sunlight, the spruce's shade, soft shadows and paving joints.\n\nFiction rules: the hotel name appears only once, as plain lettering \"Grand Jasná\" on the gable band - no hotel logo, no stars, no brand script. Remove the car display and all shop signs, awnings with text and advertising of the photo. No resort or company logos (no TMR, no GOPASS), no other lettering anywhere. No people, no animals, no cars.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S42_sketch.png (rendered from art/prompts/natural/S42.sketch.json, model geometry)",
+    "art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg",
+    "art/source/rooms/S41/biela-put_centrum-jasna-hotel-grand_2015.jpg",
+    "src/game/assets/bg_natural/S41.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S42 natural blocking (src/game/data/blocking/S42.json): forecourt east of Hotel Grand Jasna, camera ~1.7 m, horizon y ~440, stone wall and forecourt back edge y ~690-712, hotel facade foot y ~700.",
+    "background": "#6aa7e3",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          470
+        ],
+        "fill": "#6aa7e3",
+        "note": "deep blue summer sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          620,
+          120,
+          300,
+          90
+        ],
+        "fill": "#f1f4f7",
+        "note": "small white cumulus"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            470
+          ],
+          [
+            420,
+            300
+          ],
+          [
+            560,
+            250
+          ],
+          [
+            700,
+            270
+          ],
+          [
+            820,
+            232
+          ],
+          [
+            960,
+            262
+          ],
+          [
+            1080,
+            250
+          ],
+          [
+            1220,
+            290
+          ],
+          [
+            1360,
+            330
+          ],
+          [
+            1360,
+            470
+          ]
+        ],
+        "fill": "#86a08a",
+        "note": "Chopok ridge: green alpine meadows, grey rocks, the summit buildings as tiny dots on the top"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            700,
+            300
+          ],
+          [
+            820,
+            232
+          ],
+          [
+            900,
+            250
+          ],
+          [
+            860,
+            320
+          ]
+        ],
+        "fill": "#a8aca4",
+        "note": "grey rocky patches near the summit"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            420
+          ],
+          [
+            80,
+            340
+          ],
+          [
+            160,
+            400
+          ],
+          [
+            240,
+            330
+          ],
+          [
+            320,
+            400
+          ],
+          [
+            600,
+            400
+          ],
+          [
+            700,
+            380
+          ],
+          [
+            800,
+            410
+          ],
+          [
+            900,
+            390
+          ],
+          [
+            1000,
+            420
+          ],
+          [
+            1150,
+            400
+          ],
+          [
+            1250,
+            430
+          ],
+          [
+            1250,
+            620
+          ],
+          [
+            0,
+            620
+          ]
+        ],
+        "fill": "#2f5a3e",
+        "note": "dark spruce forest of the valley floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          620,
+          1920,
+          140
+        ],
+        "fill": "#b9ad9b",
+        "note": "paving continuing behind (under the buildings' feet)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          300,
+          230,
+          405
+        ],
+        "fill": "#9fb9c9",
+        "note": "glass walls of the Grand gondola station structure at the left edge"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          300,
+          230,
+          405
+        ],
+        "step": 58,
+        "bar": 10,
+        "fill": "#7d868e",
+        "vertical": true,
+        "note": "its steel frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          285,
+          240,
+          22
+        ],
+        "fill": "#6b737b",
+        "note": "flat steel roof edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            110,
+            708
+          ],
+          [
+            270,
+            708
+          ],
+          [
+            250,
+            560
+          ],
+          [
+            150,
+            560
+          ]
+        ],
+        "fill": "#b9ad9b",
+        "note": "paved side path leading away past the station (to the client centre)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          230,
+          570,
+          410,
+          95
+        ],
+        "fill": "#3f6b3a",
+        "note": "low dark green shrubs behind the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          765,
+          575,
+          420,
+          115
+        ],
+        "fill": "#3f6b3a",
+        "note": "low shrubs and young spruces behind the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          418,
+          300,
+          26,
+          395
+        ],
+        "fill": "#5a3f2a",
+        "note": "trunk of the big old spruce"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            430,
+            60
+          ],
+          [
+            500,
+            200
+          ],
+          [
+            470,
+            210
+          ],
+          [
+            540,
+            360
+          ],
+          [
+            505,
+            370
+          ],
+          [
+            565,
+            540
+          ],
+          [
+            520,
+            548
+          ],
+          [
+            575,
+            640
+          ],
+          [
+            285,
+            640
+          ],
+          [
+            340,
+            548
+          ],
+          [
+            300,
+            540
+          ],
+          [
+            360,
+            370
+          ],
+          [
+            325,
+            360
+          ],
+          [
+            395,
+            210
+          ],
+          [
+            365,
+            200
+          ]
+        ],
+        "fill": "#2b5739",
+        "note": "the big old spruce standing behind the low stone wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          230,
+          655,
+          410,
+          53
+        ],
+        "fill": "#9a9083",
+        "note": "low natural-stone wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          765,
+          660,
+          420,
+          52
+        ],
+        "fill": "#9a9083",
+        "note": "low natural-stone wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            708
+          ],
+          [
+            765,
+            708
+          ],
+          [
+            722,
+            560
+          ],
+          [
+            690,
+            560
+          ]
+        ],
+        "fill": "#cdbd9f",
+        "note": "gravel footpath into the forest (to Vrbicke pleso)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          770,
+          600,
+          10,
+          108
+        ],
+        "fill": "#6b4a2c",
+        "note": "small wooden trail post, no text"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          300,
+          450,
+          82
+        ],
+        "fill": "#4b5058",
+        "note": "dark slate mansard roof of the lower wing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          380,
+          450,
+          316
+        ],
+        "fill": "#e3d4b9",
+        "note": "lower wing: light beige render"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1160,
+          470,
+          430,
+          16
+        ],
+        "fill": "#6b4429",
+        "note": "timber balcony band"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          425,
+          125,
+          269
+        ],
+        "fill": "#7f9db1",
+        "note": "glazed side door to the salon"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          410,
+          145,
+          16
+        ],
+        "fill": "#5a4030",
+        "note": "small canopy over the side door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1340,
+          395,
+          80,
+          70
+        ],
+        "fill": "#6f8fa6",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1460,
+          395,
+          80,
+          70
+        ],
+        "fill": "#6f8fa6",
+        "note": "window"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1580,
+            700
+          ],
+          [
+            1580,
+            260
+          ],
+          [
+            1760,
+            60
+          ],
+          [
+            1920,
+            230
+          ],
+          [
+            1920,
+            740
+          ]
+        ],
+        "fill": "#e6d8bd",
+        "note": "main block of the hotel with its big triangular gable"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1560,
+            270
+          ],
+          [
+            1760,
+            45
+          ],
+          [
+            1920,
+            220
+          ],
+          [
+            1920,
+            260
+          ],
+          [
+            1760,
+            90
+          ],
+          [
+            1585,
+            300
+          ]
+        ],
+        "fill": "#8a4a2e",
+        "note": "dark red-brown timber gable trim"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          150,
+          220,
+          40
+        ],
+        "fill": "#d9c9a8",
+        "note": "lettering band on the gable: Grand Jasna"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          220,
+          90,
+          80
+        ],
+        "fill": "#6f8fa6",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1770,
+          220,
+          90,
+          80
+        ],
+        "fill": "#6f8fa6",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1840,
+          400,
+          80,
+          120
+        ],
+        "fill": "#6f8fa6",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1615,
+          380,
+          170,
+          320
+        ],
+        "fill": "#7f9db1",
+        "note": "main entrance glass doors"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1595,
+          352,
+          210,
+          30
+        ],
+        "fill": "#5a4030",
+        "note": "entrance canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1335,
+          640,
+          95,
+          72
+        ],
+        "fill": "#8e8a84",
+        "note": "small stone water feature basin"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1345,
+          640,
+          75,
+          16
+        ],
+        "fill": "#7db3c9",
+        "note": "water surface with a thin trickle"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            705
+          ],
+          [
+            110,
+            705
+          ],
+          [
+            140,
+            652
+          ],
+          [
+            250,
+            652
+          ],
+          [
+            268,
+            708
+          ],
+          [
+            640,
+            708
+          ],
+          [
+            660,
+            652
+          ],
+          [
+            745,
+            652
+          ],
+          [
+            765,
+            708
+          ],
+          [
+            960,
+            712
+          ],
+          [
+            975,
+            722
+          ],
+          [
+            1185,
+            722
+          ],
+          [
+            1195,
+            694
+          ],
+          [
+            1310,
+            694
+          ],
+          [
+            1322,
+            716
+          ],
+          [
+            1600,
+            718
+          ],
+          [
+            1920,
+            742
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#b9ad9b",
+        "note": "forecourt of warm grey concrete pavers (walk area)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          740,
+          1920,
+          340
+        ],
+        "cols": 26,
+        "rows": 6,
+        "color": "#ab9f8d",
+        "width": 2
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            250,
+            712
+          ],
+          [
+            640,
+            712
+          ],
+          [
+            700,
+            800
+          ],
+          [
+            210,
+            800
+          ]
+        ],
+        "fill": "#9d9182",
+        "note": "soft shade of the big spruce on the paving"
+      },
+      {
+        "type": "rect",
+        "box": [
+          975,
+          428,
+          110,
+          286
+        ],
+        "fill": "#ebe6da",
+        "note": "roll-up banner of the exhibition's temporary info stand: plain light panel with a simple turquoise circle emblem, no text"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1000,
+          470,
+          60,
+          60
+        ],
+        "fill": "#3aa6a0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1090,
+          640,
+          90,
+          74
+        ],
+        "fill": "#c8a87a",
+        "note": "small leaflet table of the info stand"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          462,
+          12,
+          258
+        ],
+        "fill": "#c9a24a",
+        "note": "brass luggage trolley: upright"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1558,
+          462,
+          12,
+          258
+        ],
+        "fill": "#c9a24a",
+        "note": "upright"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1440,
+          462,
+          140,
+          14
+        ],
+        "fill": "#c9a24a",
+        "note": "curved top bar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1445,
+          700,
+          130,
+          14
+        ],
+        "fill": "#a9832f",
+        "note": "base deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1465,
+          600,
+          90,
+          100
+        ],
+        "fill": "#7a3b2e",
+        "note": "suitcase"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          530,
+          80,
+          70
+        ],
+        "fill": "#3d5a7a",
+        "note": "suitcase"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S42.json",
+  "blocking": {
+    "version": 1,
+    "room": "S42",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Paved forecourt on the east side of Hotel Grand Jasna as in the 2017 photo: camera ~1.7 m high on the paving, looking SSW to the Chopok ridge; horizon y ~440; the low stone wall and the forecourt's back edge on y ~690-712 (~140 px per metre there), the hotel facade foot on the right on y ~700, the salon side door on y ~690. Perspective s(y) = (y - 440) / 575. Left: the glass and steel structure of the Grand gondola station and a side path to the Biela Put client centre; a big old spruce behind the stone wall throws its shade on the paving; centre: the footpath into the forest to Vrbicke pleso, the exhibition's temporary info stand with Nina; right: the hotel with the salon side door, a small stone water feature, the luggage trolley and the main entrance.",
+    "background": "bg_natural/S42.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        705
+      ],
+      [
+        110,
+        705
+      ],
+      [
+        140,
+        652
+      ],
+      [
+        250,
+        652
+      ],
+      [
+        268,
+        708
+      ],
+      [
+        640,
+        708
+      ],
+      [
+        660,
+        652
+      ],
+      [
+        745,
+        652
+      ],
+      [
+        765,
+        708
+      ],
+      [
+        960,
+        712
+      ],
+      [
+        975,
+        722
+      ],
+      [
+        1185,
+        722
+      ],
+      [
+        1195,
+        694
+      ],
+      [
+        1310,
+        694
+      ],
+      [
+        1322,
+        716
+      ],
+      [
+        1600,
+        718
+      ],
+      [
+        1920,
+        742
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      652,
+      1015
+    ],
+    "actor_scale": [
+      0.37,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S42.ambient 1": {
+        "rect": [
+          300,
+          470,
+          260,
+          270
+        ],
+        "interaction_point": [
+          430,
+          790
+        ],
+        "label_anchor": [
+          430,
+          460
+        ],
+        "reason": "the big old spruce behind the low stone wall (trunk foot y ~690) and the pool of shade it throws on the paving"
+      },
+      "S42.ambient 2": {
+        "rect": [
+          1440,
+          462,
+          140,
+          262
+        ],
+        "interaction_point": [
+          1510,
+          790
+        ],
+        "label_anchor": [
+          1510,
+          452
+        ],
+        "reason": "brass hotel luggage trolley standing on the paving beside the main entrance (top bar y ~465, wheels y ~720)"
+      },
+      "S42.NINA": {
+        "rect": [
+          835,
+          470,
+          130,
+          300
+        ],
+        "interaction_point": [
+          900,
+          830
+        ],
+        "reason": "Nina stands on the forecourt in front of the exhibition's temporary info stand"
+      }
+    },
+    "npcs": {
+      "S42.NINA": {
+        "variant": "standing",
+        "feet": [
+          900,
+          770
+        ],
+        "z": "auto",
+        "reason": "art brief: Nina at the temporary info stand of the exhibition (standing figure)"
+      }
+    },
+    "exits": {
+      "S42.to_S41": {
+        "rect": [
+          0,
+          712,
+          60,
+          303
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          185,
+          700
+        ],
+        "reason": "the paved forecourt continues out of the left edge back to the Biela Put gondola station plaza"
+      },
+      "S42.to_S46": {
+        "rect": [
+          130,
+          560,
+          130,
+          92
+        ],
+        "interaction_point": [
+          195,
+          676
+        ],
+        "label_anchor": [
+          195,
+          550
+        ],
+        "reason": "the paved side path past the gondola station structure towards the Biela Put client centre"
+      },
+      "S42.to_S45": {
+        "rect": [
+          650,
+          560,
+          110,
+          92
+        ],
+        "interaction_point": [
+          702,
+          676
+        ],
+        "label_anchor": [
+          702,
+          550
+        ],
+        "reason": "the gravel footpath leading through the gap in the stone wall into the spruce forest to Vrbicke pleso"
+      },
+      "S42.to_S44": {
+        "rect": [
+          1190,
+          425,
+          125,
+          269
+        ],
+        "interaction_point": [
+          1252,
+          740
+        ],
+        "label_anchor": [
+          1240,
+          398
+        ],
+        "reason": "the glazed side door of the hotel's lower wing that leads to the rented exhibition salon"
+      },
+      "S42.to_S43": {
+        "rect": [
+          1615,
+          380,
+          170,
+          320
+        ],
+        "interaction_point": [
+          1700,
+          790
+        ],
+        "label_anchor": [
+          1700,
+          370
+        ],
+        "reason": "the hotel's main entrance under its canopy (lobby)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S42.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:04:45"
+  }
+}

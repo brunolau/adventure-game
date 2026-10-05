@@ -1,0 +1,908 @@
+{
+  "room": "S21",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1748531965,
+  "usd": 0.15,
+  "started": "2026-10-05T10:12:51",
+  "spend_log_asset": "bg_natural/S21/S21_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S21.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Kamenne namestie, the real square in the centre of Bratislava (Stare Mesto), as it looked in 1995. Images 2-4 are photos of this real square: image 2 the open paved plaza in front of the big white modernist department store of 1968 (a tall plain white facade with fine vertical ribs, a dark glazed ground floor) with the tall white Hotel Kyjev tower rising behind it; image 3 the tram stop at the edge of the square with red-and-white railings, a red-and-cream Tatra tram and the 1930s-50s city blocks (a brown-brick functionalist tower block with a mast, cream plastered blocks); image 4 the view across the square to old houses and a baroque church tower. Paint this real square: the white department store, Hotel Kyjev behind it, the round one-storey pavilion with a wide dark flat-domed roof among big plane trees and lawns, the tram and bus street with the 1930s blocks on the right. Remove everything of the 2000s: no billboards, no advertising columns, no kiosks with brands, no mobile-operator ads, no modern cars.\n\nBrief: the square artistically shortened, period facades and pedestrians, an invented small stall selling maps, a pigeon and a small fountain. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, fresh green plane trees, a blue sky with a few white clouds. A few small distant pedestrians walk far away on the square near the department store, the pavilion and the tram stop (tiny figures without faces, never in the foreground, never at the stall, the map board or the fountain).\n\nCamera: standing on the plaza, about 2.2 m high, looking straight across the square; the department store front runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the far buildings stand on y 450; the map board, the map stall, the fountain and the bus stop stand on the plaza at y 700; the open paving fills everything from y 450 to the bottom edge.\n\nWhat the sketch blocks are, left to right: old town houses down a narrow side street at the far left; the long white department store (plain, unbranded: no name, no logo) with its vertical ribs and dark glazed ground floor, and its lower front wing; the tall white Hotel Kyjev tower rising behind it, its top cut by the frame; a street opening beside the store leading away between old facades; two big plane trees; the round pavilion with its glazed shop fronts and the wide dark roof, lawns with low hedges around it; the brown-brick functionalist tower block and the cream city block with its entrance door on the right; the tram and bus street with the tram stop island and its red railing and tram wires (the street itself is empty: no tram, no bus, no cars - they pass later as an animation); a bus stop pole with a blank round sign and a small bench at the edge of the plaza; the light grey stone paving of the plaza.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 150-356, y 376-572 of the 1920x1080 frame (8-19 % from the left, 35-53 % from the top): a big public city map board on two green posts: a painted map of Bratislava with the blue Danube and green parks (no legible names, no digits).\n2. the block of the layout sketch at x 1030-1110, y 560-632 of the 1920x1080 frame (54-58 % from the left, 52-59 % from the top): a plump grey city pigeon sitting on the rim of the small round stone fountain.\n3. the block of the layout sketch at x 490-670, y 460-570 of the 1920x1080 frame (26-35 % from the left, 43-53 % from the top): a fan of folded paper city maps clipped to the front of the small wooden map stall (colourful map covers with illegible titles).\nThe small wooden map stall has a blue-and-white striped awning and postcards inside its window; the small round fountain has a stone basin with water and a central stone column with a spout.\nThe side street at the far left is the area of the layout sketch at x 0-128, y 370-700 of the 1920x1080 frame (0-7 % from the left, 34-65 % from the top); the street beside the store is the area of the layout sketch at x 770-900, y 352-700 of the 1920x1080 frame (40-47 % from the left, 33-65 % from the top); the bus stop is the area of the layout sketch at x 1385-1560, y 375-700 of the 1920x1080 frame (72-81 % from the left, 35-65 % from the top); the entrance door of the cream city block is the area of the layout sketch at x 1645-1735, y 372-700 of the 1920x1080 frame (86-90 % from the left, 34-65 % from the top). The plaza continues out of the left edge (the area of the layout sketch at x 0-60, y 712-1015 of the 1920x1080 frame (0-3 % from the left, 66-94 % from the top)) and the right edge (the area of the layout sketch at x 1860-1920, y 712-1015 of the 1920x1080 frame (97-100 % from the left, 66-94 % from the top)).\n\nWalkable floor: the band at x 20-1900, y 702-1015 of the 1920x1080 frame (1-99 % from the left, 65-94 % from the top) is the open plaza - one continuous flat surface of light grey stone paving with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no benches, no bins, no lamp posts, no planters, no people, no birds. Only sunlight, soft shadows and paving joints.\nThis room has no NPC zones.\n\nFiction rules: the map stall is invented; no shop names, no brand names or logos anywhere (no store name on the department store, no bank or shop signs, no advertising), no line numbers on trams or buses, no cars in the foreground, no animals except the one pigeon on the fountain. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S21_sketch.png (rendered from art/prompts/natural/S21.sketch.json, model geometry)",
+    "art/source/rooms/S21/kamenne-namestie_plaza_kiosks_2008.jpg",
+    "art/source/rooms/S21/kamenne-namestie_tram-stop_facades.jpg",
+    "art/source/rooms/S21/kamenne-namestie_view-spitalska_2008.jpg",
+    "src/game/assets/bg_natural/S19.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S21 natural: open plaza at ground level, camera 2.2 m, horizon y 360, walk area from y 700.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          450
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          770,
+          0,
+          170,
+          430
+        ],
+        "fill": "#e9e6dc",
+        "note": "Hotel Kyjev: tall white modernist hotel tower behind the department store"
+      },
+      {
+        "type": "grid",
+        "box": [
+          780,
+          10,
+          150,
+          400
+        ],
+        "cols": 6,
+        "rows": 22,
+        "color": "#b7b9b6",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          150,
+          640,
+          300
+        ],
+        "fill": "#f1efe8",
+        "note": "white modernist department store (1968), plain unbranded"
+      },
+      {
+        "type": "bars",
+        "box": [
+          140,
+          160,
+          620,
+          150
+        ],
+        "step": 26,
+        "bar": 6,
+        "fill": "#d6d3ca",
+        "vertical": true,
+        "note": "vertical ribs of the windowless upper facade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          330,
+          640,
+          120
+        ],
+        "fill": "#55626a",
+        "note": "dark glazed ground floor of the department store"
+      },
+      {
+        "type": "rect",
+        "box": [
+          390,
+          300,
+          380,
+          34
+        ],
+        "fill": "#e6e3da",
+        "note": "terrace edge of the lower front wing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          200,
+          130,
+          250
+        ],
+        "fill": "#e3d2b0",
+        "note": "old town houses down a side street at the far left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          130,
+          70
+        ],
+        "fill": "#b5ab98",
+        "note": "side street leading away towards the Old Town"
+      },
+      {
+        "type": "rect",
+        "box": [
+          770,
+          360,
+          120,
+          90
+        ],
+        "fill": "#c8bfae",
+        "note": "street opening beside the store, leading away towards Obchodna"
+      },
+      {
+        "type": "rect",
+        "box": [
+          890,
+          230,
+          110,
+          220
+        ],
+        "fill": "#d9c8a6",
+        "note": "old facade at the end of that street"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          60,
+          170,
+          400
+        ],
+        "fill": "#b48a62",
+        "note": "1930s brown-brick tower block with a mast on top (functionalist)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1570,
+          80,
+          150,
+          360
+        ],
+        "cols": 5,
+        "rows": 14,
+        "color": "#8a6646",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1730,
+          140,
+          190,
+          320
+        ],
+        "fill": "#e8dcc0",
+        "note": "cream 1930s-50s city block"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1740,
+          160,
+          170,
+          260
+        ],
+        "cols": 5,
+        "rows": 8,
+        "color": "#b8a888",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1655,
+          380,
+          70,
+          80
+        ],
+        "fill": "#5a4434",
+        "note": "entrance door of the cream city block (exit to the archive)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          450,
+          420,
+          30
+        ],
+        "fill": "#7b7c7e",
+        "note": "tram and bus street at the edge of the square"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          480,
+          420,
+          14
+        ],
+        "fill": "#c9c2b2",
+        "note": "tram stop island"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1510,
+          470,
+          400,
+          12
+        ],
+        "step": 16,
+        "bar": 4,
+        "fill": "#c0392b",
+        "vertical": true,
+        "note": "red tram stop railing"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1500,
+            300
+          ],
+          [
+            1920,
+            290
+          ]
+        ],
+        "color": "#3b3b3b",
+        "width": 2,
+        "note": "tram wires"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            450
+          ],
+          [
+            1500,
+            450
+          ],
+          [
+            1500,
+            494
+          ],
+          [
+            1920,
+            494
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#cfc9bd",
+        "note": "open plaza paving"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          600,
+          1920,
+          480
+        ],
+        "cols": 16,
+        "rows": 5,
+        "color": "#bdb6a8",
+        "width": 2,
+        "note": "paving joints"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          960,
+          120,
+          200,
+          330
+        ],
+        "fill": "#6e9346",
+        "note": "big plane tree behind the pavilion"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1360,
+          110,
+          240,
+          360
+        ],
+        "fill": "#6e9346",
+        "note": "big plane tree right of the pavilion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1050,
+          300,
+          20,
+          170
+        ],
+        "fill": "#6a5038"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          300,
+          22,
+          170
+        ],
+        "fill": "#6a5038"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1000,
+          445,
+          400,
+          70
+        ],
+        "fill": "#c9b98c",
+        "note": "round one-storey pavilion: glazed shop fronts all around"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            960,
+            450
+          ],
+          [
+            1440,
+            450
+          ],
+          [
+            1380,
+            405
+          ],
+          [
+            1020,
+            405
+          ]
+        ],
+        "fill": "#4c4a46",
+        "note": "wide dark flat-domed pavilion roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            880,
+            515
+          ],
+          [
+            1520,
+            515
+          ],
+          [
+            1560,
+            560
+          ],
+          [
+            840,
+            560
+          ]
+        ],
+        "fill": "#7fa253",
+        "note": "lawn with low hedges around the pavilion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          160,
+          387,
+          186,
+          172
+        ],
+        "fill": "#e9e3cf",
+        "note": "big city map board (a painted map of Bratislava)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          377,
+          206,
+          12
+        ],
+        "fill": "#3d5a48",
+        "note": "board frame top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          170,
+          559,
+          12,
+          141
+        ],
+        "fill": "#3d5a48",
+        "note": "post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          324,
+          559,
+          12,
+          141
+        ],
+        "fill": "#3d5a48",
+        "note": "post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            190,
+            420
+          ],
+          [
+            260,
+            400
+          ],
+          [
+            320,
+            450
+          ],
+          [
+            290,
+            520
+          ],
+          [
+            200,
+            510
+          ]
+        ],
+        "fill": "#c8d8a8",
+        "note": "map: green areas"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            175,
+            470
+          ],
+          [
+            330,
+            455
+          ]
+        ],
+        "color": "#7aa0c8",
+        "width": 6,
+        "note": "map: the Danube"
+      },
+      {
+        "type": "rect",
+        "box": [
+          440,
+          334,
+          300,
+          366
+        ],
+        "fill": "#a8744a",
+        "note": "small wooden map and guidebook stall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            420,
+            344
+          ],
+          [
+            760,
+            344
+          ],
+          [
+            740,
+            294
+          ],
+          [
+            440,
+            294
+          ]
+        ],
+        "fill": "#2f6f8f",
+        "note": "awning of the stall"
+      },
+      {
+        "type": "bars",
+        "box": [
+          440,
+          294,
+          300,
+          50
+        ],
+        "step": 40,
+        "bar": 20,
+        "fill": "#e8e4d8",
+        "vertical": true,
+        "note": "white awning stripes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          460,
+          354,
+          260,
+          190
+        ],
+        "fill": "#5c4430",
+        "note": "dark stall window with hanging postcards"
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          544,
+          320,
+          14
+        ],
+        "fill": "#7a5232",
+        "note": "stall counter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          495,
+          465,
+          170,
+          100
+        ],
+        "fill": "#d9c27a",
+        "note": "fan of folded city maps clipped to the stall front"
+      },
+      {
+        "type": "bars",
+        "box": [
+          500,
+          470,
+          160,
+          90
+        ],
+        "step": 32,
+        "bar": 20,
+        "fill": "#e8d9a0",
+        "vertical": true
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          990,
+          592,
+          330,
+          60
+        ],
+        "fill": "#b9b2a4",
+        "note": "round stone basin of the small fountain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          622,
+          330,
+          78
+        ],
+        "fill": "#a9a294",
+        "note": "basin wall"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1010,
+          600,
+          290,
+          40
+        ],
+        "fill": "#7fb0c8",
+        "note": "water in the basin"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1140,
+          497,
+          30,
+          125
+        ],
+        "fill": "#a9a294",
+        "note": "central stone column with a spout"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1035,
+          572,
+          64,
+          52
+        ],
+        "fill": "#7a7f8c",
+        "note": "grey city pigeon sitting on the basin rim"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1421,
+          400,
+          8,
+          300
+        ],
+        "fill": "#6e7a72",
+        "note": "bus stop pole standing at the edge of the plaza"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1403,
+          380,
+          44,
+          40
+        ],
+        "fill": "#e8e4d8",
+        "note": "blank round bus stop sign"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1440,
+          640,
+          110,
+          14
+        ],
+        "fill": "#8a6a48",
+        "note": "small bench at the bus stop"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1448,
+          654,
+          8,
+          46
+        ],
+        "fill": "#4a4a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1534,
+          654,
+          8,
+          46
+        ],
+        "fill": "#4a4a48"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S21.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Kamenne namestie at ground level, artistically shortened (brief): camera ~2.2 m on the open plaza, horizon y 360, the walk area ends at y 700 (~156 px per metre) where the map board, the map stall and the small fountain stand. Perspective s(y) = (y - 360) / 655. Behind them the open square: the white 1968 department store with Hotel Kyjev rising behind it, the round pavilion among plane trees and lawns, the tram and bus street with 1930s facades on the right. Exits: the side street at the far left (Old Town, S22), the street beside the store (Obchodna, S24), the bus stop (S28), the door of the cream city block (archive, S23), the plaza edges (S19 left, S25 right).",
+    "background": "bg_natural/S21.webp",
+    "walk_polygon": [
+      [
+        20,
+        702
+      ],
+      [
+        1900,
+        702
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      702,
+      1015
+    ],
+    "actor_scale": [
+      0.52,
+      1.0
+    ],
+    "spawn": [
+      960,
+      880
+    ],
+    "hotspots": {
+      "S21.map": {
+        "rect": [
+          150,
+          376,
+          206,
+          196
+        ],
+        "interaction_point": [
+          255,
+          790
+        ],
+        "label_anchor": [
+          253,
+          600
+        ],
+        "reason": "city map board on two posts at the edge of the plaza"
+      },
+      "S21.ambient 1": {
+        "rect": [
+          1030,
+          560,
+          80,
+          72
+        ],
+        "interaction_point": [
+          1070,
+          790
+        ],
+        "label_anchor": [
+          1070,
+          552
+        ],
+        "reason": "grey pigeon sitting on the rim of the small fountain"
+      },
+      "S21.ambient 2": {
+        "rect": [
+          490,
+          460,
+          180,
+          110
+        ],
+        "interaction_point": [
+          580,
+          790
+        ],
+        "label_anchor": [
+          580,
+          452
+        ],
+        "reason": "fan of folded city maps clipped to the front of the map stall"
+      }
+    },
+    "exits": {
+      "S21.to_S19": {
+        "rect": [
+          0,
+          712,
+          60,
+          303
+        ],
+        "interaction_point": [
+          70,
+          900
+        ],
+        "label_anchor": [
+          135,
+          700
+        ],
+        "reason": "the plaza continues out of the left edge (tram stop for Karlova Ves)"
+      },
+      "S21.to_S22": {
+        "rect": [
+          0,
+          370,
+          128,
+          330
+        ],
+        "interaction_point": [
+          80,
+          760
+        ],
+        "label_anchor": [
+          110,
+          330
+        ],
+        "reason": "side street at the far left leading towards the Old Town (Venturska)"
+      },
+      "S21.to_S24": {
+        "rect": [
+          770,
+          352,
+          130,
+          348
+        ],
+        "interaction_point": [
+          835,
+          760
+        ],
+        "label_anchor": [
+          835,
+          344
+        ],
+        "reason": "street beside the department store leading towards Obchodna"
+      },
+      "S21.to_S28": {
+        "rect": [
+          1385,
+          375,
+          175,
+          325
+        ],
+        "interaction_point": [
+          1470,
+          760
+        ],
+        "label_anchor": [
+          1470,
+          367
+        ],
+        "reason": "bus stop at the edge of the square (bus to Petrzalka)"
+      },
+      "S21.to_S23": {
+        "rect": [
+          1645,
+          372,
+          90,
+          328
+        ],
+        "interaction_point": [
+          1690,
+          760
+        ],
+        "label_anchor": [
+          1690,
+          364
+        ],
+        "reason": "entrance door of the cream city block (the reading room)"
+      },
+      "S21.to_S25": {
+        "rect": [
+          1860,
+          712,
+          60,
+          303
+        ],
+        "interaction_point": [
+          1850,
+          900
+        ],
+        "label_anchor": [
+          1720,
+          700
+        ],
+        "reason": "the plaza continues out of the right edge (tram to Ruzinov)"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S21"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S21.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:13:34"
+  }
+}

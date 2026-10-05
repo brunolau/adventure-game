@@ -1,0 +1,52 @@
+{
+  "version": 1,
+  "room": "S51",
+  "family_base": "S11",
+  "status": "natural re-blocking, camera family L_STOP: derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+  "note": "Same L_STOP camera as the base S11 (Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615.) 2020: the rebuilt stop - a modern glass shelter on the old shelter's footprint, new beige paving, the stop post now carries the clock (old brass frame, new dial) and an LED departure board; the old chipped kerb corner at the ramp survives; the track is rebuilt and empty.",
+  "background": "bg_natural/S51.webp",
+  "walk_polygon": [[0, 1015], [1449, 1015], [1230, 672], [928, 670], [850, 828], [339, 814], [65, 970], [0, 1000]],
+  "walk_band": [670, 1015],
+  "actor_scale": [0.44, 1.0],
+  "spawn": [1010, 900],
+  "anchors": {
+    "curb": [262, 792],
+    "track_line": [1524, 813],
+    "clock_frame": [785, 134]
+  },
+  "hotspots": {
+    "S51.clock": {
+      "rect": [722, 68, 128, 132],
+      "interaction_point": [835, 862],
+      "label_anchor": [786, 58],
+      "reason": "the round clock on top of the stop post: the old brass frame kept around the new dial (same place as the 1995 clock, anchor clock_frame)"
+    },
+    "S51.ambient 1": {
+      "rect": [212, 738, 140, 112],
+      "interaction_point": [300, 872],
+      "label_anchor": [282, 728],
+      "reason": "the chipped concrete kerb corner where the platform's low road-side wall ends at the ramp (anchor curb)"
+    },
+    "S51.ambient 2": {
+      "rect": [800, 224, 206, 96],
+      "interaction_point": [835, 862],
+      "label_anchor": [903, 214],
+      "reason": "the LED departure board on the stop post below the clock (where the 1995 stop plate was)"
+    }
+  },
+  "exits": {
+    "S51.to_S52": {
+      "rect": [40, 780, 215, 150],
+      "interaction_point": [205, 915],
+      "label_anchor": [205, 770],
+      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12)"
+    },
+    "S51.to_S02": {
+      "rect": [930, 520, 250, 140],
+      "interaction_point": [1075, 690],
+      "label_anchor": [1055, 510],
+      "reason": "the far end of the platform and the path to the road where the car waits (same place as S11.to_S18)"
+    }
+  },
+  "state_patches": []
+}

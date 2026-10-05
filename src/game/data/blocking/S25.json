@@ -1,0 +1,291 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Trhovisko Mileticova seen from an aisle of the market: camera ~2.2 m, horizon y 360, the two stall tables' front legs stand on y 800 (~200 px per metre), table tops at 0.8 m (front edge y 640). Perspective s(y) = (y - 360) / 655. Fero stands behind his electronics table (counter bust cut at y 640), the stuck scale on its right end; the vegetable stall with the red-and-white umbrella and the parsley next to it; behind them the low white market hall with its little tower and the old brick chimney; the passage through the two-storey market-edge building at the left (S26) at the end of a short aisle; the aisle runs out of the right edge towards the estate (S27).",
+ "background": "bg_natural/S25.webp",
+ "walk_polygon": [
+  [
+   20,
+   752
+  ],
+  [
+   240,
+   752
+  ],
+  [
+   292,
+   642
+  ],
+  [
+   420,
+   642
+  ],
+  [
+   452,
+   752
+  ],
+  [
+   462,
+   808
+  ],
+  [
+   1150,
+   808
+  ],
+  [
+   1160,
+   860
+  ],
+  [
+   1400,
+   860
+  ],
+  [
+   1410,
+   808
+  ],
+  [
+   1470,
+   808
+  ],
+  [
+   1490,
+   752
+  ],
+  [
+   1900,
+   752
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ]
+ ],
+ "walk_band": [
+  642,
+  1015
+ ],
+ "actor_scale": [
+  0.43,
+  1.0
+ ],
+ "spawn": [
+  960,
+  900
+ ],
+ "hotspots": {
+  "S25.scale": {
+   "rect": [
+    808,
+    440,
+    124,
+    205
+   ],
+   "interaction_point": [
+    870,
+    880
+   ],
+   "label_anchor": [
+    905,
+    432
+   ],
+   "reason": "dial shop scale with a steel pan on the right end of Fero's table (measured on v1)"
+  },
+  "S25.ambient 1": {
+   "rect": [
+    1160,
+    680,
+    232,
+    172
+   ],
+   "interaction_point": [
+    1275,
+    905
+   ],
+   "label_anchor": [
+    1276,
+    672
+   ],
+   "reason": "crate of parsley bunches standing on the asphalt in front of the vegetable stall (v1 painted it there)"
+  },
+  "S25.ambient 2": {
+   "rect": [
+    960,
+    282,
+    520,
+    150
+   ],
+   "interaction_point": [
+    1220,
+    880
+   ],
+   "label_anchor": [
+    1220,
+    274
+   ],
+   "reason": "red-and-white umbrella over the vegetable stall"
+  },
+  "S25.TRH": {
+   "rect": [
+    622,
+    452,
+    156,
+    196
+   ],
+   "interaction_point": [
+    700,
+    880
+   ],
+   "label_anchor": [
+    640,
+    444
+   ],
+   "reason": "Fero behind his table, seen down to the table top"
+  }
+ },
+ "npcs": {
+  "S25.TRH": {
+   "variant": "behind_counter",
+   "feet": [
+    700,
+    770
+   ],
+   "scale": 0.626,
+   "sill_y": 645,
+   "reason": "DECISIONS item 2: Fero behind his market table (counter bust cut at the painted table top front edge y 645); the goods on the table in front of him are an occluder"
+  }
+ },
+ "exits": {
+  "S25.to_S21": {
+   "rect": [
+    0,
+    762,
+    60,
+    253
+   ],
+   "interaction_point": [
+    70,
+    890
+   ],
+   "label_anchor": [
+    135,
+    750
+   ],
+   "reason": "the aisle runs out of the left edge (tram towards the centre)"
+  },
+  "S25.to_S26": {
+   "rect": [
+    250,
+    340,
+    190,
+    300
+   ],
+   "interaction_point": [
+    356,
+    672
+   ],
+   "label_anchor": [
+    356,
+    332
+   ],
+   "reason": "short aisle to the passage through the market-edge building (Pasaz Mileticova)"
+  },
+  "S25.to_S27": {
+   "rect": [
+    1860,
+    762,
+    60,
+    253
+   ],
+   "interaction_point": [
+    1850,
+    890
+   ],
+   "label_anchor": [
+    1760,
+    750
+   ],
+   "reason": "the aisle runs out of the right edge towards the estate blocks on Mileticova"
+  }
+ },
+ "occluders": [
+  {
+   "id": "fero_table_goods",
+   "polygon": [
+    [
+     600,
+     648
+    ],
+    [
+     597,
+     587
+    ],
+    [
+     642,
+     587
+    ],
+    [
+     642,
+     597
+    ],
+    [
+     690,
+     597
+    ],
+    [
+     690,
+     600
+    ],
+    [
+     722,
+     600
+    ],
+    [
+     722,
+     552
+    ],
+    [
+     742,
+     552
+    ],
+    [
+     742,
+     525
+    ],
+    [
+     792,
+     525
+    ],
+    [
+     792,
+     552
+    ],
+    [
+     802,
+     552
+    ],
+    [
+     802,
+     600
+    ],
+    [
+     830,
+     610
+    ],
+    [
+     830,
+     648
+    ]
+   ],
+   "baseline": 790,
+   "texture": null,
+   "reason": "boxes, cassettes and the radio standing on the table in front of Fero's bust (drawn over him; the hero never walks behind the table)"
+  }
+ ],
+ "state_patches": [],
+ "version": 1,
+ "room": "S25"
+}

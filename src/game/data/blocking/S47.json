@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "room": "S47",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Upper-floor panoramic lounge of the Rotunda on Chopok as in the 2016 photo: camera ~1.6 m high on the lounge floor, looking at the gently curved window wall (left two thirds) and the natural-stone core wall (right third); horizon y ~470; the dark blue window sofas, the exhibition furniture and the stone wall stand on y ~700-728 (~126 px per metre there). Perspective s(y) = (y - 470) / 545. The windows show the real north view (the Funitel line with its pylons going down, guideposts, the Liptov basin, the High Tatras on the horizon) with June snow patches near the summit. The Atlas exhibition 2035: the normalisation panel on its stand, the bell showcase, the empty frame on the stone wall, the door to the stairs down to the plateau (Atlas pavilion); the lounge continues out of the left edge to the Funitel station. The third-party lift-parts sculpture of the photo is left out. The walk polygon leaves out the two table groups with their tub chairs (feet y ~777) and the panel stand (feet y ~750). Base painting v3 (v1 plus a closed album on a stand in the showcase, for the Q3D causal effect).",
+  "background": "bg_natural/S47.webp",
+  "walk_polygon": [[0, 1015], [0, 738], [110, 738], [115, 784], [412, 784], [418, 738], [485, 738], [488, 756], [705, 756], [708, 738], [740, 738], [745, 784], [1025, 784], [1030, 738], [1920, 738], [1920, 1015]],
+  "walk_band": [738, 1015],
+  "actor_scale": [0.49, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S47.filter": {
+      "rect": [470, 360, 250, 300],
+      "interaction_point": [595, 820],
+      "label_anchor": [595, 350],
+      "reason": "the free-standing normalisation panel of the Atlas exhibition: 'before' and 'after' columns of a record (stand feet y ~725)"
+    },
+    "S47.ambient 2": {
+      "rect": [1005, 450, 150, 280],
+      "interaction_point": [1080, 830],
+      "label_anchor": [1080, 440],
+      "reason": "the glass showcase on a plinth with the old school bell inside (plinth foot y ~728)"
+    },
+    "S47.ambient 1": {
+      "rect": [1325, 295, 180, 245],
+      "interaction_point": [1415, 830],
+      "label_anchor": [1415, 285],
+      "reason": "the empty gilt frame on the stone wall with its small caption plate below"
+    }
+  },
+  "exits": {
+    "S47.to_S68": {
+      "rect": [0, 738, 60, 277],
+      "interaction_point": [70, 890],
+      "label_anchor": [258, 726],
+      "reason": "the lounge continues out of the left edge towards the Funitel summit station"
+    },
+    "S47.to_S48": {
+      "rect": [1600, 360, 190, 345],
+      "interaction_point": [1695, 800],
+      "label_anchor": [1695, 350],
+      "reason": "the glazed door in the stone wall to the stairs down to the plateau with the Atlas pavilion"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S47_album_open.webp",
+      "pos": [1012, 446],
+      "after": ["Q3D"],
+      "until": [],
+      "reason": "game.json causal effect Q3D: the optional album in the showcase is open at the complete team photo (base: closed album cover; zoomed edits S47 v3 -> v4)"
+    },
+    {
+      "texture": "variants_natural/S47_underpass_panel.webp",
+      "pos": [1802, 385],
+      "after": ["Q5C"],
+      "until": [],
+      "reason": "game.json causal effect Q5C: a small reproduction of the legal underpass panel with lit windows in the corner of the gallery (zoomed edit S47 v5)"
+    }
+  ],
+  "variant_layers": {
+    "variants/S47_originals_restored.webp": {
+      "texture": "variants_natural/S47_originals_restored.webp",
+      "pos": [1318, 284],
+      "reason": "after F17: Mira's photograph is back in the gilt frame and the caption plate is filled (zoomed crop edit S47 v2)"
+    }
+  }
+}

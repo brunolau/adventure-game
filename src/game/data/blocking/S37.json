@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "room": "S37",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Manor park of Ivanka pri Dunaji, June 1960: camera ~1.65 m on the open lawn NNW of the manor looking SSE at its park facade (as in the 2008 photo): horizon y 520, perspective s(y) = (y - 520) / 495 (hero 1.7 m = 512 px at y 1015). The manor stands across the lawn (foot y 556, ~22 px per metre there, tower to y ~20), the spire of St John the Baptist right of the tower behind the pines. A gravel path crosses the front of the lawn. Vera sits on her bench (part of her sprite) left of centre on the lawn - the painting leaves that spot as plain grass; the empty park bench of the same cast-iron type stands on the right; the shallow bird bowl lies on the grass in the middle, the carrier pigeon is an ambient sprite beside it (hidden after Q6C). The walk polygon is the front lawn and the path, kept in front of both benches.",
+  "background": "bg_natural/S37.webp",
+  "walk_polygon": [[0, 775], [470, 775], [470, 800], [735, 800], [735, 775], [1280, 775], [1280, 792], [1582, 792], [1582, 775], [1920, 775], [1920, 1015], [0, 1015]],
+  "walk_band": [775, 1015],
+  "actor_scale": [0.515, 1.0],
+  "spawn": [1150, 930],
+  "hotspots": {
+    "S37.bird": {
+      "rect": [880, 735, 175, 92],
+      "interaction_point": [965, 850],
+      "label_anchor": [965, 725],
+      "reason": "the empty stone water bowl on the grass with the ringed carrier pigeon beside it (pigeon = ambient sprite, unless Q6C)"
+    },
+    "S37.ambient 1": {
+      "rect": [1290, 640, 282, 135],
+      "interaction_point": [1430, 820],
+      "label_anchor": [1430, 630],
+      "reason": "an empty park bench (wooden slats, cast-iron legs) on the right side of the lawn"
+    },
+    "S37.ambient 2": {
+      "rect": [540, 210, 830, 346],
+      "interaction_point": [1000, 800],
+      "label_anchor": [950, 200],
+      "reason": "the manor's park facade across the lawn (left block, baroque bay, balcony, right block and tower)"
+    },
+    "S37.VERA60": {
+      "rect": [494, 546, 213, 254],
+      "interaction_point": [770, 840],
+      "label_anchor": [600, 536],
+      "reason": "Vera seated on her park bench (bench part of the sprite) on the lawn left of centre"
+    }
+  },
+  "npcs": {
+    "S37.VERA60": {
+      "variant": "seated",
+      "feet": [600, 800],
+      "facing": "right",
+      "reason": "docs/DECISIONS.md item 2: Vera seated with her bench (VERA60 posture seated, bench in the sprite); the painting leaves the spot free; scale from the room perspective (0.566)"
+    }
+  },
+  "exits": {
+    "S37.to_S32": {
+      "rect": [0, 780, 60, 230],
+      "interaction_point": [70, 900],
+      "label_anchor": [135, 770],
+      "reason": "the gravel path leaves the park to the left, back to the village square"
+    },
+    "S37.to_S38": {
+      "rect": [1860, 780, 60, 230],
+      "interaction_point": [1850, 900],
+      "label_anchor": [1715, 770],
+      "reason": "the path leaves the park to the right through the pines, towards the fields and the canal"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S37_bowl_seeds.webp",
+      "pos": [950, 780],
+      "after": ["Q6C"],
+      "until": [],
+      "reason": "Q6C puts the seeds into the bird bowl (free retouch master v2, art/masters/bg_natural/S37.md); the pigeon itself is the ambient sprite 'pigeon' with unless_done Q6C"
+    }
+  ]
+}

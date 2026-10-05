@@ -1,0 +1,16 @@
+{
+  "room": "S31",
+  "notes": "Natural S31 ambient (bg_natural/S31.webp): the steam locomotive far down the line (painted at the vanishing point) puffs smoke; the station clock's seconds hand ticks; wind in the poplars behind the canopy and in the willows along the line; clouds drift; now and then a flock of birds crosses over the track.",
+  "layers": [
+    { "id": "clouds", "type": "clouds", "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [30, 200], "count": 3, "speed_px_s": 6, "scale": [0.2, 0.34], "alpha": 0.5, "mask": "S31/natural/sky_mask.webp" },
+    { "id": "far_willows", "type": "sway", "texture": "S31/natural/far_willows.webp", "anchor": 1.0, "amp_px": 1.4, "freq": 0.25, "wavelength_px": 120, "flutter_px": 0.5 },
+    { "id": "poplars", "type": "sway", "texture": "S31/natural/poplars.webp", "anchor": 1.0, "amp_px": 2.4, "freq": 0.22, "wavelength_px": 180, "flutter_px": 0.9 },
+    { "id": "loco_steam", "type": "particles", "preset": "steam", "emit_rect": [410, 395, 20, 16], "rate": 1.6, "size": [10, 26],
+      "speed_y": [-26, -14], "speed_x": [4, 12], "lifetime": [3, 5], "color": "#e8e6e2", "alpha": 0.7 },
+    { "id": "clock_seconds", "type": "rotor", "pivot": [972, 417], "length": 26, "tail": 7, "width": 2, "color": "#a3281c", "mode": "tick", "period_s": 60 },
+    { "id": "birds", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 10,
+      "path": [[-60, 160], [420, 120], [1000, 150], [1990, 90]], "speed_px_s": 200, "scale": 0.07, "flock": 5, "flock_spread": [90, 30],
+      "bob_px": 3, "direction": "random", "every_s": [20, 40], "start_s": [4, 9] }
+  ]
+}

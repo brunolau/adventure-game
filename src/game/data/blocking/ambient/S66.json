@@ -1,0 +1,29 @@
+{
+  "room": "S66",
+  "notes": "Natural S66 (bg_natural/S66.webp, garden shed, early December 1982). Light snow falling, thin smoke from the shed's stovepipe (Simon keeps a little stove going), the bare trees along the fence swaying, crows crossing the hazy sky, sparrows hopping on the trodden snow (they fly off when Adam comes near), a neighbour's shadow behind a loggia window of the Kudlakova block.",
+  "layers": [
+    { "id": "clouds", "type": "clouds",
+      "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [0, 50], "count": 3, "speed_px_s": 4, "scale": [0.16, 0.26], "alpha": 0.3, "modulate": "#e8e6e2",
+      "mask": "S66/natural/sky_mask.webp" },
+    { "id": "snow", "type": "particles", "preset": "snow", "emit_rect": [0, -30, 1920, 20], "rate": 4.0,
+      "size": [6, 11], "speed_y": [28, 55], "wind": 18, "alpha_range": [0.75, 1.0], "lifetime": [14, 22], "max": 140 },
+    { "id": "stove_smoke", "type": "particles", "preset": "steam", "emit_rect": [1480, 236, 18, 6], "rate": 1.8,
+      "size": [20, 32], "speed_y": [-16, -9], "speed_x": [4, 10], "grow": 2.2, "alpha_range": [0.35, 0.55], "color": "#f2f0ec" },
+    { "id": "trees_left_sway", "type": "sway", "texture": "S66/natural/trees_left.webp",
+      "anchor": 1.0, "amp_px": 1.6, "freq": 0.3, "wavelength_px": 110, "flutter_px": 0.5 },
+    { "id": "trees_block_sway", "type": "sway", "texture": "S66/natural/trees_block.webp",
+      "anchor": 1.0, "amp_px": 1.3, "freq": 0.32, "wavelength_px": 110, "flutter_px": 0.4 },
+    { "id": "trees_right_sway", "type": "sway", "texture": "S66/natural/trees_right.webp",
+      "anchor": 1.0, "amp_px": 1.3, "freq": 0.29, "wavelength_px": 110, "flutter_px": 0.4 },
+    { "id": "crows", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 8,
+      "path": [[-60, 60], [900, 30], [1980, 70]], "speed_px_s": 180, "scale": 0.08, "flock": 2, "flock_spread": [80, 25],
+      "bob_px": 5, "modulate": "#2b2b30", "direction": "random", "every_s": [24, 50], "start_s": [4, 10] },
+    { "id": "sparrows", "type": "critters", "sheet": "common/pigeon_sheet", "count": 3,
+      "ground": [[1250, 735], [1600, 745]], "scale": 0.1, "modulate": "#9a7e62", "flee_radius": 280, "return_s": [12, 24],
+      "exit": [[1700, 200], [1300, -120]] },
+    { "id": "loggia_shadow", "type": "tween_path", "texture": "builtin:silhouette", "pivot": [70, 360],
+      "path": [[1310, 290], [1390, 290]], "speed_px_s": 8, "scale": 0.16, "modulate": "#2c2a30", "alpha": 0.35,
+      "direction": "random", "every_s": [20, 45], "start_s": [3, 9], "clip": [1300, 262, 105, 36] }
+  ]
+}

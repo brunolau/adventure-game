@@ -1,0 +1,93 @@
+{
+ "room": "S24",
+ "notes": "Natural S24: the darkroom's red safelight glowing in the side doorway, dust in the window light, the pegged prints swaying on the drying lines, passers-by on Obchodna as shadows behind the shop window.",
+ "layers": [
+  {
+   "id": "safelight",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1735,
+    590
+   ],
+   "size": [
+    170,
+    440
+   ],
+   "color": "#ff3a24",
+   "min": 0.05,
+   "max": 0.2,
+   "period_s": 3.2
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    500,
+    300,
+    900,
+    460
+   ],
+   "count": 34,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.65
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "prints_sway",
+   "type": "sway",
+   "texture": "S24/natural/prints.webp",
+   "anchor": 0.0,
+   "amp_px": 1.4,
+   "freq": 0.5,
+   "wavelength_px": 60,
+   "flutter_px": 0.5,
+   "hang": true
+  },
+  {
+   "id": "street_passers",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     500,
+     640
+    ],
+    [
+     740,
+     640
+    ]
+   ],
+   "speed_px_s": 60,
+   "scale": 0.6,
+   "modulate": "#2a2018",
+   "alpha": 0.3,
+   "direction": "random",
+   "every_s": [
+    12,
+    30
+   ],
+   "start_s": [
+    2,
+    8
+   ],
+   "clip": [
+    522,
+    318,
+    192,
+    282
+   ]
+  }
+ ]
+}

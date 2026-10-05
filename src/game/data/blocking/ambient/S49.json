@@ -1,0 +1,191 @@
+{
+ "room": "S49",
+ "notes": "Natural S49 (bg_natural/S49.webp): the chronochamber in the Atlas pavilion. The amber emergency lamp blinks slowly until the restore is done (F17), then glows steadily; the four green input lamps of the restore console pulse; the brass desk lamp glows warmly; dust motes float in the window light; clouds drift over the Rotunda in the window and choughs pass outside; a glint wanders on the untouched glass of water. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "alarm_lamp",
+   "type": "flicker",
+   "mode": "blink",
+   "pos": [
+    324,
+    292
+   ],
+   "size": [
+    170,
+    170
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffae3a",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.7,
+   "period_s": 3.0,
+   "duty": 0.45,
+   "unless_done": [
+    "F17"
+   ]
+  },
+  {
+   "id": "alarm_lamp_calm",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    324,
+    292
+   ],
+   "size": [
+    150,
+    150
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffcf7a",
+   "blend": "add",
+   "min": 0.12,
+   "max": 0.2,
+   "period_s": 6.0,
+   "if_done": [
+    "F17"
+   ]
+  },
+  {
+   "id": "console_lamps",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    1610,
+    520,
+    160,
+    40
+   ],
+   "texture": "builtin:softrect",
+   "color": "#8dff9a",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.35,
+   "period_s": 2.6
+  },
+  {
+   "id": "desk_lamp",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    835,
+    560
+   ],
+   "size": [
+    180,
+    120
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffd890",
+   "blend": "add",
+   "min": 0.15,
+   "max": 0.28,
+   "period_s": 5.0
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    680,
+    260,
+    860,
+    520
+   ],
+   "count": 24,
+   "size": [
+    3.5,
+    7
+   ],
+   "alpha_range": [
+    0.2,
+    0.55
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "window_clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    262,
+    340
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.14,
+    0.252
+   ],
+   "alpha": 0.75,
+   "x_span": [
+    660,
+    1560
+   ],
+   "mask": "S49/natural/window_sky_mask.webp"
+  },
+  {
+   "id": "choughs",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     690,
+     300
+    ],
+    [
+     1100,
+     285
+    ],
+    [
+     1530,
+     310
+    ]
+   ],
+   "speed_px_s": 130,
+   "scale": 0.05,
+   "modulate": "#2f2f36",
+   "flock": 2,
+   "flock_spread": [
+    30,
+    10
+   ],
+   "bob_px": 2,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    6,
+    12
+   ],
+   "mask": "S49/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "glass_glint",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    1132,
+    572
+   ],
+   "size": [
+    30,
+    50
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.35,
+   "period_s": 1.8
+  }
+ ]
+}

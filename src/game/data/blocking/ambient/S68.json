@@ -1,0 +1,127 @@
+{
+ "room": "S68",
+ "notes": "Natural S68 (bg_natural/S68.webp): the Funitel cabin climbing to Chopok. Clouds drift quickly past the window panes (sky mask), now and then the opposite cabin (cut from the S67 painting) glides down past the windows on the ropes, choughs fly by outside, and the shadow of a pylon sweeps through the cabin as the cabin passes under it; the sunlight patches on the floor shimmer gently. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "window_clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    240,
+    420
+   ],
+   "count": 5,
+   "speed_px_s": 14,
+   "scale": [
+    0.224,
+    0.42
+   ],
+   "alpha": 0.8,
+   "mask": "S68/natural/window_sky_mask.webp"
+  },
+  {
+   "id": "opposite_cabin",
+   "type": "tween_path",
+   "texture": "S67/natural/cabin_sprite.webp",
+   "path": [
+    [
+     1520,
+     205
+    ],
+    [
+     60,
+     545
+    ]
+   ],
+   "speed_px_s": 75,
+   "scale": 0.16,
+   "bob_px": 1.0,
+   "bob_hz": 0.6,
+   "direction": "forward",
+   "every_s": [
+    24,
+    40
+   ],
+   "start_s": [
+    4,
+    9
+   ],
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "choughs",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     60,
+     300
+    ],
+    [
+     700,
+     330
+    ],
+    [
+     1460,
+     290
+    ]
+   ],
+   "speed_px_s": 170,
+   "scale": 0.06,
+   "modulate": "#2f2f36",
+   "flock": 2,
+   "flock_spread": [
+    40,
+    15
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    10,
+    18
+   ],
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "pylon_shadow",
+   "type": "flicker",
+   "mode": "sweep",
+   "rect": [
+    0,
+    200,
+    1920,
+    830
+   ],
+   "texture": "builtin:softrect",
+   "color": "#10141c",
+   "max": 0.22,
+   "period_s": 16
+  },
+  {
+   "id": "floor_sun",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    0,
+    790,
+    1920,
+    120
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff1c8",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.08,
+   "period_s": 1.4
+  }
+ ]
+}

@@ -1,0 +1,153 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Small electronics repair shop in the 1970s-80s service pavilion on Levarska (Kutiky, Karlova Ves), camera ~2.4 m inside the shop looking at its street front: one-point box, horizon y 300, back wall foot line y 760 (~194 px per metre), ceiling line y 217, side walls receding to the frame edges. Perspective s(y) = (y - 300) / 715. The glazed door (exit to S19) and the display window show the yellow arcade of the pavilion outside; the switched-off TV stands on a crate, Pali stands at his workbench below the drawer cabinet, the workbench with the oscilloscope and the drawer cabinet fill the right part.",
+ "background": "bg_natural/S20.webp",
+ "walk_polygon": [
+  [
+   330,
+   782
+  ],
+  [
+   1030,
+   790
+  ],
+  [
+   1035,
+   808
+  ],
+  [
+   1258,
+   808
+  ],
+  [
+   1262,
+   800
+  ],
+  [
+   1610,
+   802
+  ],
+  [
+   1900,
+   975
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   1000
+  ],
+  [
+   240,
+   940
+  ],
+  [
+   330,
+   800
+  ]
+ ],
+ "walk_band": [
+  782,
+  1015
+ ],
+ "actor_scale": [
+  0.67,
+  1.0
+ ],
+ "spawn": [
+  700,
+  900
+ ],
+ "hotspots": {
+  "S20.ambient 1": {
+   "rect": [
+    1035,
+    535,
+    215,
+    180
+   ],
+   "interaction_point": [
+    1140,
+    860
+   ],
+   "label_anchor": [
+    1142,
+    527
+   ],
+   "reason": "switched-off wood-veneer CRT TV on a crate against the shop front (painted at x 1035-1250, measured on v1)"
+  },
+  "S20.ambient 2": {
+   "rect": [
+    1093,
+    295,
+    154,
+    110
+   ],
+   "interaction_point": [
+    1170,
+    860
+   ],
+   "label_anchor": [
+    1170,
+    287
+   ],
+   "reason": "hand-written cardboard sign pinned to the wall above the TV"
+  },
+  "S20.PALI": {
+   "rect": [
+    1420,
+    448,
+    160,
+    402
+   ],
+   "interaction_point": [
+    1500,
+    900
+   ],
+   "label_anchor": [
+    1500,
+    440
+   ],
+   "reason": "Pali standing at his workbench, in front of its right half (v1 painted the TV over the planned plain wall)"
+  }
+ },
+ "npcs": {
+  "S20.PALI": {
+   "variant": "standing",
+   "feet": [
+    1500,
+    846
+   ],
+   "scale": 0.764,
+   "reason": "standing repairman at his workbench (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S20.to_S19": {
+   "rect": [
+    335,
+    345,
+    195,
+    418
+   ],
+   "interaction_point": [
+    432,
+    820
+   ],
+   "label_anchor": [
+    432,
+    337
+   ],
+   "reason": "glazed shop door to the pavilion arcade and the tram stop"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S20"
+}

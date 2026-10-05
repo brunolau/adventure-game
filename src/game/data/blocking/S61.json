@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "room": "S61",
+  "family_base": "S17",
+  "status": "natural re-blocking (product-owner decision 2026-10-05). L_YARD family, derived from the S17 base painting with art/tools/derive_era.py (same camera: walk_band, actor_scale and anchors identical to S17).",
+  "note": "Same camera as S17 (yard side of ZS Sokolikova 2, camera ~2.1 m on the yard asphalt looking NW at the three-storey yard facade; horizon y 380, prop foot line y 700, s(y) = (y - 380) / 635). December 1982: the school is eight years old (fresh plain pale-yellow render, original windows), bare trees, thin snow. The young linden sapling stands in the same grass bed (trunk foot 620,690), the freshly built low brick service wall with its 3x4 stone panel and the small service niche (row 2 from the top, column 3 from the left) at x 958-1332, the red water-pipe elbow at its right end (axis x 1382), the bench under the sapling; the loaded hand cart stands on the asphalt at the left where the art panel stands in 1995, its wheel track in the thin snow running right past the sapling's trunk.",
+  "background": "bg_natural/S61.webp",
+  "walk_polygon": [
+    [
+      0,
+      722
+    ],
+    [
+      1920,
+      722
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    720,
+    1015
+  ],
+  "actor_scale": [
+    0.535,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
+  "anchors": {
+    "building_corner": [
+      1250,
+      180
+    ],
+    "tree_trunk": [
+      620,
+      690
+    ],
+    "service_niche": [
+      1155,
+      626
+    ],
+    "pipe_axis": [
+      1382,
+      705
+    ]
+  },
+  "hotspots": {
+    "S61.niche": {
+      "rect": [
+        1070,
+        560,
+        170,
+        125
+      ],
+      "interaction_point": [
+        1155,
+        765
+      ],
+      "label_anchor": [
+        1155,
+        550
+      ],
+      "reason": "the 3x4 stone panel in the fresh brick wall; the stone in row 2 / column 3 is out and lies on the coping, the small dry cavity is open (closed after E08: variant S61_closed_niche)"
+    },
+    "S61.tree": {
+      "rect": [
+        530,
+        180,
+        180,
+        515
+      ],
+      "interaction_point": [
+        620,
+        765
+      ],
+      "label_anchor": [
+        620,
+        170
+      ],
+      "reason": "the young freshly planted linden sapling tied to a stake in its grass bed (trunk foot 620,690, bare twigs up to y ~190; painted v7); the tree guard of E09 is the variant S61_tree_guard"
+    },
+    "S61.ambient 1": {
+      "rect": [
+        1335,
+        598,
+        100,
+        114
+      ],
+      "interaction_point": [
+        1385,
+        765
+      ],
+      "label_anchor": [
+        1385,
+        588
+      ],
+      "reason": "the red water-pipe elbow rising from the ground at the wall's right end (axis x 1382), freshly painted in 1982"
+    },
+    "S61.ambient 2": {
+      "rect": [
+        190,
+        476,
+        235,
+        178
+      ],
+      "interaction_point": [
+        305,
+        765
+      ],
+      "label_anchor": [
+        305,
+        466
+      ],
+      "reason": "the loaded two-wheeled hand cart standing on the asphalt at the left; its muddy wheel tracks curve towards the corner of the sapling's bed (painted 1982 v3)"
+    }
+  },
+  "exits": {
+    "S61.to_S58": {
+      "rect": [
+        0,
+        722,
+        60,
+        190
+      ],
+      "interaction_point": [
+        70,
+        820
+      ],
+      "label_anchor": [
+        190,
+        712
+      ],
+      "reason": "the yard asphalt continues out of the left edge along the facade, around the school to the front entrance"
+    },
+    "S61.to_S64": {
+      "rect": [
+        0,
+        930,
+        260,
+        85
+      ],
+      "interaction_point": [
+        150,
+        975
+      ],
+      "label_anchor": [
+        300,
+        922
+      ],
+      "reason": "the asphalt runs out of the bottom-left corner towards the camera: back past the south end of the main wing to the service window on the street side (south part)"
+    },
+    "S61.to_S66": {
+      "rect": [
+        1800,
+        722,
+        120,
+        293
+      ],
+      "interaction_point": [
+        1850,
+        880
+      ],
+      "label_anchor": [
+        1700,
+        712
+      ],
+      "reason": "the yard asphalt continues out of the right edge past the track towards the garden shed at the east fence"
+    }
+  },
+  "variant_layers": {
+    "variants/S61_tree_guard.webp": {
+      "texture": "variants_natural/S61_tree_guard.webp",
+      "pos": [
+        430,
+        440
+      ]
+    },
+    "variants/S61_closed_niche.webp": {
+      "texture": "variants_natural/S61_closed_niche.webp",
+      "pos": [
+        1030,
+        505
+      ]
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "room": "S36",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Oto's civil workshop inside the manor's service outbuilding (S35), June 1960. Frontal camera ~1.8 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~138 px per metre at the back wall, whose foot is at y 720). Whitewashed shallow brick vaults between steel beams above y 306. Along the back wall a long workbench (top y ~590-625, legs to y ~750) under two small-paned windows that show the courtyard; props lie on the bench where a mechanic leaves them: the file in front of the vise, the four alarm clocks on its right end. The covered lathe stands on the floor at the right (foot y ~800), Oto stands between the bench and the lathe, the plank door to the courtyard is at the far left of the back wall. The walk polygon is the floor in front of the bench, the tool crate under its right end and the lathe's cast-iron feet (v2 painting), with a lobe to the door.",
+  "background": "bg_natural/S36.webp",
+  "walk_polygon": [[40, 740], [372, 740], [372, 766], [995, 766], [995, 806], [1188, 806], [1188, 766], [1425, 766], [1425, 834], [1900, 834], [1900, 1015], [20, 1015]],
+  "walk_band": [740, 1015],
+  "actor_scale": [0.495, 1.0],
+  "spawn": [800, 920],
+  "hotspots": {
+    "S36.ambient 1": {
+      "rect": [548, 572, 154, 64],
+      "interaction_point": [625, 800],
+      "label_anchor": [625, 562],
+      "reason": "a long flat file with a wooden handle lying on the front edge of the workbench, right of the vise"
+    },
+    "S36.ambient 2": {
+      "rect": [985, 540, 262, 96],
+      "interaction_point": [1115, 830],
+      "label_anchor": [1115, 538],
+      "reason": "four old alarm clocks of different sizes standing in a row on the right end of the workbench, each showing another time"
+    },
+    "S36.OTO": {
+      "rect": [1250, 494, 160, 366],
+      "interaction_point": [1200, 880],
+      "label_anchor": [1330, 484],
+      "reason": "Oto standing on the floor between the end of the workbench and the covered lathe"
+    }
+  },
+  "npcs": {
+    "S36.OTO": {
+      "variant": "standing",
+      "feet": [1330, 860],
+      "facing": "left",
+      "reason": "standing (OTO staging standing); feet on the workshop floor, scale from the room perspective (0.72)"
+    }
+  },
+  "exits": {
+    "S36.to_S35": {
+      "rect": [70, 430, 192, 290],
+      "interaction_point": [170, 790],
+      "label_anchor": [180, 420],
+      "reason": "the plank door in the back wall at the far left, ajar, daylight of the courtyard behind it"
+    }
+  },
+  "state_patches": []
+}

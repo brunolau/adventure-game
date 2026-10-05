@@ -1,0 +1,1153 @@
+{
+  "room": "S66",
+  "version": 4,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 656538108,
+  "usd": 0,
+  "started": "2026-10-05T11:11:36",
+  "spend_log_asset": "bg_natural/S66/S66_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S66.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a small flat-roofed garden shed at the east fence of the ZŠ Sokolíkova 2 school grounds in Dúbravka, Bratislava, next to the Kudlákova 2 housing-estate block. Image 2 shows the panel block type of this estate (white-grey concrete, continuous red balcony parapet bands, loggias, flat roof): paint the four-storey Kudlákova 2 block behind the shed in exactly this architecture, clean and only ten years old, without cars, satellite dishes or glazed loggias. Image 3 shows the 1970s school of the same grounds (materials of the period). The shed itself is a plain 1970s utility shed of the school: rendered brick walls in weathered pale beige-grey, a flat concrete roof slab with a small stovepipe, one plank door.\n\nBrief: a small invented shed by the school yard, laths for protective tree guards, an old path-routing plan, gardener Šimon. Entry from the yard, no lock mystery: the door stands open. Early December 1982, a grey winter afternoon: bare branches, thin snow in places, cold pale light under a hazy white-grey sky.\n\nCamera: standing on the trodden edge of the school yard about 11 m from the shed, about 2 m high, looking straight at the shed's front wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~420. Keep this exact geometry from the sketch: the shed front wall stands on the ground at y 700 from x 900 to x 1600, its roof edge at y 336; the open doorway is x 1080-1220, y 420-700; the long panel block fills the background behind the shed from x 470 to the right edge, its roof near the top edge; the wire-mesh fence of the school grounds runs across the picture behind the shed with its foot at y ~605; the trodden ground in front runs from y 700 to the bottom edge.\n\nWhat the sketch blocks are, left to right: bare trees along the fence of the school grounds and the end wall of the panel block; the tall see-through wire-mesh fence with steel posts; snowy dull grass behind and beside the shed; the shed: a stack of new pale wooden laths (for tree guards) leaning against the wall left of the door, the weathered plank door swung wide open to the left, the dim doorway showing sacks, more laths, a wheelbarrow and garden tools inside, a plywood board with a pinned plan right of the door, a shovel leaning on the wall, a small stovepipe on the roof, a thin layer of snow on the roof; the shaded side wall at the right.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1245-1395, y 458-606 of the 1920x1080 frame (65-73 % from the left, 42-56 % from the top): an old, slightly yellowed paper plan of the school yard's paths pinned with drawing pins on a plywood board on the shed wall, protected by the roof overhang: hand-drawn paths in blue, a few trees as small circles and one route crossed out in red pencil; illegible handwritten notes, no readable words, no digits.\n2. the block of the layout sketch at x 1415-1510, y 455-710 of the 1920x1080 frame (74-79 % from the left, 42-66 % from the top): a long-handled garden shovel with a worn wooden handle and a grey steel blade, leaning against the shed wall, its blade standing on the ground.\nThe trodden path runs out of the left edge back to the school yard (the area of the layout sketch at x 0-120, y 722-1015 of the 1920x1080 frame (0-6 % from the left, 67-94 % from the top)).\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) is the trodden ground at the edge of the yard - packed thin snow over asphalt and earth, one continuous flat surface with no kerb, no step, no edge and nothing standing on it: no buckets, no barrows, no tools. Only footprints, a little slush and soft shadows.\nNPC zone at x 690-830, y 470-800 of the 1920x1080 frame (36-43 % from the left, 44-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 800.\n\nFiction rules: the shed contents, the plan and the gardener are invented; nothing is claimed about the real building. No lettering, no signs, no house numbers, no logos, no people (also nobody on the balconies or in the windows), no animals, no cars. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S66_sketch.png (rendered from art/prompts/natural/S66.sketch.json, model geometry)",
+    "art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg",
+    "art/source/sokolikova2_04.jpg",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S66 natural sketch (December 1982): camera 2.0 m, horizon y 420, shed front foot y 700, roof edge y 336; generated by a sketch script",
+    "background": "#cfd6dc",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          520
+        ],
+        "fill": "#cfd6dc",
+        "note": "pale hazy December sky"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            70
+          ],
+          [
+            1920,
+            20
+          ],
+          [
+            1920,
+            500
+          ],
+          [
+            470,
+            500
+          ]
+        ],
+        "fill": "#e2ded5",
+        "note": "four-storey panel block Kudlakova 2 (white-grey concrete)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            120
+          ],
+          [
+            1920,
+            70
+          ],
+          [
+            1920,
+            102
+          ],
+          [
+            470,
+            146
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            78
+          ],
+          [
+            1920,
+            40
+          ],
+          [
+            1920,
+            70
+          ],
+          [
+            470,
+            120
+          ]
+        ],
+        "fill": "#9aa3a8",
+        "note": "loggia recesses / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            225
+          ],
+          [
+            1920,
+            175
+          ],
+          [
+            1920,
+            207
+          ],
+          [
+            470,
+            251
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            183
+          ],
+          [
+            1920,
+            145
+          ],
+          [
+            1920,
+            175
+          ],
+          [
+            470,
+            225
+          ]
+        ],
+        "fill": "#9aa3a8",
+        "note": "loggia recesses / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            330
+          ],
+          [
+            1920,
+            280
+          ],
+          [
+            1920,
+            312
+          ],
+          [
+            470,
+            356
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            288
+          ],
+          [
+            1920,
+            250
+          ],
+          [
+            1920,
+            280
+          ],
+          [
+            470,
+            330
+          ]
+        ],
+        "fill": "#9aa3a8",
+        "note": "loggia recesses / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            435
+          ],
+          [
+            1920,
+            385
+          ],
+          [
+            1920,
+            417
+          ],
+          [
+            470,
+            461
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            393
+          ],
+          [
+            1920,
+            355
+          ],
+          [
+            1920,
+            385
+          ],
+          [
+            470,
+            435
+          ]
+        ],
+        "fill": "#9aa3a8",
+        "note": "loggia recesses / windows"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            520,
+            60
+          ],
+          [
+            520,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            670,
+            60
+          ],
+          [
+            670,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            820,
+            60
+          ],
+          [
+            820,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            970,
+            60
+          ],
+          [
+            970,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1120,
+            60
+          ],
+          [
+            1120,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1270,
+            60
+          ],
+          [
+            1270,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1420,
+            60
+          ],
+          [
+            1420,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1570,
+            60
+          ],
+          [
+            1570,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1720,
+            60
+          ],
+          [
+            1720,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1870,
+            60
+          ],
+          [
+            1870,
+            500
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          60,
+          26,
+          440
+        ],
+        "fill": "#d4cfc4",
+        "note": "block end wall edge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            80,
+            610
+          ],
+          [
+            80,
+            160
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 12,
+        "note": "bare tree"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            80,
+            320
+          ],
+          [
+            -10,
+            200
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            80,
+            280
+          ],
+          [
+            160,
+            170
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            80,
+            220
+          ],
+          [
+            40,
+            130
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            300,
+            610
+          ],
+          [
+            300,
+            120
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 12,
+        "note": "bare tree"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            300,
+            280
+          ],
+          [
+            210,
+            160
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            300,
+            240
+          ],
+          [
+            380,
+            130
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            300,
+            180
+          ],
+          [
+            260,
+            90
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            610
+          ],
+          [
+            640,
+            140
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 12,
+        "note": "bare tree"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            300
+          ],
+          [
+            550,
+            180
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            260
+          ],
+          [
+            720,
+            150
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            200
+          ],
+          [
+            600,
+            110
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1700,
+            610
+          ],
+          [
+            1700,
+            150
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 12,
+        "note": "bare tree"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1700,
+            310
+          ],
+          [
+            1610,
+            190
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1700,
+            270
+          ],
+          [
+            1780,
+            160
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1700,
+            210
+          ],
+          [
+            1660,
+            120
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1850,
+            610
+          ],
+          [
+            1850,
+            110
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 12,
+        "note": "bare tree"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1850,
+            270
+          ],
+          [
+            1760,
+            150
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1850,
+            230
+          ],
+          [
+            1930,
+            120
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1850,
+            170
+          ],
+          [
+            1810,
+            80
+          ]
+        ],
+        "color": "#5e4c3e",
+        "width": 4
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          455,
+          1920,
+          150
+        ],
+        "fill": "#9aa39a",
+        "note": "wire-mesh fence of the school grounds (posts, see-through mesh)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          455,
+          1920,
+          150
+        ],
+        "step": 96,
+        "bar": 5,
+        "fill": "#5f665f",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          452,
+          1920,
+          5
+        ],
+        "fill": "#5f665f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          605,
+          1920,
+          120
+        ],
+        "fill": "#c9ccc4",
+        "note": "snowy grass between the fence and the shed (thin snow, dull grass showing)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          322,
+          740,
+          20
+        ],
+        "fill": "#6f6f6c",
+        "note": "flat roof slab edge with a little snow on top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          312,
+          740,
+          12
+        ],
+        "fill": "#eef1f3",
+        "note": "thin snow on the roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          342,
+          700,
+          358
+        ],
+        "fill": "#c9c0aa",
+        "note": "rendered shed front wall, pale beige-grey, weathered"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          250,
+          22,
+          75
+        ],
+        "fill": "#4c4c4c",
+        "note": "small stovepipe on the roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          915,
+          430,
+          75,
+          270
+        ],
+        "fill": "#d9b98a",
+        "note": "stack of new pale wooden laths leaning on the wall"
+      },
+      {
+        "type": "bars",
+        "box": [
+          915,
+          430,
+          75,
+          270
+        ],
+        "step": 15,
+        "bar": 3,
+        "fill": "#b8935f",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          420,
+          140,
+          280
+        ],
+        "fill": "#3a332c",
+        "note": "open doorway, dim interior: sacks, laths, garden tools"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1095,
+          560,
+          60,
+          140
+        ],
+        "fill": "#a99a7a",
+        "note": "sacks inside"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1080,
+            420
+          ],
+          [
+            1010,
+            404
+          ],
+          [
+            1010,
+            716
+          ],
+          [
+            1080,
+            700
+          ]
+        ],
+        "fill": "#8a6a48",
+        "note": "plank door leaf swung open to the left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1248,
+          462,
+          144,
+          140
+        ],
+        "fill": "#d7c8a2",
+        "note": "plywood board with the pinned path plan"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1258,
+          472,
+          124,
+          120
+        ],
+        "fill": "#f2ecd8",
+        "note": "the plan sheet"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1270,
+            560
+          ],
+          [
+            1300,
+            520
+          ],
+          [
+            1340,
+            530
+          ],
+          [
+            1370,
+            490
+          ]
+        ],
+        "color": "#3b6fb5",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1270,
+            500
+          ],
+          [
+            1360,
+            580
+          ]
+        ],
+        "color": "#c0392b",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          600,
+          160,
+          8
+        ],
+        "fill": "#8a7a5a",
+        "note": "board ledge"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1468,
+            470
+          ],
+          [
+            1452,
+            650
+          ]
+        ],
+        "color": "#8a6a48",
+        "width": 7,
+        "note": "shovel handle leaning on the wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1428,
+            640
+          ],
+          [
+            1478,
+            646
+          ],
+          [
+            1472,
+            705
+          ],
+          [
+            1432,
+            700
+          ]
+        ],
+        "fill": "#7d8186",
+        "note": "shovel blade on the ground"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          342,
+          40,
+          358
+        ],
+        "fill": "#a9a08b",
+        "note": "shed side wall in shade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          700,
+          1920,
+          380
+        ],
+        "fill": "#b9b5aa",
+        "note": "trodden ground at the yard edge: packed snow over asphalt and earth (one plain surface)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          700,
+          1920,
+          20
+        ],
+        "fill": "#d9dcd8",
+        "note": "snow edge along the foot of the wall line"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S66.json",
+  "blocking": {
+    "version": 1,
+    "room": "S66",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1).",
+    "note": "Small flat-roofed garden shed at the east fence of the ZS Sokolikova grounds by Kudlakova 2 (register S66, OSM way 1469186807, ~5 x 5 m; reconstruction): camera ~2.0 m high on the trodden yard edge ~11 m west of the shed, looking E. Horizon y 420; the shed front wall stands on y 700 (~140 px per metre), x 900-1600, roof edge y 336; front edge of the walk area y 1015 (~300 px per metre). Perspective s(y) = (y - 420) / 595. The four-storey Kudlakova 2 panel block (same early-1970s type as the carl_eric photo) fills the background ~40 m away (foot hidden behind the shed, roof y ~30); the grounds' wire-mesh fence with bare trees runs across behind the shed (~16 m, foot y ~605). Props where they are: the plank door open (leaf swung out to the left), the path-routing plan pinned on a board right of the door under the roof overhang, the shovel leaning on the wall right of the board, a stack of laths for the tree guards leaning on the wall left of the door; Simon stands outdoors in front of the laths.",
+    "background": "bg_natural/S66.webp",
+    "walk_polygon": [
+      [
+        0,
+        722
+      ],
+      [
+        1920,
+        722
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      715,
+      1015
+    ],
+    "actor_scale": [
+      0.496,
+      1.0
+    ],
+    "spawn": [
+      1150,
+      900
+    ],
+    "hotspots": {
+      "S66.ambient 1": {
+        "rect": [
+          1245,
+          458,
+          150,
+          148
+        ],
+        "interaction_point": [
+          1320,
+          790
+        ],
+        "label_anchor": [
+          1320,
+          448
+        ],
+        "reason": "the old path-routing plan of the yard pinned on a plywood board on the shed wall right of the door, under the roof overhang"
+      },
+      "S66.ambient 2": {
+        "rect": [
+          1415,
+          455,
+          95,
+          255
+        ],
+        "interaction_point": [
+          1462,
+          790
+        ],
+        "label_anchor": [
+          1462,
+          445
+        ],
+        "reason": "the shovel leaning against the shed wall right of the plan board (blade on the ground at y ~700)"
+      },
+      "S66.SIMON": {
+        "rect": [
+          690,
+          470,
+          140,
+          330
+        ],
+        "interaction_point": [
+          600,
+          840
+        ],
+        "label_anchor": [
+          760,
+          455
+        ],
+        "reason": "Simon standing outdoors in front of the stacked laths, left of the open door"
+      }
+    },
+    "npcs": {
+      "S66.SIMON": {
+        "variant": "standing",
+        "feet": [
+          760,
+          800
+        ],
+        "reason": "brief: gardener Simon outdoors at his shed in winter (standing sprite; DECISIONS item 2 lists no change for S66)"
+      }
+    },
+    "exits": {
+      "S66.to_S61": {
+        "rect": [
+          0,
+          722,
+          120,
+          293
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          245,
+          712
+        ],
+        "reason": "the trodden path continues out of the left edge back to the school yard"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "composite",
+  "from_version": 1,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "composite": "free composite (scratchpad composite_s66_block.py): raw of the v2 fix (Kudlakova 2 block one storey lower) above the fence rail y 450, the v1 shed kept in front (mask along its roof outline)",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S66.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:17:19"
+  }
+}

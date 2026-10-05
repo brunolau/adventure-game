@@ -1,0 +1,145 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Small technical reading room of a fictional archive on Kamenne namestie, camera ~2.4 m at the back of the room looking at the window wall: one-point box, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling line y 198 (2.9 m). Perspective s(y) = (y - 300) / 715. The door to the square with the wall clock above it on the left, the window with the Spitalska view over the long reading desk (lamps, the rubber stamp at its right end), the framed map, Karol standing in front of his card catalogue on the right.",
+ "background": "bg_natural/S23.webp",
+ "walk_polygon": [
+  [
+   312,
+   785
+  ],
+  [
+   510,
+   785
+  ],
+  [
+   515,
+   822
+  ],
+  [
+   1245,
+   822
+  ],
+  [
+   1250,
+   802
+  ],
+  [
+   1610,
+   802
+  ],
+  [
+   1900,
+   975
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   975
+  ]
+ ],
+ "walk_band": [
+  785,
+  1015
+ ],
+ "actor_scale": [
+  0.68,
+  1.0
+ ],
+ "spawn": [
+  420,
+  890
+ ],
+ "hotspots": {
+  "S23.ambient 1": {
+   "rect": [
+    1122,
+    562,
+    106,
+    84
+   ],
+   "interaction_point": [
+    1110,
+    850
+   ],
+   "label_anchor": [
+    1175,
+    554
+   ],
+   "reason": "wooden rubber stamp and round ink pad at the right end of the reading desk (measured on v1)"
+  },
+  "S23.ambient 2": {
+   "rect": [
+    370,
+    242,
+    102,
+    102
+   ],
+   "interaction_point": [
+    420,
+    850
+   ],
+   "label_anchor": [
+    420,
+    234
+   ],
+   "reason": "round wall clock above the door"
+  },
+  "S23.ARCHIVAR": {
+   "rect": [
+    1262,
+    438,
+    150,
+    370
+   ],
+   "interaction_point": [
+    1337,
+    890
+   ],
+   "label_anchor": [
+    1337,
+    430
+   ],
+   "reason": "Karol standing in front of the left part of his card catalogue (v1 painted the desk and the stamp where the plain wall was planned)"
+  }
+ },
+ "npcs": {
+  "S23.ARCHIVAR": {
+   "variant": "standing",
+   "feet": [
+    1337,
+    805
+   ],
+   "scale": 0.706,
+   "reason": "standing archivist at his card catalogue (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S23.to_S21": {
+   "rect": [
+    322,
+    345,
+    200,
+    420
+   ],
+   "interaction_point": [
+    420,
+    822
+   ],
+   "label_anchor": [
+    420,
+    384
+   ],
+   "reason": "door of the reading room, out to Kamenne namestie"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S23"
+}

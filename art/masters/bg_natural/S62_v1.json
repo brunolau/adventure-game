@@ -1,0 +1,229 @@
+{
+  "room": "S62",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S18",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S18_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2073337219,
+  "usd": 0.15,
+  "scope": "bg_natural/S62/",
+  "spend_log_asset": "bg_natural/S62/S62_v1_derive",
+  "started": "2026-10-05T10:55:57",
+  "prompt_file": "art/prompts/natural/S62.era.txt",
+  "blocking_file": "src/game/data/blocking/S62.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Sídliskový obchod v roku 1982 in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\n\n\nEra changes: the same housing-estate courtyard thirteen years earlier, on an early-December afternoon in 1982: winter, a pale low sun under a hazy white-grey sky, cool light. The big linden at the right and every other tree are bare (only grey-brown branches and twigs, no leaves); the pines stay dark green; the lawns are dull winter green-brown with thin patches of fresh snow; thin snow on the kerbs, on the bench, on the fence and on the roof edges. The panel blocks are only ten years old: the same blocks with the same red balcony parapets, clean and fresh. No laundry on the drying lines in winter: only an old patterned carpet hangs over the first crossbar of the drying racks.\nThe newspaper kiosk is replaced by a small, slightly wider single-storey shop pavilion of mixed goods standing at the same place on the path: plastered walls painted pale green-grey, a flat roof with a brown edge, a plain fascia without any lettering, a BIGGER serving window with a wooden frame in the middle whose light wooden sill is one straight horizontal ledge at y 562; inside, a dim little shop with modest wooden shelves holding a few jars, tins, bread and bottles without labels. A narrow outer ledge runs along the front below the window.\n\nInteractive props of 1982:\n1. the box labelled 'Prázdny zavárací pohár' in image 2 (x 312-422, y 488-566 of the 1920x1080 frame (16-22 % from the left, 45-52 % from the top)): a wooden crate standing on the outer ledge left of the serving window, holding six clean empty glass preserving jars with screw lids.\n2. the box labelled 'Vratné fľaše' in image 2 (x 690-795, y 612-740 of the 1920x1080 frame (36-41 % from the left, 57-69 % from the top)): a stack of three wooden crates full of empty returnable glass bottles (milk and beer bottles without labels) on the ground at the pavilion's right front corner.\n3. the box labelled 'Rádiový prijímač' in image 2 (x 598-686, y 452-532 of the 1920x1080 frame (31-36 % from the left, 42-49 % from the top)): a small old radio receiver with a wooden case and a round speaker cloth standing on the shelf inside the window, at the right.\nThe path continues out of the left edge (the box labelled 'exit: Dúbravská zastávka v roku 1982' in image 2 (x 0-60, y 748-1015 of the 1920x1080 frame (0-3 % from the left, 69-94 % from the top))) and out of the right edge (the box labelled 'exit: Výdajňa školského údržbového materiálu v roku 1982' in image 2 (x 1860-1920, y 748-1015 of the 1920x1080 frame (97-100 % from the left, 69-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 748-1015 of the 1920x1080 frame (0-100 % from the left, 69-94 % from the top) stays the open courtyard path of concrete slabs, wet in places with a little slush at the edges, with nothing standing on it.\nNPC zone at x 450-575, y 420-566 of the 1920x1080 frame (23-30 % from the left, 39-52 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character is seen through a window: paint the window sill exactly at y 562 across x 420-605; the opening above the sill shows a plain, dim interior, no person.\n\nFiction rules: no people, no animals, no cars, no lettering, no signs, no shop name, no posters, no house numbers, no logos, no brand labels on goods. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S18_v1.png (model geometry)",
+    "S18_v1.png + S62 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S62.to_S57": {
+        "at": [
+          30.0,
+          881.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.925,
+        "ok": true
+      },
+      "exit S62.to_S65": {
+        "at": [
+          1890.0,
+          881.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.802,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S62_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S62",
+    "family_base": "S18",
+    "status": "natural re-blocking (product-owner decision 2026-10-05). Same courtyard corner and camera as S18 (register: 'uses the S18 files'); painted as an era edit of the accepted S18 master (art/tools/derive_era.py machinery, see art/masters/bg_natural/S62.md).",
+    "note": "Same camera as S18 (courtyard of the early-1970s panel blocks Svantnerova / M. Schneidra-Trnavskeho, camera ~2.0 m on the courtyard path, horizon y 404, the block receding to the vanishing point x ~305; path back edge y 740, s(y) = (y - 404) / 611). Early December 1982: the blocks are ten years old, the linden is bare, thin snow. Where Zita's kiosk stands in 1995 there is a slightly larger single-storey shop pavilion of mixed goods with a bigger serving window (sill 1.05 m = y 562); Ruzena stands behind it; a wooden crate of empty preserving jars on the outer ledge left of the window, a stack of crates with returnable bottles at the pavilion's right corner, a small radio on the shelf inside the window.",
+    "background": "bg_natural/S62.webp",
+    "walk_polygon": [
+      [
+        0,
+        748
+      ],
+      [
+        1920,
+        748
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      740,
+      1015
+    ],
+    "actor_scale": [
+      0.55,
+      1.0
+    ],
+    "spawn": [
+      1100,
+      900
+    ],
+    "hotspots": {
+      "S62.jar": {
+        "rect": [
+          312,
+          488,
+          110,
+          78
+        ],
+        "interaction_point": [
+          367,
+          800
+        ],
+        "label_anchor": [
+          367,
+          478
+        ],
+        "reason": "wooden crate with clean empty preserving jars on the outer ledge left of the serving window"
+      },
+      "S62.ambient 1": {
+        "rect": [
+          690,
+          612,
+          105,
+          128
+        ],
+        "interaction_point": [
+          742,
+          800
+        ],
+        "label_anchor": [
+          805,
+          600
+        ],
+        "reason": "stacked crates of empty returnable glass bottles at the pavilion's right front corner (on the ground at the wall, y 740)"
+      },
+      "S62.ambient 2": {
+        "rect": [
+          598,
+          452,
+          88,
+          80
+        ],
+        "interaction_point": [
+          642,
+          800
+        ],
+        "label_anchor": [
+          590,
+          630
+        ],
+        "reason": "small radio receiver on the shelf inside the serving window, right of Ruzena"
+      },
+      "S62.RUZENA": {
+        "rect": [
+          450,
+          420,
+          125,
+          146
+        ],
+        "interaction_point": [
+          512,
+          820
+        ],
+        "label_anchor": [
+          512,
+          400
+        ],
+        "reason": "Ruzena behind the open serving window, bust above the sill (y 562)"
+      }
+    },
+    "npcs": {
+      "S62.RUZENA": {
+        "variant": "window_bust",
+        "feet": [
+          512,
+          735
+        ],
+        "scale": 0.55,
+        "sill_y": 562,
+        "z": "back",
+        "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); feet = the shop floor just behind its front wall"
+      }
+    },
+    "exits": {
+      "S62.to_S57": {
+        "rect": [
+          0,
+          748,
+          60,
+          267
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          200,
+          738
+        ],
+        "reason": "the courtyard path continues out of the left edge past the block ends towards the stop"
+      },
+      "S62.to_S65": {
+        "rect": [
+          1860,
+          748,
+          60,
+          267
+        ],
+        "interaction_point": [
+          1850,
+          880
+        ],
+        "label_anchor": [
+          1560,
+          738
+        ],
+        "reason": "the path continues out of the right edge along the block to the small service building by the kindergarten"
+      }
+    },
+    "state_patches": []
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S62.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:56:42"
+  }
+}

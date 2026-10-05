@@ -1,0 +1,24 @@
+# S01 Adamova garáž (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S01.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S01.sketch.json (garage interior, camera 2.2 m, horizon y 360, front wall foot y 780).
+#refs: art/source/rooms/S01/garage_workbench_btwashburn.jpg ; art/source/rooms/S01/radios_in_repose_eli_dark.jpg ; art/source/rooms/S02/jasenova_street_mm_explorer.jpg
+#style: src/game/assets/bg_natural/S05.webp
+Place: the garage of Adam's family house on Jaseňová in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia) - an invented garage of the real house type. Image 2 is a photo of a real lived-in home workbench (pegboard with tools, small-parts drawers, boxes), image 3 an opened old valve radio chassis on a repair bench with a multimeter, image 4 the real street Jaseňová (white and red flat-roofed cubic houses, grey slat fences, a light concrete street) that is seen through the open garage door. Paint it as a Slovak 2000s suburban garage: warm plastered brick walls, a concrete floor, a rolled-up sectional door; no US labels or brands.
+
+Brief: an autumn afternoon in a family-house garage: a table with a radio being repaired on the left, small-parts drawers on the right, a fabric bag on a chair. The place feels lived-in, not like a secret laboratory. Thursday 29 October 2020, warm low sunlight falling in through the open door onto the floor, dust motes in the light.
+
+Camera: standing inside a wide double garage, about 2.2 m high, looking straight at its long front wall with the open door; the wall is parallel to the picture and fills the whole picture up to the top edge - the ceiling is NOT visible, only a dark beam along the very top edge; no side walls. Vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch (the camera stays this far from the wall, do not move closer): the wall meets the concrete floor at y 780 (72 % from the top) along the whole width; the workbench top at y ~608 (56 %), the pegboard from y ~398 to ~570, a high shelf at y ~345; the open door from x 864 to 1381 and from y 360 (33 %) down to the floor; the parts cabinet from y ~494 to the floor; the floor from y 780 to the bottom edge is empty.
+
+What the sketch blocks are, left to right: high on the wall a wall-mounted fluorescent tube light, a green garden hose coiled on a hook and a bicycle hanging on wall hooks at the right; a small window high on the wall showing the neighbour's red-orange house and a yellow birch; a garden broom leaning on the wall and a cloth face mask on a nail; the high wooden shelf with cardboard boxes and a plastic storage box; the pegboard with neatly hung hand tools; the round wall clock; the workbench with crates and boxes underneath; a wooden chair standing against the wall right of the bench; the open sectional garage door, rolled up into its drum under the lintel, with bright daylight outside: the sunny concrete driveway, the grey slat fence and the half-open grey sliding gate of the plot, the street and a white flat-roofed house and a yellow autumn tree across it; the tall grey metal cabinet of small parts drawers; metal shelving with boxes and a stack of winter tyres on the floor at the wall at the right; the concrete floor with a sun patch from the door.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S01.tools}: Adam's olive-green canvas service bag (a tool bag with a shoulder strap and a few tool handles sticking out) lying on the seat of the wooden chair.
+2. {rect:S01.fuse}: the tall grey metal cabinet of many small parts drawers; one small drawer at chest height pulled out, showing small glass fuses inside.
+3. {rect:S01.ambient 1}: a big old white enamel pot with a blue rim, heaped full of loose screws, standing on the right end of the workbench.
+4. {rect:S01.ambient 2}: an old 1960s wooden valve radio with its back opened, the chassis with valves visible, standing on the left part of the workbench next to a yellow multimeter and a soldering iron.
+The open garage door is {exit:S01.to_S02}.
+
+Walkable floor: {walk} is the concrete garage floor - one continuous flat surface with no step, no kerb, no rug and no change of material inside it, and nothing standing on it: no bicycle, no tyres, no boxes, no buckets, no cables, no people. Only light, the sun patch from the door, a few oil stains and two fallen leaves blown in.
+{npc_zones}
+
+Fiction rules: Adam's house is invented: no house numbers, no names, no brand names on tools, boxes, the radio or the multimeter; the radio dial and every paper show only illegible marks, no digits. No people, no animals, no cars.

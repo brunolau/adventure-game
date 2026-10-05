@@ -1,0 +1,178 @@
+{
+ "room": "S45",
+ "notes": "Natural S45 (bg_natural/S45.webp): Vrbicke pleso at early-summer midday. Clouds drift over Chopok, the open lake ripples and glints, two mallards paddle slowly across the open water (lake mask), wind in the reed clumps, the rowan branches and the big spruce, the dark foreground grass blades at the bottom corners sway in front of the hero (front plane), choughs cross the sky now and then. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    20,
+    200
+   ],
+   "count": 4,
+   "speed_px_s": 4,
+   "scale": [
+    0.28,
+    0.476
+   ],
+   "alpha": 0.75,
+   "mask": "S45/natural/sky_mask.webp"
+  },
+  {
+   "id": "lake",
+   "type": "water",
+   "texture": "S45/natural/lake.webp",
+   "amp_px": 1.2,
+   "speed": 0.8,
+   "glint": 0.35,
+   "glint_color": "#fff6dc"
+  },
+  {
+   "id": "ducks",
+   "type": "tween_path",
+   "sheet": "common/duck_sheet",
+   "fps": 0.8,
+   "path": [
+    [
+     260,
+     640
+    ],
+    [
+     1360,
+     632
+    ]
+   ],
+   "speed_px_s": 9,
+   "scale": 0.16,
+   "flock": 2,
+   "flock_spread": [
+    30,
+    4
+   ],
+   "bob_px": 0.6,
+   "bob_hz": 0.5,
+   "direction": "random",
+   "every_s": [
+    6,
+    18
+   ],
+   "start_s": [
+    0,
+    1
+   ],
+   "reduced_motion": "freeze",
+   "mask": "S45/natural/lake_mask.webp",
+   "prewarm_s": 60
+  },
+  {
+   "id": "reeds_left",
+   "type": "sway",
+   "texture": "S45/natural/reeds_left.webp",
+   "anchor": 1.0,
+   "amp_px": 2.2,
+   "freq": 0.4,
+   "wavelength_px": 60,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "reeds_right",
+   "type": "sway",
+   "texture": "S45/natural/reeds_right.webp",
+   "anchor": 1.0,
+   "amp_px": 2.2,
+   "freq": 0.38,
+   "wavelength_px": 60,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "rowan",
+   "type": "sway",
+   "texture": "S45/natural/rowan.webp",
+   "anchor": 0.0,
+   "hang": true,
+   "amp_px": 2.6,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 1.0
+  },
+  {
+   "id": "spruce_right",
+   "type": "sway",
+   "texture": "S45/natural/spruce_right.webp",
+   "anchor": 1.0,
+   "amp_px": 2.0,
+   "freq": 0.25,
+   "wavelength_px": 150,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "blades_left",
+   "type": "sway",
+   "plane": "front",
+   "texture": "S45/natural/blades_left.webp",
+   "anchor": 1.0,
+   "amp_px": 3.0,
+   "freq": 0.45,
+   "wavelength_px": 60,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "blades_right",
+   "type": "sway",
+   "plane": "front",
+   "texture": "S45/natural/blades_right.webp",
+   "anchor": 1.0,
+   "amp_px": 3.0,
+   "freq": 0.43,
+   "wavelength_px": 60,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "choughs",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     -80,
+     210
+    ],
+    [
+     700,
+     160
+    ],
+    [
+     1300,
+     190
+    ],
+    [
+     2000,
+     130
+    ]
+   ],
+   "speed_px_s": 200,
+   "scale": 0.07,
+   "modulate": "#3b3b44",
+   "flock": 2,
+   "flock_spread": [
+    60,
+    20
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    6,
+    14
+   ]
+  }
+ ]
+}

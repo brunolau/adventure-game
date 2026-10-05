@@ -1,0 +1,80 @@
+{
+  "room": "S52",
+  "notes": "Before ZS Sokolikova, 29 October 2020 (bg_natural/S52.webp): a windy autumn afternoon - the crowns swaying, leaves falling and settling on the forecourt and the steps, pigeons on the empty forecourt of the closed school.",
+  "layers": [
+    {
+      "id": "crown_tl",
+      "type": "sway",
+      "texture": "S52/natural/crown_tl.webp",
+      "anchor": 1.0,
+      "amp_px": 3.0,
+      "freq": 0.3,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "crown_tr",
+      "type": "sway",
+      "texture": "S52/natural/crown_tr.webp",
+      "anchor": 1.0,
+      "amp_px": 2.6,
+      "freq": 0.34,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "leaves_tl",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [0, 0, 460, 240],
+      "rate": 0.35,
+      "size": [12, 19],
+      "land_y": [770, 1000],
+      "rest_s": [3, 7]
+    },
+    {
+      "id": "leaves_tr",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [1560, 0, 360, 200],
+      "rate": 0.22,
+      "size": [12, 19],
+      "land_y": [700, 990],
+      "rest_s": [3, 7],
+      "speed_x": [-30, 10]
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[110, 832], [520, 862]],
+      "scale": 0.22,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[-120, 60], [500, -140]]
+    }
+  ]
+}

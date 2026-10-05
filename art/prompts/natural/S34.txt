@@ -1,0 +1,25 @@
+# S34 Kulturna sala pred skuskou (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S34.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S34.sketch.json (frontal hall, horizon y 460, stage front foot y 720).
+# Refs: crops of the two Fortepan stage photos without people and without the banner text. Style: the accepted
+# S36 painting (interior of the same village and day).
+#refs: art/prompts/natural/S34_ref_plank_stage_1948_crop.jpg ; art/prompts/natural/S34_ref_wall_lamp_curtain_1976_crop.jpg
+#style: art/masters/bg_natural/S36_v2.png
+Place: the small culture hall of the village of Ivanka pri Dunaji, Slovakia, in 1960 - an invented hall of the real type of a village community house. Image 2 is a real low plank stage of the period (horizontal boards on the front, a wooden step box in the middle); image 3 shows the plain plastered side wall of a small hall stage with simple wall lamps and the edge of a heavy curtain. Paint a modest village hall of 1960 from these: plain lime-washed walls, an oil-painted brown dado, worn wooden floorboards, a low plank stage under a plain proscenium. No 1970s spotlights, no loudspeakers, no banners or posters with text.
+
+Brief: an empty hall before a rehearsal of the amateur theatre: a tiny stage, a scenery flat held by a table clamp whose screw is loose (the flat stands on the floor, nobody is in danger); the costume maker Lida and the amateur actor Rudo will stand here. 6 June 1960, afternoon: the simple wall lamps are lit, warm daylight falls in through the half-open door on the right, a few dust motes in the air.
+
+Camera: standing on the hall floor about 1.7 m high, facing the stage end of the hall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~460. Keep this exact geometry from the sketch: the front of the low plank stage stands on the hall floor at y 720 from x 300 to x 1500, its front edge (the stage floor) is at y 607; the proscenium opening spans x 380-1420 from the stage floor up to y ~270; the forest flat at the front left stands with its bottom on the floor at y ~800; the door on the right meets the floor at y 720.
+
+What the sketch blocks are, left to right: a stack of folding wooden chairs against the left wall; the forest scenery flat - a painted canvas with stylised green trees on a light wooden frame - standing upright with its bottom on the floor; a plain wooden work table to its right with a sewing box and a folded costume on it; an iron hand clamp joining the flat's frame to the table's edge; a simple glass wall lamp on each side of the proscenium; the plain plastered proscenium; a heavy dark red curtain drawn open to both sides with a valance on top; a plain dark cloth backdrop at the back of the dim stage; the plank stage with a wooden step box in front of its middle; a black felt hat with a red ribbon lying on the stage's front edge on the right; the panelled double door to the street on the right of the end wall with one leaf ajar and bright daylight in the gap; the worn wooden floorboards of the hall.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S34.clamp}: an old iron hand table clamp (C-clamp with a T-handle screw) clamping the wooden frame of the flat to the edge of the table, its screw visibly loosened.
+2. {rect:S34.ambient 1}: the forest scenery flat: a canvas painted with simple stylised green trees and bushes, stretched on a light wooden frame, standing on the floor.
+3. {rect:S34.ambient 2}: a black felt village mayor's hat with a broad brim and a red ribbon, lying on the front edge of the stage.
+The double door on the right is {exit:S34.to_S32}.
+
+Walkable floor: {walk} is the worn wooden floorboards of the hall - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no props, no boxes, no cables. Only light, shadows and the board joints.
+{npc_zones}
+
+Fiction rules: no real ensemble, play or event; no banners, posters or programmes with text, no slogans, no red stars, no portraits, no emblems. No people, no animals.

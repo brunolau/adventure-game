@@ -1,0 +1,117 @@
+{
+ "room": "S21",
+ "notes": "Natural S21: the plane trees in the wind, ripples on the fountain basin, pigeons pecking on the plaza near the fountain (they flee from the hero), cars on the tram street at the right edge of the square, clouds above.",
+ "layers": [
+  {
+   "id": "trees_sway",
+   "type": "sway",
+   "texture": "S21/natural/trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.0,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "fountain_water",
+   "type": "water",
+   "texture": "S21/natural/water.webp",
+   "amp_px": 1.0,
+   "speed": 1.2,
+   "glint": 0.5,
+   "glint_color": "#fff6dc"
+  },
+  {
+   "id": "pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     1340,
+     712
+    ],
+    [
+     1640,
+     736
+    ]
+   ],
+   "scale": 0.27,
+   "flee_radius": 300,
+   "return_s": [
+    12,
+    24
+   ],
+   "exit": [
+    [
+     2040,
+     60
+    ],
+    [
+     1500,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "cars_street",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [
+    [
+     1400,
+     497
+    ],
+    [
+     2200,
+     497
+    ]
+   ],
+   "speed_px_s": 170,
+   "speed_jitter": [
+    0.85,
+    1.15
+   ],
+   "scale": 0.38,
+   "bob_px": 0.5,
+   "bob_hz": 2.2,
+   "direction": "random",
+   "every_s": [
+    10,
+    26
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "mask": "S21/natural/street_mask.webp"
+  },
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    20,
+    120
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "x_span": [
+    0,
+    1920
+   ],
+   "alpha": 0.7,
+   "mask": "S21/natural/sky_mask.webp"
+  }
+ ]
+}

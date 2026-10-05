@@ -1,0 +1,16 @@
+# S63 Fyzikálny kabinet v roku 1982 (1982) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S15 v2, 1995)
+# Image 1 = the accepted S15 natural master, image 2 = the same with the S63 blocking drawn on it.
+# location_families 1982: ceramic parts, a period globe, the hinge wear just beginning.
+# art_brief 1982: same camera as S15/S54. The same cupboard, a newer globe with the period map, an empty work table for the caretaker's service work. The ceramic return bridge is prepared here from ordinary parts. Early December: bare branches, thin snow here and there, coats outside.
+Era changes: the same physics cabinet 13 years earlier, on Tuesday 7 December 1982 at about two in the afternoon. The building is only 8 years old: the timber cupboards and the doors look newer, with fresh varnish; the leftmost cupboard's left hinge strip shows only the very first small scuff. Outside the window an overcast early-December day: grey sky, the young forecourt maples are completely bare (bare branches only), thin patches of snow on the lawn and the pavement. No sunshine: no sun patches on the floor or walls and no rainbow; the room is lit evenly by the cool grey daylight and the ceiling fluorescent tube, which is switched on. The glass prism, the ZVON drawing and the chronicle are gone; on the wall where the drawing hung, a plain period chart of the electromagnetic spectrum with coloured bands (no readable text). The walls keep the same plain soft yellow paint and dado. On the bench the two power supplies are older grey period boxes with big round meters, switched off and unplugged, their plugs lying beside them. Everything built - walls, doors, cupboards, the window, the radiator, the white bench - stays exactly where it is; the small book stand on the bench is gone.
+
+Interactive props of 1982:
+1. {rect:S63.workbench}: on the bench a flat wooden service board with three different connector sockets (one round, one square, one triangular) screwed onto it, and beside it neatly laid out tools: a screwdriver, small pliers, a soldering iron (cold, unplugged) and a few small white ceramic insulator parts.
+2. {rect:S63.ambient 1}: the left hinge strip of the leftmost cupboard, almost new, with only a first tiny scuff in the varnish.
+3. {rect:S63.ambient 2}: a fairly new school globe on a wooden foot standing on the right end of the bench, showing a period political world map in pastel colours (no readable names).
+The door in the left wall stays {exit:S63.to_S59}.
+
+Walkable floor: {walk} stays the open grey-green linoleum floor with nothing standing on it.
+{npc_zones}
+
+Fiction rules: no logos and no brand names on the devices (no TESLA), no readable text (charts and labels show illegible marks, no digits), no people, no animals.

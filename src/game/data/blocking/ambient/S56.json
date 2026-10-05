@@ -1,0 +1,87 @@
+{
+  "room": "S56",
+  "notes": "Service window, 29 October 2020 (bg_natural/S56.webp): the yard trees beyond the corner swaying, leaves falling onto the yard and drifting onto the path, clouds over the yard, pigeons pecking on the yard asphalt.",
+  "layers": [
+    {
+      "id": "yard_trees",
+      "type": "sway",
+      "texture": "S56/natural/yard_trees.webp",
+      "anchor": 1.0,
+      "amp_px": 2.2,
+      "freq": 0.29,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "leaves_yard",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [1310, 250, 610, 300],
+      "rate": 0.35,
+      "size": [12, 19],
+      "land_y": [730, 880],
+      "rest_s": [3, 7]
+    },
+    {
+      "id": "leaves_path",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [1300, 400, 200, 150],
+      "rate": 0.07,
+      "size": [12, 19],
+      "land_y": [890, 1010],
+      "rest_s": [3, 7],
+      "speed_x": [-70, -30]
+    },
+    {
+      "id": "clouds",
+      "type": "clouds",
+      "textures": [
+        "common/cloud_00.webp",
+        "common/cloud_01.webp",
+        "common/cloud_02.webp",
+        "common/cloud_03.webp"
+      ],
+      "band": [30, 200],
+      "count": 3,
+      "speed_px_s": 5,
+      "scale": [0.14, 0.26],
+      "alpha": 0.65,
+      "mask": "S56/natural/sky_mask.webp",
+      "x_span": [1300, 1920]
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[1350, 770], [1880, 860]],
+      "scale": 0.17,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[2040, 60], [1600, -120]]
+    }
+  ]
+}

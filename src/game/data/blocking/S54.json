@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "room": "S54",
+  "status": "natural re-blocking, L_CABINET 2020 derived from the accepted S15 master v2 (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S15",
+  "note": "Same camera as S15 (L_CABINET): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 792 (200 px per metre), s(y) = (y - 352) / 663; cupboards, window, service bench, both doors identical. 29 October 2020: the cabinet reached by the approved separate service entrance; old teaching aids sorted for loan; the bench partly covered with laptops; Jana takes part by video call: JANA20's laptop sprite stands on top of the painted stack of closed laptops at the left end of the bench (DECISIONS item 7a, 1.7-2x real laptop size, explicit scale, sill_y 655 = the top of the laptop stack (the sprite's base is drawn in a tilted view, so its cut line sits ~12 px below the visible stack edge) (the painted open laptop there was removed in v4/v5 so only the sprite shows), feet = the floor point under it at y 880 for depth sorting). The 1982 service book lies open on the book stand where the 1995 chronicle lay. The right door (S16) is plain decor in 2020 (no exit). After Q9C (variant layer S54_refurbished_laptops, patch from master v3 = the v2 local fix re-composited with a wider box) a small wooden table with five refurbished laptops in a rack, yellow loan tags and power adapters stands in the back right corner; its front legs reach y ~860, so the walk area stops at y 866 in front of that corner in every state. The right door is decor (no S16 exit in 2020).",
+  "background": "bg_natural/S54.webp",
+  "walk_polygon": [
+    [
+      15,
+      982
+    ],
+    [
+      290,
+      830
+    ],
+    [
+      690,
+      830
+    ],
+    [
+      692,
+      922
+    ],
+    [
+      1222,
+      922
+    ],
+    [
+      1222,
+      830
+    ],
+    [
+      1395,
+      830
+    ],
+    [
+      1395,
+      866
+    ],
+    [
+      1700,
+      866
+    ],
+    [
+      1905,
+      988
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    830,
+    1015
+  ],
+  "actor_scale": [
+    0.72,
+    1.0
+  ],
+  "spawn": [
+    960,
+    968
+  ],
+  "hotspots": {
+    "S54.log": {
+      "rect": [
+        1050,
+        585,
+        160,
+        105
+      ],
+      "interaction_point": [
+        1150,
+        945
+      ],
+      "label_anchor": [
+        1130,
+        722
+      ],
+      "reason": "the old service log book from 1982 lying open on the small book stand on the right end of the bench"
+    },
+    "S54.ambient 1": {
+      "rect": [
+        256,
+        300,
+        80,
+        320
+      ],
+      "interaction_point": [
+        330,
+        860
+      ],
+      "label_anchor": [
+        296,
+        290
+      ],
+      "reason": "the left hinge strip of the leftmost cupboard with its old worn scuff (the fixed time mark across 1982/1995/2020)"
+    },
+    "S54.ambient 2": {
+      "rect": [
+        866,
+        590,
+        128,
+        105
+      ],
+      "interaction_point": [
+        930,
+        950
+      ],
+      "label_anchor": [
+        935,
+        580
+      ],
+      "reason": "an open laptop among the laptops being prepared for loan, on the bench right of Jana's call laptop"
+    },
+    "S54.JANA20": {
+      "rect": [
+        728,
+        525,
+        148,
+        117
+      ],
+      "interaction_point": [
+        800,
+        950
+      ],
+      "label_anchor": [
+        802,
+        515
+      ],
+      "reason": "Jana on a video call: her laptop sprite standing on the stack of closed laptops at the left end of the bench"
+    }
+  },
+  "npcs": {
+    "S54.JANA20": {
+      "variant": "laptop",
+      "feet": [
+        802,
+        880
+      ],
+      "scale": 0.78,
+      "z": "auto",
+      "reason": "docs/DECISIONS.md item 7a: the laptop on the bench (about 1.7-2x real size); after Q9C actors.json variants_after gives laptop_q9c",
+      "sill_y": 655
+    }
+  },
+  "exits": {
+    "S54.to_S53": {
+      "rect": [
+        55,
+        395,
+        135,
+        560
+      ],
+      "interaction_point": [
+        190,
+        935
+      ],
+      "label_anchor": [
+        205,
+        385
+      ],
+      "reason": "door in the left wall to the corridor and the entrance hall (same as S15.to_S13)"
+    }
+  },
+  "state_patches": [],
+  "anchors": {
+    "cupboard_left_hinge": [
+      284,
+      480
+    ],
+    "window": [
+      1390,
+      362
+    ],
+    "service_table": [
+      706,
+      695
+    ]
+  },
+  "family_base": "S15",
+  "variant_layers": {
+    "variants/S54_refurbished_laptops.webp": {
+      "texture": "variants_natural/S54_refurbished_laptops.webp",
+      "pos": [
+        1325,
+        565
+      ]
+    }
+  }
+}

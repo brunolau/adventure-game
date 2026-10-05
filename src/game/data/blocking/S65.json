@@ -1,0 +1,164 @@
+{
+  "version": 1,
+  "room": "S65",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1).",
+  "note": "Issue room inside the small single-storey service building at the east edge of the school grounds by the kindergarten and the M. Schneidra-Trnavskeho 1 block (register S65; invented interior, the window shows the real courtyard looking NW). Frontal camera ~2.3 m high facing the back wall, which spans the whole frame: horizon y 330, back-wall floor line y 740 (~180 px per metre), back-wall top / ceiling edge y 200, ceiling with two fluorescent fittings above. Perspective s(y) = (y - 330) / 685 (hero 1.7 m = 512 px at y 1015). Back wall left to right: the half-glazed entrance door (x 90-290, exit to S62), the red slogan banner above the grey steel shelving (x 330-1300), the round wall clock (centre ~1036,272), the window to the snowy courtyard (x 1360-1780, sill y 578). The wooden issue counter stands in the room in front of the shelves (x 400-1300, front face foot y 805, top surface y 582-600): Marta behind its middle (feet y 770, counter bust cut at the top's back edge y 582), the open inventory ledger on its left part, the stamp, ink pad and a glass of tea on its right part; the customer side in front of it is the walk area, with the passage to the door at the left.",
+  "background": "bg_natural/S65.webp",
+  "walk_polygon": [
+    [
+      40,
+      748
+    ],
+    [
+      380,
+      748
+    ],
+    [
+      380,
+      815
+    ],
+    [
+      1320,
+      815
+    ],
+    [
+      1320,
+      748
+    ],
+    [
+      1880,
+      748
+    ],
+    [
+      1880,
+      1015
+    ],
+    [
+      40,
+      1015
+    ]
+  ],
+  "walk_band": [
+    745,
+    1015
+  ],
+  "actor_scale": [
+    0.606,
+    1.0
+  ],
+  "spawn": [
+    1100,
+    920
+  ],
+  "hotspots": {
+    "S65.ambient 1": {
+      "rect": [
+        505,
+        546,
+        235,
+        62
+      ],
+      "interaction_point": [
+        622,
+        850
+      ],
+      "label_anchor": [
+        622,
+        536
+      ],
+      "reason": "the big open inventory ledger lying on the counter top at the left (painted x 517-730, y 560-600), a pen beside it"
+    },
+    "S65.ambient 2": {
+      "rect": [
+        996,
+        232,
+        80,
+        80
+      ],
+      "interaction_point": [
+        1036,
+        850
+      ],
+      "label_anchor": [
+        1036,
+        222
+      ],
+      "reason": "round wall clock on the back wall above the shelves (painted centre 1036,272)"
+    },
+    "S65.MARTA82": {
+      "rect": [
+        810,
+        420,
+        130,
+        162
+      ],
+      "interaction_point": [
+        875,
+        860
+      ],
+      "label_anchor": [
+        875,
+        405
+      ],
+      "reason": "Marta behind the issue counter at its free middle part between the ledger and the stamp; bust above the counter's back edge (y 582)"
+    }
+  },
+  "npcs": {
+    "S65.MARTA82": {
+      "variant": "behind_counter",
+      "feet": [
+        875,
+        770
+      ],
+      "scale": 0.642,
+      "sill_y": 582,
+      "z": "back",
+      "reason": "DECISIONS item 2: Marta behind the counter (counter bust); seen from 2.3 m the counter top surface (y 582-600) lies in front of her, so the cut is its back edge y 582 (measured on v3)"
+    }
+  },
+  "exits": {
+    "S65.to_S62": {
+      "rect": [
+        90,
+        362,
+        200,
+        380
+      ],
+      "interaction_point": [
+        190,
+        785
+      ],
+      "label_anchor": [
+        190,
+        352
+      ],
+      "reason": "the half-glazed entrance door in the back wall at the left, out to the courtyard and the shop"
+    }
+  },
+  "occluders": [
+    {
+      "id": "counter",
+      "polygon": [
+        [
+          400,
+          586
+        ],
+        [
+          1300,
+          586
+        ],
+        [
+          1300,
+          806
+        ],
+        [
+          400,
+          806
+        ]
+      ],
+      "baseline": 805,
+      "texture": null
+    }
+  ],
+  "state_patches": []
+}

@@ -1,0 +1,245 @@
+{
+  "room": "S63",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S15",
+  "from_version": 2,
+  "from_master": "art/masters/bg_natural/S15_v2.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1394698154,
+  "usd": 0.15,
+  "scope": "bg_natural/S63/",
+  "spend_log_asset": "bg_natural/S63/S63_v1_derive",
+  "started": "2026-10-05T10:46:09",
+  "prompt_file": "art/prompts/natural/S63.era.txt",
+  "blocking_file": "src/game/data/blocking/S63.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Fyzikálny kabinet in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'cupboard_left_hinge' stays exactly at x 284, y 480 (15 % from the left, 44 % from the top). The fixed landmark 'window' stays exactly at x 1390, y 362 (72 % from the left, 34 % from the top). The fixed landmark 'service_table' stays exactly at x 706, y 695 (37 % from the left, 64 % from the top).\n\nEra changes: the same physics cabinet 13 years earlier, on Tuesday 7 December 1982 at about two in the afternoon. The building is only 8 years old: the timber cupboards and the doors look newer, with fresh varnish; the leftmost cupboard's left hinge strip shows only the very first small scuff. Outside the window an overcast early-December day: grey sky, the young forecourt maples are completely bare (bare branches only), thin patches of snow on the lawn and the pavement. No sunshine: no sun patches on the floor or walls and no rainbow; the room is lit evenly by the cool grey daylight and the ceiling fluorescent tube, which is switched on. The glass prism, the ZVON drawing and the chronicle are gone; on the wall where the drawing hung, a plain period chart of the electromagnetic spectrum with coloured bands (no readable text). The walls keep the same plain soft yellow paint and dado. On the bench the two power supplies are older grey period boxes with big round meters, switched off and unplugged, their plugs lying beside them. Everything built - walls, doors, cupboards, the window, the radiator, the white bench - stays exactly where it is; the small book stand on the bench is gone.\n\nInteractive props of 1982:\n1. the box labelled 'Servisná doska' in image 2 (x 730-1030, y 600-695 of the 1920x1080 frame (38-54 % from the left, 56-64 % from the top)): on the bench a flat wooden service board with three different connector sockets (one round, one square, one triangular) screwed onto it, and beside it neatly laid out tools: a screwdriver, small pliers, a soldering iron (cold, unplugged) and a few small white ceramic insulator parts.\n2. the box labelled 'Skriňový pánt' in image 2 (x 256-336, y 300-620 of the 1920x1080 frame (13-18 % from the left, 28-57 % from the top)): the left hinge strip of the leftmost cupboard, almost new, with only a first tiny scuff in the varnish.\n3. the box labelled 'Glóbus' in image 2 (x 1060-1200, y 545-695 of the 1920x1080 frame (55-62 % from the left, 50-64 % from the top)): a fairly new school globe on a wooden foot standing on the right end of the bench, showing a period political world map in pastel colours (no readable names).\nThe door in the left wall stays the box labelled 'exit: Školská chodba v roku 1982' in image 2 (x 55-190, y 395-955 of the 1920x1080 frame (3-10 % from the left, 37-88 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 830-1015 of the 1920x1080 frame (1-99 % from the left, 77-94 % from the top) stays the open grey-green linoleum floor with nothing standing on it.\nThis room has no NPC zones.\n\nFiction rules: no logos and no brand names on the devices (no TESLA), no readable text (charts and labels show illegible marks, no digits), no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S15_v2.png (model geometry)",
+    "S15_v2.png + S63 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor cupboard_left_hinge": {
+        "at": [
+          284,
+          480
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.805,
+        "ok": true
+      },
+      "anchor window": {
+        "at": [
+          1390,
+          362
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.403,
+        "ok": true
+      },
+      "anchor service_table": {
+        "at": [
+          706,
+          695
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.653,
+        "ok": true
+      },
+      "exit S63.to_S59": {
+        "at": [
+          122.5,
+          675.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.897,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S63_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S63",
+    "status": "natural re-blocking, L_CABINET 1982 derived from the accepted S15 master v2 (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S15",
+    "note": "Same camera as S15 (L_CABINET): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 792 (200 px per metre), s(y) = (y - 352) / 663; cupboards, window, service bench, both doors identical. 7 December 1982: newer cupboards with the hinge wear just starting, a newer globe with the period map on the book stand's place on the bench, the empty service board (three shaped connectors, tools laid out, supply unplugged) on the bench for the caretaker's work. The right door (S16) is plain decor (no exit in 1982).",
+    "background": "bg_natural/S63.webp",
+    "walk_polygon": [
+      [
+        15,
+        982
+      ],
+      [
+        290,
+        830
+      ],
+      [
+        690,
+        830
+      ],
+      [
+        692,
+        922
+      ],
+      [
+        1222,
+        922
+      ],
+      [
+        1222,
+        830
+      ],
+      [
+        1610,
+        830
+      ],
+      [
+        1905,
+        988
+      ],
+      [
+        1905,
+        1015
+      ],
+      [
+        15,
+        1015
+      ]
+    ],
+    "walk_band": [
+      830,
+      1015
+    ],
+    "actor_scale": [
+      0.72,
+      1.0
+    ],
+    "spawn": [
+      960,
+      968
+    ],
+    "hotspots": {
+      "S63.workbench": {
+        "rect": [
+          730,
+          600,
+          300,
+          95
+        ],
+        "interaction_point": [
+          880,
+          948
+        ],
+        "label_anchor": [
+          880,
+          590
+        ],
+        "reason": "the service board on the bench: a wooden board with three differently shaped connectors, tools laid out beside it, the bench supply unplugged"
+      },
+      "S63.ambient 1": {
+        "rect": [
+          256,
+          300,
+          80,
+          320
+        ],
+        "interaction_point": [
+          330,
+          860
+        ],
+        "label_anchor": [
+          296,
+          290
+        ],
+        "reason": "the left hinge of the leftmost cupboard where the scuff is just starting"
+      },
+      "S63.ambient 2": {
+        "rect": [
+          1060,
+          545,
+          140,
+          150
+        ],
+        "interaction_point": [
+          1130,
+          948
+        ],
+        "label_anchor": [
+          1130,
+          535
+        ],
+        "reason": "a newer school globe with the period political map on the right end of the bench"
+      }
+    },
+    "npcs": {},
+    "exits": {
+      "S63.to_S59": {
+        "rect": [
+          55,
+          395,
+          135,
+          560
+        ],
+        "interaction_point": [
+          190,
+          935
+        ],
+        "label_anchor": [
+          205,
+          385
+        ],
+        "reason": "door in the left wall to the corridor and the entrance hall (same as S15.to_S13)"
+      }
+    },
+    "state_patches": [],
+    "anchors": {
+      "cupboard_left_hinge": [
+        284,
+        480
+      ],
+      "window": [
+        1390,
+        362
+      ],
+      "service_table": [
+        706,
+        695
+      ]
+    },
+    "family_base": "S15"
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S63.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:46:49"
+  }
+}

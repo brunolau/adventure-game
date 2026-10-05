@@ -1,0 +1,24 @@
+# S37 Park pri kastieli (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S37.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S37.sketch.json (camera ~1.65 m on the lawn NNW of the manor, horizon y 520).
+# Style: the accepted S32 painting of the same village and day.
+#refs: art/source/rooms/S37/manor_garden_facade_plepo_2008.jpg ; art/source/rooms/S37/manor_park_lawn_zikova_2007.jpg ; art/source/rooms/S37/manor_tower_park_lamp_taz666_2013.jpg
+#style: art/masters/bg_natural/S32_v1.png
+Place: the park of the manor (kastiel) in Ivanka pri Dunaji, Slovakia, in 1960, looking across the open lawn at the manor's park facade. Images 2 and 3 are the real facade: a long three-storey left block with a crenellated parapet and rows of rectangular windows, a central baroque bay with a curved gable, an oval window and a tall arched window, a middle section with a wrought-iron balcony, a crenellated right block with round and pointed-arch windows above an open arcade of three arches, and the tall slim tower with a green copper dome and a spire; the ground floor is pink, the upper floors cream-white; the slender spire of the village church rises behind the pines to the right of the tower. Image 4 shows an ornate cast-iron park candelabrum of the park. Paint the manor exactly like this, seen from far across the lawn, as it was in 1960: under agricultural administration since 1948, so the plaster is slightly worn and the lawn edges are a little unkempt; no parked cars, no modern signs.
+
+Brief: the manor and its park as the real geographic inspiration; Vera, a young technical draughtswoman, will sit on a park bench (her bench is part of her character sprite); leaves, a bird water bowl. A sunny late afternoon on 6 June 1960, warm low sunlight from the left lighting the facade, long soft tree shadows on the lawn.
+
+Camera: standing on the lawn about 1.65 m high, looking straight at the facade, which runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~520. Keep this exact geometry from the sketch: the manor stands on the far side of the lawn (its ground floor meets the lawn at y 556), its facade spans x 540-1360, the parapet is at y ~225, the tower top at y ~20; the lawn fills everything below y 556; a gravel path crosses the front of the lawn at y ~830-930.
+
+What the sketch blocks are: the sky; the manor's park facade as described; the church tower with a clock and a slender dark spire behind the trees on the right; a slim conifer beside the manor; big old deciduous park trees on the left with one trunk on the far side of the lawn; dark pines and spruces on the right; an ornate cast-iron park candelabrum standing on the lawn at the left; the open lawn; the gravel path in front.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S37.bird}: a shallow round stone water bowl for birds lying on the grass, empty and dry. Paint NO bird here: the pigeon is a separate animated sprite; only the bowl on the grass.
+2. {rect:S37.ambient 1}: an empty old park bench with wooden slats and dark cast-iron legs, standing on the grass on the right, facing the camera.
+3. {rect:S37.ambient 2}: the manor's park facade with its tower, as described above.
+The gravel path leaves the park out of the left edge ({exit:S37.to_S32}) and out of the right edge through the pines ({exit:S37.to_S38}).
+
+Walkable floor: {walk} is the open lawn and the gravel path - flat ground with no kerb, no step, no hedge and nothing standing on it: no benches, no lamps, no statues, no flower beds, no stones. Only grass, gravel, light and tree shadows.
+{npc_zones}
+
+Fiction rules: no plaques, no institutional signs, no coats of arms with readable text, no posters, no slogans, no red stars, no cars, no people, no animals and no birds anywhere in the picture.

@@ -1,0 +1,208 @@
+{
+ "room": "S02",
+ "notes": "Natural S02 ambient (bg_natural/S02.webp): wind in the yellow birch and the orange maple, leaves falling from both onto the street, the courier van's amber hazard light blinking at its open rear (ambience: the van reversing), a cat walking along the left neighbour's fence now and then, clouds drifting behind the houses (sky mask), birds crossing. Cut-outs: art/ambient/natural/S02.cuts.json -> assets/ambient/S02/natural/.",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    20,
+    150
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "alpha": 0.45,
+   "mask": "S02/natural/sky_mask.webp"
+  },
+  {
+   "id": "birch",
+   "type": "sway",
+   "texture": "S02/natural/birch.webp",
+   "anchor": 1.0,
+   "amp_px": 2.6,
+   "freq": 0.28,
+   "wavelength_px": 160,
+   "flutter_px": 0.9
+  },
+  {
+   "id": "maple",
+   "type": "sway",
+   "texture": "S02/natural/maple.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.25,
+   "wavelength_px": 170,
+   "flutter_px": 0.7,
+   "gust": 0.5
+  },
+  {
+   "id": "leaves_birch",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    150,
+    60,
+    290,
+    330
+   ],
+   "rate": 0.35,
+   "size": [
+    11,
+    17
+   ],
+   "speed_x": [
+    10,
+    40
+   ],
+   "land_y": [
+    760,
+    1000
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "leaves_maple",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_03.webp",
+    "common/leaf_15.webp"
+   ],
+   "emit_rect": [
+    1590,
+    40,
+    320,
+    300
+   ],
+   "rate": 0.35,
+   "size": [
+    13,
+    20
+   ],
+   "speed_x": [
+    -35,
+    5
+   ],
+   "land_y": [
+    800,
+    1000
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "van_hazard",
+   "type": "flicker",
+   "mode": "blink",
+   "rect": [
+    1722,
+    585,
+    46,
+    80
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffb030",
+   "min": 0.0,
+   "max": 0.7,
+   "period_s": 1.1,
+   "duty": 0.5
+  },
+  {
+   "id": "cat_fence",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     -60,
+     505
+    ],
+    [
+     430,
+     505
+    ]
+   ],
+   "speed_px_s": 55,
+   "scale": 0.27,
+   "faces": "right",
+   "fade_px": 40,
+   "every_s": [
+    45,
+    80
+   ],
+   "start_s": [
+    10,
+    20
+   ]
+  },
+  {
+   "id": "birds",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     90
+    ],
+    [
+     900,
+     50
+    ],
+    [
+     2000,
+     80
+    ]
+   ],
+   "speed_px_s": 240,
+   "scale": 0.1,
+   "flock": 3,
+   "flock_spread": [
+    60,
+    25
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    6,
+    14
+   ]
+  }
+ ]
+}

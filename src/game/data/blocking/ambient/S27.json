@@ -1,0 +1,93 @@
+{
+ "room": "S27",
+ "notes": "Natural S27: dust dancing in the beam from the high window, the amplifier's VU meters jumping to the music, a cat walking past outside the basement window, the beam brightening and dimming as clouds pass.",
+ "layers": [
+  {
+   "id": "beam_dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    790,
+    300,
+    420,
+    470
+   ],
+   "count": 60,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.65
+   ],
+   "color": "#fff4d6"
+  },
+  {
+   "id": "vu_meters",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1160,
+    510,
+    115,
+    36
+   ],
+   "color": "#ffcf70",
+   "min": 0.15,
+   "max": 0.6,
+   "period_s": 0.18
+  },
+  {
+   "id": "cat_window",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     1100,
+     318
+    ],
+    [
+     820,
+     318
+    ]
+   ],
+   "speed_px_s": 40,
+   "scale": 0.16,
+   "faces": "right",
+   "fade_px": 20,
+   "every_s": [
+    30,
+    60
+   ],
+   "start_s": [
+    4,
+    10
+   ],
+   "clip": [
+    858,
+    230,
+    210,
+    96
+   ]
+  },
+  {
+   "id": "beam_clouds",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1000,
+    560
+   ],
+   "size": [
+    460,
+    520
+   ],
+   "color": "#fff3d0",
+   "min": 0.0,
+   "max": 0.12,
+   "period_s": 9.0
+  }
+ ]
+}

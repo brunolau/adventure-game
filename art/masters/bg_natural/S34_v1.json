@@ -1,0 +1,756 @@
+{
+  "room": "S34",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 647312696,
+  "usd": 0.15,
+  "started": "2026-10-05T10:40:56",
+  "spend_log_asset": "bg_natural/S34/S34_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S34.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the small culture hall of the village of Ivanka pri Dunaji, Slovakia, in 1960 - an invented hall of the real type of a village community house. Image 2 is a real low plank stage of the period (horizontal boards on the front, a wooden step box in the middle); image 3 shows the plain plastered side wall of a small hall stage with simple wall lamps and the edge of a heavy curtain. Paint a modest village hall of 1960 from these: plain lime-washed walls, an oil-painted brown dado, worn wooden floorboards, a low plank stage under a plain proscenium. No 1970s spotlights, no loudspeakers, no banners or posters with text.\n\nBrief: an empty hall before a rehearsal of the amateur theatre: a tiny stage, a scenery flat held by a table clamp whose screw is loose (the flat stands on the floor, nobody is in danger); the costume maker Lida and the amateur actor Rudo will stand here. 6 June 1960, afternoon: the simple wall lamps are lit, warm daylight falls in through the half-open door on the right, a few dust motes in the air.\n\nCamera: standing on the hall floor about 1.7 m high, facing the stage end of the hall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~460. Keep this exact geometry from the sketch: the front of the low plank stage stands on the hall floor at y 720 from x 300 to x 1500, its front edge (the stage floor) is at y 607; the proscenium opening spans x 380-1420 from the stage floor up to y ~270; the forest flat at the front left stands with its bottom on the floor at y ~800; the door on the right meets the floor at y 720.\n\nWhat the sketch blocks are, left to right: a stack of folding wooden chairs against the left wall; the forest scenery flat - a painted canvas with stylised green trees on a light wooden frame - standing upright with its bottom on the floor; a plain wooden work table to its right with a sewing box and a folded costume on it; an iron hand clamp joining the flat's frame to the table's edge; a simple glass wall lamp on each side of the proscenium; the plain plastered proscenium; a heavy dark red curtain drawn open to both sides with a valance on top; a plain dark cloth backdrop at the back of the dim stage; the plank stage with a wooden step box in front of its middle; a black felt hat with a red ribbon lying on the stage's front edge on the right; the panelled double door to the street on the right of the end wall with one leaf ajar and bright daylight in the gap; the worn wooden floorboards of the hall.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 392-502, y 604-720 of the 1920x1080 frame (20-26 % from the left, 56-67 % from the top): an old iron hand table clamp (C-clamp with a T-handle screw) clamping the wooden frame of the flat to the edge of the table, its screw visibly loosened.\n2. the block of the layout sketch at x 64-388, y 434-800 of the 1920x1080 frame (3-20 % from the left, 40-74 % from the top): the forest scenery flat: a canvas painted with simple stylised green trees and bushes, stretched on a light wooden frame, standing on the floor.\n3. the block of the layout sketch at x 1328-1484, y 548-622 of the 1920x1080 frame (69-77 % from the left, 51-58 % from the top): a black felt village mayor's hat with a broad brim and a red ribbon, lying on the front edge of the stage.\nThe double door on the right is the area of the layout sketch at x 1630-1800, y 430-720 of the 1920x1080 frame (85-94 % from the left, 40-67 % from the top).\n\nWalkable floor: the band at x 20-1900, y 728-1015 of the 1920x1080 frame (1-99 % from the left, 67-94 % from the top) is the worn wooden floorboards of the hall - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no props, no boxes, no cables. Only light, shadows and the board joints.\nNPC zone at x 745-880, y 488-850 of the 1920x1080 frame (39-46 % from the left, 45-79 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 850. NPC zone at x 1075-1215, y 489-840 of the 1920x1080 frame (56-63 % from the left, 45-78 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 840.\n\nFiction rules: no real ensemble, play or event; no banners, posters or programmes with text, no slogans, no red stars, no portraits, no emblems. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S34_sketch.png (rendered from art/prompts/natural/S34.sketch.json, model geometry)",
+    "art/prompts/natural/S34_ref_plank_stage_1948_crop.jpg",
+    "art/prompts/natural/S34_ref_wall_lamp_curtain_1976_crop.jpg",
+    "art/masters/bg_natural/S36_v2.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S34 natural blocking (src/game/data/blocking/S34.json): village culture hall before rehearsal, frontal camera ~1.7 m, horizon y 460, s(y) = (y - 460) / 555; low plank stage across the end wall (front foot y 720, front edge y 607), forest flat clamped to a work table front left (flat foot y ~800), hat on the stage edge right, door right.",
+    "background": "#e6dcc4",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          200
+        ],
+        "fill": "#e2d8c4",
+        "note": "plain plastered ceiling with a wooden beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          180,
+          1920,
+          24
+        ],
+        "fill": "#a88a62",
+        "note": "wooden ceiling beam / cornice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          204,
+          1920,
+          516
+        ],
+        "fill": "#e6dcc4",
+        "note": "end wall of the hall: plain lime-washed plaster, pale ochre"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          640,
+          1920,
+          80
+        ],
+        "fill": "#9a7a56",
+        "note": "oil-painted brown dado"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          232,
+          1120,
+          40
+        ],
+        "fill": "#d2c4a6",
+        "note": "simple plastered proscenium arch top (no lettering)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          232,
+          40,
+          380
+        ],
+        "fill": "#d2c4a6",
+        "note": "proscenium side"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1420,
+          232,
+          40,
+          380
+        ],
+        "fill": "#d2c4a6",
+        "note": "proscenium side"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          272,
+          1040,
+          300
+        ],
+        "fill": "#5c4a3c",
+        "note": "dim stage behind the opening"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            380,
+            272
+          ],
+          [
+            620,
+            272
+          ],
+          [
+            580,
+            400
+          ],
+          [
+            560,
+            575
+          ],
+          [
+            380,
+            575
+          ]
+        ],
+        "fill": "#8a2e2a",
+        "note": "heavy dark red curtain drawn open to the left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1420,
+            272
+          ],
+          [
+            1200,
+            272
+          ],
+          [
+            1240,
+            400
+          ],
+          [
+            1260,
+            575
+          ],
+          [
+            1420,
+            575
+          ]
+        ],
+        "fill": "#8a2e2a",
+        "note": "curtain drawn open to the right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          272,
+          1040,
+          34
+        ],
+        "fill": "#7a2826",
+        "note": "curtain valance"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          300,
+          580,
+          260
+        ],
+        "fill": "#4e5a48",
+        "note": "plain dark cloth backdrop at the back of the stage"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            607
+          ],
+          [
+            1500,
+            607
+          ],
+          [
+            1470,
+            575
+          ],
+          [
+            330,
+            575
+          ]
+        ],
+        "fill": "#b08a5c",
+        "note": "plank stage floor seen from above"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          607,
+          1200,
+          113
+        ],
+        "fill": "#8a6a46",
+        "note": "front of the low plank stage (horizontal boards), 0.8 m high"
+      },
+      {
+        "type": "bars",
+        "box": [
+          300,
+          615,
+          1200,
+          105
+        ],
+        "step": 22,
+        "bar": 4,
+        "fill": "#6e5236",
+        "vertical": false,
+        "note": "board joints"
+      },
+      {
+        "type": "rect",
+        "box": [
+          905,
+          650,
+          150,
+          70
+        ],
+        "fill": "#9a7a50",
+        "note": "wooden step box in front of the stage"
+      },
+      {
+        "type": "rect",
+        "box": [
+          905,
+          620,
+          150,
+          32
+        ],
+        "fill": "#a6845a",
+        "note": "upper step"
+      },
+      {
+        "type": "rect",
+        "box": [
+          246,
+          360,
+          8,
+          40
+        ],
+        "fill": "#3a3634",
+        "note": "wall bracket"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          224,
+          330,
+          52,
+          40
+        ],
+        "fill": "#f4e6c0",
+        "note": "simple glass wall lamp, lit (1950s, no spotlights)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1546,
+          360,
+          8,
+          40
+        ],
+        "fill": "#3a3634",
+        "note": "wall bracket"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1524,
+          330,
+          52,
+          40
+        ],
+        "fill": "#f4e6c0",
+        "note": "simple glass wall lamp, lit (1950s, no spotlights)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1630,
+          430,
+          170,
+          290
+        ],
+        "fill": "#6e4e32",
+        "note": "panelled double door to the street (exit), one leaf ajar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1720,
+          440,
+          70,
+          270
+        ],
+        "fill": "#f0e2b8",
+        "note": "bright daylight in the open leaf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1620,
+          420,
+          190,
+          12
+        ],
+        "fill": "#5a3e26"
+      },
+      {
+        "type": "rect",
+        "box": [
+          20,
+          560,
+          110,
+          200
+        ],
+        "fill": "#8a6440",
+        "note": "stack of folding wooden chairs against the left wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          720,
+          1920,
+          360
+        ],
+        "fill": "#a88458",
+        "note": "worn wooden floorboards of the hall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          440,
+          360,
+          360
+        ],
+        "fill": "#4f7a40",
+        "note": "forest scenery flat: painted canvas with stylised trees on a wooden frame, standing with its bottom on the floor"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          90,
+          460,
+          150,
+          180
+        ],
+        "fill": "#3f6a34"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          220,
+          470,
+          170,
+          170
+        ],
+        "fill": "#5f8a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          600,
+          26,
+          190
+        ],
+        "fill": "#6a4a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          610,
+          26,
+          180
+        ],
+        "fill": "#6a4a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          64,
+          434,
+          372,
+          12
+        ],
+        "fill": "#b08a5c",
+        "note": "flat frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          424,
+          434,
+          12,
+          372
+        ],
+        "fill": "#b08a5c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          64,
+          434,
+          12,
+          372
+        ],
+        "fill": "#b08a5c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          436,
+          655,
+          280,
+          18
+        ],
+        "fill": "#9a7450",
+        "note": "plain wooden work table, top y 662"
+      },
+      {
+        "type": "rect",
+        "box": [
+          446,
+          673,
+          16,
+          140
+        ],
+        "fill": "#6e5236"
+      },
+      {
+        "type": "rect",
+        "box": [
+          690,
+          673,
+          16,
+          140
+        ],
+        "fill": "#6e5236"
+      },
+      {
+        "type": "rect",
+        "box": [
+          418,
+          628,
+          42,
+          18
+        ],
+        "fill": "#4a4e52",
+        "note": "hand table clamp (iron C-clamp) holding the flat frame to the table edge, its screw loosened"
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          646,
+          18,
+          46
+        ],
+        "fill": "#4a4e52"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            438,
+            692
+          ],
+          [
+            470,
+            706
+          ]
+        ],
+        "color": "#4a4e52",
+        "width": 6,
+        "note": "clamp screw handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          640,
+          120,
+          18
+        ],
+        "fill": "#d8cdb6",
+        "note": "sewing box and a folded costume on the table"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1340,
+          590,
+          130,
+          26
+        ],
+        "fill": "#2a2624",
+        "note": "brim of a black felt mayor's hat lying on the stage edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1368,
+          562,
+          74,
+          38
+        ],
+        "fill": "#2a2624",
+        "note": "crown of the hat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1368,
+          588,
+          74,
+          8
+        ],
+        "fill": "#7a2826",
+        "note": "red ribbon"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S34.json",
+  "blocking": {
+    "version": 1,
+    "room": "S34",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Invented village culture hall of Ivanka pri Dunaji (exterior anchor Maticny dom, Moyzesova), June 1960, before a rehearsal of the amateur theatre. Frontal camera ~1.7 m high facing the stage end of the empty hall: horizon y 460, perspective s(y) = (y - 460) / 555 (hero 1.7 m = 512 px at y 1015; ~141 px per metre at the stage front, foot y 720). A low plank stage (0.8 m, front edge y 607) spans the end wall under a plain proscenium with the red curtain drawn open; a step box leads up. At the front left the forest scenery flat stands with its bottom on the floor (foot y ~800, safe) and is held to a work table by a hand table clamp whose screw is loose; the costume maker's sewing box lies on the table. Rudo's mayor hat lies on the stage edge on the right. The door to the street is on the right of the end wall. Lida stands by the table, Rudo in front of the stage. The walk polygon is the hall floor in front of the stage, the flat and the table, with a lobe to the door.",
+    "background": "bg_natural/S34.webp",
+    "walk_polygon": [
+      [
+        30,
+        818
+      ],
+      [
+        720,
+        818
+      ],
+      [
+        720,
+        740
+      ],
+      [
+        1600,
+        740
+      ],
+      [
+        1610,
+        728
+      ],
+      [
+        1820,
+        728
+      ],
+      [
+        1830,
+        740
+      ],
+      [
+        1900,
+        740
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      728,
+      1015
+    ],
+    "actor_scale": [
+      0.483,
+      1.0
+    ],
+    "spawn": [
+      960,
+      920
+    ],
+    "hotspots": {
+      "S34.clamp": {
+        "rect": [
+          392,
+          604,
+          110,
+          116
+        ],
+        "interaction_point": [
+          470,
+          860
+        ],
+        "label_anchor": [
+          447,
+          594
+        ],
+        "reason": "iron hand table clamp holding the forest flat's frame to the edge of the work table, screw loosened"
+      },
+      "S34.ambient 1": {
+        "rect": [
+          64,
+          434,
+          324,
+          366
+        ],
+        "interaction_point": [
+          230,
+          860
+        ],
+        "label_anchor": [
+          226,
+          424
+        ],
+        "reason": "the forest scenery flat (painted canvas on a wooden frame) standing on the floor at the front left"
+      },
+      "S34.ambient 2": {
+        "rect": [
+          1328,
+          548,
+          156,
+          74
+        ],
+        "interaction_point": [
+          1405,
+          790
+        ],
+        "label_anchor": [
+          1405,
+          538
+        ],
+        "reason": "Rudo's black felt mayor hat lying on the front edge of the stage"
+      },
+      "S34.LIDA": {
+        "rect": [
+          745,
+          488,
+          135,
+          362
+        ],
+        "interaction_point": [
+          700,
+          900
+        ],
+        "label_anchor": [
+          812,
+          478
+        ],
+        "reason": "Lida standing by the work table with the costume things, the flat on her left"
+      },
+      "S34.RUDO": {
+        "rect": [
+          1075,
+          489,
+          140,
+          351
+        ],
+        "interaction_point": [
+          1145,
+          900
+        ],
+        "label_anchor": [
+          1145,
+          479
+        ],
+        "reason": "Rudo standing in front of the stage holding his dramatic pause"
+      }
+    },
+    "npcs": {
+      "S34.LIDA": {
+        "variant": "standing",
+        "feet": [
+          812,
+          850
+        ],
+        "facing": "right",
+        "reason": "standing (LIDA posture standing) on the hall floor; scale from the room perspective (0.70)"
+      },
+      "S34.RUDO": {
+        "variant": "standing",
+        "feet": [
+          1145,
+          840
+        ],
+        "facing": "left",
+        "reason": "standing (RUDO posture standing) in front of the stage; scale from the room perspective (0.68)"
+      }
+    },
+    "exits": {
+      "S34.to_S32": {
+        "rect": [
+          1630,
+          430,
+          170,
+          290
+        ],
+        "interaction_point": [
+          1715,
+          770
+        ],
+        "label_anchor": [
+          1715,
+          420
+        ],
+        "reason": "the panelled double door on the right of the end wall, one leaf ajar, daylight from the street"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S34.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:41:35"
+  }
+}

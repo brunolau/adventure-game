@@ -1,0 +1,13 @@
+{
+  "room": "S39",
+  "notes": "Natural S39 ambient (bg_natural/S39.webp): the brass rods of the table resonator shimmer with a slow golden pulse (the brief's soft metallic chord), the two globe lamps and the green desk lamp glow and flicker faintly, dust motes drift in the daylight from the open door, and the reeds outside the window and the door sway in the wind.",
+  "layers": [
+    { "id": "window_reeds", "type": "sway", "texture": "S39/natural/window_reeds.webp", "anchor": 1.0, "amp_px": 1.6, "freq": 0.34, "wavelength_px": 60, "flutter_px": 0.6 },
+    { "id": "door_grass", "type": "sway", "texture": "S39/natural/door_grass.webp", "anchor": 1.0, "amp_px": 1.4, "freq": 0.36, "wavelength_px": 60, "flutter_px": 0.5 },
+    { "id": "resonator_hum", "type": "flicker", "mode": "pulse", "rect": [835, 430, 240, 150], "color": "#ffd890", "min": 0.0, "max": 0.14, "period_s": 3.4 },
+    { "id": "globe_left", "type": "flicker", "mode": "noise", "pos": [640, 180], "size": [200, 200], "color": "#fff0c8", "min": 0.12, "max": 0.24, "period_s": 0.9 },
+    { "id": "globe_right", "type": "flicker", "mode": "noise", "pos": [1280, 180], "size": [200, 200], "color": "#fff0c8", "min": 0.12, "max": 0.24, "period_s": 1.1 },
+    { "id": "desk_lamp", "type": "flicker", "mode": "noise", "pos": [690, 515], "size": [170, 120], "color": "#ffe2a0", "min": 0.14, "max": 0.26, "period_s": 0.8 },
+    { "id": "dust_door", "type": "particles", "preset": "dust", "emit_rect": [100, 300, 700, 520], "count": 34, "size": [3.5, 7.5], "alpha_range": [0.25, 0.75], "color": "#fff0c4" }
+  ]
+}

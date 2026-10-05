@@ -1,0 +1,26 @@
+# S36 Otova mechanicka dielna (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S36.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S36.sketch.json (frontal workshop, horizon y 470, back wall foot y 720).
+# Refs: two crops of Fortepan type references (S36_ref_*_crop.jpg: the 1968 file rack and bench without the
+# pin-up wall and the person; the c.1900 lathe and flywheel without the workers), the 1959 workshop and the real
+# courtyard of the outbuilding (window view). Style: the approved S09 painting cropped without its left door.
+#refs: art/source/rooms/S36/type_ref_workshop_1959_fortepan104022.jpg ; art/prompts/natural/S36_ref_file_rack_1968_crop.jpg ; art/prompts/natural/S36_ref_lathe_c1900_crop.jpg ; art/source/rooms/S35/manor_outbuildings_yard_taz666_2013.jpg
+#style: art/prompts/natural/S36_style_from_S09.png
+Place: a small workshop room inside the long single-storey service outbuilding of the manor in Ivanka pri Dunaji, Slovakia, in 1960 - an estate building of the 19th century with whitewashed walls and shallow brick vaults between steel beams. Images 2-4 are old photos of real workshops of the period (type references): image 2 a 1959 workshop with a belt wheel, ropes and benches; image 3 a wall rack full of files above a heavy workbench; image 4 a belt-driven lathe and cast-iron flywheel. Image 5 is the real courtyard of the outbuilding: a long building with a red-brown tiled roof and eyebrow dormers - that is what the windows look out on. Paint Oto's workshop from these real details: tidy, worn, practical, a civil repair workshop.
+
+Brief: Oto Bielik's civil mechanical workshop: the lathe is stopped and covered with a cloth, mechanical clocks everywhere, a small table hand pump stands on a technical drawing. Nothing military. 6 June 1960, a sunny afternoon: warm sunlight falls through the two windows onto the bench and the floor, soft dust in the light.
+
+Camera: standing in the room about 1.8 m high, facing the back wall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~470. Keep this exact geometry from the sketch: the back wall meets the floor at y 720; the wall top meets the vaulted whitewashed ceiling at y ~306; the workbench top runs along the back wall at y 590-625 from x 380 to x 1250, its legs stand on the floor at y ~750; the covered lathe stands on the floor at the right, its feet at y ~800.
+
+What the sketch blocks are, left to right: an old plank door at the far left of the back wall standing ajar with bright daylight in the gap; a cast-iron bench vise at the left end of the bench; a small-paned wooden window showing the sunny courtyard and the tiled roof of the outbuilding; a wooden wall rack with a row of files and rasps; a second window with leaves of a tree and tiled roofs outside; a small brass table hand pump standing on a white technical drawing on the bench; a round mechanical wall clock with a pendulum case; a plain whitewashed wall section; a patch of bare red brick where the plaster fell off; a line-shaft pulley under the ceiling with a slack leather belt hanging down to the lathe; the lathe completely covered with a grey canvas cloth on the right; a low shelf under the bench with a crate and offcuts; the worn brick floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S36.ambient 1}: one long flat metal file with a wooden handle lying alone on the front edge of the workbench.
+2. {rect:S36.ambient 2}: four old mechanical alarm clocks of different sizes and colours (brass, red, blue-grey, black, with twin bells on top) standing in a row on the bench, each showing a different time.
+
+The open door at the far left is {exit:S36.to_S35}.
+
+Walkable floor: {walk} is the worn brick floor of the workshop - one continuous flat surface with no step, no rail, no edge and nothing standing on it: no stools, no buckets, no crates, no tools, no cables. Only sunlight patches, shadows and a little sawdust.
+{npc_zones}
+
+Fiction rules: a civil workshop of 1960 - no weapons, no uniforms, no military objects, no portraits, no pin-up pictures, no posters with text, no calendars with text, no brand names or logos on any machine or clock. Paper and the drawing show only illegible lines and scribbles, no digits, no letters. No people, no animals.

@@ -1,0 +1,136 @@
+{
+ "room": "S01",
+ "notes": "Natural S01 ambient (bg_natural/S01.webp): dust motes turning in the sunbeam from the open door, the wall-mounted fluorescent tube humming and stuttering now and then, the wall clock's red second hand ticking, the opened radio's valves glowing unsteadily, wind in the birch outside the window and in the two trees outside the door, a leaf now and then blowing in through the door onto the floor. Cut-outs: art/ambient/natural/S01.cuts.json -> assets/ambient/S01/natural/.",
+ "layers": [
+  {
+   "id": "door_trees",
+   "type": "sway",
+   "texture": "S01/natural/door_trees.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.3,
+   "wavelength_px": 100,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "window_birch",
+   "type": "sway",
+   "texture": "S01/natural/window_birch.webp",
+   "anchor": 1.0,
+   "amp_px": 1.2,
+   "freq": 0.32,
+   "wavelength_px": 70,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "leaves_in",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    930,
+    420,
+    450,
+    160
+   ],
+   "rate": 0.12,
+   "size": [
+    12,
+    18
+   ],
+   "speed_x": [
+    -20,
+    25
+   ],
+   "speed_y": [
+    45,
+    70
+   ],
+   "land_y": [
+    810,
+    1000
+   ],
+   "rest_s": [
+    5,
+    9
+   ]
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    820,
+    280,
+    700,
+    700
+   ],
+   "count": 40,
+   "size": [
+    4,
+    8.5
+   ],
+   "alpha_range": [
+    0.25,
+    0.75
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "tube",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "rect": [
+    360,
+    40,
+    330,
+    150
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff7e0",
+   "min": 0.0,
+   "max": 0.22,
+   "every_s": [
+    7,
+    20
+   ]
+  },
+  {
+   "id": "clock_seconds",
+   "type": "rotor",
+   "pivot": [
+    497,
+    431
+   ],
+   "length": 30,
+   "tail": 7,
+   "width": 1.6,
+   "color": "#a8321f",
+   "mode": "tick",
+   "period_s": 60
+  },
+  {
+   "id": "radio_valves",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    225,
+    665,
+    90,
+    60
+   ],
+   "color": "#ffb050",
+   "min": 0.12,
+   "max": 0.4,
+   "period_s": 0.4
+  }
+ ]
+}

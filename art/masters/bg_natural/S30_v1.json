@@ -1,0 +1,775 @@
+{
+  "room": "S30",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1174842053,
+  "usd": 0.15,
+  "started": "2026-10-05T10:39:23",
+  "spend_log_asset": "bg_natural/S30/S30_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S30.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Tyrsovo nabrezie, the real Petrzalka embankment of the Danube in Bratislava, as it was in 1995. Images 2-3 are photos of this real place: the riverside path with grass, the wide Danube, and across the river the castle hill with Bratislava castle (a big square palace with four corner towers and a red roof) above the Old Town, the tall slender spire of St Martin's cathedral, the old houses along the far embankment, and Most SNP on the left: the bridge deck with its single slanted pylon carrying the round saucer restaurant on top. Paint this view in 1995: no moored restaurant boat with brands at our bank, no modern riverside buildings of the 2000s across the river, no cranes, no billboards.\n\nBrief: an invented service shelter by the Danube with an isolated demo circuit, three mechanical number wheels, a stand for a measuring coil and a small table for a metronome; the water behind the railing. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, sparkling water, a blue sky with a few white clouds.\n\nCamera: standing on the riverside path, about 2.2 m high, looking straight across the river; the embankment railing runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the far bank at y 380; the river from y 380 to the railing; the green steel railing standing on y 700 with its top rail at y 528; a narrow grass strip y 700-740; the path from y 740 to the bottom edge; the canopy roof at y 280-320 on two posts standing on y 700; the workbench top at y 577 with its front legs on y 730.\n\nWhat the sketch blocks are, left to right: Most SNP with its slanted pylon and saucer top and its stay cables, the bridge deck spanning to the left; white clouds; a white Danube riverboat of the period on the river; the green castle hill with Bratislava castle; the spire of St Martin's cathedral; the old town houses along the far bank; the green steel embankment railing with posts and two rails in front of the water; the small open service canopy on the right: a sloping corrugated metal roof on two steel posts, under it a sturdy wooden workbench carrying the empty round coil holder on a short post, the isolated demo circuit (a wooden board with insulated wires, terminals and a small lamp) and a grey steel box with three big mechanical number wheels; the small round wooden metronome table standing left of the canopy; the asphalt path.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1110-1260, y 418-583 of the 1920x1080 frame (58-66 % from the left, 39-54 % from the top): an empty round steel holder ring with a small keyed notch, mounted upright on a short post on the workbench (no coil in it yet).\n2. the block of the layout sketch at x 885-1045, y 588-743 of the 1920x1080 frame (46-54 % from the left, 54-69 % from the top): a small round wooden table on one leg with a painted white circle mark on its top (empty - no metronome on it yet).\n3. the block of the layout sketch at x 1600-1760, y 470-580 of the 1920x1080 frame (83-92 % from the left, 44-54 % from the top): a grey steel box with three big mechanical number wheels side by side, each showing 0.\n4. the block of the layout sketch at x 395-770, y 375-505 of the 1920x1080 frame (21-40 % from the left, 35-47 % from the top): a white Danube passenger riverboat of the 1990s with a red funnel stripe sailing on the river (no name, no lettering).\n5. the block of the layout sketch at x 90-370, y 515-705 of the 1920x1080 frame (5-19 % from the left, 48-65 % from the top): a stretch of the green-painted steel embankment railing with the water behind it.\nThe path runs out of the left edge (the area of the layout sketch at x 0-60, y 758-1015 of the 1920x1080 frame (0-3 % from the left, 70-94 % from the top)).\n\nWalkable floor: the band at x 20-1900, y 748-1015 of the 1920x1080 frame (1-99 % from the left, 69-94 % from the top) is the open asphalt riverside path - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no benches, no bins, no bollards, no bicycles, no lamp posts. Only sunlight, soft shadows and a few cracks.\nThis room has no NPC zones.\n\nFiction rules: the service canopy, the demo circuit, the number wheels, the coil holder and the table are fictional props; no signs or lettering on them, no boat names, no restaurant signage, no brands, no people, no animals. The only digits in the picture are the three zeros on the number wheels.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S30_sketch.png (rendered from art/prompts/natural/S30.sketch.json, model geometry)",
+    "art/source/rooms/S30/tyrsovo-nabrezie_path_railing_castle-view_2008.jpg",
+    "art/source/rooms/S30/petrzalka-bank_view-across-danube_2008.jpg",
+    "src/game/assets/bg_natural/S19.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S30 natural: Danube embankment path, camera 2.2 m, horizon y 360, railing on y 700.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          380
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky with a few white clouds"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          200,
+          40,
+          520,
+          120
+        ],
+        "fill": "#eef2f6",
+        "note": "white cloud"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1300,
+          70,
+          600,
+          140
+        ],
+        "fill": "#eef2f6",
+        "note": "white cloud"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            820,
+            380
+          ],
+          [
+            900,
+            300
+          ],
+          [
+            980,
+            255
+          ],
+          [
+            1250,
+            245
+          ],
+          [
+            1330,
+            300
+          ],
+          [
+            1420,
+            360
+          ],
+          [
+            1440,
+            380
+          ]
+        ],
+        "fill": "#6e9346",
+        "note": "green castle hill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1010,
+          190,
+          200,
+          70
+        ],
+        "fill": "#e8dcc0",
+        "note": "Bratislava castle: a square white palace with a red roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1000,
+          172,
+          26,
+          88
+        ],
+        "fill": "#e8dcc0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1194,
+          172,
+          26,
+          88
+        ],
+        "fill": "#e8dcc0",
+        "note": "corner towers"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1010,
+            190
+          ],
+          [
+            1210,
+            190
+          ],
+          [
+            1190,
+            172
+          ],
+          [
+            1030,
+            172
+          ]
+        ],
+        "fill": "#b0503a",
+        "note": "castle roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1345,
+            330
+          ],
+          [
+            1375,
+            330
+          ],
+          [
+            1366,
+            210
+          ],
+          [
+            1360,
+            140
+          ],
+          [
+            1354,
+            210
+          ]
+        ],
+        "fill": "#8a8a7a",
+        "note": "spire of St Martin's cathedral"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          300,
+          140,
+          70
+        ],
+        "fill": "#c08060",
+        "note": "cathedral nave"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1430,
+          300,
+          490,
+          80
+        ],
+        "fill": "#e0d4b8",
+        "note": "old town buildings along the far embankment"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1440,
+          310,
+          470,
+          60
+        ],
+        "cols": 12,
+        "rows": 2,
+        "color": "#b8ac90",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          330,
+          860,
+          18
+        ],
+        "fill": "#5a5e60",
+        "note": "deck of Most SNP spanning the river"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          120,
+          26,
+          240
+        ],
+        "fill": "#4a4e50",
+        "note": "slanted pylon of Most SNP"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          30,
+          100,
+          110,
+          36
+        ],
+        "fill": "#4a4e50",
+        "note": "the round saucer restaurant on top of the pylon"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            96,
+            140
+          ],
+          [
+            700,
+            332
+          ]
+        ],
+        "color": "#4a4e50",
+        "width": 3,
+        "note": "bridge stay cables"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            96,
+            150
+          ],
+          [
+            500,
+            332
+          ]
+        ],
+        "color": "#4a4e50",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          1920,
+          320
+        ],
+        "fill": "#6f95a8",
+        "note": "the wide Danube, sunlit ripples"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          1920,
+          10
+        ],
+        "fill": "#8aa070",
+        "note": "far bank line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          420,
+          360,
+          64
+        ],
+        "fill": "#f2f0ea",
+        "note": "white Danube passenger riverboat of the period (no lettering)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          440,
+          396,
+          240,
+          28
+        ],
+        "fill": "#e8e6e0",
+        "note": "riverboat upper deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          580,
+          380,
+          26,
+          20
+        ],
+        "fill": "#c84a3a",
+        "note": "funnel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          484,
+          360,
+          14
+        ],
+        "fill": "#3a4a5a",
+        "note": "hull waterline"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          528,
+          1920,
+          10
+        ],
+        "fill": "#4f7262",
+        "note": "top rail of the green steel embankment railing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          598,
+          1920,
+          8
+        ],
+        "fill": "#4f7262",
+        "note": "middle rail"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          528,
+          1920,
+          172
+        ],
+        "step": 118,
+        "bar": 9,
+        "fill": "#4f7262",
+        "vertical": true,
+        "note": "railing posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          700,
+          1920,
+          40
+        ],
+        "fill": "#7fa253",
+        "note": "narrow grass strip along the railing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1090,
+          309,
+          14,
+          391
+        ],
+        "fill": "#5a5e60",
+        "note": "steel post of the service canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1800,
+          309,
+          14,
+          391
+        ],
+        "fill": "#5a5e60",
+        "note": "steel post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1060,
+            279
+          ],
+          [
+            1840,
+            279
+          ],
+          [
+            1860,
+            319
+          ],
+          [
+            1040,
+            319
+          ]
+        ],
+        "fill": "#9aa0a2",
+        "note": "sloping corrugated metal canopy roof"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1042,
+          279,
+          816,
+          40
+        ],
+        "step": 24,
+        "bar": 8,
+        "fill": "#7a8082",
+        "vertical": true,
+        "note": "corrugations"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1100,
+          573,
+          700,
+          18
+        ],
+        "fill": "#8a6a48",
+        "note": "sturdy wooden workbench under the canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          591,
+          12,
+          139
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1780,
+          591,
+          12,
+          139
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1330,
+          523,
+          220,
+          50
+        ],
+        "fill": "#c8b080",
+        "note": "isolated demo circuit: a wooden board with insulated wires, terminals and a small lamp"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1176,
+          427,
+          12,
+          150
+        ],
+        "fill": "#5a5e60",
+        "note": "short post of the coil holder"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1122,
+          421,
+          120,
+          110
+        ],
+        "fill": "#7a8082",
+        "note": "empty round steel coil holder ring with a keyed notch"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1140,
+          437,
+          84,
+          78
+        ],
+        "fill": "#6f95a8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1610,
+          481,
+          140,
+          92
+        ],
+        "fill": "#6a7074",
+        "note": "grey steel box with three big mechanical number wheels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1624,
+          497,
+          34,
+          54
+        ],
+        "fill": "#efece4"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1663,
+          497,
+          34,
+          54
+        ],
+        "fill": "#efece4"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1702,
+          497,
+          34,
+          54
+        ],
+        "fill": "#efece4"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          900,
+          596,
+          130,
+          26
+        ],
+        "fill": "#a07a52",
+        "note": "small round wooden table top with a painted circle mark (the place for the metronome)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          940,
+          602,
+          50,
+          14
+        ],
+        "fill": "#e8e4d8",
+        "note": "painted circle mark"
+      },
+      {
+        "type": "rect",
+        "box": [
+          958,
+          618,
+          14,
+          120
+        ],
+        "fill": "#6a4a2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          920,
+          730,
+          90,
+          8
+        ],
+        "fill": "#6a4a2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          740,
+          1920,
+          340
+        ],
+        "fill": "#a8a49a",
+        "note": "asphalt riverside path"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S30.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Tyrsovo nabrezie, the Petrzalka Danube embankment, looking across the river to the castle hill: camera ~2.2 m on the riverside path, horizon y 360, the railing stands on y 700 (~156 px per metre). Perspective s(y) = (y - 360) / 655. A small open service canopy on the right with the workbench: the empty coil holder ring (coil after B20), the isolated demo circuit, the grey box with three number wheels (3-2-6 after B22); the small round metronome table stands left of the canopy (metronome after B21); the riverboat on the Danube; the railing in front of the water. The path continues out of the left edge to the underpass (S28).",
+    "background": "bg_natural/S30.webp",
+    "walk_polygon": [
+      [
+        20,
+        748
+      ],
+      [
+        1900,
+        748
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      748,
+      1015
+    ],
+    "actor_scale": [
+      0.59,
+      1.0
+    ],
+    "spawn": [
+      700,
+      880
+    ],
+    "hotspots": {
+      "S30.coil": {
+        "rect": [
+          1110,
+          418,
+          150,
+          165
+        ],
+        "interaction_point": [
+          1185,
+          840
+        ],
+        "label_anchor": [
+          1185,
+          410
+        ],
+        "reason": "empty round coil holder ring on its post at the left end of the workbench"
+      },
+      "S30.metro": {
+        "rect": [
+          885,
+          588,
+          160,
+          155
+        ],
+        "interaction_point": [
+          965,
+          840
+        ],
+        "label_anchor": [
+          965,
+          580
+        ],
+        "reason": "small round wooden table with the painted rhythm mark, left of the canopy"
+      },
+      "S30.dial": {
+        "rect": [
+          1600,
+          470,
+          160,
+          110
+        ],
+        "interaction_point": [
+          1680,
+          840
+        ],
+        "label_anchor": [
+          1680,
+          462
+        ],
+        "reason": "grey steel box with three mechanical number wheels on the workbench"
+      },
+      "S30.ambient 1": {
+        "rect": [
+          395,
+          375,
+          375,
+          130
+        ],
+        "interaction_point": [
+          580,
+          840
+        ],
+        "label_anchor": [
+          580,
+          367
+        ],
+        "reason": "white riverboat on the Danube"
+      },
+      "S30.ambient 2": {
+        "rect": [
+          90,
+          515,
+          280,
+          190
+        ],
+        "interaction_point": [
+          230,
+          840
+        ],
+        "label_anchor": [
+          230,
+          507
+        ],
+        "reason": "a stretch of the green steel embankment railing in front of the water"
+      }
+    },
+    "exits": {
+      "S30.to_S28": {
+        "rect": [
+          0,
+          758,
+          60,
+          257
+        ],
+        "interaction_point": [
+          70,
+          890
+        ],
+        "label_anchor": [
+          140,
+          746
+        ],
+        "reason": "the riverside path runs out of the left edge back to the underpass"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S30"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S30.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:40:01"
+  }
+}

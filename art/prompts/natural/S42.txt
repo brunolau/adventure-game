@@ -1,0 +1,24 @@
+# S42 Pred hotelom Grand Jasná (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S42.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S42.sketch.json (forecourt east of the hotel, view SSW to Chopok as in the 2017 photo).
+# Style reference: the accepted natural S41 (same day, same resort, same light).
+#refs: art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg ; art/source/rooms/S41/biela-put_centrum-jasna-hotel-grand_2015.jpg
+#style: src/game/assets/bg_natural/S41.webp
+Place: the paved forecourt on the east side of Hotel Grand Jasná in Jasná, Demänovská dolina, Low Tatras, Slovakia. Image 2 is a photo of this exact place: the forecourt path of warm grey concrete pavers, a low natural-stone wall with shrubs, young spruces, the big renovated hotel on the right (dark slate mansard roofs, light beige walls, timber balconies, a big triangular gable with a dark red-brown timber trim), the glass and steel structure of the Grand gondola station at the left edge, and the green Chopok ridge with its summit buildings in the centre. Image 3 shows the same hotel in its setting. Paint this real place.
+
+Brief: the exterior of the real Hotel Grand Jasná, based on its recognisable shape, in the near future (6 June 2035, grounded: it looks like today, a little newer). The fictional exhibition "Pamäť obyčajných dní" has a temporary info stand on the forecourt (a roll-up banner and a small leaflet table); its organiser Atlas is not the hotel operator. Bright early-summer midday in the mountains, the same light as image 5: deep blue sky, a few white clouds, crisp sun from the upper left, fresh green meadows on the ridge, dark spruces, no snow.
+
+Camera: standing on the forecourt, about 1.7 m high, looking south-south-west to Chopok; vertical lines stay vertical; the horizon is at y ~440. Keep this exact geometry from the sketch: the Chopok ridge between x 300 and 1360 (summit y ~230); the gondola station glass structure at the left edge (x 0-240, roof y 285, foot y 705); the low stone wall at y 655-712 with a gap for the footpath at x 640-765; the hotel's lower wing on the right (roof y 300-380, foot y ~694) and its main block with the big gable (gable tip y 45-60, foot y ~700); the forecourt paving from y ~705 down to the bottom edge.
+
+What the sketch blocks are: sky; the Chopok ridge (green alpine meadows, grey rock, the summit buildings as tiny dots); dark spruce forest of the valley; the glass and steel gondola station structure at the left edge (no lettering, no logo); a paved side path leading away past it; low shrubs and young spruces behind the stone wall; the low natural-stone wall; the gravel footpath leading through the gap in the wall into the forest, with a small plain wooden trail post; the hotel's lower wing (light beige render, timber balcony band, two windows, a glazed side door under a small canopy); a small stone water feature basin with a thin trickle of water by the wall of the wing; the main block with the big gable, its windows and a lettering band on the gable; the main entrance glass doors under a wooden canopy; the forecourt paving.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S42.ambient 1}: a big old spruce standing behind the stone wall (trunk foot y ~690) and the cool pool of its shade lying on the paving in front of the wall.
+2. {rect:S42.ambient 2}: a classic brass hotel luggage trolley with a curved top bar, carrying a dark red and a blue suitcase, standing on the paving beside the main entrance.
+{npc_zones}
+{exit:S42.to_S41} is where the forecourt continues out of the left edge. {exit:S42.to_S46} is the paved side path leading away past the gondola station. {exit:S42.to_S45} is the gravel footpath into the forest. {exit:S42.to_S44} is the glazed side door of the lower wing. {exit:S42.to_S43} is the main entrance.
+The exhibition's info stand right of the NPC zone: a light roll-up banner with only a simple turquoise circle emblem (no text) and a small wooden leaflet table with a few illegible leaflets.
+
+Walkable floor: {walk} is the forecourt of warm grey concrete pavers - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no bins, no bollards, no benches, no planters, no lamp posts, no cars, no people. Only sunlight, the spruce's shade, soft shadows and paving joints.
+
+Fiction rules: the hotel name appears only once, as plain lettering "Grand Jasná" on the gable band - no hotel logo, no stars, no brand script. Remove the car display and all shop signs, awnings with text and advertising of the photo. No resort or company logos (no TMR, no GOPASS), no other lettering anywhere. No people, no animals, no cars.

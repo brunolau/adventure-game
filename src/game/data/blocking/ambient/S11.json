@@ -1,0 +1,80 @@
+{
+  "room": "S11",
+  "notes": "Dubravka tram stop, June 1995 morning (natural painting bg_natural/S11.webp): wind in the lindens left and right, clouds drifting behind the panel towers, the stop clock's red second hand ticking (the time node), pigeons pecking on the platform near the tram (they fly off when Adam comes close), now and then a small flock crossing the sky.",
+  "layers": [
+    {
+      "id": "trees_left",
+      "type": "sway",
+      "texture": "S11/natural/trees_left.webp",
+      "anchor": 1.0,
+      "amp_px": 2.2,
+      "freq": 0.27,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "trees_right",
+      "type": "sway",
+      "texture": "S11/natural/trees_right.webp",
+      "anchor": 1.0,
+      "amp_px": 1.8,
+      "freq": 0.31,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "clouds",
+      "type": "clouds",
+      "textures": [
+        "common/cloud_00.webp",
+        "common/cloud_01.webp",
+        "common/cloud_02.webp",
+        "common/cloud_03.webp"
+      ],
+      "band": [30, 150],
+      "count": 4,
+      "speed_px_s": 5,
+      "scale": [0.14, 0.26],
+      "alpha": 0.65,
+      "mask": "S11/natural/sky_mask.webp"
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [787, 133],
+      "length": 42,
+      "tail": 9,
+      "width": 2,
+      "color": "#b0281c",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[1600, 830], [1860, 905]],
+      "scale": 0.22,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[2040, 200], [1700, -120]]
+    },
+    {
+      "id": "birds_sky",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 11,
+      "path": [[-80, 95], [700, 45], [1300, 75], [2000, 35]],
+      "speed_px_s": 230,
+      "scale": 0.09,
+      "flock": 3,
+      "flock_spread": [60, 24],
+      "bob_px": 4,
+      "direction": "random",
+      "every_s": [28, 55],
+      "start_s": [5, 12]
+    }
+  ]
+}

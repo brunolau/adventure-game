@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "room": "S56",
+  "status": "natural re-blocking (docs/DECISIONS.md items 1 and 2: Tono 50 as a window bust behind the closed glass); base of camera family L_WINDOW (S64 1982 is derived with identical anchors, walk polygon, walk_band, actor_scale and sill line)",
+  "note": "Close-up of the caretaker's service window, the last ground-floor window of ZS Sokolikova's SW facade before the building corner (the window at x ~1640-1760 in S52). Pinhole camera: eye 1.7 m, horizon y 503, f ~2000 px, facade frontal 9 m away (222 px per metre): the facade foot at y 881, the stone sill's top edge (the bust cut line) at y 681 (H 0.9 m), the window opening x 810-1210, y 193-681, the building corner at x 1292 with the school yard beyond. Ground y = 503 + 3400 / Z: the walk band (the concrete path along the facade) runs from y 885 (9 m) to 1015 (6.6 m). Scale s(y) = (y - 503) / 512. The bust stands ~1 m behind the glass (Z 10 m, scale 0.664).",
+  "background": "bg_natural/S56.webp",
+  "walk_polygon": [[0, 885], [1920, 885], [1920, 1015], [0, 1015]],
+  "walk_band": [885, 1015],
+  "actor_scale": [0.75, 1.0],
+  "spawn": [420, 950],
+  "anchors": {
+    "window_frame": [1010, 437],
+    "swallow": [865, 647],
+    "sill": [1010, 681]
+  },
+  "hotspots": {
+    "S56.ambient 1": {
+      "rect": [785, 615, 235, 90],
+      "interaction_point": [900, 905],
+      "label_anchor": [902, 605],
+      "reason": "the protruding stone sill with the small metal swallow ornament at its left end (anchors sill, swallow)"
+    },
+    "S56.ambient 2": {
+      "rect": [862, 528, 115, 135],
+      "interaction_point": [930, 905],
+      "label_anchor": [860, 505],
+      "reason": "the hand-repaired wooden birdhouse on the inner sill behind the left pane of the closed window"
+    },
+    "S56.TONO20": {
+      "rect": [1035, 520, 132, 161],
+      "interaction_point": [1150, 910],
+      "label_anchor": [1115, 505],
+      "reason": "Tono (50) behind the right pane of the closed window, bust cut at the sill"
+    }
+  },
+  "npcs": {
+    "S56.TONO20": {
+      "variant": "window_bust_glass",
+      "feet": [1100, 843],
+      "scale": 0.664,
+      "sill_y": 681,
+      "facing": "left",
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: window bust behind the closed service window (same sill as OTO82 in S64)"
+    }
+  },
+  "exits": {
+    "S56.to_S52": {
+      "rect": [0, 860, 64, 155],
+      "interaction_point": [60, 950],
+      "label_anchor": [190, 850],
+      "reason": "the path along the facade back to the main entrance (left edge)"
+    }
+  },
+  "state_patches": []
+}

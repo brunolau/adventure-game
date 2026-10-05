@@ -1,0 +1,100 @@
+{
+ "room": "S28",
+ "notes": "Natural S28: wind in the bushes on both sides, the tunnel's fluorescent tubes flickering, dust in the tunnel light, cars passing on Rusovska cesta above the underpass behind its railing.",
+ "layers": [
+  {
+   "id": "bush_left_sway",
+   "type": "sway",
+   "texture": "S28/natural/bush_left.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.3,
+   "wavelength_px": 90,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "bush_right_sway",
+   "type": "sway",
+   "texture": "S28/natural/bush_right.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.3,
+   "wavelength_px": 100,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "tunnel_tubes",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "rect": [
+    700,
+    330,
+    480,
+    70
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff7e0",
+   "min": 0.0,
+   "max": 0.28,
+   "every_s": [
+    6,
+    16
+   ]
+  },
+  {
+   "id": "tunnel_dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    660,
+    340,
+    560,
+    330
+   ],
+   "count": 22,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.65
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "cars_above",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [
+    [
+     -360,
+     58
+    ],
+    [
+     2280,
+     58
+    ]
+   ],
+   "speed_px_s": 300,
+   "speed_jitter": [
+    0.85,
+    1.15
+   ],
+   "scale": 0.42,
+   "bob_px": 0.5,
+   "bob_hz": 2.2,
+   "direction": "random",
+   "every_s": [
+    6,
+    16
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "mask": "S28/natural/road_mask.webp"
+  }
+ ]
+}

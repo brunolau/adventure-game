@@ -1,0 +1,689 @@
+{
+  "room": "S44",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035441,
+  "usd": 0.15,
+  "started": "2026-10-05T10:28:55",
+  "spend_log_asset": "bg_natural/S44/S44_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S44.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a rented meeting salon of the real Hotel Grand Jasná in Jasná, Low Tatras, Slovakia. Image 2 shows the feel of a hotel salon (warm walls, recessed lights, long wooden table, heavy and sheer curtains); image 3 shows a hotel meeting room's window wall and simple upholstered stackable hotel chairs; image 4 shows the real view from the hotel: spruce forest and the green Chopok ridge, which is what the windows show. Paint an invented salon of this hotel from these types - not a copy of either room, no artworks from them.\n\nBrief: a rented hotel salon holding the paper archive (fond) and the public catalogue of a temporary exhibition; Boris, the archivist, works at a table. It is a meeting room with windows and hotel chairs, not an endless underground archive. Bright June midday daylight through the windows, warm light from the downlights, a calm, quiet, studious atmosphere.\n\nCamera: standing in the salon, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to the cornice at y ~240-252; the back wall with a wooden dado panel (y 640-700) down to the carpet at y 700; two tall windows at x 40-490 (y 290-690) with light curtains; the long archive table at x 540-930 with its top's back edge at y 605 and a solid wooden front panel to y ~790; the display board at x 940-1110 (board y 380-640, legs to y 742); the bookcase at x 1205-1420 (y 360-700); the lectern at x 1478-1608 (top y ~580-600, foot y ~760); the double door at x 1700-1880 (y 400-705); the carpet from y 700 to the bottom edge.\n\nWhat the sketch blocks are: the light ceiling with downlights and a cornice; the warm beige silk-papered back wall and wooden dado; two tall windows with a white mullion showing spruce forest and the green Chopok slopes under a blue sky; light sheer curtains; a stack of upholstered hotel chairs with burgundy seats by the window; a flat wall screen showing a calm video of a winding mountain road; a plain stretch of wall behind Boris; Boris's long wooden archive table with a solid front panel, a stack of grey-beige archive boxes and a bundle of old paper files tied with string on its ends; the free-standing exhibition display board covered in light linen, empty except for a few pins; the panelled wooden double door; the patterned hotel carpet in warm brown and red.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1205-1420, y 360-700 of the 1920x1080 frame (63-74 % from the left, 33-65 % from the top): a tall wooden bookcase full of old bound paper volumes, ledgers and labelled archive boxes (labels are illegible scribbles).\n2. the block of the layout sketch at x 1470-1615, y 545-630 of the 1920x1080 frame (77-84 % from the left, 50-58 % from the top): a big open exhibition catalogue lying on the slanted top of a wooden lectern, a long red ribbon bookmark hanging out of it over the edge.\nNPC zone at x 660-800, y 458-608 of the 1920x1080 frame (34-42 % from the left, 42-56 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a table: paint the table's top edge as one straight horizontal line exactly at y 605 across x 630-830, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person. NPC zone at x 1115-1245, y 488-793 of the 1920x1080 frame (58-65 % from the left, 45-73 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 792.\nthe area of the layout sketch at x 1700-1880, y 400-705 of the 1920x1080 frame (89-98 % from the left, 37-65 % from the top) is the panelled double door to the corridor.\n\nWalkable floor: the band at x 0-1920, y 724-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) is the patterned hotel carpet - one continuous flat surface with no step, no rug edge and nothing standing on it: no chairs, no tables, no boxes, no people. Only daylight patches from the windows and soft shadows.\n\nFiction rules: the paper archive, the catalogue and the exhibition are fictional; no lettering anywhere (book spines and labels are illegible scribbles, no digits), no hotel logo, no brand names; the screen shows only a landscape. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S44_sketch.png (rendered from art/prompts/natural/S44.sketch.json, model geometry)",
+    "art/source/rooms/S44/hotel-meeting-room_venezia.jpg",
+    "art/source/rooms/S44/hotel-meeting-room-window_arthur-helsinki.jpg",
+    "art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg",
+    "src/game/assets/bg_natural/S43.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S44 natural blocking (src/game/data/blocking/S44.json): rented salon of Hotel Grand Jasna, camera ~1.6 m, horizon y ~470, back wall foot y ~700, Boris's table back edge y 605 (sill), front panel to y ~790.",
+    "background": "#e8dfcf",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          240
+        ],
+        "fill": "#efe9df",
+        "note": "light ceiling with recessed downlights"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          420,
+          110,
+          36,
+          12
+        ],
+        "fill": "#fffbe8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          960,
+          110,
+          36,
+          12
+        ],
+        "fill": "#fffbe8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1500,
+          110,
+          36,
+          12
+        ],
+        "fill": "#fffbe8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          232,
+          1920,
+          20
+        ],
+        "fill": "#d6ccbb",
+        "note": "cornice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          252,
+          1920,
+          450
+        ],
+        "fill": "#e4d6bf",
+        "note": "warm beige silk-papered wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          640,
+          1920,
+          60
+        ],
+        "fill": "#cdbb9c",
+        "note": "wooden dado panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          290,
+          450,
+          400
+        ],
+        "fill": "#a8c6d8",
+        "note": "two tall windows: spruce forest and the green Chopok ridge outside under a blue sky"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            40,
+            560
+          ],
+          [
+            140,
+            470
+          ],
+          [
+            260,
+            430
+          ],
+          [
+            380,
+            460
+          ],
+          [
+            490,
+            520
+          ],
+          [
+            490,
+            690
+          ],
+          [
+            40,
+            690
+          ]
+        ],
+        "fill": "#4f7a52",
+        "note": "spruce forest and green slope seen through the windows"
+      },
+      {
+        "type": "rect",
+        "box": [
+          255,
+          290,
+          22,
+          400
+        ],
+        "fill": "#f1ece2",
+        "note": "window mullion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          270,
+          48,
+          430
+        ],
+        "fill": "#efe6d4",
+        "note": "light sheer curtain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          270,
+          55,
+          430
+        ],
+        "fill": "#efe6d4",
+        "note": "light sheer curtain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          370,
+          600,
+          110,
+          135
+        ],
+        "fill": "#7a4a5a",
+        "note": "stack of upholstered hotel chairs (burgundy seats)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          285,
+          270,
+          150
+        ],
+        "fill": "#2b2f33",
+        "note": "flat wall screen playing a quiet video of a mountain road"
+      },
+      {
+        "type": "rect",
+        "box": [
+          612,
+          297,
+          246,
+          126
+        ],
+        "fill": "#6f9a7c",
+        "note": "the video picture: a winding mountain road"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          452,
+          180,
+          150
+        ],
+        "fill": "#e4d6bf",
+        "note": "plain wall behind Boris (keep empty)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            700
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#8a6f5a",
+        "note": "patterned hotel carpet in warm brown and red"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          605,
+          390,
+          22
+        ],
+        "fill": "#8b5a35",
+        "note": "top of Boris's long archive table (back edge y 605)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          627,
+          390,
+          163
+        ],
+        "fill": "#6e4528",
+        "note": "its solid wooden front panel down to the carpet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          548,
+          545,
+          80,
+          60
+        ],
+        "fill": "#c8b48a",
+        "note": "stack of grey-beige archive boxes on the table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          835,
+          575,
+          85,
+          30
+        ],
+        "fill": "#d8cdb5",
+        "note": "bundle of old paper files tied with string"
+      },
+      {
+        "type": "rect",
+        "box": [
+          940,
+          380,
+          170,
+          260
+        ],
+        "fill": "#d9d3c4",
+        "note": "free-standing exhibition display board covered in light linen, empty except for a few pins"
+      },
+      {
+        "type": "rect",
+        "box": [
+          950,
+          640,
+          10,
+          102
+        ],
+        "fill": "#5b5b5b",
+        "note": "display board leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1090,
+          640,
+          10,
+          102
+        ],
+        "fill": "#5b5b5b",
+        "note": "display board leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1205,
+          360,
+          215,
+          340
+        ],
+        "fill": "#7b5636",
+        "note": "wooden bookcase"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1205,
+          360,
+          215,
+          340
+        ],
+        "step": 68,
+        "bar": 10,
+        "fill": "#5c3f26",
+        "vertical": false
+      },
+      {
+        "type": "bars",
+        "box": [
+          1215,
+          372,
+          195,
+          56
+        ],
+        "step": 14,
+        "bar": 10,
+        "fill": "#8b3a30",
+        "vertical": true,
+        "note": "bound volumes"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1215,
+          440,
+          195,
+          56
+        ],
+        "step": 14,
+        "bar": 10,
+        "fill": "#2f4f6f",
+        "vertical": true,
+        "note": "bound volumes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1215,
+          508,
+          90,
+          56
+        ],
+        "fill": "#c8b48a",
+        "note": "archive boxes"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1310,
+          508,
+          100,
+          56
+        ],
+        "step": 14,
+        "bar": 10,
+        "fill": "#4f6b3a",
+        "vertical": true
+      },
+      {
+        "type": "bars",
+        "box": [
+          1215,
+          576,
+          195,
+          56
+        ],
+        "step": 16,
+        "bar": 12,
+        "fill": "#7a6a4a",
+        "vertical": true
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1478,
+            600
+          ],
+          [
+            1608,
+            600
+          ],
+          [
+            1590,
+            580
+          ],
+          [
+            1496,
+            580
+          ]
+        ],
+        "fill": "#6b4429",
+        "note": "slanted top of the wooden lectern"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1490,
+          560,
+          116,
+          30
+        ],
+        "fill": "#f1ead9",
+        "note": "the open catalogue on the lectern"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1544,
+          590,
+          6,
+          34
+        ],
+        "fill": "#b0262a",
+        "note": "red ribbon bookmark hanging over the edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1515,
+          600,
+          66,
+          160
+        ],
+        "fill": "#6b4429",
+        "note": "lectern column and base"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          400,
+          180,
+          305
+        ],
+        "fill": "#7a5236",
+        "note": "panelled wooden double door to the corridor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1786,
+          400,
+          8,
+          305
+        ],
+        "fill": "#5c3c26"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1690,
+          388,
+          200,
+          14
+        ],
+        "fill": "#cdbb9c",
+        "note": "door frame"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S44.json",
+  "blocking": {
+    "version": 1,
+    "room": "S44",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Rented meeting salon of Hotel Grand Jasna (type-reference: hotel meeting rooms with windows, curtains and upholstered stackable hotel chairs; not an endless archive). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the carpet on y ~700 (~126 px per metre there), Boris's archive table front stands on y ~775. Perspective s(y) = (y - 470) / 545 (same camera as the lobby S43). Left: tall windows with light curtains and the real view from the Grand to the spruce forest and Chopok, a stack of hotel chairs; centre-left: Boris behind his long archive table with the paper fond (archive boxes, bound files) and a wall screen above it playing a quiet mountain-road video; centre: the exhibition's free-standing display board (empty in the base painting; Jana's schematic and photos after Q9C, variant overlay); right of it the bookcase of paper volumes, the lectern with the public catalogue and its ribbon bookmark, the door to the corridor.",
+    "background": "bg_natural/S44.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        738
+      ],
+      [
+        530,
+        738
+      ],
+      [
+        550,
+        790
+      ],
+      [
+        930,
+        790
+      ],
+      [
+        950,
+        742
+      ],
+      [
+        1450,
+        742
+      ],
+      [
+        1465,
+        765
+      ],
+      [
+        1625,
+        765
+      ],
+      [
+        1645,
+        724
+      ],
+      [
+        1920,
+        728
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      724,
+      1015
+    ],
+    "actor_scale": [
+      0.47,
+      1.0
+    ],
+    "spawn": [
+      800,
+      900
+    ],
+    "hotspots": {
+      "S44.ambient 1": {
+        "rect": [
+          1205,
+          360,
+          215,
+          340
+        ],
+        "interaction_point": [
+          1310,
+          820
+        ],
+        "label_anchor": [
+          1310,
+          350
+        ],
+        "reason": "the bookcase of paper volumes and archive boxes against the back wall (foot y ~700)"
+      },
+      "S44.ambient 2": {
+        "rect": [
+          1470,
+          545,
+          145,
+          85
+        ],
+        "interaction_point": [
+          1545,
+          830
+        ],
+        "label_anchor": [
+          1545,
+          535
+        ],
+        "reason": "the open public exhibition catalogue on the lectern with its long ribbon bookmark hanging over the edge (lectern top y ~590, foot y ~760)"
+      },
+      "S44.BORIS": {
+        "rect": [
+          660,
+          458,
+          140,
+          150
+        ],
+        "interaction_point": [
+          730,
+          850
+        ],
+        "reason": "Boris behind his archive table (bust cut at the back edge of the table top, y 605)"
+      },
+      "S44.JANA35": {
+        "rect": [
+          1115,
+          488,
+          130,
+          305
+        ],
+        "interaction_point": [
+          1180,
+          850
+        ],
+        "reason": "Jana stands on the carpet beside the exhibition display board"
+      }
+    },
+    "npcs": {
+      "S44.BORIS": {
+        "variant": "behind_counter",
+        "feet": [
+          730,
+          742
+        ],
+        "sill_y": 605,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Boris behind the table (table variant cut at the table top)"
+      },
+      "S44.JANA35": {
+        "variant": "standing",
+        "feet": [
+          1180,
+          792
+        ],
+        "z": "auto",
+        "reason": "Jana visits the exhibition standing beside the display board; after Q9C her q9c variant holds her first drawing (data/ambient/actors.json variants_after)"
+      }
+    },
+    "exits": {
+      "S44.to_S42": {
+        "rect": [
+          1700,
+          400,
+          180,
+          305
+        ],
+        "interaction_point": [
+          1790,
+          800
+        ],
+        "label_anchor": [
+          1755,
+          390
+        ],
+        "reason": "the salon door to the hotel corridor and out to the forecourt"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S44.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:29:38"
+  }
+}

@@ -1,0 +1,23 @@
+# S25 Mileticova medzi stankami (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S25.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S25.sketch.json (market aisle, camera ~2.2 m, horizon y 360, stall tables at y 800).
+#refs: art/source/rooms/S25/mileticova_market_stalls_hall_2017.jpg ; art/source/rooms/S25/mileticova_market_chimney_landmark_2013.jpg ; art/source/rooms/S25/mileticova_street_market-fence_chimney_kartaview_2020.jpg
+#style: src/game/assets/bg_natural/S19.webp
+Place: Trhovisko Mileticova, the real open-air market on Mileticova street in Ruzinov, Bratislava, as it was in 1995. Images 2-4 are photos of this real market: image 2 the stalls under tarps and umbrellas on cracked asphalt in front of the low white market hall with its small square tower; image 3 the tall old red-brick chimney that rises beside the market; image 4 the market's edge on Mileticova with the chimney and trees (dashcam photo, use it for the layout only). Paint this real place in 1995: remove the post-1995 residential tower behind the hall and every other high-rise there, all billboards, brand umbrellas (no Pepsi, no Corgon, no brand names at all), satellite dishes and modern cars.
+
+Brief: a stylised market: the work table of a seller of small electronics, and next to it a vegetable stall with a red-and-white umbrella. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, fresh green trees, a blue sky, June vegetables (tomatoes, cucumbers, new potatoes, kohlrabi, parsley, a few strawberries).
+
+Camera: standing in an aisle of the market, about 2.2 m high, looking straight at the two stalls, which stand side by side parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: both stall tables have their front legs on y 800 and their table tops at 0.8 m with the front edge as one straight horizontal line at y 640; the market hall and the two-storey building stand on y 500; the asphalt fills the ground from y 500 to the bottom edge.
+
+What the sketch blocks are, left to right: the two-storey cream market-edge building with small shop units and a dark passage through its ground floor (the Pasaz Mileticova), a short aisle of asphalt leading to it; a far stall with a blue tarp and clothes racks; the electronics seller's folding table under a plain grey-blue tarp on two poles, with boxes of plugs, connectors, cables, old radio parts and cassettes, a plain cloth hanging down its front; the low white market hall with a grey pitched roof and a small square tower with windows; the tall old red-brick chimney with iron bands, its top cut by the frame; the vegetable stall with its crates under the big red-and-white umbrella; far stalls with green tarps; trees along Mileticova and an ochre 1950s socialist-realist estate block beyond; cracked grey asphalt in the foreground.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S25.scale}: a small old mechanical shop scale with a round dial and a steel weighing pan, standing on the right end of the electronics table.
+2. {rect:S25.ambient 1}: bunches of fresh green curly parsley standing upright in a wooden crate at the front corner of the vegetable stall.
+3. {rect:S25.ambient 2}: the big red-and-white striped market umbrella (plain, no lettering) over the vegetable stall.
+The passage through the building at the end of the short aisle is {exit:S25.to_S26}. The aisle runs out of the left edge ({exit:S25.to_S21}) and the right edge ({exit:S25.to_S27}).
+
+Walkable floor: {walk} is the open cracked grey asphalt of the market aisle - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no crates, no boxes, no bins, no carts, no people, no pigeons. Only sunlight, shadows of the umbrella and the tarps, a few cracks and a squashed cabbage leaf.
+{npc_zones}
+
+Fiction rules: the electronics seller's table and the vegetable stall are invented; no stall names, no price signs with digits, no brand names or logos anywhere (no Pepsi, no Corgon, no ads, no billboards), no people, no animals. Any paper shows only illegible scribbles, no digits.

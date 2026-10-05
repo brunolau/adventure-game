@@ -1,0 +1,1283 @@
+{
+  "room": "S31",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 860028931,
+  "usd": 0.15,
+  "started": "2026-10-05T10:12:46",
+  "spend_log_asset": "bg_natural/S31/S31_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S31.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the railway halt of Ivanka pri Dunaji on the Bratislava - Galanta line, beside the Nadrazna level crossing at the north edge of the village, as it was in 1960. Image 2 is the real place today, photographed from the crossing along the double track (an ultra-wide lens: straighten its distortion); image 3 shows the old small halt building with its plastered gable facing the road and a timber canopy on its track side; image 4 is a 1959 Slovak halt of the same period (a slanting timber awning on iron brackets and a barred ticket window). Paint the halt as it was in 1960 from these: a straight double track with wooden sleepers on gravel ballast, a gravel platform at rail level, the small gabled halt building. The line was not electrified until 1969, so there are NO catenary masts and NO overhead wires; only a row of wooden telegraph poles with a few thin wires runs along the far side of the line. Leave out everything modern: concrete platforms, tactile strips, shelters, displays, barriers, signals, lamp posts, graffiti, the hotel blocks, cars.\n\nBrief: a small period station: a mechanical clock, a wooden bench and a luggage cart. A sunny afternoon on 6 June 1960, early summer, warm low sunlight from the left, long soft shadows; lush meadows and poplars along the line; a faint wisp of locomotive steam far away where the track meets the horizon.\n\nCamera: standing on the gravel platform about 1.9 m high, looking straight along the track; a one-point perspective: the rails, the platform edge, the canopy and the building's long wall all converge to the vanishing point at x 430, y 430 on the horizon (y 430). Keep this exact geometry from the sketch: the two tracks recede from the bottom left to the vanishing point; the platform edge runs from x 150 at the bottom edge to the vanishing point; the halt building's gable end faces the camera on the right (its wall meets the ground at y 680, eaves at y ~320, ridge at y ~10); the timber canopy along the building's track side recedes towards the vanishing point, its near post at x 905.\n\nWhat the sketch blocks are: the sky; the flat meadows and a row of poplars and willows along the far side of the line with wooden telegraph poles and thin wires; the gravel ballast, wooden sleepers and steel rails of the double track; the low timber edge of the platform; the gravel platform and the packed-earth forecourt; the long side wall of the halt building in the shade of the canopy, with the door to the small waiting room, a barred ticket window and a wooden bench against the wall; the timber canopy (board roof on wooden posts with brackets); the gable end of the building with cream plaster, a grey plinth, two wooden windows, a small attic window, a small wall post box and a white enamel name board under the eaves that reads IVANKA PRI DUNAJI; the brown tiled roof; trees behind the building.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 470-780, y 595-767 of the 1920x1080 frame (24-41 % from the left, 55-71 % from the top): an old wooden platform luggage cart with two big iron-rimmed wheels and a long push handle, standing on the gravel; a worn leather suitcase and a small wooden crate lie on its deck.\n2. the block of the layout sketch at x 915-1025, y 362-472 of the 1920x1080 frame (48-53 % from the left, 34-44 % from the top): a round double-sided mechanical station clock with a white dial, black hands and a dark iron case, hanging on an iron hanger from the canopy beam; its dial faces the camera.\nThe forecourt continues out of the right edge (the area of the layout sketch at x 1860-1920, y 705-1005 of the 1920x1080 frame (97-100 % from the left, 65-93 % from the top)) towards the village.\n\nWalkable floor: the band at x 210-1900, y 702-1015 of the 1920x1080 frame (11-99 % from the left, 65-94 % from the top) is the gravel platform and the packed-earth forecourt in front of the gable - one continuous flat surface at rail level with no kerb, no step and no edge inside it, and nothing standing on it: no benches, no barrows, no bins, no posts. Only gravel, light and shadows.\nNPC zone at x 1040-1160, y 469-742 of the 1920x1080 frame (54-60 % from the left, 43-69 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 742.\n\nFiction rules: no real timetables, no railway logos or emblems, no posters, no advertising, no number plates, no red stars or slogans, no people, no animals. The only lettering in the picture is IVANKA PRI DUNAJI on the white enamel name board on the gable; papers show no readable text and no digits. The clock dial may have plain hour marks.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S31_sketch.png (rendered from art/prompts/natural/S31.sketch.json, model geometry)",
+    "art/source/rooms/S31/ivanka_halt_platform_bsk_2021.jpg",
+    "art/source/rooms/S31/ivanka_halt_crossing_gable_bsk_2021.jpg",
+    "art/prompts/natural/S31_ref_halt_awning_1959_crop.jpg",
+    "art/masters/bg_natural/S32_v1.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S31 natural blocking (src/game/data/blocking/S31.json): one-point view along the double track ENE from the gravel platform beside the Nadrazna crossing; horizon y 430, vanishing point (430, 430), s(y) = (y - 430) / 585; halt building gable foot y 680, canopy along its track side.",
+    "background": "#b7d2ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          430
+        ],
+        "fill": "#b7d2ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          400,
+          1920,
+          60
+        ],
+        "fill": "#9db46c",
+        "note": "flat fields and meadows to the horizon"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            330
+          ],
+          [
+            60,
+            250
+          ],
+          [
+            140,
+            240
+          ],
+          [
+            220,
+            300
+          ],
+          [
+            300,
+            280
+          ],
+          [
+            380,
+            330
+          ],
+          [
+            420,
+            400
+          ],
+          [
+            420,
+            440
+          ],
+          [
+            0,
+            470
+          ]
+        ],
+        "fill": "#6f9446",
+        "note": "row of poplars and willows along the far side of the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          250,
+          30,
+          200
+        ],
+        "fill": "#5d7f3a",
+        "note": "tall poplar"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1700,
+            140
+          ],
+          [
+            1760,
+            60
+          ],
+          [
+            1830,
+            40
+          ],
+          [
+            1920,
+            70
+          ],
+          [
+            1920,
+            520
+          ],
+          [
+            1700,
+            520
+          ]
+        ],
+        "fill": "#6f9446",
+        "note": "poplars and trees behind the halt building (right)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1140,
+            330
+          ],
+          [
+            1190,
+            250
+          ],
+          [
+            1260,
+            230
+          ],
+          [
+            1320,
+            300
+          ],
+          [
+            1320,
+            420
+          ],
+          [
+            1140,
+            420
+          ]
+        ],
+        "fill": "#7aa04f",
+        "note": "tree crown behind the canopy"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            470
+          ],
+          [
+            425,
+            432
+          ],
+          [
+            0,
+            660
+          ]
+        ],
+        "fill": "#8fae5f",
+        "note": "grass verge beyond the far track"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            424,
+            432
+          ],
+          [
+            440,
+            432
+          ],
+          [
+            150,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            642
+          ]
+        ],
+        "fill": "#9a8e7e",
+        "note": "gravel ballast of the double track (not walkable)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -50,
+            1050
+          ],
+          [
+            124.76923076923077,
+            1050
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 15,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -50,
+            940
+          ],
+          [
+            178.92307692307693,
+            940
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 12,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -50,
+            850
+          ],
+          [
+            223.23076923076923,
+            850
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 10,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -50,
+            775
+          ],
+          [
+            260.1538461538462,
+            775
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 8,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -50,
+            712
+          ],
+          [
+            291.1692307692308,
+            712
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 7,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -44.7076923076923,
+            662
+          ],
+          [
+            315.7846153846154,
+            662
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 5,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            37.13846153846151,
+            622
+          ],
+          [
+            335.4769230769231,
+            622
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 4,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            102.61538461538464,
+            590
+          ],
+          [
+            351.2307692307692,
+            590
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 4,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            153.76923076923077,
+            565
+          ],
+          [
+            363.53846153846155,
+            565
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 3,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            194.69230769230768,
+            545
+          ],
+          [
+            373.38461538461536,
+            545
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            229.47692307692307,
+            528
+          ],
+          [
+            381.75384615384615,
+            528
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            258.12307692307695,
+            514
+          ],
+          [
+            388.6461538461538,
+            514
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            282.6769230769231,
+            502
+          ],
+          [
+            394.55384615384617,
+            502
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            303.13846153846157,
+            492
+          ],
+          [
+            399.4769230769231,
+            492
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            321.55384615384617,
+            483
+          ],
+          [
+            403.9076923076923,
+            483
+          ]
+        ],
+        "color": "#6b5038",
+        "width": 2,
+        "note": "wooden sleepers"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            428,
+            432
+          ],
+          [
+            60,
+            1080
+          ]
+        ],
+        "color": "#5a5450",
+        "width": 7,
+        "note": "steel rail (double track, no overhead wires)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            428,
+            432
+          ],
+          [
+            -250,
+            1080
+          ]
+        ],
+        "color": "#5a5450",
+        "width": 7,
+        "note": "steel rail (double track, no overhead wires)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            428,
+            432
+          ],
+          [
+            -560,
+            1080
+          ]
+        ],
+        "color": "#5a5450",
+        "width": 7,
+        "note": "steel rail (double track, no overhead wires)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            428,
+            432
+          ],
+          [
+            -870,
+            1080
+          ]
+        ],
+        "color": "#5a5450",
+        "width": 7,
+        "note": "steel rail (double track, no overhead wires)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            30,
+            700
+          ],
+          [
+            30,
+            370
+          ]
+        ],
+        "color": "#6b5236",
+        "width": 13,
+        "note": "wooden telegraph pole of the line"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            250,
+            520
+          ],
+          [
+            250,
+            400
+          ]
+        ],
+        "color": "#6b5236",
+        "width": 4,
+        "note": "wooden telegraph pole of the line"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            345,
+            478
+          ],
+          [
+            345,
+            418
+          ]
+        ],
+        "color": "#6b5236",
+        "width": 3,
+        "note": "wooden telegraph pole of the line"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            30,
+            380
+          ],
+          [
+            250,
+            402
+          ],
+          [
+            345,
+            418
+          ],
+          [
+            425,
+            428
+          ]
+        ],
+        "color": "#4a4440",
+        "width": 2,
+        "note": "telegraph wires"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            30,
+            392
+          ],
+          [
+            250,
+            410
+          ],
+          [
+            345,
+            422
+          ],
+          [
+            425,
+            429
+          ]
+        ],
+        "color": "#4a4440",
+        "width": 2
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            440,
+            432
+          ],
+          [
+            1920,
+            432
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            150,
+            1080
+          ]
+        ],
+        "fill": "#b9a582",
+        "note": "gravel platform and forecourt, packed earth (walkable)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            438,
+            432
+          ],
+          [
+            452,
+            432
+          ],
+          [
+            176,
+            1080
+          ],
+          [
+            150,
+            1080
+          ]
+        ],
+        "fill": "#8a7c66",
+        "note": "edge of the platform (low timber kerb along the track)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1180,
+            319
+          ],
+          [
+            1180,
+            680
+          ],
+          [
+            760,
+            553
+          ],
+          [
+            760,
+            385
+          ]
+        ],
+        "fill": "#e3d6b8",
+        "note": "long side wall of the halt building facing the track, in the shade of the canopy"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            930,
+            440
+          ],
+          [
+            990,
+            425
+          ],
+          [
+            990,
+            540
+          ],
+          [
+            930,
+            552
+          ]
+        ],
+        "fill": "#5a4a3a",
+        "note": "barred ticket window"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            800,
+            455
+          ],
+          [
+            860,
+            440
+          ],
+          [
+            860,
+            620
+          ],
+          [
+            800,
+            600
+          ]
+        ],
+        "fill": "#6e4a2e",
+        "note": "door to the waiting room"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            870,
+            600
+          ],
+          [
+            920,
+            612
+          ],
+          [
+            920,
+            632
+          ],
+          [
+            870,
+            620
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "wooden bench against the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          319,
+          594,
+          361
+        ],
+        "fill": "#ece2c8",
+        "note": "gable end of the halt building facing the camera, cream plaster"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          640,
+          594,
+          40
+        ],
+        "fill": "#b5a68a",
+        "note": "grey plinth"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1150,
+            325
+          ],
+          [
+            1477,
+            8
+          ],
+          [
+            1804,
+            325
+          ],
+          [
+            1774,
+            330
+          ],
+          [
+            1477,
+            40
+          ],
+          [
+            1180,
+            330
+          ]
+        ],
+        "fill": "#8a4a32",
+        "note": "dark brown roof edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1180,
+            325
+          ],
+          [
+            1477,
+            40
+          ],
+          [
+            1774,
+            325
+          ]
+        ],
+        "fill": "#ece2c8",
+        "note": "plastered gable triangle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1430,
+          170,
+          94,
+          60
+        ],
+        "fill": "#6b5a48",
+        "note": "small attic window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          350,
+          354,
+          48
+        ],
+        "fill": "#f5f3ec",
+        "note": "white enamel station name board IVANKA PRI DUNAJI"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          450,
+          120,
+          150
+        ],
+        "fill": "#f4f2ea",
+        "note": "window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          460,
+          100,
+          130
+        ],
+        "fill": "#6d7f8a",
+        "note": "window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          450,
+          120,
+          150
+        ],
+        "fill": "#f4f2ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1570,
+          460,
+          100,
+          130
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1720,
+          520,
+          36,
+          46
+        ],
+        "fill": "#4f6a8a",
+        "note": "small wall post box"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1180,
+            312
+          ],
+          [
+            1180,
+            336
+          ],
+          [
+            760,
+            420
+          ],
+          [
+            760,
+            402
+          ]
+        ],
+        "fill": "#7a5636",
+        "note": "canopy beam along the wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1182,
+            314
+          ],
+          [
+            896,
+            346
+          ],
+          [
+            620,
+            425
+          ],
+          [
+            760,
+            402
+          ]
+        ],
+        "fill": "#8d6440",
+        "note": "timber canopy roof over the platform (wooden boards, tarred)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            896,
+            346
+          ],
+          [
+            896,
+            362
+          ],
+          [
+            620,
+            436
+          ],
+          [
+            620,
+            425
+          ]
+        ],
+        "fill": "#5e4228",
+        "note": "front fascia board of the canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          898,
+          358,
+          14,
+          322
+        ],
+        "fill": "#6b4a2c",
+        "note": "near timber canopy post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          425,
+          8,
+          145
+        ],
+        "fill": "#6b4a2c",
+        "note": "far canopy post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            905,
+            380
+          ],
+          [
+            935,
+            350
+          ]
+        ],
+        "color": "#6b4a2c",
+        "width": 8,
+        "note": "post bracket"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            968,
+            350
+          ],
+          [
+            968,
+            372
+          ]
+        ],
+        "color": "#2e2a28",
+        "width": 5,
+        "note": "iron hanger"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          922,
+          370,
+          92,
+          92
+        ],
+        "fill": "#f7f4ea",
+        "outline": "#2e2a28",
+        "width": 8,
+        "note": "double-sided mechanical station clock hanging under the canopy beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          478,
+          690,
+          296,
+          22
+        ],
+        "fill": "#7a5a3a",
+        "note": "luggage cart: wooden platform deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          478,
+          640,
+          12,
+          52
+        ],
+        "fill": "#3e3a36",
+        "note": "cart push handle"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            484,
+            640
+          ],
+          [
+            470,
+            600
+          ]
+        ],
+        "color": "#3e3a36",
+        "width": 8
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          505,
+          700,
+          62,
+          62
+        ],
+        "fill": "#3e3a36",
+        "note": "iron wheel"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          690,
+          700,
+          62,
+          62
+        ],
+        "fill": "#3e3a36",
+        "note": "iron wheel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          612,
+          150,
+          80
+        ],
+        "fill": "#8a5a34",
+        "note": "old leather suitcase on the cart"
+      },
+      {
+        "type": "rect",
+        "box": [
+          610,
+          602,
+          50,
+          12
+        ],
+        "fill": "#4a3424"
+      },
+      {
+        "type": "rect",
+        "box": [
+          512,
+          650,
+          60,
+          42
+        ],
+        "fill": "#a08060",
+        "note": "small crate"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S31.json",
+  "blocking": {
+    "version": 1,
+    "room": "S31",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Ivanka pri Dunaji railway halt on line 130, June 1960 (steam era, no catenary). Camera ~1.9 m high on the gravel platform just beyond the Nadrazna level crossing, looking ENE along the double track: one-point view, horizon y 430, vanishing point (430, 430), perspective s(y) = (y - 430) / 585 (hero 1.7 m = 512 px at y 1015; ~130 px per metre at the building's gable, foot y 680). The double track recedes on the left; the platform edge runs from (440, 432) to (150, 1080). The small gabled halt building stands on the right, its gable facing the camera and the timber canopy along its track side. Props where they are at a halt: the double-sided station clock hangs under the canopy beam by the near post, the luggage cart stands on the platform near the edge. Bozo stands under the canopy by the building corner. The walk polygon is the platform and the forecourt in front of the gable, kept off the track edge and around the cart; the forecourt continues out of the right edge towards the village.",
+    "background": "bg_natural/S31.webp",
+    "walk_polygon": [
+      [
+        335,
+        735
+      ],
+      [
+        455,
+        735
+      ],
+      [
+        455,
+        780
+      ],
+      [
+        798,
+        780
+      ],
+      [
+        798,
+        735
+      ],
+      [
+        1185,
+        735
+      ],
+      [
+        1195,
+        702
+      ],
+      [
+        1900,
+        702
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        210,
+        1015
+      ]
+    ],
+    "walk_band": [
+      702,
+      1015
+    ],
+    "actor_scale": [
+      0.465,
+      1.0
+    ],
+    "spawn": [
+      1000,
+      900
+    ],
+    "hotspots": {
+      "S31.ambient 1": {
+        "rect": [
+          470,
+          595,
+          310,
+          172
+        ],
+        "interaction_point": [
+          640,
+          805
+        ],
+        "label_anchor": [
+          625,
+          585
+        ],
+        "reason": "platform luggage cart (wooden deck, two iron wheels, push handle) standing on the gravel near the platform edge, an old suitcase and a crate on it"
+      },
+      "S31.ambient 2": {
+        "rect": [
+          915,
+          362,
+          110,
+          110
+        ],
+        "interaction_point": [
+          980,
+          772
+        ],
+        "label_anchor": [
+          968,
+          352
+        ],
+        "reason": "double-sided mechanical station clock hanging from the canopy beam beside the near canopy post"
+      },
+      "S31.BOZO": {
+        "rect": [
+          1040,
+          469,
+          120,
+          273
+        ],
+        "interaction_point": [
+          1010,
+          790
+        ],
+        "label_anchor": [
+          1100,
+          459
+        ],
+        "reason": "Bozo standing on the platform under the canopy at the near corner of the halt building"
+      }
+    },
+    "npcs": {
+      "S31.BOZO": {
+        "variant": "standing",
+        "feet": [
+          1100,
+          742
+        ],
+        "facing": "left",
+        "reason": "standing on the platform (BOZO posture standing); scale from the room perspective (0.53)"
+      }
+    },
+    "exits": {
+      "S31.to_S32": {
+        "rect": [
+          1860,
+          705,
+          60,
+          300
+        ],
+        "interaction_point": [
+          1845,
+          870
+        ],
+        "label_anchor": [
+          1780,
+          695
+        ],
+        "reason": "the forecourt in front of the gable continues out of the right edge onto Nadrazna, the road south into the village"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S31.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:13:29"
+  }
+}

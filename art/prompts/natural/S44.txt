@@ -1,0 +1,23 @@
+# S44 Výstavný salón hotela Grand Jasná (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S44.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S44.sketch.json (same camera height as the lobby S43).
+# Style reference: the accepted natural S43 lobby (same hotel, same day, same light).
+#refs: art/source/rooms/S44/hotel-meeting-room_venezia.jpg ; art/source/rooms/S44/hotel-meeting-room-window_arthur-helsinki.jpg ; art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg
+#style: src/game/assets/bg_natural/S43.webp
+Place: a rented meeting salon of the real Hotel Grand Jasná in Jasná, Low Tatras, Slovakia. Image 2 shows the feel of a hotel salon (warm walls, recessed lights, long wooden table, heavy and sheer curtains); image 3 shows a hotel meeting room's window wall and simple upholstered stackable hotel chairs; image 4 shows the real view from the hotel: spruce forest and the green Chopok ridge, which is what the windows show. Paint an invented salon of this hotel from these types - not a copy of either room, no artworks from them.
+
+Brief: a rented hotel salon holding the paper archive (fond) and the public catalogue of a temporary exhibition; Boris, the archivist, works at a table. It is a meeting room with windows and hotel chairs, not an endless underground archive. Bright June midday daylight through the windows, warm light from the downlights, a calm, quiet, studious atmosphere.
+
+Camera: standing in the salon, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to the cornice at y ~240-252; the back wall with a wooden dado panel (y 640-700) down to the carpet at y 700; two tall windows at x 40-490 (y 290-690) with light curtains; the long archive table at x 540-930 with its top's back edge at y 605 and a solid wooden front panel to y ~790; the display board at x 940-1110 (board y 380-640, legs to y 742); the bookcase at x 1205-1420 (y 360-700); the lectern at x 1478-1608 (top y ~580-600, foot y ~760); the double door at x 1700-1880 (y 400-705); the carpet from y 700 to the bottom edge.
+
+What the sketch blocks are: the light ceiling with downlights and a cornice; the warm beige silk-papered back wall and wooden dado; two tall windows with a white mullion showing spruce forest and the green Chopok slopes under a blue sky; light sheer curtains; a stack of upholstered hotel chairs with burgundy seats by the window; a flat wall screen showing a calm video of a winding mountain road; a plain stretch of wall behind Boris; Boris's long wooden archive table with a solid front panel, a stack of grey-beige archive boxes and a bundle of old paper files tied with string on its ends; the free-standing exhibition display board covered in light linen, empty except for a few pins; the panelled wooden double door; the patterned hotel carpet in warm brown and red.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S44.ambient 1}: a tall wooden bookcase full of old bound paper volumes, ledgers and labelled archive boxes (labels are illegible scribbles).
+2. {rect:S44.ambient 2}: a big open exhibition catalogue lying on the slanted top of a wooden lectern, a long red ribbon bookmark hanging out of it over the edge.
+{npc_zones}
+{exit:S44.to_S42} is the panelled double door to the corridor.
+
+Walkable floor: {walk} is the patterned hotel carpet - one continuous flat surface with no step, no rug edge and nothing standing on it: no chairs, no tables, no boxes, no people. Only daylight patches from the windows and soft shadows.
+
+Fiction rules: the paper archive, the catalogue and the exhibition are fictional; no lettering anywhere (book spines and labels are illegible scribbles, no digits), no hotel logo, no brand names; the screen shows only a landscape. No people, no animals.

@@ -1,0 +1,181 @@
+{
+ "room": "S50",
+ "notes": "Natural S50 (bg_natural/S50.webp): the roof terrace at midday, 2,000 m. Clouds drift over the High Tatras (sky mask), wind shakes the dwarf pine on the Chopok peak, a Funitel cabin (sprite cut from the S67 painting) glides down the ropes at the left now and then, choughs cross the view and the sky, the snow patches glint, the cabinet's small status lamp blinks. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    20,
+    240
+   ],
+   "count": 5,
+   "speed_px_s": 7,
+   "scale": [
+    0.28,
+    0.504
+   ],
+   "alpha": 0.75,
+   "mask": "S50/natural/sky_mask.webp"
+  },
+  {
+   "id": "pines_peak",
+   "type": "sway",
+   "texture": "S50/natural/pines_peak.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.4,
+   "wavelength_px": 70,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "funitel_cabin",
+   "type": "tween_path",
+   "texture": "S67/natural/cabin_sprite.webp",
+   "path": [
+    [
+     90,
+     345
+    ],
+    [
+     420,
+     520
+    ]
+   ],
+   "speed_px_s": 14,
+   "scale": 0.05,
+   "bob_px": 0.4,
+   "bob_hz": 0.5,
+   "direction": "random",
+   "every_s": [
+    24,
+    44
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "mask": "S50/natural/view_mask.webp"
+  },
+  {
+   "id": "choughs_view",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     -60,
+     440
+    ],
+    [
+     600,
+     400
+    ],
+    [
+     1240,
+     430
+    ]
+   ],
+   "speed_px_s": 160,
+   "scale": 0.07,
+   "modulate": "#2f2f36",
+   "flock": 3,
+   "flock_spread": [
+    60,
+    20
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    18,
+    36
+   ],
+   "start_s": [
+    5,
+    12
+   ],
+   "mask": "S50/natural/view_mask.webp"
+  },
+  {
+   "id": "choughs_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     1980,
+     120
+    ],
+    [
+     1200,
+     60
+    ],
+    [
+     -80,
+     140
+    ]
+   ],
+   "speed_px_s": 200,
+   "scale": 0.09,
+   "modulate": "#2f2f36",
+   "flock": 2,
+   "flock_spread": [
+    50,
+    20
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    26,
+    50
+   ],
+   "start_s": [
+    14,
+    22
+   ]
+  },
+  {
+   "id": "snow_glint",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1300,
+    340,
+    520,
+    140
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.1,
+   "period_s": 2.2
+  },
+  {
+   "id": "cabinet_lamp",
+   "type": "flicker",
+   "mode": "blink",
+   "pos": [
+    1540,
+    470
+   ],
+   "size": [
+    20,
+    20
+   ],
+   "texture": "builtin:glow",
+   "color": "#7dff9a",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.55,
+   "period_s": 2.0,
+   "duty": 0.3
+  }
+ ]
+}

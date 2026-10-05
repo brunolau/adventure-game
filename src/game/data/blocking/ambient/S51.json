@@ -1,0 +1,117 @@
+{
+  "room": "S51",
+  "notes": "Dubravka tram stop, 29 October 2020 afternoon (bg_natural/S51.webp): wind in the yellow lindens, leaves falling onto the lawn and the road and drifting onto the platform, clouds, the clock's second hand (old brass frame), the orange dots of the LED board shimmering, pigeons on the platform.",
+  "layers": [
+    {
+      "id": "trees_left",
+      "type": "sway",
+      "texture": "S51/natural/trees_left.webp",
+      "anchor": 1.0,
+      "amp_px": 2.4,
+      "freq": 0.3,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "trees_right",
+      "type": "sway",
+      "texture": "S51/natural/trees_right.webp",
+      "anchor": 1.0,
+      "amp_px": 1.8,
+      "freq": 0.33,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "leaves_left",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [0, 150, 390, 280],
+      "rate": 0.32,
+      "size": [12, 19],
+      "land_y": [480, 640],
+      "rest_s": [3, 7]
+    },
+    {
+      "id": "leaves_platform",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_03.webp",
+        "common/leaf_09.webp"
+      ],
+      "emit_rect": [300, 300, 160, 120],
+      "rate": 0.08,
+      "size": [12, 19],
+      "land_y": [830, 1000],
+      "rest_s": [3, 7],
+      "speed_x": [40, 90]
+    },
+    {
+      "id": "clouds",
+      "type": "clouds",
+      "textures": [
+        "common/cloud_00.webp",
+        "common/cloud_01.webp",
+        "common/cloud_02.webp",
+        "common/cloud_03.webp"
+      ],
+      "band": [30, 150],
+      "count": 4,
+      "speed_px_s": 5,
+      "scale": [0.14, 0.26],
+      "alpha": 0.65,
+      "mask": "S51/natural/sky_mask.webp"
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [787, 133],
+      "length": 42,
+      "tail": 9,
+      "width": 2,
+      "color": "#b0281c",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "led_board",
+      "type": "flicker",
+      "mode": "noise",
+      "rect": [812, 234, 182, 72],
+      "color": "#ffa040",
+      "min": 0.0,
+      "max": 0.22,
+      "period_s": 0.7
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[1600, 830], [1860, 905]],
+      "scale": 0.22,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[2040, 200], [1700, -120]]
+    }
+  ]
+}

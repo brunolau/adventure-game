@@ -1,0 +1,1475 @@
+{
+  "room": "S18",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 425522797,
+  "usd": 0.15,
+  "started": "2026-10-05T10:47:48",
+  "spend_log_asset": "bg_natural/S18/S18_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S18.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the inner courtyard of the early-1970s housing-estate panel blocks between Švantnerova and M. Schneidra-Trnavského streets in Dúbravka, Bratislava - the pedestrian shortcut between the ZŠ Sokolíkova school grounds and the tram stop. Image 2 is the MAIN reference, a photo of exactly this type of block in the same estate: a long four-storey sectional panel block of white-grey concrete with continuous red balcony parapet bands, deep loggias between white dividing walls, a flat roof, a raised ground floor reached by steel entrance stairs, and a big linden in front of it. Paint the block exactly with this architecture and receding in the same way, but in 1995: no parked cars, no satellite dishes, no glazed-in loggias. Image 3 (low-quality dashcam frame) only shows the courtyard edge with trees and lawn.\n\nBrief: the housing-estate courtyard with Zita's newspaper kiosk, benches, the residents' drying racks behind a fence, colourful gum wrappers without brands; the courtyard is the shortcut between the school and the tram stop. A sunny June afternoon in 1995, warm light from the left, fresh green trees, a clear blue sky with a few small clouds.\n\nCamera: standing on the courtyard path, about 2 m high, looking along the long block; vertical lines stay vertical; the horizon is at y ~404. Keep this exact geometry from the sketch: the block runs from the right edge (its foot at y 690, only the lower floors visible, cut by the top of the picture) away to its far end at x 650 (foot y 465, flat roof y ~75); all its horizontal lines (the four red parapet bands, the roof, the foot) converge to one vanishing point at x ~305, y ~404; the courtyard lawn lies between the block and the path; the path's back edge (a low kerb) is at y 740; the kiosk's front stands on the path at y 740.\n\nWhat the sketch blocks are, left to right: far away at the left the plain end walls of the next panel blocks (beige concrete, one yellow) with two pines, the path leading there towards the tram stop; Zita's small newspaper kiosk standing on the path left of centre: a red roof canopy, a plain cream fascia WITHOUT any lettering, a cream sheet-metal body with red trim, a left glass panel, an open sales window with a light grey sill in the middle and a right glass panel; on the lawn in front of the block the residents' drying yard: three steel T-shaped drying-rack posts with clothes lines and colourful laundry (sheets, shirts, towels) behind a low green wire-mesh fence; a wooden bench with concrete legs at the back edge of the path in front of the block; the steel entrance stairs of the block; a big linden at the right edge in front of the block, its crown running out of the top and right edge; the courtyard path of concrete paving slabs in front.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 345-440, y 420-585 of the 1920x1080 frame (18-23 % from the left, 39-54 % from the top): behind the kiosk's left glass panel, newspapers and magazines hung on clips in two rows - folded front pages with big blurry photos and illegible headline scribbles, no readable words, no logos.\n2. the block of the layout sketch at x 630-720, y 430-580 of the 1920x1080 frame (33-38 % from the left, 40-54 % from the top): behind the kiosk's right glass panel, small shelves full of chewing gum and sweets in many bright colourful wrappers (red, blue, yellow, green, orange), with no brand names, no letters and no logos.\nThe open sales window between them shows a dim kiosk interior with shelves of cigarette-sized boxes (no brands) and a small transistor radio; its light grey sill is one straight horizontal ledge at y 566.\n\nWalkable floor: the band at x 0-1920, y 748-1015 of the 1920x1080 frame (0-100 % from the left, 69-94 % from the top) is the courtyard path of large grey concrete paving slabs - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no bins, no bicycles, no cars, no people. Only light, soft leaf shadows of the linden and the joints between the slabs. The path continues out of the left edge towards the tram stop (the area of the layout sketch at x 0-60, y 748-1015 of the 1920x1080 frame (0-3 % from the left, 69-94 % from the top)) and out of the right edge along the block towards the school yard (the area of the layout sketch at x 1860-1920, y 748-1015 of the 1920x1080 frame (97-100 % from the left, 69-94 % from the top)).\nNPC zone at x 470-600, y 410-570 of the 1920x1080 frame (24-31 % from the left, 38-53 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character is seen through a window: paint the window sill exactly at y 566 across x 440-630; the opening above the sill shows a plain, dim interior, no person.\n\n\nFiction rules: the kiosk, its wares, the drying racks and the benches are invented; no real shop or kiosk names, no lettering on the kiosk fascia, no house numbers, no brand logos or brand names anywhere, no posters, no people anywhere (also no one on balconies or behind windows), no animals, no cars. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S18_sketch.png (rendered from art/prompts/natural/S18.sketch.json, model geometry)",
+    "art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg",
+    "art/source/rooms/S18/courtyard-edge-mst-1-5_kartaview-2020-10.jpg",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S18/S62 courtyard sketch (1995): VP (305, 404), block foot y = 404 + (x - 305) * 0.177, camera 2.03 m, path back edge y 740; generated by a sketch script (camera in the blocking note)",
+    "background": "#a9cbe6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          470
+        ],
+        "fill": "#a9cbe6",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          330,
+          1920,
+          140
+        ],
+        "fill": "#c3d9ea",
+        "note": "paler sky near the horizon"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          250,
+          70,
+          230
+        ],
+        "fill": "#d9b54a",
+        "note": "far yellow block"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          300,
+          250,
+          180
+        ],
+        "fill": "#cfc6b4",
+        "note": "end wall of a far panel block (beige concrete)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          120,
+          255,
+          210,
+          50
+        ],
+        "fill": "#cfc6b4"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          330,
+          330,
+          150
+        ],
+        "fill": "#c8bfae",
+        "note": "lower far block behind the kiosk"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            30,
+            480
+          ],
+          [
+            70,
+            250
+          ],
+          [
+            110,
+            480
+          ]
+        ],
+        "fill": "#3d5a3a",
+        "note": "pine tree"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            150,
+            480
+          ],
+          [
+            190,
+            250
+          ],
+          [
+            230,
+            480
+          ]
+        ],
+        "fill": "#3d5a3a",
+        "note": "pine tree"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            74
+          ],
+          [
+            1920,
+            -1141
+          ],
+          [
+            1920,
+            690
+          ],
+          [
+            650,
+            465
+          ]
+        ],
+        "fill": "#e3dfd6",
+        "note": "long four-storey panel block, white-grey concrete"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            74
+          ],
+          [
+            1920,
+            -1141
+          ],
+          [
+            1920,
+            -1084
+          ],
+          [
+            650,
+            86
+          ]
+        ],
+        "fill": "#c9c4b8",
+        "note": "flat roof attic"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            387
+          ],
+          [
+            1920,
+            324
+          ],
+          [
+            1920,
+            465
+          ],
+          [
+            650,
+            417
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band at 1.6 m"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            339
+          ],
+          [
+            1920,
+            98
+          ],
+          [
+            1920,
+            324
+          ],
+          [
+            650,
+            387
+          ]
+        ],
+        "fill": "#8f9aa0",
+        "note": "dark loggia recess / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            303
+          ],
+          [
+            1920,
+            -71
+          ],
+          [
+            1920,
+            70
+          ],
+          [
+            650,
+            333
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band at 4.4 m"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            254
+          ],
+          [
+            1920,
+            -296
+          ],
+          [
+            1920,
+            -71
+          ],
+          [
+            650,
+            303
+          ]
+        ],
+        "fill": "#8f9aa0",
+        "note": "dark loggia recess / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            218
+          ],
+          [
+            1920,
+            -465
+          ],
+          [
+            1920,
+            -324
+          ],
+          [
+            650,
+            248
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band at 7.2 m"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            170
+          ],
+          [
+            1920,
+            -690
+          ],
+          [
+            1920,
+            -465
+          ],
+          [
+            650,
+            218
+          ]
+        ],
+        "fill": "#8f9aa0",
+        "note": "dark loggia recess / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            134
+          ],
+          [
+            1920,
+            -859
+          ],
+          [
+            1920,
+            -718
+          ],
+          [
+            650,
+            164
+          ]
+        ],
+        "fill": "#b4554a",
+        "note": "red balcony parapet band at 10.0 m"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            86
+          ],
+          [
+            1920,
+            -1084
+          ],
+          [
+            1920,
+            -859
+          ],
+          [
+            650,
+            134
+          ]
+        ],
+        "fill": "#8f9aa0",
+        "note": "dark loggia recess / windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            650,
+            417
+          ],
+          [
+            1920,
+            465
+          ],
+          [
+            1920,
+            690
+          ],
+          [
+            650,
+            465
+          ]
+        ],
+        "fill": "#cdc8bc",
+        "note": "ground level: storage walls and entrance doors under the raised ground floor"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1547,
+            -741
+          ],
+          [
+            1547,
+            624
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 7
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1311,
+            -523
+          ],
+          [
+            1311,
+            582
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1150,
+            -375
+          ],
+          [
+            1150,
+            554
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1034,
+            -268
+          ],
+          [
+            1034,
+            533
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            946,
+            -187
+          ],
+          [
+            946,
+            517
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            877,
+            -123
+          ],
+          [
+            877,
+            505
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            821,
+            -71
+          ],
+          [
+            821,
+            495
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            775,
+            -29
+          ],
+          [
+            775,
+            487
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            737,
+            6
+          ],
+          [
+            737,
+            480
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            704,
+            36
+          ],
+          [
+            704,
+            475
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            676,
+            62
+          ],
+          [
+            676,
+            470
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            652,
+            84
+          ],
+          [
+            652,
+            465
+          ]
+        ],
+        "color": "#f1eee6",
+        "width": 2
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1337,
+            587
+          ],
+          [
+            1534,
+            450
+          ],
+          [
+            1563,
+            450
+          ],
+          [
+            1366,
+            587
+          ]
+        ],
+        "fill": "#4a4f52",
+        "note": "steel entrance stair rising to the raised ground floor"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1337,
+            506
+          ],
+          [
+            1534,
+            354
+          ]
+        ],
+        "color": "#2f3437",
+        "width": 3
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            840,
+            499
+          ],
+          [
+            942,
+            428
+          ],
+          [
+            957,
+            428
+          ],
+          [
+            855,
+            499
+          ]
+        ],
+        "fill": "#4a4f52",
+        "note": "steel entrance stair rising to the raised ground floor"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            840,
+            457
+          ],
+          [
+            942,
+            378
+          ]
+        ],
+        "color": "#2f3437",
+        "width": 3
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            666,
+            468
+          ],
+          [
+            735,
+            420
+          ],
+          [
+            745,
+            420
+          ],
+          [
+            677,
+            468
+          ]
+        ],
+        "fill": "#4a4f52",
+        "note": "steel entrance stair rising to the raised ground floor"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            666,
+            440
+          ],
+          [
+            735,
+            386
+          ]
+        ],
+        "color": "#2f3437",
+        "width": 3
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            480
+          ],
+          [
+            650,
+            465
+          ],
+          [
+            1920,
+            690
+          ],
+          [
+            1920,
+            745
+          ],
+          [
+            0,
+            745
+          ]
+        ],
+        "fill": "#7fa652",
+        "note": "courtyard lawn"
+      },
+      {
+        "type": "rect",
+        "box": [
+          835,
+          408,
+          10,
+          242
+        ],
+        "fill": "#6c7277",
+        "note": "steel drying-rack post (foot y 650)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          731,
+          404,
+          218,
+          9
+        ],
+        "fill": "#6c7277",
+        "note": "T crossbar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          995,
+          408,
+          10,
+          242
+        ],
+        "fill": "#6c7277",
+        "note": "steel drying-rack post (foot y 650)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          891,
+          404,
+          218,
+          9
+        ],
+        "fill": "#6c7277",
+        "note": "T crossbar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1155,
+          408,
+          10,
+          242
+        ],
+        "fill": "#6c7277",
+        "note": "steel drying-rack post (foot y 650)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1051,
+          404,
+          218,
+          9
+        ],
+        "fill": "#6c7277",
+        "note": "T crossbar"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            731,
+            418
+          ],
+          [
+            1269,
+            418
+          ]
+        ],
+        "color": "#5a5f62",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            731,
+            440
+          ],
+          [
+            1269,
+            440
+          ]
+        ],
+        "color": "#5a5f62",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          760,
+          420,
+          38,
+          70
+        ],
+        "fill": "#f3f1ea",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          442,
+          38,
+          82
+        ],
+        "fill": "#e7c34a",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          850,
+          420,
+          38,
+          94
+        ],
+        "fill": "#7fb2de",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          905,
+          442,
+          38,
+          70
+        ],
+        "fill": "#f3f1ea",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          960,
+          420,
+          38,
+          82
+        ],
+        "fill": "#e46b5a",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          442,
+          38,
+          94
+        ],
+        "fill": "#9fd18f",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          420,
+          38,
+          70
+        ],
+        "fill": "#f3f1ea",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1130,
+          442,
+          38,
+          82
+        ],
+        "fill": "#c58ad6",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          420,
+          38,
+          94
+        ],
+        "fill": "#7fb2de",
+        "note": "laundry on the lines"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          562,
+          440,
+          128
+        ],
+        "fill": "#a8b0a6",
+        "note": "low wire-mesh fence around the drying yard (top y 562, foot y 690)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          790,
+          562,
+          440,
+          128
+        ],
+        "cols": 22,
+        "rows": 6,
+        "color": "#7e877e",
+        "width": 1
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          556,
+          440,
+          8
+        ],
+        "fill": "#6c7277"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          594,
+          280,
+          14
+        ],
+        "fill": "#8a5a34",
+        "note": "bench backrest"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          616,
+          280,
+          14
+        ],
+        "fill": "#8a5a34"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1194,
+          656,
+          292,
+          16
+        ],
+        "fill": "#93623a",
+        "note": "bench seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1215,
+          672,
+          14,
+          63
+        ],
+        "fill": "#9b978f",
+        "note": "bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1451,
+          672,
+          14,
+          63
+        ],
+        "fill": "#9b978f",
+        "note": "bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1668,
+          300,
+          64,
+          430
+        ],
+        "fill": "#6d5641",
+        "note": "linden trunk (foot 1700,728)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1380,
+          -80,
+          620,
+          620
+        ],
+        "fill": "#5f8f3e",
+        "note": "big linden crown"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1300,
+          60,
+          300,
+          300
+        ],
+        "fill": "#6a9a46"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          740,
+          1920,
+          340
+        ],
+        "fill": "#b3aa9b",
+        "note": "concrete paving slabs of the courtyard path (one plain surface)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          734,
+          1920,
+          8
+        ],
+        "fill": "#9e9686",
+        "note": "kerb edge between lawn and paving (above the walk area)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          310,
+          318,
+          440,
+          30
+        ],
+        "fill": "#c0392b",
+        "note": "kiosk roof canopy (red)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          348,
+          400,
+          60
+        ],
+        "fill": "#efe9dc",
+        "note": "plain cream fascia (no lettering)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          408,
+          400,
+          332
+        ],
+        "fill": "#e9e2d2",
+        "note": "kiosk body (cream sheet metal)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          345,
+          410,
+          95,
+          190
+        ],
+        "fill": "#d8e4ea",
+        "note": "left glass panel with newspapers on clips"
+      },
+      {
+        "type": "rect",
+        "box": [
+          350,
+          425,
+          26,
+          160
+        ],
+        "fill": "#f4f1e8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          425,
+          26,
+          160
+        ],
+        "fill": "#e8e2cf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          410,
+          425,
+          26,
+          160
+        ],
+        "fill": "#f4f1e8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          445,
+          410,
+          180,
+          156
+        ],
+        "fill": "#3b3a3a",
+        "note": "open sales window, dim interior (Zita stands here)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          435,
+          562,
+          200,
+          12
+        ],
+        "fill": "#bdb7aa",
+        "note": "sales window sill (top y 566)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          630,
+          410,
+          85,
+          190
+        ],
+        "fill": "#d8e4ea",
+        "note": "right glass panel with gum and sweets"
+      },
+      {
+        "type": "rect",
+        "box": [
+          636,
+          432,
+          22,
+          20
+        ],
+        "fill": "#e74c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          662,
+          432,
+          22,
+          20
+        ],
+        "fill": "#3498db"
+      },
+      {
+        "type": "rect",
+        "box": [
+          688,
+          432,
+          22,
+          20
+        ],
+        "fill": "#f1c40f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          636,
+          460,
+          22,
+          20
+        ],
+        "fill": "#3498db"
+      },
+      {
+        "type": "rect",
+        "box": [
+          662,
+          460,
+          22,
+          20
+        ],
+        "fill": "#f1c40f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          688,
+          460,
+          22,
+          20
+        ],
+        "fill": "#2ecc71"
+      },
+      {
+        "type": "rect",
+        "box": [
+          636,
+          488,
+          22,
+          20
+        ],
+        "fill": "#f1c40f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          662,
+          488,
+          22,
+          20
+        ],
+        "fill": "#2ecc71"
+      },
+      {
+        "type": "rect",
+        "box": [
+          688,
+          488,
+          22,
+          20
+        ],
+        "fill": "#e67e22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          636,
+          516,
+          22,
+          20
+        ],
+        "fill": "#2ecc71"
+      },
+      {
+        "type": "rect",
+        "box": [
+          662,
+          516,
+          22,
+          20
+        ],
+        "fill": "#e67e22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          688,
+          516,
+          22,
+          20
+        ],
+        "fill": "#e74c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          636,
+          544,
+          22,
+          20
+        ],
+        "fill": "#e67e22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          662,
+          544,
+          22,
+          20
+        ],
+        "fill": "#e74c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          688,
+          544,
+          22,
+          20
+        ],
+        "fill": "#3498db"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          600,
+          400,
+          140
+        ],
+        "fill": "#c9c0ab",
+        "note": "lower kiosk panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          600,
+          400,
+          8
+        ],
+        "fill": "#c0392b",
+        "note": "red trim"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S18.json",
+  "blocking": {
+    "version": 1,
+    "room": "S18",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1). Owner feedback 2026-10-05: art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg is the main base.",
+    "note": "Inner courtyard of the early-1970s four-storey sectional panel blocks (Svantnerova / M. Schneidra-Trnavskeho, same type as the carl_eric photo of Sokolikova): camera ~2.0 m high on the paved courtyard path, looking along the long block on the right, which recedes from the right edge to its far end at x ~640 (vanishing point x ~320, y 404): red balcony parapet bands, loggias, raised entrances with steel stairs, flat roof; a big linden in front of it at the right; at the left beyond the kiosk the end walls of the next blocks and the path towards the tram stop. Horizon y 404, the kiosk front and the courtyard path's back edge y 740 (~166 px per metre there), front edge y 1015 (301 px per metre). Perspective s(y) = (y - 404) / 611. Props are where they are: Zita's newspaper kiosk (2.4 m wide, sales window sill 1.05 m = y 566) on the paving at the left of centre, newspapers on clips behind its left glass panel, gum and sweets with colourful unbranded wrappers behind its right glass panel; the residents' drying racks with laundry behind a low wire fence on the lawn in front of the block; two benches along the path in front of the block.",
+    "background": "bg_natural/S18.webp",
+    "walk_polygon": [
+      [
+        0,
+        748
+      ],
+      [
+        1920,
+        748
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      740,
+      1015
+    ],
+    "actor_scale": [
+      0.55,
+      1.0
+    ],
+    "spawn": [
+      1100,
+      900
+    ],
+    "hotspots": {
+      "S18.ambient 1": {
+        "rect": [
+          630,
+          430,
+          90,
+          150
+        ],
+        "interaction_point": [
+          675,
+          800
+        ],
+        "label_anchor": [
+          675,
+          420
+        ],
+        "reason": "gum and sweets with colourful unbranded wrappers stacked behind the kiosk's right glass panel"
+      },
+      "S18.ambient 2": {
+        "rect": [
+          345,
+          420,
+          95,
+          165
+        ],
+        "interaction_point": [
+          392,
+          800
+        ],
+        "label_anchor": [
+          392,
+          410
+        ],
+        "reason": "newspapers and magazines hung on clips behind the kiosk's left glass panel"
+      },
+      "S18.ZITA": {
+        "rect": [
+          470,
+          410,
+          130,
+          160
+        ],
+        "interaction_point": [
+          535,
+          820
+        ],
+        "label_anchor": [
+          535,
+          305
+        ],
+        "reason": "Zita inside her kiosk, seen as a bust in the open sales window (sill y 566)"
+      }
+    },
+    "npcs": {
+      "S18.ZITA": {
+        "variant": "window_bust",
+        "feet": [
+          535,
+          735
+        ],
+        "scale": 0.55,
+        "sill_y": 566,
+        "z": "back",
+        "reason": "DECISIONS item 2: Zita behind the kiosk sill (bust); feet = the kiosk floor just behind its front wall"
+      }
+    },
+    "exits": {
+      "S18.to_S11": {
+        "rect": [
+          0,
+          748,
+          60,
+          267
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          170,
+          738
+        ],
+        "reason": "the courtyard path continues out of the left edge past the block ends towards the tram stop"
+      },
+      "S18.to_S17": {
+        "rect": [
+          1860,
+          748,
+          60,
+          267
+        ],
+        "interaction_point": [
+          1850,
+          880
+        ],
+        "label_anchor": [
+          1760,
+          738
+        ],
+        "reason": "the path continues out of the right edge along the block, past the kindergarten fence to the school yard"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S18.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:48:54"
+  }
+}

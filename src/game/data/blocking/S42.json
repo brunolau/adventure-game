@@ -1,0 +1,71 @@
+{
+  "version": 1,
+  "room": "S42",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Paved forecourt on the east side of Hotel Grand Jasna as in the 2017 photo: camera ~1.7 m high on the paving, looking SSW to the Chopok ridge; horizon y ~440; the low stone wall and the forecourt's back edge on y ~690-712 (~140 px per metre there), the hotel facade foot on the right on y ~700, the salon side door on y ~690. Perspective: the painted doors (~185 px for ~2.1 m at y ~705) and the luggage trolley set the hero scale at the back edge to ~0.31 (y 705), linear to 1.0 at y 1015 (actor_scale [0.2, 1.0] over the band 652-1015). Left: the glass and steel structure of the Grand gondola station and a side path to the Biela Put client centre; a big old spruce behind the stone wall throws its shade on the paving; centre: the footpath into the forest to Vrbicke pleso, the exhibition's temporary info stand with Nina; right: the hotel with the salon side door, a small stone water feature, the luggage trolley and the main entrance.",
+  "background": "bg_natural/S42.webp",
+  "walk_polygon": [[0, 1015], [0, 705], [110, 705], [140, 652], [250, 652], [268, 708], [640, 708], [660, 652], [745, 652], [765, 708], [960, 712], [975, 722], [1185, 722], [1195, 694], [1310, 694], [1322, 716], [1600, 718], [1920, 742], [1920, 1015]],
+  "walk_band": [652, 1015],
+  "actor_scale": [0.2, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S42.ambient 1": {
+      "rect": [300, 470, 260, 270],
+      "interaction_point": [430, 790],
+      "label_anchor": [430, 460],
+      "reason": "the big old spruce behind the low stone wall (trunk foot y ~690) and the pool of shade it throws on the paving"
+    },
+    "S42.ambient 2": {
+      "rect": [1440, 462, 140, 262],
+      "interaction_point": [1510, 790],
+      "label_anchor": [1475, 500],
+      "reason": "brass hotel luggage trolley standing on the paving beside the main entrance (top bar y ~465, wheels y ~720)"
+    },
+    "S42.NINA": {
+      "rect": [843, 535, 115, 237],
+      "interaction_point": [900, 830],
+      "reason": "Nina stands on the forecourt in front of the exhibition's temporary info stand"
+    }
+  },
+  "npcs": {
+    "S42.NINA": {
+      "variant": "standing",
+      "feet": [900, 770],
+      "z": "auto",
+      "reason": "art brief: Nina at the temporary info stand of the exhibition (standing figure)"
+    }
+  },
+  "exits": {
+    "S42.to_S41": {
+      "rect": [0, 712, 60, 303],
+      "interaction_point": [70, 880],
+      "label_anchor": [185, 700],
+      "reason": "the paved forecourt continues out of the left edge back to the Biela Put gondola station plaza"
+    },
+    "S42.to_S46": {
+      "rect": [130, 560, 130, 92],
+      "interaction_point": [195, 676],
+      "label_anchor": [195, 550],
+      "reason": "the paved side path past the gondola station structure towards the Biela Put client centre"
+    },
+    "S42.to_S45": {
+      "rect": [650, 560, 110, 92],
+      "interaction_point": [702, 676],
+      "label_anchor": [625, 560],
+      "reason": "the gravel footpath leading through the gap in the stone wall into the spruce forest to Vrbicke pleso"
+    },
+    "S42.to_S44": {
+      "rect": [1190, 425, 125, 269],
+      "interaction_point": [1252, 740],
+      "label_anchor": [1240, 398],
+      "reason": "the glazed side door of the hotel's lower wing that leads to the rented exhibition salon"
+    },
+    "S42.to_S43": {
+      "rect": [1625, 450, 270, 255],
+      "interaction_point": [1760, 800],
+      "label_anchor": [1760, 440],
+      "reason": "the hotel's main entrance under its canopy (lobby)"
+    }
+  },
+  "state_patches": []
+}

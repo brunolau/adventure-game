@@ -1,0 +1,137 @@
+{
+ "room": "S14",
+ "notes": "Natural S14 (bg_natural/S14.webp), the after-school club in the classroom, 15 June 1995 afternoon. Wind in the poplars and limes of the sports yard seen through the ribbon window (cut from the natural painting), small children running along the clay track far outside now and then, birds crossing the sky over the yard, dust motes turning in the bright window light, the red recording light of Mira's cassette recorder glowing (room ambience: chalk, children whispering next door, ticking).",
+ "layers": [
+  {
+   "id": "window_trees",
+   "type": "sway",
+   "texture": "S14/natural/window_trees.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.27,
+   "wavelength_px": 80,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "dust_window_light",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1050,
+    240,
+    520,
+    460
+   ],
+   "count": 28,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff3d0"
+  },
+  {
+   "id": "kids_on_track",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1640,
+     602
+    ],
+    [
+     1960,
+     612
+    ]
+   ],
+   "speed_px_s": 55,
+   "scale": 0.08,
+   "modulate": "#5a4a6a",
+   "alpha": 0.6,
+   "flock": 3,
+   "flock_spread": [
+    26,
+    6
+   ],
+   "bob_px": 1.5,
+   "direction": "random",
+   "every_s": [
+    14,
+    30
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "mask": "S14/natural/window_mask.webp"
+  },
+  {
+   "id": "birds_over_yard",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     1950,
+     300
+    ],
+    [
+     1760,
+     250
+    ],
+    [
+     1500,
+     280
+    ]
+   ],
+   "speed_px_s": 180,
+   "scale": 0.055,
+   "flock": 3,
+   "flock_spread": [
+    50,
+    20
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    5,
+    12
+   ],
+   "clip": [
+    1536,
+    190,
+    384,
+    540
+   ]
+  },
+  {
+   "id": "recorder_led",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    853,
+    591
+   ],
+   "size": [
+    10,
+    10
+   ],
+   "color": "#ff3a2a",
+   "min": 0.35,
+   "max": 0.9,
+   "period_s": 1.6
+  }
+ ]
+}

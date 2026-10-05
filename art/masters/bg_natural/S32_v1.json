@@ -1,0 +1,1526 @@
+{
+  "room": "S32",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 299025848,
+  "usd": 0.15,
+  "started": "2026-10-05T09:56:45",
+  "spend_log_asset": "bg_natural/S32/S32_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S32.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Namestie sv. Rozalie, the village green in the centre of Ivanka pri Dunaji near Bratislava, Slovakia, as it was in 1960. Image 2 is the real Chapel of St Rosalia (1832) that stands on the green: a small round chapel with yellow walls, white pilaster strips, a classical pediment over the wooden double door, a low dark domed roof and a small wooden lantern with louvred arches and an iron cross. Image 3 shows the green itself: big old lindens and maples over grass, with low single-storey village houses with red-brown tiled roofs around it. Image 4 is a 1960 photo of a village street in the region: whitewashed houses, lath fences, beaten-earth roads, wooden electricity poles. Paint the green as it was in 1960 from these: grass and beaten-earth paths, a dirt road ringing the green, no paving, no modern lamps, railings, playground, pavilion or cars.\n\nBrief: the village green with low houses, a bicycle, a covered well and the municipal notice board; resident Mrs Berta will stand on the path. A sunny afternoon on 6 June 1960, early summer: lush green leaves, warm low sunlight from the left, long soft tree shadows across the grass. Quiet village life of 1960 Czechoslovakia: plain plastered walls with slightly worn whitewash, wooden windows with lace curtains, a few hens behind the lath fence on the right.\n\nCamera: standing on the green about 2 m high, looking straight across it; vertical lines stay vertical; the horizon is at y ~400. Keep this exact geometry from the sketch: the chapel stands in the middle distance (its foot at y 500, cross at y ~50); the post-office house on the left and the houses on the right stand at the back of the dirt road (their walls meet the ground at y 580); the dirt road ring runs across from y 580 to y 655; the grass of the green fills everything below y 655.\n\nWhat the sketch blocks are, left to right: the post-office house on the left - a single-storey village house with pale ochre plaster, two windows with lace curtains, a weathered plank door with a small white enamel sign above it that reads POŠTA, a small post box on the wall, a red-brown tiled hipped roof; a wooden electricity pole with a crossarm; the mouth of a narrow dirt street with a lath fence, leading away between the houses; lindens on the far part of the green; the Chapel of St Rosalia in the middle distance with a little path to its door; behind it the far ring of low houses with tiled roofs; the dirt road leaving the square at the back right between the trees; a low house; the municipal notice board under a small roof with a few pinned sheets; whitewashed village houses along the right side with a lath fence in front of their gardens and a big linden trunk; the canopy of old lindens and maples over the top left and top right; the grass of the green with beaten-earth paths in front.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 165-375, y 420-712 of the 1920x1080 frame (9-20 % from the left, 39-66 % from the top): the old village well standing on the grass: a round stone well ring closed by a heavy wooden plank lid, under a small gabled shingle roof on two wooden posts, with a windlass beam.\n2. the block of the layout sketch at x 1200-1462, y 548-704 of the 1920x1080 frame (62-76 % from the left, 51-65 % from the top): a black 1950s bicycle with a leather saddle leaning against the front of the notice board, both wheels on the grass.\nThe post-office door is the area of the layout sketch at x 398-502, y 396-582 of the 1920x1080 frame (21-26 % from the left, 37-54 % from the top); the narrow street between the houses on the left is the area of the layout sketch at x 585-710, y 440-615 of the 1920x1080 frame (30-37 % from the left, 41-57 % from the top); the road at the back right is the area of the layout sketch at x 1045-1185, y 440-615 of the 1920x1080 frame (54-62 % from the left, 41-57 % from the top); the dirt road continues out of the left edge (the area of the layout sketch at x 0-60, y 672-1002 of the 1920x1080 frame (0-3 % from the left, 62-93 % from the top)) and the path out of the right edge (the area of the layout sketch at x 1860-1920, y 672-1002 of the 1920x1080 frame (97-100 % from the left, 62-93 % from the top)).\n\nWalkable floor: the band at x 0-1920, y 606-1015 of the 1920x1080 frame (0-100 % from the left, 56-94 % from the top) is the open grass of the village green with its beaten-earth paths and, at its back, the dirt road - flat ground with no kerb, no step, no ditch and nothing standing on it: no benches, no carts, no stones, no tree trunks, no posts. Only grass, earth, light and tree shadows.\nNPC zone at x 635-765, y 460-760 of the 1920x1080 frame (33-40 % from the left, 43-70 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 760.\n\nFiction rules: no house numbers, no names, no shop signs, no posters with text, no logos, no red stars or slogans, no cars, no people. The only lettering in the picture is POŠTA on the small enamel sign above the post-office door; the notice board sheets and the chapel frieze show no readable text and no digits. A few hens behind the fence are the only animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S32_sketch.png (rendered from art/prompts/natural/S32.sketch.json, model geometry)",
+    "art/source/rooms/S32/rozalia_chapel_plepo_2008.jpg",
+    "art/source/rooms/S32/rozalia_square_park_path_taz666_2013.jpg",
+    "art/source/rooms/S32/period_ref_village_street_1960_fortepan54016.jpg",
+    "art/backgrounds/stara-dubravka.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S32 natural blocking (src/game/data/blocking/S32.json): village green of Namestie sv. Rozalie, camera ~2.0 m on the green looking NNE, horizon y 400, s(y) = (y - 400) / 615. Chapel foot y 500, side houses foot y 580, dirt road ring y 580-655, green from y 655.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          400
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          1920,
+          120
+        ],
+        "fill": "#93b06a",
+        "note": "distant green and gardens at the horizon"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            560,
+            470
+          ],
+          [
+            560,
+            360
+          ],
+          [
+            640,
+            300
+          ],
+          [
+            760,
+            300
+          ],
+          [
+            800,
+            350
+          ],
+          [
+            1060,
+            350
+          ],
+          [
+            1120,
+            300
+          ],
+          [
+            1300,
+            300
+          ],
+          [
+            1380,
+            360
+          ],
+          [
+            1460,
+            360
+          ],
+          [
+            1460,
+            470
+          ]
+        ],
+        "fill": "#a9553b",
+        "note": "far ring of low houses behind the chapel: red-brown tiled roofs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          405,
+          900,
+          75
+        ],
+        "fill": "#e9dcc2",
+        "note": "far house walls, small windows"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          425,
+          40,
+          34
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          425,
+          40,
+          34
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          425,
+          40,
+          34
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1230,
+          425,
+          40,
+          34
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            760,
+            0
+          ],
+          [
+            800,
+            90
+          ],
+          [
+            740,
+            200
+          ],
+          [
+            640,
+            250
+          ],
+          [
+            480,
+            230
+          ],
+          [
+            300,
+            160
+          ],
+          [
+            0,
+            140
+          ]
+        ],
+        "fill": "#6d9646",
+        "note": "linden canopy over the left (behind the post office roof)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1120,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            260
+          ],
+          [
+            1700,
+            230
+          ],
+          [
+            1520,
+            280
+          ],
+          [
+            1300,
+            260
+          ],
+          [
+            1160,
+            200
+          ],
+          [
+            1100,
+            90
+          ]
+        ],
+        "fill": "#6d9646",
+        "note": "linden and maple canopy over the right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            250
+          ],
+          [
+            700,
+            170
+          ],
+          [
+            770,
+            160
+          ],
+          [
+            790,
+            260
+          ],
+          [
+            760,
+            330
+          ],
+          [
+            660,
+            330
+          ]
+        ],
+        "fill": "#79a24f",
+        "note": "tree crown left of the chapel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1020,
+            240
+          ],
+          [
+            1060,
+            160
+          ],
+          [
+            1140,
+            150
+          ],
+          [
+            1180,
+            230
+          ],
+          [
+            1160,
+            330
+          ],
+          [
+            1040,
+            330
+          ]
+        ],
+        "fill": "#79a24f",
+        "note": "tree crown right of the chapel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          735,
+          320,
+          22,
+          160
+        ],
+        "fill": "#5b4330",
+        "note": "trunk of the tree left of the chapel (on the far green)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1085,
+          320,
+          22,
+          160
+        ],
+        "fill": "#5b4330",
+        "note": "trunk of the tree right of the chapel (on the far green)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          470,
+          900,
+          112
+        ],
+        "fill": "#86a85e",
+        "note": "far part of the green around the chapel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            876,
+            582
+          ],
+          [
+            924,
+            582
+          ],
+          [
+            912,
+            500
+          ],
+          [
+            888,
+            500
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "path up to the chapel door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          470,
+          220,
+          32
+        ],
+        "fill": "#e2a85e",
+        "note": "chapel: ochre plinth"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          782,
+          212,
+          236,
+          124
+        ],
+        "fill": "#6f6660",
+        "note": "low dark tin domed roof of the round chapel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          270,
+          220,
+          200
+        ],
+        "fill": "#f1db8f",
+        "note": "Chapel of St Rosalia: round yellow body"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          290,
+          24,
+          180
+        ],
+        "fill": "#f6f2e6",
+        "note": "white pilaster strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          976,
+          290,
+          24,
+          180
+        ],
+        "fill": "#f6f2e6",
+        "note": "white pilaster strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          850,
+          300,
+          100,
+          22
+        ],
+        "fill": "#e8cf7c",
+        "note": "frieze (no lettering)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          868,
+          392,
+          64,
+          108
+        ],
+        "fill": "#f6f2e6",
+        "note": "white door surround"
+      },
+      {
+        "type": "rect",
+        "box": [
+          878,
+          402,
+          44,
+          98
+        ],
+        "fill": "#a8743c",
+        "note": "wooden double door"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            796,
+            276
+          ],
+          [
+            900,
+            220
+          ],
+          [
+            1004,
+            276
+          ]
+        ],
+        "fill": "#ead07a",
+        "note": "classical pediment"
+      },
+      {
+        "type": "rect",
+        "box": [
+          872,
+          140,
+          56,
+          70
+        ],
+        "fill": "#b07a4a",
+        "note": "wooden lantern with louvred arches"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          866,
+          112,
+          68,
+          44
+        ],
+        "fill": "#6a5446",
+        "note": "lantern cupola"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            900,
+            112
+          ],
+          [
+            900,
+            52
+          ]
+        ],
+        "color": "#3a3430",
+        "width": 4,
+        "note": "iron cross"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            884,
+            72
+          ],
+          [
+            916,
+            72
+          ]
+        ],
+        "color": "#3a3430",
+        "width": 4
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          300,
+          575,
+          282
+        ],
+        "fill": "#ecdcbc",
+        "note": "post-office house: single-storey village house, pale ochre plaster"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            305
+          ],
+          [
+            0,
+            150
+          ],
+          [
+            470,
+            150
+          ],
+          [
+            600,
+            305
+          ]
+        ],
+        "fill": "#a9553b",
+        "note": "its red-brown tiled hipped roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          298,
+          600,
+          12
+        ],
+        "fill": "#7a4630",
+        "note": "eave"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          545,
+          575,
+          37
+        ],
+        "fill": "#b6a88c",
+        "note": "grey plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          62,
+          404,
+          112,
+          128
+        ],
+        "fill": "#f4f2ea",
+        "note": "window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          72,
+          414,
+          92,
+          108
+        ],
+        "fill": "#6d7f8a",
+        "note": "window with lace curtain"
+      },
+      {
+        "type": "rect",
+        "box": [
+          222,
+          404,
+          112,
+          128
+        ],
+        "fill": "#f4f2ea",
+        "note": "window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          232,
+          414,
+          92,
+          108
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          393,
+          360,
+          114,
+          28
+        ],
+        "fill": "#f5f3ec",
+        "note": "white enamel sign POSTA above the door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          398,
+          396,
+          104,
+          186
+        ],
+        "fill": "#6e4a2e",
+        "note": "plank door of the post office (exit to S33)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          522,
+          440,
+          34,
+          46
+        ],
+        "fill": "#4f6a8a",
+        "note": "small wall post box"
+      },
+      {
+        "type": "rect",
+        "box": [
+          575,
+          410,
+          145,
+          172
+        ],
+        "fill": "#93b06a",
+        "note": "street opening between the houses (Moyzesova)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            585,
+            582
+          ],
+          [
+            712,
+            582
+          ],
+          [
+            680,
+            470
+          ],
+          [
+            628,
+            470
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "dirt street leading away between the houses"
+      },
+      {
+        "type": "bars",
+        "box": [
+          575,
+          470,
+          50,
+          112
+        ],
+        "step": 12,
+        "bar": 6,
+        "fill": "#8a7356",
+        "vertical": true,
+        "note": "lath fence along the street"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            566,
+            600
+          ],
+          [
+            566,
+            140
+          ]
+        ],
+        "color": "#6b5236",
+        "width": 14,
+        "note": "wooden electricity pole with a crossarm"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            536,
+            168
+          ],
+          [
+            596,
+            168
+          ]
+        ],
+        "color": "#6b5236",
+        "width": 8
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          410,
+          150,
+          172
+        ],
+        "fill": "#93b06a",
+        "note": "opening of the road towards the manor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1045,
+            582
+          ],
+          [
+            1188,
+            582
+          ],
+          [
+            1148,
+            470
+          ],
+          [
+            1088,
+            470
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "dirt village road leaving the square at the back right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          360,
+          285,
+          222
+        ],
+        "fill": "#e9d6b2",
+        "note": "low house right of the road, pale ochre"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1176,
+            365
+          ],
+          [
+            1240,
+            250
+          ],
+          [
+            1460,
+            250
+          ],
+          [
+            1488,
+            365
+          ]
+        ],
+        "fill": "#a14f37",
+        "note": "its tiled roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          430,
+          70,
+          90
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1475,
+          330,
+          445,
+          252
+        ],
+        "fill": "#efe2c8",
+        "note": "village houses along the right side of the square, whitewashed"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1462,
+            335
+          ],
+          [
+            1530,
+            212
+          ],
+          [
+            1920,
+            212
+          ],
+          [
+            1920,
+            335
+          ]
+        ],
+        "fill": "#a9553b",
+        "note": "their tiled roofs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          410,
+          92,
+          110
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1740,
+          410,
+          92,
+          110
+        ],
+        "fill": "#6d7f8a"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1470,
+          505,
+          450,
+          77
+        ],
+        "step": 14,
+        "bar": 7,
+        "fill": "#8f7a5c",
+        "vertical": true,
+        "note": "lath fence of the front gardens, hens behind it"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          520,
+          450,
+          6
+        ],
+        "fill": "#7a6448"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1515,
+          330,
+          26,
+          270
+        ],
+        "fill": "#5b4330",
+        "note": "trunk of a big linden in front of the right houses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          580,
+          1920,
+          78
+        ],
+        "fill": "#cbb28a",
+        "note": "beaten-earth road ring in front of the houses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          655,
+          1920,
+          425
+        ],
+        "fill": "#7fa35a",
+        "note": "the village green: grass"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            780,
+            1080
+          ],
+          [
+            1180,
+            1080
+          ],
+          [
+            960,
+            655
+          ],
+          [
+            880,
+            655
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "beaten-earth path across the green towards the chapel"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            860
+          ],
+          [
+            500,
+            780
+          ],
+          [
+            880,
+            700
+          ],
+          [
+            900,
+            740
+          ],
+          [
+            520,
+            820
+          ],
+          [
+            0,
+            920
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "path towards the left road"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1060,
+            760
+          ],
+          [
+            1500,
+            740
+          ],
+          [
+            1920,
+            760
+          ],
+          [
+            1920,
+            810
+          ],
+          [
+            1520,
+            790
+          ],
+          [
+            1080,
+            810
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "path towards the right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          183,
+          470,
+          14,
+          240
+        ],
+        "fill": "#6b4a2c",
+        "note": "well: left roof post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          353,
+          470,
+          14,
+          240
+        ],
+        "fill": "#6b4a2c",
+        "note": "well: right roof post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            160,
+            482
+          ],
+          [
+            275,
+            420
+          ],
+          [
+            390,
+            482
+          ],
+          [
+            380,
+            494
+          ],
+          [
+            170,
+            494
+          ]
+        ],
+        "fill": "#8a5a34",
+        "note": "small gabled wooden roof over the well"
+      },
+      {
+        "type": "rect",
+        "box": [
+          196,
+          528,
+          158,
+          10
+        ],
+        "fill": "#5a3a22",
+        "note": "windlass beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          200,
+          610,
+          150,
+          98
+        ],
+        "fill": "#a9a196",
+        "note": "round stone well ring"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          200,
+          590,
+          150,
+          40
+        ],
+        "fill": "#8a6440",
+        "note": "closed plank lid on the ring"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1302,
+          470,
+          10,
+          236
+        ],
+        "fill": "#5a3a24",
+        "note": "notice board post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1428,
+          470,
+          10,
+          236
+        ],
+        "fill": "#5a3a24",
+        "note": "notice board post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1286,
+            478
+          ],
+          [
+            1370,
+            452
+          ],
+          [
+            1454,
+            478
+          ]
+        ],
+        "fill": "#5a3a24",
+        "note": "small roof of the notice board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1294,
+          478,
+          152,
+          128
+        ],
+        "fill": "#6e4c32",
+        "note": "municipal notice board (glazed wooden case)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1308,
+          492,
+          52,
+          64
+        ],
+        "fill": "#efe9d8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1374,
+          496,
+          54,
+          58
+        ],
+        "fill": "#efe9d8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1205,
+          598,
+          104,
+          104
+        ],
+        "outline": "#1e1e1e",
+        "width": 7,
+        "note": "bicycle rear wheel"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1352,
+          598,
+          104,
+          104
+        ],
+        "outline": "#1e1e1e",
+        "width": 7,
+        "note": "bicycle front wheel"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1257,
+            650
+          ],
+          [
+            1300,
+            586
+          ],
+          [
+            1392,
+            586
+          ],
+          [
+            1404,
+            650
+          ]
+        ],
+        "color": "#1e1e1e",
+        "width": 7,
+        "note": "black bicycle frame"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1300,
+            586
+          ],
+          [
+            1330,
+            650
+          ],
+          [
+            1257,
+            650
+          ]
+        ],
+        "color": "#1e1e1e",
+        "width": 7
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1290,
+            570
+          ],
+          [
+            1316,
+            570
+          ]
+        ],
+        "color": "#3a2a1e",
+        "width": 10,
+        "note": "leather saddle"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1392,
+            586
+          ],
+          [
+            1384,
+            560
+          ],
+          [
+            1410,
+            556
+          ]
+        ],
+        "color": "#1e1e1e",
+        "width": 6,
+        "note": "handlebar"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S32.json",
+  "blocking": {
+    "version": 1,
+    "room": "S32",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Namestie sv. Rozalie, Ivanka pri Dunaji, June 1960, camera standing on the village green (~2.0 m) looking NNE across the green: horizon y 400, perspective s(y) = (y - 400) / 615 (hero 1.7 m = 512 px at y 1015, ~300 px per metre there; ~88 px per metre at the house fronts y 580). The Chapel of St Rosalia stands in the middle distance on the green (foot y 500); the ring of low tiled houses: the post-office house on the left (foot y 580), houses with lath fences on the right (foot y 585). Streets leave the square between the houses. Props stand where they are on a village green: the covered well on the grass in front of the post office, the bicycle leaning against the notice board on the right. The walk polygon is the green and the beaten-earth paths up to the dirt road in front of the houses, with lobes to the post-office door and the two street mouths; it leaves out the well and the notice board.",
+    "background": "bg_natural/S32.webp",
+    "walk_polygon": [
+      [
+        0,
+        668
+      ],
+      [
+        150,
+        668
+      ],
+      [
+        150,
+        722
+      ],
+      [
+        392,
+        722
+      ],
+      [
+        392,
+        640
+      ],
+      [
+        398,
+        606
+      ],
+      [
+        500,
+        606
+      ],
+      [
+        508,
+        640
+      ],
+      [
+        580,
+        648
+      ],
+      [
+        590,
+        632
+      ],
+      [
+        705,
+        632
+      ],
+      [
+        715,
+        648
+      ],
+      [
+        1040,
+        650
+      ],
+      [
+        1050,
+        632
+      ],
+      [
+        1180,
+        632
+      ],
+      [
+        1192,
+        652
+      ],
+      [
+        1192,
+        712
+      ],
+      [
+        1466,
+        712
+      ],
+      [
+        1466,
+        652
+      ],
+      [
+        1920,
+        662
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      606,
+      1015
+    ],
+    "actor_scale": [
+      0.333,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S32.ambient 1": {
+        "rect": [
+          165,
+          420,
+          210,
+          292
+        ],
+        "interaction_point": [
+          270,
+          760
+        ],
+        "label_anchor": [
+          250,
+          414
+        ],
+        "reason": "covered village well on the grass in front of the post-office windows: round stone ring with a closed plank lid under a small gabled wooden roof on two posts (ring foot y ~705)"
+      },
+      "S32.ambient 2": {
+        "rect": [
+          1200,
+          548,
+          262,
+          156
+        ],
+        "interaction_point": [
+          1330,
+          750
+        ],
+        "label_anchor": [
+          1330,
+          538
+        ],
+        "reason": "black 1950s bicycle leaning against the municipal notice board on the right of the green (wheels on the grass at y ~700)"
+      },
+      "S32.BERTA": {
+        "rect": [
+          635,
+          460,
+          130,
+          300
+        ],
+        "interaction_point": [
+          800,
+          790
+        ],
+        "label_anchor": [
+          700,
+          450
+        ],
+        "reason": "Berta standing on the beaten-earth path in the middle of the green, chapel and trees behind her"
+      }
+    },
+    "npcs": {
+      "S32.BERTA": {
+        "variant": "standing",
+        "feet": [
+          700,
+          760
+        ],
+        "facing": "right",
+        "reason": "standing resident (BERTA posture standing); feet on the green path, scale from the room perspective (0.585)"
+      }
+    },
+    "exits": {
+      "S32.to_S31": {
+        "rect": [
+          0,
+          672,
+          60,
+          330
+        ],
+        "interaction_point": [
+          70,
+          860
+        ],
+        "label_anchor": [
+          180,
+          660
+        ],
+        "reason": "the dirt road leaves the square to the left (north, Nadrazna towards the railway halt)"
+      },
+      "S32.to_S33": {
+        "rect": [
+          398,
+          396,
+          104,
+          186
+        ],
+        "interaction_point": [
+          450,
+          628
+        ],
+        "label_anchor": [
+          458,
+          420
+        ],
+        "reason": "the plank door of the post-office house on the left, enamel POSTA sign above it"
+      },
+      "S32.to_S34": {
+        "rect": [
+          585,
+          440,
+          125,
+          175
+        ],
+        "interaction_point": [
+          648,
+          650
+        ],
+        "label_anchor": [
+          640,
+          362
+        ],
+        "reason": "the street mouth between the post-office house and the next houses (Moyzesova, towards the culture hall)"
+      },
+      "S32.to_S35": {
+        "rect": [
+          1045,
+          440,
+          140,
+          175
+        ],
+        "interaction_point": [
+          1115,
+          652
+        ],
+        "label_anchor": [
+          1115,
+          430
+        ],
+        "reason": "the village road leaving the square at the back right, towards the manor's service courtyard"
+      },
+      "S32.to_S37": {
+        "rect": [
+          1860,
+          672,
+          60,
+          330
+        ],
+        "interaction_point": [
+          1850,
+          860
+        ],
+        "label_anchor": [
+          1785,
+          660
+        ],
+        "reason": "the path leaves the green to the right (east, towards the manor park)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S32.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T09:57:29"
+  }
+}

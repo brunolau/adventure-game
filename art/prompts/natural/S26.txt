@@ -1,0 +1,22 @@
+# S26 Opravovna odevov (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S26.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S26.sketch.json (tailor shop box, camera ~2.4 m, horizon y 300, wall foot y 760).
+#refs: art/source/rooms/S26/type-ref_clothing-alterations-shop_interior.jpg ; art/source/rooms/S25/mileticova_market_stalls_hall_2017.jpg
+#style: src/game/assets/bg_natural/S20.webp
+Place: a tiny clothes-repair shop in the real Pasaz Mileticova, the passage through the two-storey market-edge buildings of the Mileticova market in Ruzinov, Bratislava. Image 2 is a photo of a real clothing alterations shop (a pegboard full of colourful thread spools, scissors on nails, sewing tables, garments waiting on a rail): paint the type of shop and its clutter from it, replacing every American element (cash register, phone, signs, pennant, photos of people) with plain Slovak things of the 1990s. Image 3 is the real Mileticova market with its two-storey market-edge buildings: the sunlit passage and the market seen through the shop door and window come from it (without brands and umbrellas with logos).
+
+Brief: an invented small shop in the passage; the tailor sits at her sewing machine (she is added later as a sprite standing behind the table); boxes of bias binding, a roll of cloth insulating tape. Thursday 15 June 1995, a sunny afternoon: daylight from the passage through the door and the window, a fluorescent tube on the ceiling.
+
+Camera: standing at the back of the shop, about 2.4 m high, looking straight at the passage front wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 217 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969); the wooden sewing table stands in front of the wall with its top's front edge as one straight horizontal line at y 640 and its front panel down to the floor at y 805.
+
+What the sketch blocks are, left to right: the left side wall with shelves of fabric rolls; the glazed shop door to the passage; the small shop window with a folded repaired blouse on its sill; a pegboard full of colourful thread spools; large tailor's scissors hanging on a nail; the long wooden sewing table with two drawers, a black domestic sewing machine with gold decorations on its left part and a roll of cloth insulating tape beside it; a plain cream wall right behind the middle of the table; wooden shelves with cardboard boxes of bias binding and lace; the tailor's dress form on its tripod stand; a clothes rail with garments in plastic covers waiting for repair; a tall fitting mirror on the right side wall and a shelf of boxes; a fluorescent tube on the ceiling; worn linoleum floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S26.ambient 1}: a tailor's dress form (a fabric-covered mannequin torso without head or arms) on a wooden tripod stand, a half-finished jacket pinned on it with a measuring tape around its neck.
+2. {rect:S26.ambient 2}: an open round tin box full of colourful buttons on the right end of the sewing table.
+The glazed shop door is {exit:S26.to_S25}.
+
+Walkable floor: {walk} is the open linoleum floor in front of the table - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no chairs, no baskets, no boxes, no cut-offs of fabric. Only daylight and soft shadows.
+{npc_zones} Above the table top right behind its middle there is only the plain cream wall - no machine, no lamp, no shelf there.
+
+Fiction rules: the shop and the tailor are invented: no shop name, no lettering, no signs, no brand names on the sewing machine or anything else, no photos of people, no people, no animals. Paper shows only illegible scribbles, no digits.

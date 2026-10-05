@@ -1,0 +1,913 @@
+{
+  "room": "S20",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1049947815,
+  "usd": 0.15,
+  "started": "2026-10-05T10:06:48",
+  "spend_log_asset": "bg_natural/S20/S20_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S20.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a small electronics repair shop in the real one-storey 1970s-80s service pavilion on Levarska street in Kutiky, Karlova Ves, Bratislava. Images 2-3 are photos of a real small radio and TV repair workshop (shelves crammed with radios, test instruments, valves, cables, a workbench, a glazed door): use them for the type of room, the clutter and the materials, but replace every American device and brand with plain Czechoslovak-era equipment of the 1980s-90s without any brand names. Image 4 is the real pavilion from outside: yellow plaster walls, a brown arcade canopy, glazed shop doors on a grey pavement - this is what is seen outside through the door and the display window (without its lettering, the drinks fridge and the graffiti).\n\nBrief: the small workshop of a radio and TV repairman: little drawers held shut with rubber bands, an oscilloscope, a switched-off old television set, hand-written cardboard signs. Thursday 15 June 1995, a sunny afternoon: warm daylight comes in through the shop window and the door glass from the street, a fluorescent tube on the ceiling, dust in the air.\n\nCamera: standing at the back of the shop, about 2.4 m high, looking straight at the shop's street front wall, which is parallel to the picture; the two side walls recede symmetrically towards the centre (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 217 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969); the floor in front of the wall fills the bottom of the picture.\n\nWhat the sketch blocks are, left to right: on the left side wall three wooden wall shelves with old radios and boxes carrying paper repair tags; in the front wall the glazed shop door in a dark wooden frame (glass in the upper part, the yellow pavilion arcade outside) and the big display window with a repaired old radio on its sill, showing the sunny pavement under the arcade, a yellow plaster pillar and a pale panel tower of Kutiky in the distance; a plain stretch of warm cream wall; the workbench along the right part of the wall with its drawers, and above it a wooden cabinet of many small drawers, each drawer held shut with a coloured rubber band; on the right side wall shelves with cardboard boxes of valves and spare parts and coiled cables; a fluorescent tube light on the ceiling; worn brown linoleum floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 928-1072, y 560-672 of the 1920x1080 frame (48-56 % from the left, 52-62 % from the top): a big old wood-veneer CRT television set of the 1980s with a deep box, switched off (dark grey dead screen), two knobs at the side, no brand name, standing on a wooden crate against the wall.\n2. the block of the layout sketch at x 1093-1247, y 295-405 of the 1920x1080 frame (57-65 % from the left, 27-38 % from the top): a hand-written cardboard sign pinned to the wall with drawing pins, three lines of black marker handwriting (illegible scribbles, no digits).\nOn the workbench: a grey oscilloscope with a glowing green trace on its round screen, a soldering station with a soldering iron in its holder, an open radio chassis with glowing valves, a magnifier lamp on an arm.\nThe glazed shop door is the area of the layout sketch at x 335-530, y 345-763 of the 1920x1080 frame (17-28 % from the left, 32-71 % from the top).\n\nWalkable floor: the band at x 20-1900, y 778-1015 of the 1920x1080 frame (1-99 % from the left, 72-94 % from the top) is the open shop floor of worn brown linoleum - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no boxes, no chairs, no cables, no devices. Only daylight from the window, soft shadows and wear marks.\nNPC zone at x 1095-1245, y 435-790 of the 1920x1080 frame (57-65 % from the left, 40-73 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 788. The repairman stands in front of this plain stretch of wall, below the hand-written sign.\n\nFiction rules: the shop, the repairman and the signs are invented: no shop name, no lettering on the door or the window, no brand names or logos on any device (no TESLA, no Simpson, no Kenwood), no flags, no house numbers, no people, no animals. Paper and signs show only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S20_sketch.png (rendered from art/prompts/natural/S20.sketch.json, model geometry)",
+    "art/source/rooms/S20/type-ref_radio-tv-repair-shop_interior_door.jpg",
+    "art/source/rooms/S20/type-ref_radio-tv-repair-shop_shelves.jpg",
+    "art/source/rooms/S20/levarska_service-pavilion_exterior_2011.jpg",
+    "src/game/assets/bg/S01.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S20 natural: shop interior box, camera 2.4 m, horizon y 300, back wall foot y 760.",
+    "background": "#e2d8bf",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            179
+          ],
+          [
+            1620,
+            217
+          ],
+          [
+            300,
+            217
+          ],
+          [
+            0,
+            179
+          ]
+        ],
+        "fill": "#e2d8bf",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            179
+          ],
+          [
+            300,
+            217
+          ],
+          [
+            300,
+            760
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#cdbd94",
+        "note": "left side wall (receding)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            179
+          ],
+          [
+            1620,
+            217
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ]
+        ],
+        "fill": "#cdbd94",
+        "note": "right side wall (receding)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          217,
+          1320,
+          543
+        ],
+        "fill": "#d8c9a0",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            760
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#8a6a4e",
+        "note": "floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            20,
+            707
+          ],
+          [
+            290,
+            590
+          ],
+          [
+            290,
+            580
+          ],
+          [
+            20,
+            693
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "wall shelf on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            30,
+            693
+          ],
+          [
+            280,
+            580
+          ],
+          [
+            270,
+            504
+          ],
+          [
+            40,
+            580
+          ]
+        ],
+        "fill": "#6b6157",
+        "note": "old radios and boxes with paper repair tags on the shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            20,
+            541
+          ],
+          [
+            290,
+            472
+          ],
+          [
+            290,
+            462
+          ],
+          [
+            20,
+            527
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "wall shelf on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            30,
+            527
+          ],
+          [
+            280,
+            462
+          ],
+          [
+            270,
+            385
+          ],
+          [
+            40,
+            416
+          ]
+        ],
+        "fill": "#6b6157",
+        "note": "old radios and boxes with paper repair tags on the shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            20,
+            376
+          ],
+          [
+            290,
+            354
+          ],
+          [
+            290,
+            344
+          ],
+          [
+            20,
+            362
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "wall shelf on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            30,
+            362
+          ],
+          [
+            280,
+            344
+          ],
+          [
+            270,
+            265
+          ],
+          [
+            40,
+            252
+          ]
+        ],
+        "fill": "#6b6157",
+        "note": "old radios and boxes with paper repair tags on the shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            649
+          ],
+          [
+            1900,
+            790
+          ],
+          [
+            1900,
+            776
+          ],
+          [
+            1630,
+            639
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelf on the right side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            639
+          ],
+          [
+            1900,
+            776
+          ],
+          [
+            1890,
+            675
+          ],
+          [
+            1640,
+            574
+          ]
+        ],
+        "fill": "#8c8070",
+        "note": "cardboard boxes of valves and spare parts, coiled cables"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            531
+          ],
+          [
+            1900,
+            624
+          ],
+          [
+            1900,
+            610
+          ],
+          [
+            1630,
+            521
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelf on the right side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            521
+          ],
+          [
+            1900,
+            610
+          ],
+          [
+            1890,
+            511
+          ],
+          [
+            1640,
+            455
+          ]
+        ],
+        "fill": "#8c8070",
+        "note": "cardboard boxes of valves and spare parts, coiled cables"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            413
+          ],
+          [
+            1900,
+            458
+          ],
+          [
+            1900,
+            444
+          ],
+          [
+            1630,
+            403
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelf on the right side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1630,
+            403
+          ],
+          [
+            1900,
+            444
+          ],
+          [
+            1890,
+            348
+          ],
+          [
+            1640,
+            335
+          ]
+        ],
+        "fill": "#8c8070",
+        "note": "cardboard boxes of valves and spare parts, coiled cables"
+      },
+      {
+        "type": "rect",
+        "box": [
+          335,
+          341,
+          195,
+          419
+        ],
+        "fill": "#5a4030",
+        "note": "dark wooden door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          350,
+          353,
+          165,
+          250
+        ],
+        "fill": "#c9d8de",
+        "note": "glass of the shop door: outside the yellow pavilion arcade and a panel tower"
+      },
+      {
+        "type": "rect",
+        "box": [
+          350,
+          603,
+          165,
+          157
+        ],
+        "fill": "#7a5638",
+        "note": "wooden lower door panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          393,
+          50,
+          150
+        ],
+        "fill": "#e3c25a",
+        "note": "yellow arcade pillar seen through the door glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          492,
+          557,
+          12,
+          30
+        ],
+        "fill": "#b08a3a",
+        "note": "door handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          548,
+          310,
+          366,
+          290
+        ],
+        "fill": "#5a4030",
+        "note": "display window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          562,
+          324,
+          338,
+          262
+        ],
+        "fill": "#cfdde2",
+        "note": "display window: sunny street outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          562,
+          464,
+          338,
+          122
+        ],
+        "fill": "#b8b2a6",
+        "note": "outside: grey pavement under the arcade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          324,
+          60,
+          140
+        ],
+        "fill": "#e3c25a",
+        "note": "outside: yellow plaster pillar of the pavilion arcade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          334,
+          150,
+          130
+        ],
+        "fill": "#d8d4cc",
+        "note": "outside: panel tower of Kutiky in the distance"
+      },
+      {
+        "type": "rect",
+        "box": [
+          548,
+          586,
+          366,
+          14
+        ],
+        "fill": "#6a4a32",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          610,
+          522,
+          120,
+          64
+        ],
+        "fill": "#6e5a44",
+        "note": "a repaired old radio displayed on the sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          928,
+          663,
+          144,
+          97
+        ],
+        "fill": "#9a7a52",
+        "note": "wooden crate"
+      },
+      {
+        "type": "rect",
+        "box": [
+          938,
+          563,
+          124,
+          100
+        ],
+        "fill": "#7a5a3a",
+        "note": "old wood-veneer CRT television set, switched off"
+      },
+      {
+        "type": "rect",
+        "box": [
+          950,
+          573,
+          84,
+          72
+        ],
+        "fill": "#4a524e",
+        "note": "dark grey dead TV screen"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          577,
+          14,
+          60
+        ],
+        "fill": "#3a3430",
+        "note": "TV knobs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1098,
+          300,
+          144,
+          100
+        ],
+        "fill": "#e8d9b4",
+        "note": "hand-written cardboard sign pinned to the wall (illegible scribbles)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          318,
+          120,
+          8
+        ],
+        "fill": "#6a5a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          342,
+          100,
+          8
+        ],
+        "fill": "#6a5a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          366,
+          110,
+          8
+        ],
+        "fill": "#6a5a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1272,
+          582,
+          336,
+          20
+        ],
+        "fill": "#8a6a48",
+        "note": "workbench top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1272,
+          602,
+          336,
+          180
+        ],
+        "fill": "#6e5236",
+        "note": "workbench front with drawers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1295,
+          494,
+          112,
+          88
+        ],
+        "fill": "#8b9497",
+        "note": "oscilloscope"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1307,
+          504,
+          64,
+          50
+        ],
+        "fill": "#2f5a3a",
+        "note": "oscilloscope screen (green trace)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1430,
+          546,
+          70,
+          36
+        ],
+        "fill": "#4a4a48",
+        "note": "soldering station"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1515,
+          536,
+          80,
+          46
+        ],
+        "fill": "#6a7060",
+        "note": "open radio chassis with valves"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1560,
+            426
+          ],
+          [
+            1560,
+            526
+          ]
+        ],
+        "color": "#4a4a48",
+        "width": 5,
+        "note": "magnifier lamp arm"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          300,
+          290,
+          170
+        ],
+        "fill": "#9c7a52",
+        "note": "wooden cabinet of many small drawers, each held shut with rubber bands"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1300,
+          300,
+          290,
+          170
+        ],
+        "cols": 8,
+        "rows": 5,
+        "color": "#6e5236",
+        "width": 3
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            800,
+            112
+          ],
+          [
+            1120,
+            112
+          ],
+          [
+            1110,
+            132
+          ],
+          [
+            810,
+            132
+          ]
+        ],
+        "fill": "#f4f0de",
+        "note": "fluorescent tube light on the ceiling"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S20.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Small electronics repair shop in the 1970s-80s service pavilion on Levarska (Kutiky, Karlova Ves), camera ~2.4 m inside the shop looking at its street front: one-point box, horizon y 300, back wall foot line y 760 (~194 px per metre), ceiling line y 217, side walls receding to the frame edges. Perspective s(y) = (y - 300) / 715. The glazed door (exit to S19) and the display window show the yellow arcade of the pavilion outside; the switched-off TV stands on a crate, Pali stands at the plain wall below his hand-written sign, the workbench with the oscilloscope and the drawer cabinet fill the right part.",
+    "background": "bg_natural/S20.webp",
+    "walk_polygon": [
+      [
+        312,
+        778
+      ],
+      [
+        1610,
+        800
+      ],
+      [
+        1900,
+        975
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        975
+      ]
+    ],
+    "walk_band": [
+      778,
+      1015
+    ],
+    "actor_scale": [
+      0.67,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S20.ambient 1": {
+        "rect": [
+          928,
+          560,
+          144,
+          112
+        ],
+        "interaction_point": [
+          1000,
+          860
+        ],
+        "label_anchor": [
+          1000,
+          552
+        ],
+        "reason": "switched-off wood-veneer CRT TV on a crate against the shop front"
+      },
+      "S20.ambient 2": {
+        "rect": [
+          1093,
+          295,
+          154,
+          110
+        ],
+        "interaction_point": [
+          1000,
+          860
+        ],
+        "label_anchor": [
+          1170,
+          287
+        ],
+        "reason": "hand-written cardboard sign pinned to the wall above Pali"
+      },
+      "S20.PALI": {
+        "rect": [
+          1095,
+          435,
+          150,
+          355
+        ],
+        "interaction_point": [
+          1170,
+          880
+        ],
+        "label_anchor": [
+          1170,
+          427
+        ],
+        "reason": "Pali standing at the plain wall between the TV and the workbench"
+      }
+    },
+    "npcs": {
+      "S20.PALI": {
+        "variant": "standing",
+        "feet": [
+          1170,
+          788
+        ],
+        "scale": 0.683,
+        "reason": "standing repairman in front of his shop wall (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S20.to_S19": {
+        "rect": [
+          335,
+          345,
+          195,
+          418
+        ],
+        "interaction_point": [
+          432,
+          820
+        ],
+        "label_anchor": [
+          432,
+          337
+        ],
+        "reason": "glazed shop door to the pavilion arcade and the tram stop"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S20"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S20.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:07:59"
+  }
+}

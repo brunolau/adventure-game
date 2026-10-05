@@ -1,0 +1,114 @@
+{
+ "room": "S29",
+ "notes": "Natural S29: the trees on the green in the wind, the bare bulb in garage 17 buzzing, the transceiver's dial flickering, pigeons crossing the sky above the deck, clouds behind the panel blocks.",
+ "layers": [
+  {
+   "id": "trees_sway",
+   "type": "sway",
+   "texture": "S29/natural/trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.0,
+   "freq": 0.3,
+   "wavelength_px": 110,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "bulb",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    700,
+    395,
+    160,
+    120
+   ],
+   "color": "#ffd890",
+   "min": 0.12,
+   "max": 0.3,
+   "period_s": 0.6
+  },
+  {
+   "id": "transceiver_dial",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    700,
+    522,
+    64,
+    28
+   ],
+   "color": "#ffcf70",
+   "min": 0.2,
+   "max": 0.6,
+   "period_s": 0.3
+  },
+  {
+   "id": "pigeons_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     70
+    ],
+    [
+     600,
+     40
+    ],
+    [
+     1300,
+     30
+    ],
+    [
+     2000,
+     50
+    ]
+   ],
+   "speed_px_s": 230,
+   "scale": 0.08,
+   "flock": 3,
+   "flock_spread": [
+    60,
+    22
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    10,
+    110
+   ],
+   "count": 2,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "x_span": [
+    0,
+    1920
+   ],
+   "alpha": 0.7,
+   "mask": "S29/natural/sky_mask.webp"
+  }
+ ]
+}

@@ -1,0 +1,298 @@
+{
+  "version": 1,
+  "room": "S60",
+  "status": "natural re-blocking, L_CLASS 1982 derived from the accepted S14 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S14",
+  "note": "Same camera as S14 (L_CLASS): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, front wall floor line y 719 (167 px per metre), s(y) = (y - 352) / 663. 7 December 1982, after lessons: the pupils' desks (same places, same occluder) are covered with white paper as exhibition tables of the school technical exhibition; the model radio schematic is pinned on the left board panel; the paper roller map shows CSSR. Teacher Dobrovic stands at the teacher's table (where Mira stands in 1995); The derive added Jana's own desk in the left foreground (Z ~3.8-4.4 m, in front of the walk area, foreground mask fg_natural/S60.webp) with her hand-drawn schematic, a pencil and her folded pioneer neckerchief; Jana (12) stands just behind its right end. The exhibits on the right desks raise the desk occluder's top edge.",
+  "background": "bg_natural/S60.webp",
+  "walk_polygon": [
+    [
+      10,
+      902
+    ],
+    [
+      337,
+      726
+    ],
+    [
+      700,
+      726
+    ],
+    [
+      705,
+      780
+    ],
+    [
+      990,
+      780
+    ],
+    [
+      995,
+      726
+    ],
+    [
+      1515,
+      726
+    ],
+    [
+      1572,
+      756
+    ],
+    [
+      1655,
+      812
+    ],
+    [
+      1150,
+      816
+    ],
+    [
+      1140,
+      1015
+    ],
+    [
+      10,
+      1015
+    ]
+  ],
+  "walk_band": [
+    726,
+    1015
+  ],
+  "actor_scale": [
+    0.56,
+    1.0
+  ],
+  "spawn": [
+    830,
+    930
+  ],
+  "hotspots": {
+    "S60.drawing": {
+      "rect": [
+        20,
+        878,
+        515,
+        112
+      ],
+      "interaction_point": [
+        440,
+        905
+      ],
+      "label_anchor": [
+        270,
+        868
+      ],
+      "reason": "Jana's own hand-drawn radio schematic (with pencil and the folded red pioneer neckerchief) on her desk in the left foreground"
+    },
+    "S60.ambient 1": {
+      "rect": [
+        655,
+        382,
+        255,
+        180
+      ],
+      "interaction_point": [
+        640,
+        800
+      ],
+      "label_anchor": [
+        782,
+        372
+      ],
+      "reason": "printed model radio schematic sheet fixed with magnets on the left panel of the green board"
+    },
+    "S60.ambient 2": {
+      "rect": [
+        1290,
+        325,
+        210,
+        240
+      ],
+      "interaction_point": [
+        1300,
+        760
+      ],
+      "label_anchor": [
+        1395,
+        315
+      ],
+      "reason": "paper roller wall map of Czechoslovakia right of the board (period map)"
+    },
+    "S60.DOBRO": {
+      "rect": [
+        1005,
+        444,
+        115,
+        315
+      ],
+      "interaction_point": [
+        1165,
+        778
+      ],
+      "label_anchor": [
+        1062,
+        436
+      ],
+      "reason": "teacher Dobrovic standing right of the teacher's table"
+    },
+    "S60.JANA82": {
+      "rect": [
+        528,
+        527,
+        110,
+        343
+      ],
+      "interaction_point": [
+        690,
+        880
+      ],
+      "label_anchor": [
+        583,
+        517
+      ],
+      "reason": "Jana (12) standing behind the right end of her foreground desk"
+    }
+  },
+  "npcs": {
+    "S60.DOBRO": {
+      "variant": "standing",
+      "feet": [
+        1062,
+        759
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "brief: teacher Dobrovic at the exhibition; same spot as Mira in S14 (teacher's table left of him)"
+    },
+    "S60.JANA82": {
+      "variant": "standing",
+      "feet": [
+        583,
+        870
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "brief: Jana with her own radio schematic; she stands at her desk (painted in the foreground, always in front of the actors)"
+    }
+  },
+  "exits": {
+    "S60.to_S59": {
+      "rect": [
+        337,
+        376,
+        168,
+        344
+      ],
+      "interaction_point": [
+        418,
+        758
+      ],
+      "label_anchor": [
+        418,
+        372
+      ],
+      "reason": "classroom door at the left end of the front wall (same as S14.to_S13)"
+    }
+  },
+  "state_patches": [],
+  "anchors": {
+    "board": [
+      643,
+      369
+    ],
+    "right_window": [
+      1594,
+      427
+    ],
+    "teacher_table": [
+      713,
+      625
+    ]
+  },
+  "occluders": [
+    {
+      "id": "exhibition_desks",
+      "polygon": [
+        [
+          1150,
+          662
+        ],
+        [
+          1203,
+          662
+        ],
+        [
+          1205,
+          622
+        ],
+        [
+          1298,
+          622
+        ],
+        [
+          1300,
+          662
+        ],
+        [
+          1588,
+          662
+        ],
+        [
+          1592,
+          615
+        ],
+        [
+          1655,
+          615
+        ],
+        [
+          1658,
+          662
+        ],
+        [
+          1752,
+          662
+        ],
+        [
+          1772,
+          702
+        ],
+        [
+          1920,
+          758
+        ],
+        [
+          1920,
+          1050
+        ],
+        [
+          1288,
+          1050
+        ],
+        [
+          1262,
+          860
+        ],
+        [
+          1210,
+          935
+        ],
+        [
+          1192,
+          735
+        ],
+        [
+          1180,
+          868
+        ],
+        [
+          1156,
+          868
+        ]
+      ],
+      "baseline": 823,
+      "texture": null
+    }
+  ],
+  "family_base": "S14"
+}

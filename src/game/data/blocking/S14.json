@@ -1,0 +1,248 @@
+{
+  "version": 1,
+  "room": "S14",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); L_CLASS family base for S60 (1982)",
+  "note": "Classroom of ZS Sokolikova 2 in the NE wing, windows over the sports yard (type-reference classroom, register S14). One-point perspective, camera 2.2 m high at the back of the room, focal 1500 px, horizon y 352, looking at the front wall (parallel to the picture) at 9.0 m: floor line y 719 (167 px per metre). Corridor wall X -3.8 m (left), ribbon-window wall X +3.4 m (right), parquet floor. Front wall: classroom door at its left end (exit to S13), two-panel green board with chalk tray (sponge), paper wall map on a roller; teacher's table with Mira's tape recorder in front of the board's left half; two rows of two-seat pupils' desks with chairs on the right half (pushed together for the afternoon club, drawings on them) = one occluder (baseline 823): the front strip behind them is walkable. Mira stands right of the teacher's table, Lea at the first window. Perspective s(y) = (y - 352) / 663: 0.56 at the front wall, 1.0 at y 1015.",
+  "background": "bg_natural/S14.webp",
+  "anchors": {
+    "board": [
+      643,
+      369
+    ],
+    "right_window": [
+      1594,
+      427
+    ],
+    "teacher_table": [
+      713,
+      625
+    ]
+  },
+  "walk_polygon": [
+    [
+      10,
+      902
+    ],
+    [
+      337,
+      726
+    ],
+    [
+      700,
+      726
+    ],
+    [
+      705,
+      780
+    ],
+    [
+      990,
+      780
+    ],
+    [
+      995,
+      726
+    ],
+    [
+      1515,
+      726
+    ],
+    [
+      1572,
+      756
+    ],
+    [
+      1655,
+      812
+    ],
+    [
+      1150,
+      816
+    ],
+    [
+      1140,
+      1015
+    ],
+    [
+      10,
+      1015
+    ]
+  ],
+  "walk_band": [
+    726,
+    1015
+  ],
+  "actor_scale": [
+    0.56,
+    1.0
+  ],
+  "spawn": [
+    700,
+    905
+  ],
+  "hotspots": {
+    "S14.ambient 1": {
+      "rect": [
+        638,
+        363,
+        612,
+        212
+      ],
+      "interaction_point": [
+        880,
+        805
+      ],
+      "label_anchor": [
+        840,
+        360
+      ],
+      "reason": "two-panel green chalkboard on the front wall"
+    },
+    "S14.ambient 2": {
+      "rect": [
+        1148,
+        528,
+        66,
+        52
+      ],
+      "interaction_point": [
+        1228,
+        752
+      ],
+      "label_anchor": [
+        1181,
+        520
+      ],
+      "reason": "yellow board sponge on the right end of the chalk tray"
+    },
+    "S14.MIRA95": {
+      "rect": [
+        1005,
+        444,
+        115,
+        315
+      ],
+      "interaction_point": [
+        1165,
+        778
+      ],
+      "label_anchor": [
+        1062,
+        436
+      ],
+      "reason": "Mira standing right of the teacher's table with her tape recorder"
+    },
+    "S14.LEA95": {
+      "rect": [
+        1408,
+        450,
+        116,
+        331
+      ],
+      "interaction_point": [
+        1350,
+        790
+      ],
+      "label_anchor": [
+        1466,
+        442
+      ],
+      "reason": "Lea standing at the first window of the window wall"
+    }
+  },
+  "npcs": {
+    "S14.MIRA95": {
+      "variant": "standing",
+      "feet": [
+        1062,
+        759
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "brief: Mira at the table with the tape recorder (the table and recorder are painted, left of her)"
+    },
+    "S14.LEA95": {
+      "variant": "standing",
+      "feet": [
+        1466,
+        781
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "brief: teacher Lea by the window; she stands behind the front desk row (the desks occlude her legs)"
+    }
+  },
+  "exits": {
+    "S14.to_S13": {
+      "rect": [
+        337,
+        376,
+        168,
+        344
+      ],
+      "interaction_point": [
+        418,
+        758
+      ],
+      "label_anchor": [
+        418,
+        372
+      ],
+      "reason": "classroom door at the left end of the front wall, to the corridor and the entrance hall"
+    }
+  },
+  "occluders": [
+    {
+      "id": "desks",
+      "polygon": [
+        [
+          1150,
+          662
+        ],
+        [
+          1752,
+          662
+        ],
+        [
+          1772,
+          702
+        ],
+        [
+          1920,
+          758
+        ],
+        [
+          1920,
+          1050
+        ],
+        [
+          1288,
+          1050
+        ],
+        [
+          1262,
+          860
+        ],
+        [
+          1210,
+          935
+        ],
+        [
+          1192,
+          735
+        ],
+        [
+          1180,
+          868
+        ],
+        [
+          1156,
+          868
+        ]
+      ],
+      "baseline": 823,
+      "texture": null
+    }
+  ],
+  "state_patches": []
+}

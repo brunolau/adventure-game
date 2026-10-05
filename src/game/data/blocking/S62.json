@@ -1,0 +1,174 @@
+{
+  "version": 1,
+  "room": "S62",
+  "family_base": "S18",
+  "status": "natural re-blocking (product-owner decision 2026-10-05). Same courtyard corner and camera as S18 (register: 'uses the S18 files'); painted as an era edit of the accepted S18 master (art/tools/derive_era.py machinery, see art/masters/bg_natural/S62.md).",
+  "note": "Same camera as S18 (courtyard of the early-1970s panel blocks Svantnerova / M. Schneidra-Trnavskeho, camera ~2.0 m on the courtyard path, horizon y 404, the block receding to the vanishing point x ~305; path back edge y 740, s(y) = (y - 404) / 611). Early December 1982: the blocks are ten years old, the linden is bare, thin snow. Where Zita's kiosk stands in 1995 there is a slightly larger single-storey shop pavilion of mixed goods with a bigger three-pane shop window (x 378-742, inner sill y 598, an outer ledge y 605-622 below it); Ruzena stands behind the centre pane; a wooden crate of empty preserving jars on the outer ledge at the left, a stack of crates with returnable bottles at the pavilion's right corner, a small radio behind the right pane.",
+  "background": "bg_natural/S62.webp",
+  "walk_polygon": [
+    [
+      0,
+      748
+    ],
+    [
+      700,
+      748
+    ],
+    [
+      700,
+      778
+    ],
+    [
+      806,
+      778
+    ],
+    [
+      806,
+      748
+    ],
+    [
+      1920,
+      748
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    740,
+    1015
+  ],
+  "actor_scale": [
+    0.55,
+    1.0
+  ],
+  "spawn": [
+    1100,
+    900
+  ],
+  "hotspots": {
+    "S62.jar": {
+      "rect": [
+        372,
+        546,
+        112,
+        66
+      ],
+      "interaction_point": [
+        428,
+        800
+      ],
+      "label_anchor": [
+        428,
+        536
+      ],
+      "reason": "wooden crate with six clean empty preserving jars standing on the outer window ledge at the left (painted x 378-478, y 555-605)"
+    },
+    "S62.ambient 1": {
+      "rect": [
+        700,
+        642,
+        102,
+        132
+      ],
+      "interaction_point": [
+        750,
+        800
+      ],
+      "label_anchor": [
+        820,
+        632
+      ],
+      "reason": "stacked wooden crates of empty returnable glass bottles at the pavilion's right front corner (painted x 708-798, y 645-770; the walk polygon has a notch around their foot)"
+    },
+    "S62.ambient 2": {
+      "rect": [
+        650,
+        530,
+        88,
+        70
+      ],
+      "interaction_point": [
+        694,
+        800
+      ],
+      "label_anchor": [
+        694,
+        520
+      ],
+      "reason": "small old radio receiver with a wooden case behind the right pane of the shop window (painted x 660-728, y 540-592)"
+    },
+    "S62.RUZENA": {
+      "rect": [
+        500,
+        462,
+        125,
+        138
+      ],
+      "interaction_point": [
+        562,
+        820
+      ],
+      "label_anchor": [
+        562,
+        440
+      ],
+      "reason": "Ruzena behind the glazed centre pane of the shop window, bust above the window's inner sill (painted frame bottom y 598)"
+    }
+  },
+  "npcs": {
+    "S62.RUZENA": {
+      "variant": "window_bust_glass",
+      "feet": [
+        562,
+        735
+      ],
+      "scale": 0.55,
+      "sill_y": 598,
+      "z": "back",
+      "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); the painting shows a glazed shop window, so the closed-pane variant window_glass; feet = the shop floor just behind its front wall"
+    }
+  },
+  "exits": {
+    "S62.to_S57": {
+      "rect": [
+        0,
+        748,
+        60,
+        267
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        200,
+        738
+      ],
+      "reason": "the courtyard path continues out of the left edge past the block ends towards the stop"
+    },
+    "S62.to_S65": {
+      "rect": [
+        1700,
+        748,
+        220,
+        267
+      ],
+      "interaction_point": [
+        1850,
+        880
+      ],
+      "label_anchor": [
+        1560,
+        738
+      ],
+      "reason": "the path continues out of the right edge along the block to the small service building by the kindergarten"
+    }
+  },
+  "state_patches": []
+}

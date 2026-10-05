@@ -1,0 +1,62 @@
+{
+  "room": "S12",
+  "notes": "Before ZS Sokolikova, June 1995 afternoon (bg_natural/S12.webp): wind in the maple crowns over the corners, dust motes in the warm sun, a shadow passing behind a ground-floor window of the afternoon school, pigeons on the forecourt.",
+  "layers": [
+    {
+      "id": "crown_tl",
+      "type": "sway",
+      "texture": "S12/natural/crown_tl.webp",
+      "anchor": 1.0,
+      "amp_px": 2.6,
+      "freq": 0.25,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "crown_tr",
+      "type": "sway",
+      "texture": "S12/natural/crown_tr.webp",
+      "anchor": 1.0,
+      "amp_px": 2.2,
+      "freq": 0.29,
+      "wavelength_px": 120,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "dust",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [0, 260, 900, 560],
+      "count": 22,
+      "size": [3, 7],
+      "alpha_range": [0.2, 0.6],
+      "color": "#fff1c8"
+    },
+    {
+      "id": "window_shadow",
+      "type": "tween_path",
+      "texture": "builtin:silhouette",
+      "pivot": [70, 360],
+      "path": [[430, 560], [610, 560]],
+      "speed_px_s": 38,
+      "scale": 0.36,
+      "modulate": "#2f2a26",
+      "alpha": 0.22,
+      "direction": "random",
+      "every_s": [20, 45],
+      "start_s": [3, 8],
+      "clip": [446, 405, 140, 185]
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[110, 832], [520, 862]],
+      "scale": 0.22,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[-120, 60], [500, -140]]
+    }
+  ]
+}

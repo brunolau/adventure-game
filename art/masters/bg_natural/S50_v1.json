@@ -1,0 +1,712 @@
+{
+  "room": "S50",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035501,
+  "usd": 0.15,
+  "started": "2026-10-05T11:11:32",
+  "spend_log_asset": "bg_natural/S50/S50_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S50.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the roof viewing terrace of the real Rotunda complex on the summit of Chopok (2,004 m), Low Tatras, Slovakia. Image 2 is a photo of this terrace: a weathered wooden deck and a railing of glass panels on steel posts above a solid dark grey parapet (ignore the dragon sculpture, the artificial grass, the bunting and the people). Image 3 shows the same railing with dark metal letters CHOPOK standing on it and the rocky peak of Chopok beyond. Image 4 is the real north view from the summit: the Funitel line with its pylons going down the slope, the forested ridges, the Liptov basin with a lake far below and the jagged High Tatras on the horizon. Paint this real terrace; the Atlas pavilion below it is invented (light larch cladding, white panels, flat roof).\n\nBrief: the viewing setting of the real Rotunda as inspiration; the exact layout of the terrace is an artistic 2035 interpretation. A separately labelled low-voltage Atlas cabinet stands beside the pavilion, clearly never a lift control. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky with white clouds, crisp light, the summit slopes rocky with dwarf pine and white snow patches still lying near the top, the distance slightly hazy.\n\nCamera: standing on the deck, about 2.1 m high, looking north-east over the railing; vertical lines stay vertical; the horizon is at y ~380. Keep this exact geometry from the sketch: the High Tatras on the horizon at x 150-1100 (peaks y ~260-300); the Liptov basin, the forested ridges and the rocky summit slope from y 380 down behind the railing; a Funitel pylon and its ropes going down at the far left; the Chopok peak rising on the right (top at x ~1500, y ~150); the roof and upper wall of the Atlas pavilion seen below through the glass at x 1240-1590 (roof edge y ~530); the railing along the whole width: steel handrail at y ~540, glass panels down to the parapet top at y ~625, the solid dark parapet down to the deck at y 720; the opening at the left end with the top of the steel stairs; the wooden deck from y 720 to the bottom edge.\n\nWhat the sketch blocks are: the deep blue sky with white clouds; the High Tatras with snow streaks; the hazy Liptov basin with a lake; forested ridges; the rocky summit slope with dwarf pine and snow patches; a Funitel pylon with its ropes; the rocky Chopok peak; the Atlas pavilion's roof below; the glass railing with steel posts and handrail; the solid dark parapet; dark metal letters CHOPOK standing on the handrail; the top of the external steel stairs with its own handrail at the left end; the weathered wooden deck boards.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 230-990, y 255-380 of the 1920x1080 frame (12-52 % from the left, 24-35 % from the top): the jagged rocky peaks of the High Tatras on the far northern horizon, with streaks of snow, above the hazy Liptov basin.\n2. the block of the layout sketch at x 700-1130, y 540-720 of the 1920x1080 frame (36-59 % from the left, 50-67 % from the top): a section of the railing right in front: clear glass panels on brushed-steel posts above the solid dark grey parapet.\n3. the block of the layout sketch at x 1395-1570, y 420-720 of the 1920x1080 frame (73-82 % from the left, 39-67 % from the top): a grey steel outdoor electrical cabinet standing on the deck, with a yellow label plate on top and a big black mechanical rotary switch on its door; the two switch positions are marked with the small words \"ZÁPIS\" and \"MONITOR\".\n4. the block of the layout sketch at x 1610-1730, y 505-655 of the 1920x1080 frame (84-90 % from the left, 47-61 % from the top): on its own short steel post beside the cabinet, a small separate grey box with its lid open, holding a white ceramic bridge link (like an old porcelain fuse) between two brass terminals; a black cable runs from it to the cabinet.\nThis room has no NPC zones.\nthe area of the layout sketch at x 0-160, y 600-790 of the 1920x1080 frame (0-8 % from the left, 56-73 % from the top) is the top of the external steel stairs going down at the left end.\n\nWalkable floor: the band at x 0-1920, y 724-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) is the weathered wooden deck - one continuous flat surface with no step and nothing standing on it: no benches, no planters, no sculptures, no bins, no people. Only sunlight, soft shadows and board joints.\n\nFiction rules: leave out the dragon sculpture and the bunting of the photos; the cabinet and the connector are fictional; no company logos (no TMR), no brand names; the only lettering is CHOPOK on the railing and ZÁPIS / MONITOR on the switch. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S50_sketch.png (rendered from art/prompts/natural/S50.sketch.json, model geometry)",
+    "art/source/rooms/S50/rotunda-terrace_deck-glass-railing_2016-09.jpg",
+    "art/source/rooms/S50/rotunda-terrace_chopok-peak_2016-09.jpg",
+    "art/source/rooms/S50/chopok_view-north-funitel-high-tatras_2017-08.jpg",
+    "src/game/assets/bg_natural/S48.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S50 natural blocking (src/game/data/blocking/S50.json): Rotunda roof terrace, camera ~2.1 m, horizon y ~380, parapet on the deck edge y ~720 (top y ~623, handrail y ~543).",
+    "background": "#7fb2e4",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          400
+        ],
+        "fill": "#7fb2e4",
+        "note": "deep blue high-mountain sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          60,
+          60,
+          400,
+          120
+        ],
+        "fill": "#f2f5f8",
+        "note": "white cumulus"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          760,
+          90,
+          420,
+          120
+        ],
+        "fill": "#eef2f6",
+        "note": "white cumulus"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            150,
+            380
+          ],
+          [
+            250,
+            330
+          ],
+          [
+            320,
+            300
+          ],
+          [
+            380,
+            270
+          ],
+          [
+            430,
+            300
+          ],
+          [
+            500,
+            262
+          ],
+          [
+            560,
+            290
+          ],
+          [
+            640,
+            258
+          ],
+          [
+            720,
+            300
+          ],
+          [
+            800,
+            280
+          ],
+          [
+            880,
+            320
+          ],
+          [
+            990,
+            350
+          ],
+          [
+            1100,
+            380
+          ]
+        ],
+        "fill": "#a6b4c6",
+        "note": "the jagged High Tatras on the northern horizon, with snow streaks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          1300,
+          90
+        ],
+        "fill": "#9aa77e",
+        "note": "the hazy Liptov basin far below with a lake"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          380,
+          405,
+          220,
+          26
+        ],
+        "fill": "#8fb6cf",
+        "note": "Liptovska Mara lake far below"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            470
+          ],
+          [
+            250,
+            440
+          ],
+          [
+            520,
+            470
+          ],
+          [
+            800,
+            430
+          ],
+          [
+            1100,
+            460
+          ],
+          [
+            1300,
+            450
+          ],
+          [
+            1300,
+            640
+          ],
+          [
+            0,
+            640
+          ]
+        ],
+        "fill": "#55744c",
+        "note": "forested ridges of the north slopes falling to the valley"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            560
+          ],
+          [
+            300,
+            540
+          ],
+          [
+            600,
+            560
+          ],
+          [
+            900,
+            545
+          ],
+          [
+            1300,
+            560
+          ],
+          [
+            1300,
+            640
+          ],
+          [
+            0,
+            640
+          ]
+        ],
+        "fill": "#a39a86",
+        "note": "the rocky summit slope below the terrace with dwarf pine and snow patches"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            60,
+            640
+          ],
+          [
+            180,
+            470
+          ]
+        ],
+        "color": "#59606a",
+        "width": 8,
+        "note": "a Funitel pylon going down the north slope"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            0,
+            600
+          ],
+          [
+            420,
+            420
+          ]
+        ],
+        "color": "#2b2b2b",
+        "width": 2,
+        "note": "the ropes"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1200,
+            640
+          ],
+          [
+            1320,
+            360
+          ],
+          [
+            1420,
+            210
+          ],
+          [
+            1500,
+            150
+          ],
+          [
+            1600,
+            200
+          ],
+          [
+            1750,
+            300
+          ],
+          [
+            1920,
+            360
+          ],
+          [
+            1920,
+            640
+          ]
+        ],
+        "fill": "#8f8676",
+        "note": "the rocky pyramid of the Chopok peak with grey boulders, dwarf pine and white snow patches"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1500,
+          300,
+          140,
+          30
+        ],
+        "fill": "#f4f6f8",
+        "note": "snow patch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          640,
+          1920,
+          84
+        ],
+        "fill": "#2e333b",
+        "note": "solid dark grey parapet of the terrace (top y ~623, foot y 720)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          543,
+          1240,
+          82
+        ],
+        "fill": "#a9c7d8",
+        "note": "glass panels of the railing over the north view (transparent, slight reflections)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1590,
+          543,
+          330,
+          82
+        ],
+        "fill": "#a8a294",
+        "note": "glass panels over the rocky slope at the right (transparent)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          545,
+          330,
+          80
+        ],
+        "fill": "#cfa77a",
+        "note": "the Atlas pavilion seen below through the glass: flat white roof edge, larch cladding"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          530,
+          350,
+          18
+        ],
+        "fill": "#e9e7e2",
+        "note": "its flat white roof edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          536,
+          1920,
+          12
+        ],
+        "fill": "#b9c0c6",
+        "note": "brushed-steel handrail"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          536,
+          1920,
+          104
+        ],
+        "step": 240,
+        "bar": 12,
+        "fill": "#8e959b",
+        "vertical": true,
+        "note": "steel railing posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          625,
+          1920,
+          18
+        ],
+        "fill": "#3a3f48",
+        "note": "top of the parapet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          600,
+          160,
+          125
+        ],
+        "fill": "#6f777f",
+        "note": "opening in the railing at the left end: the top of the external steel stairs with its own handrail going down"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            20,
+            790
+          ],
+          [
+            150,
+            600
+          ]
+        ],
+        "color": "#9aa2a8",
+        "width": 8,
+        "note": "stair handrail"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            720
+          ],
+          [
+            1920,
+            720
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#9b7b58",
+        "note": "weathered wooden deck boards"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          720,
+          1920,
+          360
+        ],
+        "step": 160,
+        "bar": 3,
+        "fill": "#7f6448",
+        "vertical": true,
+        "note": "deck board joints"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            790
+          ],
+          [
+            150,
+            790
+          ],
+          [
+            175,
+            724
+          ],
+          [
+            0,
+            724
+          ]
+        ],
+        "fill": "#7d868e",
+        "note": "steel top landing of the stairs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1405,
+          440,
+          155,
+          282
+        ],
+        "fill": "#8e959b",
+        "note": "grey steel low-voltage cabinet on the deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1420,
+          455,
+          125,
+          40
+        ],
+        "fill": "#e6c33a",
+        "note": "yellow label plate"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1447,
+          540,
+          70,
+          70
+        ],
+        "fill": "#2f3236",
+        "note": "big black mechanical rotary switch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1660,
+          560,
+          14,
+          162
+        ],
+        "fill": "#6f757b",
+        "note": "post of the return connector"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1620,
+          515,
+          100,
+          70
+        ],
+        "fill": "#d9dde0",
+        "note": "small box with a white ceramic bridge link"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1560,
+            700
+          ],
+          [
+            1620,
+            700
+          ],
+          [
+            1660,
+            690
+          ]
+        ],
+        "color": "#1e1e1e",
+        "width": 6,
+        "note": "cable between them"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          470,
+          360,
+          70
+        ],
+        "fill": "#2e333b",
+        "note": "dark metal letters CHOPOK standing on the handrail"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S50.json",
+  "blocking": {
+    "version": 1,
+    "room": "S50",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Roof viewing terrace of the Rotunda complex on Chopok as in the 2016 photos (wooden deck, glass railing on a solid dark parapet), looking north-east: the Liptov basin and the High Tatras over the railing, the Funitel line going down on the left, the rocky Chopok peak rising on the right with the Atlas pavilion's roof seen below through the glass. Camera ~2.1 m high on the deck; horizon y ~380; the parapet stands on the deck's back edge at y ~720 (~161 px per metre there: parapet top y ~623, handrail y ~543). Perspective s(y) = (y - 380) / 635. Left: the top of the external steel stairs down to the plateau (exit); right: the separately labelled low-voltage Atlas cabinet with the mechanical ZAPIS/MONITOR switch and, on its own post beside it, the separate return connector with the ceramic bridge. The third-party dragon sculpture of the photos is left out.",
+    "background": "bg_natural/S50.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        790
+      ],
+      [
+        150,
+        790
+      ],
+      [
+        175,
+        724
+      ],
+      [
+        1920,
+        724
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      724,
+      1015
+    ],
+    "actor_scale": [
+      0.54,
+      1.0
+    ],
+    "spawn": [
+      800,
+      900
+    ],
+    "hotspots": {
+      "S50.ambient 1": {
+        "rect": [
+          230,
+          255,
+          760,
+          125
+        ],
+        "interaction_point": [
+          610,
+          820
+        ],
+        "label_anchor": [
+          610,
+          245
+        ],
+        "reason": "the jagged High Tatras on the northern horizon above the Liptov basin"
+      },
+      "S50.ambient 2": {
+        "rect": [
+          700,
+          540,
+          430,
+          180
+        ],
+        "interaction_point": [
+          915,
+          800
+        ],
+        "label_anchor": [
+          915,
+          530
+        ],
+        "reason": "a section of the railing in front: glass panels on steel posts above the solid dark parapet (parapet foot y ~720)"
+      },
+      "S50.switch": {
+        "rect": [
+          1395,
+          420,
+          175,
+          300
+        ],
+        "interaction_point": [
+          1482,
+          820
+        ],
+        "label_anchor": [
+          1482,
+          410
+        ],
+        "reason": "the grey steel low-voltage Atlas cabinet standing on the deck with the big mechanical ZAPIS / MONITOR rotary switch on its door (foot y ~722)"
+      },
+      "S50.bridge": {
+        "rect": [
+          1610,
+          505,
+          120,
+          150
+        ],
+        "interaction_point": [
+          1670,
+          830
+        ],
+        "label_anchor": [
+          1670,
+          495
+        ],
+        "reason": "the separate return connector: a small box on its own post beside the cabinet with a white ceramic bridge link"
+      }
+    },
+    "exits": {
+      "S50.to_S48": {
+        "rect": [
+          0,
+          600,
+          160,
+          190
+        ],
+        "interaction_point": [
+          80,
+          860
+        ],
+        "label_anchor": [
+          205,
+          590
+        ],
+        "reason": "the top of the external steel stairs down to the plateau and the Atlas pavilion at the left end of the deck"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S50.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:12:10"
+  }
+}

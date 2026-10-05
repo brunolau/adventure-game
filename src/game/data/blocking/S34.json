@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "room": "S34",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Invented village culture hall of Ivanka pri Dunaji (exterior anchor Maticny dom, Moyzesova), June 1960, before a rehearsal of the amateur theatre. Frontal camera ~1.7 m high facing the stage end of the empty hall: horizon y 460, perspective s(y) = (y - 460) / 555 (hero 1.7 m = 512 px at y 1015; ~141 px per metre at the stage front, foot y 720). A low plank stage (0.8 m, front edge y 607) spans the end wall under a plain proscenium with the red curtain drawn open; a step box leads up. At the front left the forest scenery flat stands with its bottom on the floor (foot y ~800, safe) and is held to a work table by a hand table clamp whose screw is loose; the costume maker's sewing box lies on the table. Rudo's mayor hat lies on the stage edge on the right. The door to the street is on the right of the end wall. Lida stands by the table, Rudo in front of the stage. The walk polygon is the hall floor in front of the stage, the flat's foot stand and the table (v1 painting), with a lobe to the door.",
+  "background": "bg_natural/S34.webp",
+  "walk_polygon": [[30, 848], [452, 848], [452, 820], [724, 820], [724, 742], [1600, 742], [1612, 730], [1820, 730], [1832, 742], [1900, 742], [1900, 1015], [20, 1015]],
+  "walk_band": [730, 1015],
+  "actor_scale": [0.486, 1.0],
+  "spawn": [960, 920],
+  "hotspots": {
+    "S34.clamp": {
+      "rect": [392, 604, 110, 116],
+      "interaction_point": [470, 860],
+      "label_anchor": [447, 594],
+      "reason": "iron hand table clamp holding the forest flat's frame to the edge of the work table, screw loosened"
+    },
+    "S34.ambient 1": {
+      "rect": [64, 434, 324, 366],
+      "interaction_point": [230, 860],
+      "label_anchor": [226, 424],
+      "reason": "the forest scenery flat (painted canvas on a wooden frame) standing on the floor at the front left"
+    },
+    "S34.ambient 2": {
+      "rect": [1328, 548, 156, 74],
+      "interaction_point": [1405, 790],
+      "label_anchor": [1405, 538],
+      "reason": "Rudo's black felt mayor hat lying on the front edge of the stage"
+    },
+    "S34.LIDA": {
+      "rect": [745, 488, 135, 362],
+      "interaction_point": [700, 900],
+      "label_anchor": [812, 478],
+      "reason": "Lida standing by the work table with the costume things, the flat on her left"
+    },
+    "S34.RUDO": {
+      "rect": [1075, 489, 140, 351],
+      "interaction_point": [1145, 900],
+      "label_anchor": [1145, 479],
+      "reason": "Rudo standing in front of the stage holding his dramatic pause"
+    }
+  },
+  "npcs": {
+    "S34.LIDA": {
+      "variant": "standing",
+      "feet": [812, 850],
+      "facing": "right",
+      "reason": "standing (LIDA posture standing) on the hall floor; scale from the room perspective (0.70)"
+    },
+    "S34.RUDO": {
+      "variant": "standing",
+      "feet": [1145, 840],
+      "facing": "left",
+      "reason": "standing (RUDO posture standing) in front of the stage; scale from the room perspective (0.68)"
+    }
+  },
+  "exits": {
+    "S34.to_S32": {
+      "rect": [1630, 430, 170, 290],
+      "interaction_point": [1715, 770],
+      "label_anchor": [1715, 420],
+      "reason": "the panelled double door on the right of the end wall, one leaf ajar, daylight from the street"
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "room": "S16",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); own camera (no family)",
+  "note": "Small school-radio room of ZS Sokolikova 2 next to the physics cabinet, window onto the inner atrium (type-reference, register S16). One-point perspective, camera 2.04 m high, focal 1000 px (a wider lens for a small room), horizon y 400, back wall (parallel to the picture) at 5.0 m: floor line y 808 (200 px per metre); the room is 4.2 m wide. Hero scale 1.0 at y 1015 (3.3 m from the camera): s(y) = (y - 400) / 615. The radio desk stands against the back wall (front edge 4.3 m, floor y 874): 1980s cassette deck (a cassette visible behind its smoky door), blue mixing console, a microphone on a desk stand, the grey wall connection panel with three sockets above the desk, the cork board with the paper announcement list; the window to the atrium shows the opposite wing (plain yellowish facade, ribbon windows, owner feedback) and the atrium lawn. Door to the physics cabinet in the left wall. No NPC.",
+  "background": "bg_natural/S16.webp",
+  "walk_polygon": [
+    [
+      332,
+      1012
+    ],
+    [
+      466,
+      885
+    ],
+    [
+      1046,
+      885
+    ],
+    [
+      1050,
+      822
+    ],
+    [
+      1386,
+      822
+    ],
+    [
+      1585,
+      1012
+    ]
+  ],
+  "walk_band": [
+    822,
+    1012
+  ],
+  "actor_scale": [
+    0.68,
+    1.0
+  ],
+  "spawn": [
+    560,
+    975
+  ],
+  "hotspots": {
+    "S16.deck": {
+      "rect": [
+        505,
+        615,
+        190,
+        95
+      ],
+      "interaction_point": [
+        590,
+        912
+      ],
+      "label_anchor": [
+        600,
+        605
+      ],
+      "reason": "1980s cassette deck on the left of the radio desk, the stuck cassette visible behind its smoky door"
+    },
+    "S16.socket": {
+      "rect": [
+        905,
+        488,
+        105,
+        85
+      ],
+      "interaction_point": [
+        955,
+        905
+      ],
+      "label_anchor": [
+        957,
+        478
+      ],
+      "reason": "grey metal wall connection panel with three round sockets above the right end of the desk"
+    },
+    "S16.ambient 1": {
+      "rect": [
+        955,
+        570,
+        64,
+        125
+      ],
+      "interaction_point": [
+        1080,
+        900
+      ],
+      "label_anchor": [
+        1050,
+        640
+      ],
+      "reason": "microphone on a desk stand at the right end of the desk"
+    },
+    "S16.ambient 2": {
+      "rect": [
+        565,
+        445,
+        162,
+        120
+      ],
+      "interaction_point": [
+        650,
+        912
+      ],
+      "label_anchor": [
+        646,
+        435
+      ],
+      "reason": "paper announcement list pinned on the cork board above the desk"
+    }
+  },
+  "npcs": {},
+  "exits": {
+    "S16.to_S15": {
+      "rect": [
+        355,
+        405,
+        132,
+        580
+      ],
+      "interaction_point": [
+        470,
+        960
+      ],
+      "label_anchor": [
+        440,
+        395
+      ],
+      "reason": "door in the left wall back to the physics cabinet"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S16_deck_cassette_out.webp",
+      "pos": [
+        520,
+        650
+      ],
+      "after": [
+        "B06"
+      ],
+      "until": [],
+      "note": "B06: belt fitted, the cassette ejected - the cassette well behind the smoky door is empty (free retouch v4)"
+    },
+    {
+      "texture": "variants_natural/S16_socket_adapter.webp",
+      "pos": [
+        880,
+        470
+      ],
+      "after": [
+        "B12"
+      ],
+      "until": [],
+      "note": "B12: the crossover adapter stays plugged into the wall panel, its cable runs down to the console (local fix v5)"
+    }
+  ]
+}

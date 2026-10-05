@@ -1,0 +1,694 @@
+{
+  "room": "S04",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020404,
+  "usd": 0.15,
+  "started": "2026-10-05T09:57:43",
+  "spend_log_asset": "bg_natural/S04/S04_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S04.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Centrum MONAR, the small local shopping centre at Triangel in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). The real centre is a one-storey quarter-circle arc of small shop units around a paved courtyard: a continuous sloped green standing-seam metal arcade canopy along the whole arc, salmon-pink rendered pilasters between large dark-framed glazed shopfronts, an orange-red tiled main roof with small gabled dormer windows above the canopy, and a courtyard of beige and terracotta concrete pavers inside the arc. Images 2 and 3 are dashcam photos of the back and the end of this real building (the salmon render, the green metal roofing, the dormered tiled roof). Paint the courtyard side from these real materials; the grocery in the middle of the arc is invented.\n\nBrief: a small invented grocery with an outdoor window sale: the shop is closed for customers during the pandemic and sells through its window; a plastic crate on a small table in front of the window; the shop assistant Dana will be seen behind the glass; hand-drawn prices without any brands. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, the arcade throwing a soft diagonal shadow over the upper shopfronts, a few fallen yellow leaves blown onto the paving.\n\nCamera: standing in the paved courtyard inside the arc, about 2.2 m high, looking straight at the grocery unit in the middle of the arc; vertical lines stay vertical; the horizon is at y ~360. The arc wraps gently around the viewer: the canopy edge and the shopfront foot line are slightly curved, a little lower in the middle than towards the left and right frame edges. Keep this exact geometry from the sketch: the green canopy fascia across the top (y ~150-185 in the middle), the sloped green canopy above it and a strip of the orange-red tiled roof with the bottoms of two dormers at the very top edge; the shopfronts under the arcade from the fascia down to the paving; the shopfront meets the paving at y 745 in the middle and at y ~775 at the frame edges; the counter ledge of the grocery window at y 565; the paving from the shopfront foot down to the bottom edge. The arcade's support columns stand just outside the left and right frame edges - no column inside the picture.\n\nWhat the sketch blocks are, left to right: the closed dark glazed shopfront of a neighbouring unit (empty inside, no sign); a salmon pilaster; the grocery: a plain cream sign board above its door and window with the single word POTRAVINY in simple dark green capitals (no other lettering, no logo), its closed glazed double door with a paper notice taped inside (illegible scribbles), and its large shop window: dim shop interior behind the glass with shelves of groceries and a fridge glowing softly, a light stone counter ledge (window sill) at y 565 and a low rendered parapet below it; a salmon pilaster; the closed dark glazed front of a small cafe with chairs stacked on the tables inside (no sign); the beige and terracotta paver courtyard, continuous under the arcade and in front of it.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 868-980, y 420-528 of the 1920x1080 frame (45-51 % from the left, 39-49 % from the top): a hand-drawn cardboard price card taped inside the window glass: little drawings of potatoes, a loaf and a milk carton with hand-written squiggles next to them (illegible scribbles, no digits, no brands).\n2. the block of the layout sketch at x 1282-1398, y 660-758 of the 1920x1080 frame (67-73 % from the left, 61-70 % from the top): a wooden crate heaped with brown potatoes, standing on the paving at the foot of the shop wall right of the table.\nUnder the window stands a small white folding table on the paving with a blue plastic crate on it holding one brown paper grocery bag (the window sale), and a small bottle of hand sanitiser on the table. The courtyard paving continuing out of the left edge along the arcade is the area of the layout sketch at x 0-70, y 805-1015 of the 1920x1080 frame (0-4 % from the left, 75-94 % from the top).\n\nWalkable floor: the band at x 20-1900, y 765-1015 of the 1920x1080 frame (1-99 % from the left, 71-94 % from the top) is the open paver courtyard - one continuous flat surface with no kerb, no step, no edge and no change of level, and nothing standing on it: no benches, no tables, no planters, no bikes, no bins, no people. Only light, shadows, the paver pattern and a few fallen leaves.\nNPC zone at x 1080-1220, y 412-568 of the 1920x1080 frame (56-64 % from the left, 38-53 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character is seen through a window: paint the window sill exactly at y 565 across x 1050-1250; the opening above the sill shows a plain, dim interior, no person. (Dana, the shop assistant, will stand there inside the shop, seen behind the glass above the counter ledge; keep the glass there clear, only a soft reflection.)\n\nFiction rules: the grocery, its staff and the neighbouring units are invented: no shop names, no brand signs, no logos, no lettering on the canopy, no posters with text; the only lettering in the picture is POTRAVINY on the sign board. Paper shows only illegible scribbles, no digits. No people, no animals, no cars.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S04_sketch.png (rendered from art/prompts/natural/S04.sketch.json, model geometry)",
+    "art/source/rooms/S04/monar_wing_kartaview_327.jpg",
+    "art/source/rooms/S04/monar_centre_kartaview_325.jpg",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S04 natural blocking (src/game/data/blocking/S04.json): courtyard of the quarter-circle arcade of Centrum MONAR, mid-arc grocery unit straight ahead, camera ~2.2 m, horizon y ~360, shopfront foot y 745 in the middle, curving down to ~775 at the frame edges.",
+    "background": "#c4562f",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          70
+        ],
+        "fill": "#c4562f",
+        "note": "orange-red tiled main roof above the arcade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          0,
+          150,
+          52
+        ],
+        "fill": "#e9e2d2",
+        "note": "bottom of a small gabled dormer (white frame)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          8,
+          90,
+          40
+        ],
+        "fill": "#4a5a62",
+        "note": "dormer window glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1440,
+          0,
+          150,
+          52
+        ],
+        "fill": "#e9e2d2",
+        "note": "bottom of a second dormer"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          8,
+          90,
+          40
+        ],
+        "fill": "#4a5a62"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            40
+          ],
+          [
+            480,
+            60
+          ],
+          [
+            960,
+            66
+          ],
+          [
+            1440,
+            60
+          ],
+          [
+            1920,
+            40
+          ],
+          [
+            1920,
+            122
+          ],
+          [
+            1440,
+            140
+          ],
+          [
+            960,
+            150
+          ],
+          [
+            480,
+            140
+          ],
+          [
+            0,
+            122
+          ]
+        ],
+        "fill": "#3f8f6c",
+        "note": "sloped green standing-seam metal canopy of the arcade, curving gently with the arc"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            122
+          ],
+          [
+            480,
+            140
+          ],
+          [
+            960,
+            150
+          ],
+          [
+            1440,
+            140
+          ],
+          [
+            1920,
+            122
+          ],
+          [
+            1920,
+            156
+          ],
+          [
+            1440,
+            174
+          ],
+          [
+            960,
+            185
+          ],
+          [
+            480,
+            174
+          ],
+          [
+            0,
+            156
+          ]
+        ],
+        "fill": "#2c6a4e",
+        "note": "darker green canopy fascia (front edge), no lettering"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            156
+          ],
+          [
+            480,
+            174
+          ],
+          [
+            960,
+            185
+          ],
+          [
+            1440,
+            174
+          ],
+          [
+            1920,
+            156
+          ],
+          [
+            1920,
+            776
+          ],
+          [
+            1440,
+            758
+          ],
+          [
+            960,
+            745
+          ],
+          [
+            480,
+            758
+          ],
+          [
+            0,
+            776
+          ]
+        ],
+        "fill": "#d9896a",
+        "note": "salmon-rendered shop wall under the arcade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          20,
+          230,
+          440,
+          520
+        ],
+        "fill": "#3e4b52",
+        "note": "left neighbour unit: dark glazed shopfront, closed, empty inside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          20,
+          230,
+          440,
+          14
+        ],
+        "fill": "#5a4632",
+        "note": "bronze frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          234,
+          244,
+          12,
+          506
+        ],
+        "fill": "#5a4632"
+      },
+      {
+        "type": "rect",
+        "box": [
+          500,
+          190,
+          60,
+          562
+        ],
+        "fill": "#e08f70",
+        "note": "salmon pilaster"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1400,
+          190,
+          60,
+          562
+        ],
+        "fill": "#e08f70",
+        "note": "salmon pilaster"
+      },
+      {
+        "type": "rect",
+        "box": [
+          580,
+          198,
+          800,
+          50
+        ],
+        "fill": "#efe6cf",
+        "note": "plain cream sign board over the grocery (the word POTRAVINY only)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          580,
+          285,
+          220,
+          462
+        ],
+        "fill": "#3a464c",
+        "note": "closed glazed double door of the grocery"
+      },
+      {
+        "type": "rect",
+        "box": [
+          580,
+          285,
+          220,
+          10
+        ],
+        "fill": "#5a4632"
+      },
+      {
+        "type": "rect",
+        "box": [
+          686,
+          295,
+          8,
+          452
+        ],
+        "fill": "#5a4632"
+      },
+      {
+        "type": "rect",
+        "box": [
+          612,
+          400,
+          60,
+          80
+        ],
+        "fill": "#f2efe6",
+        "note": "paper notice taped inside the door glass (illegible)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          840,
+          262,
+          540,
+          303
+        ],
+        "fill": "#4a5a5e",
+        "note": "shop window glazing: dim shop interior with shelves of groceries"
+      },
+      {
+        "type": "rect",
+        "box": [
+          840,
+          262,
+          540,
+          10
+        ],
+        "fill": "#5a4632",
+        "note": "window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1032,
+          272,
+          8,
+          293
+        ],
+        "fill": "#5a4632",
+        "note": "mullion left of the serving hatch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          412,
+          140,
+          153
+        ],
+        "fill": "#56656a",
+        "note": "NPC zone: plain dim interior behind the glass (Dana)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          834,
+          559,
+          552,
+          12
+        ],
+        "fill": "#d7d3cb",
+        "note": "light stone counter ledge / window sill at y 565"
+      },
+      {
+        "type": "rect",
+        "box": [
+          840,
+          571,
+          540,
+          176
+        ],
+        "fill": "#cf7f60",
+        "note": "low rendered parapet under the window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          230,
+          420,
+          525
+        ],
+        "fill": "#3e4b52",
+        "note": "right neighbour unit: dark glazed cafe front, chairs stacked inside, closed"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          230,
+          420,
+          14
+        ],
+        "fill": "#5a4632"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1688,
+          244,
+          12,
+          511
+        ],
+        "fill": "#5a4632"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            776
+          ],
+          [
+            480,
+            758
+          ],
+          [
+            960,
+            745
+          ],
+          [
+            1440,
+            758
+          ],
+          [
+            1920,
+            776
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#cdb497",
+        "note": "beige and terracotta concrete-paver courtyard, continuous under the arcade and in front of it (walk band)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          868,
+          425,
+          104,
+          98
+        ],
+        "fill": "#f4ead2",
+        "note": "hand-drawn price card inside the glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          616,
+          240,
+          12
+        ],
+        "fill": "#efefea",
+        "note": "small white folding table top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1044,
+          628,
+          8,
+          126
+        ],
+        "fill": "#8c8c88"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1248,
+          628,
+          8,
+          126
+        ],
+        "fill": "#8c8c88"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1085,
+          574,
+          130,
+          42
+        ],
+        "fill": "#2f6fb5",
+        "note": "blue plastic crate on the table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          700,
+          102,
+          56
+        ],
+        "fill": "#9a6a3c",
+        "note": "wooden crate"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1294,
+          672,
+          94,
+          30
+        ],
+        "fill": "#b48a52",
+        "note": "heap of potatoes"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S04.json",
+  "blocking": {
+    "version": 1,
+    "room": "S04",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the grocery is in the middle of the quarter-circle arcade of Centrum MONAR)",
+    "note": "Courtyard of Centrum MONAR (Triangel, Cierna Voda): camera ~2.2 m high on the paved courtyard inside the arc, looking straight at the mid-arc grocery unit; horizon y ~360, the shopfront meets the paving at y ~745 in the middle (~175 px per metre) and a little lower towards the frame edges (the arc curves towards the camera on both sides); the arcade's green canopy fascia runs across the top (~3 m, y ~150-185), its columns stand just outside the frame. Perspective s(y) = (y - 360) / 655 as in S03/S05. Dana stands inside the shop behind the closed serving window (window_bust_glass, sill = the window's counter ledge at y 565); the folding table with the plastic crate stands on the paving under the window, the potato crate beside it at the wall foot, the hand-drawn price card is taped inside the window glass left of Dana.",
+    "background": "bg_natural/S04.webp",
+    "walk_polygon": [
+      [
+        20,
+        800
+      ],
+      [
+        300,
+        783
+      ],
+      [
+        620,
+        768
+      ],
+      [
+        960,
+        765
+      ],
+      [
+        1300,
+        768
+      ],
+      [
+        1620,
+        783
+      ],
+      [
+        1900,
+        800
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      765,
+      1015
+    ],
+    "actor_scale": [
+      0.62,
+      1.0
+    ],
+    "spawn": [
+      420,
+      905
+    ],
+    "hotspots": {
+      "S04.ambient 1": {
+        "rect": [
+          868,
+          420,
+          112,
+          108
+        ],
+        "interaction_point": [
+          925,
+          800
+        ],
+        "label_anchor": [
+          925,
+          410
+        ],
+        "reason": "hand-drawn cardboard price card taped inside the shop window glass, left of the serving hatch"
+      },
+      "S04.ambient 2": {
+        "rect": [
+          1282,
+          660,
+          116,
+          98
+        ],
+        "interaction_point": [
+          1340,
+          805
+        ],
+        "label_anchor": [
+          1340,
+          650
+        ],
+        "reason": "wooden crate heaped with potatoes on the paving at the wall foot, right of the table"
+      },
+      "S04.DANA": {
+        "rect": [
+          1080,
+          412,
+          140,
+          156
+        ],
+        "interaction_point": [
+          985,
+          812
+        ],
+        "label_anchor": [
+          1150,
+          402
+        ],
+        "reason": "Dana's bust behind the closed serving window (window_bust_glass on the counter ledge y 565)"
+      }
+    },
+    "npcs": {
+      "S04.DANA": {
+        "variant": "window_bust_glass",
+        "feet": [
+          1150,
+          728
+        ],
+        "scale": 0.562,
+        "sill_y": 565,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2 / ISSUES ART-NPC-02: Dana serves through the closed shop window, seen as a bust behind glass"
+      }
+    },
+    "exits": {
+      "S04.to_S03": {
+        "rect": [
+          0,
+          805,
+          70,
+          210
+        ],
+        "interaction_point": [
+          75,
+          905
+        ],
+        "label_anchor": [
+          195,
+          795
+        ],
+        "reason": "the courtyard paving continues out of the left edge along the arcade (towards the road and the volunteer point)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S04.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T09:58:22"
+  }
+}

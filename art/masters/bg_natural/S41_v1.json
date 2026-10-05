@@ -1,0 +1,1278 @@
+{
+  "room": "S41",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035411,
+  "usd": 0.15,
+  "started": "2026-10-05T09:53:11",
+  "spend_log_asset": "bg_natural/S41/S41_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S41.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Biela Púť in Jasná, Demänovská dolina, Low Tatras, Slovakia (about 1,100 m): the paved plaza in front of a gondola valley station by the wooden chalet Hotel Pošta. Image 2 is a photo of Biela Púť: a gravel path between tall spruce forest with the steel pylons of a lift line on the right and the green Chopok slope behind. Image 3 shows the same resort area: big steep-gabled dark wooden chalets with timber balconies, spruce forest and the green ridge of the Low Tatras. Image 4 shows the architecture of the modern lift stations of this resort: dark grey metal and glass with a red band. Paint the place from these real buildings, materials and landscape.\n\nBrief: the real Biela Púť at the gondola valley station: direction signs, a turnstile with a ticket reader and the boarding plaza. A small fictional exhibition pillar of the 2035 exhibition stands on the plaza (it is not lift equipment). A small delivery robot will wait on the pavement. Wednesday 6 June 2035 (near future, grounded: it looks like today, a little newer and cleaner), a bright early-summer midday in the mountains: fresh green grass, dark spruces, deep blue sky with white cumulus clouds, crisp sunlight from the upper left, clear soft shadows. No snow.\n\nCamera: standing on the plaza, about 1.7 m high, looking along the access road; vertical lines stay vertical; the horizon is at y ~420. Keep this exact geometry from the sketch: the wooden chalet with two steep gables in the middle distance (x 455-960, gable tips y 196-250, foot y 520) at the end of the asphalt road; the wooden bridge railing with an X-lattice along the left side of the road (top rail y 548, bottom rail y 700) over a small mountain stream; the steel tube pylon with its crossarm and sheave trains at x 1000-1210 (crossarm y 100, foot y 550, between the signpost and the turnstiles) carrying the gondola ropes from the station over the pylon and out of the top of the picture; the dark grey station with a red band on the right (roof y 200-240, facade foot y 600); the rocky slope with grey boulders and spruces behind it at the right edge; the plaza of light grey concrete pavers from y ~700 down to the bottom edge.\n\nWhat the sketch blocks are: sky with cumulus clouds; the green-grey ridge of the Low Tatras; dark spruce forest; a low modern white building with a glass ribbon far left; the two-gabled Hotel Pošta chalet (light timber walls, grey roofs, dark timber balconies, no lettering); the asphalt access road running away to it; the stream bank and the wooden bridge railing on the left; grass verges; the steel pylon and the ropes; the gondola station (dark metal and glass, a red band, a glass entrance under a canopy, big glazing of the boarding hall, its paved forecourt); the rocky slope; a slim light-wood exhibition pillar with a round turquoise emblem on the right of the plaza (no text); the plaza paving.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 190-590, y 585-703 of the 1920x1080 frame (10-31 % from the left, 54-65 % from the top): two wooden park benches with steel legs standing side by side on the plaza's back edge, in front of the bridge railing.\n2. the block of the layout sketch at x 840-970, y 330-485 of the 1920x1080 frame (44-51 % from the left, 31-45 % from the top): the three dark wooden arrow boards of a tall direction signpost (its post goes down to the plaza at y ~705); the boards carry white lettering, top to bottom exactly \"PRIEHYBA\", \"BIELA PÚŤ\" and \"CHOPOK\", nothing else.\n3. the block of the layout sketch at x 1160-1315, y 545-710 of the 1920x1080 frame (60-68 % from the left, 50-66 % from the top): a short row of modern stainless-steel turnstile gates with glass wings and a ticket card reader pillar with a small green light, standing at the front of the station forecourt.\nNPC zone at x 960-1120, y 588-823 of the 1920x1080 frame (50-58 % from the left, 54-76 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 822.\nthe area of the layout sketch at x 600-760, y 560-664 of the 1920x1080 frame (31-40 % from the left, 52-61 % from the top) is the asphalt access road leaving the plaza towards the hotels. the area of the layout sketch at x 1390-1555, y 365-600 of the 1920x1080 frame (72-81 % from the left, 34-56 % from the top) is the glass entrance of the gondola station behind the turnstiles.\n\nWalkable floor: the band at x 0-1920, y 664-1015 of the 1920x1080 frame (0-100 % from the left, 61-94 % from the top) is the plaza of light grey concrete pavers - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no bins, no bollards, no planters, no lamp posts, no people. Only sunlight, soft shadows and paving joints. It merges with the asphalt road at its back left.\n\nFiction rules: the exhibition pillar is fictional; the turnstile reader is generic. No resort or company logos and no brand signs (no TMR, no GOPASS, no JASNÁ cabin livery, no shop signs, no advertising banners), no lettering on the chalet or the station; the only text in the picture is the three signpost words. No gondola cabins on the ropes, no cars, no people, no animals. Omit the carved wooden statue of the photos.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S41_sketch.png (rendered from art/prompts/natural/S41.sketch.json, model geometry)",
+    "art/source/rooms/S41/biela-put_path-chairlift-pylons_2014-08.jpg",
+    "art/source/rooms/S41/biela-put_centrum-jasna-hotel-grand_2015.jpg",
+    "art/source/rooms/S67/priehyba_funitel-station-exterior_2015.jpg",
+    "art/backgrounds/tram-stop.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S41 natural blocking (src/game/data/blocking/S41.json): plaza in front of the gondola valley station by Hotel Posta, Biela Put. Camera ~1.7 m, horizon y ~420, plaza back edge y ~700-712, station facade on y ~600, pylon foot y ~545.",
+    "background": "#9cc8ec",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          440
+        ],
+        "fill": "#a3cdee",
+        "note": "sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          160,
+          60,
+          420,
+          120
+        ],
+        "fill": "#f2f5f8",
+        "note": "cumulus cloud"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          700,
+          30,
+          360,
+          110
+        ],
+        "fill": "#eef2f6",
+        "note": "cumulus cloud"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            360
+          ],
+          [
+            180,
+            300
+          ],
+          [
+            380,
+            250
+          ],
+          [
+            560,
+            270
+          ],
+          [
+            760,
+            215
+          ],
+          [
+            980,
+            250
+          ],
+          [
+            1160,
+            230
+          ],
+          [
+            1320,
+            280
+          ],
+          [
+            1500,
+            300
+          ],
+          [
+            1920,
+            330
+          ],
+          [
+            1920,
+            520
+          ],
+          [
+            0,
+            520
+          ]
+        ],
+        "fill": "#6f8f84",
+        "note": "green-grey ridge of the Low Tatras in the distance"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            430
+          ],
+          [
+            60,
+            380
+          ],
+          [
+            110,
+            420
+          ],
+          [
+            170,
+            360
+          ],
+          [
+            230,
+            410
+          ],
+          [
+            300,
+            350
+          ],
+          [
+            360,
+            400
+          ],
+          [
+            430,
+            340
+          ],
+          [
+            500,
+            400
+          ],
+          [
+            560,
+            370
+          ],
+          [
+            620,
+            410
+          ],
+          [
+            980,
+            400
+          ],
+          [
+            1040,
+            360
+          ],
+          [
+            1100,
+            410
+          ],
+          [
+            1160,
+            380
+          ],
+          [
+            1220,
+            420
+          ],
+          [
+            1920,
+            420
+          ],
+          [
+            1920,
+            600
+          ],
+          [
+            0,
+            600
+          ]
+        ],
+        "fill": "#2f5a3e",
+        "note": "dark spruce forest behind the buildings"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            600
+          ],
+          [
+            1640,
+            300
+          ],
+          [
+            1700,
+            210
+          ],
+          [
+            1780,
+            170
+          ],
+          [
+            1920,
+            140
+          ],
+          [
+            1920,
+            640
+          ]
+        ],
+        "fill": "#a39a88",
+        "note": "rocky slope with grey limestone boulders on the right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1700,
+            210
+          ],
+          [
+            1730,
+            120
+          ],
+          [
+            1760,
+            200
+          ],
+          [
+            1800,
+            90
+          ],
+          [
+            1840,
+            180
+          ],
+          [
+            1880,
+            70
+          ],
+          [
+            1920,
+            150
+          ],
+          [
+            1920,
+            230
+          ],
+          [
+            1700,
+            240
+          ]
+        ],
+        "fill": "#2c5238",
+        "note": "spruces on top of the rocky slope"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          520,
+          1920,
+          240
+        ],
+        "fill": "#80aa58",
+        "note": "grass verges"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          440,
+          250,
+          100
+        ],
+        "fill": "#e5e6e1",
+        "note": "low modern white building far left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          470,
+          250,
+          40
+        ],
+        "fill": "#7fa0b6",
+        "note": "its ribbon of glazing"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            470,
+            520
+          ],
+          [
+            470,
+            360
+          ],
+          [
+            580,
+            250
+          ],
+          [
+            690,
+            360
+          ],
+          [
+            690,
+            520
+          ]
+        ],
+        "fill": "#c8a478",
+        "note": "Hotel Posta: left steep gable of the wooden chalet"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            660,
+            520
+          ],
+          [
+            660,
+            330
+          ],
+          [
+            800,
+            210
+          ],
+          [
+            940,
+            330
+          ],
+          [
+            940,
+            520
+          ]
+        ],
+        "fill": "#cfab7d",
+        "note": "right, bigger steep gable"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            455,
+            370
+          ],
+          [
+            580,
+            240
+          ],
+          [
+            705,
+            370
+          ],
+          [
+            690,
+            375
+          ],
+          [
+            580,
+            262
+          ],
+          [
+            470,
+            375
+          ]
+        ],
+        "fill": "#5f6872",
+        "note": "grey roof edge, left gable"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            340
+          ],
+          [
+            800,
+            196
+          ],
+          [
+            960,
+            340
+          ],
+          [
+            940,
+            345
+          ],
+          [
+            800,
+            220
+          ],
+          [
+            660,
+            345
+          ]
+        ],
+        "fill": "#5f6872",
+        "note": "grey roof edge, right gable"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          420,
+          450,
+          18
+        ],
+        "fill": "#6b4429",
+        "note": "dark timber balcony"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          470,
+          450,
+          18
+        ],
+        "fill": "#6b4429",
+        "note": "dark timber balcony"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            600,
+            708
+          ],
+          [
+            610,
+            664
+          ],
+          [
+            680,
+            520
+          ],
+          [
+            720,
+            520
+          ],
+          [
+            745,
+            664
+          ],
+          [
+            790,
+            704
+          ]
+        ],
+        "fill": "#8e9093",
+        "note": "asphalt access road running away to the chalet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          230,
+          500,
+          370
+        ],
+        "fill": "#3c4249",
+        "note": "gondola valley station: dark grey metal and glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          300,
+          500,
+          34
+        ],
+        "fill": "#c6332d",
+        "note": "red band along the station facade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          200,
+          420,
+          40
+        ],
+        "fill": "#2e3339",
+        "note": "flat roof edge of the bullwheel hall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1390,
+          365,
+          165,
+          235
+        ],
+        "fill": "#7e9db3",
+        "note": "glass entrance doors under a canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1370,
+          345,
+          205,
+          22
+        ],
+        "fill": "#2b2f35",
+        "note": "entrance canopy"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          380,
+          170,
+          180
+        ],
+        "fill": "#56708a",
+        "note": "large glazing of the boarding hall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          600,
+          520,
+          112
+        ],
+        "fill": "#a8a39a",
+        "note": "station forecourt paving"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1800,
+            722
+          ],
+          [
+            1800,
+            330
+          ],
+          [
+            1850,
+            250
+          ],
+          [
+            1920,
+            200
+          ],
+          [
+            1920,
+            742
+          ]
+        ],
+        "fill": "#a19886",
+        "note": "rocky slope with grey limestone boulders and a few young spruces at the right edge, behind a low grey concrete retaining wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1800,
+          640,
+          120,
+          90
+        ],
+        "fill": "#c9c7c0",
+        "note": "low grey concrete retaining wall at the foot of the rocky slope"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1088,
+          120,
+          26,
+          430
+        ],
+        "fill": "#8e979f",
+        "note": "steel tube pylon of the gondola line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1000,
+          100,
+          200,
+          22
+        ],
+        "fill": "#7f878f",
+        "note": "pylon crossarm"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          122,
+          70,
+          16
+        ],
+        "fill": "#5b6168",
+        "note": "sheave train left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1140,
+          122,
+          70,
+          16
+        ],
+        "fill": "#5b6168",
+        "note": "sheave train right"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1300,
+            250
+          ],
+          [
+            1170,
+            124
+          ],
+          [
+            1080,
+            0
+          ]
+        ],
+        "color": "#2a2a2a",
+        "width": 3,
+        "note": "haul rope from the station over the pylon and over the camera"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1420,
+            250
+          ],
+          [
+            1030,
+            124
+          ],
+          [
+            880,
+            0
+          ]
+        ],
+        "color": "#2a2a2a",
+        "width": 3,
+        "note": "second rope"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          600,
+          600,
+          100
+        ],
+        "fill": "#6f8c96",
+        "note": "stream bank and water below the bridge, far left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          548,
+          600,
+          14
+        ],
+        "fill": "#8a5a34",
+        "note": "wooden bridge railing: top rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            0,
+            562
+          ],
+          [
+            60,
+            690
+          ],
+          [
+            120,
+            562
+          ],
+          [
+            180,
+            690
+          ],
+          [
+            240,
+            562
+          ],
+          [
+            300,
+            690
+          ],
+          [
+            360,
+            562
+          ],
+          [
+            420,
+            690
+          ],
+          [
+            480,
+            562
+          ],
+          [
+            540,
+            690
+          ],
+          [
+            600,
+            562
+          ]
+        ],
+        "color": "#8a5a34",
+        "width": 10,
+        "note": "X lattice of the railing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          690,
+          600,
+          14
+        ],
+        "fill": "#7a4e2e",
+        "note": "railing bottom rail"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            735
+          ],
+          [
+            190,
+            722
+          ],
+          [
+            600,
+            708
+          ],
+          [
+            610,
+            664
+          ],
+          [
+            745,
+            664
+          ],
+          [
+            790,
+            704
+          ],
+          [
+            1150,
+            708
+          ],
+          [
+            1330,
+            716
+          ],
+          [
+            1600,
+            722
+          ],
+          [
+            1920,
+            742
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#b4aea4",
+        "note": "plaza of light grey concrete pavers (the walk area)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          740,
+          1920,
+          340
+        ],
+        "cols": 24,
+        "rows": 6,
+        "color": "#a59f95",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          200,
+          625,
+          180,
+          18
+        ],
+        "fill": "#8a5a34",
+        "note": "bench 1 seat back"
+      },
+      {
+        "type": "rect",
+        "box": [
+          200,
+          660,
+          180,
+          16
+        ],
+        "fill": "#8a5a34",
+        "note": "bench 1 seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          210,
+          676,
+          10,
+          26
+        ],
+        "fill": "#4a4f55"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          676,
+          10,
+          26
+        ],
+        "fill": "#4a4f55"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          625,
+          180,
+          18
+        ],
+        "fill": "#8a5a34",
+        "note": "bench 2 seat back"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          660,
+          180,
+          16
+        ],
+        "fill": "#8a5a34",
+        "note": "bench 2 seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          410,
+          676,
+          10,
+          26
+        ],
+        "fill": "#4a4f55"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          676,
+          10,
+          26
+        ],
+        "fill": "#4a4f55"
+      },
+      {
+        "type": "rect",
+        "box": [
+          898,
+          330,
+          14,
+          378
+        ],
+        "fill": "#5a4029",
+        "note": "tall signpost"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            845,
+            340
+          ],
+          [
+            945,
+            340
+          ],
+          [
+            968,
+            360
+          ],
+          [
+            945,
+            380
+          ],
+          [
+            845,
+            380
+          ]
+        ],
+        "fill": "#4a3626",
+        "note": "arrow board 1 pointing right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            965,
+            392
+          ],
+          [
+            865,
+            392
+          ],
+          [
+            842,
+            412
+          ],
+          [
+            865,
+            432
+          ],
+          [
+            965,
+            432
+          ]
+        ],
+        "fill": "#4a3626",
+        "note": "arrow board 2 pointing left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            845,
+            444
+          ],
+          [
+            945,
+            444
+          ],
+          [
+            968,
+            464
+          ],
+          [
+            945,
+            484
+          ],
+          [
+            845,
+            484
+          ]
+        ],
+        "fill": "#4a3626",
+        "note": "arrow board 3 pointing right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1165,
+          560,
+          40,
+          150
+        ],
+        "fill": "#7d868d",
+        "note": "card reader pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1172,
+          580,
+          26,
+          20
+        ],
+        "fill": "#3fbf5a",
+        "note": "green reader light"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1205,
+          610,
+          110,
+          18
+        ],
+        "fill": "#a7b0b7",
+        "note": "turnstile arms / glass gate wings"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          590,
+          14,
+          120
+        ],
+        "fill": "#7d868d",
+        "note": "gate post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1298,
+          590,
+          14,
+          120
+        ],
+        "fill": "#7d868d",
+        "note": "gate post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1745,
+          412,
+          70,
+          316
+        ],
+        "fill": "#d9ba8b",
+        "note": "slim light-wood exhibition pillar of the 2035 exhibition (time node), no text"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1752,
+          450,
+          56,
+          56
+        ],
+        "fill": "#3aa6a0",
+        "note": "round abstract emblem"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S41.json",
+  "blocking": {
+    "version": 1,
+    "room": "S41",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Owner feedback 2026-10-05: the Jasna arrival screen is the view in front of Hotel Posta near the gondola valley station at Biela Put. Camera ~1.7 m high on the paved plaza in front of the station, looking along the access road to the steep-gabled wooden chalet (Hotel Posta, middle distance); horizon y ~420; the plaza's back edge (benches, signpost, turnstiles) stands on y ~700-712 (~140 px per metre there), the station facade on y ~600, the pylon foot on y ~545. Perspective s(y) = (y - 420) / 595. Wooden bridge railing over the stream along the left side of the road, the gondola line passes over a steel pylon right of centre and over the camera, the station with its glass entrance and turnstiles on the right, a rocky spruce slope behind it.",
+    "background": "bg_natural/S41.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        735
+      ],
+      [
+        190,
+        722
+      ],
+      [
+        600,
+        708
+      ],
+      [
+        610,
+        664
+      ],
+      [
+        745,
+        664
+      ],
+      [
+        790,
+        704
+      ],
+      [
+        1150,
+        708
+      ],
+      [
+        1330,
+        716
+      ],
+      [
+        1600,
+        722
+      ],
+      [
+        1920,
+        742
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      664,
+      1015
+    ],
+    "actor_scale": [
+      0.41,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S41.ambient 1": {
+        "rect": [
+          190,
+          585,
+          400,
+          118
+        ],
+        "interaction_point": [
+          390,
+          780
+        ],
+        "label_anchor": [
+          390,
+          575
+        ],
+        "reason": "two wooden park benches on the plaza's back edge in front of the bridge railing (seat backs y ~585, feet y ~700)"
+      },
+      "S41.ambient 2": {
+        "rect": [
+          840,
+          330,
+          130,
+          155
+        ],
+        "interaction_point": [
+          905,
+          775
+        ],
+        "label_anchor": [
+          905,
+          320
+        ],
+        "reason": "the three arrow boards of the direction signpost (Biela Put / Priehyba / Chopok) on its tall post, post foot y ~705"
+      },
+      "S41.gate": {
+        "rect": [
+          1160,
+          545,
+          155,
+          165
+        ],
+        "interaction_point": [
+          1238,
+          778
+        ],
+        "label_anchor": [
+          1238,
+          535
+        ],
+        "reason": "the turnstile ticket gates with the card reader pillar at the front of the station forecourt (top y ~550, feet y ~710)"
+      },
+      "S41.ROBOT": {
+        "rect": [
+          960,
+          588,
+          160,
+          235
+        ],
+        "interaction_point": [
+          1040,
+          860
+        ],
+        "reason": "the delivery robot waits on the plaza pavement between the signpost and the turnstiles"
+      }
+    },
+    "npcs": {
+      "S41.ROBOT": {
+        "variant": "standing",
+        "feet": [
+          1040,
+          822
+        ],
+        "z": "auto",
+        "reason": "art brief: Ocko waits on the pavement (robot sprite at its real size, perspective scale)"
+      }
+    },
+    "exits": {
+      "S41.to_S42": {
+        "rect": [
+          600,
+          560,
+          160,
+          104
+        ],
+        "interaction_point": [
+          675,
+          690
+        ],
+        "label_anchor": [
+          675,
+          548
+        ],
+        "reason": "the access road leaves the plaza between the bridge railing and the signpost towards the hotels (Hotel Grand Jasna)"
+      },
+      "S41.to_S67": {
+        "rect": [
+          1390,
+          365,
+          165,
+          235
+        ],
+        "interaction_point": [
+          1470,
+          772
+        ],
+        "label_anchor": [
+          1470,
+          355
+        ],
+        "reason": "the glass entrance of the gondola valley station behind the turnstiles (cable ride to Priehyba after J02)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S41.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T09:54:18"
+  }
+}

@@ -1,0 +1,884 @@
+{
+  "room": "S33",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1543362123,
+  "usd": 0.15,
+  "started": "2026-10-05T10:34:32",
+  "spend_log_asset": "bg_natural/S33/S33_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S33.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the small post office of the village of Ivanka pri Dunaji, Slovakia, on the village green (Namestie sv. Rozalie), in 1960 - an invented room of a real 1950s type. Images 2 and 3 are photos of a real small post office of 1956 (type reference): a wooden counter with a glazed wooden partition and a sliding service window, a stamp and an ink pad, carbon-copy paper on a writing pad, a desk lamp, a wall clock and patterned wallpaper. Image 4 is the real Chapel of St Rosalia on the village green, which is what the window looks out on. Paint the post office from these period details: modest, tidy, a little worn.\n\nBrief: an invented post-office room with a counter, a pad with carbon paper, a stamp, and a small window for the carrier pigeon. 6 June 1960, a sunny afternoon: warm sunlight falls through the window to the square, soft dust in the light, the opal globe lamp is off.\n\nCamera: standing in the customer area about 1.8 m high, facing the back wall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~470. Keep this exact geometry from the sketch: on the customer side (left) the back wall meets the floor at y 700; the counter runs from x 650 to the right edge, its top edge is one straight horizontal line at y 627 and its panelled front goes down to the floor at y 820; the glazed partition stands on the counter up to y ~390; the ceiling cornice is at y ~245.\n\nWhat the sketch blocks are, left to right: the glazed wooden double entrance door at the far left; a 1960 wall calendar; a tall wooden window with a half-drawn lace curtain showing the sunny village green with lindens and the yellow round chapel; then, behind the counter, the clerk's room with the same warm beige 1950s wallpaper with a small pattern: a wooden pigeonhole sorting rack with letters and small parcels, the open sliding service window in the glazed partition (no glass in the opening), a round office wall clock, a small teleprinter machine on a table, and a small high pigeon window in the back wall with a wooden flap and a little landing board; an opal glass globe lamp hanging from the ceiling; the oiled wooden floorboards.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 690-872, y 572-638 of the 1920x1080 frame (36-45 % from the left, 53-59 % from the top): a wooden writing pad lying on the counter top with a sheet of black carbon paper and a blank form with illegible lines.\n2. the block of the layout sketch at x 1290-1462, y 574-636 of the 1920x1080 frame (67-76 % from the left, 53-59 % from the top): an open stamp album lying on the counter top, showing rows of small colourful postage stamps (tiny pictures, no readable text).\n3. the block of the layout sketch at x 272-388, y 366-524 of the 1920x1080 frame (14-20 % from the left, 34-49 % from the top): a wall calendar for 1960: a small printed landscape picture on top, the big number 1960 under it, and a month grid of tiny illegible marks.\nThe entrance door is the area of the layout sketch at x 50-260, y 410-700 of the 1920x1080 frame (3-14 % from the left, 38-65 % from the top).\n\nWalkable floor: the band at x 20-1900, y 712-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) is the oiled wooden floorboards of the customer area - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no stands, no bins, no parcels. Only light, shadows and the board joints.\nNPC zone at x 1080-1220, y 474-627 of the 1920x1080 frame (56-64 % from the left, 44-58 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 627 across x 1050-1250, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\n\nFiction rules: no real postal emblems or logos, no state emblem, no posters with text, no official notices, no slogans, no red stars, no brand names on the teleprinter or clock. The only lettering in the picture is the number 1960 on the calendar; all forms and letters show only illegible scribbles, no other digits. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S33_sketch.png (rendered from art/prompts/natural/S33.sketch.json, model geometry)",
+    "art/source/rooms/S33/type_ref_post_office_counter_1956_fortepan103926.jpg",
+    "art/source/rooms/S33/type_ref_post_office_window_1956_fortepan103922.jpg",
+    "art/source/rooms/S32/rozalia_chapel_plepo_2008.jpg",
+    "art/masters/bg_natural/S36_v2.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S33 natural blocking (src/game/data/blocking/S33.json): invented village post office room, frontal camera ~1.8 m, horizon y 470, s(y) = (y - 470) / 545; back wall foot y 700 on the customer side; counter top y 627 (= POSTA sill_y), counter front foot y 820; glazed wooden partition above the counter with the open service window at x 1076-1250.",
+    "background": "#d9c9a4",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          250
+        ],
+        "fill": "#e9e2d2",
+        "note": "plain whitewashed ceiling"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          236,
+          1920,
+          14
+        ],
+        "fill": "#d6cdb8",
+        "note": "simple ceiling cornice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          250,
+          1920,
+          450
+        ],
+        "fill": "#d9c9a4",
+        "note": "back wall: patterned 1950s wallpaper, warm beige with a small star pattern"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          610,
+          1920,
+          90
+        ],
+        "fill": "#8a6a4a",
+        "note": "brown oil-painted dado"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            960,
+            0
+          ],
+          [
+            960,
+            118
+          ]
+        ],
+        "color": "#3a3634",
+        "width": 3,
+        "note": "pendant cord"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          922,
+          112,
+          76,
+          76
+        ],
+        "fill": "#f4efe0",
+        "note": "opal glass globe lamp"
+      },
+      {
+        "type": "rect",
+        "box": [
+          50,
+          410,
+          210,
+          290
+        ],
+        "fill": "#6e4e32",
+        "note": "double entrance door, wooden, glass panes in the upper half (exit to the square)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          72,
+          432,
+          76,
+          120
+        ],
+        "fill": "#d8e4ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          162,
+          432,
+          76,
+          120
+        ],
+        "fill": "#d8e4ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          400,
+          230,
+          12
+        ],
+        "fill": "#5a3e26",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          278,
+          372,
+          104,
+          146
+        ],
+        "fill": "#f2eee2",
+        "note": "wall calendar for 1960: a picture of a landscape on top, a big 1960 and a month grid of illegible marks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          286,
+          380,
+          88,
+          52
+        ],
+        "fill": "#8aa6b8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          298,
+          440,
+          64,
+          18
+        ],
+        "fill": "#3a3634"
+      },
+      {
+        "type": "rect",
+        "box": [
+          408,
+          360,
+          230,
+          232
+        ],
+        "fill": "#f2efe6",
+        "note": "tall wooden window to the village square"
+      },
+      {
+        "type": "rect",
+        "box": [
+          420,
+          372,
+          206,
+          208
+        ],
+        "fill": "#a8c8e0",
+        "note": "view: lindens of the green and the yellow round Chapel of St Rosalia in the sun"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          470,
+          70,
+          110
+        ],
+        "fill": "#e8d080"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          420,
+          372,
+          120,
+          120
+        ],
+        "fill": "#7aa04f"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          540,
+          380,
+          90,
+          110
+        ],
+        "fill": "#6f9446"
+      },
+      {
+        "type": "rect",
+        "box": [
+          519,
+          372,
+          8,
+          208
+        ],
+        "fill": "#f2efe6"
+      },
+      {
+        "type": "rect",
+        "box": [
+          420,
+          470,
+          206,
+          8
+        ],
+        "fill": "#f2efe6"
+      },
+      {
+        "type": "rect",
+        "box": [
+          398,
+          588,
+          250,
+          14
+        ],
+        "fill": "#d6ccb6",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          410,
+          360,
+          40,
+          230
+        ],
+        "fill": "#efe9da",
+        "note": "lace curtain half drawn"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          250,
+          1260,
+          360
+        ],
+        "fill": "#cfbf9a",
+        "note": "the clerk's room behind the partition, same wallpaper, a little darker"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          300,
+          300,
+          230
+        ],
+        "fill": "#8a6a4a",
+        "note": "wooden pigeonhole sorting rack with letters and parcels"
+      },
+      {
+        "type": "grid",
+        "box": [
+          700,
+          300,
+          300,
+          230
+        ],
+        "cols": 6,
+        "rows": 5,
+        "color": "#5e4228",
+        "width": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1112,
+          292,
+          76,
+          76
+        ],
+        "fill": "#f4f0e4",
+        "outline": "#4a3424",
+        "width": 7,
+        "note": "round office wall clock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          330,
+          150,
+          200
+        ],
+        "fill": "#d6c8a8",
+        "note": "plain wallpaper behind the stamps corner"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          470,
+          200,
+          150
+        ],
+        "fill": "#6a5a4a",
+        "note": "small table with a teleprinter machine (grey-green housing, roll of paper)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1490,
+          420,
+          160,
+          60
+        ],
+        "fill": "#7a8a7e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1712,
+          292,
+          130,
+          100
+        ],
+        "fill": "#6a4a30",
+        "note": "small high pigeon window in the back wall with a wooden flap and a little landing board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1724,
+          304,
+          106,
+          76
+        ],
+        "fill": "#b8d4e6"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          390,
+          154,
+          12
+        ],
+        "fill": "#8a6440",
+        "note": "landing board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          388,
+          1260,
+          16
+        ],
+        "fill": "#6e4e32",
+        "note": "top rail of the glazed wooden counter partition"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          404,
+          1260,
+          222
+        ],
+        "fill": "#cbd8dc",
+        "note": "glass panes of the partition (light reflections)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          860,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1650,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1850,
+          404,
+          16,
+          222
+        ],
+        "fill": "#6e4e32",
+        "note": "partition post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          500,
+          1260,
+          10
+        ],
+        "fill": "#6e4e32",
+        "note": "transom bar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1076,
+          452,
+          174,
+          175
+        ],
+        "fill": "#cfbf9a",
+        "note": "the open sliding service window: no glass, the clerk will stand here"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          440,
+          206,
+          12
+        ],
+        "fill": "#6e4e32"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          612,
+          1270,
+          16
+        ],
+        "fill": "#9a7450",
+        "note": "counter top (worn varnished wood), top edge at y 627"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          627,
+          1270,
+          193
+        ],
+        "fill": "#7a5a3a",
+        "note": "panelled wooden front of the counter, down to the floor at y 820"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1420,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1780,
+          650,
+          140,
+          150
+        ],
+        "outline": "#5e4228",
+        "width": 5,
+        "note": "panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          812,
+          1270,
+          12
+        ],
+        "fill": "#4e3826",
+        "note": "skirting"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          596,
+          160,
+          30
+        ],
+        "fill": "#6a4a30",
+        "note": "wooden writing pad on the counter with a sheet of black carbon paper and a blank form"
+      },
+      {
+        "type": "rect",
+        "box": [
+          712,
+          590,
+          70,
+          22
+        ],
+        "fill": "#1e1e22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          588,
+          60,
+          26
+        ],
+        "fill": "#f2eee2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          596,
+          150,
+          28
+        ],
+        "fill": "#3e5a7a",
+        "note": "open stamp album with sheets of colourful postage stamps"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1310,
+          590,
+          60,
+          24
+        ],
+        "fill": "#d8b860"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1378,
+          590,
+          62,
+          24
+        ],
+        "fill": "#c87060"
+      },
+      {
+        "type": "rect",
+        "box": [
+          960,
+          598,
+          34,
+          28
+        ],
+        "fill": "#3a3634",
+        "note": "rubber stamp and ink pad"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          700,
+          650,
+          380
+        ],
+        "fill": "#a6835c",
+        "note": "oiled wooden floorboards"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          824,
+          1270,
+          256
+        ],
+        "fill": "#a6835c"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S33.json",
+  "blocking": {
+    "version": 1,
+    "room": "S33",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Invented village post office room on Namestie sv. Rozalie, June 1960 (type reference: the 1956 Budapest post office counter). Frontal camera ~1.8 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~127 px per metre at the back wall, foot y 700). Customer side on the left: the glazed entrance door, the 1960 wall calendar, the window to the square. On the right the counter runs to the right edge (top edge y 627, front foot y 820) under a glazed wooden partition; the clerk stands at its open sliding service window (bust cut at the counter top). The carbon-paper pad lies on the counter at its left end where customers fill in forms, the stamp album on the counter right of the clerk. Behind the partition: the pigeonhole rack, the wall clock, a teleprinter and the small high pigeon window. The walk polygon is the customer floor in front of the counter, with the area in front of the door, calendar and window.",
+    "background": "bg_natural/S33.webp",
+    "walk_polygon": [
+      [
+        40,
+        712
+      ],
+      [
+        652,
+        712
+      ],
+      [
+        652,
+        834
+      ],
+      [
+        1900,
+        834
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      712,
+      1015
+    ],
+    "actor_scale": [
+      0.444,
+      1.0
+    ],
+    "spawn": [
+      500,
+      900
+    ],
+    "hotspots": {
+      "S33.carbon": {
+        "rect": [
+          690,
+          572,
+          182,
+          66
+        ],
+        "interaction_point": [
+          780,
+          865
+        ],
+        "label_anchor": [
+          780,
+          562
+        ],
+        "reason": "wooden writing pad with carbon paper and a blank form on the customer end of the counter"
+      },
+      "S33.ambient 1": {
+        "rect": [
+          1290,
+          574,
+          172,
+          62
+        ],
+        "interaction_point": [
+          1375,
+          865
+        ],
+        "label_anchor": [
+          1375,
+          564
+        ],
+        "reason": "open stamp album with sheets of postage stamps on the counter right of the service window"
+      },
+      "S33.ambient 2": {
+        "rect": [
+          272,
+          366,
+          116,
+          158
+        ],
+        "interaction_point": [
+          330,
+          760
+        ],
+        "label_anchor": [
+          330,
+          356
+        ],
+        "reason": "1960 wall calendar on the back wall between the entrance door and the window"
+      },
+      "S33.POSTA": {
+        "rect": [
+          1080,
+          474,
+          140,
+          153
+        ],
+        "interaction_point": [
+          1160,
+          880
+        ],
+        "label_anchor": [
+          1150,
+          464
+        ],
+        "reason": "the clerk Alojz behind the counter at the open sliding service window (bust)"
+      }
+    },
+    "npcs": {
+      "S33.POSTA": {
+        "variant": "behind_counter",
+        "feet": [
+          1150,
+          790
+        ],
+        "scale": 0.6,
+        "sill_y": 627,
+        "facing": "left",
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: clerk behind the counter (POSTA 'counter' bust variant, no glass in the open service window); cut at the counter top y 627; scale of a man standing just behind the counter (foot y ~790)"
+      }
+    },
+    "exits": {
+      "S33.to_S32": {
+        "rect": [
+          50,
+          410,
+          210,
+          290
+        ],
+        "interaction_point": [
+          155,
+          765
+        ],
+        "label_anchor": [
+          160,
+          400
+        ],
+        "reason": "the glazed wooden double door to the village square at the left of the back wall"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S33.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:35:10"
+  }
+}

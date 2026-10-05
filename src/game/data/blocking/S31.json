@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "room": "S31",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Ivanka pri Dunaji railway halt on line 130, June 1960 (steam era, no catenary). Camera ~1.9 m high on the gravel platform just beyond the Nadrazna level crossing, looking ENE along the double track: one-point view, horizon y 430, vanishing point (430, 430), perspective s(y) = (y - 430) / 585 (hero 1.7 m = 512 px at y 1015; ~130 px per metre at the building's gable, foot y 680). The double track recedes on the left; the platform edge runs from (440, 432) to (150, 1080). The small gabled halt building stands on the right, its gable facing the camera and the timber canopy along its track side. Props where they are at a halt: the double-sided station clock hangs under the canopy beam by the near post, the luggage cart stands on the platform near the edge. Bozo stands under the canopy by the building corner. The walk polygon is the platform and the forecourt in front of the gable, kept off the track edge (the kerb stones of the v1 painting) and around the cart and its long push handle; the forecourt continues out of the right edge towards the village.",
+  "background": "bg_natural/S31.webp",
+  "walk_polygon": [[335, 735], [455, 735], [455, 780], [892, 780], [892, 735], [1185, 735], [1195, 702], [1900, 702], [1900, 1015], [210, 1015]],
+  "walk_band": [702, 1015],
+  "actor_scale": [0.465, 1.0],
+  "spawn": [1380, 900],
+  "hotspots": {
+    "S31.ambient 1": {
+      "rect": [470, 595, 310, 172],
+      "interaction_point": [640, 805],
+      "label_anchor": [625, 585],
+      "reason": "platform luggage cart (wooden deck, two iron wheels, push handle) standing on the gravel near the platform edge, an old suitcase and a crate on it"
+    },
+    "S31.ambient 2": {
+      "rect": [915, 362, 110, 110],
+      "interaction_point": [980, 772],
+      "label_anchor": [968, 352],
+      "reason": "double-sided mechanical station clock hanging from the canopy beam beside the near canopy post"
+    },
+    "S31.BOZO": {
+      "rect": [1040, 469, 120, 273],
+      "interaction_point": [1010, 790],
+      "label_anchor": [1100, 459],
+      "reason": "Bozo standing on the platform under the canopy at the near corner of the halt building"
+    }
+  },
+  "npcs": {
+    "S31.BOZO": {
+      "variant": "standing",
+      "feet": [1100, 742],
+      "facing": "left",
+      "reason": "standing on the platform (BOZO posture standing); scale from the room perspective (0.53)"
+    }
+  },
+  "exits": {
+    "S31.to_S32": {
+      "rect": [1860, 705, 60, 300],
+      "interaction_point": [1845, 870],
+      "label_anchor": [1780, 695],
+      "reason": "the forecourt in front of the gable continues out of the right edge onto Nadrazna, the road south into the village"
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "room": "S07",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the roadside stop on the long straight road at the edge of Cierna Voda)",
+  "note": "Bus stop 'Chorvatsky Grob, Triangel' on the long straight road at the edge of Cierna Voda (KartaView 11670418 frames 277/281): camera ~2.2 m on the stop platform, turned 6 deg right of the road, horizon y 360, vanishing point x ~785; pinhole model f 1663 px, so s(y) = (y - 360) / 655 like S03/S05 (~300 px per metre at y 1015, ~170 at y 735). The two-lane road and the bus lay-by run into the distance on the left; the red-framed glass shelter stands on the platform's back edge 9.5-13.5 m away (its near glass side panel faces the camera, the dance poster on it); the community notice board stands on the pavement's outer edge right of the shelter, 8 m away, facing the pavement, with a big magnifier hanging from its left post on a string; Jozef stands on the pavement between the shelter and the board.",
+  "background": "bg_natural/S07.webp",
+  "walk_polygon": [
+    [
+      396,
+      1015
+    ],
+    [
+      656,
+      578
+    ],
+    [
+      913,
+      575
+    ],
+    [
+      1017,
+      750
+    ],
+    [
+      1320,
+      748
+    ],
+    [
+      1600,
+      858
+    ],
+    [
+      1920,
+      872
+    ],
+    [
+      1920,
+      950
+    ],
+    [
+      1750,
+      1015
+    ]
+  ],
+  "walk_band": [
+    575,
+    1015
+  ],
+  "actor_scale": [
+    0.33,
+    1.0
+  ],
+  "spawn": [
+    820,
+    930
+  ],
+  "hotspots": {
+    "S07.board": {
+      "rect": [
+        1568,
+        412,
+        256,
+        212
+      ],
+      "interaction_point": [
+        1653,
+        887
+      ],
+      "label_anchor": [
+        1696,
+        402
+      ],
+      "reason": "community notice board standing on the pavement's outer edge right of the shelter, facing the pavement"
+    },
+    "S07.ambient 1": {
+      "rect": [
+        1125,
+        420,
+        132,
+        172
+      ],
+      "interaction_point": [
+        990,
+        790
+      ],
+      "label_anchor": [
+        1191,
+        410
+      ],
+      "reason": "dance-course poster stuck on the shelter's near glass side panel (faces the camera)"
+    },
+    "S07.ambient 2": {
+      "rect": [
+        1496,
+        470,
+        84,
+        205
+      ],
+      "interaction_point": [
+        1545,
+        880
+      ],
+      "label_anchor": [
+        1538,
+        460
+      ],
+      "reason": "big magnifying glass hanging on a string from the notice board's left post"
+    },
+    "S07.JOZEF": {
+      "rect": [
+        1300,
+        455,
+        152,
+        352
+      ],
+      "interaction_point": [
+        1225,
+        832
+      ],
+      "label_anchor": [
+        1376,
+        445
+      ],
+      "reason": "Jozef standing on the pavement between the shelter and the notice board"
+    }
+  },
+  "npcs": {
+    "S07.JOZEF": {
+      "variant": "standing",
+      "feet": [
+        1375,
+        805
+      ],
+      "scale": 0.68,
+      "reason": "docs/DECISIONS.md item 2: Jozef stands at the notice board (standing sprite, magnifier in hand)"
+    }
+  },
+  "exits": {
+    "S07.to_S03": {
+      "rect": [
+        680,
+        515,
+        230,
+        66
+      ],
+      "interaction_point": [
+        785,
+        598
+      ],
+      "label_anchor": [
+        795,
+        505
+      ],
+      "reason": "the platform and pavement continue along the road into the distance, towards the village (map transition)"
+    },
+    "S07.to_S08": {
+      "rect": [
+        1855,
+        862,
+        65,
+        100
+      ],
+      "interaction_point": [
+        1868,
+        905
+      ],
+      "label_anchor": [
+        1728,
+        852
+      ],
+      "reason": "a trodden path leaves the pavement across the grass out of the right edge, towards the park and the pond"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S07_notice_readable.webp",
+      "pos": [
+        1595,
+        405
+      ],
+      "after": [
+        "Q2C"
+      ],
+      "until": [],
+      "reason": "Q2C pins Ela's readable notice: a big white sheet with large bold hand lettering over the small notices (refit fix v2 raw, re-composited as v3)"
+    }
+  ]
+}

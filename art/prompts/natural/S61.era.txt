@@ -1,0 +1,20 @@
+# S61 Školský dvor s mladou lipou v roku 1982 (1982) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S17, 1995)
+# Image 1 = the accepted S17 natural master, image 2 = the same with the S61 blocking drawn on it.
+# location_families 1982: new low wall and small linden; tree guard after E09; cache stored after E08.
+# art_brief: same camera as S17/S55. Young linden, fresh low brick wall with a small service niche, bench and red water-pipe
+# elbow. The loaded hand cart's track runs dangerously close to the sapling. Early December: bare branches, thin snow in
+# places, coats outside; the weather is story fiction.
+Era changes: the same school yard thirteen years earlier, on an early-December afternoon in 1982. Winter: every tree is bare - the trees of the estate behind the court, the poplar and the woods of the hill show only grey-brown branches and twigs, no leaves; the grass of the bank, the lawn and the grass bed is dull winter green-brown with thin patches of fresh snow; thin snow lies in places on the asphalt edges, on the roof edge, on the wall coping and on the bench; a pale, low winter sun under a high hazy sky, cold light, long soft shadows. The school is only eight years old: the same building with the same windows, its plain pale-yellow render clean and fresh, no stains. The tall panel block at the right is young and clean. The basketball backboard is older painted wood with the same netless hoop.
+On the yard: the art panel of 1995 is NOT there yet - in its place stands the hand cart (prop 4). The linden is a freshly planted young sapling (prop 2) instead of the 1995 tree. The low red-brick service wall is brand new: crisp clean bricks, sharp mortar joints, a clean concrete coping. The red pipe elbow is freshly painted bright red and stands a little taller out of the ground.
+
+Interactive props of 1982:
+1. {rect:S61.niche}: the inset panel of 3 rows x 4 columns of grey stone blocks in the new brick wall; the stone in the SECOND row from the top and the THIRD column from the left is taken out and lies flat on the wall coping just above, so that a small dark, dry square cavity is open in its place; the other eleven stones are in place.
+2. {rect:S61.tree}: a young, freshly planted linden sapling in the same grass bed at the same trunk spot (x 620, y 690): a thin straight stem about one and a half times the height of the bench backrest above the bench, tied to a wooden support stake with a strip of rubber, a few thin bare twigs at the top, no leaves; a small ring of dark loose soil around its foot.
+3. {rect:S61.ambient 1}: the freshly painted bright red water-pipe elbow rising from the ground at the right end of the wall and bending sideways towards it, ending in a flange.
+4. {rect:S61.ambient 2}: a loaded two-wheeled steel hand cart with a wooden box body and two long handles, standing on the asphalt, loaded with a few bags and laths; from its wheels a pair of muddy wheel ruts in the thin snow runs to the right along the kerb of the grass bed, passing right next to the sapling's stem.
+The asphalt runs out of the left edge ({exit:S61.to_S58}), out of the bottom-left corner towards the camera ({exit:S61.to_S64}) and out of the right edge ({exit:S61.to_S66}).
+
+Walkable floor: {walk} stays open asphalt with nothing standing on it: thin patches of snow and wet dark asphalt, faded court lines, no objects.
+{npc_zones}
+
+Fiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no murals, no graffiti. Any paper shows only illegible scribbles, no digits.

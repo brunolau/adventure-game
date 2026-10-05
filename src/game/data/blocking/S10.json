@@ -1,0 +1,166 @@
+{
+  "version": 1,
+  "room": "S10",
+  "status": "natural re-blocking (product-owner decision 2026-10-05)",
+  "note": "Back room of the garden workshop of the S05 property (same building and the same camera as S09): camera ~2.2 m, looking straight at the whitewashed wall (foot y 790, ~240 px per metre), the wall to the top edge with one beam. Left: the doorway back to the sunny anteroom (S09). Along the wall: the long old workbench with the ZVON table node (mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover) and the small bench supply, the shape connector panel on the wall above the bench under the big paper schematic, the enamel mug of pencils at the bench's right end, the yellow warning card pinned beside it, the big round brass frame with the blue light, the small window to the garden (vine, picket fence, fruit tree).",
+  "background": "bg_natural/S10.webp",
+  "walk_polygon": [
+    [
+      20,
+      812
+    ],
+    [
+      1900,
+      812
+    ],
+    [
+      1900,
+      1015
+    ],
+    [
+      20,
+      1015
+    ]
+  ],
+  "walk_band": [
+    812,
+    1015
+  ],
+  "actor_scale": [
+    0.79,
+    1.05
+  ],
+  "spawn": [
+    300,
+    920
+  ],
+  "hotspots": {
+    "S10.chrono": {
+      "rect": [
+        330,
+        492,
+        232,
+        118
+      ],
+      "interaction_point": [
+        446,
+        850
+      ],
+      "label_anchor": [
+        446,
+        482
+      ],
+      "reason": "the ZVON table node on the workbench: mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover"
+    },
+    "S10.panel": {
+      "rect": [
+        775,
+        375,
+        290,
+        190
+      ],
+      "interaction_point": [
+        920,
+        850
+      ],
+      "label_anchor": [
+        920,
+        365
+      ],
+      "reason": "shape connector panel on the wall above the bench, under the big paper schematic"
+    },
+    "S10.ambient 1": {
+      "rect": [
+        1072,
+        530,
+        86,
+        80
+      ],
+      "interaction_point": [
+        1115,
+        850
+      ],
+      "label_anchor": [
+        1115,
+        520
+      ],
+      "reason": "chipped orange enamel mug full of pencils at the right end of the bench"
+    },
+    "S10.ambient 2": {
+      "rect": [
+        1184,
+        414,
+        112,
+        112
+      ],
+      "interaction_point": [
+        1240,
+        850
+      ],
+      "label_anchor": [
+        1240,
+        404
+      ],
+      "reason": "yellow warning card with a red border pinned to the wall"
+    }
+  },
+  "exits": {
+    "S10.to_S09": {
+      "rect": [
+        24,
+        342,
+        262,
+        470
+      ],
+      "interaction_point": [
+        155,
+        840
+      ],
+      "label_anchor": [
+        182,
+        332
+      ],
+      "reason": "the doorway back to the anteroom (S09)"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S10_fuse_removed.webp",
+      "pos": [
+        484,
+        460
+      ],
+      "after": [
+        "G08"
+      ],
+      "until": [
+        "G10"
+      ],
+      "reason": "G08 opens the service cover and takes the blown fuse: the holder is empty until G10 (refit fix v5 raw, re-composited as v7)"
+    },
+    {
+      "texture": "variants_natural/S10_fuse_new.webp",
+      "pos": [
+        494,
+        514
+      ],
+      "after": [
+        "G10"
+      ],
+      "until": [],
+      "reason": "G10 inserts the new fuse: a clean glass fuse (v3, before the soot retouch of the base)"
+    },
+    {
+      "texture": "variants_natural/S10_panel_connected.webp",
+      "pos": [
+        744,
+        354
+      ],
+      "after": [
+        "G11"
+      ],
+      "until": [],
+      "reason": "G11 connects the reference shapes: the three cables plugged circle-circle, triangle-triangle, square-square with a warm glow (refit fix v6 raw, re-composited as v8)"
+    }
+  ]
+}

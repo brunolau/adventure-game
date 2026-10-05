@@ -1,0 +1,15 @@
+{
+  "room": "S35",
+  "notes": "Natural S35 ambient (bg_natural/S35.webp): wind in the tree crowns behind the roofs, pigeons pecking in the yard (they flee from Adam and come back), a cat now and then walking along the top of the poultry-run fence, and a flock of birds crossing over the roofs. The hens behind the fence are painted.",
+  "layers": [
+    { "id": "trees_back", "type": "sway", "texture": "S35/natural/trees_back.webp", "anchor": 1.0, "amp_px": 2.0, "freq": 0.24, "wavelength_px": 150, "flutter_px": 0.8 },
+    { "id": "tree_left", "type": "sway", "texture": "S35/natural/tree_left.webp", "anchor": 1.0, "amp_px": 2.2, "freq": 0.22, "wavelength_px": 140, "flutter_px": 0.8 },
+    { "id": "pigeons", "type": "critters", "sheet": "common/pigeon_sheet", "count": 3, "ground": [[880, 820], [1300, 850]], "scale": 0.3,
+      "flee_radius": 300, "return_s": [12, 25], "exit": [[1200, -120], [1700, -140]] },
+    { "id": "cat_fence", "type": "tween_path", "sheet": "common/cat_walk_sheet", "fps": 18, "path": [[1940, 532], [1655, 532]], "speed_px_s": 60,
+      "scale": 0.2, "faces": "right", "fade_px": 40, "every_s": [45, 80], "start_s": [8, 15] },
+    { "id": "birds", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 10,
+      "path": [[-60, 120], [700, 60], [1300, 90], [1990, 40]], "speed_px_s": 210, "scale": 0.08, "flock": 4, "flock_spread": [90, 30],
+      "bob_px": 3, "direction": "random", "every_s": [20, 40], "start_s": [5, 10] }
+  ]
+}

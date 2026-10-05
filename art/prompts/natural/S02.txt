@@ -1,0 +1,22 @@
+# S02 Ulica medzi plotmi (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S02.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S02.sketch.json (camera on the street looking across at the plots, 2.2 m, horizon y 360).
+#refs: art/source/rooms/S02/jasenova_street_mm_explorer.jpg
+#style: src/game/assets/bg_natural/S05.webp
+Place: Jaseňová, a living street of new family houses in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real street: a narrow light-concrete shared-surface street without pavements, every plot with a different fence right at its edge (grey horizontal slat fences, red-brick pillars with grey metal panels on a cream rendered plinth, split-block pillars with mesh panels, thuja hedges), narrow strips of decorative gravel, white and red-orange flat-roofed cubic houses behind small front gardens. Paint these real house and fence types; the plots are invented, not copies of particular houses.
+
+Brief: an invented residential street: houses, different fences, a courier's van on the right, an open pedestrian walkway; no real house numbers. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, long soft shadows, a yellow birch and an orange maple, a few fallen leaves on the concrete.
+
+Camera: standing on the street, about 2.2 m high, looking straight across at the opposite plots, which run parallel to the picture; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the fences stand at y 726 (brick pillars 1.45 m high, cap at y ~485; slat fences 1.8 m, top at y ~427); a narrow gravel strip with a low concrete edging between the fences and the street (y 726-750); the street from y 750 down to the bottom edge; the houses behind the fences stand on y ~589-600 with their flat roofs at y ~170-190; sky above.
+
+What the sketch blocks are, left to right: the left neighbour's fence - red-brick pillars with cream caps and grey metal panels on a cream rendered plinth - with a red-orange flat-roofed cube house and a yellow birch behind it; a narrow paved footpath between two plots leading away into the distance; Adam's plot: a grey horizontal slat fence, the wide open sliding driveway gate, a concrete driveway up to his white flat-roofed bungalow whose sectional garage door is rolled up (dim garage inside, a workbench glimpsed, no person), a white rendered gate pillar, more slat fence; the right neighbour's split-block plinth with a dark green thuja hedge behind mesh panels and a pale grey two-storey cube house; an orange maple; the rear part of a white courier van parked on the street at the right edge, seen from the side, with an orange stripe, the invented name ŠUP on its side and its rear door swung open.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S02.ambient 1}: a glazed ochre ceramic owl sitting on the cap of a brick fence pillar, big round eyes.
+2. {rect:S02.ambient 2}: a dark grey metal mailbox fixed to the white gate pillar, three colourful advertising leaflets sticking out of its slot under a small crossed-out "no advertising" pictogram sticker (no readable text).
+Adam's open driveway gate is {exit:S02.to_S01}; the footpath between the plots is {exit:S02.to_S05}; the street continues out of the left edge ({exit:S02.to_S03}) and the right edge ({exit:S02.to_S51}).
+
+Walkable floor: {walk} is the light concrete shared-surface street - one continuous flat surface with no kerb, no step and no change of material inside it, and nothing standing on it except the van at the right edge: no cars, no bins, no poles, no bikes, no people. Only light, long shadows, a manhole cover and a few fallen leaves.
+{npc_zones} (Lenka with her dog will stand there on the street in front of the left fence; Roman the courier at the van's open rear door.)
+
+Fiction rules: no house numbers, no names on mailboxes or bells, no real courier company livery or logo (the van only shows the invented name ŠUP), no readable text on stickers or leaflets, no licence plate text. No people, no animals, no other cars.

@@ -1,0 +1,117 @@
+{
+ "room": "S42",
+ "notes": "Natural S42 (bg_natural/S42.webp): the Hotel Grand Jasna forecourt at early-summer midday. Clouds drift over Chopok (sky mask), wind in the big spruce and in the shrubs behind the stone wall, the small stone fountain ripples and glints, alpine choughs cross the sky now and then. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    30,
+    190
+   ],
+   "count": 4,
+   "speed_px_s": 5,
+   "scale": [
+    0.252,
+    0.42
+   ],
+   "alpha": 0.75,
+   "mask": "S42/natural/sky_mask.webp"
+  },
+  {
+   "id": "spruce",
+   "type": "sway",
+   "texture": "S42/natural/spruce.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.26,
+   "wavelength_px": 140,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "shrubs",
+   "type": "sway",
+   "texture": "S42/natural/shrubs.webp",
+   "anchor": 1.0,
+   "amp_px": 1.0,
+   "freq": 0.42,
+   "wavelength_px": 60,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "fountain",
+   "type": "water",
+   "texture": "S42/natural/fountain_water.webp",
+   "amp_px": 0.8,
+   "speed": 1.4,
+   "glint": 0.6,
+   "glint_color": "#ffffff"
+  },
+  {
+   "id": "fountain_sparkle",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    1383,
+    645
+   ],
+   "size": [
+    26,
+    40
+   ],
+   "texture": "builtin:glow",
+   "color": "#e8f6ff",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.35,
+   "period_s": 0.3
+  },
+  {
+   "id": "choughs",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     -80,
+     120
+    ],
+    [
+     600,
+     70
+    ],
+    [
+     1200,
+     110
+    ],
+    [
+     2000,
+     60
+    ]
+   ],
+   "speed_px_s": 210,
+   "scale": 0.08,
+   "modulate": "#3b3b44",
+   "flock": 2,
+   "flock_spread": [
+    60,
+    20
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    8,
+    16
+   ]
+  }
+ ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "room": "S33",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Invented village post office room on Namestie sv. Rozalie, June 1960 (type reference: the 1956 Budapest post office counter). Frontal camera ~1.8 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~127 px per metre at the back wall, foot y 700). Customer side on the left: the glazed entrance door, the 1960 wall calendar, the window to the square. On the right the counter runs to the right edge (top edge y 627, front foot y 820) under a glazed wooden partition; the clerk stands at its open sliding service window (bust cut at the counter top). The carbon-paper pad lies on the counter left of the service window, an inkwell in front of the clerk, the stamp album on the counter to his right (v2 painting; a tray of stamp packets and a tray of papers are decoration). Behind the partition: the pigeonhole rack, the wall clock and the small high pigeon window with its landing board (the teleprinter the model painted into the clerk zone was removed by the v2 fix). The walk polygon is the customer floor in front of the counter, with the area in front of the door, calendar and window.",
+  "background": "bg_natural/S33.webp",
+  "walk_polygon": [[40, 712], [652, 712], [652, 834], [1900, 834], [1900, 1015], [20, 1015]],
+  "walk_band": [712, 1015],
+  "actor_scale": [0.444, 1.0],
+  "spawn": [500, 900],
+  "hotspots": {
+    "S33.carbon": {
+      "rect": [886, 556, 178, 76],
+      "interaction_point": [975, 865],
+      "label_anchor": [975, 546],
+      "reason": "wooden writing pad with a sheet of black carbon paper and a blank form on the counter, left of the service window (v2 painting)"
+    },
+    "S33.ambient 1": {
+      "rect": [1476, 556, 166, 76],
+      "interaction_point": [1560, 865],
+      "label_anchor": [1560, 546],
+      "reason": "open stamp album with rows of colourful postage stamps on the counter right of the service window (v2 painting)"
+    },
+    "S33.ambient 2": {
+      "rect": [272, 366, 116, 158],
+      "interaction_point": [330, 760],
+      "label_anchor": [330, 356],
+      "reason": "1960 wall calendar on the back wall between the entrance door and the window"
+    },
+    "S33.POSTA": {
+      "rect": [1080, 474, 140, 153],
+      "interaction_point": [1160, 880],
+      "label_anchor": [1150, 464],
+      "reason": "the clerk Alojz behind the counter at the open sliding service window (bust)"
+    }
+  },
+  "npcs": {
+    "S33.POSTA": {
+      "variant": "behind_counter",
+      "feet": [1150, 790],
+      "scale": 0.6,
+      "sill_y": 627,
+      "facing": "left",
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: clerk behind the counter (POSTA 'counter' bust variant, no glass in the open service window); cut at the counter top y 627; scale of a man standing just behind the counter (foot y ~790)"
+    }
+  },
+  "exits": {
+    "S33.to_S32": {
+      "rect": [50, 410, 210, 290],
+      "interaction_point": [155, 765],
+      "label_anchor": [160, 400],
+      "reason": "the glazed wooden double door to the village square at the left of the back wall"
+    }
+  },
+  "state_patches": [],
+  "occluders": [
+    {
+      "id": "inkwell",
+      "polygon": [[1086, 586], [1120, 586], [1120, 628], [1086, 628]],
+      "baseline": 805,
+      "texture": null,
+      "reason": "the inkwell on the counter is drawn in front of the clerk's bust (feet y 790 < 805); the hero in front of the counter (feet y >= 834) stays in front of it"
+    }
+  ]
+}

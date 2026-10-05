@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "room": "S04",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the grocery is in the middle of the quarter-circle arcade of Centrum MONAR)",
+  "note": "Courtyard of Centrum MONAR (Triangel, Cierna Voda): camera ~2.2 m high on the paved courtyard inside the arc, looking straight at the mid-arc grocery unit; horizon y ~360, the shopfront meets the paving at y ~745 in the middle (~175 px per metre) and a little lower towards the frame edges (the arc curves towards the camera on both sides); the arcade's green canopy fascia runs across the top (~3 m, y ~150-185), its columns stand just outside the frame. Perspective s(y) = (y - 360) / 655 as in S03/S05. Dana stands inside the shop behind the closed serving window (window_bust_glass, sill = the painted counter ledge at y 559); the folding table with the plastic crate (Mira's paper bag) stands on the paving under the window, Dana stands right of it, the potato crate beside it at the wall foot, the hand-drawn price card is taped inside the window glass left of Dana.",
+  "background": "bg_natural/S04.webp",
+  "walk_polygon": [
+    [
+      20,
+      800
+    ],
+    [
+      300,
+      783
+    ],
+    [
+      620,
+      768
+    ],
+    [
+      960,
+      765
+    ],
+    [
+      1300,
+      768
+    ],
+    [
+      1620,
+      783
+    ],
+    [
+      1900,
+      800
+    ],
+    [
+      1900,
+      1015
+    ],
+    [
+      20,
+      1015
+    ]
+  ],
+  "walk_band": [
+    765,
+    1015
+  ],
+  "actor_scale": [
+    0.62,
+    1.0
+  ],
+  "spawn": [
+    420,
+    905
+  ],
+  "hotspots": {
+    "S04.ambient 1": {
+      "rect": [
+        868,
+        416,
+        114,
+        114
+      ],
+      "interaction_point": [
+        925,
+        800
+      ],
+      "label_anchor": [
+        925,
+        406
+      ],
+      "reason": "hand-drawn cardboard price card taped inside the shop window glass, left of the serving hatch"
+    },
+    "S04.ambient 2": {
+      "rect": [
+        1262,
+        660,
+        158,
+        106
+      ],
+      "interaction_point": [
+        1340,
+        808
+      ],
+      "label_anchor": [
+        1340,
+        650
+      ],
+      "reason": "wooden crate heaped with potatoes on the paving at the wall foot, right of the table"
+    },
+    "S04.DANA": {
+      "rect": [
+        1234,
+        405,
+        132,
+        156
+      ],
+      "interaction_point": [
+        1160,
+        808
+      ],
+      "label_anchor": [
+        1300,
+        395
+      ],
+      "reason": "Dana's bust behind the closed serving window, right of the crate on the table, in front of the fridge (window_bust_glass on the counter ledge y 559)"
+    }
+  },
+  "npcs": {
+    "S04.DANA": {
+      "variant": "window_bust_glass",
+      "feet": [
+        1300,
+        728
+      ],
+      "scale": 0.562,
+      "sill_y": 559,
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2 / ISSUES ART-NPC-02: Dana serves through the closed shop window, seen as a bust behind glass"
+    }
+  },
+  "exits": {
+    "S04.to_S03": {
+      "rect": [
+        0,
+        805,
+        70,
+        210
+      ],
+      "interaction_point": [
+        75,
+        905
+      ],
+      "label_anchor": [
+        195,
+        795
+      ],
+      "reason": "the courtyard paving continues out of the left edge along the arcade (towards the road and the volunteer point)"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S04_crate_empty.webp",
+      "pos": [
+        1090,
+        462
+      ],
+      "after": [
+        "G03"
+      ],
+      "until": [],
+      "reason": "G03 hands Mira's order to Adam: the blue crate on the table is empty afterwards (refit fix v4 raw, re-composited as v5; ISSUES INT-04)"
+    }
+  ]
+}

@@ -1,0 +1,198 @@
+{
+  "version": 1,
+  "room": "S13",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); L_HALL family base for S53 (2020) and S59 (1982)",
+  "note": "Entrance hall of ZS Sokolikova 2 behind the SW main entrance (type-reference hall, register S13). One-point perspective, camera 2.2 m high on the hall floor, focal 1500 px, horizon y 352, looking at the inner back wall (parallel to the picture) at 9.5 m: its floor line is y 700 (158 px per metre); the side walls are 8.4 m apart. Left wall = the glazed steel-framed facade with the entrance double door at the front (exit to S12) and window panels behind it (left_window); back wall = caretaker's door (behind the free-standing caretaker's desk), the middle double door to the classroom wing (exit to S14) under the wall clock, the cloakroom door and the yellow mesh cloakroom cages with the slipper bench; right wall = open doorway to the corridor with the staircase up (exit to S15, the physics cabinet is upstairs). Perspective scale s(y) = (y - 352) / 663: 0.55 at the back of the walk area, 1.0 at y 1015 (hero 1.7 m). Tono (seated sprite, chair included) sits right of his desk, turned to the hall.",
+  "background": "bg_natural/S13.webp",
+  "anchors": {
+    "terrazzo_line": [
+      960,
+      700
+    ],
+    "left_window": [
+      239,
+      421
+    ],
+    "middle_door": [
+      960,
+      534
+    ]
+  },
+  "walk_polygon": [
+    [
+      15,
+      868
+    ],
+    [
+      292,
+      722
+    ],
+    [
+      372,
+      722
+    ],
+    [
+      378,
+      776
+    ],
+    [
+      628,
+      776
+    ],
+    [
+      662,
+      716
+    ],
+    [
+      1640,
+      716
+    ],
+    [
+      1880,
+      845
+    ],
+    [
+      1905,
+      860
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    716,
+    1015
+  ],
+  "actor_scale": [
+    0.55,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
+  "hotspots": {
+    "S13.ambient 1": {
+      "rect": [
+        1355,
+        618,
+        285,
+        102
+      ],
+      "interaction_point": [
+        1495,
+        764
+      ],
+      "label_anchor": [
+        1497,
+        608
+      ],
+      "reason": "row of children's slippers on the bench and its shoe shelf in front of the cloakroom cages (back wall right)"
+    },
+    "S13.ambient 2": {
+      "rect": [
+        303,
+        408,
+        133,
+        112
+      ],
+      "interaction_point": [
+        405,
+        800
+      ],
+      "label_anchor": [
+        370,
+        398
+      ],
+      "reason": "wall key cabinet with bunches of keys behind the caretaker's desk (back wall left)"
+    },
+    "S13.TONO": {
+      "rect": [
+        645,
+        515,
+        125,
+        262
+      ],
+      "interaction_point": [
+        835,
+        800
+      ],
+      "label_anchor": [
+        707,
+        505
+      ],
+      "reason": "Tono seated right of his visitor-log desk, turned to the hall"
+    }
+  },
+  "npcs": {
+    "S13.TONO": {
+      "variant": "seated",
+      "feet": [
+        707,
+        777
+      ],
+      "facing": "right",
+      "z": "auto",
+      "reason": "docs/DECISIONS.md item 2: sits at the visitor log; the desk is left of him (background), the chair is part of the sprite"
+    }
+  },
+  "exits": {
+    "S13.to_S12": {
+      "rect": [
+        30,
+        290,
+        160,
+        545
+      ],
+      "interaction_point": [
+        125,
+        885
+      ],
+      "label_anchor": [
+        124,
+        280
+      ],
+      "reason": "glazed entrance double door at the front of the left facade wall (out to the forecourt)"
+    },
+    "S13.to_S14": {
+      "rect": [
+        849,
+        368,
+        222,
+        332
+      ],
+      "interaction_point": [
+        960,
+        738
+      ],
+      "label_anchor": [
+        960,
+        358
+      ],
+      "reason": "middle double door with glass panes in the back wall: the classroom wing"
+    },
+    "S13.to_S15": {
+      "rect": [
+        1690,
+        306,
+        192,
+        530
+      ],
+      "interaction_point": [
+        1782,
+        862
+      ],
+      "label_anchor": [
+        1786,
+        298
+      ],
+      "reason": "open doorway in the right wall to the corridor with the staircase up to the physics cabinet"
+    }
+  },
+  "state_patches": []
+}

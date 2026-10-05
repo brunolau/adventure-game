@@ -1,0 +1,25 @@
+# S08 Chodník pri retenčnej nádrži (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S08.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S08.sketch.json (view from the pump-track mound over the pond, camera 2.2 m, horizon y 360).
+# Owner feedback 2026-10-05: the view is from the pump track; natural pond with reeds and pale water in hummocky dry-grass
+# scrubland, a winding packed-dirt pump-track trail in front, no fence around the pond. The owner's photo is NOT an input.
+#refs: art/source/rooms/S08/rekreapark_mound_panoramax.jpg ; art/source/rooms/S08/rekreapark_edge_panoramax.jpg ; art/source/rooms/S08/layout_javorova-alej-pond_osm.png
+#style: src/game/assets/bg_natural/S03.webp
+Place: the small pond (about 55 x 58 m) at the south-east edge of Park Javorová alej / Rekreapark in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia), seen from the top of the neighbouring pump-track hill. Images 2 and 3 are photos of the park's edge about 100 m away: grassy mounds, young planted trees, open fields and tree belts under a wide sky; image 4 is the OpenStreetMap plan of the park, the pump track and the pond. The real view: a natural pond with pale, milky green-grey water and dry reeds around it, lying in hummocky dry-grass scrubland with bare blackthorn bushes; the winding packed-dirt trail of the pump track runs over the humps in front; far behind open fields, a few distant family houses and low hills. The pond itself has no fence. Paint this real place; the bench, the short safety railing, the sign and the red ball are invented props.
+
+Brief: a small pond with a safe bank and a bench, ferns, the end of a cycle path; the props lie only on the dry, accessible side of the railing. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, long soft shadows, dry golden and rust grass, the bushes partly bare, a few yellow leaves.
+
+Camera: standing on the trail on top of the pump-track mound, about 2.2 m high, looking straight out over the pond; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the mound top with its wide packed-dirt trail from y ~795 down to the bottom edge; the mound's edge at y ~770, beyond it the ground drops to hummocky dry-grass scrub with a lower loop of the trail (y 600-770); the pond's water from y ~600 up to its far shore at y ~490, dry reeds along both shores; the far bank's scrub and bushes up to y ~390; fields, distant houses and low hills on the horizon; a big sky with a few clouds.
+
+What the sketch blocks are: sky; low hills, far fields and a few small red-roofed family houses on the horizon; the far bank with dry scrub, bare blackthorn and a few autumn trees; pale reeds; the pond's calm pale water reflecting the sky; reeds and rushes along the near shore; the hummocky dry-grass scrubland below the mound with a lower loop of the winding dirt trail over the humps; the dry grass and the wide packed-dirt trail on the mound top (walkable); a short timber safety railing (posts and two rails) only along the steep edge on the left half; a round blue end-of-cycle-path traffic sign on a pole at the right (white bicycle with a red diagonal bar, no text). A few rusty brown ferns grow at the foot of the railing.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S08.ball}: a chewed, slightly flattened red rubber dog ball lying in the dry grass at the right end of the railing, clearly visible.
+2. {rect:S08.ambient 1}: a mallard drake (green head, white collar, brown chest, grey body) standing on the grass at the mound's edge, looking sideways with a very skeptical expression.
+3. {rect:S08.ambient 2}: a wooden park bench with cast-iron legs standing on the mound's edge in front of the railing, its back towards us, facing the pond.
+The trail leaving out of the left edge is {exit:S08.to_S07}.
+
+Walkable floor: {walk} is the wide packed-dirt pump-track trail on the mound top with dry grass at its edges - one continuous, gently worn walking surface with no step, no kerb, no ditch and nothing standing on it: no bikes, no stones, no bins, no posts, no people. Only light, long shadows, tyre marks and a few fallen leaves.
+{npc_zones}
+
+Fiction rules: no fence or railing around the pond itself (only the short safety railing on the left half of the mound's edge); no municipal signs, no names, no lettering; the traffic sign has a pictogram only. No people, no cyclists, no dogs, no cars; the mallard is the only animal.

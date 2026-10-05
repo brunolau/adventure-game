@@ -1,0 +1,122 @@
+{
+ "room": "S26",
+ "notes": "Natural S26: the ceiling tube flickering now and then, dust in the light, shoppers passing in the arcade of the passage as shadows behind the door glass and the shop window.",
+ "layers": [
+  {
+   "id": "tube",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "rect": [
+    790,
+    85,
+    345,
+    62
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff7e0",
+   "min": 0.0,
+   "max": 0.3,
+   "every_s": [
+    7,
+    20
+   ]
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    330,
+    220,
+    1000,
+    520
+   ],
+   "count": 28,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.65
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "passage_passers_door",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     320,
+     700
+    ],
+    [
+     500,
+     700
+    ]
+   ],
+   "speed_px_s": 60,
+   "scale": 0.62,
+   "modulate": "#2a2018",
+   "alpha": 0.3,
+   "direction": "random",
+   "every_s": [
+    14,
+    32
+   ],
+   "start_s": [
+    2,
+    8
+   ],
+   "clip": [
+    337,
+    360,
+    150,
+    388
+   ]
+  },
+  {
+   "id": "passage_passers_window",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     560,
+     620
+    ],
+    [
+     760,
+     620
+    ]
+   ],
+   "speed_px_s": 60,
+   "scale": 0.55,
+   "modulate": "#2a2018",
+   "alpha": 0.3,
+   "direction": "random",
+   "every_s": [
+    14,
+    32
+   ],
+   "start_s": [
+    2,
+    8
+   ],
+   "clip": [
+    570,
+    340,
+    170,
+    240
+   ]
+  }
+ ]
+}

@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "room": "S01",
+  "status": "natural re-blocking (product-owner decision 2026-10-05)",
+  "note": "Adam's garage in his white bungalow on Jasenova (S02 plot in the middle). The model painted the garage from a closer camera than the sketch: the open door (2.2 m) spans y 265-790, ~234 px per metre at the front wall, horizon y ~280; the wall meets the floor at y ~795. The workbench (radio, multimeter, enamel pot of screws, pegboard and shelf above) stands along the left side wall reaching towards the camera, the wooden chair with Adam's service bag right of it in the foreground (feet y ~1000-1035), the open sectional door in the front wall (daylight: driveway, grey slat fence and sliding gate, the street, a white house and yellow birches across), the tall grey cabinet of small-parts drawers with the fuse drawer pulled out right of the door, metal shelving, boxes, a hanging bicycle and winter tyres at the right edge. Walkable = the open concrete floor between the chair and the shelving (sun patch); the chair is an occluder (its right post and legs, not the bag, so the bag never shows over Adam after G01).",
+  "background": "bg_natural/S01.webp",
+  "walk_polygon": [
+    [
+      905,
+      808
+    ],
+    [
+      1400,
+      808
+    ],
+    [
+      1418,
+      850
+    ],
+    [
+      1782,
+      850
+    ],
+    [
+      1782,
+      1015
+    ],
+    [
+      905,
+      1015
+    ]
+  ],
+  "walk_band": [
+    808,
+    1015
+  ],
+  "actor_scale": [
+    0.79,
+    1.05
+  ],
+  "spawn": [
+    1150,
+    920
+  ],
+  "hotspots": {
+    "S01.tools": {
+      "rect": [
+        652,
+        728,
+        168,
+        180
+      ],
+      "interaction_point": [
+        925,
+        905
+      ],
+      "label_anchor": [
+        736,
+        718
+      ],
+      "reason": "Adam's olive canvas service bag on the seat of the wooden chair in front of the workbench"
+    },
+    "S01.fuse": {
+      "rect": [
+        1408,
+        496,
+        186,
+        334
+      ],
+      "interaction_point": [
+        1500,
+        880
+      ],
+      "label_anchor": [
+        1500,
+        486
+      ],
+      "reason": "tall grey cabinet of small-parts drawers right of the door, the fuse drawer pulled out"
+    },
+    "S01.ambient 1": {
+      "rect": [
+        438,
+        586,
+        168,
+        132
+      ],
+      "interaction_point": [
+        925,
+        850
+      ],
+      "label_anchor": [
+        522,
+        576
+      ],
+      "reason": "big white enamel pot heaped with screws on the workbench"
+    },
+    "S01.ambient 2": {
+      "rect": [
+        66,
+        624,
+        286,
+        166
+      ],
+      "interaction_point": [
+        925,
+        960
+      ],
+      "label_anchor": [
+        209,
+        614
+      ],
+      "reason": "the opened old wooden valve radio being repaired on the workbench, multimeter beside it"
+    }
+  },
+  "exits": {
+    "S01.to_S02": {
+      "rect": [
+        930,
+        440,
+        450,
+        352
+      ],
+      "interaction_point": [
+        1150,
+        822
+      ],
+      "label_anchor": [
+        1155,
+        430
+      ],
+      "reason": "the open sectional garage door: out onto the driveway and the street (S02)"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S01_tools_taken.webp",
+      "pos": [
+        600,
+        642
+      ],
+      "after": [
+        "G01"
+      ],
+      "until": [],
+      "reason": "G01 takes the service bag: the chair is empty (refit fix v5 raw re-composited as v6)"
+    }
+  ],
+  "occluders": [
+    {
+      "id": "chair",
+      "polygon": [
+        [
+          815,
+          656
+        ],
+        [
+          843,
+          656
+        ],
+        [
+          845,
+          1002
+        ],
+        [
+          738,
+          1048
+        ],
+        [
+          622,
+          1000
+        ],
+        [
+          622,
+          908
+        ],
+        [
+          815,
+          908
+        ]
+      ],
+      "baseline": 1002,
+      "texture": null,
+      "note": "the chair's right back post and its legs below the seat (the bag area above the seat is left out)"
+    }
+  ]
+}

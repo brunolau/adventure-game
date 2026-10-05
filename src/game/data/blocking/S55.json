@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "room": "S55",
+  "family_base": "S17",
+  "status": "natural re-blocking (product-owner decision 2026-10-05). L_YARD family, derived from the S17 base painting with art/tools/derive_era.py (same camera: walk_band, actor_scale and anchors identical to S17).",
+  "note": "Same camera as S17 (yard side of ZS Sokolikova 2, camera ~2.1 m on the yard asphalt looking NW at the three-storey yard facade; horizon y 380, prop foot line y 700, s(y) = (y - 380) / 635). Late October 2020, base state before E10: the linden, its grass bed, the bench and the low service wall are gone - the corner is plain patched asphalt up to the bank (only the short stub of the red pipe remains at its axis x 1382); temporary distance markings of the pickup point (a row of yellow dashes at y ~765) are painted on the asphalt below the spot where the linden stood; the basketball hoop stands where it stood in 1995. After E10 the variant S55_linden_and_wall puts back the big linden (trunk foot 620,690), its green bed, the bench and the preserved wall with the 3x4 stone panel (the cache in row 2 / column 3); D05 opens the cache (state patch S55_cache_open).",
+  "background": "bg_natural/S55.webp",
+  "walk_polygon": [[0, 722], [1920, 722], [1920, 1015], [0, 1015]],
+  "walk_band": [720, 1015],
+  "actor_scale": [0.535, 1.0],
+  "spawn": [960, 900],
+  "anchors": {
+    "building_corner": [1250, 180],
+    "tree_trunk": [620, 690],
+    "service_niche": [1155, 626],
+    "pipe_axis": [1382, 705]
+  },
+  "hotspots": {
+    "S55.cache": { "rect": [1070, 560, 170, 125], "interaction_point": [1155, 765], "label_anchor": [1155, 550],
+                   "reason": "the 3x4 stone panel of the preserved wall at the same place as the 1982 niche (visible only after E10, when the variant overlay draws the wall; opened by D05)" },
+    "S55.ambient 1": { "rect": [480, 738, 420, 56], "interaction_point": [690, 840], "label_anchor": [690, 728],
+                       "reason": "temporary distance markings of the pickup point painted on the asphalt at the back of the yard below the old linden spot: a row of yellow dashes at y ~765 (the rect holds the two left dashes so most of the row stays plain floor for walking)" },
+    "S55.ambient 2": { "rect": [1535, 255, 170, 125], "interaction_point": [1620, 765], "label_anchor": [1620, 245],
+                       "reason": "the basketball hoop on its steel pole at the right edge of the asphalt (same pole as in 1995)" }
+  },
+  "exits": {
+    "S55.to_S52": { "rect": [0, 722, 60, 293], "interaction_point": [70, 880], "label_anchor": [200, 712],
+                    "reason": "the yard asphalt continues out of the left edge along the facade, around the school to the front entrance" }
+  },
+  "variant_layers": {
+    "variants/S55_linden_and_wall.webp": { "texture": "variants_natural/S55_linden_and_wall.webp", "pos": [0, 0] }
+  },
+  "state_patches": [
+    { "texture": "variants_natural/S55_cache_open.webp", "pos": [1140, 595], "after": ["D05"], "until": [],
+      "reason": "D05 opens the preserved cache: the stone of row 2 / column 3 is out (cavity) and lies at the wall foot (free retouch S55 v8)" }
+  ],
+  "waive": { "patch:S55.cache": "visible_after E10 is drawn by the variant layer S55_linden_and_wall (game.json visual_variant_layers, after E10: the preserved wall with the cache); hide_after D05 has its own state patch S55_cache_open" }
+}

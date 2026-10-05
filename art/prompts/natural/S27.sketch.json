@@ -1,0 +1,583 @@
+{
+ "note": "S27 natural: vaulted cellar box, camera 2.4 m, horizon y 300, back wall foot y 760.",
+ "background": "#ece6d8",
+ "shapes": [
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     1920,
+     0
+    ],
+    [
+     1920,
+     236
+    ],
+    [
+     1620,
+     256
+    ],
+    [
+     300,
+     256
+    ],
+    [
+     0,
+     236
+    ]
+   ],
+   "fill": "#ece6d8",
+   "note": "ceiling"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     236
+    ],
+    [
+     300,
+     256
+    ],
+    [
+     300,
+     760
+    ],
+    [
+     0,
+     969
+    ]
+   ],
+   "fill": "#d8cfbe",
+   "note": "left side wall (receding)"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1920,
+     236
+    ],
+    [
+     1620,
+     256
+    ],
+    [
+     1620,
+     760
+    ],
+    [
+     1920,
+     969
+    ]
+   ],
+   "fill": "#d8cfbe",
+   "note": "right side wall (receding)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    300,
+    256,
+    1320,
+    504
+   ],
+   "fill": "#e4dccb",
+   "note": "back wall"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     300,
+     760
+    ],
+    [
+     1620,
+     760
+    ],
+    [
+     1920,
+     969
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     0,
+     1080
+    ],
+    [
+     0,
+     969
+    ]
+   ],
+   "fill": "#7a6e62",
+   "note": "floor"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     300,
+     256
+    ],
+    [
+     300,
+     300
+    ],
+    [
+     420,
+     250
+    ],
+    [
+     600,
+     215
+    ],
+    [
+     800,
+     196
+    ],
+    [
+     960,
+     192
+    ],
+    [
+     1120,
+     196
+    ],
+    [
+     1320,
+     215
+    ],
+    [
+     1500,
+     250
+    ],
+    [
+     1620,
+     300
+    ],
+    [
+     1620,
+     256
+    ]
+   ],
+   "fill": "#ece6d8",
+   "note": "whitewashed barrel vault"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     300,
+     300
+    ],
+    [
+     420,
+     250
+    ],
+    [
+     600,
+     215
+    ],
+    [
+     800,
+     196
+    ],
+    [
+     960,
+     192
+    ],
+    [
+     1120,
+     196
+    ],
+    [
+     1320,
+     215
+    ],
+    [
+     1500,
+     250
+    ],
+    [
+     1620,
+     300
+    ],
+    [
+     1620,
+     760
+    ],
+    [
+     300,
+     760
+    ]
+   ],
+   "fill": "#e4dccb",
+   "note": "whitewashed brick back wall under the vault"
+  },
+  {
+   "type": "grid",
+   "box": [
+    300,
+    300,
+    1320,
+    460
+   ],
+   "cols": 22,
+   "rows": 16,
+   "color": "#d6cdb9",
+   "width": 1,
+   "note": "faint brick joints"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     20,
+     348
+    ],
+    [
+     290,
+     334
+    ],
+    [
+     290,
+     610
+    ],
+    [
+     20,
+     734
+    ]
+   ],
+   "fill": "#9a8c7a",
+   "note": "grey egg-carton acoustic panels on the left side wall"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1680,
+     400
+    ],
+    [
+     1780,
+     414
+    ],
+    [
+     1780,
+     607
+    ],
+    [
+     1680,
+     569
+    ]
+   ],
+   "fill": "#c86a3a",
+   "note": "second band poster on the right side wall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    318,
+    370,
+    176,
+    390
+   ],
+   "fill": "#5a4a3a",
+   "note": "door frame"
+  },
+  {
+   "type": "rect",
+   "box": [
+    330,
+    382,
+    152,
+    378
+   ],
+   "fill": "#6e5a3e",
+   "note": "heavy wooden basement door, ajar"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     440,
+     382
+    ],
+    [
+     482,
+     382
+    ],
+    [
+     482,
+     760
+    ],
+    [
+     440,
+     760
+    ]
+   ],
+   "fill": "#f2e6c6",
+   "note": "daylight from the stairs through the ajar door"
+  },
+  {
+   "type": "rect",
+   "box": [
+    850,
+    228,
+    220,
+    100
+   ],
+   "fill": "#c9dbe6",
+   "note": "small high basement window at ground level outside: grass, the sidewalk and the ochre base of the 1950s block"
+  },
+  {
+   "type": "rect",
+   "box": [
+    850,
+    288,
+    220,
+    40
+   ],
+   "fill": "#8aa060",
+   "note": "outside: grass and pavement"
+  },
+  {
+   "type": "bars",
+   "box": [
+    850,
+    228,
+    220,
+    100
+   ],
+   "step": 44,
+   "bar": 6,
+   "fill": "#3a3a38",
+   "vertical": true,
+   "note": "window bars"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     870,
+     330
+    ],
+    [
+     1050,
+     330
+    ],
+    [
+     1170,
+     760
+    ],
+    [
+     760,
+     760
+    ]
+   ],
+   "fill": "#efe6cc",
+   "note": "soft beam of daylight falling from the window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    520,
+    411,
+    280,
+    349
+   ],
+   "fill": "#3a3430",
+   "note": "floor-standing racks full of cassette tapes"
+  },
+  {
+   "type": "bars",
+   "box": [
+    528,
+    419,
+    264,
+    333
+   ],
+   "step": 14,
+   "bar": 9,
+   "fill": "#c8c0b0",
+   "vertical": false,
+   "note": "rows of cassette spines"
+  },
+  {
+   "type": "rect",
+   "box": [
+    818,
+    395,
+    140,
+    186
+   ],
+   "fill": "#d8a03a",
+   "note": "big band poster of an invented rock band (drawn guitars, illegible lettering)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    838,
+    420,
+    100,
+    110
+   ],
+   "fill": "#6a3a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1130,
+    611,
+    330,
+    18
+   ],
+   "fill": "#6a4a32",
+   "note": "listening table"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1140,
+    629,
+    10,
+    131
+   ],
+   "fill": "#4a3220"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1440,
+    629,
+    10,
+    131
+   ],
+   "fill": "#4a3220"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1150,
+    549,
+    130,
+    62
+   ],
+   "fill": "#2e2e30",
+   "note": "twin cassette deck"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1160,
+    565,
+    50,
+    30
+   ],
+   "fill": "#c8c4bc"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1220,
+    565,
+    50,
+    30
+   ],
+   "fill": "#c8c4bc"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1150,
+    505,
+    130,
+    44
+   ],
+   "fill": "#3a3a3c",
+   "note": "amplifier with two glowing VU meters"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1165,
+    515,
+    36,
+    22
+   ],
+   "fill": "#e8c060"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1225,
+    515,
+    36,
+    22
+   ],
+   "fill": "#e8c060"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1295,
+    575,
+    56,
+    36
+   ],
+   "fill": "#3a6a9a",
+   "note": "fat ring-binder catalogue of tapes"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1365,
+    585,
+    76,
+    26
+   ],
+   "fill": "#cfd8dc",
+   "note": "an empty open transparent cassette case"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1470,
+    566,
+    140,
+    194
+   ],
+   "fill": "#5a3e28",
+   "note": "two big wooden speaker boxes stacked"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1500,
+    596,
+    80,
+    80
+   ],
+   "fill": "#2a2a2c"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1515,
+    686,
+    50,
+    50
+   ],
+   "fill": "#2a2a2c"
+  }
+ ]
+}

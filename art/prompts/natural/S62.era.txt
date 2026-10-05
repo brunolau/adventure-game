@@ -1,0 +1,18 @@
+# S62 Sídliskový obchod v roku 1982 (1982) - ERA EDIT prompt body (art/tools/derive_era.py machinery, base S18 1995)
+# Image 1 = the accepted S18 natural master, image 2 = the same with the S62 blocking drawn on it.
+# art_brief: the same courtyard corner as the S18 kiosk; in 1982 a larger mixed-goods window and a more modest
+# assortment. A wooden crate with empty preserving jars, shop assistant Ruzena. Early December: bare branches, thin snow
+# in places, coats outside; the weather is story fiction.
+Era changes: the same housing-estate courtyard thirteen years earlier, on an early-December afternoon in 1982: winter, a pale low sun under a hazy white-grey sky, cool light. The big linden at the right and every other tree are bare (only grey-brown branches and twigs, no leaves); the pines stay dark green; the lawns are dull winter green-brown with thin patches of fresh snow; thin snow on the kerbs, on the bench, on the fence and on the roof edges. The panel blocks are only ten years old: the same blocks with the same red balcony parapets, clean and fresh. No laundry on the drying lines in winter: only an old patterned carpet hangs over the first crossbar of the drying racks.
+The newspaper kiosk is replaced by a small, slightly wider single-storey shop pavilion of mixed goods standing at the same place on the path: plastered walls painted pale green-grey, a flat roof with a brown edge, a plain fascia without any lettering, a BIGGER serving window with a wooden frame in the middle whose light wooden sill is one straight horizontal ledge at y 562; inside, a dim little shop with modest wooden shelves holding a few jars, tins, bread and bottles without labels. A narrow outer ledge runs along the front below the window.
+
+Interactive props of 1982:
+1. {rect:S62.jar}: a wooden crate standing on the outer ledge left of the serving window, holding six clean empty glass preserving jars with screw lids.
+2. {rect:S62.ambient 1}: a stack of three wooden crates full of empty returnable glass bottles (milk and beer bottles without labels) on the ground at the pavilion's right front corner.
+3. {rect:S62.ambient 2}: a small old radio receiver with a wooden case and a round speaker cloth standing on the shelf inside the window, at the right.
+The path continues out of the left edge ({exit:S62.to_S57}) and out of the right edge ({exit:S62.to_S65}).
+
+Walkable floor: {walk} stays the open courtyard path of concrete slabs, wet in places with a little slush at the edges, with nothing standing on it.
+{npc_zones}
+
+Fiction rules: no people, no animals, no cars, no lettering, no signs, no shop name, no posters, no house numbers, no logos, no brand labels on goods. Any paper shows only illegible scribbles, no digits.

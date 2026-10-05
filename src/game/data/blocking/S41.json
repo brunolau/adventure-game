@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "room": "S41",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Owner feedback 2026-10-05: the Jasna arrival screen is the view in front of Hotel Posta near the gondola valley station at Biela Put. Camera ~1.7 m high on the paved plaza in front of the station, looking along the access road to the steep-gabled wooden chalet (Hotel Posta, middle distance); horizon y ~420; the plaza's back edge (benches, signpost, turnstiles) stands on y ~700-712 (~140 px per metre there), the station facade on y ~600, the pylon foot on y ~545. Perspective s(y) = (y - 420) / 595. Wooden bridge railing over the stream along the left side of the road, the gondola line passes over a steel pylon right of centre and over the camera, the station with its glass entrance and turnstiles on the right, a rocky spruce slope behind it.",
+  "background": "bg_natural/S41.webp",
+  "walk_polygon": [[0, 1015], [0, 735], [190, 722], [600, 708], [610, 664], [745, 664], [790, 704], [955, 706], [972, 728], [1435, 730], [1450, 720], [1600, 724], [1920, 742], [1920, 1015]],
+  "walk_band": [664, 1015],
+  "actor_scale": [0.41, 1.0],
+  "spawn": [760, 880],
+  "hotspots": {
+    "S41.ambient 1": {
+      "rect": [190, 585, 400, 118],
+      "interaction_point": [390, 780],
+      "label_anchor": [390, 575],
+      "reason": "two wooden park benches on the plaza's back edge in front of the bridge railing (seat backs y ~585, feet y ~700)"
+    },
+    "S41.ambient 2": {
+      "rect": [840, 330, 130, 155],
+      "interaction_point": [905, 775],
+      "label_anchor": [905, 320],
+      "reason": "the three arrow boards of the direction signpost (Biela Put / Priehyba / Chopok) on its tall post, post foot y ~705"
+    },
+    "S41.gate": {
+      "rect": [1160, 545, 155, 165],
+      "interaction_point": [1238, 778],
+      "label_anchor": [1238, 535],
+      "reason": "the turnstile ticket gates with the card reader pillar at the front of the station forecourt (top y ~550, feet y ~710)"
+    },
+    "S41.ROBOT": {
+      "rect": [960, 588, 160, 235],
+      "interaction_point": [1040, 860],
+      "reason": "the delivery robot waits on the plaza pavement between the signpost and the turnstiles"
+    }
+  },
+  "npcs": {
+    "S41.ROBOT": {
+      "variant": "standing",
+      "feet": [1040, 822],
+      "z": "auto",
+      "reason": "art brief: Ocko waits on the pavement (robot sprite at its real size, perspective scale)"
+    }
+  },
+  "exits": {
+    "S41.to_S42": {
+      "rect": [600, 560, 160, 104],
+      "interaction_point": [675, 690],
+      "label_anchor": [675, 548],
+      "reason": "the access road leaves the plaza between the bridge railing and the signpost towards the hotels (Hotel Grand Jasna)"
+    },
+    "S41.to_S67": {
+      "rect": [1390, 365, 165, 235],
+      "interaction_point": [1470, 772],
+      "label_anchor": [1470, 355],
+      "reason": "the glass entrance of the gondola valley station behind the turnstiles (cable ride to Priehyba after J02)"
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,906 @@
+{
+  "room": "S26",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1488248726,
+  "usd": 0.15,
+  "started": "2026-10-05T10:26:43",
+  "spend_log_asset": "bg_natural/S26/S26_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S26.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a tiny clothes-repair shop in the real Pasaz Mileticova, the passage through the two-storey market-edge buildings of the Mileticova market in Ruzinov, Bratislava. Image 2 is a photo of a real clothing alterations shop (a pegboard full of colourful thread spools, scissors on nails, sewing tables, garments waiting on a rail): paint the type of shop and its clutter from it, replacing every American element (cash register, phone, signs, pennant, photos of people) with plain Slovak things of the 1990s. Image 3 is the real Mileticova market with its two-storey market-edge buildings: the sunlit passage and the market seen through the shop door and window come from it (without brands and umbrellas with logos).\n\nBrief: an invented small shop in the passage; the tailor sits at her sewing machine (she is added later as a sprite standing behind the table); boxes of bias binding, a roll of cloth insulating tape. Thursday 15 June 1995, a sunny afternoon: daylight from the passage through the door and the window, a fluorescent tube on the ceiling.\n\nCamera: standing at the back of the shop, about 2.4 m high, looking straight at the passage front wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 217 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969); the wooden sewing table stands in front of the wall with its top's front edge as one straight horizontal line at y 640 and its front panel down to the floor at y 805.\n\nWhat the sketch blocks are, left to right: the left side wall with shelves of fabric rolls; the glazed shop door to the passage; the small shop window with a folded repaired blouse on its sill; a pegboard full of colourful thread spools; large tailor's scissors hanging on a nail; the long wooden sewing table with two drawers, a black domestic sewing machine with gold decorations on its left part and a roll of cloth insulating tape beside it; a plain cream wall right behind the middle of the table; wooden shelves with cardboard boxes of bias binding and lace; the tailor's dress form on its tripod stand; a clothes rail with garments in plastic covers waiting for repair; a tall fitting mirror on the right side wall and a shelf of boxes; a fluorescent tube on the ceiling; worn linoleum floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1340-1480, y 450-785 of the 1920x1080 frame (70-77 % from the left, 42-73 % from the top): a tailor's dress form (a fabric-covered mannequin torso without head or arms) on a wooden tripod stand, a half-finished jacket pinned on it with a measuring tape around its neck.\n2. the block of the layout sketch at x 1160-1280, y 576-648 of the 1920x1080 frame (60-67 % from the left, 53-60 % from the top): an open round tin box full of colourful buttons on the right end of the sewing table.\nThe glazed shop door is the area of the layout sketch at x 314-498, y 345-765 of the 1920x1080 frame (16-26 % from the left, 32-71 % from the top).\n\nWalkable floor: the band at x 20-1900, y 786-1015 of the 1920x1080 frame (1-99 % from the left, 73-94 % from the top) is the open linoleum floor in front of the table - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no chairs, no baskets, no boxes, no cut-offs of fabric. Only daylight and soft shadows.\nNPC zone at x 985-1135, y 440-646 of the 1920x1080 frame (51-59 % from the left, 41-60 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 640 across x 955-1165, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person. Above the table top right behind its middle there is only the plain cream wall - no machine, no lamp, no shelf there.\n\nFiction rules: the shop and the tailor are invented: no shop name, no lettering, no signs, no brand names on the sewing machine or anything else, no photos of people, no people, no animals. Paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S26_sketch.png (rendered from art/prompts/natural/S26.sketch.json, model geometry)",
+    "art/source/rooms/S26/type-ref_clothing-alterations-shop_interior.jpg",
+    "art/source/rooms/S25/mileticova_market_stalls_hall_2017.jpg",
+    "src/game/assets/bg_natural/S20.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S26 natural: tailor shop box, camera 2.4 m, horizon y 300, wall foot y 760, sewing table top y 640.",
+    "background": "#f2e8d6",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            179
+          ],
+          [
+            1620,
+            217
+          ],
+          [
+            300,
+            217
+          ],
+          [
+            0,
+            179
+          ]
+        ],
+        "fill": "#f2e8d6",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            179
+          ],
+          [
+            300,
+            217
+          ],
+          [
+            300,
+            760
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#e2d2b4",
+        "note": "left side wall (receding)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            179
+          ],
+          [
+            1620,
+            217
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ]
+        ],
+        "fill": "#e2d2b4",
+        "note": "right side wall (receding)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          217,
+          1320,
+          543
+        ],
+        "fill": "#ecdcc0",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            760
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#8f7a64",
+        "note": "floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            589
+          ],
+          [
+            300,
+            498
+          ],
+          [
+            300,
+            586
+          ],
+          [
+            0,
+            715
+          ]
+        ],
+        "fill": "#8a5a6a",
+        "note": "rolls of fabric lying on a shelf on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            715
+          ],
+          [
+            300,
+            586
+          ],
+          [
+            300,
+            592
+          ],
+          [
+            0,
+            724
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            420
+          ],
+          [
+            300,
+            382
+          ],
+          [
+            300,
+            469
+          ],
+          [
+            0,
+            546
+          ]
+        ],
+        "fill": "#8a5a6a",
+        "note": "rolls of fabric lying on a shelf on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            546
+          ],
+          [
+            300,
+            469
+          ],
+          [
+            300,
+            475
+          ],
+          [
+            0,
+            555
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1660,
+            377
+          ],
+          [
+            1760,
+            388
+          ],
+          [
+            1760,
+            787
+          ],
+          [
+            1660,
+            726
+          ]
+        ],
+        "fill": "#c8d4da",
+        "note": "tall fitting mirror on the right side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1790,
+            550
+          ],
+          [
+            1920,
+            589
+          ],
+          [
+            1920,
+            687
+          ],
+          [
+            1790,
+            635
+          ]
+        ],
+        "fill": "#c8b8a0",
+        "note": "cardboard boxes of bindings and zips on a shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1790,
+            428
+          ],
+          [
+            1920,
+            448
+          ],
+          [
+            1920,
+            546
+          ],
+          [
+            1790,
+            513
+          ]
+        ],
+        "fill": "#c8b8a0",
+        "note": "cardboard boxes of bindings and zips on a shelf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          318,
+          341,
+          176,
+          419
+        ],
+        "fill": "#5a4030",
+        "note": "frame of the glazed shop door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          353,
+          152,
+          270
+        ],
+        "fill": "#e2dccc",
+        "note": "door glass: the arcade of the passage, sunlit market beyond"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          623,
+          152,
+          137
+        ],
+        "fill": "#7a5a3a",
+        "note": "lower door panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          512,
+          320,
+          238,
+          280
+        ],
+        "fill": "#5a4030",
+        "note": "small shop window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          524,
+          334,
+          214,
+          252
+        ],
+        "fill": "#e6dcc6",
+        "note": "shop window: the passage with its tiled floor, the market beyond"
+      },
+      {
+        "type": "rect",
+        "box": [
+          524,
+          516,
+          214,
+          70
+        ],
+        "fill": "#b8aca0",
+        "note": "outside: the passage floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          512,
+          586,
+          238,
+          14
+        ],
+        "fill": "#6a4a32",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          546,
+          50,
+          40
+        ],
+        "fill": "#c94a5a",
+        "note": "a folded repaired blouse on the sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          780,
+          300,
+          170,
+          230
+        ],
+        "fill": "#c8a878",
+        "note": "pegboard full of colourful thread spools"
+      },
+      {
+        "type": "bars",
+        "box": [
+          790,
+          310,
+          150,
+          210
+        ],
+        "step": 18,
+        "bar": 10,
+        "fill": "#c84a4a",
+        "vertical": true,
+        "note": "thread spools (red, blue, green, yellow)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          799,
+          310,
+          140,
+          210
+        ],
+        "step": 36,
+        "bar": 9,
+        "fill": "#4a6aa8",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          1160,
+          300,
+          150,
+          230
+        ],
+        "fill": "#7a5a3a",
+        "note": "wooden shelves with cardboard boxes of bias binding and lace"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1165,
+          310,
+          140,
+          210
+        ],
+        "step": 52,
+        "bar": 36,
+        "fill": "#d8c8a8",
+        "vertical": false
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1000,
+            330
+          ],
+          [
+            1000,
+            380
+          ]
+        ],
+        "color": "#4a4a48",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          970,
+          380,
+          60,
+          6
+        ],
+        "fill": "#4a4a48",
+        "note": "large tailor's scissors hanging on a nail"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            780,
+            622
+          ],
+          [
+            1300,
+            622
+          ],
+          [
+            1306,
+            640
+          ],
+          [
+            774,
+            640
+          ]
+        ],
+        "fill": "#a07a52",
+        "note": "top of the wooden sewing table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          774,
+          640,
+          532,
+          165
+        ],
+        "fill": "#7a5638",
+        "note": "front of the sewing table with two drawers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          670,
+          200,
+          60
+        ],
+        "fill": "#6a4a2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          670,
+          200,
+          60
+        ],
+        "fill": "#6a4a2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          820,
+          548,
+          150,
+          88
+        ],
+        "fill": "#2a2a2c",
+        "note": "black domestic sewing machine with gold decorations"
+      },
+      {
+        "type": "rect",
+        "box": [
+          840,
+          520,
+          20,
+          30
+        ],
+        "fill": "#2a2a2c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          958,
+          560,
+          20,
+          50
+        ],
+        "fill": "#c8c4bc",
+        "note": "hand wheel"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          905,
+          610,
+          60,
+          28
+        ],
+        "fill": "#4a4a8a",
+        "note": "roll of cloth insulating tape"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1170,
+          590,
+          100,
+          48
+        ],
+        "fill": "#b89a5a",
+        "note": "open tin box full of colourful buttons"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1176,
+          594,
+          88,
+          40
+        ],
+        "step": 12,
+        "bar": 7,
+        "fill": "#d84a3a",
+        "vertical": true
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1370,
+            480
+          ],
+          [
+            1450,
+            480
+          ],
+          [
+            1470,
+            540
+          ],
+          [
+            1460,
+            640
+          ],
+          [
+            1360,
+            640
+          ],
+          [
+            1350,
+            540
+          ]
+        ],
+        "fill": "#d8c8b0",
+        "note": "tailor's dress form (mannequin torso) with a half-finished jacket pinned on it"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1404,
+          456,
+          12,
+          26
+        ],
+        "fill": "#5a4a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1404,
+          640,
+          12,
+          70
+        ],
+        "fill": "#5a4a3a",
+        "note": "stand"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1350,
+            778
+          ],
+          [
+            1470,
+            778
+          ],
+          [
+            1416,
+            706
+          ]
+        ],
+        "fill": "#5a4a3a",
+        "note": "tripod feet"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1490,
+            400
+          ],
+          [
+            1610,
+            400
+          ]
+        ],
+        "color": "#6a6a68",
+        "width": 5,
+        "note": "clothes rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1495,
+          405,
+          110,
+          300
+        ],
+        "fill": "#7a6a8a",
+        "note": "garments in plastic covers hanging on the rail, waiting for repair"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1495,
+          705,
+          6,
+          60
+        ],
+        "fill": "#6a6a68"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          705,
+          6,
+          60
+        ],
+        "fill": "#6a6a68"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            820,
+            104
+          ],
+          [
+            1100,
+            104
+          ],
+          [
+            1092,
+            120
+          ],
+          [
+            828,
+            120
+          ]
+        ],
+        "fill": "#f6f0de",
+        "note": "fluorescent tube light"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S26.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Small clothes-repair shop in the Pasaz Mileticova, camera ~2.4 m at the back of the shop looking at the passage front: one-point box, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling y 217. Perspective s(y) = (y - 300) / 715. Milada stands behind the sewing table (feet y 770, bust cut at the table top's front edge y 640); the sewing machine is on the table's left part, the tin of buttons on its right end; the dress form stands on the floor at the back right; the glazed door to the passage is the exit.",
+    "background": "bg_natural/S26.webp",
+    "walk_polygon": [
+      [
+        312,
+        786
+      ],
+      [
+        764,
+        786
+      ],
+      [
+        770,
+        818
+      ],
+      [
+        1312,
+        818
+      ],
+      [
+        1318,
+        790
+      ],
+      [
+        1610,
+        790
+      ],
+      [
+        1900,
+        975
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        975
+      ]
+    ],
+    "walk_band": [
+      786,
+      1015
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      410,
+      890
+    ],
+    "hotspots": {
+      "S26.ambient 1": {
+        "rect": [
+          1340,
+          450,
+          140,
+          335
+        ],
+        "interaction_point": [
+          1410,
+          860
+        ],
+        "label_anchor": [
+          1410,
+          442
+        ],
+        "reason": "tailor's dress form on a tripod stand at the back right"
+      },
+      "S26.ambient 2": {
+        "rect": [
+          1160,
+          576,
+          120,
+          72
+        ],
+        "interaction_point": [
+          1220,
+          880
+        ],
+        "label_anchor": [
+          1220,
+          568
+        ],
+        "reason": "open tin box of buttons on the right end of the sewing table"
+      },
+      "S26.MILADA": {
+        "rect": [
+          985,
+          440,
+          150,
+          206
+        ],
+        "interaction_point": [
+          1060,
+          890
+        ],
+        "label_anchor": [
+          1060,
+          432
+        ],
+        "reason": "Milada behind the sewing table, seen down to the table top"
+      }
+    },
+    "npcs": {
+      "S26.MILADA": {
+        "variant": "behind_counter",
+        "feet": [
+          1060,
+          770
+        ],
+        "scale": 0.657,
+        "sill_y": 640,
+        "reason": "DECISIONS item 2: Milada behind the sewing table (counter bust cut at the table top y 640)"
+      }
+    },
+    "exits": {
+      "S26.to_S25": {
+        "rect": [
+          314,
+          345,
+          184,
+          420
+        ],
+        "interaction_point": [
+          406,
+          825
+        ],
+        "label_anchor": [
+          406,
+          337
+        ],
+        "reason": "glazed shop door to the passage and the market"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S26"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S26.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:27:26"
+  }
+}

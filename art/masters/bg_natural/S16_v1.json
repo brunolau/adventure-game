@@ -1,0 +1,1805 @@
+{
+  "room": "S16",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1227818498,
+  "usd": 0.15,
+  "started": "2026-10-05T11:11:04",
+  "spend_log_asset": "bg_natural/S16/S16_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S16.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the small school-radio room of ZŠ Sokolíkova 2 in Bratislava-Dúbravka (a typified Czechoslovak school opened in 1974), whose window looks onto the school's enclosed inner atrium. Image 2 is a real small room of a Czechoslovak school of the period (an old double timber window, a radiator under it, a desk); image 3 is a real Czechoslovak 1980s audio mixing desk (blue metal console with faders, knobs and a VU meter); image 4 is a real Czechoslovak 1980s cassette deck. Paint the room, the console and the deck from them, but WITHOUT any brand name or logo on the devices (no TESLA lettering) and not the photos' cameras, computers or monitors.\n\nBrief: the small school-radio room on Thursday 15 June 1995, late afternoon: a cassette mechanism on the desk, the school-radio console, a socket panel for the patch adapter, a paper list of announcements. A repair is in progress: the deck's top cover plate is unscrewed and lies beside it. The walls are one plain soft yellow colour with a darker yellow-ochre dado (no murals), the upper part of the back wall is covered with white perforated acoustic panels. Soft warm summer daylight comes in through the window from the sunny atrium.\n\nCamera: one-point perspective exactly as in the sketch, a slightly wide lens for a small room. The camera stands at the door side of the room about 2 m high and looks straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 400. Keep this exact geometry from the sketch: the back wall from x 540 to x 1380, its floor line at y 808 and its top edge at y 228; the left wall and the right wall recede towards the centre with their floor lines from (540, 808) and (1380, 808) down to the lower frame corners; the ceiling above. This is a small, intimate room.\n\nWhat the sketch blocks are, left to right: in the left wall a plain honey wooden door in a brown steel frame. On the back wall: white perforated acoustic panels on the upper left part, a wooden school-radio loudspeaker box high up, the cork board with the paper list, the grey wall connection panel; on the right of the back wall the old white double timber window with a light sill and a white radiator under it; through the glass the school's inner atrium in sunshine: a lawn with a young tree, and across it the opposite wing of the school - a plain, single-colour yellowish rendered facade with two long ribbon window bands with white frames (no murals, no panels). Against the back wall, under the cork board and the panel, the long wooden radio desk: on its left a cassette deck, in the middle the blue mixing console with faders and a VU meter, at its right end a microphone on a desk stand and a few papers. On the right wall two wall shelves full of coloured audio tape boxes. A plain fluorescent fitting on the ceiling. Dark red-brown linoleum floor. No chair.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 515-655, y 595-700 of the 1920x1080 frame (27-34 % from the left, 55-65 % from the top): a dark grey 1980s cassette deck with a smoky transparent cassette door in front, an audio cassette visible inside; its top cover plate is unscrewed and lies tilted beside it, so the belt-and-capstan mechanism is visible from above; a small screwdriver next to it.\n2. the block of the layout sketch at x 905-1010, y 488-573 of the 1920x1080 frame (47-53 % from the left, 45-53 % from the top): a grey metal wall connection panel screwed to the wall, with three round multi-pin audio sockets in a row and small illegible engraved labels.\n3. the block of the layout sketch at x 955-1019, y 570-695 of the 1920x1080 frame (50-53 % from the left, 53-64 % from the top): a black microphone on a small round desk stand with a short flexible neck.\n4. the block of the layout sketch at x 565-727, y 445-565 of the 1920x1080 frame (29-38 % from the left, 41-52 % from the top): a cork board with one sheet of paper pinned on it: a handwritten list of announcements in lines of illegible scribbles, one line underlined.\nThis room has no NPC zones.\nThe door in the left wall is the area of the layout sketch at x 355-487, y 405-985 of the 1920x1080 frame (18-25 % from the left, 38-91 % from the top).\n\nWalkable floor: the band at x 332-1585, y 822-1012 of the 1920x1080 frame (17-83 % from the left, 76-94 % from the top) is the open linoleum floor in front of the desk and under the window - one continuous flat floor with no step, no rug, no change of level, and nothing standing on it: no chair, no boxes, no bins, no cables on the floor. Only light and shadows.\n\n\nFiction rules: the room details are invented. No brand names or logos on any device (no TESLA), no readable labels, no posters with text, no names. Any paper shows only illegible scribbles, no digits. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S16_sketch.png (rendered from art/prompts/natural/S16.sketch.json, model geometry)",
+    "art/source/rooms/S16/small_room_window_brno_reckovice.jpg",
+    "art/source/rooms/S16/tesla_audio_mixer_olomouc.jpg",
+    "art/source/rooms/S16/tesla_sp210_cassette_deck.jpg",
+    "src/game/assets/bg_natural/S15.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S16 natural sketch (1995): the small school-radio room of ZS Sokolikova 2, one-point perspective, camera 2.04 m, f 1000 px, horizon y 400, back wall at 5.0 m (floor line y 808, 200 px/m), side walls X +-2.1 m (4.2 m wide room). Generated by a perspective helper.",
+    "background": "#ece7da",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            2065,
+            -53
+          ],
+          [
+            1380,
+            228
+          ],
+          [
+            540,
+            228
+          ],
+          [
+            -145,
+            -53
+          ]
+        ],
+        "fill": "#ece7da",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -145,
+            -53
+          ],
+          [
+            540,
+            228
+          ],
+          [
+            540,
+            808
+          ],
+          [
+            -145,
+            1474
+          ]
+        ],
+        "fill": "#e6d391",
+        "note": "left wall, plain pale yellow"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -145,
+            737
+          ],
+          [
+            540,
+            528
+          ],
+          [
+            540,
+            808
+          ],
+          [
+            -145,
+            1474
+          ]
+        ],
+        "fill": "#d2b765",
+        "note": "left wall dado"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            2065,
+            -53
+          ],
+          [
+            1380,
+            228
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            2065,
+            1474
+          ]
+        ],
+        "fill": "#e6d391",
+        "note": "right wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            2065,
+            737
+          ],
+          [
+            1380,
+            528
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            2065,
+            1474
+          ]
+        ],
+        "fill": "#d2b765",
+        "note": "right wall dado"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            540,
+            228
+          ],
+          [
+            1380,
+            228
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            540,
+            808
+          ]
+        ],
+        "fill": "#ead89a",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            540,
+            528
+          ],
+          [
+            1380,
+            528
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            540,
+            808
+          ]
+        ],
+        "fill": "#d4b862",
+        "note": "back wall dado"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -145,
+            1474
+          ],
+          [
+            540,
+            808
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            2065,
+            1474
+          ]
+        ],
+        "fill": "#9a6a48",
+        "note": "dark red-brown linoleum floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            540,
+            788
+          ],
+          [
+            1380,
+            788
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            540,
+            808
+          ]
+        ],
+        "fill": "#5e4a38",
+        "note": "skirting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -145,
+            1421
+          ],
+          [
+            540,
+            788
+          ],
+          [
+            540,
+            808
+          ],
+          [
+            -145,
+            1474
+          ]
+        ],
+        "fill": "#5e4a38",
+        "note": "skirting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            2065,
+            1421
+          ],
+          [
+            1380,
+            788
+          ],
+          [
+            1380,
+            808
+          ],
+          [
+            2065,
+            1474
+          ]
+        ],
+        "fill": "#5e4a38",
+        "note": "skirting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            550,
+            258
+          ],
+          [
+            870,
+            258
+          ],
+          [
+            870,
+            438
+          ],
+          [
+            550,
+            438
+          ]
+        ],
+        "fill": "#d9d2bf",
+        "note": "perforated white acoustic panels"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1058,
+            306
+          ],
+          [
+            1362,
+            306
+          ],
+          [
+            1362,
+            626
+          ],
+          [
+            1058,
+            626
+          ]
+        ],
+        "fill": "#efece2",
+        "note": "white timber double window frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1070,
+            318
+          ],
+          [
+            1350,
+            318
+          ],
+          [
+            1350,
+            618
+          ],
+          [
+            1070,
+            618
+          ]
+        ],
+        "fill": "#cfe1e6",
+        "note": "glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1070,
+          318,
+          280,
+          176
+        ],
+        "fill": "#e2cf86",
+        "note": "opposite wing of the school across the atrium: plain yellowish facade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1070,
+          330,
+          280,
+          46
+        ],
+        "fill": "#8fa6ae",
+        "note": "ribbon window band of the opposite wing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1114,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1148,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1182,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1216,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1284,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1318,
+          330,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1070,
+          420,
+          280,
+          46
+        ],
+        "fill": "#8fa6ae",
+        "note": "ribbon window band of the opposite wing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1114,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1148,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1182,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1216,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1284,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1318,
+          420,
+          4,
+          46
+        ],
+        "fill": "#efece2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1070,
+          494,
+          280,
+          124
+        ],
+        "fill": "#8fb46a",
+        "note": "atrium lawn"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1110,
+          440,
+          80,
+          90
+        ],
+        "fill": "#6f9a4c",
+        "note": "young tree in the atrium"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1146,
+          520,
+          8,
+          40
+        ],
+        "fill": "#6a4a30"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1210,
+            618
+          ],
+          [
+            1210,
+            318
+          ]
+        ],
+        "color": "#efece2",
+        "width": 7
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1070,
+            398
+          ],
+          [
+            1350,
+            398
+          ]
+        ],
+        "color": "#efece2",
+        "width": 6
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1052,
+            623
+          ],
+          [
+            1380,
+            623
+          ],
+          [
+            1380,
+            636
+          ],
+          [
+            1052,
+            636
+          ]
+        ],
+        "fill": "#d9d3c6",
+        "note": "window sill"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1112,
+            661
+          ],
+          [
+            1314,
+            661
+          ],
+          [
+            1314,
+            772
+          ],
+          [
+            1112,
+            772
+          ]
+        ],
+        "fill": "#e8e6df",
+        "note": "white radiator"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            770,
+            288
+          ],
+          [
+            860,
+            288
+          ],
+          [
+            860,
+            368
+          ],
+          [
+            770,
+            368
+          ]
+        ],
+        "fill": "#8a7a62",
+        "note": "wooden school-radio loudspeaker box"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            570,
+            452
+          ],
+          [
+            720,
+            452
+          ],
+          [
+            720,
+            558
+          ],
+          [
+            570,
+            558
+          ]
+        ],
+        "fill": "#b88d5a",
+        "note": "cork board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            583,
+            460
+          ],
+          [
+            706,
+            460
+          ],
+          [
+            706,
+            548
+          ],
+          [
+            583,
+            548
+          ]
+        ],
+        "fill": "#f4f1e8",
+        "note": "paper announcement list, handwritten lines"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            916,
+            498
+          ],
+          [
+            1000,
+            498
+          ],
+          [
+            1000,
+            564
+          ],
+          [
+            916,
+            564
+          ]
+        ],
+        "fill": "#9aa0a4",
+        "note": "grey metal wall connection panel"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          929,
+          525,
+          14,
+          14
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          953,
+          525,
+          14,
+          14
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          977,
+          525,
+          14,
+          14
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            483,
+            700
+          ],
+          [
+            1041,
+            700
+          ],
+          [
+            1030,
+            658
+          ],
+          [
+            550,
+            658
+          ]
+        ],
+        "fill": "#c9a37a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            483,
+            700
+          ],
+          [
+            1041,
+            700
+          ],
+          [
+            1041,
+            874
+          ],
+          [
+            483,
+            874
+          ]
+        ],
+        "fill": "#8f6038"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            495,
+            730
+          ],
+          [
+            681,
+            730
+          ],
+          [
+            681,
+            856
+          ],
+          [
+            495,
+            856
+          ]
+        ],
+        "fill": "#7a5232",
+        "note": "desk drawer block"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            517,
+            659
+          ],
+          [
+            642,
+            659
+          ],
+          [
+            665,
+            640
+          ],
+          [
+            550,
+            640
+          ]
+        ],
+        "fill": "#7a7a7e"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            517,
+            659
+          ],
+          [
+            642,
+            659
+          ],
+          [
+            642,
+            693
+          ],
+          [
+            517,
+            693
+          ]
+        ],
+        "fill": "#5c5c60"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            551,
+            652
+          ],
+          [
+            628,
+            652
+          ],
+          [
+            642,
+            603
+          ],
+          [
+            568,
+            603
+          ]
+        ],
+        "fill": "#4a4a4e",
+        "note": "open cassette lid"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            551,
+            655
+          ],
+          [
+            616,
+            655
+          ],
+          [
+            627,
+            647
+          ],
+          [
+            564,
+            647
+          ]
+        ],
+        "fill": "#2a2a2e",
+        "note": "cassette well"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            676,
+            693
+          ],
+          [
+            892,
+            693
+          ],
+          [
+            897,
+            623
+          ],
+          [
+            697,
+            623
+          ]
+        ],
+        "fill": "#3d5a7a",
+        "note": "blue mixing console with faders and a VU meter"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            676,
+            682
+          ],
+          [
+            892,
+            682
+          ],
+          [
+            892,
+            693
+          ],
+          [
+            676,
+            693
+          ]
+        ],
+        "fill": "#34506e"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            702,
+            674
+          ],
+          [
+            713,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            733,
+            674
+          ],
+          [
+            743,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            764,
+            674
+          ],
+          [
+            773,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            796,
+            674
+          ],
+          [
+            803,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            827,
+            674
+          ],
+          [
+            833,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            859,
+            674
+          ],
+          [
+            863,
+            641
+          ]
+        ],
+        "color": "#d8d8d8",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          807,
+          617,
+          44,
+          16
+        ],
+        "fill": "#f4e8b0",
+        "note": "VU meter"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          970,
+          678,
+          32,
+          10
+        ],
+        "fill": "#2a2a2a",
+        "note": "round microphone stand base"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            986,
+            684
+          ],
+          [
+            986,
+            595
+          ]
+        ],
+        "color": "#2a2a2a",
+        "width": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          975,
+          571,
+          22,
+          28
+        ],
+        "fill": "#3a3a3a",
+        "note": "microphone head"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            914,
+            691
+          ],
+          [
+            960,
+            691
+          ],
+          [
+            960,
+            678
+          ],
+          [
+            916,
+            678
+          ]
+        ],
+        "fill": "#f2efe4",
+        "note": "papers"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1560,
+            640
+          ],
+          [
+            1398,
+            575
+          ],
+          [
+            1335,
+            575
+          ],
+          [
+            1474,
+            640
+          ]
+        ],
+        "fill": "#8a6040",
+        "note": "wall shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1538,
+            564
+          ],
+          [
+            1524,
+            560
+          ],
+          [
+            1524,
+            628
+          ],
+          [
+            1538,
+            633
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1518,
+            558
+          ],
+          [
+            1504,
+            554
+          ],
+          [
+            1504,
+            620
+          ],
+          [
+            1518,
+            625
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1499,
+            553
+          ],
+          [
+            1487,
+            549
+          ],
+          [
+            1487,
+            613
+          ],
+          [
+            1499,
+            618
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1481,
+            548
+          ],
+          [
+            1470,
+            545
+          ],
+          [
+            1470,
+            606
+          ],
+          [
+            1481,
+            610
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1465,
+            543
+          ],
+          [
+            1454,
+            540
+          ],
+          [
+            1454,
+            600
+          ],
+          [
+            1465,
+            604
+          ]
+        ],
+        "fill": "#2f8f5a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1449,
+            539
+          ],
+          [
+            1439,
+            536
+          ],
+          [
+            1439,
+            594
+          ],
+          [
+            1449,
+            598
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1435,
+            535
+          ],
+          [
+            1425,
+            532
+          ],
+          [
+            1425,
+            588
+          ],
+          [
+            1435,
+            592
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1421,
+            531
+          ],
+          [
+            1412,
+            528
+          ],
+          [
+            1412,
+            583
+          ],
+          [
+            1421,
+            586
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1408,
+            527
+          ],
+          [
+            1400,
+            525
+          ],
+          [
+            1400,
+            578
+          ],
+          [
+            1408,
+            581
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1560,
+            511
+          ],
+          [
+            1398,
+            481
+          ],
+          [
+            1335,
+            481
+          ],
+          [
+            1474,
+            511
+          ]
+        ],
+        "fill": "#8a6040",
+        "note": "wall shelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1538,
+            439
+          ],
+          [
+            1524,
+            438
+          ],
+          [
+            1524,
+            506
+          ],
+          [
+            1538,
+            508
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1518,
+            438
+          ],
+          [
+            1504,
+            437
+          ],
+          [
+            1504,
+            502
+          ],
+          [
+            1518,
+            505
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1499,
+            436
+          ],
+          [
+            1487,
+            435
+          ],
+          [
+            1487,
+            499
+          ],
+          [
+            1499,
+            501
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1481,
+            435
+          ],
+          [
+            1470,
+            434
+          ],
+          [
+            1470,
+            496
+          ],
+          [
+            1481,
+            498
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1465,
+            434
+          ],
+          [
+            1454,
+            433
+          ],
+          [
+            1454,
+            493
+          ],
+          [
+            1465,
+            495
+          ]
+        ],
+        "fill": "#2f8f5a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1449,
+            433
+          ],
+          [
+            1439,
+            432
+          ],
+          [
+            1439,
+            490
+          ],
+          [
+            1449,
+            492
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1435,
+            432
+          ],
+          [
+            1425,
+            431
+          ],
+          [
+            1425,
+            487
+          ],
+          [
+            1435,
+            489
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1421,
+            431
+          ],
+          [
+            1412,
+            430
+          ],
+          [
+            1412,
+            485
+          ],
+          [
+            1421,
+            486
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1408,
+            430
+          ],
+          [
+            1400,
+            430
+          ],
+          [
+            1400,
+            482
+          ],
+          [
+            1408,
+            484
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            351,
+            397
+          ],
+          [
+            488,
+            398
+          ],
+          [
+            488,
+            858
+          ],
+          [
+            351,
+            991
+          ]
+        ],
+        "fill": "#5e432c",
+        "note": "door frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            360,
+            411
+          ],
+          [
+            483,
+            409
+          ],
+          [
+            483,
+            864
+          ],
+          [
+            360,
+            983
+          ]
+        ],
+        "fill": "#bf9055",
+        "note": "door to the physics cabinet"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            913,
+            138
+          ],
+          [
+            1007,
+            138
+          ],
+          [
+            994,
+            209
+          ],
+          [
+            926,
+            209
+          ]
+        ],
+        "fill": "#fffbe8"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S16.json",
+  "blocking": {
+    "version": 1,
+    "room": "S16",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); own camera (no family)",
+    "note": "Small school-radio room of ZS Sokolikova 2 next to the physics cabinet, window onto the inner atrium (type-reference, register S16). One-point perspective, camera 2.04 m high, focal 1000 px (a wider lens for a small room), horizon y 400, back wall (parallel to the picture) at 5.0 m: floor line y 808 (200 px per metre); the room is 4.2 m wide. Hero scale 1.0 at y 1015 (3.3 m from the camera): s(y) = (y - 400) / 615. The radio desk stands against the back wall (front edge 4.3 m, floor y 874): cassette deck with its lid open, blue mixing console, a microphone on a desk stand, the grey wall connection panel with three sockets above the desk, the cork board with the paper announcement list; the window to the atrium shows the opposite wing (plain yellowish facade, ribbon windows, owner feedback) and the atrium lawn. Door to the physics cabinet in the left wall. No NPC.",
+    "background": "bg_natural/S16.webp",
+    "walk_polygon": [
+      [
+        332,
+        1012
+      ],
+      [
+        466,
+        885
+      ],
+      [
+        1046,
+        885
+      ],
+      [
+        1050,
+        822
+      ],
+      [
+        1386,
+        822
+      ],
+      [
+        1585,
+        1012
+      ]
+    ],
+    "walk_band": [
+      822,
+      1012
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      700,
+      960
+    ],
+    "hotspots": {
+      "S16.deck": {
+        "rect": [
+          515,
+          595,
+          140,
+          105
+        ],
+        "interaction_point": [
+          590,
+          912
+        ],
+        "label_anchor": [
+          585,
+          585
+        ],
+        "reason": "portable cassette deck with its lid open on the left of the radio desk"
+      },
+      "S16.socket": {
+        "rect": [
+          905,
+          488,
+          105,
+          85
+        ],
+        "interaction_point": [
+          955,
+          905
+        ],
+        "label_anchor": [
+          957,
+          478
+        ],
+        "reason": "grey metal wall connection panel with three round sockets above the right end of the desk"
+      },
+      "S16.ambient 1": {
+        "rect": [
+          955,
+          570,
+          64,
+          125
+        ],
+        "interaction_point": [
+          1080,
+          900
+        ],
+        "label_anchor": [
+          1050,
+          640
+        ],
+        "reason": "microphone on a desk stand at the right end of the desk"
+      },
+      "S16.ambient 2": {
+        "rect": [
+          565,
+          445,
+          162,
+          120
+        ],
+        "interaction_point": [
+          650,
+          912
+        ],
+        "label_anchor": [
+          646,
+          435
+        ],
+        "reason": "paper announcement list pinned on the cork board above the desk"
+      }
+    },
+    "npcs": {},
+    "exits": {
+      "S16.to_S15": {
+        "rect": [
+          355,
+          405,
+          132,
+          580
+        ],
+        "interaction_point": [
+          470,
+          960
+        ],
+        "label_anchor": [
+          440,
+          395
+        ],
+        "reason": "door in the left wall back to the physics cabinet"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S16.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:11:51"
+  }
+}

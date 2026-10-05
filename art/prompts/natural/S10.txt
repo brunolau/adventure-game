@@ -1,0 +1,25 @@
+# S10 Dielňa ZVON (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S10.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S10.sketch.json (same building and camera as the natural S09: frontal wall, foot y 790, wall to the top edge).
+# Image 4 = the natural S09 as a reference for the same building (not the style image).
+#refs: art/source/rooms/S10/garage_workshop_shixart1985.jpg ; art/source/rooms/S01/radios_in_repose_eli_dark.jpg ; src/game/assets/bg_natural/S09.webp
+#style: src/game/assets/bg_natural/S06.webp
+Place: the back room of grandmother Mira's old garden workshop in the old core of Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of a real narrow converted workshop (a long bench along the wall, shelves, a small window on the wall); image 3 shows real low-voltage bench electronics (an opened chassis, meters); image 4 is our finished painting of the anteroom of the same outbuilding: paint this room with exactly the same whitewashed lime plaster with bare red-brick patches and damp streaks, the same heavy dark timber beam at the top and the same worn wide pine floorboards. The device and the room's contents are invented.
+
+Brief: the back room with a low-voltage bench device, three shaped connectors, a large paper schematic and a blue light in a round frame. Thursday 29 October 2020, afternoon: warm low sunlight from the small window and from the doorway at the left, and the soft blue glow of the round frame tinting the wall around it.
+
+Camera: standing inside the room, about 2.2 m high, looking straight at its long wall, which is parallel to the picture and fills the whole picture up to the top edge - the ceiling is NOT visible, only one heavy dark timber beam along the very top edge; no side walls. Vertical lines stay vertical. Keep this exact geometry from the sketch (the camera stays this far from the wall, exactly as in image 4, do not move closer): the wall meets the floor at y 790 (73 % from the top) along the whole width; the doorway at the left x 40-270, y 356-790; the workbench top at y 606 (56 %) from x 300 to 1220; the schematic y 110-360; the round frame x 1350-1590, y 250-490; the window x 1640-1890, y 322-554; the floorboards from y 790 to the bottom edge are empty. Everything stands against the wall with its feet at y 790-800.
+
+What the sketch blocks are, left to right: the doorway in a timber frame showing the warm sunlit anteroom beyond; the whitewashed wall; the long old workbench with a drawer, a crate of old parts and a metal toolbox under it; on the bench the ZVON table node and a small unbranded bench power supply with knobs and a needle meter, connected by a red cable; the big paper schematic pinned to the wall above the bench; the shape connector panel under it; the mug of pencils; the yellow warning card; the big round brass frame on the wall with a soft blue light inside it; the small old window showing Mira's garden (yellow vine leaves with dark grapes, the green picket fence, an old fruit tree); a stack of wooden crates on the floor under the window; the worn pine floorboards.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S10.chrono}: the ZVON table node: a polished mahogany base with an empty brass ring socket in the middle (with tick marks), two brass terminal posts, and at its front a glass fuse in a holder under a small hinged brass service cover - the fuse is clearly blown: its glass is blackened with soot.
+2. {rect:S10.panel}: the shape connector panel on the wall: on the left three shaped sockets one above the other - a circle, a triangle, a square - and on the right three loose cables with matching shaped plugs (circle, triangle, square) hanging unplugged; the big paper schematic above shows lines from circle to circle, triangle to triangle and square to square with arrows, no words or digits.
+3. {rect:S10.ambient 1}: a chipped orange enamel mug full of pencils and one marker, at the right end of the bench.
+4. {rect:S10.ambient 2}: a yellow card with a red border and a red warning triangle, three lines of red hand-written scribbles under it (illegible, no letters, no digits), pinned to the wall.
+The doorway at the left is {exit:S10.to_S09}.
+
+Walkable floor: {walk} is the worn wide pine floorboard floor - one continuous flat surface with no step, no rug and no cable on it, and nothing standing on it: no boxes, no stools, no tools, no people. Only light, the window's sun patch, a faint blue reflection and a little dust.
+{npc_zones}
+
+Fiction rules: invented device; no real equipment brands, no readable text, no digits anywhere (the meters show ticks only, the schematic only shapes and arrows, the warning card only scribbles). No people, no animals.

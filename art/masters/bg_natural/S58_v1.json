@@ -1,0 +1,305 @@
+{
+  "room": "S58",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S12",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S12_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1982612,
+  "usd": 0.15,
+  "scope": "bg_natural/S58/",
+  "spend_log_asset": "bg_natural/S58/S58_v1_derive",
+  "started": "2026-10-05T10:18:32",
+  "prompt_file": "art/prompts/natural/S58.era.txt",
+  "blocking_file": "src/game/data/blocking/S58.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Pred ZŠ Sokolíkova in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 1793, y 400 (93 % from the left, 37 % from the top). The fixed landmark 'entrance' stays exactly at x 1082, y 647 (56 % from the left, 60 % from the top). The fixed landmark 'planter' stays exactly at x 775, y 715 (40 % from the left, 66 % from the top). The fixed landmark 'service_window_visible_at_edge' stays exactly at x 1681, y 470 (88 % from the left, 44 % from the top).\n\nEra changes: the same school on an early-December afternoon in 1982, cold and calm: pale low winter sun through a thin haze, soft long shadows, a thin layer of old snow on the ground at the edges of the forecourt, on the canopy, on the window sills and on the planter; the forecourt itself mostly clear and damp. The building is only 8 years old:\n- The walls are the same ONE plain warm pale-yellow colour, a little fresher and cleaner; the same original white timber windows, all closed.\n- The trees that hang into the top corners are young and bare: replace the leafy crowns in the top-left and top-right corners with a few thin bare branches and twigs (no leaves), so more of the facade and the winter sky show.\n- At the left end of the name board, instead of the small blue school crest, the period ČSSR state emblem: a red shield with a white double-tailed lion, on its chest a small shield with a stylised fire, a small five-pointed star above the shield. The board keeps the letters ZÁKLADNÁ ŠKOLA / SOKOLÍKOVA.\n- The glazed notice board at the left now holds the brigade notices: a red paper strip across its top, white and pale-yellow sheets pinned up, one with a simple drawing of a hammer and wooden planks (illegible text, no digits).\n- The planter at the foot of the steps holds only bare soil and a little snow.\n- Beyond the building corner: the school yard under thin snow, bare young trees, the wire-mesh fence, panel blocks far away.\nEverything else built (the facade, the windows, the canopy, the steps, the landing, the ramp and its railing, the corner, the forecourt) stays exactly where it is.\n\nInteractive props of 1982:\n1. the box labelled 'Nástenka brigády' in image 2 (x 56-268, y 440-626 of the 1920x1080 frame (3-14 % from the left, 41-58 % from the top)): the glazed notice board on two legs with the brigade notices (red paper strip on top, pinned sheets, a drawing of a hammer and planks).\n2. the box labelled 'Štátny znak' in image 2 (x 893-1259, y 192-286 of the 1920x1080 frame (47-66 % from the left, 18-26 % from the top)): the white name board ZÁKLADNÁ ŠKOLA / SOKOLÍKOVA with the period ČSSR state emblem at its left end.\nthe box labelled 'exit: Školská chodba v roku 1982' in image 2 (x 897-1254, y 362-653 of the 1920x1080 frame (47-65 % from the left, 34-60 % from the top)) is the entrance doors. The forecourt path leaves the picture at the left edge (the box labelled 'exit: Dúbravská zastávka v roku 1982' in image 2 (x 0-62, y 790-1015 of the 1920x1080 frame (0-3 % from the left, 73-94 % from the top))) and continues past the corner to the yard at the right edge (the box labelled 'exit: Školský dvor s mladou lipou v roku 1982' in image 2 (x 1830-1920, y 600-930 of the 1920x1080 frame (95-100 % from the left, 56-86 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 686-1015 of the 1920x1080 frame (0-100 % from the left, 64-94 % from the top) stays the open paved forecourt with nothing standing on it, only light, shadows and small patches of old snow at its edges.\nThis room has no NPC zones.\n\nFiction rules: apart from the name board's letters, no readable text; no logos, no brands, no house numbers. No people, no animals. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S12_v1.png (model geometry)",
+    "S12_v1.png + S58 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor building_corner": {
+        "at": [
+          1793,
+          400
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.625,
+        "ok": true
+      },
+      "anchor entrance": {
+        "at": [
+          1082,
+          647
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.981,
+        "ok": true
+      },
+      "anchor planter": {
+        "at": [
+          775,
+          715
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.362,
+        "ok": true
+      },
+      "anchor service_window_visible_at_edge": {
+        "at": [
+          1681,
+          470
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.977,
+        "ok": true
+      },
+      "exit S58.to_S57": {
+        "at": [
+          31.0,
+          902.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.839,
+        "ok": true
+      },
+      "exit S58.to_S59": {
+        "at": [
+          1075.5,
+          507.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.977,
+        "ok": true
+      },
+      "exit S58.to_S61": {
+        "at": [
+          1875.0,
+          765.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.826,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S58_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S58",
+    "family_base": "S12",
+    "status": "natural re-blocking, camera family L_SCHOOL_FRONT: derived from the S12 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+    "note": "Same L_SCHOOL_FRONT camera as the base S12 (eye 1.74 m, horizon y 490, f ~1250 px, facade Z = 10 + 0.25 X m, corner at x 1793; scale s(y) = (y - 490) / 525). December 1982: the 8-year-old school with plain yellowish walls and the original windows, the period ČSSR state emblem beside the name board, the brigade notice board at the left; thin snow, bare young trees.",
+    "background": "bg_natural/S58.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        1920,
+        688
+      ],
+      [
+        1861,
+        686
+      ],
+      [
+        1341,
+        711
+      ],
+      [
+        1405,
+        764
+      ],
+      [
+        843,
+        764
+      ],
+      [
+        847,
+        773
+      ],
+      [
+        686,
+        773
+      ],
+      [
+        655,
+        772
+      ],
+      [
+        0,
+        806
+      ]
+    ],
+    "walk_band": [
+      686,
+      1015
+    ],
+    "actor_scale": [
+      0.37,
+      1.0
+    ],
+    "spawn": [
+      960,
+      920
+    ],
+    "anchors": {
+      "building_corner": [
+        1793,
+        400
+      ],
+      "entrance": [
+        1082,
+        647
+      ],
+      "planter": [
+        775,
+        715
+      ],
+      "service_window_visible_at_edge": [
+        1681,
+        470
+      ]
+    },
+    "hotspots": {
+      "S58.ambient 1": {
+        "rect": [
+          56,
+          440,
+          212,
+          186
+        ],
+        "interaction_point": [
+          175,
+          880
+        ],
+        "label_anchor": [
+          162,
+          430
+        ],
+        "reason": "the glazed notice board on two legs at the left, now with the brigade notices (same place as the 1995 club notice board)"
+      },
+      "S58.ambient 2": {
+        "rect": [
+          893,
+          192,
+          366,
+          94
+        ],
+        "interaction_point": [
+          1080,
+          800
+        ],
+        "label_anchor": [
+          1076,
+          182
+        ],
+        "reason": "the name board above the canopy with the period ČSSR state emblem at its left end (same place as the 1995 school crest)"
+      }
+    },
+    "exits": {
+      "S58.to_S57": {
+        "rect": [
+          0,
+          790,
+          62,
+          225
+        ],
+        "interaction_point": [
+          70,
+          900
+        ],
+        "label_anchor": [
+          190,
+          780
+        ],
+        "reason": "the forecourt path out of the left edge towards the street and the stop"
+      },
+      "S58.to_S59": {
+        "rect": [
+          897,
+          362,
+          357,
+          291
+        ],
+        "interaction_point": [
+          1110,
+          792
+        ],
+        "label_anchor": [
+          1075,
+          352
+        ],
+        "reason": "the glazed entrance doors at the top of the steps"
+      },
+      "S58.to_S61": {
+        "rect": [
+          1830,
+          600,
+          90,
+          330
+        ],
+        "interaction_point": [
+          1850,
+          800
+        ],
+        "label_anchor": [
+          1630,
+          590
+        ],
+        "reason": "past the building corner the path leads round to the school yard (right edge)"
+      }
+    },
+    "state_patches": []
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S58.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:19:17"
+  }
+}

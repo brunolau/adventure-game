@@ -1,0 +1,1153 @@
+{
+  "room": "S37",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 340936546,
+  "usd": 0.15,
+  "started": "2026-10-05T10:23:51",
+  "spend_log_asset": "bg_natural/S37/S37_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S37.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the park of the manor (kastiel) in Ivanka pri Dunaji, Slovakia, in 1960, looking across the open lawn at the manor's park facade. Images 2 and 3 are the real facade: a long three-storey left block with a crenellated parapet and rows of rectangular windows, a central baroque bay with a curved gable, an oval window and a tall arched window, a middle section with a wrought-iron balcony, a crenellated right block with round and pointed-arch windows above an open arcade of three arches, and the tall slim tower with a green copper dome and a spire; the ground floor is pink, the upper floors cream-white; the slender spire of the village church rises behind the pines to the right of the tower. Image 4 shows an ornate cast-iron park candelabrum of the park. Paint the manor exactly like this, seen from far across the lawn, as it was in 1960: under agricultural administration since 1948, so the plaster is slightly worn and the lawn edges are a little unkempt; no parked cars, no modern signs.\n\nBrief: the manor and its park as the real geographic inspiration; Vera, a young technical draughtswoman, will sit on a park bench (her bench is part of her character sprite); leaves, a bird water bowl. A sunny late afternoon on 6 June 1960, warm low sunlight from the left lighting the facade, long soft tree shadows on the lawn.\n\nCamera: standing on the lawn about 1.65 m high, looking straight at the facade, which runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~520. Keep this exact geometry from the sketch: the manor stands on the far side of the lawn (its ground floor meets the lawn at y 556), its facade spans x 540-1360, the parapet is at y ~225, the tower top at y ~20; the lawn fills everything below y 556; a gravel path crosses the front of the lawn at y ~830-930.\n\nWhat the sketch blocks are: the sky; the manor's park facade as described; the church tower with a clock and a slender dark spire behind the trees on the right; a slim conifer beside the manor; big old deciduous park trees on the left with one trunk on the far side of the lawn; dark pines and spruces on the right; an ornate cast-iron park candelabrum standing on the lawn at the left; the open lawn; the gravel path in front.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 880-1055, y 735-827 of the 1920x1080 frame (46-55 % from the left, 68-77 % from the top): a shallow round stone water bowl for birds lying on the grass, empty and dry. Paint NO bird here: the pigeon is a separate animated sprite; only the bowl on the grass.\n2. the block of the layout sketch at x 1290-1572, y 640-775 of the 1920x1080 frame (67-82 % from the left, 59-72 % from the top): an empty old park bench with wooden slats and dark cast-iron legs, standing on the grass on the right, facing the camera.\n3. the block of the layout sketch at x 540-1370, y 210-556 of the 1920x1080 frame (28-71 % from the left, 19-51 % from the top): the manor's park facade with its tower, as described above.\nThe gravel path leaves the park out of the left edge (the area of the layout sketch at x 0-60, y 780-1010 of the 1920x1080 frame (0-3 % from the left, 72-94 % from the top)) and out of the right edge through the pines (the area of the layout sketch at x 1860-1920, y 780-1010 of the 1920x1080 frame (97-100 % from the left, 72-94 % from the top)).\n\nWalkable floor: the band at x 0-1920, y 775-1015 of the 1920x1080 frame (0-100 % from the left, 72-94 % from the top) is the open lawn and the gravel path - flat ground with no kerb, no step, no hedge and nothing standing on it: no benches, no lamps, no statues, no flower beds, no stones. Only grass, gravel, light and tree shadows.\nNPC zone at x 494-707, y 546-800 of the 1920x1080 frame (26-37 % from the left, 51-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's seat (chair, stool or bench) is part of the character sprite: paint only open floor at y 800 in this zone - no chair, stool or bench there.\n\nFiction rules: no plaques, no institutional signs, no coats of arms with readable text, no posters, no slogans, no red stars, no cars, no people, no animals and no birds anywhere in the picture.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S37_sketch.png (rendered from art/prompts/natural/S37.sketch.json, model geometry)",
+    "art/source/rooms/S37/manor_garden_facade_plepo_2008.jpg",
+    "art/source/rooms/S37/manor_park_lawn_zikova_2007.jpg",
+    "art/source/rooms/S37/manor_tower_park_lamp_taz666_2013.jpg",
+    "art/masters/bg_natural/S32_v1.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S37 natural blocking (src/game/data/blocking/S37.json): manor park, camera ~1.65 m on the lawn NNW of the manor looking SSE, horizon y 520, s(y) = (y - 520) / 495; manor foot y 556, tower to y ~20, church spire right; Vera's bench spot left of centre kept free (the bench is in her sprite), the empty bench on the right, the water bowl with the pigeon in the middle.",
+    "background": "#b4d0ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          520
+        ],
+        "fill": "#b4d0ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1418,
+          260,
+          50,
+          300
+        ],
+        "fill": "#efe6d4",
+        "note": "tower of the church of St John the Baptist behind the park trees"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1412,
+            262
+          ],
+          [
+            1443,
+            120
+          ],
+          [
+            1474,
+            262
+          ]
+        ],
+        "fill": "#4a5258",
+        "note": "its slender dark spire"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1430,
+          290,
+          26,
+          26
+        ],
+        "fill": "#d8c27a",
+        "note": "church clock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          470,
+          820,
+          86
+        ],
+        "fill": "#e6b4a8",
+        "note": "pink-plastered ground floor of the manor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          240,
+          320,
+          232
+        ],
+        "fill": "#f3eadc",
+        "note": "left block: cream upper floors, rectangular windows"
+      },
+      {
+        "type": "bars",
+        "box": [
+          540,
+          226,
+          320,
+          16
+        ],
+        "step": 22,
+        "bar": 12,
+        "fill": "#f3eadc",
+        "vertical": true,
+        "note": "crenellated parapet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          860,
+          222,
+          150,
+          250
+        ],
+        "fill": "#efe2cc",
+        "note": "central baroque bay with a curved gable and an oval window"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          915,
+          250,
+          40,
+          40
+        ],
+        "fill": "#7a6a5a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            860,
+            225
+          ],
+          [
+            935,
+            196
+          ],
+          [
+            1010,
+            225
+          ]
+        ],
+        "fill": "#efe2cc"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            855,
+            230
+          ],
+          [
+            880,
+            210
+          ],
+          [
+            990,
+            210
+          ],
+          [
+            1015,
+            230
+          ],
+          [
+            1015,
+            245
+          ],
+          [
+            855,
+            245
+          ]
+        ],
+        "fill": "#b4552f",
+        "note": "tiled roof with small dormers behind"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1010,
+          262,
+          120,
+          210
+        ],
+        "fill": "#f3eadc",
+        "note": "middle section with a wrought-iron balcony"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1010,
+          330,
+          120,
+          10
+        ],
+        "fill": "#3a3634",
+        "note": "balcony railing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1130,
+          236,
+          120,
+          236
+        ],
+        "fill": "#f3eadc",
+        "note": "right block: crenellated, round and pointed-arch windows"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1130,
+          222,
+          120,
+          16
+        ],
+        "step": 22,
+        "bar": 12,
+        "fill": "#f3eadc",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          120,
+          80,
+          352
+        ],
+        "fill": "#f6efe4",
+        "note": "tower of the manor"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1236,
+          64,
+          88,
+          90
+        ],
+        "fill": "#4f7a66",
+        "note": "green copper dome of the tower"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1280,
+            64
+          ],
+          [
+            1280,
+            22
+          ]
+        ],
+        "color": "#3a3634",
+        "width": 4,
+        "note": "spire"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          470,
+          110,
+          86
+        ],
+        "fill": "#d9a497",
+        "note": "open arcade with three arches at the right end of the ground floor"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1250,
+          482,
+          24,
+          70
+        ],
+        "fill": "#6e5a52"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1286,
+          482,
+          24,
+          70
+        ],
+        "fill": "#6e5a52"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1322,
+          482,
+          24,
+          70
+        ],
+        "fill": "#6e5a52"
+      },
+      {
+        "type": "rect",
+        "box": [
+          565,
+          270,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          565,
+          340,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          565,
+          410,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          565,
+          495,
+          26,
+          36
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          623,
+          270,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          623,
+          340,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          623,
+          410,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          623,
+          495,
+          26,
+          36
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          681,
+          270,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          681,
+          340,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          681,
+          410,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          681,
+          495,
+          26,
+          36
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          739,
+          270,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          739,
+          340,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          739,
+          410,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          739,
+          495,
+          26,
+          36
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          797,
+          270,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          797,
+          340,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          797,
+          410,
+          26,
+          40
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          797,
+          495,
+          26,
+          36
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          360,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          410,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          495,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          360,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          410,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          495,
+          24,
+          38
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1150,
+          270,
+          30,
+          30
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          340,
+          28,
+          60
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1195,
+          270,
+          30,
+          30
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1195,
+          340,
+          28,
+          60
+        ],
+        "fill": "#6d7480"
+      },
+      {
+        "type": "rect",
+        "box": [
+          920,
+          490,
+          30,
+          66
+        ],
+        "fill": "#6e4a2e",
+        "note": "garden door"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            520,
+            0
+          ],
+          [
+            560,
+            110
+          ],
+          [
+            500,
+            260
+          ],
+          [
+            420,
+            380
+          ],
+          [
+            360,
+            520
+          ],
+          [
+            250,
+            620
+          ],
+          [
+            0,
+            650
+          ]
+        ],
+        "fill": "#5f8a3e",
+        "note": "big old deciduous park trees on the left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          420,
+          46,
+          290
+        ],
+        "fill": "#4e3a2a",
+        "note": "trunk on the far side of the lawn"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1500,
+            520
+          ],
+          [
+            1520,
+            330
+          ],
+          [
+            1560,
+            200
+          ],
+          [
+            1620,
+            80
+          ],
+          [
+            1680,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1500,
+            660
+          ]
+        ],
+        "fill": "#3f6a44",
+        "note": "dark pines and spruces of the park on the right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          480,
+          34,
+          240
+        ],
+        "fill": "#4e3a2a",
+        "note": "pine trunk"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1380,
+            560
+          ],
+          [
+            1400,
+            420
+          ],
+          [
+            1440,
+            360
+          ],
+          [
+            1480,
+            420
+          ],
+          [
+            1500,
+            560
+          ]
+        ],
+        "fill": "#4a7448",
+        "note": "slim cypress-like conifer beside the manor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          556,
+          1920,
+          524
+        ],
+        "fill": "#79a04e",
+        "note": "open lawn of the manor park (slightly unkempt edges)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            860
+          ],
+          [
+            500,
+            830
+          ],
+          [
+            1000,
+            845
+          ],
+          [
+            1500,
+            830
+          ],
+          [
+            1920,
+            850
+          ],
+          [
+            1920,
+            930
+          ],
+          [
+            1500,
+            905
+          ],
+          [
+            1000,
+            920
+          ],
+          [
+            500,
+            905
+          ],
+          [
+            0,
+            940
+          ]
+        ],
+        "fill": "#c9b38a",
+        "note": "gravel path across the front of the lawn"
+      },
+      {
+        "type": "rect",
+        "box": [
+          410,
+          380,
+          16,
+          270
+        ],
+        "fill": "#2e2c2a",
+        "note": "ornate cast-iron park candelabrum (gas lamp post)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          398,
+          630,
+          40,
+          22
+        ],
+        "fill": "#2e2c2a"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            380,
+            400
+          ],
+          [
+            418,
+            390
+          ],
+          [
+            456,
+            400
+          ]
+        ],
+        "color": "#2e2c2a",
+        "width": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          372,
+          400,
+          18,
+          30
+        ],
+        "fill": "#d8d0b0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          446,
+          400,
+          18,
+          30
+        ],
+        "fill": "#d8d0b0"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          408,
+          360,
+          20,
+          24
+        ],
+        "fill": "#2e2c2a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          650,
+          262,
+          14
+        ],
+        "fill": "#8a6440",
+        "note": "empty park bench: wooden slats on cast-iron legs (same type as Vera's)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          672,
+          262,
+          14
+        ],
+        "fill": "#8a6440"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1296,
+          710,
+          270,
+          20
+        ],
+        "fill": "#9a7450",
+        "note": "seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1310,
+          690,
+          16,
+          82
+        ],
+        "fill": "#3a3634",
+        "note": "cast-iron leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1536,
+          690,
+          16,
+          82
+        ],
+        "fill": "#3a3634"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          962,
+          792,
+          76,
+          26
+        ],
+        "fill": "#b8b0a4",
+        "note": "shallow empty stone water bowl for birds on the ground"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          972,
+          794,
+          56,
+          14
+        ],
+        "fill": "#8a8278"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S37.json",
+  "blocking": {
+    "version": 1,
+    "room": "S37",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Manor park of Ivanka pri Dunaji, June 1960: camera ~1.65 m on the open lawn NNW of the manor looking SSE at its park facade (as in the 2008 photo): horizon y 520, perspective s(y) = (y - 520) / 495 (hero 1.7 m = 512 px at y 1015). The manor stands across the lawn (foot y 556, ~22 px per metre there, tower to y ~20), the spire of St John the Baptist right of the tower behind the pines. A gravel path crosses the front of the lawn. Vera sits on her bench (part of her sprite) left of centre on the lawn - the painting leaves that spot as plain grass; the empty park bench of the same cast-iron type stands on the right; the shallow bird bowl lies on the grass in the middle, the carrier pigeon is an ambient sprite beside it (hidden after Q6C). The walk polygon is the front lawn and the path, kept in front of both benches.",
+    "background": "bg_natural/S37.webp",
+    "walk_polygon": [
+      [
+        0,
+        775
+      ],
+      [
+        470,
+        775
+      ],
+      [
+        470,
+        800
+      ],
+      [
+        735,
+        800
+      ],
+      [
+        735,
+        775
+      ],
+      [
+        1280,
+        775
+      ],
+      [
+        1280,
+        792
+      ],
+      [
+        1582,
+        792
+      ],
+      [
+        1582,
+        775
+      ],
+      [
+        1920,
+        775
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      775,
+      1015
+    ],
+    "actor_scale": [
+      0.515,
+      1.0
+    ],
+    "spawn": [
+      960,
+      920
+    ],
+    "hotspots": {
+      "S37.bird": {
+        "rect": [
+          880,
+          735,
+          175,
+          92
+        ],
+        "interaction_point": [
+          965,
+          850
+        ],
+        "label_anchor": [
+          965,
+          725
+        ],
+        "reason": "the empty stone water bowl on the grass with the ringed carrier pigeon beside it (pigeon = ambient sprite, unless Q6C)"
+      },
+      "S37.ambient 1": {
+        "rect": [
+          1290,
+          640,
+          282,
+          135
+        ],
+        "interaction_point": [
+          1430,
+          820
+        ],
+        "label_anchor": [
+          1430,
+          630
+        ],
+        "reason": "an empty park bench (wooden slats, cast-iron legs) on the right side of the lawn"
+      },
+      "S37.ambient 2": {
+        "rect": [
+          540,
+          210,
+          830,
+          346
+        ],
+        "interaction_point": [
+          1000,
+          800
+        ],
+        "label_anchor": [
+          950,
+          200
+        ],
+        "reason": "the manor's park facade across the lawn (left block, baroque bay, balcony, right block and tower)"
+      },
+      "S37.VERA60": {
+        "rect": [
+          494,
+          546,
+          213,
+          254
+        ],
+        "interaction_point": [
+          770,
+          840
+        ],
+        "label_anchor": [
+          600,
+          536
+        ],
+        "reason": "Vera seated on her park bench (bench part of the sprite) on the lawn left of centre"
+      }
+    },
+    "npcs": {
+      "S37.VERA60": {
+        "variant": "seated",
+        "feet": [
+          600,
+          800
+        ],
+        "facing": "right",
+        "reason": "docs/DECISIONS.md item 2: Vera seated with her bench (VERA60 posture seated, bench in the sprite); the painting leaves the spot free; scale from the room perspective (0.566)"
+      }
+    },
+    "exits": {
+      "S37.to_S32": {
+        "rect": [
+          0,
+          780,
+          60,
+          230
+        ],
+        "interaction_point": [
+          70,
+          900
+        ],
+        "label_anchor": [
+          135,
+          770
+        ],
+        "reason": "the gravel path leaves the park to the left, back to the village square"
+      },
+      "S37.to_S38": {
+        "rect": [
+          1860,
+          780,
+          60,
+          230
+        ],
+        "interaction_point": [
+          1850,
+          900
+        ],
+        "label_anchor": [
+          1715,
+          770
+        ],
+        "reason": "the path leaves the park to the right through the pines, towards the fields and the canal"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S37.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:24:39"
+  }
+}

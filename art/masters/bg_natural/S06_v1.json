@@ -1,0 +1,586 @@
+{
+  "room": "S06",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020606,
+  "usd": 0.15,
+  "started": "2026-10-05T10:44:14",
+  "spend_log_asset": "bg_natural/S06/S06_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S06.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the old core of Čierna Voda on Pezinská street (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a dashcam photo of this real street with the low single-storey village houses of the 1950s-70s (pitched red-brown tiled roofs, two-coloured plaster). Image 3 is our finished painting of grandmother Mira's house seen from the street: pale peach and light-blue plaster, white windows with lace curtains and brown roller-blind boxes, a red-brown tiled hipped roof, a weathered green picket fence and an old grapevine with dark grapes. Paint the SIDE of exactly this house (the light-blue half): same plaster, windows, roof tiles and fence; invented, not a copy of a real house.\n\nBrief: a narrow outdoor side path along the house, separated from the lived-in part of the garden by a low fence. Mira is behind the closed big window, they talk on the phone. The family photograph hangs inside, visible through the glass. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left grazing the wall, soft shadows, yellowing leaves, a few fallen leaves on the path.\n\nCamera: standing in the narrow side yard, about 2.2 m high, looking straight at the house's long side wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the side wall meets the ground at y 790 with a rough grey-brown plinth (y 712-790); the eave with a pale soffit and a grey gutter at y 205-232 and the red-brown roof tiles above it to the top edge; the big triple window from y 331 to its outer sill at y 605 with a brown roller-blind box above it (y 292-331); the kitchen window at the left (y 331-575) with a terracotta window box under it; the house corner with a grey drainpipe at x ~1440; the narrow path of old square concrete slabs along the wall (y 790-861) and rough grass in front of it to the bottom edge; at the right, beyond the corner, the low green picket fence (top y ~588, foot y 745) with a small closed gate, and behind it the lived-in back garden: lawn, the old grapevine on a wooden trellis, an old fruit tree in autumn colours, sky.\n\nWhat the sketch blocks are, left to right: the light-blue rendered side wall with the plinth; the kitchen window (white frame, two panes, a lace half-curtain inside); the big closed triple window; the corner with the drainpipe; the picket fence, gate and back garden; the slab path and the grass of the side yard.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1068-1162, y 428-526 of the 1920x1080 frame (56-61 % from the left, 40-49 % from the top): a framed family photograph hanging on the inner wall of the room, seen through the right pane of the big window: an old colour photo of a smiling grandmother and her grandson at the seaside with a slightly crooked horizon, in a simple wooden frame.\n2. the block of the layout sketch at x 245-535, y 505-645 of the 1920x1080 frame (13-28 % from the left, 47-60 % from the top): bright red geraniums in a terracotta window box on the kitchen window's outer sill, trailing over the edge.\n3. the block of the layout sketch at x 735-870, y 345-595 of the 1920x1080 frame (38-45 % from the left, 32-55 % from the top): a white lace curtain gathered and tied back in the left pane of the big window, seen through the glass.\nThe slab path continuing out of the left edge is the area of the layout sketch at x 0-60, y 800-1015 of the 1920x1080 frame (0-3 % from the left, 74-94 % from the top).\n\nWalkable floor: the band at x 0-1920, y 752-1015 of the 1920x1080 frame (0-100 % from the left, 70-94 % from the top) is the narrow slab path and the rough grass of the side yard - one continuous walking surface with no step, no kerb and no change of level, and nothing standing on it: no pots, no tools, no bins, no hoses, no people. Only light, soft shadows and a few fallen leaves.\nNPC zone at x 885-1025, y 455-607 of the 1920x1080 frame (46-53 % from the left, 42-56 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character is seen through a window: paint the window sill exactly at y 605 across x 855-1055; the opening above the sill shows a plain, dim interior, no person. (Mira will stand there inside the room, seen behind the closed middle pane above the sill; keep the glass clear with only a soft reflection.)\n\nFiction rules: the house is invented from the real house type; no house number, no names, no signs, no logos, no text; the photo shows two small painted figures, no recognisable real person. No people outside, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S06_sketch.png (rendered from art/prompts/natural/S06.sketch.json, model geometry)",
+    "art/source/rooms/S05/pezinska_old_house_kartaview_416.jpg",
+    "src/game/assets/bg_natural/S05.webp",
+    "src/game/assets/bg_natural/S03.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S06 natural blocking (src/game/data/blocking/S06.json): side path of Mira's house (S05 property), camera 2.2 m in the side yard looking straight at the light-blue side wall (foot y 790, 8.5 m, 196 px per metre), horizon y 360; the low picket fence to the lived-in back garden at the right (9.5 m, foot y 745).",
+    "background": "#a9c9e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          760
+        ],
+        "fill": "#a9c9e6",
+        "note": "sky over the garden"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1560,
+          80,
+          360,
+          380
+        ],
+        "fill": "#d4932e",
+        "note": "old fruit tree in autumn colours in the back garden"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1720,
+          400,
+          26,
+          330
+        ],
+        "fill": "#5a4030",
+        "note": "its trunk"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1449,
+          560,
+          471,
+          200
+        ],
+        "fill": "#8fb05a",
+        "note": "lawn of the lived-in back garden"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          380,
+          12,
+          330
+        ],
+        "fill": "#6b4a2e",
+        "note": "trellis post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          380,
+          12,
+          330
+        ],
+        "fill": "#6b4a2e",
+        "note": "trellis post"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1470,
+          340,
+          280,
+          190
+        ],
+        "fill": "#c9b23a",
+        "note": "old grapevine on the wooden trellis, yellow leaves and dark blue grapes (same vine family as S05)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1449,
+            0
+          ],
+          [
+            1449,
+            205
+          ],
+          [
+            0,
+            205
+          ]
+        ],
+        "fill": "#9a4f33",
+        "note": "red-brown tiled roof of the house seen from below the eave (side of a hipped roof)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          205,
+          1470,
+          22
+        ],
+        "fill": "#efe7da",
+        "note": "pale soffit / eave board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          222,
+          1475,
+          10
+        ],
+        "fill": "#8e9497",
+        "note": "grey gutter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          232,
+          1449,
+          558
+        ],
+        "fill": "#a9c4dc",
+        "note": "light-blue rendered side wall of Mira's house (the blue half of the S05 house)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          712,
+          1449,
+          78
+        ],
+        "fill": "#8f8273",
+        "note": "rough grey-brown plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1428,
+          222,
+          16,
+          560
+        ],
+        "fill": "#8e9497",
+        "note": "grey drainpipe at the corner"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          292,
+          274,
+          39
+        ],
+        "fill": "#7a5a3c",
+        "note": "brown roller-blind box"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          331,
+          274,
+          244
+        ],
+        "fill": "#eef0ee",
+        "note": "white window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          264,
+          345,
+          116,
+          216
+        ],
+        "fill": "#566670",
+        "note": "glass (dim kitchen, lace half-curtain)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          394,
+          345,
+          116,
+          216
+        ],
+        "fill": "#566670",
+        "note": "glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          240,
+          571,
+          294,
+          12
+        ],
+        "fill": "#d9d6cf",
+        "note": "outer window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          583,
+          274,
+          38
+        ],
+        "fill": "#b46a3a",
+        "note": "terracotta window box"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          246,
+          505,
+          286,
+          92
+        ],
+        "fill": "#d23a3a",
+        "note": "red geraniums (muskat) in the window box, trailing over its edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          720,
+          292,
+          470,
+          39
+        ],
+        "fill": "#7a5a3c",
+        "note": "brown roller-blind box"
+      },
+      {
+        "type": "rect",
+        "box": [
+          720,
+          331,
+          470,
+          274
+        ],
+        "fill": "#eef0ee",
+        "note": "white frame of the big closed triple window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          734,
+          345,
+          136,
+          252
+        ],
+        "fill": "#566670",
+        "note": "left pane"
+      },
+      {
+        "type": "rect",
+        "box": [
+          884,
+          345,
+          142,
+          252
+        ],
+        "fill": "#4c5a63",
+        "note": "middle pane: dim room behind the glass (Mira will stand here)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          345,
+          136,
+          252
+        ],
+        "fill": "#566670",
+        "note": "right pane: the inner wall of the room"
+      },
+      {
+        "type": "rect",
+        "box": [
+          738,
+          348,
+          128,
+          246
+        ],
+        "fill": "#e9e6dd",
+        "note": "white lace curtain gathered at the left side of the left pane"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1070,
+          430,
+          90,
+          94
+        ],
+        "fill": "#c9a46a",
+        "note": "framed family photo hanging on the inner wall, seen through the right pane"
+      },
+      {
+        "type": "rect",
+        "box": [
+          710,
+          601,
+          490,
+          12
+        ],
+        "fill": "#d9d6cf",
+        "note": "outer window sill at y 605"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            790
+          ],
+          [
+            1449,
+            790
+          ],
+          [
+            1449,
+            752
+          ],
+          [
+            1920,
+            745
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#9fae66",
+        "note": "rough grass of the side yard (walkable)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            790
+          ],
+          [
+            1470,
+            790
+          ],
+          [
+            1490,
+            861
+          ],
+          [
+            0,
+            861
+          ]
+        ],
+        "fill": "#b3aea4",
+        "note": "narrow path of old square concrete slabs along the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1449,
+          588,
+          471,
+          157
+        ],
+        "fill": "#5f8a52",
+        "note": "low weathered green picket fence separating the side path from the lived-in back garden"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          600,
+          120,
+          145
+        ],
+        "fill": "#6b9a5c",
+        "note": "small closed garden gate in the fence"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S06.json",
+  "blocking": {
+    "version": 1,
+    "room": "S06",
+    "status": "natural re-blocking (product-owner decision 2026-10-05); narrow path per owner feedback (pathways are thinner in reality)",
+    "note": "Side path of Mira's house (same invented house as S05, old core of Cierna Voda on Pezinska): camera 2.2 m in the narrow side yard, looking straight at the light-blue side wall (the blue half of the S05 house) which stands 8.5 m away (foot y 790, ~196 px per metre); horizon y 360, s(y) = (y - 360) / 655 like S03/S05. A narrow path of old concrete slabs (1.2 m, y 790-861) runs along the wall, rough grass in front of it; at the right the house corner (x ~1449) and the low green picket fence with a closed gate that separates the path from the lived-in back garden (vine, fruit tree). Left: the kitchen window with geraniums in a window box; middle: the big closed triple window - lace curtain gathered in the left pane, Mira behind the middle pane (window_bust_glass, sill 0.95 m = y 605), the family photo on the inner wall seen through the right pane.",
+    "background": "bg_natural/S06.webp",
+    "walk_polygon": [
+      [
+        0,
+        797
+      ],
+      [
+        1449,
+        797
+      ],
+      [
+        1460,
+        754
+      ],
+      [
+        1920,
+        752
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      752,
+      1015
+    ],
+    "actor_scale": [
+      0.6,
+      1.0
+    ],
+    "spawn": [
+      300,
+      920
+    ],
+    "hotspots": {
+      "S06.photo": {
+        "rect": [
+          1068,
+          428,
+          94,
+          98
+        ],
+        "interaction_point": [
+          1110,
+          832
+        ],
+        "label_anchor": [
+          1115,
+          545
+        ],
+        "reason": "framed family photo on the inner wall, seen through the right pane of the closed window"
+      },
+      "S06.ambient 1": {
+        "rect": [
+          245,
+          505,
+          290,
+          140
+        ],
+        "interaction_point": [
+          390,
+          832
+        ],
+        "label_anchor": [
+          390,
+          495
+        ],
+        "reason": "red geraniums in a terracotta window box on the kitchen window's outer sill"
+      },
+      "S06.ambient 2": {
+        "rect": [
+          735,
+          345,
+          135,
+          250
+        ],
+        "interaction_point": [
+          760,
+          845
+        ],
+        "label_anchor": [
+          802,
+          335
+        ],
+        "reason": "white lace curtain gathered in the left pane of the big window"
+      },
+      "S06.MIRA20": {
+        "rect": [
+          885,
+          455,
+          140,
+          152
+        ],
+        "interaction_point": [
+          810,
+          830
+        ],
+        "label_anchor": [
+          955,
+          322
+        ],
+        "reason": "Mira behind the closed middle pane, bust on the sill (window_bust_glass)"
+      }
+    },
+    "npcs": {
+      "S06.MIRA20": {
+        "variant": "window_bust_glass",
+        "feet": [
+          955,
+          767
+        ],
+        "scale": 0.621,
+        "sill_y": 605,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2 / ISSUES ART-NPC-02: Mira in quarantine behind the closed window, bust behind glass"
+      }
+    },
+    "exits": {
+      "S06.to_S05": {
+        "rect": [
+          0,
+          800,
+          60,
+          215
+        ],
+        "interaction_point": [
+          70,
+          905
+        ],
+        "label_anchor": [
+          125,
+          790
+        ],
+        "reason": "the side path continues out of the left edge back to the street passage beside the gate (S05)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S06.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:44:48"
+  }
+}

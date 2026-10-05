@@ -1,0 +1,22 @@
+# S22 Antikvariat Pod druhou rukou (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S22.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S22.sketch.json (bookshop interior box, camera ~2.4 m, horizon y 300, front wall foot y 760).
+#refs: art/source/rooms/S22/type-ref_antiquarian-bookshop_interior_wide.jpg ; art/source/rooms/S22/type-ref_antiquarian-bookshop_prints-wall.jpg ; art/source/rooms/S22/venturska_street_facades_window-view_2012.jpg
+#style: src/game/assets/bg_natural/S20.webp
+Place: a small antiquarian bookshop on Venturska street in the Old Town of Bratislava. Images 2-3 are photos of a real Central-European antiquarian bookshop: walls clad in honey-coloured vertical wooden slats, tall dark bookshelves full of old books, framed old prints and engravings hung close together on the panelling, prints leaning in stacks: paint the shop's materials and atmosphere from them (at eye level, not from their gallery viewpoint; do not reproduce their individual artworks or signs). Image 4 is the real Venturska street: a cream baroque palace facade with tall windows in ornate stucco surrounds above a cobbled street - this facade is seen across the narrow street through the shop window and the door glass (without the pharmacy sign, the shop signs, the graffiti and the hanging sign).
+
+Brief: an invented antiquarian bookshop: drawers for map supplements, a library ladder, books and sheet music; the owner wears glasses on a chain (she is added later as a sprite). Thursday 15 June 1995, a sunny afternoon: bright warm daylight from the street comes in through the shop window and the door, warm light from the ceiling lamp inside, dust motes in the air.
+
+Camera: standing at the back of the shop, about 2.4 m high, looking straight at the shop's street front wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 217 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).
+
+What the sketch blocks are, left to right: the left side wall lined with bookshelves of old books; a tall dark bookshelf full of old book spines; the big shop window in a dark wooden frame with the sunlit baroque facade across the street, and under it a wide low plan chest of many shallow map drawers with brass handles, carrying a stack of old books, a pile of sheet music and the dusty book; the glazed shop door in a dark wooden frame with a small brass shop bell on a spring above it; a plain stretch of honey-coloured slat panelling with one small framed print high up; a tall bookshelf on the right with the library ladder leaning against it; the right side wall with framed old prints and engravings; a warm ceiling lamp; an old wooden parquet floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S22.ambient 1}: a tall wooden library ladder with round rungs leaning against the tall bookshelf, its feet on the floor.
+2. {rect:S22.ambient 2}: one old hardback book lying flat on top of the plan chest, visibly covered with a thick grey layer of dust (dust lines where a finger touched it), clearly dustier than everything else.
+The glazed shop door is {exit:S22.to_S21}.
+
+Walkable floor: {walk} is the open wooden parquet floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no book piles, no boxes, no chairs, no stands. Only daylight from the window, soft shadows and wear.
+{npc_zones} The owner stands in front of this plain panelled wall between the door and the right bookshelf.
+
+Fiction rules: the shop "Pod druhou rukou" and its owner are invented: no shop name, no lettering on the window or the door, no signs, no memorial plaques, no house numbers outside, no legible titles on books or prints, no people, no animals. Paper shows only illegible scribbles, no digits.

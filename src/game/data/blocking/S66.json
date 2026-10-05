@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "room": "S66",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1).",
+  "note": "Small flat-roofed garden shed at the east fence of the ZS Sokolikova grounds by Kudlakova 2 (register S66, OSM way 1469186807, ~5 x 5 m; reconstruction): camera ~2.0 m high on the trodden yard edge ~11 m west of the shed, looking E. Horizon y 420; the shed front wall stands on y 700 (~140 px per metre), x 900-1600, roof edge y 336; front edge of the walk area y 1015 (~300 px per metre). Perspective s(y) = (y - 420) / 595. The four-storey Kudlakova 2 panel block (same early-1970s type as the carl_eric photo) fills the background ~40 m away (foot hidden behind the shed, roof y ~30); the grounds' wire-mesh fence with bare trees runs across behind the shed (~16 m, foot y ~605). The open door leaf stands out to y ~737, so the walk polygon is notched in front of it. Props where they are: the plank door open (leaf swung out to the left), the path-routing plan pinned on a board right of the door under the roof overhang, the shovel leaning on the wall right of the board, a stack of laths for the tree guards leaning on the wall left of the door; Simon stands outdoors in front of the laths.",
+  "background": "bg_natural/S66.webp",
+  "walk_polygon": [
+    [
+      0,
+      722
+    ],
+    [
+      990,
+      722
+    ],
+    [
+      990,
+      742
+    ],
+    [
+      1090,
+      742
+    ],
+    [
+      1090,
+      722
+    ],
+    [
+      1920,
+      722
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    715,
+    1015
+  ],
+  "actor_scale": [
+    0.496,
+    1.0
+  ],
+  "spawn": [
+    1150,
+    900
+  ],
+  "hotspots": {
+    "S66.ambient 1": {
+      "rect": [
+        1245,
+        458,
+        150,
+        148
+      ],
+      "interaction_point": [
+        1320,
+        790
+      ],
+      "label_anchor": [
+        1320,
+        448
+      ],
+      "reason": "the old path-routing plan of the yard pinned on a plywood board on the shed wall right of the door, under the roof overhang"
+    },
+    "S66.ambient 2": {
+      "rect": [
+        1415,
+        455,
+        95,
+        255
+      ],
+      "interaction_point": [
+        1462,
+        790
+      ],
+      "label_anchor": [
+        1462,
+        445
+      ],
+      "reason": "the shovel leaning against the shed wall right of the plan board (blade on the ground at y ~700)"
+    },
+    "S66.SIMON": {
+      "rect": [
+        690,
+        470,
+        140,
+        330
+      ],
+      "interaction_point": [
+        600,
+        840
+      ],
+      "label_anchor": [
+        760,
+        455
+      ],
+      "reason": "Simon standing outdoors in front of the stacked laths, left of the open door"
+    }
+  },
+  "npcs": {
+    "S66.SIMON": {
+      "variant": "standing",
+      "feet": [
+        760,
+        800
+      ],
+      "reason": "brief: gardener Simon outdoors at his shed in winter (standing sprite; DECISIONS item 2 lists no change for S66)"
+    }
+  },
+  "exits": {
+    "S66.to_S61": {
+      "rect": [
+        0,
+        722,
+        120,
+        293
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        245,
+        712
+      ],
+      "reason": "the trodden path continues out of the left edge back to the school yard"
+    }
+  },
+  "state_patches": []
+}

@@ -1,0 +1,12 @@
+{
+  "room": "S34",
+  "notes": "Natural S34 ambient (bg_natural/S34.webp): the open halves of the stage curtain stir slowly in the draught from the open door; the two old wall lamps glow and flicker faintly; dust motes drift in the daylight falling through the door; the light patch from the door on the floorboards shimmers.",
+  "layers": [
+    { "id": "curtain_left", "type": "sway", "texture": "S34/natural/curtain_left.webp", "anchor": 0.0, "hang": true, "amp_px": 1.6, "freq": 0.16, "wavelength_px": 220, "flutter_px": 0.4 },
+    { "id": "curtain_right", "type": "sway", "texture": "S34/natural/curtain_right.webp", "anchor": 0.0, "hang": true, "amp_px": 1.6, "freq": 0.15, "wavelength_px": 220, "flutter_px": 0.4 },
+    { "id": "lamp_left", "type": "flicker", "mode": "noise", "pos": [250, 352], "size": [150, 150], "color": "#ffd890", "min": 0.16, "max": 0.3, "period_s": 0.7 },
+    { "id": "lamp_right", "type": "flicker", "mode": "noise", "pos": [1550, 352], "size": [150, 150], "color": "#ffd890", "min": 0.16, "max": 0.3, "period_s": 0.8 },
+    { "id": "dust_door", "type": "particles", "preset": "dust", "emit_rect": [1400, 430, 480, 520], "count": 30, "size": [3.5, 7.5], "alpha_range": [0.25, 0.75], "color": "#fff0c4" },
+    { "id": "door_light", "type": "flicker", "mode": "noise", "rect": [1480, 760, 420, 180], "color": "#fff1c8", "min": 0.0, "max": 0.07, "period_s": 2.6 }
+  ]
+}

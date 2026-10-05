@@ -1,0 +1,129 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Basement club under a 1950s block of the Mileticova estate, camera ~2.4 m at the back of the cellar: one-point box, horizon y 300, back wall foot line y 760 (~194 px per metre), whitewashed barrel vault with its crown at y 192. Perspective s(y) = (y - 300) / 715. The ajar basement door with daylight from the stairs is the exit (S25); the high window under the vault shows the sidewalk and the block base; cassette racks, the band poster, Juro at the plain wall, the listening table with the deck, the catalogue and the empty cassette case, the speaker boxes on the right.",
+ "background": "bg_natural/S27.webp",
+ "walk_polygon": [
+  [
+   312,
+   785
+  ],
+  [
+   1610,
+   785
+  ],
+  [
+   1700,
+   795
+  ],
+  [
+   1705,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   975
+  ]
+ ],
+ "walk_band": [
+  785,
+  1015
+ ],
+ "actor_scale": [
+  0.68,
+  1.0
+ ],
+ "spawn": [
+  410,
+  890
+ ],
+ "hotspots": {
+  "S27.ambient 1": {
+   "rect": [
+    812,
+    385,
+    150,
+    270
+   ],
+   "interaction_point": [
+    880,
+    850
+   ],
+   "label_anchor": [
+    887,
+    377
+   ],
+   "reason": "big poster of an invented band on the end wall (its right half is behind Juro)"
+  },
+  "S27.ambient 2": {
+   "rect": [
+    1475,
+    494,
+    122,
+    84
+   ],
+   "interaction_point": [
+    1520,
+    850
+   ],
+   "label_anchor": [
+    1536,
+    486
+   ],
+   "reason": "empty open transparent cassette case lying on top of the speaker box (v1 painted it there)"
+  },
+  "S27.JURO": {
+   "rect": [
+    965,
+    436,
+    150,
+    358
+   ],
+   "interaction_point": [
+    1040,
+    880
+   ],
+   "label_anchor": [
+    1040,
+    428
+   ],
+   "reason": "Juro standing in the beam of light in front of the poster's right half, beside his listening table"
+  }
+ },
+ "npcs": {
+  "S27.JURO": {
+   "variant": "standing",
+   "feet": [
+    1040,
+    792
+   ],
+   "scale": 0.688,
+   "reason": "standing collector with headphones round his neck (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S27.to_S25": {
+   "rect": [
+    314,
+    360,
+    184,
+    405
+   ],
+   "interaction_point": [
+    406,
+    825
+   ],
+   "label_anchor": [
+    406,
+    352
+   ],
+   "reason": "ajar basement door, the stairs up to the courtyard and the market"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S27"
+}

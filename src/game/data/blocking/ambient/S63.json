@@ -1,0 +1,94 @@
+{
+ "room": "S63",
+ "notes": "Natural S63 (bg_natural/S63.webp), the physics cabinet on 7 December 1982, overcast. Light snow falling outside the window, crows flying over the bare trees, the ceiling fluorescent tube flickering now and then (room ambience: a clock, switched-off lab supplies).",
+ "layers": [
+  {
+   "id": "snow_outside",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    1220,
+    272,
+    335,
+    30
+   ],
+   "count": 40,
+   "size": [
+    2.5,
+    5
+   ],
+   "speed_y": [
+    22,
+    40
+   ],
+   "speed_x": [
+    -8,
+    6
+   ],
+   "wind": 5,
+   "mask": "S63/natural/window_mask.webp",
+   "color": "#ffffff"
+  },
+  {
+   "id": "crows",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     1600,
+     320
+    ],
+    [
+     1400,
+     280
+    ],
+    [
+     1180,
+     310
+    ]
+   ],
+   "speed_px_s": 150,
+   "scale": 0.06,
+   "modulate": "#2a2a2e",
+   "flock": 3,
+   "flock_spread": [
+    45,
+    18
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    4,
+    10
+   ],
+   "mask": "S63/natural/window_mask.webp"
+  },
+  {
+   "id": "tube_flicker",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "pos": [
+    960,
+    100
+   ],
+   "size": [
+    150,
+    190
+   ],
+   "texture": "builtin:glow",
+   "color": "#f4fbff",
+   "min": 0.0,
+   "max": 0.3,
+   "every_s": [
+    7,
+    18
+   ]
+  }
+ ]
+}

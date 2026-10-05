@@ -1,0 +1,15 @@
+{
+  "room": "S36",
+  "notes": "Natural S36 ambient (bg_natural/S36.webp): every clock in Oto's workshop keeps its own rhythm - red seconds hands tick on the four alarm clocks and the wall clock at different rates (the brief: clocks of different rhythms); dust motes drift in the window light; the tree outside the right window sways and its moving shade flickers softly in the sun patches on the floor.",
+  "layers": [
+    { "id": "window_leaves", "type": "sway", "texture": "S36/natural/window_leaves.webp", "anchor": 1.0, "amp_px": 1.4, "freq": 0.3, "wavelength_px": 70, "flutter_px": 0.6 },
+    { "id": "floor_light_left", "type": "flicker", "mode": "noise", "rect": [250, 805, 440, 120], "color": "#fff1c8", "min": 0.0, "max": 0.07, "period_s": 2.2 },
+    { "id": "floor_light_right", "type": "flicker", "mode": "noise", "rect": [1060, 805, 430, 120], "color": "#fff1c8", "min": 0.0, "max": 0.09, "period_s": 1.7 },
+    { "id": "dust_beams", "type": "particles", "preset": "dust", "emit_rect": [430, 380, 780, 470], "count": 34, "size": [3.5, 7.5], "alpha_range": [0.25, 0.75], "color": "#fff0c4" },
+    { "id": "wall_clock_seconds", "type": "rotor", "pivot": [1205, 406], "length": 20, "tail": 5, "width": 2, "color": "#a3281c", "mode": "tick", "period_s": 60 },
+    { "id": "alarm_brass_seconds", "type": "rotor", "pivot": [1021, 586], "length": 15, "tail": 4, "width": 2, "color": "#b02a1e", "mode": "tick", "period_s": 60 },
+    { "id": "alarm_red_seconds", "type": "rotor", "pivot": [1083, 591], "length": 12, "tail": 3, "width": 2, "color": "#2a2a2a", "mode": "tick", "period_s": 47 },
+    { "id": "alarm_blue_seconds", "type": "rotor", "pivot": [1147, 584], "length": 19, "tail": 5, "width": 2, "color": "#b02a1e", "mode": "sweep", "period_s": 73 },
+    { "id": "alarm_black_seconds", "type": "rotor", "pivot": [1215, 587], "length": 14, "tail": 4, "width": 2, "color": "#c23a24", "mode": "tick", "period_s": 54 }
+  ]
+}

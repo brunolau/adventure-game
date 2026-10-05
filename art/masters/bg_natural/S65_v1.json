@@ -1,0 +1,708 @@
+{
+  "room": "S65",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1547174964,
+  "usd": 0.15,
+  "started": "2026-10-05T11:03:38",
+  "spend_log_asset": "bg_natural/S65/S65_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S65.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the inside of a small single-storey 1970s service building at the edge of the ZŠ Sokolíkova school grounds in Dúbravka, Bratislava, between the kindergarten and the housing-estate blocks: an invented issue room for school maintenance material, run by the local maintenance operation. Image 2 shows the panel blocks of this estate (white-grey concrete, red balcony parapets): the window of the room looks out at the end of such a block across the snowy courtyard.\n\nBrief: a civil issue room with metal shelves, an inventory book and a period slogan about working together; the manager, Mrs Marta, wants a proper issue slip, not a political test. Early December 1982, a grey winter afternoon: cool daylight from the window, warm light from the two fluorescent tubes, a cosy, orderly, slightly worn workplace.\n\nCamera: standing in the customer part of the room, about 2.3 m high, looking straight at the back wall, which runs parallel to the picture across the whole frame; vertical lines stay vertical, no side walls; the horizon is at y ~330. Keep this exact geometry from the sketch: the back wall meets the floor at y 740 and meets the ceiling at y 200; the ceiling with two fluorescent tube fittings is visible above; the wooden issue counter stands in the room in front of the shelves from x 400 to x 1300, its front face standing on the floor at y 805 and its top front edge one straight horizontal line at y 597; the floor in front of the counter runs to the bottom edge.\n\nWhat the sketch blocks are, left to right: the half-glazed brown wooden entrance door in the back wall at the left (its glass shows the snowy courtyard); the walls painted pale ochre-yellow above a darker green-grey oil-paint dado; a long red cloth slogan banner above the shelves with the white lettering SPOLOČNOU PRÁCOU; three grey steel shelving units along the back wall full of labelled-looking but illegible cardboard boxes, paint tins, rolls of wire, coils of rope, cans of nails, a few wooden laths and glass jars; the round wall clock on the back wall; a white-framed window at the right with a cast-iron radiator under it, through which you see the snowy courtyard, a bare tree, a low kindergarten fence and the end of a four-storey panel block with red balcony parapets in the grey winter light; on the counter top an open inventory ledger, a rubber stamp with an ink pad and a glass of tea in a metal holder; worn grey-brown linoleum floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 790-1000, y 545-607 of the 1920x1080 frame (41-52 % from the left, 50-56 % from the top): a big open inventory ledger lying flat on the counter top, its two pages ruled in columns and filled with tidy illegible handwriting (no readable words, no digits), a pen on it.\n2. the block of the layout sketch at x 996-1076, y 232-312 of the 1920x1080 frame (52-56 % from the left, 21-29 % from the top): a plain round wall clock with a white dial, black hour marks without digits, two black hands and a thin metal rim.\nThe entrance door is the area of the layout sketch at x 90-290, y 362-742 of the 1920x1080 frame (5-15 % from the left, 34-69 % from the top).\n\nWalkable floor: the band at x 40-1880, y 748-1015 of the 1920x1080 frame (2-98 % from the left, 69-94 % from the top) is the worn linoleum floor of the customer side - one continuous flat surface with no step, no edge and no change of material inside it, and nothing standing on it: no chairs, no boxes, no buckets. Only light, soft reflections of the window and the tubes.\nNPC zone at x 565-695, y 435-600 of the 1920x1080 frame (29-36 % from the left, 40-56 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 597 across x 535-725, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\n\nFiction rules: the issue room, the maintenance operation, its wares and the slogan are invented; no real institution, no state emblem, no portraits, no posters of real people, no brand names. The only lettering is SPOLOČNOU PRÁCOU on the banner; every other paper, box and label shows only illegible scribbles, no digits. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S65_sketch.png (rendered from art/prompts/natural/S65.sketch.json, model geometry)",
+    "art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg",
+    "src/game/assets/bg/S10.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S65 natural sketch (December 1982 issue room): frontal camera 2.3 m, horizon y 330, back-wall floor line y 740, ceiling edge y 200, counter front foot y 805 / top y 597; generated by a sketch script",
+    "background": "#d8cfa8",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          200
+        ],
+        "fill": "#d9d4c6",
+        "note": "ceiling (seen from below, receding to the back wall)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          196,
+          1920,
+          8
+        ],
+        "fill": "#bfb8a6",
+        "note": "ceiling edge / cornice of the back wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          60,
+          300,
+          26
+        ],
+        "fill": "#f4f2ea",
+        "note": "fluorescent tube fitting on the ceiling"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1220,
+          60,
+          300,
+          26
+        ],
+        "fill": "#f4f2ea",
+        "note": "fluorescent tube fitting on the ceiling"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          204,
+          1920,
+          536
+        ],
+        "fill": "#d8cfa8",
+        "note": "back wall: pale ochre-yellow distemper above a darker oil-paint dado"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          560,
+          1920,
+          180
+        ],
+        "fill": "#9fa98a",
+        "note": "darker green-grey oil-paint dado (lower wall)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          740,
+          1920,
+          340
+        ],
+        "fill": "#9a8a72",
+        "note": "worn grey-brown linoleum floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          80,
+          352,
+          220,
+          390
+        ],
+        "fill": "#7a6a52",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          90,
+          362,
+          200,
+          378
+        ],
+        "fill": "#a7865a",
+        "note": "half-glazed wooden entrance door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          110,
+          382,
+          160,
+          170
+        ],
+        "fill": "#e8eef2",
+        "note": "door glass: snowy courtyard outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          560,
+          22,
+          10
+        ],
+        "fill": "#5b5b5b",
+        "note": "door handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          222,
+          560,
+          58
+        ],
+        "fill": "#b8322a",
+        "note": "red cloth slogan banner with white lettering"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1000,
+          236,
+          72,
+          72
+        ],
+        "fill": "#f6f3ea",
+        "outline": "#3b3b3b",
+        "width": 5,
+        "note": "round wall clock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          350,
+          310,
+          390
+        ],
+        "fill": "#8c949a",
+        "note": "grey steel shelving unit"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          366,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          442,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          518,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          594,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          670,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          350,
+          310,
+          390
+        ],
+        "fill": "#8c949a",
+        "note": "grey steel shelving unit"
+      },
+      {
+        "type": "rect",
+        "box": [
+          666,
+          366,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          666,
+          442,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          666,
+          518,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          666,
+          594,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          666,
+          670,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          350,
+          310,
+          390
+        ],
+        "fill": "#8c949a",
+        "note": "grey steel shelving unit"
+      },
+      {
+        "type": "rect",
+        "box": [
+          996,
+          366,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          996,
+          442,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          996,
+          518,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          996,
+          594,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          996,
+          670,
+          298,
+          60
+        ],
+        "fill": "#c4b49a",
+        "note": "shelf with boxes, paint tins, rolls of wire, cans of nails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1350,
+          316,
+          440,
+          272
+        ],
+        "fill": "#efece4",
+        "note": "window frame (white painted wood)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1366,
+          330,
+          196,
+          236
+        ],
+        "fill": "#cfd8de",
+        "note": "window glass left: courtyard, block end with red parapets, snow"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1578,
+          330,
+          196,
+          236
+        ],
+        "fill": "#cfd8de",
+        "note": "window glass right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1340,
+          574,
+          460,
+          14
+        ],
+        "fill": "#e6e2d8",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1390,
+          610,
+          360,
+          90
+        ],
+        "fill": "#e3ddcf",
+        "note": "cast-iron radiator under the window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          586,
+          900,
+          12
+        ],
+        "fill": "#b98a55",
+        "note": "counter top (front edge y 597)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          598,
+          900,
+          207
+        ],
+        "fill": "#8e6a45",
+        "note": "wooden issue counter front, panelled (foot y 805)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          620,
+          6,
+          165
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          620,
+          6,
+          165
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          620,
+          6,
+          165
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          620,
+          6,
+          165
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          620,
+          6,
+          165
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          808,
+          560,
+          184,
+          30
+        ],
+        "fill": "#efe8d6",
+        "note": "open inventory ledger on the counter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1020,
+          568,
+          40,
+          22
+        ],
+        "fill": "#5a3a2a",
+        "note": "rubber stamp and ink pad"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          556,
+          34,
+          32
+        ],
+        "fill": "#c8a46a",
+        "note": "glass of tea in a metal holder"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S65.json",
+  "blocking": {
+    "version": 1,
+    "room": "S65",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1).",
+    "note": "Issue room inside the small single-storey service building at the east edge of the school grounds by the kindergarten and the M. Schneidra-Trnavskeho 1 block (register S65; invented interior, the window shows the real courtyard looking NW). Frontal camera ~2.3 m high facing the back wall, which spans the whole frame: horizon y 330, back-wall floor line y 740 (~180 px per metre), back-wall top / ceiling edge y 200, ceiling with two fluorescent fittings above. Perspective s(y) = (y - 330) / 685 (hero 1.7 m = 512 px at y 1015). Back wall left to right: the half-glazed entrance door (x 90-290, exit to S62), the red slogan banner above the grey steel shelving (x 330-1300), the round wall clock (centre ~1036,272), the window to the snowy courtyard (x 1360-1780, sill y 578). The wooden issue counter stands in the room in front of the shelves (x 400-1300, front face foot y 805, top front edge y 597): Marta behind it (feet y 770, counter bust cut at the top edge), the open inventory book and the stamp on its top; the customer side in front of it is the walk area, with the passage to the door at the left.",
+    "background": "bg_natural/S65.webp",
+    "walk_polygon": [
+      [
+        40,
+        748
+      ],
+      [
+        380,
+        748
+      ],
+      [
+        380,
+        815
+      ],
+      [
+        1320,
+        815
+      ],
+      [
+        1320,
+        748
+      ],
+      [
+        1880,
+        748
+      ],
+      [
+        1880,
+        1015
+      ],
+      [
+        40,
+        1015
+      ]
+    ],
+    "walk_band": [
+      745,
+      1015
+    ],
+    "actor_scale": [
+      0.606,
+      1.0
+    ],
+    "spawn": [
+      1100,
+      920
+    ],
+    "hotspots": {
+      "S65.ambient 1": {
+        "rect": [
+          790,
+          545,
+          210,
+          62
+        ],
+        "interaction_point": [
+          895,
+          850
+        ],
+        "label_anchor": [
+          895,
+          535
+        ],
+        "reason": "the big open inventory ledger lying on the counter top right of Marta"
+      },
+      "S65.ambient 2": {
+        "rect": [
+          996,
+          232,
+          80,
+          80
+        ],
+        "interaction_point": [
+          1036,
+          850
+        ],
+        "label_anchor": [
+          1036,
+          222
+        ],
+        "reason": "round wall clock on the back wall above the shelves"
+      },
+      "S65.MARTA82": {
+        "rect": [
+          565,
+          435,
+          130,
+          165
+        ],
+        "interaction_point": [
+          630,
+          860
+        ],
+        "label_anchor": [
+          630,
+          420
+        ],
+        "reason": "Marta behind the issue counter, bust above the counter top (y 597)"
+      }
+    },
+    "npcs": {
+      "S65.MARTA82": {
+        "variant": "behind_counter",
+        "feet": [
+          630,
+          770
+        ],
+        "scale": 0.642,
+        "sill_y": 597,
+        "z": "back",
+        "reason": "DECISIONS item 2: Marta behind the counter (counter bust cut at the painted counter top front edge)"
+      }
+    },
+    "exits": {
+      "S65.to_S62": {
+        "rect": [
+          90,
+          362,
+          200,
+          380
+        ],
+        "interaction_point": [
+          190,
+          785
+        ],
+        "label_anchor": [
+          190,
+          352
+        ],
+        "reason": "the half-glazed entrance door in the back wall at the left, out to the courtyard and the shop"
+      }
+    },
+    "occluders": [
+      {
+        "id": "counter",
+        "polygon": [
+          [
+            400,
+            586
+          ],
+          [
+            1300,
+            586
+          ],
+          [
+            1300,
+            806
+          ],
+          [
+            400,
+            806
+          ]
+        ],
+        "baseline": 805,
+        "texture": null
+      }
+    ],
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S65.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:04:34"
+  }
+}

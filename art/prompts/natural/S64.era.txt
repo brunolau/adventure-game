@@ -1,0 +1,23 @@
+# S64 Tono a dedo pri servisnom okne v roku 1982 (1982) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S56, 2020)
+# Image 1 = the accepted S56 natural master (v3), image 2 = the same with the S64 blocking drawn on it.
+# location_families 1982: Oto 66 behind the window, his grandson Tono 12 in front of it with a wooden swallow model.
+# art_brief: same camera as S56: reveal, service window, sill. Inside behind the open window works Oto (66); outside on a
+# low stool his grandson Tono (12) with the swallow model and school bag. Early December, traces of snow, bare branches.
+# Owner feedback 2026-10-05: plain yellowish walls in 1982 (no mosaic, no murals).
+Era changes: the same window on an early-December afternoon in 1982, cold and calm: pale low winter sun, soft shadows, a thin layer of old snow on the ground beyond the corner, along the foot of the wall and on the far end of the stone sill; bare grey-brown young trees in the school yard beyond the corner, a pale winter sky. The building is only 8 years old:
+- The facade has NO mosaic tiles: the wall, the plinth and the window piers are plain smooth render in ONE warm pale-yellow colour (the plinth a little darker), clean and fresh.
+- All windows are the original 1970s white-painted timber windows (slimmer frames, two casements and two small top panes each), in exactly the same openings. In the service window the RIGHT casement is opened inwards, so the right half of the opening has no glass and shows the dim workshop (shelves, tools, a workbench, a small radio) - the caretaker will be added later as a separate character, so no person is painted; the left casement stays closed with its glass. No birdhouse.
+- On the left end of the stone sill, where the metal swallow ornament stands in 2020, lie instead a sheet of paper with a neat pencil drawing of a swallow, a small piece of grey tin with a swallow outline scratched on it and a small metal file.
+- On the plinth right below the window a fresh patch of plaster, lighter than the wall and still a little damp, with trowel marks.
+- The path along the facade is the same; at its left a child will be added later sitting on a low stool, so keep that part of the path open.
+Everything else built (the opening, the reveal, the stone sill and its top line, the neighbouring window openings, the building corner, the path) stays exactly where it is.
+
+Interactive props of 1982:
+1. {rect:S64.ambient 1}: on the left end of the stone sill the pencil drawing of a swallow, the tin blank with the scratched swallow outline and the small file.
+2. {rect:S64.ambient 2}: the fresh, lighter patch of plaster with trowel marks on the plinth below the window.
+The path continues round the building corner into the school yard at the right edge ({exit:S64.to_S61}).
+
+Walkable floor: {walk} stays the open concrete path along the facade with nothing standing on it, only light, shadows and a little old snow at its far right.
+{npc_zones}
+
+Fiction rules: no readable text, no logos, no house numbers. No people, no animals. Any paper shows only illegible scribbles or the drawing asked for, no digits.

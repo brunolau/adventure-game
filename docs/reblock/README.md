@@ -3,7 +3,7 @@
 **Decision for the product owner:** may rooms be re-blocked naturally (props where they really are, the walk band on
 the real ground), or do all 68 rooms keep the handoff's template blocking?
 
-**Status:** built and tested on S03 and S05. **Off by default.** Nothing in `game.json`, Core, saves or rules changes.
+**Status:** built and tested on S03 and S05; **since milestone 3 (docs/MILESTONE3.md) applied to all 68 rooms and on by default.** Nothing in `game.json`, Core, saves or rules changes.
 
 ## The problem
 

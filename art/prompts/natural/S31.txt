@@ -1,0 +1,24 @@
+# S31 Ivanska zeleznicna zastavka (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S31.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S31.sketch.json (one-point view along the double track, horizon y 430, VP (430, 430)).
+# Refs: the two BSK photos of the real halt and crossing (2021) and a crop of the 1959 Filakovo halt (awning and
+# barred window only, no people, no station sign). Style: the accepted S32 painting of the same village and day.
+#refs: art/source/rooms/S31/ivanka_halt_platform_bsk_2021.jpg ; art/source/rooms/S31/ivanka_halt_crossing_gable_bsk_2021.jpg ; art/prompts/natural/S31_ref_halt_awning_1959_crop.jpg
+#style: art/masters/bg_natural/S32_v1.png
+Place: the railway halt of Ivanka pri Dunaji on the Bratislava - Galanta line, beside the Nadrazna level crossing at the north edge of the village, as it was in 1960. Image 2 is the real place today, photographed from the crossing along the double track (an ultra-wide lens: straighten its distortion); image 3 shows the old small halt building with its plastered gable facing the road and a timber canopy on its track side; image 4 is a 1959 Slovak halt of the same period (a slanting timber awning on iron brackets and a barred ticket window). Paint the halt as it was in 1960 from these: a straight double track with wooden sleepers on gravel ballast, a gravel platform at rail level, the small gabled halt building. The line was not electrified until 1969, so there are NO catenary masts and NO overhead wires; only a row of wooden telegraph poles with a few thin wires runs along the far side of the line. Leave out everything modern: concrete platforms, tactile strips, shelters, displays, barriers, signals, lamp posts, graffiti, the hotel blocks, cars.
+
+Brief: a small period station: a mechanical clock, a wooden bench and a luggage cart. A sunny afternoon on 6 June 1960, early summer, warm low sunlight from the left, long soft shadows; lush meadows and poplars along the line; a faint wisp of locomotive steam far away where the track meets the horizon.
+
+Camera: standing on the gravel platform about 1.9 m high, looking straight along the track; a one-point perspective: the rails, the platform edge, the canopy and the building's long wall all converge to the vanishing point at x 430, y 430 on the horizon (y 430). Keep this exact geometry from the sketch: the two tracks recede from the bottom left to the vanishing point; the platform edge runs from x 150 at the bottom edge to the vanishing point; the halt building's gable end faces the camera on the right (its wall meets the ground at y 680, eaves at y ~320, ridge at y ~10); the timber canopy along the building's track side recedes towards the vanishing point, its near post at x 905.
+
+What the sketch blocks are: the sky; the flat meadows and a row of poplars and willows along the far side of the line with wooden telegraph poles and thin wires; the gravel ballast, wooden sleepers and steel rails of the double track; the low timber edge of the platform; the gravel platform and the packed-earth forecourt; the long side wall of the halt building in the shade of the canopy, with the door to the small waiting room, a barred ticket window and a wooden bench against the wall; the timber canopy (board roof on wooden posts with brackets); the gable end of the building with cream plaster, a grey plinth, two wooden windows, a small attic window, a small wall post box and a white enamel name board under the eaves that reads IVANKA PRI DUNAJI; the brown tiled roof; trees behind the building.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S31.ambient 1}: an old wooden platform luggage cart with two big iron-rimmed wheels and a long push handle, standing on the gravel; a worn leather suitcase and a small wooden crate lie on its deck.
+2. {rect:S31.ambient 2}: a round double-sided mechanical station clock with a white dial, black hands and a dark iron case, hanging on an iron hanger from the canopy beam; its dial faces the camera.
+The forecourt continues out of the right edge ({exit:S31.to_S32}) towards the village.
+
+Walkable floor: {walk} is the gravel platform and the packed-earth forecourt in front of the gable - one continuous flat surface at rail level with no kerb, no step and no edge inside it, and nothing standing on it: no benches, no barrows, no bins, no posts. Only gravel, light and shadows.
+{npc_zones}
+
+Fiction rules: no real timetables, no railway logos or emblems, no posters, no advertising, no number plates, no red stars or slogans, no people, no animals. The only lettering in the picture is IVANKA PRI DUNAJI on the white enamel name board on the gable; papers show no readable text and no digits. The clock dial may have plain hour marks.

@@ -1,0 +1,882 @@
+{
+  "room": "S39",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 101900576,
+  "usd": 0.15,
+  "started": "2026-10-05T10:44:22",
+  "spend_log_asset": "bg_natural/S39/S39_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S39.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the small measuring room inside a plain brick pump hut on the bank of the Sursky kanal at the edge of Ivanka pri Dunaji, Slovakia, in 1960 - an invented room. Images 2 and 3 are real rooms of the period (type references): image 2 a physics work room with opal globe lamps, a long scale and wooden instrument panels with round dial gauges and switches; image 3 a 1960 laboratory bench with bottles and instruments. Image 4 is the real canal outside (paint it as June: lush grass and reeds) - that is the view through the window. Paint a small, practical, slightly improvised scientific workroom of 1960 from these.\n\nBrief: young Mira works at a table mechanical resonator; a brass calibration plate with four meanings; lamps; boards with invented symbols. 6 June 1960, late afternoon: sunlight through the small window, the globe lamps and the desk lamp are lit, a calm, focused, slightly mysterious mood.\n\nCamera: standing in the room about 1.7 m high, facing the back wall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~470. Keep this exact geometry from the sketch: the back wall meets the floor at y 720; the long wooden table stands along the back wall from x 560 to x 1360, its top at y 600-622, its legs on the floor at y ~748; the low ceiling beams at y ~60 and ~200.\n\nWhat the sketch blocks are, left to right: the plank door of the hut at the far left, standing ajar with daylight in the gap; a small wooden window showing the canal, reeds and fields in the sun; a blackboard with chalk drawings of invented symbols - circles, arrows, wave lines and dots, no letters and no digits; on the table: a green enamel desk lamp with a glowing bulb, the table mechanical resonator - a heavy wooden base carrying a row of polished brass rods like tuning forks, a brass cross bar and a small brass pendulum, with the calibration plate on its front - and an open notebook with a pencil; a wooden instrument panel with three round dial gauges and switches on the wall, a cloth-covered cable running down to the resonator; a patch of bare brick; two opal glass globe lamps hanging from the ceiling; a narrow plank door at the right of the back wall with a brass knob; the worn plank floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 866-1024, y 524-612 of the 1920x1080 frame (45-53 % from the left, 49-57 % from the top): a polished brass calibration plate fixed upright on the front of the resonator's base, divided into four engraved fields, each with an invented abstract symbol (no letters, no digits).\n2. the block of the layout sketch at x 622-746, y 462-610 of the 1920x1080 frame (32-39 % from the left, 43-56 % from the top): a green enamel desk lamp with a jointed arm and a glowing incandescent bulb, standing on the table.\n3. the block of the layout sketch at x 1118-1304, y 566-616 of the 1920x1080 frame (58-68 % from the left, 52-57 % from the top): an open notebook lying on the table with lines of pencil notes, several crossed out (illegible scribbles), and a pencil beside it.\nThe door at the left is the area of the layout sketch at x 60-230, y 430-720 of the 1920x1080 frame (3-12 % from the left, 40-67 % from the top); the narrow door at the right is the area of the layout sketch at x 1640-1800, y 430-720 of the 1920x1080 frame (85-94 % from the left, 40-67 % from the top).\n\nWalkable floor: the band at x 20-1900, y 735-1015 of the 1920x1080 frame (1-99 % from the left, 68-94 % from the top) is the worn plank floor - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no stools, no boxes, no cables. Only light, shadows and the board joints.\nNPC zone at x 1395-1535, y 489-840 of the 1920x1080 frame (73-80 % from the left, 45-78 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 840.\n\nFiction rules: entirely invented equipment; no crucifix, no portraits, no posters, no school desks, no brand names, no lettering, no digits anywhere (dials have plain tick marks only). No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S39_sketch.png (rendered from art/prompts/natural/S39.sketch.json, model geometry)",
+    "art/prompts/natural/S39_ref_instrument_panel_1935_crop.jpg",
+    "art/prompts/natural/S39_ref_lab_bench_1960_crop.jpg",
+    "art/source/rooms/S38/sursky_canal_village_edge_rios_2018.jpg",
+    "art/masters/bg_natural/S36_v2.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S39 natural blocking (src/game/data/blocking/S39.json): measuring room inside the pump hut, frontal camera ~1.7 m, horizon y 470, s(y) = (y - 470) / 545; back wall foot y 720; table along the back wall (top y 610) with the resonator and the brass plate, the desk lamp, the notebook; doors at both ends.",
+    "background": "#e2d8c0",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          230
+        ],
+        "fill": "#d8d0bc",
+        "note": "low whitewashed ceiling with two wooden beams"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          60,
+          1920,
+          26
+        ],
+        "fill": "#8a6a46",
+        "note": "ceiling beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          200,
+          1920,
+          26
+        ],
+        "fill": "#8a6a46",
+        "note": "wall plate beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          226,
+          1920,
+          494
+        ],
+        "fill": "#e2d8c0",
+        "note": "back wall of the small measuring room: worn lime plaster over brick"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          650,
+          1920,
+          70
+        ],
+        "fill": "#9c8a6c",
+        "note": "grey-brown painted dado"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          720,
+          1920,
+          360
+        ],
+        "fill": "#a08868",
+        "note": "worn plank floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1340,
+          250,
+          90,
+          60
+        ],
+        "fill": "#c4805e",
+        "note": "patch of bare brick"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            86
+          ],
+          [
+            640,
+            150
+          ]
+        ],
+        "color": "#3a3634",
+        "width": 3,
+        "note": "pendant cord"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          606,
+          146,
+          68,
+          68
+        ],
+        "fill": "#f2ecd8",
+        "note": "opal glass globe lamp, lit"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1280,
+            86
+          ],
+          [
+            1280,
+            150
+          ]
+        ],
+        "color": "#3a3634",
+        "width": 3,
+        "note": "pendant cord"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1246,
+          146,
+          68,
+          68
+        ],
+        "fill": "#f2ecd8",
+        "note": "opal glass globe lamp, lit"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          430,
+          170,
+          290
+        ],
+        "fill": "#6e5034",
+        "note": "plank door of the hut, ajar (exit to the canal bank)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          190,
+          440,
+          34,
+          270
+        ],
+        "fill": "#f0e6c4",
+        "note": "daylight in the gap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          50,
+          420,
+          190,
+          12
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          290,
+          350,
+          190,
+          200
+        ],
+        "fill": "#f0eadc",
+        "note": "small wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          302,
+          362,
+          166,
+          176
+        ],
+        "fill": "#a8c8e0",
+        "note": "view: the canal with reeds and the flat fields in the sun"
+      },
+      {
+        "type": "rect",
+        "box": [
+          302,
+          470,
+          166,
+          30
+        ],
+        "fill": "#86a8b4"
+      },
+      {
+        "type": "rect",
+        "box": [
+          302,
+          500,
+          166,
+          38
+        ],
+        "fill": "#7ea052"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          362,
+          8,
+          176
+        ],
+        "fill": "#f0eadc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          282,
+          548,
+          206,
+          12
+        ],
+        "fill": "#d6ccb6",
+        "note": "sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          290,
+          520,
+          230
+        ],
+        "fill": "#3a4a40",
+        "note": "blackboard on the back wall with invented chalk symbols (circles, arrows, wave lines, no letters, no digits)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          510,
+          280,
+          540,
+          12
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          510,
+          518,
+          540,
+          12
+        ],
+        "fill": "#7a5a3a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          580,
+          330,
+          90,
+          90
+        ],
+        "outline": "#e8e6dc",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            700,
+            380
+          ],
+          [
+            820,
+            340
+          ],
+          [
+            940,
+            400
+          ]
+        ],
+        "color": "#e8e6dc",
+        "width": 4
+      },
+      {
+        "type": "rect",
+        "box": [
+          1100,
+          300,
+          200,
+          180
+        ],
+        "fill": "#e8e2d2",
+        "note": "wooden instrument panel with three round dial gauges and switches (no lettering)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1125,
+          330,
+          46,
+          46
+        ],
+        "fill": "#f6f2e6",
+        "outline": "#3a3634",
+        "width": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1185,
+          330,
+          46,
+          46
+        ],
+        "fill": "#f6f2e6",
+        "outline": "#3a3634",
+        "width": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1245,
+          330,
+          46,
+          46
+        ],
+        "fill": "#f6f2e6",
+        "outline": "#3a3634",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1150,
+            400
+          ],
+          [
+            1150,
+            480
+          ],
+          [
+            1180,
+            600
+          ]
+        ],
+        "color": "#2e2c2a",
+        "width": 4,
+        "note": "cloth-covered cable to the resonator"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          600,
+          800,
+          22
+        ],
+        "fill": "#9a7450",
+        "note": "long sturdy wooden laboratory table along the back wall, top y 610"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          622,
+          800,
+          26
+        ],
+        "fill": "#6e5236",
+        "note": "table apron with a drawer"
+      },
+      {
+        "type": "rect",
+        "box": [
+          574,
+          648,
+          20,
+          100
+        ],
+        "fill": "#5a4028",
+        "note": "table leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1326,
+          648,
+          20,
+          100
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          820,
+          560,
+          250,
+          44
+        ],
+        "fill": "#7a5236",
+        "note": "heavy wooden base of the table mechanical resonator"
+      },
+      {
+        "type": "rect",
+        "box": [
+          850,
+          448,
+          12,
+          112
+        ],
+        "fill": "#c8a050",
+        "note": "brass resonator rods / tuning forks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          448,
+          12,
+          112
+        ],
+        "fill": "#c8a050",
+        "note": "brass resonator rods / tuning forks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          950,
+          448,
+          12,
+          112
+        ],
+        "fill": "#c8a050",
+        "note": "brass resonator rods / tuning forks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1000,
+          448,
+          12,
+          112
+        ],
+        "fill": "#c8a050",
+        "note": "brass resonator rods / tuning forks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          448,
+          12,
+          112
+        ],
+        "fill": "#c8a050",
+        "note": "brass resonator rods / tuning forks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          836,
+          440,
+          220,
+          12
+        ],
+        "fill": "#b08a40",
+        "note": "brass cross bar"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1030,
+          470,
+          40,
+          40
+        ],
+        "fill": "#c8a050",
+        "note": "small brass pendulum bob"
+      },
+      {
+        "type": "rect",
+        "box": [
+          878,
+          535,
+          134,
+          66
+        ],
+        "fill": "#d8b060",
+        "note": "the brass calibration plate fixed upright on the front of the base, divided into four engraved fields"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            945,
+            538
+          ],
+          [
+            945,
+            598
+          ]
+        ],
+        "color": "#8a6a2a",
+        "width": 3
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            880,
+            568
+          ],
+          [
+            1010,
+            568
+          ]
+        ],
+        "color": "#8a6a2a",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          628,
+          590,
+          64,
+          14
+        ],
+        "fill": "#3e5a46",
+        "note": "desk lamp base"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            660,
+            592
+          ],
+          [
+            650,
+            520
+          ],
+          [
+            690,
+            486
+          ]
+        ],
+        "color": "#3e5a46",
+        "width": 7,
+        "note": "lamp arm"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            660,
+            470
+          ],
+          [
+            720,
+            470
+          ],
+          [
+            736,
+            512
+          ],
+          [
+            646,
+            512
+          ]
+        ],
+        "fill": "#3e6a4e",
+        "note": "green enamel lamp shade"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          672,
+          500,
+          36,
+          20
+        ],
+        "fill": "#fff2c0",
+        "note": "glowing bulb"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1130,
+          590,
+          130,
+          20
+        ],
+        "fill": "#f2eee2",
+        "note": "open notebook with crossed-out pencil notes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1194,
+          590,
+          4,
+          20
+        ],
+        "fill": "#8a8478"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1250,
+            586
+          ],
+          [
+            1290,
+            600
+          ]
+        ],
+        "color": "#c8a050",
+        "width": 4,
+        "note": "pencil"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          430,
+          160,
+          290
+        ],
+        "fill": "#6e5034",
+        "note": "narrow plank door at the right of the back wall (exit to the archive loft)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1630,
+          420,
+          180,
+          12
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1770,
+          570,
+          14,
+          14
+        ],
+        "fill": "#c8a050",
+        "note": "door knob"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S39.json",
+  "blocking": {
+    "version": 1,
+    "room": "S39",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "The first ZVON room: the small measuring room inside the invented pump hut on the Sursky kanal (S38), June 1960 (type references: 1935 physics room, 1960 laboratory bench). Frontal camera ~1.7 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~138 px per metre at the back wall, foot y 720). A long laboratory table stands along the back wall (top y 610, legs to y ~748); on it, in the middle, the table mechanical resonator (brass rods on a heavy wooden base) with the brass calibration plate fixed upright on its front, the green desk lamp at its left end and Mira's open notebook at its right. Above: a blackboard with invented symbols, an instrument panel, two globe lamps; a small window shows the canal. The plank door back to the canal bank is at the left, a narrow door to the archive loft at the right. Mira stands at the right end of the table. The walk polygon is the plank floor in front of the table, with lobes to both doors.",
+    "background": "bg_natural/S39.webp",
+    "walk_polygon": [
+      [
+        40,
+        735
+      ],
+      [
+        250,
+        735
+      ],
+      [
+        262,
+        760
+      ],
+      [
+        1630,
+        760
+      ],
+      [
+        1640,
+        735
+      ],
+      [
+        1810,
+        735
+      ],
+      [
+        1822,
+        760
+      ],
+      [
+        1900,
+        760
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      735,
+      1015
+    ],
+    "actor_scale": [
+      0.486,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S39.plate": {
+        "rect": [
+          866,
+          524,
+          158,
+          88
+        ],
+        "interaction_point": [
+          945,
+          830
+        ],
+        "label_anchor": [
+          945,
+          514
+        ],
+        "reason": "the brass calibration plate with four engraved fields, fixed upright on the front of the resonator's base on the table"
+      },
+      "S39.ambient 1": {
+        "rect": [
+          622,
+          462,
+          124,
+          148
+        ],
+        "interaction_point": [
+          684,
+          830
+        ],
+        "label_anchor": [
+          684,
+          452
+        ],
+        "reason": "green enamel desk lamp with a glowing bulb on the left end of the table"
+      },
+      "S39.ambient 2": {
+        "rect": [
+          1118,
+          566,
+          186,
+          50
+        ],
+        "interaction_point": [
+          1210,
+          830
+        ],
+        "label_anchor": [
+          1210,
+          556
+        ],
+        "reason": "Mira's open notebook with crossed-out pencil notes and a pencil on the right end of the table"
+      },
+      "S39.MIRA60": {
+        "rect": [
+          1395,
+          489,
+          140,
+          351
+        ],
+        "interaction_point": [
+          1350,
+          880
+        ],
+        "label_anchor": [
+          1465,
+          479
+        ],
+        "reason": "young Mira standing at the right end of the table, beside her notebook and the resonator"
+      }
+    },
+    "npcs": {
+      "S39.MIRA60": {
+        "variant": "standing",
+        "feet": [
+          1465,
+          840
+        ],
+        "facing": "left",
+        "reason": "standing (MIRA60 staging standing) on the plank floor at the table; scale from the room perspective (0.68)"
+      }
+    },
+    "exits": {
+      "S39.to_S38": {
+        "rect": [
+          60,
+          430,
+          170,
+          290
+        ],
+        "interaction_point": [
+          150,
+          790
+        ],
+        "label_anchor": [
+          205,
+          420
+        ],
+        "reason": "the plank door of the hut at the left of the back wall, ajar, daylight of the canal bank"
+      },
+      "S39.to_S40": {
+        "rect": [
+          1640,
+          430,
+          160,
+          290
+        ],
+        "interaction_point": [
+          1725,
+          790
+        ],
+        "label_anchor": [
+          1720,
+          420
+        ],
+        "reason": "the narrow plank door at the right of the back wall, to the technical archive loft"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S39.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:45:01"
+  }
+}

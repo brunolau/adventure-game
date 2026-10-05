@@ -1,0 +1,72 @@
+{
+  "room": "S57",
+  "notes": "Dubravka stop, early December 1982 (decision 3b; bg_natural/S57.webp): light snow falling, bare branches moving in the wind, the waiting bus's indicator lamps blinking, the stop clock's second hand, pigeons on the platform. Bus sound via the blocking's audio override (bus_pass instead of tram brakes).",
+  "layers": [
+    {
+      "id": "branches_left",
+      "type": "sway",
+      "texture": "S57/natural/branches_left.webp",
+      "anchor": 1.0,
+      "amp_px": 1.2,
+      "freq": 0.35,
+      "wavelength_px": 120,
+      "flutter_px": 0.4
+    },
+    {
+      "id": "snow",
+      "type": "particles",
+      "preset": "snow",
+      "emit_rect": [-40, -30, 2000, 30],
+      "count": 75,
+      "size": [2.5, 5.5],
+      "speed_y": [26, 48],
+      "wind": 12,
+      "alpha_range": [0.45, 0.85],
+      "lifetime": [16, 26]
+    },
+    {
+      "id": "bus_indicator_left",
+      "type": "flicker",
+      "mode": "blink",
+      "rect": [150, 492, 28, 24],
+      "color": "#ffa030",
+      "min": 0.0,
+      "max": 0.8,
+      "period_s": 0.8,
+      "duty": 0.5
+    },
+    {
+      "id": "bus_indicator_right",
+      "type": "flicker",
+      "mode": "blink",
+      "rect": [302, 494, 28, 24],
+      "color": "#ffa030",
+      "min": 0.0,
+      "max": 0.8,
+      "period_s": 0.8,
+      "duty": 0.5
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [787, 133],
+      "length": 42,
+      "tail": 9,
+      "width": 2,
+      "color": "#b0281c",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[1600, 830], [1860, 905]],
+      "scale": 0.22,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[2040, 200], [1700, -120]]
+    }
+  ]
+}

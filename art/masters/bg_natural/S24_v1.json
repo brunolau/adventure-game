@@ -1,0 +1,1014 @@
+{
+  "room": "S24",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1415484721,
+  "usd": 0.15,
+  "started": "2026-10-05T10:22:10",
+  "spend_log_asset": "bg_natural/S24/S24_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S24.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a small old photo studio on Obchodna street in the Old Town of Bratislava. Image 2 is a photo of a real historic small-town photo studio: a painted mottled backdrop cloth hanging from a roller, a carved armchair and a small table in front of it, a big silver studio lamp, a parquet floor: paint the studio corner from it. Image 3 is a real darkroom with an enlarger, trays and a sink: it is the side room seen only through its doorway, lit deep red. Image 4 is the real Obchodna street: old two-storey and three-storey facades, cobbled paving, tram rails and wires - this is what is seen through the shop window and the door glass (no shop signs, no ads, no people).\n\nBrief: an invented photo studio with a side darkroom outside the walkable floor, drying lines with prints, an enlarger and family portraits. Thursday 15 June 1995, a sunny afternoon: warm daylight from the street through the window, the deep red glow of the darkroom's safelight in the side doorway.\n\nCamera: standing at the back of the studio, about 2.4 m high, looking straight at the street front wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 198 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).\n\nWhat the sketch blocks are, left to right: the left side wall with four framed black-and-white sample portraits; the glazed entrance door in a dark wooden frame; the shop window with a framed portrait displayed on its sill and Obchodna outside; the framed family portrait on a plain cream wall; the tall painted mottled grey-brown backdrop cloth hanging from a wooden roller and flowing onto the floor; a carved wooden armchair with an olive seat standing in front of the backdrop's right part; a big round silver studio lamp on a tall black stand; two drying lines strung across the wall with black-and-white prints held by wooden pegs; below them a work table with a red developing tray and a paper cutter; in the right side wall the open doorway of the darkroom glowing deep red, an enlarger and trays dimly seen inside; a herringbone parquet floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 737-877, y 366-502 of the 1920x1080 frame (38-46 % from the left, 34-46 % from the top): a large framed black-and-white family portrait: a family group of five posed in their best clothes, every one of them looking in a different direction, none at the camera (simple painted faces).\n2. the block of the layout sketch at x 1345-1615, y 300-465 of the 1920x1080 frame (70-84 % from the left, 28-43 % from the top): two drying lines one above the other, each with a row of small black-and-white photo prints held by wooden clothes pegs.\nThe glazed entrance door is the area of the layout sketch at x 314-494, y 345-765 of the 1920x1080 frame (16-26 % from the left, 32-71 % from the top).\n\nWalkable floor: the band at x 20-1900, y 785-1015 of the 1920x1080 frame (1-99 % from the left, 73-94 % from the top) is the open herringbone parquet floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no tripods, no lamps, no chairs, no boxes, no cables. Only daylight from the window and soft shadows; a faint red glow on the floor near the darkroom doorway.\nNPC zone at x 905-1055, y 436-794 of the 1920x1080 frame (47-55 % from the left, 40-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 792. The photographer stands in front of the left part of the painted backdrop.\n\nFiction rules: the studio \"Svetlo\" and the photographer are invented: no studio name, no lettering on the window or the door, no brand names on any device, no shop signs outside, no people except the painted faces in the photographs, no animals. Paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S24_sketch.png (rendered from art/prompts/natural/S24.sketch.json, model geometry)",
+    "art/source/rooms/S24/type-ref_photo-studio_backdrop_lamp.jpg",
+    "art/source/rooms/S24/type-ref_photo-studio_darkroom_enlarger.jpg",
+    "art/source/rooms/S24/obchodna_street_window-view_2007.jpg",
+    "src/game/assets/bg_natural/S20.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S24 natural: photo studio box, camera 2.4 m, horizon y 300, wall foot y 760.",
+    "background": "#f0eadc",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            152
+          ],
+          [
+            1620,
+            198
+          ],
+          [
+            300,
+            198
+          ],
+          [
+            0,
+            152
+          ]
+        ],
+        "fill": "#f0eadc",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            152
+          ],
+          [
+            300,
+            198
+          ],
+          [
+            300,
+            760
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#ddd2bf",
+        "note": "left side wall (receding)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            152
+          ],
+          [
+            1620,
+            198
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ]
+        ],
+        "fill": "#ddd2bf",
+        "note": "right side wall (receding)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          198,
+          1320,
+          562
+        ],
+        "fill": "#e6dccb",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            760
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#9a7a58",
+        "note": "floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            60,
+            452
+          ],
+          [
+            130,
+            440
+          ],
+          [
+            130,
+            586
+          ],
+          [
+            60,
+            610
+          ]
+        ],
+        "fill": "#4a3a2e",
+        "note": "framed black-and-white sample portrait on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            170,
+            410
+          ],
+          [
+            240,
+            400
+          ],
+          [
+            240,
+            527
+          ],
+          [
+            170,
+            549
+          ]
+        ],
+        "fill": "#4a3a2e",
+        "note": "framed black-and-white sample portrait on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            90,
+            651
+          ],
+          [
+            160,
+            623
+          ],
+          [
+            160,
+            740
+          ],
+          [
+            90,
+            779
+          ]
+        ],
+        "fill": "#4a3a2e",
+        "note": "framed black-and-white sample portrait on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            200,
+            584
+          ],
+          [
+            270,
+            558
+          ],
+          [
+            270,
+            659
+          ],
+          [
+            200,
+            696
+          ]
+        ],
+        "fill": "#4a3a2e",
+        "note": "framed black-and-white sample portrait on the left side wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1660,
+            377
+          ],
+          [
+            1800,
+            392
+          ],
+          [
+            1800,
+            885
+          ],
+          [
+            1660,
+            788
+          ]
+        ],
+        "fill": "#5a1c1a",
+        "note": "open doorway of the darkroom in the right side wall: deep red safelight glow, an enlarger in the dark"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1652,
+            369
+          ],
+          [
+            1660,
+            377
+          ],
+          [
+            1660,
+            788
+          ],
+          [
+            1652,
+            792
+          ]
+        ],
+        "fill": "#5a4030",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          318,
+          341,
+          172,
+          419
+        ],
+        "fill": "#4a3a2e",
+        "note": "dark wooden frame of the glazed entrance door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          353,
+          148,
+          270
+        ],
+        "fill": "#d6dee2",
+        "note": "door glass: Obchodna street outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          623,
+          148,
+          137
+        ],
+        "fill": "#6a5038",
+        "note": "lower door panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          506,
+          300,
+          218,
+          300
+        ],
+        "fill": "#4a3a2e",
+        "note": "shop window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          518,
+          314,
+          194,
+          272
+        ],
+        "fill": "#d9e2e6",
+        "note": "shop window: Obchodna outside, old two-storey facades, tram wires"
+      },
+      {
+        "type": "rect",
+        "box": [
+          518,
+          334,
+          194,
+          150
+        ],
+        "fill": "#e8d6b0",
+        "note": "outside: old facades across the street"
+      },
+      {
+        "type": "rect",
+        "box": [
+          518,
+          536,
+          194,
+          50
+        ],
+        "fill": "#a8a49c",
+        "note": "outside: the street with tram rails"
+      },
+      {
+        "type": "rect",
+        "box": [
+          506,
+          586,
+          218,
+          14
+        ],
+        "fill": "#5a4430",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          526,
+          60,
+          60
+        ],
+        "fill": "#3a3430",
+        "note": "a framed portrait displayed in the window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          742,
+          372,
+          130,
+          124
+        ],
+        "fill": "#5a4030",
+        "note": "large framed family portrait (black-and-white photograph of a family group)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          752,
+          382,
+          110,
+          104
+        ],
+        "fill": "#b8b0a0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          890,
+          236,
+          360,
+          544
+        ],
+        "fill": "#8a7f72",
+        "note": "painted mottled grey-brown studio backdrop cloth hanging from a wooden roller"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          226,
+          380,
+          16
+        ],
+        "fill": "#6a4a32",
+        "note": "backdrop roller"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            890,
+            780
+          ],
+          [
+            1250,
+            780
+          ],
+          [
+            1262,
+            794
+          ],
+          [
+            878,
+            794
+          ]
+        ],
+        "fill": "#8a7f72",
+        "note": "backdrop flowing onto the floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          565,
+          120,
+          120
+        ],
+        "fill": "#8a5a3a",
+        "note": "carved wooden armchair with a soft olive seat for portraits"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1120,
+          675,
+          100,
+          24
+        ],
+        "fill": "#7a8a5a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1116,
+          699,
+          10,
+          76
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1214,
+          699,
+          10,
+          76
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1290,
+            785
+          ],
+          [
+            1290,
+            430
+          ]
+        ],
+        "color": "#3a3a38",
+        "width": 6,
+        "note": "studio lamp stand"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1250,
+            400
+          ],
+          [
+            1330,
+            400
+          ],
+          [
+            1340,
+            470
+          ],
+          [
+            1240,
+            470
+          ]
+        ],
+        "fill": "#c8ccd0",
+        "note": "big round silver studio lamp reflector"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1352,
+            322
+          ],
+          [
+            1608,
+            326
+          ]
+        ],
+        "color": "#3a3430",
+        "width": 3,
+        "note": "drying line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1364,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1376,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1405,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1417,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1446,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1458,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1487,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1499,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1528,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1540,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1569,
+          326,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1581,
+          318,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1352,
+            412
+          ],
+          [
+            1608,
+            416
+          ]
+        ],
+        "color": "#3a3430",
+        "width": 3,
+        "note": "drying line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1364,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1376,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1405,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1417,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1446,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1458,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1487,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1499,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1528,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1540,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1569,
+          416,
+          32,
+          40
+        ],
+        "fill": "#e8e6e0",
+        "note": "black-and-white photo print pegged on the line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1581,
+          408,
+          8,
+          12
+        ],
+        "fill": "#c8a060",
+        "note": "wooden clothes peg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1350,
+          591,
+          262,
+          16
+        ],
+        "fill": "#7a5a3a",
+        "note": "work table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1356,
+          607,
+          250,
+          153
+        ],
+        "fill": "#5a4430",
+        "note": "table with drawers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1370,
+          565,
+          90,
+          26
+        ],
+        "fill": "#c94a3a",
+        "note": "red photo developing tray"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1480,
+          573,
+          100,
+          18
+        ],
+        "fill": "#d8d4cc",
+        "note": "paper cutter"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S24.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Photo studio on Obchodna seen from the back towards its street front: one-point box, camera ~2.4 m, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling line y 198. Perspective s(y) = (y - 300) / 715. Entrance door and shop window to Obchodna on the left, the framed family portrait on the plain wall, the painted backdrop with the armchair and the studio lamp in the middle (Alena stands in front of the backdrop), the drying lines with prints above the work table on the right, the red-lit darkroom doorway in the right side wall (outside the walk area).",
+    "background": "bg_natural/S24.webp",
+    "walk_polygon": [
+      [
+        312,
+        785
+      ],
+      [
+        1610,
+        785
+      ],
+      [
+        1900,
+        975
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        975
+      ]
+    ],
+    "walk_band": [
+      785,
+      1015
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      410,
+      890
+    ],
+    "hotspots": {
+      "S24.ambient 1": {
+        "rect": [
+          737,
+          366,
+          140,
+          136
+        ],
+        "interaction_point": [
+          807,
+          850
+        ],
+        "label_anchor": [
+          807,
+          358
+        ],
+        "reason": "large framed family portrait on the plain wall between the window and the backdrop"
+      },
+      "S24.ambient 2": {
+        "rect": [
+          1345,
+          300,
+          270,
+          165
+        ],
+        "interaction_point": [
+          1480,
+          850
+        ],
+        "label_anchor": [
+          1480,
+          292
+        ],
+        "reason": "two drying lines with pegged prints across the wall above the work table"
+      },
+      "S24.FOTO": {
+        "rect": [
+          905,
+          436,
+          150,
+          358
+        ],
+        "interaction_point": [
+          980,
+          880
+        ],
+        "label_anchor": [
+          980,
+          428
+        ],
+        "reason": "Alena standing in front of the left part of the painted backdrop"
+      }
+    },
+    "npcs": {
+      "S24.FOTO": {
+        "variant": "standing",
+        "feet": [
+          980,
+          792
+        ],
+        "scale": 0.688,
+        "reason": "standing photographer (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S24.to_S21": {
+        "rect": [
+          314,
+          345,
+          180,
+          420
+        ],
+        "interaction_point": [
+          404,
+          822
+        ],
+        "label_anchor": [
+          404,
+          337
+        ],
+        "reason": "glazed entrance door to Obchodna"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S24"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S24.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:22:48"
+  }
+}

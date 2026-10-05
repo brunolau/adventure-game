@@ -1,0 +1,143 @@
+{
+ "room": "S60",
+ "notes": "Natural S60 (bg_natural/S60.webp), the classroom with the technical exhibition after lessons, 7 December 1982, overcast. Light snow falling outside the ribbon window, children in winter coats crossing the snowy sports yard far away now and then, crows flying over the bare trees, a ceiling fluorescent tube flickering (room ambience: chalk, a radio, rustling drawings).",
+ "layers": [
+  {
+   "id": "snow_outside",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    1536,
+    190,
+    384,
+    40
+   ],
+   "count": 60,
+   "size": [
+    2.5,
+    5
+   ],
+   "speed_y": [
+    22,
+    40
+   ],
+   "speed_x": [
+    -8,
+    6
+   ],
+   "wind": 5,
+   "clip": [
+    1536,
+    190,
+    384,
+    540
+   ],
+   "color": "#ffffff"
+  },
+  {
+   "id": "kids_on_yard",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1640,
+     602
+    ],
+    [
+     1960,
+     612
+    ]
+   ],
+   "speed_px_s": 45,
+   "scale": 0.08,
+   "modulate": "#2e3448",
+   "alpha": 0.7,
+   "flock": 2,
+   "flock_spread": [
+    22,
+    5
+   ],
+   "bob_px": 1.2,
+   "direction": "random",
+   "every_s": [
+    16,
+    34
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "mask": "S60/natural/window_mask.webp"
+  },
+  {
+   "id": "crows",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     1950,
+     290
+    ],
+    [
+     1760,
+     250
+    ],
+    [
+     1500,
+     270
+    ]
+   ],
+   "speed_px_s": 150,
+   "scale": 0.055,
+   "modulate": "#2a2a2e",
+   "flock": 3,
+   "flock_spread": [
+    50,
+    20
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    4,
+    10
+   ],
+   "clip": [
+    1536,
+    190,
+    384,
+    540
+   ]
+  },
+  {
+   "id": "tube_flicker",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "pos": [
+    1500,
+    48
+   ],
+   "size": [
+    230,
+    90
+   ],
+   "texture": "builtin:glow",
+   "color": "#f4fbff",
+   "min": 0.0,
+   "max": 0.28,
+   "every_s": [
+    7,
+    18
+   ]
+  }
+ ]
+}

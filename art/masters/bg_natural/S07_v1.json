@@ -1,0 +1,1425 @@
+{
+  "room": "S07",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020707,
+  "usd": 0.15,
+  "started": "2026-10-05T10:12:47",
+  "spend_log_asset": "bg_natural/S07/S07_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S07.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the bus stop at Triangel on the long straight road at the edge of Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Images 2 and 3 are dashcam photos of this real stop: a straight two-lane asphalt road with white edge and centre lines running into the distance, a bus lay-by with a raised light-concrete platform, small shelters with a red steel frame, glass walls and a curved white translucent roof, wide grass verges with young trees, low modern flat-roofed white business buildings behind the grass, red-roofed family houses and the blue wooded hills of the Little Carpathians on the horizon. Paint this real stop; the community notice board and its notices are invented.\n\nBrief: a pavement with the bus-stop shelter and a community notice board with notices about neighbourly help, online school and a postponed meeting; homes in the background. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, long soft shadows, the young trees in yellow and orange autumn leaves, a few fallen leaves on the paving.\n\nCamera: standing on the stop platform, about 2.2 m high, looking along the road, turned slightly to the right towards the shelter; vertical lines stay vertical; the horizon is at y 360 and the road vanishes at x ~785 on it. Keep this exact geometry from the sketch: the road and the lay-by on the left running straight into the distance; the platform's kerb running from the bottom edge at x ~300 to the vanishing point; the shelter on the platform with its near glass side panel facing the camera (frame posts on the paving at y ~740 in front, ~628 at the back; roof at y ~300-325); the notice board on its two posts right of the shelter (legs on the ground at y ~795, panel y 420-618, small roof at y 380); the grass verge on the right with young trees and the white business building far behind (y 250-411).\n\nWhat the sketch blocks are: sky with a few clouds; the distant hills, fields and small red roofs of family houses on the horizon; the low white flat-roofed business building with ribbon windows and a dark grey stair tower far right behind the grass; the asphalt of the bus lay-by and the two-lane road with a white edge line and a dashed centre line, a grass verge and young autumn trees along its far side; the light concrete paver platform and pavement (walkable, see below) with a light kerb edge along the lay-by; a bus-stop pole with a plain blue sign showing only a white bus pictogram; the shelter: red steel frame, glass back wall and side panels, a wooden bench inside, a curved white translucent roof; the notice board right of it on two wooden posts; the wide grass verge on the right with young yellow trees; a trodden earth path leaving the pavement across the grass to the right edge.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1568-1824, y 412-624 of the 1920x1080 frame (82-95 % from the left, 38-58 % from the top): the community notice board: a weathered wooden frame with a cork panel under a small wooden roof, full of pinned paper notices of different sizes (illegible scribbles), one notice with a small square QR-code-like pattern, drawing pins.\n2. the block of the layout sketch at x 1125-1257, y 420-592 of the 1920x1080 frame (59-65 % from the left, 39-55 % from the top): a colourful poster of a dancing couple (a dance course) stuck on the inside of the shelter's near glass side panel, no readable text.\n3. the block of the layout sketch at x 1500-1584, y 466-590 of the 1920x1080 frame (78-82 % from the left, 43-55 % from the top): a big old magnifying glass with a round brass-rimmed lens and a wooden handle, hanging on a string from the notice board's left post at reading height.\nThe platform and pavement continuing along the road into the distance is the area of the layout sketch at x 680-910, y 515-581 of the 1920x1080 frame (35-47 % from the left, 48-54 % from the top); the trodden path out of the right edge is the area of the layout sketch at x 1855-1920, y 860-1015 of the 1920x1080 frame (97-100 % from the left, 80-94 % from the top).\n\nWalkable floor: the band at x 396-1920, y 575-1015 of the 1920x1080 frame (21-100 % from the left, 53-94 % from the top) is the light concrete paver platform and pavement and the start of the trodden path - one continuous flat walking surface with no step, no edge and no change of level inside it, and nothing standing on it: no bins, no benches, no poles, no planters, no bags, no people. Only light, long shadows and a few fallen leaves.\nNPC zone at x 1318-1478, y 462-840 of the 1920x1080 frame (69-77 % from the left, 43-78 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 838. (Jozef, an elderly neighbour, will stand there on the pavement between the shelter and the notice board.)\n\nFiction rules: the notice board and all notices are invented: no real transport-company or municipal logos, no line numbers, no timetable text, no stop name, no business signs or logos on the buildings, no house numbers. Any paper shows only illegible scribbles, no digits. No buses, no cars, no people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S07_sketch.png (rendered from art/prompts/natural/S07.sketch.json, model geometry)",
+    "art/source/rooms/S07/triangel_stop_kartaview_281.jpg",
+    "art/source/rooms/S07/triangel_stop_kartaview_277.jpg",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S07 natural blocking (src/game/data/blocking/S07.json): bus stop 'Triangel' on the long straight road at the edge of Cierna Voda; camera on the platform ~2.2 m, yaw 6 deg right of the road, horizon y 360, vanishing point x 785; generated from a pinhole model (painter scratchpad tools/persp.py).",
+    "background": "#a8c8e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          380
+        ],
+        "fill": "#a8c8e6",
+        "note": "sky with a few white clouds"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            352
+          ],
+          [
+            300,
+            330
+          ],
+          [
+            620,
+            318
+          ],
+          [
+            900,
+            326
+          ],
+          [
+            1200,
+            338
+          ],
+          [
+            1400,
+            346
+          ],
+          [
+            1400,
+            372
+          ],
+          [
+            0,
+            372
+          ]
+        ],
+        "fill": "#8ea3b4",
+        "note": "distant blue-grey wooded hills (Little Carpathians) on the horizon"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          366,
+          1920,
+          40
+        ],
+        "fill": "#9cae6a",
+        "note": "far fields"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            380,
+            372
+          ],
+          [
+            430,
+            346
+          ],
+          [
+            480,
+            372
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": "small red roofs of distant family houses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          372,
+          100,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": ""
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            500,
+            374
+          ],
+          [
+            560,
+            342
+          ],
+          [
+            620,
+            374
+          ]
+        ],
+        "fill": "#b9502c",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          500,
+          374,
+          120,
+          20
+        ],
+        "fill": "#efe9dc",
+        "note": ""
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1364,
+            249
+          ],
+          [
+            2148,
+            255
+          ],
+          [
+            2148,
+            408
+          ],
+          [
+            1364,
+            411
+          ]
+        ],
+        "fill": "#e9ebe8",
+        "note": "low modern flat-roofed white business-park building with ribbon windows"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1364,
+            249
+          ],
+          [
+            1540,
+            251
+          ],
+          [
+            1540,
+            410
+          ],
+          [
+            1364,
+            411
+          ]
+        ],
+        "fill": "#7d8388",
+        "note": "its dark grey stair tower"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1562,
+            315
+          ],
+          [
+            2148,
+            316
+          ],
+          [
+            2148,
+            338
+          ],
+          [
+            1562,
+            337
+          ]
+        ],
+        "fill": "#7b8a96",
+        "note": "ribbon window"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1562,
+            265
+          ],
+          [
+            2148,
+            268
+          ],
+          [
+            2148,
+            290
+          ],
+          [
+            1562,
+            287
+          ]
+        ],
+        "fill": "#7b8a96",
+        "note": "ribbon window"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1997,
+            1040
+          ],
+          [
+            802,
+            369
+          ],
+          [
+            1920,
+            362
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#8fb05a",
+        "note": "wide grass verge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -2000,
+            1080
+          ],
+          [
+            129,
+            1317
+          ],
+          [
+            779,
+            369
+          ],
+          [
+            684,
+            369
+          ],
+          [
+            -6582,
+            1032
+          ]
+        ],
+        "fill": "#7f8183",
+        "note": "asphalt: bus lay-by and two-lane road running straight into the distance"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -3250,
+            1128
+          ],
+          [
+            737,
+            369
+          ],
+          [
+            658,
+            369
+          ],
+          [
+            -16933,
+            1652
+          ]
+        ],
+        "fill": "#93ad5a",
+        "note": "grass verge on the far side of the road"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -584,
+            1026
+          ],
+          [
+            766,
+            369
+          ],
+          [
+            765,
+            369
+          ],
+          [
+            -650,
+            1028
+          ]
+        ],
+        "fill": "#e9e9e2",
+        "note": "white edge line of the through lane"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -210,
+            639
+          ],
+          [
+            -25,
+            587
+          ],
+          [
+            -42,
+            588
+          ],
+          [
+            -230,
+            639
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            194,
+            526
+          ],
+          [
+            264,
+            506
+          ],
+          [
+            254,
+            506
+          ],
+          [
+            182,
+            526
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            365,
+            478
+          ],
+          [
+            402,
+            468
+          ],
+          [
+            394,
+            468
+          ],
+          [
+            356,
+            478
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            459,
+            452
+          ],
+          [
+            481,
+            445
+          ],
+          [
+            476,
+            445
+          ],
+          [
+            452,
+            452
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            519,
+            435
+          ],
+          [
+            534,
+            431
+          ],
+          [
+            529,
+            431
+          ],
+          [
+            513,
+            435
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            560,
+            423
+          ],
+          [
+            571,
+            420
+          ],
+          [
+            567,
+            420
+          ],
+          [
+            555,
+            423
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            590,
+            415
+          ],
+          [
+            598,
+            412
+          ],
+          [
+            595,
+            412
+          ],
+          [
+            586,
+            415
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            613,
+            408
+          ],
+          [
+            620,
+            406
+          ],
+          [
+            616,
+            406
+          ],
+          [
+            610,
+            408
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            631,
+            403
+          ],
+          [
+            636,
+            402
+          ],
+          [
+            634,
+            402
+          ],
+          [
+            628,
+            403
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            646,
+            399
+          ],
+          [
+            650,
+            398
+          ],
+          [
+            648,
+            398
+          ],
+          [
+            643,
+            399
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            658,
+            396
+          ],
+          [
+            662,
+            395
+          ],
+          [
+            659,
+            395
+          ],
+          [
+            656,
+            396
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            668,
+            393
+          ],
+          [
+            671,
+            392
+          ],
+          [
+            669,
+            392
+          ],
+          [
+            666,
+            393
+          ]
+        ],
+        "fill": "#ecece6",
+        "note": "dashed centre line"
+      },
+      {
+        "type": "rect",
+        "box": [
+          -649,
+          221,
+          21,
+          361
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -783,
+          -75,
+          288,
+          394
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          -181,
+          266,
+          14,
+          243
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -271,
+          67,
+          194,
+          265
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          78,
+          291,
+          10,
+          178
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          12,
+          146,
+          142,
+          194
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          253,
+          308,
+          8,
+          134
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          204,
+          199,
+          106,
+          146
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          320,
+          6,
+          102
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          343,
+          237,
+          80,
+          111
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          476,
+          329,
+          4,
+          78
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          447,
+          266,
+          62,
+          85
+        ],
+        "fill": "#9aa046",
+        "note": "young roadside tree on the far side, yellow-green autumn leaves"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1666,
+          308,
+          15,
+          255
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1571,
+          100,
+          204,
+          278
+        ],
+        "fill": "#c9a33a",
+        "note": "young tree on the grass, autumn yellow"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1395,
+          324,
+          10,
+          176
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1330,
+          180,
+          140,
+          192
+        ],
+        "fill": "#c9a33a",
+        "note": "young tree on the grass, autumn yellow"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1239,
+          333,
+          7,
+          131
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1190,
+          226,
+          104,
+          143
+        ],
+        "fill": "#c9a33a",
+        "note": "young tree on the grass, autumn yellow"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1137,
+          339,
+          6,
+          102
+        ],
+        "fill": "#5a4632",
+        "note": "trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1100,
+          256,
+          80,
+          111
+        ],
+        "fill": "#c9a33a",
+        "note": "young tree on the grass, autumn yellow"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            129,
+            1317
+          ],
+          [
+            779,
+            369
+          ],
+          [
+            802,
+            369
+          ],
+          [
+            1997,
+            1040
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            300,
+            1080
+          ]
+        ],
+        "fill": "#c9c3b6",
+        "note": "light concrete paver platform and pavement (walk band)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            129,
+            1317
+          ],
+          [
+            701,
+            483
+          ],
+          [
+            712,
+            483
+          ],
+          [
+            219,
+            1312
+          ]
+        ],
+        "fill": "#b9b2a4",
+        "note": "platform kerb edge (boundary, light)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1640,
+            845
+          ],
+          [
+            1920,
+            830
+          ],
+          [
+            1920,
+            1015
+          ],
+          [
+            1760,
+            1015
+          ]
+        ],
+        "fill": "#b9a682",
+        "note": "trodden earth path across the grass towards the park (exit right)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          638,
+          269,
+          8,
+          377
+        ],
+        "fill": "#8c9094",
+        "note": "bus-stop pole"
+      },
+      {
+        "type": "rect",
+        "box": [
+          616,
+          269,
+          52,
+          46
+        ],
+        "fill": "#2c5fa8",
+        "note": "blue sign with a white bus pictogram only (no text)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1046,
+            741
+          ],
+          [
+            1299,
+            735
+          ],
+          [
+            1150,
+            626
+          ],
+          [
+            970,
+            629
+          ]
+        ],
+        "fill": "#bdb6a8",
+        "note": "shelter floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1299,
+            692
+          ],
+          [
+            1150,
+            596
+          ],
+          [
+            1150,
+            342
+          ],
+          [
+            1299,
+            334
+          ]
+        ],
+        "fill": "#b8d0d8",
+        "note": "glass back wall of the shelter"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1055,
+            697
+          ],
+          [
+            1291,
+            692
+          ],
+          [
+            1291,
+            334
+          ],
+          [
+            1055,
+            334
+          ]
+        ],
+        "fill": "#c4d8de",
+        "note": "glass side panel at the near end (faces the camera)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1219,
+            650
+          ],
+          [
+            1110,
+            577
+          ],
+          [
+            1152,
+            577
+          ],
+          [
+            1276,
+            649
+          ]
+        ],
+        "fill": "#8a5a3a",
+        "note": "bench inside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1041,
+          317,
+          10,
+          424
+        ],
+        "fill": "#c8302a",
+        "note": "red steel frame post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1294,
+          317,
+          10,
+          418
+        ],
+        "fill": "#c8302a",
+        "note": "red steel frame post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          965,
+          329,
+          10,
+          300
+        ],
+        "fill": "#c8302a",
+        "note": "red steel frame post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1145,
+          330,
+          10,
+          296
+        ],
+        "fill": "#c8302a",
+        "note": "red steel frame post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1017,
+            316
+          ],
+          [
+            1335,
+            317
+          ],
+          [
+            1163,
+            330
+          ],
+          [
+            943,
+            330
+          ]
+        ],
+        "fill": "#c8302a",
+        "note": "red roof frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1017,
+            307
+          ],
+          [
+            1190,
+            264
+          ],
+          [
+            1335,
+            299
+          ],
+          [
+            1163,
+            318
+          ],
+          [
+            1063,
+            294
+          ],
+          [
+            943,
+            324
+          ]
+        ],
+        "fill": "#eef0ee",
+        "note": "curved white translucent roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1132,
+            584
+          ],
+          [
+            1249,
+            582
+          ],
+          [
+            1249,
+            428
+          ],
+          [
+            1132,
+            429
+          ]
+        ],
+        "fill": "#e35a8a",
+        "note": "dance-course poster on the near side glass"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1587,
+          380,
+          12,
+          417
+        ],
+        "fill": "#6b4a2e",
+        "note": "board post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1793,
+          380,
+          12,
+          411
+        ],
+        "fill": "#6b4a2e",
+        "note": "board post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1574,
+            618
+          ],
+          [
+            1817,
+            614
+          ],
+          [
+            1817,
+            419
+          ],
+          [
+            1574,
+            420
+          ]
+        ],
+        "fill": "#b98a52",
+        "note": "community notice board panel with pinned notices"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1555,
+            400
+          ],
+          [
+            1836,
+            399
+          ],
+          [
+            1836,
+            370
+          ],
+          [
+            1555,
+            370
+          ]
+        ],
+        "fill": "#5a3e28",
+        "note": "small board roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1519,
+            579
+          ],
+          [
+            1569,
+            579
+          ],
+          [
+            1569,
+            479
+          ],
+          [
+            1519,
+            480
+          ]
+        ],
+        "fill": "#d8c27a",
+        "note": "big magnifying glass hanging on a string from the board's left post"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S07.json",
+  "blocking": {
+    "version": 1,
+    "room": "S07",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the roadside stop on the long straight road at the edge of Cierna Voda)",
+    "note": "Bus stop 'Chorvatsky Grob, Triangel' on the long straight road at the edge of Cierna Voda (KartaView 11670418 frames 277/281): camera ~2.2 m on the stop platform, turned 6 deg right of the road, horizon y 360, vanishing point x ~785; pinhole model f 1663 px, so s(y) = (y - 360) / 655 like S03/S05 (~300 px per metre at y 1015, ~170 at y 735). The two-lane road and the bus lay-by run into the distance on the left; the red-framed glass shelter stands on the platform's back edge 9.5-13.5 m away (its near glass side panel faces the camera, the dance poster on it); the community notice board stands on the pavement's outer edge right of the shelter, 8 m away, facing the pavement, with a big magnifier hanging from its left post on a string; Jozef stands on the pavement between the shelter and the board.",
+    "background": "bg_natural/S07.webp",
+    "walk_polygon": [
+      [
+        396,
+        1015
+      ],
+      [
+        656,
+        578
+      ],
+      [
+        913,
+        575
+      ],
+      [
+        1017,
+        750
+      ],
+      [
+        1330,
+        744
+      ],
+      [
+        1461,
+        739
+      ],
+      [
+        1690,
+        868
+      ],
+      [
+        1920,
+        860
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      575,
+      1015
+    ],
+    "actor_scale": [
+      0.33,
+      1.0
+    ],
+    "spawn": [
+      820,
+      930
+    ],
+    "hotspots": {
+      "S07.board": {
+        "rect": [
+          1568,
+          412,
+          256,
+          212
+        ],
+        "interaction_point": [
+          1653,
+          887
+        ],
+        "label_anchor": [
+          1696,
+          402
+        ],
+        "reason": "community notice board standing on the pavement's outer edge right of the shelter, facing the pavement"
+      },
+      "S07.ambient 1": {
+        "rect": [
+          1125,
+          420,
+          132,
+          172
+        ],
+        "interaction_point": [
+          990,
+          790
+        ],
+        "label_anchor": [
+          1191,
+          410
+        ],
+        "reason": "dance-course poster stuck on the shelter's near glass side panel (faces the camera)"
+      },
+      "S07.ambient 2": {
+        "rect": [
+          1500,
+          466,
+          84,
+          124
+        ],
+        "interaction_point": [
+          1545,
+          880
+        ],
+        "label_anchor": [
+          1542,
+          456
+        ],
+        "reason": "big magnifying glass hanging on a string from the notice board's left post"
+      },
+      "S07.JOZEF": {
+        "rect": [
+          1318,
+          462,
+          160,
+          378
+        ],
+        "interaction_point": [
+          1235,
+          852
+        ],
+        "label_anchor": [
+          1398,
+          452
+        ],
+        "reason": "Jozef standing on the pavement between the shelter and the notice board"
+      }
+    },
+    "npcs": {
+      "S07.JOZEF": {
+        "variant": "standing",
+        "feet": [
+          1397,
+          838
+        ],
+        "scale": 0.73,
+        "reason": "docs/DECISIONS.md item 2: Jozef stands at the notice board (standing sprite, magnifier in hand)"
+      }
+    },
+    "exits": {
+      "S07.to_S03": {
+        "rect": [
+          680,
+          515,
+          230,
+          66
+        ],
+        "interaction_point": [
+          785,
+          598
+        ],
+        "label_anchor": [
+          795,
+          505
+        ],
+        "reason": "the platform and pavement continue along the road into the distance, towards the village (map transition)"
+      },
+      "S07.to_S08": {
+        "rect": [
+          1855,
+          860,
+          65,
+          155
+        ],
+        "interaction_point": [
+          1858,
+          935
+        ],
+        "label_anchor": [
+          1728,
+          850
+        ],
+        "reason": "a trodden path leaves the pavement across the grass out of the right edge, towards the park and the pond"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S07.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:13:30"
+  }
+}

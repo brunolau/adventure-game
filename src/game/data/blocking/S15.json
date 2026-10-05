@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "room": "S15",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); L_CABINET family base for S54 (2020) and S63 (1982)",
+  "note": "Physics cabinet of ZS Sokolikova 2, upper floor of the SW wing (type-reference, register S15). One-point perspective, camera 2.2 m high, focal 1500 px, horizon y 352, looking at the back wall (parallel to the picture) at 7.5 m: floor line y 792 (200 px per metre); side walls X -3.3 / +3.3 m with a door each (left: corridor to the entrance hall S13, right: the small school-radio room S16). Back wall: three tall glass-fronted timber cupboards on the left (front at 7.05 m, floor y 820; the worn left hinge = cupboard_left_hinge), the pinned ZVON drawing, the SW window with its sill (glass prism) on the right. The white service bench stands in the middle (5.9-6.6 m, floor y 852-911) with the supplies and, on its right end, the old school chronicle on a small book stand; the floor behind the bench is not walkable, so no occluder is needed. Perspective s(y) = (y - 352) / 663: 0.72 at the back of the walk area, 1.0 at y 1015. After Q9C (variant layer S15_jana_workbench) Jana's small volunteer electronics workbench stands in the back right corner between the radiator and the right door (patch from master v3, a local fix of v2); its front legs stand on the back edge of the walk area.",
+  "background": "bg_natural/S15.webp",
+  "anchors": {
+    "cupboard_left_hinge": [
+      284,
+      480
+    ],
+    "window": [
+      1390,
+      362
+    ],
+    "service_table": [
+      706,
+      695
+    ]
+  },
+  "walk_polygon": [
+    [
+      15,
+      982
+    ],
+    [
+      290,
+      830
+    ],
+    [
+      690,
+      830
+    ],
+    [
+      692,
+      922
+    ],
+    [
+      1222,
+      922
+    ],
+    [
+      1222,
+      830
+    ],
+    [
+      1610,
+      830
+    ],
+    [
+      1905,
+      988
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    830,
+    1015
+  ],
+  "actor_scale": [
+    0.72,
+    1.0
+  ],
+  "spawn": [
+    960,
+    968
+  ],
+  "hotspots": {
+    "S15.register": {
+      "rect": [
+        1050,
+        585,
+        160,
+        105
+      ],
+      "interaction_point": [
+        1150,
+        945
+      ],
+      "label_anchor": [
+        1130,
+        722
+      ],
+      "reason": "the old school chronicle (with the donation record) lying open on a small wooden book stand on the right end of the service bench"
+    },
+    "S15.ambient 1": {
+      "rect": [
+        565,
+        408,
+        112,
+        106
+      ],
+      "interaction_point": [
+        620,
+        846
+      ],
+      "label_anchor": [
+        621,
+        398
+      ],
+      "reason": "big optical eye model on the middle shelf of the middle glass cupboard"
+    },
+    "S15.ambient 2": {
+      "rect": [
+        1205,
+        565,
+        140,
+        58
+      ],
+      "interaction_point": [
+        1268,
+        850
+      ],
+      "label_anchor": [
+        1238,
+        545
+      ],
+      "reason": "glass prism on the window sill splitting the sun into a small rainbow"
+    },
+    "S15.JANA95": {
+      "rect": [
+        385,
+        476,
+        110,
+        410
+      ],
+      "interaction_point": [
+        562,
+        905
+      ],
+      "label_anchor": [
+        440,
+        466
+      ],
+      "reason": "Jana (young adult) standing in front of the left cupboard, holding her binder"
+    }
+  },
+  "npcs": {
+    "S15.JANA95": {
+      "variant": "standing",
+      "feet": [
+        440,
+        886
+      ],
+      "z": "auto",
+      "reason": "standing (binder; after Q9C the q9c variant adds a multimeter via data/ambient/actors.json variants_after)"
+    }
+  },
+  "exits": {
+    "S15.to_S13": {
+      "rect": [
+        55,
+        395,
+        135,
+        560
+      ],
+      "interaction_point": [
+        190,
+        935
+      ],
+      "label_anchor": [
+        190,
+        385
+      ],
+      "reason": "door in the left wall to the corridor (stairs down to the entrance hall)"
+    },
+    "S15.to_S16": {
+      "rect": [
+        1730,
+        395,
+        135,
+        560
+      ],
+      "interaction_point": [
+        1730,
+        935
+      ],
+      "label_anchor": [
+        1740,
+        385
+      ],
+      "reason": "door in the right wall to the small school-radio room"
+    }
+  },
+  "state_patches": [],
+  "variant_layers": {
+    "variants/S15_jana_workbench.webp": {
+      "texture": "variants_natural/S15_jana_workbench.webp",
+      "pos": [
+        1430,
+        540
+      ]
+    }
+  }
+}

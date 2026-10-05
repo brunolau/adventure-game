@@ -1,0 +1,36 @@
+{
+  "kind": "fix",
+  "from_version": 3,
+  "box_game_px": [
+    1095.0,
+    455.0,
+    165.0,
+    195.0
+  ],
+  "instruction": "Remove the brown paper grocery bag and the vegetables from the blue plastic crate on the small white table: the crate is now empty, its empty inside and slatted sides visible. Behind it the shop window glass, the shelves of groceries and the light stone window ledge continue exactly as around it. Keep the crate itself, the table and the ledge exactly where they are.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020406,
+  "usd": 0.15,
+  "scope": "bg_natural/S04/",
+  "spend_log_asset": "bg_natural/S04/S04_v4_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the brown paper grocery bag and the vegetables from the blue plastic crate on the small white table: the crate is now empty, its empty inside and slatted sides visible. Behind it the shop window glass, the shelves of groceries and the light stone window ledge continue exactly as around it. Keep the crate itself, the table and the ledge exactly where they are. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S04_v3.png",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S04_S04_v4_fix_raw.png",
+  "started": "2026-10-05T10:03:12",
+  "model_description": "",
+  "parent_prompt": null,
+  "room": "S04",
+  "version": 4,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

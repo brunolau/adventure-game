@@ -1,0 +1,274 @@
+{
+  "room": "S54",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S15",
+  "from_version": 2,
+  "from_master": "art/masters/bg_natural/S15_v2.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1228651860,
+  "usd": 0.15,
+  "scope": "bg_natural/S54/",
+  "spend_log_asset": "bg_natural/S54/S54_v1_derive",
+  "started": "2026-10-05T10:45:31",
+  "prompt_file": "art/prompts/natural/S54.era.txt",
+  "blocking_file": "src/game/data/blocking/S54.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Fyzikálny kabinet in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'cupboard_left_hinge' stays exactly at x 284, y 480 (15 % from the left, 44 % from the top). The fixed landmark 'window' stays exactly at x 1390, y 362 (72 % from the left, 34 % from the top). The fixed landmark 'service_table' stays exactly at x 706, y 695 (37 % from the left, 64 % from the top).\n\nEra changes: the same physics cabinet 25 years later, on Thursday 29 October 2020 at about half past three in the afternoon, during the pandemic. Outside the window the forecourt maples are in autumn colours (yellow and orange leaves, some bare twigs) under a pale autumn sky; the low autumn sun still comes in through the window, paler and cooler than in June. The old timber window frame is replaced by a plain white plastic window in exactly the same opening, its right casement tilted open for airing. The timber cupboards are the same but older and more worn; the scuff on the leftmost cupboard's left hinge strip is larger and darker. The ZVON drawing is gone: in its place hangs a plain printed sheet with hand-washing pictograms (no text). The walls keep their plain soft yellow paint and dado, a little more scuffed. The two old bench power supplies are gone from the bench: instead its left half holds Jana's call laptop place (keep that spot free, see below) and its middle and right part are covered with several grey and black laptops, some closed and stacked, some open with dark screens, and a coiled power cable; on the floor in front of the cupboards nothing. On the top of the cupboards a few cardboard boxes of old teaching aids sorted for loan with paper labels (illegible). Everything built - walls, doors, cupboards, the window opening, the radiator, the white bench, the book stand - stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Servisná kniha z roku 1982' in image 2 (x 1050-1210, y 585-690 of the 1920x1080 frame (55-63 % from the left, 54-64 % from the top)): an old worn A4 service log book from 1982 with a faded brown cardboard cover, lying open on the small wooden book stand on the right end of the bench (where the chronicle lay), its pages with illegible handwriting and a small pencil sketch.\n2. the box labelled 'Stará skriňa' in image 2 (x 256-336, y 300-620 of the 1920x1080 frame (13-18 % from the left, 28-57 % from the top)): the left hinge strip of the leftmost cupboard with its big old worn scuff in the paint.\n3. the box labelled 'Notebook' in image 2 (x 945-1060, y 615-695 of the 1920x1080 frame (49-55 % from the left, 57-64 % from the top)): one open grey laptop standing on the bench, its screen dark with a faint reflection.\nThe door in the left wall stays the box labelled 'exit: Školské zádverie v roku 2020' in image 2 (x 55-190, y 395-955 of the 1920x1080 frame (3-10 % from the left, 37-88 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 830-1015 of the 1920x1080 frame (1-99 % from the left, 77-94 % from the top) stays the open grey-green linoleum floor with nothing standing on it.\nNPC zone at x 760-920, y 568-686 of the 1920x1080 frame (40-48 % from the left, 53-64 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 880. The bench top at the left half of the bench, inside that zone, stays clear and empty (only the white bench top): a laptop with Jana's video call will be placed there later.\n\nFiction rules: no logos and no brand names on the laptops or anywhere, no readable text (labels and notes are illegible scribbles, no digits), no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S15_v2.png (model geometry)",
+    "S15_v2.png + S54 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor cupboard_left_hinge": {
+        "at": [
+          284,
+          480
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.792,
+        "ok": true
+      },
+      "anchor window": {
+        "at": [
+          1390,
+          362
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.444,
+        "ok": true
+      },
+      "anchor service_table": {
+        "at": [
+          706,
+          695
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.589,
+        "ok": true
+      },
+      "exit S54.to_S53": {
+        "at": [
+          122.5,
+          675.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.873,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S54_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S54",
+    "status": "natural re-blocking, L_CABINET 2020 derived from the accepted S15 master v2 (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S15",
+    "note": "Same camera as S15 (L_CABINET): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 792 (200 px per metre), s(y) = (y - 352) / 663; cupboards, window, service bench, both doors identical. 29 October 2020: the cabinet reached by the approved separate service entrance; old teaching aids sorted for loan; the bench partly covered with laptops; Jana takes part by video call: JANA20's laptop sprite stands on the bench top (DECISIONS item 7a, 1.7-2x real laptop size, explicit scale, sill_y 684 = the bench top under the laptop, feet = the floor point under it at y 880 for depth sorting). The 1982 service book lies open on the book stand where the 1995 chronicle lay. The right door (S16) is plain decor in 2020 (no exit).",
+    "background": "bg_natural/S54.webp",
+    "walk_polygon": [
+      [
+        15,
+        982
+      ],
+      [
+        290,
+        830
+      ],
+      [
+        690,
+        830
+      ],
+      [
+        692,
+        922
+      ],
+      [
+        1222,
+        922
+      ],
+      [
+        1222,
+        830
+      ],
+      [
+        1610,
+        830
+      ],
+      [
+        1905,
+        988
+      ],
+      [
+        1905,
+        1015
+      ],
+      [
+        15,
+        1015
+      ]
+    ],
+    "walk_band": [
+      830,
+      1015
+    ],
+    "actor_scale": [
+      0.72,
+      1.0
+    ],
+    "spawn": [
+      960,
+      968
+    ],
+    "hotspots": {
+      "S54.log": {
+        "rect": [
+          1050,
+          585,
+          160,
+          105
+        ],
+        "interaction_point": [
+          1150,
+          945
+        ],
+        "label_anchor": [
+          1130,
+          722
+        ],
+        "reason": "the old service log book from 1982 lying open on the small book stand on the right end of the bench"
+      },
+      "S54.ambient 1": {
+        "rect": [
+          256,
+          300,
+          80,
+          320
+        ],
+        "interaction_point": [
+          330,
+          860
+        ],
+        "label_anchor": [
+          296,
+          290
+        ],
+        "reason": "the left hinge strip of the leftmost cupboard with its old worn scuff (the fixed time mark across 1982/1995/2020)"
+      },
+      "S54.ambient 2": {
+        "rect": [
+          945,
+          615,
+          115,
+          80
+        ],
+        "interaction_point": [
+          1000,
+          945
+        ],
+        "label_anchor": [
+          1002,
+          605
+        ],
+        "reason": "an open laptop among the laptops being prepared for loan, on the bench right of Jana's call laptop"
+      },
+      "S54.JANA20": {
+        "rect": [
+          760,
+          568,
+          160,
+          118
+        ],
+        "interaction_point": [
+          835,
+          950
+        ],
+        "label_anchor": [
+          840,
+          558
+        ],
+        "reason": "Jana on a video call: the laptop sprite standing on the bench top"
+      }
+    },
+    "npcs": {
+      "S54.JANA20": {
+        "variant": "laptop",
+        "feet": [
+          840,
+          880
+        ],
+        "scale": 0.78,
+        "z": "auto",
+        "reason": "docs/DECISIONS.md item 7a: the laptop on the bench (about 1.7-2x real size); after Q9C actors.json variants_after gives laptop_q9c",
+        "sill_y": 684
+      }
+    },
+    "exits": {
+      "S54.to_S53": {
+        "rect": [
+          55,
+          395,
+          135,
+          560
+        ],
+        "interaction_point": [
+          190,
+          935
+        ],
+        "label_anchor": [
+          205,
+          385
+        ],
+        "reason": "door in the left wall to the corridor and the entrance hall (same as S15.to_S13)"
+      }
+    },
+    "state_patches": [],
+    "anchors": {
+      "cupboard_left_hinge": [
+        284,
+        480
+      ],
+      "window": [
+        1390,
+        362
+      ],
+      "service_table": [
+        706,
+        695
+      ]
+    },
+    "family_base": "S15"
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S54.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:46:08"
+  }
+}

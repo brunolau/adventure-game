@@ -1,0 +1,145 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Photo studio on Obchodna seen from the back towards its street front: one-point box, camera ~2.4 m, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling line y 198. Perspective s(y) = (y - 300) / 715. Entrance door and shop window to Obchodna on the left, the framed family portrait on the plain wall, the painted backdrop with the armchair and the studio lamp in the middle (Alena stands in front of the backdrop), the drying lines with prints above the work table on the right, the red-lit darkroom doorway in the right side wall (outside the walk area).",
+ "background": "bg_natural/S24.webp",
+ "walk_polygon": [
+  [
+   312,
+   785
+  ],
+  [
+   1085,
+   785
+  ],
+  [
+   1090,
+   818
+  ],
+  [
+   1340,
+   818
+  ],
+  [
+   1345,
+   802
+  ],
+  [
+   1660,
+   802
+  ],
+  [
+   1900,
+   975
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   975
+  ]
+ ],
+ "walk_band": [
+  785,
+  1015
+ ],
+ "actor_scale": [
+  0.68,
+  1.0
+ ],
+ "spawn": [
+  410,
+  890
+ ],
+ "hotspots": {
+  "S24.ambient 1": {
+   "rect": [
+    737,
+    366,
+    140,
+    136
+   ],
+   "interaction_point": [
+    807,
+    850
+   ],
+   "label_anchor": [
+    807,
+    358
+   ],
+   "reason": "large framed family portrait on the plain wall between the window and the backdrop"
+  },
+  "S24.ambient 2": {
+   "rect": [
+    1345,
+    300,
+    270,
+    165
+   ],
+   "interaction_point": [
+    1480,
+    850
+   ],
+   "label_anchor": [
+    1480,
+    292
+   ],
+   "reason": "two drying lines with pegged prints across the wall above the work table"
+  },
+  "S24.FOTO": {
+   "rect": [
+    905,
+    436,
+    150,
+    358
+   ],
+   "interaction_point": [
+    980,
+    880
+   ],
+   "label_anchor": [
+    980,
+    428
+   ],
+   "reason": "Alena standing in front of the left part of the painted backdrop"
+  }
+ },
+ "npcs": {
+  "S24.FOTO": {
+   "variant": "standing",
+   "feet": [
+    980,
+    792
+   ],
+   "scale": 0.688,
+   "reason": "standing photographer (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S24.to_S21": {
+   "rect": [
+    314,
+    345,
+    180,
+    420
+   ],
+   "interaction_point": [
+    404,
+    822
+   ],
+   "label_anchor": [
+    404,
+    337
+   ],
+   "reason": "glazed entrance door to Obchodna"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S24"
+}

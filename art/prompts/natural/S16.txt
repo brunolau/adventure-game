@@ -1,0 +1,27 @@
+# S16 Miestnosť školského rozhlasu (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S16.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S16.sketch.json (one-point perspective, camera 2.04 m, f 1000, horizon y 400, back wall floor line y 808).
+# Style image = the accepted natural S15 (next room, same school, same light and palette).
+# Owner feedback 2026-10-05: the school walls in 1982/1995 were one plain yellowish colour (the opposite wing seen across the atrium).
+#refs: art/source/rooms/S16/small_room_window_brno_reckovice.jpg ; art/source/rooms/S16/tesla_audio_mixer_olomouc.jpg ; art/source/rooms/S16/tesla_sp210_cassette_deck.jpg
+#style: src/game/assets/bg_natural/S15.webp
+Place: the small school-radio room of ZŠ Sokolíkova 2 in Bratislava-Dúbravka (a typified Czechoslovak school opened in 1974), whose window looks onto the school's enclosed inner atrium. Image 2 is a real small room of a Czechoslovak school of the period (an old double timber window, a radiator under it, a desk); image 3 is a real Czechoslovak 1980s audio mixing desk (blue metal console with faders, knobs and a VU meter); image 4 is a real Czechoslovak 1980s cassette deck. Paint the room, the console and the deck from them, but WITHOUT any brand name or logo on the devices (no TESLA lettering) and not the photos' cameras, computers or monitors.
+
+Brief: the small school-radio room on Thursday 15 June 1995, late afternoon: a cassette mechanism on the desk, the school-radio console, a socket panel for the patch adapter, a paper list of announcements. A repair is in progress: the deck's top cover plate is unscrewed and lies beside it. The walls are one plain soft yellow colour with a darker yellow-ochre dado (no murals), the upper part of the back wall is covered with white perforated acoustic panels. Soft warm summer daylight comes in through the window from the sunny atrium.
+
+Camera: one-point perspective exactly as in the sketch, a slightly wide lens for a small room. The camera stands at the door side of the room about 2 m high and looks straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 400. Keep this exact geometry from the sketch: the back wall from x 540 to x 1380, its floor line at y 808 and its top edge at y 228; the left wall and the right wall recede towards the centre with their floor lines from (540, 808) and (1380, 808) down to the lower frame corners; the ceiling above. This is a small, intimate room.
+
+What the sketch blocks are, left to right: in the left wall a plain honey wooden door in a brown steel frame. On the back wall: white perforated acoustic panels on the upper left part, a wooden school-radio loudspeaker box high up, the cork board with the paper list, the grey wall connection panel; on the right of the back wall the old white double timber window with a light sill and a white radiator under it; through the glass the school's inner atrium in sunshine: a lawn with a young tree, and across it the opposite wing of the school - a plain, single-colour yellowish rendered facade with two long ribbon window bands with white frames (no murals, no panels). Against the back wall, under the cork board and the panel, the long wooden radio desk: on its left a cassette deck, in the middle the blue mixing console with faders and a VU meter, at its right end a microphone on a desk stand and a few papers. On the right wall two wall shelves full of coloured audio tape boxes. A plain fluorescent fitting on the ceiling. Dark red-brown linoleum floor. No chair.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S16.deck}: a dark grey 1980s cassette deck with a smoky transparent cassette door in front, an audio cassette visible inside; its top cover plate is unscrewed and lies tilted beside it, so the belt-and-capstan mechanism is visible from above; a small screwdriver next to it.
+2. {rect:S16.socket}: a grey metal wall connection panel screwed to the wall, with three round multi-pin audio sockets in a row and small illegible engraved labels.
+3. {rect:S16.ambient 1}: a black microphone on a small round desk stand with a short flexible neck.
+4. {rect:S16.ambient 2}: a cork board with one sheet of paper pinned on it: a handwritten list of announcements in lines of illegible scribbles, one line underlined.
+{npc_zones}
+The door in the left wall is {exit:S16.to_S15}.
+
+Walkable floor: {walk} is the open linoleum floor in front of the desk and under the window - one continuous flat floor with no step, no rug, no change of level, and nothing standing on it: no chair, no boxes, no bins, no cables on the floor. Only light and shadows.
+{anchors}
+
+Fiction rules: the room details are invented. No brand names or logos on any device (no TESLA), no readable labels, no posters with text, no names. Any paper shows only illegible scribbles, no digits. No people, no animals.

@@ -1,0 +1,22 @@
+# S24 Fotoatelier Svetlo (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S24.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S24.sketch.json (photo studio box, camera ~2.4 m, horizon y 300, wall foot y 760).
+#refs: art/source/rooms/S24/type-ref_photo-studio_backdrop_lamp.jpg ; art/source/rooms/S24/type-ref_photo-studio_darkroom_enlarger.jpg ; art/source/rooms/S24/obchodna_street_window-view_2007.jpg
+#style: src/game/assets/bg_natural/S20.webp
+Place: a small old photo studio on Obchodna street in the Old Town of Bratislava. Image 2 is a photo of a real historic small-town photo studio: a painted mottled backdrop cloth hanging from a roller, a carved armchair and a small table in front of it, a big silver studio lamp, a parquet floor: paint the studio corner from it. Image 3 is a real darkroom with an enlarger, trays and a sink: it is the side room seen only through its doorway, lit deep red. Image 4 is the real Obchodna street: old two-storey and three-storey facades, cobbled paving, tram rails and wires - this is what is seen through the shop window and the door glass (no shop signs, no ads, no people).
+
+Brief: an invented photo studio with a side darkroom outside the walkable floor, drying lines with prints, an enlarger and family portraits. Thursday 15 June 1995, a sunny afternoon: warm daylight from the street through the window, the deep red glow of the darkroom's safelight in the side doorway.
+
+Camera: standing at the back of the studio, about 2.4 m high, looking straight at the street front wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 198 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).
+
+What the sketch blocks are, left to right: the left side wall with four framed black-and-white sample portraits; the glazed entrance door in a dark wooden frame; the shop window with a framed portrait displayed on its sill and Obchodna outside; the framed family portrait on a plain cream wall; the tall painted mottled grey-brown backdrop cloth hanging from a wooden roller and flowing onto the floor; a carved wooden armchair with an olive seat standing in front of the backdrop's right part; a big round silver studio lamp on a tall black stand; two drying lines strung across the wall with black-and-white prints held by wooden pegs; below them a work table with a red developing tray and a paper cutter; in the right side wall the open doorway of the darkroom glowing deep red, an enlarger and trays dimly seen inside; a herringbone parquet floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S24.ambient 1}: a large framed black-and-white family portrait: a family group of five posed in their best clothes, every one of them looking in a different direction, none at the camera (simple painted faces).
+2. {rect:S24.ambient 2}: two drying lines one above the other, each with a row of small black-and-white photo prints held by wooden clothes pegs.
+The glazed entrance door is {exit:S24.to_S21}.
+
+Walkable floor: {walk} is the open herringbone parquet floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no tripods, no lamps, no chairs, no boxes, no cables. Only daylight from the window and soft shadows; a faint red glow on the floor near the darkroom doorway.
+{npc_zones} The photographer stands in front of the left part of the painted backdrop.
+
+Fiction rules: the studio "Svetlo" and the photographer are invented: no studio name, no lettering on the window or the door, no brand names on any device, no shop signs outside, no people except the painted faces in the photographs, no animals. Paper shows only illegible scribbles, no digits.

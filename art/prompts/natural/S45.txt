@@ -1,0 +1,25 @@
+# S45 Chodník pri Vrbickom plese (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S45.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S45.sketch.json (north-shore path, view SSE across the lake to Chopok as in the 2015 photo).
+# Style reference: the accepted natural S41 (same day, same light).
+#refs: art/source/rooms/S45/vrbicke-pleso_meadow-path-chopok_2015.jpg ; art/source/rooms/S45/vrbicke-pleso_reeds-chopok_2025-06.jpg ; art/source/rooms/S45/vrbicke-pleso_footbridge-path_2010-06.jpg
+#style: src/game/assets/bg_natural/S41.webp
+Place: Vrbické pleso, a small protected mountain lake at about 1,100 m in Jasná, Demänovská dolina, Low Tatras, Slovakia. Image 2 is a photo of this exact view from the meadow on the north shore: the still dark lake, the dense spruce forest on the far shore and the green Chopok massif with its summit buildings behind. Image 3 shows the lake in June with tall fresh reeds on the near shore and white clouds. Image 4 shows the public footpath along the lake (packed earth and gravel, a rustic log railing). Paint this real place.
+
+Brief: the real Vrbické pleso and the public footpath as the geographic base. Nobody walks into the water. The fictional passive sensor of the Atlas exhibition is a small portable stand on the path, not an intervention on the protected shore. The bench with the ceramic dog belonged to Tamara's travelling repair workshop. Wednesday 6 June 2035, a bright early-summer midday: deep blue sky with white cumulus clouds, fresh green meadow and reeds, dark spruces, crisp sun from the upper left, the lake mirror-calm with soft reflections. No snow at the lake.
+
+Camera: standing on the footpath, about 1.7 m high, looking south-south-east across the lake; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: Chopok rising from x 250 to the right edge with its summit at x ~900, y ~140; the far shore line at y ~525; the lake from y 530 to the near shore at y ~700; reed clumps on the near shore on the left and on the right with the open water between them in the centre; the footpath along the shore from y ~735 to y ~860; meadow grass from the path to the bottom edge.
+
+What the sketch blocks are: sky with cumulus clouds; Chopok (green alpine meadows, dwarf pine, grey rock, a lift line and tiny summit buildings on the top); the dense dark spruce forest of the far shore and the thin green far shoreline; the still dark lake with the reflection of the forest; the open lake surface reflecting sky and Chopok; tall green reed clumps on the near shore left and right; low sedge at the water's edge; the packed-earth footpath; the meadow; leafy rowan branches framing the top-left corner with a slim trunk at the left edge; a big spruce framing the right edge.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S45.bench}: a simple wooden park bench on the path's back edge, seen from behind because it faces the lake; a white glazed ceramic dog figurine sits on the top of its backrest, and a small carved wooden plaque on the backrest reads "DRUHÝ ŽIVOT".
+2. {rect:S45.ambient 1}: the open, mirror-calm lake surface between the reeds, reflecting the sky, the forest and Chopok.
+3. {rect:S45.sensor}: a small portable measuring stand on a slim grey tripod standing on the path's edge: a white weatherproof box with a tiny status light and a small solar panel on top (a discreet, temporary scientific instrument).
+4. {rect:S45.ambient 2}: a wooden trail marker post with a plain yellow arrow board (no text) and the Slovak hiking mark painted on it: a red stripe between two white stripes.
+{npc_zones}
+{exit:S45.to_S42} is where the footpath continues out of the left edge back to the hotel.
+
+Walkable floor: {walk} is the packed-earth footpath and the low meadow grass in front of it - one continuous open ground with no fence, no kerb, no ditch and nothing standing on it: no posts, no stones, no bushes, no people. Only sunlight, soft shadows and a few wildflowers in the grass.
+
+Fiction rules: the sensor stand, the bench plaque and the ceramic dog are fictional props. No other lettering, no information boards with text, no logos. No people, no boats, no animals.

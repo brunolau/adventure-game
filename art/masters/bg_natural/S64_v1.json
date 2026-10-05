@@ -1,0 +1,260 @@
+{
+  "room": "S64",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S56",
+  "from_version": 3,
+  "from_master": "art/masters/bg_natural/S56_v3.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1982664,
+  "usd": 0.15,
+  "scope": "bg_natural/S64/",
+  "spend_log_asset": "bg_natural/S64/S64_v1_derive",
+  "started": "2026-10-05T10:31:18",
+  "prompt_file": "art/prompts/natural/S64.era.txt",
+  "blocking_file": "src/game/data/blocking/S64.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Servisné okno Ota a neskôr Tóna in 2020. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'swallow' stays exactly at x 865, y 647 (45 % from the left, 60 % from the top). The fixed landmark 'window_frame' stays exactly at x 1010, y 437 (53 % from the left, 40 % from the top). The fixed landmark 'sill' stays exactly at x 1010, y 681 (53 % from the left, 63 % from the top).\n\nEra changes: the same window on an early-December afternoon in 1982, cold and calm: pale low winter sun, soft shadows, a thin layer of old snow on the ground beyond the corner, along the foot of the wall and on the far end of the stone sill; bare grey-brown young trees in the school yard beyond the corner, a pale winter sky. The building is only 8 years old:\n- The facade has NO mosaic tiles: the wall, the plinth and the window piers are plain smooth render in ONE warm pale-yellow colour (the plinth a little darker), clean and fresh.\n- All windows are the original 1970s white-painted timber windows (slimmer frames, two casements and two small top panes each), in exactly the same openings. In the service window the RIGHT casement is opened inwards, so the right half of the opening has no glass and shows the dim workshop (shelves, tools, a workbench, a small radio) - the caretaker will be added later as a separate character, so no person is painted; the left casement stays closed with its glass. No birdhouse.\n- On the left end of the stone sill, where the metal swallow ornament stands in 2020, lie instead a sheet of paper with a neat pencil drawing of a swallow, a small piece of grey tin with a swallow outline scratched on it and a small metal file.\n- On the plinth right below the window a fresh patch of plaster, lighter than the wall and still a little damp, with trowel marks.\n- The path along the facade is the same; at its left a child will be added later sitting on a low stool, so keep that part of the path open.\nEverything else built (the opening, the reveal, the stone sill and its top line, the neighbouring window openings, the building corner, the path) stays exactly where it is.\n\nInteractive props of 1982:\n1. the box labelled 'Kovová lastovička' in image 2 (x 785-1020, y 615-705 of the 1920x1080 frame (41-53 % from the left, 57-65 % from the top)): on the left end of the stone sill the pencil drawing of a swallow, the tin blank with the scratched swallow outline and the small file.\n2. the box labelled 'Čerstvá omietka' in image 2 (x 830-1060, y 702-852 of the 1920x1080 frame (43-55 % from the left, 65-79 % from the top)): the fresh, lighter patch of plaster with trowel marks on the plinth below the window.\nThe path continues round the building corner into the school yard at the right edge (the box labelled 'exit: Školský dvor s mladou lipou v roku 1982' in image 2 (x 1856-1920, y 780-1015 of the 1920x1080 frame (97-100 % from the left, 72-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 885-1015 of the 1920x1080 frame (0-100 % from the left, 82-94 % from the top) stays the open concrete path along the facade with nothing standing on it, only light, shadows and a little old snow at its far right.\nNPC zone at x 500-700, y 625-940 of the 1920x1080 frame (26-36 % from the left, 58-87 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's seat (chair, stool or bench) is part of the character sprite: paint only open floor at y 940 in this zone - no chair, stool or bench there. NPC zone at x 1030-1170, y 520-681 of the 1920x1080 frame (54-61 % from the left, 48-63 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character is seen through a window: paint the window sill exactly at y 681 across x 1000-1200; the opening above the sill shows a plain, dim interior, no person.\n\nFiction rules: no readable text, no logos, no house numbers. No people, no animals. Any paper shows only illegible scribbles or the drawing asked for, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S56_v3.png (model geometry)",
+    "S56_v3.png + S64 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor swallow": {
+        "at": [
+          865,
+          647
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.473,
+        "ok": true
+      },
+      "anchor window_frame": {
+        "at": [
+          1010,
+          437
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.974,
+        "ok": true
+      },
+      "anchor sill": {
+        "at": [
+          1010,
+          681
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.726,
+        "ok": true
+      },
+      "exit S64.to_S61": {
+        "at": [
+          1888.0,
+          897.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.841,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S64_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S64",
+    "family_base": "S56",
+    "status": "natural re-blocking, camera family L_WINDOW: derived from the S56 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale and sill line); docs/DECISIONS.md item 2: OTO82 window bust (open window), TONO82 seated on a low stool",
+    "note": "Same L_WINDOW camera as the base S56 (eye 1.7 m, horizon y 503, f ~2000 px, frontal facade 9 m away, 222 px per metre; stone sill top = bust cut line y 681; scale s(y) = (y - 503) / 512). December 1982: the original timber window with its right casement open, Oto (66) working inside behind it; Tono (12) sits outside on a low stool at the left (stool and satchel are part of his sprite); the fresh plaster patch below the window; the yard beyond the corner under thin snow.",
+    "background": "bg_natural/S64.webp",
+    "walk_polygon": [
+      [
+        0,
+        885
+      ],
+      [
+        1920,
+        885
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      885,
+      1015
+    ],
+    "actor_scale": [
+      0.75,
+      1.0
+    ],
+    "spawn": [
+      420,
+      950
+    ],
+    "anchors": {
+      "window_frame": [
+        1010,
+        437
+      ],
+      "swallow": [
+        865,
+        647
+      ],
+      "sill": [
+        1010,
+        681
+      ]
+    },
+    "hotspots": {
+      "S64.ambient 1": {
+        "rect": [
+          785,
+          615,
+          235,
+          90
+        ],
+        "interaction_point": [
+          900,
+          905
+        ],
+        "label_anchor": [
+          880,
+          605
+        ],
+        "reason": "on the left end of the stone sill where the metal swallow will stand: a pencil drawing of a swallow, a tin blank with the outline and a file (anchor swallow)"
+      },
+      "S64.ambient 2": {
+        "rect": [
+          830,
+          702,
+          230,
+          150
+        ],
+        "interaction_point": [
+          960,
+          920
+        ],
+        "label_anchor": [
+          945,
+          862
+        ],
+        "reason": "the fresh, lighter plaster patch on the plinth right below the window"
+      },
+      "S64.TONO82": {
+        "rect": [
+          500,
+          625,
+          200,
+          315
+        ],
+        "interaction_point": [
+          760,
+          950
+        ],
+        "label_anchor": [
+          600,
+          612
+        ],
+        "reason": "Tono (12) seated on a low stool on the path left of the window, facing it"
+      },
+      "S64.OTO82": {
+        "rect": [
+          1030,
+          520,
+          140,
+          161
+        ],
+        "interaction_point": [
+          1150,
+          910
+        ],
+        "label_anchor": [
+          1115,
+          505
+        ],
+        "reason": "Oto (66) inside behind the open right casement, bust cut at the sill"
+      }
+    },
+    "npcs": {
+      "S64.TONO82": {
+        "variant": "seated",
+        "feet": [
+          600,
+          940
+        ],
+        "z": "auto",
+        "reason": "docs/DECISIONS.md item 2: Tono (12) on a low stool outside the window (stool and satchel are in the sprite)"
+      },
+      "S64.OTO82": {
+        "variant": "window_bust",
+        "feet": [
+          1100,
+          843
+        ],
+        "scale": 0.664,
+        "sill_y": 681,
+        "facing": "left",
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: window bust behind the open service window (same sill and place as TONO20 in S56)"
+      }
+    },
+    "exits": {
+      "S64.to_S61": {
+        "rect": [
+          1856,
+          780,
+          64,
+          235
+        ],
+        "interaction_point": [
+          1840,
+          950
+        ],
+        "label_anchor": [
+          1690,
+          770
+        ],
+        "reason": "the path round the building corner into the school yard with the young linden (right edge)"
+      }
+    },
+    "state_patches": []
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S64.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:31:59"
+  }
+}

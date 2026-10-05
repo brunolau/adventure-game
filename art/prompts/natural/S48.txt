@@ -1,0 +1,24 @@
+# S48 Servisný pavilón výstavy Atlas (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S48.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S48.sketch.json (gravel plateau east of the Rotunda, looking west; the pavilion on the right).
+# Style reference: the accepted natural S41 (same day, exterior light).
+#refs: art/source/rooms/S48/chopok-summit_plateau-rotunda-from-east_2016-09.jpg ; art/source/rooms/S48/rotunda-chopok_exterior_2016-09.jpg ; src/game/assets/cutscenes/CS06_1.webp
+#style: src/game/assets/bg_natural/S41.webp
+Place: the summit of Chopok (2,004 m), Low Tatras, Slovakia: the real gravel plateau about 50 m east of the Rotunda. Image 2 is a photo of this exact place seen from the east: the Rotunda (natural-stone base, a red band, a glass drum, a red ring roof) between the long dark wings of the lift stations, an external steel staircase up to the roof, a lift pylon at the left, the grey gravel and rock plateau with paths. Image 3 shows the Rotunda's entrance up close (stone, red band with the lettering ROTUNDA CHOPOK). Image 4 is an approved painting from our game that shows the same Rotunda complex through the pavilion's window: keep its shapes (the long dark station wings left and right, the external steel stairs, the stone base, the glass drum with the red ring). The temporary pavilion of the Atlas exhibition on the right is invented: paint it as a modern modular pavilion of light larch timber and white panels with a flat roof, standing on this real plateau.
+
+Brief: an explicitly invented temporary Atlas pavilion beside the existing summit area, not a real lift machine room and not a secret hotel space; a workstation and isolated archive hardware. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky with white clouds, crisp light, cool air, grey rock and gravel, green dwarf pine and alpine grass patches, white snow patches still lying on the slopes.
+
+Camera: standing on the plateau, about 1.7 m high, looking west at the Rotunda; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the summit complex far back between x 130 and 1180 with its foot at y ~600 - the LONG DARK STATION WINGS on both sides (x 130-560 and x 760-1180, flat roofs at y ~370-385) are as important as the Rotunda between them (stone base x 540-780, y 395-600, red band y ~380, glass drum y 295-380, red ring roof y ~275, entrance doors x 615-705); the steel staircase climbing the front of the left wing to its roof (x 400-550, y 375-600); the gravel path widening from the Rotunda entrance to the bottom edge; the pavilion on the right from x 1200 to the right edge (roof edge y 230, front foot y ~765) with its open service bay at x 1230-1480, the white door at x 1615-1785 and a window at the right.
+
+What the sketch blocks are: the deep blue sky with white clouds; the hazy far ridges of the Low Tatras; the dark station wings, the Rotunda with its stone base, red band (lettering ROTUNDA CHOPOK), glass drum and red ring roof; its entrance doors; the steel staircase up to the roof terrace; a lift pylon at the left; the gravel plateau with scattered rocks, a rocky slope with dwarf pine and snow patches; the packed gravel path; the modular Atlas pavilion (larch cladding, white panels, flat white roof edge) with the open service bay (an isolated archive hardware rack inside), the white door and a window.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S48.terminal}: in the open service bay, a rugged service terminal - a robust grey console with a glowing blue screen and a keyboard - standing on a small steel cart.
+2. {rect:S48.ambient 2}: a sheet of paper taped to the pavilion wall with strips of tape, covered in big handwritten scribbles (illegible, no letters or digits).
+3. {rect:S48.ambient 1}: a bundle of black and orange cables lying on the gravel, running out of the service bay to a small grey junction box.
+{npc_zones}
+{exit:S48.to_S47} is the Rotunda's entrance at the end of the path. {exit:S48.to_S50} is the steel staircase up to the roof terrace. {exit:S48.to_S49} is the pavilion's white door.
+
+Walkable floor: {walk} is the packed gravel path of the plateau - one continuous open ground with nothing standing on it apart from the cables: no rocks, no boulders, no dwarf pine, no bushes, no snow patches, no posts, no signs, no people (rocks, dwarf pine and snow patches only outside it, at the left edge and beside the pavilion). Only sunlight, soft shadows and fine gravel.
+
+Fiction rules: the pavilion and everything in it are fictional; no company or resort logos (no TMR), no brand names; the only lettering is ROTUNDA CHOPOK on the red band; leave out the dragon sculpture on the roof. No people, no animals.

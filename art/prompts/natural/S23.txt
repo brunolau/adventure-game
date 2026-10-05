@@ -1,0 +1,22 @@
+# S23 Archivna studovna (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S23.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S23.sketch.json (reading room box, camera ~2.4 m, horizon y 300, wall foot y 760).
+#refs: art/source/rooms/S23/type-ref_archive-reading-room_desks_maps.jpg ; art/source/rooms/S23/type-ref_wooden-card-catalogue.jpg ; art/source/rooms/S21/kamenne-namestie_view-spitalska_2008.jpg
+#style: src/game/assets/bg_natural/S20.webp
+Place: a small technical reading room of an invented archive in a building on Kamenne namestie, Bratislava. Image 2 is a photo of a real archive reading room (white walls, large framed old maps, wooden desks with desk lamps, tall wooden bookshelves, a dark wooden door): paint the room type, furniture and materials from it, without its people. Image 3 is a real wooden card catalogue with many small drawers, brass handles and label holders. Image 4 is the real view from the square towards Spitalska: old houses with red roofs and a white baroque church tower with a small green cupola - this is what the window shows (without the cars, signs and the BOSCH lettering).
+
+Brief: an invented small technical reading room (no claim about a real archive): a card catalogue, a work desk, the donated papers of M. Hruskova in folders. Thursday 15 June 1995, a sunny afternoon: soft daylight through the window, warm green desk lamps, a quiet orderly room.
+
+Camera: standing at the back of the room, about 2.4 m high, looking straight at the window wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the window wall from the ceiling line at y 198 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).
+
+What the sketch blocks are, left to right: the left side wall with metal shelves of grey archive boxes; the dark wooden door of the room with a brass handle; a big white-framed window with the view of Spitalska; a long wooden reading desk along the window wall with two green banker's lamps, an open folder and papers; a plain white wall with a large framed old map of the region; a tall wooden card catalogue cabinet of many small drawers with brass handles and label holders, archive boxes on top; the right side wall with a wooden bookshelf of bound volumes; two white globe lamps hanging from the ceiling; a light parquet floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S23.ambient 1}: an old wooden-handled rubber stamp standing upright next to a round tin ink pad at the right end of the reading desk.
+2. {rect:S23.ambient 2}: a round wall clock above the door: a white face with clear black hour marks, a black hour hand and a black minute hand (no second hand), a dark rim, no lettering on the face.
+The door is {exit:S23.to_S21}.
+
+Walkable floor: {walk} is the open parquet floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no chairs, no desks, no boxes. Only daylight from the window and soft shadows.
+{npc_zones} The archivist stands in front of this plain white wall below the framed map, beside the card catalogue.
+
+Fiction rules: the reading room and the archive are invented: no institution name, no signs, no lettering on drawers or boxes (label holders show only illegible scribbles), no digits on the clock face, no people, no animals. Paper shows only illegible scribbles, no digits.

@@ -1,0 +1,290 @@
+{
+  "room": "S59",
+  "version": 2,
+  "kind": "derive",
+  "from_room": "S13",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S13_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1527711448,
+  "usd": 0.15,
+  "scope": "bg_natural/S59/",
+  "spend_log_asset": "bg_natural/S59/S59_v2_derive",
+  "started": "2026-10-05T10:03:27",
+  "prompt_file": "art/prompts/natural/S59.era.txt",
+  "blocking_file": "src/game/data/blocking/S59.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Vstupná chodba in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'terrazzo_line' stays exactly at x 960, y 700 (50 % from the left, 65 % from the top). The fixed landmark 'left_window' stays exactly at x 239, y 421 (12 % from the left, 39 % from the top). The fixed landmark 'middle_door' stays exactly at x 960, y 534 (50 % from the left, 49 % from the top).\n\nEra changes: the same entrance hall 13 years earlier, on Tuesday 7 December 1982 at about half past two in the afternoon. The building is only 8 years old: everything looks newer and cleaner, the bronze steel frames of the glazed wall and the honey wooden doors are fresh. Outside the glass it is early December: grey overcast winter light, the forecourt trees are much younger, thinner and completely bare (bare branches only, no leaves), thin patches of snow lie on the lawn. There is NO sunshine at all on this overcast December day: remove every sunbeam and every bright diagonal sun patch from the walls and from the floor of image 1; the hall is lit evenly and softly by the cool grey daylight from the glazed wall and by the ceiling fluorescent tubes, which are switched on; the polished terrazzo shows only soft reflections of the tubes, the doors and the windows. The walls keep the same plain soft yellow paint and darker dado (no murals).\nPeriod decoration: between the caretaker's door and the middle double door hangs a red-framed notice board of the school pioneer organisation (see prop 1); the clock above the middle door stays alone; above the right door and the cloakroom hangs a string of small triangular red paper pennants, each with a little yellow star (no letters, no banner, nothing on the right wall). The caretaker's desk is empty: nothing on it at all (no book, no lamp, no telephone). The cloakroom cages are full of children's dark winter coats, anoraks, knitted hats and scarves on hooks behind the mesh, and the shoe shelf of the bench holds rows of small winter boots instead of slippers. The key cabinet stays. Everything built - walls, doors, door frames, the clock, the ceiling fittings, the doorway and staircase at the right, the terrazzo floor - stays exactly where it is.\n\nInteractive props of 1982:\n1. the box labelled 'Pioniersky oznam' in image 2 (x 600-810, y 395-545 of the 1920x1080 frame (31-42 % from the left, 37-50 % from the top)): a red-framed notice board with a red felt background: a small red five-pointed star at the top, a big paper notice of the pioneer meeting with one headline of large red capital letters (illegible pseudo-letters) and lines of illegible handwriting, a drawing of a red pioneer neckerchief and two smaller pinned papers.\n2. the box labelled 'Terazzo' in image 2 (x 1140-1480, y 722-778 of the 1920x1080 frame (59-77 % from the left, 67-72 % from the top)): the terrazzo floor in front of the cloakroom door, freshly mopped: a wet, mirror-shiny patch of the reddish-brown and ochre terrazzo tiles with a few drying streaks (no bucket, no mop).\nThe glazed entrance double door stays the box labelled 'exit: Pred ZŠ Sokolíkova v roku 1982' in image 2 (x 30-190, y 290-835 of the 1920x1080 frame (2-10 % from the left, 27-77 % from the top)). The middle double door stays the box labelled 'exit: Trieda pred technickou výstavkou v roku 1982' in image 2 (x 849-1071, y 368-700 of the 1920x1080 frame (44-56 % from the left, 34-65 % from the top)). The open doorway with the staircase at the right stays the box labelled 'exit: Fyzikálny kabinet v roku 1982' in image 2 (x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 716-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) stays the open polished terrazzo floor with nothing standing on it.\nThis room has no NPC zones.\n\nFiction rules: the period decoration is invented scenery: no real portraits, no real names, no real emblems of today, no readable text anywhere (headlines and slogans are illegible pseudo-letters, notices illegible scribbles, no digits), no logos, no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S13_v1.png (model geometry)",
+    "S13_v1.png + S59 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor terrazzo_line": {
+        "at": [
+          960,
+          700
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.731,
+        "ok": true
+      },
+      "anchor left_window": {
+        "at": [
+          239,
+          421
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.745,
+        "ok": true
+      },
+      "anchor middle_door": {
+        "at": [
+          960,
+          534
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.929,
+        "ok": true
+      },
+      "exit S59.to_S58": {
+        "at": [
+          110.0,
+          562.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.682,
+        "ok": true
+      },
+      "exit S59.to_S60": {
+        "at": [
+          960.0,
+          534.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.929,
+        "ok": true
+      },
+      "exit S59.to_S63": {
+        "at": [
+          1786.0,
+          571.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.975,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S59_v2_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S59",
+    "status": "natural re-blocking, L_HALL 1982 derived from the accepted S13 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S13",
+    "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 7 December 1982: the building is 8 years old; the red pioneer notice board hangs on the back wall between the caretaker's door and the middle door (where Tono sits in 1995); Tono's desk stands empty; the cloakroom cages are full of winter coats; a freshly mopped wet patch of terrazzo shines in front of the cloakroom door.",
+    "background": "bg_natural/S59.webp",
+    "walk_polygon": [
+      [
+        15,
+        868
+      ],
+      [
+        292,
+        722
+      ],
+      [
+        372,
+        722
+      ],
+      [
+        378,
+        776
+      ],
+      [
+        628,
+        776
+      ],
+      [
+        662,
+        716
+      ],
+      [
+        1640,
+        716
+      ],
+      [
+        1880,
+        845
+      ],
+      [
+        1905,
+        860
+      ],
+      [
+        1905,
+        1015
+      ],
+      [
+        15,
+        1015
+      ]
+    ],
+    "walk_band": [
+      716,
+      1015
+    ],
+    "actor_scale": [
+      0.55,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S59.ambient 1": {
+        "rect": [
+          600,
+          395,
+          210,
+          150
+        ],
+        "interaction_point": [
+          705,
+          792
+        ],
+        "label_anchor": [
+          705,
+          575
+        ],
+        "reason": "red-framed pioneer notice board on the back wall (period scenery, invented text)"
+      },
+      "S59.ambient 2": {
+        "rect": [
+          1140,
+          722,
+          340,
+          56
+        ],
+        "interaction_point": [
+          1310,
+          805
+        ],
+        "label_anchor": [
+          1310,
+          712
+        ],
+        "reason": "the polished terrazzo floor: a freshly mopped, wet shining patch in front of the cloakroom door"
+      }
+    },
+    "npcs": {},
+    "exits": {
+      "S59.to_S58": {
+        "rect": [
+          30,
+          290,
+          160,
+          545
+        ],
+        "interaction_point": [
+          125,
+          885
+        ],
+        "label_anchor": [
+          192,
+          280
+        ],
+        "reason": "copied from S13.to_S12 (same template position)"
+      },
+      "S59.to_S60": {
+        "rect": [
+          849,
+          368,
+          222,
+          332
+        ],
+        "interaction_point": [
+          960,
+          738
+        ],
+        "label_anchor": [
+          960,
+          358
+        ],
+        "reason": "copied from S13.to_S14 (same template position)"
+      },
+      "S59.to_S63": {
+        "rect": [
+          1690,
+          306,
+          192,
+          530
+        ],
+        "interaction_point": [
+          1782,
+          862
+        ],
+        "label_anchor": [
+          1728,
+          298
+        ],
+        "reason": "copied from S13.to_S15 (same template position)"
+      }
+    },
+    "state_patches": [],
+    "anchors": {
+      "terrazzo_line": [
+        960,
+        700
+      ],
+      "left_window": [
+        239,
+        421
+      ],
+      "middle_door": [
+        960,
+        534
+      ]
+    },
+    "family_base": "S13"
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S59.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:04:07"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 1,
+  "box_game_px": [
+    1560.0,
+    320.0,
+    240.0,
+    310.0
+  ],
+  "instruction": "On the facade at the far right, just left of the building corner, the last ground-floor window is too small and surrounded by grey mosaic tiles. Make it a full-size window of the same ribbon as its three neighbours on its left: exactly the same height (its top on the same line as their tops, its bottom on the same sill line), two tall panes with white PVC frames and two small top panes, filling the facade up to the narrow wall strip at the building corner. Give it a protruding light stone sill, and on that sill near its right end a small dark metal ornament in the shape of a swallow (a flat sheet-metal cut-out, clearly an ornament). Keep the building corner, the yard and the trees beyond it unchanged.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020613,
+  "usd": 0.15,
+  "scope": "bg_natural/S52/",
+  "spend_log_asset": "bg_natural/S52/S52_v2_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: On the facade at the far right, just left of the building corner, the last ground-floor window is too small and surrounded by grey mosaic tiles. Make it a full-size window of the same ribbon as its three neighbours on its left: exactly the same height (its top on the same line as their tops, its bottom on the same sill line), two tall panes with white PVC frames and two small top panes, filling the facade up to the narrow wall strip at the building corner. Give it a protruding light stone sill, and on that sill near its right end a small dark metal ornament in the shape of a swallow (a flat sheet-metal cut-out, clearly an ornament). Keep the building corner, the yard and the trees beyond it unchanged. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S52_v1.png",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S52_S52_v2_fix_raw.png",
+  "started": "2026-10-05T10:21:50",
+  "model_description": "",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Pred ZŠ Sokolíkova in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 1793, y 400 (93 % from the left, 37 % from the top). The fixed landmark 'entrance' stays exactly at x 1082, y 647 (56 % from the left, 60 % from the top). The fixed landmark 'planter' stays exactly at x 775, y 715 (40 % from the left, 66 % from the top). The fixed landmark 'service_window_visible_at_edge' stays exactly at x 1681, y 470 (88 % from the left, 44 % from the top).\n\nEra changes: the same school on Thursday 29 October 2020, a windy, sunny autumn afternoon: warm low sunlight, long soft shadows, the trees in yellow, orange and brown autumn colours, many fallen leaves on the forecourt and the steps. The school is quiet and closed for the pandemic. The building is renovated as it looks today:\n- All windows are replaced by modern white PVC windows (one big lower pane and a smaller top pane each, white frames), in exactly the same openings; the wall bands, the plinth and the wall around the entrance are covered with small grey-and-white mosaic tiles (the real present-day facade, no murals).\n- The old canopy is replaced by a newer canopy in the same place: slim grey steel frame, clear glass roof, the same two posts.\n- The name board above the canopy is a modern plain white board with dark grey letters ZŠ SOKOLÍKOVA (no emblems, no crests).\n- The entrance doors are modern aluminium-and-glass doors, closed; a printed A4 notice is taped inside the glass of the door; a light chain with a small blank sign hangs across the top of the steps (the regular entrance is closed).\n- The same concrete planter at the foot of the steps, with autumn plants and one discarded light-blue face mask among them.\n- The club notice board at the left is now an empty, slightly faded glazed board with two pale sheets.\n- The last ground-floor window before the corner is the caretaker's service window: on its stone sill a small metal swallow ornament.\n- Beyond the building corner the corner of the school yard: asphalt, the wire-mesh fence, autumn trees.\nEverything else built (the facade's position and window openings, the steps, the landing, the ramp and its railing, the corner, the forecourt) stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Roh dvora a servisné okno' in image 2 (x 1772-1920, y 300-600 of the 1920x1080 frame (92-100 % from the left, 28-56 % from the top)): the building corner and the corner of the school yard beyond it (asphalt, fence, an autumn tree), next to the service window.\n2. the box labelled 'Vstupný oznam' in image 2 (x 995-1115, y 440-580 of the 1920x1080 frame (52-58 % from the left, 41-54 % from the top)): the printed A4 notice taped inside the glass of the closed entrance door (illegible print, no digits).\n3. the box labelled 'Kvetináč' in image 2 (x 712-838, y 668-768 of the 1920x1080 frame (37-44 % from the left, 62-71 % from the top)): the square concrete planter at the foot of the steps with autumn plants and a discarded face mask.\nthe box labelled 'exit: Školnícke servisné okno v roku 2020' in image 2 (x 1618-1782, y 388-600 of the 1920x1080 frame (84-93 % from the left, 36-56 % from the top)) is the caretaker's service window. the box labelled 'exit: Školské zádverie v roku 2020' in image 2 (x 897-1254, y 362-653 of the 1920x1080 frame (47-65 % from the left, 34-60 % from the top)) is the closed entrance doors. The forecourt path leaves the picture at the left edge (the box labelled 'exit: Dúbravská zastávka v roku 2020' in image 2 (x 0-62, y 790-1015 of the 1920x1080 frame (0-3 % from the left, 73-94 % from the top))) and continues past the corner to the yard at the right edge (the box labelled 'exit: Školský dvor v roku 2020' in image 2 (x 1830-1920, y 600-930 of the 1920x1080 frame (95-100 % from the left, 56-86 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 686-1015 of the 1920x1080 frame (0-100 % from the left, 64-94 % from the top) stays the open paved forecourt with nothing standing on it, only light, shadows and fallen leaves.\nThis room has no NPC zones.\n\nFiction rules: apart from the letters ZŠ SOKOLÍKOVA on the name board, no readable text; no logos, no emblems, no house numbers, no brands. No people, no animals. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S52",
+  "version": 2,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S52.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:22:28"
+  }
+}

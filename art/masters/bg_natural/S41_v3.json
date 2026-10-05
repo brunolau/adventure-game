@@ -1,0 +1,36 @@
+{
+  "kind": "fix",
+  "from_version": 2,
+  "box_game_px": [
+    0.0,
+    640.0,
+    330.0,
+    380.0
+  ],
+  "instruction": "Remove two things that must not be in this picture. (a) The wooden bench in the left foreground standing on the plaza (left edge, x 0-270, y 655-965 of the 1920x1080 frame): paint the empty light grey plaza paving there instead, continuing the paving joints, and complete the wooden X-lattice bridge railing behind it. (b) The small white delivery robot standing on the asphalt road in the middle distance (x 770-845, y 545-615): paint the empty asphalt road with its edge and the green grass verge behind it instead. Keep the two benches in front of the railing, the railing, the signpost and its lettering, the turnstiles and everything else exactly as they are.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2035412,
+  "usd": 0.15,
+  "scope": "bg_natural/S41/",
+  "spend_log_asset": "bg_natural/S41/S41_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove two things that must not be in this picture. (a) The wooden bench in the left foreground standing on the plaza (left edge, x 0-270, y 655-965 of the 1920x1080 frame): paint the empty light grey plaza paving there instead, continuing the paving joints, and complete the wooden X-lattice bridge railing behind it. (b) The small white delivery robot standing on the asphalt road in the middle distance (x 770-845, y 545-615): paint the empty asphalt road with its edge and the green grass verge behind it instead. Keep the two benches in front of the railing, the railing, the signpost and its lettering, the turnstiles and everything else exactly as they are. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S41_v2.png",
+    "art/backgrounds/tram-stop.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S41_S41_v3_fix_raw.png",
+  "started": "2026-10-05T09:58:05",
+  "model_description": "",
+  "parent_prompt": null,
+  "room": "S41",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

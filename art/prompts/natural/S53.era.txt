@@ -1,0 +1,16 @@
+# S53 Školské zádverie v roku 2020 (2020) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S13, 1995)
+# Image 1 = the accepted S13 natural master, image 2 = the same with the S53 blocking drawn on it.
+# location_families 2020: plexiglass, boxes of teaching aids, distance, the rest of the school behind a closed zone.
+# art_brief 2020: same camera as S13/S59; service vestibule separated by plexiglass from the inaccessible classrooms; disinfection, boxes for returning aids, the current permit for picking up property.
+Era changes: the same entrance hall 25 years later, on Thursday 29 October 2020 at about half past three in the afternoon, during the pandemic, when the school is closed to pupils. Outside the glass the forecourt trees are in autumn colours (yellow and orange leaves, some already bare twigs) under a pale autumn sky; the sunlight through the glazed wall is lower, paler and cooler than in June, with softer, longer light patches on the floor, and the ceiling fluorescent tubes are switched on. The glazed facade wall keeps exactly the same divisions and the same door, but its old bronze steel frames are now plain white aluminium frames. The walls keep their plain soft yellow paint and darker dado, a little more scuffed; no murals.
+New in 2020: a tall free-standing transparent plexiglass screen in clear panels on thin chrome feet stands across the back of the hall, right behind the caretaker's desk, from the desk's right end to the cloakroom's right end, about 1.9 m high: through it the middle double door, the right door and the cloakroom cages are still visible, but the cloakroom bench under it is empty (no slippers) and a red-and-white barrier tape is stretched across the middle double door behind the screen. A sheet of paper (the pick-up permit, illegible scribbles) is taped on the plexiglass in front of the middle door. On the caretaker's desk: two or three cardboard boxes with returned teaching aids instead of the visitor book; the green lamp and the telephone stay. Beside the entrance door, against the glazed wall near the floor, a slim grey stand with a hand-sanitiser dispenser. On the back wall beside the left door, a small notice with simple hand-washing pictograms (no text). The key cabinet stays. Everything built - walls, doors, door frames, the clock, the ceiling fittings, the doorway and staircase at the right, the terrazzo floor - stays exactly where it is.
+
+Interactive props of 2020:
+1. {rect:S53.ambient 1}: the clear plexiglass screen panel in front of the middle double door, with its chrome edge profile, faint reflections and the taped permit sheet.
+2. {rect:S53.ambient 2}: two or three brown cardboard boxes standing on the caretaker's desk, filled with returned teaching aids (rulers, a globe stand, books, a small microscope), one with a paper label of illegible scribbles.
+The glazed entrance double door stays {exit:S53.to_S52}. The open doorway with the staircase at the right stays {exit:S53.to_S54}.
+
+Walkable floor: {walk} stays the open polished terrazzo floor in front of the plexiglass screen, with nothing standing on it.
+{npc_zones}
+
+Fiction rules: no logos, no brand names, no school name, no readable text anywhere (the permit and labels are illegible scribbles, no digits), no people, no animals.

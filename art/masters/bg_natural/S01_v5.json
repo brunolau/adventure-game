@@ -1,0 +1,36 @@
+{
+  "kind": "fix",
+  "from_version": 4,
+  "box_game_px": [
+    590.0,
+    690.0,
+    290.0,
+    260.0
+  ],
+  "instruction": "Remove the olive canvas tool bag from the wooden chair: the chair is now empty - its green seat and the green back panel between the two wooden back posts are fully visible, with the same light and shadow as the rest of the chair. Keep the chair itself, its legs, the broom leaning on the wall behind it, the workbench and the floor exactly as they are.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020105,
+  "usd": 0.15,
+  "scope": "bg_natural/S01/",
+  "spend_log_asset": "bg_natural/S01/S01_v5_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the olive canvas tool bag from the wooden chair: the chair is now empty - its green seat and the green back panel between the two wooden back posts are fully visible, with the same light and shadow as the rest of the chair. Keep the chair itself, its legs, the broom leaning on the wall behind it, the workbench and the floor exactly as they are. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S01_v4.png",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S01_S01_v5_fix_raw.png",
+  "started": "2026-10-05T11:03:32",
+  "model_description": "",
+  "parent_prompt": null,
+  "room": "S01",
+  "version": 5,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

@@ -1,0 +1,687 @@
+{
+ "note": "S40 natural blocking (src/game/data/blocking/S40.json): unrenovated attic above the workshop, frontal camera ~1.7 m towards the brick gable, horizon y 470, s(y) = (y - 470) / 545; floor planks from y ~690, work table (top y 650) with waxed paper and the script, archive box on a chest, oak post, suitcase, stair opening front left.",
+ "background": "#5a4636",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    1080
+   ],
+   "fill": "#5a4636",
+   "note": "dim attic"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     0
+    ],
+    [
+     960,
+     0
+    ],
+    [
+     960,
+     120
+    ],
+    [
+     180,
+     620
+    ],
+    [
+     0,
+     700
+    ]
+   ],
+   "fill": "#7a5a42",
+   "note": "left roof slope: undersides of red clay tiles on battens between rafters"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     960,
+     0
+    ],
+    [
+     1920,
+     0
+    ],
+    [
+     1920,
+     700
+    ],
+    [
+     1740,
+     620
+    ],
+    [
+     960,
+     120
+    ]
+   ],
+   "fill": "#7a5a42",
+   "note": "right roof slope"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     940,
+     120
+    ],
+    [
+     760,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     980,
+     120
+    ],
+    [
+     1160,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     920,
+     110
+    ],
+    [
+     620,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1000,
+     110
+    ],
+    [
+     1300,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     900,
+     100
+    ],
+    [
+     480,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1020,
+     100
+    ],
+    [
+     1440,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     880,
+     90
+    ],
+    [
+     340,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1040,
+     90
+    ],
+    [
+     1580,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     860,
+     80
+    ],
+    [
+     200,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1060,
+     80
+    ],
+    [
+     1720,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     840,
+     70
+    ],
+    [
+     60,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1080,
+     70
+    ],
+    [
+     1860,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     820,
+     60
+    ],
+    [
+     -80,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14,
+   "note": "rafter"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1100,
+     60
+    ],
+    [
+     2000,
+     720
+    ]
+   ],
+   "color": "#4a3424",
+   "width": 14
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     380,
+     690
+    ],
+    [
+     380,
+     470
+    ],
+    [
+     960,
+     110
+    ],
+    [
+     1540,
+     470
+    ],
+    [
+     1540,
+     690
+    ]
+   ],
+   "fill": "#a8644a",
+   "note": "brick gable wall at the far end"
+  },
+  {
+   "type": "rect",
+   "box": [
+    900,
+    330,
+    120,
+    110
+   ],
+   "fill": "#e8e2c8",
+   "note": "small gable window, light comes in"
+  },
+  {
+   "type": "rect",
+   "box": [
+    910,
+    340,
+    100,
+    90
+   ],
+   "fill": "#a8c8e0",
+   "note": "view: the tiled roofs of the manor outbuildings and the trees"
+  },
+  {
+   "type": "rect",
+   "box": [
+    910,
+    390,
+    100,
+    40
+   ],
+   "fill": "#b4552f"
+  },
+  {
+   "type": "rect",
+   "box": [
+    956,
+    340,
+    8,
+    90
+   ],
+   "fill": "#e8e2c8"
+  },
+  {
+   "type": "rect",
+   "box": [
+    180,
+    250,
+    1560,
+    34
+   ],
+   "fill": "#6e4e34",
+   "note": "heavy horizontal tie beam across the attic"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     180,
+     690
+    ],
+    [
+     1740,
+     690
+    ],
+    [
+     1920,
+     760
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     0,
+     1080
+    ],
+    [
+     0,
+     760
+    ]
+   ],
+   "fill": "#a8885e",
+   "note": "wide old floor planks, swept, safe to walk"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     760
+    ],
+    [
+     180,
+     690
+    ],
+    [
+     180,
+     620
+    ],
+    [
+     0,
+     700
+    ]
+   ],
+   "fill": "#6e5440",
+   "note": "low knee wall left"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1920,
+     760
+    ],
+    [
+     1740,
+     690
+    ],
+    [
+     1740,
+     620
+    ],
+    [
+     1920,
+     700
+    ]
+   ],
+   "fill": "#6e5440",
+   "note": "low knee wall right"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     30,
+     790
+    ],
+    [
+     300,
+     790
+    ],
+    [
+     320,
+     900
+    ],
+    [
+     10,
+     900
+    ]
+   ],
+   "fill": "#2e241c",
+   "note": "opening in the floor with a wooden staircase going down (exit to the ZVON room)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    60,
+    800,
+    220,
+    16
+   ],
+   "fill": "#8a6a46",
+   "note": "top stair tread"
+  },
+  {
+   "type": "rect",
+   "box": [
+    300,
+    640,
+    18,
+    240
+   ],
+   "fill": "#6e4e34",
+   "note": "newel post of the stair railing"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     309,
+     650
+    ],
+    [
+     30,
+     690
+    ]
+   ],
+   "color": "#6e4e34",
+   "width": 12,
+   "note": "handrail along the stair opening"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    680,
+    14,
+    120
+   ],
+   "fill": "#6e4e34"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1300,
+    284,
+    54,
+    440
+   ],
+   "fill": "#7a5636",
+   "note": "massive oak post carrying the tie beam (the beam prop), standing on the floor"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1327,
+     420
+    ],
+    [
+     1200,
+     284
+    ]
+   ],
+   "color": "#7a5636",
+   "width": 22,
+   "note": "diagonal brace"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1327,
+     420
+    ],
+    [
+     1460,
+     284
+    ]
+   ],
+   "color": "#7a5636",
+   "width": 22
+  },
+  {
+   "type": "rect",
+   "box": [
+    520,
+    640,
+    470,
+    20
+   ],
+   "fill": "#9a7450",
+   "note": "plain wooden work table, top y 650"
+  },
+  {
+   "type": "rect",
+   "box": [
+    534,
+    660,
+    18,
+    110
+   ],
+   "fill": "#5a4028"
+  },
+  {
+   "type": "rect",
+   "box": [
+    958,
+    660,
+    18,
+    110
+   ],
+   "fill": "#5a4028"
+  },
+  {
+   "type": "rect",
+   "box": [
+    570,
+    622,
+    160,
+    22
+   ],
+   "fill": "#efe6c8",
+   "note": "small stack of waxed paper sheets (slightly translucent, yellowish sheen)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    810,
+    628,
+    130,
+    18
+   ],
+   "fill": "#c8a26a",
+   "note": "a thin amateur-theatre script booklet with a buff paper cover"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1030,
+    660,
+    200,
+    110
+   ],
+   "fill": "#6a4c30",
+   "note": "old wooden chest"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1060,
+    580,
+    150,
+    82
+   ],
+   "fill": "#5f6e66",
+   "note": "grey-green steel archive box with a handle and a hasp, on the chest"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1110,
+    568,
+    50,
+    12
+   ],
+   "fill": "#3e4a44"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1450,
+    690,
+    260,
+    110
+   ],
+   "fill": "#8a5a34",
+   "note": "old brown leather suitcase lying on the floor, empty, closed"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1540,
+    676,
+    70,
+    16
+   ],
+   "fill": "#4a3424",
+   "note": "handle"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1450,
+    735,
+    260,
+    10
+   ],
+   "fill": "#6e4628",
+   "note": "strap"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1760,
+    640,
+    120,
+    120
+   ],
+   "fill": "#7a6040",
+   "note": "stacked old wooden crates under the right slope"
+  }
+ ]
+}

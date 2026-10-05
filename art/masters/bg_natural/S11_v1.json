@@ -1,0 +1,1930 @@
+{
+  "room": "S11",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1995601,
+  "usd": 0.15,
+  "started": "2026-10-05T09:59:50",
+  "spend_log_asset": "bg_natural/S11/S11_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S11.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the Svantnerova tram stop on the Dubravka - Karlova Ves tram line in Bratislava-Dubravka (Slovakia), on the south-west platform, looking north-west along the platform. The double tram track runs in the middle of a wide street: the west carriageway lies below the platform on the left, a grass strip, the east carriageway and a low 1980s shopping pavilion are on the right, and 8- to 12-storey prefabricated panel tower blocks stand behind the trees. Image 2 is a 2022 photo taken on this platform (use it for the geography: the track and the road beside the platform, the railings, the panel towers and trees; its modern glass shelter, display board and paving did NOT exist in 1995). Image 3 is a red-cream Tatra T3 tram on this Dubravka line (use it for the tram's shape and livery only). Image 4 shows the same stop from the road (railings, towers).\n\nBrief: the Dubravka tram stop in June 1995, early on a sunny summer morning: warm low morning sunlight from the right behind the camera, long soft shadows falling forward to the left, fresh green lindens. The ORIGINAL 1980s stop: a long shelter of brown-painted steel tubes bent into arches (each arch rises from the platform at the back, curves over the top and comes down to the platform at the front), a solid brown back wall of vertical boards along the road side, a translucent light-blue curved plastic roof, a wooden slat bench along the inside of the back wall; the platform paved with big grey concrete slabs and a light, almost white edge strip along the track. An old red-cream Tatra T3 tram (cream upper body, windows and roof edge, red lower body, round headlights) stands at the platform with its doors closed; its route box above the windscreen is blank, no number, no destination text. 1995 details: a colourful 1990s advertising poster with abstract shapes (no lettering) hangs in the first arch, a paper timetable in a glazed case, no electronic display anywhere, no tactile paving.\n\nCamera: eye level about 2 m above the platform, looking along the platform in one-point perspective; the horizon is at y 400 and the platform's long lines meet at x ~1060 on it. Keep this exact geometry from the sketch: the platform from the bottom edge to the vanishing point, its light edge strip from (1449, 1080) to the vanishing point, the near rail from (1750, 1080) to the vanishing point, the shelter's back wall from x 380 (near end, y 405-805) receding to x ~950, the front tubes standing at x 690 (near) and further back, the stop post standing at x 787 with its foot at y 812, the tram's front face at x 1273-1587, y 274-620.\n\nWhat the sketch blocks are, left to right: far left the west carriageway (asphalt) below the platform with white zebra-crossing stripes at the near left, a lawn verge with young lindens and a long 4-storey panel block beyond it; the low concrete wall with a steel railing along the platform's road side; the short ramp at the near left where the railing has a gap; the long brown tube shelter with its solid brown back wall, translucent blue roof, the poster in the first arch and the bench; the stop post with the clock on top, a small stop plate and the timetable case; the platform; the light edge strip; the double track on ballast with concrete sleepers; the red-cream tram on the near track with its pantograph up on the overhead wire; grey traction poles; beyond the track a grass strip, the east carriageway, the shopping pavilion (glass shopfronts, flat roof, no signs) and the panel towers; blue sky with a few small clouds.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 728-844, y 452-588 of the 1920x1080 frame (38-44 % from the left, 42-54 % from the top): the glazed timetable case on the grey stop post, white paper inside printed with neat columns of illegible tiny print (no digits); above it on the post a small white stop plate with a red border and a simple tram pictogram (no words), and on top of the post a round clock with a polished brass frame and a white dial with black hour ticks (no numerals), the hands showing about five past eight.\n2. the block of the layout sketch at x 488-726, y 538-724 of the 1920x1080 frame (25-38 % from the left, 50-67 % from the top): the wooden slat bench inside the shelter along the back wall, seat and backrest of warm brown slats on black steel legs; two small pink chewing-gum blobs stuck under the front edge of the seat.\nthe area of the layout sketch at x 0-170, y 830-1015 of the 1920x1080 frame (0-9 % from the left, 77-94 % from the top) is the short concrete ramp at the near left where the railing has a gap, leading down to the zebra crossing (towards the school); the concrete kerb corner where the platform edge meets the ramp has a small chipped-off corner. the area of the layout sketch at x 930-1180, y 520-660 of the 1920x1080 frame (48-61 % from the left, 48-61 % from the top) is the far end of the platform beyond the shelter. the area of the layout sketch at x 1265-1595, y 270-625 of the 1920x1080 frame (66-83 % from the left, 25-58 % from the top) is the tram itself, standing at the platform.\n\nWalkable floor: the open platform in front of the shelter and to the right of it (within the band at x 0-1449, y 670-1015 of the 1920x1080 frame (0-75 % from the left, 62-94 % from the top), except the shelter, its tubes and the stop post at its left edge, which stay exactly as in the sketch) is grey concrete slabs - one continuous flat surface with no kerb, step, edge or change of material inside it, and nothing else standing on it: no bins, no extra posts, no benches, no bags, no people. Only morning light, long shadows and fine joints between the slabs.\nThis room has no NPC zones.\nFixed architectural anchor 'curb' at x 265, y 850. Fixed architectural anchor 'track_line' at x 1524, y 813. Fixed architectural anchor 'clock_frame' at x 785, y 134.\n\nFiction rules: a generic Dubravka stop: no stop name, no transport-company logos, no line numbers, no route or destination text, no readable timetable; no shop signs or brands on the pavilion; no billboards with text; no car number plates. No people anywhere (no driver or passengers visible in the tram - its windows reflect the sky), no animals, no cars on the roads. Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S11_sketch.png (rendered from art/prompts/natural/S11.sketch.json, model geometry)",
+    "art/source/tram-stop_svantnerova.jpg",
+    "art/masters/bg_natural/S11_src_t3g-dubravka_jakubowski-2018.jpg",
+    "art/source/rooms/S11/svantnerova-stop-ne-platform_kartaview-2021-04.jpg",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S11 natural blocking sketch (generated by a pinhole camera: f 1250 px, camera 2.04 m above the platform, horizon y 400, yaw 4.6 deg, platform axis vanishing point x ~1060). Platform X -3.6..1.6 m, shelter X -3.4..-1.8, Z 6-20 m, tram front at Z 10.5 m.",
+    "background": "#a8c8e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          420
+        ],
+        "fill": "#a8c8e6",
+        "note": "sky, June morning"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            388,
+            414
+          ],
+          [
+            538,
+            415
+          ],
+          [
+            538,
+            172
+          ],
+          [
+            388,
+            174
+          ]
+        ],
+        "fill": "#d9c7a6",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            752,
+            413
+          ],
+          [
+            850,
+            413
+          ],
+          [
+            850,
+            227
+          ],
+          [
+            752,
+            228
+          ]
+        ],
+        "fill": "#e2d3b0",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            127,
+            413
+          ],
+          [
+            280,
+            413
+          ],
+          [
+            280,
+            174
+          ],
+          [
+            127,
+            177
+          ]
+        ],
+        "fill": "#d4c2a0",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1228,
+            414
+          ],
+          [
+            1351,
+            414
+          ],
+          [
+            1351,
+            172
+          ],
+          [
+            1228,
+            173
+          ]
+        ],
+        "fill": "#dccbb0",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1532,
+            416
+          ],
+          [
+            1695,
+            416
+          ],
+          [
+            1695,
+            163
+          ],
+          [
+            1532,
+            165
+          ]
+        ],
+        "fill": "#e5d6b8",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1785,
+            413
+          ],
+          [
+            1952,
+            414
+          ],
+          [
+            1952,
+            148
+          ],
+          [
+            1785,
+            151
+          ]
+        ],
+        "fill": "#d2c0a2",
+        "note": "distant panel tower block (8-12 storeys)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            330
+          ],
+          [
+            200,
+            300
+          ],
+          [
+            420,
+            340
+          ],
+          [
+            640,
+            310
+          ],
+          [
+            860,
+            360
+          ],
+          [
+            1000,
+            380
+          ],
+          [
+            1160,
+            360
+          ],
+          [
+            1350,
+            300
+          ],
+          [
+            1560,
+            330
+          ],
+          [
+            1760,
+            280
+          ],
+          [
+            1920,
+            300
+          ],
+          [
+            1920,
+            470
+          ],
+          [
+            0,
+            470
+          ]
+        ],
+        "fill": "#6f9a4a",
+        "note": "tree belt and lawns far away"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            17,
+            427
+          ],
+          [
+            521,
+            427
+          ],
+          [
+            521,
+            253
+          ],
+          [
+            17,
+            257
+          ]
+        ],
+        "fill": "#e0cfae",
+        "note": "4-storey panel block beyond the road (left)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -4824,
+            799
+          ],
+          [
+            -1772,
+            924
+          ],
+          [
+            1015,
+            409
+          ],
+          [
+            936,
+            408
+          ]
+        ],
+        "fill": "#8fb062",
+        "note": "lawn verge beyond the road"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -3736,
+            1287
+          ],
+          [
+            -989,
+            1511
+          ],
+          [
+            1045,
+            409
+          ],
+          [
+            1015,
+            409
+          ]
+        ],
+        "fill": "#7d7a78",
+        "note": "west carriageway (asphalt road)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            4149,
+            1166
+          ],
+          [
+            5766,
+            1232
+          ],
+          [
+            1109,
+            409
+          ],
+          [
+            1095,
+            409
+          ]
+        ],
+        "fill": "#8fb062",
+        "note": "green strip with young lindens"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            5766,
+            1232
+          ],
+          [
+            10733,
+            1435
+          ],
+          [
+            1141,
+            409
+          ],
+          [
+            1109,
+            409
+          ]
+        ],
+        "fill": "#7d7a78",
+        "note": "east carriageway"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            10733,
+            1435
+          ],
+          [
+            65440,
+            3673
+          ],
+          [
+            1230,
+            409
+          ],
+          [
+            1141,
+            409
+          ]
+        ],
+        "fill": "#a7a49c",
+        "note": "pavement and forecourt of the shopping pavilion"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            2041,
+            491
+          ],
+          [
+            1466,
+            437
+          ],
+          [
+            1466,
+            360
+          ],
+          [
+            2041,
+            304
+          ]
+        ],
+        "fill": "#e8dcc4",
+        "note": "1980s one-storey shopping pavilion (glass shopfronts, flat roof) across the tracks"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            525,
+            473
+          ],
+          [
+            525,
+            376
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          442,
+          207,
+          166,
+          169
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            677,
+            452
+          ],
+          [
+            677,
+            383
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          617,
+          261,
+          120,
+          122
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            762,
+            440
+          ],
+          [
+            762,
+            387
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          715,
+          292,
+          94,
+          95
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1375,
+            465
+          ],
+          [
+            1375,
+            385
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1310,
+          258,
+          131,
+          127
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1288,
+            447
+          ],
+          [
+            1288,
+            389
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1241,
+          297,
+          94,
+          92
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1239,
+            437
+          ],
+          [
+            1239,
+            401
+          ]
+        ],
+        "color": "#5a4630",
+        "width": 6,
+        "note": "tree trunk"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1202,
+          328,
+          74,
+          73
+        ],
+        "fill": "#5f8f3c",
+        "note": "young linden crown (fresh June green)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1762,
+            1291
+          ],
+          [
+            5469,
+            1493
+          ],
+          [
+            1095,
+            409
+          ],
+          [
+            1067,
+            409
+          ]
+        ],
+        "fill": "#9b8f80",
+        "note": "track bed (ballast and concrete sleepers)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2011,
+            1227
+          ],
+          [
+            1079,
+            416
+          ]
+        ],
+        "color": "#4a4642",
+        "width": 5,
+        "note": "rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2674,
+            1260
+          ],
+          [
+            1090,
+            416
+          ]
+        ],
+        "color": "#4a4642",
+        "width": 5,
+        "note": "rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            3666,
+            1310
+          ],
+          [
+            1105,
+            416
+          ]
+        ],
+        "color": "#4a4642",
+        "width": 5,
+        "note": "rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            4470,
+            1350
+          ],
+          [
+            1117,
+            416
+          ]
+        ],
+        "color": "#4a4642",
+        "width": 5,
+        "note": "rail"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -507,
+            1285
+          ],
+          [
+            1875,
+            1435
+          ],
+          [
+            1067,
+            409
+          ],
+          [
+            1045,
+            409
+          ]
+        ],
+        "fill": "#b9b2a6",
+        "note": "platform: big grey concrete slabs"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1690,
+            1419
+          ],
+          [
+            1875,
+            1430
+          ],
+          [
+            1067,
+            408
+          ],
+          [
+            1066,
+            408
+          ]
+        ],
+        "fill": "#e9e4d6",
+        "note": "light edge strip along the track side"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            52,
+            970
+          ],
+          [
+            265,
+            850
+          ],
+          [
+            99,
+            871
+          ],
+          [
+            -155,
+            995
+          ]
+        ],
+        "fill": "#a9a397",
+        "note": "short ramp down to the zebra crossing"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -104,
+            1027
+          ],
+          [
+            312,
+            803
+          ],
+          [
+            223,
+            801
+          ],
+          [
+            -237,
+            1021
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -342,
+            1016
+          ],
+          [
+            153,
+            799
+          ],
+          [
+            67,
+            796
+          ],
+          [
+            -471,
+            1011
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -573,
+            1006
+          ],
+          [
+            -2,
+            794
+          ],
+          [
+            -87,
+            792
+          ],
+          [
+            -698,
+            1001
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -796,
+            997
+          ],
+          [
+            -154,
+            790
+          ],
+          [
+            -237,
+            788
+          ],
+          [
+            -918,
+            992
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1013,
+            987
+          ],
+          [
+            -303,
+            786
+          ],
+          [
+            -385,
+            784
+          ],
+          [
+            -1130,
+            982
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1223,
+            978
+          ],
+          [
+            -449,
+            782
+          ],
+          [
+            -529,
+            780
+          ],
+          [
+            -1336,
+            973
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1426,
+            970
+          ],
+          [
+            -592,
+            779
+          ],
+          [
+            -670,
+            776
+          ],
+          [
+            -1536,
+            965
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1623,
+            961
+          ],
+          [
+            -732,
+            775
+          ],
+          [
+            -809,
+            773
+          ],
+          [
+            -1730,
+            956
+          ]
+        ],
+        "fill": "#e6e6e0",
+        "note": "zebra crossing stripe"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -515,
+            1285
+          ],
+          [
+            47,
+            970
+          ],
+          [
+            47,
+            830
+          ],
+          [
+            -515,
+            1068
+          ]
+        ],
+        "fill": "#c9c4b8",
+        "note": "low concrete wall at the platform's road side"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            260,
+            850
+          ],
+          [
+            948,
+            463
+          ],
+          [
+            948,
+            448
+          ],
+          [
+            260,
+            739
+          ]
+        ],
+        "fill": "#c9c4b8",
+        "note": "low concrete wall (continues behind the shelter)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -515,
+            829
+          ],
+          [
+            47,
+            676
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 6,
+        "note": "steel railing top rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            260,
+            618
+          ],
+          [
+            948,
+            431
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 6,
+        "note": "steel railing top rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -413,
+            1025
+          ],
+          [
+            -413,
+            802
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 5,
+        "note": "railing post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -141,
+            909
+          ],
+          [
+            -141,
+            727
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 5,
+        "note": "railing post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            47,
+            830
+          ],
+          [
+            47,
+            676
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 5,
+        "note": "railing post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            260,
+            739
+          ],
+          [
+            260,
+            618
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 5,
+        "note": "railing post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            337,
+            707
+          ],
+          [
+            337,
+            597
+          ]
+        ],
+        "color": "#5d6b78",
+        "width": 5,
+        "note": "railing post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            379,
+            808
+          ],
+          [
+            850,
+            526
+          ],
+          [
+            850,
+            402
+          ],
+          [
+            379,
+            408
+          ]
+        ],
+        "fill": "#7a4a32",
+        "note": "solid brown back wall of the shelter (inner face, lit)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            379,
+            806
+          ],
+          [
+            692,
+            814
+          ],
+          [
+            948,
+            526
+          ],
+          [
+            850,
+            526
+          ]
+        ],
+        "fill": "#a49c90",
+        "note": "shelter floor (shade)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            581,
+            720
+          ],
+          [
+            722,
+            626
+          ],
+          [
+            722,
+            595
+          ],
+          [
+            581,
+            676
+          ]
+        ],
+        "fill": "#5a3a26",
+        "note": "bench seat front"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            497,
+            675
+          ],
+          [
+            581,
+            676
+          ],
+          [
+            722,
+            595
+          ],
+          [
+            662,
+            594
+          ]
+        ],
+        "fill": "#c68a4e",
+        "note": "wooden slat bench seat"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            492,
+            666
+          ],
+          [
+            659,
+            588
+          ],
+          [
+            659,
+            542
+          ],
+          [
+            492,
+            600
+          ]
+        ],
+        "fill": "#b07a44",
+        "note": "bench backrest"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            570,
+            744
+          ],
+          [
+            570,
+            668
+          ]
+        ],
+        "color": "#3a2a20",
+        "width": 6,
+        "note": "bench leg"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            697,
+            655
+          ],
+          [
+            697,
+            599
+          ]
+        ],
+        "color": "#3a2a20",
+        "width": 6,
+        "note": "bench leg"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            379,
+            528
+          ],
+          [
+            583,
+            530
+          ],
+          [
+            583,
+            412
+          ],
+          [
+            379,
+            412
+          ]
+        ],
+        "fill": "#d9b84a",
+        "note": "poster frame hung in the first arch (1995 advertising poster, no lettering)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            379,
+            408
+          ],
+          [
+            534,
+            251
+          ],
+          [
+            899,
+            354
+          ],
+          [
+            850,
+            402
+          ]
+        ],
+        "fill": "#5f9fd0",
+        "note": "roof back slope"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            534,
+            251
+          ],
+          [
+            762,
+            322
+          ],
+          [
+            970,
+            376
+          ],
+          [
+            899,
+            354
+          ]
+        ],
+        "fill": "#7fbde6",
+        "note": "translucent blue curved roof (front slope)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            379,
+            808
+          ],
+          [
+            379,
+            408
+          ],
+          [
+            534,
+            251
+          ],
+          [
+            692,
+            306
+          ],
+          [
+            692,
+            816
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 9,
+        "note": "curved brown steel-tube arch of the shelter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            623,
+            662
+          ],
+          [
+            623,
+            405
+          ],
+          [
+            724,
+            304
+          ],
+          [
+            826,
+            340
+          ],
+          [
+            826,
+            665
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 9,
+        "note": "curved brown steel-tube arch of the shelter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            738,
+            593
+          ],
+          [
+            738,
+            404
+          ],
+          [
+            813,
+            330
+          ],
+          [
+            888,
+            356
+          ],
+          [
+            888,
+            595
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 9,
+        "note": "curved brown steel-tube arch of the shelter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            806,
+            553
+          ],
+          [
+            806,
+            403
+          ],
+          [
+            865,
+            344
+          ],
+          [
+            925,
+            365
+          ],
+          [
+            925,
+            554
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 9,
+        "note": "curved brown steel-tube arch of the shelter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            850,
+            526
+          ],
+          [
+            850,
+            402
+          ],
+          [
+            899,
+            354
+          ],
+          [
+            948,
+            371
+          ],
+          [
+            948,
+            527
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 9,
+        "note": "curved brown steel-tube arch of the shelter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            692,
+            306
+          ],
+          [
+            948,
+            371
+          ]
+        ],
+        "color": "#6b3424",
+        "width": 7,
+        "note": "front tube rail"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1821,
+            716
+          ],
+          [
+            1821,
+            -677
+          ]
+        ],
+        "color": "#8d969c",
+        "width": 12,
+        "note": "traction pole in the median"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1250,
+            478
+          ],
+          [
+            1250,
+            132
+          ]
+        ],
+        "color": "#8d969c",
+        "width": 12,
+        "note": "traction pole in the median"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1273,
+            617
+          ],
+          [
+            1149,
+            490
+          ],
+          [
+            1149,
+            349
+          ],
+          [
+            1273,
+            277
+          ]
+        ],
+        "fill": "#c8342c",
+        "note": "tram side facing the platform"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1273,
+            520
+          ],
+          [
+            1149,
+            450
+          ],
+          [
+            1149,
+            382
+          ],
+          [
+            1273,
+            356
+          ]
+        ],
+        "fill": "#eadfc6",
+        "note": "cream window band of the tram side"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1273,
+            277
+          ],
+          [
+            1587,
+            274
+          ],
+          [
+            1277,
+            348
+          ],
+          [
+            1149,
+            349
+          ]
+        ],
+        "fill": "#8e8a84",
+        "note": "tram roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1273,
+            617
+          ],
+          [
+            1587,
+            621
+          ],
+          [
+            1587,
+            274
+          ],
+          [
+            1273,
+            277
+          ]
+        ],
+        "fill": "#efe4cc",
+        "note": "tram front, cream upper part"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1273,
+            617
+          ],
+          [
+            1587,
+            621
+          ],
+          [
+            1587,
+            479
+          ],
+          [
+            1273,
+            477
+          ]
+        ],
+        "fill": "#c8342c",
+        "note": "tram front, red lower part"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1298,
+            465
+          ],
+          [
+            1561,
+            467
+          ],
+          [
+            1561,
+            337
+          ],
+          [
+            1298,
+            338
+          ]
+        ],
+        "fill": "#3f5260",
+        "note": "tram windscreen"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1372,
+            326
+          ],
+          [
+            1485,
+            325
+          ],
+          [
+            1485,
+            288
+          ],
+          [
+            1372,
+            289
+          ]
+        ],
+        "fill": "#2d2d2d",
+        "note": "blank route box (no number)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1368,
+            296
+          ],
+          [
+            1382,
+            95
+          ],
+          [
+            1343,
+            304
+          ]
+        ],
+        "color": "#3a3a3a",
+        "width": 5,
+        "note": "pantograph"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2429,
+            -946
+          ],
+          [
+            1079,
+            381
+          ]
+        ],
+        "color": "#333333",
+        "width": 2,
+        "note": "overhead wire"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            4301,
+            -1094
+          ],
+          [
+            1101,
+            381
+          ]
+        ],
+        "color": "#333333",
+        "width": 2,
+        "note": "overhead wire"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            787,
+            812
+          ],
+          [
+            787,
+            196
+          ]
+        ],
+        "color": "#4b4f52",
+        "width": 9,
+        "note": "stop post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            736,
+            580
+          ],
+          [
+            836,
+            581
+          ],
+          [
+            836,
+            459
+          ],
+          [
+            736,
+            459
+          ]
+        ],
+        "fill": "#f2efe2",
+        "note": "glazed timetable case with a printed paper timetable"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            746,
+            378
+          ],
+          [
+            826,
+            378
+          ],
+          [
+            826,
+            306
+          ],
+          [
+            746,
+            307
+          ]
+        ],
+        "fill": "#f6f6f2",
+        "note": "small white stop plate with a red border (tram pictogram, no words)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          725,
+          74,
+          121,
+          120
+        ],
+        "fill": "#c9a24a",
+        "note": "round brass clock frame on top of the post"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          734,
+          83,
+          103,
+          102
+        ],
+        "fill": "#fbfaf2",
+        "note": "white clock dial"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S11.json",
+  "blocking": {
+    "version": 1,
+    "room": "S11",
+    "status": "natural re-blocking (docs/DECISIONS.md item 1, owner feedback 2026-10-05: the old Dubravka stop with the brown tube shelter and a red-cream Tatra T3); base of camera family L_STOP (S57 1982, S51 2020 are derived with identical anchors, walk_band and actor_scale)",
+    "note": "Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615. The platform (X -3.6..1.6 m) runs from the bottom to the vanishing point: the long brown steel-tube shelter (solid back wall X -3.4, front tubes X -1.8, Z 6-20) with the bench inside at the left, the stop post with clock, stop plate and timetable case at the shelter's near front corner (Z 6.1), the light edge strip and the track at the right with the T3 standing at the platform (front at Z 10.5). The road (west carriageway) lies below the platform's left edge; the near-left ramp leads down to the zebra crossing towards the school.",
+    "background": "bg_natural/S11.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        1449,
+        1015
+      ],
+      [
+        1230,
+        672
+      ],
+      [
+        928,
+        670
+      ],
+      [
+        850,
+        828
+      ],
+      [
+        339,
+        814
+      ],
+      [
+        65,
+        970
+      ],
+      [
+        0,
+        1000
+      ]
+    ],
+    "walk_band": [
+      670,
+      1015
+    ],
+    "actor_scale": [
+      0.44,
+      1.0
+    ],
+    "spawn": [
+      1010,
+      900
+    ],
+    "anchors": {
+      "curb": [
+        265,
+        850
+      ],
+      "track_line": [
+        1524,
+        813
+      ],
+      "clock_frame": [
+        785,
+        134
+      ]
+    },
+    "hotspots": {
+      "S11.ambient 1": {
+        "rect": [
+          728,
+          452,
+          116,
+          136
+        ],
+        "interaction_point": [
+          835,
+          862
+        ],
+        "label_anchor": [
+          786,
+          442
+        ],
+        "reason": "glazed timetable case at eye height on the stop post at the shelter's near front corner (case H 1.15-1.75 m, Z 6.1 m)"
+      },
+      "S11.ambient 2": {
+        "rect": [
+          488,
+          538,
+          238,
+          186
+        ],
+        "interaction_point": [
+          905,
+          762
+        ],
+        "label_anchor": [
+          600,
+          528
+        ],
+        "reason": "the wooden slat bench along the inside of the shelter's back wall (Z 7-10 m); the gum sits under its seat"
+      }
+    },
+    "exits": {
+      "S11.to_S12": {
+        "rect": [
+          0,
+          830,
+          170,
+          185
+        ],
+        "interaction_point": [
+          205,
+          915
+        ],
+        "label_anchor": [
+          120,
+          820
+        ],
+        "reason": "the short ramp at the near left down to the zebra crossing over the west carriageway, towards the school"
+      },
+      "S11.to_S18": {
+        "rect": [
+          930,
+          520,
+          250,
+          140
+        ],
+        "interaction_point": [
+          1075,
+          690
+        ],
+        "label_anchor": [
+          1055,
+          510
+        ],
+        "reason": "the platform continues past the shelter to its far end and the path to the housing-estate yard"
+      },
+      "S11.to_S19": {
+        "rect": [
+          1265,
+          270,
+          330,
+          355
+        ],
+        "interaction_point": [
+          1215,
+          700
+        ],
+        "label_anchor": [
+          1430,
+          262
+        ],
+        "reason": "the red-cream tram standing at the platform: board it towards Karlova Ves"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S11.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:00:32"
+  }
+}

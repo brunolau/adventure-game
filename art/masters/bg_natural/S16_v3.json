@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 2,
+  "box_game_px": [
+    478.0,
+    558.0,
+    214.0,
+    154.0
+  ],
+  "instruction": "On the left of the desk stands a grey device with a record turntable on top. Remove the turntable platter, the black vinyl record and the tone arm completely: the top of the device becomes a completely flat, closed, plain dark grey metal lid with nothing on it. The device is a 1980s cassette deck: on the left of its front panel a smoky transparent cassette door with an audio cassette clearly visible behind it (two white reels, a label with illegible scribbles), next to it piano-key buttons and a small VU meter. A small screwdriver lies on the desk in front of the deck. No brand name, no lettering. Same painterly style and light; everything else stays exactly as it is.",
+  "feather_master_px": 24,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 1984322216,
+  "usd": 0.15,
+  "scope": "bg_natural/S16/",
+  "spend_log_asset": "bg_natural/S16/S16_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: On the left of the desk stands a grey device with a record turntable on top. Remove the turntable platter, the black vinyl record and the tone arm completely: the top of the device becomes a completely flat, closed, plain dark grey metal lid with nothing on it. The device is a 1980s cassette deck: on the left of its front panel a smoky transparent cassette door with an audio cassette clearly visible behind it (two white reels, a label with illegible scribbles), next to it piano-key buttons and a small VU meter. A small screwdriver lies on the desk in front of the deck. No brand name, no lettering. Same painterly style and light; everything else stays exactly as it is. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S16_v2.png",
+    "src/game/assets/bg_natural/S15.webp"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S16_S16_v3_fix_raw.png",
+  "started": "2026-10-05T11:14:28",
+  "model_description": "",
+  "parent_prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Replace the record player on the left of the desk with a dark grey 1980s front-loading CASSETTE DECK (no turntable, no record, no tone arm): a flat rectangular metal box standing on the desk, with a smoky transparent cassette door on its front showing an audio cassette inside, a row of piano-key buttons and two small VU meters; its top cover plate is unscrewed and leans tilted against the deck's left side, so the belt-and-capstan mechanism inside is visible from above; a small screwdriver lies on the desk in front of it. No brand name, no lettering. Same painterly style and the same warm light; everything else stays exactly as it is. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S16",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S16.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:14:50"
+  }
+}

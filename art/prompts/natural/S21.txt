@@ -1,0 +1,27 @@
+# S21 Kamenne namestie (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S21.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S21.sketch.json (open square at ground level, camera ~2.2 m, horizon y ~360).
+# Owner feedback 2026-10-05 (art/feedback/2026-10-05_owner_feedback.md): the white 1968 department store with Hotel
+# Kyjev behind it, the round pavilion, trees and lawns, tram/bus traffic at the edge, busy pedestrians; no brands.
+# The owner's aerial reference was only looked at, it is not an image input.
+#refs: art/source/rooms/S21/kamenne-namestie_plaza_kiosks_2008.jpg ; art/source/rooms/S21/kamenne-namestie_tram-stop_facades.jpg ; art/source/rooms/S21/kamenne-namestie_view-spitalska_2008.jpg
+#style: src/game/assets/bg_natural/S19.webp
+Place: Kamenne namestie, the real square in the centre of Bratislava (Stare Mesto), as it looked in 1995. Images 2-4 are photos of this real square: image 2 the open paved plaza in front of the big white modernist department store of 1968 (a tall plain white facade with fine vertical ribs, a dark glazed ground floor) with the tall white Hotel Kyjev tower rising behind it; image 3 the tram stop at the edge of the square with red-and-white railings, a red-and-cream Tatra tram and the 1930s-50s city blocks (a brown-brick functionalist tower block with a mast, cream plastered blocks); image 4 the view across the square to old houses and a baroque church tower. Paint this real square: the white department store, Hotel Kyjev behind it, the round one-storey pavilion with a wide dark flat-domed roof among big plane trees and lawns, the tram and bus street with the 1930s blocks on the right. Remove everything of the 2000s: no billboards, no advertising columns, no kiosks with brands, no mobile-operator ads, no modern cars.
+
+Brief: the square artistically shortened, period facades and pedestrians, an invented small stall selling maps, a pigeon and a small fountain. Thursday 15 June 1995, a sunny early-summer afternoon: warm sunlight from the left, fresh green plane trees, a blue sky with a few white clouds. A few small distant pedestrians walk far away on the square near the department store, the pavilion and the tram stop (tiny figures without faces, never in the foreground, never at the stall, the map board or the fountain).
+
+Camera: standing on the plaza, about 2.2 m high, looking straight across the square; the department store front runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the far buildings stand on y 450; the map board, the map stall, the fountain and the bus stop stand on the plaza at y 700; the open paving fills everything from y 450 to the bottom edge.
+
+What the sketch blocks are, left to right: old town houses down a narrow side street at the far left; the long white department store (plain, unbranded: no name, no logo) with its vertical ribs and dark glazed ground floor, and its lower front wing; the tall white Hotel Kyjev tower rising behind it, its top cut by the frame; a street opening beside the store leading away between old facades; two big plane trees; the round pavilion with its glazed shop fronts and the wide dark roof, lawns with low hedges around it; the brown-brick functionalist tower block and the cream city block with its entrance door on the right; the tram and bus street with the tram stop island and its red railing and tram wires (the street itself is empty: no tram, no bus, no cars - they pass later as an animation); a bus stop pole with a blank round sign and a small bench at the edge of the plaza; the light grey stone paving of the plaza.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S21.map}: a big public city map board on two green posts: a painted map of Bratislava with the blue Danube and green parks (no legible names, no digits).
+2. {rect:S21.ambient 1}: a plump grey city pigeon sitting on the rim of the small round stone fountain.
+3. {rect:S21.ambient 2}: a fan of folded paper city maps clipped to the front of the small wooden map stall (colourful map covers with illegible titles).
+The small wooden map stall has a blue-and-white striped awning and postcards inside its window; the small round fountain has a stone basin with water and a central stone column with a spout.
+The side street at the far left is {exit:S21.to_S22}; the street beside the store is {exit:S21.to_S24}; the bus stop is {exit:S21.to_S28}; the entrance door of the cream city block is {exit:S21.to_S23}. The plaza continues out of the left edge ({exit:S21.to_S19}) and the right edge ({exit:S21.to_S25}).
+
+Walkable floor: {walk} is the open plaza - one continuous flat surface of light grey stone paving with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no benches, no bins, no lamp posts, no planters, no people, no birds. Only sunlight, soft shadows and paving joints.
+{npc_zones}
+
+Fiction rules: the map stall is invented; no shop names, no brand names or logos anywhere (no store name on the department store, no bank or shop signs, no advertising), no line numbers on trams or buses, no cars in the foreground, no animals except the one pigeon on the fountain. Any paper shows only illegible scribbles, no digits.

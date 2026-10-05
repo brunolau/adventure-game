@@ -19,7 +19,7 @@
                  "reason": "Ela standing at the stone fireplace wall at the right end of the shelter (standing sprite, ISSUES ART-NPC-01)" }
   },
   "npcs": {
-    "S03.ELA": { "feet": [1340, 672], "scale": 0.48 }
+    "S03.ELA": { "variant": "standing", "feet": [1340, 672], "scale": 0.48, "reason": "docs/DECISIONS.md item 2: Ela stands at the side wall" }
   },
   "exits": {
     "S03.to_S02": { "rect": [0, 720, 60, 295], "interaction_point": [70, 880], "label_anchor": [135, 708],

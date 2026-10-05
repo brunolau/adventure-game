@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "room": "S68",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Inside a moving Funitel cabin of the Priehyba-Chopok line (type-reference: the Parnitha Funitel interior; cabin shape and colour from the real Jasna cabins; the view from the real line down to Demanovska dolina and Liptov). Camera ~1.6 m high in the cabin, looking across at the long window wall (about 2.5 m away); horizon y ~370 (the far Liptov plain); the padded bench under the windows stands on the floor at y ~760 (~185 px per metre there). Perspective s(y) = (y - 371) / 644, a close interior. Left: the downhill end panel with its door (back to Priehyba); centre: three big window panes over the padded bench; right: the cabin scheme poster on the panel beside the closed sliding doors (exit on arrival); the summit station of Chopok comes into view in the right window pane (arrival hotspot). The tourist stands holding the ceiling rail in front of the left pane.",
+  "background": "bg_natural/S68.webp",
+  "walk_polygon": [[0, 1015], [0, 790], [130, 770], [1570, 770], [1840, 790], [1920, 800], [1920, 1015]],
+  "walk_band": [770, 1015],
+  "actor_scale": [0.62, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S68.ambient 1": {
+      "rect": [580, 235, 410, 315],
+      "interaction_point": [785, 860],
+      "label_anchor": [785, 225],
+      "reason": "the big middle window pane: the forested north slope of Chopok sliding past below, Demanovska dolina and the Liptov plain in the distance"
+    },
+    "S68.arrival": {
+      "rect": [1185, 235, 255, 210],
+      "interaction_point": [1300, 860],
+      "label_anchor": [1312, 225],
+      "reason": "the upper part of the right window pane, where the Chopok summit station with the round Rotunda comes into view up the line"
+    },
+    "S68.ambient 2": {
+      "rect": [1460, 300, 105, 150],
+      "interaction_point": [1510, 870],
+      "label_anchor": [1512, 290],
+      "reason": "the framed cabin scheme poster on the panel between the windows and the sliding doors"
+    },
+    "S68.TURISTA": {
+      "rect": [345, 455, 150, 360],
+      "interaction_point": [420, 880],
+      "reason": "the tourist Milos stands in front of the left window pane, holding the ceiling rail"
+    }
+  },
+  "npcs": {
+    "S68.TURISTA": {
+      "variant": "standing",
+      "feet": [420, 815],
+      "z": "auto",
+      "reason": "the actor note: a standing passenger in the Funitel cabin"
+    }
+  },
+  "exits": {
+    "S68.to_S67": {
+      "rect": [0, 240, 120, 530],
+      "interaction_point": [70, 880],
+      "label_anchor": [200, 230],
+      "reason": "the downhill end panel of the cabin with its door (back to Priehyba once the cabin is in the station)"
+    },
+    "S68.to_S47": {
+      "rect": [1580, 235, 240, 535],
+      "interaction_point": [1700, 870],
+      "label_anchor": [1700, 225],
+      "reason": "the closed sliding doors of the cabin, opened by the attendant on arrival at the summit (after J04)"
+    }
+  },
+  "state_patches": []
+}

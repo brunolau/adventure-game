@@ -1,0 +1,737 @@
+{
+  "room": "S47",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035471,
+  "usd": 0.15,
+  "started": "2026-10-05T10:53:09",
+  "spend_log_asset": "bg_natural/S47/S47_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S47.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the upper-floor panoramic lounge of the real Rotunda on the summit of Chopok (2,004 m), Low Tatras, Slovakia. Image 2 is a photo of this lounge: a curved window wall with dark slim mullions, dark blue upholstered sofas along the windows, round light-wood tables with dark chairs, a wall of light grey natural-stone blocks, a dark ceiling with a curved canopy edge (ignore the metal sculpture and the people). Image 3 is the real north view from the summit that the windows show: the Funitel line with its pylons going down, wooden guideposts, the Liptov basin with a lake far below and the jagged High Tatras on the horizon. Image 4 shows the Rotunda from outside (stone base, glass drum, red ring). Paint this real lounge.\n\nBrief: the real landmark Rotunda by the summit stations, a public indoor viewing space with a temporary Atlas exhibition. Chopok and the guideposts are visible. The gallery panels are a fictional 2035 installation. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky, crisp light, the summit slopes rocky with dwarf pine and white snow patches still lying near the top, the distance slightly hazy.\n\nCamera: standing in the lounge, about 1.6 m high, looking at the window wall; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the dark ceiling and the canopy edge down to y ~190; the gently curved window wall at x 0-1260 (y 190-565) with the window sofa below it (backrest y 560, base to the floor at y 705); the natural-stone core wall at x 1260-1920 (y 170-705); the normalisation panel on its stand at x 470-720 (panel y 360-660, feet y ~725); the glass showcase on its plinth at x 1015-1145 (y 450-728); the empty frame on the stone wall at x 1325-1505 (y 295-495) with a caption plate below; the glazed door at x 1600-1790 (y 360-705); the dark carpet from y 700 to the bottom edge.\n\nWhat the sketch blocks are: the dark ceiling with small spotlights and the curved canopy edge; the window wall with dark mullions and the north view (High Tatras, Liptov basin, forested ridges, the rocky summit slope with dwarf pine and snow patches, a Funitel pylon and its ropes going down, a wooden guidepost); the dark blue window sofa; two round light-wood tables with dark tub chairs; the light grey natural-stone core wall; the glazed door to the stairs; the dark grey carpet.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 470-720, y 360-660 of the 1920x1080 frame (24-38 % from the left, 33-61 % from the top): a modern free-standing exhibition panel on a slim steel stand, divided into two columns: on the left a lively record (a voice waveform, a pause mark, a small laughing face, two different handwritten names as scribbles), on the right the same record reduced to one short grey line; a thin arrow between them. No readable words.\n2. the block of the layout sketch at x 1005-1155, y 450-730 of the 1920x1080 frame (52-60 % from the left, 42-68 % from the top): a glass showcase on a dark plinth with an old brass school hand bell with a wooden handle inside, lit from above.\n3. the block of the layout sketch at x 1325-1505, y 295-540 of the 1920x1080 frame (69-78 % from the left, 27-50 % from the top): an ornate empty gilt picture frame hanging on the stone wall - inside it only the bare stone, no picture - and a small blank caption plate under it.\nThis room has no NPC zones.\nthe area of the layout sketch at x 0-60, y 738-1015 of the 1920x1080 frame (0-3 % from the left, 68-94 % from the top) is where the lounge continues out of the left edge. the area of the layout sketch at x 1600-1790, y 360-705 of the 1920x1080 frame (83-93 % from the left, 33-65 % from the top) is the glazed door in the stone wall to the stairs down.\n\nWalkable floor: the band at x 0-1920, y 738-1015 of the 1920x1080 frame (0-100 % from the left, 68-94 % from the top) is the dark grey carpet - one continuous flat surface with no step and nothing standing on it: no chairs, no tables, no stands, no bags, no people. Only daylight from the windows and soft shadows.\n\nFiction rules: leave out the metal sculpture of old lift parts in image 2 entirely; no restaurant menus, no logos, no brand names, no readable text anywhere (the exhibition graphics are pictograms and scribbles). No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S47_sketch.png (rendered from art/prompts/natural/S47.sketch.json, model geometry)",
+    "art/source/rooms/S47/rotunda-chopok_interior-lounge_2016-09.jpg",
+    "art/source/rooms/S50/chopok_view-north-funitel-high-tatras_2017-08.jpg",
+    "art/source/rooms/S48/rotunda-chopok_exterior_2016-09.jpg",
+    "src/game/assets/bg_natural/S43.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S47 natural blocking (src/game/data/blocking/S47.json): Rotunda Chopok panoramic lounge, camera ~1.6 m, horizon y ~470, window base y ~560, furniture feet y ~700-728.",
+    "background": "#3a3f48",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          170
+        ],
+        "fill": "#2f343d",
+        "note": "dark ceiling with a curved dark fabric canopy edge and small spotlights"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          300,
+          110,
+          30,
+          12
+        ],
+        "fill": "#fff3d0"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          800,
+          110,
+          30,
+          12
+        ],
+        "fill": "#fff3d0"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1500,
+          110,
+          30,
+          12
+        ],
+        "fill": "#fff3d0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            150
+          ],
+          [
+            640,
+            175
+          ],
+          [
+            1260,
+            150
+          ],
+          [
+            1260,
+            175
+          ],
+          [
+            640,
+            200
+          ],
+          [
+            0,
+            175
+          ]
+        ],
+        "fill": "#262a31",
+        "note": "curved canopy edge over the windows"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          190,
+          1260,
+          375
+        ],
+        "fill": "#9fc6e8",
+        "note": "curved window wall: the north view from Chopok"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            330
+          ],
+          [
+            200,
+            300
+          ],
+          [
+            420,
+            320
+          ],
+          [
+            640,
+            290
+          ],
+          [
+            900,
+            310
+          ],
+          [
+            1260,
+            300
+          ],
+          [
+            1260,
+            380
+          ],
+          [
+            0,
+            380
+          ]
+        ],
+        "fill": "#8a98aa",
+        "note": "the jagged High Tatras on the far horizon"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            380
+          ],
+          [
+            1260,
+            380
+          ],
+          [
+            1260,
+            470
+          ],
+          [
+            0,
+            470
+          ]
+        ],
+        "fill": "#9aa77e",
+        "note": "the hazy Liptov basin far below"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            470
+          ],
+          [
+            300,
+            430
+          ],
+          [
+            600,
+            455
+          ],
+          [
+            900,
+            420
+          ],
+          [
+            1260,
+            445
+          ],
+          [
+            1260,
+            565
+          ],
+          [
+            0,
+            565
+          ]
+        ],
+        "fill": "#5f7a52",
+        "note": "forested ridges falling to the valley"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            520
+          ],
+          [
+            400,
+            500
+          ],
+          [
+            800,
+            515
+          ],
+          [
+            1260,
+            495
+          ],
+          [
+            1260,
+            565
+          ],
+          [
+            0,
+            565
+          ]
+        ],
+        "fill": "#a39a86",
+        "note": "the rocky summit slope with dwarf pine and white June snow patches"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          150,
+          520,
+          120,
+          22
+        ],
+        "fill": "#f4f6f8",
+        "note": "snow patch"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          880,
+          505,
+          150,
+          24
+        ],
+        "fill": "#f4f6f8",
+        "note": "snow patch"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            400
+          ],
+          [
+            700,
+            565
+          ]
+        ],
+        "color": "#59606a",
+        "width": 6,
+        "note": "a Funitel pylon going down the slope"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            560,
+            380
+          ],
+          [
+            760,
+            565
+          ]
+        ],
+        "color": "#2b2b2b",
+        "width": 2,
+        "note": "the ropes"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          520,
+          10,
+          45
+        ],
+        "fill": "#6b4a2c",
+        "note": "wooden guidepost on the summit path"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          190,
+          1260,
+          375
+        ],
+        "step": 210,
+        "bar": 12,
+        "fill": "#2b3038",
+        "vertical": true,
+        "note": "dark window mullions"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          560,
+          1260,
+          60
+        ],
+        "fill": "#2c3e66",
+        "note": "dark blue upholstered window sofa: backrest"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          620,
+          1260,
+          45
+        ],
+        "fill": "#33497a",
+        "note": "sofa seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          665,
+          1260,
+          40
+        ],
+        "fill": "#202838",
+        "note": "sofa base"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1260,
+          170,
+          660,
+          535
+        ],
+        "fill": "#b9b4aa",
+        "note": "natural-stone core wall in light grey blocks"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1260,
+          170,
+          660,
+          535
+        ],
+        "cols": 9,
+        "rows": 10,
+        "color": "#a19c92",
+        "width": 3
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            700
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#4a4d55",
+        "note": "dark grey carpet floor"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          170,
+          640,
+          200,
+          30
+        ],
+        "fill": "#d8b98a",
+        "note": "round light-wood table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          262,
+          665,
+          14,
+          60
+        ],
+        "fill": "#3a3a3a",
+        "note": "table column"
+      },
+      {
+        "type": "rect",
+        "box": [
+          120,
+          630,
+          70,
+          95
+        ],
+        "fill": "#22252b",
+        "note": "dark tub chair"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          800,
+          640,
+          180,
+          28
+        ],
+        "fill": "#d8b98a",
+        "note": "round light-wood table"
+      },
+      {
+        "type": "rect",
+        "box": [
+          884,
+          663,
+          14,
+          62
+        ],
+        "fill": "#3a3a3a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          360,
+          250,
+          300
+        ],
+        "fill": "#f1eee6",
+        "note": "the Atlas normalisation panel on a slim steel stand: two columns 'before' and 'after'"
+      },
+      {
+        "type": "rect",
+        "box": [
+          490,
+          400,
+          100,
+          230
+        ],
+        "fill": "#d9cdb5",
+        "note": "'before' column: a voice waveform, a pause mark, a laughing face icon, two different names as scribbles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          400,
+          100,
+          230
+        ],
+        "fill": "#cfd6dc",
+        "note": "'after' column: one short grey line only"
+      },
+      {
+        "type": "rect",
+        "box": [
+          500,
+          660,
+          10,
+          66
+        ],
+        "fill": "#6f757b",
+        "note": "stand leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          680,
+          660,
+          10,
+          66
+        ],
+        "fill": "#6f757b",
+        "note": "stand leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1015,
+          600,
+          130,
+          128
+        ],
+        "fill": "#2e3238",
+        "note": "dark plinth of the showcase"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1015,
+          450,
+          130,
+          150
+        ],
+        "fill": "#c9dbe4",
+        "note": "glass showcase box"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1050,
+          500,
+          60,
+          70
+        ],
+        "fill": "#c8a03a",
+        "note": "old brass school bell with a wooden handle inside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1325,
+          295,
+          180,
+          200
+        ],
+        "fill": "#c9a24a",
+        "note": "empty gilt frame on the stone wall: inside only the bare stone, no picture"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1345,
+          315,
+          140,
+          160
+        ],
+        "fill": "#b9b4aa",
+        "note": "bare stone inside the empty frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1370,
+          510,
+          90,
+          26
+        ],
+        "fill": "#e9e4d8",
+        "note": "small caption plate"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          360,
+          190,
+          345
+        ],
+        "fill": "#7f9db1",
+        "note": "glazed door to the stairs going down"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1590,
+          345,
+          210,
+          16
+        ],
+        "fill": "#3a3f48",
+        "note": "door frame"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S47.json",
+  "blocking": {
+    "version": 1,
+    "room": "S47",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Upper-floor panoramic lounge of the Rotunda on Chopok as in the 2016 photo: camera ~1.6 m high on the lounge floor, looking at the gently curved window wall (left two thirds) and the natural-stone core wall (right third); horizon y ~470; the dark blue window sofas, the exhibition furniture and the stone wall stand on y ~700-728 (~126 px per metre there). Perspective s(y) = (y - 470) / 545. The windows show the real north view (the Funitel line with its pylons going down, guideposts, the Liptov basin, the High Tatras on the horizon) with June snow patches near the summit. The Atlas exhibition 2035: the normalisation panel on its stand, the bell showcase, the empty frame on the stone wall, the door to the stairs down to the plateau (Atlas pavilion); the lounge continues out of the left edge to the Funitel station. The third-party lift-parts sculpture of the photo is left out.",
+    "background": "bg_natural/S47.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        738
+      ],
+      [
+        1920,
+        738
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      738,
+      1015
+    ],
+    "actor_scale": [
+      0.49,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S47.filter": {
+        "rect": [
+          470,
+          360,
+          250,
+          300
+        ],
+        "interaction_point": [
+          595,
+          820
+        ],
+        "label_anchor": [
+          595,
+          350
+        ],
+        "reason": "the free-standing normalisation panel of the Atlas exhibition: 'before' and 'after' columns of a record (stand feet y ~725)"
+      },
+      "S47.ambient 2": {
+        "rect": [
+          1005,
+          450,
+          150,
+          280
+        ],
+        "interaction_point": [
+          1080,
+          830
+        ],
+        "label_anchor": [
+          1080,
+          440
+        ],
+        "reason": "the glass showcase on a plinth with the old school bell inside (plinth foot y ~728)"
+      },
+      "S47.ambient 1": {
+        "rect": [
+          1325,
+          295,
+          180,
+          245
+        ],
+        "interaction_point": [
+          1415,
+          830
+        ],
+        "label_anchor": [
+          1415,
+          285
+        ],
+        "reason": "the empty gilt frame on the stone wall with its small caption plate below"
+      }
+    },
+    "exits": {
+      "S47.to_S68": {
+        "rect": [
+          0,
+          738,
+          60,
+          277
+        ],
+        "interaction_point": [
+          70,
+          890
+        ],
+        "label_anchor": [
+          190,
+          726
+        ],
+        "reason": "the lounge continues out of the left edge towards the Funitel summit station"
+      },
+      "S47.to_S48": {
+        "rect": [
+          1600,
+          360,
+          190,
+          345
+        ],
+        "interaction_point": [
+          1695,
+          800
+        ],
+        "label_anchor": [
+          1695,
+          350
+        ],
+        "reason": "the glazed door in the stone wall to the stairs down to the plateau with the Atlas pavilion"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S47.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:53:57"
+  }
+}

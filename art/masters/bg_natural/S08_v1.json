@@ -1,0 +1,960 @@
+{
+  "room": "S08",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020808,
+  "usd": 0.15,
+  "started": "2026-10-05T10:24:41",
+  "spend_log_asset": "bg_natural/S08/S08_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S08.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the small pond (about 55 x 58 m) at the south-east edge of Park Javorová alej / Rekreapark in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia), seen from the top of the neighbouring pump-track hill. Images 2 and 3 are photos of the park's edge about 100 m away: grassy mounds, young planted trees, open fields and tree belts under a wide sky; image 4 is the OpenStreetMap plan of the park, the pump track and the pond. The real view: a natural pond with pale, milky green-grey water and dry reeds around it, lying in hummocky dry-grass scrubland with bare blackthorn bushes; the winding packed-dirt trail of the pump track runs over the humps in front; far behind open fields, a few distant family houses and low hills. The pond itself has no fence. Paint this real place; the bench, the short safety railing, the sign and the red ball are invented props.\n\nBrief: a small pond with a safe bank and a bench, ferns, the end of a cycle path; the props lie only on the dry, accessible side of the railing. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left, long soft shadows, dry golden and rust grass, the bushes partly bare, a few yellow leaves.\n\nCamera: standing on the trail on top of the pump-track mound, about 2.2 m high, looking straight out over the pond; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the mound top with its wide packed-dirt trail from y ~795 down to the bottom edge; the mound's edge at y ~770, beyond it the ground drops to hummocky dry-grass scrub with a lower loop of the trail (y 600-770); the pond's water from y ~600 up to its far shore at y ~490, dry reeds along both shores; the far bank's scrub and bushes up to y ~390; fields, distant houses and low hills on the horizon; a big sky with a few clouds.\n\nWhat the sketch blocks are: sky; low hills, far fields and a few small red-roofed family houses on the horizon; the far bank with dry scrub, bare blackthorn and a few autumn trees; pale reeds; the pond's calm pale water reflecting the sky; reeds and rushes along the near shore; the hummocky dry-grass scrubland below the mound with a lower loop of the winding dirt trail over the humps; the dry grass and the wide packed-dirt trail on the mound top (walkable); a short timber safety railing (posts and two rails) only along the steep edge on the left half; a round blue end-of-cycle-path traffic sign on a pole at the right (white bicycle with a red diagonal bar, no text). A few rusty brown ferns grow at the foot of the railing.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 768-830, y 732-792 of the 1920x1080 frame (40-43 % from the left, 68-73 % from the top): a chewed, slightly flattened red rubber dog ball lying in the dry grass at the right end of the railing, clearly visible.\n2. the block of the layout sketch at x 1045-1157, y 684-778 of the 1920x1080 frame (54-60 % from the left, 63-72 % from the top): a mallard drake (green head, white collar, brown chest, grey body) standing on the grass at the mound's edge, looking sideways with a very skeptical expression.\n3. the block of the layout sketch at x 240-570, y 610-800 of the 1920x1080 frame (12-30 % from the left, 56-74 % from the top): a wooden park bench with cast-iron legs standing on the mound's edge in front of the railing, its back towards us, facing the pond.\nThe trail leaving out of the left edge is the area of the layout sketch at x 0-65, y 815-1015 of the 1920x1080 frame (0-3 % from the left, 75-94 % from the top).\n\nWalkable floor: the band at x 0-1920, y 800-1015 of the 1920x1080 frame (0-100 % from the left, 74-94 % from the top) is the wide packed-dirt pump-track trail on the mound top with dry grass at its edges - one continuous, gently worn walking surface with no step, no kerb, no ditch and nothing standing on it: no bikes, no stones, no bins, no posts, no people. Only light, long shadows, tyre marks and a few fallen leaves.\nThis room has no NPC zones.\n\nFiction rules: no fence or railing around the pond itself (only the short safety railing on the left half of the mound's edge); no municipal signs, no names, no lettering; the traffic sign has a pictogram only. No people, no cyclists, no dogs, no cars; the mallard is the only animal.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S08_sketch.png (rendered from art/prompts/natural/S08.sketch.json, model geometry)",
+    "art/source/rooms/S08/rekreapark_mound_panoramax.jpg",
+    "art/source/rooms/S08/rekreapark_edge_panoramax.jpg",
+    "art/source/rooms/S08/layout_javorova-alej-pond_osm.png",
+    "src/game/assets/bg_natural/S03.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S08 natural blocking (src/game/data/blocking/S08.json): view from the pump-track mound over the pond (owner feedback), camera 2.2 m above the mound-top trail, horizon y 360, mound edge y ~770, pond 2 m lower at Z 30-55 (y ~600-490); generated from a pinhole model (painter scratchpad tools/persp.py).",
+    "background": "#a9c9e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          372
+        ],
+        "fill": "#a9c9e6",
+        "note": "sky with a few clouds"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            350
+          ],
+          [
+            260,
+            334
+          ],
+          [
+            560,
+            340
+          ],
+          [
+            820,
+            330
+          ],
+          [
+            1100,
+            342
+          ],
+          [
+            1400,
+            336
+          ],
+          [
+            1700,
+            344
+          ],
+          [
+            1920,
+            338
+          ],
+          [
+            1920,
+            372
+          ],
+          [
+            0,
+            372
+          ]
+        ],
+        "fill": "#8fa3b0",
+        "note": "low blue-grey hills far on the horizon"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          366,
+          1920,
+          30
+        ],
+        "fill": "#b9b06a",
+        "note": "far fields"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          352,
+          52,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": "small distant family house"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1236,
+            354
+          ],
+          [
+            1266,
+            340
+          ],
+          [
+            1296,
+            354
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          1330,
+          352,
+          52,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": "small distant family house"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1326,
+            354
+          ],
+          [
+            1356,
+            340
+          ],
+          [
+            1386,
+            354
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          352,
+          52,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": "small distant family house"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1446,
+            354
+          ],
+          [
+            1476,
+            340
+          ],
+          [
+            1506,
+            354
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          1520,
+          352,
+          52,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": "small distant family house"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1516,
+            354
+          ],
+          [
+            1546,
+            340
+          ],
+          [
+            1576,
+            354
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          352,
+          52,
+          20
+        ],
+        "fill": "#ece6da",
+        "note": "small distant family house"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1596,
+            354
+          ],
+          [
+            1626,
+            340
+          ],
+          [
+            1656,
+            354
+          ]
+        ],
+        "fill": "#c4562f",
+        "note": ""
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            400
+          ],
+          [
+            300,
+            372
+          ],
+          [
+            700,
+            384
+          ],
+          [
+            1000,
+            370
+          ],
+          [
+            1300,
+            380
+          ],
+          [
+            1600,
+            372
+          ],
+          [
+            1920,
+            386
+          ],
+          [
+            1920,
+            486
+          ],
+          [
+            0,
+            490
+          ]
+        ],
+        "fill": "#8b7d58",
+        "note": "far bank: dry scrub, blackthorn and bare bushes, a few autumn trees"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            470
+          ],
+          [
+            500,
+            460
+          ],
+          [
+            900,
+            470
+          ],
+          [
+            1300,
+            462
+          ],
+          [
+            1920,
+            470
+          ],
+          [
+            1920,
+            495
+          ],
+          [
+            0,
+            495
+          ]
+        ],
+        "fill": "#c9b98a",
+        "note": "pale dry reeds along the far shore"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            492
+          ],
+          [
+            1930,
+            488
+          ],
+          [
+            1930,
+            598
+          ],
+          [
+            -10,
+            600
+          ]
+        ],
+        "fill": "#b9c6b4",
+        "note": "the pond: calm pale milky green-grey water, sky reflections"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            590
+          ],
+          [
+            300,
+            560
+          ],
+          [
+            620,
+            584
+          ],
+          [
+            860,
+            566
+          ],
+          [
+            1200,
+            586
+          ],
+          [
+            1500,
+            560
+          ],
+          [
+            1930,
+            580
+          ],
+          [
+            1930,
+            610
+          ],
+          [
+            -10,
+            610
+          ]
+        ],
+        "fill": "#c6aa6c",
+        "note": "reeds and dry rushes along the near shore"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            606
+          ],
+          [
+            1930,
+            600
+          ],
+          [
+            1930,
+            770
+          ],
+          [
+            -10,
+            770
+          ]
+        ],
+        "fill": "#c2ad78",
+        "note": "hummocky dry-grass scrubland below the mound"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            700
+          ],
+          [
+            200,
+            680
+          ],
+          [
+            420,
+            712
+          ],
+          [
+            700,
+            690
+          ],
+          [
+            900,
+            708
+          ],
+          [
+            1200,
+            676
+          ],
+          [
+            1500,
+            700
+          ],
+          [
+            1700,
+            688
+          ],
+          [
+            1930,
+            706
+          ],
+          [
+            1930,
+            726
+          ],
+          [
+            1700,
+            706
+          ],
+          [
+            1500,
+            720
+          ],
+          [
+            1200,
+            696
+          ],
+          [
+            900,
+            728
+          ],
+          [
+            700,
+            708
+          ],
+          [
+            420,
+            732
+          ],
+          [
+            200,
+            698
+          ],
+          [
+            -10,
+            720
+          ]
+        ],
+        "fill": "#c9a77a",
+        "note": "a lower loop of the winding packed-dirt pump-track trail over the humps"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          150,
+          640,
+          160,
+          40
+        ],
+        "fill": "#b29c62",
+        "note": "grassy hummock"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          620,
+          625,
+          200,
+          45
+        ],
+        "fill": "#b29c62",
+        "note": "grassy hummock"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1060,
+          640,
+          170,
+          40
+        ],
+        "fill": "#b29c62",
+        "note": "grassy hummock"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1420,
+          628,
+          220,
+          48
+        ],
+        "fill": "#b29c62",
+        "note": "grassy hummock"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1760,
+          650,
+          160,
+          38
+        ],
+        "fill": "#b29c62",
+        "note": "grassy hummock"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            770
+          ],
+          [
+            1930,
+            770
+          ],
+          [
+            1930,
+            1080
+          ],
+          [
+            -10,
+            1080
+          ]
+        ],
+        "fill": "#b9a46a",
+        "note": "top of the pump-track mound: dry grass"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -10,
+            800
+          ],
+          [
+            400,
+            790
+          ],
+          [
+            800,
+            800
+          ],
+          [
+            1200,
+            788
+          ],
+          [
+            1600,
+            800
+          ],
+          [
+            1930,
+            792
+          ],
+          [
+            1930,
+            1080
+          ],
+          [
+            -10,
+            1080
+          ]
+        ],
+        "fill": "#c7a77c",
+        "note": "the wide flat packed-dirt pump-track trail on the mound top (walk band)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          -30,
+          566,
+          14,
+          187
+        ],
+        "fill": "#7a5636",
+        "note": "railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          327,
+          566,
+          14,
+          187
+        ],
+        "fill": "#7a5636",
+        "note": "railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          685,
+          566,
+          14,
+          187
+        ],
+        "fill": "#7a5636",
+        "note": "railing post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          899,
+          566,
+          14,
+          187
+        ],
+        "fill": "#7a5636",
+        "note": "railing post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -41,
+            575
+          ],
+          [
+            924,
+            575
+          ],
+          [
+            924,
+            589
+          ],
+          [
+            -41,
+            589
+          ]
+        ],
+        "fill": "#8b6a4a",
+        "note": "top rail of a short timber safety railing at the steep edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -41,
+            655
+          ],
+          [
+            924,
+            655
+          ],
+          [
+            924,
+            668
+          ],
+          [
+            -41,
+            668
+          ]
+        ],
+        "fill": "#8b6a4a",
+        "note": "middle rail"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            247,
+            706
+          ],
+          [
+            564,
+            706
+          ],
+          [
+            564,
+            617
+          ],
+          [
+            247,
+            617
+          ]
+        ],
+        "fill": "#8a5a3a",
+        "note": "wooden bench back (the bench faces the pond)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            247,
+            712
+          ],
+          [
+            564,
+            712
+          ],
+          [
+            564,
+            724
+          ],
+          [
+            247,
+            724
+          ]
+        ],
+        "fill": "#7a4e30",
+        "note": "seat edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          261,
+          706,
+          12,
+          90
+        ],
+        "fill": "#3c3430",
+        "note": "cast-iron bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          538,
+          706,
+          12,
+          90
+        ],
+        "fill": "#3c3430",
+        "note": "cast-iron bench leg"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          778,
+          742,
+          39,
+          39
+        ],
+        "fill": "#d4342a",
+        "note": "chewed red ball in the grass"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1053,
+          711,
+          94,
+          60
+        ],
+        "fill": "#7a6a50",
+        "note": "mallard body"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1113,
+          693,
+          30,
+          28
+        ],
+        "fill": "#2f6b3a",
+        "note": "green mallard head"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1651,
+          360,
+          10,
+          425
+        ],
+        "fill": "#8c9094",
+        "note": "sign pole"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1622,
+          330,
+          68,
+          68
+        ],
+        "fill": "#2c5fa8",
+        "note": "blue round end-of-cycle-path sign (white bicycle, red diagonal bar)"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S08.json",
+  "blocking": {
+    "version": 1,
+    "room": "S08",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the view from the pump track, no fence around the pond)",
+    "note": "Pond at the south-east edge of Park Javorova alej / Rekreapark, Cierna Voda, seen from the pump-track mound 'Kopec zabavy' (owner feedback): camera 2.2 m above the mound-top trail, horizon y 360, pinhole f 1663 px so s(y) = (y - 360) / 655 like S03/S05; the mound edge is at y ~770 (9 m), the ground drops ~2 m to hummocky dry-grass scrub with a lower trail loop, the pond lies 30-55 m away (water y ~600-490), the far bank scrub, fields, distant houses and low hills beyond. Walkable = the wide packed-dirt trail on the mound top (y 800-1015, ~2.8 m deep). At the steep edge a short timber safety railing (only there, the pond itself has no fence); the bench stands in front of it facing the pond (seen from behind), the chewed red ball lies in the grass at the railing's right end (the dry side), a skeptical mallard stands on the grass next to it, the end-of-cycle-path sign at the right.",
+    "background": "bg_natural/S08.webp",
+    "walk_polygon": [
+      [
+        0,
+        812
+      ],
+      [
+        500,
+        805
+      ],
+      [
+        960,
+        808
+      ],
+      [
+        1400,
+        800
+      ],
+      [
+        1920,
+        808
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      800,
+      1015
+    ],
+    "actor_scale": [
+      0.67,
+      1.0
+    ],
+    "spawn": [
+      330,
+      930
+    ],
+    "hotspots": {
+      "S08.ball": {
+        "rect": [
+          768,
+          732,
+          62,
+          60
+        ],
+        "interaction_point": [
+          800,
+          845
+        ],
+        "label_anchor": [
+          800,
+          722
+        ],
+        "reason": "chewed red ball in the dry grass at the right end of the safety railing (the dry side)"
+      },
+      "S08.ambient 1": {
+        "rect": [
+          1045,
+          684,
+          112,
+          94
+        ],
+        "interaction_point": [
+          1100,
+          850
+        ],
+        "label_anchor": [
+          1100,
+          674
+        ],
+        "reason": "a skeptical mallard drake standing on the mound-top grass at the edge"
+      },
+      "S08.ambient 2": {
+        "rect": [
+          240,
+          610,
+          330,
+          190
+        ],
+        "interaction_point": [
+          405,
+          850
+        ],
+        "label_anchor": [
+          405,
+          600
+        ],
+        "reason": "wooden bench at the edge of the mound, in front of the railing, facing the pond"
+      }
+    },
+    "exits": {
+      "S08.to_S07": {
+        "rect": [
+          0,
+          815,
+          65,
+          200
+        ],
+        "interaction_point": [
+          70,
+          910
+        ],
+        "label_anchor": [
+          180,
+          806
+        ],
+        "reason": "the trail leaves the mound out of the left edge towards the road and the bus stop"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S08.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:25:24"
+  }
+}

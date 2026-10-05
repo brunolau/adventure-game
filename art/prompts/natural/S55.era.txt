@@ -1,0 +1,19 @@
+# S55 Školský dvor v roku 2020 (2020) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S17, 1995)
+# Image 1 = the accepted S17 natural master, image 2 = the same with the S55 blocking drawn on it.
+# location_families 2020: before E10 asphalt and the wall gone; after E10 the big linden, shade and the preserved wall
+# with the cache (variant overlay, not this painting). Owner feedback: murals only possibly in 2020 (invented here).
+# art_brief: same camera as S17 and S61. In the base version the linden and the low wall are missing, asphalt at the
+# edge. (After E10: big linden, preserved service wall, distance markings of the pickup point - variant overlay.)
+Era changes: the same school yard twenty-five years later, on a sunny late-October afternoon in 2020: warm low autumn sun, the trees of the estate behind the court, the poplar and the woods on the hill in yellow, orange and rust autumn colours, a few fallen yellow leaves on the asphalt. The school is the same building with the same storeys, piers, vestibule and steps, but renovated: the upper wall bands are now plain light grey, the windows are new white plastic windows with fewer, wider panes, and the square piers of the ground floor are painted in cheerful plain colours (blue, turquoise, green, yellow) with a few simple invented children's motifs (flowers, a sun, leaves) on the wall surfaces between them. The court fence is newer: orange-painted steel frames with light wire mesh. The tall panel block at the right is insulated and repainted in pastel colours. The clay track is worn and faded with weeds at its edges. The basketball backboard is newer, white, with an orange ring and a worn white net.
+On the yard the corner has been paved: the art panel, the young linden, its grass bed with the kerb, the wooden bench and the low red-brick wall are ALL GONE - in their place is plain grey patched asphalt running up to the grass bank, with a slightly darker, newer rectangle of asphalt where the wall stood; of the red water pipe only a short red-painted stub sticks out of the asphalt at the same spot. No shade there.
+
+Interactive props of 2020:
+1. {rect:S55.ambient 1}: temporary distance markings of a pickup point painted on the asphalt at the back edge of the yard where the linden used to stand: five short bright yellow transverse stripes in a row, evenly spaced about two steps apart, each with a small yellow footprint pair, slightly worn; no letters, no digits.
+2. {rect:S55.ambient 2}: the white basketball backboard with an orange ring and a worn white net on the same grey steel pole as before.
+3. {rect:S55.cache}: here there is only plain patched asphalt and the darker rectangle where the wall stood - nothing standing.
+The asphalt runs out of the left edge along the facade ({exit:S55.to_S52}).
+
+Walkable floor: {walk} stays open grey asphalt with nothing standing on it: faded court lines, cracks, a few fallen yellow leaves, no objects.
+{npc_zones}
+
+Fiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no graffiti, no satellite dishes. Murals are simple invented motifs only (no copied artwork). Any paper shows only illegible scribbles, no digits.

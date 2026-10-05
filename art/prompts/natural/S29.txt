@@ -1,0 +1,22 @@
+# S29 Garaz radioamatera (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S29.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S29.sketch.json (garage row from the forecourt, camera ~2.2 m, horizon y ~360).
+#refs: art/source/rooms/S29/rovniakova_garage-row_under-walkway_2022.jpg ; art/source/rooms/S29/rovniakova_garage-doors_footbridge_2022.jpg ; art/source/rooms/S29/type-ref_amateur-radio-workbench.jpg
+#style: src/game/assets/bg_natural/S19.webp
+Place: the real garage row under the raised pedestrian deck of the Rovniakova panel blocks in Petrzalka (Zrkadlovy haj), Bratislava. Images 2-3 are photos of this real place: a long row of brown steel up-and-over garage doors set in a grey concrete wall under a raised pedestrian deck with a ribbed concrete parapet, tall panel blocks rising behind, a concrete footbridge between the blocks, trees and an asphalt forecourt. Image 4 is a real amateur-radio workbench (transceivers with dials and meters, an oscilloscope, a microphone, papers): use it for the gear inside the open garage, without brand names. Paint this real place as it was in 1995: unrenovated panel blocks (plain grey-beige panels, no colourful insulation), no satellite dishes, no cars.
+
+Brief: the fictional garage number 17 of a radio technician (he is added later as a sprite) doing a low-voltage measurement; a radio-amateur antenna as a silhouette outside; a loop coil on the wall. Thursday 15 June 1995, a sunny afternoon: warm sunlight from the left, fresh green trees, a blue sky; inside the open garage the warm light of a bare bulb.
+
+Camera: standing on the asphalt forecourt, about 2.2 m high, looking straight at the garage row, which runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the garage doors stand on y 690 and are 2.1 m high (top y 371); the deck's slab edge at y 260-306 and its ribbed parapet at y 150-260 above the garages from x 560 to the right edge; the forecourt asphalt fills everything from y 540 to the bottom edge.
+
+What the sketch blocks are, left to right: an unrenovated panel block and trees in the distance on the left; the concrete footbridge on piers between the blocks; the radio amateur's thin steel lattice mast with a yagi antenna and a guy wire, standing on the green beyond the forecourt, dark against the bright sky; bushes and grass on the green; the garage row under the raised deck: garage 17 standing open with its brown door panel raised under the lintel and a white painted number 17 on the concrete above it; inside, a dim concrete garage lit by a bare bulb, a workbench at the back wall with a radio transceiver with glowing dials and a low-voltage test setup (meter, battery, clips and wires), a round copper loop coil hanging on the back wall above the bench, a wooden chair at the door line; then three closed brown garage doors; the tall panel blocks rising behind the deck; the asphalt forecourt in the foreground.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S29.ambient 1}: the thin steel lattice mast with a horizontal yagi antenna (a long boom with several short cross elements) on top, a clear dark silhouette against the sky.
+2. {rect:S29.ambient 2}: a simple old wooden chair standing at the door line of the open garage, a black coiled radio cable hanging over its backrest.
+The only lettering in the picture is the number 17 above the open garage.
+
+Walkable floor: {walk} is the open asphalt forecourt - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no cars, no bins, no posts, no boxes, no puddles. Only sunlight, the shadow of the deck and a few cracks and oil stains.
+{npc_zones} He stands in front of the left half of the open garage: behind him only the dim, plain inside of the garage (an empty concrete wall), the workbench is in the right half of the garage.
+
+Fiction rules: garage number 17 is invented (no other garage numbers), the technician and the antenna are fictional; no street names, no signs, no brand names on any device, no satellite dishes, no cars, no people, no animals. Paper shows only illegible scribbles, no digits.

@@ -1,0 +1,136 @@
+{
+ "room": "S25",
+ "notes": "Natural S25: wind in the trees along Mileticova, in the red-and-white umbrella and the parsley, pigeons pecking in the aisle at the right, pigeons crossing the sky, clouds above the market hall.",
+ "layers": [
+  {
+   "id": "trees_sway",
+   "type": "sway",
+   "texture": "S25/natural/trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.2,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "umbrella_sway",
+   "type": "sway",
+   "texture": "S25/natural/umbrella.webp",
+   "anchor": 1.0,
+   "amp_px": 1.0,
+   "freq": 0.35,
+   "wavelength_px": 240,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "parsley_sway",
+   "type": "sway",
+   "texture": "S25/natural/parsley.webp",
+   "anchor": 1.0,
+   "amp_px": 1.2,
+   "freq": 0.5,
+   "wavelength_px": 60,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     1520,
+     770
+    ],
+    [
+     1840,
+     800
+    ]
+   ],
+   "scale": 0.3,
+   "flee_radius": 320,
+   "return_s": [
+    12,
+    24
+   ],
+   "exit": [
+    [
+     2040,
+     80
+    ],
+    [
+     1600,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "pigeons_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     70
+    ],
+    [
+     700,
+     40
+    ],
+    [
+     1400,
+     60
+    ],
+    [
+     2000,
+     30
+    ]
+   ],
+   "speed_px_s": 230,
+   "scale": 0.09,
+   "flock": 3,
+   "flock_spread": [
+    60,
+    22
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    20,
+    110
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "x_span": [
+    0,
+    1920
+   ],
+   "alpha": 0.7,
+   "mask": "S25/natural/sky_mask.webp"
+  }
+ ]
+}

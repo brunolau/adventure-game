@@ -1,0 +1,351 @@
+{
+  "room": "S52",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S12",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S12_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020612,
+  "usd": 0.15,
+  "scope": "bg_natural/S52/",
+  "spend_log_asset": "bg_natural/S52/S52_v1_derive",
+  "started": "2026-10-05T10:17:47",
+  "prompt_file": "art/prompts/natural/S52.era.txt",
+  "blocking_file": "src/game/data/blocking/S52.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Pred ZŠ Sokolíkova in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 1793, y 400 (93 % from the left, 37 % from the top). The fixed landmark 'entrance' stays exactly at x 1082, y 647 (56 % from the left, 60 % from the top). The fixed landmark 'planter' stays exactly at x 775, y 715 (40 % from the left, 66 % from the top). The fixed landmark 'service_window_visible_at_edge' stays exactly at x 1681, y 470 (88 % from the left, 44 % from the top).\n\nEra changes: the same school on Thursday 29 October 2020, a windy, sunny autumn afternoon: warm low sunlight, long soft shadows, the trees in yellow, orange and brown autumn colours, many fallen leaves on the forecourt and the steps. The school is quiet and closed for the pandemic. The building is renovated as it looks today:\n- All windows are replaced by modern white PVC windows (one big lower pane and a smaller top pane each, white frames), in exactly the same openings; the wall bands, the plinth and the wall around the entrance are covered with small grey-and-white mosaic tiles (the real present-day facade, no murals).\n- The old canopy is replaced by a newer canopy in the same place: slim grey steel frame, clear glass roof, the same two posts.\n- The name board above the canopy is a modern plain white board with dark grey letters ZŠ SOKOLÍKOVA (no emblems, no crests).\n- The entrance doors are modern aluminium-and-glass doors, closed; a printed A4 notice is taped inside the glass of the door; a light chain with a small blank sign hangs across the top of the steps (the regular entrance is closed).\n- The same concrete planter at the foot of the steps, with autumn plants and one discarded light-blue face mask among them.\n- The club notice board at the left is now an empty, slightly faded glazed board with two pale sheets.\n- The last ground-floor window before the corner is the caretaker's service window: on its stone sill a small metal swallow ornament.\n- Beyond the building corner the corner of the school yard: asphalt, the wire-mesh fence, autumn trees.\nEverything else built (the facade's position and window openings, the steps, the landing, the ramp and its railing, the corner, the forecourt) stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Roh dvora a servisné okno' in image 2 (x 1772-1920, y 300-600 of the 1920x1080 frame (92-100 % from the left, 28-56 % from the top)): the building corner and the corner of the school yard beyond it (asphalt, fence, an autumn tree), next to the service window.\n2. the box labelled 'Vstupný oznam' in image 2 (x 995-1115, y 440-580 of the 1920x1080 frame (52-58 % from the left, 41-54 % from the top)): the printed A4 notice taped inside the glass of the closed entrance door (illegible print, no digits).\n3. the box labelled 'Kvetináč' in image 2 (x 712-838, y 668-768 of the 1920x1080 frame (37-44 % from the left, 62-71 % from the top)): the square concrete planter at the foot of the steps with autumn plants and a discarded face mask.\nthe box labelled 'exit: Školnícke servisné okno v roku 2020' in image 2 (x 1618-1782, y 388-600 of the 1920x1080 frame (84-93 % from the left, 36-56 % from the top)) is the caretaker's service window. the box labelled 'exit: Školské zádverie v roku 2020' in image 2 (x 897-1254, y 362-653 of the 1920x1080 frame (47-65 % from the left, 34-60 % from the top)) is the closed entrance doors. The forecourt path leaves the picture at the left edge (the box labelled 'exit: Dúbravská zastávka v roku 2020' in image 2 (x 0-62, y 790-1015 of the 1920x1080 frame (0-3 % from the left, 73-94 % from the top))) and continues past the corner to the yard at the right edge (the box labelled 'exit: Školský dvor v roku 2020' in image 2 (x 1830-1920, y 600-930 of the 1920x1080 frame (95-100 % from the left, 56-86 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 686-1015 of the 1920x1080 frame (0-100 % from the left, 64-94 % from the top) stays the open paved forecourt with nothing standing on it, only light, shadows and fallen leaves.\nThis room has no NPC zones.\n\nFiction rules: apart from the letters ZŠ SOKOLÍKOVA on the name board, no readable text; no logos, no emblems, no house numbers, no brands. No people, no animals. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S12_v1.png (model geometry)",
+    "S12_v1.png + S52 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor building_corner": {
+        "at": [
+          1793,
+          400
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.573,
+        "ok": true
+      },
+      "anchor entrance": {
+        "at": [
+          1082,
+          647
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.815,
+        "ok": true
+      },
+      "anchor planter": {
+        "at": [
+          775,
+          715
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.414,
+        "ok": true
+      },
+      "anchor service_window_visible_at_edge": {
+        "at": [
+          1681,
+          470
+        ],
+        "shift_px": [
+          -6,
+          6
+        ],
+        "ncc": 0.124,
+        "ok": false
+      },
+      "exit S52.to_S51": {
+        "at": [
+          31.0,
+          902.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.884,
+        "ok": true
+      },
+      "exit S52.to_S56": {
+        "at": [
+          1700.0,
+          494.0
+        ],
+        "shift_px": [
+          0,
+          -44
+        ],
+        "ncc": 0.158,
+        "ok": false
+      },
+      "exit S52.to_S53": {
+        "at": [
+          1075.5,
+          507.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.972,
+        "ok": true
+      },
+      "exit S52.to_S55": {
+        "at": [
+          1875.0,
+          765.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.959,
+        "ok": true
+      }
+    },
+    "camera_ok": false
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S52_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S52",
+    "family_base": "S12",
+    "status": "natural re-blocking, camera family L_SCHOOL_FRONT: derived from the S12 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+    "note": "Same L_SCHOOL_FRONT camera as the base S12 (eye 1.74 m, horizon y 490, f ~1250 px, facade Z = 10 + 0.25 X m, corner at x 1793; scale s(y) = (y - 490) / 525). October 2020: the renovated facade of the fiction (white PVC windows, grey mosaic panels, a newer glass canopy); the regular entrance is closed with a distance-learning notice on the door; the caretaker's service window is the last window before the corner, the yard corner beyond it.",
+    "background": "bg_natural/S52.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        1920,
+        688
+      ],
+      [
+        1861,
+        686
+      ],
+      [
+        1341,
+        711
+      ],
+      [
+        1405,
+        764
+      ],
+      [
+        843,
+        764
+      ],
+      [
+        847,
+        773
+      ],
+      [
+        686,
+        773
+      ],
+      [
+        655,
+        772
+      ],
+      [
+        0,
+        806
+      ]
+    ],
+    "walk_band": [
+      686,
+      1015
+    ],
+    "actor_scale": [
+      0.37,
+      1.0
+    ],
+    "spawn": [
+      960,
+      920
+    ],
+    "anchors": {
+      "building_corner": [
+        1793,
+        400
+      ],
+      "entrance": [
+        1082,
+        647
+      ],
+      "planter": [
+        775,
+        715
+      ],
+      "service_window_visible_at_edge": [
+        1681,
+        470
+      ]
+    },
+    "hotspots": {
+      "S52.photo": {
+        "rect": [
+          1772,
+          300,
+          148,
+          300
+        ],
+        "interaction_point": [
+          1790,
+          760
+        ],
+        "label_anchor": [
+          1740,
+          290
+        ],
+        "reason": "the building corner and the corner of the school yard beyond it, next to the service window (the panorama from the public path)"
+      },
+      "S52.ambient 1": {
+        "rect": [
+          995,
+          440,
+          120,
+          140
+        ],
+        "interaction_point": [
+          1080,
+          800
+        ],
+        "label_anchor": [
+          1055,
+          430
+        ],
+        "reason": "printed distance-learning notice taped inside the glass of the closed entrance door"
+      },
+      "S52.ambient 2": {
+        "rect": [
+          712,
+          668,
+          126,
+          100
+        ],
+        "interaction_point": [
+          770,
+          822
+        ],
+        "label_anchor": [
+          775,
+          658
+        ],
+        "reason": "the same concrete planter at the foot of the steps (anchor planter), now with a discarded face mask among the plants"
+      }
+    },
+    "exits": {
+      "S52.to_S51": {
+        "rect": [
+          0,
+          790,
+          62,
+          225
+        ],
+        "interaction_point": [
+          70,
+          900
+        ],
+        "label_anchor": [
+          190,
+          780
+        ],
+        "reason": "the forecourt path out of the left edge towards the street and the tram stop"
+      },
+      "S52.to_S56": {
+        "rect": [
+          1618,
+          388,
+          164,
+          212
+        ],
+        "interaction_point": [
+          1700,
+          706
+        ],
+        "label_anchor": [
+          1700,
+          378
+        ],
+        "reason": "the caretaker's service window, the last ground-floor window before the corner (L_WINDOW is its close-up)"
+      },
+      "S52.to_S53": {
+        "rect": [
+          897,
+          362,
+          357,
+          291
+        ],
+        "interaction_point": [
+          1110,
+          792
+        ],
+        "label_anchor": [
+          1075,
+          352
+        ],
+        "reason": "the closed glazed entrance doors at the top of the steps (open after D02)"
+      },
+      "S52.to_S55": {
+        "rect": [
+          1830,
+          600,
+          90,
+          330
+        ],
+        "interaction_point": [
+          1850,
+          800
+        ],
+        "label_anchor": [
+          1760,
+          590
+        ],
+        "reason": "past the building corner the path leads round to the school yard (right edge)"
+      }
+    },
+    "state_patches": []
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S52.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:18:29"
+  }
+}

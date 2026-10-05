@@ -1,0 +1,25 @@
+{
+  "room": "S18",
+  "notes": "Natural S18 (bg_natural/S18.webp, June 1995 housing-estate courtyard). The laundry on the drying-rack lines flaps in the wind (hanging sway), wind in the big linden, small clouds drifting over the far blocks (sky mask), pigeons pecking on the courtyard paving (they fly off when Adam comes near), birds crossing the sky, a neighbour's shadow moving behind a loggia window, pollen motes drifting in the sun under the linden.",
+  "layers": [
+    { "id": "clouds", "type": "clouds",
+      "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [120, 260], "count": 3, "speed_px_s": 5, "scale": [0.12, 0.2], "alpha": 0.6, "x_span": [-200, 700],
+      "mask": "S18/natural/sky_mask.webp" },
+    { "id": "laundry_sway", "type": "sway", "texture": "S18/natural/laundry.webp",
+      "anchor": 0.0, "amp_px": 2.6, "freq": 0.45, "wavelength_px": 60, "flutter_px": 1.2, "gust": 0.5 },
+    { "id": "linden_sway", "type": "sway", "texture": "S18/natural/linden.webp",
+      "anchor": 1.0, "amp_px": 2.4, "freq": 0.3, "wavelength_px": 140, "flutter_px": 0.9 },
+    { "id": "pollen", "type": "particles", "preset": "dust", "emit_rect": [1250, 380, 600, 380], "count": 26,
+      "size": [2, 4], "alpha": 0.7 },
+    { "id": "pigeons", "type": "critters", "sheet": "common/pigeon_sheet", "count": 4,
+      "ground": [[820, 770], [1180, 790]], "scale": 0.17, "flee_radius": 320, "return_s": [12, 24],
+      "exit": [[1100, 200], [700, -120]] },
+    { "id": "birds_sky", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 11,
+      "path": [[-60, 120], [400, 90], [700, 40], [1000, -60]], "speed_px_s": 220, "scale": 0.08, "flock": 3,
+      "flock_spread": [50, 20], "bob_px": 4, "direction": "random", "every_s": [20, 40], "start_s": [4, 10] },
+    { "id": "loggia_shadow", "type": "tween_path", "texture": "builtin:silhouette", "pivot": [70, 360],
+      "path": [[1240, 350], [1305, 350]], "speed_px_s": 9, "scale": 0.24, "modulate": "#2c2a30", "alpha": 0.35,
+      "direction": "random", "every_s": [20, 45], "start_s": [3, 9], "clip": [1245, 262, 52, 82] }
+  ]
+}

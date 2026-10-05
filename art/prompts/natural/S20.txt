@@ -1,0 +1,23 @@
+# S20 Palova opravovna (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S20.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S20.sketch.json (shop interior box, camera ~2.4 m, horizon y 300, back wall foot y 760).
+#refs: art/source/rooms/S20/type-ref_radio-tv-repair-shop_interior_door.jpg ; art/source/rooms/S20/type-ref_radio-tv-repair-shop_shelves.jpg ; art/source/rooms/S20/levarska_service-pavilion_exterior_2011.jpg
+#style: src/game/assets/bg/S01.webp
+Place: a small electronics repair shop in the real one-storey 1970s-80s service pavilion on Levarska street in Kutiky, Karlova Ves, Bratislava. Images 2-3 are photos of a real small radio and TV repair workshop (shelves crammed with radios, test instruments, valves, cables, a workbench, a glazed door): use them for the type of room, the clutter and the materials, but replace every American device and brand with plain Czechoslovak-era equipment of the 1980s-90s without any brand names. Image 4 is the real pavilion from outside: yellow plaster walls, a brown arcade canopy, glazed shop doors on a grey pavement - this is what is seen outside through the door and the display window (without its lettering, the drinks fridge and the graffiti).
+
+Brief: the small workshop of a radio and TV repairman: little drawers held shut with rubber bands, an oscilloscope, a switched-off old television set, hand-written cardboard signs. Thursday 15 June 1995, a sunny afternoon: warm daylight comes in through the shop window and the door glass from the street, a fluorescent tube on the ceiling, dust in the air.
+
+Camera: standing at the back of the shop, about 2.4 m high, looking straight at the shop's street front wall, which is parallel to the picture; the two side walls recede symmetrically towards the centre (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the front wall from the ceiling line at y 217 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969); the floor in front of the wall fills the bottom of the picture.
+
+What the sketch blocks are, left to right: on the left side wall three wooden wall shelves with old radios and boxes carrying paper repair tags; in the front wall the glazed shop door in a dark wooden frame (glass in the upper part, the yellow pavilion arcade outside) and the big display window with a repaired old radio on its sill, showing the sunny pavement under the arcade, a yellow plaster pillar and a pale panel tower of Kutiky in the distance; a plain stretch of warm cream wall; the workbench along the right part of the wall with its drawers, and above it a wooden cabinet of many small drawers, each drawer held shut with a coloured rubber band; on the right side wall shelves with cardboard boxes of valves and spare parts and coiled cables; a fluorescent tube light on the ceiling; worn brown linoleum floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S20.ambient 1}: a big old wood-veneer CRT television set of the 1980s with a deep box, switched off (dark grey dead screen), two knobs at the side, no brand name, standing on a wooden crate against the wall.
+2. {rect:S20.ambient 2}: a hand-written cardboard sign pinned to the wall with drawing pins, three lines of black marker handwriting (illegible scribbles, no digits).
+On the workbench: a grey oscilloscope with a glowing green trace on its round screen, a soldering station with a soldering iron in its holder, an open radio chassis with glowing valves, a magnifier lamp on an arm.
+The glazed shop door is {exit:S20.to_S19}.
+
+Walkable floor: {walk} is the open shop floor of worn brown linoleum - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no boxes, no chairs, no cables, no devices. Only daylight from the window, soft shadows and wear marks.
+{npc_zones} The repairman stands in front of this plain stretch of wall, below the hand-written sign.
+
+Fiction rules: the shop, the repairman and the signs are invented: no shop name, no lettering on the door or the window, no brand names or logos on any device (no TESLA, no Simpson, no Kenwood), no flags, no house numbers, no people, no animals. Paper and signs show only illegible scribbles, no digits.

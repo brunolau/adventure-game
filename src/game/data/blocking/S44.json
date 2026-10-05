@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "room": "S44",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Rented meeting salon of Hotel Grand Jasna (type-reference: hotel meeting rooms with windows, curtains and upholstered stackable hotel chairs; not an endless archive). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the carpet on y ~700 (~126 px per metre there), Boris's archive table front stands on y ~775. Perspective s(y) = (y - 470) / 545 (same camera as the lobby S43). Left: tall windows with light curtains and the real view from the Grand to the spruce forest and Chopok, a stack of hotel chairs; centre-left: Boris behind his long archive table with the paper fond (archive boxes, bound files) and a wall screen above it playing a quiet mountain-road video; centre: the exhibition's free-standing display board (empty in the base painting; Jana's schematic and photos after Q9C, variant overlay); right of it the bookcase of paper volumes, the lectern with the public catalogue and its ribbon bookmark, the door to the corridor. The walk polygon leaves out the chair stack and the single hotel chair by the window (feet y ~740-780).",
+  "background": "bg_natural/S44.webp",
+  "walk_polygon": [[0, 1015], [0, 746], [165, 746], [175, 738], [355, 738], [362, 782], [500, 782], [510, 738], [530, 738], [550, 790], [930, 790], [950, 742], [1450, 742], [1465, 765], [1625, 765], [1645, 724], [1920, 728], [1920, 1015]],
+  "walk_band": [724, 1015],
+  "actor_scale": [0.47, 1.0],
+  "spawn": [1400, 900],
+  "hotspots": {
+    "S44.ambient 1": {
+      "rect": [1205, 360, 215, 340],
+      "interaction_point": [1310, 820],
+      "label_anchor": [1310, 350],
+      "reason": "the bookcase of paper volumes and archive boxes against the back wall (foot y ~700)"
+    },
+    "S44.ambient 2": {
+      "rect": [1470, 545, 145, 85],
+      "interaction_point": [1545, 830],
+      "label_anchor": [1545, 535],
+      "reason": "the open public exhibition catalogue on the lectern with its long ribbon bookmark hanging over the edge (lectern top y ~590, foot y ~760)"
+    },
+    "S44.BORIS": {
+      "rect": [705, 458, 140, 150],
+      "interaction_point": [775, 850],
+      "reason": "Boris behind his archive table (bust cut at the back edge of the table top, y 605)"
+    },
+    "S44.JANA35": {
+      "rect": [1115, 488, 130, 305],
+      "interaction_point": [1180, 850],
+      "reason": "Jana stands on the carpet beside the exhibition display board"
+    }
+  },
+  "npcs": {
+    "S44.BORIS": {
+      "variant": "behind_counter",
+      "feet": [775, 742],
+      "sill_y": 605,
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: Boris behind the table (table variant cut at the table top)"
+    },
+    "S44.JANA35": {
+      "variant": "standing",
+      "feet": [1180, 792],
+      "z": "auto",
+      "reason": "Jana visits the exhibition standing beside the display board; after Q9C her q9c variant holds her first drawing (data/ambient/actors.json variants_after)"
+    }
+  },
+  "exits": {
+    "S44.to_S42": {
+      "rect": [1700, 400, 180, 305],
+      "interaction_point": [1790, 800],
+      "label_anchor": [1755, 390],
+      "reason": "the salon door to the hotel corridor and out to the forecourt"
+    }
+  },
+  "state_patches": [],
+  "variant_layers": {
+    "variants/S44_jana_exhibit.webp": {
+      "texture": "variants_natural/S44_jana_exhibit.webp",
+      "pos": [942, 382],
+      "reason": "after Q9C: Jana's original schematic and photos of the people who joined her project pinned on the exhibition display board"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+# S35 Dvor hospodarskej dielne (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S35.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S35.sketch.json (camera ~2.0 m in the yard, horizon y 400).
+# Style: the accepted S32 painting of the same village and day.
+#refs: art/source/rooms/S35/manor_outbuildings_yard_taz666_2013.jpg ; art/source/rooms/S35/period_ref_farmyard_fence_1960_fortepan60245.jpg
+#style: art/masters/bg_natural/S32_v1.png
+Place: the service courtyard of the manor (kastiel) in Ivanka pri Dunaji, Slovakia, in 1960. Image 2 is the real courtyard: a long single-storey estate outbuilding with white plastered walls, a grey plinth, brown wooden windows, a red-brown tiled roof with small eyebrow dormers, a porch on yellowish round columns where the wings meet, and a second wing with a tall tiled roof and dormers. Image 3 is a 1960 colour photo of a Slovak farmyard: weathered lath fence, worn plaster, beaten earth. Paint the courtyard of 1960 from these: the same buildings, but a beaten-earth and gravel yard instead of the lawn and concrete path, and none of the modern additions (no business signs, no TV antennas, no satellite dish, no bollards, no gas markers, no cars). The small store annex with the issue hatch on the left is an invented addition built in the same style.
+
+Brief: a fictional civil agricultural workshop yard: a material issue window, shelves with saddlery remnants, sacks of seed. A sunny afternoon on 6 June 1960, warm low sunlight from the left, soft shadows, fresh green trees beyond the roofs; hens out of reach behind a lath fence.
+
+Camera: standing in the yard about 2 m high; vertical lines stay vertical; the horizon is at y ~400. Keep this exact geometry from the sketch: the store annex on the left faces the camera squarely (its wall meets the ground at y 770, its eave at y ~265); the long outbuilding behind it recedes in perspective to the columned porch (the wall meets the ground at y ~712 at x 640 and at y ~610 at x 1050); the porch columns and the right wing stand on the ground at y ~600-610; the yard ground fills everything in front.
+
+What the sketch blocks are, left to right: the whitewashed store annex with a lean-to tiled roof: the material issue hatch - a wooden-framed opening with two open shutters and a worn wooden counter board across its bottom, the dim store room behind it; next to it the open plank door of the store showing shelves with saddlery remnants (coiled leather straps, harness pieces, buckles) in the dim inside; the long outbuilding with two small windows and two eyebrow dormers in its tiled roof; jute sacks of seed stacked against its wall; the porch on four yellowish round columns with a hipped tiled roof and a weathered plank door under it; the right wing with brown windows and a tall tiled roof with an eyebrow dormer; park trees behind; a two-wheeled wooden hand cart in the yard; a weathered lath fence of a poultry run with two hens behind it on the right; the beaten-earth and gravel yard.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S35.ambient 1}: full jute grain sacks tied at the top, stacked on the ground against the wall, one standing in front.
+2. {rect:S35.ambient 2}: an old two-wheeled wooden hand cart with a plank box and a big spoked wheel, its two shafts resting on the ground.
+The workshop door under the porch is {exit:S35.to_S36}; the yard continues out of the left edge ({exit:S35.to_S32}) towards the village.
+
+Walkable floor: {walk} is the beaten-earth and gravel courtyard - flat ground with no kerb, no step, no path edge and nothing standing on it: no buckets, no barrels, no tools, no stones. Only earth, gravel, a few grass tufts, light and shadows.
+{npc_zones}
+
+Fiction rules: the workshop is unnamed: no signs, no names, no cooperative or state-farm lettering, no slogans, no red stars, no posters, no numbers on the doors. No people. The two hens behind the fence are the only animals.

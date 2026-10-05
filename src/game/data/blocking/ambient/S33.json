@@ -1,0 +1,12 @@
+{
+  "room": "S33",
+  "notes": "Natural S33 ambient (bg_natural/S33.webp): the office wall clock's seconds hand ticks; dust motes drift in the sunbeam from the window; the lindens outside the window sway; the light patch on the floor shimmers softly; after Q6C (the seeds in the park bowl) the ringed carrier pigeon sits in the pigeon window on its sill, above the landing board, pecking and looking around (Adam: 'it flies to the post office').",
+  "layers": [
+    { "id": "window_trees", "type": "sway", "texture": "S33/natural/window_trees.webp", "anchor": 1.0, "amp_px": 1.5, "freq": 0.28, "wavelength_px": 80, "flutter_px": 0.6 },
+    { "id": "clock_seconds", "type": "rotor", "pivot": [1151, 331], "length": 27, "tail": 6, "width": 2, "color": "#a3281c", "mode": "tick", "period_s": 60 },
+    { "id": "dust_window", "type": "particles", "preset": "dust", "emit_rect": [380, 340, 560, 440], "count": 30, "size": [3.5, 7.5], "alpha_range": [0.25, 0.75], "color": "#fff0c4" },
+    { "id": "floor_light", "type": "flicker", "mode": "noise", "rect": [60, 735, 560, 150], "color": "#fff1c8", "min": 0.0, "max": 0.07, "period_s": 2.4 },
+    { "id": "pigeon_at_window", "type": "sprite_loop", "sheet": "common/pigeon_sheet", "pos": [1757, 385], "scale": 0.28, "fps": 2.5,
+      "frames": [0, 2, 0, 1, 0, 2], "pause_s": [1, 4], "flip": true, "if_done": ["Q6C"] }
+  ]
+}

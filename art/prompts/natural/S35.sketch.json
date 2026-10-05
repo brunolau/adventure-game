@@ -1,0 +1,999 @@
+{
+ "note": "S35 natural blocking (src/game/data/blocking/S35.json): manor service courtyard, camera ~2.0 m in the yard, horizon y 400, s(y) = (y - 400) / 615; frontal store annex with the issue hatch on the left (foot y 770, hatch counter y 589), the long outbuilding receding to the columned porch (foot y 610) with the workshop door, the right wing (foot y 600), hand cart and poultry fence on the right.",
+ "background": "#b7d2ea",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    400
+   ],
+   "fill": "#b7d2ea",
+   "note": "sky"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1540,
+     250
+    ],
+    [
+     1620,
+     160
+    ],
+    [
+     1760,
+     140
+    ],
+    [
+     1860,
+     180
+    ],
+    [
+     1920,
+     160
+    ],
+    [
+     1920,
+     420
+    ],
+    [
+     1540,
+     420
+    ]
+   ],
+   "fill": "#6f9446",
+   "note": "park trees behind the right wing"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1290,
+    330,
+    630,
+    270
+   ],
+   "fill": "#e9e6dc",
+   "note": "right wing of the service buildings towards the manor, worn white plaster"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1270,
+     335
+    ],
+    [
+     1330,
+     215
+    ],
+    [
+     1920,
+     215
+    ],
+    [
+     1920,
+     335
+    ]
+   ],
+   "fill": "#b4552f",
+   "note": "its red-brown tiled roof"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1500,
+     262
+    ],
+    [
+     1530,
+     232
+    ],
+    [
+     1570,
+     232
+    ],
+    [
+     1600,
+     262
+    ]
+   ],
+   "fill": "#ece8e0",
+   "note": "eyebrow dormer"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1532,
+    238,
+    36,
+    24
+   ],
+   "fill": "#4a4440"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1290,
+    565,
+    630,
+    35
+   ],
+   "fill": "#b4ad9e",
+   "note": "grey plinth"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1370,
+    420,
+    70,
+    95
+   ],
+   "fill": "#7a5a3a",
+   "note": "brown wooden window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1378,
+    428,
+    54,
+    79
+   ],
+   "fill": "#55606a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1520,
+    420,
+    70,
+    95
+   ],
+   "fill": "#7a5a3a",
+   "note": "brown wooden window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1528,
+    428,
+    54,
+    79
+   ],
+   "fill": "#55606a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1700,
+    420,
+    70,
+    95
+   ],
+   "fill": "#7a5a3a",
+   "note": "brown wooden window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1708,
+    428,
+    54,
+    79
+   ],
+   "fill": "#55606a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1850,
+    420,
+    70,
+    95
+   ],
+   "fill": "#7a5a3a",
+   "note": "brown wooden window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1858,
+    428,
+    54,
+    79
+   ],
+   "fill": "#55606a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1040,
+    300,
+    270,
+    310
+   ],
+   "fill": "#d8d3c6",
+   "note": "shaded back wall of the columned porch"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1020,
+     305
+    ],
+    [
+     1080,
+     230
+    ],
+    [
+     1290,
+     230
+    ],
+    [
+     1330,
+     305
+    ]
+   ],
+   "fill": "#b4552f",
+   "note": "hipped tiled roof over the porch"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1030,
+    296,
+    290,
+    16
+   ],
+   "fill": "#e9e2d0",
+   "note": "porch beam"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1125,
+    400,
+    95,
+    210
+   ],
+   "fill": "#6e4a2e",
+   "note": "plank door of the workshop under the porch (exit S36)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1055,
+    312,
+    22,
+    298
+   ],
+   "fill": "#e7c97a",
+   "note": "yellowish round column of the porch"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1100,
+    312,
+    22,
+    298
+   ],
+   "fill": "#e7c97a",
+   "note": "yellowish round column of the porch"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1240,
+    312,
+    22,
+    298
+   ],
+   "fill": "#e7c97a",
+   "note": "yellowish round column of the porch"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1285,
+    312,
+    22,
+    298
+   ],
+   "fill": "#e7c97a",
+   "note": "yellowish round column of the porch"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     250
+    ],
+    [
+     1050,
+     290
+    ],
+    [
+     1050,
+     610
+    ],
+    [
+     640,
+     712
+    ]
+   ],
+   "fill": "#ebe8de",
+   "note": "long single-storey outbuilding receding towards the porch, white plaster"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     698
+    ],
+    [
+     1050,
+     598
+    ],
+    [
+     1050,
+     612
+    ],
+    [
+     640,
+     714
+    ]
+   ],
+   "fill": "#b4ad9e",
+   "note": "plinth"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     600,
+     262
+    ],
+    [
+     640,
+     -20
+    ],
+    [
+     1060,
+     100
+    ],
+    [
+     1050,
+     295
+    ]
+   ],
+   "fill": "#b4552f",
+   "note": "long tiled roof of the outbuilding"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     740,
+     110
+    ],
+    [
+     780,
+     88
+    ],
+    [
+     830,
+     104
+    ],
+    [
+     830,
+     140
+    ],
+    [
+     740,
+     140
+    ]
+   ],
+   "fill": "#ece8e0",
+   "note": "eyebrow dormer"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    772,
+    102,
+    40,
+    24
+   ],
+   "fill": "#4a4440"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     920,
+     165
+    ],
+    [
+     950,
+     150
+    ],
+    [
+     990,
+     160
+    ],
+    [
+     990,
+     185
+    ],
+    [
+     920,
+     185
+    ]
+   ],
+   "fill": "#ece8e0",
+   "note": "eyebrow dormer"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     760,
+     412
+    ],
+    [
+     815,
+     418
+    ],
+    [
+     815,
+     545
+    ],
+    [
+     760,
+     556
+    ]
+   ],
+   "fill": "#7a5a3a",
+   "note": "window of the long wing"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     905,
+     430
+    ],
+    [
+     950,
+     434
+    ],
+    [
+     950,
+     530
+    ],
+    [
+     905,
+     538
+    ]
+   ],
+   "fill": "#7a5a3a",
+   "note": "window of the long wing"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     770
+    ],
+    [
+     640,
+     770
+    ],
+    [
+     640,
+     714
+    ],
+    [
+     1050,
+     612
+    ],
+    [
+     1920,
+     600
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     0,
+     1080
+    ]
+   ],
+   "fill": "#c4ad86",
+   "note": "beaten-earth and gravel courtyard with a few grass tufts (walkable)"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     960
+    ],
+    [
+     400,
+     900
+    ],
+    [
+     900,
+     880
+    ],
+    [
+     1400,
+     900
+    ],
+    [
+     1920,
+     880
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     0,
+     1080
+    ]
+   ],
+   "fill": "#bba57e",
+   "note": "worn patch with faint wheel ruts in the yard (still flat ground)"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     40,
+     268
+    ],
+    [
+     40,
+     170
+    ],
+    [
+     640,
+     170
+    ],
+    [
+     690,
+     268
+    ]
+   ],
+   "fill": "#a9502e",
+   "note": "lean-to tiled roof of the store annex"
+  },
+  {
+   "type": "rect",
+   "box": [
+    30,
+    262,
+    670,
+    14
+   ],
+   "fill": "#7a4630",
+   "note": "eave"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    268,
+    600,
+    502
+   ],
+   "fill": "#efece2",
+   "note": "material store annex, frontal wall, whitewashed"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     268
+    ],
+    [
+     700,
+     280
+    ],
+    [
+     700,
+     742
+    ],
+    [
+     640,
+     770
+    ]
+   ],
+   "fill": "#d6d1c4",
+   "note": "side wall of the annex in shade"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    730,
+    600,
+    40
+   ],
+   "fill": "#b4ad9e",
+   "note": "plinth"
+  },
+  {
+   "type": "rect",
+   "box": [
+    112,
+    396,
+    196,
+    198
+   ],
+   "fill": "#6b4c32",
+   "note": "frame of the material issue hatch"
+  },
+  {
+   "type": "rect",
+   "box": [
+    122,
+    406,
+    176,
+    183
+   ],
+   "fill": "#3f3a34",
+   "note": "hatch opening: dim store room behind"
+  },
+  {
+   "type": "rect",
+   "box": [
+    96,
+    586,
+    228,
+    16
+   ],
+   "fill": "#8a6440",
+   "note": "worn wooden counter board of the hatch, top edge at y 589"
+  },
+  {
+   "type": "rect",
+   "box": [
+    70,
+    400,
+    40,
+    190
+   ],
+   "fill": "#5d4228",
+   "note": "open shutter left"
+  },
+  {
+   "type": "rect",
+   "box": [
+    310,
+    400,
+    40,
+    190
+   ],
+   "fill": "#5d4228",
+   "note": "open shutter right"
+  },
+  {
+   "type": "rect",
+   "box": [
+    380,
+    388,
+    190,
+    382
+   ],
+   "fill": "#5a4430",
+   "note": "open plank door of the store"
+  },
+  {
+   "type": "rect",
+   "box": [
+    392,
+    398,
+    166,
+    372
+   ],
+   "fill": "#3a3530",
+   "note": "dim store inside"
+  },
+  {
+   "type": "rect",
+   "box": [
+    392,
+    450,
+    166,
+    10
+   ],
+   "fill": "#7a5a3a",
+   "note": "shelves with saddlery remnants"
+  },
+  {
+   "type": "rect",
+   "box": [
+    402,
+    420,
+    146,
+    30
+   ],
+   "fill": "#8a5a34",
+   "note": "coiled leather straps, harness pieces, buckles"
+  },
+  {
+   "type": "rect",
+   "box": [
+    392,
+    530,
+    166,
+    10
+   ],
+   "fill": "#7a5a3a",
+   "note": "shelves with saddlery remnants"
+  },
+  {
+   "type": "rect",
+   "box": [
+    402,
+    500,
+    146,
+    30
+   ],
+   "fill": "#8a5a34",
+   "note": "coiled leather straps, harness pieces, buckles"
+  },
+  {
+   "type": "rect",
+   "box": [
+    392,
+    610,
+    166,
+    10
+   ],
+   "fill": "#7a5a3a",
+   "note": "shelves with saddlery remnants"
+  },
+  {
+   "type": "rect",
+   "box": [
+    402,
+    580,
+    146,
+    30
+   ],
+   "fill": "#8a5a34",
+   "note": "coiled leather straps, harness pieces, buckles"
+  },
+  {
+   "type": "rect",
+   "box": [
+    392,
+    690,
+    166,
+    10
+   ],
+   "fill": "#7a5a3a",
+   "note": "shelves with saddlery remnants"
+  },
+  {
+   "type": "rect",
+   "box": [
+    402,
+    660,
+    146,
+    30
+   ],
+   "fill": "#8a5a34",
+   "note": "coiled leather straps, harness pieces, buckles"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    690,
+    640,
+    80,
+    98
+   ],
+   "fill": "#bea56f",
+   "note": "stacked jute seed sacks against the long wing"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    748,
+    632,
+    82,
+    104
+   ],
+   "fill": "#c8b07a"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    712,
+    598,
+    82,
+    72
+   ],
+   "fill": "#d0b884"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    668,
+    612,
+    120,
+    130
+   ],
+   "fill": "#d6bf8a",
+   "note": "one full grain sack tied at the top, standing in front of the stack"
+  },
+  {
+   "type": "rect",
+   "box": [
+    716,
+    598,
+    24,
+    22
+   ],
+   "fill": "#a08050"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1420,
+    598,
+    124,
+    124
+   ],
+   "outline": "#4a3624",
+   "width": 12,
+   "note": "big spoked wooden wheel of the hand cart"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1482,
+     604
+    ],
+    [
+     1482,
+     716
+    ]
+   ],
+   "color": "#4a3624",
+   "width": 5
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1426,
+     660
+    ],
+    [
+     1538,
+     660
+    ]
+   ],
+   "color": "#4a3624",
+   "width": 5
+  },
+  {
+   "type": "rect",
+   "box": [
+    1360,
+    600,
+    250,
+    62
+   ],
+   "fill": "#8a6440",
+   "note": "plank box of the two-wheeled hand cart"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1362,
+     660
+    ],
+    [
+     1332,
+     722
+    ]
+   ],
+   "color": "#6b4a2c",
+   "width": 9,
+   "note": "cart shafts resting on the ground"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1400,
+     662
+    ],
+    [
+     1372,
+     724
+    ]
+   ],
+   "color": "#6b4a2c",
+   "width": 9
+  },
+  {
+   "type": "bars",
+   "box": [
+    1660,
+    525,
+    260,
+    180
+   ],
+   "step": 16,
+   "bar": 8,
+   "fill": "#8f7a5c",
+   "vertical": true,
+   "note": "weathered lath fence of the poultry run"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1660,
+    560,
+    260,
+    8
+   ],
+   "fill": "#7a6448"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1660,
+    650,
+    260,
+    8
+   ],
+   "fill": "#7a6448"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1720,
+    620,
+    46,
+    36
+   ],
+   "fill": "#c47a3a",
+   "note": "hen behind the fence"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1820,
+    630,
+    46,
+    36
+   ],
+   "fill": "#f0ece0",
+   "note": "white hen behind the fence"
+  }
+ ]
+}

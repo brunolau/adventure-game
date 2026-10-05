@@ -1,0 +1,25 @@
+# S28 Petrzalsky podchod (1995) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S28.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S28.sketch.json (underpass portal from the path, camera ~2.2 m, horizon y ~360).
+# Owner feedback 2026-10-05: only type-ref_housing-estate-underpass_stairs.jpg represents a real Petrzalka underpass;
+# the room is based on it (the other two register photos are not image inputs any more).
+#refs: art/source/rooms/S28/type-ref_housing-estate-underpass_stairs.jpg
+#style: src/game/assets/bg_natural/S19.webp
+Place: a pedestrian underpass of the Petrzalka housing estate under Rusovska cesta, Bratislava. Image 2 is a photo of exactly this type of real Petrzalka underpass: a weathered light grey concrete headwall carrying the road above (an edge beam and a railing on top), a wide rectangular tunnel mouth with a long straight tunnel and a bright exit at its far end, concrete stairs with a black steel handrail climbing the embankment beside the wall on the right, bushes and an asphalt path in front. Paint this real place as it was on a summer day in 1995: green bushes instead of the winter branches, no leaf litter, no graffiti tags.
+
+Brief: a well-lit pedestrian underpass with a legal art panel, a young artist (he is added later as a sprite), old pasted posters and tiles. No threatening stereotypes about the district: it is a friendly, sunny, ordinary place. Thursday 15 June 1995, a sunny afternoon: warm sunlight from the left on the concrete, the tunnel inside brightly lit by fluorescent tubes on white tiles.
+
+Camera: standing on the asphalt path in front of the underpass, about 2.2 m high, looking straight at the headwall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the headwall stands on the ground at y 705 and rises to the edge beam at y 56-120 with the road railing on top; the tunnel mouth from x 640 to x 1240 with its top at y 320; the stairs start at the ground at x 1340-1440 and climb to the upper right corner; the asphalt fills the ground from y 705 to the bottom edge, the green embankment the lower right corner.
+
+What the sketch blocks are, left to right: a green bush at the far left; old torn layered paper posters pasted on the concrete (illegible); the legal art panel: a big dark green chalkboard in a simple wooden frame on the wall, with a white chalk drawing of three Petrzalka panel blocks with their windows still empty (not lit), and a chalk ledge below; a plain strip of concrete wall; the bright tunnel mouth: inside, white tiled walls of slightly different whites, fluorescent tubes on the ceiling, a tiled floor and the bright far exit; a drain grating across the tunnel mouth; a skateboard leaning against the wall right of the tunnel; the concrete stairs with the black handrail climbing the embankment along the wall; green bushes and grass on the embankment; the asphalt path in the foreground.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S28.mural}: the legal art panel: a large dark green chalkboard in a wooden frame with a white chalk sketch of three panel blocks, all their little windows dark and empty.
+2. {rect:S28.ambient 1}: the white wall tiles inside the tunnel mouth, each tile a slightly different white, clean and bright under the fluorescent light.
+3. {rect:S28.ambient 2}: a well-used skateboard with a red deck and yellow wheels leaning upright against the wall.
+The tunnel is {exit:S28.to_S30}; the stairs are {exit:S28.to_S29}; the path runs out of the left edge ({exit:S28.to_S21}).
+
+Walkable floor: {walk} is the open asphalt path and the tunnel floor - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no bins, no posts, no bags, no bottles, no rubbish. Only sunlight, soft shadows and a few cracks.
+{npc_zones} The artist stands in front of this plain strip of concrete between his panel and the tunnel.
+
+Fiction rules: the art panel, the posters and the artist are invented: no graffiti tags, no legible text on the posters (illegible scribbles only), no ads, no exchange-office signs, no street names, no people, no animals. Any paper shows only illegible scribbles, no digits.

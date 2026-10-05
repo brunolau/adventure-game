@@ -1,0 +1,25 @@
+# S39 Miestnost prveho ZVONu (1960) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S39.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S39.sketch.json (frontal small room, horizon y 470, back wall foot y 720, table top y 610).
+# Refs: crops of the two Fortepan type references without people and without the crucifix; the real canal (window
+# view). Style: the accepted S36 painting (interior of the same village and day).
+#refs: art/prompts/natural/S39_ref_instrument_panel_1935_crop.jpg ; art/prompts/natural/S39_ref_lab_bench_1960_crop.jpg ; art/source/rooms/S38/sursky_canal_village_edge_rios_2018.jpg
+#style: art/masters/bg_natural/S36_v2.png
+Place: the small measuring room inside a plain brick pump hut on the bank of the Sursky kanal at the edge of Ivanka pri Dunaji, Slovakia, in 1960 - an invented room. Images 2 and 3 are real rooms of the period (type references): image 2 a physics work room with opal globe lamps, a long scale and wooden instrument panels with round dial gauges and switches; image 3 a 1960 laboratory bench with bottles and instruments. Image 4 is the real canal outside (paint it as June: lush grass and reeds) - that is the view through the window. Paint a small, practical, slightly improvised scientific workroom of 1960 from these.
+
+Brief: young Mira works at a table mechanical resonator; a brass calibration plate with four meanings; lamps; boards with invented symbols. 6 June 1960, late afternoon: sunlight through the small window, the globe lamps and the desk lamp are lit, a calm, focused, slightly mysterious mood.
+
+Camera: standing in the room about 1.7 m high, facing the back wall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~470. Keep this exact geometry from the sketch: the back wall meets the floor at y 720; the long wooden table stands along the back wall from x 560 to x 1360, its top at y 600-622, its legs on the floor at y ~748; the low ceiling beams at y ~60 and ~200.
+
+What the sketch blocks are, left to right: the plank door of the hut at the far left, standing ajar with daylight in the gap; a small wooden window showing the canal, reeds and fields in the sun; a blackboard with chalk drawings of invented symbols - circles, arrows, wave lines and dots, no letters and no digits; on the table: a green enamel desk lamp with a glowing bulb, the table mechanical resonator - a heavy wooden base carrying a row of polished brass rods like tuning forks, a brass cross bar and a small brass pendulum, with the calibration plate on its front - and an open notebook with a pencil; a wooden instrument panel with three round dial gauges and switches on the wall, a cloth-covered cable running down to the resonator; a patch of bare brick; two opal glass globe lamps hanging from the ceiling; a narrow plank door at the right of the back wall with a brass knob; the worn plank floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S39.plate}: a polished brass calibration plate fixed upright on the front of the resonator's base, divided into four engraved fields, each with an invented abstract symbol (no letters, no digits).
+2. {rect:S39.ambient 1}: a green enamel desk lamp with a jointed arm and a glowing incandescent bulb, standing on the table.
+3. {rect:S39.ambient 2}: an open notebook lying on the table with lines of pencil notes, several crossed out (illegible scribbles), and a pencil beside it.
+The door at the left is {exit:S39.to_S38}; the narrow door at the right is {exit:S39.to_S40}.
+
+Walkable floor: {walk} is the worn plank floor - one continuous flat surface with no step, no rug and nothing standing on it: no chairs, no stools, no boxes, no cables. Only light, shadows and the board joints.
+{npc_zones}
+
+Fiction rules: entirely invented equipment; no crucifix, no portraits, no posters, no school desks, no brand names, no lettering, no digits anywhere (dials have plain tick marks only). No people, no animals.

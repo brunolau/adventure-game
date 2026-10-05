@@ -1,0 +1,862 @@
+{
+ "note": "S28 natural: underpass portal from the path, camera 2.2 m, horizon y 360, headwall foot y 705.",
+ "background": "#b9d3ea",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    60
+   ],
+   "fill": "#b9d3ea",
+   "note": "sky above the road"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1280,
+    -80,
+    520,
+    200
+   ],
+   "fill": "#6e9346",
+   "note": "tree crowns above the road"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    30,
+    1920,
+    26
+   ],
+   "fill": "#3a3a38",
+   "note": "railing of the road (Rusovska cesta) on top of the underpass"
+  },
+  {
+   "type": "bars",
+   "box": [
+    0,
+    6,
+    1920,
+    28
+   ],
+   "step": 24,
+   "bar": 4,
+   "fill": "#3a3a38",
+   "vertical": true,
+   "note": "railing bars"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    56,
+    1920,
+    54
+   ],
+   "fill": "#d4d2cc",
+   "note": "projecting concrete edge beam of the road deck"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    110,
+    1920,
+    595
+   ],
+   "fill": "#c9c7c0",
+   "note": "weathered light grey concrete headwall of the underpass"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    110,
+    1920,
+    10
+   ],
+   "fill": "#a9a7a0"
+  },
+  {
+   "type": "rect",
+   "box": [
+    640,
+    316,
+    600,
+    389
+   ],
+   "fill": "#e8ecea",
+   "note": "mouth of the pedestrian tunnel: bright white-tiled walls inside, lit"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     316
+    ],
+    [
+     880,
+     420
+    ],
+    [
+     880,
+     650
+    ],
+    [
+     640,
+     705
+    ]
+   ],
+   "fill": "#dfe5e4",
+   "note": "left inner tiled wall of the tunnel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1240,
+     316
+    ],
+    [
+     1000,
+     420
+    ],
+    [
+     1000,
+     650
+    ],
+    [
+     1240,
+     705
+    ]
+   ],
+   "fill": "#d6dcdb",
+   "note": "right inner tiled wall of the tunnel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     316
+    ],
+    [
+     1240,
+     316
+    ],
+    [
+     1000,
+     420
+    ],
+    [
+     880,
+     420
+    ]
+   ],
+   "fill": "#c8ceca",
+   "note": "tunnel ceiling"
+  },
+  {
+   "type": "grid",
+   "box": [
+    650,
+    360,
+    210,
+    320
+   ],
+   "cols": 7,
+   "rows": 10,
+   "color": "#bfc8c6",
+   "width": 1,
+   "note": "white wall tiles"
+  },
+  {
+   "type": "rect",
+   "box": [
+    880,
+    420,
+    120,
+    230
+   ],
+   "fill": "#f6f4e8",
+   "note": "bright far exit of the tunnel"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     640,
+     705
+    ],
+    [
+     1240,
+     705
+    ],
+    [
+     1000,
+     650
+    ],
+    [
+     880,
+     650
+    ]
+   ],
+   "fill": "#b8b4a8",
+   "note": "tiled floor of the tunnel"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     760,
+     350
+    ],
+    [
+     900,
+     410
+    ]
+   ],
+   "color": "#fffde8",
+   "width": 6,
+   "note": "fluorescent tube on the tunnel ceiling"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1120,
+     350
+    ],
+    [
+     990,
+     410
+    ]
+   ],
+   "color": "#fffde8",
+   "width": 6,
+   "note": "fluorescent tube"
+  },
+  {
+   "type": "rect",
+   "box": [
+    30,
+    420,
+    90,
+    130
+   ],
+   "fill": "#d8c8a0",
+   "note": "old torn layered posters pasted on the concrete (illegible)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    50,
+    440,
+    60,
+    50
+   ],
+   "fill": "#b85a4a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    40,
+    500,
+    70,
+    40
+   ],
+   "fill": "#5a7a9a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    138,
+    348,
+    364,
+    264
+   ],
+   "fill": "#6a5032",
+   "note": "wooden frame of the legal art panel"
+  },
+  {
+   "type": "rect",
+   "box": [
+    150,
+    360,
+    340,
+    240
+   ],
+   "fill": "#2f4a3e",
+   "note": "dark green chalkboard panel"
+  },
+  {
+   "type": "rect",
+   "box": [
+    175,
+    440,
+    70,
+    140
+   ],
+   "fill": "#8a9a92",
+   "note": "chalk drawing: panel block"
+  },
+  {
+   "type": "rect",
+   "box": [
+    265,
+    400,
+    90,
+    180
+   ],
+   "fill": "#8a9a92",
+   "note": "chalk drawing: tall panel block"
+  },
+  {
+   "type": "rect",
+   "box": [
+    375,
+    460,
+    90,
+    120
+   ],
+   "fill": "#8a9a92",
+   "note": "chalk drawing: panel block"
+  },
+  {
+   "type": "grid",
+   "box": [
+    270,
+    410,
+    80,
+    160
+   ],
+   "cols": 4,
+   "rows": 8,
+   "color": "#2f4a3e",
+   "width": 3
+  },
+  {
+   "type": "grid",
+   "box": [
+    180,
+    450,
+    60,
+    120
+   ],
+   "cols": 3,
+   "rows": 6,
+   "color": "#2f4a3e",
+   "width": 3
+  },
+  {
+   "type": "grid",
+   "box": [
+    380,
+    470,
+    80,
+    100
+   ],
+   "cols": 4,
+   "rows": 5,
+   "color": "#2f4a3e",
+   "width": 3
+  },
+  {
+   "type": "rect",
+   "box": [
+    150,
+    600,
+    340,
+    10
+   ],
+   "fill": "#5a4228",
+   "note": "chalk ledge"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    -80,
+    520,
+    200,
+    220
+   ],
+   "fill": "#5f8a3c",
+   "note": "green bush at the left corner"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1262,
+     600
+    ],
+    [
+     1300,
+     596
+    ],
+    [
+     1322,
+     708
+    ],
+    [
+     1284,
+     712
+    ]
+   ],
+   "fill": "#c8402a",
+   "note": "skateboard leaning against the wall (red deck, yellow wheels)"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1268,
+    610,
+    12,
+    12
+   ],
+   "fill": "#e8c040"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1302,
+    700,
+    12,
+    12
+   ],
+   "fill": "#e8c040"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1440,
+     705
+    ],
+    [
+     1920,
+     330
+    ],
+    [
+     1920,
+     1080
+    ],
+    [
+     1600,
+     1080
+    ]
+   ],
+   "fill": "#6e8a44",
+   "note": "green embankment with grass right of the stairs"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1340,
+     705
+    ],
+    [
+     1440,
+     705
+    ],
+    [
+     1920,
+     330
+    ],
+    [
+     1920,
+     250
+    ]
+   ],
+   "fill": "#d6d2c8",
+   "note": "concrete stairs climbing the embankment to street level (route to the garage row)"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1892,
+     272
+    ],
+    [
+     1920,
+     272
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1864,
+     294
+    ],
+    [
+     1920,
+     294
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1836,
+     316
+    ],
+    [
+     1920,
+     316
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1808,
+     338
+    ],
+    [
+     1910,
+     338
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1780,
+     360
+    ],
+    [
+     1882,
+     360
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1752,
+     382
+    ],
+    [
+     1853,
+     382
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1724,
+     404
+    ],
+    [
+     1825,
+     404
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1696,
+     426
+    ],
+    [
+     1797,
+     426
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1668,
+     448
+    ],
+    [
+     1769,
+     448
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1640,
+     470
+    ],
+    [
+     1741,
+     470
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1612,
+     492
+    ],
+    [
+     1713,
+     492
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1583,
+     514
+    ],
+    [
+     1684,
+     514
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1555,
+     536
+    ],
+    [
+     1656,
+     536
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1527,
+     558
+    ],
+    [
+     1628,
+     558
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1499,
+     580
+    ],
+    [
+     1600,
+     580
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1471,
+     602
+    ],
+    [
+     1572,
+     602
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1443,
+     624
+    ],
+    [
+     1544,
+     624
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1415,
+     646
+    ],
+    [
+     1516,
+     646
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1387,
+     668
+    ],
+    [
+     1487,
+     668
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1359,
+     690
+    ],
+    [
+     1459,
+     690
+    ]
+   ],
+   "color": "#aaa498",
+   "width": 4,
+   "note": "stair tread edge"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1330,
+     600
+    ],
+    [
+     1920,
+     160
+    ]
+   ],
+   "color": "#2a2a2a",
+   "width": 6,
+   "note": "black steel handrail"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1700,
+    560,
+    300,
+    300
+   ],
+   "fill": "#5f8a3c",
+   "note": "bushes on the embankment below the stairs"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     705
+    ],
+    [
+     1440,
+     705
+    ],
+    [
+     1600,
+     1080
+    ],
+    [
+     0,
+     1080
+    ]
+   ],
+   "fill": "#7d7b78",
+   "note": "asphalt path in front of the underpass"
+  },
+  {
+   "type": "rect",
+   "box": [
+    640,
+    701,
+    600,
+    14
+   ],
+   "fill": "#5a5856",
+   "note": "drain grating at the tunnel mouth"
+  }
+ ]
+}

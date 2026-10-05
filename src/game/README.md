@@ -210,7 +210,7 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 | `--markers` | the Space markers on (as if Space were held) |
 | `--soft-cursor` | also draw the cursor in software, so `--screenshot` shows it (hardware cursors are not in viewport captures) |
 | `--targets` | print every target of the room (`HARNESS target <id> kind rect point anchor`) |
-| `--blocking natural\|template` | natural re-blocking proposal: rooms with `data/blocking/<room>.json` use its presentation geometry and `assets/bg_natural/<room>.webp` (`World/RoomBlocking.cs`; project setting `last_bell/presentation/blocking`, default `template`; validator `tools/check_blocking.py`; docs/reblock/README.md) |
+| `--blocking natural\|template` | natural re-blocking proposal: rooms with `data/blocking/<room>.json` use its presentation geometry and `assets/bg_natural/<room>.webp` (`World/RoomBlocking.cs`; project setting `last_bell/presentation/blocking`, default `natural` since milestone 3 (all 68 rooms), `--blocking template` shows the old geometry; validator `tools/check_blocking.py`; docs/reblock/README.md) |
 | `--dev` | dev overlay over painted art; also `PresentationSettings.DevNotes` (stage directions on cutscene cards without a painting, the placeholder puzzle's solve button) — off for players, also in debug builds such as play.bat |
 | `--lines` | print every shown line (`HARNESS line <id> [speaker] name: text`) |
 | `--fast-text` | instant text, short holds, no cutscene minimum (QA speed) |

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "room": "S52",
+  "family_base": "S12",
+  "status": "natural re-blocking, camera family L_SCHOOL_FRONT: derived from the S12 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+  "note": "Same L_SCHOOL_FRONT camera as the base S12 (eye 1.74 m, horizon y 490, f ~1250 px, facade Z = 10 + 0.25 X m, corner at x 1793; scale s(y) = (y - 490) / 525). October 2020: the renovated facade of the fiction (white PVC windows, grey mosaic panels, a newer glass canopy); the regular entrance is closed with a distance-learning notice on the door; the caretaker's service window is the last window before the corner, the yard corner beyond it.",
+  "background": "bg_natural/S52.webp",
+  "walk_polygon": [[0, 1015], [1920, 1015], [1920, 688], [1861, 686], [1341, 711], [1405, 764], [843, 764], [847, 773], [686, 773], [655, 772], [0, 806]],
+  "walk_band": [686, 1015],
+  "actor_scale": [0.37, 1.0],
+  "spawn": [960, 920],
+  "anchors": {
+    "building_corner": [1793, 400],
+    "entrance": [1082, 647],
+    "planter": [775, 715],
+    "service_window_visible_at_edge": [1681, 470]
+  },
+  "hotspots": {
+    "S52.photo": {
+      "rect": [1772, 300, 148, 300],
+      "interaction_point": [1790, 760],
+      "label_anchor": [1740, 290],
+      "reason": "the building corner and the corner of the school yard beyond it, next to the service window (the panorama from the public path)"
+    },
+    "S52.ambient 1": {
+      "rect": [995, 440, 120, 140],
+      "interaction_point": [1080, 800],
+      "label_anchor": [1055, 430],
+      "reason": "printed distance-learning notice taped inside the glass of the closed entrance door"
+    },
+    "S52.ambient 2": {
+      "rect": [712, 668, 126, 100],
+      "interaction_point": [770, 822],
+      "label_anchor": [775, 658],
+      "reason": "the same concrete planter at the foot of the steps (anchor planter), now with a discarded face mask among the plants"
+    }
+  },
+  "exits": {
+    "S52.to_S51": {
+      "rect": [0, 790, 62, 225],
+      "interaction_point": [70, 900],
+      "label_anchor": [190, 780],
+      "reason": "the forecourt path out of the left edge towards the street and the tram stop"
+    },
+    "S52.to_S56": {
+      "rect": [1618, 388, 164, 212],
+      "interaction_point": [1700, 706],
+      "label_anchor": [1700, 378],
+      "reason": "the caretaker's service window, the last ground-floor window before the corner (L_WINDOW is its close-up)"
+    },
+    "S52.to_S53": {
+      "rect": [897, 362, 357, 291],
+      "interaction_point": [1110, 792],
+      "label_anchor": [1075, 352],
+      "reason": "the closed glazed entrance doors at the top of the steps (open after D02)"
+    },
+    "S52.to_S55": {
+      "rect": [1830, 600, 90, 330],
+      "interaction_point": [1850, 800],
+      "label_anchor": [1760, 590],
+      "reason": "past the building corner the path leads round to the school yard (right edge)"
+    }
+  },
+  "state_patches": []
+}

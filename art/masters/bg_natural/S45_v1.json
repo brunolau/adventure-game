@@ -1,0 +1,963 @@
+{
+  "room": "S45",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035451,
+  "usd": 0.15,
+  "started": "2026-10-05T10:10:43",
+  "spend_log_asset": "bg_natural/S45/S45_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S45.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Vrbické pleso, a small protected mountain lake at about 1,100 m in Jasná, Demänovská dolina, Low Tatras, Slovakia. Image 2 is a photo of this exact view from the meadow on the north shore: the still dark lake, the dense spruce forest on the far shore and the green Chopok massif with its summit buildings behind. Image 3 shows the lake in June with tall fresh reeds on the near shore and white clouds. Image 4 shows the public footpath along the lake (packed earth and gravel, a rustic log railing). Paint this real place.\n\nBrief: the real Vrbické pleso and the public footpath as the geographic base. Nobody walks into the water. The fictional passive sensor of the Atlas exhibition is a small portable stand on the path, not an intervention on the protected shore. The bench with the ceramic dog belonged to Tamara's travelling repair workshop. Wednesday 6 June 2035, a bright early-summer midday: deep blue sky with white cumulus clouds, fresh green meadow and reeds, dark spruces, crisp sun from the upper left, the lake mirror-calm with soft reflections. No snow at the lake.\n\nCamera: standing on the footpath, about 1.7 m high, looking south-south-east across the lake; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: Chopok rising from x 250 to the right edge with its summit at x ~900, y ~140; the far shore line at y ~525; the lake from y 530 to the near shore at y ~700; reed clumps on the near shore on the left and on the right with the open water between them in the centre; the footpath along the shore from y ~735 to y ~860; meadow grass from the path to the bottom edge.\n\nWhat the sketch blocks are: sky with cumulus clouds; Chopok (green alpine meadows, dwarf pine, grey rock, a lift line and tiny summit buildings on the top); the dense dark spruce forest of the far shore and the thin green far shoreline; the still dark lake with the reflection of the forest; the open lake surface reflecting sky and Chopok; tall green reed clumps on the near shore left and right; low sedge at the water's edge; the packed-earth footpath; the meadow; leafy rowan branches framing the top-left corner with a slim trunk at the left edge; a big spruce framing the right edge.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 290-570, y 545-717 of the 1920x1080 frame (15-30 % from the left, 50-66 % from the top): a simple wooden park bench on the path's back edge, seen from behind because it faces the lake; a white glazed ceramic dog figurine sits on the top of its backrest, and a small carved wooden plaque on the backrest reads \"DRUHÝ ŽIVOT\".\n2. the block of the layout sketch at x 620-1140, y 560-680 of the 1920x1080 frame (32-59 % from the left, 52-63 % from the top): the open, mirror-calm lake surface between the reeds, reflecting the sky, the forest and Chopok.\n3. the block of the layout sketch at x 1205-1305, y 520-718 of the 1920x1080 frame (63-68 % from the left, 48-66 % from the top): a small portable measuring stand on a slim grey tripod standing on the path's edge: a white weatherproof box with a tiny status light and a small solar panel on top (a discreet, temporary scientific instrument).\n4. the block of the layout sketch at x 1490-1585, y 405-580 of the 1920x1080 frame (78-83 % from the left, 38-54 % from the top): a wooden trail marker post with a plain yellow arrow board (no text) and the Slovak hiking mark painted on it: a red stripe between two white stripes.\nThis room has no NPC zones.\nthe area of the layout sketch at x 0-60, y 735-1015 of the 1920x1080 frame (0-3 % from the left, 68-94 % from the top) is where the footpath continues out of the left edge back to the hotel.\n\nWalkable floor: the band at x 0-1920, y 716-1015 of the 1920x1080 frame (0-100 % from the left, 66-94 % from the top) is the packed-earth footpath and the low meadow grass in front of it - one continuous open ground with no fence, no kerb, no ditch and nothing standing on it: no posts, no stones, no bushes, no people. Only sunlight, soft shadows and a few wildflowers in the grass.\n\nFiction rules: the sensor stand, the bench plaque and the ceramic dog are fictional props. No other lettering, no information boards with text, no logos. No people, no boats, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S45_sketch.png (rendered from art/prompts/natural/S45.sketch.json, model geometry)",
+    "art/source/rooms/S45/vrbicke-pleso_meadow-path-chopok_2015.jpg",
+    "art/source/rooms/S45/vrbicke-pleso_reeds-chopok_2025-06.jpg",
+    "art/source/rooms/S45/vrbicke-pleso_footbridge-path_2010-06.jpg",
+    "src/game/assets/bg_natural/S41.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S45 natural blocking (src/game/data/blocking/S45.json): north-shore path of Vrbicke pleso, camera ~1.7 m, horizon y ~470, near shore y ~705-720, far shore y ~525, Chopok summit y ~140.",
+    "background": "#7fb3e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          480
+        ],
+        "fill": "#7fb3e6",
+        "note": "summer sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          180,
+          50,
+          380,
+          120
+        ],
+        "fill": "#f3f6f9",
+        "note": "white cumulus"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1250,
+          70,
+          420,
+          130
+        ],
+        "fill": "#f0f4f8",
+        "note": "white cumulus"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            250,
+            420
+          ],
+          [
+            450,
+            300
+          ],
+          [
+            650,
+            220
+          ],
+          [
+            800,
+            160
+          ],
+          [
+            900,
+            140
+          ],
+          [
+            1000,
+            150
+          ],
+          [
+            1150,
+            200
+          ],
+          [
+            1350,
+            230
+          ],
+          [
+            1550,
+            260
+          ],
+          [
+            1750,
+            300
+          ],
+          [
+            1920,
+            320
+          ],
+          [
+            1920,
+            470
+          ],
+          [
+            250,
+            470
+          ]
+        ],
+        "fill": "#7d9b7e",
+        "note": "Chopok: green alpine meadows with dwarf pine and grey rock, the lift line and tiny summit buildings on top"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            880,
+            145
+          ],
+          [
+            930,
+            138
+          ],
+          [
+            960,
+            150
+          ],
+          [
+            880,
+            155
+          ]
+        ],
+        "fill": "#d8d4cc",
+        "note": "tiny summit buildings (Rotunda) on Chopok"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            380
+          ],
+          [
+            60,
+            300
+          ],
+          [
+            110,
+            360
+          ],
+          [
+            170,
+            270
+          ],
+          [
+            230,
+            350
+          ],
+          [
+            290,
+            290
+          ],
+          [
+            350,
+            360
+          ],
+          [
+            420,
+            300
+          ],
+          [
+            500,
+            370
+          ],
+          [
+            560,
+            320
+          ],
+          [
+            640,
+            380
+          ],
+          [
+            720,
+            330
+          ],
+          [
+            800,
+            390
+          ],
+          [
+            880,
+            340
+          ],
+          [
+            960,
+            400
+          ],
+          [
+            1040,
+            350
+          ],
+          [
+            1120,
+            400
+          ],
+          [
+            1200,
+            340
+          ],
+          [
+            1280,
+            390
+          ],
+          [
+            1360,
+            330
+          ],
+          [
+            1440,
+            380
+          ],
+          [
+            1520,
+            320
+          ],
+          [
+            1600,
+            380
+          ],
+          [
+            1680,
+            330
+          ],
+          [
+            1760,
+            390
+          ],
+          [
+            1920,
+            360
+          ],
+          [
+            1920,
+            528
+          ],
+          [
+            0,
+            528
+          ]
+        ],
+        "fill": "#2c5236",
+        "note": "dense dark spruce forest on the far shore"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          520,
+          1920,
+          12
+        ],
+        "fill": "#6f9a4e",
+        "note": "thin green far shoreline"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          530,
+          1920,
+          175
+        ],
+        "fill": "#3d5f5e",
+        "note": "the still dark lake with the reflection of the forest"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          560,
+          520,
+          120
+        ],
+        "fill": "#5f8a96",
+        "note": "open lake surface reflecting the sky and Chopok"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            640
+          ],
+          [
+            80,
+            610
+          ],
+          [
+            180,
+            600
+          ],
+          [
+            300,
+            625
+          ],
+          [
+            420,
+            615
+          ],
+          [
+            560,
+            640
+          ],
+          [
+            600,
+            700
+          ],
+          [
+            0,
+            720
+          ]
+        ],
+        "fill": "#7fa64a",
+        "note": "reed clump on the near shore, left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1150,
+            700
+          ],
+          [
+            1180,
+            630
+          ],
+          [
+            1300,
+            600
+          ],
+          [
+            1450,
+            615
+          ],
+          [
+            1600,
+            600
+          ],
+          [
+            1760,
+            620
+          ],
+          [
+            1920,
+            610
+          ],
+          [
+            1920,
+            735
+          ],
+          [
+            1150,
+            720
+          ]
+        ],
+        "fill": "#7fa64a",
+        "note": "reed clump on the near shore, right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            560,
+            705
+          ],
+          [
+            620,
+            680
+          ],
+          [
+            1140,
+            680
+          ],
+          [
+            1180,
+            705
+          ]
+        ],
+        "fill": "#6f9a46",
+        "note": "low sedge at the water's edge in front of the open water"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          698,
+          1920,
+          50
+        ],
+        "fill": "#78a248",
+        "note": "grassy shore strip between the reeds and the path"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            735
+          ],
+          [
+            280,
+            722
+          ],
+          [
+            600,
+            716
+          ],
+          [
+            1180,
+            718
+          ],
+          [
+            1330,
+            722
+          ],
+          [
+            1700,
+            728
+          ],
+          [
+            1920,
+            738
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#8fbf55",
+        "note": "fresh meadow grass of the shore (walkable)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            760
+          ],
+          [
+            400,
+            735
+          ],
+          [
+            900,
+            732
+          ],
+          [
+            1400,
+            738
+          ],
+          [
+            1920,
+            760
+          ],
+          [
+            1920,
+            860
+          ],
+          [
+            1400,
+            840
+          ],
+          [
+            900,
+            845
+          ],
+          [
+            400,
+            850
+          ],
+          [
+            0,
+            880
+          ]
+        ],
+        "fill": "#b39c78",
+        "note": "packed-earth footpath along the shore"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -120,
+          -60,
+          420,
+          420
+        ],
+        "fill": "#4e7a3a",
+        "note": "leafy rowan branches framing the top-left corner"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          330,
+          30,
+          400
+        ],
+        "fill": "#5b4632",
+        "note": "its trunk at the left edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1830,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1700,
+            700
+          ],
+          [
+            1760,
+            560
+          ],
+          [
+            1720,
+            560
+          ],
+          [
+            1790,
+            380
+          ],
+          [
+            1750,
+            380
+          ],
+          [
+            1820,
+            200
+          ],
+          [
+            1790,
+            200
+          ]
+        ],
+        "fill": "#25472f",
+        "note": "big spruce framing the right edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1845,
+          560,
+          40,
+          170
+        ],
+        "fill": "#4a3626",
+        "note": "its trunk"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          640,
+          260,
+          18
+        ],
+        "fill": "#8a5a34",
+        "note": "bench backrest rail (seen from behind, the bench faces the lake)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          610,
+          260,
+          18
+        ],
+        "fill": "#8a5a34",
+        "note": "bench backrest rail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          670,
+          260,
+          14
+        ],
+        "fill": "#7a4e2e",
+        "note": "bench seat edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          310,
+          684,
+          12,
+          32
+        ],
+        "fill": "#4a3626"
+      },
+      {
+        "type": "rect",
+        "box": [
+          538,
+          684,
+          12,
+          32
+        ],
+        "fill": "#4a3626"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          618,
+          110,
+          34
+        ],
+        "fill": "#d9c7a0",
+        "note": "small carved wooden plaque on the backrest"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            480,
+            610
+          ],
+          [
+            490,
+            560
+          ],
+          [
+            510,
+            548
+          ],
+          [
+            530,
+            556
+          ],
+          [
+            540,
+            600
+          ],
+          [
+            545,
+            610
+          ]
+        ],
+        "fill": "#e9e1d2",
+        "note": "white ceramic dog sitting on the backrest top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1238,
+          560,
+          44,
+          50
+        ],
+        "fill": "#e8e6e0",
+        "note": "sensor: small white weatherproof box"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1232,
+          532,
+          56,
+          22
+        ],
+        "fill": "#2f4f7a",
+        "note": "tiny solar panel on top"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1260,
+            610
+          ],
+          [
+            1220,
+            716
+          ]
+        ],
+        "color": "#6e7378",
+        "width": 6,
+        "note": "tripod leg"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1260,
+            610
+          ],
+          [
+            1300,
+            716
+          ]
+        ],
+        "color": "#6e7378",
+        "width": 6,
+        "note": "tripod leg"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1260,
+            610
+          ],
+          [
+            1262,
+            716
+          ]
+        ],
+        "color": "#6e7378",
+        "width": 6,
+        "note": "tripod leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1528,
+          405,
+          16,
+          320
+        ],
+        "fill": "#6b4a2c",
+        "note": "trail marker post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          420,
+          70,
+          26
+        ],
+        "fill": "#e6c33a",
+        "note": "plain yellow arrow board, no text"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1526,
+          470,
+          20,
+          10
+        ],
+        "fill": "#f4f2ee",
+        "note": "white stripe"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1526,
+          480,
+          20,
+          10
+        ],
+        "fill": "#d23a2e",
+        "note": "red stripe"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1526,
+          490,
+          20,
+          10
+        ],
+        "fill": "#f4f2ee",
+        "note": "white stripe"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S45.json",
+  "blocking": {
+    "version": 1,
+    "room": "S45",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Public footpath on the north shore of Vrbicke pleso as in the 2015 meadow photo: camera ~1.7 m on the path, looking SSE across the lake to Chopok; horizon y ~470; the near shore with reeds and the path's back edge on y ~705-720 (~138 px per metre there), the far shore on y ~525. Perspective s(y) = (y - 470) / 545. The packed-earth path runs along the shore through the meadow; the bench with the ceramic dog stands on the path's back edge on the left, the lake surface opens between the reed clumps in the centre, the Atlas passive sensor is a portable stand on the path's edge (not on the protected shore), the trail marker post stands on the right.",
+    "background": "bg_natural/S45.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        735
+      ],
+      [
+        280,
+        722
+      ],
+      [
+        600,
+        716
+      ],
+      [
+        1180,
+        718
+      ],
+      [
+        1330,
+        722
+      ],
+      [
+        1700,
+        728
+      ],
+      [
+        1920,
+        738
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      716,
+      1015
+    ],
+    "actor_scale": [
+      0.45,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S45.bench": {
+        "rect": [
+          290,
+          545,
+          280,
+          172
+        ],
+        "interaction_point": [
+          430,
+          790
+        ],
+        "label_anchor": [
+          430,
+          535
+        ],
+        "reason": "wooden bench on the path's back edge facing the lake; the ceramic dog sits on its backrest, the small carved DRUHY ZIVOT plaque on the backrest (feet y ~715)"
+      },
+      "S45.ambient 1": {
+        "rect": [
+          620,
+          560,
+          520,
+          120
+        ],
+        "interaction_point": [
+          880,
+          780
+        ],
+        "label_anchor": [
+          880,
+          550
+        ],
+        "reason": "the open lake surface between the reed clumps with the reflection of the forest and Chopok"
+      },
+      "S45.sensor": {
+        "rect": [
+          1205,
+          520,
+          100,
+          198
+        ],
+        "interaction_point": [
+          1255,
+          790
+        ],
+        "label_anchor": [
+          1255,
+          510
+        ],
+        "reason": "the Atlas passive sensor: a small portable stand (tripod, weatherproof box, tiny solar panel) on the path's edge (feet y ~718)"
+      },
+      "S45.ambient 2": {
+        "rect": [
+          1490,
+          405,
+          95,
+          175
+        ],
+        "interaction_point": [
+          1535,
+          800
+        ],
+        "label_anchor": [
+          1535,
+          395
+        ],
+        "reason": "trail marker post: the white-red-white stripe mark and a plain yellow arrow board on a wooden post (post foot y ~725)"
+      }
+    },
+    "exits": {
+      "S45.to_S42": {
+        "rect": [
+          0,
+          735,
+          60,
+          280
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          170,
+          725
+        ],
+        "reason": "the path continues out of the left edge back to Hotel Grand Jasna"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S45.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:11:36"
+  }
+}

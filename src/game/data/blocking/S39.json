@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "room": "S39",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "The first ZVON room: the small measuring room inside the invented pump hut on the Sursky kanal (S38), June 1960 (type references: 1935 physics room, 1960 laboratory bench). Frontal camera ~1.7 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~138 px per metre at the back wall, foot y 720). A long laboratory table stands along the back wall (top y 610, legs to y ~748); on it, in the middle, the table mechanical resonator (brass rods on a heavy wooden base) with the brass calibration plate fixed upright on its front, the green desk lamp at its left end and Mira's open notebook at its right. Above: a blackboard with invented symbols, an instrument panel, two globe lamps; a small window shows the canal. The v1 painting shows the short side walls: the open plank door back to the canal bank is on the left side wall, the narrow door to the archive loft on the right side wall. Mira stands at the right end of the table. The walk polygon is the plank floor in front of the table, bounded by the foot lines of the side walls.",
+  "background": "bg_natural/S39.webp",
+  "walk_polygon": [[20, 858], [60, 840], [200, 775], [262, 762], [1630, 762], [1700, 775], [1880, 840], [1900, 848], [1900, 1015], [20, 1015]],
+  "walk_band": [762, 1015],
+  "actor_scale": [0.536, 1.0],
+  "spawn": [700, 900],
+  "hotspots": {
+    "S39.plate": {
+      "rect": [866, 524, 158, 88],
+      "interaction_point": [945, 830],
+      "label_anchor": [945, 514],
+      "reason": "the brass calibration plate with four engraved fields, fixed upright on the front of the resonator's base on the table"
+    },
+    "S39.ambient 1": {
+      "rect": [622, 462, 124, 148],
+      "interaction_point": [684, 830],
+      "label_anchor": [684, 452],
+      "reason": "green enamel desk lamp with a glowing bulb on the left end of the table"
+    },
+    "S39.ambient 2": {
+      "rect": [1118, 566, 186, 50],
+      "interaction_point": [1210, 830],
+      "label_anchor": [1210, 556],
+      "reason": "Mira's open notebook with crossed-out pencil notes and a pencil on the right end of the table"
+    },
+    "S39.MIRA60": {
+      "rect": [1395, 489, 140, 351],
+      "interaction_point": [1350, 880],
+      "label_anchor": [1465, 479],
+      "reason": "young Mira standing at the right end of the table, beside her notebook and the resonator"
+    }
+  },
+  "npcs": {
+    "S39.MIRA60": {
+      "variant": "standing",
+      "feet": [1465, 840],
+      "facing": "left",
+      "reason": "standing (MIRA60 staging standing) on the plank floor at the table; scale from the room perspective (0.68)"
+    }
+  },
+  "exits": {
+    "S39.to_S38": {
+      "rect": [20, 270, 185, 540],
+      "interaction_point": [180, 825],
+      "label_anchor": [205, 260],
+      "reason": "the plank door of the hut, standing open on the left side wall, daylight and reeds of the canal bank outside (v1 painting)"
+    },
+    "S39.to_S40": {
+      "rect": [1705, 200, 180, 620],
+      "interaction_point": [1785, 850],
+      "label_anchor": [1745, 190],
+      "reason": "the narrow plank door with a brass knob on the right side wall, to the technical archive loft (v1 painting)"
+    }
+  },
+  "state_patches": []
+}

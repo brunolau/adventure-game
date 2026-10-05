@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "room": "S32",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Namestie sv. Rozalie, Ivanka pri Dunaji, June 1960, camera standing on the village green (~2.0 m) looking NNE across the green: horizon y 400, perspective s(y) = (y - 400) / 615 (hero 1.7 m = 512 px at y 1015, ~300 px per metre there; ~88 px per metre at the house fronts y 580). The Chapel of St Rosalia stands in the middle distance on the green (foot y 500); the ring of low tiled houses: the post-office house on the left (foot y 580), houses with lath fences on the right (foot y 585). Streets leave the square between the houses. Props stand where they are on a village green: the covered well on the grass in front of the post office, the bicycle leaning against the notice board on the right. The walk polygon is the green and the beaten-earth paths up to the dirt road in front of the houses, with lobes to the post-office door and the two street mouths; it leaves out the well, the notice board and the root base of the big linden on the right (v1 painting).",
+  "background": "bg_natural/S32.webp",
+  "walk_polygon": [[0, 668], [150, 668], [150, 722], [392, 722], [392, 640], [398, 606], [500, 606], [508, 640], [580, 648], [590, 632], [705, 632], [715, 648], [1040, 650], [1050, 632], [1180, 632], [1192, 652], [1192, 712], [1466, 712], [1466, 652], [1688, 656], [1700, 716], [1920, 716], [1920, 1015], [0, 1015]],
+  "walk_band": [606, 1015],
+  "actor_scale": [0.333, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S32.ambient 1": {
+      "rect": [165, 420, 210, 292],
+      "interaction_point": [270, 760],
+      "label_anchor": [250, 414],
+      "reason": "covered village well on the grass in front of the post-office windows: round stone ring with a closed plank lid under a small gabled wooden roof on two posts (ring foot y ~705)"
+    },
+    "S32.ambient 2": {
+      "rect": [1200, 548, 262, 156],
+      "interaction_point": [1330, 750],
+      "label_anchor": [1330, 538],
+      "reason": "black 1950s bicycle leaning against the municipal notice board on the right of the green (wheels on the grass at y ~700)"
+    },
+    "S32.BERTA": {
+      "rect": [718, 467, 144, 333],
+      "interaction_point": [930, 820],
+      "label_anchor": [790, 456],
+      "reason": "Berta standing on the beaten-earth crossing of the paths in the middle of the green, right of the street mouth, the chapel behind her"
+    }
+  },
+  "npcs": {
+    "S32.BERTA": {
+      "variant": "standing",
+      "feet": [790, 800],
+      "facing": "right",
+      "reason": "standing resident (BERTA posture standing); feet on the green path, scale from the room perspective (0.65)"
+    }
+  },
+  "exits": {
+    "S32.to_S31": {
+      "rect": [0, 672, 60, 330],
+      "interaction_point": [70, 860],
+      "label_anchor": [180, 660],
+      "reason": "the dirt road leaves the square to the left (north, Nadrazna towards the railway halt)"
+    },
+    "S32.to_S33": {
+      "rect": [398, 396, 104, 186],
+      "interaction_point": [450, 628],
+      "label_anchor": [458, 420],
+      "reason": "the plank door of the post-office house on the left, enamel POSTA sign above it"
+    },
+    "S32.to_S34": {
+      "rect": [595, 440, 140, 175],
+      "interaction_point": [662, 650],
+      "label_anchor": [660, 362],
+      "reason": "the street mouth between the post-office house and the next houses (Moyzesova, towards the culture hall)"
+    },
+    "S32.to_S35": {
+      "rect": [1045, 440, 140, 175],
+      "interaction_point": [1115, 652],
+      "label_anchor": [1115, 430],
+      "reason": "the village road leaving the square at the back right, towards the manor's service courtyard"
+    },
+    "S32.to_S37": {
+      "rect": [1860, 720, 60, 285],
+      "interaction_point": [1850, 870],
+      "label_anchor": [1785, 708],
+      "reason": "the path leaves the green to the right in front of the big linden (east, towards the manor park)"
+    }
+  },
+  "state_patches": []
+}

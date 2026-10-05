@@ -1,0 +1,24 @@
+# S58 Pred ZS Sokolikova v roku 1982 (1982) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S12, 1995)
+# Image 1 = the accepted S12 natural master (v1), image 2 = the same with the S58 blocking drawn on it.
+# location_families 1982: a younger building, the period ČSSR emblem, a pioneer notice and a brigade notice board.
+# art_brief: same camera as S12/S52. Younger building, original typified windows, the period ČSSR state emblem as a
+# historical backdrop and the brigade notice board. Early December: bare branches, thin snow in places, coats outside.
+# Owner feedback 2026-10-05: plain yellowish walls in 1982 (no murals).
+Era changes: the same school on an early-December afternoon in 1982, cold and calm: pale low winter sun through a thin haze, soft long shadows, a thin layer of old snow on the ground at the edges of the forecourt, on the canopy, on the window sills and on the planter; the forecourt itself mostly clear and damp. The building is only 8 years old:
+- The walls are the same ONE plain warm pale-yellow colour, a little fresher and cleaner; the same original white timber windows, all closed.
+- The trees that hang into the top corners are young and bare: replace the leafy crowns in the top-left and top-right corners with a few thin bare branches and twigs (no leaves), so more of the facade and the winter sky show.
+- At the left end of the name board, instead of the small blue school crest, the period ČSSR state emblem: a red shield with a white double-tailed lion, on its chest a small shield with a stylised fire, a small five-pointed star above the shield. The board keeps the letters ZÁKLADNÁ ŠKOLA / SOKOLÍKOVA.
+- The glazed notice board at the left now holds the brigade notices: a red paper strip across its top, white and pale-yellow sheets pinned up, one with a simple drawing of a hammer and wooden planks (illegible text, no digits).
+- The planter at the foot of the steps holds only bare soil and a little snow.
+- Beyond the building corner: the school yard under thin snow, bare young trees, the wire-mesh fence, panel blocks far away.
+Everything else built (the facade, the windows, the canopy, the steps, the landing, the ramp and its railing, the corner, the forecourt) stays exactly where it is.
+
+Interactive props of 1982:
+1. {rect:S58.ambient 1}: the glazed notice board on two legs with the brigade notices (red paper strip on top, pinned sheets, a drawing of a hammer and planks).
+2. {rect:S58.ambient 2}: the white name board ZÁKLADNÁ ŠKOLA / SOKOLÍKOVA with the period ČSSR state emblem at its left end.
+{exit:S58.to_S59} is the entrance doors. The forecourt path leaves the picture at the left edge ({exit:S58.to_S57}) and continues past the corner to the yard at the right edge ({exit:S58.to_S61}).
+
+Walkable floor: {walk} stays the open paved forecourt with nothing standing on it, only light, shadows and small patches of old snow at its edges.
+{npc_zones}
+
+Fiction rules: apart from the name board's letters, no readable text; no logos, no brands, no house numbers. No people, no animals. Any paper shows only illegible scribbles, no digits.

@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "room": "S63",
+  "status": "natural re-blocking, L_CABINET 1982 derived from the accepted S15 master v2 (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S15",
+  "note": "Same camera as S15 (L_CABINET): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 792 (200 px per metre), s(y) = (y - 352) / 663; cupboards, window, service bench, both doors identical. 7 December 1982: newer cupboards with the hinge wear just starting, a newer globe with the period map on the book stand's place on the bench, the upright wooden service board (round, square and triangular sockets, tools and ceramic insulators on it) between the two old switched-off supplies and the globe on the bench for the caretaker's work. The right door (S16) is plain decor (no exit in 1982).",
+  "background": "bg_natural/S63.webp",
+  "walk_polygon": [
+    [
+      15,
+      982
+    ],
+    [
+      290,
+      830
+    ],
+    [
+      690,
+      830
+    ],
+    [
+      692,
+      922
+    ],
+    [
+      1222,
+      922
+    ],
+    [
+      1222,
+      830
+    ],
+    [
+      1610,
+      830
+    ],
+    [
+      1905,
+      988
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    830,
+    1015
+  ],
+  "actor_scale": [
+    0.72,
+    1.0
+  ],
+  "spawn": [
+    960,
+    968
+  ],
+  "hotspots": {
+    "S63.workbench": {
+      "rect": [
+        915,
+        550,
+        180,
+        140
+      ],
+      "interaction_point": [
+        1000,
+        948
+      ],
+      "label_anchor": [
+        1002,
+        540
+      ],
+      "reason": "the service board on the bench: a wooden board with three differently shaped connectors, tools laid out beside it, the bench supply unplugged"
+    },
+    "S63.ambient 1": {
+      "rect": [
+        256,
+        300,
+        80,
+        320
+      ],
+      "interaction_point": [
+        330,
+        860
+      ],
+      "label_anchor": [
+        296,
+        290
+      ],
+      "reason": "the left hinge of the leftmost cupboard where the scuff is just starting"
+    },
+    "S63.ambient 2": {
+      "rect": [
+        1095,
+        520,
+        130,
+        170
+      ],
+      "interaction_point": [
+        1160,
+        948
+      ],
+      "label_anchor": [
+        1160,
+        510
+      ],
+      "reason": "a newer school globe with the period political map on the right end of the bench"
+    }
+  },
+  "npcs": {},
+  "exits": {
+    "S63.to_S59": {
+      "rect": [
+        55,
+        395,
+        135,
+        560
+      ],
+      "interaction_point": [
+        190,
+        935
+      ],
+      "label_anchor": [
+        205,
+        385
+      ],
+      "reason": "door in the left wall to the corridor and the entrance hall (same as S15.to_S13)"
+    }
+  },
+  "state_patches": [],
+  "anchors": {
+    "cupboard_left_hinge": [
+      284,
+      480
+    ],
+    "window": [
+      1390,
+      362
+    ],
+    "service_table": [
+      706,
+      695
+    ]
+  },
+  "family_base": "S15"
+}

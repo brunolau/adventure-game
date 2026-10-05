@@ -1,0 +1,24 @@
+# S06 Pod zatvoreným oknom (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S06.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S06.sketch.json (frontal side wall, camera 2.2 m, horizon y 360, wall foot y 790).
+# Same property as S05: the accepted natural S05 is passed as a REFERENCE image (image 3), not as the style image.
+#refs: art/source/rooms/S05/pezinska_old_house_kartaview_416.jpg ; src/game/assets/bg_natural/S05.webp
+#style: src/game/assets/bg_natural/S03.webp
+Place: the old core of Čierna Voda on Pezinská street (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a dashcam photo of this real street with the low single-storey village houses of the 1950s-70s (pitched red-brown tiled roofs, two-coloured plaster). Image 3 is our finished painting of grandmother Mira's house seen from the street: pale peach and light-blue plaster, white windows with lace curtains and brown roller-blind boxes, a red-brown tiled hipped roof, a weathered green picket fence and an old grapevine with dark grapes. Paint the SIDE of exactly this house (the light-blue half): same plaster, windows, roof tiles and fence; invented, not a copy of a real house.
+
+Brief: a narrow outdoor side path along the house, separated from the lived-in part of the garden by a low fence. Mira is behind the closed big window, they talk on the phone. The family photograph hangs inside, visible through the glass. Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left grazing the wall, soft shadows, yellowing leaves, a few fallen leaves on the path.
+
+Camera: standing in the narrow side yard, about 2.2 m high, looking straight at the house's long side wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch: the side wall meets the ground at y 790 with a rough grey-brown plinth (y 712-790); the eave with a pale soffit and a grey gutter at y 205-232 and the red-brown roof tiles above it to the top edge; the big triple window from y 331 to its outer sill at y 605 with a brown roller-blind box above it (y 292-331); the kitchen window at the left (y 331-575) with a terracotta window box under it; the house corner with a grey drainpipe at x ~1440; the narrow path of old square concrete slabs along the wall (y 790-861) and rough grass in front of it to the bottom edge; at the right, beyond the corner, the low green picket fence (top y ~588, foot y 745) with a small closed gate, and behind it the lived-in back garden: lawn, the old grapevine on a wooden trellis, an old fruit tree in autumn colours, sky.
+
+What the sketch blocks are, left to right: the light-blue rendered side wall with the plinth; the kitchen window (white frame, two panes, a lace half-curtain inside); the big closed triple window; the corner with the drainpipe; the picket fence, gate and back garden; the slab path and the grass of the side yard.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S06.photo}: a framed family photograph hanging on the inner wall of the room, seen through the right pane of the big window: an old colour photo of a smiling grandmother and her grandson at the seaside with a slightly crooked horizon, in a simple wooden frame.
+2. {rect:S06.ambient 1}: bright red geraniums in a terracotta window box on the kitchen window's outer sill, trailing over the edge.
+3. {rect:S06.ambient 2}: a white lace curtain gathered and tied back in the left pane of the big window, seen through the glass.
+The slab path continuing out of the left edge is {exit:S06.to_S05}.
+
+Walkable floor: {walk} is the narrow slab path and the rough grass of the side yard - one continuous walking surface with no step, no kerb and no change of level, and nothing standing on it: no pots, no tools, no bins, no hoses, no people. Only light, soft shadows and a few fallen leaves.
+{npc_zones} (Mira will stand there inside the room, seen behind the closed middle pane above the sill; keep the glass clear with only a soft reflection.)
+
+Fiction rules: the house is invented from the real house type; no house number, no names, no signs, no logos, no text; the photo shows two small painted figures, no recognisable real person. No people outside, no animals.

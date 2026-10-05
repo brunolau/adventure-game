@@ -1,0 +1,87 @@
+{
+  "room": "S57",
+  "version": 2,
+  "kind": "retouch",
+  "usd": 0,
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S57_v1.png",
+  "note": "S57 v1 -> v2 free retouch: removed the brand-like script badge on the bus's red front panel (cloned from the plain panel above it) and the number on its grille (cloned from the grille further left); blanked the two parked cars' number plates (fill with the plate's own light colour).",
+  "ops": [
+    {
+      "op": "clone",
+      "src": [
+        356,
+        688,
+        420,
+        705
+      ],
+      "dst": [
+        356,
+        705
+      ],
+      "feather": 2
+    },
+    {
+      "op": "clone",
+      "src": [
+        324,
+        755,
+        362,
+        772
+      ],
+      "dst": [
+        364,
+        755
+      ],
+      "feather": 2
+    },
+    {
+      "op": "fill",
+      "box": [
+        2212,
+        645,
+        2229,
+        651
+      ],
+      "sample": [
+        2210,
+        643,
+        2231,
+        653
+      ],
+      "feather": 1
+    },
+    {
+      "op": "fill",
+      "box": [
+        2550,
+        688,
+        2578,
+        695
+      ],
+      "sample": [
+        2547,
+        686,
+        2581,
+        698
+      ],
+      "feather": 1
+    }
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking_file": "src/game/data/blocking/S57.json",
+  "prompt_file": "art/prompts/natural/S57.era.txt",
+  "derived_from": "S11",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S57.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:09:54"
+  }
+}

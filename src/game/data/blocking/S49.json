@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "room": "S49",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Inside the same fictional Atlas pavilion as S48 (the chronochamber), designed after the approved CS06_1/CS06_2 cutscene frames (light wood-panelled walls, the steel console plate with the four port symbols, the amber emergency lamp above it, the big window to the west with the real Rotunda complex). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), Viktor's table front stands on y ~790. Perspective s(y) = (y - 470) / 545 (same as the other interiors). Left: the long steel console plate with the four ports (circle, cross, square, triangle) and the emergency lamp above it; centre: the big window showing the Rotunda (dark station wings on stilts, the stone base, the glass drum with the red ring) and Viktor behind his wooden table with the desk lamp and his untouched glass of water; right: the free-standing restore console with its big button and four lamps, the door back to the service bay. The table got a solid front panel in a zoomed local edit (v2). The walk polygon leaves out the restore console (foot y ~805).",
+  "background": "bg_natural/S49.webp",
+  "walk_polygon": [[0, 1015], [0, 738], [700, 738], [712, 794], [1265, 794], [1278, 738], [1588, 738], [1588, 808], [1812, 808], [1812, 738], [1920, 738], [1920, 1015]],
+  "walk_band": [738, 1015],
+  "actor_scale": [0.49, 1.0],
+  "spawn": [500, 900],
+  "hotspots": {
+    "S49.port_origin": {
+      "rect": [92, 388, 106, 106],
+      "interaction_point": [145, 830],
+      "label_anchor": [145, 378],
+      "reason": "port 1 on the steel console plate: the circle symbol (origin)"
+    },
+    "S49.port_voice": {
+      "rect": [212, 388, 106, 106],
+      "interaction_point": [265, 830],
+      "label_anchor": [265, 520],
+      "reason": "port 2 on the console plate: the cross symbol (voice, a cassette slot)"
+    },
+    "S49.port_consent": {
+      "rect": [332, 388, 106, 106],
+      "interaction_point": [385, 830],
+      "label_anchor": [385, 378],
+      "reason": "port 3 on the console plate: the square symbol (consent)"
+    },
+    "S49.port_return": {
+      "rect": [452, 388, 106, 106],
+      "interaction_point": [505, 830],
+      "label_anchor": [505, 520],
+      "reason": "port 4 on the console plate: the triangle symbol (return)"
+    },
+    "S49.confirm": {
+      "rect": [1595, 512, 210, 290],
+      "interaction_point": [1700, 830],
+      "label_anchor": [1700, 502],
+      "reason": "the free-standing restore console: four input lamps, a mode key and a big round button (console foot y ~805)"
+    },
+    "S49.ambient 1": {
+      "rect": [1092, 528, 80, 82],
+      "interaction_point": [1132, 860],
+      "label_anchor": [1132, 518],
+      "reason": "Viktor's untouched glass of water on the table"
+    },
+    "S49.ambient 2": {
+      "rect": [278, 248, 92, 92],
+      "interaction_point": [325, 830],
+      "label_anchor": [325, 238],
+      "reason": "the amber emergency lamp on the wall above the console plate"
+    },
+    "S49.VIKTOR": {
+      "rect": [905, 450, 160, 152],
+      "interaction_point": [985, 870],
+      "reason": "Viktor behind his table in front of the window (bust cut at the back edge of the painted table top, y 600)"
+    }
+  },
+  "npcs": {
+    "S49.VIKTOR": {
+      "variant": "behind_counter",
+      "feet": [985, 770],
+      "sill_y": 600,
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: Viktor behind the table (table variant cut at the table top); scale 0.58 so that the painted table top (y 600) is ~0.8 m above his feet (the perspective at the table's back edge gives 0.5 and made him read as a small figure)",
+      "scale": 0.58
+    }
+  },
+  "exits": {
+    "S49.to_S48": {
+      "rect": [1815, 380, 105, 345],
+      "interaction_point": [1840, 820],
+      "label_anchor": [1730, 370],
+      "reason": "the door at the right back to the service bay and the plateau"
+    }
+  },
+  "state_patches": []
+}

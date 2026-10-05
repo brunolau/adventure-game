@@ -1,0 +1,195 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Kamenne namestie at ground level, artistically shortened (brief): camera ~2.2 m on the open plaza, horizon y 360, the walk area ends at y 700 (~156 px per metre) where the map board, the map stall and the small fountain stand. Perspective s(y) = (y - 360) / 655. Behind them the open square: the white 1968 department store with Hotel Kyjev rising behind it, the round pavilion among plane trees and lawns, the tram and bus street with 1930s facades on the right. Exits: the side street at the far left (Old Town, S22), the street beside the store (Obchodna, S24), the bus stop (S28), the door of the cream city block (archive, S23), the plaza edges (S19 left, S25 right).",
+ "background": "bg_natural/S21.webp",
+ "walk_polygon": [
+  [
+   20,
+   702
+  ],
+  [
+   1900,
+   702
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ]
+ ],
+ "walk_band": [
+  702,
+  1015
+ ],
+ "actor_scale": [
+  0.52,
+  1.0
+ ],
+ "spawn": [
+  960,
+  880
+ ],
+ "hotspots": {
+  "S21.map": {
+   "rect": [
+    150,
+    376,
+    206,
+    196
+   ],
+   "interaction_point": [
+    255,
+    790
+   ],
+   "label_anchor": [
+    253,
+    600
+   ],
+   "reason": "city map board on two posts at the edge of the plaza"
+  },
+  "S21.ambient 1": {
+   "rect": [
+    1268,
+    562,
+    84,
+    72
+   ],
+   "interaction_point": [
+    1310,
+    790
+   ],
+   "label_anchor": [
+    1310,
+    554
+   ],
+   "reason": "grey pigeon sitting on the right rim of the small fountain (measured on v3)"
+  },
+  "S21.ambient 2": {
+   "rect": [
+    470,
+    578,
+    225,
+    98
+   ],
+   "interaction_point": [
+    580,
+    790
+   ],
+   "label_anchor": [
+    582,
+    570
+   ],
+   "reason": "fan of folded city maps hanging on the front of the map stall below its counter (measured on v3)"
+  }
+ },
+ "exits": {
+  "S21.to_S19": {
+   "rect": [
+    0,
+    712,
+    60,
+    303
+   ],
+   "interaction_point": [
+    70,
+    900
+   ],
+   "label_anchor": [
+    135,
+    700
+   ],
+   "reason": "the plaza continues out of the left edge (tram stop for Karlova Ves)"
+  },
+  "S21.to_S22": {
+   "rect": [
+    0,
+    370,
+    128,
+    330
+   ],
+   "interaction_point": [
+    80,
+    760
+   ],
+   "label_anchor": [
+    200,
+    330
+   ],
+   "reason": "side street at the far left leading towards the Old Town (Venturska)"
+  },
+  "S21.to_S24": {
+   "rect": [
+    770,
+    352,
+    130,
+    348
+   ],
+   "interaction_point": [
+    835,
+    760
+   ],
+   "label_anchor": [
+    835,
+    344
+   ],
+   "reason": "street beside the department store leading towards Obchodna"
+  },
+  "S21.to_S28": {
+   "rect": [
+    1385,
+    375,
+    175,
+    325
+   ],
+   "interaction_point": [
+    1470,
+    760
+   ],
+   "label_anchor": [
+    1470,
+    367
+   ],
+   "reason": "bus stop at the edge of the square (bus to Petrzalka)"
+  },
+  "S21.to_S23": {
+   "rect": [
+    1645,
+    372,
+    90,
+    328
+   ],
+   "interaction_point": [
+    1690,
+    760
+   ],
+   "label_anchor": [
+    1700,
+    318
+   ],
+   "reason": "entrance door of the cream city block (the reading room)"
+  },
+  "S21.to_S25": {
+   "rect": [
+    1860,
+    712,
+    60,
+    303
+   ],
+   "interaction_point": [
+    1850,
+    900
+   ],
+   "label_anchor": [
+    1720,
+    700
+   ],
+   "reason": "the plaza continues out of the right edge (tram to Ruzinov)"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S21"
+}

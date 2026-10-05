@@ -1,0 +1,143 @@
+{
+ "room": "S47",
+ "notes": "Natural S47 (bg_natural/S47.webp): the Rotunda lounge with the Atlas exhibition at midday. Clouds drift over the High Tatras in the window sky, a Funitel cabin glides down the ropes past the pylons now and then (sprite cut from the S67 painting), choughs fly past outside, dust motes drift in the daylight, the showcase spotlight glints on the brass bell. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "window_clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    195,
+    290
+   ],
+   "count": 4,
+   "speed_px_s": 4,
+   "scale": [
+    0.168,
+    0.308
+   ],
+   "alpha": 0.7,
+   "x_span": [
+    -100,
+    1300
+   ],
+   "mask": "S47/natural/window_sky_mask.webp"
+  },
+  {
+   "id": "funitel_cabin",
+   "type": "tween_path",
+   "texture": "S67/natural/cabin_sprite.webp",
+   "path": [
+    [
+     -40,
+     278
+    ],
+    [
+     292,
+     376
+    ],
+    [
+     462,
+     450
+    ]
+   ],
+   "speed_px_s": 22,
+   "scale": 0.07,
+   "bob_px": 0.5,
+   "bob_hz": 0.5,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "mask": "S47/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "choughs",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     -60,
+     330
+    ],
+    [
+     600,
+     300
+    ],
+    [
+     1300,
+     340
+    ]
+   ],
+   "speed_px_s": 150,
+   "scale": 0.06,
+   "modulate": "#2f2f36",
+   "flock": 3,
+   "flock_spread": [
+    50,
+    18
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    18,
+    36
+   ],
+   "start_s": [
+    8,
+    15
+   ],
+   "mask": "S47/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    0,
+    300,
+    1300,
+    500
+   ],
+   "count": 26,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.55
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "bell_glint",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1080,
+    545
+   ],
+   "size": [
+    70,
+    90
+   ],
+   "texture": "builtin:glow",
+   "color": "#fff0b0",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.3,
+   "period_s": 3.2
+  }
+ ]
+}

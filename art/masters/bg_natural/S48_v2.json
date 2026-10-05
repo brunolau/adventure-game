@@ -1,0 +1,743 @@
+{
+  "room": "S48",
+  "version": 2,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035482,
+  "usd": 0.15,
+  "started": "2026-10-05T11:00:14",
+  "spend_log_asset": "bg_natural/S48/S48_v2",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S48.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the summit of Chopok (2,004 m), Low Tatras, Slovakia: the real gravel plateau about 50 m east of the Rotunda. Image 2 is a photo of this exact place seen from the east: the Rotunda (natural-stone base, a red band, a glass drum, a red ring roof) between the long dark wings of the lift stations, an external steel staircase up to the roof, a lift pylon at the left, the grey gravel and rock plateau with paths. Image 3 shows the Rotunda's entrance up close (stone, red band with the lettering ROTUNDA CHOPOK). Image 4 is an approved painting from our game that shows the same Rotunda complex through the pavilion's window: keep its shapes (the long dark station wings left and right, the external steel stairs, the stone base, the glass drum with the red ring). The temporary pavilion of the Atlas exhibition on the right is invented: paint it as a modern modular pavilion of light larch timber and white panels with a flat roof, standing on this real plateau.\n\nBrief: an explicitly invented temporary Atlas pavilion beside the existing summit area, not a real lift machine room and not a secret hotel space; a workstation and isolated archive hardware. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky with white clouds, crisp light, cool air, grey rock and gravel, green dwarf pine and alpine grass patches, white snow patches still lying on the slopes.\n\nCamera: standing on the plateau, about 1.7 m high, looking west at the Rotunda; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the summit complex far back between x 130 and 1180 with its foot at y ~600 - the LONG DARK STATION WINGS on both sides (x 130-560 and x 760-1180, flat roofs at y ~370-385) are as important as the Rotunda between them (stone base x 540-780, y 395-600, red band y ~380, glass drum y 295-380, red ring roof y ~275, entrance doors x 615-705); the steel staircase climbing the front of the left wing to its roof (x 400-550, y 375-600); the gravel path widening from the Rotunda entrance to the bottom edge; the pavilion on the right from x 1200 to the right edge (roof edge y 230, front foot y ~765) with its open service bay at x 1230-1480, the white door at x 1615-1785 and a window at the right.\n\nWhat the sketch blocks are: the deep blue sky with white clouds; the hazy far ridges of the Low Tatras; the dark station wings, the Rotunda with its stone base, red band (lettering ROTUNDA CHOPOK), glass drum and red ring roof; its entrance doors; the steel staircase up to the roof terrace; a lift pylon at the left; the gravel plateau with scattered rocks, a rocky slope with dwarf pine and snow patches; the packed gravel path; the modular Atlas pavilion (larch cladding, white panels, flat white roof edge) with the open service bay (an isolated archive hardware rack inside), the white door and a window.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1280-1430, y 520-690 of the 1920x1080 frame (67-74 % from the left, 48-64 % from the top): in the open service bay, a rugged service terminal - a robust grey console with a glowing blue screen and a keyboard - standing on a small steel cart.\n2. the block of the layout sketch at x 1495-1569, y 462-546 of the 1920x1080 frame (78-82 % from the left, 43-51 % from the top): a sheet of paper taped to the pavilion wall with strips of tape, covered in big handwritten scribbles (illegible, no letters or digits).\n3. the block of the layout sketch at x 1120-1440, y 712-786 of the 1920x1080 frame (58-75 % from the left, 66-73 % from the top): a bundle of black and orange cables lying on the gravel, running out of the service bay to a small grey junction box.\nThis room has no NPC zones.\nthe area of the layout sketch at x 590-710, y 455-560 of the 1920x1080 frame (31-37 % from the left, 42-52 % from the top) is the Rotunda's entrance at the end of the path. the area of the layout sketch at x 405-525, y 380-560 of the 1920x1080 frame (21-27 % from the left, 35-52 % from the top) is the steel staircase up to the roof terrace. the area of the layout sketch at x 1615-1785, y 420-765 of the 1920x1080 frame (84-93 % from the left, 39-71 % from the top) is the pavilion's white door.\n\nWalkable floor: the band at x 0-1920, y 624-1015 of the 1920x1080 frame (0-100 % from the left, 58-94 % from the top) is the packed gravel path of the plateau - one continuous open ground with nothing standing on it apart from the cables: no rocks, no boulders, no dwarf pine, no bushes, no snow patches, no posts, no signs, no people (rocks, dwarf pine and snow patches only outside it, at the left edge and beside the pavilion). Only sunlight, soft shadows and fine gravel.\n\nFiction rules: the pavilion and everything in it are fictional; no company or resort logos (no TMR), no brand names; the only lettering is ROTUNDA CHOPOK on the red band; leave out the dragon sculpture on the roof. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S48_sketch.png (rendered from art/prompts/natural/S48.sketch.json, model geometry)",
+    "art/source/rooms/S48/chopok-summit_plateau-rotunda-from-east_2016-09.jpg",
+    "art/source/rooms/S48/rotunda-chopok_exterior_2016-09.jpg",
+    "src/game/assets/cutscenes/CS06_1.webp",
+    "src/game/assets/bg_natural/S41.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S48 natural blocking (src/game/data/blocking/S48.json): gravel plateau east of the Rotunda, camera ~1.7 m, horizon y ~470, Rotunda entrance y ~560, pavilion front y ~765.",
+    "background": "#7fb2e4",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          480
+        ],
+        "fill": "#7fb2e4",
+        "note": "deep blue high-mountain sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          80,
+          60,
+          420,
+          130
+        ],
+        "fill": "#f2f5f8",
+        "note": "white cumulus"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          900,
+          40,
+          380,
+          110
+        ],
+        "fill": "#eef2f6",
+        "note": "white cumulus"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            420
+          ],
+          [
+            200,
+            390
+          ],
+          [
+            500,
+            400
+          ],
+          [
+            800,
+            380
+          ],
+          [
+            1100,
+            395
+          ],
+          [
+            1400,
+            385
+          ],
+          [
+            1920,
+            400
+          ],
+          [
+            1920,
+            480
+          ],
+          [
+            0,
+            480
+          ]
+        ],
+        "fill": "#93a3b8",
+        "note": "hazy far ridges of the Low Tatras"
+      },
+      {
+        "type": "rect",
+        "box": [
+          130,
+          370,
+          430,
+          230
+        ],
+        "fill": "#2f3846",
+        "note": "long left station wing of the summit complex: dark blue-grey metal and glass, sloping glazed front, flat roof with a railing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          760,
+          385,
+          420,
+          215
+        ],
+        "fill": "#2f3846",
+        "note": "long right station wing: dark blue-grey metal and glass with a sloping glazed front"
+      },
+      {
+        "type": "rect",
+        "box": [
+          540,
+          395,
+          240,
+          205
+        ],
+        "fill": "#a19a8c",
+        "note": "the Rotunda's natural-stone base"
+      },
+      {
+        "type": "rect",
+        "box": [
+          530,
+          380,
+          260,
+          22
+        ],
+        "fill": "#c8312c",
+        "note": "red band with the lettering ROTUNDA CHOPOK"
+      },
+      {
+        "type": "rect",
+        "box": [
+          555,
+          295,
+          210,
+          85
+        ],
+        "fill": "#9cc4dc",
+        "note": "the glass drum"
+      },
+      {
+        "type": "rect",
+        "box": [
+          545,
+          275,
+          230,
+          22
+        ],
+        "fill": "#c8312c",
+        "note": "red ring roof edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            540,
+            280
+          ],
+          [
+            650,
+            255
+          ],
+          [
+            760,
+            280
+          ]
+        ],
+        "fill": "#6b7480",
+        "note": "flat cone roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          615,
+          500,
+          90,
+          100
+        ],
+        "fill": "#2a2d33",
+        "note": "the Rotunda entrance doors"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            400,
+            600
+          ],
+          [
+            520,
+            375
+          ]
+        ],
+        "color": "#8a939b",
+        "width": 10,
+        "note": "external steel staircase up to the roof terrace"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            430,
+            600
+          ],
+          [
+            550,
+            375
+          ]
+        ],
+        "color": "#8a939b",
+        "width": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          100,
+          330,
+          22,
+          240
+        ],
+        "fill": "#7d868e",
+        "note": "lift pylon of the summit line at the left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            600
+          ],
+          [
+            1920,
+            600
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#a7a196",
+        "note": "grey gravel plateau with scattered rocks"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            600
+          ],
+          [
+            130,
+            600
+          ],
+          [
+            90,
+            700
+          ],
+          [
+            0,
+            730
+          ]
+        ],
+        "fill": "#8f8a73",
+        "note": "rocky slope with dwarf pine on the left"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          30,
+          600,
+          160,
+          40
+        ],
+        "fill": "#f4f6f8",
+        "note": "June snow patch"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          980,
+          590,
+          140,
+          30
+        ],
+        "fill": "#f4f6f8",
+        "note": "snow patch on the slope beyond the plateau"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            860,
+            600
+          ],
+          [
+            1200,
+            600
+          ],
+          [
+            1200,
+            760
+          ],
+          [
+            1100,
+            700
+          ],
+          [
+            860,
+            648
+          ]
+        ],
+        "fill": "#8f8a73",
+        "note": "rocks and dwarf pine beside the path, right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            720
+          ],
+          [
+            260,
+            668
+          ],
+          [
+            420,
+            636
+          ],
+          [
+            560,
+            624
+          ],
+          [
+            720,
+            626
+          ],
+          [
+            860,
+            648
+          ],
+          [
+            1100,
+            700
+          ],
+          [
+            1215,
+            770
+          ],
+          [
+            1920,
+            776
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#b3ad9f",
+        "note": "the packed gravel path of the plateau (walkable)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          230,
+          730,
+          30
+        ],
+        "fill": "#e9e7e2",
+        "note": "flat white roof edge of the modular Atlas pavilion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          260,
+          720,
+          505
+        ],
+        "fill": "#cfa77a",
+        "note": "pavilion front: light larch timber cladding with white panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1230,
+          420,
+          250,
+          345
+        ],
+        "fill": "#4a4f57",
+        "note": "open service bay under the roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1285,
+          540,
+          140,
+          100
+        ],
+        "fill": "#2b3036",
+        "note": "service terminal: rugged console with a glowing screen"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          552,
+          110,
+          66
+        ],
+        "fill": "#4f9ac0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          640,
+          130,
+          120
+        ],
+        "fill": "#7d868e",
+        "note": "steel cart"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          450,
+          70,
+          180
+        ],
+        "fill": "#3a3f46",
+        "note": "isolated archive hardware rack in the bay"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1500,
+          470,
+          60,
+          72
+        ],
+        "fill": "#f4f0e2",
+        "note": "paper note taped on the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1615,
+          420,
+          170,
+          345
+        ],
+        "fill": "#e9e7e2",
+        "note": "white door of the pavilion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1800,
+          330,
+          110,
+          260
+        ],
+        "fill": "#8fb6cf",
+        "note": "window"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1300,
+            760
+          ],
+          [
+            1250,
+            745
+          ],
+          [
+            1180,
+            740
+          ],
+          [
+            1140,
+            735
+          ]
+        ],
+        "color": "#1e1e1e",
+        "width": 7,
+        "note": "black cable on the gravel"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1340,
+            762
+          ],
+          [
+            1280,
+            752
+          ],
+          [
+            1200,
+            755
+          ],
+          [
+            1150,
+            748
+          ]
+        ],
+        "color": "#e0742a",
+        "width": 7,
+        "note": "orange cable"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1120,
+          722,
+          40,
+          40
+        ],
+        "fill": "#6d747b",
+        "note": "small grey junction box"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S48.json",
+  "blocking": {
+    "version": 1,
+    "room": "S48",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "The fictional Atlas service pavilion on the real gravel plateau ~50 m east of the Rotunda (DECISIONS item 6), painted as its exterior with the open service bay (orchestrator brief: S48 exterior, S49 interior). Camera ~1.7 m high on the plateau, looking west at the Rotunda complex as in the 2016 photos taken from the summit path; horizon y ~470; the Rotunda's entrance and its external steel stairs stand far back on y ~560, the pavilion's front on the right stands on y ~765 (~160 px per metre there). Perspective s(y) = (y - 470) / 545. Left/centre: the Rotunda (stone base, red band with the lettering ROTUNDA CHOPOK, glass drum, red ring roof) between the dark station wings, the steel stairs up to the roof terrace; the gravel plateau with rocks, dwarf pine and June snow patches; right: the modular timber-and-white pavilion of the exhibition with its open service bay (terminal on a rugged cart, a taped paper note beside it, cables on the gravel) and the door to the inner chamber.",
+    "background": "bg_natural/S48.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        720
+      ],
+      [
+        260,
+        668
+      ],
+      [
+        420,
+        636
+      ],
+      [
+        560,
+        624
+      ],
+      [
+        720,
+        626
+      ],
+      [
+        860,
+        648
+      ],
+      [
+        1100,
+        700
+      ],
+      [
+        1215,
+        770
+      ],
+      [
+        1920,
+        776
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      624,
+      1015
+    ],
+    "actor_scale": [
+      0.28,
+      1.0
+    ],
+    "spawn": [
+      800,
+      900
+    ],
+    "hotspots": {
+      "S48.terminal": {
+        "rect": [
+          1280,
+          520,
+          150,
+          170
+        ],
+        "interaction_point": [
+          1355,
+          830
+        ],
+        "label_anchor": [
+          1355,
+          510
+        ],
+        "reason": "the service terminal (rugged console with a screen) on a steel cart in the pavilion's open service bay"
+      },
+      "S48.ambient 2": {
+        "rect": [
+          1495,
+          462,
+          74,
+          84
+        ],
+        "interaction_point": [
+          1530,
+          840
+        ],
+        "label_anchor": [
+          1532,
+          452
+        ],
+        "reason": "the handwritten paper note taped on the pavilion wall beside the service bay"
+      },
+      "S48.ambient 1": {
+        "rect": [
+          1120,
+          712,
+          320,
+          74
+        ],
+        "interaction_point": [
+          1280,
+          845
+        ],
+        "label_anchor": [
+          1280,
+          702
+        ],
+        "reason": "the bundle of black and orange cables running from the service bay across the gravel to a small junction box"
+      }
+    },
+    "exits": {
+      "S48.to_S47": {
+        "rect": [
+          590,
+          455,
+          120,
+          105
+        ],
+        "interaction_point": [
+          650,
+          640
+        ],
+        "label_anchor": [
+          650,
+          445
+        ],
+        "reason": "the Rotunda's entrance in its stone base under the red band, at the end of the plateau path"
+      },
+      "S48.to_S50": {
+        "rect": [
+          405,
+          380,
+          120,
+          180
+        ],
+        "interaction_point": [
+          470,
+          652
+        ],
+        "label_anchor": [
+          440,
+          370
+        ],
+        "reason": "the external steel staircase up to the roof viewing terrace beside the Rotunda"
+      },
+      "S48.to_S49": {
+        "rect": [
+          1615,
+          420,
+          170,
+          345
+        ],
+        "interaction_point": [
+          1700,
+          830
+        ],
+        "label_anchor": [
+          1700,
+          410
+        ],
+        "reason": "the pavilion's door to the inner chamber"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S48.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:01:04"
+  }
+}

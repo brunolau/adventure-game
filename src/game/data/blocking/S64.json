@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "room": "S64",
+  "family_base": "S56",
+  "status": "natural re-blocking, camera family L_WINDOW: derived from the S56 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale and sill line); docs/DECISIONS.md item 2: OTO82 window bust (open window), TONO82 seated on a low stool",
+  "note": "Same L_WINDOW camera as the base S56 (eye 1.7 m, horizon y 503, f ~2000 px, frontal facade 9 m away, 222 px per metre; stone sill top = bust cut line y 681; scale s(y) = (y - 503) / 512). December 1982: the original timber window with its right casement open, Oto (66) working inside behind it; Tono (12) sits outside on a low stool at the left (stool and satchel are part of his sprite); the fresh plaster patch below the window; the yard beyond the corner under thin snow.",
+  "background": "bg_natural/S64.webp",
+  "walk_polygon": [[0, 885], [1920, 885], [1920, 1015], [0, 1015]],
+  "walk_band": [885, 1015],
+  "actor_scale": [0.75, 1.0],
+  "spawn": [1500, 950],
+  "anchors": {
+    "window_frame": [1010, 437],
+    "swallow": [865, 647],
+    "sill": [1010, 681]
+  },
+  "hotspots": {
+    "S64.ambient 1": {
+      "rect": [800, 625, 310, 80],
+      "interaction_point": [900, 905],
+      "label_anchor": [905, 615],
+      "reason": "on the left end of the stone sill where the metal swallow will stand: a pencil drawing of a swallow, a tin blank with the outline and a file (anchor swallow)"
+    },
+    "S64.ambient 2": {
+      "rect": [850, 712, 365, 160],
+      "interaction_point": [1030, 920],
+      "label_anchor": [1032, 880],
+      "reason": "the fresh, lighter plaster patch on the plinth right below the window"
+    },
+    "S64.TONO82": {
+      "rect": [500, 625, 200, 315],
+      "interaction_point": [760, 950],
+      "label_anchor": [600, 612],
+      "reason": "Tono (12) seated on a low stool on the path left of the window, facing it"
+    },
+    "S64.OTO82": {
+      "rect": [1030, 520, 140, 161],
+      "interaction_point": [1150, 910],
+      "label_anchor": [1115, 505],
+      "reason": "Oto (66) inside behind the open right casement, bust cut at the sill"
+    }
+  },
+  "npcs": {
+    "S64.TONO82": {
+      "variant": "seated",
+      "feet": [600, 940],
+      "z": "auto",
+      "reason": "docs/DECISIONS.md item 2: Tono (12) on a low stool outside the window (stool and satchel are in the sprite)"
+    },
+    "S64.OTO82": {
+      "variant": "window_bust",
+      "feet": [1100, 843],
+      "scale": 0.664,
+      "sill_y": 681,
+      "facing": "left",
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: window bust behind the open service window (same sill and place as TONO20 in S56)"
+    }
+  },
+  "exits": {
+    "S64.to_S61": {
+      "rect": [1856, 780, 64, 235],
+      "interaction_point": [1840, 950],
+      "label_anchor": [1670, 770],
+      "reason": "the path round the building corner into the school yard with the young linden (right edge)"
+    }
+  },
+  "state_patches": []
+}

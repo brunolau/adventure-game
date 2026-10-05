@@ -1,0 +1,168 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Tram stop Nam. sv. Frantiska on Karloveska seen from the wide concrete platform across the double track: camera ~2.2 m on the platform, horizon y 360, the platform's back edge (railing, shelter foot) at y 800 (~200 px per metre). Perspective s(y) = (y - 360) / 655. Behind the platform's open edge: the double track, a red-white railing (foot y 700), Karloveska, the green slope with the unrenovated Karlova Ves panel blocks. Emil stands under the green glazed shelter, the closed accordion case lies on the bench left of him, the folding table with the metronome and the paper cup stands right of him under the roof; the zebra crossing at the gap in the railing leads over the track to the steps up the slope (S20).",
+ "background": "bg_natural/S19.webp",
+ "walk_polygon": [
+  [
+   20,
+   805
+  ],
+  [
+   1900,
+   805
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ]
+ ],
+ "walk_band": [
+  805,
+  1015
+ ],
+ "actor_scale": [
+  0.68,
+  1.0
+ ],
+ "spawn": [
+  1180,
+  920
+ ],
+ "hotspots": {
+  "S19.ambient 1": {
+   "rect": [
+    440,
+    612,
+    210,
+    104
+   ],
+   "interaction_point": [
+    545,
+    880
+   ],
+   "label_anchor": [
+    545,
+    604
+   ],
+   "reason": "closed black accordion case lying on the bench inside the shelter, left of Emil"
+  },
+  "S19.ambient 2": {
+   "rect": [
+    912,
+    596,
+    64,
+    64
+   ],
+   "interaction_point": [
+    945,
+    880
+   ],
+   "label_anchor": [
+    944,
+    588
+   ],
+   "reason": "paper cup with a crossed-out label on the folding table right of Emil"
+  },
+  "S19.EMIL": {
+   "rect": [
+    700,
+    452,
+    150,
+    365
+   ],
+   "interaction_point": [
+    775,
+    900
+   ],
+   "label_anchor": [
+    775,
+    444
+   ],
+   "reason": "Emil standing under the shelter roof in front of the back glass"
+  }
+ },
+ "npcs": {
+  "S19.EMIL": {
+   "variant": "standing",
+   "feet": [
+    775,
+    812
+   ],
+   "scale": 0.69,
+   "reason": "brief: the accordionist under the shelter (standing sprite; DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S19.to_S11": {
+   "rect": [
+    0,
+    815,
+    60,
+    200
+   ],
+   "interaction_point": [
+    70,
+    910
+   ],
+   "label_anchor": [
+    135,
+    803
+   ],
+   "reason": "the platform continues out of the left edge (tram towards Dubravka)"
+  },
+  "S19.to_S20": {
+   "rect": [
+    1510,
+    540,
+    150,
+    260
+   ],
+   "interaction_point": [
+    1580,
+    850
+   ],
+   "label_anchor": [
+    1585,
+    532
+   ],
+   "reason": "zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky estate"
+  },
+  "S19.to_S21": {
+   "rect": [
+    1860,
+    815,
+    60,
+    200
+   ],
+   "interaction_point": [
+    1850,
+    910
+   ],
+   "label_anchor": [
+    1785,
+    803
+   ],
+   "reason": "the platform continues out of the right edge (tram towards the centre)"
+  }
+ },
+ "state_patches": [
+  {
+   "texture": "variants_natural/S19_metronome_taken.webp",
+   "pos": [
+    852,
+    566
+   ],
+   "after": [
+    "B18"
+   ],
+   "until": [],
+   "reason": "B18: Emil lends Adam the metronome; the folding table keeps only the paper cup (free retouch, master v6)"
+  }
+ ],
+ "version": 1,
+ "room": "S19"
+}

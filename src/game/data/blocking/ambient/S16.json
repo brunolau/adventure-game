@@ -1,0 +1,95 @@
+{
+ "room": "S16",
+ "notes": "Natural S16 (bg_natural/S16.webp), the school-radio room on 15 June 1995, late afternoon. Wind in the young tree of the inner atrium outside the window (cut from the natural painting), pupils of the afternoon club crossing the sunny atrium far away now and then (seen through the window), the amber VU meter of the console glowing and twitching with the tape hiss, dust motes in the window light (room ambience: tape hiss, loudspeaker, distant corridor).",
+ "layers": [
+  {
+   "id": "atrium_tree",
+   "type": "sway",
+   "texture": "S16/natural/atrium_tree.webp",
+   "anchor": 1.0,
+   "amp_px": 1.4,
+   "freq": 0.3,
+   "wavelength_px": 60,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "atrium_pupils",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1050,
+     532
+    ],
+    [
+     1360,
+     532
+    ]
+   ],
+   "speed_px_s": 32,
+   "scale": 0.17,
+   "modulate": "#4a3e5a",
+   "alpha": 0.7,
+   "flock": 2,
+   "flock_spread": [
+    30,
+    4
+   ],
+   "bob_px": 1.0,
+   "direction": "random",
+   "every_s": [
+    14,
+    30
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "mask": "S16/natural/window_mask.webp"
+  },
+  {
+   "id": "vu_meter",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    857,
+    626
+   ],
+   "size": [
+    54,
+    34
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffc860",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.4,
+   "period_s": 0.22
+  },
+  {
+   "id": "dust_window",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1000,
+    330,
+    420,
+    520
+   ],
+   "count": 24,
+   "size": [
+    3,
+    7
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff0c4"
+  }
+ ]
+}

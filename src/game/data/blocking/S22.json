@@ -1,0 +1,145 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Antiquarian bookshop on Venturska seen from the back of the shop towards its street front: one-point box, camera ~2.4 m, horizon y 300, front wall foot line y 760 (~194 px per metre), ceiling line y 217. Perspective s(y) = (y - 300) / 715. Honey-coloured slat panelling (type-reference Honterus), the shop window shows the baroque facade across Venturska; the plan chest of map drawers stands under the window with the dusty book on top; the glazed door with its bell is the exit; Viera stands at the plain panelled section; the library ladder leans on the right bookshelf.",
+ "background": "bg_natural/S22.webp",
+ "walk_polygon": [
+  [
+   312,
+   782
+  ],
+  [
+   550,
+   782
+  ],
+  [
+   555,
+   810
+  ],
+  [
+   965,
+   810
+  ],
+  [
+   970,
+   782
+  ],
+  [
+   1610,
+   782
+  ],
+  [
+   1900,
+   975
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ],
+  [
+   20,
+   975
+  ]
+ ],
+ "walk_band": [
+  782,
+  1015
+ ],
+ "actor_scale": [
+  0.67,
+  1.0
+ ],
+ "spawn": [
+  1085,
+  890
+ ],
+ "hotspots": {
+  "S22.ambient 1": {
+   "rect": [
+    1380,
+    255,
+    135,
+    520
+   ],
+   "interaction_point": [
+    1450,
+    840
+   ],
+   "label_anchor": [
+    1450,
+    247
+   ],
+   "reason": "wooden library ladder leaning on the tall right bookshelf"
+  },
+  "S22.ambient 2": {
+   "rect": [
+    815,
+    540,
+    125,
+    60
+   ],
+   "interaction_point": [
+    878,
+    840
+   ],
+   "label_anchor": [
+    878,
+    532
+   ],
+   "reason": "the dustiest book, lying on the plan chest under the window"
+  },
+  "S22.VIERA": {
+   "rect": [
+    1190,
+    436,
+    150,
+    358
+   ],
+   "interaction_point": [
+    1265,
+    880
+   ],
+   "label_anchor": [
+    1265,
+    428
+   ],
+   "reason": "Viera standing at the plain panelled wall between the door and the bookshelf"
+  }
+ },
+ "npcs": {
+  "S22.VIERA": {
+   "variant": "standing",
+   "feet": [
+    1265,
+    790
+   ],
+   "scale": 0.685,
+   "reason": "standing shop owner (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S22.to_S21": {
+   "rect": [
+    985,
+    340,
+    206,
+    425
+   ],
+   "interaction_point": [
+    1085,
+    820
+   ],
+   "label_anchor": [
+    1085,
+    332
+   ],
+   "reason": "glazed shop door with the bell, out to Venturska"
+  }
+ },
+ "state_patches": [],
+ "version": 1,
+ "room": "S22"
+}

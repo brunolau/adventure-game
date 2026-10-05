@@ -1,0 +1,24 @@
+# S47 Chopok pri Rotunde (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S47.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S47.sketch.json (panoramic lounge: curved window wall left, stone core wall right).
+# Style reference: the accepted natural S43 lobby (same day; interior light).
+#refs: art/source/rooms/S47/rotunda-chopok_interior-lounge_2016-09.jpg ; art/source/rooms/S50/chopok_view-north-funitel-high-tatras_2017-08.jpg ; art/source/rooms/S48/rotunda-chopok_exterior_2016-09.jpg
+#style: src/game/assets/bg_natural/S43.webp
+Place: the upper-floor panoramic lounge of the real Rotunda on the summit of Chopok (2,004 m), Low Tatras, Slovakia. Image 2 is a photo of this lounge: a curved window wall with dark slim mullions, dark blue upholstered sofas along the windows, round light-wood tables with dark chairs, a wall of light grey natural-stone blocks, a dark ceiling with a curved canopy edge (ignore the metal sculpture and the people). Image 3 is the real north view from the summit that the windows show: the Funitel line with its pylons going down, wooden guideposts, the Liptov basin with a lake far below and the jagged High Tatras on the horizon. Image 4 shows the Rotunda from outside (stone base, glass drum, red ring). Paint this real lounge.
+
+Brief: the real landmark Rotunda by the summit stations, a public indoor viewing space with a temporary Atlas exhibition. Chopok and the guideposts are visible. The gallery panels are a fictional 2035 installation. Wednesday 6 June 2035, bright midday at 2,000 m: deep blue sky, crisp light, the summit slopes rocky with dwarf pine and white snow patches still lying near the top, the distance slightly hazy.
+
+Camera: standing in the lounge, about 1.6 m high, looking at the window wall; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the dark ceiling and the canopy edge down to y ~190; the gently curved window wall at x 0-1260 (y 190-565) with the window sofa below it (backrest y 560, base to the floor at y 705); the natural-stone core wall at x 1260-1920 (y 170-705); the normalisation panel on its stand at x 470-720 (panel y 360-660, feet y ~725); the glass showcase on its plinth at x 1015-1145 (y 450-728); the empty frame on the stone wall at x 1325-1505 (y 295-495) with a caption plate below; the glazed door at x 1600-1790 (y 360-705); the dark carpet from y 700 to the bottom edge.
+
+What the sketch blocks are: the dark ceiling with small spotlights and the curved canopy edge; the window wall with dark mullions and the north view (High Tatras, Liptov basin, forested ridges, the rocky summit slope with dwarf pine and snow patches, a Funitel pylon and its ropes going down, a wooden guidepost); the dark blue window sofa; two round light-wood tables with dark tub chairs; the light grey natural-stone core wall; the glazed door to the stairs; the dark grey carpet.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S47.filter}: a modern free-standing exhibition panel on a slim steel stand, divided into two columns: on the left a lively record (a voice waveform, a pause mark, a small laughing face, two different handwritten names as scribbles), on the right the same record reduced to one short grey line; a thin arrow between them. No readable words.
+2. {rect:S47.ambient 2}: a glass showcase on a dark plinth with an old brass school hand bell with a wooden handle inside, lit from above.
+3. {rect:S47.ambient 1}: an ornate empty gilt picture frame hanging on the stone wall - inside it only the bare stone, no picture - and a small blank caption plate under it.
+{npc_zones}
+{exit:S47.to_S68} is where the lounge continues out of the left edge. {exit:S47.to_S48} is the glazed door in the stone wall to the stairs down.
+
+Walkable floor: {walk} is the dark grey carpet - one continuous flat surface with no step and nothing standing on it: no chairs, no tables, no stands, no bags, no people. Only daylight from the windows and soft shadows.
+
+Fiction rules: leave out the metal sculpture of old lift parts in image 2 entirely; no restaurant menus, no logos, no brand names, no readable text anywhere (the exhibition graphics are pictograms and scribbles). No people, no animals.

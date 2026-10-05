@@ -1,0 +1,118 @@
+{
+ "room": "S19",
+ "notes": "Natural S19: wind in the slope trees, cars passing on Karloveska behind the railing (masked by the railing, the suitcase, the table and the shelter posts), pigeons crossing the sky, clouds drifting behind the panel blocks.",
+ "layers": [
+  {
+   "id": "trees_sway",
+   "type": "sway",
+   "texture": "S19/natural/trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.2,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "cars_karloveska",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [
+    [
+     -360,
+     668
+    ],
+    [
+     2280,
+     668
+    ]
+   ],
+   "speed_px_s": 240,
+   "speed_jitter": [
+    0.85,
+    1.15
+   ],
+   "scale": 0.62,
+   "bob_px": 0.5,
+   "bob_hz": 2.2,
+   "direction": "random",
+   "every_s": [
+    9,
+    24
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "mask": "S19/natural/road_mask.webp"
+  },
+  {
+   "id": "pigeons_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     60
+    ],
+    [
+     700,
+     30
+    ],
+    [
+     1300,
+     50
+    ],
+    [
+     2000,
+     25
+    ]
+   ],
+   "speed_px_s": 230,
+   "scale": 0.09,
+   "flock": 3,
+   "flock_spread": [
+    60,
+    22
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    3,
+    9
+   ]
+  },
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    20,
+    110
+   ],
+   "count": 3,
+   "speed_px_s": 5,
+   "scale": [
+    0.18,
+    0.3
+   ],
+   "x_span": [
+    0,
+    1920
+   ],
+   "alpha": 0.7,
+   "mask": "S19/natural/sky_mask.webp"
+  }
+ ]
+}

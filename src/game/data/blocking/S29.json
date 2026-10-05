@@ -1,0 +1,134 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Garage row under the raised pedestrian deck of the Rovniakova blocks (Petrzalka) seen from its asphalt forecourt: camera ~2.2 m, horizon y 360, the garage doors stand on y 690 (~152 px per metre). Perspective s(y) = (y - 360) / 655. Garage 17 is open and lit: workbench with radio gear and the loop coil on the back wall (taken away after B17), the chair with the radio cable at the door line; Dezider stands in front of the open garage; the radio amateur's lattice mast with its yagi stands on the green behind, against the sky, left of the deck; the footbridge in the distance. Camera moved outside (register said inside) so the real garage row, deck and antenna are seen.",
+ "background": "bg_natural/S29.webp",
+ "walk_polygon": [
+  [
+   20,
+   706
+  ],
+  [
+   1900,
+   706
+  ],
+  [
+   1900,
+   1015
+  ],
+  [
+   20,
+   1015
+  ]
+ ],
+ "walk_band": [
+  706,
+  1015
+ ],
+ "actor_scale": [
+  0.53,
+  1.0
+ ],
+ "spawn": [
+  1100,
+  880
+ ],
+ "hotspots": {
+  "S29.ambient 1": {
+   "rect": [
+    215,
+    28,
+    200,
+    300
+   ],
+   "interaction_point": [
+    320,
+    800
+   ],
+   "label_anchor": [
+    320,
+    340
+   ],
+   "reason": "radio amateur's lattice mast with a yagi antenna on the green behind the garages"
+  },
+  "S29.ambient 2": {
+   "rect": [
+    590,
+    540,
+    125,
+    165
+   ],
+   "interaction_point": [
+    650,
+    800
+   ],
+   "label_anchor": [
+    652,
+    532
+   ],
+   "reason": "wooden chair just inside garage 17 with a coiled radio cable on it (v1 painted it at the left)"
+  },
+  "S29.DEZI": {
+   "rect": [
+    920,
+    430,
+    150,
+    286
+   ],
+   "interaction_point": [
+    995,
+    840
+   ],
+   "label_anchor": [
+    995,
+    422
+   ],
+   "reason": "Dezider standing beside his open garage 17, in front of the pier and the closed door of garage 18"
+  }
+ },
+ "npcs": {
+  "S29.DEZI": {
+   "variant": "standing",
+   "feet": [
+    995,
+    714
+   ],
+   "scale": 0.54,
+   "reason": "standing technician beside his open garage (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S29.to_S28": {
+   "rect": [
+    0,
+    716,
+    60,
+    299
+   ],
+   "interaction_point": [
+    70,
+    880
+   ],
+   "label_anchor": [
+    135,
+    704
+   ],
+   "reason": "the forecourt runs out of the left edge towards the underpass"
+  }
+ },
+ "state_patches": [
+  {
+   "texture": "variants_natural/S29_coil_taken.webp",
+   "pos": [
+    784,
+    392
+   ],
+   "after": [
+    "B17"
+   ],
+   "until": [],
+   "reason": "B17: Dezider gives Adam the loop coil from the back wall of the garage (free retouch, master v2)"
+  }
+ ],
+ "version": 1,
+ "room": "S29"
+}

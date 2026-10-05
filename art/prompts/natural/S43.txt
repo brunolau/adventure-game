@@ -1,0 +1,24 @@
+# S43 Lobby hotela Grand Jasná (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S43.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S43.sketch.json. The real lobby is described from the owner's reference photos
+# (art/source/owner_refs/S43_*.jpg, looked at only, never sent). The register's alpine type-references are wrong
+# (owner feedback 2026-10-05) and are not used. Image 2 only gives the real surroundings seen through the windows.
+#refs: art/source/rooms/S42/hotel-grand-jasna_forecourt-chopok_2017-07.jpg
+#style: src/game/assets/bg_natural/S41.webp
+Place: the lobby of the real Hotel Grand Jasná in Jasná, Low Tatras, Slovakia (a large renovated mountain hotel). The real lobby: a grey stone-textured feature wall behind the reception with spaced metal letters RECEPTION, a long white curved reception counter whose front is made of thin horizontal ribs, a vase of red and orange flowers on the counter, grey stone floor tiles, a light ceiling with round recessed downlights; next to it the lobby bar lounge, a long bright room with beige upholstered armchairs around small round light-wood tables, colourful contemporary paintings on warm white walls and light sheer curtains at the windows. Image 2 is a photo of the hotel's surroundings: spruce forest and the green Chopok slopes, which are what the windows and the glass entrance show.
+
+Brief: the lobby of the existing hotel in 2035 (grounded near future: it looks like today). Tamara has a temporary repair table "Druhý život" as an accompanying programme of the exhibition: a small, homely workshop corner in the lobby, clearly not the hotel reception. In the background the normal reception and some luggage. Daylight of a bright June midday comes through the windows and the entrance, warm interior light from the downlights.
+
+Camera: standing in the lobby, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to the cove line at y ~250; the back wall from y 262 to the floor line at y 700; the glazed entrance doors at x 60-260 (y 405-705); the grey stone feature wall at x 300-920 with the lettering at y ~330-360; the white reception counter at x 320-930 (top y 600, front foot y ~745); Tamara's table at x 960-1260 (top edge y 610-626, cloth to the floor at y ~774); the parts shelves at x 1260-1430 (top y 385, foot y 700); the lounge from x 1450 to the right edge; the grey stone floor from y 700 to the bottom edge.
+
+What the sketch blocks are: the light ceiling with downlights and a cove line; the warm white back wall; the glazed entrance doors with daylight and spruces outside; the grey stone feature wall with the spaced lettering RECEPTION; the long white curved ribbed reception counter with red and orange flowers in a vase and the back of a flat screen on it (no receptionist); two suitcases (dark red and blue) standing beside the counter; a plain stretch of wall behind Tamara's table; Tamara's repair table with a teal cloth hanging to the floor in front, a small old radio being repaired, a desk lamp and a few small tools on the top, and a small wooden plaque on the cloth reading "DRUHÝ ŽIVOT"; the open wooden shelving unit; the lounge wall with two colourful paintings; a tall window with light curtains showing the spruce forest and green slopes; the lounge side counter; two beige armchairs and a small round table; the grey stone floor tiles.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S43.ambient 1}: a sleek modern self-service coffee machine (dark grey, a small glowing display, a cup under the spout) on the lounge's side counter, a stack of white cups beside it.
+2. {rect:S43.ambient 2}: Tamara's open wooden shelving unit full of labelled boxes, small drawers and trays of spare parts: old radio valves, knobs, cables, screws, small electronic boards (labels are illegible scribbles).
+{npc_zones}
+{exit:S43.to_S42} is the glazed entrance doors.
+
+Walkable floor: {walk} is the grey stone floor tiles - one continuous flat surface with no step, no rug, no edge and no change of material inside it, and nothing standing on it: no low tables, no chairs, no plants, no luggage, no people. Only light reflections, soft shadows and tile joints.
+
+Fiction rules: the only lettering in the picture is RECEPTION on the stone wall and DRUHÝ ŽIVOT on Tamara's plaque - no hotel logo, no stars, no brand names, no price lists; the paintings are abstract colourful works of our own (no copies of real artworks). No people (no receptionist, no guests), no animals.

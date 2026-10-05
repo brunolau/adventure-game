@@ -1,0 +1,532 @@
+{
+ "note": "S34 natural blocking (src/game/data/blocking/S34.json): village culture hall before rehearsal, frontal camera ~1.7 m, horizon y 460, s(y) = (y - 460) / 555; low plank stage across the end wall (front foot y 720, front edge y 607), forest flat clamped to a work table front left (flat foot y ~800), hat on the stage edge right, door right.",
+ "background": "#e6dcc4",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    200
+   ],
+   "fill": "#e2d8c4",
+   "note": "plain plastered ceiling with a wooden beam"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    180,
+    1920,
+    24
+   ],
+   "fill": "#a88a62",
+   "note": "wooden ceiling beam / cornice"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    204,
+    1920,
+    516
+   ],
+   "fill": "#e6dcc4",
+   "note": "end wall of the hall: plain lime-washed plaster, pale ochre"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    640,
+    1920,
+    80
+   ],
+   "fill": "#9a7a56",
+   "note": "oil-painted brown dado"
+  },
+  {
+   "type": "rect",
+   "box": [
+    340,
+    232,
+    1120,
+    40
+   ],
+   "fill": "#d2c4a6",
+   "note": "simple plastered proscenium arch top (no lettering)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    340,
+    232,
+    40,
+    380
+   ],
+   "fill": "#d2c4a6",
+   "note": "proscenium side"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1420,
+    232,
+    40,
+    380
+   ],
+   "fill": "#d2c4a6",
+   "note": "proscenium side"
+  },
+  {
+   "type": "rect",
+   "box": [
+    380,
+    272,
+    1040,
+    300
+   ],
+   "fill": "#5c4a3c",
+   "note": "dim stage behind the opening"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     380,
+     272
+    ],
+    [
+     620,
+     272
+    ],
+    [
+     580,
+     400
+    ],
+    [
+     560,
+     575
+    ],
+    [
+     380,
+     575
+    ]
+   ],
+   "fill": "#8a2e2a",
+   "note": "heavy dark red curtain drawn open to the left"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     1420,
+     272
+    ],
+    [
+     1200,
+     272
+    ],
+    [
+     1240,
+     400
+    ],
+    [
+     1260,
+     575
+    ],
+    [
+     1420,
+     575
+    ]
+   ],
+   "fill": "#8a2e2a",
+   "note": "curtain drawn open to the right"
+  },
+  {
+   "type": "rect",
+   "box": [
+    380,
+    272,
+    1040,
+    34
+   ],
+   "fill": "#7a2826",
+   "note": "curtain valance"
+  },
+  {
+   "type": "rect",
+   "box": [
+    620,
+    300,
+    580,
+    260
+   ],
+   "fill": "#4e5a48",
+   "note": "plain dark cloth backdrop at the back of the stage"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     300,
+     607
+    ],
+    [
+     1500,
+     607
+    ],
+    [
+     1470,
+     575
+    ],
+    [
+     330,
+     575
+    ]
+   ],
+   "fill": "#b08a5c",
+   "note": "plank stage floor seen from above"
+  },
+  {
+   "type": "rect",
+   "box": [
+    300,
+    607,
+    1200,
+    113
+   ],
+   "fill": "#8a6a46",
+   "note": "front of the low plank stage (horizontal boards), 0.8 m high"
+  },
+  {
+   "type": "bars",
+   "box": [
+    300,
+    615,
+    1200,
+    105
+   ],
+   "step": 22,
+   "bar": 4,
+   "fill": "#6e5236",
+   "vertical": false,
+   "note": "board joints"
+  },
+  {
+   "type": "rect",
+   "box": [
+    905,
+    650,
+    150,
+    70
+   ],
+   "fill": "#9a7a50",
+   "note": "wooden step box in front of the stage"
+  },
+  {
+   "type": "rect",
+   "box": [
+    905,
+    620,
+    150,
+    32
+   ],
+   "fill": "#a6845a",
+   "note": "upper step"
+  },
+  {
+   "type": "rect",
+   "box": [
+    246,
+    360,
+    8,
+    40
+   ],
+   "fill": "#3a3634",
+   "note": "wall bracket"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    224,
+    330,
+    52,
+    40
+   ],
+   "fill": "#f4e6c0",
+   "note": "simple glass wall lamp, lit (1950s, no spotlights)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1546,
+    360,
+    8,
+    40
+   ],
+   "fill": "#3a3634",
+   "note": "wall bracket"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1524,
+    330,
+    52,
+    40
+   ],
+   "fill": "#f4e6c0",
+   "note": "simple glass wall lamp, lit (1950s, no spotlights)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1630,
+    430,
+    170,
+    290
+   ],
+   "fill": "#6e4e32",
+   "note": "panelled double door to the street (exit), one leaf ajar"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1720,
+    440,
+    70,
+    270
+   ],
+   "fill": "#f0e2b8",
+   "note": "bright daylight in the open leaf"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1620,
+    420,
+    190,
+    12
+   ],
+   "fill": "#5a3e26"
+  },
+  {
+   "type": "rect",
+   "box": [
+    20,
+    560,
+    110,
+    200
+   ],
+   "fill": "#8a6440",
+   "note": "stack of folding wooden chairs against the left wall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    720,
+    1920,
+    360
+   ],
+   "fill": "#a88458",
+   "note": "worn wooden floorboards of the hall"
+  },
+  {
+   "type": "rect",
+   "box": [
+    70,
+    440,
+    360,
+    360
+   ],
+   "fill": "#4f7a40",
+   "note": "forest scenery flat: painted canvas with stylised trees on a wooden frame, standing with its bottom on the floor"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    90,
+    460,
+    150,
+    180
+   ],
+   "fill": "#3f6a34"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    220,
+    470,
+    170,
+    170
+   ],
+   "fill": "#5f8a48"
+  },
+  {
+   "type": "rect",
+   "box": [
+    150,
+    600,
+    26,
+    190
+   ],
+   "fill": "#6a4a2c"
+  },
+  {
+   "type": "rect",
+   "box": [
+    300,
+    610,
+    26,
+    180
+   ],
+   "fill": "#6a4a2c"
+  },
+  {
+   "type": "rect",
+   "box": [
+    64,
+    434,
+    372,
+    12
+   ],
+   "fill": "#b08a5c",
+   "note": "flat frame"
+  },
+  {
+   "type": "rect",
+   "box": [
+    424,
+    434,
+    12,
+    372
+   ],
+   "fill": "#b08a5c"
+  },
+  {
+   "type": "rect",
+   "box": [
+    64,
+    434,
+    12,
+    372
+   ],
+   "fill": "#b08a5c"
+  },
+  {
+   "type": "rect",
+   "box": [
+    436,
+    655,
+    280,
+    18
+   ],
+   "fill": "#9a7450",
+   "note": "plain wooden work table, top y 662"
+  },
+  {
+   "type": "rect",
+   "box": [
+    446,
+    673,
+    16,
+    140
+   ],
+   "fill": "#6e5236"
+  },
+  {
+   "type": "rect",
+   "box": [
+    690,
+    673,
+    16,
+    140
+   ],
+   "fill": "#6e5236"
+  },
+  {
+   "type": "rect",
+   "box": [
+    418,
+    628,
+    42,
+    18
+   ],
+   "fill": "#4a4e52",
+   "note": "hand table clamp (iron C-clamp) holding the flat frame to the table edge, its screw loosened"
+  },
+  {
+   "type": "rect",
+   "box": [
+    430,
+    646,
+    18,
+    46
+   ],
+   "fill": "#4a4e52"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     438,
+     692
+    ],
+    [
+     470,
+     706
+    ]
+   ],
+   "color": "#4a4e52",
+   "width": 6,
+   "note": "clamp screw handle"
+  },
+  {
+   "type": "rect",
+   "box": [
+    520,
+    640,
+    120,
+    18
+   ],
+   "fill": "#d8cdb6",
+   "note": "sewing box and a folded costume on the table"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1340,
+    590,
+    130,
+    26
+   ],
+   "fill": "#2a2624",
+   "note": "brim of a black felt mayor's hat lying on the stage edge"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1368,
+    562,
+    74,
+    38
+   ],
+   "fill": "#2a2624",
+   "note": "crown of the hat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1368,
+    588,
+    74,
+    8
+   ],
+   "fill": "#7a2826",
+   "note": "red ribbon"
+  }
+ ]
+}

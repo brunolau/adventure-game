@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "room": "S18",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1). Owner feedback 2026-10-05: art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg is the main base.",
+  "note": "Inner courtyard of the early-1970s four-storey sectional panel blocks (Svantnerova / M. Schneidra-Trnavskeho, same type as the carl_eric photo of Sokolikova): camera ~2.0 m high on the paved courtyard path, looking along the long block on the right, which recedes from the right edge to its far end at x ~640 (vanishing point x ~320, y 404): red balcony parapet bands, loggias, raised entrances with steel stairs, flat roof; a big linden in front of it at the right; at the left beyond the kiosk the end walls of the next blocks and the path towards the tram stop. Horizon y 404, the kiosk front and the courtyard path's back edge y 740 (~166 px per metre there), front edge y 1015 (301 px per metre). Perspective s(y) = (y - 404) / 611. Props are where they are: Zita's newspaper kiosk (2.4 m wide, sales window sill 1.05 m = y 562) on the paving at the left of centre, newspapers on clips behind its left glass panel, gum and sweets with colourful unbranded wrappers behind its right glass panel; the residents' drying racks with laundry behind a low wire fence on the lawn in front of the block; two benches along the path in front of the block.",
+  "background": "bg_natural/S18.webp",
+  "walk_polygon": [[0, 748], [1920, 748], [1920, 1015], [0, 1015]],
+  "walk_band": [740, 1015],
+  "actor_scale": [0.55, 1.0],
+  "spawn": [1100, 900],
+  "hotspots": {
+    "S18.ambient 1": { "rect": [630, 430, 90, 150], "interaction_point": [675, 800], "label_anchor": [690, 630],
+                       "reason": "gum and sweets with colourful unbranded wrappers stacked behind the kiosk's right glass panel" },
+    "S18.ambient 2": { "rect": [345, 420, 95, 165], "interaction_point": [392, 800], "label_anchor": [392, 630],
+                       "reason": "newspapers and magazines hung on clips behind the kiosk's left glass panel" },
+    "S18.ZITA": { "rect": [450, 410, 125, 156], "interaction_point": [512, 820], "label_anchor": [512, 400],
+                  "reason": "Zita inside her kiosk, seen as a bust in the open sales window (painted sill top y 562), left of the transistor radio on the sill" }
+  },
+  "npcs": {
+    "S18.ZITA": { "variant": "window_bust", "feet": [512, 735], "scale": 0.55, "sill_y": 562, "z": "back",
+                  "reason": "DECISIONS item 2: Zita behind the kiosk sill (bust); feet = the kiosk floor just behind its front wall" }
+  },
+  "exits": {
+    "S18.to_S11": { "rect": [0, 748, 60, 267], "interaction_point": [70, 880], "label_anchor": [170, 738],
+                    "reason": "the courtyard path continues out of the left edge past the block ends towards the tram stop" },
+    "S18.to_S17": { "rect": [1860, 748, 60, 267], "interaction_point": [1850, 880], "label_anchor": [1760, 738],
+                    "reason": "the path continues out of the right edge along the block, past the kindergarten fence to the school yard" }
+  },
+  "state_patches": []
+}

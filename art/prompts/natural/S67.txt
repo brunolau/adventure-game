@@ -1,0 +1,24 @@
+# S67 Priehyba pri prestupe na Funitel (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S67.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S67.sketch.json (boarding hall as in the 2015 photo and the approved CS09_2 cutscene frame).
+# Style reference: the accepted natural S41 (same day, same resort).
+#refs: art/source/rooms/S67/priehyba_funitel-boarding-hall_2015.jpg ; art/source/rooms/S67/priehyba_funitel-station-exterior_2015.jpg ; src/game/assets/cutscenes/CS09_2.webp
+#style: src/game/assets/bg_natural/S41.webp
+Place: the boarding hall of the real Funitel valley station at Priehyba (1,342 m) in Jasná, Low Tatras, Slovakia. Image 2 is a photo of this hall: the galvanised steel guide rail with a long row of black conveyor tyres overhead, the red bullwheel, black Funitel cabins on twin hangers docked along the rail, a red steel frame, an open concrete floor. Image 3 shows the station from outside (dark glass and metal, the red band with CHOPOK). Image 4 is an approved painting from our game of the same hall (keep its look: black cabins, red steel frame, light concrete floor, daylight from the open sides). Paint this real place.
+
+Brief: the real transfer point: the passengers arrive by the gondola from Biela Púť and board the Funitel Priehyba–Chopok here. Recognisable lift architecture, the attendant Ivan, a small map of the two sections. Wednesday 6 June 2035, bright midday daylight falling into the hall from the open sides, cool grey shade inside.
+
+Camera: standing on the boarding platform, about 1.6 m high, looking across the hall at the docked cabins, the cabins parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the guide rail with its tyres across the hall at y 120-230; cabin 1 at x 300-680 (top y 345, floor y 700) with closed doors; cabin 2 at x 830-1270 (top y 325, floor y 705) with its doors slid open in the middle (x 960-1160); the platform edge with a yellow safety line at y ~712-724; the steel handrail along the edge (top rail y 618) with a gap for the boarding gate at x 925-1155; the concrete pillar with the map board at x 1430-1670; the red steel frame at the right edge; the open passage with daylight at the left edge; the concrete platform from y 720 to the bottom edge.
+
+What the sketch blocks are: the dark steel roof structure with beams; the galvanised guide rail with the row of black conveyor tyres; the concrete back wall; the open passage with daylight at the left end of the hall (towards the gondola arrival); the big red bullwheel partly visible behind cabin 1; the twin hanger arms of the cabins; two big black Funitel cabins with large tinted windows and grey frames, no livery, no logo, no lettering on them; the lit interior of cabin 2 through its open doors (a padded bench and handrails); a hanging sign with the word CHOPOK and an arrow; the concrete pillar; the red steel frame; the concrete platform with the yellow safety line.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S67.ambient 2}: a sturdy brushed-steel handrail (two rails on round posts) along the platform edge in front of cabin 1.
+2. {rect:S67.boarding}: a low brushed-steel swing gate closing the gap in the handrail in front of the open cabin, with a small green arrow lamp on its left post.
+3. {rect:S67.ambient 1}: a framed map board on the pillar showing two lift sections as a blue and a red line joined at a middle station dot, with simple mountain contours; the only words on it may be "CHOPOK" at the top end, otherwise no text.
+{npc_zones}
+{exit:S67.to_S41} is the open passage with daylight at the left end of the hall. {exit:S67.to_S68} is the open doors of cabin 2.
+
+Walkable floor: {walk} is the light grey concrete boarding platform - one continuous flat surface with no step, no edge and nothing standing on it: no barriers, no stands, no bins, no people. Only daylight patches, soft shadows and a few concrete joints.
+
+Fiction rules: no company or resort logos (no TMR, no JASNÁ, no www addresses), no warning stickers with text, no cabin livery; the only lettering in the picture is the place name CHOPOK on the hanging sign and on the map. No people (the attendant is a separate sprite), no animals.

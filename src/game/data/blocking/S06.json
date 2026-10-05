@@ -1,0 +1,177 @@
+{
+  "version": 1,
+  "room": "S06",
+  "status": "natural re-blocking (product-owner decision 2026-10-05); narrow path per owner feedback (pathways are thinner in reality)",
+  "note": "Side path of Mira's house (same invented house as S05, old core of Cierna Voda on Pezinska): camera 2.2 m in the narrow side yard, looking straight at the light-blue side wall (the blue half of the S05 house) which stands 8.5 m away (foot y 790, ~196 px per metre); horizon y 360, s(y) = (y - 360) / 655 like S03/S05. A narrow path of old concrete slabs (1.2 m, y 790-861) runs along the wall, rough grass in front of it; at the right the house corner (x ~1449) and the low green picket fence with a closed gate that separates the path from the lived-in back garden (vine, fruit tree). Left: the kitchen window with geraniums in a window box; middle: the big closed triple window - lace curtain gathered in the left pane, Mira behind the middle pane (window_bust_glass, sill 0.95 m = y 605), the family photo on the inner wall seen through the right pane.",
+  "background": "bg_natural/S06.webp",
+  "walk_polygon": [
+    [
+      0,
+      800
+    ],
+    [
+      1920,
+      800
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    800,
+    1015
+  ],
+  "actor_scale": [
+    0.67,
+    1.0
+  ],
+  "spawn": [
+    300,
+    920
+  ],
+  "hotspots": {
+    "S06.photo": {
+      "rect": [
+        1068,
+        428,
+        94,
+        98
+      ],
+      "interaction_point": [
+        1110,
+        832
+      ],
+      "label_anchor": [
+        1280,
+        418
+      ],
+      "reason": "framed family photo on the inner wall, seen through the right pane of the closed window"
+    },
+    "S06.ambient 1": {
+      "rect": [
+        245,
+        505,
+        290,
+        140
+      ],
+      "interaction_point": [
+        390,
+        832
+      ],
+      "label_anchor": [
+        390,
+        495
+      ],
+      "reason": "red geraniums in a terracotta window box on the kitchen window's outer sill"
+    },
+    "S06.ambient 2": {
+      "rect": [
+        735,
+        345,
+        135,
+        250
+      ],
+      "interaction_point": [
+        760,
+        845
+      ],
+      "label_anchor": [
+        802,
+        335
+      ],
+      "reason": "white lace curtain gathered in the left pane of the big window"
+    },
+    "S06.MIRA20": {
+      "rect": [
+        885,
+        455,
+        140,
+        152
+      ],
+      "interaction_point": [
+        810,
+        830
+      ],
+      "label_anchor": [
+        955,
+        322
+      ],
+      "reason": "Mira behind the closed middle pane, bust on the sill (window_bust_glass)"
+    }
+  },
+  "npcs": {
+    "S06.MIRA20": {
+      "variant": "window_bust_glass",
+      "feet": [
+        955,
+        767
+      ],
+      "scale": 0.621,
+      "sill_y": 605,
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2 / ISSUES ART-NPC-02: Mira in quarantine behind the closed window, bust behind glass"
+    }
+  },
+  "exits": {
+    "S06.to_S05": {
+      "rect": [
+        0,
+        800,
+        60,
+        215
+      ],
+      "interaction_point": [
+        70,
+        905
+      ],
+      "label_anchor": [
+        125,
+        790
+      ],
+      "reason": "the side path continues out of the left edge back to the street passage beside the gate (S05)"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S06_photo_faded.webp",
+      "pos": [
+        1042,
+        402
+      ],
+      "after": [
+        "G11"
+      ],
+      "until": [
+        "C04",
+        "F17"
+      ],
+      "reason": "after G11 Mira's figure fades from the family photo (look variant 1; refit fix v2) - ISSUES ART-VAR-02"
+    },
+    {
+      "texture": "variants_natural/S06_photo_half.webp",
+      "pos": [
+        1042,
+        402
+      ],
+      "after": [
+        "G11",
+        "C04"
+      ],
+      "until": [
+        "F17"
+      ],
+      "reason": "after C04 the photo is half restored (look variant 2: the name holds, the outline is still weak; free blend v3)"
+    }
+  ],
+  "variant_layers": {
+    "variants/S06_family_restored.webp": null
+  },
+  "reasons": {
+    "variant_layers": "S06_family_restored (after F17) needs no natural overlay: the base painting shows the complete photo, and both fade patches end at F17"
+  }
+}

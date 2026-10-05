@@ -1,0 +1,1224 @@
+{
+  "room": "S35",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 773090135,
+  "usd": 0.15,
+  "started": "2026-10-05T10:18:51",
+  "spend_log_asset": "bg_natural/S35/S35_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S35.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the service courtyard of the manor (kastiel) in Ivanka pri Dunaji, Slovakia, in 1960. Image 2 is the real courtyard: a long single-storey estate outbuilding with white plastered walls, a grey plinth, brown wooden windows, a red-brown tiled roof with small eyebrow dormers, a porch on yellowish round columns where the wings meet, and a second wing with a tall tiled roof and dormers. Image 3 is a 1960 colour photo of a Slovak farmyard: weathered lath fence, worn plaster, beaten earth. Paint the courtyard of 1960 from these: the same buildings, but a beaten-earth and gravel yard instead of the lawn and concrete path, and none of the modern additions (no business signs, no TV antennas, no satellite dish, no bollards, no gas markers, no cars). The small store annex with the issue hatch on the left is an invented addition built in the same style.\n\nBrief: a fictional civil agricultural workshop yard: a material issue window, shelves with saddlery remnants, sacks of seed. A sunny afternoon on 6 June 1960, warm low sunlight from the left, soft shadows, fresh green trees beyond the roofs; hens out of reach behind a lath fence.\n\nCamera: standing in the yard about 2 m high; vertical lines stay vertical; the horizon is at y ~400. Keep this exact geometry from the sketch: the store annex on the left faces the camera squarely (its wall meets the ground at y 770, its eave at y ~265); the long outbuilding behind it recedes in perspective to the columned porch (the wall meets the ground at y ~712 at x 640 and at y ~610 at x 1050); the porch columns and the right wing stand on the ground at y ~600-610; the yard ground fills everything in front.\n\nWhat the sketch blocks are, left to right: the whitewashed store annex with a lean-to tiled roof: the material issue hatch - a wooden-framed opening with two open shutters and a worn wooden counter board across its bottom, the dim store room behind it; next to it the open plank door of the store showing shelves with saddlery remnants (coiled leather straps, harness pieces, buckles) in the dim inside; the long outbuilding with two small windows and two eyebrow dormers in its tiled roof; jute sacks of seed stacked against its wall; the porch on four yellowish round columns with a hipped tiled roof and a weathered plank door under it; the right wing with brown windows and a tall tiled roof with an eyebrow dormer; park trees behind; a two-wheeled wooden hand cart in the yard; a weathered lath fence of a poultry run with two hens behind it on the right; the beaten-earth and gravel yard.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 662-837, y 592-744 of the 1920x1080 frame (34-44 % from the left, 55-69 % from the top): full jute grain sacks tied at the top, stacked on the ground against the wall, one standing in front.\n2. the block of the layout sketch at x 1325-1625, y 590-730 of the 1920x1080 frame (69-85 % from the left, 55-68 % from the top): an old two-wheeled wooden hand cart with a plank box and a big spoked wheel, its two shafts resting on the ground.\nThe workshop door under the porch is the area of the layout sketch at x 1125-1220, y 400-610 of the 1920x1080 frame (59-64 % from the left, 37-56 % from the top); the yard continues out of the left edge (the area of the layout sketch at x 0-60, y 795-1010 of the 1920x1080 frame (0-3 % from the left, 74-94 % from the top)) towards the village.\n\nWalkable floor: the band at x 0-1920, y 618-1015 of the 1920x1080 frame (0-100 % from the left, 57-94 % from the top) is the beaten-earth and gravel courtyard - flat ground with no kerb, no step, no path edge and nothing standing on it: no buckets, no barrels, no tools, no stones. Only earth, gravel, a few grass tufts, light and shadows.\nNPC zone at x 140-280, y 448-589 of the 1920x1080 frame (7-15 % from the left, 41-55 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character is seen through a window: paint the window sill exactly at y 589 across x 110-310; the opening above the sill shows a plain, dim interior, no person.\n\nFiction rules: the workshop is unnamed: no signs, no names, no cooperative or state-farm lettering, no slogans, no red stars, no posters, no numbers on the doors. No people. The two hens behind the fence are the only animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S35_sketch.png (rendered from art/prompts/natural/S35.sketch.json, model geometry)",
+    "art/source/rooms/S35/manor_outbuildings_yard_taz666_2013.jpg",
+    "art/source/rooms/S35/period_ref_farmyard_fence_1960_fortepan60245.jpg",
+    "art/masters/bg_natural/S32_v1.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S35 natural blocking (src/game/data/blocking/S35.json): manor service courtyard, camera ~2.0 m in the yard, horizon y 400, s(y) = (y - 400) / 615; frontal store annex with the issue hatch on the left (foot y 770, hatch counter y 589), the long outbuilding receding to the columned porch (foot y 610) with the workshop door, the right wing (foot y 600), hand cart and poultry fence on the right.",
+    "background": "#b7d2ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          400
+        ],
+        "fill": "#b7d2ea",
+        "note": "sky"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1540,
+            250
+          ],
+          [
+            1620,
+            160
+          ],
+          [
+            1760,
+            140
+          ],
+          [
+            1860,
+            180
+          ],
+          [
+            1920,
+            160
+          ],
+          [
+            1920,
+            420
+          ],
+          [
+            1540,
+            420
+          ]
+        ],
+        "fill": "#6f9446",
+        "note": "park trees behind the right wing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          330,
+          630,
+          270
+        ],
+        "fill": "#e9e6dc",
+        "note": "right wing of the service buildings towards the manor, worn white plaster"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1270,
+            335
+          ],
+          [
+            1330,
+            215
+          ],
+          [
+            1920,
+            215
+          ],
+          [
+            1920,
+            335
+          ]
+        ],
+        "fill": "#b4552f",
+        "note": "its red-brown tiled roof"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1500,
+            262
+          ],
+          [
+            1530,
+            232
+          ],
+          [
+            1570,
+            232
+          ],
+          [
+            1600,
+            262
+          ]
+        ],
+        "fill": "#ece8e0",
+        "note": "eyebrow dormer"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1532,
+          238,
+          36,
+          24
+        ],
+        "fill": "#4a4440"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          565,
+          630,
+          35
+        ],
+        "fill": "#b4ad9e",
+        "note": "grey plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1370,
+          420,
+          70,
+          95
+        ],
+        "fill": "#7a5a3a",
+        "note": "brown wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1378,
+          428,
+          54,
+          79
+        ],
+        "fill": "#55606a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1520,
+          420,
+          70,
+          95
+        ],
+        "fill": "#7a5a3a",
+        "note": "brown wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1528,
+          428,
+          54,
+          79
+        ],
+        "fill": "#55606a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          420,
+          70,
+          95
+        ],
+        "fill": "#7a5a3a",
+        "note": "brown wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1708,
+          428,
+          54,
+          79
+        ],
+        "fill": "#55606a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1850,
+          420,
+          70,
+          95
+        ],
+        "fill": "#7a5a3a",
+        "note": "brown wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1858,
+          428,
+          54,
+          79
+        ],
+        "fill": "#55606a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          300,
+          270,
+          310
+        ],
+        "fill": "#d8d3c6",
+        "note": "shaded back wall of the columned porch"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1020,
+            305
+          ],
+          [
+            1080,
+            230
+          ],
+          [
+            1290,
+            230
+          ],
+          [
+            1330,
+            305
+          ]
+        ],
+        "fill": "#b4552f",
+        "note": "hipped tiled roof over the porch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          296,
+          290,
+          16
+        ],
+        "fill": "#e9e2d0",
+        "note": "porch beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1125,
+          400,
+          95,
+          210
+        ],
+        "fill": "#6e4a2e",
+        "note": "plank door of the workshop under the porch (exit S36)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1055,
+          312,
+          22,
+          298
+        ],
+        "fill": "#e7c97a",
+        "note": "yellowish round column of the porch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1100,
+          312,
+          22,
+          298
+        ],
+        "fill": "#e7c97a",
+        "note": "yellowish round column of the porch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1240,
+          312,
+          22,
+          298
+        ],
+        "fill": "#e7c97a",
+        "note": "yellowish round column of the porch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1285,
+          312,
+          22,
+          298
+        ],
+        "fill": "#e7c97a",
+        "note": "yellowish round column of the porch"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            250
+          ],
+          [
+            1050,
+            290
+          ],
+          [
+            1050,
+            610
+          ],
+          [
+            640,
+            712
+          ]
+        ],
+        "fill": "#ebe8de",
+        "note": "long single-storey outbuilding receding towards the porch, white plaster"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            698
+          ],
+          [
+            1050,
+            598
+          ],
+          [
+            1050,
+            612
+          ],
+          [
+            640,
+            714
+          ]
+        ],
+        "fill": "#b4ad9e",
+        "note": "plinth"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            600,
+            262
+          ],
+          [
+            640,
+            -20
+          ],
+          [
+            1060,
+            100
+          ],
+          [
+            1050,
+            295
+          ]
+        ],
+        "fill": "#b4552f",
+        "note": "long tiled roof of the outbuilding"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            740,
+            110
+          ],
+          [
+            780,
+            88
+          ],
+          [
+            830,
+            104
+          ],
+          [
+            830,
+            140
+          ],
+          [
+            740,
+            140
+          ]
+        ],
+        "fill": "#ece8e0",
+        "note": "eyebrow dormer"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          772,
+          102,
+          40,
+          24
+        ],
+        "fill": "#4a4440"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            920,
+            165
+          ],
+          [
+            950,
+            150
+          ],
+          [
+            990,
+            160
+          ],
+          [
+            990,
+            185
+          ],
+          [
+            920,
+            185
+          ]
+        ],
+        "fill": "#ece8e0",
+        "note": "eyebrow dormer"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            760,
+            412
+          ],
+          [
+            815,
+            418
+          ],
+          [
+            815,
+            545
+          ],
+          [
+            760,
+            556
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "window of the long wing"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            905,
+            430
+          ],
+          [
+            950,
+            434
+          ],
+          [
+            950,
+            530
+          ],
+          [
+            905,
+            538
+          ]
+        ],
+        "fill": "#7a5a3a",
+        "note": "window of the long wing"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            770
+          ],
+          [
+            640,
+            770
+          ],
+          [
+            640,
+            714
+          ],
+          [
+            1050,
+            612
+          ],
+          [
+            1920,
+            600
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#c4ad86",
+        "note": "beaten-earth and gravel courtyard with a few grass tufts (walkable)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            960
+          ],
+          [
+            400,
+            900
+          ],
+          [
+            900,
+            880
+          ],
+          [
+            1400,
+            900
+          ],
+          [
+            1920,
+            880
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#bba57e",
+        "note": "worn patch with faint wheel ruts in the yard (still flat ground)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            40,
+            268
+          ],
+          [
+            40,
+            170
+          ],
+          [
+            640,
+            170
+          ],
+          [
+            690,
+            268
+          ]
+        ],
+        "fill": "#a9502e",
+        "note": "lean-to tiled roof of the store annex"
+      },
+      {
+        "type": "rect",
+        "box": [
+          30,
+          262,
+          670,
+          14
+        ],
+        "fill": "#7a4630",
+        "note": "eave"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          268,
+          600,
+          502
+        ],
+        "fill": "#efece2",
+        "note": "material store annex, frontal wall, whitewashed"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            640,
+            268
+          ],
+          [
+            700,
+            280
+          ],
+          [
+            700,
+            742
+          ],
+          [
+            640,
+            770
+          ]
+        ],
+        "fill": "#d6d1c4",
+        "note": "side wall of the annex in shade"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          730,
+          600,
+          40
+        ],
+        "fill": "#b4ad9e",
+        "note": "plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          112,
+          396,
+          196,
+          198
+        ],
+        "fill": "#6b4c32",
+        "note": "frame of the material issue hatch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          122,
+          406,
+          176,
+          183
+        ],
+        "fill": "#3f3a34",
+        "note": "hatch opening: dim store room behind"
+      },
+      {
+        "type": "rect",
+        "box": [
+          96,
+          586,
+          228,
+          16
+        ],
+        "fill": "#8a6440",
+        "note": "worn wooden counter board of the hatch, top edge at y 589"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          400,
+          40,
+          190
+        ],
+        "fill": "#5d4228",
+        "note": "open shutter left"
+      },
+      {
+        "type": "rect",
+        "box": [
+          310,
+          400,
+          40,
+          190
+        ],
+        "fill": "#5d4228",
+        "note": "open shutter right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          388,
+          190,
+          382
+        ],
+        "fill": "#5a4430",
+        "note": "open plank door of the store"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          398,
+          166,
+          372
+        ],
+        "fill": "#3a3530",
+        "note": "dim store inside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          450,
+          166,
+          10
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelves with saddlery remnants"
+      },
+      {
+        "type": "rect",
+        "box": [
+          402,
+          420,
+          146,
+          30
+        ],
+        "fill": "#8a5a34",
+        "note": "coiled leather straps, harness pieces, buckles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          530,
+          166,
+          10
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelves with saddlery remnants"
+      },
+      {
+        "type": "rect",
+        "box": [
+          402,
+          500,
+          146,
+          30
+        ],
+        "fill": "#8a5a34",
+        "note": "coiled leather straps, harness pieces, buckles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          610,
+          166,
+          10
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelves with saddlery remnants"
+      },
+      {
+        "type": "rect",
+        "box": [
+          402,
+          580,
+          146,
+          30
+        ],
+        "fill": "#8a5a34",
+        "note": "coiled leather straps, harness pieces, buckles"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          690,
+          166,
+          10
+        ],
+        "fill": "#7a5a3a",
+        "note": "shelves with saddlery remnants"
+      },
+      {
+        "type": "rect",
+        "box": [
+          402,
+          660,
+          146,
+          30
+        ],
+        "fill": "#8a5a34",
+        "note": "coiled leather straps, harness pieces, buckles"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          690,
+          640,
+          80,
+          98
+        ],
+        "fill": "#bea56f",
+        "note": "stacked jute seed sacks against the long wing"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          748,
+          632,
+          82,
+          104
+        ],
+        "fill": "#c8b07a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          712,
+          598,
+          82,
+          72
+        ],
+        "fill": "#d0b884"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          668,
+          612,
+          120,
+          130
+        ],
+        "fill": "#d6bf8a",
+        "note": "one full grain sack tied at the top, standing in front of the stack"
+      },
+      {
+        "type": "rect",
+        "box": [
+          716,
+          598,
+          24,
+          22
+        ],
+        "fill": "#a08050"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1420,
+          598,
+          124,
+          124
+        ],
+        "outline": "#4a3624",
+        "width": 12,
+        "note": "big spoked wooden wheel of the hand cart"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1482,
+            604
+          ],
+          [
+            1482,
+            716
+          ]
+        ],
+        "color": "#4a3624",
+        "width": 5
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1426,
+            660
+          ],
+          [
+            1538,
+            660
+          ]
+        ],
+        "color": "#4a3624",
+        "width": 5
+      },
+      {
+        "type": "rect",
+        "box": [
+          1360,
+          600,
+          250,
+          62
+        ],
+        "fill": "#8a6440",
+        "note": "plank box of the two-wheeled hand cart"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1362,
+            660
+          ],
+          [
+            1332,
+            722
+          ]
+        ],
+        "color": "#6b4a2c",
+        "width": 9,
+        "note": "cart shafts resting on the ground"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1400,
+            662
+          ],
+          [
+            1372,
+            724
+          ]
+        ],
+        "color": "#6b4a2c",
+        "width": 9
+      },
+      {
+        "type": "bars",
+        "box": [
+          1660,
+          525,
+          260,
+          180
+        ],
+        "step": 16,
+        "bar": 8,
+        "fill": "#8f7a5c",
+        "vertical": true,
+        "note": "weathered lath fence of the poultry run"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1660,
+          560,
+          260,
+          8
+        ],
+        "fill": "#7a6448"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1660,
+          650,
+          260,
+          8
+        ],
+        "fill": "#7a6448"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1720,
+          620,
+          46,
+          36
+        ],
+        "fill": "#c47a3a",
+        "note": "hen behind the fence"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1820,
+          630,
+          46,
+          36
+        ],
+        "fill": "#f0ece0",
+        "note": "white hen behind the fence"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S35.json",
+  "blocking": {
+    "version": 1,
+    "room": "S35",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Service courtyard of the Ivanka pri Dunaji manor, June 1960, used by an (unnamed) agricultural workshop. Camera ~2.0 m high in the yard: horizon y 400, perspective s(y) = (y - 400) / 615 (hero 1.7 m = 512 px at y 1015; ~181 px per metre at the store annex, foot y 770). On the left a small whitewashed store annex built against the long outbuilding faces the camera squarely: the material issue hatch with its counter board (top edge y 589) and the open store door with shelves of saddlery remnants. Behind it the long single-storey outbuilding with eyebrow dormers recedes to the columned porch (foot y 610), where Oto's workshop door is; the right wing closes the yard. Seed sacks stand against the long wall, the hand cart in the yard, the hens behind a lath fence on the right. Stefan is a bust behind the hatch counter. The walk polygon is the beaten-earth yard in front of the annex, around the sacks, up to the porch door, in front of the cart and the poultry fence.",
+    "background": "bg_natural/S35.webp",
+    "walk_polygon": [
+      [
+        0,
+        790
+      ],
+      [
+        652,
+        790
+      ],
+      [
+        652,
+        752
+      ],
+      [
+        840,
+        752
+      ],
+      [
+        840,
+        690
+      ],
+      [
+        1045,
+        630
+      ],
+      [
+        1100,
+        618
+      ],
+      [
+        1255,
+        618
+      ],
+      [
+        1300,
+        642
+      ],
+      [
+        1322,
+        642
+      ],
+      [
+        1322,
+        734
+      ],
+      [
+        1645,
+        734
+      ],
+      [
+        1645,
+        716
+      ],
+      [
+        1920,
+        716
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      618,
+      1015
+    ],
+    "actor_scale": [
+      0.354,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S35.ambient 1": {
+        "rect": [
+          662,
+          592,
+          175,
+          152
+        ],
+        "interaction_point": [
+          750,
+          800
+        ],
+        "label_anchor": [
+          750,
+          582
+        ],
+        "reason": "full jute grain sacks stacked on the ground against the long outbuilding, right of the store annex"
+      },
+      "S35.ambient 2": {
+        "rect": [
+          1325,
+          590,
+          300,
+          140
+        ],
+        "interaction_point": [
+          1475,
+          790
+        ],
+        "label_anchor": [
+          1475,
+          580
+        ],
+        "reason": "two-wheeled wooden hand cart standing in the yard, its shafts resting on the ground"
+      },
+      "S35.SKLAD": {
+        "rect": [
+          140,
+          448,
+          140,
+          141
+        ],
+        "interaction_point": [
+          215,
+          830
+        ],
+        "label_anchor": [
+          215,
+          438
+        ],
+        "reason": "Stefan behind the material issue hatch of the store annex (bust above the counter board)"
+      }
+    },
+    "npcs": {
+      "S35.SKLAD": {
+        "variant": "window_bust",
+        "feet": [
+          210,
+          752
+        ],
+        "scale": 0.58,
+        "sill_y": 589,
+        "facing": "right",
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Stefan behind the hatch (window bust, SKLAD 'window' variant); cut at the hatch counter board y 589; scale of a man standing just inside the annex wall (foot y ~755)"
+      }
+    },
+    "exits": {
+      "S35.to_S32": {
+        "rect": [
+          0,
+          795,
+          60,
+          215
+        ],
+        "interaction_point": [
+          70,
+          900
+        ],
+        "label_anchor": [
+          135,
+          785
+        ],
+        "reason": "the yard opens to the left towards the village road and the square"
+      },
+      "S35.to_S36": {
+        "rect": [
+          1125,
+          400,
+          95,
+          210
+        ],
+        "interaction_point": [
+          1172,
+          652
+        ],
+        "label_anchor": [
+          1172,
+          390
+        ],
+        "reason": "the plank door of Oto's workshop under the columned porch"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S35.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:20:07"
+  }
+}

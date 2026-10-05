@@ -1,0 +1,22 @@
+# S66 Školský záhradný sklad v roku 1982 - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S66.json. Composition: art/prompts/natural/S66.sketch.json (camera 2.0 m, horizon y 420,
+# shed front foot y 700). Reconstruction (no photo of the shed): OSM layout + the estate's panel block type (image 2).
+#refs: art/source/rooms/S18/panel-blocks-sokolikova_carl-eric-2012_NC.jpg ; art/source/sokolikova2_04.jpg
+#style: art/backgrounds/sokolikova-yard.png
+Place: a small flat-roofed garden shed at the east fence of the ZŠ Sokolíkova 2 school grounds in Dúbravka, Bratislava, next to the Kudlákova 2 housing-estate block. Image 2 shows the panel block type of this estate (white-grey concrete, continuous red balcony parapet bands, loggias, flat roof): paint the four-storey Kudlákova 2 block behind the shed in exactly this architecture, clean and only ten years old, without cars, satellite dishes or glazed loggias. Image 3 shows the 1970s school of the same grounds (materials of the period). The shed itself is a plain 1970s utility shed of the school: rendered brick walls in weathered pale beige-grey, a flat concrete roof slab with a small stovepipe, one plank door.
+
+Brief: a small invented shed by the school yard, laths for protective tree guards, an old path-routing plan, gardener Šimon. Entry from the yard, no lock mystery: the door stands open. Early December 1982, a grey winter afternoon: bare branches, thin snow in places, cold pale light under a hazy white-grey sky.
+
+Camera: standing on the trodden edge of the school yard about 11 m from the shed, about 2 m high, looking straight at the shed's front wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~420. Keep this exact geometry from the sketch: the shed front wall stands on the ground at y 700 from x 900 to x 1600, its roof edge at y 336; the open doorway is x 1080-1220, y 420-700; the long panel block fills the background behind the shed from x 470 to the right edge, its roof near the top edge; the wire-mesh fence of the school grounds runs across the picture behind the shed with its foot at y ~605; the trodden ground in front runs from y 700 to the bottom edge.
+
+What the sketch blocks are, left to right: bare trees along the fence of the school grounds and the end wall of the panel block; the tall see-through wire-mesh fence with steel posts; snowy dull grass behind and beside the shed; the shed: a stack of new pale wooden laths (for tree guards) leaning against the wall left of the door, the weathered plank door swung wide open to the left, the dim doorway showing sacks, more laths, a wheelbarrow and garden tools inside, a plywood board with a pinned plan right of the door, a shovel leaning on the wall, a small stovepipe on the roof, a thin layer of snow on the roof; the shaded side wall at the right.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S66.ambient 1}: an old, slightly yellowed paper plan of the school yard's paths pinned with drawing pins on a plywood board on the shed wall, protected by the roof overhang: hand-drawn paths in blue, a few trees as small circles and one route crossed out in red pencil; illegible handwritten notes, no readable words, no digits.
+2. {rect:S66.ambient 2}: a long-handled garden shovel with a worn wooden handle and a grey steel blade, leaning against the shed wall, its blade standing on the ground.
+The trodden path runs out of the left edge back to the school yard ({exit:S66.to_S61}).
+
+Walkable floor: {walk} is the trodden ground at the edge of the yard - packed thin snow over asphalt and earth, one continuous flat surface with no kerb, no step, no edge and nothing standing on it: no buckets, no barrows, no tools. Only footprints, a little slush and soft shadows.
+{npc_zones}
+
+Fiction rules: the shed contents, the plan and the gardener are invented; nothing is claimed about the real building. No lettering, no signs, no house numbers, no logos, no people (also nobody on the balconies or in the windows), no animals, no cars. Any paper shows only illegible scribbles, no digits.

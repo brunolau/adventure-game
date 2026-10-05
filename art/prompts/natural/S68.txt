@@ -1,0 +1,24 @@
+# S68 Kabína Funitelu medzi Priehybou a Chopkom (2035) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S68.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S68.sketch.json (inside the cabin, looking across at the long window wall).
+# Style reference: the accepted natural S67 boarding hall (same line, same day).
+#refs: art/source/rooms/S68/funitel-cabin-interior_parnitha.jpg ; art/source/rooms/S68/jasna-funitel-cabin_summer_2015-08.jpg ; art/source/rooms/S68/jasna-funitel-line-view-from-chopok_2015-08.jpg
+#style: src/game/assets/bg_natural/S67.webp
+Place: inside a cabin of the real Funitel Priehyba–Chopok in Jasná, Low Tatras, Slovakia, in motion over the north slope of Chopok. Image 2 is a photo inside a real Funitel cabin of the same type (big window panes in sturdy frames, a padded bench, the ropes outside). Image 3 shows the real Jasná Funitel cabin from outside (black, twin hangers, big tinted windows) and the green slopes. Image 4 shows the real view from this line: the forested slopes falling to Demänovská dolina and the wide Liptov plain with a lake in the distance, the next cabin on the ropes. Paint this cabin interior and this real view.
+
+Brief: a real big-capacity Funitel cabin as the visual base: wide windows, a bench, frames and handrails. The view outside passes slowly. The doors never open during the ride; one gets off only on arrival. Wednesday 6 June 2035, bright midday: deep blue sky with white clouds outside, sunlight coming in through the windows, a calm, slightly hazy distance.
+
+Camera: standing in the cabin, about 1.6 m high, looking straight across at the long window wall, which is parallel to the picture; vertical lines stay vertical; the horizon (the far Liptov plain) is at y ~370. Keep this exact geometry from the sketch: the light ceiling with an LED strip and a steel handrail at y ~196-210; three big window panes at x 130-1450 (y 235-565) divided by two dark frame pillars at x 555-583 and 990-1018; the dark red padded bench under the windows (backrest y 587-640, seat y 640-690, front panel to the floor at y ~765); the downhill end panel with its door at the left edge (x 0-135); the panel with the scheme poster at x 1450-1580; the closed sliding double doors with tall glass panels at x 1580-1820; the uphill end panel at the right edge; the dark grey floor from y ~765 to the bottom edge.
+
+What the sketch blocks are: the light grey ceiling with an LED light strip; the brushed-steel ceiling handrail; the dark grey window frames and sill; the view through the windows: blue sky with white clouds, the far valley and the Liptov plain with a lake, the dark spruce forest of the near slope below, the haul ropes running diagonally up to the right; in the right pane the upper slope of Chopok rising, with the summit station and the round Rotunda (a red ring on top) far up the line; the downhill end panel with a door leaf and a small window; the panel with the framed scheme poster; the closed sliding doors; the uphill end panel; the anti-slip dark grey floor.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S68.ambient 1}: the big middle window pane with the wide view: the forested north slope of Chopok below, Demänovská dolina and the Liptov plain with a lake in the hazy distance.
+2. {rect:S68.arrival}: in the upper right window pane, the summit station of Chopok with the round glass Rotunda and its red ring roof, seen far up the line where the ropes lead.
+3. {rect:S68.ambient 2}: a small framed poster with a simple drawing of the Funitel cabin hanging from its two hangers on twin ropes, and coloured arrows; no text.
+{npc_zones}
+{exit:S68.to_S67} is the downhill end panel with its door. {exit:S68.to_S47} is the closed sliding double doors.
+
+Walkable floor: {walk} is the anti-slip dark grey cabin floor - one continuous flat surface with no step and nothing standing on it: no luggage, no poles, no people. Only sunlight patches from the windows and soft shadows.
+
+Fiction rules: no cabin livery, no logos, no brand names (no JASNÁ, no TMR), no warning stickers with text, no readable text anywhere. No people (the passenger is a separate sprite), no animals.

@@ -1,0 +1,16 @@
+{
+  "room": "S32",
+  "notes": "Natural S32 ambient (bg_natural/S32.webp): wind in the linden canopies (left, right and the trees around the chapel, cut by art/ambient/natural/S32.cuts.json), clouds drifting behind the trees inside the sky mask, a flock of birds crossing the sky now and then, and a rare early-summer leaf drifting down onto the green. The hens are painted (static).",
+  "layers": [
+    { "id": "clouds", "type": "clouds", "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [30, 150], "count": 3, "speed_px_s": 5, "scale": [0.22, 0.36], "alpha": 0.55, "mask": "S32/natural/sky_mask.webp" },
+    { "id": "trees_center", "type": "sway", "texture": "S32/natural/trees_center.webp", "anchor": 1.0, "amp_px": 1.6, "freq": 0.26, "wavelength_px": 140, "flutter_px": 0.6 },
+    { "id": "canopy_left", "type": "sway", "texture": "S32/natural/canopy_left.webp", "anchor": 0.0, "hang": true, "amp_px": 2.4, "freq": 0.22, "wavelength_px": 160, "flutter_px": 0.9 },
+    { "id": "canopy_right", "type": "sway", "texture": "S32/natural/canopy_right.webp", "anchor": 1.0, "amp_px": 2.2, "freq": 0.24, "wavelength_px": 150, "flutter_px": 0.8 },
+    { "id": "leaves", "type": "particles", "preset": "leaves", "textures": ["common/leaf_00.webp", "common/leaf_02.webp", "common/leaf_12.webp"],
+      "modulate": "#b9e08c", "emit_rect": [1520, 60, 380, 320], "rate": 0.08, "size": [11, 15], "speed_x": [-18, 10], "land_y": [700, 820], "rest_s": [3, 6] },
+    { "id": "birds", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 10,
+      "path": [[-60, 120], [600, 70], [1300, 95], [1990, 60]], "speed_px_s": 210, "scale": 0.08, "flock": 4, "flock_spread": [90, 30],
+      "bob_px": 3, "direction": "random", "every_s": [18, 35], "start_s": [3, 8] }
+  ]
+}

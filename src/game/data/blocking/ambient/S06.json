@@ -1,0 +1,178 @@
+{
+ "room": "S06",
+ "notes": "Natural S06 ambient (bg_natural/S06.webp): wind in the old fruit tree, the grapevine and the geraniums in the kitchen window box, leaves falling from the tree into the garden and onto the path, steam rising from the kettle behind the kitchen window (ambience: 'kanvica za sklom'), a shadow moving behind the kitchen's lace curtain now and then, birds crossing the sky over the garden. Mira is a window bust behind glass (blocking npcs). Cut-outs: art/ambient/natural/S06.cuts.json -> assets/ambient/S06/natural/.",
+ "layers": [
+  {
+   "id": "tree",
+   "type": "sway",
+   "texture": "S06/natural/tree.webp",
+   "anchor": 1.0,
+   "amp_px": 2.6,
+   "freq": 0.26,
+   "wavelength_px": 170,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "vine",
+   "type": "sway",
+   "texture": "S06/natural/vine.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.32,
+   "wavelength_px": 110,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "geraniums",
+   "type": "sway",
+   "texture": "S06/natural/geraniums.webp",
+   "anchor": 0.75,
+   "amp_px": 1.2,
+   "freq": 0.42,
+   "wavelength_px": 60,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_03.webp",
+    "common/leaf_15.webp"
+   ],
+   "emit_rect": [
+    1560,
+    60,
+    360,
+    300
+   ],
+   "rate": 0.4,
+   "size": [
+    12,
+    19
+   ],
+   "speed_x": [
+    -40,
+    -5
+   ],
+   "land_y": [
+    805,
+    1000
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "kettle_steam",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    300,
+    520,
+    90,
+    20
+   ],
+   "rate": 1.2,
+   "size": [
+    14,
+    26
+   ],
+   "speed_y": [
+    -22,
+    -12
+   ],
+   "alpha": 0.22,
+   "clip": [
+    264,
+    340,
+    250,
+    225
+   ]
+  },
+  {
+   "id": "kitchen_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     270,
+     560
+    ],
+    [
+     510,
+     560
+    ]
+   ],
+   "speed_px_s": 35,
+   "scale": 0.62,
+   "modulate": "#3a2c24",
+   "alpha": 0.22,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    4,
+    9
+   ],
+   "clip": [
+    266,
+    340,
+    246,
+    225
+   ]
+  },
+  {
+   "id": "birds",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     1460,
+     90
+    ],
+    [
+     1700,
+     40
+    ],
+    [
+     1990,
+     70
+    ]
+   ],
+   "speed_px_s": 200,
+   "scale": 0.09,
+   "flock": 2,
+   "flock_spread": [
+    40,
+    20
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    6,
+    14
+   ]
+  }
+ ]
+}

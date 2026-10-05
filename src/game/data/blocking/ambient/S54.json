@@ -1,0 +1,135 @@
+{
+ "room": "S54",
+ "notes": "Natural S54 (bg_natural/S54.webp), the physics cabinet on 29 October 2020 afternoon, window open for airing. Wind in the orange maple crowns outside (cut from the natural painting), leaves drifting down past the window, dust motes in the pale low sunbeams, the green power LED of the open laptop blinking, birds crossing outside (room ambience: ventilation, the call sound from the laptop).",
+ "layers": [
+  {
+   "id": "window_trees",
+   "type": "sway",
+   "texture": "S54/natural/window_trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.0,
+   "freq": 0.3,
+   "wavelength_px": 90,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "leaves_outside",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp",
+    "common/leaf_01.webp",
+    "common/leaf_04.webp"
+   ],
+   "emit_rect": [
+    1220,
+    270,
+    340,
+    80
+   ],
+   "rate": 0.4,
+   "size": [
+    7,
+    11
+   ],
+   "speed_y": [
+    22,
+    38
+   ],
+   "speed_x": [
+    -12,
+    8
+   ],
+   "wind": 8,
+   "lifetime": [
+    6,
+    10
+   ],
+   "mask": "S54/natural/window_mask.webp"
+  },
+  {
+   "id": "dust_sunbeams",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1100,
+    320,
+    600,
+    620
+   ],
+   "count": 26,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff0d8"
+  },
+  {
+   "id": "laptop_led",
+   "type": "flicker",
+   "mode": "blink",
+   "pos": [
+    968,
+    686
+   ],
+   "size": [
+    10,
+    10
+   ],
+   "color": "#6dff8a",
+   "min": 0.0,
+   "max": 0.85,
+   "period_s": 3.0,
+   "duty": 0.5
+  },
+  {
+   "id": "birds_outside",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     1600,
+     330
+    ],
+    [
+     1400,
+     290
+    ],
+    [
+     1180,
+     320
+    ]
+   ],
+   "speed_px_s": 170,
+   "scale": 0.06,
+   "flock": 2,
+   "flock_spread": [
+    40,
+    18
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    5,
+    12
+   ],
+   "mask": "S54/natural/window_mask.webp"
+  }
+ ]
+}

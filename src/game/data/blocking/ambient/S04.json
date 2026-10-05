@@ -1,0 +1,142 @@
+{
+ "room": "S04",
+ "notes": "Natural S04 ambient (bg_natural/S04.webp): autumn leaves blowing in from the courtyard trees behind the camera and settling on the paving, a few pigeons pecking on the paving at the right (fly off when Adam comes close), a cat now and then trotting along the arcade at the shop wall foot (behind the actors), the shop fridge's glow breathing softly behind the glass, a glint of light sweeping over the dark glass of the neighbouring shopfront (a car passing on the road behind the camera).",
+ "layers": [
+  {
+   "id": "leaves_courtyard",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp"
+   ],
+   "emit_rect": [
+    0,
+    180,
+    1920,
+    120
+   ],
+   "rate": 0.35,
+   "size": [
+    14,
+    22
+   ],
+   "speed_x": [
+    18,
+    45
+   ],
+   "speed_y": [
+    35,
+    60
+   ],
+   "land_y": [
+    790,
+    1000
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     1480,
+     850
+    ],
+    [
+     1860,
+     960
+    ]
+   ],
+   "scale": 0.24,
+   "flee_radius": 320,
+   "return_s": [
+    14,
+    26
+   ],
+   "exit": [
+    [
+     2040,
+     120
+    ],
+    [
+     1600,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "cat_arcade",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     1960,
+     778
+    ],
+    [
+     -60,
+     778
+    ]
+   ],
+   "speed_px_s": 62,
+   "scale": 0.33,
+   "faces": "right",
+   "fade_px": 40,
+   "every_s": [
+    45,
+    80
+   ],
+   "start_s": [
+    8,
+    16
+   ]
+  },
+  {
+   "id": "fridge_glow",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    1226,
+    330,
+    76,
+    230
+   ],
+   "texture": "builtin:softrect",
+   "color": "#dff4ff",
+   "min": 0.04,
+   "max": 0.13,
+   "period_s": 3.5
+  },
+  {
+   "id": "glass_glint",
+   "type": "flicker",
+   "mode": "sweep",
+   "rect": [
+    25,
+    240,
+    430,
+    505
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff3dc",
+   "max": 0.14,
+   "period_s": 16,
+   "duty": 0.18
+  }
+ ]
+}

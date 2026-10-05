@@ -1,0 +1,930 @@
+{
+  "room": "S23",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1237597031,
+  "usd": 0.15,
+  "started": "2026-10-05T10:20:23",
+  "spend_log_asset": "bg_natural/S23/S23_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S23.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a small technical reading room of an invented archive in a building on Kamenne namestie, Bratislava. Image 2 is a photo of a real archive reading room (white walls, large framed old maps, wooden desks with desk lamps, tall wooden bookshelves, a dark wooden door): paint the room type, furniture and materials from it, without its people. Image 3 is a real wooden card catalogue with many small drawers, brass handles and label holders. Image 4 is the real view from the square towards Spitalska: old houses with red roofs and a white baroque church tower with a small green cupola - this is what the window shows (without the cars, signs and the BOSCH lettering).\n\nBrief: an invented small technical reading room (no claim about a real archive): a card catalogue, a work desk, the donated papers of M. Hruskova in folders. Thursday 15 June 1995, a sunny afternoon: soft daylight through the window, warm green desk lamps, a quiet orderly room.\n\nCamera: standing at the back of the room, about 2.4 m high, looking straight at the window wall, which is parallel to the picture; the side walls recede symmetrically (one-point perspective); vertical lines stay vertical. Keep this exact geometry from the sketch: the window wall from the ceiling line at y 198 down to the floor line at y 760, between the corners at x 300 and x 1620; the side walls meet the floor along lines from (300, 760) to (0, 969) and from (1620, 760) to (1920, 969).\n\nWhat the sketch blocks are, left to right: the left side wall with metal shelves of grey archive boxes; the dark wooden door of the room with a brass handle; a big white-framed window with the view of Spitalska; a long wooden reading desk along the window wall with two green banker's lamps, an open folder and papers; a plain white wall with a large framed old map of the region; a tall wooden card catalogue cabinet of many small drawers with brass handles and label holders, archive boxes on top; the right side wall with a wooden bookshelf of bound volumes; two white globe lamps hanging from the ceiling; a light parquet floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 905-1015, y 572-634 of the 1920x1080 frame (47-53 % from the left, 53-59 % from the top): an old wooden-handled rubber stamp standing upright next to a round tin ink pad at the right end of the reading desk.\n2. the block of the layout sketch at x 370-472, y 242-344 of the 1920x1080 frame (19-25 % from the left, 22-32 % from the top): a round wall clock above the door: a white face with clear black hour marks, a black hour hand and a black minute hand (no second hand), a dark rim, no lettering on the face.\nThe door is the area of the layout sketch at x 322-522, y 345-765 of the 1920x1080 frame (17-27 % from the left, 32-71 % from the top).\n\nWalkable floor: the band at x 20-1900, y 785-1015 of the 1920x1080 frame (1-99 % from the left, 73-94 % from the top) is the open parquet floor - one continuous flat surface with no step, no edge, no rug and no change of material inside it, and nothing standing on it: no chairs, no desks, no boxes. Only daylight from the window and soft shadows.\nNPC zone at x 1055-1205, y 436-794 of the 1920x1080 frame (55-63 % from the left, 40-74 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 792. The archivist stands in front of this plain white wall below the framed map, beside the card catalogue.\n\nFiction rules: the reading room and the archive are invented: no institution name, no signs, no lettering on drawers or boxes (label holders show only illegible scribbles), no digits on the clock face, no people, no animals. Paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S23_sketch.png (rendered from art/prompts/natural/S23.sketch.json, model geometry)",
+    "art/source/rooms/S23/type-ref_archive-reading-room_desks_maps.jpg",
+    "art/source/rooms/S23/type-ref_wooden-card-catalogue.jpg",
+    "art/source/rooms/S21/kamenne-namestie_view-spitalska_2008.jpg",
+    "src/game/assets/bg_natural/S20.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S23 natural: reading room box, camera 2.4 m, horizon y 300, wall foot y 760.",
+    "background": "#f2eee2",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            152
+          ],
+          [
+            1620,
+            198
+          ],
+          [
+            300,
+            198
+          ],
+          [
+            0,
+            152
+          ]
+        ],
+        "fill": "#f2eee2",
+        "note": "ceiling"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            152
+          ],
+          [
+            300,
+            198
+          ],
+          [
+            300,
+            760
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#e2dccb",
+        "note": "left side wall (receding)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            152
+          ],
+          [
+            1620,
+            198
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ]
+        ],
+        "fill": "#e2dccb",
+        "note": "right side wall (receding)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          198,
+          1320,
+          562
+        ],
+        "fill": "#ece6d6",
+        "note": "back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            760
+          ],
+          [
+            1620,
+            760
+          ],
+          [
+            1920,
+            969
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            969
+          ]
+        ],
+        "fill": "#b8a98e",
+        "note": "floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            823
+          ],
+          [
+            300,
+            659
+          ],
+          [
+            300,
+            741
+          ],
+          [
+            0,
+            941
+          ]
+        ],
+        "fill": "#9aa0a2",
+        "note": "row of grey archive boxes on metal shelves"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            941
+          ],
+          [
+            300,
+            741
+          ],
+          [
+            300,
+            747
+          ],
+          [
+            0,
+            950
+          ]
+        ],
+        "fill": "#5a5e60",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            668
+          ],
+          [
+            300,
+            553
+          ],
+          [
+            300,
+            634
+          ],
+          [
+            0,
+            786
+          ]
+        ],
+        "fill": "#9aa0a2",
+        "note": "row of grey archive boxes on metal shelves"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            786
+          ],
+          [
+            300,
+            634
+          ],
+          [
+            300,
+            640
+          ],
+          [
+            0,
+            795
+          ]
+        ],
+        "fill": "#5a5e60",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            513
+          ],
+          [
+            300,
+            446
+          ],
+          [
+            300,
+            527
+          ],
+          [
+            0,
+            631
+          ]
+        ],
+        "fill": "#9aa0a2",
+        "note": "row of grey archive boxes on metal shelves"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            631
+          ],
+          [
+            300,
+            527
+          ],
+          [
+            300,
+            533
+          ],
+          [
+            0,
+            640
+          ]
+        ],
+        "fill": "#5a5e60",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            358
+          ],
+          [
+            300,
+            340
+          ],
+          [
+            300,
+            421
+          ],
+          [
+            0,
+            476
+          ]
+        ],
+        "fill": "#9aa0a2",
+        "note": "row of grey archive boxes on metal shelves"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            476
+          ],
+          [
+            300,
+            421
+          ],
+          [
+            300,
+            427
+          ],
+          [
+            0,
+            485
+          ]
+        ],
+        "fill": "#5a5e60",
+        "note": "shelf board"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            663
+          ],
+          [
+            1920,
+            828
+          ],
+          [
+            1920,
+            941
+          ],
+          [
+            1620,
+            741
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "bound volumes in a wooden bookshelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            566
+          ],
+          [
+            1920,
+            687
+          ],
+          [
+            1920,
+            800
+          ],
+          [
+            1620,
+            644
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "bound volumes in a wooden bookshelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            469
+          ],
+          [
+            1920,
+            546
+          ],
+          [
+            1920,
+            659
+          ],
+          [
+            1620,
+            547
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "bound volumes in a wooden bookshelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            372
+          ],
+          [
+            1920,
+            405
+          ],
+          [
+            1920,
+            518
+          ],
+          [
+            1620,
+            450
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "bound volumes in a wooden bookshelf"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1620,
+            276
+          ],
+          [
+            1920,
+            264
+          ],
+          [
+            1920,
+            377
+          ],
+          [
+            1620,
+            353
+          ]
+        ],
+        "fill": "#6a4a32",
+        "note": "bound volumes in a wooden bookshelf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          325,
+          341,
+          194,
+          419
+        ],
+        "fill": "#5a3e28",
+        "note": "dark wooden door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          338,
+          353,
+          168,
+          407
+        ],
+        "fill": "#7a5434",
+        "note": "dark wooden door, closed"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          557,
+          14,
+          26
+        ],
+        "fill": "#b08a3a",
+        "note": "door handle"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          381,
+          252,
+          80,
+          80
+        ],
+        "fill": "#f4f0e2",
+        "note": "round wall clock with a white face and black hands, above the door"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          376,
+          247,
+          90,
+          90
+        ],
+        "fill": "#3a3430",
+        "note": "clock rim"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          383,
+          254,
+          76,
+          76
+        ],
+        "fill": "#f4f0e2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          552,
+          252,
+          456,
+          338
+        ],
+        "fill": "#d8d2c2",
+        "note": "white window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          566,
+          266,
+          428,
+          310
+        ],
+        "fill": "#c9dbe6",
+        "note": "window: Spitalska outside, a white baroque church tower with a green cupola and old houses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          286,
+          70,
+          180
+        ],
+        "fill": "#f0ece0",
+        "note": "outside: the white church tower"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          705,
+          256,
+          60,
+          50
+        ],
+        "fill": "#6f9a7a",
+        "note": "outside: green cupola"
+      },
+      {
+        "type": "rect",
+        "box": [
+          566,
+          426,
+          428,
+          150
+        ],
+        "fill": "#d9c8a6",
+        "note": "outside: old houses"
+      },
+      {
+        "type": "bars",
+        "box": [
+          566,
+          266,
+          428,
+          310
+        ],
+        "step": 214,
+        "bar": 8,
+        "fill": "#d8d2c2",
+        "vertical": true,
+        "note": "window mullion"
+      },
+      {
+        "type": "rect",
+        "box": [
+          548,
+          611,
+          466,
+          18
+        ],
+        "fill": "#8a5e3a",
+        "note": "long wooden reading desk top along the window wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          556,
+          629,
+          450,
+          141
+        ],
+        "fill": "#6e4a2c",
+        "note": "reading desk front"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          545,
+          70,
+          66
+        ],
+        "fill": "#2f6a45",
+        "note": "green banker's lamp"
+      },
+      {
+        "type": "rect",
+        "box": [
+          780,
+          545,
+          70,
+          66
+        ],
+        "fill": "#2f6a45",
+        "note": "green banker's lamp"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          601,
+          70,
+          10
+        ],
+        "fill": "#efe8d6",
+        "note": "open folder with papers"
+      },
+      {
+        "type": "rect",
+        "box": [
+          924,
+          569,
+          40,
+          42
+        ],
+        "fill": "#7a5434",
+        "note": "wooden rubber stamp"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          960,
+          597,
+          44,
+          16
+        ],
+        "fill": "#3a3a6a",
+        "note": "round ink pad"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1040,
+          255,
+          180,
+          165
+        ],
+        "fill": "#c9b88e",
+        "note": "large framed old map of the region"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1034,
+          249,
+          192,
+          177
+        ],
+        "fill": "#6a4a32",
+        "note": "map frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1046,
+          261,
+          168,
+          153
+        ],
+        "fill": "#d8c79c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          479,
+          362,
+          281
+        ],
+        "fill": "#a8783e",
+        "note": "tall wooden card catalogue cabinet of many small drawers"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1258,
+          487,
+          346,
+          251
+        ],
+        "cols": 6,
+        "rows": 9,
+        "color": "#7a5428",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          1270,
+          433,
+          80,
+          46
+        ],
+        "fill": "#9aa0a2",
+        "note": "archive boxes on top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1370,
+          449,
+          90,
+          30
+        ],
+        "fill": "#a8a090"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            760,
+            0
+          ],
+          [
+            760,
+            70
+          ]
+        ],
+        "color": "#4a4a48",
+        "width": 3
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          735,
+          70,
+          50,
+          46
+        ],
+        "fill": "#f6efd8",
+        "note": "white globe ceiling lamp"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1160,
+            0
+          ],
+          [
+            1160,
+            70
+          ]
+        ],
+        "color": "#4a4a48",
+        "width": 3
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1135,
+          70,
+          50,
+          46
+        ],
+        "fill": "#f6efd8",
+        "note": "white globe ceiling lamp"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S23.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Small technical reading room of a fictional archive on Kamenne namestie, camera ~2.4 m at the back of the room looking at the window wall: one-point box, horizon y 300, wall foot line y 760 (~194 px per metre), ceiling line y 198 (2.9 m). Perspective s(y) = (y - 300) / 715. The door to the square with the wall clock above it on the left, the window with the Spitalska view over the long reading desk (lamps, the rubber stamp at its right end), Karol at the plain wall below the framed map, the card catalogue on the right.",
+    "background": "bg_natural/S23.webp",
+    "walk_polygon": [
+      [
+        312,
+        785
+      ],
+      [
+        1610,
+        785
+      ],
+      [
+        1900,
+        975
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        975
+      ]
+    ],
+    "walk_band": [
+      785,
+      1015
+    ],
+    "actor_scale": [
+      0.68,
+      1.0
+    ],
+    "spawn": [
+      420,
+      890
+    ],
+    "hotspots": {
+      "S23.ambient 1": {
+        "rect": [
+          905,
+          572,
+          110,
+          62
+        ],
+        "interaction_point": [
+          955,
+          850
+        ],
+        "label_anchor": [
+          960,
+          564
+        ],
+        "reason": "wooden rubber stamp and ink pad at the right end of the reading desk"
+      },
+      "S23.ambient 2": {
+        "rect": [
+          370,
+          242,
+          102,
+          102
+        ],
+        "interaction_point": [
+          420,
+          850
+        ],
+        "label_anchor": [
+          420,
+          234
+        ],
+        "reason": "round wall clock above the door"
+      },
+      "S23.ARCHIVAR": {
+        "rect": [
+          1055,
+          436,
+          150,
+          358
+        ],
+        "interaction_point": [
+          1130,
+          880
+        ],
+        "label_anchor": [
+          1130,
+          428
+        ],
+        "reason": "Karol standing at the plain wall below the framed map, beside the card catalogue"
+      }
+    },
+    "npcs": {
+      "S23.ARCHIVAR": {
+        "variant": "standing",
+        "feet": [
+          1130,
+          792
+        ],
+        "scale": 0.688,
+        "reason": "standing archivist (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S23.to_S21": {
+        "rect": [
+          322,
+          345,
+          200,
+          420
+        ],
+        "interaction_point": [
+          420,
+          822
+        ],
+        "label_anchor": [
+          420,
+          384
+        ],
+        "reason": "door of the reading room, out to Kamenne namestie"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S23"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S23.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:21:02"
+  }
+}

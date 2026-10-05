@@ -1,0 +1,37 @@
+{
+  "kind": "retouch",
+  "from_version": 4,
+  "box_game_px": [
+    1030.0,
+    505.0,
+    250.0,
+    200.0
+  ],
+  "instruction": "Close the small service niche: the grey stone that lay on the wall coping is now set back into its place in the inset stone panel (the second row from the top, the third column from the left), flush with the other stones and sealed all around with a thin line of fresh light-grey mortar, so the panel shows all twelve stones in 3 rows and 4 columns and no hole; the coping above is empty, with only a little snow. Keep the bricks, the coping, the red pipe and everything else exactly as they are. No people, no text.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 556905155,
+  "usd": 0,
+  "scope": "bg_natural/S61/",
+  "spend_log_asset": "bg_natural/S61/S61_v4_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Close the small service niche: the grey stone that lay on the wall coping is now set back into its place in the inset stone panel (the second row from the top, the third column from the left), flush with the other stones and sealed all around with a thin line of fresh light-grey mortar, so the panel shows all twelve stones in 3 rows and 4 columns and no hole; the coping above is empty, with only a little snow. Keep the bricks, the coping, the red pipe and everything else exactly as they are. No people, no text. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S61_v3.png",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S61_S61_v4_fix_raw.png",
+  "started": "2026-10-05T10:16:11",
+  "model_description": "",
+  "parent_prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Paint the hand cart's wheel tracks: two long, clearly visible, parallel muddy brown tyre tracks on the wet dark asphalt and through the thin snow, running from the two wheels of the hand cart horizontally to the right, along the front kerb of the small grass bed, and the upper track runs over the corner of the bed and passes within a hand's width of the young linden's stem, where the snow in the bed is pressed flat and muddy. The tracks look like the cart was just pushed past the sapling. Keep the hand cart itself, the sapling, its wooden stake and rubber tie, the bench and everything else unchanged. No people, no text. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S61",
+  "version": 6,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "retouch": "free pixel retouch: the loose stone left on the wall coping by the v4 closed-niche fix is covered with coping/lawn/track pixels cloned from master x 1588-1694, y 744-775 (pasted at 1690,744, soft mask) - closed-niche state: all 12 stones in the panel, nothing on the coping"
+}

@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "room": "S59",
+  "status": "natural re-blocking, L_HALL 1982 derived from the accepted S13 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S13",
+  "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 7 December 1982: the building is 8 years old; the red pioneer notice board hangs on the back wall between the caretaker's door and the middle door (where Tono sits in 1995); Tono's desk stands empty; the cloakroom cages are full of winter coats; a freshly mopped wet patch of terrazzo shines in front of the cloakroom (painted x 1210-1720, y 735-850); overcast, no sun patches; a string of red pennants with yellow stars above the right door and the cloakroom.",
+  "background": "bg_natural/S59.webp",
+  "walk_polygon": [
+    [
+      15,
+      868
+    ],
+    [
+      292,
+      722
+    ],
+    [
+      372,
+      722
+    ],
+    [
+      378,
+      776
+    ],
+    [
+      628,
+      776
+    ],
+    [
+      662,
+      716
+    ],
+    [
+      1640,
+      716
+    ],
+    [
+      1880,
+      845
+    ],
+    [
+      1905,
+      860
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    716,
+    1015
+  ],
+  "actor_scale": [
+    0.55,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
+  "hotspots": {
+    "S59.ambient 1": {
+      "rect": [
+        600,
+        372,
+        215,
+        165
+      ],
+      "interaction_point": [
+        707,
+        792
+      ],
+      "label_anchor": [
+        707,
+        565
+      ],
+      "reason": "red-framed pioneer notice board on the back wall (period scenery, invented text)"
+    },
+    "S59.ambient 2": {
+      "rect": [
+        1215,
+        736,
+        420,
+        84
+      ],
+      "interaction_point": [
+        1420,
+        868
+      ],
+      "label_anchor": [
+        1425,
+        728
+      ],
+      "reason": "the polished terrazzo floor: a freshly mopped, wet shining patch in front of the cloakroom door"
+    }
+  },
+  "npcs": {},
+  "exits": {
+    "S59.to_S58": {
+      "rect": [
+        30,
+        290,
+        160,
+        545
+      ],
+      "interaction_point": [
+        125,
+        885
+      ],
+      "label_anchor": [
+        192,
+        280
+      ],
+      "reason": "copied from S13.to_S12 (same template position)"
+    },
+    "S59.to_S60": {
+      "rect": [
+        849,
+        368,
+        222,
+        332
+      ],
+      "interaction_point": [
+        960,
+        738
+      ],
+      "label_anchor": [
+        960,
+        358
+      ],
+      "reason": "copied from S13.to_S14 (same template position)"
+    },
+    "S59.to_S63": {
+      "rect": [
+        1690,
+        306,
+        192,
+        530
+      ],
+      "interaction_point": [
+        1782,
+        862
+      ],
+      "label_anchor": [
+        1728,
+        298
+      ],
+      "reason": "copied from S13.to_S15 (same template position)"
+    }
+  },
+  "state_patches": [],
+  "anchors": {
+    "terrazzo_line": [
+      960,
+      700
+    ],
+    "left_window": [
+      239,
+      421
+    ],
+    "middle_door": [
+      960,
+      534
+    ]
+  },
+  "family_base": "S13"
+}

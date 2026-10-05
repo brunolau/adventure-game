@@ -1,0 +1,37 @@
+{
+  "kind": "fix",
+  "method": "zoomed crop edit (scratch cropfix.py)",
+  "from_version": 1,
+  "crop_game_px": [
+    640,
+    470,
+    720,
+    405
+  ],
+  "paste_game_px": [
+    700,
+    618,
+    590,
+    210
+  ],
+  "instruction": "The wooden table has an open front with four legs. Close its front completely: add a solid wooden front panel (a modesty panel of the same warm wood as the table) running from just under the table top straight down to the plank floor, across the whole width of the table between and over the front legs, so that nothing behind or under the table can be seen. Keep the table top, the brass lamp, the glass of water, the window, the walls and the floor exactly as they are.",
+  "seed": 2035492,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "usd": 0.15,
+  "scope": "bg_natural/S49/",
+  "spend_log_asset": "bg_natural/S49/S49_v2_cropfix",
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S49_S49_v2_cropfix_raw.png",
+  "prompt": "Image 1 is a close-up crop of one of our finished hand-painted point-and-click adventure game backgrounds. Make exactly this local change: The wooden table has an open front with four legs. Close its front completely: add a solid wooden front panel (a modesty panel of the same warm wood as the table) running from just under the table top straight down to the plank floor, across the whole width of the table between and over the front legs, so that nothing behind or under the table can be seen. Keep the table top, the brass lamp, the glass of water, the window, the walls and the floor exactly as they are. Keep everything else exactly as in image 1: the same framing, camera, scale, positions, colours, light and brushwork; do not zoom, crop, move or redraw anything else. No people in the scene itself, no logos, no frames or borders added around the picture. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S49",
+  "version": 2,
+  "started": "2026-10-05T11:07:02",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S49.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:07:32"
+  }
+}

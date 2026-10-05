@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "room": "S08",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, owner feedback art/feedback/2026-10-05_owner_feedback.md: the view from the pump track, no fence around the pond)",
+  "note": "Pond at the south-east edge of Park Javorova alej / Rekreapark, Cierna Voda, seen from the pump-track mound 'Kopec zabavy' (owner feedback). The model painted the view from a slightly higher camera than the sketch (horizon y ~200, it looks down from the mound): the blocking is fitted to the painting - perspective s(y) ~ (y - 205) / 810, so the walk band [772, 1015] gets scale [0.70, 1.0] (the painted bench back, 0.9 m, is ~185 px at y 725). Walkable = the wide packed-dirt trail on the mound top (tyre marks) in front of the bench; beyond the mound's edge (y ~740) hummocky dry grass with a lower loop of the trail, the pond with pale water and dry reeds (y ~300-440, no fence around it), fields, distant houses and low hills. The short timber safety railing stands only at the edge right of the bench; the chewed red ball lies in the grass at its right end (the dry side), a skeptical mallard stands at the edge next to the end-of-cycle-path sign.",
+  "background": "bg_natural/S08.webp",
+  "walk_polygon": [
+    [
+      0,
+      818
+    ],
+    [
+      260,
+      800
+    ],
+    [
+      480,
+      772
+    ],
+    [
+      860,
+      772
+    ],
+    [
+      1200,
+      782
+    ],
+    [
+      1500,
+      790
+    ],
+    [
+      1920,
+      800
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    772,
+    1015
+  ],
+  "actor_scale": [
+    0.7,
+    1.0
+  ],
+  "spawn": [
+    330,
+    930
+  ],
+  "hotspots": {
+    "S08.ball": {
+      "rect": [
+        1250,
+        668,
+        66,
+        66
+      ],
+      "interaction_point": [
+        1285,
+        842
+      ],
+      "label_anchor": [
+        1284,
+        658
+      ],
+      "reason": "chewed red ball in the dry grass at the right end of the short safety railing (the dry side), in front of a rusty fern"
+    },
+    "S08.ambient 1": {
+      "rect": [
+        1568,
+        618,
+        144,
+        154
+      ],
+      "interaction_point": [
+        1490,
+        850
+      ],
+      "label_anchor": [
+        1640,
+        608
+      ],
+      "reason": "a skeptical mallard drake standing on the grass at the mound's edge, next to the end-of-cycle-path sign"
+    },
+    "S08.ambient 2": {
+      "rect": [
+        452,
+        536,
+        400,
+        192
+      ],
+      "interaction_point": [
+        650,
+        848
+      ],
+      "label_anchor": [
+        652,
+        526
+      ],
+      "reason": "wooden bench with cast-iron legs at the edge of the mound, its back towards us, facing the pond"
+    }
+  },
+  "exits": {
+    "S08.to_S07": {
+      "rect": [
+        0,
+        815,
+        65,
+        200
+      ],
+      "interaction_point": [
+        70,
+        910
+      ],
+      "label_anchor": [
+        180,
+        806
+      ],
+      "reason": "the trail leaves the mound out of the left edge towards the road and the bus stop"
+    }
+  },
+  "state_patches": [
+    {
+      "texture": "variants_natural/S08_ball_taken.webp",
+      "pos": [
+        1200,
+        628
+      ],
+      "after": [
+        "Q1B"
+      ],
+      "until": [],
+      "reason": "Q1B takes the red ball: dry grass and leaves in its place (refit fix v2)"
+    }
+  ]
+}

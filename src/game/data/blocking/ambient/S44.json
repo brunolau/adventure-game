@@ -1,0 +1,102 @@
+{
+ "room": "S44",
+ "notes": "Natural S44 (bg_natural/S44.webp): the quiet exhibition salon. The sheer curtains move slightly in the draught, the spruces and slopes outside the windows sway in the wind, clouds drift in the window sky, dust motes float in the daylight, the wall screen's mountain-road video flickers softly. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "layers": [
+  {
+   "id": "window_clouds",
+   "type": "clouds",
+   "textures": [
+    "S41/natural/cloud_a.webp",
+    "S45/natural/cloud_b.webp"
+   ],
+   "band": [
+    300,
+    420
+   ],
+   "count": 2,
+   "speed_px_s": 3,
+   "scale": [
+    0.168,
+    0.28
+   ],
+   "alpha": 0.7,
+   "x_span": [
+    40,
+    430
+   ],
+   "mask": "S44/natural/window_sky_mask.webp"
+  },
+  {
+   "id": "window_trees",
+   "type": "sway",
+   "texture": "S44/natural/window_trees.webp",
+   "anchor": 1.0,
+   "amp_px": 1.4,
+   "freq": 0.27,
+   "wavelength_px": 90,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "curtain_left",
+   "type": "sway",
+   "texture": "S44/natural/curtain_left.webp",
+   "anchor": 0.0,
+   "hang": true,
+   "amp_px": 2.2,
+   "freq": 0.18,
+   "wavelength_px": 160,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "curtain_right",
+   "type": "sway",
+   "texture": "S44/natural/curtain_right.webp",
+   "anchor": 0.0,
+   "hang": true,
+   "amp_px": 2.0,
+   "freq": 0.2,
+   "wavelength_px": 160,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    40,
+    300,
+    700,
+    520
+   ],
+   "count": 26,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "screen_video",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    735,
+    360
+   ],
+   "size": [
+    250,
+    132
+   ],
+   "texture": "builtin:softrect",
+   "color": "#d8ecff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.14,
+   "period_s": 0.9
+  }
+ ]
+}

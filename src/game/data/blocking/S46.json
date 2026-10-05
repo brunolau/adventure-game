@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "room": "S46",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Klientske centrum Biela Put (type-reference: a tourist information centre with brochure racks, self-service terminals and a counter; the real interior is not documented). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), Sara's service counter front stands on y ~785. Perspective s(y) = (y - 470) / 545 (same camera height as the hotel interiors S43/S44). Left: the glazed entrance from the plaza, two self-service ticket terminals under a lift-status screen, brochure racks; centre-right: the guest exhibition's small service counter with Sara behind it (counter top back edge y 595); right: the visitor rules board on the wall, the window wall with the view of the Biela Put plaza, the wooden chalet and the green slope, the big potted ficus in the corner.",
+  "background": "bg_natural/S46.webp",
+  "walk_polygon": [[0, 1015], [0, 722], [270, 722], [290, 742], [870, 742], [885, 792], [1190, 792], [1205, 744], [1920, 744], [1920, 1015]],
+  "walk_band": [722, 1015],
+  "actor_scale": [0.46, 1.0],
+  "spawn": [700, 900],
+  "hotspots": {
+    "S46.ambient 1": {
+      "rect": [1245, 330, 160, 205],
+      "interaction_point": [1325, 820],
+      "label_anchor": [1325, 320],
+      "reason": "the framed visitor rules board on the wall: a big no-coffee pictogram on top, rows of small print below"
+    },
+    "S46.ambient 2": {
+      "rect": [1745, 400, 170, 335],
+      "interaction_point": [1760, 820],
+      "label_anchor": [1810, 390],
+      "reason": "the big ficus in a ceramic pot standing in the window corner (pot foot y ~735)"
+    },
+    "S46.SARA": {
+      "rect": [970, 466, 130, 122],
+      "interaction_point": [1035, 850],
+      "reason": "Sara behind the small service counter (bust cut at the back edge of the painted counter top, y 583)"
+    }
+  },
+  "npcs": {
+    "S46.SARA": {
+      "variant": "behind_counter",
+      "feet": [1035, 745],
+      "sill_y": 583,
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: Sara behind the service counter (counter variant cut at the counter top)"
+    }
+  },
+  "exits": {
+    "S46.to_S42": {
+      "rect": [60, 420, 195, 285],
+      "interaction_point": [160, 800],
+      "label_anchor": [210, 410],
+      "reason": "the glazed entrance doors out to the plaza (and on to Hotel Grand Jasna)"
+    }
+  },
+  "state_patches": []
+}

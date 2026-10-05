@@ -1,0 +1,766 @@
+{
+  "room": "S29",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1410286129,
+  "usd": 0.15,
+  "started": "2026-10-05T10:35:12",
+  "spend_log_asset": "bg_natural/S29/S29_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S29.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the real garage row under the raised pedestrian deck of the Rovniakova panel blocks in Petrzalka (Zrkadlovy haj), Bratislava. Images 2-3 are photos of this real place: a long row of brown steel up-and-over garage doors set in a grey concrete wall under a raised pedestrian deck with a ribbed concrete parapet, tall panel blocks rising behind, a concrete footbridge between the blocks, trees and an asphalt forecourt. Image 4 is a real amateur-radio workbench (transceivers with dials and meters, an oscilloscope, a microphone, papers): use it for the gear inside the open garage, without brand names. Paint this real place as it was in 1995: unrenovated panel blocks (plain grey-beige panels, no colourful insulation), no satellite dishes, no cars.\n\nBrief: the fictional garage number 17 of a radio technician (he is added later as a sprite) doing a low-voltage measurement; a radio-amateur antenna as a silhouette outside; a loop coil on the wall. Thursday 15 June 1995, a sunny afternoon: warm sunlight from the left, fresh green trees, a blue sky; inside the open garage the warm light of a bare bulb.\n\nCamera: standing on the asphalt forecourt, about 2.2 m high, looking straight at the garage row, which runs parallel to the picture; vertical lines stay vertical; the horizon is at y ~360. Keep this exact geometry from the sketch: the garage doors stand on y 690 and are 2.1 m high (top y 371); the deck's slab edge at y 260-306 and its ribbed parapet at y 150-260 above the garages from x 560 to the right edge; the forecourt asphalt fills everything from y 540 to the bottom edge.\n\nWhat the sketch blocks are, left to right: an unrenovated panel block and trees in the distance on the left; the concrete footbridge on piers between the blocks; the radio amateur's thin steel lattice mast with a yagi antenna and a guy wire, standing on the green beyond the forecourt, dark against the bright sky; bushes and grass on the green; the garage row under the raised deck: garage 17 standing open with its brown door panel raised under the lintel and a white painted number 17 on the concrete above it; inside, a dim concrete garage lit by a bare bulb, a workbench at the back wall with a radio transceiver with glowing dials and a low-voltage test setup (meter, battery, clips and wires), a round copper loop coil hanging on the back wall above the bench, a wooden chair at the door line; then three closed brown garage doors; the tall panel blocks rising behind the deck; the asphalt forecourt in the foreground.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 215-415, y 28-328 of the 1920x1080 frame (11-22 % from the left, 3-30 % from the top): the thin steel lattice mast with a horizontal yagi antenna (a long boom with several short cross elements) on top, a clear dark silhouette against the sky.\n2. the block of the layout sketch at x 852-972, y 492-692 of the 1920x1080 frame (44-51 % from the left, 46-64 % from the top): a simple old wooden chair standing at the door line of the open garage, a black coiled radio cable hanging over its backrest.\nThe only lettering in the picture is the number 17 above the open garage.\n\nWalkable floor: the band at x 20-1900, y 706-1015 of the 1920x1080 frame (1-99 % from the left, 65-94 % from the top) is the open asphalt forecourt - one continuous flat surface with no kerb, no step, no edge inside it, and nothing standing on it: no cars, no bins, no posts, no boxes, no puddles. Only sunlight, the shadow of the deck and a few cracks and oil stains.\nNPC zone at x 628-772, y 430-712 of the 1920x1080 frame (33-40 % from the left, 40-66 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 712. He stands in front of the left half of the open garage: behind him only the dim, plain inside of the garage (an empty concrete wall), the workbench is in the right half of the garage.\n\nFiction rules: garage number 17 is invented (no other garage numbers), the technician and the antenna are fictional; no street names, no signs, no brand names on any device, no satellite dishes, no cars, no people, no animals. Paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S29_sketch.png (rendered from art/prompts/natural/S29.sketch.json, model geometry)",
+    "art/source/rooms/S29/rovniakova_garage-row_under-walkway_2022.jpg",
+    "art/source/rooms/S29/rovniakova_garage-doors_footbridge_2022.jpg",
+    "art/source/rooms/S29/type-ref_amateur-radio-workbench.jpg",
+    "src/game/assets/bg_natural/S19.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S29 natural: garage row from the forecourt, camera 2.2 m, horizon y 360, garage doors on y 690.",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          360
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          0,
+          520,
+          160
+        ],
+        "fill": "#d2cbb9",
+        "note": "tall unrenovated panel block behind the deck"
+      },
+      {
+        "type": "grid",
+        "box": [
+          630,
+          0,
+          500,
+          150
+        ],
+        "cols": 10,
+        "rows": 4,
+        "color": "#a8a090",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1220,
+          0,
+          700,
+          170
+        ],
+        "fill": "#cfc8b6",
+        "note": "tall panel block behind the deck"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1230,
+          0,
+          680,
+          160
+        ],
+        "cols": 14,
+        "rows": 4,
+        "color": "#a8a090",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          120,
+          300,
+          300
+        ],
+        "fill": "#d2cbb9",
+        "note": "panel block in the distance on the left"
+      },
+      {
+        "type": "grid",
+        "box": [
+          10,
+          130,
+          280,
+          280
+        ],
+        "cols": 6,
+        "rows": 8,
+        "color": "#a8a090",
+        "width": 2
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          360,
+          180,
+          260,
+          300
+        ],
+        "fill": "#6e9346",
+        "note": "tree on the green"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -60,
+          260,
+          260,
+          260
+        ],
+        "fill": "#6e9346",
+        "note": "tree"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          300,
+          600,
+          34
+        ],
+        "fill": "#c4c0b6",
+        "note": "raised concrete footbridge between the blocks in the distance"
+      },
+      {
+        "type": "rect",
+        "box": [
+          120,
+          334,
+          22,
+          200
+        ],
+        "fill": "#b2aea4",
+        "note": "footbridge pier"
+      },
+      {
+        "type": "rect",
+        "box": [
+          440,
+          334,
+          22,
+          200
+        ],
+        "fill": "#b2aea4"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            296,
+            520
+          ],
+          [
+            324,
+            520
+          ],
+          [
+            314,
+            80
+          ],
+          [
+            306,
+            80
+          ]
+        ],
+        "fill": "#3a3a3c",
+        "note": "thin steel lattice mast of the radio amateur"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            230,
+            70
+          ],
+          [
+            400,
+            70
+          ]
+        ],
+        "color": "#2a2a2c",
+        "width": 5,
+        "note": "yagi antenna boom"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            250,
+            40
+          ],
+          [
+            250,
+            100
+          ]
+        ],
+        "color": "#2a2a2c",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            290,
+            45
+          ],
+          [
+            290,
+            95
+          ]
+        ],
+        "color": "#2a2a2c",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            330,
+            48
+          ],
+          [
+            330,
+            92
+          ]
+        ],
+        "color": "#2a2a2c",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            370,
+            52
+          ],
+          [
+            370,
+            88
+          ]
+        ],
+        "color": "#2a2a2c",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            310,
+            80
+          ],
+          [
+            520,
+            300
+          ]
+        ],
+        "color": "#3a3a3c",
+        "width": 2,
+        "note": "guy wire"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          470,
+          600,
+          70
+        ],
+        "fill": "#7fa253",
+        "note": "grass on the green beyond the forecourt"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          540,
+          1920,
+          540
+        ],
+        "fill": "#8c8a86",
+        "note": "asphalt forecourt of the garage row"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          20,
+          430,
+          200,
+          120
+        ],
+        "fill": "#5f8a3c",
+        "note": "bushes on the green"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          150,
+          1360,
+          110
+        ],
+        "fill": "#a9a59c",
+        "note": "ribbed concrete parapet of the raised pedestrian deck above the garages"
+      },
+      {
+        "type": "bars",
+        "box": [
+          566,
+          156,
+          1350,
+          98
+        ],
+        "step": 22,
+        "bar": 8,
+        "fill": "#8f8b82",
+        "vertical": true,
+        "note": "vertical ribs of the parapet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          260,
+          1360,
+          46
+        ],
+        "fill": "#bdb9b0",
+        "note": "edge of the deck slab"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          306,
+          1360,
+          384
+        ],
+        "fill": "#c2beb4",
+        "note": "concrete wall of the garage row under the deck"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1010,
+          371,
+          365,
+          319
+        ],
+        "fill": "#7a4a32",
+        "note": "closed brown steel up-and-over garage door"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1016,
+          379,
+          353,
+          307
+        ],
+        "step": 18,
+        "bar": 4,
+        "fill": "#6a3e28",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          1420,
+          371,
+          365,
+          319
+        ],
+        "fill": "#7a4a32",
+        "note": "closed brown steel up-and-over garage door"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1426,
+          379,
+          353,
+          307
+        ],
+        "step": 18,
+        "bar": 4,
+        "fill": "#6a3e28",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          1830,
+          371,
+          365,
+          319
+        ],
+        "fill": "#7a4a32",
+        "note": "closed brown steel up-and-over garage door"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1836,
+          379,
+          353,
+          307
+        ],
+        "step": 18,
+        "bar": 4,
+        "fill": "#6a3e28",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          371,
+          365,
+          319
+        ],
+        "fill": "#4a4440",
+        "note": "open garage 17: dim concrete interior lit by a bare bulb"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          371,
+          365,
+          30
+        ],
+        "fill": "#7a4a32",
+        "note": "the raised door panel under the lintel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          610,
+          574,
+          345,
+          116
+        ],
+        "fill": "#6a645c",
+        "note": "garage floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          780,
+          496,
+          170,
+          14
+        ],
+        "fill": "#8a6a48",
+        "note": "workbench at the back of the garage"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          448,
+          70,
+          48
+        ],
+        "fill": "#3a3a3c",
+        "note": "radio transceiver with glowing dials"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          460,
+          20,
+          12
+        ],
+        "fill": "#e8c060"
+      },
+      {
+        "type": "rect",
+        "box": [
+          870,
+          460,
+          60,
+          36
+        ],
+        "fill": "#5a5a58",
+        "note": "low-voltage test setup: meter, battery, wires"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          800,
+          410,
+          66,
+          60
+        ],
+        "fill": "#b87333",
+        "note": "round copper loop coil hanging on the back wall above the bench"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          812,
+          420,
+          42,
+          40
+        ],
+        "fill": "#4a4440"
+      },
+      {
+        "type": "rect",
+        "box": [
+          755,
+          327,
+          70,
+          34
+        ],
+        "fill": "#e8e4dc",
+        "note": "white number 17 painted on the concrete lintel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          860,
+          552,
+          80,
+          12
+        ],
+        "fill": "#8a6a48",
+        "note": "wooden chair seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          870,
+          500,
+          12,
+          64
+        ],
+        "fill": "#7a5a38",
+        "note": "chair back"
+      },
+      {
+        "type": "rect",
+        "box": [
+          928,
+          500,
+          12,
+          64
+        ],
+        "fill": "#7a5a38"
+      },
+      {
+        "type": "rect",
+        "box": [
+          870,
+          500,
+          70,
+          12
+        ],
+        "fill": "#7a5a38"
+      },
+      {
+        "type": "rect",
+        "box": [
+          866,
+          564,
+          8,
+          120
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "rect",
+        "box": [
+          930,
+          564,
+          8,
+          120
+        ],
+        "fill": "#5a3a22"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            880,
+            510
+          ],
+          [
+            900,
+            560
+          ],
+          [
+            930,
+            520
+          ],
+          [
+            950,
+            600
+          ],
+          [
+            960,
+            680
+          ]
+        ],
+        "color": "#2a2a2a",
+        "width": 4,
+        "note": "black radio cable hanging over the chair back"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S29.json",
+  "blocking": {
+    "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+    "note": "Garage row under the raised pedestrian deck of the Rovniakova blocks (Petrzalka) seen from its asphalt forecourt: camera ~2.2 m, horizon y 360, the garage doors stand on y 690 (~152 px per metre). Perspective s(y) = (y - 360) / 655. Garage 17 is open and lit: workbench with radio gear and the loop coil on the back wall (taken away after B17), the chair with the radio cable at the door line; Dezider stands in front of the open garage; the radio amateur's lattice mast with its yagi stands on the green behind, against the sky, left of the deck; the footbridge in the distance. Camera moved outside (register said inside) so the real garage row, deck and antenna are seen.",
+    "background": "bg_natural/S29.webp",
+    "walk_polygon": [
+      [
+        20,
+        706
+      ],
+      [
+        1900,
+        706
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      706,
+      1015
+    ],
+    "actor_scale": [
+      0.53,
+      1.0
+    ],
+    "spawn": [
+      1100,
+      880
+    ],
+    "hotspots": {
+      "S29.ambient 1": {
+        "rect": [
+          215,
+          28,
+          200,
+          300
+        ],
+        "interaction_point": [
+          320,
+          800
+        ],
+        "label_anchor": [
+          320,
+          340
+        ],
+        "reason": "radio amateur's lattice mast with a yagi antenna on the green behind the garages"
+      },
+      "S29.ambient 2": {
+        "rect": [
+          852,
+          492,
+          120,
+          200
+        ],
+        "interaction_point": [
+          910,
+          800
+        ],
+        "label_anchor": [
+          912,
+          484
+        ],
+        "reason": "wooden chair at the door line of garage 17 with a radio cable over its back"
+      },
+      "S29.DEZI": {
+        "rect": [
+          628,
+          430,
+          144,
+          282
+        ],
+        "interaction_point": [
+          700,
+          840
+        ],
+        "label_anchor": [
+          700,
+          422
+        ],
+        "reason": "Dezider standing in front of the open garage 17"
+      }
+    },
+    "npcs": {
+      "S29.DEZI": {
+        "variant": "standing",
+        "feet": [
+          700,
+          712
+        ],
+        "scale": 0.537,
+        "reason": "standing technician in front of his garage (DECISIONS item 2 has no entry)"
+      }
+    },
+    "exits": {
+      "S29.to_S28": {
+        "rect": [
+          0,
+          716,
+          60,
+          299
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          135,
+          704
+        ],
+        "reason": "the forecourt runs out of the left edge towards the underpass"
+      }
+    },
+    "state_patches": [],
+    "version": 1,
+    "room": "S29"
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S29.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:35:55"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "room": "S64",
+  "notes": "Service window, early December 1982 (bg_natural/S64.webp): light snow falling, the bare yard trees moving, clouds over the yard, pigeons on the snowy yard.",
+  "layers": [
+    {
+      "id": "yard_branches",
+      "type": "sway",
+      "texture": "S64/natural/yard_branches.webp",
+      "anchor": 1.0,
+      "amp_px": 1.2,
+      "freq": 0.35,
+      "wavelength_px": 120,
+      "flutter_px": 0.4
+    },
+    {
+      "id": "snow",
+      "type": "particles",
+      "preset": "snow",
+      "emit_rect": [-40, -30, 2000, 30],
+      "count": 55,
+      "size": [2.5, 5.5],
+      "speed_y": [26, 48],
+      "wind": 12,
+      "alpha_range": [0.45, 0.85],
+      "lifetime": [16, 26]
+    },
+    {
+      "id": "clouds",
+      "type": "clouds",
+      "textures": [
+        "common/cloud_00.webp",
+        "common/cloud_01.webp",
+        "common/cloud_02.webp",
+        "common/cloud_03.webp"
+      ],
+      "band": [30, 200],
+      "count": 3,
+      "speed_px_s": 5,
+      "scale": [0.14, 0.26],
+      "alpha": 0.65,
+      "mask": "S64/natural/sky_mask.webp",
+      "x_span": [1300, 1920]
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[1350, 775], [1880, 860]],
+      "scale": 0.17,
+      "flee_radius": 330,
+      "return_s": [12, 25],
+      "exit": [[2040, 60], [1600, -120]]
+    }
+  ]
+}

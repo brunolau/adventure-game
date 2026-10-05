@@ -1,0 +1,360 @@
+{
+  "room": "S60",
+  "version": 1,
+  "kind": "derive",
+  "from_room": "S14",
+  "from_version": 1,
+  "from_master": "art/masters/bg_natural/S14_v1.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1341436485,
+  "usd": 0.15,
+  "scope": "bg_natural/S60/",
+  "spend_log_asset": "bg_natural/S60/S60_v1_derive",
+  "started": "2026-10-05T10:20:20",
+  "prompt_file": "art/prompts/natural/S60.era.txt",
+  "blocking_file": "src/game/data/blocking/S60.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Trieda s výstavkou in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'board' stays exactly at x 643, y 369 (33 % from the left, 34 % from the top). The fixed landmark 'right_window' stays exactly at x 1594, y 427 (83 % from the left, 40 % from the top). The fixed landmark 'teacher_table' stays exactly at x 713, y 625 (37 % from the left, 58 % from the top).\n\nEra changes: the same classroom 13 years earlier, on Tuesday 7 December 1982 at about half past two in the afternoon, after lessons, during the school's technical exhibition. Outside the window it is an overcast early-December day: grey sky, the poplars and limes of the sports yard are completely bare (bare branches, no leaves), thin patches of snow lie on the brownish lawn and the track; the distant panel tower is plain grey and white. No sunshine and no leaf shadows anywhere inside: the classroom is lit evenly by the cool grey daylight and by the ceiling fluorescent tubes, which are switched on. The walls keep the same plain soft yellow paint and darker dado (no murals). The cassette recorder, the microphone and the children's drawings of 1995 are gone; the teacher's table holds only a neat stack of exercise books and a pencil box.\nExhibition: the pupils' desks and chairs stay exactly where they are with exactly the same shapes and positions, but their tops are covered with white paper as exhibition tables, and on them stand simple home-made school exhibits: a small wooden radio kit with an exposed circuit board, a hand-wound coil, a little electric motor model, a crystal radio in a cigar box, each with a small white paper card (illegible scribbles). On the window sill a row of small potted plants.\n\nInteractive props of 1982:\n1. the box labelled 'Janina schéma rádia' in image 2 (x 1195-1345, y 718-782 of the 1920x1080 frame (62-70 % from the left, 66-72 % from the top)): on the left end of the front exhibition desk, a sheet of white paper with a child's careful hand-drawn radio circuit schematic in pencil (lines, little circles and zigzags), and right beside it a folded red pioneer neckerchief.\n2. the box labelled 'Vzorová schéma' in image 2 (x 655-910, y 382-562 of the 1920x1080 frame (34-47 % from the left, 35-52 % from the top)): a large printed model radio schematic sheet (black lines on white, very neat) held by four magnets on the left panel of the green board, with one short line of large printed capital letters at its top (illegible pseudo-letters).\n3. the box labelled 'Mapa ČSSR' in image 2 (x 1290-1500, y 325-565 of the 1920x1080 frame (67-78 % from the left, 30-52 % from the top)): the paper wall map on its wooden roller now shows Czechoslovakia: one long country shape in pale green and ochre with blue rivers and brown mountains, the neighbouring countries in grey, no readable names.\nThe classroom door stays the box labelled 'exit: Školská chodba v roku 1982' in image 2 (x 337-505, y 376-720 of the 1920x1080 frame (18-26 % from the left, 35-67 % from the top)).\n\nWalkable floor: the band at x 10-1655, y 726-1015 of the 1920x1080 frame (1-86 % from the left, 67-94 % from the top) stays the open honey parquet floor with nothing standing on it.\nNPC zone at x 1005-1120, y 444-759 of the 1920x1080 frame (52-58 % from the left, 41-70 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 759. NPC zone at x 1030-1145, y 540-905 of the 1920x1080 frame (54-60 % from the left, 50-84 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 905. (Teacher Dobrovič will stand beside the teacher's table; Jana, twelve, will stand at the left end of the front exhibition desks.)\n\nFiction rules: the period details are invented scenery: no portraits, no flags, no emblems, no slogans, no logos, no brand names, no readable text (cards and headlines are illegible scribbles or pseudo-letters, no digits). No people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S14_v1.png (model geometry)",
+    "S14_v1.png + S60 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor board": {
+        "at": [
+          643,
+          369
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.562,
+        "ok": true
+      },
+      "anchor right_window": {
+        "at": [
+          1594,
+          427
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.51,
+        "ok": true
+      },
+      "anchor teacher_table": {
+        "at": [
+          713,
+          625
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.507,
+        "ok": true
+      },
+      "exit S60.to_S59": {
+        "at": [
+          421.0,
+          548.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.928,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S60_v1_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S60",
+    "status": "natural re-blocking, L_CLASS 1982 derived from the accepted S14 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S14",
+    "note": "Same camera as S14 (L_CLASS): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, front wall floor line y 719 (167 px per metre), s(y) = (y - 352) / 663. 7 December 1982, after lessons: the pupils' desks (same places, same occluder) are covered with white paper as exhibition tables of the school technical exhibition; the model radio schematic is pinned on the left board panel; the paper roller map shows CSSR. Teacher Dobrovic stands at the teacher's table (where Mira stands in 1995); Jana (12) stands at the left end of the front exhibition desks with her own schematic and her pioneer neckerchief beside her on the desk.",
+    "background": "bg_natural/S60.webp",
+    "walk_polygon": [
+      [
+        10,
+        902
+      ],
+      [
+        337,
+        726
+      ],
+      [
+        700,
+        726
+      ],
+      [
+        705,
+        780
+      ],
+      [
+        990,
+        780
+      ],
+      [
+        995,
+        726
+      ],
+      [
+        1515,
+        726
+      ],
+      [
+        1572,
+        756
+      ],
+      [
+        1655,
+        812
+      ],
+      [
+        1150,
+        816
+      ],
+      [
+        1140,
+        1015
+      ],
+      [
+        10,
+        1015
+      ]
+    ],
+    "walk_band": [
+      726,
+      1015
+    ],
+    "actor_scale": [
+      0.56,
+      1.0
+    ],
+    "spawn": [
+      700,
+      905
+    ],
+    "hotspots": {
+      "S60.drawing": {
+        "rect": [
+          1195,
+          718,
+          150,
+          64
+        ],
+        "interaction_point": [
+          1128,
+          858
+        ],
+        "label_anchor": [
+          1272,
+          708
+        ],
+        "reason": "Jana's own hand-drawn radio schematic lying on the left end of the front exhibition desk, the red neckerchief beside it"
+      },
+      "S60.ambient 1": {
+        "rect": [
+          655,
+          382,
+          255,
+          180
+        ],
+        "interaction_point": [
+          640,
+          800
+        ],
+        "label_anchor": [
+          782,
+          372
+        ],
+        "reason": "printed model radio schematic sheet fixed with magnets on the left panel of the green board"
+      },
+      "S60.ambient 2": {
+        "rect": [
+          1290,
+          325,
+          210,
+          240
+        ],
+        "interaction_point": [
+          1300,
+          760
+        ],
+        "label_anchor": [
+          1395,
+          315
+        ],
+        "reason": "paper roller wall map of Czechoslovakia right of the board (period map)"
+      },
+      "S60.DOBRO": {
+        "rect": [
+          1005,
+          444,
+          115,
+          315
+        ],
+        "interaction_point": [
+          1165,
+          778
+        ],
+        "label_anchor": [
+          1062,
+          436
+        ],
+        "reason": "teacher Dobrovic standing right of the teacher's table"
+      },
+      "S60.JANA82": {
+        "rect": [
+          1030,
+          540,
+          115,
+          365
+        ],
+        "interaction_point": [
+          960,
+          915
+        ],
+        "label_anchor": [
+          1088,
+          530
+        ],
+        "reason": "Jana (12) standing at the left end of the front exhibition desks"
+      }
+    },
+    "npcs": {
+      "S60.DOBRO": {
+        "variant": "standing",
+        "feet": [
+          1062,
+          759
+        ],
+        "facing": "left",
+        "z": "auto",
+        "reason": "brief: teacher Dobrovic at the exhibition; same spot as Mira in S14 (teacher's table left of him)"
+      },
+      "S60.JANA82": {
+        "variant": "standing",
+        "feet": [
+          1088,
+          905
+        ],
+        "z": "auto",
+        "reason": "brief: Jana with her radio schematic by the exhibition desks; in front of the desk occluder (feet below its baseline 823)"
+      }
+    },
+    "exits": {
+      "S60.to_S59": {
+        "rect": [
+          337,
+          376,
+          168,
+          344
+        ],
+        "interaction_point": [
+          418,
+          758
+        ],
+        "label_anchor": [
+          418,
+          372
+        ],
+        "reason": "classroom door at the left end of the front wall (same as S14.to_S13)"
+      }
+    },
+    "state_patches": [],
+    "anchors": {
+      "board": [
+        643,
+        369
+      ],
+      "right_window": [
+        1594,
+        427
+      ],
+      "teacher_table": [
+        713,
+        625
+      ]
+    },
+    "occluders": [
+      {
+        "id": "desks",
+        "polygon": [
+          [
+            1150,
+            662
+          ],
+          [
+            1752,
+            662
+          ],
+          [
+            1772,
+            702
+          ],
+          [
+            1920,
+            758
+          ],
+          [
+            1920,
+            1050
+          ],
+          [
+            1288,
+            1050
+          ],
+          [
+            1262,
+            860
+          ],
+          [
+            1210,
+            935
+          ],
+          [
+            1192,
+            735
+          ],
+          [
+            1180,
+            868
+          ],
+          [
+            1156,
+            868
+          ]
+        ],
+        "baseline": 823,
+        "texture": null
+      }
+    ],
+    "family_base": "S14"
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S60.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:21:01"
+  }
+}

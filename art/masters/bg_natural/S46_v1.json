@@ -1,0 +1,615 @@
+{
+  "room": "S46",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2035461,
+  "usd": 0.15,
+  "started": "2026-10-05T10:37:42",
+  "spend_log_asset": "bg_natural/S46/S46_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S46.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the client centre (ticket and information office) at Biela Púť in Jasná, Low Tatras, Slovakia. Image 2 is a photo of a real tourist information centre of this type: brochure racks full of leaflets, self-service computer terminals, a light-wood counter, a bright simple interior. Image 3 shows what the windows look out on: the Biela Púť plaza with a big dark wooden chalet, spruce forest and the green ski slopes of the Low Tatras. Paint a bright modern mountain-resort client centre of this type - not a copy of the photo.\n\nBrief: a real type of client centre with its real name; Sára is the invented contact person of the guest exhibition: besides the normal information she has a small service counter. She issues the approved visitor pass and a proper return lift ticket. Bright June midday daylight through the window wall and the entrance, white ceiling light panels.\n\nCamera: standing in the client centre, about 1.6 m high, looking straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y ~470. Keep this exact geometry from the sketch: the ceiling down to its edge at y ~235; the back wall with a pale larch-wood cladding band (y 600-700) down to the floor at y 700; the glazed entrance at x 60-255 (y 405-705); the lift-status screen at x 300-590 (y 300-420); two self-service terminals at x 320-550 (y 470-735); the brochure racks at x 620-830 (y 400-735); the small service counter at x 870-1200 with its top's back edge at y 595 and a solid teal front panel to y ~790; the rules board at x 1245-1405 (y 330-535); the window wall at x 1450-1890 (y 280-700); the ficus in its pot in the right corner (pot foot y ~735); the floor from y 700 to the bottom edge.\n\nWhat the sketch blocks are: the white ceiling with square light panels; the light warm-grey wall and the pale larch cladding band; the glazed entrance doors with the sunny plaza outside; a wall screen showing the lift status as coloured dots and simple lift pictograms (no text, no digits); two modern self-service ticket terminals with touch screens; tall brochure racks full of colourful leaflets (no readable text); a plain stretch of wall behind Sára; the small service counter (light top, teal front panel with a light-wood edge) with a small ticket printer and an open paper visitor book on it; the window wall with mullions showing the plaza, the dark wooden chalet, spruces and the green slope; the light grey stone-look floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 1245-1405, y 330-535 of the 1920x1080 frame (65-73 % from the left, 31-50 % from the top): a framed visitor rules board on the wall: at the top a big red crossed-out coffee-cup pictogram, below it many rows of tiny illegible print.\n2. the block of the layout sketch at x 1745-1915, y 400-735 of the 1920x1080 frame (91-100 % from the left, 37-68 % from the top): a big healthy ficus with glossy dark green leaves in a light ceramic pot, standing in the window corner.\nNPC zone at x 970-1100, y 478-600 of the 1920x1080 frame (51-57 % from the left, 44-56 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 595 across x 940-1130, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\nthe area of the layout sketch at x 60-255, y 420-705 of the 1920x1080 frame (3-13 % from the left, 39-65 % from the top) is the glazed entrance doors.\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) is the light grey stone-look floor - one continuous flat surface with no step, no mat, no edge and nothing standing on it: no queue barriers, no stands, no bins, no people. Only light reflections, soft shadows and tile joints.\n\nFiction rules: no company logos or brand names (no TMR, no GOPASS), no price lists, no readable text anywhere (leaflets and print are illegible); the only symbol is the coffee-cup pictogram. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S46_sketch.png (rendered from art/prompts/natural/S46.sketch.json, model geometry)",
+    "art/source/rooms/S46/tourist-information-centre_balestrand.jpg",
+    "art/source/rooms/S41/biela-put_centrum-jasna-hotel-grand_2015.jpg",
+    "src/game/assets/bg_natural/S43.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S46 natural blocking (src/game/data/blocking/S46.json): client centre at Biela Put, camera ~1.6 m, horizon y ~470, back wall foot y ~700, Sara's counter top back edge y 595 (sill), counter front to y ~790.",
+    "background": "#e6e8e6",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          235
+        ],
+        "fill": "#e9ecec",
+        "note": "white ceiling with square light panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          90,
+          160,
+          40
+        ],
+        "fill": "#fafcff",
+        "note": "light panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          880,
+          90,
+          160,
+          40
+        ],
+        "fill": "#fafcff",
+        "note": "light panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1400,
+          90,
+          160,
+          40
+        ],
+        "fill": "#fafcff",
+        "note": "light panel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          228,
+          1920,
+          16
+        ],
+        "fill": "#cfd3d3",
+        "note": "ceiling edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          244,
+          1920,
+          458
+        ],
+        "fill": "#e9e4da",
+        "note": "light warm-grey wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          600,
+          1920,
+          100
+        ],
+        "fill": "#c9a77a",
+        "note": "pale larch wood wall cladding band"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          420,
+          195,
+          285
+        ],
+        "fill": "#a9c5d3",
+        "note": "glazed entrance doors: the sunny plaza outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          152,
+          420,
+          10,
+          285
+        ],
+        "fill": "#7d868d",
+        "note": "door frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          50,
+          405,
+          215,
+          16
+        ],
+        "fill": "#7d868d",
+        "note": "door frame head"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          300,
+          290,
+          120
+        ],
+        "fill": "#2b2f33",
+        "note": "wall screen with the lift status: coloured dots and simple lift pictograms, no text"
+      },
+      {
+        "type": "rect",
+        "box": [
+          312,
+          312,
+          266,
+          96
+        ],
+        "fill": "#3f6d8a",
+        "note": "screen picture"
+      },
+      {
+        "type": "rect",
+        "box": [
+          320,
+          470,
+          80,
+          265
+        ],
+        "fill": "#d4d8db",
+        "note": "self-service ticket terminal with a touch screen"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          490,
+          60,
+          50
+        ],
+        "fill": "#3f6d8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          470,
+          80,
+          265
+        ],
+        "fill": "#d4d8db",
+        "note": "second self-service ticket terminal"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          490,
+          60,
+          50
+        ],
+        "fill": "#3f6d8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          400,
+          210,
+          335
+        ],
+        "fill": "#b9b4a8",
+        "note": "brochure racks full of colourful leaflets"
+      },
+      {
+        "type": "bars",
+        "box": [
+          630,
+          410,
+          190,
+          315
+        ],
+        "step": 52,
+        "bar": 30,
+        "fill": "#d96a3a",
+        "vertical": false,
+        "note": "colourful leaflets in the rack pockets"
+      },
+      {
+        "type": "rect",
+        "box": [
+          940,
+          380,
+          190,
+          90
+        ],
+        "fill": "#e9e4da",
+        "note": "plain wall behind Sara (keep empty)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1245,
+          330,
+          160,
+          205
+        ],
+        "fill": "#f4f1ea",
+        "note": "framed visitor rules board"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1295,
+          345,
+          60,
+          60
+        ],
+        "fill": "#d23a2e",
+        "note": "big crossed-out coffee-cup pictogram"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1265,
+          420,
+          120,
+          100
+        ],
+        "step": 14,
+        "bar": 5,
+        "fill": "#8a8a8a",
+        "vertical": false,
+        "note": "rows of small illegible print"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          280,
+          440,
+          420
+        ],
+        "fill": "#a9cbe3",
+        "note": "window wall: the Biela Put plaza, a big dark wooden chalet, spruces and the green ski slope outside"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1450,
+            560
+          ],
+          [
+            1560,
+            470
+          ],
+          [
+            1700,
+            430
+          ],
+          [
+            1890,
+            470
+          ],
+          [
+            1890,
+            700
+          ],
+          [
+            1450,
+            700
+          ]
+        ],
+        "fill": "#6d9a52",
+        "note": "green slope and spruce forest outside"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1540,
+            600
+          ],
+          [
+            1540,
+            520
+          ],
+          [
+            1610,
+            460
+          ],
+          [
+            1680,
+            520
+          ],
+          [
+            1680,
+            600
+          ]
+        ],
+        "fill": "#5a3f2a",
+        "note": "dark wooden chalet outside"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1450,
+          280,
+          440,
+          420
+        ],
+        "step": 147,
+        "bar": 10,
+        "fill": "#7d868d",
+        "vertical": true,
+        "note": "window mullions"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            700
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1920,
+            1080
+          ]
+        ],
+        "fill": "#b9bcbb",
+        "note": "light grey stone-look floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          870,
+          595,
+          330,
+          18
+        ],
+        "fill": "#e2dccf",
+        "note": "top of the small service counter (back edge y 595)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          870,
+          613,
+          330,
+          177
+        ],
+        "fill": "#3e6f6a",
+        "note": "its solid front panel in teal with a light-wood edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          890,
+          560,
+          70,
+          35
+        ],
+        "fill": "#4a4a4a",
+        "note": "small ticket printer"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          570,
+          70,
+          25
+        ],
+        "fill": "#f1ead9",
+        "note": "the open paper visitor book"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1785,
+          640,
+          100,
+          95
+        ],
+        "fill": "#c8b6a0",
+        "note": "ceramic pot"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1745,
+          400,
+          170,
+          260
+        ],
+        "fill": "#3f7a3a",
+        "note": "big ficus with glossy leaves"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          760,
+          1920,
+          320
+        ],
+        "cols": 16,
+        "rows": 4,
+        "color": "#aeb1b0",
+        "width": 2
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S46.json",
+  "blocking": {
+    "version": 1,
+    "room": "S46",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Klientske centrum Biela Put (type-reference: a tourist information centre with brochure racks, self-service terminals and a counter; the real interior is not documented). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), Sara's service counter front stands on y ~785. Perspective s(y) = (y - 470) / 545 (same camera height as the hotel interiors S43/S44). Left: the glazed entrance from the plaza, two self-service ticket terminals under a lift-status screen, brochure racks; centre-right: the guest exhibition's small service counter with Sara behind it (counter top back edge y 595); right: the visitor rules board on the wall, the window wall with the view of the Biela Put plaza, the wooden chalet and the green slope, the big potted ficus in the corner.",
+    "background": "bg_natural/S46.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        722
+      ],
+      [
+        270,
+        722
+      ],
+      [
+        290,
+        742
+      ],
+      [
+        870,
+        742
+      ],
+      [
+        885,
+        792
+      ],
+      [
+        1190,
+        792
+      ],
+      [
+        1205,
+        744
+      ],
+      [
+        1920,
+        744
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      722,
+      1015
+    ],
+    "actor_scale": [
+      0.46,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S46.ambient 1": {
+        "rect": [
+          1245,
+          330,
+          160,
+          205
+        ],
+        "interaction_point": [
+          1325,
+          820
+        ],
+        "label_anchor": [
+          1325,
+          320
+        ],
+        "reason": "the framed visitor rules board on the wall: a big no-coffee pictogram on top, rows of small print below"
+      },
+      "S46.ambient 2": {
+        "rect": [
+          1745,
+          400,
+          170,
+          335
+        ],
+        "interaction_point": [
+          1760,
+          820
+        ],
+        "label_anchor": [
+          1810,
+          390
+        ],
+        "reason": "the big ficus in a ceramic pot standing in the window corner (pot foot y ~735)"
+      },
+      "S46.SARA": {
+        "rect": [
+          970,
+          478,
+          130,
+          122
+        ],
+        "interaction_point": [
+          1035,
+          850
+        ],
+        "reason": "Sara behind the small service counter (bust cut at the counter top, y 595)"
+      }
+    },
+    "npcs": {
+      "S46.SARA": {
+        "variant": "behind_counter",
+        "feet": [
+          1035,
+          745
+        ],
+        "sill_y": 595,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Sara behind the service counter (counter variant cut at the counter top)"
+      }
+    },
+    "exits": {
+      "S46.to_S42": {
+        "rect": [
+          60,
+          420,
+          195,
+          285
+        ],
+        "interaction_point": [
+          160,
+          800
+        ],
+        "label_anchor": [
+          210,
+          410
+        ],
+        "reason": "the glazed entrance doors out to the plaza (and on to Hotel Grand Jasna)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S46.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:38:26"
+  }
+}

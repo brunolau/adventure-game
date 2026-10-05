@@ -1,0 +1,2460 @@
+{
+  "room": "S13",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1476616983,
+  "usd": 0.15,
+  "started": "2026-10-05T09:52:01",
+  "spend_log_asset": "bg_natural/S13/S13_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S13.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the ground-floor entrance hall of ZŠ Sokolíkova 2 in Bratislava-Dúbravka, a typified Czechoslovak school opened in 1974. Image 2 is a real Slovak school hall of the same period (polished terrazzo floor of small square tiles in two warm tones, plain painted walls with a darker oil-paint dado, wooden doors in steel frames, steel-framed window wall on the left): paint the materials, colours and fittings from it, but NOT its camera, its long corridor, its plants, its banners or its posters. Image 3 is a real school cloakroom: yellow-painted steel mesh cage partitions with wooden benches - paint the cloakroom cages and the bench from it. Image 4 is the real ZŠ Sokolíkova seen from outside: the paved forecourt with mature maples and limes in front of the entrance - this is what the glazed left wall looks out on.\n\nBrief: the school entrance hall on a summer afternoon, Thursday 15 June 1995, around half past three: polished terrazzo floor, a bench with children's slippers by the cloakroom, the school caretaker's desk with the visitor book, bunches of keys, wooden doors. The building is 21 years old and well kept but worn: original 1970s fittings, no modern posters, no plastic windows. Warm late-afternoon sunlight comes in through the glazed left wall and lies in long bright patches across the terrazzo towards the right; the trees outside are in full green summer leaf. The walls are painted one plain colour, a soft warm yellow, with a slightly darker yellow-ochre glossy dado up to 1.45 m - no murals, no painted pictures on the walls.\n\nCamera: one-point perspective exactly as in the sketch. The camera stands in the hall about 2.2 m high and looks straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 352. Keep this exact geometry from the sketch: the back wall from x 300 to x 1620, its floor line at y 700 and its top edge at y 226; the left wall and the right wall recede towards the centre, their floor lines run from the back corners (300, 700) and (1620, 700) down to the frame edges at y 858; the ceiling above. This is a wide, fairly shallow hall, NOT a long corridor.\n\nWhat the sketch blocks are, left to right: the left wall is the glazed facade wall of dark bronze-brown steel frames: at its front (left frame edge) the glazed entrance double door with push bars, behind it tall window panels with a solid dado below; through the glass the sunny green crowns of the forecourt maples and limes and a bright sky. On the back wall: the open wooden key cabinet (described below); the left plain wooden door (the caretaker's room), partly hidden behind the caretaker's desk; the middle wooden double door with glass panes in its upper half, under a round school wall clock with a white dial, black numerals as simple ticks and black hour and minute hands; the right plain wooden door (the cloakroom); then the cloakroom: yellow-painted steel mesh cage partitions with a low wooden bench in front. All doors are light honey-coloured wood in brown steel frames. The right wall has an open doorway (no door leaf) into a bright side corridor where the first steps of a terrazzo staircase go up. Two rows of plain fluorescent tube fittings on the white ceiling. In front of the left part of the back wall stands the free-standing caretaker's desk: a solid wooden desk with drawers, a green desk lamp, a beige telephone and an open visitor book on it.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 326-432, y 412-512 of the 1920x1080 frame (17-22 % from the left, 38-47 % from the top): an open wall-mounted wooden key cabinet (a shallow box with its door open) with several bunches of keys hanging on hooks, each bunch on a ring with a small wooden or plastic tag.\n2. the block of the layout sketch at x 1320-1600, y 620-715 of the 1920x1080 frame (69-83 % from the left, 57-66 % from the top): the low wooden cloakroom bench and the shoe shelf under it, with a row of children's indoor slippers in many colours (blue, red, white, green, yellow) standing on the shelf and on the bench.\nNPC zone at x 645-770, y 515-777 of the 1920x1080 frame (34-40 % from the left, 48-72 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's seat (chair, stool or bench) is part of the character sprite: paint only open floor at y 777 in this zone - no chair, stool or bench there. (Tóno, the young caretaker, will sit there on his own chair, beside the right end of his desk.)\nThe glazed entrance double door is the area of the layout sketch at x 0-128, y 284-854 of the 1920x1080 frame (0-7 % from the left, 26-79 % from the top). The middle double door is the area of the layout sketch at x 849-1071, y 368-700 of the 1920x1080 frame (44-56 % from the left, 34-65 % from the top). The open doorway in the right wall is the area of the layout sketch at x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top).\n\nWalkable floor: the band at x 15-1905, y 716-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) is the polished terrazzo floor of the hall: small square tiles in two warm tones (reddish brown and ochre, speckled with stone chips) laid in a regular grid in perspective, with a dark terrazzo border strip along the back wall - one continuous flat floor with no step, no rug, no mat, no change of level, and nothing standing on it: no plants, no bins, no chairs, no benches, no bags, no buckets. Only light: the long warm sun patches from the glazed wall and soft reflections of the doors and windows in the polished floor.\nFixed architectural anchor 'terrazzo_line' at x 960, y 700. Fixed architectural anchor 'left_window' at x 239, y 421. Fixed architectural anchor 'middle_door' at x 960, y 534.\n\nFiction rules: the interior specifics are invented. No murals, no posters with readable text, no banners, no logos, no brand names, no school name, no signs on the doors, no numbers on the doors. Any paper shows only illegible scribbles, no digits. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S13_sketch.png (rendered from art/prompts/natural/S13.sketch.json, model geometry)",
+    "art/source/rooms/S13/hall_terrazzo_sedlice_school.jpg",
+    "art/source/rooms/S13/cloakroom_cages_plzen_school.jpg",
+    "art/source/sokolikova2_02.jpg",
+    "art/backgrounds/entrance.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S13 natural sketch (L_HALL base, 1995): entrance hall of ZS Sokolikova 2, one-point perspective, camera 2.2 m, f 1500 px, horizon y 352, back wall at 9.49 m (floor line y 700, 158 px/m), side walls at X +-4.18 m. Generated by a perspective helper; every block is a 3D box projected exactly.",
+    "background": "#ece6d6",
+    "shapes": [
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            3050,
+            -48
+          ],
+          [
+            1621,
+            226
+          ],
+          [
+            299,
+            226
+          ],
+          [
+            -1130,
+            -48
+          ]
+        ],
+        "fill": "#ece6d6",
+        "note": "ceiling (white-washed)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1130,
+            -48
+          ],
+          [
+            299,
+            226
+          ],
+          [
+            299,
+            700
+          ],
+          [
+            -1130,
+            1452
+          ]
+        ],
+        "fill": "#e7d79a",
+        "note": "left wall = the glazed facade wall (frames drawn below)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            3050,
+            -48
+          ],
+          [
+            1621,
+            226
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            3050,
+            1452
+          ]
+        ],
+        "fill": "#e2d08e",
+        "note": "right wall, pale yellow"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            299,
+            226
+          ],
+          [
+            1621,
+            226
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            299,
+            700
+          ]
+        ],
+        "fill": "#ead89a",
+        "note": "back wall, plain pale yellow paint"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            299,
+            470
+          ],
+          [
+            1621,
+            470
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            299,
+            700
+          ]
+        ],
+        "fill": "#d4b862",
+        "note": "back wall: darker yellow-ochre gloss oil-paint dado up to 1.45 m"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            3050,
+            727
+          ],
+          [
+            1621,
+            470
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            3050,
+            1452
+          ]
+        ],
+        "fill": "#cdb05a",
+        "note": "right wall dado"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -1130,
+            1452
+          ],
+          [
+            299,
+            700
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            3050,
+            1452
+          ]
+        ],
+        "fill": "#b98a62",
+        "note": "polished terrazzo floor, warm reddish-brown / ochre"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -1140,
+            1452
+          ],
+          [
+            296,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -840,
+            1452
+          ],
+          [
+            391,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -540,
+            1452
+          ],
+          [
+            486,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -240,
+            1452
+          ],
+          [
+            581,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            60,
+            1452
+          ],
+          [
+            676,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            360,
+            1452
+          ],
+          [
+            770,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            660,
+            1452
+          ],
+          [
+            865,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            960,
+            1452
+          ],
+          [
+            960,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1260,
+            1452
+          ],
+          [
+            1055,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1560,
+            1452
+          ],
+          [
+            1150,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1860,
+            1452
+          ],
+          [
+            1244,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2160,
+            1452
+          ],
+          [
+            1339,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2460,
+            1452
+          ],
+          [
+            1434,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2760,
+            1452
+          ],
+          [
+            1529,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            3060,
+            1452
+          ],
+          [
+            1624,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            299,
+            700
+          ],
+          [
+            1621,
+            700
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            255,
+            723
+          ],
+          [
+            1665,
+            723
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            204,
+            750
+          ],
+          [
+            1716,
+            750
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            145,
+            781
+          ],
+          [
+            1775,
+            781
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            76,
+            817
+          ],
+          [
+            1844,
+            817
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -6,
+            860
+          ],
+          [
+            1926,
+            860
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -104,
+            912
+          ],
+          [
+            2024,
+            912
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -225,
+            976
+          ],
+          [
+            2145,
+            976
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -377,
+            1056
+          ],
+          [
+            2297,
+            1056
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -573,
+            1159
+          ],
+          [
+            2493,
+            1159
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -837,
+            1298
+          ],
+          [
+            2757,
+            1298
+          ]
+        ],
+        "color": "#a97a55",
+        "width": 2
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            278,
+            711
+          ],
+          [
+            1642,
+            711
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            299,
+            700
+          ]
+        ],
+        "fill": "#8a5a3e",
+        "note": "dark terrazzo border strip along the back wall"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            299,
+            681
+          ],
+          [
+            1621,
+            681
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            299,
+            700
+          ]
+        ],
+        "fill": "#6e4a34",
+        "note": "terrazzo skirting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            3050,
+            1392
+          ],
+          [
+            1621,
+            681
+          ],
+          [
+            1621,
+            700
+          ],
+          [
+            3050,
+            1452
+          ]
+        ],
+        "fill": "#6e4a34"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -103,
+            225
+          ],
+          [
+            293,
+            272
+          ],
+          [
+            293,
+            559
+          ],
+          [
+            -103,
+            682
+          ]
+        ],
+        "fill": "#86a85e",
+        "note": "glass: green maple / lime crowns of the forecourt outside"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -103,
+            225
+          ],
+          [
+            176,
+            258
+          ],
+          [
+            176,
+            764
+          ],
+          [
+            -103,
+            911
+          ]
+        ],
+        "fill": "#86a85e"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -103,
+            225
+          ],
+          [
+            293,
+            272
+          ],
+          [
+            293,
+            384
+          ],
+          [
+            -103,
+            403
+          ]
+        ],
+        "fill": "#cfe1e6",
+        "note": "glass: bright sky above the trees"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            176,
+            596
+          ],
+          [
+            293,
+            559
+          ],
+          [
+            293,
+            703
+          ],
+          [
+            176,
+            764
+          ]
+        ],
+        "fill": "#cdb05a",
+        "note": "solid dado under the window panels"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -112,
+            224
+          ],
+          [
+            -94,
+            226
+          ],
+          [
+            -94,
+            907
+          ],
+          [
+            -112,
+            916
+          ]
+        ],
+        "fill": "#4a3a2c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            51,
+            243
+          ],
+          [
+            64,
+            245
+          ],
+          [
+            64,
+            823
+          ],
+          [
+            51,
+            830
+          ]
+        ],
+        "fill": "#4a3a2c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            171,
+            258
+          ],
+          [
+            181,
+            259
+          ],
+          [
+            181,
+            762
+          ],
+          [
+            171,
+            767
+          ]
+        ],
+        "fill": "#4a3a2c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            235,
+            265
+          ],
+          [
+            243,
+            266
+          ],
+          [
+            243,
+            575
+          ],
+          [
+            235,
+            577
+          ]
+        ],
+        "fill": "#4a3a2c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            289,
+            272
+          ],
+          [
+            296,
+            273
+          ],
+          [
+            296,
+            558
+          ],
+          [
+            289,
+            561
+          ]
+        ],
+        "fill": "#4a3a2c"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            176,
+            596
+          ],
+          [
+            293,
+            559
+          ]
+        ],
+        "color": "#4a3a2c",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -103,
+            377
+          ],
+          [
+            293,
+            368
+          ]
+        ],
+        "color": "#4a3a2c",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -103,
+            225
+          ],
+          [
+            293,
+            272
+          ]
+        ],
+        "color": "#4a3a2c",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -94,
+            667
+          ],
+          [
+            171,
+            588
+          ]
+        ],
+        "color": "#9a7a50",
+        "width": 5
+      },
+      {
+        "type": "rect",
+        "box": [
+          326,
+          412,
+          106,
+          100
+        ],
+        "fill": "#8a5a32",
+        "note": "wall key cabinet: open wooden board with hooks and bunches of keys"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          340,
+          428,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          340,
+          458,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          340,
+          488,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          363,
+          428,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          363,
+          458,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          363,
+          488,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          386,
+          428,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          386,
+          458,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          386,
+          488,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          409,
+          428,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          409,
+          458,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          409,
+          488,
+          12,
+          18
+        ],
+        "fill": "#d8c070"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            438,
+            360
+          ],
+          [
+            578,
+            360
+          ],
+          [
+            578,
+            700
+          ],
+          [
+            438,
+            700
+          ]
+        ],
+        "fill": "#5e432c",
+        "note": "steel door frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            446,
+            368
+          ],
+          [
+            570,
+            368
+          ],
+          [
+            570,
+            700
+          ],
+          [
+            446,
+            700
+          ]
+        ],
+        "fill": "#bf9055",
+        "note": "left wooden door (caretaker's room)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            840,
+            360
+          ],
+          [
+            1080,
+            360
+          ],
+          [
+            1080,
+            700
+          ],
+          [
+            840,
+            700
+          ]
+        ],
+        "fill": "#5e432c",
+        "note": "steel door frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            849,
+            368
+          ],
+          [
+            1071,
+            368
+          ],
+          [
+            1071,
+            700
+          ],
+          [
+            849,
+            700
+          ]
+        ],
+        "fill": "#bf9055",
+        "note": "middle double wooden door"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            862,
+            392
+          ],
+          [
+            950,
+            392
+          ],
+          [
+            950,
+            542
+          ],
+          [
+            862,
+            542
+          ]
+        ],
+        "fill": "#b9cbc6",
+        "note": "glass pane"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            970,
+            392
+          ],
+          [
+            1058,
+            392
+          ],
+          [
+            1058,
+            542
+          ],
+          [
+            970,
+            542
+          ]
+        ],
+        "fill": "#b9cbc6",
+        "note": "glass pane"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            960,
+            700
+          ],
+          [
+            960,
+            368
+          ]
+        ],
+        "color": "#5e432c",
+        "width": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          930,
+          267,
+          60,
+          60
+        ],
+        "fill": "#3a3a3a",
+        "note": "round school wall clock"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          935,
+          272,
+          50,
+          50
+        ],
+        "fill": "#f4f1e6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1175,
+            360
+          ],
+          [
+            1314,
+            360
+          ],
+          [
+            1314,
+            700
+          ],
+          [
+            1175,
+            700
+          ]
+        ],
+        "fill": "#5e432c",
+        "note": "steel door frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1183,
+            368
+          ],
+          [
+            1306,
+            368
+          ],
+          [
+            1306,
+            700
+          ],
+          [
+            1183,
+            700
+          ]
+        ],
+        "fill": "#bf9055",
+        "note": "right wooden door (cloakroom)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1332,
+            336
+          ],
+          [
+            1609,
+            336
+          ],
+          [
+            1609,
+            700
+          ],
+          [
+            1332,
+            700
+          ]
+        ],
+        "fill": "#c9a24a",
+        "note": "cloakroom: yellow painted steel mesh cage partition"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1336,
+          345,
+          270,
+          352
+        ],
+        "step": 9,
+        "bar": 2,
+        "fill": "#a8842e",
+        "vertical": true
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1326,
+            336
+          ],
+          [
+            1339,
+            336
+          ],
+          [
+            1339,
+            700
+          ],
+          [
+            1326,
+            700
+          ]
+        ],
+        "fill": "#9a7428"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1421,
+            336
+          ],
+          [
+            1434,
+            336
+          ],
+          [
+            1434,
+            700
+          ],
+          [
+            1421,
+            700
+          ]
+        ],
+        "fill": "#9a7428"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1508,
+            336
+          ],
+          [
+            1521,
+            336
+          ],
+          [
+            1521,
+            700
+          ],
+          [
+            1508,
+            700
+          ]
+        ],
+        "fill": "#9a7428"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1603,
+            336
+          ],
+          [
+            1616,
+            336
+          ],
+          [
+            1616,
+            700
+          ],
+          [
+            1603,
+            700
+          ]
+        ],
+        "fill": "#9a7428"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1332,
+            533
+          ],
+          [
+            1609,
+            533
+          ],
+          [
+            1609,
+            542
+          ],
+          [
+            1332,
+            542
+          ]
+        ],
+        "fill": "#9a7428"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            364,
+            614
+          ],
+          [
+            617,
+            614
+          ],
+          [
+            640,
+            596
+          ],
+          [
+            404,
+            596
+          ]
+        ],
+        "fill": "#c9a37a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            364,
+            614
+          ],
+          [
+            617,
+            614
+          ],
+          [
+            617,
+            750
+          ],
+          [
+            364,
+            750
+          ]
+        ],
+        "fill": "#8f6038"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            460,
+            609
+          ],
+          [
+            558,
+            609
+          ],
+          [
+            574,
+            599
+          ],
+          [
+            480,
+            599
+          ]
+        ],
+        "fill": "#f2efe4",
+        "note": "open visitor book on the desk"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            407,
+            536
+          ],
+          [
+            434,
+            536
+          ],
+          [
+            434,
+            606
+          ],
+          [
+            407,
+            606
+          ]
+        ],
+        "fill": "#3e5a3a",
+        "note": "green desk lamp"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            376,
+            611
+          ],
+          [
+            430,
+            611
+          ],
+          [
+            446,
+            603
+          ],
+          [
+            393,
+            603
+          ]
+        ],
+        "fill": "#d6c9a8",
+        "note": "beige phone"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1363,
+            642
+          ],
+          [
+            1618,
+            642
+          ],
+          [
+            1594,
+            631
+          ],
+          [
+            1348,
+            631
+          ]
+        ],
+        "fill": "#b48a56"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1363,
+            642
+          ],
+          [
+            1618,
+            642
+          ],
+          [
+            1618,
+            655
+          ],
+          [
+            1363,
+            655
+          ]
+        ],
+        "fill": "#9c7444"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1371,
+            655
+          ],
+          [
+            1381,
+            655
+          ],
+          [
+            1381,
+            714
+          ],
+          [
+            1371,
+            714
+          ]
+        ],
+        "fill": "#555555"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1610,
+            655
+          ],
+          [
+            1620,
+            655
+          ],
+          [
+            1620,
+            714
+          ],
+          [
+            1610,
+            714
+          ]
+        ],
+        "fill": "#555555"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1371,
+            687
+          ],
+          [
+            1617,
+            687
+          ],
+          [
+            1617,
+            694
+          ],
+          [
+            1371,
+            694
+          ]
+        ],
+        "fill": "#555555",
+        "note": "shoe shelf under the bench"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1385,
+            672
+          ],
+          [
+            1407,
+            672
+          ],
+          [
+            1407,
+            688
+          ],
+          [
+            1385,
+            688
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1415,
+            672
+          ],
+          [
+            1436,
+            672
+          ],
+          [
+            1436,
+            688
+          ],
+          [
+            1415,
+            688
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1445,
+            672
+          ],
+          [
+            1466,
+            672
+          ],
+          [
+            1466,
+            688
+          ],
+          [
+            1445,
+            688
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1474,
+            672
+          ],
+          [
+            1496,
+            672
+          ],
+          [
+            1496,
+            688
+          ],
+          [
+            1474,
+            688
+          ]
+        ],
+        "fill": "#2f8f5a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1504,
+            672
+          ],
+          [
+            1525,
+            672
+          ],
+          [
+            1525,
+            688
+          ],
+          [
+            1504,
+            688
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1534,
+            672
+          ],
+          [
+            1555,
+            672
+          ],
+          [
+            1555,
+            688
+          ],
+          [
+            1534,
+            688
+          ]
+        ],
+        "fill": "#7a4ea0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1563,
+            672
+          ],
+          [
+            1585,
+            672
+          ],
+          [
+            1585,
+            688
+          ],
+          [
+            1563,
+            688
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1593,
+            672
+          ],
+          [
+            1614,
+            672
+          ],
+          [
+            1614,
+            688
+          ],
+          [
+            1593,
+            688
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1391,
+            630
+          ],
+          [
+            1416,
+            630
+          ],
+          [
+            1416,
+            644
+          ],
+          [
+            1391,
+            644
+          ]
+        ],
+        "fill": "#3b6fb6"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1431,
+            630
+          ],
+          [
+            1456,
+            630
+          ],
+          [
+            1456,
+            644
+          ],
+          [
+            1431,
+            644
+          ]
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1470,
+            630
+          ],
+          [
+            1495,
+            630
+          ],
+          [
+            1495,
+            644
+          ],
+          [
+            1470,
+            644
+          ]
+        ],
+        "fill": "#f0f0f0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1510,
+            630
+          ],
+          [
+            1535,
+            630
+          ],
+          [
+            1535,
+            644
+          ],
+          [
+            1510,
+            644
+          ]
+        ],
+        "fill": "#2f8f5a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1550,
+            630
+          ],
+          [
+            1575,
+            630
+          ],
+          [
+            1575,
+            644
+          ],
+          [
+            1550,
+            644
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1590,
+            630
+          ],
+          [
+            1615,
+            630
+          ],
+          [
+            1615,
+            644
+          ],
+          [
+            1590,
+            644
+          ]
+        ],
+        "fill": "#7a4ea0"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1882,
+            308
+          ],
+          [
+            1689,
+            317
+          ],
+          [
+            1689,
+            736
+          ],
+          [
+            1882,
+            837
+          ]
+        ],
+        "fill": "#b8ad90",
+        "note": "open doorway: corridor beyond, lit"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1882,
+            837
+          ],
+          [
+            1689,
+            736
+          ],
+          [
+            1689,
+            736
+          ],
+          [
+            1882,
+            837
+          ]
+        ],
+        "fill": "#b8ad90"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1814,
+            713
+          ],
+          [
+            1984,
+            785
+          ]
+        ],
+        "color": "#8e8470",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1867,
+            681
+          ],
+          [
+            2049,
+            746
+          ]
+        ],
+        "color": "#8e8470",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1921,
+            648
+          ],
+          [
+            2113,
+            708
+          ]
+        ],
+        "color": "#8e8470",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1974,
+            616
+          ],
+          [
+            2177,
+            669
+          ]
+        ],
+        "color": "#8e8470",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2028,
+            584
+          ],
+          [
+            2241,
+            631
+          ]
+        ],
+        "color": "#8e8470",
+        "width": 4
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1893,
+            296
+          ],
+          [
+            1882,
+            297
+          ],
+          [
+            1882,
+            837
+          ],
+          [
+            1893,
+            843
+          ]
+        ],
+        "fill": "#5e432c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1689,
+            308
+          ],
+          [
+            1682,
+            309
+          ],
+          [
+            1682,
+            732
+          ],
+          [
+            1689,
+            736
+          ]
+        ],
+        "fill": "#5e432c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            269,
+            98
+          ],
+          [
+            347,
+            98
+          ],
+          [
+            474,
+            150
+          ],
+          [
+            412,
+            150
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            463,
+            169
+          ],
+          [
+            519,
+            169
+          ],
+          [
+            589,
+            198
+          ],
+          [
+            542,
+            198
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            572,
+            209
+          ],
+          [
+            616,
+            209
+          ],
+          [
+            660,
+            228
+          ],
+          [
+            622,
+            228
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1573,
+            98
+          ],
+          [
+            1651,
+            98
+          ],
+          [
+            1508,
+            150
+          ],
+          [
+            1446,
+            150
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1401,
+            169
+          ],
+          [
+            1457,
+            169
+          ],
+          [
+            1378,
+            198
+          ],
+          [
+            1331,
+            198
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1304,
+            209
+          ],
+          [
+            1348,
+            209
+          ],
+          [
+            1298,
+            228
+          ],
+          [
+            1260,
+            228
+          ]
+        ],
+        "fill": "#fffbe8",
+        "note": "fluorescent tube fitting"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S13.json",
+  "blocking": {
+    "version": 1,
+    "room": "S13",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); L_HALL family base for S53 (2020) and S59 (1982)",
+    "note": "Entrance hall of ZS Sokolikova 2 behind the SW main entrance (type-reference hall, register S13). One-point perspective, camera 2.2 m high on the hall floor, focal 1500 px, horizon y 352, looking at the inner back wall (parallel to the picture) at 9.5 m: its floor line is y 700 (158 px per metre); the side walls are 8.4 m apart. Left wall = the glazed steel-framed facade with the entrance double door at the front (exit to S12) and window panels behind it (left_window); back wall = caretaker's door (behind the free-standing caretaker's desk), the middle double door to the classroom wing (exit to S14) under the wall clock, the cloakroom door and the yellow mesh cloakroom cages with the slipper bench; right wall = open doorway to the corridor with the staircase up (exit to S15, the physics cabinet is upstairs). Perspective scale s(y) = (y - 352) / 663: 0.55 at the back of the walk area, 1.0 at y 1015 (hero 1.7 m). Tono (seated sprite, chair included) sits right of his desk, turned to the hall.",
+    "background": "bg_natural/S13.webp",
+    "anchors": {
+      "terrazzo_line": [
+        960,
+        700
+      ],
+      "left_window": [
+        239,
+        421
+      ],
+      "middle_door": [
+        960,
+        534
+      ]
+    },
+    "walk_polygon": [
+      [
+        15,
+        868
+      ],
+      [
+        292,
+        722
+      ],
+      [
+        372,
+        722
+      ],
+      [
+        378,
+        776
+      ],
+      [
+        628,
+        776
+      ],
+      [
+        662,
+        716
+      ],
+      [
+        1640,
+        716
+      ],
+      [
+        1880,
+        845
+      ],
+      [
+        1905,
+        860
+      ],
+      [
+        1905,
+        1015
+      ],
+      [
+        15,
+        1015
+      ]
+    ],
+    "walk_band": [
+      716,
+      1015
+    ],
+    "actor_scale": [
+      0.55,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S13.ambient 1": {
+        "rect": [
+          1320,
+          620,
+          280,
+          95
+        ],
+        "interaction_point": [
+          1460,
+          762
+        ],
+        "label_anchor": [
+          1460,
+          610
+        ],
+        "reason": "row of children's slippers on the bench and its shoe shelf in front of the cloakroom cages (back wall right)"
+      },
+      "S13.ambient 2": {
+        "rect": [
+          326,
+          412,
+          106,
+          100
+        ],
+        "interaction_point": [
+          405,
+          800
+        ],
+        "label_anchor": [
+          379,
+          402
+        ],
+        "reason": "wall key cabinet with bunches of keys behind the caretaker's desk (back wall left)"
+      },
+      "S13.TONO": {
+        "rect": [
+          645,
+          515,
+          125,
+          262
+        ],
+        "interaction_point": [
+          835,
+          800
+        ],
+        "label_anchor": [
+          707,
+          505
+        ],
+        "reason": "Tono seated right of his visitor-log desk, turned to the hall"
+      }
+    },
+    "npcs": {
+      "S13.TONO": {
+        "variant": "seated",
+        "feet": [
+          707,
+          777
+        ],
+        "facing": "right",
+        "z": "auto",
+        "reason": "docs/DECISIONS.md item 2: sits at the visitor log; the desk is left of him (background), the chair is part of the sprite"
+      }
+    },
+    "exits": {
+      "S13.to_S12": {
+        "rect": [
+          0,
+          284,
+          128,
+          570
+        ],
+        "interaction_point": [
+          92,
+          905
+        ],
+        "label_anchor": [
+          122,
+          276
+        ],
+        "reason": "glazed entrance double door at the front of the left facade wall (out to the forecourt)"
+      },
+      "S13.to_S14": {
+        "rect": [
+          849,
+          368,
+          222,
+          332
+        ],
+        "interaction_point": [
+          960,
+          738
+        ],
+        "label_anchor": [
+          960,
+          358
+        ],
+        "reason": "middle double door with glass panes in the back wall: the classroom wing"
+      },
+      "S13.to_S15": {
+        "rect": [
+          1690,
+          306,
+          192,
+          530
+        ],
+        "interaction_point": [
+          1782,
+          862
+        ],
+        "label_anchor": [
+          1786,
+          298
+        ],
+        "reason": "open doorway in the right wall to the corridor with the staircase up to the physics cabinet"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S13.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T09:53:17"
+  }
+}

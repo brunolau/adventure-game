@@ -1,0 +1,17 @@
+{
+  "room": "S37",
+  "notes": "Natural S37 ambient (bg_natural/S37.webp): the ringed carrier pigeon stands beside the empty bird bowl, pecking and looking around (shared pigeon sheet; hidden once Q6C is done - the bowl then shows the seeds, state patch S37_bowl_seeds); wind in the big park tree and in the pines; a few early-summer leaves drift down onto the lawn; clouds drift behind the manor; birds cross the sky now and then.",
+  "layers": [
+    { "id": "clouds", "type": "clouds", "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
+      "band": [30, 200], "count": 3, "speed_px_s": 5, "scale": [0.22, 0.36], "alpha": 0.5, "mask": "S37/natural/sky_mask.webp" },
+    { "id": "pines_right", "type": "sway", "texture": "S37/natural/pines_right.webp", "anchor": 1.0, "amp_px": 1.6, "freq": 0.2, "wavelength_px": 200, "flutter_px": 0.4 },
+    { "id": "tree_left", "type": "sway", "texture": "S37/natural/tree_left.webp", "anchor": 1.0, "amp_px": 2.4, "freq": 0.23, "wavelength_px": 160, "flutter_px": 0.9 },
+    { "id": "leaves", "type": "particles", "preset": "leaves", "textures": ["common/leaf_00.webp", "common/leaf_02.webp", "common/leaf_12.webp"],
+      "modulate": "#b9e08c", "emit_rect": [60, 40, 460, 380], "rate": 0.12, "size": [11, 15], "speed_x": [-10, 22], "land_y": [790, 960], "rest_s": [3, 7] },
+    { "id": "pigeon", "type": "sprite_loop", "sheet": "common/pigeon_sheet", "pos": [928, 816], "scale": 0.36, "fps": 2.5,
+      "frames": [0, 1, 1, 0, 2, 0, 1, 0], "pause_s": [1, 4], "unless_done": ["Q6C"] },
+    { "id": "birds", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 10,
+      "path": [[-60, 150], [500, 90], [1200, 110], [1990, 60]], "speed_px_s": 200, "scale": 0.07, "flock": 4, "flock_spread": [90, 30],
+      "bob_px": 3, "direction": "random", "every_s": [20, 40], "start_s": [5, 10] }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+ "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
+ "note": "Petrzalka pedestrian underpass under Rusovska cesta seen from the asphalt path in front of its portal, after the owner's reference type-ref_housing-estate-underpass_stairs.jpg: camera ~2.2 m, horizon y 360, the headwall stands on y 705 (~157 px per metre). Perspective s(y) = (y - 360) / 655. The lit white-tiled tunnel leads through to the embankment (S30), the stairs climb the embankment on the right to the garage row (S29); the legal chalk panel and old posters on the left wing wall, Juraj at the plain concrete beside the panel, his skateboard leaning right of the tunnel.",
+ "background": "bg_natural/S28.webp",
+ "walk_polygon": [
+  [
+   20,
+   800
+  ],
+  [
+   230,
+   772
+  ],
+  [
+   500,
+   724
+  ],
+  [
+   640,
+   718
+  ],
+  [
+   700,
+   690
+  ],
+  [
+   1180,
+   690
+  ],
+  [
+   1240,
+   718
+  ],
+  [
+   1430,
+   718
+  ],
+  [
+   1520,
+   860
+  ],
+  [
+   1580,
+   1015
+  ],
+  [
+   20,
+   1015
+  ]
+ ],
+ "walk_band": [
+  690,
+  1015
+ ],
+ "actor_scale": [
+  0.5,
+  1.0
+ ],
+ "spawn": [
+  700,
+  900
+ ],
+ "hotspots": {
+  "S28.mural": {
+   "rect": [
+    138,
+    346,
+    366,
+    268
+   ],
+   "interaction_point": [
+    320,
+    800
+   ],
+   "label_anchor": [
+    321,
+    338
+   ],
+   "reason": "the legal chalk art panel on the left wing wall"
+  },
+  "S28.ambient 1": {
+   "rect": [
+    648,
+    345,
+    160,
+    335
+   ],
+   "interaction_point": [
+    740,
+    760
+   ],
+   "label_anchor": [
+    728,
+    690
+   ],
+   "reason": "white wall tiles inside the tunnel mouth (left inner wall)"
+  },
+  "S28.ambient 2": {
+   "rect": [
+    1248,
+    588,
+    90,
+    132
+   ],
+   "interaction_point": [
+    1290,
+    790
+   ],
+   "label_anchor": [
+    1293,
+    580
+   ],
+   "reason": "Juraj's skateboard leaning against the wall right of the tunnel"
+  },
+  "S28.JURAJ": {
+   "rect": [
+    497,
+    434,
+    140,
+    290
+   ],
+   "interaction_point": [
+    567,
+    820
+   ],
+   "label_anchor": [
+    567,
+    426
+   ],
+   "reason": "Juraj standing at the plain concrete between the panel and the tunnel"
+  }
+ },
+ "npcs": {
+  "S28.JURAJ": {
+   "variant": "standing",
+   "feet": [
+    567,
+    722
+   ],
+   "scale": 0.553,
+   "reason": "standing young artist beside his panel (DECISIONS item 2 has no entry)"
+  }
+ },
+ "exits": {
+  "S28.to_S21": {
+   "rect": [
+    0,
+    790,
+    60,
+    225
+   ],
+   "interaction_point": [
+    70,
+    900
+   ],
+   "label_anchor": [
+    135,
+    778
+   ],
+   "reason": "the path and the lawn run out of the left edge (bus stop, back to the centre)"
+  },
+  "S28.to_S30": {
+   "rect": [
+    812,
+    330,
+    300,
+    365
+   ],
+   "interaction_point": [
+    960,
+    740
+   ],
+   "label_anchor": [
+    960,
+    322
+   ],
+   "reason": "through the lit tunnel towards the Danube embankment"
+  },
+  "S28.to_S29": {
+   "rect": [
+    1340,
+    300,
+    420,
+    405
+   ],
+   "interaction_point": [
+    1395,
+    760
+   ],
+   "label_anchor": [
+    1560,
+    292
+   ],
+   "reason": "up the stairs on the embankment to the garage row"
+  }
+ },
+ "state_patches": [
+  {
+   "texture": "variants_natural/S28_mural_lit.webp",
+   "pos": [
+    140,
+    345
+   ],
+   "after": [
+    "Q5C"
+   ],
+   "until": [],
+   "reason": "Q5C: half of the chalk windows lit in yellow chalk, signature and a little chalk sun (refit fix, master v2)"
+  }
+ ],
+ "version": 1,
+ "room": "S28"
+}

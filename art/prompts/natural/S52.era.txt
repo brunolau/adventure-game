@@ -1,0 +1,26 @@
+# S52 Pred ZS Sokolikova v roku 2020 (2020) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S12, 1995)
+# Image 1 = the accepted S12 natural master (v1), image 2 = the same with the S52 blocking drawn on it.
+# location_families 2020: newer windows and facade as fiction, distance learning, restricted service entrance, quiet.
+# art_brief: same camera as S12 and S58; the newer windows and facade are the game's art idea, not a documented state;
+# the gate for regular entry is closed, a notice about distance learning, a small service pick-up point.
+Era changes: the same school on Thursday 29 October 2020, a windy, sunny autumn afternoon: warm low sunlight, long soft shadows, the trees in yellow, orange and brown autumn colours, many fallen leaves on the forecourt and the steps. The school is quiet and closed for the pandemic. The building is renovated as it looks today:
+- All windows are replaced by modern white PVC windows (one big lower pane and a smaller top pane each, white frames), in exactly the same openings; the wall bands, the plinth and the wall around the entrance are covered with small grey-and-white mosaic tiles (the real present-day facade, no murals).
+- The old canopy is replaced by a newer canopy in the same place: slim grey steel frame, clear glass roof, the same two posts.
+- The name board above the canopy is a modern plain white board with dark grey letters ZŠ SOKOLÍKOVA (no emblems, no crests).
+- The entrance doors are modern aluminium-and-glass doors, closed; a printed A4 notice is taped inside the glass of the door; a light chain with a small blank sign hangs across the top of the steps (the regular entrance is closed).
+- The same concrete planter at the foot of the steps, with autumn plants and one discarded light-blue face mask among them.
+- The club notice board at the left is now an empty, slightly faded glazed board with two pale sheets.
+- The last ground-floor window before the corner is the caretaker's service window: on its stone sill a small metal swallow ornament.
+- Beyond the building corner the corner of the school yard: asphalt, the wire-mesh fence, autumn trees.
+Everything else built (the facade's position and window openings, the steps, the landing, the ramp and its railing, the corner, the forecourt) stays exactly where it is.
+
+Interactive props of 2020:
+1. {rect:S52.photo}: the building corner and the corner of the school yard beyond it (asphalt, fence, an autumn tree), next to the service window.
+2. {rect:S52.ambient 1}: the printed A4 notice taped inside the glass of the closed entrance door (illegible print, no digits).
+3. {rect:S52.ambient 2}: the square concrete planter at the foot of the steps with autumn plants and a discarded face mask.
+{exit:S52.to_S56} is the caretaker's service window. {exit:S52.to_S53} is the closed entrance doors. The forecourt path leaves the picture at the left edge ({exit:S52.to_S51}) and continues past the corner to the yard at the right edge ({exit:S52.to_S55}).
+
+Walkable floor: {walk} stays the open paved forecourt with nothing standing on it, only light, shadows and fallen leaves.
+{npc_zones}
+
+Fiction rules: apart from the letters ZŠ SOKOLÍKOVA on the name board, no readable text; no logos, no emblems, no house numbers, no brands. No people, no animals. Any paper shows only illegible scribbles, no digits.

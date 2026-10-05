@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "room": "S35",
+  "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+  "note": "Service courtyard of the Ivanka pri Dunaji manor, June 1960, used by an (unnamed) agricultural workshop. Camera ~2.0 m high in the yard: horizon y 400, perspective s(y) = (y - 400) / 615 (hero 1.7 m = 512 px at y 1015; ~181 px per metre at the store annex, foot y 770). On the left a small whitewashed store annex built against the long outbuilding faces the camera squarely: the material issue hatch with its counter board (top edge y 589) and the open store door with shelves of saddlery remnants. Behind it the long single-storey outbuilding with eyebrow dormers recedes to the columned porch (foot y 610), where Oto's workshop door is; the right wing closes the yard. Seed sacks stand against the long wall, the hand cart in the yard, the hens behind a lath fence on the right. Stefan is a bust behind the hatch counter. The walk polygon (fitted to the v1 painting) is the yard in front of the annex, around the sacks, up to the porch door, in front of the cart and the poultry fence.",
+  "background": "bg_natural/S35.webp",
+  "walk_polygon": [[0, 790], [652, 790], [652, 756], [842, 756], [1002, 702], [1050, 636], [1100, 620], [1255, 620], [1300, 642], [1322, 642], [1322, 736], [1645, 736], [1645, 718], [1920, 718], [1920, 1015], [0, 1015]],
+  "walk_band": [620, 1015],
+  "actor_scale": [0.358, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S35.ambient 1": {
+      "rect": [662, 592, 175, 152],
+      "interaction_point": [750, 800],
+      "label_anchor": [750, 582],
+      "reason": "full jute grain sacks stacked on the ground against the long outbuilding, right of the store annex"
+    },
+    "S35.ambient 2": {
+      "rect": [1325, 590, 300, 140],
+      "interaction_point": [1475, 790],
+      "label_anchor": [1475, 580],
+      "reason": "two-wheeled wooden hand cart standing in the yard, its shafts resting on the ground"
+    },
+    "S35.SKLAD": {
+      "rect": [140, 448, 140, 141],
+      "interaction_point": [215, 830],
+      "label_anchor": [215, 438],
+      "reason": "Stefan behind the material issue hatch of the store annex (bust above the counter board)"
+    }
+  },
+  "npcs": {
+    "S35.SKLAD": {
+      "variant": "window_bust",
+      "feet": [210, 752],
+      "scale": 0.58,
+      "sill_y": 589,
+      "facing": "right",
+      "z": "back",
+      "reason": "docs/DECISIONS.md item 2: Stefan behind the hatch (window bust, SKLAD 'window' variant); cut at the hatch counter board y 589; scale of a man standing just inside the annex wall (foot y ~755)"
+    }
+  },
+  "exits": {
+    "S35.to_S32": {
+      "rect": [0, 795, 60, 215],
+      "interaction_point": [70, 900],
+      "label_anchor": [135, 785],
+      "reason": "the yard opens to the left towards the village road and the square"
+    },
+    "S35.to_S36": {
+      "rect": [1125, 400, 95, 210],
+      "interaction_point": [1172, 652],
+      "label_anchor": [1172, 390],
+      "reason": "the plank door of Oto's workshop under the columned porch"
+    }
+  },
+  "state_patches": []
+}

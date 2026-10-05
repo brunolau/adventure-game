@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "room": "S67",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+  "note": "Boarding hall of the Funitel valley station at Priehyba as in the 2015 photo (and the CS09_2 cutscene frame): camera ~1.6 m high on the concrete boarding platform, looking across the hall at the docked black Funitel cabins hanging from the overhead guide rail with its rows of conveyor tyres; horizon y ~470; the cabins' floor and the platform edge with its handrail on y ~700-720 (~126 px per metre there). Perspective s(y) = (y - 470) / 545. Left: the open passage with daylight to the gondola arrival from Biela Put (exit), the red bullwheel; centre: a docked cabin with closed doors, the platform handrail, the boarding gate in front of a cabin with open doors (exit to the ride); right: Ivan by the gate, the two-section map board on a concrete pillar, the red steel frame of the station.",
+  "background": "bg_natural/S67.webp",
+  "walk_polygon": [[0, 1015], [0, 735], [160, 735], [180, 724], [1920, 724], [1920, 1015]],
+  "walk_band": [724, 1015],
+  "actor_scale": [0.47, 1.0],
+  "spawn": [700, 900],
+  "hotspots": {
+    "S67.ambient 2": {
+      "rect": [330, 610, 560, 105],
+      "interaction_point": [610, 800],
+      "label_anchor": [610, 600],
+      "reason": "the steel handrail along the platform edge in front of the docked cabin (rail top y ~620, posts to y ~720)"
+    },
+    "S67.boarding": {
+      "rect": [925, 585, 230, 135],
+      "interaction_point": [1040, 800],
+      "label_anchor": [1040, 575],
+      "reason": "the low steel boarding gate in the gap of the handrail with a green arrow lamp, in front of the open cabin"
+    },
+    "S67.ambient 1": {
+      "rect": [1445, 330, 210, 235],
+      "interaction_point": [1550, 810],
+      "label_anchor": [1550, 320],
+      "reason": "the framed two-section map board on the concrete pillar: the gondola line and the Funitel line as two coloured lines with station dots"
+    },
+    "S67.IVAN": {
+      "rect": [1215, 490, 150, 300],
+      "interaction_point": [1290, 850],
+      "reason": "Ivan the lift attendant stands on the platform right of the boarding gate"
+    }
+  },
+  "npcs": {
+    "S67.IVAN": {
+      "variant": "standing",
+      "feet": [1290, 790],
+      "z": "auto",
+      "reason": "art brief: the attendant Ivan at the boarding point (standing figure)"
+    }
+  },
+  "exits": {
+    "S67.to_S41": {
+      "rect": [0, 380, 160, 345],
+      "interaction_point": [80, 830],
+      "label_anchor": [190, 370],
+      "reason": "the open passage with daylight at the left end of the hall towards the gondola from Biela Put (cable ride back)"
+    },
+    "S67.to_S68": {
+      "rect": [960, 330, 200, 255],
+      "interaction_point": [1060, 760],
+      "label_anchor": [1060, 320],
+      "reason": "the open doors of the docked Funitel cabin behind the boarding gate (ride to Chopok after J03)"
+    }
+  },
+  "state_patches": []
+}

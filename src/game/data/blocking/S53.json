@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "room": "S53",
+  "status": "natural re-blocking, L_HALL 2020 derived from the accepted S13 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S13",
+  "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 29 October 2020: a free-standing plexiglass screen on chrome feet stands across the back of the hall (painted: feet y ~765, x 735-1670, about 2 m high; the walk area stops at y 778 in front of it): the classroom doors and the cloakroom are behind it (closed zone); the service route is the right corridor to the physics cabinet (S54). Return boxes on the caretaker's desk; sanitiser stand by the entrance (x 225-300, excluded from the walk area).",
+  "background": "bg_natural/S53.webp",
+  "walk_polygon": [
+    [
+      15,
+      868
+    ],
+    [
+      210,
+      770
+    ],
+    [
+      312,
+      770
+    ],
+    [
+      378,
+      778
+    ],
+    [
+      1700,
+      778
+    ],
+    [
+      1880,
+      845
+    ],
+    [
+      1905,
+      860
+    ],
+    [
+      1905,
+      1015
+    ],
+    [
+      15,
+      1015
+    ]
+  ],
+  "walk_band": [
+    716,
+    1015
+  ],
+  "actor_scale": [
+    0.55,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
+  "hotspots": {
+    "S53.ambient 1": {
+      "rect": [
+        740,
+        388,
+        425,
+        375
+      ],
+      "interaction_point": [
+        952,
+        800
+      ],
+      "label_anchor": [
+        952,
+        378
+      ],
+      "reason": "the plexiglass screen panel in front of the middle (classroom) door, with the taped pick-up permit sheet"
+    },
+    "S53.ambient 2": {
+      "rect": [
+        450,
+        510,
+        195,
+        105
+      ],
+      "interaction_point": [
+        548,
+        805
+      ],
+      "label_anchor": [
+        548,
+        500
+      ],
+      "reason": "cardboard return boxes for borrowed teaching aids on the caretaker's desk"
+    }
+  },
+  "npcs": {},
+  "exits": {
+    "S53.to_S52": {
+      "rect": [
+        30,
+        290,
+        160,
+        545
+      ],
+      "interaction_point": [
+        125,
+        885
+      ],
+      "label_anchor": [
+        192,
+        280
+      ],
+      "reason": "glazed entrance double door (same as S13.to_S12)"
+    },
+    "S53.to_S54": {
+      "rect": [
+        1690,
+        306,
+        192,
+        530
+      ],
+      "interaction_point": [
+        1782,
+        862
+      ],
+      "label_anchor": [
+        1728,
+        298
+      ],
+      "reason": "open doorway to the corridor and staircase up to the physics cabinet = the approved separate service route (same as S13.to_S15)"
+    }
+  },
+  "state_patches": [],
+  "anchors": {
+    "terrazzo_line": [
+      960,
+      700
+    ],
+    "left_window": [
+      239,
+      421
+    ],
+    "middle_door": [
+      960,
+      534
+    ]
+  },
+  "family_base": "S13"
+}

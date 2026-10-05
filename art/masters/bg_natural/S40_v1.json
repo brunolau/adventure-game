@@ -1,0 +1,892 @@
+{
+  "room": "S40",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 601243416,
+  "usd": 0.15,
+  "started": "2026-10-05T10:48:08",
+  "spend_log_asset": "bg_natural/S40/S40_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S40.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the attic above the workshop in the long service outbuilding of the manor in Ivanka pri Dunaji, Slovakia, in 1960. Image 2 is a real unrenovated attic of an old village house: the undersides of red clay roof tiles on battens between dark rafters, a brick gable wall with a small bright window, old timber. Image 3 is a real attic with a wide, solid plank floor and massive beams. Image 4 is the real courtyard of the outbuilding: its red-brown tiled roofs are what the gable window looks out on. Paint a dry, dusty, safe attic of 1960 used as a small technical archive from these: wide swept floor planks, heavy old beams, warm light from the gable window. Leave out all modern things (cardboard boxes, bicycles, plastic, wires).\n\nBrief: a safe walkable attic floor above the workshop: a metal archive box, waxed paper and a forgotten amateur-theatre script. No climbing: a proper wooden staircase with a handrail. 6 June 1960, late afternoon: warm sunbeams through the small gable window and through thin gaps between the tiles, dust floating in the light.\n\nCamera: standing on the attic floor about 1.7 m high, looking straight along the attic to the gable wall; the ridge is in the middle; the horizon is at y ~470. Keep this exact geometry from the sketch: the gable wall at the far end meets the floor at y ~690; the roof slopes come down left and right to low knee walls; the heavy tie beam crosses at y ~250-285; the work table stands on the floor in the middle (top y ~650, legs to y ~770); the floor planks fill everything in front.\n\nWhat the sketch blocks are, left to right: the opening in the floor at the front left with a wooden staircase going down and a solid wooden handrail with a newel post around it; the left roof slope with rafters and tile battens; the brick gable wall with the small window showing the tiled roofs of the courtyard in the sun; the plain wooden work table with a small stack of waxed paper sheets and a thin script booklet with a buff paper cover; an old wooden chest with a grey-green steel archive box on it; a massive oak post with two diagonal braces carrying the tie beam; an old brown leather suitcase lying on the floor; a few old wooden crates under the right slope; the wide old floor planks.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 556-742, y 598-656 of the 1920x1080 frame (29-39 % from the left, 55-61 % from the top): a small neat stack of waxed paper sheets (slightly translucent, with a soft yellowish waxy sheen) on the table.\n2. the block of the layout sketch at x 1050-1222, y 560-672 of the 1920x1080 frame (55-64 % from the left, 52-62 % from the top): a grey-green steel archive box with a carrying handle on the lid and a small hasp, standing on the chest.\n3. the block of the layout sketch at x 796-954, y 604-658 of the 1920x1080 frame (41-50 % from the left, 56-61 % from the top): a thin stapled amateur-theatre script booklet with a buff paper cover and a few hand-written scribbles on it, lying on the table.\n4. the block of the layout sketch at x 1440-1720, y 668-808 of the 1920x1080 frame (75-90 % from the left, 62-75 % from the top): an old brown leather suitcase with a handle and a strap, lying closed on the floor.\n5. the block of the layout sketch at x 1290-1364, y 290-720 of the 1920x1080 frame (67-71 % from the left, 27-67 % from the top): the massive old oak post with two diagonal braces, carrying the tie beam of the roof.\nThe staircase opening at the front left is the area of the layout sketch at x 20-330, y 640-910 of the 1920x1080 frame (1-17 % from the left, 59-84 % from the top).\n\nWalkable floor: the band at x 20-1900, y 800-1015 of the 1920x1080 frame (1-99 % from the left, 74-94 % from the top) is the wide old floor planks - one continuous flat surface with no step, no hole, no ladder and nothing standing on it: no boxes, no tools, no ropes. Only sunbeams, shadows and a little dust.\nThis room has no NPC zones.\n\nFiction rules: invented attic; no painting on an easel, no posters, no pictures, no newspapers with text, no brand names, no lettering, no digits. Paper and the script cover show only illegible scribbles. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S40_sketch.png (rendered from art/prompts/natural/S40.sketch.json, model geometry)",
+    "art/source/rooms/S40/type_ref_attic_cluttered_krovkrov.jpg",
+    "art/prompts/natural/S40_ref_attic_floor_skanzen_crop.jpg",
+    "art/source/rooms/S35/manor_outbuildings_yard_taz666_2013.jpg",
+    "art/masters/bg_natural/S36_v2.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S40 natural blocking (src/game/data/blocking/S40.json): unrenovated attic above the workshop, frontal camera ~1.7 m towards the brick gable, horizon y 470, s(y) = (y - 470) / 545; floor planks from y ~690, work table (top y 650) with waxed paper and the script, archive box on a chest, oak post, suitcase, stair opening front left.",
+    "background": "#5a4636",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          1080
+        ],
+        "fill": "#5a4636",
+        "note": "dim attic"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            960,
+            0
+          ],
+          [
+            960,
+            120
+          ],
+          [
+            180,
+            620
+          ],
+          [
+            0,
+            700
+          ]
+        ],
+        "fill": "#7a5a42",
+        "note": "left roof slope: undersides of red clay tiles on battens between rafters"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            960,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            700
+          ],
+          [
+            1740,
+            620
+          ],
+          [
+            960,
+            120
+          ]
+        ],
+        "fill": "#7a5a42",
+        "note": "right roof slope"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            940,
+            120
+          ],
+          [
+            760,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            980,
+            120
+          ],
+          [
+            1160,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            920,
+            110
+          ],
+          [
+            620,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1000,
+            110
+          ],
+          [
+            1300,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            900,
+            100
+          ],
+          [
+            480,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1020,
+            100
+          ],
+          [
+            1440,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            880,
+            90
+          ],
+          [
+            340,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1040,
+            90
+          ],
+          [
+            1580,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            860,
+            80
+          ],
+          [
+            200,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1060,
+            80
+          ],
+          [
+            1720,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            840,
+            70
+          ],
+          [
+            60,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1080,
+            70
+          ],
+          [
+            1860,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            820,
+            60
+          ],
+          [
+            -80,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14,
+        "note": "rafter"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1100,
+            60
+          ],
+          [
+            2000,
+            720
+          ]
+        ],
+        "color": "#4a3424",
+        "width": 14
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            380,
+            690
+          ],
+          [
+            380,
+            470
+          ],
+          [
+            960,
+            110
+          ],
+          [
+            1540,
+            470
+          ],
+          [
+            1540,
+            690
+          ]
+        ],
+        "fill": "#a8644a",
+        "note": "brick gable wall at the far end"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          330,
+          120,
+          110
+        ],
+        "fill": "#e8e2c8",
+        "note": "small gable window, light comes in"
+      },
+      {
+        "type": "rect",
+        "box": [
+          910,
+          340,
+          100,
+          90
+        ],
+        "fill": "#a8c8e0",
+        "note": "view: the tiled roofs of the manor outbuildings and the trees"
+      },
+      {
+        "type": "rect",
+        "box": [
+          910,
+          390,
+          100,
+          40
+        ],
+        "fill": "#b4552f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          956,
+          340,
+          8,
+          90
+        ],
+        "fill": "#e8e2c8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          180,
+          250,
+          1560,
+          34
+        ],
+        "fill": "#6e4e34",
+        "note": "heavy horizontal tie beam across the attic"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            180,
+            690
+          ],
+          [
+            1740,
+            690
+          ],
+          [
+            1920,
+            760
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ],
+          [
+            0,
+            760
+          ]
+        ],
+        "fill": "#a8885e",
+        "note": "wide old floor planks, swept, safe to walk"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            760
+          ],
+          [
+            180,
+            690
+          ],
+          [
+            180,
+            620
+          ],
+          [
+            0,
+            700
+          ]
+        ],
+        "fill": "#6e5440",
+        "note": "low knee wall left"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1920,
+            760
+          ],
+          [
+            1740,
+            690
+          ],
+          [
+            1740,
+            620
+          ],
+          [
+            1920,
+            700
+          ]
+        ],
+        "fill": "#6e5440",
+        "note": "low knee wall right"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            30,
+            790
+          ],
+          [
+            300,
+            790
+          ],
+          [
+            320,
+            900
+          ],
+          [
+            10,
+            900
+          ]
+        ],
+        "fill": "#2e241c",
+        "note": "opening in the floor with a wooden staircase going down (exit to the ZVON room)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          800,
+          220,
+          16
+        ],
+        "fill": "#8a6a46",
+        "note": "top stair tread"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          640,
+          18,
+          240
+        ],
+        "fill": "#6e4e34",
+        "note": "newel post of the stair railing"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            309,
+            650
+          ],
+          [
+            30,
+            690
+          ]
+        ],
+        "color": "#6e4e34",
+        "width": 12,
+        "note": "handrail along the stair opening"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          680,
+          14,
+          120
+        ],
+        "fill": "#6e4e34"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          284,
+          54,
+          440
+        ],
+        "fill": "#7a5636",
+        "note": "massive oak post carrying the tie beam (the beam prop), standing on the floor"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1327,
+            420
+          ],
+          [
+            1200,
+            284
+          ]
+        ],
+        "color": "#7a5636",
+        "width": 22,
+        "note": "diagonal brace"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1327,
+            420
+          ],
+          [
+            1460,
+            284
+          ]
+        ],
+        "color": "#7a5636",
+        "width": 22
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          640,
+          470,
+          20
+        ],
+        "fill": "#9a7450",
+        "note": "plain wooden work table, top y 650"
+      },
+      {
+        "type": "rect",
+        "box": [
+          534,
+          660,
+          18,
+          110
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          958,
+          660,
+          18,
+          110
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          570,
+          622,
+          160,
+          22
+        ],
+        "fill": "#efe6c8",
+        "note": "small stack of waxed paper sheets (slightly translucent, yellowish sheen)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          810,
+          628,
+          130,
+          18
+        ],
+        "fill": "#c8a26a",
+        "note": "a thin amateur-theatre script booklet with a buff paper cover"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1030,
+          660,
+          200,
+          110
+        ],
+        "fill": "#6a4c30",
+        "note": "old wooden chest"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1060,
+          580,
+          150,
+          82
+        ],
+        "fill": "#5f6e66",
+        "note": "grey-green steel archive box with a handle and a hasp, on the chest"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          568,
+          50,
+          12
+        ],
+        "fill": "#3e4a44"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          690,
+          260,
+          110
+        ],
+        "fill": "#8a5a34",
+        "note": "old brown leather suitcase lying on the floor, empty, closed"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1540,
+          676,
+          70,
+          16
+        ],
+        "fill": "#4a3424",
+        "note": "handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          735,
+          260,
+          10
+        ],
+        "fill": "#6e4628",
+        "note": "strap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1760,
+          640,
+          120,
+          120
+        ],
+        "fill": "#7a6040",
+        "note": "stacked old wooden crates under the right slope"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S40.json",
+  "blocking": {
+    "version": 1,
+    "room": "S40",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Technical archive loft: the unrenovated tiled-roof attic above the workshop in the manor outbuilding (S35/S36), June 1960 (type references: Melnicka Vrutice attic, Doubrava Lipova plank floor). Frontal camera ~1.7 m high looking along the attic to the brick gable with its small window: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~160 px per metre at the table, foot y ~770). Safe plank floor (no climbing): a wooden staircase with a handrail comes up through an opening in the floor at the front left (exit to S39). A plain work table stands in the middle with the waxed paper sheets and, after Q7A, Rudo's forgotten script; the steel archive box stands on an old chest to its right; a massive oak post with braces carries the tie beam; the empty old suitcase lies on the floor on the right. The walk polygon is the plank floor in front of the table, chest and suitcase, around the stair opening.",
+    "background": "bg_natural/S40.webp",
+    "walk_polygon": [
+      [
+        340,
+        800
+      ],
+      [
+        1440,
+        800
+      ],
+      [
+        1440,
+        820
+      ],
+      [
+        1720,
+        820
+      ],
+      [
+        1720,
+        800
+      ],
+      [
+        1900,
+        800
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ],
+      [
+        20,
+        915
+      ],
+      [
+        340,
+        915
+      ]
+    ],
+    "walk_band": [
+      800,
+      1015
+    ],
+    "actor_scale": [
+      0.606,
+      1.0
+    ],
+    "spawn": [
+      420,
+      950
+    ],
+    "hotspots": {
+      "S40.paper": {
+        "rect": [
+          556,
+          598,
+          186,
+          58
+        ],
+        "interaction_point": [
+          650,
+          850
+        ],
+        "label_anchor": [
+          650,
+          588
+        ],
+        "reason": "small stack of waxed paper sheets on the left half of the work table (hidden after I11)"
+      },
+      "S40.box": {
+        "rect": [
+          1050,
+          560,
+          172,
+          112
+        ],
+        "interaction_point": [
+          1135,
+          850
+        ],
+        "label_anchor": [
+          1135,
+          550
+        ],
+        "reason": "grey-green steel archive box with a handle and a hasp, standing on the old chest right of the table"
+      },
+      "S40.script": {
+        "rect": [
+          796,
+          604,
+          158,
+          54
+        ],
+        "interaction_point": [
+          875,
+          850
+        ],
+        "label_anchor": [
+          875,
+          594
+        ],
+        "reason": "Rudo's forgotten amateur-theatre script lying on the right half of the work table (shown after Q7A until Q7B)"
+      },
+      "S40.ambient 1": {
+        "rect": [
+          1440,
+          668,
+          280,
+          140
+        ],
+        "interaction_point": [
+          1580,
+          870
+        ],
+        "label_anchor": [
+          1580,
+          658
+        ],
+        "reason": "old brown leather suitcase lying closed on the floor on the right"
+      },
+      "S40.ambient 2": {
+        "rect": [
+          1290,
+          290,
+          74,
+          430
+        ],
+        "interaction_point": [
+          1327,
+          850
+        ],
+        "label_anchor": [
+          1327,
+          280
+        ],
+        "reason": "the massive oak post with two braces carrying the tie beam of the roof"
+      }
+    },
+    "exits": {
+      "S40.to_S39": {
+        "rect": [
+          20,
+          640,
+          310,
+          270
+        ],
+        "interaction_point": [
+          360,
+          930
+        ],
+        "label_anchor": [
+          180,
+          630
+        ],
+        "reason": "the wooden staircase with a handrail going down through the opening in the floor at the front left"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S40.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:48:47"
+  }
+}

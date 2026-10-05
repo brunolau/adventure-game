@@ -1,0 +1,533 @@
+{
+  "room": "S10",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2021010,
+  "usd": 0.15,
+  "started": "2026-10-05T11:15:10",
+  "spend_log_asset": "bg_natural/S10/S10_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S10.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the back room of grandmother Mira's old garden workshop in the old core of Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of a real narrow converted workshop (a long bench along the wall, shelves, a small window on the wall); image 3 shows real low-voltage bench electronics (an opened chassis, meters); image 4 is our finished painting of the anteroom of the same outbuilding: paint this room with exactly the same whitewashed lime plaster with bare red-brick patches and damp streaks, the same heavy dark timber beam at the top and the same worn wide pine floorboards. The device and the room's contents are invented.\n\nBrief: the back room with a low-voltage bench device, three shaped connectors, a large paper schematic and a blue light in a round frame. Thursday 29 October 2020, afternoon: warm low sunlight from the small window and from the doorway at the left, and the soft blue glow of the round frame tinting the wall around it.\n\nCamera: standing inside the room, about 2.2 m high, looking straight at its long wall, which is parallel to the picture and fills the whole picture up to the top edge - the ceiling is NOT visible, only one heavy dark timber beam along the very top edge; no side walls. Vertical lines stay vertical. Keep this exact geometry from the sketch (the camera stays this far from the wall, exactly as in image 4, do not move closer): the wall meets the floor at y 790 (73 % from the top) along the whole width; the doorway at the left x 40-270, y 356-790; the workbench top at y 606 (56 %) from x 300 to 1220; the schematic y 110-360; the round frame x 1350-1590, y 250-490; the window x 1640-1890, y 322-554; the floorboards from y 790 to the bottom edge are empty. Everything stands against the wall with its feet at y 790-800.\n\nWhat the sketch blocks are, left to right: the doorway in a timber frame showing the warm sunlit anteroom beyond; the whitewashed wall; the long old workbench with a drawer, a crate of old parts and a metal toolbox under it; on the bench the ZVON table node and a small unbranded bench power supply with knobs and a needle meter, connected by a red cable; the big paper schematic pinned to the wall above the bench; the shape connector panel under it; the mug of pencils; the yellow warning card; the big round brass frame on the wall with a soft blue light inside it; the small old window showing Mira's garden (yellow vine leaves with dark grapes, the green picket fence, an old fruit tree); a stack of wooden crates on the floor under the window; the worn pine floorboards.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 330-562, y 492-610 of the 1920x1080 frame (17-29 % from the left, 46-56 % from the top): the ZVON table node: a polished mahogany base with an empty brass ring socket in the middle (with tick marks), two brass terminal posts, and at its front a glass fuse in a holder under a small hinged brass service cover - the fuse is clearly blown: its glass is blackened with soot.\n2. the block of the layout sketch at x 775-1065, y 375-565 of the 1920x1080 frame (40-55 % from the left, 35-52 % from the top): the shape connector panel on the wall: on the left three shaped sockets one above the other - a circle, a triangle, a square - and on the right three loose cables with matching shaped plugs (circle, triangle, square) hanging unplugged; the big paper schematic above shows lines from circle to circle, triangle to triangle and square to square with arrows, no words or digits.\n3. the block of the layout sketch at x 1072-1158, y 530-610 of the 1920x1080 frame (56-60 % from the left, 49-56 % from the top): a chipped orange enamel mug full of pencils and one marker, at the right end of the bench.\n4. the block of the layout sketch at x 1184-1296, y 414-526 of the 1920x1080 frame (62-68 % from the left, 38-49 % from the top): a yellow card with a red border and a red warning triangle, three lines of red hand-written scribbles under it (illegible, no letters, no digits), pinned to the wall.\nThe doorway at the left is the area of the layout sketch at x 24-286, y 342-812 of the 1920x1080 frame (1-15 % from the left, 32-75 % from the top).\n\nWalkable floor: the band at x 20-1900, y 812-1015 of the 1920x1080 frame (1-99 % from the left, 75-94 % from the top) is the worn wide pine floorboard floor - one continuous flat surface with no step, no rug and no cable on it, and nothing standing on it: no boxes, no stools, no tools, no people. Only light, the window's sun patch, a faint blue reflection and a little dust.\nThis room has no NPC zones.\n\nFiction rules: invented device; no real equipment brands, no readable text, no digits anywhere (the meters show ticks only, the schematic only shapes and arrows, the warning card only scribbles). No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S10_sketch.png (rendered from art/prompts/natural/S10.sketch.json, model geometry)",
+    "art/source/rooms/S10/garage_workshop_shixart1985.jpg",
+    "art/source/rooms/S01/radios_in_repose_eli_dark.jpg",
+    "src/game/assets/bg_natural/S09.webp",
+    "src/game/assets/bg_natural/S06.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S10 natural blocking (src/game/data/blocking/S10.json): back room of the workshop (same building and camera as S09): frontal wall, foot y 790, wall to the top edge with one beam; doorway back to S09 at the left.",
+    "background": "#e6dccb",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          790
+        ],
+        "fill": "#e6dccb",
+        "note": "old whitewashed lime plaster over brick (same building as S09), filling the picture to the top edge (ceiling not visible)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          44
+        ],
+        "fill": "#4a3626",
+        "note": "one heavy dark timber ceiling beam along the very top edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          150,
+          160,
+          100
+        ],
+        "fill": "#b8573a",
+        "note": "patch of bare red brick"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          600,
+          160,
+          170
+        ],
+        "fill": "#c9cfa8",
+        "note": "greenish damp stain low on the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          778,
+          1920,
+          14
+        ],
+        "fill": "#7a5a3c",
+        "note": "dark wooden skirting"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          790,
+          1920,
+          290
+        ],
+        "fill": "#b98a58",
+        "note": "worn wide pine floorboards (walk band)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          24,
+          342,
+          262,
+          452
+        ],
+        "fill": "#6b4a2e",
+        "note": "timber frame of the doorway back to the anteroom"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          356,
+          230,
+          434
+        ],
+        "fill": "#d9c09a",
+        "note": "doorway: the warm sunlit anteroom (S09) beyond, its whitewashed wall and floorboards"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          606,
+          920,
+          20
+        ],
+        "fill": "#8a5a34",
+        "note": "long old workbench top against the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          312,
+          626,
+          18,
+          168
+        ],
+        "fill": "#5e3e24",
+        "note": "bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          626,
+          18,
+          168
+        ],
+        "fill": "#5e3e24",
+        "note": "bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          626,
+          860,
+          46
+        ],
+        "fill": "#6e4a2c",
+        "note": "bench apron with a drawer"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          700,
+          180,
+          92
+        ],
+        "fill": "#7a6a52",
+        "note": "wooden crate of old parts under the bench"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          720,
+          150,
+          72
+        ],
+        "fill": "#6a7a8a",
+        "note": "metal toolbox under the bench"
+      },
+      {
+        "type": "rect",
+        "box": [
+          336,
+          560,
+          220,
+          46
+        ],
+        "fill": "#6a2e1e",
+        "note": "the ZVON table node: polished mahogany base"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          392,
+          500,
+          96,
+          70
+        ],
+        "fill": "#c9a24a",
+        "note": "brass ring socket on the node (empty)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          500,
+          522,
+          40,
+          38
+        ],
+        "fill": "#d8d8d0",
+        "note": "glass fuse in a holder under a small hinged brass service cover"
+      },
+      {
+        "type": "rect",
+        "box": [
+          344,
+          530,
+          14,
+          30
+        ],
+        "fill": "#b08a3a",
+        "note": "brass terminal post"
+      },
+      {
+        "type": "rect",
+        "box": [
+          590,
+          520,
+          170,
+          86
+        ],
+        "fill": "#6b6f66",
+        "note": "small unbranded low-voltage bench power supply with knobs and a needle meter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          560,
+          40,
+          10
+        ],
+        "fill": "#c0302a",
+        "note": "red cable from the supply to the node"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          110,
+          460,
+          250
+        ],
+        "fill": "#f2ead6",
+        "note": "big sheet of paper schematic pinned to the wall: circle-to-circle, triangle-to-triangle, square-to-square"
+      },
+      {
+        "type": "rect",
+        "box": [
+          780,
+          380,
+          280,
+          180
+        ],
+        "fill": "#4a4e52",
+        "note": "shape connector panel mounted on the wall: three shaped sockets on the left, three shaped plugs on loose cables on the right"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          410,
+          40,
+          40
+        ],
+        "fill": "#d8c040",
+        "note": "circle socket"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          460,
+          40,
+          40
+        ],
+        "fill": "#40a050",
+        "note": "triangle socket"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          510,
+          40,
+          40
+        ],
+        "fill": "#c04040",
+        "note": "square socket"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1082,
+          540,
+          66,
+          66
+        ],
+        "fill": "#d8742e",
+        "note": "chipped orange enamel mug full of pencils"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1190,
+          420,
+          100,
+          100
+        ],
+        "fill": "#f0d040",
+        "note": "yellow warning card with a red border pinned to the wall"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1350,
+          250,
+          240,
+          240
+        ],
+        "fill": "#c9a24a",
+        "note": "big round brass frame on the wall"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1376,
+          276,
+          188,
+          188
+        ],
+        "fill": "#7ab8ff",
+        "note": "soft blue light inside the round frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1640,
+          322,
+          250,
+          232
+        ],
+        "fill": "#eef0ee",
+        "note": "small old window with a white frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1656,
+          338,
+          218,
+          200
+        ],
+        "fill": "#9ab55a",
+        "note": "through the window: the garden - yellow vine leaves with dark grapes, the green picket fence, an old fruit tree"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1630,
+          552,
+          270,
+          14
+        ],
+        "fill": "#d9d6cf",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1660,
+          690,
+          200,
+          102
+        ],
+        "fill": "#8a6a3a",
+        "note": "stack of wooden crates on the floor at the wall"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S10.json",
+  "blocking": {
+    "version": 1,
+    "room": "S10",
+    "status": "natural re-blocking (product-owner decision 2026-10-05)",
+    "note": "Back room of the garden workshop of the S05 property (same building and the same camera as S09): camera ~2.2 m, looking straight at the whitewashed wall (foot y 790, ~240 px per metre), the wall to the top edge with one beam. Left: the doorway back to the sunny anteroom (S09). Along the wall: the long old workbench with the ZVON table node (mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover) and the small bench supply, the shape connector panel on the wall above the bench under the big paper schematic, the enamel mug of pencils at the bench's right end, the yellow warning card pinned beside it, the big round brass frame with the blue light, the small window to the garden (vine, picket fence, fruit tree).",
+    "background": "bg_natural/S10.webp",
+    "walk_polygon": [
+      [
+        20,
+        812
+      ],
+      [
+        1900,
+        812
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      812,
+      1015
+    ],
+    "actor_scale": [
+      0.79,
+      1.05
+    ],
+    "spawn": [
+      300,
+      920
+    ],
+    "hotspots": {
+      "S10.chrono": {
+        "rect": [
+          330,
+          492,
+          232,
+          118
+        ],
+        "interaction_point": [
+          446,
+          850
+        ],
+        "label_anchor": [
+          446,
+          482
+        ],
+        "reason": "the ZVON table node on the workbench: mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover"
+      },
+      "S10.panel": {
+        "rect": [
+          775,
+          375,
+          290,
+          190
+        ],
+        "interaction_point": [
+          920,
+          850
+        ],
+        "label_anchor": [
+          920,
+          365
+        ],
+        "reason": "shape connector panel on the wall above the bench, under the big paper schematic"
+      },
+      "S10.ambient 1": {
+        "rect": [
+          1072,
+          530,
+          86,
+          80
+        ],
+        "interaction_point": [
+          1115,
+          850
+        ],
+        "label_anchor": [
+          1115,
+          520
+        ],
+        "reason": "chipped orange enamel mug full of pencils at the right end of the bench"
+      },
+      "S10.ambient 2": {
+        "rect": [
+          1184,
+          414,
+          112,
+          112
+        ],
+        "interaction_point": [
+          1240,
+          850
+        ],
+        "label_anchor": [
+          1240,
+          404
+        ],
+        "reason": "yellow warning card with a red border pinned to the wall"
+      }
+    },
+    "exits": {
+      "S10.to_S09": {
+        "rect": [
+          24,
+          342,
+          262,
+          470
+        ],
+        "interaction_point": [
+          155,
+          840
+        ],
+        "label_anchor": [
+          155,
+          332
+        ],
+        "reason": "the doorway back to the anteroom (S09)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S10.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T11:15:58"
+  }
+}

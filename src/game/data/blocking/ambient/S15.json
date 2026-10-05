@@ -1,0 +1,127 @@
+{
+ "room": "S15",
+ "notes": "Natural S15 (bg_natural/S15.webp), the physics cabinet on 15 June 1995, late afternoon sun. Wind in the forecourt maples outside the SW window (cut from the natural painting), a car passing now and then on Sokolikova street behind the trees, birds crossing, dust motes turning in the sunbeams over the floor, the prism's rainbow on the sill brightening and fading as the leaves move in the sun (room ambience: a creaking cupboard, the metal tone of a model).",
+ "layers": [
+  {
+   "id": "window_trees",
+   "type": "sway",
+   "texture": "S15/natural/window_trees.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.27,
+   "wavelength_px": 90,
+   "flutter_px": 0.7
+  },
+  {
+   "id": "street_car",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [
+    [
+     1100,
+     566
+    ],
+    [
+     1680,
+     566
+    ]
+   ],
+   "speed_px_s": 180,
+   "speed_jitter": [
+    0.85,
+    1.15
+   ],
+   "scale": 0.36,
+   "bob_px": 0.4,
+   "bob_hz": 2.0,
+   "direction": "random",
+   "every_s": [
+    12,
+    30
+   ],
+   "start_s": [
+    2,
+    8
+   ],
+   "mask": "S15/natural/road_mask.webp"
+  },
+  {
+   "id": "birds_outside",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     1600,
+     330
+    ],
+    [
+     1400,
+     290
+    ],
+    [
+     1180,
+     320
+    ]
+   ],
+   "speed_px_s": 170,
+   "scale": 0.06,
+   "flock": 2,
+   "flock_spread": [
+    40,
+    18
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    5,
+    12
+   ],
+   "mask": "S15/natural/window_mask.webp"
+  },
+  {
+   "id": "dust_sunbeams",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1080,
+    300,
+    640,
+    640
+   ],
+   "count": 34,
+   "size": [
+    3.5,
+    8
+   ],
+   "alpha_range": [
+    0.25,
+    0.75
+   ],
+   "color": "#fff0c4"
+  },
+  {
+   "id": "rainbow_shimmer",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1262,
+    586,
+    82,
+    26
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff6e0",
+   "blend": "add",
+   "min": 0.05,
+   "max": 0.6,
+   "period_s": 1.8
+  }
+ ]
+}

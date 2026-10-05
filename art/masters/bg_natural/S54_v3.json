@@ -1,0 +1,27 @@
+{
+  "kind": "fix-recomposite (free)",
+  "from_version": 1,
+  "box_game_px": [
+    1325.0,
+    565.0,
+    405.0,
+    335.0
+  ],
+  "feather_master_px": 30,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "usd": 0.0,
+  "scope": "",
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S54_S54_v2_fix_raw.png",
+  "note": "S54 refurbished laptops: the v2 fix raw output re-composited with a bigger box (the model drew the table ~80 px further left than the v2 box)",
+  "started": "2026-10-05T10:51:40",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Fyzikálny kabinet in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'cupboard_left_hinge' stays exactly at x 284, y 480 (15 % from the left, 44 % from the top). The fixed landmark 'window' stays exactly at x 1390, y 362 (72 % from the left, 34 % from the top). The fixed landmark 'service_table' stays exactly at x 706, y 695 (37 % from the left, 64 % from the top).\n\nEra changes: the same physics cabinet 25 years later, on Thursday 29 October 2020 at about half past three in the afternoon, during the pandemic. Outside the window the forecourt maples are in autumn colours (yellow and orange leaves, some bare twigs) under a pale autumn sky; the low autumn sun still comes in through the window, paler and cooler than in June. The old timber window frame is replaced by a plain white plastic window in exactly the same opening, its right casement tilted open for airing. The timber cupboards are the same but older and more worn; the scuff on the leftmost cupboard's left hinge strip is larger and darker. The ZVON drawing is gone: in its place hangs a plain printed sheet with hand-washing pictograms (no text). The walls keep their plain soft yellow paint and dado, a little more scuffed. The two old bench power supplies are gone from the bench: instead its left half holds Jana's call laptop place (keep that spot free, see below) and its middle and right part are covered with several grey and black laptops, some closed and stacked, some open with dark screens, and a coiled power cable; on the floor in front of the cupboards nothing. On the top of the cupboards a few cardboard boxes of old teaching aids sorted for loan with paper labels (illegible). Everything built - walls, doors, cupboards, the window opening, the radiator, the white bench, the book stand - stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Servisná kniha z roku 1982' in image 2 (x 1050-1210, y 585-690 of the 1920x1080 frame (55-63 % from the left, 54-64 % from the top)): an old worn A4 service log book from 1982 with a faded brown cardboard cover, lying open on the small wooden book stand on the right end of the bench (where the chronicle lay), its pages with illegible handwriting and a small pencil sketch.\n2. the box labelled 'Stará skriňa' in image 2 (x 256-336, y 300-620 of the 1920x1080 frame (13-18 % from the left, 28-57 % from the top)): the left hinge strip of the leftmost cupboard with its big old worn scuff in the paint.\n3. the box labelled 'Notebook' in image 2 (x 945-1060, y 615-695 of the 1920x1080 frame (49-55 % from the left, 57-64 % from the top)): one open grey laptop standing on the bench, its screen dark with a faint reflection.\nThe door in the left wall stays the box labelled 'exit: Školské zádverie v roku 2020' in image 2 (x 55-190, y 395-955 of the 1920x1080 frame (3-10 % from the left, 37-88 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 830-1015 of the 1920x1080 frame (1-99 % from the left, 77-94 % from the top) stays the open grey-green linoleum floor with nothing standing on it.\nNPC zone at x 760-920, y 568-686 of the 1920x1080 frame (40-48 % from the left, 53-64 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 880. The bench top at the left half of the bench, inside that zone, stays clear and empty (only the white bench top): a laptop with Jana's video call will be placed there later.\n\nFiction rules: no logos and no brand names on the laptops or anywhere, no readable text (labels and notes are illegible scribbles, no digits), no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S54",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

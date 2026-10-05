@@ -1,0 +1,834 @@
+{
+  "room": "S56",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020656,
+  "usd": 0.15,
+  "started": "2026-10-05T10:26:42",
+  "spend_log_asset": "bg_natural/S56/S56_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S56.txt",
+  "prompt": "You receive 4 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-3 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 4 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the ground floor of the primary school ZS Sokolikova 2 in Bratislava-Dubravka, Slovakia, on its south-west facade, at its last ground-floor window before the building corner: the school caretaker's service window. Image 2 is a photo of this real facade (2016): ribbon windows with white PVC frames, walls and plinth clad in small grey-and-white mosaic tiles. Image 3 is our own painting of the school entrance in the same autumn 2020: this window is its last window before the corner at the far right; keep the same facade, colours and light.\n\nBrief: a close-up of the service window on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight from the left falling straight onto the facade, soft shadows, yellow and orange autumn trees in the school yard beyond the corner, a few fallen leaves on the path. The window is closed; behind its glass is the caretaker's small workshop (dim: shelves with tools, a lamp, a workbench), the caretaker himself will be added later as a separate character, so the glass shows no person. The window has a deeper reveal and a protruding light stone sill; on the sill at its left end stands a small dark metal ornament in the shape of a swallow (a flat sheet-metal cut-out, slightly chipped). Behind the left pane, on the inner sill, a hand-repaired wooden birdhouse (patched with a lighter new board, a few nails).\n\nCamera: eye level 1.7 m, looking straight at the facade, which is parallel to the picture (vertical lines vertical, horizontal lines horizontal); horizon at y 503. Keep this exact geometry from the sketch: the path along the facade from y 881 to the bottom edge; the grey mosaic plinth from y 690 to y 881; the service window's opening x 797-1223, y 192-681 with its white frame, a central mullion at x ~1010, a transom at y ~320 with two small top panes; the top edge of the stone sill as one straight horizontal line at y 681 across x 781-1240; two neighbouring ribbon windows at the left (x 338-724 and a part of one at the far left); the building corner at x 1292; beyond it the school yard: asphalt, a wire-mesh fence, autumn trees, blue sky, a panel tower block far away.\n\nWhat the sketch blocks are: the facade wall clad in small grey-and-white mosaic tiles up to the top edge (the upper floor is above the picture); the two neighbouring windows with plain narrow sills; the service window with its deep reveal, white PVC frame, two big panes and two small top panes; its stone sill; the swallow ornament; the birdhouse behind the left pane; the building corner; the school yard; the concrete path along the bottom.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 785-1020, y 615-705 of the 1920x1080 frame (41-53 % from the left, 57-65 % from the top): the protruding light stone sill and, at its left end, the small dark metal swallow ornament standing on it (a sheet-metal swallow with spread tail, a little chipped).\n2. the block of the layout sketch at x 862-977, y 528-663 of the 1920x1080 frame (45-51 % from the left, 49-61 % from the top): the hand-repaired wooden birdhouse standing on the inner sill behind the left pane, seen through the glass (pitched roof, round entrance hole, one lighter new board).\nNPC zone at x 1035-1167, y 520-681 of the 1920x1080 frame (54-61 % from the left, 48-63 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character is seen through a window: paint the window sill exactly at y 681 across x 1005-1197; the opening above the sill shows a plain, dim interior, no person.\nThe path continues out of the left edge back to the school entrance (the area of the layout sketch at x 0-64, y 860-1015 of the 1920x1080 frame (0-3 % from the left, 80-94 % from the top)).\n\nWalkable floor: the band at x 0-1920, y 885-1015 of the 1920x1080 frame (0-100 % from the left, 82-94 % from the top) is the concrete path along the facade - one continuous flat surface with no kerb, step, edge or change of material inside it, and nothing standing on it: no bins, no bags, no leaves piles, no people. Only light, shadows and a few fallen leaves.\nFixed architectural anchor 'swallow' at x 865, y 647. Fixed architectural anchor 'window_frame' at x 1010, y 437. Fixed architectural anchor 'sill' at x 1010, y 681.\n\nFiction rules: no readable text, no logos, no house numbers, no posters. No people (the window glass shows only the dim workshop and soft reflections), no animals (the swallow is a metal ornament). Any paper shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S56_sketch.png (rendered from art/prompts/natural/S56.sketch.json, model geometry)",
+    "art/source/rooms/S56/school-ground-floor-windows_wizzard-2016_original.jpg",
+    "src/game/assets/bg_natural/S52.webp",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S56 natural blocking sketch (pinhole camera: f 2000 px, eye 1.7 m, horizon y 503; frontal facade 9 m away, 222 px per metre; service window x 810-1210, sill line y 681; building corner x 1292, the school yard beyond).",
+    "background": "#b9d3ea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          560
+        ],
+        "fill": "#b9d3ea",
+        "note": "sky (autumn afternoon), seen past the corner"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1038,
+            541
+          ],
+          [
+            1304,
+            541
+          ],
+          [
+            1304,
+            -126
+          ],
+          [
+            1038,
+            -126
+          ]
+        ],
+        "fill": "#d9c8a8",
+        "note": "a panel tower block far behind the yard"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1292,
+            330
+          ],
+          [
+            1400,
+            250
+          ],
+          [
+            1520,
+            300
+          ],
+          [
+            1640,
+            220
+          ],
+          [
+            1780,
+            280
+          ],
+          [
+            1920,
+            240
+          ],
+          [
+            1920,
+            640
+          ],
+          [
+            1292,
+            640
+          ]
+        ],
+        "fill": "#c98a3a",
+        "note": "autumn trees of the school yard"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1292,
+            881
+          ],
+          [
+            9849,
+            881
+          ],
+          [
+            3627,
+            616
+          ],
+          [
+            1060,
+            616
+          ]
+        ],
+        "fill": "#7f7c78",
+        "note": "asphalt of the school yard"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1222,
+            490
+          ],
+          [
+            4710,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence top wire"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1272,
+            716
+          ],
+          [
+            1272,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1522,
+            716
+          ],
+          [
+            1522,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1772,
+            716
+          ],
+          [
+            1772,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2022,
+            716
+          ],
+          [
+            2022,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2272,
+            716
+          ],
+          [
+            2272,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            2522,
+            716
+          ],
+          [
+            2522,
+            490
+          ]
+        ],
+        "color": "#6c777b",
+        "width": 3,
+        "note": "yard fence post"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            881
+          ],
+          [
+            1920,
+            881
+          ],
+          [
+            1920,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#a8a196",
+        "note": "concrete path along the facade"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -40,
+            881
+          ],
+          [
+            1292,
+            881
+          ],
+          [
+            1292,
+            -53
+          ],
+          [
+            -40,
+            -53
+          ]
+        ],
+        "fill": "#c9c6c0",
+        "note": "facade wall: small grey-and-white mosaic tiles"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -40,
+            881
+          ],
+          [
+            1292,
+            881
+          ],
+          [
+            1292,
+            690
+          ],
+          [
+            -40,
+            690
+          ]
+        ],
+        "fill": "#b3afa8",
+        "note": "plinth (grey mosaic), slightly darker"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1265,
+            881
+          ],
+          [
+            1292,
+            881
+          ],
+          [
+            1292,
+            -53
+          ],
+          [
+            1265,
+            -53
+          ]
+        ],
+        "fill": "#a9a6a0",
+        "note": "building corner edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -106,
+            678
+          ],
+          [
+            249,
+            678
+          ],
+          [
+            249,
+            196
+          ],
+          [
+            -106,
+            196
+          ]
+        ],
+        "fill": "#5a6e78",
+        "note": "neighbouring ground-floor window (ribbon)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            70,
+            679
+          ],
+          [
+            70,
+            195
+          ]
+        ],
+        "color": "#f2f0ea",
+        "width": 10,
+        "note": "window mullion (white PVC)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            -108,
+            316
+          ],
+          [
+            248,
+            316
+          ]
+        ],
+        "color": "#f2f0ea",
+        "width": 9,
+        "note": "window transom"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -137,
+            695
+          ],
+          [
+            247,
+            695
+          ],
+          [
+            247,
+            682
+          ],
+          [
+            -137,
+            682
+          ]
+        ],
+        "fill": "#e6e3dc",
+        "note": "plain narrow sill"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            338,
+            678
+          ],
+          [
+            723,
+            678
+          ],
+          [
+            723,
+            196
+          ],
+          [
+            338,
+            196
+          ]
+        ],
+        "fill": "#5a6e78",
+        "note": "neighbouring ground-floor window (ribbon)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            530,
+            679
+          ],
+          [
+            530,
+            195
+          ]
+        ],
+        "color": "#f2f0ea",
+        "width": 10,
+        "note": "window mullion (white PVC)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            337,
+            316
+          ],
+          [
+            723,
+            316
+          ]
+        ],
+        "color": "#f2f0ea",
+        "width": 9,
+        "note": "window transom"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            315,
+            695
+          ],
+          [
+            730,
+            695
+          ],
+          [
+            730,
+            682
+          ],
+          [
+            315,
+            682
+          ]
+        ],
+        "fill": "#e6e3dc",
+        "note": "plain narrow sill"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            797,
+            681
+          ],
+          [
+            1223,
+            681
+          ],
+          [
+            1223,
+            192
+          ],
+          [
+            797,
+            192
+          ]
+        ],
+        "fill": "#9d9a94",
+        "note": "deep reveal of the service window"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            823,
+            665
+          ],
+          [
+            1195,
+            665
+          ],
+          [
+            1195,
+            211
+          ],
+          [
+            823,
+            211
+          ]
+        ],
+        "fill": "#3e4a52",
+        "note": "service window glass: dim workshop interior behind it"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1009,
+            665
+          ],
+          [
+            1009,
+            211
+          ]
+        ],
+        "color": "#f4f2ec",
+        "width": 16,
+        "note": "central mullion (white frame)"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            823,
+            319
+          ],
+          [
+            1195,
+            319
+          ]
+        ],
+        "color": "#f4f2ec",
+        "width": 14,
+        "note": "transom: small top panes above"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            827,
+            665
+          ],
+          [
+            827,
+            211
+          ]
+        ],
+        "color": "#f4f2ec",
+        "width": 14,
+        "note": "outer frame"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1191,
+            665
+          ],
+          [
+            1191,
+            211
+          ]
+        ],
+        "color": "#f4f2ec",
+        "width": 14,
+        "note": "outer frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            781,
+            696
+          ],
+          [
+            1240,
+            696
+          ],
+          [
+            1240,
+            678
+          ],
+          [
+            781,
+            678
+          ]
+        ],
+        "fill": "#d8d2c4",
+        "note": "protruding light stone sill (top edge = sill line y 681)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            827,
+            675
+          ],
+          [
+            903,
+            675
+          ],
+          [
+            903,
+            619
+          ],
+          [
+            827,
+            619
+          ]
+        ],
+        "fill": "#3c3f44",
+        "note": "small dark metal swallow ornament standing on the sill (left end)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            869,
+            659
+          ],
+          [
+            970,
+            659
+          ],
+          [
+            970,
+            535
+          ],
+          [
+            869,
+            535
+          ]
+        ],
+        "fill": "#a0703c",
+        "note": "hand-repaired wooden birdhouse on the inner sill behind the left pane"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1292,
+            881
+          ],
+          [
+            1920,
+            860
+          ],
+          [
+            1920,
+            881
+          ]
+        ],
+        "fill": "#a8a196",
+        "note": "path"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S56.json",
+  "blocking": {
+    "version": 1,
+    "room": "S56",
+    "status": "natural re-blocking (docs/DECISIONS.md items 1 and 2: Tono 50 as a window bust behind the closed glass); base of camera family L_WINDOW (S64 1982 is derived with identical anchors, walk polygon, walk_band, actor_scale and sill line)",
+    "note": "Close-up of the caretaker's service window, the last ground-floor window of ZS Sokolikova's SW facade before the building corner (the window at x ~1640-1760 in S52). Pinhole camera: eye 1.7 m, horizon y 503, f ~2000 px, facade frontal 9 m away (222 px per metre): the facade foot at y 881, the stone sill's top edge (the bust cut line) at y 681 (H 0.9 m), the window opening x 810-1210, y 193-681, the building corner at x 1292 with the school yard beyond. Ground y = 503 + 3400 / Z: the walk band (the concrete path along the facade) runs from y 885 (9 m) to 1015 (6.6 m). Scale s(y) = (y - 503) / 512. The bust stands ~1 m behind the glass (Z 10 m, scale 0.664).",
+    "background": "bg_natural/S56.webp",
+    "walk_polygon": [
+      [
+        0,
+        885
+      ],
+      [
+        1920,
+        885
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      885,
+      1015
+    ],
+    "actor_scale": [
+      0.75,
+      1.0
+    ],
+    "spawn": [
+      420,
+      950
+    ],
+    "anchors": {
+      "window_frame": [
+        1010,
+        437
+      ],
+      "swallow": [
+        865,
+        647
+      ],
+      "sill": [
+        1010,
+        681
+      ]
+    },
+    "hotspots": {
+      "S56.ambient 1": {
+        "rect": [
+          785,
+          615,
+          235,
+          90
+        ],
+        "interaction_point": [
+          900,
+          905
+        ],
+        "label_anchor": [
+          902,
+          605
+        ],
+        "reason": "the protruding stone sill with the small metal swallow ornament at its left end (anchors sill, swallow)"
+      },
+      "S56.ambient 2": {
+        "rect": [
+          862,
+          528,
+          115,
+          135
+        ],
+        "interaction_point": [
+          930,
+          905
+        ],
+        "label_anchor": [
+          860,
+          505
+        ],
+        "reason": "the hand-repaired wooden birdhouse on the inner sill behind the left pane of the closed window"
+      },
+      "S56.TONO20": {
+        "rect": [
+          1035,
+          520,
+          132,
+          161
+        ],
+        "interaction_point": [
+          1150,
+          910
+        ],
+        "label_anchor": [
+          1115,
+          505
+        ],
+        "reason": "Tono (50) behind the right pane of the closed window, bust cut at the sill"
+      }
+    },
+    "npcs": {
+      "S56.TONO20": {
+        "variant": "window_bust_glass",
+        "feet": [
+          1100,
+          843
+        ],
+        "scale": 0.664,
+        "sill_y": 681,
+        "facing": "left",
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: window bust behind the closed service window (same sill as OTO82 in S64)"
+      }
+    },
+    "exits": {
+      "S56.to_S52": {
+        "rect": [
+          0,
+          860,
+          64,
+          155
+        ],
+        "interaction_point": [
+          60,
+          950
+        ],
+        "label_anchor": [
+          190,
+          850
+        ],
+        "reason": "the path along the facade back to the main entrance (left edge)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S56.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:27:25"
+  }
+}

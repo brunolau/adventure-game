@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "room": "S02",
+  "status": "natural re-blocking (product-owner decision 2026-10-05); owner feedback: paths are narrower in reality (the shared-surface street is the only walkway)",
+  "note": "Jasenova, a living street of new family houses in Cierna Voda: camera 2.2 m standing on the concrete shared-surface street, looking straight across at the opposite plots; horizon y 360, pinhole f 1663 px so s(y) = (y - 360) / 655 like S03/S05. The visible walk band is the far half of the ~5.5 m street (5.6-9.4 m, y 1015-750), a narrow gravel strip at the fence foot (y 726-750), fences at 10 m (y 726, 166 px per metre), houses at 16-17 m. Left to right: the left neighbour's red-brick pillars with grey panels (ceramic owl on a pillar cap) and red-orange cube house, a narrow paved footpath between two plots (to the old core / Mira), Adam's grey slat fence with the open driveway gate and the driveway up to his white bungalow's open garage (S01), the mailbox on the left gate pillar, the half-open sliding gate, an intercom and a no-advertising sticker on the right gate pillar, the right neighbour's split-block plinth and thuja hedge with Roman's courier van parked in front (its rear part, rear door open).",
+  "background": "bg_natural/S02.webp",
+  "walk_polygon": [
+    [
+      0,
+      762
+    ],
+    [
+      430,
+      760
+    ],
+    [
+      470,
+      738
+    ],
+    [
+      580,
+      738
+    ],
+    [
+      610,
+      760
+    ],
+    [
+      710,
+      760
+    ],
+    [
+      740,
+      738
+    ],
+    [
+      1150,
+      738
+    ],
+    [
+      1180,
+      760
+    ],
+    [
+      1395,
+      760
+    ],
+    [
+      1395,
+      805
+    ],
+    [
+      1920,
+      805
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    738,
+    1015
+  ],
+  "actor_scale": [
+    0.58,
+    1.0
+  ],
+  "spawn": [
+    940,
+    900
+  ],
+  "hotspots": {
+    "S02.ambient 1": {
+      "rect": [
+        12,
+        398,
+        68,
+        88
+      ],
+      "interaction_point": [
+        90,
+        800
+      ],
+      "label_anchor": [
+        108,
+        388
+      ],
+      "reason": "glazed ceramic owl sitting on the cap of a brick fence pillar of the left neighbour"
+    },
+    "S02.ambient 2": {
+      "rect": [
+        606,
+        468,
+        84,
+        112
+      ],
+      "interaction_point": [
+        650,
+        775
+      ],
+      "label_anchor": [
+        648,
+        458
+      ],
+      "reason": "dark grey mailbox on the left pillar of Adam's driveway gate, colourful leaflets sticking out (no readable text)"
+    },
+    "S02.ROMAN": {
+      "rect": [
+        1245,
+        455,
+        150,
+        345
+      ],
+      "interaction_point": [
+        1150,
+        830
+      ],
+      "label_anchor": [
+        1320,
+        445
+      ],
+      "reason": "Roman the courier standing at the open rear door of his van"
+    },
+    "S02.LENKA": {
+      "rect": [
+        255,
+        458,
+        150,
+        345
+      ],
+      "interaction_point": [
+        500,
+        830
+      ],
+      "label_anchor": [
+        330,
+        448
+      ],
+      "reason": "Lenka with Bodka on the lead, standing on the street in front of the left neighbour's fence"
+    }
+  },
+  "npcs": {
+    "S02.ROMAN": {
+      "variant": "standing",
+      "feet": [
+        1320,
+        800
+      ],
+      "scale": 0.67,
+      "reason": "standing at his van (DECISIONS item 2: standing)"
+    },
+    "S02.LENKA": {
+      "variant": "standing",
+      "feet": [
+        330,
+        803
+      ],
+      "scale": 0.68,
+      "facing": "right",
+      "reason": "standing with the dog on the street (DECISIONS item 2: standing)"
+    }
+  },
+  "exits": {
+    "S02.to_S01": {
+      "rect": [
+        705,
+        560,
+        300,
+        170
+      ],
+      "interaction_point": [
+        855,
+        760
+      ],
+      "label_anchor": [
+        855,
+        550
+      ],
+      "reason": "Adam's open driveway gate; the driveway leads to his garage (the garage's open door shows this street, S01)"
+    },
+    "S02.to_S03": {
+      "rect": [
+        0,
+        770,
+        60,
+        245
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        190,
+        760
+      ],
+      "reason": "the street continues out of the left edge towards Javorova alej and the park"
+    },
+    "S02.to_S05": {
+      "rect": [
+        430,
+        560,
+        170,
+        175
+      ],
+      "interaction_point": [
+        520,
+        755
+      ],
+      "label_anchor": [
+        515,
+        550
+      ],
+      "reason": "narrow paved footpath between two plots, a short cut to the old core on Pezinska (Mira)"
+    },
+    "S02.to_S51": {
+      "rect": [
+        1860,
+        810,
+        60,
+        205
+      ],
+      "interaction_point": [
+        1855,
+        905
+      ],
+      "label_anchor": [
+        1722,
+        800
+      ],
+      "reason": "the street continues out of the right edge to the main road and the bus stop (car/bus transition to Dubravka)"
+    }
+  },
+  "state_patches": []
+}

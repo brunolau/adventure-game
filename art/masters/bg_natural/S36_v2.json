@@ -1,0 +1,833 @@
+{
+  "room": "S36",
+  "version": 2,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "usd": 0,
+  "started": "2026-10-05T10:04:40",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S36.txt",
+  "prompt": "You receive 6 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-5 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 6 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: a small workshop room inside the long single-storey service outbuilding of the manor in Ivanka pri Dunaji, Slovakia, in 1960 - an estate building of the 19th century with whitewashed walls and shallow brick vaults between steel beams. Images 2-4 are old photos of real workshops of the period (type references): image 2 a 1959 workshop with a belt wheel, ropes and benches; image 3 a wall rack full of files above a heavy workbench; image 4 a belt-driven lathe and cast-iron flywheel. Image 5 is the real courtyard of the outbuilding: a long building with a red-brown tiled roof and eyebrow dormers - that is what the windows look out on. Paint Oto's workshop from these real details: tidy, worn, practical, a civil repair workshop.\n\nBrief: Oto Bielik's civil mechanical workshop: the lathe is stopped and covered with a cloth, mechanical clocks everywhere, a small table hand pump stands on a technical drawing. Nothing military. 6 June 1960, a sunny afternoon: warm sunlight falls through the two windows onto the bench and the floor, soft dust in the light.\n\nCamera: standing in the room about 1.8 m high, facing the back wall straight on - ONE wall parallel to the picture, vertical lines vertical, no side walls visible; the horizon is at y ~470. Keep this exact geometry from the sketch: the back wall meets the floor at y 720; the wall top meets the vaulted whitewashed ceiling at y ~306; the workbench top runs along the back wall at y 590-625 from x 380 to x 1250, its legs stand on the floor at y ~750; the covered lathe stands on the floor at the right, its feet at y ~800.\n\nWhat the sketch blocks are, left to right: an old plank door at the far left of the back wall standing ajar with bright daylight in the gap; a cast-iron bench vise at the left end of the bench; a small-paned wooden window showing the sunny courtyard and the tiled roof of the outbuilding; a wooden wall rack with a row of files and rasps; a second window with leaves of a tree and tiled roofs outside; a small brass table hand pump standing on a white technical drawing on the bench; a round mechanical wall clock with a pendulum case; a plain whitewashed wall section; a patch of bare red brick where the plaster fell off; a line-shaft pulley under the ceiling with a slack leather belt hanging down to the lathe; the lathe completely covered with a grey canvas cloth on the right; a low shelf under the bench with a crate and offcuts; the worn brick floor.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 548-702, y 572-636 of the 1920x1080 frame (29-37 % from the left, 53-59 % from the top): one long flat metal file with a wooden handle lying alone on the front edge of the workbench.\n2. the block of the layout sketch at x 985-1247, y 548-636 of the 1920x1080 frame (51-65 % from the left, 51-59 % from the top): four old mechanical alarm clocks of different sizes and colours (brass, red, blue-grey, black, with twin bells on top) standing in a row on the bench, each showing a different time.\n\nThe open door at the far left is the area of the layout sketch at x 70-262, y 430-720 of the 1920x1080 frame (4-14 % from the left, 40-67 % from the top).\n\nWalkable floor: the band at x 20-1900, y 732-1015 of the 1920x1080 frame (1-99 % from the left, 68-94 % from the top) is the worn brick floor of the workshop - one continuous flat surface with no step, no rail, no edge and nothing standing on it: no stools, no buckets, no crates, no tools, no cables. Only sunlight patches, shadows and a little sawdust.\nNPC zone at x 1250-1410, y 494-860 of the 1920x1080 frame (65-73 % from the left, 46-80 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's feet stand on the floor at y 860.\n\nFiction rules: a civil workshop of 1960 - no weapons, no uniforms, no military objects, no portraits, no pin-up pictures, no posters with text, no calendars with text, no brand names or logos on any machine or clock. Paper and the drawing show only illegible lines and scribbles, no digits, no letters. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S36_sketch.png (rendered from art/prompts/natural/S36.sketch.json, model geometry)",
+    "art/source/rooms/S36/type_ref_workshop_1959_fortepan104022.jpg",
+    "art/prompts/natural/S36_ref_file_rack_1968_crop.jpg",
+    "art/prompts/natural/S36_ref_lathe_c1900_crop.jpg",
+    "art/source/rooms/S35/manor_outbuildings_yard_taz666_2013.jpg",
+    "art/prompts/natural/S36_style_from_S09.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S36 natural blocking (src/game/data/blocking/S36.json): frontal workshop, horizon y 470, back wall foot y 720, wall top y 306 under whitewashed brick vaults, workbench top y 590-625 along the back wall, covered lathe on the right.",
+    "background": "#d9d2c2",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          306
+        ],
+        "fill": "#e4dccb",
+        "note": "whitewashed ceiling: shallow brick vaults between steel beams"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          22
+        ],
+        "fill": "#4a4440",
+        "note": "steel beam along the top edge"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            300,
+            0
+          ],
+          [
+            340,
+            0
+          ],
+          [
+            820,
+            306
+          ],
+          [
+            800,
+            306
+          ]
+        ],
+        "fill": "#5a524c",
+        "note": "receding steel ceiling beam"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1580,
+            0
+          ],
+          [
+            1620,
+            0
+          ],
+          [
+            1120,
+            306
+          ],
+          [
+            1100,
+            306
+          ]
+        ],
+        "fill": "#5a524c",
+        "note": "receding steel ceiling beam"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          296,
+          1920,
+          14
+        ],
+        "fill": "#cfc5b0",
+        "note": "line where the vault meets the back wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          306,
+          1920,
+          414
+        ],
+        "fill": "#e8e0cc",
+        "note": "back wall: worn whitewash over brick"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          620,
+          1920,
+          100
+        ],
+        "fill": "#b9ad96",
+        "note": "grey-brown dado of the wall (old lime paint)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          720,
+          1920,
+          360
+        ],
+        "fill": "#a39275",
+        "note": "workshop floor: worn brick paving with a layer of dust, one plain surface"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1460,
+          360,
+          120,
+          70
+        ],
+        "fill": "#c4805e",
+        "note": "patch of bare red brick where the plaster fell off"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          430,
+          192,
+          290
+        ],
+        "fill": "#7a5a3a",
+        "note": "weathered plank door, ajar (exit to the courtyard)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          214,
+          440,
+          40,
+          270
+        ],
+        "fill": "#f0e6c4",
+        "note": "bright daylight in the gap of the open door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          62,
+          420,
+          208,
+          12
+        ],
+        "fill": "#5a4028",
+        "note": "door lintel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          356,
+          232,
+          214
+        ],
+        "fill": "#f4f2ea",
+        "note": "left small-paned wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          482,
+          368,
+          208,
+          190
+        ],
+        "fill": "#a9c7dc",
+        "note": "view: sunny courtyard, tiled roof of the outbuilding with an eyebrow dormer"
+      },
+      {
+        "type": "rect",
+        "box": [
+          482,
+          470,
+          208,
+          88
+        ],
+        "fill": "#b4552f",
+        "note": "red-brown tiled roof seen through the window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          582,
+          368,
+          8,
+          190
+        ],
+        "fill": "#f4f2ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          482,
+          460,
+          208,
+          8
+        ],
+        "fill": "#f4f2ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          460,
+          566,
+          252,
+          12
+        ],
+        "fill": "#d8cdb6",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          356,
+          232,
+          214
+        ],
+        "fill": "#f4f2ea",
+        "note": "right small-paned wooden window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          912,
+          368,
+          208,
+          190
+        ],
+        "fill": "#a9c7dc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          912,
+          480,
+          208,
+          78
+        ],
+        "fill": "#b4552f",
+        "note": "tiled roofs seen through the window"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1040,
+          372,
+          90,
+          80
+        ],
+        "fill": "#7fa34f",
+        "note": "leaves of a tree outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1012,
+          368,
+          8,
+          190
+        ],
+        "fill": "#f4f2ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          912,
+          460,
+          208,
+          8
+        ],
+        "fill": "#f4f2ea"
+      },
+      {
+        "type": "rect",
+        "box": [
+          890,
+          566,
+          252,
+          12
+        ],
+        "fill": "#d8cdb6",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          724,
+          396,
+          154,
+          12
+        ],
+        "fill": "#6a4a30",
+        "note": "wooden file rack on the wall between the windows"
+      },
+      {
+        "type": "bars",
+        "box": [
+          732,
+          408,
+          140,
+          130
+        ],
+        "step": 14,
+        "bar": 5,
+        "fill": "#3c3a38",
+        "vertical": true,
+        "note": "files and rasps hanging in the rack"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1170,
+          372,
+          70,
+          70
+        ],
+        "fill": "#f2ead6",
+        "outline": "#5a3e26",
+        "width": 8,
+        "note": "round mechanical wall clock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1196,
+          440,
+          18,
+          60
+        ],
+        "fill": "#6a4a30",
+        "note": "its pendulum case"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1272,
+          380,
+          150,
+          230
+        ],
+        "fill": "#e2d9c4",
+        "note": "plain wall behind Oto"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1700,
+          0,
+          120,
+          60
+        ],
+        "fill": "#4a4440",
+        "note": "line-shaft pulley under the ceiling"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1745,
+            40
+          ],
+          [
+            1705,
+            600
+          ]
+        ],
+        "color": "#3a2a1e",
+        "width": 10,
+        "note": "slack leather drive belt hanging down to the lathe"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1775,
+            40
+          ],
+          [
+            1745,
+            600
+          ]
+        ],
+        "color": "#3a2a1e",
+        "width": 10
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          588,
+          872,
+          38
+        ],
+        "fill": "#9a7450",
+        "note": "workbench top (thick worn planks) along the back wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          624,
+          872,
+          30
+        ],
+        "fill": "#6e5236",
+        "note": "workbench front apron"
+      },
+      {
+        "type": "rect",
+        "box": [
+          392,
+          654,
+          26,
+          100
+        ],
+        "fill": "#5a4028",
+        "note": "bench leg"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          654,
+          26,
+          100
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1214,
+          654,
+          26,
+          100
+        ],
+        "fill": "#5a4028"
+      },
+      {
+        "type": "rect",
+        "box": [
+          418,
+          700,
+          796,
+          14
+        ],
+        "fill": "#6e5236",
+        "note": "low shelf under the bench with a crate and offcuts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          660,
+          120,
+          42
+        ],
+        "fill": "#8a6a44"
+      },
+      {
+        "type": "rect",
+        "box": [
+          396,
+          548,
+          84,
+          40
+        ],
+        "fill": "#4c5a62",
+        "note": "cast-iron bench vise at the left end"
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          588,
+          18,
+          62
+        ],
+        "fill": "#4c5a62"
+      },
+      {
+        "type": "rect",
+        "box": [
+          562,
+          598,
+          98,
+          14
+        ],
+        "fill": "#3c3c3e",
+        "note": "the long flat file lying on the bench"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          596,
+          34,
+          18
+        ],
+        "fill": "#a8763e",
+        "note": "its wooden handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          744,
+          594,
+          170,
+          30
+        ],
+        "fill": "#e9eef2",
+        "note": "technical drawing sheet on the bench"
+      },
+      {
+        "type": "rect",
+        "box": [
+          810,
+          528,
+          26,
+          70
+        ],
+        "fill": "#c09040",
+        "note": "small brass table hand pump standing on the drawing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          790,
+          520,
+          70,
+          10
+        ],
+        "fill": "#c09040"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          992,
+          552,
+          58,
+          58
+        ],
+        "fill": "#f1ead2",
+        "outline": "#b8862e",
+        "width": 7,
+        "note": "alarm clock 1 (brass, twin bells)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1058,
+          566,
+          48,
+          48
+        ],
+        "fill": "#f1ead2",
+        "outline": "#a14a2e",
+        "width": 6,
+        "note": "alarm clock 2 (red)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1114,
+          548,
+          66,
+          66
+        ],
+        "fill": "#f1ead2",
+        "outline": "#4e6a7a",
+        "width": 7,
+        "note": "alarm clock 3 (blue-grey)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1188,
+          560,
+          54,
+          54
+        ],
+        "fill": "#f1ead2",
+        "outline": "#3a3a3a",
+        "width": 6,
+        "note": "alarm clock 4 (black)"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1450,
+            600
+          ],
+          [
+            1500,
+            560
+          ],
+          [
+            1830,
+            560
+          ],
+          [
+            1880,
+            610
+          ],
+          [
+            1890,
+            802
+          ],
+          [
+            1440,
+            802
+          ]
+        ],
+        "fill": "#9a9a8c",
+        "note": "the lathe, stopped and completely covered with a grey canvas cloth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1470,
+          560,
+          90,
+          70
+        ],
+        "fill": "#8a8a7e",
+        "note": "headstock shape under the cloth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1450,
+          790,
+          440,
+          14
+        ],
+        "fill": "#6e6a5a",
+        "note": "cast-iron feet of the lathe on the floor"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S36.json",
+  "blocking": {
+    "version": 1,
+    "room": "S36",
+    "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
+    "note": "Oto's civil workshop inside the manor's service outbuilding (S35), June 1960. Frontal camera ~1.8 m high facing the back wall: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~138 px per metre at the back wall, whose foot is at y 720). Whitewashed shallow brick vaults between steel beams above y 306. Along the back wall a long workbench (top y ~590-625, legs to y ~750) under two small-paned windows that show the courtyard; props lie on the bench where a mechanic leaves them: the file in front of the vise, the four alarm clocks on its right end. The covered lathe stands on the floor at the right (foot y ~800), Oto stands between the bench and the lathe, the plank door to the courtyard is at the far left of the back wall. The walk polygon is the floor in front of the bench and the lathe, with a lobe to the door.",
+    "background": "bg_natural/S36.webp",
+    "walk_polygon": [
+      [
+        40,
+        732
+      ],
+      [
+        372,
+        732
+      ],
+      [
+        372,
+        762
+      ],
+      [
+        1440,
+        762
+      ],
+      [
+        1440,
+        812
+      ],
+      [
+        1900,
+        812
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      732,
+      1015
+    ],
+    "actor_scale": [
+      0.481,
+      1.0
+    ],
+    "spawn": [
+      800,
+      920
+    ],
+    "hotspots": {
+      "S36.ambient 1": {
+        "rect": [
+          548,
+          572,
+          154,
+          64
+        ],
+        "interaction_point": [
+          625,
+          800
+        ],
+        "label_anchor": [
+          625,
+          562
+        ],
+        "reason": "a long flat file with a wooden handle lying on the front edge of the workbench, right of the vise"
+      },
+      "S36.ambient 2": {
+        "rect": [
+          985,
+          548,
+          262,
+          88
+        ],
+        "interaction_point": [
+          1115,
+          800
+        ],
+        "label_anchor": [
+          1115,
+          538
+        ],
+        "reason": "four old alarm clocks of different sizes standing in a row on the right end of the workbench, each showing another time"
+      },
+      "S36.OTO": {
+        "rect": [
+          1250,
+          494,
+          160,
+          366
+        ],
+        "interaction_point": [
+          1200,
+          880
+        ],
+        "label_anchor": [
+          1330,
+          484
+        ],
+        "reason": "Oto standing on the floor between the end of the workbench and the covered lathe"
+      }
+    },
+    "npcs": {
+      "S36.OTO": {
+        "variant": "standing",
+        "feet": [
+          1330,
+          860
+        ],
+        "facing": "left",
+        "reason": "standing (OTO staging standing); feet on the workshop floor, scale from the room perspective (0.72)"
+      }
+    },
+    "exits": {
+      "S36.to_S35": {
+        "rect": [
+          70,
+          430,
+          192,
+          290
+        ],
+        "interaction_point": [
+          170,
+          790
+        ],
+        "label_anchor": [
+          180,
+          420
+        ],
+        "reason": "the plank door in the back wall at the far left, ajar, daylight of the courtyard behind it"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "retouch",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S36.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:09:33"
+  },
+  "source_version": 1,
+  "retouch": "free: removed painted box outlines (hue [85, 150], sat>0.45, val>0.55) inside frame rects [[505, 570, 745, 645], [970, 522, 1270, 645]] by linear interpolation across each outline band. ",
+  "filled_px": 21383,
+  "seed_of_source": 1493802578
+}

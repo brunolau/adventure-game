@@ -1,0 +1,459 @@
+{
+ "note": "S02 natural blocking (src/game/data/blocking/S02.json): Jasenova (Cierna Voda), camera 2.2 m on the shared-surface street looking across at the opposite plots, horizon y 360, fences at 10 m (y 726), houses at 16 m; generated from a pinhole model (painter scratchpad tools/persp.py).",
+ "background": "#a9c9e6",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    400
+   ],
+   "fill": "#a9c9e6",
+   "note": "sky with a few white clouds"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    184,
+    420,
+    391
+   ],
+   "fill": "#d0603c",
+   "note": "left neighbour: red-orange rendered flat-roofed cubic house"
+  },
+  {
+   "type": "rect",
+   "box": [
+    60,
+    340,
+    100,
+    137
+   ],
+   "fill": "#4a5560",
+   "note": "window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    250,
+    340,
+    130,
+    137
+   ],
+   "fill": "#4a5560",
+   "note": "window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    600,
+    173,
+    720,
+    416
+   ],
+   "fill": "#f1efe9",
+   "note": "Adam's white flat-roofed bungalow"
+  },
+  {
+   "type": "rect",
+   "box": [
+    600,
+    163,
+    720,
+    31
+   ],
+   "fill": "#c9c6be",
+   "note": "flat roof edge"
+  },
+  {
+   "type": "rect",
+   "box": [
+    810,
+    360,
+    270,
+    229
+   ],
+   "fill": "#3b3632",
+   "note": "Adam's garage: sectional door rolled up, dim garage inside (workbench glimpsed)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1150,
+    350,
+    140,
+    135
+   ],
+   "fill": "#4a5560",
+   "note": "window with grey frame"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1460,
+    131,
+    460,
+    458
+   ],
+   "fill": "#cfd3d6",
+   "note": "right neighbour: pale grey two-storey cube with dark window frames"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1520,
+    194,
+    120,
+    135
+   ],
+   "fill": "#4a5560",
+   "note": "window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1720,
+    194,
+    160,
+    135
+   ],
+   "fill": "#4a5560",
+   "note": "window"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    140,
+    120,
+    300,
+    330
+   ],
+   "fill": "#d8b23a",
+   "note": "yellow birch behind the left fence"
+  },
+  {
+   "type": "rect",
+   "box": [
+    280,
+    380,
+    16,
+    300
+   ],
+   "fill": "#e8e4dc",
+   "note": "white birch trunk"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1600,
+    60,
+    320,
+    300
+   ],
+   "fill": "#d9782e",
+   "note": "orange maple behind the right house"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    575,
+    1920,
+    151
+   ],
+   "fill": "#8fb05a",
+   "note": "front gardens (lawn, shrubs) behind the fences"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     700,
+     726
+    ],
+    [
+     1180,
+     726
+    ],
+    [
+     1100,
+     589
+    ],
+    [
+     790,
+     589
+    ]
+   ],
+   "fill": "#c8c3b8",
+   "note": "Adam's concrete driveway from the gate to the garage"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     420,
+     726
+    ],
+    [
+     600,
+     726
+    ],
+    [
+     700,
+     470
+    ],
+    [
+     690,
+     470
+    ]
+   ],
+   "fill": "#c9c2b2",
+   "note": "narrow paved footpath between two plots, leading away"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    651,
+    420,
+    75
+   ],
+   "fill": "#e6d3b0",
+   "note": "cream rendered plinth"
+  },
+  {
+   "type": "rect",
+   "box": [
+    20,
+    485,
+    40,
+    241
+   ],
+   "fill": "#b5552f",
+   "note": "red brick pillar with a cream cap"
+  },
+  {
+   "type": "rect",
+   "box": [
+    16,
+    476,
+    48,
+    17
+   ],
+   "fill": "#ece2cf",
+   "note": ""
+  },
+  {
+   "type": "rect",
+   "box": [
+    220,
+    485,
+    40,
+    241
+   ],
+   "fill": "#b5552f",
+   "note": "red brick pillar with a cream cap"
+  },
+  {
+   "type": "rect",
+   "box": [
+    216,
+    476,
+    48,
+    17
+   ],
+   "fill": "#ece2cf",
+   "note": ""
+  },
+  {
+   "type": "rect",
+   "box": [
+    400,
+    485,
+    40,
+    241
+   ],
+   "fill": "#b5552f",
+   "note": "red brick pillar with a cream cap"
+  },
+  {
+   "type": "rect",
+   "box": [
+    396,
+    476,
+    48,
+    17
+   ],
+   "fill": "#ece2cf",
+   "note": ""
+  },
+  {
+   "type": "rect",
+   "box": [
+    60,
+    510,
+    160,
+    141
+   ],
+   "fill": "#6c7378",
+   "note": "grey metal fence panel"
+  },
+  {
+   "type": "rect",
+   "box": [
+    260,
+    510,
+    140,
+    141
+   ],
+   "fill": "#6c7378",
+   "note": "grey metal fence panel"
+  },
+  {
+   "type": "rect",
+   "box": [
+    600,
+    427,
+    100,
+    299
+   ],
+   "fill": "#7d858a",
+   "note": "Adam's grey horizontal slat fence"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1180,
+    418,
+    60,
+    308
+   ],
+   "fill": "#e9e6df",
+   "note": "white rendered gate pillar"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1240,
+    427,
+    210,
+    299
+   ],
+   "fill": "#7d858a",
+   "note": "grey horizontal slat fence"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1450,
+    643,
+    470,
+    83
+   ],
+   "fill": "#9a9a94",
+   "note": "split-block plinth of the right neighbour"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1450,
+    460,
+    470,
+    183
+   ],
+   "fill": "#56704a",
+   "note": "dark green thuja hedge behind mesh panels"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    726,
+    1920,
+    24
+   ],
+   "fill": "#cdbfa2",
+   "note": "narrow strip of decorative gravel and a low concrete edging along the fences"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    749,
+    1920,
+    331
+   ],
+   "fill": "#c3c1bb",
+   "note": "the light concrete shared-surface street (walk band)"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    92,
+    434,
+    60,
+    62
+   ],
+   "fill": "#b9842e",
+   "note": "ochre glazed ceramic owl on the pillar cap"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1184,
+    466,
+    54,
+    70
+   ],
+   "fill": "#3e4246",
+   "note": "dark grey mailbox on the gate pillar, leaflets sticking out"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1470,
+    314,
+    450,
+    413
+   ],
+   "fill": "#f2f2ee",
+   "note": "white courier van, rear part, seen from the side, parked at the far edge of the street"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1470,
+    464,
+    450,
+    40
+   ],
+   "fill": "#e8782a",
+   "note": "orange stripe along the van with the invented name ŠUP"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1400,
+    354,
+    70,
+    373
+   ],
+   "fill": "#e2e2dc",
+   "note": "the van's open rear door swung out"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1560,
+    677,
+    110,
+    110
+   ],
+   "fill": "#2a2a2a",
+   "note": "rear wheel"
+  }
+ ]
+}

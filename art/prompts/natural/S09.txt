@@ -1,0 +1,24 @@
+# S09 Predsieň záhradnej dielne (2020) - NATURAL re-blocking prompt body for art/tools/paint_natural.py
+# Geometry: src/game/data/blocking/S09.json (placeholders expand from the merged natural geometry).
+# Composition: art/prompts/natural/S09.sketch.json (frontal long wall, camera ~2.2 m, wall foot y 790, wall to the top edge).
+# Style image: natural S06 (same property, no door at the frame edge - the model copies style-image doors, PAINTING.md).
+#refs: art/source/rooms/S09/domaci_dilna_dezidor.jpg ; src/game/assets/bg_natural/S05.webp
+#style: src/game/assets/bg_natural/S06.webp
+Place: the anteroom of grandmother Mira's old garden workshop, a small red-brick outbuilding standing in the street line of her property in the old core of Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of a real Czech home workshop in an old outbuilding: rough whitewashed lime plaster over brick, worn timber, old tins and bags - the materials and age to paint from. Image 3 is our finished painting of Mira's property from the street: the red-brick workshop with its weathered plank door on the brick-paved pavement, the stone walls and hedges of the street - this is what is seen outside through the open outer door. The interior is invented.
+
+Brief: a separate, unused building with an outside entrance: old suitcases, a shelf with school teaching aids, a locked case on a table. Beyond an opening there is a further workshop room. Thursday 29 October 2020, afternoon: warm low sunlight falls in through the open outer door at the left, a long sunbeam on the floorboards with dust motes; a soft blue glow comes out of the doorway at the right.
+
+Camera: standing inside the room, about 2.2 m high, looking straight at its long back wall, which is parallel to the picture and fills the whole picture up to the top edge - the ceiling is NOT visible, only one heavy dark timber beam along the very top edge; no side walls. Vertical lines stay vertical. Keep this exact geometry from the sketch (the camera stays this far from the wall, do not move closer): the wall meets the floor at y 790 (73 % from the top) along the whole width, with a dark skirting; the outer door opening x 40-270, y 356-790; the inner doorway x 1646-1876, y 356-790; the table top at y 606 (56 %); the shelving unit from y 306 to the floor; the floorboards from y 790 to the bottom edge are empty. Everything stands against the wall with its feet at y 790-800.
+
+What the sketch blocks are, left to right: the open outer door in a dark weathered timber frame, bright sunny daylight outside: the red-brick pavement, the neighbour's whitewashed stone wall across the street with a hedge and a yellow tree above it; a bare light bulb hanging on a cord from the beam; the whitewashed wall with patches of bare red brick and a greenish damp stain; the worn wooden table against the wall; three old suitcases stacked on the floor at the wall (brown leather, a smaller one, a little grey-blue one on top); three old wooden skis with curled tips leaning on the wall; the tall old wooden shelving unit full of school teaching aids (rolled wall maps, an abacus, chalk boxes, old school books, a microscope, a botanical model, wooden geometry shapes); the inner doorway in a timber frame into the dim back room, where a round frame on the far wall glows soft blue; the worn wide pine floorboards.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S09.case}: a closed, old brass instrument case with a leather handle, a small engraved bell emblem on the lid and a brass clasp, lying on the worn wooden table.
+2. {rect:S09.ambient 1}: exactly three old wooden skis with curled tips and old cable bindings, leaning side by side on the wall.
+3. {rect:S09.ambient 2}: an old school globe with a brass meridian on a wooden stand, standing on top of the shelving unit.
+The open outer door is {exit:S09.to_S05}; the inner doorway is {exit:S09.to_S10}.
+
+Walkable floor: {walk} is the worn wide pine floorboard floor - one continuous flat surface with no step, no rug and no threshold inside it, and nothing standing on it: no buckets, no boxes, no tools, no watering can, no people. Only light, the sunbeam from the door, dust and a few dry leaves blown in.
+{npc_zones}
+
+Fiction rules: invented interior; no brands on tins, boxes or books, no readable text anywhere (book spines and labels blank, the case shows only a bell emblem), no house numbers. No people, no animals.

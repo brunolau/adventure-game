@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 1,
+  "box_game_px": [
+    520.0,
+    540.0,
+    470.0,
+    125.0
+  ],
+  "instruction": "Remove the stack of waxed paper sheets and the thin script booklet from the table: show only the bare, empty, worn wooden table top with its planks and the same warm light. Keep the table's front edge and legs, the brick wall behind and everything else exactly as it is.",
+  "feather_master_px": 24,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 964297324,
+  "usd": 0.15,
+  "scope": "bg_natural/S40/",
+  "spend_log_asset": "bg_natural/S40/S40_v2_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the stack of waxed paper sheets and the thin script booklet from the table: show only the bare, empty, worn wooden table top with its planks and the same warm light. Keep the table's front edge and legs, the brick wall behind and everything else exactly as it is. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S40_v1.png",
+    "art/masters/bg_natural/S36_v2.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S40_S40_v2_fix_raw.png",
+  "started": "2026-10-05T10:50:33",
+  "model_description": "",
+  "parent_prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the attic above the workshop in the long service outbuilding of the manor in Ivanka pri Dunaji, Slovakia, in 1960. Image 2 is a real unrenovated attic of an old village house: the undersides of red clay roof tiles on battens between dark rafters, a brick gable wall with a small bright window, old timber. Image 3 is a real attic with a wide, solid plank floor and massive beams. Image 4 is the real courtyard of the outbuilding: its red-brown tiled roofs are what the gable window looks out on. Paint a dry, dusty, safe attic of 1960 used as a small technical archive from these: wide swept floor planks, heavy old beams, warm light from the gable window. Leave out all modern things (cardboard boxes, bicycles, plastic, wires).\n\nBrief: a safe walkable attic floor above the workshop: a metal archive box, waxed paper and a forgotten amateur-theatre script. No climbing: a proper wooden staircase with a handrail. 6 June 1960, late afternoon: warm sunbeams through the small gable window and through thin gaps between the tiles, dust floating in the light.\n\nCamera: standing on the attic floor about 1.7 m high, looking straight along the attic to the gable wall; the ridge is in the middle; the horizon is at y ~470. Keep this exact geometry from the sketch: the gable wall at the far end meets the floor at y ~690; the roof slopes come down left and right to low knee walls; the heavy tie beam crosses at y ~250-285; the work table stands on the floor in the middle (top y ~650, legs to y ~770); the floor planks fill everything in front.\n\nWhat the sketch blocks are, left to right: the opening in the floor at the front left with a wooden staircase going down and a solid wooden handrail with a newel post around it; the left roof slope with rafters and tile battens; the brick gable wall with the small window showing the tiled roofs of the courtyard in the sun; the plain wooden work table with a small stack of waxed paper sheets and a thin script booklet with a buff paper cover; an old wooden chest with a grey-green steel archive box on it; a massive oak post with two diagonal braces carrying the tie beam; an old brown leather suitcase lying on the floor; a few old wooden crates under the right slope; the wide old floor planks.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 556-742, y 598-656 of the 1920x1080 frame (29-39 % from the left, 55-61 % from the top): a small neat stack of waxed paper sheets (slightly translucent, with a soft yellowish waxy sheen) on the table.\n2. the block of the layout sketch at x 1050-1222, y 560-672 of the 1920x1080 frame (55-64 % from the left, 52-62 % from the top): a grey-green steel archive box with a carrying handle on the lid and a small hasp, standing on the chest.\n3. the block of the layout sketch at x 796-954, y 604-658 of the 1920x1080 frame (41-50 % from the left, 56-61 % from the top): a thin stapled amateur-theatre script booklet with a buff paper cover and a few hand-written scribbles on it, lying on the table.\n4. the block of the layout sketch at x 1440-1720, y 668-808 of the 1920x1080 frame (75-90 % from the left, 62-75 % from the top): an old brown leather suitcase with a handle and a strap, lying closed on the floor.\n5. the block of the layout sketch at x 1290-1364, y 290-720 of the 1920x1080 frame (67-71 % from the left, 27-67 % from the top): the massive old oak post with two diagonal braces, carrying the tie beam of the roof.\nThe staircase opening at the front left is the area of the layout sketch at x 20-330, y 640-910 of the 1920x1080 frame (1-17 % from the left, 59-84 % from the top).\n\nWalkable floor: the band at x 20-1900, y 800-1015 of the 1920x1080 frame (1-99 % from the left, 74-94 % from the top) is the wide old floor planks - one continuous flat surface with no step, no hole, no ladder and nothing standing on it: no boxes, no tools, no ropes. Only sunbeams, shadows and a little dust.\nThis room has no NPC zones.\n\nFiction rules: invented attic; no painting on an easel, no posters, no pictures, no newspapers with text, no brand names, no lettering, no digits. Paper and the script cover show only illegible scribbles. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S40",
+  "version": 2,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S40.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:51:10"
+  }
+}

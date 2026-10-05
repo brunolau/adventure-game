@@ -1,0 +1,601 @@
+{
+  "room": "S01",
+  "version": 2,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020103,
+  "usd": 0.15,
+  "started": "2026-10-05T10:56:39",
+  "spend_log_asset": "bg_natural/S01/S01_v2",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/natural/S01.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the garage of Adam's family house on Jaseňová in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia) - an invented garage of the real house type. Image 2 is a photo of a real lived-in home workbench (pegboard with tools, small-parts drawers, boxes), image 3 an opened old valve radio chassis on a repair bench with a multimeter, image 4 the real street Jaseňová (white and red flat-roofed cubic houses, grey slat fences, a light concrete street) that is seen through the open garage door. Paint it as a Slovak 2000s suburban garage: warm plastered brick walls, a concrete floor, a rolled-up sectional door; no US labels or brands.\n\nBrief: an autumn afternoon in a family-house garage: a table with a radio being repaired on the left, small-parts drawers on the right, a fabric bag on a chair. The place feels lived-in, not like a secret laboratory. Thursday 29 October 2020, warm low sunlight falling in through the open door onto the floor, dust motes in the light.\n\nCamera: standing inside a wide double garage, about 2.2 m high, looking straight at its long front wall with the open door; the wall is parallel to the picture and fills the whole picture up to the top edge - the ceiling is NOT visible, only a dark beam along the very top edge; no side walls. Vertical lines stay vertical; the horizon is at y 360. Keep this exact geometry from the sketch (the camera stays this far from the wall, do not move closer): the wall meets the concrete floor at y 780 (72 % from the top) along the whole width; the workbench top at y ~608 (56 %), the pegboard from y ~398 to ~570, a high shelf at y ~345; the open door from x 864 to 1381 and from y 360 (33 %) down to the floor; the parts cabinet from y ~494 to the floor; the floor from y 780 to the bottom edge is empty.\n\nWhat the sketch blocks are, left to right: high on the wall a wall-mounted fluorescent tube light, a green garden hose coiled on a hook and a bicycle hanging on wall hooks at the right; a small window high on the wall showing the neighbour's red-orange house and a yellow birch; a garden broom leaning on the wall and a cloth face mask on a nail; the high wooden shelf with cardboard boxes and a plastic storage box; the pegboard with neatly hung hand tools; the round wall clock; the workbench with crates and boxes underneath; a wooden chair standing against the wall right of the bench; the open sectional garage door, rolled up into its drum under the lintel, with bright daylight outside: the sunny concrete driveway, the grey slat fence and the half-open grey sliding gate of the plot, the street and a white flat-roofed house and a yellow autumn tree across it; the tall grey metal cabinet of small parts drawers; metal shelving with boxes and a stack of winter tyres on the floor at the wall at the right; the concrete floor with a sun patch from the door.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 726-822, y 616-700 of the 1920x1080 frame (38-43 % from the left, 57-65 % from the top): Adam's olive-green canvas service bag (a tool bag with a shoulder strap and a few tool handles sticking out) lying on the seat of the wooden chair.\n2. the block of the layout sketch at x 1409-1591, y 494-781 of the 1920x1080 frame (73-83 % from the left, 46-72 % from the top): the tall grey metal cabinet of many small parts drawers; one small drawer at chest height pulled out, showing small glass fuses inside.\n3. the block of the layout sketch at x 560-646, y 546-614 of the 1920x1080 frame (29-34 % from the left, 51-57 % from the top): a big old white enamel pot with a blue rim, heaped full of loose screws, standing on the right end of the workbench.\n4. the block of the layout sketch at x 378-502, y 526-612 of the 1920x1080 frame (20-26 % from the left, 49-57 % from the top): an old 1960s wooden valve radio with its back opened, the chassis with valves visible, standing on the left part of the workbench next to a yellow multimeter and a soldering iron.\nThe open garage door is the area of the layout sketch at x 864-1381, y 600-782 of the 1920x1080 frame (45-72 % from the left, 56-72 % from the top).\n\nWalkable floor: the band at x 20-1900, y 795-1015 of the 1920x1080 frame (1-99 % from the left, 74-94 % from the top) is the concrete garage floor - one continuous flat surface with no step, no kerb, no rug and no change of material inside it, and nothing standing on it: no bicycle, no tyres, no boxes, no buckets, no cables, no people. Only light, the sun patch from the door, a few oil stains and two fallen leaves blown in.\nThis room has no NPC zones.\n\nFiction rules: Adam's house is invented: no house numbers, no names, no brand names on tools, boxes, the radio or the multimeter; the radio dial and every paper show only illegible marks, no digits. No people, no animals, no cars.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/natural/S01_sketch.png (rendered from art/prompts/natural/S01.sketch.json, model geometry)",
+    "art/source/rooms/S01/garage_workbench_btwashburn.jpg",
+    "art/source/rooms/S01/radios_in_repose_eli_dark.jpg",
+    "art/source/rooms/S02/jasenova_street_mm_explorer.jpg",
+    "src/game/assets/bg_natural/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S01 natural blocking v2 sketch: Adam's garage, camera 2.2 m inside looking straight at the long front wall with the open sectional door (8.7 m, foot y 780, 191 px per metre), horizon y 360; the wall fills the picture to the top edge (ceiling not visible, only a beam) - the v1 sketch with a visible ceiling and receding side walls was re-composed much closer by the model.",
+    "background": "#e2d3b8",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          780
+        ],
+        "fill": "#e2d3b8",
+        "note": "the garage's long front wall, warm plaster over brick, filling the picture up to the top edge (ceiling not visible)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          34
+        ],
+        "fill": "#6a5444",
+        "note": "dark ceiling beam along the very top edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          140,
+          370,
+          16
+        ],
+        "fill": "#f4f2ea",
+        "note": "wall-mounted fluorescent tube light high above the bench"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1450,
+          190,
+          120,
+          130
+        ],
+        "fill": "#3f7a4a",
+        "note": "green garden hose coiled on a wall hook"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1650,
+          170,
+          250,
+          150
+        ],
+        "fill": "#5a6a8a",
+        "note": "a bicycle hanging on two wall hooks high above the tyres"
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          120,
+          440,
+          40
+        ],
+        "fill": "#c9bfae",
+        "note": "rail of the sectional door's opener on the wall above the door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          780,
+          1920,
+          300
+        ],
+        "fill": "#a8a39a",
+        "note": "concrete floor (walk band), oil stains, sun patch from the door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          770,
+          1920,
+          12
+        ],
+        "fill": "#9c8c78",
+        "note": "low skirting where the wall meets the floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          70,
+          300,
+          220,
+          170
+        ],
+        "fill": "#eef0ee",
+        "note": "small window, white frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          84,
+          314,
+          192,
+          142
+        ],
+        "fill": "#c56a45",
+        "note": "through the window: the neighbour's red-orange house and a yellow birch"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          470,
+          80,
+          18
+        ],
+        "fill": "#d9d6cf",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          30,
+          520,
+          30,
+          250
+        ],
+        "fill": "#8a6a3a",
+        "note": "garden broom leaning on the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          470,
+          40,
+          60
+        ],
+        "fill": "#cfe0ea",
+        "note": "cloth face mask hanging on a nail"
+      },
+      {
+        "type": "rect",
+        "box": [
+          339,
+          398,
+          363,
+          172
+        ],
+        "fill": "#c8a46a",
+        "note": "pegboard with hanging hand tools"
+      },
+      {
+        "type": "rect",
+        "box": [
+          329,
+          341,
+          383,
+          9
+        ],
+        "fill": "#7a5a3c",
+        "note": "high wooden shelf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          348,
+          284,
+          115,
+          57
+        ],
+        "fill": "#b48a52",
+        "note": "cardboard boxes on the shelf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          539,
+          293,
+          134,
+          48
+        ],
+        "fill": "#9aa0a4",
+        "note": "plastic storage box on the shelf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          329,
+          605,
+          383,
+          11
+        ],
+        "fill": "#8a5a34",
+        "note": "workbench top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          329,
+          616,
+          383,
+          165
+        ],
+        "fill": "#6e4a2c",
+        "note": "workbench body with crates and boxes underneath"
+      },
+      {
+        "type": "rect",
+        "box": [
+          387,
+          538,
+          105,
+          67
+        ],
+        "fill": "#9a6a3a",
+        "note": "opened old wooden valve radio being repaired, chassis visible"
+      },
+      {
+        "type": "rect",
+        "box": [
+          520,
+          580,
+          39,
+          25
+        ],
+        "fill": "#d9b62a",
+        "note": "multimeter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          569,
+          558,
+          67,
+          50
+        ],
+        "fill": "#e9e6dc",
+        "note": "white enamel pot full of screws"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          492,
+          226,
+          57,
+          58
+        ],
+        "fill": "#f4f0e4",
+        "note": "round wall clock"
+      },
+      {
+        "type": "rect",
+        "box": [
+          731,
+          605,
+          86,
+          90
+        ],
+        "fill": "#7a5236",
+        "note": "wooden chair back against the wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          731,
+          691,
+          86,
+          9
+        ],
+        "fill": "#8a5a3a",
+        "note": "chair seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          734,
+          695,
+          12,
+          86
+        ],
+        "fill": "#5a3e28",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          801,
+          695,
+          12,
+          86
+        ],
+        "fill": "#5a3e28",
+        "note": ""
+      },
+      {
+        "type": "rect",
+        "box": [
+          736,
+          631,
+          75,
+          60
+        ],
+        "fill": "#6b7a3a",
+        "note": "olive fabric service bag on the chair seat"
+      },
+      {
+        "type": "rect",
+        "box": [
+          864,
+          318,
+          517,
+          42
+        ],
+        "fill": "#9a9a94",
+        "note": "rolled-up sectional door drum at the lintel"
+      },
+      {
+        "type": "rect",
+        "box": [
+          864,
+          360,
+          517,
+          421
+        ],
+        "fill": "#bcd3e6",
+        "note": "open garage door: bright daylight outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          864,
+          675,
+          517,
+          106
+        ],
+        "fill": "#c9c4ba",
+        "note": "outside: the sunny concrete driveway"
+      },
+      {
+        "type": "rect",
+        "box": [
+          864,
+          561,
+          517,
+          114
+        ],
+        "fill": "#7d858a",
+        "note": "outside: grey slat fence and the half-open sliding gate, the street beyond"
+      },
+      {
+        "type": "rect",
+        "box": [
+          984,
+          360,
+          330,
+          201
+        ],
+        "fill": "#eceae4",
+        "note": "outside: a white flat-roofed house across the street"
+      },
+      {
+        "type": "rect",
+        "box": [
+          864,
+          360,
+          110,
+          201
+        ],
+        "fill": "#d8b23a",
+        "note": "outside: a yellow autumn tree"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1409,
+          494,
+          182,
+          287
+        ],
+        "fill": "#8f979b",
+        "note": "tall grey metal cabinet of many small parts drawers"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1419,
+          503,
+          162,
+          268
+        ],
+        "cols": 4,
+        "rows": 9,
+        "color": "#6f777b",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          1447,
+          547,
+          96,
+          27
+        ],
+        "fill": "#b7bec2",
+        "note": "one small drawer pulled out: spare glass fuses inside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1629,
+          360,
+          277,
+          421
+        ],
+        "fill": "#7f8a8e",
+        "note": "metal shelving with boxes and a bicycle helmet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1648,
+          608,
+          134,
+          173
+        ],
+        "fill": "#2f2f30",
+        "note": "stack of four winter tyres on the floor at the wall"
+      }
+    ]
+  },
+  "blocking_file": "src/game/data/blocking/S01.json",
+  "blocking": {
+    "version": 1,
+    "room": "S01",
+    "status": "natural re-blocking (product-owner decision 2026-10-05)",
+    "note": "Adam's garage in his white bungalow on Jasenova (S02 plot in the middle): camera 2.2 m inside the garage, looking straight at the garage's front wall with the open sectional door (8.7 m away, wall foot y 780, ~191 px per metre); horizon y 360, s(y) = (y - 360) / 655 like S03/S05; the long wall fills the picture to the top edge (ceiling not visible, a beam at the top). Along the wall from left: a small window (the neighbour's red-orange house), a broom, a face mask on a nail, the workbench under a pegboard (the opened valve radio being repaired, a multimeter, the enamel pot of screws), the wall clock, a wooden chair with Adam's fabric service bag on its seat, the open door (daylight: driveway, the half-open grey sliding gate, the street, a white house across), the tall grey cabinet of small parts drawers with the fuse drawer pulled out, metal shelving and winter tyres.",
+    "background": "bg_natural/S01.webp",
+    "walk_polygon": [
+      [
+        20,
+        795
+      ],
+      [
+        1900,
+        795
+      ],
+      [
+        1900,
+        1015
+      ],
+      [
+        20,
+        1015
+      ]
+    ],
+    "walk_band": [
+      795,
+      1015
+    ],
+    "actor_scale": [
+      0.66,
+      1.0
+    ],
+    "spawn": [
+      1120,
+      900
+    ],
+    "hotspots": {
+      "S01.tools": {
+        "rect": [
+          726,
+          616,
+          96,
+          84
+        ],
+        "interaction_point": [
+          775,
+          830
+        ],
+        "label_anchor": [
+          775,
+          606
+        ],
+        "reason": "Adam's olive fabric service bag on the seat of the wooden chair by the workbench"
+      },
+      "S01.fuse": {
+        "rect": [
+          1409,
+          494,
+          182,
+          287
+        ],
+        "interaction_point": [
+          1500,
+          830
+        ],
+        "label_anchor": [
+          1500,
+          484
+        ],
+        "reason": "tall metal cabinet of small parts drawers right of the door, the fuse drawer pulled out at ~1.15 m"
+      },
+      "S01.ambient 1": {
+        "rect": [
+          560,
+          546,
+          86,
+          68
+        ],
+        "interaction_point": [
+          605,
+          830
+        ],
+        "label_anchor": [
+          603,
+          628
+        ],
+        "reason": "big white enamel pot full of screws on the right end of the workbench"
+      },
+      "S01.ambient 2": {
+        "rect": [
+          378,
+          526,
+          124,
+          86
+        ],
+        "interaction_point": [
+          440,
+          830
+        ],
+        "label_anchor": [
+          440,
+          516
+        ],
+        "reason": "the opened old wooden valve radio being repaired on the workbench (left)"
+      }
+    },
+    "exits": {
+      "S01.to_S02": {
+        "rect": [
+          864,
+          600,
+          517,
+          182
+        ],
+        "interaction_point": [
+          1120,
+          815
+        ],
+        "label_anchor": [
+          1120,
+          590
+        ],
+        "reason": "the open sectional garage door: out onto the driveway and the street (S02)"
+      }
+    },
+    "state_patches": []
+  },
+  "kind": "paint",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S01.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T10:57:54"
+  }
+}

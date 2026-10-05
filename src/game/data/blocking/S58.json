@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "room": "S58",
+  "family_base": "S12",
+  "status": "natural re-blocking, camera family L_SCHOOL_FRONT: derived from the S12 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+  "note": "Same L_SCHOOL_FRONT camera as the base S12 (eye 1.74 m, horizon y 490, f ~1250 px, facade Z = 10 + 0.25 X m, corner at x 1793; scale s(y) = (y - 490) / 525). December 1982: the 8-year-old school with plain yellowish walls and the original windows, the period ČSSR state emblem beside the name board, the brigade notice board at the left; thin snow, bare young trees.",
+  "background": "bg_natural/S58.webp",
+  "walk_polygon": [[0, 1015], [1920, 1015], [1920, 688], [1861, 686], [1341, 711], [1405, 764], [843, 764], [847, 773], [686, 773], [655, 772], [0, 806]],
+  "walk_band": [686, 1015],
+  "actor_scale": [0.37, 1.0],
+  "spawn": [960, 920],
+  "anchors": {
+    "building_corner": [1793, 400],
+    "entrance": [1082, 647],
+    "planter": [775, 715],
+    "service_window_visible_at_edge": [1681, 470]
+  },
+  "hotspots": {
+    "S58.ambient 1": {
+      "rect": [56, 440, 212, 186],
+      "interaction_point": [175, 880],
+      "label_anchor": [162, 430],
+      "reason": "the glazed notice board on two legs at the left, now with the brigade notices (same place as the 1995 club notice board)"
+    },
+    "S58.ambient 2": {
+      "rect": [893, 192, 366, 94],
+      "interaction_point": [1080, 800],
+      "label_anchor": [1076, 182],
+      "reason": "the name board above the canopy with the period ČSSR state emblem at its left end (same place as the 1995 school crest)"
+    }
+  },
+  "exits": {
+    "S58.to_S57": {
+      "rect": [0, 790, 62, 225],
+      "interaction_point": [70, 900],
+      "label_anchor": [190, 780],
+      "reason": "the forecourt path out of the left edge towards the street and the stop"
+    },
+    "S58.to_S59": {
+      "rect": [897, 362, 357, 291],
+      "interaction_point": [1110, 792],
+      "label_anchor": [1075, 352],
+      "reason": "the glazed entrance doors at the top of the steps"
+    },
+    "S58.to_S61": {
+      "rect": [1830, 600, 90, 330],
+      "interaction_point": [1850, 800],
+      "label_anchor": [1630, 590],
+      "reason": "past the building corner the path leads round to the school yard (right edge)"
+    }
+  },
+  "state_patches": []
+}
