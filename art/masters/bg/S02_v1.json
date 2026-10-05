@@ -1,0 +1,952 @@
+{
+  "room": "S02",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020201,
+  "usd": 0.15,
+  "started": "2026-10-05T02:06:18",
+  "spend_log_asset": "bg/prologue2020/S02_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/S02.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Jaseňová, a living street of new family houses in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real street: modern white and red-orange cubic single-storey family houses with flat roofs, and every plot has a different fence - anthracite slat fences and sliding gates, red brick pillars with cream panels, grey split-block pillars with metal mesh panels, white rendered utility pillars with meter boxes and mailboxes, trimmed thuja hedges, a strip of decorative gravel along the fences and a plain concrete street. Paint the frontage of four neighbouring plots from these real house and fence types - not a copy of one particular private house.\n\nBrief: a residential street between fences; houses, all different fences, a courier van parked on the right, an open pedestrian street. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, a clear pale-blue sky, yellow and orange autumn trees between the houses, a few fallen leaves on the street.\n\nCamera: seen from slightly above, as from a first-floor window across the street - about 3.5 m high, looking down a little; vertical lines stay vertical. The fences stand side by side along the top half of the picture, their foot at y 515; the houses stand behind them (their flat roofs at the top edge). Keep this exact geometry from the sketch: fence foot y 515, the gravel strip y 515-608, a low concrete edge at y 608-620, the concrete street from y 620 down to the bottom edge.\n\nWhat the sketch blocks are, left to right: plot A - a cream rendered fence with red brick pillars and stone pillar caps, a white flat-roofed house with dark grey window frames behind it; a yellow autumn birch; plot B - an anthracite horizontal slat fence on a concrete plinth with a tall white rendered gate pillar (a grey meter-box door low on it, the mailbox at its top); a white house set further back with a long strip window; plot C - grey metal mesh fence panels between split-face concrete block pillars, a tall trimmed thuja hedge behind; a red-orange rendered cubic house with white window frames; plot D - a dark grey sliding gate, mostly hidden by the van; an orange autumn maple at the top right. Along the fence foot a strip of decorative pale gravel with small grass tufts and low shrubs, then a low concrete edge, then the wide plain concrete street. On the right, parked at the far side of the street in front of plot D, the courier's white delivery van (front facing left, cut by the right edge) with an orange stripe and the invented courier name ŠUP in big simple letters on the side; its wheels stand at y 782, above the walk band.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 120-240, y 150-250 of the 1920x1080 frame (6-12 % from the left, 14-23 % from the top): a glazed ceramic garden owl (ochre-brown, big round eyes, ear tufts) sitting on top of the stone cap of the red brick fence pillar.\n2. the block of the layout sketch at x 425-545, y 150-250 of the 1920x1080 frame (22-28 % from the left, 14-23 % from the top): a dark grey metal mailbox mounted at the top of the white gate pillar, with a white \"no advertising\" sticker (only illegible scribbles on it) and three colourful folded leaflets sticking out of its slot.\n\nWalkable floor: the band at x 90-1830, y 790-1015 of the 1920x1080 frame (5-95 % from the left, 73-94 % from the top) is the open concrete street - one continuous flat surface with no kerb, no step, no edge, no road markings and no change of material inside it, and nothing standing on it: no cars, no bins, no poles, no plants, no bags. Only light, long shadows and a few fallen leaves. The street continues to the left edge (the area of the layout sketch at x 50-105, y 975-1045 of the 1920x1080 frame (3-5 % from the left, 90-97 % from the top)) and to the right edge (the area of the layout sketch at x 1870-1925, y 975-1045 of the 1920x1080 frame (97-100 % from the left, 90-97 % from the top)) and stays open along the bottom (the area of the layout sketch at x 656-711, y 975-1045 of the 1920x1080 frame (34-37 % from the left, 90-97 % from the top), the area of the layout sketch at x 1263-1318, y 975-1045 of the 1920x1080 frame (66-69 % from the left, 90-97 % from the top)).\nNPC zone at x 385-535, y 450-770 of the 1920x1080 frame (20-28 % from the left, 42-71 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. NPC zone at x 725-875, y 450-770 of the 1920x1080 frame (38-46 % from the left, 42-71 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person.\n\nFiction rules: the houses are invented from the real house types. No house numbers, no names on mailboxes or bells, no real courier company livery or logo (only the invented name ŠUP), no readable advertising on the leaflets or the sticker, no licence plate text, no people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/S02_sketch.png (rendered from art/prompts/S02.sketch.json, model geometry)",
+    "art/source/rooms/S02/jasenova_street_mm_explorer.jpg",
+    "src/game/assets/bg/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S02 Jaseňová street between fences. S05 camera (~3.5 m, looking down a little): fence line foot y 515 (~160 px/m), owl on a 1.7 m pillar cap and the mailbox on top of a 2.3 m utility pillar fall in y 150-250; gravel strip, concrete edge y 608-620 above the walk band, concrete street to the bottom; courier van on the right, wheels at y 782.",
+    "background": "#a9cde8",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          70
+        ],
+        "fill": "#a9cde8",
+        "note": "sky gaps above the low flat roofs"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          24,
+          400,
+          440
+        ],
+        "fill": "#efebe3",
+        "note": "white flat-roofed family house behind plot A"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          24,
+          400,
+          16
+        ],
+        "fill": "#c8c2b6",
+        "note": "flat roof parapet"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          120,
+          150,
+          120
+        ],
+        "fill": "#5f6a73",
+        "note": "dark grey window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          52,
+          132,
+          126,
+          96
+        ],
+        "fill": "#9db5c5"
+      },
+      {
+        "type": "rect",
+        "box": [
+          250,
+          120,
+          110,
+          160
+        ],
+        "fill": "#5f6a73"
+      },
+      {
+        "type": "rect",
+        "box": [
+          262,
+          132,
+          86,
+          136
+        ],
+        "fill": "#9db5c5"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          330,
+          -60,
+          300,
+          330
+        ],
+        "fill": "#d9a23a",
+        "note": "yellow autumn birch between the houses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          470,
+          200,
+          18,
+          260
+        ],
+        "fill": "#6b4a2a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          50,
+          420,
+          410
+        ],
+        "fill": "#f3f0ea",
+        "note": "white house set further back"
+      },
+      {
+        "type": "rect",
+        "box": [
+          600,
+          50,
+          420,
+          14
+        ],
+        "fill": "#cdc7bb"
+      },
+      {
+        "type": "rect",
+        "box": [
+          660,
+          140,
+          300,
+          70
+        ],
+        "fill": "#5f6a73",
+        "note": "horizontal strip window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          672,
+          150,
+          276,
+          50
+        ],
+        "fill": "#9db5c5"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1020,
+          16,
+          560,
+          450
+        ],
+        "fill": "#c9573b",
+        "note": "red-orange rendered cubic house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1020,
+          16,
+          560,
+          16
+        ],
+        "fill": "#9e3f2a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1090,
+          120,
+          140,
+          130
+        ],
+        "fill": "#f2efe8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1102,
+          132,
+          116,
+          106
+        ],
+        "fill": "#93aebf"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1330,
+          110,
+          180,
+          150
+        ],
+        "fill": "#f2efe8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1342,
+          122,
+          156,
+          126
+        ],
+        "fill": "#93aebf"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1540,
+          -50,
+          400,
+          380
+        ],
+        "fill": "#c9822c",
+        "note": "orange autumn maple"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1720,
+          220,
+          22,
+          240
+        ],
+        "fill": "#6b4a2a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          400,
+          1920,
+          70
+        ],
+        "fill": "#8e9a52",
+        "note": "front lawns behind the fences"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          440,
+          380,
+          75
+        ],
+        "fill": "#e3d6bd",
+        "note": "plot A: rendered plinth wall"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          300,
+          380,
+          140
+        ],
+        "fill": "#e9ddc6",
+        "note": "plot A: cream rendered fence panels"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          292,
+          380,
+          10
+        ],
+        "fill": "#d4c7ae"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          260,
+          40,
+          255
+        ],
+        "fill": "#a8513a",
+        "note": "brick pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          -6,
+          252,
+          52,
+          12
+        ],
+        "fill": "#d8cdb8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          248,
+          60,
+          267
+        ],
+        "fill": "#a8513a",
+        "note": "brick pillar carrying the owl"
+      },
+      {
+        "type": "rect",
+        "box": [
+          140,
+          238,
+          80,
+          14
+        ],
+        "fill": "#d8cdb8",
+        "note": "pillar cap"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          260,
+          50,
+          255
+        ],
+        "fill": "#a8513a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          324,
+          252,
+          62,
+          12
+        ],
+        "fill": "#d8cdb8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          146,
+          160,
+          68,
+          80
+        ],
+        "fill": "#c98f4a",
+        "note": "ceramic owl on the pillar cap"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            150,
+            172
+          ],
+          [
+            158,
+            152
+          ],
+          [
+            170,
+            168
+          ]
+        ],
+        "fill": "#b07a3c"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            190,
+            168
+          ],
+          [
+            202,
+            152
+          ],
+          [
+            210,
+            172
+          ]
+        ],
+        "fill": "#b07a3c"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          156,
+          176,
+          20,
+          20
+        ],
+        "fill": "#f4e9c8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          184,
+          176,
+          20,
+          20
+        ],
+        "fill": "#f4e9c8"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          162,
+          182,
+          8,
+          8
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          190,
+          182,
+          8,
+          8
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            176,
+            196
+          ],
+          [
+            184,
+            196
+          ],
+          [
+            180,
+            206
+          ]
+        ],
+        "fill": "#e0a020"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          470,
+          340,
+          45
+        ],
+        "fill": "#b9b6ae",
+        "note": "plot B: concrete plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          300,
+          340,
+          170
+        ],
+        "fill": "#4e5257",
+        "note": "anthracite slat fence"
+      },
+      {
+        "type": "bars",
+        "box": [
+          380,
+          304,
+          340,
+          164
+        ],
+        "step": 20,
+        "bar": 12,
+        "fill": "#62676d",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          430,
+          140,
+          110,
+          375
+        ],
+        "fill": "#f1efe9",
+        "note": "white rendered gate pillar with meter box and mailbox"
+      },
+      {
+        "type": "rect",
+        "box": [
+          424,
+          130,
+          122,
+          12
+        ],
+        "fill": "#d6d3cc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          452,
+          330,
+          66,
+          90
+        ],
+        "fill": "#cfccc5",
+        "note": "meter box door"
+      },
+      {
+        "type": "rect",
+        "box": [
+          447,
+          168,
+          76,
+          70
+        ],
+        "fill": "#3c4248",
+        "note": "mailbox"
+      },
+      {
+        "type": "rect",
+        "box": [
+          457,
+          182,
+          56,
+          6
+        ],
+        "fill": "#1e2226",
+        "note": "slot"
+      },
+      {
+        "type": "rect",
+        "box": [
+          462,
+          150,
+          14,
+          26
+        ],
+        "fill": "#e7d04a",
+        "note": "three flyers sticking out"
+      },
+      {
+        "type": "rect",
+        "box": [
+          480,
+          148,
+          12,
+          28
+        ],
+        "fill": "#e46a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          496,
+          152,
+          14,
+          24
+        ],
+        "fill": "#6aa6e0"
+      },
+      {
+        "type": "rect",
+        "box": [
+          468,
+          206,
+          34,
+          18
+        ],
+        "fill": "#f6f6f6",
+        "note": "sticker"
+      },
+      {
+        "type": "rect",
+        "box": [
+          720,
+          240,
+          560,
+          230
+        ],
+        "fill": "#4f6b3a",
+        "note": "trimmed thuja hedge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          720,
+          455,
+          560,
+          60
+        ],
+        "fill": "#a9a69e",
+        "note": "plot C: split-block plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          720,
+          300,
+          40,
+          215
+        ],
+        "fill": "#a9a69e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          990,
+          300,
+          40,
+          215
+        ],
+        "fill": "#a9a69e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1250,
+          300,
+          40,
+          215
+        ],
+        "fill": "#a9a69e"
+      },
+      {
+        "type": "grid",
+        "box": [
+          760,
+          320,
+          230,
+          135
+        ],
+        "cols": 12,
+        "rows": 5,
+        "color": "#7d8a8f",
+        "width": 2,
+        "note": "mesh panel"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1030,
+          320,
+          220,
+          135
+        ],
+        "cols": 12,
+        "rows": 5,
+        "color": "#7d8a8f",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          290,
+          630,
+          225
+        ],
+        "fill": "#3f4347",
+        "note": "plot D: dark sliding gate"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          470,
+          630,
+          45
+        ],
+        "fill": "#b9b6ae"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          515,
+          1920,
+          95
+        ],
+        "fill": "#c9c1b0",
+        "note": "decorative gravel strip with grass tufts"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          260,
+          520,
+          90,
+          50
+        ],
+        "fill": "#7a8a48"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          900,
+          525,
+          80,
+          44
+        ],
+        "fill": "#7a8a48"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1180,
+          522,
+          70,
+          40
+        ],
+        "fill": "#7a8a48"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          608,
+          1920,
+          12
+        ],
+        "fill": "#a9a59c",
+        "note": "low concrete edge (above the walk band)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          620,
+          1920,
+          460
+        ],
+        "fill": "#bdb9b1",
+        "note": "concrete street, one continuous surface"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          300,
+          680,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          760,
+          720,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1100,
+          660,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          560,
+          860,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1400,
+          930,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          200,
+          980,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          980,
+          1040,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1300,
+            735
+          ],
+          [
+            1300,
+            470
+          ],
+          [
+            1350,
+            380
+          ],
+          [
+            1480,
+            330
+          ],
+          [
+            1560,
+            330
+          ],
+          [
+            1560,
+            735
+          ]
+        ],
+        "fill": "#f1f1ee",
+        "note": "courier van cab"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          290,
+          380,
+          445
+        ],
+        "fill": "#f1f1ee",
+        "note": "cargo box"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1318,
+            470
+          ],
+          [
+            1360,
+            395
+          ],
+          [
+            1470,
+            352
+          ],
+          [
+            1470,
+            470
+          ]
+        ],
+        "fill": "#6f8696",
+        "note": "windscreen / side window"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          420,
+          300,
+          70
+        ],
+        "fill": "#e0a020",
+        "note": "fictional brand stripe (ŠUP)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          700,
+          640,
+          35
+        ],
+        "fill": "#cfcfca",
+        "note": "bumper / sill"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1350,
+          690,
+          104,
+          92
+        ],
+        "fill": "#2a2a2a",
+        "note": "wheel"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1376,
+          714,
+          52,
+          44
+        ],
+        "fill": "#8a8a8a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1760,
+          690,
+          104,
+          92
+        ],
+        "fill": "#2a2a2a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1786,
+          714,
+          52,
+          44
+        ],
+        "fill": "#8a8a8a"
+      }
+    ]
+  }
+}

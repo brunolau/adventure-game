@@ -1,0 +1,795 @@
+{
+  "room": "S07",
+  "version": 1,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020701,
+  "usd": 0.15,
+  "started": "2026-10-05T02:06:46",
+  "spend_log_asset": "bg/prologue2020/S07_v1",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/S07.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the bus stop \"Čierna Voda\" on Pezinská street in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a dashcam photo of this real stop: a glass bus shelter with a red steel frame and a curved translucent roof, flower pots in it, grey concrete paving of the platform, a red-surfaced bus bay, a bus-stop pole, a three-storey apartment block with balconies and family houses with red roofs behind. Paint the stop and its surroundings from this real place; the community notice board and all notices are invented.\n\nBrief: a pavement with the bus shelter and a community notice board full of notices about neighbourly help, online school and a postponed meeting; residential buildings behind. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, a pale-blue sky with a few small clouds, yellow and orange autumn trees, fallen leaves on the paving.\n\nCamera: seen from slightly above, as from a bus window - about 3.5 m high, looking down a little; vertical lines stay vertical. The notice board and the shelter stand at the back of a wide paved platform, their foot at y 515. Keep this exact geometry from the sketch: the foot of the shelter, board and hedge at y 515, the platform paving from y 515 to the kerb at y 1027, the red bus bay below it along the bottom edge.\n\nWhat the sketch blocks are: on the left a wooden community notice board on two posts under a small wooden gable roof, with many pinned paper notices; the red-framed glass bus shelter with a curved translucent roof and three glass back panels, a wooden bench only in its right half, a small timetable case on the frame (illegible), a pot of yellow chrysanthemums; a green litter bin; a grey bus-stop pole with a blue sign showing only a white bus pictogram; a trimmed hedge and a grass strip behind the platform; behind them a pale yellow three-storey apartment block with balconies (top left, cut by the top edge), a white family house with a red tiled roof, yellow and orange autumn trees and the sky; the wide platform of grey concrete pavers; at the very bottom a low kerb and the red bus bay.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 120-240, y 150-250 of the 1920x1080 frame (6-12 % from the left, 14-23 % from the top): the cork panel of the community notice board covered with pinned paper notices (illegible scribbles only) and one notice with a small square QR-code pattern.\n2. the block of the layout sketch at x 425-545, y 150-250 of the 1920x1080 frame (22-28 % from the left, 14-23 % from the top): a bright dance-course poster stuck on the upper part of the shelter's glass back wall, showing a painted dancing couple and no readable text.\n3. the block of the layout sketch at x 730-850, y 150-250 of the 1920x1080 frame (38-44 % from the left, 14-23 % from the top): a big round magnifying glass with a wooden handle hanging on a string from the shelter's roof frame, next to the timetable case.\n\nWalkable floor: the band at x 90-1830, y 790-1015 of the 1920x1080 frame (5-95 % from the left, 73-94 % from the top) is the open platform paving of grey concrete pavers - one continuous flat surface with no kerb, no step, no edge, no tactile strip and no change of material inside it, and nothing standing on it: no bins, no poles, no benches, no plants, no bags. Only light, long shadows and a few fallen leaves. The paving continues to the left edge (the area of the layout sketch at x 50-105, y 975-1045 of the 1920x1080 frame (3-5 % from the left, 90-97 % from the top)) and to the right edge (the area of the layout sketch at x 1870-1925, y 975-1045 of the 1920x1080 frame (97-100 % from the left, 90-97 % from the top)).\nNPC zone at x 385-535, y 450-770 of the 1920x1080 frame (20-28 % from the left, 42-71 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. Behind this zone is only the empty left half of the glass shelter (no bench there).\n\nFiction rules: the notice board and its notices are invented: no real IDS BK or bus company logos, no line numbers, no timetable text, no shop or pharmacy signs from the photo, no house numbers. Paper shows only illegible scribbles, no digits. No buses, no cars, no people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/S07_sketch.png (rendered from art/prompts/S07.sketch.json, model geometry)",
+    "art/source/rooms/S07/cierna_voda_stop_kartaview_434.jpg",
+    "src/game/assets/bg/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S07 Čierna Voda bus stop with the community notice board. S05 camera: shelter and board stand at the back of a wide platform, foot y 515 (~160 px/m); the board panel (1.1-2.3 m), the poster on the upper glass and the hanging magnifier fall in y 150-250; platform paving to y 1027, kerb and red bus bay below the walk band.",
+    "background": "#a9cde8",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          160
+        ],
+        "fill": "#a9cde8"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          -10,
+          560,
+          360
+        ],
+        "fill": "#eadfb4",
+        "note": "three-storey apartment block with balconies (cut)"
+      },
+      {
+        "type": "bars",
+        "box": [
+          0,
+          40,
+          560,
+          300
+        ],
+        "step": 110,
+        "bar": 30,
+        "fill": "#c9c2a0",
+        "vertical": false,
+        "note": "balcony bands"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          70,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          220,
+          70,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          70,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          40,
+          180,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          220,
+          180,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          400,
+          180,
+          90,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          520,
+          -40,
+          300,
+          300
+        ],
+        "fill": "#d6a43a",
+        "note": "autumn tree"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            1060,
+            120
+          ],
+          [
+            1270,
+            30
+          ],
+          [
+            1480,
+            120
+          ]
+        ],
+        "fill": "#a8472e",
+        "note": "red roof of a family house behind"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1080,
+          120,
+          380,
+          200
+        ],
+        "fill": "#efe6d6"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1140,
+          170,
+          70,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1320,
+          170,
+          70,
+          60
+        ],
+        "fill": "#7d97a3"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1480,
+          -30,
+          460,
+          360
+        ],
+        "fill": "#c9822c",
+        "note": "autumn trees"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          300,
+          1920,
+          175
+        ],
+        "fill": "#5d7a42",
+        "note": "hedge behind the platform"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          470,
+          1920,
+          45
+        ],
+        "fill": "#8e9a52",
+        "note": "grass strip"
+      },
+      {
+        "type": "rect",
+        "box": [
+          110,
+          140,
+          16,
+          375
+        ],
+        "fill": "#5a3c24",
+        "note": "board posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          264,
+          140,
+          16,
+          375
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            78,
+            142
+          ],
+          [
+            195,
+            98
+          ],
+          [
+            312,
+            142
+          ]
+        ],
+        "fill": "#7a4e2a",
+        "note": "small wooden roof of the notice board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          92,
+          142,
+          206,
+          196
+        ],
+        "fill": "#6b4a2e",
+        "note": "board frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          100,
+          150,
+          190,
+          180
+        ],
+        "fill": "#c49a6a",
+        "note": "cork board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          112,
+          160,
+          50,
+          64
+        ],
+        "fill": "#f4f1e6",
+        "note": "notice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          170,
+          156,
+          56,
+          44
+        ],
+        "fill": "#f7e9a8",
+        "note": "notice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          234,
+          166,
+          48,
+          60
+        ],
+        "fill": "#f4f1e6",
+        "note": "notice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          116,
+          236,
+          60,
+          52
+        ],
+        "fill": "#d8ecf6",
+        "note": "notice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          188,
+          208,
+          44,
+          44
+        ],
+        "fill": "#ffffff",
+        "note": "notice with a small QR code"
+      },
+      {
+        "type": "grid",
+        "box": [
+          194,
+          214,
+          32,
+          32
+        ],
+        "cols": 4,
+        "rows": 4,
+        "color": "#333333",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          240,
+          238,
+          44,
+          60
+        ],
+        "fill": "#f2c9a0",
+        "note": "notice"
+      },
+      {
+        "type": "rect",
+        "box": [
+          356,
+          136,
+          658,
+          360
+        ],
+        "fill": "#c9dde5",
+        "note": "glass back wall of the shelter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          356,
+          136,
+          4,
+          360
+        ],
+        "fill": "#ffffff"
+      },
+      {
+        "type": "rect",
+        "box": [
+          340,
+          112,
+          16,
+          403
+        ],
+        "fill": "#c0392b",
+        "note": "red frame posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          680,
+          112,
+          14,
+          403
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1014,
+          112,
+          16,
+          403
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            318,
+            124
+          ],
+          [
+            520,
+            96
+          ],
+          [
+            680,
+            88
+          ],
+          [
+            840,
+            96
+          ],
+          [
+            1052,
+            124
+          ],
+          [
+            1052,
+            138
+          ],
+          [
+            318,
+            138
+          ]
+        ],
+        "fill": "#e3ecef",
+        "note": "curved translucent roof"
+      },
+      {
+        "type": "rect",
+        "box": [
+          318,
+          134,
+          734,
+          8
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "rect",
+        "box": [
+          440,
+          158,
+          100,
+          88
+        ],
+        "fill": "#f2b84a",
+        "note": "dance-course poster on the glass"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          470,
+          168,
+          22,
+          22
+        ],
+        "fill": "#8f3d2b"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            466,
+            192
+          ],
+          [
+            500,
+            192
+          ],
+          [
+            510,
+            240
+          ],
+          [
+            456,
+            240
+          ]
+        ],
+        "fill": "#8f3d2b"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          500,
+          172,
+          20,
+          20
+        ],
+        "fill": "#2f4f7a"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            496,
+            194
+          ],
+          [
+            526,
+            194
+          ],
+          [
+            532,
+            240
+          ],
+          [
+            492,
+            240
+          ]
+        ],
+        "fill": "#2f4f7a"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            790,
+            138
+          ],
+          [
+            790,
+            172
+          ]
+        ],
+        "color": "#444444",
+        "width": 3,
+        "note": "string"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          762,
+          170,
+          56,
+          56
+        ],
+        "fill": "#d9eef4",
+        "outline": "#6b5a48",
+        "width": 7,
+        "note": "big magnifying glass hanging on a string"
+      },
+      {
+        "type": "rect",
+        "box": [
+          784,
+          224,
+          12,
+          28
+        ],
+        "fill": "#8a5a30",
+        "note": "magnifier handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          860,
+          168,
+          64,
+          84
+        ],
+        "fill": "#f4f1e6",
+        "outline": "#c0392b",
+        "width": 4,
+        "note": "small timetable case"
+      },
+      {
+        "type": "rect",
+        "box": [
+          700,
+          430,
+          300,
+          18
+        ],
+        "fill": "#8a6a4a",
+        "note": "bench (right half only)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          712,
+          448,
+          10,
+          67
+        ],
+        "fill": "#555555"
+      },
+      {
+        "type": "rect",
+        "box": [
+          978,
+          448,
+          10,
+          67
+        ],
+        "fill": "#555555"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          920,
+          470,
+          70,
+          50
+        ],
+        "fill": "#e0a020",
+        "note": "chrysanthemum pot"
+      },
+      {
+        "type": "rect",
+        "box": [
+          930,
+          490,
+          50,
+          26
+        ],
+        "fill": "#b5532f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1066,
+          440,
+          40,
+          75
+        ],
+        "fill": "#4a5a4a",
+        "note": "litter bin"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          40,
+          12,
+          475
+        ],
+        "fill": "#9a9a9a",
+        "note": "bus stop pole"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1150,
+          40,
+          72,
+          64
+        ],
+        "fill": "#2e6db4",
+        "note": "blue sign, bus pictogram only"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1166,
+          56,
+          40,
+          30
+        ],
+        "fill": "#ffffff"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          515,
+          1920,
+          512
+        ],
+        "fill": "#bdb2a4",
+        "note": "platform paving, one continuous surface"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          515,
+          1920,
+          512
+        ],
+        "cols": 48,
+        "rows": 10,
+        "color": "#ada293",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          1027,
+          1920,
+          10
+        ],
+        "fill": "#dcd7cf",
+        "note": "kerb (below the walk band)"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          1037,
+          1920,
+          43
+        ],
+        "fill": "#9b4a3c",
+        "note": "red bus bay"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          240,
+          560,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          700,
+          620,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1300,
+          580,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1700,
+          650,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          520,
+          860,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1100,
+          940,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1500,
+          1000,
+          30,
+          13
+        ],
+        "fill": "#d9a33a"
+      }
+    ]
+  }
+}

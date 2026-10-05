@@ -191,3 +191,96 @@ not included.
 - Regenerate walk_toward / walk_away with Hailuo Pro for sharpness (they are 768p now).
 - Front-facing talk/blink for the hero, and the remaining hero actions, are not generated yet.
 - `restyle.py` still has its own key lookup and synchronous calls; it could use `fal_api.py`.
+
+## 10. Prologue NPC run (2026-10-05): ELA, DANA, MIRA20, ROMAN, LENKA, JOZEF
+
+Budget USD 10 (shared with the prologue item icons), spent **USD 4.39** (37 calls; characters 4.11, icons 0.28).
+NPC scripts: `art/tools/npcs.py` (paid: `sheet`, `pose blink|talk|talk_oh|gesture`, `video`; task budget guard
+over a prefix list + start time), `mask_talk.py`, `glass.py`, `export_actors.py` (all free, local).
+
+- **House view for NPCs: three-quarter facing right**, Pro 2K with ADAM's keyed 3/4 sprite as cast anchor
+  (`npcs.py sheet <ID>`): five of five sheets usable on the first try (ELA reuses the prototype cast sheet).
+  Ages, clothes and props follow `characters[].design`; briefs, gestures and idle prompts are in `characters.json`.
+- **Face masks (2020) break NB2 talk edits.** Asked to "speak behind the mask", NB2 pulled the mask under the chin
+  or painted an open mouth through it on all five masked NPCs. Talk frames for masked characters are therefore
+  made locally: `mask_talk.py` finds the light-blue mask and stretches its lower half around a jaw hinge
+  (0 at the ear, full at the chin; `--drop 0.14 --fold` and `--drop 0.07`). Eyes and brows stay the base's, so
+  alternating talk frames do not flicker the expression. NB2 blinks with a mask are fine.
+- **Unmasked talk (MIRA20):** NB2 talk frames also widen the eyes; only a mouth band (0.163-0.225 of the figure
+  height) is transplanted so the expression stays stable.
+- **Gestures (NB2 2K):** 5/6 first try; ROMAN duplicated his parcel until the prompt said which hand keeps it and
+  that there is exactly one.
+- **Hailuo idle loops (768p, 6 s, start = end):** MIRA20 (listening on the phone, slow blink, nod) excellent;
+  DANA good (hands move to clasped and back); ELA twice turned toward profile and bowed over her clipboard
+  mid-clip despite "does not look down" in the second prompt. Shipped ELA idle = ping-pong of the calm first
+  2.3 s (head turns toward the road and back); the first clip ships as an optional `idle_checklist` fidget.
+  36 frames per idle (6-8 fps). Video cells are softer than the edit stills; switch to talk at a loop boundary.
+- **Behind glass:** `glass.py` cuts a bust at the window-sill line (pivot = centre of the cut edge) and bakes a
+  pale veil + one soft reflection streak; in a mock window it reads as "behind the pane" while the face stays
+  readable (MIRA20 default in S06; optional for DANA in S04; ISSUES ART-NPC-02).
+- **Spend log race:** with ~24 calls submitted at once one `log_spend` append was lost (re-logged by hand).
+  `fal_api.log_spend` has no file lock; keep parallel batches small or add a lock before the next big batch.
+- **Icons:** all eight prologue icons in ONE NB2 2K 4x2 grid on a flat green canvas (ADAM's bag crop as the
+  second reference) give matching camera, light and outline; NB2 invents readable text when asked for
+  "suggestions of words" and wrote "ENGRAVED RIM" on the chronometer, fixed with one single-icon retake (style
+  reference = the grid without the failed cell) and one focused edit. Glass keys to opaque grey glass, which
+  reads well. Tools: `art/tools/items.py`, masters in `art/items/`.
+
+## 11. Hero production set (2026-10-05): ADAM
+
+Budget USD 10, spent **USD 7.71** (40 calls, spend-log scope `characters/ADAM/prod/`). Shipped:
+`src/game/assets/actors/ADAM/` (28 lossless WebP sheets + JSON + `animations.json` + README with fps, pivots,
+strides and playback rules). Masters: `art/characters/ADAM/anim/<name>/` (sheet PNG + JSON, GIF preview on a game
+background, contact sheet, `*_review.jpg` with pivot / standing-height guide lines), full-resolution keyed masters
+in `masters/`, every paid output with its sidecar in `prod/`. Local build: `art/tools/hero_set.py`
+(`prep`, `canvases`, `walk`, `idle`, `talk`, `oneshot [--mask]`, `walkmask`, `export`).
+
+- **Design fix.** The prototype profile hid the mustard T-shirt (strap and closed-looking jacket: it read as a blue
+  shirt). Pro edit of the old profile with the 3/4 sheet as clothes reference turned him to 3/4 (40 deg); NB2 with
+  two references copied the second reference. What worked: **one-image NB2 2K edit of the old profile**
+  (`pose open_jacket_solo`): same face, near profile, jacket hanging open, broad mustard band neckline-to-belt.
+  Front/back views are the approved prototype turnaround, **mirrored** so the bag hangs on his left hip as the
+  brief says (the turnaround had drawn it on the right hip). Lesson: NB2 sticks to the first image; give it one.
+- **One canvas per facing** (1792x2400, figure 1700 px, feet line 2256): every face and pose edit is made on it, so
+  edits align; key poses are aligned by the feet (phase correlation of the lowest band; for the crouch, by the
+  boots' colour box, because the reaching hand sits in that band). NB2 re-framed the reach_low crouch 1.6x larger
+  (measured head and boots) and it was scaled back about the feet.
+- **Pose-edit guard.** The style line's "dappled shadows" put sun spots on the jacket and lightened the hair
+  (use_tool, reach_high first tries); every `chars.py pose` prompt now carries `POSE_GUARD`.
+- **Walks (Hailuo Pro, start = end):** all three usable first time; 16 frames per cycle. Scale comes from the
+  standing first video frame (`build_loop --ref_height`), so walk and idle share 512 px. toward/away keep the
+  video's vertical positions (`fixed_baseline`): aligning each frame's lowest pixel made the body bob ~20 px,
+  because the near foot reaches below the standing feet line in perspective.
+- **Idle and talk need no video.** Idle = still master + procedural breathing warp (rows above the hips lift
+  0.35 % of the height, smooth falloff to the hips; untouched rows stay bit-identical) + one NB2 blink frame.
+  Talk = mouth/jaw band (0.098-0.178 of the height, soft edges) of three NB2 mouth edits; NB2 also raised the
+  brows on 'ah'/'oh', which the band excludes. Masked talk = local jaw warp of the mask (no mouth edits).
+- **One-shots (Hailuo Pro, start = idle still, end = key pose):** Hailuo moves quickly, then drifts slowly into the
+  end frame (reach_low turns from profile to 3/4 over 3 s). Frames are therefore sampled at **equal pose progress**
+  p = d0 / (d0 + d1) (`progress_picks`), not equal time; first and last cells are the crisp stills. Prompts must
+  not name props: "a high shelf" produced a ghost shelf touching the hand (retake without it).
+- **Green fringe on video frames:** 4:2:0 chroma turns thin fingers yellow-green after the plain despill.
+  `frames.edge_despill` (on by default for video keys, green key only) caps G near the matte edge for green-top or
+  olive pixels; skin and the mustard shirt are outside that rule. `reach_high` in-betweens additionally get a
+  skin-tone pull above the head line, where only the hand can be.
+- **2020 mask on frames that were not edited:** a mask-only layer (light-blue fabric pieces with attached ear
+  loops; skin highlights, eye whites and collar specks are dropped by component filtering) is tracked onto every
+  cell by weighted SSD over rotation and scale, following one head centre from cell to cell. Works for all walks
+  and five one-shots; for the crouch (head pitched toward the floor) tracking failed, so NB2 painted the mask onto
+  those three source video frames (USD 0.24) and only the mask pixels were transplanted.
+- **Checks run:** default and mask variants start pixel-identical to idle frame 0; idle and talk bodies are
+  bit-identical below the head (legs never move); WebP decodes identical to the PNG masters; Godot 4.7.2 imports
+  all 28 sheets headless without errors.
+- **walk_left = mirror** (decided after looking at mirrored frames next to the front view; a generated walk_left
+  alone would make the bag jump at every stop because idle and actions are mirrored anyway).
+- **Not produced:** startled, listen, travel (ISSUES ART-ADAM-01), diagonal walk sheets (reuse rule).
+
+| spend | USD |
+|---|---|
+| base fix: Pro 3/4 (kept as design and cast reference), 2 failed NB2 profile tries, final NB2 profile | 0.51 |
+| walks right / toward / away (Hailuo Pro) | 1.44 |
+| face edits side + front (blink, 3 mouths, mask) + back mask (NB2 1K) | 0.88 |
+| key poses (NB2 2K) incl. retakes use_tool, reach_high | 0.96 |
+| transitions x 6 (Hailuo Pro) + reach_high retake | 3.36 |
+| mask edits on 4 key poses + 3 crouch video frames (NB2 1K) | 0.56 |
+| **total** | **7.71** |

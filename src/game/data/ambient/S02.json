@@ -1,0 +1,203 @@
+{
+ "room": "S02",
+ "notes": "Street between fences (2020 autumn). Wind in the birch, maple, hedge and gravel-bed tufts; leaves; a cat on the pavement behind the parked van; pigeons crossing the sky; the van's amber marker blinking (it is about to reverse, ambience 'Cúvanie dodávky').",
+ "layers": [
+  {
+   "id": "birch",
+   "type": "sway",
+   "texture": "S02/birch.webp",
+   "anchor": 0.95,
+   "amp_px": 3.2,
+   "freq": 0.32,
+   "wavelength_px": 160,
+   "flutter_px": 0.7
+  },
+  {
+   "id": "maple",
+   "type": "sway",
+   "texture": "S02/maple.webp",
+   "anchor": 0.97,
+   "amp_px": 2.6,
+   "freq": 0.27,
+   "wavelength_px": 200,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "hedge",
+   "type": "sway",
+   "texture": "S02/hedge.webp",
+   "anchor": 0.9,
+   "amp_px": 1.2,
+   "freq": 0.4,
+   "wavelength_px": 120,
+   "flutter_px": 0.4,
+   "gust": 0.5
+  },
+  {
+   "id": "tufts",
+   "type": "sway",
+   "texture": "S02/tufts.webp",
+   "anchor": 0.88,
+   "amp_px": 1.6,
+   "freq": 0.45,
+   "wavelength_px": 90,
+   "flutter_px": 0.3
+  },
+  {
+   "id": "leaves_birch",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    360,
+    40,
+    270,
+    220
+   ],
+   "rate": 0.35,
+   "size": [
+    13,
+    20
+   ],
+   "land_y": [
+    600,
+    780
+   ],
+   "rest_s": [
+    3,
+    7
+   ]
+  },
+  {
+   "id": "leaves_maple",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp"
+   ],
+   "emit_rect": [
+    1570,
+    30,
+    340,
+    240
+   ],
+   "rate": 0.3,
+   "size": [
+    14,
+    22
+   ],
+   "land_y": [
+    600,
+    780
+   ],
+   "rest_s": [
+    3,
+    7
+   ],
+   "mask": "S02/van_mask.webp",
+   "mask_invert": true
+  },
+  {
+   "id": "cat",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     1365,
+     616
+    ],
+    [
+     -90,
+     616
+    ]
+   ],
+   "speed_px_s": 75,
+   "scale": 0.4,
+   "faces": "right",
+   "every_s": [
+    35,
+    60
+   ],
+   "start_s": [
+    4,
+    8
+   ],
+   "mask": "S02/van_mask.webp",
+   "mask_invert": true
+  },
+  {
+   "id": "pigeons_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     70
+    ],
+    [
+     700,
+     40
+    ],
+    [
+     1300,
+     55
+    ],
+    [
+     2000,
+     30
+    ]
+   ],
+   "speed_px_s": 260,
+   "scale": 0.13,
+   "flock": 3,
+   "flock_spread": [
+    70,
+    25
+   ],
+   "bob_px": 5,
+   "bob_hz": 1.1,
+   "direction": "random",
+   "every_s": [
+    18,
+    40
+   ],
+   "start_s": [
+    2,
+    5
+   ]
+  },
+  {
+   "id": "van_marker",
+   "type": "flicker",
+   "mode": "blink",
+   "rect": [
+    1335,
+    505,
+    80,
+    70
+   ],
+   "color": "#ffb340",
+   "min": 0.0,
+   "max": 0.75,
+   "period_s": 0.9,
+   "duty": 0.5
+  }
+ ]
+}

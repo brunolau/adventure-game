@@ -1,0 +1,20 @@
+{
+  "description": "Visual staging of actor sprites (living world, scripts/Living/Actors/ActorStaging.cs). Visual only, never rules. hero_mask2020_rooms: rooms where Adam wears the 2020 face mask (outdoors among people; game.json has no flag, see ISSUES ART-ADAM-02). placements: per room and character: variant (actor.json variants), sill_y (canvas y of the painted window sill a bust stands on), scale (absolute, else room perspective), offset_x, facing (left/right, else face the hero).",
+  "hero_mask2020_rooms": ["S02", "S03", "S04", "S05", "S06", "S07", "S08", "S51", "S52", "S55", "S56"],
+  "depth_speed_factor": 0.3,
+  "action_hold_s": 0.45,
+  "action_hold_overrides_s": {
+    "show_item": 0.9,
+    "inventory_combine": 0.3,
+    "use_tool": 0.3
+  },
+  "hero_blink_chance": 0.7,
+  "placements": {
+    "S04": {
+      "DANA": { "variant": "window", "sill_y": 595 }
+    },
+    "S06": {
+      "MIRA20": { "variant": "window_glass", "sill_y": 582 }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+ "room": "S05",
+ "notes": "Mirka's garden gate (2020 autumn). Wind in the grape vine (the vine hotspot itself moves) and in the grass strip, vine leaves falling, a cat walking along the top of the garden wall (passing behind the utility pole), a shadow moving behind the lace curtains of the house.",
+ "layers": [
+  {
+   "id": "vine",
+   "type": "sway",
+   "texture": "S05/vine.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.3,
+   "wavelength_px": 120,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "grass",
+   "type": "sway",
+   "texture": "S05/grass.webp",
+   "anchor": 0.95,
+   "amp_px": 1.8,
+   "freq": 0.42,
+   "wavelength_px": 70,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "vine_leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    660,
+    20,
+    360,
+    160
+   ],
+   "rate": 0.3,
+   "size": [
+    13,
+    19
+   ],
+   "land_y": [
+    470,
+    560
+   ],
+   "rest_s": [
+    3,
+    7
+   ]
+  },
+  {
+   "id": "cat_wall",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     1990,
+     340
+    ],
+    [
+     640,
+     340
+    ]
+   ],
+   "speed_px_s": 68,
+   "scale": 0.37,
+   "faces": "right",
+   "fade_px": 50,
+   "every_s": [
+    40,
+    70
+   ],
+   "start_s": [
+    5,
+    10
+   ],
+   "mask": "S05/pole_mask.webp",
+   "mask_invert": true
+  },
+  {
+   "id": "curtain_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     985,
+     300
+    ],
+    [
+     1235,
+     300
+    ]
+   ],
+   "speed_px_s": 40,
+   "scale": 0.75,
+   "modulate": "#3a2c24",
+   "alpha": 0.28,
+   "direction": "random",
+   "every_s": [
+    18,
+    40
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "clip": [
+    1012,
+    0,
+    190,
+    108
+   ]
+  }
+ ]
+}

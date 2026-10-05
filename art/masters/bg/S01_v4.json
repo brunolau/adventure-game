@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 2,
+  "box_game_px": [
+    100.0,
+    80.0,
+    370.0,
+    205.0
+  ],
+  "instruction": "on the long wooden wall shelf at the top left, the grey-green canvas tool bag is too big and too far right. Paint the same bag about one third smaller and move it to the very left end of the shelf, so that it occupies only the area from 6% to 12.5% of the image width and from 14% to 23% of the image height, standing on the shelf board, with a screwdriver handle and small pliers sticking out of it. Remove the yellow tape measure that lies next to the bag and paint plain wall and empty shelf board in the space that becomes free, up to the small grey drawer cabinet.",
+  "feather_master_px": 32,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020104,
+  "usd": 0.15,
+  "scope": "bg/pilot/",
+  "spend_log_asset": "bg/pilot/S01_v4_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: on the long wooden wall shelf at the top left, the grey-green canvas tool bag is too big and too far right. Paint the same bag about one third smaller and move it to the very left end of the shelf, so that it occupies only the area from 6% to 12.5% of the image width and from 14% to 23% of the image height, standing on the shelf board, with a screwdriver handle and small pliers sticking out of it. Remove the yellow tape measure that lies next to the bag and paint plain wall and empty shelf board in the space that becomes free, up to the small grey drawer cabinet. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S01_v2.png",
+    "art/backgrounds/entrance.png"
+  ],
+  "raw_model_output": "art/masters/bg/_bg_pilot_S01_v4_fix_raw.png",
+  "started": "2026-10-05T01:36:05",
+  "model_description": "",
+  "parent_prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Adam's garage, the garage of an ordinary family house on Jaseňová street in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 shows the lived-in workbench, pegboard and small-parts drawer cabinet to paint from; image 3 shows an opened old valve radio being repaired on a bench; image 4 shows the real Jaseňová street outside (modern white single-storey family houses with flat roofs, grey slatted fences, a concrete road), which is what is seen through the garage window.\n\nBrief: an autumn afternoon in October 2020 in the garage of a family house. A workbench with a radio being repaired, small parts drawers, Adam's fabric tool bag. The space feels lived in and homely, a real family garage - NOT a secret laboratory. A Slovak suburban garage of the 2000s: plastered and painted walls with a patch of bare brick, a concrete floor, a fluorescent tube, a round wall clock, a pegboard with hand tools, everyday family storage.\n\nWhat the sketch blocks are (eye-level, straight-on view of the back wall, exactly as in the sketch): the dark strip at the top is the ceiling edge with a fluorescent tube; the bright strip at the far left (x 0-90) is the open garage doorway full of warm autumn daylight, with a wooden door jamb, and the light spills across the floor from the left; a cloth face mask hangs on a nail by the doorway (2020); the long brown bar at y 250 is a sturdy high wooden wall shelf on black metal brackets; under it a pegboard with neatly hung hammers, wrenches, pliers and a saw; the wooden workbench with an opened old radio chassis with glowing valves, a yellow multimeter, a schematic sheet and a soldering iron; crates and cardboard boxes under the bench; the grey cabinet of many small parts drawers on the right of the bench; the round wall clock; the square window showing the sunny autumn street with a white flat-roofed family house, an autumn tree and a grey slatted fence; a bicycle leaning on the wall and a stack of winter tyres in the right corner. The wall meets the floor at y 780 along the whole width.\n\nInteractive props - each stands on the high shelf, painted clearly and completely inside its block, the same size as its block, easy to recognise at a glance, with a little empty shelf between them:\n1. the block of the layout sketch at x 120-240, y 150-250 of the 1920x1080 frame (6-12 % from the left, 14-23 % from the top): Adam's service bag - a soft grey-green canvas tool bag with a shoulder strap, open at the top, with a screwdriver with exchangeable bits, small pliers and a small yellow measuring meter sticking out.\n2. the block of the layout sketch at x 425-545, y 150-250 of the 1920x1080 frame (22-28 % from the left, 14-23 % from the top): a small grey steel cabinet of little parts drawers; its lower drawer is pulled half out and is full of small glass fuses.\n3. the block of the layout sketch at x 730-850, y 150-250 of the 1920x1080 frame (38-44 % from the left, 14-23 % from the top): an old chipped enamel cooking pot, cream with a red rim, heaped full with unsorted screws, nuts and bolts.\n4. the block of the layout sketch at x 1035-1155, y 150-250 of the 1920x1080 frame (54-60 % from the left, 14-23 % from the top): an old 1970s wooden table radio with a fabric speaker grille, a glowing glass tuning scale and two knobs, plugged in.\n\nWalkable floor: the band at x 90-1830, y 790-1015 of the 1920x1080 frame (5-95 % from the left, 73-94 % from the top) is plain open concrete floor - nothing stands on it: no boxes, no tools, no car, no cables, no rug. Only light and soft shadows cross it, with a few old stains. The floor continues to the left edge into the daylight of the doorway, where the exit to the street is (the area of the layout sketch at x 50-105, y 975-1045 of the 1920x1080 frame (3-5 % from the left, 90-97 % from the top)).\nThis room has no NPC zones.\n\nFiction rules: Adam's house is invented. No brand names, logos or readable labels on tools, boxes, cans, the radio or anything else; no house numbers visible through the window; no American-specific items. Any paper shows only illegible scribbles.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S01",
+  "version": 4,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg/S01.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T01:43:12"
+  }
+}

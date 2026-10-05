@@ -1,0 +1,32 @@
+{
+  "room": "S09",
+  "version": 7,
+  "kind": "recomposite",
+  "from_version": 6,
+  "usd": 0.0,
+  "made": "2026-10-05T02:46:35",
+  "what": "Free re-composite (no model call) of the paid v4 fix output art/masters/bg/_bg_batch_s08_s11_S09_v4_fix_raw.png with the corrected refit_room.py fix mask (box game px 0,0,440,262 touches the frame's left and top edge, so those sides now run to the canvas edge without feather) onto v6; this replaces the v5 median retouch by the model's own wall and removes the ghost lid completely. The third ski of v6 (outside the box) is kept.",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "box_game_px": [
+    0,
+    0,
+    440,
+    262
+  ],
+  "image_urls": [
+    "art/masters/bg/S09_v6.png",
+    "art/masters/bg/_bg_batch_s08_s11_S09_v4_fix_raw.png"
+  ],
+  "exported": {
+    "path": "src/game/assets/bg/S09.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T02:46:37"
+  }
+}

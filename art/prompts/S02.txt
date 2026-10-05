@@ -1,0 +1,22 @@
+# S02 Ulica medzi plotmi (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S02.sketch.json (image 1, S05 camera: fence foot y 515, ~160 px/m).
+# Style reference = the accepted S05 background (same 2020 prologue: autumn light and palette).
+#refs: art/source/rooms/S02/jasenova_street_mm_explorer.jpg
+#style: src/game/assets/bg/S05.webp
+Place: Jaseňová, a living street of new family houses in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real street: modern white and red-orange cubic single-storey family houses with flat roofs, and every plot has a different fence - anthracite slat fences and sliding gates, red brick pillars with cream panels, grey split-block pillars with metal mesh panels, white rendered utility pillars with meter boxes and mailboxes, trimmed thuja hedges, a strip of decorative gravel along the fences and a plain concrete street. Paint the frontage of four neighbouring plots from these real house and fence types - not a copy of one particular private house.
+
+Brief: a residential street between fences; houses, all different fences, a courier van parked on the right, an open pedestrian street. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, a clear pale-blue sky, yellow and orange autumn trees between the houses, a few fallen leaves on the street.
+
+Camera: seen from slightly above, as from a first-floor window across the street - about 3.5 m high, looking down a little; vertical lines stay vertical. The fences stand side by side along the top half of the picture, their foot at y 515; the houses stand behind them (their flat roofs at the top edge). Keep this exact geometry from the sketch: fence foot y 515, the gravel strip y 515-608, a low concrete edge at y 608-620, the concrete street from y 620 down to the bottom edge.
+
+What the sketch blocks are, left to right: plot A - a cream rendered fence with red brick pillars and stone pillar caps, a white flat-roofed house with dark grey window frames behind it; a yellow autumn birch; plot B - an anthracite horizontal slat fence on a concrete plinth with a tall white rendered gate pillar (a grey meter-box door low on it, the mailbox at its top); a white house set further back with a long strip window; plot C - grey metal mesh fence panels between split-face concrete block pillars, a tall trimmed thuja hedge behind; a red-orange rendered cubic house with white window frames; plot D - a dark grey sliding gate, mostly hidden by the van; an orange autumn maple at the top right. Along the fence foot a strip of decorative pale gravel with small grass tufts and low shrubs, then a low concrete edge, then the wide plain concrete street. On the right, parked at the far side of the street in front of plot D, the courier's white delivery van (front facing left, cut by the right edge) with an orange stripe and the invented courier name ŠUP in big simple letters on the side; its wheels stand at y 782, above the walk band.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S02.ambient 1}: a glazed ceramic garden owl (ochre-brown, big round eyes, ear tufts) sitting on top of the stone cap of the red brick fence pillar.
+2. {rect:S02.ambient 2}: a dark grey metal mailbox mounted at the top of the white gate pillar, with a white "no advertising" sticker (only illegible scribbles on it) and three colourful folded leaflets sticking out of its slot.
+
+Walkable floor: {walk} is the open concrete street - one continuous flat surface with no kerb, no step, no edge, no road markings and no change of material inside it, and nothing standing on it: no cars, no bins, no poles, no plants, no bags. Only light, long shadows and a few fallen leaves. The street continues to the left edge ({exit:S02.to_S01}) and to the right edge ({exit:S02.to_S51}) and stays open along the bottom ({exit:S02.to_S03}, {exit:S02.to_S05}).
+{npc_zones}
+
+Fiction rules: the houses are invented from the real house types. No house numbers, no names on mailboxes or bells, no real courier company livery or logo (only the invented name ŠUP), no readable advertising on the leaflets or the sticker, no licence plate text, no people, no animals.

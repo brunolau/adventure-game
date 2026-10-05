@@ -1,0 +1,26 @@
+# S06 Pod zatvoreným oknom (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S06.sketch.json (image 1, S01-type straight-on wall view: the house wall meets
+# the path at y 780). Mira's bust (ISSUES.md ART-NPC-02) needs the window sill top at y ~594.
+# Same house as S05 (art/masters/bg/S05.md, property continuity): pale peach plaster, white windows, lace curtains,
+# brown roller-blind boxes, green picket fence, grapevine. The S05 painting is passed as reference image 3 (not as
+# the style image, which the preamble says not to copy); style image = the one S05 was painted with.
+#refs: art/source/rooms/S05/pezinska_old_house_kartaview_416.jpg ; src/game/assets/bg/S05.webp
+#style: art/backgrounds/sokolikova-street.png
+Place: grandmother Mira's old single-storey house in the old core of Čierna Voda on Pezinská street (municipality Chorvátsky Grob, near Bratislava, Slovakia), seen now from its narrow side path inside the plot. Image 2 is a dashcam photo of the real house type of this street: a low 1950s-70s village house with a red-brown tiled roof, pale peach and light blue plaster and white windows. Image 3 is our finished painting of the street front of this same invented house (gate, workshop, green picket fence, grapevine, peach plaster, white windows with lace curtains): paint the side wall of Mira's house so that it is clearly the same house - same plaster colour, windows, lace curtains, roller-blind boxes, green fence and vine - but do not copy that picture's street view.
+
+Brief: a narrow outdoor side path along the house, separated from the lived-in part of the garden by a low fence. Mira is in quarantine and talks with her grandson by phone through her big closed window; a family photo hangs inside on the wall, visible through the glass. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left across the wall, soft shadows to the right, yellowing vine leaves, a few fallen leaves on the path.
+
+Camera: eye-level, straight-on view of the side wall; vertical lines stay vertical. The wall meets the path along one straight horizontal line at y 780. Keep this exact geometry from the sketch: the red-brown tiled roof overhang and its pale soffit along the top edge (y 0-70), the brown roller-blind boxes at y 112-136, the tall white windows from y 136 down to their sills at y 594-608, the transom bars at y 258-272, the rough plinth y 690-780, the path from y 780 down to the bottom edge, the house corner at x 980.
+
+What the sketch blocks are: the side wall of the house in pale peach plaster with a grey drainpipe at the corner; three tall old white-framed double windows, each with a fixed upper transom pane and two tall casements below, all closed: window A on the left, window B in the middle - Mira's big window with the lace curtains drawn aside to the edges and the dim, empty room behind the glass - and window C on the right with closed lace curtains; deep window sills; right of the house corner a low weathered green picket fence (the same as in image 3) separating the path from Mira's garden: behind it the lawn, the old grapevine on a wooden trellis with yellowing leaves and dark blue grapes, an old fruit tree in autumn colours, the neighbours' trees and a piece of blue sky; the narrow side path of old square concrete slabs.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S06.photo}: seen through the upper transom pane of window A, a framed family photograph hanging high on the inner wall of the room: a grandmother with white hair and her grown-up grandson at the seaside, with a slightly crooked horizon.
+2. {rect:S06.ambient 1}: a terracotta pot of red trailing geraniums hanging on a short chain from the eave, in front of the upper transom pane of window B.
+3. {rect:S06.ambient 2}: the gathered top of the old white lace curtain filling the upper transom pane of window C.
+
+Walkable floor: {walk} is the narrow side path of old concrete slabs - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no pots, no tools, no bins, no hoses, no bags. Only light, soft shadows and a few fallen leaves. The path continues to the left edge towards the gate ({exit:S06.to_S05}).
+{npc_zones} The upper part of this zone is the lower panes of window B above the sill: paint the dim, empty room behind the glass with a soft reflection, the lace curtains only at the window edges; below the sill it is plain wall and plinth.
+
+Fiction rules: the house and its interior are invented. No house numbers, no names, no text, no people (the photo shows two small painted figures only), no animals.

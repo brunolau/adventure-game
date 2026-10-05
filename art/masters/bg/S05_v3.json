@@ -1,0 +1,905 @@
+{
+  "room": "S05",
+  "version": 3,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020503,
+  "usd": 0.15,
+  "started": "2026-10-05T01:29:08",
+  "spend_log_asset": "bg/pilot/S05_v3",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/S05.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the old core of Čierna Voda on Pezinská street (municipality Chorvátsky Grob, near Bratislava, Slovakia). Images 2-4 are dashcam photos of this real street: low single-storey village houses of the 1950s-70s with pitched red-brown tiled roofs and two-coloured plaster (image 2: pale peach and light blue), a house overgrown with a climbing vine (image 3), old stone walls, wooden gates with small tiled canopies, brick-paved pavements with a gravel and grass verge, and concrete electricity poles (image 4). Paint grandmother Mira's property from these real house types, walls and materials - an invented house, not a copy of one particular house.\n\nBrief: the gate of grandmother Mira's older little garden, seen from the street: a small outdoor table for leaving the shopping in front of the gate, a doorbell, and a window of her house in the background. There is no entry into the house: Mira is in quarantine. A sunny autumn afternoon in October 2020, warm low sunlight, yellowing leaves, a few fallen leaves.\n\nCamera: seen from slightly above, as from a first-floor window on the street - about 3.5 m high, looking down a little; vertical lines stay vertical. Mira's old plot lies about one metre higher than the street, behind a low retaining wall of rough stone; everything on the plot (gate, workshop, fence, vine, house) stands on that raised level, along the top third of the picture. Keep this exact geometry from the sketch: the top of the retaining wall at y 345-357, its foot at y 515, the pavement from y 690 down to the bottom edge.\n\nWhat the sketch blocks are: on the left five worn stone steps climb from the verge up the retaining wall to a small landing in front of the narrow old green garden gate, which stands between two plastered pillars under a small tiled gate canopy (cut by the top edge); a paper note with illegible scribbles is taped to the gate (2020) and an old two-tone doorbell button sits on the right pillar (no name); the brick building is Mira's small garden workshop standing on the raised plot at the wall line, with a weathered wooden plank door; the weathered green wooden fence on the retaining wall; the old grapevine on a wooden trellis behind the fence; Mira's single-storey house behind the fence on the right, pale peach and light blue plaster, closed windows with lace curtains (only their lower part is visible, the eaves are above the top edge); autumn trees of the garden at the top left; a grey concrete electricity pole on the verge at the far right; a gravel strip and a narrow grass verge with fallen leaves along the wall foot; the wide brick-paved pavement.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 120-240, y 150-250 of the 1920x1080 frame (6-12 % from the left, 14-23 % from the top): the small old wooden table standing on the top landing of the steps, right in front of the gate; its empty table top with a small bottle of hand sanitiser at the edge; its legs stand on the landing.\n2. the block of the layout sketch at x 425-545, y 150-250 of the 1920x1080 frame (22-28 % from the left, 14-23 % from the top): the middle of the closed wooden workshop door with its iron handle and an old padlock on a hasp.\n3. the block of the layout sketch at x 730-850, y 150-250 of the 1920x1080 frame (38-44 % from the left, 14-23 % from the top): the old grapevine, dense with yellowing autumn leaves and small dark blue grape bunches.\n4. the block of the layout sketch at x 1035-1155, y 150-250 of the 1920x1080 frame (54-60 % from the left, 14-23 % from the top): a worn coir doormat hung over the top of the fence to air, hanging on the street side, with the word VITAJTE on it facing the street.\n\nWalkable floor: the band at x 90-1830, y 790-1015 of the 1920x1080 frame (5-95 % from the left, 73-94 % from the top) is the open brick-paved pavement - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no cars, no bins, no poles, no plants, no bags. Only light, leaf shadows and a few fallen leaves. The pavement continues to the left edge (the area of the layout sketch at x 50-105, y 975-1045 of the 1920x1080 frame (3-5 % from the left, 90-97 % from the top)) and to the right edge (the area of the layout sketch at x 1870-1925, y 975-1045 of the 1920x1080 frame (97-100 % from the left, 90-97 % from the top)) and stays open along the bottom (the area of the layout sketch at x 960-1015, y 975-1045 of the 1920x1080 frame (50-53 % from the left, 90-97 % from the top)).\nThis room has no NPC zones.\n\nFiction rules: the house is invented from the real house type. No house numbers, no name on the bell or mailbox, no shop or business signs, no logos, no cars, no people, no animals. The paper note shows only illegible scribbles, no digits.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/S05_sketch.png (rendered from art/prompts/S05.sketch.json, model geometry)",
+    "art/source/rooms/S05/pezinska_old_house_kartaview_416.jpg",
+    "art/source/rooms/S05/pezinska_creeper_house_kartaview_414.jpg",
+    "art/source/rooms/S05/pezinska_walls_gates_kartaview_412.jpg",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S05 v3 geometry: camera ~3.5 m high at the street, looking down; Mira's plot is ~1 m above the street behind a low stone retaining wall (foot y 515, garden level y 355) with stone steps up to the gate. At the frontage 1 m = 160 px, so table top (0.85 m), door handle (1 m), fence top (1.1 m, doormat) and the vine all fall in the hotspot row y 150-250. Pavement y 690-1080 is empty (walk band 790-1015).",
+    "background": "#a7cdea",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          120
+        ],
+        "fill": "#d9b25a",
+        "note": "autumn garden trees behind (top band)"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -60,
+          -80,
+          460,
+          260
+        ],
+        "fill": "#d29a35"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          520,
+          -90,
+          300,
+          200
+        ],
+        "fill": "#c58a2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          0,
+          810,
+          300
+        ],
+        "fill": "#f1c6a2",
+        "note": "Mira's house front, set back behind the fence, peach plaster"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          0,
+          360,
+          300
+        ],
+        "fill": "#a8cde2",
+        "note": "light blue part of the house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          230,
+          810,
+          70
+        ],
+        "fill": "#cdb08e",
+        "note": "house plinth"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1300,
+          0,
+          250,
+          150
+        ],
+        "fill": "#f6f6f2",
+        "note": "closed window, lower part visible"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1314,
+          0,
+          222,
+          136
+        ],
+        "fill": "#c9d7df"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1314,
+          0,
+          222,
+          136
+        ],
+        "step": 24,
+        "bar": 10,
+        "fill": "#eef2f4"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          146,
+          270,
+          12
+        ],
+        "fill": "#e6e0d4",
+        "note": "window sill"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1660,
+          0,
+          170,
+          140
+        ],
+        "fill": "#f6f6f2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1672,
+          0,
+          146,
+          128
+        ],
+        "fill": "#c9d7df"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          110,
+          470,
+          245
+        ],
+        "fill": "#8f9a4f",
+        "note": "garden bushes between workshop and house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1110,
+          300,
+          810,
+          55
+        ],
+        "fill": "#7d8a45",
+        "note": "garden ground behind the low fence"
+      },
+      {
+        "type": "rect",
+        "box": [
+          345,
+          0,
+          320,
+          22
+        ],
+        "fill": "#8f3d2b",
+        "note": "workshop roof edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          360,
+          22,
+          290,
+          333
+        ],
+        "fill": "#b8694a",
+        "note": "brick garden workshop on the garden level"
+      },
+      {
+        "type": "grid",
+        "box": [
+          360,
+          22,
+          290,
+          333
+        ],
+        "cols": 10,
+        "rows": 16,
+        "color": "#9e5639",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          432,
+          36,
+          106,
+          319
+        ],
+        "fill": "#8b6a46",
+        "outline": "#5b432a",
+        "width": 4,
+        "note": "workshop door"
+      },
+      {
+        "type": "bars",
+        "box": [
+          436,
+          40,
+          100,
+          311
+        ],
+        "step": 22,
+        "bar": 3,
+        "fill": "#5b432a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          436,
+          80,
+          70,
+          8
+        ],
+        "fill": "#2e2e2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          436,
+          300,
+          70,
+          8
+        ],
+        "fill": "#2e2e2e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          506,
+          182,
+          12,
+          24
+        ],
+        "fill": "#2a2a2a",
+        "note": "door handle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          510,
+          208,
+          22,
+          26
+        ],
+        "fill": "#3a3a3a",
+        "radius": 5,
+        "note": "padlock on hasp"
+      },
+      {
+        "type": "bars",
+        "box": [
+          650,
+          179,
+          550,
+          176
+        ],
+        "step": 30,
+        "bar": 18,
+        "fill": "#5f7f4c",
+        "note": "green wooden fence, 1.1 m"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          196,
+          550,
+          9
+        ],
+        "fill": "#4f6d3e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          650,
+          320,
+          550,
+          9
+        ],
+        "fill": "#4f6d3e"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1200,
+          259,
+          720,
+          96
+        ],
+        "step": 30,
+        "bar": 18,
+        "fill": "#5f7f4c",
+        "note": "lower fence in front of the house"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          280,
+          720,
+          8
+        ],
+        "fill": "#4f6d3e"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            790,
+            355
+          ],
+          [
+            792,
+            280
+          ],
+          [
+            780,
+            220
+          ],
+          [
+            800,
+            160
+          ],
+          [
+            790,
+            90
+          ]
+        ],
+        "color": "#6b4a2a",
+        "width": 16,
+        "note": "vine trunk"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            690,
+            70
+          ],
+          [
+            900,
+            70
+          ]
+        ],
+        "color": "#8a6438",
+        "width": 8,
+        "note": "trellis"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            700,
+            50
+          ],
+          [
+            700,
+            355
+          ]
+        ],
+        "color": "#8a6438",
+        "width": 8
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            882,
+            50
+          ],
+          [
+            882,
+            355
+          ]
+        ],
+        "color": "#8a6438",
+        "width": 8
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          690,
+          60,
+          200,
+          210
+        ],
+        "fill": "#c7a63c",
+        "note": "vine foliage"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          680,
+          140,
+          90,
+          110
+        ],
+        "fill": "#b59a34"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          748,
+          196,
+          18,
+          26
+        ],
+        "fill": "#33345e",
+        "note": "grapes"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          812,
+          214,
+          18,
+          26
+        ],
+        "fill": "#33345e"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          780,
+          150,
+          16,
+          22
+        ],
+        "fill": "#33345e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1044,
+          172,
+          112,
+          16
+        ],
+        "fill": "#966a38",
+        "note": "doormat folded over the fence top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1044,
+          186,
+          112,
+          66
+        ],
+        "fill": "#a8763f",
+        "outline": "#7a5228",
+        "width": 5,
+        "note": "doormat hanging on the street side"
+      },
+      {
+        "type": "rect",
+        "box": [
+          76,
+          10,
+          40,
+          345
+        ],
+        "fill": "#e6d6ba",
+        "note": "gate pillar"
+      },
+      {
+        "type": "rect",
+        "box": [
+          296,
+          10,
+          40,
+          345
+        ],
+        "fill": "#e6d6ba",
+        "note": "gate pillar"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            56,
+            12
+          ],
+          [
+            356,
+            12
+          ],
+          [
+            336,
+            -20
+          ],
+          [
+            76,
+            -20
+          ]
+        ],
+        "fill": "#b5532f",
+        "note": "tiled gate canopy, cut by the top edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          116,
+          36,
+          180,
+          319
+        ],
+        "fill": "#557e48",
+        "outline": "#35562d",
+        "width": 4,
+        "note": "green garden gate"
+      },
+      {
+        "type": "bars",
+        "box": [
+          126,
+          46,
+          160,
+          150
+        ],
+        "step": 26,
+        "bar": 8,
+        "fill": "#3e6236"
+      },
+      {
+        "type": "rect",
+        "box": [
+          136,
+          70,
+          30,
+          38
+        ],
+        "fill": "#f4f1e6",
+        "note": "paper note"
+      },
+      {
+        "type": "rect",
+        "box": [
+          306,
+          150,
+          18,
+          26
+        ],
+        "fill": "#f0f0ec",
+        "radius": 4,
+        "note": "doorbell"
+      },
+      {
+        "type": "rect",
+        "box": [
+          56,
+          345,
+          1864,
+          12
+        ],
+        "fill": "#e2d2b0",
+        "note": "top of the retaining wall, seen from above"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          357,
+          1920,
+          158
+        ],
+        "fill": "#cbb48f",
+        "note": "low stone retaining wall, 1 m"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          357,
+          1920,
+          158
+        ],
+        "cols": 40,
+        "rows": 4,
+        "color": "#ad9673",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          96,
+          345,
+          240,
+          26
+        ],
+        "fill": "#d9ccb2",
+        "note": "top landing in front of the gate"
+      },
+      {
+        "type": "rect",
+        "box": [
+          90,
+          371,
+          252,
+          14
+        ],
+        "fill": "#9c8a6c",
+        "note": "step riser"
+      },
+      {
+        "type": "rect",
+        "box": [
+          84,
+          385,
+          264,
+          26
+        ],
+        "fill": "#d9ccb2",
+        "note": "step tread"
+      },
+      {
+        "type": "rect",
+        "box": [
+          78,
+          411,
+          276,
+          14
+        ],
+        "fill": "#9c8a6c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          72,
+          425,
+          288,
+          28
+        ],
+        "fill": "#d9ccb2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          66,
+          453,
+          300,
+          14
+        ],
+        "fill": "#9c8a6c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          60,
+          467,
+          312,
+          30
+        ],
+        "fill": "#d9ccb2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          54,
+          497,
+          324,
+          14
+        ],
+        "fill": "#9c8a6c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          48,
+          511,
+          336,
+          32
+        ],
+        "fill": "#d9ccb2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          42,
+          543,
+          348,
+          16
+        ],
+        "fill": "#9c8a6c",
+        "note": "bottom step riser"
+      },
+      {
+        "type": "rect",
+        "box": [
+          118,
+          214,
+          124,
+          18
+        ],
+        "fill": "#a06d3f",
+        "outline": "#6e4826",
+        "width": 3,
+        "note": "small table top on the landing"
+      },
+      {
+        "type": "rect",
+        "box": [
+          122,
+          232,
+          116,
+          12
+        ],
+        "fill": "#8a5c33"
+      },
+      {
+        "type": "rect",
+        "box": [
+          126,
+          232,
+          11,
+          128
+        ],
+        "fill": "#7c5230"
+      },
+      {
+        "type": "rect",
+        "box": [
+          223,
+          232,
+          11,
+          128
+        ],
+        "fill": "#7c5230"
+      },
+      {
+        "type": "rect",
+        "box": [
+          206,
+          186,
+          13,
+          28
+        ],
+        "fill": "#d7ecf4",
+        "radius": 4,
+        "note": "hand sanitiser bottle"
+      },
+      {
+        "type": "rect",
+        "box": [
+          209,
+          177,
+          7,
+          9
+        ],
+        "fill": "#ffffff"
+      },
+      {
+        "type": "rect",
+        "box": [
+          390,
+          515,
+          1530,
+          60
+        ],
+        "fill": "#c4b69b",
+        "note": "gravel strip along the wall foot"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          559,
+          1920,
+          131
+        ],
+        "fill": "#93a050",
+        "note": "narrow grass verge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          515,
+          42,
+          44
+        ],
+        "fill": "#93a050"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          520,
+          600,
+          30,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          980,
+          640,
+          30,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1450,
+          590,
+          30,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1850,
+          0,
+          36,
+          600
+        ],
+        "fill": "#b8b6ae",
+        "note": "concrete electricity pole standing on the verge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          690,
+          1920,
+          390
+        ],
+        "fill": "#c4a688",
+        "note": "brick-paved pavement, continuous, no kerb inside"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          690,
+          1920,
+          390
+        ],
+        "cols": 48,
+        "rows": 9,
+        "color": "#a78b70",
+        "width": 2
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          300,
+          840,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1200,
+          930,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      }
+    ]
+  }
+}

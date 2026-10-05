@@ -1,0 +1,193 @@
+{
+ "room": "S08",
+ "notes": "Path by the retention pond (2020 autumn). Ripples and glints on the water (cut from the painting, behind the railing), two ducks paddling slowly across, clouds drifting over the hill (sky mask), wind in the ferns, the young tree and the grass, leaves falling from the young tree, birds crossing over the hill.",
+ "layers": [
+  {
+   "id": "clouds",
+   "type": "clouds",
+   "textures": [
+    "common/cloud_00.webp",
+    "common/cloud_01.webp",
+    "common/cloud_02.webp",
+    "common/cloud_03.webp"
+   ],
+   "band": [
+    10,
+    50
+   ],
+   "count": 4,
+   "speed_px_s": 4,
+   "scale": [
+    0.12,
+    0.22
+   ],
+   "alpha": 0.6,
+   "mask": "S08/sky_mask.webp"
+  },
+  {
+   "id": "water",
+   "type": "water",
+   "texture": "S08/water.webp",
+   "amp_px": 1.4,
+   "speed": 1.0,
+   "glint": 0.45,
+   "glint_color": "#fff6dc"
+  },
+  {
+   "id": "ducks",
+   "type": "tween_path",
+   "sheet": "common/duck_sheet",
+   "fps": 0.8,
+   "path": [
+    [
+     -60,
+     218
+    ],
+    [
+     1980,
+     212
+    ]
+   ],
+   "speed_px_s": 14,
+   "scale": 0.3,
+   "flock": 2,
+   "flock_spread": [
+    45,
+    4
+   ],
+   "bob_px": 0.8,
+   "bob_hz": 0.5,
+   "direction": "random",
+   "every_s": [
+    5,
+    15
+   ],
+   "start_s": [
+    0,
+    1
+   ],
+   "reduced_motion": "freeze",
+   "mask": "S08/water_mask.webp",
+   "prewarm_s": 45
+  },
+  {
+   "id": "ferns",
+   "type": "sway",
+   "texture": "S08/ferns.webp",
+   "anchor": 1.0,
+   "amp_px": 1.8,
+   "freq": 0.4,
+   "wavelength_px": 70,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "ferns_bank",
+   "type": "sway",
+   "texture": "S08/ferns_bank.webp",
+   "anchor": 1.0,
+   "amp_px": 1.5,
+   "freq": 0.42,
+   "wavelength_px": 60,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "young_tree",
+   "type": "sway",
+   "texture": "S08/young_tree.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.33,
+   "wavelength_px": 80,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "grass_front",
+   "type": "sway",
+   "texture": "S08/grass_front.webp",
+   "anchor": 1.0,
+   "amp_px": 1.4,
+   "freq": 0.45,
+   "wavelength_px": 80,
+   "flutter_px": 0.3
+  },
+  {
+   "id": "leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    1190,
+    290,
+    170,
+    150
+   ],
+   "rate": 0.25,
+   "size": [
+    11,
+    16
+   ],
+   "speed_x": [
+    -20,
+    15
+   ],
+   "land_y": [
+    600,
+    690
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "birds",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 10,
+   "path": [
+    [
+     -60,
+     70
+    ],
+    [
+     700,
+     30
+    ],
+    [
+     1400,
+     45
+    ],
+    [
+     1990,
+     25
+    ]
+   ],
+   "speed_px_s": 200,
+   "scale": 0.07,
+   "flock": 5,
+   "flock_spread": [
+    80,
+    25
+   ],
+   "bob_px": 3,
+   "direction": "random",
+   "every_s": [
+    20,
+    40
+   ],
+   "start_s": [
+    3,
+    8
+   ]
+  }
+ ]
+}

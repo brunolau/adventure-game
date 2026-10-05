@@ -1,0 +1,36 @@
+{
+  "kind": "fix",
+  "from_version": 2,
+  "box_game_px": [
+    425.0,
+    292.0,
+    130.0,
+    148.0
+  ],
+  "instruction": "On the tall white rendered gate pillar left of the dark slat fence, remove the second, lower grey mailbox and the three colourful leaflets sticking out above it (in the middle of the pillar, about one third from the left edge of the picture and one third from the top). Paint that part of the pillar as plain white render with the same soft warm light and shading as the rest of the pillar. Keep the upper mailbox with the sticker and leaflets at the top of the pillar exactly as it is.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020203,
+  "usd": 0.15,
+  "scope": "bg/prologue2020/",
+  "spend_log_asset": "bg/prologue2020/S02_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: On the tall white rendered gate pillar left of the dark slat fence, remove the second, lower grey mailbox and the three colourful leaflets sticking out above it (in the middle of the pillar, about one third from the left edge of the picture and one third from the top). Paint that part of the pillar as plain white render with the same soft warm light and shading as the rest of the pillar. Keep the upper mailbox with the sticker and leaflets at the top of the pillar exactly as it is. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S02_v2.png",
+    "src/game/assets/bg/S05.webp"
+  ],
+  "raw_model_output": "art/masters/bg/_bg_prologue2020_S02_v3_fix_raw.png",
+  "started": "2026-10-05T02:13:55",
+  "model_description": "",
+  "parent_prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds, placed on a larger 16:9 canvas; the flat grey areas (along the bottom edge) are empty canvas. Paint ONLY those grey areas so the picture continues seamlessly: continue the plain light-grey concrete street with the same soft long shadows, the warm low light from the left and one or two fallen yellow leaves; no kerb, no lines, no objects. Keep the painted part of image 1 exactly as it is - same positions, sizes, colours and details; do not move, rescale, redraw or crop anything that is already painted. No people, no animals, no cars, no text, no logos, no frames or borders. Image 2 is another background from the same game: match its painting technique and keep the brushwork, palette and light of image 1. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S02",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

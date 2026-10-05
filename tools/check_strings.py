@@ -10,7 +10,8 @@ Checks (errors make the exit code 1):
   * placeholders such as {item} are identical in "sk" and a filled-in "en"
   * every key the scheme derives from game.json (tools/text_keys.py) exists in
     its table with the current game.json text, and no stale keys remain
-  * ui.csv contains the era cards for every era, the journal tabs from
+  * ui.csv contains the era cards for every era, a region.<district>.name key
+    for every rooms[].district (map regions), the journal tabs from
     journal_contract (same texts) and every key in REQUIRED_UI_KEYS; other ui
     keys follow ui.<area>.<name>
   * every speaker id used by a line has a char.<id>.name key
@@ -38,6 +39,8 @@ import text_keys as tk  # noqa: E402
 
 MAX_LISTED = 25
 ERA_KEY_PATTERN = re.compile(r"^era\.(\d{4})\.(card|date)$")
+# Map region names (ISSUES.md TEXT-02): region.<rooms[].district>.name, hand-written in ui.csv.
+REGION_KEY_PATTERN = re.compile(r"^region\.([^.]+)\.name$")
 CONTROL_CHARS = re.compile(r"[\x00-\x1f\x7f]")
 
 
@@ -167,7 +170,17 @@ def check_ui(game: dict, ui: dict[str, list[str]], findings: Findings) -> None:
         if key not in ui:
             findings.error(f"ui.csv: missing required key {key!r}")
 
+    districts = {room.get("district", "") for room in game.get("rooms", [])} - {""}
+    for district in sorted(districts):
+        if f"region.{district}.name" not in ui:
+            findings.error(f"ui.csv: missing region key 'region.{district}.name'")
+
     for key, (sk, _en) in ui.items():
+        region_match = REGION_KEY_PATTERN.match(key)
+        if region_match:
+            if region_match.group(1) not in districts:
+                findings.error(f"ui.csv: {key!r} refers to a district that no room has")
+            continue
         era_match = ERA_KEY_PATTERN.match(key)
         if era_match:
             year = int(era_match.group(1))

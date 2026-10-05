@@ -1,0 +1,118 @@
+{
+  "version": 1,
+  "description": "Visual-only adjustments for painted backgrounds (design-doc/ART_DIRECTION.md section 4; schema in src/game/scripts/World/ArtOverrides.cs). game.json stays authoritative for rules and coordinates; rect_nudge [dx, dy, dw, dh] moves/resizes only the hover/click outline, label_offset moves the label; interaction points never change. Each value is at most 40 px. Written by the art pipeline (art/tools/PAINTING.md), checked with art/tools/review_room.py. Unknown keys such as 'reason' and 'master' are ignored by the loader.",
+  "rooms": {
+    "S01": {
+      "master": "art/masters/bg/S01_v4.png",
+      "targets": {
+        "S01.tools": {
+          "rect_nudge": [
+            40,
+            0,
+            30,
+            0
+          ],
+          "label_offset": [
+            40,
+            0
+          ],
+          "reason": "The painted service bag spans x 182-326; the rect x 120-240 would cover mostly bare wall. Nudge +40 px and widen by 30 px puts the hit area on the bag (x 160-310)."
+        }
+      },
+      "state_patches": [
+        {
+          "texture": "variants/S01_tools_taken.webp",
+          "pos": [
+            146,
+            128
+          ],
+          "after": [
+            "G01"
+          ],
+          "until": [],
+          "reason": "ISSUES ART-VAR-01: the service bag is painted into bg/S01.webp; after G01 the hotspot hides, so the shelf must look empty. Patch cloned from the bare wall x 577-728 of the same background (no paid call)."
+        }
+      ]
+    },
+    "S05": {
+      "master": "art/masters/bg/S05_v5.png",
+      "targets": {
+        "S05.ambient 1": {
+          "rect_nudge": [
+            0,
+            -40,
+            0,
+            0
+          ],
+          "label_offset": [
+            0,
+            -40
+          ],
+          "reason": "The vine's leaves and grapes are above the fence top; the rect y 150-250 is half fence pickets. -40 px puts the hit area on the foliage (y 110-210)."
+        }
+      },
+      "state_patches": [
+        {
+          "texture": "variants/S05_groceries_on_tray.webp",
+          "pos": [
+            126,
+            134
+          ],
+          "after": [
+            "G04"
+          ],
+          "until": [],
+          "reason": "G04 leaves the grocery bag on the tray (consumed item): the bag (items/GROCERIES.webp, scaled to 92 px, soft shadow) stays visible on the table."
+        },
+        {
+          "texture": "variants/S05_shed_unlocked.webp",
+          "pos": [
+            520,
+            172
+          ],
+          "after": [
+            "G06"
+          ],
+          "until": [],
+          "reason": "G06 unlocks the shed: the padlock and hasp are covered with door planks cloned 56 px lower on the same door."
+        }
+      ]
+    },
+    "S03": {
+      "master": "art/masters/bg/S03_v4.png",
+      "targets": {
+        "S03.ambient 1": {
+          "rect_nudge": [
+            0,
+            30,
+            0,
+            40
+          ],
+          "label_offset": [
+            0,
+            30
+          ],
+          "reason": "The model painted three yellow-black distancing stripes on the low back wall of the shelter (y 180-242) and two tape lines on the floor below (y 305-346). Moving the rect 30 px down and making it 40 px taller (y 180-320) covers all wall stripes and the first floor tape line, so the hit area matches the name 'Páska na zemi' better."
+        }
+      }
+    },
+    "S09": {
+      "master": "art/masters/bg/S09_v7.png",
+      "targets": {
+        "S09.case": {
+          "rect_nudge": [
+            -40,
+            -40,
+            0,
+            0
+          ],
+          "label_offset": [
+            -40,
+            -40
+          ],
+          "reason": "The closed brass case stands on the high shelf above the outer door at x 30-215, y 75-180 (body), higher than the template rect (x 120-240, y 150-250, mostly shelf front). -40/-40 px puts the hit area on the case body and its bell emblem (x 80-200, y 110-210)."
+        }
+      }
+    }
+  }
+}

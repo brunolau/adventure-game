@@ -1,0 +1,18 @@
+<Project Sdk="Godot.NET.Sdk/4.7.2">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+    <LangVersion>12.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <RootNamespace>LastBell.Game</RootNamespace>
+    <AssemblyName>LastBell</AssemblyName>
+    <!-- Godot presentation layer. All rules live in LastBell.Core (no Godot dependency). -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../LastBell.Core/LastBell.Core.csproj" />
+  </ItemGroup>
+
+</Project>

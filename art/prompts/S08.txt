@@ -1,0 +1,26 @@
+# S08 Chodník pri retenčnej nádrži (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S08.sketch.json (image 1); this text says what each block is.
+# Raised-bank geometry (PAINTING.md step 2, the S05 lesson): the props stand on the crest of a ~1.7 m pond embankment,
+# the walk band is the gravel path at its foot; camera ~3 m high, horizon ~y 100 so a strip of sky stays visible.
+# Reconstruction (register basis): no licensed photo of the pond exists; OSM layout + Panoramax surroundings.
+# Style reference = the accepted S05 master, so the 29 Oct 2020 light and palette match the prologue.
+#refs: art/source/rooms/S08/rekreapark_mound_panoramax.jpg ; art/source/rooms/S08/rekreapark_edge_panoramax.jpg ; art/source/rooms/S08/layout_javorova-alej-pond_osm.png
+#style: art/masters/bg/S05_v5.png
+Place: the small pond at the south-east edge of the new Rekreapark (Park Javorová alej) in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia), next to the big grassy pumptrack hill 'Kopec zábavy' at the edge of open fields. Image 2 shows the real park right next to it: a long grassy mound, young planted trees, gravel surfaces, a wide open sky. Image 3 shows the open fields beyond with tree belts on the horizon. Image 4 is the OpenStreetMap plan (pond in blue, pumptrack hill east of it) - geography only, do not paint the map. Paint the pond, its embankment, railing and bench from these real surroundings - an invented small retention pond, not a copy of a photo; leave out the camper van, the cars, the bicycle and the school building of the photos.
+
+Brief: a small retention pond with a safe dry bank and a bench, ferns, and the end of a cycle path; the interactive things lie only on the dry, accessible side of the railing. A sunny autumn afternoon on 29 October 2020: warm low sun from behind the viewer on the right, long soft shadows falling away to the left, yellow and rust autumn leaves, the pumptrack hill glowing in the low light, a calm pond mirroring the sky. Same light and palette as image 5.
+
+Camera: seen from slightly above, as from about 3 m high standing on the path, looking over the pond towards the hill; vertical lines stay vertical. The pond is held by a grassy embankment about 1.7 m higher than the path; its flat crest is the dry bank along the top third of the picture, and the water lies behind it at crest level. Keep this exact geometry from the sketch: sky and the hill above y 130, the far bank with reeds at y 112-146, the water from y 146 to y 232, the railing posts standing on the crest at y 136-234, the crest grass at y 232-262, the embankment slope from y 262 down to its stone toe at y 450-486, the flat grass verge at y 486-690 and the gravel path from y 694 down to the bottom edge.
+
+What the sketch blocks are: at the top the pale autumn sky, the long grassy pumptrack hill with a packed-earth bike track over it and two small young trees in yellow and orange, and low tree belts of the fields on the left and right horizon; reeds along the far bank and one reed clump in the water; the calm blue-grey water of the pond reflecting the sky; a simple weathered grey timber safety railing (posts, a top rail and a middle rail) along the water's edge on the crest; the dry grass of the crest; a bed of rusty-golden autumn ferns on the crest right of the bench; the even grassy slope of the embankment with a toe of rough stones along its foot; timber-edged gravel steps climbing the embankment on the right; the flat grass verge with fallen leaves, a second bed of ferns at the foot of the embankment on the left, a young planted tree with two wooden stakes and a small yellow crown, and the round blue end-of-cycle-path traffic sign (white bicycle, red diagonal bar) on a grey post standing on the verge; the edge of the gravel path.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance, in front of the railing:
+1. {rect:S08.ball}: a chewed bright red rubber dog ball lying in the dry grass on the crest, clearly visible.
+2. {rect:S08.ambient 1}: a plump mallard drake (glossy green head, white neck ring, grey-brown body, orange feet) standing on the dry crest grass, looking sideways at the viewer with a sceptical, disapproving expression.
+3. {rect:S08.ambient 2}: a short wooden park bench with dark cast-iron legs standing on the crest, facing the water, seen from behind: its slatted backrest and seat fill the block.
+
+Walkable floor: {walk} is the compacted light gravel path - one continuous flat surface with no kerb, no step, no edge, no puddle and no change of material inside it, and nothing standing on it: no bicycles, no bins, no poles, no plants, no benches. Only light, soft shadows and a few fallen leaves. The path continues to the left edge ({exit:S08.to_S07}) and to the right edge.
+{npc_zones}
+
+Fiction rules: the retention pond, railing, bench, fern beds, cycle-path sign and the ball are invented props; no municipal signs, no names, no logos, no lettering anywhere. No people, no cyclists, no dogs, no cars; the only animal in the picture is the one duck of prop 2 - no other ducks or birds on the water or the bank.

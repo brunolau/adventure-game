@@ -58,8 +58,29 @@ def key_kind(key: np.ndarray) -> str:
     return "blue"
 
 
+def edge_despill(rgba: np.ndarray, width: int = 8) -> np.ndarray:
+    """Remove the yellow-green cast that 4:2:0 video chroma leaves on thin parts near the matte edge (fingers).
+
+    Plain despill clamps G to max(R, B), which turns green-tinted skin yellow. Within `width` px of transparency,
+    pixels where G is (still) the top channel or that read olive (G > 0.88 R and G > B + 20) get G capped at
+    (R + B) / 2 + 8. Skin (G ~0.73 R) and the mustard T-shirt (G ~0.8 R) are untouched; neutral greys are
+    unchanged by the cap.
+    """
+    out = rgba.copy()
+    clear = Image.fromarray(((rgba[..., 3] < 250) * 255).astype(np.uint8), "L")
+    near = np.asarray(clear.filter(ImageFilter.MaxFilter(2 * width + 1))) > 0
+    rgb = out[..., :3].astype(np.float32)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    olive = (g > 0.88 * r) & (g > b + 20)          # yellow-green / olive cast; skin ~0.73 R, mustard ~0.8 R
+    zone = near & ((g >= np.maximum(r, b) - 3) | olive) & (rgba[..., 3] > 0)
+    cap = (rgb[..., 0] + rgb[..., 2]) / 2 + 8
+    g = np.where(zone, np.minimum(rgb[..., 1], cap), rgb[..., 1])
+    out[..., 1] = g.clip(0, 255).astype(np.uint8)
+    return out
+
+
 def chroma_key(rgb: np.ndarray, lo: float | None = None, hi: float | None = None, despill: bool = True,
-               min_island: int = 400, choke: int = 0) -> np.ndarray:
+               min_island: int = 400, choke: int = 0, edge_fix: bool | None = None) -> np.ndarray:
     """Return an RGBA uint8 array with the flat key background (green, magenta or blue) made transparent.
 
     The key colour K is the median of the image border and decides the key kind. Alpha is linear in
@@ -67,6 +88,7 @@ def chroma_key(rgb: np.ndarray, lo: float | None = None, hi: float | None = None
     keyness, which absorbs video compression noise). Edge pixels are un-mixed, F = (C - (1 - a) K) / a, so they
     keep the figure's own colour instead of a coloured fringe; residual spill is removed from the key channels.
     choke > 0 erodes the matte by that many pixels (video frames: 4:2:0 chroma bleeds the key into the edge).
+    edge_fix (default: on when choke > 0, i.e. for video frames; green key only) applies edge_despill.
     """
     rgbf = rgb.astype(np.float32)
     h, w = rgbf.shape[:2]
@@ -103,6 +125,8 @@ def chroma_key(rgb: np.ndarray, lo: float | None = None, hi: float | None = None
     out = np.dstack([r, g, b, alpha * 255.0]).clip(0, 255).astype(np.uint8)
     if min_island:
         out[..., 3] = drop_islands(out[..., 3], min_island)
+    if kind == "green" and (edge_fix or (edge_fix is None and choke > 0)):
+        out = edge_despill(out)   # green key only: a magenta-keyed figure may wear green (ELA's vest)
     return out
 
 
@@ -346,12 +370,18 @@ def find_loop(signatures: list[np.ndarray], min_period: int, max_period: int, sk
 def build_loop(frame_paths: list[Path], out_dir: Path, fps: float, frames_out: int, period_s: tuple[float, float],
                skip_start_s: float, skip_end_s: float, recenter: bool, target_height: int, lo: float, hi: float,
                name: str, choke: int = 1, frame_range: tuple[int, int] | None = None, oneshot: bool = False,
-               playback_fps: float | None = None) -> dict:
+               playback_fps: float | None = None, ref_height: float | None = None,
+               fixed_baseline: float | None = None) -> dict:
     """Key, select, align and export one animation.
 
     Loop mode (default): find the most self-similar cycle and sample `frames_out` frames over it.
     frame_range=(a, b): use source frames a..b instead of searching (e.g. a whole start=end idle clip).
     oneshot: include both ends of the range (non-looping actions such as reach; play reversed to return).
+    ref_height: source-pixel height that maps to target_height (e.g. the standing first frame), so every
+    animation of a character shares one scale; default is the median height of the chosen frames.
+    fixed_baseline: source y of the feet line used for every frame instead of each frame's lowest pixel. Use it
+    for toward/away walks: in perspective the near foot reaches below the standing feet line, and per-frame
+    alignment of the lowest pixel would bob the whole body. The cell then extends below the pivot.
     """
     out_dir.mkdir(parents=True, exist_ok=True)
     if frame_range:
@@ -370,33 +400,35 @@ def build_loop(frame_paths: list[Path], out_dir: Path, fps: float, frames_out: i
 
     # common geometry: feet baseline = lowest opaque row; horizontal anchor = torso centre (walk in place)
     boxes = [alpha_bbox(k) for k in chosen]
-    bottoms = [b[3] for b in boxes]
+    bottoms = [fixed_baseline if fixed_baseline is not None else b[3] for b in boxes]
     centers = [torso_center_x(k) if recenter else (chosen[0].shape[1] / 2) for k in chosen]
     heights = [b[3] - b[1] for b in boxes]
-    ref_height = float(np.median(heights))
+    ref_height = float(ref_height or np.median(heights))
     scale = target_height / ref_height if target_height else 1.0
-    left = max(c - b[0] for c, b in zip(centers, boxes))
-    right = max(b[2] - c for c, b in zip(centers, boxes))
+    # the anchor sits at cell_w / 2, so the cell must be symmetric around it (left + right clipped one side)
+    half = max(max(c - b[0] for c, b in zip(centers, boxes)), max(b[2] - c for c, b in zip(centers, boxes)))
     top = max(bot - b[1] for bot, b in zip(bottoms, boxes))
-    cell_w, cell_h = int(np.ceil((left + right) * scale)) + 8, int(np.ceil(top * scale)) + 8
+    below = int(np.ceil(max(0.0, max(b[3] - bot for bot, b in zip(bottoms, boxes))) * scale))
+    cell_w, cell_h = 2 * int(np.ceil(half * scale)) + 8, int(np.ceil(top * scale)) + 8 + below
+    pivot_y = cell_h - 4 - below
     cells: list[Image.Image] = []
     for k, cx, bot in zip(chosen, centers, bottoms):
         img = Image.fromarray(k, "RGBA")
         img = img.resize((round(img.width * scale), round(img.height * scale)), Image.Resampling.LANCZOS)
         cell = Image.new("RGBA", (cell_w, cell_h), (0, 0, 0, 0))
         ox = round(cell_w / 2 - cx * scale)
-        oy = round(cell_h - 4 - bot * scale)
+        oy = round(pivot_y - bot * scale)
         cell.paste(img, (ox, oy), img)
         cells.append(cell)
 
     # stride estimate: lowest-foot x travel per frame (for the engine's walk speed, avoids foot sliding)
     playback_fps = playback_fps or frames_out / (period / fps)
-    meta = {"name": name, "frames": len(cells), "cell": [cell_w, cell_h], "pivot": [cell_w // 2, cell_h - 4],
+    meta = {"name": name, "frames": len(cells), "cell": [cell_w, cell_h], "pivot": [cell_w // 2, pivot_y],
             "source_frames": picks, "source_fps": fps, "cycle_frames": period, "cycle_seconds": round(period / fps, 3),
             "playback_fps": round(playback_fps, 2), "loop_error": round(err, 4), "scale": round(scale, 4),
             "recentered": recenter, "oneshot": oneshot, "height_px_median": round(ref_height * scale, 1),
             "height_px_range": [round(min(heights) * scale, 1), round(max(heights) * scale, 1)],
-            "baseline_from_feet": True}
+            "baseline_from_feet": fixed_baseline is None}
     meta["stride_px_per_s"] = stride_speed(chosen, centers, scale, playback_fps)
     export_cells(cells, out_dir, name, meta, [f"{i} (src {p})" for i, p in enumerate(picks)])
     return meta
@@ -458,10 +490,9 @@ def build_stills(entries: list[tuple[str, str, Path]], base: Path, out_dir: Path
     scale = target_height / (by1 - by0)
     pivot_x = torso_center_x(base_key)
     boxes = [alpha_bbox(layer) for layer in layers]
-    left = max(pivot_x - b[0] for b in boxes)
-    right = max(b[2] - pivot_x for b in boxes)
+    half = max(max(pivot_x - b[0] for b in boxes), max(b[2] - pivot_x for b in boxes))
     top = max(by1 - b[1] for b in boxes)
-    cell_w, cell_h = int(np.ceil((left + right) * scale)) + 8, int(np.ceil(top * scale)) + 8
+    cell_w, cell_h = 2 * int(np.ceil(half * scale)) + 8, int(np.ceil(top * scale)) + 8
     cells = []
     for layer in layers:
         img = Image.fromarray(layer, "RGBA")

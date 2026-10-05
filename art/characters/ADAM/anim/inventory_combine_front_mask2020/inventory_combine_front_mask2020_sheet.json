@@ -1,0 +1,136 @@
+{
+  "name": "inventory_combine_front_mask2020",
+  "frames": 14,
+  "cell": [
+    198,
+    522
+  ],
+  "pivot": [
+    99,
+    518
+  ],
+  "playback_fps": 12.0,
+  "oneshot": true,
+  "stride_px_per_s": null,
+  "standing_height_px": 512,
+  "facing": "front",
+  "source_video": "video_inventory_combine_pro.mp4",
+  "source_frames": [
+    "still:base",
+    3,
+    6,
+    8,
+    10,
+    12,
+    15,
+    18,
+    22,
+    34,
+    70,
+    85,
+    100,
+    "still:key_pose"
+  ],
+  "progress": [
+    0.087,
+    0.189,
+    0.259,
+    0.331,
+    0.401,
+    0.477,
+    0.541,
+    0.617,
+    0.692,
+    0.771,
+    0.848,
+    0.926
+  ],
+  "note": "play forward to act, hold the last frame, play reversed to return to idle",
+  "mask_overlay": [
+    {
+      "frame": 0,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.03513
+    },
+    {
+      "frame": 1,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.03361
+    },
+    {
+      "frame": 2,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.03272
+    },
+    {
+      "frame": 3,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.02865
+    },
+    {
+      "frame": 4,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.02754
+    },
+    {
+      "frame": 5,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.04887
+    },
+    {
+      "frame": 6,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.08361
+    },
+    {
+      "frame": 7,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.12256
+    },
+    {
+      "frame": 8,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 0.94,
+      "mse": 0.14508
+    },
+    {
+      "frame": 9,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 0.94,
+      "mse": 0.13457
+    },
+    {
+      "frame": 10,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 0.94,
+      "mse": 0.10388
+    },
+    {
+      "frame": 11,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.05454
+    }
+  ],
+  "source": "mask layer tracked onto inventory_combine_front"
+}

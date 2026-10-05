@@ -1,0 +1,39 @@
+{
+  "name": "npc_bust_glass",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    234,
+    234
+  ],
+  "pivot": [
+    117,
+    234
+  ],
+  "scale": 0.2515,
+  "height_px": 512,
+  "playback_fps": 8,
+  "sources": [
+    "key:sheet_npc_3q.png",
+    "patch:pose_blink_nb2.png",
+    "patch:pose_talk_mouth.png",
+    "patch:pose_talk_oh_mouth.png",
+    "key:pose_gesture_nb2.png"
+  ],
+  "pivot_is_sill_line": true,
+  "visible_fraction_of_figure": 0.45,
+  "figure_height_px": 512.0,
+  "source_sheet": "npc_sheet.png",
+  "glass": true,
+  "glass_params": {
+    "veil": 0.16,
+    "streak": 0.1,
+    "contrast": 1.08
+  },
+  "placement": "Place the pivot (bottom centre, the cut edge) exactly on the top edge of the painted window sill; scale like the full figure (figure_height_px is the full standing height the bust belongs to). Draw above the background, below the window frame overlay if there is one."
+}

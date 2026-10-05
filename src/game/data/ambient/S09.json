@@ -1,0 +1,144 @@
+{
+ "room": "S09",
+ "notes": "Anteroom of the garden workshop (2020 afternoon). Dust motes turning in the sunbeam from the open door and under the window, the blue glow of the round frame in the next room pulsing slowly, the vine outside the door and the tree outside the window moving in the wind, a leaf now and then falling past the window.",
+ "layers": [
+  {
+   "id": "door_vine",
+   "type": "sway",
+   "texture": "S09/door_vine.webp",
+   "anchor": 0.9,
+   "amp_px": 1.6,
+   "freq": 0.32,
+   "wavelength_px": 70,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "window_tree",
+   "type": "sway",
+   "texture": "S09/window_tree.webp",
+   "anchor": 1.0,
+   "amp_px": 1.5,
+   "freq": 0.3,
+   "wavelength_px": 90,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "window_leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    1080,
+    170,
+    190,
+    40
+   ],
+   "rate": 0.2,
+   "size": [
+    6,
+    9
+   ],
+   "speed_y": [
+    20,
+    32
+   ],
+   "speed_x": [
+    -10,
+    6
+   ],
+   "wind": 7,
+   "lifetime": [
+    5,
+    8
+   ],
+   "clip": [
+    1068,
+    168,
+    206,
+    200
+   ]
+  },
+  {
+   "id": "dust_beam",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    40,
+    260,
+    820,
+    640
+   ],
+   "count": 45,
+   "size": [
+    4,
+    8.5
+   ],
+   "alpha_range": [
+    0.25,
+    0.8
+   ],
+   "color": "#fff0c4"
+  },
+  {
+   "id": "dust_window",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1000,
+    370,
+    500,
+    400
+   ],
+   "count": 16,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff0c4"
+  },
+  {
+   "id": "portal_glow",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1720,
+    255
+   ],
+   "size": [
+    230,
+    230
+   ],
+   "color": "#8fc8ff",
+   "min": 0.18,
+   "max": 0.42,
+   "period_s": 3.4
+  },
+  {
+   "id": "portal_spill",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1610,
+    140,
+    240,
+    640
+   ],
+   "color": "#5f9eff",
+   "min": 0.03,
+   "max": 0.1,
+   "period_s": 0.9
+  }
+ ]
+}

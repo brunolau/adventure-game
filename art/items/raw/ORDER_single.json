@@ -1,0 +1,16 @@
+{
+  "model": "fal-ai/nano-banana-2/edit",
+  "usd": 0.08,
+  "prompt": "Edit the first image, a flat chroma-key green canvas: paint ONE inventory icon for a classic 1990s point-and-click adventure game, centred, filling about 70% of the image, with green margin on every side: Mira's shopping list: a small, slightly crumpled sheet of cream lined notepad paper with one corner folded over; on it exactly three short lines handwritten in blue ink in neat old-fashioned handwriting, the Slovak words 'čaj', 'zemiaky' and 'ovsené vločky', one per line. Nothing else is written on it: no title, no other words, no tick marks. The SECOND reference image shows other finished icons of the same game; match their camera angle, light direction, outline, brushwork and colour palette exactly, but do not copy any of their objects. Consistent rendering for every icon: the same slightly elevated three-quarter camera angle looking a little down onto the object, the same soft warm key light from the upper left with gentle shading toward the lower right, a subtle darker painted edge around each silhouette so it stays readable at 64 pixels, saturated but harmonious colours, rich painterly brushwork. Glass is painted as slightly milky with bright white highlights, so the background never shows through it. No green parts on any object. No text labels, no logos, no brand names, no cast shadows on the background, no frames, no slots, no grid lines. Background: one perfectly flat, uniform, pure chroma-key green (#00FF00) filling the entire image, edge to edge, with no gradient, no texture, no floor line, no cast shadow, no vignette, no props and no text. The object must have crisp clean edges against the green, with no green tint, glow or reflection on the object. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "aspect_ratio": "1:1",
+  "resolution": "1K",
+  "references": [
+    "items\\raw\\key_canvas_1024x1024.png",
+    "items\\raw\\style_ref_icons.png"
+  ],
+  "seed": 2020,
+  "outputs": [
+    "ORDER_single.png"
+  ],
+  "description": ""
+}

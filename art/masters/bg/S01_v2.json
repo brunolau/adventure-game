@@ -1,0 +1,991 @@
+{
+  "room": "S01",
+  "version": 2,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020102,
+  "usd": 0.15,
+  "started": "2026-10-05T01:23:28",
+  "spend_log_asset": "bg/pilot/S01_v2",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/S01.txt",
+  "prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Adam's garage, the garage of an ordinary family house on Jaseňová street in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 shows the lived-in workbench, pegboard and small-parts drawer cabinet to paint from; image 3 shows an opened old valve radio being repaired on a bench; image 4 shows the real Jaseňová street outside (modern white single-storey family houses with flat roofs, grey slatted fences, a concrete road), which is what is seen through the garage window.\n\nBrief: an autumn afternoon in October 2020 in the garage of a family house. A workbench with a radio being repaired, small parts drawers, Adam's fabric tool bag. The space feels lived in and homely, a real family garage - NOT a secret laboratory. A Slovak suburban garage of the 2000s: plastered and painted walls with a patch of bare brick, a concrete floor, a fluorescent tube, a round wall clock, a pegboard with hand tools, everyday family storage.\n\nWhat the sketch blocks are (eye-level, straight-on view of the back wall, exactly as in the sketch): the dark strip at the top is the ceiling edge with a fluorescent tube; the bright strip at the far left (x 0-90) is the open garage doorway full of warm autumn daylight, with a wooden door jamb, and the light spills across the floor from the left; a cloth face mask hangs on a nail by the doorway (2020); the long brown bar at y 250 is a sturdy high wooden wall shelf on black metal brackets; under it a pegboard with neatly hung hammers, wrenches, pliers and a saw; the wooden workbench with an opened old radio chassis with glowing valves, a yellow multimeter, a schematic sheet and a soldering iron; crates and cardboard boxes under the bench; the grey cabinet of many small parts drawers on the right of the bench; the round wall clock; the square window showing the sunny autumn street with a white flat-roofed family house, an autumn tree and a grey slatted fence; a bicycle leaning on the wall and a stack of winter tyres in the right corner. The wall meets the floor at y 780 along the whole width.\n\nInteractive props - each stands on the high shelf, painted clearly and completely inside its block, the same size as its block, easy to recognise at a glance, with a little empty shelf between them:\n1. the block of the layout sketch at x 120-240, y 150-250 of the 1920x1080 frame (6-12 % from the left, 14-23 % from the top): Adam's service bag - a soft grey-green canvas tool bag with a shoulder strap, open at the top, with a screwdriver with exchangeable bits, small pliers and a small yellow measuring meter sticking out.\n2. the block of the layout sketch at x 425-545, y 150-250 of the 1920x1080 frame (22-28 % from the left, 14-23 % from the top): a small grey steel cabinet of little parts drawers; its lower drawer is pulled half out and is full of small glass fuses.\n3. the block of the layout sketch at x 730-850, y 150-250 of the 1920x1080 frame (38-44 % from the left, 14-23 % from the top): an old chipped enamel cooking pot, cream with a red rim, heaped full with unsorted screws, nuts and bolts.\n4. the block of the layout sketch at x 1035-1155, y 150-250 of the 1920x1080 frame (54-60 % from the left, 14-23 % from the top): an old 1970s wooden table radio with a fabric speaker grille, a glowing glass tuning scale and two knobs, plugged in.\n\nWalkable floor: the band at x 90-1830, y 790-1015 of the 1920x1080 frame (5-95 % from the left, 73-94 % from the top) is plain open concrete floor - nothing stands on it: no boxes, no tools, no car, no cables, no rug. Only light and soft shadows cross it, with a few old stains. The floor continues to the left edge into the daylight of the doorway, where the exit to the street is (the area of the layout sketch at x 50-105, y 975-1045 of the 1920x1080 frame (3-5 % from the left, 90-97 % from the top)).\nThis room has no NPC zones.\n\nFiction rules: Adam's house is invented. No brand names, logos or readable labels on tools, boxes, cans, the radio or anything else; no house numbers visible through the window; no American-specific items. Any paper shows only illegible scribbles.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/S01_sketch.png (rendered from art/prompts/S01.sketch.json, model geometry)",
+    "art/source/rooms/S01/garage_workbench_btwashburn.jpg",
+    "art/source/rooms/S01/radios_in_repose_eli_dark.jpg",
+    "art/source/rooms/S02/jasenova_street_mm_explorer.jpg",
+    "art/backgrounds/entrance.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S01 garage, eye-level view of the back wall. Wall meets floor at y 780; shelf board at y 250 carries the four hotspot props; floor below 780 stays empty.",
+    "background": "#c4a283",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          46
+        ],
+        "fill": "#5e4e42",
+        "note": "ceiling edge"
+      },
+      {
+        "type": "rect",
+        "box": [
+          760,
+          12,
+          520,
+          20
+        ],
+        "fill": "#fff3c4",
+        "radius": 8,
+        "note": "fluorescent tube"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          90,
+          780
+        ],
+        "fill": "#f2dcae",
+        "note": "open garage doorway, daylight"
+      },
+      {
+        "type": "rect",
+        "box": [
+          90,
+          0,
+          14,
+          780
+        ],
+        "fill": "#6e5238",
+        "note": "door jamb"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          780,
+          1920,
+          300
+        ],
+        "fill": "#b49e84",
+        "note": "concrete floor"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            0,
+            780
+          ],
+          [
+            560,
+            780
+          ],
+          [
+            980,
+            1080
+          ],
+          [
+            0,
+            1080
+          ]
+        ],
+        "fill": "#d2ba94",
+        "note": "daylight spill"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            90,
+            780
+          ],
+          [
+            1920,
+            780
+          ]
+        ],
+        "color": "#7d6650",
+        "width": 5
+      },
+      {
+        "type": "rect",
+        "box": [
+          90,
+          250,
+          1180,
+          16
+        ],
+        "fill": "#8b5a30",
+        "note": "high shelf board"
+      },
+      {
+        "type": "rect",
+        "box": [
+          170,
+          266,
+          14,
+          44
+        ],
+        "fill": "#3c3c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          680,
+          266,
+          14,
+          44
+        ],
+        "fill": "#3c3c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1200,
+          266,
+          14,
+          44
+        ],
+        "fill": "#3c3c3c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          128,
+          178,
+          104,
+          72
+        ],
+        "fill": "#6e7b50",
+        "radius": 18,
+        "note": "service bag"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            142,
+            192
+          ],
+          [
+            180,
+            156
+          ],
+          [
+            218,
+            192
+          ]
+        ],
+        "color": "#4c5636",
+        "width": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          150,
+          160,
+          10,
+          28
+        ],
+        "fill": "#c0392b"
+      },
+      {
+        "type": "rect",
+        "box": [
+          196,
+          156,
+          10,
+          30
+        ],
+        "fill": "#e3b21c"
+      },
+      {
+        "type": "rect",
+        "box": [
+          172,
+          166,
+          8,
+          22
+        ],
+        "fill": "#8a8a8a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          440,
+          158,
+          90,
+          92
+        ],
+        "fill": "#8e9398",
+        "outline": "#5a5e62",
+        "width": 3,
+        "note": "fuse drawer cabinet"
+      },
+      {
+        "type": "grid",
+        "box": [
+          440,
+          158,
+          90,
+          58
+        ],
+        "cols": 2,
+        "rows": 2,
+        "color": "#5a5e62",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          446,
+          218,
+          88,
+          30
+        ],
+        "fill": "#b3b8bc",
+        "outline": "#5a5e62",
+        "width": 2,
+        "note": "drawer pulled out"
+      },
+      {
+        "type": "bars",
+        "box": [
+          454,
+          224,
+          74,
+          16
+        ],
+        "step": 12,
+        "bar": 6,
+        "fill": "#eef3f6",
+        "note": "glass fuses"
+      },
+      {
+        "type": "rect",
+        "box": [
+          745,
+          190,
+          92,
+          58
+        ],
+        "fill": "#efe5cc",
+        "radius": 10,
+        "note": "enamel pot"
+      },
+      {
+        "type": "rect",
+        "box": [
+          740,
+          184,
+          102,
+          10
+        ],
+        "fill": "#c0392b",
+        "radius": 4
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          752,
+          160,
+          78,
+          34
+        ],
+        "fill": "#7f858b",
+        "note": "heap of screws"
+      },
+      {
+        "type": "rect",
+        "box": [
+          731,
+          200,
+          12,
+          10
+        ],
+        "fill": "#efe5cc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          839,
+          200,
+          12,
+          10
+        ],
+        "fill": "#efe5cc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1042,
+          166,
+          108,
+          82
+        ],
+        "fill": "#7b4a26",
+        "radius": 14,
+        "note": "old radio"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1054,
+          178,
+          52,
+          52
+        ],
+        "fill": "#cdb488",
+        "radius": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          1112,
+          180,
+          30,
+          26
+        ],
+        "fill": "#ead68e"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1111,
+          214,
+          14,
+          14
+        ],
+        "fill": "#3a2a1a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1129,
+          214,
+          14,
+          14
+        ],
+        "fill": "#3a2a1a"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1150,
+            232
+          ],
+          [
+            1168,
+            252
+          ],
+          [
+            1172,
+            320
+          ]
+        ],
+        "color": "#222222",
+        "width": 3
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1360,
+          46,
+          100,
+          100
+        ],
+        "fill": "#f3f3f0",
+        "outline": "#555555",
+        "width": 6,
+        "note": "wall clock"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1410,
+            96
+          ],
+          [
+            1410,
+            64
+          ]
+        ],
+        "color": "#333333",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1410,
+            96
+          ],
+          [
+            1432,
+            104
+          ]
+        ],
+        "color": "#333333",
+        "width": 4
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          300,
+          700,
+          215
+        ],
+        "fill": "#c79a68",
+        "note": "pegboard"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            390,
+            320
+          ],
+          [
+            390,
+            440
+          ]
+        ],
+        "color": "#555555",
+        "width": 8
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            460,
+            320
+          ],
+          [
+            460,
+            460
+          ]
+        ],
+        "color": "#555555",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            520,
+            320
+          ],
+          [
+            520,
+            430
+          ]
+        ],
+        "color": "#777777",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            580,
+            320
+          ],
+          [
+            580,
+            450
+          ]
+        ],
+        "color": "#777777",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            640,
+            320
+          ],
+          [
+            640,
+            420
+          ]
+        ],
+        "color": "#777777",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            720,
+            320
+          ],
+          [
+            720,
+            470
+          ]
+        ],
+        "color": "#a0422a",
+        "width": 6
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            800,
+            320
+          ],
+          [
+            800,
+            480
+          ]
+        ],
+        "color": "#555555",
+        "width": 8
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            880,
+            320
+          ],
+          [
+            900,
+            490
+          ]
+        ],
+        "color": "#999999",
+        "width": 10
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            960,
+            320
+          ],
+          [
+            960,
+            460
+          ]
+        ],
+        "color": "#555555",
+        "width": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          300,
+          540,
+          840,
+          28
+        ],
+        "fill": "#a26f3c",
+        "note": "workbench top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          320,
+          568,
+          28,
+          212
+        ],
+        "fill": "#8a5c30"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1092,
+          568,
+          28,
+          212
+        ],
+        "fill": "#8a5c30"
+      },
+      {
+        "type": "rect",
+        "box": [
+          320,
+          700,
+          800,
+          16
+        ],
+        "fill": "#8a5c30"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          620,
+          150,
+          80
+        ],
+        "fill": "#6e7a4a"
+      },
+      {
+        "type": "rect",
+        "box": [
+          620,
+          610,
+          120,
+          90
+        ],
+        "fill": "#b98a56"
+      },
+      {
+        "type": "rect",
+        "box": [
+          800,
+          630,
+          130,
+          70
+        ],
+        "fill": "#b98a56"
+      },
+      {
+        "type": "rect",
+        "box": [
+          390,
+          718,
+          160,
+          60
+        ],
+        "fill": "#9a9e9e"
+      },
+      {
+        "type": "rect",
+        "box": [
+          380,
+          488,
+          190,
+          52
+        ],
+        "fill": "#a3a39e",
+        "note": "opened radio chassis under repair"
+      },
+      {
+        "type": "bars",
+        "box": [
+          395,
+          456,
+          160,
+          32
+        ],
+        "step": 28,
+        "bar": 12,
+        "fill": "#e9d9a6"
+      },
+      {
+        "type": "rect",
+        "box": [
+          640,
+          470,
+          60,
+          70
+        ],
+        "fill": "#e2b31c",
+        "radius": 6,
+        "note": "multimeter"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            720,
+            532
+          ],
+          [
+            880,
+            522
+          ],
+          [
+            900,
+            546
+          ],
+          [
+            740,
+            558
+          ]
+        ],
+        "fill": "#f0ece0",
+        "note": "schematic sheet"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            905,
+            528
+          ],
+          [
+            965,
+            476
+          ]
+        ],
+        "color": "#444444",
+        "width": 6
+      },
+      {
+        "type": "rect",
+        "box": [
+          1180,
+          300,
+          250,
+          480
+        ],
+        "fill": "#8d8f8a",
+        "outline": "#5d5f5a",
+        "width": 3,
+        "note": "small parts drawer cabinet"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1195,
+          320,
+          220,
+          330
+        ],
+        "cols": 4,
+        "rows": 6,
+        "color": "#5d5f5a",
+        "width": 3
+      },
+      {
+        "type": "rect",
+        "box": [
+          1195,
+          670,
+          220,
+          40
+        ],
+        "fill": "#9a9c97",
+        "outline": "#5d5f5a",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1195,
+          720,
+          220,
+          40
+        ],
+        "fill": "#9a9c97",
+        "outline": "#5d5f5a",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1560,
+          140,
+          280,
+          280
+        ],
+        "fill": "#f1f1ec",
+        "note": "window frame"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1578,
+          158,
+          244,
+          244
+        ],
+        "fill": "#a9cbe6",
+        "note": "sky outside"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1735,
+          210,
+          90,
+          130
+        ],
+        "fill": "#d39a3a",
+        "note": "autumn tree outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1600,
+          250,
+          150,
+          112
+        ],
+        "fill": "#f4f4f2",
+        "note": "white flat-roofed house outside"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1592,
+          240,
+          166,
+          12
+        ],
+        "fill": "#d0d0cc"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1625,
+          280,
+          40,
+          34
+        ],
+        "fill": "#6d7f8f"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1578,
+          352,
+          244,
+          50
+        ],
+        "fill": "#8a9096",
+        "note": "grey slatted fence outside"
+      },
+      {
+        "type": "bars",
+        "box": [
+          1578,
+          352,
+          244,
+          50
+        ],
+        "step": 10,
+        "bar": 3,
+        "fill": "#767c82",
+        "vertical": false
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1470,
+          640,
+          130,
+          130
+        ],
+        "outline": "#333333",
+        "width": 7,
+        "note": "bicycle"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1630,
+          640,
+          130,
+          130
+        ],
+        "outline": "#333333",
+        "width": 7
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1535,
+            705
+          ],
+          [
+            1600,
+            650
+          ],
+          [
+            1695,
+            705
+          ],
+          [
+            1640,
+            650
+          ],
+          [
+            1600,
+            650
+          ]
+        ],
+        "color": "#a0422a",
+        "width": 7
+      },
+      {
+        "type": "rect",
+        "box": [
+          1780,
+          600,
+          135,
+          180
+        ],
+        "fill": "#2a2a2a",
+        "radius": 30,
+        "note": "stack of winter tyres"
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1780,
+            660
+          ],
+          [
+            1915,
+            660
+          ]
+        ],
+        "color": "#444444",
+        "width": 4
+      },
+      {
+        "type": "line",
+        "points": [
+          [
+            1780,
+            720
+          ],
+          [
+            1915,
+            720
+          ]
+        ],
+        "color": "#444444",
+        "width": 4
+      },
+      {
+        "type": "rect",
+        "box": [
+          110,
+          430,
+          44,
+          28
+        ],
+        "fill": "#dbe7ef",
+        "radius": 8,
+        "note": "cloth face mask on a nail"
+      }
+    ]
+  }
+}

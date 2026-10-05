@@ -1,0 +1,172 @@
+{
+ "room": "S04",
+ "notes": "Shop with a serving window (2020 autumn). Wind in the tree and the grass beside the shop, leaves falling and drifting along the facade, the tube light inside the shop window humming and stuttering, a shop assistant's shadow moving behind the display window; the plexiglass of the serving window is redrawn in front of Dana (actors plane) so she stands behind it.",
+ "layers": [
+  {
+   "id": "tree",
+   "type": "sway",
+   "texture": "S04/tree.webp",
+   "anchor": 1.0,
+   "amp_px": 2.4,
+   "freq": 0.27,
+   "wavelength_px": 140,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "grass",
+   "type": "sway",
+   "texture": "S04/grass.webp",
+   "anchor": 0.95,
+   "amp_px": 1.6,
+   "freq": 0.45,
+   "wavelength_px": 60,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp"
+   ],
+   "emit_rect": [
+    1720,
+    20,
+    200,
+    420
+   ],
+   "rate": 0.45,
+   "size": [
+    14,
+    22
+   ],
+   "speed_x": [
+    -35,
+    -8
+   ],
+   "speed_y": [
+    40,
+    65
+   ],
+   "land_y": [
+    640,
+    775
+   ],
+   "rest_s": [
+    3,
+    7
+   ]
+  },
+  {
+   "id": "shop_tube",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "rect": [
+    1225,
+    140,
+    420,
+    46
+   ],
+   "texture": "builtin:softrect",
+   "color": "#e8f4ff",
+   "min": 0.02,
+   "max": 0.16,
+   "every_s": [
+    9,
+    22
+   ]
+  },
+  {
+   "id": "shop_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1150,
+     600
+    ],
+    [
+     1720,
+     600
+    ]
+   ],
+   "speed_px_s": 55,
+   "scale": 0.95,
+   "modulate": "#21160f",
+   "alpha": 0.32,
+   "direction": "random",
+   "every_s": [
+    14,
+    30
+   ],
+   "start_s": [
+    3,
+    6
+   ],
+   "clip": [
+    1212,
+    142,
+    446,
+    446
+   ]
+  },
+  {
+   "id": "door_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     860,
+     700
+    ],
+    [
+     1140,
+     700
+    ]
+   ],
+   "speed_px_s": 45,
+   "scale": 1.05,
+   "modulate": "#1d140e",
+   "alpha": 0.25,
+   "direction": "random",
+   "every_s": [
+    25,
+    45
+   ],
+   "start_s": [
+    15,
+    25
+   ],
+   "clip": [
+    893,
+    140,
+    214,
+    600
+   ]
+  },
+  {
+   "id": "plexi",
+   "type": "cutout",
+   "texture": "S04/plexi.webp",
+   "plane": "actors",
+   "sort_y": 780
+  }
+ ]
+}

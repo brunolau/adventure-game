@@ -117,6 +117,36 @@ VIEW_PROMPTS = {
         "Standing upright and relaxed, arms hanging at his sides, feet together flat on the ground, mouth closed. "
         "The figure is centred and fills about 80% of the image height. Brief, for reference: {desc}"
     ),
+    # Design-fidelity fix of an existing side view (ADAM production set): the jacket must hang open over the
+    # mustard T-shirt so the T-shirt reads in profile too; the first reference is edited, the second one only
+    # shows the clothes.
+    "side_open": (
+        "The FIRST reference image shows our hero, {name}, in side view facing right; edit it. Keep exactly the same "
+        "man: the same face, hair, head angle, expression, body proportions, scale and position in the frame, the "
+        "same dark grey-blue jeans, brown leather shoes and brown leather messenger bag, and the same hand-painted "
+        "look. The SECOND reference image shows the same man from a three-quarter angle; use it only as the reference "
+        "for his clothes. Correct his clothes to match the brief: his mid-blue cotton work jacket is completely "
+        "unbuttoned and worn open, its two front edges hanging apart and falling back, so that his plain "
+        "mustard-yellow crew-neck T-shirt is clearly visible as a broad strip on his chest and stomach, from the "
+        "neckline down to the belt; the mustard T-shirt must read clearly even when the figure is small. Turn his "
+        "chest and shoulders just slightly toward the viewer (about 20 degrees from a pure profile) so that the open "
+        "jacket front and the T-shirt show; his head, hips, legs and feet stay in side view facing right. The bag "
+        "strap runs from his far shoulder diagonally across the T-shirt down to the bag on his near hip, as in the "
+        "first image. Arms hang relaxed at his sides, both feet flat on the ground, mouth closed. "
+        "Brief, for reference: {desc}"
+    ),
+    "profile_open": (
+        "The FIRST reference image shows our hero, {name}, with the correct clothes: the blue work jacket worn open "
+        "over the mustard-yellow T-shirt. The SECOND reference image shows the body angle we need. Paint exactly the "
+        "same man as in the first image (same face, hair, clothes, colours, bag, proportions, scale and painting "
+        "style) in the body angle of the second image: a near-profile side view facing right, his nose pointing at "
+        "the right edge of the image and only one eye visible, his chest turned only slightly toward the viewer "
+        "(about 15 degrees from a pure profile). The open jacket front hangs back from his chest, so a clear "
+        "vertical strip of the mustard-yellow T-shirt shows on his chest and stomach between the jacket edge and "
+        "the front of his body, from the neckline to the belt; the bag strap crosses it diagonally to the bag on "
+        "his near hip. Standing upright and relaxed, arms hanging at his sides, feet flat on the ground, mouth "
+        "closed. The figure is centred and fills about 80% of the image height. Brief, for reference: {desc}"
+    ),
     "front": (
         "The FIRST reference image shows our character, {name}. Paint exactly the same man (same face, hair, clothes, "
         "colours, bag, proportions and painting style) as a single full-body FRONT view, standing relaxed and facing "
@@ -161,6 +191,92 @@ POSE_PROMPTS = {
         "wall), his body leaning very slightly forward, the other arm relaxed. Nothing in his hand, no object in "
         "front of him."
     ),
+    "open_jacket": (
+        "Edit the first image: keep the same man in exactly the same near-profile pose and angle, same face, hair, "
+        "expression, position and size in the frame, same jeans, shoes and bag, same flat green background. The "
+        "SECOND image shows the same man with the correct clothes; use it only as the reference for the clothes. "
+        "Change ONLY his clothes: his mid-blue work jacket is completely unbuttoned and hangs open, its front edge "
+        "swung back from his chest, so that his plain mustard-yellow crew-neck T-shirt shows clearly as a broad "
+        "vertical strip on his chest and stomach, from the neckline to the belt, between the jacket edge and the "
+        "front of his body; turn his chest just a few degrees toward the viewer if needed so the mustard T-shirt "
+        "reads clearly at small size. The bag strap still crosses the T-shirt diagonally to the bag on his near hip. "
+        "Do not change his head, legs or feet."
+    ),
+    "open_jacket_solo": (
+        "Edit the first image: keep the same man in exactly the same near-profile pose and angle facing right, the "
+        "same face, hair, expression, position and size in the frame, the same jeans, shoes and bag, the same flat "
+        "green background. Change ONLY his jacket: the mid-blue work jacket is completely unbuttoned and hangs wide "
+        "open, the near front panel swung back toward his side, so that his plain mustard-yellow crew-neck T-shirt "
+        "is clearly visible as a broad vertical band on his chest and stomach, from the neckline down to the belt "
+        "(about a third of the width of his torso). The bag strap still crosses the mustard T-shirt diagonally to "
+        "the bag on his near hip. Do not change his head, legs or feet."
+    ),
+    # --- mouth shapes that leave eyes and eyebrows alone (talk loops cycle them quickly) ---
+    "talk_a": (
+        "Edit the first image: keep everything exactly the same (same character, pose, position, size, clothes, "
+        "colours and flat green background) and change ONLY his mouth and jaw: he is in the middle of speaking, "
+        "mouth open as if saying 'ah', the jaw lowered a little. His eyes, eyebrows, nose, hair and head position "
+        "stay exactly as they are. Do not move or redraw anything else."
+    ),
+    "talk_o": (
+        "Edit the first image: keep everything exactly the same (same character, pose, position, size, clothes, "
+        "colours and flat green background) and change ONLY his mouth: the lips form a small rounded 'oh' shape, "
+        "as in mid-speech. His eyes, eyebrows, nose, hair and head position stay exactly as they are. Do not move "
+        "or redraw anything else."
+    ),
+    "talk_e": (
+        "Edit the first image: keep everything exactly the same (same character, pose, position, size, clothes, "
+        "colours and flat green background) and change ONLY his mouth: lips slightly parted in a relaxed half-open "
+        "shape with a hint of the upper teeth, as when saying 'eh' in mid-speech. His eyes, eyebrows, nose, hair "
+        "and head position stay exactly as they are. Do not move or redraw anything else."
+    ),
+    "mask2020_back": (
+        "Edit the first image, which shows the man from behind: keep everything exactly the same (same character, "
+        "pose, position, size, hair, clothes, colours and flat green background) and add ONLY what is visible from "
+        "behind of a light blue disposable surgical face mask that he wears over his nose and mouth: a thin white "
+        "elastic ear loop around each ear and, just in front of each ear, a narrow sliver of the light blue mask "
+        "edge on his cheeks. Do not move or redraw anything else."
+    ),
+    # --- body key poses (side view facing right unless stated) ---
+    "reach_low": (
+        "Edit the first image: the same character, same clothes, same colours, same scale, same flat green "
+        "background, still in the same side view facing right, with both feet on exactly the same spot. Change his "
+        "pose: he bends his knees into a low crouch and leans his upper body forward, reaching down with his right "
+        "arm toward the floor just in front of his toes, the open hand about to pick something up from the ground; "
+        "his other hand rests on his knee and he looks down at his hand. The bag still hangs from its strap. Nothing "
+        "in his hand, nothing on the floor."
+    ),
+    "reach_high": (
+        "Edit the first image: the same character, same clothes, same colours, same scale, same flat green "
+        "background, still in the same side view facing right, standing upright with both feet flat on exactly the "
+        "same spot. Change his pose: he stretches his right arm up and slightly forward above his head, the open "
+        "hand reaching for something on a high shelf in front of him, about one head height above the top of his "
+        "head, and he looks up at his hand; the other arm stays relaxed at his side. Nothing in his hand, no shelf "
+        "and no object in the image."
+    ),
+    "use_tool": (
+        "Edit the first image: the same character, same clothes, same colours, same scale, same flat green "
+        "background, still in the same side view facing right, standing on exactly the same spot with his feet "
+        "unchanged. Change his pose: both forearms are raised in front of him at chest height and he works with a "
+        "small screwdriver held in his right hand on something just in front of him, his left hand steadying it, "
+        "his head slightly bowed as he looks at his hands with concentration. The screwdriver is the only object "
+        "in the image; nothing else in front of him."
+    ),
+    "show_item": (
+        "Edit the first image: the same character, same clothes, same colours, same scale, same flat green "
+        "background, still in the same side view facing right, standing on exactly the same spot with his feet "
+        "unchanged. Change his pose: he holds his right hand out in front of him at chest height, palm up and "
+        "slightly cupped, as if showing a small object to a person standing in front of him, with a friendly open "
+        "expression and mouth closed; the other arm stays relaxed. The hand is empty, nothing in the image besides "
+        "him."
+    ),
+    "inventory_combine": (
+        "Edit the first image, which shows the man in front view: the same character, same clothes, same colours, "
+        "same scale, same flat green background, still facing the viewer and standing on exactly the same spot with "
+        "his feet unchanged. Change his pose: he raises both hands in front of his stomach, close together, and "
+        "looks down at them with concentration, the fingertips of both hands pinched together as if fitting two "
+        "tiny parts together. No visible objects in his hands, nothing else in the image."
+    ),
 }
 
 MOTION_PROMPTS = {
@@ -170,6 +286,15 @@ MOTION_PROMPTS = {
         "and keeps facing right in profile. Seamless loop. The camera is completely static: no pan, no zoom, no "
         "camera shake. The background stays a perfectly flat uniform green the whole time, with no floor, no "
         "shadow and nothing else appearing. Same hand-painted style throughout."
+    ),
+    "walk_side": (
+        "The man walks in place, as if on a treadmill, with a natural relaxed walking cycle: legs stepping and arms "
+        "swinging in alternation, the bag swaying slightly and his open blue jacket swinging a little, so the "
+        "mustard-yellow T-shirt under it stays visible the whole time. He stays in exactly the same spot in the "
+        "centre of the frame and keeps facing right in side view, exactly as in the first frame. Seamless loop. The "
+        "camera is completely static: no pan, no zoom, no camera shake. The background stays a perfectly flat "
+        "uniform green the whole time, with no floor, no shadow and nothing else appearing. Same hand-painted style "
+        "throughout."
     ),
     "walk_toward": (
         "The man walks in place toward the camera, as if on a treadmill, with a natural relaxed walking cycle: legs "
@@ -190,6 +315,39 @@ MOTION_PROMPTS = {
         "The man, standing on the same spot, calmly raises his right arm and reaches forward at chest height as if "
         "to press a switch on a wall in front of him, a natural motion that ends exactly in the pose of the last "
         "frame and holds it. His feet do not move. The camera is completely static. The "
+        "background stays a perfectly flat uniform green, nothing else appears. Same hand-painted style throughout."
+    ),
+    "reach_low": (
+        "The man, standing on the same spot, calmly bends his knees, crouches down and reaches toward the floor "
+        "just in front of his toes with his right hand, a natural motion that ends exactly in the pose of the last "
+        "frame and holds it. His feet do not move. The camera is completely static. The background stays a "
+        "perfectly flat uniform green, nothing else appears. Same hand-painted style throughout."
+    ),
+    "reach_high": (
+        # first try named "a high shelf": Hailuo painted a ghost shelf into the green, touching the hand
+        "The man, standing on the same spot, looks up and calmly stretches his right arm up above his head, the "
+        "open hand reaching for something high up, a natural motion that ends exactly in the pose of the last frame "
+        "and holds it. His feet do not move. The camera is completely static. The background stays a perfectly flat "
+        "uniform green the whole time: no shelf, no furniture, no objects, no lines and nothing else appears. Same "
+        "hand-painted style throughout."
+    ),
+    "use_tool": (
+        "The man, standing on the same spot, raises both hands to chest height in front of him and works "
+        "carefully with a small screwdriver in his right hand on something just in front of him, giving it two "
+        "small turns, a natural motion that ends exactly in the pose of the last frame and holds it. His feet do "
+        "not move. The camera is completely static. The background stays a perfectly flat uniform green, nothing "
+        "else appears. Same hand-painted style throughout."
+    ),
+    "show_item": (
+        "The man, standing on the same spot, calmly holds out his right hand in front of him at chest height, palm "
+        "up, as if showing something small to a person in front of him, a natural motion that ends exactly in the "
+        "pose of the last frame and holds it. His feet do not move. The camera is completely static. The background "
+        "stays a perfectly flat uniform green, nothing else appears. Same hand-painted style throughout."
+    ),
+    "inventory_combine": (
+        "The man, facing the viewer and standing on the same spot, raises both hands in front of his stomach, looks "
+        "down and carefully fits two tiny parts together with his fingertips, a natural motion that ends exactly in "
+        "the pose of the last frame and holds it. His feet do not move. The camera is completely static. The "
         "background stays a perfectly flat uniform green, nothing else appears. Same hand-painted style throughout."
     ),
     "idle": (
@@ -304,9 +462,17 @@ def cmd_view(args: argparse.Namespace) -> None:
     print("\n".join(str(p) for p in paths))
 
 
+# The style line mentions "dappled shadows under the trees"; on pose edits NB2 once painted sun spots onto the
+# jacket and lightened the hair (ADAM use_tool, first try), so every pose edit carries this guard.
+POSE_GUARD = (
+    "Keep his face, hair colour, skin tone and the soft even lighting exactly as in the first image: no dappled "
+    "light spots or sun patches on him or his clothes."
+)
+
+
 def cmd_pose(args: argparse.Namespace) -> None:
     load_brief(args.char)
-    prompt = POSE_PROMPTS[args.pose] + " " + key_background(args.key) + " " + STYLE_FOR_CHARACTER + STYLE_A
+    prompt = " ".join([POSE_PROMPTS[args.pose], POSE_GUARD, key_background(args.key), STYLE_FOR_CHARACTER + STYLE_A])
     prompt = recolour_key_words(prompt, args.key)
     name = args.out or f"pose_{args.pose}_{args.model}"
     out_base = CHAR_ROOT / args.char / name
@@ -333,6 +499,7 @@ def cmd_video(args: argparse.Namespace) -> None:
     elif args.engine == "hailuo":
         seconds = 6.0 if seconds <= 6 else 10.0  # the endpoint only accepts 6 or 10 s
         arguments.update(duration=str(int(seconds)), resolution=resolution, prompt_optimizer=False)
+        price_res = resolution
     elif args.engine == "hailuo_pro":
         seconds = 6.0  # documented price example: 6 s = $0.48
         arguments.update(prompt_optimizer=False)

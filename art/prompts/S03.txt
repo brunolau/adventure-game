@@ -1,0 +1,26 @@
+# S03 Dobrovoľnícke výdajné miesto (2020) - hand-written prompt body
+# v2 (accepted line): PRE-ZOOMED sketch art/prompts/S03.sketch.json for a planned refit (scale 0.8, offset -40 -180).
+# Paint it with `art/tools/bg_helpers.py prezoom-paint S03 --plan 0.8 -40 -180 ...`, which expands {rect:...} to
+# the PLANNED sketch coordinates; plain `paint_room.py paint S03` would expand them to game coordinates that do not
+# match this sketch. {walk}/{exit}/{npc_zones} are not used here because they map outside the pre-zoomed frame.
+# v1 (raised stone terrace, S05 camera) was re-composed by the model at eye level ~2x larger: its prompt and sketch are
+# kept in art/masters/bg/S03_v1.json.
+# Style reference = the accepted S05 background (same 2020 prologue: autumn light and palette).
+#refs: art/source/rooms/S03/rekreapark_shelter_panoramax.jpg
+#style: src/game/assets/bg/S05.webp
+Place: Rekreapark by Javorová alej in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real park: an open timber picnic shelter on dark brown log posts with a brown wooden-shingle hip roof and a natural-stone fireplace chimney wall on its right side, grey concrete paving, a wooden playground and young trees on a wide lawn. Paint the shelter and the park from this real place; the volunteer distribution point in it is invented.
+
+Brief: the open shelter used as a volunteer distribution point during the pandemic: distribution tables with food boxes and named paper bags, paper lists on clipboards, distancing tape on the floor, face masks and disinfectant. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, yellow and orange autumn trees, fallen leaves.
+
+Camera: eye level, about 2 m high, looking straight into the open shelter; vertical lines stay vertical. Keep this exact geometry from the sketch: the shingle roof across the top of the picture with its eave at y 230-252, the dark log posts standing on the front edge of the shelter floor at y 664, the grey paved floor of the shelter from y 430 (far back) to y 664, the two tables at the front edge with their tops at y 528, the empty paved forecourt from y 674 down to the bottom edge.
+
+What the sketch blocks are: the brown wooden-shingle roof surface and its dark eave; four dark brown log posts at the front and thinner posts at the back; under the roof, behind the open back of the shelter, the autumn park: lawn, yellow and orange trees and a small wooden playground frame far away; the deep grey paved floor of the shelter; on the right the natural-stone fireplace chimney wall with a dark fireplace opening; right of the shelter a big orange autumn tree and the lawn; along the bottom third the wide grey concrete-paver forecourt, completely empty.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance; the three sit side by side at the same height in the picture, separated by the log posts:
+1. {rect:S03.supplies}: the left distribution table loaded with brown paper grocery bags and a cardboard box of food, each bag with a small white name label (illegible scribbles), a clipboard with a paper list.
+2. {rect:S03.ambient 1}: between the two middle posts, far back on the shelter floor, three bright yellow-and-black distancing tape lines stuck across the paving one behind the other (the queue marks); in the picture they lie at the same height as the table tops, with only plain floor in front of them.
+3. {rect:S03.ambient 2}: on the right table a big steel thermos flask with a red cup lid and a strip of masking tape with handwriting on it (illegible), next to a box of disposable face masks and a bottle of hand sanitiser.
+
+Walkable floor: the forecourt along the bottom third of the picture is open grey concrete paving - one continuous flat surface with no kerb, no step, no edge and no change of material, and nothing standing on it: no tables, no bins, no benches, no plants, no bags, no tape, no people. Only light, long shadows and a few fallen leaves. The shelter floor in front of the tables stays plain too.
+
+Fiction rules: the distribution point is invented: no municipal or charity logos, no organisation names, no readable names on lists or bags - paper shows only illegible scribbles, no digits. Paint out the car and the table-tennis table of the photo. No people, no animals.

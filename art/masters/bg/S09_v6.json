@@ -1,0 +1,143 @@
+{
+  "room": "S09",
+  "version": 6,
+  "kind": "retouch",
+  "from_version": 5,
+  "usd": 0.0,
+  "made": "2026-10-05T02:32:47",
+  "what": "Free local retouch of v5 (no model call): v3 painted only two skis but the look line of S09.ambient 1 says there are three. A third ski was composited behind ski 2: ski 2's traced outline (game px, left edge x 523->505, right edge x 546->530, tip apex 523,153, foot y 800) shifted by +24 px / -12 px (it stands further back, so its foot is higher), its pixels tinted x(0.90, 0.84, 0.80), shown only outside ski 2 (dilated 1 px) and behind the dark pixels of the ski pole's grip, strap and shaft, plus a soft 20 % shadow on the wall offset +9/+4 px and blurred 8 master px. All other pixels are identical to v5.",
+  "ski2_outline_game_px": [
+    [
+      523,
+      153
+    ],
+    [
+      519,
+      170
+    ],
+    [
+      519,
+      190
+    ],
+    [
+      520,
+      220
+    ],
+    [
+      519,
+      300
+    ],
+    [
+      517,
+      350
+    ],
+    [
+      515,
+      400
+    ],
+    [
+      514,
+      450
+    ],
+    [
+      510,
+      500
+    ],
+    [
+      509,
+      620
+    ],
+    [
+      508,
+      680
+    ],
+    [
+      506,
+      740
+    ],
+    [
+      505,
+      800
+    ],
+    [
+      530,
+      800
+    ],
+    [
+      531,
+      740
+    ],
+    [
+      534,
+      680
+    ],
+    [
+      535,
+      620
+    ],
+    [
+      539,
+      550
+    ],
+    [
+      539,
+      500
+    ],
+    [
+      540,
+      450
+    ],
+    [
+      541,
+      400
+    ],
+    [
+      543,
+      350
+    ],
+    [
+      545,
+      300
+    ],
+    [
+      546,
+      260
+    ],
+    [
+      546,
+      220
+    ],
+    [
+      543,
+      190
+    ],
+    [
+      537,
+      170
+    ],
+    [
+      532,
+      160
+    ],
+    [
+      527,
+      155
+    ]
+  ],
+  "shift_game_px": [
+    24,
+    -12
+  ],
+  "image_urls": [
+    "art/masters/bg/S09_v5.png"
+  ],
+  "exported": {
+    "path": "src/game/assets/bg/S09.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T02:33:08"
+  }
+}

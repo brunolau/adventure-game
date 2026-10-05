@@ -1,0 +1,22 @@
+{
+  "name": "walk_away",
+  "frames": 16,
+  "cell": [
+    240,
+    553
+  ],
+  "pivot": [
+    120,
+    521
+  ],
+  "playback_fps": 10.97,
+  "oneshot": false,
+  "stride_px_per_s": null,
+  "image": "walk_away.webp",
+  "facing": "back",
+  "mirror_for_left": false,
+  "variant": "default",
+  "standing_height_px": 512,
+  "cycle_seconds": 1.458,
+  "note": "depth walk: move the actor along y at a per-room speed tuned by eye (start with ~0.25 x the walk_right stride, scaled by the actor scale); feet may reach below the pivot (perspective)"
+}

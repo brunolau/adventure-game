@@ -1,0 +1,25 @@
+# S05 Mirkina bránka (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S05.sketch.json (image 1); this text says what each block is.
+# v3: raised plot + raised camera, because an eye-level sketch with props in the top band was re-composed by the
+# model (v2: props 300-500 px too low). Keep the geometry physically consistent or the model "fixes" it.
+#refs: art/source/rooms/S05/pezinska_old_house_kartaview_416.jpg ; art/source/rooms/S05/pezinska_creeper_house_kartaview_414.jpg ; art/source/rooms/S05/pezinska_walls_gates_kartaview_412.jpg
+#style: art/backgrounds/sokolikova-street.png
+Place: the old core of Čierna Voda on Pezinská street (municipality Chorvátsky Grob, near Bratislava, Slovakia). Images 2-4 are dashcam photos of this real street: low single-storey village houses of the 1950s-70s with pitched red-brown tiled roofs and two-coloured plaster (image 2: pale peach and light blue), a house overgrown with a climbing vine (image 3), old stone walls, wooden gates with small tiled canopies, brick-paved pavements with a gravel and grass verge, and concrete electricity poles (image 4). Paint grandmother Mira's property from these real house types, walls and materials - an invented house, not a copy of one particular house.
+
+Brief: the gate of grandmother Mira's older little garden, seen from the street: a small outdoor table for leaving the shopping in front of the gate, a doorbell, and a window of her house in the background. There is no entry into the house: Mira is in quarantine. A sunny autumn afternoon in October 2020, warm low sunlight, yellowing leaves, a few fallen leaves.
+
+Camera: seen from slightly above, as from a first-floor window on the street - about 3.5 m high, looking down a little; vertical lines stay vertical. Mira's old plot lies about one metre higher than the street, behind a low retaining wall of rough stone; everything on the plot (gate, workshop, fence, vine, house) stands on that raised level, along the top third of the picture. Keep this exact geometry from the sketch: the top of the retaining wall at y 345-357, its foot at y 515, the pavement from y 690 down to the bottom edge.
+
+What the sketch blocks are: on the left five worn stone steps climb from the verge up the retaining wall to a small landing in front of the narrow old green garden gate, which stands between two plastered pillars under a small tiled gate canopy (cut by the top edge); a paper note with illegible scribbles is taped to the gate (2020) and an old two-tone doorbell button sits on the right pillar (no name); the brick building is Mira's small garden workshop standing on the raised plot at the wall line, with a weathered wooden plank door; the weathered green wooden fence on the retaining wall; the old grapevine on a wooden trellis behind the fence; Mira's single-storey house behind the fence on the right, pale peach and light blue plaster, closed windows with lace curtains (only their lower part is visible, the eaves are above the top edge); autumn trees of the garden at the top left; a grey concrete electricity pole on the verge at the far right; a gravel strip and a narrow grass verge with fallen leaves along the wall foot; the wide brick-paved pavement.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S05.tray}: the small old wooden table standing on the top landing of the steps, right in front of the gate; its empty table top with a small bottle of hand sanitiser at the edge; its legs stand on the landing.
+2. {rect:S05.shed_door}: the middle of the closed wooden workshop door with its iron handle and an old padlock on a hasp.
+3. {rect:S05.ambient 1}: the old grapevine, dense with yellowing autumn leaves and small dark blue grape bunches.
+4. {rect:S05.ambient 2}: a worn coir doormat hung over the top of the fence to air, hanging on the street side, with the word VITAJTE on it facing the street.
+
+Walkable floor: {walk} is the open brick-paved pavement - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no cars, no bins, no poles, no plants, no bags. Only light, leaf shadows and a few fallen leaves. The pavement continues to the left edge ({exit:S05.to_S02}) and to the right edge ({exit:S05.to_S09}) and stays open along the bottom ({exit:S05.to_S06}).
+{npc_zones}
+
+Fiction rules: the house is invented from the real house type. No house numbers, no name on the bell or mailbox, no shop or business signs, no logos, no cars, no people, no animals. The paper note shows only illegible scribbles, no digits.

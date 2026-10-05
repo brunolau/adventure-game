@@ -1,0 +1,263 @@
+{
+  "id": "DANA",
+  "source": "art/characters/DANA",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (window variants: centre of the sill cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1150,
+        522
+      ],
+      "cell": [
+        230,
+        522
+      ],
+      "pivot": [
+        115,
+        518
+      ],
+      "frames": 5
+    },
+    "idle": {
+      "file": "idle_sheet.webp",
+      "json": "idle_sheet.json",
+      "size": [
+        6480,
+        520
+      ],
+      "cell": [
+        180,
+        520
+      ],
+      "pivot": [
+        90,
+        516
+      ],
+      "frames": 36
+    },
+    "npc_bust": {
+      "file": "npc_bust_sheet.webp",
+      "json": "npc_bust_sheet.json",
+      "size": [
+        1150,
+        262
+      ],
+      "cell": [
+        230,
+        262
+      ],
+      "pivot": [
+        115,
+        262
+      ],
+      "frames": 5
+    },
+    "npc_bust_glass": {
+      "file": "npc_bust_glass_sheet.webp",
+      "json": "npc_bust_glass_sheet.json",
+      "size": [
+        1150,
+        262
+      ],
+      "cell": [
+        230,
+        262
+      ],
+      "pivot": [
+        115,
+        262
+      ],
+      "frames": 5
+    },
+    "idle_bust": {
+      "file": "idle_bust_sheet.webp",
+      "json": "idle_bust_sheet.json",
+      "size": [
+        6480,
+        260
+      ],
+      "cell": [
+        180,
+        260
+      ],
+      "pivot": [
+        90,
+        260
+      ],
+      "frames": 36
+    },
+    "idle_bust_glass": {
+      "file": "idle_bust_glass_sheet.webp",
+      "json": "idle_bust_glass_sheet.json",
+      "size": [
+        6480,
+        260
+      ],
+      "cell": [
+        180,
+        260
+      ],
+      "pivot": [
+        90,
+        260
+      ],
+      "frames": 36
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "idle",
+      "loop": true
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S04, seen at the shop's serving window. Full figure by default; window/ bust variants (sill line at 50 % of the figure height) if the S04 background puts her behind glass.",
+  "variants": {
+    "window_glass": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_bust_glass",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_bust_glass",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_bust_glass",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_bust_glass",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_bust_glass",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "behind closed glass: bust cut at the sill line, pale veil + soft reflection"
+    },
+    "window": {
+      "animations": {
+        "idle": {
+          "sheet": "idle_bust",
+          "loop": true
+        },
+        "idle_still": {
+          "sheet": "npc_bust",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "npc_bust",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ],
+          "note": "only while the still idle is shown (the video idle blinks by itself)"
+        },
+        "talk": {
+          "sheet": "npc_bust",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "npc_bust",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true,
+          "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+        }
+      },
+      "note": "bust without the glass treatment (if the engine adds its own glass layer)"
+    }
+  },
+  "default_variant": null
+}

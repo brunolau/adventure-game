@@ -153,6 +153,19 @@ public static class Navigation
         : UsePortal(content, state, step.Year!.Value);
 
     /// <summary>
+    /// Starts a new game presentation-side: queues the first-entry lines of the start room. The
+    /// initial state already lists the start room as visited, so <see cref="Travel"/> never queues
+    /// them (ISSUES.md GAME-01). Only acts on a state with no done action, no line playing and world
+    /// mode; otherwise returns the same instance. Changes no rules state besides the playback cursor.
+    /// </summary>
+    public static GameState BeginNewGame(GameContent content, GameState state)
+    {
+        if (!state.Done.IsEmpty || state.ActiveLineId is not null || state.Mode != GameMode.World) return state;
+        var lines = content.GetRoom(state.Room).FirstEntry.Select(l => l.LineId ?? "").Where(id => id.Length > 0).ToList();
+        return lines.Count == 0 ? state : Playback.Start(content, state, lines);
+    }
+
+    /// <summary>
     /// Moves the hero into a room: sets room and era, marks it visited and records the entry marker
     /// used for deferred causal effects. Does not queue lines.
     /// </summary>

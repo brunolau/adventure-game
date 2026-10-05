@@ -1,0 +1,991 @@
+{
+ "note": "S11 / L_STOP base geometry: camera ~3.5 m above the SW platform, looking NE across the double track (side-on), horizon above the frame. Walk band = our platform (y 766-1080). Near rail of the near track at y 680 (anchor track_line), far track y 426-518, far platform y 256-426 with a long 1980s shelter (bench = hotspot 2) and a stop post with the paper timetable (hotspot 1); far carriageway and a shopping pavilion at the top. Brass clock on a short column at our platform edge, frame centre (1560,320) (anchor clock_frame); lowered kerb with a chipped corner at (150,890) (anchor curb). The tram stands on the far track at the right, behind the clock.",
+ "background": "#cbbfa5",
+ "shapes": [
+  {
+   "type": "rect",
+   "box": [
+    0,
+    0,
+    1920,
+    110
+   ],
+   "fill": "#cbbfa5",
+   "note": "far side: ground floor of a 1980s shopping pavilion with shop windows"
+  },
+  {
+   "type": "rect",
+   "box": [
+    30,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    240,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    450,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    660,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    870,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1080,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1290,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1500,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1710,
+    10,
+    150,
+    80
+   ],
+   "fill": "#8fa6b0",
+   "note": "large shop window (no signs)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    92,
+    1920,
+    18
+   ],
+   "fill": "#b7ad97",
+   "note": "pavilion plinth"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    110,
+    1920,
+    40
+   ],
+   "fill": "#a7ad78",
+   "note": "grass strip with young lindens (crowns above the frame)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    260,
+    60,
+    14,
+    80
+   ],
+   "fill": "#5e4a38",
+   "note": "linden trunk"
+  },
+  {
+   "type": "rect",
+   "box": [
+    980,
+    60,
+    14,
+    80
+   ],
+   "fill": "#5e4a38",
+   "note": "linden trunk"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1700,
+    60,
+    14,
+    80
+   ],
+   "fill": "#5e4a38",
+   "note": "linden trunk"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    150,
+    1920,
+    22
+   ],
+   "fill": "#cfc6b4",
+   "note": "far pavement"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    172,
+    1920,
+    76
+   ],
+   "fill": "#7f8183",
+   "note": "far carriageway asphalt"
+  },
+  {
+   "type": "bars",
+   "box": [
+    0,
+    206,
+    1920,
+    6
+   ],
+   "step": 120,
+   "bar": 60,
+   "fill": "#e8e6df",
+   "vertical": true,
+   "note": "dashed white lane line"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    248,
+    1920,
+    8
+   ],
+   "fill": "#5f7f5a",
+   "note": "low green tube railing at the back of the far platform"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    256,
+    1920,
+    164
+   ],
+   "fill": "#c9c2b2",
+   "note": "far platform: 1980s concrete slabs"
+  },
+  {
+   "type": "grid",
+   "box": [
+    0,
+    256,
+    1920,
+    164
+   ],
+   "cols": 24,
+   "rows": 4,
+   "color": "#b2ab9b",
+   "width": 2
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    412,
+    1920,
+    14
+   ],
+   "fill": "#e2dccd",
+   "note": "far platform edge stones"
+  },
+  {
+   "type": "rect",
+   "box": [
+    70,
+    26,
+    840,
+    22
+   ],
+   "fill": "#8a3b2a",
+   "note": "flat roof slab of the shelter, dark red steel fascia"
+  },
+  {
+   "type": "rect",
+   "box": [
+    70,
+    48,
+    840,
+    206
+   ],
+   "fill": "#b9d0d6",
+   "note": "glass back wall of the shelter (see-through)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    70,
+    48,
+    18,
+    210
+   ],
+   "fill": "#8a3b2a",
+   "note": "steel frame post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    280,
+    48,
+    18,
+    210
+   ],
+   "fill": "#8a3b2a",
+   "note": "steel frame post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    490,
+    48,
+    18,
+    210
+   ],
+   "fill": "#8a3b2a",
+   "note": "steel frame post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    700,
+    48,
+    18,
+    210
+   ],
+   "fill": "#8a3b2a",
+   "note": "steel frame post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    890,
+    48,
+    18,
+    210
+   ],
+   "fill": "#8a3b2a",
+   "note": "steel frame post"
+  },
+  {
+   "type": "rect",
+   "box": [
+    600,
+    70,
+    80,
+    110
+   ],
+   "fill": "#e07a3a",
+   "note": "colourful poster (no readable text)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    720,
+    66,
+    70,
+    120
+   ],
+   "fill": "#5aa0c8",
+   "note": "poster"
+  },
+  {
+   "type": "rect",
+   "box": [
+    800,
+    76,
+    80,
+    100
+   ],
+   "fill": "#f0c84a",
+   "note": "poster"
+  },
+  {
+   "type": "rect",
+   "box": [
+    410,
+    172,
+    150,
+    14
+   ],
+   "fill": "#9c6a3e",
+   "note": "bench backrest slat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    410,
+    190,
+    150,
+    14
+   ],
+   "fill": "#9c6a3e",
+   "note": "bench backrest slat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    404,
+    208,
+    162,
+    20
+   ],
+   "fill": "#b07a46",
+   "note": "wooden slat seat"
+  },
+  {
+   "type": "rect",
+   "box": [
+    420,
+    228,
+    12,
+    30
+   ],
+   "fill": "#3d3a36",
+   "note": "bench steel leg"
+  },
+  {
+   "type": "rect",
+   "box": [
+    538,
+    228,
+    12,
+    30
+   ],
+   "fill": "#3d3a36",
+   "note": "bench steel leg"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    452,
+    226,
+    12,
+    8
+   ],
+   "fill": "#f08ab0",
+   "note": "pink chewing gum under the seat edge"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    500,
+    228,
+    10,
+    7
+   ],
+   "fill": "#e88aa8"
+  },
+  {
+   "type": "rect",
+   "box": [
+    176,
+    100,
+    10,
+    312
+   ],
+   "fill": "#8f9396",
+   "note": "grey stop post standing at the far platform edge"
+  },
+  {
+   "type": "rect",
+   "box": [
+    146,
+    100,
+    70,
+    46
+   ],
+   "fill": "#f2f2ee",
+   "note": "small tram-stop sign: white plate with red border and tram pictogram"
+  },
+  {
+   "type": "rect",
+   "box": [
+    146,
+    100,
+    70,
+    46
+   ],
+   "fill": "#f2f2ee",
+   "outline": "#c0392b",
+   "width": 5
+  },
+  {
+   "type": "rect",
+   "box": [
+    166,
+    112,
+    30,
+    22
+   ],
+   "fill": "#2a2a2a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    134,
+    156,
+    94,
+    92
+   ],
+   "fill": "#6f7377",
+   "note": "glazed timetable case (metal frame)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    142,
+    164,
+    78,
+    76
+   ],
+   "fill": "#f4f1e6",
+   "note": "printed paper timetable"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    172,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    182,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    192,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    202,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    212,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    222,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    148,
+    232,
+    66,
+    3
+   ],
+   "fill": "#8a8a8a"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    426,
+    1920,
+    92
+   ],
+   "fill": "#8b847a",
+   "note": "far track bed: concrete track panels and ballast"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    446,
+    1920,
+    6
+   ],
+   "fill": "#5a5650",
+   "note": "rail"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    494,
+    1920,
+    7
+   ],
+   "fill": "#5a5650",
+   "note": "rail"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    518,
+    1920,
+    84
+   ],
+   "fill": "#9a9a7a",
+   "note": "ballast and short grass between the two tracks"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1004,
+    0,
+    22,
+    560
+   ],
+   "fill": "#a3a39d",
+   "note": "concrete traction pole between the tracks"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1180,
+    20,
+    740,
+    486
+   ],
+   "fill": "#c8352a",
+   "note": "red-cream tram standing on the far track (Tatra T6A5 type)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1180,
+    20,
+    740,
+    250
+   ],
+   "fill": "#efe2c4",
+   "note": "cream upper body with windows"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1420,
+    70,
+    120,
+    150
+   ],
+   "fill": "#6d8792",
+   "note": "side window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1570,
+    70,
+    120,
+    150
+   ],
+   "fill": "#6d8792",
+   "note": "side window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1720,
+    70,
+    120,
+    150
+   ],
+   "fill": "#6d8792",
+   "note": "side window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1870,
+    70,
+    120,
+    150
+   ],
+   "fill": "#6d8792",
+   "note": "side window"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1196,
+    60,
+    200,
+    170
+   ],
+   "fill": "#5f7c88",
+   "note": "big front windscreen"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1220,
+    30,
+    150,
+    26
+   ],
+   "fill": "#2a2a2a",
+   "note": "blank line-number box (no number)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1180,
+    270,
+    220,
+    236
+   ],
+   "fill": "#c8352a",
+   "note": "red front"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1206,
+    370,
+    32,
+    32
+   ],
+   "fill": "#f6f2dc",
+   "note": "headlight"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1350,
+    370,
+    32,
+    32
+   ],
+   "fill": "#f6f2dc",
+   "note": "headlight"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1260,
+    440,
+    70,
+    40
+   ],
+   "fill": "#e8b830",
+   "note": "yellow coupler cover"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1180,
+    488,
+    740,
+    18
+   ],
+   "fill": "#3a3a3a",
+   "note": "underframe"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    602,
+    1920,
+    148
+   ],
+   "fill": "#857e72",
+   "note": "near track bed: concrete track panels and ballast"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    610,
+    1920,
+    7
+   ],
+   "fill": "#5a5650",
+   "note": "far rail of the near track"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    676,
+    1920,
+    8
+   ],
+   "fill": "#5a5650",
+   "note": "near rail (anchor track_line, y 680)"
+  },
+  {
+   "type": "bars",
+   "box": [
+    0,
+    620,
+    1920,
+    54
+   ],
+   "step": 96,
+   "bar": 20,
+   "fill": "#958e82",
+   "vertical": true,
+   "note": "track panel joints"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    750,
+    1920,
+    16
+   ],
+   "fill": "#ddd6c6",
+   "note": "platform edge stones"
+  },
+  {
+   "type": "rect",
+   "box": [
+    0,
+    766,
+    1920,
+    314
+   ],
+   "fill": "#cfc8b8",
+   "note": "our platform: big 1980s concrete slabs, continuous"
+  },
+  {
+   "type": "grid",
+   "box": [
+    0,
+    766,
+    1920,
+    314
+   ],
+   "cols": 16,
+   "rows": 3,
+   "color": "#bdb6a6",
+   "width": 2
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     0,
+     750
+    ],
+    [
+     182,
+     750
+    ],
+    [
+     102,
+     1080
+    ],
+    [
+     0,
+     1080
+    ]
+   ],
+   "fill": "#86878a",
+   "note": "asphalt footway at the platform end"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     182,
+     752
+    ],
+    [
+     102,
+     1080
+    ]
+   ],
+   "color": "#a9a59c",
+   "width": 14,
+   "note": "lowered granite kerb, flush with the paving"
+  },
+  {
+   "type": "poly",
+   "points": [
+    [
+     142,
+     880
+    ],
+    [
+     160,
+     884
+    ],
+    [
+     154,
+     902
+    ],
+    [
+     140,
+     898
+    ]
+   ],
+   "fill": "#6e6a62",
+   "note": "chipped corner of the kerb (anchor)"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1540,
+    730,
+    40,
+    34
+   ],
+   "fill": "#3f5a46",
+   "note": "cast-iron column foot"
+  },
+  {
+   "type": "rect",
+   "box": [
+    1551,
+    368,
+    18,
+    366
+   ],
+   "fill": "#3f5a46",
+   "note": "dark green cast-iron clock column"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1505,
+    265,
+    110,
+    110
+   ],
+   "fill": "#c9a24a",
+   "note": "round brass clock frame (anchor)"
+  },
+  {
+   "type": "ellipse",
+   "box": [
+    1517,
+    277,
+    86,
+    86
+   ],
+   "fill": "#f6f2e4",
+   "note": "white clock dial"
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1560,
+     320
+    ],
+    [
+     1560,
+     288
+    ]
+   ],
+   "color": "#2a2a2a",
+   "width": 5
+  },
+  {
+   "type": "line",
+   "points": [
+    [
+     1560,
+     320
+    ],
+    [
+     1584,
+     334
+    ]
+   ],
+   "color": "#2a2a2a",
+   "width": 6
+  }
+ ]
+}

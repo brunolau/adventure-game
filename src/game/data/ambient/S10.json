@@ -1,0 +1,140 @@
+{
+ "room": "S10",
+ "notes": "ZVON workshop (2020). The blue light in the round brass frame breathes slowly with a faster shimmer and a faint spill on the wall (ambience: slow pulse, transformer), the bench supply's LEDs blink, dust turns in the window light, leaves of the tree outside the window move in the wind.",
+ "layers": [
+  {
+   "id": "portal_spill",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    1425,
+    300
+   ],
+   "size": [
+    900,
+    760
+   ],
+   "color": "#6aa8ff",
+   "min": 0.04,
+   "max": 0.11,
+   "period_s": 1.6
+  },
+  {
+   "id": "portal_core",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    1425,
+    255
+   ],
+   "size": [
+    270,
+    270
+   ],
+   "color": "#a9d4ff",
+   "min": 0.16,
+   "max": 0.45,
+   "period_s": 3.2
+  },
+  {
+   "id": "portal_shimmer",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    1425,
+    255
+   ],
+   "size": [
+    190,
+    190
+   ],
+   "color": "#e6f4ff",
+   "min": 0.05,
+   "max": 0.25,
+   "period_s": 0.25
+  },
+  {
+   "id": "window_leaves",
+   "type": "sway",
+   "texture": "S10/window_leaves.webp",
+   "anchor": 1.0,
+   "amp_px": 1.6,
+   "freq": 0.3,
+   "wavelength_px": 70,
+   "flutter_px": 0.6
+  },
+  {
+   "id": "dust_window",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1430,
+    300,
+    470,
+    480
+   ],
+   "count": 26,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.25,
+    0.75
+   ],
+   "color": "#fff0c4"
+  },
+  {
+   "id": "led_green",
+   "type": "flicker",
+   "mode": "pulse",
+   "pos": [
+    205,
+    499
+   ],
+   "size": [
+    22,
+    22
+   ],
+   "color": "#7dff8a",
+   "min": 0.35,
+   "max": 0.6,
+   "period_s": 2.5
+  },
+  {
+   "id": "led_red",
+   "type": "flicker",
+   "mode": "blink",
+   "pos": [
+    219,
+    499
+   ],
+   "size": [
+    24,
+    24
+   ],
+   "color": "#ff4a3a",
+   "min": 0.0,
+   "max": 0.8,
+   "period_s": 1.3,
+   "duty": 0.45
+  },
+  {
+   "id": "led_supply",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    470,
+    486
+   ],
+   "size": [
+    34,
+    34
+   ],
+   "color": "#ff7a3a",
+   "min": 0.15,
+   "max": 0.5,
+   "period_s": 0.3
+  }
+ ]
+}

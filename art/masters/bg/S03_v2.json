@@ -1,0 +1,638 @@
+{
+  "room": "S03",
+  "version": 2,
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020302,
+  "usd": 0.15,
+  "started": "2026-10-05T02:23:53",
+  "spend_log_asset": "bg/prologue2020/S03_v2",
+  "mode": "sketch",
+  "prompt_file": "art/prompts/S03.txt",
+  "prompt": "You receive 3 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Image 2 is a photo of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 3 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: Rekreapark by Javorová alej in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a photo of this real park: an open timber picnic shelter on dark brown log posts with a brown wooden-shingle hip roof and a natural-stone fireplace chimney wall on its right side, grey concrete paving, a wooden playground and young trees on a wide lawn. Paint the shelter and the park from this real place; the volunteer distribution point in it is invented.\n\nBrief: the open shelter used as a volunteer distribution point during the pandemic: distribution tables with food boxes and named paper bags, paper lists on clipboards, distancing tape on the floor, face masks and disinfectant. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, yellow and orange autumn trees, fallen leaves.\n\nCamera: eye level, about 2 m high, looking straight into the open shelter; vertical lines stay vertical. Keep this exact geometry from the sketch: the shingle roof across the top of the picture with its eave at y 230-252, the dark log posts standing on the front edge of the shelter floor at y 664, the grey paved floor of the shelter from y 430 (far back) to y 664, the two tables at the front edge with their tops at y 528, the empty paved forecourt from y 674 down to the bottom edge.\n\nWhat the sketch blocks are: the brown wooden-shingle roof surface and its dark eave; four dark brown log posts at the front and thinner posts at the back; under the roof, behind the open back of the shelter, the autumn park: lawn, yellow and orange trees and a small wooden playground frame far away; the deep grey paved floor of the shelter; on the right the natural-stone fireplace chimney wall with a dark fireplace opening; right of the shelter a big orange autumn tree and the lawn; along the bottom third the wide grey concrete-paver forecourt, completely empty.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance; the three sit side by side at the same height in the picture, separated by the log posts:\n1. the block of the layout sketch at x 200-350, y 412-537 of the 1920x1080 frame (10-18 % from the left, 38-50 % from the top): the left distribution table loaded with brown paper grocery bags and a cardboard box of food, each bag with a small white name label (illegible scribbles), a clipboard with a paper list.\n2. the block of the layout sketch at x 581-731, y 412-537 of the 1920x1080 frame (30-38 % from the left, 38-50 % from the top): between the two middle posts, far back on the shelter floor, three bright yellow-and-black distancing tape lines stuck across the paving one behind the other (the queue marks); in the picture they lie at the same height as the table tops, with only plain floor in front of them.\n3. the block of the layout sketch at x 962-1112, y 412-537 of the 1920x1080 frame (50-58 % from the left, 38-50 % from the top): on the right table a big steel thermos flask with a red cup lid and a strip of masking tape with handwriting on it (illegible), next to a box of disposable face masks and a bottle of hand sanitiser.\n\nWalkable floor: the forecourt along the bottom third of the picture is open grey concrete paving - one continuous flat surface with no kerb, no step, no edge and no change of material, and nothing standing on it: no tables, no bins, no benches, no plants, no bags, no tape, no people. Only light, long shadows and a few fallen leaves. The shelter floor in front of the tables stays plain too.\n\nFiction rules: the distribution point is invented: no municipal or charity logos, no organisation names, no readable names on lists or bags - paper shows only illegible scribbles, no digits. Paint out the car and the table-tennis table of the photo. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/layout/S03_sketch.png (rendered from art/prompts/S03.sketch.json, model geometry)",
+    "art/source/rooms/S03/rekreapark_shelter_panoramax.jpg",
+    "src/game/assets/bg/S05.webp"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "model_description": "",
+  "sketch": {
+    "note": "S03 v2, PRE-ZOOMED sketch (planned refit: scale 0.8, offset -40 -180, see art/masters/bg/S03.md): eye-level camera ~2 m, horizon ~y 300; open timber shelter with the roof eave at y 230-252, shelter floor y 430-664, tables at the front edge with tops at y 528, floor tape far back between the posts at the same picture height; empty forecourt below y 674.",
+    "background": "#a9cde8",
+    "shapes": [
+      {
+        "type": "rect",
+        "box": [
+          0,
+          0,
+          1920,
+          440
+        ],
+        "fill": "#a9cde8",
+        "note": "sky"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          -100,
+          120,
+          700,
+          330
+        ],
+        "fill": "#d6a43a",
+        "note": "autumn park trees behind the shelter"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          450,
+          110,
+          600,
+          330
+        ],
+        "fill": "#c58a2e"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          950,
+          120,
+          620,
+          320
+        ],
+        "fill": "#d8b04a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1480,
+          -40,
+          520,
+          520
+        ],
+        "fill": "#d38a2e",
+        "note": "big orange tree right of the shelter"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1700,
+          300,
+          34,
+          380
+        ],
+        "fill": "#5b3d26"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          380,
+          1920,
+          290
+        ],
+        "fill": "#9aa45a",
+        "note": "park lawn"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1580,
+          330,
+          200,
+          100
+        ],
+        "fill": "#9a6a3e",
+        "note": "distant wooden playground frame"
+      },
+      {
+        "type": "poly",
+        "points": [
+          [
+            -20,
+            0
+          ],
+          [
+            1530,
+            0
+          ],
+          [
+            1530,
+            232
+          ],
+          [
+            -20,
+            232
+          ]
+        ],
+        "fill": "#7a5636",
+        "note": "brown wooden-shingle roof surface"
+      },
+      {
+        "type": "bars",
+        "box": [
+          -20,
+          10,
+          1550,
+          222
+        ],
+        "step": 26,
+        "bar": 6,
+        "fill": "#5f4128",
+        "vertical": false
+      },
+      {
+        "type": "rect",
+        "box": [
+          -20,
+          230,
+          1550,
+          22
+        ],
+        "fill": "#4f3520",
+        "note": "eave fascia"
+      },
+      {
+        "type": "rect",
+        "box": [
+          232,
+          252,
+          16,
+          180
+        ],
+        "fill": "#5a3c24",
+        "note": "back posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          648,
+          252,
+          16,
+          180
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1062,
+          252,
+          16,
+          180
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          430,
+          1500,
+          236
+        ],
+        "fill": "#b9ad9b",
+        "note": "grey paved floor of the shelter, seen deep inside"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          430,
+          1500,
+          236
+        ],
+        "cols": 26,
+        "rows": 6,
+        "color": "#a89c8a",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1290,
+          236,
+          210,
+          430
+        ],
+        "fill": "#b6a68b",
+        "note": "natural-stone fireplace chimney wall (side wall)"
+      },
+      {
+        "type": "grid",
+        "box": [
+          1290,
+          236,
+          210,
+          430
+        ],
+        "cols": 5,
+        "rows": 10,
+        "color": "#9c8c72",
+        "width": 2
+      },
+      {
+        "type": "rect",
+        "box": [
+          1330,
+          500,
+          130,
+          100
+        ],
+        "fill": "#3b2f28",
+        "note": "fireplace opening"
+      },
+      {
+        "type": "rect",
+        "box": [
+          22,
+          236,
+          36,
+          432
+        ],
+        "fill": "#5a3c24",
+        "note": "front log posts"
+      },
+      {
+        "type": "rect",
+        "box": [
+          448,
+          236,
+          36,
+          432
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "rect",
+        "box": [
+          828,
+          236,
+          36,
+          432
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1238,
+          236,
+          36,
+          432
+        ],
+        "fill": "#5a3c24"
+      },
+      {
+        "type": "rect",
+        "box": [
+          148,
+          528,
+          280,
+          16
+        ],
+        "fill": "#8a5a32",
+        "note": "distribution table top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          160,
+          544,
+          14,
+          120
+        ],
+        "fill": "#6e4826"
+      },
+      {
+        "type": "rect",
+        "box": [
+          402,
+          544,
+          14,
+          120
+        ],
+        "fill": "#6e4826"
+      },
+      {
+        "type": "rect",
+        "box": [
+          170,
+          424,
+          72,
+          104
+        ],
+        "fill": "#c9a477",
+        "note": "paper bag"
+      },
+      {
+        "type": "rect",
+        "box": [
+          248,
+          442,
+          62,
+          86
+        ],
+        "fill": "#d8b98a",
+        "note": "paper bag"
+      },
+      {
+        "type": "rect",
+        "box": [
+          316,
+          466,
+          92,
+          62
+        ],
+        "fill": "#b78a55",
+        "note": "cardboard food box"
+      },
+      {
+        "type": "rect",
+        "box": [
+          186,
+          470,
+          40,
+          20
+        ],
+        "fill": "#f3efe2",
+        "note": "name label"
+      },
+      {
+        "type": "rect",
+        "box": [
+          262,
+          482,
+          34,
+          18
+        ],
+        "fill": "#f3efe2"
+      },
+      {
+        "type": "rect",
+        "box": [
+          330,
+          512,
+          60,
+          12
+        ],
+        "fill": "#f3efe2",
+        "note": "clipboard list"
+      },
+      {
+        "type": "rect",
+        "box": [
+          560,
+          452,
+          196,
+          10
+        ],
+        "fill": "#e8c21c",
+        "note": "yellow-black floor tape, far back"
+      },
+      {
+        "type": "bars",
+        "box": [
+          560,
+          452,
+          196,
+          10
+        ],
+        "step": 20,
+        "bar": 9,
+        "fill": "#2a2a2a",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          548,
+          480,
+          220,
+          12
+        ],
+        "fill": "#e8c21c"
+      },
+      {
+        "type": "bars",
+        "box": [
+          548,
+          480,
+          220,
+          12
+        ],
+        "step": 22,
+        "bar": 10,
+        "fill": "#2a2a2a",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          536,
+          512,
+          244,
+          14
+        ],
+        "fill": "#e8c21c"
+      },
+      {
+        "type": "bars",
+        "box": [
+          536,
+          512,
+          244,
+          14
+        ],
+        "step": 24,
+        "bar": 11,
+        "fill": "#2a2a2a",
+        "vertical": true
+      },
+      {
+        "type": "rect",
+        "box": [
+          900,
+          528,
+          290,
+          16
+        ],
+        "fill": "#8a5a32",
+        "note": "second table top"
+      },
+      {
+        "type": "rect",
+        "box": [
+          912,
+          544,
+          14,
+          120
+        ],
+        "fill": "#6e4826"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1164,
+          544,
+          14,
+          120
+        ],
+        "fill": "#6e4826"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1008,
+          432,
+          62,
+          96
+        ],
+        "fill": "#8fa0a8",
+        "note": "steel thermos flask"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1002,
+          410,
+          74,
+          26
+        ],
+        "fill": "#c0392b",
+        "note": "red cup lid"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1014,
+          474,
+          50,
+          16
+        ],
+        "fill": "#efe3b8",
+        "note": "masking-tape label"
+      },
+      {
+        "type": "rect",
+        "box": [
+          918,
+          494,
+          72,
+          34
+        ],
+        "fill": "#9fd0e8",
+        "note": "box of face masks"
+      },
+      {
+        "type": "rect",
+        "box": [
+          1112,
+          474,
+          22,
+          54
+        ],
+        "fill": "#d7ecf4",
+        "note": "hand sanitiser"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          664,
+          1920,
+          10
+        ],
+        "fill": "#d2c6b2",
+        "note": "front edge of the shelter floor"
+      },
+      {
+        "type": "rect",
+        "box": [
+          0,
+          674,
+          1920,
+          406
+        ],
+        "fill": "#b4aa9c",
+        "note": "paved forecourt, one continuous empty surface"
+      },
+      {
+        "type": "grid",
+        "box": [
+          0,
+          674,
+          1920,
+          406
+        ],
+        "cols": 30,
+        "rows": 6,
+        "color": "#a39a8c",
+        "width": 2
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          300,
+          760,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          820,
+          840,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1300,
+          720,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          1650,
+          900,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      },
+      {
+        "type": "ellipse",
+        "box": [
+          500,
+          1000,
+          34,
+          14
+        ],
+        "fill": "#d9a33a"
+      }
+    ]
+  },
+  "prezoom_plan": {
+    "scale": 0.8,
+    "offset_game_px": [
+      -40.0,
+      -180.0
+    ],
+    "note": "sketch drawn pre-zoomed; {rect:} expanded to planned sketch coordinates; refit with refit_room.py extend at about this transform"
+  }
+}

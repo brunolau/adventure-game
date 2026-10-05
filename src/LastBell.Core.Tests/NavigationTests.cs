@@ -11,6 +11,25 @@ public sealed class NavigationTests
     private static readonly GameContent C = TestData.Content;
 
     [Fact]
+    public void Begin_new_game_queues_the_start_room_entry_lines_once_and_changes_nothing_else()
+    {
+        var start = C.InitialState;
+        var begun = Navigation.BeginNewGame(C, start);
+        var expected = C.GetRoom(start.Room).FirstEntry.Select(l => l.LineId).ToList();
+        Assert.NotEmpty(expected);
+        Assert.Equal(expected[0], begun.ActiveLineId);
+        Assert.Equal(GameMode.Dialogue, begun.Mode);
+        Assert.Equal(start.Done, begun.Done);
+        Assert.Equal(start.Inventory, begun.Inventory);
+        Assert.Equal(start.Visited, begun.Visited);
+        // While a line plays, or after any progress, it does nothing (same instance).
+        Assert.Same(begun, Navigation.BeginNewGame(C, begun));
+        var later = TestData.StateAfter("G01");
+        Assert.Same(later, Navigation.BeginNewGame(C, later));
+        Assert.Equal(GameMode.World, Playback.FinishAll(C, begun).Mode);
+    }
+
+    [Fact]
     public void Connected_rooms_follow_open_gates_only()
     {
         var reachable = Navigation.ConnectedRooms(C, C.InitialState, includePortals: true);

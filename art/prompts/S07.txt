@@ -1,0 +1,23 @@
+# S07 Čierna Voda pri výveske (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S07.sketch.json (image 1, S05 camera: shelter and board foot y 515).
+# Style reference = the accepted S05 background (same 2020 prologue: autumn light and palette).
+#refs: art/source/rooms/S07/cierna_voda_stop_kartaview_434.jpg
+#style: src/game/assets/bg/S05.webp
+Place: the bus stop "Čierna Voda" on Pezinská street in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 is a dashcam photo of this real stop: a glass bus shelter with a red steel frame and a curved translucent roof, flower pots in it, grey concrete paving of the platform, a red-surfaced bus bay, a bus-stop pole, a three-storey apartment block with balconies and family houses with red roofs behind. Paint the stop and its surroundings from this real place; the community notice board and all notices are invented.
+
+Brief: a pavement with the bus shelter and a community notice board full of notices about neighbourly help, online school and a postponed meeting; residential buildings behind. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left, long soft shadows falling to the right, a pale-blue sky with a few small clouds, yellow and orange autumn trees, fallen leaves on the paving.
+
+Camera: seen from slightly above, as from a bus window - about 3.5 m high, looking down a little; vertical lines stay vertical. The notice board and the shelter stand at the back of a wide paved platform, their foot at y 515. Keep this exact geometry from the sketch: the foot of the shelter, board and hedge at y 515, the platform paving from y 515 to the kerb at y 1027, the red bus bay below it along the bottom edge.
+
+What the sketch blocks are: on the left a wooden community notice board on two posts under a small wooden gable roof, with many pinned paper notices; the red-framed glass bus shelter with a curved translucent roof and three glass back panels, a wooden bench only in its right half, a small timetable case on the frame (illegible), a pot of yellow chrysanthemums; a green litter bin; a grey bus-stop pole with a blue sign showing only a white bus pictogram; a trimmed hedge and a grass strip behind the platform; behind them a pale yellow three-storey apartment block with balconies (top left, cut by the top edge), a white family house with a red tiled roof, yellow and orange autumn trees and the sky; the wide platform of grey concrete pavers; at the very bottom a low kerb and the red bus bay.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S07.board}: the cork panel of the community notice board covered with pinned paper notices (illegible scribbles only) and one notice with a small square QR-code pattern.
+2. {rect:S07.ambient 1}: a bright dance-course poster stuck on the upper part of the shelter's glass back wall, showing a painted dancing couple and no readable text.
+3. {rect:S07.ambient 2}: a big round magnifying glass with a wooden handle hanging on a string from the shelter's roof frame, next to the timetable case.
+
+Walkable floor: {walk} is the open platform paving of grey concrete pavers - one continuous flat surface with no kerb, no step, no edge, no tactile strip and no change of material inside it, and nothing standing on it: no bins, no poles, no benches, no plants, no bags. Only light, long shadows and a few fallen leaves. The paving continues to the left edge ({exit:S07.to_S03}) and to the right edge ({exit:S07.to_S08}).
+{npc_zones} Behind this zone is only the empty left half of the glass shelter (no bench there).
+
+Fiction rules: the notice board and its notices are invented: no real IDS BK or bus company logos, no line numbers, no timetable text, no shop or pharmacy signs from the photo, no house numbers. Paper shows only illegible scribbles, no digits. No buses, no cars, no people, no animals.

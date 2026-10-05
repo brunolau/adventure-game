@@ -1,0 +1,166 @@
+{
+ "room": "S01",
+ "notes": "Adam's garage, autumn afternoon (2020). Dust motes in the sun from the open door, the ceiling tube humming and flickering now and then, the wall clock's second hand ticking, the radio dial glowing unsteadily, wind in the tree outside the window (leaves falling there) and in the bushes outside the door.",
+ "layers": [
+  {
+   "id": "window_tree",
+   "type": "sway",
+   "texture": "S01/window_tree.webp",
+   "anchor": 1.0,
+   "amp_px": 1.6,
+   "freq": 0.3,
+   "wavelength_px": 90,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "window_leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp",
+    "common/leaf_01.webp",
+    "common/leaf_04.webp"
+   ],
+   "emit_rect": [
+    1660,
+    165,
+    165,
+    90
+   ],
+   "rate": 0.25,
+   "size": [
+    6,
+    9
+   ],
+   "speed_y": [
+    18,
+    30
+   ],
+   "speed_x": [
+    -12,
+    -4
+   ],
+   "wind": 8,
+   "land_y": [
+    350,
+    398
+   ],
+   "rest_s": [
+    2,
+    4
+   ],
+   "clip": [
+    1580,
+    160,
+    244,
+    243
+   ]
+  },
+  {
+   "id": "door_foliage",
+   "type": "sway",
+   "texture": "S01/door_foliage.webp",
+   "anchor": 0.85,
+   "amp_px": 1.5,
+   "freq": 0.35,
+   "wavelength_px": 80,
+   "flutter_px": 0.5
+  },
+  {
+   "id": "dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    70,
+    330,
+    1000,
+    560
+   ],
+   "count": 38,
+   "size": [
+    4,
+    8.5
+   ],
+   "alpha_range": [
+    0.25,
+    0.75
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "dust_window",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    1450,
+    380,
+    450,
+    420
+   ],
+   "count": 14,
+   "size": [
+    3.5,
+    7.5
+   ],
+   "alpha_range": [
+    0.2,
+    0.6
+   ],
+   "color": "#fff1c8"
+  },
+  {
+   "id": "tube",
+   "type": "flicker",
+   "mode": "fluorescent",
+   "rect": [
+    735,
+    -12,
+    570,
+    62
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff7e0",
+   "min": 0.0,
+   "max": 0.32,
+   "every_s": [
+    7,
+    20
+   ]
+  },
+  {
+   "id": "clock_seconds",
+   "type": "rotor",
+   "pivot": [
+    1410,
+    95
+   ],
+   "length": 31,
+   "tail": 7,
+   "width": 1.6,
+   "color": "#a8321f",
+   "mode": "tick",
+   "period_s": 60
+  },
+  {
+   "id": "radio_dial",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1100,
+    170,
+    62,
+    40
+   ],
+   "color": "#ffcf70",
+   "min": 0.2,
+   "max": 0.6,
+   "period_s": 0.35
+  }
+ ]
+}

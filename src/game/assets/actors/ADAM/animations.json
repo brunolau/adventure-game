@@ -1,0 +1,512 @@
+{
+  "character": "ADAM",
+  "standing_height_px": 512,
+  "format": "horizontal strip of equal cells",
+  "left_facing": "mirror the *_right sheets horizontally (pivot x = cell_w / 2 stays put)",
+  "animations": {
+    "idle_right": {
+      "image": "idle_right.webp",
+      "facing": "right",
+      "frames": 32,
+      "cell": [
+        146,
+        524
+      ],
+      "pivot": [
+        73,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "idle_right_mask2020": {
+      "image": "idle_right_mask2020.webp",
+      "facing": "right",
+      "frames": 32,
+      "cell": [
+        146,
+        524
+      ],
+      "pivot": [
+        73,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "idle_front": {
+      "image": "idle_front.webp",
+      "facing": "front",
+      "frames": 32,
+      "cell": [
+        188,
+        524
+      ],
+      "pivot": [
+        94,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "idle_front_mask2020": {
+      "image": "idle_front_mask2020.webp",
+      "facing": "front",
+      "frames": 32,
+      "cell": [
+        188,
+        524
+      ],
+      "pivot": [
+        94,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "idle_back": {
+      "image": "idle_back.webp",
+      "facing": "back",
+      "frames": 32,
+      "cell": [
+        190,
+        524
+      ],
+      "pivot": [
+        95,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "idle_back_mask2020": {
+      "image": "idle_back_mask2020.webp",
+      "facing": "back",
+      "frames": 32,
+      "cell": [
+        190,
+        524
+      ],
+      "pivot": [
+        95,
+        520
+      ],
+      "playback_fps": 8.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "walk_right": {
+      "image": "walk_right.webp",
+      "facing": "right",
+      "frames": 16,
+      "cell": [
+        370,
+        521
+      ],
+      "pivot": [
+        185,
+        517
+      ],
+      "playback_fps": 16.7,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": 272.3
+    },
+    "walk_right_mask2020": {
+      "image": "walk_right_mask2020.webp",
+      "facing": "right",
+      "frames": 16,
+      "cell": [
+        370,
+        521
+      ],
+      "pivot": [
+        185,
+        517
+      ],
+      "playback_fps": 16.7,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": 272.3
+    },
+    "walk_toward": {
+      "image": "walk_toward.webp",
+      "facing": "front",
+      "frames": 16,
+      "cell": [
+        206,
+        531
+      ],
+      "pivot": [
+        103,
+        516
+      ],
+      "playback_fps": 13.24,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "walk_toward_mask2020": {
+      "image": "walk_toward_mask2020.webp",
+      "facing": "front",
+      "frames": 16,
+      "cell": [
+        206,
+        531
+      ],
+      "pivot": [
+        103,
+        516
+      ],
+      "playback_fps": 13.24,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "walk_away": {
+      "image": "walk_away.webp",
+      "facing": "back",
+      "frames": 16,
+      "cell": [
+        240,
+        553
+      ],
+      "pivot": [
+        120,
+        521
+      ],
+      "playback_fps": 10.97,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "walk_away_mask2020": {
+      "image": "walk_away_mask2020.webp",
+      "facing": "back",
+      "frames": 16,
+      "cell": [
+        240,
+        553
+      ],
+      "pivot": [
+        120,
+        521
+      ],
+      "playback_fps": 10.97,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "talk_right": {
+      "image": "talk_right.webp",
+      "facing": "right",
+      "frames": 12,
+      "cell": [
+        146,
+        522
+      ],
+      "pivot": [
+        73,
+        518
+      ],
+      "playback_fps": 10.0,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "talk_right_mask2020": {
+      "image": "talk_right_mask2020.webp",
+      "facing": "right",
+      "frames": 12,
+      "cell": [
+        146,
+        522
+      ],
+      "pivot": [
+        73,
+        518
+      ],
+      "playback_fps": 10.0,
+      "oneshot": false,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "talk_front": {
+      "image": "talk_front.webp",
+      "facing": "front",
+      "frames": 12,
+      "cell": [
+        188,
+        522
+      ],
+      "pivot": [
+        94,
+        518
+      ],
+      "playback_fps": 10.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "talk_front_mask2020": {
+      "image": "talk_front_mask2020.webp",
+      "facing": "front",
+      "frames": 12,
+      "cell": [
+        188,
+        522
+      ],
+      "pivot": [
+        94,
+        518
+      ],
+      "playback_fps": 10.0,
+      "oneshot": false,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "reach_low_right": {
+      "image": "reach_low_right.webp",
+      "facing": "right",
+      "frames": 12,
+      "cell": [
+        338,
+        522
+      ],
+      "pivot": [
+        169,
+        518
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "reach_low_right_mask2020": {
+      "image": "reach_low_right_mask2020.webp",
+      "facing": "right",
+      "frames": 12,
+      "cell": [
+        338,
+        522
+      ],
+      "pivot": [
+        169,
+        518
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "reach_mid_right": {
+      "image": "reach_mid_right.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        400,
+        523
+      ],
+      "pivot": [
+        200,
+        519
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "reach_mid_right_mask2020": {
+      "image": "reach_mid_right_mask2020.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        400,
+        523
+      ],
+      "pivot": [
+        200,
+        519
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "reach_high_right": {
+      "image": "reach_high_right.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        358,
+        581
+      ],
+      "pivot": [
+        179,
+        577
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "reach_high_right_mask2020": {
+      "image": "reach_high_right_mask2020.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        358,
+        581
+      ],
+      "pivot": [
+        179,
+        577
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "use_tool_right": {
+      "image": "use_tool_right.webp",
+      "facing": "right",
+      "frames": 16,
+      "cell": [
+        318,
+        524
+      ],
+      "pivot": [
+        159,
+        520
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "use_tool_right_mask2020": {
+      "image": "use_tool_right_mask2020.webp",
+      "facing": "right",
+      "frames": 16,
+      "cell": [
+        318,
+        524
+      ],
+      "pivot": [
+        159,
+        520
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "show_item_right": {
+      "image": "show_item_right.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        370,
+        523
+      ],
+      "pivot": [
+        185,
+        519
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "show_item_right_mask2020": {
+      "image": "show_item_right_mask2020.webp",
+      "facing": "right",
+      "frames": 10,
+      "cell": [
+        370,
+        523
+      ],
+      "pivot": [
+        185,
+        519
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": true,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    },
+    "inventory_combine_front": {
+      "image": "inventory_combine_front.webp",
+      "facing": "front",
+      "frames": 14,
+      "cell": [
+        198,
+        522
+      ],
+      "pivot": [
+        99,
+        518
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": false,
+      "variant": "default",
+      "stride_px_per_s": null
+    },
+    "inventory_combine_front_mask2020": {
+      "image": "inventory_combine_front_mask2020.webp",
+      "facing": "front",
+      "frames": 14,
+      "cell": [
+        198,
+        522
+      ],
+      "pivot": [
+        99,
+        518
+      ],
+      "playback_fps": 12.0,
+      "oneshot": true,
+      "mirror_for_left": false,
+      "variant": "mask2020",
+      "stride_px_per_s": null
+    }
+  }
+}

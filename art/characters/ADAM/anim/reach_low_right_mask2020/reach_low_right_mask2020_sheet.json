@@ -1,0 +1,112 @@
+{
+  "name": "reach_low_right_mask2020",
+  "frames": 12,
+  "cell": [
+    338,
+    522
+  ],
+  "pivot": [
+    169,
+    518
+  ],
+  "playback_fps": 12.0,
+  "oneshot": true,
+  "stride_px_per_s": null,
+  "standing_height_px": 512,
+  "facing": "right",
+  "source_video": "video_reach_low_pro.mp4",
+  "source_frames": [
+    "still:base",
+    4,
+    10,
+    17,
+    33,
+    44,
+    49,
+    54,
+    61,
+    106,
+    129,
+    "still:key_pose"
+  ],
+  "progress": [
+    0.099,
+    0.194,
+    0.273,
+    0.367,
+    0.468,
+    0.559,
+    0.651,
+    0.734,
+    0.819,
+    0.913
+  ],
+  "note": "play forward to act, hold the last frame, play reversed to return to idle",
+  "mask_overlay": [
+    {
+      "frame": 0,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.08721
+    },
+    {
+      "frame": 1,
+      "template": 0,
+      "angle": -10.0,
+      "scale": 0.94,
+      "mse": 0.12983
+    },
+    {
+      "frame": 2,
+      "template": 0,
+      "angle": -20.0,
+      "scale": 1.0,
+      "mse": 0.11658
+    },
+    {
+      "frame": 3,
+      "template": "nb2_frame_edit",
+      "source": "frame_reach_low_f0034_mask2020.png"
+    },
+    {
+      "frame": 4,
+      "template": "nb2_frame_edit",
+      "source": "frame_reach_low_f0045_mask2020.png"
+    },
+    {
+      "frame": 5,
+      "template": "nb2_frame_edit",
+      "source": "frame_reach_low_f0050_mask2020.png"
+    },
+    {
+      "frame": 6,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 0.94,
+      "mse": 0.1784
+    },
+    {
+      "frame": 7,
+      "template": 1,
+      "angle": -20.0,
+      "scale": 1.0,
+      "mse": 0.15445
+    },
+    {
+      "frame": 8,
+      "template": 1,
+      "angle": -10.0,
+      "scale": 1.0,
+      "mse": 0.14376
+    },
+    {
+      "frame": 9,
+      "template": 1,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.04554
+    }
+  ],
+  "source": "mask layer tracked onto reach_low_right"
+}

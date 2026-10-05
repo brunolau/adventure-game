@@ -211,6 +211,8 @@ answer only stores the draft. Nothing is consumed and the modal stays open. Use
 - `Navigation.ConnectedRooms` and `Navigation.FindRoute` (exits and portals) are for hints and
   debugging.
 - `Navigation.Travel` handles exits. A first visit queues the room's `first_entry` lines.
+- `Navigation.BeginNewGame` queues the start room's `first_entry` lines on a new game (the initial
+  state already lists the start room as visited; ISSUES.md GAME-01).
 - Show `TextKeys.CardOf(era)` and `DateOf(era)` on the era title card. For reduced motion, use a
   fade with the year name.
 

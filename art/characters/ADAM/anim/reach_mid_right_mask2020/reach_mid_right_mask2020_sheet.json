@@ -1,0 +1,100 @@
+{
+  "name": "reach_mid_right_mask2020",
+  "frames": 10,
+  "cell": [
+    400,
+    523
+  ],
+  "pivot": [
+    200,
+    519
+  ],
+  "playback_fps": 12.0,
+  "oneshot": true,
+  "stride_px_per_s": null,
+  "standing_height_px": 512,
+  "facing": "right",
+  "source_video": "video_reach_mid_pro.mp4",
+  "source_frames": [
+    "still:base",
+    3,
+    7,
+    13,
+    30,
+    39,
+    45,
+    138,
+    140,
+    "still:key_pose"
+  ],
+  "progress": [
+    0.127,
+    0.225,
+    0.335,
+    0.445,
+    0.565,
+    0.668,
+    0.8,
+    0.962
+  ],
+  "note": "play forward to act, hold the last frame, play reversed to return to idle",
+  "mask_overlay": [
+    {
+      "frame": 0,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.02944
+    },
+    {
+      "frame": 1,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.04334
+    },
+    {
+      "frame": 2,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.07245
+    },
+    {
+      "frame": 3,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.07308
+    },
+    {
+      "frame": 4,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.07359
+    },
+    {
+      "frame": 5,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.07438
+    },
+    {
+      "frame": 6,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.04536
+    },
+    {
+      "frame": 7,
+      "template": 0,
+      "angle": 0.0,
+      "scale": 1.0,
+      "mse": 0.03629
+    }
+  ],
+  "source": "mask layer tracked onto reach_mid_right"
+}

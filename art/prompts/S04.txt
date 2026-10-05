@@ -1,0 +1,23 @@
+# S04 Potraviny cez okienko (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S04.sketch.json (image 1, S01-type straight-on wall view: the facade meets the
+# pavement at y 780). Dana's bust (ISSUES.md ART-NPC-02) needs the hatch counter top at y ~610: sketch y 602.
+# Style reference = the accepted S05 background (same 2020 prologue: autumn light and palette).
+#refs: art/source/rooms/S04/monar_wing_kartaview_327.jpg ; art/source/rooms/S04/monar_centre_kartaview_325.jpg
+#style: src/game/assets/bg/S05.webp
+Place: the local shopping centre at Triangel / Monar in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Images 2-3 are dashcam photos of this real place: a long single-storey wing with salmon-pink render, a green metal roof and tall narrow windows, standing above a grass bank by the road (image 2, left), and the two-storey end of the same centre with salmon render, green roofs and bronze-framed glazing (image 3, left). Paint the facade of one small invented grocery shop in this salmon wing - not any of the real businesses there.
+
+Brief: a small invented grocery shop selling through its service window during the pandemic: the shop is closed for customers, the shop assistant serves through the window behind glass; a plastic crate on a table outside; hand-drawn price cards without any brands. Thursday 29 October 2020, a sunny autumn afternoon around half past three: warm low sunlight from the left falling across the facade, soft shadows to the right, an autumn tree beyond the corner of the building, a few fallen leaves on the pavement.
+
+Camera: eye-level, straight-on view of the shop facade; vertical lines stay vertical. The facade meets the pavement along one straight horizontal line at y 780 across the whole width. Keep this exact geometry from the sketch: the green metal roof edge along the top edge (y 0-50), the tops of the tall bronze-framed shop windows at y 128, the window sills at y 600-614, the dark grey plinth y 700-780, the pavement from y 780 down to the bottom edge.
+
+What the sketch blocks are, left to right: a tall display window with shelves of unbranded groceries inside (bread, jars, vegetables, bottles with plain labels); the tall service window, whose lower sash is slid open as a service hatch behind a clear plexiglass screen with a small gap at the bottom, a narrow counter ledge at its sill (top edge at y 602) and the dim, empty shop interior with shelves behind; next to the hatch a small wooden folding table with a blue plastic crate of groceries and a bottle of hand sanitiser; the closed glass entrance door with a paper notice taped inside (illegible scribbles); a second tall shop window with shelves and two faded posters (illegible); the corner of the building; beyond it an autumn tree, grass and a piece of blue sky. Plain salmon render above the windows, no sign.
+
+Interactive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:
+1. {rect:S04.ambient 1}: a big hand-written cardboard price card taped inside the upper pane of the left display window, with a hand-drawn potato and big hand-written round price numbers in red marker (no words, no brand).
+2. {rect:S04.ambient 2}: in the upper glazing of the service window, on a display shelf just behind the glass, a wooden crate heaped with potatoes, a few of them sprouting.
+
+Walkable floor: {walk} is the open pavement of grey concrete tiles - one continuous flat surface with no kerb, no step, no edge and no change of material inside it, and nothing standing on it: no tables, no crates, no bins, no plants, no signs, no bags. Only light, soft shadows and a few fallen leaves. The pavement continues to the left edge ({exit:S04.to_S03}).
+{npc_zones} The upper part of this zone is the service-hatch opening above the counter ledge: paint it as the dim, empty shop interior behind clear plexiglass; below the ledge it is plain wall and plinth.
+
+Fiction rules: the shop, its name and the assistant are invented: no shop name, no logos, no brands on goods, posters or parasols, no real business signage from the photos; prices hand-drawn, without brands. No people, no animals.

@@ -1,0 +1,158 @@
+{
+ "room": "S07",
+ "notes": "Čierna Voda stop with the community notice board (2020 autumn). Wind in the row of maples, the hedge, the pot of chrysanthemums and the pinned notes; leaves falling onto the pavement; pigeons pecking on the pavement right of the stop (they take off when Adam comes near); birds crossing the sky.",
+ "layers": [
+  {
+   "id": "trees",
+   "type": "sway",
+   "texture": "S07/trees.webp",
+   "anchor": 1.0,
+   "amp_px": 2.8,
+   "freq": 0.25,
+   "wavelength_px": 190,
+   "flutter_px": 0.8
+  },
+  {
+   "id": "hedge",
+   "type": "sway",
+   "texture": "S07/hedge.webp",
+   "anchor": 0.95,
+   "amp_px": 1.0,
+   "freq": 0.38,
+   "wavelength_px": 110,
+   "flutter_px": 0.35,
+   "gust": 0.5
+  },
+  {
+   "id": "mums",
+   "type": "sway",
+   "texture": "S07/mums.webp",
+   "anchor": 1.0,
+   "amp_px": 1.4,
+   "freq": 0.45,
+   "wavelength_px": 50,
+   "flutter_px": 0.4
+  },
+  {
+   "id": "notes",
+   "type": "sway",
+   "texture": "S07/notes.webp",
+   "anchor": 0.0,
+   "hang": true,
+   "amp_px": 0.9,
+   "freq": 0.5,
+   "wavelength_px": 60,
+   "flutter_px": 0.35,
+   "gust": 0.6
+  },
+  {
+   "id": "leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_03.webp",
+    "common/leaf_15.webp"
+   ],
+   "emit_rect": [
+    1160,
+    10,
+    760,
+    200
+   ],
+   "rate": 0.6,
+   "size": [
+    13,
+    20
+   ],
+   "speed_x": [
+    -25,
+    10
+   ],
+   "land_y": [
+    460,
+    780
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     1260,
+     600
+    ],
+    [
+     1760,
+     640
+    ]
+   ],
+   "scale": 0.32,
+   "flee_radius": 340,
+   "return_s": [
+    12,
+    25
+   ],
+   "exit": [
+    [
+     2040,
+     60
+    ],
+    [
+     1600,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "birds",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     -80,
+     40
+    ],
+    [
+     900,
+     15
+    ],
+    [
+     2000,
+     45
+    ]
+   ],
+   "speed_px_s": 250,
+   "scale": 0.1,
+   "flock": 3,
+   "flock_spread": [
+    60,
+    25
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    22,
+    45
+   ],
+   "start_s": [
+    8,
+    16
+   ]
+  }
+ ]
+}

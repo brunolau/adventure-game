@@ -1,0 +1,70 @@
+{
+  "room": "S09",
+  "version": 5,
+  "kind": "retouch",
+  "from_version": 4,
+  "usd": 0.0,
+  "made": "2026-10-05T02:28:25",
+  "what": "Free local retouch of v4 (no model call): the v4 fix left a semi-transparent ghost of the v3 open case lid on the wall around the new closed brass case. Inside the mask (game px x 0-228, y 0-112, above the shelf line y = 108 + 0.337 x, minus the hand-traced case silhouette dilated 2 px) the wall was replaced by a 31 px median of the wall tone (case pixels pre-filled with the wall mean) plus synthetic grain matched to the wall (sigma 2.9), feathered 3 px, then resampled into master geometry and composited onto v4; all other pixels are identical to v4.",
+  "case_polygon_game_px": [
+    [
+      29,
+      180
+    ],
+    [
+      29,
+      100
+    ],
+    [
+      33,
+      77
+    ],
+    [
+      43,
+      60
+    ],
+    [
+      58,
+      52
+    ],
+    [
+      77,
+      49
+    ],
+    [
+      93,
+      53
+    ],
+    [
+      107,
+      55
+    ],
+    [
+      107,
+      40
+    ],
+    [
+      172,
+      40
+    ],
+    [
+      172,
+      84
+    ],
+    [
+      200,
+      100
+    ],
+    [
+      216,
+      110
+    ],
+    [
+      216,
+      182
+    ]
+  ],
+  "image_urls": [
+    "art/masters/bg/S09_v4.png"
+  ]
+}

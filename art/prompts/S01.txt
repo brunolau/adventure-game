@@ -1,0 +1,23 @@
+# S01 Adamova garáž (2020) - hand-written prompt body for art/tools/paint_room.py
+# Placeholders {rect:<id>}, {exit:<id>}, {walk}, {npc_zones}, {anchors} are expanded from design-doc/game.json.
+# Composition is fixed by art/prompts/S01.sketch.json (image 1); this text says what each block is.
+#refs: art/source/rooms/S01/garage_workbench_btwashburn.jpg ; art/source/rooms/S01/radios_in_repose_eli_dark.jpg ; art/source/rooms/S02/jasenova_street_mm_explorer.jpg
+#style: art/backgrounds/entrance.png
+Place: Adam's garage, the garage of an ordinary family house on Jaseňová street in Čierna Voda (municipality Chorvátsky Grob, near Bratislava, Slovakia). Image 2 shows the lived-in workbench, pegboard and small-parts drawer cabinet to paint from; image 3 shows an opened old valve radio being repaired on a bench; image 4 shows the real Jaseňová street outside (modern white single-storey family houses with flat roofs, grey slatted fences, a concrete road), which is what is seen through the garage window.
+
+Brief: an autumn afternoon in October 2020 in the garage of a family house. A workbench with a radio being repaired, small parts drawers, Adam's fabric tool bag. The space feels lived in and homely, a real family garage - NOT a secret laboratory. A Slovak suburban garage of the 2000s: plastered and painted walls with a patch of bare brick, a concrete floor, a fluorescent tube, a round wall clock, a pegboard with hand tools, everyday family storage.
+
+What the sketch blocks are (eye-level, straight-on view of the back wall, exactly as in the sketch): the dark strip at the top is the ceiling edge with a fluorescent tube; the bright strip at the far left (x 0-90) is the open garage doorway full of warm autumn daylight, with a wooden door jamb, and the light spills across the floor from the left; a cloth face mask hangs on a nail by the doorway (2020); the long brown bar at y 250 is a sturdy high wooden wall shelf on black metal brackets; under it a pegboard with neatly hung hammers, wrenches, pliers and a saw; the wooden workbench with an opened old radio chassis with glowing valves, a yellow multimeter, a schematic sheet and a soldering iron; crates and cardboard boxes under the bench; the grey cabinet of many small parts drawers on the right of the bench; the round wall clock; the square window showing the sunny autumn street with a white flat-roofed family house, an autumn tree and a grey slatted fence; a bicycle leaning on the wall and a stack of winter tyres in the right corner. The wall meets the floor at y 780 along the whole width.
+
+Interactive props - each stands on the high shelf, painted clearly and completely inside its block, the same size as its block, easy to recognise at a glance, with a little empty shelf between them:
+1. {rect:S01.tools}: Adam's service bag - a SMALL soft grey-green canvas tool bag with a shoulder strap, open at the top, with a screwdriver handle and small pliers sticking out. The bag is no wider than its block (it must not be wider than the radio) and starts right at the left end of the shelf; nothing else lies on the shelf between the bag and the drawer cabinet.
+2. {rect:S01.fuse}: a small grey steel cabinet of little parts drawers; its lower drawer is pulled half out and is full of small glass fuses.
+3. {rect:S01.ambient 1}: an old chipped enamel cooking pot, cream with a red rim, heaped full with unsorted screws, nuts and bolts.
+4. {rect:S01.ambient 2}: an old 1970s wooden table radio with a fabric speaker grille, a glowing glass tuning scale with only tick marks (no letters or numbers) and two knobs, plugged in.
+
+Walkable floor: {walk} is plain open concrete floor - nothing stands on it: no boxes, no tools, no car, no cables, no rug. Only light and soft shadows cross it, with a few old stains. The floor continues to the left edge into the daylight of the doorway, where the exit to the street is ({exit:S01.to_S02}).
+{npc_zones}
+
+Fiction rules: Adam's house is invented. No brand names, logos or readable labels on tools, boxes, cans, the radio or anything else; no house numbers visible through the window; no American-specific items. Any paper shows only illegible scribbles.
+
+Rendering: true painterly brushwork like image 5 - visible soft brush strokes, soft painted edges and gentle colour variation on every surface; no black ink outlines, no flat cel shading, no clean vector look.

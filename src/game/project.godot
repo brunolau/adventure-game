@@ -1,0 +1,49 @@
+; Engine configuration file.
+; Posledný zvonec (code name LastBell) - Godot 4.7 .NET presentation layer.
+; Rules live in ../LastBell.Core; this project only renders and animates.
+
+config_version=5
+
+[application]
+
+config/name="game.title"
+config/description="Point-and-click adventure (code name LastBell). The name is the localization key game.title; Godot translates it for the window title."
+run/main_scene="res://scenes/Main.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="LastBell"
+config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*res://scripts/Runtime/GameRuntime.cs"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/window_width_override=1600
+window/size/window_height_override=900
+window/size/resizable=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="keep"
+
+[dotnet]
+
+project/assembly_name="LastBell"
+project/solution_directory="../"
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://localization/dialogue.sk.translation", "res://localization/world.sk.translation", "res://localization/ui.sk.translation")
+locale/fallback="sk"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

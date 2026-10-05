@@ -1,0 +1,77 @@
+{
+  "id": "JOZEF",
+  "source": "art/characters/JOZEF",
+  "view": "three-quarter, facing right (mirror for facing left)",
+  "height_px": 512,
+  "pivot": "feet centre, 4 px above the cell bottom (window variants: centre of the sill cut edge)",
+  "sheets": {
+    "npc": {
+      "file": "npc_sheet.webp",
+      "json": "npc_sheet.json",
+      "size": [
+        1150,
+        521
+      ],
+      "cell": [
+        230,
+        521
+      ],
+      "pivot": [
+        115,
+        517
+      ],
+      "frames": 5
+    }
+  },
+  "animations": {
+    "idle": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "idle_still": {
+      "sheet": "npc",
+      "frames": [
+        "idle"
+      ]
+    },
+    "blink": {
+      "sheet": "npc",
+      "frames": [
+        "blink"
+      ],
+      "hold_ms": 110,
+      "every_s": [
+        2.5,
+        6.0
+      ],
+      "note": "only while the still idle is shown (the video idle blinks by itself)"
+    },
+    "talk": {
+      "sheet": "npc",
+      "frames": [
+        "talk_a",
+        "talk_b",
+        "talk_a",
+        "idle",
+        "talk_b",
+        "talk_a",
+        "idle"
+      ],
+      "fps": 8,
+      "loop": true
+    },
+    "gesture": {
+      "sheet": "npc",
+      "frames": [
+        "gesture"
+      ],
+      "hold_ms": 1200,
+      "oneshot": true,
+      "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    }
+  },
+  "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
+  "notes": "S07. Folding magnifier in hand; the gesture raises it to his eye."
+}
