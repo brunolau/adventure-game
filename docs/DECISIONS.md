@@ -340,3 +340,16 @@ plus new questions from the playtests, the location feedback and the text rewrit
 Unchanged since the list above. Item 13 is mostly done: the S04 basket (crate empty after G03) and the S06 photo
 (faded after G11, half after C04, restored after F17) have their after states; only the S09 case stays closed
 (the chronometer is inside, so nothing visible changes). Items 14-24 are cosmetic and can be answered any time.
+
+## Orchestrator decisions after the playtests (2026-10-05) — reversible, within the owner's rules
+
+- **Selection clears after a successful item use** (standard adventure behaviour; the handoff's no-op rule for
+  *invalid* item clicks stays). The open question of exits clicked with an item selected is asked separately.
+- **Hints follow the step, not only the quest:** hint 1/2/3 refer to the next undone action of the quest.
+- **Conversations stay open** after a topic until the player closes them or no topics are left.
+- **The painted S11 clock is the time node** (clicking it opens the era chooser, like the bottom-bar clock).
+- **Guest speakers walk in briefly** as the actions' staging rules describe (e.g. Mira 60 in the S40 attic).
+- **Adam wears a winter coat outdoors in December 1982**; CS07 port symbols repainted to match the room.
+- **Toasts wait until lines end and never cover open screens; the hover label hides over UI panels.**
+- **Esc skips the current line; Esc twice quickly skips the whole sequence.** Menu shows the game version 0.1.0
+  (content data version stays internal).
