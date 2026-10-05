@@ -39,3 +39,12 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
   so they stay **location pointers only**. S07 was matched to licensed KartaView frames of the same stop.
 - The images stay out of the public repository (`art/source/owner_refs/` is git-ignored) unless the owner confirms
   he took them himself and releases them under a free licence.
+
+## Update 2026-10-06 (owner): replacements and provenance
+
+- `imgur_efnmLuG.jpg` is a crop of the same Google Street View capture as `imgur_d7UwYm6.jpg` (identical pixels without
+  the UI) → still Google imagery, **location pointer only**.
+- `imgur_jweYNjd.jpg` (= the same picture as `imgur_wrRxN8x.jpg`, S07 Čierna Voda bus stop): the owner states it
+  comes from a friend's hard drive and the friend **allowed its use** → may be used **directly** as a reference image
+  input for S07. Credit: "reference photo: a friend of the product owner, used with permission" (no name). It stays
+  local (not redistributed in the public repo) unless the owner asks otherwise.
