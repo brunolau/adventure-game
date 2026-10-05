@@ -33,8 +33,9 @@ real entry hall (S13/S53/S59) look like?
 
 The owner granted permission to use all imgur photos he supplied. Applied as follows:
 - `imgur_2tyAMxf.jpg` (S08, pond from the pump track): **may be used directly** as a reference image input.
-- `imgur_wrRxN8x.jpg` (S07) and `imgur_d7UwYm6.jpg` (S41) are **Google Street View screenshots** (Street View UI and
-  capture date visible). The owner's permission cannot cover Google's imagery, whose terms forbid derived content,
+- `imgur_d7UwYm6.jpg` (S41) is a **Google Street View screenshot** (Street View logo, "Aug 2019 / See latest date",
+  compass and zoom controls visible). `imgur_wrRxN8x.jpg` (S07) shows **no** Street View UI (only a dark strip at the
+  top); its origin is unconfirmed — treat it as a pointer until the owner confirms its source, then it may be used directly. The owner's permission cannot cover Google's imagery, whose terms forbid derived content,
   so they stay **location pointers only**. S07 was matched to licensed KartaView frames of the same stop.
 - The images stay out of the public repository (`art/source/owner_refs/` is git-ignored) unless the owner confirms
   he took them himself and releases them under a free licence.
