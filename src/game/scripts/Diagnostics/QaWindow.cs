@@ -5,32 +5,76 @@ using LastBell.Game.Runtime;
 namespace LastBell.Game.Diagnostics;
 
 /// <summary>
-/// Keeps QA runs out of the way of whoever is using the computer (owner request 2026-10-06): a debug/editor
-/// run started with any QA argument opens its window off-screen, never takes keyboard focus and never moves
-/// the real OS mouse cursor. Rendering, screenshots and Godot-level input events keep working, because the
-/// window stays a normal drawable window (a minimized window would stop rendering).
-/// Opt out per run: <c>--visible</c> shows the window normally; <c>--warp-mouse</c> lets the harness move the
-/// real cursor (only for checks that need the OS cursor, and only when nobody is working on the machine).
+/// Keeps QA runs out of the way of whoever is using the computer (owner requests 2026-10-06): a debug/editor
+/// run started with any QA argument opens its window off-screen, never takes keyboard focus, never moves
+/// the real OS mouse cursor and is silent. Rendering, screenshots and Godot-level input events keep working,
+/// because the window stays a normal drawable window: a minimized Godot window stops drawing, so screenshot,
+/// frame and settle waits would hang (measured 2026-10-06).
+/// <para>
+/// The engine creates and shows the window before any script runs, so a plain console-exe launch still shows
+/// it in the middle of the screen for about a second and lets it take the keyboard focus.
+/// <c>tools/qa_godot.py</c> avoids that: it creates the window hidden (Windows STARTUPINFO SW_HIDE; a hidden
+/// window keeps rendering, a minimized one does not) and sets <c>LASTBELL_QA_LAUNCHER</c>; a windowed QA run
+/// started without it prints a warning so the launch gets fixed (window never on screen, never focused, measured
+/// 2026-10-06 with a read-only window/foreground probe).
+/// </para>
+/// Opt out per run: <c>--visible</c> shows the window normally; <c>--audible</c> keeps the sound;
+/// <c>--warp-mouse</c> lets the harness move the real cursor (only for checks that need the OS cursor, and only
+/// when nobody is working on the machine).
 /// </summary>
 public static class QaWindow
 {
     /// <summary>True for QA runs that should stay invisible and unfocused.</summary>
     public static bool Background => LaunchArgs.Any && !LaunchArgs.User.Contains("--visible");
 
+    /// <summary>True for QA runs whose Master bus stays muted (background runs without <c>--audible</c>).</summary>
+    public static bool Silent => Background && !LaunchArgs.User.Contains("--audible");
+
     /// <summary>True when the run explicitly allows moving the real OS cursor.</summary>
     public static bool WarpAllowed => LaunchArgs.User.Contains("--warp-mouse");
 
-    /// <summary>Moves the window to the right of every screen and stops it from taking focus.</summary>
+    /// <summary>
+    /// Moves the window to the right of every screen and stops it from taking focus. A window that starts
+    /// minimized (tools/qa_godot.py) is moved first and restored off-screen, so it never appears on a screen.
+    /// </summary>
     public static void ApplyBackgroundMode()
     {
-        if (!Background || DisplayServer.GetName() == "headless") return;
+        if (!Background) return;
+        if (Silent) Mute();
+        if (DisplayServer.GetName() == "headless") return;
         DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.NoFocus, true);
         DisplayServer.WindowSetFlag(DisplayServer.WindowFlags.AlwaysOnTop, false);
+        var offScreen = OffScreenPosition();
+        bool minimized = DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Minimized;
+        DisplayServer.WindowSetPosition(offScreen);
+        if (minimized)
+        {
+            // Restore so the window draws again (a minimized window renders nothing); position again in case
+            // the restore used the creation position.
+            DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
+            DisplayServer.WindowSetPosition(offScreen);
+        }
+        if (string.IsNullOrEmpty(System.Environment.GetEnvironmentVariable("LASTBELL_QA_LAUNCHER")))
+            GD.PushWarning("LastBell: windowed QA run started without tools/qa_godot.py - its window was shown on "
+                           + "screen and could take the keyboard focus; launch QA runs with python tools/qa_godot.py");
+        GD.Print($"LastBell: QA run in background mode (off-screen{(minimized ? ", started minimized" : "")}, no focus, "
+                 + $"{(Silent ? "muted, " : "")}real cursor untouched; --visible to show, --audible for sound)");
+    }
+
+    /// <summary>Mutes the Master bus of a silent QA run (settings and focus changes call this again).</summary>
+    public static void Mute()
+    {
+        int master = AudioServer.GetBusIndex("Master");
+        if (master >= 0) AudioServer.SetBusMute(master, true);
+    }
+
+    /// <summary>A position to the right of every screen (window rect fully outside the desktop).</summary>
+    private static Vector2I OffScreenPosition()
+    {
         var right = 0;
         for (var i = 0; i < DisplayServer.GetScreenCount(); i++)
             right = Mathf.Max(right, DisplayServer.ScreenGetPosition(i).X + DisplayServer.ScreenGetSize(i).X);
-        DisplayServer.WindowSetPosition(new Vector2I(right + 64, 0));
-        GD.Print("LastBell: QA run in background mode (off-screen, no focus, real cursor untouched; --visible to show)");
+        return new Vector2I(right + 64, 0);
     }
 
     /// <summary>

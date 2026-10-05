@@ -1,8 +1,10 @@
 # Posledný zvonec – Slovak text style guide
 
-For the chunk writers of the Slovak text rewrite (TEXT-04). Read this file, then
-[VOICES.md](VOICES.md) and [GLOSSARY.md](GLOSSARY.md), then your context bundle in
-`docs/writing/context/<chunk>.md`.
+For everyone who writes Slovak text for the game. The binding method (tone, length, extra topics,
+the four-step stack Claude → GPT → Claude → checks) is
+[design-doc/WRITING_METHOD.md](../../design-doc/WRITING_METHOD.md) (owner decision 2026-10-06); this
+guide is the craft detail. Read WRITING_METHOD.md, this file, [VOICES.md](VOICES.md) and
+[GLOSSARY.md](GLOSSARY.md), then your context bundle in `docs/writing/context/<chunk>.md`.
 
 Why this rewrite exists: the product owner played the build and said the texts "basically make no
 sense". The story is good; the sentences are not. Many lines are literal translations of design
@@ -15,19 +17,27 @@ a real person said or wrote it, in correct, natural Slovak, without changing wha
 ## 1. The one rule: change how, never what
 
 Fixed and not yours to change: the story, the puzzles and their solutions, which item goes where,
-who gives what, what the player has to infer, the order of events, the number of lines, the
-speaker of every line, and every fact in
+who gives what, what the player has to infer, the order of events, the speaker of every existing
+line, and every fact in
 [GLOSSARY.md § Protected facts](GLOSSARY.md#6-protected-facts). Sources of truth:
 `design-doc/game.json`, `design-doc/PRIBEH_A_PRAVIDLA.txt`, `design-doc/walkthrough.json`, and for
 controls the owner decisions in `docs/DECISIONS.md` (for example, Space is held, not toggled).
 
 Yours: word choice, word order, grammar, tone, rhythm, jokes, how a fact is phrased, which
-character says it in what voice, how long it is.
+character says it in what voice, how long it is, the extra lines that make a conversation feel
+natural, and the extra optional topics (WRITING_METHOD.md § 2 and § 3).
 
 Concretely:
 
-- One key = one subtitle or label. Never add, remove, merge or split keys. A line that is too long
-  is shortened, not split.
+- One key = one subtitle or label. Existing keys are never removed, merged or split, and keep
+  their speaker; their new text goes to the overrides. **Additional lines** (greetings, small talk,
+  reactions, follow-up questions) and **extra topics** go to the overlay
+  (`content_ext/dialogue_ext.json`, drafts in `docs/writing/out/<chunk>_ext.json`), positioned
+  before, between or after the existing lines. A line that is too long becomes two lines: the
+  existing key plus a new overlay line.
+- A new line may only be spoken by someone who is in the scene (or a remote speaker the staging
+  already has, like Mira on the phone in 2020), and it must not move, change or contradict the
+  clue of the existing key next to it.
 - The speaker of a line comes from the data. Do not write `ADAM:` or `Mira:` into the text, and do
   not write a line that only works if someone else says it.
 - A clue keeps its information. If Dezider says where the three digits are and who has the
@@ -39,14 +49,25 @@ Concretely:
 
 ## 2. Tone
 
-The reference is a civil, humorous Central European point-and-click adventure: warm, dry and
-observant. The players are adults and children of 12 or older.
+The reference is the humour of the Czech *Polda* adventures (owner decision 2026-10-06): playful, a
+little absurd, character comedy, real situational jokes, running gags, lively characters with
+quirks who are fun to talk to. *Polda* is a reference for the tone only: never its names, quotes,
+catchphrases, characters or likeness. The players are adults and children of 12 or older.
 
-- **Warm, never cynical.** People help each other. Nobody is stupid. Jokes come from situations
-  (technology, paperwork, public transport, family) and from Adam's self-irony, not from mocking
-  seniors, sick people, children, a profession or a nation.
-- **Dry, not wacky.** A good line is understated. One joke per exchange is plenty; many lines should
-  simply be clear and kind.
+- **Lively, but it has to make sense.** Every line is something this person would say in this
+  situation, and the joke follows from what just happened or from who is talking. If it needs an
+  explanation, it goes.
+- **Character comedy, not commentary.** The comedy comes from people being themselves (Dana's
+  counter wisdom, Rudo's stage voice, Očko's statistics, Mira running Adam's day from behind a
+  window), from misunderstandings with a payoff and from the logical absurdity of real situations.
+  NPCs are funny too; they are not straight men for Adam.
+- **Not the old pattern.** No ironic one-liner summary tacked onto the end of a line or an exchange
+  (`Tak aspoň jedna krivka ide dobrým smerom.`). That pattern is what the owner called cringy.
+- **Warm, never cynical.** People help each other. Nobody is stupid. No mocking of seniors, sick
+  people, children, a profession or a nation.
+- **Rhythm.** Not every line is a joke: a conversation breathes (greeting, business, a joke, a
+  reaction, a plain closing). Two gags in a row are fine when the second tops the first; a joke in
+  every line is noise.
 - **Never bureaucratic.** Officialese is only allowed when a character is being official on
   purpose (the post office clerk in 1960, a form in 1982), and then the joke is that it is official.
   Narration, looks, goals and hints are never officialese.
@@ -80,6 +101,8 @@ Write the way a Slovak speaker would say it out loud. Read every line aloud befo
 | informačná asymetria, legitímny vstup, autorizovaný | say what it means: povolený vstup, so súhlasom |
 | buffer | návratový zásobník / zásobník (see glossary) |
 | Si v poriadku? (stiff) | Ako sa máš? / Všetko v poriadku? / Si okej? (2020 only) |
+| toaster, level, update, deadline, meeting | hriankovač, úroveň / stupeň, aktualizácia, termín, porada |
+| Mám to pod kontrolou. / Užívaj si to. (translated) | Zvládnem to. / Nech sa ti páči. / Tak dobrú zábavu. |
 
 ### 3.3 Grammar watch list (all of these occur in the current texts)
 
@@ -122,10 +145,29 @@ Every era should sound like itself, without caricature. Adam always speaks his o
 | **2020** Chorvátsky Grob, Čierna Voda, Dúbravka | covid autumn: neighbourly help, distance, phone calls, paper lists | *rúško, odstup, karanténa, dištančné vyučovanie, dezinfekcia, cez okno, na diaľku, výdajné miesto* | jokes about the illness, denial, "corona" puns; English office words |
 | **2035** Jasná | fifteen years later, not science fiction; a fictional exhibition and pavilion, real cable cars | *kurátorka, výstava, pavilón, čítačka, servisný režim, lístok, lanovka, Funitel* | cyberpunk, invented tech jargon, English loanwords where Slovak has a word, any claim that the cable cars are broken or unsafe |
 
+### 4.1 Era flavour (local colour for small talk and extra topics)
+
+Real-place and era details make the small talk alive. Use only what a 12+ player understands without
+a footnote, never as the clue, never contradicting the story; if you are not sure a detail is true,
+leave it out or ask in the note. Painted or named businesses stay as the glossary has them.
+
+| era | flavour that works | avoid |
+|---|---|---|
+| **1960** Ivanka pri Dunaji | the railway stop and timetables, the Danube nearby, the manor park, the village square, the post office with stamps and telegrams, the amateur theatre, radio as the evening entertainment, bicycles, the farm-yard store, everybody knowing whose grandson you are | modern words, *súdruh* as a joke, politics, anything Adam's 2020 eyes would have to explain to them |
+| **1982** Dúbravka | the growing housing estate, the school as an institution (pioneers, approved models, the exhibition), returnable jars and bottles, queues and what was "just delivered", football in the school yard, the evening fairy tale on television, a cassette recorder as a treasure, the 1982 football World Cup on TV | slogans and speeches, secret police, "nothing was available" punchlines, adults as caricatures |
+| **1995** Bratislava | kiosks and newspapers, the Miletičova market, cassettes and walkmans, repair shops, phone cards and landlines, the new koruna, trams in Karlova Ves, the Petržalka blocks, school clubs, everybody "doing business" | smartphones, internet talk, today's slang, forced 90s brand references |
+| **2020** Chorvátsky Grob, Čierna Voda, Dúbravka | the covid autumn: masks, distance tape, shopping for neighbours, phone calls through windows, paper notices for people without apps, couriers who know every house, the village's new streets and old names | jokes about the illness, the dead, rules being silly, "corona" puns |
+| **2035** Jasná | the real cable cars and slopes, hotel lobby life, the fictional Atlas exhibition, paper visitors' books next to readers and terminals, fifteen years of small changes rather than science fiction | cyberpunk, invented jargon, any claim that the lifts are unsafe |
+
 ## 5. Length and shape
 
+- **Conversations are 2–3× as long as the handoff's** (WRITING_METHOD.md § 2): a 3-line exchange
+  becomes 6–9 lines with an opening, small talk, reactions, a follow-up question and a closing.
+  Repeatable ambient topics 4–8 lines. Solo lines (item uses, first-entry lines, device texts) stay
+  short.
 - **Subtitles (spoken lines, first-entry lines, looks): aim for at most 110 characters**; the
-  checker errors above 160. A subtitle shows at most three lines on screen.
+  checker errors above 160. A subtitle shows at most three lines on screen. Looks may be 1–3 short
+  sentences within that limit.
 - Action labels (the hover sentence with an item): at most 45 characters, start with the verb in
   the infinitive: `Vložiť náhradnú poistku`.
 - Topic labels (dialogue choices): at most 28 characters.
@@ -147,6 +189,9 @@ The bundle tells you for every key what it is ("role"). Rules per type:
 - The exchange must make sense on its own, without the player having read the design document.
 - Keep the information distribution: if line 2 gives the item and names the next person, the new
   line 2 still does.
+- People greet when they meet, react to what they hear, and ask the natural follow-up question;
+  that is what the extra overlay lines are for. A greeting belongs to the first exchange of a
+  meeting, not to the top of every topic.
 - Small talk exchanges (ambient topics) may end with a joke; story exchanges end with something the
   player can act on, or with a natural closing.
 
@@ -166,7 +211,8 @@ What Adam says when the player right-clicks. First person, present tense, concre
 - Progress objects: say what it is, its state, and what is missing or needed, as Adam would notice
   it (`Remienok sa rozpadol. Kazetu bez opravy bezpečne nevyberiem.`). This is often the only hint
   the player gets: keep it.
-- Atmosphere objects: one short observation or joke, max ~80 characters.
+- Atmosphere objects: one to three short sentences: what Adam sees and, if there is a good one, a
+  joke that comes from the object (≤ 160 characters, aim for ≤ 110).
 - Look variants describe the changed state after an event (`Lipa, ktorú sme v roku 1982 ochránili,
   má teraz hustú korunu.`).
 - Never design notes: no *v hre, herný, fiktívny, mimo obrazu, nie je to hádanka, bez pixelového
@@ -276,25 +322,55 @@ buttons short, address the player as *ty*, describe the controls as the build im
 (`docs/DECISIONS.md`: Space is held to show markers). UI rewrites are applied by editing ui.csv
 directly, not via overrides.
 
-## 7. Humour rules
+## 7. Humour toolbox (Polda tone)
 
-1. **The joke must follow from the line before.** If you need the design document to understand
-   why it is funny, it is not funny. Current example that fails: Mira says the glass has bad
-   acoustics, Adam replies `Konečne hodnotenie, v ktorom za nič nemôžem.` Better: `Dobre. Dva metre
-   a telefón. Bližšie sme sa celý mesiac nerozprávali.`
-2. **Adam's humour is dry self-irony.** He laughs at himself, at his day, at machines and forms; he
-   is never sarcastic to the people who help him. `Ja som chcel len vymeniť poistku.`
-3. **One joke per exchange is enough.** Many ambient looks can be plain observations.
-4. **A clue is never the punchline.** The line that gives the clue states it plainly; the joke, if
-   any, comes after it in the same line or in the next one. Never twist a protected fact for a
-   pun (`3–2–6` stays `3–2–6`).
-5. **Jokes must work in Slovak.** No English puns, no wordplay that needs the English original.
-6. **Each character jokes in their own way** (VOICES.md): Pali is a blunt colleague, Boris tells
-   jokes like footnotes, Očko is funny by being literal, Rudo by being theatrical.
-7. **No jokes about** illness, death, age, bodies, nationalities, the regime as a punchline, or
-   game mechanics.
-8. **Running gags are allowed** if they come from the data: "the same thing in another year"
-   (the cupboard scratch, the bin, the swallow), papers that outlive people.
+### 7.1 Rules
+
+1. **The joke must follow from the line before or from the person.** If you need the design
+   document to understand why it is funny, it is not funny.
+2. **A clue is never the punchline.** The line that gives the clue states it plainly; the joke comes
+   before it, after it in the same line, or in the next line. Never twist a protected fact for a pun
+   (`3–2–6` stays `3–2–6`).
+3. **Jokes must work in Slovak.** No English puns, no wordplay that needs the English original.
+4. **Each character is funny in their own way** (VOICES.md § Humour): Adam by self-irony and a
+   repairman's diagnoses, Pali bluntly, Boris like a footnote, Očko by being literal, Rudo by being
+   theatrical, Dana by counter wisdom.
+5. **Running gags** are welcome: per character (VOICES.md) and across eras (the same scratch on the
+   cupboard, the same bin, the swallow, papers that outlive people). A gag returns at most once per
+   scene and changes a little each time it returns.
+6. **No jokes about** illness, death, age, bodies, nationalities, the regime as a punchline, or game
+   mechanics (no meta humour about puzzles, inventory, levels or "the player"). Adam may joke about
+   time travel because it is happening to him.
+7. **Serious beats stay plain** (Lea's message, Tóno's recognition, Viktor, the last scene with Mira).
+
+### 7.2 Tools that work
+
+The examples show the technique; they are not game lines and are not pasted over one.
+
+| tool | how | example |
+|---|---|---|
+| character comedy | the person's hobby-horse or job colours how they answer anything | DANA: `Trpezlivosť nepredávam. Tú si musí každý doniesť z domu.` |
+| set-up and payoff across two speakers | one asks something ordinary, the other's honest answer makes it funny | ADAM: `Babka ti volala?` – DANA: `Dvakrát. Druhýkrát, či si si zapamätal, čo povedala prvýkrát.` |
+| logical absurdity of a real situation | a real thing that happened, told straight | ELA: `Raz mi niekto do termosky s kávou dolial polievku. Odvtedy tam visí ten nápis.` |
+| literalness | taking a description at face value | OČKO: `Adresa: dom, čo býval žltý. Žltých domov tu je nula. Bývalých žltých: neznámy počet.` |
+| exaggeration that fits the person | the theatrical one is theatrical even about a lost paper | RUDO: `Bez scenára som ako kráľ bez koruny! … Alebo aspoň bez druhého dejstva.` |
+| understatement | a big thing said small, by the calm one | IVAN: `Hore fúka. Ale fúka tam odjakživa, takže sme si zvykli skôr my ako vietor.` |
+| running gag with a twist | a character's habit comes back slightly changed | MIRA20: `A nákup nes za obe uchá.` … later … `Krabicu nes za oba rohy. Viem, že by si na to prišiel aj sám.` |
+| callback across eras | the same object or phrase in another year, noticed by Adam | ADAM: `Ten istý škrabanec na skrinke. V roku 1982 bol aspoň nový.` |
+| Adam's self-irony | he laughs at his escalating day, not at people | ADAM: `Ja som chcel len vymeniť poistku. Teraz mám v kalendári rok 1960.` |
+
+### 7.3 Patterns that do not work (bad → better)
+
+| problem | bad | better |
+|---|---|---|
+| ironic one-liner summary (the old pattern) | ELA: `Viac než včera. Ale aj pomocníkov pribudlo.` – ADAM: `Tak aspoň jedna krivka ide dobrým smerom.` | ADAM: `Tak ma pripíš medzi pomocníkov. Babka ma aj tak nahlásila už ráno.` |
+| non sequitur | MIRA: `Zavolaj mi, sklo má mizernú akustiku.` – ADAM: `Konečne hodnotenie, v ktorom za nič nemôžem.` | ADAM: `Dobre. Dva metre a telefón. Bližšie sme sa celý mesiac nerozprávali.` |
+| image without meaning | `Nie sú roztriedené. Sú len pokope s veľkým sebavedomím.` | `Skrutky, matice a jedna gombička z kabáta. Triedim ich od roku 2015.` |
+| anglicism or calque | `Mám doma starý toaster.` · `To dáva zmysel.` (1960) · `Som v strese.` (1982) | `Mám doma starý hriankovač.` · `To je logické.` · `Som z toho celý nesvoj.` |
+| jargon joke that needs explaining | `Ona ma riadi aj cez dodávateľský reťazec.` | `Babka ma riadi aj cez zatvorené okno.` |
+| meta joke | `Toto bude asi ďalšia hádanka.` | `Tri kolieska a žiaden návod. Klasika.` |
+| joke that replaces the clue | `Kód? Niečo s trojkou, myslím.` | `Kód je 3–2–6. Zapíš si ho, ja si pamätám len čísla z roku 1995.` |
+| joke in every line | five lines, five punchlines | greeting, business, one good gag, a reaction, a plain closing |
 
 ## 8. Words that must not appear
 
@@ -310,6 +386,10 @@ The checker (`tools/check_rewrite.py`) enforces most of these:
 
 ## 9. Workflow
 
+The full stack (Claude writes → GPT check with `tools/gpt_review.py` → Claude decides every flag and
+reads the chunk in story order → automatic checks and in-engine review) is binding:
+[WRITING_METHOD.md § 4](../../design-doc/WRITING_METHOD.md). The writer's part:
+
 1. Read your bundle top to bottom once before writing anything. Note how each NPC talks.
 2. Copy `docs/writing/context/<chunk>_keys.csv` if you like; your output is
    `docs/writing/out/<chunk>.csv` with the header `keys,sk_new,note`:
@@ -318,7 +398,9 @@ The checker (`tools/check_rewrite.py`) enforces most of these:
      `fact looks wrong: …`). If you drop a name, term or number on purpose (a decided rename, a
      joke that no longer needs a count), write `drop: <word>` in the note; the checker then
      warns instead of failing. Protected facts and verbatim lines can never be dropped.
-3. Rewrite in story order, one exchange at a time, reading the whole exchange aloud.
+3. Rewrite in story order, one exchange at a time, reading the whole exchange aloud. Extend each
+   conversation (overlay lines in `docs/writing/out/<chunk>_ext.json`) and add the extra topics
+   per NPC (VOICES.md § Humour has ideas).
 4. Run `python tools/check_rewrite.py docs/writing/out/<chunk>.csv --chunk <chunk>` until there are
    no errors; read every warning and either fix it or explain it in the note.
 5. The lead writer reviews, merges with `--overrides-out`, and the accepted rows go into
@@ -328,6 +410,8 @@ The checker (`tools/check_rewrite.py`) enforces most of these:
 ## 10. Checklist per line
 
 - Does it sound like this person, in this year, talking to this listener?
+- Does it make sense here, and would a Slovak say it like this out loud?
+- Is the joke a real joke from the situation or the character, not an ironic summary?
 - Does it follow from the previous line, and does the next line follow from it?
 - Is every protected fact still there, with the same value?
 - Are names, items and places the glossary forms, correctly declined?

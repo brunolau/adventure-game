@@ -1,7 +1,7 @@
 """Side-by-side comparison of a room's template and natural blocking (docs/reblock/README.md).
 
 Input:  build/screens/reblock/<room>_template.png and <room>_natural.png, in-game screenshots with Space labels on:
-          <console exe> --path src/game --resolution 1920x1080 -- --blocking template --room S05 --labels --skip-lines \
+          python tools/qa_godot.py --path src/game --resolution 1920x1080 -- --blocking template --room S05 --labels --skip-lines \
                         --wait 1500 --screenshot build/screens/reblock/S05_template.png
           (same with --blocking natural)
 Output: docs/reblock/<room>_compare.png (two screenshots at 1200x675 side by side, captions, a thin outline of the

@@ -1,0 +1,187 @@
+{
+  "chunk": "C1",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\out\\C1.csv",
+  "overlay": [],
+  "cost_usd": 0.2695,
+  "batches": {
+    "G05": {
+      "hash": "3fe51c16162c01fb",
+      "status": "ok",
+      "heading": "G05 · main quest M01 „Nákup pre babku“",
+      "keys": [
+        "action.G05.label",
+        "action.G05.001",
+        "action.G05.002",
+        "action.G05.003",
+        "action.G05.004",
+        "action.G05.005",
+        "action.G05.objective",
+        "action.G05.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10474,
+        "completion_tokens": 880,
+        "total_tokens": 11354,
+        "cost": 0.1311445,
+        "prompt_tokens_details": {
+          "cached_tokens": 2707,
+          "cache_write_tokens": 2707
+        }
+      },
+      "usd": 0.1311
+    },
+    "ELA": {
+      "hash": "62afc62ca7f3841e",
+      "status": "ok",
+      "heading": "ELA · Ela Švecová (40) — S03",
+      "keys": [
+        "topic.ELA.ambient 1.label",
+        "topic.ELA.ambient 1.001",
+        "topic.ELA.ambient 1.002",
+        "topic.ELA.ambient 1.003",
+        "topic.ELA.ambient 2.label",
+        "topic.ELA.ambient 2.001",
+        "topic.ELA.ambient 2.002"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9912,
+        "completion_tokens": 1220,
+        "total_tokens": 11132,
+        "cost": 0.138412,
+        "prompt_tokens_details": {
+          "cached_tokens": 2412,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1384
+    }
+  },
+  "keys": {
+    "action.G05.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Potrebuješ ešte niečo?",
+      "batch": "G05"
+    },
+    "action.G05.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Roman mi preniesol krabice do záhradnej dielne. Je v nich malý prístroj, ZVON. Ozýva sa, hoci je odpojený.",
+      "batch": "G05"
+    },
+    "action.G05.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Asi kondenzátor.",
+      "batch": "G05"
+    },
+    "action.G05.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Keď myslíš. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.",
+      "batch": "G05"
+    },
+    "action.G05.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo práve ZVON?",
+      "batch": "G05"
+    },
+    "action.G05.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo sa hneď na začiatku ozval. A lepšie meno sme vtedy nevymysleli.",
+      "batch": "G05"
+    },
+    "action.G05.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Odomkni Mirinu záhradnú dielňu kľúčom zo schránky.",
+      "batch": "G05"
+    },
+    "action.G05.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Odomkni Mirinu záhradnú dielňu kľúčom zo schránky.",
+      "batch": "G05"
+    },
+    "topic.ELA.ambient 1.label": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "As a direct question to Ela, this uses vy rather than the required ty.",
+      "suggestion": "Ako to zvládaš?",
+      "text": "Ako to zvládate?",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koľko ľudí dnes potrebuje pomoc?",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Viac než včera. Ale aj pomocníkov pribudlo.",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 1.003": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The curve comparison is a closing ironic summary rather than a joke developed through the situation. A plain, supportive reaction fits better here.",
+      "suggestion": "Dobre, že aspoň pomocníkov pribúda.",
+      "text": "Tak aspoň jedna krivka ide dobrým smerom.",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá termoska?",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nedolievať polievku? To sa tu naozaj stalo?",
+      "batch": "ELA"
+    },
+    "topic.ELA.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Raz. Niekto mi do termosky s kávou dolial polievku z výdaja. Stačilo to.",
+      "batch": "ELA"
+    }
+  },
+  "unreviewed": []
+}

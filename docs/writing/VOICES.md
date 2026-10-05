@@ -1,7 +1,8 @@
 # Posledný zvonec – voices
 
 One entry per speaking character: who they are, how they talk, how they address Adam, and two
-example lines in good Slovak. The examples show the voice; they are not lines from the game and
+example lines in good Slovak. The section "Humour, running gags and extra topics" says how each of
+them is funny in the Polda tone of `design-doc/WRITING_METHOD.md`. The examples show the voice; they are not lines from the game and
 must not be pasted over a game line unless they say exactly what that line has to say.
 
 Speaker ids are the ones used in the data. Some characters have two ids: the hotspot/character id
@@ -30,6 +31,72 @@ table. "→ Adam" is how the character addresses Adam; "Adam →" is how Adam ad
 | Juraj (19) | vy | ty | |
 | Everyone else (1960, 1982, 1995 officials, 2035) | vy | vy | including Viktor, Vera 1960, Viera 1995, Alena, Karol, Milada, Jana 25/50/65, Nina, Sára, Boris, Ivan, Miloš |
 | Lea 1995 | vy | vy | Lea to the 10-year-old Adam on the tape: ty |
+
+---
+
+## Humour, running gags and extra topics (Polda tone, owner decision 2026-10-06)
+
+Binding method: `design-doc/WRITING_METHOD.md`; techniques: STYLE_GUIDE.md § 7. Every speaking
+character is funny **in their own way**, and most have a running gag that returns now and then
+(at most once per scene, a little changed each time). The topic ideas are for the 2–4 extra optional
+topics per NPC (WRITING_METHOD.md § 3): local colour, their own life and quirks, the running gag,
+a gentle nudge toward the current goal. They are ideas, not facts: nothing here changes the story,
+an item or a solution, and an invented quirk must not contradict game.json.
+
+Not funny on purpose: Viktor (a controlled, serious arc; at most a dry remark), Lea's message, the
+narrator, device texts (only Očko is a comic machine). No extra topics for SYSTEM, NARRATOR,
+LEA_REC, ADAM10 and Bodka (who only barks).
+
+| speaker | how they are funny | running gags | extra topic ideas |
+|---|---|---|---|
+| ADAM | self-irony of a repairman whose simple day keeps escalating; precise diagnoses of absurd things | "I only wanted to change a fuse" (the day grew from a fuse to five eras); diagnoses people's problems like devices; grandma manages him remotely | — (he asks; his reactions carry the gags) |
+| MIRA20 | the engineer who runs Adam's day from behind a closed window, dry and loving | Babkine pravidlá (carry it by both handles, do not come in) applied to everything; she already knows what Adam did before he says it | her quarantine day, how ZVON first sounded, how she taught Adam to solder, the neighbours on the phone |
+| MIRA95 | teacher energy: gives tasks in numbered order, also to adults | "najprv … potom …" lists; children's recordings she quotes | the sound club, the funniest recording of the children, cassettes she keeps, Dúbravka in 1995 |
+| MIRA60 | quick and impatient with vague words; corrects people's wording | "čo nesedí, píšeme vedľa"; finishes Oto's sentences | the measuring in the park, Oto's workshop habits, Ivanka's gossip about her "búdka" |
+| TONO82 | kid logic: takes adults literally, bargains, checks details | swallows he draws everywhere; "dedo hovorí …" | school in 1982, the football World Cup on TV, pioneers, what he will be when he grows up (not caretaker, he thinks) |
+| TONO | the teasing young caretaker with a key for every door and a story for every key | the key ring; every door has its trick | the school in 1995, why he took the job, the club noise, the boiler room |
+| TONO20 | calm deadpan; big things said in few words | birdhouses; the same key ring 25 years later | the empty school during distance learning, birdhouses, children he meets through the window |
+| OTO | understated precision; machines are more honest than people | "najprv sa pozrieme" before anything; measures before he answers | the workshop in Ivanka, the first ZVON test, what he thinks of Adam's odd shoes |
+| OTO82 | the amused grandfather who has seen time pass | remembers Adam's jacket from 1960; three jackets since | Tóno as a pupil, the school technical club, getting old with a soldering iron |
+| JANA82 | shy until she may explain, then unstoppable | "Je to inak ako vo vzore." | her schematic, radios, what the teacher said about it |
+| JANA95 / JANA20 / JANA35 | precise organiser who corrects near-synonyms | the exact word ("not a list, a register") | the club / laptops for children / her exhibit; only what fits the state shown |
+| ELA | runs the village on lists and speed | lists of lists; the thermos sign NEDOLIEVAŤ POLIEVKU | the volunteers, who needs what this week, her daughter Nina at fifteen, the village in 2020 |
+| DANA | deadpan wisdom from behind the counter window | "Toto nepredávam" (patience, luck, time); knows every customer's usual order | the window shop, the regulars, Mira's order "as always", what people buy in a lockdown |
+| ROMAN | the courier who knows houses by description, not by number | addresses like "dom, čo býval žltý"; the heaviest box of the month | his route, the boxes he carried for Mira, people waving through windows |
+| LENKA | few words; the dog decides | Bodka leads the walk; the ball by the reservoir | Bodka's habits, walks in Čierna Voda, the reservoir path |
+| JOZEF | ceremonious analog pride, "mladý pán" | the folding magnifier; "veľkými písmenami" | the notice board, the village then and now, why he will not install an app |
+| LEA95 | gentle; the humour comes from what children say | "what the children say between sentences" | recordings with the class, ordinary sounds she collects, Viktor as a small boy |
+| SONA | child seriousness about grown-up rules | "družstvo, nie skupina"; guards the album | the album, the school team, the club |
+| ZITA | the kiosk as the estate's news agency | "správy sú zadarmo"; lost things end up at her kiosk | the housing estate in 1995, forgotten envelopes, who buys which paper |
+| EMIL | slow musician who hears rhythm in everything | the trams keep his tempo | his song „Štyri zastávky“, Karlova Ves, playing for passengers |
+| PALI | blunt colleague with repair verdicts | "neoplatí sa" verdicts; customers' "včera to ešte išlo" | his shop, the worst repair he ever did, belts and motors |
+| VIERA | ironic bookseller about books and readers | "prílohy sa strácajú"; don't hold it by the spine | the antiquariat, what people sell after a move, Emil's sheet music |
+| ARCHIVAR / KAROL | pedantic about silence and rules, secretly helpful | quotes the reading-room order | donations, the strangest thing in the archive, why copies, not originals |
+| FOTO / ALENA | calm craft; people look best when they think she stopped | "už nefotím" | the studio „Svetlo“, the darkroom, school photos |
+| TRH / FERO | earthy market seller; everything is "original" | "originál, len od iného výrobcu" | Miletičova market, the stuck scale, what sells in 1995 |
+| MILADA | explains everything as tailoring | "ako pri kabáte"; "vždy to tak bolo" is the hardest thing to mend | Ružinov, her customers, old textile insulation |
+| JURO | cassette nerd; life as a mixtape | compares people and situations to tracks | cassettes, the basement club, the best tape of 1995 |
+| JURAJ | quiet painter who sees the lights inside the blocks | the white chalk he never has | the underpass panel, Petržalka windows, the permit with a stamp |
+| DEZI | radio ham who translates every term at once | call signs; "presné neznamená rovnaké" | radio, working with Mira, the Danube embankment |
+| BOZO | timetable philosophy; likes clear destinations | "Kam ste namierený?"; trains as answers to life | the station in 1960, trains to Bratislava, where to find young Hrušková |
+| BERTA | village curiosity about the stranger | Adam's shoes and clothes; "mladá Hrušková zas svieti" | the square, village news, the young people of 1960 |
+| POSTA / ALOJZ | charming officialese with a soft aside | stamps for everything; Béla is not a service pigeon | the post office, telegrams, Béla's flights |
+| LIDA | theatre logistics: costumes never add up | "šesť hercov, štyri kabáty" | the amateur theatre, the play, Rudo's stage fright |
+| RUDO | theatrical exclamations on stage, shy off it | quotes from his lost script `Žiaden strach, miláčik` | his roles, rehearsals, the lost script |
+| SKLAD / STEFAN | curt order, proud of knowing exactly what is missing | "Lístok, podpis, materiál."; "presne viem, čo nemáme" | the store in the farm yard, Oto's slips |
+| VERA60 | dry practical draughtswoman | Oto keeps changing the dimensions | drawings, working outside in the park, the ZVON documentation |
+| DOBRO | formal teacher phrases that slowly soften into a human | "schválený vzor"; the comrade director will read it | the exhibition, the school in 1982, what makes a good pupil's project |
+| RUZENA | direct shop assistant | "Čo vidíte, to máme." | the shop in 1982, returnable jars, the regulars |
+| MARTA82 | patient exactness; rules without needless trouble | "bez trápenia" | the maintenance store, forms that make sense, the school building |
+| SIMON | thinks in decades | trees outlive everyone, the hand cart's shortest way | the school garden, the linden, the estate being built |
+| NINA / NINA_REMOTE | fast, names the limits of her authority | lists, like her mother Ela | Atlas, the exhibition, her mother in 2020 (she was fifteen) |
+| VIKTOR | not funny by design; controlled and serious | — | the purpose of Atlas in his own words; nothing that spoils the ending |
+| TAMARA | a repairer among repairers; coffee and repair are one system | "systém funguje" | the travelling workshop „Druhý život“, repairs at the hotel table |
+| BORIS | jokes like bibliographic footnotes | "poznámka pod čiarou" asides | the exhibition archive, the oldest object, copies and originals |
+| SARA | professional pride in paper | the pen that has never fallen; the visitors' book | Biela Púť, the client centre, visitors who ask odd things |
+| ROBOT (Očko) | literal; statistics instead of feelings | confidence percentages; the folder "Nepotrebné, ale milé" | its route, weather as data, addresses described by history |
+| IVAN | calm cable-car man; he, not the weather, decides | "poviem vám to ja, nie počasie" | the Funitel, Chopok in winter, the change at Priehyba |
+| TURISTA | trip nostalgia; photographs fog | fog photos | trips with his father, Jasná in the old days, what he packs |
 
 ---
 

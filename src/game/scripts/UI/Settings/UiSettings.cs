@@ -184,6 +184,7 @@ public static class UiSettings
             AudioServer.SetBusVolumeDb(bus, Volume[i] <= 0 ? -80f : Mathf.LinearToDb(Volume[i] / 100f));
             AudioServer.SetBusMute(bus, Volume[i] <= 0);
         }
+        if (LastBell.Game.Diagnostics.QaWindow.Silent) LastBell.Game.Diagnostics.QaWindow.Mute(); // QA runs stay silent
         if (!keepTextTiming)
         {
             PresentationSettings.TextCharsPerSecond = CharsPerSecond(TextSpeed);
@@ -198,7 +199,7 @@ public static class UiSettings
         PresentationSettings.HighContrastLabels = HighContrastLabels;
         PresentationSettings.WalkSpeedFactor = Math.Clamp(WalkSpeedPercent, 100, 150) / 100f;
         if (TextService.Locale != Locale) TextService.SetLocale(Locale);
-        if (applyWindow && DisplayServer.GetName() != "headless")
+        if (applyWindow && DisplayServer.GetName() != "headless" && !LastBell.Game.Diagnostics.QaWindow.Background)
         {
             var mode = DisplayServer.WindowGetMode();
             bool isFull = mode is DisplayServer.WindowMode.Fullscreen or DisplayServer.WindowMode.ExclusiveFullscreen;

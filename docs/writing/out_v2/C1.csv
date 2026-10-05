@@ -1,0 +1,28 @@
+keys,sk_new,note
+entry.S05.001,"Babkina bránka. Babka je v karanténe, takže ďalej ako po stolík dnes nesmiem.",clearer: the table is as far as Adam goes
+look.S05.shed_door,"Babkina dielňa stojí v záhrade, mimo domu. Je zamknutá a kľúč od nej má babka.",progress look: says what is missing (Mira's key) without officialese
+look.S09.ambient 1,"Tri lyže. Babka určite vie, prečo práve tri, a určite to bude logické.",set-up; Mira pays it off in topic MIRA20.ambient 2 (dve lyže a náhradný diel); GPT accept: Missing comma before 'prečo'.
+look.S10.ambient 2,"NEPREPISOVAŤ ORIGINÁL, trikrát podčiarknuté. Babka nepodčiarkuje nič, čo nemyslí vážne.",keeps the painted sign verbatim
+entry.S51.001,Dúbravská zastávka. Odtiaľto som chodil do školy a čaká sa tu stále rovnako.,now true in any visit order (v1 assumed the 1995 stop was seen; the bus may bring Adam here earlier); GPT accept: 'Čaká sa tu stále rovnako' is natural spoken Slovak.
+look.S52.ambient 1,"Oznam: triedy sú pre návštevy zatvorené, veci sa vydávajú len s povolením. Hneď som sa vystrel.",the notice is official on purpose; Adam's reaction is the joke; GPT adapt: Agree 'vyzdvihnúť vec sa dá' was wooden; GPT's 'Ak si chcem niečo vyzdvihnúť' makes a notice speak in Adam's first person. Keeps povolenie; past tense of the reaction is fine.
+look.S55.ambient 2,"Ten istý kôš ako za mojich čias. Riaditelia sa menili, kôš zostal.","cross-era running gag (the same bin), less of an ironic summary; GPT adapt: Agree 'jasnú úlohu' was the old summary tag; GPT's 'stále slúži' is flat. Own fix is the cross-era 'things outlive people' gag, told straight."
+entry.S56.001,"Tóno, náš školník. Keď mi v roku 1995 otváral kabinet, nemal ešte sivé spánky.",works whether the player has been to 1995 or only remembers Tóno from school ('o dvadsaťpäť rokov starší' assumed the 1995 visit); drop: 25
+item.ORDER,"Čaj, zemiaky a ovsené vločky, babkiným písmom. Dana má tašku pripravenú.",pairs with Dana's new G03 line about Mira's handwriting
+item.SHEDKEY,"Mosadzný kľúč od babkinej dielne. Na prívesku je štítok DIELŇA, keby som zabudol.","livelier, same fact"
+item.BALL,Obhryzená červená loptička. Bodka ju zjavne miluje celým chrupom.,livelier; drop: suchý breh (Q1B already says where it was)
+action.G01.001,"Skrutkovač, kliešte, meradlo. Na jeden babkin nákup som vybavený ako na generálku.",setup of the running gag (a simple day that escalates); repairman's exaggeration
+action.G02.004,Tak to máš tretíkrát. A do obeda ti to zopakuje ešte aj Dana.,"v1 'potvrdené z dvoch zdrojov' was a summary punchline; now sets up Dana's payoff in G03.004; GPT adapt: GPT is right that the count is of tellings, not of women (babka told him twice); its fix is correct but stiff, the colloquial 'to máš tretíkrát' keeps Ela quick."
+action.G03.004,"Vidíš, ty to vieš. Mala som ti to pripomenúť, tak to ber ako pripomenuté.",payoff of Ela's new G02.004 (Dana will repeat it)
+action.G04.003,Dobre. Bočný chodníček a telefón. Takto blízko sme sa celý mesiac nerozprávali.,'Dva metre' moved to Mira's new line; Adam now repeats her instruction; GPT accept: Clearer: 'takto blízko' states the physical closeness the beat is about; same tone.
+action.G05.001,"Potrebujem. Roman mi preniesol krabice do záhradnej dielne. Je v nich prístroj ZVON a ozýva sa, hoci je odpojený.","now answers the topic label 'Potrebuješ ešte niečo?' directly (113 chars, under the hard limit; the clue must stay in this key); keeps Roman, the boxes, the workshop, ZVON, sounds while unplugged"
+action.G05.003,"Keď myslíš, tak sa pozri. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.","keeps key in the outside box by the window, do not enter the house"
+action.G06.001,Kľúč pasuje a zámok ani nevrzol. Babka ho zrejme maže častejšie ako ja pánty v garáži.,v1 line was the banned ironic-summary example (Aspoň niečo dnes funguje na prvý pokus)
+action.G07.001,ZVON a nálepka „Sokolíkova 1995“. Ten prístroj poznám zo školy. Vtedy sme naň nesmeli ani dýchnuť.,"keeps: ZVON, label Sokolíkova 1995, Adam knows it from school"
+action.G07.003,"Ja poznám jeho a on pozná mňa. Babka, toto si mi mala povedať, aj keď som sa nepýtal.",callback to Mira's 'Nepýtal si sa' (new G05 line); keeps: the device recognises people; GPT adapt: Real contradiction (Adam recognised the device first in G07.001); own fix keeps the symmetry joke instead of GPT's flat 'Takže ten prístroj spoznal aj mňa'.
+action.C01.002,Potrebujem bezpečný návratový mostík. Vieš o nejakom?,"'Babka,' moved to the new opening line (Babka, som späť); drop: Mira"
+action.Q1C.004,Prijímam. Aj so slinami.,"v1 'Konečne niekto, kto hovorí k veci' was a summary quip; now a reaction the next lines build on"
+action.Q2B.002,Tú veľkú si pán Jozef prečíta aj z lavičky.,v1 'Takéto rozhranie pán Jozef schváli' was a wink; now follows Ela's three versions
+action.D01.002,"Fotka ostane v chránenej pamäti telefónu, aj keby sa dvor zmenil. Babkine rady beriem doslova.",keeps the protected-photo fact; reacts to Mira's new C01 line (Dvor si odfoť)
+topic.ELA.ambient 1.003,Tak ma pripíš medzi pomocníkov.,v1 'Tak aspoň jedna krivka ide dobrým smerom' is the banned ironic-summary example; GPT trial decision (C1_test) adapted
+topic.ROMAN.ambient 1.003,A ktorý to je?,v1 'Navigácia s historickou vrstvou. Poznám.' is a banned-pattern example in WRITING_METHOD.md 1.4
+topic.LENKA.ambient 2.002,A má pravdu? Chodíte teraz častejšie?,v1 'Na jeho pomery celkom presná analýza' was an ironic summary; now a follow-up question

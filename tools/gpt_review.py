@@ -18,6 +18,8 @@ with a reason, in docs/writing/review_gpt/<name>.decisions.csv (WRITING_METHOD.m
 Batches: every bundle block that contains at least one key of the outputs (changed or new).
 GPT judges those keys; the other lines of the block are shown as read-only context so the
 conversation is read as a whole. --all-keys judges every key of every selected block.
+An overlay sequence that lists existing keys (plain strings) between its new lines is shown in its
+full play order, old and new lines interleaved, so GPT judges the flow as the player hears it.
 
 Robustness: each call is retried (network errors, HTTP 429/5xx, malformed JSON, missing
 verdicts) with backoff; the result file is rewritten after every batch, and a re-run skips

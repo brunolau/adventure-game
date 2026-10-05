@@ -69,3 +69,9 @@ ART_DIRECTION.md             Záväzný výtvarný štýl A (ručne maľovaný) 
 LOCATIONS_REGISTER.csv       Evidencia skutočných miest, zdrojových fotografií a licencií
                              použitých pre každú scénu.
 ISSUES.md                    Rozpory nájdené počas implementácie a ich riešenie.
+
+Doplnky k handoffu (2026-10-06)
+WRITING_METHOD.md            Záväzná metóda písania všetkých slovenských textov: humor v duchu
+                             Poldu, ktorý dáva zmysel; rozhovory 2-3x dlhšie; 2-4 témy navyše
+                             pre každú hovoriacu postavu; postup Claude píše -> GPT kontrola
+                             (tools/gpt_review.py) -> Claude rozhodne -> automatické kontroly.

@@ -13,7 +13,8 @@ walks the hero, asks Core again on arrival and commits through Core. It never de
 | import assets (after adding files) | `.tools/godot/Godot_v4.7.2-stable_mono_win64/Godot_v4.7.2-stable_mono_win64_console.exe --headless --path src/game --import` |
 | Core tests | `dotnet test src/LastBell.sln` |
 | headless QA run | `<console exe> --headless --path src/game -- --replay 94 --quit-after 1` |
-| screenshot (needs a window, no `--headless`) | `<console exe> --path src/game --resolution 1920x1080 -- --room S05 --screenshot build/screens/S05.png` |
+| screenshot (needs a window, no `--headless`) | `python tools/qa_godot.py --path src/game --resolution 1920x1080 -- --room S05 --screenshot build/screens/S05.png` |
+| any QA run with a window (screenshots, `--shots`, `--frames`, `--acceptance`, `--perf`) | `python tools/qa_godot.py <the same Godot arguments>`: the window is created hidden (never on a screen, never focused), the run is muted, capped at 60 fps and runs at below-normal priority; a minimized window would stop drawing, so it is hidden instead (owner request 2026-10-06; `scripts/Diagnostics/QaWindow.cs`, options in the script header) |
 
 Godot runs the assembly that `dotnet build` puts into `.godot/mono/temp/bin/Debug/`, so build after
 every C# change before launching from the command line (the editor builds by itself).
@@ -271,9 +272,9 @@ Examples:
 # the prologue through the real input path (walking, clicks, puzzle, special transition)
 <console exe> --headless --path src/game -- --fast-text --play 11 --quit-after 1
 # blockout + QA text labels screenshot (players see markers: --markers or --input keydown:Space)
-<console exe> --path src/game --resolution 1920x1080 -- --room S02 --labels --screenshot build/screens/S02.png
+python tools/qa_godot.py --path src/game --resolution 1920x1080 -- --room S02 --labels --screenshot build/screens/S02.png
 # walk animation frames
-<console exe> --path src/game --resolution 1920x1080 -- --skip-lines --input click:1600,1000 --frames 4 --interval 220 --screenshot build/screens/walk.png
+python tools/qa_godot.py --path src/game --resolution 1920x1080 -- --skip-lines --input click:1600,1000 --frames 4 --interval 220 --screenshot build/screens/walk.png
 ```
 
 ## Known gaps (world runtime)

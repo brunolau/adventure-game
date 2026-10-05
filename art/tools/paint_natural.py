@@ -597,10 +597,13 @@ class ImportLock:
 
 
 def godot(args: list[str], timeout: int = 600) -> int:
-    cmd = [str(GODOT), "--path", str(GAME_DIR)] + args
+    # Through tools/qa_godot.py (owner request 2026-10-06): the window is created hidden, never shows on screen and
+    # never takes the keyboard focus; a direct console-exe launch flashed it mid-screen and stole focus per shot.
+    cmd = [sys.executable, "-X", "utf8", str(ROOT / "tools" / "qa_godot.py"), "--qa-timeout", str(timeout),
+           "--path", str(GAME_DIR)] + args
     print("godot " + " ".join(args))
     proc = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace",
-                          timeout=timeout)
+                          timeout=timeout + 60)
     for line in proc.stdout.splitlines():
         if line.startswith("HARNESS") or "ERROR" in line or "WARNING: Room" in line:
             print("  " + line)
