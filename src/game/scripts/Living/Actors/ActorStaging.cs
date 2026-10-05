@@ -13,6 +13,15 @@ namespace LastBell.Game.Living.Actors;
 public sealed record ActorPlacement(string? Variant, float? SillY, float? Scale, float OffsetX, string? Facing);
 
 /// <summary>
+/// A per-character sprite variant that applies once an action is done (e.g. Jana's Q9C prop variants,
+/// PRIBEH_A_PRAVIDLA "variant rekvizít podľa Q9C", ISSUES ART-AGE-01 item 4 / ART-AGE-04).
+/// </summary>
+/// <param name="After">Action id that must be in <c>done</c>.</param>
+/// <param name="Variant">actor.json variant name; <c>{base}</c> is replaced by the room's / manifest's variant
+/// (JANA20: <c>{base}_q9c</c> turns <c>laptop</c> into <c>laptop_q9c</c> and <c>screen</c> into <c>screen_q9c</c>).</param>
+public sealed record VariantRule(string After, string Variant);
+
+/// <summary>
 /// Visual staging data for actor sprites, from <c>res://data/ambient/actors.json</c>: in which rooms
 /// the hero wears the 2020 face mask (game.json has no flag, ISSUES ART-ADAM-02), per-room NPC
 /// placements (window busts) and walk tuning. Visual only; never affects rules.
@@ -25,6 +34,7 @@ public static class ActorStaging
     private static bool loaded;
     private static readonly HashSet<string> MaskRooms = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, ActorPlacement> Placements = new(StringComparer.Ordinal);
+    private static readonly Dictionary<string, List<VariantRule>> VariantRules = new(StringComparer.Ordinal);
 
     /// <summary>Depth walk speed (toward / away cycles) as a fraction of the side stride.</summary>
     public static float DepthSpeedFactor { get; private set; } = 0.3f;
@@ -52,6 +62,18 @@ public static class ActorStaging
         HeroBlinkChance = data.Num("hero_blink_chance", HeroBlinkChance);
         if (data.Obj("action_hold_overrides_s") is { } o)
             foreach (var (k, _) in o) holds[k] = o.Num(k, ActionHoldSeconds);
+        if (data.Obj("variants_after") is { } rules)
+        {
+            foreach (var (charId, node) in rules)
+            {
+                if (node is not System.Text.Json.Nodes.JsonArray list) continue;
+                var parsed = new List<VariantRule>();
+                foreach (var item in list)
+                    if (item is System.Text.Json.Nodes.JsonObject r && r.Str("after") is { } after && r.Str("variant") is { } variant)
+                        parsed.Add(new VariantRule(after, variant));
+                VariantRules[charId] = parsed;
+            }
+        }
         if (data.Obj("placements") is { } rooms)
         {
             foreach (var (roomId, node) in rooms)
@@ -79,6 +101,29 @@ public static class ActorStaging
     {
         EnsureLoaded();
         return Placements.TryGetValue(roomId + "/" + characterId, out var p) ? p : null;
+    }
+
+    /// <summary>The <c>variants_after</c> rules of a character (data order), empty when none.</summary>
+    public static IReadOnlyList<VariantRule> VariantRulesFor(string characterId)
+    {
+        EnsureLoaded();
+        return VariantRules.TryGetValue(characterId, out var list) ? list : Array.Empty<VariantRule>();
+    }
+
+    /// <summary>
+    /// The variant to draw: <paramref name="baseVariant"/> (room placement, else the manifest default),
+    /// replaced by the last rule whose action is done. Pure; visual only, never a rule.
+    /// </summary>
+    public static string? ResolveVariant(string? baseVariant, IReadOnlyList<VariantRule> rules, Func<string, bool> isDone)
+    {
+        string? result = baseVariant;
+        foreach (var rule in rules)
+        {
+            if (!isDone(rule.After)) continue;
+            if (rule.Variant.Contains("{base}") && baseVariant is null) continue; // nothing to derive from
+            result = rule.Variant.Replace("{base}", baseVariant ?? "");
+        }
+        return result;
     }
 
     /// <summary>Hold seconds for a one-shot action.</summary>

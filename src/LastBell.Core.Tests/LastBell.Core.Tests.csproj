@@ -30,6 +30,8 @@
     <None Include="..\..\design-doc\game.json" Link="fixtures\game.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\design-doc\walkthrough.json" Link="fixtures\walkthrough.json" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\..\design-doc\acceptance_tests.csv" Link="fixtures\acceptance_tests.csv" CopyToOutputDirectory="PreserveNewest" />
+    <!-- ui.csv: the UI keys Core produces must exist in the table (ISSUES GAME-03 / UI-01). -->
+    <None Include="..\game\localization\ui.csv" Link="fixtures\ui.csv" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
 </Project>

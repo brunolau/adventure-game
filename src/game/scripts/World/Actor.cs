@@ -161,9 +161,12 @@ public partial class Actor : Node2D
         callback?.Invoke();
     }
 
+    /// <summary>Absolute scale instead of the room perspective (natural blocking NPC staging), or null.</summary>
+    public float? ScaleOverride { get; set; }
+
     private void UpdateScale()
     {
-        float s = perspective.ScaleAt(Position.Y);
+        float s = ScaleOverride ?? perspective.ScaleAt(Position.Y);
         Scale = new Vector2(s, s);
     }
 }

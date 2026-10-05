@@ -2,7 +2,7 @@
 
 `AudioService` (node `/root/Main/AudioService`, created by `Main`) owns every sound of the game. It is
 presentation only: it listens to `GameRuntime` / `WorldHooks` / `DialoguePresenter` events and never
-changes game state. It replaced the world runtime's `Presentation/MusicPlayer` (kept in the tree, unused).
+changes game state. It replaced the world runtime's `Presentation/MusicPlayer` (removed in the issue cleanup, ISSUES AUDIO-01).
 
 ## Buses
 

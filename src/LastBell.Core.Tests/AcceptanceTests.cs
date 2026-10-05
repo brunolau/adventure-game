@@ -286,7 +286,7 @@ public sealed class AcceptanceTests
         save.Remove("checksum");
         save["inventory"]!.AsArray().Add("UNKNOWN_THING");
         Assert.False(session.TryLoad(save.ToJsonString(), out var error));
-        Assert.Equal("ui.save.corrupt", error.Key);
+        Assert.Equal("ui.save.corrupted", error.Key);
         Assert.Same(before, session.State);
     }
 

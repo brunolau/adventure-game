@@ -21,7 +21,7 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--screenshot &lt;path.png&gt;</c>, <c>--frames &lt;k&gt;</c>, <c>--interval &lt;ms&gt;</c>, <c>--wait &lt;ms&gt;</c>,
 /// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|wait:ms|mouse:x,y|rmouse:x,y|keyev:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>keyev</c> inject real input events through Godot's pipeline, GUI first),
-/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--labels</c>, <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
+/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--blocking natural|template</c>, <c>--labels</c>, <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
 /// (resolver, walking, re-resolve on arrival, commit). Autosave is off unless <c>--autosave</c>.
 /// Prints <c>HARNESS ...</c> lines to stdout for scripts.
@@ -78,6 +78,11 @@ public partial class DebugHarness : Node
         game.AutosaveEnabled = Has("autosave");
         var stage = WorldStage.Instance!;
         if (Has("dev")) stage.DevOverlay = PresentationSettings.DevNotes = true;
+        if (Get("blocking") is { } blocking) // natural re-blocking (World/RoomBlocking.cs, docs/reblock/README.md)
+        {
+            PresentationSettings.NaturalBlocking = blocking == "natural";
+            Log($"blocking {(RoomBlocking.Enabled ? "natural" : "template")}");
+        }
         if (Has("fast-text"))
         {
             PresentationSettings.TextCharsPerSecond = 0;

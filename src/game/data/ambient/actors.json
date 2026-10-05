@@ -1,5 +1,5 @@
 {
-  "description": "Visual staging of actor sprites (living world, scripts/Living/Actors/ActorStaging.cs). Visual only, never rules. hero_mask2020_rooms: rooms where Adam wears the 2020 face mask (outdoors among people; game.json has no flag, see ISSUES ART-ADAM-02). placements: per room and character: variant (actor.json variants), sill_y (canvas y of the painted window sill a bust stands on), scale (absolute, else room perspective), offset_x, facing (left/right, else face the hero).",
+  "description": "Visual staging of actor sprites (living world, scripts/Living/Actors/ActorStaging.cs). Visual only, never rules. hero_mask2020_rooms: rooms where Adam wears the 2020 face mask (outdoors among people; game.json has no flag, see ISSUES ART-ADAM-02). placements: per room and character: variant (actor.json variants), sill_y (canvas y of the painted window sill a bust stands on), scale (absolute, else room perspective), offset_x, facing (left/right, else face the hero). variants_after: per character, a list of {after: action id, variant: actor.json variant} applied in order once the action is done, {base} = the placement / manifest default variant (BF_JANA after Q9C, ISSUES ART-AGE-04).",
   "hero_mask2020_rooms": ["S02", "S03", "S04", "S05", "S06", "S07", "S08", "S51", "S52", "S55", "S56"],
   "depth_speed_factor": 0.3,
   "action_hold_s": 0.45,
@@ -9,6 +9,11 @@
     "use_tool": 0.3
   },
   "hero_blink_chance": 0.7,
+  "variants_after": {
+    "JANA95": [{ "after": "Q9C", "variant": "q9c" }],
+    "JANA20": [{ "after": "Q9C", "variant": "{base}_q9c" }],
+    "JANA35": [{ "after": "Q9C", "variant": "q9c" }]
+  },
   "placements": {
     "S04": {
       "DANA": { "variant": "window", "sill_y": 595 }

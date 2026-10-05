@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "room": "S05",
+  "status": "proposal - natural re-blocking, applied only with last_bell/presentation/blocking = natural or --blocking natural (docs/reblock/README.md)",
+  "note": "Flat village street as on Pezinska (no raised plot): Mira's frontage stands on the back edge of the brick pavement, camera ~2.2 m high, horizon y ~360, frontage foot line y 700 (~150 px per metre). Perspective scale s(y) = (y - 360) / 655, so walk_band/actor_scale follow the same camera as the painting. Props stand where they really are: the table on the pavement beside the gate, the doormat on the ground in front of the gate, the workshop door in the street line, the vine over the fence.",
+  "background": "bg_natural/S05.webp",
+  "walk_polygon": [[20, 735], [1660, 735], [1685, 700], [1765, 700], [1790, 735], [1900, 735], [1900, 1015], [20, 1015]],
+  "walk_band": [700, 1015],
+  "actor_scale": [0.52, 1.0],
+  "spawn": [960, 900],
+  "hotspots": {
+    "S05.tray": { "rect": [180, 585, 150, 140], "interaction_point": [255, 785], "label_anchor": [255, 575],
+                  "reason": "small table standing on the pavement against the wall left of the gate (top y ~600, legs y 720)" },
+    "S05.shed_door": { "rect": [725, 400, 150, 225], "interaction_point": [800, 790], "label_anchor": [800, 392],
+                       "reason": "upper two thirds of the workshop's plank door in the street line, padlock and hasp at y ~540" },
+    "S05.ambient 1": { "rect": [1010, 300, 330, 200], "interaction_point": [1175, 790], "label_anchor": [1175, 290],
+                       "reason": "old vine on a trellis behind the picket fence, foliage and grapes above the fence top (y 475)" },
+    "S05.ambient 2": { "rect": [395, 696, 140, 50], "interaction_point": [465, 795], "label_anchor": [465, 688],
+                       "reason": "coir doormat lying on the ground right in front of the gate, VITAJTE facing the street" }
+  },
+  "exits": {
+    "S05.to_S02": { "rect": [0, 740, 60, 275], "interaction_point": [70, 900], "label_anchor": [135, 728],
+                    "reason": "the pavement continues out of the left edge (street between the fences)" },
+    "S05.to_S06": { "rect": [1655, 520, 130, 215], "interaction_point": [1725, 760], "label_anchor": [1720, 510],
+                    "reason": "narrow side passage between the house corner and the neighbour's wall, leading along the house to the closed window" },
+    "S05.to_S09": { "rect": [725, 625, 150, 105], "interaction_point": [800, 765], "label_anchor": [800, 762],
+                    "reason": "lower part of the workshop door and its threshold step (the door leaf above is the shed_door hotspot)" }
+  },
+  "state_patches": [
+    { "texture": "variants_natural/S05_groceries_on_tray.webp", "pos": [200, 528], "after": ["G04"], "until": [],
+      "reason": "G04 leaves the grocery bag on the table (art/tools/natural_patches.py)" },
+    { "texture": "variants_natural/S05_shed_unlocked.webp", "pos": [832, 522], "after": ["G06"], "until": [],
+      "reason": "G06 unlocks the workshop: padlock and hasp covered by planks cloned from the same door (art/tools/natural_patches.py)" }
+  ]
+}

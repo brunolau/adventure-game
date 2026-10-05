@@ -14,6 +14,12 @@ Existing translations (every column after "sk") are preserved for keys that
 still exist; keys whose Slovak text changed are listed so the translation can
 be reviewed.
 
+Accepted Slovak rewrites (ISSUES.md TEXT-01) live in
+src/game/localization/overrides/sk_overrides.csv (keys,game_json,sk,note): the
+generated sk text of such a key is the override's sk while game.json still has
+the override's game_json text. A stale override (game.json changed) keeps the
+game.json text and fails the run until the rewrite is reviewed.
+
 Usage:
     python tools/extract_strings.py [--game PATH] [--dialogues PATH] [--out-dir PATH]
                                     [--dry-run] [--strict] [--verbose]
@@ -162,6 +168,7 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="report only, do not write tables")
     parser.add_argument("--strict", action="store_true", help="also fail on mismatches and content warnings")
     parser.add_argument("--verbose", action="store_true", help="list every finding")
+    parser.add_argument("--overrides", type=Path, default=tk.SK_OVERRIDES, help="accepted sk rewrites (TEXT-01)")
     args = parser.parse_args()
 
     try:
@@ -175,6 +182,9 @@ def main() -> int:
     entries, conflicts, same_text = deduplicate(all_entries)
     audit_problems = tk.audit_fields(game, all_entries)
     dialogue_report = cross_check_dialogues(entries, dialogue_rows)
+    overrides, override_problems = tk.load_sk_overrides(args.overrides)
+    entries, overridden, stale = tk.apply_sk_overrides(entries, overrides)
+    override_problems += stale
     id_hits = find_internal_ids(entries, game)
 
     tables = {table: [e for e in entries if e.table == table] for table in tk.GENERATED_TABLES}
@@ -228,6 +238,8 @@ def main() -> int:
         fmt = (lambda m: f"{m[0]}: game.json {m[1]!r} / csv {m[2]!r}") if "mismatch" in name else str
         print_list(f"  {name}", items, fmt, args.verbose)
     print()
+    print(f"sk overrides applied (TEXT-01, {display_path(args.overrides)}): {len(overridden)}")
+    print_list("sk override problems", override_problems, str, args.verbose)
     print_list("content warning: internal ids inside player-visible texts", id_hits,
                lambda h: f"{h[0]} {h[1]}: {h[2][:90]!r}", args.verbose)
     if id_hits:
@@ -241,7 +253,7 @@ def main() -> int:
     mismatches = sum(len(dialogue_report.get(n, [])) for n in
                      ("text_mismatches", "speaker_mismatches", "only_in_dialogues_csv",
                       "missing_from_dialogues_csv", "duplicate_line_ids_in_csv"))
-    failed = bool(conflicts or audit_problems)
+    failed = bool(conflicts or audit_problems or override_problems)
     if args.strict:
         failed = failed or bool(mismatches or id_hits)
     print()

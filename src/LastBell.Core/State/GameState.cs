@@ -101,6 +101,12 @@ public sealed record GameState
     /// <summary>Pinned side quest id, or null.</summary>
     public string? PinnedSideQuest { get; init; }
 
+    /// <summary>
+    /// Action id of the open puzzle modal while <see cref="Mode"/> is <see cref="GameMode.Puzzle"/>, else null.
+    /// Saved as the optional field <c>open_puzzle</c> so a load can reopen the same modal (ISSUES GAME-02).
+    /// </summary>
+    public string? OpenPuzzleAction { get; init; }
+
     /// <summary>True if the action id is in <see cref="Done"/>.</summary>
     public bool IsDone(string actionId) => (doneSet ??= done.ToImmutableHashSet(StringComparer.Ordinal)).Contains(actionId);
 
@@ -128,7 +134,8 @@ public sealed record GameState
                SideRewards.SequenceEqual(other.SideRewards) && HotspotLabels == other.HotspotLabels &&
                ActiveLineId == other.ActiveLineId && PlaybackQueue.SequenceEqual(other.PlaybackQueue) &&
                RoomEntryDoneCount == other.RoomEntryDoneCount && HintLevels.SequenceEqual(other.HintLevels) &&
-               PinnedMainQuest == other.PinnedMainQuest && PinnedSideQuest == other.PinnedSideQuest;
+               PinnedMainQuest == other.PinnedMainQuest && PinnedSideQuest == other.PinnedSideQuest &&
+               OpenPuzzleAction == other.OpenPuzzleAction;
     }
 
     /// <inheritdoc />

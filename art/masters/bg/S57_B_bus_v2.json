@@ -1,0 +1,18 @@
+{
+  "room": "S57",
+  "option": "B",
+  "version": 2,
+  "kind": "retouch",
+  "from_version": 1,
+  "usd": 0.0,
+  "made": "2026-10-05T06:52:41",
+  "what": "Free retouch of S57_B_bus_v1: the model had removed the street clock, so the clock_frame anchor (1560,320) hit the bus. The winter clock (brass frame with a snow cap, dark green column, base) of S57_A_tram_v1 - same position, both edits of S11_v3 - was pasted back with a traced mask (frame circle r 57.3 game px at (1560,320), snow cap, column by colour G>R in x 1526-1596, lower column, collar and base drawn geometrically; 1.2 px soft edge), and its cast shadow (dial ellipse x 1058-1205, y 785-850 and the column's line to the base, as in S11/S57 A) was multiplied onto our platform with the colour ratio measured in A (0.66, 0.66, 0.84).",
+  "image_urls": [
+    "art/masters/bg/S57_B_bus_v1.png",
+    "art/masters/bg/S57_A_tram_v1.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ]
+}

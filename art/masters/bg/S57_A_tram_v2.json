@@ -1,0 +1,51 @@
+{
+  "room": "S57",
+  "option": "A",
+  "version": 2,
+  "kind": "multi-box fix",
+  "from_version": 1,
+  "boxes_game_px": [
+    [
+      1150,
+      0,
+      1920,
+      545,
+      48
+    ],
+    [
+      395,
+      120,
+      665,
+      300,
+      40
+    ],
+    [
+      1290,
+      785,
+      1920,
+      1080,
+      48
+    ]
+  ],
+  "clock": "re-pasted from the input with the traced clock mask (never taken from the model)",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 1982621,
+  "usd": 0.15,
+  "scope": "bg/s57_options/",
+  "spend_log_asset": "bg/s57_options/S57_A_tram_v2_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (a stop on the median of a housing-estate street in Bratislava on a December morning in 1982). Make exactly these local changes and change nothing else: 1. The tram on the right: replace this boxy 1990s tram with its angular front by the older Tatra T3 tram of image 2: a rounded, bulging front with one big curved windscreen and rounded roof ends, a cream band above the windscreen, a cream window band, a red lower body with two round headlamps low on the front and a dark red bumper strip, a small pantograph on the roof. Same place, same size and length, front facing left on the far track with the front end at about 62 % from the left, empty and dark inside. The line-number box above the windscreen is an empty black box; no destination text, no fleet number, no coat of arms (leave out what image 2 shows). 2. The paper timetable inside the shelter: move it to the left so that it hangs on the shelter's back wall between 22 % and 28 % from the left and between 14 % and 23 % from the top (in the glass panel next to the shelter's left end); where it hangs now there is only the empty wired-glass wall. 3. The summer leaf shadows (dappled patches of shade) on our platform at the bottom right are wrong for bare December trees: remove them; those slabs lie in the same plain low winter sun as the rest of the platform, at most two or three thin bare-branch shadows. Keep the long shadow of the street clock. Keep everything else - the camera, the composition, every other object, all positions, sizes, colours and the light - exactly as in image 1, in particular the old street clock on its column on the right. No people, no animals, no logos, no other text, no frames. Image 2 is a real 1993 photo of the T3 tram in Bratislava: a reference for the tram only; do not copy its camera, street, trees or lettering. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S57_A_tram_v1.png",
+    "art/source/rooms/S57/period-tram-t3sucs-winter_felix-o-1993.jpg"
+  ],
+  "raw_model_output": "art/masters/bg/_bg_s57_options_S57_A_tram_v2_fix_raw.png",
+  "made": "2026-10-05T06:54:36",
+  "output_size": [
+    2752,
+    1536
+  ]
+}

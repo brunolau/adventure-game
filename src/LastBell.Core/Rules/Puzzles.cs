@@ -52,7 +52,7 @@ public static class Puzzles
         var drafts = state.PuzzleDrafts.ContainsKey(puzzle.Id)
             ? state.PuzzleDrafts
             : state.PuzzleDrafts.SetItem(puzzle.Id, JsonDeep.ToCanonicalText(puzzle.Initial));
-        return state with { Mode = GameMode.Puzzle, PuzzleDrafts = drafts };
+        return state with { Mode = GameMode.Puzzle, PuzzleDrafts = drafts, OpenPuzzleAction = action.Id };
     }
 
     /// <summary>The current draft (or the initial value when no draft exists). A fresh copy every call.</summary>
@@ -75,7 +75,20 @@ public static class Puzzles
     }
 
     /// <summary>Closes the modal without solving it; the draft is kept.</summary>
-    public static GameState Close(GameState state) => state.Mode == GameMode.Puzzle ? state with { Mode = GameMode.World } : state;
+    public static GameState Close(GameState state) =>
+        state.Mode == GameMode.Puzzle ? state with { Mode = GameMode.World, OpenPuzzleAction = null }
+        : state.OpenPuzzleAction is null ? state : state with { OpenPuzzleAction = null };
+
+    /// <summary>
+    /// The puzzle action whose modal a loaded state should reopen: <see cref="GameState.OpenPuzzleAction"/>
+    /// when the state is in puzzle mode and that action is still a valid puzzle action, else null.
+    /// </summary>
+    public static ActionDef? OpenAction(GameContent content, GameState state)
+    {
+        if (state.Mode != GameMode.Puzzle || state.OpenPuzzleAction is not { } id) return null;
+        var action = content.FindAction(id);
+        return action?.Puzzle is not null && GameRules.ValidAction(content, state, action) ? action : null;
+    }
 
     /// <summary>
     /// Confirms an answer. Correct: the action is committed atomically (lines follow). Wrong: only the
@@ -91,7 +104,7 @@ public static class Puzzles
         }
         var committed = GameRules.TryCommitAction(content, state, actionId, answer);
         return committed.Success
-            ? new PuzzleSubmitResult(true, committed.State, TextKeys.SuccessOf(puzzle))
+            ? new PuzzleSubmitResult(true, committed.State with { OpenPuzzleAction = null }, TextKeys.SuccessOf(puzzle))
             : new PuzzleSubmitResult(false, state, TextKeys.WrongOf(puzzle));
     }
 

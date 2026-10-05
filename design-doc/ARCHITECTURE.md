@@ -73,11 +73,14 @@ Key scheme (stable, derived from ids; spaces inside ids are kept as-is):
 | quest title / goal / reward / hint n | `quest.<id>.title` / `.goal` / `.reward` / `.hint.<n>` (n from 1) |
 | puzzle title / clue / wrong / success / confirm label | `puzzle.<id>.title` / `.clue` / `.wrong` / `.success` / `.confirm` |
 | era card / date | `era.<year>.card` / `era.<year>.date` |
+| map region (a `rooms[].district`, kept verbatim) | `region.<district>.name` (ui.csv) |
 | epilogue shot caption / line | `epilogue.<n>.shot` / `epilogue.<n>.line` (n from 1) |
 | UI | `ui.<area>.<name>` (e.g. `ui.menu.continue`) |
 
 Core exposes these via a static `TextKeys` helper so both sides build identical keys. `tools/extract_strings.py`
 generates the tables from `game.json` + `dialogues.csv` and reports any visible string without a key.
+Accepted Slovak rewrites of game.json texts (ISSUES TEXT-01) live in `src/game/localization/overrides/sk_overrides.csv`
+and are applied by `extract_strings.py` while game.json still has the replaced text; `check_strings.py` verifies them.
 
 ## Language of code
 

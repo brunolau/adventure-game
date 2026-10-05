@@ -49,7 +49,7 @@ every other key from the scene, and the backdrop swallows clicks (AT22).
 - `assets/ui/puzzle_glyphs.json` — presentation-only shape pictures for puzzle option values.
 - Both are non-resource files: the export filter must include `assets/ui/*.json` (like `data/*.json`).
 - `default_bus_layout.tres` (project root) defines the Music / Ambience / SFX / Voice buses so the
-  world's MusicPlayer finds "Music" at startup.
+  world's AudioService finds "Music" at startup.
 
 ## QA screenshots (`--ui` steps, after the harness flags)
 

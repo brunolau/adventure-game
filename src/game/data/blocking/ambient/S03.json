@@ -1,0 +1,163 @@
+{
+ "room": "S03",
+ "notes": "Natural re-blocking ambient (bg_natural/S03.webp, docs/reblock/README.md): leaves falling from the right and left park trees onto the forecourt, pigeons pecking on the forecourt right of the fireplace (fly off when Adam comes close), birds crossing the sky. No sway layers yet: the template ones are cut from bg/S03.webp (re-cut with art/tools/ambient_cut.py once approved).",
+ "layers": [
+  {
+   "id": "leaves_park",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_01.webp",
+    "common/leaf_04.webp",
+    "common/leaf_06.webp",
+    "common/leaf_07.webp",
+    "common/leaf_09.webp",
+    "common/leaf_10.webp",
+    "common/leaf_13.webp",
+    "common/leaf_03.webp",
+    "common/leaf_15.webp",
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    1640,
+    110,
+    280,
+    160
+   ],
+   "rate": 0.55,
+   "size": [
+    10,
+    16
+   ],
+   "speed_y": [
+    30,
+    55
+   ],
+   "land_y": [
+    640,
+    730
+   ],
+   "rest_s": [
+    4,
+    8
+   ]
+  },
+  {
+   "id": "leaves_left",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    0,
+    220,
+    260,
+    120
+   ],
+   "rate": 0.12,
+   "size": [
+    12,
+    18
+   ],
+   "speed_y": [
+    40,
+    60
+   ],
+   "speed_x": [
+    15,
+    35
+   ],
+   "land_y": [
+    600,
+    700
+   ],
+   "rest_s": [
+    3,
+    6
+   ]
+  },
+  {
+   "id": "pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     1460,
+     705
+    ],
+    [
+     1820,
+     735
+    ]
+   ],
+   "scale": 0.16,
+   "flee_radius": 330,
+   "return_s": [
+    12,
+    24
+   ],
+   "exit": [
+    [
+     2040,
+     40
+    ],
+    [
+     1500,
+     -120
+    ]
+   ]
+  },
+  {
+   "id": "birds_sky",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 11,
+   "path": [
+    [
+     1180,
+     60
+    ],
+    [
+     1550,
+     20
+    ],
+    [
+     2000,
+     45
+    ]
+   ],
+   "speed_px_s": 240,
+   "scale": 0.1,
+   "flock": 2,
+   "flock_spread": [
+    50,
+    20
+   ],
+   "bob_px": 4,
+   "direction": "random",
+   "every_s": [
+    25,
+    50
+   ],
+   "start_s": [
+    6,
+    14
+   ]
+  }
+ ]
+}

@@ -402,6 +402,7 @@ public partial class DebugHarness
             await Prepare(before2);
             await TravelToReal(room);
             int causalBefore = CurrentRoom.View.CausalEffects.Count(c => c.Effect.After == trigger);
+            string? janaBefore = room == "S15" ? NpcVariant("S15.JANA95") : null;
             var quests = Quests.ActiveSideQuest(content, game.State)?.Id;
             var s = game.State;
             var all = content.Quests.First(q => q.Actions.Contains(trigger)).Actions.ToList();
@@ -414,6 +415,18 @@ public partial class DebugHarness
             int causalAfter = CurrentRoom.View.CausalEffects.Count(c => c.Effect.After == trigger && !c.DeferredUntilReentry);
             Check($"AT21_{room}_causal_effect_after_{trigger}", causalBefore == 0 && causalAfter == 1 && (CurrentRoom.HasBackgroundArt || MarkerCount() > 0),
                   $"before={causalBefore} after={causalAfter} markers={MarkerCount()} active_side_before={quests ?? "-"}");
+            if (room == "S15")
+            {
+                // Jana's Q9C prop variants (BF_JANA; ISSUES ART-AGE-04): data/ambient/actors.json variants_after.
+                string? janaAfter = NpcVariant("S15.JANA95");
+                var rules20 = LastBell.Game.Living.Actors.ActorStaging.VariantRulesFor("JANA20");
+                string? jana20 = LastBell.Game.Living.Actors.ActorStaging.ResolveVariant("laptop", rules20, game.State.IsDone);
+                string? jana20Screen = LastBell.Game.Living.Actors.ActorStaging.ResolveVariant("screen", rules20, game.State.IsDone);
+                bool sheets = LastBell.Game.Living.Actors.ActorAnimationSet.Load("JANA20", jana20) is not null &&
+                              LastBell.Game.Living.Actors.ActorAnimationSet.Load("JANA35", "q9c") is not null;
+                Check("AT21_S15_jana_prop_variant_after_Q9C", janaBefore is null && janaAfter == "q9c" && jana20 == "laptop_q9c" && jana20Screen == "screen_q9c" && sheets,
+                      $"JANA95 before={janaBefore ?? "default"} after={janaAfter ?? "default"} JANA20={jana20}/{jana20Screen} sheets={sheets}");
+            }
         }
 
         // ---------------------------------------------------------------- AT24 (lines): the S06 photo between C04 and F17
@@ -469,6 +482,12 @@ public partial class DebugHarness
 
         Log($"acceptance m2: {acceptanceFailures - failuresBefore} failure(s)");
     }
+
+    /// <summary>Sprite variant of an NPC in the current room ("-" when it has no sprite visual).</summary>
+    private static string? NpcVariant(string hotspotId) =>
+        CurrentRoom.Npcs.TryGetValue(hotspotId, out var actor)
+            ? (actor.Visual as LastBell.Game.Living.Actors.SpriteActorVisual)?.Variant ?? (actor.Visual is LastBell.Game.Living.Actors.SpriteActorVisual ? null : "-")
+            : "-";
 
     private static int MarkerCount() => CurrentRoom.Layer("prop_state_variants")?.GetChildCount() ?? 0;
 

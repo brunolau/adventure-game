@@ -46,6 +46,13 @@ public static class PresentationSettings
     /// </summary>
     public static bool DevNotes { get; set; }
 
+    /// <summary>
+    /// Natural re-blocking (World/RoomBlocking.cs, data/blocking/&lt;room&gt;.json): true / false forces it,
+    /// null (default) follows the project setting <c>last_bell/presentation/blocking</c> ("template" unless
+    /// approved). The QA flag <c>--blocking natural|template</c> sets it. Takes effect on the next room build.
+    /// </summary>
+    public static bool? NaturalBlocking { get; set; }
+
     /// <summary>Room fade duration in seconds (each direction).</summary>
     public static float RoomFadeSeconds { get; set; } = 0.35f;
 

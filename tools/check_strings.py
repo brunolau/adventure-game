@@ -9,7 +9,10 @@ Checks (errors make the exit code 1):
   * every "sk" text is non-empty
   * placeholders such as {item} are identical in "sk" and a filled-in "en"
   * every key the scheme derives from game.json (tools/text_keys.py) exists in
-    its table with the current game.json text, and no stale keys remain
+    its table with the current game.json text (or with its accepted rewrite from
+    localization/overrides/sk_overrides.csv while game.json still has the text
+    the rewrite replaces, ISSUES.md TEXT-01), and no stale keys remain
+  * no accepted rewrite contains an internal id (room, hotspot, item, action ...)
   * ui.csv contains the era cards for every era, a region.<district>.name key
     for every rooms[].district (map regions), the journal tabs from
     journal_contract (same texts) and every key in REQUIRED_UI_KEYS; other ui
@@ -115,9 +118,21 @@ def load_table(path: Path, findings: Findings) -> dict[str, list[str]] | None:
     return table
 
 
-def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: Findings) -> None:
+def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: Findings,
+                 overrides_path: Path = tk.SK_OVERRIDES) -> None:
+    overrides, problems = tk.load_sk_overrides(overrides_path)
+    effective, applied, stale = tk.apply_sk_overrides(tk.iter_text_entries(game), overrides)
+    for problem in problems + stale:
+        findings.error(problem)
+    if applied:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        from extract_strings import internal_id_pattern  # noqa: E402
+        pattern = internal_id_pattern(game)
+        for entry in effective:
+            if entry.key in applied and pattern.search(entry.text):
+                findings.error(f"sk override {entry.key!r} still contains an internal id: {pattern.findall(entry.text)}")
     entries: dict[str, tk.TextEntry] = {}
-    for entry in tk.iter_text_entries(game):
+    for entry in effective:
         first = entries.setdefault(entry.key, entry)
         if first.text != entry.text:
             findings.error(f"scheme: key {entry.key!r} is produced twice with different texts "
@@ -144,7 +159,7 @@ def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: 
             (wrong_table if owner else missing).append(
                 f"{key} (expected in {tk.TABLE_FILE_NAMES[entry.table]}{', found in ' + owner if owner else ''})")
         elif table[key][0] != entry.text:
-            stale_text.append(f"{key}: table {table[key][0][:60]!r} vs game.json {entry.text[:60]!r}")
+            stale_text.append(f"{key}: table {table[key][0][:60]!r} vs expected {entry.text[:60]!r}")
     for label, items in (("missing scheme key", missing), ("key in the wrong table", wrong_table),
                          ("sk text differs from game.json", stale_text)):
         for item in items:
@@ -216,6 +231,7 @@ def main() -> int:
     parser.add_argument("--game", type=Path, default=tk.CANONICAL_GAME_JSON)
     parser.add_argument("--dir", type=Path, default=tk.LOCALIZATION_DIR)
     parser.add_argument("--verbose", action="store_true")
+    parser.add_argument("--overrides", type=Path, default=tk.SK_OVERRIDES)
     args = parser.parse_args()
 
     findings = Findings()
@@ -231,7 +247,7 @@ def main() -> int:
         table = load_table(args.dir / file_name, findings)
         if table is not None:
             tables[table_name] = table
-    check_scheme(game, tables, findings)
+    check_scheme(game, tables, findings, args.overrides)
     if tk.TABLE_UI in tables:
         check_ui(game, tables[tk.TABLE_UI], findings)
 

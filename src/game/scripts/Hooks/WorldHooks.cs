@@ -31,7 +31,10 @@ public partial class AmbientHost : Node2D
     public Node2D Actors { get; internal set; } = null!;
 
     /// <summary>Path of the room's ambient data file (may not exist).</summary>
-    public string DataPath => $"res://data/ambient/{RoomId}.json";
+    public string DataPath => DataPathOverride ?? $"res://data/ambient/{RoomId}.json";
+
+    /// <summary>Ambient data path set by a natural blocking (World/RoomBlocking.cs); null = the room's default file.</summary>
+    public string? DataPathOverride { get; internal set; }
 }
 
 /// <summary>

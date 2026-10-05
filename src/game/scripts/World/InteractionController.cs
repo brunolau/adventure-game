@@ -199,7 +199,7 @@ public partial class InteractionController : Node
         {
             pending = null;
             hero.Stop();
-            DialoguePresenter.Instance?.ShowBark(new LastBell.Core.Text.TextRef("ui.system.path_blocked", LastBell.Core.Text.UiText.PathBlocked.Fallback), GameRuntime.HeroId);
+            DialoguePresenter.Instance?.ShowBark(LastBell.Core.Text.UiText.PathBlocked, GameRuntime.HeroId); // ui.system.path_blocked (GAME-03)
             return;
         }
         hero.WalkPath(path, arrived);

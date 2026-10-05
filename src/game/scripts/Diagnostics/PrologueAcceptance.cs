@@ -202,8 +202,14 @@ public partial class DebugHarness
         await Settle();
         game.Load("m1_accept_puzzle");
         await Settle();
-        Check("load_saved_in_puzzle_resumes_in_world", opened && game.State.Mode == GameMode.World && game.State.Room == "S10" && !game.State.IsDone("G11"),
-              $"opened={opened} mode={game.State.Mode}");
+        // The save carries open_puzzle, so the load reopens the same modal (GAME-02; before: resumed in the world).
+        bool modalShown = LastBell.Game.UI.UiRoot.Instance is not { } uiRoot || uiRoot.PuzzleView.Visible;
+        Check("load_saved_in_puzzle_reopens_the_modal", opened && game.State.Mode == GameMode.Puzzle && game.OpenPuzzleActionId == "G11" && modalShown &&
+              game.State.Room == "S10" && !game.State.IsDone("G11"),
+              $"opened={opened} mode={game.State.Mode} open_puzzle={game.OpenPuzzleActionId ?? "-"} modal={modalShown}");
+        await KeyReal(Godot.Key.Escape); // close it again: the next check opens it by a click
+        if (game.State.Mode == GameMode.Puzzle) game.ClosePuzzle();
+        await Settle();
 
         // ---------------------------------------------------------------- wrong answer, then the right one: commits once
         await RawMouse(CenterOf("S10.panel"), MouseButton.Left);

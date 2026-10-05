@@ -201,7 +201,8 @@ public static class GameRules
             if (firstVisit) lines.AddRange(content.GetRoom(transition.To).FirstEntry.Select(l => l.LineId ?? "").Where(id => id.Length > 0));
         }
 
-        return Playback.Start(content, next, lines);
+        // A committed puzzle action closes its modal (GAME-02: no stale open_puzzle after the commit).
+        return Playback.Start(content, next with { OpenPuzzleAction = null }, lines);
     }
 
     /// <summary>Non-throwing variant of <see cref="CommitAction"/> (e.g. for double-click spam).</summary>
@@ -296,6 +297,19 @@ public static class GameRules
         if (state.Mode == GameMode.World) return state with { Mode = GameMode.Pause };
         return CloseOverlay(state);
     }
+
+    /// <summary>
+    /// The state a loaded save resumes in: pause, map and journal close to the scene (a save taken from an
+    /// overlay never reopens it, ISSUES UI-05); puzzle mode keeps its modal only when the saved
+    /// <c>open_puzzle</c> action is still valid (<see cref="Puzzles.OpenAction"/>, ISSUES GAME-02), otherwise the
+    /// modal closes and its draft is kept. Every other mode is unchanged.
+    /// </summary>
+    public static GameState ResumeAfterLoad(GameContent content, GameState state) => state.Mode switch
+    {
+        GameMode.Pause or GameMode.Map or GameMode.Journal => state with { Mode = GameMode.World },
+        GameMode.Puzzle when Puzzles.OpenAction(content, state) is null => Puzzles.Close(state),
+        _ => state,
+    };
 
     /// <summary>All actions that are valid right now (debug panel; never shown to players).</summary>
     public static IReadOnlyList<ActionDef> AvailableActions(GameContent content, GameState state) =>

@@ -146,6 +146,9 @@ S01 is accepted it can serve as one for interiors.
 - [ ] Every prop inside its rect (or within a <= 40 px nudge) and recognisable at a glance in its crop.
 - [ ] Walk band: open, continuous floor; no kerb, step, edge, pole, furniture, cable or rug in it; exits open.
 - [ ] NPC zones: plain background, no person, figure, silhouette or coat that reads as one.
+- [ ] NPC feet: an NPC stands with its feet on the rect bottom (y 770, 20 px above the walk band, ISSUES.md GAME-04),
+      so the floor must reach up behind every NPC zone: interiors put the wall-floor line at y <= 760 there (not ~780
+      as in S01, which has no NPC); exteriors keep the pavement up to y ~740. Otherwise store `npc_feet` (<= 40 px).
 - [ ] No people (paint them out), no animals or cars unless the brief asks; no legible real brands, logos, house
       numbers, names on bells or mailboxes; paper and screens illegible.
 - [ ] No guide artefacts (boxes, outlines, grid, green band, labels) and no flat sketch blocks left.

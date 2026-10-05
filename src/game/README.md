@@ -39,7 +39,7 @@ scripts/Runtime/      GameRuntime (autoload "Game"), TextService, PresentationSe
 scripts/World/        WorldStage, Room, WalkArea, Actor, IActorVisual, PlaceholderActorVisual,
                       InteractionController, HotspotLabelLayer, DevBlockout, ArtOverrides
 scripts/PlayerInput/  InputRouter, LogicalCommand, InputActions, WorldInput
-scripts/Presentation/ DialoguePresenter, DefaultSubtitleView, HoverPresenter, MusicPlayer,
+scripts/Presentation/ DialoguePresenter, DefaultSubtitleView, HoverPresenter,
                       Placeholders/ (temporary UI until the UI agent claims each panel)
 scripts/Hooks/        UiBus + UI interfaces, WorldHooks, AmbientHost
 scripts/Diagnostics/  DebugHarness, WalkthroughReplayer
@@ -73,7 +73,7 @@ player-visible text only comes from the CSV tables through `TextService`.
   PlaceholderLayer (CanvasLayer 30)/PlaceholderUi   hover, inventory strip, puzzle, pause/journal/map, portal
   HudHost (CanvasLayer 40)      UI agent's res://scenes/ui/UiRoot.tscn is instanced here
   LivingHost                    living agent's res://scripts/Living/LivingRoot.cs (Node) is instanced here
-  AudioService                  scripts/Audio: music crossfades + cues, room ambience, sfx, voice bus (replaces MusicPlayer)
+  AudioService                  scripts/Audio: music crossfades + cues, room ambience, sfx, voice bus (replaced the removed MusicPlayer, ISSUES AUDIO-01)
   DebugHarness                  only with user args after "--"
 ```
 
@@ -165,6 +165,9 @@ two-finger tap = Space; the GUI gets emulated taps first, gestures fire on relea
   the side he comes from if walkable) and turns side-on to the person (ISSUES LIVING-02). Props and
   exits use the game.json interaction point. Presentation only; arrival still re-resolves through Core.
 - Window busts (`IActorVisual.CastsShadow == false`) get no feet shadow (ISSUES LIVING-01).
+- NPC labels (Space, Tab focus) sit 18 px above the drawn figure (`Room.PlaceNpcLabels`, `Actor.HeadPosition`), not at
+  the template `label_anchor`; an art_overrides `label_anchor` still wins (ISSUES INT-07).
+- NPC sprite variants can switch after an action: `data/ambient/actors.json` `variants_after` (Jana after Q9C, ART-AGE-04).
 - State patches (`art_overrides.json` `rooms.<id>.state_patches`: texture, top-left `pos`, `after` /
   `until` action ids) are drawn above the background in `prop_state_variants`, immediately, for props
   the hero changed himself (S01 bag taken, S05 groceries on the tray, S05 shed unlocked; ISSUES ART-VAR-01).
@@ -195,6 +198,7 @@ two-finger tap = Space; the GUI gets emulated taps first, gestures fire on relea
 | `--screenshot <path.png>` | after everything is settled (+`--wait`, default 400 ms) save the viewport and quit; needs a window |
 | `--frames <k>` `--interval <ms>` | k screenshots `<name>_00.png …` (or `{n}` in the path) every interval ms |
 | `--labels` | turn on the Space labels |
+| `--blocking natural\|template` | natural re-blocking proposal: rooms with `data/blocking/<room>.json` use its presentation geometry and `assets/bg_natural/<room>.webp` (`World/RoomBlocking.cs`; project setting `last_bell/presentation/blocking`, default `template`; validator `tools/check_blocking.py`; docs/reblock/README.md) |
 | `--dev` | dev overlay over painted art; also `PresentationSettings.DevNotes` (stage directions on cutscene cards without a painting, the placeholder puzzle's solve button) — off for players, also in debug builds such as play.bat |
 | `--lines` | print every shown line (`HARNESS line <id> [speaker] name: text`) |
 | `--fast-text` | instant text, short holds, no cutscene minimum (QA speed) |
@@ -227,6 +231,7 @@ Examples:
 - The UI agent's screens (scripts/UI) and the living-world sprites (scripts/Living) have replaced the
   placeholders; the placeholders stay as fallbacks.
 - Audio: see `scripts/Audio/README.md` (music, ambience, sfx; voice lines play from `assets/voice/<line_id>.ogg` once they exist). QA: `-- --audio-report`.
-- A save made while a puzzle modal is open resumes in the world (ISSUES GAME-02).
+- A save made while a puzzle modal is open reopens that modal on load (`open_puzzle`, ISSUES GAME-02); a save
+  made in pause / map / journal resumes in the scene (`GameRules.ResumeAfterLoad`, UI-05).
 - Space is not part of Godot's `ui_accept` (removed in `InputActions.EnsureDefaults`): Enter accepts in the GUI,
   Space stays the labels key and never presses a focused inventory slot or button (ISSUES INT-01).

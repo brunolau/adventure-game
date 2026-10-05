@@ -82,6 +82,9 @@ public partial class Room : Node2D
     /// <summary>Visual overrides of this room.</summary>
     public RoomOverride Overrides { get; private set; } = new();
 
+    /// <summary>Natural re-blocking applied to this room (null = game.json template geometry; see <see cref="RoomBlocking"/>).</summary>
+    public RoomBlocking? Blocking { get; private set; }
+
     /// <summary>The hero actor.</summary>
     public Actor Hero { get; private set; } = null!;
 
@@ -130,8 +133,9 @@ public partial class Room : Node2D
         Name = "Room_" + RoomId;
         View = view;
         Definition = content.GetRoom(RoomId);
-        Overrides = art.For(RoomId);
-        Walk = new WalkArea(view.WalkPolygon);
+        Blocking = RoomBlocking.For(RoomId);
+        Overrides = Blocking?.ToOverride() ?? art.For(RoomId);
+        Walk = new WalkArea(Blocking?.WalkPolygon ?? view.WalkPolygon);
         var band = Overrides.WalkBand ?? new Vector2(Walk.Top, Walk.Bottom);
         var scale = Overrides.ActorScale ?? art.DefaultActorScale;
         Perspective = new Perspective(band.X, band.Y, scale.X, scale.Y);
@@ -265,8 +269,9 @@ public partial class Room : Node2D
     private Node2D CreateBackground()
     {
         var root = new Node2D();
-        string path = "res://assets/" + View.BackgroundAsset;
-        if (!string.IsNullOrEmpty(View.BackgroundAsset) && ResourceLoader.Exists(path) && GD.Load<Texture2D>(path) is { } texture)
+        string asset = Blocking?.Background ?? View.BackgroundAsset;
+        string path = "res://assets/" + asset;
+        if (!string.IsNullOrEmpty(asset) && ResourceLoader.Exists(path) && GD.Load<Texture2D>(path) is { } texture)
         {
             HasBackgroundArt = true;
             root.AddChild(FitSprite(texture, "Art"));
@@ -291,6 +296,8 @@ public partial class Room : Node2D
     private void AddAmbientHost()
     {
         Ambient = new AmbientHost { Name = "AmbientHost", RoomId = View.RoomId, Era = View.Era, Room = this };
+        // A natural blocking has its own painting: the template's ambient layers are cut from the old one.
+        if (Blocking is not null) Ambient.DataPathOverride = Blocking.AmbientData ?? RoomBlocking.Folder + "ambient/" + RoomId + ".json";
         AddChild(Ambient);
     }
 
@@ -317,9 +324,11 @@ public partial class Room : Node2D
         if (arrivedFrom is not null)
         {
             var back = View.Exits.FirstOrDefault(e => e.To == arrivedFrom);
+            if (back is not null && Blocking?.Target(back.Id)?.InteractionPoint is { } natural) return Walk.Clamp(natural);
             if (back is not null && back.InteractionPoint.Count >= 2)
                 return Walk.Clamp(new Vector2(back.InteractionPoint[0], back.InteractionPoint[1]));
         }
+        if (Blocking?.Spawn is { } spawn) return Walk.Clamp(spawn);
         return Walk.Clamp(View.Spawn.Count >= 2 ? new Vector2(View.Spawn[0], View.Spawn[1]) : new Vector2(960, (Walk.Top + Walk.Bottom) / 2));
     }
 
@@ -333,8 +342,10 @@ public partial class Room : Node2D
             var o = Overrides.Targets.TryGetValue(h.Id, out var ov) ? ov : null;
             var rect = ToRect(h.Rect, o);
             var anchor = (o?.LabelAnchor ?? ToVec(h.LabelAnchor, rect.Position + new Vector2(rect.Size.X / 2, -10))) + (o?.LabelOffset ?? Vector2.Zero);
+            var point = ToVec(h.InteractionPoint, rect.GetCenter());
+            if (Blocking?.Target(h.Id) is { } b) (rect, point, anchor) = ApplyBlocking(b, rect, point, anchor);
             targets[h.Id] = new TargetInfo(h.Id, h.IsNpc ? TargetKind.Npc : TargetKind.Prop, h.Name, rect,
-                ToVec(h.InteractionPoint, rect.GetCenter()), anchor, h.IsAtmospheric, h.ValidForSelectedItem, true);
+                point, anchor, h.IsAtmospheric, h.ValidForSelectedItem, true);
         }
         foreach (var e in view.Exits)
         {
@@ -342,7 +353,14 @@ public partial class Room : Node2D
             var rect = ToRect(e.Rect, o);
             var defaultAnchor = new Vector2(Mathf.Clamp(rect.GetCenter().X, 80, CanvasSize.X - 80), rect.Position.Y - 12);
             var anchor = (o?.LabelAnchor ?? defaultAnchor) + (o?.LabelOffset ?? Vector2.Zero);
-            targets[e.Id] = new TargetInfo(e.Id, TargetKind.Exit, e.Label, rect, ToVec(e.InteractionPoint, rect.GetCenter()), anchor,
+            var point = ToVec(e.InteractionPoint, rect.GetCenter());
+            if (Blocking?.Target(e.Id) is { } b)
+            {
+                (rect, point, anchor) = ApplyBlocking(b, rect, point, anchor);
+                if (b.LabelAnchor is null && b.Rect is not null)
+                    anchor = new Vector2(Mathf.Clamp(rect.GetCenter().X, 80, CanvasSize.X - 80), rect.Position.Y - 12);
+            }
+            targets[e.Id] = new TargetInfo(e.Id, TargetKind.Exit, e.Label, rect, point, anchor,
                 false, false, e.Unlocked);
         }
         hitOrder.AddRange(view.Hotspots.Where(h => h.IsNpc).Select(h => h.Id));
@@ -350,6 +368,7 @@ public partial class Room : Node2D
         hitOrder.AddRange(view.Exits.Select(e => e.Id));
 
         SyncNpcs(view);
+        PlaceNpcLabels();
         SyncVariantLayers(view);
         blockout?.Setup(this, false);
         devOverlay?.Setup(this, true);
@@ -372,7 +391,9 @@ public partial class Room : Node2D
             var rect = targets[npc.Id].Rect;
             var feet = new Vector2(rect.Position.X + rect.Size.X / 2, rect.End.Y);
             if (Overrides.NpcFeet.TryGetValue(npc.Id, out var nudge)) feet += nudge;
-            var actor = new Actor();
+            var staging = Blocking is not null && Blocking.Npcs.TryGetValue(npc.Id, out var st) ? st : null;
+            if (staging?.Feet is { } stagedFeet) feet = stagedFeet;
+            var actor = new Actor { ScaleOverride = staging?.Scale };
             ActorsLayer.AddChild(actor);
             actor.Setup(new ActorContext(npc.CharacterId, false, RoomId, view.Era, npc.Id, rect), Perspective, feet);
             actor.FaceTowards(new Vector2(CanvasSize.X / 2, feet.Y));
@@ -428,6 +449,37 @@ public partial class Room : Node2D
         if (!IsInsideTree()) return;
         Hero.SetVisual(ActorVisualRegistry.Create(Hero.Context));
         foreach (var npc in npcs.Values) npc.SetVisual(ActorVisualRegistry.Create(npc.Context));
+        PlaceNpcLabels();
+        Labels?.QueueRedraw();
+    }
+
+    /// <summary>Gap in canvas px between the top of an NPC figure and the label's text baseline.</summary>
+    public const float NpcLabelGap = 18f;
+
+    /// <summary>
+    /// NPC labels sit just above the figure that is actually drawn (head, bust, seated figure, robot
+    /// pennant), not at the template <c>label_anchor</c> of game.json, which put every label across the
+    /// face of a standing NPC and far above the small ROBOT (ISSUES ART-2035-02, INT-07). An explicit
+    /// <c>label_anchor</c> in art_overrides.json still wins; <c>label_offset</c> is added as usual.
+    /// </summary>
+    private void PlaceNpcLabels()
+    {
+        foreach (var (id, actor) in npcs)
+        {
+            if (!targets.TryGetValue(id, out var target)) continue;
+            var o = Overrides.Targets.TryGetValue(id, out var ov) ? ov : null;
+            if (o?.LabelAnchor is not null) continue;
+            var head = actor.HeadPosition;
+            targets[id] = target with { LabelAnchor = new Vector2(head.X, head.Y - NpcLabelGap) + (o?.LabelOffset ?? Vector2.Zero) };
+        }
+    }
+
+    /// <summary>A natural blocking's geometry replaces the template's field by field; a new rect without its own label anchor keeps the default anchor above it.</summary>
+    private static (Rect2 Rect, Vector2 Point, Vector2 Anchor) ApplyBlocking(BlockingTarget b, Rect2 rect, Vector2 point, Vector2 anchor)
+    {
+        var r = b.Rect ?? rect;
+        var a = b.LabelAnchor ?? (b.Rect is not null ? r.Position + new Vector2(r.Size.X / 2, -10) : anchor);
+        return (r, b.InteractionPoint ?? point, a);
     }
 
     private static Rect2 ToRect(IReadOnlyList<int> r, TargetOverride? o)

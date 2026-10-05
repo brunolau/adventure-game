@@ -1,0 +1,105 @@
+{
+ "room": "S05",
+ "notes": "Natural re-blocking ambient (bg_natural/S05.webp, docs/reblock/README.md): vine leaves falling onto the pavement, a cat walking along the top rail of the picket fence, a shadow moving behind the lace curtain of the right window. No sway layers yet (the template vine/grass textures are cut from bg/S05.webp).",
+ "layers": [
+  {
+   "id": "vine_leaves",
+   "type": "particles",
+   "preset": "leaves",
+   "textures": [
+    "common/leaf_00.webp",
+    "common/leaf_02.webp",
+    "common/leaf_05.webp",
+    "common/leaf_08.webp",
+    "common/leaf_11.webp",
+    "common/leaf_12.webp",
+    "common/leaf_14.webp"
+   ],
+   "emit_rect": [
+    1000,
+    290,
+    350,
+    180
+   ],
+   "rate": 0.3,
+   "size": [
+    13,
+    19
+   ],
+   "land_y": [
+    705,
+    770
+   ],
+   "rest_s": [
+    3,
+    7
+   ]
+  },
+  {
+   "id": "cat_wall",
+   "type": "tween_path",
+   "sheet": "common/cat_walk_sheet",
+   "fps": 18,
+   "path": [
+    [
+     1660,
+     478
+    ],
+    [
+     970,
+     478
+    ]
+   ],
+   "speed_px_s": 68,
+   "scale": 0.22,
+   "faces": "right",
+   "fade_px": 50,
+   "every_s": [
+    40,
+    70
+   ],
+   "start_s": [
+    5,
+    10
+   ]
+  },
+  {
+   "id": "curtain_shadow",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [
+    70,
+    360
+   ],
+   "path": [
+    [
+     1395,
+     455
+    ],
+    [
+     1560,
+     455
+    ]
+   ],
+   "speed_px_s": 40,
+   "scale": 0.45,
+   "modulate": "#3a2c24",
+   "alpha": 0.28,
+   "direction": "random",
+   "every_s": [
+    18,
+    40
+   ],
+   "start_s": [
+    2,
+    6
+   ],
+   "clip": [
+    1397,
+    304,
+    156,
+    116
+   ]
+  }
+ ]
+}

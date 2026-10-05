@@ -35,6 +35,9 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
 
     private readonly ActorAnimationSet set;
     private readonly ActorPlacement? placement;
+
+    /// <summary>The actor.json / hero variant this visual draws (null = the default sheets).</summary>
+    public string? Variant => set.Variant;
     private readonly RandomNumberGenerator rng = new();
     private Sprite2D sprite = null!;
     private Sprite2D ghost = null!;

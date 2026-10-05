@@ -5,6 +5,8 @@ Reads the attribution tables of the reference photos in art/source/CREDITS.md an
 art/source/rooms/CREDITS_*.md (markdown tables; column names vary: "Commons file" or
 "Title", "Author", "Licence"/"License", "URL" or a markdown link) and adds the fonts and the
 engine. Every photo is listed once (deduplicated by URL, else by title + author).
+Audio (ISSUES.md AUDIO-06): the music generator and the CC0 sound sources (Kenney packs and the
+Freesound table) from art/source/AUDIO_CREDITS.md.
 
 The credits screen (src/game/scripts/UI/Menus/CreditsScreen.cs) shows sections in this order;
 section titles are ui.csv keys, entries are attribution data (names, titles, licences, URLs)
@@ -25,6 +27,8 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "src" / "game" / "assets" / "ui" / "credits.json"
 SOURCES = [ROOT / "art" / "source" / "CREDITS.md", *sorted((ROOT / "art" / "source" / "rooms").glob("CREDITS_*.md"))]
 LINK = re.compile(r"\[([^\]]+)\]\(([^)]+)\)")
+AUDIO_CREDITS = ROOT / "art" / "source" / "AUDIO_CREDITS.md"
+CC0 = "CC0 1.0"
 
 
 def clean(cell: str) -> str:
@@ -83,6 +87,35 @@ def entry_from(row: dict[str, str]) -> dict[str, str] | None:
     return {"title": clean(title), "author": author, "license": licence, "url": url}
 
 
+def audio_sections() -> list[dict]:
+    """Music generator and CC0 sound sources from art/source/AUDIO_CREDITS.md (empty when it is missing)."""
+    if not AUDIO_CREDITS.exists():
+        return []
+    text = AUDIO_CREDITS.read_text(encoding="utf-8")
+    music = []
+    if "Lyria" in text:
+        music.append({"title": "Lyria 3 Pro (fal-ai/lyria3/pro)", "author": "Google DeepMind, via fal.ai",
+                      "license": "", "url": "https://fal.ai/models/fal-ai/lyria3/pro"})
+    sounds = []
+    packs = re.search(r"Packs (.+?) by Kenney Vleugels \((https?://[^)\s]+)\)", text, re.DOTALL)
+    if packs:
+        names = ", ".join(re.findall(r"\*([^*]+)\*", packs.group(1)))
+        sounds.append({"title": names, "author": "Kenney Vleugels (Kenney.nl)", "license": CC0, "url": packs.group(2)})
+    freesound = []
+    for row in parse_tables(AUDIO_CREDITS):
+        if not {"id", "title", "author"} <= row.keys():
+            continue
+        link = LINK.search(row["id"])
+        freesound.append({"title": clean(row["title"]), "author": clean(row["author"]), "license": CC0,
+                          "url": link.group(2) if link else ""})
+    freesound.sort(key=lambda e: (e["author"].lower(), e["title"].lower()))
+    sounds += freesound
+    return [
+        {"id": "music", "title_key": "ui.credits.music", "entries": music},
+        {"id": "sounds", "title_key": "ui.credits.sounds", "entries": sounds},
+    ]
+
+
 def build() -> dict:
     photos: list[dict[str, str]] = []
     seen: set[str] = set()
@@ -111,9 +144,10 @@ def build() -> dict:
     ]
     return {
         "generated_by": "tools/build_credits.py",
-        "sources": [str(p.relative_to(ROOT)).replace("\\", "/") for p in SOURCES if p.exists()],
+        "sources": [str(p.relative_to(ROOT)).replace("\\", "/") for p in [*SOURCES, AUDIO_CREDITS] if p.exists()],
         "sections": [
             {"id": "photos", "title_key": "ui.credits.photo_sources", "entries": photos},
+            *audio_sections(),
             {"id": "fonts", "title_key": "ui.credits.fonts", "entries": fonts},
             {"id": "engine", "title_key": "ui.credits.engine", "entries": engine},
         ],

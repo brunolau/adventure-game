@@ -114,6 +114,12 @@ public static class TextKeys
     /// <summary><c>era.&lt;year&gt;.date</c>.</summary>
     public static string EraDate(int year) => $"era.{year}.date";
 
+    /// <summary>
+    /// <c>region.&lt;district&gt;.name</c>: map region caption of a <c>rooms[].district</c> (ISSUES TEXT-02 / UI-02;
+    /// hand-written in ui.csv, the district is kept verbatim like ids with spaces).
+    /// </summary>
+    public static string RegionName(string district) => $"region.{district}.name";
+
     /// <summary><c>epilogue.&lt;n&gt;.shot</c>, n from 1 (data order).</summary>
     public static string EpilogueShot(int n) => $"epilogue.{n}.shot";
 
@@ -213,6 +219,9 @@ public static class TextKeys
     /// <summary>Era title card (game.json has no card text; the fallback is the ISO date).</summary>
     public static TextRef CardOf(EraDef era) => new(EraCard(era.Year), era.Date);
 
+    /// <summary>Map region caption of a room's district (fallback: the district itself).</summary>
+    public static TextRef RegionOf(RoomDef room) => new(RegionName(room.District), room.District);
+
     /// <summary>Epilogue shot caption (index is 0-based in data).</summary>
     public static TextRef ShotOf(EpilogueDef entry, int index) => new(EpilogueShot(index + 1), entry.Shot);
 
@@ -223,18 +232,18 @@ public static class TextKeys
 /// <summary>System messages that Core itself produces (keys follow <c>ui.&lt;area&gt;.&lt;name&gt;</c>).</summary>
 public static class UiText
 {
-    /// <summary>Corrupt or unknown save import (handoff wording).</summary>
-    public static TextRef SaveCorrupt => new(TextKeys.Ui("save", "corrupt"), "Chybný súbor uloženia. Aktuálna hra zostala otvorená.");
+    /// <summary>Corrupt or unknown save import (handoff wording; ui.csv key required by tools/text_keys.py, ISSUES UI-01).</summary>
+    public static TextRef SaveCorrupt => new(TextKeys.Ui("save", "corrupted"), "Chybný súbor uloženia. Aktuálna hra zostala otvorená.");
 
     /// <summary>No path to the interaction point (a navmesh bug, never a puzzle).</summary>
-    public static TextRef PathBlocked => new(TextKeys.Ui("world", "path_blocked"), "Len o krok bokom, tadiaľto sa nedostanem.");
+    public static TextRef PathBlocked => new(TextKeys.Ui("system", "path_blocked"), "Len o krok bokom, tadiaľto sa nedostanem.");
 
     /// <summary>First-start help bubble 1.</summary>
-    public static TextRef HelpLeftClick => new(TextKeys.Ui("help", "left_click"), "Ľavým klikom vykonáš akciu.");
+    public static TextRef HelpLeftClick => new(TextKeys.Ui("tutorial", "left_click"), "Ľavým klikom vykonáš akciu.");
 
     /// <summary>First-start help bubble 2.</summary>
-    public static TextRef HelpRightClick => new(TextKeys.Ui("help", "right_click"), "Pravým prezrieš objekt; na voľnom mieste otvoríš inventár.");
+    public static TextRef HelpRightClick => new(TextKeys.Ui("tutorial", "right_click"), "Pravým prezrieš objekt; na voľnom mieste otvoríš inventár.");
 
     /// <summary>First-start help bubble 3.</summary>
-    public static TextRef HelpSpace => new(TextKeys.Ui("help", "space"), "Space ukáže všetky miesta, na ktoré môžeš kliknúť.");
+    public static TextRef HelpSpace => new(TextKeys.Ui("tutorial", "space"), "Space ukáže všetky miesta, na ktoré môžeš kliknúť.");
 }

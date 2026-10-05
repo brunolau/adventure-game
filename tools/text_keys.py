@@ -628,3 +628,78 @@ def read_table(path: Path) -> tuple[list[str], list[list[str]]]:
     if not table:
         raise ValueError(f"{path.name}: empty file")
     return table[0], table[1:]
+
+
+# --------------------------------------------------------------------------- Slovak text overrides
+
+# Accepted rewrites of game.json texts in the sk column (ISSUES.md TEXT-01 / M2QA-08): game.json stays
+# canonical and untouched; a row here replaces the generated sk text of one key while the game.json text
+# still equals the row's "game_json" column. If game.json changes that text, the override is stale and
+# both tools report it (review the rewrite). The folder carries a .gdignore, so Godot does not import it.
+SK_OVERRIDES = LOCALIZATION_DIR / "overrides" / "sk_overrides.csv"
+OVERRIDE_HEADER = ("keys", "game_json", "sk", "note")
+
+
+@dataclass(frozen=True)
+class SkOverride:
+    """One accepted Slovak rewrite of a generated table text."""
+
+    key: str
+    game_json: str  # the game.json text the rewrite replaces (must still match)
+    sk: str  # the text shown to players
+    note: str  # why (English)
+
+
+def load_sk_overrides(path: Path = SK_OVERRIDES) -> tuple[dict[str, SkOverride], list[str]]:
+    """Read the override table. Returns ({key: override}, problems); a missing file means no overrides."""
+    if not path.exists():
+        return {}, []
+    problems: list[str] = []
+    try:
+        header, rows = read_table(path)
+    except ValueError as error:
+        return {}, [str(error)]
+    if tuple(header) != OVERRIDE_HEADER:
+        return {}, [f"{path.name}: header must be exactly {','.join(OVERRIDE_HEADER)!r}, got {','.join(header)!r}"]
+    overrides: dict[str, SkOverride] = {}
+    for line_no, row in enumerate(rows, start=2):
+        if len(row) != len(OVERRIDE_HEADER):
+            problems.append(f"{path.name}:{line_no}: expected {len(OVERRIDE_HEADER)} fields, got {len(row)}")
+            continue
+        key, game_json, sk, note = row
+        if key in overrides:
+            problems.append(f"{path.name}:{line_no}: duplicate key {key!r}")
+            continue
+        if not sk.strip() or sk == game_json:
+            problems.append(f"{path.name}:{line_no}: {key!r}: the sk text must be non-empty and differ from game_json")
+        overrides[key] = SkOverride(key, game_json, sk, note)
+    return overrides, problems
+
+
+def apply_sk_overrides(entries: Iterable[TextEntry], overrides: dict[str, SkOverride]
+                       ) -> tuple[list[TextEntry], list[str], list[str]]:
+    """Entries with the accepted rewrites applied. Returns (entries, applied_keys, problems).
+
+    A problem is an override whose key the scheme does not produce or whose game_json column no longer
+    equals the game.json text (stale: the game.json text is kept until the override is reviewed).
+    """
+    from dataclasses import replace
+
+    result, applied, problems = [], [], []
+    produced = set()
+    for entry in entries:
+        produced.add(entry.key)
+        override = overrides.get(entry.key)
+        if override is None:
+            result.append(entry)
+        elif override.game_json != entry.text:
+            problems.append(f"stale sk override {entry.key!r}: game.json now says {entry.text[:60]!r}, "
+                            f"the override replaces {override.game_json[:60]!r}")
+            result.append(entry)
+        else:
+            result.append(replace(entry, text=override.sk))
+            applied.append(entry.key)
+    for key in overrides:
+        if key not in produced:
+            problems.append(f"sk override {key!r}: the key scheme does not produce this key")
+    return result, applied, problems

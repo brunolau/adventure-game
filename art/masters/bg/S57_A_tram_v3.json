@@ -1,0 +1,45 @@
+{
+  "room": "S57",
+  "option": "A2",
+  "version": 3,
+  "kind": "multi-box fix",
+  "from_version": 2,
+  "boxes_game_px": [
+    [
+      390,
+      125,
+      670,
+      300,
+      40
+    ]
+  ],
+  "clock": "re-pasted from the input with the traced clock mask (never taken from the model)",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 1982631,
+  "usd": 0.15,
+  "scope": "bg/s57_options/",
+  "spend_log_asset": "bg/s57_options/S57_A_tram_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (a stop on the median of a housing-estate street in Bratislava on a December morning in 1982). Make exactly these local changes and change nothing else: Inside the shelter its back wall has three wired-glass panels between the posts. The paper timetable in its grey metal frame now hangs on the MIDDLE panel. Take it away from there - the middle panel becomes plain empty wired glass like the right panel - and hang the same paper timetable, the same size, on the LEFT panel instead, centred in it: the left panel spans about 20.5-26.5 % from the left, the timetable between about 22 % and 26 % from the left and between 15.5 % and 24.5 % from the top. Keep everything else - the camera, the composition, every other object, all positions, sizes, colours and the light - exactly as in image 1, in particular the old street clock on its column on the right. No people, no animals, no logos, no other text, no frames. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S57_A_tram_v2.png"
+  ],
+  "raw_model_output": "art/masters/bg/_bg_s57_options_S57_A_tram_v3_fix_raw.png",
+  "made": "2026-10-05T06:58:49",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_options/S57_A_tram.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-05T07:01:37"
+  }
+}

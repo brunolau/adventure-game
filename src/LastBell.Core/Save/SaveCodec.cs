@@ -42,7 +42,7 @@ public static class SaveCodec
     {
         "schema_version", "room", "era", "inventory", "done", "visited", "selected_item", "mode", "puzzle_drafts",
         "journal_seen", "side_rewards", "hotspot_labels", "active_line_id", "playback_queue", "room_entry_done_count",
-        "hint_levels", "pinned_main_quest", "pinned_side_quest", "checksum",
+        "hint_levels", "pinned_main_quest", "pinned_side_quest", "open_puzzle", "checksum",
     };
 
     private static readonly JsonSerializerOptions WriteOptions = new() { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
@@ -186,6 +186,15 @@ public static class SaveCodec
         }
         else if (obj.ContainsKey("hint_levels") && obj["hint_levels"] is not null) throw new SaveValidationException("hint_levels is not an object");
 
+        // open_puzzle (optional, GAME-02): the puzzle action whose modal was open; only in puzzle mode.
+        string? openPuzzle = null;
+        if (obj["open_puzzle"] is not null)
+        {
+            openPuzzle = Str(obj, "open_puzzle") ?? throw new SaveValidationException("open_puzzle is not a string");
+            if (content.FindAction(openPuzzle)?.Puzzle is null) throw new SaveValidationException($"open_puzzle '{openPuzzle}' is not a puzzle action");
+            if (mode != GameMode.Puzzle) throw new SaveValidationException("open_puzzle outside puzzle mode");
+        }
+
         var pinnedMain = OptionalQuest(content, obj, "pinned_main_quest", main: true);
         var pinnedSide = OptionalQuest(content, obj, "pinned_side_quest", main: false);
         var labels = obj["hotspot_labels"] switch
@@ -218,6 +227,7 @@ public static class SaveCodec
             HintLevels = hints.ToImmutable(),
             PinnedMainQuest = pinnedMain,
             PinnedSideQuest = pinnedSide,
+            OpenPuzzleAction = openPuzzle,
         };
 
         if (verifyChecksum && obj["checksum"] is not null)
@@ -235,7 +245,7 @@ public static class SaveCodec
         foreach (var (k, v) in s.PuzzleDrafts) drafts[k] = JsonNode.Parse(v);
         var hints = new JsonObject();
         foreach (var (k, v) in s.HintLevels) hints[k] = v;
-        return new JsonObject
+        var payload = new JsonObject
         {
             ["schema_version"] = s.SchemaVersion,
             ["room"] = s.Room,
@@ -256,6 +266,9 @@ public static class SaveCodec
             ["pinned_main_quest"] = s.PinnedMainQuest,
             ["pinned_side_quest"] = s.PinnedSideQuest,
         };
+        // Written only while a puzzle modal is open, so saves without it keep their payload and checksum.
+        if (s.Mode == GameMode.Puzzle && s.OpenPuzzleAction is not null) payload["open_puzzle"] = s.OpenPuzzleAction;
+        return payload;
     }
 
     /// <summary>

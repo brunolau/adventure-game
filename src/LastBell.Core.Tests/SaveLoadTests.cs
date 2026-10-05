@@ -18,7 +18,7 @@ public sealed class SaveLoadTests
     {
         var ex = Assert.Throws<SaveValidationException>(() => SaveCodec.ValidateSave(C, save));
         Assert.Contains(reasonPart, ex.Reason);
-        Assert.Equal("ui.save.corrupt", ex.Text.Key);
+        Assert.Equal("ui.save.corrupted", ex.Text.Key);
         Assert.Equal("Chybný súbor uloženia. Aktuálna hra zostala otvorená.", ex.Text.Fallback);
     }
 
@@ -86,7 +86,7 @@ public sealed class SaveLoadTests
         var session = new GameSession(C, TestData.StateAfter("G05"));
         var before = session.State;
         Assert.False(session.TryLoad("{\"schema_version\":1}", out var error));
-        Assert.Equal("ui.save.corrupt", error.Key);
+        Assert.Equal("ui.save.corrupted", error.Key);
         Assert.Same(before, session.State);
         Assert.True(session.TryLoad(SaveCodec.Serialize(TestData.StateAfter("G11")), out _));
         Assert.Equal(TestData.StateAfter("G11"), session.State);
@@ -119,5 +119,83 @@ public sealed class SaveLoadTests
         Assert.True(loaded.HotspotLabels);
         Assert.Equal("M02", loaded.PinnedMainQuest);
         Assert.Equal(1, Hints.RevealedLevel(loaded, "M02"));
+    }
+
+    // ---- GAME-02 / UI-05: what a load resumes in ----
+
+    [Fact]
+    public void Open_puzzle_is_saved_and_reopened_after_load()
+    {
+        var open = Puzzles.UpdateDraft(C, Puzzles.Open(C, TestData.ReadyFor("G11"), "G11"), "P01", PuzzleAnswers.Matching("kruh", null, null));
+        Assert.Equal("G11", open.OpenPuzzleAction);
+        var save = SaveOf(open);
+        Assert.Equal("G11", save["open_puzzle"]!.GetValue<string>());
+        var loaded = SaveCodec.Load(C, SaveCodec.Serialize(open));
+        Assert.Equal(open, loaded);
+        var resumed = GameRules.ResumeAfterLoad(C, loaded);
+        Assert.Equal(GameMode.Puzzle, resumed.Mode);
+        Assert.Equal("G11", Puzzles.OpenAction(C, resumed)?.Id);
+        Assert.True(JsonDeep.Equals(PuzzleAnswers.Matching("kruh", null, null), Puzzles.Draft(C, resumed, "P01")));
+    }
+
+    [Fact]
+    public void Old_save_in_puzzle_mode_without_open_puzzle_resumes_in_the_world_with_its_draft()
+    {
+        var open = Puzzles.UpdateDraft(C, Puzzles.Open(C, TestData.ReadyFor("G11"), "G11"), "P01", PuzzleAnswers.Matching("kruh", null, null));
+        var legacy = SaveOf(open);
+        legacy.Remove("open_puzzle");
+        legacy.Remove("checksum");
+        var loaded = SaveCodec.ValidateSave(C, legacy);
+        Assert.Null(loaded.OpenPuzzleAction);
+        var resumed = GameRules.ResumeAfterLoad(C, loaded);
+        Assert.Equal(GameMode.World, resumed.Mode);
+        Assert.Null(Puzzles.OpenAction(C, resumed));
+        Assert.True(JsonDeep.Equals(PuzzleAnswers.Matching("kruh", null, null), Puzzles.Draft(C, resumed, "P01")));
+    }
+
+    [Fact]
+    public void Open_puzzle_is_validated()
+    {
+        var open = Puzzles.Open(C, TestData.ReadyFor("G11"), "G11");
+        var a = SaveOf(open); a.Remove("checksum"); a["open_puzzle"] = "G01"; Rejects(a, "not a puzzle action");
+        var b = SaveOf(open); b.Remove("checksum"); b["mode"] = "world"; Rejects(b, "outside puzzle mode");
+        var c = SaveOf(open); c.Remove("checksum"); c["open_puzzle"] = 7; Rejects(c, "open_puzzle is not a string");
+        // A puzzle action that is no longer valid (already done) is closed on resume instead of reopened.
+        var done = TestData.StateAfter("G11") with { Mode = GameMode.Puzzle, OpenPuzzleAction = "G11" };
+        Assert.Null(Puzzles.OpenAction(C, done));
+        Assert.Equal(GameMode.World, GameRules.ResumeAfterLoad(C, done).Mode);
+    }
+
+    [Fact]
+    public void Saves_without_an_open_puzzle_keep_their_payload_and_checksum()
+    {
+        var s = TestData.StateAfter("G05");
+        Assert.False(SaveOf(s).ContainsKey("open_puzzle"));
+        Assert.Equal(SaveCodec.Checksum(s), SaveCodec.Checksum(SaveCodec.Load(C, SaveCodec.Serialize(s))));
+    }
+
+    [Fact]
+    public void Closing_or_solving_clears_the_open_puzzle()
+    {
+        var open = Puzzles.Open(C, TestData.ReadyFor("G11"), "G11");
+        Assert.Null(Puzzles.Close(open).OpenPuzzleAction);
+        var solved = Puzzles.Submit(C, open, "G11", C.GetPuzzle("P01").Solution?.DeepClone());
+        Assert.True(solved.Solved);
+        Assert.Null(solved.State.OpenPuzzleAction);
+        var wrong = Puzzles.Submit(C, open, "G11", PuzzleAnswers.Matching("kruh", null, null));
+        Assert.Equal("G11", wrong.State.OpenPuzzleAction);
+    }
+
+    [Fact]
+    public void A_save_taken_in_an_overlay_resumes_in_the_scene()
+    {
+        var s = TestData.StateAfter("G05");
+        foreach (var overlay in new[] { GameMode.Pause, GameMode.Map, GameMode.Journal })
+        {
+            var loaded = SaveCodec.Load(C, SaveCodec.Serialize(GameRules.OpenOverlay(s, overlay)));
+            Assert.Equal(overlay, loaded.Mode);
+            Assert.Equal(GameMode.World, GameRules.ResumeAfterLoad(C, loaded).Mode);
+        }
+        Assert.Equal(s, GameRules.ResumeAfterLoad(C, s));
     }
 }

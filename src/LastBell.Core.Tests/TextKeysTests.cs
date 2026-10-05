@@ -90,7 +90,67 @@ public sealed class TextKeysTests
         Assert.Equal("epilogue.1.shot", TextKeys.ShotOf(C.Data.Epilogue[0], 0).Key);
         Assert.Equal("epilogue.9.line", TextKeys.LineOf(C.Data.Epilogue[8], 8).Key);
         Assert.Equal("ui.menu.continue", TextKeys.Ui("menu", "continue"));
-        Assert.Equal("ui.save.corrupt", UiText.SaveCorrupt.Key);
+        Assert.Equal("ui.save.corrupted", UiText.SaveCorrupt.Key);
+        Assert.Equal("ui.system.path_blocked", UiText.PathBlocked.Key);
+        Assert.Equal(new TextRef("region.Biela Púť.name", "Biela Púť"), TextKeys.RegionOf(C.GetRoom("S41")));
+    }
+
+    /// <summary>
+    /// Every key Core produces itself (UiText, era cards/dates, map regions) exists in ui.csv, with the same
+    /// Slovak text where Core has one (ISSUES GAME-03: ui.world.path_blocked did not exist; UI-01:
+    /// ui.save.corrupt duplicated ui.save.corrupted).
+    /// </summary>
+    [Fact]
+    public void Core_ui_keys_exist_in_ui_csv()
+    {
+        var ui = ReadTable(TestData.FixturePath("ui.csv"));
+        foreach (var text in new[] { UiText.SaveCorrupt, UiText.PathBlocked, UiText.HelpLeftClick, UiText.HelpRightClick, UiText.HelpSpace })
+        {
+            Assert.True(ui.ContainsKey(text.Key), $"ui.csv has no {text.Key}");
+            Assert.Equal(text.Fallback, ui[text.Key]);
+        }
+        foreach (var era in C.Data.Eras)
+        {
+            Assert.True(ui.ContainsKey(TextKeys.CardOf(era).Key), $"ui.csv has no {TextKeys.CardOf(era).Key}");
+            Assert.True(ui.ContainsKey(TextKeys.DateOf(era).Key), $"ui.csv has no {TextKeys.DateOf(era).Key}");
+        }
+        foreach (var room in C.Rooms.Where(r => r.District.Length > 0))
+            Assert.True(ui.ContainsKey(TextKeys.RegionOf(room).Key), $"ui.csv has no {TextKeys.RegionOf(room).Key}");
+        Assert.False(ui.ContainsKey("ui.save.corrupt"), "the duplicate key ui.save.corrupt is back (UI-01)");
+    }
+
+    /// <summary>Minimal reader of a Godot translation CSV (header "keys,sk,en", RFC 4180 quoting): key to sk text.</summary>
+    private static Dictionary<string, string> ReadTable(string path)
+    {
+        var result = new Dictionary<string, string>(StringComparer.Ordinal);
+        var text = File.ReadAllText(path);
+        var row = new List<string>();
+        var field = new System.Text.StringBuilder();
+        bool quoted = false, header = true;
+        void EndRow()
+        {
+            row.Add(field.ToString());
+            field.Clear();
+            if (!header && row.Count >= 2 && row[0].Length > 0) result[row[0]] = row[1];
+            header = false;
+            row.Clear();
+        }
+        for (int i = 0; i < text.Length; i++)
+        {
+            char c = text[i];
+            if (quoted)
+            {
+                if (c == '"' && i + 1 < text.Length && text[i + 1] == '"') { field.Append('"'); i++; }
+                else if (c == '"') quoted = false;
+                else field.Append(c);
+            }
+            else if (c == '"') quoted = true;
+            else if (c == ',') { row.Add(field.ToString()); field.Clear(); }
+            else if (c == '\n') EndRow();
+            else if (c != '\r') field.Append(c);
+        }
+        if (field.Length > 0 || row.Count > 0) EndRow();
+        return result;
     }
 
     [Fact]

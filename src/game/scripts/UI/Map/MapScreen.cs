@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Godot;
 using LastBell.Core.Rules;
+using LastBell.Core.Text;
 using LastBell.Core.Views;
 using LastBell.Game.Runtime;
 using LastBell.Game.UI.Common;
@@ -218,8 +219,7 @@ public partial class MapGraph : Control
         b.FocusEntered += () => Inspect?.Invoke(name + " — " + tip);
         AddChild(b);
         // Region (district) caption: region.<district>.name (ISSUES TEXT-02 / UI-02).
-        string district = GameRuntime.Instance.Content.GetRoom(room.RoomId).District;
-        var region = Ui.Label(TextService.Get("region." + district + ".name", district).ToUpperInvariant(), "CaptionLabel");
+        var region = Ui.Label(TextService.Get(TextKeys.RegionOf(GameRuntime.Instance.Content.GetRoom(room.RoomId))).ToUpperInvariant(), "CaptionLabel");
         region.AddThemeFontSizeOverride("font_size", 16);
         region.AddThemeFontOverride("font", UiTheme.BodyBold);
         region.Position = new Vector2(14, 6);

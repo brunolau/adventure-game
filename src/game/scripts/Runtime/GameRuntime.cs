@@ -279,10 +279,15 @@ public partial class GameRuntime : Node
             LoadFailed?.Invoke(label, error);
             return false;
         }
-        var loaded = candidate.State;
-        // A save taken while a puzzle modal was open cannot tell which puzzle (GAME-02): resume in the world.
-        if (loaded.Mode == GameMode.Puzzle) loaded = Puzzles.Close(loaded);
+        // Overlays close; a puzzle modal reopens when the save names a still valid puzzle action (open_puzzle),
+        // otherwise it closes with its draft kept (ISSUES GAME-02, UI-05).
+        var loaded = GameRules.ResumeAfterLoad(Content, candidate.State);
         ReplaceState(loaded);
+        if (Puzzles.OpenAction(Content, loaded) is { } open)
+        {
+            OpenPuzzleActionId = open.Id;
+            PuzzleOpened?.Invoke(open.Id, Content.GetPuzzle(open.Puzzle!));
+        }
         return true;
     }
 

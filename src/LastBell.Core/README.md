@@ -237,7 +237,7 @@ GameState s = GameRules.ValidateSave(content, jsonNode);  // TS-compatible valid
 ```
 
 A load rejects any of the following, and the current game is never touched (`error` is
-`ui.save.corrupt`, "Chybný súbor uloženia. Aktuálna hra zostala otvorená."):
+`ui.save.corrupted`, "Chybný súbor uloženia. Aktuálna hra zostala otvorená."):
 
 - unknown or duplicate ids, unknown fields or schema versions
 - a room or era mismatch, or an era that is not unlocked
@@ -248,6 +248,12 @@ A load rejects any of the following, and the current game is never touched (`err
 
 The UI helper fields (labels toggle, playback cursor, hint levels, pins, room entry marker) are
 saved too. Use `user://` paths on the Godot side.
+
+While a puzzle modal is open the save also carries the optional field `open_puzzle` (the puzzle
+action id, `GameState.OpenPuzzleAction`; written only in puzzle mode, so other saves keep their payload
+and checksum). After a load call `GameRules.ResumeAfterLoad(content, state)`: pause, map and journal
+close to the scene, and puzzle mode stays open only when `Puzzles.OpenAction` is still a valid puzzle
+action (reopen that modal), otherwise it closes with the draft kept (ISSUES GAME-02, UI-05).
 
 ## 12. GameSession (optional)
 

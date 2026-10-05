@@ -210,6 +210,17 @@ public sealed class ActorAnimationSet
         return set;
     }
 
+    /// <summary>An NPC manifest's <c>default_variant</c> (e.g. JANA20 "laptop"), or null.</summary>
+    public static string? DefaultVariant(string characterId)
+    {
+        if (DefaultVariants.TryGetValue(characterId, out var cached)) return cached;
+        string? result = Json.Load(FolderOf(characterId) + "/actor.json", warnIfMissing: false)?.Str("default_variant");
+        DefaultVariants[characterId] = result;
+        return result;
+    }
+
+    private static readonly Dictionary<string, string?> DefaultVariants = new(StringComparer.Ordinal);
+
     private static ActorAnimationSet LoadDirectional(string id, string folder, JsonObject manifest, string? variant)
     {
         var set = new ActorAnimationSet(id, variant) { IsDirectional = true, HeightPx = manifest.Num("standing_height_px", 512) };
