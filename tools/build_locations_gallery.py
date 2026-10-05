@@ -17,15 +17,22 @@ def rel(path):
     return Path("..", path.relative_to(ROOT)).as_posix()
 
 
-def photos_for(room_id, row):
-    folder = ROOT / "art" / "source" / "rooms" / room_id
-    files = sorted(p for p in folder.glob("*") if p.suffix.lower() in IMAGE_EXT) if folder.exists() else []
-    # Family members store their shared base in the first room's folder; follow source_files too.
+def register_sources(row):
+    """Image files named in the register's source_files (shared family files included), in register order."""
+    files = []
     for token in row.get("source_files", "").replace(";", " ").replace("|", " ").split():
         candidate = ROOT / token.strip()
         if candidate.suffix.lower() in IMAGE_EXT and candidate.exists() and candidate not in files:
             files.append(candidate)
     return files
+
+
+def photos_for(room_id, row):
+    """(path, is_source) pairs: the register's source_files first, then the other images of the room folder."""
+    sources = register_sources(row)
+    folder = ROOT / "art" / "source" / "rooms" / room_id
+    others = sorted(p for p in folder.glob("*") if p.suffix.lower() in IMAGE_EXT and p not in sources) if folder.exists() else []
+    return [(p, True) for p in sources] + [(p, False) for p in others]
 
 
 def painting_for(room_id):
@@ -49,12 +56,14 @@ def main():
         map_link = (f'<a href="https://www.openstreetmap.org/?mlat={lat}&mlon={lon}#map=18/{lat}/{lon}" '
                     f'target="_blank">map</a>') if lat and lon else ""
         photos = "".join(
-            f'<a href="{rel(p)}" target="_blank"><img loading="lazy" src="{rel(p)}" alt=""></a>'
-            for p in photos_for(rid, row)) or '<p class="muted">no reference photo (reconstruction or type reference)</p>'
+            f'<a href="{rel(p)}" target="_blank"><img loading="lazy" src="{rel(p)}" alt=""></a>' if used else
+            f'<a class="other" href="{rel(p)}" target="_blank" title="in the room folder, not a source of the current painting">'
+            f'<img loading="lazy" src="{rel(p)}" alt=""></a>'
+            for p, used in photos_for(rid, row)) or '<p class="muted">no reference photo (reconstruction or type reference)</p>'
         paint = (f'<a href="{rel(painting)}" target="_blank"><img loading="lazy" src="{rel(painting)}" alt=""></a>'
                  f'<span class="tag">{"game painting (natural blocking, default)" if kind == "bg_natural" else "template painting (old blocking)"}</span>'
                  if painting else '<p class="muted">not painted yet</p>')
-        nc = "nc" if "NC" in row.get("license", "") else ""
+        nc = "nc" if "BY-NC" in row.get("license", "") else ""  # a real NC licence, not the "(no NC)" remark
         sections.append(f"""
 <section data-text="{html.escape((rid + ' ' + row.get('room_name', '') + ' ' + row.get('real_place', '') + ' ' + row.get('area', '')).lower())}">
   <header>
@@ -86,11 +95,12 @@ h2 {{ font-size:17px; margin:0; color:var(--accent); }} h2 small {{ color:var(--
 .photos {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:8px; }}
 img {{ display:block; width:100%; height:auto; border-radius:6px; }}
 .paint {{ position:relative; }} .tag {{ position:absolute; top:8px; left:8px; background:#000a; padding:2px 8px; border-radius:4px; font-size:12px; }}
+.photos a.other img {{ opacity:.4; }} .photos a.other:hover img {{ opacity:1; }}
 .muted {{ color:var(--muted); font-size:13px; }} details {{ margin-top:8px; color:var(--muted); font-size:13px; }}
 @media (max-width:760px) {{ .cols {{ grid-template-columns:1fr; }} }}
 </style></head><body><main>
 <h1>Posledný zvonec: real locations</h1>
-<p class="lead">68 rooms from design-doc/LOCATIONS_REGISTER.csv. Left: licensed reference photos of the real place. Right: the game painting (the natural-blocking painting from src/game/assets/bg_natural, the game default since milestone 3; the template painting only where no natural one exists). Click any image for full size.</p>
+<p class="lead">68 rooms from design-doc/LOCATIONS_REGISTER.csv. Left: licensed reference photos of the real place (the register's source_files; dimmed = in the room's folder but not a source of the current painting; licences in red are non-commercial). Right: the game painting (the natural-blocking painting from src/game/assets/bg_natural, the game default since milestone 3; the template painting only where no natural one exists). Click any image for full size.</p>
 <input id="q" placeholder="filter: Dúbravka, S17, Jasná, photo, reconstruction…">
 {''.join(sections)}
 </main>

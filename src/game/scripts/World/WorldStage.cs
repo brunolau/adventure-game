@@ -48,6 +48,12 @@ public partial class WorldStage : Node2D
     /// <summary>Raised when a room finished its transition and accepts input.</summary>
     public event Action<Room>? RoomReady;
 
+    /// <summary>Milliseconds the last <see cref="BuildRoom"/> took (synchronous: texture loads, sprites, ambient; perf QA).</summary>
+    public double LastBuildMs { get; private set; }
+
+    /// <summary>Number of rooms built since start (perf QA).</summary>
+    public int RoomsBuilt { get; private set; }
+
     /// <inheritdoc />
     public override void _Ready()
     {
@@ -59,6 +65,7 @@ public partial class WorldStage : Node2D
         fade.SetAnchorsPreset(Control.LayoutPreset.FullRect);
         fade.Modulate = new Color(1, 1, 1, 0);
         overlay.AddChild(fade);
+        AddChild(new RoomPreloader { Name = "RoomPreloader" });
         eraCardTitle = MakeCardLabel(64, new Vector2(0, 430));
         eraCardDate = MakeCardLabel(36, new Vector2(0, 530));
         var game = GameRuntime.Instance;
@@ -191,6 +198,8 @@ public partial class WorldStage : Node2D
             Current.QueueFree();
             Current = null;
         }
+        long started = System.Diagnostics.Stopwatch.GetTimestamp();
+        RoomScopedCaches.NextRoom();
         var view = ViewBuilder.Room(game.Content, game.State, roomId);
         var room = Room.Instantiate();
         room.DevOverlayVisible = DevOverlay;
@@ -199,6 +208,12 @@ public partial class WorldStage : Node2D
         room.Build(game.Content, view, Art, arrivedFrom);
         Current = room;
         WorldHooks.RaiseRoomBuilt(room);
+        RoomScopedCaches.Trim(); // sheets of rooms left two rooms ago (the old room is already out of the tree)
+        LastBuildMs = System.Diagnostics.Stopwatch.GetElapsedTime(started).TotalMilliseconds;
+        RoomsBuilt++;
+        if (RoomsBuilt == 1) GD.Print($"LastBell: first room {roomId} built {Time.GetTicksMsec()} ms after engine start ({LastBuildMs:F0} ms)");
+        else if (OS.IsStdOutVerbose()) GD.Print($"LastBell: room {roomId} built in {LastBuildMs:F1} ms");
+        RoomPreloader.Instance?.Prefetch(room);
     }
 
     private void OnSessionReplaced()
@@ -223,6 +238,7 @@ public partial class WorldStage : Node2D
             // new room's first-entry lines (or when playback is over).
             var line = Playback.Current(GameRuntime.Instance.Content, next);
             if (line is null || line.Source == LineSource.FirstEntry) FollowStateRoom();
+            else RoomPreloader.Instance?.PrefetchRooms(new[] { next.Room }); // decoded while the lines / cutscene play
             return;
         }
         var view = ViewBuilder.Room(GameRuntime.Instance.Content, next);

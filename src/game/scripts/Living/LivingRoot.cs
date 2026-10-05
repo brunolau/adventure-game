@@ -37,12 +37,13 @@ public partial class LivingRoot : Node
     public override void _Ready()
     {
         Instance = this;
-        var args = OS.GetCmdlineUserArgs();
+        var args = LaunchArgs.User;
         if (args.Contains("--reduced-motion")) PresentationSettings.ReducedMotion = true;
         noAmbient = args.Contains("--no-ambient");
         report = args.Contains("--ambient-report");
         reduced = PresentationSettings.ReducedMotion;
         ActorVisualRegistry.Register(factory, 100);
+        RoomPreloader.PathProviders.Add(SheetsToPreload);
         WorldHooks.RoomBuilt += OnRoomBuilt;
         WorldHooks.RoomRefreshed += OnRoomRefreshed;
         WorldHooks.RoomLeaving += OnRoomLeaving;
@@ -53,11 +54,22 @@ public partial class LivingRoot : Node
     public override void _ExitTree()
     {
         ActorVisualRegistry.Unregister(factory);
+        RoomPreloader.PathProviders.Remove(SheetsToPreload);
         WorldHooks.RoomBuilt -= OnRoomBuilt;
         WorldHooks.RoomRefreshed -= OnRoomRefreshed;
         WorldHooks.RoomLeaving -= OnRoomLeaving;
         PresentationSettings.Changed -= ApplyReducedMotion;
         if (Instance == this) Instance = null;
+    }
+
+    /// <summary>Sprite sheets a build of a neighbour room would load (hero variant of that room, its NPCs), for the preloader.</summary>
+    private static IEnumerable<string> SheetsToPreload(LastBell.Core.Views.RoomView view)
+    {
+        string? heroVariant = ActorStaging.HeroWearsMask(view.RoomId, view.Era) ? "mask2020" : null;
+        foreach (var path in ActorAnimationSet.SheetImagePaths(GameRuntime.HeroId, heroVariant)) yield return path;
+        foreach (var npc in view.Npcs)
+            if (npc.CharacterId is { } id && ActorAnimationSet.Exists(id))
+                foreach (var path in ActorAnimationSet.SheetImagePaths(id, null)) yield return path;
     }
 
     /// <inheritdoc />

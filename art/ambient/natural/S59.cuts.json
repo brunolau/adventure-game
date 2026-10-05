@@ -1,22 +1,157 @@
 {
-  "room": "S59",
-  "source": "src/game/assets/bg_natural/S59.webp",
-  "note": "Natural S59 cut-outs (art/tools/ambient_cut.py --natural S59): the string of red paper pennants with yellow stars above the right door and the cloakroom (hanging sway), and the two glass panes of the middle double door (mask for corridor silhouettes; same panes as S13).",
-  "items": [
+ "room": "S59",
+ "source": "src/game/assets/bg_natural/S59.webp",
+ "note": "Natural S59 cut-outs (art/tools/ambient_cut.py --natural S59): the string of red paper pennants with yellow stars above the right door and the cloakroom (hanging sway), and the two glass panes of the middle double door (mask for corridor silhouettes; same panes as S13).",
+ "items": [
+  {
+   "name": "pennants",
+   "rect": [
+    1075,
+    228,
+    530,
+    82
+   ],
+   "rules": [
     {
-      "name": "pennants",
-      "rect": [1075, 228, 530, 82],
-      "rules": [ { "hue": [340, 18], "sat": [0.4, 1], "val": [0.3, 1] }, { "hue": [18, 50], "sat": [0.52, 1], "val": [0.55, 1] } ],
-      "feather": 1.0
+     "hue": [
+      340,
+      18
+     ],
+     "sat": [
+      0.4,
+      1
+     ],
+     "val": [
+      0.3,
+      1
+     ]
     },
     {
-      "name": "door_glass_mask",
-      "kind": "mask",
-      "rect": [860, 385, 205, 165],
-      "rules": [ {} ],
-      "include": [ [[868, 393], [944, 393], [944, 541], [868, 541]], [[978, 393], [1054, 393], [1054, 541], [978, 541]] ],
-      "feather": 1.5,
-      "scale": 0.5
+     "hue": [
+      18,
+      50
+     ],
+     "sat": [
+      0.52,
+      1
+     ],
+     "val": [
+      0.55,
+      1
+     ]
     }
-  ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "door_glass_mask",
+   "kind": "mask",
+   "rect": [
+    860,
+    385,
+    205,
+    165
+   ],
+   "rules": [
+    {}
+   ],
+   "include": [
+    [
+     [
+      868,
+      393
+     ],
+     [
+      944,
+      393
+     ],
+     [
+      944,
+      541
+     ],
+     [
+      868,
+      541
+     ]
+    ],
+    [
+     [
+      978,
+      393
+     ],
+     [
+      1054,
+      393
+     ],
+     [
+      1054,
+      541
+     ],
+     [
+      978,
+      541
+     ]
+    ]
+   ],
+   "feather": 1.5,
+   "scale": 0.5
+  },
+  {
+   "name": "wet_terrazzo",
+   "rect": [
+    1215,
+    728,
+    507,
+    124
+   ],
+   "include": [
+    [
+     [
+      1215,
+      760
+     ],
+     [
+      1300,
+      738
+     ],
+     [
+      1420,
+      728
+     ],
+     [
+      1560,
+      735
+     ],
+     [
+      1690,
+      760
+     ],
+     [
+      1722,
+      800
+     ],
+     [
+      1660,
+      846
+     ],
+     [
+      1480,
+      852
+     ],
+     [
+      1340,
+      842
+     ],
+     [
+      1240,
+      806
+     ]
+    ]
+   ],
+   "feather": 6,
+   "clean": 0,
+   "pad": 0,
+   "note": "the meltwater patch on the terrazzo in front of the lockers (water glints)"
+  }
+ ]
 }

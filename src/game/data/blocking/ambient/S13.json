@@ -1,128 +1,80 @@
 {
- "room": "S13",
- "notes": "Natural S13 (bg_natural/S13.webp), school entrance hall, 15 June 1995 afternoon. Wind in the forecourt maples seen through the glazed facade wall (cut from the natural painting), dust motes turning in the long sunbeams across the terrazzo, the wall clock's red second hand ticking, pupils of the afternoon club passing as soft shadows behind the frosted glass of the middle door, a couple of birds crossing outside the glass.",
- "layers": [
-  {
-   "id": "window_trees",
-   "type": "sway",
-   "texture": "S13/natural/window_trees.webp",
-   "anchor": 1.0,
-   "amp_px": 1.6,
-   "freq": 0.28,
-   "wavelength_px": 90,
-   "flutter_px": 0.6
-  },
-  {
-   "id": "dust_sunbeams",
-   "type": "particles",
-   "preset": "dust",
-   "emit_rect": [
-    190,
-    300,
-    820,
-    560
-   ],
-   "count": 40,
-   "size": [
-    3.5,
-    8
-   ],
-   "alpha_range": [
-    0.25,
-    0.75
-   ],
-   "color": "#fff0c4"
-  },
-  {
-   "id": "clock_seconds",
-   "type": "rotor",
-   "pivot": [
-    960,
-    298
-   ],
-   "length": 20,
-   "tail": 5,
-   "width": 1.5,
-   "color": "#a8321f",
-   "mode": "tick",
-   "period_s": 60
-  },
-  {
-   "id": "corridor_pupils",
-   "type": "tween_path",
-   "texture": "builtin:silhouette",
-   "pivot": [
-    70,
-    360
-   ],
-   "path": [
-    [
-     820,
-     690
-    ],
-    [
-     1110,
-     690
-    ]
-   ],
-   "speed_px_s": 75,
-   "scale": 0.74,
-   "modulate": "#4a3826",
-   "alpha": 0.45,
-   "direction": "random",
-   "every_s": [
-    9,
-    22
-   ],
-   "start_s": [
-    2,
-    6
-   ],
-   "mask": "S13/natural/door_glass_mask.webp"
-  },
-  {
-   "id": "birds_outside",
-   "type": "tween_path",
-   "sheet": "common/pigeon_sheet",
-   "frames": "fly",
-   "fps": 11,
-   "path": [
-    [
-     330,
-     300
-    ],
-    [
-     150,
-     270
-    ],
-    [
-     -60,
-     290
-    ]
-   ],
-   "speed_px_s": 210,
-   "scale": 0.06,
-   "flock": 2,
-   "flock_spread": [
-    40,
-    18
-   ],
-   "bob_px": 3,
-   "direction": "random",
-   "every_s": [
-    28,
-    55
-   ],
-   "start_s": [
-    6,
-    14
-   ],
-   "clip": [
-    0,
-    236,
-    298,
-    340
-   ]
-  }
- ]
+  "room": "S13",
+  "notes": "Natural S13 (bg_natural/S13.webp), school entrance hall, 15 June 1995 afternoon. Wind in the forecourt maples seen through the glazed facade wall (cut from the natural painting), dust motes turning in the long sunbeams across the terrazzo, the wall clock's red second hand ticking, pupils of the afternoon club passing as soft shadows behind the frosted glass of the middle door, a couple of birds crossing outside the glass. Polish 2026-10-05: the sunlit terrazzo patches brighten and dim as clouds pass (floor_sun).",
+  "layers": [
+    {
+      "id": "window_trees",
+      "type": "sway",
+      "texture": "S13/natural/window_trees.webp",
+      "anchor": 1.0,
+      "amp_px": 1.6,
+      "freq": 0.28,
+      "wavelength_px": 90,
+      "flutter_px": 0.6
+    },
+    {
+      "id": "dust_sunbeams",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [190, 300, 820, 560],
+      "count": 40,
+      "size": [3.5, 8],
+      "alpha_range": [0.25, 0.75],
+      "color": "#fff0c4"
+    },
+    {
+      "id": "floor_sun",
+      "type": "flicker",
+      "mode": "pulse",
+      "rect": [200, 660, 1140, 240],
+      "texture": "builtin:softrect",
+      "color": "#fff0c8",
+      "min": 0.0,
+      "max": 0.112,
+      "period_s": 7.5
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [960, 298],
+      "length": 20,
+      "tail": 5,
+      "width": 1.5,
+      "color": "#a8321f",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "corridor_pupils",
+      "type": "tween_path",
+      "texture": "builtin:silhouette",
+      "pivot": [70, 360],
+      "path": [[820, 690], [1110, 690]],
+      "speed_px_s": 75,
+      "scale": 0.74,
+      "modulate": "#4a3826",
+      "alpha": 0.45,
+      "direction": "random",
+      "every_s": [9, 22],
+      "start_s": [2, 6],
+      "mask": "S13/natural/door_glass_mask.webp"
+    },
+    {
+      "id": "birds_outside",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 11,
+      "path": [[330, 300], [150, 270], [-60, 290]],
+      "speed_px_s": 210,
+      "scale": 0.06,
+      "flock": 2,
+      "flock_spread": [40, 18],
+      "bob_px": 3,
+      "direction": "random",
+      "every_s": [28, 55],
+      "start_s": [6, 14],
+      "clip": [0, 236, 298, 340]
+    }
+  ]
 }

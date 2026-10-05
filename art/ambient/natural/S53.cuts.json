@@ -1,14 +1,53 @@
 {
-  "room": "S53",
-  "source": "src/game/assets/bg_natural/S53.webp",
-  "note": "Natural S53 cut-outs (art/tools/ambient_cut.py --natural S53): the orange autumn crowns of the forecourt trees seen through the glazed facade wall (only inside the glass panes; the white frames stay in the painting).",
-  "items": [
+ "room": "S53",
+ "source": "src/game/assets/bg_natural/S53.webp",
+ "note": "Natural S53 cut-outs (art/tools/ambient_cut.py --natural S53): the orange autumn crowns of the forecourt trees seen through the glazed facade wall (only inside the glass panes; the white frames stay in the painting).",
+ "items": [
+  {
+   "name": "window_trees",
+   "rect": [
+    0,
+    236,
+    300,
+    340
+   ],
+   "rules": [
     {
-      "name": "window_trees",
-      "rect": [0, 236, 300, 340],
-      "rules": [ { "hue": [18, 52], "sat": [0.33, 1], "val": [0.35, 1] } ],
-      "include": [ [[0, 236], [298, 270], [298, 576], [0, 576]] ],
-      "feather": 1.0
+     "hue": [
+      18,
+      52
+     ],
+     "sat": [
+      0.33,
+      1
+     ],
+     "val": [
+      0.35,
+      1
+     ]
     }
-  ]
+   ],
+   "include": [
+    [
+     [
+      0,
+      236
+     ],
+     [
+      298,
+      270
+     ],
+     [
+      298,
+      576
+     ],
+     [
+      0,
+      576
+     ]
+    ]
+   ],
+   "feather": 1.0
+  }
+ ]
 }

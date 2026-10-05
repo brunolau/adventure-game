@@ -94,7 +94,7 @@ public partial class UiRoot : Control
         Theme = UiTheme.Theme;
 
         var game = GameRuntime.Instance;
-        bool harness = OS.GetCmdlineUserArgs().Length > 0;
+        bool harness = LaunchArgs.Any;
         UiSettings.Load();
         UiSettings.Apply(keepTextTiming: false, applyWindow: !harness);
 
@@ -375,7 +375,7 @@ public partial class UiRoot : Control
         endingPending = IsFinalePlaying(game);
         SyncMode();
         // A brand-new game: the first-start tips (once).
-        if (game.State.Done.Length == 0 && !UiSettings.TipsShown && OS.GetCmdlineUserArgs().Length == 0) tips.Start();
+        if (game.State.Done.Length == 0 && !UiSettings.TipsShown && !LaunchArgs.Any) tips.Start();
     }
 
     private static bool IsFinalePlaying(GameRuntime game)

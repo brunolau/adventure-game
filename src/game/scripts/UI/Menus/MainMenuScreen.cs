@@ -39,7 +39,9 @@ public partial class MainMenuScreen : ModalScreen
             Modulate = new Color(0.75f, 0.68f, 0.6f),
         };
         backdrop.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
-        foreach (var path in new[] { "res://assets/ui/menu_background.webp", "res://assets/bg/S01.webp", "res://assets/bg/S05.webp" })
+        // The natural S01 painting (release exports do not ship the template paintings in assets/bg, docs/BUILD.md).
+        string natural = "res://assets/" + (LastBell.Game.World.RoomBlocking.For("S01")?.Background ?? "bg_natural/S01.webp");
+        foreach (var path in new[] { "res://assets/ui/menu_background.webp", natural, "res://assets/bg_natural/S01.webp", "res://assets/bg/S01.webp", "res://assets/bg/S05.webp" })
         {
             if (ResourceLoader.Exists(path)) { backdrop.Texture = GD.Load<Texture2D>(path); break; }
         }

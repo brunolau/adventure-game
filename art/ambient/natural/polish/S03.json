@@ -1,0 +1,7 @@
+{"room": "S03",
+ "notes": "Natural re-blocking ambient (bg_natural/S03.webp): the orange park tree at the right and the yellow trees behind the shelter sway in the wind (cut-outs art/ambient/natural/S03.cuts.json), leaves fall from them onto the forecourt, clouds drift in the sky above the roof, pigeons peck on the forecourt right of the fireplace (fly off when Adam comes close), birds cross the sky.",
+ "layers": [
+  {"_first": true, "id": "clouds", "type": "clouds", "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"], "band": [30, 150], "count": 4, "speed_px_s": 6, "scale": [0.16, 0.3], "alpha": 0.75, "mask": "S03/natural/sky_mask.webp"},
+  {"_after": "clouds", "id": "tree_right", "type": "sway", "texture": "S03/natural/tree_right.webp", "anchor": 1.0, "amp_px": 2.6, "freq": 0.27, "wavelength_px": 110, "flutter_px": 0.8},
+  {"_after": "tree_right", "id": "trees_left", "type": "sway", "texture": "S03/natural/trees_left.webp", "anchor": 1.0, "amp_px": 2.0, "freq": 0.31, "wavelength_px": 110, "flutter_px": 0.7}
+ ]}

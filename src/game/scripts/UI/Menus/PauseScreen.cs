@@ -59,7 +59,7 @@ public partial class PauseScreen : ModalScreen
     {
         var game = GameRuntime.Instance;
         var quest = Quests.CurrentMainQuest(game.Content, game.State);
-        var objective = Quests.LatestObjective(game.Content, game.State);
+        var objective = LastBell.Game.UI.Journal.JournalScreen.CurrentObjective(game.Content, game.State, Quests.LatestObjective(game.Content, game.State));
         goal.Text = !objective.IsEmpty ? TextService.Get(objective) : quest is null ? Ui.T("ui.hint.all_done") : TextService.Get(TextKeys.GoalOf(quest));
     }
 

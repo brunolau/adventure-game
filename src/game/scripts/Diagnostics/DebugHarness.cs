@@ -21,20 +21,21 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--screenshot &lt;path.png&gt;</c>, <c>--frames &lt;k&gt;</c>, <c>--interval &lt;ms&gt;</c>, <c>--wait &lt;ms&gt;</c>,
 /// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>dblclick</c>/<c>move</c>/<c>keyev</c>/<c>keydown</c>/<c>keyup</c> inject real input events through Godot's pipeline, GUI first),
-/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
+/// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--perf [n]</c> / <c>--no-preload</c> (PerfProbe.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
 /// <c>--markers</c> (Space markers on, as if Space were held), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
 /// (resolver, walking, re-resolve on arrival, commit). Autosave is off unless <c>--autosave</c>.
-/// Prints <c>HARNESS ...</c> lines to stdout for scripts.
+/// Prints <c>HARNESS ...</c> lines to stdout for scripts. Only debug and editor builds read these
+/// arguments (<see cref="LaunchArgs"/>, ISSUES BUILD-03).
 /// </summary>
 public partial class DebugHarness : Node
 {
     private readonly Dictionary<string, List<string>> args = new(StringComparer.Ordinal);
 
-    /// <summary>Parses OS.GetCmdlineUserArgs(); null when no harness flag is present.</summary>
+    /// <summary>Parses <see cref="LaunchArgs.User"/> (always empty in a release build, ISSUES BUILD-03); null when no harness flag is present.</summary>
     public static DebugHarness? FromCommandLine()
     {
-        var raw = OS.GetCmdlineUserArgs();
+        var raw = LaunchArgs.User;
         if (raw.Length == 0) return null;
         var harness = new DebugHarness { Name = "DebugHarness" };
         string? key = null;
@@ -80,6 +81,7 @@ public partial class DebugHarness : Node
         var stage = WorldStage.Instance!;
         if (Has("dev")) stage.DevOverlay = PresentationSettings.DevNotes = true;
         if (Has("labels")) PresentationSettings.QaTextLabels = true; // review screenshots: text labels of every target
+        if (Has("no-preload")) RoomPreloader.Enabled = false; // perf comparison (PerfProbe.cs)
         if (Has("soft-cursor")) LastBell.Game.UI.Hud.CursorLayer.SoftwareCursor = true;
         if (Get("blocking") is { } blocking) // natural re-blocking (World/RoomBlocking.cs, docs/reblock/README.md)
         {
@@ -100,6 +102,12 @@ public partial class DebugHarness : Node
             HookContentQa(); // ContentQa.cs: --real / --play-all / --play-side / --shots / --coverage
             PrepareState(game);
             await WaitUntil(() => stage.IsSettled && stage.IsFadedIn, 10);
+            if (Has("perf")) // PerfProbe.cs: room-to-room timings and memory
+            {
+                await RunPerf();
+                Quit(0);
+                return;
+            }
             if (Has("acceptance"))
             {
                 if (Get("acceptance") is not "m2") await RunPrologueAcceptance();

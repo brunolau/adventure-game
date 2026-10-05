@@ -456,7 +456,9 @@ public partial class DebugHarness
         if (albumTab is not null) await ClickControl(albumTab, "journal album tab");
         await Frames(4);
         var finale = content.GetAction(content.Data.Postgame.Unlock);
-        string finaleLabel = TextService.Get(LastBell.Core.Text.TextKeys.LabelOf(finale));
+        // Same title rule as JournalScreen's scene list: a ui.csv scene title wins over the action label (PT-S08).
+        string finaleTitle = TextService.Get("ui.journal.scene_" + (finale.Cutscene ?? "").ToLowerInvariant(), "");
+        string finaleLabel = finaleTitle.Length > 0 ? finaleTitle : TextService.Get(LastBell.Core.Text.TextKeys.LabelOf(finale));
         var sceneButton = Descendants<Button>(journal).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == finaleLabel);
         var inventoryBefore = game.State.Inventory.ToList();
         if (sceneButton is null || !await ClickControl(sceneButton, "replay " + finale.Cutscene)) QaFail($"journal: no replay button for {finale.Cutscene}");
@@ -484,7 +486,7 @@ public partial class DebugHarness
         var report = new JsonObject
         {
             ["label"] = Get("coverage-label") ?? "",
-            ["args"] = string.Join(" ", OS.GetCmdlineUserArgs()),
+            ["args"] = string.Join(" ", LaunchArgs.User),
             ["window"] = DisplayServer.GetName() == "headless" ? "headless" : DisplayServer.WindowGetSize().ToString(),
             ["real_input"] = realInput,
             ["lines_shown"] = lineCount,

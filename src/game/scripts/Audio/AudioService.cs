@@ -84,7 +84,7 @@ public partial class AudioService : Node
     public override void _Ready()
     {
         Instance = this;
-        var args = OS.GetCmdlineUserArgs();
+        var args = LaunchArgs.User;
         logEnabled = args.Length > 0;
         logVerbose = args.Contains("--audio-log");
         ProcessMode = ProcessModeEnum.Always; // keep fading while the tree is paused
@@ -123,7 +123,7 @@ public partial class AudioService : Node
         dialogue = GetParent()?.GetNodeOrNull<DialoguePresenter>("DialoguePresenter");
         if (dialogue is not null) dialogue.LineShown += OnLineShown;
         HookTree(GetTree().Root);
-        if (OS.GetCmdlineUserArgs().Contains("--audio-report")) Report();
+        if (LaunchArgs.User.Contains("--audio-report")) Report();
     }
 
     /// <inheritdoc />

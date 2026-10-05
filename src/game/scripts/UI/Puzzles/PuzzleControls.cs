@@ -469,6 +469,8 @@ public partial class DigitsControl : PuzzleControl
         {
             int index = i;
             var col = Ui.VBox(8);
+            // Head room: the háček of "Č" rises above the label box and was cut by the clipping parent (playtest PT-F04).
+            col.AddChild(new Control { CustomMinimumSize = new Vector2(0, 6), MouseFilter = MouseFilterEnum.Ignore });
             var caption = Ui.Label(Ui.T("ui.puzzle.digit", ("n", (i + 1).ToString())), "CaptionLabel");
             caption.HorizontalAlignment = HorizontalAlignment.Center;
             col.AddChild(caption);
@@ -479,6 +481,7 @@ public partial class DigitsControl : PuzzleControl
             frame.AddThemeStyleboxOverride("panel", UiTheme.Box(new Color("2a1f18"), UiTheme.Brass, 3, 12, 8));
             var label = Ui.Label("0", "TitleLabel");
             label.AddThemeFontSizeOverride("font_size", 96);
+            label.AddThemeFontOverride("font", UiTheme.HeadingLining);
             label.AddThemeColorOverride("font_color", UiTheme.BrassLight);
             label.HorizontalAlignment = HorizontalAlignment.Center;
             label.CustomMinimumSize = new Vector2(120, 130);

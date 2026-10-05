@@ -74,7 +74,7 @@ player-visible text only comes from the CSV tables through `TextService`.
   HudHost (CanvasLayer 40)      UI agent's res://scenes/ui/UiRoot.tscn is instanced here
   LivingHost                    living agent's res://scripts/Living/LivingRoot.cs (Node) is instanced here
   AudioService                  scripts/Audio: music crossfades + cues, room ambience, sfx, voice bus (replaced the removed MusicPlayer, ISSUES AUDIO-01)
-  DebugHarness                  only with user args after "--"
+  DebugHarness                  only with user args after "--", only in debug/editor builds (BUILD-03)
 ```
 
 ## Extension points (no need to edit world-runtime files)
@@ -187,6 +187,13 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 
 ## Debug / QA harness (user args after `--`)
 
+Only **debug and editor builds** read these arguments (`Runtime/LaunchArgs.cs`, `OS.IsDebugBuild()`): the editor
+binary, `play.bat` and the QA export (`build.bat debug` → `build/windows_debug/`). A release export
+(`build.bat` → `build/windows/`) ignores everything after `--` and logs one line saying so (ISSUES BUILD-03).
+The other QA switches (`--ui …`, `--audio-log`, `--audio-report`, `--no-ambient`, `--ambient-report`,
+`--reduced-motion`) follow the same rule. Engine options before `--` (`--resolution`, `--log-file`, `--verbose`)
+work in every build.
+
 | flag | effect |
 |---|---|
 | `--room <id>` | dev jump into a room (after `--replay`, if given). Not a legal Core travel. |
@@ -217,6 +224,7 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 | `--skip-lines` | skip remaining lines after the acts |
 | `--quit-after <s>` | quit after s seconds (headless runs) |
 | `--autosave` | keep autosave on (off by default in harness runs) |
+| `--perf [n]` (`--perf-dwell <s>`, `--no-preload`) | release-engineering probe (`Diagnostics/PerfProbe.cs`): from the first room walk n rooms (default 20) through their exits (dev jumps, unvisited neighbours first), stay `--perf-dwell` s (1.5) in each; logs per hop the room build time, the longest frame of the transition and in the room before, then process / Godot / texture memory (`HARNESS perf …`). `--no-preload` turns `World/RoomPreloader.cs` off for comparison. Needs a window for real texture uploads; numbers in docs/BUILD.md "Performance" |
 
 For speed, add Godot's own engine flag `--time-scale <k>` before `--` (walking, fades and timers run
 k times faster), e.g. `--headless --path src/game --time-scale 6 -- --fast-text --play 94 --quit-after 1`.

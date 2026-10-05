@@ -1,5 +1,8 @@
 # Decisions for the product owner
 
+> **Latest: milestone 5 (2026-10-05).** The game is complete. What still waits for you is in
+> ["Status 2026-10-05 (milestone 5)"](#status-2026-10-05-milestone-5-what-still-waits-for-you) at the end.
+
 Status 2026-10-05, after the issue cleanup. Everything that did not need you is fixed and marked in
 `design-doc/ISSUES.md` ("Cleanup 2026-10-05"). What is left needs your call. Each item: the question,
 the options, our recommendation (**bold**), and what it costs. Ids point to `design-doc/ISSUES.md`.
@@ -269,3 +272,71 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
    (reference: `art/source/owner_refs/ui_cOw4kTJ.png`, local only). Touch: two-finger hold shows them.
 
 **Status 2026-10-05: implemented** (ISSUES INT-08): walk speed x1.25 (Settings: walk speed 100/125/150 %), double click / double tap / double Enter / Shift+Enter skip, hover label at the cursor, painted contextual cursor set (art/ui/cursors, USD 0.12), Space hold-to-show markers (two-finger hold on touch, HUD eye press-and-hold). Screenshots: build/screens/controls/.
+
+---
+
+## Status 2026-10-05 (milestone 5): what still waits for you
+
+The game is complete and tested (docs/MILESTONE5.md; owner summary and download in docs/RELEASE.md). Items 1-8 and
+the control changes are answered and built. **Items 9-24 above have no answer yet.** Below is what we did meanwhile,
+plus new questions from the playtests, the location feedback and the text rewrite. Same answer format as above
+("9 ok, 13 ok, N1 a ..."). **Bold** = our recommendation.
+
+### Needed before a public release
+- **9. Art licence:** still open. The credits list every source, but nothing yet says the game's art is
+  CC BY-SA 4.0, and the two carl_eric photos (CC BY-NC-SA 2.0, rooms S17, S18, S55, S61, S62, S65, S66 and frames
+  CS02_2, CS08_1, CS08_2) make those parts non-commercial. **Confirm a**; we then add the licence line from
+  RELEASE.md to the credits and the download page.
+- **10. QA harness in release builds:** built as option **c** (debug and QA builds only; the release exe ignores
+  `--` arguments, verified again in milestone 5). The QA export `build.bat debug` keeps exports testable.
+  Please confirm c instead of b.
+- **N1. Version number:** the menu shows "Verzia 2.0.0" (story data version), the exe says 0.1.0.0 (ISSUES M5-03).
+  **Show the release number (0.1.0, or 1.0.0 for the first public release) in the menu.**
+- **N2. Item stays selected after a successful use** (PT-F09 / PT-S16; the most confusing thing in both playtests;
+  exit clicks do nothing while an item is selected). a) clear the selection after a committed item action;
+  b) let an exit click drop the selection and walk; c) keep. **a + b** (a small Core rule change, tested by the
+  existing acceptance runs).
+- **N3. Hints per step, not per quest** (PT-F08 / PT-S26): **skip hint lines whose step is already done** (Core
+  hint selection; no text change).
+- **N4. Signing and ids:** a Windows code-signing certificate (removes the SmartScreen warning; optional for a free
+  game), the final bundle / package id (placeholder `eu.lastbell.poslednyzvonec`), and for the ports an Apple
+  Developer account (USD 99/year) and an Android release keystore (docs/BUILD.md).
+
+### Places (owner location feedback 2026-10-05, still open)
+- **N5. Entry hall of ZŠ Sokolíkova (S13 1995, S53 2020, S59 1982):** you said the real hall looked different from the
+  type references, "details pending". The rooms are painted from type references until you describe it (layout,
+  where the stairs / porter's window / doors are, floor and wall colours, what hung on the walls). Cost to repaint
+  the L_HALL family afterwards: about USD 0.45-0.90.
+- **N6. The imgur photos** (`imgur_wrRxN8x` S07, `imgur_2tyAMxf` S08, `imgur_d7UwYm6` S41): are they your own photos?
+  If yes (and you allow it), we may use them as real image inputs and credit you. If not (Street View), they stay
+  look-only, as now. Two of them are Street View screenshots and can never be inputs.
+- **N7. S57 data:** decision 3b (bus, tram line under construction) is in the game as a presentation override;
+  game.json `art_brief` / `ambience` of S57 still say tram (handoff owner, ART-DUBEXT-01).
+
+### Texts (docs/writing/SAMPLES.md "Open points for you")
+- **N8. Renames made in the rewrite, please confirm:** "Juro Kazeta" (was Juraj Malík zvaný Juro Kazeta),
+  "Paliho opravovňa" (was Palova), item names "Textilný izolačný návlek", "Adaptér s konektorom bez izolácie",
+  "Mapa uzlov bez fólie", "Priehľadná fólia K-17", "Úplná mapa meracích uzlov", and "Drevená lastovička" (S64,
+  the 1982 swallow is Tóno's wooden model). **ok**.
+- **N9. Tóno's name:** hover labels and topic headers say "Anton Farkaš", every line says Tóno (PT-S25).
+  **"Tóno (Anton Farkaš)"** on first meeting, then "Tóno".
+- **N10. Smaller text questions:** Lea's speaker label (keep "Lea Kormanová (správa z roku 2032)" or **"Lea
+  Kormanová (2032)"**); should the F08 goal name the bridge too (**yes**, it is the only step players miss); two
+  things called "servisná doska" (S63 workbench and the wall board; **rename the workbench "pracovný stôl"**); the
+  map label "Okno školníckej dielne v roku 1982" differs from its room name (**make it equal**); the action label
+  "Dotiahnuť bezpečne položenú kulisu" vs the standing flat in S34 (PT-S19, **reword label + look**).
+
+### Story data and art fixes found in the playtests (handoff owner / small paid edits)
+- **N11.** Mira speaks five lines in the S40 attic but is not in the room (PT-S18): **add MIRA60 to S40 after I09**
+  (game.json) or mark the lines as off-screen voice.
+- **N12.** Paid art fixes, about USD 1.5-2.5 in total: CS07 port frame shows ✕ instead of + (PT-S21, USD 0.15);
+  Adam's winter coat for the 1982 rooms (PT-S20, USD 1-2); "RECEPTION" lettering in S43 (PT-S27, USD 0.15).
+  **Do all three.**
+- **N13.** Design: the conversation closes after every topic (PT-S17; **return to the topic list until "Ukončiť
+  rozhovor"**); Esc skips the whole intro (PT-F13; **first Esc = this line, second = all**); the painted stop clock
+  in S11/S51/S57 is not the time node (PT-F10; **one-time notice that the clock button / T opens the era chooser**).
+
+### Items 11-24
+Unchanged since the list above. Item 13 is mostly done: the S04 basket (crate empty after G03) and the S06 photo
+(faded after G11, half after C04, restored after F17) have their after states; only the S09 case stays closed
+(the chronometer is inside, so nothing visible changes). Items 14-24 are cosmetic and can be answered any time.

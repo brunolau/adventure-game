@@ -161,6 +161,13 @@ public partial class HudView : Control, IHoverView
         strip.Visible = show && state.Mode == GameMode.World;
         if (!show) return;
 
+        // A selected item that has just been used up for good moves to the archive tab (CORE-06): it can do nothing
+        // any more, the bag no longer shows it, and every click in the bag became a no-op "combine" with it
+        // (playtest PT-S02: TOOLS after D06, LEA after F11). Cancel it through the normal input path, like the chip's cross.
+        if (state.SelectedItem is { } held && state.Mode == GameMode.World && (WorldStage.Instance?.IsSettled ?? false)
+            && LastBell.Core.Views.ViewBuilder.IsArchived(game.Content, state, held))
+            WorldInput.Submit(new Hit.Empty(), PointerButton.Right);
+
         // Selected item chip (accessible announcement of the cursor item).
         if (state.SelectedItem != chipItem)
         {
@@ -208,7 +215,8 @@ public partial class HudView : Control, IHoverView
                 centre.OffsetRight = -560;
             }
         }
-        keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels;
+        // Hidden while an item is selected: the chip and a long item name ran into the centred hint (playtest PT-F02).
+        keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels && state.SelectedItem is null;
     }
 
     // ------------------------------------------------------------------ IHoverView

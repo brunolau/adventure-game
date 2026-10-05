@@ -1,94 +1,89 @@
 {
- "room": "S63",
- "notes": "Natural S63 (bg_natural/S63.webp), the physics cabinet on 7 December 1982, overcast. Light snow falling outside the window, crows flying over the bare trees, the ceiling fluorescent tube flickering now and then (room ambience: a clock, switched-off lab supplies).",
- "layers": [
-  {
-   "id": "snow_outside",
-   "type": "particles",
-   "preset": "snow",
-   "emit_rect": [
-    1220,
-    272,
-    335,
-    30
-   ],
-   "count": 40,
-   "size": [
-    2.5,
-    5
-   ],
-   "speed_y": [
-    22,
-    40
-   ],
-   "speed_x": [
-    -8,
-    6
-   ],
-   "wind": 5,
-   "mask": "S63/natural/window_mask.webp",
-   "color": "#ffffff"
-  },
-  {
-   "id": "crows",
-   "type": "tween_path",
-   "sheet": "common/pigeon_sheet",
-   "frames": "fly",
-   "fps": 10,
-   "path": [
-    [
-     1600,
-     320
-    ],
-    [
-     1400,
-     280
-    ],
-    [
-     1180,
-     310
-    ]
-   ],
-   "speed_px_s": 150,
-   "scale": 0.06,
-   "modulate": "#2a2a2e",
-   "flock": 3,
-   "flock_spread": [
-    45,
-    18
-   ],
-   "bob_px": 3,
-   "direction": "random",
-   "every_s": [
-    20,
-    40
-   ],
-   "start_s": [
-    4,
-    10
-   ],
-   "mask": "S63/natural/window_mask.webp"
-  },
-  {
-   "id": "tube_flicker",
-   "type": "flicker",
-   "mode": "fluorescent",
-   "pos": [
-    960,
-    100
-   ],
-   "size": [
-    150,
-    190
-   ],
-   "texture": "builtin:glow",
-   "color": "#f4fbff",
-   "min": 0.0,
-   "max": 0.3,
-   "every_s": [
-    7,
-    18
-   ]
-  }
- ]
+  "room": "S63",
+  "notes": "Natural S63 (bg_natural/S63.webp), the physics cabinet on 7 December 1982, overcast. The bare trees outside the window stir in the wind, light snow falls outside, crows fly over now and then, the warm air above the radiator makes the lower panes shimmer faintly, the grey daylight in the window swells and fades as clouds pass, dust motes drift in the room, the ceiling fluorescent tube flickers now and then (room ambience: a clock, switched-off lab supplies).",
+  "layers": [
+    {
+      "id": "window_branches",
+      "type": "sway",
+      "texture": "S63/natural/window_branches.webp",
+      "anchor": 1.0,
+      "amp_px": 1.1,
+      "freq": 0.26,
+      "wavelength_px": 110,
+      "flutter_px": 0.3,
+      "gust": 0.5
+    },
+    {
+      "id": "snow_outside",
+      "type": "particles",
+      "preset": "snow",
+      "emit_rect": [1220, 272, 335, 30],
+      "count": 56,
+      "size": [3, 6],
+      "speed_y": [22, 40],
+      "speed_x": [-8, 6],
+      "wind": 5,
+      "mask": "S63/natural/window_mask.webp",
+      "color": "#ffffff"
+    },
+    {
+      "id": "heat_shimmer",
+      "type": "water",
+      "texture": "S63/natural/window_low.webp",
+      "amp_px": 0.45,
+      "speed": 1.6,
+      "glint": 0.0
+    },
+    {
+      "id": "crows",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 10,
+      "path": [[1600, 320], [1400, 280], [1180, 310]],
+      "speed_px_s": 150,
+      "scale": 0.06,
+      "modulate": "#2a2a2e",
+      "flock": 3,
+      "flock_spread": [45, 18],
+      "bob_px": 3,
+      "direction": "random",
+      "every_s": [20, 40],
+      "start_s": [4, 10],
+      "mask": "S63/natural/window_mask.webp"
+    },
+    {
+      "id": "tube_flicker",
+      "type": "flicker",
+      "mode": "fluorescent",
+      "pos": [960, 100],
+      "size": [150, 190],
+      "texture": "builtin:glow",
+      "color": "#f4fbff",
+      "min": 0.0,
+      "max": 0.3,
+      "every_s": [7, 18]
+    },
+    {
+      "id": "window_light",
+      "type": "flicker",
+      "mode": "pulse",
+      "rect": [1222, 272, 330, 310],
+      "texture": "builtin:softrect",
+      "color": "#f2f6ff",
+      "min": 0.0,
+      "max": 0.07,
+      "period_s": 11
+    },
+    {
+      "id": "dust_light",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [640, 170, 980, 600],
+      "count": 28,
+      "size": [2, 4.5],
+      "alpha_range": [0.2, 0.6],
+      "color": "#fff6e4"
+    }
+  ]
 }

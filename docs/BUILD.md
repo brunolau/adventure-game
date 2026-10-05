@@ -6,14 +6,19 @@ sections below for what each one still needs.
 
 | platform | preset (`src/game/export_presets.cfg`) | status |
 |---|---|---|
-| Windows x86_64 | `Windows Desktop` | built by `build.bat`; exported exe ran S01, `--replay 11` (S11/1995), headless `--replay 94` |
+| Windows x86_64 | `Windows Desktop` (release) / `Windows Desktop (QA)` | built by `build.bat` / `build.bat debug`; release PCK 176 MB; prologue G01-G11 by real input on the release PCK, 67-room perf tour, 0 missing-asset warnings |
 | macOS universal | `macOS (not built)` | preset only; needs signing + notarization for distribution (Mac or rcodesign) |
-| Android arm64 | `Android arm64 (not built)` | a debug APK exported once (176 MB, debug-signed) but **never run on a device**; C# on Android is experimental (net9.0) |
+| Android arm64 | `Android arm64 (not built)` | a debug APK exported once (176 MB, debug-signed, before the size work) but **never run on a device**; C# on Android is experimental (net9.0) |
 | iOS arm64 | `iOS (not built)` | preset only; needs a Mac with Xcode (C# on iOS is experimental, NativeAOT) |
+
+Milestone 5 (2026-10-05, docs/MILESTONE5.md): `build.bat` re-run on the final code (exe 109.5 MB, PCK 176.2 MB, data 81.0 MB);
+the release exe was played by real input from a new game through the prologue with a save/load round trip, and refused
+the harness flags. The clean distributable (without the `*.dll~RF*.TMP` leftovers of a still-running old window) is
+`build/m5/ship/PoslednyZvonec/` and `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (244.5 MB).
 
 ## Windows (build now)
 
-Requirements (same as `play.bat`):
+Requirements (same as `play.bat`, plus Python 3 for `tools/release_assets.py`):
 
 1. Godot 4.7.2 .NET (mono) in `.tools/godot/Godot_v4.7.2-stable_mono_win64/` (git-ignored).
 2. .NET SDK 8 or newer (`dotnet --list-sdks`; 9 and 10 are installed on the dev machine).
@@ -26,54 +31,155 @@ Requirements (same as `play.bat`):
    `4.7.2.stable` templates do not work for a C# project.
    Self-contained alternative: unpack the templates anywhere and set `GODOT_TEMPLATES=<that folder>`.
    `build.bat` then links it into `%APPDATA%` with a directory junction (Godot only looks there).
+4. Python 3 on `PATH` (`python`).
 
 Build:
 
 ```
-build.bat            release export
-build.bat debug      debug export (adds LastBell.console.exe that prints the log)
+build.bat            release export  -> build/windows/        (preset "Windows Desktop")
+build.bat debug      QA export       -> build/windows_debug/  (preset "Windows Desktop (QA)", adds LastBell.console.exe)
 ```
 
-`build.bat` builds the C# code, imports the assets, deletes and re-creates `build/windows/`, then runs
-`<console exe> --headless --path src/game --export-release "Windows Desktop" build/windows/LastBell.exe`.
-It takes about 20 s on the dev machine.
+`build.bat` builds the C# code, applies the texture import policy (`tools/release_assets.py imports`), checks the
+release filters (`tools/release_assets.py filter --check`), imports the assets, deletes and re-creates the output
+folder, then runs `<console exe> --headless --path src/game --export-release "Windows Desktop" build/windows/LastBell.exe`
+and writes the PCK contents by folder to `build/pck_contents_release.txt` (`_debug` for the QA build).
+It takes about 30 s on the dev machine.
 
-Artifacts (`build/` is git-ignored), about 250 MB in total:
+Two things `build.bat` handles on this machine:
+- If a `LastBell.exe` from the output folder is still running, Windows keeps its files locked (`*.dll~RF….TMP`
+  leftovers in `data_LastBell_windows_x86_64/`). `build.bat` warns; close the game before building for a clean folder.
+- Godot writes the icon and version info into the exe after copying the template. That step sometimes fails with
+  `ERR_CANT_OPEN` (`template_modifier.cpp`) on a freshly copied exe; the exe is then the bare template (no icon).
+  `build.bat` compares the exe size with the template and exports once more (that always worked); it fails if the
+  icon is still missing.
 
-| file | what |
-|---|---|
-| `build/windows/LastBell.exe` | Godot runtime with the painted icon and version info (Posledný zvonec 0.1.0.0) |
-| `build/windows/LastBell.pck` | all game resources (~70 MB) |
-| `build/windows/data_LastBell_windows_x86_64/` | the C# assemblies (LastBell.dll, LastBell.Core.dll) and the bundled .NET runtime |
+Artifacts (`build/` is git-ignored):
+
+| file | size | what |
+|---|---|---|
+| `build/windows/LastBell.exe` | 109.5 MB | Godot release runtime with the painted icon and version info (Posledný zvonec 0.1.0.0) |
+| `build/windows/LastBell.pck` | 176.2 MB | the game resources (was 448.0 MB, see "Release size") |
+| `build/windows/data_LastBell_windows_x86_64/` | 78 MB | the C# assemblies (LastBell.dll, LastBell.Core.dll) and the bundled .NET runtime |
+| the three zipped (deflate) | 244 MB | what a player downloads (before: about 514 MB) |
 
 Ship the three together (zip the folder). There is no installer and no code signing yet, so Windows
 SmartScreen warns on first start ("unknown publisher"). A code-signing certificate (`codesign/*` in the
 preset, signtool) would remove the warning.
 
 What the export contains: `export_filter = all_resources`, plus `include_filter = "*.json,
-localization/*.translation"`. The `*.json` filter is required. The game reads these non-resource files
-through `FileAccess`: `res://data/game.json`, `data/art_overrides.json`, `data/ambient/*.json`,
-`data/debug/walkthrough.json` (QA), the actor/ambient sheet sidecars `assets/**/*.json`,
-`assets/ui/credits.json`, `assets/ui/puzzle_glyphs.json` and `assets/ambient/manifest.json`. The localization
-CSVs are imported into `localization/*.sk.translation`, which project.godot loads. `*.md` files are excluded.
-If you add a new non-resource file type that is read through `FileAccess` (e.g. `.txt`, `.csv` read
-by hand), add it to `include_filter` in **every** preset.
+localization/*.translation, assets/ui/fonts/*.txt"` (the fonts' OFL licence texts travel with the fonts). The
+`*.json` filter is required. The game reads these non-resource files through `FileAccess`: `res://data/game.json`,
+`data/art_overrides.json`, `data/blocking/**/*.json`, `data/audio/*.json`, `data/ambient/actors.json`, the
+actor/ambient sheet sidecars `assets/**/*.json`, `assets/ui/credits.json`, `assets/ui/puzzle_glyphs.json` and the
+ambient manifests. The localization CSVs are imported into `localization/*.sk.translation`, which project.godot
+loads. `*.md` files are excluded. If you add a new non-resource file type that is read through `FileAccess`
+(e.g. `.txt`, `.csv` read by hand), add it to `INCLUDE` in `tools/release_assets.py` and run
+`python tools/release_assets.py filter` (it rewrites the filters of **every** preset).
 
-### Testing the exported build
+## Release size (2026-10-05)
 
-The QA harness (src/game/README.md) also works in the exported exe. It only activates when user arguments follow `--`.
-A release exe has no console, so write the log to a file:
+The PCK had grown to 448 MB: Godot imported every texture "lossless" (it re-encodes the lossy WebP paintings as
+lossless images, about 5x their file size; `.godot/imported` was 428 MB) and both the template and the natural
+paintings shipped. Two changes, both in `tools/release_assets.py` (run by `build.bat`):
+
+1. **Texture compression** (`imports`): Godot's *Lossy* import (WebP inside the `.ctex`, quality 0.90; decoded to
+   RGBA8 on load, no mipmaps) for the large painted images: `assets/bg_natural`, `assets/bg`, `assets/bg_options`,
+   `assets/cutscenes`, `assets/actors` (298 textures). Everything else stays lossless: UI, cursors, icons, fonts,
+   item icons (drawn 1:1 at small sizes) and the painting-matched overlays (`assets/ambient` cut-outs and masks,
+   `variants*`, `fg*`), which sit pixel-exactly on the painting and must not get their own compression noise.
+   VRAM compression (S3TC/BPTC) was not used: BC1/BC3 bands on the soft painted gradients, BC7 is 1 byte per pixel
+   (about 2 MB per background, larger than the lossy WebP on disk), and the PCK is not compressed further.
+   New textures get Godot's lossless default until `build.bat` (or `python tools/release_assets.py imports`) runs.
+2. **Release export filter** (`filter`): the release presets (Windows, macOS, Android, iOS) do not ship what only
+   the template mode, the QA harness or art reviews use. Natural blocking is the default and every room has
+   `data/blocking/<room>.json`, so these are unused in a release: `assets/bg/*`, `assets/variants/*`, `assets/fg/*`
+   (template paintings, overlays, masks), the 37 ambient cut-outs of the template paintings
+   (`assets/ambient/<room>/<file>`, not `natural/`), `data/ambient/S*.json` (their layers), `assets/bg_options/*`
+   (the S57 painting options for the owner decision) and `data/debug/*` (the QA walkthrough). The QA preset
+   `Windows Desktop (QA)` keeps everything, so `--blocking template` still works there and in the editor.
+   `filter --check` fails when the presets are out of date or when natural-mode data (`data/blocking/**`,
+   `data/audio`, sheet and manifest JSON) names an excluded file. The main menu backdrop now uses the natural S01
+   painting (it used the template `bg/S01.webp`).
+
+| | before | after |
+|---|---|---|
+| `LastBell.pck` | 448.0 MB (2392 files) | 176.2 MB (2335 files) |
+| actors / bg_natural / cutscenes / bg (template) | 215.5 / 85.2 / 39.8 / 15.2 MB | 63.9 / 15.9 / 6.9 / 0 MB |
+| audio (ambience, music, sfx; unchanged, already Vorbis 112-160 kbps) | 60.5 MB | 60.5 MB |
+| ambient cut-outs (lossless; grew with new natural living layers) | 15.0 MB | 15.4 MB |
+| release zip (exe + pck + data) | about 514 MB | 244 MB |
+
+`python tools/release_assets.py pck build/windows/LastBell.pck --release` lists a PCK by folder and fails if an
+excluded file is inside.
+
+Quality check (1920x1080 screenshots of the same QA scenes before and after, `--no-ambient`, 11 rooms and 2
+cutscene beats; `build/screens/release/`): rooms 44.6-46.8 dB PSNR against the lossless import (mean pixel
+difference below 1 of 255, 99.9 % of the pixels within 8 of 255, at most 7 pixels per frame up to 29); the cutscene beats differ only by the camera pan's
+sub-pixel timing (the difference image shows outlines, not blocks). Zoomed crops of Adam, Dana, the S04 sign and
+the flat S60 ceiling/wall show no blocking, ringing or banding.
+
+## Performance (2026-10-05, Ryzen 9 7900X, Radeon RX 7600, 1920x1080 window)
+
+Measured with the QA exe running the release PCK (`--perf`, src/game/README.md; the release exe takes no
+harness arguments):
+
+| | before (448 MB PCK, old code) | after |
+|---|---|---|
+| start to the first frame (main menu), release exe | not measured in release; QA exe 826-848 ms | 834-835 ms after engine start (window after 0.46 s) |
+| first room (S01) build in the harness start | 352 ms | 388 ms (hero sheets; while the menu shows, `Main` now preloads the start room) |
+| room transition, 20 rooms (fade out + build + fade in) | median 703 ms, max 889 ms | median 703 ms, max 718 ms |
+| room build (synchronous, screen black) | median 37 ms, max 305 ms | median 20 ms, max 70 ms |
+| longest frame while in a room (background loading) | - | median 7.1 ms, max 12.7 ms |
+| texture memory after 20 rooms | 639 MB (187 MB at start) | 446 MB (350 MB at start incl. preloads) |
+| process working set / private after 20 rooms | 336 / 1230 MB | 320 / 1179 MB |
+| texture memory after 67 rooms (all eras) | (grows: about +23 MB per room) | 406 MB |
+
+What changed:
+- **Neighbour preloading** (`World/RoomPreloader.cs`): after every room build the paintings, foreground masks,
+  occluder textures and, through `RoomPreloader.PathProviders` (the living world), the hero sheets of the next
+  room's variant and every NPC sheet of the rooms behind the exits are loaded on Godot's loader threads (at most 6
+  rooms). While a cutscene or an action's lines keep the old room on screen, the next room is preloaded; the main
+  menu preloads the start room. Without it (`--no-preload`) the same tour has builds up to 366 ms and transitions up
+  to 945 ms. Non-neighbour jumps (portals, fast travel, dev jumps) still build synchronously behind the fade (up to
+  about 160 ms).
+- **Bounded sprite caches** (`Runtime/RoomScopedCache.cs`): the sprite-sheet, actor-set and ambient-sprite caches
+  kept every visited room's textures for the whole session (all actor sheets decoded are 1.39 GB). Entries now drop
+  when no room build used them for 2 rooms; the hero's sheets stay.
+- **Line timing after a load** (`Presentation/DialoguePresenter.cs`): the frame after a load (the room is built
+  inside it) no longer counts as reading time, so the line on screen when the game was saved is not skipped.
+- Mobile note: the hero sheets alone are about 230 MB decoded (two variants of 14 sheets of 3040x1048). Fine on
+  desktop; for phones consider Basis Universal or smaller hero sheets (ISSUES BUILD-06).
+
+## Testing the exported build
+
+The release exe ignores the QA harness (ISSUES BUILD-03): everything after `--` is dropped and the log says
+`LastBell: release build, N QA argument(s) after "--" ignored`. Engine options still work:
 
 ```
-build\windows\LastBell.exe --resolution 1920x1080 --log-file build\screens\export\run.log -- --lines --wait 2500 --screenshot C:\abs\path\S01.png
-build\windows\LastBell.exe --resolution 1920x1080 --log-file run.log -- --replay 11 --skip-lines --screenshot C:\abs\path\S11.png
-build\windows\LastBell.exe --headless --log-file run94.log -- --replay 94 --quit-after 1
+build\windows\LastBell.exe --resolution 1920x1080 --log-file C:\abs\path\run.log
+```
+
+Test the exported game with the QA build (`build.bat debug`, debug template, same code, all assets plus the QA
+walkthrough). To test exactly the release content, copy `build\windows_debug` somewhere and replace its
+`LastBell.pck` with `build\windows\LastBell.pck` (the templates do not support `--main-pack`; the release PCK has no
+`data/debug/walkthrough.json`, so use `--act` instead of `--play`):
+
+```
+build\windows_debug\LastBell.console.exe --resolution 1920x1080 -- --lines --wait 2500 --screenshot C:\abs\path\S01.png
+build\windows_debug\LastBell.console.exe --resolution 1920x1080 -- --replay 11 --skip-lines --screenshot C:\abs\path\S11.png
+build\windows_debug\LastBell.console.exe --headless -- --replay 94 --quit-after 1
+<copy>\LastBell.console.exe --resolution 1920x1080 --time-scale 3 -- --real --act G01 ... --act G11 --fast-text --shots C:\abs\dir --screenshot C:\abs\path\S11.png
+<copy>\LastBell.console.exe --resolution 1920x1080 -- --perf 20
 ```
 
 Use absolute screenshot paths. In an exported build, relative paths are resolved from the exe folder,
-not from the repository. Results of the 2026-10-05 run are in `build/screens/export/`:
-`exported_S01_start.png`, `exported_replay11_S11.png`, walk-cycle and Ela idle frames (`walk_0*.png`,
-`ela_0*.png`, `contact_grid_check.png`) and the logs. All steps OK, exit code 0.
+not from the repository. Results of the 2026-10-05 release-engineering run are in `build/screens/release/`
+(before/after screenshots and crops, the prologue shots `prologue/`, perf logs). The prologue G01-G11 + P01 + CS01
+ran by real input events on the release PCK to S11/1995 with PHONE, TOOLS, SHEDKEY, CHRONO; neither that run nor the
+67-room tour logged a missing texture or any warning. The release exe given `-- --room S44 --screenshot … --quit-after 1`
+logged the "ignored" line, kept running as a normal game and wrote no screenshot (the desktop was locked during
+this run, so the main menu itself was checked in the QA build: `menu_release_pck.png`).
 
 ## App icon
 
@@ -165,9 +271,13 @@ Master: `art/ui/icon/icon_master_v1.png` (nano-banana-pro, USD 0.15, logged in `
 
 ## Checklist before any release build
 
-1. `dotnet build src/LastBell.sln` and `dotnet test src/LastBell.sln` are green; `python tools/check_strings.py` is OK.
+1. `dotnet build src/LastBell.sln` and `dotnet test src/LastBell.sln` are green; `python tools/check_strings.py` is OK;
+   `--acceptance m1` and `m2` pass (src/game/README.md).
 2. `python art/tools/regrid_sheets.py --check` reports 0 textures over 4096 px.
-3. `build.bat`, then run the exported exe to S01 and `--replay 11` (above) and look at the screenshots.
-4. Credits screen lists all CC BY / BY-SA / BY-NC sources (`art/source/CREDITS.md`).
-5. Optional: the QA harness is active in release builds when arguments follow `--`. Gate it on
-   `OS.IsDebugBuild()` before a public release if that is unwanted (ISSUES BUILD-03).
+3. `python tools/release_assets.py check` is OK (texture import policy applied, release filters up to date and not
+   excluding anything natural-mode data uses). `build.bat` runs it.
+4. `build.bat` and `build.bat debug`; the release PCK is about 176 MB (`build/pck_contents_release.txt`).
+5. Run the QA exe with the release PCK through the prologue (`--real --act G01 … --act G11`) and `--perf 20`
+   ("Testing the exported build"); the log has no "not found" warning. Start the release exe once and look at
+   the main menu.
+6. Credits screen lists all CC BY / BY-SA / BY-NC sources (`art/source/CREDITS.md`).

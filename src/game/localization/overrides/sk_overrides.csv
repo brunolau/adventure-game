@@ -23,7 +23,7 @@ look.S04.ambient 2,Na chvíľu by bolo fajn riešiť len klíčky.,Pár zemiakov
 room.S05.name,Mirkina bránka,Mirina bránka,glossary rename
 entry.S05.001,Babka má karanténu. Ja mám zoznam. Prvý raz má viac slobody ten zoznam.,"Babkina bránka. Je v karanténe, takže do domu dnes nejdem.",TEXT-04 rewrite
 look.S05.tray,Sem mám nechať nákup. Babka si ho vezme až keď odstúpim.,"Sem nechám nákup. Babka si ho vezme, až keď odstúpim.",TEXT-04 rewrite
-look.S05.shed_door,Samostatná prázdna dielňa. Na tieto dvere potrebujem babkin kľúč; dom zostáva zatvorený.,"Babkina dielňa v záhrade, oddelená od domu. Na tie dvere treba babkin kľúč.",editor: look has no variant; writer's 'Je zamknutá' would stay wrong after unlocking; this works in both states
+look.S05.shed_door,Samostatná prázdna dielňa. Na tieto dvere potrebujem babkin kľúč; dom zostáva zatvorený.,"Babkina dielňa v záhrade, oddelená od domu. Zámok na dverách otvára babkin kľúč.",playtest PT-F05: the old look ('na tie dvere treba babkin kľúč') read stale after G06; this works before and after unlocking
 look.S05.ambient 1,Babka vie mená susedov aj odrôd. U susedov je kritickejšia.,Babka pozná mená všetkých odrôd aj susedov. K odrodám je zhovievavejšia.,TEXT-04 rewrite
 look.S05.ambient 2,VITAJTE je otočené smerom von. V roku 2020 primerané.,"Rohožka VITAJTE je otočená k dverám, akoby vítala ľudí von. V roku 2020 to sedí.",TEXT-04 rewrite
 exit.S05.to_S06.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,style guide 3.1 example
@@ -51,7 +51,7 @@ look.S09.case,"Na puzdre je ZVON a meno M. Hrušková. Zapínanie je otvorené, 
 look.S09.ambient 1,"Ani jeden z nás nevie, prečo sú tu tri.","Tri lyže. Prečo práve tri, nevie ani babka.",TEXT-04 rewrite
 exit.S09.to_S05.label,Mirkina bránka,Mirina bránka,glossary rename
 exit.S09.to_S05.locked,Do dielne mám kľúč od Miry. Použijem ho na zámok pri bránke.,Dvere dielne sú zamknuté. Najprv ich musím odomknúť babkiným kľúčom.,unreachable in practice; same text as the reverse lock
-entry.S10.001,Výstraha: nesynchronizovať bez svedka. To nebýva ani na tlakovej umývačke.,Na stene visí výstraha NESYNCHRONIZOVAŤ BEZ SVEDKA. Takú nemá ani tlaková umývačka.,editor: smoother punchline
+entry.S10.001,Výstraha: nesynchronizovať bez svedka. To nebýva ani na tlakovej umývačke.,Na stene visí výstraha NEPREPISOVAŤ ORIGINÁL. Takú nemá ani tlaková umývačka.,"playtest PT-F06: S10 has one painted warning sign and its look reads NEPREPISOVAŤ ORIGINÁL; the entry line named a second, invisible warning; drop: svedka"
 look.S10.chrono,Nízkym napätím napájaná kolíska. Prenosný chronometer sa pripája v strede. Poistka je zjavne prerušená.,"Stolový uzol s kolískou na nízke napätie. Chronometer patrí doprostred. Ak kolíska nesvieti, je to poistka.","editor: DATA: no variant after the fuse is replaced (G10); made state-neutral so it is not wrong later, the fuse clue is kept; a variant after G10 is still recommended"
 look.S10.panel,"Schéma nad panelom vedie kruh ku kruhu, trojuholník k trojuholníku a štvorec k štvorcu. Nejde o poradie farieb.","Schéma nad panelom vedie kruh ku kruhu, trojuholník k trojuholníku a štvorec k štvorcu. Na farbách nezáleží.",TEXT-04 rewrite
 look.S10.ambient 2,NEPREPISOVAŤ ORIGINÁL. Babka to napísala trikrát. Historicky nedocenený návyk.,NEPREPISOVAŤ ORIGINÁL. Babka to napísala trikrát. Asi vedela prečo.,TEXT-04 rewrite
@@ -224,7 +224,7 @@ look.S49.confirm.variant1,Obnova skončila. Retroaktívny zápis je vypnutý a z
 look.S49.ambient 2,Alarm bliká pomaly. Nikde nebeží skrytý odpočet.,Núdzová lampa bliká pomaly a pokojne. Nikde nebeží žiadny odpočet.,editor: matches the hotspot name Núdzová lampa
 look.S49.VIKTOR,"Viktor nespal a veľmi chce, aby to malo zmysel. Nebezpečná kombinácia pri veľkom vypínači.","Viktor nespal a veľmi chce, aby to celé malo zmysel. Taký človek by nemal stáť pri veľkom vypínači.",editor: clearer than 'Pri veľkom vypínači je to nebezpečné'
 exit.S49.to_S48.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",TEXT-04 rewrite
-look.S50.switch,ZÁPIS mení minulosť; MONITOR iba číta a dovolí obnoviť zadržané údaje. Mechanický prepínač obíde chybný softvérový príkaz.,"Páčka má dve polohy. ZÁPIS mení minulosť, MONITOR iba číta a dovolí vrátiť zadržané údaje.",editor: grammar
+look.S50.switch,ZÁPIS mení minulosť; MONITOR iba číta a dovolí obnoviť zadržané údaje. Mechanický prepínač obíde chybný softvérový príkaz.,"ZÁPIS mení minulosť, MONITOR iba číta a dovolí vrátiť zadržané údaje. Bez mostíka v konektore nič nezmení.",playtest PT-S07: before J05 a click on the switch only shows this look; it now points at the connector next to it
 look.S50.switch.variant1,Prepínač je mechanicky zaistený v režime MONITOR. V tejto hre sa už nedá vrátiť na ZÁPIS.,Prepínač je zaistený na MONITOR. Na ZÁPIS ho už nikto neprepne.,removed 'v tejto hre' (jargon)
 look.S50.bridge,Keramický mostík obchádza len chybný zápisový príkaz ZVONu. Skrinka nie je nijako zapojená do riadenia lanoviek.,Návratový konektor Atlasu. Keramický mostík zapojený sem obíde chybný príkaz na zápis. Lanovky sú oddelené.,"editor: comma splice fixed; this look is the clue for the bridge, so 'keramický mostík' is named plainly"
 exit.S50.to_S48.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",TEXT-04 rewrite
@@ -247,7 +247,7 @@ look.S54.ambient 2,Tento už internet má. Ja si dnes vystačím s papierom.,"No
 look.S54.JANA20,Jana je na hovore. V tomto roku sa veľa ľudí zmestí do jedného obdĺžnika.,Jana je na videohovore. Tento rok sa veľa ľudí zmestí do jedného obdĺžnika.,TEXT-04 rewrite
 exit.S54.to_S53.locked,Najprv sa cez okno ohlásim Tónovi a prevezmem povolenie.,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,unreachable in practice (inside the school before the permission); same text as the outer locks
 entry.S55.001,Poznám ten roh. Len tu chýba niečo väčšie než lavička.,"Ten roh poznám. Mám pocit, že tu niečo chýba, a nie je to lavička.",TEXT-04 rewrite
-look.S55.cache,Pred opravou minulosti je tu iba asfalt. Po zachovaní lipy stojí na rovnakom mieste nízky múrik s pôvodnými tehlami.,Pod lipou stojí nízky múrik s pôvodnými tehlami. Na mojej fotke je na tomto mieste iba asfalt.,"hotspot appears only after the tree is saved, so the look now describes that state and contrasts it with the photo"
+look.S55.cache,Pred opravou minulosti je tu iba asfalt. Po zachovaní lipy stojí na rovnakom mieste nízky múrik s pôvodnými tehlami.,"Pod lipou stojí nízky múrik, na mojej fotke je tu iba asfalt. Servisnú dosku otvorím náradím z brašne.","playtest PT-S12: before D05 nothing said which item opens the niche; I tried the note, the drawing and the phone first (the hotspot hides after D05, so the look never goes stale)"
 look.S55.ambient 1,Na okraji asfaltu sú dočasné značky pre rozostupy pri výdaji. Chýba tieň aj pohodlné miesto na čakanie.,Na asfalte sú značky odstupu pre výdaj. Na čakanie tu nie je tieň ani kde si sadnúť.,TEXT-04 rewrite
 look.S55.ambient 1.variant1,Výdajné miesto je teraz pod veľkou lipou. Značky odstupu zostali; koruna im pridala tieň.,"Výdajné miesto je teraz pod veľkou lipou. Značky odstupu zostali, koruna im pridala tieň.",TEXT-04 rewrite
 hotspot.S55.ambient 2.name,Koš,Kôš,spelling: kôš (cf. 'Basketbalový kôš' in S17)
@@ -303,7 +303,7 @@ look.S68.arrival,"Keď kabína dôjde do stanice, dvere otvorí obsluha. Pokyn D
 look.S68.ambient 1,Les a svahy sa pomaly posúvajú. Výhľad sa nemení na časový limit.,"Les a svahy pomaly plávajú pod nami. Nikam sa neponáhľajú, ani ja.",TEXT-04 rewrite
 look.S68.ambient 2,Funitel je iný typ lanovky než dolný úsek. Ani budúcnosť ich nezliala do jedného vagóna.,Funitel je iný typ lanovky ako kabínka zdola. Širší a vo vetre pokojnejší.,TEXT-04 rewrite
 exit.S68.to_S67.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,TEXT-04 rewrite
-exit.S68.to_S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",removed 'Klik Dokončiť jazdu' (jargon)
+exit.S68.to_S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vrcholová stanica je už za oknom, tam vystúpim.","playtest PT-S07: the locked door is the obvious click; point at the station in the window, which is the real 'finish the ride' target"
 conn.S02.S05.label,Mirkina bránka,Mirina bránka,glossary rename
 conn.S05.S06.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,TEXT-04 rewrite
 conn.S05.S09.locked,Do dielne mám kľúč od Miry. Použijem ho na zámok pri bránke.,Dvere dielne sú zamknuté. Najprv ich musím odomknúť babkiným kľúčom.,TEXT-04 rewrite
@@ -329,7 +329,7 @@ conn.S41.S67.label,Lanovka Biela Púť–Priehyba,Lanovka Biela Púť – Priehy
 conn.S41.S67.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: same as exit.S41.to_S67.locked
 conn.S67.S68.label,Nastúpiť na Funitel,Funitel na Chopok,TEXT-04 rewrite
 conn.S67.S68.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,TEXT-04 rewrite
-conn.S68.S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",TEXT-04 rewrite
+conn.S68.S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vrcholová stanica je už za oknom, tam vystúpim.",playtest PT-S07: same text as exit.S68.to_S47.locked
 item.PHONE,Batéria je nabitá. Mimo 2020 funguje fotoaparát a lokálny zápisník; sieť ani internet nie.,Batéria je nabitá. Mimo roku 2020 mi z telefónu ostal fotoaparát a poznámky. Signál nečakám.,style guide 6.3 example
 item.PHONE.purpose,Fotografovanie panelu 2035 a trvalý zápisník.,Fotografovať a robiť si zápisky. Neskôr odfotiť panel v roku 2035.,TEXT-04 rewrite
 item.TOOLS,"Skrutkovač, klieštiky a meradlo. Univerzálne náradie sa nevyčerpá.","Skrutkovač, klieštiky a meradlo. Náradie sa nemíňa, to je na ňom najlepšie.",TEXT-04 rewrite
@@ -1003,6 +1003,7 @@ action.E05.002,"Tu máte čistý pohár aj suchý baliaci papier. Nie všetko mu
 action.E05.003,Tento bude slúžiť mimoriadne dlho.,"Tento vydrží dlhšie, než by ste verili.",TEXT-04 rewrite
 action.E06.label,Utesniť mostík do suchého pohára,Uložiť mostík do pohára a utesniť,TEXT-04 rewrite
 action.E06.journal,Dokončené: Utesniť mostík do suchého pohára.,Mostík je zapečatený v suchom pohári.,TEXT-04 rewrite
+action.E06.001,"Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Oto skontroloval závit.","Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Závit dotiahnem dvakrát.","playtest PT-S09: E06 happens in Ružena's shop, Oto is not there; drop: Oto"
 action.E06.002,"Teraz príde tá časť, ktorú si Tóno zapamätá dlhšie než ja.",Teraz to treba schovať. Tóno si to miesto bude pamätať dlhšie ako ja.,TEXT-04 rewrite
 action.E07.label,Dohodnúť ochranu mladej lipy,Ochrana mladej lipy,TEXT-04 rewrite
 action.E07.journal,Dokončené: Dohodnúť ochranu mladej lipy.,"Šimon mi dal ohrádku pre mladú lipu. Keď ju postavím, zakreslí vozíku obchádzku.",TEXT-04 rewrite

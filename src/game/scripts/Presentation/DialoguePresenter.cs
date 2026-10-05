@@ -42,6 +42,9 @@ public partial class DialoguePresenter : Node
     private PlaceholderTopicMenu placeholderMenu = null!;
     private PlaceholderCutsceneFrame placeholderCutscene = null!;
 
+    /// <summary>Frames whose delta is ignored after a session replacement (load / new game).</summary>
+    private int settleFrames;
+
     /// <summary>The singleton presenter.</summary>
     public static DialoguePresenter? Instance { get; private set; }
 
@@ -75,6 +78,7 @@ public partial class DialoguePresenter : Node
 
     private void ResetAll()
     {
+        settleFrames = 2;
         preface = null;
         HideLine();
         HideBark();
@@ -87,7 +91,10 @@ public partial class DialoguePresenter : Node
     {
         var game = GameRuntime.Instance;
         if (!game.IsReady) return;
-        float dt = (float)delta;
+        // After a load the room is built synchronously inside that frame; the next frame's long delta must not
+        // count as reading time, or the line that was on screen when the game was saved is skipped (AT17).
+        float dt = settleFrames > 0 ? 0f : (float)delta;
+        if (settleFrames > 0) settleFrames--;
         var state = game.State;
         var current = Playback.Current(game.Content, state);
 

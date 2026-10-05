@@ -6,7 +6,10 @@ S65/S66 use their own layout guides plus S17/S18 references. Files already in `a
 (their credits are also in `art/source/CREDITS.md`).
 
 **NC licences (non-commercial only, replace before a commercial release):** the two carl_eric Flickr photos
-(CC BY-NC-SA 2.0), used by S17/S55/S61 (mood/material only) and S18/S62/S65 (architecture reference).
+(CC BY-NC-SA 2.0). 'Yard' is an image input of the S17 natural painting (S55/S61 are derived from it; mood/material)
+and of the cutscene frames CS02_2, CS08_1 and CS08_2; the pre-production style painting `art/backgrounds/sokolikova-yard.png`
+made from it is the style image of S17, S18, S55, S61 and S66. 'Block' is an image input of S18 (S62 derived from it),
+S65 and S66 (architecture reference). Every one of these rooms carries the NC flag in its register row.
 
 ## Photos
 
@@ -15,6 +18,7 @@ S65/S66 use their own layout guides plus S17/S18 references. Files already in `a
 | art/source/tram-stop_svantnerova.jpg (reused, L_STOP base) | Bratislava Dúbravka, zástavka električky 22 Slovakia.jpg | Ing.Mgr.Jozef Kotulič | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bratislava_D%C3%BAbravka,_z%C3%A1stavka_elektri%C4%8Dky_22_Slovakia.jpg |
 | art/source/rooms/S11/svantnerova-stop-ne-platform_kartaview-2021-04.jpg (downscaled to 1920 px) | KartaView photo 1271929037 (sequence 3501017, frame 207, 2021-04-12) | synalik (KartaView) | CC BY-SA 4.0 | https://kartaview.org/details/3501017/207/track-info |
 | art/source/rooms/S11/period-tram-t6a5-red-cream_felix-o-1993.jpg | Bratislava, Tatra T6A5, rok 1993.jpg | Felix O | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Bratislava,_Tatra_T6A5,_rok_1993.jpg |
+| art/source/rooms/S11/period-tram-t3g-dubravka_jakubowski-2018.jpg (Commons 1000 px; S11 natural painting: the red-cream Tatra T3) | Tatra T3G, #7837, DP Bratislava (41900744365).jpg (Dúbravka, Saratovská, 7 Jun 2018) | Janusz Jakubowski (Flickr) | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Tatra_T3G,_-7837,_DP_Bratislava_(41900744365).jpg |
 | art/source/rooms/S51/svantnerova-stop-from-road-autumn_kartaview-2020-10.jpg (downscaled to 1920 px) | KartaView photo 1120447814 (sequence 3110506, frame 1512, 2020-10-06) | synalik (KartaView) | CC BY-SA 4.0 | https://kartaview.org/details/3110506/1512/track-info |
 | art/source/rooms/S57/period-tram-t3sucs-winter_felix-o-1993.jpg | Bratislava, Tatra T3SUCS, rok 1993 (2).jpg | Felix O | CC BY-SA 2.0 | https://commons.wikimedia.org/wiki/File:Bratislava,_Tatra_T3SUCS,_rok_1993_(2).jpg |
 | art/source/sokolikova2_01.jpg (reused) | Sokolíkova 2 01.jpg | Wizzard | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Sokol%C3%ADkova_2_01.jpg |

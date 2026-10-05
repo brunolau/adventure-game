@@ -1,136 +1,96 @@
 {
- "room": "S53",
- "notes": "Natural S53 (bg_natural/S53.webp), the closed school's service vestibule, 29 October 2020 afternoon. Wind in the orange forecourt trees seen through the glazed wall (cut from the natural painting), leaves drifting down outside the glass, dust motes in the pale low sunbeams, a ceiling fluorescent tube flickering now and then (room ambience: fluorescent hum, telephone), the wall clock's second hand ticking, the green standby light of the touchless sanitiser dispenser blinking.",
- "layers": [
-  {
-   "id": "window_trees",
-   "type": "sway",
-   "texture": "S53/natural/window_trees.webp",
-   "anchor": 1.0,
-   "amp_px": 1.8,
-   "freq": 0.3,
-   "wavelength_px": 90,
-   "flutter_px": 0.7
-  },
-  {
-   "id": "leaves_outside",
-   "type": "particles",
-   "preset": "leaves",
-   "textures": [
-    "common/leaf_00.webp",
-    "common/leaf_02.webp",
-    "common/leaf_05.webp",
-    "common/leaf_08.webp",
-    "common/leaf_11.webp",
-    "common/leaf_12.webp",
-    "common/leaf_14.webp",
-    "common/leaf_01.webp",
-    "common/leaf_04.webp"
-   ],
-   "emit_rect": [
-    0,
-    240,
-    290,
-    120
-   ],
-   "rate": 0.35,
-   "size": [
-    7,
-    11
-   ],
-   "speed_y": [
-    22,
-    38
-   ],
-   "speed_x": [
-    -14,
-    6
-   ],
-   "wind": 8,
-   "lifetime": [
-    6,
-    10
-   ],
-   "clip": [
-    0,
-    236,
-    298,
-    560
-   ]
-  },
-  {
-   "id": "dust_sunbeams",
-   "type": "particles",
-   "preset": "dust",
-   "emit_rect": [
-    190,
-    320,
-    800,
-    520
-   ],
-   "count": 26,
-   "size": [
-    3.5,
-    7.5
-   ],
-   "alpha_range": [
-    0.2,
-    0.6
-   ],
-   "color": "#fff0d8"
-  },
-  {
-   "id": "tube_flicker",
-   "type": "flicker",
-   "mode": "fluorescent",
-   "pos": [
-    1556,
-    116
-   ],
-   "size": [
-    230,
-    90
-   ],
-   "texture": "builtin:glow",
-   "color": "#f4fbff",
-   "min": 0.0,
-   "max": 0.28,
-   "every_s": [
-    6,
-    16
-   ]
-  },
-  {
-   "id": "clock_seconds",
-   "type": "rotor",
-   "pivot": [
-    960,
-    298
-   ],
-   "length": 20,
-   "tail": 5,
-   "width": 1.5,
-   "color": "#a8321f",
-   "mode": "tick",
-   "period_s": 60
-  },
-  {
-   "id": "sanitiser_led",
-   "type": "flicker",
-   "mode": "blink",
-   "pos": [
-    267,
-    566
-   ],
-   "size": [
-    12,
-    12
-   ],
-   "color": "#5dff7a",
-   "min": 0.0,
-   "max": 0.85,
-   "period_s": 2.2,
-   "duty": 0.18
-  }
- ]
+  "room": "S53",
+  "notes": "Natural S53 (bg_natural/S53.webp), the closed school's service vestibule, 29 October 2020 afternoon. Wind in the orange forecourt trees seen through the glazed wall (cut from the natural painting), leaves drifting down outside the glass, dust motes in the pale low sunbeams, a ceiling fluorescent tube flickering now and then (room ambience: fluorescent hum, telephone), the wall clock's second hand ticking, the green standby light of the touchless sanitiser dispenser blinking. Polish 2026-10-05: the sun patches on the terrazzo breathe (floor_sun), more leaves blow about outside the glass wall (leaves_outside rate 0.8).",
+  "layers": [
+    {
+      "id": "window_trees",
+      "type": "sway",
+      "texture": "S53/natural/window_trees.webp",
+      "anchor": 1.0,
+      "amp_px": 1.8,
+      "freq": 0.3,
+      "wavelength_px": 90,
+      "flutter_px": 0.7
+    },
+    {
+      "id": "leaves_outside",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp",
+        "common/leaf_12.webp",
+        "common/leaf_14.webp",
+        "common/leaf_01.webp",
+        "common/leaf_04.webp"
+      ],
+      "emit_rect": [0, 240, 290, 120],
+      "rate": 0.8,
+      "size": [7, 11],
+      "speed_y": [22, 38],
+      "speed_x": [-14, 6],
+      "wind": 8,
+      "lifetime": [6, 10],
+      "clip": [0, 236, 298, 560]
+    },
+    {
+      "id": "dust_sunbeams",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [190, 320, 800, 520],
+      "count": 26,
+      "size": [3.5, 7.5],
+      "alpha_range": [0.2, 0.6],
+      "color": "#fff0d8"
+    },
+    {
+      "id": "floor_sun",
+      "type": "flicker",
+      "mode": "pulse",
+      "rect": [300, 700, 860, 240],
+      "texture": "builtin:softrect",
+      "color": "#fff0c8",
+      "min": 0.0,
+      "max": 0.11,
+      "period_s": 7.0
+    },
+    {
+      "id": "tube_flicker",
+      "type": "flicker",
+      "mode": "fluorescent",
+      "pos": [1556, 116],
+      "size": [230, 90],
+      "texture": "builtin:glow",
+      "color": "#f4fbff",
+      "min": 0.0,
+      "max": 0.28,
+      "every_s": [6, 16]
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [960, 298],
+      "length": 20,
+      "tail": 5,
+      "width": 1.5,
+      "color": "#a8321f",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "sanitiser_led",
+      "type": "flicker",
+      "mode": "blink",
+      "pos": [267, 566],
+      "size": [12, 12],
+      "color": "#5dff7a",
+      "min": 0.0,
+      "max": 0.85,
+      "period_s": 2.2,
+      "duty": 0.18
+    }
+  ]
 }

@@ -79,6 +79,16 @@ public static class UiTheme
     /// <summary>Heading font (Alegreya, weight 700).</summary>
     public static Font Heading => heading ??= MakeHeading();
 
+    /// <summary>Heading font with lining figures (OpenType lnum): Alegreya's default old-style 0 reads as the letter O
+    /// on number dials (playtest PT-F04).</summary>
+    public static Font HeadingLining => headingLining ??= new FontVariation
+    {
+        BaseFont = Heading,
+        OpentypeFeatures = new Godot.Collections.Dictionary { { "lnum", 1 } },
+    };
+
+    private static Font? headingLining;
+
     private static Font LoadFont(string file)
     {
         string path = "res://assets/ui/fonts/" + file;

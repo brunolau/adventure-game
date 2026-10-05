@@ -1,6 +1,6 @@
 {
   "room": "S57",
-  "notes": "Dubravka stop, early December 1982 (decision 3b; bg_natural/S57.webp): light snow falling, bare branches moving in the wind, the waiting bus's indicator lamps blinking, the stop clock's second hand, pigeons on the platform. Bus sound via the blocking's audio override (bus_pass instead of tram brakes).",
+  "notes": "Dubravka stop, early December 1982 (decision 3b; bg_natural/S57.webp): light snow falling, a few big near flakes drifting past in front (front plane), bare branches moving in the wind, the meltwater puddle in front of the shelter glinting, the waiting Ikarus idling (its front shakes faintly, exhaust vapour puffs from under it and drifts away behind the glass, the indicator lamps blink), the stop clock's second hand, pigeons on the platform, crows crossing the winter sky now and then. Bus sound via the blocking's audio override (bus_pass instead of tram brakes).",
   "layers": [
     {
       "id": "branches_left",
@@ -13,6 +13,15 @@
       "flutter_px": 0.4
     },
     {
+      "id": "puddle",
+      "type": "water",
+      "texture": "S57/natural/puddle.webp",
+      "amp_px": 0.4,
+      "speed": 0.8,
+      "glint": 0.45,
+      "glint_color": "#f4f6fa"
+    },
+    {
       "id": "snow",
       "type": "particles",
       "preset": "snow",
@@ -23,6 +32,21 @@
       "wind": 12,
       "alpha_range": [0.45, 0.85],
       "lifetime": [16, 26]
+    },
+    {
+      "id": "bus_idle",
+      "type": "tween_path",
+      "texture": "S57/natural/bus_front.webp",
+      "pivot": [0, 0],
+      "path": [[122, 320], [122.01, 320]],
+      "duration_s": 100000,
+      "every_s": [1, 1],
+      "start_s": [0, 0],
+      "speed_jitter": [1, 1],
+      "bob_px": 0.45,
+      "bob_hz": 6.5,
+      "prewarm_s": 0.05,
+      "reduced_motion": "hide"
     },
     {
       "id": "bus_indicator_left",
@@ -47,6 +71,23 @@
       "duty": 0.5
     },
     {
+      "id": "bus_exhaust",
+      "type": "particles",
+      "preset": "steam",
+      "emit_points": [[562, 590]],
+      "emit_jitter": [8, 2],
+      "rate": 4.0,
+      "size": [16, 28],
+      "speed_x": [10, 26],
+      "speed_y": [-16, -6],
+      "lifetime": [2.6, 4.2],
+      "alpha_range": [0.38, 0.58],
+      "color": "#e4e8ee",
+      "grow": 3.4,
+      "wind": 4,
+      "fade_in": 0.3
+    },
+    {
       "id": "clock_seconds",
       "type": "rotor",
       "pivot": [787, 133],
@@ -67,6 +108,36 @@
       "flee_radius": 330,
       "return_s": [12, 25],
       "exit": [[2040, 200], [1700, -120]]
+    },
+    {
+      "id": "crows",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 8,
+      "path": [[-60, 170], [600, 120], [1300, 150], [1990, 90]],
+      "speed_px_s": 170,
+      "scale": 0.07,
+      "flock": 3,
+      "flock_spread": [70, 26],
+      "bob_px": 4,
+      "modulate": "#2b2b30",
+      "direction": "random",
+      "every_s": [18, 34],
+      "start_s": [2, 5]
+    },
+    {
+      "id": "snow_near",
+      "type": "particles",
+      "preset": "snow",
+      "plane": "front",
+      "emit_rect": [-60, -40, 2040, 30],
+      "count": 16,
+      "size": [8, 13],
+      "speed_y": [62, 95],
+      "wind": 22,
+      "alpha_range": [0.55, 0.85],
+      "lifetime": [12, 18]
     }
   ]
 }

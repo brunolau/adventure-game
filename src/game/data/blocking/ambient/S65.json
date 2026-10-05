@@ -1,17 +1,67 @@
 {
   "room": "S65",
-  "notes": "Natural S65 (bg_natural/S65.webp, issue room, December 1982). Snow falling outside the window (clipped to the two panes), the left fluorescent tube stuttering now and then, the wall clock's red second hand ticking, steam rising from the glass of tea on the counter, dust motes drifting in the window light.",
+  "notes": "Natural S65 (bg_natural/S65.webp, issue room, December 1982). Snow falling outside the window (clipped to the two panes), the left fluorescent tube stuttering now and then, the wall clock's red second hand ticking, steam rising from the glass of tea on the counter, dust motes drifting in the window light. Polish 2026-10-05: the warm air above the radiator makes the lower window panes shimmer (heat_shimmer).",
   "layers": [
-    { "id": "snow_window", "type": "particles", "preset": "snow", "emit_rect": [1350, 300, 440, 10], "rate": 3.0,
-      "size": [3, 6], "speed_y": [25, 45], "wind": 12, "alpha_range": [0.7, 0.95], "lifetime": [8, 10],
-      "clip": [1368, 330, 412, 232] },
-    { "id": "tube", "type": "flicker", "mode": "fluorescent", "rect": [500, 40, 350, 110],
-      "texture": "builtin:softrect", "color": "#fff7e0", "min": 0.0, "max": 0.22, "every_s": [8, 22] },
-    { "id": "clock_seconds", "type": "rotor", "pivot": [1036, 270], "length": 24, "tail": 6, "width": 1.6,
-      "color": "#a8321f", "mode": "tick", "period_s": 60 },
-    { "id": "tea_steam", "type": "particles", "preset": "steam", "emit_rect": [1206, 538, 18, 6], "rate": 1.6,
-      "size": [8, 16], "alpha_range": [0.22, 0.38] },
-    { "id": "dust", "type": "particles", "preset": "dust", "emit_rect": [1300, 320, 520, 400], "count": 24,
-      "size": [2, 4], "alpha": 0.6 }
+    {
+      "id": "snow_window",
+      "type": "particles",
+      "preset": "snow",
+      "emit_rect": [1350, 300, 440, 10],
+      "rate": 3.0,
+      "size": [3, 6],
+      "speed_y": [25, 45],
+      "wind": 12,
+      "alpha_range": [0.7, 0.95],
+      "lifetime": [8, 10],
+      "clip": [1368, 330, 412, 232]
+    },
+    {
+      "id": "heat_shimmer",
+      "type": "water",
+      "texture": "S65/natural/window_low.webp",
+      "amp_px": 0.5,
+      "speed": 1.6,
+      "glint": 0.0
+    },
+    {
+      "id": "tube",
+      "type": "flicker",
+      "mode": "fluorescent",
+      "rect": [500, 40, 350, 110],
+      "texture": "builtin:softrect",
+      "color": "#fff7e0",
+      "min": 0.0,
+      "max": 0.22,
+      "every_s": [8, 22]
+    },
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [1036, 270],
+      "length": 24,
+      "tail": 6,
+      "width": 1.6,
+      "color": "#a8321f",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "tea_steam",
+      "type": "particles",
+      "preset": "steam",
+      "emit_rect": [1206, 538, 18, 6],
+      "rate": 1.6,
+      "size": [8, 16],
+      "alpha_range": [0.22, 0.38]
+    },
+    {
+      "id": "dust",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [1300, 320, 520, 400],
+      "count": 24,
+      "size": [2, 4],
+      "alpha": 0.6
+    }
   ]
 }

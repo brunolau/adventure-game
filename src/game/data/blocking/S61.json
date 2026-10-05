@@ -79,14 +79,14 @@
         515
       ],
       "interaction_point": [
-        620,
-        765
+        455,
+        770
       ],
       "label_anchor": [
         620,
         170
       ],
-      "reason": "the young freshly planted linden sapling tied to a stake in its grass bed (trunk foot 620,690, bare twigs up to y ~190; painted v7); the tree guard of E09 is the variant S61_tree_guard"
+      "reason": "the young freshly planted linden sapling tied to a stake in its grass bed (trunk foot 620,690, bare twigs up to y ~190; painted v7); the tree guard of E09 is the variant S61_tree_guard (playtest PT-S06: use point left of the guard; at the trunk Adam covered the new guard)"
     },
     "S61.ambient 1": {
       "rect": [
@@ -192,5 +192,30 @@
       ]
     }
   },
-  "state_patches": []
+  "state_patches": [
+    {
+      "texture": "variants_natural/S61_closed_niche.webp",
+      "pos": [
+        1030,
+        505
+      ],
+      "after": [
+        "E08"
+      ],
+      "until": [],
+      "reason": "playtest PT-S10: E08 hides the jar and Oto closes the service board at once (the visual_variant_layers overlay itself waits for the next room entry, Core rule)"
+    },
+    {
+      "texture": "variants_natural/S61_tree_guard.webp",
+      "pos": [
+        430,
+        440
+      ],
+      "after": [
+        "E09"
+      ],
+      "until": [],
+      "reason": "playtest PT-S10: E09 says the guard stands; show it immediately (same overlay as the variant layer)"
+    }
+  ]
 }

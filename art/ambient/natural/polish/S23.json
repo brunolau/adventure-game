@@ -1,0 +1,61 @@
+{
+ "room": "S23",
+ "layers": [
+  {
+   "_after": "pigeons_window",
+   "id": "square_pigeons",
+   "type": "critters",
+   "sheet": "common/pigeon_sheet",
+   "count": 3,
+   "ground": [
+    [
+     660,
+     566
+    ],
+    [
+     960,
+     578
+    ]
+   ],
+   "scale": 0.05,
+   "flee_radius": 0,
+   "return_s": [
+    10,
+    20
+   ],
+   "exit": [
+    [
+     1100,
+     300
+    ],
+    [
+     500,
+     280
+    ]
+   ],
+   "clip": [
+    556,
+    258,
+    448,
+    326
+   ]
+  },
+  {
+   "_after": "desk_lamps",
+   "id": "window_light",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    550,
+    250,
+    460,
+    340
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff6dc",
+   "min": 0.0,
+   "max": 0.08,
+   "period_s": 9.0
+  }
+ ]
+}

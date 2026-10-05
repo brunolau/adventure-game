@@ -33,7 +33,7 @@ public partial class UiDebug : Node
     public override void _Ready()
     {
         ProcessMode = ProcessModeEnum.Always;
-        var args = OS.GetCmdlineUserArgs();
+        var args = LaunchArgs.User;
         for (int i = 0; i < args.Length; i++)
         {
             string a = args[i];

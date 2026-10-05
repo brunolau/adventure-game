@@ -1,0 +1,94 @@
+{
+ "room": "S22",
+ "layers": [
+  {
+   "_before": "dust",
+   "id": "floor_sun",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    340,
+    790,
+    980,
+    140
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff0c8",
+   "min": 0.0,
+   "max": 0.1,
+   "period_s": 8.0
+  },
+  {
+   "_after": "floor_sun",
+   "id": "window_beam",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    540,
+    290,
+    430,
+    300
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff3d6",
+   "min": 0.0,
+   "max": 0.07,
+   "period_s": 8.0
+  },
+  {
+   "_after": "ceiling_lamp",
+   "id": "window_fly",
+   "type": "tween_path",
+   "texture": "builtin:dot",
+   "modulate": "#1d1a17",
+   "scale": 0.3,
+   "speed_px_s": 150,
+   "speed_jitter": [
+    0.8,
+    1.2
+   ],
+   "bob_px": 5,
+   "bob_hz": 5.5,
+   "direction": "random",
+   "reduced_motion": "hide",
+   "path": [
+    [
+     580,
+     360
+    ],
+    [
+     700,
+     320
+    ],
+    [
+     820,
+     420
+    ],
+    [
+     720,
+     500
+    ],
+    [
+     880,
+     540
+    ],
+    [
+     930,
+     380
+    ],
+    [
+     640,
+     450
+    ]
+   ],
+   "every_s": [
+    4,
+    9
+   ],
+   "start_s": [
+    0.5,
+    2
+   ]
+  }
+ ]
+}

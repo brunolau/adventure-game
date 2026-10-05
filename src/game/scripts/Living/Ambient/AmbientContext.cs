@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.Json.Nodes;
 using Godot;
+using LastBell.Game.Runtime;
 using LastBell.Game.Living.Actors;
 using LastBell.Game.World;
 
@@ -56,7 +57,7 @@ public sealed class AmbientContext
     /// <summary>Folder of the shipped ambient art.</summary>
     public const string AssetRoot = "res://assets/ambient/";
 
-    private static readonly Dictionary<string, SpriteSource?> Cache = new(StringComparer.Ordinal);
+    private static readonly RoomScopedCache<SpriteSource?> Cache = new(); // trimmed per room (Runtime/RoomScopedCache.cs)
 
     /// <summary>The room being decorated.</summary>
     public required Room Room { get; init; }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Nodes;
 using Godot;
+using LastBell.Game.Runtime;
 
 namespace LastBell.Game.Living.Actors;
 
@@ -68,7 +69,8 @@ public sealed class SpriteSheet
         return Math.Clamp(columns, 1, Math.Max(1, frames));
     }
 
-    private static readonly Dictionary<string, SpriteSheet?> Cache = new(StringComparer.Ordinal);
+    // Trimmed per room (Runtime/RoomScopedCache.cs); the hero's sheets stay.
+    private static readonly RoomScopedCache<SpriteSheet?> Cache = new(key => key.StartsWith(ActorAnimationSet.FolderOf(GameRuntime.HeroId) + "/", StringComparison.Ordinal));
 
     /// <summary>Loads (cached) a sheet from its JSON sidecar and image path; null if either is missing.</summary>
     public static SpriteSheet? Load(string imagePath, string jsonPath)
@@ -183,7 +185,8 @@ public sealed class ActorAnimationSet
     public static bool Exists(string characterId) =>
         Godot.FileAccess.FileExists(FolderOf(characterId) + "/animations.json") || Godot.FileAccess.FileExists(FolderOf(characterId) + "/actor.json");
 
-    private static readonly Dictionary<string, ActorAnimationSet?> Cache = new(StringComparer.Ordinal);
+    // Trimmed per room (Runtime/RoomScopedCache.cs); the hero's sets (with and without the 2020 mask) stay.
+    private static readonly RoomScopedCache<ActorAnimationSet?> Cache = new(key => key.StartsWith(GameRuntime.HeroId + "|", StringComparison.Ordinal));
 
     /// <summary>
     /// Loads the set. <paramref name="variant"/>: hero "mask2020" (falls back per clip to the default
@@ -208,6 +211,30 @@ public sealed class ActorAnimationSet
         if (set is not null && set.clips.Count == 0) set = null;
         Cache[key] = set;
         return set;
+    }
+
+    /// <summary>
+    /// Sheet images <see cref="Load"/> would read for a character, for background preloading (World/RoomPreloader.cs):
+    /// the hero's default sheets plus those of <paramref name="variant"/>; an NPC's every manifest sheet (LoadNpc reads all).
+    /// </summary>
+    public static IEnumerable<string> SheetImagePaths(string characterId, string? variant)
+    {
+        string folder = FolderOf(characterId);
+        if (Json.Load(folder + "/animations.json", warnIfMissing: false) is { } hero)
+        {
+            if (hero.Obj("animations") is not { } anims) yield break;
+            foreach (var (name, node) in anims)
+            {
+                if (node is not JsonObject a) continue;
+                string v = a.Str("variant", "default")!;
+                if (v == "default" || v == variant) yield return $"{folder}/{a.Str("image", name + ".webp")}";
+            }
+        }
+        else if (Json.Load(folder + "/actor.json", warnIfMissing: false)?.Obj("sheets") is { } sheetDefs)
+        {
+            foreach (var (name, node) in sheetDefs)
+                if (node is JsonObject s) yield return $"{folder}/{s.Str("file", name + "_sheet.webp")}";
+        }
     }
 
     /// <summary>An NPC manifest's <c>default_variant</c> (e.g. JANA20 "laptop"), or null.</summary>

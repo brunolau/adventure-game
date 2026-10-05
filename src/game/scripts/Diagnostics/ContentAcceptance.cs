@@ -272,13 +272,15 @@ public partial class DebugHarness
             var saved = game.State;
             game.Load("m2_accept_mid");
             await Frames(4);
-            bool sameLine = game.State.ActiveLineId == line && SameProgress(saved, game.State);
+            string? lineAfterLoad = game.State.ActiveLineId;
+            bool sameProgress = SameProgress(saved, game.State);
+            bool sameLine = lineAfterLoad == line && sameProgress;
             await WaitUntil(() => game.State.ActiveLineId is null && game.State.Mode == GameMode.World, 120);
             if (id != "F17") await WaitLinesReal(60);
             bool ending = true;
             if (id == "F17") ending = await FinishEndingReal(replay: false) >= 0;
             Check($"AT17_save_load_mid_{id}_cutscene", line is not null && sameLine && game.State.Done.Count(d => d == id) == 1 && ending,
-                  $"line={line} same_line={sameLine} ending_after_load={ending}");
+                  $"line={line} same_line={sameLine} ending_after_load={ending}" + (sameLine ? "" : $" (after load: line={lineAfterLoad ?? "-"} same_progress={sameProgress})"));
         }
         GameRuntime.DeleteSlot("m2_accept_mid");
 

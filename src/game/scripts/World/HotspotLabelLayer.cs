@@ -84,7 +84,15 @@ public partial class HotspotLabelLayer : Node2D
     public Vector2 MarkerPoint(TargetInfo t)
     {
         if (t.Kind == TargetKind.Npc && Room.Npcs.TryGetValue(t.Id, out var actor))
-            return actor.Position - new Vector2(0, actor.Visual.HeightPx * actor.CurrentScale * 0.55f);
+        {
+            var p = actor.Position - new Vector2(0, actor.Visual.HeightPx * actor.CurrentScale * 0.55f);
+            // Busts and laptops (S54 Jana 2020) are cut at a sill: the middle of the full figure falls below the
+            // drawn part and outside the clickable rect, so keep the marker inside the rect (playtest PT-S05).
+            var rect = t.Rect.Grow(-8);
+            if (!t.Rect.HasPoint(p) && rect.Size.X > 0 && rect.Size.Y > 0)
+                p = new Vector2(Mathf.Clamp(p.X, rect.Position.X, rect.End.X), Mathf.Clamp(p.Y, rect.Position.Y, rect.End.Y));
+            return p;
+        }
         var c = t.Rect.GetCenter();
         float r = MarkerSize * 0.7f;
         // Above the HUD strip (82 px at the bottom): the template exit zones sit at the very bottom edge.

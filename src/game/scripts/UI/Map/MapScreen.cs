@@ -61,7 +61,8 @@ public partial class MapScreen : ModalScreen
         status.Text = Ui.T("ui.map.fast_travel_rule");
         Ui.Clear(tabRow);
         var group = new ButtonGroup();
-        foreach (var era in ViewBuilder.Map(game.Content, game.State).Where(e => e.Unlocked))
+        // Chronological tabs (game.json lists the eras in story order: 2020, 1995, 1960, 2035, 1982; playtest PT-S15).
+        foreach (var era in ViewBuilder.Map(game.Content, game.State).Where(e => e.Unlocked).OrderBy(e => e.Year))
         {
             int y = era.Year;
             var b = Ui.Tab(Ui.T("ui.map.sheet_year", ("year", y.ToString())), group);
@@ -222,9 +223,11 @@ public partial class MapGraph : Control
         var region = Ui.Label(TextService.Get(TextKeys.RegionOf(GameRuntime.Instance.Content.GetRoom(room.RoomId))).ToUpperInvariant(), "CaptionLabel");
         region.AddThemeFontSizeOverride("font_size", 16);
         region.AddThemeFontOverride("font", UiTheme.BodyBold);
-        region.Position = new Vector2(14, 6);
-        region.Size = new Vector2(NodeW - 60, 22);
-        region.ClipText = true;
+        region.Position = new Vector2(14, 4);
+        region.Size = new Vector2(NodeW - 60, 26);
+        // Not ClipText: it cut the accents of the capitals (DÚBRAVKA, STARÉ MESTO; playtest PT-F03); trim the width only.
+        region.ClipText = false;
+        region.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
         b.AddChild(region);
         if (room.IsAnchor)
         {

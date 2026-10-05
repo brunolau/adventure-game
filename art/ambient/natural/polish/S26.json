@@ -1,0 +1,73 @@
+{
+ "room": "S26",
+ "layers": [
+  {
+   "_before": "dust",
+   "id": "floor_sun",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    380,
+    800,
+    640,
+    150
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff0c8",
+   "min": 0.0,
+   "max": 0.1,
+   "period_s": 7.5
+  },
+  {
+   "_after": "passage_passers_window",
+   "id": "window_fly",
+   "type": "tween_path",
+   "texture": "builtin:dot",
+   "modulate": "#1d1a17",
+   "scale": 0.3,
+   "speed_px_s": 150,
+   "speed_jitter": [
+    0.8,
+    1.2
+   ],
+   "bob_px": 5,
+   "bob_hz": 5.5,
+   "direction": "random",
+   "reduced_motion": "hide",
+   "path": [
+    [
+     560,
+     350
+    ],
+    [
+     650,
+     420
+    ],
+    [
+     730,
+     360
+    ],
+    [
+     700,
+     480
+    ],
+    [
+     600,
+     520
+    ],
+    [
+     760,
+     560
+    ]
+   ],
+   "every_s": [
+    4,
+    10
+   ],
+   "start_s": [
+    0.5,
+    2
+   ]
+  }
+ ]
+}

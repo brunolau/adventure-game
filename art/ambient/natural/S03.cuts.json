@@ -1,0 +1,182 @@
+{
+ "room": "S03",
+ "source": "src/game/assets/bg_natural/S03.webp",
+ "note": "Natural S03 cut-outs (art/tools/ambient_cut.py --natural S03, living-scene polish 2026-10-05): the orange park tree at the right and the yellow trees at the left behind the shelter (wind sway), and the blue sky above the trees and the roof (mask for drifting clouds).",
+ "items": [
+  {
+   "name": "tree_right",
+   "rect": [
+    1640,
+    96,
+    280,
+    420
+   ],
+   "rules": [
+    {
+     "hue": [
+      12,
+      58
+     ],
+     "sat": [
+      0.4,
+      1
+     ],
+     "val": [
+      0.42,
+      1
+     ]
+    }
+   ],
+   "include": [
+    [
+     [
+      1640,
+      96
+     ],
+     [
+      1920,
+      96
+     ],
+     [
+      1920,
+      470
+     ],
+     [
+      1640,
+      470
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "trees_left",
+   "rect": [
+    0,
+    150,
+    380,
+    300
+   ],
+   "rules": [
+    {
+     "hue": [
+      30,
+      60
+     ],
+     "sat": [
+      0.4,
+      1
+     ],
+     "val": [
+      0.6,
+      1
+     ]
+    }
+   ],
+   "include": [
+    [
+     [
+      0,
+      150
+     ],
+     [
+      380,
+      150
+     ],
+     [
+      380,
+      300
+     ],
+     [
+      250,
+      330
+     ],
+     [
+      200,
+      430
+     ],
+     [
+      0,
+      430
+     ]
+    ]
+   ],
+   "feather": 1.0,
+   "exclude": [
+    [
+     [
+      170,
+      268
+     ],
+     [
+      352,
+      128
+     ],
+     [
+      400,
+      128
+     ],
+     [
+      400,
+      330
+     ],
+     [
+      170,
+      330
+     ]
+    ]
+   ]
+  },
+  {
+   "name": "sky_mask",
+   "kind": "mask",
+   "rect": [
+    0,
+    0,
+    1920,
+    330
+   ],
+   "rules": [
+    {
+     "hue": [
+      180,
+      236
+     ],
+     "sat": [
+      0.08,
+      0.7
+     ],
+     "val": [
+      0.72,
+      1
+     ]
+    },
+    {
+     "sat": [
+      0,
+      0.3
+     ],
+     "val": [
+      0.82,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      1470,
+      70
+     ],
+     [
+      1610,
+      330
+     ]
+    ]
+   ],
+   "feather": 1.5,
+   "clean": 1,
+   "scale": 0.5
+  }
+ ]
+}

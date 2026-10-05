@@ -1,0 +1,32 @@
+{
+ "room": "S27",
+ "layers": [
+  {
+   "_after": "vu_meters",
+   "id": "woofer_top",
+   "type": "water",
+   "texture": "S27/natural/woofer_top.webp",
+   "amp_px": 0.9,
+   "speed": 5.5,
+   "glint": 0.0
+  },
+  {
+   "_after": "woofer_top",
+   "id": "woofer_bottom",
+   "type": "water",
+   "texture": "S27/natural/woofer_bottom.webp",
+   "amp_px": 1.2,
+   "speed": 5.0,
+   "glint": 0.0
+  },
+  {
+   "_after": "woofer_bottom",
+   "id": "woofer_small",
+   "type": "water",
+   "texture": "S27/natural/woofer_small.webp",
+   "amp_px": 0.8,
+   "speed": 6.0,
+   "glint": 0.0
+  }
+ ]
+}

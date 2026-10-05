@@ -1,0 +1,31 @@
+{
+ "room": "S53",
+ "layers": [
+  {
+   "_after": "dust_sunbeams",
+   "id": "tape_flutter",
+   "type": "water",
+   "texture": "S53/natural/tape.webp",
+   "amp_px": 3.2,
+   "speed": 1.6,
+   "glint": 0.0
+  },
+  {
+   "_after": "tape_flutter",
+   "id": "floor_sun",
+   "type": "flicker",
+   "mode": "pulse",
+   "rect": [
+    300,
+    700,
+    860,
+    240
+   ],
+   "texture": "builtin:softrect",
+   "color": "#fff0c8",
+   "min": 0.0,
+   "max": 0.09,
+   "period_s": 7.0
+  }
+ ]
+}

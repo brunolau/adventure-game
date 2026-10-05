@@ -1,0 +1,73 @@
+{
+ "room": "S40",
+ "layers": [
+  {
+   "_after": "window_light",
+   "id": "swallows",
+   "type": "tween_path",
+   "sheet": "common/pigeon_sheet",
+   "frames": "fly",
+   "fps": 14,
+   "path": [
+    [
+     890,
+     372
+    ],
+    [
+     960,
+     352
+    ],
+    [
+     1040,
+     362
+    ]
+   ],
+   "speed_px_s": 260,
+   "scale": 0.045,
+   "modulate": "#26242a",
+   "flock": 2,
+   "flock_spread": [
+    30,
+    10
+   ],
+   "bob_px": 2,
+   "direction": "random",
+   "every_s": [
+    4,
+    9
+   ],
+   "start_s": [
+    0.5,
+    2
+   ],
+   "clip": [
+    918,
+    338,
+    90,
+    46
+   ]
+  },
+  {
+   "_after": "dust_beam",
+   "id": "dust_beam_bright",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    560,
+    120,
+    360,
+    560
+   ],
+   "count": 26,
+   "size": [
+    4,
+    8
+   ],
+   "alpha_range": [
+    0.5,
+    0.95
+   ],
+   "color": "#fff3d0"
+  }
+ ]
+}

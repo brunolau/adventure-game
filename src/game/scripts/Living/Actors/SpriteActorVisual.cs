@@ -183,7 +183,13 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
             : set.Get(animation) ?? set.Get("gesture");
         if (clip is null) return;
         if (set.IsDirectional && clip.Name.EndsWith("_front", StringComparison.Ordinal)) facing = Facing.Front;
-        else facing = Facing.Side;
+        else
+        {
+            facing = Facing.Side;
+            // A target steeply above the hero turns his idle to the back view but leaves `side` at the last walk
+            // direction, so the side-view gesture reached away from the target (playtest PT-S11: S54 log, S49 panel).
+            if (Math.Abs(direction.X) > 0.05f) side = Math.Sign(direction.X);
+        }
         action = clip;
         actionName = animation;
         phase = ActionPhase.Forward;

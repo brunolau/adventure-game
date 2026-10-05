@@ -116,6 +116,23 @@ public partial class JournalScreen : ModalScreen
 
     // ------------------------------------------------------------------ goals
 
+    /// <summary>
+    /// The objective line of the "current goal" card: the latest objective of a done main-story action. Core's
+    /// <see cref="Quests.LatestObjective"/> takes any action, so a side step (Q9C "Voliteľne sa s Janou porozprávaj …")
+    /// stood under the main quest title for the whole E03-E07 stretch (playtest PT-S01). Falls back to Core's
+    /// sentence when no main action has an objective yet. Presentation only.
+    /// </summary>
+    internal static TextRef CurrentObjective(LastBell.Core.Content.GameContent content, GameState state, TextRef latest)
+    {
+        for (int i = state.Done.Length - 1; i >= 0; i--)
+        {
+            var action = content.FindAction(state.Done[i]);
+            if (action is null || !action.IsMain) continue;
+            if (action.Objective is not null) return TextKeys.ObjectiveOf(action);
+        }
+        return latest;
+    }
+
     private void BuildGoals(JournalView view)
     {
         var current = new PanelContainer { ThemeTypeVariation = "HighlightCard" };
@@ -126,8 +143,9 @@ public partial class JournalScreen : ModalScreen
             cbox.AddChild(Ui.Label(Ui.T(cm.Title), "HeadingLabel", wrap: true));
             cbox.AddChild(Ui.Para(Ui.T(cm.Goal)));
         }
-        if (!view.LatestObjective.IsEmpty) cbox.AddChild(Ui.Para(Ui.T(view.LatestObjective), "ItalicLabel"));
-        if (view.CurrentMainQuest is null && view.LatestObjective.IsEmpty) cbox.AddChild(Ui.Para(Ui.T("ui.hint.all_done")));
+        var objective = CurrentObjective(GameRuntime.Instance.Content, GameRuntime.Instance.State, view.LatestObjective);
+        if (!objective.IsEmpty) cbox.AddChild(Ui.Para(Ui.T(objective), "ItalicLabel"));
+        if (view.CurrentMainQuest is null && objective.IsEmpty) cbox.AddChild(Ui.Para(Ui.T("ui.hint.all_done")));
         current.AddChild(cbox);
         content.AddChild(current);
 
@@ -352,7 +370,11 @@ public partial class JournalScreen : ModalScreen
                 n++;
                 string id = cutsceneId;
                 var action = game.Content.Actions.FirstOrDefault(a => a.Cutscene == id);
-                string label = action is null ? Ui.T("ui.journal.scene_n", ("n", n.ToString())) : Ui.T(TextKeys.LabelOf(action));
+                // A scene title of its own when ui.csv has one: the action label can be a spoken topic line
+                // ("Zapíšete lipu aj múrik?" for CS08), which reads oddly as a scene name (playtest PT-S08).
+                string titled = TextService.Get("ui.journal.scene_" + id.ToLowerInvariant(), "");
+                string label = titled.Length > 0 ? titled
+                    : action is null ? Ui.T("ui.journal.scene_n", ("n", n.ToString())) : Ui.T(TextKeys.LabelOf(action));
                 var b = Ui.Button(label, () => game.Update(s => Postgame.ReplayCutscene(game.Content, s, id)));
                 flow.AddChild(b);
             }

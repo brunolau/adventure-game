@@ -1,0 +1,44 @@
+{
+ "room": "S20",
+ "layers": [
+  {
+   "_after": "scope_trace",
+   "id": "scope_sweep",
+   "type": "flicker",
+   "mode": "sweep",
+   "rect": [
+    1306,
+    508,
+    60,
+    50
+   ],
+   "texture": "builtin:glow",
+   "color": "#a8ffcc",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.55,
+   "period_s": 0.9,
+   "duty": 1.0
+  },
+  {
+   "_after": "scope_sweep",
+   "id": "radio_dial",
+   "type": "flicker",
+   "mode": "noise",
+   "pos": [
+    836,
+    528
+   ],
+   "size": [
+    120,
+    34
+   ],
+   "texture": "builtin:glow",
+   "color": "#ffcf80",
+   "blend": "add",
+   "min": 0.12,
+   "max": 0.32,
+   "period_s": 0.6
+  }
+ ]
+}

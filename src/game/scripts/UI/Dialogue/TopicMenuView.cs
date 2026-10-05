@@ -109,8 +109,28 @@ public partial class TopicMenuView : Control, ITopicMenuView
         float height = Math.Min(wanted, Size.Y - 200);
         panel.CustomMinimumSize = new Vector2(width, height);
         panel.Size = new Vector2(width, height);
-        panel.Position = new Vector2(Size.X - width - 60, Size.Y - height - 150);
+        // The panel goes to the half away from the conversation, so it does not cover the NPC or Adam
+        // (playtests PT-F11 / PT-S03: Oto, Ela, Jana and others talk right of centre).
+        float x = SpeakersOnRight() ? 60 : Size.X - width - 60;
+        panel.Position = new Vector2(x, Size.Y - height - 150);
     }
+
+    /// <summary>True when the midpoint of the NPC and the hero is right of the screen centre.</summary>
+    private bool SpeakersOnRight()
+    {
+        if (request is null || LastBell.Game.World.WorldStage.Instance?.Current is not { } room) return false;
+        var points = new System.Collections.Generic.List<float>();
+        if (room.FindActor(request.CharacterId) is { } npc) points.Add(ToLocalX(npc));
+        if (room.Hero is { } hero) points.Add(ToLocalX(hero));
+        if (points.Count == 0) return false;
+        float mid = 0;
+        foreach (var p in points) mid += p;
+        mid /= points.Count;
+        return mid > Size.X / 2;
+    }
+
+    private float ToLocalX(Node2D actor) =>
+        (GetGlobalTransformWithCanvas().AffineInverse() * actor.GetGlobalTransformWithCanvas().Origin).X;
 
     /// <inheritdoc />
     public override void _Process(double delta)

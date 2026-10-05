@@ -1,102 +1,78 @@
 {
- "room": "S23",
- "notes": "Natural S23: the red second hand ticking on the wall clock above the door, dust in the window light, pigeons flying past the window, the green desk lamps glowing softly.",
- "layers": [
-  {
-   "id": "clock_seconds",
-   "type": "rotor",
-   "pivot": [
-    421,
-    290
-   ],
-   "length": 30,
-   "tail": 7,
-   "width": 1.6,
-   "color": "#a8321f",
-   "mode": "tick",
-   "period_s": 60
-  },
-  {
-   "id": "dust",
-   "type": "particles",
-   "preset": "dust",
-   "emit_rect": [
-    560,
-    260,
-    700,
-    520
-   ],
-   "count": 32,
-   "size": [
-    3.5,
-    7.5
-   ],
-   "alpha_range": [
-    0.2,
-    0.65
-   ],
-   "color": "#fff1c8"
-  },
-  {
-   "id": "pigeons_window",
-   "type": "tween_path",
-   "sheet": "common/pigeon_sheet",
-   "frames": "fly",
-   "fps": 11,
-   "path": [
-    [
-     540,
-     330
-    ],
-    [
-     800,
-     300
-    ],
-    [
-     1020,
-     320
-    ]
-   ],
-   "speed_px_s": 230,
-   "scale": 0.1,
-   "flock": 2,
-   "flock_spread": [
-    60,
-    22
-   ],
-   "bob_px": 4,
-   "direction": "random",
-   "every_s": [
-    20,
-    40
-   ],
-   "start_s": [
-    3,
-    9
-   ],
-   "clip": [
-    572,
-    262,
-    422,
-    312
-   ]
-  },
-  {
-   "id": "desk_lamps",
-   "type": "flicker",
-   "mode": "pulse",
-   "pos": [
-    858,
-    535
-   ],
-   "size": [
-    560,
-    70
-   ],
-   "color": "#d8ffb0",
-   "min": 0.04,
-   "max": 0.12,
-   "period_s": 5.0
-  }
- ]
+  "room": "S23",
+  "notes": "Natural S23: the red second hand ticking on the wall clock above the door, dust in the window light, pigeons flying past the window, the green desk lamps glowing softly. Polish 2026-10-05: pigeons peck on the square seen through the window (square_pigeons, clipped to the window, never flee), the window light breathes (window_light).",
+  "layers": [
+    {
+      "id": "clock_seconds",
+      "type": "rotor",
+      "pivot": [421, 290],
+      "length": 30,
+      "tail": 7,
+      "width": 1.6,
+      "color": "#a8321f",
+      "mode": "tick",
+      "period_s": 60
+    },
+    {
+      "id": "dust",
+      "type": "particles",
+      "preset": "dust",
+      "emit_rect": [560, 260, 700, 520],
+      "count": 32,
+      "size": [3.5, 7.5],
+      "alpha_range": [0.2, 0.65],
+      "color": "#fff1c8"
+    },
+    {
+      "id": "pigeons_window",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 11,
+      "path": [[540, 330], [800, 300], [1020, 320]],
+      "speed_px_s": 230,
+      "scale": 0.1,
+      "flock": 2,
+      "flock_spread": [60, 22],
+      "bob_px": 4,
+      "direction": "random",
+      "every_s": [20, 40],
+      "start_s": [3, 9],
+      "clip": [572, 262, 422, 312]
+    },
+    {
+      "id": "square_pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [[660, 566], [960, 578]],
+      "scale": 0.05,
+      "flee_radius": 0,
+      "return_s": [10, 20],
+      "exit": [[1100, 300], [500, 280]],
+      "clip": [556, 258, 448, 326]
+    },
+    {
+      "id": "desk_lamps",
+      "type": "flicker",
+      "mode": "pulse",
+      "pos": [858, 535],
+      "size": [560, 70],
+      "color": "#d8ffb0",
+      "min": 0.04,
+      "max": 0.12,
+      "period_s": 5.0
+    },
+    {
+      "id": "window_light",
+      "type": "flicker",
+      "mode": "pulse",
+      "rect": [550, 250, 460, 340],
+      "texture": "builtin:softrect",
+      "color": "#fff6dc",
+      "min": 0.0,
+      "max": 0.08,
+      "period_s": 9.0
+    }
+  ]
 }

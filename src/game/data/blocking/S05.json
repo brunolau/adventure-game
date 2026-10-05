@@ -70,20 +70,20 @@
     },
     "S05.shed_door": {
       "rect": [
-        725,
-        400,
-        150,
-        225
+        770,
+        470,
+        130,
+        130
       ],
       "interaction_point": [
         800,
         790
       ],
       "label_anchor": [
-        800,
-        392
+        835,
+        462
       ],
-      "reason": "upper two thirds of the workshop's plank door in the street line, padlock and hasp at y ~540"
+      "reason": "upper two thirds of the workshop's plank door in the street line, padlock and hasp at y ~540; playtest 2026-10-05 (PT-F05): only the padlock and hasp (y ~540) are the prop now, the rest of the door leaf is the S05.to_S09 exit, so after G06 a click on the door walks in instead of repeating the look"
     },
     "S05.ambient 1": {
       "rect": [
@@ -158,9 +158,9 @@
     "S05.to_S09": {
       "rect": [
         725,
-        625,
+        400,
         150,
-        105
+        330
       ],
       "interaction_point": [
         800,
@@ -168,9 +168,9 @@
       ],
       "label_anchor": [
         800,
-        762
+        640
       ],
-      "reason": "lower part of the workshop door and its threshold step (the door leaf above is the shed_door hotspot)"
+      "reason": "lower part of the workshop door and its threshold step (the door leaf above is the shed_door hotspot); playtest 2026-10-05 (PT-F05): the whole door leaf and threshold (the padlock rect above it wins the hit test)"
     }
   },
   "state_patches": [

@@ -36,6 +36,7 @@ public partial class Main : Node
     public override void _Ready()
     {
         Instance = this;
+        RenderingServer.FramePostDraw += LogFirstFrame;
         var game = GameRuntime.Instance;
         if (!game.IsReady)
         {
@@ -65,6 +66,13 @@ public partial class Main : Node
             return; // the harness prepares the state and builds the room
         }
         if (!UiBus.IsClaimed(UiPanel.MainMenu)) game.NewGame();
+        else RoomPreloader.Instance?.PrefetchRooms(new[] { game.Content.InitialState.Room }); // decoded while the menu shows
+    }
+
+    private static void LogFirstFrame()
+    {
+        RenderingServer.FramePostDraw -= LogFirstFrame;
+        GD.Print($"LastBell: first frame drawn {Time.GetTicksMsec()} ms after engine start");
     }
 
     private void LoadExtensions()
