@@ -1,0 +1,136 @@
+{
+  "name": "npc",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    258,
+    358
+  ],
+  "pivot": [
+    129,
+    354
+  ],
+  "scale": 0.1692,
+  "height_px": 350,
+  "playback_fps": 8,
+  "sources": [
+    "key:sheet_npc_3q.png",
+    "patch[eyes [0.0649, 0.1373]]:pose_blink_nb2.png",
+    "patch[mouth [0.141, 0.2569]]:pose_talk_a_nb2.png",
+    "patch[mouth [0.141, 0.2569]]:pose_talk_o_nb2.png",
+    "patch:pose_gesture_nb2.png"
+  ],
+  "face_landmarks": {
+    "figure_box": [
+      542,
+      200,
+      1285,
+      2269
+    ],
+    "eye_y": 424.2,
+    "mouth_y": 574.1,
+    "bands_px": {
+      "eyes": [
+        334,
+        484
+      ],
+      "mouth": [
+        492,
+        731
+      ]
+    },
+    "bands_frac": {
+      "eyes": [
+        0.0649,
+        0.1373
+      ],
+      "mouth": [
+        0.141,
+        0.2569
+      ]
+    }
+  },
+  "edit_reports": {
+    "blink": {
+      "shift_dy_dx": [
+        -2,
+        -1
+      ],
+      "colour_fit": [
+        [
+          0.982,
+          3.8
+        ],
+        [
+          0.975,
+          5.8
+        ],
+        [
+          0.957,
+          7.5
+        ]
+      ],
+      "changed_px": 11270,
+      "mean_abs_diff_outside_band_after_fit": 5.43
+    },
+    "talk_a": {
+      "shift_dy_dx": [
+        -2,
+        -1
+      ],
+      "colour_fit": [
+        [
+          0.973,
+          4.2
+        ],
+        [
+          0.967,
+          6.0
+        ],
+        [
+          0.956,
+          6.5
+        ]
+      ],
+      "changed_px": 9775,
+      "mean_abs_diff_outside_band_after_fit": 5.44
+    },
+    "talk_b": {
+      "shift_dy_dx": [
+        -2,
+        -1
+      ],
+      "colour_fit": [
+        [
+          0.985,
+          3.2
+        ],
+        [
+          0.982,
+          4.9
+        ],
+        [
+          0.974,
+          5.3
+        ]
+      ],
+      "changed_px": 7152,
+      "mean_abs_diff_outside_band_after_fit": 5.51
+    },
+    "gesture": {
+      "shift_dy_dx": [
+        0,
+        0
+      ],
+      "height_ratio": 1.0014,
+      "changed_px_in_region": 108807,
+      "mean_abs_diff_outside_region": 84.4,
+      "share_changed_outside_region": 1.0
+    }
+  }
+}
