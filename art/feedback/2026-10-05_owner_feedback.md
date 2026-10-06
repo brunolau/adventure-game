@@ -74,3 +74,11 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
   low **medical centre** (there since the early 1980s → also in 1982). References: `imgur_gnv1VFF.jpg` (a friend's
   photo, **usable directly**), `imhd_svantnerova_1995.jpg` and `imhd_svantnerova_7951.jpg` (imhd.sk, copyrighted →
   look only; no brands Lukoil/Tesco/Dr.Max).
+
+## Update 2026-10-06 (owner): S08 and S03
+
+- **S08:** the real pumptrack (a raised, hummocky dirt mound with a winding track) lies on the FAR side of the pond,
+  instead of houses. Reference `web_pumptrack_cierna_voda_2020.jpg` (blog photo, look only).
+- **S03:** based on the real playground **"Lúčny koník"** in Čierna Voda (hip-roofed timber shelter with a stone
+  chimney, wooden playground, meadow); the name Lúčny koník is used in the game texts. Reference
+  `web_lucny_konik_2018.jpg` (blog photo, look only).
