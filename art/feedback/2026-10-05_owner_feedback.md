@@ -93,3 +93,11 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
   thumbnail of an unknown photo → look only), `SCHOOL_other_side.jpg` (dubravska4liga.sk → look only).
 - Era detail: the colourful ground-floor murals in the 2020-era photos are post-2000 → 2020 only; 1982/1995 plain
   yellowish walls (earlier note).
+
+## Update 2026-10-07 (owner): exit directions must follow real geography
+
+- **Švantnerova stop (S11 1995 / S51 2020 / S57 1982):** the way to ZŠ Sokolíkova (S12/S52/S58) is on the LEFT of the stop.
+- **Karlova Ves (S19 tram platform, S20 repair shop):** Dúbravka is on the RIGHT, the city (Staré Mesto, Ružinov, Petržalka) on the LEFT.
+- **S07** (done 2026-10-06): the shop S04 at the bottom left on the road; the bus to Dúbravka higher on the road, pointing up.
+- General: every "next location" arrow points where that place really lies from the camera's real position and heading;
+  the return exit in the target room is on the opposite side. Uncertain rooms go to the owner's exit review page.
