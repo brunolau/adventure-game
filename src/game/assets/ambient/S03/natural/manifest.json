@@ -1,28 +1,50 @@
 {
   "room": "S03",
   "source": "src/game/assets/bg_natural/S03.webp",
-  "bg_sha1": "a93f2730048f8e6ed45252b8153fe1d2e45529ef",
+  "bg_sha1": "e6a0b57340bd953d42e2646c6ea8d44fff0046bf",
   "items": {
-    "tree_right": {
+    "trees_right": {
       "kind": "cutout",
       "pos": [
-        1628,
-        84
-      ],
-      "size": [
-        304,
-        444
-      ]
-    },
-    "trees_left": {
-      "kind": "cutout",
-      "pos": [
-        -12,
+        1656,
         138
       ],
       "size": [
-        404,
-        324
+        276,
+        359
+      ]
+    },
+    "tree_left": {
+      "kind": "cutout",
+      "pos": [
+        24,
+        216
+      ],
+      "size": [
+        164,
+        174
+      ]
+    },
+    "grass_right": {
+      "kind": "cutout",
+      "pos": [
+        1628,
+        560
+      ],
+      "size": [
+        304,
+        124
+      ]
+    },
+    "grass_left": {
+      "kind": "cutout",
+      "pos": [
+        -12,
+        640
+      ],
+      "size": [
+        164,
+        80
       ]
     },
     "sky_mask": {
@@ -31,7 +53,16 @@
         0,
         0,
         1920,
-        330
+        305
+      ]
+    },
+    "slide_occluders": {
+      "kind": "mask",
+      "mask_rect": [
+        128,
+        530,
+        170,
+        130
       ]
     }
   }

@@ -1,0 +1,153 @@
+{
+  "chunk": "C1",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\out\\S03_lucny_konik.csv",
+  "overlay": [],
+  "cost_usd": 0.3243,
+  "batches": {
+    "G01+S02": {
+      "hash": "84ee741e40da84db",
+      "status": "ok",
+      "heading": "G01 · main quest M01 „Nákup pre babku“ | S02 · Ulica medzi plotmi (2020, Chorvátsky Grob)",
+      "keys": [
+        "action.G01.objective",
+        "action.G01.journal",
+        "exit.S02.to_S03.label",
+        "conn.S02.S03.label"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10975,
+        "completion_tokens": 415,
+        "total_tokens": 11390,
+        "cost": 0.1108115,
+        "prompt_tokens_details": {
+          "cached_tokens": 3029,
+          "cache_write_tokens": 3029
+        }
+      },
+      "usd": 0.1108
+    },
+    "S03+S04": {
+      "hash": "ecaa4619f88d305d",
+      "status": "ok",
+      "heading": "S03 · Dobrovoľnícke výdajné miesto (2020, Chorvátsky Grob) | S04 · Potraviny cez okienko (2020, Chorvátsky Grob)",
+      "keys": [
+        "room.S03.name",
+        "entry.S03.001",
+        "exit.S04.to_S03.label"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11676,
+        "completion_tokens": 504,
+        "total_tokens": 12180,
+        "cost": 0.112899,
+        "prompt_tokens_details": {
+          "cached_tokens": 3229,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1129
+    },
+    "S07+M01": {
+      "hash": "c110e41a1828cc1d",
+      "status": "ok",
+      "heading": "S07 · Čierna Voda pri výveske (2020, Čierna Voda) | M01 (main) — actions G01, G02, G03, G04, G05",
+      "keys": [
+        "exit.S07.to_S03.label",
+        "quest.M01.hint.1"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11282,
+        "completion_tokens": 173,
+        "total_tokens": 11455,
+        "cost": 0.1006375,
+        "prompt_tokens_details": {
+          "cached_tokens": 3205,
+          "cache_write_tokens": 3205
+        }
+      },
+      "usd": 0.1006
+    }
+  },
+  "keys": {
+    "action.G01.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "G01+S02"
+    },
+    "action.G01.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "G01+S02"
+    },
+    "exit.S02.to_S03.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník – výdajné miesto",
+      "batch": "G01+S02"
+    },
+    "conn.S02.S03.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník – výdajné miesto",
+      "batch": "G01+S02"
+    },
+    "room.S03.name": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník – výdajné miesto",
+      "batch": "S03+S04"
+    },
+    "entry.S03.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník. Pod prístreškom, kde sa inokedy griluje, teraz Ela vybavuje telefóny aj zemiaky naraz.",
+      "batch": "S03+S04"
+    },
+    "exit.S04.to_S03.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník – výdajné miesto",
+      "batch": "S03+S04"
+    },
+    "exit.S07.to_S03.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lúčny koník – výdajné miesto",
+      "batch": "S07+M01"
+    },
+    "quest.M01.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Začni u Ely na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "S07+M01"
+    }
+  },
+  "unreviewed": []
+}

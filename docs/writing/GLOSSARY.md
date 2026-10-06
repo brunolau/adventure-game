@@ -86,6 +86,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 |---|---|---|---|
 | Chorvátsky Grob | v Chorvátskom Grobe, *v Grobe* (speech) | do Grobu | z Grobu |
 | Čierna Voda | v Čiernej Vode | do Čiernej Vody | z Čiernej Vody |
+| Lúčny koník (playground, S03) | pri Lúčnom koníku, *na Lúčnom koníku* (speech) | k Lúčnemu koníku, *na Lúčny koník* (speech) | od Lúčneho koníka |
 | Dúbravka | v Dúbravke | do Dúbravky | z Dúbravky |
 | ZŠ Sokolíkova | na Sokolíkovej, v škole na Sokolíkovej | na Sokolíkovu | zo Sokolíkovej |
 | Karlova Ves | v Karlovej Vsi | do Karlovej Vsi | z Karlovej Vsi |
@@ -108,7 +109,8 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | Canonical | Notes |
 |---|---|
 | ZŠ Sokolíkova | the real school in Dúbravka; interiors, people and experiments are invented |
-| dobrovoľnícke výdajné miesto | Ela's outdoor pick-up point in Grob (2020) |
+| Lúčny koník | the real playground with the timber picnic shelter in Čierna Voda (Rekreapark by Javorová alej, opened 2015); owner decision 2026-10-06: S03 is painted there and named after it. Spelled *Lúčny koník* (only the first word capitalised), *pri Lúčnom koníku* |
+| výdajné miesto (pri Lúčnom koníku) | Ela's outdoor pick-up point in the shelter of Lúčny koník (2020); the old *dobrovoľnícke výdajné miesto* stays fine in speech, goals and hints say *výdajné miesto pri Lúčnom koníku* |
 | Mirina záhradná dielňa | the empty garden workshop (*predsieň* S09 + *dielňa ZVON* S10) |
 | Paliho opravovňa | Karlova Ves |
 | Antikvariát Pod druhou rukou | Viera |
@@ -133,7 +135,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 |---|---|---|---|---|
 | S01 | 2020 | Chorvátsky Grob | Adamova garáž | = |
 | S02 | 2020 | Chorvátsky Grob | Ulica medzi plotmi | = |
-| S03 | 2020 | Chorvátsky Grob | Dobrovoľnícke výdajné miesto | = |
+| S03 | 2020 | Chorvátsky Grob | **Lúčny koník – výdajné miesto** | Dobrovoľnícke výdajné miesto |
 | S04 | 2020 | Chorvátsky Grob | Potraviny cez okienko | = |
 | S05 | 2020 | Chorvátsky Grob | **Mirina bránka** | Mirkina bránka |
 | S06 | 2020 | Chorvátsky Grob | Pod zatvoreným oknom | = |

@@ -1,28 +1,28 @@
 {
  "room": "S03",
  "source": "src/game/assets/bg_natural/S03.webp",
- "note": "Natural S03 cut-outs (art/tools/ambient_cut.py --natural S03, living-scene polish 2026-10-05): the orange park tree at the right and the yellow trees at the left behind the shelter (wind sway), and the blue sky above the trees and the roof (mask for drifting clouds).",
+ "note": "Natural S03 cut-outs for the Lucny konik painting (master v3, 2026-10-06; art/tools/ambient_cut.py --natural S03): the yellow crowns of the young trees at the right and at the left (wind sway; cut only where they stand against the sky or with leaf saturation, so the fields behind never sway), the meadow grass behind the stone block and around the balance beam at the far left (gentle sway), the blue sky above the hills (mask for drifting clouds; roof and chimney excluded), and the standing stone plus the front left log post (mask: the sliding child disappears behind them). kid_slide.webp is not a cut: it is keyed from art/ambient/natural/S03_kid_slide.png (pose b, rotated 32 degrees) by the S03 log's script.",
  "items": [
   {
-   "name": "tree_right",
+   "name": "trees_right",
    "rect": [
-    1640,
-    96,
-    280,
-    420
+    1668,
+    150,
+    252,
+    335
    ],
    "rules": [
     {
      "hue": [
-      12,
-      58
+      18,
+      56
      ],
      "sat": [
-      0.4,
+      0.55,
       1
      ],
      "val": [
-      0.42,
+      0.5,
       1
      ]
     }
@@ -30,45 +30,45 @@
    "include": [
     [
      [
-      1640,
-      96
+      1668,
+      150
      ],
      [
       1920,
-      96
+      150
      ],
      [
       1920,
-      470
+      485
      ],
      [
-      1640,
-      470
+      1668,
+      485
      ]
     ]
    ],
    "feather": 1.0
   },
   {
-   "name": "trees_left",
+   "name": "tree_left",
    "rect": [
-    0,
-    150,
-    380,
-    300
+    36,
+    228,
+    140,
+    150
    ],
    "rules": [
     {
      "hue": [
-      30,
-      60
+      18,
+      56
      ],
      "sat": [
-      0.4,
+      0.45,
       1
      ],
      "val": [
-      0.6,
+      0.55,
       1
      ]
     }
@@ -76,28 +76,74 @@
    "include": [
     [
      [
-      0,
-      150
+      36,
+      228
      ],
      [
-      380,
-      150
+      176,
+      228
      ],
      [
-      380,
-      300
+      176,
+      374
      ],
      [
-      250,
-      330
+      36,
+      374
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "grass_right",
+   "rect": [
+    1640,
+    572,
+    280,
+    100
+   ],
+   "rules": [
+    {
+     "hue": [
+      40,
+      100
+     ],
+     "sat": [
+      0.3,
+      1
+     ],
+     "val": [
+      0.3,
+      1
+     ]
+    }
+   ],
+   "include": [
+    [
+     [
+      1640,
+      572
      ],
      [
-      200,
-      430
+      1920,
+      572
      ],
      [
-      0,
-      430
+      1920,
+      676
+     ],
+     [
+      1780,
+      676
+     ],
+     [
+      1700,
+      662
+     ],
+     [
+      1640,
+      662
      ]
     ]
    ],
@@ -105,27 +151,87 @@
    "exclude": [
     [
      [
-      170,
-      268
+      1762,
+      560
      ],
      [
-      352,
-      128
+      1786,
+      560
      ],
      [
-      400,
-      128
+      1786,
+      640
      ],
      [
-      400,
-      330
+      1762,
+      640
+     ]
+    ],
+    [
+     [
+      1876,
+      560
      ],
      [
-      170,
-      330
+      1900,
+      560
+     ],
+     [
+      1900,
+      636
+     ],
+     [
+      1876,
+      636
      ]
     ]
    ]
+  },
+  {
+   "name": "grass_left",
+   "rect": [
+    0,
+    652,
+    140,
+    56
+   ],
+   "rules": [
+    {
+     "hue": [
+      40,
+      95
+     ],
+     "sat": [
+      0.36,
+      1
+     ],
+     "val": [
+      0.35,
+      1
+     ]
+    }
+   ],
+   "include": [
+    [
+     [
+      0,
+      652
+     ],
+     [
+      140,
+      652
+     ],
+     [
+      140,
+      700
+     ],
+     [
+      0,
+      706
+     ]
+    ]
+   ],
+   "feather": 1.0
   },
   {
    "name": "sky_mask",
@@ -134,7 +240,7 @@
     0,
     0,
     1920,
-    330
+    305
    ],
    "rules": [
     {
@@ -165,18 +271,120 @@
    "exclude": [
     [
      [
-      1470,
-      70
+      195,
+      380
      ],
      [
-      1610,
-      330
+      288,
+      298
+     ],
+     [
+      788,
+      86
+     ],
+     [
+      1118,
+      86
+     ],
+     [
+      1632,
+      298
+     ],
+     [
+      1728,
+      380
+     ]
+    ],
+    [
+     [
+      1430,
+      28
+     ],
+     [
+      1566,
+      28
+     ],
+     [
+      1566,
+      300
+     ],
+     [
+      1430,
+      300
      ]
     ]
    ],
    "feather": 1.5,
    "clean": 1,
    "scale": 0.5
+  },
+  {
+   "name": "slide_occluders",
+   "kind": "mask",
+   "rect": [
+    128,
+    530,
+    170,
+    130
+   ],
+   "rules": [
+    {}
+   ],
+   "include": [
+    [
+     [
+      150,
+      690
+     ],
+     [
+      138,
+      600
+     ],
+     [
+      140,
+      560
+     ],
+     [
+      158,
+      543
+     ],
+     [
+      182,
+      540
+     ],
+     [
+      198,
+      556
+     ],
+     [
+      204,
+      610
+     ],
+     [
+      200,
+      690
+     ]
+    ],
+    [
+     [
+      260,
+      530
+     ],
+     [
+      296,
+      530
+     ],
+     [
+      296,
+      660
+     ],
+     [
+      260,
+      660
+     ]
+    ]
+   ],
+   "feather": 0.8
   }
  ]
 }

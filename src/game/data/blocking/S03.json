@@ -2,32 +2,211 @@
   "version": 1,
   "room": "S03",
   "status": "proposal - natural re-blocking, applied only with last_bell/presentation/blocking = natural or --blocking natural (docs/reblock/README.md)",
-  "note": "Rekreapark Cierna Voda as in the photo: the open timber shelter stands on the same grey paving as the forecourt, camera ~2.2 m high on the forecourt, horizon y ~360, the shelter's front posts stand on y 655 (~130 px per metre). Perspective scale s(y) = (y - 360) / 655. The distribution tables stand under the roof right behind the front posts, the distancing tapes lie on the forecourt paving in front of the left table where people queue, Ela stands at the stone fireplace wall (the side wall) at the right end of the shelter.",
+  "note": "Lucny konik playground in Cierna Voda (Rekreapark by Javorova alej), product-owner request 2026-10-06: the open timber picnic shelter (four-sided shingle hip roof, round log posts, a stone block with the chimney at its right end) seen from the meadow in front, camera ~2.2 m, horizon y ~360 (flat fields, a tree belt, faint low hills), the front posts stand on y 655 (~130 px per metre). Perspective scale s(y) = (y - 360) / 655. The multi-coloured paving lies only under and around the shelter (front edge y ~780); below it the trampled meadow grass. Walkable: the paving in front of the posts, the sandy path out of the left edge, the gravel path out of the right edge (S07) and the trampled grass in front (S02 left, S04 right); not the grass at the far left with the balance beam and the standing stone (its foot y ~690), nor the meadow behind the stone block. The distribution tables stand under the roof right behind the front posts, the distancing tapes lie on the paving in front of the left table where people queue, Ela stands beside the stone block (the side wall) at the right end of the shelter.",
   "background": "bg_natural/S03.webp",
-  "walk_polygon": [[20, 690], [1080, 690], [1100, 665], [1410, 665], [1440, 690], [1650, 690], [1690, 640], [1780, 640], [1810, 690], [1900, 690], [1900, 1015], [20, 1015]],
-  "walk_band": [640, 1015],
-  "actor_scale": [0.43, 1.0],
-  "spawn": [960, 900],
+  "walk_polygon": [
+    [
+      20,
+      712
+    ],
+    [
+      150,
+      702
+    ],
+    [
+      205,
+      696
+    ],
+    [
+      262,
+      688
+    ],
+    [
+      1080,
+      690
+    ],
+    [
+      1100,
+      665
+    ],
+    [
+      1410,
+      665
+    ],
+    [
+      1440,
+      690
+    ],
+    [
+      1640,
+      682
+    ],
+    [
+      1740,
+      684
+    ],
+    [
+      1800,
+      682
+    ],
+    [
+      1900,
+      680
+    ],
+    [
+      1900,
+      1015
+    ],
+    [
+      20,
+      1015
+    ]
+  ],
+  "walk_band": [
+    640,
+    1015
+  ],
+  "actor_scale": [
+    0.43,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
   "hotspots": {
-    "S03.supplies": { "rect": [320, 475, 300, 175], "interaction_point": [470, 785], "label_anchor": [470, 465],
-                      "reason": "left distribution table under the roof with named paper bags, food box and a clipboard" },
-    "S03.ambient 1": { "rect": [272, 690, 350, 56], "interaction_point": [450, 800], "label_anchor": [450, 684],
-                       "reason": "two yellow-black distancing tape lines on the forecourt paving in front of the left table" },
-    "S03.ambient 2": { "rect": [790, 465, 110, 95], "interaction_point": [845, 785], "label_anchor": [845, 455],
-                       "reason": "steel thermos with a red cup lid on the right table, masks and sanitiser beside it" },
-    "S03.ELA": { "rect": [1285, 420, 110, 255], "interaction_point": [1340, 700], "label_anchor": [1340, 410],
-                 "reason": "Ela standing at the stone fireplace wall at the right end of the shelter (standing sprite, ISSUES ART-NPC-01)" }
+    "S03.supplies": {
+      "rect": [
+        320,
+        475,
+        300,
+        175
+      ],
+      "interaction_point": [
+        470,
+        785
+      ],
+      "label_anchor": [
+        470,
+        465
+      ],
+      "reason": "left distribution table under the roof with named paper bags, food box and a clipboard"
+    },
+    "S03.ambient 1": {
+      "rect": [
+        330,
+        690,
+        290,
+        60
+      ],
+      "interaction_point": [
+        450,
+        800
+      ],
+      "label_anchor": [
+        450,
+        684
+      ],
+      "reason": "two yellow-black distancing tape lines on the paving in front of the left table"
+    },
+    "S03.ambient 2": {
+      "rect": [
+        790,
+        465,
+        110,
+        95
+      ],
+      "interaction_point": [
+        845,
+        785
+      ],
+      "label_anchor": [
+        845,
+        455
+      ],
+      "reason": "steel thermos with a red cup lid on the right table, masks and sanitiser beside it"
+    },
+    "S03.ELA": {
+      "rect": [
+        1285,
+        420,
+        110,
+        255
+      ],
+      "interaction_point": [
+        1340,
+        700
+      ],
+      "label_anchor": [
+        1340,
+        410
+      ],
+      "reason": "Ela standing beside the stone block at the right end of the shelter (standing sprite, ISSUES ART-NPC-01)"
+    }
   },
   "npcs": {
-    "S03.ELA": { "variant": "standing", "feet": [1340, 672], "scale": 0.48, "reason": "docs/DECISIONS.md item 2: Ela stands at the side wall" }
+    "S03.ELA": {
+      "variant": "standing",
+      "feet": [
+        1340,
+        672
+      ],
+      "scale": 0.48,
+      "reason": "docs/DECISIONS.md item 2: Ela stands at the side wall"
+    }
   },
   "exits": {
-    "S03.to_S02": { "rect": [0, 720, 60, 295], "interaction_point": [70, 880], "label_anchor": [135, 708],
-                    "reason": "the forecourt continues out of the left edge towards the street" },
-    "S03.to_S04": { "rect": [1860, 720, 60, 295], "interaction_point": [1850, 880], "label_anchor": [1775, 708],
-                    "reason": "the forecourt continues out of the right edge towards the village shop" },
-    "S03.to_S07": { "rect": [1640, 560, 170, 130], "interaction_point": [1725, 700], "label_anchor": [1725, 550],
-                    "reason": "park path leading away behind the fireplace wall (map transition to the notice board)" }
+    "S03.to_S02": {
+      "rect": [
+        0,
+        720,
+        60,
+        295
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        135,
+        708
+      ],
+      "reason": "the sandy path and the trampled meadow continue out of the left edge towards the street"
+    },
+    "S03.to_S04": {
+      "rect": [
+        1860,
+        770,
+        60,
+        245
+      ],
+      "interaction_point": [
+        1850,
+        880
+      ],
+      "label_anchor": [
+        1775,
+        760
+      ],
+      "reason": "the trampled meadow continues out of the right edge below the gravel path, towards the village shop"
+    },
+    "S03.to_S07": {
+      "rect": [
+        1810,
+        656,
+        110,
+        94
+      ],
+      "interaction_point": [
+        1860,
+        708
+      ],
+      "label_anchor": [
+        1740,
+        646
+      ],
+      "reason": "the light gravel path that leaves the paving to the right, out of the right edge towards the road (map transition to the notice board)"
+    }
   },
   "state_patches": []
 }
