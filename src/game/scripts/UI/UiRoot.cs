@@ -51,6 +51,7 @@ public partial class UiRoot : Control
     public PuzzleModal PuzzleView => puzzle;
     private MainMenuScreen mainMenu = null!;
     private HintScreen hints = null!;
+    private DifficultyPicker difficultyPicker = null!;
     private SaveLoadScreen saveLoad = null!;
     private SettingsScreen settings = null!;
     private HelpScreen help = null!;
@@ -141,6 +142,7 @@ public partial class UiRoot : Control
         scaled.AddChild(modalLayer);
         mainMenu = AddModal(new MainMenuScreen { Name = "MainMenu" });
         hints = AddModal(new HintScreen { Name = "Hints" });
+        difficultyPicker = AddModal(new DifficultyPicker { Name = "DifficultyPicker" });
         saveLoad = AddModal(new SaveLoadScreen { Name = "SaveLoad" });
         settings = AddModal(new SettingsScreen { Name = "Settings" });
         help = AddModal(new HelpScreen { Name = "Help" });
@@ -189,6 +191,7 @@ public partial class UiRoot : Control
             game.ActionCommitted += OnActionCommitted;
             game.Saved += OnSaved;
             game.LoadFailed += (_, error) => Message(TextService.Get(error));
+            game.ProgressClockHeld = () => MainMenuOpen; // Hard's hint wait counts play time only
         }
 
         if (!harness && game.IsReady) Push(mainMenu);
@@ -275,6 +278,19 @@ public partial class UiRoot : Control
         saveLoad.SaveMode = save;
         Push(saveLoad);
     }
+
+    /// <summary>
+    /// The difficulty step of New Game (title screen, after the overwrite confirmation): the chosen difficulty starts
+    /// the new game (<see cref="GameRuntime.NewGame"/>).
+    /// </summary>
+    public void OpenNewGame()
+    {
+        difficultyPicker.Chosen = d => GameRuntime.Instance.NewGame(d);
+        Push(difficultyPicker);
+    }
+
+    /// <summary>The new-game difficulty picker (QA).</summary>
+    public DifficultyPicker DifficultyPickerView => difficultyPicker;
 
     /// <summary>Opens the settings.</summary>
     public void OpenSettings() => Push(settings);

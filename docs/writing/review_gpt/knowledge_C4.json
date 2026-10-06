@@ -1,0 +1,309 @@
+{
+  "chunk": "r2_C4",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\knowledge.csv",
+  "overlay": [
+    "docs\\writing\\out_v3\\knowledge_ext.json"
+  ],
+  "cost_usd": 0.1674,
+  "batches": {
+    "J03": {
+      "hash": "36e59b0a7f8690f3",
+      "status": "ok",
+      "heading": "J03 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.J03.objective",
+        "action.J03.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9701,
+        "completion_tokens": 662,
+        "total_tokens": 10363,
+        "cost": 0.0211922,
+        "prompt_tokens_details": {
+          "cached_tokens": 2542,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0212
+    },
+    "Q8B": {
+      "hash": "758fb8cf35841e68",
+      "status": "ok",
+      "heading": "Q8B · side quest Q8 „Adresa nie je len súradnica“",
+      "keys": [
+        "action.Q8B.001",
+        "action.Q8B.002"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8707,
+        "completion_tokens": 751,
+        "total_tokens": 9458,
+        "cost": 0.0207554,
+        "prompt_tokens_details": {
+          "cached_tokens": 2194,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0208
+    },
+    "S41": {
+      "hash": "3fe3daa7bca9e085",
+      "status": "ok",
+      "heading": "S41 · Biela Púť pri dolnej stanici (2035, Biela Púť)",
+      "keys": [
+        "look.S41.gate",
+        "exit.S41.to_S67.locked",
+        "conn.S41.S67.locked"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10136,
+        "completion_tokens": 267,
+        "total_tokens": 10403,
+        "cost": 0.0176201,
+        "prompt_tokens_details": {
+          "cached_tokens": 2801,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0176
+    },
+    "S48": {
+      "hash": "e5233b10eb2bdc9b",
+      "status": "ok",
+      "heading": "S48 · Servisný pavilón výstavy Atlas (2035, Chopok)",
+      "keys": [
+        "exit.S48.to_S49.locked",
+        "conn.S48.S49.locked"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9970,
+        "completion_tokens": 176,
+        "total_tokens": 10146,
+        "cost": 0.016437,
+        "prompt_tokens_details": {
+          "cached_tokens": 2770,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0164
+    },
+    "S45": {
+      "hash": "72ce7f571681b4a3",
+      "status": "ok",
+      "heading": "S45 · Chodník pri Vrbickom plese (2035, Vrbické pleso)",
+      "keys": [
+        "look.S45.bench"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9364,
+        "completion_tokens": 494,
+        "total_tokens": 9858,
+        "cost": 0.0189617,
+        "prompt_tokens_details": {
+          "cached_tokens": 2477,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.019
+    },
+    "TAMARA": {
+      "hash": "f930921a695d472a",
+      "status": "ok",
+      "heading": "TAMARA · Tamara Kráľová (40) — S43",
+      "keys": [
+        "topic.TAMARA.extra 1.label",
+        "topic.TAMARA.extra 1.001",
+        "topic.TAMARA.extra 1.002"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12981,
+        "completion_tokens": 327,
+        "total_tokens": 13308,
+        "cost": 0.024017,
+        "prompt_tokens_details": {
+          "cached_tokens": 3725,
+          "cache_write_tokens": 3725
+        }
+      },
+      "usd": 0.024
+    },
+    "Q8": {
+      "hash": "95689f2c0076c95b",
+      "status": "ok",
+      "heading": "Q8 (side) — actions Q8A, Q8B, Q8C, Q8D",
+      "keys": [
+        "quest.Q8.hint.2"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8051,
+        "completion_tokens": 163,
+        "total_tokens": 8214,
+        "cost": 0.0136641,
+        "prompt_tokens_details": {
+          "cached_tokens": 2141,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0137
+    },
+    "hint_step": {
+      "hash": "ec424e8ceb5c4eb1",
+      "status": "ok",
+      "heading": "hint_step",
+      "keys": [
+        "ui.hint_step.G07"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 21476,
+        "completion_tokens": 95,
+        "total_tokens": 21571,
+        "cost": 0.0346704,
+        "prompt_tokens_details": {
+          "cached_tokens": 6594,
+          "cache_write_tokens": 6594
+        }
+      },
+      "usd": 0.0347
+    }
+  },
+  "keys": {
+    "action.J03.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.",
+      "batch": "J03"
+    },
+    "action.J03.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.",
+      "batch": "J03"
+    },
+    "action.Q8B.001": {
+      "verdict": "fix",
+      "category": "calque",
+      "problem": "The English borrowing “lobby” is unnecessary here; Slovak “hala” naturally names the hotel's entrance area.",
+      "suggestion": "Keramický pes a nápis DRUHÝ ŽIVOT. Na lístku pod ním: „Tamara, počas výstavy v hale hotela Grand Jasná.“",
+      "text": "Keramický pes a nápis DRUHÝ ŽIVOT. Na lístku pod ním: „Tamara, počas výstavy v lobby hotela Grand Jasná.“",
+      "batch": "Q8B"
+    },
+    "action.Q8B.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Opravovňa sa teda len presťahovala. Spýtam sa Tamary, či ten balík naozaj patrí jej.",
+      "batch": "Q8B"
+    },
+    "look.S41.gate": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Turniket kabínkovej lanovky na Priehybu. Bez platného lístka ma nepustí.",
+      "batch": "S41"
+    },
+    "exit.S41.to_S67.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na lanovku potrebujem platný lístok. Bez neho sa so mnou turniket nebaví.",
+      "batch": "S41"
+    },
+    "conn.S41.S67.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na lanovku potrebujem platný lístok. Bez neho sa so mnou turniket nebaví.",
+      "batch": "S41"
+    },
+    "exit.S48.to_S49.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Komora je zamknutá. Otvorí ju až servisný terminál.",
+      "batch": "S48"
+    },
+    "conn.S48.S49.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Komora je zamknutá. Otvorí ju až servisný terminál.",
+      "batch": "S48"
+    },
+    "look.S45.bench": {
+      "verdict": "fix",
+      "category": "calque",
+      "problem": "The English borrowing “lobby” is unnecessary here; Slovak “hala” preserves the location and sounds natural.",
+      "suggestion": "Na operadle keramický pes a nápis DRUHÝ ŽIVOT. Lístok pod ním: „Tamara, počas výstavy v hale hotela Grand Jasná.“",
+      "text": "Na operadle keramický pes a nápis DRUHÝ ŽIVOT. Lístok pod ním: „Tamara, počas výstavy v lobby hotela Grand Jasná.“",
+      "batch": "S45"
+    },
+    "topic.TAMARA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tvoja dielňa",
+      "batch": "TAMARA"
+    },
+    "topic.TAMARA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa volá tvoja dielňa?",
+      "batch": "TAMARA"
+    },
+    "topic.TAMARA.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Druhý život. Lebo veci majú aj druhý život, len im ho ľudia nedajú.",
+      "batch": "TAMARA"
+    },
+    "quest.Q8.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prezri lavičku so psom pri Vrbickom plese. Lístok na nej ti povie, kam sa dielňa presťahovala.",
+      "batch": "Q8"
+    },
+    "ui.hint_step.G07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V predsieni dielne vyber prístroj z mosadzného puzdra.",
+      "batch": "hint_step"
+    }
+  },
+  "unreviewed": []
+}

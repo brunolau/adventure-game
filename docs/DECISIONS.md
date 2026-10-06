@@ -522,6 +522,11 @@ hint, but not a full walkthrough". Plan (orchestrator proposal, owner may adjust
 - **Ťažká (Hard):** only the level-1 nudge, available after a few minutes without progress; no puzzle help.
 - Chosen at New Game, changeable in Settings; journal goals stay as they are; Space markers on all levels.
 - New per-step nudge / place texts via the writing method and the owner's approval page before they go live.
+- Implemented 2026-10-06 (engine + UI, Core `Rules/Hints.cs`, README § 8): Hard's nudge after 180 s without a new done
+  action (play time; resets on load), Hard gives no help on a puzzle step, the difficulty is saved per save file (old saves
+  = Standard). Until the texts are approved Standard shows the Easy level-1 / level-2 texts as fallbacks; the keys to
+  write are `hint.nudge.<step>` / `hint.where.<step>` (docs/writing/out_v3/hint_steps_todo.csv), the UI strings are drafts
+  in docs/writing/out_v3/ui_difficulty.csv.
 
 ## Adam never knows what he has not learned (owner 2026-10-06)
 

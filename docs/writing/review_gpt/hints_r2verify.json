@@ -1,0 +1,157 @@
+{
+  "chunk": "hints_r2verify",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\hints.csv",
+  "overlay": [],
+  "cost_usd": 0.0985,
+  "batches": {
+    "M07": {
+      "hash": "484ba275703ad7d8",
+      "status": "ok",
+      "heading": "M07 · Rytmus na Dunaji (main quest)",
+      "keys": [
+        "hint.where.B21"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11486,
+        "completion_tokens": 484,
+        "total_tokens": 11970,
+        "cost": 0.0217472,
+        "prompt_tokens_details": {
+          "cached_tokens": 3192,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0217
+    },
+    "M11A": {
+      "hash": "e1976d5de6a2a7b3",
+      "status": "ok",
+      "heading": "M11A · Tá istá škola o štvrťstoročie neskôr (main quest)",
+      "keys": [
+        "hint.nudge.C01"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11062,
+        "completion_tokens": 263,
+        "total_tokens": 11325,
+        "cost": 0.0188507,
+        "prompt_tokens_details": {
+          "cached_tokens": 3107,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0189
+    },
+    "M11B": {
+      "hash": "894ad5cceb9098b6",
+      "status": "ok",
+      "heading": "M11B · Človek, ktorý si to zapamätá (main quest)",
+      "keys": [
+        "hint.where.E06"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13208,
+        "completion_tokens": 163,
+        "total_tokens": 13371,
+        "cost": 0.0226504,
+        "prompt_tokens_details": {
+          "cached_tokens": 3854,
+          "cache_write_tokens": 3854
+        }
+      },
+      "usd": 0.0227
+    },
+    "M13": {
+      "hash": "2b776777d672c3b4",
+      "status": "ok",
+      "heading": "M13 · Zastaviť zápis (main quest)",
+      "keys": [
+        "hint.nudge.F09"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10764,
+        "completion_tokens": 259,
+        "total_tokens": 11023,
+        "cost": 0.0184009,
+        "prompt_tokens_details": {
+          "cached_tokens": 3009,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0184
+    },
+    "Q5": {
+      "hash": "022ef591f0385f9e",
+      "status": "ok",
+      "heading": "Q5 · Mapa rozsvietených okien (side quest)",
+      "keys": [
+        "hint.nudge.Q5B"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9964,
+        "completion_tokens": 214,
+        "total_tokens": 10178,
+        "cost": 0.0168278,
+        "prompt_tokens_details": {
+          "cached_tokens": 2758,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0168
+    }
+  },
+  "keys": {
+    "hint.where.B21": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The target table is beside the measuring booth, but the hint directs the player inside it.",
+      "suggestion": "Pri meracom stánku na Starom moste, vedľa stojana.",
+      "text": "V meracom stánku na Starom moste, vedľa stojana.",
+      "batch": "M07"
+    },
+    "hint.nudge.C01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Odtlačok z roku 1962 je overený. Čo ďalej, bude vedieť babka, aj keď ju uvidím len cez sklo.",
+      "batch": "M11A"
+    },
+    "hint.where.E06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toto urobím v brašni, nikam nemusím chodiť.",
+      "batch": "M11B"
+    },
+    "hint.nudge.F09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Návrat je istený. Teraz treba zastaviť samotné mazanie. Nina povedala ako.",
+      "batch": "M13"
+    },
+    "hint.nudge.Q5B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jurajovi chýba biela krieda. Školy jej majú celé krabice a školník ich má pod kľúčom.",
+      "batch": "Q5"
+    }
+  },
+  "unreviewed": []
+}

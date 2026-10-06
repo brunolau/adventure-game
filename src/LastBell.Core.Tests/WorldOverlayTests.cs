@@ -188,7 +188,7 @@ public sealed class WorldOverlayTests
         foreach (var id in new[] { "Q90A", "Q90B", "Q90C" }) s = Driver.Perform(Sample, s, Sample.GetAction(id));
         Assert.Equal(new[] { "SAMPLE_CARD" }, s.Inventory.Where(i => i.StartsWith("SAMPLE_", StringComparison.Ordinal)));
         Assert.Equal("Q90D", Hints.CurrentStep(Sample, s, "Q90")!.Id);
-        for (var i = 0; i < 3; i++) s = Hints.RevealNext(Sample, s, "Q90");
+        for (var i = 0; i < 3; i++) s = Hints.RevealNext(Sample, s with { Difficulty = Difficulty.Easy }, "Q90");
         var hints = Hints.Revealed(Sample, s, "Q90");
         Assert.Equal("action.Q90C.objective", hints[0].Text.Key); // the objective of the step that enabled it
         Assert.Equal("room.S90.name", hints[1].Args.Single(a => a.Name == "room").Value.Key);

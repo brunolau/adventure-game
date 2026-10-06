@@ -20,6 +20,10 @@ Errors (exit code 1):
     decided rename; it then becomes a warning. Protected facts and verbatim texts cannot be dropped)
   * ui.csv placeholders ({item}, {n}) changed
   * journal text that game.json keeps identical to the objective no longer identical
+  * new Standard / Hard step hints (hint.nudge.<action id>, hint.where.<action id>; drafts in
+    docs/writing/out_v3/hints.csv): an action outside a hinted quest, longer than 140 characters,
+    placeholders, or a person / place / item / fact (tools/knowledge_audit.py) that is not introduced
+    before the hint can be shown ("knows: <name>" in the note with the reason makes it a warning)
 
 Warnings (exit code 0 unless --strict):
   * length above the soft limit, ui text much longer than before
@@ -102,6 +106,15 @@ DIGITS_RE = re.compile(r"\d+")
 CODE_RE = re.compile(r"\b[A-ZÁ-Ž]-\d+\b|\d+\s*[–—-]\s*\d+(?:\s*[–—-]\s*\d+)*|\d+\s*×\s*\d+|\d+°")
 PREFIX_RE = re.compile(r"^\s*([A-ZÁ-Ža-zá-ž0-9_ ]{2,30}):\s")
 GENERIC_ID_RE = re.compile(r"(?<![\w.-])(S\d{2}(?:\.\w+)?|[GBICDEFJ]\d{2}|Q\d[A-F]|P0\d|M\d{2}[A-D]?|M1[1-5][A-D]?|CS\d{2}|Q\d)(?![\w-])")
+
+
+# Standard / Hard step hints (Core Rules/Hints.cs, docs/DECISIONS.md "Difficulty settings"): new keys
+# hint.nudge.<action id> and hint.where.<action id>, drafted in docs/writing/out_v3/hints.csv. They are not in
+# the tables until the owner approves them, so the checker accepts them as new keys of an existing action.
+HINT_KEY_RE = re.compile(r"^hint\.(nudge|where)\.([A-Za-z0-9_]+)$")
+HINT_KIND = "hint_level"
+HINT_LIMIT = {"soft": 110, "hard": 140}   # STYLE_GUIDE.md § 5: hint levels 1 and 2 at most 140
+KNOWS_RE = re.compile(r"knows:\s*([^;,(]+)")
 
 
 def norm_dash(text: str) -> str:
@@ -426,6 +439,106 @@ def check_overlay(overlay, index: dict[str, wb.KeyInfo], new: dict[str, str], ct
     return checked
 
 
+def check_hint_drafts(rows: list[tuple[str, str, str, str, str]], game: dict, index: dict[str, wb.KeyInfo], ctx: dict,
+                      report: Report) -> int:
+    """Checks of the new Standard / Hard step hints (hint.nudge.<id>, hint.where.<id>); rows are (key, kind, action, text, note).
+
+    Per text: the per-text checks of a rewrite (internal ids, speaker prefix, deprecated words, jargon) with the hint
+    limit of 140 characters, no placeholders, and the knowledge rule (docs/DECISIONS.md "Adam never knows what he has
+    not learned"): every person, place, item, organisation or fact the hint names (tools/knowledge_audit.py entities)
+    must be introduced before the hint can be shown, in every legal order. A hint is shown while its step is the
+    quest's current step (Core Hints.CurrentStep: the first undone action in quest order whose guards pass), so the
+    actions surely done then are the step's must-set, the earlier actions of its quest (and theirs) and, for a main
+    quest, the completion of every earlier main quest (Quests.NextMainQuest). An entity that is not introduced then is
+    an error; "knows: <entity>" in the note (with the reason, e.g. a queued fix) makes it a warning. A "where" hint
+    that names an item the step needs, or a nudge that names both such an item and the step's target, is a warning
+    (Standard never gives the exact step). Missing nudge / where texts of a hinted step are listed as a warning."""
+    from dataclasses import replace
+
+    import knowledge_audit as ka
+
+    gl = ctx["glossary"]
+    gl["limits"].setdefault(HINT_KIND, HINT_LIMIT)
+    try:
+        audit = ka.Audit()
+    except SystemExit as error:  # the audit exits on an invalid overlay
+        report.error("hint.*", f"knowledge audit failed: {error}")
+        return 0
+    om = audit.om
+    actions = {a["id"]: a for a in game["actions"]}
+    quest_of = {aid: q for q in game["quests"] for aid in q["actions"]}
+    mains = [q for q in game["quests"] if q.get("type") == "main"]
+    template = next(iter(index.values()))
+
+    def hint_must(aid: str) -> frozenset:
+        quest = quest_of[aid]
+        acc = set(om.G[aid])
+        for prev in quest["actions"][:quest["actions"].index(aid)]:
+            acc |= om.G[prev] | {prev}
+        if quest.get("type") == "main":
+            for prev_q in mains:
+                if prev_q["id"] == quest["id"]:
+                    break
+                acc |= om.G[prev_q["completion"]] | {prev_q["completion"]}
+        return frozenset(acc)
+
+    def tr(key: str, fallback: str) -> str:
+        info = index.get(key)
+        return info.text if info else fallback
+
+    items = {i["id"]: i for i in game["items"]}
+    hotspots = {h["id"]: h for r in game["rooms"] for h in r.get("hotspots", [])}
+    seen: dict[str, set[str]] = defaultdict(set)
+    for key, kind, aid, text, note in rows:
+        seen[aid].add(kind)
+        info = replace(template, key=key, table=tk.TABLE_UI, text="", original="", chunk="", section="hints",
+                       kind=HINT_KIND, speaker=None, role=f"Standard hint ({kind}) of {aid}", notes=[], never_shown=False,
+                       source=f"actions[{aid}]", era=None, overlay=False)
+        check_row(key, text, note, info, ctx, report)
+        if "{" in text or "}" in text:
+            report.error(key, "placeholders are not allowed in a step hint (Tr(OwnKey) is shown as plain text)")
+        # knowledge rule
+        must = hint_must(aid)
+        point = ka.Point(must, om.visited_of(must), "hint:" + aid, -1, om.pos[aid], f"{kind} hint of {aid}")
+        audit._set_wt(point)
+        cand = ka.Candidate(key, "hint", "", text, None, point, [])
+        acked = {k.strip().lower() for k in KNOWS_RE.findall(note)}
+        for ent, matched in ka.mentions(text):
+            status, _intro, first = audit.status(cand, ent)
+            if status in ("introduced", "background"):
+                continue
+            name = ent.split(":", 1)[1]
+            where = f"; first introduction: {first.what}" if first else ""
+            message = f"names {name!r} ({matched!r}), not introduced before this hint can be shown ({status}){where}"
+            if name.lower() in acked or matched.lower() in acked:
+                report.warn(key, message + " (acknowledged in the note)")
+            else:
+                report.error(key, message + "; rephrase, or write 'knows: <name>' with the reason in the note")
+        # Standard never gives the exact step
+        action = actions[aid]
+        needed = set(action.get("requires_items", []))
+        if action.get("selected_item"):
+            needed.add(action["selected_item"])
+        if action.get("kind") == "combine":
+            needed.add(action["target"])
+        low = text.lower()
+        named = [tr(tk.item_name(i), items[i]["name"]) for i in sorted(needed) if i in items
+                 and tr(tk.item_name(i), items[i]["name"]).lower() in low]
+        target = hotspots.get(action.get("target", ""))
+        target_name = tr(tk.hotspot_name(target["id"]), target["name"]) if target else ""
+        if kind == "where" and named:
+            report.warn(key, f"names the item(s) {named}: 'where' says the place or person, not what to use")
+        if kind == "nudge" and named and target_name and target_name.lower() in low:
+            report.warn(key, f"names the item(s) {named} and the target {target_name!r}: that is the exact step")
+    hinted = [aid for q in game["quests"] if q.get("hints") for aid in q["actions"]]
+    missing = [f"{aid} ({'/'.join(sorted({'nudge', 'where'} - seen[aid]))})" for aid in hinted
+               if {"nudge", "where"} - seen[aid]]
+    if missing:
+        report.warn("hint.*", f"{len(missing)} hinted step(s) without both texts: {', '.join(missing[:20])}"
+                              + (" ..." if len(missing) > 20 else ""))
+    return len(rows)
+
+
 def self_test(index: dict[str, wb.KeyInfo], glossary: dict, report: Report, retired: set[str] = frozenset()) -> None:
     """Every protected/verbatim rule must hold for the current texts; every rule key must exist
     (keys an overlay retired are checked by check_overlay instead)."""
@@ -574,12 +687,24 @@ def main() -> int:
 
     new: dict[str, str] = {}
     notes: dict[str, str] = {}
+    hint_rows: list[tuple[str, str, str, str, str]] = []
+    hinted_actions = {aid for q in game["quests"] if q.get("hints") for aid in q["actions"]}
     for line_no, key, text, note in rows:
         if key in new:
             report.error(key, f"duplicate key (line {line_no})")
             continue
         if key in overlay.retired_keys:
             report.warn(key, f"line {line_no}: removed by a content overlay (dropped line or removed exit); row ignored")
+            continue
+        hint = HINT_KEY_RE.match(key)
+        if hint and key not in index:
+            aid = hint.group(2)
+            if any(h[0] == key for h in hint_rows):
+                report.error(key, f"duplicate key (line {line_no})")
+            elif aid not in hinted_actions:
+                report.error(key, f"line {line_no}: {aid} is not an action of a quest with hints")
+            else:
+                hint_rows.append((key, hint.group(1), aid, text, note))
             continue
         if key not in index:
             report.error(key, f"unknown key (line {line_no}); keys come from docs/writing/context/<chunk>_keys.csv")
@@ -599,8 +724,10 @@ def main() -> int:
         check_row(key, text, notes[key], index[key], ctx, report)
     check_pairs(index, new, game, model, report)
     n_overlay = check_overlay(overlay, index, new, ctx, report, args.chunk)
+    n_hints = check_hint_drafts(hint_rows, game, index, ctx, report) if hint_rows else 0
 
-    print(f"{args.csv.name}: {len(rows)} rows, {len(new)} changed texts")
+    print(f"{args.csv.name}: {len(rows)} rows, {len(new)} changed texts"
+          + (f", {n_hints} new step hints (hint.nudge / hint.where)" if n_hints else ""))
     if args.chunk:
         total = sum(1 for v in index.values() if v.chunk == args.chunk and not v.never_shown)
         print(f"chunk {args.chunk}: {len(new)} of {total} keys rewritten")

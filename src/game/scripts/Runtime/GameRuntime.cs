@@ -75,6 +75,16 @@ public partial class GameRuntime : Node
     /// </summary>
     public string? OpenPuzzleActionId { get; private set; }
 
+    /// <summary>
+    /// Seconds of play since the last progress (a new done action), for Hard's hint wait (Core
+    /// <see cref="Hints.Availability"/>; Core has no clock). Counts while a game is shown and not paused
+    /// (<see cref="ProgressClockHeld"/>, pause mode); starts at 0 on a new game and on every load (not saved).
+    /// </summary>
+    public double SecondsWithoutProgress { get; set; }
+
+    /// <summary>When it returns true the progress clock stands still (UiRoot: the title screen is open).</summary>
+    public Func<bool>? ProgressClockHeld { get; set; }
+
     /// <summary>Raised after every state change (old, new).</summary>
     public event Action<GameState, GameState>? StateChanged;
 
@@ -128,6 +138,13 @@ public partial class GameRuntime : Node
         LastBell.Game.Diagnostics.QaWindow.ApplyBackgroundMode(); // QA runs: off-screen, no focus (owner request)
         if (TranslationServer.GetLocale() is var locale && !locale.StartsWith("sk")) TranslationServer.SetLocale("sk");
         LoadContent();
+    }
+
+    /// <inheritdoc />
+    public override void _Process(double delta)
+    {
+        if (!IsReady || State.Mode == GameMode.Pause || (ProgressClockHeld?.Invoke() ?? false)) return;
+        SecondsWithoutProgress += delta;
     }
 
     /// <inheritdoc />
@@ -186,13 +203,17 @@ public partial class GameRuntime : Node
         if (Session is not null) Session.StateChanged -= OnSessionStateChanged;
         Session = session;
         Session.StateChanged += OnSessionStateChanged;
+        SecondsWithoutProgress = 0;
     }
 
-    /// <summary>Starts a new game from <c>initial_state</c> and queues the start room's first-entry lines.</summary>
-    public void NewGame()
+    /// <summary>
+    /// Starts a new game from <c>initial_state</c> on a difficulty (default Standard; the title screen's picker passes
+    /// the player's choice) and queues the start room's first-entry lines.
+    /// </summary>
+    public void NewGame(Difficulty difficulty = Difficulty.Standard)
     {
         OpenPuzzleActionId = null;
-        AttachSession(new GameSession(Content));
+        AttachSession(new GameSession(Content, Hints.WithDifficulty(Content.InitialState, difficulty)));
         SessionReplaced?.Invoke();
         Session.Update(s => Navigation.BeginNewGame(Content, s));
     }
@@ -210,6 +231,17 @@ public partial class GameRuntime : Node
 
     /// <summary>Applies a pure Core rule function to the state.</summary>
     public void Update(Func<GameState, GameState> change) => Session.Update(change);
+
+    /// <summary>
+    /// Changes the difficulty of the running game (settings). Progress is untouched; the change is saved with the game
+    /// (autosave at once when the game is paused, e.g. settings opened from the pause menu; otherwise with the next save).
+    /// </summary>
+    public void SetDifficulty(Difficulty difficulty)
+    {
+        if (State.Difficulty == difficulty) return;
+        Session.Update(s => Hints.WithDifficulty(s, difficulty));
+        if (State.Mode == GameMode.Pause) Autosave();
+    }
 
     // ------------------------------------------------------------------ actions, puzzles
 
@@ -355,6 +387,7 @@ public partial class GameRuntime : Node
 
     private void OnSessionStateChanged(GameState old, GameState next)
     {
+        if (next.Done.Length > old.Done.Length) SecondsWithoutProgress = 0; // progress: Hard's hint wait starts again
         StateChanged?.Invoke(old, next);
         EmitSignal(SignalName.StateChangedSignal);
 

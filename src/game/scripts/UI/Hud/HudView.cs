@@ -7,6 +7,7 @@ using LastBell.Core.Text;
 using LastBell.Game.Hooks;
 using LastBell.Game.PlayerInput;
 using LastBell.Game.Runtime;
+using LastBell.Game.UI.Common;
 using LastBell.Game.UI.Settings;
 using LastBell.Game.UI.Theme;
 using LastBell.Game.World;
@@ -39,6 +40,9 @@ public partial class HudView : Control, IHoverView
     private Label chipLabel = null!;
     private Button portalButton = null!;
     private Button eyeButton = null!;
+    private Button hintButton = null!;
+    private double hintStateLeft;
+    private bool? hintWaiting;
     private bool? labelsShown;
     private string? chipItem;
     private bool portalAvailable;
@@ -128,7 +132,8 @@ public partial class HudView : Control, IHoverView
         portalButton = HudButton(GlyphKind.Clock, "ui.travel.choose_era", "T", () => PortalPressed?.Invoke());
         portalButton.Visible = false;
         right.AddChild(portalButton);
-        right.AddChild(HudButton(GlyphKind.Hint, "ui.hud.hint", "H", () => WorldInput.Dispatch(LogicalCommand.Hint)));
+        hintButton = HudButton(GlyphKind.Hint, "ui.hud.hint", "H", () => WorldInput.Dispatch(LogicalCommand.Hint));
+        right.AddChild(hintButton);
         right.AddChild(HudButton(GlyphKind.Journal, "ui.hud.journal", "J", () => WorldInput.Dispatch(LogicalCommand.Journal)));
         right.AddChild(HudButton(GlyphKind.Map, "ui.hud.map", "M", () => WorldInput.Dispatch(LogicalCommand.Map)));
         right.AddChild(HudButton(GlyphKind.Menu, "ui.hud.menu", "Esc", OpenPause));
@@ -215,8 +220,34 @@ public partial class HudView : Control, IHoverView
                 centre.OffsetRight = -560;
             }
         }
+        UpdateHintButton(delta);
         // Hidden while an item is selected: the chip and a long item name ran into the centred hint (playtest PT-F02).
         keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels && state.SelectedItem is null;
+    }
+
+    /// <summary>
+    /// Hard (docs/DECISIONS.md "Difficulty settings"): while the current goal's nudge is still behind the three-minute
+    /// wait the hint button is dimmed and its tooltip counts down; it still opens the hint screen (which shows the same
+    /// "not yet" state). On Easy and Standard, and on Hard once the nudge is open, it looks as always. Checked 4x a second.
+    /// </summary>
+    private void UpdateHintButton(double delta)
+    {
+        if ((hintStateLeft -= delta) > 0) return;
+        hintStateLeft = 0.25;
+        var game = GameRuntime.Instance;
+        bool waiting = false;
+        double left = 0;
+        if (game.State.Difficulty == Difficulty.Hard && Quests.CurrentMainQuest(game.Content, game.State) is { } quest)
+        {
+            var available = Hints.Availability(game.Content, game.State, quest.Id, game.SecondsWithoutProgress);
+            waiting = available.Gate == HintGate.Waiting;
+            left = available.WaitSeconds;
+        }
+        if (waiting) hintButton.TooltipText = Ui.T(DifficultyText.HudWait, ("time", DifficultyText.Countdown(left)));
+        if (waiting == hintWaiting) return;
+        hintWaiting = waiting;
+        hintButton.Modulate = waiting ? new Color(1, 1, 1, 0.45f) : Colors.White;
+        if (!waiting) hintButton.TooltipText = Ui.T("ui.hud.hint") + " (H)";
     }
 
     // ------------------------------------------------------------------ IHoverView

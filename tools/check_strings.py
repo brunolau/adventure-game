@@ -16,8 +16,9 @@ Checks (errors make the exit code 1):
   * ui.csv contains the era cards for every era (era.<year>.card, .date with the
     game.json day and the shown year, .year = the shown four-digit year), a region.<district>.name key
     for every rooms[].district (map regions), the journal tabs from
-    journal_contract (same texts) and every key in REQUIRED_UI_KEYS; other ui
-    keys follow ui.<area>.<name>
+    journal_contract (same texts) and every key in REQUIRED_UI_KEYS; the difficulty
+    hints hint.nudge.<action id> / hint.where.<action id> name a quest step and
+    have no placeholders; other ui keys follow ui.<area>.<name>
   * every speaker id used by a line has a char.<id>.name key
   * no game.json string field is left unclassified (visible but unkeyed)
   * the content overlays (src/game/data/content_ext/, tools/content_ext.py) are valid; the scheme
@@ -52,6 +53,11 @@ SHOWN_YEAR_PATTERN = re.compile(r"^\d{4}$")
 # Map region names (ISSUES.md TEXT-02): region.<rooms[].district>.name, hand-written in ui.csv.
 REGION_KEY_PATTERN = re.compile(r"^region\.([^.]+)\.name$")
 CONTROL_CHARS = re.compile(r"[\x00-\x1f\x7f]")
+# Difficulty hints (Core Hints.NudgeKey / WhereKey, docs/DECISIONS.md "Difficulty settings"): hint.nudge.<action id> and
+# hint.where.<action id> in ui.csv, plain texts (no placeholders) for an action of a quest; optional per step (until a
+# step has one, Core falls back to the Easy level-1 / level-2 text).
+DIFFICULTY_HINT_PATTERN = re.compile(r"^hint\.(nudge|where)\.([^.\s]+)$")
+PLACEHOLDER_PATTERN = re.compile(r"\{[A-Za-z_][A-Za-z0-9_]*\}")
 
 
 class Findings:
@@ -205,7 +211,15 @@ def check_ui(game: dict, ui: dict[str, list[str]], findings: Findings, overlay=N
         if f"ui.travel.{kind}" not in ui:
             findings.error(f"ui.csv: missing travel style key 'ui.travel.{kind}'")
 
+    quest_actions = {aid for quest in game.get("quests", []) for aid in quest.get("actions", [])}
     for key, (sk, _en) in ui.items():
+        hint_match = DIFFICULTY_HINT_PATTERN.match(key)
+        if hint_match:
+            if hint_match.group(2) not in quest_actions:
+                findings.error(f"ui.csv: {key!r} refers to an action that is not a step of any quest")
+            if PLACEHOLDER_PATTERN.search(sk):
+                findings.error(f"ui.csv: {key!r} must be a plain text (no placeholders)")
+            continue
         region_match = REGION_KEY_PATTERN.match(key)
         if region_match:
             if region_match.group(1) not in districts | regions:

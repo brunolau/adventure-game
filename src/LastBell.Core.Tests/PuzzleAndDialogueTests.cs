@@ -79,7 +79,8 @@ public sealed class PuzzleAndDialogueTests
     [Fact]
     public void Hint_fill_needs_the_third_hint_level_and_still_needs_confirmation()
     {
-        var s = Puzzles.Open(C, TestData.ReadyFor("G11"), "G11");
+        // Easy only: Standard and Hard never fill in (DifficultyTests).
+        var s = Puzzles.Open(C, TestData.ReadyFor("G11") with { Difficulty = Difficulty.Easy }, "G11");
         Assert.False(Puzzles.CanFill(C, s, "P01"));
         for (var i = 0; i < 2; i++) s = Hints.RevealNext(C, s, "M02");
         Assert.False(Puzzles.CanFill(C, s, "P01"));
@@ -95,7 +96,7 @@ public sealed class PuzzleAndDialogueTests
     public void Hint_fill_belongs_to_the_puzzle_step_not_to_other_steps_of_the_quest()
     {
         // Three levels revealed on another step of M02 (G06) do not unlock "fill in correctly" for P01.
-        var s = TestData.StateAfter("G05");
+        var s = TestData.StateAfter("G05") with { Difficulty = Difficulty.Easy };
         for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M02");
         Assert.Equal(3, Hints.StepLevel(s, "G06"));
         s = s with { Done = TestData.ReadyFor("G11").Done, Inventory = TestData.ReadyFor("G11").Inventory };

@@ -42,7 +42,7 @@ public static class SaveCodec
     {
         "schema_version", "room", "era", "inventory", "done", "visited", "selected_item", "mode", "puzzle_drafts",
         "journal_seen", "side_rewards", "hotspot_labels", "active_line_id", "playback_queue", "room_entry_done_count",
-        "hint_levels", "pinned_main_quest", "pinned_side_quest", "open_puzzle", "checksum",
+        "hint_levels", "pinned_main_quest", "pinned_side_quest", "open_puzzle", "difficulty", "checksum",
     };
 
     private static readonly JsonSerializerOptions WriteOptions = new() { Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping };
@@ -62,6 +62,18 @@ public static class SaveCodec
         "map" => GameMode.Map,
         "journal" => GameMode.Journal,
         "pause" => GameMode.Pause,
+        _ => null,
+    };
+
+    /// <summary>JSON name of a difficulty (<c>easy</c>, <c>standard</c>, <c>hard</c>).</summary>
+    public static string DifficultyName(Difficulty difficulty) => difficulty.ToString().ToLowerInvariant();
+
+    /// <summary>Parses a difficulty name; null when unknown.</summary>
+    public static Difficulty? ParseDifficulty(string? name) => name switch
+    {
+        "easy" => Difficulty.Easy,
+        "standard" => Difficulty.Standard,
+        "hard" => Difficulty.Hard,
         _ => null,
     };
 
@@ -199,6 +211,11 @@ public static class SaveCodec
             if (mode != GameMode.Puzzle) throw new SaveValidationException("open_puzzle outside puzzle mode");
         }
 
+        // difficulty (optional): saves made before the difficulty settings have none and play on Standard.
+        var difficulty = Difficulty.Standard;
+        if (obj["difficulty"] is not null)
+            difficulty = ParseDifficulty(Str(obj, "difficulty")) ?? throw new SaveValidationException("unknown difficulty");
+
         var pinnedMain = OptionalQuest(content, obj, "pinned_main_quest", main: true);
         var pinnedSide = OptionalQuest(content, obj, "pinned_side_quest", main: false);
         var labels = obj["hotspot_labels"] switch
@@ -232,6 +249,7 @@ public static class SaveCodec
             PinnedMainQuest = pinnedMain,
             PinnedSideQuest = pinnedSide,
             OpenPuzzleAction = openPuzzle,
+            Difficulty = difficulty,
         };
 
         if (verifyChecksum && obj["checksum"] is not null)
@@ -272,6 +290,9 @@ public static class SaveCodec
         };
         // Written only while a puzzle modal is open, so saves without it keep their payload and checksum.
         if (s.Mode == GameMode.Puzzle && s.OpenPuzzleAction is not null) payload["open_puzzle"] = s.OpenPuzzleAction;
+        // Written only when it is not the default, so a Standard save is byte-identical to a save made before the
+        // difficulty settings existed (their checksums stay valid; docs/DECISIONS.md "Difficulty settings").
+        if (s.Difficulty != Difficulty.Standard) payload["difficulty"] = DifficultyName(s.Difficulty);
         return payload;
     }
 

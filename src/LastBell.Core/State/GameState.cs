@@ -24,6 +24,21 @@ public enum GameMode
 }
 
 /// <summary>
+/// Difficulty of one game (saved per save file, docs/DECISIONS.md "Difficulty settings"). It changes only the hints:
+/// how many levels a step offers, whether the exact step and the puzzle fill-in exist, and when Hard's single nudge
+/// opens (<see cref="LastBell.Core.Rules.Hints"/>). Old saves without the field are <see cref="Standard"/>.
+/// </summary>
+public enum Difficulty
+{
+    /// <summary>Ľahká: three levels per step (direction, place, exact step); the puzzle hint can fill in the answer.</summary>
+    Easy,
+    /// <summary>Štandardná (default): two levels (a nudge, where to look); never the exact step, puzzles never filled in.</summary>
+    Standard,
+    /// <summary>Ťažká: only the nudge, after <see cref="LastBell.Core.Rules.Hints.HardWaitSeconds"/> without progress; no puzzle help.</summary>
+    Hard,
+}
+
+/// <summary>
 /// Complete, immutable game state. Every rule function returns a new instance; nothing mutates in place.
 /// Progression is derived exclusively from <see cref="Done"/> (ordered list of action ids).
 /// The first eleven properties match the <c>State</c> interface of runtime_contract.ts; the rest are
@@ -92,7 +107,7 @@ public sealed record GameState
     /// <summary>Number of done actions when the current room was entered (deferred causal effects).</summary>
     public int RoomEntryDoneCount { get; init; }
 
-    /// <summary>Revealed hint levels per quest id (0..3).</summary>
+    /// <summary>Revealed hint levels per step (action id, 0..3; quest-id keys of older saves are ignored).</summary>
     public ImmutableSortedDictionary<string, int> HintLevels { get; init; } = ImmutableSortedDictionary<string, int>.Empty.WithComparers(StringComparer.Ordinal);
 
     /// <summary>Pinned main quest id, or null.</summary>
@@ -106,6 +121,12 @@ public sealed record GameState
     /// Saved as the optional field <c>open_puzzle</c> so a load can reopen the same modal (ISSUES GAME-02).
     /// </summary>
     public string? OpenPuzzleAction { get; init; }
+
+    /// <summary>
+    /// Difficulty of this game (hints only). Saved as the optional field <c>difficulty</c>, written only when it is not
+    /// <see cref="Difficulty.Standard"/>, so old saves (no field) load as Standard with their checksum unchanged.
+    /// </summary>
+    public Difficulty Difficulty { get; init; } = Difficulty.Standard;
 
     /// <summary>True if the action id is in <see cref="Done"/>.</summary>
     public bool IsDone(string actionId) => (doneSet ??= done.ToImmutableHashSet(StringComparer.Ordinal)).Contains(actionId);
@@ -135,7 +156,7 @@ public sealed record GameState
                ActiveLineId == other.ActiveLineId && PlaybackQueue.SequenceEqual(other.PlaybackQueue) &&
                RoomEntryDoneCount == other.RoomEntryDoneCount && HintLevels.SequenceEqual(other.HintLevels) &&
                PinnedMainQuest == other.PinnedMainQuest && PinnedSideQuest == other.PinnedSideQuest &&
-               OpenPuzzleAction == other.OpenPuzzleAction;
+               OpenPuzzleAction == other.OpenPuzzleAction && Difficulty == other.Difficulty;
     }
 
     /// <inheritdoc />

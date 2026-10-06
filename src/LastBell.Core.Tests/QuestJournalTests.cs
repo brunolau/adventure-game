@@ -23,7 +23,7 @@ public sealed class QuestJournalTests
     [Fact]
     public void Hints_reveal_one_level_per_request_up_to_three()
     {
-        var s = C.InitialState;
+        var s = C.InitialState with { Difficulty = Difficulty.Easy }; // three levels on Easy (DifficultyTests: Standard, Hard)
         Assert.Empty(Hints.Revealed(C, s, "M01"));
         s = Hints.RevealNext(C, s, "M01");
         Assert.Equal(new[] { "quest.M01.hint.1" }, Hints.Revealed(C, s, "M01").Select(h => h.Text.Key));
@@ -42,7 +42,7 @@ public sealed class QuestJournalTests
     [Fact]
     public void Hints_follow_the_next_undone_step_of_the_quest()
     {
-        var s = TestData.StateAfter("B07");
+        var s = TestData.StateAfter("B07") with { Difficulty = Difficulty.Easy };
         Assert.Equal("B08", Hints.CurrentStep(C, s, "M05")!.Id);
         for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M05");
         var hints = Hints.Revealed(C, s, "M05");
@@ -60,7 +60,7 @@ public sealed class QuestJournalTests
     [Fact]
     public void A_new_step_starts_at_level_zero_and_old_levels_stay_with_their_step()
     {
-        var s = TestData.StateAfter("B07");
+        var s = TestData.StateAfter("B07") with { Difficulty = Difficulty.Easy };
         for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M05");
         s = Playback.FinishAll(C, GameRules.CommitAction(C, GameRules.SelectItem(Driver.TravelTo(C, s, "S25"), "TOOLS"), "B08"));
         var step = Hints.CurrentStep(C, s, "M05")!;
@@ -99,7 +99,7 @@ public sealed class QuestJournalTests
                 Assert.NotNull(step);
                 Assert.False(state.IsDone(step!.Id));
                 Assert.Contains(step.Id, quest.Actions);
-                var s = state;
+                var s = state with { Difficulty = Difficulty.Easy };
                 for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, quest.Id);
                 var hints = Hints.Revealed(C, s, quest.Id);
                 Assert.Equal(3, hints.Count);

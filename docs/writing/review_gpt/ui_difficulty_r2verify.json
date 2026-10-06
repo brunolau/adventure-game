@@ -1,0 +1,70 @@
+{
+  "chunk": "ui_difficulty_r2verify",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\ui_difficulty.csv",
+  "overlay": [],
+  "cost_usd": 0.0453,
+  "batches": {
+    "PICKER": {
+      "hash": "adfb0c73025823af",
+      "status": "ok",
+      "heading": "PICKER · New Game: difficulty step (title screen → Nová hra → this dialog)",
+      "keys": [
+        "ui.difficulty.easy_desc"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8856,
+        "completion_tokens": 804,
+        "total_tokens": 9660,
+        "cost": 0.0214998,
+        "prompt_tokens_details": {
+          "cached_tokens": 2238,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0215
+    },
+    "HINTS": {
+      "hash": "bc197d4d7955d800",
+      "status": "ok",
+      "heading": "HINTS · Hint screen (H) per difficulty",
+      "keys": [
+        "ui.hint.standard_end"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9698,
+        "completion_tokens": 908,
+        "total_tokens": 10606,
+        "cost": 0.0237811,
+        "prompt_tokens_details": {
+          "cached_tokens": 2471,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0238
+    }
+  },
+  "keys": {
+    "ui.difficulty.easy_desc": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Vyplniť riešenie hádanky“ is an unnatural collocation; „doplniť riešenie“ expresses the intended assistance naturally.",
+      "suggestion": "Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie doplní.",
+      "text": "Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie vyplní.",
+      "batch": "PICKER"
+    },
+    "ui.hint.standard_end": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The difficulty setting itself does not show the exact step; the hint does. Name the hint explicitly and make switching to Easy unambiguous.",
+      "suggestion": "Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže nápoveda na ľahkej obťažnosti – prepneš na ňu v nastaveniach na karte Hra.",
+      "text": "Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže ľahká obťažnosť – prepneš ju v nastaveniach na karte Hra.",
+      "batch": "HINTS"
+    }
+  },
+  "unreviewed": []
+}

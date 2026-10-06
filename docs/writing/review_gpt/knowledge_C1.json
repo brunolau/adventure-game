@@ -1,0 +1,349 @@
+{
+  "chunk": "r2_C1",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\knowledge.csv",
+  "overlay": [
+    "docs\\writing\\out_v3\\knowledge_ext.json"
+  ],
+  "cost_usd": 0.1867,
+  "batches": {
+    "G01": {
+      "hash": "220f22edfbea374a",
+      "status": "ok",
+      "heading": "G01 · main quest M01 „Nákup pre babku“",
+      "keys": [
+        "action.G01.objective",
+        "action.G01.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8060,
+        "completion_tokens": 176,
+        "total_tokens": 8236,
+        "cost": 0.0148896,
+        "prompt_tokens_details": {
+          "cached_tokens": 2136,
+          "cache_write_tokens": 2136
+        }
+      },
+      "usd": 0.0149
+    },
+    "G05": {
+      "hash": "a934fb50258a57aa",
+      "status": "ok",
+      "heading": "G05 · main quest M01 „Nákup pre babku“",
+      "keys": [
+        "action.G05.x04"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10566,
+        "completion_tokens": 327,
+        "total_tokens": 10893,
+        "cost": 0.0203028,
+        "prompt_tokens_details": {
+          "cached_tokens": 2928,
+          "cache_write_tokens": 2928
+        }
+      },
+      "usd": 0.0203
+    },
+    "G07": {
+      "hash": "fb946504442cfbb0",
+      "status": "ok",
+      "heading": "G07 · main quest M02 „Prístroj v záhrade“",
+      "keys": [
+        "action.G07.label"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8477,
+        "completion_tokens": 91,
+        "total_tokens": 8568,
+        "cost": 0.0134959,
+        "prompt_tokens_details": {
+          "cached_tokens": 2299,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0135
+    },
+    "C01": {
+      "hash": "d6dc8050be5cb70c",
+      "status": "ok",
+      "heading": "C01 · main quest M11A „Tá istá škola o štvrťstoročie neskôr“",
+      "keys": [
+        "action.C01.002",
+        "action.C01.k01",
+        "action.C01.k02"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12000,
+        "completion_tokens": 488,
+        "total_tokens": 12488,
+        "cost": 0.0225283,
+        "prompt_tokens_details": {
+          "cached_tokens": 3343,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0225
+    },
+    "C05": {
+      "hash": "d5baa4ca6410085e",
+      "status": "ok",
+      "heading": "C05 · main quest M11D „Skutočné odovzdanie počas karantény“",
+      "keys": [
+        "action.C05.k01"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11113,
+        "completion_tokens": 93,
+        "total_tokens": 11206,
+        "cost": 0.0171273,
+        "prompt_tokens_details": {
+          "cached_tokens": 3173,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0171
+    },
+    "S10": {
+      "hash": "061321c2657a350a",
+      "status": "ok",
+      "heading": "S10 · Dielňa ZVON (2020, Chorvátsky Grob)",
+      "keys": [
+        "look.S10.chrono"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9573,
+        "completion_tokens": 667,
+        "total_tokens": 10240,
+        "cost": 0.0223104,
+        "prompt_tokens_details": {
+          "cached_tokens": 2504,
+          "cache_write_tokens": 2504
+        }
+      },
+      "usd": 0.0223
+    },
+    "S51": {
+      "hash": "eae0f148d6d61395",
+      "status": "ok",
+      "heading": "S51 · Dúbravská zastávka v roku 2020 (2020, Dúbravka)",
+      "keys": [
+        "look.S51.clock"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9194,
+        "completion_tokens": 382,
+        "total_tokens": 9576,
+        "cost": 0.0175435,
+        "prompt_tokens_details": {
+          "cached_tokens": 2455,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0175
+    },
+    "ELA": {
+      "hash": "522e8633b4b1dbb5",
+      "status": "ok",
+      "heading": "ELA · Ela Švecová (40) — S03",
+      "keys": [
+        "topic.ELA.extra 2.label",
+        "topic.ELA.extra 2.001",
+        "topic.ELA.extra 2.002"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13886,
+        "completion_tokens": 1032,
+        "total_tokens": 14918,
+        "cost": 0.0308435,
+        "prompt_tokens_details": {
+          "cached_tokens": 3815,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0308
+    },
+    "M01": {
+      "hash": "356689e822a733d9",
+      "status": "ok",
+      "heading": "M01 (main) — actions G01, G02, G03, G04, G05",
+      "keys": [
+        "quest.M01.hint.1"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 7890,
+        "completion_tokens": 120,
+        "total_tokens": 8010,
+        "cost": 0.01299,
+        "prompt_tokens_details": {
+          "cached_tokens": 2100,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.013
+    },
+    "M11A": {
+      "hash": "f282f811cff10f09",
+      "status": "ok",
+      "heading": "M11A (main) — actions C01, D01, D02, D03, D04",
+      "keys": [
+        "quest.M11A.goal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8191,
+        "completion_tokens": 151,
+        "total_tokens": 8342,
+        "cost": 0.0148232,
+        "prompt_tokens_details": {
+          "cached_tokens": 2192,
+          "cache_write_tokens": 2192
+        }
+      },
+      "usd": 0.0148
+    }
+  },
+  "keys": {
+    "action.G01.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "G01"
+    },
+    "action.G01.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "G01"
+    },
+    "action.G05.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja a Oto Bielik, mechanik z Ivanky. Viac ti poviem, keď prestaneš hovoriť o kondenzátoroch.",
+      "batch": "G05"
+    },
+    "action.G07.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vybrať prístroj z puzdra",
+      "batch": "G07"
+    },
+    "action.C01.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík? A kde ho vezmem?",
+      "batch": "C01"
+    },
+    "action.C01.k01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A teraz vážne. Ak sa chceš do toho mazania pustiť, potrebuješ návratový mostík.",
+      "batch": "C01"
+    },
+    "action.C01.k02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Fyzický, keramický, žiadny ďalší prístroj. Bez neho ťa nikam nepustím.",
+      "batch": "C01"
+    },
+    "action.C05.k01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kurátorka fondu: Nina Švecová, Grand Jasná.",
+      "batch": "C05"
+    },
+    "look.S10.chrono": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Kolíska na nízke napätie“ sounds as though the cradle holds voltage rather than operates at low voltage. The adjective makes the technical description clearer and more natural.",
+      "suggestion": "Stolový uzol s nízkonapäťovou kolískou. Doprostred patrí prenosný diel. Keď kolíska nesvieti, je to poistka.",
+      "text": "Stolový uzol s kolískou na nízke napätie. Doprostred patrí prenosný diel. Keď kolíska nesvieti, je to poistka.",
+      "batch": "S10"
+    },
+    "look.S51.clock": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The comma before „už“ is misplaced. Adding „vtedy“ makes the temporal construction and comma placement clear.",
+      "suggestion": "Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. Visel tu už vtedy, keď som chodil do školy.",
+      "text": "Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. Visel tu, už keď som chodil do školy.",
+      "batch": "S51"
+    },
+    "topic.ELA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tvoja dcéra",
+      "batch": "ELA"
+    },
+    "topic.ELA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa má malá? Teda, asi už nie taká malá.",
+      "batch": "ELA"
+    },
+    "topic.ELA.extra 2.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Má pätnásť a dištančné” awkwardly combines her age with an abbreviated schooling term. Separate the facts and name the schooling naturally.",
+      "suggestion": "Nina? Má pätnásť. Teraz má dištančné vyučovanie. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+      "text": "Nina? Má pätnásť a dištančné. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+      "batch": "ELA"
+    },
+    "quest.M01.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Začni na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "M01"
+    },
+    "quest.M11A.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zisti od Miry, čo ešte treba na bezpečný návrat, a hľadaj to v Dúbravke v roku 2020.",
+      "batch": "M11A"
+    }
+  },
+  "unreviewed": []
+}

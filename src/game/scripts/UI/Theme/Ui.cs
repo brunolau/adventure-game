@@ -2,6 +2,7 @@ using System;
 using Godot;
 using LastBell.Core.Text;
 using LastBell.Game.Runtime;
+using LastBell.Game.UI.Common;
 
 namespace LastBell.Game.UI.Theme;
 
@@ -10,6 +11,9 @@ public static class Ui
 {
     /// <summary>Translated ui.csv text (with {placeholders}).</summary>
     public static string T(string key, params (string Name, string Value)[] args) => TextService.Ui(key, args);
+
+    /// <summary>A UI string with its Slovak fallback in code (a draft row not yet in ui.csv, see <see cref="TextService.UiOr"/>).</summary>
+    public static string T(UiString text, params (string Name, string Value)[] args) => TextService.UiOr(text.Key, text.Fallback, args);
 
     /// <summary>Translated Core text.</summary>
     public static string T(TextRef text) => TextService.Get(text);

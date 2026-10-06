@@ -1,0 +1,682 @@
+{
+  "format": "lastbell.dialogue_ext",
+  "version": 1,
+  "chunk": "knowledge",
+  "about": "DRAFT, not applied (owner approval pending). Knowledge fixes for the owner rule 2026-10-06 'Adam never knows what he has not learned' (docs/writing/knowledge/AUDIT.md). Every entry is the FULL replacement of the live dialogue_ext.json entry with the same action / topic id (see 'supersedes'). Merge note for the integrator: content_ext.py merge keeps entries of other chunks, so the old C1-C4 entries for these ids must be removed (or this draft's entries re-labelled with their old chunk) before merging, otherwise the exchange would be extended twice. Each 'note' names the fix, the era, the replaced live text and what the entry supersedes. Rewrites of existing keys are in knowledge.csv.",
+  "sequences": [
+    {
+      "id": "action.B05",
+      "action": "B05",
+      "kind": "action_lines",
+      "lines": [
+        {
+          "key": "action.B05.x01",
+          "speaker": "ADAM",
+          "sk": "Ahoj. Ty si Pali? Potreboval by som remienok do školského magnetofónu."
+        },
+        {
+          "key": "action.B05.x02",
+          "speaker": "PALI",
+          "sk": "Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý."
+        },
+        "action.B05.001",
+        "action.B05.002",
+        "action.B05.003",
+        "action.B05.004",
+        "action.B05.005",
+        {
+          "key": "action.B05.x03",
+          "speaker": "ADAM",
+          "sk": "Ešte jedna vec. Máš na remienky nejaký trik?"
+        },
+        {
+          "key": "action.B05.x04",
+          "speaker": "PALI",
+          "sk": "Mám. Nechytaj ho mastnými prstami. Hovorím to každému dvadsať rokov a nikto to nedodrží."
+        },
+        {
+          "key": "action.B05.k01",
+          "speaker": "PALI",
+          "sk": "A keby bola chyba v páske, nie v remienku, za mnou nechoď. Pásky neopravujem, tie len kazím."
+        },
+        {
+          "key": "action.B05.k02",
+          "speaker": "ADAM",
+          "sk": "A za kým?"
+        },
+        {
+          "key": "action.B05.k03",
+          "speaker": "PALI",
+          "sk": "Za Jurom do kazetového klubu v Ružinove. S páskami čaruje, nie nadarmo mu hovoria Juro Kazeta.",
+          "note": "FINAL CONTROL: owner's wording \"S páskami čaruje Juro Kazeta\" (DECISIONS.md) worked in; matches hint.nudge.B07; was: Za Jurom do kazetového klubu v Ružinove. Nie nadarmo mu hovoria Juro Kazeta."
+        }
+      ],
+      "note": "KNOWLEDGE G01-juro (a), era 1995. OWNER'S EXAMPLE: Pali (ty/ty, blunt verdicts) names Juro and the cassette club in Ružinov. B05 is guaranteed before B06 (B06 needs BELT_NEW from B05), so B06, its objective/journal, TAPE_RAW purpose and M05 hint 1 are then introduced. B07.x01 'Ty budeš Juro' / x02 'Juro Kazeta, to som ja' pay this off. Supersedes the live dialogue_ext.json entry action.B05 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
+      "chunk": "knowledge"
+    },
+    {
+      "action": "B06",
+      "id": "action.B06",
+      "kind": "action_lines",
+      "lines": [
+        "action.B06.001",
+        "action.B06.002",
+        {
+          "key": "action.B06.k01",
+          "speaker": "ADAM",
+          "sk": "Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť."
+        }
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G01-juro (b), era 1995. OWNER'S EXAMPLE, text exactly as the owner phrased it; B06.002 is rewritten in knowledge.csv with the owner's text. Adam recalls Pali's B05.k03. New sequence (no live overlay entry)."
+    },
+    {
+      "id": "action.B02",
+      "action": "B02",
+      "kind": "action_lines",
+      "lines": [
+        "action.B02.001",
+        {
+          "key": "action.B02.x01",
+          "speaker": "TONO",
+          "sk": "Na oznam? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby."
+        },
+        {
+          "key": "action.B02.x02",
+          "speaker": "ADAM",
+          "sk": "Holuby by vám magnetofón neopravili."
+        },
+        {
+          "key": "action.B02.x03",
+          "speaker": "TONO",
+          "sk": "Holuby nie. Ukážte, čo to máte."
+        },
+        "action.B02.002",
+        {
+          "key": "action.B02.x04",
+          "speaker": "TONO",
+          "sk": "Pero je na šnúrke. Minulý mesiac nám odišli tri, tak sme ho uviazali."
+        },
+        "action.B02.003",
+        "action.B02.004",
+        "action.B02.005",
+        {
+          "key": "action.B02.x05",
+          "speaker": "TONO",
+          "sk": "Dúfam, že vy si prezuvky nosíte. Ten malý ich zabúda každý druhý deň."
+        },
+        {
+          "key": "action.B02.x06",
+          "speaker": "ADAM",
+          "sk": "To mu zostane ešte dlho."
+        },
+        {
+          "key": "action.B02.x07",
+          "speaker": "TONO",
+          "sk": "Krúžok je v triede na konci chodby. Nahrávajú, tak tam hovorte potichu alebo rovno do mikrofónu."
+        },
+        {
+          "key": "action.B02.k01",
+          "speaker": "TONO",
+          "sk": "A pozor, ten náš magnetofón žerie remienky ako desiatu."
+        },
+        {
+          "key": "action.B02.k02",
+          "speaker": "TONO",
+          "sk": "Keby ste potrebovali nový, choďte za Palim do Karlovej Vsi. Má ich plné zásuvky."
+        }
+      ],
+      "note": "KNOWLEDGE G02-pali (a), era 1995. Tóno 25 says vy (before E11). B02 opens the radio room, so it is guaranteed before B04; B04.002 (knowledge.csv) cites Tóno. The exchange still ends on a practical tip. Supersedes the live dialogue_ext.json entry action.B02 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
+      "chunk": "knowledge"
+    },
+    {
+      "id": "action.G05",
+      "action": "G05",
+      "kind": "action_lines",
+      "lines": [
+        "action.G05.001",
+        "action.G05.002",
+        "action.G05.003",
+        {
+          "key": "action.G05.x01",
+          "speaker": "ADAM",
+          "sk": "Do domu nie, do dielne áno. Babkine pravidlá poznám."
+        },
+        {
+          "key": "action.G05.x02",
+          "speaker": "MIRA20",
+          "sk": "Jedno si zabudol: najprv počúvaj, až potom rozoberaj."
+        },
+        "action.G05.004",
+        "action.G05.005",
+        {
+          "key": "action.G05.x03",
+          "speaker": "ADAM",
+          "sk": "My? Kto my?"
+        },
+        {
+          "key": "action.G05.x04",
+          "speaker": "MIRA20",
+          "sk": "Ja a Oto Bielik, mechanik z Ivanky. Viac ti poviem, keď prestaneš hovoriť o kondenzátoroch.",
+          "note": "KNOWLEDGE: text changed; was: Ja a jeden šikovný človek. Viac ti poviem, keď prestaneš hovoriť o kondenzátoroch."
+        },
+        {
+          "key": "action.G05.x05",
+          "speaker": "ADAM",
+          "sk": "Tak idem pre kľúč. A o kondenzátore sa ešte porozprávame."
+        }
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G03-oto-before-ivanka (a), era 2020. Only action.G05.x04 changed (see the line note); Mira's withholding joke stays. G05 gives the shed key and is guaranteed before B22 and all of Ivanka, so the B22 objective ('nájdi Ota v jeho mechanickej dielni') and the optional 1962 topics that say 'pán Bielik' (Božo extra 3, Zuzana extra 2) are then introduced. Supersedes the live dialogue_ext.json entry action.G05 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
+    },
+    {
+      "action": "B22",
+      "id": "action.B22",
+      "kind": "action_lines",
+      "lines": [
+        "action.B22.001",
+        "action.B22.002",
+        "action.B22.003",
+        {
+          "key": "action.B22.k01",
+          "speaker": "ADAM",
+          "sk": "Babka vravela, že ZVON robila s Otom Bielikom, mechanikom z Ivanky. Začnem v jeho dielni."
+        },
+        "action.B22.004"
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G03-oto-before-ivanka (a), era 1995. Adam recalls Mira's G05.x04 (story step 4) right before the objective sends him to Oto's workshop (story step 33). Protected P03-spoken-digits stays in B22.001. New sequence (no live overlay entry)."
+    },
+    {
+      "id": "action.C01",
+      "action": "C01",
+      "kind": "action_lines",
+      "lines": [
+        {
+          "key": "action.C01.x01",
+          "speaker": "ADAM",
+          "sk": "Babka, som späť. Aspoň v správnom roku. Musím ti niečo ukázať."
+        },
+        {
+          "key": "action.C01.x02",
+          "speaker": "MIRA20",
+          "sk": "Prilož to k sklu. Okuliare mám na nose od rána pre prípad, že sa vrátiš."
+        },
+        "action.C01.001",
+        {
+          "key": "action.C01.x03",
+          "speaker": "MIRA20",
+          "sk": "Aj tie topánky. V Ivanke sa o nich hovorilo až do Vianoc."
+        },
+        {
+          "key": "action.C01.x04",
+          "speaker": "ADAM",
+          "sk": "Ty si si ma celé tie roky pamätala?"
+        },
+        {
+          "key": "action.C01.x05",
+          "speaker": "MIRA20",
+          "sk": "Topánky áno. Tvár som si k nim priradila až teraz."
+        },
+        {
+          "key": "action.C01.k01",
+          "speaker": "MIRA20",
+          "sk": "A teraz vážne. Ak chceš to mazanie zastaviť, potrebuješ návratový mostík.",
+          "note": "FINAL CONTROL: \"pustiť sa do mazania\" read as Adam doing the deleting; was: A teraz vážne. Ak sa chceš do toho mazania pustiť, potrebuješ návratový mostík."
+        },
+        {
+          "key": "action.C01.k02",
+          "speaker": "MIRA20",
+          "sk": "Fyzický, keramický, žiadny ďalší prístroj. Bez neho ťa nikam nepustím."
+        },
+        "action.C01.002",
+        "action.C01.003",
+        "action.C01.004",
+        "action.C01.005",
+        {
+          "key": "action.C01.x06",
+          "speaker": "ADAM",
+          "sk": "Technický majetok. Znie to, akoby som išiel po traktor."
+        },
+        {
+          "key": "action.C01.x07",
+          "speaker": "MIRA20",
+          "sk": "Pre školu je to majetok. Pre mňa krabica vecí, ktoré okrem mňa nikto nevie zapojiť."
+        },
+        "action.C01.006",
+        "action.C01.007",
+        {
+          "key": "action.C01.x08",
+          "speaker": "ADAM",
+          "sk": "Ešte niečo, kým ma ten prístroj zase niekam pošle?"
+        },
+        {
+          "key": "action.C01.x09",
+          "speaker": "MIRA20",
+          "sk": "Áno. Odfoť si školský dvor, presne taký, aký je dnes."
+        }
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G04-mostik (a), era 2020. Story bible: 'Po návrate do 2020 Mira vysvetlí, že pre bezpečný zásah treba aj fyzický keramický návratový mostík'. C01.002 (Adam) becomes 'Mostík? A kde ho vezmem?' (knowledge.csv); C01.003 answers unchanged. 'Bez neho ťa nikam nepustím' is Mira's grandma-rules running gag in a serious key. Supersedes the live dialogue_ext.json entry action.C01 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
+    },
+    {
+      "id": "action.B13",
+      "action": "B13",
+      "kind": "action_lines",
+      "lines": [
+        {
+          "key": "action.B13.x01",
+          "speaker": "ADAM",
+          "sk": "Dobrý deň! Prišiel som kvôli fondu pani Hruškovej."
+        },
+        {
+          "key": "action.B13.x02",
+          "speaker": "KAROL",
+          "sk": "Dobrý deň. Potichu, prosím. U nás sa aj pozdrav hovorí šeptom."
+        },
+        {
+          "key": "action.B13.x03",
+          "speaker": "ADAM",
+          "sk": "Prepáčte. Mám pre vás poverenie."
+        },
+        "action.B13.001",
+        {
+          "key": "action.B13.x04",
+          "speaker": "KAROL",
+          "sk": "Originály zostávajú v študovni. Kópie si môžete odniesť aj pokrčiť, ak už musíte."
+        },
+        "action.B13.002",
+        "action.B13.003",
+        "action.B13.004",
+        "action.B13.005",
+        {
+          "key": "action.B13.k01",
+          "speaker": "KAROL",
+          "sk": "S negatívom choďte do ateliéru Svetlo za pani Alenou Svobodovou. Spraví vám pozitív a nebude pri tom kričať."
+        },
+        {
+          "key": "action.B13.x05",
+          "speaker": "ADAM",
+          "sk": "Ďakujem. A prepáčte za ten hlasný pozdrav."
+        },
+        {
+          "key": "action.B13.x06",
+          "speaker": "KAROL",
+          "sk": "Zapísal som si ho. Ako výnimku."
+        }
+      ],
+      "note": "KNOWLEDGE G05-alena (a), era 1995. Karol (vy) completes 'Ateliér je cez námestie' (B13.003) with the name; his silence gag continues. The B13 objective/journal and the NEGATIVE purpose ('Alene') are then introduced in the same exchange; B14.x02 'Pán Merta mi už volal' fits. Supersedes the live dialogue_ext.json entry action.B13 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
+      "chunk": "knowledge"
+    },
+    {
+      "action": "B16",
+      "id": "action.B16",
+      "kind": "action_lines",
+      "lines": [
+        "action.B16.001",
+        {
+          "key": "action.B16.k01",
+          "speaker": "ADAM",
+          "sk": "Pod legendou je babkin podpis a druhý: Dezider Kováč, rádioamatér, garáž 17."
+        },
+        "action.B16.002"
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G06-dezider (b), era 1995. B16.001 (knowledge.csv) no longer names Dezider; Adam reads it off the map (a visible text counts as an introduction). Garage 17 matches the protected entry.S29.001. B16.002 'Rádioamatér v garáži…' reacts; B17.x01 'ktorú ste vraj kreslili s pani Hruškovou' is now grounded in the two signatures. Objective/journal/M07 hint 1 then fine. New sequence (no live overlay entry)."
+    },
+    {
+      "id": "action.C05",
+      "action": "C05",
+      "kind": "action_lines",
+      "lines": [
+        {
+          "key": "action.C05.x01",
+          "speaker": "ADAM",
+          "sk": "Odtlačok, kazeta, protokol a mostík. Babka, teraz to všetko priložím k tvojmu prístroju."
+        },
+        "action.C05.001",
+        {
+          "key": "action.C05.k01",
+          "speaker": "SYSTEM",
+          "sk": "Kurátorka fondu: Nina Švecová, Grand Jasná."
+        },
+        "action.C05.002",
+        "action.C05.003",
+        {
+          "key": "action.C05.x02",
+          "speaker": "ADAM",
+          "sk": "To nie je ozvena, babka. To je tvoj prístroj. Hovorí o roku 2035."
+        },
+        {
+          "key": "action.C05.x03",
+          "speaker": "MIRA20",
+          "sk": "Tak ho nenechaj rozprávať samého. Zapíš si, čo hovorí, a potom ho vypni."
+        },
+        "action.C05.004"
+      ],
+      "chunk": "knowledge",
+      "note": "KNOWLEDGE G08-nina-2035 (a), era 2020. C05.001 (protected P04-chain) stays verbatim; the device adds the curator, so C05.002 'Adresu už mám' follows naturally and the C05 objective/journal and M12 hint 1 ('Nina … pred hotelom Grand Jasná') are introduced. Terse device style (STYLE_GUIDE 6.12). Supersedes the live dialogue_ext.json entry action.C05 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
+    },
+    {
+      "id": "action.E02",
+      "action": "E02",
+      "kind": "action_lines",
+      "note": "KNOWLEDGE G10-marta (a), era 1982. Oto 66 (vy) right after he hands the signed slip (E02.009); 'ani o skrutku viac' sets up Marta's exactness. The E02 objective/journal and the PARTSNOTE purpose ('u Marty') are then introduced. Supersedes the live dialogue_ext.json entry action.E02 (chunk C3): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        "action.E02.001",
+        {
+          "key": "action.E02.x01",
+          "speaker": "TONO82",
+          "sk": "Z roku 2020? To je ešte ďalej ako rok 2000. A ten je strašne ďaleko."
+        },
+        "action.E02.002",
+        "action.E02.003",
+        "action.E02.004",
+        "action.E02.005",
+        "action.E02.006",
+        {
+          "key": "action.E02.x02",
+          "speaker": "TONO82",
+          "sk": "A bude mať správne ťažisko?"
+        },
+        {
+          "key": "action.E02.x03",
+          "speaker": "ADAM",
+          "sk": "Bude. Visí úplne rovno."
+        },
+        "action.E02.007",
+        "action.E02.008",
+        {
+          "key": "action.E02.x04",
+          "speaker": "OTO82",
+          "sk": "Stratí sa? U mňa sa veci nestrácajú."
+        },
+        {
+          "key": "action.E02.x05",
+          "speaker": "ADAM",
+          "sk": "U vás nie. Ale škola sa bude ešte veľakrát sťahovať a prerábať."
+        },
+        "action.E02.009",
+        {
+          "key": "action.E02.k01",
+          "speaker": "OTO82",
+          "sk": "Lístok odneste do výdajne pani Marte Dobiášovej. Vydá všetko, čo je na ňom napísané, ani o skrutku viac."
+        },
+        "action.E02.010",
+        "action.E02.011",
+        "action.E02.012",
+        {
+          "key": "action.E02.x06",
+          "speaker": "ADAM",
+          "sk": "Z čoho?"
+        },
+        {
+          "key": "action.E02.x07",
+          "speaker": "TONO82",
+          "sk": "Z dejepisu. Odteraz ho budem brať vážnejšie."
+        }
+      ],
+      "chunk": "knowledge"
+    },
+    {
+      "id": "action.Q7A",
+      "action": "Q7A",
+      "kind": "action_lines",
+      "note": "KNOWLEDGE G33-q7-title (a), era 1962. Only action.Q7A.x02 changed (see the line note): Rudo now says the protected first line `Žiaden strach, miláčik!` himself, answering x01 'A tá prvá veta je dobrá?', so the quest title Q7 (verbatim) is introduced. Supersedes the live dialogue_ext.json entry action.Q7A (chunk C3): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        "action.Q7A.001",
+        {
+          "key": "action.Q7A.x01",
+          "speaker": "ADAM",
+          "sk": "A tá prvá veta je dobrá?"
+        },
+        {
+          "key": "action.Q7A.x02",
+          "speaker": "RUDO",
+          "sk": "Najlepšia! „Žiaden strach, miláčik!“ Len bez druhej to znie, akoby som sa s niekým lúčil na stanici.",
+          "note": "KNOWLEDGE: text changed; was: Najlepšia! Len bez druhej to znie, akoby som sa s niekým lúčil na stanici."
+        },
+        "action.Q7A.002",
+        "action.Q7A.003",
+        {
+          "key": "action.Q7A.x03",
+          "speaker": "ADAM",
+          "sk": "Stačí, keď poďakujete celkom obyčajne."
+        },
+        {
+          "key": "action.Q7A.x04",
+          "speaker": "RUDO",
+          "sk": "Obyčajne to neviem. Ale nacvičím to!"
+        }
+      ],
+      "chunk": "knowledge"
+    }
+  ],
+  "topic_extensions": [],
+  "topics": [
+    {
+      "id": "ELA.extra 2",
+      "character": "ELA",
+      "label_key": "topic.ELA.extra 2.label",
+      "label": "Tvoja dcéra",
+      "speaks_first": "ADAM",
+      "repeatable": true,
+      "requires_done": [],
+      "note": "KNOWLEDGE G19-nina-2020 (b), era 2020. Label was: 'Nina'. Label and .001 no longer name a girl the player has never heard of; Adam knows that Ela has a daughter (the village knows him since childhood: background). Ela's .002 starts with 'Nina?', which introduces the name (and gives the 2035 Nina an early echo). Supersedes the live dialogue_ext.json topic ELA.extra 2 (chunk C1); lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        {
+          "key": "topic.ELA.extra 2.001",
+          "speaker": "ADAM",
+          "sk": "Ako sa má malá? Teda, asi už nie taká malá.",
+          "note": "KNOWLEDGE: text changed; was: Ako sa má Nina?"
+        },
+        {
+          "key": "topic.ELA.extra 2.002",
+          "speaker": "ELA",
+          "sk": "Nina? Malá už dávno nie je, má pätnásť a školu cez počítač. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+          "note": "KNOWLEDGE: text changed; was: Má pätnásť a dištančné. Tvrdí, že sa učí. Ja počujem, že sa smeje. | FINAL CONTROL: GPT flag adapted (answers Adam's \"asi už nie taká malá\"; 2020 colloquial \"dištančné\" kept as in the live line) | GPT verify adapted: \"dištančné\" -> \"školu cez počítač\" (no repeated \"učí\")"
+        },
+        {
+          "key": "topic.ELA.extra 2.003",
+          "speaker": "ADAM",
+          "sk": "Možno má učiteľ zapnutý mikrofón a nevie o tom."
+        },
+        {
+          "key": "topic.ELA.extra 2.004",
+          "speaker": "ELA",
+          "sk": "Možno. Večer mi pomáha prepisovať zoznamy do počítača. Vraví, že raz bude mať všetko na jednom mieste."
+        },
+        {
+          "key": "topic.ELA.extra 2.005",
+          "speaker": "ADAM",
+          "sk": "Všetko na jednom mieste? To znie ako veľký plán."
+        },
+        {
+          "key": "topic.ELA.extra 2.006",
+          "speaker": "ELA",
+          "sk": "Má pätnásť. Nech plánuje, zoznamy jej zatiaľ požičiam."
+        }
+      ],
+      "chunk": "knowledge"
+    },
+    {
+      "id": "JANA95.extra 1",
+      "character": "JANA95",
+      "label_key": "topic.JANA95.extra 1.label",
+      "label": "Vaša práca",
+      "speaks_first": "ADAM",
+      "repeatable": true,
+      "requires_done": [],
+      "note": "KNOWLEDGE G28-vystavka-1995 (b), era 1995. Label was: 'Výstavka'. Label and .001 no longer presuppose the exhibition (nothing in S15 shows it); Jana's .002 names it. Adam → Jana 25: vy. Supersedes the live dialogue_ext.json topic JANA95.extra 1 (chunk C2); lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        {
+          "key": "topic.JANA95.extra 1.001",
+          "speaker": "ADAM",
+          "sk": "Vidím, že máte plné ruky práce. Čo to bude?",
+          "note": "KNOWLEDGE: text changed; was: Čo chystáte na výstavku? | FINAL CONTROL: GPT accepted (idiom mať plné ruky práce)"
+        },
+        {
+          "key": "topic.JANA95.extra 1.002",
+          "speaker": "JANA95",
+          "sk": "Výstavka. Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami.",
+          "note": "KNOWLEDGE: text changed; was: Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami."
+        },
+        {
+          "key": "topic.JANA95.extra 1.003",
+          "speaker": "ADAM",
+          "sk": "A čo bude na tom stole?"
+        },
+        {
+          "key": "topic.JANA95.extra 1.004",
+          "speaker": "JANA95",
+          "sk": "Rádiá, magnetofón a model mlyna, ktorý sa točí, len keď sa naň nikto nepozerá."
+        },
+        {
+          "key": "topic.JANA95.extra 1.005",
+          "speaker": "ADAM",
+          "sk": "To poznám. U mňa v dielni tiež všetko funguje, kým tam nie je zákazník."
+        },
+        {
+          "key": "topic.JANA95.extra 1.006",
+          "speaker": "JANA95",
+          "sk": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí."
+        }
+      ],
+      "chunk": "knowledge"
+    },
+    {
+      "id": "VERA60.extra 2",
+      "character": "VERA60",
+      "label_key": "topic.VERA60.extra 2.label",
+      "label": "Vaše výkresy",
+      "speaks_first": "ADAM",
+      "repeatable": true,
+      "requires_done": [],
+      "excluded_done": [],
+      "note": "KNOWLEDGE G20-oto-topics-1962 (b), era 1962. Label was: 'Otove rozmery'. Label and .001 presupposed Vera's complaint from her optional ambient 1 (the topic can be picked first). Adam now only asks whom she draws for (Oto Bielik is known from G05.x04 / B22.k01); Vera's .002 brings the dimensions gag herself. Adam → Vera: vy. Supersedes the live dialogue_ext.json topic VERA60.extra 2 (chunk C3); lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        {
+          "key": "topic.VERA60.extra 2.001",
+          "speaker": "ADAM",
+          "sk": "To kreslíte pre pána Bielika?",
+          "note": "KNOWLEDGE: text changed; was: Mení vám Oto rozmery naozaj tak často?"
+        },
+        {
+          "key": "topic.VERA60.extra 2.002",
+          "speaker": "VERA60",
+          "sk": "Pre Ota. Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh.",
+          "note": "KNOWLEDGE: text changed; was: Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh."
+        },
+        {
+          "key": "topic.VERA60.extra 2.003",
+          "speaker": "ADAM",
+          "sk": "A čo s tým robíte?"
+        },
+        {
+          "key": "topic.VERA60.extra 2.004",
+          "speaker": "VERA60",
+          "sk": "Kreslím ceruzkou. Atrament si nechám na deň, keď Oto prestane meniť rozmery."
+        }
+      ],
+      "chunk": "knowledge"
+    },
+    {
+      "id": "ZUZANA.extra 7",
+      "character": "ZUZANA",
+      "label_key": "topic.ZUZANA.extra 7.label",
+      "label": "Predstavenie",
+      "speaks_first": "ADAM",
+      "repeatable": true,
+      "requires_done": [],
+      "excluded_done": [
+        "Q7C"
+      ],
+      "note": "KNOWLEDGE G21-rudo-zuzana (b), era 1962. Label was: 'Rudo z divadla'. Label and .001 named Rudo before the hall S34 may have been visited. Adam asks about theatre in general; Zuzana's .002 introduces Rudo and keeps the protected first line `Žiaden strach, miláčik!`. Zuzana (7) says vy to Adam, Adam ty; nothing about her own life (ZUZANA.md). Supersedes the live dialogue_ext.json topic ZUZANA.extra 7 (chunk C3); lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        {
+          "key": "topic.ZUZANA.extra 7.001",
+          "speaker": "ADAM",
+          "sk": "Hrá sa tu u vás aj divadlo?",
+          "note": "KNOWLEDGE: text changed; was: Ty poznáš pána Ruda z divadla?"
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.002",
+          "speaker": "ZUZANA",
+          "sk": "Hrá sa. V sále skúša ujo Rudo a ja už viem jeho prvú vetu: „Žiaden strach, miláčik!“",
+          "note": "KNOWLEDGE: text changed; was: Ujo Rudo. Ja viem jeho prvú vetu: „Žiaden strach, miláčik!“"
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.003",
+          "speaker": "ADAM",
+          "sk": "A druhú?"
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.004",
+          "speaker": "ZUZANA",
+          "sk": "Druhú nevie ani on. Je v scenári a scenár sa stratil."
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.005",
+          "speaker": "ZUZANA",
+          "sk": "Teta Lída hovorí, že ak sa nenájde, bude to veľmi krátke divadlo."
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.006",
+          "speaker": "ADAM",
+          "sk": "Jedna veta a potom potlesk."
+        },
+        {
+          "key": "topic.ZUZANA.extra 7.007",
+          "speaker": "ZUZANA",
+          "sk": "Ja by som tlieskala. Ale len trochu, aby si nemyslel, že to stačí."
+        }
+      ],
+      "chunk": "knowledge"
+    },
+    {
+      "id": "TAMARA.extra 1",
+      "character": "TAMARA",
+      "label_key": "topic.TAMARA.extra 1.label",
+      "label": "Tvoja dielňa",
+      "speaks_first": "ADAM",
+      "repeatable": true,
+      "requires_done": [],
+      "note": "KNOWLEDGE G14-druhy-zivot (b), era 2035. Label was: 'Druhý život'. Label and .001 presupposed the workshop's name, which only the optional bench sign shows. Tamara's .002 now says the name first (protected `Druhý život`). ty/ty. Supersedes the live dialogue_ext.json topic TAMARA.extra 1 (chunk C4); lines copied unchanged unless their note says 'text changed'.",
+      "lines": [
+        {
+          "key": "topic.TAMARA.extra 1.001",
+          "speaker": "ADAM",
+          "sk": "Ako sa volá tvoja dielňa?",
+          "note": "KNOWLEDGE: text changed; was: Prečo sa tvoja dielňa volá práve tak?"
+        },
+        {
+          "key": "topic.TAMARA.extra 1.002",
+          "speaker": "TAMARA",
+          "sk": "Druhý život. Lebo veci majú aj druhý život, len im ho ľudia nedajú.",
+          "note": "KNOWLEDGE: text changed; was: Lebo veci majú aj druhý život. Len im ho ľudia nedajú."
+        },
+        {
+          "key": "topic.TAMARA.extra 1.003",
+          "speaker": "ADAM",
+          "sk": "A koľko životov má taký magnetofón?"
+        },
+        {
+          "key": "topic.TAMARA.extra 1.004",
+          "speaker": "TAMARA",
+          "sk": "Toľko, koľkokrát ho niekto radšej opraví, než vyhodí do kontajnera."
+        },
+        {
+          "key": "topic.TAMARA.extra 1.005",
+          "speaker": "ADAM",
+          "sk": "Ja som jeden opravoval už štvrtýkrát."
+        },
+        {
+          "key": "topic.TAMARA.extra 1.006",
+          "speaker": "TAMARA",
+          "sk": "Tak to je stály pacient. Založ mu kartu."
+        }
+      ],
+      "chunk": "knowledge"
+    }
+  ]
+}

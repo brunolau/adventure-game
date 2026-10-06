@@ -3,6 +3,7 @@ using System.Linq;
 using Godot;
 using LastBell.Core.Content;
 using LastBell.Core.Rules;
+using LastBell.Core.State;
 using LastBell.Core.Text;
 using LastBell.Game.Runtime;
 using LastBell.Game.UI.Common;
@@ -11,18 +12,22 @@ using LastBell.Game.UI.Theme;
 namespace LastBell.Game.UI.Menus;
 
 /// <summary>
-/// Progressive hints (H): pick the current main quest or a side quest in progress; each request
-/// reveals one more level (direction, place, exact next step) through <see cref="Hints.RevealNext"/>.
-/// The levels belong to the quest's next undone step (<see cref="Hints.CurrentStep"/>, PT-F08): a
-/// finished step never comes back, and the third level shows only that step, not the whole chain.
-/// No penalty. When the third level of a puzzle's step is revealed the puzzle modal offers
-/// "fill in correctly" (hint_can_fill); the player still confirms.
+/// Progressive hints (H): pick the current main quest or a side quest in progress; each request reveals one more level
+/// through <see cref="Hints.RevealNext"/>, as far as the game's difficulty allows (docs/DECISIONS.md "Difficulty
+/// settings"): Easy direction, place, exact next step; Standard a nudge and where to look, then a note that the exact
+/// step is Easy's; Hard only the nudge, behind a live countdown ("not yet") until three minutes pass without progress,
+/// and no help on a puzzle step. The levels belong to the quest's next undone step (<see cref="Hints.CurrentStep"/>,
+/// PT-F08): a finished step never comes back. No penalty. On Easy, when the third level of a puzzle's step is revealed
+/// the puzzle modal offers "fill in correctly" (hint_can_fill); the player still confirms.
 /// </summary>
 public partial class HintScreen : ModalScreen
 {
     private VBoxContainer questList = null!;
     private VBoxContainer detail = null!;
     private string? selected;
+    private Label? waitLabel;
+    private Button? waitButton;
+    private HintGate? shownGate;
 
     /// <summary>Quest to show first (e.g. the open puzzle's quest).</summary>
     public string? PreferredQuest { get; set; }
@@ -96,6 +101,9 @@ public partial class HintScreen : ModalScreen
     private void BuildDetail()
     {
         Ui.Clear(detail);
+        waitLabel = null;
+        waitButton = null;
+        shownGate = null;
         var game = GameRuntime.Instance;
         var quest = selected is null ? null : game.Content.FindQuest(selected);
         if (quest is null)
@@ -104,39 +112,100 @@ public partial class HintScreen : ModalScreen
             detail.AddChild(Ui.Para(Ui.T(done ? "ui.hint.all_done" : "ui.hint.none")));
             return;
         }
+        var difficulty = game.State.Difficulty;
         detail.AddChild(Ui.Label(TextService.Get(TextKeys.TitleOf(quest)), "HeadingLabel", wrap: true));
         detail.AddChild(Ui.Para(TextService.Get(TextKeys.GoalOf(quest)), "ItalicLabel"));
+        var level = Ui.Label(Ui.T(DifficultyText.HintDifficulty, ("difficulty", Ui.T(DifficultyText.Name(difficulty)))), "CaptionLabel");
+        level.TooltipText = Ui.T(DifficultyText.Description(difficulty));
+        level.MouseFilter = MouseFilterEnum.Pass;
+        detail.AddChild(level);
         detail.AddChild(Ui.Rule());
         var revealed = Hints.Revealed(game.Content, game.State, quest.Id);
-        string[] levelKeys = { "ui.hint.level_1", "ui.hint.level_2", "ui.hint.level_3" };
         for (int i = 0; i < revealed.Count; i++)
         {
             var card = new PanelContainer { ThemeTypeVariation = i == revealed.Count - 1 ? "HighlightCard" : "CardPanel" };
             var box = Ui.VBox(4);
-            box.AddChild(Ui.Label(Ui.T(levelKeys[System.Math.Clamp(revealed[i].Level - 1, 0, 2)]), "CaptionLabel"));
+            box.AddChild(Ui.Label(LevelLabel(revealed[i]), "CaptionLabel"));
             box.AddChild(Ui.Para(Render(revealed[i])));
             card.AddChild(box);
             detail.AddChild(card);
         }
-        int level = Hints.RevealedLevel(game.Content, game.State, quest.Id);
-        if (level < Hints.Levels && Hints.CurrentStep(game.Content, game.State, quest.Id) is not null)
+        var available = Hints.Availability(game.Content, game.State, quest.Id, game.SecondsWithoutProgress);
+        shownGate = available.Gate;
+        string id = quest.Id;
+        switch (available.Gate)
         {
-            bool last = level == Hints.Levels - 1;
-            string id = quest.Id;
-            var next = Ui.Button(Ui.T(last ? "ui.hint.show_solution" : "ui.hint.next"), () =>
-            {
-                game.Update(s => Hints.RevealNext(game.Content, s, id));
-                BuildDetail();
-                FocusDefault();
-            });
-            next.SizeFlagsHorizontal = SizeFlags.ShrinkBegin;
-            detail.AddChild(next);
+            case HintGate.Open:
+                var next = Ui.Button(Ui.T(available.NextIsExactStep ? "ui.hint.show_solution" : "ui.hint.next"), () =>
+                {
+                    game.Update(s => Hints.RevealNext(game.Content, s, id, game.SecondsWithoutProgress));
+                    BuildDetail();
+                    FocusDefault();
+                });
+                next.SizeFlagsHorizontal = SizeFlags.ShrinkBegin;
+                detail.AddChild(next);
+                break;
+            case HintGate.Waiting:
+                // Hard: a visible "not yet" state with the countdown; the screen rebuilds itself when the wait is over.
+                string time = DifficultyText.Countdown(available.WaitSeconds);
+                waitButton = Ui.Button(Ui.T(DifficultyText.HardWaitButton, ("time", time)));
+                waitButton.Disabled = true;
+                waitButton.FocusMode = FocusModeEnum.None;
+                waitButton.SizeFlagsHorizontal = SizeFlags.ShrinkBegin;
+                detail.AddChild(waitButton);
+                waitLabel = Ui.Para(Ui.T(DifficultyText.HardWait, ("time", time)));
+                detail.AddChild(waitLabel);
+                detail.AddChild(Ui.Para(Ui.T(DifficultyText.HardWaitNote), "CaptionLabel"));
+                break;
+            case HintGate.NoPuzzleHelp:
+                detail.AddChild(Ui.Para(Ui.T(DifficultyText.HardNoPuzzle), "CaptionLabel"));
+                break;
+            case HintGate.AllShown when difficulty == Difficulty.Standard:
+                detail.AddChild(Ui.Para(Ui.T(DifficultyText.StandardEnd), "CaptionLabel"));
+                break;
+            case HintGate.AllShown when difficulty == Difficulty.Hard:
+                detail.AddChild(Ui.Para(Ui.T(DifficultyText.HardEnd), "CaptionLabel"));
+                break;
         }
     }
 
-    /// <summary>A hint's text with its placeholders ({room}, {target}) filled in after translation.</summary>
-    private static string Render(HintText hint) =>
-        TextService.Format(TextService.Get(hint.Text), hint.Args.Select(a => (a.Name, TextService.Get(a.Value))).ToArray());
+    /// <inheritdoc />
+    public override void _Process(double delta)
+    {
+        base._Process(delta);
+        if (!Visible || selected is null || shownGate != HintGate.Waiting) return;
+        var game = GameRuntime.Instance;
+        var available = Hints.Availability(game.Content, game.State, selected, game.SecondsWithoutProgress);
+        if (available.Gate != HintGate.Waiting)
+        {
+            BuildDetail();
+            FocusDefault();
+            return;
+        }
+        string time = DifficultyText.Countdown(available.WaitSeconds);
+        if (waitLabel is not null) waitLabel.Text = Ui.T(DifficultyText.HardWait, ("time", time));
+        if (waitButton is not null) waitButton.Text = Ui.T(DifficultyText.HardWaitButton, ("time", time));
+    }
+
+    /// <summary>The caption of a revealed level: Easy keeps "Smer / Postup / Riešenie", Standard and Hard name what the level is.</summary>
+    private static string LevelLabel(HintText hint) => hint.Kind switch
+    {
+        HintKind.Nudge => Ui.T(DifficultyText.LevelNudge),
+        HintKind.Where => Ui.T(DifficultyText.LevelWhere),
+        HintKind.Place => Ui.T("ui.hint.level_2"),
+        HintKind.Step => Ui.T("ui.hint.level_3"),
+        _ => Ui.T("ui.hint.level_1"),
+    };
+
+    /// <summary>
+    /// A hint's text: the step's own text (<c>hint.nudge.&lt;id&gt;</c> / <c>hint.where.&lt;id&gt;</c>) once the table has
+    /// it, else the fallback text with its placeholders ({room}, {target}) filled in after translation.
+    /// </summary>
+    private static string Render(HintText hint)
+    {
+        if (hint.OwnKey is { } own && TextService.Get(own, "") is { Length: > 0 } written) return written;
+        return TextService.Format(TextService.Get(hint.Text), hint.Args.Select(a => (a.Name, TextService.Get(a.Value))).ToArray());
+    }
 
     /// <inheritdoc />
     protected override Control? InitialFocus() => FirstFocusable(detail) ?? FirstFocusable(questList);

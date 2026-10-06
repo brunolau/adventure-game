@@ -1,0 +1,3004 @@
+{
+  "chunk": "hints",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\hints.csv",
+  "overlay": [],
+  "cost_usd": 0.9373,
+  "batches": {
+    "M01": {
+      "hash": "dc3651263a97ff14",
+      "status": "ok",
+      "heading": "M01 · Nákup pre babku (main quest)",
+      "keys": [
+        "hint.nudge.G01",
+        "hint.where.G01",
+        "hint.nudge.G02",
+        "hint.where.G02",
+        "hint.nudge.G03",
+        "hint.where.G03",
+        "hint.nudge.G04",
+        "hint.where.G04",
+        "hint.nudge.G05",
+        "hint.where.G05"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12802,
+        "completion_tokens": 1516,
+        "total_tokens": 14318,
+        "cost": 0.0345244,
+        "prompt_tokens_details": {
+          "cached_tokens": 3284,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0345
+    },
+    "M02": {
+      "hash": "226c91fa494e76cb",
+      "status": "ok",
+      "heading": "M02 · Prístroj v záhrade (main quest)",
+      "keys": [
+        "hint.nudge.G06",
+        "hint.where.G06",
+        "hint.nudge.G07",
+        "hint.where.G07",
+        "hint.nudge.G08",
+        "hint.where.G08",
+        "hint.nudge.G09",
+        "hint.where.G09",
+        "hint.nudge.G10",
+        "hint.where.G10",
+        "hint.nudge.G11",
+        "hint.where.G11"
+      ],
+      "fix": 0,
+      "conversation_note": "All hints stay within the length limit and avoid stating the exact action. G06 assumes that the disconnected device can audibly signal; whether that is possible is a story or technical-design question, not a language correction.",
+      "usage": {
+        "prompt_tokens": 13838,
+        "completion_tokens": 1979,
+        "total_tokens": 15817,
+        "cost": 0.0425674,
+        "prompt_tokens_details": {
+          "cached_tokens": 3499,
+          "cache_write_tokens": 3499
+        }
+      },
+      "usd": 0.0426
+    },
+    "M03": {
+      "hash": "a04f5bf896046ab9",
+      "status": "ok",
+      "heading": "M03 · Späť v škole (main quest)",
+      "keys": [
+        "hint.nudge.B01",
+        "hint.where.B01",
+        "hint.nudge.B02",
+        "hint.where.B02",
+        "hint.nudge.B03",
+        "hint.where.B03"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10791,
+        "completion_tokens": 653,
+        "total_tokens": 11444,
+        "cost": 0.0226134,
+        "prompt_tokens_details": {
+          "cached_tokens": 2894,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0226
+    },
+    "M04": {
+      "hash": "c4cc5e82674b6b03",
+      "status": "ok",
+      "heading": "M04 · Mechanika kazety (main quest)",
+      "keys": [
+        "hint.nudge.B04",
+        "hint.where.B04",
+        "hint.nudge.B05",
+        "hint.where.B05",
+        "hint.nudge.B06",
+        "hint.where.B06"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10896,
+        "completion_tokens": 930,
+        "total_tokens": 11826,
+        "cost": 0.0271258,
+        "prompt_tokens_details": {
+          "cached_tokens": 2833,
+          "cache_write_tokens": 2833
+        }
+      },
+      "usd": 0.0271
+    },
+    "M05": {
+      "hash": "5588a4aede601a78",
+      "status": "ok",
+      "heading": "M05 · Hlasy sa nerušia (main quest)",
+      "keys": [
+        "hint.nudge.B07",
+        "hint.where.B07",
+        "hint.nudge.B08",
+        "hint.where.B08",
+        "hint.nudge.B09",
+        "hint.where.B09",
+        "hint.nudge.B10",
+        "hint.where.B10",
+        "hint.nudge.B11",
+        "hint.where.B11",
+        "hint.nudge.B12",
+        "hint.where.B12"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13223,
+        "completion_tokens": 1143,
+        "total_tokens": 14366,
+        "cost": 0.032934,
+        "prompt_tokens_details": {
+          "cached_tokens": 3530,
+          "cache_write_tokens": 3530
+        }
+      },
+      "usd": 0.0329
+    },
+    "M06": {
+      "hash": "1cbf24cdd3f0a342",
+      "status": "ok",
+      "heading": "M06 · Mapa v troch kusoch (main quest)",
+      "keys": [
+        "hint.nudge.B13",
+        "hint.where.B13",
+        "hint.nudge.B14",
+        "hint.where.B14",
+        "hint.nudge.B15",
+        "hint.where.B15",
+        "hint.nudge.B16",
+        "hint.where.B16"
+      ],
+      "fix": 1,
+      "conversation_note": "B16's second hint is treated as a puzzle-rule hint, as explicitly labelled in the scene context; it does not disclose the required rotation angle.",
+      "usage": {
+        "prompt_tokens": 12729,
+        "completion_tokens": 1992,
+        "total_tokens": 14721,
+        "cost": 0.0410198,
+        "prompt_tokens_details": {
+          "cached_tokens": 3113,
+          "cache_write_tokens": 3113
+        }
+      },
+      "usd": 0.041
+    },
+    "M07": {
+      "hash": "0d86ec9aa32d47ad",
+      "status": "ok",
+      "heading": "M07 · Rytmus na Dunaji (main quest)",
+      "keys": [
+        "hint.nudge.B17",
+        "hint.where.B17",
+        "hint.nudge.B18",
+        "hint.where.B18",
+        "hint.nudge.B19",
+        "hint.where.B19",
+        "hint.nudge.B20",
+        "hint.where.B20",
+        "hint.nudge.B21",
+        "hint.where.B21",
+        "hint.nudge.B22",
+        "hint.where.B22"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13970,
+        "completion_tokens": 1817,
+        "total_tokens": 15787,
+        "cost": 0.0393042,
+        "prompt_tokens_details": {
+          "cached_tokens": 3582,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0393
+    },
+    "M08": {
+      "hash": "0e020eec23202413",
+      "status": "ok",
+      "heading": "M08 · Ručná pumpa (main quest)",
+      "keys": [
+        "hint.nudge.I01",
+        "hint.where.I01",
+        "hint.nudge.I02",
+        "hint.where.I02",
+        "hint.nudge.I03",
+        "hint.where.I03",
+        "hint.nudge.I04",
+        "hint.where.I04",
+        "hint.nudge.I05",
+        "hint.where.I05",
+        "hint.nudge.I06",
+        "hint.where.I06",
+        "hint.nudge.I07",
+        "hint.where.I07",
+        "hint.nudge.I08",
+        "hint.where.I08"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 14600,
+        "completion_tokens": 1472,
+        "total_tokens": 16072,
+        "cost": 0.038481,
+        "prompt_tokens_details": {
+          "cached_tokens": 3885,
+          "cache_write_tokens": 3885
+        }
+      },
+      "usd": 0.0385
+    },
+    "M09": {
+      "hash": "6cc379e0ff3ba330",
+      "status": "ok",
+      "heading": "M09 · Pôvodná veta (main quest)",
+      "keys": [
+        "hint.nudge.I09",
+        "hint.where.I09",
+        "hint.nudge.I10",
+        "hint.where.I10",
+        "hint.nudge.I11",
+        "hint.where.I11",
+        "hint.nudge.I12",
+        "hint.where.I12",
+        "hint.nudge.I13",
+        "hint.where.I13"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13225,
+        "completion_tokens": 1979,
+        "total_tokens": 15204,
+        "cost": 0.0416536,
+        "prompt_tokens_details": {
+          "cached_tokens": 3276,
+          "cache_write_tokens": 3276
+        }
+      },
+      "usd": 0.0417
+    },
+    "M10": {
+      "hash": "41dd89ca83112d39",
+      "status": "ok",
+      "heading": "M10 · Dokument musí prežiť (main quest)",
+      "keys": [
+        "hint.nudge.I14",
+        "hint.where.I14",
+        "hint.nudge.I15",
+        "hint.where.I15",
+        "hint.nudge.I16",
+        "hint.where.I16",
+        "hint.nudge.I17",
+        "hint.where.I17"
+      ],
+      "fix": 0,
+      "conversation_note": "The Slovak wording is sound. However, hint.where.I17 names the exact target container, conflicting with the location-only hint rule. Removing that reference would also conflict with the requirement to preserve every original fact and item.",
+      "usage": {
+        "prompt_tokens": 12372,
+        "completion_tokens": 1871,
+        "total_tokens": 14243,
+        "cost": 0.0391798,
+        "prompt_tokens_details": {
+          "cached_tokens": 3053,
+          "cache_write_tokens": 3053
+        }
+      },
+      "usd": 0.0392
+    },
+    "M11A": {
+      "hash": "c845551e42ba9736",
+      "status": "ok",
+      "heading": "M11A · Tá istá škola o štvrťstoročie neskôr (main quest)",
+      "keys": [
+        "hint.nudge.C01",
+        "hint.where.C01",
+        "hint.nudge.D01",
+        "hint.where.D01",
+        "hint.nudge.D02",
+        "hint.where.D02",
+        "hint.nudge.D03",
+        "hint.where.D03",
+        "hint.nudge.D04",
+        "hint.where.D04"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13542,
+        "completion_tokens": 1931,
+        "total_tokens": 15473,
+        "cost": 0.0399074,
+        "prompt_tokens_details": {
+          "cached_tokens": 3414,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0399
+    },
+    "M11B": {
+      "hash": "5d6e6817674458c0",
+      "status": "ok",
+      "heading": "M11B · Človek, ktorý si to zapamätá (main quest)",
+      "keys": [
+        "hint.nudge.E01",
+        "hint.where.E01",
+        "hint.nudge.E02",
+        "hint.where.E02",
+        "hint.nudge.E03",
+        "hint.where.E03",
+        "hint.nudge.E04",
+        "hint.where.E04",
+        "hint.nudge.E05",
+        "hint.where.E05",
+        "hint.nudge.E06",
+        "hint.where.E06",
+        "hint.nudge.E07",
+        "hint.where.E07",
+        "hint.nudge.E08",
+        "hint.where.E08",
+        "hint.nudge.E09",
+        "hint.where.E09",
+        "hint.nudge.E10",
+        "hint.where.E10"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 16786,
+        "completion_tokens": 1743,
+        "total_tokens": 18529,
+        "cost": 0.0446586,
+        "prompt_tokens_details": {
+          "cached_tokens": 4531,
+          "cache_write_tokens": 4531
+        }
+      },
+      "usd": 0.0447
+    },
+    "M11C": {
+      "hash": "fcf443e8d082811a",
+      "status": "ok",
+      "heading": "M11C · Tridsaťosem rokov v jednom pohári (main quest)",
+      "keys": [
+        "hint.nudge.E11",
+        "hint.where.E11",
+        "hint.nudge.D05",
+        "hint.where.D05",
+        "hint.nudge.D06",
+        "hint.where.D06",
+        "hint.nudge.D07",
+        "hint.where.D07"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12311,
+        "completion_tokens": 1104,
+        "total_tokens": 13415,
+        "cost": 0.0311246,
+        "prompt_tokens_details": {
+          "cached_tokens": 3241,
+          "cache_write_tokens": 3241
+        }
+      },
+      "usd": 0.0311
+    },
+    "M11D": {
+      "hash": "a7d97bc293556ff7",
+      "status": "ok",
+      "heading": "M11D · Skutočné odovzdanie počas karantény (main quest)",
+      "keys": [
+        "hint.nudge.C02",
+        "hint.where.C02",
+        "hint.nudge.C03",
+        "hint.where.C03",
+        "hint.nudge.C04",
+        "hint.where.C04",
+        "hint.nudge.C05",
+        "hint.where.C05"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11518,
+        "completion_tokens": 688,
+        "total_tokens": 12206,
+        "cost": 0.0239842,
+        "prompt_tokens_details": {
+          "cached_tokens": 3122,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.024
+    },
+    "M12": {
+      "hash": "a2800fae83174b4c",
+      "status": "ok",
+      "heading": "M12 · Prístup do Atlasu (main quest)",
+      "keys": [
+        "hint.nudge.F01",
+        "hint.where.F01",
+        "hint.nudge.F02",
+        "hint.where.F02",
+        "hint.nudge.F03",
+        "hint.where.F03",
+        "hint.nudge.F04",
+        "hint.where.F04",
+        "hint.nudge.J02",
+        "hint.where.J02",
+        "hint.nudge.J03",
+        "hint.where.J03",
+        "hint.nudge.J04",
+        "hint.where.J04",
+        "hint.nudge.F05",
+        "hint.where.F05",
+        "hint.nudge.F06",
+        "hint.where.F06"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 16212,
+        "completion_tokens": 2279,
+        "total_tokens": 18491,
+        "cost": 0.049397,
+        "prompt_tokens_details": {
+          "cached_tokens": 4155,
+          "cache_write_tokens": 4155
+        }
+      },
+      "usd": 0.0494
+    },
+    "M13": {
+      "hash": "35e18c8381d9e877",
+      "status": "ok",
+      "heading": "M13 · Zastaviť zápis (main quest)",
+      "keys": [
+        "hint.nudge.F07",
+        "hint.where.F07",
+        "hint.nudge.F08",
+        "hint.where.F08",
+        "hint.nudge.J05",
+        "hint.where.J05",
+        "hint.nudge.F09",
+        "hint.where.F09",
+        "hint.nudge.F10",
+        "hint.where.F10"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13188,
+        "completion_tokens": 1837,
+        "total_tokens": 15025,
+        "cost": 0.0384665,
+        "prompt_tokens_details": {
+          "cached_tokens": 3305,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0385
+    },
+    "M14": {
+      "hash": "6de434ae29349b93",
+      "status": "ok",
+      "heading": "M14 · Čo z hlasu zostalo (main quest)",
+      "keys": [
+        "hint.nudge.F11",
+        "hint.where.F11"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8915,
+        "completion_tokens": 204,
+        "total_tokens": 9119,
+        "cost": 0.0152872,
+        "prompt_tokens_details": {
+          "cached_tokens": 2412,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0153
+    },
+    "M15": {
+      "hash": "5c0898907d3c6d10",
+      "status": "ok",
+      "heading": "M15 · Štyria svedkovia (main quest)",
+      "keys": [
+        "hint.nudge.F12",
+        "hint.where.F12",
+        "hint.nudge.F13",
+        "hint.where.F13",
+        "hint.nudge.F14",
+        "hint.where.F14",
+        "hint.nudge.F15",
+        "hint.where.F15",
+        "hint.nudge.F16",
+        "hint.where.F16",
+        "hint.nudge.F17",
+        "hint.where.F17"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12806,
+        "completion_tokens": 1032,
+        "total_tokens": 13838,
+        "cost": 0.0311258,
+        "prompt_tokens_details": {
+          "cached_tokens": 3433,
+          "cache_write_tokens": 3433
+        }
+      },
+      "usd": 0.0311
+    },
+    "Q1": {
+      "hash": "0e7cd7487e48d3c7",
+      "status": "ok",
+      "heading": "Q1 · Bodka bez bodky (side quest)",
+      "keys": [
+        "hint.nudge.Q1A",
+        "hint.where.Q1A",
+        "hint.nudge.Q1B",
+        "hint.where.Q1B",
+        "hint.nudge.Q1C",
+        "hint.where.Q1C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10777,
+        "completion_tokens": 716,
+        "total_tokens": 11493,
+        "cost": 0.02471,
+        "prompt_tokens_details": {
+          "cached_tokens": 2860,
+          "cache_write_tokens": 2860
+        }
+      },
+      "usd": 0.0247
+    },
+    "Q2": {
+      "hash": "45e76814ef4242bc",
+      "status": "ok",
+      "heading": "Q2 · Výveska pre všetkých (side quest)",
+      "keys": [
+        "hint.nudge.Q2A",
+        "hint.where.Q2A",
+        "hint.nudge.Q2B",
+        "hint.where.Q2B",
+        "hint.nudge.Q2C",
+        "hint.where.Q2C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11037,
+        "completion_tokens": 846,
+        "total_tokens": 11883,
+        "cost": 0.0264614,
+        "prompt_tokens_details": {
+          "cached_tokens": 2909,
+          "cache_write_tokens": 2909
+        }
+      },
+      "usd": 0.0265
+    },
+    "Q3": {
+      "hash": "5f0915c7a3ab1fd5",
+      "status": "ok",
+      "heading": "Q3 · Celý tím na jednej fotke (side quest)",
+      "keys": [
+        "hint.nudge.Q3A",
+        "hint.where.Q3A",
+        "hint.nudge.Q3B",
+        "hint.where.Q3B",
+        "hint.nudge.Q3C",
+        "hint.where.Q3C",
+        "hint.nudge.Q3D",
+        "hint.where.Q3D"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11805,
+        "completion_tokens": 1231,
+        "total_tokens": 13036,
+        "cost": 0.0316724,
+        "prompt_tokens_details": {
+          "cached_tokens": 3034,
+          "cache_write_tokens": 3034
+        }
+      },
+      "usd": 0.0317
+    },
+    "Q4": {
+      "hash": "f52bf0d1fd9f5749",
+      "status": "ok",
+      "heading": "Q4 · Štyri zastávky (side quest)",
+      "keys": [
+        "hint.nudge.Q4A",
+        "hint.where.Q4A",
+        "hint.nudge.Q4B",
+        "hint.where.Q4B",
+        "hint.nudge.Q4C",
+        "hint.where.Q4C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10763,
+        "completion_tokens": 666,
+        "total_tokens": 11429,
+        "cost": 0.0227292,
+        "prompt_tokens_details": {
+          "cached_tokens": 2872,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0227
+    },
+    "Q5": {
+      "hash": "7430537f04c613d9",
+      "status": "ok",
+      "heading": "Q5 · Mapa rozsvietených okien (side quest)",
+      "keys": [
+        "hint.nudge.Q5A",
+        "hint.where.Q5A",
+        "hint.nudge.Q5B",
+        "hint.where.Q5B",
+        "hint.nudge.Q5C",
+        "hint.where.Q5C"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11613,
+        "completion_tokens": 1420,
+        "total_tokens": 13033,
+        "cost": 0.0333324,
+        "prompt_tokens_details": {
+          "cached_tokens": 2924,
+          "cache_write_tokens": 2924
+        }
+      },
+      "usd": 0.0333
+    },
+    "Q6": {
+      "hash": "271326cd5c96db64",
+      "status": "ok",
+      "heading": "Q6 · Béla sa vracia (side quest)",
+      "keys": [
+        "hint.nudge.Q6A",
+        "hint.where.Q6A",
+        "hint.nudge.Q6B",
+        "hint.where.Q6B",
+        "hint.nudge.Q6C",
+        "hint.where.Q6C",
+        "hint.nudge.Q6D",
+        "hint.where.Q6D"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11518,
+        "completion_tokens": 857,
+        "total_tokens": 12375,
+        "cost": 0.0273234,
+        "prompt_tokens_details": {
+          "cached_tokens": 3059,
+          "cache_write_tokens": 3059
+        }
+      },
+      "usd": 0.0273
+    },
+    "Q7": {
+      "hash": "0acf123b294d5f72",
+      "status": "ok",
+      "heading": "Q7 · Žiaden strach, miláčik (side quest)",
+      "keys": [
+        "hint.nudge.Q7A",
+        "hint.where.Q7A",
+        "hint.nudge.Q7B",
+        "hint.where.Q7B",
+        "hint.nudge.Q7C",
+        "hint.where.Q7C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10554,
+        "completion_tokens": 610,
+        "total_tokens": 11164,
+        "cost": 0.0218481,
+        "prompt_tokens_details": {
+          "cached_tokens": 2821,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0218
+    },
+    "Q8": {
+      "hash": "9d69f00a8f668152",
+      "status": "ok",
+      "heading": "Q8 · Adresa nie je len súradnica (side quest)",
+      "keys": [
+        "hint.nudge.Q8A",
+        "hint.where.Q8A",
+        "hint.nudge.Q8B",
+        "hint.where.Q8B",
+        "hint.nudge.Q8C",
+        "hint.where.Q8C",
+        "hint.nudge.Q8D",
+        "hint.where.Q8D"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11884,
+        "completion_tokens": 1179,
+        "total_tokens": 13063,
+        "cost": 0.0296984,
+        "prompt_tokens_details": {
+          "cached_tokens": 3084,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0297
+    },
+    "Q9": {
+      "hash": "d6d22b0eb4bb8b3b",
+      "status": "ok",
+      "heading": "Q9 · Nápad mimo predlohy (side quest)",
+      "keys": [
+        "hint.nudge.Q9A",
+        "hint.where.Q9A",
+        "hint.nudge.Q9B",
+        "hint.where.Q9B",
+        "hint.nudge.Q9C",
+        "hint.where.Q9C",
+        "hint.nudge.Q9D",
+        "hint.where.Q9D",
+        "hint.nudge.Q9E",
+        "hint.where.Q9E",
+        "hint.nudge.Q9F",
+        "hint.where.Q9F"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13483,
+        "completion_tokens": 1483,
+        "total_tokens": 14966,
+        "cost": 0.0368848,
+        "prompt_tokens_details": {
+          "cached_tokens": 3508,
+          "cache_write_tokens": 3508
+        }
+      },
+      "usd": 0.0369
+    },
+    "Q10": {
+      "hash": "cf2b5dec82f71b8b",
+      "status": "ok",
+      "heading": "Q10 · Prvý posledný zvonec (side quest)",
+      "keys": [
+        "hint.nudge.Q10A",
+        "hint.where.Q10A",
+        "hint.nudge.Q10B",
+        "hint.where.Q10B",
+        "hint.nudge.Q10C",
+        "hint.where.Q10C",
+        "hint.nudge.Q10D",
+        "hint.where.Q10D"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11462,
+        "completion_tokens": 962,
+        "total_tokens": 12424,
+        "cost": 0.0268212,
+        "prompt_tokens_details": {
+          "cached_tokens": 3012,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0268
+    },
+    "Q11": {
+      "hash": "2de555107a756bb4",
+      "status": "ok",
+      "heading": "Q11 · Druhý posledný zvonec (side quest)",
+      "keys": [
+        "hint.nudge.Q11A",
+        "hint.where.Q11A",
+        "hint.nudge.Q11B",
+        "hint.where.Q11B",
+        "hint.nudge.Q11C",
+        "hint.where.Q11C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10725,
+        "completion_tokens": 646,
+        "total_tokens": 11371,
+        "cost": 0.0224646,
+        "prompt_tokens_details": {
+          "cached_tokens": 2866,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0225
+    }
+  },
+  "keys": {
+    "hint.nudge.G01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dnes idem babke na nákup a potom do jej dielne. Bez náradia z domu nevyrazím.",
+      "batch": "M01"
+    },
+    "hint.where.G01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hneď tu, v mojej garáži.",
+      "batch": "M01"
+    },
+    "hint.nudge.G02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babkin nákup nevybavím sám. Kto komu v obci nosí nákup, to vedia na výdajnom mieste.",
+      "batch": "M01"
+    },
+    "hint.where.G02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na výdajnom mieste pri Lúčnom koníku.",
+      "batch": "M01"
+    },
+    "hint.nudge.G03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babkin lístok mám, tašku s nákupom zatiaľ nie. Vraj už na mňa niekde čaká pripravená.",
+      "batch": "M01"
+    },
+    "hint.where.G03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V potravinách cez okienko, u Dany.",
+      "batch": "M01"
+    },
+    "hint.nudge.G04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Taška je plná. Babkine pravidlo znie: do domu nechodím, nákup nechám vonku.",
+      "batch": "M01"
+    },
+    "hint.where.G04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Mirinej bránke.",
+      "batch": "M01"
+    },
+    "hint.nudge.G05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nákup je doručený. Babka mi ešte niečo chcela povedať, ale až pri okne.",
+      "batch": "M01"
+    },
+    "hint.where.G05": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The final clause tells Adam what action to take rather than just where to look. Keep the location and the obstacle without prescribing the call.",
+      "suggestion": "Pod babkiným zatvoreným oknom. Cez sklo ma nepočuje.",
+      "text": "Pod babkiným zatvoreným oknom. Cez sklo ma nepočuje, tak jej zavolám.",
+      "batch": "M01"
+    },
+    "hint.nudge.G06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V babkinej dielni sa ozýva odpojený prístroj. A kľúč od nej už nosím pri sebe.",
+      "batch": "M02"
+    },
+    "hint.where.G06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dielňa stojí v záhrade za Mirinou bránkou.",
+      "batch": "M02"
+    },
+    "hint.nudge.G07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V predsieni leží niečo, čo vyzerá veľmi dôležito, a pritom to nie je zamknuté.",
+      "batch": "M02"
+    },
+    "hint.where.G07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V predsieni záhradnej dielne.",
+      "batch": "M02"
+    },
+    "hint.nudge.G08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stolový uzol nesvieti. Dobrý opravár najprv zistí prečo, až potom niečo mení.",
+      "batch": "M02"
+    },
+    "hint.where.G08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V zadnej miestnosti dielne, kde stojí ZVON.",
+      "batch": "M02"
+    },
+    "hint.nudge.G09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepálenú poistku mám v ruke. Rovnakú náhradu mám určite niekde doma.",
+      "batch": "M02"
+    },
+    "hint.where.G09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V mojej garáži.",
+      "batch": "M02"
+    },
+    "hint.nudge.G10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Správnu náhradu mám. Prístroj v dielni na ňu čaká s otvoreným krytom.",
+      "batch": "M02"
+    },
+    "hint.where.G10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V zadnej miestnosti dielne, pri ZVONe.",
+      "batch": "M02"
+    },
+    "hint.nudge.G11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prístroj chce tri referenčné tvary. Vyzerá to ako stavebnica pre škôlkarov, len drahšia.",
+      "batch": "M02"
+    },
+    "hint.where.G11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na farbách nezáleží, rozhoduje tvar. Schéma nad panelom ukazuje, čo patrí k čomu.",
+      "batch": "M02"
+    },
+    "hint.nudge.B01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prístroj ma poslal pred moju starú školu. Skôr než niekam vtrhnem, zistím, čo sa tu dnes deje.",
+      "batch": "M03"
+    },
+    "hint.where.B01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pred ZŠ Sokolíkova, pri nástenke.",
+      "batch": "M03"
+    },
+    "hint.nudge.B02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlásiť sa treba u školníka. Cudzieho človeka z ulice však len tak ďalej nepustí.",
+      "batch": "M03"
+    },
+    "hint.where.B02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo vstupnej chodbe školy, u školníka.",
+      "batch": "M03"
+    },
+    "hint.nudge.B03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten prístroj je babkin. Ak niekto vie, čo sa s ním deje, je to ona, aj v roku 1995.",
+      "batch": "M03"
+    },
+    "hint.where.B03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V triede pamäťového krúžku na konci chodby.",
+      "batch": "M03"
+    },
+    "hint.nudge.B04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka chce kazetu zo školského rozhlasu. Magnetofón ju však drží a nechce ju pustiť.",
+      "batch": "M04"
+    },
+    "hint.where.B04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V miestnosti školského rozhlasu, pri magnetofóne.",
+      "batch": "M04"
+    },
+    "hint.nudge.B05": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Rovnaký mi dá len opravovňa” awkwardly makes the repair shop the giver. Saying he can obtain the belt there is more natural in this notebook context.",
+      "suggestion": "Remienok sa rozpadol na kúsky. Rovnaký zoženiem len v opravovni, kde majú remienky po zásuvkách.",
+      "text": "Remienok sa rozpadol na kúsky. Rovnaký mi dá len opravovňa, kde majú remienky po zásuvkách.",
+      "batch": "M04"
+    },
+    "hint.where.B05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V opravovni v Karlovej Vsi.",
+      "batch": "M04"
+    },
+    "hint.nudge.B06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nový remienok mám. Magnetofón v škole stále drží kazetu.",
+      "batch": "M04"
+    },
+    "hint.where.B06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Späť v miestnosti školského rozhlasu.",
+      "batch": "M04"
+    },
+    "hint.nudge.B07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlasy na páske takmer nepočuť. Pali spomínal niekoho, kto s páskami vie čarovať.",
+      "batch": "M05"
+    },
+    "hint.where.B07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V kazetovom klube v Ružinove, u Jura.",
+      "batch": "M05"
+    },
+    "hint.nudge.B08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Adaptéru chýba konektor a ten má Fero. Opravár sa na trhu vždy zíde.",
+      "batch": "M05"
+    },
+    "hint.where.B08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Miletičovej medzi stánkami, u Fera.",
+      "batch": "M05"
+    },
+    "hint.nudge.B09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Holé vývody do školského rozhlasu nezapojím. Juro vravel, kto má izolačný návlek.",
+      "batch": "M05"
+    },
+    "hint.where.B09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V opravovni odevov vedľa trhu, u Milady.",
+      "batch": "M05"
+    },
+    "hint.nudge.B10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všetky diely prepojky mám. Teraz ich treba poskladať, kontakty majú zhodné značky.",
+      "batch": "M05"
+    },
+    "hint.where.B10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toto poskladám z vecí, ktoré už nosím v brašni.",
+      "batch": "M05"
+    },
+    "hint.nudge.B11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kontakty sedia, ale vývody sú holé. Bez izolácie to do školského rozhlasu nezapojím.",
+      "batch": "M05"
+    },
+    "hint.where.B11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj toto doladím v brašni, nikam nemusím chodiť.",
+      "batch": "M05"
+    },
+    "hint.nudge.B12": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepojka je hotová. Kazetu treba prehrať tak, aby sa stopy nerušili, a nič na ňu nenahrať.",
+      "batch": "M05"
+    },
+    "hint.where.B12": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V miestnosti školského rozhlasu, pri magnetofóne.",
+      "batch": "M05"
+    },
+    "hint.nudge.B13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka mi dala poverenie. S ním mi niekde v centre vydajú kópiu mapy.",
+      "batch": "M06"
+    },
+    "hint.where.B13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V archívnej študovni v Starom Meste, u pána Mertu.",
+      "batch": "M06"
+    },
+    "hint.nudge.B14": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Číslo chýbajúcej fólie je na negatíve. Ten však musí najprv niekto vyvolať.",
+      "batch": "M06"
+    },
+    "hint.where.B14": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Here, “cez námestie” awkwardly describes a location as though it were a route. Use the natural Slovak expression for the other side of the square.",
+      "suggestion": "Vo fotoateliéri Svetlo na druhej strane námestia.",
+      "text": "Vo fotoateliéri Svetlo cez námestie.",
+      "batch": "M06"
+    },
+    "hint.nudge.B15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na fotke je číslo K-17. Alena vravela, kto má staré mapové prílohy.",
+      "batch": "M06"
+    },
+    "hint.where.B15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V antikvariáte Pod druhou rukou, u Viery.",
+      "batch": "M06"
+    },
+    "hint.nudge.B16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa je takmer celá. Chýbajúca vrstva je už v brašni, len ešte nesedí.",
+      "batch": "M06"
+    },
+    "hint.where.B16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dierka na dierku, kríž na kríž, štvorec na štvorec. Keď značky nesedia, fóliu otoč.",
+      "batch": "M06"
+    },
+    "hint.nudge.B17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa je celá. Teraz ju musí prečítať niekto, kto ju kedysi pomáhal kresliť.",
+      "batch": "M07"
+    },
+    "hint.where.B17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa vedie do jednej garáže v Petržalke.",
+      "batch": "M07"
+    },
+    "hint.nudge.B18": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na meranie treba rytmus, ktorý nezávisí od prúdu. Dezider vravel, kto má metronóm.",
+      "batch": "M07"
+    },
+    "hint.where.B18": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Karloveskom nástupišti, u Emila.",
+      "batch": "M07"
+    },
+    "hint.nudge.B19": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri číslice pre stojan babka nenapísala ako čísla. Namaľovala ich ako obrázok.",
+      "batch": "M07"
+    },
+    "hint.where.B19": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Sokolíkovskom dvore, na múre.",
+      "batch": "M07"
+    },
+    "hint.nudge.B20": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dezider mi dal cievku. Pasuje len do jedného držiaka a len jedným smerom.",
+      "batch": "M07"
+    },
+    "hint.where.B20": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V meracom stánku na Starom moste.",
+      "batch": "M07"
+    },
+    "hint.nudge.B21": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Metronóm mám. Meranie potrebuje rytmus a rovné miesto, kde ho nič nerozhýbe.",
+      "batch": "M07"
+    },
+    "hint.where.B21": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The hint directs the player inside the booth, but the target is beside the booth according to the step context.",
+      "suggestion": "Pri meracom stánku na Starom moste, pri meracom stojane.",
+      "text": "V meracom stánku na Starom moste, pri meracom stojane.",
+      "batch": "M07"
+    },
+    "hint.nudge.B22": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stojan chce tri číslice, ktoré babka na múr nakreslila. Kazetu a mapu pritom musím mať pri sebe.",
+      "batch": "M07"
+    },
+    "hint.where.B22": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Každé koliesko je jedna číslica z rytmického nákresu: vlny, údery, dieliky, v tomto poradí.",
+      "batch": "M07"
+    },
+    "hint.nudge.I01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Som v Ivanke v roku 1962. ZVON odtiaľto pochádza, tak hľadám dielňu, kde ho stavali.",
+      "batch": "M08"
+    },
+    "hint.where.I01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V mechanickej dielni v Ivanke.",
+      "batch": "M08"
+    },
+    "hint.nudge.I02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oto mi dal lístok na kožu a nity. Materiál tu vydávajú len na lístok s podpisom.",
+      "batch": "M08"
+    },
+    "hint.where.I02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na dvore hospodárskej dielne, u skladníka.",
+      "batch": "M08"
+    },
+    "hint.nudge.I03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dierovač má Lída v sále. Podľa Ota mi ho požičia, ak jej s niečím pomôžem.",
+      "batch": "M08"
+    },
+    "hint.where.I03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V kultúrnej sále, kde sa chystá skúška.",
+      "batch": "M08"
+    },
+    "hint.nudge.I04": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Calling the marked holes “full” is unnatural: the leather has markings, but no holes yet. Describe their unfinished state directly.",
+      "suggestion": "Koža na manžetu je predrezaná, ale vyznačené otvory ešte nie sú prerazené.",
+      "text": "Koža na manžetu je predrezaná, ale vyznačené otvory sú ešte plné.",
+      "batch": "M08"
+    },
+    "hint.where.I04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To spravím v brašni s tým, čo už mám pri sebe.",
+      "batch": "M08"
+    },
+    "hint.nudge.I05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Otvory sú prerazené. Manžeta však zatiaľ drží pokope len dobrou vôľou.",
+      "batch": "M08"
+    },
+    "hint.where.I05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj toto dokončím v brašni.",
+      "batch": "M08"
+    },
+    "hint.nudge.I06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Manžeta je hotová. Pumpa, ktorá chladí model v búdke, na ňu čaká.",
+      "batch": "M08"
+    },
+    "hint.where.I06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri ručnej pumpe pred búdkou za parkom.",
+      "batch": "M08"
+    },
+    "hint.nudge.I07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Voda znova obieha. To by mal vedieť ten, kto drží kľúč od meracej miestnosti.",
+      "batch": "M08"
+    },
+    "hint.where.I07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V mechanickej dielni, u Ota.",
+      "batch": "M08"
+    },
+    "hint.nudge.I08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kľúč od meracej miestnosti mám. Jej dvere som dnes už videl.",
+      "batch": "M08"
+    },
+    "hint.where.I08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri ručnej pumpe pred búdkou za parkom.",
+      "batch": "M08"
+    },
+    "hint.nudge.I09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Za dverami pracuje mladá babka. Musím jej povedať, čo sa v budúcnosti robí s pôvodnými údajmi.",
+      "batch": "M09"
+    },
+    "hint.where.I09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V meracej miestnosti, u mladej Miry.",
+      "batch": "M09"
+    },
+    "hint.nudge.I10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na odtlačok treba aj tupé rydlo. Mira vravela, kto ho nosí v puzdre.",
+      "batch": "M09"
+    },
+    "hint.where.I10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V parku pri kaštieli, u Very na lavičke.",
+      "batch": "M09"
+    },
+    "hint.nudge.I11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Odtlačok sa nerobí na hocijaký papier. Mira vie, kde leží ten správny.",
+      "batch": "M09"
+    },
+    "hint.where.I11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na povale technického archívu.",
+      "batch": "M09"
+    },
+    "hint.nudge.I12": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Platňa musí zostať na mieste. Odnesiem si iba jej odtlačok.",
+      "batch": "M09"
+    },
+    "hint.where.I12": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "This location hint names the exact target item, contrary to the rule that it should identify only the room or person.",
+      "suggestion": "V miestnosti prvého ZVONu.",
+      "text": "V miestnosti prvého ZVONu, pri mosadznej platni.",
+      "batch": "M09"
+    },
+    "hint.nudge.I13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Reliéf je na papieri, ale hrany sú slabé. Na zvýraznenie hrán mám požičaný nástroj.",
+      "batch": "M09"
+    },
+    "hint.where.I13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To dorobím v brašni.",
+      "batch": "M09"
+    },
+    "hint.nudge.I14": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Registračný list musím mať dvakrát a presne rovnako. Prepisovať ho rukou nebudem.",
+      "batch": "M10"
+    },
+    "hint.where.I14": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na pošte, pri prepážke.",
+      "batch": "M10"
+    },
+    "hint.nudge.I15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Druhé vyhotovenie listu si urobím sám. Všetko, čo na to treba, už mám pri sebe.",
+      "batch": "M10"
+    },
+    "hint.where.I15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To urobím v brašni.",
+      "batch": "M10"
+    },
+    "hint.nudge.I16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oba listy sú rovnaké. Dátum im však musí potvrdiť niekto s pečiatkou.",
+      "batch": "M10"
+    },
+    "hint.where.I16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na pošte, u pána Barana za prepážkou.",
+      "batch": "M10"
+    },
+    "hint.nudge.I17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "List je potvrdený. Teraz ho treba uložiť tak, aby prežil desaťročia. Odtlačok si nechám pri sebe.",
+      "batch": "M10"
+    },
+    "hint.where.I17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na povale technického archívu, pri kovovej schránke.",
+      "batch": "M10"
+    },
+    "hint.nudge.C01": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The nudge effectively gives away the exact item–person combination by saying that Babka should see the verified imprint.",
+      "suggestion": "Mám overený odtlačok z roku 1962. Babka v roku 2020 by mohla vedieť, čo ďalej. Aj cez sklo sa dá poradiť.",
+      "text": "Mám overený odtlačok z roku 1962. Babka by ho v roku 2020 mala vidieť, aj keby len cez sklo.",
+      "batch": "M11A"
+    },
+    "hint.where.C01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Grobe, pod babkiným zatvoreným oknom.",
+      "batch": "M11A"
+    },
+    "hint.nudge.D01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka chcela, aby som si zapamätal školský dvor presne taký, aký je dnes. Pamäti neverím, telefónu áno.",
+      "batch": "M11A"
+    },
+    "hint.where.D01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pred školou na Sokolíkovej v roku 2020.",
+      "batch": "M11A"
+    },
+    "hint.nudge.D02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tóno vie, že prídem po babkine veci. Ešte mu ukážem, že nie som hocikto z ulice.",
+      "batch": "M11A"
+    },
+    "hint.where.D02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri školníckom servisnom okne v roku 2020.",
+      "batch": "M11A"
+    },
+    "hint.nudge.D03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík postavil Oto v roku 1982. Taký majster si určite všetko zapísal.",
+      "batch": "M11A"
+    },
+    "hint.where.D03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo fyzikálnom kabinete v roku 2020.",
+      "batch": "M11A"
+    },
+    "hint.nudge.D04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Záznam má presný dátum. Na cestu do toho roku mi chýbajú hodiny, ktoré ho pamätajú.",
+      "batch": "M11A"
+    },
+    "hint.where.D04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Dúbravskej zastávke v roku 2020.",
+      "batch": "M11A"
+    },
+    "hint.nudge.E01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V roku 1982 pomáhal Otovi malý Tóno. Prístroj, ktorý nosím, by mohli spoznať obaja.",
+      "batch": "M11B"
+    },
+    "hint.where.E01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri servisnom okne školy v roku 1982, u Tóna a jeho deda.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dvanásťročnému chlapcovi nestačí povedať, že som z budúcnosti. Musí to vidieť.",
+      "batch": "M11B"
+    },
+    "hint.where.E02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri servisnom okne, u malého Tóna.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oto podpísal lístok na diely mostíka. Teraz mi ich niekto musí vydať.",
+      "batch": "M11B"
+    },
+    "hint.where.E03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo výdajni školského materiálu. Vchádza sa do nej cez sídliskový obchod pri zastávke.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Diely aj Otov nákres mám. Mostík sa však sám nezloží, potrebuje dosku bez prúdu.",
+      "batch": "M11B"
+    },
+    "hint.where.E04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo fyzikálnom kabinete v roku 1982.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík bude v múriku čakať desaťročia. Potrebuje suchý obal, ktorý sa dá poriadne zavrieť.",
+      "batch": "M11B"
+    },
+    "hint.where.E05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V sídliskovom obchode pri zastávke.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík nesmie zvlhnúť. Všetko, čo ho ochráni, už nosím v brašni.",
+      "batch": "M11B"
+    },
+    "hint.where.E06": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "This bag-location hint also states an action (closing or sealing), although it should only indicate that the step happens in the bag.",
+      "suggestion": "V brašni, nikam nemusím chodiť.",
+      "text": "To uzavriem v brašni, nikam nemusím chodiť.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na mojej fotke z roku 2020 tu lipa nie je. Vozík, čo jazdí tesne pri nej, jej nepomáha.",
+      "batch": "M11B"
+    },
+    "hint.where.E07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V školskom záhradnom sklade pri dvore.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E08": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Nevyruší“ treats the jar as someone whose activity can be interrupted. The intended meaning is that it will remain untouched.",
+      "suggestion": "Pohár je zapečatený. Oto spomínal miesto, kde zostane do roku 2020 nedotknutý.",
+      "text": "Pohár je zapečatený. Oto spomínal miesto, kde ho do roku 2020 nikto nevyruší.",
+      "batch": "M11B"
+    },
+    "hint.where.E08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na školskom dvore s mladou lipou.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Diely ohrádky nosím so sebou. Stromček je zatiaľ bez ochrany.",
+      "batch": "M11B"
+    },
+    "hint.where.E09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na školskom dvore, pri mladej lipe.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ohrádka stojí a pohár je ukrytý. Aby to prežilo ďalšie úpravy dvora, niekto to musí zapísať.",
+      "batch": "M11B"
+    },
+    "hint.where.E10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V záhradnom sklade, u Šimona.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malý Tóno chcel, aby som mu pri ďalšom stretnutí povedal dohodnutú vetu. V roku 1995 je z neho školník.",
+      "batch": "M11C"
+    },
+    "hint.where.E11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V roku 1995 vo vstupnej chodbe školy, u Tóna.",
+      "batch": "M11C"
+    },
+    "hint.nudge.D05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pohár čaká v múriku na dvore od roku 1982. Tónove nákresy presne hovoria, za ktorým kameňom.",
+      "batch": "M11C"
+    },
+    "hint.where.D05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nákres aj Tónova poznámka platia aj v roku 2020: rad počítaj zhora, kameň zľava.",
+      "batch": "M11C"
+    },
+    "hint.nudge.D06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pohár je von a tesnenie drží. Viečko však po toľkých rokoch holou rukou nepovolí.",
+      "batch": "M11C"
+    },
+    "hint.where.D06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toto urobím v brašni, nikam nemusím chodiť.",
+      "batch": "M11C"
+    },
+    "hint.nudge.D07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík prežil. Prvý by ho mal vidieť ten, kto si to miesto pamätal celý život.",
+      "batch": "M11C"
+    },
+    "hint.where.D07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri školníckom servisnom okne v roku 2020, u Tóna.",
+      "batch": "M11C"
+    },
+    "hint.nudge.C02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka chcela, aby sme s Elou dotiahli papiere k jej krabici. Tie papiere stále chýbajú.",
+      "batch": "M11D"
+    },
+    "hint.where.C02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na výdajnom mieste pri Lúčnom koníku, u Ely.",
+      "batch": "M11D"
+    },
+    "hint.nudge.C03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na protokole chýbajú podpisy. Krabicu predsa niekto vlastnými rukami niesol.",
+      "batch": "M11D"
+    },
+    "hint.where.C03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na ulici medzi plotmi, pri Romanovej dodávke.",
+      "batch": "M11D"
+    },
+    "hint.nudge.C04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Roman podpísal prevzatie. Druhý podpis patrí tej, ktorá krabicu vydala.",
+      "batch": "M11D"
+    },
+    "hint.where.C04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na výdajnom mieste, u Ely.",
+      "batch": "M11D"
+    },
+    "hint.nudge.C05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dôkazy sú pokope. Prístroj, s ktorým sa to celé začalo, by mal vedieť, čo s nimi.",
+      "batch": "M11D"
+    },
+    "hint.where.C05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V babkinej záhradnej dielni, pri stolovom uzle ZVON.",
+      "batch": "M11D"
+    },
+    "hint.nudge.F01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babkin fond Z-17 skončil v Atlase v Jasnej. Niekto tam za ten fond musí zodpovedať.",
+      "batch": "M12"
+    },
+    "hint.where.F01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pred hotelom Grand Jasná.",
+      "batch": "M12"
+    },
+    "hint.nudge.F02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kazetu z roku 1995 bez čítačky s ničím neporovnám. Nina vravela, kto mi ju požičia.",
+      "batch": "M12"
+    },
+    "hint.where.F02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V lobby hotela Grand Jasná, u Tamary.",
+      "batch": "M12"
+    },
+    "hint.nudge.F03": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Prešla z ruky do ruky poctivo” is an awkward way to describe a box being properly handed over at each stage.",
+      "suggestion": "Kartu fondu Z-17 mi vydajú, keď ukážem, že babkinu krabicu vždy odovzdali tak, ako mali.",
+      "text": "Kartu fondu Z-17 mi vydajú, keď ukážem, že babkina krabica prešla z ruky do ruky poctivo.",
+      "batch": "M12"
+    },
+    "hint.where.F03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo výstavnom salóne hotela, u Borisa.",
+      "batch": "M12"
+    },
+    "hint.nudge.F04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na lanovku a do pavilónu potrebujem preukaz aj lístok. Nina vravela, kto ich vybavuje.",
+      "batch": "M12"
+    },
+    "hint.where.F04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V klientskom centre Biela Púť, u Sáry.",
+      "batch": "M12"
+    },
+    "hint.nudge.J02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lístok mám. Pavilón je hore pri Rotunde a pešo sa tam dnes nevyberiem.",
+      "batch": "M12"
+    },
+    "hint.where.J02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri dolnej stanici na Bielej Púti.",
+      "batch": "M12"
+    },
+    "hint.nudge.J03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prvý úsek mám za sebou. Na Chopok sa ide ďalej, len inou lanovkou.",
+      "batch": "M12"
+    },
+    "hint.where.J03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Priehybe, pri nástupe na Funitel.",
+      "batch": "M12"
+    },
+    "hint.nudge.J04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kabína ide hore. Vystúpiť sa dá, až keď dorazí do vrcholovej stanice.",
+      "batch": "M12"
+    },
+    "hint.where.J04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V kabíne Funitelu, pri okne.",
+      "batch": "M12"
+    },
+    "hint.nudge.F05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nina hovorila, že prístroj záznamy zarovnáva. Podľa akého pravidla? To by som chcel mať čierne na bielom.",
+      "batch": "M12"
+    },
+    "hint.where.F05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Rotunde na Chopku.",
+      "batch": "M12"
+    },
+    "hint.nudge.F06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mám kazetu, odtlačok aj fotku pravidla. Treba porovnať pôvodný hlas s tým, čo z neho ostalo.",
+      "batch": "M12"
+    },
+    "hint.where.F06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V servisnom pavilóne Atlasu pri Rotunde.",
+      "batch": "M12"
+    },
+    "hint.nudge.F07": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Do terminálu ešte chýba” is an awkward construction. Use the dative to identify what lacks the trace.",
+      "suggestion": "Terminálu ešte chýba miestna stopa. Nina povedala, kde ju zachytím bez jediného zásahu.",
+      "text": "Do terminálu ešte chýba miestna stopa. Nina povedala, kde ju zachytím bez jediného zásahu.",
+      "batch": "M13"
+    },
+    "hint.where.F07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Vrbickom plese, pri chodníku. Lanovkami dole a od hotela pešo.",
+      "batch": "M13"
+    },
+    "hint.nudge.F08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stopa z plesa je v chronometri. Nina ju potrebuje vidieť hore v pavilóne.",
+      "batch": "M13"
+    },
+    "hint.where.F08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V servisnom pavilóne Atlasu, pri termináli.",
+      "batch": "M13"
+    },
+    "hint.nudge.J05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepínač nič nezmení, kým nebude návrat bezpečný. Na to som si v roku 1982 niečo odložil.",
+      "batch": "M13"
+    },
+    "hint.where.J05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na vyhliadkovej terase pri Rotunde.",
+      "batch": "M13"
+    },
+    "hint.nudge.F09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Návrat je istený. Teraz treba zastaviť samotné mazanie, Nina povedala ako.",
+      "batch": "M13"
+    },
+    "hint.where.F09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na vyhliadkovej terase, pri prepínači.",
+      "batch": "M13"
+    },
+    "hint.nudge.F10": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Pustí až systém” puts the emphasis on the system rather than on the required confirmation. Place “až” with the condition it qualifies.",
+      "suggestion": "Zápis stojí. Systém ma pustí do komory za Viktorom, až keď mu to potvrdím.",
+      "text": "Zápis stojí. Do komory za Viktorom ma pustí až systém, keď mu to potvrdím.",
+      "batch": "M13"
+    },
+    "hint.where.F10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V servisnom pavilóne, pri termináli.",
+      "batch": "M13"
+    },
+    "hint.nudge.F11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Viktor musí počuť, čo jeho systém zahodil. Celé, aj s pauzami.",
+      "batch": "M14"
+    },
+    "hint.where.F11": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, u Viktora.",
+      "batch": "M14"
+    },
+    "hint.nudge.F12": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Štyri porty, štyri dôkazy. Prvý patrí tomu, ako sa to celé začalo.",
+      "batch": "M15"
+    },
+    "hint.where.F12": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, pri portoch panelu obnovy.",
+      "batch": "M15"
+    },
+    "hint.nudge.F13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ďalší port chce hlas. Originál, nie zhrnutie.",
+      "batch": "M15"
+    },
+    "hint.where.F13": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, pri portoch panelu obnovy.",
+      "batch": "M15"
+    },
+    "hint.nudge.F14": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ďalší port chce dôkaz, že babka s presunom svojho fondu súhlasila.",
+      "batch": "M15"
+    },
+    "hint.where.F14": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, pri portoch panelu obnovy.",
+      "batch": "M15"
+    },
+    "hint.nudge.F15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Posledný port patrí tomu, ako veci vrátiť späť. Ten papier podpísala Nina.",
+      "batch": "M15"
+    },
+    "hint.where.F15": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, pri portoch panelu obnovy.",
+      "batch": "M15"
+    },
+    "hint.nudge.F16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Panel chce ku každému portu rok. Každý dôkaz si ten svoj nesie so sebou.",
+      "batch": "M15"
+    },
+    "hint.where.F16": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ku každému portu patrí rok dôkazu, ktorý v ňom je. Pomôžu predmety a zápisník.",
+      "batch": "M15"
+    },
+    "hint.nudge.F17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všetko je na svojom mieste. Zostáva posledné potvrdenie a potom domov.",
+      "batch": "M15"
+    },
+    "hint.where.F17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V chronokomore, pri paneli obnovy.",
+      "batch": "M15"
+    },
+    "hint.nudge.Q1A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Susedin pes vyzerá smutnejšie, než by mal. Niečo mu chýba.",
+      "batch": "Q1"
+    },
+    "hint.where.Q1A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na ulici medzi plotmi, pri susede so psom.",
+      "batch": "Q1"
+    },
+    "hint.nudge.Q1B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bodka stratil loptičku. Lenka vie, kde ju naposledy videla.",
+      "batch": "Q1"
+    },
+    "hint.where.Q1B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri retenčnej nádrži v Čiernej Vode, kde končí cyklochodník.",
+      "batch": "Q1"
+    },
+    "hint.nudge.Q1C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Loptička je suchá a poriadne obhryzená. Jej majiteľ na ňu čaká aj s Lenkou.",
+      "batch": "Q1"
+    },
+    "hint.where.Q1C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na ulici medzi plotmi, u Lenky.",
+      "batch": "Q1"
+    },
+    "hint.nudge.Q2A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Starší pán pri výveske sa márne snaží niečo prečítať.",
+      "batch": "Q2"
+    },
+    "hint.where.Q2A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri výveske v Čiernej Vode.",
+      "batch": "Q2"
+    },
+    "hint.nudge.Q2B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán Jozef potrebuje oznam na papieri a veľkými písmenami. Oznamy v obci chystá Ela.",
+      "batch": "Q2"
+    },
+    "hint.where.Q2B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na výdajnom mieste pri Lúčnom koníku, u Ely.",
+      "batch": "Q2"
+    },
+    "hint.nudge.Q2C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oznam veľkým písmom mám. Pán Jozef si ho prečíta, len keď bude visieť tam, kam sa pozerá.",
+      "batch": "Q2"
+    },
+    "hint.where.Q2C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri výveske v Čiernej Vode.",
+      "batch": "Q2"
+    },
+    "hint.nudge.Q3A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dievča na školskom dvore listuje v albume a niečo v ňom chýba.",
+      "batch": "Q3"
+    },
+    "hint.where.Q3A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na školskom dvore.",
+      "batch": "Q3"
+    },
+    "hint.nudge.Q3B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Soňa hľadá fotku celého družstva. Zabudnutá obálka s ňou vraj skončila pri kiosku.",
+      "batch": "Q3"
+    },
+    "hint.where.Q3B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri kiosku na sídliskovom dvore, u Zity.",
+      "batch": "Q3"
+    },
+    "hint.nudge.Q3C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V obálke je len negatív. Do albumu treba fotografiu.",
+      "batch": "Q3"
+    },
+    "hint.where.Q3C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo fotoateliéri Svetlo, u Aleny.",
+      "batch": "Q3"
+    },
+    "hint.nudge.Q3D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Fotka je hotová a je na nej celé družstvo. Aj jeden chlapec, ktorého poznám zo zrkadla.",
+      "batch": "Q3"
+    },
+    "hint.where.Q3D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na školskom dvore, u Sone.",
+      "batch": "Q3"
+    },
+    "hint.nudge.Q4A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Muzikant na nástupišti hrá stále tú istú melódiu a nikdy ju nedohrá.",
+      "batch": "Q4"
+    },
+    "hint.where.Q4A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Karloveskom nástupišti, u muzikanta.",
+      "batch": "Q4"
+    },
+    "hint.nudge.Q4B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Emil zabudol, ako jeho skladba končí. Noty by mohli ležať tam, kam sa dostanú staré knihy.",
+      "batch": "Q4"
+    },
+    "hint.where.Q4B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V antikvariáte Pod druhou rukou, u Viery.",
+      "batch": "Q4"
+    },
+    "hint.nudge.Q4C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Noty sa našli. Štyri zastávky môžu konečne dôjsť až na koniec.",
+      "batch": "Q4"
+    },
+    "hint.where.Q4C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Karloveskom nástupišti, u Emila.",
+      "batch": "Q4"
+    },
+    "hint.nudge.Q5A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mladý maliar v Petržalke stojí pred nedokončeným panelom a niečo mu chýba.",
+      "batch": "Q5"
+    },
+    "hint.where.Q5A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Petržalke, pri nedokončenom paneli.",
+      "batch": "Q5"
+    },
+    "hint.nudge.Q5B": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The wording awkwardly makes the boxes themselves the things the caretaker has a key to. Express that he keeps the chalk under lock and key instead.",
+      "suggestion": "Jurajovi chýba biela krieda. Školy jej majú celé krabice a školník ju má pod kľúčom.",
+      "text": "Jurajovi chýba biela krieda. Školy ju majú po krabiciach a školník k nim kľúč.",
+      "batch": "Q5"
+    },
+    "hint.where.Q5B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V škole na Sokolíkovej, u školníka Tóna.",
+      "batch": "Q5"
+    },
+    "hint.nudge.Q5C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kriedu mám aj s povolením. Juraj má skicu, chýbajú len svetlá v oknách.",
+      "batch": "Q5"
+    },
+    "hint.where.Q5C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V petržalskom podchode, pri Jurajovom paneli.",
+      "batch": "Q5"
+    },
+    "hint.nudge.Q6A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán za poštovou prepážkou vyzerá, akoby mu niekto chýbal.",
+      "batch": "Q6"
+    },
+    "hint.where.Q6A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na pošte v Ivanke.",
+      "batch": "Q6"
+    },
+    "hint.nudge.Q6B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Béla nepriletí na obyčajné zrno. Jeho zmes bude mať ten, kto v Ivanke vydáva materiál.",
+      "batch": "Q6"
+    },
+    "hint.where.Q6B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na dvore hospodárskej dielne, u skladníka.",
+      "batch": "Q6"
+    },
+    "hint.nudge.Q6C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bélovu zmes mám. Naháňať ho nebudem, stačí ho nájsť.",
+      "batch": "Q6"
+    },
+    "hint.where.Q6C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V parku pri kaštieli.",
+      "batch": "Q6"
+    },
+    "hint.nudge.Q6D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Béla odletel smerom k pošte. Pán Baran by mal vedieť, že je späť.",
+      "batch": "Q6"
+    },
+    "hint.where.Q6D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na pošte, u pána Barana za prepážkou.",
+      "batch": "Q6"
+    },
+    "hint.nudge.Q7A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Herec v sále drží dramatickú pauzu podozrivo dlho. Akoby mu niečo chýbalo.",
+      "batch": "Q7"
+    },
+    "hint.where.Q7A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Ivanke, kde sa chystá divadelná skúška.",
+      "batch": "Q7"
+    },
+    "hint.nudge.Q7B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo stratil scenár tam, kde kreslila Mira.",
+      "batch": "Q7"
+    },
+    "hint.where.Q7B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na povale pri meracej miestnosti.",
+      "batch": "Q7"
+    },
+    "hint.nudge.Q7C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Scenár sa našiel. Bez neho skúška nezačne.",
+      "batch": "Q7"
+    },
+    "hint.where.Q7C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V kultúrnej sále, u Ruda.",
+      "batch": "Q7"
+    },
+    "hint.nudge.Q8A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Doručovací robot pri stanici stojí v snehu s balíkom a nehýbe sa.",
+      "batch": "Q8"
+    },
+    "hint.where.Q8A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri dolnej stanici na Bielej Púti.",
+      "batch": "Q8"
+    },
+    "hint.nudge.Q8B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Adresa na balíku nie je ulica, ale opis miesta. Treba sa ísť pozrieť, čo tam je dnes.",
+      "batch": "Q8"
+    },
+    "hint.where.Q8B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Vrbickom plese, na chodníku.",
+      "batch": "Q8"
+    },
+    "hint.nudge.Q8C": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Using „nesedí“ to describe a workshop's location sounds forced here. A plain statement of its absence is more natural.",
+      "suggestion": "Putovná dielňa už pri plese nie je. Pri lavičke som sa dozvedel, kam sa presunula.",
+      "text": "Putovná dielňa už pri plese nesedí. Pri lavičke som sa dozvedel, kam sa presunula.",
+      "batch": "Q8"
+    },
+    "hint.where.Q8C": {
+      "verdict": "fix",
+      "category": "calque",
+      "problem": "The English „lobby“ has a straightforward Slovak equivalent for this hotel location.",
+      "suggestion": "V hale hotela Grand Jasná.",
+      "text": "V lobby hotela Grand Jasná.",
+      "batch": "Q8"
+    },
+    "hint.nudge.Q8D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Príjemkyňa je overená. Očko stále stojí v snehu a čaká na správu.",
+      "batch": "Q8"
+    },
+    "hint.where.Q8D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri dolnej stanici na Bielej Púti, u Očka.",
+      "batch": "Q8"
+    },
+    "hint.nudge.Q9A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dievča v triede schováva svoj návrh pod vzorovou schémou.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V jednej triede školy v roku 1982.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q9B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jana súhlasí, aby jej návrh videl učiteľ. Aj s poznámkami.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V tej istej triede, u učiteľa Dobroviča.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q9C": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Povoliť návrh na výstavku” is an unnatural collocation; a proposal is approved rather than permitted.",
+      "suggestion": "Učiteľ schválil Janin návrh na výstavku. Jana to ešte nevie.",
+      "text": "Učiteľ povolil Janin návrh na výstavku. Jana to ešte nevie.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V triede pred výstavkou, u Jany.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q9D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zaujíma ma, čo z Janinho návrhu zostalo o trinásť rokov neskôr.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo fyzikálnom kabinete v roku 1995.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q9E": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj v roku 2020 by som sa Jany rád spýtal, čo robí.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9E": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo fyzikálnom kabinete v roku 2020.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q9F": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jana chcela mať raz celý zošit schém. V roku 2035 by som rád videl, čo z neho vzniklo.",
+      "batch": "Q9"
+    },
+    "hint.where.Q9F": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo výstavnom salóne hotela Grand Jasná.",
+      "batch": "Q9"
+    },
+    "hint.nudge.Q10A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malá Zuzana má v tráve zvonček, ktorý necinká.",
+      "batch": "Q10"
+    },
+    "hint.where.Q10A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Ivanke v parku, u Zuzany.",
+      "batch": "Q10"
+    },
+    "hint.nudge.Q10B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzana napísala lístok na kúsok kože. Kto v Ivanke vydáva materiál na lístok?",
+      "batch": "Q10"
+    },
+    "hint.where.Q10B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na dvore hospodárskej dielne, u skladníka.",
+      "batch": "Q10"
+    },
+    "hint.nudge.Q10C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvonček potrebuje nové pútko. Všetko, čo na to treba, už nosím pri sebe.",
+      "batch": "Q10"
+    },
+    "hint.where.Q10C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To opravím v brašni.",
+      "batch": "Q10"
+    },
+    "hint.nudge.Q10D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvonček zvoní. Prvé poriadne zazvonenie však patrí Zuzane.",
+      "batch": "Q10"
+    },
+    "hint.where.Q10D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V parku pri kaštieli, u Zuzany.",
+      "batch": "Q10"
+    },
+    "hint.nudge.Q11A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Chlapec s bicyklom ťuká do zvončeka a zvonček mlčí.",
+      "batch": "Q11"
+    },
+    "hint.where.Q11A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na dvore pri Sokolíkovej.",
+      "batch": "Q11"
+    },
+    "hint.nudge.Q11B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zo zvončeka odskočil kus. Zuzana videla, kam sa zakotúľal.",
+      "batch": "Q11"
+    },
+    "hint.where.Q11B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Sokolíkovskom dvore, pod pichľavým stromom, kde končia lopty.",
+      "batch": "Q11"
+    },
+    "hint.nudge.Q11C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vrchnák mám. Bez neho zvonček na konci roka nezazvoní.",
+      "batch": "Q11"
+    },
+    "hint.where.Q11C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Sokolíkovskom dvore, pri Kubovom bicykli.",
+      "batch": "Q11"
+    }
+  },
+  "unreviewed": []
+}

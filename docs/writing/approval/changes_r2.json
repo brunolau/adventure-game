@@ -1,0 +1,5759 @@
+[
+{
+"id": "R2-knowledge-quest-M01",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: úloha",
+"title": "Nákup pre babku",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.M01.hint.1",
+"speaker": "Nápoveda 1",
+"old": "Začni u Ely na výdajnom mieste pri Lúčnom koníku.",
+"new": "Začni na výdajnom mieste pri Lúčnom koníku.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-G01",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: denník",
+"title": "Zobrať servisnú brašnu",
+"where": "Adamova garáž",
+"note": "",
+"lines": [
+{
+"key": "action.G01.objective",
+"speaker": "Cieľ v denníku",
+"old": "Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.",
+"new": "Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.",
+"state": "changed"
+},
+{
+"key": "action.G01.journal",
+"speaker": "Zápis v denníku",
+"old": "Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.",
+"new": "Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-topic-ELA_extra_2",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: téma",
+"title": "Tvoja dcéra",
+"where": "Ela Švecová",
+"note": "",
+"lines": [
+{
+"key": "topic.ELA.extra 2.label",
+"speaker": "Téma (voľba)",
+"old": "Nina",
+"new": "Tvoja dcéra",
+"state": "changed"
+},
+{
+"key": "topic.ELA.extra 2.001",
+"speaker": "Adam Hruška",
+"old": "Ako sa má Nina?",
+"new": "Ako sa má malá? Teda, asi už nie taká malá.",
+"state": "changed"
+},
+{
+"key": "topic.ELA.extra 2.002",
+"speaker": "Ela Švecová",
+"old": "Má pätnásť a dištančné. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+"new": "Nina? Malá už dávno nie je, má pätnásť a školu cez počítač. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+"state": "changed"
+},
+{
+"key": "topic.ELA.extra 2.003",
+"speaker": "Adam Hruška",
+"old": "Možno má učiteľ zapnutý mikrofón a nevie o tom.",
+"new": "Možno má učiteľ zapnutý mikrofón a nevie o tom.",
+"state": "same"
+},
+{
+"key": "topic.ELA.extra 2.004",
+"speaker": "Ela Švecová",
+"old": "Možno. Večer mi pomáha prepisovať zoznamy do počítača. Vraví, že raz bude mať všetko na jednom mieste.",
+"new": "Možno. Večer mi pomáha prepisovať zoznamy do počítača. Vraví, že raz bude mať všetko na jednom mieste.",
+"state": "same"
+},
+{
+"key": "topic.ELA.extra 2.005",
+"speaker": "Adam Hruška",
+"old": "Všetko na jednom mieste? To znie ako veľký plán.",
+"new": "Všetko na jednom mieste? To znie ako veľký plán.",
+"state": "same"
+},
+{
+"key": "topic.ELA.extra 2.006",
+"speaker": "Ela Švecová",
+"old": "Má pätnásť. Nech plánuje, zoznamy jej zatiaľ požičiam.",
+"new": "Má pätnásť. Nech plánuje, zoznamy jej zatiaľ požičiam.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 4
+}
+},
+{
+"id": "R2-knowledge-G05",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: rozhovor",
+"title": "Potrebuješ ešte niečo?",
+"where": "Pod zatvoreným oknom",
+"note": "",
+"lines": [
+{
+"key": "action.G05.001",
+"speaker": "Mira Hrušková",
+"old": "Potrebujem. Roman mi preniesol krabice do záhradnej dielne. Je v nich prístroj ZVON a ozýva sa, hoci je odpojený.",
+"new": "Potrebujem. Roman mi preniesol krabice do záhradnej dielne. Je v nich prístroj ZVON a ozýva sa, hoci je odpojený.",
+"state": "same"
+},
+{
+"key": "action.G05.002",
+"speaker": "Adam Hruška",
+"old": "Asi kondenzátor.",
+"new": "Asi kondenzátor.",
+"state": "same"
+},
+{
+"key": "action.G05.003",
+"speaker": "Mira Hrušková",
+"old": "Keď myslíš, tak sa pozri. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.",
+"new": "Keď myslíš, tak sa pozri. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.",
+"state": "same"
+},
+{
+"key": "action.G05.x01",
+"speaker": "Adam Hruška",
+"old": "Do domu nie, do dielne áno. Babkine pravidlá poznám.",
+"new": "Do domu nie, do dielne áno. Babkine pravidlá poznám.",
+"state": "same"
+},
+{
+"key": "action.G05.x02",
+"speaker": "Mira Hrušková",
+"old": "Jedno si zabudol: najprv počúvaj, až potom rozoberaj.",
+"new": "Jedno si zabudol: najprv počúvaj, až potom rozoberaj.",
+"state": "same"
+},
+{
+"key": "action.G05.004",
+"speaker": "Adam Hruška",
+"old": "Prečo práve ZVON?",
+"new": "Prečo práve ZVON?",
+"state": "same"
+},
+{
+"key": "action.G05.005",
+"speaker": "Mira Hrušková",
+"old": "Lebo sa hneď na začiatku ozval. A lepšie meno sme vtedy nevymysleli.",
+"new": "Lebo sa hneď na začiatku ozval. A lepšie meno sme vtedy nevymysleli.",
+"state": "same"
+},
+{
+"key": "action.G05.x03",
+"speaker": "Adam Hruška",
+"old": "My? Kto my?",
+"new": "My? Kto my?",
+"state": "same"
+},
+{
+"key": "action.G05.x04",
+"speaker": "Mira Hrušková",
+"old": "Ja a jeden šikovný človek. Viac ti poviem, keď prestaneš hovoriť o kondenzátoroch.",
+"new": "Ja a Oto Bielik, mechanik z Ivanky. Viac ti poviem, keď prestaneš hovoriť o kondenzátoroch.",
+"state": "changed"
+},
+{
+"key": "action.G05.x05",
+"speaker": "Adam Hruška",
+"old": "Tak idem pre kľúč. A o kondenzátore sa ešte porozprávame.",
+"new": "Tak idem pre kľúč. A o kondenzátore sa ešte porozprávame.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 9
+}
+},
+{
+"id": "R2-knowledge-G07",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: denník",
+"title": "Vybrať chronometer",
+"where": "Predsieň záhradnej dielne",
+"note": "",
+"lines": [
+{
+"key": "action.G07.label",
+"speaker": "Voľba (akcia)",
+"old": "Vybrať chronometer",
+"new": "Vybrať prístroj z puzdra",
+"state": "changed"
+},
+{
+"key": "ui.hint_step.G07",
+"speaker": "Nápoveda (Ľahká, presný krok)",
+"old": "V predsieni dielne vyber chronometer z mosadzného puzdra.",
+"new": "V predsieni dielne vyber prístroj z mosadzného puzdra.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S10",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: opisy",
+"title": "Dielňa ZVON",
+"where": "Dielňa ZVON",
+"note": "",
+"lines": [
+{
+"key": "look.S10.chrono",
+"speaker": "Opis",
+"old": "Stolový uzol s kolískou na nízke napätie. Chronometer patrí doprostred. Ak kolíska nesvieti, je to poistka.",
+"new": "Stolový uzol s nízkonapäťovou kolískou. Doprostred patrí prenosný diel. Keď kolíska nesvieti, je to poistka.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-B02",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Ukázať chronometer so značkou krúžku",
+"where": "Školská vstupná chodba",
+"note": "",
+"lines": [
+{
+"key": "action.B02.001",
+"speaker": "Adam Hruška",
+"old": "Dobrý deň. Čítal som oznam na nástenke. Prišiel som pomôcť s magnetofónom a s týmto.",
+"new": "Dobrý deň. Čítal som oznam na nástenke. Prišiel som pomôcť s magnetofónom a s týmto.",
+"state": "same"
+},
+{
+"key": "action.B02.x01",
+"speaker": "Anton Farkaš",
+"old": "Na oznam? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby.",
+"new": "Na oznam? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby.",
+"state": "same"
+},
+{
+"key": "action.B02.x02",
+"speaker": "Adam Hruška",
+"old": "Holuby by vám magnetofón neopravili.",
+"new": "Holuby by vám magnetofón neopravili.",
+"state": "same"
+},
+{
+"key": "action.B02.x03",
+"speaker": "Anton Farkaš",
+"old": "Holuby nie. Ukážte, čo to máte.",
+"new": "Holuby nie. Ukážte, čo to máte.",
+"state": "same"
+},
+{
+"key": "action.B02.002",
+"speaker": "Anton Farkaš",
+"old": "To je prístroj pani Hruškovej. Zapíšte sa, prosím: meno a účel – návšteva krúžku. Kabinet vám otvorím.",
+"new": "To je prístroj pani Hruškovej. Zapíšte sa, prosím: meno a účel – návšteva krúžku. Kabinet vám otvorím.",
+"state": "same"
+},
+{
+"key": "action.B02.x04",
+"speaker": "Anton Farkaš",
+"old": "Pero je na šnúrke. Minulý mesiac nám odišli tri, tak sme ho uviazali.",
+"new": "Pero je na šnúrke. Minulý mesiac nám odišli tri, tak sme ho uviazali.",
+"state": "same"
+},
+{
+"key": "action.B02.003",
+"speaker": "Adam Hruška",
+"old": "Adam Hruška.",
+"new": "Adam Hruška.",
+"state": "same"
+},
+{
+"key": "action.B02.004",
+"speaker": "Anton Farkaš",
+"old": "Adam Hruška? Jedného takého už máme. Má desať rokov a chodí do krúžku.",
+"new": "Adam Hruška? Jedného takého už máme. Má desať rokov a chodí do krúžku.",
+"state": "same"
+},
+{
+"key": "action.B02.005",
+"speaker": "Adam Hruška",
+"old": "To je u nás rodinná tradícia.",
+"new": "To je u nás rodinná tradícia.",
+"state": "same"
+},
+{
+"key": "action.B02.x05",
+"speaker": "Anton Farkaš",
+"old": "Dúfam, že vy si prezuvky nosíte. Ten malý ich zabúda každý druhý deň.",
+"new": "Dúfam, že vy si prezuvky nosíte. Ten malý ich zabúda každý druhý deň.",
+"state": "same"
+},
+{
+"key": "action.B02.x06",
+"speaker": "Adam Hruška",
+"old": "To mu zostane ešte dlho.",
+"new": "To mu zostane ešte dlho.",
+"state": "same"
+},
+{
+"key": "action.B02.x07",
+"speaker": "Anton Farkaš",
+"old": "Krúžok je v triede na konci chodby. Nahrávajú, tak tam hovorte potichu alebo rovno do mikrofónu.",
+"new": "Krúžok je v triede na konci chodby. Nahrávajú, tak tam hovorte potichu alebo rovno do mikrofónu.",
+"state": "same"
+},
+{
+"key": "action.B02.k01",
+"speaker": "Anton Farkaš",
+"old": "",
+"new": "A pozor, ten náš magnetofón žerie remienky ako desiatu.",
+"state": "new"
+},
+{
+"key": "action.B02.k02",
+"speaker": "Anton Farkaš",
+"old": "",
+"new": "Keby ste potrebovali nový, choďte za Palim do Karlovej Vsi. Má ich plné zásuvky.",
+"state": "new"
+}
+],
+"counts": {
+"changed": 0,
+"new": 2,
+"same": 12
+}
+},
+{
+"id": "R2-knowledge-B04",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: denník",
+"title": "Vybrať rozpadnutý remienok",
+"where": "Miestnosť školského rozhlasu",
+"note": "",
+"lines": [
+{
+"key": "action.B04.002",
+"speaker": "",
+"old": "Úplne sa rozpadol. Pali v Karlovej Vsi mal na také remienky celé zásuvky. Dúfam, že ich má už teraz.",
+"new": "Úplne sa rozpadol. Tóno vravel, že Pali v Karlovej Vsi má remienkov plné zásuvky. Snáď aj takýto.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-B05",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Ukázať Palimu rozpadnutý remienok",
+"where": "Paliho opravovňa",
+"note": "",
+"lines": [
+{
+"key": "action.B05.x01",
+"speaker": "Adam Hruška",
+"old": "Ahoj. Ty si Pali? Potreboval by som remienok do školského magnetofónu.",
+"new": "Ahoj. Ty si Pali? Potreboval by som remienok do školského magnetofónu.",
+"state": "same"
+},
+{
+"key": "action.B05.x02",
+"speaker": "Pavol Drobný",
+"old": "Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý.",
+"new": "Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý.",
+"state": "same"
+},
+{
+"key": "action.B05.001",
+"speaker": "Pavol Drobný",
+"old": "Ukáž. Tento rozmer poznám, tu máš nový. Starý už ide do koša.",
+"new": "Ukáž. Tento rozmer poznám, tu máš nový. Starý už ide do koša.",
+"state": "same"
+},
+{
+"key": "action.B05.002",
+"speaker": "Adam Hruška",
+"old": "Koľko ti dlžím?",
+"new": "Koľko ti dlžím?",
+"state": "same"
+},
+{
+"key": "action.B05.003",
+"speaker": "Pavol Drobný",
+"old": "Nič, je to pre školu. Zaplatíš tým, že ten rozhlas bude hrať.",
+"new": "Nič, je to pre školu. Zaplatíš tým, že ten rozhlas bude hrať.",
+"state": "same"
+},
+{
+"key": "action.B05.004",
+"speaker": "Adam Hruška",
+"old": "Hrať bude. Za to, čo bude hlásiť, už neručím.",
+"new": "Hrať bude. Za to, čo bude hlásiť, už neručím.",
+"state": "same"
+},
+{
+"key": "action.B05.005",
+"speaker": "Pavol Drobný",
+"old": "Za obsah neručí nikto. My ručíme za to, že to bude počuť.",
+"new": "Za obsah neručí nikto. My ručíme za to, že to bude počuť.",
+"state": "same"
+},
+{
+"key": "action.B05.x03",
+"speaker": "Adam Hruška",
+"old": "Ešte jedna vec. Máš na remienky nejaký trik?",
+"new": "Ešte jedna vec. Máš na remienky nejaký trik?",
+"state": "same"
+},
+{
+"key": "action.B05.x04",
+"speaker": "Pavol Drobný",
+"old": "Mám. Nechytaj ho mastnými prstami. Hovorím to každému dvadsať rokov a nikto to nedodrží.",
+"new": "Mám. Nechytaj ho mastnými prstami. Hovorím to každému dvadsať rokov a nikto to nedodrží.",
+"state": "same"
+},
+{
+"key": "action.B05.k01",
+"speaker": "Pavol Drobný",
+"old": "",
+"new": "A keby bola chyba v páske, nie v remienku, za mnou nechoď. Pásky neopravujem, tie len kazím.",
+"state": "new"
+},
+{
+"key": "action.B05.k02",
+"speaker": "Adam Hruška",
+"old": "",
+"new": "A za kým?",
+"state": "new"
+},
+{
+"key": "action.B05.k03",
+"speaker": "Pavol Drobný",
+"old": "",
+"new": "Za Jurom do kazetového klubu v Ružinove. S páskami čaruje, nie nadarmo mu hovoria Juro Kazeta.",
+"state": "new"
+}
+],
+"counts": {
+"changed": 0,
+"new": 3,
+"same": 9
+}
+},
+{
+"id": "R2-knowledge-B06",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Nasadiť remienok a vybrať kazetu",
+"where": "Miestnosť školského rozhlasu",
+"note": "",
+"lines": [
+{
+"key": "action.B06.001",
+"speaker": "Adam Hruška",
+"old": "Remienok sedí, mechanika sa hýbe. Kazeta je vonku a celá.",
+"new": "Remienok sedí, mechanika sa hýbe. Kazeta je vonku a celá.",
+"state": "same"
+},
+{
+"key": "action.B06.002",
+"speaker": "Adam Hruška",
+"old": "Hlasy takmer nepočuť, hoci páska prázdna nie je. To je robota pre Jura z kazetového klubu v Ružinove.",
+"new": "Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?",
+"state": "changed",
+"note": "Text presne podľa zadania. „Zhlasniť“ je hovorové, spisovne „zosilniť“; alternatíva: „…Kazetu by to chcelo opraviť, ale ako tie hlasy zosilním?“"
+},
+{
+"key": "action.B06.k01",
+"speaker": "Adam Hruška",
+"old": "",
+"new": "Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.",
+"state": "new"
+}
+],
+"counts": {
+"changed": 1,
+"new": 1,
+"same": 1
+}
+},
+{
+"id": "R2-knowledge-S25",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: opisy",
+"title": "Miletičova medzi stánkami",
+"where": "Miletičova medzi stánkami",
+"note": "",
+"lines": [
+{
+"key": "entry.S25.001",
+"speaker": "Adam",
+"old": "Miletička. Tu nájdem konektor aj predavača, ktorý sa spýta, načo mi je.",
+"new": "Miletička. Tu nájdem každú súčiastku aj predavača, ktorý sa spýta, načo mi je.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-topic-TRH",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: téma",
+"title": "Fero Lánik",
+"where": "Fero Lánik",
+"note": "",
+"lines": [
+{
+"key": "topic.TRH.ambient 2.label",
+"speaker": "Téma (voľba)",
+"old": "Koľko stojí konektor?",
+"new": "Koľko stoja súčiastky?",
+"state": "changed"
+},
+{
+"key": "topic.TRH.ambient 2.001",
+"speaker": "Fero Lánik",
+"old": "Záleží, ako veľmi ho človek potrebuje. Ale školskému rozhlasu pomôžeme.",
+"new": "Záleží, ako veľmi ich človek potrebuje. Ale školskému rozhlasu pomôžeme.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-B13",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Predložiť Mirino poverenie",
+"where": "Archívna študovňa",
+"note": "",
+"lines": [
+{
+"key": "action.B13.x01",
+"speaker": "Adam Hruška",
+"old": "Dobrý deň! Prišiel som kvôli fondu pani Hruškovej.",
+"new": "Dobrý deň! Prišiel som kvôli fondu pani Hruškovej.",
+"state": "same"
+},
+{
+"key": "action.B13.x02",
+"speaker": "Karol Merta",
+"old": "Dobrý deň. Potichu, prosím. U nás sa aj pozdrav hovorí šeptom.",
+"new": "Dobrý deň. Potichu, prosím. U nás sa aj pozdrav hovorí šeptom.",
+"state": "same"
+},
+{
+"key": "action.B13.x03",
+"speaker": "Adam Hruška",
+"old": "Prepáčte. Mám pre vás poverenie.",
+"new": "Prepáčte. Mám pre vás poverenie.",
+"state": "same"
+},
+{
+"key": "action.B13.001",
+"speaker": "Karol Merta",
+"old": "Poverenie je v poriadku. Tu je kópia mapy a technický negatív, ktorý bol uložený pri nej.",
+"new": "Poverenie je v poriadku. Tu je kópia mapy a technický negatív, ktorý bol uložený pri nej.",
+"state": "same"
+},
+{
+"key": "action.B13.x04",
+"speaker": "Karol Merta",
+"old": "Originály zostávajú v študovni. Kópie si môžete odniesť aj pokrčiť, ak už musíte.",
+"new": "Originály zostávajú v študovni. Kópie si môžete odniesť aj pokrčiť, ak už musíte.",
+"state": "same"
+},
+{
+"key": "action.B13.002",
+"speaker": "Adam Hruška",
+"old": "Na mape sú prázdne miesta.",
+"new": "Na mape sú prázdne miesta.",
+"state": "same"
+},
+{
+"key": "action.B13.003",
+"speaker": "Karol Merta",
+"old": "Priehľadnú fóliu od nej kedysi oddelili. Jej číslo uvidíte na fotografii z negatívu. Ateliér je cez námestie.",
+"new": "Priehľadnú fóliu od nej kedysi oddelili. Jej číslo uvidíte na fotografii z negatívu. Ateliér je cez námestie.",
+"state": "same"
+},
+{
+"key": "action.B13.004",
+"speaker": "Adam Hruška",
+"old": "Archív je ako servis. Vždy niečo chýba.",
+"new": "Archív je ako servis. Vždy niečo chýba.",
+"state": "same"
+},
+{
+"key": "action.B13.005",
+"speaker": "Karol Merta",
+"old": "Zvyčajne malý diel. A ten býva najdôležitejší, preto mám na malé diely zvláštnu kartotéku.",
+"new": "Zvyčajne malý diel. A ten býva najdôležitejší, preto mám na malé diely zvláštnu kartotéku.",
+"state": "same"
+},
+{
+"key": "action.B13.k01",
+"speaker": "Karol Merta",
+"old": "",
+"new": "S negatívom choďte do ateliéru Svetlo za pani Alenou Svobodovou. Spraví vám pozitív a nebude pri tom kričať.",
+"state": "new"
+},
+{
+"key": "action.B13.x05",
+"speaker": "Adam Hruška",
+"old": "Ďakujem. A prepáčte za ten hlasný pozdrav.",
+"new": "Ďakujem. A prepáčte za ten hlasný pozdrav.",
+"state": "same"
+},
+{
+"key": "action.B13.x06",
+"speaker": "Karol Merta",
+"old": "Zapísal som si ho. Ako výnimku.",
+"new": "Zapísal som si ho. Ako výnimku.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 0,
+"new": 1,
+"same": 11
+}
+},
+{
+"id": "R2-knowledge-B16",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Zarovnať fóliu s mapou",
+"where": "Brašňa (spájanie predmetov)",
+"note": "",
+"lines": [
+{
+"key": "action.B16.001",
+"speaker": "Adam Hruška",
+"old": "Mapa je celá a vedie do Petržalky: k Deziderovej garáži a k meraciemu stojanu pri Dunaji.",
+"new": "Mapa je celá a vedie do Petržalky: k jednej garáži a k meraciemu stojanu pri Dunaji.",
+"state": "changed"
+},
+{
+"key": "action.B16.k01",
+"speaker": "Adam Hruška",
+"old": "",
+"new": "Pod legendou je babkin podpis a druhý: Dezider Kováč, rádioamatér, garáž 17.",
+"state": "new"
+},
+{
+"key": "action.B16.002",
+"speaker": "Adam Hruška",
+"old": "Rádioamatér v garáži. Po študovni a antikvariáte konečne miesto, kde sa môže hovoriť nahlas.",
+"new": "Rádioamatér v garáži. Po študovni a antikvariáte konečne miesto, kde sa môže hovoriť nahlas.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 1,
+"new": 1,
+"same": 1
+}
+},
+{
+"id": "R2-knowledge-B19",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: denník",
+"title": "Zapísať tri kalibračné číslice",
+"where": "Školský dvor",
+"note": "",
+"lines": [
+{
+"key": "action.B19.objective",
+"speaker": "Cieľ v denníku",
+"old": "Na meracom stojane v stánku na Starom moste nastav 3–2–6.",
+"new": "Zapamätaj si číslice 3–2–6 a nastav ich na meracom stojane, ku ktorému vedie mapa uzlov.",
+"state": "changed"
+},
+{
+"key": "action.B19.journal",
+"speaker": "Zápis v denníku",
+"old": "Na meracom stojane v stánku na Starom moste nastav 3–2–6.",
+"new": "Zapamätaj si číslice 3–2–6 a nastav ich na meracom stojane, ku ktorému vedie mapa uzlov.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S30",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: opisy",
+"title": "Merací stánok na Starom moste",
+"where": "Merací stánok na Starom moste",
+"note": "",
+"lines": [
+{
+"key": "look.S30.dial",
+"speaker": "Opis",
+"old": "Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a číslice z nákresu v Sokolíkovskom dvore.",
+"new": "Tri kolieska: 0–9. Štítok písala babka: „Číslice – nákres v Sokolíkovskom dvore.“ Treba aj mapu uzlov a kazetu.",
+"state": "changed",
+"note": "Na stojane pribudne malý štítok babkiným písmom (rekvizita, ktorú obraz možno neukazuje). Alternatíva: opis nechať bez zmeny."
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-B22",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: rozhovor",
+"title": "Nastaviť číslice a nájsť pôvodnú kalibráciu",
+"where": "Merací stánok na Starom moste",
+"note": "",
+"lines": [
+{
+"key": "action.B22.001",
+"speaker": "Adam Hruška",
+"old": "Tri, dva, šesť. Mapa sedí a kazeta hrá, aby bolo s čím porovnávať.",
+"new": "Tri, dva, šesť. Mapa sedí a kazeta hrá, aby bolo s čím porovnávať.",
+"state": "same"
+},
+{
+"key": "action.B22.002",
+"speaker": "Zariadenie",
+"old": "Nové časové okno uložené.",
+"new": "Nové časové okno uložené.",
+"state": "same"
+},
+{
+"key": "action.B22.003",
+"speaker": "Adam Hruška",
+"old": "Ivanka, rok 1962. Babka toho dokázala viac, ako sa o nej hovorilo na rodinných oslavách.",
+"new": "Ivanka, rok 1962. Babka toho dokázala viac, ako sa o nej hovorilo na rodinných oslavách.",
+"state": "same"
+},
+{
+"key": "action.B22.k01",
+"speaker": "Adam Hruška",
+"old": "",
+"new": "Babka vravela, že ZVON robila s Otom Bielikom, mechanikom z Ivanky. Začnem v jeho dielni.",
+"state": "new"
+},
+{
+"key": "action.B22.004",
+"speaker": "Adam Hruška",
+"old": "Odcestujem cez uzlové hodiny na Dúbravskej zastávke.",
+"new": "Odcestujem cez uzlové hodiny na Dúbravskej zastávke.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 0,
+"new": 1,
+"same": 4
+}
+},
+{
+"id": "R2-knowledge-quest-M08",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: úloha",
+"title": "Ručná pumpa",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.M08.title",
+"speaker": "Názov úlohy",
+"old": "Ručná pumpa",
+"new": "Dielňa v Ivanke",
+"state": "changed",
+"note": "Mení sa názov úlohy (bolo „Ručná pumpa“): pumpa sa v čase, keď sa názov zobrazí, ešte neobjavila."
+},
+{
+"key": "quest.M08.goal",
+"speaker": "Cieľ úlohy",
+"old": "Oprav Otovi ručnú pumpu a dostaň sa do meracej miestnosti.",
+"new": "Nájdi v Ivanke Ota a s jeho pomocou sa dostaň do meracej miestnosti.",
+"state": "changed"
+},
+{
+"key": "quest.M08.hint.1",
+"speaker": "Nápoveda 1",
+"old": "Choď za Otom do mechanickej dielne. K meraniu ťa pustí, až keď opravíš ručnú pumpu.",
+"new": "Choď za Otom do mechanickej dielne v Ivanke. Povie ti, čo treba urobiť, kým ťa pustí k meraniu.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S38",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: opisy",
+"title": "Pred skúšobnou čerpacou búdkou",
+"where": "Pred skúšobnou čerpacou búdkou",
+"note": "",
+"lines": [
+{
+"key": "look.S38.door",
+"speaker": "Opis",
+"old": "Pevné dvere s novým zámkom. Za nimi je meracia miestnosť, kľúč má Oto.",
+"new": "Pevné dvere s novým zámkom. Za nimi je meracia miestnosť.",
+"state": "changed"
+},
+{
+"key": "exit.S38.to_S39.locked",
+"speaker": "Zamknutý východ",
+"old": "Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",
+"new": "Zamknuté. Kľúč bude mať asi niekto z mechanickej dielne.",
+"state": "changed"
+},
+{
+"key": "conn.S38.S39.locked",
+"speaker": "Zamknutá cesta na mape",
+"old": "Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",
+"new": "Zamknuté. Kľúč bude mať asi niekto z mechanickej dielne.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-quest-M09",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: úloha",
+"title": "Pôvodná veta",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.M09.goal",
+"speaker": "Cieľ úlohy",
+"old": "Urob čitateľný odtlačok kalibračnej platne, platňa pritom zostane na mieste.",
+"new": "Porozprávaj sa s mladou Mirou pri prístroji a sprav čitateľný odtlačok, originál nechaj na mieste.",
+"state": "changed"
+},
+{
+"key": "quest.M09.hint.1",
+"speaker": "Nápoveda 1",
+"old": "Porozprávaj sa s mladou Mirou pri kalibračnej platni v miestnosti prvého ZVONu.",
+"new": "Porozprávaj sa s mladou Mirou v miestnosti prvého ZVONu.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-topic-VERA60_extra_2",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: téma",
+"title": "Vaše výkresy",
+"where": "Vera Nemcová",
+"note": "",
+"lines": [
+{
+"key": "topic.VERA60.extra 2.label",
+"speaker": "Téma (voľba)",
+"old": "Otove rozmery",
+"new": "Vaše výkresy",
+"state": "changed"
+},
+{
+"key": "topic.VERA60.extra 2.001",
+"speaker": "Adam Hruška",
+"old": "Mení vám Oto rozmery naozaj tak často?",
+"new": "To kreslíte pre pána Bielika?",
+"state": "changed"
+},
+{
+"key": "topic.VERA60.extra 2.002",
+"speaker": "Vera Nemcová",
+"old": "Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh.",
+"new": "Pre Ota. Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh.",
+"state": "changed"
+},
+{
+"key": "topic.VERA60.extra 2.003",
+"speaker": "Adam Hruška",
+"old": "A čo s tým robíte?",
+"new": "A čo s tým robíte?",
+"state": "same"
+},
+{
+"key": "topic.VERA60.extra 2.004",
+"speaker": "Vera Nemcová",
+"old": "Kreslím ceruzkou. Atrament si nechám na deň, keď Oto prestane meniť rozmery.",
+"new": "Kreslím ceruzkou. Atrament si nechám na deň, keď Oto prestane meniť rozmery.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 2
+}
+},
+{
+"id": "R2-knowledge-topic-ZUZANA_extra_7",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: téma",
+"title": "Predstavenie",
+"where": "Zuzana",
+"note": "",
+"lines": [
+{
+"key": "topic.ZUZANA.extra 7.label",
+"speaker": "Téma (voľba)",
+"old": "Rudo z divadla",
+"new": "Predstavenie",
+"state": "changed"
+},
+{
+"key": "topic.ZUZANA.extra 7.001",
+"speaker": "Adam Hruška",
+"old": "Ty poznáš pána Ruda z divadla?",
+"new": "Hrá sa tu u vás aj divadlo?",
+"state": "changed"
+},
+{
+"key": "topic.ZUZANA.extra 7.002",
+"speaker": "Zuzana",
+"old": "Ujo Rudo. Ja viem jeho prvú vetu: „Žiaden strach, miláčik!“",
+"new": "Hrá sa. V sále skúša ujo Rudo a ja už viem jeho prvú vetu: „Žiaden strach, miláčik!“",
+"state": "changed"
+},
+{
+"key": "topic.ZUZANA.extra 7.003",
+"speaker": "Adam Hruška",
+"old": "A druhú?",
+"new": "A druhú?",
+"state": "same"
+},
+{
+"key": "topic.ZUZANA.extra 7.004",
+"speaker": "Zuzana",
+"old": "Druhú nevie ani on. Je v scenári a scenár sa stratil.",
+"new": "Druhú nevie ani on. Je v scenári a scenár sa stratil.",
+"state": "same"
+},
+{
+"key": "topic.ZUZANA.extra 7.005",
+"speaker": "Zuzana",
+"old": "Teta Lída hovorí, že ak sa nenájde, bude to veľmi krátke divadlo.",
+"new": "Teta Lída hovorí, že ak sa nenájde, bude to veľmi krátke divadlo.",
+"state": "same"
+},
+{
+"key": "topic.ZUZANA.extra 7.006",
+"speaker": "Adam Hruška",
+"old": "Jedna veta a potom potlesk.",
+"new": "Jedna veta a potom potlesk.",
+"state": "same"
+},
+{
+"key": "topic.ZUZANA.extra 7.007",
+"speaker": "Zuzana",
+"old": "Ja by som tlieskala. Ale len trochu, aby si nemyslel, že to stačí.",
+"new": "Ja by som tlieskala. Ale len trochu, aby si nemyslel, že to stačí.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 5
+}
+},
+{
+"id": "R2-knowledge-S40",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: opisy",
+"title": "Povala technického archívu",
+"where": "Povala technického archívu",
+"note": "",
+"lines": [
+{
+"key": "look.S40.box",
+"speaker": "Opis",
+"old": "Kovová archívna schránka. Mira do nej zamkne kópiu s registračným listom. Platňa zostane na prístroji.",
+"new": "Kovová archívna schránka so zámkom. Do takej sa zamyká to, čo sa nesmie stratiť.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-topic-POSTA",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: téma",
+"title": "Alojz Baran",
+"where": "Alojz Baran",
+"note": "",
+"lines": [
+{
+"key": "topic.POSTA.ambient 2.label",
+"speaker": "Téma (voľba)",
+"old": "Béla je poštový holub?",
+"new": "Váš holub je poštový?",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-quest-M11A",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: úloha",
+"title": "Tá istá škola o štvrťstoročie neskôr",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.M11A.goal",
+"speaker": "Cieľ úlohy",
+"old": "V Dúbravke v roku 2020 nájdi stopu po stratenom návratovom mostíku.",
+"new": "Zisti od Miry, čo ešte treba na bezpečný návrat, a hľadaj to v Dúbravke v roku 2020.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-C01",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: rozhovor",
+"title": "Ukázať overený odtlačok z roku 1962",
+"where": "Pod zatvoreným oknom",
+"note": "",
+"lines": [
+{
+"key": "action.C01.x01",
+"speaker": "Adam Hruška",
+"old": "Babka, som späť. Aspoň v správnom roku. Musím ti niečo ukázať.",
+"new": "Babka, som späť. Aspoň v správnom roku. Musím ti niečo ukázať.",
+"state": "same"
+},
+{
+"key": "action.C01.x02",
+"speaker": "Mira Hrušková",
+"old": "Prilož to k sklu. Okuliare mám na nose od rána pre prípad, že sa vrátiš.",
+"new": "Prilož to k sklu. Okuliare mám na nose od rána pre prípad, že sa vrátiš.",
+"state": "same"
+},
+{
+"key": "action.C01.001",
+"speaker": "Mira Hrušková",
+"old": "Tak to si bol ty. Ten odtlačok si pamätám.",
+"new": "Tak to si bol ty. Ten odtlačok si pamätám.",
+"state": "same"
+},
+{
+"key": "action.C01.x03",
+"speaker": "Mira Hrušková",
+"old": "Aj tie topánky. V Ivanke sa o nich hovorilo až do Vianoc.",
+"new": "Aj tie topánky. V Ivanke sa o nich hovorilo až do Vianoc.",
+"state": "same"
+},
+{
+"key": "action.C01.x04",
+"speaker": "Adam Hruška",
+"old": "Ty si si ma celé tie roky pamätala?",
+"new": "Ty si si ma celé tie roky pamätala?",
+"state": "same"
+},
+{
+"key": "action.C01.x05",
+"speaker": "Mira Hrušková",
+"old": "Topánky áno. Tvár som si k nim priradila až teraz.",
+"new": "Topánky áno. Tvár som si k nim priradila až teraz.",
+"state": "same"
+},
+{
+"key": "action.C01.k01",
+"speaker": "Mira Hrušková",
+"old": "",
+"new": "A teraz vážne. Ak chceš to mazanie zastaviť, potrebuješ návratový mostík.",
+"state": "new"
+},
+{
+"key": "action.C01.k02",
+"speaker": "Mira Hrušková",
+"old": "",
+"new": "Fyzický, keramický, žiadny ďalší prístroj. Bez neho ťa nikam nepustím.",
+"state": "new"
+},
+{
+"key": "action.C01.002",
+"speaker": "Adam Hruška",
+"old": "Potrebujem bezpečný návratový mostík. Vieš o nejakom?",
+"new": "Mostík? A kde ho vezmem?",
+"state": "changed"
+},
+{
+"key": "action.C01.003",
+"speaker": "Mira Hrušková",
+"old": "Oto jeden postavil v roku 1982 na Sokolíkovej. Pomáhal mu vnuk Tóno.",
+"new": "Oto jeden postavil v roku 1982 na Sokolíkovej. Pomáhal mu vnuk Tóno.",
+"state": "same"
+},
+{
+"key": "action.C01.004",
+"speaker": "Adam Hruška",
+"old": "Tóno? Náš školník?",
+"new": "Tóno? Náš školník?",
+"state": "same"
+},
+{
+"key": "action.C01.005",
+"speaker": "Mira Hrušková",
+"old": "Vtedy chodil do školy. Dnes má päťdesiat a drží ju pokope. Volala som mu, že prídeš po môj technický majetok.",
+"new": "Vtedy chodil do školy. Dnes má päťdesiat a drží ju pokope. Volala som mu, že prídeš po môj technický majetok.",
+"state": "same"
+},
+{
+"key": "action.C01.x06",
+"speaker": "Adam Hruška",
+"old": "Technický majetok. Znie to, akoby som išiel po traktor.",
+"new": "Technický majetok. Znie to, akoby som išiel po traktor.",
+"state": "same"
+},
+{
+"key": "action.C01.x07",
+"speaker": "Mira Hrušková",
+"old": "Pre školu je to majetok. Pre mňa krabica vecí, ktoré okrem mňa nikto nevie zapojiť.",
+"new": "Pre školu je to majetok. Pre mňa krabica vecí, ktoré okrem mňa nikto nevie zapojiť.",
+"state": "same"
+},
+{
+"key": "action.C01.006",
+"speaker": "Adam Hruška",
+"old": "Tak sa za ním zastavím.",
+"new": "Tak sa za ním zastavím.",
+"state": "same"
+},
+{
+"key": "action.C01.007",
+"speaker": "Mira Hrušková",
+"old": "A potom s Elou dotiahnete papiere k presunu mojej krabice.",
+"new": "A potom s Elou dotiahnete papiere k presunu mojej krabice.",
+"state": "same"
+},
+{
+"key": "action.C01.x08",
+"speaker": "Adam Hruška",
+"old": "Ešte niečo, kým ma ten prístroj zase niekam pošle?",
+"new": "Ešte niečo, kým ma ten prístroj zase niekam pošle?",
+"state": "same"
+},
+{
+"key": "action.C01.x09",
+"speaker": "Mira Hrušková",
+"old": "Áno. Odfoť si školský dvor, presne taký, aký je dnes.",
+"new": "Áno. Odfoť si školský dvor, presne taký, aký je dnes.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 1,
+"new": 2,
+"same": 15
+}
+},
+{
+"id": "R2-knowledge-S51",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: opisy",
+"title": "Dúbravská zastávka v roku 2020",
+"where": "Dúbravská zastávka v roku 2020",
+"note": "",
+"lines": [
+{
+"key": "look.S51.clock",
+"speaker": "Opis",
+"old": "Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. S ním by chronometer našiel aj rok 1982.",
+"new": "Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. Visel tu už vtedy, keď som chodil do školy.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-quest-M11B",
+"chunk": "R2",
+"era": "1982",
+"kind": "Znalosti: úloha",
+"title": "Človek, ktorý si to zapamätá",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.M11B.goal",
+"speaker": "Cieľ úlohy",
+"old": "V roku 1982 povedz Tónovi pravdu, ukry s ním rezervný mostík a ochráň mladú lipu.",
+"new": "V roku 1982 povedz Tónovi pravdu, ukry s ním rezervný mostík a všímaj si, čo na dvore treba chrániť.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-E02",
+"chunk": "R2",
+"era": "1982",
+"kind": "Znalosti: rozhovor",
+"title": "Povedať pravdu a ukázať fotografiu 2020",
+"where": "Tóno a dedo pri servisnom okne v roku 1982",
+"note": "",
+"lines": [
+{
+"key": "action.E02.001",
+"speaker": "Adam Hruška",
+"old": "Som Adam, vnuk pani Hruškovej. Narodím sa o tri roky. Prichádzam z roku 2020.",
+"new": "Som Adam, vnuk pani Hruškovej. Narodím sa o tri roky. Prichádzam z roku 2020.",
+"state": "same"
+},
+{
+"key": "action.E02.x01",
+"speaker": "Anton Farkaš",
+"old": "Z roku 2020? To je ešte ďalej ako rok 2000. A ten je strašne ďaleko.",
+"new": "Z roku 2020? To je ešte ďalej ako rok 2000. A ten je strašne ďaleko.",
+"state": "same"
+},
+{
+"key": "action.E02.002",
+"speaker": "Anton Farkaš",
+"old": "Tak to som od teba vlastne starší.",
+"new": "Tak to som od teba vlastne starší.",
+"state": "same"
+},
+{
+"key": "action.E02.003",
+"speaker": "Adam Hruška",
+"old": "Ak to rátame normálne, tak áno.",
+"new": "Ak to rátame normálne, tak áno.",
+"state": "same"
+},
+{
+"key": "action.E02.004",
+"speaker": "Anton Farkaš",
+"old": "A škola ešte stojí?",
+"new": "A škola ešte stojí?",
+"state": "same"
+},
+{
+"key": "action.E02.005",
+"speaker": "Adam Hruška",
+"old": "Pozri, to isté okno. Aj tvoja lastovička tam je, len už kovová.",
+"new": "Pozri, to isté okno. Aj tvoja lastovička tam je, len už kovová.",
+"state": "same"
+},
+{
+"key": "action.E02.006",
+"speaker": "Anton Farkaš",
+"old": "Kovovú som ešte nerobil. Tak ju teda raz urobím.",
+"new": "Kovovú som ešte nerobil. Tak ju teda raz urobím.",
+"state": "same"
+},
+{
+"key": "action.E02.x02",
+"speaker": "Anton Farkaš",
+"old": "A bude mať správne ťažisko?",
+"new": "A bude mať správne ťažisko?",
+"state": "same"
+},
+{
+"key": "action.E02.x03",
+"speaker": "Adam Hruška",
+"old": "Bude. Visí úplne rovno.",
+"new": "Bude. Visí úplne rovno.",
+"state": "same"
+},
+{
+"key": "action.E02.007",
+"speaker": "Oto Bielik",
+"old": "Fotografia sedí a prístroj poznám. Čo potrebujete zachovať?",
+"new": "Fotografia sedí a prístroj poznám. Čo potrebujete zachovať?",
+"state": "same"
+},
+{
+"key": "action.E02.008",
+"speaker": "Adam Hruška",
+"old": "Jeden návratový mostík. Ten, čo uložíte normálne, sa do roku 2020 stratí.",
+"new": "Jeden návratový mostík. Ten, čo uložíte normálne, sa do roku 2020 stratí.",
+"state": "same"
+},
+{
+"key": "action.E02.x04",
+"speaker": "Oto Bielik",
+"old": "Stratí sa? U mňa sa veci nestrácajú.",
+"new": "Stratí sa? U mňa sa veci nestrácajú.",
+"state": "same"
+},
+{
+"key": "action.E02.x05",
+"speaker": "Adam Hruška",
+"old": "U vás nie. Ale škola sa bude ešte veľakrát sťahovať a prerábať.",
+"new": "U vás nie. Ale škola sa bude ešte veľakrát sťahovať a prerábať.",
+"state": "same"
+},
+{
+"key": "action.E02.009",
+"speaker": "Oto Bielik",
+"old": "Materiál a výrobu beriem na seba. Tu je podpísaný lístok do výdajne. Rezervný kus môžeme schovať do servisnej dutiny v múriku.",
+"new": "Materiál a výrobu beriem na seba. Tu je podpísaný lístok do výdajne. Rezervný kus môžeme schovať do servisnej dutiny v múriku.",
+"state": "same"
+},
+{
+"key": "action.E02.k01",
+"speaker": "Oto Bielik",
+"old": "",
+"new": "Lístok odneste do výdajne pani Marte Dobiášovej. Vydá všetko, čo je na ňom napísané, ani o skrutku viac.",
+"state": "new"
+},
+{
+"key": "action.E02.010",
+"speaker": "Anton Farkaš",
+"old": "Ja nakreslím mapu. A keď sa raz zase stretneme, povedz: „Lastovička sa vracia.“",
+"new": "Ja nakreslím mapu. A keď sa raz zase stretneme, povedz: „Lastovička sa vracia.“",
+"state": "same"
+},
+{
+"key": "action.E02.011",
+"speaker": "Adam Hruška",
+"old": "Platí. Ale kvôli tomu nemusíš prestať normálne žiť.",
+"new": "Platí. Ale kvôli tomu nemusíš prestať normálne žiť.",
+"state": "same"
+},
+{
+"key": "action.E02.012",
+"speaker": "Anton Farkaš",
+"old": "Neboj sa. Zajtra aj tak píšeme písomku.",
+"new": "Neboj sa. Zajtra aj tak píšeme písomku.",
+"state": "same"
+},
+{
+"key": "action.E02.x06",
+"speaker": "Adam Hruška",
+"old": "Z čoho?",
+"new": "Z čoho?",
+"state": "same"
+},
+{
+"key": "action.E02.x07",
+"speaker": "Anton Farkaš",
+"old": "Z dejepisu. Odteraz ho budem brať vážnejšie.",
+"new": "Z dejepisu. Odteraz ho budem brať vážnejšie.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 0,
+"new": 1,
+"same": 19
+}
+},
+{
+"id": "R2-knowledge-E08",
+"chunk": "R2",
+"era": "1982",
+"kind": "Znalosti: denník",
+"title": "Schovať zapečatený mostík do servisnej dutiny",
+"where": "Školský dvor s mladou lipou v roku 1982",
+"note": "",
+"lines": [
+{
+"key": "action.E08.objective",
+"speaker": "Cieľ v denníku",
+"old": "Postav pri mladej lipe ohrádku a daj Šimonovi potvrdiť novú trasu vozíka.",
+"new": "Postav pri mladej lipe ohrádku a zariaď, aby vozík odteraz jazdil inou trasou.",
+"state": "changed"
+},
+{
+"key": "action.E08.journal",
+"speaker": "Zápis v denníku",
+"old": "Postav pri mladej lipe ohrádku a daj Šimonovi potvrdiť novú trasu vozíka.",
+"new": "Postav pri mladej lipe ohrádku a zariaď, aby vozík odteraz jazdil inou trasou.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-C05",
+"chunk": "R2",
+"era": "2020",
+"kind": "Znalosti: rozhovor",
+"title": "Overiť reťazec pôvodu a otvoriť rok 2035",
+"where": "Dielňa ZVON",
+"note": "",
+"lines": [
+{
+"key": "action.C05.x01",
+"speaker": "Adam Hruška",
+"old": "Odtlačok, kazeta, protokol a mostík. Babka, teraz to všetko priložím k tvojmu prístroju.",
+"new": "Odtlačok, kazeta, protokol a mostík. Babka, teraz to všetko priložím k tvojmu prístroju.",
+"state": "same"
+},
+{
+"key": "action.C05.001",
+"speaker": "Zariadenie",
+"old": "Pôvod 1962. Hlas 1995. Súhlas 2020. Cieľ fondu: Atlas, Jasná, 2035.",
+"new": "Pôvod 1962. Hlas 1995. Súhlas 2020. Cieľ fondu: Atlas, Jasná, 2035.",
+"state": "same"
+},
+{
+"key": "action.C05.k01",
+"speaker": "Zariadenie",
+"old": "",
+"new": "Kurátorka fondu: Nina Švecová, Grand Jasná.",
+"state": "new"
+},
+{
+"key": "action.C05.002",
+"speaker": "Adam Hruška",
+"old": "Adresu už mám. Reklamáciu im doručím osobne.",
+"new": "Adresu už mám. Reklamáciu im doručím osobne.",
+"state": "same"
+},
+{
+"key": "action.C05.003",
+"speaker": "Mira Hrušková",
+"old": "Adam? Z telefónu ti ide ozvena.",
+"new": "Adam? Z telefónu ti ide ozvena.",
+"state": "same"
+},
+{
+"key": "action.C05.x02",
+"speaker": "Adam Hruška",
+"old": "To nie je ozvena, babka. To je tvoj prístroj. Hovorí o roku 2035.",
+"new": "To nie je ozvena, babka. To je tvoj prístroj. Hovorí o roku 2035.",
+"state": "same"
+},
+{
+"key": "action.C05.x03",
+"speaker": "Mira Hrušková",
+"old": "Tak ho nenechaj rozprávať samého. Zapíš si, čo hovorí, a potom ho vypni.",
+"new": "Tak ho nenechaj rozprávať samého. Zapíš si, čo hovorí, a potom ho vypni.",
+"state": "same"
+},
+{
+"key": "action.C05.004",
+"speaker": "Adam Hruška",
+"old": "Idem to vypnúť pri zdroji. Potom ti zavolám normálne.",
+"new": "Idem to vypnúť pri zdroji. Potom ti zavolám normálne.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 0,
+"new": 1,
+"same": 7
+}
+},
+{
+"id": "R2-knowledge-topic-TAMARA_extra_1",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: téma",
+"title": "Tvoja dielňa",
+"where": "Tamara Kráľová",
+"note": "",
+"lines": [
+{
+"key": "topic.TAMARA.extra 1.label",
+"speaker": "Téma (voľba)",
+"old": "Druhý život",
+"new": "Tvoja dielňa",
+"state": "changed"
+},
+{
+"key": "topic.TAMARA.extra 1.001",
+"speaker": "Adam Hruška",
+"old": "Prečo sa tvoja dielňa volá práve tak?",
+"new": "Ako sa volá tvoja dielňa?",
+"state": "changed"
+},
+{
+"key": "topic.TAMARA.extra 1.002",
+"speaker": "Tamara Kráľová",
+"old": "Lebo veci majú aj druhý život. Len im ho ľudia nedajú.",
+"new": "Druhý život. Lebo veci majú aj druhý život, len im ho ľudia nedajú.",
+"state": "changed"
+},
+{
+"key": "topic.TAMARA.extra 1.003",
+"speaker": "Adam Hruška",
+"old": "A koľko životov má taký magnetofón?",
+"new": "A koľko životov má taký magnetofón?",
+"state": "same"
+},
+{
+"key": "topic.TAMARA.extra 1.004",
+"speaker": "Tamara Kráľová",
+"old": "Toľko, koľkokrát ho niekto radšej opraví, než vyhodí do kontajnera.",
+"new": "Toľko, koľkokrát ho niekto radšej opraví, než vyhodí do kontajnera.",
+"state": "same"
+},
+{
+"key": "topic.TAMARA.extra 1.005",
+"speaker": "Adam Hruška",
+"old": "Ja som jeden opravoval už štvrtýkrát.",
+"new": "Ja som jeden opravoval už štvrtýkrát.",
+"state": "same"
+},
+{
+"key": "topic.TAMARA.extra 1.006",
+"speaker": "Tamara Kráľová",
+"old": "Tak to je stály pacient. Založ mu kartu.",
+"new": "Tak to je stály pacient. Založ mu kartu.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 4
+}
+},
+{
+"id": "R2-knowledge-S41",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: opisy",
+"title": "Biela Púť pri dolnej stanici",
+"where": "Biela Púť pri dolnej stanici",
+"note": "",
+"lines": [
+{
+"key": "look.S41.gate",
+"speaker": "Opis",
+"old": "Turniket kabínkovej lanovky na Priehybu. Lístok mi vybaví Sára v klientskom centre.",
+"new": "Turniket kabínkovej lanovky na Priehybu. Bez platného lístka ma nepustí.",
+"state": "changed"
+},
+{
+"key": "exit.S41.to_S67.locked",
+"speaker": "Zamknutý východ",
+"old": "Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.",
+"new": "Na lanovku potrebujem platný lístok. Bez neho sa so mnou turniket nebaví.",
+"state": "changed"
+},
+{
+"key": "conn.S41.S67.locked",
+"speaker": "Zamknutá cesta na mape",
+"old": "Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.",
+"new": "Na lanovku potrebujem platný lístok. Bez neho sa so mnou turniket nebaví.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-J03",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: denník",
+"title": "Nastúpiť na Funitel smer Chopok",
+"where": "Priehyba pri prestupe na Funitel",
+"note": "",
+"lines": [
+{
+"key": "action.J03.objective",
+"speaker": "Cieľ v denníku",
+"old": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.",
+"new": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.",
+"state": "changed"
+},
+{
+"key": "action.J03.journal",
+"speaker": "Zápis v denníku",
+"old": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.",
+"new": "Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S48",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: opisy",
+"title": "Servisný pavilón výstavy Atlas",
+"where": "Servisný pavilón výstavy Atlas",
+"note": "",
+"lines": [
+{
+"key": "exit.S48.to_S49.locked",
+"speaker": "Zamknutý východ",
+"old": "Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",
+"new": "Komora je zamknutá. Otvorí ju až servisný terminál.",
+"state": "changed"
+},
+{
+"key": "conn.S48.S49.locked",
+"speaker": "Zamknutá cesta na mape",
+"old": "Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",
+"new": "Komora je zamknutá. Otvorí ju až servisný terminál.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S45",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: opisy",
+"title": "Chodník pri Vrbickom plese",
+"where": "Chodník pri Vrbickom plese",
+"note": "",
+"lines": [
+{
+"key": "look.S45.bench",
+"speaker": "Opis",
+"old": "Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Tu mávala Tamara putovnú dielňu, dnes má stôl v lobby hotela.",
+"new": "Na operadle keramický pes a nápis DRUHÝ ŽIVOT. Lístok pod ním: „Tamara, počas výstavy v lobby hotela Grand Jasná.“",
+"state": "changed",
+"note": "Pod nápisom pribudne lístok s menom a adresou Tamary (rekvizita, ktorú obraz možno neukazuje)."
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-quest-Q3",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: úloha",
+"title": "Celý tím na jednej fotke",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.Q3.hint.2",
+"speaker": "Nápoveda 2",
+"old": "Obálku s negatívom má Zita pri kiosku. Negatív vyvolá Alena vo fotoateliéri.",
+"new": "Obálku má Zita pri kiosku. S tým, čo je v nej, ti pomôžu vo fotoateliéri.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-Q3A",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: denník",
+"title": "Hľadáš nejakú fotografiu?",
+"where": "Školský dvor",
+"note": "",
+"lines": [
+{
+"key": "action.Q3A.journal",
+"speaker": "Zápis v denníku",
+"old": "Soňa hľadá fotografiu družstva. Obálku s negatívom má vraj Zita pri kiosku.",
+"new": "Soňa hľadá fotografiu družstva. Obálku vraj našla Zita pri kiosku.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-S28",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: opisy",
+"title": "Petržalský podchod",
+"where": "Petržalský podchod",
+"note": "",
+"lines": [
+{
+"key": "look.S28.mural",
+"speaker": "Opis",
+"old": "Povolený panel klubovne, kreslí sa naň kriedou. Juraj má skicu, chýba mu však biela krieda.",
+"new": "Povolený panel klubovne, kreslí sa naň kriedou. Paneláky sú hotové, len okná zostali tmavé.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-Q7A",
+"chunk": "R2",
+"era": "1962",
+"kind": "Znalosti: rozhovor",
+"title": "Môžem pomôcť so scenárom?",
+"where": "Kultúrna sála pred skúškou",
+"note": "",
+"lines": [
+{
+"key": "action.Q7A.001",
+"speaker": "Rudolf Pavlík",
+"old": "Ach, scenár! Požičal som ho Mire ako podložku pod nákresy. A teraz viem naspamäť len prvú vetu!",
+"new": "Ach, scenár! Požičal som ho Mire ako podložku pod nákresy. A teraz viem naspamäť len prvú vetu!",
+"state": "same"
+},
+{
+"key": "action.Q7A.x01",
+"speaker": "Adam Hruška",
+"old": "A tá prvá veta je dobrá?",
+"new": "A tá prvá veta je dobrá?",
+"state": "same"
+},
+{
+"key": "action.Q7A.x02",
+"speaker": "Rudolf Pavlík",
+"old": "Najlepšia! Len bez druhej to znie, akoby som sa s niekým lúčil na stanici.",
+"new": "Najlepšia! „Žiaden strach, miláčik!“ Len bez druhej to znie, akoby som sa s niekým lúčil na stanici.",
+"state": "changed"
+},
+{
+"key": "action.Q7A.002",
+"speaker": "Adam Hruška",
+"old": "A kde Mira kreslila?",
+"new": "A kde Mira kreslila?",
+"state": "same"
+},
+{
+"key": "action.Q7A.003",
+"speaker": "Rudolf Pavlík",
+"old": "Na povale pri meracej miestnosti. Ak ho nájdete, poďakujem vám aj s poklonou!",
+"new": "Na povale pri meracej miestnosti. Ak ho nájdete, poďakujem vám aj s poklonou!",
+"state": "same"
+},
+{
+"key": "action.Q7A.x03",
+"speaker": "Adam Hruška",
+"old": "Stačí, keď poďakujete celkom obyčajne.",
+"new": "Stačí, keď poďakujete celkom obyčajne.",
+"state": "same"
+},
+{
+"key": "action.Q7A.x04",
+"speaker": "Rudolf Pavlík",
+"old": "Obyčajne to neviem. Ale nacvičím to!",
+"new": "Obyčajne to neviem. Ale nacvičím to!",
+"state": "same"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 6
+}
+},
+{
+"id": "R2-knowledge-quest-Q8",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: úloha",
+"title": "Adresa nie je len súradnica",
+"where": "Denník",
+"note": "",
+"lines": [
+{
+"key": "quest.Q8.hint.2",
+"speaker": "Nápoveda 2",
+"old": "Prezri lavičku so psom pri Vrbickom plese. Patrila putovnej dielni Tamary, ktorá je teraz v lobby hotela Grand Jasná.",
+"new": "Prezri lavičku so psom pri Vrbickom plese. Lístok na nej ti povie, kam sa dielňa presťahovala.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 1,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-Q8B",
+"chunk": "R2",
+"era": "2035",
+"kind": "Znalosti: denník",
+"title": "Porovnať starú adresu s lavičkou",
+"where": "Chodník pri Vrbickom plese",
+"note": "",
+"lines": [
+{
+"key": "action.Q8B.001",
+"speaker": "",
+"old": "Keramický pes a nápis DRUHÝ ŽIVOT. Tu mala Tamara stôl svojej putovnej dielne.",
+"new": "Keramický pes a nápis DRUHÝ ŽIVOT. Na lístku pod ním: „Tamara, počas výstavy v lobby hotela Grand Jasná.“",
+"state": "changed"
+},
+{
+"key": "action.Q8B.002",
+"speaker": "",
+"old": "Teraz je v lobby hotela. Spýtam sa jej, či ten balík naozaj patrí jej.",
+"new": "Opravovňa sa teda len presťahovala. Spýtam sa Tamary, či ten balík naozaj patrí jej.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 2,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-knowledge-topic-JANA95_extra_1",
+"chunk": "R2",
+"era": "1995",
+"kind": "Znalosti: téma",
+"title": "Vaša práca",
+"where": "Jana Vargová",
+"note": "",
+"lines": [
+{
+"key": "topic.JANA95.extra 1.label",
+"speaker": "Téma (voľba)",
+"old": "Výstavka",
+"new": "Vaša práca",
+"state": "changed"
+},
+{
+"key": "topic.JANA95.extra 1.001",
+"speaker": "Adam Hruška",
+"old": "Čo chystáte na výstavku?",
+"new": "Vidím, že máte plné ruky práce. Čo to bude?",
+"state": "changed"
+},
+{
+"key": "topic.JANA95.extra 1.002",
+"speaker": "Jana Vargová",
+"old": "Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami.",
+"new": "Výstavka. Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami.",
+"state": "changed"
+},
+{
+"key": "topic.JANA95.extra 1.003",
+"speaker": "Adam Hruška",
+"old": "A čo bude na tom stole?",
+"new": "A čo bude na tom stole?",
+"state": "same"
+},
+{
+"key": "topic.JANA95.extra 1.004",
+"speaker": "Jana Vargová",
+"old": "Rádiá, magnetofón a model mlyna, ktorý sa točí, len keď sa naň nikto nepozerá.",
+"new": "Rádiá, magnetofón a model mlyna, ktorý sa točí, len keď sa naň nikto nepozerá.",
+"state": "same"
+},
+{
+"key": "topic.JANA95.extra 1.005",
+"speaker": "Adam Hruška",
+"old": "To poznám. U mňa v dielni tiež všetko funguje, kým tam nie je zákazník.",
+"new": "To poznám. U mňa v dielni tiež všetko funguje, kým tam nie je zákazník.",
+"state": "same"
+},
+{
+"key": "topic.JANA95.extra 1.006",
+"speaker": "Jana Vargová",
+"old": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí.",
+"new": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí.",
+"state": "same"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 4
+}
+},
+{
+"id": "R2-knowledge-items",
+"chunk": "R2",
+"era": "rôzne",
+"kind": "Znalosti: predmety",
+"title": "Účel predmetov (hráč ho nevidí, len pre súlad)",
+"where": "",
+"note": "",
+"lines": [
+{
+"key": "item.TAPE.purpose",
+"speaker": "Pôvodná školská kazeta",
+"old": "Dôkaz hlasu z roku 1995 a porovnanie v Atlase.",
+"new": "Dôkaz hlasu z roku 1995.",
+"state": "changed"
+},
+{
+"key": "item.RETURNBRIDGE.purpose",
+"speaker": "Zachovaný návratový mostík",
+"old": "Zapojiť do oddeleného konektora Atlasu na terase pri Rotunde.",
+"new": "Mať pri sebe na bezpečný zásah a návrat.",
+"state": "changed"
+},
+{
+"key": "item.READER.purpose",
+"speaker": "Lokálna zvuková čítačka",
+"old": "Prečítať pôvodnú kazetu na servisnom termináli.",
+"new": "Prečítať pôvodnú kazetu hore v pavilóne Atlasu.",
+"state": "changed"
+}
+],
+"counts": {
+"changed": 3,
+"new": 0,
+"same": 0
+}
+},
+{
+"id": "R2-hints-M01",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M01 · Nákup pre babku",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.G01",
+"speaker": "G01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V garáži vezmi servisnú brašnu.",
+"new": "V garáži vezmi servisnú brašnu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G01",
+"speaker": "G01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dnes idem babke na nákup a potom do jej dielne. Bez náradia z domu nevyrazím.",
+"state": "new"
+},
+{
+"key": "hint.where.G01",
+"speaker": "G01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Hneď tu, v mojej garáži.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Adamova garáž. Zameraj sa na: Servisná brašna."
+},
+{
+"key": "context.exact_step.G02",
+"speaker": "G02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Babkin nákup“.",
+"new": "Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Babkin nákup“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G02",
+"speaker": "G02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babkin nákup nevybavím sám. Kto komu v obci nosí nákup, to vedia na výdajnom mieste.",
+"state": "new"
+},
+{
+"key": "hint.where.G02",
+"speaker": "G02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na výdajnom mieste pri Lúčnom koníku.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lúčny koník – výdajné miesto. Zameraj sa na: Ela Švecová."
+},
+{
+"key": "context.exact_step.G03",
+"speaker": "G03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Mirin nákupný lístok použi na Danu v potravinách.",
+"new": "Mirin nákupný lístok použi na Danu v potravinách.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G03",
+"speaker": "G03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babkin lístok mám, tašku s nákupom zatiaľ nie. Vraj už na mňa niekde čaká pripravená.",
+"state": "new"
+},
+{
+"key": "hint.where.G03",
+"speaker": "G03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V potravinách cez okienko, u Dany.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Potraviny cez okienko. Zameraj sa na: Dana Valová."
+},
+{
+"key": "context.exact_step.G04",
+"speaker": "G04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Tašku s nákupom polož na stolík pred Mirinou bránkou.",
+"new": "Tašku s nákupom polož na stolík pred Mirinou bránkou.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G04",
+"speaker": "G04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Taška je plná. Babkine pravidlo znie: do domu nechodím, nákup nechám vonku.",
+"state": "new"
+},
+{
+"key": "hint.where.G04",
+"speaker": "G04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri Mirinej bránke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Mirina bránka. Zameraj sa na: Stolík pred bránkou."
+},
+{
+"key": "context.exact_step.G05",
+"speaker": "G05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pod zatvoreným oknom sa s Mirou porozprávaj o téme „Potrebuješ ešte niečo?“",
+"new": "Pod zatvoreným oknom sa s Mirou porozprávaj o téme „Potrebuješ ešte niečo?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.G05",
+"speaker": "G05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Nákup je doručený. Babka mi ešte niečo chcela povedať, ale až pri okne.",
+"state": "new"
+},
+{
+"key": "hint.where.G05",
+"speaker": "G05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pod babkiným zatvoreným oknom. Cez sklo ma nepočuje.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pod zatvoreným oknom. Zameraj sa na: Mira Hrušková."
+}
+],
+"counts": {
+"changed": 0,
+"new": 10,
+"same": 5
+}
+},
+{
+"id": "R2-hints-M02",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M02 · Prístroj v záhrade",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.G06",
+"speaker": "G06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Kľúč od dielne použi na dvere záhradnej dielne.",
+"new": "Kľúč od dielne použi na dvere záhradnej dielne.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G06",
+"speaker": "G06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "V babkinej dielni sa ozýva odpojený prístroj. A kľúč od nej už nosím pri sebe.",
+"state": "new"
+},
+{
+"key": "hint.where.G06",
+"speaker": "G06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Dielňa stojí v záhrade za Mirinou bránkou.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Mirina bránka. Zameraj sa na: Dvere záhradnej dielne."
+},
+{
+"key": "context.exact_step.G07",
+"speaker": "G07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V predsieni dielne vyber chronometer z mosadzného puzdra.",
+"new": "V predsieni dielne vyber chronometer z mosadzného puzdra.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G07",
+"speaker": "G07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "V predsieni leží niečo, čo vyzerá veľmi dôležito, a pritom to nie je zamknuté.",
+"state": "new"
+},
+{
+"key": "hint.where.G07",
+"speaker": "G07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V predsieni záhradnej dielne.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Predsieň záhradnej dielne. Zameraj sa na: Mosadzné puzdro."
+},
+{
+"key": "context.exact_step.G08",
+"speaker": "G08 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Servisnú brašnu použi na stolový uzol ZVON v dielni.",
+"new": "Servisnú brašnu použi na stolový uzol ZVON v dielni.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G08",
+"speaker": "G08 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Stolový uzol nesvieti. Dobrý opravár najprv zistí prečo, až potom niečo mení.",
+"state": "new"
+},
+{
+"key": "hint.where.G08",
+"speaker": "G08 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V zadnej miestnosti dielne, kde stojí ZVON.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dielňa ZVON. Zameraj sa na: Stolový uzol ZVON."
+},
+{
+"key": "context.exact_step.G09",
+"speaker": "G09 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V garáži vezmi náhradnú poistku zo zásuvky.",
+"new": "V garáži vezmi náhradnú poistku zo zásuvky.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G09",
+"speaker": "G09 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prepálenú poistku mám v ruke. Rovnakú náhradu mám určite niekde doma.",
+"state": "new"
+},
+{
+"key": "hint.where.G09",
+"speaker": "G09 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V mojej garáži.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Adamova garáž. Zameraj sa na: Zásuvka s poistkami."
+},
+{
+"key": "context.exact_step.G10",
+"speaker": "G10 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Náhradnú poistku použi na stolový uzol ZVON v dielni.",
+"new": "Náhradnú poistku použi na stolový uzol ZVON v dielni.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G10",
+"speaker": "G10 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Náhradná poistka má rovnaké hodnoty ako prepálená. Patrí presne tam, odkiaľ som tú starú vybral.",
+"state": "new"
+},
+{
+"key": "hint.where.G10",
+"speaker": "G10 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V zadnej miestnosti babkinej dielne.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dielňa ZVON. Zameraj sa na: Stolový uzol ZVON."
+},
+{
+"key": "context.exact_step.G11",
+"speaker": "G11 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na tvarovom paneli spoj každý tvar s rovnakým tvarom podľa schémy nad ním. Puzzle P01.",
+"new": "Na tvarovom paneli spoj každý tvar s rovnakým tvarom podľa schémy nad ním. Puzzle P01.",
+"state": "same"
+},
+{
+"key": "hint.nudge.G11",
+"speaker": "G11 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prístroj chce tri referenčné tvary. Vyzerá to ako stavebnica pre škôlkarov, len drahšia.",
+"state": "new"
+},
+{
+"key": "hint.where.G11",
+"speaker": "G11 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na farbách nezáleží, rozhoduje tvar. Schéma nad panelom ukazuje, čo patrí k čomu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dielňa ZVON. Zameraj sa na: Tvarový prepojovací panel."
+}
+],
+"counts": {
+"changed": 0,
+"new": 12,
+"same": 6
+}
+},
+{
+"id": "R2-hints-M03",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M03 · Späť v škole",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.B01",
+"speaker": "B01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pred školou si prečítaj oznam na nástenke krúžku.",
+"new": "Pred školou si prečítaj oznam na nástenke krúžku.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B01",
+"speaker": "B01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prístroj ma poslal pred moju starú školu. Skôr než niekam vtrhnem, zistím, čo sa tu dnes deje.",
+"state": "new"
+},
+{
+"key": "hint.where.B01",
+"speaker": "B01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pred ZŠ Sokolíkova, pri nástenke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pred ZŠ Sokolíkova. Zameraj sa na: Nástenka krúžku."
+},
+{
+"key": "context.exact_step.B02",
+"speaker": "B02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Prenosný chronometer ZVON použi na Tóna vo vstupnej chodbe.",
+"new": "Prenosný chronometer ZVON použi na Tóna vo vstupnej chodbe.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B02",
+"speaker": "B02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Hlásiť sa treba u školníka. Cudzieho človeka z ulice však len tak ďalej nepustí.",
+"state": "new"
+},
+{
+"key": "hint.where.B02",
+"speaker": "B02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo vstupnej chodbe školy, u školníka.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školská vstupná chodba. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.B03",
+"speaker": "B03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V triede pamäťového krúžku sa s Mirou porozprávaj o téme „Problém s chronometrom“.",
+"new": "V triede pamäťového krúžku sa s Mirou porozprávaj o téme „Problém s chronometrom“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B03",
+"speaker": "B03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Ten prístroj je babkin. Ak niekto vie, čo sa s ním deje, je to ona, aj v roku 1995.",
+"state": "new"
+},
+{
+"key": "hint.where.B03",
+"speaker": "B03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V triede pamäťového krúžku na konci chodby.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Trieda pamäťového krúžku. Zameraj sa na: Mira Hrušková."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-M04",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M04 · Mechanika kazety",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.B04",
+"speaker": "B04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Servisnú brašnu použi na kazetový mechanizmus v miestnosti školského rozhlasu.",
+"new": "Servisnú brašnu použi na kazetový mechanizmus v miestnosti školského rozhlasu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B04",
+"speaker": "B04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babka chce kazetu zo školského rozhlasu. Magnetofón ju však drží a nechce ju pustiť.",
+"state": "new"
+},
+{
+"key": "hint.where.B04",
+"speaker": "B04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V miestnosti školského rozhlasu, pri magnetofóne.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miestnosť školského rozhlasu. Zameraj sa na: Kazetový mechanizmus."
+},
+{
+"key": "context.exact_step.B05",
+"speaker": "B05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Rozpadnutý remienok použi na Paliho v jeho opravovni v Karlovej Vsi.",
+"new": "Rozpadnutý remienok použi na Paliho v jeho opravovni v Karlovej Vsi.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B05",
+"speaker": "B05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Remienok sa rozpadol na kúsky. Rovnaký zoženiem len v opravovni, kde majú remienky po zásuvkách.",
+"state": "new"
+},
+{
+"key": "hint.where.B05",
+"speaker": "B05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V opravovni v Karlovej Vsi.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Paliho opravovňa. Zameraj sa na: Pavol Drobný."
+},
+{
+"key": "context.exact_step.B06",
+"speaker": "B06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Nový remienok použi na kazetový mechanizmus v miestnosti školského rozhlasu.",
+"new": "Nový remienok použi na kazetový mechanizmus v miestnosti školského rozhlasu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B06",
+"speaker": "B06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Nový remienok je presne na mieru. Starý som vyťahoval z jedného tvrdohlavého magnetofónu.",
+"state": "new"
+},
+{
+"key": "hint.where.B06",
+"speaker": "B06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Späť v miestnosti školského rozhlasu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miestnosť školského rozhlasu. Zameraj sa na: Kazetový mechanizmus."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-M05",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M05 · Hlasy sa nerušia",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.B07",
+"speaker": "B07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Kazetu s rušenými stopami použi na Jura v kazetovom klube v Ružinove.",
+"new": "Kazetu s rušenými stopami použi na Jura v kazetovom klube v Ružinove.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B07",
+"speaker": "B07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Hlasy na páske takmer nepočuť. Pali spomínal niekoho, kto s páskami vie čarovať.",
+"state": "new"
+},
+{
+"key": "hint.where.B07",
+"speaker": "B07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V kazetovom klube v Ružinove, u Jura.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Kazetový klub v suteréne. Zameraj sa na: Juro Kazeta."
+},
+{
+"key": "context.exact_step.B08",
+"speaker": "B08 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Servisnú brašnu použi na zaseknutú stolovú váhu u Fera na Miletičovej.",
+"new": "Servisnú brašnu použi na zaseknutú stolovú váhu u Fera na Miletičovej.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B08",
+"speaker": "B08 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Adaptéru chýba konektor a ten má Fero. Opravár sa na trhu vždy zíde.",
+"state": "new"
+},
+{
+"key": "hint.where.B08",
+"speaker": "B08 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Miletičovej medzi stánkami, u Fera.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miletičova medzi stánkami. Zameraj sa na: Zaseknutá stolová váha."
+},
+{
+"key": "context.exact_step.B09",
+"speaker": "B09 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V opravovni odevov sa s Miladou porozprávaj o téme „Návlek na kábel“.",
+"new": "V opravovni odevov sa s Miladou porozprávaj o téme „Návlek na kábel“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B09",
+"speaker": "B09 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Holé vývody do školského rozhlasu nezapojím. Juro vravel, kto má izolačný návlek.",
+"state": "new"
+},
+{
+"key": "hint.where.B09",
+"speaker": "B09 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V opravovni odevov vedľa trhu, u Milady.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Opravovňa odevov. Zameraj sa na: Milada Kyselová."
+},
+{
+"key": "context.exact_step.B10",
+"speaker": "B10 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj dvojpólový konektor s krížovým adaptérom.",
+"new": "V inventári spoj dvojpólový konektor s krížovým adaptérom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B10",
+"speaker": "B10 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Všetky diely prepojky mám. Teraz ich treba poskladať, kontakty majú zhodné značky.",
+"state": "new"
+},
+{
+"key": "hint.where.B10",
+"speaker": "B10 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Toto poskladám z vecí, ktoré už nosím v brašni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.B11",
+"speaker": "B11 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj textilný izolačný návlek s adaptérom s konektorom.",
+"new": "V inventári spoj textilný izolačný návlek s adaptérom s konektorom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B11",
+"speaker": "B11 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kontakty sedia, ale vývody sú holé. Bez izolácie to do školského rozhlasu nezapojím.",
+"state": "new"
+},
+{
+"key": "hint.where.B11",
+"speaker": "B11 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Aj toto doladím v brašni, nikam nemusím chodiť.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.B12",
+"speaker": "B12 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Hotovú zvukovú prepojku použi na servisný zvukový vstup v miestnosti školského rozhlasu.",
+"new": "Hotovú zvukovú prepojku použi na servisný zvukový vstup v miestnosti školského rozhlasu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B12",
+"speaker": "B12 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prepojka je hotová. Kazetu treba prehrať tak, aby sa stopy nerušili, a nič na ňu nenahrať.",
+"state": "new"
+},
+{
+"key": "hint.where.B12",
+"speaker": "B12 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V miestnosti školského rozhlasu, pri magnetofóne.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miestnosť školského rozhlasu. Zameraj sa na: Servisný zvukový vstup."
+}
+],
+"counts": {
+"changed": 0,
+"new": 12,
+"same": 6
+}
+},
+{
+"id": "R2-hints-M06",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M06 · Mapa v troch kusoch",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.B13",
+"speaker": "B13 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Mirino poverenie použi na Karola v archívnej študovni.",
+"new": "Mirino poverenie použi na Karola v archívnej študovni.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B13",
+"speaker": "B13 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babka mi dala poverenie. S ním mi niekde v centre vydajú kópiu mapy.",
+"state": "new"
+},
+{
+"key": "hint.where.B13",
+"speaker": "B13 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V archívnej študovni v Starom Meste, u pána Mertu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Archívna študovňa. Zameraj sa na: Karol Merta."
+},
+{
+"key": "context.exact_step.B14",
+"speaker": "B14 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Technický fotografický negatív použi na Alenu vo fotoateliéri Svetlo.",
+"new": "Technický fotografický negatív použi na Alenu vo fotoateliéri Svetlo.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B14",
+"speaker": "B14 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Číslo chýbajúcej fólie je na negatíve. Ten však musí najprv niekto vyvolať.",
+"state": "new"
+},
+{
+"key": "hint.where.B14",
+"speaker": "B14 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fotoateliéri Svetlo na druhej strane námestia.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fotoateliér Svetlo. Zameraj sa na: Alena Svobodová."
+},
+{
+"key": "context.exact_step.B15",
+"speaker": "B15 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Fotografiu kalibračného stojana použi na Vieru v antikvariáte Pod druhou rukou; podľa nej ti dá fóliu K-17.",
+"new": "Fotografiu kalibračného stojana použi na Vieru v antikvariáte Pod druhou rukou; podľa nej ti dá fóliu K-17.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B15",
+"speaker": "B15 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na fotke je číslo K-17. Alena vravela, kto má staré mapové prílohy.",
+"state": "new"
+},
+{
+"key": "hint.where.B15",
+"speaker": "B15 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V antikvariáte Pod druhou rukou, u Viery.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Antikvariát Pod druhou rukou. Zameraj sa na: Viera Holubová."
+},
+{
+"key": "context.exact_step.B16",
+"speaker": "B16 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj priehľadnú fóliu K-17 s mapou uzlov, fóliu otoč o 180° a potvrď. Puzzle P02.",
+"new": "V inventári spoj priehľadnú fóliu K-17 s mapou uzlov, fóliu otoč o 180° a potvrď. Puzzle P02.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B16",
+"speaker": "B16 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mapa je takmer celá. Chýbajúca vrstva je už v brašni, len ešte nesedí.",
+"state": "new"
+},
+{
+"key": "hint.where.B16",
+"speaker": "B16 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Dierka na dierku, kríž na kríž, štvorec na štvorec. Keď značky nesedia, fóliu otoč.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-M07",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M07 · Rytmus na Dunaji",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.B17",
+"speaker": "B17 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Úplnú mapu meracích uzlov použi na Dezidera v jeho garáži v Petržalke.",
+"new": "Úplnú mapu meracích uzlov použi na Dezidera v jeho garáži v Petržalke.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B17",
+"speaker": "B17 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mapa je celá. Teraz ju musí prečítať niekto, kto ju kedysi pomáhal kresliť.",
+"state": "new"
+},
+{
+"key": "hint.where.B17",
+"speaker": "B17 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Mapa vedie do jednej garáže v Petržalke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Garáž rádioamatéra. Zameraj sa na: Dezider Kováč."
+},
+{
+"key": "context.exact_step.B18",
+"speaker": "B18 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Metronóm na meranie“.",
+"new": "Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Metronóm na meranie“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B18",
+"speaker": "B18 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na meranie treba rytmus, ktorý nezávisí od prúdu. Dezider vravel, kto má metronóm.",
+"state": "new"
+},
+{
+"key": "hint.where.B18",
+"speaker": "B18 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Karloveskom nástupišti, u Emila.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Karloveské nástupište. Zameraj sa na: Emil Belan."
+},
+{
+"key": "context.exact_step.B19",
+"speaker": "B19 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+"new": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B19",
+"speaker": "B19 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Tri číslice pre stojan babka nenapísala ako čísla. Namaľovala ich ako obrázok.",
+"state": "new"
+},
+{
+"key": "hint.where.B19",
+"speaker": "B19 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Sokolíkovskom dvore, na múre.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sokolíkovský dvor. Zameraj sa na: Rytmický nákres."
+},
+{
+"key": "context.exact_step.B20",
+"speaker": "B20 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.",
+"new": "Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B20",
+"speaker": "B20 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dezider mi dal cievku. Bez nej sa na mieste merania nič nenameria.",
+"state": "new"
+},
+{
+"key": "hint.where.B20",
+"speaker": "B20 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V meracom stánku na Starom moste.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Merací stánok na Starom moste. Zameraj sa na: Držiak meracej cievky."
+},
+{
+"key": "context.exact_step.B21",
+"speaker": "B21 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.",
+"new": "Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B21",
+"speaker": "B21 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Metronóm mám. Meranie potrebuje rytmus a rovné miesto, kde ho nič nerozhýbe.",
+"state": "new"
+},
+{
+"key": "hint.where.B21",
+"speaker": "B21 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri meracom stánku na Starom moste, vedľa stojana.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Merací stánok na Starom moste. Zameraj sa na: Stolík s rytmickou značkou."
+},
+{
+"key": "context.exact_step.B22",
+"speaker": "B22 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6. Puzzle P03.",
+"new": "Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6. Puzzle P03.",
+"state": "same"
+},
+{
+"key": "hint.nudge.B22",
+"speaker": "B22 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Stojan chce tri číslice, ktoré babka na múr nakreslila. Kazetu a mapu pritom musím mať pri sebe.",
+"state": "new"
+},
+{
+"key": "hint.where.B22",
+"speaker": "B22 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Každé koliesko je jedna číslica z rytmického nákresu: vlny, údery, dieliky, v tomto poradí.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Merací stánok na Starom moste. Zameraj sa na: Tri kalibračné číslice."
+}
+],
+"counts": {
+"changed": 0,
+"new": 12,
+"same": 6
+}
+},
+{
+"id": "R2-hints-M08",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M08 · Ručná pumpa",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.I01",
+"speaker": "I01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Prenosný chronometer ZVON použi na Ota v jeho mechanickej dielni.",
+"new": "Prenosný chronometer ZVON použi na Ota v jeho mechanickej dielni.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I01",
+"speaker": "I01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Som v Ivanke v roku 1962. ZVON odtiaľto pochádza, tak hľadám dielňu, kde ho stavali.",
+"state": "new"
+},
+{
+"key": "hint.where.I01",
+"speaker": "I01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V mechanickej dielni v Ivanke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Otova mechanická dielňa. Zameraj sa na: Oto Bielik."
+},
+{
+"key": "context.exact_step.I02",
+"speaker": "I02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Otov výdajný lístok použi na Štefana na dvore dielne.",
+"new": "Otov výdajný lístok použi na Štefana na dvore dielne.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I02",
+"speaker": "I02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Oto mi dal lístok na kožu a nity. Materiál tu vydávajú len na lístok s podpisom.",
+"state": "new"
+},
+{
+"key": "hint.where.I02",
+"speaker": "I02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na dvore hospodárskej dielne, u skladníka.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dvor hospodárskej dielne. Zameraj sa na: Štefan Haluška."
+},
+{
+"key": "context.exact_step.I03",
+"speaker": "I03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Servisnú brašnu použi na svorku kulisy v kultúrnej sále.",
+"new": "Servisnú brašnu použi na svorku kulisy v kultúrnej sále.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I03",
+"speaker": "I03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dierovač má Lída v sále. Podľa Ota mi ho požičia, ak jej s niečím pomôžem.",
+"state": "new"
+},
+{
+"key": "hint.where.I03",
+"speaker": "I03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V kultúrnej sále, kde sa chystá skúška.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Kultúrna sála pred skúškou. Zameraj sa na: Svorka kulisy."
+},
+{
+"key": "context.exact_step.I04",
+"speaker": "I04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj Lídin ručný dierovač s predrezanou koženou manžetou.",
+"new": "V inventári spoj Lídin ručný dierovač s predrezanou koženou manžetou.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I04",
+"speaker": "I04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Koža na manžetu je predrezaná, ale vyznačené otvory ešte nie sú prerazené.",
+"state": "new"
+},
+{
+"key": "hint.where.I04",
+"speaker": "I04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "To spravím v brašni s tým, čo už mám pri sebe.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.I05",
+"speaker": "I05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj dva duté nity s dierovanou manžetou.",
+"new": "V inventári spoj dva duté nity s dierovanou manžetou.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I05",
+"speaker": "I05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Otvory sú prerazené. Manžeta však zatiaľ drží pokope len dobrou vôľou.",
+"state": "new"
+},
+{
+"key": "hint.where.I05",
+"speaker": "I05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Aj toto dokončím v brašni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.I06",
+"speaker": "I06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Hotovú manžetu použi na demonštračnú ručnú pumpu pred skúšobnou búdkou.",
+"new": "Hotovú manžetu použi na demonštračnú ručnú pumpu pred skúšobnou búdkou.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I06",
+"speaker": "I06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Manžeta je hotová. Zostáva vrátiť sa k tomu, čo bez nej netesní.",
+"state": "new"
+},
+{
+"key": "hint.where.I06",
+"speaker": "I06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pred búdkou za parkom.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pred skúšobnou čerpacou búdkou. Zameraj sa na: Demonštračná ručná pumpa."
+},
+{
+"key": "context.exact_step.I07",
+"speaker": "I07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V dielni sa s Otom porozprávaj o téme „Pumpa je opravená“.",
+"new": "V dielni sa s Otom porozprávaj o téme „Pumpa je opravená“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I07",
+"speaker": "I07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Voda znova obieha. To by mal vedieť ten, kto drží kľúč od meracej miestnosti.",
+"state": "new"
+},
+{
+"key": "hint.where.I07",
+"speaker": "I07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V mechanickej dielni, u Ota.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Otova mechanická dielňa. Zameraj sa na: Oto Bielik."
+},
+{
+"key": "context.exact_step.I08",
+"speaker": "I08 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Kľúč od meracej miestnosti použi na jej dvere pri ručnej pumpe.",
+"new": "Kľúč od meracej miestnosti použi na jej dvere pri ručnej pumpe.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I08",
+"speaker": "I08 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kľúč od meracej miestnosti mám. Jej dvere som dnes už videl.",
+"state": "new"
+},
+{
+"key": "hint.where.I08",
+"speaker": "I08 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pred búdkou za parkom.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pred skúšobnou čerpacou búdkou. Zameraj sa na: Dvere meracej miestnosti."
+}
+],
+"counts": {
+"changed": 0,
+"new": 16,
+"same": 8
+}
+},
+{
+"id": "R2-hints-M09",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M09 · Pôvodná veta",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.I09",
+"speaker": "I09 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V miestnosti prvého ZVONu sa s Mirou porozprávaj o téme „Mazanie výnimiek v budúcnosti“.",
+"new": "V miestnosti prvého ZVONu sa s Mirou porozprávaj o téme „Mazanie výnimiek v budúcnosti“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I09",
+"speaker": "I09 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Za dverami pracuje mladá babka. Musím jej povedať, čo sa v budúcnosti robí s pôvodnými údajmi.",
+"state": "new"
+},
+{
+"key": "hint.where.I09",
+"speaker": "I09 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V meracej miestnosti, u mladej Miry.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miestnosť prvého ZVONu. Zameraj sa na: Mira Hrušková."
+},
+{
+"key": "context.exact_step.I10",
+"speaker": "I10 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V parku pri kaštieli sa s Verou porozprávaj o téme „Tupé rydlo“.",
+"new": "V parku pri kaštieli sa s Verou porozprávaj o téme „Tupé rydlo“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I10",
+"speaker": "I10 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na odtlačok treba aj tupé rydlo. Mira vravela, kto ho nosí v puzdre.",
+"state": "new"
+},
+{
+"key": "hint.where.I10",
+"speaker": "I10 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V parku pri kaštieli, u Very na lavičke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Park pri kaštieli. Zameraj sa na: Vera Nemcová."
+},
+{
+"key": "context.exact_step.I11",
+"speaker": "I11 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na povale technického archívu vezmi voskovaný papier.",
+"new": "Na povale technického archívu vezmi voskovaný papier.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I11",
+"speaker": "I11 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Odtlačok sa nerobí na hocijaký papier. Mira vie, kde leží ten správny.",
+"state": "new"
+},
+{
+"key": "hint.where.I11",
+"speaker": "I11 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na povale technického archívu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Povala technického archívu. Zameraj sa na: Voskovaný papier."
+},
+{
+"key": "context.exact_step.I12",
+"speaker": "I12 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Voskovaný hárok použi na kalibračnú mosadznú platňu v miestnosti prvého ZVONu.",
+"new": "Voskovaný hárok použi na kalibračnú mosadznú platňu v miestnosti prvého ZVONu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I12",
+"speaker": "I12 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Platňa musí zostať na mieste. Odnesiem si iba jej odtlačok.",
+"state": "new"
+},
+{
+"key": "hint.where.I12",
+"speaker": "I12 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V miestnosti prvého ZVONu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Miestnosť prvého ZVONu. Zameraj sa na: Kalibračná mosadzná platňa."
+},
+{
+"key": "context.exact_step.I13",
+"speaker": "I13 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj Verino tupé rydlo s nezvýrazneným odtlačkom.",
+"new": "V inventári spoj Verino tupé rydlo s nezvýrazneným odtlačkom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I13",
+"speaker": "I13 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Reliéf je na papieri, ale hrany sú slabé. Na zvýraznenie hrán mám požičaný nástroj.",
+"state": "new"
+},
+{
+"key": "hint.where.I13",
+"speaker": "I13 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "To dorobím v brašni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+}
+],
+"counts": {
+"changed": 0,
+"new": 10,
+"same": 5
+}
+},
+{
+"id": "R2-hints-M10",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M10 · Dokument musí prežiť",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.I14",
+"speaker": "I14 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na pošte vezmi uhlový papier pri prepážke.",
+"new": "Na pošte vezmi uhlový papier pri prepážke.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I14",
+"speaker": "I14 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Registračný list musím mať dvakrát a presne rovnako. Prepisovať ho rukou nebudem.",
+"state": "new"
+},
+{
+"key": "hint.where.I14",
+"speaker": "I14 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na pošte, pri prepážke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pošta s prepážkou. Zameraj sa na: Uhľový papier."
+},
+{
+"key": "context.exact_step.I15",
+"speaker": "I15 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj uhlový papier s technickým registračným listom.",
+"new": "V inventári spoj uhlový papier s technickým registračným listom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I15",
+"speaker": "I15 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Druhé vyhotovenie listu si urobím sám. Všetko, čo na to treba, už mám pri sebe.",
+"state": "new"
+},
+{
+"key": "hint.where.I15",
+"speaker": "I15 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "To urobím v brašni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.I16",
+"speaker": "I16 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Dve vyhotovenia listu použi na Alojza na pošte.",
+"new": "Dve vyhotovenia listu použi na Alojza na pošte.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I16",
+"speaker": "I16 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Oba listy sú rovnaké. Dátum im však musí potvrdiť niekto s pečiatkou.",
+"state": "new"
+},
+{
+"key": "hint.where.I16",
+"speaker": "I16 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na pošte, u pána Barana za prepážkou.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pošta s prepážkou. Zameraj sa na: Alojz Baran."
+},
+{
+"key": "context.exact_step.I17",
+"speaker": "I17 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Potvrdený registračný list použi na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.",
+"new": "Potvrdený registračný list použi na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.",
+"state": "same"
+},
+{
+"key": "hint.nudge.I17",
+"speaker": "I17 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "List je potvrdený. Teraz ho treba uložiť tak, aby prežil desaťročia. Odtlačok si nechám pri sebe.",
+"state": "new"
+},
+{
+"key": "hint.where.I17",
+"speaker": "I17 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na povale technického archívu.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Povala technického archívu. Zameraj sa na: Kovová archívna schránka."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-M11A",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M11A · Tá istá škola o štvrťstoročie neskôr",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.C01",
+"speaker": "C01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Overený odtlačok z roku 1962 použi na Miru pod zatvoreným oknom v Grobe.",
+"new": "Overený odtlačok z roku 1962 použi na Miru pod zatvoreným oknom v Grobe.",
+"state": "same"
+},
+{
+"key": "hint.nudge.C01",
+"speaker": "C01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Odtlačok z roku 1962 je overený. Čo ďalej, bude vedieť babka, aj keď ju uvidím len cez sklo.",
+"state": "new"
+},
+{
+"key": "hint.where.C01",
+"speaker": "C01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Grobe, pod babkiným zatvoreným oknom.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pod zatvoreným oknom. Zameraj sa na: Mira Hrušková."
+},
+{
+"key": "context.exact_step.D01",
+"speaker": "D01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Telefón použi na roh dvora so servisným oknom pred školou v roku 2020.",
+"new": "Telefón použi na roh dvora so servisným oknom pred školou v roku 2020.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D01",
+"speaker": "D01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babka chcela, aby som si zapamätal školský dvor presne taký, aký je dnes. Pamäti neverím, telefónu áno.",
+"state": "new"
+},
+{
+"key": "hint.where.D01",
+"speaker": "D01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pred školou na Sokolíkovej v roku 2020.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pred ZŠ Sokolíkova v roku 2020. Zameraj sa na: Roh dvora a servisné okno."
+},
+{
+"key": "context.exact_step.D02",
+"speaker": "D02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Prenosný chronometer ZVON použi na Tóna pri školníckom servisnom okne v roku 2020.",
+"new": "Prenosný chronometer ZVON použi na Tóna pri školníckom servisnom okne v roku 2020.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D02",
+"speaker": "D02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Tóno vie, že prídem po babkine veci. Ešte mu ukážem, že nie som hocikto z ulice.",
+"state": "new"
+},
+{
+"key": "hint.where.D02",
+"speaker": "D02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri školníckom servisnom okne v roku 2020.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školnícke servisné okno v roku 2020. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.D03",
+"speaker": "D03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Vo fyzikálnom kabinete v roku 2020 si prečítaj servisnú knihu z roku 1982.",
+"new": "Vo fyzikálnom kabinete v roku 2020 si prečítaj servisnú knihu z roku 1982.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D03",
+"speaker": "D03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mostík postavil Oto v roku 1982. Taký majster si určite všetko zapísal.",
+"state": "new"
+},
+{
+"key": "hint.where.D03",
+"speaker": "D03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fyzikálnom kabinete v roku 2020.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fyzikálny kabinet v roku 2020. Zameraj sa na: Servisná kniha z roku 1982."
+},
+{
+"key": "context.exact_step.D04",
+"speaker": "D04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Kópiu servisného záznamu 1982 použi na rám starých hodín na Dúbravskej zastávke v roku 2020.",
+"new": "Kópiu servisného záznamu 1982 použi na rám starých hodín na Dúbravskej zastávke v roku 2020.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D04",
+"speaker": "D04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Záznam má presný dátum. Na cestu do toho roku mi chýbajú hodiny, ktoré ho pamätajú.",
+"state": "new"
+},
+{
+"key": "hint.where.D04",
+"speaker": "D04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Dúbravskej zastávke v roku 2020.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dúbravská zastávka v roku 2020. Zameraj sa na: Rám starých hodín."
+}
+],
+"counts": {
+"changed": 0,
+"new": 10,
+"same": 5
+}
+},
+{
+"id": "R2-hints-M11B",
+"chunk": "R2",
+"era": "1982",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M11B · Človek, ktorý si to zapamätá",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.E01",
+"speaker": "E01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Prenosný chronometer ZVON použi na Tóna pri servisnom okne v roku 1982.",
+"new": "Prenosný chronometer ZVON použi na Tóna pri servisnom okne v roku 1982.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E01",
+"speaker": "E01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "V roku 1982 pomáhal Otovi malý Tóno. Prístroj, ktorý nosím, by mohli spoznať obaja.",
+"state": "new"
+},
+{
+"key": "hint.where.E01",
+"speaker": "E01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri servisnom okne školy v roku 1982, u Tóna a jeho deda.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tóno a dedo pri servisnom okne v roku 1982. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.E02",
+"speaker": "E02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Chránenú fotografiu dvora 2020 použi na Tóna pri servisnom okne.",
+"new": "Chránenú fotografiu dvora 2020 použi na Tóna pri servisnom okne.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E02",
+"speaker": "E02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dvanásťročnému chlapcovi nestačí povedať, že som z budúcnosti. Musí to vidieť.",
+"state": "new"
+},
+{
+"key": "hint.where.E02",
+"speaker": "E02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri servisnom okne, u malého Tóna.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tóno a dedo pri servisnom okne v roku 1982. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.E03",
+"speaker": "E03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Otov školský výdajný lístok použi na Martu vo výdajni údržbového materiálu; vchod do nej je zo sídliskového obchodu pri zastávke.",
+"new": "Otov školský výdajný lístok použi na Martu vo výdajni údržbového materiálu; vchod do nej je zo sídliskového obchodu pri zastávke.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E03",
+"speaker": "E03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Oto podpísal lístok na diely mostíka. Teraz mi ich niekto musí vydať.",
+"state": "new"
+},
+{
+"key": "hint.where.E03",
+"speaker": "E03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo výdajni školského materiálu. Vchádza sa do nej cez sídliskový obchod pri zastávke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Výdajňa školského údržbového materiálu v roku 1982. Zameraj sa na: Marta Dobiášová."
+},
+{
+"key": "context.exact_step.E04",
+"speaker": "E04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Diely návratového mostíka použi na servisnú dosku vo fyzikálnom kabinete v roku 1982.",
+"new": "Diely návratového mostíka použi na servisnú dosku vo fyzikálnom kabinete v roku 1982.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E04",
+"speaker": "E04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Diely aj Otov nákres mám. Mostík sa však sám nezloží a na kolenách ho skladať nebudem.",
+"state": "new"
+},
+{
+"key": "hint.where.E04",
+"speaker": "E04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fyzikálnom kabinete v roku 1982.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fyzikálny kabinet v roku 1982. Zameraj sa na: Servisná doska."
+},
+{
+"key": "context.exact_step.E05",
+"speaker": "E05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V sídliskovom obchode sa s Ruženou porozprávaj o téme „Suchý pohár pre školu“.",
+"new": "V sídliskovom obchode sa s Ruženou porozprávaj o téme „Suchý pohár pre školu“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E05",
+"speaker": "E05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mostík bude v múriku čakať desaťročia. Potrebuje suchý obal, ktorý sa dá poriadne zavrieť.",
+"state": "new"
+},
+{
+"key": "hint.where.E05",
+"speaker": "E05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V sídliskovom obchode pri zastávke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sídliskový obchod v roku 1982. Zameraj sa na: Ružena Malá."
+},
+{
+"key": "context.exact_step.E06",
+"speaker": "E06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári spoj nový keramický mostík s pohárom s viečkom a tesnením.",
+"new": "V inventári spoj nový keramický mostík s pohárom s viečkom a tesnením.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E06",
+"speaker": "E06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mostík nesmie zvlhnúť. Všetko, čo ho ochráni, už nosím v brašni.",
+"state": "new"
+},
+{
+"key": "hint.where.E06",
+"speaker": "E06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Toto urobím v brašni, nikam nemusím chodiť.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.E07",
+"speaker": "E07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V školskom záhradnom sklade sa so Šimonom porozprávaj o téme „Ochrana mladej lipy“.",
+"new": "V školskom záhradnom sklade sa so Šimonom porozprávaj o téme „Ochrana mladej lipy“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E07",
+"speaker": "E07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na mojej fotke z roku 2020 tu lipa nie je. Vozík, čo jazdí tesne pri nej, jej nepomáha.",
+"state": "new"
+},
+{
+"key": "hint.where.E07",
+"speaker": "E07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V školskom záhradnom sklade pri dvore.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský záhradný sklad v roku 1982. Zameraj sa na: Šimon Rybár."
+},
+{
+"key": "context.exact_step.E08",
+"speaker": "E08 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Zapečatený pohár s mostíkom použi na servisnú dutinu v múriku na školskom dvore.",
+"new": "Zapečatený pohár s mostíkom použi na servisnú dutinu v múriku na školskom dvore.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E08",
+"speaker": "E08 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Pohár je zapečatený. Oto spomínal miesto, kde zostane do roku 2020 nedotknutý.",
+"state": "new"
+},
+{
+"key": "hint.where.E08",
+"speaker": "E08 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na školskom dvore s mladou lipou.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský dvor s mladou lipou v roku 1982. Zameraj sa na: Servisná dutina v múriku."
+},
+{
+"key": "context.exact_step.E09",
+"speaker": "E09 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Ochrannú ohrádku pre lipu použi na mladú lipu na školskom dvore.",
+"new": "Ochrannú ohrádku pre lipu použi na mladú lipu na školskom dvore.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E09",
+"speaker": "E09 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Diely ohrádky nosím so sebou. Na dvore však zatiaľ nič nechránia.",
+"state": "new"
+},
+{
+"key": "hint.where.E09",
+"speaker": "E09 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na školskom dvore s mladou lipou.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský dvor s mladou lipou v roku 1982. Zameraj sa na: Mladá lipa."
+},
+{
+"key": "context.exact_step.E10",
+"speaker": "E10 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V záhradnom sklade sa znova porozprávaj so Šimonom o téme „Zapíšete lipu aj múrik?“",
+"new": "V záhradnom sklade sa znova porozprávaj so Šimonom o téme „Zapíšete lipu aj múrik?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.E10",
+"speaker": "E10 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Ohrádka stojí a pohár je ukrytý. Aby to prežilo ďalšie úpravy dvora, niekto to musí zapísať.",
+"state": "new"
+},
+{
+"key": "hint.where.E10",
+"speaker": "E10 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V záhradnom sklade, u Šimona.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský záhradný sklad v roku 1982. Zameraj sa na: Šimon Rybár."
+}
+],
+"counts": {
+"changed": 0,
+"new": 20,
+"same": 10
+}
+},
+{
+"id": "R2-hints-M11C",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M11C · Tridsaťosem rokov v jednom pohári",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.E11",
+"speaker": "E11 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V roku 1995 sa porozprávaj s Tónom vo vstupnej chodbe a vyber tému s heslom „Lastovička sa vracia“.",
+"new": "V roku 1995 sa porozprávaj s Tónom vo vstupnej chodbe a vyber tému s heslom „Lastovička sa vracia“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.E11",
+"speaker": "E11 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Malý Tóno chcel, aby som mu pri ďalšom stretnutí povedal dohodnutú vetu. V roku 1995 je z neho školník.",
+"state": "new"
+},
+{
+"key": "hint.where.E11",
+"speaker": "E11 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V roku 1995 vo vstupnej chodbe školy, u Tóna.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školská vstupná chodba. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.D05",
+"speaker": "D05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V roku 2020 použi servisnú brašnu na miesto pôvodnej servisnej dutiny na školskom dvore; v múriku vyber rad 2, stĺpec 3. Puzzle P05.",
+"new": "V roku 2020 použi servisnú brašnu na miesto pôvodnej servisnej dutiny na školskom dvore; v múriku vyber rad 2, stĺpec 3. Puzzle P05.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D05",
+"speaker": "D05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Pohár čaká v múriku na dvore od roku 1982. Tónove nákresy presne hovoria, za ktorým kameňom.",
+"state": "new"
+},
+{
+"key": "hint.where.D05",
+"speaker": "D05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Nákres aj Tónova poznámka platia aj v roku 2020: rad počítaj zhora, kameň zľava.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský dvor v roku 2020. Zameraj sa na: Miesto pôvodnej servisnej dutiny."
+},
+{
+"key": "context.exact_step.D06",
+"speaker": "D06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V inventári použi servisnú brašnu na pohár vyzdvihnutý po 38 rokoch.",
+"new": "V inventári použi servisnú brašnu na pohár vyzdvihnutý po 38 rokoch.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D06",
+"speaker": "D06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Pohár je von a tesnenie drží. Viečko však po toľkých rokoch holou rukou nepovolí.",
+"state": "new"
+},
+{
+"key": "hint.where.D06",
+"speaker": "D06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Toto urobím v brašni, nikam nemusím chodiť.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.D07",
+"speaker": "D07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Zachovaný návratový mostík použi na Tóna pri školníckom servisnom okne v roku 2020.",
+"new": "Zachovaný návratový mostík použi na Tóna pri školníckom servisnom okne v roku 2020.",
+"state": "same"
+},
+{
+"key": "hint.nudge.D07",
+"speaker": "D07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mostík prežil. Prvý by ho mal vidieť ten, kto si to miesto pamätal celý život.",
+"state": "new"
+},
+{
+"key": "hint.where.D07",
+"speaker": "D07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri školníckom servisnom okne v roku 2020, u Tóna.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školnícke servisné okno v roku 2020. Zameraj sa na: Anton Farkaš."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-M11D",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M11D · Skutočné odovzdanie počas karantény",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.C02",
+"speaker": "C02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Protokol k babkinej krabici“.",
+"new": "Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Protokol k babkinej krabici“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.C02",
+"speaker": "C02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babka chcela, aby sme s Elou dotiahli papiere k jej krabici. Tie papiere stále chýbajú.",
+"state": "new"
+},
+{
+"key": "hint.where.C02",
+"speaker": "C02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na výdajnom mieste pri Lúčnom koníku, u Ely.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lúčny koník – výdajné miesto. Zameraj sa na: Ela Švecová."
+},
+{
+"key": "context.exact_step.C03",
+"speaker": "C03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Protokol o odovzdaní použi na Romana na ulici medzi plotmi.",
+"new": "Protokol o odovzdaní použi na Romana na ulici medzi plotmi.",
+"state": "same"
+},
+{
+"key": "hint.nudge.C03",
+"speaker": "C03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na protokole chýbajú podpisy. Krabicu predsa niekto vlastnými rukami niesol.",
+"state": "new"
+},
+{
+"key": "hint.where.C03",
+"speaker": "C03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na ulici medzi plotmi, pri Romanovej dodávke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Ulica medzi plotmi. Zameraj sa na: Roman Kováč."
+},
+{
+"key": "context.exact_step.C04",
+"speaker": "C04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Protokol s Romanovým podpisom použi na Elu na výdajnom mieste.",
+"new": "Protokol s Romanovým podpisom použi na Elu na výdajnom mieste.",
+"state": "same"
+},
+{
+"key": "hint.nudge.C04",
+"speaker": "C04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Roman podpísal prevzatie. Druhý podpis patrí tej, ktorá krabicu vydala.",
+"state": "new"
+},
+{
+"key": "hint.where.C04",
+"speaker": "C04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na výdajnom mieste, u Ely.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lúčny koník – výdajné miesto. Zameraj sa na: Ela Švecová."
+},
+{
+"key": "context.exact_step.C05",
+"speaker": "C05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Potvrdené odovzdanie 2020 použi na stolový uzol ZVON v dielni; mostík musí byť v inventári.",
+"new": "Potvrdené odovzdanie 2020 použi na stolový uzol ZVON v dielni; mostík musí byť v inventári.",
+"state": "same"
+},
+{
+"key": "hint.nudge.C05",
+"speaker": "C05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dôkazy sú pokope. Prístroj, s ktorým sa to celé začalo, by mal vedieť, čo s nimi.",
+"state": "new"
+},
+{
+"key": "hint.where.C05",
+"speaker": "C05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V babkinej záhradnej dielni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dielňa ZVON. Zameraj sa na: Stolový uzol ZVON."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-M12",
+"chunk": "R2",
+"era": "2035",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M12 · Prístup do Atlasu",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.F01",
+"speaker": "F01 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pred hotelom Grand Jasná sa s Ninou porozprávaj o téme „Prichádzam kvôli fondu Z-17“.",
+"new": "Pred hotelom Grand Jasná sa s Ninou porozprávaj o téme „Prichádzam kvôli fondu Z-17“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F01",
+"speaker": "F01 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Babkin fond Z-17 skončil v Atlase v Jasnej. Niekto tam za ten fond musí zodpovedať.",
+"state": "new"
+},
+{
+"key": "hint.where.F01",
+"speaker": "F01 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pred hotelom Grand Jasná.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pred hotelom Grand Jasná. Zameraj sa na: Nina Švecová."
+},
+{
+"key": "context.exact_step.F02",
+"speaker": "F02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pôvodnú školskú kazetu použi na Tamaru v lobby hotela Grand Jasná.",
+"new": "Pôvodnú školskú kazetu použi na Tamaru v lobby hotela Grand Jasná.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F02",
+"speaker": "F02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kazetu z roku 1995 bez čítačky s ničím neporovnám. Nina vravela, kto mi ju požičia.",
+"state": "new"
+},
+{
+"key": "hint.where.F02",
+"speaker": "F02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V lobby hotela Grand Jasná, u Tamary.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lobby hotela Grand Jasná. Zameraj sa na: Tamara Kráľová."
+},
+{
+"key": "context.exact_step.F03",
+"speaker": "F03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Potvrdené odovzdanie 2020 použi na Borisa vo výstavnom salóne hotela; podľa neho nájde fond Z-17.",
+"new": "Potvrdené odovzdanie 2020 použi na Borisa vo výstavnom salóne hotela; podľa neho nájde fond Z-17.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F03",
+"speaker": "F03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kartu fondu Z-17 mi vydajú, keď ukážem, že babkinu krabicu vždy odovzdali tak, ako mali.",
+"state": "new"
+},
+{
+"key": "hint.where.F03",
+"speaker": "F03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo výstavnom salóne hotela, u Borisa.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Výstavný salón hotela Grand Jasná. Zameraj sa na: Boris Urban."
+},
+{
+"key": "context.exact_step.F04",
+"speaker": "F04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Katalógovú kartu fondu Z-17 použi na Sáru v klientskom centre Biela Púť.",
+"new": "Katalógovú kartu fondu Z-17 použi na Sáru v klientskom centre Biela Púť.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F04",
+"speaker": "F04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Na lanovku a do pavilónu potrebujem preukaz aj lístok. Nina vravela, kto ich vybavuje.",
+"state": "new"
+},
+{
+"key": "hint.where.F04",
+"speaker": "F04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V klientskom centre Biela Púť, u Sáry.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Klientske centrum Biela Púť. Zameraj sa na: Sára Vrbová."
+},
+{
+"key": "context.exact_step.J02",
+"speaker": "J02 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Spiatočný lístok na oba úseky použi na čítačku platného lístka pri dolnej stanici.",
+"new": "Spiatočný lístok na oba úseky použi na čítačku platného lístka pri dolnej stanici.",
+"state": "same"
+},
+{
+"key": "hint.nudge.J02",
+"speaker": "J02 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Lístok mám. Pavilón je hore pri Rotunde a pešo sa tam dnes nevyberiem.",
+"state": "new"
+},
+{
+"key": "hint.where.J02",
+"speaker": "J02 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri dolnej stanici na Bielej Púti.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Biela Púť pri dolnej stanici. Zameraj sa na: Čítačka platného lístka."
+},
+{
+"key": "context.exact_step.J03",
+"speaker": "J03 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na Priehybe nastúp na Funitel smer Chopok.",
+"new": "Na Priehybe nastúp na Funitel smer Chopok.",
+"state": "same"
+},
+{
+"key": "hint.nudge.J03",
+"speaker": "J03 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prvý úsek mám za sebou. Na Chopok sa ide ďalej, len inou lanovkou.",
+"state": "new"
+},
+{
+"key": "hint.where.J03",
+"speaker": "J03 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Priehybe, pri nástupe na Funitel.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Priehyba pri prestupe na Funitel. Zameraj sa na: Nástup na Funitel."
+},
+{
+"key": "context.exact_step.J04",
+"speaker": "J04 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V kabíne Funitelu dokonči jazdu pri vrcholovej stanici za oknom.",
+"new": "V kabíne Funitelu dokonči jazdu pri vrcholovej stanici za oknom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.J04",
+"speaker": "J04 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kabína ide hore. Vystúpiť sa dá, až keď dorazí do vrcholovej stanice.",
+"state": "new"
+},
+{
+"key": "hint.where.J04",
+"speaker": "J04 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V kabíne Funitelu, pri okne.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Kabína Funitelu medzi Priehybou a Chopkom. Zameraj sa na: Príchod do vrcholovej stanice."
+},
+{
+"key": "context.exact_step.F05",
+"speaker": "F05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Telefón použi na panel normalizácie pri Rotunde.",
+"new": "Telefón použi na panel normalizácie pri Rotunde.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F05",
+"speaker": "F05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Nina hovorila, že prístroj záznamy zarovnáva. Podľa akého pravidla? To by som chcel mať čierne na bielom.",
+"state": "new"
+},
+{
+"key": "hint.where.F05",
+"speaker": "F05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri Rotunde na Chopku.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chopok pri Rotunde. Zameraj sa na: Panel normalizácie."
+},
+{
+"key": "context.exact_step.F06",
+"speaker": "F06 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Lokálnu zvukovú čítačku použi na servisný terminál v pavilóne Atlasu.",
+"new": "Lokálnu zvukovú čítačku použi na servisný terminál v pavilóne Atlasu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F06",
+"speaker": "F06 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mám kazetu, odtlačok aj fotku pravidla. Treba porovnať pôvodný hlas s tým, čo z neho ostalo.",
+"state": "new"
+},
+{
+"key": "hint.where.F06",
+"speaker": "F06 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V servisnom pavilóne Atlasu pri Rotunde.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Servisný pavilón výstavy Atlas. Zameraj sa na: Servisný terminál."
+}
+],
+"counts": {
+"changed": 0,
+"new": 18,
+"same": 9
+}
+},
+{
+"id": "R2-hints-M13",
+"chunk": "R2",
+"era": "2035",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M13 · Zastaviť zápis",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.F07",
+"speaker": "F07 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Prenosný chronometer ZVON použi na pasívny stojan pri chodníku pri Vrbickom plese.",
+"new": "Prenosný chronometer ZVON použi na pasívny stojan pri chodníku pri Vrbickom plese.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F07",
+"speaker": "F07 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Terminálu ešte chýba miestna stopa. Nina povedala, kde ju zachytím bez jediného zásahu.",
+"state": "new"
+},
+{
+"key": "hint.where.F07",
+"speaker": "F07 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri Vrbickom plese, pri chodníku. Lanovkami dole a od hotela pešo.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chodník pri Vrbickom plese. Zameraj sa na: Pasívny stojan pri chodníku."
+},
+{
+"key": "context.exact_step.F08",
+"speaker": "F08 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Miestnu referenčnú stopu použi na servisný terminál v pavilóne Atlasu.",
+"new": "Miestnu referenčnú stopu použi na servisný terminál v pavilóne Atlasu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F08",
+"speaker": "F08 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Stopa z plesa je v chronometri. Nina ju potrebuje vidieť hore v pavilóne.",
+"state": "new"
+},
+{
+"key": "hint.where.F08",
+"speaker": "F08 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V servisnom pavilóne Atlasu, pri termináli.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Servisný pavilón výstavy Atlas. Zameraj sa na: Servisný terminál."
+},
+{
+"key": "context.exact_step.J05",
+"speaker": "J05 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Zachovaný návratový mostík použi na oddelený návratový konektor Atlasu na vyhliadkovej terase.",
+"new": "Zachovaný návratový mostík použi na oddelený návratový konektor Atlasu na vyhliadkovej terase.",
+"state": "same"
+},
+{
+"key": "hint.nudge.J05",
+"speaker": "J05 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Prepínač nič nezmení, kým nebude návrat bezpečný. Na to som si v roku 1982 niečo odložil.",
+"state": "new"
+},
+{
+"key": "hint.where.J05",
+"speaker": "J05 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na vyhliadkovej terase pri Rotunde.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Vyhliadková terasa pri Rotunde. Zameraj sa na: Oddelený návratový konektor Atlasu."
+},
+{
+"key": "context.exact_step.F09",
+"speaker": "F09 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na vyhliadkovej terase prepni prepínač zápisu na MONITOR.",
+"new": "Na vyhliadkovej terase prepni prepínač zápisu na MONITOR.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F09",
+"speaker": "F09 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Návrat je istený. Teraz treba zastaviť samotné mazanie. Nina povedala ako.",
+"state": "new"
+},
+{
+"key": "hint.where.F09",
+"speaker": "F09 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na vyhliadkovej terase, pri prepínači.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Vyhliadková terasa pri Rotunde. Zameraj sa na: Prepínač zápisu."
+},
+{
+"key": "context.exact_step.F10",
+"speaker": "F10 · presný krok (Ľahká, len pre kontrolu)",
+"old": "V servisnom pavilóne potvrď na servisnom termináli vstup do chronokomory.",
+"new": "V servisnom pavilóne potvrď na servisnom termináli vstup do chronokomory.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F10",
+"speaker": "F10 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zápis stojí. Systém ma pustí do komory za Viktorom, až keď mu to potvrdím.",
+"state": "new"
+},
+{
+"key": "hint.where.F10",
+"speaker": "F10 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V servisnom pavilóne, pri termináli.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Servisný pavilón výstavy Atlas. Zameraj sa na: Servisný terminál."
+}
+],
+"counts": {
+"changed": 0,
+"new": 10,
+"same": 5
+}
+},
+{
+"id": "R2-hints-M14",
+"chunk": "R2",
+"era": "2035",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M14 · Čo z hlasu zostalo",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.F11",
+"speaker": "F11 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Leinu nezmenenú hlasovú správu použi na Viktora v chronokomore.",
+"new": "Leinu nezmenenú hlasovú správu použi na Viktora v chronokomore.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F11",
+"speaker": "F11 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Viktor musí počuť, čo jeho systém zahodil. Celé, aj s pauzami.",
+"state": "new"
+},
+{
+"key": "hint.where.F11",
+"speaker": "F11 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, u Viktora.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Viktor Korman."
+}
+],
+"counts": {
+"changed": 0,
+"new": 2,
+"same": 1
+}
+},
+{
+"id": "R2-hints-M15",
+"chunk": "R2",
+"era": "2035",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "M15 · Štyria svedkovia",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.F12",
+"speaker": "F12 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Overený odtlačok z roku 1962 vlož do portu Pôvod.",
+"new": "Overený odtlačok z roku 1962 vlož do portu Pôvod.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F12",
+"speaker": "F12 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Štyri porty, štyri dôkazy. Prvý patrí tomu, ako sa to celé začalo.",
+"state": "new"
+},
+{
+"key": "hint.where.F12",
+"speaker": "F12 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, pri portoch panelu obnovy.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Port Pôvod."
+},
+{
+"key": "context.exact_step.F13",
+"speaker": "F13 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pôvodnú školskú kazetu vlož do portu Hlas.",
+"new": "Pôvodnú školskú kazetu vlož do portu Hlas.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F13",
+"speaker": "F13 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Ďalší port chce hlas. Originál, nie zhrnutie.",
+"state": "new"
+},
+{
+"key": "hint.where.F13",
+"speaker": "F13 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, pri portoch panelu obnovy.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Port Hlas."
+},
+{
+"key": "context.exact_step.F14",
+"speaker": "F14 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Potvrdené odovzdanie 2020 vlož do portu Súhlas.",
+"new": "Potvrdené odovzdanie 2020 vlož do portu Súhlas.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F14",
+"speaker": "F14 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Ďalší port chce dôkaz, že babka s presunom svojho fondu súhlasila.",
+"state": "new"
+},
+{
+"key": "hint.where.F14",
+"speaker": "F14 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, pri portoch panelu obnovy.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Port Súhlas."
+},
+{
+"key": "context.exact_step.F15",
+"speaker": "F15 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Podpísaný obnovovací postup vlož do portu Návrat.",
+"new": "Podpísaný obnovovací postup vlož do portu Návrat.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F15",
+"speaker": "F15 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Posledný port patrí tomu, ako veci vrátiť späť. Ten papier podpísala Nina.",
+"state": "new"
+},
+{
+"key": "hint.where.F15",
+"speaker": "F15 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, pri portoch panelu obnovy.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Port Návrat."
+},
+{
+"key": "context.exact_step.F16",
+"speaker": "F16 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na paneli obnovy priraď roky: Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035. Puzzle P04.",
+"new": "Na paneli obnovy priraď roky: Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035. Puzzle P04.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F16",
+"speaker": "F16 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Panel chce ku každému portu rok. Každý dôkaz si ten svoj nesie so sebou.",
+"state": "new"
+},
+{
+"key": "hint.where.F16",
+"speaker": "F16 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Ku každému portu patrí rok dôkazu, ktorý v ňom je. Pomôžu predmety a zápisník.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Panel obnovy."
+},
+{
+"key": "context.exact_step.F17",
+"speaker": "F17 · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na paneli obnovy potvrď obnovu záznamov.",
+"new": "Na paneli obnovy potvrď obnovu záznamov.",
+"state": "same"
+},
+{
+"key": "hint.nudge.F17",
+"speaker": "F17 · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Všetko je na svojom mieste. Zostáva posledné potvrdenie a potom domov.",
+"state": "new"
+},
+{
+"key": "hint.where.F17",
+"speaker": "F17 · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V chronokomore, pri paneli obnovy.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chronokomora pavilónu Atlas. Zameraj sa na: Panel obnovy."
+}
+],
+"counts": {
+"changed": 0,
+"new": 12,
+"same": 6
+}
+},
+{
+"id": "R2-hints-Q1",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q1 · Bodka bez bodky",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q1A",
+"speaker": "Q1A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na ulici medzi plotmi sa s Lenkou porozprávaj o téme „Čo je s Bodkom?“",
+"new": "Na ulici medzi plotmi sa s Lenkou porozprávaj o téme „Čo je s Bodkom?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q1A",
+"speaker": "Q1A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Susedin pes vyzerá smutnejšie, než by mal. Niečo mu chýba.",
+"state": "new"
+},
+{
+"key": "hint.where.Q1A",
+"speaker": "Q1A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na ulici medzi plotmi, pri susede so psom.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Ulica medzi plotmi. Zameraj sa na: Lenka Bartošová."
+},
+{
+"key": "context.exact_step.Q1B",
+"speaker": "Q1B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pri retenčnej nádrži vezmi červenú loptičku.",
+"new": "Pri retenčnej nádrži vezmi červenú loptičku.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q1B",
+"speaker": "Q1B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Bodka stratil loptičku. Lenka vie, kde ju naposledy videla.",
+"state": "new"
+},
+{
+"key": "hint.where.Q1B",
+"speaker": "Q1B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri retenčnej nádrži v Čiernej Vode, kde končí cyklochodník.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chodník pri retenčnej nádrži. Zameraj sa na: Červená loptička."
+},
+{
+"key": "context.exact_step.Q1C",
+"speaker": "Q1C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Bodkovu loptičku použi na Lenku na ulici medzi plotmi.",
+"new": "Bodkovu loptičku použi na Lenku na ulici medzi plotmi.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q1C",
+"speaker": "Q1C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Loptička je suchá a poriadne obhryzená. Niekomu chlpatému už určite chýba.",
+"state": "new"
+},
+{
+"key": "hint.where.Q1C",
+"speaker": "Q1C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na ulici medzi plotmi, u Lenky.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Ulica medzi plotmi. Zameraj sa na: Lenka Bartošová."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-Q2",
+"chunk": "R2",
+"era": "2020",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q2 · Výveska pre všetkých",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q2A",
+"speaker": "Q2A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pri výveske v Čiernej Vode sa s pánom Jozefom porozprávaj o téme „Pomôcť vám s oznamom?“",
+"new": "Pri výveske v Čiernej Vode sa s pánom Jozefom porozprávaj o téme „Pomôcť vám s oznamom?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q2A",
+"speaker": "Q2A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Starší pán pri výveske sa márne snaží niečo prečítať.",
+"state": "new"
+},
+{
+"key": "hint.where.Q2A",
+"speaker": "Q2A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri výveske v Čiernej Vode.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Čierna Voda pri výveske. Zameraj sa na: Jozef Mlynár."
+},
+{
+"key": "context.exact_step.Q2B",
+"speaker": "Q2B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na výdajnom mieste sa s Elou porozprávaj o téme „Máš oznam veľkým písmom?“",
+"new": "Na výdajnom mieste sa s Elou porozprávaj o téme „Máš oznam veľkým písmom?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q2B",
+"speaker": "Q2B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Pán Jozef potrebuje oznam na papieri a veľkými písmenami. Oznamy v obci chystá Ela.",
+"state": "new"
+},
+{
+"key": "hint.where.Q2B",
+"speaker": "Q2B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na výdajnom mieste pri Lúčnom koníku, u Ely.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lúčny koník – výdajné miesto. Zameraj sa na: Ela Švecová."
+},
+{
+"key": "context.exact_step.Q2C",
+"speaker": "Q2C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Veľký čitateľný oznam použi na komunitnú vývesku v Čiernej Vode.",
+"new": "Veľký čitateľný oznam použi na komunitnú vývesku v Čiernej Vode.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q2C",
+"speaker": "Q2C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Oznam veľkým písmom mám. Pán Jozef si ho prečíta, len keď bude visieť tam, kam sa pozerá.",
+"state": "new"
+},
+{
+"key": "hint.where.Q2C",
+"speaker": "Q2C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri výveske v Čiernej Vode.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Čierna Voda pri výveske. Zameraj sa na: Komunitná výveska."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-Q3",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q3 · Celý tím na jednej fotke",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q3A",
+"speaker": "Q3A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na školskom dvore sa so Soňou porozprávaj o téme „Hľadáš nejakú fotografiu?“",
+"new": "Na školskom dvore sa so Soňou porozprávaj o téme „Hľadáš nejakú fotografiu?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q3A",
+"speaker": "Q3A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dievča na školskom dvore listuje v albume a niečo v ňom chýba.",
+"state": "new"
+},
+{
+"key": "hint.where.Q3A",
+"speaker": "Q3A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na školskom dvore.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský dvor. Zameraj sa na: Soňa Urbanová."
+},
+{
+"key": "context.exact_step.Q3B",
+"speaker": "Q3B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pri kiosku sa so Zitou porozprávaj o téme „Máte obálku pre školu?“",
+"new": "Pri kiosku sa so Zitou porozprávaj o téme „Máte obálku pre školu?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q3B",
+"speaker": "Q3B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Soňa hľadá fotku celého družstva. Zabudnutá obálka s ňou vraj skončila pri kiosku.",
+"state": "new"
+},
+{
+"key": "hint.where.Q3B",
+"speaker": "Q3B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri kiosku na sídliskovom dvore, u Zity.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sídliskový dvor s kioskom. Zameraj sa na: Zita Ondrušová."
+},
+{
+"key": "context.exact_step.Q3C",
+"speaker": "Q3C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Obálku s tímovým negatívom použi na Alenu vo fotoateliéri Svetlo.",
+"new": "Obálku s tímovým negatívom použi na Alenu vo fotoateliéri Svetlo.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q3C",
+"speaker": "Q3C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "V obálke je len negatív. Do albumu treba fotografiu.",
+"state": "new"
+},
+{
+"key": "hint.where.Q3C",
+"speaker": "Q3C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fotoateliéri Svetlo, u Aleny.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fotoateliér Svetlo. Zameraj sa na: Alena Svobodová."
+},
+{
+"key": "context.exact_step.Q3D",
+"speaker": "Q3D · presný krok (Ľahká, len pre kontrolu)",
+"old": "Fotografiu družstva použi na Soňu na školskom dvore.",
+"new": "Fotografiu družstva použi na Soňu na školskom dvore.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q3D",
+"speaker": "Q3D · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Fotka je hotová a je na nej celé družstvo. Aj jeden chlapec, ktorého poznám zo zrkadla.",
+"state": "new"
+},
+{
+"key": "hint.where.Q3D",
+"speaker": "Q3D · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na školskom dvore, u Sone.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školský dvor. Zameraj sa na: Soňa Urbanová."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-Q4",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q4 · Štyri zastávky",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q4A",
+"speaker": "Q4A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Prečo tá melódia nekončí?“",
+"new": "Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Prečo tá melódia nekončí?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q4A",
+"speaker": "Q4A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Muzikant na nástupišti hrá stále tú istú melódiu a nikdy ju nedohrá.",
+"state": "new"
+},
+{
+"key": "hint.where.Q4A",
+"speaker": "Q4A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Karloveskom nástupišti, u muzikanta.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Karloveské nástupište. Zameraj sa na: Emil Belan."
+},
+{
+"key": "context.exact_step.Q4B",
+"speaker": "Q4B · presný krok (Ľahká, len pre kontrolu)",
+"old": "V antikvariáte sa s Vierou porozprávaj o téme „Máte Emilove noty?“",
+"new": "V antikvariáte sa s Vierou porozprávaj o téme „Máte Emilove noty?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q4B",
+"speaker": "Q4B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Emil zabudol, ako jeho skladba končí. Noty by mohli ležať tam, kam sa dostanú staré knihy.",
+"state": "new"
+},
+{
+"key": "hint.where.Q4B",
+"speaker": "Q4B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V antikvariáte Pod druhou rukou, u Viery.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Antikvariát Pod druhou rukou. Zameraj sa na: Viera Holubová."
+},
+{
+"key": "context.exact_step.Q4C",
+"speaker": "Q4C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Noty k Emilovej skladbe použi na Emila na Karloveskom nástupišti.",
+"new": "Noty k Emilovej skladbe použi na Emila na Karloveskom nástupišti.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q4C",
+"speaker": "Q4C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Noty sa našli. Štyri zastávky môžu konečne dôjsť až na koniec.",
+"state": "new"
+},
+{
+"key": "hint.where.Q4C",
+"speaker": "Q4C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na Karloveskom nástupišti, u Emila.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Karloveské nástupište. Zameraj sa na: Emil Belan."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-Q5",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q5 · Mapa rozsvietených okien",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q5A",
+"speaker": "Q5A · presný krok (Ľahká, len pre kontrolu)",
+"old": "V petržalskom podchode sa s Jurajom porozprávaj o téme „Čo chýba mape svetiel?“",
+"new": "V petržalskom podchode sa s Jurajom porozprávaj o téme „Čo chýba mape svetiel?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q5A",
+"speaker": "Q5A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Mladý maliar v Petržalke stojí pred nedokončeným panelom a niečo mu chýba.",
+"state": "new"
+},
+{
+"key": "hint.where.Q5A",
+"speaker": "Q5A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Petržalke, pri nedokončenom paneli.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Petržalský podchod. Zameraj sa na: Juraj Križan."
+},
+{
+"key": "context.exact_step.Q5B",
+"speaker": "Q5B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Keď ťa školník zapíše ako návštevu, porozprávaj sa s Tónom vo vstupnej chodbe o téme „Kúsok kriedy na panel?“",
+"new": "Keď ťa školník zapíše ako návštevu, porozprávaj sa s Tónom vo vstupnej chodbe o téme „Kúsok kriedy na panel?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q5B",
+"speaker": "Q5B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Jurajovi chýba biela krieda. Školy jej majú celé krabice a školník ich má pod kľúčom.",
+"state": "new"
+},
+{
+"key": "hint.where.Q5B",
+"speaker": "Q5B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V škole na Sokolíkovej, u školníka Tóna.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Školská vstupná chodba. Zameraj sa na: Anton Farkaš."
+},
+{
+"key": "context.exact_step.Q5C",
+"speaker": "Q5C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Bielu školskú kriedu použi na povolený výtvarný panel v podchode.",
+"new": "Bielu školskú kriedu použi na povolený výtvarný panel v podchode.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q5C",
+"speaker": "Q5C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Kriedu mám aj s povolením. Juraj má skicu, chýbajú len svetlá v oknách.",
+"state": "new"
+},
+{
+"key": "hint.where.Q5C",
+"speaker": "Q5C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V petržalskom podchode, kde maľuje Juraj.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Petržalský podchod. Zameraj sa na: Povolený výtvarný panel."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-Q6",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q6 · Béla sa vracia",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q6A",
+"speaker": "Q6A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na pošte sa s Alojzom porozprávaj o téme „Kde je váš holub?“",
+"new": "Na pošte sa s Alojzom porozprávaj o téme „Kde je váš holub?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q6A",
+"speaker": "Q6A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Pán za poštovou prepážkou vyzerá, akoby mu niekto chýbal.",
+"state": "new"
+},
+{
+"key": "hint.where.Q6A",
+"speaker": "Q6A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na pošte v Ivanke.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pošta s prepážkou. Zameraj sa na: Alojz Baran."
+},
+{
+"key": "context.exact_step.Q6B",
+"speaker": "Q6B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na dvore dielne sa so Štefanom porozprávaj o téme „Krmivo pre Bélu“.",
+"new": "Na dvore dielne sa so Štefanom porozprávaj o téme „Krmivo pre Bélu“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q6B",
+"speaker": "Q6B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Béla nepriletí na obyčajné zrno. Jeho zmes bude mať ten, kto v Ivanke vydáva materiál.",
+"state": "new"
+},
+{
+"key": "hint.where.Q6B",
+"speaker": "Q6B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na dvore hospodárskej dielne, u skladníka.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dvor hospodárskej dielne. Zameraj sa na: Štefan Haluška."
+},
+{
+"key": "context.exact_step.Q6C",
+"speaker": "Q6C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Hrsť semien pre Bélu použi na poštového holuba v parku pri kaštieli.",
+"new": "Hrsť semien pre Bélu použi na poštového holuba v parku pri kaštieli.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q6C",
+"speaker": "Q6C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Bélovu zmes mám. Naháňať ho nebudem, stačí ho nájsť.",
+"state": "new"
+},
+{
+"key": "hint.where.Q6C",
+"speaker": "Q6C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V parku pri kaštieli.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Park pri kaštieli. Zameraj sa na: Poštový holub."
+},
+{
+"key": "context.exact_step.Q6D",
+"speaker": "Q6D · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na pošte sa znova porozprávaj s Alojzom o téme „Bélov návrat“.",
+"new": "Na pošte sa znova porozprávaj s Alojzom o téme „Bélov návrat“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q6D",
+"speaker": "Q6D · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Béla odletel smerom k pošte. Pán Baran by mal vedieť, že je späť.",
+"state": "new"
+},
+{
+"key": "hint.where.Q6D",
+"speaker": "Q6D · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na pošte, u pána Barana za prepážkou.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Pošta s prepážkou. Zameraj sa na: Alojz Baran."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-Q7",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q7 · Žiaden strach, miláčik",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q7A",
+"speaker": "Q7A · presný krok (Ľahká, len pre kontrolu)",
+"old": "V kultúrnej sále sa s Rudom porozprávaj o téme „Môžem pomôcť so scenárom?“",
+"new": "V kultúrnej sále sa s Rudom porozprávaj o téme „Môžem pomôcť so scenárom?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q7A",
+"speaker": "Q7A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Herec v sále drží dramatickú pauzu podozrivo dlho. Akoby mu niečo chýbalo.",
+"state": "new"
+},
+{
+"key": "hint.where.Q7A",
+"speaker": "Q7A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Ivanke, kde sa chystá divadelná skúška.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Kultúrna sála pred skúškou. Zameraj sa na: Rudolf Pavlík."
+},
+{
+"key": "context.exact_step.Q7B",
+"speaker": "Q7B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Na povale technického archívu vezmi ochotnícky scenár.",
+"new": "Na povale technického archívu vezmi ochotnícky scenár.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q7B",
+"speaker": "Q7B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Rudo stratil scenár tam, kde kreslila Mira.",
+"state": "new"
+},
+{
+"key": "hint.where.Q7B",
+"speaker": "Q7B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na povale pri meracej miestnosti.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Povala technického archívu. Zameraj sa na: Ochotnícky scenár."
+},
+{
+"key": "context.exact_step.Q7C",
+"speaker": "Q7C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Rudov scenár použi na Ruda v kultúrnej sále.",
+"new": "Rudov scenár použi na Ruda v kultúrnej sále.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q7C",
+"speaker": "Q7C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Scenár sa našiel. Bez neho skúška nezačne.",
+"state": "new"
+},
+{
+"key": "hint.where.Q7C",
+"speaker": "Q7C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V kultúrnej sále, u Ruda.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Kultúrna sála pred skúškou. Zameraj sa na: Rudolf Pavlík."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-hints-Q8",
+"chunk": "R2",
+"era": "2035",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q8 · Adresa nie je len súradnica",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q8A",
+"speaker": "Q8A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pri dolnej stanici sa s Očkom porozprávaj o téme „Kam máte doručiť balík?“",
+"new": "Pri dolnej stanici sa s Očkom porozprávaj o téme „Kam máte doručiť balík?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q8A",
+"speaker": "Q8A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Doručovací robot pri stanici stojí v snehu s balíkom a nehýbe sa.",
+"state": "new"
+},
+{
+"key": "hint.where.Q8A",
+"speaker": "Q8A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri dolnej stanici na Bielej Púti.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Biela Púť pri dolnej stanici. Zameraj sa na: Doručovací robot Očko."
+},
+{
+"key": "context.exact_step.Q8B",
+"speaker": "Q8B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pri Vrbickom plese si prezri lavičku so psom.",
+"new": "Pri Vrbickom plese si prezri lavičku so psom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q8B",
+"speaker": "Q8B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Adresa na balíku nie je ulica, ale opis miesta. Treba sa ísť pozrieť, čo tam je dnes.",
+"state": "new"
+},
+{
+"key": "hint.where.Q8B",
+"speaker": "Q8B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri Vrbickom plese, na chodníku.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Chodník pri Vrbickom plese. Zameraj sa na: Lavička so psom."
+},
+{
+"key": "context.exact_step.Q8C",
+"speaker": "Q8C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Očkovu doručovaciu požiadavku použi na Tamaru v lobby hotela Grand Jasná.",
+"new": "Očkovu doručovaciu požiadavku použi na Tamaru v lobby hotela Grand Jasná.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q8C",
+"speaker": "Q8C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Putovná dielňa už pri plese nie je. Pri lavičke som sa dozvedel, kam sa presunula.",
+"state": "new"
+},
+{
+"key": "hint.where.Q8C",
+"speaker": "Q8C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V lobby hotela Grand Jasná.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Lobby hotela Grand Jasná. Zameraj sa na: Tamara Kráľová."
+},
+{
+"key": "context.exact_step.Q8D",
+"speaker": "Q8D · presný krok (Ľahká, len pre kontrolu)",
+"old": "Potvrdenie opravovne použi na Očka pri dolnej stanici.",
+"new": "Potvrdenie opravovne použi na Očka pri dolnej stanici.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q8D",
+"speaker": "Q8D · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Príjemkyňa je overená. Očko stále stojí v snehu a čaká na správu.",
+"state": "new"
+},
+{
+"key": "hint.where.Q8D",
+"speaker": "Q8D · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Pri dolnej stanici na Bielej Púti, u Očka.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Biela Púť pri dolnej stanici. Zameraj sa na: Doručovací robot Očko."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-Q9",
+"chunk": "R2",
+"era": "1982",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q9 · Nápad mimo predlohy",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q9A",
+"speaker": "Q9A · presný krok (Ľahká, len pre kontrolu)",
+"old": "V triede pred výstavkou v roku 1982 sa s Janou porozprávaj o téme „Janin vlastný návrh“.",
+"new": "V triede pred výstavkou v roku 1982 sa s Janou porozprávaj o téme „Janin vlastný návrh“.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9A",
+"speaker": "Q9A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Dievča v triede schováva svoj návrh pod vzorovou schémou.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9A",
+"speaker": "Q9A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V jednej triede školy v roku 1982.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Trieda pred technickou výstavkou v roku 1982. Zameraj sa na: Jana Vargová."
+},
+{
+"key": "context.exact_step.Q9B",
+"speaker": "Q9B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Janinu pôvodnú schému použi na učiteľa Dobroviča.",
+"new": "Janinu pôvodnú schému použi na učiteľa Dobroviča.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9B",
+"speaker": "Q9B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Jana súhlasí, aby jej návrh videl učiteľ. Aj s poznámkami.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9B",
+"speaker": "Q9B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V tej istej triede, u učiteľa Dobroviča.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Trieda pred technickou výstavkou v roku 1982. Zameraj sa na: Učiteľ Dobrovič."
+},
+{
+"key": "context.exact_step.Q9C",
+"speaker": "Q9C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Schému s povolením na výstavku použi na Janu.",
+"new": "Schému s povolením na výstavku použi na Janu.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9C",
+"speaker": "Q9C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Učiteľ schválil Janin návrh na výstavku. Jana to ešte nevie.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9C",
+"speaker": "Q9C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V triede pred výstavkou, u Jany.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Trieda pred technickou výstavkou v roku 1982. Zameraj sa na: Jana Vargová."
+},
+{
+"key": "context.exact_step.Q9D",
+"speaker": "Q9D · presný krok (Ľahká, len pre kontrolu)",
+"old": "Vo fyzikálnom kabinete v roku 1995 sa s Janou porozprávaj o téme „Čo bolo s vašou schémou?“",
+"new": "Vo fyzikálnom kabinete v roku 1995 sa s Janou porozprávaj o téme „Čo bolo s vašou schémou?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9D",
+"speaker": "Q9D · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zaujíma ma, čo z Janinho návrhu zostalo o trinásť rokov neskôr.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9D",
+"speaker": "Q9D · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fyzikálnom kabinete v roku 1995.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fyzikálny kabinet. Zameraj sa na: Jana Vargová."
+},
+{
+"key": "context.exact_step.Q9E",
+"speaker": "Q9E · presný krok (Ľahká, len pre kontrolu)",
+"old": "Vo fyzikálnom kabinete v roku 2020 sa s Janou porozprávaj o téme „Čo robíte s notebookmi?“",
+"new": "Vo fyzikálnom kabinete v roku 2020 sa s Janou porozprávaj o téme „Čo robíte s notebookmi?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9E",
+"speaker": "Q9E · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Aj v roku 2020 by som sa Jany rád spýtal, čo robí.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9E",
+"speaker": "Q9E · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo fyzikálnom kabinete v roku 2020.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Fyzikálny kabinet v roku 2020. Zameraj sa na: Jana Vargová."
+},
+{
+"key": "context.exact_step.Q9F",
+"speaker": "Q9F · presný krok (Ľahká, len pre kontrolu)",
+"old": "Vo výstavnom salóne hotela Grand Jasná sa s Janou porozprávaj o téme „Jana, čo je s vašou schémou?“",
+"new": "Vo výstavnom salóne hotela Grand Jasná sa s Janou porozprávaj o téme „Jana, čo je s vašou schémou?“",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q9F",
+"speaker": "Q9F · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Jana chcela mať raz celý zošit schém. V roku 2035 by som rád videl, čo z neho vzniklo.",
+"state": "new"
+},
+{
+"key": "hint.where.Q9F",
+"speaker": "Q9F · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Vo výstavnom salóne hotela Grand Jasná.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Výstavný salón hotela Grand Jasná. Zameraj sa na: Jana Vargová."
+}
+],
+"counts": {
+"changed": 0,
+"new": 12,
+"same": 6
+}
+},
+{
+"id": "R2-hints-Q10",
+"chunk": "R2",
+"era": "1962",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q10 · Prvý posledný zvonec",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q10A",
+"speaker": "Q10A · presný krok (Ľahká, len pre kontrolu)",
+"old": "Porozprávaj sa so Zuzanou v parku o zvončeku, ktorý nezvoní.",
+"new": "Porozprávaj sa so Zuzanou v parku o zvončeku, ktorý nezvoní.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q10A",
+"speaker": "Q10A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Malá Zuzana má v tráve zvonček, ktorý necinká.",
+"state": "new"
+},
+{
+"key": "hint.where.Q10A",
+"speaker": "Q10A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Ivanke v parku, u Zuzany.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Park pri kaštieli. Zameraj sa na: Zuzana."
+},
+{
+"key": "context.exact_step.Q10B",
+"speaker": "Q10B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Zuzanin lístok podaj Štefanovi na dvore dielne.",
+"new": "Zuzanin lístok podaj Štefanovi na dvore dielne.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q10B",
+"speaker": "Q10B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zuzana napísala lístok na kúsok kože. Kto v Ivanke vydáva materiál na lístok?",
+"state": "new"
+},
+{
+"key": "hint.where.Q10B",
+"speaker": "Q10B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na dvore hospodárskej dielne, u skladníka.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Dvor hospodárskej dielne. Zameraj sa na: Štefan Haluška."
+},
+{
+"key": "context.exact_step.Q10C",
+"speaker": "Q10C · presný krok (Ľahká, len pre kontrolu)",
+"old": "V brašni spoj kožený odrezok s triednym zvončekom.",
+"new": "V brašni spoj kožený odrezok s triednym zvončekom.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q10C",
+"speaker": "Q10C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zvonček potrebuje nové pútko. Všetko, čo na to treba, už nosím pri sebe.",
+"state": "new"
+},
+{
+"key": "hint.where.Q10C",
+"speaker": "Q10C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "To opravím v brašni.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš."
+},
+{
+"key": "context.exact_step.Q10D",
+"speaker": "Q10D · presný krok (Ľahká, len pre kontrolu)",
+"old": "Opravený zvonček použi na Zuzanu v parku.",
+"new": "Opravený zvonček použi na Zuzanu v parku.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q10D",
+"speaker": "Q10D · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zvonček znova zvoní. Škoda, že prvé zazvonenie počujem iba ja.",
+"state": "new"
+},
+{
+"key": "hint.where.Q10D",
+"speaker": "Q10D · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V parku pri kaštieli, u Zuzany.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Park pri kaštieli. Zameraj sa na: Zuzana."
+}
+],
+"counts": {
+"changed": 0,
+"new": 8,
+"same": 4
+}
+},
+{
+"id": "R2-hints-Q11",
+"chunk": "R2",
+"era": "1995",
+"kind": "Nápovedy (Štandardná / Ťažká)",
+"title": "Q11 · Druhý posledný zvonec",
+"where": "Nápoveda (H)",
+"note": "Štandardná: 1. postrčenie, 2. kde hľadať, nikdy presný krok. Ťažká: iba postrčenie, po 3 minútach bez pokroku.",
+"lines": [
+{
+"key": "context.exact_step.Q11A",
+"speaker": "Q11A · presný krok (Ľahká, len pre kontrolu)",
+"old": "V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli.",
+"new": "V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q11A",
+"speaker": "Q11A · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Chlapec s bicyklom ťuká do zvončeka a zvonček mlčí.",
+"state": "new"
+},
+{
+"key": "hint.where.Q11A",
+"speaker": "Q11A · Kde hľadať (Štandardná)",
+"old": "",
+"new": "Na dvore pri Sokolíkovej.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sokolíkovský dvor. Zameraj sa na: Kubo."
+},
+{
+"key": "context.exact_step.Q11B",
+"speaker": "Q11B · presný krok (Ľahká, len pre kontrolu)",
+"old": "Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore.",
+"new": "Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q11B",
+"speaker": "Q11B · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Zo zvončeka odskočil kus. Zuzana videla, kam sa zakotúľal.",
+"state": "new"
+},
+{
+"key": "hint.where.Q11B",
+"speaker": "Q11B · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Sokolíkovskom dvore, pod pichľavým stromom, kde končia lopty.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sokolíkovský dvor. Zameraj sa na: Modrý smrek."
+},
+{
+"key": "context.exact_step.Q11C",
+"speaker": "Q11C · presný krok (Ľahká, len pre kontrolu)",
+"old": "Vrchnák zvončeka použi na Kubov bicykel.",
+"new": "Vrchnák zvončeka použi na Kubov bicykel.",
+"state": "same"
+},
+{
+"key": "hint.nudge.Q11C",
+"speaker": "Q11C · Postrčenie (Štandardná a Ťažká)",
+"old": "",
+"new": "Vrchnák mám. Bez neho zvonček na konci roka nezazvoní.",
+"state": "new"
+},
+{
+"key": "hint.where.Q11C",
+"speaker": "Q11C · Kde hľadať (Štandardná)",
+"old": "",
+"new": "V Sokolíkovskom dvore, u Kuba.",
+"state": "new",
+"note": "Doteraz Štandardná ukazuje: Sokolíkovský dvor. Zameraj sa na: Kubov bicykel."
+}
+],
+"counts": {
+"changed": 0,
+"new": 6,
+"same": 3
+}
+},
+{
+"id": "R2-ui-PICKER",
+"chunk": "R2",
+"era": "Rozhranie",
+"kind": "Rozhranie: obťažnosť",
+"title": "Nová hra: výber obťažnosti",
+"where": "",
+"note": "",
+"lines": [
+{
+"key": "ui.menu.new_game",
+"speaker": "existing title-screen button",
+"old": "Nová hra",
+"new": "Nová hra",
+"state": "same"
+},
+{
+"key": "ui.difficulty.pick_title",
+"speaker": "dialog title",
+"old": "",
+"new": "Nová hra",
+"state": "new"
+},
+{
+"key": "ui.difficulty.pick_intro",
+"speaker": "intro sentence",
+"old": "",
+"new": "Vyber si, ako veľmi ti má nápoveda pomáhať. Obťažnosť mení iba nápovedu a kedykoľvek ju zmeníš v nastaveniach.",
+"state": "new"
+},
+{
+"key": "ui.difficulty.title",
+"speaker": "heading above the cards",
+"old": "",
+"new": "Obťažnosť",
+"state": "new"
+},
+{
+"key": "ui.difficulty.easy",
+"speaker": "card name",
+"old": "",
+"new": "Ľahká",
+"state": "new"
+},
+{
+"key": "ui.difficulty.easy_desc",
+"speaker": "card description",
+"old": "",
+"new": "Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie doplní.",
+"state": "new"
+},
+{
+"key": "ui.difficulty.standard",
+"speaker": "card name",
+"old": "",
+"new": "Štandardná",
+"state": "new"
+},
+{
+"key": "ui.difficulty.recommended",
+"speaker": "tag after the Standard name, lower case: 'Štandardná · odporúčaná'",
+"old": "",
+"new": "odporúčaná",
+"state": "new"
+},
+{
+"key": "ui.difficulty.standard_desc",
+"speaker": "card description",
+"old": "",
+"new": "Nápoveda ťa postrčí a povie, kde hľadať. Riešenie nechá na tebe.",
+"state": "new"
+},
+{
+"key": "ui.difficulty.hard",
+"speaker": "card name",
+"old": "",
+"new": "Ťažká",
+"state": "new"
+},
+{
+"key": "ui.difficulty.hard_desc",
+"speaker": "card description",
+"old": "",
+"new": "Iba krátke postrčenie, a to až po troch minútach bez pokroku. Hádanky bez pomoci.",
+"state": "new"
+},
+{
+"key": "ui.common.cancel",
+"speaker": "existing button",
+"old": "Zrušiť",
+"new": "Zrušiť",
+"state": "same"
+},
+{
+"key": "ui.difficulty.start",
+"speaker": "confirm button",
+"old": "",
+"new": "Začať hru",
+"state": "new"
+}
+],
+"counts": {
+"changed": 0,
+"new": 11,
+"same": 2
+}
+},
+{
+"id": "R2-ui-SETTINGS",
+"chunk": "R2",
+"era": "Rozhranie",
+"kind": "Rozhranie: obťažnosť",
+"title": "Nastavenia: nová karta Hra",
+"where": "",
+"note": "",
+"lines": [
+{
+"key": "ui.settings.title",
+"speaker": "existing screen title",
+"old": "Nastavenia",
+"new": "Nastavenia",
+"state": "same"
+},
+{
+"key": "ui.settings.tab_game",
+"speaker": "new tab",
+"old": "",
+"new": "Hra",
+"state": "new"
+},
+{
+"key": "ui.settings.tab_audio",
+"speaker": "existing tab",
+"old": "Zvuk",
+"new": "Zvuk",
+"state": "same"
+},
+{
+"key": "ui.difficulty.title",
+"speaker": "row label",
+"old": "Obťažnosť",
+"new": "Obťažnosť",
+"state": "same"
+},
+{
+"key": "ui.settings.difficulty_desc",
+"speaker": "caption under the choice during a game",
+"old": "",
+"new": "Platí pre rozohranú hru a uloží sa spolu s ňou.",
+"state": "new"
+},
+{
+"key": "ui.settings.difficulty_menu",
+"speaker": "shown instead when settings are opened from the title screen",
+"old": "",
+"new": "Obťažnosť si vyberieš pri novej hre. Počas hry ju zmeníš tu a každá uložená hra si pamätá svoju.",
+"state": "new"
+}
+],
+"counts": {
+"changed": 0,
+"new": 3,
+"same": 3
+}
+},
+{
+"id": "R2-ui-HINTS",
+"chunk": "R2",
+"era": "Rozhranie",
+"kind": "Rozhranie: obťažnosť",
+"title": "Obrazovka nápovedy (H) podľa obťažnosti",
+"where": "",
+"note": "",
+"lines": [
+{
+"key": "ui.hint.title",
+"speaker": "existing title",
+"old": "Nápoveda",
+"new": "Nápoveda",
+"state": "same"
+},
+{
+"key": "ui.hint.next",
+"speaker": "existing reveal button",
+"old": "Ďalšia nápoveda",
+"new": "Ďalšia nápoveda",
+"state": "same"
+},
+{
+"key": "ui.hint.show_solution",
+"speaker": "existing Easy last-level button",
+"old": "Ukázať presné riešenie",
+"new": "Ukázať presné riešenie",
+"state": "same"
+},
+{
+"key": "ui.hint.level_1",
+"speaker": "existing Easy label",
+"old": "Smer",
+"new": "Smer",
+"state": "same"
+},
+{
+"key": "ui.hint.level_2",
+"speaker": "existing Easy label",
+"old": "Postup",
+"new": "Postup",
+"state": "same"
+},
+{
+"key": "ui.hint.level_3",
+"speaker": "existing Easy label",
+"old": "Riešenie",
+"new": "Riešenie",
+"state": "same"
+},
+{
+"key": "ui.hint.difficulty",
+"speaker": "caption; {difficulty} = Ľahká / Štandardná / Ťažká",
+"old": "",
+"new": "Obťažnosť: {difficulty}",
+"state": "new"
+},
+{
+"key": "ui.hint.level_nudge",
+"speaker": "card label, level 1 on Standard and Hard",
+"old": "",
+"new": "Postrčenie",
+"state": "new"
+},
+{
+"key": "ui.hint.level_where",
+"speaker": "card label, level 2 on Standard",
+"old": "",
+"new": "Kde hľadať",
+"state": "new"
+},
+{
+"key": "ui.hint.standard_end",
+"speaker": "note after both Standard levels",
+"old": "",
+"new": "Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže nápoveda na ľahkej obťažnosti – prepneš na ňu v nastaveniach na karte Hra.",
+"state": "new"
+},
+{
+"key": "ui.hint.hard_wait_button",
+"speaker": "disabled button while waiting; {time} = 2:17",
+"old": "",
+"new": "Ešte nie ({time})",
+"state": "new"
+},
+{
+"key": "ui.hint.hard_wait",
+"speaker": "countdown sentence; {time} = 2:17",
+"old": "",
+"new": "Do postrčenia zostáva {time}.",
+"state": "new"
+},
+{
+"key": "ui.hint.hard_wait_note",
+"speaker": "rule under the countdown",
+"old": "",
+"new": "Na ťažkej obťažnosti sa nápoveda otvorí po troch minútach bez pokroku.",
+"state": "new"
+},
+{
+"key": "ui.hint.hard_end",
+"speaker": "note after the Hard nudge",
+"old": "",
+"new": "Na ťažkej obťažnosti je to všetko, čo nápoveda povie.",
+"state": "new"
+},
+{
+"key": "ui.hint.hard_no_puzzle",
+"speaker": "note on a puzzle step on Hard",
+"old": "",
+"new": "Na ťažkej obťažnosti hádanky riešiš bez pomoci.",
+"state": "new"
+},
+{
+"key": "ui.hud.hint",
+"speaker": "existing HUD button name",
+"old": "Nápoveda",
+"new": "Nápoveda",
+"state": "same"
+},
+{
+"key": "ui.hud.hint_wait",
+"speaker": "HUD hint button tooltip on Hard while waiting; {time} = 2:17",
+"old": "",
+"new": "Nápoveda (H): zostáva {time}",
+"state": "new"
+}
+],
+"counts": {
+"changed": 0,
+"new": 10,
+"same": 7
+}
+}
+]

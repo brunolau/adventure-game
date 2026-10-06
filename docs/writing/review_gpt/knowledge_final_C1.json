@@ -1,0 +1,108 @@
+{
+  "chunk": "r2_C1",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\knowledge.csv",
+  "overlay": [
+    "docs\\writing\\out_v3\\knowledge_ext.json"
+  ],
+  "cost_usd": 0.0518,
+  "batches": {
+    "C01": {
+      "hash": "d542e3453d007366",
+      "status": "ok",
+      "heading": "C01 · main quest M11A „Tá istá škola o štvrťstoročie neskôr“",
+      "keys": [
+        "action.C01.002",
+        "action.C01.k01",
+        "action.C01.k02"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11856,
+        "completion_tokens": 375,
+        "total_tokens": 12231,
+        "cost": 0.0227874,
+        "prompt_tokens_details": {
+          "cached_tokens": 3339,
+          "cache_write_tokens": 3339
+        }
+      },
+      "usd": 0.0228
+    },
+    "ELA": {
+      "hash": "a431cafdc53cd116",
+      "status": "ok",
+      "heading": "ELA · Ela Švecová (40) — S03",
+      "keys": [
+        "topic.ELA.extra 2.label",
+        "topic.ELA.extra 2.001",
+        "topic.ELA.extra 2.002"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13822,
+        "completion_tokens": 865,
+        "total_tokens": 14687,
+        "cost": 0.0290151,
+        "prompt_tokens_details": {
+          "cached_tokens": 3831,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.029
+    }
+  },
+  "keys": {
+    "action.C01.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mostík? A kde ho vezmem?",
+      "batch": "C01"
+    },
+    "action.C01.k01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A teraz vážne. Ak chceš to mazanie zastaviť, potrebuješ návratový mostík.",
+      "batch": "C01"
+    },
+    "action.C01.k02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Fyzický, keramický, žiadny ďalší prístroj. Bez neho ťa nikam nepustím.",
+      "batch": "C01"
+    },
+    "topic.ELA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tvoja dcéra",
+      "batch": "ELA"
+    },
+    "topic.ELA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa má malá? Teda, asi už nie taká malá.",
+      "batch": "ELA"
+    },
+    "topic.ELA.extra 2.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The compressed phrase „má pätnásť a dištančné“ awkwardly combines her age with an adjective standing in for schooling. State the remote-schooling detail directly.",
+      "suggestion": "Nina? Malá už dávno nie je, má pätnásť a učí sa na diaľku. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+      "text": "Nina? Malá už dávno nie je, má pätnásť a dištančné. Tvrdí, že sa učí. Ja počujem, že sa smeje.",
+      "batch": "ELA"
+    }
+  },
+  "unreviewed": []
+}

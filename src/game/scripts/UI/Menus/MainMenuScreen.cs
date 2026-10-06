@@ -8,7 +8,7 @@ namespace LastBell.Game.UI.Menus;
 
 /// <summary>
 /// Title screen (claims UiPanel.MainMenu, so Main does not auto-start): POSLEDNÝ ZVONEC with the
-/// brass ring of four symbols, then Continue (hidden without a valid save), New game, Load,
+/// brass ring of four symbols, then Continue (hidden without a valid save), New game (then the difficulty picker), Load,
 /// Settings, Album, Credits, Quit. The background is a painted room (dimmed) until the dedicated
 /// "closed bag on a table" painting exists.
 /// </summary>
@@ -114,9 +114,10 @@ public partial class MainMenuScreen : ModalScreen
 
     private void NewGame()
     {
+        // Then the short difficulty step (DifficultyPicker); the game starts with the chosen difficulty.
         if (SaveSlots.AnyValid())
-            UiRoot.Instance?.Confirm(Ui.T("ui.menu.new_game_confirm"), Ui.T("ui.menu.new_game"), () => GameRuntime.Instance.NewGame());
-        else GameRuntime.Instance.NewGame();
+            UiRoot.Instance?.Confirm(Ui.T("ui.menu.new_game_confirm"), Ui.T("ui.menu.new_game"), () => UiRoot.Instance?.OpenNewGame());
+        else UiRoot.Instance?.OpenNewGame();
     }
 
     private void OpenAlbum()

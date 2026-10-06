@@ -1,0 +1,423 @@
+{
+  "chunk": "r2_C3",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\knowledge.csv",
+  "overlay": [
+    "docs\\writing\\out_v3\\knowledge_ext.json"
+  ],
+  "cost_usd": 0.2107,
+  "batches": {
+    "E02": {
+      "hash": "8eea49a82f88ac3d",
+      "status": "ok",
+      "heading": "E02 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E02.k01"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12490,
+        "completion_tokens": 223,
+        "total_tokens": 12713,
+        "cost": 0.0203852,
+        "prompt_tokens_details": {
+          "cached_tokens": 3592,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0204
+    },
+    "E08": {
+      "hash": "b4b0d05ac7043895",
+      "status": "ok",
+      "heading": "E08 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E08.objective",
+        "action.E08.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11297,
+        "completion_tokens": 137,
+        "total_tokens": 11434,
+        "cost": 0.019463,
+        "prompt_tokens_details": {
+          "cached_tokens": 3215,
+          "cache_write_tokens": 3215
+        }
+      },
+      "usd": 0.0195
+    },
+    "Q7A": {
+      "hash": "a4b04b214a686a02",
+      "status": "ok",
+      "heading": "Q7A · side quest Q7 „Žiaden strach, miláčik“",
+      "keys": [
+        "action.Q7A.x02"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9307,
+        "completion_tokens": 515,
+        "total_tokens": 9822,
+        "cost": 0.0202906,
+        "prompt_tokens_details": {
+          "cached_tokens": 2481,
+          "cache_write_tokens": 2481
+        }
+      },
+      "usd": 0.0203
+    },
+    "S38": {
+      "hash": "53c521bbd3f08cb8",
+      "status": "ok",
+      "heading": "S38 · Pred skúšobnou čerpacou búdkou (1960, Ivanka pri Dunaji)",
+      "keys": [
+        "look.S38.door",
+        "exit.S38.to_S39.locked",
+        "conn.S38.S39.locked"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9899,
+        "completion_tokens": 191,
+        "total_tokens": 10090,
+        "cost": 0.016502,
+        "prompt_tokens_details": {
+          "cached_tokens": 2740,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0165
+    },
+    "S40": {
+      "hash": "78a4e4c6e7819125",
+      "status": "ok",
+      "heading": "S40 · Povala technického archívu (1960, Ivanka pri Dunaji)",
+      "keys": [
+        "look.S40.box"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9490,
+        "completion_tokens": 185,
+        "total_tokens": 9675,
+        "cost": 0.0158672,
+        "prompt_tokens_details": {
+          "cached_tokens": 2612,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0159
+    },
+    "POSTA": {
+      "hash": "fbd1387e232dcf98",
+      "status": "ok",
+      "heading": "POSTA · Alojz Baran (54) — S33",
+      "keys": [
+        "topic.POSTA.ambient 2.label"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11850,
+        "completion_tokens": 143,
+        "total_tokens": 11993,
+        "cost": 0.0186548,
+        "prompt_tokens_details": {
+          "cached_tokens": 3408,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0187
+    },
+    "VERA60": {
+      "hash": "62b16ba0cf39e9e4",
+      "status": "ok",
+      "heading": "VERA60 · Vera Nemcová (22) — S37",
+      "keys": [
+        "topic.VERA60.extra 2.label",
+        "topic.VERA60.extra 2.001",
+        "topic.VERA60.extra 2.002"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12910,
+        "completion_tokens": 356,
+        "total_tokens": 13266,
+        "cost": 0.0242154,
+        "prompt_tokens_details": {
+          "cached_tokens": 3689,
+          "cache_write_tokens": 3689
+        }
+      },
+      "usd": 0.0242
+    },
+    "ZUZANA": {
+      "hash": "bf6a774a415975d7",
+      "status": "ok",
+      "heading": "ZUZANA · Zuzana (7) — S37",
+      "keys": [
+        "topic.ZUZANA.extra 7.label",
+        "topic.ZUZANA.extra 7.001",
+        "topic.ZUZANA.extra 7.002"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18912,
+        "completion_tokens": 256,
+        "total_tokens": 19168,
+        "cost": 0.0295141,
+        "prompt_tokens_details": {
+          "cached_tokens": 5721,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0295
+    },
+    "M08": {
+      "hash": "d79514c83cf87c02",
+      "status": "ok",
+      "heading": "M08 (main) — actions I01, I02, I03, I04, I05, I06, I07, I08",
+      "keys": [
+        "quest.M08.goal",
+        "quest.M08.hint.1",
+        "quest.M08.title"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8391,
+        "completion_tokens": 256,
+        "total_tokens": 8647,
+        "cost": 0.0162298,
+        "prompt_tokens_details": {
+          "cached_tokens": 2223,
+          "cache_write_tokens": 2223
+        }
+      },
+      "usd": 0.0162
+    },
+    "M09": {
+      "hash": "6d8fb150f03b5456",
+      "status": "ok",
+      "heading": "M09 (main) — actions I09, I10, I11, I12, I13",
+      "keys": [
+        "quest.M09.goal",
+        "quest.M09.hint.1"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8165,
+        "completion_tokens": 223,
+        "total_tokens": 8388,
+        "cost": 0.0144579,
+        "prompt_tokens_details": {
+          "cached_tokens": 2159,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0145
+    },
+    "M11B": {
+      "hash": "d89101b5d02d1389",
+      "status": "ok",
+      "heading": "M11B (main) — actions E01, E02, E03, E04, E05, E06, E07, E08, E09, E10",
+      "keys": [
+        "quest.M11B.goal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8249,
+        "completion_tokens": 164,
+        "total_tokens": 8413,
+        "cost": 0.0150482,
+        "prompt_tokens_details": {
+          "cached_tokens": 2207,
+          "cache_write_tokens": 2207
+        }
+      },
+      "usd": 0.015
+    }
+  },
+  "keys": {
+    "action.E02.k01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lístok odneste do výdajne pani Marte Dobiášovej. Vydá všetko, čo je na ňom napísané, ani o skrutku viac.",
+      "batch": "E02"
+    },
+    "action.E08.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Postav pri mladej lipe ohrádku a zariaď, aby vozík odteraz jazdil inou trasou.",
+      "batch": "E08"
+    },
+    "action.E08.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Postav pri mladej lipe ohrádku a zariaď, aby vozík odteraz jazdil inou trasou.",
+      "batch": "E08"
+    },
+    "action.Q7A.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Najlepšia! „Žiaden strach, miláčik!“ Len bez druhej to znie, akoby som sa s niekým lúčil na stanici.",
+      "batch": "Q7A"
+    },
+    "look.S38.door": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pevné dvere s novým zámkom. Za nimi je meracia miestnosť.",
+      "batch": "S38"
+    },
+    "exit.S38.to_S39.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zamknuté. Kľúč bude mať asi niekto z mechanickej dielne.",
+      "batch": "S38"
+    },
+    "conn.S38.S39.locked": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zamknuté. Kľúč bude mať asi niekto z mechanickej dielne.",
+      "batch": "S38"
+    },
+    "look.S40.box": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kovová archívna schránka so zámkom. Do takej sa zamyká to, čo sa nesmie stratiť.",
+      "batch": "S40"
+    },
+    "topic.POSTA.ambient 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Váš holub je poštový?",
+      "batch": "POSTA"
+    },
+    "topic.VERA60.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vaše výkresy",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To kreslíte pre pána Bielika?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pre Ota. Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh.",
+      "batch": "VERA60"
+    },
+    "topic.ZUZANA.extra 7.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Predstavenie",
+      "batch": "ZUZANA"
+    },
+    "topic.ZUZANA.extra 7.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hrá sa tu u vás aj divadlo?",
+      "batch": "ZUZANA"
+    },
+    "topic.ZUZANA.extra 7.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hrá sa. V sále skúša ujo Rudo a ja už viem jeho prvú vetu: „Žiaden strach, miláčik!“",
+      "batch": "ZUZANA"
+    },
+    "quest.M08.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi v Ivanke Ota a s jeho pomocou sa dostaň do meracej miestnosti.",
+      "batch": "M08"
+    },
+    "quest.M08.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Choď za Otom do mechanickej dielne v Ivanke. Povie ti, čo treba urobiť, kým ťa pustí k meraniu.",
+      "batch": "M08"
+    },
+    "quest.M08.title": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dielňa v Ivanke",
+      "batch": "M08"
+    },
+    "quest.M09.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porozprávaj sa s mladou Mirou pri prístroji a sprav čitateľný odtlačok, originál nechaj na mieste.",
+      "batch": "M09"
+    },
+    "quest.M09.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porozprávaj sa s mladou Mirou v miestnosti prvého ZVONu.",
+      "batch": "M09"
+    },
+    "quest.M11B.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V roku 1982 povedz Tónovi pravdu, ukry s ním rezervný mostík a všímaj si, čo na dvore treba chrániť.",
+      "batch": "M11B"
+    }
+  },
+  "unreviewed": []
+}

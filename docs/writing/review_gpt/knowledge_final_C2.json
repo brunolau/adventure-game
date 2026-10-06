@@ -1,0 +1,108 @@
+{
+  "chunk": "r2_C2",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\knowledge.csv",
+  "overlay": [
+    "docs\\writing\\out_v3\\knowledge_ext.json"
+  ],
+  "cost_usd": 0.0433,
+  "batches": {
+    "B05": {
+      "hash": "7485e37dd3b1bc5f",
+      "status": "ok",
+      "heading": "B05 · main quest M04 „Mechanika kazety“",
+      "keys": [
+        "action.B05.k01",
+        "action.B05.k02",
+        "action.B05.k03"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10395,
+        "completion_tokens": 389,
+        "total_tokens": 10784,
+        "cost": 0.0206956,
+        "prompt_tokens_details": {
+          "cached_tokens": 2846,
+          "cache_write_tokens": 2846
+        }
+      },
+      "usd": 0.0207
+    },
+    "JANA95": {
+      "hash": "57e46d0954806805",
+      "status": "ok",
+      "heading": "JANA95 · Jana Vargová (25) — S15",
+      "keys": [
+        "topic.JANA95.extra 1.label",
+        "topic.JANA95.extra 1.001",
+        "topic.JANA95.extra 1.002"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11722,
+        "completion_tokens": 533,
+        "total_tokens": 12255,
+        "cost": 0.0226161,
+        "prompt_tokens_details": {
+          "cached_tokens": 3241,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0226
+    }
+  },
+  "keys": {
+    "action.B05.k01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keby bola chyba v páske, nie v remienku, za mnou nechoď. Pásky neopravujem, tie len kazím.",
+      "batch": "B05"
+    },
+    "action.B05.k02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A za kým?",
+      "batch": "B05"
+    },
+    "action.B05.k03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Za Jurom do kazetového klubu v Ružinove. S páskami čaruje, nie nadarmo mu hovoria Juro Kazeta.",
+      "batch": "B05"
+    },
+    "topic.JANA95.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vaša práca",
+      "batch": "JANA95"
+    },
+    "topic.JANA95.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vidím, že máte plné ruky práce. Čo to bude?",
+      "batch": "JANA95"
+    },
+    "topic.JANA95.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Výstavka. Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami.",
+      "batch": "JANA95"
+    }
+  },
+  "unreviewed": []
+}

@@ -1,0 +1,224 @@
+{
+  "chunk": "hints_r2final",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\hints.csv",
+  "overlay": [],
+  "cost_usd": 0.1395,
+  "batches": {
+    "M02": {
+      "hash": "48dbd444819d5202",
+      "status": "ok",
+      "heading": "M02 · Prístroj v záhrade (main quest)",
+      "keys": [
+        "hint.nudge.G10"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11630,
+        "completion_tokens": 862,
+        "total_tokens": 12492,
+        "cost": 0.0259121,
+        "prompt_tokens_details": {
+          "cached_tokens": 3141,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0259
+    },
+    "M04": {
+      "hash": "41ee5d2f59fbe2bf",
+      "status": "ok",
+      "heading": "M04 · Mechanika kazety (main quest)",
+      "keys": [
+        "hint.nudge.B06"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9770,
+        "completion_tokens": 182,
+        "total_tokens": 9952,
+        "cost": 0.0162224,
+        "prompt_tokens_details": {
+          "cached_tokens": 2704,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0162
+    },
+    "M07": {
+      "hash": "d21e9da38d07e76e",
+      "status": "ok",
+      "heading": "M07 · Rytmus na Dunaji (main quest)",
+      "keys": [
+        "hint.nudge.B20"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11215,
+        "completion_tokens": 154,
+        "total_tokens": 11369,
+        "cost": 0.0194984,
+        "prompt_tokens_details": {
+          "cached_tokens": 3194,
+          "cache_write_tokens": 3194
+        }
+      },
+      "usd": 0.0195
+    },
+    "M08": {
+      "hash": "fe9ddb615462ac18",
+      "status": "ok",
+      "heading": "M08 · Ručná pumpa (main quest)",
+      "keys": [
+        "hint.nudge.I06"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11846,
+        "completion_tokens": 171,
+        "total_tokens": 12017,
+        "cost": 0.0206448,
+        "prompt_tokens_details": {
+          "cached_tokens": 3398,
+          "cache_write_tokens": 3398
+        }
+      },
+      "usd": 0.0206
+    },
+    "M11B": {
+      "hash": "5b5864476a89548d",
+      "status": "ok",
+      "heading": "M11B · Človek, ktorý si to zapamätá (main quest)",
+      "keys": [
+        "hint.nudge.E04",
+        "hint.nudge.E09"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13512,
+        "completion_tokens": 277,
+        "total_tokens": 13789,
+        "cost": 0.0223517,
+        "prompt_tokens_details": {
+          "cached_tokens": 3917,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0224
+    },
+    "Q1": {
+      "hash": "bf157a16a7d3d53d",
+      "status": "ok",
+      "heading": "Q1 · Bodka bez bodky (side quest)",
+      "keys": [
+        "hint.nudge.Q1C"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9919,
+        "completion_tokens": 369,
+        "total_tokens": 10288,
+        "cost": 0.0184037,
+        "prompt_tokens_details": {
+          "cached_tokens": 2697,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0184
+    },
+    "Q10": {
+      "hash": "552c155a0bf03a88",
+      "status": "ok",
+      "heading": "Q10 · Prvý posledný zvonec (side quest)",
+      "keys": [
+        "hint.nudge.Q10D"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10062,
+        "completion_tokens": 173,
+        "total_tokens": 10235,
+        "cost": 0.0165264,
+        "prompt_tokens_details": {
+          "cached_tokens": 2804,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0165
+    }
+  },
+  "keys": {
+    "hint.nudge.G10": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Sedí s prepálenou“ is not natural Slovak for matching two fuses; use „zhoduje sa s“.",
+      "suggestion": "Náhradná poistka sa zhoduje s prepálenou do posledného čísla. Patrí presne tam, odkiaľ som tú starú vybral.",
+      "text": "Náhradná poistka sedí s prepálenou do posledného čísla. Patrí presne tam, odkiaľ som tú starú vybral.",
+      "batch": "M02"
+    },
+    "hint.nudge.B06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nový remienok je presne na mieru. Starý som vyťahoval z jedného tvrdohlavého magnetofónu.",
+      "batch": "M04"
+    },
+    "hint.nudge.B20": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dezider mi dal cievku. Bez nej sa na mieste merania nič nenameria.",
+      "batch": "M07"
+    },
+    "hint.nudge.I06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Manžeta je hotová. Zostáva vrátiť sa k tomu, čo bez nej netesní.",
+      "batch": "M08"
+    },
+    "hint.nudge.E04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Diely aj Otov nákres mám. Mostík sa však sám nezloží a na kolenách ho skladať nebudem.",
+      "batch": "M11B"
+    },
+    "hint.nudge.E09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Diely ohrádky nosím so sebou. Na dvore však zatiaľ nič nechránia.",
+      "batch": "M11B"
+    },
+    "hint.nudge.Q1C": {
+      "verdict": "fix",
+      "category": "calque",
+      "problem": "“Postráda” is a Czech calque; natural Slovak uses “chýba” here.",
+      "suggestion": "Loptička je suchá a poriadne obhryzená. Niekomu chlpatému už určite chýba.",
+      "text": "Loptička je suchá a poriadne obhryzená. Niekto chlpatý ju už určite postráda.",
+      "batch": "Q1"
+    },
+    "hint.nudge.Q10D": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvonček znova zvoní. Škoda, že prvé zazvonenie počujem iba ja.",
+      "batch": "Q10"
+    }
+  },
+  "unreviewed": []
+}

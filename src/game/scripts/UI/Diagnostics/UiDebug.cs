@@ -17,7 +17,8 @@ namespace LastBell.Game.UI.Diagnostics;
 /// QA helper for UI screenshots, active only with debug-harness arguments (after "--"). It waits
 /// until the harness has prepared the state and the room is settled, then opens a screen:
 /// <c>--ui main_menu|pause|settings[:tab]|save|load|load_corrupt|journal[:tab]|map|hints|inventory|
-/// puzzle:&lt;actionId&gt;|credits|ending|help|portal|talk|cutscene:&lt;CS&gt;|era:&lt;year&gt;|tips|select:&lt;ITEM&gt;</c>
+/// puzzle:&lt;actionId&gt;|credits|ending|help|portal|talk|cutscene:&lt;CS&gt;|era:&lt;year&gt;|tips|select:&lt;ITEM&gt;|
+/// difficulty:&lt;easy|standard|hard&gt;|idle:&lt;seconds&gt;|new_game|pick:&lt;difficulty&gt;</c>
 /// (repeatable, applied in order, 0.4 s apart), <c>--ui-scale &lt;100..200&gt;</c> (HUD scale for this run,
 /// not saved), <c>--ui-reduced-motion</c>, <c>--ui-contrast</c>. Opens screens the way a player would
 /// (logical commands, Core overlay functions); dev-only shortcuts are marked.
@@ -114,9 +115,25 @@ public partial class UiDebug : Node
                 WorldInput.Dispatch(LogicalCommand.Journal);
                 break;
             case "map": WorldInput.Dispatch(LogicalCommand.Map); break;
-            case "hints": WorldInput.Dispatch(LogicalCommand.Hint); break;
+            case "hints":
+                // Over an open puzzle: the modal's own hint button (the H key does not reach the world there).
+                if (game.State.Mode == GameMode.Puzzle && game.OpenPuzzleActionId is { } pz) root.OpenHints(game.Content.GetQuestOf(pz).Id);
+                else WorldInput.Dispatch(LogicalCommand.Hint);
+                break;
             case "reveal_hint":
-                if (Quests.CurrentMainQuest(game.Content, game.State) is { } q) game.Update(s => Hints.RevealNext(game.Content, s, q.Id));
+                if (Quests.CurrentMainQuest(game.Content, game.State) is { } q) game.Update(s => Hints.RevealNext(game.Content, s, q.Id, game.SecondsWithoutProgress));
+                break;
+            case "difficulty":
+                // The running game's difficulty, as the settings row sets it (easy|standard|hard).
+                game.SetDifficulty(LastBell.Core.Save.SaveCodec.ParseDifficulty(arg) ?? throw new InvalidOperationException("unknown difficulty " + arg));
+                break;
+            case "idle":
+                // Dev: seconds of play without progress (Hard's hint wait), e.g. idle:170 or idle:200.
+                game.SecondsWithoutProgress = double.Parse(arg, CultureInfo.InvariantCulture);
+                break;
+            case "new_game": root.OpenNewGame(); break; // the difficulty picker of New Game
+            case "pick":
+                root.DifficultyPickerView.Select(LastBell.Core.Save.SaveCodec.ParseDifficulty(arg) ?? throw new InvalidOperationException("unknown difficulty " + arg));
                 break;
             case "inventory": WorldInput.Dispatch(LogicalCommand.Inventory); break;
             case "select": WorldInput.Submit(new Hit.Item(arg), PointerButton.Left); break;

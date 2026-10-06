@@ -1,0 +1,224 @@
+{
+  "chunk": "hints_r2where",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\out_v3\\hints.csv",
+  "overlay": [],
+  "cost_usd": 0.13,
+  "batches": {
+    "M02": {
+      "hash": "daa7c0d57ab887c7",
+      "status": "ok",
+      "heading": "M02 · Prístroj v záhrade (main quest)",
+      "keys": [
+        "hint.where.G10"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10922,
+        "completion_tokens": 115,
+        "total_tokens": 11037,
+        "cost": 0.018633,
+        "prompt_tokens_details": {
+          "cached_tokens": 3115,
+          "cache_write_tokens": 3115
+        }
+      },
+      "usd": 0.0186
+    },
+    "M08": {
+      "hash": "ac63566390888d8b",
+      "status": "ok",
+      "heading": "M08 · Ručná pumpa (main quest)",
+      "keys": [
+        "hint.where.I06",
+        "hint.where.I08"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11839,
+        "completion_tokens": 133,
+        "total_tokens": 11972,
+        "cost": 0.0202424,
+        "prompt_tokens_details": {
+          "cached_tokens": 3404,
+          "cache_write_tokens": 3404
+        }
+      },
+      "usd": 0.0202
+    },
+    "M10": {
+      "hash": "24ceff8c9e352158",
+      "status": "ok",
+      "heading": "M10 · Dokument musí prežiť (main quest)",
+      "keys": [
+        "hint.where.I17"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9989,
+        "completion_tokens": 91,
+        "total_tokens": 10080,
+        "cost": 0.0169638,
+        "prompt_tokens_details": {
+          "cached_tokens": 2803,
+          "cache_write_tokens": 2803
+        }
+      },
+      "usd": 0.017
+    },
+    "M11B": {
+      "hash": "481286cefc00d80d",
+      "status": "ok",
+      "heading": "M11B · Človek, ktorý si to zapamätá (main quest)",
+      "keys": [
+        "hint.where.E09"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13145,
+        "completion_tokens": 91,
+        "total_tokens": 13236,
+        "cost": 0.0218058,
+        "prompt_tokens_details": {
+          "cached_tokens": 3853,
+          "cache_write_tokens": 3853
+        }
+      },
+      "usd": 0.0218
+    },
+    "M11D": {
+      "hash": "94dfc47440ffec71",
+      "status": "ok",
+      "heading": "M11D · Skutočné odovzdanie počas karantény (main quest)",
+      "keys": [
+        "hint.where.C05"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10184,
+        "completion_tokens": 112,
+        "total_tokens": 10296,
+        "cost": 0.0174798,
+        "prompt_tokens_details": {
+          "cached_tokens": 2863,
+          "cache_write_tokens": 2863
+        }
+      },
+      "usd": 0.0175
+    },
+    "Q5": {
+      "hash": "e2b1a70224383009",
+      "status": "ok",
+      "heading": "Q5 · Mapa rozsvietených okien (side quest)",
+      "keys": [
+        "hint.where.Q5C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9793,
+        "completion_tokens": 105,
+        "total_tokens": 9898,
+        "cost": 0.0168014,
+        "prompt_tokens_details": {
+          "cached_tokens": 2739,
+          "cache_write_tokens": 2739
+        }
+      },
+      "usd": 0.0168
+    },
+    "Q11": {
+      "hash": "ddfce8f6486c02f7",
+      "status": "ok",
+      "heading": "Q11 · Druhý posledný zvonec (side quest)",
+      "keys": [
+        "hint.where.Q11C"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9773,
+        "completion_tokens": 236,
+        "total_tokens": 10009,
+        "cost": 0.0181442,
+        "prompt_tokens_details": {
+          "cached_tokens": 2687,
+          "cache_write_tokens": 2687
+        }
+      },
+      "usd": 0.0181
+    }
+  },
+  "keys": {
+    "hint.where.G10": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V zadnej miestnosti babkinej dielne.",
+      "batch": "M02"
+    },
+    "hint.where.I06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pred skúšobnou búdkou za parkom.",
+      "batch": "M08"
+    },
+    "hint.where.I08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pred skúšobnou búdkou za parkom.",
+      "batch": "M08"
+    },
+    "hint.where.I17": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na povale technického archívu.",
+      "batch": "M10"
+    },
+    "hint.where.E09": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na školskom dvore s mladou lipou.",
+      "batch": "M11B"
+    },
+    "hint.where.C05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V babkinej záhradnej dielni.",
+      "batch": "M11D"
+    },
+    "hint.where.Q5C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V petržalskom podchode, kde maľuje Juraj.",
+      "batch": "Q5"
+    },
+    "hint.where.Q11C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Sokolíkovskom dvore, u Kuba.",
+      "batch": "Q11"
+    }
+  },
+  "unreviewed": []
+}

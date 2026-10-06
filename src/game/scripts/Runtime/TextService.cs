@@ -41,6 +41,12 @@ public static class TextService
         return Format(text, args);
     }
 
+    /// <summary>
+    /// Translated <c>ui.*</c> text with a Slovak fallback from code, for UI strings that are drafts waiting for the owner's
+    /// approval (docs/writing/out_v3/ui_difficulty.csv): until the row is in ui.csv the fallback shows, without a warning.
+    /// </summary>
+    public static string UiOr(string key, string fallback, params (string Name, string Value)[] args) => Format(Get(key, fallback), args);
+
     /// <summary>Replaces <c>{name}</c> placeholders (applied after Tr, see ui.csv convention).</summary>
     public static string Format(string text, params (string Name, string Value)[] args)
     {

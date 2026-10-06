@@ -29,7 +29,7 @@ public static class PuzzleAnswers
 
 /// <summary>
 /// Puzzle modals P01..P05: no timer, no penalty, resettable drafts, wrong answers consume nothing, and
-/// the third hint level may fill in the solution (the player still confirms the same normal action).
+/// on Easy the third hint level may fill in the solution (the player still confirms the same normal action).
 /// </summary>
 public static class Puzzles
 {
@@ -109,14 +109,15 @@ public static class Puzzles
     }
 
     /// <summary>
-    /// True when the "fill in correctly" button may be shown: <c>hint_can_fill</c> and the third hint level of the
-    /// puzzle's own step revealed (hints are kept per step, <see cref="Hints"/>).
+    /// True when the "fill in correctly" button may be shown: Easy difficulty (Standard and Hard never fill in,
+    /// docs/DECISIONS.md "Difficulty settings"), <c>hint_can_fill</c> and the third hint level of the puzzle's own step
+    /// revealed (hints are kept per step, <see cref="Hints"/>).
     /// </summary>
     public static bool CanFill(GameContent content, GameState state, string puzzleId)
     {
         var puzzle = content.FindPuzzle(puzzleId);
         var action = ActionFor(content, puzzleId);
-        if (puzzle is null || action is null || !puzzle.HintCanFill) return false;
+        if (puzzle is null || action is null || !puzzle.HintCanFill || !Hints.AllowsPuzzleFill(state.Difficulty)) return false;
         return Hints.StepLevel(state, action.Id) >= Hints.Levels;
     }
 

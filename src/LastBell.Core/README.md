@@ -199,7 +199,20 @@ answer only stores the draft. Nothing is consumed and the modal stays open. Use
   `HintText`s: level 1 the direction (the objective of the done action that enabled the step, else the quest's
   latest objective, else quest hint 1 / 2), level 2 the place (`ui.hint.step_place` with `{room}` / `{target}`,
   or `ui.hint.step_bag`), level 3 only that step (`ui.hint_step.<action id>`, never the whole chain).
-  `Puzzles.CanFill` needs level 3 of the puzzle's own step.
+  `Puzzles.CanFill` needs Easy and level 3 of the puzzle's own step.
+- Difficulty (`Rules/Hints.cs`, docs/DECISIONS.md "Difficulty settings"): `GameState.Difficulty` (`Easy`, `Standard` =
+  default, `Hard`) changes only the hints. `Hints.MaxLevel(difficulty, step)`: Easy 3 (the levels above, `HintKind`
+  Direction / Place / Step), Standard 2, Hard 1 (0 on a puzzle step: no puzzle help). On Standard and Hard level 1 is a
+  nudge (`HintKind.Nudge`, `HintText.OwnKey` = `hint.nudge.<action id>`) and level 2 where to look (`HintKind.Where`,
+  `OwnKey` = `hint.where.<action id>`; for a puzzle step the writers explain the puzzle's rule there). Show `Tr(OwnKey)`
+  when the table has it (plain text), else `Text` with `Args`, which are the Easy level-1 / level-2 texts (the fallback
+  until the written texts are approved). Hard's nudge opens after `Hints.HardWaitSeconds` (180) without progress: Core has
+  no clock, so the presentation passes the seconds since the last new done action:
+  `Hints.Availability(content, state, questId, secondsWithoutProgress)` returns `HintAvailability` (`Revealed`, `Max`,
+  `Gate` = Open / NoStep / AllShown / Waiting / NoPuzzleHelp, `WaitSeconds`, `NextIsExactStep`), and
+  `Hints.RevealNext(content, state, questId, secondsWithoutProgress)` reveals only when the gate is Open (without the
+  seconds the wait counts as over). Levels revealed on an easier difficulty stay stored and are shown up to the current
+  maximum (`Hints.RevealedLevel`). `Hints.WithDifficulty(state, d)` changes it (progress untouched).
 - `Dialogue.ReturnToMenu(content, state, npcHotspotId)`: after a topic's lines the topic menu of the same NPC
   opens again while it still offers a topic (conversations stay open, PT-S17).
 - `Journal.Build(content, state)` returns a `JournalView` with:
@@ -263,6 +276,10 @@ A load rejects any of the following, and the current game is never touched (`err
 
 The UI helper fields (labels toggle, playback cursor, hint levels, pins, room entry marker) are
 saved too. Use `user://` paths on the Godot side.
+
+The difficulty is saved per save file as the optional field `difficulty` (`easy`, `standard`, `hard`). It is written
+only when it is not Standard, so a Standard save is byte-identical to a save made before the field existed: old saves
+load as Standard with their checksum intact; an unknown value is rejected.
 
 While a puzzle modal is open the save also carries the optional field `open_puzzle` (the puzzle
 action id, `GameState.OpenPuzzleAction`; written only in puzzle mode, so other saves keep their payload
@@ -543,6 +560,7 @@ Run `dotnet test src/LastBell.sln`. The suite covers:
 - 120 seeded random legal orders and 24 final-port orders
 - a save/load round-trip at every step and in the middle of each dialogue
 - the logic-level rows of `acceptance_tests.csv` (UI-only rows are skipped with a reason)
+- the difficulty settings (`DifficultyTests`): levels per difficulty, Easy unchanged, Standard two levels with `hint.nudge.<id>` / `hint.where.<id>` and their fallbacks and never an exact step anywhere in the main route, fill-in only on Easy, a level revealed on Easy capped after a switch, Hard's three-minute wait and no puzzle help, old saves without the field (Standard, checksum intact), the saved field and broken values
 - the content overlays (`ContentOverlayTests`): empty overlays, the live C1 sequences and topics in play order,
   timing conditions, retired lines and old saves, every rejected field and broken key, the travel overlay
   (bus S07 <-> S51, first rides, the hub rule of the links, direct fast travel across regions, map regions) and that every overlay text

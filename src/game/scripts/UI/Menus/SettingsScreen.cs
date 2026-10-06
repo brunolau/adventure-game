@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Godot;
+using LastBell.Core.State;
+using LastBell.Game.Runtime;
 using LastBell.Game.UI.Common;
 using LastBell.Game.UI.Settings;
 using LastBell.Game.UI.Theme;
@@ -8,7 +11,7 @@ using LastBell.Game.UI.Theme;
 namespace LastBell.Game.UI.Menus;
 
 /// <summary>
-/// Settings: audio (master, music, ambience, effects, voices), text and subtitles (speed,
+/// Settings: game (the difficulty of the running game, saved with it; docs/DECISIONS.md "Difficulty settings"), audio (master, music, ambience, effects, voices), text and subtitles (speed,
 /// auto-advance, subtitles on/off, size with preview, contrast background, speaker names,
 /// language), display (fullscreen / windowed, HUD scale 100–200 % for AT08) and accessibility
 /// (reduced motion, high-contrast labels, cursor highlight, Space reminder, tips again), plus the
@@ -33,11 +36,12 @@ public partial class SettingsScreen : ModalScreen
         row.AddThemeConstantOverride("h_separation", 10);
         row.AddThemeConstantOverride("v_separation", 10);
         var group = new ButtonGroup();
-        string[] keys = { "ui.settings.tab_audio", "ui.settings.tab_text", "ui.settings.tab_display", "ui.settings.tab_accessibility", "ui.settings.tab_controls" };
-        for (int i = 0; i < keys.Length; i++)
+        string[] names = { Ui.T(DifficultyText.SettingsTab), Ui.T("ui.settings.tab_audio"), Ui.T("ui.settings.tab_text"), Ui.T("ui.settings.tab_display"),
+                           Ui.T("ui.settings.tab_accessibility"), Ui.T("ui.settings.tab_controls") };
+        for (int i = 0; i < names.Length; i++)
         {
             int index = i;
-            var b = Ui.Tab(Ui.T(keys[i]), group);
+            var b = Ui.Tab(names[i], group);
             b.Toggled += on => { if (on) { tab = LastTab = index; Rebuild(); } };
             tabs.Add(b);
             row.AddChild(b);
@@ -79,6 +83,25 @@ public partial class SettingsScreen : ModalScreen
         switch (tab)
         {
             case 0:
+                // Game: the difficulty of the running game (saved with it); on the title screen only how it works.
+                if (UiRoot.Instance?.MainMenuOpen ?? true)
+                {
+                    content.AddChild(Labelled(Ui.T(DifficultyText.Title), Ui.Para(Ui.T(DifficultyText.SettingsInMenu))));
+                    break;
+                }
+                var game = GameRuntime.Instance;
+                var options = DifficultyText.All.Select(d => (Ui.T(DifficultyText.Name(d)), (int)d)).ToArray();
+                Label? describe = null;
+                content.AddChild(ChoiceRow(Ui.T(DifficultyText.Title), options, () => (int)game.State.Difficulty, v =>
+                {
+                    game.SetDifficulty((Difficulty)v);
+                    if (describe is not null) describe.Text = Ui.T(DifficultyText.Description((Difficulty)v));
+                }));
+                describe = Ui.Para(Ui.T(DifficultyText.Description(game.State.Difficulty)));
+                content.AddChild(describe);
+                content.AddChild(Ui.Para(Ui.T(DifficultyText.SettingsInGame), "CaptionLabel"));
+                break;
+            case 1:
                 string[] volumeKeys = { "ui.settings.volume_master", "ui.settings.volume_music", "ui.settings.volume_ambience", "ui.settings.volume_sfx", "ui.settings.volume_voice" };
                 for (int i = 0; i < volumeKeys.Length; i++)
                 {
@@ -88,7 +111,7 @@ public partial class SettingsScreen : ModalScreen
                 }
                 content.AddChild(ToggleRow(Ui.T("ui.settings.mute_unfocused"), "", () => UiSettings.MuteUnfocused, v => UiSettings.MuteUnfocused = v));
                 break;
-            case 1:
+            case 2:
                 content.AddChild(ChoiceRow(Ui.T("ui.settings.text_speed"),
                     new[] { (Ui.T("ui.settings.text_speed_slow"), 0), (Ui.T("ui.settings.text_speed_normal"), 1), (Ui.T("ui.settings.text_speed_fast"), 2), (Ui.T("ui.settings.text_speed_instant"), 3) },
                     () => (int)UiSettings.TextSpeed, v => UiSettings.TextSpeed = (TextSpeed)v));
@@ -116,7 +139,7 @@ public partial class SettingsScreen : ModalScreen
                     new[] { (Ui.T("ui.settings.language_sk"), 0), (Ui.T("ui.settings.language_en"), 1) },
                     () => UiSettings.Locale == "en" ? 1 : 0, v => UiSettings.Locale = v == 1 ? "en" : "sk"));
                 break;
-            case 2:
+            case 3:
                 content.AddChild(ChoiceRow(Ui.T("ui.settings.window_mode"),
                     new[] { (Ui.T("ui.settings.windowed"), 0), (Ui.T("ui.settings.fullscreen"), 1) },
                     () => UiSettings.Fullscreen ? 1 : 0, v => UiSettings.Fullscreen = v == 1));
@@ -124,7 +147,7 @@ public partial class SettingsScreen : ModalScreen
                     new[] { ("100 %", 100), ("125 %", 125), ("150 %", 150), ("175 %", 175), ("200 %", 200) },
                     () => UiSettings.HudScalePercent, v => UiSettings.HudScalePercent = v));
                 break;
-            case 3:
+            case 4:
                 content.AddChild(ToggleRow(Ui.T("ui.settings.reduced_motion"), Ui.T("ui.settings.reduced_motion_desc"), () => UiSettings.ReducedMotion, v => UiSettings.ReducedMotion = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.high_contrast_labels"), Ui.T("ui.settings.high_contrast_labels_desc"), () => UiSettings.HighContrastLabels, v => UiSettings.HighContrastLabels = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.cursor_highlight"), "", () => UiSettings.CursorHighlight, v => UiSettings.CursorHighlight = v));
