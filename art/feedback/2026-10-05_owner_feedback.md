@@ -82,3 +82,14 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
 - **S03:** based on the real playground **"Lúčny koník"** in Čierna Voda (hip-roofed timber shelter with a stone
   chimney, wooden playground, meadow); the name Lúčny koník is used in the game texts. Reference
   `web_lucny_konik_2018.jpg` (blog photo, look only).
+
+## Update 2026-10-06 (owner): S17 family refinements
+
+- Replace the concrete footpath on the LEFT side of the fence with grass (S17, S55, S61).
+- Right of the school's yard entrance the ground floor is an open **underpass ("podlubie")** through the building,
+  leading to the three blocks behind — paint it as a covered passage with columns, not as a wall.
+- References: `imgur_fNEtUPs.jpg` (**highest priority**; owner-supplied imgur photo, covered by the owner's blanket
+  permission for his imgur photos, not Street View → may be a generator input), `web_school_thumb.jpg` (Google image
+  thumbnail of an unknown photo → look only), `SCHOOL_other_side.jpg` (dubravska4liga.sk → look only).
+- Era detail: the colourful ground-floor murals in the 2020-era photos are post-2000 → 2020 only; 1982/1995 plain
+  yellowish walls (earlier note).
