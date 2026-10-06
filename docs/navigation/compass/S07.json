@@ -1,0 +1,45 @@
+{
+  "room": "S07",
+  "name": "Čierna Voda pri výveske",
+  "era": 2020,
+  "camera": {
+    "lat": 48.2325,
+    "lon": 17.25725
+  },
+  "heading_deg": 293,
+  "screen_compass": {
+    "up": 293,
+    "right": 23,
+    "down": 113,
+    "left": 203
+  },
+  "confidence": "high",
+  "evidence": [
+    "reference art/source/rooms/S07/triangel_stop_kartaview_281.jpg = KartaView photo 2630554650 (48.232618,17.257003, heading 293.2 deg; frame 277: 291 deg): on the north platform of the Triangel stop looking WNW along Hlavna, the road on the left, the shelter on the right",
+    "OWNER FACT 2026-10-06/07 (binding, keep as is): the shop S04 bottom left on the road towards the viewer, the bus to Dubravka higher on the road pointing up",
+    "for the owner review: in reality the shop (Centrum MONAR, 290 deg, 550 m) lies ahead along the road, the same way as the bus to Bratislava (WNW via Pezinska / Vajnorska); kept as the owner set it"
+  ],
+  "exits": [
+    {
+      "id": "S07.to_S51",
+      "to": "S51",
+      "side": "up",
+      "change": "unchanged (owner)",
+      "why": "the bus at the stop sign, up the road WNW towards Bratislava",
+      "real_bearing_deg": 251,
+      "distance_m": 17009,
+      "relative_to_heading_deg": -42
+    },
+    {
+      "id": "S07.to_S04",
+      "to": "S04",
+      "side": "left",
+      "change": "unchanged (owner)",
+      "why": "owner layout: bottom left on the road. Real direction ahead (rel -3); listed for the owner review page",
+      "real_bearing_deg": 290,
+      "distance_m": 548,
+      "relative_to_heading_deg": -3
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

@@ -1,0 +1,49 @@
+{
+  "room": "S05",
+  "name": "Mirkina bránka",
+  "era": 2020,
+  "camera": {
+    "lat": 48.225519,
+    "lon": 17.234011
+  },
+  "heading_deg": 325,
+  "screen_compass": {
+    "up": 325,
+    "right": 55,
+    "down": 145,
+    "left": 235
+  },
+  "confidence": "medium",
+  "evidence": [
+    "OSM way 917203830 Pezinska runs SW-NE (~55 deg) through the register point 48.225519,17.234011; the camera on the street looks across at the invented house, i.e. NW or SE",
+    "painting: warm low afternoon light from the upper LEFT (sun ~SW) -> left = SW: the camera looks NW at a house on the NW side of the street (the manor, OSM 249773740, is on that side too)",
+    "OSRM foot to S02 leaves SW along Pezinska (236-240 deg) = left edge"
+  ],
+  "exits": [
+    {
+      "id": "S05.to_S02",
+      "to": "S02",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the pavement out of the left edge = SW along Pezinska towards Jasenova",
+      "real_bearing_deg": 209,
+      "distance_m": 879,
+      "relative_to_heading_deg": -116
+    },
+    {
+      "id": "S05.to_S06",
+      "to": "S06",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the side passage on the house's NE side into the plot (same invented house)"
+    },
+    {
+      "id": "S05.to_S09",
+      "to": "S09",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the workshop door in the street wall (into the picture)"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

@@ -1,0 +1,51 @@
+{
+  "room": "S48",
+  "name": "Servisný pavilón výstavy Atlas",
+  "era": 2035,
+  "camera": {
+    "lat": 48.9436,
+    "lon": 19.591
+  },
+  "heading_deg": 270,
+  "screen_compass": {
+    "up": 270,
+    "right": 0,
+    "down": 90,
+    "left": 180
+  },
+  "confidence": "high",
+  "evidence": [
+    "register + reference photo chopok-summit_plateau-rotunda-from-east_2016-09.jpg: the plateau ~50 m east of the Rotunda looking west at it",
+    "OSM: the Rotunda (776069181) due west, the Chopok JUH station with the roof terrace (532703258) left of it (SW)"
+  ],
+  "exits": [
+    {
+      "id": "S48.to_S47",
+      "to": "S47",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the Rotunda entrance ahead",
+      "real_bearing_deg": 278,
+      "distance_m": 77,
+      "relative_to_heading_deg": 8
+    },
+    {
+      "id": "S48.to_S49",
+      "to": "S49",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the pavilion's own door on the right"
+    },
+    {
+      "id": "S48.to_S50",
+      "to": "S50",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the external stairs left of the Rotunda up to the terrace on the JUH station (WSW, slightly left)",
+      "real_bearing_deg": 253,
+      "distance_m": 48,
+      "relative_to_heading_deg": -17
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

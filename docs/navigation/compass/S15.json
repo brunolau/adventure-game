@@ -1,0 +1,33 @@
+{
+  "room": "S15",
+  "name": "Fyzikálny kabinet",
+  "era": 1995,
+  "family": "L_CABINET",
+  "camera": {
+    "lat": 48.18085,
+    "lon": 17.0377
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "evidence": [
+    "type-reference cabinet, doors in the left and right walls, window in the back wall; heading not determinable (low)"
+  ],
+  "exits": [
+    {
+      "id": "S15.to_S13",
+      "to": "S13",
+      "side": "left",
+      "change": "unchanged",
+      "why": "left-wall door to the corridor and the stairs down"
+    },
+    {
+      "id": "S15.to_S16",
+      "to": "S16",
+      "side": "right",
+      "change": "unchanged",
+      "why": "right-wall door to the radio room"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

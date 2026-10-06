@@ -1,0 +1,64 @@
+{
+  "room": "S52",
+  "name": "Pred ZŠ Sokolíkova v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18115,
+    "lon": 17.03705
+  },
+  "heading_deg": 55,
+  "screen_compass": {
+    "up": 55,
+    "right": 145,
+    "down": 235,
+    "left": 325
+  },
+  "confidence": "medium",
+  "evidence": [
+    "as S12 (docs/navigation/compass/S12.json): the SW facade of the main wing runs NW-SE; the camera faces it from the forecourt = looks NE; the forecourt continues out of the left edge (NW) towards Sokolikova / Svantnerova street, the painted SE corner at the right leads round to the yard",
+    "OSRM foot to the stop leaves N/NNE (6-27 deg = left of the NE heading), round the N end of the school"
+  ],
+  "exits": [
+    {
+      "id": "S52.to_S51",
+      "to": "S51",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the forecourt path out of the left edge (NW), round the N end onto Svantnerova street and E to the stop; CONTINUITY with S51.to_S52 is geographic",
+      "real_bearing_deg": 77,
+      "distance_m": 274,
+      "relative_to_heading_deg": 22
+    },
+    {
+      "id": "S52.to_S56",
+      "to": "S56",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the service window further right on the same facade (S56 lies SE along the facade)",
+      "real_bearing_deg": 135,
+      "distance_m": 67,
+      "relative_to_heading_deg": 80
+    },
+    {
+      "id": "S52.to_S53",
+      "to": "S53",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the entrance doors",
+      "real_bearing_deg": 121,
+      "distance_m": 43,
+      "relative_to_heading_deg": 66
+    },
+    {
+      "id": "S52.to_S55",
+      "to": "S55",
+      "side": "right",
+      "change": "unchanged",
+      "why": "round the painted SE corner into the yard (pair S55.to_S52 left)",
+      "real_bearing_deg": 91,
+      "distance_m": 93,
+      "relative_to_heading_deg": 36
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

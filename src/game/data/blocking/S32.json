@@ -39,10 +39,11 @@
   },
   "exits": {
     "S32.to_S31": {
-      "rect": [0, 672, 60, 330],
-      "interaction_point": [70, 860],
-      "label_anchor": [180, 660],
-      "reason": "the dirt road leaves the square to the left (north, Nadrazna towards the railway halt)"
+      "rect": [595, 440, 140, 175],
+      "interaction_point": [662, 650],
+      "label_anchor": [660, 362],
+      "side": "up",
+      "reason": "exit geography 2026-10-07: the village street straight ahead between the post-office house and the chapel, north out of the square towards Nadrazna and the railway halt (the halt lies NNE, dead ahead of the NNE camera; docs/navigation/compass/S32.json)"
     },
     "S32.to_S33": {
       "rect": [398, 396, 104, 186],
@@ -51,10 +52,11 @@
       "reason": "the plank door of the post-office house on the left, enamel POSTA sign above it"
     },
     "S32.to_S34": {
-      "rect": [595, 440, 140, 175],
-      "interaction_point": [662, 650],
-      "label_anchor": [660, 362],
-      "reason": "the street mouth between the post-office house and the next houses (Moyzesova, towards the culture hall)"
+      "rect": [0, 672, 60, 330],
+      "interaction_point": [70, 860],
+      "label_anchor": [180, 660],
+      "side": "left",
+      "reason": "exit geography 2026-10-07: the dirt road leaves the square out of the left edge (WNW round the green to Moyzesova and the culture hall at the NW corner of the square; docs/navigation/compass/S32.json)"
     },
     "S32.to_S35": {
       "rect": [1045, 440, 140, 175],

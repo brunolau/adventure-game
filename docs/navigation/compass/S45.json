@@ -1,0 +1,34 @@
+{
+  "room": "S45",
+  "name": "Chodník pri Vrbickom plese",
+  "era": 2035,
+  "camera": {
+    "lat": 48.97085,
+    "lon": 19.5769
+  },
+  "heading_deg": 157,
+  "screen_compass": {
+    "up": 157,
+    "right": 247,
+    "down": 337,
+    "left": 67
+  },
+  "confidence": "medium",
+  "evidence": [
+    "register + painting log: north shore of Vrbicke pleso looking SSE across the lake to Chopok (summit buildings on the ridge)",
+    "Hotel Grand lies E (92 deg) = left; the path from the hotel (OSM 52413780 / 407066803) reaches the lake from the east"
+  ],
+  "exits": [
+    {
+      "id": "S45.to_S42",
+      "to": "S42",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the shore path out of the left edge back east to the hotel",
+      "real_bearing_deg": 92,
+      "distance_m": 285,
+      "relative_to_heading_deg": -65
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

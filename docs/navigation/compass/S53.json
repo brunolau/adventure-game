@@ -1,0 +1,43 @@
+{
+  "room": "S53",
+  "name": "Školské zádverie v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18095,
+    "lon": 17.03755
+  },
+  "heading_deg": 315,
+  "screen_compass": {
+    "up": 315,
+    "right": 45,
+    "down": 135,
+    "left": 225
+  },
+  "confidence": "low",
+  "evidence": [
+    "as S13 (docs/navigation/compass/S13.json): type-reference hall; the glazed entrance doors with daylight in the LEFT wall = the SW facade, so the hall looks roughly NW. Register positions of the school rooms are estimates"
+  ],
+  "exits": [
+    {
+      "id": "S53.to_S52",
+      "to": "S52",
+      "side": "left",
+      "change": "unchanged",
+      "why": "glazed entrance doors in the left wall (SW facade)",
+      "real_bearing_deg": 301,
+      "distance_m": 43,
+      "relative_to_heading_deg": -14
+    },
+    {
+      "id": "S53.to_S54",
+      "to": "S54",
+      "side": "right",
+      "change": "unchanged",
+      "why": "doorway with the staircase up to the cabinet (right wall); the cabinet's estimated register position cannot be checked",
+      "real_bearing_deg": 135,
+      "distance_m": 16,
+      "relative_to_heading_deg": 180
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

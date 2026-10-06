@@ -1,0 +1,26 @@
+{
+  "room": "S24",
+  "name": "Fotoateliér Svetlo",
+  "era": 1995,
+  "camera": {
+    "lat": 48.14884,
+    "lon": 17.11296
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "inside the photo studio on Obchodna, looking at the street front",
+  "evidence": [
+    "interior; single exit through the glazed entrance door, side up regardless of heading"
+  ],
+  "exits": {
+    "S24.to_S21": {
+      "target": "S21",
+      "route": "out of the door, SSE to Kamenne namestie",
+      "route_bearing_deg": 170,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

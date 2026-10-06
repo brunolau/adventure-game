@@ -1,0 +1,35 @@
+{
+  "room": "S08",
+  "name": "Chodník pri retenčnej nádrži",
+  "era": 2020,
+  "camera": {
+    "lat": 48.22271,
+    "lon": 17.24534,
+    "note": "pond west bank (S08.md); the register point is the pump track"
+  },
+  "heading_deg": 67,
+  "screen_compass": {
+    "up": 67,
+    "right": 157,
+    "down": 247,
+    "left": 337
+  },
+  "confidence": "medium",
+  "evidence": [
+    "art/masters/bg_natural/S08.md + art/source/rooms/S08/layout_javorova-alej-pond_osm.png: camera on the pond's west bank (~48.22271,17.24534) looking ENE over the pond (OSM way 365490018) to the pump-track hill (OSM way 672298342), owner correction 2026-10-06",
+    "the park shelter S03 lies NNW of that camera (~335 deg, rel -92 = left)"
+  ],
+  "exits": [
+    {
+      "id": "S08.to_S03",
+      "to": "S03",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the trail out of the left edge back up to the shelter (NNW, ~180 m)",
+      "real_bearing_deg": 321,
+      "distance_m": 160,
+      "relative_to_heading_deg": -106
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

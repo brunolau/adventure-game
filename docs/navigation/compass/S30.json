@@ -1,0 +1,32 @@
+{
+  "room": "S30",
+  "name": "Nábrežný merací prístrešok",
+  "era": 1995,
+  "camera": {
+    "lat": 48.13775,
+    "lon": 17.11705
+  },
+  "heading_deg": 292,
+  "screen_compass": {
+    "up": 292,
+    "right": 22,
+    "down": 112,
+    "left": 202
+  },
+  "confidence": "high",
+  "camera_position": "upstream (west) footway of the old Stary most above its first river pier near the Petrzalka end",
+  "evidence": [
+    "painting and the reference photos: Most SNP with the saucer pylon left of centre, the castle centre, St Martin's spire right: a WNW view upstream (register; exit_audit CAMERA 292)",
+    "the Petrzalka bridgehead lies SSW along the bridge = screen left"
+  ],
+  "exits": {
+    "S30.to_S28": {
+      "target": "S28",
+      "route": "along the footway back to the Petrzalka bridgehead, then SW to the underpass",
+      "route_bearing_deg": 229,
+      "side": "left",
+      "was": "left"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

@@ -1,0 +1,32 @@
+{
+  "room": "S29",
+  "name": "Garáž rádioamatéra",
+  "era": 1995,
+  "camera": {
+    "lat": 48.11659,
+    "lon": 17.10979
+  },
+  "heading_deg": 90,
+  "screen_compass": {
+    "up": 90,
+    "right": 180,
+    "down": 270,
+    "left": 0
+  },
+  "confidence": "low",
+  "camera_position": "forecourt on the Rovniankova service road (OSM way 17085287, runs N-S) in front of garage 17 under the raised deck (Commons photo geotag 48.116588,17.109792)",
+  "evidence": [
+    "OSM garage rows line the N-S service road on both sides (ways 574873207, 1154019488 west; 1154019490 east); the painted row could face either way, so the heading is a guess (garages on the east side facing west -> camera faces east)",
+    "only one exit; it stays on the left edge so that the walk from S28 (stairs, right) continues in the same direction; with the heading guessed here the underpass (NW) is on the left"
+  ],
+  "exits": {
+    "S29.to_S28": {
+      "target": "S28",
+      "route": "along the forecourt NW to Rusovska cesta and the underpass",
+      "route_bearing_deg": 316,
+      "side": "left",
+      "was": "left"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

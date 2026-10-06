@@ -1,0 +1,46 @@
+{
+  "room": "S51",
+  "name": "Dúbravská zastávka v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18172,
+    "lon": 17.04064
+  },
+  "heading_deg": 330,
+  "screen_compass": {
+    "up": 330,
+    "right": 60,
+    "down": 150,
+    "left": 240
+  },
+  "confidence": "high",
+  "evidence": [
+    "OSM: tram in the median of M. Schneidra-Trnavskeho (SE->NW ~327 deg); SW platform way 242889692 (48.18151,17.04092 -> 48.18203,17.04024); camera on it by the shelter looking NW (same L_STOP camera as S11, art/masters/bg_natural/S11.md; docs/navigation/compass/S11.json uses 330)",
+    "painting: west carriageway left, tracks right of the platform, east carriageway and the low bluish medical centre right, the street rising NW",
+    "OWNER FACT 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop",
+    "OSRM car route to Cierna Voda leaves SE (138-142 deg) through Karlova Ves and the city; the city-bound bus stop 'Svantnerova' (OSM node 979062240) is on the SE-bound (west) carriageway beside the platform"
+  ],
+  "exits": [
+    {
+      "id": "S51.to_S52",
+      "to": "S52",
+      "side": "left",
+      "change": "down -> left",
+      "why": "owner fact; the zebra crossing over the west carriageway at the near left runs out of the left edge; the school front lies WSW (rel -73). CONTINUITY flag with S52.to_S51 (both left edges) is geographic: the walk turns round the N end of the school (same as S11/S12, S57/S58)",
+      "real_bearing_deg": 257,
+      "distance_m": 274,
+      "relative_to_heading_deg": -73
+    },
+    {
+      "id": "S51.to_S07",
+      "to": "S07",
+      "side": "down",
+      "change": "up -> down",
+      "why": "the bus back to Cierna Voda goes SE through Karlova Ves and the city = behind the camera (car route 138 deg): the platform towards the viewer. The far end of the platform ('up') led NW, away from the city. Same reasoning as S11.to_S19 (tram to Karlova Ves: down). The straight line to Cierna Voda is ENE (= right): owner review alternative",
+      "real_bearing_deg": 71,
+      "distance_m": 17024,
+      "relative_to_heading_deg": 101
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

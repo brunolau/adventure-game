@@ -1,0 +1,35 @@
+{
+  "room": "S31",
+  "name": "Ivanská železničná zastávka",
+  "era": 1960,
+  "camera": {
+    "lat": 48.19478,
+    "lon": 17.25935
+  },
+  "heading_deg": 105,
+  "screen_compass": {
+    "up": 105,
+    "right": 195,
+    "down": 285,
+    "left": 15
+  },
+  "confidence": "high",
+  "evidence": [
+    "OSM: line 130 runs WNW-ESE here (way 381220966, bearing ~105 deg); the Nadrazna level crossing is node 25497602 (48.19484,17.25932)",
+    "reference photo ivanka_halt_platform_bsk_2021.jpg (taken on the crossing along the track): the hotel blocks Nadrazna 36/38 (OSM 50522977 / 50522452, NORTH of the track) stand on the LEFT, the small gabled house Nadrazna 63/22 (OSM 28459284, SOUTH of the track, beside the road) on the RIGHT, so the photo and the painting (track left, gable building right) look ESE, not ENE as the register says",
+    "the village (S32) lies SSW: Nadrazna leaves the crossing south-south-east along the gabled building (OSM ways 22920815 / 24025361)"
+  ],
+  "exits": [
+    {
+      "id": "S31.to_S32",
+      "to": "S32",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the forecourt runs out of the right edge onto Nadrazna, which leads south into the village; the square lies SSW = right of the ESE camera",
+      "real_bearing_deg": 202,
+      "distance_m": 715,
+      "relative_to_heading_deg": 97
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

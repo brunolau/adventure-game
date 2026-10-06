@@ -1,0 +1,26 @@
+{
+  "room": "S23",
+  "name": "Archívna študovňa",
+  "era": 1995,
+  "camera": {
+    "lat": 48.14725,
+    "lon": 17.11546
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "inside the archive reading room on Spitalska, looking at the window wall",
+  "evidence": [
+    "interior; single exit through the door to the square, side up regardless of heading"
+  ],
+  "exits": {
+    "S23.to_S21": {
+      "target": "S21",
+      "route": "out of the door, SSW along Spitalska",
+      "route_bearing_deg": 202,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

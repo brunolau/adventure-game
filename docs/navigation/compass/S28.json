@@ -1,0 +1,47 @@
+{
+  "room": "S28",
+  "name": "Petržalský podchod",
+  "era": 1995,
+  "camera": {
+    "lat": 48.1256,
+    "lon": 17.0964
+  },
+  "heading_deg": 350,
+  "screen_compass": {
+    "up": 350,
+    "right": 80,
+    "down": 170,
+    "left": 260
+  },
+  "confidence": "low",
+  "camera_position": "asphalt path at the south (estate) portal of the underpass under Rusovska cesta at Zaporozska (OSM footway way 25736276, axis 350/170 deg)",
+  "evidence": [
+    "reconstruction from one type-reference photo (no photo of the real place); the heading follows the OSM tunnel axis and the game's route (through the tunnel to the Danube side, S30 NNE)",
+    "OSM: Rusovska cesta runs 325/145 deg above the tunnel; the Zaporozska bus stops are on it (48.12536,17.09661 / 48.12634,17.09607)",
+    "the painted stairs on the right climb the embankment to the road level; Rovniakova (S29) lies SE along Rusovska cesta"
+  ],
+  "exits": {
+    "S28.to_S30": {
+      "target": "S30 Stary most footway",
+      "route": "through the tunnel north, then along the embankment to the old bridge",
+      "route_bearing_deg": 49,
+      "side": "up",
+      "was": "up"
+    },
+    "S28.to_S29": {
+      "target": "S29 Rovniakova garage row",
+      "route": "up the stairs on the right, SE along Rusovska cesta",
+      "route_bearing_deg": 136,
+      "side": "right (named, on the stairs)",
+      "was": "up"
+    },
+    "S28.to_S21": {
+      "target": "S21",
+      "route": "path out to the Zaporozska bus stop, bus NW along Rusovska and over the bridge",
+      "route_bearing_deg": 325,
+      "side": "left",
+      "was": "left"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

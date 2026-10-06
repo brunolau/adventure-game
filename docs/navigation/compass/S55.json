@@ -1,0 +1,34 @@
+{
+  "room": "S55",
+  "name": "Školský dvor v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18114,
+    "lon": 17.0383
+  },
+  "heading_deg": 225,
+  "screen_compass": {
+    "up": 225,
+    "right": 315,
+    "down": 45,
+    "left": 135
+  },
+  "confidence": "high",
+  "evidence": [
+    "as S17 (docs/navigation/compass/S17.json): camera at the E corner of the fenced court looking SW at the yard facade; clay track LEFT (owner) = SE",
+    "OSRM foot from the yard to the front leaves SE/S (136-166 deg = left), round the SE end of the main wing (owner-confirmed route)"
+  ],
+  "exits": [
+    {
+      "id": "S55.to_S52",
+      "to": "S52",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the yard asphalt out of the left edge (SE), round the SE end of the main wing to the front; the walk's start confirms left (the old COMPASS advisory used the straight line through the building)",
+      "real_bearing_deg": 271,
+      "distance_m": 93,
+      "relative_to_heading_deg": 46
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

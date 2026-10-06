@@ -1,0 +1,26 @@
+{
+  "room": "S63",
+  "name": "Fyzikálny kabinet v roku 1982",
+  "era": 1982,
+  "family": "L_CABINET",
+  "camera": {
+    "lat": 48.18085,
+    "lon": 17.0377
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "evidence": [
+    "type-reference cabinet, doors in the left and right walls, window in the back wall; heading not determinable (low)"
+  ],
+  "exits": [
+    {
+      "id": "S63.to_S59",
+      "to": "S59",
+      "side": "left",
+      "change": "unchanged",
+      "why": "as S15.to_S13"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

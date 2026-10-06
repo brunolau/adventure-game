@@ -1,0 +1,53 @@
+{
+  "room": "S12",
+  "name": "Pred ZŠ Sokolíkova",
+  "era": 1995,
+  "family": "L_SCHOOL_FRONT",
+  "camera": {
+    "lat": 48.18115,
+    "lon": 17.03705
+  },
+  "heading_deg": 55,
+  "screen_compass": {
+    "up": 55,
+    "right": 145,
+    "down": 235,
+    "left": 325
+  },
+  "confidence": "medium",
+  "evidence": [
+    "OSM relation 1084096 / art/source/rooms/S12/layout_school-front_osm.png: the SW facade of the main wing runs NW-SE (~145 deg); the camera faces it from the forecourt, i.e. looks NE",
+    "painting: the facade recedes gently to the right with the building corner at x 1793 and the school yard (fence, lawn, panel block) beyond it = the SE end; the forecourt continues out of the left edge = NW towards Sokolikova / Svantnerova street",
+    "the real entrance sits in the NW part of the long facade, so the painted corner compresses ~70 m of facade; the game's route to the yard goes round that SE corner (the S17 family leaves left = round the SE end)"
+  ],
+  "exits": [
+    {
+      "id": "S12.to_S11",
+      "to": "S11",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the stop lies ENE behind the building; the walk goes NW along the forecourt, round the N end onto Svantnerova street and east to the stop (out of the left edge). CONTINUITY flag with S11.to_S12 (both left edges) is geographic: the cameras differ by ~85 deg and Adam turns the street corner",
+      "real_bearing_deg": 77,
+      "distance_m": 274,
+      "relative_to_heading_deg": 22
+    },
+    {
+      "id": "S12.to_S13",
+      "to": "S13",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the entrance doors"
+    },
+    {
+      "id": "S12.to_S17",
+      "to": "S17",
+      "side": "right",
+      "change": "unchanged",
+      "why": "round the painted SE corner into the yard (pair of S17.to_S12 left)",
+      "real_bearing_deg": 78,
+      "distance_m": 140,
+      "relative_to_heading_deg": 23
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

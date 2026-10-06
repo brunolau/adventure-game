@@ -116,20 +116,21 @@
   "exits": {
     "S66.to_S61": {
       "rect": [
-        0,
-        722,
-        120,
-        293
+        560,
+        960,
+        560,
+        100
       ],
       "interaction_point": [
-        70,
-        880
+        840,
+        995
       ],
       "label_anchor": [
-        245,
-        712
+        840,
+        950
       ],
-      "reason": "the trodden path continues out of the left edge back to the school yard"
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S66.json): the trodden footprints run from the shed door towards the viewer, back across the grounds to the school yard, which lies behind this east-facing camera (bearing ~300 deg); S61.to_S66 leaves the yard towards its viewer too. Was the left edge (north)",
+      "side": "down"
     }
   },
   "state_patches": []

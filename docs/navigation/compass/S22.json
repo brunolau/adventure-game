@@ -1,0 +1,26 @@
+{
+  "room": "S22",
+  "name": "Antikvariát Pod druhou rukou",
+  "era": 1995,
+  "camera": {
+    "lat": 48.1436,
+    "lon": 17.10652
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "inside the antiquarian bookshop on Venturska, looking at the street front",
+  "evidence": [
+    "interior; single exit through the glazed shop door, side up regardless of heading"
+  ],
+  "exits": {
+    "S22.to_S21": {
+      "target": "S21",
+      "route": "out of the door, NE through the Old Town",
+      "route_bearing_deg": 76,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

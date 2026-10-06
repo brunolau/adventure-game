@@ -1,0 +1,26 @@
+{
+  "room": "S26",
+  "name": "Opravovňa odevov",
+  "era": 1995,
+  "camera": {
+    "lat": 48.15396,
+    "lon": 17.13613
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "inside the clothes-repair shop in the Pasaz Mileticova",
+  "evidence": [
+    "interior; single exit through the glazed door to the passage, side up regardless of heading"
+  ],
+  "exits": {
+    "S26.to_S25": {
+      "target": "S25",
+      "route": "out of the door into the passage and the market",
+      "route_bearing_deg": 114,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

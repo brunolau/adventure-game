@@ -1,0 +1,31 @@
+{
+  "room": "S60",
+  "name": "Trieda pred technickou výstavkou v roku 1982",
+  "era": 1982,
+  "family": "L_CLASS",
+  "camera": {
+    "lat": 48.1812,
+    "lon": 17.03798
+  },
+  "heading_deg": 315,
+  "screen_compass": {
+    "up": 315,
+    "right": 45,
+    "down": 135,
+    "left": 225
+  },
+  "confidence": "low",
+  "evidence": [
+    "type-reference classroom; the windows on the right show the running track = the yard (NE) side, so the room looks roughly NW (low)"
+  ],
+  "exits": [
+    {
+      "id": "S60.to_S59",
+      "to": "S59",
+      "side": "up",
+      "change": "unchanged",
+      "why": "as S14.to_S13"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

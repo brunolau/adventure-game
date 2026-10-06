@@ -1,0 +1,33 @@
+{
+  "room": "S39",
+  "name": "Miestnosť prvého ZVONu",
+  "era": 1960,
+  "camera": {
+    "lat": 48.18118,
+    "lon": 17.24228
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "interior of the invented pump hut; the open door on the left shows the canal bank (S38)"
+  ],
+  "exits": [
+    {
+      "id": "S39.to_S38",
+      "to": "S38",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the open plank door with the canal bank behind it"
+    },
+    {
+      "id": "S39.to_S40",
+      "to": "S40",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the narrow plank door in the right side wall (fictional link to the archive loft)",
+      "real_bearing_deg": 47,
+      "distance_m": 1560
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

@@ -1,0 +1,26 @@
+{
+  "room": "S44",
+  "name": "Výstavný salón hotela Grand Jasná",
+  "era": 2035,
+  "camera": {
+    "lat": 48.97045,
+    "lon": 19.58037
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "meeting-salon interior (type references); no measurable heading"
+  ],
+  "exits": [
+    {
+      "id": "S44.to_S42",
+      "to": "S42",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the salon door to the hotel corridor on the right",
+      "real_bearing_deg": 41,
+      "distance_m": 48
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

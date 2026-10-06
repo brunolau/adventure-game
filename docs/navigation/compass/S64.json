@@ -1,0 +1,34 @@
+{
+  "room": "S64",
+  "name": "Tóno a dedo pri servisnom okne v roku 1982",
+  "era": 1982,
+  "family": "L_WINDOW (S56/S64)",
+  "camera": {
+    "lat": 48.18073,
+    "lon": 17.03769
+  },
+  "heading_deg": 45,
+  "screen_compass": {
+    "up": 45,
+    "right": 135,
+    "down": 225,
+    "left": 315
+  },
+  "confidence": "medium",
+  "evidence": [
+    "register: ground-floor window in the south part of the SW facade; the painting looks NE at the facade, the building corner at the right (= the SE end of the main wing) with the yard fence and gate beyond"
+  ],
+  "exits": [
+    {
+      "id": "S64.to_S61",
+      "to": "S61",
+      "side": "right",
+      "change": "unchanged",
+      "why": "round the SE corner into the yard; S61.to_S64 now leaves 'up' towards that corner (Adam comes round the corner from the right)",
+      "real_bearing_deg": 49,
+      "distance_m": 117,
+      "relative_to_heading_deg": 4
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

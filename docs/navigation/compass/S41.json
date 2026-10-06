@@ -1,0 +1,45 @@
+{
+  "room": "S41",
+  "name": "Biela Púť pri dolnej stanici",
+  "era": 2035,
+  "camera": {
+    "lat": 48.97024,
+    "lon": 19.5811
+  },
+  "heading_deg": 5,
+  "screen_compass": {
+    "up": 5,
+    "right": 95,
+    "down": 185,
+    "left": 275
+  },
+  "confidence": "medium",
+  "evidence": [
+    "owner reference photos imgur_TXI6i3E.jpg / imgur_8l08ndF.jpg (the exact view): the road leads to the steep-gabled chalet at its end with the Grand gondola station and its first pylon on the RIGHT and the wooden footbridge plus a hotel with awnings on the LEFT",
+    "OSM fits only a camera on the service road 242064228 SOUTH of Hotel Posta (OSM 304515881) looking NORTH: Posta ahead (-4 deg), the Grand station building 772813843 at +20..+29 deg, its pylon at the right, the footbridge way 772813880 over the Otupnianka at the left (-30 deg, 25-45 m), Hotel Grand (OSM 22823454) on the left (-58..-70 deg). The painting log's 'east of Hotel Posta' is not consistent with OSM (from the east the station would be on the left)",
+    "the Biela Put - Priehyba gondola station (S67's line, OSM node 'Biela Put' 48.96985,19.58475) also lies to the right (+70 deg)"
+  ],
+  "exits": [
+    {
+      "id": "S41.to_S42",
+      "to": "S42",
+      "side": "left",
+      "change": "up (far end of the road) -> left (the footbridge)",
+      "why": "Hotel Grand Jasna lies WNW = left; the painted arched footbridge crosses the stream to the hotel's east footway (OSM 772813880 -> 772813879). The far end of the road leads AWAY from the hotel (to Posta / the Biela Put plaza)",
+      "real_bearing_deg": 340,
+      "distance_m": 64,
+      "relative_to_heading_deg": -25
+    },
+    {
+      "id": "S41.to_S67",
+      "to": "S67",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the gondola station building at the right behind the fence, entered through the gate in the wall gap",
+      "real_bearing_deg": 145,
+      "distance_m": 1056,
+      "relative_to_heading_deg": 140
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

@@ -1,0 +1,30 @@
+{
+  "room": "S49",
+  "name": "Chronokomora pavilónu Atlas",
+  "era": 2035,
+  "camera": {
+    "lat": 48.9436,
+    "lon": 19.591
+  },
+  "heading_deg": 270,
+  "screen_compass": {
+    "up": 270,
+    "right": 0,
+    "down": 90,
+    "left": 180
+  },
+  "confidence": "low",
+  "evidence": [
+    "pavilion interior; the window shows the Rotunda silhouette (west)"
+  ],
+  "exits": [
+    {
+      "id": "S49.to_S48",
+      "to": "S48",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the door at the right back to the plateau"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

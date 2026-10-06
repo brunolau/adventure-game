@@ -101,27 +101,46 @@
     135,
     700
    ],
-   "reason": "the plaza continues out of the left edge (tram stop for Karlova Ves)"
-  },
-  "S21.to_S22": {
-    "rect": [
-      0,
-      370,
-      128,
-      330
-    ],
-    "interaction_point": [
-      80,
-      760
-    ],
-    "label_anchor": [
-      200,
-      330
-    ],
-    "reason": "side street at the far left leading towards the Old Town (Venturska)",
-    "side": "up"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the plaza and the tram street continue out of the left edge, the tram to Karlova Ves runs west (Nam. SNP, the castle tunnel, the embankment); unchanged",
+   "side": "left"
   },
   "S21.to_S24": {
+   "rect": [
+    0,
+    370,
+    128,
+    330
+   ],
+   "interaction_point": [
+    80,
+    760
+   ],
+   "label_anchor": [
+    200,
+    330
+   ],
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the side street at the far left leads away north-north-west across Nam. SNP to Obchodna. Was the street beside the department store (centre)",
+   "side": "up"
+  },
+  "S21.to_S22": {
+   "rect": [
+    300,
+    960,
+    380,
+    100
+   ],
+   "interaction_point": [
+    490,
+    1000
+   ],
+   "label_anchor": [
+    490,
+    950
+   ],
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the plaza runs towards the viewer, back south-west through Laurinska into the Old Town to Venturska (behind-left of this camera). Was the far-left side street (that leads north)",
+   "side": "down"
+  },
+  "S21.to_S25": {
    "rect": [
     770,
     352,
@@ -136,7 +155,8 @@
     835,
     344
    ],
-   "reason": "street beside the department store leading towards Obchodna"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the street beside the department store leads ahead, north-east along Spitalska, where the tram to Ruzinov runs (Spitalska, Americke nam., Zahradnicka). Was the right edge (south-east, no tram to Ruzinov there)",
+   "side": "up"
   },
   "S21.to_S28": {
    "rect": [
@@ -153,42 +173,26 @@
     1470,
     367
    ],
-   "reason": "bus stop at the edge of the square (bus to Petrzalka)"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the bus stop pole at the edge of the square: the bus to Petrzalka leaves towards the viewer, south over the Danube bridge (behind the camera). Was 'up'",
+   "side": "down"
   },
   "S21.to_S23": {
-    "rect": [
-      1645,
-      372,
-      90,
-      328
-    ],
-    "interaction_point": [
-      1690,
-      760
-    ],
-    "label_anchor": [
-      1700,
-      318
-    ],
-    "reason": "entrance door of the cream city block (the reading room)",
-    "side": "up"
-  },
-  "S21.to_S25": {
    "rect": [
-    1860,
-    712,
-    60,
-    303
+    1645,
+    372,
+    90,
+    328
    ],
    "interaction_point": [
-    1850,
-    900
+    1690,
+    760
    ],
    "label_anchor": [
-    1720,
-    700
+    1700,
+    318
    ],
-   "reason": "the plaza continues out of the right edge (tram to Ruzinov)"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): entrance door of the cream city block ahead-right, the reading room (archive on Spitalska, north-north-east); unchanged",
+   "side": "up"
   }
  },
  "state_patches": [],

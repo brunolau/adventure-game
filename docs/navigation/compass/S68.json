@@ -1,0 +1,43 @@
+{
+  "room": "S68",
+  "name": "Kabína Funitelu medzi Priehybou a Chopkom",
+  "era": 2035,
+  "camera": {
+    "lat": 48.9532,
+    "lon": 19.5897
+  },
+  "heading_deg": 90,
+  "screen_compass": {
+    "up": 90,
+    "right": 180,
+    "down": 270,
+    "left": 0
+  },
+  "confidence": "low",
+  "evidence": [
+    "cabin interior looking across the long window wall; the downhill end (Priehyba, north) on the left, the summit station with the Rotunda appearing in the right pane (south)"
+  ],
+  "exits": [
+    {
+      "id": "S68.to_S67",
+      "to": "S67",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the downhill end door (north) on the left",
+      "real_bearing_deg": 358,
+      "distance_m": 1026,
+      "relative_to_heading_deg": -92
+    },
+    {
+      "id": "S68.to_S47",
+      "to": "S47",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the sliding doors on the right open at the summit (south)",
+      "real_bearing_deg": 179,
+      "distance_m": 1058,
+      "relative_to_heading_deg": 89
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

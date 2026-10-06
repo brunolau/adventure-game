@@ -1,0 +1,33 @@
+{
+  "room": "S56",
+  "name": "Školnícke servisné okno v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18073,
+    "lon": 17.03769
+  },
+  "heading_deg": 55,
+  "screen_compass": {
+    "up": 55,
+    "right": 145,
+    "down": 235,
+    "left": 325
+  },
+  "confidence": "medium",
+  "evidence": [
+    "close-up of a ground-floor window on the SW facade (register 48.18073,17.03769, south part); the camera faces the facade = looks NE; the main entrance lies NW along the facade (OSRM foot 325 deg = left)"
+  ],
+  "exits": [
+    {
+      "id": "S56.to_S52",
+      "to": "S52",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the path along the facade out of the left edge (NW) back to the main entrance",
+      "real_bearing_deg": 315,
+      "distance_m": 67,
+      "relative_to_heading_deg": -100
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

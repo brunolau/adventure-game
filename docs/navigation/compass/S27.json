@@ -1,0 +1,26 @@
+{
+  "room": "S27",
+  "name": "Kazetový klub v suteréne",
+  "era": 1995,
+  "camera": {
+    "lat": 48.154,
+    "lon": 17.135
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "basement club under a 1950s Mileticova block",
+  "evidence": [
+    "interior; single exit through the basement door and the stairs, side up regardless of heading"
+  ],
+  "exits": {
+    "S27.to_S25": {
+      "target": "S25",
+      "route": "up the stairs, across Mileticova to the market",
+      "route_bearing_deg": 100,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

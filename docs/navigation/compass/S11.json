@@ -1,0 +1,57 @@
+{
+  "room": "S11",
+  "name": "Dúbravská zastávka",
+  "era": 1995,
+  "family": "L_STOP",
+  "camera": {
+    "lat": 48.18172,
+    "lon": 17.04064
+  },
+  "heading_deg": 330,
+  "screen_compass": {
+    "up": 330,
+    "right": 60,
+    "down": 150,
+    "left": 240
+  },
+  "confidence": "high",
+  "evidence": [
+    "OSM: the tram runs in the median of M. Schneidra-Trnavskeho, axis SE->NW (segment 48.18146,17.04088 -> 48.18462,17.03781 = bearing ~327 deg); the camera stands on the SW platform (OSM platform 48.18151,17.04092 -> 48.18203,17.04024) and looks NW along it (art/masters/bg_natural/S11.md: turned 4 deg right of the platform axis)",
+    "painting: the west carriageway on the left, the tracks right of the platform, the east carriageway and the low bluish medical centre on the right (owner 2026-10-06), the street rising into the distance towards the Dubravka centre (NW)",
+    "the T3 on the near (SW) track faces the camera: with right-hand running it is the tram towards Karlova Ves (SE, behind the camera)",
+    "owner 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop"
+  ],
+  "exits": [
+    {
+      "id": "S11.to_S12",
+      "to": "S12",
+      "side": "left",
+      "change": "down -> left",
+      "why": "the zebra crossing over the west carriageway at the near left runs out of the left edge; the school front lies WSW (owner fact)",
+      "real_bearing_deg": 257,
+      "distance_m": 274,
+      "relative_to_heading_deg": -73
+    },
+    {
+      "id": "S11.to_S18",
+      "to": "S18",
+      "side": "up",
+      "change": "unchanged",
+      "why": "far end of the platform (NW). The S18 painting is the Sokolikova street view of the Flickr 'Block' photo (geotag 48.18469,17.03473, ahead-left: bearing measured to it); the register's superseded courtyard point (W, 85 m) would be left-ahead. Kept up: a different painted way than the crossing on the left",
+      "real_bearing_deg": 307,
+      "distance_m": 549,
+      "relative_to_heading_deg": -23
+    },
+    {
+      "id": "S11.to_S19",
+      "to": "S19",
+      "side": "down",
+      "change": "up -> down",
+      "why": "the tram faces the camera and leaves towards the viewer: Karlova Ves lies SE, behind the camera. Cross-region: S19.to_S11 must point right (owner: Dubravka is on the right in Karlova Ves)",
+      "real_bearing_deg": 162,
+      "distance_m": 2652,
+      "relative_to_heading_deg": -168
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

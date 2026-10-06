@@ -1,0 +1,44 @@
+{
+  "room": "S47",
+  "name": "Chopok pri Rotunde",
+  "era": 2035,
+  "camera": {
+    "lat": 48.94369,
+    "lon": 19.58996
+  },
+  "heading_deg": 50,
+  "screen_compass": {
+    "up": 50,
+    "right": 140,
+    "down": 230,
+    "left": 320
+  },
+  "confidence": "medium",
+  "evidence": [
+    "the window wall shows the High Tatras (40-70 deg from Chopok), the Liptov basin and the Funitel line (due north from the Chopok SEVER station, OSM 435913008) on the LEFT panes",
+    "the Atlas plateau / pavilion (S48) lies ESE = right; the Funitel station adjoins the Rotunda on its north (left-ahead) side"
+  ],
+  "exits": [
+    {
+      "id": "S47.to_S48",
+      "to": "S48",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the glazed door in the stone wall (right) to the stairs down to the plateau east of the Rotunda",
+      "real_bearing_deg": 98,
+      "distance_m": 77,
+      "relative_to_heading_deg": 48
+    },
+    {
+      "id": "S47.to_S68",
+      "to": "S68",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the lounge continues out of the left edge round to the Funitel summit station (N / NNE, left of the NE view)",
+      "real_bearing_deg": 17,
+      "distance_m": 24,
+      "relative_to_heading_deg": -33
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

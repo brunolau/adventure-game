@@ -50,14 +50,15 @@
         200,
         750
       ],
-      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family)",
-      "side": "down"
+      "reason": "exit geography 2026-10-07 (owner: the way to ZŠ Sokolíkova is on the LEFT of the stop; docs/navigation/compass/S51.json): the ramp at the near left onto the zebra crossing over the west carriageway, out of the left edge towards the school ~270 m WSW (same as S11.to_S12, L_STOP family)",
+      "side": "left"
     },
     "S51.to_S07": {
-      "rect": [780, 430, 240, 212],
-      "interaction_point": [880, 690],
-      "label_anchor": [930, 420],
-      "reason": "the far end of the platform and the path to the bus stop beyond it: the 2020 bus back to Cierna Voda (travel overlay content_ext/travel_ext.json replaces the car exit S51.to_S02 with S51.to_S07; same place as S11.to_S18)"
+      "rect": [640, 925, 520, 90],
+      "interaction_point": [900, 985],
+      "label_anchor": [900, 915],
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S51.json): the platform towards the viewer, to the city-bound bus stop beside its south-east end: the 2020 bus back to Cierna Voda runs south-east through Karlova Ves and the city (camera looks NW, so the city is behind the camera; was the far end of the platform, which leads away from the city). Travel overlay content_ext/travel_ext.json replaces the car exit S51.to_S02 with S51.to_S07",
+      "side": "down"
     }
   },
   "occluders": [

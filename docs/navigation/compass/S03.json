@@ -1,0 +1,56 @@
+{
+  "room": "S03",
+  "name": "Dobrovoľnícke výdajné miesto",
+  "era": 2020,
+  "camera": {
+    "lat": 48.2241,
+    "lon": 17.2435,
+    "note": "W of the shelter (estimate from the reference photo's layout); the register point is the Panoramax GPS"
+  },
+  "heading_deg": 105,
+  "screen_compass": {
+    "up": 105,
+    "right": 195,
+    "down": 285,
+    "left": 15
+  },
+  "confidence": "medium",
+  "evidence": [
+    "reference art/source/rooms/S03/rekreapark_shelter_panoramax.jpg (Panoramax, the painting's base): playground and log structures LEFT of the shelter, the stone block with the chimney at its RIGHT end, the parking lot with a car behind-right, a table-tennis table in the near-left foreground",
+    "OSM: shelter node 8519116543 (48.22406,17.24393); playground structure 'Lucny konik' way 508440781 NE of it (48.22442,17.24449); parking way 508441064 SSE of it (48.22378,17.24427); table tennis node 14222334324 13 m W of it (48.22410,17.24376) -> only a camera W of the shelter looking ESE (~105 deg) puts the playground left, the parking behind-right and the table tennis in the foreground; the Panoramax GPS point (NE of the shelter) is ~30 m off",
+    "the painting keeps the photo's arrangement (grasshopper playground left, chimney block right)"
+  ],
+  "exits": [
+    {
+      "id": "S03.to_S02",
+      "to": "S02",
+      "side": "down",
+      "change": "left -> down",
+      "why": "Jasenova lies WSW (rel +137) and the walk starts SSW/SW down the end of Javorova alej (OSRM foot 210-231 deg) = behind the camera, slightly right: the trampled meadow towards the viewer. The old left edge pointed NNE, away from the street",
+      "real_bearing_deg": 242,
+      "distance_m": 1347,
+      "relative_to_heading_deg": 137
+    },
+    {
+      "id": "S03.to_S04",
+      "to": "S04",
+      "side": "left",
+      "change": "down -> left",
+      "why": "the shop at Triangel lies NNE (rel -83 = left): out of the left edge past the playground, along the school path and the cycleway NE (OSM ways 988829319 / 615123029). Pair S04.to_S03 is S04's right edge (continuity ok)",
+      "real_bearing_deg": 22,
+      "distance_m": 1187,
+      "relative_to_heading_deg": -83
+    },
+    {
+      "id": "S03.to_S08",
+      "to": "S08",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the pond lies SE (139 deg from the shelter, rel +34): the meadow out of the right edge below the gravel path; pair S08.to_S03 left edge",
+      "real_bearing_deg": 141,
+      "distance_m": 160,
+      "relative_to_heading_deg": 36
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

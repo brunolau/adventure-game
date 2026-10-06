@@ -1,0 +1,75 @@
+{
+  "room": "S42",
+  "name": "Pred hotelom Grand Jasná",
+  "era": 2035,
+  "camera": {
+    "lat": 48.97078,
+    "lon": 19.5808
+  },
+  "heading_deg": 195,
+  "screen_compass": {
+    "up": 195,
+    "right": 285,
+    "down": 15,
+    "left": 105
+  },
+  "confidence": "medium",
+  "evidence": [
+    "reference photo hotel-grand-jasna_forecourt-chopok_2017-07.jpg: the paved forecourt with the hotel's east facade receding on the RIGHT, the glass structure on the LEFT, the Chopok ridge ahead with the summit buildings left of centre; Chopok summit lies 169 deg from Biela Put, so the axis is ~195 deg",
+    "OSM: the hotel's long east facade runs 190 deg (way 22823454); the Grand gondola station (772813843) lies east = left",
+    "targets: S41 (the road with the footbridge) SSE = ahead-left via the hotel's east footway and the bridge; the client centre S46 at the Biela Put plaza E = left; Vrbicke pleso (S45) W = behind the hotel, right"
+  ],
+  "exits": [
+    {
+      "id": "S42.to_S41",
+      "to": "S41",
+      "side": "up",
+      "change": "down (bottom edge) -> up (the side path past the gondola station, far left)",
+      "why": "S41 lies ahead-left (SSE), not behind the camera: S41 looks north along its road with this hotel to its LEFT, across the footbridge",
+      "real_bearing_deg": 162,
+      "distance_m": 35,
+      "relative_to_heading_deg": -33
+    },
+    {
+      "id": "S42.to_S43",
+      "to": "S43",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the main entrance under the canopy (right)",
+      "real_bearing_deg": 221,
+      "distance_m": 48,
+      "relative_to_heading_deg": 26
+    },
+    {
+      "id": "S42.to_S44",
+      "to": "S44",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the salon side door of the hotel's lower wing (right half)",
+      "real_bearing_deg": 221,
+      "distance_m": 48,
+      "relative_to_heading_deg": 26
+    },
+    {
+      "id": "S42.to_S45",
+      "to": "S45",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the gravel footpath through the gap in the wall into the forest. Real route: south along the hotel's east footway, then west round its south end to the lake (net bearing +57 deg = right); no painted way exists on the right (the hotel fills it), kept up - UNSURE",
+      "real_bearing_deg": 272,
+      "distance_m": 285,
+      "relative_to_heading_deg": 77
+    },
+    {
+      "id": "S42.to_S46",
+      "to": "S46",
+      "side": "left",
+      "change": "up (side path) -> left (left edge)",
+      "why": "the client centre lies due east = left of the SSW camera; the forecourt continues out of the left edge past the station to the plaza",
+      "real_bearing_deg": 90,
+      "distance_m": 247,
+      "relative_to_heading_deg": -105
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

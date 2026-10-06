@@ -157,7 +157,8 @@
     135,
     778
    ],
-   "reason": "the path and the lawn run out of the left edge (bus stop, back to the centre)"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N through the underpass under Rusovska cesta, towards the Danube side): the path and the lawn run out of the left edge to the Zaporozska bus stop on Rusovska cesta; the bus to the centre runs north-west along it and over the bridge; unchanged",
+   "side": "left"
   },
   "S28.to_S30": {
    "rect": [
@@ -174,24 +175,26 @@
     960,
     322
    ],
-   "reason": "through the lit tunnel towards the Danube embankment"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N through the underpass under Rusovska cesta, towards the Danube side): through the lit tunnel, north towards the Danube embankment and the Stary most; unchanged",
+   "side": "up"
   },
   "S28.to_S29": {
    "rect": [
-    1340,
-    300,
-    420,
-    405
+    1380,
+    170,
+    540,
+    535
    ],
    "interaction_point": [
     1395,
     760
    ],
    "label_anchor": [
-    1560,
-    292
+    1640,
+    290
    ],
-   "reason": "up the stairs on the embankment to the garage row"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N through the underpass under Rusovska cesta, towards the Danube side): up the stairs on the embankment, out to the right: onto Rusovska cesta and south-east along it to the Rovniakova garage row (the return exit S29.to_S28 is S29's left edge, so Adam keeps walking the same way). Was 'up'",
+   "side": "right"
   }
  },
  "state_patches": [

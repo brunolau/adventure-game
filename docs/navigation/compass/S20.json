@@ -1,0 +1,27 @@
+{
+  "room": "S20",
+  "name": "Palova opravovňa",
+  "era": 1995,
+  "camera": {
+    "lat": 48.16169,
+    "lon": 17.04591
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "camera_position": "inside the service pavilion on Levarska (Kutiky), looking at the shop's street front",
+  "evidence": [
+    "interior one-point box; the only way out is the glazed door in the front wall (the pavilion arcade outside)",
+    "no compass evidence for the facade orientation; the single exit is a door, so its side (up) does not depend on the heading"
+  ],
+  "exits": {
+    "S20.to_S19": {
+      "target": "S19",
+      "route": "out of the door, down the steps to the tram stop",
+      "route_bearing_deg": 126,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

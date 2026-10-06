@@ -143,6 +143,24 @@
     },
     "S61.to_S64": {
       "rect": [
+        715,
+        405,
+        250,
+        70
+      ],
+      "interaction_point": [
+        840,
+        745
+      ],
+      "label_anchor": [
+        840,
+        395
+      ],
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S61.json): the footpath from the yard-door landing runs left down to the track along the foot of the main wing towards its SE end (x 431); round that corner, on the street side straight ahead beyond the wing (bearing ~230 deg, camera looks SW), is the service window; S64 looks NE at it and leaves round the same corner out of its right edge. Was 'down' (towards the viewer = north-east, the wrong way); kept off the left edge (owner 2026-10-06: not right under the way to S58)",
+      "side": "up"
+    },
+    "S61.to_S66": {
+      "rect": [
         380,
         950,
         460,
@@ -156,24 +174,8 @@
         610,
         940
       ],
-      "reason": "the asphalt runs towards the camera: back past the south end of the main wing to the service window on the street side (owner 2026-10-06: it sat in the bottom-left corner right under the left-edge way to S58)"
-    },
-    "S61.to_S66": {
-      "rect": [
-        1800,
-        722,
-        120,
-        293
-      ],
-      "interaction_point": [
-        1850,
-        880
-      ],
-      "label_anchor": [
-        1700,
-        712
-      ],
-      "reason": "the yard asphalt continues out of the right edge past the near end of the court fence towards the garden shed at the east fence"
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S61.json): the yard asphalt runs back towards the camera at the bottom left: the garden shed at the east fence by Kudlákova lies behind-left of this SW view (bearing ~120 deg, ~100 m); the left edge is the way to the front (S58), so it leaves towards the viewer. Was the right edge (north-west, the opposite way); S66.to_S61 returns towards its viewer too",
+      "side": "down"
     }
   },
   "variant_layers": {

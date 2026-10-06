@@ -1,0 +1,39 @@
+{
+  "room": "S18",
+  "name": "Sídliskový dvor s kioskom",
+  "era": 1995,
+  "family": "S18/S62 (same picture)",
+  "camera": null,
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "evidence": [
+    "the painting is the owner-loved style test art/backgrounds/sokolikova-street.png (Sokolikova panel row, from carl_eric's Flickr 'Block'; its geotag 48.184687,17.03473 accuracy 13 lies ~400 m NW of the school, not on Sokolikova street) - no reliable real camera position or heading",
+    "the register row still describes the superseded courtyard between Svantnerova 3-7 and M. Schneidra-Trnavskeho 1-5 (between the school grounds and the stop)",
+    "layout follows the game's chain and the owner statement (S17: the way to the blocks is right of the school): the school side on the left, the stop on the right, S69 up the side road"
+  ],
+  "exits": [
+    {
+      "id": "S18.to_S17",
+      "to": "S17",
+      "side": "left",
+      "change": "unchanged",
+      "why": "school side (continuity with S17.to_S18 right)"
+    },
+    {
+      "id": "S18.to_S11",
+      "to": "S11",
+      "side": "right",
+      "change": "unchanged",
+      "why": "towards the stop (S11.to_S18 is the far end of its platform)"
+    },
+    {
+      "id": "S18.to_S69",
+      "to": "S69",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the side road between the kiosk and the red car into the gap between the blocks"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

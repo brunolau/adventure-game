@@ -1,0 +1,34 @@
+{
+  "room": "S01",
+  "name": "Adamova garáž",
+  "era": 2020,
+  "camera": {
+    "lat": 48.2195,
+    "lon": 17.2287
+  },
+  "heading_deg": 200,
+  "screen_compass": {
+    "up": 200,
+    "right": 290,
+    "down": 20,
+    "left": 110
+  },
+  "confidence": "low",
+  "evidence": [
+    "type-reference interior (register): Adam's invented garage on Jasenova; the open sectional door in the back wall shows the street S02, which lies SSW (register 48.21950,17.22870 -> 48.218636,17.228185 = 202 deg), so the camera looks roughly SSW out of the garage",
+    "single exit through the painted door; nothing else to orient by"
+  ],
+  "exits": [
+    {
+      "id": "S01.to_S02",
+      "to": "S02",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the open garage door straight ahead onto the driveway and the street (S02 lies ahead, SSW)",
+      "real_bearing_deg": 202,
+      "distance_m": 103,
+      "relative_to_heading_deg": 2
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

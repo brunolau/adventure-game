@@ -1,0 +1,30 @@
+{
+  "room": "S06",
+  "name": "Pod zatvoreným oknom",
+  "era": 2020,
+  "camera": {
+    "lat": 48.225519,
+    "lon": 17.234011
+  },
+  "heading_deg": 225,
+  "screen_compass": {
+    "up": 225,
+    "right": 315,
+    "down": 45,
+    "left": 135
+  },
+  "confidence": "low",
+  "evidence": [
+    "invented side path of the S05 house (register: reconstructed); S05's side passage is on the house's NE side (right of S05), so S06 looks at the NE side wall from the passage, roughly SW; the street (SE) is then on the left"
+  ],
+  "exits": [
+    {
+      "id": "S06.to_S05",
+      "to": "S05",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the side path out of the left edge back to the street (SE)"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

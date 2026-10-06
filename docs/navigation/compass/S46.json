@@ -1,0 +1,26 @@
+{
+  "room": "S46",
+  "name": "Klientske centrum Biela Púť",
+  "era": 2035,
+  "camera": {
+    "lat": 48.97078,
+    "lon": 19.58419
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "client-centre interior (type reference); the window wall shows the plaza; no measurable heading"
+  ],
+  "exits": [
+    {
+      "id": "S46.to_S42",
+      "to": "S42",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the glazed entrance doors to the plaza on the left",
+      "real_bearing_deg": 270,
+      "distance_m": 247
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

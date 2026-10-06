@@ -1,0 +1,34 @@
+{
+  "room": "S35",
+  "name": "Dvor hospodárskej dielne",
+  "era": 1960,
+  "camera": {
+    "lat": 48.1908,
+    "lon": 17.2576
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "the courtyard of the manor outbuildings (OSM L-shaped outbuildings 1220011359 / 1220011360 west of the manor); the painting adds an invented store annex and generalises the yard, so the camera heading cannot be fixed from OSM",
+    "painting: the yard opens to the left towards the village road; the square lies SSW of the courtyard (211 deg)"
+  ],
+  "exits": [
+    {
+      "id": "S35.to_S32",
+      "to": "S32",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the yard opens out of the left edge to the village road and the square (only open side of the painted yard)",
+      "real_bearing_deg": 211,
+      "distance_m": 259
+    },
+    {
+      "id": "S35.to_S36",
+      "to": "S36",
+      "side": "up",
+      "change": "unchanged",
+      "why": "Oto's workshop door under the columned porch"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

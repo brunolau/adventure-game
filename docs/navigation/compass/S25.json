@@ -1,0 +1,48 @@
+{
+  "room": "S25",
+  "name": "Miletičova medzi stánkami",
+  "era": 1995,
+  "camera": {
+    "lat": 48.1533,
+    "lon": 17.1362
+  },
+  "heading_deg": 45,
+  "screen_compass": {
+    "up": 45,
+    "right": 135,
+    "down": 225,
+    "left": 315
+  },
+  "confidence": "medium",
+  "camera_position": "in an aisle at the Mileticova (south-west) edge of the market (OSM Trhovisko Mileticova 48.15362,17.13693; Mileticova runs 320/140 deg along its west side)",
+  "evidence": [
+    "painting: the low white market hall with its little tower ahead, the brick chimney (OSM man_made=chimney 48.15366,17.13666) ahead-right, a tall estate block right (the Gloria tower 48.15513,17.13855 stands NE of the market), the two-storey market-edge building with the passage (Pasaz Mileticova, OSM way 1163484294, NW part of the market) ahead-left",
+    "reference mileticova_market_stalls_hall_2017.jpg: taken from the street into the market with the hall tower in the centre and the Gloria tower right - the same NE view",
+    "OSM tram: Zahradnicka north of the market (stop Saleziani 48.15514,17.13397, NW); the tram to the centre runs west, then via Karadzicova / Americke nam. to Spitalska",
+    "the 1950s Mileticova estate (register S27) lies across Mileticova, SW, behind the camera"
+  ],
+  "exits": {
+    "S25.to_S21": {
+      "target": "S21",
+      "route": "walk NW to the Zahradnicka tram stop, tram west",
+      "route_bearing_deg": 300,
+      "side": "left",
+      "was": "left"
+    },
+    "S25.to_S26": {
+      "target": "S26 clothes repair in the Pasaz Mileticova",
+      "route": "short aisle north into the passage",
+      "route_bearing_deg": 350,
+      "side": "up",
+      "was": "up"
+    },
+    "S25.to_S27": {
+      "target": "S27 basement club, Mileticova estate",
+      "route": "back out to Mileticova and across it, SW",
+      "route_bearing_deg": 250,
+      "side": "down (bottom centre-left)",
+      "was": "right edge (east)"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

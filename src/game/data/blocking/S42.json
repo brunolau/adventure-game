@@ -37,28 +37,18 @@
   },
   "exits": {
     "S42.to_S41": {
-      "rect": [700, 950, 520, 110],
-      "interaction_point": [960, 995],
-      "label_anchor": [960, 940],
-      "reason": "the paved forecourt runs back towards the camera, down the access road to the Biela Put gondola station plaza (S41 looks up this road to the hotel; owner 2026-10-06: it sat on the left edge next to the side path to S46)"
+      "rect": [130, 560, 130, 92],
+      "interaction_point": [195, 676],
+      "label_anchor": [195, 550],
+      "side": "up",
+      "reason": "exit geography 2026-10-07: the paved side path past the gondola station structure, back-left into the picture, to the footbridge and the access road beside the Grand station (S41), which lies SSE = ahead-left of the SSW camera; S41 looks north along that road with the footbridge to this hotel on its left (docs/navigation/compass/S42.json)"
     },
     "S42.to_S46": {
-      "rect": [
-        130,
-        560,
-        130,
-        92
-      ],
-      "interaction_point": [
-        195,
-        676
-      ],
-      "label_anchor": [
-        195,
-        550
-      ],
-      "reason": "the paved side path past the gondola station structure towards the Biela Put client centre",
-      "side": "up"
+      "rect": [0, 705, 60, 300],
+      "interaction_point": [70, 860],
+      "label_anchor": [200, 690],
+      "side": "left",
+      "reason": "exit geography 2026-10-07: the paved forecourt continues out of the left edge, east past the gondola station to the Biela Put plaza and the client centre, which lies E = left of the SSW camera (docs/navigation/compass/S42.json)"
     },
     "S42.to_S45": {
       "rect": [650, 560, 110, 92],

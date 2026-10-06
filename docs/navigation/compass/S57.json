@@ -1,0 +1,47 @@
+{
+  "room": "S57",
+  "name": "Dúbravská zastávka v roku 1982",
+  "era": 1982,
+  "family": "L_STOP",
+  "camera": {
+    "lat": 48.18172,
+    "lon": 17.04064
+  },
+  "heading_deg": 330,
+  "screen_compass": {
+    "up": 330,
+    "right": 60,
+    "down": 150,
+    "left": 240
+  },
+  "confidence": "high",
+  "evidence": [
+    "OSM: the tram runs in the median of M. Schneidra-Trnavskeho, axis SE->NW (segment 48.18146,17.04088 -> 48.18462,17.03781 = bearing ~327 deg); the camera stands on the SW platform (OSM platform 48.18151,17.04092 -> 48.18203,17.04024) and looks NW along it (art/masters/bg_natural/S11.md: turned 4 deg right of the platform axis)",
+    "painting: the west carriageway on the left, the tracks right of the platform, the east carriageway and the low bluish medical centre on the right (owner 2026-10-06), the street rising into the distance towards the Dubravka centre (NW)",
+    "1982: no tram yet (the line is under construction on the right); the articulated bus on the west carriageway faces the camera (towards Karlova Ves); scenery, no exit",
+    "owner 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop"
+  ],
+  "exits": [
+    {
+      "id": "S57.to_S58",
+      "to": "S58",
+      "side": "left",
+      "change": "down -> left",
+      "why": "same as S11.to_S12 (owner fact, same camera)",
+      "real_bearing_deg": 257,
+      "distance_m": 274,
+      "relative_to_heading_deg": -73
+    },
+    {
+      "id": "S57.to_S62",
+      "to": "S62",
+      "side": "up",
+      "change": "unchanged",
+      "why": "same as S11.to_S18",
+      "real_bearing_deg": 307,
+      "distance_m": 549,
+      "relative_to_heading_deg": -23
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

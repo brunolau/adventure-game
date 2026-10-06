@@ -1,0 +1,44 @@
+{
+  "room": "S04",
+  "name": "Potraviny cez okienko",
+  "era": 2020,
+  "camera": {
+    "lat": 48.2342,
+    "lon": 17.2503
+  },
+  "heading_deg": 180,
+  "screen_compass": {
+    "up": 180,
+    "right": 270,
+    "down": 0,
+    "left": 90
+  },
+  "confidence": "medium",
+  "evidence": [
+    "register / art/masters/bg_natural/S04.md: courtyard of the quarter-circle arcade of Centrum MONAR (OSM way 249773039, the concave side faces north), camera in the courtyard facing the mid unit = looking S",
+    "OSRM foot: to the bus stop S07 the walk leaves E (92-111 deg = left), to the park S03 it leaves W then SW (243-266 deg = right)"
+  ],
+  "exits": [
+    {
+      "id": "S04.to_S03",
+      "to": "S03",
+      "side": "right",
+      "change": "unchanged",
+      "why": "out of the right edge (W); the walk leaves W/SW; the park itself lies SSW (rel +22)",
+      "real_bearing_deg": 202,
+      "distance_m": 1187,
+      "relative_to_heading_deg": 22
+    },
+    {
+      "id": "S04.to_S07",
+      "to": "S07",
+      "side": "left",
+      "change": "unchanged",
+      "why": "out of the left edge (E): the bus stop lies ESE (rel -70)",
+      "real_bearing_deg": 110,
+      "distance_m": 548,
+      "relative_to_heading_deg": -70
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

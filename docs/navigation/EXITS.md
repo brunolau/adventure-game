@@ -24,10 +24,11 @@ warns about the same crowding and continuity problems room by room.
    through the other.
 4. **Walking continuity.** Leaving a room out of its right (left) edge arrives at the target's left (right) edge, so Adam
    keeps walking in the same direction. Doors are exempt (a door in a side wall is passed through and turned away from).
-5. **Real direction where it is known.** Where the register or the painting log gives the camera heading, the target's
-   real bearing should fall on the exit's side; the coordinates of some rooms are estimates (e.g. S18), so this is
-   advisory (flag `COMPASS`), never above rules 1-4 or an owner statement (the S17 family: "the way to the panel blocks
-   is to the right of the school").
+5. **Real direction (owner 2026-10-07, binding).** Every exit points where its place really lies from the camera's real
+   position and heading (`docs/navigation/compass/<room>.json`: heading, which compass direction each screen side shows,
+   confidence and evidence; the real bearing follows the walking or travel route the game implies). Owner facts override
+   any inference; rules 3 and 4 give way to geography (see the accepted continuity pairs below). `COMPASS` stays an
+   advisory flag because it uses the register's straight-line bearing, not the route.
 
 **Arrival** (`Room.Build` / `HeroSpawn`, `WorldStage`): when Adam comes in through an exit he appears at the matching
 return exit of the new room: at the edge (or in the door), and during the fade-in he walks a step in to a point a little
@@ -36,7 +37,52 @@ explicit `"arrival": [x, y]`). The step always ends when the transition ends (`R
 harness start from a standing hero; reduced motion places him at once. Map fast travel, portals, special transitions,
 new game and load use the room's spawn.
 
-## Problems found (audit of the committed state before this pass)
+## Exit-geography pass 2026-10-07
+
+Owner request 2026-10-07: *"rerun workflows focusing on proper 'next location' arrow placements … on zastávka
+Švantnerova, ZŠ Sokolíkova should be to the left of the zastávka; in Karlova Ves, Dúbravka is on the right and the city
+on the left."* The 2026-10-06 layout below got several directions wrong (it placed exits by picture layout and walking
+continuity, not by the real compass). Every room's camera position and heading was re-derived from the reference photo,
+the painted landmarks and OpenStreetMap (`docs/navigation/compass/<room>.json`); the owner's review page is
+`docs/navigation/exits_review.html` (regenerate: `python tools/exits_review_page.py`; open questions listed there).
+
+**Owner facts:** Švantnerova stop S11 / S51 / S57: ZŠ Sokolíkova (S12 / S52 / S58) on the LEFT. Karlova Ves S19 / S20:
+Dúbravka on the RIGHT, the city (Staré Mesto, Ružinov, Petržalka) on the LEFT. S07: the shop S04 bottom left on the road,
+the bus to Dúbravka higher on the road pointing up (kept).
+
+25 exits in 15 rooms changed (blocking files only, plus one paint edit: S37 master v5 adds the footpath to
+the square). Same-camera families (L_STOP, L_SCHOOL_FRONT, L_HALL, L_CLASS, L_CABINET, L_YARD, L_WINDOW, S18/S62) have
+identical sides in every era; every connection's return exit points back.
+
+| room | exit | side | why |
+|---|---|---|---|
+| S03 | S03.to_S02 → S02 | left → down | Jaseňová lies WSW, behind the camera; the walk starts down the end of Javorová alej (the meadow towards the viewer). The old left edge pointed NNE. |
+| S03 | S03.to_S04 → S04 | down → left | The shop at Triangel lies NNE = left: out of the left edge past the playground. S04's way back is its right edge. |
+| S11 | S11.to_S12 → S12 | down → left | Owner fact: the school is on the LEFT. The zebra crossing at the near left runs out of the left edge (school WSW). |
+| S11 | S11.to_S19 → S19 | up → down | The tram faces the camera and leaves towards the viewer: Karlova Ves lies SE, behind the camera. |
+| S16 | S16.to_S15 → S15 | up → left | The door is in the left wall; the cabinet lies to the left (return of the cabinet's right-wall door). |
+| S19 | S19.to_S11 → S11 | left → right | Owner fact: Dúbravka is on the RIGHT. The tram runs NNW along Karloveská. |
+| S19 | S19.to_S21 → S21 | right → left | Owner fact: the city is on the LEFT. The tram runs SSE towards Lafranconi and the centre. |
+| S21 | S21.to_S22 → S22 | up → down | Ventúrska lies SW, behind-left: out of the bottom-left through Laurinská. |
+| S21 | S21.to_S24 → S24 | up → up | Obchodná lies NNW: now the far-left side street into the picture (was the centre street). |
+| S21 | S21.to_S25 → S25 | right → up | The Ružinov tram leaves NE along Špitálska: the street beside the department store (was the right edge = SE). |
+| S21 | S21.to_S28 → S28 | up → down | The bus to Petržalka goes south over the Danube, behind the camera: the painted bus-stop pole, side down. |
+| S25 | S25.to_S27 → S27 | right → down | The Mileticova estate lies SW across the street, behind the camera (was the right edge = east). |
+| S28 | S28.to_S29 → S29 | up → right | Rovniakova lies SE along Rusovská cesta: up the painted stairs on the right. |
+| S32 | S32.to_S31 → S31 | left → up | The railway halt lies NNE, dead ahead: the street straight ahead past the chapel (swapped with S34). |
+| S32 | S32.to_S34 → S34 | up → left | The culture hall stands at the NW corner of the square, 44° left: the dirt road out of the left edge. |
+| S37 | S37.to_S32 → S32 | left → up | The square lies ahead-right (SSW): a footpath painted on the right (master v5) leading into the picture. |
+| S41 | S41.to_S42 → S42 | up → left | Hotel Grand Jasná lies WNW = left, over the painted footbridge; the far end of the road leads away from it. |
+| S42 | S42.to_S41 → S41 | down → up | S41 lies ahead-left (SSE), across the footbridge, not behind the camera. |
+| S42 | S42.to_S46 → S46 | up → left | The client centre lies due east = left of the SSW camera: the forecourt out of the left edge. |
+| S51 | S51.to_S52 → S52 | down → left | Owner fact: the school is on the LEFT (same camera as S11). |
+| S51 | S51.to_S07 → S07 | up → down | The bus back to Čierna Voda goes SE through Karlova Ves and the city, behind the camera: the platform at the bottom. |
+| S57 | S57.to_S58 → S58 | down → left | Owner fact: the school is on the LEFT (same camera as S11). |
+| S61 | S61.to_S64 → S64 | down → up | The service window lies straight ahead beyond the main wing: the footpath towards its SE corner. 'Down' pointed NE, away from it. |
+| S61 | S61.to_S66 → S66 | right → down | The garden shed is behind-left; 'right' pointed NW, the opposite way. Leaves at the bottom left (the left edge is the way to the front). |
+| S66 | S66.to_S61 → S61 | left → down | The footprints run from the shed towards the viewer, back to the yard behind the camera. |
+
+## Problems found 2026-10-06 (audit of the committed state before that pass)
 
 `python tools/exit_audit.py --blocking <HEAD blocking files> --travel <HEAD travel_ext.json>` plus a visual review of
 all 69 paintings with the zones drawn in (Space markers):
@@ -58,7 +104,7 @@ all 69 paintings with the zones drawn in (Space markers):
 
 No exit lacked a painted way at its logical spot, so no paint edit was needed (spend USD 0).
 
-## Changes per room
+## Changes per room 2026-10-06 (superseded where the 2026-10-07 table above differs)
 
 | room | change |
 |---|---|
@@ -92,182 +138,184 @@ the localization tables are theirs).
 
 - accepted: `S48.to_S47` / accepted: `S48.to_S50` — the Rotunda's entrance and the external stairs to the roof terrace
   are two different painted ways on the same building (a door at its base, a steel staircase beside it); 189 px apart.
-- `COMPASS` advisories that stay: S17 / S55 / S61 lead left to the front (S12 / S52 / S58) although the register
-  coordinates put the front entrance west-north-west of the yard camera (right of a south-west view): the owner-confirmed
-  layout of the S17 family goes round the SE end of the main wing (left); S61.to_S66 (the shed by the east fence) and
-  S37.to_S32 (the square, behind-right of the SSE view, kept left for continuity with S32.to_S37 on S32's right edge).
-- S11 / S51 / S57: the far end of the platform (S18 / S07 / S62) and the tram (S19) are both into the picture, 340 px
-  apart — a walkway and a vehicle, kept.
+- accepted: `S11.to_S12` / accepted: `S12.to_S11` / accepted: `S51.to_S52` / accepted: `S52.to_S51` /
+  accepted: `S57.to_S58` / accepted: `S58.to_S57` — `CONTINUITY` (both left edges) is geographic: the stop camera looks NW,
+  the school-front camera NE (85° apart). Adam leaves the stop westwards over the zebra crossing (owner: left), walks
+  round the north end of the school and comes into the forecourt from the NW, which is the school picture's left edge.
+- `COMPASS` advisories that stay (the register's straight line differs from the route): S17 / S55 / S61 lead left to the
+  front (S12 / S52 / S58), round the SE end of the main wing (owner-confirmed yard layout; the right side is the way to
+  the blocks); S28.to_S21 (the bus leaves NW along Rusovská cesta, S21 itself lies NNE); S07.to_S04 (owner layout, the
+  shop really lies ahead along the road); S51.to_S07 (the bus route leaves SE, the straight line to Čierna Voda is ENE).
 
 ## Table (generated)
 
 <!-- exits:begin -->
 ### 2020
 
-**S01 Adamova garáž** — camera heading not recorded
+**S01 Adamova garáž** — camera 200° (low confidence; into the picture = south, screen right = west, towards the viewer = north, screen left = east; docs/navigation/compass/S01.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S01.to_S02 | up | the open sectional garage door: out onto the driveway and the street (S02) | [930, 440, 450, 352] → [1150, 822] | S02 | walk | 202° 103 m | S02.to_S01 (up) | ok |
+| S01.to_S02 | up | the open sectional garage door: out onto the driveway and the street (S02) | [930, 440, 450, 352] → [1150, 822] | S02 | walk | 202° 103 m (→ up) | S02.to_S01 (up) | ok |
 
-**S02 Ulica medzi plotmi** — camera heading not recorded
-
-| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
-|---|---|---|---|---|---|---|---|---|
-| S02.to_S01 | up | Adam's open driveway gate | [705, 560, 300, 170] → [855, 760] | S01 | walk | 22° 103 m | S01.to_S02 (up) | ok |
-| S02.to_S03 | right | the street continues out of the right edge past the courier van towards Javorova alej and the park | [1855, 815, 65, 200] → [1850, 915] | S03 | walk | 62° 1347 m | S03.to_S02 (left) | ok |
-| S02.to_S05 | up | narrow paved footpath between two plots, a short cut to the old core on Pezinska (Mira) | [430, 560, 170, 175] → [520, 755] | S05 | walk | 29° 879 m | S05.to_S02 (left) | ok |
-
-**S03 Dobrovoľnícke výdajné miesto** — camera heading not recorded
+**S02 Ulica medzi plotmi** — camera 300° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S02.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S03.to_S02 | left (named) | the sandy path and the trampled meadow continue out of the left edge towards the street | [0, 720, 60, 295] → [70, 880] | S02 | walk | 242° 1347 m | S02.to_S03 (right) | ok |
-| S03.to_S04 | down (named) | the trampled meadow runs towards the camera, across the park to the village shop at Triangel | [1120, 950, 440, 110] → [1340, 995] | S04 | walk | 22° 1187 m | S04.to_S03 (right) | ok |
-| S03.to_S08 | right (named) | the trampled meadow continues out of the right edge below the gravel path, down to the pump track and the p... | [1860, 700, 60, 315] → [1850, 880] | S08 | walk | 141° 160 m | S08.to_S03 (left) | ok |
+| S02.to_S01 | up | Adam's open driveway gate | [705, 560, 300, 170] → [855, 760] | S01 | walk | 22° 103 m (→ right) | S01.to_S02 (up) | ok |
+| S02.to_S03 | right | the street continues out of the right edge past the courier van towards Javorova alej and the park | [1855, 815, 65, 200] → [1850, 915] | S03 | walk | 62° 1347 m (→ right) | S03.to_S02 (down) | ok |
+| S02.to_S05 | up | narrow paved footpath between two plots, a short cut to the old core on Pezinska (Mira) | [430, 560, 170, 175] → [520, 755] | S05 | walk | 29° 879 m (→ right) | S05.to_S02 (left) | ok |
 
-**S04 Potraviny cez okienko** — camera 180° (courtyard of the arc facing the mid unit (the concave side faces north))
+**S03 Dobrovoľnícke výdajné miesto** — camera 105° (medium confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S03.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S04.to_S03 | right (named) | the courtyard paving continues out of the right edge along the arcade, towards Javorová alej and the park w... | [1850, 805, 70, 210] → [1845, 905] | S03 | walk | 202° 1187 m (→ up) | S03.to_S04 (down) | ok |
+| S03.to_S02 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S03.json): the trampled meadow runs towards the camera,... | [1120, 950, 440, 110] → [1340, 995] | S02 | walk | 242° 1347 m (→ right) | S02.to_S03 (right) | ok |
+| S03.to_S04 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S03.json: camera W of the shelter looking ESE): the sand... | [0, 720, 60, 295] → [70, 880] | S04 | walk | 22° 1187 m (→ left) | S04.to_S03 (right) | ok |
+| S03.to_S08 | right (named) | the trampled meadow continues out of the right edge below the gravel path, down to the pump track and the p... | [1860, 700, 60, 315] → [1850, 880] | S08 | walk | 141° 160 m (→ right) | S08.to_S03 (left) | ok |
+
+**S04 Potraviny cez okienko** — camera 180° (medium confidence; into the picture = south, screen right = west, towards the viewer = north, screen left = east; docs/navigation/compass/S04.json)
+
+| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
+|---|---|---|---|---|---|---|---|---|
+| S04.to_S03 | right (named) | the courtyard paving continues out of the right edge along the arcade, towards Javorová alej and the park w... | [1850, 805, 70, 210] → [1845, 905] | S03 | walk | 202° 1187 m (→ up) | S03.to_S04 (left) | ok |
 | S04.to_S07 | left (named) | the courtyard paving continues out of the left edge along the arcade, out to the road and on to the bus sto... | [0, 805, 70, 210] → [75, 905] | S07 | walk | 110° 548 m (→ left) | S07.to_S04 (left) | ok |
 
-**S05 Mirkina bránka** — camera heading not recorded
+**S05 Mirkina bránka** — camera 325° (medium confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S05.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S05.to_S02 | left | the pavement continues out of the left edge (street between the fences) | [0, 740, 60, 275] → [70, 900] | S02 | walk | 209° 879 m | S02.to_S05 (up) | ok |
+| S05.to_S02 | left | the pavement continues out of the left edge (street between the fences) | [0, 740, 60, 275] → [70, 900] | S02 | walk | 209° 879 m (→ left) | S02.to_S05 (up) | ok |
 | S05.to_S06 | right | narrow side passage between the house corner and the neighbour's wall, leading along the house to the close... | [1655, 520, 130, 215] → [1725, 760] | S06 | walk | — | S06.to_S05 (left) | ok |
 | S05.to_S09 | up | the whole workshop door leaf and its threshold step | [725, 400, 150, 330] → [800, 765] | S09 | walk | — | S09.to_S05 (left) | ok |
 
-**S06 Pod zatvoreným oknom** — camera heading not recorded
+**S06 Pod zatvoreným oknom** — camera 225° (low confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S06.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S06.to_S05 | left | the side path continues out of the left edge back to the street passage beside the gate (S05) | [0, 800, 60, 215] → [70, 905] | S05 | walk | — | S05.to_S06 (right) | ok |
 
-**S07 Čierna Voda pri výveske** — camera heading not recorded
+**S07 Čierna Voda pri výveske** — camera 293° (high confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S07.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S07.to_S51 | up (named) | owner 2026-10-06: the bus to Dúbravka higher on the road by the bus-stop sign, direction up the road | [450, 440, 260, 130] → [655, 640] | S51 | bus | 251° 17009 m | S51.to_S07 (up) | ok |
-| S07.to_S04 | left (named) | owner 2026-10-06: back to the shop (S04) at the bottom left, on the road towards the viewer | [30, 800, 360, 200] → [470, 965] | S04 | walk | 290° 548 m | S04.to_S07 (left) | ok |
+| S07.to_S51 | up (named) | owner 2026-10-06: the bus to Dúbravka higher on the road by the bus-stop sign, direction up the road | [450, 440, 260, 130] → [655, 640] | S51 | bus | 251° 17009 m (→ left) | S51.to_S07 (down) | ok |
+| S07.to_S04 | left (named) | owner 2026-10-06: back to the shop (S04) at the bottom left, on the road towards the viewer | [30, 800, 360, 200] → [470, 965] | S04 | walk | 290° 548 m (→ up) | S04.to_S07 (left) | ok |
 
-**S08 Chodník pri retenčnej nádrži** — camera heading not recorded
+**S08 Chodník pri retenčnej nádrži** — camera 67° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S08.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S08.to_S03 | left (named) | the trail leaves the mound out of the left edge, back up to the park shelter S03 (S03.to_S08 is its right e... | [0, 815, 65, 200] → [70, 910] | S03 | walk | 321° 160 m | S03.to_S08 (right) | ok |
+| S08.to_S03 | left (named) | the trail leaves the mound out of the left edge, back up to the park shelter S03 (S03.to_S08 is its right e... | [0, 815, 65, 200] → [70, 910] | S03 | walk | 321° 160 m (→ left) | S03.to_S08 (right) | ok |
 
-**S09 Predsieň záhradnej dielne** — camera heading not recorded
+**S09 Predsieň záhradnej dielne** — camera heading not determinable (low confidence; docs/navigation/compass/S09.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S09.to_S05 | left | the open outer door to the street (Mira's gate, S05) | [24, 342, 262, 470] → [155, 840] | S05 | walk | — | S05.to_S09 (up) | ok |
 | S09.to_S10 | right | the inner doorway to the back room (ZVON workshop, S10) | [1630, 342, 262, 470] → [1760, 840] | S10 | walk | — | S10.to_S09 (left) | ok |
 
-**S10 Dielňa ZVON** — camera heading not recorded
+**S10 Dielňa ZVON** — camera heading not determinable (low confidence; docs/navigation/compass/S10.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S10.to_S09 | left | the doorway back to the anteroom (S09) | [24, 342, 262, 470] → [155, 840] | S09 | walk | — | S09.to_S10 (right) | ok |
 
-**S51 Dúbravská zastávka v roku 2020** — camera 315° (as S11)
+**S51 Dúbravská zastávka v roku 2020** — camera 330° (high confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S51.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S51.to_S52 | down (named) | the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family) | [0, 760, 250, 200] → [110, 930] | S52 | walk | 257° 274 m (→ left) | S52.to_S51 (left) | ok |
-| S51.to_S07 | up | the far end of the platform and the path to the bus stop beyond it: the 2020 bus back to Cierna Voda | [780, 430, 240, 212] → [880, 690] | S07 | bus | 71° 17024 m (→ right) | S07.to_S51 (up) | ok |
+| S51.to_S52 | left (named) | exit geography 2026-10-07 | [0, 760, 250, 200] → [110, 930] | S52 | walk | 257° 274 m (→ left) | S52.to_S51 (left) | CONTINUITY |
+| S51.to_S07 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S51.json): the platform towards the viewer, to the city-... | [640, 925, 520, 90] → [900, 985] | S07 | bus | 71° 17024 m (→ right) | S07.to_S51 (up) | ok |
 
-**S52 Pred ZŠ Sokolíkova v roku 2020** — camera 45° (as S12)
+**S52 Pred ZŠ Sokolíkova v roku 2020** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S52.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S52.to_S51 | left | the forecourt path out of the left edge towards the street and the tram stop | [0, 790, 62, 225] → [70, 900] | S51 | walk | 77° 274 m (→ up) | S51.to_S52 (down) | ok |
+| S52.to_S51 | left | the forecourt path out of the left edge towards the street and the tram stop | [0, 790, 62, 225] → [70, 900] | S51 | walk | 77° 274 m (→ up) | S51.to_S52 (left) | CONTINUITY |
 | S52.to_S56 | up (named) | the caretaker's service window, the last ground-floor window before the corner (L_WINDOW is its close-up) | [1618, 388, 164, 212] → [1700, 706] | S56 | walk | 135° 67 m (→ right) | S56.to_S52 (left) | ok |
 | S52.to_S53 | up | the closed glazed entrance doors at the top of the steps (open after D02) | [897, 362, 357, 291] → [1110, 792] | S53 | walk | 121° 43 m (→ right) | S53.to_S52 (left) | ok |
 | S52.to_S55 | right | past the building corner the path leads round to the school yard (right edge) | [1830, 600, 90, 330] → [1850, 800] | S55 | walk | 91° 93 m (→ right) | S55.to_S52 (left) | ok |
 
-**S53 Školské zádverie v roku 2020** — camera heading not recorded
+**S53 Školské zádverie v roku 2020** — camera 315° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S53.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S53.to_S52 | left | glazed entrance double door (same as S13.to_S12) | [30, 290, 160, 545] → [125, 885] | S52 | walk | 301° 43 m | S52.to_S53 (up) | ok |
-| S53.to_S54 | right | open doorway to the corridor and staircase up to the physics cabinet = the approved separate service route... | [1690, 306, 192, 530] → [1782, 862] | S54 | walk | 135° 16 m | S54.to_S53 (left) | ok |
+| S53.to_S52 | left | glazed entrance double door (same as S13.to_S12) | [30, 290, 160, 545] → [125, 885] | S52 | walk | 301° 43 m (→ up) | S52.to_S53 (up) | ok |
+| S53.to_S54 | right | open doorway to the corridor and staircase up to the physics cabinet = the approved separate service route... | [1690, 306, 192, 530] → [1782, 862] | S54 | walk | 135° 16 m (→ down) | S54.to_S53 (left) | ok |
 
-**S54 Fyzikálny kabinet v roku 2020** — camera heading not recorded
+**S54 Fyzikálny kabinet v roku 2020** — camera heading not determinable (low confidence; docs/navigation/compass/S54.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S54.to_S53 | left | door in the left wall to the corridor and the entrance hall (same as S15.to_S13) | [55, 395, 135, 560] → [190, 935] | S53 | walk | 315° 16 m | S53.to_S54 (right) | ok |
 
-**S55 Školský dvor v roku 2020** — camera 225° (as S17)
+**S55 Školský dvor v roku 2020** — camera 225° (high confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S55.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S55.to_S52 | left | the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main... | [0, 722, 60, 293] → [70, 880] | S52 | walk | 271° 93 m (→ right) | S52.to_S55 (right) | COMPASS |
 
-**S56 Školnícke servisné okno v roku 2020** — camera heading not recorded
+**S56 Školnícke servisné okno v roku 2020** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S56.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S56.to_S52 | left | the path along the facade back to the main entrance (left edge) | [0, 860, 64, 155] → [60, 950] | S52 | walk | 315° 67 m | S52.to_S56 (up) | ok |
+| S56.to_S52 | left | the path along the facade back to the main entrance (left edge) | [0, 860, 64, 155] → [60, 950] | S52 | walk | 315° 67 m (→ left) | S52.to_S56 (up) | ok |
 
 
 ### 1995
 
-**S11 Dúbravská zastávka** — camera 315° (SW platform looking NW along the track)
+**S11 Dúbravská zastávka** — camera 330° (high confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S11.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S11.to_S12 | down (named) | the short ramp at the near left down to the zebra crossing over the west carriageway, towards the school | [0, 760, 250, 200] → [110, 930] | S12 | walk | 257° 274 m (→ left) | S12.to_S11 (left) | ok |
+| S11.to_S12 | left (named) | exit geography 2026-10-07 | [0, 760, 250, 200] → [110, 930] | S12 | walk | 257° 274 m (→ left) | S12.to_S11 (left) | CONTINUITY |
 | S11.to_S18 | up | the platform continues past the shelter to its far end and the path to the housing-estate yard (L_STOP family) | [780, 430, 240, 212] → [880, 690] | S18 | walk | 277° 85 m (→ left) | S18.to_S11 (right) | ok |
-| S11.to_S19 | up | the red-cream tram standing at the platform: board it towards Karlova Ves | [1108, 300, 250, 330] → [1050, 720] | S19 | map_transition | 162° 2652 m (→ down) | S19.to_S11 (left) | ok |
+| S11.to_S19 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S11.json): the red-cream tram standing at the platform f... | [1108, 300, 250, 330] → [1050, 720] | S19 | map_transition | 162° 2652 m (→ down) | S19.to_S11 (right) | ok |
 
-**S12 Pred ZŠ Sokolíkova** — camera 45° (at the SW entrance facade)
+**S12 Pred ZŠ Sokolíkova** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S12.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S12.to_S11 | left | the forecourt path continues out of the left edge towards the street and the tram stop | [0, 790, 62, 225] → [70, 900] | S11 | walk | 77° 274 m (→ up) | S11.to_S12 (down) | ok |
+| S12.to_S11 | left | the forecourt path continues out of the left edge towards the street and the tram stop | [0, 790, 62, 225] → [70, 900] | S11 | walk | 77° 274 m (→ up) | S11.to_S12 (left) | CONTINUITY |
 | S12.to_S13 | up | the glazed entrance doors at the top of the steps | [897, 362, 357, 291] → [1110, 792] | S13 | walk | 121° 43 m (→ right) | S13.to_S12 (left) | ok |
 | S12.to_S17 | right | past the building corner the path leads round to the school yard (right edge) | [1830, 600, 90, 330] → [1850, 800] | S17 | walk | 91° 93 m (→ right) | S17.to_S12 (left) | ok |
 
-**S13 Školská vstupná chodba** — camera heading not recorded
+**S13 Školská vstupná chodba** — camera 315° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S13.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S13.to_S12 | left | glazed entrance double door at the front of the left facade wall (out to the forecourt) | [30, 290, 160, 545] → [125, 885] | S12 | walk | 301° 43 m | S12.to_S13 (up) | ok |
-| S13.to_S14 | up | middle double door with glass panes in the back wall: the classroom wing | [849, 368, 222, 332] → [960, 738] | S14 | walk | 49° 42 m | S14.to_S13 (up) | ok |
-| S13.to_S15 | right | open doorway in the right wall to the corridor with the staircase up to the physics cabinet | [1690, 306, 192, 530] → [1782, 862] | S15 | walk | 135° 16 m | S15.to_S13 (left) | ok |
+| S13.to_S12 | left | glazed entrance double door at the front of the left facade wall (out to the forecourt) | [30, 290, 160, 545] → [125, 885] | S12 | walk | 301° 43 m (→ up) | S12.to_S13 (up) | ok |
+| S13.to_S14 | up | middle double door with glass panes in the back wall: the classroom wing | [849, 368, 222, 332] → [960, 738] | S14 | walk | 49° 42 m (→ right) | S14.to_S13 (up) | ok |
+| S13.to_S15 | right | open doorway in the right wall to the corridor with the staircase up to the physics cabinet | [1690, 306, 192, 530] → [1782, 862] | S15 | walk | 135° 16 m (→ down) | S15.to_S13 (left) | ok |
 
-**S14 Trieda pamäťového krúžku** — camera heading not recorded
+**S14 Trieda pamäťového krúžku** — camera 315° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S14.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S14.to_S13 | up | classroom door at the left end of the front wall, to the corridor and the entrance hall | [337, 376, 168, 344] → [418, 758] | S13 | walk | 229° 42 m | S13.to_S14 (up) | ok |
+| S14.to_S13 | up | classroom door at the left end of the front wall, to the corridor and the entrance hall | [337, 376, 168, 344] → [418, 758] | S13 | walk | 229° 42 m (→ left) | S13.to_S14 (up) | ok |
 
-**S15 Fyzikálny kabinet** — camera heading not recorded
+**S15 Fyzikálny kabinet** — camera heading not determinable (low confidence; docs/navigation/compass/S15.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S15.to_S13 | left | door in the left wall to the corridor (stairs down to the entrance hall) | [55, 395, 135, 560] → [190, 935] | S13 | walk | 315° 16 m | S13.to_S15 (right) | ok |
-| S15.to_S16 | right | door in the right wall to the small school-radio room | [1730, 395, 135, 560] → [1730, 935] | S16 | walk | 20° 21 m | S16.to_S15 (up) | ok |
+| S15.to_S16 | right | door in the right wall to the small school-radio room | [1730, 395, 135, 560] → [1730, 935] | S16 | walk | 20° 21 m | S16.to_S15 (left) | ok |
 
-**S16 Miestnosť školského rozhlasu** — camera heading not recorded
+**S16 Miestnosť školského rozhlasu** — camera heading not determinable (low confidence; docs/navigation/compass/S16.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S16.to_S15 | up | door in the left wall back to the physics cabinet | [355, 405, 132, 580] → [470, 960] | S15 | walk | 200° 21 m | S15.to_S16 (right) | ok |
+| S16.to_S15 | left (named) | door in the left wall back to the physics cabinet (exit geography 2026-10-07: the cabinet lies to the left,... | [355, 405, 132, 580] → [470, 960] | S15 | walk | 200° 21 m | S15.to_S16 (right) | ok |
 
-**S17 Školský dvor** — camera 225° (SE corner of the court looking SW at the yard facade)
+**S17 Školský dvor** — camera 225° (high confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S17.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S17.to_S12 | left | the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main... | [0, 722, 60, 293] → [70, 880] | S12 | walk | 271° 93 m (→ right) | S12.to_S17 (right) | COMPASS |
 | S17.to_S18 | right | the yard asphalt continues out of the right edge past the near end of the court fence: the way to the housi... | [1860, 722, 60, 293] → [1850, 880] | S18 | walk | 50° 117 m (→ down) | S18.to_S17 (left) | ok |
 
-**S18 Sídliskový dvor s kioskom** — camera heading not recorded
+**S18 Sídliskový dvor s kioskom** — camera heading not determinable (low confidence; docs/navigation/compass/S18.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
@@ -275,90 +323,90 @@ the localization tables are theirs).
 | S18.to_S17 | left (named) | the side street in front of the kiosk continues out of the left edge towards the school yard (S17.to_S18 le... | [0, 892, 60, 123] → [40, 950] | S17 | walk | 230° 117 m | S17.to_S18 (right) | ok |
 | S18.to_S69 | up | the side road between the kiosk and the parked red car runs back into the gap between the blocks, towards t... | [360, 800, 160, 66] → [440, 878] | S69 | walk | 241° 51 m | S69.to_S18 (down) | ok |
 
-**S19 Karloveské nástupište** — camera heading not recorded
+**S19 Karloveské nástupište** — camera 245° (high confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S19.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S19.to_S11 | left | the platform continues out of the left edge (tram towards Dubravka) | [0, 815, 60, 200] → [70, 910] | S11 | map_transition | 342° 2652 m | S11.to_S19 (up) | ok |
-| S19.to_S20 | up (named) | zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky... | [1510, 540, 150, 260] → [1580, 850] | S20 | walk | 306° 511 m | S20.to_S19 (up) | ok |
-| S19.to_S21 | right | the platform continues out of the right edge (tram towards the centre) | [1860, 815, 60, 200] → [1850, 910] | S21 | map_transition | 109° 4898 m | S21.to_S19 (left) | ok |
+| S19.to_S11 | right (named) | exit geography 2026-10-07 (docs/navigation/compass/S19.json | [1860, 815, 60, 200] → [1850, 910] | S11 | map_transition | 342° 2652 m (→ right) | S11.to_S19 (down) | ok |
+| S19.to_S20 | up (named) | zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky... | [1510, 540, 150, 260] → [1580, 850] | S20 | walk | 306° 511 m (→ right) | S20.to_S19 (up) | ok |
+| S19.to_S21 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S19.json | [0, 815, 60, 200] → [70, 910] | S21 | map_transition | 109° 4898 m (→ left) | S21.to_S19 (left) | ok |
 
-**S20 Palova opravovňa** — camera heading not recorded
+**S20 Palova opravovňa** — camera heading not determinable (low confidence; docs/navigation/compass/S20.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S20.to_S19 | up | glazed shop door to the pavilion arcade and the tram stop | [335, 345, 195, 418] → [432, 820] | S19 | walk | 126° 511 m | S19.to_S20 (up) | ok |
 
-**S21 Kamenné námestie** — camera heading not recorded
+**S21 Kamenné námestie** — camera 30° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S21.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S21.to_S19 | left | the plaza continues out of the left edge (tram stop for Karlova Ves) | [0, 712, 60, 303] → [70, 900] | S19 | map_transition | 289° 4899 m | S19.to_S21 (right) | ok |
-| S21.to_S22 | up (named) | side street at the far left leading towards the Old Town (Venturska) | [0, 370, 128, 330] → [80, 760] | S22 | walk | 256° 571 m | S22.to_S21 (up) | ok |
-| S21.to_S23 | up (named) | entrance door of the cream city block (the reading room) | [1645, 372, 90, 328] → [1690, 760] | S23 | walk | 22° 293 m | S23.to_S21 (up) | ok |
-| S21.to_S24 | up | street beside the department store leading towards Obchodna | [770, 352, 130, 348] → [835, 760] | S24 | walk | 350° 456 m | S24.to_S21 (up) | ok |
-| S21.to_S25 | right | the plaza continues out of the right edge (tram to Ruzinov) | [1860, 712, 60, 303] → [1850, 900] | S25 | map_transition | 59° 1959 m | S25.to_S21 (left) | ok |
-| S21.to_S28 | up | bus stop at the edge of the square (bus to Petrzalka) | [1385, 375, 175, 325] → [1470, 760] | S28 | map_transition | 212° 2485 m | S28.to_S21 (left) | ok |
+| S21.to_S19 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [0, 712, 60, 303] → [70, 900] | S19 | map_transition | 289° 4899 m (→ left) | S19.to_S21 (left) | ok |
+| S21.to_S22 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [300, 960, 380, 100] → [490, 1000] | S22 | walk | 256° 571 m (→ left) | S22.to_S21 (up) | ok |
+| S21.to_S23 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [1645, 372, 90, 328] → [1690, 760] | S23 | walk | 22° 293 m (→ up) | S23.to_S21 (up) | ok |
+| S21.to_S24 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [0, 370, 128, 330] → [80, 760] | S24 | walk | 350° 456 m (→ left) | S24.to_S21 (up) | ok |
+| S21.to_S25 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [770, 352, 130, 348] → [835, 760] | S25 | map_transition | 59° 1959 m (→ up) | S25.to_S21 (left) | ok |
+| S21.to_S28 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [1385, 375, 175, 325] → [1470, 760] | S28 | map_transition | 212° 2485 m (→ down) | S28.to_S21 (left) | ok |
 
-**S22 Antikvariát Pod druhou rukou** — camera heading not recorded
+**S22 Antikvariát Pod druhou rukou** — camera heading not determinable (low confidence; docs/navigation/compass/S22.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S22.to_S21 | up | glazed shop door with the bell, out to Venturska | [985, 340, 206, 425] → [1085, 820] | S21 | walk | 76° 571 m | S21.to_S22 (up) | ok |
+| S22.to_S21 | up | glazed shop door with the bell, out to Venturska | [985, 340, 206, 425] → [1085, 820] | S21 | walk | 76° 571 m | S21.to_S22 (down) | ok |
 
-**S23 Archívna študovňa** — camera heading not recorded
+**S23 Archívna študovňa** — camera heading not determinable (low confidence; docs/navigation/compass/S23.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S23.to_S21 | up | door of the reading room, out to Kamenne namestie | [322, 345, 200, 420] → [420, 822] | S21 | walk | 202° 293 m | S21.to_S23 (up) | ok |
 
-**S24 Fotoateliér Svetlo** — camera heading not recorded
+**S24 Fotoateliér Svetlo** — camera heading not determinable (low confidence; docs/navigation/compass/S24.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S24.to_S21 | up | glazed entrance door to Obchodna | [314, 345, 180, 420] → [404, 822] | S21 | walk | 170° 456 m | S21.to_S24 (up) | ok |
 
-**S25 Miletičova medzi stánkami** — camera heading not recorded
+**S25 Miletičova medzi stánkami** — camera 45° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S25.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S25.to_S21 | left | the aisle runs out of the left edge (tram towards the centre) | [0, 762, 60, 253] → [70, 890] | S21 | map_transition | 239° 1959 m | S21.to_S25 (right) | ok |
-| S25.to_S26 | up (named) | short aisle to the passage through the market-edge building (Pasaz Mileticova) | [250, 340, 190, 300] → [356, 672] | S26 | walk | 294° 47 m | S26.to_S25 (up) | ok |
-| S25.to_S27 | right | the aisle runs out of the right edge towards the estate blocks on Mileticova | [1860, 762, 60, 253] → [1850, 890] | S27 | walk | 280° 129 m | S27.to_S25 (up) | ok |
+| S25.to_S21 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S25.json, camera at the Mileticova edge of the market fa... | [0, 762, 60, 253] → [70, 890] | S21 | map_transition | 239° 1959 m (→ down) | S21.to_S25 (up) | ok |
+| S25.to_S26 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S25.json, camera at the Mileticova edge of the market fa... | [250, 340, 190, 300] → [356, 672] | S26 | walk | 294° 47 m (→ left) | S26.to_S25 (up) | ok |
+| S25.to_S27 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S25.json, camera at the Mileticova edge of the market fa... | [560, 960, 400, 100] → [760, 1000] | S27 | walk | 280° 129 m (→ left) | S27.to_S25 (up) | ok |
 
-**S26 Opravovňa odevov** — camera heading not recorded
+**S26 Opravovňa odevov** — camera heading not determinable (low confidence; docs/navigation/compass/S26.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S26.to_S25 | up | glazed shop door to the passage and the market | [314, 345, 184, 420] → [406, 825] | S25 | walk | 114° 47 m | S25.to_S26 (up) | ok |
 
-**S27 Kazetový klub v suteréne** — camera heading not recorded
+**S27 Kazetový klub v suteréne** — camera heading not determinable (low confidence; docs/navigation/compass/S27.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S27.to_S25 | up | ajar basement door, the stairs up to the courtyard and the market | [314, 360, 184, 405] → [406, 825] | S25 | walk | 100° 129 m | S25.to_S27 (right) | ok |
+| S27.to_S25 | up | ajar basement door, the stairs up to the courtyard and the market | [314, 360, 184, 405] → [406, 825] | S25 | walk | 100° 129 m | S25.to_S27 (down) | ok |
 
-**S28 Petržalský podchod** — camera heading not recorded
-
-| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
-|---|---|---|---|---|---|---|---|---|
-| S28.to_S21 | left | the path and the lawn run out of the left edge (bus stop, back to the centre) | [0, 790, 60, 225] → [70, 900] | S21 | map_transition | 32° 2485 m | S21.to_S28 (up) | ok |
-| S28.to_S29 | up | up the stairs on the embankment to the garage row | [1340, 300, 420, 405] → [1395, 760] | S29 | walk | 136° 1428 m | S29.to_S28 (left) | ok |
-| S28.to_S30 | up | through the lit tunnel towards the Danube embankment | [812, 330, 300, 365] → [960, 740] | S30 | walk | 49° 2030 m | S30.to_S28 (left) | ok |
-
-**S29 Garáž rádioamatéra** — camera heading not recorded
+**S28 Petržalský podchod** — camera 350° (low confidence; into the picture = north, screen right = east, towards the viewer = south, screen left = west; docs/navigation/compass/S28.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S29.to_S28 | left | the forecourt runs out of the left edge towards the underpass | [0, 716, 60, 299] → [70, 880] | S28 | walk | 316° 1428 m | S28.to_S29 (up) | ok |
+| S28.to_S21 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [0, 790, 60, 225] → [70, 900] | S21 | map_transition | 32° 2485 m (→ right) | S21.to_S28 (down) | COMPASS |
+| S28.to_S29 | right (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [1380, 170, 540, 535] → [1395, 760] | S29 | walk | 136° 1428 m (→ down) | S29.to_S28 (left) | ok |
+| S28.to_S30 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [812, 330, 300, 365] → [960, 740] | S30 | walk | 49° 2030 m (→ right) | S30.to_S28 (left) | ok |
 
-**S30 Nábrežný merací prístrešok** — camera 292° (upstream footway looking WNW)
+**S29 Garáž rádioamatéra** — camera 90° (low confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S29.json)
+
+| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
+|---|---|---|---|---|---|---|---|---|
+| S29.to_S28 | left | the forecourt runs out of the left edge towards the underpass | [0, 716, 60, 299] → [70, 880] | S28 | walk | 316° 1428 m (→ left) | S28.to_S29 (right) | ok |
+
+**S30 Nábrežný merací prístrešok** — camera 292° (high confidence; into the picture = west, screen right = north, towards the viewer = east, screen left = south; docs/navigation/compass/S30.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S30.to_S28 | left | the footway runs out of the left edge (behind the left truss member) back to the Petrzalka bridgehead and t... | [0, 800, 90, 215] → [60, 905] | S28 | walk | 229° 2029 m (→ left) | S28.to_S30 (up) | ok |
 
-**S69 Sokolíkovský dvor** — camera heading not recorded
+**S69 Sokolíkovský dvor** — camera heading not determinable (low confidence; docs/navigation/compass/S69.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
@@ -367,69 +415,69 @@ the localization tables are theirs).
 
 ### 1960
 
-**S31 Ivanská železničná zastávka** — camera 67° (on the crossing looking ENE along the track)
+**S31 Ivanská železničná zastávka** — camera 105° (high confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S31.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S31.to_S32 | right | the forecourt in front of the gable continues out of the right edge onto Nadrazna, the road south into the... | [1860, 705, 60, 300] → [1845, 870] | S32 | walk | 201° 718 m (→ right) | S32.to_S31 (left) | ok |
+| S31.to_S32 | right | the forecourt in front of the gable continues out of the right edge onto Nadrazna, the road south into the... | [1860, 705, 60, 300] → [1845, 870] | S32 | walk | 201° 718 m (→ right) | S32.to_S31 (up) | ok |
 
-**S32 Ivanská náves** — camera 22° (square park looking NNE to the fire-station tower)
+**S32 Ivanská náves** — camera 22° (medium confidence; into the picture = north, screen right = east, towards the viewer = south, screen left = west; docs/navigation/compass/S32.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S32.to_S31 | left | the dirt road leaves the square to the left (north, Nadrazna towards the railway halt) | [0, 672, 60, 330] → [70, 860] | S31 | walk | 21° 718 m (→ up) | S31.to_S32 (right) | ok |
+| S32.to_S31 | up (named) | exit geography 2026-10-07: the village street straight ahead between the post-office house and the chapel,... | [595, 440, 140, 175] → [662, 650] | S31 | walk | 21° 718 m (→ up) | S31.to_S32 (right) | ok |
 | S32.to_S33 | up | the plank door of the post-office house on the left, enamel POSTA sign above it | [398, 396, 104, 186] → [450, 628] | S33 | walk | 115° 112 m (→ right) | S33.to_S32 (left) | ok |
-| S32.to_S34 | up | the street mouth between the post-office house and the next houses (Moyzesova, towards the culture hall) | [595, 440, 140, 175] → [662, 650] | S34 | walk | 338° 138 m (→ left) | S34.to_S32 (right) | ok |
+| S32.to_S34 | left (named) | exit geography 2026-10-07: the dirt road leaves the square out of the left edge (WNW round the green to Moy... | [0, 672, 60, 330] → [70, 860] | S34 | walk | 338° 138 m (→ left) | S34.to_S32 (right) | ok |
 | S32.to_S35 | up | the village road leaving the square at the back right, towards the manor's service courtyard | [1045, 440, 140, 175] → [1115, 652] | S35 | walk | 31° 259 m (→ up) | S35.to_S32 (left) | ok |
-| S32.to_S37 | right | the path leaves the green to the right in front of the big linden (east, towards the manor park) | [1860, 720, 60, 285] → [1850, 870] | S37 | walk | 36° 331 m (→ up) | S37.to_S32 (left) | ok |
+| S32.to_S37 | right | the path leaves the green to the right in front of the big linden (east, towards the manor park) | [1860, 720, 60, 285] → [1850, 870] | S37 | walk | 36° 331 m (→ up) | S37.to_S32 (up) | ok |
 
-**S33 Pošta s prepážkou** — camera heading not recorded
+**S33 Pošta s prepážkou** — camera heading not determinable (low confidence; docs/navigation/compass/S33.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S33.to_S32 | left | the glazed wooden double door to the village square at the left of the back wall | [50, 410, 210, 290] → [155, 765] | S32 | walk | 295° 112 m | S32.to_S33 (up) | ok |
 
-**S34 Kultúrna sála pred skúškou** — camera heading not recorded
+**S34 Kultúrna sála pred skúškou** — camera heading not determinable (low confidence; docs/navigation/compass/S34.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S34.to_S32 | right | the panelled double door on the right of the end wall, one leaf ajar, daylight from the street | [1630, 430, 170, 290] → [1715, 770] | S32 | walk | 158° 138 m | S32.to_S34 (up) | ok |
+| S34.to_S32 | right | the panelled double door on the right of the end wall, one leaf ajar, daylight from the street | [1630, 430, 170, 290] → [1715, 770] | S32 | walk | 158° 138 m | S32.to_S34 (left) | ok |
 
-**S35 Dvor hospodárskej dielne** — camera heading not recorded
+**S35 Dvor hospodárskej dielne** — camera heading not determinable (low confidence; docs/navigation/compass/S35.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S35.to_S32 | left | the yard opens to the left towards the village road and the square | [0, 795, 60, 215] → [95, 982] | S32 | walk | 211° 259 m | S32.to_S35 (up) | ok |
 | S35.to_S36 | up | the plank door of Oto's workshop under the columned porch | [1125, 400, 95, 210] → [1172, 652] | S36 | walk | — | S36.to_S35 (left) | ok |
 
-**S36 Otova mechanická dielňa** — camera heading not recorded
+**S36 Otova mechanická dielňa** — camera heading not determinable (low confidence; docs/navigation/compass/S36.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S36.to_S35 | left | the plank door in the back wall at the far left, ajar, daylight of the courtyard behind it | [70, 430, 192, 290] → [170, 790] | S35 | walk | — | S35.to_S36 (up) | ok |
 
-**S37 Park pri kaštieli** — camera 157° (NNW of the facade looking SSE)
+**S37 Park pri kaštieli** — camera 160° (high confidence; into the picture = south, screen right = west, towards the viewer = north, screen left = east; docs/navigation/compass/S37.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S37.to_S32 | left | the gravel path leaves the park to the left, back to the village square | [0, 780, 60, 230] → [70, 900] | S32 | walk | 216° 331 m (→ right) | S32.to_S37 (right) | COMPASS |
-| S37.to_S38 | right | the path leaves the park to the right through the pines, towards the fields and the canal | [1860, 780, 60, 230] → [1850, 900] | S38 | walk | 227° 1635 m (→ right) | S38.to_S37 (left) | ok |
+| S37.to_S32 | up (named) | exit geography 2026-10-07: the footpath branching off the front path to the right and curving into the pict... | [1650, 640, 165, 112] → [1745, 758] | S32 | walk | 216° 331 m (→ right) | S32.to_S37 (right) | ok |
+| S37.to_S38 | right (named) | the path leaves the park to the right through the pines, towards the fields and the canal (SW, right of the... | [1860, 780, 60, 230] → [1850, 900] | S38 | walk | 227° 1635 m (→ right) | S38.to_S37 (left) | ok |
 
-**S38 Pred skúšobnou čerpacou búdkou** — camera 135° (looking SE)
+**S38 Pred skúšobnou čerpacou búdkou** — camera 135° (medium confidence; into the picture = south-east, screen right = south-west, towards the viewer = north-west, screen left = north-east; docs/navigation/compass/S38.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S38.to_S37 | left | the dirt track leads back out of the left edge towards the village and the manor park | [0, 712, 60, 295] → [70, 880] | S37 | walk | 47° 1635 m (→ left) | S37.to_S38 (right) | ok |
 | S38.to_S39 | up | lower part of the measuring-room door and its concrete threshold step (the door leaf above is the S38.door... | [440, 578, 132, 104] → [505, 712] | S39 | walk | — | S39.to_S38 (left) | ok |
 
-**S39 Miestnosť prvého ZVONu** — camera heading not recorded
+**S39 Miestnosť prvého ZVONu** — camera heading not determinable (low confidence; docs/navigation/compass/S39.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S39.to_S38 | left | the plank door of the hut, standing open on the left side wall, daylight and reeds of the canal bank outsid... | [20, 270, 185, 540] → [180, 825] | S38 | walk | — | S38.to_S39 (up) | ok |
 | S39.to_S40 | right | the narrow plank door with a brass knob on the right side wall, to the technical archive loft (v1 painting) | [1705, 200, 180, 620] → [1785, 850] | S40 | walk | 47° 1560 m | S40.to_S39 (left) | ok |
 
-**S40 Povala technického archívu** — camera heading not recorded
+**S40 Povala technického archívu** — camera heading not determinable (low confidence; docs/navigation/compass/S40.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
@@ -438,55 +486,55 @@ the localization tables are theirs).
 
 ### 2035
 
-**S41 Biela Púť pri dolnej stanici** — camera heading not recorded
+**S41 Biela Púť pri dolnej stanici** — camera 5° (medium confidence; into the picture = north, screen right = east, towards the viewer = south, screen left = west; docs/navigation/compass/S41.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S41.to_S42 | up | the access road continues past Hotel Posta towards Hotel Grand Jasna (S42): the far end of the road | [780, 352, 230, 150] → [800, 630] | S42 | walk | — | S42.to_S41 (down) | ok |
-| S41.to_S67 | up | the gondola valley station (bullwheel housing and boarding hall) behind the fence | [1252, 262, 260, 120] → [1120, 745] | S67 | cable_A6 | 151° 1093 m | S67.to_S41 (left) | ok |
+| S41.to_S42 | left (named) | exit geography 2026-10-07: the arched wooden footbridge on the left crosses the stream (Otupnianka) to the... | [0, 445, 430, 150] → [505, 705] | S42 | walk | — | S42.to_S41 (up) | ok |
+| S41.to_S67 | up | the gondola valley station (bullwheel housing and boarding hall) behind the fence | [1252, 262, 260, 120] → [1120, 745] | S67 | cable_A6 | 151° 1093 m (→ down) | S67.to_S41 (left) | ok |
 
-**S42 Pred hotelom Grand Jasná** — camera 202° (forecourt looking SSW to Chopok)
+**S42 Pred hotelom Grand Jasná** — camera 195° (medium confidence; into the picture = south, screen right = west, towards the viewer = north, screen left = east; docs/navigation/compass/S42.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S42.to_S41 | down | the paved forecourt runs back towards the camera, down the access road to the Biela Put gondola station pla... | [700, 950, 520, 110] → [960, 995] | S41 | walk | — | S41.to_S42 (up) | ok |
+| S42.to_S41 | up (named) | exit geography 2026-10-07: the paved side path past the gondola station structure, back-left into the pictu... | [130, 560, 130, 92] → [195, 676] | S41 | walk | — | S41.to_S42 (left) | ok |
 | S42.to_S43 | up (named) | the hotel's main entrance under its canopy (lobby) | [1625, 450, 270, 255] → [1760, 800] | S43 | walk | 243° 134 m (→ right) | S43.to_S42 (left) | ok |
 | S42.to_S44 | up | the glazed side door of the hotel's lower wing that leads to the rented exhibition salon | [1190, 425, 125, 269] → [1252, 740] | S44 | walk | 243° 134 m (→ right) | S44.to_S42 (right) | ok |
 | S42.to_S45 | up | the gravel footpath leading through the gap in the stone wall into the spruce forest to Vrbicke pleso | [650, 560, 110, 92] → [702, 676] | S45 | walk | 267° 373 m (→ right) | S45.to_S42 (left) | ok |
-| S42.to_S46 | up (named) | the paved side path past the gondola station structure towards the Biela Put client centre | [130, 560, 130, 92] → [195, 676] | S46 | walk | 99° 162 m (→ left) | S46.to_S42 (left) | ok |
+| S42.to_S46 | left (named) | exit geography 2026-10-07: the paved forecourt continues out of the left edge, east past the gondola statio... | [0, 705, 60, 300] → [70, 860] | S46 | walk | 99° 162 m (→ left) | S46.to_S42 (left) | ok |
 
-**S43 Lobby hotela Grand Jasná** — camera heading not recorded
+**S43 Lobby hotela Grand Jasná** — camera heading not determinable (low confidence; docs/navigation/compass/S43.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S43.to_S42 | left | the glazed entrance doors in the back wall, left of the reception, out to the forecourt | [60, 420, 200, 285] → [160, 800] | S42 | walk | 63° 134 m | S42.to_S43 (up) | ok |
 
-**S44 Výstavný salón hotela Grand Jasná** — camera heading not recorded
+**S44 Výstavný salón hotela Grand Jasná** — camera heading not determinable (low confidence; docs/navigation/compass/S44.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S44.to_S42 | right | the salon door to the hotel corridor and out to the forecourt | [1700, 400, 180, 305] → [1790, 800] | S42 | walk | 63° 134 m | S42.to_S44 (up) | ok |
 
-**S45 Chodník pri Vrbickom plese** — camera 157° (north shore looking SSE)
+**S45 Chodník pri Vrbickom plese** — camera 157° (medium confidence; into the picture = south-east, screen right = south-west, towards the viewer = north-west, screen left = north-east; docs/navigation/compass/S45.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S45.to_S42 | left | the path continues out of the left edge back to Hotel Grand Jasna | [0, 735, 60, 280] → [70, 880] | S42 | walk | 87° 373 m (→ left) | S42.to_S45 (up) | ok |
 
-**S46 Klientske centrum Biela Púť** — camera heading not recorded
+**S46 Klientske centrum Biela Púť** — camera heading not determinable (low confidence; docs/navigation/compass/S46.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S46.to_S42 | left | the glazed entrance doors out to the plaza (and on to Hotel Grand Jasna) | [60, 420, 195, 285] → [160, 800] | S42 | walk | 279° 162 m | S42.to_S46 (up) | ok |
+| S46.to_S42 | left | the glazed entrance doors out to the plaza (and on to Hotel Grand Jasna) | [60, 420, 195, 285] → [160, 800] | S42 | walk | 279° 162 m | S42.to_S46 (left) | ok |
 
-**S47 Chopok pri Rotunde** — camera heading not recorded
+**S47 Chopok pri Rotunde** — camera 50° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S47.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S47.to_S48 | right | the glazed door in the stone wall to the stairs down to the plateau with the Atlas pavilion | [1600, 360, 190, 345] → [1695, 800] | S48 | walk | 98° 77 m | S48.to_S47 (up) | ok |
-| S47.to_S68 | left | the lounge continues out of the left edge towards the Funitel summit station | [0, 738, 60, 277] → [70, 890] | S68 | arrive_funitel | 359° 1058 m | S68.to_S47 (right) | ok |
+| S47.to_S48 | right | the glazed door in the stone wall to the stairs down to the plateau with the Atlas pavilion | [1600, 360, 190, 345] → [1695, 800] | S48 | walk | 98° 77 m (→ right) | S48.to_S47 (up) | ok |
+| S47.to_S68 | left | the lounge continues out of the left edge towards the Funitel summit station | [0, 738, 60, 277] → [70, 890] | S68 | arrive_funitel | 359° 1058 m (→ left) | S68.to_S47 (right) | ok |
 
-**S48 Servisný pavilón výstavy Atlas** — camera 270° (plateau looking W)
+**S48 Servisný pavilón výstavy Atlas** — camera 270° (high confidence; into the picture = west, screen right = north, towards the viewer = east, screen left = south; docs/navigation/compass/S48.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
@@ -494,100 +542,100 @@ the localization tables are theirs).
 | S48.to_S49 | right | the pavilion's door to the inner chamber | [1615, 420, 170, 345] → [1700, 786] | S49 | walk | — | S49.to_S48 (right) | ok |
 | S48.to_S50 | up | the external steel staircase up to the roof viewing terrace beside the Rotunda | [400, 380, 150, 230] → [470, 652] | S50 | walk | 253° 48 m (→ up) | S50.to_S48 (left) | CROWD with S48.to_S47 |
 
-**S49 Chronokomora pavilónu Atlas** — camera heading not recorded
+**S49 Chronokomora pavilónu Atlas** — camera 270° (low confidence; into the picture = west, screen right = north, towards the viewer = east, screen left = south; docs/navigation/compass/S49.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S49.to_S48 | right | the door at the right back to the service bay and the plateau | [1815, 380, 105, 345] → [1840, 820] | S48 | walk | — | S48.to_S49 (right) | ok |
 
-**S50 Vyhliadková terasa pri Rotunde** — camera heading not recorded
+**S50 Vyhliadková terasa pri Rotunde** — camera 45° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S50.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S50.to_S48 | left | the top of the external steel stairs down to the plateau and the Atlas pavilion at the left end of the deck | [0, 600, 160, 190] → [80, 860] | S48 | walk | 73° 48 m | S48.to_S50 (up) | ok |
+| S50.to_S48 | left | the top of the external steel stairs down to the plateau and the Atlas pavilion at the left end of the deck | [0, 600, 160, 190] → [80, 860] | S48 | walk | 73° 48 m (→ up) | S48.to_S50 (up) | ok |
 
-**S67 Priehyba pri prestupe na Funitel** — camera heading not recorded
-
-| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
-|---|---|---|---|---|---|---|---|---|
-| S67.to_S41 | left | the open passage with daylight at the left end of the hall towards the gondola from Biela Put (cable ride b... | [0, 380, 160, 345] → [80, 830] | S41 | cable_A6 | 331° 1093 m | S41.to_S67 (up) | ok |
-| S67.to_S68 | up | the open doors of the docked Funitel cabin behind the boarding gate (ride to Chopok after J03) | [960, 330, 200, 255] → [1060, 760] | S68 | board_funitel | 178° 1026 m | S68.to_S67 (left) | ok |
-
-**S68 Kabína Funitelu medzi Priehybou a Chopkom** — camera heading not recorded
+**S67 Priehyba pri prestupe na Funitel** — camera 90° (medium confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S67.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S68.to_S67 | left | the downhill end panel of the cabin with its door (back to Priehyba once the cabin is in the station) | [0, 240, 120, 530] → [70, 880] | S67 | board_funitel | 358° 1026 m | S67.to_S68 (up) | ok |
-| S68.to_S47 | right | the closed sliding doors of the cabin, opened by the attendant on arrival at the summit (after J04) | [1580, 235, 240, 535] → [1700, 870] | S47 | arrive_funitel | 179° 1058 m | S47.to_S68 (left) | ok |
+| S67.to_S41 | left | the open passage with daylight at the left end of the hall towards the gondola from Biela Put (cable ride b... | [0, 380, 160, 345] → [80, 830] | S41 | cable_A6 | 331° 1093 m (→ left) | S41.to_S67 (up) | ok |
+| S67.to_S68 | up | the open doors of the docked Funitel cabin behind the boarding gate (ride to Chopok after J03) | [960, 330, 200, 255] → [1060, 760] | S68 | board_funitel | 178° 1026 m (→ right) | S68.to_S67 (left) | ok |
+
+**S68 Kabína Funitelu medzi Priehybou a Chopkom** — camera 90° (low confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S68.json)
+
+| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
+|---|---|---|---|---|---|---|---|---|
+| S68.to_S67 | left | the downhill end panel of the cabin with its door (back to Priehyba once the cabin is in the station) | [0, 240, 120, 530] → [70, 880] | S67 | board_funitel | 358° 1026 m (→ left) | S67.to_S68 (up) | ok |
+| S68.to_S47 | right | the closed sliding doors of the cabin, opened by the attendant on arrival at the summit (after J04) | [1580, 235, 240, 535] → [1700, 870] | S47 | arrive_funitel | 179° 1058 m (→ right) | S47.to_S68 (left) | ok |
 
 
 ### 1982
 
-**S57 Dúbravská zastávka v roku 1982** — camera 315° (as S11)
+**S57 Dúbravská zastávka v roku 1982** — camera 330° (high confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S57.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S57.to_S58 | down (named) | the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family) | [0, 760, 250, 200] → [110, 930] | S58 | walk | 257° 274 m (→ left) | S58.to_S57 (left) | ok |
+| S57.to_S58 | left (named) | exit geography 2026-10-07 | [0, 760, 250, 200] → [110, 930] | S58 | walk | 257° 274 m (→ left) | S58.to_S57 (left) | CONTINUITY |
 | S57.to_S62 | up | the far end of the platform and the path to the housing-estate shop (same place as S11.to_S18) | [780, 430, 240, 212] → [880, 690] | S62 | walk | 277° 85 m (→ left) | S62.to_S57 (right) | ok |
 
-**S58 Pred ZŠ Sokolíkova v roku 1982** — camera 45° (as S12)
+**S58 Pred ZŠ Sokolíkova v roku 1982** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S58.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S58.to_S57 | left | the forecourt path out of the left edge towards the street and the stop | [0, 790, 62, 225] → [70, 900] | S57 | walk | 77° 274 m (→ up) | S57.to_S58 (down) | ok |
+| S58.to_S57 | left | the forecourt path out of the left edge towards the street and the stop | [0, 790, 62, 225] → [70, 900] | S57 | walk | 77° 274 m (→ up) | S57.to_S58 (left) | CONTINUITY |
 | S58.to_S59 | up | the glazed entrance doors at the top of the steps | [897, 362, 357, 291] → [1110, 792] | S59 | walk | 121° 43 m (→ right) | S59.to_S58 (left) | ok |
 | S58.to_S61 | right | past the building corner the path leads round to the school yard (right edge) | [1830, 600, 90, 330] → [1850, 800] | S61 | walk | 91° 93 m (→ right) | S61.to_S58 (left) | ok |
 
-**S59 Školská chodba v roku 1982** — camera heading not recorded
+**S59 Školská chodba v roku 1982** — camera 315° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S59.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S59.to_S58 | left | copied from S13.to_S12 (same template position) | [30, 290, 160, 545] → [125, 885] | S58 | walk | 301° 43 m | S58.to_S59 (up) | ok |
-| S59.to_S60 | up | copied from S13.to_S14 (same template position) | [849, 368, 222, 332] → [960, 738] | S60 | walk | 49° 42 m | S60.to_S59 (up) | ok |
-| S59.to_S63 | right | copied from S13.to_S15 (same template position) | [1690, 306, 192, 530] → [1782, 862] | S63 | walk | 135° 16 m | S63.to_S59 (left) | ok |
+| S59.to_S58 | left | copied from S13.to_S12 (same template position) | [30, 290, 160, 545] → [125, 885] | S58 | walk | 301° 43 m (→ up) | S58.to_S59 (up) | ok |
+| S59.to_S60 | up | copied from S13.to_S14 (same template position) | [849, 368, 222, 332] → [960, 738] | S60 | walk | 49° 42 m (→ right) | S60.to_S59 (up) | ok |
+| S59.to_S63 | right | copied from S13.to_S15 (same template position) | [1690, 306, 192, 530] → [1782, 862] | S63 | walk | 135° 16 m (→ down) | S63.to_S59 (left) | ok |
 
-**S60 Trieda pred technickou výstavkou v roku 1982** — camera heading not recorded
+**S60 Trieda pred technickou výstavkou v roku 1982** — camera 315° (low confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S60.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S60.to_S59 | up | classroom door at the left end of the front wall (same as S14.to_S13) | [337, 376, 168, 344] → [418, 758] | S59 | walk | 229° 42 m | S59.to_S60 (up) | ok |
+| S60.to_S59 | up | classroom door at the left end of the front wall (same as S14.to_S13) | [337, 376, 168, 344] → [418, 758] | S59 | walk | 229° 42 m (→ left) | S59.to_S60 (up) | ok |
 
-**S61 Školský dvor s mladou lipou v roku 1982** — camera 225° (as S17)
+**S61 Školský dvor s mladou lipou v roku 1982** — camera 225° (high confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S61.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S61.to_S58 | left | the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main... | [0, 722, 60, 190] → [70, 820] | S58 | walk | 271° 93 m (→ right) | S58.to_S61 (right) | COMPASS |
-| S61.to_S64 | down | the asphalt runs towards the camera: back past the south end of the main wing to the service window on the... | [380, 950, 460, 110] → [610, 995] | S64 | walk | 225° 64 m (→ up) | S64.to_S61 (right) | ok |
-| S61.to_S66 | right | the yard asphalt continues out of the right edge past the near end of the court fence towards the garden sh... | [1800, 722, 120, 293] → [1850, 880] | S66 | walk | 101° 117 m (→ left) | S66.to_S61 (left) | COMPASS |
+| S61.to_S64 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S61.json): the footpath from the yard-door landing runs... | [715, 405, 250, 70] → [840, 745] | S64 | walk | 225° 64 m (→ up) | S64.to_S61 (right) | ok |
+| S61.to_S66 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S61.json): the yard asphalt runs back towards the camera... | [380, 950, 460, 110] → [610, 995] | S66 | walk | 101° 117 m (→ left) | S66.to_S61 (down) | ok |
 
-**S62 Sídliskový obchod v roku 1982** — camera heading not recorded
+**S62 Sídliskový obchod v roku 1982** — camera heading not determinable (low confidence; docs/navigation/compass/S62.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S62.to_S57 | right (named) | the pavement below the fence continues out of the right edge towards the stop (S57.to_S62 is the far end of... | [1700, 971, 220, 44] → [1890, 1006] | S57 | walk | 97° 85 m | S57.to_S62 (up) | ok |
 | S62.to_S65 | left (named) | the side street in front of the shop continues out of the left edge towards the small service building by t... | [0, 892, 60, 123] → [40, 950] | S65 | walk | 135° 76 m | S65.to_S62 (left) | ok |
 
-**S63 Fyzikálny kabinet v roku 1982** — camera heading not recorded
+**S63 Fyzikálny kabinet v roku 1982** — camera heading not determinable (low confidence; docs/navigation/compass/S63.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S63.to_S59 | left | door in the left wall to the corridor and the entrance hall (same as S15.to_S13) | [55, 395, 135, 560] → [190, 935] | S59 | walk | 315° 16 m | S59.to_S63 (right) | ok |
 
-**S64 Tóno a dedo pri servisnom okne v roku 1982** — camera heading not recorded
+**S64 Tóno a dedo pri servisnom okne v roku 1982** — camera 45° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S64.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S64.to_S61 | right | the path round the building corner into the school yard with the young linden (right edge) | [1856, 780, 64, 235] → [1840, 950] | S61 | walk | 45° 64 m | S61.to_S64 (down) | ok |
+| S64.to_S61 | right | the path round the building corner into the school yard with the young linden (right edge) | [1856, 780, 64, 235] → [1840, 950] | S61 | walk | 45° 64 m (→ up) | S61.to_S64 (up) | ok |
 
-**S65 Výdajňa školského údržbového materiálu v roku 1982** — camera heading not recorded
+**S65 Výdajňa školského údržbového materiálu v roku 1982** — camera heading not determinable (low confidence; docs/navigation/compass/S65.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S65.to_S62 | left | the half-glazed entrance door in the back wall at the left, out to the courtyard and the shop | [90, 362, 200, 380] → [190, 785] | S62 | walk | 315° 76 m | S62.to_S65 (left) | ok |
 
-**S66 Školský záhradný sklad v roku 1982** — camera 90° (yard edge looking E at the shed)
+**S66 Školský záhradný sklad v roku 1982** — camera 90° (medium confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S66.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S66.to_S61 | left | the trodden path continues out of the left edge back to the school yard | [0, 722, 120, 293] → [70, 880] | S61 | walk | 281° 117 m (→ down) | S61.to_S66 (right) | ok |
+| S66.to_S61 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S66.json): the trodden footprints run from the shed door... | [560, 960, 560, 100] → [840, 995] | S61 | walk | 281° 117 m (→ down) | S61.to_S66 (down) | ok |
 <!-- exits:end -->

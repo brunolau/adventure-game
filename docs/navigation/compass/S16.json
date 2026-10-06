@@ -1,0 +1,26 @@
+{
+  "room": "S16",
+  "name": "Miestnosť školského rozhlasu",
+  "era": 1995,
+  "family": null,
+  "camera": {
+    "lat": 48.18103,
+    "lon": 17.0378
+  },
+  "heading_deg": null,
+  "screen_compass": null,
+  "confidence": "low",
+  "evidence": [
+    "small room off the cabinet (S15.to_S16 is the cabinet's right-wall door), window onto the inner atrium; heading not determinable"
+  ],
+  "exits": [
+    {
+      "id": "S16.to_S15",
+      "to": "S15",
+      "side": "left",
+      "change": "up (derived) -> left (named)",
+      "why": "the door is in the left wall and the cabinet lies to the left (return of the cabinet's right-wall door)"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

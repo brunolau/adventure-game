@@ -2,7 +2,7 @@
   "version": 1,
   "room": "S37",
   "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
-  "note": "Manor park of Ivanka pri Dunaji, June 1960: camera ~1.65 m on the open lawn NNW of the manor looking SSE at its park facade (as in the 2008 photo): horizon y 520, perspective s(y) = (y - 520) / 495 (hero 1.7 m = 512 px at y 1015). The manor stands across the lawn (foot y 556, ~22 px per metre there, tower to y ~20), the spire of St John the Baptist right of the tower behind the pines. A gravel path crosses the front of the lawn. Vera sits on her bench (part of her sprite) left of centre on the lawn - the painting leaves that spot as plain grass; the empty park bench of the same cast-iron type stands on the right; the shallow bird bowl lies on the grass in the middle, the carrier pigeon is an ambient sprite beside it (hidden after Q6C). The walk polygon is the front lawn and the path, kept in front of both benches.",
+  "note": "Manor park of Ivanka pri Dunaji, June 1960: camera ~1.65 m on the open lawn NNW of the manor looking SSE at its park facade (as in the 2008 photo): horizon y 520, perspective s(y) = (y - 520) / 495 (hero 1.7 m = 512 px at y 1015). The manor stands across the lawn (foot y 556, ~22 px per metre there, tower to y ~20), the spire of St John the Baptist right of the tower behind the pines. A gravel path crosses the front of the lawn; a narrower footpath branches off it on the right and curves into the picture between the bench and the pines (exit to the square, added 2026-10-07). Vera sits on her bench (part of her sprite) left of centre on the lawn - the painting leaves that spot as plain grass; the empty park bench of the same cast-iron type stands on the right; the shallow bird bowl lies on the grass in the middle, the carrier pigeon is an ambient sprite beside it (hidden after Q6C). The walk polygon is the front lawn and the path, kept in front of both benches.",
   "background": "bg_natural/S37.webp",
   "walk_polygon": [
     [
@@ -39,6 +39,22 @@
     ],
     [
       1582,
+      775
+    ],
+    [
+      1672,
+      775
+    ],
+    [
+      1700,
+      738
+    ],
+    [
+      1790,
+      736
+    ],
+    [
+      1812,
       775
     ],
     [
@@ -194,20 +210,25 @@
   "exits": {
     "S37.to_S32": {
       "rect": [
-        0,
-        780,
-        60,
-        230
+        1650,
+        640,
+        165,
+        112
       ],
       "interaction_point": [
-        70,
-        900
+        1745,
+        758
       ],
       "label_anchor": [
-        135,
-        770
+        1730,
+        628
       ],
-      "reason": "the gravel path leaves the park to the left, back to the village square"
+      "reason": "exit geography 2026-10-07: the footpath branching off the front path to the right and curving into the picture between the bench and the pines, past the west side of the manor and the church (spire right of the tower) to the village square, which lies SSW = ahead-right of the SSE camera (painted 2026-10-07, master v5; docs/navigation/compass/S37.json)",
+      "side": "up",
+      "arrival": [
+        1772,
+        742
+      ]
     },
     "S37.to_S38": {
       "rect": [
@@ -224,7 +245,8 @@
         1715,
         770
       ],
-      "reason": "the path leaves the park to the right through the pines, towards the fields and the canal"
+      "reason": "the path leaves the park to the right through the pines, towards the fields and the canal (SW, right of the SSE camera)",
+      "side": "right"
     }
   },
   "state_patches": [

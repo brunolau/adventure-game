@@ -1,0 +1,35 @@
+{
+  "room": "S66",
+  "name": "Školský záhradný sklad v roku 1982",
+  "era": 1982,
+  "family": null,
+  "camera": {
+    "lat": 48.181,
+    "lon": 17.0396
+  },
+  "heading_deg": 90,
+  "screen_compass": {
+    "up": 90,
+    "right": 180,
+    "down": 270,
+    "left": 0
+  },
+  "confidence": "medium",
+  "evidence": [
+    "OSM shed way 1469186807 at the east edge of the grounds near Kudlakova 2; the painting looks E at the shed with the east fence and a Kudlakova block (red bands) behind it",
+    "the school yard (S61 camera) lies WNW, behind the camera; the painted footprints run from the shed door towards the viewer"
+  ],
+  "exits": [
+    {
+      "id": "S66.to_S61",
+      "to": "S61",
+      "side": "down",
+      "change": "left -> down",
+      "why": "the trodden footprints run from the shed door towards the viewer, back to the yard behind the camera",
+      "real_bearing_deg": 312,
+      "distance_m": 70,
+      "relative_to_heading_deg": -138
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

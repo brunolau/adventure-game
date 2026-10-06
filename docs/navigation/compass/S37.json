@@ -1,0 +1,45 @@
+{
+  "room": "S37",
+  "name": "Park pri kaštieli",
+  "era": 1960,
+  "camera": {
+    "lat": 48.19122,
+    "lon": 17.25839
+  },
+  "heading_deg": 160,
+  "screen_compass": {
+    "up": 160,
+    "right": 250,
+    "down": 340,
+    "left": 70
+  },
+  "confidence": "high",
+  "evidence": [
+    "register + reference photo manor_garden_facade_plepo_2008.jpg: the park (north) facade of the manor (OSM 48871237) seen from the north lawn",
+    "the spire of St John the Baptist (OSM 48988886, due south of the manor) stands RIGHT of the manor tower, which fixes the view at ~160 deg (SSE)",
+    "the village square (S32, 216 deg) and the canal (S38, 227 deg) both lie to the RIGHT (SW) of this view; east (left) leads only to Bernolakovska"
+  ],
+  "exits": [
+    {
+      "id": "S37.to_S32",
+      "to": "S32",
+      "side": "up",
+      "change": "left edge -> up (new painted footpath on the right)",
+      "why": "the square lies SSW = ahead-right: a footpath painted 2026-10-07 (master v5) branches off the front path on the right and curves into the picture between the bench and the pines, past the west side of the manor and the church to the square. Named up (a path into the picture) so that it neither crowds the S38 edge exit nor turns Adam round against S32.to_S37 (right edge)",
+      "real_bearing_deg": 216,
+      "distance_m": 331,
+      "relative_to_heading_deg": 56
+    },
+    {
+      "id": "S37.to_S38",
+      "to": "S38",
+      "side": "right",
+      "change": "unchanged (side named right)",
+      "why": "the front path leaves out of the right edge through the pines towards the fields and the canal (SW)",
+      "real_bearing_deg": 227,
+      "distance_m": 1635,
+      "relative_to_heading_deg": 67
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

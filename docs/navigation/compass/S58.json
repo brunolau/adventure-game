@@ -1,0 +1,53 @@
+{
+  "room": "S58",
+  "name": "Pred ZŠ Sokolíkova v roku 1982",
+  "era": 1982,
+  "family": "L_SCHOOL_FRONT",
+  "camera": {
+    "lat": 48.18115,
+    "lon": 17.03705
+  },
+  "heading_deg": 55,
+  "screen_compass": {
+    "up": 55,
+    "right": 145,
+    "down": 235,
+    "left": 325
+  },
+  "confidence": "medium",
+  "evidence": [
+    "OSM relation 1084096 / art/source/rooms/S12/layout_school-front_osm.png: the SW facade of the main wing runs NW-SE (~145 deg); the camera faces it from the forecourt, i.e. looks NE",
+    "painting: the facade recedes gently to the right with the building corner at x 1793 and the school yard (fence, lawn, panel block) beyond it = the SE end; the forecourt continues out of the left edge = NW towards Sokolikova / Svantnerova street",
+    "the real entrance sits in the NW part of the long facade, so the painted corner compresses ~70 m of facade; the game's route to the yard goes round that SE corner (the S17 family leaves left = round the SE end)"
+  ],
+  "exits": [
+    {
+      "id": "S58.to_S57",
+      "to": "S57",
+      "side": "left",
+      "change": "unchanged",
+      "why": "as S12.to_S11",
+      "real_bearing_deg": 77,
+      "distance_m": 274,
+      "relative_to_heading_deg": 22
+    },
+    {
+      "id": "S58.to_S59",
+      "to": "S59",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the entrance doors"
+    },
+    {
+      "id": "S58.to_S61",
+      "to": "S61",
+      "side": "right",
+      "change": "unchanged",
+      "why": "as S12.to_S17",
+      "real_bearing_deg": 78,
+      "distance_m": 140,
+      "relative_to_heading_deg": 23
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

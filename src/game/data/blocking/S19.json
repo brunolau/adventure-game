@@ -97,7 +97,7 @@
   }
  },
  "exits": {
-  "S19.to_S11": {
+  "S19.to_S21": {
    "rect": [
     0,
     815,
@@ -112,27 +112,28 @@
     135,
     803
    ],
-   "reason": "the platform continues out of the left edge (tram towards Dubravka)"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S19.json; owner: the city is on the LEFT): the platform continues out of the left edge, the tram runs south-south-east along Karloveska towards Lafranconi and the centre. Was the right edge",
+   "side": "left"
   },
   "S19.to_S20": {
-    "rect": [
-      1510,
-      540,
-      150,
-      260
-    ],
-    "interaction_point": [
-      1580,
-      850
-    ],
-    "label_anchor": [
-      1585,
-      532
-    ],
-    "reason": "zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky estate",
-    "side": "up"
+   "rect": [
+    1510,
+    540,
+    150,
+    260
+   ],
+   "interaction_point": [
+    1580,
+    850
+   ],
+   "label_anchor": [
+    1585,
+    532
+   ],
+   "reason": "zebra crossing over the double track to the gap in the far railing and the steps up the slope to the Kutiky estate",
+   "side": "up"
   },
-  "S19.to_S21": {
+  "S19.to_S11": {
    "rect": [
     1860,
     815,
@@ -147,7 +148,8 @@
     1785,
     803
    ],
-   "reason": "the platform continues out of the right edge (tram towards the centre)"
+   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S19.json; owner: in Karlova Ves Dubravka is on the RIGHT): the platform continues out of the right edge, the tram runs north-north-west along Karloveska towards Dubravka (camera faces WSW across the track to the Kutiky slope). Was the left edge",
+   "side": "right"
   }
  },
  "state_patches": [

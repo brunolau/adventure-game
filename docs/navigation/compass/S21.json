@@ -1,0 +1,68 @@
+{
+  "room": "S21",
+  "name": "Kamenné námestie",
+  "era": 1995,
+  "camera": {
+    "lat": 48.1448,
+    "lon": 17.1138
+  },
+  "heading_deg": 30,
+  "screen_compass": {
+    "up": 30,
+    "right": 120,
+    "down": 210,
+    "left": 300
+  },
+  "confidence": "medium",
+  "camera_position": "on the Kamenne namestie plaza south-west of the 1968 department store (OSM 'OD Bratislava' 48.14534,17.11435; Hotel Kyjev 48.14607,17.11500)",
+  "evidence": [
+    "painting: the white department store and the Hotel Kyjev tower fill the view ahead, i.e. the camera faces NE/NNE from the plaza (bearings from the plaza: store 35-65 deg, Kyjev 20-35 deg)",
+    "the painting is a composite (Kyjev drawn right of the store; from the real plaza it stands left of it), hence medium confidence; every exit decision below holds for any heading between 0 and 60 deg",
+    "OSM tram network: the Ruzinov trams leave north-east along Spitalska (ways 44350529, 240726809 towards Americke nam. and Zahradnicka); the Karlova Ves trams leave west via Nam. SNP (ways 244491374, 257076647) to the castle tunnel / the embankment; the buses to Petrzalka go south over the Danube"
+  ],
+  "exits": {
+    "S21.to_S19": {
+      "target": "S19 Karlova Ves",
+      "route": "tram west via Nam. SNP",
+      "route_bearing_deg": 285,
+      "side": "left",
+      "was": "left"
+    },
+    "S21.to_S24": {
+      "target": "S24 photo studio, Obchodna",
+      "route": "walk NNW across Nam. SNP",
+      "route_bearing_deg": 346,
+      "side": "up (far-left side street)",
+      "was": "up (street beside the department store, centre)"
+    },
+    "S21.to_S22": {
+      "target": "S22 antiquarian, Venturska",
+      "route": "walk SW through Laurinska into the Old Town",
+      "route_bearing_deg": 256,
+      "side": "down (bottom-left)",
+      "was": "up (far-left side street, which leads north)"
+    },
+    "S21.to_S25": {
+      "target": "S25 Mileticova market, Ruzinov",
+      "route": "tram NE along Spitalska",
+      "route_bearing_deg": 30,
+      "side": "up (street beside the department store)",
+      "was": "right edge (SE: no tram to Ruzinov there)"
+    },
+    "S21.to_S28": {
+      "target": "S28 Petrzalka underpass",
+      "route": "bus south over the Danube",
+      "route_bearing_deg": 212,
+      "side": "down (named, at the painted bus-stop pole)",
+      "was": "up"
+    },
+    "S21.to_S23": {
+      "target": "S23 archive reading room, Spitalska",
+      "route": "walk NNE",
+      "route_bearing_deg": 22,
+      "side": "up (door of the cream block)",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

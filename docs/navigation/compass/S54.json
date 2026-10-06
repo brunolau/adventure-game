@@ -1,0 +1,26 @@
+{
+  "room": "S54",
+  "name": "Fyzikálny kabinet v roku 2020",
+  "era": 2020,
+  "camera": {
+    "lat": 48.18085,
+    "lon": 17.0377
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "as S15: type-reference cabinet; heading not determinable"
+  ],
+  "exits": [
+    {
+      "id": "S54.to_S53",
+      "to": "S53",
+      "side": "left",
+      "change": "unchanged",
+      "why": "door in the left wall to the corridor and the stairs down",
+      "real_bearing_deg": 315,
+      "distance_m": 16
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

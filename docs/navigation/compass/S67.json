@@ -1,0 +1,44 @@
+{
+  "room": "S67",
+  "name": "Priehyba pri prestupe na Funitel",
+  "era": 2035,
+  "camera": {
+    "lat": 48.96242,
+    "lon": 19.58931
+  },
+  "heading_deg": 90,
+  "screen_compass": {
+    "up": 90,
+    "right": 180,
+    "down": 270,
+    "left": 0
+  },
+  "confidence": "medium",
+  "evidence": [
+    "the boarding platform of the Funitel lower station Priehyba (OSM way 202740647) runs along the line (N-S); the camera looks across the docked cabins; the red bullwheel (turnaround, downhill = north end) is on the LEFT, so the view is east",
+    "the upper station of the gondola from Biela Put lies ~75 m north = left; the Funitel leaves south towards Chopok"
+  ],
+  "exits": [
+    {
+      "id": "S67.to_S41",
+      "to": "S41",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the open passage at the left end of the hall towards the gondola from Biela Put (north)",
+      "real_bearing_deg": 326,
+      "distance_m": 1084,
+      "relative_to_heading_deg": -124
+    },
+    {
+      "id": "S67.to_S68",
+      "to": "S68",
+      "side": "up",
+      "change": "unchanged",
+      "why": "boarding the docked cabin behind the gate",
+      "real_bearing_deg": 178,
+      "distance_m": 2060,
+      "relative_to_heading_deg": 88
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

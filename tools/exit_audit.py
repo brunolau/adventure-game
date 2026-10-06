@@ -43,7 +43,8 @@ BEGIN, END = "<!-- exits:begin -->", "<!-- exits:end -->"
 W, H = 1920, 1080
 CROWD_EDGE_PX, CROWD_UP_PX = 360, 200
 
-# Camera headings (degrees from north) where the register or the painting log states them.
+# Camera headings (degrees from north) where the register or the painting log states them; overridden by
+# docs/navigation/compass/<room>.json (exit-geography pass 2026-10-07) where that file gives a heading.
 CAMERA = {
     "S04": (180, "courtyard of the arc facing the mid unit (the concave side faces north)"),
     "S11": (315, "SW platform looking NW along the track"), "S51": (315, "as S11"), "S57": (315, "as S11"),
@@ -54,6 +55,31 @@ CAMERA = {
     "S38": (135, "looking SE"), "S42": (202, "forecourt looking SSW to Chopok"), "S45": (157, "north shore looking SSE"),
     "S48": (270, "plateau looking W"), "S66": (90, "yard edge looking E at the shed"),
 }
+COMPASS_DIR = ROOT / "docs" / "navigation" / "compass"
+NAMES = ("north", "north-east", "east", "south-east", "south", "south-west", "west", "north-west")
+
+
+def compass_word(deg: float) -> str:
+    return NAMES[int(((deg % 360) + 22.5) // 45) % 8]
+
+
+def load_compass() -> dict[str, dict]:
+    """docs/navigation/compass/<room>.json (exit-geography pass 2026-10-07): camera heading, confidence, evidence."""
+    out: dict[str, dict] = {}
+    for p in sorted(COMPASS_DIR.glob("S*.json")) if COMPASS_DIR.exists() else []:
+        try:
+            out[p.stem] = json.loads(p.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+    return out
+
+
+COMPASS_DATA = load_compass()
+for _rid, _c in COMPASS_DATA.items():
+    if isinstance(_c.get("heading_deg"), (int, float)):
+        _h = float(_c["heading_deg"])
+        _screen = ", ".join(f"{s} = {compass_word(_h + 90 * i)}" for i, s in enumerate(("into the picture", "screen right", "towards the viewer", "screen left")))
+        CAMERA[_rid] = (_h, f"{_c.get('confidence', '?')} confidence; {_screen}; docs/navigation/compass/{_rid}.json")
 
 
 def side_of(e: dict) -> str:
@@ -136,7 +162,10 @@ def audit(blocking_dir: Path = BLOCKING, travel: Path | None = None) -> tuple[li
             room = rooms[rid]
             exits = eff[rid]["exits"]
             cam = CAMERA.get(rid)
-            camtxt = f"camera {cam[0]}° ({cam[1]})" if cam else "camera heading not recorded"
+            conf = COMPASS_DATA.get(rid, {}).get("confidence")
+            camtxt = (f"camera {cam[0]:.0f}° ({cam[1]})" if cam else
+                      f"camera heading not determinable ({conf} confidence; docs/navigation/compass/{rid}.json)" if conf else
+                      "camera heading not recorded")
             lines.append(f"**{rid} {room['name']}** — {camtxt}\n")
             lines.append("| exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |")
             lines.append("|---|---|---|---|---|---|---|---|---|")

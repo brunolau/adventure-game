@@ -1,0 +1,75 @@
+{
+  "room": "S32",
+  "name": "Ivanská náves",
+  "era": 1960,
+  "camera": {
+    "lat": 48.1888,
+    "lon": 17.2558
+  },
+  "heading_deg": 22,
+  "screen_compass": {
+    "up": 22,
+    "right": 112,
+    "down": 202,
+    "left": 292
+  },
+  "confidence": "medium",
+  "evidence": [
+    "register + painting log: camera on the green looking NNE towards the fire-station tower; OSM fire station DHZO (48.19021,17.25677) lies 25 deg from the register point, the reference photo rozalia_square_park_path_taz666_2013.jpg looks along the park towards it",
+    "the painting is a generalised composition: chapel of St Rosalia ahead (OSM 314635232, 21 m NE of the register point), houses left and right",
+    "known deviation: the real post office (OSM node 30343810) stands on the EAST side of the square (ESE of the camera, right/behind); the painting shows the POSTA house on the LEFT. A door cannot be moved without repainting the house; its exit stays the painted door (up)"
+  ],
+  "exits": [
+    {
+      "id": "S32.to_S31",
+      "to": "S31",
+      "side": "up",
+      "change": "left -> up",
+      "why": "the railway halt lies NNE, dead ahead (Nadrazna is reached from the north end of the square); now the village street straight ahead between the post-office house and the chapel (the former S34 street mouth)",
+      "real_bearing_deg": 21,
+      "distance_m": 718,
+      "relative_to_heading_deg": -1
+    },
+    {
+      "id": "S32.to_S33",
+      "to": "S33",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the painted POSTA door (see the deviation above)",
+      "real_bearing_deg": 115,
+      "distance_m": 112,
+      "relative_to_heading_deg": 93
+    },
+    {
+      "id": "S32.to_S34",
+      "to": "S34",
+      "side": "left",
+      "change": "up -> left",
+      "why": "Maticny dom (culture hall) stands at the NW corner of the square on Moyzesova, 44 deg left of the camera axis; now the dirt road out of the left edge (the former S31 zone)",
+      "real_bearing_deg": 338,
+      "distance_m": 138,
+      "relative_to_heading_deg": -44
+    },
+    {
+      "id": "S32.to_S35",
+      "to": "S35",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the road at the back right towards the manor's service courtyard (NNE, slightly right)",
+      "real_bearing_deg": 31,
+      "distance_m": 259,
+      "relative_to_heading_deg": 9
+    },
+    {
+      "id": "S32.to_S37",
+      "to": "S37",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the manor park lies NE; the walk leaves the green east along Stefanikova (right of the NNE camera), out of the right edge in front of the big linden. The return S37.to_S32 is a path into the picture (up), so no turn-round at the edges",
+      "real_bearing_deg": 36,
+      "distance_m": 331,
+      "relative_to_heading_deg": 14
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

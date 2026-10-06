@@ -1,0 +1,41 @@
+{
+  "room": "S38",
+  "name": "Pred skúšobnou čerpacou búdkou",
+  "era": 1960,
+  "camera": {
+    "lat": 48.18118,
+    "lon": 17.24228
+  },
+  "heading_deg": 135,
+  "screen_compass": {
+    "up": 135,
+    "right": 225,
+    "down": 315,
+    "left": 45
+  },
+  "confidence": "medium",
+  "evidence": [
+    "painting log: camera on the near bank looking SE across the Sursky kanal; the village church stands in the left distance",
+    "the manor park (S37) lies NE = left of the SE view"
+  ],
+  "exits": [
+    {
+      "id": "S38.to_S37",
+      "to": "S37",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the dirt track along the bank out of the left edge towards the village (NE)",
+      "real_bearing_deg": 47,
+      "distance_m": 1635,
+      "relative_to_heading_deg": -88
+    },
+    {
+      "id": "S38.to_S39",
+      "to": "S39",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the measuring-room door of the hut"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

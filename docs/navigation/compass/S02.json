@@ -1,0 +1,55 @@
+{
+  "room": "S02",
+  "name": "Ulica medzi plotmi",
+  "era": 2020,
+  "camera": {
+    "lat": 48.218636,
+    "lon": 17.228185
+  },
+  "heading_deg": 300,
+  "screen_compass": {
+    "up": 300,
+    "right": 30,
+    "down": 120,
+    "left": 210
+  },
+  "confidence": "low",
+  "evidence": [
+    "the houses are invented (register: type-reference); OSM way 176919085 Jasenova runs SSW-NNE (48.21855,17.22796 -> 48.22039,17.22950, ~30 deg); the camera stands on the street looking across at the plots, so it looks either WNW or ESE",
+    "painting: warm low afternoon light (29 Oct, sun ~SW) from the LEFT -> left = SSW: the camera looks WNW at plots on the west side of the street",
+    "OSRM foot routes to the park S03 (1.8 km) and to Mira S05 (1.1 km) both leave NNE along Jasenova (28 deg for the first 200 m) = the right edge with this heading; the owner's 2026-10-06 complaint was that S03 and S05 sat side by side on the left"
+  ],
+  "exits": [
+    {
+      "id": "S02.to_S01",
+      "to": "S01",
+      "side": "up",
+      "change": "unchanged",
+      "why": "Adam's open driveway gate (into the picture)",
+      "real_bearing_deg": 22,
+      "distance_m": 103,
+      "relative_to_heading_deg": 82
+    },
+    {
+      "id": "S02.to_S03",
+      "to": "S03",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the street continues out of the right edge = NNE, the start of the walking route to the park",
+      "real_bearing_deg": 62,
+      "distance_m": 1347,
+      "relative_to_heading_deg": 122
+    },
+    {
+      "id": "S02.to_S05",
+      "to": "S05",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the footpath between the plots (into the picture). Mira's old core lies to the right too (same street start as S03); kept as rule 3's separation by kind (one along the edge, one along a path). Owner review: the alternative is the right edge for both",
+      "real_bearing_deg": 29,
+      "distance_m": 879,
+      "relative_to_heading_deg": 89
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

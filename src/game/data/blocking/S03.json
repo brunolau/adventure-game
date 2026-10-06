@@ -158,24 +158,6 @@
   "exits": {
     "S03.to_S02": {
       "rect": [
-        0,
-        720,
-        60,
-        295
-      ],
-      "interaction_point": [
-        70,
-        880
-      ],
-      "label_anchor": [
-        135,
-        708
-      ],
-      "reason": "the sandy path and the trampled meadow continue out of the left edge towards the street",
-      "side": "left"
-    },
-    "S03.to_S04": {
-      "rect": [
         1120,
         950,
         440,
@@ -189,8 +171,26 @@
         1340,
         940
       ],
-      "reason": "the trampled meadow runs towards the camera, across the park to the village shop at Triangel (owner 2026-10-06: it sat on the right edge just below the gravel path to the bus stop; the right edge now leads to the pond S08 only, travel_ext.json exit layout revision)",
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S03.json): the trampled meadow runs towards the camera, back (WSW, behind the camera) to the end of Javorová alej and on to Jaseňová (was the left edge, which faces NNE, away from the street)",
       "side": "down"
+    },
+    "S03.to_S04": {
+      "rect": [
+        0,
+        720,
+        60,
+        295
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        135,
+        708
+      ],
+      "reason": "exit geography 2026-10-07 (docs/navigation/compass/S03.json: camera W of the shelter looking ESE): the sandy path and the trampled meadow continue out of the left edge past the playground (NNE), along the school path to the cycleway and on to the village shop at Triangel ~1.2 km NNE (was the bottom edge); its return S04.to_S03 is S04's right edge",
+      "side": "left"
     },
     "S03.to_S08": {
       "rect": [

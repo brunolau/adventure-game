@@ -1,0 +1,48 @@
+{
+  "room": "S19",
+  "name": "Karloveské nástupište",
+  "era": 1995,
+  "camera": {
+    "lat": 48.15876,
+    "lon": 17.05159
+  },
+  "heading_deg": 245,
+  "screen_compass": {
+    "up": 245,
+    "right": 335,
+    "down": 65,
+    "left": 155
+  },
+  "confidence": "high",
+  "camera_position": "island platform of the Nam. sv. Frantiska tram stop on Karloveska (OSM tram_stop 48.15876,17.05159)",
+  "evidence": [
+    "OSM: the tram track and Karloveska run 335/155 deg at the stop (ways 411122720/411122722, 45459001)",
+    "painting: camera on the platform looking across the double track and Karloveska to the green slope with the Kutiky panel blocks and the steps up the slope; the Kutiky/Levarska estate lies west of the stop (S20 at 306 deg)",
+    "owner fact 2026-10-07: in Karlova Ves Dubravka is on the RIGHT, the city on the LEFT - matches this WSW-facing camera (NNW = right, SSE = left)",
+    "reference karloveska_nam-sv-frantiska_stop_2011.jpg: platform, red-white railing and the panel blocks upslope beside Karloveska"
+  ],
+  "exits": {
+    "S19.to_S21": {
+      "target": "S21 Kamenne namestie",
+      "route": "tram SSE along Karloveska, Lafranconi, the embankment / castle tunnel",
+      "route_bearing_deg": 155,
+      "side": "left",
+      "was": "right"
+    },
+    "S19.to_S11": {
+      "target": "S11 Svantnerova stop (Dubravka)",
+      "route": "tram NNW along Karloveska, then north to Dubravka",
+      "route_bearing_deg": 335,
+      "side": "right",
+      "was": "left"
+    },
+    "S19.to_S20": {
+      "target": "S20 repair shop in the Levarska pavilion",
+      "route": "zebra crossing over the track, steps up the slope",
+      "route_bearing_deg": 306,
+      "side": "up",
+      "was": "up"
+    }
+  },
+  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+}

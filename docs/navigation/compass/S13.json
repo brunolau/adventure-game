@@ -1,0 +1,45 @@
+{
+  "room": "S13",
+  "name": "Školská vstupná chodba",
+  "era": 1995,
+  "family": "L_HALL",
+  "camera": {
+    "lat": 48.18095,
+    "lon": 17.03755
+  },
+  "heading_deg": 315,
+  "screen_compass": {
+    "up": 315,
+    "right": 45,
+    "down": 135,
+    "left": 225
+  },
+  "confidence": "low",
+  "evidence": [
+    "type-reference interior (register); the glazed entrance doors with daylight in the LEFT wall = the SW facade, so the hall looks roughly NW (low: the owner said the real hall looked different; register positions of the school rooms are estimates)"
+  ],
+  "exits": [
+    {
+      "id": "S13.to_S12",
+      "to": "S12",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the glazed entrance doors in the left wall"
+    },
+    {
+      "id": "S13.to_S14",
+      "to": "S14",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the double door in the back wall to the classroom wing"
+    },
+    {
+      "id": "S13.to_S15",
+      "to": "S15",
+      "side": "right",
+      "change": "unchanged",
+      "why": "the doorway with the staircase up (the cabinet is upstairs)"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

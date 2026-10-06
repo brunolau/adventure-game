@@ -1,0 +1,31 @@
+{
+  "room": "S14",
+  "name": "Trieda pamäťového krúžku",
+  "era": 1995,
+  "family": "L_CLASS",
+  "camera": {
+    "lat": 48.1812,
+    "lon": 17.03798
+  },
+  "heading_deg": 315,
+  "screen_compass": {
+    "up": 315,
+    "right": 45,
+    "down": 135,
+    "left": 225
+  },
+  "confidence": "low",
+  "evidence": [
+    "type-reference classroom; the windows on the right show the running track = the yard (NE) side, so the room looks roughly NW (low)"
+  ],
+  "exits": [
+    {
+      "id": "S14.to_S13",
+      "to": "S13",
+      "side": "up",
+      "change": "unchanged",
+      "why": "the classroom door at the left end of the front wall (a door into the picture, on the hall's side)"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}

@@ -1,0 +1,24 @@
+{
+  "room": "S10",
+  "name": "Dielňa ZVON",
+  "era": 2020,
+  "camera": {
+    "lat": 48.225519,
+    "lon": 17.234011
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "type-reference back room of the same outbuilding; the doorway back to S09 is in the left wall (S09's door to it is on its right: continuity ok)"
+  ],
+  "exits": [
+    {
+      "id": "S10.to_S09",
+      "to": "S09",
+      "side": "left",
+      "change": "unchanged",
+      "why": "doorway, left"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

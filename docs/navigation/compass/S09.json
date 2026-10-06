@@ -1,0 +1,31 @@
+{
+  "room": "S09",
+  "name": "Predsieň záhradnej dielne",
+  "era": 2020,
+  "camera": {
+    "lat": 48.225519,
+    "lon": 17.234011
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "type-reference interior of Mira's invented outbuilding; no compass evidence. Relative layout only: the outer door (left wall) to the street side, the inner doorway (right wall) to the back room S10"
+  ],
+  "exits": [
+    {
+      "id": "S09.to_S05",
+      "to": "S05",
+      "side": "left",
+      "change": "unchanged",
+      "why": "outer door, left"
+    },
+    {
+      "id": "S09.to_S10",
+      "to": "S10",
+      "side": "right",
+      "change": "unchanged",
+      "why": "inner doorway, right"
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+}

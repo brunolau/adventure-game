@@ -1,0 +1,762 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exit Direction Review</title>
+<style>
+:root { --bg:#f6f3ee; --card:#fffdf9; --ink:#22201c; --muted:#6d675e; --line:#e2dbcf; --accent:#0f6e6e; --chg:#b4531a;
+  --chgbg:#fbeee3; --low:#a33a2a; --med:#9a6a00; --high:#2f7d3b; --tag:#102a2a; --tagink:#fff; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg:#171614; --card:#211f1c; --ink:#ece7df;
+  --muted:#a59d91; --line:#36322c; --accent:#5cc0bd; --chg:#f0a060; --chgbg:#3a2a1d; --low:#ef8a78; --med:#e2b44a;
+  --high:#7fcf8a; --tag:#0b1d1d; --tagink:#fff; } }
+:root[data-theme="dark"] { --bg:#171614; --card:#211f1c; --ink:#ece7df; --muted:#a59d91; --line:#36322c; --accent:#5cc0bd;
+  --chg:#f0a060; --chgbg:#3a2a1d; --low:#ef8a78; --med:#e2b44a; --high:#7fcf8a; --tag:#0b1d1d; --tagink:#fff; }
+* { box-sizing:border-box; }
+html, body { overflow-x:hidden; } td, p, li { overflow-wrap:anywhere; }
+body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif; }
+main { max-width:1180px; margin:0 auto; padding:24px 16px 64px; }
+h1 { font-size:26px; margin:0 0 4px; } .lead { color:var(--muted); margin:0 0 20px; }
+.box { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; margin:0 0 16px; }
+.box h3 { margin:0 0 6px; font-size:15px; } .box ul { margin:0; padding-left:20px; }
+.box.q { border-left-color:var(--chg); }
+a { color:var(--accent); }
+.bar { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0 20px; align-items:center; }
+.bar button { font:inherit; padding:6px 12px; border-radius:16px; border:1px solid var(--line); background:var(--card); color:var(--ink); cursor:pointer; }
+.bar button.on { background:var(--accent); color:#fff; border-color:var(--accent); }
+.card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; margin:0 0 22px; }
+.card h2 { font-size:19px; margin:0; } .rid { color:var(--accent); font-variant-numeric:tabular-nums; }
+.meta { display:flex; flex-wrap:wrap; gap:6px 12px; color:var(--muted); font-size:13px; margin-top:4px; }
+.conf { font-weight:600; } .c-low { color:var(--low); } .c-medium { color:var(--med); } .c-high { color:var(--high); }
+.pill { background:var(--chgbg); color:var(--chg); border-radius:10px; padding:0 8px; font-weight:600; white-space:nowrap; }
+.muted { color:var(--muted); }
+.heading { margin:10px 0; font-weight:500; }
+.q { background:var(--chgbg); border-radius:6px; padding:8px 12px; margin:8px 0; }
+.pic { position:relative; width:100%; aspect-ratio:16/9; background:#000; border-radius:6px; overflow:hidden; margin:10px 0; }
+.pic img { width:100%; height:100%; display:block; object-fit:cover; }
+.pic.none { display:flex; align-items:center; justify-content:center; color:#aaa; }
+.tag { position:absolute; transform:translate(-50%,0); background:var(--tag); color:var(--tagink); font-size:clamp(9px,1.25vw,14px);
+  padding:2px 7px; border-radius:5px; white-space:nowrap; opacity:.92; pointer-events:none; border:1px solid rgba(255,255,255,.35); }
+.tag.al { transform:none; } .tag.ar { transform:translate(-100%,0); }
+.tag.tchg { border-color:#f0a060; box-shadow:0 0 0 1px #f0a060; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th,td { text-align:left; vertical-align:top; padding:6px 8px; border-top:1px solid var(--line); }
+th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+tr.chg td:first-child { color:var(--chg); font-weight:600; }
+.arr { font-size:17px; } .sub { color:var(--muted); font-size:12px; } td.why { color:var(--muted); }
+details { margin-top:8px; color:var(--muted); font-size:13px; }
+@media (max-width:700px) { table, thead, tbody, tr, td, th { display:block; } thead { display:none; }
+  tr { border-top:1px solid var(--line); padding:6px 0; } td { border:0; padding:2px 0; } }
+</style></head><body><main>
+<h1>Exit direction review</h1>
+<p class="lead">Every room with its exit arrows. Generated 2026-10-07
+by <code>tools/exits_review_page.py</code>. 25 exits in 15 rooms changed since yesterday's
+layout (revision 754af07). Uncertain rooms and rooms with a question come first. The round badges in the
+pictures are the game's own Space markers. The dark tags give the destination and its arrow; an orange outline marks a
+changed exit.</p>
+<div class="box"><h3>Owner facts (binding)</h3><ul><li>Švantnerova stop (S11 1995, S51 2020, S57 1982): the way to ZŠ Sokolíkova (S12 / S52 / S58) is on the LEFT.</li><li>Karlova Ves (S19 tram platform, S20 repair shop): Dúbravka is on the RIGHT, the city (Staré Mesto, Ružinov, Petržalka) on the LEFT.</li><li>S07 Čierna Voda stop (kept as you set it): the shop S04 at the bottom left on the road, the bus to Dúbravka higher on the road, pointing up.</li><li>General: every next-location arrow points where that place really lies from the camera&#x27;s real position and heading; the return exit in the target room points back.</li></ul></div>
+<div class="box q"><h3>Questions for you</h3><ul><li><a href='#S07'>S07</a> shop S04: keep bottom left, or straight ahead along the road?</li><li><a href='#S51'>S51</a> bus to Čierna Voda: towards you (route) or right edge (straight line)?</li><li><a href='#S17'>S17</a> school yard (also S55, S61) to the front: keep the left edge?</li><li><a href='#S28'>S28</a> bus to Kamenné námestie: left (bus route) or up?</li><li><a href='#S02'>S02</a> Mira&#x27;s gate: footpath into the picture, or right edge?</li><li><a href='#S18'>S18</a> Sokolíkova street (also S62): no real camera; does the layout match?</li><li><a href='#S21'>S21</a> composite painting; for information only</li></ul></div>
+<div class="bar"><span class="muted">Show:</span>
+<button data-f="all" class="on">all rooms</button><button data-f="q">questions</button>
+<button data-f="unc">low / medium confidence</button><button data-f="chg">changed</button></div>
+
+<section class="card" id="S02" data-conf="low" data-chg="0" data-q="1">
+  <header><h2><span class="rid">S02</span> Ulica medzi plotmi</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (300°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  <div class='q'><b>Question (S02.to_S05):</b> The houses are invented, so the heading is a guess. Mira&#x27;s gate is along the footpath between the plots (into the picture); it also lies to the right, like the park S03. Keep the footpath, or move both to the right edge?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S02_markers.png' alt='S02 with exit markers'><span class='tag ac' style='left:44.53%;top:63.98%'>↑ Adamova garáž</span><span class='tag ar' style='left:97.92%;top:80.46%'>→ Dobrovoľnícke výdajné miesto</span><span class='tag ac' style='left:26.82%;top:64.21%'>↑ Mirkina bránka</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S01</b> Adamova garáž<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>Adam&#x27;s open driveway gate (into the picture)</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S03</b> Dobrovoľnícke výdajné miesto<div class='sub'>walk · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>the street continues out of the right edge = NNE, the start of the walking route to the park</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S05</b> Mirkina bránka<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the footpath between the plots (into the picture). Mira&#x27;s old core lies to the right too (same street start as S03); kept as rule 3&#x27;s separation by kind (one along the edge, one along a path). Owner review: the alternative is the right edge for both</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the houses are invented (register: type-reference); OSM way 176919085 Jasenova runs SSW-NNE (48.21855,17.22796 -&gt; 48.22039,17.22950, ~30 deg); the camera stands on the street looking across at the plots, so it looks either WNW or ESE</li><li>painting: warm low afternoon light (29 Oct, sun ~SW) from the LEFT -&gt; left = SSW: the camera looks WNW at plots on the west side of the street</li><li>OSRM foot routes to the park S03 (1.8 km) and to Mira S05 (1.1 km) both leave NNE along Jasenova (28 deg for the first 200 m) = the right edge with this heading; the owner&#x27;s 2026-10-06 complaint was that S03 and S05 sat side by side on the left</li></ul></details>
+</section>
+<section class="card" id="S18" data-conf="low" data-chg="0" data-q="1">
+  <header><h2><span class="rid">S18</span> Sídliskový dvor s kioskom</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  <div class='q'><b>Question:</b> Same picture as S62. It is the Sokolíkova street painting you liked; its real camera position is unknown (the Flickr geotag is 400 m away). The school is on the left, the stop on the right, and the yard S69 is up the side road. Does that match how you picture the street?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S18_markers.png' alt='S18 with exit markers'><span class='tag ar' style='left:96.88%;top:85.79%'>→ Dúbravská zastávka</span><span class='tag al' style='left:2.08%;top:84.03%'>← Školský dvor</span><span class='tag ac' style='left:22.92%;top:81.39%'>↑ Sokolíkovský dvor</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S11</b> Dúbravská zastávka<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>towards the stop (S11.to_S18 is the far end of its platform)</td></tr><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S17</b> Školský dvor<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>school side (continuity with S17.to_S18 right)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S69</b> Sokolíkovský dvor<div class='sub'>walk · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>the side road between the kiosk and the red car into the gap between the blocks</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the painting is the owner-loved style test art/backgrounds/sokolikova-street.png (Sokolikova panel row, from carl_eric&#x27;s Flickr &#x27;Block&#x27;; its geotag 48.184687,17.03473 accuracy 13 lies ~400 m NW of the school, not on Sokolikova street) - no reliable real camera position or heading</li><li>the register row still describes the superseded courtyard between Svantnerova 3-7 and M. Schneidra-Trnavskeho 1-5 (between the school grounds and the stop)</li><li>layout follows the game&#x27;s chain and the owner statement (S17: the way to the blocks is right of the school): the school side on the left, the stop on the right, S69 up the side road</li></ul></details>
+</section>
+<section class="card" id="S21" data-conf="medium" data-chg="1" data-q="1">
+  <header><h2><span class="rid">S21</span> Kamenné námestie</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1995</span>
+    <span class="pill">4 exits changed</span></div></header>
+  <p class="heading">Camera looks north-east (30°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  <div class='q'><b>Question:</b> The painting is a composite: Hotel Kyjev is drawn right of the department store, but from the real plaza it stands to the left. Every exit decision holds for any heading between north and north-east.</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S21.png' alt='S21 with exit markers'><span class='tag al' style='left:2.08%;top:84.21%'>← Karloveské nástupište</span><span class='tag ac tchg' style='left:25.52%;top:87.41%'>↓ Antikvariát Pod druhou rukou</span><span class='tag ar' style='left:88.02%;top:53.89%'>↑ Archívna študovňa</span><span class='tag al tchg' style='left:3.33%;top:53.80%'>↑ Fotoateliér Svetlo</span><span class='tag ac tchg' style='left:43.49%;top:52.96%'>↑ Miletičova medzi stánkami</span><span class='tag ac tchg' style='left:76.69%;top:54.03%'>↓ Petržalský podchod</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S19</b> Karloveské nástupište<div class='sub'>map_transition · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>tram west via Nam. SNP</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S22</b> Antikvariát Pod druhou rukou<div class='sub'>walk · return: into the picture</div></td><td><span class=pill>up → down</span></td><td class='why'>walk SW through Laurinska into the Old Town</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S23</b> Archívna študovňa<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>walk NNE</td></tr><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S24</b> Fotoateliér Svetlo<div class='sub'>walk · return: into the picture</div></td><td><span class=pill>moved (same side)</span></td><td class='why'>walk NNW across Nam. SNP</td></tr><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S25</b> Miletičova medzi stánkami<div class='sub'>map_transition · return: left edge</div></td><td><span class=pill>right → up</span></td><td class='why'>tram NE along Spitalska</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S28</b> Petržalský podchod<div class='sub'>map_transition · return: left edge</div></td><td><span class=pill>up → down</span></td><td class='why'>bus south over the Danube</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>painting: the white department store and the Hotel Kyjev tower fill the view ahead, i.e. the camera faces NE/NNE from the plaza (bearings from the plaza: store 35-65 deg, Kyjev 20-35 deg)</li><li>the painting is a composite (Kyjev drawn right of the store; from the real plaza it stands left of it), hence medium confidence; every exit decision below holds for any heading between 0 and 60 deg</li><li>OSM tram network: the Ruzinov trams leave north-east along Spitalska (ways 44350529, 240726809 towards Americke nam. and Zahradnicka); the Karlova Ves trams leave west via Nam. SNP (ways 244491374, 257076647) to the castle tunnel / the embankment; the buses to Petrzalka go south over the Danube</li></ul></details>
+</section>
+<section class="card" id="S28" data-conf="low" data-chg="1" data-q="1">
+  <header><h2><span class="rid">S28</span> Petržalský podchod</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks north (350°): screen left = west, screen right = east, into the picture = north, towards you = south.</p>
+  <div class='q'><b>Question (S28.to_S21):</b> The bus to Kamenné námestie leaves from the stop on Rusovská cesta, which runs north-west (left). Kamenné námestie itself lies north-north-east. The heading here is low confidence: the underpass is painted from a type photo, not the real place. Left (the bus) or up?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S28.png' alt='S28 with exit markers'><span class='tag al' style='left:2.08%;top:79.31%'>← Kamenné námestie</span><span class='tag ar tchg' style='left:85.94%;top:44.77%'>→ Garáž rádioamatéra</span><span class='tag ac' style='left:50.10%;top:51.71%'>↑ Nábrežný merací prístrešok</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S21</b> Kamenné námestie<div class='sub'>map_transition · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>path out to the Zaporozska bus stop, bus NW along Rusovska and over the bridge</td></tr><tr class='chg'><td><span class='arr'>→</span> right edge</td><td><b>S29</b> Garáž rádioamatéra<div class='sub'>walk · return: left edge</div></td><td><span class=pill>up → right</span></td><td class='why'>up the stairs on the right, SE along Rusovska cesta</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S30</b> Nábrežný merací prístrešok<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>through the tunnel north, then along the embankment to the old bridge</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>reconstruction from one type-reference photo (no photo of the real place); the heading follows the OSM tunnel axis and the game&#x27;s route (through the tunnel to the Danube side, S30 NNE)</li><li>OSM: Rusovska cesta runs 325/145 deg above the tunnel; the Zaporozska bus stops are on it (48.12536,17.09661 / 48.12634,17.09607)</li><li>the painted stairs on the right climb the embankment to the road level; Rovniakova (S29) lies SE along Rusovska cesta</li></ul></details>
+</section>
+<section class="card" id="S07" data-conf="high" data-chg="0" data-q="1">
+  <header><h2><span class="rid">S07</span> Čierna Voda pri výveske</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (293°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  <div class='q'><b>Question (S07.to_S04):</b> Kept as you set it (bottom left). In reality the shop (Centrum MONAR, 550 m) lies straight ahead along the road, the same way as the bus. Keep it, or move the shop to the road ahead?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S07_markers.png' alt='S07 with exit markers'><span class='tag ac' style='left:30.21%;top:51.02%'>↑ Dúbravská zastávka v roku 2020</span><span class='tag al' style='left:10.94%;top:79.07%'>← Potraviny cez okienko</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S51</b> Dúbravská zastávka v roku 2020<div class='sub'>bus · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>the bus at the stop sign, up the road WNW towards Bratislava</td></tr><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S04</b> Potraviny cez okienko<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>owner layout: bottom left on the road. Real direction ahead (rel -3); listed for the owner review page</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>reference art/source/rooms/S07/triangel_stop_kartaview_281.jpg = KartaView photo 2630554650 (48.232618,17.257003, heading 293.2 deg; frame 277: 291 deg): on the north platform of the Triangel stop looking WNW along Hlavna, the road on the left, the shelter on the right</li><li>OWNER FACT 2026-10-06/07 (binding, keep as is): the shop S04 bottom left on the road towards the viewer, the bus to Dubravka higher on the road pointing up</li><li>for the owner review: in reality the shop (Centrum MONAR, 290 deg, 550 m) lies ahead along the road, the same way as the bus to Bratislava (WNW via Pezinska / Vajnorska); kept as the owner set it</li></ul></details>
+</section>
+<section class="card" id="S17" data-conf="high" data-chg="0" data-q="1">
+  <header><h2><span class="rid">S17</span> Školský dvor</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1995</span><span>L_YARD</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south-west (225°): screen left = south-east, screen right = north-west, into the picture = south-west, towards you = north-east.</p>
+  <div class='q'><b>Question (S17.to_S12):</b> Same for S55 and S61. The yard&#x27;s way to the school front goes out of the left edge, round the south-east end of the main wing. The front entrance really lies ahead-right, and the shorter real walk goes round the north-west end, but the right side is the way to the panel blocks (your 2026-10-06 note). Keep left?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S17_markers.png' alt='S17 with exit markers'><span class='tag al' style='left:2.08%;top:84.68%'>← Pred ZŠ Sokolíkova</span><span class='tag ar' style='left:97.92%;top:84.68%'>→ Sídliskový dvor s kioskom</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S12</b> Pred ZŠ Sokolíkova<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>painted asphalt out of the left edge in front of the track, round the SE end of the main wing to the front (the game&#x27;s route; pair of S12.to_S17 right). The front entrance itself lies at ~258 deg (ahead-right; the shorter real walk is round the NW end) -&gt; COMPASS advisory, owner review</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S18</b> Sídliskový dvor s kioskom<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>owner: right of the school</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>art/masters/bg_natural/S17.md: pinhole camera at the east corner of the fenced court looking SW at the yard facade of the main wing; OSM court way 182867963 corner ~48.18142,17.03889</li><li>painting: the main wing&#x27;s SE corner at x 431 (real bearing ~206 deg, rel -19 deg -&gt; x ~550: matches), the wing continues out of the right edge (NW); the clay track (owner: on the LEFT) = SE; the court fence on the right running away from the camera</li><li>owner 2026-10-06: the way to the panel blocks (S18 / S62) is to the right of the school</li></ul></details>
+</section>
+<section class="card" id="S51" data-conf="high" data-chg="1" data-q="1">
+  <header><h2><span class="rid">S51</span> Dúbravská zastávka v roku 2020</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>2020</span><span>L_STOP</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks north-west (330°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  <div class='q'><b>Question (S51.to_S07):</b> The bus back to Čierna Voda now leaves towards you (down), because the route runs south-east through Karlova Ves and the city. In a straight line Čierna Voda lies east-north-east, which would be the right edge. Down (route) or right (straight line)?</div>
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S51_markers.png' alt='S51 with exit markers'><span class='tag al tchg' style='left:6.51%;top:83.89%'>← Pred ZŠ Sokolíkova v roku 2020</span><span class='tag ac tchg' style='left:46.88%;top:85.56%'>↓ Čierna Voda pri výveske</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S52</b> Pred ZŠ Sokolíkova v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=pill>down → left</span></td><td class='why'>owner fact; the zebra crossing over the west carriageway at the near left runs out of the left edge; the school front lies WSW (rel -73). CONTINUITY flag with S52.to_S51 (both left edges) is geographic: the walk turns round the N end of the school (same as S11/S12, S57/S58)</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S07</b> Čierna Voda pri výveske<div class='sub'>bus · return: into the picture</div></td><td><span class=pill>up → down</span></td><td class='why'>the bus back to Cierna Voda goes SE through Karlova Ves and the city = behind the camera (car route 138 deg): the platform towards the viewer. The far end of the platform (&#x27;up&#x27;) led NW, away from the city. Same reasoning as S11.to_S19 (tram to Karlova Ves: down). The straight line to Cierna Voda is ENE (= right): owner review alternative</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM: tram in the median of M. Schneidra-Trnavskeho (SE-&gt;NW ~327 deg); SW platform way 242889692 (48.18151,17.04092 -&gt; 48.18203,17.04024); camera on it by the shelter looking NW (same L_STOP camera as S11, art/masters/bg_natural/S11.md; docs/navigation/compass/S11.json uses 330)</li><li>painting: west carriageway left, tracks right of the platform, east carriageway and the low bluish medical centre right, the street rising NW</li><li>OWNER FACT 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop</li><li>OSRM car route to Cierna Voda leaves SE (138-142 deg) through Karlova Ves and the city; the city-bound bus stop &#x27;Svantnerova&#x27; (OSM node 979062240) is on the SE-bound (west) carriageway beside the platform</li></ul></details>
+</section>
+<section class="card" id="S01" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S01</span> Adamova garáž</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south (200°): screen left = east, screen right = west, into the picture = south, towards you = north.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S01_markers.png' alt='S01 with exit markers'><span class='tag ac' style='left:60.16%;top:61.30%'>↑ Ulica medzi plotmi</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S02</b> Ulica medzi plotmi<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the open garage door straight ahead onto the driveway and the street (S02 lies ahead, SSW)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference interior (register): Adam&#x27;s invented garage on Jasenova; the open sectional door in the back wall shows the street S02, which lies SSW (register 48.21950,17.22870 -&gt; 48.218636,17.228185 = 202 deg), so the camera looks roughly SSW out of the garage</li><li>single exit through the painted door; nothing else to orient by</li></ul></details>
+</section>
+<section class="card" id="S03" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S03</span> Dobrovoľnícke výdajné miesto</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks east (105°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S03_markers.png' alt='S03 with exit markers'><span class='tag ac tchg' style='left:69.79%;top:87.41%'>↓ Ulica medzi plotmi</span><span class='tag al tchg' style='left:2.08%;top:84.58%'>← Potraviny cez okienko</span><span class='tag ar' style='left:97.92%;top:83.66%'>→ Chodník pri retenčnej nádrži</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S02</b> Ulica medzi plotmi<div class='sub'>walk · return: right edge</div></td><td><span class=pill>left → down</span></td><td class='why'>Jasenova lies WSW (rel +137) and the walk starts SSW/SW down the end of Javorova alej (OSRM foot 210-231 deg) = behind the camera, slightly right: the trampled meadow towards the viewer. The old left edge pointed NNE, away from the street</td></tr><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S04</b> Potraviny cez okienko<div class='sub'>walk · return: right edge</div></td><td><span class=pill>down → left</span></td><td class='why'>the shop at Triangel lies NNE (rel -83 = left): out of the left edge past the playground, along the school path and the cycleway NE (OSM ways 988829319 / 615123029). Pair S04.to_S03 is S04&#x27;s right edge (continuity ok)</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S08</b> Chodník pri retenčnej nádrži<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the pond lies SE (139 deg from the shelter, rel +34): the meadow out of the right edge below the gravel path; pair S08.to_S03 left edge</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>reference art/source/rooms/S03/rekreapark_shelter_panoramax.jpg (Panoramax, the painting&#x27;s base): playground and log structures LEFT of the shelter, the stone block with the chimney at its RIGHT end, the parking lot with a car behind-right, a table-tennis table in the near-left foreground</li><li>OSM: shelter node 8519116543 (48.22406,17.24393); playground structure &#x27;Lucny konik&#x27; way 508440781 NE of it (48.22442,17.24449); parking way 508441064 SSE of it (48.22378,17.24427); table tennis node 14222334324 13 m W of it (48.22410,17.24376) -&gt; only a camera W of the shelter looking ESE (~105 deg) puts the playground left, the parking behind-right and the table tennis in the foreground; the Panoramax GPS point (NE of the shelter) is ~30 m off</li><li>the painting keeps the photo&#x27;s arrangement (grasshopper playground left, chimney block right)</li></ul></details>
+</section>
+<section class="card" id="S04" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S04</span> Potraviny cez okienko</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south (180°): screen left = east, screen right = west, into the picture = south, towards you = north.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S04_markers.png' alt='S04 with exit markers'><span class='tag ar' style='left:97.92%;top:80.00%'>→ Dobrovoľnícke výdajné miesto</span><span class='tag al' style='left:2.08%;top:80.00%'>← Čierna Voda pri výveske</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S03</b> Dobrovoľnícke výdajné miesto<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the right edge (W); the walk leaves W/SW; the park itself lies SSW (rel +22)</td></tr><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S07</b> Čierna Voda pri výveske<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the left edge (E): the bus stop lies ESE (rel -70)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register / art/masters/bg_natural/S04.md: courtyard of the quarter-circle arcade of Centrum MONAR (OSM way 249773039, the concave side faces north), camera in the courtyard facing the mid unit = looking S</li><li>OSRM foot: to the bus stop S07 the walk leaves E (92-111 deg = left), to the park S03 it leaves W then SW (243-266 deg = right)</li></ul></details>
+</section>
+<section class="card" id="S05" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S05</span> Mirkina bránka</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (325°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S05_markers.png' alt='S05 with exit markers'><span class='tag al' style='left:2.08%;top:85.51%'>← Ulica medzi plotmi</span><span class='tag ar' style='left:89.58%;top:62.36%'>→ Pod zatvoreným oknom</span><span class='tag ac' style='left:41.67%;top:56.57%'>↑ Predsieň záhradnej dielne</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S02</b> Ulica medzi plotmi<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the pavement out of the left edge = SW along Pezinska towards Jasenova</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S06</b> Pod zatvoreným oknom<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the side passage on the house&#x27;s NE side into the plot (same invented house)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S09</b> Predsieň záhradnej dielne<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the workshop door in the street wall (into the picture)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM way 917203830 Pezinska runs SW-NE (~55 deg) through the register point 48.225519,17.234011; the camera on the street looks across at the invented house, i.e. NW or SE</li><li>painting: warm low afternoon light from the upper LEFT (sun ~SW) -&gt; left = SW: the camera looks NW at a house on the NW side of the street (the manor, OSM 249773740, is on that side too)</li><li>OSRM foot to S02 leaves SW along Pezinska (236-240 deg) = left edge</li></ul></details>
+</section>
+<section class="card" id="S06" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S06</span> Pod zatvoreným oknom</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south-west (225°): screen left = south-east, screen right = north-west, into the picture = south-west, towards you = north-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S06_markers.png' alt='S06 with exit markers'><span class='tag al' style='left:2.08%;top:79.77%'>← Mirkina bránka</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S05</b> Mirkina bránka<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the side path out of the left edge back to the street (SE)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>invented side path of the S05 house (register: reconstructed); S05&#x27;s side passage is on the house&#x27;s NE side (right of S05), so S06 looks at the NE side wall from the passage, roughly SW; the street (SE) is then on the left</li></ul></details>
+</section>
+<section class="card" id="S08" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S08</span> Chodník pri retenčnej nádrži</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (67°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S08_markers.png' alt='S08 with exit markers'><span class='tag al' style='left:2.08%;top:80.46%'>← Dobrovoľnícke výdajné miesto</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S03</b> Dobrovoľnícke výdajné miesto<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the trail out of the left edge back up to the shelter (NNW, ~180 m)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>art/masters/bg_natural/S08.md + art/source/rooms/S08/layout_javorova-alej-pond_osm.png: camera on the pond&#x27;s west bank (~48.22271,17.24534) looking ENE over the pond (OSM way 365490018) to the pump-track hill (OSM way 672298342), owner correction 2026-10-06</li><li>the park shelter S03 lies NNW of that camera (~335 deg, rel -92 = left)</li></ul></details>
+</section>
+<section class="card" id="S09" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S09</span> Predsieň záhradnej dielne</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S09_markers.png' alt='S09 with exit markers'><span class='tag al' style='left:8.07%;top:57.69%'>← Mirkina bránka</span><span class='tag ar' style='left:91.72%;top:57.69%'>→ Dielňa ZVON</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S05</b> Mirkina bránka<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>outer door, left</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S10</b> Dielňa ZVON<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>inner doorway, right</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference interior of Mira&#x27;s invented outbuilding; no compass evidence. Relative layout only: the outer door (left wall) to the street side, the inner doorway (right wall) to the back room S10</li></ul></details>
+</section>
+<section class="card" id="S10" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S10</span> Dielňa ZVON</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S10_markers.png' alt='S10 with exit markers'><span class='tag al' style='left:8.07%;top:57.69%'>← Predsieň záhradnej dielne</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S09</b> Predsieň záhradnej dielne<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>doorway, left</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference back room of the same outbuilding; the doorway back to S09 is in the left wall (S09&#x27;s door to it is on its right: continuity ok)</li></ul></details>
+</section>
+<section class="card" id="S12" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S12</span> Pred ZŠ Sokolíkova</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1995</span><span>L_SCHOOL_FRONT</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (55°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S12_markers.png' alt='S12 with exit markers'><span class='tag al' style='left:2.08%;top:79.31%'>← Dúbravská zastávka</span><span class='tag ac' style='left:56.02%;top:51.25%'>↑ Školská vstupná chodba</span><span class='tag ar' style='left:97.66%;top:75.09%'>→ Školský dvor</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S11</b> Dúbravská zastávka<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the stop lies ENE behind the building; the walk goes NW along the forecourt, round the N end onto Svantnerova street and east to the stop (out of the left edge). CONTINUITY flag with S11.to_S12 (both left edges) is geographic: the cameras differ by ~85 deg and Adam turns the street corner</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S13</b> Školská vstupná chodba<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the entrance doors</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S17</b> Školský dvor<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>round the painted SE corner into the yard (pair of S17.to_S12 left)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM relation 1084096 / art/source/rooms/S12/layout_school-front_osm.png: the SW facade of the main wing runs NW-SE (~145 deg); the camera faces it from the forecourt, i.e. looks NE</li><li>painting: the facade recedes gently to the right with the building corner at x 1793 and the school yard (fence, lawn, panel block) beyond it = the SE end; the forecourt continues out of the left edge = NW towards Sokolikova / Svantnerova street</li><li>the real entrance sits in the NW part of the long facade, so the painted corner compresses ~70 m of facade; the game&#x27;s route to the yard goes round that SE corner (the S17 family leaves left = round the SE end)</li></ul></details>
+</section>
+<section class="card" id="S13" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S13</span> Školská vstupná chodba</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span><span>L_HALL</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (315°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S13_markers.png' alt='S13 with exit markers'><span class='tag al' style='left:5.73%;top:56.34%'>← Pred ZŠ Sokolíkova</span><span class='tag ac' style='left:50.00%;top:53.70%'>↑ Trieda pamäťového krúžku</span><span class='tag ar' style='left:93.02%;top:57.13%'>→ Fyzikálny kabinet</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S12</b> Pred ZŠ Sokolíkova<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the glazed entrance doors in the left wall</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S14</b> Trieda pamäťového krúžku<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the double door in the back wall to the classroom wing</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S15</b> Fyzikálny kabinet<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the doorway with the staircase up (the cabinet is upstairs)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference interior (register); the glazed entrance doors with daylight in the LEFT wall = the SW facade, so the hall looks roughly NW (low: the owner said the real hall looked different; register positions of the school rooms are estimates)</li></ul></details>
+</section>
+<section class="card" id="S14" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S14</span> Trieda pamäťového krúžku</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span><span>L_CLASS</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (315°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S14_markers.png' alt='S14 with exit markers'><span class='tag ac' style='left:21.93%;top:55.00%'>↑ Školská vstupná chodba</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S13</b> Školská vstupná chodba<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the classroom door at the left end of the front wall (a door into the picture, on the hall&#x27;s side)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference classroom; the windows on the right show the running track = the yard (NE) side, so the room looks roughly NW (low)</li></ul></details>
+</section>
+<section class="card" id="S15" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S15</span> Fyzikálny kabinet</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span><span>L_CABINET</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S15_markers.png' alt='S15 with exit markers'><span class='tag al' style='left:6.38%;top:66.76%'>← Školská vstupná chodba</span><span class='tag ar' style='left:93.62%;top:66.76%'>→ Miestnosť školského rozhlasu</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S13</b> Školská vstupná chodba<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>left-wall door to the corridor and the stairs down</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S16</b> Miestnosť školského rozhlasu<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>right-wall door to the radio room</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference cabinet, doors in the left and right walls, window in the back wall; heading not determinable (low)</li></ul></details>
+</section>
+<section class="card" id="S16" data-conf="low" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S16</span> Miestnosť školského rozhlasu</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S16_markers.png' alt='S16 with exit markers'><span class='tag ac tchg' style='left:21.93%;top:68.61%'>← Fyzikálny kabinet</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S15</b> Fyzikálny kabinet<div class='sub'>walk · return: right edge</div></td><td><span class=pill>up → left</span></td><td class='why'>the door is in the left wall and the cabinet lies to the left (return of the cabinet&#x27;s right-wall door)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>small room off the cabinet (S15.to_S16 is the cabinet&#x27;s right-wall door), window onto the inner atrium; heading not determinable</li></ul></details>
+</section>
+<section class="card" id="S20" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S20</span> Palova opravovňa</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S20.png' alt='S20 with exit markers'><span class='tag ac' style='left:22.53%;top:55.56%'>↑ Karloveské nástupište</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S19</b> Karloveské nástupište<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the door, down the steps to the tram stop</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior one-point box; the only way out is the glazed door in the front wall (the pavilion arcade outside)</li><li>no compass evidence for the facade orientation; the single exit is a door, so its side (up) does not depend on the heading</li></ul></details>
+</section>
+<section class="card" id="S22" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S22</span> Antikvariát Pod druhou rukou</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S22.png' alt='S22 with exit markers'><span class='tag ac' style='left:56.67%;top:55.42%'>↑ Kamenné námestie</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S21</b> Kamenné námestie<div class='sub'>walk · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the door, NE through the Old Town</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior; single exit through the glazed shop door, side up regardless of heading</li></ul></details>
+</section>
+<section class="card" id="S23" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S23</span> Archívna študovňa</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S23.png' alt='S23 with exit markers'><span class='tag ac' style='left:21.98%;top:55.65%'>↑ Kamenné námestie</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S21</b> Kamenné námestie<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the door, SSW along Spitalska</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior; single exit through the door to the square, side up regardless of heading</li></ul></details>
+</section>
+<section class="card" id="S24" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S24</span> Fotoateliér Svetlo</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S24.png' alt='S24 with exit markers'><span class='tag ac' style='left:21.04%;top:55.65%'>↑ Kamenné námestie</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S21</b> Kamenné námestie<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the door, SSE to Kamenne namestie</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior; single exit through the glazed entrance door, side up regardless of heading</li></ul></details>
+</section>
+<section class="card" id="S25" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S25</span> Miletičova medzi stánkami</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1995</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks north-east (45°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S25.png' alt='S25 with exit markers'><span class='tag al' style='left:2.08%;top:86.53%'>← Kamenné námestie</span><span class='tag ac' style='left:17.97%;top:49.63%'>↑ Opravovňa odevov</span><span class='tag ac tchg' style='left:39.58%;top:87.41%'>↓ Kazetový klub v suteréne</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S21</b> Kamenné námestie<div class='sub'>map_transition · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>walk NW to the Zahradnicka tram stop, tram west</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S26</b> Opravovňa odevov<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>short aisle north into the passage</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S27</b> Kazetový klub v suteréne<div class='sub'>walk · return: into the picture</div></td><td><span class=pill>right → down</span></td><td class='why'>back out to Mileticova and across it, SW</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>painting: the low white market hall with its little tower ahead, the brick chimney (OSM man_made=chimney 48.15366,17.13666) ahead-right, a tall estate block right (the Gloria tower 48.15513,17.13855 stands NE of the market), the two-storey market-edge building with the passage (Pasaz Mileticova, OSM way 1163484294, NW part of the market) ahead-left</li><li>reference mileticova_market_stalls_hall_2017.jpg: taken from the street into the market with the hall tower in the centre and the Gloria tower right - the same NE view</li><li>OSM tram: Zahradnicka north of the market (stop Saleziani 48.15514,17.13397, NW); the tram to the centre runs west, then via Karadzicova / Americke nam. to Spitalska</li><li>the 1950s Mileticova estate (register S27) lies across Mileticova, SW, behind the camera</li></ul></details>
+</section>
+<section class="card" id="S26" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S26</span> Opravovňa odevov</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S26.png' alt='S26 with exit markers'><span class='tag ac' style='left:21.15%;top:55.65%'>↑ Miletičova medzi stánkami</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S25</b> Miletičova medzi stánkami<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>out of the door into the passage and the market</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior; single exit through the glazed door to the passage, side up regardless of heading</li></ul></details>
+</section>
+<section class="card" id="S27" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S27</span> Kazetový klub v suteréne</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S27.png' alt='S27 with exit markers'><span class='tag ac' style='left:21.15%;top:56.34%'>↑ Miletičova medzi stánkami</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S25</b> Miletičova medzi stánkami<div class='sub'>walk · return: towards you</div></td><td><span class=muted>unchanged</span></td><td class='why'>up the stairs, across Mileticova to the market</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior; single exit through the basement door and the stairs, side up regardless of heading</li></ul></details>
+</section>
+<section class="card" id="S29" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S29</span> Garáž rádioamatéra</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks east (90°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S29.png' alt='S29 with exit markers'><span class='tag al' style='left:2.08%;top:84.40%'>← Petržalský podchod</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S28</b> Petržalský podchod<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>along the forecourt NW to Rusovska cesta and the underpass</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM garage rows line the N-S service road on both sides (ways 574873207, 1154019488 west; 1154019490 east); the painted row could face either way, so the heading is a guess (garages on the east side facing west -&gt; camera faces east)</li><li>only one exit; it stays on the left edge so that the walk from S28 (stairs, right) continues in the same direction; with the heading guessed here the underpass (NW) is on the left</li></ul></details>
+</section>
+<section class="card" id="S32" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S32</span> Ivanská náves</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1960</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks north (22°): screen left = west, screen right = east, into the picture = north, towards you = south.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S32_markers.png' alt='S32 with exit markers'><span class='tag ac tchg' style='left:34.64%;top:53.10%'>↑ Ivanská železničná zastávka</span><span class='tag ac' style='left:23.44%;top:49.54%'>↑ Pošta s prepážkou</span><span class='tag al tchg' style='left:2.08%;top:81.76%'>← Kultúrna sála pred skúškou</span><span class='tag ac' style='left:58.07%;top:53.10%'>↑ Dvor hospodárskej dielne</span><span class='tag ar' style='left:97.92%;top:84.12%'>→ Park pri kaštieli</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S31</b> Ivanská železničná zastávka<div class='sub'>walk · return: right edge</div></td><td><span class=pill>left → up</span></td><td class='why'>the railway halt lies NNE, dead ahead (Nadrazna is reached from the north end of the square); now the village street straight ahead between the post-office house and the chapel (the former S34 street mouth)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S33</b> Pošta s prepážkou<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the painted POSTA door (see the deviation above)</td></tr><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S34</b> Kultúrna sála pred skúškou<div class='sub'>walk · return: right edge</div></td><td><span class=pill>up → left</span></td><td class='why'>Maticny dom (culture hall) stands at the NW corner of the square on Moyzesova, 44 deg left of the camera axis; now the dirt road out of the left edge (the former S31 zone)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S35</b> Dvor hospodárskej dielne<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the road at the back right towards the manor&#x27;s service courtyard (NNE, slightly right)</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S37</b> Park pri kaštieli<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the manor park lies NE; the walk leaves the green east along Stefanikova (right of the NNE camera), out of the right edge in front of the big linden. The return S37.to_S32 is a path into the picture (up), so no turn-round at the edges</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register + painting log: camera on the green looking NNE towards the fire-station tower; OSM fire station DHZO (48.19021,17.25677) lies 25 deg from the register point, the reference photo rozalia_square_park_path_taz666_2013.jpg looks along the park towards it</li><li>the painting is a generalised composition: chapel of St Rosalia ahead (OSM 314635232, 21 m NE of the register point), houses left and right</li><li>known deviation: the real post office (OSM node 30343810) stands on the EAST side of the square (ESE of the camera, right/behind); the painting shows the POSTA house on the LEFT. A door cannot be moved without repainting the house; its exit stays the painted door (up)</li></ul></details>
+</section>
+<section class="card" id="S33" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S33</span> Pošta s prepážkou</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S33_markers.png' alt='S33 with exit markers'><span class='tag al' style='left:8.07%;top:55.65%'>← Ivanská náves</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S32</b> Ivanská náves<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the painted glazed door to the square at the left of the back wall, next to the window that shows the square</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior after a 1956 type reference; the window shows the chapel of the square (S32); no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S34" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S34</span> Kultúrna sála pred skúškou</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S34_markers.png' alt='S34 with exit markers'><span class='tag ar' style='left:89.32%;top:57.50%'>→ Ivanská náves</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S32</b> Ivanská náves<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the painted double door with daylight from the street on the right of the end wall</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior after type references (1948 / 1976 hall stages); no window view, no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S35" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S35</span> Dvor hospodárskej dielne</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S35_markers.png' alt='S35 with exit markers'><span class='tag al' style='left:2.08%;top:79.31%'>← Ivanská náves</span><span class='tag ac' style='left:61.07%;top:51.02%'>↑ Otova mechanická dielňa</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S32</b> Ivanská náves<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the yard opens out of the left edge to the village road and the square (only open side of the painted yard)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S36</b> Otova mechanická dielňa<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>Oto&#x27;s workshop door under the columned porch</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the courtyard of the manor outbuildings (OSM L-shaped outbuildings 1220011359 / 1220011360 west of the manor); the painting adds an invented store annex and generalises the yard, so the camera heading cannot be fixed from OSM</li><li>painting: the yard opens to the left towards the village road; the square lies SSW of the courtyard (211 deg)</li></ul></details>
+</section>
+<section class="card" id="S36" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S36</span> Otova mechanická dielňa</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S36_markers.png' alt='S36 with exit markers'><span class='tag al' style='left:8.65%;top:57.50%'>← Dvor hospodárskej dielne</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S35</b> Dvor hospodárskej dielne<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the plank door to the courtyard at the far left of the back wall</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>workshop interior inside the outbuilding (type references); no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S38" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S38</span> Pred skúšobnou čerpacou búdkou</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south-east (135°): screen left = north-east, screen right = south-west, into the picture = south-east, towards you = north-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S38_markers.png' alt='S38 with exit markers'><span class='tag al' style='left:2.08%;top:83.84%'>← Park pri kaštieli</span><span class='tag ac' style='left:26.35%;top:62.59%'>↑ Miestnosť prvého ZVONu</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S37</b> Park pri kaštieli<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the dirt track along the bank out of the left edge towards the village (NE)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S39</b> Miestnosť prvého ZVONu<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the measuring-room door of the hut</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>painting log: camera on the near bank looking SE across the Sursky kanal; the village church stands in the left distance</li><li>the manor park (S37) lies NE = left of the SE view</li></ul></details>
+</section>
+<section class="card" id="S39" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S39</span> Miestnosť prvého ZVONu</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S39_markers.png' alt='S39 with exit markers'><span class='tag al' style='left:5.86%;top:54.26%'>← Pred skúšobnou čerpacou búdkou</span><span class='tag ar' style='left:93.49%;top:51.48%'>→ Povala technického archívu</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S38</b> Pred skúšobnou čerpacou búdkou<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the open plank door with the canal bank behind it</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S40</b> Povala technického archívu<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the narrow plank door in the right side wall (fictional link to the archive loft)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>interior of the invented pump hut; the open door on the left shows the canal bank (S38)</li></ul></details>
+</section>
+<section class="card" id="S40" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S40</span> Povala technického archívu</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S40_markers.png' alt='S40 with exit markers'><span class='tag al' style='left:9.64%;top:72.08%'>← Miestnosť prvého ZVONu</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S39</b> Miestnosť prvého ZVONu<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the staircase down through the floor opening on the left</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>attic interior after type references; no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S41" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S41</span> Biela Púť pri dolnej stanici</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks north (5°): screen left = west, screen right = east, into the picture = north, towards you = south.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S41_markers.png' alt='S41 with exit markers'><span class='tag al tchg' style='left:11.20%;top:52.41%'>← Pred hotelom Grand Jasná</span><span class='tag ac' style='left:71.98%;top:34.07%'>↑ Priehyba pri prestupe na Funitel</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S42</b> Pred hotelom Grand Jasná<div class='sub'>walk · return: into the picture</div></td><td><span class=pill>up → left</span></td><td class='why'>Hotel Grand Jasna lies WNW = left; the painted arched footbridge crosses the stream to the hotel&#x27;s east footway (OSM 772813880 -&gt; 772813879). The far end of the road leads AWAY from the hotel (to Posta / the Biela Put plaza)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S67</b> Priehyba pri prestupe na Funitel<div class='sub'>cable_A6 · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the gondola station building at the right behind the fence, entered through the gate in the wall gap</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>owner reference photos imgur_TXI6i3E.jpg / imgur_8l08ndF.jpg (the exact view): the road leads to the steep-gabled chalet at its end with the Grand gondola station and its first pylon on the RIGHT and the wooden footbridge plus a hotel with awnings on the LEFT</li><li>OSM fits only a camera on the service road 242064228 SOUTH of Hotel Posta (OSM 304515881) looking NORTH: Posta ahead (-4 deg), the Grand station building 772813843 at +20..+29 deg, its pylon at the right, the footbridge way 772813880 over the Otupnianka at the left (-30 deg, 25-45 m), Hotel Grand (OSM 22823454) on the left (-58..-70 deg). The painting log&#x27;s &#x27;east of Hotel Posta&#x27; is not consistent with OSM (from the east the station would be on the left)</li><li>the Biela Put - Priehyba gondola station (S67&#x27;s line, OSM node &#x27;Biela Put&#x27; 48.96985,19.58475) also lies to the right (+70 deg)</li></ul></details>
+</section>
+<section class="card" id="S42" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S42</span> Pred hotelom Grand Jasná</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks south (195°): screen left = east, screen right = west, into the picture = south, towards you = north.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S42_markers.png' alt='S42 with exit markers'><span class='tag al tchg' style='left:10.16%;top:60.37%'>↑ Biela Púť pri dolnej stanici</span><span class='tag ar' style='left:91.67%;top:57.73%'>↑ Lobby hotela Grand Jasná</span><span class='tag ac' style='left:65.23%;top:56.06%'>↑ Výstavný salón hotela Grand Jasná</span><span class='tag ac' style='left:36.72%;top:60.37%'>↑ Chodník pri Vrbickom plese</span><span class='tag al tchg' style='left:2.08%;top:83.43%'>← Klientske centrum Biela Púť</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S41</b> Biela Púť pri dolnej stanici<div class='sub'>walk · return: left edge</div></td><td><span class=pill>down → up</span></td><td class='why'>S41 lies ahead-left (SSE), not behind the camera: S41 looks north along its road with this hotel to its LEFT, across the footbridge</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S43</b> Lobby hotela Grand Jasná<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the main entrance under the canopy (right)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S44</b> Výstavný salón hotela Grand Jasná<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the salon side door of the hotel&#x27;s lower wing (right half)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S45</b> Chodník pri Vrbickom plese<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the gravel footpath through the gap in the wall into the forest. Real route: south along the hotel&#x27;s east footway, then west round its south end to the lake (net bearing +57 deg = right); no painted way exists on the right (the hotel fills it), kept up - UNSURE</td></tr><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S46</b> Klientske centrum Biela Púť<div class='sub'>walk · return: left edge</div></td><td><span class=pill>up → left</span></td><td class='why'>the client centre lies due east = left of the SSW camera; the forecourt continues out of the left edge past the station to the plaza</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>reference photo hotel-grand-jasna_forecourt-chopok_2017-07.jpg: the paved forecourt with the hotel&#x27;s east facade receding on the RIGHT, the glass structure on the LEFT, the Chopok ridge ahead with the summit buildings left of centre; Chopok summit lies 169 deg from Biela Put, so the axis is ~195 deg</li><li>OSM: the hotel&#x27;s long east facade runs 190 deg (way 22823454); the Grand gondola station (772813843) lies east = left</li><li>targets: S41 (the road with the footbridge) SSE = ahead-left via the hotel&#x27;s east footway and the bridge; the client centre S46 at the Biela Put plaza E = left; Vrbicke pleso (S45) W = behind the hotel, right</li></ul></details>
+</section>
+<section class="card" id="S43" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S43</span> Lobby hotela Grand Jasná</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S43_markers.png' alt='S43 with exit markers'><span class='tag al' style='left:8.33%;top:56.34%'>← Pred hotelom Grand Jasná</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S42</b> Pred hotelom Grand Jasná<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the glazed entrance doors to the forecourt at the left of the back wall</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>lobby painted from the owner&#x27;s description; no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S44" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S44</span> Výstavný salón hotela Grand Jasná</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S44_markers.png' alt='S44 with exit markers'><span class='tag ar' style='left:93.23%;top:55.42%'>→ Pred hotelom Grand Jasná</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S42</b> Pred hotelom Grand Jasná<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the salon door to the hotel corridor on the right</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>meeting-salon interior (type references); no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S45" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S45</span> Chodník pri Vrbickom plese</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south-east (157°): screen left = north-east, screen right = south-west, into the picture = south-east, towards you = north-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S45_markers.png' alt='S45 with exit markers'><span class='tag al' style='left:2.08%;top:85.28%'>← Pred hotelom Grand Jasná</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S42</b> Pred hotelom Grand Jasná<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the shore path out of the left edge back east to the hotel</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register + painting log: north shore of Vrbicke pleso looking SSE across the lake to Chopok (summit buildings on the ridge)</li><li>Hotel Grand lies E (92 deg) = left; the path from the hotel (OSM 52413780 / 407066803) reaches the lake from the east</li></ul></details>
+</section>
+<section class="card" id="S46" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S46</span> Klientske centrum Biela Púť</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S46_markers.png' alt='S46 with exit markers'><span class='tag al' style='left:8.20%;top:56.34%'>← Pred hotelom Grand Jasná</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S42</b> Pred hotelom Grand Jasná<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the glazed entrance doors to the plaza on the left</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>client-centre interior (type reference); the window wall shows the plaza; no measurable heading</li></ul></details>
+</section>
+<section class="card" id="S47" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S47</span> Chopok pri Rotunde</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (50°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S47_markers.png' alt='S47 with exit markers'><span class='tag ar' style='left:88.28%;top:53.56%'>→ Servisný pavilón výstavy Atlas</span><span class='tag al' style='left:2.08%;top:85.42%'>← Kabína Funitelu medzi Priehybou a Chopkom</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S48</b> Servisný pavilón výstavy Atlas<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the glazed door in the stone wall (right) to the stairs down to the plateau east of the Rotunda</td></tr><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S68</b> Kabína Funitelu medzi Priehybou a Chopkom<div class='sub'>arrive_funitel · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the lounge continues out of the left edge round to the Funitel summit station (N / NNE, left of the NE view)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the window wall shows the High Tatras (40-70 deg from Chopok), the Liptov basin and the Funitel line (due north from the Chopok SEVER station, OSM 435913008) on the LEFT panes</li><li>the Atlas plateau / pavilion (S48) lies ESE = right; the Funitel station adjoins the Rotunda on its north (left-ahead) side</li></ul></details>
+</section>
+<section class="card" id="S49" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S49</span> Chronokomora pavilónu Atlas</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks west (270°): screen left = south, screen right = north, into the picture = west, towards you = east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S49_markers.png' alt='S49 with exit markers'><span class='tag ar' style='left:97.27%;top:55.42%'>→ Servisný pavilón výstavy Atlas</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S48</b> Servisný pavilón výstavy Atlas<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the door at the right back to the plateau</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>pavilion interior; the window shows the Rotunda silhouette (west)</li></ul></details>
+</section>
+<section class="card" id="S50" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S50</span> Vyhliadková terasa pri Rotunde</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (45°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S50_markers.png' alt='S50 with exit markers'><span class='tag al' style='left:4.17%;top:68.61%'>← Servisný pavilón výstavy Atlas</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S48</b> Servisný pavilón výstavy Atlas<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the painted steel stairs at the left (NW) end of the deck beside the Rotunda lead down to the plateau. The pavilion itself lies ENE (ahead-right, below the parapet); there is no other painted way down - UNSURE (would need a stair gap painted in the right part of the railing)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>painting log + reference photos: the deck on the JUH station looking NE: High Tatras and the Funitel line ahead-left, the rocky Chopok peak (OSM node 48.94301,19.59271, ESE) on the right</li><li>the Rotunda adjoins the deck on its NW (left) end; the stairs come down beside it to the plateau</li></ul></details>
+</section>
+<section class="card" id="S52" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S52</span> Pred ZŠ Sokolíkova v roku 2020</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span><span>L_SCHOOL_FRONT</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (55°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S52_markers.png' alt='S52 with exit markers'><span class='tag al' style='left:2.08%;top:79.31%'>← Dúbravská zastávka v roku 2020</span><span class='tag ar' style='left:88.54%;top:50.00%'>↑ Školnícke servisné okno v roku 2020</span><span class='tag ac' style='left:56.02%;top:51.25%'>↑ Školské zádverie v roku 2020</span><span class='tag ar' style='left:97.66%;top:75.09%'>→ Školský dvor v roku 2020</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S51</b> Dúbravská zastávka v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the forecourt path out of the left edge (NW), round the N end onto Svantnerova street and E to the stop; CONTINUITY with S51.to_S52 is geographic</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S56</b> Školnícke servisné okno v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the service window further right on the same facade (S56 lies SE along the facade)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S53</b> Školské zádverie v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the entrance doors</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S55</b> Školský dvor v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>round the painted SE corner into the yard (pair S55.to_S52 left)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>as S12 (docs/navigation/compass/S12.json): the SW facade of the main wing runs NW-SE; the camera faces it from the forecourt = looks NE; the forecourt continues out of the left edge (NW) towards Sokolikova / Svantnerova street, the painted SE corner at the right leads round to the yard</li><li>OSRM foot to the stop leaves N/NNE (6-27 deg = left of the NE heading), round the N end of the school</li></ul></details>
+</section>
+<section class="card" id="S53" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S53</span> Školské zádverie v roku 2020</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span><span>L_HALL</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (315°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S53_markers.png' alt='S53 with exit markers'><span class='tag al' style='left:5.73%;top:56.34%'>← Pred ZŠ Sokolíkova v roku 2020</span><span class='tag ar' style='left:93.02%;top:57.13%'>→ Fyzikálny kabinet v roku 2020</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S52</b> Pred ZŠ Sokolíkova v roku 2020<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>glazed entrance doors in the left wall (SW facade)</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S54</b> Fyzikálny kabinet v roku 2020<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>doorway with the staircase up to the cabinet (right wall); the cabinet&#x27;s estimated register position cannot be checked</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>as S13 (docs/navigation/compass/S13.json): type-reference hall; the glazed entrance doors with daylight in the LEFT wall = the SW facade, so the hall looks roughly NW. Register positions of the school rooms are estimates</li></ul></details>
+</section>
+<section class="card" id="S54" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S54</span> Fyzikálny kabinet v roku 2020</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2020</span><span>L_CABINET</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S54_markers.png' alt='S54 with exit markers'><span class='tag al' style='left:6.38%;top:66.76%'>← Školské zádverie v roku 2020</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S53</b> Školské zádverie v roku 2020<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>door in the left wall to the corridor and the stairs down</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>as S15: type-reference cabinet; heading not determinable</li></ul></details>
+</section>
+<section class="card" id="S56" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S56</span> Školnícke servisné okno v roku 2020</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2020</span><span>L_WINDOW</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (55°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S56_markers.png' alt='S56 with exit markers'><span class='tag al' style='left:2.08%;top:82.55%'>← Pred ZŠ Sokolíkova v roku 2020</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S52</b> Pred ZŠ Sokolíkova v roku 2020<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the path along the facade out of the left edge (NW) back to the main entrance</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>close-up of a ground-floor window on the SW facade (register 48.18073,17.03769, south part); the camera faces the facade = looks NE; the main entrance lies NW along the facade (OSRM foot 325 deg = left)</li></ul></details>
+</section>
+<section class="card" id="S58" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S58</span> Pred ZŠ Sokolíkova v roku 1982</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1982</span><span>L_SCHOOL_FRONT</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (55°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S58_markers.png' alt='S58 with exit markers'><span class='tag al' style='left:2.08%;top:79.31%'>← Dúbravská zastávka v roku 1982</span><span class='tag ac' style='left:56.02%;top:51.25%'>↑ Školská chodba v roku 1982</span><span class='tag ar' style='left:97.66%;top:75.09%'>→ Školský dvor s mladou lipou v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S57</b> Dúbravská zastávka v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S12.to_S11</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S59</b> Školská chodba v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the entrance doors</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S61</b> Školský dvor s mladou lipou v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S12.to_S17</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM relation 1084096 / art/source/rooms/S12/layout_school-front_osm.png: the SW facade of the main wing runs NW-SE (~145 deg); the camera faces it from the forecourt, i.e. looks NE</li><li>painting: the facade recedes gently to the right with the building corner at x 1793 and the school yard (fence, lawn, panel block) beyond it = the SE end; the forecourt continues out of the left edge = NW towards Sokolikova / Svantnerova street</li><li>the real entrance sits in the NW part of the long facade, so the painted corner compresses ~70 m of facade; the game&#x27;s route to the yard goes round that SE corner (the S17 family leaves left = round the SE end)</li></ul></details>
+</section>
+<section class="card" id="S59" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S59</span> Školská chodba v roku 1982</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1982</span><span>L_HALL</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (315°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S59_markers.png' alt='S59 with exit markers'><span class='tag al' style='left:5.73%;top:56.34%'>← Pred ZŠ Sokolíkova v roku 1982</span><span class='tag ac' style='left:50.00%;top:53.70%'>↑ Trieda pred technickou výstavkou v roku 1982</span><span class='tag ar' style='left:93.02%;top:57.13%'>→ Fyzikálny kabinet v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S58</b> Pred ZŠ Sokolíkova v roku 1982<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S13.to_S12</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S60</b> Trieda pred technickou výstavkou v roku 1982<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S13.to_S14</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S63</b> Fyzikálny kabinet v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S13.to_S15</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference interior (register); the glazed entrance doors with daylight in the LEFT wall = the SW facade, so the hall looks roughly NW (low: the owner said the real hall looked different; register positions of the school rooms are estimates)</li></ul></details>
+</section>
+<section class="card" id="S60" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S60</span> Trieda pred technickou výstavkou v roku 1982</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1982</span><span>L_CLASS</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-west (315°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S60_markers.png' alt='S60 with exit markers'><span class='tag ac' style='left:21.93%;top:55.00%'>↑ Školská chodba v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S59</b> Školská chodba v roku 1982<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S14.to_S13</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference classroom; the windows on the right show the running track = the yard (NE) side, so the room looks roughly NW (low)</li></ul></details>
+</section>
+<section class="card" id="S62" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S62</span> Sídliskový obchod v roku 1982</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1982</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S62_markers.png' alt='S62 with exit markers'><span class='tag ar' style='left:94.27%;top:87.41%'>→ Dúbravská zastávka v roku 1982</span><span class='tag al' style='left:2.08%;top:84.03%'>← Výdajňa školského údržbového materiálu v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S57</b> Dúbravská zastávka v roku 1982<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S18.to_S11</td></tr><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S65</b> Výdajňa školského údržbového materiálu v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>school side, as S18.to_S17</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the painting is the owner-loved style test art/backgrounds/sokolikova-street.png (Sokolikova panel row, from carl_eric&#x27;s Flickr &#x27;Block&#x27;; its geotag 48.184687,17.03473 accuracy 13 lies ~400 m NW of the school, not on Sokolikova street) - no reliable real camera position or heading</li><li>the register row still describes the superseded courtyard between Svantnerova 3-7 and M. Schneidra-Trnavskeho 1-5 (between the school grounds and the stop)</li><li>layout follows the game&#x27;s chain and the owner statement (S17: the way to the blocks is right of the school): the school side on the left, the stop on the right, S69 up the side road</li></ul></details>
+</section>
+<section class="card" id="S63" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S63</span> Fyzikálny kabinet v roku 1982</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1982</span><span>L_CABINET</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S63_markers.png' alt='S63 with exit markers'><span class='tag al' style='left:6.38%;top:66.76%'>← Školská chodba v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S59</b> Školská chodba v roku 1982<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S15.to_S13</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>type-reference cabinet, doors in the left and right walls, window in the back wall; heading not determinable (low)</li></ul></details>
+</section>
+<section class="card" id="S64" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S64</span> Tóno a dedo pri servisnom okne v roku 1982</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1982</span><span>L_WINDOW</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks north-east (45°): screen left = north-west, screen right = south-east, into the picture = north-east, towards you = south-west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S64_markers.png' alt='S64 with exit markers'><span class='tag ar' style='left:97.92%;top:87.36%'>→ Školský dvor s mladou lipou v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S61</b> Školský dvor s mladou lipou v roku 1982<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>round the SE corner into the yard; S61.to_S64 now leaves &#x27;up&#x27; towards that corner (Adam comes round the corner from the right)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register: ground-floor window in the south part of the SW facade; the painting looks NE at the facade, the building corner at the right (= the SE end of the main wing) with the yard fence and gate beyond</li></ul></details>
+</section>
+<section class="card" id="S65" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S65</span> Výdajňa školského údržbového materiálu v roku 1982</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1982</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S65_markers.png' alt='S65 with exit markers'><span class='tag al' style='left:9.90%;top:55.37%'>← Sídliskový obchod v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S62</b> Sídliskový obchod v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the half-glazed door at the left of the back wall, out to the shop street (S62.to_S65 is on S62&#x27;s left: a door, continuity exempt)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>invented interior in the small service building by MS Svantnerova (OSM way 1469186806); heading not determinable</li></ul></details>
+</section>
+<section class="card" id="S66" data-conf="medium" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S66</span> Školský záhradný sklad v roku 1982</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>1982</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks east (90°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S66_markers.png' alt='S66 with exit markers'><span class='tag ac tchg' style='left:43.75%;top:87.41%'>↓ Školský dvor s mladou lipou v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S61</b> Školský dvor s mladou lipou v roku 1982<div class='sub'>walk · return: towards you</div></td><td><span class=pill>left → down</span></td><td class='why'>the trodden footprints run from the shed door towards the viewer, back to the yard behind the camera</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM shed way 1469186807 at the east edge of the grounds near Kudlakova 2; the painting looks E at the shed with the east fence and a Kudlakova block (red bands) behind it</li><li>the school yard (S61 camera) lies WNW, behind the camera; the painted footprints run from the shed door towards the viewer</li></ul></details>
+</section>
+<section class="card" id="S67" data-conf="medium" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S67</span> Priehyba pri prestupe na Funitel</h2>
+    <div class="meta"><span class="conf c-medium">medium confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks east (90°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S67_markers.png' alt='S67 with exit markers'><span class='tag al' style='left:4.17%;top:55.42%'>← Biela Púť pri dolnej stanici</span><span class='tag ac' style='left:55.21%;top:46.62%'>↑ Kabína Funitelu medzi Priehybou a Chopkom</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S41</b> Biela Púť pri dolnej stanici<div class='sub'>cable_A6 · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the open passage at the left end of the hall towards the gondola from Biela Put (north)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S68</b> Kabína Funitelu medzi Priehybou a Chopkom<div class='sub'>board_funitel · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>boarding the docked cabin behind the gate</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>the boarding platform of the Funitel lower station Priehyba (OSM way 202740647) runs along the line (N-S); the camera looks across the docked cabins; the red bullwheel (turnaround, downhill = north end) is on the LEFT, so the view is east</li><li>the upper station of the gondola from Biela Put lies ~75 m north = left; the Funitel leaves south towards Chopok</li></ul></details>
+</section>
+<section class="card" id="S68" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S68</span> Kabína Funitelu medzi Priehybou a Chopkom</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks east (90°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S68_markers.png' alt='S68 with exit markers'><span class='tag al' style='left:3.12%;top:51.02%'>← Priehyba pri prestupe na Funitel</span><span class='tag ar' style='left:88.54%;top:50.79%'>→ Chopok pri Rotunde</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S67</b> Priehyba pri prestupe na Funitel<div class='sub'>board_funitel · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the downhill end door (north) on the left</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S47</b> Chopok pri Rotunde<div class='sub'>arrive_funitel · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the sliding doors on the right open at the summit (south)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>cabin interior looking across the long window wall; the downhill end (Priehyba, north) on the left, the summit station with the Rotunda appearing in the right pane (south)</li></ul></details>
+</section>
+<section class="card" id="S69" data-conf="low" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S69</span> Sokolíkovský dvor</h2>
+    <div class="meta"><span class="conf c-low">low confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">No real compass heading (an interior or an invented place): the exits follow the painted doors and ways.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S69_markers.png' alt='S69 with exit markers'><span class='tag ac' style='left:67.84%;top:87.41%'>↓ Sídliskový dvor s kioskom</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↓</span> towards you</td><td><b>S18</b> Sídliskový dvor s kioskom<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the court opens towards the camera; S18.to_S69 leads up into the gap between the blocks (up &lt;-&gt; down continuity)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>owner-loved style test art/backgrounds/sokolikova-yard.png from carl_eric&#x27;s Flickr &#x27;Yard&#x27; (geotag 48.179186,17.039633, the S end of Sokolikova; the register point is approximate); fictional placement next to the kiosk street S18</li></ul></details>
+</section>
+<section class="card" id="S11" data-conf="high" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S11</span> Dúbravská zastávka</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1995</span><span>L_STOP</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks north-west (330°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S11_markers.png' alt='S11 with exit markers'><span class='tag al tchg' style='left:6.51%;top:83.89%'>← Pred ZŠ Sokolíkova</span><span class='tag ac' style='left:46.88%;top:53.89%'>↑ Sídliskový dvor s kioskom</span><span class='tag ac tchg' style='left:64.22%;top:47.31%'>↓ Karloveské nástupište</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S12</b> Pred ZŠ Sokolíkova<div class='sub'>walk · return: left edge</div></td><td><span class=pill>down → left</span></td><td class='why'>the zebra crossing over the west carriageway at the near left runs out of the left edge; the school front lies WSW (owner fact)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S18</b> Sídliskový dvor s kioskom<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>far end of the platform (NW). The S18 painting is the Sokolikova street view of the Flickr &#x27;Block&#x27; photo (geotag 48.18469,17.03473, ahead-left: bearing measured to it); the register&#x27;s superseded courtyard point (W, 85 m) would be left-ahead. Kept up: a different painted way than the crossing on the left</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S19</b> Karloveské nástupište<div class='sub'>map_transition · return: right edge</div></td><td><span class=pill>up → down</span></td><td class='why'>the tram faces the camera and leaves towards the viewer: Karlova Ves lies SE, behind the camera. Cross-region: S19.to_S11 must point right (owner: Dubravka is on the right in Karlova Ves)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM: the tram runs in the median of M. Schneidra-Trnavskeho, axis SE-&gt;NW (segment 48.18146,17.04088 -&gt; 48.18462,17.03781 = bearing ~327 deg); the camera stands on the SW platform (OSM platform 48.18151,17.04092 -&gt; 48.18203,17.04024) and looks NW along it (art/masters/bg_natural/S11.md: turned 4 deg right of the platform axis)</li><li>painting: the west carriageway on the left, the tracks right of the platform, the east carriageway and the low bluish medical centre on the right (owner 2026-10-06), the street rising into the distance towards the Dubravka centre (NW)</li><li>the T3 on the near (SW) track faces the camera: with right-hand running it is the tram towards Karlova Ves (SE, behind the camera)</li><li>owner 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop</li></ul></details>
+</section>
+<section class="card" id="S19" data-conf="high" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S19</span> Karloveské nástupište</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1995</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks south-west (245°): screen left = south-east, screen right = north-west, into the picture = south-west, towards you = north-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S19.png' alt='S19 with exit markers'><span class='tag ar tchg' style='left:97.92%;top:80.46%'>→ Dúbravská zastávka</span><span class='tag ac' style='left:82.55%;top:66.30%'>↑ Palova opravovňa</span><span class='tag al tchg' style='left:2.08%;top:80.46%'>← Kamenné námestie</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>→</span> right edge</td><td><b>S11</b> Dúbravská zastávka<div class='sub'>map_transition · return: towards you</div></td><td><span class=pill>left → right</span></td><td class='why'>tram NNW along Karloveska, then north to Dubravka</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S20</b> Palova opravovňa<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>zebra crossing over the track, steps up the slope</td></tr><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S21</b> Kamenné námestie<div class='sub'>map_transition · return: left edge</div></td><td><span class=pill>right → left</span></td><td class='why'>tram SSE along Karloveska, Lafranconi, the embankment / castle tunnel</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM: the tram track and Karloveska run 335/155 deg at the stop (ways 411122720/411122722, 45459001)</li><li>painting: camera on the platform looking across the double track and Karloveska to the green slope with the Kutiky panel blocks and the steps up the slope; the Kutiky/Levarska estate lies west of the stop (S20 at 306 deg)</li><li>owner fact 2026-10-07: in Karlova Ves Dubravka is on the RIGHT, the city on the LEFT - matches this WSW-facing camera (NNW = right, SSE = left)</li><li>reference karloveska_nam-sv-frantiska_stop_2011.jpg: platform, red-white railing and the panel blocks upslope beside Karloveska</li></ul></details>
+</section>
+<section class="card" id="S30" data-conf="high" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S30</span> Nábrežný merací prístrešok</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1995</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks west (292°): screen left = south, screen right = north, into the picture = west, towards you = east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S30.png' alt='S30 with exit markers'><span class='tag al' style='left:2.34%;top:79.77%'>← Petržalský podchod</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S28</b> Petržalský podchod<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>along the footway back to the Petrzalka bridgehead, then SW to the underpass</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>painting and the reference photos: Most SNP with the saucer pylon left of centre, the castle centre, St Martin&#x27;s spire right: a WNW view upstream (register; exit_audit CAMERA 292)</li><li>the Petrzalka bridgehead lies SSW along the bridge = screen left</li></ul></details>
+</section>
+<section class="card" id="S31" data-conf="high" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S31</span> Ivanská železničná zastávka</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1960</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks east (105°): screen left = north, screen right = south, into the picture = east, towards you = west.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S31_markers.png' alt='S31 with exit markers'><span class='tag ar' style='left:97.92%;top:83.43%'>→ Ivanská náves</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S32</b> Ivanská náves<div class='sub'>walk · return: into the picture</div></td><td><span class=muted>unchanged</span></td><td class='why'>the forecourt runs out of the right edge onto Nadrazna, which leads south into the village; the square lies SSW = right of the ESE camera</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM: line 130 runs WNW-ESE here (way 381220966, bearing ~105 deg); the Nadrazna level crossing is node 25497602 (48.19484,17.25932)</li><li>reference photo ivanka_halt_platform_bsk_2021.jpg (taken on the crossing along the track): the hotel blocks Nadrazna 36/38 (OSM 50522977 / 50522452, NORTH of the track) stand on the LEFT, the small gabled house Nadrazna 63/22 (OSM 28459284, SOUTH of the track, beside the road) on the RIGHT, so the photo and the painting (track left, gable building right) look ESE, not ENE as the register says</li><li>the village (S32) lies SSW: Nadrazna leaves the crossing south-south-east along the gabled building (OSM ways 22920815 / 24025361)</li></ul></details>
+</section>
+<section class="card" id="S37" data-conf="high" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S37</span> Park pri kaštieli</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1960</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks south (160°): screen left = east, screen right = west, into the picture = south, towards you = north.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S37_markers.png' alt='S37 with exit markers'><span class='tag ar tchg' style='left:90.23%;top:68.70%'>↑ Ivanská náves</span><span class='tag ar' style='left:97.92%;top:87.13%'>→ Pred skúšobnou čerpacou búdkou</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S32</b> Ivanská náves<div class='sub'>walk · return: right edge</div></td><td><span class=pill>left → up</span></td><td class='why'>the square lies SSW = ahead-right: a footpath painted 2026-10-07 (master v5) branches off the front path on the right and curves into the picture between the bench and the pines, past the west side of the manor and the church to the square. Named up (a path into the picture) so that it neither crowds the S38 edge exit nor turns Adam round against S32.to_S37 (right edge)</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S38</b> Pred skúšobnou čerpacou búdkou<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the front path leaves out of the right edge through the pines towards the fields and the canal (SW)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register + reference photo manor_garden_facade_plepo_2008.jpg: the park (north) facade of the manor (OSM 48871237) seen from the north lawn</li><li>the spire of St John the Baptist (OSM 48988886, due south of the manor) stands RIGHT of the manor tower, which fixes the view at ~160 deg (SSE)</li><li>the village square (S32, 216 deg) and the canal (S38, 227 deg) both lie to the RIGHT (SW) of this view; east (left) leads only to Bernolakovska</li></ul></details>
+</section>
+<section class="card" id="S48" data-conf="high" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S48</span> Servisný pavilón výstavy Atlas</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>2035</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks west (270°): screen left = south, screen right = north, into the picture = west, towards you = east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S48_markers.png' alt='S48 with exit markers'><span class='tag ac' style='left:34.38%;top:53.80%'>↑ Chopok pri Rotunde</span><span class='tag ar' style='left:88.54%;top:59.12%'>→ Chronokomora pavilónu Atlas</span><span class='tag ac' style='left:24.74%;top:50.09%'>↑ Vyhliadková terasa pri Rotunde</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S47</b> Chopok pri Rotunde<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the Rotunda entrance ahead</td></tr><tr class=''><td><span class='arr'>→</span> right edge</td><td><b>S49</b> Chronokomora pavilónu Atlas<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the pavilion&#x27;s own door on the right</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S50</b> Vyhliadková terasa pri Rotunde<div class='sub'>walk · return: left edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the external stairs left of the Rotunda up to the terrace on the JUH station (WSW, slightly left)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>register + reference photo chopok-summit_plateau-rotunda-from-east_2016-09.jpg: the plateau ~50 m east of the Rotunda looking west at it</li><li>OSM: the Rotunda (776069181) due west, the Chopok JUH station with the roof terrace (532703258) left of it (SW)</li></ul></details>
+</section>
+<section class="card" id="S55" data-conf="high" data-chg="0" data-q="0">
+  <header><h2><span class="rid">S55</span> Školský dvor v roku 2020</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>2020</span><span>L_YARD</span>
+    <span class="muted">no change</span></div></header>
+  <p class="heading">Camera looks south-west (225°): screen left = south-east, screen right = north-west, into the picture = south-west, towards you = north-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S55_markers.png' alt='S55 with exit markers'><span class='tag al' style='left:2.08%;top:84.68%'>← Pred ZŠ Sokolíkova v roku 2020</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S52</b> Pred ZŠ Sokolíkova v roku 2020<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>the yard asphalt out of the left edge (SE), round the SE end of the main wing to the front; the walk&#x27;s start confirms left (the old COMPASS advisory used the straight line through the building)</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>as S17 (docs/navigation/compass/S17.json): camera at the E corner of the fenced court looking SW at the yard facade; clay track LEFT (owner) = SE</li><li>OSRM foot from the yard to the front leaves SE/S (136-166 deg = left), round the SE end of the main wing (owner-confirmed route)</li></ul></details>
+</section>
+<section class="card" id="S57" data-conf="high" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S57</span> Dúbravská zastávka v roku 1982</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1982</span><span>L_STOP</span>
+    <span class="pill">1 exit changed</span></div></header>
+  <p class="heading">Camera looks north-west (330°): screen left = south-west, screen right = north-east, into the picture = north-west, towards you = south-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S57_markers.png' alt='S57 with exit markers'><span class='tag al tchg' style='left:6.51%;top:83.89%'>← Pred ZŠ Sokolíkova v roku 1982</span><span class='tag ac' style='left:46.88%;top:53.89%'>↑ Sídliskový obchod v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class='chg'><td><span class='arr'>←</span> left edge</td><td><b>S58</b> Pred ZŠ Sokolíkova v roku 1982<div class='sub'>walk · return: left edge</div></td><td><span class=pill>down → left</span></td><td class='why'>same as S11.to_S12 (owner fact, same camera)</td></tr><tr class=''><td><span class='arr'>↑</span> into the picture</td><td><b>S62</b> Sídliskový obchod v roku 1982<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>same as S11.to_S18</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>OSM: the tram runs in the median of M. Schneidra-Trnavskeho, axis SE-&gt;NW (segment 48.18146,17.04088 -&gt; 48.18462,17.03781 = bearing ~327 deg); the camera stands on the SW platform (OSM platform 48.18151,17.04092 -&gt; 48.18203,17.04024) and looks NW along it (art/masters/bg_natural/S11.md: turned 4 deg right of the platform axis)</li><li>painting: the west carriageway on the left, the tracks right of the platform, the east carriageway and the low bluish medical centre on the right (owner 2026-10-06), the street rising into the distance towards the Dubravka centre (NW)</li><li>1982: no tram yet (the line is under construction on the right); the articulated bus on the west carriageway faces the camera (towards Karlova Ves); scenery, no exit</li><li>owner 2026-10-07 (binding): the exit to ZS Sokolikova is on the LEFT of the stop</li></ul></details>
+</section>
+<section class="card" id="S61" data-conf="high" data-chg="1" data-q="0">
+  <header><h2><span class="rid">S61</span> Školský dvor s mladou lipou v roku 1982</h2>
+    <div class="meta"><span class="conf c-high">high confidence</span><span>1982</span><span>L_YARD</span>
+    <span class="pill">2 exits changed</span></div></header>
+  <p class="heading">Camera looks south-west (225°): screen left = south-east, screen right = north-west, into the picture = south-west, towards you = north-east.</p>
+  
+  <div class='pic'><img loading='lazy' src='../../build/screens/exits_geo/S61_markers.png' alt='S61 with exit markers'><span class='tag al' style='left:2.08%;top:79.91%'>← Pred ZŠ Sokolíkova v roku 1982</span><span class='tag ac tchg' style='left:43.75%;top:45.00%'>↑ Tóno a dedo pri servisnom okne v roku 1982</span><span class='tag ac tchg' style='left:31.77%;top:87.41%'>↓ Školský záhradný sklad v roku 1982</span></div>
+  <table><thead><tr><th>arrow</th><th>leads to</th><th>since yesterday</th><th>why</th></tr></thead><tbody><tr class=''><td><span class='arr'>←</span> left edge</td><td><b>S58</b> Pred ZŠ Sokolíkova v roku 1982<div class='sub'>walk · return: right edge</div></td><td><span class=muted>unchanged</span></td><td class='why'>as S17.to_S12 (COMPASS advisory, owner review)</td></tr><tr class='chg'><td><span class='arr'>↑</span> into the picture</td><td><b>S64</b> Tóno a dedo pri servisnom okne v roku 1982<div class='sub'>walk · return: right edge</div></td><td><span class=pill>down → up</span></td><td class='why'>the service window on the street side lies straight ahead beyond the wing; the footpath from the yard-door landing runs left along the wing&#x27;s foot to its SE corner; &#x27;down&#x27; pointed NE, away from it</td></tr><tr class='chg'><td><span class='arr'>↓</span> towards you</td><td><b>S66</b> Školský záhradný sklad v roku 1982<div class='sub'>walk · return: towards you</div></td><td><span class=pill>right → down</span></td><td class='why'>the garden shed at the east fence lies behind-left; &#x27;right&#x27; pointed NW, the opposite way; the left edge is the way to S58, so it leaves towards the viewer at the bottom left</td></tr></tbody></table>
+  <details><summary>Evidence for the heading</summary><ul><li>art/masters/bg_natural/S17.md: pinhole camera at the east corner of the fenced court looking SW at the yard facade of the main wing; OSM court way 182867963 corner ~48.18142,17.03889</li><li>painting: the main wing&#x27;s SE corner at x 431 (real bearing ~206 deg, rel -19 deg -&gt; x ~550: matches), the wing continues out of the right edge (NW); the clay track (owner: on the LEFT) = SE; the court fence on the right running away from the camera</li><li>owner 2026-10-06: the way to the panel blocks (S18 / S62) is to the right of the school</li></ul></details>
+</section>
+</main>
+<script>
+document.querySelectorAll('.bar button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.bar button').forEach(x => x.classList.toggle('on', x === b));
+  const f = b.dataset.f;
+  document.querySelectorAll('.card').forEach(c => {
+    const show = f === 'all' || (f === 'q' && c.dataset.q === '1') || (f === 'chg' && c.dataset.chg === '1') ||
+      (f === 'unc' && c.dataset.conf !== 'high');
+    c.style.display = show ? '' : 'none';
+  });
+}));
+</script>
+</body></html>

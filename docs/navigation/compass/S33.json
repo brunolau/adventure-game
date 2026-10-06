@@ -1,0 +1,26 @@
+{
+  "room": "S33",
+  "name": "Pošta s prepážkou",
+  "era": 1960,
+  "camera": {
+    "lat": 48.18838,
+    "lon": 17.25718
+  },
+  "heading_deg": null,
+  "confidence": "low",
+  "evidence": [
+    "interior after a 1956 type reference; the window shows the chapel of the square (S32); no measurable heading"
+  ],
+  "exits": [
+    {
+      "id": "S33.to_S32",
+      "to": "S32",
+      "side": "left",
+      "change": "unchanged",
+      "why": "the painted glazed door to the square at the left of the back wall, next to the window that shows the square",
+      "real_bearing_deg": 295,
+      "distance_m": 112
+    }
+  ],
+  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+}
