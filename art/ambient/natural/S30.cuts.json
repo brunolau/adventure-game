@@ -1,85 +1,23 @@
 {
  "room": "S30",
  "source": "src/game/assets/bg_natural/S30.webp",
- "note": "Natural S30 cut-outs and masks (art/tools/ambient_cut.py --natural S30) for src/game/data/blocking/ambient/S30.json.",
+ "note": "Natural S30 (old Stary most 1995, master S30_v1) cut-outs and masks (art/tools/ambient_cut.py --natural S30) for src/game/data/blocking/ambient/S30.json. Water = the turquoise Danube between the far waterline (y ~428) and the footway edge (y ~805); the booth, the metronome table (and its B21 patch area), the moored riverboat and the truss members are excluded; grey railing bars and the X brace drop out by colour.",
  "items": [
   {
    "name": "water",
-   "rect": [
-    0,
-    385,
-    1920,
-    320
-   ],
+   "rect": [0, 428, 1920, 380],
    "rules": [
-    {
-     "hue": [
-      185,
-      230
-     ],
-     "sat": [
-      0.1,
-      0.85
-     ],
-     "val": [
-      0.35,
-      1
-     ]
-    },
-    {
-     "sat": [
-      0,
-      0.14
-     ],
-     "val": [
-      0.86,
-      1
-     ]
-    }
+    {"hue": [165, 205], "sat": [0.1, 0.6], "val": [0.3, 1]},
+    {"sat": [0, 0.12], "val": [0.9, 1]}
    ],
    "exclude": [
-    [
-     [
-      390,
-      372
-     ],
-     [
-      790,
-      510
-     ]
-    ],
-    [
-     [
-      880,
-      515
-     ],
-     [
-      1060,
-      760
-     ]
-    ],
-    [
-     [
-      1085,
-      300
-     ],
-     [
-      1820,
-      760
-     ]
-    ]
-   ],
-   "except": [
-    {
-     "hue": [
-      90,
-      175
-     ],
-     "sat": [
-      0.15,
-      1
-     ]
-    }
+    [[0, 330], [128, 1080]],
+    [[95, 330], [648, 812]],
+    [[628, 648], [786, 826]],
+    [[650, 570], [760, 680]],
+    [[1215, 380], [1580, 478]],
+    [[1800, 0], [1920, 1080]],
+    [[0, 798], [1920, 812]]
    ],
    "feather": 0.8,
    "clean": 1,
@@ -88,81 +26,19 @@
   {
    "name": "water_mask",
    "kind": "mask",
-   "rect": [
-    0,
-    385,
-    1920,
-    320
-   ],
+   "rect": [0, 428, 1920, 380],
    "rules": [
-    {
-     "hue": [
-      185,
-      230
-     ],
-     "sat": [
-      0.1,
-      0.85
-     ],
-     "val": [
-      0.35,
-      1
-     ]
-    },
-    {
-     "sat": [
-      0,
-      0.14
-     ],
-     "val": [
-      0.86,
-      1
-     ]
-    }
+    {"hue": [165, 205], "sat": [0.1, 0.6], "val": [0.3, 1]},
+    {"sat": [0, 0.12], "val": [0.9, 1]}
    ],
    "exclude": [
-    [
-     [
-      390,
-      372
-     ],
-     [
-      790,
-      510
-     ]
-    ],
-    [
-     [
-      880,
-      515
-     ],
-     [
-      1060,
-      760
-     ]
-    ],
-    [
-     [
-      1085,
-      300
-     ],
-     [
-      1820,
-      760
-     ]
-    ]
-   ],
-   "except": [
-    {
-     "hue": [
-      90,
-      175
-     ],
-     "sat": [
-      0.15,
-      1
-     ]
-    }
+    [[0, 330], [128, 1080]],
+    [[95, 330], [648, 812]],
+    [[628, 648], [786, 826]],
+    [[650, 570], [760, 680]],
+    [[1215, 380], [1580, 478]],
+    [[1800, 0], [1920, 1080]],
+    [[0, 798], [1920, 812]]
    ],
    "feather": 0.8,
    "grow": -1,
@@ -171,31 +47,26 @@
   {
    "name": "sky_mask",
    "kind": "mask",
-   "rect": [
-    0,
-    0,
-    1920,
-    300
-   ],
+   "rect": [0, 0, 1920, 330],
    "rules": [
-    {
-     "hue": [
-      188,
-      232
-     ],
-     "sat": [
-      0.12,
-      0.8
-     ],
-     "val": [
-      0.6,
-      1
-     ]
-    }
+    {"hue": [188, 232], "sat": [0.12, 0.8], "val": [0.6, 1]}
+   ],
+   "exclude": [
+    [[0, 0], [70, 330]],
+    [[1340, 0], [1920, 330]]
    ],
    "feather": 1.5,
    "grow": -1,
    "scale": 0.5
+  },
+  {
+   "name": "pennant",
+   "rect": [542, 278, 56, 34],
+   "rules": [
+    {"hue": [340, 25], "sat": [0.35, 1], "val": [0.3, 1]}
+   ],
+   "feather": 0.8,
+   "pad": 3
   }
  ]
 }

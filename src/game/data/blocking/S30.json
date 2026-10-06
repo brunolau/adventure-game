@@ -1,181 +1,181 @@
 {
-  "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
-  "note": "Tyrsovo nabrezie, the Petrzalka Danube embankment, looking across the river to the castle hill: camera ~2.2 m on the riverside path, horizon y 360, the railing stands on y 700 (~156 px per metre). Perspective s(y) = (y - 360) / 655. A small open service canopy on the right with the workbench: the empty coil holder ring (coil after B20), the isolated demo circuit, the grey box with three number wheels (3-2-6 after B22); the small round metronome table stands left of the canopy (metronome after B21); the riverboat on the Danube; the railing in front of the water. The path continues out of the left edge to the underpass (S28).",
-  "background": "bg_natural/S30.webp",
-  "walk_polygon": [
-    [
-      20,
-      748
-    ],
-    [
-      1900,
-      748
-    ],
-    [
-      1900,
-      1015
-    ],
-    [
-      20,
-      1015
-    ]
+ "version": 1,
+ "room": "S30",
+ "status": "natural re-blocking 2026-10-06 (owner: S30 seen from the old Stary most of 1995), applied with --blocking natural / presentation/blocking = natural",
+ "note": "The upstream (west) footway of the OLD Stary most (riveted steel truss bridge of 1945-2013) above its first river pier near the Petrzalka end, looking upstream WNW across the Danube: Most SNP with its saucer pylon left of centre, the castle hill with the castle in the centre, St Martin's spire and the Old Town riverfront on the right. Theatrical camera ~2.4 m above the footway planks, standing just inside the road truss (the near truss is the fourth wall; only its two riveted inclined members frame the picture at the left and right edges and are drawn above every actor by the foreground mask). Horizon y 400; the footway railing stands on y 800 with its top rail at y ~617; footway planks y 800-1080 (the truss bottom chord under the HUD). Perspective s(y) = (y - 400) / 723 (hero 1.7 m: 0.57 at the railing foot, 0.85 at the front edge). Left to right: the fictional unbranded service booth on a small bay of the footway above the pier (open front hatch with a counter: the empty coil holder ring, the isolated demo circuit board, the grey box with three number wheels), the small round metronome table at the railing right of it, the railing stretch, the white riverboat moored at the Old Town passenger quay. The footway runs out of the left edge towards the Petrzalka bridgehead (S28).",
+ "background": "bg_natural/S30.webp",
+ "walk_polygon": [
+  [
+   18,
+   815
   ],
-  "walk_band": [
-    748,
-    1015
+  [
+   1902,
+   815
   ],
-  "actor_scale": [
-    0.59,
-    1.0
+  [
+   1902,
+   1015
   ],
-  "spawn": [
-    700,
-    880
-  ],
-  "hotspots": {
-    "S30.coil": {
-      "rect": [
-        1110,
-        418,
-        150,
-        165
-      ],
-      "interaction_point": [
-        1315,
-        840
-      ],
-      "label_anchor": [
-        1185,
-        410
-      ],
-      "reason": "empty round coil holder ring on its post at the left end of the workbench; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
-    },
-    "S30.metro": {
-      "rect": [
-        885,
-        588,
-        160,
-        155
-      ],
-      "interaction_point": [
-        830,
-        840
-      ],
-      "label_anchor": [
-        965,
-        532
-      ],
-      "reason": "small round wooden table with the painted rhythm mark, left of the canopy; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
-    },
-    "S30.dial": {
-      "rect": [
-        1600,
-        470,
-        160,
-        110
-      ],
-      "interaction_point": [
-        1850,
-        850
-      ],
-      "label_anchor": [
-        1680,
-        462
-      ],
-      "reason": "grey steel box with three mechanical number wheels on the workbench (playtest PT-S06: use point right of the table end; in front of it Adam covered the middle number wheel he had just set)"
-    },
-    "S30.ambient 1": {
-      "rect": [
-        395,
-        375,
-        375,
-        130
-      ],
-      "interaction_point": [
-        580,
-        840
-      ],
-      "label_anchor": [
-        580,
-        367
-      ],
-      "reason": "white riverboat on the Danube"
-    },
-    "S30.ambient 2": {
-      "rect": [
-        90,
-        515,
-        280,
-        190
-      ],
-      "interaction_point": [
-        230,
-        840
-      ],
-      "label_anchor": [
-        230,
-        507
-      ],
-      "reason": "a stretch of the green steel embankment railing in front of the water"
-    }
+  [
+   18,
+   1015
+  ]
+ ],
+ "walk_band": [
+  815,
+  1015
+ ],
+ "actor_scale": [
+  0.57,
+  0.85
+ ],
+ "spawn": [
+  960,
+  925
+ ],
+ "hotspots": {
+  "S30.coil": {
+   "rect": [
+    170,
+    488,
+    125,
+    135
+   ],
+   "interaction_point": [
+    345,
+    838
+   ],
+   "label_anchor": [
+    232,
+    478
+   ],
+   "reason": "empty round coil holder ring on a short post at the left end of the booth counter; staging rule M5-04 / PT-S06: the hero stands right of it (in front of the demo circuit) and reaches sideways, so the ring stays visible"
   },
-  "exits": {
-    "S30.to_S28": {
-      "rect": [
-        0,
-        758,
-        60,
-        257
-      ],
-      "interaction_point": [
-        70,
-        890
-      ],
-      "label_anchor": [
-        140,
-        746
-      ],
-      "reason": "the riverside path runs out of the left edge back to the underpass"
-    }
+  "S30.metro": {
+   "rect": [
+    622,
+    640,
+    166,
+    160
+   ],
+   "interaction_point": [
+    850,
+    838
+   ],
+   "label_anchor": [
+    705,
+    630
+   ],
+   "reason": "small round wooden table on one leg with the painted rhythm mark, standing at the railing right of the booth; the hero stands right of it and reaches sideways"
   },
-  "state_patches": [
-    {
-      "texture": "variants_natural/S30_coil_in.webp",
-      "pos": [
-        1108,
-        405
-      ],
-      "after": [
-        "B20"
-      ],
-      "until": [],
-      "reason": "B20: the copper loop coil sits in the holder ring (refit fix, master v2)"
-    },
-    {
-      "texture": "variants_natural/S30_metronome_placed.webp",
-      "pos": [
-        922,
-        530
-      ],
-      "after": [
-        "B21"
-      ],
-      "until": [],
-      "reason": "B21: Emil's metronome (cut from the S19 painting) stands on the round table (free composite, master v3)"
-    },
-    {
-      "texture": "variants_natural/S30_dial_326.webp",
-      "pos": [
-        1582,
-        460
-      ],
-      "after": [
-        "B22"
-      ],
-      "until": [],
-      "reason": "B22: the three number wheels show 3-2-6 (refit fix, master v2)"
-    }
-  ],
-  "version": 1,
-  "room": "S30"
+  "S30.dial": {
+   "rect": [
+    418,
+    535,
+    140,
+    92
+   ],
+   "interaction_point": [
+    610,
+    838
+   ],
+   "label_anchor": [
+    488,
+    525
+   ],
+   "reason": "grey steel box with three mechanical number wheels at the right end of the booth counter (playtest PT-S06: use point right of it)"
+  },
+  "S30.ambient 1": {
+   "rect": [
+    1240,
+    400,
+    320,
+    66
+   ],
+   "interaction_point": [
+    1400,
+    900
+   ],
+   "label_anchor": [
+    1400,
+    390
+   ],
+   "reason": "white riverboat moored at the Old Town passenger quay across the river"
+  },
+  "S30.ambient 2": {
+   "rect": [
+    860,
+    615,
+    300,
+    185
+   ],
+   "interaction_point": [
+    1010,
+    900
+   ],
+   "label_anchor": [
+    1010,
+    605
+   ],
+   "reason": "a stretch of the grey steel footway railing with the Danube below it"
+  }
+ },
+ "exits": {
+  "S30.to_S28": {
+   "rect": [
+    0,
+    800,
+    90,
+    215
+   ],
+   "interaction_point": [
+    60,
+    905
+   ],
+   "label_anchor": [
+    160,
+    790
+   ],
+   "reason": "the footway runs out of the left edge (behind the left truss member) back to the Petrzalka bridgehead and the underpass"
+  }
+ },
+ "state_patches": [
+  {
+   "texture": "variants_natural/S30_coil_in.webp",
+   "pos": [
+    158,
+    466
+   ],
+   "after": [
+    "B20"
+   ],
+   "until": [],
+   "reason": "B20: the copper loop coil sits in the holder ring, its lead plugged into the demo circuit (refit fix master S30_v2)"
+  },
+  {
+   "texture": "variants_natural/S30_metronome_placed.webp",
+   "pos": [
+    656,
+    574
+   ],
+   "after": [
+    "B21"
+   ],
+   "until": [],
+   "reason": "B21: Emil's wooden metronome (the same object as in S19, cut from bg_natural/S19.webp) stands on the rhythm mark of the round table (free composite, art/prompts/natural/S30_starymost/metronome_patch.py)"
+  },
+  {
+   "texture": "variants_natural/S30_dial_326.webp",
+   "pos": [
+    406,
+    518
+   ],
+   "after": [
+    "B22"
+   ],
+   "until": [],
+   "reason": "B22: the three number wheels show 3-2-6 (refit fix master S30_v2)"
+  }
+ ]
 }

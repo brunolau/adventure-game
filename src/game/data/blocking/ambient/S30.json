@@ -1,94 +1,142 @@
 {
  "room": "S30",
- "notes": "Natural S30: ripples and glints on the Danube, ducks drifting along behind the railing, gulls crossing the sky, clouds over the castle hill.",
+ "notes": "Natural S30 on the old Stary most (1995, master S30_v1): glints and ripples on the Danube; a pusher convoy with two barges and now and then a white hydrofoil travelling along the river under the bridge (hidden behind the railing bars, the booth and the truss by the water mask); cars crossing Most SNP in the distance (no trams: trams crossed the Stary most only 1951-1961); tiny people walking on the Old Town embankment opposite; gulls; the booth's red pennant fluttering; clouds over the castle hill. Sprites: art/prompts/natural/S30_starymost/river_sprites.py; cut-outs: art/ambient/natural/S30.cuts.json.",
  "layers": [
   {
    "id": "danube",
    "type": "water",
    "texture": "S30/natural/water.webp",
-   "amp_px": 1.4,
-   "speed": 0.9,
-   "glint": 0.5,
+   "amp_px": 1.3,
+   "speed": 0.8,
+   "glint": 0.55,
    "glint_color": "#fff6dc"
   },
   {
-   "id": "ducks",
+   "id": "pusher_convoy",
    "type": "tween_path",
-   "sheet": "common/duck_sheet",
-   "fps": 0.8,
-   "path": [
-    [
-     -60,
-     655
-    ],
-    [
-     1980,
-     650
-    ]
-   ],
-   "speed_px_s": 16,
-   "scale": 0.32,
-   "flock": 2,
-   "flock_spread": [
-    45,
-    4
-   ],
-   "bob_px": 0.8,
-   "bob_hz": 0.5,
+   "sheet": "S30/natural/pusher",
+   "faces": "right",
+   "path": [[960, 452], [1400, 516], [2300, 640]],
+   "speed_px_s": 13,
+   "scale": [0.11, 0.42],
+   "bob_px": 0.4,
+   "bob_hz": 0.3,
    "direction": "random",
-   "every_s": [
-    5,
-    15
-   ],
-   "start_s": [
-    0,
-    1
-   ],
+   "every_s": [30, 70],
+   "start_s": [0, 2],
+   "prewarm_s": 40,
+   "fade_px": 70,
    "reduced_motion": "freeze",
-   "mask": "S30/natural/water_mask.webp",
-   "prewarm_s": 45
+   "mask": "S30/natural/water_mask.webp"
+  },
+  {
+   "id": "hydrofoil",
+   "type": "tween_path",
+   "sheet": "S30/natural/hydrofoil",
+   "faces": "right",
+   "path": [[900, 447], [1300, 498], [2250, 612]],
+   "speed_px_s": 48,
+   "scale": [0.12, 0.36],
+   "bob_px": 0.6,
+   "bob_hz": 1.4,
+   "direction": "random",
+   "every_s": [70, 150],
+   "start_s": [25, 50],
+   "fade_px": 60,
+   "mask": "S30/natural/water_mask.webp"
+  },
+  {
+   "id": "snp_cars_north",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [[836, 404], [1230, 404]],
+   "speed_px_s": 15,
+   "speed_jitter": [0.8, 1.2],
+   "scale": 0.036,
+   "direction": "forward",
+   "every_s": [4, 11],
+   "start_s": [0, 3],
+   "clip": [852, 386, 360, 24]
+  },
+  {
+   "id": "snp_cars_south",
+   "type": "tween_path",
+   "texture": "common/car1995",
+   "faces": "left",
+   "path": [[836, 407], [1230, 407]],
+   "speed_px_s": 14,
+   "speed_jitter": [0.8, 1.2],
+   "scale": 0.036,
+   "direction": "reverse",
+   "every_s": [5, 13],
+   "start_s": [2, 6],
+   "clip": [852, 386, 360, 24]
+  },
+  {
+   "id": "embankment_walkers",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [70, 360],
+   "path": [[862, 428], [1232, 428]],
+   "speed_px_s": 5,
+   "scale": 0.045,
+   "flock": 2,
+   "flock_spread": [9, 1],
+   "modulate": "#3b342e",
+   "alpha": 0.85,
+   "bob_px": 0.3,
+   "bob_hz": 1.8,
+   "direction": "random",
+   "every_s": [6, 18],
+   "start_s": [0, 4],
+   "prewarm_s": 60,
+   "clip": [866, 405, 362, 30]
+  },
+  {
+   "id": "embankment_walker_single",
+   "type": "tween_path",
+   "texture": "builtin:silhouette",
+   "pivot": [70, 360],
+   "path": [[862, 427], [1232, 427]],
+   "speed_px_s": 6,
+   "scale": 0.042,
+   "modulate": "#4a3b33",
+   "alpha": 0.85,
+   "bob_px": 0.3,
+   "bob_hz": 2.0,
+   "direction": "random",
+   "every_s": [9, 24],
+   "start_s": [5, 12],
+   "prewarm_s": 50,
+   "clip": [866, 405, 362, 30]
   },
   {
    "id": "gulls",
    "type": "tween_path",
    "sheet": "common/pigeon_sheet",
    "frames": "fly",
-   "fps": 11,
-   "path": [
-    [
-     -80,
-     90
-    ],
-    [
-     700,
-     60
-    ],
-    [
-     1400,
-     80
-    ],
-    [
-     2000,
-     50
-    ]
-   ],
-   "speed_px_s": 230,
-   "scale": 0.1,
-   "flock": 2,
-   "flock_spread": [
-    60,
-    22
-   ],
-   "bob_px": 4,
+   "fps": 9,
+   "path": [[-80, 300], [600, 240], [1200, 280], [2000, 220]],
+   "speed_px_s": 140,
+   "scale": 0.11,
+   "flock": 3,
+   "flock_spread": [70, 26],
+   "bob_px": 5,
    "direction": "random",
-   "every_s": [
-    22,
-    45
-   ],
-   "start_s": [
-    3,
-    9
-   ]
+   "every_s": [18, 40],
+   "start_s": [3, 9]
+  },
+  {
+   "id": "pennant",
+   "type": "sway",
+   "texture": "S30/natural/pennant.webp",
+   "anchor": 1.0,
+   "amp_px": 1.1,
+   "freq": 1.2,
+   "wavelength_px": 24,
+   "flutter_px": 0.8,
+   "gust": 0.5
   },
   {
    "id": "clouds",
@@ -99,20 +147,11 @@
     "common/cloud_02.webp",
     "common/cloud_03.webp"
    ],
-   "band": [
-    10,
-    120
-   ],
+   "band": [20, 170],
    "count": 3,
    "speed_px_s": 5,
-   "scale": [
-    0.18,
-    0.3
-   ],
-   "x_span": [
-    0,
-    1920
-   ],
+   "scale": [0.18, 0.3],
+   "x_span": [0, 1920],
    "alpha": 0.7,
    "mask": "S30/natural/sky_mask.webp"
   }

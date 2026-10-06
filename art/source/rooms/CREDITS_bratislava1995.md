@@ -35,8 +35,17 @@ Reference photos used to paint the backgrounds of rooms S19-S30. All are free li
 | S29 | `art/source/rooms/S29/rovniakova_garage-row_under-walkway_2022.jpg` | Rovniakova 5-7 (002).jpg | Juandev | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Rovniakova_5-7_(002).jpg |
 | S29 | `art/source/rooms/S29/rovniakova_garage-doors_footbridge_2022.jpg` | Rovniakova 2-6 (018).jpg | Juandev | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Rovniakova_2-6_(018).jpg |
 | S29 | `art/source/rooms/S29/type-ref_amateur-radio-workbench.jpg` | AmateurRadioStation.JPG | KVDP | Public domain | https://commons.wikimedia.org/wiki/File:AmateurRadioStation.JPG |
-| S30 | `art/source/rooms/S30/tyrsovo-nabrezie_path_railing_castle-view_2008.jpg` | Tyršovo nábrežie 6.jpg | Wizzard | Public domain | https://commons.wikimedia.org/wiki/File:Tyr%C5%A1ovo_n%C3%A1bre%C5%BEie_6.jpg |
-| S30 | `art/source/rooms/S30/petrzalka-bank_view-across-danube_2008.jpg` | Bratislava river bank 7.jpg | Wizzard | Public domain | https://commons.wikimedia.org/wiki/File:Bratislava_river_bank_7.jpg |
+| S30 (cutscene CS03_1 only) | `art/source/rooms/S30/tyrsovo-nabrezie_path_railing_castle-view_2008.jpg` | Tyršovo nábrežie 6.jpg | Wizzard | Public domain | https://commons.wikimedia.org/wiki/File:Tyr%C5%A1ovo_n%C3%A1bre%C5%BEie_6.jpg |
+| S30 (cutscene CS03_1 only) | `art/source/rooms/S30/petrzalka-bank_view-across-danube_2008.jpg` | Bratislava river bank 7.jpg | Wizzard | Public domain | https://commons.wikimedia.org/wiki/File:Bratislava_river_bank_7.jpg |
+| S30 | `art/source/rooms/S30/stary-most_view-upstream_castle-old-town_2011.jpg` | Bratislava - Hrad view from Stary most - panoramio.jpg | Alireza Javaheri | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Bratislava_-_Hrad_view_from_Stary_most_-_panoramio.jpg |
+| S30 | `art/source/rooms/S30/stary-most_upstream-footway_planks-railing-truss_2008.jpg` | Bratislava, Staré Mesto, Starý most, lávka pro pěší.jpg | Aktron | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bratislava,_Star%C3%A9_Mesto,_Star%C3%BD_most,_l%C3%A1vka_pro_p%C4%9B%C5%A1%C3%AD.jpg |
+| S30 | `art/source/rooms/S30/stary-most_riveted-truss-detail_petrzalka-end_2008.jpg` | Bratislava, Staré Mesto, Starý most, detail konstrukce.jpg | Aktron | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Bratislava,_Star%C3%A9_Mesto,_Star%C3%BD_most,_detail_konstrukce.jpg |
+| S30 | `art/source/rooms/S30/most-snp_pylon-saucer_petrzalka_1988.jpg` | Bratislava 1988 01.jpg | LBM1948 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bratislava_1988_01.jpg |
+| S30 | `art/source/rooms/S30/bratislava-castle_pre-renovation-colours_1991.jpg` | T3 1991-12-27 7765 4 most SNP.jpg | Gustav Stehno | Attribution (Commons {{Attribution}}) | https://commons.wikimedia.org/wiki/File:T3_1991-12-27_7765_4_most_SNP.jpg |
+| S30 | `art/source/rooms/S30/stary-most_road-trusses_twin-globe-lamps_2009.jpg` | Bratislava Old Bridge (Starý most).jpg | Yusuke Kawasaki | CC BY 2.0 | https://commons.wikimedia.org/wiki/File:Bratislava_Old_Bridge_(Star%C3%BD_most).jpg |
+| S30 | `art/source/rooms/S30/stary-most_petrzalka-bridgehead_footway-lamps_2004.jpg` | Pozsony Régi híd.jpg | Christo | CC BY-SA 3.0 | https://commons.wikimedia.org/wiki/File:Pozsony_R%C3%A9gi_h%C3%ADd.jpg |
+| S30 | `art/source/rooms/S30/stary-most_side-view_stone-piers_2011.jpg` | Stari most - panoramio (2).jpg | Mister No | CC BY 3.0 | https://commons.wikimedia.org/wiki/File:Stari_most_-_panoramio_(2).jpg |
+| S30 | `art/source/rooms/S30/bratislava_riverfront-panorama-from-castle_1988.jpg` | Bratislava 1988.jpg | LBM1948 | CC BY-SA 4.0 | https://commons.wikimedia.org/wiki/File:Bratislava_1988.jpg |
 
 Attribution strings for the credits screen:
 
@@ -44,3 +53,5 @@ Attribution strings for the credits screen:
 - KartaView: "synalik / KartaView, CC BY-SA 4.0".
 - OpenStreetMap: "© OpenStreetMap contributors (ODbL)".
 - Files tagged CC BY-SA require the painted derivative to be shared under CC BY-SA as well (compatible licence); CC BY files require attribution only.
+
+S30 note (2026-10-06): the room is painted on the old Starý most (owner request); its background uses the nine `stary-most_*`, `most-snp_*`, `bratislava*_19*` photos above (the first five were passed to the generator, the other four were looked at for the truss, lamps, piers and the 1988 riverfront). The two Tyršovo nábrežie photos stay only as references of the cutscene shot CS03_1.

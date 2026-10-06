@@ -1,26 +1,26 @@
 {
   "room": "S30",
   "source": "src/game/assets/bg_natural/S30.webp",
-  "bg_sha1": "b636dc2fe5f6900f0333355a4d4cfdc64014cb24",
+  "bg_sha1": "188d0cd8e02342e6ddfabffb76f1631585ccfa19",
   "items": {
     "water": {
       "kind": "cutout",
       "pos": [
         -4,
-        381
+        424
       ],
       "size": [
         1928,
-        328
+        388
       ]
     },
     "water_mask": {
       "kind": "mask",
       "mask_rect": [
         0,
-        385,
+        428,
         1920,
-        320
+        380
       ]
     },
     "sky_mask": {
@@ -29,7 +29,18 @@
         0,
         0,
         1920,
-        300
+        330
+      ]
+    },
+    "pennant": {
+      "kind": "cutout",
+      "pos": [
+        539,
+        275
+      ],
+      "size": [
+        62,
+        40
       ]
     }
   }
