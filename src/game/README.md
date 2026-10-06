@@ -142,7 +142,7 @@ table has no entry. `TextService.Ui("ui.area.name", ("placeholder", value))` for
 | double click / double tap (same target, ≤ `PresentationSettings.DoubleClickSeconds` 0.35 s; floor ≤ 40 px) | Primary ×2 | skip the walk: the hero is put at the destination (`Actor.FinishWalk`), arrival re-resolves through Core and runs once; the second press never submits again and is not passed to a line the first one started | — | — | — |
 | right click | Secondary | look at target; empty floor: inventory; selected item: cancel first; open bag with an item picked: a right click outside the panel only closes it and keeps the item (owner item 6, INT-09) | advance | — | — |
 | Space (hold) | ShowMarkers / HideMarkers | while held: a painted round marker on every visible hotspot incl. atmospheric ones and exits (arrow badge), no text; release (or window focus loss) hides them (Core `GameRules.SetHotspots`: show in `world` mode only, hide in any mode; in the open drawer Space does nothing). With a selected item only the targets where it has an executable use get a marker (owner item 6, INT-09). HUD eye button: press and hold. Touch: two-finger hold | advance | — | — |
-| Tab / Shift+Tab | FocusNext/Previous | cycle targets (NPCs, progress props, atmospheric, exits; with a selected item only its valid targets) | — | GUI focus | GUI focus |
+| Tab / Shift+Tab | FocusNext/Previous | cycle targets (NPCs, progress props, atmospheric, exits; with a selected item only its valid targets) | — | GUI focus | GUI focus, kept inside the top screen (`UiRoot` focus scope: top UI modal, else puzzle / pause / journal / map; wraps at the ends, AT19) |
 | Enter | Confirm | left click on the focused target; Enter twice quickly = skip the walk | advance | GUI accept | GUI |
 | Shift+Enter | ConfirmSkip | left click on the focused target and skip the walk | advance | — | — |
 | Backspace | Back | right click on the focused target (or empty floor) | — | leave | — |
@@ -226,7 +226,10 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 - Map (`UI/Map/MapScreen.cs`): era tabs, then the era's regions as cards (visited rooms, hub, "Tu si",
   the transport into the region) joined by their transport links; a card opens the region's room graph
   (district captions, hub tag, back button). Fast travel only where Core says `CanFastTravel` (inside the
-  current region, or to a hub of another region; tooltip `ui.map.via_hub` on the other rooms).
+  current region, or to a hub of another region; tooltip `ui.map.via_hub` on the other rooms). The cards fit
+  the panel's width (`MapGraph.SetViewport`, re-arranged on resize): standard spacing, else room cards and gaps
+  shrink (to 200 px), else the columns wrap into left-to-right / right-to-left bands with the links between bands
+  routed around the turning column; no horizontal scrolling at 1280x720-4K (larger HUD scales scroll vertically).
 
 ## Debug / QA harness (user args after `--`)
 
@@ -248,6 +251,8 @@ work in every build.
 | `--real` | acts (`--act`, `--play`) use real Godot input events only: the target is clicked at a point where the room's hit test returns it and no GUI control is on top (else `HARNESS BLOCKER`), items are picked from the drawer's slot buttons, topics from the topic menu's buttons, puzzles by clicking the modal's controls and confirm button, portals with T and the era button; lines play out by auto-advance (`scripts/Diagnostics/RealInputDriver.cs`) |
 | `--play-all` | (implies `--real`) all 94 main actions, the ending (epilogue shots, credits, postgame note by clicks/keys), all 33 side actions after the credits, then the postgame checks (era tour through the portals, cable cars after F09, re-entry of every room with a triggered causal effect / variant layer, album replay of the ending, CS07 replay from the journal); exit code 1 on a blocker or failure (`ContentQa.cs`) |
 | `--play-side` | the same ending + side + postgame part after `--play`/`--replay` |
+| `--keyboard` | (with `--play-all`, `--play` or `--act`) AT19: the real-input driver with keys only, never the mouse (`Diagnostics/KeyboardDriver.cs`): world targets and exits by Tab / Shift+Tab (the shorter way round) + Enter (Backspace = look), bag slots, topics, puzzle controls, era buttons, map cards, journal tabs and dialogs by Tab + Enter, epilogue shots by Enter; once per era a shortcut tour (Space hold, I, J, H, Esc pause, M with a fast travel by keys). Logs `HARNESS keys <step> n=<presses>`, a target or control keys cannot reach is a `BLOCKER`, more than 8 presses is reported as awkward (`keyboard summary`) |
+| `--menu` (`--watch`) | a QA run that starts like a player's (main menu, first-start tips, autosave on) in the background window mode; `--watch` prints `HARNESS watch room=… mode=… done=… focus=… gui=… modal=…` whenever the visible state changes and never sends input. Used by `tools/keyboard_os_check.py`, which plays the prologue from the main menu with real Windows key messages only (AT19, docs/MILESTONE5.md) |
 | `--interleave early\|seed:<n>` | with `--play-all`: side actions at legal points of the main route, greedily as early as possible or at seeded random points |
 | `--save-load-each` | save, load and compare the state after every action (AT17) |
 | `--skip-cutscenes` | press Esc in every cutscene (AT16) |

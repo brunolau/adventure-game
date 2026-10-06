@@ -13,17 +13,20 @@ look.S01.ambient 1,Nie sú roztriedené. Sú len pokope s veľkým sebavedomím.
 entry.S02.001,Každý plot iný. Susedská zhoda sa tu končí pri katalógu.,Každý plot iný. Na plotoch sa susedia v tejto ulici ešte nikdy nezhodli.,TEXT-04 rewrite
 look.S02.ROMAN,Roman vie doručiť zásielku aj podľa popisu bránky.,"Roman, kuriér. Balík doručí aj podľa opisu bránky.",TEXT-04 rewrite
 look.S02.LENKA,"Lenka drží vôdzku. Bodka drží názor, že by ju držať nemusela.","Lenka drží vôdzku. Bodka je presvedčený, že by nemusela.",TEXT-04 rewrite
+exit.S02.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
 exit.S02.to_S05.label,Mirkina bránka,Mirina bránka,glossary rename
-entry.S03.001,"Dobrovoľnícke centrum. Jediné call centrum, kde operátorka zároveň nosí zemiaky.",Výdajné miesto. Ela tu vybavuje telefóny aj zemiaky naraz.,drop: dobrovoľnícke ('call centrum' anglicism removed)
+room.S03.name,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,owner 2026-10-06: S03 is the real playground Lúčny koník in Čierna Voda; room name = place name + what it is now; drop: dobrovoľnícke
+entry.S03.001,"Dobrovoľnícke centrum. Jediné call centrum, kde operátorka zároveň nosí zemiaky.","Lúčny koník. Pod prístreškom, kde sa inokedy griluje, teraz Ela vybavuje telefóny aj zemiaky naraz.","owner 2026-10-06: first entry names the place; the real shelter has a grill (picnic place), now the distribution point; keeps Ela's phones-and-potatoes line"
 look.S03.supplies,Tašky sú označené menom a súhlasom adresáta. Ela tu drží poriadok bez jedinej aktualizácie.,"Ku každej taške má Ela meno aj súhlas adresáta. Píše ceruzkou, objednávky sa menia do poslednej chvíle.","tone pass 2026-10-06, GPT unnatural flag adapted | editor: second 'bez aplikácie' joke in the same room as ambient 1"
 look.S03.ambient 1,Rozostupy sú jasné aj bez aplikácie.,"Páska na zemi ukazuje dva metre odstupu. Ela ich má odkrokované, ja by som trafil tak meter osemdesiat.","tone pass 2026-10-06, GPT joke flag adapted | "
 look.S03.ambient 2,Ela má na nej napísané NEDOLIEVAŤ POLIEVKU. Zrejme skúsenosť.,Na Elinej termoske je napísané NEDOLIEVAŤ POLIEVKU. To bude zo skúsenosti.,TEXT-04 rewrite
 look.S04.ambient 1,Ručne písané čísla majú nezameniteľný sklon k zaokrúhľovaniu.,"Ceny písané rukou, samé okrúhle sumy. Drobné sa cez okienko podávajú zle.","tone pass 2026-10-06, GPT nonsense flag adapted | "
 look.S04.ambient 2,Na chvíľu by bolo fajn riešiť len klíčky.,Pár zemiakov už klíči. Ešte týždeň a Dana ich bude predávať ako sadbu.,"tone pass 2026-10-06, GPT joke flag adapted | "
+exit.S04.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
 room.S05.name,Mirkina bránka,Mirina bránka,glossary rename
 entry.S05.001,Babka má karanténu. Ja mám zoznam. Prvý raz má viac slobody ten zoznam.,"Babkina bránka. Babka je v karanténe, takže ďalej ako po stolík dnes nesmiem.",clearer: the table is as far as Adam goes
 look.S05.tray,Sem mám nechať nákup. Babka si ho vezme až keď odstúpim.,"Tu nechám nákup. Babka si ho vezme, až keď odstúpim.","tone pass 2026-10-06, GPT grammar flag accepted | "
-look.S05.shed_door,Samostatná prázdna dielňa. Na tieto dvere potrebujem babkin kľúč; dom zostáva zatvorený.,"Babkina dielňa stojí v záhrade, mimo domu. Je zamknutá a kľúč od nej má babka.",progress look: says what is missing (Mira's key) without officialese
+look.S05.shed_door,Samostatná prázdna dielňa. Na tieto dvere potrebujem babkin kľúč; dom zostáva zatvorený.,"Babkina dielňa stojí v záhrade, mimo domu. Zámok na dverách otvára babkin kľúč.","M5 verification: the v2 C1 text 'Je zamknutá' was wrong after G06 (the hasp rect still answers after unlocking, PT-F05 / M5-02); back to a look that is true before and after unlocking"
 look.S05.ambient 1,Babka vie mená susedov aj odrôd. U susedov je kritickejšia.,Babka pozná mená všetkých odrôd aj susedov. K odrodám je zhovievavejšia.,TEXT-04 rewrite
 look.S05.ambient 2,VITAJTE je otočené smerom von. V roku 2020 primerané.,"Rohožka VITAJTE je otočená nápisom k dverám. Od marca víta len tých, čo odchádzajú.","tone pass 2026-10-06, GPT joke flag adapted | drop: 2020 (the year is shown by the era; 'od marca' keeps the time) | "
 exit.S05.to_S06.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,style guide 3.1 example
@@ -42,6 +45,7 @@ look.S07.board,Pomoc susedom má otváracie hodiny ukryté v drobnom QR kóde. P
 look.S07.ambient 1,Kurz spoločenských tancov: dočasne každý sám.,Kurz spoločenských tancov. Dočasne tancuje každý sám.,TEXT-04 rewrite
 look.S07.ambient 2,Pán Jozef má poctivú optiku. Tá aspoň nepotrebuje účet.,"Lupa pána Jozefa. Skladacia, v koženom puzdre a bez batérie. Takú by som opravoval rád, ale niet čo.","tone pass: 'nepotrebuje heslo ani aktualizáciu' was the old ironic tag; Adam's repairman view of a well-made object | "
 look.S07.JOZEF,Pán Jozef má lupu pripravenú ako nástroj verejnej kontroly.,Pán Jozef so skladacou lupou. Na výveske prečíta všetko okrem QR kódu.,editor: writer's 'prečíta každé slovo' contradicted his problem (he cannot read the hours)
+exit.S07.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
 entry.S08.001,Tu sa zadržiava voda. Na obecnej skupine sa zadržiava už len slušnosť.,Retenčná nádrž. Voda tu pokojne stojí. Obecná skupina na internete by sa od nej mohla učiť.,style guide 6.2 example
 look.S08.ball,Na suchej strane zábradlia leží obhryzená loptička. Jej majiteľ určite nečíta straty a nálezy.,Na suchej strane zábradlia leží obhryzená loptička. Jej psí majiteľ straty a nálezy nečíta.,"tone pass 2026-10-06, GPT joke flag accepted | "
 look.S08.ambient 1,"Vyzerá, že situáciu konzultovala a nesúhlasí.","Kačka. Od brehu si drží odstup, odkedy sem chodí Bodka.","tone pass: 'situáciu prekonzultovala a nesúhlasí' was a forced personification; callback to Bodka's walks to the reservoir | "
@@ -154,7 +158,7 @@ look.S33.carbon,Voľný uhlový papier na vyhotovenie druhej kópie tlačiva. Po
 look.S33.ambient 1,Malé obrázky s veľkým názorom na cenu doručenia.,"Známky v hárkoch. Malé obrázky, od ktorých závisí, či list odíde.",TEXT-04 rewrite
 look.S33.ambient 2,Rok 1960. Žiadne automatické preklopenie na správny rok.,Nástenný kalendár: jún 1962. Môj telefón by s ním nesúhlasil.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 entry.S34.001,"Divadlo pred skúškou. Každý tu vie, že niečo nie je skutočné. Konečne primerané prostredie.",Sála pred skúškou. Tu sa každý hrá na niekoho iného. Aspoň nebudem jediný.,TEXT-04 rewrite
-look.S34.clamp,"Ručná stolová svorka má povolenú skrutku. Kulisa je položená na zemi, nehrozí pád na nikoho.","Svorka kulisy má povolenú skrutku, preto kulisa leží na zemi. Náradie na to mám v brašni.",editor: look now points to the bag (only hint for the I03 item use besides hints)
+look.S34.clamp,"Ručná stolová svorka má povolenú skrutku. Kulisa je položená na zemi, nehrozí pád na nikoho.","Svorka kulisy má povolenú skrutku, preto sa kulisa pri každom dotyku kýve. Náradie na to mám v brašni.","PT-S19: the painting shows the flat standing on its stand, clamped to the table; 'leží na zemi' contradicted it. The label 'Dotiahnuť svorku kulisy' and I03.001 'Kulisa drží' already fit"
 look.S34.ambient 2,Rudo v ňom hrá richtára. Klobúk hrá bez pripomienok.,"Richtársky klobúk. Rudo v ňom hrá richtára, klobúk hrá seba.",TEXT-04 rewrite
 look.S34.LIDA,"Lída rieši javisko aj všetko, čo je pred ním a za ním.","Lída má na starosti kostýmy, kulisy aj hercov. Všetko naraz a pokojne.",TEXT-04 rewrite
 entry.S35.001,"Materiál vydávajú na papier. Keby mi došiel čas, možno naň tiež existuje tlačivo.","Materiál sa tu vydáva iba na lístok. Keby som potreboval viac času, aj naň by tu mali tlačivo.",TEXT-04 rewrite
@@ -312,6 +316,7 @@ look.S68.ambient 1,Les a svahy sa pomaly posúvajú. Výhľad sa nemení na čas
 look.S68.ambient 2,Funitel je iný typ lanovky než dolný úsek. Ani budúcnosť ich nezliala do jedného vagóna.,Funitel je iný typ lanovky ako kabínka zdola. Širší a vo vetre pokojnejší.,TEXT-04 rewrite
 exit.S68.to_S67.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,TEXT-04 rewrite
 exit.S68.to_S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vrcholová stanica je už za oknom, tam vystúpim.","playtest PT-S07: the locked door is the obvious click; point at the station in the window, which is the real 'finish the ride' target"
+conn.S02.S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,connection label equals the room name (glossary 3.3); drop: dobrovoľnícke
 conn.S02.S05.label,Mirkina bránka,Mirina bránka,glossary rename
 conn.S05.S06.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,TEXT-04 rewrite
 conn.S05.S09.locked,Do dielne mám kľúč od Miry. Použijem ho na zámok pri bránke.,Dvere dielne sú zamknuté. Najprv ich musím odomknúť babkiným kľúčom.,TEXT-04 rewrite
@@ -485,8 +490,8 @@ item.LIFT_TICKET.purpose,"Použiť čítačku bežného turniketu, bez obchádza
 item.JANA_DRAWING,"Schéma s vlastným zlepšením a vysvetlením, prečo neodrezáva slabé časti signálu.","Janina schéma s poznámkami. Vysvetľuje, prečo slabý signál neodreže.",TEXT-04 rewrite
 item.JANA_APPROVED,"Učiteľ uznal funkčný návrh na základe vysvetlenia, nie politického triku.",Na schéme je pripísané povolenie na výstavku. Učiteľa presvedčilo Janino vysvetlenie.,TEXT-04 rewrite
 item.JANA_APPROVED.purpose,Vrátiť Jane ako povzbudenie k vlastnej práci.,"Vrátiť Jane, nech vystaví svoj vlastný návrh.",TEXT-04 rewrite
-action.G01.journal,Pomôž Ele s Mirkiným nákupom v dobrovoľníckom výdajnom mieste.,Pomôž Mire s nákupom: zastav sa u Ely na dobrovoľníckom výdajnom mieste.,editor: same as objective
-action.G01.objective,Pomôž Ele s Mirkiným nákupom v dobrovoľníckom výdajnom mieste.,Pomôž Mire s nákupom: zastav sa u Ely na dobrovoľníckom výdajnom mieste.,"Mirkin -> Mirin (glossary rename); editor: 'pre Mirin nákup' read as a calque; Ela gives the slip, not the shopping"
+action.G01.journal,Pomôž Ele s Mirkiným nákupom v dobrovoľníckom výdajnom mieste.,Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.,same as objective; drop: dobrovoľnícke
+action.G01.objective,Pomôž Ele s Mirkiným nákupom v dobrovoľníckom výdajnom mieste.,Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.,owner 2026-10-06: the goal names the place the map shows; drop: dobrovoľnícke
 action.G01.001,"Skrutkovač, kliešte, meradlo. Keby deň potreboval niečo viac, mohol sa vopred ozvať.","Skrutkovač, kliešte, meradlo. Na jeden babkin nákup som vybavený ako na generálku.",setup of the running gag (a simple day that escalates); repairman's exaggeration
 action.G02.label,Ponúknuť pomoc s nákupom,Babkin nákup,"story topic as topic, style guide 6.6"
 action.G02.journal,Vyzdvihni pripravenú tašku u Dany.,Vyzdvihni u Dany v potravinách pripravenú tašku s nákupom.,TEXT-04 rewrite
@@ -1324,7 +1329,7 @@ cutscene.CS08.01.002,"Takto vyzerá čas, keď sa neopravuje naraz celý.","Takt
 cutscene.CS08.02.001,"A miesto, ktoré sme potrebovali, nezmizlo.",A múrik s našou skrýšou zostal stáť.,TEXT-04 rewrite
 cutscene.CS09.01.001,Do kopca po lane. Na dnes príjemne zrozumiteľný princíp.,"Hore po lane. Pod nami les, v kabínke ticho.",editor: plain caption; the 'travel I finally understand' joke is already in entry.S68
 quest.M01.goal,Získať prístup do neobývanej dielne cez bežnú pomoc Mire.,Pomôž Mire s nákupom a dostaň sa do jej záhradnej dielne.,style guide 6.8 example
-quest.M01.hint.1,Začni dobrovoľníckym výdajným miestom.,Začni na dobrovoľníckom výdajnom mieste u Ely.,TEXT-04 rewrite
+quest.M01.hint.1,Začni dobrovoľníckym výdajným miestom.,Začni u Ely na výdajnom mieste pri Lúčnom koníku.,owner 2026-10-06: hint names the place; drop: dobrovoľnícke
 quest.M01.hint.2,Ela dá nákupný lístok; Dana má tašku pripravenú. Nechaj ju pred bránkou.,"Ela ti dá nákupný lístok, Dana zaň tašku. Nechaj ju na stolíku pred bránkou a potom zavolaj Mire pod oknom.",TEXT-04 rewrite
 quest.M01.hint.3,G01 brašna → G02 Ela → lístok na Danu → nákup na stolík → rozhovor s Mirou pod zatvoreným oknom.,Servisná brašna v garáži → Ela: téma „Babkin nákup“ → nákupný lístok na Danu → taška s nákupom na stolík pred bránkou → pod zatvoreným oknom Mira: téma „Potrebuješ ešte niečo?“,consistency: topic names in quotes as in the C2 hints
 quest.M02.goal,Oživiť nízkonapäťovú kolísku a prvú časovú adresu.,Oprav kolísku stolového uzla ZVON a otvor prvé časové okno.,TEXT-04 rewrite

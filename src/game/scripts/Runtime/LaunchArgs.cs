@@ -33,4 +33,10 @@ public static class LaunchArgs
 
     /// <summary>True when the QA harness or another QA switch was given (debug/editor builds only).</summary>
     public static bool Any => User.Length > 0;
+
+    /// <summary>
+    /// <c>--menu</c>: a QA run that starts like a player's (main menu, first-start tips, autosave), still in the QA
+    /// background window mode; used with <c>--watch</c> by the OS-level keyboard check (docs/MILESTONE5.md, AT19).
+    /// </summary>
+    public static bool PlayerStart => Array.IndexOf(User, "--menu") >= 0;
 }

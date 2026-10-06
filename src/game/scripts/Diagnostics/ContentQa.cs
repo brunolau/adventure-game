@@ -63,7 +63,8 @@ public partial class DebugHarness
     {
         if (qaHooked) return;
         qaHooked = true;
-        realInput = Has("real") || Has("play-all") || Has("play-side");
+        keyboardOnly = Has("keyboard"); // AT19: keys only (KeyboardDriver.cs)
+        realInput = keyboardOnly || Has("real") || Has("play-all") || Has("play-side");
         if (DialoguePresenter.Instance is { } presenter)
             presenter.LineShown += l =>
             {
@@ -245,7 +246,8 @@ public partial class DebugHarness
             shots++;
             await Seconds(1.8);
             await ShotLater($"{(replay ? "album_" : "")}epilogue_{shots:D2}", 0);
-            await RawMouseReal(new Vector2(960, 500), MouseButton.Left); // click: next shot
+            if (keyboardOnly) await KeyCombo(Godot.Key.Enter); // Enter: next shot (AT19)
+            else await RawMouseReal(new Vector2(960, 500), MouseButton.Left); // click: next shot
             await Frames(3);
             if (shots > 20) break;
         }
@@ -521,6 +523,11 @@ public partial class DebugHarness
             ["postgame"] = postgameReport.DeepClone(),
             ["blockers"] = new JsonArray(blockers.Select(x => (JsonNode?)x).ToArray()),
             ["click_retries"] = retries,
+            ["keyboard_only"] = keyboardOnly,
+            ["keyboard_steps"] = keySteps.Count,
+            ["keyboard_presses"] = keySteps.Sum(k => k.Presses),
+            ["keyboard_awkward"] = new JsonArray(keySteps.Where(k => k.Presses > AwkwardPresses).Select(k => (JsonNode?)$"{k.Step} {k.Presses}").ToArray()),
+            ["keyboard_notes"] = new JsonArray(keyboardNotes.Select(x => (JsonNode?)x).ToArray()),
             ["failures"] = new JsonArray(qaFailures.Select(x => (JsonNode?)x).ToArray()),
         };
         string? file = Get("coverage");

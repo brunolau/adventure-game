@@ -1,27 +1,26 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: Windows build of 2026-10-05 (exe version 0.1.0.0; the main menu shows the data version "2.0.0", see Known
-issues). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md`.
+Version: Windows build of 2026-10-06, version 0.1.0 (the main menu and the exe say the same number). Language:
+Slovak only. Test record behind this page: `docs/MILESTONE5.md` (section "Verification and release pass").
 
 ## In short
 
 - The whole game is playable from a new game to the end credits and the postgame, on Windows 10/11 (64-bit).
-- Every automated check passes. All 127 story and side actions were played through by real input events in three
-  different orders. One of the orders saved and reloaded after every action. The exported release exe was played
-  by hand through the 2020 prologue to the arrival in 1995, with a save/load round trip on the way.
-- 29 of the 30 handoff acceptance tests pass. AT19 is the exception: a playthrough of the whole game with only the
-  keyboard was not done, only spot checks.
-- Open before a public release: your answer on the art licence (DECISIONS item 9) and the licence note that goes
-  with it, the version number shown in the menu, and the known issues below. None of them blocks play.
-- Paid generation so far: **USD 102.42** (683 fal.ai calls). This pass added nothing.
+- Every automated check passes on the final code. All 127 story and side actions were played by real input events in
+  four different orders: one saved and reloaded after every action, one showed every line, one skipped every
+  cutscene, and one used **only the keyboard** for the whole game. The 2020 prologue was also played from the main
+  menu with real Windows key presses only, with a save and a load on the way.
+- **All 30 handoff acceptance tests pass**, AT19 (keyboard only) included.
+- Open before a public release: your answer on the art licence (DECISIONS item 9) and the few points in
+  docs/DECISIONS.md "Status 2026-10-06". None of them blocks play.
+- Paid generation so far: **USD 145.74** (915 calls, art/spend-log.csv). This verification pass added nothing.
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (244.5 MB). Unpacked, it is the folder
-   `PoslednyZvonec/` (366.8 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
-   `LastBell.pck` (176.2 MB) and `data_LastBell_windows_x86_64/` (81.0 MB, the C# code and the .NET runtime).
-   The same files are in `build/windows/`. That folder also holds 34 MB of old locked DLL copies
-   (`*.dll~RF*.TMP`), left there by an older game window that is still open, so do not zip that folder.
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (254.2 MB). Unpacked, it is the folder
+   `PoslednyZvonec/` (377.4 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
+   `LastBell.pck` (186.6 MB) and `data_LastBell_windows_x86_64/` (81.3 MB, the C# code and the .NET runtime).
+   The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
 3. The exe is not code-signed, so Windows SmartScreen says "Windows protected your PC". Click "More info", then
    "Run anyway". Only the first start asks.
@@ -29,7 +28,7 @@ issues). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.m
    uninstall, delete the game folder and that folder.
 
 From the repository you can also start the game with `play.bat` (the editor runtime). `build.bat` rebuilds the
-release in about 30 s plus the asset import (docs/BUILD.md).
+release (docs/BUILD.md).
 
 ### Controls
 
@@ -42,22 +41,23 @@ release in about 30 s plus the asset import (docs/BUILD.md).
 | item in the bag -> click a target | use the item; the sentence next to the cursor ("Vyzdvihnúť Mirin nákup") appears only when the combination works |
 | I / J / M / H / T | bag / journal / map / hint / era chooser (at the time nodes, also the clock button in the HUD) |
 | Esc | cancel the selection, otherwise pause (save, load, settings, help); skips cutscenes and queued lines |
-| Tab, Enter, Backspace | keyboard play: next target, use it, look at it |
+| Tab / Shift+Tab, Enter, Backspace | keyboard play: next / previous target, use it, look at it; in menus and screens Tab moves between the buttons and Enter presses one. The whole game can be played without a mouse |
 | F5 / F9 | quick save / quick load |
 
 Touch input is built in for the mobile ports: tap, long press = right click, two-finger hold = markers.
 
 ## What is in the game
 
-- **68 rooms** in five periods: 2020 Chorvátsky Grob / Čierna Voda (the prologue), 1995 Bratislava (Dúbravka,
-  Karlova Ves, Staré Mesto, Ružinov, Petržalka), 1960 Ivanka pri Dunaji, 1982 Dúbravka and 2035 Jasná / Chopok.
+- **68 rooms** in five periods: 2020 Chorvátsky Grob / Čierna Voda (the prologue) and Dúbravka, 1995 Bratislava
+  (Dúbravka, Karlova Ves, Staré Mesto, Ružinov, Petržalka), Ivanka pri Dunaji shown as June 1962, 1982 Dúbravka in
+  December snow and Jasná / Chopok in winter 2035.
   Every room is painted in style A from its real place, has 3-24 ambient animations, and uses the natural layout
   (decision 1b).
 - **94 main and 33 side actions** in 27 quests, **9 side quests**, **5 puzzles**, **9 cutscenes**, an epilogue
   whose pictures follow the side quests you did, end credits, and a postgame with the album (replay the ending and
   the cutscenes).
-- About 2 950 player texts: 756 dialogue lines, the world texts and the UI. All were rewritten in plain Slovak
-  (docs/writing/SAMPLES.md). The story, puzzles and solutions did not change.
+- About 3 360 player texts: 989 dialogue lines, the world texts and the UI, written in plain Slovak (docs/writing/SAMPLES.md,
+  SAMPLES_v2_2020.md). The story, puzzles and solutions did not change.
 - Original music: one theme per period plus menu, puzzle, tension and epilogue (9 tracks). About 105 sound effects
   and ambience loops. Subtitles for everything. **No voice acting yet.**
 - Journal with goals and three hint levels per quest, a map with fast travel, an era chooser, 8 save slots plus an
@@ -71,7 +71,7 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
 | OS | Windows 10 or 11, 64-bit | Windows 11 Pro 26200 |
 | graphics | OpenGL 3.3 GPU (Godot "Compatibility" renderer), 1 GB VRAM | AMD Radeon RX 7600 |
 | memory | 4 GB RAM (the game uses about 1.2 GB) | desktop with Ryzen 9 7900X |
-| disk | 400 MB free, plus the 245 MB download | - |
+| disk | 400 MB free, plus the 255 MB download | - |
 | screen | 1280x720 or larger (16:9; other shapes get bars) | 1280x720 and 1920x1080 windows |
 
 Measured on the test PC: main menu 0.8 s after start, a room change takes about 0.7 s (fade included), 406-446 MB
@@ -80,36 +80,23 @@ were not tried.
 
 ## Known issues
 
-None of these stops a playthrough. Ids are in `design-doc/ISSUES.md`.
+None of these stops a playthrough. Ids are in `design-doc/ISSUES.md`. Everything the two playtests and milestone 5
+found is fixed (selection after use, hints per step, the painted time-node clock, conversations that stay open,
+Esc = one line, Mira in the attic, the CS07 symbols, Adam's winter coat, RECEPCIA, toasts and hover label over
+screens, the S05 door, staging in front of props, the version number), except:
 
-Most noticeable:
-1. **An item stays selected after a successful use** (PT-F09 / PT-S16). While it is selected, a click on an exit
-   does nothing and gives no feedback. Workaround: right click (or the x on the HUD chip) to drop it. This is a
-   rule and design change in Core and needs your OK.
-2. **Hints follow the quest, not the step** (PT-F08 / PT-S26). Hint 1 can repeat a step you already did. Read hint
-   2 and 3.
-3. **The time node in S11 / S51 / S57** is the clock button in the HUD (or T). The painted stop clock does nothing
-   (PT-F10).
-4. **Continuity at story moments:** Mira speaks in the S40 attic without being there (PT-S18). The CS07 picture
-   shows ✕ where the room has + (PT-S21). Adam wears autumn clothes in the snowy December 1982 (PT-S20).
-5. **Conversations close after each topic.** Click the person again for the next topic (PT-S17).
-
-Smaller issues:
-- Toasts and the hover label can sit over open windows. "New item / new goal" toasts appear before the lines that
-  explain them (PT-S22, PT-S23, M5-05).
-- In S05, after unlocking, the upper part of the workshop door still gives the lock look. The lower part walks in
-  (M5-02).
-- Adam sometimes stands in front of what he uses: the S05 table, the S09 case, the S10 cradle, Jana's face in S60
-  (M5-04, PT-S24). The service-bag icon is brown leather, while the painted bag is green canvas.
-- Long item names are cut in the bag ("Prenosný chronometer…", PT-F12). Esc skips the whole intro monologue
-  (PT-F13). Tóno is "Anton Farkaš" in hover labels (PT-S25). The S43 lobby has English "RECEPTION" lettering
-  (PT-S27). A few spawn and marker spots are tight (PT-S28, M3-02).
-- The S11 tram is part of the painting and never leaves (LIVING-05). Crowd murmur in a few rooms is not Slovak
-  (AUDIO-04).
-- The menu says "Verzia 2.0.0", which is the story data version, while the exe says 0.1.0 (M5-03). Pick one
-  release number.
-- The credits list every photo, sound, font and the engine. They do not yet say under which licence the game's
-  own art is released (waits for decision 9, see below).
+- Tóno is "Anton Farkaš" in hover labels and topic headers, Tóno in every line (PT-S25, your choice N9).
+- The first workshop goal says "kolíska stolového uzla ZVON" before anything explains it (PT-F14, N14).
+- An exit click while you deliberately keep an item selected does nothing (the handoff rule; N2 b). After a
+  successful use the item is no longer selected, so this is now rare.
+- Keyboard play: with a full bag, reaching an item takes up to 7 key presses; the map's room cards up to 8. Tab
+  goes one way, Shift+Tab the other.
+- A few exit labels and walk-to points sit far from their doors (M3-02, cosmetic). The S11 tram is part of the
+  painting and never leaves (LIVING-05). Crowd murmur in a few rooms is not Slovak (AUDIO-04).
+- The credits list every photo, sound, font and the engine, but not yet the licence of the game's own art (waits
+  for decision 9).
+- Not checked by us: sound by ear (our test runs are muted), laptops with integrated graphics, other screen shapes
+  than 16:9.
 
 ## Credits and licences (summary)
 
@@ -170,15 +157,10 @@ docs/BUILD.md).
 
 ## Paid generation (art/spend-log.csv)
 
-| what | calls | USD |
-|---|---:|---:|
-| images (nano-banana-pro 43.50, nano-banana-2 26.96) | | 70.46 |
-| animations, image-to-video (Hailuo pro 15.84, standard 13.50, Wan 0.41, Kling 0.35, Seedance 0.27) | | 30.37 |
-| music (Lyria 3 Pro 1.44, MiniMax test 0.15) | | 1.59 |
-| **total** | **683** | **102.42** |
-
-Spend by day: 2026-10-04 USD 2.10 (style tests), 2026-10-05 USD 100.32. Milestone 5 cost nothing.
+**USD 145.74** in 915 calls: 2026-10-04 USD 2.10 (style tests), 2026-10-05 USD 109.80, 2026-10-06 USD 33.84 (winter
+Jasná, Ivanka 1962, the 2020 corrections and the writing reviews). The breakdown by model is in the log. The
+verification and release pass of 2026-10-06 cost nothing.
 
 ## What waits for you
 
-See `docs/DECISIONS.md`, section "Status 2026-10-05 (milestone 5)".
+See `docs/DECISIONS.md`, section "Status 2026-10-06 (verification and release pass)".

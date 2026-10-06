@@ -114,6 +114,44 @@ public partial class DebugHarness
               $"tab_focus={focused}/{exitFocused}/{elaFocused} G01={game.State.IsDone("G01")} G02={game.State.IsDone("G02")} room={game.State.Room}");
         await WaitLinesReal(20);
 
+        // ---------------------------------------------------------------- AT19 (part): Tab stays inside the top screen
+        // Keyboard pass 2026-10-06: with the hints opened from the puzzle (or the save slots over the pause menu) Tab
+        // went on into the screen underneath and Enter pressed its hidden buttons. UiRoot keeps the focus in the top one.
+        {
+            await Prepare("G11");
+            await TravelToReal("S10");
+            await OpenPuzzleReal(content.GetAction("G11"));
+            var root = UiRoot.Instance!;
+            Control? Owner() => GetViewport().GuiGetFocusOwner();
+            bool InTop(Control? c) => c is not null && root.TopModal is { } top && top.IsAncestorOf(c);
+            var hintButton = Descendants<Button>(root.PuzzleView).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == TextService.Ui("ui.hud.hint"));
+            bool hintsOpen = hintButton is not null && await KeyControl(hintButton, "AT19 puzzle hint button", MouseButton.Left) &&
+                             await WaitUntil(() => root.TopModal is UI.Menus.HintScreen, 5);
+            await Frames(4);
+            int outside = 0;
+            for (int i = 0; i < 24; i++) { await KeyCombo(Godot.Key.Tab, shift: i >= 12); if (!InTop(Owner())) outside++; }
+            await KeyReal(Godot.Key.Escape);
+            bool backInPuzzle = await WaitUntil(() => !root.HasModal && Owner() is { } o && root.PuzzleView.IsAncestorOf(o), 5);
+            await KeyReal(Godot.Key.Escape); // close the puzzle
+            await WaitUntil(() => game.State.Mode is GameMode.World or GameMode.Inventory, 5);
+            // Pause menu -> save screen: Tab stays in the save screen.
+            await KeyReal(Godot.Key.Escape);
+            bool pauseShown = await WaitUntil(() => game.State.Mode == GameMode.Pause, 5);
+            await Frames(4);
+            var saveButton = Descendants<Button>(root).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == TextService.Ui("ui.pause.save"));
+            bool saveOpen = saveButton is not null && await KeyControl(saveButton, "AT19 pause save", MouseButton.Left) &&
+                            await WaitUntil(() => root.TopModal is UI.Menus.SaveLoadScreen, 5);
+            await Frames(4);
+            int outsideSave = 0;
+            for (int i = 0; i < 30; i++) { await KeyCombo(Godot.Key.Tab, shift: i >= 15); if (!InTop(Owner())) outsideSave++; }
+            await KeyReal(Godot.Key.Escape);
+            await WaitUntil(() => !root.HasModal, 5);
+            await KeyReal(Godot.Key.Escape);
+            await WaitUntil(() => game.State.Mode == GameMode.World, 5);
+            Check("AT19_tab_stays_in_top_screen", hintsOpen && outside == 0 && backInPuzzle && pauseShown && saveOpen && outsideSave == 0,
+                  $"hints_open={hintsOpen} tab_outside_hints={outside}/24 focus_back_in_puzzle={backInPuzzle} save_open={saveOpen} tab_outside_save={outsideSave}/30");
+        }
+
         // ---------------------------------------------------------------- AT22: double-click spam on a give action and the last line
         game.NewGame();
         await Settle();

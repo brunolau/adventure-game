@@ -290,7 +290,7 @@ public sealed class AcceptanceTests
         Assert.Same(before, session.State);
     }
 
-    [Fact(Skip = "UI-only: keyboard-only play and subtitles are presentation features; Core only provides Escape/selection rules (covered in ControlRulesTests).")]
+    [Fact(Skip = "UI-only: keyboard-only play and subtitles are presentation features; Core only provides Escape/selection rules (covered in ControlRulesTests). The whole game by keys is the engine route `--play-all --keyboard` (docs/MILESTONE5.md, AT19).")]
     public void AT19_whole_game_with_keyboard_and_subtitles_only() { }
 
     [Fact(Skip = "UI-only: scaling and HUD overlap at 1280x720 / 1920x1080 need the Godot build; the data-level minimum hit area is checked by AT20_data_minimum_hit_area.")]

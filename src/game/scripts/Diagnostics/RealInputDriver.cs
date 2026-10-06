@@ -92,6 +92,7 @@ public partial class DebugHarness
     /// <summary>Clicks a GUI control with a real mouse event (scrolls it into view first). False when another control is on top.</summary>
     private async Task<bool> ClickControl(Control control, string what, MouseButton button = MouseButton.Left)
     {
+        if (keyboardOnly) return await KeyControl(control, what, button); // KeyboardDriver.cs (AT19)
         for (Node? p = control.GetParent(); p is not null; p = p.GetParent())
             if (p is ScrollContainer scroll) scroll.EnsureControlVisible(control);
         await Frames(2);
@@ -144,6 +145,7 @@ public partial class DebugHarness
 
     private async Task<bool> ClickTarget(string targetId, MouseButton button = MouseButton.Left)
     {
+        if (keyboardOnly) return await KeyTarget(targetId, button); // KeyboardDriver.cs (AT19)
         var p = await FindClickPoint(targetId);
         if (p is null) return false;
         await RawMouseReal(p.Value, button);
@@ -424,6 +426,7 @@ public partial class DebugHarness
         await WaitLinesReal(30);
         await DropSelectionReal();
         if (!action.IsInventoryAction && action.Room != game.State.Room) await TravelToReal(action.Room);
+        await KeyboardTourIfNew(); // --keyboard: shortcut tour once per era (KeyboardDriver.cs)
         int doneBefore = game.State.Done.Length;
 
         if (action.SelectedItem is not null) await SelectItemReal(action.SelectedItem, keepDrawerOpen: action.IsCombine);

@@ -22,7 +22,7 @@ Core-mode screens are shown from `GameRuntime.ModeChanged` (Inventory, Journal, 
 Esc/J/M/I for them stay with the world's input router (Core `Escape`/`CloseOverlay`). UI-only modals
 (main menu, hints, save/load, settings, help, credits, portal chooser, album, dialogs, ending) live on
 a stack in `UiRoot`; while one is open `UiRoot._ShortcutInput` closes the top one on Esc and keeps
-every other key from the scene, and the backdrop swallows clicks (AT22).
+every other key from the scene, and the backdrop swallows clicks (AT22). The keyboard focus stays in the top screen (`UiRoot.FocusScope`: the top UI modal, else the open puzzle, pause, journal or map): Tab / Shift+Tab wrap at its ends and a focus that lands outside (arrow keys, deferred focus calls) is brought back, so Enter never presses a button hidden under the hints or the save slots (AT19 keyboard pass 2026-10-06).
 
 ## Screens
 
@@ -37,7 +37,7 @@ every other key from the scene, and the backdrop swallows clicks (AT22).
 | `Dialogue/TopicMenuView.cs` | topic menu (story topics bold, repeatable heard topics marked). |
 | `Inventory/InventoryPanel.cs` | drawer: items / archived tabs, slots, detail card with Select/Combine/Deselect and Look buttons; combining goes through the resolver. |
 | `Journal/JournalScreen.cs` | Goals (pins), Findings (clues, progress log, first looks), People (transcripts), Time map, Album (ending replay, cutscene replays). |
-| `Map/MapScreen.cs` | era sheets, rooms as nodes by distance from the time node, regions (`region.<district>.name`), connections, fast travel via `Navigation.FastTravel`. |
+| `Map/MapScreen.cs` | era sheets, rooms as nodes by distance from the time node, regions (`region.<district>.name`), connections, fast travel via `Navigation.FastTravel`. Cards fit the panel width: they shrink, then wrap into serpentine bands (no horizontal scrolling). |
 | `Menus/*` | main menu (+emblem), pause, hints (progressive levels), save/load (8 slots, quick, autosave, thumbnails, overwrite/delete/load confirmations, corrupt files via Core's validation), settings (audio buses, text speed, auto-advance, subtitles, size, language, window mode, HUD scale 100–200 %, reduced motion, high-contrast labels, cursor highlight, walk speed 100/125/150 % (`PresentationSettings.WalkSpeedFactor`), tips), help, credits (`assets/ui/credits.json`), portal chooser, album. |
 | `Puzzles/PuzzleModal.cs`, `Puzzles/PuzzleControls.cs` | modal framework for every `puzzles[].controls.type`: matching (P01, P04), rotate_overlay (P02), digits (P03), grid_choice (P05). Drafts stored through Core on every change, reset, hint, "fill in correctly" when `Puzzles.CanFill`, no timers. Option pictures for P01: `assets/ui/puzzle_glyphs.json`. |
 | `Cutscenes/CutscenePlayer.cs`, `Cutscenes/CutsceneCamera.cs` | letterbox, beat picture `res://assets/cutscenes/<CS>_<n>.webp` (n from 1) or a styled card (debug builds print the shot as a dev note), finale end card, skip button. Optional pan / zoom per beat from `res://data/cutscene_camera.json` (start and end rect of the 1920x1080 picture, over the beat's `duration_min_s`; reduced motion shows the end rect; written by `art/tools/cutscenes.py camera`, see `art/cutscenes/README.md`). |

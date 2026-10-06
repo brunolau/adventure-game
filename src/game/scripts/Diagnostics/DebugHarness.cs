@@ -79,6 +79,14 @@ public partial class DebugHarness : Node
         var game = GameRuntime.Instance;
         game.AutosaveEnabled = Has("autosave");
         var stage = WorldStage.Instance!;
+        if (Has("menu"))
+        {
+            // A player's start (main menu, tips, autosave); the harness only reports what it sees (--watch).
+            game.AutosaveEnabled = true;
+            if (Has("watch")) _ = Watch();
+            if (Get("screenshot") is { } menuShot) { await Screenshots(menuShot); Quit(0); }
+            return;
+        }
         if (Has("dev")) stage.DevOverlay = PresentationSettings.DevNotes = true;
         if (Has("labels")) PresentationSettings.QaTextLabels = true; // review screenshots: text labels of every target
         if (Has("no-preload")) RoomPreloader.Enabled = false; // perf comparison (PerfProbe.cs)
@@ -143,6 +151,7 @@ public partial class DebugHarness : Node
                 await PerformAct(acts[i]);
             }
             if (Has("play-all") || Has("play-side")) await RunSideAndPostgame();
+            KeyboardSummary(); // --keyboard (AT19)
             if (Has("coverage")) WriteCoverage();
             if (Has("play-all") || Has("play-side")) { Quit(qaFailures.Count + blockers.Count > 0 ? 1 : 0); return; }
             if (Has("skip-lines")) await SkipLines(15);

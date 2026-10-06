@@ -106,9 +106,10 @@ public partial class UiRoot : Control
         Theme = UiTheme.Theme;
 
         var game = GameRuntime.Instance;
-        bool harness = LaunchArgs.Any;
+        GetViewport().GuiFocusChanged += OnGuiFocusChanged; // keyboard focus stays in the top screen (AT19)
+        bool harness = LaunchArgs.Any && !LaunchArgs.PlayerStart; // --menu: a QA run that starts like a player's
         UiSettings.Load();
-        UiSettings.Apply(keepTextTiming: false, applyWindow: !harness);
+        UiSettings.Apply(keepTextTiming: false, applyWindow: !LaunchArgs.Any);
 
         // Unscaled: cutscene frame under the subtitles.
         var cutscene = new CutscenePlayer { Name = "CutscenePlayer" };
@@ -191,7 +192,7 @@ public partial class UiRoot : Control
         }
 
         if (!harness && game.IsReady) Push(mainMenu);
-        if (harness) AddChild(new UiDebug { Name = "UiDebug" });
+        if (LaunchArgs.Any) AddChild(new UiDebug { Name = "UiDebug" });
     }
 
     private T AddModal<T>(T screen) where T : ModalScreen
@@ -388,7 +389,7 @@ public partial class UiRoot : Control
         endingPending = IsFinalePlaying(game);
         SyncMode();
         // A brand-new game: the first-start tips (once).
-        if (game.State.Done.Length == 0 && !UiSettings.TipsShown && !LaunchArgs.Any) tips.Start();
+        if (game.State.Done.Length == 0 && !UiSettings.TipsShown && (!LaunchArgs.Any || LaunchArgs.PlayerStart)) tips.Start();
     }
 
     private static bool IsFinalePlaying(GameRuntime game)
@@ -483,6 +484,65 @@ public partial class UiRoot : Control
         if (master < 0) return;
         bool mute = what == (int)NotificationApplicationFocusOut && UiSettings.MuteUnfocused;
         AudioServer.SetBusMute(master, mute || UiSettings.Volume[0] <= 0 || LastBell.Game.Diagnostics.QaWindow.Silent);
+    }
+
+    // ------------------------------------------------------------------ keyboard focus scope (AT19)
+
+    /// <summary>
+    /// The screen that owns the keyboard focus: the top UI-only modal, else the open puzzle, pause, journal or map
+    /// screen; null in the world (the bag and the topic menu keep Godot's own focus chain).
+    /// </summary>
+    private Control? FocusScope => TopModal is { } top ? top
+        : puzzle.Visible ? puzzle : pause.Visible ? pause : journal.Visible ? journal : map.Visible ? map : null;
+
+    /// <summary>
+    /// Tab / Shift+Tab inside a screen: Godot's focus chain runs through the whole tree, so from the last control of a
+    /// modal (hints over a puzzle, save slots over the pause menu) Tab went on into the screen underneath, and Enter
+    /// then pressed a button nobody could see (AT19 keyboard pass, 2026-10-06). The chain now wraps inside
+    /// <see cref="FocusScope"/>; with no focus at all the first (Shift+Tab: last) control of the scope is taken.
+    /// </summary>
+    public override void _Input(InputEvent e)
+    {
+        if (e is not InputEventKey { Pressed: true } key) return;
+        bool back = key.IsAction("ui_focus_prev");
+        if (!back && !key.IsAction("ui_focus_next")) return;
+        if (FocusScope is not { } scope) return;
+        var owner = GetViewport().GuiGetFocusOwner();
+        if (owner is not null && scope.IsAncestorOf(owner))
+        {
+            var next = back ? owner.FindPrevValidFocus() : owner.FindNextValidFocus();
+            if (next is not null && next != owner && scope.IsAncestorOf(next)) return; // Godot's own step stays inside
+        }
+        var edge = EdgeFocusable(scope, last: back);
+        if (edge is null) return;
+        edge.GrabFocus();
+        GetViewport().SetInputAsHandled();
+    }
+
+    /// <summary>Arrow keys or a deferred focus call that land outside the top screen are brought back into it.</summary>
+    private void OnGuiFocusChanged(Control control)
+    {
+        if (FocusScope is not { } scope || scope.IsAncestorOf(control)) return;
+        Callable.From(() =>
+        {
+            if (FocusScope is not { } now || GetViewport().GuiGetFocusOwner() is not { } owner || now.IsAncestorOf(owner)) return;
+            EdgeFocusable(now, last: false)?.GrabFocus();
+        }).CallDeferred();
+    }
+
+    /// <summary>The first (or last) control under a node that Tab can reach: visible, focus mode All, not a disabled button.</summary>
+    private static Control? EdgeFocusable(Node root, bool last)
+    {
+        var children = root.GetChildren().ToList();
+        if (last) children.Reverse();
+        foreach (var child in children)
+        {
+            if (child is not Control { Visible: true } c) continue;
+            if (!last && c.FocusMode == FocusModeEnum.All && c is not BaseButton { Disabled: true }) return c;
+            if (EdgeFocusable(c, last) is { } inner) return inner;
+            if (last && c.FocusMode == FocusModeEnum.All && c is not BaseButton { Disabled: true }) return c;
+        }
+        return null;
     }
 
     /// <summary>Keys while a UI-only modal is open: Esc closes the top one, everything else is kept from the world.</summary>

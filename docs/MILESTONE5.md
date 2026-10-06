@@ -9,11 +9,131 @@ Owner-facing summary (how to play, sizes, credits, spend, what is left): `docs/R
 
 ## Status
 
-**Milestone 5: done, with known issues.** Every automated suite is green on the final code and the release build.
-29 of the 30 acceptance rows pass (23 plain, 6 with a note). AT19 (keyboard only) is partly verified and stays
-open.
-The open items are listed in `docs/RELEASE.md` "Known issues" and in `design-doc/ISSUES.md`
-(PT-F08 ... PT-S28, M5-01 ... M5-05).
+**Milestone 5: done. All 30 acceptance rows pass** (24 plain, 6 with a note) after the verification and release pass
+of 2026-10-06 (next section): every suite green on the final code, AT19 closed by a whole-game keyboard-only route and
+an OS-level keyboard run, the fixed playtest items spot-checked in a real window, the release rebuilt and smoke-tested.
+What still needs the product owner: docs/DECISIONS.md "Status 2026-10-06"; the remaining known issues: docs/RELEASE.md.
+
+The sections after the next one are the record of the first milestone-5 run (2026-10-05).
+
+## Verification and release pass (2026-10-06)
+
+After the three fix agents (playtest fixes, staging pass, art fixes) and the later owner-requested changes (Jasná in
+winter, Ivanka shown as 1962, 2020 text rewrite v2, bus S07-S51 and map regions). Logs: `build/m5/verify/logs/`,
+coverage: `build/m5/verify/coverage_{A,B,C7,K}.json`, tables: `build/m5/verify/coverage_tables.md`.
+
+### Suites (final code)
+
+| check | result |
+|---|---|
+| `dotnet test src/LastBell.sln` | 361 passed, 3 skipped (UI-only AT08 / AT19 / AT20, covered in the engine), 0 failed |
+| `python tools/check_strings.py` | OK: 3359 keys, 0 errors, 0 warnings |
+| `python tools/check_blocking.py` | 68 rooms, 0 errors, 9 warnings (the accepted M3-02 distances; two new ones of the same kind, S12.to_S13 and S41.to_S42) |
+| `python tools/check_rewrite.py --self-test` / `--overlay-only` | OK (44 names, 20 places, 65 terms, 118 protected key rules, 21 verbatim rules; 261 overlay texts) |
+| `check_rewrite.py` on the current passes (C1, ivanka1962, ivanka1962_C1, ivanka1962_C3, jasna_winter, m5_verify) | 6 x OK. The older drafts C2 / C3 / C4 / consistency.csv now report the 1962 numbers as "missing": every differing key was rewritten later on purpose (ISSUES M5-07), no text is lost |
+| `extract_strings.py --dry-run` | OK, 0 override problems, 0 internal ids in player text |
+| `--acceptance m1` headless, time-scale 4 | 34 PASS, 0 failures |
+| `--acceptance m2` headless, time-scale 3 | 45 PASS, 0 failures (new: `AT19_tab_stays_in_top_screen`, ISSUES M5-06) |
+| Route A `--play-all --save-load-each` (time-scale 6) | 127/127 by real input, save + load + compare after all 127; 68 rooms, 9 cutscenes, 5 puzzles, 9 variant layers, 27 causal effects, era tour with the inventory unchanged, cable cars after F09, album replay 9 shots; 0 blockers, 0 failures |
+| Route B `--play-all --interleave early --all-lines` (time-scale 8) | 127/127, 1007 lines shown (990 distinct ids), 471 look texts, epilogue 9 + 9; 0 blockers, 0 failures |
+| Route C7 `--play-all --interleave seed:7 --skip-cutscenes` (time-scale 8) | 127/127, every cutscene skipped with Esc, same final state; 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` (time-scale 8, AT19) | 127/127 by keys only, see below; 0 blockers, 0 failures |
+
+Regressions found and fixed in this pass: the v2 2020 rewrite had made the S05 hasp look wrong after G06 again
+(PT-F05, text fixed back); the Tab focus escaped from a modal into the screen under it (M5-06, fixed in UiRoot). The
+S34 look now matches the painting (PT-S19). The first route run after the fixes (all four green) was repeated on the
+final code after the UiRoot change.
+
+### AT19: the whole game with the keyboard only
+
+1. **Engine route K** (`--play-all --keyboard`, new `scripts/Diagnostics/KeyboardDriver.cs`): the walkthrough's 94 main
+   actions, the ending, the 33 side actions and the postgame checks, with no mouse event at all. World targets and
+   exits: Tab / Shift+Tab, whichever way is shorter, then Enter (Backspace = look). GUI: Tab to the bag slot, topic,
+   puzzle control, era button, map card, journal tab or dialog button, then Enter. Epilogue shots: Enter. Once per
+   era (S03 2020, S12 1995, S36 1962, S64 1982, S42 2035) a shortcut tour: Space held (markers on, off on release),
+   I (bag opens with a slot focused), J (journal, Tab reaches it, J closes), H (hints, Esc closes), Esc (pause, Esc
+   closes), M (map) with a fast travel by keys (region card, room card). Result: 660 steps, 1846 key presses for
+   targets and controls, mean 2.8, maximum 8, no step above 8 ("awkward"), 0 blockers, 0 failures. By kind: world
+   targets 472 steps (mean 2.7, max 6), bag slots 85 (mean 4.0, max 7), topics 32 (always 1: the story topic has the
+   focus), era buttons 23 (max 3), map 10 (max 8), puzzles P01 max 6, P02 2, P03 3, P04 7, P05 7.
+2. **OS level** (`tools/keyboard_os_check.py`, editor runtime = debug build, hidden unfocused window): real Windows
+   WM_KEYDOWN / WM_KEYUP messages only, the next key decided from what the game shows (`--menu --watch` prints the
+   focus and state, sends nothing). From the main menu of a fresh profile: Nová hra, first-start tips, intro, Space
+   held, G01-G11 with every item picked in the bag by keys, J / H / M (fast travel S06 -> S05), save from the pause
+   menu, G07, load, G07 again, G08-G10, P01 with one wrong set first (nothing consumed) then the right one, CS01,
+   arrival in S11 1995, quit from the pause menu: **27/27 steps, 263 key presses**
+   (`build/m5/verify/logs/os_keys_editor.txt`). The topic menu came back after each topic (PT-S17) and Esc left it.
+   The player's saves and settings were moved aside and restored.
+3. **Found:** the first OS-level run stopped in P01: with the hints opened from the puzzle's "Nápoveda" button, Tab ran
+   on from the hint screen into the puzzle underneath and Enter pressed its hidden buttons (the same with the save
+   slots over the pause menu). Fixed: UiRoot keeps the focus in the top screen (ISSUES M5-06), checked by the new m2
+   row and by the second OS-level run. **Awkward, not blocking:** a full bag needs up to 7 presses to reach an item and
+   the map's room graph up to 8 (the OS script went forward only and needed 11 for S05; Shift+Tab is shorter).
+   Subtitles are always on; no puzzle depends on colour or sound (unchanged from milestone 5).
+
+### Fixed ISSUES items, spot-checked in a real 1920x1080 window
+
+Hidden QA window (`tools/qa_godot.py`), state by `--replay` / `--act` through the input path, one screenshot each in
+`build/screens/fixes/verify/` (looked at one by one). Text-only fixes were checked in the generated tables.
+
+| item | what the screenshot / check shows | file |
+|---|---|---|
+| PT-F01 | S14: Adam talks to Mira from the front left of the desk; S19: right of Emil's folding table, the table free; S17: right of the rhythm panel | `PT-F01_S14_talk_mira.png`, `PT-F01_S19_talk_emil.png`, `PT-F01_S17_rhythm.png` |
+| PT-F02 | item selected: the chip "Vybraný predmet: Servisná brašna" alone, no key hint beside it | `PT-F02_chip_no_hint.png` |
+| PT-F03 | map region captions with accents: PETRŽALKA, STARÉ MESTO, DÚBRAVKA | `PT-F03_map_captions.png` |
+| PT-F04 | S30 dial: lining 0 digits, the háček of "Číslica" whole | `PT-F04_dial_digits.png` |
+| PT-F05 / M5-02 | S05 after G06: the padlock is gone, the middle of the door is the exit "Predsieň záhradnej dielne"; the hasp look was regressed by the v2 rewrite and is fixed again (ISSUES PT-F05) | `PT-F05_M5-02_door_hover.png` |
+| PT-F06, PT-S07, PT-S09, PT-S12, PT-S14 | texts in the tables: one S10 sign text (NEPREPISOVAŤ ORIGINÁL), S68 door / S50 switch looks, E06 without Oto, S55 niche needs tools, "Nezačatá" | world.csv / ui.csv |
+| PT-F07 | bag with the selected item: "Klikni ním na niečo v scéne, alebo vyber druhý predmet a spoj ich." | `PT-F07_bag_selected_hint.png` |
+| PT-F08 / PT-S26 | hints after B07 start at the step that is next, not "Ukáž kazetu Jurovi" | `PT-F08_hint_after_B07.png` |
+| PT-F09 / PT-S16 | after G06 no item stays selected (no chip), log `selected=-` | `PT-F09_no_chip_after_G06.png` |
+| PT-F10 | hover on the painted S11 clock: "Hodiny časového uzla – výber obdobia" | `PT-F10_S11_clock_hover.png` |
+| PT-F11 / PT-S03 | S03: Ela's topic panel on the left, both speakers visible on the right | `PT-F11_S03_topic_left.png` |
+| PT-F12 | bag caption "Prenosný chronometer ZVON" whole | `PT-F12_bag_captions.png` |
+| PT-F13 | Esc during the (now one-line) intro skips that line and does not open the pause menu (log: mode World after Esc) | `PT-F13_esc_one_line.png` |
+| PT-S01 | journal after Q9C: current goal "Človek, ktorý si to zapamätá" with its own next step, not the side-step sentence | `PT-S01_journal_after_Q9C.png` |
+| PT-S02 | after D06 nothing archived stays selected (log) | `PT-S02_after_D06.png` |
+| PT-S04 | S52 notice marker on the left leaf, separate from the door arrow; S58 marker on the emblem | `PT-S04_S52_markers.png`, `PT-S04_S58_markers.png` |
+| PT-S05 | S54 Jana's marker on the laptop, inside her rect | `PT-S05_S54_jana_marker.png` |
+| PT-S06 / M5-04 / STAGE-01 | Adam beside what he uses: S54 log, S30 counter (3-2-6 visible), S49 panel, S05 tray, S09 case, S10 cradle | `PT-S06_*.png`, `M5-04_*.png` |
+| PT-S08, PT-S15 | album scene titles in ui.csv; map era tabs 1962, 1982, 1995, 2020, 2035 | `PT-S15_map_tabs.png` |
+| PT-S10 | S61: tree guard and closed board visible in the same visit as E08 / E09 | `PT-S10_S61_same_visit.png` |
+| PT-S13 | S68 cabin interior in winter; the passing cabin was not in these three frames (it passes periodically; earlier evidence `verify/S68_opposite_cabin_on_rope.png`) | `PT-S13_S68_cabin_0*.png` |
+| PT-S17 | the topic menu comes back after a topic: seen in the OS-level run (focus on "Ako to zvládate?" after G02, Esc leaves) | `build/m5/verify/logs/os_keys_editor.txt` |
+| PT-S18 | S40 I17: Mira (1962) stands in the attic and speaks | `PT-S18_S40_guest_mira_00.png` |
+| PT-S20 | December 1982 exteriors: Adam in the charcoal coat and mustard scarf (S58, S61) | `PT-S04_S58_markers.png`, `PT-S10_S61_same_visit.png` |
+| PT-S21 | CS07_1 / CS07_2 / CS06 frames: ○ + □ △ on the plate; the ORIGIN folder's symbol is a foreshortened + (checked at 5x zoom) | assets/cutscenes |
+| PT-S22 / M5-05 | toasts appear only after G02's lines (frame 0: line, no toast; frame 3: toasts) | `PT-S22_M5-05_toast_waits_0*.png` |
+| PT-S23 | hint modal open: no world hover label on top | `PT-S23_hover_hidden_hint.png` |
+| PT-S24 | S60 Q9C: Adam shows the drawing from a child's distance | `PT-S24_S60_gap.png` |
+| PT-S27 | S43 wall lettering RECEPCIA | bg_natural/S43.webp |
+| PT-S28 | S53: Adam wears the mask indoors | `PT-S28_S53_mask.png` |
+| M5-01 | the CS07 album replay works in all route runs | route logs |
+| M5-03 | main menu "Verzia 0.1.0" | `M5-03_menu_version.png` |
+
+### Release build and smoke test
+
+`build.bat` (release) on 2026-10-06 07:36: exit 0, C# build 0 warnings / 0 errors, `release_assets.py` filters OK,
+one engine message `ERR_CANT_OPEN` right after the .NET publish (seen in earlier builds, harmless: the exe carries
+the icon and version info 0.1.0.0 "Posledny zvonec", so no second export pass was needed); `build/windows/` was clean (no old window running, the
+old `*.dll~RF*.TMP` leftovers are gone). `LastBell.exe` 109.5 MB, `LastBell.pck` 186.6 MB (2511 files,
+`build/pck_contents_release.txt`), `data_LastBell_windows_x86_64/` 81.3 MB; folder 377.4 MB. Copied to
+`build/m5/ship/PoslednyZvonec/` and zipped: **`build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`, 254.2 MB**
+(zip test OK, 190 files). Log: `build/m5/verify/logs/build_release.txt`.
+
+Smoke test of the shipped exe (`build/m5/verify/release_smoke.py`, hidden window, real Windows key messages, the
+player's saves and settings moved aside and restored): started with `-- --room S44 --replay 94 --quit-after 1`, it
+was still running at the main menu after 15 s (the QA arguments are ignored in a release build, BUILD-03); Tab x5 +
+Enter on "Nová hra", Esc on the first-start tips, then Tab + Enter in S01: the autosave says room S01, 2020, done
+[G01], inventory [PHONE, TOOLS]. The hidden window cannot be captured by PrintWindow, so this run has no
+screenshots (the menu with "Verzia 0.1.0" is `build/screens/fixes/verify/M5-03_menu_version.png`). The process was
+stopped by the script that started it.
+
+Note: other agents kept working in the repository during this pass (S03 / S17 / S55 / S61 repaints, S03 texts and the
+C4 writing context, 07:26-07:40). The release snapshot of 07:36 contains their state of S03 and S17 at that time;
+the four route runs above had started before those files changed. `check_strings`, `check_blocking`,
+`check_rewrite --self-test` and `extract_strings --dry-run` were re-run on the tree of the build (all OK). Rebuild
+with `build.bat` (and re-run the routes) once that work is finished.
 
 ## What was run (final code, natural blocking = the default)
 
@@ -97,7 +217,7 @@ acceptance sets; A/B/C7 = the route runs above; "release" = the release exe play
 | AT16 | **passed with note** | m2 AT16 9/9; route C7 skips every cutscene and ends in the same final state. Note: the CSV says seven cutscenes, the game has nine (ISSUES CORE-02) |
 | AT17 | **passed** | route A: save, load and compare after all 127 actions; m2 AT17 (mid CS06/F11 and CS07/F17); release: save/load round trip |
 | AT18 | **passed** | Core AT18; m2 AT18 (corrupt save and unknown item refused with the readable message, open game untouched) |
-| AT19 | **open (partly verified)** | m2 AT19 part (Tab focus + Enter: bag, exit, talk, topic); every mouse-only input has a key (right click = Backspace, Space = HUD eye button, double click is only a shortcut); puzzles do not depend on colour ("Na farbách nezáleží", shapes are named) or sound; subtitles always on. A whole-game keyboard-only playthrough was not done |
+| AT19 | **passed** | 2026-10-06: engine route K, the whole game (127 actions, ending, postgame) by key events only, 0 blockers, max 8 presses per step; the prologue from the main menu by real Windows key messages, 27/27 steps; Tab focus kept inside the top screen (M5-06, m2 `AT19_tab_stays_in_top_screen`); puzzles do not depend on colour or sound; subtitles always on (section "AT19" above) |
 | AT20 | **passed with note** | m2 AT20 at 1280x720 and 1920x1080 windows and headless (every target has a clickable point not under the HUD); Core AT20 minimum hit area; both playtests at 1280x720 found nothing unreadable. Note: hover label and toasts can sit over open GUI (PT-S22, PT-S23) |
 | AT21 | **passed** | Core AT21; m2 AT21 (S15 / S43 / S47 change only after Q9C / Q4C / Q5C, on re-entry); 27 causal effects seen in every route |
 | AT22 | **passed** | Core AT22; m2 AT22 (triple click on the bag, click spam on the last line: one commit, no fall-through) |
@@ -110,15 +230,17 @@ acceptance sets; A/B/C7 = the route runs above; "release" = the release exe play
 | AT29 | **passed** | Core AT29; m2 AT29 (no edge or fast travel past J02-J04, return ticket kept) |
 | AT30 | **passed** | Core AT30; postgame `cable_cars_after_F09 = true` in A, B, C7 |
 
-Summary: **29 of 30 passed** (23 plain, 6 with a note), **1 open** (AT19, partly verified).
+Summary (updated 2026-10-06): **30 of 30 passed** (24 plain, 6 with a note).
 
 | result | rows | count |
 |---|---|---|
-| passed | AT01-04, AT07-15, AT17, AT18, AT21, AT22, AT25-30 | 23 |
+| passed | AT01-04, AT07-15, AT17-19, AT21, AT22, AT25-30 | 24 |
 | passed with note | AT05, AT06, AT16, AT20, AT23, AT24 | 6 |
-| open | AT19 | 1 |
 
 ## Found in this pass
+
+2026-10-06: M5-02 to M5-05 are fixed since (ISSUES, spot checks in the verification section); M5-06 to M5-08 are
+the findings of the verification pass. The locked DLL copies are gone with the rebuild.
 
 - M5-01 (fixed, harness only): the CS07 album-replay lookup used the old button text (see above).
 - M5-02 (open, presentation data): S05 after G06 the upper two fifths of the workshop door (the former padlock rect

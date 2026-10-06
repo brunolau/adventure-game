@@ -315,71 +315,58 @@ Screenshots: build/screens/selection/.
 
 ---
 
-## Status 2026-10-05 (milestone 5): what still waits for you
+## Status 2026-10-06 (verification and release pass): what still waits for you
 
-The game is complete and tested (docs/MILESTONE5.md; owner summary and download in docs/RELEASE.md). Items 1-8 and
-the control changes are answered and built. **Items 9-24 above have no answer yet.** Below is what we did meanwhile,
-plus new questions from the playtests, the location feedback and the text rewrite. Same answer format as above
-("9 ok, 13 ok, N1 a ..."). **Bold** = our recommendation.
+The game is complete, tested and rebuilt (docs/MILESTONE5.md; owner summary and download in docs/RELEASE.md). All 30
+handoff acceptance tests pass, AT19 (the whole game with the keyboard only) included. Answered or done since the last
+status, so no longer asked: items 1-8, the control changes, N2 a (the selection clears after a successful use), N3
+(hints follow the step), N6 (imgur permission, applied as recorded in art/feedback), N11 (Mira walks into the attic),
+N12 (CS07 symbols, Adam's winter coat, RECEPCIA), N13 (conversations stay open, Esc once = one line, the painted
+stop clock is the time node), the S34 part of N10, and the Jasná-in-winter and Ivanka-1962 decisions.
+**Only the items below still need you.** Same answer format as before ("9 ok, N1 1.0.0, N9 ok ..."). **Bold** = our
+recommendation.
 
 ### Needed before a public release
-- **9. Art licence:** still open. The credits list every source, but nothing yet says the game's art is
-  CC BY-SA 4.0, and the two carl_eric photos (CC BY-NC-SA 2.0, rooms S17, S18, S55, S61, S62, S65, S66 and frames
-  CS02_2, CS08_1, CS08_2) make those parts non-commercial. **Confirm a**; we then add the licence line from
-  RELEASE.md to the credits and the download page.
+- **9. Art licence:** the credits list every source, but nothing yet says the game's art is CC BY-SA 4.0, and the two
+  carl_eric photos (CC BY-NC-SA 2.0; rooms S17, S18, S55, S61, S62, S65, S66 and frames CS02_2, CS08_1, CS08_2) make
+  those parts non-commercial. **Confirm a**; we then add the licence line from RELEASE.md to the credits and the
+  download page.
 - **10. QA harness in release builds:** built as option **c** (debug and QA builds only; the release exe ignores
-  `--` arguments, verified again in milestone 5). The QA export `build.bat debug` keeps exports testable.
-  Please confirm c instead of b.
-- **N1. Version number:** the menu shows "Verzia 2.0.0" (story data version), the exe says 0.1.0.0 (ISSUES M5-03).
-  **Show the release number (0.1.0, or 1.0.0 for the first public release) in the menu.**
-- **N2. Item stays selected after a successful use** (PT-F09 / PT-S16; the most confusing thing in both playtests;
-  exit clicks do nothing while an item is selected). a) clear the selection after a committed item action;
-  b) let an exit click drop the selection and walk; c) keep. **a + b** (a small Core rule change, tested by the
-  existing acceptance runs).
-- **N3. Hints per step, not per quest** (PT-F08 / PT-S26): **skip hint lines whose step is already done** (Core
-  hint selection; no text change).
+  `--` arguments, verified again on the 2026-10-06 build). Please confirm c.
+- **N1. Release number:** the menu and the exe now both say 0.1.0 (one source, project.godot). **Keep 0.1.0** for
+  test builds and call the first public release **1.0.0**, or tell us another number.
+- **N2 b. Exit click while an item is deliberately kept selected:** today it does nothing (the handoff's no-op
+  rule for invalid item uses). b) drop the selection and walk; c) keep. **b** (a small Core rule change).
 - **N4. Signing and ids:** a Windows code-signing certificate (removes the SmartScreen warning; optional for a free
   game), the final bundle / package id (placeholder `eu.lastbell.poslednyzvonec`), and for the ports an Apple
   Developer account (USD 99/year) and an Android release keystore (docs/BUILD.md).
 
-### Places (owner location feedback 2026-10-05, still open)
-- **N5. Entry hall of ZŠ Sokolíkova (S13 1995, S53 2020, S59 1982):** you said the real hall looked different from the
-  type references, "details pending". The rooms are painted from type references until you describe it (layout,
-  where the stairs / porter's window / doors are, floor and wall colours, what hung on the walls). Cost to repaint
-  the L_HALL family afterwards: about USD 0.45-0.90.
-- **N6. The imgur photos** (`imgur_wrRxN8x` S07, `imgur_2tyAMxf` S08, `imgur_d7UwYm6` S41): are they your own photos?
-  If yes (and you allow it), we may use them as real image inputs and credit you. If not (Street View), they stay
-  look-only, as now. Two of them are Street View screenshots and can never be inputs.
+### Places (owner location feedback, still open)
+- **N5. Entry hall of ZŠ Sokolíkova (S13 1995, S53 2020, S59 1982):** painted from type references until you
+  describe the real hall (layout, stairs, porter's window, doors, floor and wall colours). Repaint of the L_HALL
+  family afterwards: about USD 0.45-0.90.
 - **N7. S57 data:** decision 3b (bus, tram line under construction) is in the game as a presentation override;
-  game.json `art_brief` / `ambience` of S57 still say tram (handoff owner, ART-DUBEXT-01).
+  game.json `art_brief` / `ambience` of S57 still say tram (handoff owner, ART-DUBEXT-01). The same applies to the
+  displayed dates of the two later decisions (game.json still says 2035-06-06 and 1960; ISSUES ART-JASNA-WINTER,
+  TEXT-IVANKA-1962): update game.json when convenient, nothing in play depends on it.
 
-### Texts (docs/writing/SAMPLES.md "Open points for you")
-- **N8. Renames made in the rewrite, please confirm:** "Juro Kazeta" (was Juraj Malík zvaný Juro Kazeta),
-  "Paliho opravovňa" (was Palova), item names "Textilný izolačný návlek", "Adaptér s konektorom bez izolácie",
-  "Mapa uzlov bez fólie", "Priehľadná fólia K-17", "Úplná mapa meracích uzlov", and "Drevená lastovička" (S64,
-  the 1982 swallow is Tóno's wooden model). **ok**.
-- **N9. Tóno's name:** hover labels and topic headers say "Anton Farkaš", every line says Tóno (PT-S25).
+### Texts
+- **N8. Renames made in the rewrite, please confirm:** "Juro Kazeta", "Paliho opravovňa", the item names
+  "Textilný izolačný návlek", "Adaptér s konektorom bez izolácie", "Mapa uzlov bez fólie", "Priehľadná fólia K-17",
+  "Úplná mapa meracích uzlov", and "Drevená lastovička" (S64). **ok**.
+- **N9. Tóno's name** (PT-S25): hover labels and topic headers say "Anton Farkaš", every line says Tóno.
   **"Tóno (Anton Farkaš)"** on first meeting, then "Tóno".
 - **N10. Smaller text questions:** Lea's speaker label (keep "Lea Kormanová (správa z roku 2032)" or **"Lea
-  Kormanová (2032)"**); should the F08 goal name the bridge too (**yes**, it is the only step players miss); two
-  things called "servisná doska" (S63 workbench and the wall board; **rename the workbench "pracovný stôl"**); the
-  map label "Okno školníckej dielne v roku 1982" differs from its room name (**make it equal**); the action label
-  "Dotiahnuť bezpečne položenú kulisu" vs the standing flat in S34 (PT-S19, **reword label + look**).
-
-### Story data and art fixes found in the playtests (handoff owner / small paid edits)
-- **N11.** Mira speaks five lines in the S40 attic but is not in the room (PT-S18): **add MIRA60 to S40 after I09**
-  (game.json) or mark the lines as off-screen voice.
-- **N12.** Paid art fixes, about USD 1.5-2.5 in total: CS07 port frame shows ✕ instead of + (PT-S21, USD 0.15);
-  Adam's winter coat for the 1982 rooms (PT-S20, USD 1-2); "RECEPTION" lettering in S43 (PT-S27, USD 0.15).
-  **Do all three.**
-- **N13.** Design: the conversation closes after every topic (PT-S17; **return to the topic list until "Ukončiť
-  rozhovor"**); Esc skips the whole intro (PT-F13; **first Esc = this line, second = all**); the painted stop clock
-  in S11/S51/S57 is not the time node (PT-F10; **one-time notice that the clock button / T opens the era chooser**).
+  Kormanová (2032)"**); should the F08 goal name the bridge too (**yes**, it is the step players miss); two things
+  called "Servisná doska" (S63 workbench and the wall board; **rename the workbench "Pracovný stôl"**); the map
+  label "Okno školníckej dielne v roku 1982" differs from its room name (**make it equal**).
+- **N14. First goal in the workshop** (PT-F14): "Oprav kolísku stolového uzla ZVON" appears before anything explains
+  "kolíska"; the objective is strict game.json text. **Add one S10 first-entry line that points at the cradle**
+  (text overlay, no story change).
 
 ### Items 11-24
-Unchanged since the list above. Item 13 is mostly done: the S04 basket (crate empty after G03) and the S06 photo
-(faded after G11, half after C04, restored after F17) have their after states; only the S09 case stays closed
-(the chronometer is inside, so nothing visible changes). Items 14-24 are cosmetic and can be answered any time.
+Unchanged and cosmetic; they can be answered any time. Item 13 is done except the S09 case (it stays closed; the
+chronometer is inside, so nothing visible changes).
 
 ## Orchestrator decisions after the playtests (2026-10-05) — reversible, within the owner's rules
 

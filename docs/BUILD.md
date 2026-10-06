@@ -1,6 +1,6 @@
 # Building Posledný zvonec (LastBell)
 
-Status 2026-10-05: **Windows x86_64 is built and tested** (the exported exe, not the editor).
+Status 2026-10-06: **Windows x86_64 is built and tested** (the exported exe, not the editor).
 macOS, Android (arm64) and iOS have prepared export presets but are **not built**. See the per-platform
 sections below for what each one still needs.
 
@@ -11,10 +11,11 @@ sections below for what each one still needs.
 | Android arm64 | `Android arm64 (not built)` | a debug APK exported once (176 MB, debug-signed, before the size work) but **never run on a device**; C# on Android is experimental (net9.0) |
 | iOS arm64 | `iOS (not built)` | preset only; needs a Mac with Xcode (C# on iOS is experimental, NativeAOT) |
 
-Milestone 5 (2026-10-05, docs/MILESTONE5.md): `build.bat` re-run on the final code (exe 109.5 MB, PCK 176.2 MB, data 81.0 MB);
-the release exe was played by real input from a new game through the prologue with a save/load round trip, and refused
-the harness flags. The clean distributable (without the `*.dll~RF*.TMP` leftovers of a still-running old window) is
-`build/m5/ship/PoslednyZvonec/` and `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (244.5 MB).
+Milestone 5 (2026-10-05, docs/MILESTONE5.md): `build.bat` re-run on the final code and the release exe played by real
+input through the prologue. Verification and release pass (2026-10-06): rebuilt (exe 109.5 MB, PCK 186.6 MB with 2511
+files, data 81.3 MB, folder 377.4 MB), smoke-tested by real key presses (QA arguments ignored, new game, first action,
+autosave); distributable `build/m5/ship/PoslednyZvonec/` and `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`
+(254.2 MB).
 
 ## Windows (build now)
 
