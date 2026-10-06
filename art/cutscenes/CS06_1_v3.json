@@ -1,0 +1,40 @@
+{
+  "shot": "CS06_1",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "usd": 0,
+  "seed": null,
+  "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: place reference: the real Rotunda and the cable-car stations on the Chopok summit plateau, the view from our pavilion's window Image 2: place reference: the real Rotunda close up (its shape and materials only; do not paint its lettering) Image 3: character reference: Viktor, 50 Image 4: prop reference: the handheld audio reader: a small cream-and-wood device with a teal screen showing a waveform, teal buttons and a round speaker grille Image 5: a finished interior painting from our game; use it only for the painting technique, brushwork, palette and line quality, not for its content\n\nShot: A fictional, modest interior of a temporary exhibition pavilion on the Chopok summit in June 2035: light wooden wall panels, a plain work table, a wall console with exactly four port slots in a row (each marked only by a small engraved symbol: circle, cross, square, triangle; no text labels) and a large switch, a small dark screen, a small amber emergency lamp. Through a wide window, about fifty metres away across the bare stony summit plateau, the real Rotunda building as in the summit photos: a squat round tower with a stone-clad base, a ring of tall dark glass windows under a bright red band and a flat cone roof, joined to long low dark-blue angular cable-car station buildings; low rounded Tatra ridges behind. It is a modern building, not a chapel or a castle; paint no sculpture on its roof and no lettering on it. Not science fiction: ordinary near-future technology. Close shot: Viktor sits at the table, leaning forward on his forearms, listening to the round speaker of the handheld audio reader (image 4) lying in front of him. His face is restrained, eyes wet but composed; he has not slept. A full glass of water stands untouched beside the reader. Behind him through the window the Rotunda on the ridge. No hospital, no illness, nothing dramatic - only a man listening to a voice.\n\nCharacters in this frame (briefs of the approved designs): Viktor, a 50-year-old Slovak founder of the Atlas archive in June 2035: controlled and convinced, grieving underneath; he has not slept. Short dark hair greying at the temples, slightly unkempt, a day of dark stubble, tired eyes with faint shadows under them, a serious composed face, lean build. He wears a plain white cotton dress shirt, collar open with no tie, sleeves rolled up to the elbows, slightly creased, tucked into dark charcoal trousers with a black belt, and black leather shoes; a plain steel wristwatch. His arms hang at his sides. An ordinary man in ordinary clothes: not a villain, not a caricature, no futuristic uniform, no lab coat, no face mask.\n\nLight and time: Cool early-morning mountain light from the window, warm small desk lamp on his hands and the reader.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a cinematic 16:9 film frame with a clear focal point and depth (foreground, subject, background), painted full-bleed to all four edges (never paint black letterbox bars or a border: the game adds its own bars later and they cover the top tenth and the bottom fifth of the image, with the subtitles), so keep faces, hands and the key object inside the middle band. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "references": [
+    "art/source/rooms/S48/chopok-summit_plateau-rotunda-from-east_2016-09.jpg",
+    "art/source/rooms/S48/rotunda-chopok_exterior_2016-09.jpg",
+    "art/cutscenes/refs/char_VIKTOR.png",
+    "art/cutscenes/refs/item_READER.png",
+    "src/game/assets/bg/S10.webp"
+  ],
+  "at": "2026-10-05T22:47:43",
+  "retouch_of": "CS06_1_v2.png",
+  "retouch_note": "port symbol X turned into + (room S49 / journal: circle, plus, square, triangle; ISSUES PT-S21): the X's own strokes rotated upright on an in-painted plate",
+  "retouch_symbols": [
+    {
+      "box": [
+        222,
+        580,
+        322,
+        682
+      ],
+      "centre": [
+        276.6,
+        636.2
+      ],
+      "angle": 42.0,
+      "scale": 1.0,
+      "radius": 66.1
+    }
+  ],
+  "exported": {
+    "path": "src/game/assets/cutscenes/CS06_1.webp",
+    "crop": null,
+    "at": "2026-10-05T22:47:44"
+  }
+}

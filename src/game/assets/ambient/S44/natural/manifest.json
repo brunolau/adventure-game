@@ -1,7 +1,7 @@
 {
   "room": "S44",
   "source": "src/game/assets/bg_natural/S44.webp",
-  "bg_sha1": "fce5a954b481f66a574ef6deb76decdc052a65ef",
+  "bg_sha1": "b91bbb6425a7c4238e0ac1c9c211a7857ab6ec96",
   "items": {
     "curtain_left": {
       "kind": "cutout",
@@ -25,17 +25,6 @@
         464
       ]
     },
-    "window_trees": {
-      "kind": "cutout",
-      "pos": [
-        43,
-        288
-      ],
-      "size": [
-        379,
-        419
-      ]
-    },
     "window_sky_mask": {
       "kind": "mask",
       "mask_rect": [
@@ -43,6 +32,15 @@
         285,
         365,
         210
+      ]
+    },
+    "window_glass_mask": {
+      "kind": "mask",
+      "mask_rect": [
+        100,
+        280,
+        320,
+        420
       ]
     }
   }

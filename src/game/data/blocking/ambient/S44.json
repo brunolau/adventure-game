@@ -1,12 +1,13 @@
 {
  "room": "S44",
- "notes": "Natural S44 (bg_natural/S44.webp): the quiet exhibition salon. The sheer curtains move slightly in the draught, the spruces and slopes outside the windows sway in the wind, clouds drift in the window sky, dust motes float in the daylight, the wall screen's mountain-road video flickers softly. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S44 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S44.webp): the salon; the winter view behind the big window with drifting clouds (sky mask) and fine snow dust (glass mask), draught sway of both sheer curtains, dust motes in the daylight, a soft flicker of the wall screen video. Winter life (art/tools/winter_ambient.py, w_* layers): skiers on the slope behind the window, a light flurry outside.",
  "layers": [
   {
    "id": "window_clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -25,16 +26,6 @@
     430
    ],
    "mask": "S44/natural/window_sky_mask.webp"
-  },
-  {
-   "id": "window_trees",
-   "type": "sway",
-   "texture": "S44/natural/window_trees.webp",
-   "anchor": 1.0,
-   "amp_px": 1.4,
-   "freq": 0.27,
-   "wavelength_px": 90,
-   "flutter_px": 0.5
   },
   {
    "id": "curtain_left",
@@ -97,6 +88,164 @@
    "min": 0.0,
    "max": 0.14,
    "period_s": 0.9
+  },
+  {
+   "id": "snow_dust_window",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    100,
+    280,
+    320,
+    420
+   ],
+   "count": 16,
+   "size": [
+    1.6,
+    3.6
+   ],
+   "speed_y": [
+    3,
+    9
+   ],
+   "speed_x": [
+    -5,
+    5
+   ],
+   "wind": 5,
+   "twinkle": 0.9,
+   "alpha_range": [
+    0.3,
+    0.85
+   ],
+   "color": "#ffffff",
+   "lifetime": [
+    7,
+    13
+   ],
+   "mask": "S44/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_skier_a",
+   "type": "tween_path",
+   "texture": "S44/winter/skier_red.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     372,
+     425
+    ],
+    [
+     395,
+     445
+    ],
+    [
+     410,
+     462
+    ],
+    [
+     400,
+     480
+    ],
+    [
+     388,
+     500
+    ]
+   ],
+   "speed_px_s": 6,
+   "scale": [
+    0.15,
+    0.17
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    10,
+    18
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "fade_px": 6,
+   "mask": "S44/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_skier_b",
+   "type": "tween_path",
+   "texture": "S44/winter/skier_teal.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     300,
+     440
+    ],
+    [
+     282,
+     452
+    ],
+    [
+     270,
+     464
+    ]
+   ],
+   "speed_px_s": 5,
+   "scale": [
+    0.15,
+    0.16
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    14,
+    24
+   ],
+   "start_s": [
+    6,
+    10
+   ],
+   "fade_px": 6,
+   "mask": "S44/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_flurry_window",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    90,
+    260,
+    340,
+    20
+   ],
+   "count": 14,
+   "size": [
+    2.2,
+    4.4
+   ],
+   "speed_y": [
+    22,
+    40
+   ],
+   "speed_x": [
+    -8,
+    8
+   ],
+   "wind": 10,
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "lifetime": [
+    12,
+    20
+   ],
+   "mask": "S44/natural/window_glass_mask.webp"
   }
  ]
 }

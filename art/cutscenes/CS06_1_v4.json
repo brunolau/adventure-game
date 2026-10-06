@@ -1,0 +1,50 @@
+{
+  "target": "CS06_1",
+  "version": 4,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 585359251,
+  "usd": 0.15,
+  "scope": "cutscenes/winter/CS06_1/",
+  "spend_log_asset": "cutscenes/winter/CS06_1/CS06_1_v4_winter",
+  "started": "2026-10-06T01:06:54",
+  "base": "art/cutscenes/CS06_1_summer.webp (summer, model geometry)",
+  "prompt_file": "art/prompts/winter/CS06_1.txt",
+  "config_file": "art/prompts/winter/CS06_1.json",
+  "prompt": "You receive 1 image. Image 1 is a finished cutscene frame of our point-and-click adventure game: the Atlas chronochamber on Chopok (Viktor listens to the reader at the table, the Rotunda through the window), painted in summer.  Edit image 1 into the SAME SCENE on 6 February 2035, a clear cold day in deep winter: keep the exact framing, camera, composition, every person (face, hair, pose, hands, expression), every object and every piece of lettering exactly as in image 1, unless the text below says otherwise. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThrough the big window: the Rotunda complex on the Chopok summit keeps exactly its shape, size and position (the stone drum, the glass top, the red ring roofs, the dark station wings on stilts, the steel stairs, the lift pylons), but now in deep winter: thick snow on the red ring roofs and on the flat roofs of the wings, white rime ice on the railings, stilts, stairs and pylons, icicles along the edges; the rocky plateau in front is deep, wind-shaped white snow; the distant ridges are white winter mountains; clear cold winter sky. A thin rim of frost and a few frost flowers in the lower corners of the window pane. Inside the room NOTHING changes: the people, their faces, hands, clothes and poses, the table, the lamp, the glass of water, the devices, the wall plate with its four symbols, the amber lamp, the wood panelling and the warm interior light stay exactly as in image 1.\n\nThe result is image 1 edited, in the same 16:9 framing: no frames, no borders, no letterbox bars, no captions, no watermark, no new text.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/CS06_1_summer.webp (summer, model geometry)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_CS06_1_v4_winter_raw.png",
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {},
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [],
+    "diff_regions": [
+      [
+        735,
+        28,
+        1185,
+        666
+      ]
+    ],
+    "feather": 10,
+    "place": "the Atlas chronochamber on Chopok (Viktor listens to the reader at the table, the Rotunda through the window)"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:07:29",
+  "review": "art/review/natural/winter/CS06_1_v4_winter.jpg"
+}

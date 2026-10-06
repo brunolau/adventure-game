@@ -10,7 +10,8 @@ Debug args after `--`: `--reduced-motion`, `--no-ambient`, `--ambient-report` (p
 ## Actor sprites (`Actors/`)
 
 - `ActorAnimationSet` reads `assets/actors/<ID>/animations.json` (hero format: one sheet per animation,
-  `*_mask2020` variants) or `actor.json` (NPC format: named sheets, frame-name sequences, variants).
+  `*_mask2020` and `*_coat1982` variants; a variant set loads the variant's sheets and the default sheet only of a
+  clip the variant lacks) or `actor.json` (NPC format: named sheets, frame-name sequences, variants).
 - `SpriteActorVisual` (origin = feet = sheet pivot):
   - walk cycle from the movement vector: side cycle (mirrored for left) unless the motion is mostly vertical
     (|dy| > 0.76 to enter, < 0.66 to leave), then `walk_toward` / `walk_away`;
@@ -27,7 +28,10 @@ Debug args after `--`: `--reduced-motion`, `--no-ambient`, `--ambient-report` (p
   - every clip switch cross-fades for 80 ms.
 - Window busts (placements with `sill_y`) report `CastsShadow = false`, so the world's shadow layer draws no
   feet ellipse on the wall below the sill (ISSUES LIVING-01 / INT-02).
-- `ActorStaging` reads `data/ambient/actors.json`: `hero_mask2020_rooms` (ISSUES ART-ADAM-02), per-room NPC
+- `ActorStaging` reads `data/ambient/actors.json`: `hero_mask2020_rooms` (ISSUES ART-ADAM-02) and
+  `hero_coat1982_rooms` (winter coat in the December 1982 exteriors, ISSUES PT-S20) and `hero_coat2035_rooms` (the
+  same coat in winter Jasná 2035, DECISIONS "Jasná 2035 is in winter"; `ActorStaging.HeroVariant`
+  picks the hero variant of a room for the factory and the preloader), per-room NPC
   `placements` (`variant`, `sill_y` for window busts, `scale`, `offset_x`, `facing`), walk/hold tuning.
 
 ## Ambient layers (`Ambient/`)
@@ -44,7 +48,7 @@ Common fields: `id`, `type`, `plane` (`back` = behind actors, default; `front` =
 |---|---|---|
 | `sway` | wind on a cut-out of the painting (tree crowns, grass, vines, hanging baskets, notes) | `texture`, `anchor` (0 top..1 bottom, still line), `hang`, `amp_px`, `freq`, `wavelength_px`, `flutter_px`, `gust` |
 | `water` | ripples + moving glints on a cut-out of the water | `texture`, `amp_px`, `speed`, `glint`, `glint_color` |
-| `particles` | presets `leaves`, `dust`, `snow`, `rain`, `steam` | `emit_rect` / `emit_points`, `rate` or `count`, `size`, `speed_x/y`, `wind`, `land_y`, `rest_s`, `textures`, `colors` |
+| `particles` | presets `leaves`, `dust`, `snow`, `rain`, `steam` | `emit_rect` / `emit_points`, `rate` or `count`, `size`, `speed_x/y`, `wind`, `land_y`, `rest_s`, `textures`, `colors`; breath: `pulse_s` + `pulse_on_s` (puffs), `follow` `hero` / `npc:<hotspot id>` (emit at that actor's mouth: `follow_offset` [x, y] in figure heights, x toward the side it faces, `follow_push`, scaled by its perspective) |
 | `tween_path` | something crossing now and then: birds (flocks), cars, a cat, shadows behind curtains | `sheet`/`texture`, `frames` (list or name prefix), `fps`, `path`, `speed_px_s`/`duration_s`, `every_s`, `start_s`, `direction`, `faces`, `scale` [start,end], `flock`, `bob_px`, `fade_px` |
 | `critters` | ground birds that peck/look/walk, flee from the hero and fly back | `sheet` (frames stand, peck, look, walk, fly_0..3), `count`, `ground` [[x,y],[x,y]], `scale`, `flee_radius`, `return_s`, `exit` |
 | `flicker` | light: `fluorescent`, `pulse`, `blink`, `noise`, `sweep` | `rect` or `pos`+`size`, `texture` (default `builtin:glow` / `builtin:softrect`), `color`, `min`, `max`, `period_s`, `duty`, `every_s` |

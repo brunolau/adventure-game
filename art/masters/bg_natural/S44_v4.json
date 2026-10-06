@@ -1,0 +1,276 @@
+{
+  "target": "S44",
+  "version": 4,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 408473918,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S44/",
+  "spend_log_asset": "bg_natural/winter/S44/S44_v4_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S44_summer.webp",
+  "prompt_file": "art/prompts/natural/S44.winter.txt",
+  "config_file": "art/prompts/natural/S44.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the rented meeting salon of Hotel Grand Jasna at Jasna, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the salon everything stays exactly as in image 1 (the curtains, the hotel chairs, Boris's table with the\narchive boxes, the empty display board, the bookcase the box labelled 'Papierové knihy' in image 2 (x 1205-1420, y 360-700 of the 1920x1080 frame (63-74 % from the left, 33-65 % from the top)), the lectern with the open catalogue\nthe box labelled 'Záložka' in image 2 (x 1470-1615, y 545-630 of the 1920x1080 frame (77-84 % from the left, 50-58 % from the top)), the panelled door the box labelled 'exit: Pred hotelom Grand Jasná' in image 2 (x 1700-1880, y 400-705 of the 1920x1080 frame (89-98 % from the left, 37-65 % from the top)), the carpet). Winter shows only here:\n- Through the big mullioned window at the left: the same view in deep winter - spruces loaded with snow, a white\n  snow-covered mountain slope with a groomed ski piste and two or three tiny distant skiers, clear winter blue sky;\n  frost flowers in the lower corners of the panes and a thin frost rim along the glazing bars.\n- The wall screen shows the same mountain road video, now in winter: snowy hills, the road cleared between snow banks.\nNPC zone at x 705-845, y 458-608 of the 1920x1080 frame (37-44 % from the left, 42-56 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character stands behind a table: paint the table's top edge as one straight horizontal line exactly at y 605 across x 675-875, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person. NPC zone at x 1115-1245, y 488-793 of the 1920x1080 frame (58-65 % from the left, 45-73 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 792.\nWalkable floor: the band at x 0-1920, y 724-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays the same open carpet with nothing standing on it.\n\nFiction rules: no new lettering, no logos, no people except the tiny distant skiers, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S44_summer.webp (summer, model geometry)",
+    "S44 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S44_v4_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S44",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Rented meeting salon of Hotel Grand Jasna (type-reference: hotel meeting rooms with windows, curtains and upholstered stackable hotel chairs; not an endless archive). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the carpet on y ~700 (~126 px per metre there), Boris's archive table front stands on y ~775. Perspective s(y) = (y - 470) / 545 (same camera as the lobby S43). Left: tall windows with light curtains and the real view from the Grand to the spruce forest and Chopok, a stack of hotel chairs; centre-left: Boris behind his long archive table with the paper fond (archive boxes, bound files) and a wall screen above it playing a quiet mountain-road video; centre: the exhibition's free-standing display board (empty in the base painting; Jana's schematic and photos after Q9C, variant overlay); right of it the bookcase of paper volumes, the lectern with the public catalogue and its ribbon bookmark, the door to the corridor. The walk polygon leaves out the chair stack and the single hotel chair by the window (feet y ~740-780).",
+    "background": "bg_natural/S44.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        746
+      ],
+      [
+        165,
+        746
+      ],
+      [
+        175,
+        738
+      ],
+      [
+        355,
+        738
+      ],
+      [
+        362,
+        782
+      ],
+      [
+        500,
+        782
+      ],
+      [
+        510,
+        738
+      ],
+      [
+        530,
+        738
+      ],
+      [
+        550,
+        790
+      ],
+      [
+        930,
+        790
+      ],
+      [
+        950,
+        742
+      ],
+      [
+        1450,
+        742
+      ],
+      [
+        1465,
+        765
+      ],
+      [
+        1625,
+        765
+      ],
+      [
+        1645,
+        724
+      ],
+      [
+        1920,
+        728
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      724,
+      1015
+    ],
+    "actor_scale": [
+      0.47,
+      1.0
+    ],
+    "spawn": [
+      1400,
+      900
+    ],
+    "hotspots": {
+      "S44.ambient 1": {
+        "rect": [
+          1205,
+          360,
+          215,
+          340
+        ],
+        "interaction_point": [
+          1310,
+          820
+        ],
+        "label_anchor": [
+          1310,
+          350
+        ],
+        "reason": "the bookcase of paper volumes and archive boxes against the back wall (foot y ~700)"
+      },
+      "S44.ambient 2": {
+        "rect": [
+          1470,
+          545,
+          145,
+          85
+        ],
+        "interaction_point": [
+          1545,
+          830
+        ],
+        "label_anchor": [
+          1545,
+          535
+        ],
+        "reason": "the open public exhibition catalogue on the lectern with its long ribbon bookmark hanging over the edge (lectern top y ~590, foot y ~760)"
+      },
+      "S44.BORIS": {
+        "rect": [
+          705,
+          458,
+          140,
+          150
+        ],
+        "interaction_point": [
+          775,
+          850
+        ],
+        "reason": "Boris behind his archive table (bust cut at the back edge of the table top, y 605)"
+      },
+      "S44.JANA35": {
+        "rect": [
+          1115,
+          488,
+          130,
+          305
+        ],
+        "interaction_point": [
+          1345,
+          850
+        ],
+        "reason": "Jana stands on the carpet beside the exhibition display board (playtest PT-S06: talk point right of Jana; coming from the left Adam stood in front of her exhibit board)"
+      }
+    },
+    "npcs": {
+      "S44.BORIS": {
+        "variant": "behind_counter",
+        "feet": [
+          775,
+          742
+        ],
+        "sill_y": 605,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Boris behind the table (table variant cut at the table top)"
+      },
+      "S44.JANA35": {
+        "variant": "standing",
+        "feet": [
+          1180,
+          792
+        ],
+        "z": "auto",
+        "reason": "Jana visits the exhibition standing beside the display board; after Q9C her q9c variant holds her first drawing (data/ambient/actors.json variants_after)"
+      }
+    },
+    "exits": {
+      "S44.to_S42": {
+        "rect": [
+          1700,
+          400,
+          180,
+          305
+        ],
+        "interaction_point": [
+          1790,
+          800
+        ],
+        "label_anchor": [
+          1755,
+          390
+        ],
+        "reason": "the salon door to the hotel corridor and out to the forecourt"
+      }
+    },
+    "state_patches": [],
+    "variant_layers": {
+      "variants/S44_jana_exhibit.webp": {
+        "texture": "variants_natural/S44_jana_exhibit.webp",
+        "pos": [
+          942,
+          382
+        ],
+        "reason": "after Q9C: Jana's original schematic and photos of the people who joined her project pinned on the exhibition display board"
+      }
+    }
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S44.to_S42": {
+        "at": [
+          1790.0,
+          552.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 1.0,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        96,
+        262,
+        336,
+        448
+      ],
+      [
+        596,
+        280,
+        288,
+        160
+      ]
+    ],
+    "feather": 10,
+    "place": "the rented meeting salon of Hotel Grand Jasna at Jasna"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:55:02",
+  "review": "art/review/natural/winter/S44_v4_winter.jpg",
+  "derive_review": "art/review/natural/winter/S44_v4_derive.png"
+}

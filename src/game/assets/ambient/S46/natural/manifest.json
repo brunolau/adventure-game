@@ -1,19 +1,8 @@
 {
   "room": "S46",
   "source": "src/game/assets/bg_natural/S46.webp",
-  "bg_sha1": "00896ed85e738299e486950f6bbfd7649b4c8e8a",
+  "bg_sha1": "68945ed4bea563ef3723cd91de2af9ce5348774e",
   "items": {
-    "window_spruces": {
-      "kind": "cutout",
-      "pos": [
-        1456,
-        286
-      ],
-      "size": [
-        293,
-        418
-      ]
-    },
     "window_sky_mask": {
       "kind": "mask",
       "mask_rect": [
@@ -23,17 +12,6 @@
         170
       ]
     },
-    "door_spruces": {
-      "kind": "cutout",
-      "pos": [
-        62,
-        422
-      ],
-      "size": [
-        194,
-        284
-      ]
-    },
     "door_glass_mask": {
       "kind": "mask",
       "mask_rect": [
@@ -41,6 +19,15 @@
         420,
         200,
         285
+      ]
+    },
+    "window_glass_mask": {
+      "kind": "mask",
+      "mask_rect": [
+        1455,
+        285,
+        430,
+        410
       ]
     }
   }

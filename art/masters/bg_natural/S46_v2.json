@@ -1,0 +1,212 @@
+{
+  "target": "S46",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 470097144,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S46/",
+  "spend_log_asset": "bg_natural/winter/S46/S46_v2_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S46_summer.webp",
+  "prompt_file": "art/prompts/natural/S46.winter.txt",
+  "config_file": "art/prompts/natural/S46.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the client centre at Biela Put, Jasna, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the client centre everything stays exactly as in image 1 (the lift-status screen, the ticket terminals, the\nleaflet rack, Sara's teal counter, the framed visitor rules the box labelled 'Návštevnícky poriadok' in image 2 (x 1245-1405, y 330-535 of the 1920x1080 frame (65-73 % from the left, 31-50 % from the top)), the floor). Winter shows only here:\n- Through the glazed entrance doors (the box labelled 'exit: Pred hotelom Grand Jasná' in image 2 (x 60-255, y 420-705 of the 1920x1080 frame (3-13 % from the left, 39-65 % from the top))) at the left: the snowy forecourt, spruces loaded with snow and\n  a white mountain slope; a thin frost rim on the glass edges.\n- Through the big window wall at the right: the same big dark wooden chalet with its red ground floor, now with a\n  thick cushion of snow on its roof and icicles along the eaves; deep snow on the ground and on the spruces; the green\n  slope behind is now a white ski slope with a groomed piste, a chairlift line and a few small distant skiers; the\n  road in front is cleared, with snow banks; clear winter blue sky. Frost flowers in the lower corners of the panes.\n- The big ficus in its pot (the box labelled 'Fikus' in image 2 (x 1745-1915, y 400-735 of the 1920x1080 frame (91-100 % from the left, 37-68 % from the top))) stays exactly the same, green, in front of the window.\nNPC zone at x 970-1100, y 466-588 of the 1920x1080 frame (51-57 % from the left, 43-54 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character stands behind a counter: paint the counter's top edge as one straight horizontal line exactly at y 583 across x 940-1130, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays the same open tiled floor with nothing standing on it.\n\nFiction rules: no new lettering, no logos, no people except the small distant skiers, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S46_summer.webp (summer, model geometry)",
+    "S46 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S46_v2_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S46",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Klientske centrum Biela Put (type-reference: a tourist information centre with brochure racks, self-service terminals and a counter; the real interior is not documented). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), Sara's service counter front stands on y ~785. Perspective s(y) = (y - 470) / 545 (same camera height as the hotel interiors S43/S44). Left: the glazed entrance from the plaza, two self-service ticket terminals under a lift-status screen, brochure racks; centre-right: the guest exhibition's small service counter with Sara behind it (counter top back edge y 595); right: the visitor rules board on the wall, the window wall with the view of the Biela Put plaza, the wooden chalet and the green slope, the big potted ficus in the corner.",
+    "background": "bg_natural/S46.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        722
+      ],
+      [
+        270,
+        722
+      ],
+      [
+        290,
+        742
+      ],
+      [
+        870,
+        742
+      ],
+      [
+        885,
+        792
+      ],
+      [
+        1190,
+        792
+      ],
+      [
+        1205,
+        744
+      ],
+      [
+        1920,
+        744
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      722,
+      1015
+    ],
+    "actor_scale": [
+      0.46,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S46.ambient 1": {
+        "rect": [
+          1245,
+          330,
+          160,
+          205
+        ],
+        "interaction_point": [
+          1325,
+          820
+        ],
+        "label_anchor": [
+          1325,
+          320
+        ],
+        "reason": "the framed visitor rules board on the wall: a big no-coffee pictogram on top, rows of small print below"
+      },
+      "S46.ambient 2": {
+        "rect": [
+          1745,
+          400,
+          170,
+          335
+        ],
+        "interaction_point": [
+          1760,
+          820
+        ],
+        "label_anchor": [
+          1810,
+          390
+        ],
+        "reason": "the big ficus in a ceramic pot standing in the window corner (pot foot y ~735)"
+      },
+      "S46.SARA": {
+        "rect": [
+          970,
+          466,
+          130,
+          122
+        ],
+        "interaction_point": [
+          1035,
+          850
+        ],
+        "reason": "Sara behind the small service counter (bust cut at the back edge of the painted counter top, y 583)"
+      }
+    },
+    "npcs": {
+      "S46.SARA": {
+        "variant": "behind_counter",
+        "feet": [
+          1035,
+          745
+        ],
+        "sill_y": 583,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Sara behind the service counter (counter variant cut at the counter top)"
+      }
+    },
+    "exits": {
+      "S46.to_S42": {
+        "rect": [
+          60,
+          420,
+          195,
+          285
+        ],
+        "interaction_point": [
+          160,
+          800
+        ],
+        "label_anchor": [
+          210,
+          410
+        ],
+        "reason": "the glazed entrance doors out to the plaza (and on to Hotel Grand Jasna)"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S46.to_S42": {
+        "at": [
+          157.5,
+          562.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.37,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        40,
+        400,
+        236,
+        315
+      ],
+      [
+        1440,
+        270,
+        470,
+        432
+      ]
+    ],
+    "feather": 10,
+    "place": "the client centre at Biela Put, Jasna"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:55:37",
+  "review": "art/review/natural/winter/S46_v2_winter.jpg",
+  "derive_review": "art/review/natural/winter/S46_v2_derive.png"
+}

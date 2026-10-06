@@ -146,7 +146,7 @@ public sealed class Clip
 
 /// <summary>
 /// The animations of one character, loaded from <c>res://assets/actors/&lt;ID&gt;/</c>. Two manifest
-/// formats are read: the hero's <c>animations.json</c> (one sheet per animation, <c>*_mask2020</c>
+/// formats are read: the hero's <c>animations.json</c> (one sheet per animation, <c>*_mask2020</c> / <c>*_coat1982</c>
 /// variants) and the NPCs' <c>actor.json</c> (named sheets, frame-name sequences, optional
 /// window variants). Clip names are the manifest's names.
 /// </summary>
@@ -185,11 +185,11 @@ public sealed class ActorAnimationSet
     public static bool Exists(string characterId) =>
         Godot.FileAccess.FileExists(FolderOf(characterId) + "/animations.json") || Godot.FileAccess.FileExists(FolderOf(characterId) + "/actor.json");
 
-    // Trimmed per room (Runtime/RoomScopedCache.cs); the hero's sets (with and without the 2020 mask) stay.
+    // Trimmed per room (Runtime/RoomScopedCache.cs); the hero's sets (default, 2020 mask, 1982 coat) stay.
     private static readonly RoomScopedCache<ActorAnimationSet?> Cache = new(key => key.StartsWith(GameRuntime.HeroId + "|", StringComparison.Ordinal));
 
     /// <summary>
-    /// Loads the set. <paramref name="variant"/>: hero "mask2020" (falls back per clip to the default
+    /// Loads the set. <paramref name="variant"/>: hero "mask2020" / "coat1982" (falls back per clip to the default
     /// sheet), NPC variant names from actor.json ("window_glass", "window"); null = the manifest default.
     /// </summary>
     public static ActorAnimationSet? Load(string characterId, string? variant)
@@ -215,7 +215,8 @@ public sealed class ActorAnimationSet
 
     /// <summary>
     /// Sheet images <see cref="Load"/> would read for a character, for background preloading (World/RoomPreloader.cs):
-    /// the hero's default sheets plus those of <paramref name="variant"/>; an NPC's every manifest sheet (LoadNpc reads all).
+    /// the hero's sheets of <paramref name="variant"/> plus the default sheets of the clips it lacks; an NPC's every manifest
+    /// sheet (LoadNpc reads all).
     /// </summary>
     public static IEnumerable<string> SheetImagePaths(string characterId, string? variant)
     {
@@ -223,11 +224,21 @@ public sealed class ActorAnimationSet
         if (Json.Load(folder + "/animations.json", warnIfMissing: false) is { } hero)
         {
             if (hero.Obj("animations") is not { } anims) yield break;
+            // same rule as LoadDirectional: the variant's sheets, plus default sheets of the clips it lacks
+            var covered = new HashSet<string>(StringComparer.Ordinal);
+            if (variant is not null)
+            {
+                foreach (var (name, node) in anims)
+                {
+                    if (node is not JsonObject a || a.Str("variant", "default") != variant) continue;
+                    covered.Add(DirectionalBaseName(name, variant));
+                    yield return $"{folder}/{a.Str("image", name + ".webp")}";
+                }
+            }
             foreach (var (name, node) in anims)
             {
-                if (node is not JsonObject a) continue;
-                string v = a.Str("variant", "default")!;
-                if (v == "default" || v == variant) yield return $"{folder}/{a.Str("image", name + ".webp")}";
+                if (node is not JsonObject a || a.Str("variant", "default") != "default" || covered.Contains(name)) continue;
+                yield return $"{folder}/{a.Str("image", name + ".webp")}";
             }
         }
         else if (Json.Load(folder + "/actor.json", warnIfMissing: false)?.Obj("sheets") is { } sheetDefs)
@@ -286,8 +297,9 @@ public sealed class ActorAnimationSet
     {
         var set = new ActorAnimationSet(id, variant) { IsDirectional = true, HeightPx = manifest.Num("standing_height_px", 512) };
         if (manifest.Obj("animations") is not { } anims) return set;
-        // Default sheets first, then the variant overrides the same base names.
-        foreach (var pass in new[] { "default", variant })
+        // Variant sheets first; default sheets only for the base names the variant does not cover, so a complete
+        // variant (mask2020, coat1982) never loads the default textures as well (BUILD-06: hero sheet memory).
+        foreach (var pass in new[] { variant, "default" })
         {
             if (pass is null) continue;
             foreach (var (name, node) in anims)
@@ -295,7 +307,8 @@ public sealed class ActorAnimationSet
                 if (node is not JsonObject a) continue;
                 string v = a.Str("variant", "default")!;
                 if (v != pass) continue;
-                string baseName = v == "default" ? name : name.EndsWith("_" + v, StringComparison.Ordinal) ? name[..^(v.Length + 1)] : name;
+                string baseName = DirectionalBaseName(name, v);
+                if (set.clips.ContainsKey(baseName)) continue;
                 string image = a.Str("image", name + ".webp")!;
                 string json = System.IO.Path.ChangeExtension(image, ".json");
                 var sheet = SpriteSheet.Load($"{folder}/{image}", $"{folder}/{json}");
@@ -314,6 +327,10 @@ public sealed class ActorAnimationSet
         return set;
     }
 
+    /// <summary>Clip name of a hero-manifest entry: <c>walk_right_coat1982</c> of variant <c>coat1982</c> is <c>walk_right</c>.</summary>
+    private static string DirectionalBaseName(string name, string variant) =>
+        variant == "default" ? name : name.EndsWith("_" + variant, StringComparison.Ordinal) ? name[..^(variant.Length + 1)] : name;
+
     private static ActorAnimationSet LoadNpc(string id, string folder, JsonObject manifest, string? variant)
     {
         var set = new ActorAnimationSet(id, variant) { IsDirectional = false, HeightPx = manifest.Num("height_px", 512) };
@@ -329,6 +346,9 @@ public sealed class ActorAnimationSet
             }
         }
         string? chosen = variant ?? manifest.Str("default_variant");
+        // A variant may stand differently from the default (TONO82's standing guest set vs. the seated default).
+        if (chosen is not null && manifest.Obj("variants").Obj(chosen) is { } chosenVariant && chosenVariant.NumOrNull("height_px") is { } h)
+            set.HeightPx = h;
         var anims = manifest.Obj("animations");
         if (chosen is not null && manifest.Obj("variants").Obj(chosen).Obj("animations") is { } overrides)
         {

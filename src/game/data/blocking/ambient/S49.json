@@ -1,6 +1,6 @@
 {
  "room": "S49",
- "notes": "Natural S49 (bg_natural/S49.webp): the chronochamber in the Atlas pavilion. The amber emergency lamp blinks slowly until the restore is done (F17), then glows steadily; the four green input lamps of the restore console pulse; the brass desk lamp glows warmly; dust motes float in the window light; clouds drift over the Rotunda in the window and choughs pass outside; a glint wanders on the untouched glass of water. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S49 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S49.webp): the chronochamber; the snow-covered Rotunda through the window with drifting clouds (sky mask) and spindrift blowing past (glass mask). Slow amber alarm (until F17) / calm glow (after F17), console lamps, desk lamp glow, dust motes, choughs outside, a glint on the glass of water. Winter life (art/tools/winter_ambient.py, w_* layers): snow blowing off the Rotunda roofs and a light flurry outside the window.",
  "layers": [
   {
    "id": "alarm_lamp",
@@ -108,7 +108,8 @@
    "id": "window_clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -186,6 +187,121 @@
    "min": 0.05,
    "max": 0.35,
    "period_s": 1.8
+  },
+  {
+   "id": "spindrift_outside",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    580,
+    430,
+    300,
+    130
+   ],
+   "rate": 4.0,
+   "size": [
+    1.5,
+    3.4
+   ],
+   "speed_x": [
+    70,
+    150
+   ],
+   "speed_y": [
+    -12,
+    14
+   ],
+   "wind": 6,
+   "lifetime": [
+    1.6,
+    3.2
+   ],
+   "alpha_range": [
+    0.35,
+    0.8
+   ],
+   "fade_in": 0.3,
+   "fade_out": 0.8,
+   "max": 90,
+   "color": "#ffffff",
+   "mask": "S49/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_rotunda_roof",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    740,
+    300,
+    760,
+    14
+   ],
+   "rate": 1.2,
+   "size": [
+    8,
+    18
+   ],
+   "speed_x": [
+    18,
+    40
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.1,
+    0.22
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40,
+   "mask": "S49/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_flurry_window",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    690,
+    240,
+    840,
+    20
+   ],
+   "count": 12,
+   "size": [
+    2.0,
+    4.0
+   ],
+   "speed_y": [
+    24,
+    44
+   ],
+   "speed_x": [
+    14,
+    40
+   ],
+   "wind": 14,
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "lifetime": [
+    10,
+    16
+   ],
+   "mask": "S49/natural/window_glass_mask.webp"
   }
  ]
 }

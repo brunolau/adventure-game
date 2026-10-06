@@ -1,12 +1,13 @@
 {
  "room": "S45",
- "notes": "Natural S45 (bg_natural/S45.webp): Vrbicke pleso at early-summer midday. Clouds drift over Chopok, the open lake ripples and glints, two mallards paddle slowly across the open water (lake mask), wind in the reed clumps, the rowan branches and the big spruce, the dark foreground grass blades at the bottom corners sway in front of the hero (front plane), choughs cross the sky now and then. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S45 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S45.webp): frozen Vrbicke pleso on a clear cold day. Clouds drift over Chopok (winter sky mask), fine snow dust twinkles, light glints run over the swept black ice and the snow, wind in the dry reed clumps and the laden spruce, choughs cross the sky. No water ripples and no ducks (the lake is frozen); the snowy foreground has no front-plane grass layer any more. Winter life (art/tools/winter_ambient.py, w_* layers): skiers carve down the pistes under the lift, a snowcat crawls across the broad slope, snow plumes blow off the Chopok summit and the right ridge, powder sifts off the rowan twigs and the laden spruce, Adam's breath steams.",
  "layers": [
   {
    "id": "clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -21,52 +22,6 @@
    ],
    "alpha": 0.75,
    "mask": "S45/natural/sky_mask.webp"
-  },
-  {
-   "id": "lake",
-   "type": "water",
-   "texture": "S45/natural/lake.webp",
-   "amp_px": 1.2,
-   "speed": 0.8,
-   "glint": 0.35,
-   "glint_color": "#fff6dc"
-  },
-  {
-   "id": "ducks",
-   "type": "tween_path",
-   "sheet": "common/duck_sheet",
-   "fps": 0.8,
-   "path": [
-    [
-     260,
-     640
-    ],
-    [
-     1360,
-     632
-    ]
-   ],
-   "speed_px_s": 9,
-   "scale": 0.16,
-   "flock": 2,
-   "flock_spread": [
-    30,
-    4
-   ],
-   "bob_px": 0.6,
-   "bob_hz": 0.5,
-   "direction": "random",
-   "every_s": [
-    6,
-    18
-   ],
-   "start_s": [
-    0,
-    1
-   ],
-   "reduced_motion": "freeze",
-   "mask": "S45/natural/lake_mask.webp",
-   "prewarm_s": 60
   },
   {
    "id": "reeds_left",
@@ -89,47 +44,14 @@
    "flutter_px": 0.6
   },
   {
-   "id": "rowan",
-   "type": "sway",
-   "texture": "S45/natural/rowan.webp",
-   "anchor": 0.0,
-   "hang": true,
-   "amp_px": 2.6,
-   "freq": 0.3,
-   "wavelength_px": 120,
-   "flutter_px": 1.0
-  },
-  {
    "id": "spruce_right",
    "type": "sway",
    "texture": "S45/natural/spruce_right.webp",
    "anchor": 1.0,
-   "amp_px": 2.0,
+   "amp_px": 1.0,
    "freq": 0.25,
    "wavelength_px": 150,
    "flutter_px": 0.5
-  },
-  {
-   "id": "blades_left",
-   "type": "sway",
-   "plane": "front",
-   "texture": "S45/natural/blades_left.webp",
-   "anchor": 1.0,
-   "amp_px": 3.0,
-   "freq": 0.45,
-   "wavelength_px": 60,
-   "flutter_px": 0.8
-  },
-  {
-   "id": "blades_right",
-   "type": "sway",
-   "plane": "front",
-   "texture": "S45/natural/blades_right.webp",
-   "anchor": 1.0,
-   "amp_px": 3.0,
-   "freq": 0.43,
-   "wavelength_px": 60,
-   "flutter_px": 0.8
   },
   {
    "id": "choughs",
@@ -173,6 +95,537 @@
     6,
     14
    ]
+  },
+  {
+   "id": "diamond_dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    0,
+    0,
+    1920,
+    780
+   ],
+   "count": 46,
+   "size": [
+    1.6,
+    3.6
+   ],
+   "speed_y": [
+    3,
+    9
+   ],
+   "speed_x": [
+    -5,
+    5
+   ],
+   "wind": 5,
+   "twinkle": 0.9,
+   "alpha_range": [
+    0.3,
+    0.85
+   ],
+   "color": "#ffffff",
+   "lifetime": [
+    7,
+    13
+   ]
+  },
+  {
+   "id": "ice_glint",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    640,
+    590,
+    480,
+    70
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.16,
+   "period_s": 1.4
+  },
+  {
+   "id": "ice_glint_b",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1000,
+    640,
+    300,
+    50
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.12,
+   "period_s": 2.1
+  },
+  {
+   "id": "snow_glint",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    0,
+    760,
+    1920,
+    200
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.08,
+   "period_s": 2.4
+  },
+  {
+   "id": "w_skier_a",
+   "type": "tween_path",
+   "texture": "S45/winter/skier_red.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     1338,
+     232
+    ],
+    [
+     1305,
+     250
+    ],
+    [
+     1325,
+     268
+    ],
+    [
+     1290,
+     288
+    ],
+    [
+     1310,
+     306
+    ],
+    [
+     1270,
+     324
+    ],
+    [
+     1290,
+     340
+    ]
+   ],
+   "speed_px_s": 13,
+   "scale": [
+    0.19,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    8,
+    16
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_b",
+   "type": "tween_path",
+   "texture": "S45/winter/skier_blue.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     1482,
+     252
+    ],
+    [
+     1500,
+     268
+    ],
+    [
+     1470,
+     286
+    ],
+    [
+     1495,
+     304
+    ],
+    [
+     1455,
+     322
+    ]
+   ],
+   "speed_px_s": 11,
+   "scale": [
+    0.2,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    10,
+    20
+   ],
+   "start_s": [
+    5,
+    9
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_c",
+   "type": "tween_path",
+   "texture": "S45/winter/skier_orange.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     1640,
+     264
+    ],
+    [
+     1606,
+     281
+    ],
+    [
+     1626,
+     298
+    ],
+    [
+     1590,
+     315
+    ],
+    [
+     1600,
+     330
+    ]
+   ],
+   "speed_px_s": 12,
+   "scale": [
+    0.2,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    9,
+    18
+   ],
+   "start_s": [
+    3,
+    7
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_d",
+   "type": "tween_path",
+   "texture": "S45/winter/skier_purple.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     1340,
+     236
+    ],
+    [
+     1312,
+     258
+    ],
+    [
+     1296,
+     280
+    ],
+    [
+     1270,
+     304
+    ],
+    [
+     1248,
+     326
+    ]
+   ],
+   "speed_px_s": 16,
+   "scale": [
+    0.19,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    14,
+    28
+   ],
+   "start_s": [
+    12,
+    18
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_snowcat",
+   "type": "tween_path",
+   "texture": "S45/winter/snowcat.webp",
+   "pivot": [
+    48,
+    52
+   ],
+   "path": [
+    [
+     1540,
+     292
+    ],
+    [
+     1620,
+     278
+    ],
+    [
+     1700,
+     264
+    ]
+   ],
+   "speed_px_s": 3.5,
+   "scale": [
+    0.13,
+    0.13
+   ],
+   "faces": "right",
+   "direction": "alternate",
+   "every_s": [
+    3,
+    6
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "prewarm_s": 12,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "fade_px": 14,
+   "bob_px": 0.3,
+   "bob_hz": 0.8
+  },
+  {
+   "id": "w_summit",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    740,
+    132,
+    290,
+    26
+   ],
+   "rate": 1.2,
+   "size": [
+    16,
+    34
+   ],
+   "speed_x": [
+    18,
+    40
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.08,
+    0.18
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40
+  },
+  {
+   "id": "w_ridge_right",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    1000,
+    170,
+    300,
+    30
+   ],
+   "rate": 0.6,
+   "size": [
+    12,
+    26
+   ],
+   "speed_x": [
+    16,
+    34
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.06,
+    0.14
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40
+  },
+  {
+   "id": "w_rowan",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    60,
+    40,
+    300,
+    160
+   ],
+   "rate": 0.35,
+   "size": [
+    1.4,
+    3.2
+   ],
+   "speed_y": [
+    26,
+    60
+   ],
+   "speed_x": [
+    2,
+    12
+   ],
+   "wind": 4,
+   "lifetime": [
+    1.6,
+    3.2
+   ],
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "color": "#ffffff",
+   "max": 40
+  },
+  {
+   "id": "w_spruce_right",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    1770,
+    40,
+    140,
+    480
+   ],
+   "rate": 0.45,
+   "size": [
+    1.4,
+    3.2
+   ],
+   "speed_y": [
+    26,
+    60
+   ],
+   "speed_x": [
+    2,
+    12
+   ],
+   "wind": 4,
+   "lifetime": [
+    1.6,
+    3.2
+   ],
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "color": "#ffffff",
+   "max": 40
+  },
+  {
+   "id": "w_hero_breath",
+   "type": "particles",
+   "plane": "front",
+   "follow": "hero",
+   "follow_offset": [
+    0.068,
+    0.118
+   ],
+   "follow_push": 7,
+   "pulse_s": [
+    3.0,
+    4.2
+   ],
+   "speed_x": [
+    -2,
+    2
+   ],
+   "alpha_range": [
+    0.36,
+    0.56
+   ],
+   "prewarm_s": 0,
+   "preset": "steam",
+   "emit_jitter": [
+    2,
+    1
+   ],
+   "pulse_on_s": 0.5,
+   "rate": 8,
+   "size": [
+    9,
+    14
+   ],
+   "speed_y": [
+    -10,
+    -4
+   ],
+   "grow": 2.4,
+   "lifetime": [
+    1.3,
+    2.0
+   ],
+   "color": "#f6f9ff",
+   "fade_in": 0.15,
+   "fade_out": 0.9,
+   "max": 24,
+   "reduced_motion": "hide"
   }
  ]
 }

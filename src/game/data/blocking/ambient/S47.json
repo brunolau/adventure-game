@@ -1,12 +1,13 @@
 {
  "room": "S47",
- "notes": "Natural S47 (bg_natural/S47.webp): the Rotunda lounge with the Atlas exhibition at midday. Clouds drift over the High Tatras in the window sky, a Funitel cabin glides down the ropes past the pylons now and then (sprite cut from the S67 painting), choughs fly past outside, dust motes drift in the daylight, the showcase spotlight glints on the brass bell. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S47 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S47.webp): the Rotunda lounge; behind the window wall the winter High Tatras with drifting clouds (sky mask), spindrift blowing past the glass, a Funitel cabin gliding down the rimed ropes, choughs outside, dust motes, a glint on the brass bell. Winter life (art/tools/winter_ambient.py, w_* layers): a light wind-driven flurry outside the window wall.",
  "layers": [
   {
    "id": "window_clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -138,6 +139,78 @@
    "min": 0.05,
    "max": 0.3,
    "period_s": 3.2
+  },
+  {
+   "id": "spindrift_outside",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    -120,
+    430,
+    400,
+    140
+   ],
+   "rate": 5.0,
+   "size": [
+    1.5,
+    3.4
+   ],
+   "speed_x": [
+    70,
+    150
+   ],
+   "speed_y": [
+    -12,
+    14
+   ],
+   "wind": 6,
+   "lifetime": [
+    1.6,
+    3.2
+   ],
+   "alpha_range": [
+    0.35,
+    0.8
+   ],
+   "fade_in": 0.3,
+   "fade_out": 0.8,
+   "max": 90,
+   "color": "#ffffff",
+   "mask": "S47/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_flurry_window",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    -40,
+    170,
+    1320,
+    20
+   ],
+   "count": 18,
+   "size": [
+    2.0,
+    4.2
+   ],
+   "speed_y": [
+    24,
+    44
+   ],
+   "speed_x": [
+    20,
+    50
+   ],
+   "wind": 16,
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "lifetime": [
+    10,
+    16
+   ],
+   "mask": "S47/natural/window_glass_mask.webp"
   }
  ]
 }

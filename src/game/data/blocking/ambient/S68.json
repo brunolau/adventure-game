@@ -1,12 +1,13 @@
 {
  "room": "S68",
- "notes": "Playtest PT (2026-10-05): opposite_cabin path moved onto the upper rope (rope y = 457 - 0.1965 (x - 450), hanger 41 px above the sprite centre), so the cabin hangs from the painted rope instead of floating above it. Natural S68 (bg_natural/S68.webp): the Funitel cabin climbing to Chopok. Clouds drift quickly past the window panes (sky mask), now and then the opposite cabin (cut from the S67 painting) glides down past the windows on the ropes, choughs fly by outside, and the shadow of a pylon sweeps through the cabin as the cabin passes under it; the sunlight patches on the floor shimmer gently. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S68 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S68.webp): inside the Funitel cabin; fast clouds in the panes (winter sky mask) over the snowy slopes, the opposite cabin gliding down past the windows (S67 cabin sprite, glass mask), choughs outside, a pylon shadow sweeping through the cabin, shimmering sun patches on the floor beside the snow tracked in at the doors. Winter life (art/tools/winter_ambient.py, w_* layers): skiers on the snowfields and the forest piste below, a snowcat far down, snowflakes streaming past the panes as the cabin climbs, Milos's and Adam's breath (the cabin is unheated).",
  "layers": [
   {
    "id": "window_clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -122,6 +123,317 @@
    "min": 0.0,
    "max": 0.08,
    "period_s": 1.4
+  },
+  {
+   "id": "w_skier_field",
+   "type": "tween_path",
+   "texture": "S68/winter/skier_red.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     468,
+     500
+    ],
+    [
+     500,
+     512
+    ],
+    [
+     530,
+     526
+    ],
+    [
+     556,
+     540
+    ]
+   ],
+   "speed_px_s": 9,
+   "scale": [
+    0.2,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    9,
+    16
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "fade_px": 6,
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_skier_field_b",
+   "type": "tween_path",
+   "texture": "S68/winter/skier_blue.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     600,
+     516
+    ],
+    [
+     640,
+     528
+    ],
+    [
+     680,
+     540
+    ],
+    [
+     720,
+     552
+    ]
+   ],
+   "speed_px_s": 10,
+   "scale": [
+    0.2,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    12,
+    20
+   ],
+   "start_s": [
+    6,
+    10
+   ],
+   "fade_px": 6,
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_skier_forest",
+   "type": "tween_path",
+   "texture": "S68/winter/skier_yellow.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     1250,
+     462
+    ],
+    [
+     1215,
+     474
+    ],
+    [
+     1170,
+     488
+    ],
+    [
+     1120,
+     500
+    ]
+   ],
+   "speed_px_s": 11,
+   "scale": [
+    0.2,
+    0.22
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    10,
+    18
+   ],
+   "start_s": [
+    3,
+    6
+   ],
+   "fade_px": 6,
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_snowcat",
+   "type": "tween_path",
+   "texture": "S68/winter/snowcat.webp",
+   "pivot": [
+    48,
+    52
+   ],
+   "path": [
+    [
+     430,
+     552
+    ],
+    [
+     500,
+     544
+    ],
+    [
+     560,
+     536
+    ]
+   ],
+   "speed_px_s": 2.5,
+   "scale": [
+    0.11,
+    0.11
+   ],
+   "faces": "right",
+   "direction": "alternate",
+   "every_s": [
+    3,
+    6
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "prewarm_s": 12,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "fade_px": 14,
+   "bob_px": 0.3,
+   "bob_hz": 0.8,
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_flakes_window",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    100,
+    200,
+    1400,
+    40
+   ],
+   "count": 24,
+   "size": [
+    2.5,
+    5
+   ],
+   "speed_y": [
+    24,
+    46
+   ],
+   "speed_x": [
+    -60,
+    -30
+   ],
+   "wind": 10,
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "lifetime": [
+    8,
+    14
+   ],
+   "mask": "S68/natural/window_glass_mask.webp"
+  },
+  {
+   "id": "w_turista_breath",
+   "type": "particles",
+   "plane": "actors",
+   "sort_y": 817,
+   "follow": "npc:S68.TURISTA",
+   "follow_offset": [
+    0.065,
+    0.118
+   ],
+   "follow_push": 4,
+   "pulse_s": [
+    3.2,
+    4.6
+   ],
+   "speed_x": [
+    -2,
+    2
+   ],
+   "alpha_range": [
+    0.256,
+    0.4
+   ],
+   "preset": "steam",
+   "emit_jitter": [
+    2,
+    1
+   ],
+   "pulse_on_s": 0.5,
+   "rate": 8,
+   "size": [
+    9,
+    14
+   ],
+   "speed_y": [
+    -10,
+    -4
+   ],
+   "grow": 2.4,
+   "lifetime": [
+    1.3,
+    2.0
+   ],
+   "color": "#f6f9ff",
+   "fade_in": 0.15,
+   "fade_out": 0.9,
+   "max": 24,
+   "reduced_motion": "hide"
+  },
+  {
+   "id": "w_hero_breath",
+   "type": "particles",
+   "plane": "front",
+   "follow": "hero",
+   "follow_offset": [
+    0.068,
+    0.118
+   ],
+   "follow_push": 7,
+   "pulse_s": [
+    3.0,
+    4.2
+   ],
+   "speed_x": [
+    -2,
+    2
+   ],
+   "alpha_range": [
+    0.27,
+    0.42
+   ],
+   "prewarm_s": 0,
+   "preset": "steam",
+   "emit_jitter": [
+    2,
+    1
+   ],
+   "pulse_on_s": 0.5,
+   "rate": 8,
+   "size": [
+    9,
+    14
+   ],
+   "speed_y": [
+    -10,
+    -4
+   ],
+   "grow": 2.4,
+   "lifetime": [
+    1.3,
+    2.0
+   ],
+   "color": "#f6f9ff",
+   "fade_in": 0.15,
+   "fade_out": 0.9,
+   "max": 24,
+   "reduced_motion": "hide"
   }
  ]
 }

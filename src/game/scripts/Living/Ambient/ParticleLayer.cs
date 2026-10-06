@@ -17,6 +17,12 @@ namespace LastBell.Game.Living.Ambient;
 /// (ranges), wind (sideways sway amplitude px), sway_freq, gravity, spin (deg/s), tumble (fake 3D
 /// flip), grow (size factor at the end of life), fade_in, fade_out, land_y (leaves rest on the ground
 /// there), rest_s, twinkle (dust), color / colors, alpha_range, max.
+/// Breath (winter Jasna 2035): <c>pulse_s</c> [min, max] seconds between breaths and <c>pulse_on_s</c> (how long
+/// each exhale emits) make the emission come in puffs; <c>follow: "hero"</c> emits at the hero's mouth instead of
+/// the emit rect / points (<c>follow: "npc:&lt;hotspot id&gt;"</c>: at that NPC's mouth): <c>follow_offset</c> [x, y] as
+/// fractions of the drawn figure height (x toward the side the figure faces, y down from the top of the figure),
+/// sizes, jitter and <c>follow_push</c> (px/s forward) scale with the actor's perspective scale; nothing is emitted
+/// while the actor is missing or hidden.
 /// </summary>
 public partial class ParticleLayer : AmbientLayer
 {
@@ -53,6 +59,15 @@ public partial class ParticleLayer : AmbientLayer
     private Vector2 life, size, speedX, speedY, spin, alphaRange, landY, rest;
     private float wind, swayFreq, gravity, grow, fadeIn, fadeOut, twinkle;
     private bool tumble, land;
+    private bool followActor;
+    private string? followNpc;
+    private Vector2 followOffset;
+    private float followPush;
+    private float actorFacing = 1f;
+    private float followSide = 1f;
+    private float lastActorX = float.NaN;
+    private Vector2 pulse;
+    private float pulseOn, pulseClock, pulseNext;
 
     /// <inheritdoc />
     protected override float DefaultPrewarm => preset is "rain" ? 1f : preset is "steam" ? 4f : 12f;
@@ -114,6 +129,41 @@ public partial class ParticleLayer : AmbientLayer
         rate = def.Num("rate", preset == "dust" ? 0 : 0.4f);
         keepCount = def.Int("count", preset == "dust" ? 30 : 0);
         max = def.Int("max", 120);
+        string follow = def.Str("follow") ?? "";
+        followNpc = follow.StartsWith("npc:", StringComparison.Ordinal) ? follow[4..] : null;
+        followActor = follow == "hero" || followNpc is not null;
+        followOffset = def.Vec("follow_offset", new Vector2(0.035f, 0.115f));
+        followPush = def.Num("follow_push", 6f);
+        pulse = def.Range("pulse_s", Vector2.Zero);
+        pulseOn = def.Num("pulse_on_s", 0.5f);
+        if (pulse.Y > 0)
+        {
+            pulseNext = Pick(pulse);
+            pulseClock = Rng.RandfRange(0, pulseNext);
+        }
+    }
+
+    /// <summary>The followed actor's mouth in canvas px and its perspective scale (false when it is missing).</summary>
+    private bool ActorMouth(out Vector2 mouth, out float scale)
+    {
+        mouth = default;
+        scale = 1f;
+        World.Actor? actor = Context.Room.Hero;
+        if (followNpc is not null && !Context.Room.Npcs.TryGetValue(followNpc, out actor)) return false;
+        if (actor is null || !GodotObject.IsInstanceValid(actor) || !actor.IsVisibleInTree() || actor.Visual is null) return false;
+        var feet = actor.Feet;
+        followSide = 1f;
+        if (actor.Visual is Actors.SpriteActorVisual sprite)
+        {
+            actorFacing = sprite.FacingSign;
+            followSide = sprite.FacingAlongView ? 0f : 1f;
+        }
+        else if (!float.IsNaN(lastActorX) && MathF.Abs(feet.X - lastActorX) > 0.5f) actorFacing = MathF.Sign(feet.X - lastActorX);
+        lastActorX = feet.X;
+        scale = actor.CurrentScale;
+        float h = actor.Visual.HeightPx * scale;
+        mouth = feet + new Vector2(followSide * actorFacing * followOffset.X * h, -(1f - followOffset.Y) * h);
+        return true;
     }
 
     private void Defaults(JsonObject def, Vector2 life, Vector2 size, Vector2 sx, Vector2 sy, float wind, float swayF, float grav, Vector2 spinR, Vector2 alpha)
@@ -132,19 +182,33 @@ public partial class ParticleLayer : AmbientLayer
     /// <inheritdoc />
     protected override void Step(float dt)
     {
-        // emission
-        if (keepCount > 0)
+        // emission (breath: only during an exhale; hero breath: only while there is a hero)
+        bool exhale = true;
+        if (pulse.Y > 0)
         {
-            while (particles.Count < Math.Min(keepCount, max)) Spawn(prewarmAge: true);
+            pulseClock += dt;
+            if (pulseClock >= pulseNext)
+            {
+                pulseClock -= pulseNext;
+                pulseNext = Pick(pulse);
+            }
+            exhale = pulseClock < pulseOn;
         }
-        else if (rate > 0)
+        Vector2 mouth = default;
+        float actorScale = 1f;
+        if (followActor && !ActorMouth(out mouth, out actorScale)) exhale = false;
+        if (exhale && keepCount > 0)
+        {
+            while (particles.Count < Math.Min(keepCount, max)) Spawn(prewarmAge: true, mouth, actorScale);
+        }
+        else if (exhale && rate > 0)
         {
             accumulator += dt * rate;
             while (accumulator >= 1f)
             {
                 accumulator -= 1f;
                 // jitter so leaves do not come at a metronome pace
-                if (Rng.Randf() < 0.85f && particles.Count < max) Spawn(prewarmAge: false);
+                if (Rng.Randf() < 0.85f && particles.Count < max) Spawn(prewarmAge: false, mouth, actorScale);
             }
         }
         for (int i = particles.Count - 1; i >= 0; i--)
@@ -183,10 +247,12 @@ public partial class ParticleLayer : AmbientLayer
         }
     }
 
-    private void Spawn(bool prewarmAge)
+    private void Spawn(bool prewarmAge, Vector2 mouth = default, float actorScale = 1f)
     {
         Vector2 pos;
-        if (emitPoints.Count > 0)
+        if (followActor)
+            pos = mouth + new Vector2(Rng.RandfRange(-emitJitter.X, emitJitter.X), Rng.RandfRange(-emitJitter.Y, emitJitter.Y)) * actorScale;
+        else if (emitPoints.Count > 0)
         {
             var basePoint = emitPoints[Rng.RandiRange(0, emitPoints.Count - 1)];
             pos = basePoint + new Vector2(Rng.RandfRange(-emitJitter.X, emitJitter.X), Rng.RandfRange(-emitJitter.Y, emitJitter.Y));
@@ -207,6 +273,11 @@ public partial class ParticleLayer : AmbientLayer
             Color = palette[Rng.RandiRange(0, palette.Count - 1)],
             LandY = Pick(landY),
         };
+        if (followActor)
+        {
+            p.Size *= actorScale;
+            p.Vel = p.Vel * actorScale + new Vector2(followSide * actorFacing * followPush * actorScale, 0);
+        }
         if (prewarmAge) p.Age = Rng.RandfRange(0, p.Life * 0.8f);
         particles.Add(p);
     }

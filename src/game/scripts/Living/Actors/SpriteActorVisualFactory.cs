@@ -1,3 +1,4 @@
+using System;
 using Godot;
 using LastBell.Game.World;
 
@@ -15,7 +16,7 @@ public sealed class SpriteActorVisualFactory : IActorVisualFactory
         if (!ActorAnimationSet.Exists(context.CharacterId)) return null;
         var placement = context.IsHero ? null : PlacementFor(context);
         string? variant = context.IsHero
-            ? (ActorStaging.HeroWearsMask(context.RoomId, context.Era) ? "mask2020" : null)
+            ? ActorStaging.HeroVariant(context.RoomId, context.Era)
             : NpcVariant(context, placement);
         var set = ActorAnimationSet.Load(context.CharacterId, variant);
         if (set is null)
@@ -34,6 +35,18 @@ public sealed class SpriteActorVisualFactory : IActorVisualFactory
     /// </summary>
     private static ActorPlacement? PlacementFor(ActorContext context)
     {
+        if (context.HotspotId is { } guestId && guestId.StartsWith(GuestStage.HotspotPrefix, StringComparison.Ordinal))
+        {
+            // A guest speaker walking in for one action (World/GuestStage.cs): its staging is the blocking file's guest entry.
+            var guest = RoomBlocking.For(context.RoomId)?.GuestFor(context.CharacterId);
+            if (guest?.Variant is null) return null;
+            if (!ActorAnimationSet.TryResolveStaging(context.CharacterId, guest.Variant, out var guestVariant))
+            {
+                GD.PushWarning($"Living: guest {context.CharacterId} in {context.RoomId} has no staging '{guest.Variant}' (default sheets used)");
+                return null;
+            }
+            return new ActorPlacement(guestVariant, null, null, 0f, null);
+        }
         if (RoomBlocking.For(context.RoomId) is not { } blocking) return ActorStaging.PlacementFor(context.RoomId, context.CharacterId);
         if (context.HotspotId is null || !blocking.Npcs.TryGetValue(context.HotspotId, out var staging)) return null;
         if (!ActorAnimationSet.TryResolveStaging(context.CharacterId, staging.Variant, out var variant))

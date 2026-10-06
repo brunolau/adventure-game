@@ -4,41 +4,146 @@
   "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
   "note": "Roof viewing terrace of the Rotunda complex on Chopok as in the 2016 photos (wooden deck, glass railing on a solid dark parapet), looking north-east: the Liptov basin and the High Tatras over the railing, the Funitel line going down on the left, the rocky Chopok peak rising on the right with the Atlas pavilion's roof seen below through the glass. Camera ~2.1 m high on the deck; horizon y ~380; the parapet stands on the deck's back edge at y ~720 (~161 px per metre there: parapet top y ~623, handrail y ~543). Perspective s(y) = (y - 380) / 635. Left: the top of the external steel stairs down to the plateau (exit); right: the separately labelled low-voltage Atlas cabinet with the mechanical ZAPIS/MONITOR switch and, on its own post beside it, the separate return connector with the ceramic bridge. The third-party dragon sculpture of the photos is left out. The walk polygon leaves out the cabinet's base (foot y ~740).",
   "background": "bg_natural/S50.webp",
-  "walk_polygon": [[0, 1015], [0, 790], [150, 790], [175, 724], [1390, 724], [1390, 742], [1572, 742], [1572, 724], [1920, 724], [1920, 1015]],
-  "walk_band": [724, 1015],
-  "actor_scale": [0.54, 1.0],
-  "spawn": [800, 900],
+  "walk_polygon": [
+    [
+      0,
+      1015
+    ],
+    [
+      0,
+      790
+    ],
+    [
+      150,
+      790
+    ],
+    [
+      175,
+      724
+    ],
+    [
+      1390,
+      724
+    ],
+    [
+      1390,
+      742
+    ],
+    [
+      1572,
+      742
+    ],
+    [
+      1572,
+      724
+    ],
+    [
+      1920,
+      724
+    ],
+    [
+      1920,
+      1015
+    ]
+  ],
+  "walk_band": [
+    724,
+    1015
+  ],
+  "actor_scale": [
+    0.54,
+    1.0
+  ],
+  "spawn": [
+    800,
+    900
+  ],
   "hotspots": {
     "S50.ambient 1": {
-      "rect": [230, 255, 760, 125],
-      "interaction_point": [610, 820],
-      "label_anchor": [610, 245],
+      "rect": [
+        230,
+        255,
+        760,
+        125
+      ],
+      "interaction_point": [
+        610,
+        820
+      ],
+      "label_anchor": [
+        610,
+        245
+      ],
       "reason": "the jagged High Tatras on the northern horizon above the Liptov basin"
     },
     "S50.ambient 2": {
-      "rect": [700, 540, 430, 180],
-      "interaction_point": [915, 800],
-      "label_anchor": [915, 530],
+      "rect": [
+        700,
+        540,
+        430,
+        180
+      ],
+      "interaction_point": [
+        915,
+        800
+      ],
+      "label_anchor": [
+        915,
+        530
+      ],
       "reason": "a section of the railing in front: glass panels on steel posts above the solid dark parapet (parapet foot y ~720)"
     },
     "S50.switch": {
-      "rect": [1395, 420, 175, 300],
-      "interaction_point": [1482, 820],
-      "label_anchor": [1482, 410],
-      "reason": "the grey steel low-voltage Atlas cabinet standing on the deck with the big mechanical ZAPIS / MONITOR rotary switch on its door (foot y ~722)"
+      "rect": [
+        1395,
+        420,
+        175,
+        300
+      ],
+      "interaction_point": [
+        1342,
+        820
+      ],
+      "label_anchor": [
+        1482,
+        410
+      ],
+      "reason": "the grey steel low-voltage Atlas cabinet standing on the deck with the big mechanical ZAPIS / MONITOR rotary switch on its door (foot y ~722); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
     },
     "S50.bridge": {
-      "rect": [1610, 505, 120, 150],
-      "interaction_point": [1670, 830],
-      "label_anchor": [1670, 495],
-      "reason": "the separate return connector: a small box on its own post beside the cabinet with a white ceramic bridge link"
+      "rect": [
+        1610,
+        505,
+        120,
+        150
+      ],
+      "interaction_point": [
+        1784,
+        830
+      ],
+      "label_anchor": [
+        1670,
+        495
+      ],
+      "reason": "the separate return connector: a small box on its own post beside the cabinet with a white ceramic bridge link; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
     }
   },
   "exits": {
     "S50.to_S48": {
-      "rect": [0, 600, 160, 190],
-      "interaction_point": [80, 860],
-      "label_anchor": [205, 590],
+      "rect": [
+        0,
+        600,
+        160,
+        190
+      ],
+      "interaction_point": [
+        80,
+        860
+      ],
+      "label_anchor": [
+        205,
+        590
+      ],
       "reason": "the top of the external steel stairs down to the plateau and the Atlas pavilion at the left end of the deck"
     }
   },

@@ -1,0 +1,50 @@
+{
+  "target": "EPILOGUE_9",
+  "version": 3,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1428979909,
+  "usd": 0.15,
+  "scope": "cutscenes/winter/EPILOGUE_9/",
+  "spend_log_asset": "cutscenes/winter/EPILOGUE_9/EPILOGUE_9_v3_winter",
+  "started": "2026-10-06T01:06:54",
+  "base": "art/cutscenes/EPILOGUE_9_summer.webp (summer, model geometry)",
+  "prompt_file": "art/prompts/winter/EPILOGUE_9.txt",
+  "config_file": "art/prompts/winter/EPILOGUE_9.json",
+  "prompt": "You receive 1 image. Image 1 is a finished cutscene frame of our point-and-click adventure game: a triptych of Jana's same gesture in 1982, 2020 and 2035; the right panel is the exhibition salon of Grand Jasna in 2035, painted in summer.  Edit image 1 into the SAME SCENE on 6 February 2035, a clear cold day in deep winter: keep the exact framing, camera, composition, every person (face, hair, pose, hands, expression), every object and every piece of lettering exactly as in image 1, unless the text below says otherwise. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nOnly the RIGHT panel (2035, Jana as an older woman beside the glass display case) changes: through its tall windows the mountains and the forest are now in deep winter - snow on the peaks and slopes, spruces heavy with snow, clear cold light; frost at the corners of the panes. Jana (her face, hair, glasses, scarf, coat, bag, hands), the display case with the drawing, the furniture and the room stay exactly as in image 1. The left and the middle panels do not change at all.\n\nThe result is image 1 edited, in the same 16:9 framing: no frames, no borders, no letterbox bars, no captions, no watermark, no new text.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/EPILOGUE_9_summer.webp (summer, model geometry)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_EPILOGUE_9_v3_winter_raw.png",
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {},
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [],
+    "diff_regions": [
+      [
+        1290,
+        0,
+        630,
+        540
+      ]
+    ],
+    "feather": 10,
+    "place": "a triptych of Jana's same gesture in 1982, 2020 and 2035; the right panel is the exhibition salon of Grand Jasna in 2035"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:07:31",
+  "review": "art/review/natural/winter/EPILOGUE_9_v3_winter.jpg"
+}

@@ -1,0 +1,50 @@
+{
+  "target": "EPILOGUE_4",
+  "version": 3,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 888303089,
+  "usd": 0.15,
+  "scope": "cutscenes/winter/EPILOGUE_4/",
+  "spend_log_asset": "cutscenes/winter/EPILOGUE_4/EPILOGUE_4_v3_winter",
+  "started": "2026-10-06T01:06:54",
+  "base": "art/cutscenes/EPILOGUE_4_summer.webp (summer, model geometry)",
+  "prompt_file": "art/prompts/winter/EPILOGUE_4.txt",
+  "config_file": "art/prompts/winter/EPILOGUE_4.json",
+  "prompt": "You receive 1 image. Image 1 is a finished cutscene frame of our point-and-click adventure game: the hotel cafe of Grand Jasna, Tamara pauses her repair work and listens to the old radio, painted in summer.  Edit image 1 into the SAME SCENE on 6 February 2035, a clear cold day in deep winter: keep the exact framing, camera, composition, every person (face, hair, pose, hands, expression), every object and every piece of lettering exactly as in image 1, unless the text below says otherwise. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nOnly the views through the tall windows behind Tamara change: outside it is deep winter - spruces and birches heavy with snow, white snow on the ground, in the same warm low sunlight, with frost at the edges of the panes. Tamara (her face, hair, clothes, apron, hands), the radio, the cup, the tools, the workbench, the stone pillars, the guests' silhouettes, the lamps and the room stay exactly as in image 1.\n\nThe result is image 1 edited, in the same 16:9 framing: no frames, no borders, no letterbox bars, no captions, no watermark, no new text.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/EPILOGUE_4_summer.webp (summer, model geometry)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_EPILOGUE_4_v3_winter_raw.png",
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {},
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [],
+    "diff_regions": [
+      [
+        378,
+        0,
+        560,
+        640
+      ]
+    ],
+    "feather": 10,
+    "place": "the hotel cafe of Grand Jasna, Tamara pauses her repair work and listens to the old radio"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:07:32",
+  "review": "art/review/natural/winter/EPILOGUE_4_v3_winter.jpg"
+}

@@ -1,0 +1,350 @@
+{
+  "target": "S42",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 676952682,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S42/",
+  "spend_log_asset": "bg_natural/winter/S42/S42_v2_winter",
+  "started": "2026-10-06T00:52:13",
+  "base": "art/masters/bg_natural/S42_summer.webp",
+  "prompt_file": "art/prompts/natural/S42.winter.txt",
+  "config_file": "art/prompts/natural/S42.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the paved forecourt of Hotel Grand Jasna at Jasna, view to Chopok, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nWinter changes:\n- Deep fresh snow (40-60 cm) lies on every roof: thick rounded snow caps on the mansard roofs, the big gable, the\n  canopy over the main entrance, the small canopy over the side door and the flat roof of the glass gondola station at\n  the left; a row of long icicles hangs from the eaves and from the wooden balcony rails. The windows stay the same.\n- The big old spruce (the box labelled 'Tieň stromu' in image 2 (x 300-560, y 470-740 of the 1920x1080 frame (16-29 % from the left, 44-69 % from the top))) keeps exactly its shape, size and trunk, but every branch layer carries a\n  load of snow; its long blue shadow still falls across the paved forecourt (keep the shadow clearly visible).\n- The shrubs behind the stone walls are white snow mounds; the stone walls wear a thick snow cap; the meadow behind is\n  deep, smooth snow. The gravel footpath through the gap in the wall (the box labelled 'exit: Chodník pri Vrbickom plese' in image 2 (x 650-760, y 560-652 of the 1920x1080 frame (34-40 % from the left, 52-60 % from the top))) is a trodden snow path between\n  low snow banks; the wooden trail post beside it stays dark and clear. The paved side path past the gondola station\n  (the box labelled 'exit: Klientske centrum Biela Púť' in image 2 (x 130-260, y 560-652 of the 1920x1080 frame (7-14 % from the left, 52-60 % from the top))) is cleared, with snow banks on both sides.\n- The dark spruce forest is dusted and loaded with snow. Chopok and its ridges are deep white winter mountains with\n  rocky outcrops showing through; on the slopes far away, groomed ski pistes (smooth white bands between the forest\n  edges) with a few tiny distant skiers; the summit buildings white with snow.\n- The gondola ropes at the top left carry two or three small closed gondola cabins (no logos).\n- The stone fountain is frozen: no running water, a cap of snow and small icicles on the spout.\n- The brass luggage trolley (the box labelled 'Batožinový vozík' in image 2 (x 1440-1580, y 462-724 of the 1920x1080 frame (75-82 % from the left, 43-67 % from the top))) stays fully visible and the same, with its suitcases and a thin line\n  of snow on its top rail. The roll-up banner with the turquoise circle and the small leaflet table stay unchanged\n  (a little snow on the table edge).\n- The lettering on the gable stays exactly as painted in image 1.\n- Sky: clear, deep winter blue with one small cloud; low sun from the upper left; sparkle on the snow.\n\nWalkable floor: the band at x 0-1920, y 652-1015 of the 1920x1080 frame (0-100 % from the left, 60-94 % from the top) is the cleared paved forecourt: the same grey paving stones, cold and slightly wet-dark, with\na thin dusting of snow and a few faint footprints - ONE continuous flat surface. The snow cleared from it lies in low\nsnow banks ONLY along the foot of the stone walls, the hotel wall and the edges outside this area, never inside it.\nNPC zone at x 843-958, y 535-772 of the 1920x1080 frame (44-50 % from the left, 50-71 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 770.\n\nFiction rules: no new lettering, no logos, no people except a few tiny distant skiers on the far slopes, no animals,\nno cars.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S42_summer.webp (summer, model geometry)",
+    "S42 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S42_v2_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S42",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Paved forecourt on the east side of Hotel Grand Jasna as in the 2017 photo: camera ~1.7 m high on the paving, looking SSW to the Chopok ridge; horizon y ~440; the low stone wall and the forecourt's back edge on y ~690-712 (~140 px per metre there), the hotel facade foot on the right on y ~700, the salon side door on y ~690. Perspective: the painted doors (~185 px for ~2.1 m at y ~705) and the luggage trolley set the hero scale at the back edge to ~0.31 (y 705), linear to 1.0 at y 1015 (actor_scale [0.2, 1.0] over the band 652-1015). Left: the glass and steel structure of the Grand gondola station and a side path to the Biela Put client centre; a big old spruce behind the stone wall throws its shade on the paving; centre: the footpath into the forest to Vrbicke pleso, the exhibition's temporary info stand with Nina; right: the hotel with the salon side door, a small stone water feature, the luggage trolley and the main entrance.",
+    "background": "bg_natural/S42.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        705
+      ],
+      [
+        110,
+        705
+      ],
+      [
+        140,
+        652
+      ],
+      [
+        250,
+        652
+      ],
+      [
+        268,
+        708
+      ],
+      [
+        640,
+        708
+      ],
+      [
+        660,
+        652
+      ],
+      [
+        745,
+        652
+      ],
+      [
+        765,
+        708
+      ],
+      [
+        960,
+        712
+      ],
+      [
+        975,
+        722
+      ],
+      [
+        1185,
+        722
+      ],
+      [
+        1195,
+        694
+      ],
+      [
+        1310,
+        694
+      ],
+      [
+        1322,
+        716
+      ],
+      [
+        1600,
+        718
+      ],
+      [
+        1920,
+        742
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      652,
+      1015
+    ],
+    "actor_scale": [
+      0.2,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S42.ambient 1": {
+        "rect": [
+          300,
+          470,
+          260,
+          270
+        ],
+        "interaction_point": [
+          430,
+          790
+        ],
+        "label_anchor": [
+          430,
+          460
+        ],
+        "reason": "the big old spruce behind the low stone wall (trunk foot y ~690) and the pool of shade it throws on the paving"
+      },
+      "S42.ambient 2": {
+        "rect": [
+          1440,
+          462,
+          140,
+          262
+        ],
+        "interaction_point": [
+          1510,
+          790
+        ],
+        "label_anchor": [
+          1475,
+          500
+        ],
+        "reason": "brass hotel luggage trolley standing on the paving beside the main entrance (top bar y ~465, wheels y ~720)"
+      },
+      "S42.NINA": {
+        "rect": [
+          843,
+          535,
+          115,
+          237
+        ],
+        "interaction_point": [
+          900,
+          830
+        ],
+        "reason": "Nina stands on the forecourt in front of the exhibition's temporary info stand"
+      }
+    },
+    "npcs": {
+      "S42.NINA": {
+        "variant": "standing",
+        "feet": [
+          900,
+          770
+        ],
+        "z": "auto",
+        "reason": "art brief: Nina at the temporary info stand of the exhibition (standing figure)"
+      }
+    },
+    "exits": {
+      "S42.to_S41": {
+        "rect": [
+          0,
+          712,
+          60,
+          303
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          185,
+          700
+        ],
+        "reason": "the paved forecourt continues out of the left edge back to the Biela Put gondola station plaza"
+      },
+      "S42.to_S46": {
+        "rect": [
+          130,
+          560,
+          130,
+          92
+        ],
+        "interaction_point": [
+          195,
+          676
+        ],
+        "label_anchor": [
+          195,
+          550
+        ],
+        "reason": "the paved side path past the gondola station structure towards the Biela Put client centre"
+      },
+      "S42.to_S45": {
+        "rect": [
+          650,
+          560,
+          110,
+          92
+        ],
+        "interaction_point": [
+          702,
+          676
+        ],
+        "label_anchor": [
+          625,
+          560
+        ],
+        "reason": "the gravel footpath leading through the gap in the stone wall into the spruce forest to Vrbicke pleso"
+      },
+      "S42.to_S44": {
+        "rect": [
+          1190,
+          425,
+          125,
+          269
+        ],
+        "interaction_point": [
+          1252,
+          740
+        ],
+        "label_anchor": [
+          1240,
+          398
+        ],
+        "reason": "the glazed side door of the hotel's lower wing that leads to the rented exhibition salon"
+      },
+      "S42.to_S43": {
+        "rect": [
+          1625,
+          450,
+          270,
+          255
+        ],
+        "interaction_point": [
+          1760,
+          800
+        ],
+        "label_anchor": [
+          1760,
+          440
+        ],
+        "reason": "the hotel's main entrance under its canopy (lobby)"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S42.to_S41": {
+        "at": [
+          30.0,
+          863.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.885,
+        "ok": true
+      },
+      "exit S42.to_S43": {
+        "at": [
+          1760.0,
+          577.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.887,
+        "ok": true
+      },
+      "exit S42.to_S44": {
+        "at": [
+          1252.5,
+          559.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.806,
+        "ok": true
+      },
+      "exit S42.to_S45": {
+        "at": [
+          705.0,
+          606.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.497,
+        "ok": true
+      },
+      "exit S42.to_S46": {
+        "at": [
+          195.0,
+          606.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.428,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "full",
+    "protect": [],
+    "feather": 12,
+    "place": "the paved forecourt of Hotel Grand Jasna at Jasna, view to Chopok"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:52:53",
+  "review": "art/review/natural/winter/S42_v2_winter.jpg",
+  "derive_review": "art/review/natural/winter/S42_v2_derive.png"
+}

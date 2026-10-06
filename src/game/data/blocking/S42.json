@@ -29,10 +29,10 @@
   },
   "npcs": {
     "S42.NINA": {
-      "variant": "standing",
+      "variant": "winter",
       "feet": [900, 770],
       "z": "auto",
-      "reason": "art brief: Nina at the temporary info stand of the exhibition (standing figure)"
+      "reason": "art brief: Nina at the temporary info stand of the exhibition (standing figure); winter variant (closed coat, scarf, gloves, boots), Jasna 2035 is winter (owner 2026-10-06)"
     }
   },
   "exits": {
@@ -67,5 +67,39 @@
       "reason": "the hotel's main entrance under its canopy (lobby)"
     }
   },
-  "state_patches": []
+  "state_patches": [],
+  "audio": {
+    "ambience": [
+      {
+        "sound": "wind_soft",
+        "db": -10
+      },
+      {
+        "sound": "cable_car_far",
+        "db": -12
+      },
+      {
+        "sound": "tourists",
+        "db": -14
+      },
+      {
+        "sound": "suitcase",
+        "db": -8,
+        "every": [
+          12,
+          25
+        ]
+      },
+      {
+        "sound": "door_creak",
+        "db": -14,
+        "every": [
+          20,
+          40
+        ]
+      }
+    ],
+    "ambience_mode": "replace",
+    "reason": "winter (owner 2026-10-06: Jasna 2035 is in winter): the fountain is frozen, so the fountain bed of game.json rooms[].ambience is replaced by a soft wind and the gondola running beside the forecourt; tourists, suitcase and door spots stay"
+  }
 }

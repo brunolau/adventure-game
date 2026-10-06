@@ -1,0 +1,87 @@
+{
+  "name": "npc",
+  "frames": [
+    "idle",
+    "blink",
+    "talk_a",
+    "talk_b",
+    "gesture"
+  ],
+  "cell": [
+    278,
+    520
+  ],
+  "pivot": [
+    139,
+    516
+  ],
+  "scale": 0.2394,
+  "height_px": 512,
+  "playback_fps": 8,
+  "face_bands": {
+    "eye_y_frac": 0.0743,
+    "mouth_y_frac": 0.1351,
+    "blink_band": [
+      0.0409,
+      0.0986
+    ],
+    "talk_band": [
+      0.1047,
+      0.1837
+    ],
+    "shift_blink": [
+      -2,
+      -1
+    ],
+    "shift_talk": [
+      -2,
+      -1
+    ]
+  },
+  "default_height_px": 512,
+  "sources": [
+    "winter base: sheet_winter.png + default face",
+    "default face frames (npc_prod stills) blended with the face weight",
+    "patch:pose_gesture_winter.png"
+  ],
+  "reports": {
+    "body_shift_dy_dx": [
+      0,
+      0
+    ],
+    "head_shift_after_body": [
+      0,
+      0
+    ],
+    "default_box": [
+      612,
+      167,
+      1167,
+      2306
+    ],
+    "winter_box": [
+      609,
+      167,
+      1168,
+      2305
+    ],
+    "feet_bottom_delta_px": -1,
+    "face_px": 39841,
+    "face_box": [
+      800,
+      181,
+      1008,
+      494
+    ],
+    "gesture": {
+      "shift_dy_dx": [
+        0,
+        0
+      ],
+      "height_ratio": 1.0,
+      "changed_px_in_region": 98795,
+      "mean_abs_diff_outside_region": null,
+      "share_changed_outside_region": null
+    }
+  }
+}

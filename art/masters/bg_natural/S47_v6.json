@@ -1,0 +1,318 @@
+{
+  "target": "S47",
+  "version": 6,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1044516297,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S47/",
+  "spend_log_asset": "bg_natural/winter/S47/S47_v6_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S47_summer.webp",
+  "prompt_file": "art/prompts/natural/S47.winter.txt",
+  "config_file": "art/prompts/natural/S47.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the upper-floor panoramic lounge of the Rotunda on Chopok, view north to the High Tatras, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the lounge everything stays exactly as in image 1 (the dark blue sofas, the tub chairs and tables, the\nnormalisation panel the box labelled 'Panel normalizácie' in image 2 (x 470-720, y 360-660 of the 1920x1080 frame (24-38 % from the left, 33-61 % from the top)) with its pictograms, the bell showcase the box labelled 'Vitrína zvončeka' in image 2 (x 1005-1155, y 450-730 of the 1920x1080 frame (52-60 % from the left, 42-68 % from the top)), the stone wall with\nthe empty gilt frame the box labelled 'Prázdny rám' in image 2 (x 1325-1505, y 295-540 of the 1920x1080 frame (69-78 % from the left, 27-50 % from the top)), the glazed door the box labelled 'exit: Servisný pavilón výstavy Atlas' in image 2 (x 1600-1790, y 360-705 of the 1920x1080 frame (83-93 % from the left, 33-65 % from the top)), the floor). Winter shows only through the\nbig curved window wall:\n- The High Tatras on the horizon keep their exact outline but are fully white winter mountains with blue shadows; the\n  Liptov basin below is white with snow, the lake frozen and white, the forests dark and dusted with snow.\n- The rocks and the dwarf pines right outside the windows (bottom left and bottom right of the window wall) are under\n  deep snow with white rime; snow drifts against the outside of the glass at the bottom.\n- The two Funitel pylons and the ropes at the left stay where they are, coated with white rime; one dark Funitel cabin\n  hangs on the ropes between the pylons, going down.\n- Clear deep winter blue sky; frost flowers in the lower corners of the panes and a thin frost rim along the frames.\nWalkable floor: the band at x 0-1920, y 738-1015 of the 1920x1080 frame (0-100 % from the left, 68-94 % from the top) stays the same open floor. The exit the box labelled 'exit: Kabína Funitelu medzi Priehybou a Chopkom' in image 2 (x 0-60, y 738-1015 of the 1920x1080 frame (0-3 % from the left, 68-94 % from the top)) at the left edge stays open.\nThis room has no NPC zones.\n\nFiction rules: no new lettering, no logos, no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S47_summer.webp (summer, model geometry)",
+    "S47 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S47_v6_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S47",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Upper-floor panoramic lounge of the Rotunda on Chopok as in the 2016 photo: camera ~1.6 m high on the lounge floor, looking at the gently curved window wall (left two thirds) and the natural-stone core wall (right third); horizon y ~470; the dark blue window sofas, the exhibition furniture and the stone wall stand on y ~700-728 (~126 px per metre there). Perspective s(y) = (y - 470) / 545. The windows show the real north view (the Funitel line with its pylons going down, guideposts, the Liptov basin, the High Tatras on the horizon) with June snow patches near the summit. The Atlas exhibition 2035: the normalisation panel on its stand, the bell showcase, the empty frame on the stone wall, the door to the stairs down to the plateau (Atlas pavilion); the lounge continues out of the left edge to the Funitel station. The third-party lift-parts sculpture of the photo is left out. The walk polygon leaves out the two table groups with their tub chairs (feet y ~777) and the panel stand (feet y ~750). Base painting v3 (v1 plus a closed album on a stand in the showcase, for the Q3D causal effect).",
+    "background": "bg_natural/S47.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        738
+      ],
+      [
+        110,
+        738
+      ],
+      [
+        115,
+        784
+      ],
+      [
+        412,
+        784
+      ],
+      [
+        418,
+        738
+      ],
+      [
+        485,
+        738
+      ],
+      [
+        488,
+        756
+      ],
+      [
+        705,
+        756
+      ],
+      [
+        708,
+        738
+      ],
+      [
+        740,
+        738
+      ],
+      [
+        745,
+        784
+      ],
+      [
+        1025,
+        784
+      ],
+      [
+        1030,
+        738
+      ],
+      [
+        1920,
+        738
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      738,
+      1015
+    ],
+    "actor_scale": [
+      0.49,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S47.filter": {
+        "rect": [
+          470,
+          360,
+          250,
+          300
+        ],
+        "interaction_point": [
+          595,
+          820
+        ],
+        "label_anchor": [
+          595,
+          350
+        ],
+        "reason": "the free-standing normalisation panel of the Atlas exhibition: 'before' and 'after' columns of a record (stand feet y ~725)"
+      },
+      "S47.ambient 2": {
+        "rect": [
+          1005,
+          450,
+          150,
+          280
+        ],
+        "interaction_point": [
+          1080,
+          830
+        ],
+        "label_anchor": [
+          1080,
+          440
+        ],
+        "reason": "the glass showcase on a plinth with the old school bell inside (plinth foot y ~728)"
+      },
+      "S47.ambient 1": {
+        "rect": [
+          1325,
+          295,
+          180,
+          245
+        ],
+        "interaction_point": [
+          1415,
+          830
+        ],
+        "label_anchor": [
+          1415,
+          285
+        ],
+        "reason": "the empty gilt frame on the stone wall with its small caption plate below"
+      }
+    },
+    "exits": {
+      "S47.to_S68": {
+        "rect": [
+          0,
+          738,
+          60,
+          277
+        ],
+        "interaction_point": [
+          70,
+          890
+        ],
+        "label_anchor": [
+          258,
+          726
+        ],
+        "reason": "the lounge continues out of the left edge towards the Funitel summit station"
+      },
+      "S47.to_S48": {
+        "rect": [
+          1600,
+          360,
+          190,
+          345
+        ],
+        "interaction_point": [
+          1695,
+          800
+        ],
+        "label_anchor": [
+          1695,
+          350
+        ],
+        "reason": "the glazed door in the stone wall to the stairs down to the plateau with the Atlas pavilion"
+      }
+    },
+    "state_patches": [
+      {
+        "texture": "variants_natural/S47_album_open.webp",
+        "pos": [
+          1012,
+          446
+        ],
+        "after": [
+          "Q3D"
+        ],
+        "until": [],
+        "reason": "game.json causal effect Q3D: the optional album in the showcase is open at the complete team photo (base: closed album cover; zoomed edits S47 v3 -> v4)"
+      },
+      {
+        "texture": "variants_natural/S47_underpass_panel.webp",
+        "pos": [
+          1802,
+          385
+        ],
+        "after": [
+          "Q5C"
+        ],
+        "until": [],
+        "reason": "game.json causal effect Q5C: a small reproduction of the legal underpass panel with lit windows in the corner of the gallery (zoomed edit S47 v5)"
+      }
+    ],
+    "variant_layers": {
+      "variants/S47_originals_restored.webp": {
+        "texture": "variants_natural/S47_originals_restored.webp",
+        "pos": [
+          1318,
+          284
+        ],
+        "reason": "after F17: Mira's photograph is back in the gilt frame and the caption plate is filled (zoomed crop edit S47 v2)"
+      }
+    }
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S47.to_S48": {
+        "at": [
+          1695.0,
+          532.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 1.0,
+        "ok": true
+      },
+      "exit S47.to_S68": {
+        "at": [
+          30.0,
+          876.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 1.0,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        8,
+        168,
+        462,
+        404
+      ],
+      [
+        720,
+        168,
+        285,
+        404
+      ],
+      [
+        1155,
+        168,
+        107,
+        404
+      ],
+      [
+        470,
+        168,
+        250,
+        186
+      ],
+      [
+        1005,
+        168,
+        150,
+        276
+      ],
+      [
+        1000,
+        440,
+        160,
+        128
+      ]
+    ],
+    "feather": 8,
+    "place": "the upper-floor panoramic lounge of the Rotunda on Chopok, view north to the High Tatras",
+    "note": "the showcase glass (1000,440,160,128) is taken from the model too: the view through the glass must be winter; the model kept the bell and the album"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:57:56",
+  "review": "art/review/natural/winter/S47_v6_winter.jpg",
+  "derive_review": "art/review/natural/winter/S47_v6_derive.png",
+  "recomposed": true
+}

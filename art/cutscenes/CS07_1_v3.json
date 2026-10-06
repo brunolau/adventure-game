@@ -1,0 +1,41 @@
+{
+  "shot": "CS07_1",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "usd": 0,
+  "seed": null,
+  "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: the chronochamber as painted in the previous frames: the light wooden wall panels, the steel console plate on the left wall with the four engraved symbols (circle, cross, square, triangle) and the rocker switch, the amber lamp; paint exactly this console Image 2: prop reference: the school cassette Image 3: prop reference: the imprint folder with the four symbols Image 4: prop reference: the handover form Image 5: prop reference: Adam's brown leather messenger bag Image 6: character reference: our hero Adam (front and side view)\n\nShot: Close-up on the steel console plate on the light wooden wall of the chronochamber (image 1): directly under each of its four engraved symbols there is now one slim port slot with a small round indicator light, and all four lights have just turned a calm, steady soft white. From the slots small shallow metal trays have slid out, and Adam's hand (blue work-jacket cuff) takes the evidence back - the cassette, the imprint folder and the handover form - into his open brown leather messenger bag, held just below the plate. Above the plate a small dark screen shows one short glowing line that is breaking up into fading specks of light (no letters, no words). Through the edge of the window, soft daylight. Paint no text, no labels, no computer monitor and no other device.\n\nLight and time: Soft calm white light from the four ports, cool daylight from the window.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a cinematic 16:9 film frame with a clear focal point and depth (foreground, subject, background), painted full-bleed to all four edges (never paint black letterbox bars or a border: the game adds its own bars later and they cover the top tenth and the bottom fifth of the image, with the subtitles), so keep faces, hands and the key object inside the middle band. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "references": [
+    "src/game/assets/cutscenes/CS06_2.webp",
+    "art/cutscenes/refs/item_TAPE.png",
+    "art/cutscenes/refs/item_ORIGIN.png",
+    "art/cutscenes/refs/item_HANDOVER.png",
+    "art/cutscenes/refs/item_TOOLS.png",
+    "art/cutscenes/refs/char_ADAM.png"
+  ],
+  "at": "2026-10-05T22:47:48",
+  "retouch_of": "CS07_1_v2.png",
+  "retouch_note": "port symbol X turned into + (room S49 / journal: circle, plus, square, triangle; ISSUES PT-S21): the X's own strokes rotated upright on an in-painted plate",
+  "retouch_symbols": [
+    {
+      "box": [
+        812,
+        492,
+        975,
+        668
+      ],
+      "centre": [
+        897.4,
+        579.8
+      ],
+      "angle": 41.5,
+      "scale": 0.8,
+      "radius": 113.1
+    }
+  ],
+  "exported": {
+    "path": "src/game/assets/cutscenes/CS07_1.webp",
+    "crop": null,
+    "at": "2026-10-05T22:47:48"
+  }
+}

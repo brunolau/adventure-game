@@ -4,43 +4,166 @@
   "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
   "note": "Public footpath on the north shore of Vrbicke pleso as in the 2015 meadow photo: camera ~1.7 m on the path, looking SSE across the lake to Chopok; horizon y ~470; the near shore with reeds and the path's back edge on y ~705-720 (~138 px per metre there), the far shore on y ~525. Perspective s(y) = (y - 470) / 545. The packed-earth path runs along the shore through the meadow; the bench with the ceramic dog stands on the path's back edge on the left, the lake surface opens between the reed clumps in the centre, the Atlas passive sensor is a portable stand on the path's edge (not on the protected shore), the trail marker post stands on the right.",
   "background": "bg_natural/S45.webp",
-  "walk_polygon": [[0, 1015], [0, 735], [280, 722], [600, 716], [1180, 718], [1330, 722], [1700, 728], [1920, 738], [1920, 1015]],
-  "walk_band": [716, 1015],
-  "actor_scale": [0.45, 1.0],
-  "spawn": [960, 900],
+  "walk_polygon": [
+    [
+      0,
+      1015
+    ],
+    [
+      0,
+      735
+    ],
+    [
+      280,
+      722
+    ],
+    [
+      600,
+      716
+    ],
+    [
+      1180,
+      718
+    ],
+    [
+      1330,
+      722
+    ],
+    [
+      1700,
+      728
+    ],
+    [
+      1920,
+      738
+    ],
+    [
+      1920,
+      1015
+    ]
+  ],
+  "walk_band": [
+    716,
+    1015
+  ],
+  "actor_scale": [
+    0.45,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
   "hotspots": {
     "S45.bench": {
-      "rect": [290, 545, 280, 172],
-      "interaction_point": [430, 790],
-      "label_anchor": [430, 535],
+      "rect": [
+        290,
+        545,
+        280,
+        172
+      ],
+      "interaction_point": [
+        430,
+        790
+      ],
+      "label_anchor": [
+        430,
+        535
+      ],
       "reason": "wooden bench on the path's back edge facing the lake; the ceramic dog sits on its backrest, the small carved DRUHY ZIVOT plaque on the backrest (feet y ~715)"
     },
     "S45.ambient 1": {
-      "rect": [620, 560, 520, 120],
-      "interaction_point": [880, 780],
-      "label_anchor": [880, 550],
+      "rect": [
+        620,
+        560,
+        520,
+        120
+      ],
+      "interaction_point": [
+        880,
+        780
+      ],
+      "label_anchor": [
+        880,
+        550
+      ],
       "reason": "the open lake surface between the reed clumps with the reflection of the forest and Chopok"
     },
     "S45.sensor": {
-      "rect": [1205, 520, 100, 198],
-      "interaction_point": [1255, 790],
-      "label_anchor": [1255, 510],
-      "reason": "the Atlas passive sensor: a small portable stand (tripod, weatherproof box, tiny solar panel) on the path's edge (feet y ~718)"
+      "rect": [
+        1205,
+        520,
+        100,
+        198
+      ],
+      "interaction_point": [
+        1352,
+        790
+      ],
+      "label_anchor": [
+        1255,
+        510
+      ],
+      "reason": "the Atlas passive sensor: a small portable stand (tripod, weatherproof box, tiny solar panel) on the path's edge (feet y ~718); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
     },
     "S45.ambient 2": {
-      "rect": [1490, 405, 95, 175],
-      "interaction_point": [1535, 800],
-      "label_anchor": [1535, 395],
+      "rect": [
+        1490,
+        405,
+        95,
+        175
+      ],
+      "interaction_point": [
+        1535,
+        800
+      ],
+      "label_anchor": [
+        1535,
+        395
+      ],
       "reason": "trail marker post: the white-red-white stripe mark and a plain yellow arrow board on a wooden post (post foot y ~725)"
     }
   },
   "exits": {
     "S45.to_S42": {
-      "rect": [0, 735, 60, 280],
-      "interaction_point": [70, 880],
-      "label_anchor": [170, 725],
+      "rect": [
+        0,
+        735,
+        60,
+        280
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        170,
+        725
+      ],
       "reason": "the path continues out of the left edge back to Hotel Grand Jasna"
     }
   },
-  "state_patches": []
+  "state_patches": [],
+  "audio": {
+    "ambience": [
+      {
+        "sound": "wind_mountain",
+        "db": -8
+      },
+      {
+        "sound": "wind_soft",
+        "db": -10
+      },
+      {
+        "sound": "hiking_steps",
+        "db": -10,
+        "every": [
+          15,
+          35
+        ]
+      }
+    ],
+    "ambience_mode": "replace",
+    "reason": "winter (owner 2026-10-06: Jasna 2035 is in winter): Vrbicke pleso is frozen and the trees are bare or laden, so water_lapping and leaves_wind of game.json rooms[].ambience are replaced by the mountain wind; the footsteps on the path stay"
+  }
 }

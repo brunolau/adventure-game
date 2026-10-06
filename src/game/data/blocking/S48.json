@@ -4,47 +4,199 @@
   "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
   "note": "The fictional Atlas service pavilion on the real gravel plateau ~50 m east of the Rotunda (DECISIONS item 6), painted as its exterior with the open service bay (orchestrator brief: S48 exterior, S49 interior). Camera ~1.7 m high on the plateau, looking west at the Rotunda complex as in the 2016 photos taken from the summit path; horizon y ~470; the Rotunda's entrance and its external steel stairs stand far back on y ~560, the pavilion's front on the right stands on y ~765 (~160 px per metre there). Perspective s(y) = (y - 470) / 545. Left/centre: the Rotunda (stone base, red band with the lettering ROTUNDA CHOPOK, glass drum, red ring roof) between the dark station wings, the steel stairs up to the roof terrace; the gravel plateau with rocks, dwarf pine and June snow patches; right: the modular timber-and-white pavilion of the exhibition with its open service bay (terminal on a rugged cart, a taped paper note beside it, cables on the gravel) and the door to the inner chamber. The walk polygon follows the open gravel path only: the dwarf pine, the rocks and the snow patches of the painting on both sides of the path stay outside it; in front of the pavilion door it is a narrow strip.",
   "background": "bg_natural/S48.webp",
-  "walk_polygon": [[300, 1015], [330, 880], [570, 870], [570, 745], [520, 738], [515, 665], [420, 640], [560, 626], [720, 626], [860, 648], [1100, 700], [1215, 770], [1790, 776], [1785, 794], [1612, 800], [1605, 862], [1460, 870], [1150, 876], [1140, 1015]],
-  "walk_band": [624, 1015],
-  "actor_scale": [0.28, 1.0],
-  "spawn": [800, 900],
+  "walk_polygon": [
+    [
+      300,
+      1015
+    ],
+    [
+      330,
+      880
+    ],
+    [
+      570,
+      870
+    ],
+    [
+      570,
+      745
+    ],
+    [
+      520,
+      738
+    ],
+    [
+      515,
+      665
+    ],
+    [
+      420,
+      640
+    ],
+    [
+      560,
+      626
+    ],
+    [
+      720,
+      626
+    ],
+    [
+      860,
+      648
+    ],
+    [
+      1100,
+      700
+    ],
+    [
+      1215,
+      770
+    ],
+    [
+      1790,
+      776
+    ],
+    [
+      1785,
+      794
+    ],
+    [
+      1612,
+      800
+    ],
+    [
+      1605,
+      862
+    ],
+    [
+      1460,
+      870
+    ],
+    [
+      1150,
+      876
+    ],
+    [
+      1140,
+      1015
+    ]
+  ],
+  "walk_band": [
+    624,
+    1015
+  ],
+  "actor_scale": [
+    0.28,
+    1.0
+  ],
+  "spawn": [
+    800,
+    900
+  ],
   "hotspots": {
     "S48.terminal": {
-      "rect": [1280, 520, 150, 170],
-      "interaction_point": [1355, 830],
-      "label_anchor": [1355, 510],
-      "reason": "the service terminal (rugged console with a screen) on a steel cart in the pavilion's open service bay"
+      "rect": [
+        1280,
+        520,
+        150,
+        170
+      ],
+      "interaction_point": [
+        1229,
+        830
+      ],
+      "label_anchor": [
+        1355,
+        510
+      ],
+      "reason": "the service terminal (rugged console with a screen) on a steel cart in the pavilion's open service bay; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
     },
     "S48.ambient 2": {
-      "rect": [1495, 462, 74, 84],
-      "interaction_point": [1530, 840],
-      "label_anchor": [1532, 452],
+      "rect": [
+        1495,
+        462,
+        74,
+        84
+      ],
+      "interaction_point": [
+        1530,
+        840
+      ],
+      "label_anchor": [
+        1532,
+        452
+      ],
       "reason": "the handwritten paper note taped on the pavilion wall beside the service bay"
     },
     "S48.ambient 1": {
-      "rect": [975, 690, 465, 92],
-      "interaction_point": [1200, 845],
-      "label_anchor": [1200, 680],
+      "rect": [
+        975,
+        690,
+        465,
+        92
+      ],
+      "interaction_point": [
+        1200,
+        845
+      ],
+      "label_anchor": [
+        1200,
+        680
+      ],
       "reason": "the bundle of black and orange cables running from the service bay across the gravel to a small junction box"
     }
   },
   "exits": {
     "S48.to_S47": {
-      "rect": [600, 470, 120, 130],
-      "interaction_point": [650, 640],
-      "label_anchor": [660, 460],
+      "rect": [
+        600,
+        470,
+        120,
+        130
+      ],
+      "interaction_point": [
+        650,
+        640
+      ],
+      "label_anchor": [
+        660,
+        460
+      ],
       "reason": "the Rotunda's entrance in its stone base under the red band, at the end of the plateau path"
     },
     "S48.to_S50": {
-      "rect": [400, 380, 150, 230],
-      "interaction_point": [470, 652],
-      "label_anchor": [455, 370],
+      "rect": [
+        400,
+        380,
+        150,
+        230
+      ],
+      "interaction_point": [
+        470,
+        652
+      ],
+      "label_anchor": [
+        455,
+        370
+      ],
       "reason": "the external steel staircase up to the roof viewing terrace beside the Rotunda"
     },
     "S48.to_S49": {
-      "rect": [1615, 420, 170, 345],
-      "interaction_point": [1700, 786],
-      "label_anchor": [1700, 410],
+      "rect": [
+        1615,
+        420,
+        170,
+        345
+      ],
+      "interaction_point": [
+        1700,
+        786
+      ],
+      "label_anchor": [
+        1700,
+        410
+      ],
       "reason": "the pavilion's door to the inner chamber"
     }
   },

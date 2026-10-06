@@ -1,0 +1,56 @@
+{
+  "target": "CS09_1",
+  "version": 3,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2110845977,
+  "usd": 0.15,
+  "scope": "cutscenes/winter/CS09_1/",
+  "spend_log_asset": "cutscenes/winter/CS09_1/CS09_1_v3_winter",
+  "started": "2026-10-06T01:06:54",
+  "base": "art/cutscenes/CS09_1_summer.webp (summer, model geometry)",
+  "prompt_file": "art/prompts/winter/CS09_1.txt",
+  "config_file": "art/prompts/winter/CS09_1.json",
+  "prompt": "You receive 2 images. Image 1 is a finished cutscene frame of our point-and-click adventure game: inside the small gondola cabin of the Biela Put - Priehyba line at Jasna, Adam seated with his ticket, the resort below, painted in summer. Image 2 is the approved winter outfit of our hero Adam: a dark charcoal wool coat with buttons, a mustard-yellow knitted scarf, his brown leather messenger bag, jeans and brown boots. Edit image 1 into the SAME SCENE on 6 February 2035, a clear cold day in deep winter: keep the exact framing, camera, composition, every person (face, hair, pose, hands, expression), every object and every piece of lettering exactly as in image 1, unless the text below says otherwise. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nWinter changes:\n- Through every window: the same resort below in deep winter - the hotels and chalets with thick snow on their roofs and icicles, snow-covered spruces, the green meadows and slopes now white with groomed ski pistes and a few small skiers, the lift pylons rimed white, the road cleared between snow banks; clear cold winter sky; frost rims along the edges of the cabin windows.\n- Adam now wears his winter outfit from image 2: the dark charcoal wool coat (buttoned, collar up) and the mustard-yellow knitted scarf; the same face, hair, pose, hands, ticket card, jeans, boots and brown messenger bag as in image 1.\n- A little snow on the cabin floor near the door, brought in on the boots.\n- The sign at the top with the lettering painted in image 1 stays exactly as it is.\n\nThe result is image 1 edited, in the same 16:9 framing: no frames, no borders, no letterbox bars, no captions, no watermark, no new text.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/CS09_1_summer.webp (summer, model geometry)",
+    "src/game/assets/actors/ADAM/idle_front_coat1982.webp#0"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_CS09_1_v3_winter_raw.png",
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {},
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "full",
+    "protect": [
+      [
+        730,
+        36,
+        460,
+        88
+      ]
+    ],
+    "feather": 10,
+    "place": "inside the small gondola cabin of the Biela Put - Priehyba line at Jasna, Adam seated with his ticket, the resort below",
+    "refs": [
+      "src/game/assets/actors/ADAM/idle_front_coat1982.webp#0"
+    ],
+    "ref_roles": [
+      "the approved winter outfit of our hero Adam: a dark charcoal wool coat with buttons, a mustard-yellow knitted scarf, his brown leather messenger bag, jeans and brown boots"
+    ]
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:07:31",
+  "review": "art/review/natural/winter/CS09_1_v3_winter.jpg"
+}

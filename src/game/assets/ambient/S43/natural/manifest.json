@@ -1,30 +1,8 @@
 {
   "room": "S43",
   "source": "src/game/assets/bg_natural/S43.webp",
-  "bg_sha1": "441e3a53ee8a255c3aed07c28c4a6f073b6541c2",
+  "bg_sha1": "c0c13cbd22d0f596bec60f28902c0ef3cb9e4bb4",
   "items": {
-    "window_spruces": {
-      "kind": "cutout",
-      "pos": [
-        1771,
-        281
-      ],
-      "size": [
-        133,
-        333
-      ]
-    },
-    "door_spruces": {
-      "kind": "cutout",
-      "pos": [
-        62,
-        422
-      ],
-      "size": [
-        196,
-        280
-      ]
-    },
     "door_glass_mask": {
       "kind": "mask",
       "mask_rect": [
@@ -32,6 +10,15 @@
         420,
         200,
         285
+      ]
+    },
+    "window_glass_mask": {
+      "kind": "mask",
+      "mask_rect": [
+        1770,
+        280,
+        130,
+        330
       ]
     }
   }

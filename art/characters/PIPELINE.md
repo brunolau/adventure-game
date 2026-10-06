@@ -476,3 +476,141 @@ conversations (ambient topics + quest lines), so all 13 have a Hailuo video idle
 | gestures (13 x NB2 2K) + JURO, JURAJ retakes | 1.80 |
 | Hailuo idle loops (13) + 10 retakes | 6.21 |
 | **total** | **13.16** |
+
+## Guest walk-ins (2026-10-05): MIRA60, OTO82, TONO82 (ISSUES PT-S18)
+
+Tool: `art/tools/guest_walks.py` (paid `stand`, `fix`, `face`, `video`; free `canvas`, `loop`, `stills`, `export`,
+`export_standing`). Spend **USD 1.96** (spend-log scope `characters/<ID>/guest_`). Masters: `art/characters/<ID>/guest/`.
+
+- **Walks (Hailuo-02 Pro, start = end, three-quarter view, "walks in place"):** all three usable first time; 12-cell
+  loops scaled from the standing first frame to the shipped figure height (MIRA60 / OTO82 512 px, TONO82 445 px =
+  152 cm), cycles 1.08-1.25 s, loop error 0.003-0.005. Shipped as `walk_sheet.webp` + `walk_right` animation in each
+  actor.json (OTO82 as a 6 x 2 grid, <= 4096 px); mirrored for left like every NPC clip.
+- **TONO82 standing:** the shipped set is seated (S64). NB2 2K "stand up" edit of the base sheet kept the face but left
+  the briefcase and a faint ghost leg; a second NB2 clean-up edit changed nothing (NB2 sticks to the first image,
+  as in section 11) and its first download broke after billing (both billed). The left-overs were cut locally
+  (`clean_tono_stand`: hand boxes + largest component). Two NB2 1K mouth edits ('ah', 'oh') transplanted as a soft
+  mouth ellipse only (`mouth_patch`), so the body never flickers. Variant `guest_standing` (height_px 444.7).
+- Looked at: the sheets on grey, and in engine (build/screens/fixes/staging/S40_I17_*, S61_E08_*).
+
+## Hero winter coat for December 1982 (2026-10-05): ADAM `coat1982` (ISSUES PT-S20)
+
+Spend **USD 6.60** (24 calls, spend-log prefix `characters/ADAM/coat1982/`; task budget USD 8 shared with the CS07
+ports, the TOOLS icon and the S43 lettering). Tool: `art/tools/hero_coat.py` (paid `edit`, `video`; free `masters`,
+`build`, `export`, `review`); the set lives in `art/characters/ADAM/coat1982/` with the layout of `ADAM/`, so the
+`hero_set.py` stages run on it unchanged (`char = "ADAM/coat1982"`). Shipped: 14 `*_coat1982` sheets next to the
+default ones in `src/game/assets/actors/ADAM/` (README there), selected per room by `hero_coat1982_rooms`.
+
+- **Re-dress, do not re-pose.** One NB2 2K edit per facing base (side, front, back) and per default key pose
+  (reach_low/mid/high, use_tool, show_item, inventory_combine), all with the same text: closed hip-length charcoal
+  wool coat with dark buttons, mustard knitted scarf (the T-shirt's colour), bag strap over the coat, no hat, no
+  gloves, "do not move, turn or rescale him". The coat came out the same in 8 of 9 edits; NB2 drew the front view
+  6.7 % larger (scaled back about the feet, `rescale_about_feet`) and once a second small head above it (dropped as
+  a stray component, `main_figure`); inventory_combine v1 had long scarf ends that read as fiddling with the scarf
+  (retake `_b` with "ends tucked in, nothing hangs in front of his hands"); reach_low painted the coat ~24 % lighter
+  (per-channel gain on the coat pixels, `match_coat_tone`).
+- **Face pixel-identical to the jacket set.** The default head is transplanted onto each coat base: everything
+  inside the head box the edit painted as face / hair, but not where it painted scarf (closed + hole-filled mustard
+  mask, so the dark knit ribs count), wool or where the default shows its jacket collar, and not where the edit is
+  opaque and the default is not (the scarf behind the neck). The default blink and mouth frames are then blended
+  with the same weight, so `talk_*` and the idle blink need no new edits. Lesson: a plain row cut at the chin line
+  pasted the default neck over the scarf, and an unopened colour mask grabbed the olive face outline.
+- **Walks (Hailuo-02 Pro, start = end, the jacket prompts with the jacket wording replaced):** the side walk is
+  fine but slower than the jacket clip (cycle 38 video frames against 23), so its cycle window was moved and the
+  sheet plays 1.16x faster in the engine to keep the 272 px/s ground speed (no sliding: stride and fps scale
+  together). Toward and away v1 walked stop-and-go (leg-motion minima 1-3 against 11-19 for the jacket clips, both
+  feet planted ~0.4 s at every step); the retakes `_b` with "brisk, steady, continuous ... no pause between the
+  steps" walk continuously (away plays at the side walk's cadence). 20 cells per cycle.
+- **One-shots:** start = coat base, end = coat key pose aligned to the coat base by the feet; all six usable first
+  time; frames sampled at equal pose progress as before.
+- **Download hiccup:** `v3b.fal.media` reads timed out repeatedly; the first `coat_side` result was lost after
+  billing (USD 0.12, logged). `hero_coat.save_result` now writes the raw result JSON first and downloads with curl
+  (retries), falling back to requests.
+- Looked at: edit sheets, head zooms at full and game scale, every walk and one-shot strip, in-engine S57 / S59 /
+  S61 / S65 idles, S57 / S61 walks and the S61 E09 reach in the coat (`build/screens/fixes/art/`).
+
+| spend | USD |
+|---|---:|
+| 9 coat edits (NB2 2K) + inventory_combine retake + 1 lost download | 1.32 |
+| 9 Hailuo Pro clips (3 walks, 6 transitions) | 4.32 |
+| 2 walk retakes (toward, away) | 0.96 |
+| **total** | **6.60** |
+
+## Zuzana, 7, Ivanka pri Dunaji June 1962 (2026-10-06): ZUZANA (S37)
+
+Budget USD 6, spent **USD 2.94** (17 calls, spend-log scope `characters/ZUZANA/`; rejected or unused work USD 0.93). Tools:
+`art/tools/zuzana_set.py` (paid: `sheet`, `faces`, `crouch`, `crouch_faces`, `video --kind idle|hop|draw`) and
+`art/tools/zuzana_build.py` (free: `build`, `idle`, `hop`, `crouch_prep`, `crouch_build`, `draw`, `export`,
+`preview`), both on top of `npc_batch.py`. Shipped: `src/game/assets/actors/ZUZANA/` (5 sheets, actor.json with the
+variants `playing` (default), `full`, `drawing`, README). Masters and review sheets: `art/characters/ZUZANA/`.
+
+- **Likeness.** The face and hair come from a family photo supplied by the owner. The photo stays in the git-ignored
+  `art/source/owner_refs/`; it is sent to Nano Banana Pro only as an in-memory data URI (no fal storage upload, no
+  copy next to the masters), the likeness note of the prompt is kept next to the photo, and sidecars carry a
+  placeholder instead of the photo's path or description. Base sheet: Pro 2K with ADAM's cast anchor first and the
+  photo last. Three takes: A (cast anchor + photo) chosen; B (+ SONA as a child reference) nearly identical (same
+  seed); C (an extra "older, slimmer" note, new seed) came out with a bigger head and a younger face (rejected).
+- **Age and height.** Head ~1/5.3 of the height, which matches the cast's head exaggeration for a seven-year-old
+  (adults 1/6.5 painted vs ~1/7.5 real; SONA 1/6.2 at 11). Shipped standing height **350 px** (adults 512 px =
+  1.70-1.75 m, so ~118-120 cm, a typical seven-year-old; 0.68 of Adam, SONA 420 px). The suggested ~320 px would be
+  ~110 cm, a four- or five-year-old next to SONA. Crouched set: 204 px at the same head size (scale from the width of
+  the hair bob; a row-width scan merged head and shoulders in the crouch and gave a wrong 2.07x).
+- **Crouch.** Pro returned the standing sheet unchanged for "she now crouches ..." (rejected); NB2 2K with "Change the
+  pose ... She is no longer standing" crouched her correctly (redrawn 1.49x larger, scaled back by the head).
+- **Hopscotch loop (Hailuo-02 Pro, start = end = the standing base, 70 cells at 11.9 fps):** take 1 ("hops on one
+  foot ... jumps landing with both feet apart") gave high tuck jumps with the legs folded under the skirt
+  (rejected). Take 2 with "small, low, light hops ... feet rise only a little ... knees bend only a little ... arms
+  slightly out to the sides" hops on one foot with the other lifted behind, two rounds and a pause. Built with a
+  fixed feet line (the standing first frame), so the hops rise above the pivot instead of being flattened.
+- **Drawing loop (Hailuo standard):** the key colour drifted to a mint green after 0.15 s (keyed per frame from the
+  border median, no problem) and small chalk strokes appeared on the ground (removed by the island filter; they
+  would reset at the loop point).
+- **Checks:** video cell 0 of idle / play / draw within 1 px of the still idle of its set; still bodies pixel-identical
+  outside the face bands; every WebP <= 4096 px; Godot 4.7.2 headless import without errors; actor.json staging
+  names resolve with `tools/check_blocking.resolve_staging`. Not yet seen in a real room window (she is not in
+  `game.json` / `data/blocking/S37.json` yet); mock-ups at the S37 perspective in `ZUZANA/review/S37_mock_*.jpg`,
+  animated in `build/screens/zuzana/S37_playing.gif`.
+
+| spend | USD |
+|---|---:|
+| base sheets (Pro 2K: takes A, B, C) | 0.45 |
+| face frames (3 x NB2 1K) + pointing gesture (NB2 2K) | 0.36 |
+| crouch: Pro (unchanged, rejected) + NB2 2K | 0.27 |
+| crouch face frames (3 x NB2 1K) + crouch pointing (NB2 2K) | 0.36 |
+| hopscotch loop (Hailuo Pro, 2 takes) | 0.96 |
+| standing idle + drawing loop (Hailuo standard) | 0.54 |
+| **total** | **2.94** |
+
+## Winter variants for Jasná 2035 (2026-10-06): NINA, IVAN, TURISTA (DECISIONS "Jasná 2035 is in winter")
+
+Spend **USD 2.16** (9 calls, spend-log prefix `characters/<ID>/winter/`; the task's three cabin clean plates, USD 0.36,
+are under `ambient/jasna_winter/`). Tool: `art/tools/npc_winter.py` (paid `redress`, `gesture`, `video`; free `build`,
+`idle`, `calm`, `export`, `review`); masters in `art/characters/<ID>/winter/` (same layout as the default set, so
+`npc_prod.py idle` / `calm` run on it unchanged). Shipped as the actor.json variant `winter` (`npc_winter`,
+`idle_winter`, `idle_fidget_winter` sheets beside the default ones), staged in the natural blocking
+(`npcs.<id>.variant = "winter"` in S42, S67, S68). ROBOT already had its `snow` variant (S41 painting).
+
+- **Re-dress, do not re-pose:** one NB2 2K edit of the accepted base sheet per character ("same person, pose, size;
+  change ONLY the clothes for a freezing February day"): NINA closed knee-length bottle-green wool coat, charcoal
+  scarf, black gloves, black winter boots (no hat, so she stays recognisable next to EPILOGUE_8); IVAN padded
+  slate-blue parka with the same orange shoulder panels, cabin patch and radio, grey beanie, work gloves; TURISTA
+  padded brick-red ski jacket, dark-blue bobble beanie instead of the bucket sun hat, grey ski trousers, gloves, the
+  same daypack and camera. 3/3 usable first time; body shift 0-3 px, feet within 1 px.
+- **Default face pixels:** the face (skin of both figures in the head rows, closed over eyes and brows that touch the
+  hair, holes filled) is taken from the default base, so the default blink and mouth edits are blended in with the
+  same weight: no new face edits, and the face frames differ from the idle only inside the eye / mouth bands
+  (checked per cell). A first mask without the closing missed NINA's near eye (half blink); fixed.
+- **Gesture:** NB2 2K edit of the winter base with the brief's gesture (the clothes stay), patched over the base.
+- **Video idles:** Hailuo-02 Pro from the winter canvas (NINA on blue, PIPELINE section 12); feet planted (leg band
+  <= 2.6/255), loop closure 0.002-0.007. NINA ships the whole clip as idle (no glance down); IVAN and TURISTA bowed
+  their heads mid-clip like their summer clips, so they ship the calm ping-pong (`calm`, TURISTA threshold 5) plus the
+  whole clip as `idle_fidget`.
+- Looked at: `art/characters/<ID>/winter/review.jpg` (default | winter stills, face zoom), the idle strips, and in
+  engine `build/screens/jasna_winter/<room>/winter_life_*`.
+
+| spend | USD |
+|---|---:|
+| 3 re-dress edits (NB2 2K) | 0.36 |
+| 3 gestures (NB2 2K) | 0.36 |
+| 3 Hailuo Pro idle loops | 1.44 |
+| **total** | **2.16** |

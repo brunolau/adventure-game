@@ -1,0 +1,204 @@
+{
+  "target": "S45",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 568099356,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S45/",
+  "spend_log_asset": "bg_natural/winter/S45/S45_v2_winter",
+  "started": "2026-10-06T00:52:13",
+  "base": "art/masters/bg_natural/S45_summer.webp",
+  "prompt_file": "art/prompts/natural/S45.winter.txt",
+  "config_file": "art/prompts/natural/S45.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the footpath on the north shore of Vrbicke pleso at Jasna, view across the lake to Chopok, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nWinter changes:\n- Vrbicke pleso is FROZEN. Along both shores and around the reeds the ice lies under smooth snow, but a wide band of\n  smooth, dark, glassy clear ice across the middle of the lake (the box labelled 'Hladina plesa' in image 2 (x 620-1140, y 560-680 of the 1920x1080 frame (32-59 % from the left, 52-63 % from the top))) is swept free of snow by the\n  wind and still mirrors the white mountain and the dark forest (keep that mirror image clearly readable there). No\n  open water, no ducks, no boats.\n- The far shore, the meadow on the far side and the low shrubs are deep white snow; the dark spruce forest is loaded\n  and dusted with snow.\n- Chopok is a deep white winter mountain with rocky outcrops showing through; on its slopes groomed ski pistes\n  (smooth white bands between the forest edges) with a few tiny distant skiers; the summit buildings white with snow.\n- The reed clumps left and right of the lake are dry golden-brown winter reeds sticking out of the snow, with snow\n  caught in them (same position and size).\n- The rowan branches at the top left are bare winter twigs with a little snow on them and a few clusters of red\n  rowan berries (same branches, no green leaves). The big spruce at the right edge is laden with snow.\n- The bench (the box labelled 'Lavička so psom' in image 2 (x 290-570, y 545-717 of the 1920x1080 frame (15-30 % from the left, 50-66 % from the top))) stays exactly where it is with the same shape: a small cap of snow on the backrest top\n  and on the seat edge, but the plaque with the lettering painted in image 1 and the white ceramic dog on the backrest\n  stay fully visible and unchanged (the dog may have a tiny cap of snow on its head).\n- The Atlas sensor on its tripod (the box labelled 'Pasívny stojan pri chodníku' in image 2 (x 1205-1305, y 520-718 of the 1920x1080 frame (63-68 % from the left, 48-66 % from the top))) stays the same: a thin layer of snow on the small solar panel,\n  the legs standing in the snow.\n- The wooden trail post (the box labelled 'Turistické značenie' in image 2 (x 1490-1585, y 405-580 of the 1920x1080 frame (78-83 % from the left, 38-54 % from the top))) stays the same with the blank yellow arrow board and the white-red-white\n  hiking mark clearly visible; a small cap of snow on its top and on the arrow board.\n- Sky: clear deep winter blue, one or two small clouds; low sun from the left; sparkle on the snow.\n\nWalkable floor: the band at x 0-1920, y 716-1015 of the 1920x1080 frame (0-100 % from the left, 66-94 % from the top) is the lakeside footpath and the low meadow in front, now under snow: the path is a trodden,\npacked snow path with footprints, the meadow in front is smooth even snow with a few dry grass stalks and seed heads\npoking out - ONE continuous, flat, open surface with no banks, drifts, logs or stones in it. The exit\nthe box labelled 'exit: Pred hotelom Grand Jasná' in image 2 (x 0-60, y 735-1015 of the 1920x1080 frame (0-3 % from the left, 68-94 % from the top)) is the path leaving at the left edge.\nThis room has no NPC zones.\n\nFiction rules: no new lettering, no logos, no people except a few tiny distant skiers on the far slopes, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S45_summer.webp (summer, model geometry)",
+    "S45 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S45_v2_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S45",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Public footpath on the north shore of Vrbicke pleso as in the 2015 meadow photo: camera ~1.7 m on the path, looking SSE across the lake to Chopok; horizon y ~470; the near shore with reeds and the path's back edge on y ~705-720 (~138 px per metre there), the far shore on y ~525. Perspective s(y) = (y - 470) / 545. The packed-earth path runs along the shore through the meadow; the bench with the ceramic dog stands on the path's back edge on the left, the lake surface opens between the reed clumps in the centre, the Atlas passive sensor is a portable stand on the path's edge (not on the protected shore), the trail marker post stands on the right.",
+    "background": "bg_natural/S45.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        735
+      ],
+      [
+        280,
+        722
+      ],
+      [
+        600,
+        716
+      ],
+      [
+        1180,
+        718
+      ],
+      [
+        1330,
+        722
+      ],
+      [
+        1700,
+        728
+      ],
+      [
+        1920,
+        738
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      716,
+      1015
+    ],
+    "actor_scale": [
+      0.45,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S45.bench": {
+        "rect": [
+          290,
+          545,
+          280,
+          172
+        ],
+        "interaction_point": [
+          430,
+          790
+        ],
+        "label_anchor": [
+          430,
+          535
+        ],
+        "reason": "wooden bench on the path's back edge facing the lake; the ceramic dog sits on its backrest, the small carved DRUHY ZIVOT plaque on the backrest (feet y ~715)"
+      },
+      "S45.ambient 1": {
+        "rect": [
+          620,
+          560,
+          520,
+          120
+        ],
+        "interaction_point": [
+          880,
+          780
+        ],
+        "label_anchor": [
+          880,
+          550
+        ],
+        "reason": "the open lake surface between the reed clumps with the reflection of the forest and Chopok"
+      },
+      "S45.sensor": {
+        "rect": [
+          1205,
+          520,
+          100,
+          198
+        ],
+        "interaction_point": [
+          1352,
+          790
+        ],
+        "label_anchor": [
+          1255,
+          510
+        ],
+        "reason": "the Atlas passive sensor: a small portable stand (tripod, weatherproof box, tiny solar panel) on the path's edge (feet y ~718); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
+      },
+      "S45.ambient 2": {
+        "rect": [
+          1490,
+          405,
+          95,
+          175
+        ],
+        "interaction_point": [
+          1535,
+          800
+        ],
+        "label_anchor": [
+          1535,
+          395
+        ],
+        "reason": "trail marker post: the white-red-white stripe mark and a plain yellow arrow board on a wooden post (post foot y ~725)"
+      }
+    },
+    "exits": {
+      "S45.to_S42": {
+        "rect": [
+          0,
+          735,
+          60,
+          280
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          170,
+          725
+        ],
+        "reason": "the path continues out of the left edge back to Hotel Grand Jasna"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S45.to_S42": {
+        "at": [
+          30.0,
+          875.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.664,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "full",
+    "protect": [],
+    "feather": 12,
+    "place": "the footpath on the north shore of Vrbicke pleso at Jasna, view across the lake to Chopok"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:52:53",
+  "review": "art/review/natural/winter/S45_v2_winter.jpg",
+  "derive_review": "art/review/natural/winter/S45_v2_derive.png"
+}

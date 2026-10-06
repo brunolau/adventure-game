@@ -1,0 +1,56 @@
+{
+  "target": "CS09_2",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1365200205,
+  "usd": 0.15,
+  "scope": "cutscenes/winter/CS09_2/",
+  "spend_log_asset": "cutscenes/winter/CS09_2/CS09_2_v2_winter",
+  "started": "2026-10-06T01:06:54",
+  "base": "art/cutscenes/CS09_2_summer.webp (summer, model geometry)",
+  "prompt_file": "art/prompts/winter/CS09_2.txt",
+  "config_file": "art/prompts/winter/CS09_2.json",
+  "prompt": "You receive 2 images. Image 1 is a finished cutscene frame of our point-and-click adventure game: the boarding hall of the Funitel station at Priehyba, Adam walking to a docked Funitel cabin, painted in summer. Image 2 is the approved winter outfit of our hero Adam: a dark charcoal wool coat with buttons, a mustard-yellow knitted scarf, his brown leather messenger bag, jeans and brown boots. Edit image 1 into the SAME SCENE on 6 February 2035, a clear cold day in deep winter: keep the exact framing, camera, composition, every person (face, hair, pose, hands, expression), every object and every piece of lettering exactly as in image 1, unless the text below says otherwise. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nWinter changes:\n- Through the open side of the hall at the left: a white, snow-covered mountain slope with snowy spruces and a groomed piste under a clear winter sky; the railing outside carries a cap of snow with icicles.\n- The black Funitel cabins carry a thin line of snow and rime on their roofs; a light dusting of snow blown in on the platform near the opening, with a few wet boot prints.\n- Adam (walking) now wears his winter outfit from image 2: the dark charcoal wool coat and the mustard-yellow scarf; the same hair, pose, jeans, boots and brown messenger bag as in image 1.\n- The hanging sign with its lettering and arrow (as painted in image 1) stays exactly as it is; the station structure, the conveyor tyres and the red steel frame stay the same.\n\nThe result is image 1 edited, in the same 16:9 framing: no frames, no borders, no letterbox bars, no captions, no watermark, no new text.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/CS09_2_summer.webp (summer, model geometry)",
+    "src/game/assets/actors/ADAM/idle_front_coat1982.webp#0"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_CS09_2_v2_winter_raw.png",
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {},
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "full",
+    "protect": [
+      [
+        296,
+        166,
+        380,
+        210
+      ]
+    ],
+    "feather": 10,
+    "place": "the boarding hall of the Funitel station at Priehyba, Adam walking to a docked Funitel cabin",
+    "refs": [
+      "src/game/assets/actors/ADAM/idle_front_coat1982.webp#0"
+    ],
+    "ref_roles": [
+      "the approved winter outfit of our hero Adam: a dark charcoal wool coat with buttons, a mustard-yellow knitted scarf, his brown leather messenger bag, jeans and brown boots"
+    ]
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:07:30",
+  "review": "art/review/natural/winter/CS09_2_v2_winter.jpg"
+}

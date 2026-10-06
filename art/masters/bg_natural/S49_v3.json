@@ -1,0 +1,326 @@
+{
+  "target": "S49",
+  "version": 3,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1271963656,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S49/",
+  "spend_log_asset": "bg_natural/winter/S49/S49_v3_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S49_summer.webp",
+  "prompt_file": "art/prompts/natural/S49.winter.txt",
+  "config_file": "art/prompts/natural/S49.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the chronochamber inside the fictional Atlas pavilion on Chopok, with the real Rotunda through the window, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the chamber everything stays exactly as in image 1 (the beams, the larch walls, the steel console plate with\nthe four port symbols the box labelled 'Port Pôvod' in image 2 (x 92-198, y 388-494 of the 1920x1080 frame (5-10 % from the left, 36-46 % from the top)) the box labelled 'Port Hlas' in image 2 (x 212-318, y 388-494 of the 1920x1080 frame (11-17 % from the left, 36-46 % from the top)) the box labelled 'Port Súhlas' in image 2 (x 332-438, y 388-494 of the 1920x1080 frame (17-23 % from the left, 36-46 % from the top)) the box labelled 'Port Návrat' in image 2 (x 452-558, y 388-494 of the 1920x1080 frame (24-29 % from the left, 36-46 % from the top)),\nthe caged amber lamp the box labelled 'Núdzová lampa' in image 2 (x 278-370, y 248-340 of the 1920x1080 frame (14-19 % from the left, 23-31 % from the top)), the table with the brass desk lamp and the glass of water\nthe box labelled 'Pohár vody' in image 2 (x 1092-1172, y 528-610 of the 1920x1080 frame (57-61 % from the left, 49-56 % from the top)), the restore console the box labelled 'Panel obnovy' in image 2 (x 1595-1805, y 512-802 of the 1920x1080 frame (83-94 % from the left, 47-74 % from the top)), the door the box labelled 'exit: Servisný pavilón výstavy Atlas' in image 2 (x 1815-1920, y 380-725 of the 1920x1080 frame (95-100 % from the left, 35-67 % from the top)), the floor). Winter shows only\nthrough the big window:\n- The Rotunda complex keeps exactly its shape, size and position: the stone drum with the glass top and the red ring\n  roof, the two long dark station wings on stilts, the steel stairs. Thick snow lies on the red ring roof and on the\n  flat roofs of the wings; white rime ice coats the railings, the stilts and the stairs; icicles hang from the wings.\n- The plateau in front is deep, wind-shaped white snow; the distant ridges are white winter mountains.\n- Clear deep winter blue sky with one or two small clouds; frost flowers in the lower corners of the window and a thin\n  frost rim along the frame.\nNPC zone at x 905-1065, y 450-602 of the 1920x1080 frame (47-55 % from the left, 42-56 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character stands behind a table: paint the table's top edge as one straight horizontal line exactly at y 600 across x 875-1095, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\nWalkable floor: the band at x 0-1920, y 738-1015 of the 1920x1080 frame (0-100 % from the left, 68-94 % from the top) stays the same open wooden floor with nothing standing on it.\n\nFiction rules: no new lettering, no logos, no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S49_summer.webp (summer, model geometry)",
+    "S49 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S49_v3_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S49",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Inside the same fictional Atlas pavilion as S48 (the chronochamber), designed after the approved CS06_1/CS06_2 cutscene frames (light wood-panelled walls, the steel console plate with the four port symbols, the amber emergency lamp above it, the big window to the west with the real Rotunda complex). Camera ~1.6 m high, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), Viktor's table front stands on y ~790. Perspective s(y) = (y - 470) / 545 (same as the other interiors). Left: the long steel console plate with the four ports (circle, cross, square, triangle) and the emergency lamp above it; centre: the big window showing the Rotunda (dark station wings on stilts, the stone base, the glass drum with the red ring) and Viktor behind his wooden table with the desk lamp and his untouched glass of water; right: the free-standing restore console with its big button and four lamps, the door back to the service bay. The table got a solid front panel in a zoomed local edit (v2). The walk polygon leaves out the restore console (foot y ~805).",
+    "background": "bg_natural/S49.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        738
+      ],
+      [
+        700,
+        738
+      ],
+      [
+        712,
+        794
+      ],
+      [
+        1265,
+        794
+      ],
+      [
+        1278,
+        738
+      ],
+      [
+        1588,
+        738
+      ],
+      [
+        1588,
+        808
+      ],
+      [
+        1812,
+        808
+      ],
+      [
+        1812,
+        738
+      ],
+      [
+        1920,
+        738
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      738,
+      1015
+    ],
+    "actor_scale": [
+      0.49,
+      1.0
+    ],
+    "spawn": [
+      500,
+      900
+    ],
+    "hotspots": {
+      "S49.port_origin": {
+        "rect": [
+          92,
+          388,
+          106,
+          106
+        ],
+        "interaction_point": [
+          145,
+          830
+        ],
+        "label_anchor": [
+          145,
+          378
+        ],
+        "reason": "port 1 on the steel console plate: the circle symbol (origin)"
+      },
+      "S49.port_voice": {
+        "rect": [
+          212,
+          388,
+          106,
+          106
+        ],
+        "interaction_point": [
+          265,
+          830
+        ],
+        "label_anchor": [
+          265,
+          520
+        ],
+        "reason": "port 2 on the console plate: the cross symbol (voice, a cassette slot)"
+      },
+      "S49.port_consent": {
+        "rect": [
+          332,
+          388,
+          106,
+          106
+        ],
+        "interaction_point": [
+          385,
+          830
+        ],
+        "label_anchor": [
+          385,
+          378
+        ],
+        "reason": "port 3 on the console plate: the square symbol (consent)"
+      },
+      "S49.port_return": {
+        "rect": [
+          452,
+          388,
+          106,
+          106
+        ],
+        "interaction_point": [
+          505,
+          830
+        ],
+        "label_anchor": [
+          505,
+          520
+        ],
+        "reason": "port 4 on the console plate: the triangle symbol (return)"
+      },
+      "S49.confirm": {
+        "rect": [
+          1595,
+          512,
+          210,
+          290
+        ],
+        "interaction_point": [
+          1520,
+          840
+        ],
+        "label_anchor": [
+          1700,
+          502
+        ],
+        "reason": "the free-standing restore console: four input lamps, a mode key and a big round button (console foot y ~805) (playtest PT-S06: use point left of the panel; in front of it Adam covered the panel and its lamps)"
+      },
+      "S49.ambient 1": {
+        "rect": [
+          1092,
+          528,
+          80,
+          82
+        ],
+        "interaction_point": [
+          1132,
+          860
+        ],
+        "label_anchor": [
+          1132,
+          518
+        ],
+        "reason": "Viktor's untouched glass of water on the table"
+      },
+      "S49.ambient 2": {
+        "rect": [
+          278,
+          248,
+          92,
+          92
+        ],
+        "interaction_point": [
+          325,
+          830
+        ],
+        "label_anchor": [
+          325,
+          238
+        ],
+        "reason": "the amber emergency lamp on the wall above the console plate"
+      },
+      "S49.VIKTOR": {
+        "rect": [
+          905,
+          450,
+          160,
+          152
+        ],
+        "interaction_point": [
+          985,
+          870
+        ],
+        "reason": "Viktor behind his table in front of the window (bust cut at the back edge of the painted table top, y 600)"
+      }
+    },
+    "npcs": {
+      "S49.VIKTOR": {
+        "variant": "behind_counter",
+        "feet": [
+          985,
+          770
+        ],
+        "sill_y": 600,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Viktor behind the table (table variant cut at the table top); scale 0.58 so that the painted table top (y 600) is ~0.8 m above his feet (the perspective at the table's back edge gives 0.5 and made him read as a small figure)",
+        "scale": 0.58
+      }
+    },
+    "exits": {
+      "S49.to_S48": {
+        "rect": [
+          1815,
+          380,
+          105,
+          345
+        ],
+        "interaction_point": [
+          1840,
+          820
+        ],
+        "label_anchor": [
+          1730,
+          370
+        ],
+        "reason": "the door at the right back to the service bay and the plateau"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S49.to_S48": {
+        "at": [
+          1867.5,
+          552.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 1.0,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        700,
+        238,
+        822,
+        268
+      ],
+      [
+        700,
+        506,
+        68,
+        66
+      ],
+      [
+        884,
+        506,
+        200,
+        66
+      ],
+      [
+        1182,
+        506,
+        340,
+        66
+      ],
+      [
+        1084,
+        506,
+        100,
+        40
+      ]
+    ],
+    "feather": 8,
+    "place": "the chronochamber inside the fictional Atlas pavilion on Chopok, with the real Rotunda through the window",
+    "note": "the desk lamp (768-884) and the glass of water (from y 548) stay from the summer painting; the window around them is winter"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:58:44",
+  "review": "art/review/natural/winter/S49_v3_winter.jpg",
+  "derive_review": "art/review/natural/winter/S49_v3_derive.png",
+  "recomposed": true
+}

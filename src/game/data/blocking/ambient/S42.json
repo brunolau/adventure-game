@@ -1,12 +1,40 @@
 {
  "room": "S42",
- "notes": "Natural S42 (bg_natural/S42.webp): the Hotel Grand Jasna forecourt at early-summer midday. Clouds drift over Chopok (sky mask), wind in the big spruce and in the shrubs behind the stone wall, the small stone fountain ripples and glints, alpine choughs cross the sky now and then. Cloud sprites: midday cumulus cut from the natural S41 / S45 skies (the shared common clouds are warm late-afternoon ones).",
+ "notes": "Natural S42 WINTER (6 February 2035, owner 2026-10-06; bg_natural/S42.webp): the Hotel Grand Jasna forecourt on a clear cold day. Clouds drift over Chopok (winter sky mask), fine snow dust twinkles in the cold air, snow sifts down from the laden spruce now and then, glints on the roofs, the banks and the meadow, Nina's breath steams, alpine choughs cross the sky. The laden spruce and shrubs do not sway and the frozen fountain has no water layer. Cloud sprites: winter cumulus cut from the winter S48 / S45 skies + the shared S45 cloud_b. Winter life (art/tools/winter_ambient.py, w_* layers): the gondola runs - the painted cabins are lifted off clean plates (w_plate_*) and ride the ropes into and out of the station (clipped by the station roof and the spruce), four skiers carve down the Chopok pistes, a snowcat grooms the slope under the summit, snow blows off the hotel roof, the gable and the summit ridge, powder sifts off the station eaves, Nina and Adam breathe steam (pulsed).",
  "layers": [
+  {
+   "id": "w_plate_a",
+   "type": "cutout",
+   "texture": "S42/winter/plate_a.webp",
+   "pos": [
+    5,
+    183
+   ]
+  },
+  {
+   "id": "w_plate_b",
+   "type": "cutout",
+   "texture": "S42/winter/plate_b.webp",
+   "pos": [
+    227,
+    354
+   ]
+  },
+  {
+   "id": "w_plate_c",
+   "type": "cutout",
+   "texture": "S42/winter/plate_c.webp",
+   "pos": [
+    255,
+    343
+   ]
+  },
   {
    "id": "clouds",
    "type": "clouds",
    "textures": [
-    "S41/natural/cloud_a.webp",
+    "S48/natural/cloud_w1.webp",
+    "S45/natural/cloud_w2.webp",
     "S45/natural/cloud_b.webp"
    ],
    "band": [
@@ -21,54 +49,6 @@
    ],
    "alpha": 0.75,
    "mask": "S42/natural/sky_mask.webp"
-  },
-  {
-   "id": "spruce",
-   "type": "sway",
-   "texture": "S42/natural/spruce.webp",
-   "anchor": 1.0,
-   "amp_px": 2.4,
-   "freq": 0.26,
-   "wavelength_px": 140,
-   "flutter_px": 0.6
-  },
-  {
-   "id": "shrubs",
-   "type": "sway",
-   "texture": "S42/natural/shrubs.webp",
-   "anchor": 1.0,
-   "amp_px": 1.0,
-   "freq": 0.42,
-   "wavelength_px": 60,
-   "flutter_px": 0.4
-  },
-  {
-   "id": "fountain",
-   "type": "water",
-   "texture": "S42/natural/fountain_water.webp",
-   "amp_px": 0.8,
-   "speed": 1.4,
-   "glint": 0.6,
-   "glint_color": "#ffffff"
-  },
-  {
-   "id": "fountain_sparkle",
-   "type": "flicker",
-   "mode": "noise",
-   "pos": [
-    1383,
-    645
-   ],
-   "size": [
-    26,
-    40
-   ],
-   "texture": "builtin:glow",
-   "color": "#e8f6ff",
-   "blend": "add",
-   "min": 0.05,
-   "max": 0.35,
-   "period_s": 0.3
   },
   {
    "id": "choughs",
@@ -112,6 +92,897 @@
     8,
     16
    ]
+  },
+  {
+   "id": "diamond_dust",
+   "type": "particles",
+   "preset": "dust",
+   "emit_rect": [
+    0,
+    0,
+    1920,
+    760
+   ],
+   "count": 46,
+   "size": [
+    1.6,
+    3.6
+   ],
+   "speed_y": [
+    3,
+    9
+   ],
+   "speed_x": [
+    -5,
+    5
+   ],
+   "wind": 5,
+   "twinkle": 0.9,
+   "alpha_range": [
+    0.3,
+    0.85
+   ],
+   "color": "#ffffff",
+   "lifetime": [
+    7,
+    13
+   ]
+  },
+  {
+   "id": "spruce_snowfall",
+   "type": "particles",
+   "preset": "snow",
+   "emit_points": [
+    [
+     372,
+     260
+    ],
+    [
+     470,
+     330
+    ],
+    [
+     350,
+     420
+    ],
+    [
+     520,
+     470
+    ],
+    [
+     430,
+     190
+    ]
+   ],
+   "emit_jitter": [
+    26,
+    6
+   ],
+   "rate": 0.5,
+   "size": [
+    2.5,
+    5.5
+   ],
+   "speed_y": [
+    55,
+    95
+   ],
+   "speed_x": [
+    -6,
+    6
+   ],
+   "wind": 6,
+   "lifetime": [
+    2.4,
+    4.2
+   ],
+   "alpha_range": [
+    0.6,
+    0.95
+   ],
+   "color": "#ffffff",
+   "max": 30
+  },
+  {
+   "id": "glint_roof",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    1080,
+    300,
+    480,
+    90
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.14,
+   "period_s": 1.8
+  },
+  {
+   "id": "glint_bank",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    0,
+    580,
+    260,
+    110
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.12,
+   "period_s": 2.2
+  },
+  {
+   "id": "glint_meadow",
+   "type": "flicker",
+   "mode": "noise",
+   "rect": [
+    560,
+    560,
+    420,
+    110
+   ],
+   "texture": "builtin:softrect",
+   "color": "#ffffff",
+   "blend": "add",
+   "min": 0.0,
+   "max": 0.1,
+   "period_s": 2.0
+  },
+  {
+   "id": "nina_breath",
+   "type": "particles",
+   "preset": "steam",
+   "emit_points": [
+    [
+     914,
+     561
+    ]
+   ],
+   "emit_jitter": [
+    2,
+    1
+   ],
+   "rate": 8,
+   "size": [
+    9,
+    14
+   ],
+   "speed_y": [
+    -10,
+    -4
+   ],
+   "speed_x": [
+    -2,
+    2
+   ],
+   "grow": 2.4,
+   "lifetime": [
+    1.3,
+    2.0
+   ],
+   "alpha_range": [
+    0.32,
+    0.5
+   ],
+   "color": "#f6f9ff",
+   "fade_in": 0.15,
+   "fade_out": 0.9,
+   "pulse_s": [
+    3.2,
+    4.6
+   ],
+   "pulse_on_s": 0.5,
+   "max": 24,
+   "reduced_motion": "hide",
+   "plane": "actors",
+   "sort_y": 772,
+   "follow": "npc:S42.NINA",
+   "follow_offset": [
+    0.065,
+    0.118
+   ],
+   "follow_push": 4
+  },
+  {
+   "id": "w_cabin_in_left",
+   "type": "tween_path",
+   "texture": "S42/winter/cabin_a.webp",
+   "pivot": [
+    39,
+    6
+   ],
+   "path": [
+    [
+     -75,
+     94
+    ],
+    [
+     0,
+     152
+    ],
+    [
+     50,
+     192
+    ],
+    [
+     100,
+     235
+    ],
+    [
+     162,
+     279
+    ]
+   ],
+   "speed_px_s": 42,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "scale": [
+    1.06,
+    0.95
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    5,
+    9
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "bob_px": 0.5,
+   "bob_hz": 0.35,
+   "reduced_motion": "freeze",
+   "prewarm_s": 3.45,
+   "clip": [
+    0,
+    0,
+    246,
+    279
+   ]
+  },
+  {
+   "id": "w_cabin_out_left",
+   "type": "tween_path",
+   "texture": "S42/winter/cabin_a.webp",
+   "pivot": [
+    39,
+    6
+   ],
+   "path": [
+    [
+     88,
+     281
+    ],
+    [
+     40,
+     255
+    ],
+    [
+     0,
+     232
+    ],
+    [
+     -80,
+     190
+    ]
+   ],
+   "speed_px_s": 42,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "scale": [
+    0.93,
+    1.05
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    6,
+    10
+   ],
+   "start_s": [
+    4,
+    6
+   ],
+   "bob_px": 0.5,
+   "bob_hz": 0.35,
+   "reduced_motion": "freeze",
+   "clip": [
+    0,
+    0,
+    246,
+    279
+   ]
+  },
+  {
+   "id": "w_cabin_out_right",
+   "type": "tween_path",
+   "texture": "S42/winter/cabin_c.webp",
+   "pivot": [
+    24,
+    4
+   ],
+   "path": [
+    [
+     222,
+     319
+    ],
+    [
+     250,
+     336
+    ],
+    [
+     285,
+     350
+    ],
+    [
+     322,
+     368
+    ],
+    [
+     356,
+     382
+    ]
+   ],
+   "speed_px_s": 22,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "scale": [
+    1.0,
+    0.92
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    6,
+    11
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "bob_px": 0.5,
+   "bob_hz": 0.35,
+   "reduced_motion": "freeze",
+   "prewarm_s": 3.0,
+   "clip": [
+    226,
+    0,
+    104,
+    1080
+   ]
+  },
+  {
+   "id": "w_cabin_in_right",
+   "type": "tween_path",
+   "texture": "S42/winter/cabin_b.webp",
+   "pivot": [
+    11,
+    2
+   ],
+   "path": [
+    [
+     356,
+     388
+    ],
+    [
+     320,
+     383
+    ],
+    [
+     280,
+     374
+    ],
+    [
+     241,
+     359
+    ],
+    [
+     222,
+     352
+    ]
+   ],
+   "speed_px_s": 22,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "scale": [
+    1.04,
+    0.98
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    6,
+    11
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "bob_px": 0.5,
+   "bob_hz": 0.35,
+   "reduced_motion": "freeze",
+   "prewarm_s": 5.0,
+   "clip": [
+    226,
+    0,
+    104,
+    1080
+   ]
+  },
+  {
+   "id": "w_skier_summit",
+   "type": "tween_path",
+   "texture": "S42/winter/skier_red.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     978,
+     268
+    ],
+    [
+     942,
+     288
+    ],
+    [
+     966,
+     306
+    ],
+    [
+     926,
+     326
+    ],
+    [
+     950,
+     344
+    ],
+    [
+     906,
+     364
+    ],
+    [
+     926,
+     382
+    ],
+    [
+     884,
+     400
+    ]
+   ],
+   "speed_px_s": 13,
+   "scale": [
+    0.14,
+    0.17
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    8,
+    16
+   ],
+   "start_s": [
+    1,
+    4
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_mid",
+   "type": "tween_path",
+   "texture": "S42/winter/skier_blue.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     912,
+     334
+    ],
+    [
+     885,
+     350
+    ],
+    [
+     903,
+     368
+    ],
+    [
+     876,
+     386
+    ],
+    [
+     858,
+     404
+    ]
+   ],
+   "speed_px_s": 11,
+   "scale": [
+    0.15,
+    0.17
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    10,
+    20
+   ],
+   "start_s": [
+    5,
+    9
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_low",
+   "type": "tween_path",
+   "texture": "S42/winter/skier_yellow.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     835,
+     398
+    ],
+    [
+     800,
+     409
+    ],
+    [
+     765,
+     419
+    ],
+    [
+     736,
+     431
+    ],
+    [
+     748,
+     447
+    ],
+    [
+     776,
+     461
+    ]
+   ],
+   "speed_px_s": 12,
+   "scale": [
+    0.16,
+    0.18
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    9,
+    18
+   ],
+   "start_s": [
+    3,
+    7
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_skier_low_b",
+   "type": "tween_path",
+   "texture": "S42/winter/skier_teal.webp",
+   "pivot": [
+    24,
+    44
+   ],
+   "path": [
+    [
+     830,
+     402
+    ],
+    [
+     796,
+     414
+    ],
+    [
+     760,
+     426
+    ],
+    [
+     742,
+     440
+    ],
+    [
+     764,
+     455
+    ]
+   ],
+   "speed_px_s": 14,
+   "scale": [
+    0.16,
+    0.18
+   ],
+   "faces": "right",
+   "direction": "forward",
+   "every_s": [
+    14,
+    26
+   ],
+   "start_s": [
+    12,
+    16
+   ],
+   "fade_px": 6
+  },
+  {
+   "id": "w_snowcat",
+   "type": "tween_path",
+   "texture": "S42/winter/snowcat.webp",
+   "pivot": [
+    48,
+    52
+   ],
+   "path": [
+    [
+     1008,
+     322
+    ],
+    [
+     1052,
+     306
+    ],
+    [
+     1098,
+     296
+    ]
+   ],
+   "speed_px_s": 3.0,
+   "scale": [
+    0.11,
+    0.11
+   ],
+   "faces": "right",
+   "direction": "alternate",
+   "every_s": [
+    3,
+    6
+   ],
+   "start_s": [
+    0.01,
+    0.01
+   ],
+   "prewarm_s": 12,
+   "speed_jitter": [
+    1,
+    1
+   ],
+   "fade_px": 14,
+   "bob_px": 0.3,
+   "bob_hz": 0.8
+  },
+  {
+   "id": "w_roof_hotel",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    1110,
+    296,
+    460,
+    10
+   ],
+   "rate": 0.9,
+   "size": [
+    10,
+    22
+   ],
+   "speed_x": [
+    14,
+    34
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.1,
+    0.22
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40
+  },
+  {
+   "id": "w_roof_gable",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    1640,
+    40,
+    160,
+    30
+   ],
+   "rate": 0.5,
+   "size": [
+    8,
+    18
+   ],
+   "speed_x": [
+    12,
+    30
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.1,
+    0.22
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40
+  },
+  {
+   "id": "w_summit_ridge",
+   "type": "particles",
+   "preset": "steam",
+   "emit_rect": [
+    580,
+    238,
+    400,
+    22
+   ],
+   "rate": 0.8,
+   "size": [
+    14,
+    30
+   ],
+   "speed_x": [
+    16,
+    36
+   ],
+   "speed_y": [
+    -4,
+    4
+   ],
+   "wind": 4,
+   "grow": 2.6,
+   "spin": [
+    -10,
+    10
+   ],
+   "lifetime": [
+    2.6,
+    4.6
+   ],
+   "alpha_range": [
+    0.06,
+    0.15
+   ],
+   "color": "#ffffff",
+   "fade_in": 0.5,
+   "fade_out": 2.0,
+   "max": 40
+  },
+  {
+   "id": "w_eaves_station",
+   "type": "particles",
+   "preset": "snow",
+   "emit_rect": [
+    0,
+    279,
+    245,
+    4
+   ],
+   "rate": 0.6,
+   "size": [
+    1.4,
+    3.2
+   ],
+   "speed_y": [
+    26,
+    60
+   ],
+   "speed_x": [
+    2,
+    12
+   ],
+   "wind": 4,
+   "lifetime": [
+    1.6,
+    3.2
+   ],
+   "alpha_range": [
+    0.5,
+    0.9
+   ],
+   "color": "#ffffff",
+   "max": 40
+  },
+  {
+   "id": "w_hero_breath",
+   "type": "particles",
+   "plane": "front",
+   "follow": "hero",
+   "follow_offset": [
+    0.068,
+    0.118
+   ],
+   "follow_push": 7,
+   "pulse_s": [
+    3.0,
+    4.2
+   ],
+   "speed_x": [
+    -2,
+    2
+   ],
+   "alpha_range": [
+    0.36,
+    0.56
+   ],
+   "prewarm_s": 0,
+   "preset": "steam",
+   "emit_jitter": [
+    2,
+    1
+   ],
+   "pulse_on_s": 0.5,
+   "rate": 8,
+   "size": [
+    9,
+    14
+   ],
+   "speed_y": [
+    -10,
+    -4
+   ],
+   "grow": 2.4,
+   "lifetime": [
+    1.3,
+    2.0
+   ],
+   "color": "#f6f9ff",
+   "fade_in": 0.15,
+   "fade_out": 0.9,
+   "max": 24,
+   "reduced_motion": "hide"
   }
  ]
 }

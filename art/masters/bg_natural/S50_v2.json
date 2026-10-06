@@ -1,0 +1,223 @@
+{
+  "target": "S50",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 438148790,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S50/",
+  "spend_log_asset": "bg_natural/winter/S50/S50_v2_winter",
+  "started": "2026-10-06T00:52:13",
+  "base": "art/masters/bg_natural/S50_summer.webp",
+  "prompt_file": "art/prompts/natural/S50.winter.txt",
+  "config_file": "art/prompts/natural/S50.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the roof viewing terrace of the Rotunda complex on Chopok, view north-east to the Liptov basin and the High Tatras, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nWinter changes (the roof terrace on Chopok, about 2000 m, in deep winter):\n- The High Tatras on the horizon (the box labelled 'Tatry' in image 2 (x 230-990, y 255-380 of the 1920x1080 frame (12-52 % from the left, 24-35 % from the top))) keep their exact jagged outline and position but are fully\n  white winter mountains with blue shadows. The Liptov basin below is white with snow, its villages small, the lake\n  frozen and white; the forested ridges in the middle distance are dark spruce forest dusted with snow.\n- The rocky Chopok peak on the right keeps its outline: its rocks are crusted with snow and white rime, the dwarf\n  pines are snow mounds, deep snow everywhere instead of the summer grass and snow patches.\n- The lift pylon and the ropes at the left stay; one Funitel cabin hangs on the ropes going down the slope.\n- The big CHOPOK metal letters on the railing stay exactly the same, each with a small cap of snow on top.\n- The glass railing (the box labelled 'Plné zábradlie' in image 2 (x 700-1130, y 540-720 of the 1920x1080 frame (36-59 % from the left, 50-67 % from the top))) and the solid dark parapet keep their shape: frost at the glass edges, rime\n  on the posts and a cap of snow along the handrail. The Atlas pavilion roof seen below through the glass is covered\n  with snow.\n- The grey Atlas cabinet (the box labelled 'Prepínač zápisu' in image 2 (x 1395-1570, y 420-720 of the 1920x1080 frame (73-82 % from the left, 39-67 % from the top))) stays exactly the same with its rotary switch, its two small labels and\n  its yellow label strip as painted in image 1; only a cap of snow on its top and a little rime on its edges. The\n  separate open connector box with the ceramic bridge (the box labelled 'Oddelený návratový konektor Atlasu' in image 2 (x 1610-1730, y 505-655 of the 1920x1080 frame (84-90 % from the left, 47-61 % from the top))) stays exactly the same, a thin line of snow\n  on its top edge.\n- Sky: clear deep winter blue, a few small clouds; low sun; sparkle on the snow.\n\nWalkable floor: the band at x 0-1920, y 724-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) is the wooden deck, swept but cold: the same planks with a thin layer of packed snow and frost in\nthe joints and a few footprints, ONE continuous flat surface with nothing standing on it; the swept-off snow lies only\nin a low line along the foot of the parapet (above this area) and at the far right edge. The exit the box labelled 'exit: Servisný pavilón výstavy Atlas' in image 2 (x 0-160, y 600-790 of the 1920x1080 frame (0-8 % from the left, 56-73 % from the top)) is\nthe top of the steel stairs at the left end, with snow on the steps.\nThis room has no NPC zones.\n\nFiction rules: keep the CHOPOK letters and the two cabinet labels exactly; no other new lettering, no logos, no\npeople, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S50_summer.webp (summer, model geometry)",
+    "S50 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S50_v2_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S50",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Roof viewing terrace of the Rotunda complex on Chopok as in the 2016 photos (wooden deck, glass railing on a solid dark parapet), looking north-east: the Liptov basin and the High Tatras over the railing, the Funitel line going down on the left, the rocky Chopok peak rising on the right with the Atlas pavilion's roof seen below through the glass. Camera ~2.1 m high on the deck; horizon y ~380; the parapet stands on the deck's back edge at y ~720 (~161 px per metre there: parapet top y ~623, handrail y ~543). Perspective s(y) = (y - 380) / 635. Left: the top of the external steel stairs down to the plateau (exit); right: the separately labelled low-voltage Atlas cabinet with the mechanical ZAPIS/MONITOR switch and, on its own post beside it, the separate return connector with the ceramic bridge. The third-party dragon sculpture of the photos is left out. The walk polygon leaves out the cabinet's base (foot y ~740).",
+    "background": "bg_natural/S50.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        790
+      ],
+      [
+        150,
+        790
+      ],
+      [
+        175,
+        724
+      ],
+      [
+        1390,
+        724
+      ],
+      [
+        1390,
+        742
+      ],
+      [
+        1572,
+        742
+      ],
+      [
+        1572,
+        724
+      ],
+      [
+        1920,
+        724
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      724,
+      1015
+    ],
+    "actor_scale": [
+      0.54,
+      1.0
+    ],
+    "spawn": [
+      800,
+      900
+    ],
+    "hotspots": {
+      "S50.ambient 1": {
+        "rect": [
+          230,
+          255,
+          760,
+          125
+        ],
+        "interaction_point": [
+          610,
+          820
+        ],
+        "label_anchor": [
+          610,
+          245
+        ],
+        "reason": "the jagged High Tatras on the northern horizon above the Liptov basin"
+      },
+      "S50.ambient 2": {
+        "rect": [
+          700,
+          540,
+          430,
+          180
+        ],
+        "interaction_point": [
+          915,
+          800
+        ],
+        "label_anchor": [
+          915,
+          530
+        ],
+        "reason": "a section of the railing in front: glass panels on steel posts above the solid dark parapet (parapet foot y ~720)"
+      },
+      "S50.switch": {
+        "rect": [
+          1395,
+          420,
+          175,
+          300
+        ],
+        "interaction_point": [
+          1342,
+          820
+        ],
+        "label_anchor": [
+          1482,
+          410
+        ],
+        "reason": "the grey steel low-voltage Atlas cabinet standing on the deck with the big mechanical ZAPIS / MONITOR rotary switch on its door (foot y ~722); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
+      },
+      "S50.bridge": {
+        "rect": [
+          1610,
+          505,
+          120,
+          150
+        ],
+        "interaction_point": [
+          1784,
+          830
+        ],
+        "label_anchor": [
+          1670,
+          495
+        ],
+        "reason": "the separate return connector: a small box on its own post beside the cabinet with a white ceramic bridge link; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
+      }
+    },
+    "exits": {
+      "S50.to_S48": {
+        "rect": [
+          0,
+          600,
+          160,
+          190
+        ],
+        "interaction_point": [
+          80,
+          860
+        ],
+        "label_anchor": [
+          205,
+          590
+        ],
+        "reason": "the top of the external steel stairs down to the plateau and the Atlas pavilion at the left end of the deck"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S50.to_S48": {
+        "at": [
+          80.0,
+          695.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.619,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "full",
+    "protect": [
+      [
+        1424,
+        520,
+        48,
+        25
+      ],
+      [
+        1496,
+        520,
+        50,
+        25
+      ]
+    ],
+    "feather": 4,
+    "place": "the roof viewing terrace of the Rotunda complex on Chopok, view north-east to the Liptov basin and the High Tatras",
+    "note": "the model garbled the two cabinet labels (JAPIS / MGRKTOR); the summer label plates are pasted back"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:58:00",
+  "review": "art/review/natural/winter/S50_v2_winter.jpg",
+  "derive_review": "art/review/natural/winter/S50_v2_derive.png",
+  "recomposed": true
+}

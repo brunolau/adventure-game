@@ -1,0 +1,261 @@
+{
+  "target": "S68",
+  "version": 2,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1010015965,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S68/",
+  "spend_log_asset": "bg_natural/winter/S68/S68_v2_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S68_summer.webp",
+  "prompt_file": "art/prompts/natural/S68.winter.txt",
+  "config_file": "art/prompts/natural/S68.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: inside a Funitel cabin of the Priehyba - Chopok line at Jasna, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the cabin everything stays exactly as in image 1 (the ceiling with the light strip and the handrail, the window\nframes, the dark red padded bench, the cabin scheme poster the box labelled 'Schéma kabíny' in image 2 (x 1460-1565, y 300-450 of the 1920x1080 frame (76-82 % from the left, 28-42 % from the top)), the doors the box labelled 'exit: Priehyba pri prestupe na Funitel' in image 2 (x 0-120, y 240-770 of the 1920x1080 frame (0-6 % from the left, 22-71 % from the top))\nthe box labelled 'exit: Chopok pri Rotunde' in image 2 (x 1580-1820, y 235-770 of the 1920x1080 frame (82-95 % from the left, 22-71 % from the top))). Winter shows through the glass and on the floor:\n- The big middle pane (the box labelled 'Panoráma svahov' in image 2 (x 580-990, y 235-550 of the 1920x1080 frame (30-52 % from the left, 22-51 % from the top))) and the left pane: the Liptov plain far below is white with snow, the\n  lake frozen and white, the forested slopes are dark spruce forest loaded with snow, with groomed ski pistes (smooth\n  white bands through the forest) and a few tiny distant skiers; the two ropes stay where they are.\n- The right pane (the box labelled 'Príchod do vrcholovej stanice' in image 2 (x 1185-1440, y 235-445 of the 1920x1080 frame (62-75 % from the left, 22-41 % from the top))): the Rotunda keeps its exact shape and position (glass drum, red ring roof, stone\n  base) with thick snow on the red roof and rime on the railings, on a white summit slope with snow-covered dwarf pines\n  and spruces below.\n- The glass of the sliding doors at the right and the small window of the left door: spruces loaded with snow on a\n  white slope; frost rims along the edges of every pane.\n- Clear deep winter blue sky with a few small clouds.\n- On the floor in front of the right sliding doors: a little snow tracked in from the skiers' boots - small flat\n  clumps of melting snow and wet boot prints on the dark floor (flat, nothing standing).\nNPC zone at x 345-495, y 455-815 of the 1920x1080 frame (18-26 % from the left, 42-75 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character's feet stand on the floor at y 815.\nWalkable floor: the band at x 0-1920, y 770-1015 of the 1920x1080 frame (0-100 % from the left, 71-94 % from the top) stays one open, flat cabin floor with nothing standing on it.\n\nFiction rules: no new lettering, no logos, no people except the tiny distant skiers, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S68_summer.webp (summer, model geometry)",
+    "S68 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S68_v2_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S68",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Inside a moving Funitel cabin of the Priehyba-Chopok line (type-reference: the Parnitha Funitel interior; cabin shape and colour from the real Jasna cabins; the view from the real line down to Demanovska dolina and Liptov). Camera ~1.6 m high in the cabin, looking across at the long window wall (about 2.5 m away); horizon y ~370 (the far Liptov plain); the padded bench under the windows stands on the floor at y ~760 (~185 px per metre there). Perspective s(y) = (y - 371) / 644, a close interior. Left: the downhill end panel with its door (back to Priehyba); centre: three big window panes over the padded bench; right: the cabin scheme poster on the panel beside the closed sliding doors (exit on arrival); the summit station of Chopok comes into view in the right window pane (arrival hotspot). The tourist stands holding the ceiling rail in front of the left pane.",
+    "background": "bg_natural/S68.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        790
+      ],
+      [
+        130,
+        770
+      ],
+      [
+        1570,
+        770
+      ],
+      [
+        1840,
+        790
+      ],
+      [
+        1920,
+        800
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      770,
+      1015
+    ],
+    "actor_scale": [
+      0.62,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "hotspots": {
+      "S68.ambient 1": {
+        "rect": [
+          580,
+          235,
+          410,
+          315
+        ],
+        "interaction_point": [
+          785,
+          860
+        ],
+        "label_anchor": [
+          785,
+          225
+        ],
+        "reason": "the big middle window pane: the forested north slope of Chopok sliding past below, Demanovska dolina and the Liptov plain in the distance"
+      },
+      "S68.arrival": {
+        "rect": [
+          1185,
+          235,
+          255,
+          210
+        ],
+        "interaction_point": [
+          1300,
+          860
+        ],
+        "label_anchor": [
+          1312,
+          225
+        ],
+        "reason": "the upper part of the right window pane, where the Chopok summit station with the round Rotunda comes into view up the line"
+      },
+      "S68.ambient 2": {
+        "rect": [
+          1460,
+          300,
+          105,
+          150
+        ],
+        "interaction_point": [
+          1510,
+          870
+        ],
+        "label_anchor": [
+          1512,
+          290
+        ],
+        "reason": "the framed cabin scheme poster on the panel between the windows and the sliding doors"
+      },
+      "S68.TURISTA": {
+        "rect": [
+          345,
+          455,
+          150,
+          360
+        ],
+        "interaction_point": [
+          420,
+          880
+        ],
+        "reason": "the tourist Milos stands in front of the left window pane, holding the ceiling rail"
+      }
+    },
+    "npcs": {
+      "S68.TURISTA": {
+        "variant": "standing",
+        "feet": [
+          420,
+          815
+        ],
+        "z": "auto",
+        "reason": "the actor note: a standing passenger in the Funitel cabin"
+      }
+    },
+    "exits": {
+      "S68.to_S67": {
+        "rect": [
+          0,
+          240,
+          120,
+          530
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          200,
+          230
+        ],
+        "reason": "the downhill end panel of the cabin with its door (back to Priehyba once the cabin is in the station)"
+      },
+      "S68.to_S47": {
+        "rect": [
+          1580,
+          235,
+          240,
+          535
+        ],
+        "interaction_point": [
+          1700,
+          870
+        ],
+        "label_anchor": [
+          1700,
+          225
+        ],
+        "reason": "the closed sliding doors of the cabin, opened by the attendant on arrival at the summit (after J04)"
+      }
+    },
+    "state_patches": []
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S68.to_S67": {
+        "at": [
+          60.0,
+          505.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.773,
+        "ok": true
+      },
+      "exit S68.to_S47": {
+        "at": [
+          1700.0,
+          502.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.37,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        120,
+        222,
+        1342,
+        360
+      ],
+      [
+        1584,
+        240,
+        238,
+        530
+      ],
+      [
+        24,
+        258,
+        82,
+        184
+      ]
+    ],
+    "feather": 10,
+    "place": "inside a Funitel cabin of the Priehyba - Chopok line at Jasna",
+    "snow_regions": [
+      [
+        1520,
+        776,
+        380,
+        136
+      ]
+    ],
+    "note": "the model's floor box showed as a rectangle; only the snow clumps it added in front of the right doors are taken (snow_regions = brighter, unsaturated pixels)"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T01:01:47",
+  "review": "art/review/natural/winter/S68_v2_winter.jpg",
+  "derive_review": "art/review/natural/winter/S68_v2_derive.png",
+  "recomposed": true
+}

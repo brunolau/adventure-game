@@ -38,6 +38,12 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
 
     /// <summary>The actor.json / hero variant this visual draws (null = the default sheets).</summary>
     public string? Variant => set.Variant;
+
+    /// <summary>Horizontal facing of the drawn figure: +1 right, -1 left (for effects such as breath steam).</summary>
+    public int FacingSign => side;
+
+    /// <summary>True while the figure is drawn from the front or from the back rather than side-on.</summary>
+    public bool FacingAlongView => facing != Facing.Side;
     private readonly RandomNumberGenerator rng = new();
     private Sprite2D sprite = null!;
     private Sprite2D ghost = null!;
@@ -240,6 +246,8 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
             };
             if (walk is not null) return walk;
         }
+        // NPC sets with a three-quarter side walk (guest speakers who walk in, ISSUES PT-S18): one cycle, mirrored for left.
+        if (walking && !set.IsDirectional && set.Get("walk_right") is { } npcWalk) return npcWalk;
         if (talking || talkOwed > 0 || (current is not null && IsTalkClip(current) && !AtRestFrame() && talkTail < MaxTalkTail))
         {
             // No talk sheet for the back view: turn side-on (last side) while speaking, as adventure heroes do.

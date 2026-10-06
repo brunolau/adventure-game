@@ -1,0 +1,281 @@
+{
+  "target": "S43",
+  "version": 4,
+  "kind": "winter",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 188784860,
+  "usd": 0.15,
+  "scope": "bg_natural/winter/S43/",
+  "spend_log_asset": "bg_natural/winter/S43/S43_v4_winter",
+  "started": "2026-10-06T00:54:25",
+  "base": "art/masters/bg_natural/S43_summer.webp",
+  "prompt_file": "art/prompts/natural/S43.winter.txt",
+  "config_file": "art/prompts/natural/S43.winter.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: the lobby of Hotel Grand Jasna at Jasna, painted in summer 2035. Image 2 is the same painting with coloured boxes that only mark the interactive objects, the exits and the walkable floor, which must all stay exactly where they are. Edit image 1 into the SAME PLACE on 6 February 2035, a clear cold day in deep winter, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, door, window, pole, rail, sign, piece of furniture, object and tree trunk. Change only what winter changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nInside the lobby everything stays exactly as in image 1 (the stone wall with its lettering, the white reception\ncounter, the flowers, the suitcases, Tamara's teal table with its plaque, the pegboard, the radio, the lamp, the\nshelving, the coffee machine, the paintings, the floor). Winter shows only here:\n- Through the glazed entrance doors (the box labelled 'exit: Pred hotelom Grand Jasná' in image 2 (x 60-260, y 420-705 of the 1920x1080 frame (3-14 % from the left, 39-65 % from the top))) at the left: the snowy forecourt and deep snow, spruces loaded\n  with snow, a white winter mountain slope behind; a thin rim of frost on the glass edges and the bottom of the doors.\n- Through the tall lounge window at the right edge: spruces heavily loaded with snow against a clear winter blue sky,\n  deep snow on the ground; frost flowers at the corners of the panes.\n- Winter guests' things in the lounge corner at the right: a bright red ski jacket draped over the back of the left\n  beige armchair, a ski helmet and a pair of gloves on the small round table, and a pair of grey-and-blue ski boots\n  standing on the floor right beside the right armchair. The armchairs and the table keep their shape and position.\n- The coffee machine (the box labelled 'Kávovar' in image 2 (x 1470-1605, y 495-645 of the 1920x1080 frame (77-84 % from the left, 46-60 % from the top))) and the parts shelving (the box labelled 'Police súčiastok' in image 2 (x 1260-1430, y 385-700 of the 1920x1080 frame (66-74 % from the left, 36-65 % from the top))) stay exactly the same.\nNPC zone at x 1133-1273, y 450-606 of the 1920x1080 frame (59-66 % from the left, 42-56 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character stands behind a table: paint the table's top edge as one straight horizontal line exactly at y 603 across x 1103-1303, with its front going down to the floor; above that edge keep only plain background (wall, shelves), no person.\nWalkable floor: the band at x 0-1920, y 718-1015 of the 1920x1080 frame (0-100 % from the left, 66-94 % from the top) stays the same open stone floor with nothing standing on it.\n\nFiction rules: no new lettering, no logos, no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except the lettering already in image 1, and no people or animals unless stated above.\n\nLighting: a clear, cold, sunny winter day in the Low Tatras mountains: deep clean blue sky, low winter sun, crisp blue-violet shadows on the snow, sparkle on fresh snow, cold bright air. The brushwork, line quality and palette harmony stay exactly those of image 1 (style A).\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S43_summer.webp (summer, model geometry)",
+    "S43 summer painting + natural blocking boxes (guide)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S43_v4_winter_raw.png",
+  "blocking": {
+    "version": 1,
+    "room": "S43",
+    "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1), painter jasna2035",
+    "note": "Owner feedback 2026-10-05 (real lobby, looked at only): grey stone feature wall with RECEPTION lettering, long white curved ribbed reception counter, grey stone floor tiles, flowers on the counter; the lobby bar with rows of beige armchairs, round tables, colourful paintings and light curtains. Camera ~1.6 m high in the lobby, looking straight at the back wall; horizon y ~470; the back wall meets the floor on y ~700 (~126 px per metre there), the reception counter front stands on y ~740, Tamara's repair table front on y ~770. Perspective s(y) = (y - 470) / 545. Left: the glazed entrance (exit), the reception; centre-right: Tamara's temporary repair table 'Druhy zivot' with the parts shelves behind it; right: the lobby bar lounge with the self-service coffee machine, armchairs and windows to the spruce forest. The walk polygon leaves out the two suitcases beside the counter (feet y ~790) and the lounge armchairs on the right (feet y ~780-870).",
+    "background": "bg_natural/S43.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        718
+      ],
+      [
+        290,
+        718
+      ],
+      [
+        320,
+        752
+      ],
+      [
+        755,
+        752
+      ],
+      [
+        762,
+        796
+      ],
+      [
+        950,
+        796
+      ],
+      [
+        960,
+        782
+      ],
+      [
+        1265,
+        782
+      ],
+      [
+        1290,
+        756
+      ],
+      [
+        1610,
+        756
+      ],
+      [
+        1625,
+        792
+      ],
+      [
+        1785,
+        800
+      ],
+      [
+        1795,
+        882
+      ],
+      [
+        1920,
+        886
+      ],
+      [
+        1920,
+        1015
+      ]
+    ],
+    "walk_band": [
+      718,
+      1015
+    ],
+    "actor_scale": [
+      0.46,
+      1.0
+    ],
+    "spawn": [
+      700,
+      900
+    ],
+    "hotspots": {
+      "S43.ambient 1": {
+        "rect": [
+          1470,
+          495,
+          135,
+          150
+        ],
+        "interaction_point": [
+          1537,
+          810
+        ],
+        "label_anchor": [
+          1537,
+          485
+        ],
+        "reason": "the self-service coffee machine on the lounge's side counter (counter top y ~640)"
+      },
+      "S43.ambient 2": {
+        "rect": [
+          1260,
+          385,
+          170,
+          315
+        ],
+        "interaction_point": [
+          1345,
+          810
+        ],
+        "label_anchor": [
+          1345,
+          375
+        ],
+        "reason": "Tamara's open shelving unit with boxes and trays of spare parts, standing behind and right of her table (foot y ~700)"
+      },
+      "S43.TAMARA": {
+        "rect": [
+          1133,
+          450,
+          140,
+          156
+        ],
+        "interaction_point": [
+          1203,
+          830
+        ],
+        "reason": "Tamara behind her repair table (bust cut at the back edge of the painted table top, y 603)"
+      }
+    },
+    "npcs": {
+      "S43.TAMARA": {
+        "variant": "behind_counter",
+        "feet": [
+          1203,
+          740
+        ],
+        "sill_y": 603,
+        "z": "back",
+        "reason": "docs/DECISIONS.md item 2: Tamara behind her temporary repair table (table variant cut at the table top)"
+      }
+    },
+    "exits": {
+      "S43.to_S42": {
+        "rect": [
+          60,
+          420,
+          200,
+          285
+        ],
+        "interaction_point": [
+          160,
+          800
+        ],
+        "label_anchor": [
+          190,
+          410
+        ],
+        "reason": "the glazed entrance doors in the back wall, left of the reception, out to the forecourt"
+      }
+    },
+    "state_patches": [
+      {
+        "texture": "variants_natural/S43_parts_box.webp",
+        "pos": [
+          885,
+          492
+        ],
+        "after": [
+          "Q8D"
+        ],
+        "until": [],
+        "reason": "game.json causal effect Q8D: a non-interactive parcel of spare parts appears on Tamara's table (refit fix S43 v2, re-composited v3)"
+      }
+    ],
+    "occluders": [
+      {
+        "id": "radio",
+        "polygon": [
+          [
+            1086,
+            548
+          ],
+          [
+            1184,
+            548
+          ],
+          [
+            1184,
+            607
+          ],
+          [
+            1086,
+            607
+          ]
+        ],
+        "baseline": 760,
+        "texture": null,
+        "reason": "the old radio stands on the table in front of Tamara's left side (Tamara z back, the hero always walks in front at y >= 782)"
+      }
+    ]
+  },
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S43.to_S42": {
+        "at": [
+          160.0,
+          562.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.488,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "compose": {
+    "mode": "regions",
+    "edit_regions": [
+      [
+        40,
+        395,
+        240,
+        322
+      ],
+      [
+        1760,
+        268,
+        160,
+        352
+      ],
+      [
+        1600,
+        600,
+        320,
+        285
+      ]
+    ],
+    "feather": 12,
+    "place": "the lobby of Hotel Grand Jasna at Jasna"
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T00:55:02",
+  "review": "art/review/natural/winter/S43_v4_winter.jpg",
+  "derive_review": "art/review/natural/winter/S43_v4_derive.png"
+}

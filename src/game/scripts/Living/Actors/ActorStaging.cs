@@ -23,16 +23,25 @@ public sealed record VariantRule(string After, string Variant);
 
 /// <summary>
 /// Visual staging data for actor sprites, from <c>res://data/ambient/actors.json</c>: in which rooms
-/// the hero wears the 2020 face mask (game.json has no flag, ISSUES ART-ADAM-02), per-room NPC
-/// placements (window busts) and walk tuning. Visual only; never affects rules.
+/// the hero wears the 2020 face mask (game.json has no flag, ISSUES ART-ADAM-02) or his December 1982
+/// winter coat (ISSUES PT-S20), per-room NPC placements (window busts) and walk tuning. Visual only;
+/// never affects rules.
 /// </summary>
 public static class ActorStaging
 {
     /// <summary>Data file path.</summary>
     public const string Path = "res://data/ambient/actors.json";
 
+    /// <summary>Hero sheet variant of the 2020 face mask (<c>*_mask2020</c> sheets).</summary>
+    public const string MaskVariant = "mask2020";
+
+    /// <summary>Hero sheet variant of the December 1982 winter coat and scarf (<c>*_coat1982</c> sheets).</summary>
+    public const string CoatVariant = "coat1982";
+
     private static bool loaded;
     private static readonly HashSet<string> MaskRooms = new(StringComparer.Ordinal);
+    private static readonly HashSet<string> CoatRooms = new(StringComparer.Ordinal);
+    private static readonly HashSet<string> WinterCoatRooms2035 = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, ActorPlacement> Placements = new(StringComparer.Ordinal);
     private static readonly Dictionary<string, List<VariantRule>> VariantRules = new(StringComparer.Ordinal);
 
@@ -57,6 +66,8 @@ public static class ActorStaging
         var data = Json.Load(Path, warnIfMissing: false);
         if (data is null) return;
         foreach (var room in data.Strings("hero_mask2020_rooms")) MaskRooms.Add(room);
+        foreach (var room in data.Strings("hero_coat1982_rooms")) CoatRooms.Add(room);
+        foreach (var room in data.Strings("hero_coat2035_rooms")) WinterCoatRooms2035.Add(room);
         DepthSpeedFactor = data.Num("depth_speed_factor", DepthSpeedFactor);
         ActionHoldSeconds = data.Num("action_hold_s", ActionHoldSeconds);
         HeroBlinkChance = data.Num("hero_blink_chance", HeroBlinkChance);
@@ -95,6 +106,25 @@ public static class ActorStaging
         EnsureLoaded();
         return era == 2020 && MaskRooms.Contains(roomId);
     }
+
+    /// <summary>
+    /// True when the hero wears his winter coat and scarf in the room: the December 1982 exteriors
+    /// (<c>hero_coat1982_rooms</c>) and the winter Jasna 2035 exteriors (<c>hero_coat2035_rooms</c>, owner
+    /// 2026-10-06 "Jasna 2035 is in winter"; the same <c>*_coat1982</c> sheets).
+    /// </summary>
+    public static bool HeroWearsCoat(string roomId, int era)
+    {
+        EnsureLoaded();
+        return (era == 1982 && CoatRooms.Contains(roomId)) || (era == 2035 && WinterCoatRooms2035.Contains(roomId));
+    }
+
+    /// <summary>
+    /// The hero's sheet variant in a room: <see cref="MaskVariant"/>, <see cref="CoatVariant"/> or null for the default
+    /// jacket set. Every variant clip has the timing and geometry of its default clip; a clip a variant lacks falls back
+    /// to the default sheet (ActorAnimationSet.Load).
+    /// </summary>
+    public static string? HeroVariant(string roomId, int era) =>
+        HeroWearsMask(roomId, era) ? MaskVariant : HeroWearsCoat(roomId, era) ? CoatVariant : null;
 
     /// <summary>Staging of a character in a room, or null.</summary>
     public static ActorPlacement? PlacementFor(string roomId, string characterId)

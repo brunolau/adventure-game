@@ -65,7 +65,7 @@ public partial class LivingRoot : Node
     /// <summary>Sprite sheets a build of a neighbour room would load (hero variant of that room, its NPCs), for the preloader.</summary>
     private static IEnumerable<string> SheetsToPreload(LastBell.Core.Views.RoomView view)
     {
-        string? heroVariant = ActorStaging.HeroWearsMask(view.RoomId, view.Era) ? "mask2020" : null;
+        string? heroVariant = ActorStaging.HeroVariant(view.RoomId, view.Era);
         foreach (var path in ActorAnimationSet.SheetImagePaths(GameRuntime.HeroId, heroVariant)) yield return path;
         foreach (var npc in view.Npcs)
             if (npc.CharacterId is { } id && ActorAnimationSet.Exists(id))
