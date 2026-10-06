@@ -1,0 +1,164 @@
+{
+  "instruction_file": "art/masters/bg_natural/S17_scripts/podlubie/S55.txt",
+  "refs": [
+    "art/masters/bg_natural/S17_v11.png",
+    "art/source/owner_refs/imgur_fNEtUPs.jpg"
+  ],
+  "style": "art/backgrounds/sokolikova-yard.png",
+  "feather": 12,
+  "regions": [
+    {
+      "name": "podlubie",
+      "rect": [
+        1104,
+        312,
+        350,
+        96
+      ]
+    },
+    {
+      "name": "lawn",
+      "poly": [
+        [
+          1095,
+          427
+        ],
+        [
+          1227,
+          466
+        ],
+        [
+          1760,
+          630
+        ],
+        [
+          1760,
+          662
+        ],
+        [
+          1185,
+          662
+        ],
+        [
+          1180,
+          620
+        ],
+        [
+          1000,
+          452
+        ],
+        [
+          1060,
+          448
+        ]
+      ]
+    }
+  ],
+  "protect": [
+    {
+      "name": "preserved wall of v13 (coping + brick)",
+      "poly": [
+        [
+          950,
+          533.5
+        ],
+        [
+          1341,
+          533.5
+        ],
+        [
+          1341,
+          555
+        ],
+        [
+          1335,
+          555
+        ],
+        [
+          1335,
+          733
+        ],
+        [
+          950,
+          733
+        ]
+      ],
+      "grow": -1
+    },
+    {
+      "name": "red pipe",
+      "hue_rect": [
+        1330,
+        600,
+        100,
+        115
+      ],
+      "hue": [
+        335,
+        25
+      ],
+      "sat": 0.35,
+      "val": 0.12,
+      "grow": 0
+    },
+    {
+      "name": "wheelie bin",
+      "poly": [
+        [
+          1728,
+          548
+        ],
+        [
+          1736,
+          541
+        ],
+        [
+          1846,
+          541
+        ],
+        [
+          1852,
+          550
+        ],
+        [
+          1850,
+          562
+        ],
+        [
+          1840,
+          566
+        ],
+        [
+          1836,
+          640
+        ],
+        [
+          1843,
+          668
+        ],
+        [
+          1842,
+          697
+        ],
+        [
+          1748,
+          699
+        ],
+        [
+          1741,
+          640
+        ],
+        [
+          1738,
+          566
+        ],
+        [
+          1728,
+          560
+        ]
+      ],
+      "grow": -3
+    }
+  ],
+  "note": "E10 state: the S55 base change (v15) composited into the E10 master v13 inside the same regions; the preserved wall of v13 (and the pipe, the bin) stay from v13"
+}

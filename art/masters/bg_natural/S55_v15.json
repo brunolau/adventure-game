@@ -1,0 +1,165 @@
+{
+  "kind": "fix",
+  "tool": "S17_scripts/podlubie_fix.py",
+  "from_version": 10,
+  "spec": "art/masters/bg_natural/S17_scripts/podlubie/S55.json",
+  "regions_game_px": [
+    {
+      "name": "podlubie",
+      "rect": [
+        1104,
+        312,
+        350,
+        96
+      ]
+    },
+    {
+      "name": "lawn",
+      "poly": [
+        [
+          1095,
+          427
+        ],
+        [
+          1227,
+          466
+        ],
+        [
+          1760,
+          630
+        ],
+        [
+          1760,
+          662
+        ],
+        [
+          1185,
+          662
+        ],
+        [
+          1180,
+          620
+        ],
+        [
+          1000,
+          452
+        ],
+        [
+          1060,
+          448
+        ]
+      ]
+    }
+  ],
+  "protect_game_px": [
+    {
+      "name": "red pipe",
+      "hue_rect": [
+        1330,
+        600,
+        100,
+        115
+      ],
+      "hue": [
+        335,
+        25
+      ],
+      "sat": 0.35,
+      "val": 0.12,
+      "grow": 0
+    },
+    {
+      "name": "wheelie bin",
+      "poly": [
+        [
+          1728,
+          548
+        ],
+        [
+          1736,
+          541
+        ],
+        [
+          1846,
+          541
+        ],
+        [
+          1852,
+          550
+        ],
+        [
+          1850,
+          562
+        ],
+        [
+          1840,
+          566
+        ],
+        [
+          1836,
+          640
+        ],
+        [
+          1843,
+          668
+        ],
+        [
+          1842,
+          697
+        ],
+        [
+          1748,
+          699
+        ],
+        [
+          1741,
+          640
+        ],
+        [
+          1738,
+          566
+        ],
+        [
+          1728,
+          560
+        ]
+      ],
+      "grow": -3
+    }
+  ],
+  "instruction": "The picture shows the yard side of a Slovak housing-estate school on a sunny late-October afternoon in 2020: the building renovated in light grey with white windows and simple painted flower, sun and leaf motifs on the ground floor, autumn leaves, a football pitch with artificial turf behind the fence. Image 2 is the SAME view with the same camera, painted for June 1995, already showing exactly the two changes wanted here: copy the shape, position and size of both changes from image 2, but paint them in the 2020 state of image 1. Make the two local changes, both in the right half of the picture, and nothing else.\n\nCHANGE 1 - lawn instead of the footpath. A grey paved footpath runs from the foot of the entrance steps (about 57 % from the left, 40 % from the top) diagonally down to the right along the LEFT side of the tall dark-green chain-link fence, and widens into the paved yard at the bottom. Remove this footpath completely. Its whole area, from the grass bank below the entrance down to the yard, becomes the same mown green lawn as the big lawn left of it (same grass colour, texture and autumn light, a few fallen yellow leaves, a few longer tufts along the fence foot), reaching right up to the bottom rail of the fence. Towards the yard the new lawn ends in a straight low concrete kerb that continues the existing kerb line along the front of the big lawn: the kerb runs level at about 59 % from the top all the way to the fence behind the green wheelie bin (as in image 2), so the lawn's diagonal corner disappears. In front of that kerb the worn grey yard asphalt stays exactly as it is. The red pipe, the green wheelie bin and every fence post, rail and mesh panel stay exactly as they are. The short paved landing at the foot of the entrance steps and the path leading from it to the LEFT stay.\n\nCHANGE 2 - an open underpass right of the entrance, as in image 2. Image 3 is a photo of the real place in the 2020s: right of the glass entrance doors the ground floor of the long building is not a wall but an open covered passage straight through the building (a \"podlubie\") to the panel blocks of flats behind the school; the upper floors rest on a row of square pillars, the space between the pillars is open and the passage behind them is deep and dim; in the 2020s the pillars and the ground-floor walls are painted in bright colours (blue, green). In image 1, the three ground-floor bays right of the entrance canopy - the lower walls and the windows between the pillars, from the canopy's right edge (about 58 % from the left) to the third pillar to its right (about 75 % from the left), between about 29 % and 37 % from the top - become such an open passage exactly like in image 2: keep the pillars, the white band above them and all the upper floors exactly where they are; remove the walls and the windows between the pillars; show the dark shaded underside of the first floor as the passage ceiling, the passage floor level with the entrance landing, and at the far end of the passage a small bright opening with a glimpse of the sunlit far side: renovated panel blocks of flats in pale pastel colours with rows of windows, and autumn trees. Paint the pillars of the passage in plain bright blue and green as in image 3, and the passage side wall with one simple invented motif in the style of the flower and sun motifs of image 1 - no letters, no signs, no graffiti, no gates. Two of the three bays are seen through the court fence: keep every fence post, rail and mesh panel in front of them exactly as it is.\n\nImage 4 is another background from the same game: keep the same painting technique.",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 719110419,
+  "usd": 0.15,
+  "scope": "bg_natural/L_YARD_podlubie/",
+  "spend_log_asset": "bg_natural/L_YARD_podlubie/S55_v15_podlubie",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (painted, style A). Make exactly the local changes described below and change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no cars, no text, no letters, no logos, no frames. The picture shows the yard side of a Slovak housing-estate school on a sunny late-October afternoon in 2020: the building renovated in light grey with white windows and simple painted flower, sun and leaf motifs on the ground floor, autumn leaves, a football pitch with artificial turf behind the fence. Image 2 is the SAME view with the same camera, painted for June 1995, already showing exactly the two changes wanted here: copy the shape, position and size of both changes from image 2, but paint them in the 2020 state of image 1. Make the two local changes, both in the right half of the picture, and nothing else.\n\nCHANGE 1 - lawn instead of the footpath. A grey paved footpath runs from the foot of the entrance steps (about 57 % from the left, 40 % from the top) diagonally down to the right along the LEFT side of the tall dark-green chain-link fence, and widens into the paved yard at the bottom. Remove this footpath completely. Its whole area, from the grass bank below the entrance down to the yard, becomes the same mown green lawn as the big lawn left of it (same grass colour, texture and autumn light, a few fallen yellow leaves, a few longer tufts along the fence foot), reaching right up to the bottom rail of the fence. Towards the yard the new lawn ends in a straight low concrete kerb that continues the existing kerb line along the front of the big lawn: the kerb runs level at about 59 % from the top all the way to the fence behind the green wheelie bin (as in image 2), so the lawn's diagonal corner disappears. In front of that kerb the worn grey yard asphalt stays exactly as it is. The red pipe, the green wheelie bin and every fence post, rail and mesh panel stay exactly as they are. The short paved landing at the foot of the entrance steps and the path leading from it to the LEFT stay.\n\nCHANGE 2 - an open underpass right of the entrance, as in image 2. Image 3 is a photo of the real place in the 2020s: right of the glass entrance doors the ground floor of the long building is not a wall but an open covered passage straight through the building (a \"podlubie\") to the panel blocks of flats behind the school; the upper floors rest on a row of square pillars, the space between the pillars is open and the passage behind them is deep and dim; in the 2020s the pillars and the ground-floor walls are painted in bright colours (blue, green). In image 1, the three ground-floor bays right of the entrance canopy - the lower walls and the windows between the pillars, from the canopy's right edge (about 58 % from the left) to the third pillar to its right (about 75 % from the left), between about 29 % and 37 % from the top - become such an open passage exactly like in image 2: keep the pillars, the white band above them and all the upper floors exactly where they are; remove the walls and the windows between the pillars; show the dark shaded underside of the first floor as the passage ceiling, the passage floor level with the entrance landing, and at the far end of the passage a small bright opening with a glimpse of the sunlit far side: renovated panel blocks of flats in pale pastel colours with rows of windows, and autumn trees. Paint the pillars of the passage in plain bright blue and green as in image 3, and the passage side wall with one simple invented motif in the style of the flower and sun motifs of image 1 - no letters, no signs, no graffiti, no gates. Two of the three bays are seen through the court fence: keep every fence post, rail and mesh panel in front of them exactly as it is.\n\nImage 4 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S55_v10.png",
+    "art/masters/bg_natural/S17_v11.png",
+    "art/source/owner_refs/imgur_fNEtUPs.jpg",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_L_YARD_podlubie_S55_v15_podlubie_raw.png",
+  "started": "2026-10-06T07:40:28",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dvor lipa a servisný múrik in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 431, y 185 (22 % from the left, 17 % from the top). The fixed landmark 'tree_trunk' stays exactly at x 620, y 690 (32 % from the left, 64 % from the top). The fixed landmark 'service_niche' stays exactly at x 1155, y 626 (60 % from the left, 58 % from the top). The fixed landmark 'pipe_axis' stays exactly at x 1382, y 705 (72 % from the left, 65 % from the top).\n\nEra changes: the same school yard twenty-five years later, on a sunny late-October afternoon in 2020: warm low autumn sun, the trees beside the gym wing and the woods on the hill in yellow, orange and rust autumn colours, a few fallen yellow leaves on the asphalt and the lawn. The school is the same building with the same storeys, piers, door, canopy and steps, but renovated: the walls are now plain light grey with white bands, the windows are new white plastic windows, and the ground floor between the piers is painted with cheerful simple invented children's motifs (flowers, a sun, leaves) in bright colours; the gym wing is light grey with new white windows. The old red clay running track and its grass infield are still there, worn and faded, with weeds at the edges.\nBehind the fence: the concrete basketball playground is GONE - the whole area behind the fence is now a small football pitch with bright green ARTIFICIAL TURF, crisp white painted pitch lines and a small white football goal with a net at its far end; NO basketball baskets, poles or backboards any more. The fence keeps every post and rail where it is, but it is renewed: dark green welded-wire mesh panels, and a tall dark green ball-stop net above the far end of the pitch.\nOn the yard the corner has been cleared: the art panel, the young linden, its grass bed with the kerb, the wooden bench and the low red-brick wall are ALL GONE - in their place is plain grey patched asphalt reaching back to the lawn, with a slightly darker, newer rectangle of asphalt where the wall stood; of the red water pipe only a short red-painted stub sticks out of the asphalt at the same spot. No shade there. The old round steel dustbin by the fence is replaced by a green plastic wheelie bin with a lid at the same spot (prop 2).\n\nInteractive props of 2020:\n1. the box labelled 'Značky odstupu' in image 2 (x 480-900, y 738-794 of the 1920x1080 frame (25-47 % from the left, 68-74 % from the top)): temporary distance markings of a pickup point painted on the asphalt where the linden used to stand: a single row of five SHORT bright yellow dashes running from left to right at the same height, each dash only about one step long and a hand wide, evenly spaced about two steps apart, slightly worn; the first two dashes lie inside this box, the others continue to the right at the same height; no footprints, no letters, no digits, nothing else painted on the asphalt.\n2. the box labelled 'Koš' in image 2 (x 1725-1840, y 535-707 of the 1920x1080 frame (90-96 % from the left, 50-65 % from the top)): a green plastic wheelie litter bin with a lid, standing on the asphalt by the fence.\n3. the box labelled 'Miesto pôvodnej servisnej dutiny' in image 2 (x 1070-1240, y 560-685 of the 1920x1080 frame (56-65 % from the left, 52-63 % from the top)): here there is only plain patched asphalt and the darker rectangle where the wall stood - nothing standing.\nThe asphalt runs out of the left edge in front of the track (the box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 0-60, y 722-1015 of the 1920x1080 frame (0-3 % from the left, 67-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays open grey asphalt with nothing standing on it: cracks, patches, a few fallen yellow leaves, no objects, no other markings.\nThis room has no NPC zones.\n\nFiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no sponsor boards, no graffiti, no satellite dishes. Murals are simple invented motifs only (no copied artwork). Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S55",
+  "version": 15,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S55.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T07:42:59"
+  }
+}

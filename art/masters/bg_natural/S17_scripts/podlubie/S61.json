@@ -1,0 +1,116 @@
+{
+  "instruction_file": "art/masters/bg_natural/S17_scripts/podlubie/S61.txt",
+  "refs": [
+    "art/masters/bg_natural/S17_v11.png",
+    "art/source/owner_refs/imgur_fNEtUPs.jpg"
+  ],
+  "style": "art/backgrounds/sokolikova-yard.png",
+  "feather": 12,
+  "regions": [
+    {
+      "name": "podlubie",
+      "rect": [
+        1104,
+        312,
+        350,
+        96
+      ]
+    },
+    {
+      "name": "lawn",
+      "poly": [
+        [
+          1095,
+          427
+        ],
+        [
+          1227,
+          466
+        ],
+        [
+          1800,
+          643
+        ],
+        [
+          1800,
+          662
+        ],
+        [
+          1326,
+          662
+        ],
+        [
+          1326,
+          548
+        ],
+        [
+          985,
+          548
+        ],
+        [
+          985,
+          446
+        ],
+        [
+          1060,
+          448
+        ]
+      ]
+    }
+  ],
+  "protect": [
+    {
+      "name": "wall coping with snow cap",
+      "rect": [
+        950,
+        529,
+        390.5,
+        19.5
+      ],
+      "grow": -1
+    },
+    {
+      "name": "brick wall",
+      "rect": [
+        950,
+        548,
+        383.5,
+        185
+      ],
+      "grow": -1
+    },
+    {
+      "name": "red pipe",
+      "hue_rect": [
+        1330,
+        600,
+        100,
+        115
+      ],
+      "hue": [
+        335,
+        25
+      ],
+      "sat": 0.35,
+      "val": 0.12,
+      "grow": 0
+    },
+    {
+      "name": "snow on the pipe",
+      "hue_rect": [
+        1352,
+        608,
+        64,
+        16
+      ],
+      "hue": [
+        0,
+        360
+      ],
+      "sat": 0.0,
+      "sat_max": 0.18,
+      "val": 0.78,
+      "grow": 0
+    }
+  ]
+}
