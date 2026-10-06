@@ -1,0 +1,103 @@
+{
+  "target": "EPILOGUE_6",
+  "version": 2,
+  "kind": "free local calendar repaint (Slovak weekday row, June 1962)",
+  "from_master": "art/cutscenes/EPILOGUE_6_v1.png",
+  "usd": 0,
+  "weekdays": [
+    "Po",
+    "Ut",
+    "St",
+    "Št",
+    "Pi",
+    "So",
+    "Ne"
+  ],
+  "month": "June 1962 (1 June = Friday), Monday first",
+  "geometry": {
+    "fit": "model",
+    "vlines": [
+      1115,
+      1139,
+      1163,
+      1186.5,
+      1210,
+      1233,
+      1254,
+      1277
+    ],
+    "vtilt": 0.03,
+    "x_ref": 1128,
+    "header_top": [
+      308.0,
+      0.2
+    ],
+    "header_bottom": [
+      331.0,
+      0.188
+    ],
+    "bottom": [
+      461.5,
+      0.109
+    ],
+    "inset": 3.0,
+    "cols": [
+      1127,
+      1151,
+      1174.5,
+      1198,
+      1221.5,
+      1243.5,
+      1265.5
+    ],
+    "header": {
+      "size": 14.0,
+      "variation": "SemiBold SemiCondensed",
+      "rotate": -3
+    },
+    "body": {
+      "row0": 366.0,
+      "row_step": 20.4,
+      "slope": 3.5,
+      "size": 16.0,
+      "variation": "SemiBold SemiCondensed",
+      "rotate": -2
+    },
+    "red_sunday": true
+  },
+  "ink_rgb": [
+    81,
+    45,
+    29
+  ],
+  "red_rgb": [
+    151,
+    33,
+    17
+  ],
+  "review": "art/review/reconcile/EPILOGUE_6_calendar.png",
+  "composed": "2026-10-06T05:03:26",
+  "previous_sidecar": {
+    "shot": "EPILOGUE_6",
+    "model": "fal-ai/nano-banana-pro/edit",
+    "resolution": "2K",
+    "usd": 0.15,
+    "seed": null,
+    "prompt": "Paint ONE finished frame of a film-like cutscene of our hand-painted point-and-click adventure game 'Posledny zvonec' (Slovakia; eras 1960, 1982, 1995, 2020, 2035). The reference images are numbered in the order they are given: Image 1: place reference: a period post office counter (repaint in colour) Image 2: place reference: the small post office window Image 3: character reference: Alojz Baran, 54, the post office clerk Image 4: a finished interior painting from our game; use it only for the painting technique, brushwork, palette and line quality, not for its content\n\nShot: A small village post office in Ivanka pri Dunaji in June 1960: on the outer sill of the small open window beside the counter sits Bela, a grey homing pigeon with an iridescent neck, looking in. Behind the wooden counter Alojz (white shirt, black clerk's oversleeves, grey waistcoat) calmly closes a big bound ledger with both hands, without any hurry, a faint satisfied smile. Rubber stamps, an ink pad and a 1960 wall calendar.\n\nCharacters in this frame (briefs of the approved designs): Alojz Baran, a 54-year-old Slovak village post-office clerk in 1960: formal and tidy, with an occasional soft streak. A long, serious, clean-shaven face with bushy greying eyebrows and a kind look, thinning grey-brown hair neatly combed back with a side parting, slim build, upright posture. He wears a white long-sleeved cotton shirt buttoned to the collar with a narrow dark grey tie, black cotton protective clerk's oversleeves pulled over both forearms from wrist to elbow, a plain dark grey knitted waistcoat, dark grey trousers and black leather shoes. In his near hand he holds a small rubber date stamp with a round wooden handle; the tip of the index finger of that hand is stained dark violet-blue with ink. No badge, no emblem, no text.\n\nLight and time: Warm late-afternoon sun through the window, dust in the beam.\n\nCharacter references show approved characters of the game on a plain grey card: copy each person's face, age, hair, body proportions, clothes and colours exactly, but pose and light them for this scene; never copy the grey card, the sheet layout or a duplicate of the same person. Place references show the real location and its painted version in our game: keep its architecture, materials and era. Photos are only references: repaint everything in our style, paint any real people in them out, and do not copy brand logos or shop names. Composition: a calm 16:9 picture like a still from the last minutes of a film, with a clear focal point and depth; it is shown whole with a caption below it, so keep the subject well inside the frame. One single image: no panels, no split screen, no border, no frame, no captions, no subtitles, no speech bubbles, no watermark, no UI, unless the shot asks for it. No text or lettering anywhere unless the shot quotes it exactly.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+    "references": [
+      "art/source/rooms/S33/type_ref_post_office_counter_1956_fortepan103926.jpg",
+      "art/source/rooms/S33/type_ref_post_office_window_1956_fortepan103922.jpg",
+      "art/cutscenes/refs/char_POSTA.png",
+      "src/game/assets/bg/S10.webp"
+    ],
+    "at": "2026-10-05T06:14:20",
+    "exported": {
+      "path": "src/game/assets/cutscenes/EPILOGUE_6.webp",
+      "crop": null,
+      "at": "2026-10-06T01:52:15"
+    },
+    "edits": [
+      "2026-10-06: wall calendar year 1960 -> 1962 (Ivanka shown as June 1962, docs/DECISIONS.md); local edit, free: last digit refilled with the paper of the same rows, a 2 in Arial Bold sheared to the calendar slope, ink sampled from the 6"
+    ]
+  }
+}

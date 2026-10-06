@@ -112,7 +112,7 @@ shot("CS03_1",
            ("item:CHRONO", "prop reference: the brass ZVON chronometer with its mechanical digit counter and four lights"),
            ADAM, STYLE_EXTERIOR],
      shot=("Close-up: Adam's hand holds the brass chronometer in the foreground, filling the left-centre of the frame; "
-           "its mechanical digit counter has just clicked over and reads exactly 1960, the four small lights glowing "
+           "its mechanical digit counter has just clicked over and reads exactly 1962, the four small lights glowing "
            "softly. Behind it, slightly out of focus, a small wooden riverside service shelter with a mechanical coil "
            "on a stand that is slowing to a stop, a paper map pinned inside the shelter with two places circled; "
            "beyond the railing the wide Danube and the far bank of Bratislava in 1995."),
@@ -133,16 +133,16 @@ shot("CS03_2",
      light="Quiet afternoon light, a cold blue glimmer on the blank line as the only unusual light.",
      characters=[])
 
-# ----------------------------------------------------------------------------------------------- CS04 (I17, S40 1960)
+# ----------------------------------------------------------------------------------------------- CS04 (I17, S40 era 1960, shown as June 1962)
 shot("CS04_1",
      refs=[("photo:S40/type_ref_attic_skanzen_doubrava_lipova.jpg", "place reference: a safe wooden attic with a "
                                                                    "plank floor and beams"),
            ("photo:S40/type_ref_attic_cluttered_krovkrov.jpg", "place reference: attic beams and roof light"),
-           char("MIRA60", "Mira at 20, in 1960"),
+           char("MIRA60", "Mira at 22, in June 1962"),
            ADAM,
            ("item:ORIGIN", "prop reference: the paper imprint with the four symbols that Adam keeps"),
            STYLE_INTERIOR],
-     shot=("Medium shot in the archive attic above a workshop in June 1960: young Mira (20, round glasses, ochre "
+     shot=("Medium shot in the archive attic above a workshop in June 1962: young Mira (22, round glasses, ochre "
            "blouse) kneels at a dented grey-green metal archive box with brass corners on a small table and closes its "
            "lid with both hands, decided and calm. Adam stands beside her, slightly behind, holding a sheet of waxed paper "
            "with a pale relief imprint of four simple symbols (circle, cross, square, triangle) against his chest. "
@@ -342,21 +342,36 @@ shot("CS08_2",
 
 # ----------------------------------------------------------------------------------------------- CS09 (J02, Jasna 2035)
 shot("CS09_1",
-     refs=[("photo:S41/biela-put_centrum-jasna-hotel-grand_2015.jpg", "place reference: the real Biela Put area in "
-                                                                      "Jasna with Chopok behind, in summer"),
-           ("photo:S41/biela-put_plaza-panorama_2015.jpg", "place reference: the Biela Put plaza and the valley"),
+     # Jasna 2035 is in winter (owner 2026-10-06) and S41 was repainted from the owner's friend's photos: the view
+     # through the windows is the new winter S41 seen from the departing cabin (art/tools/frame_reconcile.py, v6).
+     refs=[("src/game/assets/bg_natural/S41.webp", "place reference: our finished painting of the valley station at "
+                                                   "Biela Put in winter (room S41), seen from the road; the cabin has "
+                                                   "just left exactly this place"),
+           ("src/game/assets/ambient/S41/natural/cabin_winter.webp", "the line's cabins: rounded, orange-red, "
+                                                                     "unbranded, a dark window band, snow on the roof"),
            ADAM,
            ("frame:CS02_2", "Adam as already painted in another cutscene of the game: copy his face, short dark brown "
-                            "hair, build and clothes from here (not this room)"),
+                            "hair and build from here (not this room)"),
+           ("src/game/assets/actors/ADAM/idle_front_coat1982.webp", "Adam's winter outfit: dark charcoal wool coat, "
+                                                                    "mustard knitted scarf, brown messenger bag"),
            ("item:LIFT_TICKET", "prop reference: the lift ticket"),
            STYLE_EXTERIOR],
-     shot=("Inside a small modern eight-seat gondola cabin of the Biela Put - Priehyba cable car, just after the doors "
-           "have closed: Adam sits by the window, holding his paper lift ticket, looking out. Through the large cabin "
-           "windows the lower station at Biela Put drops away below: chalet roofs, the plaza, spruce forest and the green "
-           "summer slopes of Chopok. Above the door inside the cabin a small plain plate reads exactly: "
-           "BIELA PÚŤ – PRIEHYBA. No logos, no brand names. No reflections of Adam in the glass. Adam's face is our "
-           "approved painted hero (images 3 and 4): a normal adult face, not a caricature."),
-     light="Bright June morning in the mountains, sunlit valley, soft reflections on the cabin glass.",
+     shot=("Inside a small modern eight-seat gondola cabin of the Biela Put - Priehyba cable car on 6 February 2035, just "
+           "after the doors have closed: Adam in his winter coat and mustard scarf sits by the window, holding his paper "
+           "lift ticket, looking out. Through the large cabin windows we look down and back onto the valley station of "
+           "image 1 in deep snow: Hotel Posta (a steep timber A-frame chalet with two wooden balconies and its lower "
+           "cream-coloured wing with three chimneys), the ploughed road with the grey stone-clad retaining wall, in the "
+           "wall's gap the dark card-reader pillar with its green light next to the stainless turnstile with glass "
+           "wings, the arched wooden footbridge with its X-lattice railing over the dark stream, the curved dark-glass "
+           "rope housing with its orange band and an orange-red cabin parked in it, the low white hall with an orange "
+           "stripe, the station's wooden fence, the light-grey steel tube pylon with its ladder close outside, and one "
+           "more orange-red cabin with snow on its roof coming down on the other rope. Above the door inside the cabin "
+           "a small plain plate reads exactly: BIELA PÚŤ – PRIEHYBA. No other lettering, no signposts, no logos, no "
+           "brand names. No reflections of Adam in the glass. Adam's face is our approved painted hero: a normal "
+           "adult face, not a caricature. The character brief below describes his everyday clothes; in this winter "
+           "frame he wears the coat and scarf of image 5 over them."),
+     light="Clear cold February day in the mountains: deep blue sky, low sun, crisp blue shadows on the snow, frost "
+           "rims on the cabin windows, warm sunlight on the cabin floor.",
      characters=["ADAM"])
 
 shot("CS09_2",
@@ -449,10 +464,12 @@ shot("EPILOGUE_6", kind="epilogue",
            ("photo:S33/type_ref_post_office_window_1956_fortepan103922.jpg", "place reference: the small post office window"),
            char("POSTA", "Alojz Baran, 54, the post office clerk"),
            STYLE_INTERIOR],
-     shot=("A small village post office in Ivanka pri Dunaji in June 1960: on the outer sill of the small open window "
+     shot=("A small village post office in Ivanka pri Dunaji in June 1962: on the outer sill of the small open window "
            "beside the counter sits Bela, a grey homing pigeon with an iridescent neck, looking in. Behind the wooden "
            "counter Alojz (white shirt, black clerk's oversleeves, grey waistcoat) calmly closes a big bound ledger with "
-           "both hands, without any hurry, a faint satisfied smile. Rubber stamps, an ink pad and a 1960 wall calendar."),
+           "both hands, without any hurry, a faint satisfied smile. Rubber stamps, an ink pad and a wall calendar showing "
+           "the year 1962 above the month grid of June 1962 with the Slovak weekday row Po Ut St Št Pi So Ne (1 June on "
+           "Friday, Sundays in red)."),
      light="Warm late-afternoon sun through the window, dust in the beam.",
      characters=["POSTA"])
 
@@ -463,7 +480,7 @@ shot("EPILOGUE_7", kind="epilogue",
            char("RUDO", "Rudo, 34, the amateur actor in his oversized stage costume"),
            char("LIDA", "Lida, 43, the costume maker"),
            STYLE_INTERIOR],
-     shot=("Rehearsal in an empty village culture hall in 1960: on the small wooden stage in front of a painted cloth "
+     shot=("Rehearsal in an empty village culture hall in June 1962: on the small wooden stage in front of a painted cloth "
            "forest backdrop, Rudo in his far too big checked jacket and low bowler hat stands with one arm flung out "
            "and chest forward, delivering his first line grandly and completely for the first time. In the front row "
            "below the stage Lida sits on a wooden chair, a hand pressed over her mouth, eyes squeezed, shoulders "
@@ -513,7 +530,7 @@ CAMERA = {
     "CS01_3": {"from": [480, 220, 1440, 810], "to": [0, 220, 1440, 810]},  # follow the leaving tram back to Adam
     "CS02_1": {"from": FULL, "to": [0, 150, 1440, 810]},                # push in on the turning reels
     "CS02_2": {"from": [0, 100, 1440, 810], "to": [480, 100, 1440, 810]},  # from adult Adam to the boy in the yard
-    "CS03_1": {"from": FULL, "to": [0, 250, 1440, 810]},                # push in on the counter reading 1960
+    "CS03_1": {"from": FULL, "to": [0, 250, 1440, 810]},                # push in on the counter reading 1962
     "CS03_2": {"from": FULL, "to": [480, 160, 1440, 810]},              # push in on the emptied row
     "CS05_1": {"from": [0, 160, 1440, 810], "to": [480, 100, 1440, 810]},  # records -> the photograph
     "CS05_2": {"from": FULL, "to": [480, 270, 1440, 810]},              # towards the counter reading 2035

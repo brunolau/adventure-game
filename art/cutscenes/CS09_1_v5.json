@@ -1,0 +1,131 @@
+{
+  "target": "CS09_1",
+  "version": 5,
+  "kind": "detail pass (zoomed crop edit) + local snow cap",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "seed": 2035412,
+  "usd": 0.15,
+  "scope": "cutscenes/reconcile/CS09_1/",
+  "spend_log_asset": "cutscenes/reconcile/CS09_1/CS09_1_v5_detail",
+  "started": "2026-10-06T04:50:17",
+  "prompt": "Image 1 is a crop of a finished cutscene frame of our point-and-click adventure game: inside a small gondola cabin that has just left the valley station at Biela Put (Jasna, 6 February 2035, a clear cold winter day); through the cabin windows we look down onto the station area. Image 2 is our finished background painting of that place, seen from the access road.\n\nMake ONLY these two changes inside the window glass and keep everything else in image 1 exactly as it is: the cabin's frames, door, benches, grab rails, frost rims and light, and the rest of the view (Hotel Posta and its cream wing, the road, the stone wall in the narrow window, and the station housing with the orange band and the parked orange-red cabin in the RIGHT door window):\n1. Through the LEFT of the two door windows (the tall window in the left door leaf, right of the centre of image 1): remove the dark-glass housing with the orange band and the small white hut. Instead we look down onto the road side of the station, as in image 2 right of its road: the ploughed grey road with a low snow bank, the grey stone-clad retaining wall topped with snow running along the road, and in a gap in that wall a slim dark card-reader pillar with a small glowing green light, standing next to a stainless-steel turnstile with two glass wings; behind the wall the white snow field with ski tracks and the brown wooden fence of the station.\n2. Through the lower part of the narrow window at the far left edge: the arched wooden footbridge with its brown X-lattice railing crossing the dark mountain stream between snow-capped stones, as in image 2 left of its road; keep the light-wood pillar with the round turquoise clock face standing at the bridge head.\nNo lettering, no signs, no numbers, no people, no animals. Keep the painting technique, brushwork, palette handling and level of detail of image 1; the result is image 1 edited, in the same 16:9 framing, no frames, no borders, no captions.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/CS09_1_v4.png crop (0, 140, 1244, 840)",
+    "src/game/assets/bg_natural/S41.webp (signpost boards plain)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_CS09_1_v5_detail_raw.png",
+  "compose": {
+    "base_version": 4,
+    "crop": [
+      0,
+      140,
+      1244,
+      840
+    ],
+    "regions": {
+      "left_mid": [
+        [
+          570,
+          152
+        ],
+        [
+          640,
+          156
+        ],
+        [
+          652,
+          260
+        ],
+        [
+          662,
+          420
+        ],
+        [
+          664,
+          600
+        ],
+        [
+          664,
+          740
+        ],
+        [
+          660,
+          868
+        ],
+        [
+          634,
+          868
+        ],
+        [
+          640,
+          760
+        ],
+        [
+          620,
+          745
+        ],
+        [
+          552,
+          748
+        ],
+        [
+          530,
+          650
+        ],
+        [
+          522,
+          520
+        ],
+        [
+          528,
+          380
+        ],
+        [
+          545,
+          250
+        ]
+      ],
+      "far_left_low": [
+        [
+          0,
+          440
+        ],
+        [
+          164,
+          440
+        ],
+        [
+          152,
+          520
+        ],
+        [
+          150,
+          690
+        ],
+        [
+          0,
+          720
+        ]
+      ]
+    },
+    "ramp_y": [
+      470,
+      505
+    ],
+    "snow_cap": {
+      "roof_y": 181,
+      "x0": 1772,
+      "x1": 1890,
+      "height": 6
+    }
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T04:53:04",
+  "review": "art/review/reconcile/CS09_1_v5.jpg",
+  "recomposed": true
+}

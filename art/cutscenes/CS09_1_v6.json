@@ -1,0 +1,55 @@
+{
+  "target": "CS09_1",
+  "version": 6,
+  "kind": "left door window (zoomed crop edit)",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "seed": 2035413,
+  "usd": 0.15,
+  "scope": "cutscenes/reconcile/CS09_1/",
+  "spend_log_asset": "cutscenes/reconcile/CS09_1/CS09_1_v6_door",
+  "started": "2026-10-06T04:54:20",
+  "prompt": "Image 1 is a crop of a finished cutscene frame of our point-and-click adventure game: inside a small gondola cabin that has just left the valley station at Biela Put (Jasna, 6 February 2035, a clear cold winter day). In the middle of image 1 is the closed cabin door with two tall windows. Through the RIGHT door window we see the valley station: a curved dark-glass rope housing with an orange band on grey pillars and a parked orange-red cabin. Through the LEFT door window we see a second, duplicate dark-glass housing with an orange band standing on a small white hut.\n\nMake ONLY this change: in the LEFT door window, remove the duplicate dark-glass housing and the small white hut completely, and paint in their place what lies behind them: the open white snow field sloping gently down, with a few soft ski tracks, the brown wooden fence of the station running across it with snow on its rails, and behind it the same snowy slope, spruces and white mountain that are already painted at the top of that window. Nothing built is seen in the left door window. Keep everything else in image 1 exactly as it is: the right door window with the station and the parked cabin, the narrow window at the left edge with the stone wall and the turnstile, the door, all frames and frost rims, the person at the right edge and the light.\nNo lettering, no signs, no numbers, no people. Keep the painting technique, brushwork, palette handling and level of detail of image 1; the result is image 1 edited, in the same 16:9 framing, no frames, no borders, no captions.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/cutscenes/CS09_1_v5.png crop (560, 160, 1396, 630)"
+  ],
+  "model_description": "",
+  "raw_model_output": "art/cutscenes/_CS09_1_v6_door_raw.png",
+  "compose": {
+    "base_version": 5,
+    "crop": [
+      560,
+      160,
+      1396,
+      630
+    ],
+    "region": [
+      [
+        722,
+        186
+      ],
+      [
+        908,
+        186
+      ],
+      [
+        910,
+        612
+      ],
+      [
+        738,
+        612
+      ],
+      [
+        730,
+        400
+      ]
+    ]
+  },
+  "output_size": [
+    1920,
+    1080
+  ],
+  "composed": "2026-10-06T04:54:58",
+  "review": "art/review/reconcile/CS09_1_v6.jpg"
+}

@@ -65,6 +65,9 @@ public partial class MapScreen : ModalScreen
         Body.AddChild(frame);
         status = Ui.Para(Ui.T("ui.map.region_rule"), "CaptionLabel");
         Body.AddChild(status);
+        // The cards are arranged to the visible width of the scroll view (shrink, then wrap): re-arrange when it changes
+        // (window size, HUD scale, first layout of the panel).
+        scroll.Resized += () => { if (graph.SetViewport(scroll.Size, ScrollbarWidth())) EnsureVisibleNextFrame(); };
         graph.Travel += OnTravel;
         graph.Inspect += text => status.Text = text;
         graph.OpenRegion += id => ShowRegion(id);
@@ -110,6 +113,7 @@ public partial class MapScreen : ModalScreen
         var sheet = ViewBuilder.Map(game.Content, game.State).FirstOrDefault(e => e.Year == year);
         if (sheet is null) return;
         var region = regionId is null ? null : sheet.Regions.FirstOrDefault(r => r.Id == regionId);
+        graph.SetViewport(scroll.Size, ScrollbarWidth(), arrange: false);
         if (region is null)
         {
             regionId = null;
@@ -126,11 +130,24 @@ public partial class MapScreen : ModalScreen
             backButton.Visible = true;
         }
         CallDeferred(MethodName.EnsureCurrentVisible);
+        EnsureVisibleNextFrame();
     }
+
+    private float ScrollbarWidth() => Math.Max(12f, scroll.GetVScrollBar().GetCombinedMinimumSize().X);
 
     private void EnsureCurrentVisible()
     {
-        if (graph.PreferredNode is { } node) scroll.EnsureControlVisible(node);
+        // The focused card (keyboard / pad), else the current room or region: after a re-arrangement it may have moved.
+        var focus = GetViewport()?.GuiGetFocusOwner();
+        var node = focus is not null && graph.IsAncestorOf(focus) ? focus : graph.PreferredNode;
+        if (node is not null) scroll.EnsureControlVisible(node);
+    }
+
+    /// <summary>After the scroll view has taken the graph's new minimum size (its scroll range updates in a later sort).</summary>
+    private async void EnsureVisibleNextFrame()
+    {
+        await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        if (IsInsideTree() && Visible) EnsureCurrentVisible();
     }
 
     private void OnTravel(string roomId)
@@ -142,14 +159,31 @@ public partial class MapScreen : ModalScreen
     }
 }
 
-/// <summary>The drawn graph of one era sheet: region cards (overview) or the rooms of one region (nodes are focusable buttons; edges are drawn).</summary>
+/// <summary>
+/// The drawn graph of one era sheet: region cards (overview) or the rooms of one region (nodes are focusable buttons;
+/// edges are drawn). Columns are the walking / travel distance from the region's hub (rooms) or from the current region
+/// (overview). The columns are fitted to the visible width of the map panel (<see cref="SetViewport"/>): at the standard
+/// spacing when they fit; else the room cards and their gaps shrink together down to <c>NodeMinW</c> (region cards keep
+/// their size, only the gaps shrink); when even that is too wide, the columns wrap into bands that run left to right and
+/// right to left in turn, so the next band starts under the last column of the previous one and a link between two bands
+/// is routed around the side of that shared column. Every place stays visible without horizontal scrolling from
+/// 1280x720 to 3840x2160 and at larger HUD scales (owner report 2026-10-06: the last card of Chorvátsky Grob 2020 was
+/// cut off).
+/// </summary>
 public partial class MapGraph : Control
 {
-    private const float NodeW = 250, NodeH = 100, ColGap = 300, RowGap = 124, Pad = 50;
-    private const float RegionW = 330, RegionH = 150, RegionColGap = 420, RegionRowGap = 190;
+    private const float NodeW = 250, NodeMinW = 200, NodeH = 100, NodeGap = 50, RowGap = 124, Pad = 50, BandGap = 70;
+    private const float RegionW = 330, RegionH = 150, RegionGap = 90, RegionMinGap = 44, RegionRowGap = 190;
+    private const float TagInset = 24;
     private readonly Dictionary<string, Button> nodes = new(StringComparer.Ordinal);
+    private readonly Dictionary<string, int> bandOf = new(StringComparer.Ordinal);
     private readonly List<(string From, string To, bool Open, string Travel)> edges = new();
+    private List<List<string>> columns = new();
     private MapEraView? sheet;
+    private Vector2 viewport = new(1690, 600);
+    private float scrollbarWidth = 12;
+    private int slots = 1;
+    private float cardW = NodeW, pitch = NodeW + NodeGap;
 
     /// <summary>Raised when a fast-travel node is chosen.</summary>
     public event Action<string>? Travel;
@@ -178,20 +212,41 @@ public partial class MapGraph : Control
     /// <summary>Node buttons by room id (rooms view) or region id (overview).</summary>
     public IReadOnlyDictionary<string, Button> Nodes => nodes;
 
+    /// <summary>Number of bands the columns wrap into (1: one row of columns).</summary>
+    public int Bands { get; private set; } = 1;
+
+    /// <summary>
+    /// The visible size of the scroll view around the graph and the width of its vertical scroll bar; re-arranges the
+    /// cards when the size changed (unless <paramref name="arrange"/> is false: the next build uses it). True when the
+    /// cards were re-arranged.
+    /// </summary>
+    public bool SetViewport(Vector2 size, float scrollbar, bool arrange = true)
+    {
+        scrollbarWidth = scrollbar;
+        if (size.X < 1 || size.Y < 1) return false;
+        bool changed = Math.Abs(size.X - viewport.X) > 0.5f || Math.Abs(size.Y - viewport.Y) > 0.5f;
+        viewport = size;
+        if (!arrange || !changed || columns.Count == 0) return false;
+        Arrange();
+        return true;
+    }
+
     private void Reset(MapEraView era, bool regions)
     {
         sheet = era;
         ShowsRegions = regions;
         foreach (var b in nodes.Values) b.QueueFree();
         nodes.Clear();
+        bandOf.Clear();
         edges.Clear();
+        columns = new List<List<string>>();
         CurrentNode = null;
         HubNode = null;
     }
 
-    /// <summary>Layered layout: column = graph distance from <paramref name="root"/>; rows by barycentre of placed neighbours.</summary>
-    private static Dictionary<string, Vector2> Layout(IReadOnlyList<string> ids, string root, Dictionary<string, List<string>> neighbours,
-        float colGap, float rowGap, float nodeW, float nodeH, out Vector2 size, Func<string, string> tieBreak)
+    /// <summary>Layered order: column = graph distance from <paramref name="root"/>; rows by barycentre of placed neighbours.</summary>
+    private static List<List<string>> Columns(IReadOnlyList<string> ids, string root, Dictionary<string, List<string>> neighbours,
+        Func<string, string> tieBreak)
     {
         var depth = new Dictionary<string, int> { [root] = 0 };
         var queue = new Queue<string>();
@@ -217,16 +272,93 @@ public partial class MapGraph : Control
             }
             for (int i = 0; i < col.Count; i++) row[col[i]] = i;
         }
-        int maxRows = columns.Max(c => c.Count);
-        var positions = new Dictionary<string, Vector2>();
-        for (int c = 0; c < columns.Count; c++)
+        return columns;
+    }
+
+    private readonly record struct Plan(int Slots, float CardW, float Gap, float Height);
+
+    /// <summary>The fewest bands whose columns fit <paramref name="width"/> (standard spacing, else shrunk), else one column per band.</summary>
+    private Plan MakePlan(float width)
+    {
+        bool regions = ShowsRegions;
+        float stdW = regions ? RegionW : NodeW, minW = regions ? RegionW : NodeMinW;
+        float stdGap = regions ? RegionGap : NodeGap, minGap = regions ? RegionMinGap : NodeGap * NodeMinW / NodeW;
+        float inner = width - 2 * Pad;
+        int n = columns.Count;
+        for (int bands = 1; bands <= n; bands++)
         {
-            var col = columns[c];
-            float offset = (maxRows - col.Count) * rowGap / 2f;
-            for (int i = 0; i < col.Count; i++) positions[col[i]] = new Vector2(Pad + c * colGap, Pad + 40 + offset + i * rowGap);
+            int c = (n + bands - 1) / bands;
+            if (bands > 1 && c == (n + bands - 2) / (bands - 1)) continue; // the same band width as one band fewer
+            float w = stdW, gap = stdGap;
+            float need = c * w + (c - 1) * gap;
+            if (need > inner)
+            {
+                if (regions)
+                {
+                    if (c == 1 || inner < c * w) continue;
+                    gap = (inner - c * w) / (c - 1);
+                    if (gap < minGap) continue;
+                }
+                else
+                {
+                    float f = inner / need;
+                    w = stdW * f;
+                    gap = stdGap * f;
+                    if (w < minW) continue;
+                }
+            }
+            return new Plan(c, w, gap, Height(c));
         }
-        size = new Vector2(Pad * 2 + (columns.Count - 1) * colGap + nodeW, Pad * 2 + 40 + (maxRows - 1) * rowGap + nodeH);
-        return positions;
+        return new Plan(1, minW, 0, Height(1)); // not even one card fits: the scroll view scrolls
+    }
+
+    private float Height(int perBand)
+    {
+        float h = ShowsRegions ? RegionH : NodeH, rowGap = ShowsRegions ? RegionRowGap : RowGap;
+        float total = 2 * Pad;
+        for (int start = 0; start < columns.Count; start += perBand)
+        {
+            int rows = columns.Skip(start).Take(perBand).Max(c => c.Count);
+            total += (rows - 1) * rowGap + h + (start > 0 ? BandGap : 0);
+        }
+        return total;
+    }
+
+    /// <summary>Positions and sizes the cards for the current viewport.</summary>
+    private void Arrange()
+    {
+        if (columns.Count == 0) return;
+        var plan = MakePlan(viewport.X);
+        if (plan.Height > viewport.Y) plan = MakePlan(viewport.X - scrollbarWidth); // the vertical scroll bar takes its width
+        float h = ShowsRegions ? RegionH : NodeH, rowGap = ShowsRegions ? RegionRowGap : RowGap;
+        slots = plan.Slots;
+        cardW = plan.CardW;
+        pitch = plan.CardW + plan.Gap;
+        bandOf.Clear();
+        Bands = (columns.Count + slots - 1) / slots;
+        float y = Pad;
+        for (int band = 0; band < Bands; band++)
+        {
+            var bandColumns = columns.Skip(band * slots).Take(slots).ToList();
+            int rows = bandColumns.Max(c => c.Count);
+            for (int j = 0; j < bandColumns.Count; j++)
+            {
+                int slot = band % 2 == 0 ? j : slots - 1 - j;
+                var col = bandColumns[j];
+                float offset = (rows - col.Count) * rowGap / 2f;
+                for (int i = 0; i < col.Count; i++)
+                {
+                    bandOf[col[i]] = band;
+                    if (!nodes.TryGetValue(col[i], out var node)) continue;
+                    node.CustomMinimumSize = new Vector2(cardW, h);
+                    node.Size = new Vector2(cardW, h);
+                    node.Position = new Vector2(Pad + slot * pitch, y + offset + i * rowGap);
+                }
+            }
+            y += (rows - 1) * rowGap + h + (band < Bands - 1 ? BandGap : 0);
+        }
+        CustomMinimumSize = new Vector2(2 * Pad + slots * cardW + (slots - 1) * plan.Gap, y + Pad);
+        QueueRedraw();
     }
 
     // ------------------------------------------------------------------ region overview
@@ -250,13 +382,12 @@ public partial class MapGraph : Control
         }
         var anchorRoom = era.Rooms.FirstOrDefault(r => r.IsAnchor)?.RoomId;
         string root = era.Regions.FirstOrDefault(r => r.IsCurrent)?.Id ?? (anchorRoom is null ? ids[0] : regionOfRoom[anchorRoom]);
-        var positions = Layout(ids, root, neighbours, RegionColGap, RegionRowGap, RegionW, RegionH, out var size, id => id);
-        CustomMinimumSize = size;
-        foreach (var region in era.Regions) AddRegionNode(era, region, positions[region.Id]);
-        QueueRedraw();
+        columns = Columns(ids, root, neighbours, id => id);
+        foreach (var region in era.Regions) AddRegionNode(era, region);
+        Arrange();
     }
 
-    private void AddRegionNode(MapEraView era, MapRegionView region, Vector2 position)
+    private void AddRegionNode(MapEraView era, MapRegionView region)
     {
         var rooms = era.Rooms.Where(r => region.Rooms.Contains(r.RoomId)).ToList();
         int visited = rooms.Count(r => r.Visited);
@@ -264,7 +395,6 @@ public partial class MapGraph : Control
         var b = new Button
         {
             Text = "",
-            Position = position,
             Size = new Vector2(RegionW, RegionH),
             CustomMinimumSize = new Vector2(RegionW, RegionH),
             Name = "Region_" + region.Id.Replace(' ', '_'),
@@ -299,9 +429,10 @@ public partial class MapGraph : Control
         box.AddChild(hub);
         foreach (var child in box.GetChildren()) if (child is Control c) c.MouseFilter = MouseFilterEnum.Ignore;
         b.AddChild(box);
-        if (region.IsCurrent) { AddTag(b, Ui.T("ui.map.you_are_here"), UiTheme.Accent, new Vector2(RegionW - 92, RegionH - 18)); CurrentNode = b; }
+        // Tags hang on the bottom edge, right-aligned inside the card (a long transport name grows to the left).
+        if (region.IsCurrent) { AddTag(b, Ui.T("ui.map.you_are_here"), UiTheme.Accent, right: true, 18); CurrentNode = b; }
         else if (region.Transport is { } transport && region.CanTravel)
-            AddTag(b, TextService.Get(new TextRef("ui.travel." + transport, transport)), UiTheme.Brass, new Vector2(RegionW - 130, RegionH - 18));
+            AddTag(b, TextService.Get(new TextRef("ui.travel." + transport, transport)), UiTheme.Brass, right: true, 18);
         string tip = region.IsCurrent ? Ui.T("ui.map.you_are_here")
             : !region.Visited ? Ui.T("ui.map.region_unvisited")
             : region.CanTravel ? Ui.T("ui.map.via_hub", ("hub", string.Join(", ", hubNames))) : Ui.T("ui.map.unreachable");
@@ -318,7 +449,9 @@ public partial class MapGraph : Control
         nodes[id] = b;
     }
 
-    private static void AddTag(Control parent, string text, Color color, Vector2 position)
+    /// <summary>A small coloured tag on the bottom edge of a card, anchored to its left or right side (follows the card's width).
+    /// The anchor calls push the opposite anchor along: without that Godot clamps a left anchor of 1 back to the right anchor 0.</summary>
+    private static void AddTag(Control parent, string text, Color color, bool right, float above)
     {
         var label = Ui.Label(text, "CaptionLabel");
         label.AddThemeColorOverride("font_color", UiTheme.Cream);
@@ -326,7 +459,13 @@ public partial class MapGraph : Control
         var tag = new PanelContainer { MouseFilter = MouseFilterEnum.Ignore };
         tag.AddThemeStyleboxOverride("panel", UiTheme.Box(color, color, 0, 8, 4));
         tag.AddChild(label);
-        tag.Position = position;
+        float anchor = right ? 1 : 0, x = right ? -TagInset : 10;
+        tag.GrowHorizontal = right ? GrowDirection.Begin : GrowDirection.End;
+        tag.GrowVertical = GrowDirection.End;
+        tag.SetAnchorAndOffset(Side.Left, anchor, x, pushOppositeAnchor: true);
+        tag.SetAnchorAndOffset(Side.Right, anchor, x, pushOppositeAnchor: true);
+        tag.SetAnchorAndOffset(Side.Top, 1, -above, pushOppositeAnchor: true);
+        tag.SetAnchorAndOffset(Side.Bottom, 1, -above, pushOppositeAnchor: true);
         parent.AddChild(tag);
     }
 
@@ -347,21 +486,19 @@ public partial class MapGraph : Control
         foreach (var c in connections) { neighbours[c.From].Add(c.To); neighbours[c.To].Add(c.From); }
         string root = rooms.FirstOrDefault(r => r.IsCurrent)?.RoomId ?? rooms.FirstOrDefault(r => r.IsHub)?.RoomId ?? rooms[0].RoomId;
         if (rooms.FirstOrDefault(r => r.IsAnchor) is { } anchor && !rooms.Any(r => r.IsCurrent)) root = anchor.RoomId;
-        var positions = Layout(rooms.Select(r => r.RoomId).ToList(), region.Hubs.FirstOrDefault(roomIds.Contains) ?? root, neighbours,
-            ColGap, RowGap, NodeW, NodeH, out var size, id => content.GetRoom(id).District);
-        CustomMinimumSize = size;
-        foreach (var room in rooms) AddNode(room, region, positions[room.RoomId], era.Year == state.Era);
-        QueueRedraw();
+        columns = Columns(rooms.Select(r => r.RoomId).ToList(), region.Hubs.FirstOrDefault(roomIds.Contains) ?? root, neighbours,
+            id => content.GetRoom(id).District);
+        foreach (var room in rooms) AddNode(room, region, era.Year == state.Era);
+        Arrange();
     }
 
-    private void AddNode(MapRoomView room, MapRegionView region, Vector2 position, bool sameEra)
+    private void AddNode(MapRoomView room, MapRegionView region, bool sameEra)
     {
         string name = room.Visited ? Ui.T(room.Name) : Ui.T("ui.map.unvisited");
         var b = new Button
         {
             Text = name,
             AutowrapMode = TextServer.AutowrapMode.WordSmart,
-            Position = position,
             Size = new Vector2(NodeW, NodeH),
             CustomMinimumSize = new Vector2(NodeW, NodeH),
             ClipText = true,
@@ -401,29 +538,36 @@ public partial class MapGraph : Control
         };
         b.FocusEntered += () => Inspect?.Invoke(name + " — " + tip);
         AddChild(b);
-        // District caption: region.<district>.name (ISSUES TEXT-02 / UI-02).
+        // District caption: region.<district>.name (ISSUES TEXT-02 / UI-02); anchored to both sides, it follows the card width.
         var district = Ui.Label(TextService.Get(TextKeys.RegionOf(GameRuntime.Instance.Content.GetRoom(room.RoomId))).ToUpperInvariant(), "CaptionLabel");
         district.AddThemeFontSizeOverride("font_size", 16);
         district.AddThemeFontOverride("font", UiTheme.BodyBold);
-        district.Position = new Vector2(14, 4);
-        district.Size = new Vector2(NodeW - 60, 26);
+        district.SetAnchorAndOffset(Side.Left, 0, 14, pushOppositeAnchor: true);
+        const float captionTop = 7; // below the borders and the focus ring (they hid the háček of ČIERNA VODA)
+        district.SetAnchorAndOffset(Side.Top, 0, captionTop, pushOppositeAnchor: true);
+        district.SetAnchorAndOffset(Side.Right, 1, room.IsAnchor ? -46 : -14, pushOppositeAnchor: true);
+        district.SetAnchorAndOffset(Side.Bottom, 0, captionTop + 26, pushOppositeAnchor: true);
         // Not ClipText: it cut the accents of the capitals (DÚBRAVKA, STARÉ MESTO; playtest PT-F03); trim the width only.
         district.ClipText = false;
         district.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
         b.AddChild(district);
         if (room.IsAnchor)
         {
-            var clock = new Glyph(GlyphKind.Clock, 34, UiTheme.Accent) { Position = new Vector2(NodeW - 40, 4) };
+            var clock = new Glyph(GlyphKind.Clock, 34, UiTheme.Accent);
+            clock.SetAnchorAndOffset(Side.Left, 1, -40, pushOppositeAnchor: true);
+            clock.SetAnchorAndOffset(Side.Top, 0, 4, pushOppositeAnchor: true);
+            clock.SetAnchorAndOffset(Side.Right, 1, -6, pushOppositeAnchor: true);
+            clock.SetAnchorAndOffset(Side.Bottom, 0, 38, pushOppositeAnchor: true);
             b.AddChild(clock);
         }
         if (room.IsCurrent)
         {
-            AddTag(b, Ui.T("ui.map.you_are_here"), UiTheme.Accent, new Vector2(NodeW - 84, NodeH - 16));
+            AddTag(b, Ui.T("ui.map.you_are_here"), UiTheme.Accent, right: true, 16);
             CurrentNode = b;
         }
         else if (room.IsHub && region.Hubs.Count < region.Rooms.Count)
         {
-            AddTag(b, Ui.T("ui.map.hub"), UiTheme.Brass, new Vector2(10, NodeH - 16));
+            AddTag(b, Ui.T("ui.map.hub"), UiTheme.Brass, right: false, 16);
         }
         if (room.IsHub) HubNode ??= b;
         nodes[id] = b;
@@ -433,15 +577,43 @@ public partial class MapGraph : Control
     public override void _Draw()
     {
         if (sheet is null) return;
+        var lanes = new Dictionary<(int Band, string A, string B), int>();
+        var used = new Dictionary<int, int>();
         foreach (var (from, to, open, travel) in edges)
         {
             if (!nodes.TryGetValue(from, out var a) || !nodes.TryGetValue(to, out var b)) continue;
-            var pa = a.Position + a.Size / 2;
-            var pb = b.Position + b.Size / 2;
             var color = open ? new Color(UiTheme.Ink, 0.75f) : new Color(UiTheme.Muted, 0.6f);
             float width = ShowsRegions ? (open ? 6 : 4) : (open ? 4 : 3);
-            if (travel == "walk") DrawLine(pa, pb, color, width, true);
-            else DrawDashedLine(pa, pb, open ? UiTheme.Accent : color, width, ShowsRegions ? 20 : 14, true);
+            void Segment(Vector2 p, Vector2 q)
+            {
+                if (travel == "walk") DrawLine(p, q, color, width, true);
+                else DrawDashedLine(p, q, open ? UiTheme.Accent : color, width, ShowsRegions ? 20 : 14, true);
+            }
+            int bandA = bandOf.GetValueOrDefault(from), bandB = bandOf.GetValueOrDefault(to);
+            if (bandA == bandB)
+            {
+                Segment(a.Position + a.Size / 2, b.Position + b.Size / 2);
+                continue;
+            }
+            // Between two bands both ends sit in the shared column at the turn of the serpentine (right end after an even
+            // band, left end after an odd one): go around that column's side instead of through its other cards.
+            int upper = Math.Min(bandA, bandB);
+            bool right = upper % 2 == 0;
+            bool ordered = string.CompareOrdinal(from, to) < 0;
+            var key = (upper, ordered ? from : to, ordered ? to : from);
+            if (!lanes.TryGetValue(key, out int lane))
+            {
+                lane = used.GetValueOrDefault(upper);
+                used[upper] = lane + 1;
+                lanes[key] = lane;
+            }
+            float shift = Math.Min(lane, 3) * 7;
+            float gutter = right ? Pad + (slots - 1) * pitch + cardW + Pad * 0.45f + shift : Pad * 0.55f - shift;
+            Vector2 SideOf(Button n) => new(right ? n.Position.X + n.Size.X : n.Position.X, n.Position.Y + n.Size.Y / 2);
+            Vector2 pa = SideOf(a), pb = SideOf(b);
+            Segment(pa, new Vector2(gutter, pa.Y));
+            Segment(new Vector2(gutter, pa.Y), new Vector2(gutter, pb.Y));
+            Segment(new Vector2(gutter, pb.Y), pb);
         }
     }
 }

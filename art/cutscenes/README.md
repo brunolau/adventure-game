@@ -49,14 +49,14 @@ bottom tenth; no text unless quoted) + the canonical style-A sentence read from 
 | CS07_5 | v1 | dusk, the gate bell; space left for the end title |
 | CS08_1 | v1 | one yard 1982 / 1995 / 2020 blended left to right, phone screenshot of the bare asphalt |
 | CS08_2 | v2 | v1 rejected: 1982 snow and lath fence in the 2020 background |
-| CS09_1 | v2 | v1 rejected: caricature face, reflections; sign BIELA PÚŤ – PRIEHYBA |
-| CS09_2 | v1 | sign FUNITEL PRIEHYBA – CHOPOK; the cabins look like small gondolas, not the large funitel cabins |
+| CS09_1 | v6 | v1 rejected: caricature face, reflections; sign BIELA PÚŤ – PRIEHYBA; v3 winter; v4-v6 the view through the windows is the new winter S41 (section "Reconcile with S41 and Ivanka 1962" below) |
+| CS09_2 | v1 | sign FUNITEL PRIEHYBA – CHOPOK; the cabins look like small gondolas, not the large funitel cabins (winter v2; shows the Priehyba hall of S67, not Biela Púť: its black cabins are the Funitel cabins of S67, so it was left unchanged by the S41 reconcile) |
 | EPILOGUE_1 | v1 | Bodka with the red ball, Lenka |
 | EPILOGUE_2 | v2 | v1 rejected: gibberish poster text; v2 "SUSEDSKÁ POMOC 9.00 – 17.00" |
 | EPILOGUE_3 | v1 | team photo in the Rotunda gallery, Adam |
 | EPILOGUE_4 | v2 | Tamara listening to the radio; v2 = v1 with a stray English chalk word blanked |
 | EPILOGUE_5 | v2 | v1 rejected: mural was not panel blocks; v2 Petržalka blocks, every window a different light |
-| EPILOGUE_6 | v1 | Béla on the sill, Alojz closes the ledger; wall calendar reads 1962 (local edit 2026-10-06); calendar weekday letters are not Slovak (tiny) |
+| EPILOGUE_6 | v2 | Béla on the sill, Alojz closes the ledger; wall calendar reads 1962 (local edit of v1 2026-10-06); v2 = free local repaint of the calendar: Slovak weekday row Po Ut St Št Pi So Ne and the grid of June 1962 (1 June = Friday, Sundays red) |
 | EPILOGUE_7 | v1 | Rudo's first line, Lída holding back laughter |
 | EPILOGUE_8 | v1 | Tamara hands Očko the card ĎAKUJEM |
 | EPILOGUE_9 | v2 | v1 rejected: 12-year-old Jana with grey-green hair, drawing upside down |
@@ -102,3 +102,29 @@ full edits with the sign protected. Reviews: `art/review/natural/winter/<SHOT>_v
 | EPILOGUE_9 | v3 | only the 2035 panel: snowy mountains and spruces behind Jana; the 1982 and 2020 panels unchanged |
 
 Not changed: EPILOGUE_1, 2, 6, 7 (other places and eras); CS05 (2020 workshop). Cost: 11 calls, USD 1.65.
+
+## Reconcile with S41 and Ivanka 1962 (2026-10-06)
+
+Tool: `art/tools/frame_reconcile.py` (spend scope `cutscenes/reconcile/CS09_1/`, 3 paid calls, USD 0.45; calendars free).
+
+**CS09_1 -> v6.** S41 was repainted in winter from the owner's friend's photos (`art/masters/bg_natural/S41.md`), so the
+view through the cabin windows now shows that painting seen from the departing cabin. Adam (coat, scarf, ticket,
+bag), the cabin interior, the frost rims and the sign BIELA PÚŤ – PRIEHYBA stay pixel-identical to v3: the model output
+is used only inside hand-traced window-glass polygons, and around Adam only where it changed the view behind him.
+
+| v | kind | seed | cost | result | verdict |
+|---|---|---|---|---|---|
+| v4 | full-frame edit of v3 + S41 (signpost boards painted plain in the reference) + the S41 cabin sprite; composite into the glass only | 2035411 | 0.15 | Hotel Pošta (A-frame with balconies, cream wing with three chimneys), the road with the stone-clad wall, the dark-glass housing with the orange band and a parked orange-red cabin, the steel tube pylon with its ladder, a descending orange-red cabin, the white hall with the orange stripe. Weak: a second housing on a small hut (with a letter-like mark) in the left door window, the footbridge only a fragment, no reader or turnstile. | base |
+| v5 | zoomed crop edit (x 0-1244, y 140-840) of v4 + S41 | 2035412 | 0.15 | The model placed the gate (dark reader pillar with green light and card icon, stainless turnstile with glass wings, in the gap of the stone wall) into the narrow window left of the door and the X-lattice footbridge over the dark stream into the lower far-left window; only those two windows taken. Free local snow cap on the descending cabin's roof (follows its measured roof line). | base |
+| v6 | tight crop edit (x 560-1396, y 160-630) of v5 | 2035413 | 0.15 | Left door window: the duplicate housing and hut replaced by the open snow field with the station fence; only that window taken. | **accepted** |
+
+Raw outputs `_CS09_1_v4_s41_raw.png`, `_CS09_1_v5_detail_raw.png`, `_CS09_1_v6_door_raw.png`; reviews in
+`art/review/reconcile/` (git-ignored). Lettering in the frame: only the plate above the door. The shot spec in
+`cutscene_shots.py` now describes this view (references: the winter S41 painting, the cabin sprite, the coat sheet).
+
+**1962.** CS03_1 (counter 1962), the EPILOGUE_6 calendar year and the S33 calendar year were already edited earlier on
+2026-10-06 (masters and exports; nothing reads 1960 any more). New: EPILOGUE_6 v2 (above) and the S33 calendar grid as
+June 1962 with the Slovak weekday row (`art/masters/bg_natural/S33.md`). The calendars are lettered locally in
+Bahnschrift (DIN-like, close to the painted digits) with the ink sampled from the old digits; the cells are refilled
+from their own paper and the ruled lines stay untouched. `cutscene_shots.py` (CS03_1, CS04_1, EPILOGUE_6, EPILOGUE_7)
+and `art/prompts/natural/S33.txt` say June 1962 (Mira 22); internal ids stay 1960.
