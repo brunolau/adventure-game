@@ -225,7 +225,7 @@ public partial class DebugHarness
         bool pauseClosed = await WaitUntil(() => game.State.Mode == GameMode.World, 5);
         if (!pause || !pauseFocus || !pauseClosed) QaFail($"keyboard tour {where}: Esc pause opened={pause} focus={pauseFocus} closed by Esc={pauseClosed}");
 
-        // M: the map; a fast travel by keys (region card, room card), when one is possible; then back by keys.
+        // M: the map; a fast travel by keys (the room card), when one is possible; then back by keys.
         string start = game.State.Room;
         string? target = game.State.Visited.Where(r => r != start && game.Content.FindRoom(r)?.Era == game.State.Era)
             .FirstOrDefault(r => Navigation.CanFastTravel(game.Content, game.State with { Mode = GameMode.Map }, r));
@@ -236,14 +236,8 @@ public partial class DebugHarness
         if (map && target is not null)
         {
             var mapRoot = (Control)UiRoot.Instance!;
+            // Every region of the sheet is on screen with its rooms: one key press on the room card (control change 8).
             Button? RoomButton() => Descendants<Button>(mapRoot).FirstOrDefault(x => x.IsVisibleInTree() && x.Name == "Room_" + target);
-            if (RoomButton() is null)
-            {
-                // The era sheet shows region cards: open the region that holds the target.
-                var region = Descendants<Button>(mapRoot).Where(x => x.IsVisibleInTree() && x.Name.ToString().StartsWith("Region_", StringComparison.Ordinal))
-                    .FirstOrDefault(x => x.Name.ToString() == "Region_" + RegionIdOf(target).Replace(' ', '_'));
-                if (region is not null && await KeyControl(region, $"map region of {target}", MouseButton.Left)) await Frames(6);
-            }
             if (RoomButton() is { } roomButton && await KeyControl(roomButton, $"map room {target}", MouseButton.Left))
                 travelled = await WaitUntil(() => game.State.Room == target && WorldStage.Instance!.IsSettled && WorldStage.Instance.IsFadedIn, 30);
             else KeyboardNote($"map in {where}: no room card for {target} reachable by keys");
@@ -254,11 +248,6 @@ public partial class DebugHarness
         await ShotLater($"keyboard_after_map_{game.State.Era}", 0.3);
         if (game.State.Room != start) await TravelToReal(start);
         Log($"keyboard tour in {where}: done (fast travel target {target ?? "-"})");
-    }
-
-    private static string RegionIdOf(string roomId)
-    {
-        return GameRuntime.Instance.Content.RegionOf(roomId).Id;
     }
 
     private void KeyboardSummary()

@@ -147,12 +147,15 @@ public partial class DialoguePresenter : Node
             {
                 revealed = cps <= 0 ? shownText.Length : Math.Min(shownText.Length, revealed + cps * dt);
                 View.SetReveal(revealed >= shownText.Length ? -1 : (int)revealed);
-                if (revealed >= shownText.Length) speakingActor?.SetTalking(false);
+                if (revealed >= shownText.Length && !LastBell.Game.Audio.AudioService.VoicePlaying) speakingActor?.SetTalking(false);
             }
             else
             {
+                // With voice-over, the speaker keeps talking until the line's audio ends, and auto-advance waits for it.
+                bool voicePlaying = LastBell.Game.Audio.AudioService.VoicePlaying;
+                if (!voicePlaying) speakingActor?.SetTalking(false);
                 hold += dt;
-                if (PresentationSettings.AutoAdvance && hold >= PresentationSettings.HoldSecondsFor(shownText) && lineElapsed >= lineMinSeconds)
+                if (PresentationSettings.AutoAdvance && !voicePlaying && hold >= PresentationSettings.HoldSecondsFor(shownText) && lineElapsed >= lineMinSeconds)
                     Advance();
             }
         }

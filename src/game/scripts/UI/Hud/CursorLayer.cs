@@ -67,10 +67,15 @@ public partial class CursorLayer : Control
         int size = CursorSet.SizeFor(WindowScale, UiSettings.HudScale);
         bool hardware = CursorSet.Apply(kind, size, itemTexture, item ?? "");
         icon.Visible = item is not null && !hardware && !SoftwareCursor;
-        var mouse = GetLocalMousePosition();
+        var mouse = PointerLocal();
         if (icon.Visible) icon.Position = mouse + new Vector2(18, 18);
         if (UiSettings.CursorHighlight || SoftwareCursor || icon.Visible) QueueRedraw();
     }
+
+    /// <summary>The mouse position in this layer (hidden QA windows: the last mouse event, QaWindow.UseEventPointer).</summary>
+    private Vector2 PointerLocal() => LastBell.Game.Diagnostics.QaWindow.UseEventPointer
+        ? GetGlobalTransformWithCanvas().AffineInverse() * LastBell.Game.Diagnostics.QaWindow.ViewportPointer(GetViewport())
+        : GetLocalMousePosition();
 
     private CursorKind Decide(GameState state, string? item)
     {
@@ -92,7 +97,7 @@ public partial class CursorLayer : Control
     /// <summary>The cursor for a world hit: exits by direction, else by Core's left-click resolution.</summary>
     public static CursorKind KindFor(Room room, Hit hit)
     {
-        if (hit is Hit.Exit exit && room.TryGetTarget(exit.Id, out var target)) return ExitKind(target.Rect);
+        if (hit is Hit.Exit exit && room.TryGetTarget(exit.Id, out var target)) return ExitKind(room.ExitSideOf(target));
         if (hit is not Hit.Hotspot) return CursorKind.Pointer;
         return GameRuntime.Instance.Session.Resolve(hit, PointerButton.Left) switch
         {
@@ -106,21 +111,23 @@ public partial class CursorLayer : Control
 
     /// <summary>
     /// Direction of an exit zone: zones near the left / right picture edge point there; zones in the middle point
-    /// up (into the picture, a door or a path) above the lower third and down (towards the viewer) below it.
+    /// up (into the picture, a door or a path) above the lower fifth and down (towards the viewer) below it.
     /// </summary>
-    public static CursorKind ExitKind(Rect2 rect)
+    public static CursorKind ExitKind(Rect2 rect) => ExitKind(ExitSides.FromRect(rect));
+
+    /// <summary>The exit cursor of a side (the blocking's named side or the zone's, <see cref="Room.ExitSideOf"/>).</summary>
+    public static CursorKind ExitKind(ExitSide side) => side switch
     {
-        var c = rect.GetCenter();
-        float w = Room.CanvasSize.X, h = Room.CanvasSize.Y;
-        if (c.X < w * 0.16f) return CursorKind.ExitLeft;
-        if (c.X > w * 0.84f) return CursorKind.ExitRight;
-        return c.Y > h * 0.80f ? CursorKind.ExitDown : CursorKind.ExitUp;
-    }
+        ExitSide.Left => CursorKind.ExitLeft,
+        ExitSide.Right => CursorKind.ExitRight,
+        ExitSide.Down => CursorKind.ExitDown,
+        _ => CursorKind.ExitUp,
+    };
 
     /// <inheritdoc />
     public override void _Draw()
     {
-        var p = GetLocalMousePosition();
+        var p = PointerLocal();
         if (UiSettings.CursorHighlight)
         {
             DrawCircle(p, 30, new Color(UiTheme.BrassLight, 0.22f));

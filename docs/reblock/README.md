@@ -57,7 +57,7 @@ painted props landed inside the natural rects. Only S03's tape needed its rect m
 
 | piece | where | what |
 |---|---|---|
-| blocking files | `src/game/data/blocking/<room>.json` (S03, S05) | per hotspot `rect`, `interaction_point`, `label_anchor`; per NPC `feet`, `scale`; `walk_polygon`, `walk_band`, `actor_scale`, `spawn`; exits' `rect` / `interaction_point` / `label_anchor`; `background`; `state_patches`; optional `ambient`, `foreground_mask`. Ids must exist in game.json; conditions stay there. |
+| blocking files | `src/game/data/blocking/<room>.json` (S03, S05) | per hotspot `rect`, `interaction_point`, `label_anchor`; per NPC `feet`, `scale`; `walk_polygon`, `walk_band`, `actor_scale`, `spawn`; exits' `rect` / `interaction_point` / `label_anchor` (+ optional `side` left / right / up / down and `arrival`, docs/navigation/EXITS.md); `background`; `state_patches`; optional `ambient`, `foreground_mask`. Ids must exist in game.json; conditions stay there. |
 | loader | `src/game/scripts/World/RoomBlocking.cs` | reads the file only when enabled; cached per room |
 | application | `src/game/scripts/World/Room.cs` | walk area, perspective, background, targets (hit rects, walk targets, labels), hero spawn, NPC feet and scale, ambient data path. For a re-blocked room the template's `art_overrides.json` entry is ignored, because its nudges and patches belong to the old painting. |
 | small hooks | `Actor.ScaleOverride`, `AmbientHost.DataPathOverride`, `PresentationSettings.NaturalBlocking` | additive |

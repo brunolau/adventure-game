@@ -74,6 +74,9 @@ public partial class AudioService : Node
     /// <summary>Plays a sound effect id from data/audio/sfx.json.</summary>
     public static void PlaySfx(string id, float extraDb = 0f) => Instance?.sfx.Play(id, extraDb);
 
+    /// <summary>True while a voice-over line is playing; the dialogue presenter waits for it before auto-advancing.</summary>
+    public static bool VoicePlaying => Instance?.voice is { } v && v.Playing;
+
     /// <summary>Plays the sound mapped to a UI/game event name (sfx.json "events").</summary>
     public static void PlayEvent(string eventName)
     {

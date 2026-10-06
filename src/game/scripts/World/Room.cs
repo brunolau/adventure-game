@@ -139,9 +139,14 @@ public partial class Room : Node2D
         }
     }
 
+    /// <summary>The exit the hero came in through while he still takes his arrival step, else null.</summary>
+    public string? ArrivalExitId { get; private set; }
+
     /// <summary>
-    /// Builds the room. <paramref name="arrivedFrom"/> places the hero at the exit leading back to
-    /// that room (else the room spawn).
+    /// Builds the room. <paramref name="arrivedFrom"/> (a room left through an exit) puts the hero at this room's exit
+    /// leading back there: he appears a step beyond its interaction point at the edge or in the door and walks in to the
+    /// point (<see cref="ExitSides.ArrivalStart"/>, docs/navigation/EXITS.md). Null (new game, load, map fast travel,
+    /// portals, special transitions) or no exit back: the room spawn.
     /// </summary>
     public void Build(GameContent content, RoomView view, ArtOverrides art, string? arrivedFrom)
     {
@@ -187,10 +192,23 @@ public partial class Room : Node2D
 
         Hero = new Actor();
         ActorsLayer.AddChild(Hero);
-        Hero.Setup(new ActorContext(GameRuntime.HeroId, true, RoomId, view.Era, null, null), Perspective, HeroSpawn(arrivedFrom));
+        var (start, stand, arrivalExit) = HeroSpawn(arrivedFrom);
+        Hero.Setup(new ActorContext(GameRuntime.HeroId, true, RoomId, view.Era, null, null), Perspective, start);
         Hero.WalkingChanged += walking => WorldHooks.RaiseHeroWalking(Hero, walking);
 
         ApplyView(view, content);
+        if (arrivalExit is not null && start.DistanceTo(stand) > 4f && Walk.FindPath(start, stand) is { Count: > 0 } walkIn)
+        {
+            // The arrival step: in from the edge or the door to the exit's point (finished at the latest when the
+            // transition ends, FinishArrival). Reduced motion: placed at the point at once.
+            if (PresentationSettings.ReducedMotion) Hero.Place(stand);
+            else
+            {
+                ArrivalExitId = arrivalExit;
+                Hero.WalkPath(walkIn, () => ArrivalExitId = null);
+            }
+        }
+        else if (arrivalExit is not null) Hero.Place(stand);
         ActorVisualRegistry.Changed += OnVisualFactoriesChanged;
     }
 
@@ -412,17 +430,46 @@ public partial class Room : Node2D
         return sprite;
     }
 
-    private Vector2 HeroSpawn(string? arrivedFrom)
+    /// <summary>
+    /// Ends the arrival step at once (the hero stands at the exit's point). Called when the room transition ends, so input
+    /// and the QA harness always start from a standing hero; does nothing once he stands or walks elsewhere.
+    /// </summary>
+    public void FinishArrival()
     {
-        if (arrivedFrom is not null)
+        if (ArrivalExitId is null) return;
+        if (Hero.IsWalking) Hero.FinishWalk();
+        ArrivalExitId = null;
+    }
+
+    /// <summary>Which way an exit leads out of the picture: the blocking's <c>side</c>, else derived from its zone.</summary>
+    public ExitSide ExitSideOf(TargetInfo exit) =>
+        Blocking?.Target(exit.Id)?.Side ?? ExitSides.FromRect(exit.Rect);
+
+    /// <summary>
+    /// Where the hero appears (<c>start</c>) and where he stands after the arrival step (<c>stand</c>), with the exit he
+    /// came in through (null = the room spawn, no step).
+    /// </summary>
+    private (Vector2 Start, Vector2 Stand, string? ExitId) HeroSpawn(string? arrivedFrom)
+    {
+        if (arrivedFrom is not null && View.Exits.FirstOrDefault(e => e.To == arrivedFrom) is { } back)
         {
-            var back = View.Exits.FirstOrDefault(e => e.To == arrivedFrom);
-            if (back is not null && Blocking?.Target(back.Id)?.InteractionPoint is { } natural) return Walk.Clamp(natural);
-            if (back is not null && back.InteractionPoint.Count >= 2)
-                return Walk.Clamp(new Vector2(back.InteractionPoint[0], back.InteractionPoint[1]));
+            var natural = Blocking?.Target(back.Id);
+            Vector2? point = natural?.InteractionPoint
+                ?? (back.InteractionPoint.Count >= 2 ? new Vector2(back.InteractionPoint[0], back.InteractionPoint[1]) : null);
+            if (point is { } p)
+            {
+                var exitPoint = Walk.Clamp(p);
+                var rect = natural?.Rect ?? (back.Rect.Count >= 4 ? new Rect2(back.Rect[0], back.Rect[1], back.Rect[2], back.Rect[3]) : new Rect2(exitPoint, Vector2.One));
+                var side = natural?.Side ?? ExitSides.FromRect(rect);
+                var stand = Walk.Clamp(ExitSides.ArrivalStand(side, exitPoint));
+                if (!Walk.SegmentInside(exitPoint, stand)) stand = exitPoint;
+                var start = Walk.Clamp(natural?.Arrival ?? ExitSides.ArrivalStart(side, exitPoint));
+                return (start, stand, back.Id);
+            }
         }
-        if (Blocking?.Spawn is { } spawn) return Walk.Clamp(spawn);
-        return Walk.Clamp(View.Spawn.Count >= 2 ? new Vector2(View.Spawn[0], View.Spawn[1]) : new Vector2(960, (Walk.Top + Walk.Bottom) / 2));
+        var spawn = Blocking?.Spawn is { } s ? Walk.Clamp(s)
+            : Walk.Clamp(View.Spawn.Count >= 2 ? new Vector2(View.Spawn[0], View.Spawn[1]) : new Vector2(960, (Walk.Top + Walk.Bottom) / 2));
+        return (spawn, spawn, null);
     }
 
     private void ApplyView(RoomView view, GameContent content)

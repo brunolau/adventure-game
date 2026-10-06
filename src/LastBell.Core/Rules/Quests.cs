@@ -129,7 +129,7 @@ public static class Hints
     public const string PlaceFallback = "{room}. Zameraj sa na: {target}.";
 
     /// <summary>Slovak fallback of <see cref="BagKey"/> (same text as ui.csv).</summary>
-    public const string BagFallback = "Tento krok urobíš v brašni: spoj dva predmety, ktoré už máš.";
+    public const string BagFallback = "Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš.";
 
     /// <summary>ui key of the exact level-3 text of a step: <c>ui.hint_step.&lt;action id&gt;</c>.</summary>
     public static string StepKey(string actionId) => "ui.hint_step." + actionId;

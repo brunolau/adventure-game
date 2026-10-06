@@ -67,7 +67,7 @@ player-visible text only comes from the CSV tables through `TextService`.
       npcs_and_adam_sorted_by_feet_y   y-sorted actors (Hero_ADAM, Npc_<ID>), position = feet
       foreground_mask           res://assets/fg/<id>.webp (or art_overrides foreground_mask)
       ambient_front             living world: in front of everything (AmbientHost.Front)
-      hotspot_labels            HotspotLabelLayer: Space-held markers (QA --labels: text labels), item-valid outlines, Tab focus
+      hotspot_labels            HotspotLabelLayer: Space-held markers (QA --labels: text labels), Tab focus outline (no item-valid outlines, DECISIONS 11)
       hud                       marker only (the HUD is the persistent HudHost below)
       DevOverlay                F3 / --dev: rects and walk polygon above painted art
     TransitionOverlay (CanvasLayer 50)   fade + placeholder era card
@@ -199,7 +199,12 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 - State patches (`art_overrides.json` `rooms.<id>.state_patches`: texture, top-left `pos`, `after` /
   `until` action ids) are drawn above the background in `prop_state_variants`, immediately, for props
   the hero changed himself (S01 bag taken, S05 groceries on the tray, S05 shed unlocked; ISSUES ART-VAR-01).
-- Hero spawn: the interaction point of the exit leading back to the previous room, else `spawn`.
+- Hero spawn (docs/navigation/EXITS.md, DECISIONS item 9): through an exit the hero appears at the new room's exit leading
+  back (at the edge or in the door) and walks a step in during the fade-in (`World/ExitSides.cs`, `Room.HeroSpawn`; the
+  step ends with the transition, `Room.FinishArrival`; reduced motion: placed at once; a blocking may set the exit's
+  `arrival` point). Map fast travel, portals, special transitions, new game and load use `spawn`. Exit sides
+  (`left` / `right` / `up` into the picture / `down` towards the viewer) come from the blocking's `side` or the zone and
+  drive the cursor arrow and the Space badge (`Room.ExitSideOf`).
 - Props the hero uses: the natural blocking puts the use point beside the object (not in front of it), so it stays
   visible while he reaches sideways (PT-S06, M5-04, staging pass 2026-10-05); a child NPC may get a wider
   `approach_gap` (S60 Jana, PT-S24).
@@ -223,14 +228,17 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 - Rides (travel overlay, exits with travel `bus` / `tram`): Core travel first; a first ride's lines
   (`LineSource.Travel`) play in the stop being left; then fade, the transport card (region name and
   `ui.travel.card`: "Autobusom · <stop>") with the `travel_bus` / `travel_tram` sound, fade in. A map fast
-  travel into another region (to its hub) shows the same card. Reduced motion: same, shorter, nothing moves.
-- Map (`UI/Map/MapScreen.cs`): era tabs, then the era's regions as cards (visited rooms, hub, "Tu si",
-  the transport into the region) joined by their transport links; a card opens the region's room graph
-  (district captions, hub tag, back button). Fast travel only where Core says `CanFastTravel` (inside the
-  current region, or to a hub of another region; tooltip `ui.map.via_hub` on the other rooms). The cards fit
-  the panel's width (`MapGraph.SetViewport`, re-arranged on resize): standard spacing, else room cards and gaps
-  shrink (to 200 px), else the columns wrap into left-to-right / right-to-left bands with the links between bands
-  routed around the turning column; no horizontal scrolling at 1280x720-4K (larger HUD scales scroll vertically).
+  travel into another region shows the card of the first link out of the region (`WorldStage.FastTravelCardStyle`:
+  bus, tram, the 1995 map-transition links as tram / bus, cable car incl. Funitel). Reduced motion: same, shorter,
+  nothing moves.
+- Map (`UI/Map/MapScreen.cs`, DECISIONS control change 8): era tabs; the sheet shows every region at once, one
+  section each (name, "Tu si" or the transport into it, "Miesta: x z y") with its discovered rooms as a graph
+  (district captions, stop tag; undiscovered rooms are not drawn, a region with no visited room is one grey
+  "Neznáma oblasť" card). ONE click on a room travels there where Core says `CanFastTravel` (visited, same era,
+  reachable over open connections; any region). Small regions sit side by side (`HFlowContainer`); each graph fits
+  its section's width (`MapGraph.SetViewport`, re-arranged on resize): standard spacing, else room cards and gaps
+  shrink (to 150 px), else the columns wrap into left-to-right / right-to-left bands with the links between bands
+  routed around the turning column; no horizontal scrolling at 1280x720-4K (smaller windows scroll vertically).
 
 ## Debug / QA harness (user args after `--`)
 

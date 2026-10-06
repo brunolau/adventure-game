@@ -19,7 +19,8 @@ public sealed class SaveLoadTests
         var ex = Assert.Throws<SaveValidationException>(() => SaveCodec.ValidateSave(C, save));
         Assert.Contains(reasonPart, ex.Reason);
         Assert.Equal("ui.save.corrupted", ex.Text.Key);
-        Assert.Equal("Chybný súbor uloženia. Aktuálna hra zostala otvorená.", ex.Text.Fallback);
+        // Content v2 (C4, approved by the owner 2026-10-06) reworded the handoff text "... Aktuálna hra zostala otvorená."
+        Assert.Equal("Chybný súbor uloženia. Rozohraná hra beží ďalej.", ex.Text.Fallback);
     }
 
     [Fact]

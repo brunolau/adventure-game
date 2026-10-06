@@ -33,9 +33,10 @@ public partial class ShadowLayer : Node2D
 /// Layer "hotspot_labels": while Space is held (Core <c>HotspotLabels</c>, owner override 2026-10-05, ISSUES INT-08) a
 /// small painted round marker on every visible hotspot (NPCs, progress and purely atmospheric props) and exit (exits
 /// get the arrow badge) — markers only, no text; a subtle pulse unless reduced motion is on. While an item is selected
-/// only the targets where it has an executable use get a marker (owner control change 6, 2026-10-06). Also the subtle outline of
-/// targets valid for the selected item and the keyboard focus outline (the focused target's label is the hover label,
-/// drawn at the target by the UI). The QA flag <c>--labels</c> (<see cref="PresentationSettings.QaTextLabels"/>) draws the
+/// only the targets where it has an executable use get a marker (owner control change 6, 2026-10-06). With an item selected
+/// nothing is drawn on the valid targets otherwise: no permanent outline (owner 2026-10-06, control change 11); the hover
+/// label at the cursor and the Space markers are the only hints. Also the keyboard focus outline of the Tab-focused target
+/// (its label is the hover label, drawn at the target by the UI). The QA flag <c>--labels</c> (<see cref="PresentationSettings.QaTextLabels"/>) draws the
 /// old text labels of all targets instead, for art review. It only draws what the room's current view says is visible.
 /// </summary>
 public partial class HotspotLabelLayer : Node2D
@@ -67,6 +68,9 @@ public partial class HotspotLabelLayer : Node2D
             QueueRedraw();
         }
     }
+
+    /// <summary>Rect outlines drawn in the last frame (QA: only the Tab focus outline, never one per valid item target).</summary>
+    public int OutlinesDrawn { get; private set; }
 
     /// <summary>Target ids that get a marker now (QA; empty while Space is not held).</summary>
     public System.Collections.Generic.IReadOnlyList<string> MarkedIds =>
@@ -130,14 +134,15 @@ public partial class HotspotLabelLayer : Node2D
     public override void _Draw()
     {
         drawnMarkers = false;
+        OutlinesDrawn = 0;
         if (Room?.View is null) return;
         bool markers = MarkersVisible;
         drawnMarkers = markers;
         bool qaText = PresentationSettings.QaTextLabels && Room.View.HotspotLabels;
         foreach (var t in Room.Targets)
         {
-            if (t.ValidForSelectedItem) DrawRect(t.Rect.Grow(4), new Color(1f, 0.95f, 0.6f, 0.55f), false, 2f);
-            if (t.Id == focusedId) DrawRect(t.Rect.Grow(6), new Color(1f, 1f, 1f, 0.95f), false, 4f);
+            // No outline on the targets valid for the selected item (owner 2026-10-06): only hover and Space show them.
+            if (t.Id == focusedId) { DrawRect(t.Rect.Grow(6), new Color(1f, 1f, 1f, 0.95f), false, 4f); OutlinesDrawn++; }
             if (markers) { if (IsMarkable(t)) DrawMarker(t); }
             else if (qaText) DrawTextLabel(t);
         }
@@ -169,7 +174,7 @@ public partial class HotspotLabelLayer : Node2D
             if (t.Kind == TargetKind.Exit)
             {
                 // The badge's arrow points right; turn it towards the exit side.
-                float angle = ExitAngle(t.Rect);
+                float angle = Room is { } r ? ExitSides.Angle(r.ExitSideOf(t)) : ExitAngle(t.Rect);
                 DrawSetTransform(p, angle, Vector2.One);
                 DrawTextureRect(texture, new Rect2(-new Vector2(size, size) / 2, new Vector2(size, size)), false);
                 DrawSetTransform(Vector2.Zero, 0, Vector2.One);
@@ -186,13 +191,7 @@ public partial class HotspotLabelLayer : Node2D
     }
 
     /// <summary>Rotation of the exit badge's arrow (pointing right at 0) towards the exit's side of the picture.</summary>
-    public static float ExitAngle(Rect2 rect)
-    {
-        var c = rect.GetCenter();
-        if (c.X < Room.CanvasSize.X * 0.16f) return Mathf.Pi;
-        if (c.X > Room.CanvasSize.X * 0.84f) return 0f;
-        return c.Y > Room.CanvasSize.Y * 0.80f ? Mathf.Pi / 2 : -Mathf.Pi / 2;
-    }
+    public static float ExitAngle(Rect2 rect) => ExitSides.Angle(ExitSides.FromRect(rect));
 
     private void DrawTextLabel(TargetInfo t)
     {

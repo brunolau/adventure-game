@@ -217,8 +217,9 @@ answer only stores the draft. Nothing is consumed and the modal stays open. Use
   room has `Visited` (unvisited rooms are grey), `IsCurrent`, `IsAnchor`, `CanFastTravel`, `RegionId`
   and `IsHub`.
 - `Navigation.FastTravel(content, state, roomId)` works only in map mode, only to a visited room of
-  the same era, only if that room is reachable over open connections, and only inside the current
-  region or to a hub of another region (travel overlay). A locked door is never bypassed.
+  the same era, and only if that room is reachable over open connections; in any map region, one step
+  (owner override 2026-10-06, docs/DECISIONS.md control change 8: no stop at the hub). A locked door is
+  never bypassed.
 - `Navigation.PortalTargets(content, state)` and `Navigation.UsePortal(content, state, year)`
   handle the chronometer at anchor nodes. Travel is free and always reversible.
 - `Navigation.UnlockedEras` and `Navigation.IsEraUnlocked` report era state.
@@ -251,7 +252,7 @@ GameState s = GameRules.ValidateSave(content, jsonNode);  // TS-compatible valid
 ```
 
 A load rejects any of the following, and the current game is never touched (`error` is
-`ui.save.corrupted`, "Chybný súbor uloženia. Aktuálna hra zostala otvorená."):
+`ui.save.corrupted`, "Chybný súbor uloženia. Rozohraná hra beží ďalej."):
 
 - unknown or duplicate ids, unknown fields or schema versions
 - a room or era mismatch, or an era that is not unlocked
@@ -520,10 +521,10 @@ regions must join a hub to a hub. Eras without regions get one region per distri
 (the handoff behaviour). Region names are `region.<id>.name` in ui.csv (`TextKeys.NameOf(region)`).
 
 - `content.Regions`, `RegionsOf(era)`, `RegionOf(roomId)`, `IsHub(roomId)`.
-- `Navigation.CanFastTravel` adds `Navigation.IsRegionTarget`: inside the current region, or to a hub of
-  another region. `ViewBuilder.Map` gives each `MapEraView` its `Regions` (`MapRegionView`: name, rooms,
-  hubs, current, visited, `CanTravel`, `Transport` = the travel style into it) and each `MapRoomView` its
-  `RegionId` and `IsHub`.
+- Fast travel ignores the regions (control change 8, it replaced the hub-only rule `IsRegionTarget`): every
+  visited, reachable room of the era is one step away; the hubs are where the physical rides enter a region.
+  `ViewBuilder.Map` gives each `MapEraView` its `Regions` (`MapRegionView`: name, rooms, hubs, current,
+  visited, `CanTravel`, `Transport` = the travel style into it) and each `MapRoomView` its `RegionId` and `IsHub`.
 - `Navigation.TransportBetween(content, state, from, to)`: the travel style of the first cross-region
   connection on the route (the presentation's transport card for a fast travel).
 - `Navigation.Travel` through an exit with first-ride lines that were not heard yet queues them before
@@ -544,7 +545,7 @@ Run `dotnet test src/LastBell.sln`. The suite covers:
 - the logic-level rows of `acceptance_tests.csv` (UI-only rows are skipped with a reason)
 - the content overlays (`ContentOverlayTests`): empty overlays, the live C1 sequences and topics in play order,
   timing conditions, retired lines and old saves, every rejected field and broken key, the travel overlay
-  (bus S07 <-> S51, first rides, the hub rule, region fast travel, map regions) and that every overlay text
+  (bus S07 <-> S51, first rides, the hub rule of the links, direct fast travel across regions, map regions) and that every overlay text
   (world overlay texts included) has its key in the generated tables
 - the world overlay (`WorldOverlayTests`, sample `Overlays/sample_world_ext.json`, test only: a new 1995 room S90
   with an NPC, three items, the side quest Q90, an epilogue shot, a variant layer, a prop in S12, and the

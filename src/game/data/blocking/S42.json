@@ -37,16 +37,28 @@
   },
   "exits": {
     "S42.to_S41": {
-      "rect": [0, 712, 60, 303],
-      "interaction_point": [70, 880],
-      "label_anchor": [185, 700],
-      "reason": "the paved forecourt continues out of the left edge back to the Biela Put gondola station plaza"
+      "rect": [700, 950, 520, 110],
+      "interaction_point": [960, 995],
+      "label_anchor": [960, 940],
+      "reason": "the paved forecourt runs back towards the camera, down the access road to the Biela Put gondola station plaza (S41 looks up this road to the hotel; owner 2026-10-06: it sat on the left edge next to the side path to S46)"
     },
     "S42.to_S46": {
-      "rect": [130, 560, 130, 92],
-      "interaction_point": [195, 676],
-      "label_anchor": [195, 550],
-      "reason": "the paved side path past the gondola station structure towards the Biela Put client centre"
+      "rect": [
+        130,
+        560,
+        130,
+        92
+      ],
+      "interaction_point": [
+        195,
+        676
+      ],
+      "label_anchor": [
+        195,
+        550
+      ],
+      "reason": "the paved side path past the gondola station structure towards the Biela Put client centre",
+      "side": "up"
     },
     "S42.to_S45": {
       "rect": [650, 560, 110, 92],
@@ -61,10 +73,22 @@
       "reason": "the glazed side door of the hotel's lower wing that leads to the rented exhibition salon"
     },
     "S42.to_S43": {
-      "rect": [1625, 450, 270, 255],
-      "interaction_point": [1760, 800],
-      "label_anchor": [1760, 440],
-      "reason": "the hotel's main entrance under its canopy (lobby)"
+      "rect": [
+        1625,
+        450,
+        270,
+        255
+      ],
+      "interaction_point": [
+        1760,
+        800
+      ],
+      "label_anchor": [
+        1760,
+        440
+      ],
+      "reason": "the hotel's main entrance under its canopy (lobby)",
+      "side": "up"
     }
   },
   "state_patches": [],

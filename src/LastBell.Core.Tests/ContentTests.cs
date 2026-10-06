@@ -38,7 +38,7 @@ public sealed class ContentTests
     {
         using var stream = new MemoryStream(Encoding.UTF8.GetBytes(TestData.GameJson));
         var content = GameContent.Load(stream);
-        Assert.Equal(C.Actions.Count, content.Actions.Count);
+        Assert.Equal(TestData.BaseContent.Actions.Count, content.Actions.Count); // the stream overload loads game.json alone (no overlays)
     }
 
     [Fact]

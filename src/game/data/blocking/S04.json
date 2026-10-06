@@ -123,6 +123,24 @@
   "exits": {
     "S04.to_S03": {
       "rect": [
+        1850,
+        805,
+        70,
+        210
+      ],
+      "interaction_point": [
+        1845,
+        905
+      ],
+      "label_anchor": [
+        1725,
+        795
+      ],
+      "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the courtyard paving continues out of the right edge along the arcade, towards Javorová alej and the park with the volunteer point (SSW; the camera faces south into the arc, so south-west is ahead-right; S03.to_S04 leads towards the viewer)",
+      "side": "right"
+    },
+    "S04.to_S07": {
+      "rect": [
         0,
         805,
         70,
@@ -136,7 +154,8 @@
         195,
         795
       ],
-      "reason": "the courtyard paving continues out of the left edge along the arcade (towards the road and the volunteer point)"
+      "side": "left",
+      "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the courtyard paving continues out of the left edge along the arcade, out to the road and on to the bus stop S07 (~550 m ESE: left of the south-facing camera; S07.to_S04 is the far end of its platform)"
     }
   },
   "state_patches": [

@@ -68,11 +68,13 @@ public partial class HoverLabel : Control
     {
         var payload = hud?.CurrentHover;
         var state = GameRuntime.Instance.IsReady ? GameRuntime.Instance.State : null;
-        var next = payload is { FromKeyboard: true } ? payload.ScreenPosition : GetLocalMousePosition();
+        var mouse = LastBell.Game.Diagnostics.QaWindow.ViewportPointer(GetViewport()); // Godot's mouse position (QA: last event)
+        var next = payload is { FromKeyboard: true } ? payload.ScreenPosition
+            : LastBell.Game.Diagnostics.QaWindow.UseEventPointer ? GetGlobalTransformWithCanvas().AffineInverse() * mouse : GetLocalMousePosition();
         bool want = payload is { FromInventory: false } && (nameText.Length > 0 || actionText.Length > 0) &&
                     state?.Mode is GameMode.World or GameMode.Inventory && state.ActiveLineId is null &&
                     (payload.FromKeyboard || GetViewport().GuiGetHoveredControl() is null) &&
-                    !(UiRoot.Instance?.ScreenCovers(GetViewport().GetMousePosition()) ?? false);
+                    !(UiRoot.Instance?.ScreenCovers(mouse) ?? false);
         if (want != shown || (want && next != origin))
         {
             shown = want;

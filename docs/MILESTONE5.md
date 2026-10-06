@@ -17,7 +17,70 @@ answers (entry hall without the desk, S03 grasshopper, podlubie no-go, S30 on th
 regression. What still needs the product owner: docs/DECISIONS.md "Status 2026-10-06"; the remaining known issues:
 docs/RELEASE.md.
 
-The sections after the next two are the record of the first milestone-5 run (2026-10-05).
+**Content v2 applied and re-verified on the evening of 2026-10-06** (next section): the owner-approved texts, Zuzana
+1962 / 1995, the room S69 and side quests Q10 / Q11 are in the game; 134/134 actions in all four routes, release rebuilt.
+
+The sections after the next three are the record of the first milestone-5 run (2026-10-05).
+
+## Content v2 applied (2026-10-06, evening)
+
+The owner reviewed the proposed texts on his approval page and said "ok, they are good": everything in
+`docs/writing/approval/changes.json` is approved. Applied on top of commit 9f0d2a9 (Core overlay v2):
+
+| what | where | count |
+|---|---|---|
+| world overlay | `src/game/data/content_ext/world_ext.json` (from `docs/writing/out_v2/pending/world_ext.json`, = C2 + C3 world parts + the C4 epilogue texts; re-checked against the drafts) | room S69 "Sokolíkovský dvor" (exit S18.to_S69 + connection), characters ZUZANA / ZUZANA95 / KUBO, items BELL_MUTE / ZUZA_SLIP / STRAP / BELL_FIXED / BELLCAP, side quests Q10 (Q10A-D, Ivanka 1962) and Q11 (Q11A-C, S69 1995), 15 new hotspots (4 in S32 / S37 / S38), 9 variant layers, epilogue shots 10 and 11, relocation B19 S17 -> S69.rhythm |
+| dialogue overlay | `src/game/data/content_ext/dialogue_ext.json` (`content_ext.py merge` of C2 / C3 / C4; identical to the pending `dialogue_ext.integrated.json`) | chunks C2-C4: 70 longer exchanges, 84 extended topics, 114 new topics, 1151 new lines; whole overlay now 88 + 100 extended exchanges, 136 topics |
+| existing keys | `sk_overrides.csv` via `check_rewrite.py --overrides-out` (C2, then C3, then C4) and `ui.csv` | C2 69, C3 51 (+1 unchanged), C4 55 + 18 ui rows (incl. `ui.hint_step.B19`); 1517 overrides applied |
+| glossary change | `docs/writing/glossary.json` P03 rules -> `look.S69.rhythm`, "Sokolíkovský dvor"; GLOSSARY.md rows | already in 9f0d2a9, verified |
+
+Zuzana rules kept: she appears only in 1962 (S37, traces in S32 / S38) and 1995 (S69); no 2020 / 2035 reference;
+nothing about her life; the family photo is not in the repository.
+
+| check | result |
+|---|---|
+| `extract_strings.py` | OK, 1517 overrides, 0 problems, 0 internal ids; 4785 keys (dialogue 2196, world 2113, ui 476) |
+| `check_strings.py` | OK, 0 errors, 0 warnings |
+| `check_rewrite.py --self-test` / `--overlay-only` / C1-C4 | OK, 0 errors, 0 warnings (1687 overlay texts, 6 retired keys) |
+| `content_ext.py check` | OK |
+| `check_blocking.py` | 69 rooms, 0 errors, the 9 known M3-02 warnings; S69 strict clean |
+| `dotnet test src/LastBell.sln` | 493 passed, 3 skipped, 0 failed (incl. the new test: saves from before content v2 load at every main step and the game goes on; B19 in S69) |
+| `--acceptance m1` headless | 34 PASS, 0 failures |
+| `--acceptance m2` headless | 44 PASS, 1 FAIL (AT25: the check counted the new S17 layer after G11 as an E10 layer) -> harness fixed (`ContentAcceptance.cs`, E10 layers only); re-run below |
+| `--acceptance travel` headless | TR01-TR03 PASS |
+| Route A `--play-all --save-load-each` | 134/134 (94 main + 40 side) by real input, save + load + compare after each; 69 rooms, 18 variant layers, 27 causal effects, Q10 + Q11 done, B19 played in S69; 0 blockers, 0 failures |
+| Route B `--play-all --interleave early --all-lines` | 134/134, 2152 lines shown (2135 distinct), 500 looks, epilogue 11 + 11; 0 blockers, 0 failures |
+| Route C7 `--play-all --interleave seed:7 --skip-cutscenes` | 134/134, epilogue 11 + 11; 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` | 134/134 by keys only: 697 steps, 1978 key presses (mean 2.8, max 8), 0 awkward, 0 blockers |
+| old saves | the saves of the previous passes (`build/m5/saves_backup`, `build/m5/m5_run_saves`, `build/m5/verify2/...`) load in the new content |
+
+Fixes in this pass (ISSUES `CONTENT-V2-APPLY`): Core fallback text of `ui.save.corrupted` follows the approved UI
+text; tests adjusted to the applied content (no rule changed); engine AT25 check; S69.rhythm interaction point
+[1465, 732] -> [1590, 742] because Adam stood facing the camera in front of the painted panels.
+
+**Screens** (hidden QA window, 1920x1080, `build/screens/applied/`, all looked at): 01 Zuzana playing hopscotch in
+S37; 02 / 07 Q10A and I10 conversations; 03 Q10B at Štefan's; 04 Q10C; 05 / 06 Q10D (the bell rings, lies in the
+grass again afterwards); 10 S69 with Zuzana (40) and Kubo; 11 / 11b her topic menu and the recognition topic
+"Odkiaľ ma poznáte?"; 12b B19 at the wall (after the fix); 13-16 Q11; 17b the S18 exit "Sokolíkovský dvor" between the
+kiosk and the red car; `c<era>_*` three conversations per era (2020 G05 / C01 / D07, 1995 B03 / B13 / E11, 1962 I01 /
+I03 / I09, 1982 E02 / E05 / E08, 2035 F01 / F03 / F11); `epilogue/ending_*` the ending with the Zuzana shots 1/2
+(1962, the school door) and 2/2 (1995, the yard). Every text fits its box; nothing covers a speaker.
+
+**Final tree and release.** A parallel change round landed while the routes ran (exit layout NAV-EXITS-01 with a new
+2020 Grob chain, "brašňa" -> "inventár"). Its open step "run extract_strings once" was done here; then on the combined
+tree: extract_strings OK (1516 overrides), check_strings OK (4785 keys), check_rewrite self-test / overlay-only / C1-C4
+OK (1699 overlay texts, 18 retired keys), content_ext OK, check_blocking 69 rooms 0 errors (11 warnings, 2 new from the
+exit round), `dotnet test` 493 passed / 3 skipped / 0 failed, `--import` OK, `--acceptance m1` 34 PASS, `m2` 46 PASS,
+`travel` 4 PASS, Route C7 again 134/134 (0 blockers, 0 failures; `build/applied/coverage_C7_final.json`).
+`build.bat` (release) 23:14, exit 0, C# 0 warnings / 0 errors, release filters OK (576 natural-mode references, 0
+errors), the known harmless `ERR_CANT_OPEN`. `LastBell.exe` 109.5 MB, `LastBell.pck` 191.7 MB (2590 files, S69 /
+ZUZANA95 / world_ext included), `data_LastBell_windows_x86_64/` 81.4 MB; copied to `build/m5/ship/PoslednyZvonec/`
+(382.6 MB) and zipped: **`build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`, 259.1 MB** (zip test OK, 190 files).
+Smoke test of the shipped exe (`build/applied/release_smoke.py`, hidden window, key messages to that window only,
+player profile moved aside and restored): QA arguments ignored, Nová hra -> S01 -> G01, autosave S01 / 2020 /
+[G01] / [PHONE, TOOLS]. The route runs wrote to the player's save folder; it was restored afterwards to the saved
+state of `build/m5/saves_backup/` (route saves kept in `build/applied/route_saves*/`). Logs: `build/applied/logs/`.
+Paid generation in this pass: none.
 
 ## Second verification and release pass (2026-10-06, afternoon)
 

@@ -34,6 +34,28 @@ public static class QaWindow
     public static bool WarpAllowed => LaunchArgs.User.Contains("--warp-mouse");
 
     /// <summary>
+    /// Hidden windowed QA runs (background, not headless, no <c>--warp-mouse</c>): the real OS cursor is never moved,
+    /// so Godot's mouse position (read from the OS in a window) never follows the harness's mouse events. Then the
+    /// pointer of the world input and the hover label is the position of the last mouse event the game received,
+    /// as in a headless run (added 2026-10-06 for the hover-label evidence; also lets raw world clicks land).
+    /// Players' runs (no QA argument) never use it.
+    /// </summary>
+    public static bool UseEventPointer => Background && !WarpAllowed && DisplayServer.GetName() != "headless";
+
+    /// <summary>Viewport position of the last mouse event (see <see cref="UseEventPointer"/>), or null.</summary>
+    public static Vector2? LastEventPointer { get; private set; }
+
+    /// <summary>Records a mouse event's viewport position (only while <see cref="UseEventPointer"/>).</summary>
+    public static void NotePointer(InputEvent e)
+    {
+        if (e is InputEventMouse m && UseEventPointer) LastEventPointer = m.Position;
+    }
+
+    /// <summary>The mouse position in viewport px: the last mouse event in a hidden QA window, else Godot's.</summary>
+    public static Vector2 ViewportPointer(Viewport viewport) =>
+        UseEventPointer && LastEventPointer is { } p ? p : viewport.GetMousePosition();
+
+    /// <summary>
     /// Moves the window to the right of every screen and stops it from taking focus. A window that starts
     /// minimized (tools/qa_godot.py) is moved first and restored off-screen, so it never appears on a screen.
     /// </summary>

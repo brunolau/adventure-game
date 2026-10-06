@@ -108,7 +108,7 @@
     }
   },
   "exits": {
-    "S08.to_S07": {
+    "S08.to_S03": {
       "rect": [
         0,
         815,
@@ -123,7 +123,8 @@
         180,
         806
       ],
-      "reason": "the trail leaves the mound out of the left edge towards the road and the bus stop"
+      "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the trail leaves the mound out of the left edge, back up to the park shelter S03 (S03.to_S08 is its right edge)",
+      "side": "left"
     }
   },
   "state_patches": [

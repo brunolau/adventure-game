@@ -199,6 +199,10 @@ public partial class DebugHarness
         await TravelToReal("S16");
         await SelectItemReal("BELT_NEW", keepDrawerOpen: false);
         string beltLabel = ItemLabel(new Hit.Hotspot("S16.deck"));
+        // Owner 2026-10-06 (control change 11): no permanent outline on the valid targets while the item is selected;
+        // only the hover label and the Space markers show them (a Tab focus outline would be the player's own focus).
+        await Frames(3);
+        int outlinesIdle = InteractionController.Instance?.FocusedId is null ? CurrentRoom.Labels.OutlinesDrawn : 0;
         await KeyEdge(Godot.Key.Space, true); // Space is hold-to-show (owner override 2026-10-05, ISSUES INT-08)
         bool labelsOn = game.State.HotspotLabels && CurrentRoom.Labels.MarkersVisible;
         await Frames(3);
@@ -210,8 +214,9 @@ public partial class DebugHarness
         var markedWithItem = CurrentRoom.Labels.MarkedIds.OrderBy(x => x, StringComparer.Ordinal).ToList();
         var validIds = outlines.Where(t => t.ValidForSelectedItem).Select(t => t.Id).OrderBy(x => x, StringComparer.Ordinal).ToList();
         bool onlyValidMarked = markedWithItem.SequenceEqual(validIds) && markedWithItem.Contains("S16.deck");
-        Check("AT06_labels_with_item_only_valid_targets_outlined", labelsOn && outlineRule && deckOutlined && wrongLabel.Length == 0 && onlyValidMarked,
-              $"labels={labelsOn} rule={outlineRule} deck_outlined={deckOutlined} wrong_label='{wrongLabel}' marked=[{string.Join(",", markedWithItem)}] of {outlines.Count}");
+        Check("AT06_labels_with_item_only_valid_targets_marked_no_outline", labelsOn && outlineRule && deckOutlined && wrongLabel.Length == 0 && onlyValidMarked &&
+              outlinesIdle == 0 && CurrentRoom.Labels.OutlinesDrawn == 0,
+              $"labels={labelsOn} rule={outlineRule} deck_valid={deckOutlined} wrong_label='{wrongLabel}' marked=[{string.Join(",", markedWithItem)}] of {outlines.Count} outlines_idle={outlinesIdle} outlines_space={CurrentRoom.Labels.OutlinesDrawn}");
         await KeyEdge(Godot.Key.Space, false);
         await ClickTarget("S16.deck");
         await WaitUntil(() => game.State.IsDone("B06"), 20);
@@ -371,13 +376,7 @@ public partial class DebugHarness
         var sameEra = view.First(e => e.Year == game.State.Era).Rooms;
         bool flagsMatch = sameEra.All(r => !r.CanFastTravel || (r.Visited && Navigation.FindRoute(content, game.State, r.RoomId) is not null));
         string here = game.State.Room;
-        // Regions first: open the current region's rooms (its unvisited rooms are grey nodes there).
-        var hereRegion = view.First(e => e.Year == game.State.Era).Regions.First(r => r.IsCurrent).Id;
-        if (Descendants<MapGraph>(map).First() is { ShowsRegions: true } overview && overview.Nodes.TryGetValue(hereRegion, out var hereCard))
-        {
-            await ClickControl(hereCard, "map region " + hereRegion);
-            await Frames(6);
-        }
+        // Every region of the sheet is on screen with its rooms (owner 2026-10-06, control change 8): unvisited rooms are grey nodes.
         var unvisited = Descendants<Button>(map).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == TextService.Ui("ui.map.unvisited"));
         if (unvisited is not null) await ClickControl(unvisited, "map unvisited node");
         await Frames(6);
@@ -386,13 +385,7 @@ public partial class DebugHarness
         bool travelled = false;
         if (target is not null)
         {
-            // The map shows the regions first (travel overlay, DECISIONS control change 7): open the target's region.
-            var graph = Descendants<MapGraph>(map).First();
-            if (graph.ShowsRegions && graph.Nodes.TryGetValue(target.RegionId, out var regionCard))
-            {
-                await ClickControl(regionCard, "map region " + target.RegionId);
-                await Frames(6);
-            }
+            // One click on the room's node, in whatever region it lies (control change 8).
             string name = TextService.Get(target.Name);
             var node = Descendants<Button>(map).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == name);
             if (node is not null && await ClickControl(node, "map node " + target.RoomId))
@@ -445,9 +438,9 @@ public partial class DebugHarness
         // ---------------------------------------------------------------- AT25 / AT21: variant layers and causal effects appear on re-entry
         await Prepare("E10");
         await TravelToReal("S17");
-        bool s17Before = CurrentRoom.View.VariantLayers.Any(v => v.Visible);
+        bool s17Before = CurrentRoom.View.VariantLayers.Any(v => v.Visible && v.Layer.After == "E10"); // the world overlay adds an S17 layer after G11 (content v2)
         await TravelToReal("S55");
-        bool s55Before = CurrentRoom.View.VariantLayers.Any(v => v.Visible);
+        bool s55Before = CurrentRoom.View.VariantLayers.Any(v => v.Visible && v.Layer.After == "E10");
         string s55Look = (game.Session.Resolve(new Hit.Hotspot("S55.ambient 1"), PointerButton.Right) as Resolution.Look)?.Text.Key ?? "";
         bool s55LookShown = await ClickTarget("S55.ambient 1", MouseButton.Right) && await WaitUntil(() => DialoguePresenter.Instance!.IsShowingBark, 3);
         Check("AT24_look_before_E10_S55_ambient_1", s55Look == "look.S55.ambient 1" && s55LookShown, $"key={s55Look} bark={s55LookShown}");

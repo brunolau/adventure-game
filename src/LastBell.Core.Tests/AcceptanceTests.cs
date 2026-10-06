@@ -363,13 +363,13 @@ public sealed class AcceptanceTests
         var before = TestData.StateBefore("E10");
         var visited55 = Driver.TravelTo(C, before, "S55");
         Assert.All(WorldEffects.VariantLayers(C, visited55, "S55"), l => Assert.False(l.Visible));
-        Assert.All(WorldEffects.VariantLayers(C, visited55, "S17"), l => Assert.False(l.Visible));
+        Assert.All(WorldEffects.VariantLayers(C, visited55, "S17").Where(l => l.Layer.After == "E10"), l => Assert.False(l.Visible));
         var photoLook = Rules.GameRules.ResolveInteraction(C, GameRules.ToggleInventory(visited55), new Hit.Item("PHOTO2020"), PointerButton.Right);
         var after = Driver.Perform(C, visited55, C.GetAction("E10"));
         var back55 = Driver.TravelTo(C, after, "S55");
         Assert.All(WorldEffects.VariantLayers(C, back55, "S55"), l => Assert.True(l.Visible));
         var back17 = Driver.TravelTo(C, after, "S17");
-        Assert.All(WorldEffects.VariantLayers(C, back17, "S17"), l => Assert.True(l.Visible));
+        Assert.All(WorldEffects.VariantLayers(C, back17, "S17").Where(l => l.Layer.After == "E10"), l => Assert.True(l.Visible));
         // The 2020 photograph item is unchanged.
         Assert.Equal(photoLook, Rules.GameRules.ResolveInteraction(C, GameRules.ToggleInventory(back55), new Hit.Item("PHOTO2020"), PointerButton.Right));
         // Not stuck: the way back exists from both rooms.

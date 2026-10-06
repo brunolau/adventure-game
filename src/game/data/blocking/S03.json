@@ -171,41 +171,44 @@
         135,
         708
       ],
-      "reason": "the sandy path and the trampled meadow continue out of the left edge towards the street"
+      "reason": "the sandy path and the trampled meadow continue out of the left edge towards the street",
+      "side": "left"
     },
     "S03.to_S04": {
       "rect": [
+        1120,
+        950,
+        440,
+        110
+      ],
+      "interaction_point": [
+        1340,
+        995
+      ],
+      "label_anchor": [
+        1340,
+        940
+      ],
+      "reason": "the trampled meadow runs towards the camera, across the park to the village shop at Triangel (owner 2026-10-06: it sat on the right edge just below the gravel path to the bus stop; the right edge now leads to the pond S08 only, travel_ext.json exit layout revision)",
+      "side": "down"
+    },
+    "S03.to_S08": {
+      "rect": [
         1860,
-        770,
+        700,
         60,
-        245
+        315
       ],
       "interaction_point": [
         1850,
         880
       ],
       "label_anchor": [
-        1775,
-        760
-      ],
-      "reason": "the trampled meadow continues out of the right edge below the gravel path, towards the village shop"
-    },
-    "S03.to_S07": {
-      "rect": [
-        1810,
-        656,
-        110,
-        94
-      ],
-      "interaction_point": [
-        1860,
-        708
-      ],
-      "label_anchor": [
         1740,
-        646
+        690
       ],
-      "reason": "the light gravel path that leaves the paving to the right, out of the right edge towards the road (map transition to the notice board)"
+      "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the trampled meadow continues out of the right edge below the gravel path, down to the pump track and the pond ~120 m away (S08; the pond belongs to this park, travel_ext.json). Its return S08.to_S03 is S08's left edge.",
+      "side": "right"
     }
   },
   "state_patches": []

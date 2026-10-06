@@ -13,7 +13,7 @@ namespace LastBell.Core.Save;
 
 /// <summary>
 /// Thrown when a save cannot be imported. The open game is never mutated; show <see cref="Text"/>
-/// ("Chybný súbor uloženia. Aktuálna hra zostala otvorená.") and log <see cref="Reason"/>.
+/// ("Chybný súbor uloženia. Rozohraná hra beží ďalej.") and log <see cref="Reason"/>.
 /// </summary>
 public sealed class SaveValidationException : Exception
 {

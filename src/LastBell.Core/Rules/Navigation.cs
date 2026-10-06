@@ -68,25 +68,15 @@ public static class Navigation
 
     /// <summary>
     /// <c>canFastTravel</c>: only from the map, only to a visited room of the current era that is
-    /// currently reachable over open same-era connections (no portals), and (map regions, owner rule
-    /// 2026-10-06) only inside the current region or to a hub of another region: far places are reached
-    /// through their transport hub (<see cref="IsRegionTarget"/>).
+    /// currently reachable over open same-era connections (no portals). Any such room is one click away,
+    /// in any map region (owner override 2026-10-06, DECISIONS "Control changes" item 8: direct fast travel
+    /// to every discovered place, no stop at the region's hub). The first trip into a region still happens
+    /// physically (bus, tram, cable car), because its rooms are not visited before. A locked gate on every
+    /// route keeps the room unavailable.
     /// </summary>
     public static bool CanFastTravel(GameContent content, GameState state, string to) =>
         state.Mode == GameMode.Map && state.Visited.Contains(to) && content.FindRoom(to)?.Era == state.Era &&
-        IsRegionTarget(content, state.Room, to) && ConnectedRooms(content, state, includePortals: false).Contains(to);
-
-    /// <summary>
-    /// The region part of the fast-travel rule: true when <paramref name="to"/> is in the same map region as
-    /// <paramref name="from"/> (free fast travel inside a region) or is a hub of its own region (another region
-    /// is entered only through its bus stop, tram stop or cable car station). Without a travel overlay every
-    /// room is a hub, so the handoff rule is unchanged.
-    /// </summary>
-    public static bool IsRegionTarget(GameContent content, string from, string to)
-    {
-        if (content.FindRoom(from) is null || content.FindRoom(to) is null) return false;
-        return ReferenceEquals(content.RegionOf(from), content.RegionOf(to)) || content.IsHub(to);
-    }
+        ConnectedRooms(content, state, includePortals: false).Contains(to);
 
     /// <summary>
     /// The transport used between two rooms of the same era that lie in different map regions: the travel style

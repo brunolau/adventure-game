@@ -38,11 +38,11 @@ public sealed class WorldEffectsTests
     public void Butterfly_tree_changes_s17_and_s55_variants_after_e10_and_photo_effects_are_deferred_until_reentry()
     {
         var before = TestData.StateBefore("E10");
-        Assert.All(WorldEffects.VariantLayers(C, before, "S17"), l => Assert.False(l.Visible));
+        Assert.All(WorldEffects.VariantLayers(C, before, "S17").Where(l => l.Layer.After == "E10"), l => Assert.False(l.Visible));
         Assert.False(WorldEffects.IsTriggered(C, before, "BF_TREE"));
         var after = TestData.StateAfter("E10");
         Assert.True(WorldEffects.IsTriggered(C, after, "BF_TREE"));
-        Assert.All(WorldEffects.VariantLayers(C, after, "S17"), l => Assert.True(l.Visible)); // hero is elsewhere (1982)
+        Assert.All(WorldEffects.VariantLayers(C, after, "S17").Where(l => l.Layer.After == "E10"), l => Assert.True(l.Visible)); // hero is elsewhere (1982)
         var at55 = Driver.TravelTo(C, after, "S55");
         Assert.Contains(WorldEffects.VariantLayers(C, at55, "S55"), l => l.Visible && l.Layer.Asset.Contains("linden"));
         // The 2020 retrieval hotspot exists only after E10.

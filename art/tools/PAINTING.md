@@ -228,7 +228,8 @@ changes go into the room log under "Register updates for the integrator".
   "spawn": [x, y],
   "anchors": { "terrazzo_line": [960, 890] },           // camera families only: identical in every era of the family
   "hotspots": { "S13.book": { "rect": [x, y, w, h], "interaction_point": [x, y], "label_anchor": [x, y], "reason": "..." } },
-  "exits":    { "S13.to_S12": { "rect": [...], "interaction_point": [...], "label_anchor": [...], "reason": "..." } },
+  "exits":    { "S13.to_S12": { "rect": [...], "interaction_point": [...], "label_anchor": [...], "reason": "...",
+                                "side": "left" } },   // optional side / arrival: docs/navigation/EXITS.md
   "npcs": { "S13.TONO": {
       "variant": "seated",          // standing | seated | behind_counter | window_bust | window_bust_glass | any actor.json variant
       "feet": [x, y],               // feet centre (bust: where the figure would stand)

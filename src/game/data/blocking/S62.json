@@ -24,10 +24,8 @@
                     "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); the middle of the window is open (her breath steams in the cold air, ambient), so the open-hatch variant 'window'; feet = the shop floor just behind its front wall (y 880), scale = the room perspective there" }
   },
   "exits": {
-    "S62.to_S57": { "rect": [0, 892, 60, 123], "interaction_point": [40, 950], "label_anchor": [200, 884],
-                    "reason": "the side street in front of the shop continues out of the left edge towards the stop" },
-    "S62.to_S65": { "rect": [1700, 971, 220, 44], "interaction_point": [1890, 1006], "label_anchor": [1560, 962],
-                    "reason": "the pavement below the fence continues out of the right edge towards the small service building by the school" }
+    "S62.to_S57": { "rect": [1700, 971, 220, 44], "interaction_point": [1890, 1006], "label_anchor": [1560, 962], "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the pavement below the fence continues out of the right edge towards the stop (S57.to_S62 is the far end of its platform; same side as S18.to_S11 in 1995)", "side": "right" },
+    "S62.to_S65": { "rect": [0, 892, 60, 123], "interaction_point": [40, 950], "label_anchor": [200, 884], "reason": "exit layout 2026-10-06 (docs/navigation/EXITS.md): the side street in front of the shop continues out of the left edge towards the small service building by the school (the school side, as S18.to_S17 in 1995)", "side": "left" }
   },
   "state_patches": []
 }

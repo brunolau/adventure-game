@@ -35,6 +35,11 @@ public partial class InputRouter : Node2D
 
     private Vector2 ToCanvas(Vector2 viewportPosition) => GetCanvasTransform().AffineInverse() * viewportPosition;
 
+    /// <summary>The mouse position in canvas px (hidden QA windows: the last mouse event, QaWindow.UseEventPointer).</summary>
+    private Vector2 Pointer() => LastBell.Game.Diagnostics.QaWindow.UseEventPointer
+        ? ToCanvas(LastBell.Game.Diagnostics.QaWindow.ViewportPointer(GetViewport()))
+        : GetGlobalMousePosition();
+
     /// <inheritdoc />
     public override void _Ready()
     {
@@ -52,6 +57,7 @@ public partial class InputRouter : Node2D
     /// <inheritdoc />
     public override void _Input(InputEvent e)
     {
+        LastBell.Game.Diagnostics.QaWindow.NotePointer(e);
         // Extra fingers are not emulated as a mouse; count them for the two-finger hold (never handled here).
         if (e is InputEventScreenTouch { Index: > 0 } st && (touch.Active || !st.Pressed))
         {
@@ -89,7 +95,7 @@ public partial class InputRouter : Node2D
         if (e is InputEventMouseMotion motion)
         {
             if (motion.Device == EmulatedDevice) touch.Drag(0, ToCanvas(motion.Position));
-            InteractionController.Instance?.PointerMoved(GetGlobalMousePosition());
+            InteractionController.Instance?.PointerMoved(Pointer());
             return;
         }
         if (e is InputEventMouseButton { Device: EmulatedDevice, ButtonIndex: MouseButton.Left } finger)
@@ -100,8 +106,8 @@ public partial class InputRouter : Node2D
         }
         if (e is InputEventMouseButton mb && mb.Pressed && !mb.IsEcho())
         {
-            if (mb.ButtonIndex == MouseButton.Left) { Dispatch(LogicalCommand.Primary, GetGlobalMousePosition()); GetViewport().SetInputAsHandled(); }
-            else if (mb.ButtonIndex == MouseButton.Right) { Dispatch(LogicalCommand.Secondary, GetGlobalMousePosition()); GetViewport().SetInputAsHandled(); }
+            if (mb.ButtonIndex == MouseButton.Left) { Dispatch(LogicalCommand.Primary, Pointer()); GetViewport().SetInputAsHandled(); }
+            else if (mb.ButtonIndex == MouseButton.Right) { Dispatch(LogicalCommand.Secondary, Pointer()); GetViewport().SetInputAsHandled(); }
             return;
         }
         if (e is InputEventKey { Pressed: true, Echo: false })

@@ -58,6 +58,51 @@ public partial class WorldStage : Node2D
     /// <summary>The transport ride waiting for its first-ride lines to finish (exit id, style), or null.</summary>
     private (string ExitId, string Style)? pendingRide;
 
+    /// <summary>
+    /// Set by the map right before a fast travel (<see cref="MarkFastTravel"/>): the next room change gets the transport
+    /// card of the first link that leaves the region (bus, tram, cable car), also for the cable cars and the 1995
+    /// map-transition links, instead of a plain fade (owner 2026-10-06, DECISIONS control change 8).
+    /// </summary>
+    private bool pendingFastTravel;
+
+    /// <summary>
+    /// What the 1995 cross-region links (game.json travel <c>map_transition</c>) are in the painted scenes: the tram
+    /// from Dúbravka over Karlova Ves to Kamenné námestie and on to Ružinov, the bus from Kamenné námestie to Petržalka
+    /// (exit reasons in data/blocking/S11, S19, S21). Only the fast-travel card uses it; the exits keep their fade.
+    /// </summary>
+    private static readonly System.Collections.Generic.Dictionary<string, string> RideOfMapTransition = new(StringComparer.Ordinal)
+    {
+        ["S11|S19"] = "tram", ["S19|S21"] = "tram", ["S21|S25"] = "tram", ["S21|S28"] = "bus",
+    };
+
+    /// <summary>Called by the map right before <c>Navigation.FastTravel</c> (true: the next room change is a fast travel),
+    /// and with false when that travel did not change the room.</summary>
+    public void MarkFastTravel(bool on) => pendingFastTravel = on;
+
+    /// <summary>
+    /// The card style of a fast travel from <paramref name="from"/> to <paramref name="to"/> (same era): the first link of
+    /// the shortest open route that leaves the start's region, as a style with a card (<see cref="TransportStyles"/>; cable
+    /// cars and the Funitel show the cable car card <c>cable_A6</c>), or null inside one region. The map uses it for its
+    /// "Autobusom" / "Električkou" tags too.
+    /// </summary>
+    public static string? FastTravelCardStyle(GameContent content, GameState state, string from, string to)
+    {
+        if (content.FindRoom(from) is not { } a || content.FindRoom(to) is not { } b || a.Era != b.Era ||
+            ReferenceEquals(content.RegionOf(from), content.RegionOf(to))) return null;
+        var route = Navigation.FindRoute(content, state with { Room = from }, to);
+        var region = content.RegionOf(from);
+        foreach (var step in route ?? Array.Empty<RouteStep>())
+        {
+            if (step.Kind != RouteStepKind.Exit || ReferenceEquals(content.RegionOf(step.To), region)) continue;
+            string style = content.FindExit(step.ExitId ?? "")?.Exit.Travel ?? "";
+            string pair = string.CompareOrdinal(step.From, step.To) < 0 ? step.From + "|" + step.To : step.To + "|" + step.From;
+            if (style == "map_transition" && RideOfMapTransition.TryGetValue(pair, out var ride)) return ride;
+            if (style is "cable_A6" or "board_funitel" or "arrive_funitel") return "cable_A6";
+            return Array.IndexOf(TransportStyles, style) >= 0 ? style : null;
+        }
+        return null;
+    }
+
     /// <summary>Text of the last transport card shown (QA: build/screens/travel), or empty.</summary>
     public string LastTransportCard { get; private set; } = "";
 
@@ -164,7 +209,7 @@ public partial class WorldStage : Node2D
                 await FadeIn();
                 return;
             }
-            await EnterDisplayedRoom(before.Room, before.Era);
+            await EnterDisplayedRoom(before.Room, before.Era, before.Room);
         }
         finally
         {
@@ -181,21 +226,28 @@ public partial class WorldStage : Node2D
         string fromRoom = Current.RoomId;
         int fromEra = Current.View.Era;
         var game = GameRuntime.Instance;
-        // A ride through a transport exit, or a map fast travel into another region (it goes through the hub).
+        // A ride through a transport exit, or a map fast travel into another region (one click to any visited room).
+        bool fastTravel = pendingFastTravel;
+        pendingFastTravel = false;
         string? transport = pendingRide is { } ride && game.Content.FindExit(ride.ExitId)?.Exit.To == game.State.Room ? ride.Style
+            : fastTravel ? FastTravelCardStyle(game.Content, game.State, fromRoom, game.State.Room)
             : Navigation.TransportBetween(game.Content, game.State, fromRoom, game.State.Room);
-        if (transport is not null && Array.IndexOf(TransportStyles, transport) < 0) transport = null; // cable rides keep their own staging
+        // Story cable rides (J02-J04) keep their own staging; a fast travel shows the cable car card.
+        if (transport is not null && Array.IndexOf(TransportStyles, transport) < 0 && !(fastTravel && transport == "cable_A6")) transport = null;
+        // Through a ride's exit the hero arrives at the matching return exit; map fast travel, portals and special
+        // transitions use the room spawn (docs/navigation/EXITS.md).
+        string? arrivedVia = pendingRide is { } taken && game.Content.FindExit(taken.ExitId)?.Exit.To == game.State.Room ? fromRoom : null;
         pendingRide = null;
         try
         {
             await FadeOut();
             if (transport is not null && game.Content.FindRoom(game.State.Room) is { Era: var era } && era == fromEra)
             {
-                BuildRoom(game.State.Room, fromRoom);
+                BuildRoom(game.State.Room, arrivedVia);
                 await ShowTransportCard(transport, game.State.Room);
                 await FadeIn();
             }
-            else await EnterDisplayedRoom(fromRoom, fromEra);
+            else await EnterDisplayedRoom(fromRoom, fromEra, arrivedVia);
         }
         finally
         {
@@ -204,10 +256,11 @@ public partial class WorldStage : Node2D
         }
     }
 
-    private async Task EnterDisplayedRoom(string fromRoom, int fromEra)
+    /// <param name="arrivedVia">The room left through an exit (the hero comes in at the exit back there), or null (spawn).</param>
+    private async Task EnterDisplayedRoom(string fromRoom, int fromEra, string? arrivedVia)
     {
         var game = GameRuntime.Instance;
-        BuildRoom(game.State.Room, fromRoom);
+        BuildRoom(game.State.Room, arrivedVia);
         if (game.State.Era != fromEra && game.Content.FindEra(game.State.Era) is { } era) await ShowEraCard(era);
         await FadeIn();
     }
@@ -215,6 +268,7 @@ public partial class WorldStage : Node2D
     private void AfterArrival()
     {
         if (Current is null) return;
+        Current.FinishArrival(); // the arrival step never outlasts the transition
         // The state may have moved on during the fade (e.g. the next special transition).
         var game = GameRuntime.Instance;
         if (Current.RoomId != game.State.Room)

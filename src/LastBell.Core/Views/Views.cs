@@ -76,8 +76,9 @@ public sealed record MapRoomView(string RoomId, TextRef Name, bool Visited, bool
     string RegionId = "", bool IsHub = true);
 
 /// <summary>
-/// A region of one era sheet (the map shows the regions first, then the rooms of the chosen region). Fast travel
-/// is free inside the current region; another region is reached only through one of its hubs.
+/// A region of one era sheet (the map shows every region of the sheet at once, each with its rooms). Fast travel
+/// reaches every visited, reachable room of the current era in one step, in any region (owner 2026-10-06); the hubs
+/// are where the physical transport (bus, tram, cable car) enters the region.
 /// </summary>
 /// <param name="Id">Region id.</param>
 /// <param name="Name">Region name (<c>region.&lt;id&gt;.name</c>).</param>
@@ -148,8 +149,7 @@ public static class ViewBuilder
 
     /// <summary>
     /// The topological map: every era sheet with its regions and visited/grey rooms and fast-travel flags
-    /// (same rule as <see cref="Navigation.CanFastTravel"/>: visited, current era, reachable, and inside the current
-    /// region or a hub of another region).
+    /// (same rule as <see cref="Navigation.CanFastTravel"/>: visited, current era, reachable over open connections).
     /// </summary>
     public static IReadOnlyList<MapEraView> Map(GameContent content, GameState state)
     {
@@ -159,8 +159,7 @@ public static class ViewBuilder
         {
             var rooms = content.Rooms.Where(r => r.Era == e.Year).Select(r => new MapRoomView(r.Id, TextKeys.NameOf(r), state.Visited.Contains(r.Id),
                 r.Id == state.Room,
-                state.Visited.Contains(r.Id) && r.Era == state.Era && reachable.Contains(r.Id) && r.Id != state.Room &&
-                Navigation.IsRegionTarget(content, state.Room, r.Id),
+                state.Visited.Contains(r.Id) && r.Era == state.Era && reachable.Contains(r.Id) && r.Id != state.Room,
                 r.Id == e.Anchor, content.RegionOf(r.Id).Id, content.IsHub(r.Id))).ToList();
             var byId = rooms.ToDictionary(r => r.RoomId, StringComparer.Ordinal);
             var regions = content.RegionsOf(e.Year)

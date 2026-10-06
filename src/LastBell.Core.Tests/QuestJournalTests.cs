@@ -105,7 +105,8 @@ public sealed class QuestJournalTests
                 Assert.Equal(3, hints.Count);
                 Assert.All(hints, h => Assert.False(h.Text.IsEmpty, $"{quest.Id}/{step.Id} level {h.Level} empty"));
                 Assert.All(hints, h => Assert.NotEqual(TextKeys.QuestHint(quest.Id, 3), h.Text.Key));
-                Assert.Equal(Hints.StepKey(step.Id), hints[2].Text.Key);
+                // level 3: the written step (ui.hint_step.<id>), or the world overlay's own step text (action.<id>.hint_step)
+                Assert.Equal(step.HintStep is null ? Hints.StepKey(step.Id) : TextKeys.ActionHintStep(step.Id), hints[2].Text.Key);
                 // a done step is never the direction: the level-1 text is a quest hint or an objective of a done action
                 var key = hints[0].Text.Key;
                 Assert.True(key.StartsWith("quest." + quest.Id + ".hint.", StringComparison.Ordinal) ||

@@ -370,8 +370,9 @@ public sealed class WorldOverlayTests
         Assert.Contains("belongs to no region", Errors(SampleText, travel: Regions1995));
         Assert.Contains("is not a region of 1995", Errors(Mutated(root => root["rooms"]!.AsArray()[0]!["region"] = "Nikde"), travel: Regions1995));
         Assert.Contains("has no map regions", Errors(world));
-        // The live travel overlay (2020 bus, regions of every era) with the region named: loads.
-        var live = Load(world, TestData.OverlayText(ContentOverlays.DialogueExtFile), TestData.OverlayText(ContentOverlays.TravelExtFile));
+        // The live travel overlay (2020 bus, regions of every era) with the region named: loads. (The live dialogue
+        // overlay is left out: it speaks with the live world overlay's characters, e.g. ZUZANA95, which the sample lacks.)
+        var live = Load(world, travel: TestData.OverlayText(ContentOverlays.TravelExtFile));
         Assert.Equal("Dúbravka", live.RegionOf("S90").Id);
     }
 
@@ -380,7 +381,8 @@ public sealed class WorldOverlayTests
     [Fact]
     public void Saves_from_before_the_world_overlay_still_load_and_new_saves_round_trip()
     {
-        var old = TestData.StateAfter("B21");
+        // A save made with the handoff content alone (the live world overlay moves B19 to S69, which the sample lacks).
+        var old = MainStates(Base)[TestData.MainRoute.ToList().FindIndex(r => r.Action == "B21") + 1];
         var json = SaveCodec.Serialize(old);
         Assert.True(SaveCodec.TryLoad(Sample, json, out var loaded, out _, out var reason), reason);
         Assert.Equal(old.Done, loaded!.Done);
@@ -399,6 +401,28 @@ public sealed class WorldOverlayTests
         var mid = GameRules.CommitAction(Sample, Dialogue.OpenMenu(Driver.TravelTo(Sample, s, "S90")), "Q90A");
         Assert.Equal("action.Q90A.001", mid.ActiveLineId);
         Assert.Equal("action.Q90A.001", SaveCodec.Load(Sample, SaveCodec.Serialize(mid)).ActiveLineId);
+    }
+
+    [Fact]
+    public void Saves_made_before_content_v2_load_in_the_live_content_and_the_game_goes_on()
+    {
+        // A player's saves from the release before content v2 (handoff content + the dialogue / travel overlays of
+        // that time; the world overlay added rooms, actions and items but removed nothing) load at every main step,
+        // and the next main step can be played on in the live content (B19 is played in S69 now).
+        var live = TestData.Content;
+        var before = MainStates(Base);
+        for (var i = 0; i < before.Count; i++)
+        {
+            var json = SaveCodec.Serialize(before[i]);
+            Assert.True(SaveCodec.TryLoad(live, json, out var loaded, out _, out var reason), $"step {i}: {reason}");
+            Assert.Equal(before[i].Done, loaded!.Done);
+            Assert.Equal(before[i].Inventory, loaded.Inventory);
+            if (i == before.Count - 1) break;
+            var next = TestData.MainRoute[i];
+            var s = Driver.Perform(live, Playback.FinishAll(live, loaded), live.GetAction(next.Action));
+            Assert.True(s.IsDone(next.Action), $"step {i}: {next.Action} not playable after loading");
+            if (next.Action == "B19") Assert.Equal("S69", s.Room);
+        }
     }
 
     // ------------------------------------------------------------------ bad overlays

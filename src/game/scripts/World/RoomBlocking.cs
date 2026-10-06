@@ -12,7 +12,12 @@ namespace LastBell.Game.World;
 /// <param name="Rect">Hit / outline rect.</param>
 /// <param name="InteractionPoint">Walk target.</param>
 /// <param name="LabelAnchor">Space label anchor.</param>
-public sealed record BlockingTarget(Rect2? Rect, Vector2? InteractionPoint, Vector2? LabelAnchor);
+/// <param name="Side">Exits only: which way the exit leads out of the picture (null = derived from the rect,
+/// <see cref="ExitSides.FromRect"/>); drives the cursor arrow, the Space badge and the arrival walk-in.</param>
+/// <param name="Arrival">Exits only: where the hero appears when he comes in through this exit (he walks from there
+/// to the interaction point); null = a step beyond the point towards <paramref name="Side"/>.</param>
+public sealed record BlockingTarget(Rect2? Rect, Vector2? InteractionPoint, Vector2? LabelAnchor, ExitSide? Side = null,
+    Vector2? Arrival = null);
 
 /// <summary>How an NPC is drawn relative to the hero, the occluders and the y-sorted ambient sprites.</summary>
 public enum NpcDepth
@@ -108,7 +113,8 @@ public sealed record BlockingAudio(JsonArray? AmbienceLayers, bool AddToTemplate
 /// { "version": 1, "room": "S05", "background": "bg_natural/S05.webp",
 ///   "walk_polygon": [[x, y], ...], "walk_band": [top, bottom], "actor_scale": [top, bottom], "spawn": [x, y],
 ///   "hotspots": { "S05.tray": { "rect": [x, y, w, h], "interaction_point": [x, y], "label_anchor": [x, y] } },
-///   "exits":    { "S05.to_S02": { "rect": [...], "interaction_point": [...], "label_anchor": [...] } },
+///   "exits":    { "S05.to_S02": { "rect": [...], "interaction_point": [...], "label_anchor": [...],
+///                                 "side": "left|right|up|down", "arrival": [x, y] } },   (side / arrival optional)
 ///   "npcs":     { "S13.TONO": { "feet": [x, y], "scale": 0.6, "variant": "seated", "sill_y": 600, "offset_x": 0,
 ///                               "facing": "left", "z": "auto|back|front", "approach_gap": 140 } },
 ///   "guests":   { "I17": [ { "character": "MIRA60", "enter": [x, y], "stand": [x, y], "variant": null,
@@ -236,7 +242,10 @@ public sealed class RoomBlocking
                 foreach (var (id, node) in list)
                 {
                     if (node is not JsonObject t) continue;
-                    targets[id] = new BlockingTarget(ReadRect(t["rect"]), ReadVec2(t["interaction_point"]), ReadVec2(t["label_anchor"]));
+                    targets[id] = section == "exits"
+                        ? new BlockingTarget(ReadRect(t["rect"]), ReadVec2(t["interaction_point"]), ReadVec2(t["label_anchor"]),
+                            ExitSides.Parse(t["side"]?.GetValue<string>()), ReadVec2(t["arrival"]))
+                        : new BlockingTarget(ReadRect(t["rect"]), ReadVec2(t["interaction_point"]), ReadVec2(t["label_anchor"]));
                 }
             }
             var npcs = new Dictionary<string, BlockingNpc>(StringComparer.Ordinal);

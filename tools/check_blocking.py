@@ -10,6 +10,8 @@ Checks on the EFFECTIVE room (game.json merged with the blocking file, exactly a
   errors   - unknown room / hotspot / exit / NPC / action ids, unknown keys' malformed values
            - every hotspot and exit rect at least 44x44 px and at least 44x44 px of it on screen
            - walk polygon: >= 3 points, simple (no self-intersection), inside the 1920x1080 frame
+           - exit "side" one of left / right / up / down, exit "arrival" (where the hero appears when he comes in through
+             it, World/ExitSides.cs) inside the walk polygon
            - every hotspot and exit interaction point inside the walk polygon (exits reachable; the polygon is one
              connected area, so every inside point is reachable from the spawn), spawn inside
            - label anchors on screen
@@ -22,6 +24,8 @@ Checks on the EFFECTIVE room (game.json merged with the blocking file, exactly a
              known and every texture / sheet / mask it names exists with a valid Godot .import (not valid=false); audio
              sounds exist in data/audio/ambience.json
   warnings - label boxes overlapping each other or pushed by the screen clamp, label far from its rect,
+             two exits to different places on the same edge closer than 360 px (two doors / paths into the picture: 200 px), an edge exit whose
+             return exit in the target sits on the same edge (walking continuity, docs/navigation/EXITS.md),
              exit rect far from its interaction point, NPC approach point not walkable, NPC scale far from the
              room perspective at its feet, rect mostly hidden, staging that differs from docs/DECISIONS.md item 2,
              ambient sprites cut from the template painting, camera-family rooms with a different perspective or
@@ -60,7 +64,11 @@ FEET_TOLERANCE = 12
 TOP_LEVEL_KEYS = {"version", "room", "status", "note", "notes", "background", "walk_polygon", "walk_band", "actor_scale",
                   "spawn", "hotspots", "exits", "npcs", "foreground_mask", "ambient", "state_patches", "reasons",
                   "occluders", "variant_layers", "audio", "waive", "family_base", "anchors", "guests", "time_node"}
-TARGET_KEYS = {"rect", "interaction_point", "label_anchor", "reason", "note"}
+TARGET_KEYS = {"rect", "interaction_point", "label_anchor", "reason", "note", "side", "arrival"}
+# Exit directions (World/ExitSides.cs, docs/navigation/EXITS.md): named in a blocking or derived from the zone.
+EXIT_SIDES = {"left", "right", "up", "down"}
+EXIT_CROWD_PX = 360           # two exits to different places on the same edge closer than this: warning
+EXIT_CROWD_UP_PX = 200        # the same for two doors / paths into the picture
 NPC_KEYS = {"feet", "scale", "variant", "sill_y", "offset_x", "facing", "z", "reason", "note", "approach_gap"}
 GUEST_KEYS = {"character", "enter", "stand", "variant", "facing", "delay", "reason", "note"}
 TIME_NODE_KEYS = {"rect", "interaction_point", "hotspot", "reason", "note"}
@@ -124,7 +132,7 @@ def effective_room(room: dict, blocking: dict | None) -> dict:
         b = ex.get(e["id"])
         if not b:
             continue
-        for key in ("rect", "interaction_point", "label_anchor"):
+        for key in ("rect", "interaction_point", "label_anchor", "side", "arrival"):
             if key in b:
                 e[key] = b[key]
     if "walk_polygon" in blocking:
@@ -432,9 +440,24 @@ def check_target_values(rep: Report, ident: str, b: dict) -> None:
     if "rect" in b and not (isinstance(b["rect"], list) and len(b["rect"]) == 4
                             and all(isinstance(x, (int, float)) for x in b["rect"])):
         rep.error(f"{ident}: rect must be [x, y, w, h]")
-    for key in ("interaction_point", "label_anchor"):
+    for key in ("interaction_point", "label_anchor", "arrival"):
         if key in b and not is_vec(b[key]):
             rep.error(f"{ident}: {key} must be [x, y]")
+    if "side" in b and b["side"] not in EXIT_SIDES:
+        rep.error(f"{ident}: side must be one of {sorted(EXIT_SIDES)}")
+
+
+def exit_side(e: dict) -> str:
+    """ExitSides.FromRect / the blocking's named side: left / right edge zones, else up (into the picture) or down."""
+    if e.get("side") in EXIT_SIDES:
+        return e["side"]
+    x, y, w, h = e["rect"]
+    cx, cy = x + w / 2, y + h / 2
+    if cx < FRAME[0] * 0.16:
+        return "left"
+    if cx > FRAME[0] * 0.84:
+        return "right"
+    return "down" if cy > FRAME[1] * 0.80 else "up"
 
 
 def check_room(rep: Report, eff: dict, art_room: dict) -> None:
@@ -493,6 +516,24 @@ def check_room(rep: Report, eff: dict, art_room: dict) -> None:
                 if not any(inside(poly, s) for s in sides):
                     rep.warn(f"{ident}: neither approach point {[list(s) for s in sides]} is walkable; the hero "
                              f"stands on the interaction point in front of the NPC")
+
+    # Exit layout (docs/navigation/EXITS.md): the arrival point is walkable; two exits to different places do not crowd
+    # on the same side of the picture.
+    exits_eff = eff["exits"]
+    for e in exits_eff:
+        if e.get("arrival") and is_vec(e["arrival"]) and not inside(poly, e["arrival"]):
+            rep.error(f"{e['id']}: arrival {e['arrival']} is outside the walk polygon")
+    for i, a in enumerate(exits_eff):
+        for b in exits_eff[i + 1:]:
+            if a["to"] == b["to"] or exit_side(a) != exit_side(b):
+                continue
+            ca = (a["rect"][0] + a["rect"][2] / 2, a["rect"][1] + a["rect"][3] / 2)
+            cb = (b["rect"][0] + b["rect"][2] / 2, b["rect"][1] + b["rect"][3] / 2)
+            d = ((ca[0] - cb[0]) ** 2 + (ca[1] - cb[1]) ** 2) ** 0.5
+            # Doors, gates and paths into the picture are separate painted ways; edge exits only read as one place.
+            if d < (EXIT_CROWD_UP_PX if exit_side(a) == "up" else EXIT_CROWD_PX):
+                rep.warn(f"exits {a['id']} and {b['id']} both lead {exit_side(a)} and their zones are only {d:.0f} px "
+                         f"apart (separate them or name a side)")
 
     # Labels on screen, not overlapping, near their rect.
     boxes = []
@@ -916,6 +957,31 @@ def check_families(blockings: dict[str, dict], rooms: dict) -> list[str]:
     return notes
 
 
+def check_continuity(loaded: dict[str, dict], rooms: dict[str, dict]) -> list[str]:
+    """Walking continuity (docs/navigation/EXITS.md): leaving A out of its left (right) edge arrives at B's right (left)
+    edge, so an edge exit whose return exit sits on the SAME edge of the target makes Adam turn round on arrival."""
+    notes = []
+    for rid, blocking in sorted(loaded.items()):
+        a = effective_room(rooms[rid], blocking)
+        for e in a["exits"]:
+            target = rooms.get(e["to"])
+            if target is None or e["to"] not in loaded or e.get("travel", "walk") != "walk":
+                continue
+            b = effective_room(target, loaded[e["to"]])
+            back = next((x for x in b["exits"] if x["to"] == rid), None)
+            if back is None:
+                continue
+            sa, sb = exit_side(e), exit_side(back)
+            # Only walkways out of the frame edge on both sides: a door in a side wall is passed through and turned
+            # away from, so the same side in both rooms is natural there.
+            def at_edge(x: dict, side: str) -> bool:
+                return x["rect"][0] <= 5 if side == "left" else x["rect"][0] + x["rect"][2] >= FRAME[0] - 5
+            if sa in ("left", "right") and sa == sb and rid < e["to"] and at_edge(e, sa) and at_edge(back, sb):
+                notes.append(f"continuity: {e['id']} leads {sa} and its return {back['id']} is on the {sb} edge too "
+                             f"(walking out of the {sa} edge should arrive from the {'right' if sa == 'left' else 'left'})")
+    return notes
+
+
 def main(argv: list[str]) -> int:
     template = "--template" in argv
     strict = "--strict" in argv
@@ -970,6 +1036,10 @@ def main(argv: list[str]) -> int:
                 except json.JSONDecodeError:
                     pass
         for note in check_families(loaded, rooms):
+            if any(rid in note for rid in ids):
+                print(f"  warn  {note}")
+                warnings += 1
+        for note in check_continuity(loaded, rooms):
             if any(rid in note for rid in ids):
                 print(f"  warn  {note}")
                 warnings += 1

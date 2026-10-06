@@ -270,22 +270,39 @@ public sealed class ContentOverlayTests
     // ------------------------------------------------------------------ map regions and fast travel
 
     [Fact]
-    public void Fast_travel_is_free_inside_a_region_and_reaches_another_region_only_through_its_hub()
+    public void Fast_travel_reaches_every_visited_room_of_the_era_in_one_step_in_any_region()
     {
+        // Owner override 2026-10-06 (DECISIONS control change 8): one click on any discovered place, no stop at the hub.
         var s = GameRules.OpenOverlay(TestData.StateAfter("C02"), GameMode.Map); // in S03 (Chorvátsky Grob), Dúbravka 2020 visited
         Assert.Equal("S03", s.Room);
         Assert.Contains("S52", s.Visited);
         Assert.True(Navigation.CanFastTravel(C, s, "S05"));  // same region
         Assert.True(Navigation.CanFastTravel(C, s, "S07"));  // Čierna Voda belongs to the Chorvátsky Grob region
         Assert.True(Navigation.CanFastTravel(C, s, "S51"));  // hub of Dúbravka (bus stop)
-        Assert.False(Navigation.CanFastTravel(C, s, "S52")); // not a hub: only through S51
-        Assert.True(Navigation.CanFastTravel(Base, s, "S52")); // the handoff without the overlay allowed it
-        Assert.Same(s, Navigation.FastTravel(C, s, "S52"));
+        Assert.True(Navigation.CanFastTravel(C, s, "S52"));  // not a hub: still one step away
+        Assert.True(Navigation.CanFastTravel(Base, s, "S52")); // same as the handoff without the overlay
+        var direct = Navigation.FastTravel(C, s, "S52");
+        Assert.Equal("S52", direct.Room);                    // no forced stop at S51
+        Assert.Equal(GameMode.World, direct.Mode);
+        Assert.Equal(s.Done, direct.Done);
+        Assert.Equal(s.Inventory, direct.Inventory);
+        Assert.Equal("bus", Navigation.TransportBetween(C, direct, "S03", "S52")); // the card of the ride into Dúbravka
+        Assert.Null(Navigation.TransportBetween(C, direct, "S01", "S07"));
         var there = Playback.FinishAll(C, Navigation.FastTravel(C, s, "S51"));
         Assert.Equal("S51", there.Room);
-        Assert.Equal("bus", Navigation.TransportBetween(C, there, "S03", "S51"));
-        Assert.Null(Navigation.TransportBetween(C, there, "S01", "S07"));
-        Assert.True(Navigation.CanFastTravel(C, GameRules.OpenOverlay(there, GameMode.Map), "S52")); // free inside Dúbravka
+        Assert.True(Navigation.CanFastTravel(C, GameRules.OpenOverlay(there, GameMode.Map), "S52"));
+        Assert.True(Navigation.CanFastTravel(C, GameRules.OpenOverlay(direct, GameMode.Map), "S05")); // and straight back
+        // Never visited: the first trip into a place still happens physically (exits, bus, tram, cable car).
+        foreach (var unvisited in C.Rooms.Where(r => r.Era == 2020 && !s.Visited.Contains(r.Id)))
+            Assert.False(Navigation.CanFastTravel(C, s, unvisited.Id), unvisited.Id);
+        // A locked gate still blocks, also from another region: from Karlova Ves (S19) the physics cabinet S15 in
+        // Dúbravka (gate B02) forged as visited stays unavailable.
+        var before = Driver.TravelTo(C, TestData.StateBefore("B02"), "S19");
+        Assert.False(before.IsDone("B02"));
+        var forged = GameRules.OpenOverlay(before with { Visited = before.Visited.Contains("S15") ? before.Visited : before.Visited.Add("S15") }, GameMode.Map);
+        Assert.False(Navigation.CanFastTravel(C, forged, "S15"));
+        Assert.False(ViewBuilder.Map(C, forged).Single(e => e.Year == 1995).Rooms.Single(r => r.RoomId == "S15").CanFastTravel);
+        Assert.True(Navigation.CanFastTravel(C, forged, "S11")); // the visited tram stop in the other region is one click away
 
         var sheet = ViewBuilder.Map(C, s).Single(e => e.Year == 2020);
         Assert.Equal(new[] { "Chorvátsky Grob", "Dúbravka" }, sheet.Regions.Select(r => r.Id));
@@ -298,7 +315,7 @@ public sealed class ContentOverlayTests
         Assert.Equal("bus", dubravka.Transport);
         Assert.Null(grob.Transport);
         Assert.Equal("Dúbravka", sheet.Rooms.Single(r => r.RoomId == "S52").RegionId);
-        Assert.False(sheet.Rooms.Single(r => r.RoomId == "S52").CanFastTravel);
+        Assert.True(sheet.Rooms.Single(r => r.RoomId == "S52").CanFastTravel);
         Assert.True(sheet.Rooms.Single(r => r.RoomId == "S51").IsHub);
         Assert.All(sheet.Rooms.Where(r => !r.IsCurrent), r => Assert.Equal(r.CanFastTravel, Navigation.CanFastTravel(C, s, r.RoomId)));
     }

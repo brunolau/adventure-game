@@ -17,8 +17,9 @@ namespace LastBell.Game.Diagnostics;
 /// <summary>
 /// Acceptance checks of the travel overlay (owner request 2026-10-06, DECISIONS "Control changes" item 7): Dúbravka
 /// 2020 is reached by bus from the Čierna Voda bus stop (S07 &lt;-&gt; S51, first-ride lines, transport card), the old
-/// car S02 -&gt; S51 is gone, and the map shows regions first, then the rooms of a region; another region is reached
-/// only through its hub. Real Godot input only (RealInputDriver.cs). With <c>--travel-shots DIR</c> (windowed run
+/// car S02 -&gt; S51 is gone, and the map shows every region of the era on one screen: one click on any visited room
+/// travels there, with the transport card of the ride into another region (owner override 2026-10-06, control change 8).
+/// NAV04: the inventory is "Inventár" and a selected item draws no outline on its valid targets (control changes 10, 11). Real Godot input only (RealInputDriver.cs). With <c>--travel-shots DIR</c> (windowed run
 /// through tools/qa_godot.py) it saves the evidence frames (build/screens/travel/).
 /// </summary>
 public partial class DebugHarness
@@ -101,32 +102,37 @@ public partial class DebugHarness
               game.State.JournalSeen.Contains(Navigation.FirstRideKey(bus.Id)) && WorldStage.Instance!.LastTransportCard.Contains(TextService.Get("ui.travel.bus")),
               $"clicked={clicked} input={input} lines={rides} old_room_during_ride={oldRoomDuringRide} card='{WorldStage.Instance!.LastTransportCard}' arrived={arrived}");
 
-        // ---------------------------------------------------------------- TR03: map: regions first, another region only through its hub
+        // ---------------------------------------------------------------- TR03: map: every region on one screen, one click to any visited room
+        // Owner override 2026-10-06 (DECISIONS control change 8; replaced the regions-first view and the hub rule of item 7):
+        // one click on a discovered room of another region travels there directly, with the transport card of the ride.
         await KeyReal(Godot.Key.M);
         bool mapOpen = await WaitUntil(() => game.State.Mode == GameMode.Map, 5);
         await Frames(8);
         var map = Descendants<MapScreen>(UiRoot.Instance!).FirstOrDefault();
-        var graph = map is null ? null : Descendants<MapGraph>(map).FirstOrDefault();
-        bool regionsFirst = map is not null && map.OpenRegionId is null && graph is { ShowsRegions: true } && graph.Nodes.ContainsKey("Chorvátsky Grob") && graph.Nodes.ContainsKey("Dúbravka");
-        await TravelShot("map_regions_2020", 0.3);
-        bool openedGrob = graph is not null && graph.Nodes.TryGetValue("Chorvátsky Grob", out var grobCard) && await ClickControl(grobCard, "map region Chorvátsky Grob");
-        await Frames(6);
-        bool roomsShown = map?.OpenRegionId == "Chorvátsky Grob" && graph is { ShowsRegions: false } && graph.Nodes.ContainsKey("S07") && !graph.Nodes.ContainsKey("S51");
-        await TravelShot("map_region_Chorvatsky_Grob", 0.3);
+        bool allRegions = map is not null && map.RegionIds.Contains("Chorvátsky Grob") && map.RegionIds.Contains("Dúbravka") &&
+                          map.Section("Chorvátsky Grob")?.IsVisibleInTree() == true && map.Section("Dúbravka")?.IsVisibleInTree() == true;
+        var s03 = map?.RoomNode("S03");
+        bool sameScreen = allRegions && s03 is not null && s03.IsVisibleInTree() && map!.RoomNode("S51") is { } here51 && here51.IsVisibleInTree();
+        await TravelShot("map_2020_all_regions_one_screen", 0.3);
         var sheet = LastBell.Core.Views.ViewBuilder.Map(content, game.State).Single(e => e.Year == 2020);
-        bool hubOnly = sheet.Rooms.Where(r => r.RegionId == "Chorvátsky Grob" && r.Visited).All(r => r.CanFastTravel == r.IsHub);
-        string here = game.State.Room;
-        bool nonHubStays = true;
-        if (graph is not null && graph.Nodes.TryGetValue("S03", out var s03)) { await ClickControl(s03, "map node S03 (not a hub)"); await Frames(6); nonHubStays = game.State.Room == here && game.State.Mode == GameMode.Map; }
-        bool viaHub = graph is not null && graph.Nodes.TryGetValue("S07", out var s07) && await ClickControl(s07, "map node S07 (hub)") &&
-                      await WaitUntil(() => game.State.Room == "S07" && WorldStage.Instance!.IsSettled && WorldStage.Instance.IsFadedIn, 30);
+        // Every visited room of the era can be travelled to, hub or not; a room never visited cannot (the first trip is physical).
+        bool direct = sheet.Rooms.Where(r => r.Visited && !r.IsCurrent).All(r => r.CanFastTravel) &&
+                      sheet.Rooms.Where(r => !r.Visited).All(r => !r.CanFastTravel) && !content.IsHub("S03");
+        // Undiscovered rooms are not drawn (the region header counts them): S52 waits for the first walk from the stop.
+        bool unvisitedStays = game.State.Visited.Contains("S52") || map?.RoomNode("S52") is null;
+        bool clickedS03 = s03 is not null && await ClickControl(s03, "map node S03 (another region, not a hub)");
+        bool cardSeen = await WaitUntil(() => WorldStage.Instance!.Transitioning && WorldStage.Instance.LastTransportCard.Contains("Grob"), 20);
+        if (cardSeen) await TravelShot("fast_travel_transport_card_bus", 0.55);
+        bool oneClick = clickedS03 && await WaitUntil(() => game.State.Room == "S03" && WorldStage.Instance!.IsSettled && WorldStage.Instance.IsFadedIn, 30);
         string cardBack = WorldStage.Instance!.LastTransportCard;
         await WaitLinesReal(30);
-        Check("TR03_map_regions_first_hub_only_fast_travel", mapOpen && regionsFirst && openedGrob && roomsShown && hubOnly && nonHubStays && viaHub && cardBack.Contains("Grob"),
-              $"open={mapOpen} regions_first={regionsFirst} rooms_view={roomsShown} hub_only={hubOnly} non_hub_stays={nonHubStays} via_hub={viaHub} card='{cardBack}'");
+        if (oneClick) await TravelShot("S03_after_one_click", 0.3);
+        Check("TR03_map_one_screen_one_click_to_any_visited_room", mapOpen && sameScreen && direct && unvisitedStays && oneClick &&
+              cardBack.Contains("Grob") && cardBack.Contains(TextService.Get("ui.travel.bus")),
+              $"open={mapOpen} one_screen={sameScreen} direct_flags={direct} unvisited_hidden={unvisitedStays} one_click={oneClick} card='{cardBack}'");
         if (DialoguePresenter.Instance is { } p2) p2.LineShown -= OnLine;
 
-        // Evidence only (windowed --travel-shots): the 1995 sheet, its regions and the rooms of one region.
+        // Evidence only (windowed --travel-shots): the 1995 sheet with all its regions.
         if (Get("travel-shots") is not null && DisplayServer.GetName() != "headless")
         {
             await KeyReal(Godot.Key.M);
@@ -138,15 +144,53 @@ public partial class DebugHarness
             {
                 await ClickControl(t1995, "map tab 1995");
                 await Frames(6);
-                await TravelShot("map_regions_1995", 0.3);
-                if (Descendants<MapGraph>(screen).FirstOrDefault()?.Nodes.TryGetValue("Staré Mesto", out var sm) == true)
-                {
-                    await ClickControl(sm, "map region Staré Mesto");
-                    await Frames(6);
-                    await TravelShot("map_region_Stare_Mesto_1995", 0.3);
-                }
+                await TravelShot("map_1995_all_regions", 0.3);
             }
         }
         if (game.State.Mode == GameMode.Map) await KeyReal(Godot.Key.Escape);
+
+        // ---------------------------------------------------------------- NAV04: "Inventár", and no outline on the valid targets of a selected item
+        // Owner 2026-10-06 (DECISIONS control changes 10 and 11): the panel is "Inventár" (no "brašna inside the brašna"); with an
+        // item selected the valid targets show only on hover (the item-action label at the cursor) and while Space is held.
+        await Prepare("B06");
+        // Core travel to the radio room (the walk is covered by AT03 / --play-all; hidden-window runs miss raw world clicks).
+        var toRadio = game.State;
+        foreach (var step in Navigation.FindRoute(content, toRadio, "S16")!) toRadio = Playback.FinishAll(content, Navigation.ApplyStep(content, toRadio, step));
+        game.ReplaceState(toRadio);
+        await Settle();
+        await WaitLinesReal(20);
+        await OpenDrawerReal();
+        string invTitle = TextService.Ui("ui.inventory.title");
+        bool titleShown = Descendants<Label>(UiRoot.Instance!).Any(l => l.IsVisibleInTree() && l.Text == invTitle);
+        await TravelShot("inventory_title", 0.3);
+        await CloseDrawerReal();
+        await SelectItemReal("BELT_NEW", keepDrawerOpen: false);
+        var room = CurrentRoom;
+        var floor = new Vector2(960, 1000);
+        await MoveMouseReal(floor);
+        await Frames(4);
+        int outlinesIdle = InteractionController.Instance?.FocusedId is null ? room.Labels.OutlinesDrawn : -1;
+        await TravelShot("item_selected_no_outline", 0.3);
+        string hoverAction = "";
+        if (await FindClickPoint("S16.deck") is { } deck)
+        {
+            await MoveMouseReal(deck);
+            await Frames(6);
+            hoverAction = UiRoot.Instance!.HoverLabel.ShownAction;
+            await TravelShot("item_hover_label_on_valid_target", 0.2);
+        }
+        int outlinesHover = room.Labels.OutlinesDrawn;
+        await MoveMouseReal(floor);
+        await KeyEdge(Godot.Key.Space, true);
+        await Frames(4);
+        var marked = room.Labels.MarkedIds.ToList();
+        var valid = room.Targets.Where(t => t.ValidForSelectedItem).Select(t => t.Id).ToList();
+        await TravelShot("item_space_markers_valid_only", 0.2);
+        await KeyEdge(Godot.Key.Space, false);
+        await Frames(2);
+        Check("NAV04_inventar_title_and_no_item_outline", titleShown && invTitle == "Inventár" && outlinesIdle == 0 && outlinesHover == 0 && hoverAction.Length > 0 &&
+              marked.Count > 0 && marked.OrderBy(x => x, StringComparer.Ordinal).SequenceEqual(valid.OrderBy(x => x, StringComparer.Ordinal)),
+              $"title='{invTitle}' shown={titleShown} outlines_idle={outlinesIdle} outlines_hover={outlinesHover} hover_action='{hoverAction}' marked=[{string.Join(",", marked)}] valid=[{string.Join(",", valid)}]");
+        await DropSelectionReal();
     }
 }

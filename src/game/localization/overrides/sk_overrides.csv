@@ -20,6 +20,7 @@ entry.S03.001,"Dobrovoľnícke centrum. Jediné call centrum, kde operátorka z�
 look.S03.supplies,Tašky sú označené menom a súhlasom adresáta. Ela tu drží poriadok bez jedinej aktualizácie.,"Ku každej taške má Ela meno aj súhlas adresáta. Píše ceruzkou, objednávky sa menia do poslednej chvíle.","tone pass 2026-10-06, GPT unnatural flag adapted | editor: second 'bez aplikácie' joke in the same room as ambient 1"
 look.S03.ambient 1,Rozostupy sú jasné aj bez aplikácie.,"Páska na zemi ukazuje dva metre odstupu. Ela ich má odkrokované, ja by som trafil tak meter osemdesiat.","tone pass 2026-10-06, GPT joke flag adapted | "
 look.S03.ambient 2,Ela má na nej napísané NEDOLIEVAŤ POLIEVKU. Zrejme skúsenosť.,Na Elinej termoske je napísané NEDOLIEVAŤ POLIEVKU. To bude zo skúsenosti.,TEXT-04 rewrite
+entry.S04.001,"Nákupné okienko. Sortiment je menší, kontakt s predavačkou tiež.","Potraviny cez okienko. Dana z neho podáva tašky rýchlejšie, ako stihnem povedať dobrý deň.","entries 2026-10-06: GPT flag adapted: bags go through the window, not the glass; its wallet idea rejected (already paid in G03)"
 look.S04.ambient 1,Ručne písané čísla majú nezameniteľný sklon k zaokrúhľovaniu.,"Ceny písané rukou, samé okrúhle sumy. Drobné sa cez okienko podávajú zle.","tone pass 2026-10-06, GPT nonsense flag adapted | "
 look.S04.ambient 2,Na chvíľu by bolo fajn riešiť len klíčky.,Pár zemiakov už klíči. Ešte týždeň a Dana ich bude predávať ako sadbu.,"tone pass 2026-10-06, GPT joke flag adapted | "
 exit.S04.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
@@ -43,12 +44,12 @@ exit.S06.to_S05.locked,Najprv dokončím dohodnutý servisný krok. Je zapísan�
 entry.S07.001,Výveska má QR kód. Pán pri nej má lupu. Technologický kompromis ešte neprebehol.,"Na výveske je QR kód a pod ním pán s lupou. Vyzerá to, že tu bude treba tlmočníka.","tone pass verification 2026-10-06, GPT joke flag adapted | "
 look.S07.board,Pomoc susedom má otváracie hodiny ukryté v drobnom QR kóde. Písmená by tu boli praktickejšie.,Hodiny susedskej pomoci sú schované v drobnom QR kóde. Obyčajné písmená by tu pomohli viac.,TEXT-04 rewrite
 look.S07.ambient 1,Kurz spoločenských tancov: dočasne každý sám.,Kurz spoločenských tancov. Dočasne tancuje každý sám.,TEXT-04 rewrite
-look.S07.ambient 2,Pán Jozef má poctivú optiku. Tá aspoň nepotrebuje účet.,"Lupa pána Jozefa. Skladacia, v koženom puzdre a bez batérie. Takú by som opravoval rád, ale niet čo.",tone pass: 'nepotrebuje heslo ani aktualizáciu' was the old ironic tag; Adam's repairman view of a well-made object | 
+look.S07.ambient 2,Pán Jozef má poctivú optiku. Tá aspoň nepotrebuje účet.,"Lupa pána Jozefa. Skladacia, v koženom puzdre a bez batérie. Takú by som opravoval rád, ale niet čo.","tone pass: 'nepotrebuje heslo ani aktualizáciu' was the old ironic tag; Adam's repairman view of a well-made object | "
 look.S07.JOZEF,Pán Jozef má lupu pripravenú ako nástroj verejnej kontroly.,Pán Jozef so skladacou lupou. Na výveske prečíta všetko okrem QR kódu.,editor: writer's 'prečíta každé slovo' contradicted his problem (he cannot read the hours)
 exit.S07.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
 entry.S08.001,Tu sa zadržiava voda. Na obecnej skupine sa zadržiava už len slušnosť.,"Rybník pod pumptrackom. Deti hore na kopci jazdia, kačice dole plávajú a obe partie pritom robia rovnaký hluk.",entries 2026-10-06: GPT ok; matches the new pumptrack painting
 look.S08.ball,Na suchej strane zábradlia leží obhryzená loptička. Jej majiteľ určite nečíta straty a nálezy.,Na suchej strane zábradlia leží obhryzená loptička. Jej psí majiteľ straty a nálezy nečíta.,"tone pass 2026-10-06, GPT joke flag accepted | "
-look.S08.ambient 1,"Vyzerá, že situáciu konzultovala a nesúhlasí.","Kačka. Od brehu si drží odstup, odkedy sem chodí Bodka.",tone pass: 'situáciu prekonzultovala a nesúhlasí' was a forced personification; callback to Bodka's walks to the reservoir | 
+look.S08.ambient 1,"Vyzerá, že situáciu konzultovala a nesúhlasí.","Kačka. Od brehu si drží odstup, odkedy sem chodí Bodka.","tone pass: 'situáciu prekonzultovala a nesúhlasí' was a forced personification; callback to Bodka's walks to the reservoir | "
 look.S08.ambient 2,Tu by sa dalo na chvíľu prestať zachraňovať čokoľvek.,Tu by som si na chvíľu sadol a nič nezachraňoval.,TEXT-04 rewrite
 entry.S09.001,Babka tomu hovorí pár vecí. Skladník by tomu hovoril ďalšia prevádzka.,Babka tomu hovorí „pár vecí“. Skladník by povedal „menší sklad“.,TEXT-04 rewrite
 look.S09.case,"Na puzdre je ZVON a meno M. Hrušková. Zapínanie je otvorené, len sa tvári dôležito.","Mosadzné puzdro s nápisom ZVON a menom M. Hrušková. Nie je zamknuté, len vyzerá dôležito.","scene description calls the case 'uzamknuté', but the click opens it without a key; kept the look's fact (not locked)"
@@ -62,37 +63,39 @@ look.S10.panel,"Schéma nad panelom vedie kruh ku kruhu, trojuholník k trojuhol
 look.S10.ambient 1,"Štyri ceruzky, tri epochy, jeden vyschnutý fix.","Štyri ceruzky, tri epochy, jedna vyschnutá fixka.","tone pass 2026-10-06, GPT grammar flag adapted"
 look.S10.ambient 2,NEPREPISOVAŤ ORIGINÁL. Babka to napísala trikrát. Historicky nedocenený návyk.,"NEPREPISOVAŤ ORIGINÁL, trikrát podčiarknuté. Babka nepodčiarkuje nič, čo nemyslí vážne.",keeps the painted sign verbatim
 entry.S11.001,Telefón nemá signál. Zato električka má farbu môjho detstva. To bude vážnejšia porucha.,Telefón nemá signál a električka má farby môjho detstva. Toto nebude obyčajný výpadok siete.,TEXT-04 rewrite
-look.S11.ambient 1,"Všetko je vytlačené. Keď sa zmení čas, cestujúci to zistia osobne.","Papierový cestovný poriadok. Keď sa zmení, cestujúci sa to dozvedia priamo na zastávke.",TEXT-04 rewrite
-look.S11.ambient 2,"Archeológia, na ktorú si netrúfam.",Vrstvy z niekoľkých školských rokov. Archeológiu prenechám odborníkom.,TEXT-04 rewrite
+look.S11.ambient 1,"Všetko je vytlačené. Keď sa zmení čas, cestujúci to zistia osobne.","Papierový cestovný poriadok, meškania sú dopísané perom. Aj tu niekto vedie vlastnú štatistiku.","flat v1 (how timetable changes are announced); now what Adam sees, with a small remark"
+look.S11.ambient 2,"Archeológia, na ktorú si netrúfam.",Žuvačky z niekoľkých školských rokov. Jedna z nich je možno moja.,Adam went to ZŠ Sokolíkova; replaces the 'archeológia' quip with a personal callback
 entry.S12.001,"Sokolíkova. Ak ma zavolajú k tabuli, budem cestovanie v čase reklamovať.","Moja škola na Sokolíkovej. Ak ma niekto vyvolá k tabuli, cestovanie v čase idem reklamovať.",TEXT-04 rewrite
 look.S12.notice,Dnes popoludní: Zvukový atlas našej školy. Magnetofón neprehráva. Pomoc opravára vítaná; hlásiť sa u školníka.,"„Dnes popoludní: Zvukový atlas našej školy. Magnetofón neprehráva, pomoc opravára vítaná. Hláste sa u školníka.“",TEXT-04 rewrite
-look.S12.ambient 1,Masívna ochrana pred parkovaním aj optimizmom.,Ťažký betón a jeden statočný muškát. Parkovať sa tu nedá.,TEXT-04 rewrite
-look.S12.ambient 2,Názov školy drží. Budem to považovať za dobré znamenie.,Erb aj nápis školy sú na mieste. Aspoň niečo je presne ako v mojich spomienkach.,TEXT-04 rewrite
-entry.S13.001,"Tá vôňa sa nedá zabudnúť. Leštidlo, prezuvky a nevysvetlená písomka.","Tá vôňa sa nedá zabudnúť: leštidlo, prezuvky a strach z písomky.",TEXT-04 rewrite
-look.S13.ambient 1,Obuv na prechod do paralelného školského vesmíru.,Prezuvky v rade ako vojsko. V topánkach by ma sem kedysi nepustili.,TEXT-04 rewrite
+look.S12.ambient 1,Masívna ochrana pred parkovaním aj optimizmom.,Ťažký betónový kvetináč a v ňom jeden statočný muškát. Tým kvetináčom nepohne ani školník.,livelier; drop: parkovať
+look.S12.ambient 2,Názov školy drží. Budem to považovať za dobré znamenie.,"Erb aj nápis školy visia, kde majú. Ako prvák som si myslel, že ten erb kreslil sám riaditeľ.",v1 'Aspoň niečo je presne ako v mojich spomienkach' was a summary tag; now a childhood memory
+entry.S13.001,"Tá vôňa sa nedá zabudnúť. Leštidlo, prezuvky a nevysvetlená písomka.","Na tú vôňu sa nedá zabudnúť: leštidlo, prezuvky a strach z písomky.",GPT accept: Correct: 'zabudnúť na' is the natural construction.
+look.S13.ambient 1,Obuv na prechod do paralelného školského vesmíru.,"Prezuvky v rade ako vojsko. Moje stáli vždy na kraji, lebo som chodil posledný.",personal callback instead of a general remark; pairs with B01.002 / B02 x05
 look.S13.ambient 2,Tóno má fyzickú podobu prístupových oprávnení.,"Kľúče od celej školy. Kto ich drží, ten rozhoduje, kam sa dá ísť.",TEXT-04 rewrite
 look.S13.TONO,"Tóno pozná zvuk každých dverí. Aj keď sa za nimi niekto tvári, že tam nie je.","Mladý školník Tóno. Podľa zvuku spozná, ktoré dvere sa práve otvorili.",TEXT-04 rewrite
 exit.S13.to_S15.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Kabinet je zamknutý. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
 entry.S14.001,Babka má päťdesiatpäť. Ja mám tridsaťpäť. Rodinná hierarchia je našťastie rovnaká.,"Babka má päťdesiatpäť, ja tridsaťpäť. A aj tak mám pocit, že ma pošle umyť si ruky.",TEXT-04 rewrite
-look.S14.ambient 1,"Pri tejto farbe mám automaticky pocit, že niečo neviem.","Pri tejto zelenej mám hneď pocit, že som sa zabudol učiť.",TEXT-04 rewrite
+look.S14.ambient 1,"Pri tejto farbe mám automaticky pocit, že niečo neviem.","Zelená tabuľa. Stačí sa na ňu pozrieť a mám pocit, že som sa zabudol učiť.","same joke, clearer sentence (v1 'Pri tejto zelenej' was elliptic)"
 look.S14.ambient 2,"Hubka pamätá odpovede, ktoré sa nikdy nedostali do vysvedčenia.","Táto hubka zotrela viac zlých odpovedí, než sa ich kedy dostalo do žiackej knižky.",TEXT-04 rewrite
 look.S14.MIRA95,Mira má pred sebou trojicu prístrojov. Žiadny nemá odvahu pokaziť sa nahlas.,Babka má pred sebou tri prístroje. Ani jeden sa pri nej neodváži pokaziť.,Adam says babka
+look.S14.LEA95,"Učiteľka Lea čaká, kým sa dozvučí nahrávka. Vie nechať ticho dokončiť vetu.","Učiteľka Lea čaká, kým nahrávka doznie. Vie nechať ticho dokončiť vetu.",tone pass C2_tone: adapt GPT flag
 entry.S15.001,"Kabinet, kde sa nesmelo nič chytať. Dnes je to zrejme jediný spôsob, ako zachrániť svet.",Fyzikálny kabinet. Ako žiak som sa tu nesmel ničoho dotknúť. Teraz to bude moja práca.,TEXT-04 rewrite
-look.S15.register,Mira škole zapožičala krabicu meraní a magnetofón. Fond v študovni vedie aj mapu uzlov; fotografický negatív je uložený pri nej.,"Babka škole požičala krabicu meraní a magnetofón. Mapa uzlov je v jej fonde v študovni, negatív pri nej.",TEXT-04 rewrite
+look.S15.register,Mira škole zapožičala krabicu meraní a magnetofón. Fond v študovni vedie aj mapu uzlov; fotografický negatív je uložený pri nej.,"Babka škole požičala krabicu so záznamami meraní a magnetofón. Mapa uzlov je v jej fonde v študovni, negatív pri nej.","GPT adapt: Agree 'krabicu meraní' was compressed; 'krabica' kept (as in the rest of the game), facts unchanged."
 look.S15.register.variant1,"V starom registri pribudol správny pôvod Z-17 z roku 1960. Zmena sa týka dokladu, nie vzniku školy.","V registri teraz stojí aj správny pôvod: Z-17 z roku 1962. Zmenil sa len záznam, škola je stále tá istá.","TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
-look.S15.ambient 1,"Pozerá na mňa tak, ako sa na nás pozerala fyzika.",Pozerá na mňa ako fyzikárka pri skúšaní.,TEXT-04 rewrite
-look.S15.ambient 2,Vie rozložiť svetlo. S rodinnými vzťahmi mu nepomôžem.,Rozloží svetlo na farby. Keby to tak išlo aj s mojím dnešným dňom.,TEXT-04 rewrite
+look.S15.ambient 1,"Pozerá na mňa tak, ako sa na nás pozerala fyzika.","Model oka. Pozerá na mňa ako fyzikárka, keď som nevedel Ohmov zákon.","same joke, concrete memory"
+look.S15.ambient 2,Vie rozložiť svetlo. S rodinnými vzťahmi mu nepomôžem.,Sklenený hranol rozloží svetlo na farby. Fyzikárka nám ním kedysi robila dúhu na strope.,self-irony about the time jumps instead of the vague wish
 look.S15.JANA95,Jana drží šanón. Podľa zmenenej minulosti v ňom môže mať vlastné schémy.,"Mladá žena so šanónom. Drží ho opatrne, akoby v ňom mala vlastné výkresy.","removed 'podľa zmenenej minulosti' (design note); keeps the hint that the folder holds her own drawings; removed 'podľa zmenenej minulosti': the look has no variant, so it showed before Q9C too; drop: Jana"
 exit.S15.to_S13.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Zamknuté. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
 exit.S15.to_S16.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Zamknuté. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
 look.S16.deck,"Motor ide naprázdno. Remienok sa rozpadol. Pod krytom je kazeta, ktorá sa nedá bezpečne vysunúť.","Motor sa točí naprázdno, remienok sa rozpadol. Kazetu bez opravy bezpečne nevyberiem.",TEXT-04 rewrite
 look.S16.deck.variant1,Mechanika je opravená. Kazeta je bezpečne vybratá; zostáva obnoviť správne čítanie stôp.,Mechanika ide a kazetu mám. Teraz treba ešte správne prečítať jej stopy.,TEXT-04 rewrite
-look.S16.socket,Dve stopy sa sčítali proti sebe. Krížový adaptér môže jednu otočiť. Šum nie je to isté ako prázdna páska.,Tu by sa dala kazeta prehrať. Dve stopy sa však navzájom rušia; krížový adaptér by jednu otočil.,TEXT-04 rewrite
+look.S16.socket,Dve stopy sa sčítali proti sebe. Krížový adaptér môže jednu otočiť. Šum nie je to isté ako prázdna páska.,Tu by sa dala kazeta prehrať. Dve stopy sa však navzájom rušia; krížový adaptér by jednej obrátil polaritu.,"GPT adapt: Agree 'jednu otočil' could mean playback direction; 'polarita' is the term Juro's role uses (opposite polarity), plainer than 'fáza'."
 look.S16.socket.variant1,Prepojka zostáva ako súčasť rozhlasu. Pôvodná kazeta je v chronometrom chránenej brašni.,"Prepojka tu zostane, rozhlasu sa zíde. Pôvodná kazeta je v brašni, kde ju chráni chronometer.",TEXT-04 rewrite
 look.S16.ambient 2,Zajtra buchty. Jediná správa s absolútnou podporou publika.,"„Zajtra buchty.“ Jediné hlásenie, ktoré celá škola počúvala až do konca.",TEXT-04 rewrite
 exit.S16.to_S15.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Zamknuté. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
-entry.S17.001,V tom okne som asi ja. Našťastie sa práve pozerám opačným smerom. Aj vtedy som mal dobré inštinkty.,"V tom okne som asi ja, desaťročný. Našťastie sa pozerám inam. Aj vtedy som mal dobré inštinkty.",TEXT-04 rewrite
-look.S17.rhythm,"Pod nákresom stojí TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV. Sú to tri číslice nastavenia 3–2–6; kópia ide do zápisníka.","Pod nákresom je napísané TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV. To je nastavenie 3–2–6. Zapíšem si ho.",TEXT-04 rewrite
+entry.S17.001,V tom okne som asi ja. Našťastie sa práve pozerám opačným smerom. Aj vtedy som mal dobré inštinkty.,"V tom okne som asi ja, desaťročný. Našťastie sa pozerám inam, ako na každej fotke.","tone pass C2_tone, Claude: old ironic tag replaced by a callback to Q3C ('pozerá inam')"
+hotspot.S17.rhythm.name,Rytmický nákres,Výtvarný panel,"relocation: the rhythm rows are now on the S69 wall; the S17 sign keeps only the four shapes (variant layer S17_sign_shapes_only, SOKOLIKOVA_YARD.md 3.3)"
+look.S17.rhythm,"Pod nákresom stojí TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV. Sú to tri číslice nastavenia 3–2–6; kópia ide do zápisníka.","Výtvarný panel krúžku: kruh, trojuholník, štvorec a fialové V. Tri z tých tvarov poznám z babkinej dielne.",relocation: protected P03-words / P03-digits move to look.S69.rhythm (glossary_change); cross-era callback to the P01 reference shapes in S10; drop: TRI VLNY; drop: DVA ÚDERY; drop: ŠESŤ DIELIKOV; drop: 3–2–6; drop: 2; drop: 6
 look.S17.ambient 2,"Pri okraji dvora zostal len slabý, poškodený stromček. V základnej línii sa do 2020 nezachoval.","Pri okraji dvora je slabý, odretý stromček. V roku 2020 tu už nebude.",removed 'základná línia' (jargon); same fact: the tree is gone by 2020
 look.S17.ambient 2.variant1,"Lipa, ktorú sme ochránili v 1982, má mladú pevnú korunu. Viditeľný dôsledok jednej odklonenej trasy vozíka.","Lipa, ktorú sme v roku 1982 ochránili, má už pevnú mladú korunu. Stačilo odkloniť jeden vozík.",TEXT-04 rewrite
 look.S18.ambient 1,Celý svet na kúsku papiera a lepivý dôsledok.,Obaly od žuvačiek s obrázkami. Kedysi by som za ne vymenil čokoľvek.,TEXT-04 rewrite
@@ -105,27 +108,28 @@ exit.S19.to_S20.label,Palova opravovňa,Paliho opravovňa,decided rename (glossa
 room.S20.name,Palova opravovňa,Paliho opravovňa,decided rename (glossary)
 entry.S20.001,Opravovňa. V deväťdesiatom piatom sa pokazené veci ešte nevolali nový model.,"Opravovňa. Tu sa pokazené veci ešte opravujú, nie vyhadzujú.",editor: 'V roku 1995' in Adam's own present sounded bookish; 'ešte' carries the era; drop: 5
 look.S20.ambient 1,Obrazovka hlboká ako dnešná celá pracovná plocha.,Televízor hlboký ako celý môj pracovný stôl.,TEXT-04 rewrite
-look.S20.ambient 2,NEOPRAVUJEM VZŤAHY. Pali má jasne stanovený rozsah služieb.,"„NEOPRAVUJEM VZŤAHY.“ Aspoň je jasné, čo Pali neberie.",TEXT-04 rewrite
+look.S20.ambient 2,NEOPRAVUJEM VZŤAHY. Pali má jasne stanovený rozsah služieb.,„NEOPRAVUJEM VZŤAHY.“ A pod tým menším písmom: „Ani televízory po búrke.“,"v1 'Aspoň je jasné, čo Pali neberie' was a summary tag; the sign itself is now the joke; drop: Pali"
 look.S21.map,"Dúbravka a Karlova Ves na západe, Staré Mesto v strede, Ružinov na východe, Petržalka za Dunajom. Presuny hra skracuje.","Dúbravka a Karlova Ves na západe, Staré Mesto v strede, Ružinov na východe, Petržalka za Dunajom.",removed meta sentence 'Presuny hra skracuje'
-look.S21.ambient 1,Staré Mesto má svojho stáleho rezidenta.,"Holub sa tvári, že námestie patrí jemu. Asi má pravdu.",weak joke replaced
+look.S21.ambient 1,Staré Mesto má svojho stáleho rezidenta.,"Holub kráča po námestí, akoby ho mal v nájme. Chodci obchádzajú jeho, nie on ich.","tone pass C2_tone, Claude: old ironic tag ('Asi má pravdu') replaced"
 look.S21.ambient 2,"Navigácia, ktorá sa pri výpadku batérie nezľakne.","Papierová mapa mesta. Batériu nepotrebuje, len trpezlivosť pri skladaní.",TEXT-04 rewrite
 look.S22.ambient 1,K vyššej literatúre je tu doslovný prístup.,K vyššej literatúre sa tu ide doslova po rebríku.,TEXT-04 rewrite
 look.S22.ambient 2,Má na sebe najviac prachu.,Kniha o upratovaní. Má na sebe najviac prachu v celom obchode.,TEXT-04 rewrite
 entry.S23.001,Archív má vlastné tempo. Časostroj sem zrejme neprešiel kolaudáciou.,"Študovňa. Tu sa šepká, listuje a nikto sa neponáhľa. Ani ja nebudem.",removed deprecated 'časostroj'
 look.S23.ambient 1,Toto je lokálny administračný účet.,"Kým táto pečiatka nedopadne, nič tu neplatí.",TEXT-04 rewrite
-look.S23.ambient 2,Idú o dve minúty pozadu. Archivujú prítomnosť.,Meškajú dve minúty. V archíve je aj prítomnosť trochu stará.,TEXT-04 rewrite
+look.S23.ambient 2,Idú o dve minúty pozadu. Archivujú prítomnosť.,"Meškajú dve minúty. Nastavil by som ich, ale tu by som na to asi potreboval žiadosť s pečiatkou.",tone pass C2_tone: adapt GPT flag
 look.S23.ARCHIVAR,Karol má pre každú škatuľu miesto a pre každé miesto škatuľu.,Pán Merta má pre každú škatuľu miesto a pre každé miesto škatuľu.,Adam says 'pán Merta' (glossary: Karol only in hints)
-entry.S24.001,"Fotografie sa ešte musia vyvolávať. To vysvetľuje, prečo na nich každý vyzerá, že mal čas sa pripraviť.","Fotky sa tu ešte vyvolávajú. Preto sa na nich ľudia tvária, akoby sa na to dlho pripravovali.",TEXT-04 rewrite
-look.S24.ambient 1,Všetci pozerajú inam. Fotograf to nazval prirodzenosť.,Každý pozerá inam. Fotograf to asi nazval prirodzenosťou.,TEXT-04 rewrite
-look.S24.FOTO,Alena vidí chybu v expozícii skôr než ja chybu vo vlastnom odhade.,"Alena na prvý pohľad vidí, či je záber dobre exponovaný. Ja to tak viem o spájkach.",TEXT-04 rewrite
+entry.S24.001,"Fotografie sa ešte musia vyvolávať. To vysvetľuje, prečo na nich každý vyzerá, že mal čas sa pripraviť.","Fotky sa tu ešte vyvolávajú. Ľudia na nich vyzerajú, akoby sa na fotenie dlho pripravovali.",GPT accept: Agree: the causal 'preto' did not hold.
+look.S24.ambient 1,Všetci pozerajú inam. Fotograf to nazval prirodzenosť.,"Rodinný portrét. Každý pozerá inam, akoby im fotograf povedal, nech sa tvária prirodzene.",tone pass C2_tone: adapt GPT flag
+look.S24.ambient 2,Sociálna sieť v dvoch radoch so štipcami.,"Fotky sa sušia na šnúre ako bielizeň. Svadby, prváci a jeden pes, ktorý sa ako jediný usmieva.",tone pass C2_tone: adapt GPT flag
+look.S24.FOTO,Alena vidí chybu v expozícii skôr než ja chybu vo vlastnom odhade.,"Alena na prvý pohľad vidí, či je záber dobre exponovaný. Ja zas vidím, či je spoj dobre zaspájkovaný.","GPT accept: Clearer comparison, same self-irony."
 entry.S25.001,"Miletička. Miesto, kde nájdem konektor aj otázku, načo mi bude.","Miletička. Tu nájdem konektor aj predavača, ktorý sa spýta, načo mi je.",TEXT-04 rewrite
 look.S25.scale,Vo vodiacej drážke uviazla podložka. Dá sa uvoľniť klieštikmi bez rozoberania meracej časti.,V drážke uviazla podložka. Klieštikmi z brašne ju vytiahnem a váhu nemusím ani rozoberať.,TEXT-04 rewrite
 look.S25.ambient 1,"Jediná vec na trhu, ktorá sa nikdy netvári, že je značková.","Petržlen. Jediný tovar na trhu, ktorý sa netvári ako značkový.",TEXT-04 rewrite
 look.S25.ambient 2,"Pamätá viac slnka, než by som mu závidel.",Vyblednutý slnečník. Slnka už zažil viac než ja.,TEXT-04 rewrite
 look.S25.TRH,Fero predáva súčiastky podľa tvaru aj príbehu.,Fero ku každej súčiastke pridá aj historku. Zadarmo.,TEXT-04 rewrite
-entry.S26.001,"Tu sa opravujú aj šaty, aj cudzie odhady vlastnej veľkosti.","Krajčírstvo. Tu sa zachraňujú nohavice aj ľudia, ktorí si zle odhadli veľkosť.",TEXT-04 rewrite
+entry.S26.001,"Tu sa opravujú aj šaty, aj cudzie odhady vlastnej veľkosti.",Krajčírstvo. Tu sa zachraňujú nohavice aj svadobné šaty na poslednú chvíľu.,"v1 'ľudia, ktorí si zle odhadli veľkosť' leaned on bodies (WRITING_METHOD 1.5)"
 look.S26.ambient 2,Tu by sa dalo viesť veľmi dlhé vyšetrovanie párov.,Stovky gombíkov a ani dva rovnaké. Hľadať tu pár by trvalo do večera.,TEXT-04 rewrite
-look.S26.MILADA,Milada si meria skôr než sľúbi. Mal by som si z nej brať príklad.,"Milada najprv zmeria, až potom sľúbi. Mal by som si z nej brať príklad.",TEXT-04 rewrite
+look.S26.MILADA,Milada si meria skôr než sľúbi. Mal by som si z nej brať príklad.,"Milada najprv zmeria, až potom sľúbi. Krajčírsky meter nosí okolo krku ako lekár slúchadlá.",v1 'Mal by som si z nej brať príklad' was a summary tag; now an image of her craft
 look.S27.ambient 1,Kapela sa rozpadla skôr než lepidlo.,"Plagát drží na stene dlhšie, než vydržala kapela.",TEXT-04 rewrite
 look.S27.ambient 2,Prázdno má aj katalógové číslo.,"Prázdne puzdro, ale s katalógovým číslom. Tu sa eviduje aj to, čo chýba.",TEXT-04 rewrite
 hotspot.S27.JURO.name,Juraj Malík zvaný Juro Kazeta,Juro Kazeta,decided rename (glossary bold 'Juro Kazeta'; GLOSSARY §9 recommended label); drop: Juraj
@@ -133,33 +137,34 @@ look.S27.JURO,"Juro počuje šum a vie, ktorý rok ho vyrobil.","Juro začuje š
 entry.S28.001,"Podchod. Ak tu niekto zahrá tri tóny, koncert má automaticky ozvenu aj prídavok.",Podchod s dobrou ozvenou. Tu by aj tri tóny zneli ako koncert.,TEXT-04 rewrite
 look.S28.mural,"Panel patrí klubovni a môže sa naň kresliť kriedou. Juraj má skicu, ale nie bielu kriedu.","Povolený panel klubovne, kreslí sa naň kriedou. Juraj má skicu, chýba mu však biela krieda.",TEXT-04 rewrite
 look.S28.mural.variant1,Rozsvietené okná spájajú paneláky do susedstva. Vedľa je Jurajov podpis a malá kresba kriedy.,Rozsvietené okná spojili paneláky do jedného susedstva. V rohu je Jurajov podpis a nakreslený kúsok kriedy.,TEXT-04 rewrite
-look.S28.ambient 1,Každá má trochu inú bielu. Normalizátor by tu skolaboval.,Každá kachlička má trochu inú bielu. A spolu aj tak tvoria stenu.,removed 'normalizátor' (Adam learns about it only in 2035)
-look.S28.ambient 2,Na dopravu naprieč epochami má príliš malé kolieska.,Skateboard. Na cestovanie v čase má priveľmi malé kolieska.,TEXT-04 rewrite
+look.S28.ambient 1,Každá má trochu inú bielu. Normalizátor by tu skolaboval.,Každá kachlička má trochu inú bielu. Niektoré zrejme vymieňali po jednej.,GPT adapt: Right: the second sentence was the old ironic tag; own fix gives a concrete reason instead of dropping the remark.
+look.S28.ambient 2,Na dopravu naprieč epochami má príliš malé kolieska.,Skateboard opretý o stenu. Podľa obitej dosky to s ním tu niekto skúšal aj po schodoch.,tone pass C2_tone: adapt GPT flag
+look.S28.JURAJ,"Juraj kreslí paneláky tak, že na nich vidno domovy.","Juraj kreslí paneláky tak, že v nich vidno domovy.",GPT adapt: Agree 'na nich' was off; impersonal 'vidno' kept.
 exit.S28.to_S30.label,Nábrežný merací prístrešok,Merací stánok na Starom moste,exit label equals the room name (glossary 3.3); drop: nábrežný
 entry.S29.001,"Garáž číslo sedemnásť. Auto chýba, ale mohol by odtiaľto odštartovať satelit.",Garáž číslo sedemnásť. Namiesto auta je tu vysielačka a viac káblov ako v mojej dielni.,TEXT-04 rewrite
 look.S29.ambient 1,Dezider sa dovolá ďalej než môj mobil za plnú cenu.,S touto anténou sa Dezider dovolá ďalej ako ja z mobilu.,TEXT-04 rewrite
 look.S29.ambient 2,Operadlo drží rádiový kábel. Technická a bytová tvorivosť v rovnováhe.,Na operadle visí kábel. Stolička tu slúži aj ako vešiak.,TEXT-04 rewrite
-look.S29.DEZI,Dezider má pri každom kábli štítok. Mám chuť ho požiadať aj o pomoc s vlastným životom.,Dezider má na každom kábli štítok. Keby sa tak dal označiť aj môj dnešný deň.,TEXT-04 rewrite
+look.S29.DEZI,Dezider má pri každom kábli štítok. Mám chuť ho požiadať aj o pomoc s vlastným životom.,"Dezider má štítok na každom kábli. Aj na tom, čo nikam nevedie: NIKAM.",v1 'Keby sa tak dal označiť aj môj dnešný deň' was a summary tag; the label itself is the joke
 room.S30.name,Nábrežný merací prístrešok,Merací stánok na Starom moste,"owner 2026-10-06 (DECISIONS ""Owner answers"", afternoon): S30 is painted on the old Starý most (1995); room name chosen by the owner; drop: nábrežný, prístrešok"
 entry.S30.001,Dunaj tečie správnym smerom. Som tu teda najpodozrivejší dopravný prostriedok.,"Dunaj tečie, ako má. Z nás dvoch som tu ja ten, kto cestuje čudne.",TEXT-04 rewrite
 look.S30.coil,Tento kruhový držiak čaká na Deziderovu slučku. Je mechanicky kľúčovaný; opačne ju nevložím.,"Kruhový držiak na Deziderovu meraciu cievku. Má výrez, takže opačne ju nevložím.",slučka -> meracia cievka (deprecated)
 look.S30.metro,Držiak pre mechanický metronóm. Rytmus má byť nezávislý od elektrickej siete.,Stolík so značkou pre metronóm. Rytmus tu nesmie závisieť od elektriny.,TEXT-04 rewrite
-look.S30.dial,Tri kolieska od nuly po deväť. Potrebujem mapu zapojenia aj rytmický nákres zo školského dvora.,"Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a číslice z nákresu na školskom dvore.",added 'pôvodnú kazetu' (B22 requires TAPE)
-look.S30.ambient 1,Cestuje po vode. Zdravý konzervatívny prístup.,Loď sa plaví po vode a v správnom roku. Závidím jej.,TEXT-04 rewrite
+look.S30.dial,Tri kolieska od nuly po deväť. Potrebujem mapu zapojenia aj rytmický nákres zo školského dvora.,"Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a číslice z nákresu v Sokolíkovskom dvore.",relocation; protected P03-wrong place rule moves to 'Sokolíkovsk* dvor*' (glossary_change); drop: školský dvor
+look.S30.ambient 1,Cestuje po vode. Zdravý konzervatívny prístup.,Nákladná loď ide proti prúdu. Kapitán si na palube suší bielizeň a nikam sa neponáhľa.,"tone pass C2_tone, Claude: old ironic tag ('Závidím jej') replaced by a situation"
 entry.S31.001,"Rok šesťdesiat. Telefón sa tvári rovnako ako v deväťdesiatom piatom, len ja menej pokojne.","Ivanka, rok 1962. Telefón je tu rovnako zbytočný ako v roku 1995. Ja som o niečo nervóznejší.","TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 look.S31.ambient 1,Prenosný kufor so zárukou na svaly.,"Drevený vozík na batožinu. Škrípe, ale prežije každý môj kufor na kolieskach.",TEXT-04 rewrite
 look.S31.ambient 2,Žiadne pripojenie. Napriek tomu ma vedia dostať do problému.,"Mechanické hodiny. Bez siete a bez batérie, a predsa idú presne.",TEXT-04 rewrite
 look.S31.BOZO,Božo pozná každý príchod okrem môjho.,"Božo pozná každý vlak, čo tu zastaví. Môj príchod v cestovnom poriadku nemá.",TEXT-04 rewrite
 entry.S32.001,"Tu sa každý každého opýta, čí je. V mojom prípade je to vedecký problém.","Tu sa každý každého pýta, čí je. U mňa by to bola dlhá odpoveď.",TEXT-04 rewrite
-look.S32.ambient 1,Bezpečne prikrytá. Túto záhadu rád nechám zavretú.,Studňa je pevne prikrytá. Aspoň do nej nikto nespadne.,editor: 'Tu sa nikto nenahne cez okraj' was unclear
+look.S32.ambient 1,Bezpečne prikrytá. Túto záhadu rád nechám zavretú.,Studňa s pevným dreveným krytom a vedrom na reťazi. Na návsi zrejme najdôležitejšie miesto na klebety.,v2: 'Aspoň do nej nikto nespadne' was the old ironic tag; now a village observation that fits Berta's square
 look.S32.ambient 2,Veľmi úsporný stroj času: za hodinu o kus ďalej.,"Bicykel s blatníkmi a zvončekom. Tiež cestuje v čase, ale iba dopredu a pomaly.",TEXT-04 rewrite
 look.S32.BERTA,Berta má práve prestávku medzi dvoma veľmi presnými pozorovaniami.,Pani Kovárová si ma premeriava od topánok nahor. Nič jej neujde.,TEXT-04 rewrite
 entry.S33.001,Doporučený list. Jediný cestovateľ v čase s doručenkou.,"Malá pošta s prepážkou. Tu sa každý papier odváži, opečiatkuje a zapíše.",TEXT-04 rewrite
-hotspot.S33.carbon.name,Prepisový papier,Uhlový papier,rename of hotspot: 'prepisový papier' is deprecated (glossary §8); the item it gives is already 'Uhlový papier'; drop: prepisový papier
-look.S33.carbon,Voľný uhlový papier na vyhotovenie druhej kópie tlačiva. Pošta ho poskytuje pri prepážke.,Uhlový papier pre zákazníkov. S ním urobím druhé vyhotovenie listu.,TEXT-04 rewrite
+hotspot.S33.carbon.name,Prepisový papier,Uhľový papier,C3 tone pass: term uhľový papier
+look.S33.carbon,Voľný uhlový papier na vyhotovenie druhej kópie tlačiva. Pošta ho poskytuje pri prepážke.,Uhľový papier pre zákazníkov. S ním urobím druhé vyhotovenie listu.,"C3 tone pass (GPT grammar, accept): Right: 'uhľový papier' (see action.I10.z07)."
 look.S33.ambient 1,Malé obrázky s veľkým názorom na cenu doručenia.,"Známky v hárkoch. Malé obrázky, od ktorých závisí, či list odíde.",TEXT-04 rewrite
-look.S33.ambient 2,Rok 1960. Žiadne automatické preklopenie na správny rok.,Nástenný kalendár: jún 1962. Môj telefón by s ním nesúhlasil.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
-entry.S34.001,"Divadlo pred skúškou. Každý tu vie, že niečo nie je skutočné. Konečne primerané prostredie.",Sála pred skúškou. Tu sa každý hrá na niekoho iného. Aspoň nebudem jediný.,TEXT-04 rewrite
+look.S33.ambient 2,Rok 1960. Žiadne automatické preklopenie na správny rok.,"Nástenný kalendár: jún 1962. Jediný v Ivanke mi bez otázok povie, kedy som.",C3 tone pass: the phone joke was the third in Ivanka (S31 entry); now a time-travel joke without the phone; 1962 kept
+entry.S34.001,"Divadlo pred skúškou. Každý tu vie, že niečo nie je skutočné. Konečne primerané prostredie.",Sála pred skúškou. Tu sa každý hrá na niekoho iného. Ja na obyčajného návštevníka.,C3 tone pass: 'Aspoň nebudem jediný' was the owner's disliked 'aspoň' tag; now a callback to BOZO.ambient 1 ('budem sa tváriť ako obyčajný návštevník')
 look.S34.clamp,"Ručná stolová svorka má povolenú skrutku. Kulisa je položená na zemi, nehrozí pád na nikoho.","Svorka kulisy má povolenú skrutku, preto sa kulisa pri každom dotyku kýve. Náradie na to mám v brašni.","PT-S19: the painting shows the flat standing on its stand, clamped to the table; 'leží na zemi' contradicted it. The label 'Dotiahnuť svorku kulisy' and I03.001 'Kulisa drží' already fit"
 look.S34.ambient 2,Rudo v ňom hrá richtára. Klobúk hrá bez pripomienok.,"Richtársky klobúk. Rudo v ňom hrá richtára, klobúk hrá seba.",TEXT-04 rewrite
 look.S34.LIDA,"Lída rieši javisko aj všetko, čo je pred ním a za ním.","Lída má na starosti kostýmy, kulisy aj hercov. Všetko naraz a pokojne.",TEXT-04 rewrite
@@ -168,21 +173,23 @@ look.S35.ambient 1,Potravinový sklad bez nutnosti prijať cookies.,Vrece obilia
 look.S35.ambient 2,"Všetky aktualizácie robí ten, kto tlačí.","Ručný vozík. Jediný motor je ten, kto ho tlačí.",TEXT-04 rewrite
 look.S35.SKLAD,"Štefan má evidenciu aj na kúsky, ktoré by som nazval odpad.","Štefan eviduje aj kúsky, ktoré by som ja vyhodil.",TEXT-04 rewrite
 entry.S36.001,"Hodiny ukazujú štyri časy. Oto tvrdí, že všetky sú pracovné.","Otova dielňa. Prikrytý sústruh, vôňa oleja a tikot budíkov z každého rohu.",TEXT-04 rewrite
-look.S36.ambient 1,Nástroj s dlhou podporou a nulovou batériou.,Pilník bez batérie a bez aktualizácií. Vydrží dlhšie ako ja.,TEXT-04 rewrite
+look.S36.ambient 1,Nástroj s dlhou podporou a nulovou batériou.,"Pilník s rúčkou ohladenou do lesku. Oto ho drží presne tam, kde ja držím ten svoj.",v2: the 'bez batérie' gag was already used by the S31 clock; now a repairman's kinship with Oto
 look.S36.ambient 2,"Oto tvrdí, že čas je relatívny. Každý budík má vlastný názor.","Každý budík ukazuje iný čas. Oto vraví, že presne o to ide.",TEXT-04 rewrite
 look.S36.OTO,"Oto si cudzie zariadenie najprv prezrie. Presne viem, prečo ho babka mala rada.","Oto si každú vec najprv prezrie a až potom niečo povie. Chápem, prečo s ním babka rada pracovala.",TEXT-04 rewrite
+entry.S37.001,Park vyzerá pokojne. Na rozdiel od môjho rodokmeňa.,"Park pri kaštieli. Na lavičke niekto kreslí, na chodníku niekto skáče škôlku. Tu sa nikto neponáhľa.",v2: introduces Vera and Zuzana as the player sees them; the old line joked about the family tree without a picture
 look.S37.bird,Holub s krúžkom sa usadil pri prázdnej miske. Netreba ho naháňať; stačí jedlo na bezpečnom mieste.,"Holub s krúžkom na nohe sedí pri prázdnej miske. Naháňať ho nebudem, skôr by mu pomohlo krmivo.",TEXT-04 rewrite
-look.S37.ambient 1,V parku je dovolené sedieť bez produktivity.,Lavička v tieni. Sadnúť si a nič nerobiť je tu ešte normálne.,TEXT-04 rewrite
+look.S37.ambient 1,V parku je dovolené sedieť bez produktivity.,Lavička v tieni. Sadnúť si a nič nerobiť? Ja by som do minúty kontroloval skrutky.,"C3 tone pass (GPT joke, adapt): Right: generic nostalgia; adapted to Adam the repairman in a shorter, spoken form."
 look.S37.ambient 2,Reálna dominanta Ivanky; náš merací príbeh je vymyslený.,Kaštieľ nad parkom. Stál tu dávno pred ZVONom a bude stáť aj po ňom.,TEXT-04 rewrite
+look.S37.VERA60,"Vera kreslí veci tak, aby ich niekto ďalší vedel opraviť. Momentálne môj obľúbený druh umenia.","Vera kreslí veci tak, aby ich niekto ďalší vedel opraviť. Konečne nákresy, na ktoré nebudem nadávať.",C3 tone pass: 'Momentálne môj obľúbený druh umenia' was a summary tag; now the repairman's view
 entry.S38.001,Časový výskum vyzerá zo začiatku dosť ako záhradkárčenie.,"Búdka, pumpa a vedro. Výskum času sa začína ako záhradkárčenie.",TEXT-04 rewrite
 look.S38.pump,Kožená manžeta prepúšťa. Zostava nie je pripojená k verejnému vodovodu ani k elektrickej sieti.,Kožená manžeta na pumpe prepúšťa a voda neobieha. Treba novú manžetu.,TEXT-04 rewrite
 look.S38.door,Oto sprístupní meraciu miestnosť po obnovení obehu vody v skúšobnom modeli.,"Pevné dvere s novým zámkom. Za nimi je meracia miestnosť, kľúč má Oto.",TEXT-04 rewrite
-look.S38.ambient 1,Kalibrované podľa značky ceruzkou. Výskum sa niekde začať musí.,Vedro so značkou ceruzkou. Aj kalibrácia sa musí niekde začať.,editor: reflexive 'sa začať' missing
-look.S38.ambient 2,Rastie vlastným tempom. Zatiaľ ju nikto nesynchronizoval.,Tráva rastie vlastným tempom. Aspoň niečo tu nikto nemeria.,TEXT-04 rewrite
+look.S38.ambient 1,Kalibrované podľa značky ceruzkou. Výskum sa niekde začať musí.,Na vedre je ceruzkou čiarka a pri nej „potiaľto“. Najlacnejší merací prístroj v Ivanke.,"C3 tone pass (GPT unnatural, adapt): Right: compressed phrase and a closing tag; the adapted look shows the mark and lets Adam react to it as a measuring device.; C3 tone verify (GPT grammar, accept): Right: 'potiaľto' is the standard form."
+look.S38.ambient 2,Rastie vlastným tempom. Zatiaľ ju nikto nesynchronizoval.,Tráva pri búdke je vyšliapaná do cestičky. Niekto sem chodí každý deň.,v2: 'Aspoň niečo tu nikto nemeria' was the old ironic tag; the path hints at Mira's daily measuring; GPT accept: Agreed: 'a určite načas' was a tacked-on tag; the observation alone hints at Mira's daily visits.
 exit.S38.to_S39.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",TEXT-04 rewrite
 look.S39.plate,"PÔVOD, HLAS, SÚHLAS, NÁVRAT. Pod tým: rôzne údaje neznamenajú neplatné údaje. Chýba mi prenosný čitateľný odtlačok.","PÔVOD, HLAS, SÚHLAS, NÁVRAT. Pod tým: „Rôzne údaje neznamenajú neplatné údaje.“ Platňa zostane tu, potrebujem jej odtlačok.",TEXT-04 rewrite
 look.S39.plate.variant1,Platňa ostala nepoškodená na svojom mieste. Jej pravidlo nesiem ďalej v čitateľnom odtlačku.,"Platňa zostala na svojom mieste, bez škrabanca. Jej pravidlo si nesiem v odtlačku.",TEXT-04 rewrite
-look.S39.ambient 1,Žiarovka hreje viac než celé moje moderné rádio.,"Žiarovka hreje viac, než svieti. Babka by povedala: zlá účinnosť.",TEXT-04 rewrite
+look.S39.ambient 1,Žiarovka hreje viac než celé moje moderné rádio.,"Žiarovka hreje viac, než svieti. Babka by povedala: „Zlá účinnosť.“","C3 tone pass (GPT grammar, accept): Right: quoted speech needs quotes and a capital."
 look.S39.ambient 2,"Mira preškrtáva, ale nič nevytrháva. Dôležité rozhodnutie.","Mira v zápisníku škrtá, ale žiadnu stranu nevytrhla. Už teraz si všetko necháva.",TEXT-04 rewrite
 look.S39.MIRA60,"Je o pätnásť rokov mladšia než ja a stále vyzerá, že ma o chvíľu pošle umyť si ruky.","Je o trinásť rokov mladšia než ja a stále vyzerá, že ma o chvíľu pošle umyť si ruky.",Ivanka shown as 1962: Mira 22 vs Adam 35; drop: 15
 exit.S39.to_S38.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",TEXT-04 rewrite
@@ -190,41 +197,47 @@ look.S40.paper,Hárok vhodný na reliéfny odtlačok. Nesmie sa dotknúť horúc
 look.S40.box,Mira do nej uloží overenú kópiu aj poštovú registráciu. Originál platne zostane na zariadení.,Kovová archívna schránka. Mira do nej zamkne kópiu s registračným listom. Platňa zostane na prístroji.,TEXT-04 rewrite
 look.S40.box.variant1,Registrovaná kópia je bezpečne uložená. Mira ju neskôr presunie do svojho školského fondu.,Kópia aj registračný list sú zamknuté v schránke. Raz ich Mira presunie do svojho fondu.,TEXT-04 rewrite
 look.S40.script,"Na obale je RUDO a ŽIADEN STRACH, MILÁČIK. Text nemá nič spoločné s fyzikou, čo je príjemná zmena.","Na obale stojí RUDO a ŽIADEN STRACH, MILÁČIK. Konečne papier bez jedinej rovnice.",TEXT-04 rewrite
-look.S40.ambient 2,Nesie strechu a nič k tomu nepíše.,Trám nesie strechu a nesťažuje sa.,TEXT-04 rewrite
-entry.S41.001,Budúcnosť. Jasná. Na cestovanie sa tu stále používa aj lano. Je dobré mať zálohu.,Jasná o pätnásť rokov neskôr. Hore sa stále jazdí po lane. Upokojujúce.,TEXT-04 rewrite
-look.S41.ambient 1,Budúcnosť má stále rovnaký problém s pohodlím.,Lavičky sú aj v roku 2035 tvrdé. Niektoré veci pokrok nerieši.,TEXT-04 rewrite
-look.S41.ambient 2,"Biela Púť, Priehyba, Chopok. Tri fyzické miesta v jednom roku. To znie oddychovo.","Biela Púť, Priehyba, Chopok. Tri miesta a všetky v tom istom roku. Oddych.",TEXT-04 rewrite
-look.S41.ROBOT,"Očko má zásielku aj zásadu, že odhad nie je adresa.","Doručovací robot Očko. Balík má, len nevie, komu patrí.",editor: name restored
+look.S40.ambient 1,Prázdny. Aj to je v tejto rodine vzácny jav.,"Prázdny kufor. Na povale, kde Mira odkladá všetko? Pre istotu skontrolujem aj podšívku.","C3 tone pass (GPT joke, adapt): Right: 'vzácny jav' is a tacked-on tag and 'v tejto rodine' did not fit an archive attic; the adapted look is Adam's concrete reaction (Mira keeps everything)."
+look.S40.ambient 2,Nesie strechu a nič k tomu nepíše.,Hrubý trám a na ňom ceruzkou čiarky s dátumami. Aj povala tu má svoj zápisník.,v2: 'nesie strechu a nesťažuje sa' was a summary joke; now an object that echoes Mira's records
+entry.S41.001,Budúcnosť. Jasná. Na cestovanie sa tu stále používa aj lano. Je dobré mať zálohu.,"Jasná o pätnásť rokov neskôr, v plnej zime. Dobre, že mám ešte kabát z decembra 1982.","winter (owner: Jasná 2035 in winter; Adam wears his 1982 coat outdoors, DECISIONS); the 1982 visit always comes before 2035 on the main route; replaces the tag 'Upokojujúce.'"
+look.S41.ambient 1,Budúcnosť má stále rovnaký problém s pohodlím.,"Dve lavičky pod snehom. Sadnúť si na ne môže len ten, kto má nepremokavé nohavice.",the painting shows two snowed benches; replaces the old tag 'Niektoré veci pokrok nerieši.'; drop: 2035
+look.S41.ambient 2,"Biela Púť, Priehyba, Chopok. Tri fyzické miesta v jednom roku. To znie oddychovo.","Drevené šípky: Priehyba, Chopok, Biela Púť. Na Bielu Púť ma posiela šípka, pod ktorou práve stojím.",literal joke from the object (the signpost points to where Adam stands) instead of the tag 'Oddych.'; drop: 3
+look.S41.ROBOT,"Očko má zásielku aj zásadu, že odhad nie je adresa.","Doručovací robot Očko, kolesá zaborené v snehu. Balík má, len nevie, komu patrí.","winter (Očko's snow variant in the S41 painting); keeps the Q8 set-up (balík, nevie komu patrí)"
 look.S41.gate,Bežný nástup na úsek Biela Púť–Priehyba. Lístok vydá Sára ako riadne zabezpečenú dopravu výstavy.,Turniket kabínkovej lanovky na Priehybu. Lístok mi vybaví Sára v klientskom centre.,TEXT-04 rewrite
 exit.S41.to_S67.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: 'riadny spiatočný lístok' sounded official; now says where Sára is
-entry.S42.001,"Grand. Keď už riešim veľký problém, môžem sa pri tom aspoň tváriť ubytovane.","Hotel Grand Jasná. Ubytovaný tu nie som, ale problém mám aspoň primerane veľký.",TEXT-04 rewrite
-look.S42.ambient 2,Pohyblivé úložisko vecí bez potreby hesla.,Úložisko na kolieskach. Heslo nepýta.,TEXT-04 rewrite
+entry.S42.001,"Grand. Keď už riešim veľký problém, môžem sa pri tom aspoň tváriť ubytovane.","Hotel Grand Jasná, na streche pol metra snehu. Pri výstavnom stojane niekto čaká, akoby práve na mňa.","one concrete observation (winter roof, Nina at the exhibition stand) and a remark that pays off at once (she knows his name in F01); the old 'problém primerane veľký' joke made no sense; C4_tone: accept (grammar), see review_gpt/C4_tone.decisions.csv"
+hotspot.S42.ambient 1.name,Tieň stromu,Zasnežený smrek,winter: the S42 painting shows a snowed spruce in a planter (the hotspot covers it); 'Tieň stromu' was a summer prop (shade); same kind of rename as 'Hladina plesa' -> 'Zamrznuté pleso' (jasna_winter.csv)
+look.S42.ambient 1,Dobrá technológia. Funguje aj bez registrácie.,"Smrek pred hotelom, viac snehu ako ihličia. Keby som doň štuchol, sneh by zasypal aj recepciu.",matches the renamed prop; replaces the image without meaning 'Dobrá technológia. Funguje aj bez registrácie.'
+look.S42.ambient 2,Pohyblivé úložisko vecí bez potreby hesla.,"Mosadzný vozík na batožinu. Dva kufre a ani jedny lyže, títo sem prišli za výstavou.",a repairman's deduction from what he sees (the painted cart has two suitcases); replaces 'Úložisko na kolieskach. Heslo nepýta.'
 look.S42.NINA,"Nina vyzerá, že už tri hodiny vysvetľuje samozrejmú vec niekomu s vyšším rozpočtom.","Nina vyzerá, akoby už tri hodiny vysvetľovala samozrejmú vec niekomu s väčším rozpočtom.","editor: 'vyzerá, že vysvetľuje' -> 'vyzerá, akoby vysvetľovala'"
+entry.S43.001,"Opravársky stôl v hoteli. Konečne miesto, kde je na dovolenke aj pokazený magnetofón.",Opravársky stôl v hotelovom lobby. Nabudúce si na dovolenku zbalím aj pokazený magnetofón.,"C4_tone: adapt (joke), see review_gpt/C4_tone.decisions.csv"
 look.S43.ambient 1,Vie pripraviť kávu aj vypísať dlhý opis svojich pocitov.,"Kávovar s displejom. Kým urobí kávu, vypíše mi, ako sa cíti.",TEXT-04 rewrite
 look.S43.ambient 2,Tamara vedie systém: bude sa to hodiť a hľadala som to včera.,Tamarin systém má dve police: „raz sa to zíde“ a „včera som to hľadala“.,TEXT-04 rewrite
-entry.S44.001,Salón prenajatý archívu. Niektoré spomienky si konečne doprajú hotel.,Hotelový salón plný archívnych krabíc. Aj spomienky si raz zaslúžia hotel.,TEXT-04 rewrite
+entry.S44.001,Salón prenajatý archívu. Niektoré spomienky si konečne doprajú hotel.,"Hotelový salón plný archívnych krabíc. Za oknom sa lyžuje, tu sa potichu listuje.",winter window of S44 (skiers on the slope); replaces the tag 'Aj spomienky si raz zaslúžia hotel.'
 look.S44.ambient 1,Žiadna sa mi zatiaľ nepokúsila zmeniť odsek sama.,Papierové knihy. Žiadna zatiaľ sama od seba neprepísala ani riadok.,TEXT-04 rewrite
+look.S44.ambient 2,Pasívna pamäťová technológia. Výborná životnosť.,Červená záložka v otvorenej knihe na pulte. Niekto tu prestal čítať a kniha naňho počká.,the prop is the bookmark in the book on the lectern; replaces 'Pasívna pamäťová technológia. Výborná životnosť.' (tag)
 look.S44.JANA35,"Jana prišla zo školy na výstavu, tentoraz po desaťročiach a úplne dobrovoľne.","Jana. Kedysi stála so schémou na školskej výstavke, dnes prišla na výstavu sama a dobrovoľne.",editor: 'prišla zo školy na výstavu' read as if she came from school today
-entry.S45.001,"Pleso. Konečne niečo, čo vie odrážať bez toho, aby upravovalo originál.",Vrbické pleso. Odráža všetko a nič neupravuje. Atlas by sa mohol učiť.,TEXT-04 rewrite
+entry.S45.001,"Pleso. Konečne niečo, čo vie odrážať bez toho, aby upravovalo originál.",Vrbické pleso pod ľadom. Uprostred je zametené a ľad odráža les bez jedinej úpravy.,"winter (frozen lake, swept black ice in the middle, DECISIONS); drops the summary tag 'Atlas by sa mohol učiť.'; drop: Atlas"
 look.S45.sensor,Vlastný pasívny senzor výstavy Atlas na verejnom chodníku. Na meranie netreba vstúpiť do plesa ani meniť jeho okolie.,"Stojan výstavy Atlas, ktorý iba meria. Chronometrom ho načítam priamo z chodníka.",TEXT-04 rewrite
 look.S45.bench,Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Tamara sem kedysi chodila s putovnou dielňou; tento rok je jej stôl v hotelovom lobby.,"Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Tu mávala Tamara putovnú dielňu, dnes má stôl v lobby hotela.",editor: missing verb
 hotspot.S45.ambient 1.name,Hladina plesa,Zamrznuté pleso,"Jasná 2035 is winter (owner 2026-10-06, docs/DECISIONS.md): Vrbické pleso is frozen (swept black ice that still mirrors the forest); the look line about the reflection stays; later 2035 writing pass (C4) may polish"
-look.S45.ambient 1,Odraz nie je totožný s krajinou. Napriek tomu má právo tu byť.,Odraz nie je presne ako krajina. Aj tak sem patrí.,TEXT-04 rewrite
-look.S45.ambient 2,Značka aspoň nesľubuje skratku cez tri časové obdobia.,Turistická značka. Sľubuje jednu trasu a jeden čas. To je mi sympatické.,TEXT-04 rewrite
+look.S45.ambient 1,Odraz nie je totožný s krajinou. Napriek tomu má právo tu byť.,"Zametený ľad odráža les aj kopec za ním. Trochu nakrivo, ako horizont na mojej fotke s babkou.","fits the renamed 'Zamrznuté pleso' (jasna_winter.csv); keeps the thought of the original look; C4_tone_verify: adapt (unnatural), see review_gpt/C4_tone_verify.decisions.csv"
+look.S45.ambient 2,Značka aspoň nesľubuje skratku cez tri časové obdobia.,Turistická smerovka s časom chôdze. V zime z nej platí iba smer.,winter joke from the object (summer walking times do not hold in snow); replaces 'To je mi sympatické.'
 look.S46.ambient 1,Najväčšie písmo má zákaz kávy. Zásahy do času sa zmestili nižšie.,Návštevnícky poriadok. Najväčším písmom: zákaz kávy. O cestovaní v čase ani slovo.,TEXT-04 rewrite
-look.S46.ambient 2,Rastlina našťastie odmieta štandardizovaný tvar.,Fikus rastie každým listom inam. Nikto ho nezarovnal.,TEXT-04 rewrite
+look.S46.ambient 2,Rastlina našťastie odmieta štandardizovaný tvar.,"Fikus má každý list otočený inam. Najradšej by som ich zarovnal, ale nechám ho tak.",GPT adapt (C4_v2.decisions.csv): Agree with the wording problem; own fix keeps the quiet theme of the chapter (not straightening what is different) in Adam's repairman urge. | final text after the verify pass (C4_v2_verify.decisions.csv)
 look.S46.SARA,"Sára vie, že pri poruche databázy je pero významná technológia.","Sára má pri počítači aj pero. Keď databáza zlyhá, pero nie.",TEXT-04 rewrite
-entry.S47.001,Rotunda. Aj dejiny tu majú výhľad. Teraz im ešte vrátiť obsah.,"Rotunda. Výstava Atlasu tu má krásny výhľad. Škoda, že z nej miznú ľudia.",TEXT-04 rewrite
+entry.S47.001,Rotunda. Aj dejiny tu majú výhľad. Teraz im ešte vrátiť obsah.,"Rotunda a v nej výstava Atlasu. Výhľad je krásny, len z fotiek na stenách miznú ľudia.",GPT adapt (C4_v2.decisions.csv): Agree 'Škoda' was a detached tag about a serious fact; own fix is a concrete observation (the empty frames in S47) with no wink.
 look.S47.filter,"Pred: hlas, pauza, smiech, dve odlišné mená. Po: jeden stručný údaj. Zariadenie označilo rozdiel za chybu, nie za súčasť života.","Pravidlo panelu: ROZDIEL = ZAHODIŤ. Pred úpravou hlas, pauza, smiech a dve mená, po nej jeden suchý údaj.",added the painted rule ROZDIEL = ZAHODIŤ (GLOSSARY 6.2 lists it for this key)
 look.S47.filter.variant1,Panel teraz uchováva pôvodnú stopu aj rozdiely; žiadne automatické zhadzovanie nezhody.,Panel teraz ukazuje pôvodnú stopu aj všetky rozdiely. Nič sa automaticky nezahadzuje.,TEXT-04 rewrite
 exit.S47.to_S48.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Do pavilónu ma bez servisného preukazu od Sáry nepustia.,replaced design jargon 'servisný krok / v denníku'
 exit.S47.to_S68.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vystúpim, až keď prídeme hore.",TEXT-04 rewrite
-look.S48.terminal,"Lokálna čítačka, porovnanie surového a upraveného záznamu, export servisnej opravy. Nina povoľuje diagnostiku, nie mazanie.","Servisný terminál. Sem pripojím čítačku a porovnám pôvodný záznam s upraveným. Nina povolila diagnostiku, nie mazanie.",editor: shortened
+look.S48.terminal,"Lokálna čítačka, porovnanie surového a upraveného záznamu, export servisnej opravy. Nina povoľuje diagnostiku, nie mazanie.","Sem pripojím čítačku a porovnám pôvodný a upravený záznam. Nina povolila diagnostiku, nie mazanie.","GPT tone pass C4_tone: adapt (length); the room/hotspot name 'Servisný terminál' is shown on hover, so the look starts with the action"
 look.S48.ambient 1,Aj v budúcnosti sú tri navyše a jeden krátky.,Káble. Aj v roku 2035 sú tri navyše a jeden prikrátky.,TEXT-04 rewrite
 look.S48.ambient 2,NEVYPÍNAŤ NASLEPO. NINA. Papier stále drží infraštruktúru.,Lístok s nápisom NEVYPÍNAŤ NASLEPO. NINA. Najdôležitejší pokyn v miestnosti je stále napísaný rukou.,editor: 'papier' twice in one line
 exit.S48.to_S47.locked,Najprv dokončím dohodnutý servisný krok. Je zapísaný v denníku.,Do pavilónu ma bez servisného preukazu od Sáry nepustia.,TEXT-04 rewrite
 exit.S48.to_S49.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",TEXT-04 rewrite
 exit.S48.to_S50.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",TEXT-04 rewrite
+entry.S49.001,Sme na Chopku. Minulosť je pod nami len obrazne. Technicky ju mám stále v brašni.,"Sme vysoko na Chopku. Veci zo všetkých rokov, ktoré som dnes navštívil, nosím v brašni.",GPT adapt (C4_v2.decisions.csv): Agree the 'obrazne' set-up was strained; own fix states the image and keeps the bag payoff. | final text after the verify pass (C4_v2_verify.decisions.csv)
 look.S49.port_origin,Sem patrí overený odtlačok z roku 1960.,Port Pôvod. Sem patrí overený odtlačok z roku 1962.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 look.S49.port_voice,"Sem patrí pôvodná školská kazeta z roku 1995, nie jej zhrnutie.","Port Hlas. Sem patrí pôvodná školská kazeta z roku 1995, nie jej zhrnutie.",TEXT-04 rewrite
 look.S49.port_consent,Sem patrí obojstranne potvrdené odovzdanie z roku 2020.,Port Súhlas. Sem patrí potvrdené odovzdanie z roku 2020.,TEXT-04 rewrite
@@ -232,10 +245,12 @@ look.S49.port_return,"Sem patrí servisný postup z roku 2035, ktorý vie obnovi
 look.S49.confirm,Štyri vstupy a veľké tlačidlo. Bez fyzického režimu MONITOR a súhlasu obsluhy obnova nezačne.,Panel obnovy: štyri porty a veľké tlačidlo. Bez režimu MONITOR a bez Viktorovho súhlasu sa obnova nespustí.,"editor: 'súhlas obsluhy' is Viktor's consent (F17.002), said plainly"
 look.S49.confirm.variant1,Obnova skončila. Retroaktívny zápis je vypnutý a zostane vypnutý.,Obnova skončila. Spätný zápis je vypnutý a už vypnutý zostane.,TEXT-04 rewrite
 look.S49.ambient 2,Alarm bliká pomaly. Nikde nebeží skrytý odpočet.,Núdzová lampa bliká pomaly a pokojne. Nikde nebeží žiadny odpočet.,editor: matches the hotspot name Núdzová lampa
-look.S49.VIKTOR,"Viktor nespal a veľmi chce, aby to malo zmysel. Nebezpečná kombinácia pri veľkom vypínači.","Viktor nespal a veľmi chce, aby to celé malo zmysel. Taký človek by nemal stáť pri veľkom vypínači.",editor: clearer than 'Pri veľkom vypínači je to nebezpečné'
+look.S49.VIKTOR,"Viktor nespal a veľmi chce, aby to malo zmysel. Nebezpečná kombinácia pri veľkom vypínači.","Viktor nespal a veľmi chce, aby to celé malo zmysel. Pri veľkom vypínači by nemal stáť sám.","GPT adapt (C4_v2.decisions.csv): Agree it made Viktor a butt (he is not funny by design); own fix is practical concern, shorter than GPT's."
 exit.S49.to_S48.locked,Komora sa otvorí po overení režimu MONITOR v servisnom termináli.,"Komora je zamknutá. Otvorí sa, až keď terminál potvrdí režim MONITOR.",TEXT-04 rewrite
+entry.S50.001,"Pekný výhľad. Bolo by dobré, keby sa dali zachovať aj všetci, čo sa naň pozerajú.","Pekný výhľad. Keby tak Atlas nechal v záznamoch aj ľudí, ktorí sa naň pozerajú.",GPT adapt (C4_v2.decisions.csv): Agree 'Bolo by dobré' was stiff; GPT's version with the verb order of spoken Slovak.; Claude read-through: 'zachrániť' read as rescuing people from danger; now says what is meant (people vanish from the records)
 look.S50.switch,ZÁPIS mení minulosť; MONITOR iba číta a dovolí obnoviť zadržané údaje. Mechanický prepínač obíde chybný softvérový príkaz.,"ZÁPIS mení minulosť, MONITOR iba číta a dovolí vrátiť zadržané údaje. Bez mostíka v konektore nič nezmení.",playtest PT-S07: before J05 a click on the switch only shows this look; it now points at the connector next to it
-look.S50.switch.variant1,Prepínač je mechanicky zaistený v režime MONITOR. V tejto hre sa už nedá vrátiť na ZÁPIS.,Prepínač je zaistený na MONITOR. Na ZÁPIS ho už nikto neprepne.,removed 'v tejto hre' (jargon)
+look.S50.switch.variant1,Prepínač je mechanicky zaistený v režime MONITOR. V tejto hre sa už nedá vrátiť na ZÁPIS.,Prepínač je zaistený v polohe MONITOR. Na ZÁPIS ho už nikto neprepne.,GPT accept (C4_v2.decisions.csv): Correct: a switch is 'v polohe'; MONITOR and ZÁPIS kept.
+look.S50.ambient 2,Budúcnosť má aj zábradlia. Dobré rozhodnutie.,"Sklenené zábradlie, celé v námraze. Opriem sa oň, až keď si natiahnem rukavice.",winter (frosted glass railing in the S50 painting); replaces the tag 'Budúcnosť má aj zábradlia. Dobré rozhodnutie.'
 look.S50.bridge,Keramický mostík obchádza len chybný zápisový príkaz ZVONu. Skrinka nie je nijako zapojená do riadenia lanoviek.,Návratový konektor Atlasu. Keramický mostík zapojený sem obíde chybný príkaz na zápis. Lanovky sú oddelené.,"editor: comma splice fixed; this look is the clue for the bridge, so 'keramický mostík' is named plainly"
 exit.S50.to_S48.locked,Na terasu vlastného pavilónu ma servis pustí s pripraveným postupom.,"Na terasu ma pustia, až keď bude obnovovací postup podpísaný.",TEXT-04 rewrite
 entry.S51.001,"Tá istá zastávka. Iné okná, iné telefóny. Čakanie vyzerá povedome.",Dúbravská zastávka. Odtiaľto som chodil do školy a čaká sa tu stále rovnako.,now true in any visit order (v1 assumed the 1995 stop was seen; the bus may bring Adam here earlier); GPT accept: 'Čaká sa tu stále rovnako' is natural spoken Slovak.
@@ -245,7 +260,7 @@ look.S51.ambient 2,Vie čas príchodu. Ja dnes oceňujem aj správny rok.,"Ukazu
 entry.S52.001,"Tá istá škola. Najzvláštnejšie je, že ju prvý raz počujem ticho.",Moja stará škola. Prvý raz ju počujem úplne tichú.,TEXT-04 rewrite
 look.S52.photo,"Panoráma z verejného chodníka zachytí roh školského dvora aj bočné servisné okno s kovovou lastovičkou. Dvor má asfalt, lipa ani múrik sa nezachovali.","Z chodníka vidím roh dvora aj servisné okno s kovovou lastovičkou. Dvor je samý asfalt, bez stromu a múrika.",TEXT-04 rewrite
 look.S52.ambient 1,Triedy sú pre návštevy zatvorené. Servisný odber je vopred povolený zvlášť.,"Oznam: triedy sú pre návštevy zatvorené, veci sa vydávajú len s povolením. Hneď som sa vystrel.",the notice is official on purpose; Adam's reaction is the joke; GPT adapt: Agree 'vyzdvihnúť vec sa dá' was wooden; GPT's 'Ak si chcem niečo vyzdvihnúť' makes a notice speak in Adam's first person. Keeps povolenie; past tense of the reaction is fine.
-look.S52.ambient 2,Poznám ho. Len sa medzičasom naučil chytať odpadky iného tvaru.,"Ten istý kvetináč pri bráne. Kvet v ňom nebol ani za mojich čias, len papieriky od žuvačiek.",tone pass: 'odpadky sú modernejšie' was an ironic tag; childhood callback | 
+look.S52.ambient 2,Poznám ho. Len sa medzičasom naučil chytať odpadky iného tvaru.,"Ten istý kvetináč pri bráne. Kvet v ňom nebol ani za mojich čias, len papieriky od žuvačiek.","tone pass: 'odpadky sú modernejšie' was an ironic tag; childhood callback | "
 exit.S52.to_S53.locked,Najprv sa cez okno ohlásim Tónovi a prevezmem povolenie.,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,TEXT-04 rewrite
 exit.S52.to_S55.locked,Najprv sa cez okno ohlásim Tónovi a prevezmem povolenie.,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,TEXT-04 rewrite
 entry.S53.001,Z prezuviek sa stal režim vstupu. Niektoré školské zvyky sú odolnejšie než vírus.,"Keď som sem chodil, bez prezuviek ma nepustili. Dnes zas bez rúška a dezinfekcie.","tone pass 2026-10-06, GPT joke flag accepted | removed 'odolnejšie než vírus' (no jokes about the illness)"
@@ -279,9 +294,10 @@ look.S58.ambient 2,ČSSR v dobovej školskej výzdobe. Dátum je zreteľný aj b
 entry.S59.001,"Človek sa tu cíti zapisovaný do knihy, aj keď nikto nedrží pero.","Školská chodba. Ticho, terazzo a pocit, že ma niekto zapisuje do triednej knihy.",TEXT-04 rewrite
 look.S59.ambient 1,"Schôdzka, nástenka, povinné veľké písmená. Aj dobrodružstvo má svoju dobovú administratívu.","Oznam o pionierskej schôdzke. Veľké písmená, dátum, hodina, všetko podľa poriadku.",TEXT-04 rewrite
 entry.S60.001,"Výstavka techniky. Keby som vytiahol mobil, skončí buď v kabinete, alebo v hlásení.",Technická výstavka žiakov. Telefón nechám radšej vo vrecku.,TEXT-04 rewrite
-look.S60.ambient 1,"Pri vzore je napísané DODRŽAŤ POSTUP. Jana sa práve pýta, čo ak vie lepší.","Vzorová schéma s nápisom DODRŽAŤ POSTUP. Jana vyzerá, že by vedela aj lepší.",TEXT-04 rewrite
+look.S60.ambient 1,"Pri vzore je napísané DODRŽAŤ POSTUP. Jana sa práve pýta, čo ak vie lepší.","Vzorová schéma s nápisom DODRŽAŤ POSTUP. Jana sa na ňu pozerá, akoby poznala lepší.","C3 tone pass (GPT unnatural, adapt): Right: elliptical; the adapted look is what Adam sees (Jana's look), shorter than GPT's."
 look.S60.ambient 2,Mapa sveta sa mení. Táto zatiaľ správne patrí do roku 1982.,"Školská mapa ČSSR. Presne taká, aká má v roku 1982 byť.",TEXT-04 rewrite
 look.S60.DOBRO,"Učiteľ kontroluje, či je všetko podľa vzoru. Zatiaľ aj vlastnú trpezlivosť.","Učiteľ Dobrovič porovnáva každú prácu so vzorom. Prísne, ale so záujmom.","editor: 'Pozorne, ale nie zle' is not idiomatic"
+look.S60.JANA82,Jana si vlastný nápad zatiaľ nechala pod vzorovým papierom.,Jana má svoj návrh zatiaľ schovaný pod papierom so vzorovou schémou.,"C3 tone pass (GPT unnatural, accept): Right: 'vzorový papier' described the sheet itself.; C3 tone verify (GPT unnatural, accept): Right: a physical design under the sheet, not an abstract idea."
 entry.S61.001,Lipa je ešte malá. O to väčšie následky môže mať úplne malá oprava.,"Ten istý dvor, len lipa je ešte prútik. Na mojej fotke z roku 2020 tu nie je vôbec.",TEXT-04 rewrite
 look.S61.niche,Tóno súhlasí s uložením neškodnej technickej rezervy. Kameň v druhom rade zhora a treťom stĺpci zľava uzatvára suchú dutinu.,"Suchá dutina za servisnou doskou: druhý rad zhora, tretí kameň zľava. Oto aj Tóno s úkrytom súhlasia.",data: 'servisná doska' names both the cabinet workbench (S63.workbench) and the board covering the wall cavity (E08.001); kept as in E08.001
 look.S61.niche.variant1,"Mostík je uložený. V tomto okne ho znovu nevyberiem, lebo som ho rezervoval pre svoje neskoršie vyzdvihnutie.","Pohár s mostíkom je v dutine. Teraz ho nechám tak, vyberiem ho až v roku 2020.",TEXT-04 rewrite
@@ -290,7 +306,7 @@ look.S61.tree.variant1,Ohrádka chráni sadenicu. Vozík pôjde mimo; Šimon má
 look.S61.ambient 1,Toto bude po rokoch kratšie viditeľné. Múrik a počet radov sú spoľahlivejšie než výška trávy.,Červené koleno potrubia. Po rokoch ho možno prefarbia. Múrik a rady kameňov ostanú.,editor: comma splice; keeps the hint that the wall rows are the reliable landmark
 entry.S62.001,Obchod má menej značiek. Pani za okienkom o to viac pozná značky ľudí.,Malý obchod na sídlisku. Predavačka pozná každého zákazníka po mene.,TEXT-04 rewrite
 look.S62.jar,Čistý pohár so skrutkovacím viečkom a gumovým tesnením. Ružena ho môže vydať na školskú údržbu.,Čistý zavárací pohár s viečkom a gumovým tesnením. Spýtam sa naň pani Malej za pultom.,editor: Adam calls her pani Malá in speech (glossary); drop: Ružena
-look.S62.ambient 1,Návrat funguje aj mimo fyzikálneho výskumu.,Vratné fľaše. Tu sa veci vracajú bez akejkoľvek fyziky.,TEXT-04 rewrite
+look.S62.ambient 1,Návrat funguje aj mimo fyzikálneho výskumu.,Vratné fľaše stačí doniesť k pultu. Keby som sa tak aj ja vedel vrátiť bez chronometra.,"C3 tone pass (GPT joke, adapt): Right: 'bez akejkoľvek fyziky' did not make sense; the game's device is the chronometer, not a 'stroj času'.; C3 tone verify (GPT joke, accept): Right: Adam envying the bottles' easy return is his predicament and lands better."
 look.S62.RUZENA,"Ružena vie zohnať obyčajnú nádobu bez toho, aby z nej spravila celú politickú udalosť.","Pani Malá za pultom. Hovorí na rovinu, ale s úsmevom.",editor: 'nič jej neujde' already used for pani Kovárová
 entry.S63.001,"Toto je tá istá skriňa. Už vtedy sa tvárila, že vie viac než ja.","Tá istá skriňa ako v roku 2020. Už teraz vyzerá, že vie viac než ja.",TEXT-04 rewrite
 look.S63.workbench,"Tri konektory návratového mostíka sú mechanicky odlíšené tvarom. Náradie je pripravené, zdroj odpojený.","Tri konektory pre mostík, každý iného tvaru. Doska je bez prúdu, náradie pripravené.",TEXT-04 rewrite
@@ -301,21 +317,23 @@ hotspot.S64.ambient 1.name,Kovová lastovička,Drevená lastovička,"fact fix: i
 look.S64.ambient 2,Na pohľad nová. Z hľadiska cestovateľa už spomienka.,Omietka je ešte čerstvá. V roku 2020 bude o poznanie šedšia.,TEXT-04 rewrite
 look.S64.TONO82,"Dvanásťročný Tóno. Má tú istú sústredenú tvár ako školník 1995, len mu ešte chýba zväzok kľúčov.","Dvanásťročný Tóno. Rovnako sústredený ako školník v roku 1995, len bez zväzku kľúčov.",TEXT-04 rewrite
 look.S64.OTO82,Oto zostarol o dvadsaťdva rokov. Nákresy má stále rovné.,Oto zostarol o dvadsať rokov. Čiary na nákresoch ťahá stále rovno.,"Ivanka shown as 1962: Oto 46 -> 66 in 1982; drop: 22; GPT check adapted (lines, not drawings, are straight)"
-look.S65.ambient 1,"Riadok sa vypĺňa trikrát. Budúcnosť raz vymyslí formulár, ktorý to spraví päťkrát sám.","Každá súčiastka je zapísaná perom, trikrát. Budúcnosť to zautomatizuje: päťkrát.",TEXT-04 rewrite
-look.S65.MARTA82,"Marta má razítko, ale nepoužíva ho ako zbraň.","Pani Dobiášová má pečiatku, ale nemáva ňou ako palicou.",TEXT-04 rewrite
+look.S65.ambient 1,"Riadok sa vypĺňa trikrát. Budúcnosť raz vymyslí formulár, ktorý to spraví päťkrát sám.","Každú súčiastku tu zapisujú perom, trikrát. V budúcnosti to počítač urobí sám. Päťkrát.","C3 tone pass (GPT unnatural, adapt): Real ambiguity; adapted so the punchline 'Päťkrát' stays last and lands."
+look.S65.ambient 2,Tu sa čas neposúva. Tu sa čaká.,"Hodiny nad pultom idú presne. Len keď človek čaká na výdaj, zdá sa, že stoja.","v2: 'Tu sa čas neposúva. Tu sa čaká.' read as a slogan; now a concrete, gentle observation"
+look.S65.MARTA82,"Marta má razítko, ale nepoužíva ho ako zbraň.","Pani Dobiášová má pečiatku, ale nemusím pred ňou stáť v pozore.","C3 tone pass (GPT joke, accept): Right: the club image was strained; the suggestion keeps the relief about her authority."
 look.S66.ambient 1,Šimon môže legálne zakresliť ochrannú ohrádku a odklonenie vozíka.,Plán chodníkov na dvore. Šimon doň môže zakresliť ohrádku aj novú trasu vozíka.,TEXT-04 rewrite
 look.S66.ambient 2,Je tu ako kulisa. Nebudeme kopať pod školou tajný tunel.,"Lopata. Kopať nebudem, nijaký tunel pod školou nechystám.",TEXT-04 rewrite
 look.S66.SIMON,"Šimon vie, kam strom dorastie. Ja sa mu dnes môžem pozrieť do výsledku.","Šimon vie, ako vysoko raz lipa dorastie. Ja som videl dvor, kde nedorástla.",TEXT-04 rewrite
 entry.S67.001,"Priehyba. Tentoraz prestupujem do kabíny, nie do dejín.","Priehyba. Tentoraz prestupujem len na inú lanovku, nie do iného roku.",editor: 'prestupujem do dejín' is not idiomatic
 look.S67.boarding,Druhý úsek je Priehyba–Chopok. Ivan potvrdí nástup; prechod sa odohrá bez časového testu.,Funitel na Chopok. Ivan mi skontroluje lístok a môžem nastúpiť.,TEXT-04 rewrite
 look.S67.ambient 1,"Najprv Biela Púť–Priehyba, potom Funitel Priehyba–Chopok. Prestup je skutočný, nie hádanka.","Najprv Biela Púť – Priehyba, potom Funitel Priehyba – Chopok. Jeden prestup, nič zložité.",TEXT-04 rewrite
-look.S67.ambient 2,Užitočný vynález vo všetkých časových líniách.,"Madlo. Užitočný vynález v každom roku, ktorý som dnes navštívil.",TEXT-04 rewrite
-look.S67.IVAN,Ivan považuje dopravu hore a späť za bežný deň. Obdivujem tú istotu.,Pre Ivana je cesta hore a späť obyčajný pracovný deň. Závidím mu.,TEXT-04 rewrite
+look.S67.ambient 2,Užitočný vynález vo všetkých časových líniách.,Studené madlo. Dnes som sa držal madiel v piatich rôznych rokoch a toto je najstudenejšie.,"winter + Adam's escalating day (2020, 1995, 1962, 1982, 2035 are all visited before S67); replaces a tag"
+look.S67.IVAN,Ivan považuje dopravu hore a späť za bežný deň. Obdivujem tú istotu.,Ivan v páperovej bunde a čiapke. Cesta hore a späť je pre neho obyčajný pracovný deň. Závidím mu.,"winter dress (IVAN winter variant: padded parka, beanie); same remark"
 exit.S67.to_S41.locked,Na nástup potrebujem riadny spiatočný lístok od Sáry.,Na lanovku potrebujem lístok. Vybaví mi ho Sára v klientskom centre.,editor: same as exit.S41.to_S67.locked
 exit.S67.to_S68.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,TEXT-04 rewrite
 look.S68.arrival,"Keď kabína dôjde do stanice, dvere otvorí obsluha. Pokyn Dokončiť jazdu preskočí panoramatickú slučku a privedie kabínu do normálneho príjazdu.","Vrcholová stanica sa blíži. Dvere sa otvoria, až keď kabína zastaví.",removed design note about skipping the panorama loop
-look.S68.ambient 1,Les a svahy sa pomaly posúvajú. Výhľad sa nemení na časový limit.,"Les a svahy pomaly plávajú pod nami. Nikam sa neponáhľajú, ani ja.",TEXT-04 rewrite
+look.S68.ambient 1,Les a svahy sa pomaly posúvajú. Výhľad sa nemení na časový limit.,"Zasnežené svahy pomaly plávajú pod nami a po nich drobní lyžiari. Nikam sa neponáhľajú, ani ja.",winter panorama with skiers (DECISIONS: winter life); drop: les
 look.S68.ambient 2,Funitel je iný typ lanovky než dolný úsek. Ani budúcnosť ich nezliala do jedného vagóna.,Funitel je iný typ lanovky ako kabínka zdola. Širší a vo vetre pokojnejší.,TEXT-04 rewrite
+look.S68.TURISTA,"Miloš si nezapisuje nadmorskú výšku. Fotí si mraky, ktoré sa mu páčia.","Miloš v čiapke s brmbolcom. Nadmorskú výšku si nezapisuje, fotí si oblaky, ktoré sa mu páčia.",winter dress (TURISTA winter variant: bobble beanie); same observation
 exit.S68.to_S67.locked,Na Priehybe najprv potvrdím bežný nástup na Funitel.,Najprv musím nastúpiť na Funitel. Ivan mi skontroluje lístok.,TEXT-04 rewrite
 exit.S68.to_S47.locked,"Počkám na príchod kabíny. Klik Dokončiť jazdu preskočí len výhľad, nie pravidlá dverí.","Za jazdy sa dvere neotvárajú. Vrcholová stanica je už za oknom, tam vystúpim.","playtest PT-S07: the locked door is the obvious click; point at the station in the window, which is the real 'finish the ride' target"
 conn.S02.S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,connection label equals the room name (glossary 3.3); drop: dobrovoľnícke
@@ -414,7 +432,7 @@ item.CUFF,Tesnenie pre studenú ručnú pumpu.,Nová kožená manžeta. Sedí pr
 item.CUFF.purpose,Obnovenie obehu v skúšobnom modeli.,"Nasadiť na ručnú pumpu, aby voda znova obiehala.",TEXT-04 rewrite
 item.PUMPKEY,Oto povoľuje vstup po oprave demonštračného modelu.,Otov kľúč od meracej miestnosti. Dostal som ho za opravenú pumpu.,TEXT-04 rewrite
 item.PUMPKEY.purpose,Dvere pri pumpe.,Odomknúť dvere meracej miestnosti pri pumpe.,TEXT-04 rewrite
-item.REGFORM,Mira podpísala formulár s dnešným dátumom a súpisom merania. Treba čitateľný druhopis a nové vlastnoručné potvrdenie oboch vyhotovení.,Mirin podpísaný list s dnešným dátumom a súpisom merania. Potrebujem druhopis a poštovú pečiatku.,TEXT-04 rewrite
+item.REGFORM,Mira podpísala formulár s dnešným dátumom a súpisom merania. Treba čitateľný druhopis a nové vlastnoručné potvrdenie oboch vyhotovení.,Mirin podpísaný list s dnešným dátumom a výsledkami merania. Potrebujem druhopis a poštovú pečiatku.,"C3 tone pass (GPT unnatural, accept): Right: the list records results."
 item.REGFORM.purpose,Poštové potvrdenie existencie dokumentu v 1960.,"Dať na pošte potvrdiť, že dokument v roku 1962 existoval.","TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 item.STYLUS,Tupý nástroj na zvýraznenie reliéfneho odtlačku.,Verino tupé rydlo. Obtiahne hrany odtlačku a platňu nepoškriabe.,TEXT-04 rewrite
 item.WAXPAPER,"Mäkký hárok na mechanický odtlačok, žiadna fotografia z budúcnosti.","Mäkký voskovaný hárok. Odtlačok bez fotoaparátu, po starom.",TEXT-04 rewrite
@@ -422,10 +440,11 @@ item.PRESSED,Reliéf je zachytený. Tupé rydlo zvýrazní hrany symbolov.,"Reli
 item.PRESSED.purpose,Dokončenie odtlačku.,"Obtiahnuť odtlačok rydlom, aby bol čitateľný.",TEXT-04 rewrite
 item.ORIGIN_RAW,Štyri významy a podpisy Miry a Ota. Poštová registrácia ešte nie je pripojená.,"Štyri slová, pravidlo a podpisy Miry a Ota. Chýba ešte potvrdenie z pošty.",TEXT-04 rewrite
 item.ORIGIN_RAW.purpose,Pripojiť k registrovanému archívnemu uloženiu.,Uložiť s potvrdeným registračným listom do kovovej schránky.,TEXT-04 rewrite
-item.CARBON,Pracovná pomôcka z pošty. Po použití zostane v poštovom odpade.,Uhlový papier z pošty. Vložím ho medzi dva hárky a mám dve rovnaké vyhotovenia.,TEXT-04 rewrite
+item.CARBON.name,Uhlový papier,Uhľový papier,C3 tone pass: term uhľový papier
+item.CARBON,Pracovná pomôcka z pošty. Po použití zostane v poštovom odpade.,Uhľový papier z pošty. Vložím ho medzi dva hárky a jedným písaním mám dve rovnaké vyhotovenia.,"C3 tone pass (GPT calque, adapt): Right: 'uhľový' (not the Czech 'uhlový'); 'kopírovací papier' rejected because the item, hotspot and glossary term stay 'uhľový papier'; 'jedným písaním' added as suggested."
 item.REGDOUBLE,Oba listy majú rovnaký obsah a podpis Miry.,"Dva rovnaké listy, oba s Miriným podpisom. Teraz ešte pečiatka.",TEXT-04 rewrite
 item.REGDOUBLE.purpose,Potvrdenie dátumu u Alojza.,Dať potvrdiť dátum u Alojza na pošte.,TEXT-04 rewrite
-item.REGISTERED,Dátum a existencia dokumentu sú potvrdené. Nejde o pečiatku potvrdzujúcu pravdivosť fyzikálnej teórie.,"Pečiatka a číslo Z-17. Pošta potvrdila, že list dnes existoval, nie či je fyzika správna.",TEXT-04 rewrite
+item.REGISTERED,Dátum a existencia dokumentu sú potvrdené. Nejde o pečiatku potvrdzujúcu pravdivosť fyzikálnej teórie.,"Pečiatka a číslo Z-17. Pošta potvrdila, že list dnes existoval, nie že je fyzika správna.","C3 tone pass (GPT grammar, accept): Right: parallel 'že ... nie že'."
 item.ORIGIN.name,Overený odtlačok z roku 1960,Overený odtlačok z roku 1962,"Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 item.ORIGIN,Stabilizovaný odtlačok s poznámkou o registrácii. Pôvodná platňa aj registrovaná kópia ostali v 1960; v brašni je cestovná pracovná kópia.,"Odtlačok s číslom uloženia. Platňa aj archívna kópia zostali v roku 1962, ja nesiem tento.","TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 item.ORIGIN.purpose,Dôkaz Pôvod vo finále.,Dôkaz pôvodu pre záverečnú obnovu.,TEXT-04 rewrite
@@ -447,7 +466,7 @@ item.LEA_MESSAGE,Záznam z 2032 zostal v izolovanom servisnom buffri. Prístup p
 item.LEA_MESSAGE.purpose,"Viktor pochopí, čo normalizátor vymazáva.","Pustiť Viktorovi, aby počul, čo normalizátor vymazal.",TEXT-04 rewrite
 item.DIAGNOSTIC,"Vymazané údaje sú do potvrdenia zápisu zadržiavané v buffri. Obnova je možná, ak sa výstup prepne do režimu MONITOR.","Vymazané údaje čakajú v zásobníku, kým sa zápis nepotvrdí. Keď výstup prepnem na MONITOR, dajú sa vrátiť.",TEXT-04 rewrite
 item.DIAGNOSTIC.purpose,Bezpečný servisný postup.,Pripraviť s Ninou bezpečný obnovovací postup.,TEXT-04 rewrite
-item.PULSE,Pasívna referenčná stopa okolia Vrbického plesa uložená v chronometri. Miestna stabilita bez akéhokoľvek zásahu do vody.,Stopa okolia Vrbického plesa uložená v chronometri. Pri meraní som sa vody ani nedotkol.,TEXT-04 rewrite
+item.PULSE,Pasívna referenčná stopa okolia Vrbického plesa uložená v chronometri. Miestna stabilita bez akéhokoľvek zásahu do vody.,Stopa okolia Vrbického plesa uložená v chronometri. Pri meraní som sa nedotkol ani ľadu.,"winter (frozen lake); same fact: nothing touched, the stand only measures"
 item.PULSE.purpose,Výpočet návratovej adresy Atlasu 2035.,Vypočítať v termináli Atlasu bezpečný návrat z roku 2035.,TEXT-04 rewrite
 item.PATCH,Nina schválila servisný balík ZACHOVAŤ VÝNIMKY. Obnovuje zadržané pôvodné údaje a vypína retroaktívny zápis.,"Postup ZACHOVAŤ VÝNIMKY, podpísaný Ninou. Vráti zadržané údaje a vypne spätný zápis.",TEXT-04 rewrite
 item.PATCH.purpose,Dôkaz Návrat 2035.,Dôkaz návratu z roku 2035 pre port Návrat.,'Dôkaz Návrat' -> dôkaz návratu (glossary)
@@ -490,7 +509,7 @@ item.RETURNBRIDGE,"Keramika ostala celá, kontakty sú očistené. Tóno spozná
 item.RETURNBRIDGE.purpose,Samostatný signálový konektor Atlasu na terase pri Rotunde.,Zapojiť do oddeleného konektora Atlasu na terase pri Rotunde.,TEXT-04 rewrite
 item.LIFT_TICKET,"Riadne zabezpečený lístok Biela Púť–Priehyba a Priehyba–Chopok, vrátane návratu. Bez limitu počtu herných návratov v tomto príbehovom dni.","Lístok na kabínku Biela Púť – Priehyba aj Funitel Priehyba – Chopok, tam aj späť. Platí celý deň.",removed design note about unlimited returns; 'platí celý deň' keeps the fact in-world
 item.LIFT_TICKET.purpose,"Použiť čítačku bežného turniketu, bez obchádzania kontroly.",Priložiť k čítačke pri turnikete a nastúpiť na lanovku.,TEXT-04 rewrite
-item.JANA_DRAWING,"Schéma s vlastným zlepšením a vysvetlením, prečo neodrezáva slabé časti signálu.","Janina schéma s poznámkami. Vysvetľuje, prečo slabý signál neodreže.",TEXT-04 rewrite
+item.JANA_DRAWING,"Schéma s vlastným zlepšením a vysvetlením, prečo neodrezáva slabé časti signálu.","Janina schéma s poznámkami. Vysvetľuje, prečo zapojenie neodreže slabý signál.","C3 tone pass (GPT nonsense, accept): Right: the subject was missing."
 item.JANA_APPROVED,"Učiteľ uznal funkčný návrh na základe vysvetlenia, nie politického triku.",Na schéme je pripísané povolenie na výstavku. Učiteľa presvedčilo Janino vysvetlenie.,TEXT-04 rewrite
 item.JANA_APPROVED.purpose,Vrátiť Jane ako povzbudenie k vlastnej práci.,"Vrátiť Jane, nech vystaví svoj vlastný návrh.",TEXT-04 rewrite
 action.G01.journal,Pomôž Ele s Mirkiným nákupom v dobrovoľníckom výdajnom mieste.,Pomôž Mire s nákupom: zastav sa u Ely na výdajnom mieste pri Lúčnom koníku.,same as objective; drop: dobrovoľnícke
@@ -546,8 +565,8 @@ action.G11.objective,V Bratislave 1995 nájdi ZŠ Sokolíkova a Miru.,V Bratisla
 action.G11.002,"To je rok, nie napätie. Prosím, nech je to len zlá jednotka.","1995 je rok, nie napätie. Dúfam, že prístroj len ukazuje zlú jednotku.",TEXT-04 rewrite
 action.B01.journal,Ukáž školníkovi prístroj s označením školského krúžku.,Ukáž školníkovi vo vstupnej chodbe chronometer so značkou školského krúžku.,TEXT-04 rewrite
 action.B01.objective,Ukáž školníkovi prístroj s označením školského krúžku.,Ukáž školníkovi vo vstupnej chodbe chronometer so značkou školského krúžku.,names the item (chronometer) instead of 'prístroj'
-action.B01.001,"Magnetofón neprehráva, pomoc opravára vítaná. Aspoň tu má môj príchod pracovnú náplň.","„Magnetofón neprehráva, pomoc opravára vítaná.“ Konečne niečo, čomu v tomto roku rozumiem.",TEXT-04 rewrite
-action.B01.002,Najprv sa ohlásim školníkovi.,Hlásiť sa treba u školníka. Idem dnu.,TEXT-04 rewrite
+action.B01.001,"Magnetofón neprehráva, pomoc opravára vítaná. Aspoň tu má môj príchod pracovnú náplň.","„Magnetofón neprehráva, pomoc opravára vítaná.“ Tak to som tu správne, len o dvadsaťpäť rokov skôr.","v1 'Konečne niečo, čomu v tomto roku rozumiem' was a summary quip; now self-irony about the time jump (2020 - 1995 = 25, glossary 6.3); notice text verbatim"
+action.B01.002,Najprv sa ohlásim školníkovi.,Hlásiť sa treba u školníka. Ako žiak som k nemu chodil len po zabudnuté prezuvky.,sets up Tóno's new B02 line about the boy who forgets his slippers (Adam at 10); keeps: report to the caretaker
 action.B02.label,Ukázať prístroj zo školského krúžku,Ukázať chronometer so značkou krúžku,TEXT-04 rewrite
 action.B02.journal,Porozprávaj sa s Mirou v triede krúžku.,Porozprávaj sa s Mirou v triede pamäťového krúžku.,TEXT-04 rewrite
 action.B02.objective,Porozprávaj sa s Mirou v triede krúžku.,Porozprávaj sa s Mirou v triede pamäťového krúžku.,TEXT-04 rewrite
@@ -575,7 +594,7 @@ action.B05.001,Tento rozmer poznám. Tu máš nový. Starý hodím do odpadu.,"U
 action.B05.002,Čo som dlžný?,Koľko ti dlžím?,TEXT-04 rewrite
 action.B05.003,"Keď ide o školu, nech aspoň ten rozhlas hrá.","Nič, je to pre školu. Zaplatíš tým, že ten rozhlas bude hrať.",TEXT-04 rewrite
 action.B05.004,Za obsah neručím.,"Hrať bude. Za to, čo bude hlásiť, už neručím.",editor: word order
-action.B05.005,To sa v našom odbore nerobí.,Za obsah v našom remesle neručí nikto.,TEXT-04 rewrite
+action.B05.005,To sa v našom odbore nerobí.,"Za obsah neručí nikto. My ručíme za to, že to bude počuť.",tone pass C2_tone: adapt GPT flag
 action.B06.label,Namontovať remienok a vysunúť kazetu,Nasadiť remienok a vybrať kazetu,TEXT-04 rewrite
 action.B06.journal,Ukáž rušenú kazetu Jurovi v ružinovskom klube.,Ukáž kazetu Jurovi v kazetovom klube v Ružinove.,TEXT-04 rewrite
 action.B06.objective,Ukáž rušenú kazetu Jurovi v ružinovskom klube.,Ukáž kazetu Jurovi v kazetovom klube v Ružinove.,TEXT-04 rewrite
@@ -585,7 +604,7 @@ action.B07.label,Dať posúdiť rušené zvukové stopy,Dať Jurovi vypočuť ka
 action.B07.journal,Získaj konektor na Miletičovej a izolačný návlek u Milady.,Zožeň konektor u Fera na Miletičovej a izolačný návlek u Milady.,TEXT-04 rewrite
 action.B07.objective,Získaj konektor na Miletičovej a izolačný návlek u Milady.,Zožeň konektor u Fera na Miletičovej a izolačný návlek u Milady.,TEXT-04 rewrite
 action.B07.001,"Obsah tam je. Dve stopy idú proti sebe. Mira používala zvláštnu meraciu zostavu, však?","Nahrávka tam je, len dve stopy idú proti sebe. Mira nahrávala cez nejakú zvláštnu zostavu, však?",TEXT-04 rewrite
-action.B07.002,Slovo zvláštna už mám plné.,Dnes je zvláštne úplne všetko.,TEXT-04 rewrite
+action.B07.002,Slovo zvláštna už mám plné.,Asi áno. Dnes je zvláštne úplne všetko.,tone pass C2_tone: accept GPT flag
 action.B07.003,"Tu je krížový adaptér. Chýba konektor a izolácia. Fero na trhu má konektor, Milada vedľa trhu vhodný návlek.","Tu máš krížový adaptér. Chýba mu konektor a izolácia: konektor má Fero na trhu, návlek Milada vedľa trhu.",TEXT-04 rewrite
 action.B07.004,Takže hlasy nemusíme vyrobiť znova.,Takže nič nenahrávame znova.,TEXT-04 rewrite
 action.B07.005,Presne. Stačí ich neumlčať zlým zapojením.,"Presne. Hlasy tam sú, len ich nesmieme umlčať zlým zapojením.",TEXT-04 rewrite
@@ -595,7 +614,7 @@ action.B08.objective,Spoj konektor s krížovým adaptérom; zaizoluj Miladiným
 action.B08.001,Zasekla sa mi váha. Klieštikmi by to šlo.,"Váha sa mi zasekla. Klieštikmi by to šlo, ale na to mám priveľké prsty.",editor: rhythm
 action.B08.002,Vytiahnem len tú podložku z drážky. Hotovo.,Stačí vytiahnuť podložku z drážky. Tak. Hotovo.,TEXT-04 rewrite
 action.B08.003,Za to máš ten dvojpólový konektor. Juro mi o škole hovoril.,"Za to máš dvojpólový konektor. Juro mi už hovoril, že je to pre školu.",TEXT-04 rewrite
-action.B08.004,Vaša sieť je rýchlejšia než môj telefón.,Miletička má rýchlejšiu sieť ako môj telefón.,TEXT-04 rewrite
+action.B08.004,Vaša sieť je rýchlejšia než môj telefón.,Juro vám už stihol zavolať?,v1 'Miletička má rýchlejšiu sieť ako môj telefón' was a wink; now a real question that Fero answers (news travel in shopping bags); drop: Miletičova
 action.B09.label,Požiadať o izolačnú návlečku,Návlek na kábel,TEXT-04 rewrite
 action.B09.journal,V inventári spoj konektor s adaptérom a potom pridaj izoláciu.,V brašni spoj konektor s adaptérom a potom naň navleč izolačný návlek.,TEXT-04 rewrite
 action.B09.objective,V inventári spoj konektor s adaptérom a potom pridaj izoláciu.,V brašni spoj konektor s adaptérom a potom naň navleč izolačný návlek.,inventár -> brašňa (jargon)
@@ -607,11 +626,11 @@ action.B10.001,"Zhodné značky, kontakty zacvakli. Ešte prikryť vývody.","Zn
 action.B11.label,Nasunúť izolačný návlek,Navliecť izolačný návlek na adaptér,TEXT-04 rewrite
 action.B11.journal,Zapoj hotovú prepojku do školského servisného zvukového vstupu.,Zapoj hotovú prepojku do servisného zvukového vstupu v miestnosti školského rozhlasu.,TEXT-04 rewrite
 action.B11.objective,Zapoj hotovú prepojku do školského servisného zvukového vstupu.,Zapoj hotovú prepojku do servisného zvukového vstupu v miestnosti školského rozhlasu.,TEXT-04 rewrite
-action.B11.001,"Zakryté, pevné, bez voľných vývodov. Aj kábel sa musí vedieť správať.","Pevné, zakryté, žiadne holé vývody. Takto by mali vyzerať všetky moje opravy.",TEXT-04 rewrite
+action.B11.001,"Zakryté, pevné, bez voľných vývodov. Aj kábel sa musí vedieť správať.","Pevné, zakryté, žiadne holé vývody. Ruky v rukávoch, gombíky zapnuté.",tone pass C2_tone: adapt GPT flag
 action.B12.label,Prehrať kazetu cez opravenú prepojku,Zapojiť prepojku a prehrať kazetu,TEXT-04 rewrite
 action.B12.journal,Dokonči mapu uzlov; školský hlas je zachovaný.,"Hlasy na školskej kazete sú zachránené, teraz dokonči mapu meracích uzlov.",TEXT-04 rewrite
 action.B12.objective,Dokonči mapu uzlov; školský hlas je zachovaný.,"Hlasy na školskej kazete sú zachránené, teraz dokonči mapu meracích uzlov.",TEXT-04 rewrite
-action.B12.001,Prepojka je v servisnom vstupe. Vkladám kazetu a nastavujem čítanie bez prepisu.,"Prepojka je v servisnom vstupe. Vložím kazetu a pustím ju len na čítanie, nič na ňu nenahrám.",TEXT-04 rewrite
+action.B12.001,Prepojka je v servisnom vstupe. Vkladám kazetu a nastavujem čítanie bez prepisu.,"Prepojka je v servisnom vstupe. Vložím kazetu a len ju prehrám, nič na ňu nenahrám.","GPT accept: Agree 'pustím ju len na čítanie' sounds like computer jargon; 'len ju prehrám, nič na ňu nenahrám' keeps the fact (read, never re-record)."
 action.B12.002,Po prehratí ju vrátim do ochranného puzdra chronometra.,Potom ju dám do brašne k chronometru. Jeho pole ju ochráni.,ochranné puzdro -> ochranné pole (glossary: the field protects the bag)
 action.B13.journal,Daj v ateliéri Svetlo spraviť pozitív technického negatívu.,Daj Alene vo fotoateliéri Svetlo spraviť z negatívu pozitív.,TEXT-04 rewrite
 action.B13.objective,Daj v ateliéri Svetlo spraviť pozitív technického negatívu.,Daj Alene vo fotoateliéri Svetlo spraviť z negatívu pozitív.,TEXT-04 rewrite
@@ -619,28 +638,30 @@ action.B13.001,Poverenie súhlasí. Tu je kópia mapy a technický negatív ulo�
 action.B13.002,Mapa má prázdne miesta.,Na mape sú prázdne miesta.,TEXT-04 rewrite
 action.B13.003,Priehľadná vrstva bola kedysi oddelená. Na fotografii bude jej evidenčné číslo. Ateliér je cez námestie.,Priehľadnú fóliu od nej kedysi oddelili. Jej číslo uvidíte na fotografii z negatívu. Ateliér je cez námestie.,TEXT-04 rewrite
 action.B13.004,Archívny výskum sa dnes veľmi podobá servisu.,Archív je ako servis. Vždy niečo chýba.,TEXT-04 rewrite
-action.B13.005,"Oboje sa pokazí, keď chýba malý diel.",Zvyčajne malý diel. A ten býva najdôležitejší.,TEXT-04 rewrite
+action.B13.005,"Oboje sa pokazí, keď chýba malý diel.","Zvyčajne malý diel. A ten býva najdôležitejší, preto mám na malé diely zvláštnu kartotéku.",tone pass C2_tone: adapt GPT flag
 action.B14.label,Vyvolať technický negatív,Dať Alene vyvolať negatív,TEXT-04 rewrite
 action.B14.journal,Ukáž fotografiu prílohy K-17 Viere v antikvariáte.,Ukáž fotografiu s číslom K-17 Viere v antikvariáte Pod druhou rukou.,TEXT-04 rewrite
 action.B14.objective,Ukáž fotografiu prílohy K-17 Viere v antikvariáte.,Ukáž fotografiu s číslom K-17 Viere v antikvariáte Pod druhou rukou.,TEXT-04 rewrite
 action.B14.001,"Technický záber, nie súkromná fotografia. Mira súhlas potvrdila pri uložení.","Technický záber, nie súkromná fotka. Pani Hrušková s vyvolaním súhlasila už pri uložení.",TEXT-04 rewrite
 action.B14.002,Potrebujem prečítať označenie na stole.,Na zábere je stôl s označením. To potrebujem prečítať.,editor: writer's relative clause was clumsy
-action.B14.003,Tu máš pozitív. K-17. Viera z antikvariátu drží mapové prílohy osobitne. Negatív založím späť pre archív.,Tu je pozitív. Na stole je číslo K-17. Mapové prílohy drží Viera v antikvariáte. Negatív vrátim archívu.,fixed ty/vy: Alena says vy (no ty form left); editor: K-17 as its own sentence (clue)
+action.B14.003,Tu máš pozitív. K-17. Viera z antikvariátu drží mapové prílohy osobitne. Negatív založím späť pre archív.,Tu je pozitív. Na stole je číslo K-17. Mapové prílohy má Viera v antikvariáte. Negatív vrátim archívu.,"GPT accept: Correct: 'má' is the ordinary verb; K-17, Viera, antikvariát and the negative going back stay."
 action.B14.004,Ďakujem. Toto sa na displeji môjho telefónu vysvetľuje dosť ťažko.,Ďakujem. Doma by som si to len priblížil v telefóne. Tu na to treba celú temnú komoru.,TEXT-04 rewrite
 action.B15.label,Vyžiadať fóliu podľa čísla K-17,Vyžiadať fóliu K-17 podľa fotografie,TEXT-04 rewrite
 action.B15.journal,V inventári zarovnaj priehľadnú fóliu s mapou.,V brašni prilož priehľadnú fóliu K-17 na mapu a zarovnaj značky.,TEXT-04 rewrite
 action.B15.objective,V inventári zarovnaj priehľadnú fóliu s mapou.,V brašni prilož priehľadnú fóliu K-17 na mapu a zarovnaj značky.,inventár -> brašňa
 action.B15.001,"K-17. Poznám. Mira mi povedala, že si po ňu príde niekto, kto sa spýta presne.","K-17. Tú poznám. Mira mi povedala, že si po ňu raz príde niekto, kto bude vedieť presné číslo.",TEXT-04 rewrite
 action.B15.003,Pred rokmi. Čas mi tu neúčtujeme zvlášť. Tu je fólia.,"Pred mnohými rokmi. Skladné vám neúčtujem. Nech sa páči, fólia.",editor: 'Skladné za čas tu neúčtujem' was not idiomatic
-action.B15.004,Tri registračné značky. Dám ju na správne miesto.,"Tri registračné značky: dierka, dvojitý kríž a štvorec. Treba ich trafiť na mapu.",TEXT-04 rewrite
+action.B15.004,Tri registračné značky. Dám ju na správne miesto.,"Tri registračné značky: dierka, dvojitý kríž a štvorec. Musia sedieť so značkami na mape.",GPT adapt: Agree 'trafiť na mapu' is awkward; own fix keeps Adam's spoken register (and the wording of item.OVERLAY); the three marks unchanged (P02).
 action.B16.journal,Ukáž úplnú mapu Deziderovi v petržalskej garáži.,Ukáž úplnú mapu meracích uzlov Deziderovi v garáži v Petržalke.,TEXT-04 rewrite
 action.B16.objective,Ukáž úplnú mapu Deziderovi v petržalskej garáži.,Ukáž úplnú mapu meracích uzlov Deziderovi v garáži v Petržalke.,TEXT-04 rewrite
 action.B16.001,Úplná mapa vedie do Petržalky. Deziderova garáž a merací stojan pri Dunaji.,Mapa je celá a vedie do Petržalky: k Deziderovej garáži a k meraciemu stojanu pri Dunaji.,TEXT-04 rewrite
-action.B16.002,Ten názov garáže sa mi páči. Žiadna skratka pre vesmírny program.,"Rádioamatér v garáži. Konečne niekto, kto hovorí mojou rečou.",old joke about the garage name ('no acronym for a space programme') made no sense
+action.B16.002,Ten názov garáže sa mi páči. Žiadna skratka pre vesmírny program.,"Rádioamatér v garáži. Po študovni a antikvariáte konečne miesto, kde sa môže hovoriť nahlas.","v1 'Konečne niekto, kto hovorí mojou rečou' was a summary quip; now a callback to Karol's silence rule (B13)"
 action.B17.label,Ukázať úplnú mapu uzlov,Ukázať Deziderovi úplnú mapu,TEXT-04 rewrite
+action.B17.journal,Požičaj Emilov metronóm a prečítaj rytmický nákres na školskom dvore.,Požičaj si Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore.,same as objective; drop: školský dvor
+action.B17.objective,Požičaj Emilov metronóm a prečítaj rytmický nákres na školskom dvore.,Požičaj si Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore.,relocation; journal stays identical; drop: školský dvor
 action.B17.001,Na nábreží zostal izolovaný merací stojan. Tu máš jeho cievku. Potrebuješ aj nezávislý rytmus.,Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na Starom moste. Ešte potrebuješ nezávislý rytmus.,Dezider names the new place of the stand; rest unchanged; drop: nábreží
-action.B17.003,Emil v Karlovej Vsi má metronóm. A tri číslice nastavenia Mira prekreslila na panel na školskom dvore.,"Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice Mira nakreslila na panel na školskom dvore.",TEXT-04 rewrite
-action.B17.004,Takže sa vraciam na školský dvor úplne dobrovoľne. To si zapíšem.,Na školský dvor sa vraciam dobrovoľne. To sa mi ako žiakovi nestalo.,TEXT-04 rewrite
+action.B17.003,Emil v Karlovej Vsi má metronóm. A tri číslice nastavenia Mira prekreslila na panel na školskom dvore.,"Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr v Sokolíkovskom dvore.","relocation of B19 to S69 (owner 2026-10-06, SOKOLIKOVA_YARD.md 3.3); protected P03-source keeps Emil, metronóm, tri číslice; its place rule moves from 'školsk* dvor' to 'Sokolíkovsk* dvor*' (glossary_change in C2_ext.json); drop: školský dvor; drop: panel"
+action.B17.004,Takže sa vraciam na školský dvor úplne dobrovoľne. To si zapíšem.,Do Sokolíkovského dvora sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu.,relocation (SOKOLIKOVA_YARD.md 3.3); same joke shape as before (going back voluntarily); drop: školský dvor
 action.B18.label,Požičať si metronóm na meranie,Metronóm na meranie,TEXT-04 rewrite
 action.B18.journal,Na nábrežný stojan nasaď cievku aj metronóm.,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,same as objective; drop: nábrežný
 action.B18.objective,Na nábrežný stojan nasaď cievku aj metronóm.,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,S30 renamed (owner 2026-10-06); journal stays identical; drop: nábrežný
@@ -657,11 +678,11 @@ action.B20.journal,Dokončené: Nasadiť meraciu cievku.,Deziderova cievka sedí
 action.B20.001,Cievka zapadla do držiaka. Izolovaný obvod je pripravený.,Cievka zapadla do držiaka. Obvod je pripravený.,TEXT-04 rewrite
 action.B21.label,Umiestniť mechanický metronóm,Postaviť metronóm na stolík,TEXT-04 rewrite
 action.B21.journal,Dokončené: Umiestniť mechanický metronóm.,Emilov metronóm tiká na stolíku pri meracom stánku.,the round table stands at the railing beside the booth (bg_natural/S30); drop: prístrešok
-action.B21.001,"Metronóm je na stole. Tiká úplne nezávisle od všetkého, čo ma dnes dostalo do problémov.","Metronóm tiká. Konečne niečo, čo nepotrebuje elektrinu ani vysvetlenie.",TEXT-04 rewrite
+action.B21.001,"Metronóm je na stole. Tiká úplne nezávisle od všetkého, čo ma dnes dostalo do problémov.","Metronóm tiká pomaly, Emilovým tempom. Nepotrebuje elektrinu, len rovný stolík.","v1 'Konečne niečo, čo nepotrebuje elektrinu ani vysvetlenie' was a summary quip; keeps: no electricity (look.S30.metro)"
 action.B22.label,Nastaviť a odmerať pôvodnú časovú adresu,Nastaviť číslice a nájsť pôvodnú kalibráciu,editor: 'odmerať pôvodný rok' was unclear; echoes Mira's B03.002 'nájdeme prvú kalibráciu'
 action.B22.journal,Na časovom uzle vyber Ivanku 1960 a nájdi Ota v mechanickej dielni.,Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi Ota v jeho mechanickej dielni.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 action.B22.objective,Na časovom uzle vyber Ivanku 1960 a nájdi Ota v mechanickej dielni.,Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi Ota v jeho mechanickej dielni.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
-action.B22.001,"Tri, dva, šesť. Mapa sedí, kazeta drží referenciu.","Tri, dva, šesť. Mapa sedí, kazeta beží ako referencia.",TEXT-04 rewrite
+action.B22.001,"Tri, dva, šesť. Mapa sedí, kazeta drží referenciu.","Tri, dva, šesť. Mapa sedí a kazeta hrá, aby bolo s čím porovnávať.","GPT adapt: Agree 'beží ako referencia' is stiff; own fix is shorter than GPT's and keeps the protected 'Tri, dva, šesť' (P03-spoken-digits)."
 action.B22.002,Nová časová adresa uložená.,Nové časové okno uložené.,časová adresa -> časové okno (glossary)
 action.B22.003,"Ivanka. Rok šesťdesiat. Babka to dotiahla ďalej, než rodinné oslavy naznačovali.","Ivanka, rok 1962. Babka toho dokázala viac, ako sa o nej hovorilo na rodinných oslavách.","'Rok šesťdesiat' -> 'rok 1960' (years in digits); Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 action.B22.004,Presun spustím cez uzlové hodiny na dúbravskej zastávke.,Odcestujem cez uzlové hodiny na Dúbravskej zastávke.,TEXT-04 rewrite
@@ -671,7 +692,7 @@ action.I01.001,To je náš návrh. Len opotrebovaný o niekoľko desaťročí.,"
 action.I01.002,"Potrebujem pôvodnú kalibráciu. Niekto v budúcnosti odstraňuje všetko, čo sa nezhoduje.","Nosil. Potrebujem jeho pôvodnú kalibráciu. V budúcnosti niekto maže všetko, čo sa nezhoduje.",TEXT-04 rewrite
 action.I01.003,"Mira je pri zariadení. Najprv musíme obnoviť ručný chladiaci model. Tu je lístok na kožu a nity. Líde v sále požičaj ruky, ona ti požičia dierovač.","Mira je pri prístroji. Najprv však treba opraviť ručnú pumpu. Tu je lístok na kožu a nity. Dierovač vám požičia Lída v sále, ak jej pomôžete.",'ručný chladiaci model' named as the visible hotspot 'ručná pumpa'; Oto now says vy (was ty)
 action.I01.004,Na cestu v čase je tu veľmi veľa remeselnej výroby.,"Myslel som, že pri cestovaní v čase bude menej kože a nitov.",editor: 'bude menej o koži' is an English calque
-action.I01.005,Pretože má fungovať.,Preto funguje.,TEXT-04 rewrite
+action.I01.005,Pretože má fungovať.,Práve vďaka nim to funguje.,"C3 tone pass (GPT nonsense, adapt): Real ambiguity of bare 'Preto'; 'Práve preto to funguje' keeps Oto's two-word understatement (the leather and rivets ARE why it works) instead of GPT's flat explanation.; C3 tone verify (GPT nonsense, adapt): Right, 'preto' still pointed at Adam's expectation; 'vďaka nim' (the leather and rivets) is unambiguous and stays as short as Oto talks."
 action.I02.journal,Dokončené: Vyzdvihnúť materiál podľa Otovho lístka.,Štefan mi podľa Otovho lístka vydal kožu na manžetu a dva nity.,TEXT-04 rewrite
 action.I02.001,"Predrezaná koža, nity. Označené miesta treba preraziť, potom zopnúť. Lístok si nechávam.","Predrezaná koža na manžetu a dva nity. Najprv prerazte označené miesta, potom zanitujte. Lístok si nechám.",TEXT-04 rewrite
 action.I02.002,Jednoduché. Máte takýto návod aj na celý deň?,Jasný postup. Nemáte taký aj na môj celý deň?,TEXT-04 rewrite
@@ -726,12 +747,13 @@ action.I12.002,"Originál necháme tam, kde vznikol. Odniesť môžeš pracovný
 action.I13.label,Zvýrazniť reliéf tupým rydlom,Obtiahnuť odtlačok tupým rydlom,TEXT-04 rewrite
 action.I13.journal,Dokončené: Zvýrazniť reliéf tupým rydlom.,Tupým rydlom som obtiahol odtlačok. Štyri slová aj Mirino pravidlo sú čitateľné.,TEXT-04 rewrite
 action.I13.001,Pôvod. Hlas. Súhlas. Návrat. A veta: Rôzne údaje neznamenajú neplatné údaje.,Pôvod. Hlas. Súhlas. Návrat. A pod tým: „Rôzne údaje neznamenajú neplatné údaje.“,TEXT-04 rewrite
-action.I13.002,Technická dokumentácia s väčším rozumom než niektoré celé porady.,Jedna veta na mosadzi. Rozumnejšia než niektoré celé porady.,TEXT-04 rewrite
-action.I14.journal,Dokončené: Vziať uhlový papier na druhopis.,Na pošte som si vzal uhlový papier na druhopis.,TEXT-04 rewrite
-action.I14.001,Uhlový papier je na prepážke pre formuláre. Nech sa páči.,"Uhlový papier je pri prepážke, pre všetky tlačivá. Nech sa páči, poslúžte si.",TEXT-04 rewrite
-action.I14.002,Synchronizácia dokumentov bez internetu.,Kopírovanie bez tlačiarne. A bez zaseknutého papiera.,TEXT-04 rewrite
+action.I13.002,Technická dokumentácia s väčším rozumom než niektoré celé porady.,"Túto vetu poznám. Babka mi ju hovorila, keď som chcel vyhodiť pokazené rádio.",v2: 'Rozumnejšia než niektoré celé porady' was the old ironic-summary pattern; now a quiet family callback (2020 Mira)
+action.I14.label,Vziať uhlový papier na druhopis,Vziať uhľový papier na druhopis,C3 tone pass: term uhľový papier
+action.I14.journal,Dokončené: Vziať uhlový papier na druhopis.,Na pošte som si vzal uhľový papier na druhopis.,C3 tone pass: term uhľový papier
+action.I14.001,Uhlový papier je na prepážke pre formuláre. Nech sa páči.,"Uhľový papier je pri prepážke, pre všetky tlačivá. Nech sa páči, poslúžte si.",C3 tone pass: term uhľový papier (Czech 'uhlový')
+action.I14.002,Synchronizácia dokumentov bez internetu.,Ďakujem. Vezmem si len jeden hárok a ruky si nechám čisté.,v2: 'Kopírovanie bez tlačiarne' was a modern-tech wink; now reacts to Alojz's new warning (z01) that it stains fingers
 action.I15.journal,Dokončené: Vyhotoviť druhopis registračného listu.,"Registračný list mám v dvoch vyhotoveniach, oba s Miriným podpisom.",TEXT-04 rewrite
-action.I15.001,"Podložíme uhlový papier, prepíšeme text. Mira oba listy vlastnoručne podpísala pri príprave formulára; teraz kontrolujem obsah. Použitý papier odložím do pripraveného odpadu.","Vložím uhlový papier medzi hárky a prepíšem text. Mira podpísala oba vopred, ja kontrolujem, či sa zhodujú. Papier potom do koša.",editor: verb instead of verbless fragment
+action.I15.001,"Podložíme uhlový papier, prepíšeme text. Mira oba listy vlastnoručne podpísala pri príprave formulára; teraz kontrolujem obsah. Použitý papier odložím do pripraveného odpadu.",Medzi hárky vložím uhľový papier a prepíšem text. Mira oba podpísala vopred. Porovnám ich a papier vyhodím.,"C3 tone pass (GPT length, adapt): Shorter (107 chars) and 'uhľový'; keeps the advance signatures, the comparison and the disposal in Adam's voice."
 action.I16.label,Potvrdiť dátum technického registračného listu,Dať potvrdiť dátum registračného listu,TEXT-04 rewrite
 action.I16.journal,Ulož registrovanú dokumentáciu do kovovej schránky na povale.,Odnes potvrdený registračný list a odtlačok ku kovovej schránke na povale.,TEXT-04 rewrite
 action.I16.objective,Ulož registrovanú dokumentáciu do kovovej schránky na povale.,Odnes potvrdený registračný list a odtlačok ku kovovej schránke na povale.,TEXT-04 rewrite
@@ -744,6 +766,7 @@ action.I17.objective,Vráť sa do Grobu 2020 a ukáž Mire overený odtlačok.,V
 action.I17.001,Tu je čistá archívna kópia podľa tvojho odtlačku. Priložíme registračný list a zavrieme ju do schránky.,Podľa tvojho odtlačku som urobila čistú archívnu kópiu. Priložíme k nej registračný list a zamkneme ju do schránky.,TEXT-04 rewrite
 action.I17.002,Odtlačok si nechám. Potrebujem ho ďalej.,Odtlačok si beriem so sebou. Ešte ho budem potrebovať.,TEXT-04 rewrite
 action.I17.003,"Doplním naň číslo uloženia. Originál aj prvopis zostávajú tu. Rydlo mi nechaj, vrátim ho Vere.","Tak naň dopíšem číslo uloženia. Platňa aj prvopis zostávajú tu. Rydlo mi nechaj, vrátim ho Vere.",TEXT-04 rewrite
+action.I17.004,Budete si na mňa pamätať?,Budete si ma pamätať?,"C3 tone pass (GPT grammar, accept): Right: 'pamätať si niekoho'. Serious beat stays plain."
 action.I17.005,"Skôr než tvoju tvár si zapamätám, čo sme spravili.","Tvár možno zabudnem. To, čo sme spolu urobili, nie.",TEXT-04 rewrite
 action.C01.label,Ukázať overený odtlačok z roku 1960,Ukázať overený odtlačok z roku 1962,"Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 action.C01.journal,V Dúbravke 2020 zaznamenaj zmenený dvor a ohlás sa školníkovi Tónovi.,V Dúbravke v roku 2020 odfoť školský dvor a ohlás sa školníkovi Tónovi.,editor: same
@@ -780,9 +803,9 @@ action.F01.journal,V Grand Jasná získaj čítačku a katalóg; v klientskom ce
 action.F01.objective,V Grand Jasná získaj čítačku a katalóg; v klientskom centre Biela Púť riadny servisný vstup aj lístok.,"V hoteli Grand Jasná získaj čítačku a katalógovú kartu, potom v klientskom centre Biela Púť preukaz a lístok.",editor: shortened; editor: shortened
 action.F01.001,Ste Adam Hruška. Vaše meno sa práve rozpadá v zozname návštevníkov.,Adam Hruška? Vaše meno sa mi práve rozpadá v zozname návštevníkov.,TEXT-04 rewrite
 action.F01.002,Som tu. V Jasnej. To by sa dalo zapísať pomerne jasne.,Zatiaľ som tu celý. Čo sa to deje?,TEXT-04 rewrite
-action.F01.003,Atlas hosťuje výstavu v Grand Jasná a merací pavilón pri Chopku. Náš vlastný chronotechnický hardvér niekto zle nastavil. Lanovky s tým nesúvisia.,Atlas má výstavu v hoteli a pavilón hore na Chopku. Náš prístroj spätne prepisuje záznamy ľudí. Lanovky za to nemôžu.,"replaced 'chronotechnický hardvér' (deprecated) by 'náš prístroj'; explains spätný zápis in plain words; editor: 'pavilón pri Chopku' -> 'hore na Chopku'; 'Lanovky s tým nesúvisia' -> spoken 'Lanovky za to nemôžu'; moved: Grand Jasná (Nina stands in front of the hotel, the room name says it), Jasná"
+action.F01.003,Atlas hosťuje výstavu v Grand Jasná a merací pavilón pri Chopku. Náš vlastný chronotechnický hardvér niekto zle nastavil. Lanovky s tým nesúvisia.,"Atlas má výstavu v hoteli a pavilón na Chopku. Lanovky idú normálne, ale náš prístroj spätne prepisuje záznamy ľudí.","GPT adapt (C4_v2.decisions.csv): Right: the disclaimer dangled at the end. Folded into the explanation; 'jazdia normálne' states the protected fact (cable cars work) more plainly than GPT's 'sú v poriadku, no'. | length: 116 characters, below the hard limit 160; the clue stays in this one key (verify pass, C4_v2_verify.decisions.csv) | final text after the verify pass (C4_v2_verify.decisions.csv)"
 action.F01.004,Viktor?,Kto ho tak nastavil?,data problem: Adam asked 'Viktor?' although no earlier text introduces Viktor to him; now Adam asks who and Nina names Viktor in .005
-action.F01.005,"Nechal bežať spätný zápis napriek môjmu varovaniu. Potrebujeme pôvodné doklady, lokálnu čítačku od Tamary v lobby a kartu fondu od Borisa v hotelovom salóne. Sára v klientskom centre vám vybaví povolenie aj dopravu.","Viktor Korman, náš zakladateľ. Nechal ho bežať aj po mojom varovaní. Potrebujete čítačku od Tamary, kartu fondu od Borisa a od Sáry preukaz s lístkom.","current text exceeded the 160 hard limit; places of Tamara/Boris/Sára moved to the objective; 'pôvodné doklady' dropped (the player already carries them); editor: Sára also gives the ticket (original 'povolenie aj dopravu'), restored; places of Tamara/Boris/Sára are in the objective"
+action.F01.005,"Nechal bežať spätný zápis napriek môjmu varovaniu. Potrebujeme pôvodné doklady, lokálnu čítačku od Tamary v lobby a kartu fondu od Borisa v hotelovom salóne. Sára v klientskom centre vám vybaví povolenie aj dopravu.","Viktor Korman, náš zakladateľ. Nevypol ho ani po mojom varovaní. Čítačku vám dá Tamara, kartu fondu Boris, preukaz s lístkom Sára.","GPT adapt (C4_v2.decisions.csv): Right, the old line was 150 characters; shortened, every person and item of the clue kept in this key, 'náš zakladateľ' kept in Nina's word order. | length: 130 characters, below the hard limit 160; the clue stays in this one key (verify pass, C4_v2_verify.decisions.csv)"
 action.F02.label,Požičať čítačku na pôvodnú kazetu,Požičať si čítačku na pôvodnú kazetu,TEXT-04 rewrite
 action.F02.journal,Dokončené: Požičať čítačku na pôvodnú kazetu.,Tamara mi požičala čítačku na pôvodnú kazetu.,TEXT-04 rewrite
 action.F02.001,Nina ma poslala kvôli pôvodnej školskej kazete.,Posiela ma Nina. Potrebujem prečítať túto starú školskú kazetu.,TEXT-04 rewrite
@@ -796,14 +819,14 @@ action.F03.001,"Dokument súhlasí. Toto je verejná katalógová karta, spojeni
 action.F03.002,Čo Atlas odmietol ako prvé?,Čo z fondu Atlas vyradil ako prvé?,TEXT-04 rewrite
 action.F03.003,"Nesúhlasné mená, pauzy v reči, smiech. A jednu správu pani Kormanovej. Bola príliš nejednoznačná.","Mená, ktoré si odporovali, pauzy v reči, smiech. A jednu správu pani Kormanovej. Vraj bola príliš nejednoznačná.",TEXT-04 rewrite
 action.F03.004,Ale bola jeho.,Lea Kormanová? Viktorova mama?,"'Ale bola jeho.' did not follow; Adam met Lea in 1995 and just heard Viktor's surname from Nina, so he connects them"
-action.F03.005,A preto mala zostať.,Áno. A práve preto mala zostať celá.,TEXT-04 rewrite
+action.F03.005,A preto mala zostať.,Áno. A práve preto mala jej správa zostať celá.,GPT accept (C4_v2.decisions.csv): Real ambiguity: without 'jej správa' the line could mean Lea herself.
 action.F04.label,Vybaviť schválený servisný vstup,Vybaviť si servisný preukaz a lístok,TEXT-04 rewrite
 action.F04.journal,Použi lístok na čítačke pri dolnej stanici Biela Púť.,Prilož lístok k čítačke pri dolnej stanici na Bielej Púti.,TEXT-04 rewrite
 action.F04.objective,Použi lístok na čítačke pri dolnej stanici Biela Púť.,Prilož lístok k čítačke pri dolnej stanici na Bielej Púti.,TEXT-04 rewrite
 action.F04.001,Nina potvrdila servisný prístup do výstavného pavilónu. Tu je preukaz a riadny spiatočný lístok na oba úseky.,Nina vám potvrdila servisný vstup do pavilónu. Tu je preukaz a spiatočný lístok na oba úseky lanovky.,TEXT-04 rewrite
 action.F04.002,Ktorou cestou?,Ako sa tam dostanem?,TEXT-04 rewrite
 action.F04.003,"Z Bielej Púte na Priehybu, tam prestup na Funitel na Chopok. Vstup na galériu je pri Rotunde. Všetko dnes premáva za vhodných podmienok.","Kabínkou na Priehybu, tam prestúpite na Funitel na Chopok. Pavilón je pri Rotunde. Dnes všetko premáva.",TEXT-04 rewrite
-action.F04.004,Výborne. Žiadne preskakovanie turniketov ani rokov.,"Obyčajný prestup, žiadny skok cez desaťročia. To sa mi páči.","editor: smoother than 'Cesta, pri ktorej nepreskakujem roky, len prestupujem'"
+action.F04.004,Výborne. Žiadne preskakovanie turniketov ani rokov.,"Obyčajný prestup, žiadny skok cez desaťročia? Na taký som dnes čakal celý deň.","C4_tone: adapt (joke), see review_gpt/C4_tone.decisions.csv"
 action.F04.005,Na návrat si lístok nechajte.,"Lístok si nechajte, platí aj späť.",TEXT-04 rewrite
 action.F05.label,Zaznamenať pravidlo normalizácie,Odfotiť panel normalizácie,TEXT-04 rewrite
 action.F05.journal,Dokončené: Zaznamenať pravidlo normalizácie.,"Panel normalizácie je odfotený: ROZDIEL = ZAHODIŤ, presný opak Mirinho pravidla.",TEXT-04 rewrite
@@ -821,7 +844,7 @@ action.F06.006,Presne. Senzor len číta.,Nie je. Ten stojan iba meria.,TEXT-04 
 action.F07.journal,Vráť sa lanovkami do servisného pavilónu a priprav obnovovací postup.,Vráť sa lanovkami do servisného pavilónu a nahraj referenčnú stopu do terminálu.,TEXT-04 rewrite
 action.F07.objective,Vráť sa lanovkami do servisného pavilónu a priprav obnovovací postup.,Vráť sa lanovkami do servisného pavilónu a nahraj referenčnú stopu do terminálu.,'priprav obnovovací postup' made concrete: the next action is the stop on the terminal (F08)
 action.F07.001,Stojím na chodníku pri Vrbickom plese. Chronometer načíta vlastný pasívny stojan výstavy.,Stojan výstavy na chodníku pri plese. Chronometer si z neho prečíta stopu tohto miesta.,editor: avoids repeating 'iba meria' of F06.006; place said as 'pri plese' (the player stands in Chodník pri Vrbickom plese); drop: Vrbické pleso
-action.F07.003,"Pleso sme nechali presne také, aké bolo.","A pleso zostalo presne také, aké bolo.",TEXT-04 rewrite
+action.F07.003,"Pleso sme nechali presne také, aké bolo.","Pleso aj ľad zostali presne také, aké boli.",winter: the lake is frozen; the measuring stand only reads
 action.F08.label,Pripraviť podpísaný obnovovací postup,Nahrať referenčnú stopu do terminálu,TEXT-04 rewrite
 action.F08.journal,Na strešnej terase prepnúť oddelený signálový výstup na MONITOR.,Na terase pri Rotunde prepni výstup Atlasu na MONITOR.,TEXT-04 rewrite
 action.F08.objective,Na strešnej terase prepnúť oddelený signálový výstup na MONITOR.,Na terase pri Rotunde prepni výstup Atlasu na MONITOR.,"data note: F09 also needs the bridge (J05) first; the objective, like the original, names only the switch; look.S50.bridge and hint M13.2 point to the bridge"
@@ -928,7 +951,7 @@ action.Q5B.002,"Sľubujem, že z toho nebude písomka.","Sľubujem, že ňou nik
 action.Q5B.003,To by som si už zapísal.,Písomky sú starosť učiteľov. Ja potom len zametám.,editor: dry Tóno reply that follows Adam's promise
 action.Q5C.journal,Dokončené: Dokresliť svetlá podľa Jurajovej skice.,Svetlá na Jurajovom paneli sú dokreslené.,TEXT-04 rewrite
 action.Q5C.002,"Vyzerá to ako niečo, kde niekto žije.","Teraz to vyzerá, akoby tam naozaj niekto býval.","editor: 'vyzerá, že' -> 'vyzerá, akoby'"
-action.Q5C.003,Presne. Nie iba kde niečo stojí.,"Presne. Nie iba to, že tam stojí panelák.",TEXT-04 rewrite
+action.Q5C.003,Presne. Nie iba kde niečo stojí.,Presne. Už to nie je len obrázok paneláka.,GPT accept: Agree the fragment did not connect; GPT's line keeps Juraj's point.
 action.Q6A.label,Spýtať sa na nevráteného holuba,Kde je váš holub?,TEXT-04 rewrite
 action.Q6A.journal,Dokončené: Spýtať sa na nevráteného holuba.,Alojzov holub Béla zostal v parku. Krmivo preň má Štefan.,TEXT-04 rewrite
 action.Q6A.001,"Béla zostal v parku. Keď mu dáte do misky trochu jeho krmiva, pôjde za mnou. Štefan má zmes.",Béla zostal v parku. Nasypte mu do misky jeho krmivo a vráti sa domov. Zmes má Štefan na dvore dielne.,editor: trimmed to under 110 ('pri kaštieli' is in the room name)
@@ -940,19 +963,19 @@ action.Q6B.001,"Pre Alojzovho holuba? Tu je jeho zmes. Len do misky, nech ho nes
 action.Q6B.002,"Prvý raz som dostal návod, ktorému rozumie aj adresát.",Dva kroky a žiaden lístok. To zvládnem.,"editor: 'návod, ktorému rozumie aj holub' made no sense, the instruction is for Adam; now plays on Štefan's slips"
 action.Q6C.journal,Dokončené: Položiť krmivo do misky.,Béla zjedol krmivo z misky a odletel k pošte.,TEXT-04 rewrite
 action.Q6C.001,Krmivo je tu. Ja odstúpim.,"Krmivo je v miske. Odstúpim, nech má Béla pokoj.",TEXT-04 rewrite
-action.Q6C.002,Najedol sa a letí k pošte. Funguje lepšie než moje pripomienky.,Najedol sa a letí rovno k pošte. Spoľahlivejšie ako niektoré zásielky.,TEXT-04 rewrite
+action.Q6C.002,Najedol sa a letí k pošte. Funguje lepšie než moje pripomienky.,"Najedol sa, otriasol a letí rovno k pošte. Cestu domov pozná lepšie ako ja.","v2: 'Spoľahlivejšie ako niektoré zásielky' was the old pattern; now Adam's self-irony (he is lost in time); GPT accept: Plain verb, same self-irony."
 action.Q6D.label,Potvrdiť Bélov návrat,Bélov návrat,TEXT-04 rewrite
 action.Q6D.journal,Dokončené: Potvrdiť Bélov návrat.,Béla je doma. Alojz mi na pamiatku dal do zápisníka odtlačok starej pečiatky.,"editor: 'je po návrate doma' was redundant; drop: Návrat; plain noun here, not the proof"
 action.Q6D.001,"Béla je doma. Do zápisníka vám dám odtlačok starej pečiatky. Len pamiatku, nie nové úradné oprávnenie.","Béla je doma, vďaka vám. Do zápisníka vám dám odtlačok starej pečiatky. Na pamiatku, úradne to neplatí.",TEXT-04 rewrite
-action.Q6D.002,Dnes beriem aj neúradné dobré správy.,Neúradné dobré správy beriem najradšej.,TEXT-04 rewrite
+action.Q6D.002,Dnes beriem aj neúradné dobré správy.,Ďakujem. V zápisníku mám samé čísla a šípky. Toto bude prvá pekná strana.,v2: 'Neúradné dobré správy beriem najradšej' was a summary quip; now a reaction to the gift itself
 action.Q7A.label,Ponúknuť pomoc so scenárom,Môžem pomôcť so scenárom?,TEXT-04 rewrite
 action.Q7A.journal,Dokončené: Ponúknuť pomoc so scenárom.,Rudo požičal scenár Mire ako podložku. Mal by byť na povale technického archívu.,editor: 'Bude na povale' read as future
 action.Q7A.001,Scenár som požičal Mire ako podložku pod nákres. Teraz mám len prvú vetu.,"Ach, scenár! Požičal som ho Mire ako podložku pod nákresy. A teraz viem naspamäť len prvú vetu!",TEXT-04 rewrite
 action.Q7A.002,Kde mala nákresy?,A kde Mira kreslila?,TEXT-04 rewrite
-action.Q7A.003,"Na povale pri meracej miestnosti. Ak ho nájdete, budem veľmi dramaticky vďačný.","Na povale pri meracej miestnosti. Ak ho nájdete, budem vám vďačný. Veľmi dramaticky!",TEXT-04 rewrite
+action.Q7A.003,"Na povale pri meracej miestnosti. Ak ho nájdete, budem veľmi dramaticky vďačný.","Na povale pri meracej miestnosti. Ak ho nájdete, poďakujem vám aj s poklonou!","C3 tone pass (GPT joke, accept): Right: a bow is concrete theatre and sets up Adam's 'Stačí, keď poďakujete celkom obyčajne' and Rudo's 'nacvičím to'."
 action.Q7B.label,Zobrať Rudov zabudnutý scenár,Vziať Rudov scenár,TEXT-04 rewrite
 action.Q7B.journal,Dokončené: Zobrať Rudov zabudnutý scenár.,Na povale som našiel Rudov scenár.,TEXT-04 rewrite
-action.Q7B.001,"Žiaden strach, miláčik. Dnes by sa hodil ako pracovný názov celého dňa.","„Žiaden strach, miláčik!“ Hodilo by sa to ako názov môjho dnešného dňa.","consistency: Adam reads the title, written with '!' as on the cover, item.PLAY and Q7C"
+action.Q7B.001,"Žiaden strach, miláčik. Dnes by sa hodil ako pracovný názov celého dňa.","„Žiaden strach, miláčik!“ Keby mi to niekto povedal ráno, keď som išiel len vymeniť poistku.","C3 tone pass (GPT joke, adapt): Real problem (a detached summary quip); GPT's version is clumsy. The adapted line uses Adam's running gag (the day that started with a fuse, VOICES)."
 action.Q7C.label,Vrátiť scenár ochotníkovi,Vrátiť scenár Rudovi,TEXT-04 rewrite
 action.Q7C.journal,Dokončené: Vrátiť scenár ochotníkovi.,Rudo má späť svoj scenár. Premiéra teda bude.,editor: echoes Lída's 'Keď Rudo nájde scenár'; 'sa môže konať' was stiff
 action.Q7C.002,To je prvá veta?,To je tá prvá veta?,TEXT-04 rewrite
@@ -967,7 +990,7 @@ action.Q8B.001,Na lavičke pri plese je pes a nápis Druhý život. To bol vonka
 action.Q8B.002,"Dnes pracuje v lobby hotela. Najprv sa jej spýtam, či balík skutočne čaká.","Teraz je v lobby hotela. Spýtam sa jej, či ten balík naozaj patrí jej.",editor: idiom ('čaká na ňu' -> 'patrí jej')
 action.Q8C.label,Overiť príjemcu starej doručovacej adresy,Ukázať Tamare Očkovu požiadavku,TEXT-04 rewrite
 action.Q8C.001,"Áno, objednala som tú sadu. Vlani sme boli pri lavičke pri plese, tento rok nás výstava pozvala do Grandu. Tu je potvrdenie príjemkyne aj nový bod odovzdania.","Áno, ten balík je môj. Vlani som mala stôl pri plese, tento rok som v Grande. Tu máš potvrdenie s novou adresou.","current text exceeded the 160 hard limit; editor: 'tú sadu' named a set the player never heard of, now 'ten balík' as in Q8A"
-action.Q8C.002,"Očko dostane údaje, ktoré nepotrebujú lokálnu spomienku.","Očko dostane adresu, pri ktorej si nemusí pamätať, kto kde vlani sedel.",TEXT-04 rewrite
+action.Q8C.002,"Očko dostane údaje, ktoré nepotrebujú lokálnu spomienku.","Zanesiem mu ju. Nová adresa a žiadna lavička so psom, to Očko zvládne.","C4_tone: adapt (joke), see review_gpt/C4_tone.decisions.csv"
 action.Q8D.label,Odovzdať overené doručovacie údaje,Dať Očkovi potvrdenie opravovne,TEXT-04 rewrite
 action.Q8D.journal,Dokončené: Odovzdať overené doručovacie údaje.,Očko má novú adresu: Tamarin opravársky stôl v lobby hotela Grand Jasná.,TEXT-04 rewrite
 action.Q8D.003,Poďakovanie zaradené mimo navigačných údajov. Uchovám ho.,Poďakovanie nemá navigačnú hodnotu. Uchovám ho aj tak.,TEXT-04 rewrite
@@ -1024,7 +1047,7 @@ action.E05.002,"Tu máte čistý pohár aj suchý baliaci papier. Nie všetko mu
 action.E05.003,Tento bude slúžiť mimoriadne dlho.,"Tento vydrží dlhšie, než by ste verili.",TEXT-04 rewrite
 action.E06.label,Utesniť mostík do suchého pohára,Uložiť mostík do pohára a utesniť,TEXT-04 rewrite
 action.E06.journal,Dokončené: Utesniť mostík do suchého pohára.,Mostík je zapečatený v suchom pohári.,TEXT-04 rewrite
-action.E06.001,"Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Oto skontroloval závit.","Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Závit dotiahnem dvakrát.","playtest PT-S09: E06 happens in Ružena's shop, Oto is not there; drop: Oto"
+action.E06.001,"Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Oto skontroloval závit.","Suchá výplň, mostík so štítkom s lastovičkou, tesnenie a viečko. Dotiahnem ho dvakrát.","C3 tone pass (GPT unnatural, adapt): Right on both points; 'Dotiahnem ho' avoids repeating 'viečko' twice in one line."
 action.E06.002,"Teraz príde tá časť, ktorú si Tóno zapamätá dlhšie než ja.",Teraz to treba schovať. Tóno si to miesto bude pamätať dlhšie ako ja.,TEXT-04 rewrite
 action.E07.label,Dohodnúť ochranu mladej lipy,Ochrana mladej lipy,TEXT-04 rewrite
 action.E07.journal,Dokončené: Dohodnúť ochranu mladej lipy.,"Šimon mi dal ohrádku pre mladú lipu. Keď ju postavím, zakreslí vozíku obchádzku.",TEXT-04 rewrite
@@ -1073,7 +1096,7 @@ action.J02.002,Prvá etapa je Biela Púť–Priehyba. Tento nástup sa dá vysve
 action.J03.journal,V kabíne si môžeš prezrieť krajinu a porozprávať sa s Milošom; potom dokonči jazdu.,Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.,TEXT-04 rewrite
 action.J03.objective,V kabíne si môžeš prezrieť krajinu a porozprávať sa s Milošom; potom dokonči jazdu.,Počas jazdy sa môžeš pozerať von alebo sa porozprávať s Milošom; potom dokonči jazdu.,TEXT-04 rewrite
 action.J03.001,Lístok platí aj tu. Nech sa páči. Po príchode sa dvere normálne otvoria.,"Lístok platí aj tu, nech sa páči. Dvere sa otvoria, až keď kabína príde hore.","editor: Ivan stays at Priehyba, so not 'keď prídeme hore'"
-action.J03.002,Takýto vzťah k dverám mi dnes vyhovuje.,"Dvere, ktoré sa otvárajú až v cieli. Presne to dnes potrebujem.",TEXT-04 rewrite
+action.J03.002,Takýto vzťah k dverám mi dnes vyhovuje.,"Až v cieli? Výborne. Dnes som prešiel cez dosť dverí, za ktorými bol iný rok.","GPT adapt (C4_v2.decisions.csv): Agree the handoff line read as an ironic summary; own fix is Adam's time-travel self-irony (allowed), concrete and following Ivan's line, unlike GPT's 'ruky nechám na brašni'.; C4_tone: accept (grammar), see review_gpt/C4_tone.decisions.csv"
 action.J04.journal,Pri Rotunde zaznamenaj panel normalizácie a pokračuj do vlastného pavilónu Atlasu.,Pri Rotunde odfoť telefónom panel normalizácie a potom choď do servisného pavilónu Atlasu.,TEXT-04 rewrite
 action.J04.objective,Pri Rotunde zaznamenaj panel normalizácie a pokračuj do vlastného pavilónu Atlasu.,Pri Rotunde odfoť telefónom panel normalizácie a potom choď do servisného pavilónu Atlasu.,TEXT-04 rewrite
 action.J05.journal,Prepnúť vlastný výstup Atlasu na MONITOR.,Teraz prepni prepínač Atlasu na MONITOR.,TEXT-04 rewrite
@@ -1095,6 +1118,7 @@ action.Q9C.label,Vrátiť Jane uznanú vlastnú schému,Vrátiť Jane schému s 
 action.Q9C.journal,"Voliteľne sa s Janou porozprávaj v 1995,2020 aj 2035 a pozri si dosah jednej podpory.","Ak chceš, nájdi Janu aj v rokoch 1995, 2020 a 2035 a pozri sa, čo jej tá podpora dala.",TEXT-04 rewrite
 action.Q9C.objective,"Voliteľne sa s Janou porozprávaj v 1995,2020 aj 2035 a pozri si dosah jednej podpory.","Ak chceš, nájdi Janu aj v rokoch 1995, 2020 a 2035 a pozri sa, čo jej tá podpora dala.",TEXT-04 rewrite
 action.Q9C.001,Môžem to ukázať aj takto?,"Naozaj to môžem ukázať takto, po svojom?",TEXT-04 rewrite
+action.Q9C.003,Tak nakreslím aj druhý. Možno raz budem mať celý zošit.,Tak nakreslím aj druhý návrh. Možno raz budem mať celý zošit.,"C3 tone pass (GPT nonsense, accept): Right: after the cafeteria-queue line 'druhý' read as a second queue."
 action.Q9C.004,"Myslím, že sa naň ešte niekedy pozriem.",Ten zošit by som raz rád videl.,TEXT-04 rewrite
 action.Q9D.label,Spýtať sa na pokračovanie Janinho návrhu,Čo bolo s vašou schémou?,"Jana speaks first: label is now Adam's question, addressed to her; drop: Jana"
 action.Q9D.journal,Dokončené: Spýtať sa na pokračovanie Janinho návrhu.,Jana vedie deti v kabinete a učí ich stavať rádiá.,TEXT-04 rewrite
@@ -1148,34 +1172,38 @@ topic.TONO.ambient 1.001,"To, čo sa malo samo vrátiť na miesto.","To, čo sa 
 topic.TONO.ambient 1.002,Myslíte veci?,Veci?,removed vy form (ambient topic must stay neutral before/after E11)
 topic.TONO.ambient 1.003,Niekedy aj žiakov.,Niekedy aj žiaci.,case follows the new .001 (nominative)
 topic.TONO.ambient 2.label,Školské pravidlá,Aké sú tu pravidlá?,Tóno speaks first: label is now Adam's question
-topic.TONO.ambient 2.001,"Zapísať sa, držať sa kabinetu a triedy krúžku. Deti si nefotiť.","Zapísať sa, chodiť len do kabinetu a do triedy krúžku. A deti nefotiť.",editor: 'zostať v kabinete a v triede' was illogical (two rooms at once)
+topic.TONO.ambient 2.001,"Zapísať sa, držať sa kabinetu a triedy krúžku. Deti si nefotiť.","Zapísať sa, chodiť len do kabinetu a do triedy pamäťového krúžku. A deti nefotiť.",GPT adapt: Agree 'triedy krúžku' was clipped; own fix uses the room's name (Trieda pamäťového krúžku).
 topic.TONO.ambient 2.002,Rozumiem. Dnes sa vyhýbam aj vlastnej triednej fotografii.,Rozumiem. Dnes sa vyhýbam aj vlastnej triednej fotke.,TEXT-04 rewrite
+topic.MIRA95.ambient 1.001,"Budovy sa fotia. Ale ako znie prestávka, to o dvadsať rokov nikto nevie.","Budovy sa fotia. Ale ako znie prestávka, to o dvadsať rokov nikto nebude vedieť.",GPT accept: Correct future tense.
 topic.MIRA95.ambient 1.002,Niekedy to počujem aj dnes.,Ja to počujem dodnes.,TEXT-04 rewrite
+topic.MIRA95.ambient 2.001,"Máš zvláštny spôsob, ako držíš skrutkovač. Poznám niekoho podobného.",Skrutkovač držíš zvláštnym spôsobom. Poznám niekoho podobného.,GPT accept: More direct.
 topic.MIRA95.after.label,Zachovaný začiatok,Zmenilo sa niečo?,Mira speaks first: label is now Adam's question
 topic.MIRA95.after.001,V starom registri je znovu celé číslo uloženia. Niečo si napravil.,V starom registri je zase celé číslo uloženia. Niečo si napravil.,TEXT-04 rewrite
 topic.MIRA95.after.002,"Skôr som zabránil tomu, aby sa stratilo to, čo už bolo správne.","Skôr som len nedovolil, aby sa stratilo to, čo bolo správne.",TEXT-04 rewrite
 topic.LEA95.ambient 2.label,Aj prestávky medzi slovami?,Nahrávate aj ticho?,label was a fragment without context
 topic.LEA95.ambient 2.001,Aj tie. Niekedy práve tam rozmýšľame.,Aj prestávky medzi slovami. Práve vtedy človek rozmýšľa.,TEXT-04 rewrite
 topic.LEA95.after.label,Ochotnícka veta,"„Žiaden strach, miláčik“?",Lea speaks first: label is now Adam's question (he saw the play in 1960)
-topic.LEA95.after.001,"Mira raz priniesla program z Ivanky. Žiaden strach, miláčik. Deti sa tomu názvu smejú dodnes.","Mira raz priniesla z Ivanky program divadla: Žiaden strach, miláčik! Deti sa tomu názvu smejú dodnes.",TEXT-04 rewrite
+topic.LEA95.after.001,"Mira raz priniesla program z Ivanky. Žiaden strach, miláčik. Deti sa tomu názvu smejú dodnes.","Mira raz priniesla z Ivanky program k hre „Žiaden strach, miláčik!“ Deti sa tomu názvu smejú dodnes.",GPT accept: Clearer title introduction; the protected title stays verbatim.
+topic.LEA95.after.002,Aspoň program prežil všetky tri dejstvá.,Program prežil. A hrá tú hru ešte niekto?,GPT adapt: Agree the three-acts quip had no set-up; own fix is a plain question that leads into Lea's reply; drop: 3
 topic.SONA.ambient 2.002,To sa dospelým nie vždy páči.,Dospelí by to radšej zmazali.,TEXT-04 rewrite
 topic.ZITA.ambient 1.label,Čerstvé správy,Máte dnešné noviny?,Zita speaks first: label is Adam's question; editor: 'Čo je nové?' was nearly identical to ZITA.ambient 2 'Čo sa deje na sídlisku?'
 topic.ZITA.ambient 1.001,Čerstvé sú za príplatok. O včerajších ti poviem sama.,Čerstvé správy máš v novinách za pár korún. Tie včerajšie ti poviem zadarmo.,editor: a newspaper did not cost one koruna in 1995
 topic.ZITA.ambient 1.002,Ja by som výnimočne bral tie spred dvadsiatich piatich rokov.,Stačia mi dnešné. Pre mňa sú aj tak dvadsaťpäť rokov staré.,'spred dvadsiatich piatich rokov' was confusing; same 25-year idea; drop: 20
 topic.ZITA.ambient 2.label,Čo je nové na sídlisku?,Čo sa deje na sídlisku?,TEXT-04 rewrite
-topic.ZITA.ambient 2.002,Dobrý koniec s pokračovaním.,"Typická oprava. Hotová, a aj tak sa na ňu nedá sadnúť.",TEXT-04 rewrite
+topic.ZITA.ambient 2.002,Dobrý koniec s pokračovaním.,"Opravená, a nedá sa na ňu sadnúť? Ktorá to je?",GPT accept: Clear reference to the bench.; tone pass C2_tone: adapt GPT flag
 topic.EMIL.ambient 1.001,"To, čo si pamätám. A kde zabudnem, to je improvizácia.","To, čo si pamätám. A kde zabudnem, tam improvizujem.",TEXT-04 rewrite
 topic.EMIL.ambient 2.label,Publikum,Kto vás počúva?,Emil speaks first: label is now Adam's question
 topic.EMIL.ambient 2.001,"Najvernejšia je pani, čo čaká na opačný smer.","Najvernejšia je jedna pani, čo každý deň čaká na električku opačným smerom.",TEXT-04 rewrite
 topic.PALI.ambient 1.001,Akú dávate záruku?,Akú dávaš záruku?,Adam and Pali say ty
 topic.PALI.ambient 1.002,"Že poviem pravdu, ak sa to neoplatí.","Že ti poviem pravdu, keď sa oprava neoplatí.",TEXT-04 rewrite
+topic.PALI.ambient 1.003,Nadštandardná služba.,A koľkým si to dnes povedal?,v1 'Nadštandardná služba.' was a summary quip; now a follow-up Pali answers
 topic.PALI.ambient 2.label,Nové technológie,Čo bude s technikou?,Pali speaks first: label is now Adam's question
 topic.PALI.ambient 2.001,Budú menšie. Ale skrutky nezmiznú.,Bude menšia. Ale skrutky nezmiznú.,TEXT-04 rewrite
 topic.VIERA.ambient 1.label,Kniha bez konca,Literatúra pre cestovateľov,label 'Kniha bez konca' did not match the exchange
 topic.VIERA.ambient 1.002,"Vráť sa včera, práve som to predala.",Príďte včera. Poslednú knihu som práve predala.,fixed ty -> vy (Viera vy ↔ vy); editor: 'Poslednú' needed a noun
 topic.VIERA.ambient 2.label,Prečo mapové prílohy osobitne?,Prečo prílohy zvlášť?,TEXT-04 rewrite
 topic.VIERA.ambient 2.001,Kniha sa predá. Príloha sa stratí. Tak som prestala veriť ich spoločnému bývaniu.,"Kniha sa predá, príloha sa stratí. Tak ich radšej držím oddelene.",TEXT-04 rewrite
-topic.VIERA.ambient 2.002,Riešim podobný problém v rodine času.,Taký systém by sa hodil aj na rodinné fotky.,TEXT-04 rewrite
+topic.VIERA.ambient 2.002,Riešim podobný problém v rodine času.,A na rodinné fotky máte tiež nejaký systém?,GPT accept: A question makes Viera's answer follow.
 topic.ARCHIVAR.ambient 1.label,Ako dlho sa archivuje?,Ako dlho veci uchovávate?,TEXT-04 rewrite
 topic.ARCHIVAR.ambient 1.001,Podľa hodnoty obsahu.,"Podľa toho, akú majú hodnotu.",TEXT-04 rewrite
 topic.ARCHIVAR.ambient 1.002,A keď sa hodnota ukáže neskôr?,A keď sa hodnota ukáže až neskôr?,TEXT-04 rewrite
@@ -1183,12 +1211,14 @@ topic.ARCHIVAR.ambient 1.003,Preto nerád vyhadzujem veci skôr.,Preto nič nevy
 topic.FOTO.ambient 1.label,Ako dlho vyvolanie trvá?,Vyvolávanie,label repeated Adam's question
 topic.FOTO.ambient 1.001,Ako dlho vyvolanie potrvá?,Ako dlho to bude trvať?,TEXT-04 rewrite
 topic.FOTO.ambient 1.002,Tento technický záber pripravím hneď. Vy zatiaľ počkajte pri suchom pulte.,"Technický záber vyvolám hneď. Počkajte, prosím, pri suchom pulte.",TEXT-04 rewrite
+topic.FOTO.ambient 1.003,"Konečne časový údaj, ktorému rozumiem.",Pri suchom pulte? Takže pri mokrom sa nečaká?,"v1 'Konečne časový údaj, ktorému rozumiem' was a summary quip; now a follow-up Alena answers (new x01)"
 topic.FOTO.ambient 2.label,Ľudia na fotkách,Kedy je fotka najlepšia?,Alena speaks first: label is now Adam's question
 topic.FOTO.ambient 2.001,"Najlepšie zábery vznikajú, keď si myslia, že už nefotím.","Keď si ľudia myslia, že už nefotím.",TEXT-04 rewrite
 topic.FOTO.ambient 2.002,Takže ten zvuk uzávierky je hlavne informačná asymetria.,Takže to cvaknutie na konci je len divadlo.,removed 'informačná asymetria'
 topic.TRH.ambient 1.001,Každá je originál. Niektorá dokonca patrí k obalu.,Originál? Tu je všetko originál. Len nie vždy od toho istého výrobcu.,TEXT-04 rewrite
-topic.TRH.ambient 1.002,Cení sa úprimnosť.,Cením si úprimnosť.,TEXT-04 rewrite
+topic.TRH.ambient 1.002,Cení sa úprimnosť.,A záruka?,v1 'Cením si úprimnosť.' was a summary quip; now a follow-up Fero answers
 topic.TRH.ambient 2.label,Čo stojí konektor?,Koľko stojí konektor?,TEXT-04 rewrite
+topic.TRH.ambient 2.003,Tak bez záruky na obsah.,Písomky nech oznamuje potichu. Buchty nahlas.,v1 'Tak bez záruky na obsah.' repeated Pali's B05 joke; now a callback to the canteen notice 'Zajtra buchty' (look.S16.ambient 2)
 topic.MILADA.ambient 1.001,"Keď niekto tvrdí, že to bolo vždy takto.",Vetu „vždy to tak bolo“.,TEXT-04 rewrite
 topic.MILADA.ambient 1.002,"Dnes je to výstižnejšie, než by ste chceli.",To poznám. Dnes viac ako inokedy.,TEXT-04 rewrite
 topic.MILADA.ambient 2.label,Textil a elektronika,Rozumiete aj káblom?,Milada speaks first: label is now Adam's question
@@ -1200,7 +1230,8 @@ topic.JURO.ambient 2.002,Skúsim to niekomu zopakovať v budúcnosti.,To si zapa
 topic.JURAJ.ambient 1.002,To je podstatne väčšia mapa.,"To je oveľa väčšia mapa, ako sa zdá.",TEXT-04 rewrite
 topic.JURAJ.ambient 2.label,Máte povolenie?,Máš povolenie?,Adam tyká Jurajovi (VOICES)
 topic.JURAJ.ambient 2.001,Jasné. Tu. Aj s pečiatkou.,"Jasné. Tu, aj s pečiatkou.",TEXT-04 rewrite
-topic.DEZI.ambient 1.001,"Ľudí, ktorí chcú niekomu povedať, že ich počuť.","Ľudí, ktorí volajú do sveta, či ich niekto počuje.",editor: writer's colon construction was broken
+topic.JURAJ.ambient 2.002,"Umenie, ktoré prežilo administratívu. Rešpekt.",Aj s pečiatkou? Na kreslenie kriedou?,"v1 'Umenie, ktoré prežilo administratívu. Rešpekt.' was a summary quip; now a question Juraj answers"
+topic.DEZI.ambient 1.001,"Ľudí, ktorí chcú niekomu povedať, že ich počuť.","Ľudí, ktorí volajú do sveta a pýtajú sa, či ich niekto počuje.",GPT accept: Correct: the indirect question needs 'a pýtajú sa'.
 topic.DEZI.ambient 2.label,Presnosť,Čo je pre vás presnosť?,Dezider speaks first: label is now Adam's question
 topic.DEZI.ambient 2.001,"Presnosť nie je, keď všetko ukazuje rovnako. Je to, keď vieš, prečo niečo ukazuje inak.","Presné neznamená rovnaké. Presné je, keď vieš, prečo niečo ukazuje inak.",TEXT-04 rewrite
 topic.BOZO.ambient 1.002,Ďakujem. Ja sa zatiaľ pokúsim pôsobiť ako normálny návštevník.,Ďakujem. Zatiaľ sa budem tváriť ako obyčajný návštevník.,TEXT-04 rewrite
@@ -1215,7 +1246,7 @@ topic.POSTA.ambient 1.001,"Potvrdí, že dokument bol dnes tu. Nie že je jeho o
 topic.POSTA.ambient 1.002,To je veľmi dôležitý rozdiel.,Presne toto potrebujem.,TEXT-04 rewrite
 topic.POSTA.ambient 2.label,Holub a pošta,Béla je poštový holub?,TEXT-04 rewrite
 topic.POSTA.ambient 2.001,Béla nie je služobný. To je moja osobná doprava radosti.,Béla nie je služobný holub. Je to moja súkromná radosť s krídlami.,TEXT-04 rewrite
-topic.POSTA.ambient 2.002,Tá zvykne meškať najmenej.,Radosť s krídlami asi nikdy nemešká.,editor: 'Taká zásielka' had no referent; reacts to Alojz's phrase
+topic.POSTA.ambient 2.002,Tá zvykne meškať najmenej.,A nosí niekedy aj listy?,v2: 'Radosť s krídlami asi nikdy nemešká' was a summary quip; now a question with a payoff
 topic.LIDA.ambient 1.label,Premiéra,Kedy je premiéra?,TEXT-04 rewrite
 topic.LIDA.ambient 1.001,"Bude, keď Rudo nájde scenár.",Keď Rudo nájde scenár.,TEXT-04 rewrite
 topic.LIDA.ambient 1.003,Bude nové dielo.,Tak bude premiéra úplne nového diela.,TEXT-04 rewrite
@@ -1226,10 +1257,10 @@ topic.RUDO.ambient 2.label,Tréma,Máte trému?,TEXT-04 rewrite
 topic.RUDO.ambient 2.001,Ja trému nemám. Len si moje kolená pripravujú vlastné predstavenie.,Ja? Nikdy! Iba moje kolená si nacvičujú vlastné predstavenie.,TEXT-04 rewrite
 topic.RUDO.ambient 2.002,Hlavne nech neodídu na zájazd.,Hlavne nech vám neodídu na zájazd.,TEXT-04 rewrite
 topic.SKLAD.ambient 1.001,"Nie. Ale viem, čo nemáme.","Všetko nie. Ale presne viem, čo nemáme.",TEXT-04 rewrite
-topic.SKLAD.ambient 1.002,Aj to je dobrý skladový systém.,"To je viac, ako vie väčšina skladov.",TEXT-04 rewrite
+topic.SKLAD.ambient 1.002,Aj to je dobrý skladový systém.,A čo nemáte?,"v2: 'To je viac, ako vie väčšina skladov' was an ironic summary; now Štefan lists exactly what is missing (x01)"
 topic.SKLAD.ambient 2.label,Načo odrezky?,Načo vám tie odrezky?,TEXT-04 rewrite
 topic.SKLAD.ambient 2.001,Veľká vec sa bez malej často nepohne.,Bez malých kúskov sa veľká vec často nepohne.,TEXT-04 rewrite
-topic.SKLAD.ambient 2.002,To platí aj o celom mojom dnešku.,Presne tak vyzerá celý môj dnešný deň.,TEXT-04 rewrite
+topic.SKLAD.ambient 2.002,To platí aj o celom mojom dnešku.,A čo sa dá z takého kúska urobiť?,v2: 'Presne tak vyzerá celý môj dnešný deň' was the old pattern; now a question; Štefan names 'pútko' (sets up Q10)
 topic.OTO.ambient 1.001,Mal porovnať hodiny na viacerých miestach. Potom sa ozval včerajšok.,Mal porovnávať hodiny na viacerých miestach naraz. A potom sa nám ozval včerajšok.,TEXT-04 rewrite
 topic.OTO.ambient 1.002,A nezavreli ste dielňu?,A vy ste z dielne neutiekli?,TEXT-04 rewrite
 topic.OTO.ambient 2.label,Nebezpečný objav,Nie je to nebezpečné?,TEXT-04 rewrite
@@ -1241,7 +1272,8 @@ topic.MIRA60.ambient 1.003,Ty veľmi výrazne.,Ty obzvlášť.,TEXT-04 rewrite
 topic.MIRA60.ambient 2.label,Pýtate sa málo,Prečo sa ma nič nepýtate?,TEXT-04 rewrite
 topic.MIRA60.ambient 2.002,To by sa malo dediť.,Tak to sa u nás v rodine bude dediť.,TEXT-04 rewrite
 topic.NINA.ambient 1.001,Áno. Stále robí zoznamy. Len už na ne píše aj dovolenka.,Áno. Stále píše zoznamy. Len teraz je na nich aj dovolenka.,TEXT-04 rewrite
-topic.NINA.ambient 2.001,"Výstava zbiera aj spomienky na výlety. Grand poskytol miesto na verejnú časť, pri Chopku máme vlastný dočasný pavilón.","Výstava zbiera aj spomienky na výlety. Verejná časť je v hoteli, na Chopku máme dočasný pavilón.",editor: 'pri Chopku' -> 'na Chopku' (the pavilion is by the Rotunda on Chopok); moved: Grand Jasná (she stands in front of it)
+topic.NINA.ambient 1.002,Tak predsa sa niečo zlepšilo.,Dovolenka? Tú má vaša mama na zozname ako úlohu?,was the tag 'Tak predsa sa niečo zlepšilo.'; sets up Ela's lists gag (C1 ELA.extra 3)
+topic.NINA.ambient 2.001,"Výstava zbiera aj spomienky na výlety. Grand poskytol miesto na verejnú časť, pri Chopku máme vlastný dočasný pavilón.","Na výstavu zbierame aj spomienky na výlety. Verejná časť je v hoteli, na Chopku máme dočasný pavilón.","C4_tone: accept (unnatural), see review_gpt/C4_tone.decisions.csv"
 topic.NINA.ambient 2.002,A lanovka dodala slušný dôvod sa cestou chvíľu pozerať z okna.,A cestou hore má každý dôvod chvíľu sa pozerať z okna.,TEXT-04 rewrite
 topic.NINA.after.label,Po incidente,Čo je teraz s Atlasom?,TEXT-04 rewrite
 topic.TAMARA.ambient 1.001,Káva je oprava človeka dočasným spôsobom.,Káva je dočasná oprava človeka.,TEXT-04 rewrite
@@ -1249,16 +1281,20 @@ topic.TAMARA.ambient 1.002,Máte aj trvalejší zásah?,A trvalejšiu opravu má
 topic.TAMARA.ambient 1.003,Zatvárame o šiestej.,Áno. Zatvárame o šiestej.,TEXT-04 rewrite
 topic.TAMARA.ambient 2.label,Staré médiá,Prečo práve kazety?,TEXT-04 rewrite
 topic.TAMARA.ambient 2.001,"Kazeta aspoň ukáže, že sa niečo krúti.","Na kazete aspoň vidíš, že sa niečo točí.",TEXT-04 rewrite
-topic.TAMARA.ambient 2.002,V tom máme veľa spoločného.,Mne sa dnes tiež všetko točí.,TEXT-04 rewrite
-topic.BORIS.ambient 1.002,"Dnes som veľmi rád, že ju rozlišujete.","Dnes som rád, že ten rozdiel poznáte.",TEXT-04 rewrite
+topic.TAMARA.ambient 2.002,V tom máme veľa spoločného.,A pri ostatných prístrojoch to nevidíš?,was the wink 'Mne sa dnes tiež všetko točí.'; follow-up question Tamara answers in .x01
+topic.BORIS.ambient 1.002,"Dnes som veľmi rád, že ju rozlišujete.",V čom je ten rozdiel?,"was the tag 'Dnes som rád, že ten rozdiel poznáte.'; now the follow-up question Boris answers in .x01"
 topic.BORIS.ambient 2.label,Nezhodné spomienky,Čo keď sa spomienky líšia?,editor: full question
 topic.BORIS.ambient 2.002,Niekto tam dal príliš úzke police.,Tak niekto v Atlase kúpil príliš úzke police.,TEXT-04 rewrite
 topic.SARA.ambient 1.label,Návšteva z minulosti,Zapíšete si ma?,TEXT-04 rewrite
 topic.SARA.ambient 1.003,Dám služobná návšteva.,Napíšem: služobná návšteva.,fixed broken Slovak 'Dám služobná návšteva' (style guide 3.3)
 topic.SARA.ambient 2.label,Papierová evidencia,Načo vám je ten zošit?,TEXT-04 rewrite
 topic.SARA.ambient 2.001,"Keď miznú mená v systéme, zapisujem ich sem.","Keď mená miznú zo systému, zapisujem ich sem perom.",TEXT-04 rewrite
+topic.SARA.ambient 2.002,To je možno najdôležitejší server v budove.,A koľko mien tam dnes máte?,was the tag 'To je možno najdôležitejší server v budove.'; follow-up question
+topic.ROBOT.ambient 1.002,To máme podobné.,A to jedno percento?,was the tag 'To máme podobné.'; Očko answers literally in .x01
+topic.ROBOT.ambient 2.002,Znamenajú dostatočný stav batérie. Vplyv na náladu je pravdepodobný.,Znamenajú dostatočné nabitie batérie. Vplyv na náladu je pravdepodobný.,"C4_tone: accept (unnatural), see review_gpt/C4_tone.decisions.csv"
 topic.VIKTOR.ambient 1.002,Spojiť sa dajú aj bez odstrihnutia okrajov.,"Spojiť sa dajú aj bez toho, aby ste im odstrihli okraje.",TEXT-04 rewrite
-topic.VIKTOR.ambient 1.003,"To hovoríš teraz. Keď ti zostane jediná nahrávka, začneš počítať každý šum.","To hovoríte teraz. Keď vám zostane jediná nahrávka, začnete počítať každý šum.",Viktor -> Adam: vy (VOICES)
+topic.VIKTOR.ambient 1.003,"To hovoríš teraz. Keď ti zostane jediná nahrávka, začneš počítať každý šum.","To hovoríte teraz. Keď vám zostane jediná nahrávka, začnete si všímať každý šum.",GPT accept (C4_v2.decisions.csv): More natural; the serious line keeps its meaning.
+topic.VIKTOR.ambient 2.001,"Záznamy dostanú pôvod, verzie a možnosť nesúhlasiť. A ja zverejním, čo som spustil.","Záznamy budú mať uvedený pôvod aj verzie a ľudia budú môcť nesúhlasiť. A ja zverejním, čo som spustil.","GPT accept (C4_v2.decisions.csv): Correct: records do not disagree, people do."
 topic.VIKTOR.ambient 2.002,Dobre. Začnime tým vypínačom.,Dobre. Začnime tými štyrmi portmi.,"editor: topic is available after F11, when the switch is already on MONITOR; 'Začnime tým vypínačom' contradicted that; the ports are the next step"
 topic.VIKTOR.after.label,Čo zostalo z vašej mamy,A správa vašej mamy?,TEXT-04 rewrite
 topic.VIKTOR.after.003,"Viem. Ďakujem, že si sa ho nepokúsil opraviť.","Viem. Ďakujem, že ste sa ho nepokúsili opraviť.",Viktor -> Adam: vy (VOICES)
@@ -1274,55 +1310,61 @@ topic.DOBRO.ambient 1.001,"Ukázať, že žiaci rozumejú postupu.","Ukázať, �
 topic.DOBRO.ambient 1.002,"A keď tomu rozumejú natoľko, že ho zlepšia?","A keď ho ovládajú tak dobre, že ho vylepšia?",TEXT-04 rewrite
 topic.DOBRO.ambient 1.003,Tak to musia vedieť vysvetliť.,Potom to musia vedieť aj vysvetliť.,TEXT-04 rewrite
 topic.DOBRO.ambient 2.label,Veľa tlačív,Načo toľko tlačív?,TEXT-04 rewrite
-topic.DOBRO.ambient 2.002,Táto veta bude mať veľmi dlhú životnosť.,Tá veta bude platiť aj o štyridsať rokov.,TEXT-04 rewrite
+topic.DOBRO.ambient 2.002,Táto veta bude mať veľmi dlhú životnosť.,Tri podpisy? Na jeden školský výkres?,v2: 'Tá veta bude platiť aj o štyridsať rokov' was an ironic summary; now a question Dobrovič answers in x01; drop: 40
 topic.RUZENA.ambient 1.label,Čo máte na pulte?,Čo dnes máte?,TEXT-04 rewrite
-topic.RUZENA.ambient 1.002,Takýto systém by fungoval aj o veľa rokov.,Tak jasne to nevysvetlí ani internetový obchod.,TEXT-04 rewrite
+topic.RUZENA.ambient 1.002,Takýto systém by fungoval aj o veľa rokov.,"A keď sa spýtam na niečo, čo nemáte?",v2: 'ani internetový obchod' was a modern-era wink; now the natural follow-up to her rule
 topic.RUZENA.ambient 2.label,Poháre,Koľko vydrží taký pohár?,editor: Ružena answers first and her line does not answer 'Máte zaváracie poháre?'; the jar is visible on the shelf
 topic.RUZENA.ambient 2.002,Ja ho plánujem stratiť organizovane.,Tak ho treba dobre schovať.,editor: works before and after E05 (topic always available); the old reply assumed Adam already had the jar
 topic.MARTA82.ambient 1.label,Čo sa eviduje?,Čo všetko zapisujete?,TEXT-04 rewrite
 topic.MARTA82.ambient 1.001,"Čo prišlo a čo odišlo. Keď sa to potom hľadá, ľahšie sa dýcha.","Všetko, čo prišlo, aj čo odišlo. Keď sa potom niečo hľadá, ľahšie sa dýcha.",TEXT-04 rewrite
 topic.MARTA82.ambient 1.002,To by mala byť medzinárodná zásada.,To by som zaviedol aj vo svojej dielni.,TEXT-04 rewrite
-topic.MARTA82.ambient 2.001,"Tak mi povedzte presne, čo potrebujete. Rýchlejšie to býva než vysvetľovať, ako sa ponáhľate.","Tak mi povedzte presne, čo potrebujete. To je rýchlejšie, ako mi vysvetľovať, že sa ponáhľate.",TEXT-04 rewrite
+topic.MARTA82.ambient 2.001,"Tak mi povedzte presne, čo potrebujete. Rýchlejšie to býva než vysvetľovať, ako sa ponáhľate.","Tak mi povedzte presne, čo potrebujete. To je rýchlejšie ako mi vysvetľovať, že sa ponáhľate.","C3 tone pass (GPT grammar, accept): Right: no comma before 'ako' + infinitive in a comparison."
 topic.MARTA82.ambient 2.002,Rozumné.,Máte pravdu. Už nevysvetľujem.,TEXT-04 rewrite
 topic.SIMON.ambient 1.label,Prečo lipa?,Prečo práve lipa?,TEXT-04 rewrite
 topic.SIMON.ambient 1.002,To je veľmi presný dlhodobý plán.,Na desaťročia dopredu. Ja plánujem tak do piatku.,TEXT-04 rewrite
 topic.SIMON.ambient 2.label,Trasa vozíka,Prečo ide vozík tadiaľto?,editor: word order
 topic.SIMON.ambient 2.001,Ľudia chodia najkratšie. Mladý strom na to zatiaľ nemá odpoveď.,Ľudia chodia najkratšou cestou. Mladý strom sa zatiaľ nevie brániť.,TEXT-04 rewrite
 topic.JANA82.ambient 1.label,To ste nakreslili vy?,To si nakreslila ty?,Adam says ty to Jana 12 (VOICES)
-topic.JANA82.ambient 1.002,Možno preto stojí za to sa na to pozrieť.,Možno práve preto sa oplatí pozrieť.,TEXT-04 rewrite
+topic.JANA82.ambient 1.002,Možno preto stojí za to sa na to pozrieť.,Možno práve preto sa na to oplatí pozrieť.,"C3 tone pass (GPT unnatural, accept): Right: 'na to' completes the phrase."
 topic.JANA82.ambient 2.001,Aby to menej šumelo a stále bolo počuť celé vysielanie.,Menej to šumí a pritom počuť celé vysielanie.,TEXT-04 rewrite
-topic.JANA82.ambient 2.002,To je mimoriadne dobré zadanie.,"To by chcel každý, kto kedy ladil rádio.",TEXT-04 rewrite
+topic.JANA82.ambient 2.002,To je mimoriadne dobré zadanie.,"Aj večer, keď sa ladí najhoršie?","v2: 'To by chcel každý, kto kedy ladil rádio' was a summary; now a follow-up that lets Jana explain"
 topic.JANA95.ambient 1.001,"S rozvrhom, papiermi aj prípravou miestnosti. Krúžok vždy potrebuje niekoho, kto dá veciam miesto.","Áno, s rozvrhom, papiermi aj s miestnosťou. Krúžok vždy potrebuje niekoho, kto robí poriadok.",TEXT-04 rewrite
 topic.JANA95.ambient 1.002,Najmä keď pribudne nový nápad.,"A niekoho, kto nechá miesto aj novým nápadom.",editor: now continues Jana's sentence ('potrebuje niekoho') and hints at her own idea
 topic.JANA20.ambient 1.label,Ako funguje výdaj?,Ako funguje výdaj pomôcok?,TEXT-04 rewrite
 topic.JANA20.ambient 1.001,Oddelene po dohode. Pomôcky vyzdvihneme a odovzdáme bez zbytočného stretávania.,"Po dohode a každý zvlášť. Kto si pomôcky vyzdvihne, podpíše preberací list a s nikým sa nestretne.","editor: Adam's reply is about paperwork, so Jana now mentions the form"
 topic.JANA20.ambient 1.002,Papierovanie tentoraz pomáha držať odstup.,"Papierovanie, ktoré naozaj pomáha. Tak to sa vám už asi nič nestratí.","tone pass 2026-10-06, GPT joke flag adapted | "
+topic.JANA35.ambient 1.001,"Máte taký výraz, akoby ste sem zablúdili už druhýkrát.","Možno. Máte taký výraz, akoby ste sem zablúdili už druhýkrát.","C4_tone: accept (nonsense), see review_gpt/C4_tone.decisions.csv"
 topic.JANA35.ambient 1.002,"To je presnejší odhad, než by som vedel potvrdiť.","Ten odhad je presnejší, než by ste si mysleli.",TEXT-04 rewrite
 topic.IVAN.ambient 1.label,Ktorou ďalej?,Kadiaľ ďalej?,TEXT-04 rewrite
 topic.IVAN.ambient 1.001,Dolný úsek ste prišli z Bielej Púte. Teraz Funitel na Chopok. Spiatočný lístok si nechajte.,"Z Bielej Púte ste prišli kabínkou, teraz pôjdete Funitelom na Chopok. Spiatočný lístok si nechajte.",TEXT-04 rewrite
 topic.IVAN.ambient 1.002,Dnes sa spiatočných vecí držím.,Všetko spiatočné si dnes držím oboma rukami.,TEXT-04 rewrite
 topic.IVAN.ambient 2.label,Počasie,Aké je hore počasie?,TEXT-04 rewrite
 topic.IVAN.ambient 2.001,"Dnešná jazda je povolená, podmienky sú dobré. Pri zmene by rozhodovala obsluha.","Dnes je dobre, jazdí sa. Keby sa to zmenilo, dozviete sa to odo mňa.",TEXT-04 rewrite
+topic.IVAN.ambient 2.002,Výborne. Nemám chuť opravovať vietor.,"A keď sa zatiahne, podľa čoho sa mám riadiť?","was the old pattern 'Výborne. Nemám chuť opravovať vietor.'; Ivan answers 'Podľa mňa.' (.x01, VOICES gag); C4_tone: accept (nonsense), see review_gpt/C4_tone.decisions.csv"
+topic.TURISTA.ambient 1.001,Lebo aj tá patrila k výletu.,Lebo aj tá patrí k výletu.,GPT accept (C4_v2.decisions.csv): Correct tense: today's trip.
 topic.TURISTA.ambient 1.002,Dnes ste zhrnuli jednu dosť drahú poruchu.,Tú vetu by som rád niekomu hore zopakoval.,TEXT-04 rewrite
 topic.TURISTA.ambient 2.label,Boli ste tu dávno?,Boli ste tu už niekedy?,editor: 'Boli ste tu dávno?' is not idiomatic
+topic.TURISTA.ambient 2.002,To znie ako tá správna časť spomienky.,A na čom sa smial?,"GPT adapt (C4_v2.decisions.csv): Agree it sounded like an aphorism; own word order with 'zostal' (the memory stayed) is warmer.; C4_tone: adapt (unnatural), see review_gpt/C4_tone.decisions.csv"
 topic.OTO82.ambient 1.002,A ja na vašich hodinách.,A ja som odvtedy nezostarol ani o deň.,TEXT-04 rewrite
 topic.OTO82.ambient 1.003,Tie idú stále každé po svojom.,Všimol som si. Aj bundu máte tú istú.,TEXT-04 rewrite
 topic.OTO82.ambient 2.label,Tóno a technika,Pomáha vám Tóno?,TEXT-04 rewrite
-topic.OTO82.ambient 2.001,Nech si veci vyskúša a vysvetlí. Ale výrobu a papierovanie podpisujem ja.,Pomáha. Nech si veci vyskúša a vysvetlí. Ale výrobu a papiere podpisujem ja.,TEXT-04 rewrite
-topic.OTO82.ambient 2.002,To je rozumné rozdelenie práce.,"Spravodlivé. On má nápady, vy podpis.",TEXT-04 rewrite
+topic.OTO82.ambient 2.001,Nech si veci vyskúša a vysvetlí. Ale výrobu a papierovanie podpisujem ja.,Pomáha. Nech si veci vyskúša a potom ich vysvetlí. Výrobu však schvaľujem a papiere podpisujem ja.,"C3 tone pass (GPT unnatural, adapt): Right: 'si ... vysvetlí' read reflexively and one does not sign 'výrobu'; adapted with 'potom ich' so Tóno explains them to others."
+topic.OTO82.ambient 2.002,To je rozumné rozdelenie práce.,A Tóno s tým súhlasí?,"v2: 'Spravodlivé. On má nápady, vy podpis.' was an ironic summary; now a question with a payoff in x01-x03"
+cutscene.CS01.01.001,"Adam, na tej starej fotke nám vypadol kúsok farby.","Adam, z tej starej fotky nám zmizol kúsok farby.",GPT accept (C4_v2.decisions.csv): Natural for a photograph; Adam's reply 'To nie je farba' still follows.
 cutscene.CS01.01.002,"To nie je farba. Babka, drž sa pri telefóne.","To nie je farba. Babka, nezavesuj.",TEXT-04 rewrite
+cutscene.CS01.02.001,Nositeľ a obsah stabilizované. Referencia 1995.,Nositeľ stabilizovaný. Obsah stabilizovaný. Referencia 1995.,"GPT accept (C4_v2.decisions.csv): Correct agreement, terse device voice."
 cutscene.CS01.02.002,Ja som chcel opraviť poistku.,Ja som chcel len vymeniť poistku.,TEXT-04 rewrite
 cutscene.CS01.03.001,Toto nie je vedľajšia ulica. Toto je vedľajšie desaťročie.,Tú zastávku poznám. Len rok nesedí.,TEXT-04 rewrite
 cutscene.CS02.02.001,"Myslel som si, že toto zabudnem. Len som to dlho nepočul.","Myslel som, že som to zabudol. Len som to dlho nepočul.","old line said 'I thought I would forget this', which contradicts the second sentence"
 cutscene.CS03.01.001,Ivanka pri Dunaji. 6. júna 1960.,Ivanka pri Dunaji. 6. júna 1962.,"Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 cutscene.CS03.01.002,"Pôjdem za človekom, ktorý ešte nevie, že je moja babka.","Idem za ženou, ktorá ešte nevie, že raz bude moja babka.",TEXT-04 rewrite
-cutscene.CS03.02.001,"A urobím to skôr, než to nebude vedieť ani neskôr.","A musím to stihnúť, kým jej meno nezmizne aj z neskorších rokov.",the old line was unparseable; meaning taken from the shot (register flickers with an empty name)
+cutscene.CS03.02.001,"A urobím to skôr, než to nebude vedieť ani neskôr.","A musím to stihnúť, kým jej meno nezmizne aj z neskorších zápisov.","C4_tone: adapt (unnatural), see review_gpt/C4_tone.decisions.csv"
 cutscene.CS04.01.002,Toto bude treba raz niekomu povedať ešte raz.,Túto vetu bude raz treba niekomu zopakovať.,TEXT-04 rewrite
 cutscene.CS04.02.001,Jeden predmet. Niekoľko rúk. Žiadna z nich nie je chyba v zázname.,Jeden predmet. Veľa rúk. Ani jedna z nich nie je chyba v zázname.,TEXT-04 rewrite
-cutscene.CS05.02.002,To mám tentoraz napísané aj na prístroji.,Tentoraz to mám napísané aj na prístroji.,TEXT-04 rewrite
-cutscene.CS06.02.001,"Opravil som z nej všetko, čo som si mal nechať.","Vyčistil som z nej presne to, čo som si mal nechať.",TEXT-04 rewrite
+cutscene.CS05.02.002,To mám tentoraz napísané aj na prístroji.,Nezabudnem. Rok návratu mám tentoraz napísaný aj na prístroji.,"GPT adapt (C4_v2.decisions.csv): Right, the joke did not answer Mira; own fix answers her and keeps the device image."
+cutscene.CS06.02.001,"Opravil som z nej všetko, čo som si mal nechať.","Vyčistil som zo správy presne to, čo som si mal nechať.","GPT adapt (C4_v2.decisions.csv): Agree 'z nej' was ambiguous after 'hlas'; 'vyčistil' stays (his own word for normalizing), so not GPT's 'odstránil'."
 cutscene.CS07.01.001,Buffer obnovený. Spätný zápis trvalo vypnutý.,Údaje zo zásobníka vrátené. Spätný zápis trvalo vypnutý.,TEXT-04 rewrite
-cutscene.CS07.01.003,Výborne. Konečne to vyzerá ako ľudia.,"Konečne to vyzerá ako ľudia, nie ako tabuľka.",TEXT-04 rewrite
+cutscene.CS07.01.003,Výborne. Konečne to vyzerá ako ľudia.,"Konečne v tom vidím ľudí, nie tabuľku.",GPT accept (C4_v2.decisions.csv): Clearer contrast.
 cutscene.CS07.02.001,Zverejním celý postup aj svoje rozhodnutie pokračovať. Originály zostanú oddelené od úprav.,"Zverejním celý postup aj to, že som pokračoval napriek varovaniu. Originály budú oddelené od úprav.",TEXT-04 rewrite
 cutscene.CS07.03.001,Adam? Už mi ideš po správnom telefóne?,Adam? Už ťa počujem bez ozveny.,'po správnom telefóne' made no sense; picks up the echo from CS05
 cutscene.CS07.03.002,Áno. A aj po správnom roku.,Áno. A volám aj zo správneho roku.,TEXT-04 rewrite
@@ -1330,7 +1372,7 @@ cutscene.CS07.03.003,Nákup si nechal dobre.,"Nákup si mi nechal presne tam, kd
 cutscene.CS08.01.001,"Tri dosky. Jedna odklonená cesta vozíka. A o desaťročia miesto, kde môžu ľudia sedieť.","Tri dosky a vozík, ktorý chodí trochu oklukou. O pár desaťročí tu bude miesto, kde si ľudia sadnú.",TEXT-04 rewrite
 cutscene.CS08.01.002,"Takto vyzerá čas, keď sa neopravuje naraz celý.","Takto sa opravuje čas. Po kúsku, nie naraz.",TEXT-04 rewrite
 cutscene.CS08.02.001,"A miesto, ktoré sme potrebovali, nezmizlo.",A múrik s našou skrýšou zostal stáť.,TEXT-04 rewrite
-cutscene.CS09.01.001,Do kopca po lane. Na dnes príjemne zrozumiteľný princíp.,"Hore po lane. Pod nami les, v kabínke ticho.",editor: plain caption; the 'travel I finally understand' joke is already in entry.S68
+cutscene.CS09.01.001,Do kopca po lane. Na dnes príjemne zrozumiteľný princíp.,"Hore po lane. Pod nami zasnežený les, v kabínke ticho.",winter (the CS09 frames are winter shots)
 quest.M01.goal,Získať prístup do neobývanej dielne cez bežnú pomoc Mire.,Pomôž Mire s nákupom a dostaň sa do jej záhradnej dielne.,style guide 6.8 example
 quest.M01.hint.1,Začni dobrovoľníckym výdajným miestom.,Začni u Ely na výdajnom mieste pri Lúčnom koníku.,owner 2026-10-06: hint names the place; drop: dobrovoľnícke
 quest.M01.hint.2,Ela dá nákupný lístok; Dana má tašku pripravenú. Nechaj ju pred bránkou.,"Ela ti dá nákupný lístok, Dana zaň tašku. Nechaj ju na stolíku pred bránkou a potom zavolaj Mire pod oknom.",TEXT-04 rewrite
@@ -1345,19 +1387,20 @@ quest.M03.hint.2,Opravárska pomoc je vítaná. Školník rozpozná prístroj s 
 quest.M03.hint.3,B01 nástenka → chronometer na Tóna → rozhovor s Mirou v S14.,Prečítaj oznam na nástenke krúžku → chronometer na Tóna vo vstupnej chodbe → téma „Problém s chronometrom“ u Miry v triede pamäťového krúžku.,TEXT-04 rewrite
 quest.M04.goal,Bez poškodenia vysunúť kazetu.,Oprav školský magnetofón a vyber z neho kazetu bez poškodenia.,TEXT-04 rewrite
 quest.M04.hint.1,Školský magnetofón má mechanickú chybu.,Pozri sa na kazetový mechanizmus školského magnetofónu v miestnosti rozhlasu.,TEXT-04 rewrite
-quest.M04.hint.2,S náradím vyber starý remienok; Pali v Karlovej Vsi poskytne zhodný nový.,Servisnou brašnou vyber rozpadnutý remienok. Pali v Karlovej Vsi ti podľa neho dá nový.,TEXT-04 rewrite
+quest.M04.hint.2,S náradím vyber starý remienok; Pali v Karlovej Vsi poskytne zhodný nový.,Náradím zo servisnej brašne vyber rozpadnutý remienok. Pali v Karlovej Vsi ti podľa neho dá nový.,"GPT accept: Correct: the tools in the bag, not the bag; Pali, Karlova Ves kept."
 quest.M04.hint.3,Náradie na S16.deck → starý remienok na Paliho S20 → nový remienok na S16.deck.,Servisná brašna na kazetový mechanizmus → rozpadnutý remienok na Paliho v jeho opravovni → nový remienok na kazetový mechanizmus.,TEXT-04 rewrite
 quest.M05.goal,Obnoviť správne čítanie pôvodných stôp.,"Prehraj pôvodnú školskú kazetu tak, aby sa jej dve stopy nerušili.",TEXT-04 rewrite
 quest.M05.hint.1,Juro v Ružinove rozumie starým páskam.,Ukáž kazetu Jurovi v kazetovom klube v Ružinove.,TEXT-04 rewrite
 quest.M05.hint.2,Adaptér potrebuje konektor od Fera a izoláciu od Milady.,Jurov krížový adaptér potrebuje konektor od Fera na Miletičovej a izolačný návlek od Milady.,TEXT-04 rewrite
 quest.M05.hint.3,Kazeta na Jura → náradie na Ferovu váhu → Milada o návlečku → konektor + adaptér → návlečka + zapojený adaptér → hotová prepojka na S16.socket.,Kazeta na Jura → servisná brašna na Ferovu váhu → téma „Návlek na kábel“ u Milady → konektor + adaptér → návlek + adaptér s konektorom → hotová prepojka na servisný zvukový vstup.,návlečka -> návlek; new item names
 quest.M06.goal,Zložiť presnú mapu meracích uzlov.,Zlož úplnú mapu meracích uzlov.,TEXT-04 rewrite
-quest.M06.hint.1,Mira dala poverenie do študovne v centre.,S Mirinym poverením choď do archívnej študovne v Starom Meste.,TEXT-04 rewrite
-quest.M06.hint.2,"Negatív nechaj vyvolať; fotografia určí prílohu, ktorú drží antikvariát.","Negatív z archívu daj vyvolať Alene. Na fotografii je číslo fólie, ktorú má Viera v antikvariáte.",TEXT-04 rewrite
+quest.M06.hint.1,Mira dala poverenie do študovne v centre.,S Miriným poverením choď do archívnej študovne v Starom Meste.,GPT accept: Correct spelling: Miriným.
+quest.M06.hint.2,"Negatív nechaj vyvolať; fotografia určí prílohu, ktorú drží antikvariát.","Z negatívu z archívu ti Alena spraví fotografiu. Na nej je číslo fólie, ktorú má Viera v antikvariáte.","GPT adapt: Agree a negative is printed, not developed; own fix uses 'pozitív' as B13.objective does."
 quest.M06.hint.3,Poverenie na Karola S23 → negatív na Alenu S24 → fotografia na Vieru S22 → fólia + mapa → v P02 otočiť o 180° a potvrdiť.,Poverenie na Karola v archívnej študovni → negatív na Alenu vo fotoateliéri → fotografia na Vieru v antikvariáte → fólia + mapa v brašni → fóliu otoč o 180° a potvrď.,TEXT-04 rewrite
-quest.M07.goal,Prečítať adresu Ivanka 1960.,Nájdi meraním na Starom moste časové okno do Ivanky 1962.,"S30 is on the Starý most; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: nábreží, 1960"
+quest.M07.goal,Prečítať adresu Ivanka 1960.,Nájdi meraním na Starom moste časové okno do Ivanky v roku 1962.,GPT accept: More natural sentence; 1962 kept.
 quest.M07.hint.1,S mapou choď za rádioamatérom v Petržalke.,S úplnou mapou choď za rádioamatérom Deziderom do Petržalky.,TEXT-04 rewrite
-quest.M07.hint.3,Mapa na Deziho → požičať metronóm → klik na rytmický nákres S17 → cievka na držiak S30 → metronóm na stolík → po získaní pôvodnej kazety nastaviť 3–2–6.,"Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres na školskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",S30 renamed (owner 2026-10-06); topic name unchanged; drop: nábrežný
+quest.M07.hint.2,"Dezider dá cievku, Emil metronóm. Tri číslice sú na paneli na školskom dvore.","Dezider dá cievku, Emil metronóm. Tri číslice sú na múre v Sokolíkovskom dvore.","relocation (SOKOLIKOVA_YARD.md 3.3); drop: panel, školský dvor"
+quest.M07.hint.3,Mapa na Deziho → požičať metronóm → klik na rytmický nákres S17 → cievka na držiak S30 → metronóm na stolík → po získaní pôvodnej kazety nastaviť 3–2–6.,"Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres v Sokolíkovskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",relocation; keeps 3–2–6 and every step; drop: školský dvor
 quest.M08.goal,Dostať sa povoleným vstupom k prvej kalibrácii.,Oprav Otovi ručnú pumpu a dostaň sa do meracej miestnosti.,TEXT-04 rewrite
 quest.M08.hint.1,Oto v dielni potrebuje obnoviť malý demonštračný obeh vody.,"Choď za Otom do mechanickej dielne. K meraniu ťa pustí, až keď opravíš ručnú pumpu.",TEXT-04 rewrite
 quest.M08.hint.2,Získaš kožu a nity podľa lístka; Lída požičia dierovač po oprave svorky kulisy.,"S Otovým lístkom vyzdvihni u Štefana kožu a nity. Lída v sále ti požičia dierovač, keď jej dotiahneš svorku kulisy.",TEXT-04 rewrite
@@ -1368,8 +1411,8 @@ quest.M09.hint.2,"Na povale je papier, v parku má Vera tupé rydlo.","Voskovan�
 quest.M09.hint.3,Rozhovor Mira S39 → rydlo od Very S37 → papier z povaly → papier na platňu S39 → rydlo + odtlačok.,Rozhovor s Mirou v miestnosti prvého ZVONu → tupé rydlo od Very v parku pri kaštieli → voskovaný hárok z povaly → hárok na kalibračnú platňu → tupé rydlo + nezvýraznený odtlačok.,TEXT-04 rewrite
 quest.M10.goal,Doložiť a uchovať pôvod kalibrácie.,Daj na pošte potvrdiť registračný list a ulož ho do kovovej schránky ako doklad pôvodu.,TEXT-04 rewrite
 quest.M10.hint.1,"Pošta potvrdí, že dokument v tomto roku skutočne existuje.","Na pošte ti potvrdia, že registračný list v roku 1962 naozaj existoval.","TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
-quest.M10.hint.2,Registračný list treba dvojmo; uhlový papier je na poštovej prepážke.,Registračný list treba v dvoch vyhotoveniach. Uhlový papier nájdeš pri prepážke na pošte.,TEXT-04 rewrite
-quest.M10.hint.3,"Uhlový papier S33 → papier + registračný list → dvojitý list na Alojza → potvrdený list na kovovú schránku S40, keď máš aj čitateľný odtlačok.",Uhlový papier pri prepážke → uhlový papier + technický registračný list → dve vyhotovenia listu na Alojza → potvrdený registračný list na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.,TEXT-04 rewrite
+quest.M10.hint.2,Registračný list treba dvojmo; uhlový papier je na poštovej prepážke.,Registračný list treba v dvoch vyhotoveniach. Uhľový papier nájdeš pri prepážke na pošte.,C3 tone pass: term uhľový papier
+quest.M10.hint.3,"Uhlový papier S33 → papier + registračný list → dvojitý list na Alojza → potvrdený list na kovovú schránku S40, keď máš aj čitateľný odtlačok.",Uhľový papier pri prepážke → uhľový papier + technický registračný list → dve vyhotovenia listu na Alojza → potvrdený registračný list na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.,C3 tone pass: term uhľový papier
 quest.M11A.goal,V Dúbravke 2020 nájsť stopu zaniknutého návratového mostíka.,V Dúbravke v roku 2020 nájdi stopu po stratenom návratovom mostíku.,editor: 'v roku'
 quest.M11A.hint.1,Mira odkáže na päťdesiatročného školníka Tóna.,Mira ťa posiela za päťdesiatročným školníkom Tónom na Sokolíkovu. Do Dúbravky ide autobus zo zastávky v Čiernej Vode.,"C1 draft travel.when_landed: the bus link S07 <-> S51 is in the game (travel_ext.json, TRAVEL-01)"
 quest.M11A.hint.2,Dvor 2020 najprv odfoť; potom ukáž chronometer Tónovi pri starom servisnom okne.,Najprv z chodníka odfoť školský dvor v roku 2020. Potom ukáž chronometer Tónovi pri starom servisnom okne.,TEXT-04 rewrite
@@ -1381,7 +1424,7 @@ quest.M11B.hint.2,"Ukáž mu modernú fotografiu toho istého okna. Potrebuješ 
 quest.M11B.hint.3,CHRONO na TONO82 → PHOTO2020 na TONO82 → lístok Marte S65 → diely na stôl S63 → pohár od Ruženy S62 → JAR + BRIDGE_NEW → ohrádka od Šimona S66 → SEALED_NEW na dutinu S61 → TREEGUARD na lipu → potvrdiť Šimonovi.,Chronometer na Tóna → fotografia dvora 2020 na Tóna → Otov lístok na Martu vo výdajni → diely na servisnú dosku v kabinete → pohár od Ruženy v obchode → pohár + nový mostík → ohrádka od Šimona v sklade → zapečatený pohár na dutinu v múriku → ohrádka na lipu → znova Šimon.,TEXT-04 rewrite
 quest.M11C.goal,Overiť Tónovu pamäť v 1995 a vyzdvihnúť ten istý kus v 2020.,"Over si u Tóna v roku 1995, čo si pamätá, a v roku 2020 vyzdvihni ukrytý pohár.",TEXT-04 rewrite
 quest.M11C.hint.1,Navštív toho istého školníka v 1995; pozná vetu Lastovička sa vracia.,Choď za Tónom do školy v roku 1995 a povedz mu heslo „Lastovička sa vracia“.,editor: password in quotes
-quest.M11C.hint.2,"Dvor 2020 má po ochrane stromu inú podobu, ale pôvodnú mriežku tehál.","Školský dvor vyzerá v roku 2020 po záchrane lipy inak, ale múrik má stále pôvodnú mriežku kameňov.",TEXT-04 rewrite
+quest.M11C.hint.2,"Dvor 2020 má po ochrane stromu inú podobu, ale pôvodnú mriežku tehál.","Školský dvor vyzerá v roku 2020 po záchrane lipy inak, ale kamene v múriku stále tvoria pôvodnú mriežku.","GPT accept: Clearer, same fact (the original grid)."
 quest.M11C.hint.3,Téma E11 u Tóna S13 → TOOLS na dutinu S55 → P05 rad 2 stĺpec 3 → TOOLS + SEALED_OLD → RETURNBRIDGE na TONO20.,"Heslo „Lastovička sa vracia“ u Tóna vo vstupnej chodbe → servisná brašna na miesto pôvodnej dutiny na dvore v roku 2020 → v múriku rad 2, stĺpec 3 → brašna + vyzdvihnutý pohár → zachovaný návratový mostík na Tóna pri servisnom okne.",editor: first step named like the topic label
 quest.M11D.goal,Potvrdiť skutočný presun krabice a otvoriť Jasnú 2035.,Pomôž Ele zapísať skutočný presun Mirinej krabice a otvor cestu do Jasnej 2035.,TEXT-04 rewrite
 quest.M11D.hint.1,Po vyriešení rezervy sa vráť k dobrovoľníkom v Grobe.,"Keď máš mostík, vráť sa za dobrovoľníkmi do Grobu.",drop: rezervy
@@ -1398,7 +1441,7 @@ quest.M13.hint.3,CHRONO na S45.sensor → PULSE na S48.terminal → RETURNBRIDGE
 quest.M14.goal,"Viktor musí vypočuť záznam, ktorý sám nechal skrátiť.","Pusti Viktorovi záznam, ktorý sám nechal skrátiť.",TEXT-04 rewrite
 quest.M14.hint.1,Súkromná pôvodná správa je určená Viktorovi.,Leina pôvodná správa patrí Viktorovi. Viktor je v chronokomore.,TEXT-04 rewrite
 quest.M14.hint.2,Nevyberaj správnu repliku z hádanky. Použi získaný pôvodný zvukový záznam na Viktora.,Viktora nepresvedčíš slovami. Pusti mu Leinu pôvodnú hlasovú správu.,removed meta comment about picking a reply
-quest.M14.hint.3,LEA_MESSAGE na VIKTOR v S49. Všetky ďalšie emócie a súhlas sa odohrajú pevne podľa scenára.,Leina nezmenená hlasová správa → Viktor v chronokomore. Rozhovor a Viktorov súhlas s obnovou prídu potom samy.,drop: scenár; meta remark about the fixed script removed
+quest.M14.hint.3,LEA_MESSAGE na VIKTOR v S49. Všetky ďalšie emócie a súhlas sa odohrajú pevne podľa scenára.,Leina nezmenená hlasová správa → Viktor v chronokomore. Potom nasleduje rozhovor a Viktorov súhlas s obnovou.,GPT adapt (C4_v2.decisions.csv): Agree 'prídu samy' was awkward; 'automaticky' dropped (system word in a hint).
 quest.M15.goal,Obnoviť zadržané údaje a vrátiť sa k Mire.,Obnov zadržané údaje a vráť sa k Mire.,TEXT-04 rewrite
 quest.M15.hint.1,Každý zo štyroch portov má názov z pôvodnej platne.,Štyri porty sa volajú podľa slov na pôvodnej platni z roku 1962.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 quest.M15.hint.2,"Pôvod je odtlačok, Hlas kazeta, Súhlas odovzdanie, Návrat servisný postup.","Pôvod je overený odtlačok, Hlas školská kazeta, Súhlas potvrdené odovzdanie a Návrat obnovovací postup.",TEXT-04 rewrite
@@ -1451,7 +1494,7 @@ puzzle.P02.clue,"Na podklade aj fólii sú dierka, dvojitý kríž a štvorec; v
 puzzle.P02.wrong,"Jedna značka sedí, ďalšie dve nie. Fólia bude otočená.","Jedna značka sedí, ďalšie dve nie. Fóliu treba ešte otočiť.",TEXT-04 rewrite
 puzzle.P03.title,Nábrežná kalibrácia,Kalibrácia na Starom moste,the puzzle is set in the booth on the Starý most; drop: nábrežná
 puzzle.P03.clue,"S17.rhythm a zápisník: TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV.","Rytmický nákres a zápisník: TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV.","TEXT-01: internal ids replaced by in-game names, same steps and meaning"
-puzzle.P03.wrong,Meranie nedáva zhodu. Číslice sú na nákrese zo školského dvora.,Nesedí to. Správne číslice sú na rytmickom nákrese na školskom dvore.,TEXT-04 rewrite
+puzzle.P03.wrong,Meranie nedáva zhodu. Číslice sú na nákrese zo školského dvora.,Nesedí to. Správne číslice sú na rytmickom nákrese v Sokolíkovskom dvore.,relocation; protected P03-wrong place rule moves to 'Sokolíkovsk* dvor*' (glossary_change); drop: školský dvor
 puzzle.P03.success,"Pôvodná referencia nájdená: Ivanka pri Dunaji, 6. júna 1960.","Pôvodná referencia nájdená: Ivanka pri Dunaji, 6. júna 1962.","Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
 puzzle.P04.clue,Porty aj predmety obsahujú názov a rok; rovnaké informácie sú v zápisníku.,Port aj predmet nesú názov a rok. To isté mám v zápisníku.,TEXT-04 rewrite
 puzzle.P04.wrong,Rok a označenie nesedia. Originály ostávajú bezpečne na mieste.,Rok k tomu portu nesedí. Správny je na predmete aj v mojich poznámkach.,TEXT-04 rewrite
@@ -1474,4 +1517,3 @@ epilogue.8.shot,Očko v kaviarni dostane od Tamary papierovú kartičku ĎAKUJEM
 epilogue.8.line,Údaj nemá doručovaciu funkciu. Uchovám ho.,Kartička nemá doručovaciu funkciu. Uchovám ju.,editor: the shot shows the paper card; 'Údaj' was vague
 epilogue.9.shot,"Tri rovnaké Janine gestá pri výkrese 1982, notebooku 2020 a vitríne v Grand Jasná 2035.","Tri razy to isté Janino gesto: pri výkrese 1982, pri notebookoch 2020, pri vitríne 2035.",drop: Grand Jasná
 conn.S02.S51.label,Dúbravka 2020 cez regionálnu mapu,Dúbravka 2020,'cez regionálnu mapu' was a design note; map/era style; drop: mapa
-entry.S04.001,"Nákupné okienko. Sortiment je menší, kontakt s predavačkou tiež.","Potraviny cez okienko. Dana z neho podáva tašky rýchlejšie, ako stihnem povedať dobrý deň.","entries 2026-10-06: GPT flag adapted: bags go through the window, not the glass; its wallet idea rejected (already paid in G03)"
