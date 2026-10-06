@@ -12,8 +12,10 @@ namespace LastBell.Game.UI.Menus;
 
 /// <summary>
 /// Progressive hints (H): pick the current main quest or a side quest in progress; each request
-/// reveals one more level (direction, steps, exact solution) through <see cref="Hints.RevealNext"/>.
-/// No penalty. When the third level of a puzzle's quest is revealed the puzzle modal offers
+/// reveals one more level (direction, place, exact next step) through <see cref="Hints.RevealNext"/>.
+/// The levels belong to the quest's next undone step (<see cref="Hints.CurrentStep"/>, PT-F08): a
+/// finished step never comes back, and the third level shows only that step, not the whole chain.
+/// No penalty. When the third level of a puzzle's step is revealed the puzzle modal offers
 /// "fill in correctly" (hint_can_fill); the player still confirms.
 /// </summary>
 public partial class HintScreen : ModalScreen
@@ -111,15 +113,15 @@ public partial class HintScreen : ModalScreen
         {
             var card = new PanelContainer { ThemeTypeVariation = i == revealed.Count - 1 ? "HighlightCard" : "CardPanel" };
             var box = Ui.VBox(4);
-            box.AddChild(Ui.Label(Ui.T(levelKeys[System.Math.Min(i, 2)]), "CaptionLabel"));
-            box.AddChild(Ui.Para(TextService.Get(revealed[i])));
+            box.AddChild(Ui.Label(Ui.T(levelKeys[System.Math.Clamp(revealed[i].Level - 1, 0, 2)]), "CaptionLabel"));
+            box.AddChild(Ui.Para(Render(revealed[i])));
             card.AddChild(box);
             detail.AddChild(card);
         }
-        int level = Hints.RevealedLevel(game.State, quest.Id);
-        if (level < quest.Hints.Count)
+        int level = Hints.RevealedLevel(game.Content, game.State, quest.Id);
+        if (level < Hints.Levels && Hints.CurrentStep(game.Content, game.State, quest.Id) is not null)
         {
-            bool last = level == quest.Hints.Count - 1;
+            bool last = level == Hints.Levels - 1;
             string id = quest.Id;
             var next = Ui.Button(Ui.T(last ? "ui.hint.show_solution" : "ui.hint.next"), () =>
             {
@@ -131,6 +133,10 @@ public partial class HintScreen : ModalScreen
             detail.AddChild(next);
         }
     }
+
+    /// <summary>A hint's text with its placeholders ({room}, {target}) filled in after translation.</summary>
+    private static string Render(HintText hint) =>
+        TextService.Format(TextService.Get(hint.Text), hint.Args.Select(a => (a.Name, TextService.Get(a.Value))).ToArray());
 
     /// <inheritdoc />
     protected override Control? InitialFocus() => FirstFocusable(detail) ?? FirstFocusable(questList);

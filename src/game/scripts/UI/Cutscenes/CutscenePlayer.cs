@@ -18,7 +18,8 @@ namespace LastBell.Game.UI.Cutscenes;
 /// directions, not player text, TEXT-03). The last beat of the finale shows the "end of the story"
 /// title. Lines and their minimum durations (duration_min_s) are played by the world runtime's
 /// presenter through the subtitle view, which sits above this frame. Skippable cutscenes show a
-/// skip button (same as Esc). Mouse-transparent elsewhere: a click advances the line.
+/// skip button (the whole cutscene, like a double Esc; one Esc skips one line, PT-F13). Mouse-transparent
+/// elsewhere: a click advances the line.
 /// A beat picture can carry a simple camera move (pan / zoom between two rects of the picture,
 /// <see cref="CutsceneCamera"/>, <c>res://data/cutscene_camera.json</c>); reduced motion shows its end rect.
 /// </summary>
@@ -96,7 +97,8 @@ public partial class CutscenePlayer : Control, ICutsceneView
         AddChild(top);
         AddChild(bottom);
 
-        skip = Ui.Button(Ui.T("ui.cutscene.skip") + "  (Esc)", () => WorldInput.Dispatch(LogicalCommand.Cancel), "HudButton");
+        // The button skips the whole cutscene (like a double Esc); a single Esc skips one line (PT-F13).
+        skip = Ui.Button(Ui.T("ui.cutscene.skip") + "  (2× Esc)", () => LastBell.Game.Presentation.DialoguePresenter.Instance?.Skip(), "HudButton");
         skip.FocusMode = FocusModeEnum.None;
         skip.AddThemeFontSizeOverride("font_size", 24);
         AddChild(skip);

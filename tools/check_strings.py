@@ -13,12 +13,18 @@ Checks (errors make the exit code 1):
     localization/overrides/sk_overrides.csv while game.json still has the text
     the rewrite replaces, ISSUES.md TEXT-01), and no stale keys remain
   * no accepted rewrite contains an internal id (room, hotspot, item, action ...)
-  * ui.csv contains the era cards for every era, a region.<district>.name key
+  * ui.csv contains the era cards for every era (era.<year>.card, .date with the
+    game.json day and the shown year, .year = the shown four-digit year), a region.<district>.name key
     for every rooms[].district (map regions), the journal tabs from
     journal_contract (same texts) and every key in REQUIRED_UI_KEYS; other ui
     keys follow ui.<area>.<name>
   * every speaker id used by a line has a char.<id>.name key
   * no game.json string field is left unclassified (visible but unkeyed)
+  * the content overlays (src/game/data/content_ext/, tools/content_ext.py) are valid; the scheme
+    keys are those of the EFFECTIVE game (game.json + overlays), so every overlay text (new lines,
+    new topic labels, new exits and connections, first-ride lines) must be in its table, every
+    map region (travel_ext.json regions, else the districts) needs region.<id>.name and every
+    exit travel style ui.travel.<style> in ui.csv
 
 Warnings (reported, exit code unaffected): backslashes (Godot unescapes them),
 leading/trailing whitespace in texts, generated tables not in canonical format.
@@ -41,7 +47,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import text_keys as tk  # noqa: E402
 
 MAX_LISTED = 25
-ERA_KEY_PATTERN = re.compile(r"^era\.(\d{4})\.(card|date)$")
+ERA_KEY_PATTERN = re.compile(r"^era\.(\d{4})\.(card|date|year)$")
+SHOWN_YEAR_PATTERN = re.compile(r"^\d{4}$")
 # Map region names (ISSUES.md TEXT-02): region.<rooms[].district>.name, hand-written in ui.csv.
 REGION_KEY_PATTERN = re.compile(r"^region\.([^.]+)\.name$")
 CONTROL_CHARS = re.compile(r"[\x00-\x1f\x7f]")
@@ -119,9 +126,11 @@ def load_table(path: Path, findings: Findings) -> dict[str, list[str]] | None:
 
 
 def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: Findings,
-                 overrides_path: Path = tk.SK_OVERRIDES) -> None:
+                 overrides_path: Path = tk.SK_OVERRIDES, overlay=None) -> None:
     overrides, problems = tk.load_sk_overrides(overrides_path)
-    effective, applied, stale = tk.apply_sk_overrides(tk.iter_text_entries(game), overrides)
+    retired = overlay.retired_keys if overlay is not None else ()
+    overlay_keys = overlay.added_keys if overlay is not None else ()
+    effective, applied, stale = tk.apply_sk_overrides(tk.iter_text_entries(game), overrides, retired, overlay_keys)
     for problem in problems + stale:
         findings.error(problem)
     if applied:
@@ -179,32 +188,45 @@ def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: 
         findings.error(f"game.json audit: {problem}")
 
 
-def check_ui(game: dict, ui: dict[str, list[str]], findings: Findings) -> None:
+def check_ui(game: dict, ui: dict[str, list[str]], findings: Findings, overlay=None) -> None:
     eras = {era["year"]: era for era in game.get("eras", [])}
     for key in tk.expected_ui_scheme_keys(game):
         if key not in ui:
             findings.error(f"ui.csv: missing required key {key!r}")
 
+    # Room captions use the district (region.<district>.name); the map's regions use their ids.
     districts = {room.get("district", "") for room in game.get("rooms", [])} - {""}
-    for district in sorted(districts):
+    import content_ext  # noqa: E402
+    regions = content_ext.region_ids(overlay) if overlay is not None else set()
+    for district in sorted(districts | regions):
         if f"region.{district}.name" not in ui:
             findings.error(f"ui.csv: missing region key 'region.{district}.name'")
+    for kind in sorted({e.get("travel") for r in game.get("rooms", []) for e in r.get("exits", [])} - {None}):
+        if f"ui.travel.{kind}" not in ui:
+            findings.error(f"ui.csv: missing travel style key 'ui.travel.{kind}'")
 
     for key, (sk, _en) in ui.items():
         region_match = REGION_KEY_PATTERN.match(key)
         if region_match:
-            if region_match.group(1) not in districts:
-                findings.error(f"ui.csv: {key!r} refers to a district that no room has")
+            if region_match.group(1) not in districts | regions:
+                findings.error(f"ui.csv: {key!r} refers to a district or map region that does not exist")
             continue
         era_match = ERA_KEY_PATTERN.match(key)
         if era_match:
             year = int(era_match.group(1))
             if year not in eras:
                 findings.error(f"ui.csv: {key!r} refers to a year that is not an era in game.json")
+            elif era_match.group(2) == "year":
+                # The year shown for the era (presentation override; the era id stays the game.json year).
+                if not SHOWN_YEAR_PATTERN.match(sk):
+                    findings.error(f"ui.csv: {key!r} = {sk!r} is not a four-digit year")
             elif era_match.group(2) == "date":
                 iso_year, _month, iso_day = eras[year]["date"].split("-")
-                if iso_year not in sk or not re.search(rf"(?<!\d){int(iso_day)}\.", sk):
-                    findings.error(f"ui.csv: {key!r} = {sk!r} does not match game.json date {eras[year]['date']}")
+                # The date shows the presented year (era.<year>.year, e.g. Ivanka 1960 shown as 1962) and the game.json day.
+                shown_year = ui.get(f"era.{year}.year", (iso_year, ""))[0]
+                if shown_year not in sk or not re.search(rf"(?<!\d){int(iso_day)}\.", sk):
+                    findings.error(f"ui.csv: {key!r} = {sk!r} does not match game.json date {eras[year]['date']} "
+                                   f"(shown year {shown_year})")
         elif not tk.UI_KEY_PATTERN.match(key):
             findings.error(f"ui.csv: key {key!r} does not follow ui.<area>.<name>")
 
@@ -236,10 +258,12 @@ def main() -> int:
 
     findings = Findings()
     try:
-        game = tk.load_json(args.game)
+        game, overlay = tk.effective_game(args.game)
     except (OSError, ValueError) as error:
         print(f"ERROR: cannot load {args.game}: {error}", file=sys.stderr)
         return 2
+    for error in overlay.errors:
+        findings.error(f"content overlay: {error}")
 
     check_data_sync(args.game, findings)
     tables: dict[str, dict[str, list[str]]] = {}
@@ -247,9 +271,9 @@ def main() -> int:
         table = load_table(args.dir / file_name, findings)
         if table is not None:
             tables[table_name] = table
-    check_scheme(game, tables, findings, args.overrides)
+    check_scheme(game, tables, findings, args.overrides, overlay)
     if tk.TABLE_UI in tables:
-        check_ui(game, tables[tk.TABLE_UI], findings)
+        check_ui(game, tables[tk.TABLE_UI], findings, overlay)
 
     for table_name, table in tables.items():
         translated = sum(1 for sk, en in table.values() if en)

@@ -115,6 +115,10 @@ public partial class InventoryPanel : Control
         Visible = false;
     }
 
+    /// <summary>True when the open drawer (bar or detail card) covers a canvas point (the world hover label hides there, PT-S23).</summary>
+    public bool CoversPoint(Vector2 point) =>
+        Visible && (bar.GetGlobalRect().HasPoint(point) || (detail.Visible && detail.GetGlobalRect().HasPoint(point)));
+
     /// <summary>Shows or hides the drawer (driven by Core's mode).</summary>
     public void SetOpen(bool open)
     {
@@ -207,7 +211,7 @@ public partial class InventoryPanel : Control
         caption.AutowrapMode = TextServer.AutowrapMode.WordSmart;
         caption.MaxLinesVisible = 2;
         caption.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
-        caption.AddThemeFontSizeOverride("font_size", 20);
+        caption.AddThemeFontSizeOverride("font_size", CaptionFontSize(name, 150 - 12 - 8));
         caption.SizeFlagsHorizontal = SizeFlags.ExpandFill;
         box.AddChild(caption);
         button.AddChild(box);
@@ -218,6 +222,35 @@ public partial class InventoryPanel : Control
         button.FocusEntered += () => { ShowDetail(id); WorldInput.HoverItem(id, button.GetGlobalRect().GetCenter()); };
         slotButtons[id] = button;
         return button;
+    }
+
+    /// <summary>
+    /// Caption size of a slot (ISSUES PT-F12): 20 px when the name fits in two lines of the slot, otherwise the largest
+    /// size down to 15 px at which every word fits the width and the name fits in two lines ("Prenosný chronometer
+    /// ZVON" was cut to "Prenosný chronometer…"). Longer names still end with an ellipsis; the tooltip and the detail
+    /// card show the whole name.
+    /// </summary>
+    public static int CaptionFontSize(string name, float width)
+    {
+        var font = UiTheme.Body;
+        for (int size = 20; size > 15; size--)
+            if (FitsTwoLines(font, name, width, size)) return size;
+        return 15;
+    }
+
+    private static bool FitsTwoLines(Font font, string text, float width, int size)
+    {
+        float space = font.GetStringSize(" ", HorizontalAlignment.Left, -1, size).X;
+        int lines = 1;
+        float line = 0;
+        foreach (var word in text.Split(' ', StringSplitOptions.RemoveEmptyEntries))
+        {
+            float w = font.GetStringSize(word, HorizontalAlignment.Left, -1, size).X;
+            if (w > width) return false;
+            if (line > 0 && line + space + w > width) { lines++; line = w; }
+            else line += (line > 0 ? space : 0) + w;
+        }
+        return lines <= 2;
     }
 
     private void OnSlotInput(string id, InputEvent e)

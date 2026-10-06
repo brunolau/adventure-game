@@ -130,6 +130,11 @@ public sealed record TopicDef
     public string Label { get; init; } = "";
     /// <summary>All of these actions must be done for the topic to be offered.</summary>
     public IReadOnlyList<string> RequiresDone { get; init; } = Array.Empty<string>();
+    /// <summary>
+    /// None of these actions may be done for the topic to be offered. game.json topics never set it; only
+    /// extra topics of the dialogue overlay (<c>content_ext/dialogue_ext.json</c>) use it.
+    /// </summary>
+    public IReadOnlyList<string> ExcludedDone { get; init; } = Array.Empty<string>();
     /// <summary>Lines of the topic.</summary>
     public IReadOnlyList<LineDef> Lines { get; init; } = Array.Empty<LineDef>();
     /// <summary>Repeatable topics stay in the list after being heard.</summary>

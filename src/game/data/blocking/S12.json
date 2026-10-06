@@ -4,26 +4,187 @@
   "status": "natural re-blocking (docs/DECISIONS.md item 1; owner feedback 2026-10-05: S12 'kinda ok', the pre-production entrance.png may be used; plain yellowish walls in 1982/1995); base of camera family L_SCHOOL_FRONT (S52 2020 and S58 1982 are derived with identical anchors, walk polygon, walk_band and actor_scale)",
   "note": "ZS Sokolikova 2, main entrance on the SW facade, seen from the paved forecourt. Pinhole camera: eye 1.74 m, horizon y 490, f ~1250 px; the facade plane recedes gently to the right (Z = 10 + 0.25 X metres), the building corner at X 8 (x 1793). Ground y = 490 + 2175 / Z: the walk band bottom y 1015 is 4.15 m ahead, the path along the facade (y ~690-805) 6.6-11 m ahead; ~300 px per metre at the bottom, ~115 at the facade. Scale s(y) = (y - 490) / 525. Props where they are: the glazed club notice board on two legs at the left in front of the ramp, the ramp rising along the facade to the entrance landing, the concrete planter at the foot of the steps, the glazed doors under an older steel canopy with the school's name board above it, the last ground-floor window before the corner (the caretaker's service window), and past the corner the school yard.",
   "background": "bg_natural/S12.webp",
-  "walk_polygon": [[0, 1015], [1920, 1015], [1920, 688], [1861, 686], [1341, 711], [1405, 764], [843, 764], [847, 773], [686, 773], [655, 772], [0, 806]],
-  "walk_band": [686, 1015],
-  "actor_scale": [0.37, 1.0],
-  "spawn": [960, 920],
-  "anchors": { "building_corner": [1793, 400], "entrance": [1082, 647], "planter": [775, 715], "service_window_visible_at_edge": [1681, 470] },
+  "walk_polygon": [
+    [
+      0,
+      1015
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      1920,
+      688
+    ],
+    [
+      1861,
+      686
+    ],
+    [
+      1341,
+      711
+    ],
+    [
+      1405,
+      764
+    ],
+    [
+      843,
+      764
+    ],
+    [
+      847,
+      773
+    ],
+    [
+      686,
+      773
+    ],
+    [
+      655,
+      772
+    ],
+    [
+      0,
+      806
+    ]
+  ],
+  "walk_band": [
+    686,
+    1015
+  ],
+  "actor_scale": [
+    0.37,
+    1.0
+  ],
+  "spawn": [
+    960,
+    920
+  ],
+  "anchors": {
+    "building_corner": [
+      1793,
+      400
+    ],
+    "entrance": [
+      1082,
+      647
+    ],
+    "planter": [
+      775,
+      715
+    ],
+    "service_window_visible_at_edge": [
+      1681,
+      470
+    ]
+  },
   "hotspots": {
-    "S12.notice": { "rect": [56, 440, 212, 186], "interaction_point": [175, 880], "label_anchor": [162, 430],
-                    "reason": "glazed club notice board on two legs on the forecourt at the left, in front of the ramp (case H 0.95-2.0 m)" },
-    "S12.ambient 1": { "rect": [712, 668, 126, 100], "interaction_point": [770, 822], "label_anchor": [775, 658],
-                       "reason": "the concrete planter cube at the foot of the entrance steps (left of the steps)" },
-    "S12.ambient 2": { "rect": [893, 192, 366, 94], "interaction_point": [1080, 800], "label_anchor": [1076, 182],
-                       "reason": "the school's name board with the small round school crest above the entrance canopy" }
+    "S12.notice": {
+      "rect": [
+        56,
+        440,
+        212,
+        186
+      ],
+      "interaction_point": [
+        324,
+        880
+      ],
+      "label_anchor": [
+        162,
+        430
+      ],
+      "reason": "glazed club notice board on two legs on the forecourt at the left, in front of the ramp (case H 0.95-2.0 m); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
+    },
+    "S12.ambient 1": {
+      "rect": [
+        712,
+        668,
+        126,
+        100
+      ],
+      "interaction_point": [
+        770,
+        822
+      ],
+      "label_anchor": [
+        775,
+        658
+      ],
+      "reason": "the concrete planter cube at the foot of the entrance steps (left of the steps)"
+    },
+    "S12.ambient 2": {
+      "rect": [
+        893,
+        192,
+        366,
+        94
+      ],
+      "interaction_point": [
+        1080,
+        800
+      ],
+      "label_anchor": [
+        1076,
+        182
+      ],
+      "reason": "the school's name board with the small round school crest above the entrance canopy"
+    }
   },
   "exits": {
-    "S12.to_S11": { "rect": [0, 790, 62, 225], "interaction_point": [70, 900], "label_anchor": [130, 780],
-                    "reason": "the forecourt path continues out of the left edge towards the street and the tram stop" },
-    "S12.to_S13": { "rect": [897, 362, 357, 291], "interaction_point": [1110, 792], "label_anchor": [1075, 352],
-                    "reason": "the glazed entrance doors at the top of the steps" },
-    "S12.to_S17": { "rect": [1830, 600, 90, 330], "interaction_point": [1850, 800], "label_anchor": [1790, 590],
-                    "reason": "past the building corner the path leads round to the school yard (right edge)" }
+    "S12.to_S11": {
+      "rect": [
+        0,
+        790,
+        62,
+        225
+      ],
+      "interaction_point": [
+        70,
+        900
+      ],
+      "label_anchor": [
+        130,
+        780
+      ],
+      "reason": "the forecourt path continues out of the left edge towards the street and the tram stop"
+    },
+    "S12.to_S13": {
+      "rect": [
+        897,
+        362,
+        357,
+        291
+      ],
+      "interaction_point": [
+        1110,
+        792
+      ],
+      "label_anchor": [
+        1075,
+        352
+      ],
+      "reason": "the glazed entrance doors at the top of the steps"
+    },
+    "S12.to_S17": {
+      "rect": [
+        1830,
+        600,
+        90,
+        330
+      ],
+      "interaction_point": [
+        1850,
+        800
+      ],
+      "label_anchor": [
+        1790,
+        590
+      ],
+      "reason": "past the building corner the path leads round to the school yard (right edge)"
+    }
   },
   "state_patches": []
 }

@@ -15,12 +15,14 @@ public enum LineSource
     FirstEntry,
     /// <summary>Lines of a cutscene beat.</summary>
     Cutscene,
+    /// <summary>First-ride lines of a transport exit (travel overlay), played in the room left, before the ride.</summary>
+    Travel,
 }
 
 /// <summary>A line together with its owner.</summary>
 /// <param name="Line">The line.</param>
 /// <param name="Source">Owner kind.</param>
-/// <param name="SourceId">Owner id (action, topic, room or cutscene id).</param>
+/// <param name="SourceId">Owner id (action, topic, room, cutscene or exit id).</param>
 /// <param name="BeatIndex">Cutscene beat index (0-based), or -1.</param>
 public sealed record LineInfo(LineDef Line, LineSource Source, string SourceId, int BeatIndex = -1);
 
@@ -78,10 +80,14 @@ public sealed class GameContent
     private readonly Dictionary<string, SpecialTransitionDef> transitions;
     private readonly Dictionary<string, (RoomDef Room, ExitDef Exit)> exits;
     private readonly Dictionary<string, Text.TextRef> looks;
+    private readonly Dictionary<string, LineInfo> retiredLines;
+    private readonly Dictionary<string, RegionDef> regionOfRoom;
+    private readonly List<RegionDef> regions;
 
-    private GameContent(GameData data)
+    private GameContent(GameData data, OverlayInfo overlay)
     {
         Data = data;
+        Overlay = overlay;
         rooms = data.Rooms.ToDictionary(r => r.Id, StringComparer.Ordinal);
         actions = data.Actions.ToDictionary(a => a.Id, StringComparer.Ordinal);
         items = data.Items.ToDictionary(i => i.Id, StringComparer.Ordinal);
@@ -120,6 +126,27 @@ public sealed class GameContent
         foreach (var cutscene in data.Cutscenes)
             for (var b = 0; b < cutscene.Beats.Count; b++)
                 foreach (var line in cutscene.Beats[b].Lines) AddLine(new LineInfo(line, LineSource.Cutscene, cutscene.Id, b));
+        foreach (var (exitId, rideLines) in overlay.FirstRides)
+            foreach (var line in rideLines) AddLine(new LineInfo(line, LineSource.Travel, exitId));
+        retiredLines = new Dictionary<string, LineInfo>(StringComparer.Ordinal);
+        foreach (var retired in overlay.RetiredLines)
+            if (retired.Line.LineId is { } id && !lines.ContainsKey(id)) retiredLines.TryAdd(id, retired);
+
+        // Map regions: the travel overlay's, else one region per district (every room a hub: the handoff behaviour).
+        regions = new List<RegionDef>();
+        foreach (var era in data.Eras)
+        {
+            var defined = overlay.Regions.Where(r => r.Era == era.Year).ToList();
+            if (defined.Count > 0) { regions.AddRange(defined); continue; }
+            foreach (var group in data.Rooms.Where(r => r.Era == era.Year).GroupBy(r => r.District, StringComparer.Ordinal))
+            {
+                var ids = group.Select(r => r.Id).ToList();
+                regions.Add(new RegionDef(group.Key, era.Year, ids, ids, FromOverlay: false));
+            }
+        }
+        regionOfRoom = new Dictionary<string, RegionDef>(StringComparer.Ordinal);
+        foreach (var region in regions)
+            foreach (var roomId in region.Rooms) regionOfRoom.TryAdd(roomId, region);
 
         looks = new Dictionary<string, Text.TextRef>(StringComparer.Ordinal);
         foreach (var room in data.Rooms)
@@ -147,8 +174,11 @@ public sealed class GameContent
         }
     }
 
-    /// <summary>Raw content records.</summary>
+    /// <summary>Raw content records (game.json with the content overlays applied).</summary>
     public GameData Data { get; }
+
+    /// <summary>What the content overlays changed (<see cref="OverlayInfo.Empty"/> without overlays).</summary>
+    public OverlayInfo Overlay { get; }
 
     /// <summary>The initial state of a new game (from <c>initial_state</c>).</summary>
     public GameState InitialState { get; private set; } = new();
@@ -168,8 +198,15 @@ public sealed class GameContent
     /// <summary>Eras in data order.</summary>
     public IReadOnlyList<EraDef> Eras => Data.Eras;
 
-    /// <summary>Loads content from the text of game.json. Throws <see cref="ContentLoadException"/>.</summary>
-    public static GameContent Load(string json)
+    /// <summary>Loads content from the text of game.json without overlays. Throws <see cref="ContentLoadException"/>.</summary>
+    public static GameContent Load(string json) => Load(json, null);
+
+    /// <summary>
+    /// Loads content from the text of game.json and applies the content overlays (<c>content_ext/dialogue_ext.json</c>,
+    /// <c>content_ext/travel_ext.json</c>; README section 13). Throws <see cref="ContentLoadException"/> when game.json
+    /// or an overlay is invalid; overlay errors name the overlay path (<c>$dialogue_ext...</c>, <c>$travel_ext...</c>).
+    /// </summary>
+    public static GameContent Load(string json, ContentOverlays? overlays)
     {
         GameData? data;
         try
@@ -185,7 +222,17 @@ public sealed class GameContent
         var errors = ContentValidator.Validate(data);
         if (errors.Count > 0) throw new ContentLoadException(errors);
 
-        var content = new GameContent(data);
+        var overlay = OverlayInfo.Empty;
+        if (overlays is not null && (!string.IsNullOrWhiteSpace(overlays.DialogueExt) || !string.IsNullOrWhiteSpace(overlays.TravelExt)))
+        {
+            var overlayErrors = new List<string>();
+            var effective = OverlayApplier.Apply(data, overlays, overlayErrors, out overlay);
+            if (overlayErrors.Count == 0) overlayErrors.AddRange(ContentValidator.Validate(effective));
+            if (overlayErrors.Count > 0) throw new ContentLoadException(overlayErrors);
+            data = effective;
+        }
+
+        var content = new GameContent(data, overlay);
         if (data.InitialState is null) throw new ContentLoadException(new[] { "$.initial_state: missing" });
         try
         {
@@ -235,10 +282,15 @@ public sealed class GameContent
     public QuestDef? FindQuest(string id) => quests.GetValueOrDefault(id);
     /// <summary>The quest (playbook group) that owns an action.</summary>
     public QuestDef GetQuestOf(string actionId) => questOfAction.TryGetValue(actionId, out var q) ? q : throw new KeyNotFoundException("Action has no quest: " + actionId);
+    /// <summary>The quest that owns an action, or null (unknown action).</summary>
+    public QuestDef? FindQuestOf(string actionId) => questOfAction.GetValueOrDefault(actionId);
     /// <summary>Era by year, or null.</summary>
     public EraDef? FindEra(int year) => eras.GetValueOrDefault(year);
-    /// <summary>Line (with owner) by line id, or null.</summary>
-    public LineInfo? FindLine(string lineId) => lines.GetValueOrDefault(lineId);
+    /// <summary>
+    /// Line (with owner) by line id, or null. Handoff lines that an overlay sequence dropped still resolve (old saves
+    /// that stopped on such a line keep loading) but are never queued again.
+    /// </summary>
+    public LineInfo? FindLine(string lineId) => lines.GetValueOrDefault(lineId) ?? retiredLines.GetValueOrDefault(lineId);
     /// <summary>Ambient topic (with character) by topic id, or null.</summary>
     public (CharacterDef Character, TopicDef Topic)? FindTopic(string topicId) => topics.TryGetValue(topicId, out var t) ? t : null;
     /// <summary>Special transition triggered by an action, or null.</summary>
@@ -254,6 +306,23 @@ public sealed class GameContent
     /// <summary>Look text (hotspot base look, look variant or item look) by its key, or null.</summary>
     public Text.TextRef? FindLookText(string key) => looks.TryGetValue(key, out var t) ? t : null;
 
-    /// <summary>All line ids known to the content.</summary>
+    /// <summary>All line ids the content plays (retired overlay lines excluded).</summary>
     public IEnumerable<string> AllLineIds => lines.Keys;
+
+    /// <summary>First-ride lines of a transport exit (travel overlay), or an empty list.</summary>
+    public IReadOnlyList<LineDef> FirstRideLines(string exitId) =>
+        Overlay.FirstRides.TryGetValue(exitId, out var l) ? l : Array.Empty<LineDef>();
+
+    /// <summary>All map regions, era by era (data order of the eras).</summary>
+    public IReadOnlyList<RegionDef> Regions => regions;
+
+    /// <summary>Map regions of one era.</summary>
+    public IReadOnlyList<RegionDef> RegionsOf(int era) => regions.Where(r => r.Era == era).ToList();
+
+    /// <summary>The map region of a room.</summary>
+    public RegionDef RegionOf(string roomId) =>
+        regionOfRoom.TryGetValue(roomId, out var r) ? r : throw new KeyNotFoundException("Unknown room: " + roomId);
+
+    /// <summary>True when the room is a hub of its region (entered from other regions through it).</summary>
+    public bool IsHub(string roomId) => regionOfRoom.TryGetValue(roomId, out var r) && r.Hubs.Contains(roomId);
 }

@@ -44,6 +44,44 @@
       "frames": 5,
       "columns": 5,
       "rows": 1
+    },
+    "guest_standing": {
+      "file": "guest_standing_sheet.webp",
+      "json": "guest_standing_sheet.json",
+      "size": [
+        920,
+        453
+      ],
+      "cell": [
+        184,
+        453
+      ],
+      "pivot": [
+        92,
+        449
+      ],
+      "frames": 5,
+      "columns": 5,
+      "rows": 1
+    },
+    "walk": {
+      "file": "walk_sheet.webp",
+      "json": "walk_sheet.json",
+      "size": [
+        3096,
+        453
+      ],
+      "cell": [
+        258,
+        453
+      ],
+      "pivot": [
+        129,
+        449
+      ],
+      "frames": 12,
+      "columns": 12,
+      "rows": 1
     }
   },
   "animations": {
@@ -91,8 +129,67 @@
       "hold_ms": 1200,
       "oneshot": true,
       "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    },
+    "walk_right": {
+      "sheet": "walk",
+      "loop": true,
+      "fps": 11.08,
+      "note": "guest walk-in (ISSUES PT-S18): three-quarter side walk, mirrored for left"
     }
   },
   "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",
-  "notes": "S64: sits outside the open service window on a low stool (the stool and the satchel are part of the sprite); his grandfather OTO82 works inside behind the window."
+  "notes": "S64: sits outside the open service window on a low stool (the stool and the satchel are part of the sprite); his grandfather OTO82 works inside behind the window.",
+  "variants": {
+    "guest_standing": {
+      "height_px": 444.7,
+      "note": "standing guest for E08 at S61 (ISSUES PT-S18): walks in with walk_right, stands, talks",
+      "animations": {
+        "idle": {
+          "sheet": "guest_standing",
+          "frames": [
+            "idle"
+          ]
+        },
+        "idle_still": {
+          "sheet": "guest_standing",
+          "frames": [
+            "idle"
+          ]
+        },
+        "blink": {
+          "sheet": "guest_standing",
+          "frames": [
+            "blink"
+          ],
+          "hold_ms": 110,
+          "every_s": [
+            2.5,
+            6.0
+          ]
+        },
+        "talk": {
+          "sheet": "guest_standing",
+          "frames": [
+            "talk_a",
+            "talk_b",
+            "talk_a",
+            "idle",
+            "talk_b",
+            "talk_a",
+            "idle"
+          ],
+          "fps": 8,
+          "loop": true
+        },
+        "gesture": {
+          "sheet": "guest_standing",
+          "frames": [
+            "gesture"
+          ],
+          "hold_ms": 1200,
+          "oneshot": true
+        }
+      }
+    }
+  }
 }

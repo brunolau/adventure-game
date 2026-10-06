@@ -432,14 +432,14 @@
     },
     {
       "id": "P03-success",
-      "why": "the address found by P03",
+      "why": "the address found by P03 (Ivanka is shown as 6 June 1962; era id 1960, docs/DECISIONS.md)",
       "keys": [
         "puzzle.P03.success",
         "cutscene.CS03.01.001"
       ],
       "require": [
         "Ivank",
-        "6\\. júna 1960"
+        "6\\. júna 1962"
       ]
     },
     {
@@ -506,13 +506,13 @@
     },
     {
       "id": "P04-years",
-      "why": "P04 solution: Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035",
+      "why": "P04 solution: Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035",
       "keys": [
         "journal.clue.P04",
         "quest.M15.hint.3"
       ],
       "require": [
-        "1960",
+        "1962",
         "1995",
         "2020",
         "2035"
@@ -526,7 +526,7 @@
       ],
       "require": [
         "(?i)pôvod",
-        "1960",
+        "1962",
         "(?i)hlas",
         "1995",
         "(?i)súhlas",
@@ -538,13 +538,13 @@
     },
     {
       "id": "P04-port-origin",
-      "why": "port Pôvod takes the 1960 imprint",
+      "why": "port Pôvod takes the 1962 imprint",
       "keys": [
         "look.S49.port_origin"
       ],
       "require": [
         "odtlač",
-        "1960"
+        "1962"
       ]
     },
     {
@@ -622,7 +622,7 @@
     },
     {
       "id": "rule-sentence",
-      "why": "Mira's 1960 rule engraved on the plate; quoted later",
+      "why": "Mira's rule (Ivanka 1962) engraved on the plate; quoted later",
       "keys": [
         "look.S39.plate",
         "action.I13.001"
@@ -670,7 +670,7 @@
     },
     {
       "id": "codes-Z17",
-      "why": "registration number of Mira's box, 1960 to 2035",
+      "why": "registration number of Mira's box, 1962 to 2035",
       "keys": [
         "action.I16.001",
         "action.C03.001",
@@ -803,6 +803,48 @@
       "require": [
         "MONITOR"
       ]
+    },
+    {
+      "id": "ivanka-1962-mira-age",
+      "why": "Mira is 22 in June 1962 (Ivanka shown as 1962, docs/DECISIONS.md)",
+      "keys": [
+        "action.I08.objective",
+        "action.I08.journal"
+      ],
+      "require": [
+        "(?i)dvadsaťdva"
+      ]
+    },
+    {
+      "id": "ivanka-1962-mira-vs-adam",
+      "why": "Mira 22 (1962) is thirteen years younger than Adam (35)",
+      "keys": [
+        "look.S39.MIRA60"
+      ],
+      "require": [
+        "(?i)trinásť"
+      ]
+    },
+    {
+      "id": "ivanka-1962-oto-aged",
+      "why": "Oto 46 (1962) -> 66 (1982): twenty years",
+      "keys": [
+        "look.S64.OTO82"
+      ],
+      "require": [
+        "(?i)dvadsať rokov|20 rokov"
+      ]
+    },
+    {
+      "id": "ivanka-1962-to-2035",
+      "why": "the registered paper must last from 1962 to 2035: 73 years",
+      "keys": [
+        "action.I16.002",
+        "action.I16.003"
+      ],
+      "require": [
+        "(?i)sedemdesiattri|73"
+      ]
     }
   ],
   "verbatim": [
@@ -838,7 +880,7 @@
       "keys": [
         "journal.clue.P04"
       ],
-      "text": "Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035",
+      "text": "Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035",
       "why": "P04 solution in the journal"
     },
     {
@@ -904,8 +946,8 @@
       "keys": [
         "puzzle.P04.right.2"
       ],
-      "text": "1960",
-      "why": "P04 option"
+      "text": "1962",
+      "why": "P04 option (shown year of the Ivanka era; the option value stays 1960)"
     },
     {
       "keys": [

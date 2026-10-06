@@ -14,6 +14,11 @@ Existing translations (every column after "sk") are preserved for keys that
 still exist; keys whose Slovak text changed are listed so the translation can
 be reviewed.
 
+The tables are built from the EFFECTIVE game: game.json with the content overlays of
+src/game/data/content_ext/ applied (dialogue_ext.json: longer sequences and extra topics;
+travel_ext.json: exits, connections, first-ride lines; tools/content_ext.py). An invalid overlay
+fails the run. --no-overlays builds the handoff tables alone (comparison only).
+
 Accepted Slovak rewrites (ISSUES.md TEXT-01) live in
 src/game/localization/overrides/sk_overrides.csv (keys,game_json,sk,note): the
 generated sk text of such a key is the override's sk while game.json still has
@@ -22,7 +27,7 @@ game.json text and fails the run until the rewrite is reviewed.
 
 Usage:
     python tools/extract_strings.py [--game PATH] [--dialogues PATH] [--out-dir PATH]
-                                    [--dry-run] [--strict] [--verbose]
+                                    [--dry-run] [--strict] [--verbose] [--no-overlays]
 
 Exit codes: 0 ok, 1 duplicate-key conflicts or visible strings without a key
 (with --strict also dialogues.csv mismatches and content warnings), 2 input error.
@@ -169,21 +174,31 @@ def main() -> int:
     parser.add_argument("--strict", action="store_true", help="also fail on mismatches and content warnings")
     parser.add_argument("--verbose", action="store_true", help="list every finding")
     parser.add_argument("--overrides", type=Path, default=tk.SK_OVERRIDES, help="accepted sk rewrites (TEXT-01)")
+    parser.add_argument("--no-overlays", action="store_true", help="ignore src/game/data/content_ext (handoff only)")
     args = parser.parse_args()
 
     try:
-        game = tk.load_json(args.game)
+        game, overlay = tk.effective_game(args.game, use_overlays=not args.no_overlays)
         dialogue_rows = load_dialogues(args.dialogues)
     except (OSError, ValueError) as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 2
+    if overlay.errors:
+        for error in overlay.errors[:40]:
+            print(f"ERROR: {error}", file=sys.stderr)
+        print("RESULT: FAILED (content overlay invalid; tables not written)")
+        return 1
 
     all_entries = list(tk.iter_text_entries(game))
     entries, conflicts, same_text = deduplicate(all_entries)
     audit_problems = tk.audit_fields(game, all_entries)
-    dialogue_report = cross_check_dialogues(entries, dialogue_rows)
+    # dialogues.csv is the handoff's line list: compare it with the handoff lines only.
+    dialogue_report = cross_check_dialogues([e for e in entries if e.key not in overlay.added_keys], dialogue_rows)
+    for line_id in overlay.retired_keys:  # dropped by an overlay sequence: not missing from the game
+        if line_id in dialogue_report.get("only_in_dialogues_csv", []):
+            dialogue_report["only_in_dialogues_csv"].remove(line_id)
     overrides, override_problems = tk.load_sk_overrides(args.overrides)
-    entries, overridden, stale = tk.apply_sk_overrides(entries, overrides)
+    entries, overridden, stale = tk.apply_sk_overrides(entries, overrides, overlay.retired_keys, overlay.added_keys)
     override_problems += stale
     id_hits = find_internal_ids(entries, game)
 
@@ -205,6 +220,11 @@ def main() -> int:
     # ------------------------------------------------------------------ report
     verb = "would write" if args.dry_run else "wrote"
     print(f"source: {display_path(args.game)} + {display_path(args.dialogues)} ({len(dialogue_rows)} rows)")
+    if overlay.used_dialogue or overlay.used_travel:
+        print(f"content overlays: {len(overlay.sequences) - len(overlay.new_topics)} extended exchanges, "
+              f"{len(overlay.new_topics)} new topics, {len(overlay.added_keys)} overlay keys, "
+              f"{len(overlay.retired_keys)} retired keys; exits -{len(overlay.removed_exits)} +{len(overlay.added_exits)}, "
+              f"connections -{len(overlay.removed_connections)} +{len(overlay.added_connections)}, regions {len(overlay.regions)}")
     for table, table_entries in tables.items():
         print(f"{verb} {tk.TABLE_FILE_NAMES[table]}: {len(table_entries)} keys")
     by_prefix = Counter(e.key.split(".", 1)[0] for e in entries)

@@ -30,14 +30,27 @@ Warnings (exit code 0 unless --strict):
   * a topic label that repeats Adam's first line, an exit label that no longer equals the
     room name it used to equal, a key that is never shown in play
 
+Content overlays (src/game/data/content_ext/, tools/content_ext.py) are checked too (the live
+dialogue_ext.json, or the draft given with --overlay, restricted to --chunk):
+  * every new overlay text (new lines, new topic labels, new exit / connection texts, first-ride
+    lines) gets the same per-text checks as a rewrite (length, internal ids, speaker prefix,
+    deprecated words, jargon, anachronisms)
+  * protected facts and verbatim lines of an extended exchange: a dropped handoff line that carries
+    a protected fact is an error unless the fact is still stated in another line of the same
+    exchange (action / topic / first entry); a dropped verbatim line is always an error. A rewrite
+    of a kept key may move a fact into a new overlay line of its exchange (a warning, as before)
+  * a CSV row for an overlay key is an error: overlay texts are edited in the overlay
+
 With --overrides-out PATH the tool writes the complete merged override table (the current
 src/game/localization/overrides/sk_overrides.csv plus the rows of this file, game_json =
 the game.json text) to PATH, and ui.csv rows to PATH.ui.csv; it never edits the live files.
 
 Usage:
     python tools/check_rewrite.py OUT.csv [--chunk C1] [--strict] [--verbose]
-                                  [--overrides-out PATH]
-    python tools/check_rewrite.py --self-test     (glossary rules must hold for the current texts)
+                                  [--overrides-out PATH] [--overlay DRAFT_ext.json]
+    python tools/check_rewrite.py --overlay-only [--overlay DRAFT_ext.json] [--chunk C1]
+    python tools/check_rewrite.py --self-test     (glossary rules must hold for the current texts,
+                                                   the live overlay included)
 
 Exit codes: 0 ok, 1 errors found, 2 input error.
 """
@@ -192,10 +205,14 @@ def speaker_prefixes(game: dict) -> set[str]:
 
 # --------------------------------------------------------------------------- block lookup
 
+LINE_SUFFIX_RE = re.compile(r"^[A-Za-z]{0,3}\d{1,4}$")
+
+
 def block_of(key: str) -> str | None:
-    """Exchange a line belongs to: action, topic or cutscene beat (for 'moved fact' tolerance)."""
+    """Exchange a line belongs to: action, topic, first entry or cutscene beat (for 'moved fact' tolerance).
+    Overlay lines (action.G02.x01, topic.ELA.extra 1.001, entry.S07.x01) belong to the same exchange."""
     parts = key.rsplit(".", 1)
-    if len(parts) == 2 and parts[1].isdigit() and key.startswith(("action.", "topic.", "cutscene.")):
+    if len(parts) == 2 and LINE_SUFFIX_RE.match(parts[1]) and key.startswith(("action.", "topic.", "cutscene.", "entry.")):
         return parts[0]
     return None
 
@@ -231,7 +248,7 @@ def check_row(key: str, text: str, note: str, info: wb.KeyInfo, ctx: dict, repor
         report.error(key, "line break or control character; one key = one subtitle, do not split lines")
     if "\\" in text:
         report.warn(key, "backslash (Godot unescapes sequences such as \\n)")
-    if info.never_shown:
+    if info.never_shown and not info.overlay:
         report.warn(key, "this text is never shown in play (exit without a lock); leave it unchanged")
 
     # speaker prefix
@@ -365,9 +382,54 @@ def check_pairs(index: dict[str, wb.KeyInfo], new: dict[str, str], game: dict, m
                                     f"now {val(lk)!r} vs {val(rk)!r}")
 
 
-def self_test(index: dict[str, wb.KeyInfo], glossary: dict, report: Report) -> None:
-    """Every protected/verbatim rule must hold for the current texts; every rule key must exist."""
+def check_overlay(overlay, index: dict[str, wb.KeyInfo], new: dict[str, str], ctx: dict, report: Report,
+                  chunk: str | None) -> int:
+    """Checks of the content overlays (see the module docstring). Returns the number of overlay texts checked."""
+    from dataclasses import replace
+
+    gl = ctx["glossary"]
+    checked = 0
+    for key in sorted(overlay.added_keys):
+        info = index.get(key)
+        if info is None:
+            report.error(key, "overlay text has no key in the index (run tools/extract_strings.py)")
+            continue
+        if chunk and info.chunk != chunk:
+            continue
+        checked += 1
+        check_row(key, info.original or info.text, "", replace(info, text="", original=""), ctx, report)
+
+    def text_of(key: str) -> str:
+        if key in new:
+            return new[key]
+        info = index.get(key)
+        return info.text if info else ""
+
+    for block, dropped in overlay.dropped.items():
+        if not dropped:
+            continue
+        sequence = " ".join(text_of(k) for k in overlay.sequences.get(block, []))
+        for key in dropped:
+            if chunk and ctx["base_chunk"].get(key, chunk) != chunk:
+                continue
+            for rule in gl["_verbatim"].get(key, []):
+                report.error(key, f"verbatim line dropped by the overlay sequence {block} ({rule['why']}); keep it")
+            for rule_id, why, raw, compiled in gl["_protected"].get(key, []):
+                for rx_text, rx in zip(raw, compiled):
+                    if not rx.search(sequence):
+                        report.error(key, f"protected fact {rule_id} ({why}) dropped with this line: no line of "
+                                          f"{block} states /{rx_text}/ any more")
+                    else:
+                        report.warn(key, f"line dropped by the overlay; protected fact {rule_id} moved within {block}")
+    return checked
+
+
+def self_test(index: dict[str, wb.KeyInfo], glossary: dict, report: Report, retired: set[str] = frozenset()) -> None:
+    """Every protected/verbatim rule must hold for the current texts; every rule key must exist
+    (keys an overlay retired are checked by check_overlay instead)."""
     for key, rules in glossary["_protected"].items():
+        if key in retired:
+            continue
         if key not in index:
             report.error(key, "protected rule refers to an unknown key")
             continue
@@ -377,6 +439,9 @@ def self_test(index: dict[str, wb.KeyInfo], glossary: dict, report: Report) -> N
                     report.error(key, f"rule {rule_id} /{rx_text}/ does not match the current text "
                                       f"{index[key].text[:80]!r}")
     for key, rules in glossary["_verbatim"].items():
+        if key in retired:
+            report.error(key, "a verbatim line was dropped by a content overlay sequence")
+            continue
         if key not in index:
             report.error(key, "verbatim rule refers to an unknown key")
             continue
@@ -429,27 +494,63 @@ def main() -> int:
     parser.add_argument("--overrides-out", type=Path, help="write the merged override table here (not the live file)")
     parser.add_argument("--glossary", type=Path, default=GLOSSARY_JSON)
     parser.add_argument("--self-test", action="store_true", help="check the glossary rules against the current texts")
+    parser.add_argument("--overlay", type=Path, help="check this dialogue overlay draft instead of the live dialogue_ext.json")
+    parser.add_argument("--overlay-only", action="store_true", help="check only the content overlay (no CSV)")
     args = parser.parse_args()
-    if not args.csv and not args.self_test:
-        parser.error("give a CSV file or --self-test")
+    if not args.csv and not args.self_test and not args.overlay_only:
+        parser.error("give a CSV file, --overlay-only or --self-test")
 
     report = Report()
     try:
-        game = tk.load_json(tk.CANONICAL_GAME_JSON)
+        import content_ext  # noqa: E402
+        dialogue = args.overlay or content_ext.DIALOGUE_EXT
+        if args.overlay:
+            # A writing draft may carry a "travel" proposal; the travel overlay is checked from travel_ext.json.
+            draft = json.loads(args.overlay.read_text(encoding="utf-8"))
+            draft.pop("travel", None)
+            base = tk.load_json(tk.CANONICAL_GAME_JSON)
+            overlay = content_ext.apply_overlays(base, draft, content_ext.read_overlay(content_ext.TRAVEL_EXT))
+        else:
+            overlay = content_ext.load_effective_game(dialogue=dialogue)
+        if overlay.errors:
+            for error in overlay.errors[:40]:
+                print(f"ERROR: overlay: {error}", file=sys.stderr)
+            print("RESULT: FAILED (content overlay invalid)")
+            return 1
+        game = overlay.game
         index, model = wb.build_key_index(game=game)
+        for key in overlay.added_keys:
+            if key in index:
+                index[key].overlay = True
+        base_index, _ = wb.build_key_index(game=tk.load_json(tk.CANONICAL_GAME_JSON))
         glossary = load_glossary(args.glossary)
-    except (OSError, ValueError, re.error, KeyError) as error:
+    except (OSError, ValueError, re.error, KeyError, json.JSONDecodeError) as error:
         print(f"ERROR: {error}", file=sys.stderr)
         return 2
+    ctx = {"glossary": glossary, "index": index, "new": {}, "id_pattern": internal_ids(game),
+           "speakers": speaker_prefixes(game), "base_chunk": {k: v.chunk for k, v in base_index.items()}}
 
     if args.self_test:
-        self_test(index, glossary, report)
+        self_test(index, glossary, report, overlay.retired_keys)
+        n_overlay = check_overlay(overlay, index, {}, ctx, report, None)
         rules = sum(len(v) for v in glossary["_protected"].values())
         print(f"glossary: {len(glossary['names'])} names, {len(glossary['places'])} places, "
               f"{len(glossary['terms'])} terms, {rules} protected key rules, {len(glossary['verbatim'])} verbatim rules")
+        print(f"content overlay: {n_overlay} overlay texts checked, {len(overlay.retired_keys)} retired keys")
         print_block("errors", report.errors, args.verbose)
+        print_block("warnings", report.warnings, args.verbose)
         print("RESULT: " + ("FAILED" if report.errors else "OK"))
         return 1 if report.errors else 0
+
+    if args.overlay_only:
+        n_overlay = check_overlay(overlay, index, {}, ctx, report, args.chunk)
+        print(f"content overlay ({dialogue.as_posix()}): {n_overlay} overlay texts checked"
+              + (f" in chunk {args.chunk}" if args.chunk else ""))
+        print_block("errors", report.errors, args.verbose)
+        print_block("warnings", report.warnings, args.verbose)
+        failed = bool(report.errors) or (args.strict and bool(report.warnings))
+        print("RESULT: " + ("FAILED" if failed else "OK"))
+        return 1 if failed else 0
 
     try:
         rows = read_rewrite(args.csv, report)
@@ -463,8 +564,14 @@ def main() -> int:
         if key in new:
             report.error(key, f"duplicate key (line {line_no})")
             continue
+        if key in overlay.retired_keys:
+            report.warn(key, f"line {line_no}: removed by a content overlay (dropped line or removed exit); row ignored")
+            continue
         if key not in index:
             report.error(key, f"unknown key (line {line_no}); keys come from docs/writing/context/<chunk>_keys.csv")
+            continue
+        if index[key].overlay:
+            report.error(key, f"line {line_no}: this text comes from a content overlay; edit it in the overlay, not here")
             continue
         if args.chunk and index[key].chunk != args.chunk:
             report.error(key, f"belongs to chunk {index[key].chunk}, not {args.chunk}")
@@ -473,16 +580,17 @@ def main() -> int:
         new[key] = text
         notes[key] = note
 
-    ctx = {"glossary": glossary, "index": index, "new": new, "id_pattern": internal_ids(game),
-           "speakers": speaker_prefixes(game)}
+    ctx["new"] = new
     for key, text in new.items():
         check_row(key, text, notes[key], index[key], ctx, report)
     check_pairs(index, new, game, model, report)
+    n_overlay = check_overlay(overlay, index, new, ctx, report, args.chunk)
 
     print(f"{args.csv.name}: {len(rows)} rows, {len(new)} changed texts")
     if args.chunk:
         total = sum(1 for v in index.values() if v.chunk == args.chunk and not v.never_shown)
         print(f"chunk {args.chunk}: {len(new)} of {total} keys rewritten")
+    print(f"content overlay: {n_overlay} overlay texts checked")
     print_block("errors", report.errors, args.verbose)
     print_block("warnings", report.warnings, args.verbose)
     failed = bool(report.errors) or (args.strict and bool(report.warnings))

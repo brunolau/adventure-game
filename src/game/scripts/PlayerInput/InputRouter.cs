@@ -138,10 +138,14 @@ public partial class InputRouter : Node2D
         switch (state.Mode)
         {
             case GameMode.World or GameMode.Inventory:
+                // The second Esc of a double Esc that ended the sequence does not open the pause menu.
+                if (command == LogicalCommand.Cancel && presenter?.IsEscapeFollowUp() == true) break;
                 RouteWorld(command, position, controller);
                 break;
             case GameMode.Dialogue when state.ActiveLineId is null:
-                // Topic menu: buttons handle choices; Esc/Backspace leave the conversation.
+                // Topic menu: buttons handle choices; Esc/Backspace leave the conversation (not the second Esc of a
+                // double Esc that skipped the topic's last line: the menu has just come back).
+                if (command == LogicalCommand.Cancel && presenter?.IsEscapeFollowUp() == true) break;
                 if (command is LogicalCommand.Cancel or LogicalCommand.Back) game.Update(LastBell.Core.Rules.Dialogue.CloseMenu);
                 break;
             case GameMode.Dialogue or GameMode.Cutscene:
@@ -152,7 +156,7 @@ public partial class InputRouter : Node2D
                     or LogicalCommand.ToggleLabels or LogicalCommand.ShowMarkers)
                     presenter?.Advance();
                 else if (command == LogicalCommand.Cancel)
-                    presenter?.Skip();
+                    presenter?.Escape(); // this line; a second Esc within 0.5 s: the whole sequence (PT-F13)
                 break;
             case GameMode.Puzzle:
                 if (command == LogicalCommand.Cancel) game.ClosePuzzle();

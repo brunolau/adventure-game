@@ -68,11 +68,51 @@ public static class Navigation
 
     /// <summary>
     /// <c>canFastTravel</c>: only from the map, only to a visited room of the current era that is
-    /// currently reachable over open same-era connections (no portals).
+    /// currently reachable over open same-era connections (no portals), and (map regions, owner rule
+    /// 2026-10-06) only inside the current region or to a hub of another region: far places are reached
+    /// through their transport hub (<see cref="IsRegionTarget"/>).
     /// </summary>
     public static bool CanFastTravel(GameContent content, GameState state, string to) =>
         state.Mode == GameMode.Map && state.Visited.Contains(to) && content.FindRoom(to)?.Era == state.Era &&
-        ConnectedRooms(content, state, includePortals: false).Contains(to);
+        IsRegionTarget(content, state.Room, to) && ConnectedRooms(content, state, includePortals: false).Contains(to);
+
+    /// <summary>
+    /// The region part of the fast-travel rule: true when <paramref name="to"/> is in the same map region as
+    /// <paramref name="from"/> (free fast travel inside a region) or is a hub of its own region (another region
+    /// is entered only through its bus stop, tram stop or cable car station). Without a travel overlay every
+    /// room is a hub, so the handoff rule is unchanged.
+    /// </summary>
+    public static bool IsRegionTarget(GameContent content, string from, string to)
+    {
+        if (content.FindRoom(from) is null || content.FindRoom(to) is null) return false;
+        return ReferenceEquals(content.RegionOf(from), content.RegionOf(to)) || content.IsHub(to);
+    }
+
+    /// <summary>
+    /// The transport used between two rooms of the same era that lie in different map regions: the travel style
+    /// (<c>bus</c>, <c>tram</c>, <c>cable_A6</c>, ...) of the first connection on the shortest open route that
+    /// leaves the region of <paramref name="from"/>. Null when both rooms are in the same region, in different
+    /// eras, or no open route exists. The presentation uses it for the transport card of a map fast travel.
+    /// </summary>
+    public static string? TransportBetween(GameContent content, GameState state, string from, string to)
+    {
+        var a = content.FindRoom(from);
+        var b = content.FindRoom(to);
+        if (a is null || b is null || a.Era != b.Era || ReferenceEquals(content.RegionOf(from), content.RegionOf(to))) return null;
+        var route = Route(content, state, from, to, includePortals: false);
+        if (route is null) return null;
+        var region = content.RegionOf(from);
+        foreach (var step in route)
+        {
+            if (ReferenceEquals(content.RegionOf(step.To), region)) continue;
+            var c = content.Data.Connections.FirstOrDefault(x => (x.From == step.From && x.To == step.To) || (x.Bidirectional && x.From == step.To && x.To == step.From));
+            return c?.Travel ?? content.FindExit(step.ExitId ?? "")?.Exit.Travel;
+        }
+        return null;
+    }
+
+    /// <summary>Journal marker of a first ride through a transport exit (its first-ride lines played).</summary>
+    public static string FirstRideKey(string exitId) => "travel." + exitId + ".first";
 
     /// <summary>Fast travel from the map; returns the state unchanged when it is not allowed.</summary>
     public static GameState FastTravel(GameContent content, GameState state, string to)
@@ -83,15 +123,23 @@ public static class Navigation
 
     /// <summary>
     /// Travels through an exit of the current room (after the hero arrived at it; the gate is
-    /// re-checked). First visits queue the room's first-entry lines. Returns the state unchanged
-    /// when the exit is unknown, locked, or the mode does not accept world input.
+    /// re-checked). First visits queue the room's first-entry lines. The first use of a transport exit
+    /// with first-ride lines (travel overlay) queues those lines before them and records
+    /// <see cref="FirstRideKey"/>; the presentation plays them in the room being left, then runs the ride.
+    /// Returns the state unchanged when the exit is unknown, locked, or the mode does not accept world input.
     /// </summary>
     public static GameState Travel(GameContent content, GameState state, string exitId)
     {
         if (state.Mode != GameMode.World) return state;
         var exit = content.GetRoom(state.Room).Exits.FirstOrDefault(e => e.Id == exitId);
         if (exit is null || !state.AllDone(exit.RequiresDone)) return state;
-        return EnterRoomWithEntryLines(content, state, exit.To);
+        var next = EnterRoomWithEntryLines(content, state, exit.To);
+        var ride = content.FirstRideLines(exit.Id);
+        if (ride.Count == 0 || state.JournalSeen.Contains(FirstRideKey(exit.Id))) return next;
+        var queue = ride.Select(l => l.LineId ?? "").Where(id => id.Length > 0).ToList();
+        if (next.ActiveLineId is not null) queue.Add(next.ActiveLineId);
+        queue.AddRange(next.PlaybackQueue);
+        return Playback.Start(content, next with { JournalSeen = IdList.AddUnique(next.JournalSeen, FirstRideKey(exit.Id)) }, queue);
     }
 
     /// <summary>Portal destinations available in the current room (empty when it is not an open anchor node or CHRONO is missing).</summary>
@@ -119,13 +167,16 @@ public static class Navigation
     /// Shortest route (fewest hops) from the current room to a target room over open connections and
     /// portals, or null when unreachable. An empty list means "already there" (or an inventory action).
     /// </summary>
-    public static IReadOnlyList<RouteStep>? FindRoute(GameContent content, GameState state, string targetRoom)
+    public static IReadOnlyList<RouteStep>? FindRoute(GameContent content, GameState state, string targetRoom) =>
+        targetRoom == GameContent.InventoryRoom ? Array.Empty<RouteStep>() : Route(content, state, state.Room, targetRoom, includePortals: true);
+
+    private static IReadOnlyList<RouteStep>? Route(GameContent content, GameState state, string from, string targetRoom, bool includePortals)
     {
-        if (targetRoom == GameContent.InventoryRoom || targetRoom == state.Room) return Array.Empty<RouteStep>();
-        var graph = BuildGraph(content, state, includePortals: true);
-        var previous = new Dictionary<string, RouteStep?>(StringComparer.Ordinal) { [state.Room] = null };
+        if (targetRoom == from) return Array.Empty<RouteStep>();
+        var graph = BuildGraph(content, state, includePortals);
+        var previous = new Dictionary<string, RouteStep?>(StringComparer.Ordinal) { [from] = null };
         var queue = new Queue<string>();
-        queue.Enqueue(state.Room);
+        queue.Enqueue(from);
         while (queue.Count > 0)
         {
             var room = queue.Dequeue();

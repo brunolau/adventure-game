@@ -243,7 +243,9 @@ public partial class DebugHarness
         await KeyReal(Godot.Key.T);
         if (!await WaitUntil(() => UiRoot.Instance!.TopModal is PortalChooser, 5)) throw new InvalidOperationException($"portal chooser did not open in {game.State.Room}");
         await Frames(3);
-        var button = Descendants<Button>(UiRoot.Instance!.TopModal!).FirstOrDefault(b => b.IsVisibleInTree() && b.Text.StartsWith(year + " · ", StringComparison.Ordinal))
+        // The button shows the presented year (Ivanka: era 1960 is shown as 1962), as the player sees it.
+        string shown = TextService.EraYear(year) + " · ";
+        var button = Descendants<Button>(UiRoot.Instance!.TopModal!).FirstOrDefault(b => b.IsVisibleInTree() && b.Text.StartsWith(shown, StringComparison.Ordinal))
                      ?? throw new InvalidOperationException($"no era button {year}");
         if (button.Disabled) throw new InvalidOperationException($"era button {year} is disabled in {game.State.Room}");
         if (!await ClickControl(button, "portal " + year)) throw new InvalidOperationException($"era button {year} not clickable");

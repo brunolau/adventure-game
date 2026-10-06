@@ -12,11 +12,16 @@ namespace LastBell.Core.Tests.Support;
 /// </summary>
 public static class Driver
 {
-    /// <summary>Follows an explicit list of rooms (walkthrough travel_path): exits first, else a portal.</summary>
+    /// <summary>
+    /// Follows an explicit list of rooms (walkthrough travel_path): exits first, else a portal. A hop that the travel
+    /// overlay removed (e.g. the 2020 car S02 -> S51, now the bus from S07) is recomputed: the shortest legal route
+    /// under the overlay replaces it (walkthrough.json itself is never edited).
+    /// </summary>
     public static GameState FollowTravelPath(GameContent content, GameState s, IReadOnlyList<string> path)
     {
         foreach (var roomId in path)
         {
+            if (roomId == s.Room) continue; // a recomputed hop may already have passed through this room
             var exit = content.GetRoom(s.Room).Exits.FirstOrDefault(e => e.To == roomId && s.AllDone(e.RequiresDone));
             GameState next;
             if (exit is not null)
@@ -24,12 +29,16 @@ public static class Driver
                 Assert.IsType<Resolution.Travel>(GameRules.ResolveInteraction(content, s, new Hit.Exit(exit.Id), PointerButton.Left));
                 next = Navigation.Travel(content, s, exit.Id);
             }
+            else if (Navigation.PortalTargets(content, s).Any(p => p.Anchor == roomId))
+            {
+                next = Navigation.UsePortal(content, s, content.GetRoom(roomId).Era);
+            }
             else
             {
-                var target = content.GetRoom(roomId);
-                var portal = Navigation.PortalTargets(content, s).FirstOrDefault(p => p.Anchor == roomId);
-                Assert.True(portal is not null, $"No exit or portal from {s.Room} to {roomId}");
-                next = Navigation.UsePortal(content, s, target.Era);
+                Assert.True(content.Overlay.RemovedConnections.Any(c => (c.From == s.Room && c.To == roomId) || (c.To == s.Room && c.From == roomId)),
+                    $"No exit or portal from {s.Room} to {roomId}");
+                s = TravelTo(content, s, roomId); // recomputed under the travel overlay
+                continue;
             }
             Assert.Equal(roomId, next.Room);
             s = Playback.FinishAll(content, next);

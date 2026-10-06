@@ -71,6 +71,7 @@ public static class WalkthroughReplayer
     {
         foreach (var roomId in step.TravelPath)
         {
+            if (roomId == s.Room) continue; // a recomputed hop may already have passed through this room
             var exit = content.GetRoom(s.Room).Exits.FirstOrDefault(e => e.To == roomId && s.AllDone(e.RequiresDone));
             GameState next;
             if (exit is not null)
@@ -79,12 +80,20 @@ public static class WalkthroughReplayer
                     throw new InvalidOperationException($"step {step.Step}: exit {exit.Id} does not resolve to travel");
                 next = Navigation.Travel(content, s, exit.Id);
             }
+            else if (Navigation.PortalTargets(content, s).Any(p => p.Anchor == roomId))
+            {
+                next = Navigation.UsePortal(content, s, content.GetRoom(roomId).Era);
+            }
             else
             {
-                var target = content.GetRoom(roomId);
-                if (!Navigation.PortalTargets(content, s).Any(p => p.Anchor == roomId))
+                // A hop the travel overlay removed (2020: the car S02 -> S51 became the bus from S07): recompute it.
+                string from = s.Room;
+                if (!content.Overlay.RemovedConnections.Any(c => (c.From == from && c.To == roomId) || (c.To == from && c.From == roomId)))
                     throw new InvalidOperationException($"step {step.Step}: no exit or portal from {s.Room} to {roomId}");
-                next = Navigation.UsePortal(content, s, target.Era);
+                var route = Navigation.FindRoute(content, s, roomId) ?? throw new InvalidOperationException($"step {step.Step}: no route from {s.Room} to {roomId}");
+                foreach (var hop in route) s = Playback.FinishAll(content, Navigation.ApplyStep(content, s, hop));
+                if (s.Room != roomId) throw new InvalidOperationException($"step {step.Step}: travel to {roomId} failed");
+                continue;
             }
             if (next.Room != roomId) throw new InvalidOperationException($"step {step.Step}: travel to {roomId} failed");
             s = Playback.FinishAll(content, next);

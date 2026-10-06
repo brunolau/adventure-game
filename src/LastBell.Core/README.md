@@ -39,6 +39,9 @@ GameContent content = GameContent.Load(json);   // or GameContent.Load(Stream)
 var session = new GameSession(content);         // starts from content.InitialState
 ```
 
+With the content overlays use `GameContent.Load(json, new ContentOverlays(dialogueExt, travelExt))`
+(section 13; `GameRuntime` loads `res://data/content_ext/`).
+
 Load validates every reference. A failure throws `ContentLoadException`, whose `Errors` list names
 the id and the JSON path, for example `$.actions[1](G02).requires_done[0]: unknown action 'NOPE'`.
 `GameContent` is immutable and thread-safe, so load it once.
@@ -127,7 +130,8 @@ applies everything in a single step:
 - removes consumed items and adds given items
 - appends the id to `done` and writes the journal entry
 - returns the postgame evidence on F17
-- recomputes side rewards and clears a consumed selection
+- recomputes side rewards and clears the selection after an item use (also a consumed one; an invalid
+  item click never reaches the commit and keeps the selection, PT-F09 / PT-S16)
 - applies `special_transitions` (G11 to S11, F17 to S06, J02, J03, J04) and queues the lines
 
 The lines, then the cutscene, then the first-entry lines of a newly reached room play **after**
@@ -187,8 +191,17 @@ answer only stores the draft. Nothing is consumed and the modal stays open. Use
 - `Quests.NextMainQuest` (the TS port), `Quests.CurrentMainQuest` (the pin wins),
   `Quests.ActiveSideQuest`, `Quests.StatusOf`, `Quests.Pin` / `Unpin` (one main and one side
   quest), `Quests.LatestObjective`.
-- `Hints.RevealNext(content, state, questId)` reveals one level per player request, up to 3.
-  `Hints.Revealed` returns the texts.
+- Hints follow the step (PT-F08 / PT-S26): `Hints.CurrentStep(content, state, questId)` is the next undone
+  action of the quest (the open puzzle's action first, else the first undone action in quest order whose guards
+  pass, else the first undone one). `Hints.RevealNext(content, state, questId)` reveals one level of that step
+  per player request, up to `Hints.Levels` (3); levels are kept per step (`hint_levels` keyed by action id;
+  quest-id keys of older saves still load and are ignored), so a new step starts at 0. `Hints.Revealed` returns
+  `HintText`s: level 1 the direction (the objective of the done action that enabled the step, else the quest's
+  latest objective, else quest hint 1 / 2), level 2 the place (`ui.hint.step_place` with `{room}` / `{target}`,
+  or `ui.hint.step_bag`), level 3 only that step (`ui.hint_step.<action id>`, never the whole chain).
+  `Puzzles.CanFill` needs level 3 of the puzzle's own step.
+- `Dialogue.ReturnToMenu(content, state, npcHotspotId)`: after a topic's lines the topic menu of the same NPC
+  opens again while it still offers a topic (conversations stay open, PT-S17).
 - `Journal.Build(content, state)` returns a `JournalView` with:
   - quests (main and side, with status and pins), the current main goal and the active side quest
   - `Findings`: first looks and action transcripts with objectives, in recorded order
@@ -200,11 +213,12 @@ answer only stores the draft. Nothing is consumed and the modal stays open. Use
 
 ## 9. Map, travel, portals
 
-- `ViewBuilder.Map(content, state)` returns the era sheets. Each room has `Visited` (unvisited
-  rooms are grey), `IsCurrent`, `IsAnchor` and `CanFastTravel`.
+- `ViewBuilder.Map(content, state)` returns the era sheets with their map regions (section 13). Each
+  room has `Visited` (unvisited rooms are grey), `IsCurrent`, `IsAnchor`, `CanFastTravel`, `RegionId`
+  and `IsHub`.
 - `Navigation.FastTravel(content, state, roomId)` works only in map mode, only to a visited room of
-  the same era, and only if that room is reachable over open connections. A locked door is never
-  bypassed.
+  the same era, only if that room is reachable over open connections, and only inside the current
+  region or to a hub of another region (travel overlay). A locked door is never bypassed.
 - `Navigation.PortalTargets(content, state)` and `Navigation.UsePortal(content, state, year)`
   handle the chronometer at anchor nodes. Travel is free and always reversible.
 - `Navigation.UnlockedEras` and `Navigation.IsEraUnlocked` report era state.
@@ -261,6 +275,123 @@ action (reopen that modal), otherwise it closes with the draft kept (ISSUES GAME
 `Apply(resolution, combineMode)`, `Commit`, `SubmitPuzzle`, `Update(Func<GameState, GameState>)`,
 `Save` and `TryLoad`, and raises `StateChanged(old, new)`. It adds no rules.
 
+## 13. Content overlays (`src/game/data/content_ext/`)
+
+game.json is never edited. Two optional overlays are applied on top of it when content loads:
+
+```csharp
+var overlays = new ContentOverlays(
+    FileAccess.GetFileAsString("res://data/content_ext/dialogue_ext.json"),   // or null
+    FileAccess.GetFileAsString("res://data/content_ext/travel_ext.json"));    // or null
+GameContent content = GameContent.Load(gameJson, overlays);
+```
+
+`GameRuntime` does this (a missing file means no overlay of that kind). `GameContent.Load(json)` alone is
+the handoff. An empty overlay (`{}`, or empty lists) is valid and changes nothing; to revert, remove an
+entry or the whole file. Load validates everything and throws `ContentLoadException`; overlay errors name
+the overlay path, e.g. `$dialogue_ext.sequences[3](G02).lines[2].speaker: 'TONO20' does not take part in
+action 'G02'`. After load, `content.Data` is the effective content (game.json + overlays) and
+`content.Overlay` (`OverlayInfo`) lists what changed. The Python mirror is `tools/content_ext.py`
+(`check`, `merge`); the localization tools build their tables from the effective game.
+
+### dialogue_ext.json: longer sequences and extra NPC topics
+
+Only lines, labels of new topics and their timing conditions may be set. Any other field (gives, consumes,
+requires_items, puzzle, quest, cutscene, logic) is an error. The writing drafts
+(`docs/writing/out*/<chunk>_ext.json`, WRITING_METHOD.md section 5) have this shape and are merged as is
+with `python tools/content_ext.py merge docs/writing/out_v2/C1_ext.json` (each entry gets a `chunk`
+field; a draft's `travel` proposal is not merged).
+
+```jsonc
+{
+  "format": "lastbell.dialogue_ext", "version": 1,          // optional; "about", "schema", "chunk", "note", "sources" are free text
+  "sequences": [                                             // also "topic_extensions": same entry shape
+    { "action": "G02",                                       // exactly one of: "action" (action lines), "topic" (an ambient
+                                                             //   topic of game.json), "room" (that room's first_entry lines)
+      "id": "action.G02", "kind": "action_lines",            // optional checks: id = action.<id> | topic.<id> | entry.<room>,
+                                                             //   kind = action_lines | topic_lines | first_entry_lines
+      "lines": [                                             // the FULL play order
+        "action.G02.001",                                    //   a string: an existing line of THIS exchange (kept, may be
+                                                             //   reordered; one that is not listed is dropped)
+        { "key": "action.G02.x01", "speaker": "ELA", "sk": "…" }   // an object: a new line at this position
+      ] }
+  ],
+  "topics": [                                                // new optional topics (only play lines, like ambient topics)
+    { "id": "ELA.extra 1",                                   // "ext.<anything>" or "<CHARACTER>.extra <n>" (draft form)
+      "character": "ELA", "label": "Dobrovoľníci",          // label key: topic.<id>.label ("label_key" optional check)
+      "repeatable": true,                                    // default true; false: offered until heard once
+      "requires_done": [], "excluded_done": [],              // existing action ids only: offered when all requires are
+                                                             //   done and no excluded action is done
+      "speaks_first": "ADAM",                                // optional check of the first line's speaker
+      "lines": [ { "key": "topic.ELA.extra 1.001", "speaker": "ADAM", "sk": "…" } ] }
+  ]
+}
+```
+
+Rules checked on load:
+
+- New line keys are `<owner>.<n>` with `<owner>` = `action.<id>`, `topic.<topicId>` or `entry.<roomId>`
+  and `<n>` up to three letters plus digits (`x01`, `001`); they are new (no game.json or other overlay
+  line uses them) and stable: the key is the localization key (`Tr(key)`, Slovak fallback = `sk`).
+- Speakers: Adam, the speakers already in that exchange, and for conversations with a character (its
+  topics and the actions on its NPC hotspots) that character and everyone already speaking with it (Bodka
+  next to Lenka); for actions also the staging guest speakers. An existing line keeps its speaker and text
+  (its text comes from the tables / `sk_overrides.csv`).
+- An exchange is extended at most once; `lines` is never empty; a new topic id is unique and its character
+  has an NPC hotspot.
+- Dropped handoff lines are "retired" (`OverlayInfo.RetiredLines`): never queued again, not in
+  `AllLineIds`, but `FindLine` still resolves them, so a save made on such a line loads.
+- `tools/check_rewrite.py` checks the texts (lengths, ids, wording) and the protected facts: a fact may move
+  within its action / topic but must stay present; a verbatim line may not be dropped.
+
+`Dialogue.TopicsFor` lists new topics after the character's handoff topics (same `TopicOption`, not a
+story action); `Dialogue.StartTopic` plays them and records `topic.<id>` in `journal_seen`.
+`TopicDef.ExcludedDone` is set only by the overlay.
+
+### travel_ext.json: exits, connections, first rides, map regions
+
+```jsonc
+{
+  "format": "lastbell.travel_ext", "version": 1,
+  "remove_exits": [ { "exit": "S02.to_S51", "reason": "…" } ],            // or plain exit ids
+  "remove_connections": [ { "from": "S02", "to": "S51", "reason": "…" } ],// in its game.json direction
+  "exits": [
+    { "room": "S07", "id": "S07.to_S51", "to": "S51", "travel": "bus",   // id = <room>.to_<to>; same era
+      "label": "…", "locked_look": "…", "requires_done": [],              // keys exit.<id>.label / .locked
+      "rect": [960, 975, 55, 70], "interaction_point": [985, 965],          // template geometry (natural blocking:
+                                                                            //   data/blocking/<room>.json)
+      "first_ride": { "lines": [ { "key": "travel.S07.to_S51.first.001", "speaker": "ADAM", "sk": "…" } ] } }
+  ],
+  "connections": [ { "from": "S07", "to": "S51", "bidirectional": true, "travel": "bus",
+                     "label": "…", "locked_look": "…", "requires_done": [] } ],   // keys conn.<from>.<to>.label / .locked
+  "regions": [ { "id": "Chorvátsky Grob", "era": 2020, "rooms": ["S01", "…"], "hubs": ["S07"] } ]
+}
+```
+
+Rules checked on load: known rooms, exits and actions; travel styles `walk`, `map_transition`,
+`car_transition`, `bus`, `tram`, `cable_A6`, `board_funitel`, `arrive_funitel`; an added connection has
+an exit on each side (same travel and requires_done), an added exit has a connection, a removed
+connection leaves no exit behind and a removed exit no connection; every room stays reachable from its
+era's time node; first-ride lines are Adam's, keyed `travel.<exitId>.first.<n>`.
+
+Regions (owner rule 2026-10-06, "far places are reached through their transport hub"): an era that has
+regions lists every room in exactly one region; each region has at least one hub; a connection between two
+regions must join a hub to a hub. Eras without regions get one region per district with every room a hub
+(the handoff behaviour). Region names are `region.<id>.name` in ui.csv (`TextKeys.NameOf(region)`).
+
+- `content.Regions`, `RegionsOf(era)`, `RegionOf(roomId)`, `IsHub(roomId)`.
+- `Navigation.CanFastTravel` adds `Navigation.IsRegionTarget`: inside the current region, or to a hub of
+  another region. `ViewBuilder.Map` gives each `MapEraView` its `Regions` (`MapRegionView`: name, rooms,
+  hubs, current, visited, `CanTravel`, `Transport` = the travel style into it) and each `MapRoomView` its
+  `RegionId` and `IsHub`.
+- `Navigation.TransportBetween(content, state, from, to)`: the travel style of the first cross-region
+  connection on the route (the presentation's transport card for a fast travel).
+- `Navigation.Travel` through an exit with first-ride lines that were not heard yet queues them before
+  the destination's first-entry lines and records `Navigation.FirstRideKey(exitId)` in `journal_seen`.
+  `PlaybackLine.Source` is `LineSource.Travel` (`SourceId` = exit id): the presentation plays them in the
+  room being left, then runs the ride (fade, transport card, ride sound) and shows the new room.
+- `content.FirstRideLines(exitId)`.
+
 ## Tests
 
 Run `dotnet test src/LastBell.sln`. The suite covers:
@@ -271,3 +402,12 @@ Run `dotnet test src/LastBell.sln`. The suite covers:
 - 120 seeded random legal orders and 24 final-port orders
 - a save/load round-trip at every step and in the middle of each dialogue
 - the logic-level rows of `acceptance_tests.csv` (UI-only rows are skipped with a reason)
+- the content overlays (`ContentOverlayTests`): empty overlays, the live C1 sequences and topics in play order,
+  timing conditions, retired lines and old saves, every rejected field and broken key, the travel overlay
+  (bus S07 <-> S51, first rides, the hub rule, region fast travel, map regions) and that every overlay text
+  has its key in the generated tables
+
+`TestData.Content` is the content the game plays (game.json + `src/game/data/content_ext/*.json`, copied
+to the test fixtures); `TestData.BaseContent` is the handoff alone. The walkthrough replay follows
+`walkthrough.json` (never edited); a hop that the travel overlay removed (S02 -> S51) is recomputed as the
+shortest legal route under the overlay (`Driver.FollowTravelPath`, by bus from S07).

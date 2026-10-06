@@ -35,8 +35,35 @@ public enum NpcDepth
 /// <param name="OffsetX">Horizontal nudge of the sprite in canvas px.</param>
 /// <param name="Facing">"left", "right" or null (face the room centre / the hero).</param>
 /// <param name="Depth">Draw order relative to the hero and the occluders.</param>
+/// <param name="ApproachGap">Gap in px between the NPC rect and the hero standing beside it (null = <see cref="Room.NpcApproachGap"/>;
+/// larger for a child, so a show_item gesture does not reach into the face, playtest PT-S24).</param>
 public sealed record BlockingNpc(Vector2? Feet, float? Scale, string? Variant = null, float? SillY = null, float OffsetX = 0f,
-    string? Facing = null, NpcDepth Depth = NpcDepth.Auto);
+    string? Facing = null, NpcDepth Depth = NpcDepth.Auto, float? ApproachGap = null);
+
+/// <summary>
+/// A guest speaker of one action (game.json <c>actions[].staging.rule</c>, ISSUES PT-S18): a character who speaks the
+/// action's lines but does not stand in the room. The presentation walks a temporary actor in from
+/// <paramref name="Enter"/> (the nearest exit) to <paramref name="Stand"/>, plays the lines and walks it out again.
+/// Never a Core NPC: no hotspot, no rules, no save state.
+/// </summary>
+/// <param name="CharacterId">Speaker id of the lines (game.json characters[].id).</param>
+/// <param name="Enter">Where the guest appears and leaves (may lie off screen or outside the walk polygon).</param>
+/// <param name="Stand">Feet position while the lines play (walkable floor).</param>
+/// <param name="Variant">Staging / actor.json variant (null = the manifest default).</param>
+/// <param name="Facing">"left", "right" or null (face the hero).</param>
+/// <param name="Delay">Seconds after the commit before this guest starts walking (two guests do not walk in a clump).</param>
+public sealed record BlockingGuest(string CharacterId, Vector2 Enter, Vector2 Stand, string? Variant, string? Facing, float Delay);
+
+/// <summary>
+/// The painted clock (or device) of an anchor node that opens the era chooser like the HUD clock button (playtest
+/// PT-F10, DECISIONS "The painted S11 clock is the time node"). Either its own presentation rect (a clock painted
+/// without a game.json hotspot) or <paramref name="HotspotId"/>, a game.json hotspot whose plain left click (no item
+/// selected, Core resolves a look) opens the chooser instead. Active only while Core lists portal targets here.
+/// </summary>
+/// <param name="Rect">Hit rect (ignored when <paramref name="HotspotId"/> is set: the hotspot's rect is used).</param>
+/// <param name="InteractionPoint">Where the hero walks before the chooser opens (null = the hotspot's point).</param>
+/// <param name="HotspotId">game.json hotspot that doubles as the node, or null.</param>
+public sealed record BlockingTimeNode(Rect2? Rect, Vector2? InteractionPoint, string? HotspotId);
 
 /// <summary>
 /// A piece of the painting that is drawn in front of actors standing behind it (a counter front, a pillar, a
@@ -83,7 +110,10 @@ public sealed record BlockingAudio(JsonArray? AmbienceLayers, bool AddToTemplate
 ///   "hotspots": { "S05.tray": { "rect": [x, y, w, h], "interaction_point": [x, y], "label_anchor": [x, y] } },
 ///   "exits":    { "S05.to_S02": { "rect": [...], "interaction_point": [...], "label_anchor": [...] } },
 ///   "npcs":     { "S13.TONO": { "feet": [x, y], "scale": 0.6, "variant": "seated", "sill_y": 600, "offset_x": 0,
-///                               "facing": "left", "z": "auto|back|front" } },
+///                               "facing": "left", "z": "auto|back|front", "approach_gap": 140 } },
+///   "guests":   { "I17": [ { "character": "MIRA60", "enter": [x, y], "stand": [x, y], "variant": null,
+///                            "facing": "right", "delay": 0 } ] },
+///   "time_node": { "rect": [x, y, w, h], "interaction_point": [x, y] }   or   { "hotspot": "S51.clock" },
 ///   "foreground_mask": "fg_natural/S05.webp",
 ///   "occluders": [ { "id": "counter", "polygon": [[x, y], ...], "baseline": 700, "texture": null } ],
 ///   "variant_layers": { "variants/S17_healthy_linden.webp": "variants_natural/S17_healthy_linden.webp",
@@ -134,6 +164,16 @@ public sealed class RoomBlocking
 
     /// <summary>NPC staging by hotspot id.</summary>
     public IReadOnlyDictionary<string, BlockingNpc> Npcs { get; private init; } = new Dictionary<string, BlockingNpc>();
+
+    /// <summary>Guest speakers by action id (walk-ins, ISSUES PT-S18).</summary>
+    public IReadOnlyDictionary<string, IReadOnlyList<BlockingGuest>> Guests { get; private init; } = new Dictionary<string, IReadOnlyList<BlockingGuest>>();
+
+    /// <summary>The painted time-node clock of an anchor-node room, or null (ISSUES PT-F10).</summary>
+    public BlockingTimeNode? TimeNode { get; private init; }
+
+    /// <summary>The staging of a guest character in this room (any action), or null.</summary>
+    public BlockingGuest? GuestFor(string characterId) =>
+        Guests.Values.SelectMany(g => g).FirstOrDefault(g => g.CharacterId == characterId);
 
     /// <summary>Foreground mask asset relative to res://assets/ (null = the convention fg_natural/&lt;room&gt;.webp).</summary>
     public string? ForegroundMask { get; private init; }
@@ -212,9 +252,30 @@ public sealed class RoomBlocking
                         _ => NpcDepth.Auto,
                     };
                     npcs[id] = new BlockingNpc(ReadVec2(o["feet"]), ReadFloat(o["scale"]), o["variant"]?.GetValue<string>(),
-                        ReadFloat(o["sill_y"]), ReadFloat(o["offset_x"]) ?? 0f, o["facing"]?.GetValue<string>(), depth);
+                        ReadFloat(o["sill_y"]), ReadFloat(o["offset_x"]) ?? 0f, o["facing"]?.GetValue<string>(), depth,
+                        ReadFloat(o["approach_gap"]));
                 }
             }
+            var guests = new Dictionary<string, IReadOnlyList<BlockingGuest>>(StringComparer.Ordinal);
+            if (root["guests"] is JsonObject g)
+            {
+                foreach (var (actionId, node) in g)
+                {
+                    if (node is not JsonArray list) continue;
+                    var parsed = new List<BlockingGuest>();
+                    foreach (var gv in list)
+                    {
+                        if (gv is not JsonObject go || go["character"]?.GetValue<string>() is not { } character) continue;
+                        if (ReadVec2(go["enter"]) is not { } enter || ReadVec2(go["stand"]) is not { } stand) continue;
+                        parsed.Add(new BlockingGuest(character, enter, stand, go["variant"]?.GetValue<string>(), go["facing"]?.GetValue<string>(),
+                            ReadFloat(go["delay"]) ?? 0f));
+                    }
+                    if (parsed.Count > 0) guests[actionId] = parsed;
+                }
+            }
+            BlockingTimeNode? timeNode = null;
+            if (root["time_node"] is JsonObject tn)
+                timeNode = new BlockingTimeNode(ReadRect(tn["rect"]), ReadVec2(tn["interaction_point"]), tn["hotspot"]?.GetValue<string>());
             var patches = new List<StatePatch>();
             if (root["state_patches"] is JsonArray sp)
             {
@@ -276,6 +337,8 @@ public sealed class RoomBlocking
                 Spawn = ReadVec2(root["spawn"]),
                 Targets = targets,
                 Npcs = npcs,
+                Guests = guests,
+                TimeNode = timeNode,
                 ForegroundMask = root["foreground_mask"]?.GetValue<string>(),
                 AmbientData = root["ambient"]?.GetValue<string>(),
                 StatePatches = patches,

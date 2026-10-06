@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "note": "Speakers who talk without being in the room (game.json actions[].staging.rule, ISSUES PT-S18): World/GuestStage.cs shows a badge instead of a body. kind: phone | recording | radio | device; at: hero (beside his head) | target (above the action's target object; the hero when the target is a person). A character standing in the room as an NPC always speaks from its body; guests who walk in are in data/blocking/<room>.json 'guests'.",
+  "speakers": {
+    "MIRA20": { "kind": "phone", "at": "hero", "reason": "rule: MIRA20 outside S06 = telephone call (G04 at the gate S05, C05 in the workshop S10)" },
+    "LEA_REC": { "kind": "recording", "at": "hero", "reason": "rule: LEA95 at the cassette = recording; F11 Adam plays Lea's message to Viktor" },
+    "ADAM10": { "kind": "recording", "at": "target", "reason": "rule: ADAM10 at the cassette = recording; F13 the school tape in the voice port" },
+    "NINA_REMOTE": { "kind": "radio", "at": "target", "reason": "game.json non_actor_speakers: Nina over the service channel (terminal, roof switch, bridge)" },
+    "SYSTEM": { "kind": "device", "at": "target", "reason": "game.json non_actor_speakers: text of a device (case, node, panel, dial, sensor, gate, ports)" }
+  }
+}

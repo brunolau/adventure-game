@@ -64,7 +64,7 @@ public partial class EraCardView : Control, IEraCardView
     {
         done?.Invoke(); // never leave a transition waiting
         done = finished;
-        year.Text = era.Year.ToString();
+        year.Text = TextService.EraYear(era.Year);
         place.Text = TextService.Get(card);
         date.Text = TextService.Get(dateText);
         place.Visible = !UiSettings.ReducedMotion || place.Text.Length > 0;

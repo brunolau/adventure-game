@@ -84,7 +84,7 @@ public static class SaveSlots
         var content = GameRuntime.Instance.Content;
         var room = content.FindRoom(state.Room);
         string place = room is null ? state.Room : TextService.Get(TextKeys.NameOf(room));
-        return TextService.Ui("ui.save.slot_summary", ("place", place), ("year", state.Era.ToString()));
+        return TextService.Ui("ui.save.slot_summary", ("place", place), ("year", TextService.EraYear(state.Era)));
     }
 
     /// <summary>Local date/time text of a unix time.</summary>

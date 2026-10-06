@@ -115,6 +115,12 @@ public static class TextKeys
     public static string EraDate(int year) => $"era.{year}.date";
 
     /// <summary>
+    /// <c>era.&lt;year&gt;.year</c>: the year shown to the player for an era (hand-written in ui.csv). The era id stays
+    /// the game.json year; the shown year may differ (the Ivanka era 1960 is shown as 1962, docs/DECISIONS.md).
+    /// </summary>
+    public static string EraYear(int year) => $"era.{year}.year";
+
+    /// <summary>
     /// <c>region.&lt;district&gt;.name</c>: map region caption of a <c>rooms[].district</c> (ISSUES TEXT-02 / UI-02;
     /// hand-written in ui.csv, the district is kept verbatim like ids with spaces).
     /// </summary>
@@ -219,8 +225,20 @@ public static class TextKeys
     /// <summary>Era title card (game.json has no card text; the fallback is the ISO date).</summary>
     public static TextRef CardOf(EraDef era) => new(EraCard(era.Year), era.Date);
 
+    /// <summary>
+    /// Year shown for the era with id <paramref name="year"/> (fallback: the id itself). Every player-visible era year
+    /// goes through this key; the id stays internal (saves, conditions, portals, assets such as music/1960.ogg).
+    /// </summary>
+    public static TextRef YearOf(int year) => new(EraYear(year), year.ToString(System.Globalization.CultureInfo.InvariantCulture));
+
     /// <summary>Map region caption of a room's district (fallback: the district itself).</summary>
     public static TextRef RegionOf(RoomDef room) => new(RegionName(room.District), room.District);
+
+    /// <summary>Name of a map region (<c>region.&lt;id&gt;.name</c>; the fallback is the id).</summary>
+    public static TextRef NameOf(RegionDef region) => new(RegionName(region.Id), region.Id);
+
+    /// <summary>Key of a first-ride line of a transport exit (travel overlay): <c>travel.&lt;exitId&gt;.first.&lt;n&gt;</c>.</summary>
+    public static string FirstRideLine(string exitId, string n) => $"travel.{exitId}.first.{n}";
 
     /// <summary>Epilogue shot caption (index is 0-based in data).</summary>
     public static TextRef ShotOf(EpilogueDef entry, int index) => new(EpilogueShot(index + 1), entry.Shot);

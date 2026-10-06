@@ -110,8 +110,12 @@ public partial class DebugHarness : Node
             }
             if (Has("acceptance"))
             {
-                if (Get("acceptance") is not "m2") await RunPrologueAcceptance();
-                if (Get("acceptance") is not "m1") await RunContentAcceptance(); // ContentAcceptance.cs (milestone 2)
+                if (Get("acceptance") is "travel") { realInput = true; GameRuntime.Instance.NewGame(); await Settle(); await WaitLinesReal(20); await RunTravelChecks(); } // TravelAcceptance.cs only (TR01-TR03)
+                else
+                {
+                    if (Get("acceptance") is not "m2") await RunPrologueAcceptance();
+                    if (Get("acceptance") is not "m1") await RunContentAcceptance(); // ContentAcceptance.cs (milestone 2; includes TR01-TR03)
+                }
                 Quit(acceptanceFailures > 0 ? 1 : 0);
                 return;
             }

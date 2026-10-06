@@ -92,6 +92,55 @@ public sealed class PuzzleAndDialogueTests
     }
 
     [Fact]
+    public void Hint_fill_belongs_to_the_puzzle_step_not_to_other_steps_of_the_quest()
+    {
+        // Three levels revealed on another step of M02 (G06) do not unlock "fill in correctly" for P01.
+        var s = TestData.StateAfter("G05");
+        for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M02");
+        Assert.Equal(3, Hints.StepLevel(s, "G06"));
+        s = s with { Done = TestData.ReadyFor("G11").Done, Inventory = TestData.ReadyFor("G11").Inventory };
+        Assert.False(Puzzles.CanFill(C, s, "P01"));
+    }
+
+    /// <summary>PT-S17: after a topic the conversation returns to the topic list until it is closed or exhausted.</summary>
+    [Fact]
+    public void Conversation_returns_to_the_topic_menu_while_topics_are_left()
+    {
+        var checkedNpcs = 0;
+        foreach (var state in TestData.MainStates)
+        {
+            foreach (var npc in C.GetRoom(state.Room).Hotspots.Where(h => h.IsNpc && GameRules.IsVisible(h, state)))
+            {
+                var topics = Dialogue.TopicsFor(C, state, npc);
+                var back = Dialogue.ReturnToMenu(C, state, npc.Id);
+                if (topics.Count > 0)
+                {
+                    Assert.Equal(GameMode.Dialogue, back.Mode);
+                    Assert.Null(back.ActiveLineId);
+                    Assert.Equal(state.Done, back.Done);
+                    checkedNpcs++;
+                }
+                else Assert.Equal(state, back); // exhausted: the conversation stays closed
+                // never while a line plays, an item is selected or another panel is open
+                Assert.Equal(state with { SelectedItem = state.Inventory[0] }, Dialogue.ReturnToMenu(C, state with { SelectedItem = state.Inventory[0] }, npc.Id));
+                Assert.Equal(GameMode.Inventory, Dialogue.ReturnToMenu(C, state with { Mode = GameMode.Inventory }, npc.Id).Mode);
+            }
+            Assert.Equal(state, Dialogue.ReturnToMenu(C, state, "S99.NOBODY"));
+        }
+        Assert.True(checkedNpcs > 20);
+
+        // A story topic: after its lines the same NPC's menu opens again with the remaining topics.
+        var s = Driver.TravelTo(C, TestData.StateBefore("G02"), "S03");
+        s = Dialogue.OpenMenu(s);
+        s = GameRules.CommitAction(C, s, "G02");
+        Assert.Equal(s, Dialogue.ReturnToMenu(C, s, "S03.ELA")); // lines still playing
+        s = Playback.FinishAll(C, s);
+        Assert.Equal(GameMode.World, s.Mode);
+        var reopened = Dialogue.ReturnToMenu(C, s, "S03.ELA");
+        Assert.Equal(Dialogue.TopicsFor(C, s, C.FindHotspot("S03.ELA")!.Hotspot).Count > 0 ? GameMode.Dialogue : GameMode.World, reopened.Mode);
+    }
+
+    [Fact]
     public void Puzzles_open_only_for_a_valid_action()
     {
         Assert.Same(C.InitialState, Puzzles.Open(C, C.InitialState, "G11"));

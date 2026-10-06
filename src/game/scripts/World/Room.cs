@@ -39,6 +39,12 @@ public sealed record TargetInfo(string Id, TargetKind Kind, TextRef Name, Rect2 
     public Hit ToHit() => Kind == TargetKind.Exit ? new Hit.Exit(Id) : new Hit.Hotspot(Id);
 }
 
+/// <summary>The painted time-node clock of an anchor node (ISSUES PT-F10).</summary>
+/// <param name="Rect">Hit rect.</param>
+/// <param name="InteractionPoint">Where the hero walks before the era chooser opens.</param>
+/// <param name="HotspotId">The game.json hotspot it doubles as, or null (own presentation rect).</param>
+public sealed record TimeNodeInfo(Rect2 Rect, Vector2 InteractionPoint, string? HotspotId);
+
 /// <summary>
 /// The one generic room scene (scenes/room/Room.tscn). <see cref="Build"/> creates any room from
 /// Core's <see cref="RoomView"/>, with layers in the order of <c>rooms[].layer_order</c>:
@@ -56,6 +62,7 @@ public partial class Room : Node2D
     public static readonly Vector2 CanvasSize = new(1920, 1080);
 
     private readonly Dictionary<string, Actor> npcs = new(StringComparer.Ordinal);
+    private readonly List<Actor> guests = new();
     private readonly Dictionary<string, TargetInfo> targets = new(StringComparer.Ordinal);
     private readonly List<string> hitOrder = new();
     private readonly Dictionary<string, Node2D> layers = new(StringComparer.Ordinal);
@@ -93,6 +100,12 @@ public partial class Room : Node2D
 
     /// <summary>NPC actors by hotspot id.</summary>
     public IReadOnlyDictionary<string, Actor> Npcs => npcs;
+
+    /// <summary>Guest speakers walking in or standing in the room for one action (World/GuestStage.cs; never Core NPCs).</summary>
+    public IReadOnlyList<Actor> Guests => guests;
+
+    /// <summary>The painted time-node clock while Core lists portal targets here, else null (ISSUES PT-F10).</summary>
+    public TimeNodeInfo? TimeNode { get; private set; }
 
     /// <summary>Ambient host (living-world agent fills it).</summary>
     public AmbientHost Ambient { get; private set; } = null!;
@@ -222,9 +235,11 @@ public partial class Room : Node2D
         var point = target.InteractionPoint;
         if (target.Kind != TargetKind.Npc) return point;
         var rect = target.Rect;
-        if (point.X < rect.Position.X - NpcApproachGap * 0.5f || point.X > rect.End.X + NpcApproachGap * 0.5f) return point; // already beside
-        var left = new Vector2(rect.Position.X - NpcApproachGap, point.Y);
-        var right = new Vector2(rect.End.X + NpcApproachGap, point.Y);
+        // A child NPC gets a wider gap (blocking "approach_gap"), so show_item does not reach into the face (PT-S24).
+        float gap = Blocking is not null && Blocking.Npcs.TryGetValue(target.Id, out var staged) && staged.ApproachGap is { } g ? g : NpcApproachGap;
+        if (point.X < rect.Position.X - gap * 0.5f || point.X > rect.End.X + gap * 0.5f) return point; // already beside
+        var left = new Vector2(rect.Position.X - gap, point.Y);
+        var right = new Vector2(rect.End.X + gap, point.Y);
         bool preferLeft = heroFeet.X < rect.GetCenter().X;
         foreach (var candidate in preferLeft ? new[] { left, right } : new[] { right, left })
             if (Walk.Contains(candidate)) return candidate;
@@ -235,7 +250,29 @@ public partial class Room : Node2D
     public Actor? FindActor(string characterId)
     {
         if (characterId == Hero.CharacterId) return Hero;
-        return npcs.Values.FirstOrDefault(a => a.CharacterId == characterId);
+        return npcs.Values.FirstOrDefault(a => a.CharacterId == characterId) ??
+               guests.FirstOrDefault(a => a.CharacterId == characterId && IsInstanceValid(a) && !a.IsQueuedForDeletion());
+    }
+
+    /// <summary>The permanent NPC actor of a character in this room (Core's view), or null.</summary>
+    public Actor? FindNpc(string characterId) => npcs.Values.FirstOrDefault(a => a.CharacterId == characterId);
+
+    /// <summary>Adds a guest speaker actor (y-sorted with the hero) at <paramref name="feet"/>.</summary>
+    public Actor AddGuest(string characterId, Vector2 feet)
+    {
+        var actor = new Actor();
+        ActorsLayer.AddChild(actor);
+        actor.Setup(new ActorContext(characterId, false, RoomId, View.Era, GuestStage.HotspotPrefix + characterId, null), Perspective, feet);
+        actor.Name = "Guest_" + characterId;
+        guests.Add(actor);
+        return actor;
+    }
+
+    /// <summary>Removes and frees a guest actor.</summary>
+    public void RemoveGuest(Actor actor)
+    {
+        guests.Remove(actor);
+        if (IsInstanceValid(actor)) actor.QueueFree();
     }
 
     // ------------------------------------------------------------------ building blocks
@@ -347,7 +384,7 @@ public partial class Room : Node2D
     }
 
     /// <summary>The hero and every NPC actor, wherever their depth layer is.</summary>
-    public IEnumerable<Actor> AllActors => npcs.Values.Prepend(Hero);
+    public IEnumerable<Actor> AllActors => npcs.Values.Prepend(Hero).Concat(guests.Where(g => IsInstanceValid(g)));
 
     private void AddAmbientHost()
     {
@@ -425,6 +462,7 @@ public partial class Room : Node2D
 
         SyncNpcs(view);
         PlaceNpcLabels();
+        TimeNode = BuildTimeNode(view);
         SyncVariantLayers(view);
         blockout?.Setup(this, false);
         devOverlay?.Setup(this, true);
@@ -533,6 +571,7 @@ public partial class Room : Node2D
         if (!IsInsideTree()) return;
         Hero.SetVisual(ActorVisualRegistry.Create(Hero.Context));
         foreach (var npc in npcs.Values) npc.SetVisual(ActorVisualRegistry.Create(npc.Context));
+        foreach (var guest in guests.Where(g => IsInstanceValid(g))) guest.SetVisual(ActorVisualRegistry.Create(guest.Context));
         PlaceNpcLabels();
         Labels?.QueueRedraw();
     }
@@ -557,6 +596,38 @@ public partial class Room : Node2D
             targets[id] = target with { LabelAnchor = new Vector2(head.X, head.Y - NpcLabelGap) + (o?.LabelOffset ?? Vector2.Zero) };
         }
     }
+
+    /// <summary>
+    /// The anchor node's painted clock (blocking <c>time_node</c>) while Core lists portal targets in this room: its own
+    /// rect, or a game.json hotspot's rect (that hotspot then opens the chooser on a plain left click that Core
+    /// resolves as a look). Presentation only: the chooser is the same UI as the HUD clock button (key T).
+    /// </summary>
+    private TimeNodeInfo? BuildTimeNode(RoomView view)
+    {
+        if (Blocking?.TimeNode is not { } node || view.PortalTargets.Count == 0) return null;
+        if (node.HotspotId is { } hotspotId)
+        {
+            if (!targets.TryGetValue(hotspotId, out var bound)) return null;
+            return new TimeNodeInfo(bound.Rect, node.InteractionPoint ?? bound.InteractionPoint, hotspotId);
+        }
+        if (node.Rect is not { } rect) return null;
+        return new TimeNodeInfo(rect, Walk.Clamp(node.InteractionPoint ?? new Vector2(rect.GetCenter().X, Walk.Top + 20)), null);
+    }
+
+    /// <summary>The time node under a canvas point: its own rect (checked after every Core target) or the bound hotspot.</summary>
+    public bool IsTimeNodeAt(Vector2 point, Hit hit) => TimeNode is { } node &&
+        (node.HotspotId is { } id ? hit is Hit.Hotspot h && h.Id == id : hit is Hit.Floor or Hit.Empty && node.Rect.HasPoint(point));
+
+    /// <summary>
+    /// True when a plain left click at <paramref name="point"/> goes to the time node: no item selected, the point is on
+    /// the node, and a bound game.json hotspot would only give its look (its item actions keep working).
+    /// </summary>
+    public bool TimeNodeTakes(Vector2 point, Hit hit) =>
+        GameRuntime.Instance.State.SelectedItem is null && IsTimeNodeAt(point, hit) &&
+        (TimeNode!.HotspotId is null || GameRuntime.Instance.Session.Resolve(hit, PointerButton.Left) is Resolution.Look);
+
+    /// <summary>Hover name of the time node (ui.csv).</summary>
+    public static TextRef TimeNodeName => new("ui.travel.time_node", "Hodiny časového uzla");
 
     /// <summary>A natural blocking's geometry replaces the template's field by field; a new rect without its own label anchor keeps the default anchor above it.</summary>
     private static (Rect2 Rect, Vector2 Point, Vector2 Anchor) ApplyBlocking(BlockingTarget b, Rect2 rect, Vector2 point, Vector2 anchor)

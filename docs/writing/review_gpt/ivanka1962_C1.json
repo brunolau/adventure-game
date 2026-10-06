@@ -1,0 +1,41 @@
+{
+  "chunk": "C1",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\out\\ivanka1962_C1.csv",
+  "overlay": [],
+  "cost_usd": 0.1101,
+  "batches": {
+    "C03": {
+      "hash": "8aa9a43f11003411",
+      "status": "ok",
+      "heading": "C03 · main quest M11D „Skutočné odovzdanie počas karantény“",
+      "keys": [
+        "action.C03.002"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8895,
+        "completion_tokens": 716,
+        "total_tokens": 9611,
+        "cost": 0.110099,
+        "prompt_tokens_details": {
+          "cached_tokens": 2254,
+          "cache_write_tokens": 2254
+        }
+      },
+      "usd": 0.1101
+    }
+  },
+  "keys": {
+    "action.C03.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The bare 'šesťdesiat rokov' makes the metaphor sound unfinished. Naming what those years represent makes the dry reply clear.",
+      "suggestion": "Bolo v nej skoro šesťdesiat rokov histórie.",
+      "text": "Bolo v nej skoro šesťdesiat rokov.",
+      "batch": "C03"
+    }
+  },
+  "unreviewed": []
+}

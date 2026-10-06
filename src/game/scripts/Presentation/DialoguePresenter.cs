@@ -15,10 +15,13 @@ namespace LastBell.Game.Presentation;
 /// <summary>
 /// Plays Core line sequences (action lines, topics, cutscene beats, first-entry lines): speaker
 /// name and text through <see cref="TextService"/>, typewriter reveal by text speed, advance by
-/// click/Enter/Space, auto-advance, Esc skips (a cutscene: the rest of it; dialogue: everything
-/// queued — playback never changes rules state). The speaking actor gets a talk animation and the
-/// view gets a speaker anchor above its head. World input is blocked by Core's mode while a line
-/// plays. Also shows non-blocking look texts ("barks") and opens the topic menu.
+/// click/Enter/Space, auto-advance. Esc skips the current line; a second Esc within
+/// <see cref="EscapeDoubleSeconds"/> skips the whole sequence (a cutscene: the rest of it; dialogue:
+/// everything queued) (orchestrator decision after the playtests, PT-F13) — playback never changes
+/// rules state. The speaking actor gets a talk animation and the view gets a speaker anchor above its
+/// head. World input is blocked by Core's mode while a line plays. Also shows non-blocking look texts
+/// ("barks") and opens the topic menu; after a topic's lines the same conversation's menu opens again
+/// until the player ends it or no topic is left (<see cref="Dialogue.ReturnToMenu"/>, PT-S17).
 /// Rendering goes through <see cref="ISubtitleView"/> (UiBus.Subtitles, else <see cref="DefaultSubtitleView"/>).
 /// </summary>
 public partial class DialoguePresenter : Node
@@ -39,6 +42,15 @@ public partial class DialoguePresenter : Node
 
     /// <summary>Line id of a presentation-only preface line (<see cref="ShowPreface"/>).</summary>
     public const string PrefaceLineId = "preface";
+
+    /// <summary>Two Esc presses within this time skip the whole sequence (PT-F13).</summary>
+    public const double EscapeDoubleSeconds = 0.5;
+
+    private double lastEscape = -10;
+
+    /// <summary>NPC hotspot (and room) whose topic menu opens again after the chosen topic's lines (PT-S17), or null.</summary>
+    private string? resumeHotspot;
+    private string? resumeRoom;
     private PlaceholderTopicMenu placeholderMenu = null!;
     private PlaceholderCutsceneFrame placeholderCutscene = null!;
 
@@ -50,6 +62,12 @@ public partial class DialoguePresenter : Node
 
     /// <summary>True while a line is on screen.</summary>
     public bool IsShowingLine => shown is not null;
+
+    /// <summary>Line id on screen now, or null (World/GuestStage.cs shows remote speaker badges for it).</summary>
+    public static string? ShowingLineId => Instance?.shown?.LineId;
+
+    /// <summary>True while the line on screen is still being typed out.</summary>
+    public bool IsRevealing => shown is not null && revealed < shownText.Length;
 
     /// <summary>Raised when a line appears on screen (debug harness, voice-over hook).</summary>
     public event Action<SubtitleLine>? LineShown;
@@ -73,13 +91,15 @@ public partial class DialoguePresenter : Node
         placeholderMenu = new PlaceholderTopicMenu { Name = "PlaceholderTopicMenu" };
         layer.AddChild(placeholderMenu);
         GameRuntime.Instance.SessionReplaced += ResetAll;
-        GameRuntime.Instance.RoomChanged += (_, _) => HideBark();
+        GameRuntime.Instance.RoomChanged += (_, _) => { HideBark(); resumeHotspot = null; };
     }
 
     private void ResetAll()
     {
         settleFrames = 2;
         preface = null;
+        resumeHotspot = null;
+        lastEscape = -10;
         HideLine();
         HideBark();
         if (menuOpen) { Menu.Close(); menuOpen = false; }
@@ -137,7 +157,8 @@ public partial class DialoguePresenter : Node
             }
         }
 
-        UpdateTopicMenu(state);
+        ResumeConversation(game);
+        UpdateTopicMenu(game.State);
 
         if (barkLeft > 0)
         {
@@ -181,7 +202,9 @@ public partial class DialoguePresenter : Node
             lineMinSeconds = (float)(beat.DurationMinS / Math.Max(1, beat.Lines.Count)) * PresentationSettings.CutsceneMinDurationScale;
         }
 
-        var subtitle = new SubtitleLine(line, TextService.Get(line.Speaker), shownText, speakingActor?.HeadPosition);
+        // A speaker without a body here (phone, recording, service channel, device; ISSUES PT-S18): the tag sits above its badge.
+        var anchor = speakingActor?.HeadPosition ?? GuestStage.Instance?.RemoteAnchor(line);
+        var subtitle = new SubtitleLine(line, TextService.Get(line.Speaker), shownText, anchor);
         View.ShowLine(subtitle);
         View.SetReveal(PresentationSettings.TextCharsPerSecond <= 0 ? -1 : 0);
         if (PresentationSettings.TextCharsPerSecond <= 0) revealed = shownText.Length;
@@ -200,7 +223,12 @@ public partial class DialoguePresenter : Node
     /// <summary>Click/Enter: reveal the whole line first, then advance to the next queued line.</summary>
     public void Advance()
     {
-        if (shown is null) return;
+        if (shown is null)
+        {
+            // The room waits for a guest speaker who is still walking in: a click puts the guest there at once.
+            GuestStage.Instance?.Hurry();
+            return;
+        }
         if (revealed < shownText.Length)
         {
             revealed = shownText.Length;
@@ -216,6 +244,7 @@ public partial class DialoguePresenter : Node
         }
         var game = GameRuntime.Instance;
         game.Update(s => Playback.Advance(game.Content, s));
+        ResumeConversation(game, afterUpdate: true);
     }
 
     /// <summary>
@@ -234,7 +263,41 @@ public partial class DialoguePresenter : Node
     /// <summary>True while a preface line is pending or on screen.</summary>
     public bool HasPreface => preface is not null;
 
-    /// <summary>Esc: skip the rest of the cutscene, or every queued dialogue line.</summary>
+    /// <summary>
+    /// Esc while a line plays (PT-F13): the first press skips the current line (also while it is still being typed),
+    /// a second press within <see cref="EscapeDoubleSeconds"/> skips the whole sequence (<see cref="Skip"/>).
+    /// </summary>
+    public void Escape()
+    {
+        double now = Time.GetTicksMsec() / 1000.0;
+        bool second = now - lastEscape <= EscapeDoubleSeconds;
+        lastEscape = now;
+        if (second) Skip();
+        else SkipLine();
+    }
+
+    /// <summary>
+    /// True for an Esc right after an Esc that skipped a line: the router swallows it when the sequence already ended,
+    /// so a quick double Esc on the last line neither opens the pause menu nor closes the topic menu that comes back.
+    /// </summary>
+    public bool IsEscapeFollowUp() => Time.GetTicksMsec() / 1000.0 - lastEscape <= EscapeDoubleSeconds;
+
+    /// <summary>Skips only the line on screen (the next queued line follows; the last one ends the sequence).</summary>
+    public void SkipLine()
+    {
+        if (shown is null) return;
+        if (ReferenceEquals(shown, preface))
+        {
+            preface = null;
+            HideLine();
+            return;
+        }
+        var game = GameRuntime.Instance;
+        game.Update(s => Playback.Advance(game.Content, s));
+        ResumeConversation(game, afterUpdate: true);
+    }
+
+    /// <summary>Skips the whole sequence: the rest of the cutscene, or every queued dialogue line (cutscene skip button, double Esc).</summary>
     public void Skip()
     {
         if (preface is not null)
@@ -245,6 +308,7 @@ public partial class DialoguePresenter : Node
         var game = GameRuntime.Instance;
         if (shown?.IsCutscene == true) game.Update(s => Playback.SkipCutscene(game.Content, s));
         else game.Update(Playback.SkipAll);
+        ResumeConversation(game, afterUpdate: true);
     }
 
     private void EndCutscene()
@@ -300,14 +364,42 @@ public partial class DialoguePresenter : Node
         Menu.Open(new TopicMenuRequest(hotspot?.CharacterId ?? "", hotspotId ?? "", topics, ChooseTopic, () => game.Update(Dialogue.CloseMenu)));
     }
 
-    private static void ChooseTopic(TopicOption option)
+    /// <summary>
+    /// After the chosen topic's lines: back in the scene with nothing playing, the same NPC's topic menu opens again
+    /// through Core (<see cref="Dialogue.ReturnToMenu"/>; closed for good when no topic is left). A room change, a
+    /// cutscene or a puzzle in between ends the conversation. Called right after the update that ends the lines
+    /// (<paramref name="afterUpdate"/>: the old line is still on screen until the next frame), so the scene never has a
+    /// frame in world mode between the last line and the menu; and every frame as a fallback.
+    /// </summary>
+    private void ResumeConversation(GameRuntime game, bool afterUpdate = false)
+    {
+        if (resumeHotspot is null) return;
+        var state = game.State;
+        if (state.Room != resumeRoom || state.Mode is GameMode.Cutscene or GameMode.Puzzle or GameMode.Map or GameMode.Journal or GameMode.Pause)
+        {
+            resumeHotspot = null;
+            return;
+        }
+        if (state.Mode != GameMode.World || state.ActiveLineId is not null || preface is not null || (!afterUpdate && shown is not null)) return;
+        var stage = WorldStage.Instance;
+        if (stage is null || !stage.IsSettled || stage.Transitioning || (stage.Current?.Hero.IsWalking ?? false)) return;
+        string id = resumeHotspot;
+        resumeHotspot = null;
+        if (InteractionController.Instance?.TalkHotspotId != id) return;
+        game.Update(s => Dialogue.ReturnToMenu(game.Content, s, id));
+    }
+
+    private void ChooseTopic(TopicOption option)
     {
         var game = GameRuntime.Instance;
+        resumeHotspot = InteractionController.Instance?.TalkHotspotId;
+        resumeRoom = game.State.Room;
         if (option.IsStoryAction)
         {
             WorldStage.Instance?.Current?.Hero.Visual.PlayGesture(option.Action!.Animation);
             game.Commit(option.Id);
         }
         else game.Update(s => Dialogue.StartTopic(game.Content, s, option.Id));
+        ResumeConversation(game, afterUpdate: true); // a topic without lines: straight back to the menu
     }
 }

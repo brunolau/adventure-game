@@ -16,6 +16,10 @@ namespace LastBell.Game.World;
 /// room transitions (short fade, era card on era change) for exits, special transitions
 /// (e.g. G11 → S11), portals, fast travel and loads. While an action's own lines play, the old room
 /// stays on screen; the new room appears before its first-entry lines.
+/// Transport rides (travel overlay: exits with travel <c>bus</c> / <c>tram</c>, and map fast travel into
+/// another region) show a destination card over the fade (region name and the means of transport) with the
+/// ride sound; a first ride plays its first-ride lines in the room being left before the fade. Reduced motion:
+/// the same fade and card, shorter hold, nothing moves.
 /// </summary>
 public partial class WorldStage : Node2D
 {
@@ -48,6 +52,15 @@ public partial class WorldStage : Node2D
     /// <summary>Raised when a room finished its transition and accepts input.</summary>
     public event Action<Room>? RoomReady;
 
+    /// <summary>Travel styles that show the transport card (and play their ride sound <c>travel_&lt;style&gt;</c>).</summary>
+    public static readonly string[] TransportStyles = { "bus", "tram" };
+
+    /// <summary>The transport ride waiting for its first-ride lines to finish (exit id, style), or null.</summary>
+    private (string ExitId, string Style)? pendingRide;
+
+    /// <summary>Text of the last transport card shown (QA: build/screens/travel), or empty.</summary>
+    public string LastTransportCard { get; private set; } = "";
+
     /// <summary>Milliseconds the last <see cref="BuildRoom"/> took (synchronous: texture loads, sprites, ambient; perf QA).</summary>
     public double LastBuildMs { get; private set; }
 
@@ -66,6 +79,7 @@ public partial class WorldStage : Node2D
         fade.Modulate = new Color(1, 1, 1, 0);
         overlay.AddChild(fade);
         AddChild(new RoomPreloader { Name = "RoomPreloader" });
+        AddChild(new GuestStage { Name = "GuestStage" });
         eraCardTitle = MakeCardLabel(64, new Vector2(0, 430));
         eraCardDate = MakeCardLabel(36, new Vector2(0, 530));
         var game = GameRuntime.Instance;
@@ -106,7 +120,10 @@ public partial class WorldStage : Node2D
     {
         if (Transitioning || Current is null) return false;
         if (line.Source == LineSource.FirstEntry) return line.SourceId == Current.RoomId;
-        return true;
+        // First-ride lines: in the room being left (before the ride), or in the destination after a load mid-line.
+        if (line.Source == LineSource.Travel)
+            return GameRuntime.Instance.Content.FindExit(line.SourceId) is not { } exit || Current.RoomId == exit.Room.Id || Current.RoomId == exit.Exit.To;
+        return GuestStage.Instance?.MayPresent(line) ?? true; // a guest speaker walks in first (ISSUES PT-S18)
     }
 
     /// <summary>Builds the current state's room immediately (start, load, debug jump), fading in from black.</summary>
@@ -122,6 +139,19 @@ public partial class WorldStage : Node2D
     {
         if (Transitioning) return;
         var game = GameRuntime.Instance;
+        var exitDef = game.Content.FindExit(exitId)?.Exit;
+        if (exitDef is not null && Array.IndexOf(TransportStyles, exitDef.Travel) >= 0)
+        {
+            // A ride: Core travel first, so a first ride's lines play here, in the room being left; the fade, the
+            // card and the new room follow when they are done (OnStateChanged -> FollowStateRoom).
+            var before = game.State;
+            game.Update(s => Navigation.Travel(game.Content, s, exitId));
+            if (game.State.Room == before.Room) return; // gate closed after all: nothing happens
+            pendingRide = (exitId, exitDef.Travel);
+            var line = Playback.Current(game.Content, game.State);
+            if (line is null || line.Source != LineSource.Travel) FollowStateRoom();
+            return;
+        }
         Transitioning = true;
         try
         {
@@ -150,10 +180,22 @@ public partial class WorldStage : Node2D
         Transitioning = true;
         string fromRoom = Current.RoomId;
         int fromEra = Current.View.Era;
+        var game = GameRuntime.Instance;
+        // A ride through a transport exit, or a map fast travel into another region (it goes through the hub).
+        string? transport = pendingRide is { } ride && game.Content.FindExit(ride.ExitId)?.Exit.To == game.State.Room ? ride.Style
+            : Navigation.TransportBetween(game.Content, game.State, fromRoom, game.State.Room);
+        if (transport is not null && Array.IndexOf(TransportStyles, transport) < 0) transport = null; // cable rides keep their own staging
+        pendingRide = null;
         try
         {
             await FadeOut();
-            await EnterDisplayedRoom(fromRoom, fromEra);
+            if (transport is not null && game.Content.FindRoom(game.State.Room) is { Era: var era } && era == fromEra)
+            {
+                BuildRoom(game.State.Room, fromRoom);
+                await ShowTransportCard(transport, game.State.Room);
+                await FadeIn();
+            }
+            else await EnterDisplayedRoom(fromRoom, fromEra);
         }
         finally
         {
@@ -272,6 +314,24 @@ public partial class WorldStage : Node2D
         var tween = CreateTween();
         tween.TweenProperty(item, "modulate:a", alpha, Math.Max(0.01f, seconds));
         await ToSignal(tween, Godot.Tween.SignalName.Finished);
+    }
+
+    /// <summary>
+    /// The destination card of a ride: the region name, and "Autobusom · Dúbravská zastávka v roku 2020" (<c>ui.travel.card</c> with
+    /// <c>ui.travel.&lt;style&gt;</c>) under it, over the black fade, with the ride sound. Reduced motion: shorter.
+    /// </summary>
+    private async Task ShowTransportCard(string style, string roomId)
+    {
+        var content = GameRuntime.Instance.Content;
+        var region = TextService.Get(LastBell.Core.Text.TextKeys.NameOf(content.RegionOf(roomId)));
+        string means = TextService.Get(new LastBell.Core.Text.TextRef("ui.travel." + style, style));
+        eraCardTitle.Text = region;
+        eraCardDate.Text = TextService.Ui("ui.travel.card", ("transport", means), ("place", TextService.Get(LastBell.Core.Text.TextKeys.NameOf(content.GetRoom(roomId)))));
+        LastTransportCard = eraCardTitle.Text + " | " + eraCardDate.Text;
+        LastBell.Game.Audio.AudioService.PlayEvent("travel_" + style);
+        await Task.WhenAll(Tween(eraCardTitle, 1f, 0.35f), Tween(eraCardDate, 1f, 0.35f));
+        await ToSignal(GetTree().CreateTimer(PresentationSettings.ReducedMotion ? 0.7 : 1.4), SceneTreeTimer.SignalName.Timeout);
+        await Task.WhenAll(Tween(eraCardTitle, 0f, 0.3f), Tween(eraCardDate, 0f, 0.3f));
     }
 
     private async Task ShowEraCard(EraDef era)

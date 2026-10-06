@@ -73,10 +73,16 @@ public partial class MainMenuScreen : ModalScreen
         Add(list, "ui.menu.quit", () => UiRoot.Instance?.Confirm(Ui.T("ui.menu.quit_confirm"), Ui.T("ui.menu.quit"), () => GetTree().Quit()));
         Body.AddChild(list);
         Body.AddChild(Ui.Spacer(vertical: true));
-        var version = Ui.Label(Ui.T("ui.menu.version", ("version", GameRuntime.Instance.Content?.Data.Version ?? "")), "OnDarkCaption");
+        // The game (release) version (ISSUES M5-03): project.godot application/config/version is the single source; the
+        // export presets leave their version fields empty, so the exe takes the same number. game.json's version is the
+        // content data version and stays internal.
+        var version = Ui.Label(Ui.T("ui.menu.version", ("version", GameVersion)), "OnDarkCaption");
         version.HorizontalAlignment = HorizontalAlignment.Center;
         Body.AddChild(version);
     }
+
+    /// <summary>The game version from project.godot (application/config/version), e.g. "0.1.0".</summary>
+    public static string GameVersion => ProjectSettings.GetSetting("application/config/version", "").AsString();
 
     private static Button Add(VBoxContainer list, string key, Action pressed)
     {

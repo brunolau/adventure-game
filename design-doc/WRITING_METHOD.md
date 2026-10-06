@@ -86,7 +86,7 @@ optional ambient topics** in addition to the handoff's. Not for devices and capt
 
 What they are about (mix per NPC; ideas per character in VOICES.md):
 
-- **Local colour of the real place and era**: Ivanka pri Dunaji 1960, Dúbravka 1982, Bratislava
+- **Local colour of the real place and era**: Ivanka pri Dunaji 1962 (era id 1960, shown as June 1962), Dúbravka 1982, Bratislava
   1995, Chorvátsky Grob and Čierna Voda in the covid autumn 2020, Jasná 2035 (STYLE_GUIDE.md § era
   flavour). Only details a 12+ player understands without a footnote and that are true or plainly
   fictional; when unsure about a historical detail, leave it out or ask in the note.
@@ -193,11 +193,16 @@ PYTHONIOENCODING=utf-8 python -X utf8 tools/gpt_review.py --chunk <chunk> --over
 | **longer sequences** (lines added before / between / after the lines of an existing exchange) and **new topics** | `src/game/data/content_ext/dialogue_ext.json` (overlay) | loaded by Core on top of game.json; schema and keys by the Core agent, documented in `src/LastBell.Core/README.md` |
 | drafts and review records | `docs/writing/out/`, `docs/writing/review_gpt/`, `docs/writing/review/` | kept for audit |
 
-The overlay is written to the schema in `src/LastBell.Core/README.md` (by the Core agent, in
-parallel with this method). Writers read that README and never invent fields; until it lands,
-drafts use `out/<chunk>_ext.json` with one object per sequence (`id`, the anchor such as the action
-id or the character id, optional `label`, and `lines` of `{key, speaker, sk}`), which
-`gpt_review.py` already reads. What the writing side needs from the schema: stable keys per new
+The overlay is written to the schema in `src/LastBell.Core/README.md` section 13 (landed
+2026-10-06). Writers read that README and never invent fields. The draft shape of
+`out*/<chunk>_ext.json` IS that schema (`sequences` / `topic_extensions` with the full play order:
+a plain key = an existing line, `{key, speaker, sk}` = a new line; `topics` with `id`, `character`,
+`label`, `repeatable`, `requires_done` / `excluded_done` on existing action ids, `lines`), which
+`gpt_review.py` also reads. Step 4.2 is `python tools/content_ext.py merge docs/writing/out_v2/<chunk>_ext.json`
+(lossless copy into `src/game/data/content_ext/dialogue_ext.json`, validated; a draft's `travel`
+proposal goes to `travel_ext.json` through the Core owner) and `python tools/content_ext.py check`.
+`python tools/check_rewrite.py --overlay-only --overlay docs/writing/out_v2/<chunk>_ext.json --chunk <chunk>`
+checks a draft's texts and protected facts before the merge. What the writing side needs from the schema: stable keys per new
 line, the speaker per line, the position relative to existing line ids, new ambient topics per
 character with label, lines, repeatable flag and availability on existing action ids only, and the
 same `Tr(key)` / Slovak-fallback path as every other text.

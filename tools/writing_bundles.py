@@ -16,7 +16,11 @@ items, quests, puzzles and names) and docs/writing/context/<chunk>_keys.csv (key
 kind: the template a chunk writer copies; the writer returns keys,sk_new,note).
 
 The texts shown are the current tables (src/game/localization/*.csv, i.e. game.json plus the
-accepted overrides). game.json, walkthrough.json and the tables are only read.
+accepted overrides). The game is the EFFECTIVE game: game.json with the content overlays of
+src/game/data/content_ext/ applied (tools/content_ext.py), so extended conversations appear in
+their full play order and overlay texts (new lines, new topics, new exits, first-ride lines) are
+indexed too (KeyInfo.overlay = True: their text lives in the overlay, not in sk_overrides.csv).
+game.json, walkthrough.json, the overlays and the tables are only read.
 
 The key index built here is also used by tools/check_rewrite.py.
 
@@ -92,6 +96,7 @@ class KeyInfo:
     never_shown: bool = False
     source: str = ""               # concrete game.json path (diagnostics, era lookup)
     era: int | None = None         # year of the scene the text belongs to (None: generic)
+    overlay: bool = False          # the text comes from a content overlay (edit it there)
 
 
 # --------------------------------------------------------------------------- loading
@@ -303,7 +308,12 @@ class Model:
 def build_key_index(game: dict | None = None, walkthrough: dict | None = None,
                     tables: dict[str, dict[str, str]] | None = None) -> tuple[dict[str, KeyInfo], Model]:
     """Assign every key of the three tables to a chunk, section and kind."""
-    game = game if game is not None else tk.load_json(tk.CANONICAL_GAME_JSON)
+    overlay_keys: set[str] = set()
+    if game is None:
+        game, overlay = tk.effective_game()
+        if overlay.errors:
+            raise ValueError("content overlay invalid: " + "; ".join(overlay.errors[:3]))
+        overlay_keys = overlay.added_keys
     walkthrough = walkthrough if walkthrough is not None else load_walkthrough()
     tables = tables if tables is not None else read_tables()
     model = Model(game, walkthrough, tables)
@@ -316,7 +326,7 @@ def build_key_index(game: dict | None = None, walkthrough: dict | None = None,
             return
         index[entry.key] = KeyInfo(entry.key, entry.table, sk.get(entry.key, entry.text), entry.text, chunk,
                                    section, kind, entry.speaker, order, role, notes or [], never_shown,
-                                   entry.source, model.era_of_source(entry.source))
+                                   entry.source, model.era_of_source(entry.source), entry.key in overlay_keys)
 
     room_src = re.compile(r"^rooms\[([^\]]+)\]")
     for entry in tk.iter_text_entries(game):
@@ -343,6 +353,10 @@ def build_key_index(game: dict | None = None, walkthrough: dict | None = None,
                         "rooms[].hotspots[].look": "right-click look (Adam's observation)",
                         "rooms[].hotspots[].look_variants[].text": "look variant (replaces the look later)"}[fld]
                 add(entry, chunk, "rooms", kind, (ro, 2, hid, entry.key), role)
+            elif fld == "rooms[].exits[].first_ride[].text":
+                eid = re.search(r"exits\[([^\]]+)\]", src).group(1)
+                add(entry, chunk, "rooms", KIND_LINE, (ro, 3, eid, 2, entry.key),
+                    "first-ride line (Adam, once, before the bus leaves)")
             elif fld.startswith("rooms[].exits[]"):
                 eid = re.search(r"exits\[([^\]]+)\]", src).group(1)
                 room_exit = next(e for e in model.rooms[room]["exits"] if e["id"] == eid)

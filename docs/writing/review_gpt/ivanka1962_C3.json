@@ -1,0 +1,146 @@
+{
+  "chunk": "C3",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\out\\ivanka1962_C3.csv",
+  "overlay": [],
+  "cost_usd": 0.357,
+  "batches": {
+    "I08": {
+      "hash": "8fe79578dc0e1790",
+      "status": "ok",
+      "heading": "I08 · main quest M08 „Ručná pumpa“",
+      "keys": [
+        "action.I08.objective",
+        "action.I08.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 7773,
+        "completion_tokens": 187,
+        "total_tokens": 7960,
+        "cost": 0.06872,
+        "prompt_tokens_details": {
+          "cached_tokens": 2040,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0687
+    },
+    "I16": {
+      "hash": "1ad69835f88f0660",
+      "status": "ok",
+      "heading": "I16 · main quest M10 „Dokument musí prežiť“",
+      "keys": [
+        "action.I16.002",
+        "action.I16.003"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9280,
+        "completion_tokens": 810,
+        "total_tokens": 10090,
+        "cost": 0.118103,
+        "prompt_tokens_details": {
+          "cached_tokens": 2338,
+          "cache_write_tokens": 2338
+        }
+      },
+      "usd": 0.1181
+    },
+    "S39": {
+      "hash": "b590f8406a855a27",
+      "status": "ok",
+      "heading": "S39 · Miestnosť prvého ZVONu (1960, Ivanka pri Dunaji)",
+      "keys": [
+        "look.S39.MIRA60"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9204,
+        "completion_tokens": 156,
+        "total_tokens": 9360,
+        "cost": 0.083421,
+        "prompt_tokens_details": {
+          "cached_tokens": 2526,
+          "cache_write_tokens": 2526
+        }
+      },
+      "usd": 0.0834
+    },
+    "S64": {
+      "hash": "1e6faab9f9109710",
+      "status": "ok",
+      "heading": "S64 · Tóno a dedo pri servisnom okne v roku 1982 (1982, Dúbravka)",
+      "keys": [
+        "look.S64.OTO82"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9103,
+        "completion_tokens": 353,
+        "total_tokens": 9456,
+        "cost": 0.086828,
+        "prompt_tokens_details": {
+          "cached_tokens": 2428,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0868
+    }
+  },
+  "keys": {
+    "action.I08.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porozprávaj sa s dvadsaťdvaročnou Mirou v meracej miestnosti.",
+      "batch": "I08"
+    },
+    "action.I08.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porozprávaj sa s dvadsaťdvaročnou Mirou v meracej miestnosti.",
+      "batch": "I08"
+    },
+    "action.I16.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Potrebujem, aby aj o sedemdesiattri rokov bolo jasné, že tento papier existoval.",
+      "batch": "I16"
+    },
+    "action.I16.003": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Na sedemdesiattri rokov” describes a duration, which does not fit a one-time delivery. Use “o” to make the clerk’s aside about future delivery intelligible.",
+      "suggestion": "O sedemdesiattri rokov vám doručenie nezaručím. Ale pečiatka vydrží.",
+      "text": "Na sedemdesiattri rokov vám doručenie nezaručím. Ale pečiatka vydrží.",
+      "batch": "I16"
+    },
+    "look.S39.MIRA60": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je o trinásť rokov mladšia než ja a stále vyzerá, že ma o chvíľu pošle umyť si ruky.",
+      "batch": "S39"
+    },
+    "look.S64.OTO82": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Describing entire drawings as “rovné” is unnatural here; straightness applies to the lines within them.",
+      "suggestion": "Oto zostarol o dvadsať rokov. Čiary v nákresoch má stále rovné.",
+      "text": "Oto zostarol o dvadsať rokov. Nákresy má stále rovné.",
+      "batch": "S64"
+    }
+  },
+  "unreviewed": []
+}

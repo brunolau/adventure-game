@@ -91,6 +91,9 @@ public partial class TopicMenuView : Control, ITopicMenuView
         req.Choose(option);
     }
 
+    /// <summary>The panel's rect in canvas px while the menu is open, else null.</summary>
+    public Rect2? PanelRect => panel is { Visible: true } p ? p.GetGlobalRect() : null;
+
     /// <inheritdoc />
     public void Close()
     {

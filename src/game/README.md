@@ -26,6 +26,8 @@ Windows export: `build.bat` → `build/windows/`; presets, templates and mobile 
 ```
 project.godot  LastBell.csproj  icon.svg  README.md
 data/game.json                  canonical data (tools/sync_data.py, never hand-edit)
+data/content_ext/*.json         content overlays applied by Core on load (dialogue_ext: longer sequences and extra
+                                topics; travel_ext: exits, connections, map regions; LastBell.Core/README.md section 13)
 data/art_overrides.json         visual-only corrections (schema in scripts/World/ArtOverrides.cs)
 data/debug/walkthrough.json     copy of design-doc/walkthrough.json for --replay/--play
 data/ambient/**                 living-world agent
@@ -189,8 +191,9 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
   the template `label_anchor`; an art_overrides `label_anchor` still wins (ISSUES INT-07).
 - NPC sprite variants can switch after an action: `data/ambient/actors.json` `variants_after` (Jana after Q9C, ART-AGE-04).
 - Hero clothing per room: `data/ambient/actors.json` `hero_mask2020_rooms` (2020 face mask) and `hero_coat1982_rooms`
-  (December 1982 winter coat in the exteriors S57, S58, S61, S62, S64, S66 and S65; ISSUES PT-S20), resolved by
-  `ActorStaging.HeroVariant`; the variant sheets (`assets/actors/ADAM/*_mask2020`, `*_coat1982`) share the default
+  (December 1982 winter coat in the exteriors S57, S58, S61, S62, S64, S66 and S65; ISSUES PT-S20) and
+  `hero_coat2035_rooms` (the same coat in winter Jasná 2035: S41, S42, S45, S48, S50, S67, S68; DECISIONS "Jasná 2035
+  is in winter"), resolved by `ActorStaging.HeroVariant`; the variant sheets (`assets/actors/ADAM/*_mask2020`, `*_coat1982`) share the default
   sheets' timing and geometry rules.
 - State patches (`art_overrides.json` `rooms.<id>.state_patches`: texture, top-left `pos`, `after` /
   `until` action ids) are drawn above the background in `prop_state_variants`, immediately, for props
@@ -216,6 +219,14 @@ two-finger hold = Space held, double tap = double click; the GUI gets emulated t
 - Transitions: exits fade out → `Navigation.Travel` → build → era card on era change → fade in.
   Special transitions, portals and fast travel follow Core's room change; the old room stays visible
   while the action's own lines/cutscene play, the new room appears before its first-entry lines.
+- Rides (travel overlay, exits with travel `bus` / `tram`): Core travel first; a first ride's lines
+  (`LineSource.Travel`) play in the stop being left; then fade, the transport card (region name and
+  `ui.travel.card`: "Autobusom · <stop>") with the `travel_bus` / `travel_tram` sound, fade in. A map fast
+  travel into another region (to its hub) shows the same card. Reduced motion: same, shorter, nothing moves.
+- Map (`UI/Map/MapScreen.cs`): era tabs, then the era's regions as cards (visited rooms, hub, "Tu si",
+  the transport into the region) joined by their transport links; a card opens the region's room graph
+  (district captions, hub tag, back button). Fast travel only where Core says `CanFastTravel` (inside the
+  current region, or to a hub of another region; tooltip `ui.map.via_hub` on the other rooms).
 
 ## Debug / QA harness (user args after `--`)
 

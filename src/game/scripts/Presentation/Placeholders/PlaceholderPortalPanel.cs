@@ -57,7 +57,7 @@ public partial class PlaceholderPortalPanel : Control
         foreach (var target in targets)
         {
             int year = target.Year;
-            var button = PlaceholderStyle.Button(TextService.Ui("ui.travel.era_option", ("year", year.ToString())) + " · " + TextService.Get(target.Card), 20);
+            var button = PlaceholderStyle.Button(TextService.Ui("ui.travel.era_option", ("year", TextService.EraYear(year))) + " · " + TextService.Get(target.Card), 20);
             button.Pressed += () => game.Update(s => Navigation.UsePortal(game.Content, s, year));
             box.AddChild(button);
         }

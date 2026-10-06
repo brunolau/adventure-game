@@ -32,6 +32,7 @@ Usage (PYTHONIOENCODING=utf-8 python -X utf8 tools/gpt_review.py ...):
     tools/gpt_review.py --chunk C1 --only G05 --only ELA   # just these blocks
     tools/gpt_review.py --chunk C1 --dry-run [--show-prompt]   # batches and cost estimate, no call
     tools/gpt_review.py --chunk C1 --limit 2 --name C1_test
+    tools/gpt_review.py --chunk C1 --all-keys --skip-role 'hotspot name' --instruction tone.txt --name C1_tone
     tools/gpt_review.py --chunk C1 --decisions-template    # add every "fix" key to <name>.decisions.csv
     tools/gpt_review.py --chunk C1 --check-decisions       # exit 1 while a "fix" key has no decision
 
@@ -77,6 +78,8 @@ CHARS_PER_TOKEN = 0.9             # prompt chars per billed prompt token as meas
 KEY_LINE = re.compile(r"^(?P<indent>\s*)- `(?P<key>[^`]+)` \[(?P<role>[^\]]*)\] "
                       r"(?:\*\*(?P<speaker>[A-Z0-9_]+)\*\* \((?P<name>[^)]*)\): )?(?P<text>.*)$")
 ID_TOKEN = re.compile(r"\b[A-Z][A-Z0-9_]{2,}\b")
+TOPIC_HEAD = re.compile(r"^- Topic `(?P<topic>[^`]+)`")
+TOPIC_KEY = re.compile(r"^topic\.(?P<topic>.+)\.(?:label|\d{3}|x\d{2})$")
 
 SYSTEM_PROMPT = """You are a strict senior Slovak editor (native speaker from Bratislava, years of dubbing,
 subtitles and game localisation). You review Slovak dialogue and texts of the hand-painted
@@ -145,6 +148,8 @@ class Block:
     overlay: list[tuple[str, list[Line]]] = field(default_factory=list)  # (sequence title, lines)
     # sequence title -> full play order (existing key str or new Line) when the overlay lists it
     orders: dict[str, list] = field(default_factory=dict)
+    parts: list["Block"] = field(default_factory=list)   # --merge-small: the scenes of a merged batch
+    focus: set[str] | None = None   # --trim-topics: only these topics of a conversation block are shown
 
 
 def parse_bundle(path: Path) -> list[Block]:
@@ -283,27 +288,90 @@ def attach_overlay(blocks: list[Block], seqs: list[dict]) -> list[Block]:
 
 
 def select_batches(blocks: list[Block], overrides: dict[str, str], all_keys: bool,
-                   only: list[str]) -> list[tuple[Block, list[Line]]]:
+                   only: list[str], skip_roles: list[str] | None = None,
+                   trim_topics: bool = False, all_keys_in: list[str] | None = None) -> list[tuple[Block, list[Line]]]:
+    skip = re.compile("|".join(f"(?:{r})" for r in skip_roles)) if skip_roles else None
     batches = []
     for b in blocks:
         if only and b.bid not in only:
             continue
+        block_all = all_keys or b.bid in (all_keys_in or [])
         for ln in b.lines:
             if ln.key in overrides and overrides[ln.key] != ln.text:
                 ln.text, ln.changed = overrides[ln.key], True
-        review = [ln for ln in b.lines if ln.changed or (all_keys and ln.text)]
-        review += [ln for _, seq in b.overlay for ln in seq if ln.text]
+        # a bundle built from the effective game already lists the overlay's new lines: the overlay
+        # (the draft under review) is their source, so each key is judged once, with the overlay text
+        ov_new = {ln.key for _, seq in b.overlay for ln in seq}
+        review = [ln for ln in b.lines if (ln.changed or (block_all and ln.text)) and ln.key not in ov_new]
+        # an overlay line whose text equals the bundle's (the bundle already shows the applied overlay)
+        # is unchanged: context only, unless --all-keys
+        bundle_text = {ln.key: ln.text for ln in b.lines}
+        review += [ln for _, seq in b.overlay for ln in seq
+                   if ln.text and (block_all or bundle_text.get(ln.key) != ln.text)]
+        if skip:   # --skip-role: shown as context, not judged
+            review = [ln for ln in review if not skip.search(ln.role)]
+        if review and trim_topics and not block_all and any(TOPIC_HEAD.match(r) for r in b.body):
+            b.focus = {m["topic"] for ln in review if (m := TOPIC_KEY.match(ln.key))}
         if review:
             batches.append((b, review))
     return batches
 
 
+def merge_small(batches: list[tuple[Block, list[Line]]], min_keys: int,
+                any_section: bool = False) -> list[tuple[Block, list[Line]]]:
+    """--merge-small: consecutive batches of the same bundle section with fewer than min_keys keys are
+    sent together (each scene still under its own heading), until the merged batch has min_keys keys.
+    Saves the fixed prompt cost (instructions, voices, ty/vy table) of many one-line batches."""
+    out: list[tuple[Block, list[Line]]] = []
+    group: list[tuple[Block, list[Line]]] = []
+
+    def flush() -> None:
+        if len(group) == 1:
+            out.append(group[0])
+        elif group:
+            parts = [b for b, _ in group]
+            m = Block(bid="+".join(b.bid for b in parts), section=parts[0].section,
+                      heading=" | ".join(b.heading for b in parts))
+            m.lines = [ln for b in parts for ln in b.lines]
+            m.overlay = [s for b in parts for s in b.overlay]
+            m.parts = parts
+            out.append((m, [ln for _, r in group for ln in r]))
+        group.clear()
+
+    for b, review in batches:
+        small = len(review) < min_keys
+        if group and (not small or (b.section != group[0][0].section and not any_section)):
+            flush()
+        if small:
+            group.append((b, review))
+            if sum(len(r) for _, r in group) >= min_keys:
+                flush()
+        else:
+            out.append((b, review))
+    flush()
+    return out
+
+
 def render_block(b: Block) -> str:
     """The bundle block with the reviewed texts substituted and overlay lines appended."""
+    if b.parts:   # a --merge-small batch: every scene under its own heading
+        return "\n\n".join(f"### {p.heading}\n{render_block(p)}" for p in b.parts)
     by_key = {ln.key: ln for ln in b.lines}
+    # keys shown in an overlay sequence below (new lines, and existing lines of an extended exchange)
+    # are left out of the bundle body, so every line appears once, in play order
+    in_overlay = {ln.key for _, seq in b.overlay for ln in seq}
+    in_overlay |= {k for order in b.orders.values() for k in order if isinstance(k, str)}
     out = []
+    topic = None
     for raw in b.body:
+        t = TOPIC_HEAD.match(raw)
+        if t:
+            topic = t["topic"]
+        if b.focus is not None and topic is not None and topic not in b.focus:
+            continue
         m = KEY_LINE.match(raw)
+        if m and m["key"] in in_overlay:
+            continue
         if m and m["key"] in by_key:
             ln = by_key[m["key"]]
             tag = " (REWRITTEN)" if ln.changed else ""
@@ -311,7 +379,11 @@ def render_block(b: Block) -> str:
             out.append(f"{m['indent']}- `{ln.key}` [{ln.role}{tag}] {spk}{ln.text}")
         elif raw.strip():
             out.append(raw)
+    if b.focus is not None:
+        out.append("- (the character's other topics are left out of this check)")
     for sid, seq in b.overlay:
+        if b.focus is not None and sid.removeprefix("topic.") not in b.focus:
+            continue
         order = b.orders.get(sid)
         if order:
             # an extended existing exchange: show the whole exchange as it plays, old and new lines
@@ -325,7 +397,8 @@ def render_block(b: Block) -> str:
                         out.append(f"  - `{item}` [existing line of another block]")
                         continue
                     spk = f"**{old.speaker}**: " if old.speaker else ""
-                    out.append(f"  - `{item}` [existing line] {spk}{old.text}")
+                    tag = " (REWRITTEN)" if old.changed else ""
+                    out.append(f"  - `{item}` [existing line{tag}] {spk}{old.text}")
                 else:
                     spk = f"**{item.speaker}**: " if item.speaker else ""
                     out.append(f"  - `{item.key}` [NEW line] {spk}{item.text}")
@@ -337,7 +410,8 @@ def render_block(b: Block) -> str:
     return "\n".join(out)
 
 
-def build_prompt(chunk_title: str, b: Block, review: list[Line], tyvy: str, voices: dict[str, str]) -> str:
+def build_prompt(chunk_title: str, b: Block, review: list[Line], tyvy: str, voices: dict[str, str],
+                 instruction: str = "") -> str:
     speakers = []
     for ln in b.lines + [x for _, s in b.overlay for x in s]:
         if ln.speaker and ln.speaker not in speakers:
@@ -353,7 +427,8 @@ def build_prompt(chunk_title: str, b: Block, review: list[Line], tyvy: str, voic
             f"CONTEXT (where it happens, who speaks, every text of this scene in play order; ids in brackets "
             f"are internal context and never appear in the Slovak text):\n\n{render_block(b)}\n\n"
             f"VOICES of the speakers:\n\n{voice_text}\n\n{tyvy}\n\n"
-            f"KEYS TO REVIEW ({len(review)}):\n{keys}\n")
+            + (f"ADDITIONAL INSTRUCTION FOR THIS REVIEW:\n{instruction.strip()}\n\n" if instruction else "")
+            + f"KEYS TO REVIEW ({len(review)}):\n{keys}\n")
 
 
 # --------------------------------------------------------------------------- API
@@ -530,6 +605,19 @@ def main() -> int:
     ap.add_argument("--max-usd", type=float, default=5.0, help="stop before the run passes this cost")
     ap.add_argument("--decisions-template", action="store_true", help="no call: add the fix keys to <name>.decisions.csv")
     ap.add_argument("--check-decisions", action="store_true", help="no call: every fix key has a valid decision")
+    ap.add_argument("--skip-role", action="append", default=[],
+                    help="regex on the bundle role (e.g. 'hotspot name'): such keys stay as context but are "
+                         "not judged, also under --all-keys (repeatable)")
+    ap.add_argument("--instruction", type=Path, help="text file with an extra instruction appended to every "
+                    "batch prompt (e.g. a tone pass)")
+    ap.add_argument("--merge-small", type=int, metavar="N", help="send consecutive blocks of one section with "
+                    "fewer than N keys together, until a batch has N keys (cheaper; scenes keep their headings)")
+    ap.add_argument("--merge-any-section", action="store_true", help="with --merge-small: also merge across "
+                    "bundle sections (actions, rooms, conversations)")
+    ap.add_argument("--trim-topics", action="store_true", help="conversation blocks show only the topics that "
+                    "contain a reviewed key (cheaper re-checks; not with --all-keys)")
+    ap.add_argument("--all-keys-in", action="append", default=[], metavar="BLOCK",
+                    help="judge every key of this block (like --all-keys, for one block; repeatable)")
     ap.add_argument("--retries", type=int, default=4)
     ap.add_argument("--timeout", type=int, default=600)
     args = ap.parse_args()
@@ -565,7 +653,11 @@ def main() -> int:
     blocks = parse_bundle(bundle)
     seqs = [s for p in args.overlay for s in read_overlay(p)]
     blocks = attach_overlay(blocks, seqs)
-    batches = select_batches(blocks, overrides, args.all_keys, args.only)
+    batches = select_batches(blocks, overrides, args.all_keys, args.only, args.skip_role,
+                             args.trim_topics, args.all_keys_in)
+    instruction = args.instruction.read_text(encoding="utf-8") if args.instruction else ""
+    if args.merge_small:
+        batches = merge_small(batches, args.merge_small, args.merge_any_section)
     if args.limit is not None:
         batches = batches[:args.limit]
     chunk_title = bundle.read_text(encoding="utf-8").splitlines()[0].lstrip("# ").strip()
@@ -576,7 +668,7 @@ def main() -> int:
     prompts = []
     est_total = 0.0
     for b, review in batches:
-        prompt = build_prompt(chunk_title, b, review, tyvy, voices)
+        prompt = build_prompt(chunk_title, b, review, tyvy, voices, instruction)
         est = (sys_tokens + len(prompt) / CHARS_PER_TOKEN) / 1e6 * pin + \
             len(review) * EST_OUTPUT_TOKENS_PER_KEY / 1e6 * pout
         est_total += est

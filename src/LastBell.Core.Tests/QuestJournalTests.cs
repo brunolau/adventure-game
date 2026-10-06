@@ -2,6 +2,7 @@ using LastBell.Core.Content;
 using LastBell.Core.Rules;
 using LastBell.Core.State;
 using LastBell.Core.Tests.Support;
+using LastBell.Core.Text;
 
 namespace LastBell.Core.Tests;
 
@@ -25,11 +26,94 @@ public sealed class QuestJournalTests
         var s = C.InitialState;
         Assert.Empty(Hints.Revealed(C, s, "M01"));
         s = Hints.RevealNext(C, s, "M01");
-        Assert.Equal(new[] { "quest.M01.hint.1" }, Hints.Revealed(C, s, "M01").Select(h => h.Key));
+        Assert.Equal(new[] { "quest.M01.hint.1" }, Hints.Revealed(C, s, "M01").Select(h => h.Text.Key));
         s = Hints.RevealNext(C, Hints.RevealNext(C, Hints.RevealNext(C, s, "M01"), "M01"), "M01");
-        Assert.Equal(3, Hints.RevealedLevel(s, "M01"));
-        Assert.Equal(3, Hints.Revealed(C, s, "M01").Count);
+        Assert.Equal(3, Hints.RevealedLevel(C, s, "M01"));
+        Assert.Equal(new[] { 1, 2, 3 }, Hints.Revealed(C, s, "M01").Select(h => h.Level));
+        Assert.Equal(s, Hints.RevealNext(C, s, "M01")); // capped at three
         Assert.Equal(s.Done, C.InitialState.Done); // hints never change progress
+        Assert.Equal(s.Inventory, C.InitialState.Inventory);
+    }
+
+    /// <summary>
+    /// PT-F08: after B07 (tape already shown to Juro) the first hint of M05 repeated "Ukáž kazetu Jurovi"; now every
+    /// level talks about the next undone step (the scale at Fero's) and level 3 is only that step.
+    /// </summary>
+    [Fact]
+    public void Hints_follow_the_next_undone_step_of_the_quest()
+    {
+        var s = TestData.StateAfter("B07");
+        Assert.Equal("B08", Hints.CurrentStep(C, s, "M05")!.Id);
+        for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M05");
+        var hints = Hints.Revealed(C, s, "M05");
+        Assert.Equal("action.B07.objective", hints[0].Text.Key); // the objective that sent the player to Fero
+        Assert.Equal(Hints.PlaceKey, hints[1].Text.Key);
+        Assert.Equal(new[] { "room", "target" }, hints[1].Args.Select(a => a.Name));
+        Assert.Equal("room.S25.name", hints[1].Args[0].Value.Key);
+        Assert.Equal("hotspot.S25.scale.name", hints[1].Args[1].Value.Key);
+        Assert.Equal(Hints.StepKey("B08"), hints[2].Text.Key);
+        Assert.Equal(C.GetAction("B08").Label, hints[2].Text.Fallback);
+        Assert.DoesNotContain(hints, h => h.Text.Key.StartsWith("quest.M05.hint.", StringComparison.Ordinal));
+        Assert.Equal(3, Hints.StepLevel(s, "B08"));
+    }
+
+    [Fact]
+    public void A_new_step_starts_at_level_zero_and_old_levels_stay_with_their_step()
+    {
+        var s = TestData.StateAfter("B07");
+        for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, "M05");
+        s = Playback.FinishAll(C, GameRules.CommitAction(C, GameRules.SelectItem(Driver.TravelTo(C, s, "S25"), "TOOLS"), "B08"));
+        var step = Hints.CurrentStep(C, s, "M05")!;
+        Assert.Equal("B09", step.Id); // first undone step whose guards pass, in quest order
+        Assert.Equal(0, Hints.RevealedLevel(C, s, "M05"));
+        Assert.Empty(Hints.Revealed(C, s, "M05"));
+        Assert.Equal(3, Hints.StepLevel(s, "B08"));
+        s = Hints.RevealNext(C, s, "M05");
+        Assert.Equal(1, Hints.StepLevel(s, "B09"));
+        Assert.Equal("action.B07.objective", Hints.Revealed(C, s, "M05")[0].Text.Key); // B09 needs only B07
+    }
+
+    [Fact]
+    public void Bag_steps_name_the_bag_and_puzzle_steps_win_while_their_modal_is_open()
+    {
+        var s = TestData.StateBefore("B10");
+        Assert.Equal("B10", Hints.CurrentStep(C, s, "M05")!.Id);
+        for (var i = 0; i < 2; i++) s = Hints.RevealNext(C, s, "M05");
+        var hints = Hints.Revealed(C, s, "M05");
+        Assert.Equal("action.B08.objective", hints[0].Text.Key); // the giver of the connector
+        Assert.Equal(Hints.BagKey, hints[1].Text.Key);
+        Assert.Empty(hints[1].Args);
+
+        var puzzle = Puzzles.Open(C, TestData.ReadyFor("G11"), "G11");
+        Assert.Equal("G11", Hints.CurrentStep(C, puzzle, "M02")!.Id);
+    }
+
+    [Fact]
+    public void Hints_never_point_at_a_done_step_and_level_three_is_never_the_whole_chain()
+    {
+        foreach (var state in TestData.MainStates)
+        {
+            foreach (var quest in C.Quests.Where(q => !state.IsDone(q.Completion)))
+            {
+                var step = Hints.CurrentStep(C, state, quest.Id);
+                Assert.NotNull(step);
+                Assert.False(state.IsDone(step!.Id));
+                Assert.Contains(step.Id, quest.Actions);
+                var s = state;
+                for (var i = 0; i < 3; i++) s = Hints.RevealNext(C, s, quest.Id);
+                var hints = Hints.Revealed(C, s, quest.Id);
+                Assert.Equal(3, hints.Count);
+                Assert.All(hints, h => Assert.False(h.Text.IsEmpty, $"{quest.Id}/{step.Id} level {h.Level} empty"));
+                Assert.All(hints, h => Assert.NotEqual(TextKeys.QuestHint(quest.Id, 3), h.Text.Key));
+                Assert.Equal(Hints.StepKey(step.Id), hints[2].Text.Key);
+                // a done step is never the direction: the level-1 text is a quest hint or an objective of a done action
+                var key = hints[0].Text.Key;
+                Assert.True(key.StartsWith("quest." + quest.Id + ".hint.", StringComparison.Ordinal) ||
+                            (key.StartsWith("action.", StringComparison.Ordinal) && state.IsDone(key.Split('.')[1])), key);
+            }
+        }
+        Assert.Null(Hints.CurrentStep(C, TestData.StateAfter("G05"), "M01")); // complete quest: no step, no hints
+        Assert.Equal(0, Hints.RevealedLevel(C, TestData.StateAfter("G05"), "M01"));
     }
 
     [Fact]

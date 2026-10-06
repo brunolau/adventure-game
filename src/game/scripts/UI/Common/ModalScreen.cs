@@ -15,6 +15,8 @@ public partial class ModalScreen : Control
     private PanelContainer panel = null!;
     private Label title = null!;
     private Button? close;
+    private Label status = null!;
+    private double statusLeft;
     private Vector2 lastSize;
 
     /// <summary>Preferred panel size in logical px (clamped to the screen).</summary>
@@ -74,6 +76,11 @@ public partial class ModalScreen : Control
         Body.SizeFlagsVertical = SizeFlags.ExpandFill;
         outer.AddChild(Body);
         Build();
+        // Feedback for an action inside the screen ("Uložené"): notices never draw over open screens (PT-S22).
+        status = Ui.Label("", "CaptionLabel");
+        status.VerticalAlignment = VerticalAlignment.Center;
+        status.Visible = false;
+        TitleRow.AddChild(status);
         if (close is not null) TitleRow.AddChild(close);
         if (title.Text.Length == 0 && close is null && TitleRow.GetChildCount() == 1) TitleRow.Visible = false;
         Visible = false;
@@ -93,6 +100,14 @@ public partial class ModalScreen : Control
     {
         title.Text = text;
         TitleRow.Visible = true;
+    }
+
+    /// <summary>Shows a short confirmation in the title row for a few seconds (instead of a notice over the screen).</summary>
+    public void ShowStatus(string text, double seconds = 3.0)
+    {
+        status.Text = text;
+        status.Visible = text.Length > 0;
+        statusLeft = seconds;
     }
 
     /// <summary>Shows the screen, rebuilt from the current state.</summary>
@@ -148,6 +163,7 @@ public partial class ModalScreen : Control
     public override void _Process(double delta)
     {
         if (Visible) Layout(false);
+        if (statusLeft > 0 && (statusLeft -= delta) <= 0) status.Visible = false;
     }
 
     private void Layout(bool force)

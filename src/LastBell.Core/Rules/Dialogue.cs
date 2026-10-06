@@ -12,7 +12,8 @@ public sealed record TranscriptEntry(string SourceId, TextRef Label, IReadOnlyLi
 
 /// <summary>
 /// NPC conversations. Clicking an NPC without an item lists story topics (valid <c>topic</c> actions on
-/// that NPC hotspot) followed by ambient topics whose <c>requires_done</c> are met. Item actions on NPCs
+/// that NPC hotspot) followed by ambient topics whose <c>requires_done</c> are met (and, for extra topics of the
+/// dialogue overlay, none of whose <c>excluded_done</c> is done). Item actions on NPCs
 /// are not topics. Done story topics move to the transcript; ambient topics repeat without state change.
 /// </summary>
 public static class Dialogue
@@ -34,7 +35,7 @@ public static class Dialogue
         {
             foreach (var topic in character.AmbientTopics)
             {
-                if (!state.AllDone(topic.RequiresDone)) continue;
+                if (!state.AllDone(topic.RequiresDone) || state.AnyDone(topic.ExcludedDone)) continue;
                 if (!topic.Repeatable && state.JournalSeen.Contains(TopicEntryKey(topic.Id))) continue;
                 options.Add(new TopicOption(topic.Id, TextKeys.LabelOf(topic), null, topic));
             }
@@ -45,6 +46,20 @@ public static class Dialogue
     /// <summary>Opens the topic menu (dialogue mode without an active line).</summary>
     public static GameState OpenMenu(GameState state) =>
         state.Mode is GameMode.World or GameMode.Inventory ? state with { Mode = GameMode.Dialogue, ActiveLineId = null } : state;
+
+    /// <summary>
+    /// Conversations stay open (orchestrator decision after the playtests, PT-S17): after a topic's lines the topic
+    /// menu of the same NPC opens again, until the player closes it or no topic is left. Returns the state in
+    /// dialogue mode without a line when the hero is back in world mode with nothing playing and no item selected,
+    /// the NPC hotspot is visible in the current room and still offers at least one topic; otherwise unchanged.
+    /// </summary>
+    public static GameState ReturnToMenu(GameContent content, GameState state, string npcHotspotId)
+    {
+        if (state.Mode != GameMode.World || state.ActiveLineId is not null || !state.PlaybackQueue.IsEmpty || state.SelectedItem is not null) return state;
+        var hotspot = content.GetRoom(state.Room).Hotspots.FirstOrDefault(h => h.Id == npcHotspotId);
+        if (hotspot is null || !hotspot.IsNpc || !GameRules.IsVisible(hotspot, state)) return state;
+        return TopicsFor(content, state, hotspot).Count > 0 ? OpenMenu(state) : state;
+    }
 
     /// <summary>Closes the topic menu back to the world.</summary>
     public static GameState CloseMenu(GameState state) =>
@@ -61,7 +76,7 @@ public static class Dialogue
         if (found is null) return state;
         var (character, topic) = found.Value;
         var present = content.GetRoom(state.Room).Hotspots.Any(h => h.IsNpc && h.CharacterId == character.Id && GameRules.IsVisible(h, state));
-        if (!present || !state.AllDone(topic.RequiresDone)) return state;
+        if (!present || !state.AllDone(topic.RequiresDone) || state.AnyDone(topic.ExcludedDone)) return state;
         if (!topic.Repeatable && state.JournalSeen.Contains(TopicEntryKey(topic.Id))) return state;
         var next = state with { JournalSeen = IdList.AddUnique(state.JournalSeen, TopicEntryKey(topic.Id)) };
         return Playback.Start(content, next, topic.Lines.Select(l => l.LineId ?? "").Where(id => id.Length > 0).ToList());

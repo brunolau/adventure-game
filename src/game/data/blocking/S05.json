@@ -59,31 +59,31 @@
         140
       ],
       "interaction_point": [
-        255,
-        785
+        392,
+        790
       ],
       "label_anchor": [
         255,
         575
       ],
-      "reason": "small table standing on the pavement against the wall left of the gate (top y ~600, legs y 720)"
+      "reason": "small table standing on the pavement against the wall left of the gate (top y ~600, legs y 720); M5-04: the hero stands right of the table (on the paving by the doormat) and reaches left, so the tray and the grocery bag stay visible"
     },
     "S05.shed_door": {
       "rect": [
-        770,
-        470,
-        130,
-        130
+        830,
+        522,
+        60,
+        64
       ],
       "interaction_point": [
         800,
         790
       ],
       "label_anchor": [
-        835,
-        462
+        860,
+        512
       ],
-      "reason": "upper two thirds of the workshop's plank door in the street line, padlock and hasp at y ~540; playtest 2026-10-05 (PT-F05): only the padlock and hasp (y ~540) are the prop now, the rest of the door leaf is the S05.to_S09 exit, so after G06 a click on the door walks in instead of repeating the look"
+      "reason": "the padlock and hasp on the right edge of the workshop's plank door (y 524-586); milestone 5 (M5-02): only that spot is the prop, before and after G06, so the whole unlocked door leaf around it is the S05.to_S09 exit (PT-F05 had left the upper two fifths of the leaf as the door look)"
     },
     "S05.ambient 1": {
       "rect": [
@@ -170,7 +170,7 @@
         800,
         640
       ],
-      "reason": "lower part of the workshop door and its threshold step (the door leaf above is the shed_door hotspot); playtest 2026-10-05 (PT-F05): the whole door leaf and threshold (the padlock rect above it wins the hit test)"
+      "reason": "the whole workshop door leaf and its threshold step; the small padlock / hasp rect (S05.shed_door) on its right edge wins the hit test there (PT-F05, M5-02)"
     }
   },
   "state_patches": [

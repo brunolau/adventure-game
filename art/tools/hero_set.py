@@ -797,6 +797,8 @@ def stage_oneshot(char: str, pose: str, span: tuple[int, int] | None = None) -> 
     base = M["base"]
     end = load_rgba(d / "masters" / f"{pose}_aligned.png")
     video = ONESHOT_VIDEOS.get(pose, f"video_{pose}_pro.mp4")
+    if not (d / "prod" / video).exists():   # retake names are per character set (the coat1982 set has no _b clips)
+        video = f"video_{pose}_pro.mp4"
     paths = scratch_frames(char, d / "prod" / video)
     keyed = [fr.chroma_key(fr.load_rgb(p), choke=1) for p in paths]
     frames_out, fps = ONESHOTS[pose]

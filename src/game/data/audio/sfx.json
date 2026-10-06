@@ -214,6 +214,22 @@
    "db": 0,
    "pitch": 0.0,
    "cooldown": 0.5
+  },
+  "travel_bus": {
+   "files": [
+    "ambience/spots/bus_pass_1.ogg"
+   ],
+   "db": -3,
+   "pitch": 0.0,
+   "cooldown": 2.0
+  },
+  "travel_tram": {
+   "files": [
+    "ambience/spots/tram_pass_1.ogg"
+   ],
+   "db": -3,
+   "pitch": 0.0,
+   "cooldown": 2.0
   }
  },
  "events": {
@@ -238,6 +254,8 @@
   "puzzle_fail": "puzzle_fail",
   "era_transition": "era_transition",
   "cutscene_start": "cutscene_start",
-  "saved": "saved"
+  "saved": "saved",
+  "travel_bus": "travel_bus",
+  "travel_tram": "travel_tram"
  }
 }

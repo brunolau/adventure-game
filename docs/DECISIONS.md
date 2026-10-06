@@ -281,6 +281,31 @@ The 1995 tram in S11 is painted into the background, so it cannot arrive or leav
    markers only on those targets, and Tab cycles only them. Without a selection every visible target hovers, gets a
    marker and a Tab stop as before (owner's example: 6 objects on screen, no selection: all 6; item selected: only
    the valid combination). Overrides the handoff's AT06 wording "the object name stays" for invalid pairs.
+7. **Far places are reached through their transport hub; the map shows regions (owner, 2026-10-06:** "Dúbravka
+   reachable by bus from the Čierna Voda bus stop", "map regions"**).** Applied as a travel overlay
+   (`src/game/data/content_ext/travel_ext.json`, game.json untouched; Core README section 13, ISSUES TRAVEL-01).
+   The map shows the regions of an era first, then the rooms of the chosen region; fast travel is free inside a
+   region, another region is reached only through its hub (bus stop, tram stop, cable car station). Changes per era:
+   - **2020:** the car transition S02 (Ulica medzi plotmi) <-> S51 (Dúbravská zastávka 2020) is removed (exits
+     S02.to_S51 and S51.to_S02, connection S02-S51). New bus S07 (Čierna Voda pri výveske, the real bus stop) <->
+     S51, travel `bus`: exit "Autobus do Dúbravky" at the kerb by the bus-stop sign, back "Autobus do Čiernej Vody"
+     at the platform end; first ride each way plays Adam's lines from the C1 draft in the stop he leaves, then a
+     fade, the destination card ("Dúbravka" / "Autobusom · Dúbravská zastávka v roku 2020") and the bus sound
+     (reduced motion: the same fade and card, shorter). Regions: Chorvátsky Grob (S01-S10; Čierna Voda is part of
+     the municipality, hub S07) and Dúbravka (S51-S56, hub S51). The walk S03 <-> S07 stays (inside the region).
+     Hint `quest.M11A.hint.1` names the bus (sk_overrides, from the C1 draft).
+   - **1995:** no change: every cross-region link already joins two hubs (Dúbravka S11 tram stop <-> Karlova Ves
+     S19 platform <-> Staré Mesto S21 Kamenné námestie <-> Ružinov S25 / Petržalka S28). Regions = the districts,
+     hubs S11, S19, S21, S25, S28.
+   - **1960:** one region (Ivanka pri Dunaji, hub S31 railway stop). **1982:** one region (Dúbravka, hub S57).
+   - **2035:** no link change (cable car S41 -> S67 Priehyba -> S68 Funitel -> S47 Chopok). Regions: Jasná (S41-S46:
+     Biela Púť, Grand Jasná, Vrbické pleso are one walkable area, hub S41 lower station), Priehyba, Funitel, Chopok.
+   - Walkthrough: `walkthrough.json` still says S02 -> S51 (steps 52, 67, 70); Core tests and the Godot replayer
+     recompute such a hop under the overlay (S02 -> S03 -> S07 -> bus S51). Revert: empty `travel_ext.json`.
+
+**Status 2026-10-06 (item 7): implemented** (ISSUES TRAVEL-01): Core overlay loader + region rule
+(`ContentOverlayTests`), `WorldStage` ride (first-ride lines, transport card, `travel_bus` sound), `MapScreen`
+regions-first, acceptance m2 TR01-TR03 and AT12 through the region view. Screenshots: build/screens/travel/.
 
 **Status 2026-10-06 (item 6): implemented** (ISSUES INT-09): `InteractionController` (drawer close on a scene press,
 valid-only hover and Tab), `HotspotLabelLayer` (valid-only markers); acceptance m1 `RunSelectionControlChecks`, m2 AT06.
@@ -368,3 +393,53 @@ Unchanged since the list above. Item 13 is mostly done: the S04 basket (crate em
 - **Toasts wait until lines end and never cover open screens; the hover label hides over UI panels.**
 - **Esc skips the current line; Esc twice quickly skips the whole sequence.** Menu shows the game version 0.1.0
   (content data version stays internal).
+
+## Jasná 2035 is in winter (owner 2026-10-06)
+
+Owner: "for Jasna I'd prefer winter settings ... so redraw your art that jasna is in winter". Binding for every Jasná
+2035 image (rooms S41-S50, S67, S68 and the cutscene / epilogue frames set there):
+
+- **Winter, clear and cold:** deep snow on roofs, slopes and the forest, groomed ski pistes with small distant skiers,
+  snow banks beside the cleared paths, Vrbické pleso frozen under snow (swept black ice in the middle), clear cold
+  light (or light snowfall), icicles, breath steam; the cable cars run (cabins on the ropes).
+- **Displayed date: 6 February 2035** (presentation override of `era.2035.date` in `src/game/localization/ui.csv`;
+  `game.json` `eras[].date` stays 2035-06-06 for the handoff owner, ISSUES ART-JASNA-WINTER).
+- **Same cameras and blocking:** every room is an edit of its accepted summer painting (`art/tools/winter_jasna.py`),
+  so hotspot rects, walk polygons, NPC staging, anchors and state patches stay valid; interiors keep their pixels
+  outside the windows and the added winter details. Summer masters stay in `art/` only (`*_summer.webp`).
+- S41 is painted separately from the owner's new references.
+- **People dress for winter.** Adam wears his winter coat and mustard scarf (the `*_coat1982` sheets) in the Jasná
+  exteriors S41, S42, S45, S48, S50, the open Priehyba station hall S67 and the unheated Funitel cabin S68
+  (`data/ambient/actors.json` `hero_coat2035_rooms`, `ActorStaging.HeroWearsCoat`); the heated interiors keep the
+  jacket, as in 1982. The CS09 frames already show him in the coat. Outdoor NPCs get an actor.json variant `winter`
+  staged in the natural blocking (`art/tools/npc_winter.py`: re-dressed, same pose and default face pixels, so the
+  default blink and mouth frames apply): NINA (S42, closed coat, scarf, gloves, boots), IVAN (S67, padded parka,
+  beanie, gloves), TURISTA (S68, padded ski jacket and bobble beanie instead of the bucket sun hat). ROBOT (S41)
+  has its `snow` variant from the S41 painting. Indoor NPCs keep their clothes.
+- **Winter life** (`art/tools/winter_ambient.py`, `w_*` layers in `data/blocking/ambient/<room>.json`): the cable cars
+  run (the painted cabins of S42, S48 and S50 lifted off clean plates and riding their ropes), small skiers slide
+  down the pistes and a snowcat grooms the slopes far away, snow blows off roofs and ridges, light snowfall varies per
+  room (clear with diamond dust in S42 / S45, flurries in S48 / S50 and outside the interior windows), Adam's and
+  the outdoor NPCs' breath steams in pulses (`ParticleLayer` `follow: "hero"` / `"npc:<id>"`, `pulse_s`). Reduced
+  motion: crossing things hide, cabins freeze, breath hides.
+- **Texts:** only "Hladina plesa" became "Zamrznuté pleso" (`docs/writing/out/jasna_winter.csv` -> sk_overrides.csv);
+  no other Jasná text names summer. The later 2035 writing pass (C4) may add winter touches.
+
+## Ivanka is shown as June 1962 (owner 2026-10-06)
+
+Owner: "move Ivanka to the year 1962" (so that the new Ivanka character Zuzana, born 1955, is 7 when Adam meets her in the
+manor park; docs/story/ZUZANA.md). Binding for everything the player sees of the Ivanka chapter (rooms S31-S40):
+
+- **Displayed date: 6 June 1962** (`era.1960.date` = "6. júna 1962", new `era.<year>.year` keys in ui.csv with
+  `era.1960.year` = 1962). Only the presentation changes: the era id stays **1960** everywhere inside (game.json
+  `eras[].year`, rooms, conditions, saves, the P04 solution value, ids MIRA60 / VERA60, `music/1960.ogg`), ISSUES
+  TEXT-IVANKA-1962.
+- Every visible era year goes through `TextKeys.YearOf` / `TextService.EraYear` (era card, journal time map and person
+  labels, map tabs, era chooser, save slots); texts say 1962 (36 rewritten keys, `docs/writing/out/ivanka1962.csv`).
+- **Ages in June 1962:** Mira 22, Vera 24, Oto 46 (66 in 1982, so "zostarol o dvadsať rokov"); other Ivanka people +2
+  where a text states an age. Birth years and the other eras do not change (Mira is still 55 in 1995 and 80 in 2020).
+- **Spans:** Mira is 13 years younger than Adam; the box held 58 years until 2020 ("skoro šesťdesiat rokov"); the
+  registered paper must last 73 years until 2035 ("o sedemdesiattri rokov").
+- **Painted dates** follow: the form icons REGFORM / REGDOUBLE / REGISTERED (6. 6. 1962), the S33 wall calendar, the
+  CS03_1 chronometer wheels and the EPILOGUE_6 calendar show 1962.
+- Writers: GLOSSARY.md section 6.3 and glossary.json carry the 1962 facts (`check_rewrite.py` enforces them).

@@ -87,6 +87,7 @@ public sealed class TextKeysTests
         var era = C.FindEra(1995)!;
         Assert.Equal("era.1995.card", TextKeys.CardOf(era).Key);
         Assert.Equal(new TextRef("era.1995.date", "1995-06-15"), TextKeys.DateOf(era));
+        Assert.Equal(new TextRef("era.1960.year", "1960"), TextKeys.YearOf(1960)); // shown as 1962 via ui.csv
         Assert.Equal("epilogue.1.shot", TextKeys.ShotOf(C.Data.Epilogue[0], 0).Key);
         Assert.Equal("epilogue.9.line", TextKeys.LineOf(C.Data.Epilogue[8], 8).Key);
         Assert.Equal("ui.menu.continue", TextKeys.Ui("menu", "continue"));
@@ -117,6 +118,14 @@ public sealed class TextKeysTests
         foreach (var room in C.Rooms.Where(r => r.District.Length > 0))
             Assert.True(ui.ContainsKey(TextKeys.RegionOf(room).Key), $"ui.csv has no {TextKeys.RegionOf(room).Key}");
         Assert.False(ui.ContainsKey("ui.save.corrupt"), "the duplicate key ui.save.corrupt is back (UI-01)");
+        // Step hints (PT-F08): the level-2 templates with Core's fallback text, and an exact step text for every quest action.
+        Assert.Equal(Hints.PlaceFallback, ui[Hints.PlaceKey]);
+        Assert.Equal(Hints.BagFallback, ui[Hints.BagKey]);
+        foreach (var id in C.Quests.SelectMany(q => q.Actions))
+        {
+            Assert.True(ui.ContainsKey(Hints.StepKey(id)), $"ui.csv has no {Hints.StepKey(id)}");
+            Assert.NotEqual(C.GetAction(id).Label, ui[Hints.StepKey(id)]); // a written step, not the label fallback
+        }
     }
 
     /// <summary>Minimal reader of a Godot translation CSV (header "keys,sk,en", RFC 4180 quoting): key to sk text.</summary>

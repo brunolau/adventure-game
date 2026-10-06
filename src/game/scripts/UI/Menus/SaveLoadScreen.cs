@@ -143,7 +143,7 @@ public partial class SaveLoadScreen : ModalScreen
         if (ok)
         {
             UiRoot.SaveThumbnail(slot, shot);
-            UiRoot.Instance?.Toasts.Show(Ui.T("ui.save.saved"));
+            ShowStatus(Ui.T("ui.save.saved"));
             Refresh();
             FocusDefault();
         }

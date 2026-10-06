@@ -25,6 +25,12 @@ public static class TextService
     public static string Get(TextRef text) => Get(text.Key, text.Fallback);
 
     /// <summary>
+    /// The year shown for an era (<c>era.&lt;year&gt;.year</c> in ui.csv, else the era id). Use it wherever an era year
+    /// is visible: the Ivanka era has the id 1960 but is shown as 1962 (docs/DECISIONS.md).
+    /// </summary>
+    public static string EraYear(int year) => Get(TextKeys.YearOf(year));
+
+    /// <summary>
     /// Translated <c>ui.*</c> text with <c>{name}</c> placeholders replaced. A missing ui key is a
     /// bug (ui.csv is hand-written); it logs a warning once and shows nothing.
     /// </summary>

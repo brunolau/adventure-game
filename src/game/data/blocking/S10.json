@@ -43,14 +43,14 @@
         118
       ],
       "interaction_point": [
-        446,
-        850
+        262,
+        848
       ],
       "label_anchor": [
         446,
         482
       ],
-      "reason": "the ZVON table node on the workbench: mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover"
+      "reason": "the ZVON table node on the workbench: mahogany base, brass ring socket, terminal posts, the glass fuse under a small service cover; M5-04: the hero stands left of the bench end (by the door) and reaches right, so the cradle stays visible (G08, G10, C05)"
     },
     "S10.panel": {
       "rect": [
@@ -60,14 +60,14 @@
         190
       ],
       "interaction_point": [
-        920,
+        1200,
         850
       ],
       "label_anchor": [
         920,
         365
       ],
-      "reason": "shape connector panel on the wall above the bench, under the big paper schematic"
+      "reason": "shape connector panel on the wall above the bench, under the big paper schematic; M5-04: the hero stands right of the panel (beside the pencil cup) and reaches left, so the panel stays visible"
     },
     "S10.ambient 1": {
       "rect": [
@@ -162,5 +162,9 @@
       "until": [],
       "reason": "G11 connects the reference shapes: the three cables plugged circle-circle, triangle-triangle, square-square with a warm glow (refit fix v6 raw, re-composited as v8)"
     }
-  ]
+  ],
+  "time_node": {
+    "hotspot": "S10.chrono",
+    "reason": "the anchor node's clock / node device S10.chrono doubles as the time node (PT-F10): a plain left click that Core resolves as its look opens the era chooser instead (right click still looks; item uses such as D04 / C05 still work)"
+  }
 }

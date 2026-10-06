@@ -23,6 +23,12 @@ public partial class GameRuntime : Node
     /// <summary>Path of the canonical game data inside the project.</summary>
     public const string GameDataPath = "res://data/game.json";
 
+    /// <summary>
+    /// Folder of the content overlays applied on top of game.json (dialogue_ext.json, travel_ext.json; Core README
+    /// section 13). A missing file means no overlay of that kind; an invalid one fails the load like a broken game.json.
+    /// </summary>
+    public const string ContentExtDirectory = "res://data/content_ext";
+
     /// <summary>Folder of the save files.</summary>
     public const string SaveDirectory = "user://saves";
 
@@ -138,7 +144,7 @@ public partial class GameRuntime : Node
         {
             if (!Godot.FileAccess.FileExists(GameDataPath)) throw new InvalidOperationException("missing " + GameDataPath);
             string json = Godot.FileAccess.GetFileAsString(GameDataPath);
-            Content = GameContent.Load(json);
+            Content = GameContent.Load(json, LoadOverlays());
             AttachSession(new GameSession(Content));
             IsReady = true;
         }
@@ -152,6 +158,16 @@ public partial class GameRuntime : Node
             LoadErrors = new[] { ex.Message };
             GD.PushError("GameRuntime: cannot load game data: " + ex);
         }
+    }
+
+    private static ContentOverlays LoadOverlays()
+    {
+        static string? Read(string name)
+        {
+            string path = ContentExtDirectory + "/" + name;
+            return Godot.FileAccess.FileExists(path) ? Godot.FileAccess.GetFileAsString(path) : null;
+        }
+        return new ContentOverlays(Read(ContentOverlays.DialogueExtFile), Read(ContentOverlays.TravelExtFile));
     }
 
     private void AttachSession(GameSession session)

@@ -57,9 +57,11 @@ LABEL_CHAR_PX = 12.0           # average glyph width of the fallback font at 22 
 FEET_TOLERANCE = 12
 TOP_LEVEL_KEYS = {"version", "room", "status", "note", "notes", "background", "walk_polygon", "walk_band", "actor_scale",
                   "spawn", "hotspots", "exits", "npcs", "foreground_mask", "ambient", "state_patches", "reasons",
-                  "occluders", "variant_layers", "audio", "waive", "family_base", "anchors"}
+                  "occluders", "variant_layers", "audio", "waive", "family_base", "anchors", "guests", "time_node"}
 TARGET_KEYS = {"rect", "interaction_point", "label_anchor", "reason", "note"}
-NPC_KEYS = {"feet", "scale", "variant", "sill_y", "offset_x", "facing", "z", "reason", "note"}
+NPC_KEYS = {"feet", "scale", "variant", "sill_y", "offset_x", "facing", "z", "reason", "note", "approach_gap"}
+GUEST_KEYS = {"character", "enter", "stand", "variant", "facing", "delay", "reason", "note"}
+TIME_NODE_KEYS = {"rect", "interaction_point", "hotspot", "reason", "note"}
 DATA = ROOT / "src" / "game" / "data"
 AMBIENT_ASSETS = ASSETS / "ambient"
 AMBIENCE = DATA / "audio" / "ambience.json"
@@ -83,7 +85,14 @@ EXPECTED_STAGING = {
 # --------------------------------------------------------------------------- data
 
 def load_game() -> dict:
-    return json.loads(GAME.read_text(encoding="utf-8"))
+    """game.json with the content overlays (src/game/data/content_ext, tools/content_ext.py) applied, as the game
+    loads it: the travel overlay adds and removes exits (e.g. the 2020 bus S07 <-> S51)."""
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import content_ext  # noqa: E402
+    overlay = content_ext.load_effective_game(GAME)
+    if overlay.errors:
+        raise SystemExit("content overlay invalid: " + "; ".join(overlay.errors[:5]))
+    return overlay.game
 
 
 def blocking_path(room_id: str) -> Path:
@@ -330,6 +339,86 @@ def check_schema(rep: Report, room: dict, blocking: dict) -> None:
                     rep.error(f"state patch {tex!r}: {key} action {aid!r} is not in game.json")
 
 
+def check_guests_and_node(rep: Report, room: dict, blocking: dict, eff: dict) -> None:
+    """Guest speakers (ISSUES PT-S18) and the painted time-node clock (PT-F10), World/GuestStage.cs and Room.cs."""
+    poly = [tuple(p) for p in eff["walk_polygon"]]
+    actions = {a["id"]: a for a in load_game().get("actions", [])}
+    chars = {c["id"] for c in load_game().get("characters", [])}
+    npc_chars = {h.get("character_id") for h in room["hotspots"] if h["kind"] == "npc"}
+    for aid, guests in (blocking.get("guests") or {}).items():
+        action = actions.get(aid)
+        if action is None or action["room"] != room["id"]:
+            rep.error(f"guests.{aid}: not an action of room {room['id']}")
+            continue
+        speakers = {line["speaker"] for line in action.get("lines", [])}
+        if not isinstance(guests, list) or not guests:
+            rep.error(f"guests.{aid} must be a non-empty list")
+            continue
+        for i, g in enumerate(guests):
+            ident = f"guests.{aid}[{i}]"
+            for key in g:
+                if key not in GUEST_KEYS:
+                    rep.warn(f"{ident}: unknown key {key!r}")
+            cid = g.get("character")
+            if cid not in chars:
+                rep.error(f"{ident}: character {cid!r} is not in game.json characters")
+                continue
+            if cid not in speakers:
+                rep.error(f"{ident}: {cid} speaks no line of {aid}")
+            if cid in npc_chars:
+                rep.error(f"{ident}: {cid} is a permanent NPC of {room['id']} (never moved; it speaks from its place)")
+            for key in ("enter", "stand"):
+                if not is_vec(g.get(key)):
+                    rep.error(f"{ident}.{key} must be [x, y]")
+            if is_vec(g.get("stand")) and not (inside(poly, tuple(g["stand"])) or distance_to_polygon(poly, tuple(g["stand"])) <= FEET_TOLERANCE):
+                rep.error(f"{ident}.stand {g['stand']} is not on walkable floor")
+            if is_vec(g.get("enter")) and not (-200 <= g["enter"][0] <= FRAME[0] + 200 and 0 <= g["enter"][1] <= FRAME[1] + 200):
+                rep.error(f"{ident}.enter {g['enter']} is too far off screen")
+            if g.get("facing") not in (None, "left", "right"):
+                rep.error(f"{ident}.facing must be 'left' or 'right'")
+            manifest = actor_manifest(cid)
+            if manifest is None:
+                rep.warn(f"{ident}: no sprite data for {cid} (placeholder figure)")
+                continue
+            ok, variant = resolve_staging(manifest, g.get("variant"))
+            if not ok:
+                rep.error(f"{ident}.variant {g.get('variant')!r} does not exist for {cid}")
+                continue
+            anims = dict(manifest.get("animations") or {})
+            if variant:
+                anims.update((manifest.get("variants") or {}).get(variant, {}).get("animations") or {})
+            if "walk_right" not in anims:
+                rep.warn(f"{ident}: {cid} has no walk_right animation (the guest glides in)")
+            for name in variant_sheets(manifest, variant):
+                sheet = (manifest.get("sheets") or {}).get(name)
+                if not sheet or not (ACTORS / cid / sheet.get("file", "")).exists():
+                    rep.error(f"{ident}: {cid} sheet {name!r} is missing")
+    node = blocking.get("time_node")
+    if node is not None:
+        for key in node:
+            if key not in TIME_NODE_KEYS:
+                rep.warn(f"time_node: unknown key {key!r}")
+        anchors = {n["room"] for n in load_game().get("anchor_nodes", [])}
+        if room["id"] not in anchors:
+            rep.error(f"time_node: {room['id']} is not an anchor node (game.json anchor_nodes)")
+        hid = node.get("hotspot")
+        if hid is not None:
+            if hid not in {h["id"] for h in room["hotspots"]}:
+                rep.error(f"time_node.hotspot {hid!r} is not a hotspot of {room['id']}")
+        else:
+            r = node.get("rect")
+            if not (isinstance(r, list) and len(r) == 4):
+                rep.error("time_node needs a rect [x, y, w, h] or a hotspot id")
+            else:
+                if r[2] < MIN_RECT or r[3] < MIN_RECT:
+                    rep.error(f"time_node rect {r} smaller than {MIN_RECT}x{MIN_RECT}")
+                if r[0] < 0 or r[1] < 0 or r[0] + r[2] > FRAME[0] or r[1] + r[3] > FRAME[1]:
+                    rep.error(f"time_node rect {r} is not on screen")
+        ip = node.get("interaction_point")
+        if ip is not None and (not is_vec(ip) or not (inside(poly, tuple(ip)) or distance_to_polygon(poly, tuple(ip)) <= 1)):
+            rep.error(f"time_node.interaction_point {ip} is not on walkable floor")
+
+
 def is_vec(v) -> bool:
     return isinstance(v, list) and len(v) == 2 and all(isinstance(x, (int, float)) for x in v)
 
@@ -396,8 +485,9 @@ def check_room(rep: Report, eff: dict, art_room: dict) -> None:
                 rep.warn(f"{ident}: interaction point {ip} is {(dx * dx + dy * dy) ** 0.5:.0f} px from its rect")
         if kind == "npc":
             x0, _, x1, _ = rect_box(rect)
-            if x0 - NPC_APPROACH_GAP / 2 <= ip[0] <= x1 + NPC_APPROACH_GAP / 2:
-                sides = [(x0 - NPC_APPROACH_GAP, ip[1]), (x1 + NPC_APPROACH_GAP, ip[1])]
+            gap = ((eff.get("_blocking") or {}).get("npcs", {}).get(ident) or {}).get("approach_gap", NPC_APPROACH_GAP)
+            if x0 - gap / 2 <= ip[0] <= x1 + gap / 2:
+                sides = [(x0 - gap, ip[1]), (x1 + gap, ip[1])]
                 if not any(inside(poly, s) for s in sides):
                     rep.warn(f"{ident}: neither approach point {[list(s) for s in sides]} is walkable; the hero "
                              f"stands on the interaction point in front of the NPC")
@@ -842,6 +932,8 @@ def main(argv: list[str]) -> int:
             check_assets(rep, rooms[rid], blocking, game, strict)
             loaded[rid] = blocking
         check_room(rep, effective_room(rooms[rid], blocking), overrides.get(rid, {}))
+        if blocking is not None:
+            check_guests_and_node(rep, rooms[rid], blocking, effective_room(rooms[rid], blocking))
         mode = "template (game.json)" if template else f"natural ({rel(blocking_path(rid))})"
         status = "OK" if not rep.errors else "FAIL"
         print(f"{rid} {mode}: {status} - {len(rep.errors)} error(s), {len(rep.warnings)} warning(s)")

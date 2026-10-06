@@ -4,47 +4,171 @@
   "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
   "note": "Bank of the Sursky kanal at the south-west edge of Ivanka pri Dunaji, June 1960. Camera ~1.9 m high on the dirt track along the near bank, looking SE across the canal: horizon y 430, perspective s(y) = (y - 430) / 585 (hero 1.7 m = 512 px at y 1015; ~118 px per metre at the hut, foot y 660). The invented pump hut stands on the near bank between the track and the water, its door facing the track; beside it the demonstration hand pump on a small plinth pours into a wooden irrigation model, the bucket stands under the pump, a tuft of tall grass and reeds grows at the bank on the right. The canal runs across the middle distance behind them (water y ~555-598), fields and poplars beyond. The measuring-room door is split as in S05: its upper part is the S38.door hotspot, its lower part and the threshold step are the exit to S39. The walk polygon is the track and the grass verge in front of the hut, the pump and the model, with a lobe to the threshold.",
   "background": "bg_natural/S38.webp",
-  "walk_polygon": [[0, 708], [430, 708], [438, 688], [572, 688], [580, 708], [800, 708], [800, 722], [985, 722], [985, 708], [1920, 708], [1920, 1015], [0, 1015]],
-  "walk_band": [688, 1015],
-  "actor_scale": [0.441, 1.0],
-  "spawn": [1100, 900],
+  "walk_polygon": [
+    [
+      0,
+      708
+    ],
+    [
+      430,
+      708
+    ],
+    [
+      438,
+      688
+    ],
+    [
+      572,
+      688
+    ],
+    [
+      580,
+      708
+    ],
+    [
+      800,
+      708
+    ],
+    [
+      800,
+      722
+    ],
+    [
+      985,
+      722
+    ],
+    [
+      985,
+      708
+    ],
+    [
+      1920,
+      708
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    688,
+    1015
+  ],
+  "actor_scale": [
+    0.441,
+    1.0
+  ],
+  "spawn": [
+    1100,
+    900
+  ],
   "hotspots": {
     "S38.pump": {
-      "rect": [805, 498, 160, 197],
-      "interaction_point": [880, 760],
-      "label_anchor": [880, 488],
-      "reason": "cast-iron demonstration hand pump on its small concrete plinth beside the hut, spout into the irrigation model"
+      "rect": [
+        805,
+        498,
+        160,
+        197
+      ],
+      "interaction_point": [
+        759,
+        760
+      ],
+      "label_anchor": [
+        880,
+        488
+      ],
+      "reason": "cast-iron demonstration hand pump on its small concrete plinth beside the hut, spout into the irrigation model; staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
     },
     "S38.door": {
-      "rect": [445, 418, 122, 160],
-      "interaction_point": [505, 735],
-      "label_anchor": [505, 408],
+      "rect": [
+        445,
+        418,
+        122,
+        160
+      ],
+      "interaction_point": [
+        505,
+        735
+      ],
+      "label_anchor": [
+        505,
+        408
+      ],
       "reason": "upper part of the weathered plank door of the measuring room with the padlock hasp"
     },
     "S38.ambient 1": {
-      "rect": [888, 640, 78, 70],
-      "interaction_point": [930, 770],
-      "label_anchor": [930, 632],
+      "rect": [
+        888,
+        640,
+        78,
+        70
+      ],
+      "interaction_point": [
+        930,
+        770
+      ],
+      "label_anchor": [
+        930,
+        632
+      ],
       "reason": "galvanised bucket standing on the ground under the pump"
     },
     "S38.ambient 2": {
-      "rect": [1450, 500, 272, 168],
-      "interaction_point": [1585, 770],
-      "label_anchor": [1585, 490],
+      "rect": [
+        1450,
+        500,
+        272,
+        168
+      ],
+      "interaction_point": [
+        1585,
+        770
+      ],
+      "label_anchor": [
+        1585,
+        490
+      ],
       "reason": "big tuft of tall grass and reeds growing on the canal bank right of the irrigation model"
     }
   },
   "exits": {
     "S38.to_S37": {
-      "rect": [0, 712, 60, 295],
-      "interaction_point": [70, 880],
-      "label_anchor": [135, 702],
+      "rect": [
+        0,
+        712,
+        60,
+        295
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        135,
+        702
+      ],
       "reason": "the dirt track leads back out of the left edge towards the village and the manor park"
     },
     "S38.to_S39": {
-      "rect": [440, 578, 132, 104],
-      "interaction_point": [505, 712],
-      "label_anchor": [505, 700],
+      "rect": [
+        440,
+        578,
+        132,
+        104
+      ],
+      "interaction_point": [
+        505,
+        712
+      ],
+      "label_anchor": [
+        505,
+        700
+      ],
       "reason": "lower part of the measuring-room door and its concrete threshold step (the door leaf above is the S38.door hotspot)"
     }
   },

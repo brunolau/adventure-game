@@ -14,7 +14,8 @@ namespace LastBell.Game.UI.Hud;
 /// only while an item is selected and Core says the rule is executable, the action sentence below it (same texts as
 /// <see cref="HudView.Texts"/>). Mouse hover: the label sits right of the cursor image, flips to the left near the
 /// right edge and above the cursor near the bottom (HUD strip), and never leaves the screen; it hides while the pointer
-/// is over a GUI control. Keyboard focus (Tab): the label is centred at the focused target. Inventory slots keep their
+/// is over a GUI control, over the open bag (bar and detail card) and while any screen is open (hints, menus, journal
+/// ..., <see cref="UiRoot.ScreenCovers"/>, PT-S23). Keyboard focus (Tab): the label is centred at the focused target. Inventory slots keep their
 /// own hover line in the drawer. Lives in the cursor layer (CanvasLayer 70, canvas px), mouse-transparent.
 /// </summary>
 public partial class HoverLabel : Control
@@ -67,10 +68,11 @@ public partial class HoverLabel : Control
     {
         var payload = hud?.CurrentHover;
         var state = GameRuntime.Instance.IsReady ? GameRuntime.Instance.State : null;
+        var next = payload is { FromKeyboard: true } ? payload.ScreenPosition : GetLocalMousePosition();
         bool want = payload is { FromInventory: false } && (nameText.Length > 0 || actionText.Length > 0) &&
                     state?.Mode is GameMode.World or GameMode.Inventory && state.ActiveLineId is null &&
-                    (payload.FromKeyboard || GetViewport().GuiGetHoveredControl() is null);
-        var next = payload is { FromKeyboard: true } ? payload.ScreenPosition : GetLocalMousePosition();
+                    (payload.FromKeyboard || GetViewport().GuiGetHoveredControl() is null) &&
+                    !(UiRoot.Instance?.ScreenCovers(GetViewport().GetMousePosition()) ?? false);
         if (want != shown || (want && next != origin))
         {
             shown = want;

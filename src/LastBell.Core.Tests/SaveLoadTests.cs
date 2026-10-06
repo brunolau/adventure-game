@@ -118,7 +118,30 @@ public sealed class SaveLoadTests
         Assert.Equal(s, loaded);
         Assert.True(loaded.HotspotLabels);
         Assert.Equal("M02", loaded.PinnedMainQuest);
-        Assert.Equal(1, Hints.RevealedLevel(loaded, "M02"));
+        Assert.Equal(1, Hints.RevealedLevel(C, loaded, "M02"));
+        Assert.Equal(1, Hints.StepLevel(loaded, "G06"));
+    }
+
+    /// <summary>Hint levels are saved per step (action id); quest ids written by older saves still load (and are ignored).</summary>
+    [Fact]
+    public void Hint_levels_per_step_roundtrip_and_old_quest_keys_still_load()
+    {
+        var s = Hints.RevealNext(C, Hints.RevealNext(C, TestData.StateAfter("B07"), "M05"), "M05");
+        var json = System.Text.Json.Nodes.JsonNode.Parse(SaveCodec.Serialize(s))!.AsObject();
+        Assert.Equal(2, json["hint_levels"]!["B08"]!.GetValue<int>());
+        Assert.Equal(s, SaveCodec.Load(C, SaveCodec.Serialize(s)));
+
+        var legacy = SaveCodec.ToJsonPayload(s);
+        legacy["hint_levels"] = new System.Text.Json.Nodes.JsonObject { ["M05"] = 3 };
+        var old = SaveCodec.ValidateSave(C, legacy);
+        Assert.Equal(0, Hints.RevealedLevel(C, old, "M05")); // the per-quest level of an old save is not a step level
+
+        foreach (var bad in new System.Text.Json.Nodes.JsonObject[] { new() { ["B08"] = 4 }, new() { ["NOPE"] = 1 }, new() { ["M05"] = 4 } })
+        {
+            var payload = SaveCodec.ToJsonPayload(s);
+            payload["hint_levels"] = bad;
+            Assert.Throws<SaveValidationException>(() => SaveCodec.ValidateSave(C, payload));
+        }
     }
 
     // ---- GAME-02 / UI-05: what a load resumes in ----

@@ -1,37 +1,37 @@
 keys,sk_new,note
-action.G01.001,"Skrutkovač, kliešte, meradlo. Na nákup pre babku to bohato stačí.",setup irony: the day will need more
+action.G01.001,"Skrutkovač, kliešte, meradlo. Na jeden babkin nákup som vybavený ako na generálku.",setup of the running gag (a simple day that escalates); repairman's exaggeration | v1: setup irony: the day will need more
 action.G01.objective,Pomôž Mire s nákupom: zastav sa u Ely na dobrovoľníckom výdajnom mieste.,"Mirkin -> Mirin (glossary rename); editor: 'pre Mirin nákup' read as a calque; Ela gives the slip, not the shopping"
 action.G01.journal,Pomôž Mire s nákupom: zastav sa u Ely na dobrovoľníckom výdajnom mieste.,editor: same as objective
 action.G02.label,Babkin nákup,"story topic as topic, style guide 6.6"
 action.G02.001,"Ahoj, Ela. Babka vraví, že tu pre ňu máte objednávku.",
 action.G02.002,Dana ju má pripravenú. Tu máš lístok a náhradné rúško. Tašku nechaj babke vonku a zavolaj jej.,
 action.G02.003,Viem. Babka mi to povedala skôr ako ty. Dvakrát.,
-action.G02.004,Tak to máš potvrdené z dvoch zdrojov.,old punchline did not follow from the line before
+action.G02.004,Tak to máš tretíkrát. A do obeda ti to zopakuje ešte aj Dana.,"v1 'potvrdené z dvoch zdrojov' was a summary punchline; now sets up Dana's payoff in G03.004; GPT adapt: GPT is right that the count is of tellings, not of women (babka told him twice); its fix is correct but stiff, the colloquial 'to máš tretíkrát' keeps Ela quick. | v1: old punchline did not follow from the line before"
 action.G02.objective,Vyzdvihni u Dany v potravinách pripravenú tašku s nákupom.,
 action.G02.journal,Vyzdvihni u Dany v potravinách pripravenú tašku s nákupom.,
 action.G03.label,Vyzdvihnúť Mirin nákup,Mirkin -> Mirin
 action.G03.001,"Ahoj, Dana. Nesiem babkin lístok.",
 action.G03.002,"Čaj, vločky, zemiaky. Už je zaplatené, Ela to vybavila.",editor: word order
 action.G03.003,Ponesiem to za obe uchá. Babkino pravidlo.,handles joke now explained in the line itself (pairs with DANA ambient 2)
-action.G03.004,"Vidíš, ty to vieš.",
+action.G03.004,"Vidíš, ty to vieš. Mala som ti to pripomenúť, tak to ber ako pripomenuté.",payoff of Ela's new G02.004 (Dana will repeat it) | v1: 
 action.G03.objective,Nechaj nákup na stolíku pred Mirinou bránkou.,Mirkina -> Mirina
 action.G03.journal,Nechaj nákup na stolíku pred Mirinou bránkou.,
 action.G04.001,"Babka, nákup máš na stolíku. Už odstupujem.",
 action.G04.002,Ďakujem. Choď bočným chodníčkom k oknu a zavolaj mi. Cez sklo by si ma nepočul.,
-action.G04.003,Dobre. Dva metre a telefón. Bližšie sme sa celý mesiac nerozprávali.,style guide 7.1 example
+action.G04.003,Dobre. Bočný chodníček a telefón. Takto blízko sme sa celý mesiac nerozprávali.,'Dva metre' moved to Mira's new line; Adam now repeats her instruction; GPT accept: Clearer: 'takto blízko' states the physical closeness the beat is about; same tone. | v1: style guide 7.1 example
 action.G04.objective,Choď k zatvorenému oknu a porozprávaj sa s Mirou po telefóne.,
 action.G04.journal,Choď k zatvorenému oknu a porozprávaj sa s Mirou po telefóne.,
 action.G05.label,Potrebuješ ešte niečo?,"topic label; Mira's first line answers it; editor: Mira speaks first; Adam cannot know about the boxes yet, so the label is his natural question and her line answers it"
-action.G05.001,"Roman mi preniesol krabice do záhradnej dielne. Je v nich malý prístroj, ZVON. Ozýva sa, hoci je odpojený.",name ZVON introduced here so Adam's later question has a basis
-action.G05.003,"Keď myslíš. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.",
+action.G05.001,"Potrebujem. Roman mi preniesol krabice do záhradnej dielne. Je v nich prístroj ZVON a ozýva sa, hoci je odpojený.","now answers the topic label 'Potrebuješ ešte niečo?' directly (113 chars, under the hard limit; the clue must stay in this key); keeps Roman, the boxes, the workshop, ZVON, sounds while unplugged | v1: name ZVON introduced here so Adam's later question has a basis"
+action.G05.003,"Keď myslíš, tak sa pozri. Kľúč je vo vonkajšej schránke pri okne. Vezmi si ho, ale do domu nechoď.","keeps key in the outside box by the window, do not enter the house | v1: "
 action.G05.004,Prečo práve ZVON?,
 action.G05.005,Lebo sa hneď na začiatku ozval. A lepšie meno sme vtedy nevymysleli.,
 action.G05.objective,Odomkni Mirinu záhradnú dielňu kľúčom zo schránky.,
 action.G05.journal,Odomkni Mirinu záhradnú dielňu kľúčom zo schránky.,
-action.G06.001,Kľúč pasuje. Aspoň niečo dnes funguje na prvý pokus.,
-action.G07.001,ZVON a nálepka „Sokolíkova 1995“. Ten prístroj poznám zo školy. Len som ho nikdy nevidel otvorený.,
+action.G06.001,Kľúč pasuje a zámok ani nevrzol. Babka ho zrejme maže častejšie ako ja pánty v garáži.,v1 line was the banned ironic-summary example (Aspoň niečo dnes funguje na prvý pokus) | v1: 
+action.G07.001,ZVON a nálepka „Sokolíkova 1995“. Ten prístroj poznám zo školy. Vtedy sme naň nesmeli ani dýchnuť.,"keeps: ZVON, label Sokolíkova 1995, Adam knows it from school | v1: "
 action.G07.002,Nositeľ rozpoznaný. Jeho pamäť je chránená.,deprecated 'spomienková kotva' -> pamäť nositeľa (glossary 8)
-action.G07.003,"Prístroj, ktorý spoznáva ľudí? Babka mala koníčky, o ktorých mi nikdy nepovedala.",
+action.G07.003,"Ja poznám jeho a on pozná mňa. Babka, toto si mi mala povedať, aj keď som sa nepýtal.",callback to Mira's 'Nepýtal si sa' (new G05 line); keeps: the device recognises people; GPT adapt: Real contradiction (Adam recognised the device first in G07.001); own fix keeps the symmetry joke instead of GPT's flat 'Takže ten prístroj spoznal aj mňa'. | v1: 
 action.G07.objective,V zadnej miestnosti dielne prezri servisnú časť stolového uzla ZVON.,
 action.G07.journal,V zadnej miestnosti dielne prezri servisnú časť stolového uzla ZVON.,
 action.G08.001,"Najprv odpojím malý zdroj, potom dám dole kryt. Poistka je prepálená, hodnota sa dá prečítať.",
@@ -51,7 +51,7 @@ action.G11.002,"1995 je rok, nie napätie. Dúfam, že prístroj len ukazuje zl�
 action.G11.objective,V Bratislave v roku 1995 nájdi ZŠ Sokolíkova a v nej Miru.,editor: 'v Bratislave roku 1995' -> 'v roku 1995'
 action.G11.journal,V Bratislave v roku 1995 nájdi ZŠ Sokolíkova a v nej Miru.,editor: same
 action.C01.001,Tak to si bol ty. Ten odtlačok si pamätám.,
-action.C01.002,"Babka, potrebujem bezpečný návratový mostík. Vieš o nejakom?",
+action.C01.002,Potrebujem bezpečný návratový mostík. Vieš o nejakom?,"'Babka,' moved to the new opening line (Babka, som späť); drop: Mira | v1: "
 action.C01.003,Oto jeden postavil v roku 1982 na Sokolíkovej. Pomáhal mu vnuk Tóno.,'bol pri tom' -> 'pomáhal' (matches the 1982 log: pri príprave pomáhal vnuk)
 action.C01.004,Tóno? Náš školník?,
 action.C01.005,"Vtedy chodil do školy. Dnes má päťdesiat a drží ju pokope. Volala som mu, že prídeš po môj technický majetok.",
@@ -61,14 +61,14 @@ action.C01.objective,V Dúbravke v roku 2020 odfoť školský dvor a ohlás sa �
 action.C01.journal,V Dúbravke v roku 2020 odfoť školský dvor a ohlás sa školníkovi Tónovi.,editor: same
 action.D01.label,Odfotiť školský dvor,
 action.D01.001,"Odfotím z chodníka celý roh: asfaltový dvor a servisné okno s lastovičkou. Žiadny strom, žiadny múrik.",Adam cannot know yet that tree/wall are 'missing'; same facts as plain observation
-action.D01.002,"Fotka ostane v chránenej pamäti telefónu, aj keby sa dvor medzičasom zmenil.",
+action.D01.002,"Fotka ostane v chránenej pamäti telefónu, aj keby sa dvor zmenil. Babkine rady beriem doslova.",keeps the protected-photo fact; reacts to Mira's new C01 line (Dvor si odfoť) | v1: 
 action.D01.objective,Ohlás sa Tónovi pri školníckom servisnom okne.,
 action.D01.journal,Ohlás sa Tónovi pri školníckom servisnom okne.,
 action.D02.label,Ukázať Tónovi Mirin chronometer,
 action.D02.001,"Prístroj pani Hruškovej. Vravela, že prídete. Dedo k nemu v roku 1982 robil mostík, ale ten sa časom stratil.",
 action.D02.002,Ostal po ňom aspoň nákres?,
 action.D02.003,"Dedo všetko zapisoval do servisnej knihy v kabinete. Povolenie máte pripravené, Jana vás tam pustí na diaľku.",now answers Adam's question; points to the service book (same as the objective); 'servisná trasa' simplified
-action.D02.005,"Ostatné triedy sú zatvorené. Dnes si každý drží svoje miesto, ja tu za oknom.",'Ostatné triedy zostanú zatvorené' moved here from .003
+action.D02.005,Ostatné triedy sú zatvorené. Dnes každý zostáva na svojom mieste. Ja tu za oknom.,"tone pass 2026-10-06, GPT unnatural flag accepted | 'Ostatné triedy zostanú zatvorené' moved here from .003"
 action.D02.objective,Vo fyzikálnom kabinete nájdi Otov servisný záznam z roku 1982.,
 action.D02.journal,Vo fyzikálnom kabinete nájdi Otov servisný záznam z roku 1982.,
 action.D03.label,Prečítať záznam a schému návratového mostíka,
@@ -89,7 +89,7 @@ action.D06.002,Ten istý kus. Na žiadnu súčiastku som ešte nečakal tridsať
 action.D06.journal,"Pohár je otvorený, mostík celý a kontakty očistené.",
 action.D07.label,Ukázať Tónovi zachovaný mostík,
 action.D07.002,"Tak predsa. Vtedy som mal dvanásť, teraz mám päťdesiat. A ty nosíš stále tú istú bundu.",
-action.D07.004,"Pre mňa celý život. A v ňom jedna zvláštna dohoda, ktorú som nevyhodil so starými papiermi.",
+action.D07.004,Pre mňa celý život. Ale tú zvláštnu dohodu som so starými papiermi nevyhodil.,"tone pass 2026-10-06, GPT tone flag accepted | "
 action.D07.005,"Ďakujem, že si na mňa čakal.",
 action.D07.007,To je ešte lepšie.,
 action.D07.008,"Ak ešte stretneš toho dvanásťročného, povedz mu, že lietadlo z krúžku nakoniec poletí. Nech ho nehádže z okna.",'toho malého' was ambiguous (could read as Adam aged 10); it is Tóno at 12; 'toho malého' was ambiguous; it is Tóno at 12 (game.json: he draws airplanes); editor: trimmed to 110
@@ -106,11 +106,11 @@ action.C03.001,"Z-17, z prístrešku do dielne v záhrade. Pamätám si ju, bola
 action.C03.objective,"Vráť protokol Ele, nech potvrdí, že krabicu vydala.",
 action.C03.journal,"Vráť protokol Ele, nech potvrdí, že krabicu vydala.",
 action.C04.label,Dať Ele podpísať protokol,
-action.C04.001,"Prevzatie sedí. Dopíšem vydanie a súhlas tvojej babky. Zvláštne, jej meno pred chvíľou blednulo. Teraz drží.",
+action.C04.001,"Prevzatie sedí. Dopíšem vydanie a súhlas tvojej babky. Zvláštne, jej meno pred chvíľou bledlo. Teraz drží.","tone pass 2026-10-06, GPT grammar flag accepted | "
 action.C04.002,Aj obyčajný papier niekedy niečo zachráni.,
 action.C04.objective,V dielni nechaj chronometer na stolovom uzle ZVON načítať potvrdené odovzdanie.,editor: names the item the player holds (Potvrdené odovzdanie 2020); drop: protokol
 action.C04.journal,V dielni nechaj chronometer na stolovom uzle ZVON načítať potvrdené odovzdanie.,editor: same as objective; drop: protokol
-action.C05.002,"Konečne viem, kam poslať reklamáciu.",
+action.C05.002,Adresu už mám. Reklamáciu im doručím osobne.,"tone pass 2026-10-06, GPT joke flag accepted | "
 action.C05.objective,Na časovom uzle vyber Jasnú 2035 a nájdi kurátorku Ninu.,
 action.C05.journal,Na časovom uzle vyber Jasnú 2035 a nájdi kurátorku Ninu.,
 action.Q1A.label,Čo je s Bodkom?,"Lenka answers first; editor: Adam cannot know about the ball before Lenka says it, the ball is in her answer; drop: loptička"
@@ -121,7 +121,7 @@ action.Q1A.journal,"Lenka hovorí, že Bodka stratil loptičku pri retenčnej n�
 action.Q1B.001,Suchá a poriadne obhryzená. Majiteľ sa prihlási sám.,
 action.Q1B.journal,Bodkovu loptičku mám. Vrátim ju Lenke.,
 action.Q1C.001,Jedna loptička sa našla. Podpísaná zubami.,
-action.Q1C.004,"Oceňujem. Konečne niekto, kto hovorí k veci.",old line was a meta joke about dialogues
+action.Q1C.004,Prijímam. Aj so slinami.,"v1 'Konečne niekto, kto hovorí k veci' was a summary quip; now a reaction the next lines build on | v1: old line was a meta joke about dialogues"
 action.Q1C.journal,Bodka má loptičku späť. Poďakoval sa stručne.,
 action.Q2A.label,Pomôcť vám s oznamom?,Jozef answers first
 action.Q2A.001,"Ak budeš taký dobrý, mladý pán. Potrebujem len hodiny výdaja. Kvôli nim si nový digitálny život nezaložím.",editor: Jozef tyká Adamovi (VOICES); writer had vy
@@ -130,7 +130,7 @@ action.Q2A.003,Tak ti vopred ďakujem. Veľkými písmenami.,editor: vy -> ty (J
 action.Q2A.journal,Pán Jozef potrebuje hodiny výdaja veľkým písmom. Poprosím Elu o veľký oznam.,
 action.Q2B.label,Máš oznam veľkým písmom?,Ela answers first
 action.Q2B.001,"Mám. Susedská pomoc, hodiny aj telefón, všetko veľkým písmom. A bez QR kódu.",
-action.Q2B.002,Takéto rozhranie pán Jozef schváli.,
+action.Q2B.002,Tú veľkú si pán Jozef prečíta aj z lavičky.,v1 'Takéto rozhranie pán Jozef schváli' was a wink; now follows Ela's three versions | v1: 
 action.Q2B.journal,Od Ely mám veľký oznam. Pripnem ho na vývesku v Čiernej Vode.,
 action.Q2C.label,Pripnúť veľký oznam na vývesku,
 action.Q2C.002,Aj telefónne číslo je veľkým písmom.,
@@ -149,19 +149,18 @@ look.S02.LENKA,"Lenka drží vôdzku. Bodka je presvedčený, že by nemusela.",
 look.S02.ROMAN,"Roman, kuriér. Balík doručí aj podľa opisu bránky.",
 exit.S02.to_S05.label,Mirina bránka,glossary rename
 conn.S02.S05.label,Mirina bránka,glossary rename
-conn.S02.S51.label,Dúbravka 2020,'cez regionálnu mapu' was a design note; map/era style; drop: mapa
 entry.S03.001,Výdajné miesto. Ela tu vybavuje telefóny aj zemiaky naraz.,drop: dobrovoľnícke ('call centrum' anglicism removed)
-look.S03.ambient 1,Páska na zemi ukazuje odstup. Funguje aj bez aplikácie.,
+look.S03.ambient 1,"Páska na zemi ukazuje dva metre odstupu. Ela ich má odkrokované, ja by som trafil tak meter osemdesiat.","tone pass 2026-10-06, GPT joke flag adapted | "
 look.S03.ambient 2,Na Elinej termoske je napísané NEDOLIEVAŤ POLIEVKU. To bude zo skúsenosti.,
-look.S03.supplies,Každá taška má meno a súhlas adresáta. Ela vedie poriadok ceruzkou.,editor: second 'bez aplikácie' joke in the same room as ambient 1
-look.S04.ambient 1,Ceny písané rukou. Všetky končia na pekné okrúhle číslo.,
-look.S04.ambient 2,Pár zemiakov už klíči. Aspoň niekto tu má plány do budúcnosti.,
+look.S03.supplies,"Ku každej taške má Ela meno aj súhlas adresáta. Píše ceruzkou, objednávky sa menia do poslednej chvíle.","tone pass 2026-10-06, GPT unnatural flag adapted | editor: second 'bez aplikácie' joke in the same room as ambient 1"
+look.S04.ambient 1,"Ceny písané rukou, samé okrúhle sumy. Drobné sa cez okienko podávajú zle.","tone pass 2026-10-06, GPT nonsense flag adapted | "
+look.S04.ambient 2,Pár zemiakov už klíči. Ešte týždeň a Dana ich bude predávať ako sadbu.,"tone pass 2026-10-06, GPT joke flag adapted | "
 room.S05.name,Mirina bránka,glossary rename
-entry.S05.001,"Babkina bránka. Je v karanténe, takže do domu dnes nejdem.",
+entry.S05.001,"Babkina bránka. Babka je v karanténe, takže ďalej ako po stolík dnes nesmiem.",clearer: the table is as far as Adam goes | v1: 
 look.S05.ambient 1,Babka pozná mená všetkých odrôd aj susedov. K odrodám je zhovievavejšia.,
-look.S05.ambient 2,"Rohožka VITAJTE je otočená k dverám, akoby vítala ľudí von. V roku 2020 to sedí.",
-look.S05.shed_door,"Babkina dielňa v záhrade, oddelená od domu. Na tie dvere treba babkin kľúč.",editor: look has no variant; writer's 'Je zamknutá' would stay wrong after unlocking; this works in both states
-look.S05.tray,"Sem nechám nákup. Babka si ho vezme, až keď odstúpim.",
+look.S05.ambient 2,"Rohožka VITAJTE je otočená nápisom k dverám. Od marca víta len tých, čo odchádzajú.","tone pass 2026-10-06, GPT joke flag adapted | drop: 2020 (the year is shown by the era; 'od marca' keeps the time) | "
+look.S05.shed_door,"Babkina dielňa stojí v záhrade, mimo domu. Je zamknutá a kľúč od nej má babka.",progress look: says what is missing (Mira's key) without officialese | v1: editor: look has no variant; writer's 'Je zamknutá' would stay wrong after unlocking; this works in both states
+look.S05.tray,"Tu nechám nákup. Babka si ho vezme, až keď odstúpim.","tone pass 2026-10-06, GPT grammar flag accepted | "
 exit.S05.to_S06.locked,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,style guide 3.1 example
 exit.S05.to_S09.locked,Dvere dielne sú zamknuté. Najprv ich musím odomknúť babkiným kľúčom.,old line assumed Adam already had the key; this works before and after he gets it
 conn.S05.S06.locked,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,
@@ -176,55 +175,55 @@ look.S06.photo.variant2,"Babkino meno je už zase čitateľné, obrys ešte bled
 exit.S06.to_S05.label,Mirina bránka,glossary rename
 exit.S06.to_S05.locked,Najprv položím babke nákup na stolík. Potom pôjdem k oknu.,unreachable in practice (S06 is entered only after the groceries); same text as the reverse lock
 entry.S09.001,Babka tomu hovorí „pár vecí“. Skladník by povedal „menší sklad“.,
-look.S09.ambient 1,"Tri lyže. Prečo práve tri, nevie ani babka.",
+look.S09.ambient 1,"Tri lyže. Babka určite vie, prečo práve tri, a určite to bude logické.",set-up; Mira pays it off in topic MIRA20.ambient 2 (dve lyže a náhradný diel); GPT accept: Missing comma before 'prečo'. | v1: 
 look.S09.case,"Mosadzné puzdro s nápisom ZVON a menom M. Hrušková. Nie je zamknuté, len vyzerá dôležito.","scene description calls the case 'uzamknuté', but the click opens it without a key; kept the look's fact (not locked)"
 exit.S09.to_S05.label,Mirina bránka,glossary rename
 exit.S09.to_S05.locked,Dvere dielne sú zamknuté. Najprv ich musím odomknúť babkiným kľúčom.,unreachable in practice; same text as the reverse lock
-entry.S10.001,Na stene visí výstraha NESYNCHRONIZOVAŤ BEZ SVEDKA. Takú nemá ani tlaková umývačka.,editor: smoother punchline
-look.S10.ambient 2,NEPREPISOVAŤ ORIGINÁL. Babka to napísala trikrát. Asi vedela prečo.,
+entry.S10.001,Na stene visí výstraha NEPREPISOVAŤ ORIGINÁL. Ja poznám skôr NEOTVÁRAŤ. Tú som nikdy nedodržal.,"tone pass 2026-10-06, GPT joke flag adapted | editor: smoother punchline"
+look.S10.ambient 2,"NEPREPISOVAŤ ORIGINÁL, trikrát podčiarknuté. Babka nepodčiarkuje nič, čo nemyslí vážne.",keeps the painted sign verbatim | v1: 
 look.S10.chrono,"Stolový uzol s kolískou na nízke napätie. Chronometer patrí doprostred. Ak kolíska nesvieti, je to poistka.","editor: DATA: no variant after the fuse is replaced (G10); made state-neutral so it is not wrong later, the fuse clue is kept; a variant after G10 is still recommended"
-look.S10.panel,"Schéma nad panelom vedie kruh ku kruhu, trojuholník k trojuholníku a štvorec k štvorcu. Na farbách nezáleží.",
+look.S10.panel,"Schéma nad panelom spája kruh s kruhom, trojuholník s trojuholníkom a štvorec so štvorcom. Na farbe nezáleží.","tone pass 2026-10-06, GPT unnatural flag adapted | "
 look.S51.ambient 2,"Ukazuje, o koľko minút príde autobus. Ja by som dnes ocenil aj rok.",
-look.S51.clock,Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. Chronometer by cez neho našiel aj rok 1982.,
+look.S51.clock,Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. S ním by chronometer našiel aj rok 1982.,"tone pass 2026-10-06, GPT grammar flag adapted | "
 entry.S52.001,Moja stará škola. Prvý raz ju počujem úplne tichú.,
-look.S52.ambient 1,Triedy sú pre návštevy zatvorené. Vyzdvihnúť vec sa dá len s povolením vopred.,
-look.S52.ambient 2,Ten kvetináč poznám. Len odpadky v ňom sú dnes modernejšie.,
+look.S52.ambient 1,"Oznam: triedy sú pre návštevy zatvorené, veci sa vydávajú len s povolením. Hneď som sa vystrel.",the notice is official on purpose; Adam's reaction is the joke; GPT adapt: Agree 'vyzdvihnúť vec sa dá' was wooden; GPT's 'Ak si chcem niečo vyzdvihnúť' makes a notice speak in Adam's first person. Keeps povolenie; past tense of the reaction is fine. | v1: 
+look.S52.ambient 2,"Ten istý kvetináč pri bráne. Kvet v ňom nebol ani za mojich čias, len papieriky od žuvačiek.",tone pass: 'odpadky sú modernejšie' was an ironic tag; childhood callback | 
 look.S52.photo,"Z chodníka vidím roh dvora aj servisné okno s kovovou lastovičkou. Dvor je samý asfalt, bez stromu a múrika.",
 exit.S52.to_S53.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 exit.S52.to_S55.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 conn.S52.S53.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 conn.S52.S55.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 conn.S52.S56.label,Školnícke servisné okno v roku 2020,"DATA: label said 'Okno bývalej školníckej dielne', but Tóno still works there and the room is 'Školnícke servisné okno v roku 2020'; made equal to the room name"
-entry.S56.001,"Tóno, o dvadsaťpäť rokov starší. V roku 1995 mi otváral kabinet, dnes sedí za zatvoreným oknom.",old line (homework joke) made no sense
+entry.S56.001,"Tóno, náš školník. Keď mi v roku 1995 otváral kabinet, nemal ešte sivé spánky.",works whether the player has been to 1995 or only remembers Tóno from school ('o dvadsaťpäť rokov starší' assumed the 1995 visit); drop: 25 | v1: old line (homework joke) made no sense
 look.S56.TONO20,"Päťdesiatročný Tóno pri tom istom okne. V prstoch otáča malým kľúčikom, presne ako v roku 1995.",
 look.S56.ambient 1,"Na rímse má Tóno tú istú kovovú lastovičku. Trochu obitá, ale drží.",
 look.S56.ambient 2,"Tóno opravuje búdku pre školský dvor. Aj v zatvorenej škole niekto myslí na to, že sa deti vrátia.",
-entry.S53.001,Za mňa sa tu kontrolovali prezuvky. Dnes rúška a dezinfekcia. Zádverie si poriadok drží stále.,removed 'odolnejšie než vírus' (no jokes about the illness)
-look.S53.ambient 1,Priehľadná hranica medzi „ahoj“ a „radšej zavolaj“.,
+entry.S53.001,"Keď som sem chodil, bez prezuviek ma nepustili. Dnes zas bez rúška a dezinfekcie.","tone pass 2026-10-06, GPT joke flag accepted | removed 'odolnejšie než vírus' (no jokes about the illness)"
+look.S53.ambient 1,"Plexisklo s okienkom na papiere. Pozdraviť sa dá, podať si ruku nie.","tone pass verification 2026-10-06, GPT grammar flag adapted | tone pass: 'Priehľadná hranica medzi „ahoj“ a „radšej zavolaj“' was a clever image without a situation; plain covid-logistics observation | "
 look.S53.ambient 2,Pomôcky na požičanie domov. Škola sa teraz na chvíľu zmestí do krabice.,
 exit.S53.to_S52.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,unreachable in practice (inside the school before the permission); same text as the outer locks
 exit.S53.to_S54.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 conn.S53.S54.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,
 entry.S54.001,Prvý raz som v kabinete s povolením a bez strachu zo známky. Trvalo mi to len štvrťstoročie.,
-look.S54.JANA20,Jana je na videohovore. Tento rok sa veľa ľudí zmestí do jedného obdĺžnika.,
-look.S54.ambient 2,"Notebook na požičanie. Má internet, ja dnes potrebujem papier.",
+look.S54.JANA20,Na notebooku na lavici je Jana na videohovore. Pozerá na mňa trochu zhora ako kedysi učiteľky z katedry.,"tone pass verification 2026-10-06, GPT unnatural flag adapted | tone pass: 'veľa ľudí sa zmestí do jedného obdĺžnika' was an image without meaning; the camera angle (her D03 line 'Vidím vás, len trochu zhora') as a school memory | "
+look.S54.ambient 2,"Notebook na požičanie. Na nálepke je meno dieťaťa a pod ním ceruzkou: „Najprv úlohy, potom hry.“","tone pass: 'Má internet, ja dnes potrebujem papier' was flat; a parent's note on a loaned laptop (situational, 2020) | "
 look.S54.log,"Záznam zo 7. decembra 1982: Otov nákres návratového mostíka, pomáhal vnuk Tóno. Mostík sa neskôr stratil.",removed design jargon 'v pôvodnej línii'
 exit.S54.to_S53.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,unreachable in practice (inside the school before the permission); same text as the outer locks
 entry.S55.001,"Ten roh poznám. Mám pocit, že tu niečo chýba, a nie je to lavička.",
-look.S55.ambient 1,Na asfalte sú značky odstupu pre výdaj. Na čakanie tu nie je tieň ani kde si sadnúť.,
-look.S55.ambient 1.variant1,"Výdajné miesto je teraz pod veľkou lipou. Značky odstupu zostali, koruna im pridala tieň.",
+look.S55.ambient 1,Na asfalte sú značky odstupu pri výdaji. Pri čakaní sa tu nedá schovať do tieňa ani si sadnúť.,"tone pass 2026-10-06, GPT unnatural flag accepted | "
+look.S55.ambient 1.variant1,"Výdajné miesto je teraz pod veľkou lipou. Značky odstupu zostali, ale už sú v tieni.","tone pass 2026-10-06, GPT unnatural flag accepted | "
 hotspot.S55.ambient 2.name,Kôš,spelling: kôš (cf. 'Basketbalový kôš' in S17)
-look.S55.ambient 2,Ten istý kôš ako vždy. Aspoň niečo má v každom roku jasnú úlohu.,
-look.S55.cache,Pod lipou stojí nízky múrik s pôvodnými tehlami. Na mojej fotke je na tomto mieste iba asfalt.,"hotspot appears only after the tree is saved, so the look now describes that state and contrasts it with the photo"
+look.S55.ambient 2,"Ten istý kôš ako za mojich čias. Riaditelia sa menili, kôš zostal.","cross-era running gag (the same bin), less of an ironic summary; GPT adapt: Agree 'jasnú úlohu' was the old summary tag; GPT's 'stále slúži' is flat. Own fix is the cross-era 'things outlive people' gag, told straight. | v1: "
+look.S55.cache,"Pod lipou stojí nízky múrik, na mojej fotke je tu iba asfalt. Servisnú dosku otvorím náradím z brašne.","hotspot appears only after the tree is saved, so the look now describes that state and contrasts it with the photo"
 exit.S55.to_S52.locked,Do školy smiem len s povolením. Najprv sa ohlásim Tónovi pri servisnom okne.,unreachable in practice (inside the school before the permission); same text as the outer locks
 entry.S08.001,Retenčná nádrž. Voda tu pokojne stojí. Obecná skupina na internete by sa od nej mohla učiť.,style guide 6.2 example
-look.S08.ambient 1,"Kačka. Tvári sa, že situáciu prekonzultovala a nesúhlasí.",
+look.S08.ambient 1,"Kačka. Od brehu si drží odstup, odkedy sem chodí Bodka.",tone pass: 'situáciu prekonzultovala a nesúhlasí' was a forced personification; callback to Bodka's walks to the reservoir | 
 look.S08.ambient 2,Tu by som si na chvíľu sadol a nič nezachraňoval.,
-look.S08.ball,Na suchej strane zábradlia leží obhryzená loptička. Jej majiteľ straty a nálezy nečíta. Je to pes.,
-entry.S07.001,"Na výveske je QR kód, pán pri nej má lupu. Tieto dve technológie sa zatiaľ nedohodli.",
+look.S08.ball,Na suchej strane zábradlia leží obhryzená loptička. Jej psí majiteľ straty a nálezy nečíta.,"tone pass 2026-10-06, GPT joke flag accepted | "
+entry.S07.001,"Na výveske je QR kód a pod ním pán s lupou. Vyzerá to, že tu bude treba tlmočníka.","tone pass verification 2026-10-06, GPT joke flag adapted | "
 look.S07.JOZEF,Pán Jozef so skladacou lupou. Na výveske prečíta všetko okrem QR kódu.,editor: writer's 'prečíta každé slovo' contradicted his problem (he cannot read the hours)
 look.S07.ambient 1,Kurz spoločenských tancov. Dočasne tancuje každý sám.,
-look.S07.ambient 2,"Lupa pána Jozefa. Poctivé sklo, nepotrebuje heslo ani aktualizáciu.",
+look.S07.ambient 2,"Lupa pána Jozefa. Skladacia, v koženom puzdre a bez batérie. Takú by som opravoval rád, ale niet čo.",tone pass: 'nepotrebuje heslo ani aktualizáciu' was the old ironic tag; Adam's repairman view of a well-made object | 
 look.S07.board,Hodiny susedskej pomoci sú schované v drobnom QR kóde. Obyčajné písmená by tu pomohli viac.,
 topic.DANA.ambient 1.001,Čo ti teraz dochádza najrýchlejšie?,
 topic.DANA.ambient 1.002,Trpezlivosť. A tú nemám ako doobjednať.,
@@ -236,16 +235,16 @@ topic.DANA.ambient 2.label,Čo babka objednala?,
 topic.ELA.ambient 2.001,Nedolievať polievku? To sa tu naozaj stalo?,
 topic.ELA.ambient 2.002,Raz. Niekto mi do termosky s kávou dolial polievku z výdaja. Stačilo to.,old answer inverted the sign and did not explain it
 topic.JANA20.ambient 1.001,"Po dohode a každý zvlášť. Kto si pomôcky vyzdvihne, podpíše preberací list a s nikým sa nestretne.","editor: Adam's reply is about paperwork, so Jana now mentions the form"
-topic.JANA20.ambient 1.002,"Prvý raz vidím papierovanie, ktoré ľuďom naozaj pomáha.",
+topic.JANA20.ambient 1.002,"Papierovanie, ktoré naozaj pomáha. Tak to sa vám už asi nič nestratí.","tone pass 2026-10-06, GPT joke flag adapted | "
 topic.JANA20.ambient 1.label,Ako funguje výdaj pomôcok?,
 topic.JOZEF.ambient 2.001,"Nie. Čakám, kým mi niekto povie, čo je v tom štvorčeku na výveske.","'tabuli' -> 'výveske' (the board next to him); editor: points at the QR code, consistent with the look and Q2"
-topic.JOZEF.ambient 2.002,To vybavíme rýchlejšie ako autobus.,
+topic.JOZEF.ambient 2.002,"To zistíme skôr, než príde autobus.","tone pass 2026-10-06, GPT unnatural flag accepted | "
 topic.LENKA.ambient 1.001,Prečo sa vlastne volá Bodka?,"editor: 'nazvala Bodka' is a case error; label is 'Bodkovo meno', so no repetition"
 topic.LENKA.ambient 1.002,"Lebo keď poviem „dosť, bodka“, on má vždy ešte jedno hafnutie navyše.",
-topic.LENKA.ambient 1.003,Takže Bodka s pokračovaním.,
+topic.LENKA.ambient 1.003,"Bodka, ešte chceš niečo dodať?","tone pass 2026-10-06, GPT joke flag accepted | "
 topic.LENKA.ambient 1.label,Bodkovo meno,
 topic.LENKA.ambient 2.001,"Vôbec. Myslí si, že celý svet konečne objavil prechádzky.",editor: answers the new label
-topic.LENKA.ambient 2.002,Na jeho pomery celkom presná analýza.,
+topic.LENKA.ambient 2.002,A má pravdu? Chodíte teraz častejšie?,v1 'Na jeho pomery celkom presná analýza' was an ironic summary; now a follow-up question | v1: 
 topic.LENKA.ambient 2.label,Bodkovi pandémia nevadí?,editor: 'Ako sa má Bodka?' was too close to the story label 'Čo je s Bodkom?' in the same menu
 topic.MIRA20.after.001,"Babka, vieš, čo sa stalo?",
 topic.MIRA20.after.003,Bude to dlhé rozprávanie.,
@@ -253,12 +252,12 @@ topic.MIRA20.ambient 1.001,Všetko v poriadku? Ale úprimne.,editor: 'nechýba t
 topic.MIRA20.ambient 1.002,"Som doma, mám všetko a voláme si. Nerob zo mňa ďalšiu položku na zozname.",
 topic.MIRA20.ambient 1.003,Dobre. Tak budeš na zozname aspoň prvá.,editor: 'Budeš len tá prvá' did not land
 topic.MIRA20.ambient 1.label,Ako sa máš?,
-topic.MIRA20.ambient 2.001,"Opravená vec si pamätá, kde sa pokazila.",
+topic.MIRA20.ambient 2.001,"Na opravenej veci vidno, kde sa pokazila. Nová ti to nepovie.","tone pass 2026-10-06, GPT tone flag adapted | "
 topic.MIRA20.ambient 2.002,A to je výhoda?,
 topic.MIRA20.ambient 2.label,Prečo si tie veci nechala?,
 topic.ROMAN.ambient 1.001,Veľa adries dnes?,
 topic.ROMAN.ambient 1.002,"Dve mi dnes opísali ako „ten dom, čo býval žltý“.",
-topic.ROMAN.ambient 1.003,Navigácia s historickou vrstvou. Poznám.,
+topic.ROMAN.ambient 1.003,A ktorý to je?,v1 'Navigácia s historickou vrstvou. Poznám.' is a banned-pattern example in WRITING_METHOD.md 1.4 | v1: 
 topic.ROMAN.ambient 1.label,Ako ide rozvoz?,style guide 6.7 example
 topic.ROMAN.ambient 2.001,Teraz len zazvoníš a utekáš?,editor: line repeated the label 'Balíky pred dverami'
 topic.ROMAN.ambient 2.002,"Presne tak. A ľudia mi ďakujú a mávajú cez okná. Zvláštne, ale milé.",
@@ -266,7 +265,7 @@ topic.ROMAN.ambient 2.label,Balíky pred dverami,
 topic.TONO20.ambient 1.002,Škola teda úplne nezastala.,
 topic.TONO20.ambient 1.label,Tá búdka?,old label 'Ešte opravujete?' showed vy; Tóno's ambient topics must be address-neutral; the birdhouse is a hotspot in the room
 topic.TONO20.ambient 2.001,Teraz musí byť. Ale prázdna nebude navždy.,
-topic.TONO20.ambient 2.002,Tú vetu si zapamätám.,
+topic.TONO20.ambient 2.002,Teraz tu počuť aj vlastné kroky.,"tone pass 2026-10-06, GPT tone flag adapted | "
 topic.TONO20.ambient 2.label,Škola je taká tichá,
 item.PHONE,Batéria je nabitá. Mimo roku 2020 mi z telefónu ostal fotoaparát a poznámky. Signál nečakám.,style guide 6.3 example
 item.PHONE.purpose,Fotografovať a robiť si zápisky. Neskôr odfotiť panel v roku 2035.,
@@ -276,9 +275,9 @@ item.ORDER.name,Mirin nákupný lístok,glossary rename
 item.ORDER.purpose,Vyzdvihnúť u Dany Mirin nákup.,
 item.GROCERIES,Zavretá taška pre babku. Nesiem ju za obe uchá.,removed design note; drop: Mira
 item.GROCERIES.purpose,Nechať na stolíku pred Mirinou bránkou.,
-item.SHEDKEY,Mosadzný kľúč od babkinej dielne v záhrade.,
+item.SHEDKEY,"Mosadzný kľúč od babkinej dielne. Na prívesku je štítok DIELŇA, keby som zabudol.","livelier, same fact | v1: "
 item.SHEDKEY.purpose,Odomknúť záhradnú dielňu.,
-item.CHRONO,"Mosadzný prístroj so štyrmi svetielkami a logom krúžku. Jeho ochranné pole chráni mňa aj všetko, čo nesiem.",deprecated 'bublina' -> ochranné pole
+item.CHRONO,"Mosadzný prístroj so štyrmi svetielkami a značkou krúžku. Jeho ochranné pole chráni mňa aj všetko, čo nesiem.",deprecated 'bublina' -> ochranné pole
 item.CHRONO.purpose,"Cestovať časom, ukázať ho odborníkom a merať pri Vrbickom plese.",
 item.FUSE_OLD,"Prepálená, ale hodnota sa dá prečítať. Patrí do elektroodpadu, nie späť do prístroja.",
 item.FUSE_OLD.purpose,Podľa nej nájsť rovnakú náhradu.,
@@ -304,29 +303,37 @@ item.FLYER,"SUSEDSKÁ POMOC 9–17 a pod tým Elino číslo, všetko veľkým p�
 quest.M01.goal,Pomôž Mire s nákupom a dostaň sa do jej záhradnej dielne.,style guide 6.8 example
 quest.M01.hint.1,Začni na dobrovoľníckom výdajnom mieste u Ely.,
 quest.M01.hint.2,"Ela ti dá nákupný lístok, Dana zaň tašku. Nechaj ju na stolíku pred bránkou a potom zavolaj Mire pod oknom.",
-quest.M01.hint.3,Servisná brašna v garáži → Ela: téma Babkin nákup → nákupný lístok na Danu → taška s nákupom na stolík pred bránkou → pod zatvoreným oknom Mira: téma Potrebuješ ešte niečo?,topic names updated to the new labels; topic names = new labels (editor: G05 label changed)
+quest.M01.hint.3,Servisná brašna v garáži → Ela: téma „Babkin nákup“ → nákupný lístok na Danu → taška s nákupom na stolík pred bránkou → pod zatvoreným oknom Mira: téma „Potrebuješ ešte niečo?“,topic names updated to the new labels; topic names = new labels (editor: G05 label changed)
 quest.M02.goal,Oprav kolísku stolového uzla ZVON a otvor prvé časové okno.,
 quest.M02.hint.1,Prístroj v dielni nefunguje kvôli jednej obyčajnej poruche.,
 quest.M02.hint.2,Kľúčom odomkni dielňu a vezmi chronometer z puzdra. Brašnou otvor servisný kryt; rovnakú poistku máš v garáži.,
 quest.M02.hint.3,Kľúč na dvere dielne → chronometer z mosadzného puzdra → servisná brašna na kolísku stolového uzla → poistka zo zásuvky v garáži → vložiť do kolísky → na tvarovom paneli spoj rovnaké tvary.,
 quest.M11A.goal,V Dúbravke v roku 2020 nájdi stopu po stratenom návratovom mostíku.,editor: 'v roku'
-quest.M11A.hint.1,Mira ťa posiela za päťdesiatročným školníkom Tónom na Sokolíkovu.,
+quest.M11A.hint.1,Mira ťa posiela za päťdesiatročným školníkom Tónom na Sokolíkovu. Do Dúbravky ide autobus zo zastávky v Čiernej Vode.,
 quest.M11A.hint.2,Najprv z chodníka odfoť školský dvor v roku 2020. Potom ukáž chronometer Tónovi pri starom servisnom okne.,
 quest.M11D.goal,Pomôž Ele zapísať skutočný presun Mirinej krabice a otvor cestu do Jasnej 2035.,
 quest.M11D.hint.1,"Keď máš mostík, vráť sa za dobrovoľníkmi do Grobu.",drop: rezervy
 quest.M11D.hint.2,"Ela ti dá pôvodný protokol o odovzdaní. Roman na ulici podpíše prevzatie, potom Ela podpíše vydanie.",
-quest.M11D.hint.3,Ela: téma Protokol k babkinej krabici → protokol o odovzdaní na Romana → protokol s Romanovým podpisom na Elu → potvrdené odovzdanie 2020 na stolový uzol ZVON; mostík musí byť v brašni.,topic name updated to the new label; drop: Mira
+quest.M11D.hint.3,Ela: téma „Protokol k babkinej krabici“ → protokol o odovzdaní na Romana → protokol s Romanovým podpisom na Elu → potvrdené odovzdanie 2020 na stolový uzol ZVON; mostík musí byť v brašni.,topic name updated to the new label; drop: Mira
 quest.Q1.goal,Nájdi Bodkovu loptičku a vráť ju Lenke.,drop: psovi
 quest.Q1.hint.1,"Lenka so psom je na ulici medzi plotmi, pri dodávke.",
 quest.Q1.hint.2,Loptička ostala na suchej strane zábradlia pri retenčnej nádrži v Čiernej Vode.,
-quest.Q1.hint.3,Lenka na ulici medzi plotmi: téma Čo je s Bodkom? → červená loptička pri retenčnej nádrži → Bodkova loptička na Lenku.,editor: Q1A label changed
+quest.Q1.hint.3,Lenka na ulici medzi plotmi: téma „Čo je s Bodkom?“ → červená loptička pri retenčnej nádrži → Bodkova loptička na Lenku.,editor: Q1A label changed
 quest.Q2.goal,"Zaves na vývesku v Čiernej Vode oznam, ktorý si prečíta aj pán Jozef.",drop: susedskú pomoc
 quest.Q2.hint.1,Pán Jozef pri výveske v Čiernej Vode si nevie prečítať hodiny susedskej pomoci.,
 quest.Q2.hint.2,Ela vie na výdajnom mieste vytlačiť ten istý oznam veľkým písmom.,
-quest.Q2.hint.3,Pán Jozef pri výveske: téma Pomôcť vám s oznamom? → Ela vo výdajnom mieste: téma Máš oznam veľkým písmom? → veľký oznam na vývesku.,
+quest.Q2.hint.3,Pán Jozef pri výveske: téma „Pomôcť vám s oznamom?“ → Ela vo výdajnom mieste: téma „Máš oznam veľkým písmom?“ → veľký oznam na vývesku.,
 puzzle.P01.clue,Spoj rovnaké tvary. Na farbách nezáleží.,
 puzzle.P01.wrong,Tieto tvary k sebe nepatria. Schéma nad panelom spája rovnaký s rovnakým.,editor: wrong line now says where the clue is (style guide 6.11)
 journal.clue.P01,"zhoda troch tvarov, farba nerozhoduje",
 puzzle.P05.clue,"Nákres servisnej dutiny aj Tónova poznámka z roku 1995: druhý rad zhora, tretí kameň zľava. Vedľa pôvodná fotografia dvora.",
 puzzle.P05.wrong,"Tu je plná tehla, tú páčiť nebudem. Podľa poznámky je to rad dva, stĺpec tri.",
 journal.clue.P05,"mriežka 3 × 4: rad 2, stĺpec 3",typography 3 × 4
+entry.S51.001,Dúbravská zastávka. Odtiaľto som chodil do školy a čaká sa tu stále rovnako.,now true in any visit order (v1 assumed the 1995 stop was seen; the bus may bring Adam here earlier); GPT accept: 'Čaká sa tu stále rovnako' is natural spoken Slovak.
+item.ORDER,"Čaj, zemiaky a ovsené vločky, babkiným písmom. Dana má tašku pripravenú.",pairs with Dana's new G03 line about Mira's handwriting
+item.BALL,Obhryzená červená loptička. Bodka ju zjavne miluje celým chrupom.,livelier; drop: suchý breh (Q1B already says where it was)
+topic.ELA.ambient 1.003,Tak ma pripíš medzi pomocníkov.,v1 'Tak aspoň jedna krivka ide dobrým smerom' is the banned ironic-summary example; GPT trial decision (C1_test) adapted
+look.S10.ambient 1,"Štyri ceruzky, tri epochy, jedna vyschnutá fixka.","tone pass 2026-10-06, GPT grammar flag adapted"
+look.S51.ambient 1,Ten istý odštiepený roh obrubníka. Zakopával som oň celý prvý stupeň.,"tone pass 2026-10-06, GPT joke flag adapted"
+look.S54.ambient 1,Tá istá skriňa aj po toľkých rokoch. Odreninu pri ľavom pánte by som našiel aj so zavretými očami.,"tone pass verification 2026-10-06, GPT joke flag adapted | tone pass 2026-10-06, GPT nonsense flag adapted"
+look.S09.ambient 2,"Školský glóbus. Polovica štátov na ňom už neexistuje, ale oceány sedia presne.",tone pass: 'oceány mali rozum' was a forced personification; repairman's check of an outdated device

@@ -136,7 +136,7 @@ public partial class SettingsScreen : ModalScreen
                 {
                     UiSettings.TipsShown = false;
                     UiSettings.Save();
-                    UiRoot.Instance?.Toasts.Show(Ui.T("ui.settings.tips_reset_done"));
+                    ShowStatus(Ui.T("ui.settings.tips_reset_done"));
                 });
                 tips.SizeFlagsHorizontal = SizeFlags.ShrinkBegin;
                 content.AddChild(tips);

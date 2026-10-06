@@ -81,6 +81,7 @@ public partial class CursorLayer : Control
         if (item is not null) return CursorKind.Item;
         if (GetViewport().GuiGetHoveredControl() is not null || stage.Current is not { } room || !stage.IsSettled) return CursorKind.Pointer;
         var hit = room.HitTest(stage.GetGlobalMousePosition());
+        if (room.TimeNodeTakes(stage.GetGlobalMousePosition(), hit)) return CursorKind.Hand; // painted node clock (PT-F10)
         if (Equals(hit, lastHit) && ReferenceEquals(state, lastState)) return worldKind;
         lastHit = hit;
         lastState = state;

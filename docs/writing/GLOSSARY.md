@@ -218,7 +218,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | **Zvukový atlas našej školy**, **krúžok** | Mira's and Lea's afternoon club and its tape, 1995 (*trieda pamäťového krúžku*) | |
 | **Mirin fond**, **fond Z-17**, **krabica Z-17** | Mira's technical archive: registered at the post office in 1960 as **Z-17**, the box moved by Roman in 2020, catalogued by Atlas in 2035 | |
 | **kalibračná platňa** (mosadzná) | the brass plate of 1960 with PÔVOD, HLAS, SÚHLAS, NÁVRAT and the rule; it stays on the device | |
-| **odtlačok** → *nezvýraznený*, *čitateľný*, **overený odtlačok z roku 1960** | Adam's imprint of the plate on waxed paper, worked out with the blunt stylus, then registered | *kópia* (that is Mira's archive copy) |
+| **odtlačok** → *nezvýraznený*, *čitateľný*, **overený odtlačok z roku 1962** | Adam's imprint of the plate on waxed paper, worked out with the blunt stylus, then registered | *kópia* (that is Mira's archive copy) |
 | **archívna kópia**, **kovová schránka** | Mira's clean copy, locked with the registration in the metal box in the attic | |
 | **registračný list**, **druhopis** (via **uhlový papier**), **pečiatka** | the post office confirms the date and existence of the record, not its truth | *prepisový papier* |
 | **pravidlo** `Rôzne údaje neznamenajú neplatné údaje.` | Mira's 1960 rule, engraved on the plate | |
@@ -292,7 +292,7 @@ Canonical inventory names. **Bold** = decided rename; dialogue, looks, goals and
 | CARBON | Uhlový papier | = | I14 (C3) | I15 |
 | REGDOUBLE | Dve vyhotovenia listu | = | I15 (C3) | I16 |
 | REGISTERED | Potvrdený registračný list | = | I16 (C3) | I17 |
-| ORIGIN | Overený odtlačok z roku 1960 | = | I17 (C3) | C01, C05, F06, F12, E02 |
+| ORIGIN | Overený odtlačok z roku 1962 | = | I17 (C3) | C01, C05, F06, F12, E02 |
 | HANDOVER | Protokol o odovzdaní | = | C02 (C1) | C03 |
 | HANDOVER_R | Protokol s Romanovým podpisom | = | C03 (C1) | C04 |
 | CHAIN | Potvrdené odovzdanie 2020 | = | C04 (C1) | C05, F03, F14 |
@@ -345,7 +345,7 @@ another line of the same exchange, say so in the note.
 | **P01** Tri referenčné tvary (S10) | join equal shapes; colours do not matter | kruh–kruh, trojuholník–trojuholník, štvorec–štvorec | `look.S10.panel`, `action.G10.002/.003`, `action.G10.objective/.journal`, `puzzle.P01.*`, `journal.clue.P01`, `quest.M02.hint.3` |
 | **P02** Zarovnanie mapovej fólie (bag) | the base map and the overlay both show **dierka, dvojitý kríž, štvorec**; rotate until all three match | **180°** | `item.OVERLAY`, `action.B15.004`, `puzzle.P02.*`, `journal.clue.P02`, `quest.M06.hint.3` |
 | **P03** Nábrežná kalibrácia (S30) | the school-yard drawing says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the panel in the school yard and Emil has the metronome | **3–2–6** | `look.S17.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
-| **P04** Priradenie štyroch svedectiev (S49) | ports and items carry name and year; the journal repeats them | **Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035** | `look.S39.plate`, `action.I13.001`, `action.C05.001`, `look.S49.port_*`, `action.F11.objective/.journal`, `action.F12.001`–`F15.001`, `puzzle.P04.*`, `journal.clue.P04`, `quest.M15.hint.2/.3` |
+| **P04** Priradenie štyroch svedectiev (S49) | ports and items carry name and year; the journal repeats them | **Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035** (shown; value 1960) | `look.S39.plate`, `action.I13.001`, `action.C05.001`, `look.S49.port_*`, `action.F11.objective/.journal`, `action.F12.001`–`F15.001`, `puzzle.P04.*`, `journal.clue.P04`, `quest.M15.hint.2/.3` |
 | **P05** Dutina v tom istom múriku (S55) | grid **3 × 4**; **druhý rad zhora, tretí kameň zľava** = **rad 2, stĺpec 3**, written in Tóno's 1982 map and his 1995 note | row 2, column 3 | `action.E08.001`, `item.CACHEMAP`, `look.S61.niche`, `action.E11.006`, `item.KEEPERNOTE`, `action.D05.002`, `puzzle.P05.*`, `journal.clue.P05`, `quest.M11C.hint.3` |
 
 Puzzle option labels (`puzzle.P01.left/right.*`, `puzzle.P04.left/right.*`) are verbatim.
@@ -373,19 +373,20 @@ Puzzle option labels (`puzzle.P01.left/right.*`, `puzzle.P04.left/right.*`) are 
 
 | Fact | Value |
 |---|---|
-| time windows | Ivanka **6. júna 1960**, Dúbravka **7. decembra 1982**, Bratislava **15. júna 1995**, Chorvátsky Grob a Dúbravka **29. októbra 2020**, Jasná **6. júna 2035** |
+| time windows | Ivanka **6. júna 1962** (shown year; the era id stays 1960, docs/DECISIONS.md "Ivanka is shown as June 1962"), Dúbravka **7. decembra 1982**, Bratislava **15. júna 1995**, Chorvátsky Grob a Dúbravka **29. októbra 2020**, Jasná **6. júna 2035** |
 | Adam | **35** in 2020, born **1985**; **10** on the 1995 tape; in 1982 he "will be born in three years" |
-| Mira | **20** (1960), **55** (1995), **80** (2020) |
+| Mira | **22** (June 1962), **55** (1995), **80** (2020) |
 | Tóno | born March **1970**: **12** (1982), **25** (1995), **50** (2020) |
-| Oto | **44** (1960), **66** (1982): *zostarol o dvadsaťdva rokov* |
+| Oto | **46** (1962), **66** (1982): *zostarol o dvadsať rokov* |
+| Vera | **24** (1962); other Ivanka people +2 against game.json where a text states an age |
 | Jana | **12** (1982), **25** (1995), **50** (2020), **65** (2035) |
 | Lea | 33 in 1995; message and natural death in **2032** (her death is not changed) |
 | Nina | 30 in 2035 (15 in 2020) |
 | the jar in the wall | **38 rokov** (1982 → 2020) |
 | Tóno's wait to 1995 | **13 rokov** |
-| Mira's box | *šesťdesiat rokov* in it (1960 → 2020); *o sedemdesiatpäť rokov* (1960 → 2035) |
+| Mira's box | *skoro šesťdesiat rokov* in it (1962 → 2020 = 58); *o sedemdesiattri rokov* (1962 → 2035) |
 | Adam in 1995 | *meškám o dvadsaťpäť rokov*, *štvrťstoročie* |
-| Mira 1960 vs Adam | *o pätnásť rokov mladšia než ja* |
+| Mira 1962 vs Adam | *o trinásť rokov mladšia než ja* |
 
 ### 6.4 Verbatim lines (do not touch)
 
@@ -396,7 +397,7 @@ Puzzle option labels (`puzzle.P01.left/right.*`, `puzzle.P04.left/right.*`) are 
 | `action.D07.006` (Tóno 50) | `Nečakal som. Žil som. Len som si pamätal miesto.` |
 | `cutscene.CS07.04.001` (Mira) | `Čaj ti spravím, keď bude možné prísť normálne.` |
 | `cutscene.CS07.04.002` (Adam) | `Tentoraz počkám.` |
-| `journal.clue.P04` | `Pôvod 1960, Hlas 1995, Súhlas 2020, Návrat 2035` |
+| `journal.clue.P04` | `Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035` (P04 option values stay 1960 internally) |
 | `game.title` | `Posledný zvonec` |
 
 ### 6.5 Story facts a rewrite must not blur

@@ -139,7 +139,7 @@ Every era should sound like itself, without caricature. Adam always speaks his o
 
 | Era | Feel | Use | Avoid |
 |---|---|---|---|
-| **1960** Ivanka pri Dunaji | village and small workshops, everyone knows everyone, people are formal with strangers and warm after a minute | *pán, pani, dievča*, plain practical words, a few old-fashioned turns (*prosím pekne*, *nech sa páči*, *ráčte*) in the mouth of the post clerk | modern words (*okej, fajn, stres, systém, info, mobil, displej*), slang, *súdruh* as a joke; NPCs reacting to anachronisms they cannot understand |
+| **1960** Ivanka pri Dunaji (shown as June 1962) | village and small workshops, everyone knows everyone, people are formal with strangers and warm after a minute | *pán, pani, dievča*, plain practical words, a few old-fashioned turns (*prosím pekne*, *nech sa páči*, *ráčte*) in the mouth of the post clerk | modern words (*okej, fajn, stres, systém, info, mobil, displej*), slang, *súdruh* as a joke; NPCs reacting to anachronisms they cannot understand |
 | **1982** Dúbravka, socialist school | the school is an institution: approved models, forms, pioneer notices; people are careful in official places and normal in private | pupils say *súdruh učiteľ*, *súdružka riaditeľka*; notices in official language (*Pionierska schôdzka v stredu o 14.00*); adults say *formulár, výdajka, podpis, schválený vzor* | real political slogans or speeches, secret police, cheap anti-communist punchlines, every adult as a caricature; modern words in NPC mouths |
 | **1995** Bratislava | post-1989 city in motion: kiosks, markets, cassette culture, repair shops, school clubs; relaxed and quick | colloquial Bratislava speech (*Miletička, fakt, kamoš, frajer* sparingly), *koruny*, cassettes and tapes, landline phones | smartphones, internet talk, today's slang (*cringe, chill*), forced 90s references |
 | **2020** Chorvátsky Grob, Čierna Voda, Dúbravka | covid autumn: neighbourly help, distance, phone calls, paper lists | *rúško, odstup, karanténa, dištančné vyučovanie, dezinfekcia, cez okno, na diaľku, výdajné miesto* | jokes about the illness, denial, "corona" puns; English office words |
@@ -357,7 +357,7 @@ The examples show the technique; they are not game lines and are not pasted over
 | understatement | a big thing said small, by the calm one | IVAN: `Hore fúka. Ale fúka tam odjakživa, takže sme si zvykli skôr my ako vietor.` |
 | running gag with a twist | a character's habit comes back slightly changed | MIRA20: `A nákup nes za obe uchá.` … later … `Krabicu nes za oba rohy. Viem, že by si na to prišiel aj sám.` |
 | callback across eras | the same object or phrase in another year, noticed by Adam | ADAM: `Ten istý škrabanec na skrinke. V roku 1982 bol aspoň nový.` |
-| Adam's self-irony | he laughs at his escalating day, not at people | ADAM: `Ja som chcel len vymeniť poistku. Teraz mám v kalendári rok 1960.` |
+| Adam's self-irony | he laughs at his escalating day, not at people | ADAM: `Ja som chcel len vymeniť poistku. Teraz mám v kalendári rok 1962.` |
 
 ### 7.3 Patterns that do not work (bad → better)
 

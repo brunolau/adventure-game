@@ -44,6 +44,25 @@
       "frames": 5,
       "columns": 5,
       "rows": 1
+    },
+    "walk": {
+      "file": "walk_sheet.webp",
+      "json": "walk_sheet.json",
+      "size": [
+        3168,
+        528
+      ],
+      "cell": [
+        264,
+        528
+      ],
+      "pivot": [
+        132,
+        524
+      ],
+      "frames": 12,
+      "columns": 12,
+      "rows": 1
     }
   },
   "animations": {
@@ -91,6 +110,12 @@
       "hold_ms": 1200,
       "oneshot": true,
       "note": "PlayGesture: hold, then return to idle (no in-betweens)"
+    },
+    "walk_right": {
+      "sheet": "walk",
+      "loop": true,
+      "fps": 10.67,
+      "note": "guest walk-in (ISSUES PT-S18): three-quarter side walk, mirrored for left"
     }
   },
   "switching": "Start talking only at a video idle loop boundary (cell 0 matches the still idle pose) or cross-fade ~80 ms; video cells are slightly softer than the edit-based stills.",

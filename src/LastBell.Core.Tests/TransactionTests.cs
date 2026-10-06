@@ -80,10 +80,32 @@ public sealed class TransactionTests
         var s = GameRules.CommitAction(C, selected, "G04");
         Assert.DoesNotContain("GROCERIES", s.Inventory);
         Assert.Null(s.SelectedItem);
-        // A retained selected item stays selected.
+        // A retained item is still owned, but a successful use clears the cursor item too (PT-F09 / PT-S16).
         var g08 = TestData.ReadyFor("G08");
-        var kept = GameRules.CommitAction(C, GameRules.SelectItem(g08, "TOOLS"), "G08");
-        Assert.Equal("TOOLS", kept.SelectedItem);
+        var used = GameRules.CommitAction(C, GameRules.SelectItem(g08, "TOOLS"), "G08");
+        Assert.Contains("TOOLS", used.Inventory);
+        Assert.Null(used.SelectedItem);
+    }
+
+    [Fact]
+    public void Every_successful_item_use_clears_the_selection_and_invalid_clicks_keep_it()
+    {
+        foreach (var action in C.Actions.Where(a => a.SelectedItem is not null && TestData.MainRoute.Any(r => r.Action == a.Id)))
+        {
+            var ready = TestData.ReadyFor(action.Id);
+            var selected = GameRules.SelectItem(action.IsCombine ? GameRules.ToggleInventory(ready) : ready, action.SelectedItem!, keepInventoryOpen: action.IsCombine);
+            Hit hit = action.IsCombine ? new Hit.Item(action.Target) : new Hit.Hotspot(action.Target);
+            Assert.IsType<Resolution.Action>(GameRules.ResolveInteraction(C, selected, hit, PointerButton.Left));
+            var s = action.Puzzle is null
+                ? GameRules.CommitAction(C, selected, action.Id)
+                : Puzzles.Submit(C, Puzzles.Open(C, selected, action.Id), action.Id, C.GetPuzzle(action.Puzzle).Solution?.DeepClone()).State;
+            Assert.True(s.IsDone(action.Id), action.Id);
+            Assert.Null(s.SelectedItem);
+        }
+        // An invalid item click resolves to nothing and keeps the selection (handoff rule, unchanged).
+        var tools = GameRules.SelectItem(TestData.ReadyFor("G08"), "TOOLS");
+        Assert.IsType<Resolution.None>(GameRules.ResolveInteraction(C, tools, new Hit.Hotspot("S10.panel"), PointerButton.Left));
+        Assert.Equal("TOOLS", tools.SelectedItem);
     }
 
     [Fact]

@@ -176,12 +176,16 @@ public static class SaveCodec
         var hints = ImmutableSortedDictionary.CreateBuilder<string, int>(StringComparer.Ordinal);
         if (obj["hint_levels"] is JsonObject hintObj)
         {
-            foreach (var (questId, value) in hintObj)
+            // Keys are step action ids (hints per step, PT-F08); quest ids from older saves stay valid and are ignored.
+            foreach (var (key, value) in hintObj)
             {
-                var quest = content.FindQuest(questId) ?? throw new SaveValidationException($"unknown quest '{questId}' in hint_levels");
+                int max;
+                if (content.FindAction(key) is { } step && content.FindQuestOf(step.Id) is not null) max = Hints.Levels;
+                else if (content.FindQuest(key) is { } quest) max = quest.Hints.Count;
+                else throw new SaveValidationException($"unknown quest or step '{key}' in hint_levels");
                 var level = value is JsonValue v && v.TryGetValue<int>(out var n) ? n : -1;
-                if (level < 0 || level > quest.Hints.Count) throw new SaveValidationException($"hint level out of range for '{questId}'");
-                hints[questId] = level;
+                if (level < 0 || level > max) throw new SaveValidationException($"hint level out of range for '{key}'");
+                hints[key] = level;
             }
         }
         else if (obj.ContainsKey("hint_levels") && obj["hint_levels"] is not null) throw new SaveValidationException("hint_levels is not an object");

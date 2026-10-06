@@ -3,16 +3,17 @@
 Style A, hand-painted (design-doc/ART_DIRECTION.md). Design per `game.json characters ADAM.design`: blue work
 jacket worn **open over a mustard T-shirt** (visible in every view, including the side walk), brown leather
 messenger bag on his **left hip** (strap over the right shoulder), short dark hair, dark jeans, brown shoes; every
-animation also exists as a **2020 face-mask variant** (`*_mask2020`). Masters, sources and the build script:
+animation also exists as a **2020 face-mask variant** (`*_mask2020`) and a **December 1982 winter-coat variant**
+(`*_coat1982`, section below). Masters, sources and the build script:
 `art/characters/ADAM/` and `art/tools/hero_set.py` (pipeline notes: `art/characters/PIPELINE.md` section 11).
 
 ## Files
 
 - `<name>.webp`: spritesheet, one horizontal strip of equal cells (lossless WebP, frame i at x = i * cell_w).
 - `<name>.json`: `frames`, `cell` [w, h], `pivot` [x, y], `playback_fps`, `oneshot`, `stride_px_per_s`, `facing`,
-  `mirror_for_left`, `variant` (`default` | `mask2020`), `standing_height_px`, and per animation `cycle_seconds`,
+  `mirror_for_left`, `variant` (`default` | `mask2020` | `coat1982`), `standing_height_px`, and per animation `cycle_seconds`,
   `mouth_sequence`, `blink_frames`, `item_anchor_last_frame` or `note`.
-- `animations.json`: manifest of all 28 sheets.
+- `animations.json`: manifest of all 42 sheets (default, `mask2020`, `coat1982`).
 
 ## Geometry (same for every sheet)
 
@@ -84,6 +85,34 @@ recommended set: the 2020 exteriors S02, S03, S04, S05, S06, S07, S08, S51, S52,
 garage S01, the empty workshop S09/S10 and the interiors S53/S54. Switching variant only swaps the face: every
 mask sheet has the same timing and geometry as its default sheet. Talk with the mask moves the mask's lower edge
 with the jaw (the mouth is hidden), and the back view shows the ear loops.
+
+### December 1982 winter coat (`*_coat1982`, ISSUES PT-S20)
+
+Adam wears a closed hip-length charcoal-grey wool coat with dark buttons and a mustard knitted scarf over it (the
+mustard of his T-shirt), the same brown messenger bag on his left hip with the strap over the coat, the same jeans,
+shoes, face and hair. Every default animation exists as `<name>_coat1982` (14 sheets, variant `coat1982`).
+Rooms: `data/ambient/actors.json` `hero_coat1982_rooms` = the 1982 exteriors S57, S58, S61, S62, S64, S66 and the
+issue room S65 (a short errand straight from the S62 yard); the school interiors S59, S60, S63 keep the jacket.
+The same sheets dress him for winter Jasná 2035 (6 February, owner 2026-10-06): `hero_coat2035_rooms` = the
+exteriors S41, S42, S45, S48, S50, the open Priehyba station hall S67 and the unheated Funitel cabin S68; the heated
+interiors S43, S44, S46, S47, S49 keep the jacket.
+Masters and build: `art/characters/ADAM/coat1982/`, `art/tools/hero_coat.py` (PIPELINE.md, coat section).
+
+- **Same face, pixel for pixel:** the head of the three facing bases is the default master's (transplanted above
+  the scarf), so `talk_*` and the idle blink use the default mouth and eye frames unchanged; only the scarf covers
+  the neck and chin line.
+- **Same geometry contract:** 512 px standing height, pivot = feet centre, cells symmetric about the pivot, left =
+  mirror of `*_right`, frame 0 of each one-shot = idle frame 0. Cells differ from the default sheets (the coat is a
+  different silhouette), so always read the coat sheet's own JSON.
+- **Walks** are new Hailuo clips with 20 cells per cycle (the default walks have 16): `walk_right_coat1982`
+  14.64 fps, 1.366 s cycle, stride
+  272.3 px/s (the same ground speed as the jacket walk; the clip was played
+  1.16x faster to get there, so the feet do not slide);
+  `walk_toward_coat1982` 14.55 fps / 1.375 s and
+  `walk_away_coat1982` 14.64 fps / 1.366 s (the side
+  walk's cadence). His steps in the coat are a little longer and slower than in the jacket.
+- **One-shots** (reach_low/mid/high, use_tool, show_item, inventory_combine): the default key poses re-dressed
+  (NB2 edit of the same pose) and new Hailuo transitions; same frame counts and fps as the default sheets.
 
 ## Known limits (honest list)
 

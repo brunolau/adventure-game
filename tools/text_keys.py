@@ -20,8 +20,17 @@ or a non-actor speaker), the prefix is split off: the table holds only the text,
 and the presentation shows the speaker name via char.<SPEAKER>.name. Core must
 apply the same split (see `split_speaker_prefix`).
 
-Era cards (era.<year>.card / era.<year>.date) and the journal tab names are
-hand-written in ui.csv; check_strings.py verifies them against game.json.
+Era cards (era.<year>.card / era.<year>.date / era.<year>.year) and the journal tab names are
+hand-written in ui.csv; check_strings.py verifies them against game.json. era.<year>.year is the
+year shown to the player; it may differ from the era id (Ivanka: id 1960, shown 1962,
+docs/DECISIONS.md "Ivanka is shown as June 1962").
+
+Content overlays (src/game/data/content_ext/, tools/content_ext.py): the tools read the
+EFFECTIVE game, i.e. game.json with dialogue_ext.json / travel_ext.json applied
+(`effective_game()`), so overlay lines, new topic labels and new exits get their keys like any
+other text. One extra field exists only in the effective game:
+
+    travel.<exitId>.first.<n>           rooms[].exits[].first_ride[] (first-ride lines, dialogue.csv)
 """
 from __future__ import annotations
 
@@ -239,6 +248,11 @@ def era_date(year: int) -> str:
     return f"era.{year}.date"
 
 
+def era_year(year: int) -> str:
+    """The year shown to the player for the era with this id (presentation; Core TextKeys.EraYear)."""
+    return f"era.{year}.year"
+
+
 def epilogue_shot(n: int) -> str:
     return f"epilogue.{n}.shot"
 
@@ -354,6 +368,9 @@ def iter_text_entries(game: dict) -> Iterator[TextEntry]:
             yield TextEntry(exit_label(exit_id), room_exit["label"], world, "rooms[].exits[].label", f"{src}.label")
             yield TextEntry(exit_locked(exit_id), room_exit["locked_look"], world,
                             "rooms[].exits[].locked_look", f"{src}.locked_look")
+            # travel overlay only: lines played the first time this transport exit is used
+            yield from line_entries(room_exit.get("first_ride", []), "rooms[].exits[].first_ride[].text",
+                                    f"{src}.first_ride")
 
     for connection in game.get("connections", []):
         a, b = connection["from"], connection["to"]
@@ -444,7 +461,7 @@ def expected_ui_scheme_keys(game: dict) -> list[str]:
     """Keys that game.json implies but that live in the hand-written ui.csv."""
     keys: list[str] = []
     for era in game.get("eras", []):
-        keys += [era_card(era["year"]), era_date(era["year"])]
+        keys += [era_card(era["year"]), era_date(era["year"]), era_year(era["year"])]
     keys += list(REQUIRED_UI_KEYS)
     return keys
 
@@ -462,6 +479,7 @@ KEYED_FIELDS = frozenset({
     "rooms[].hotspots[].look_variants[].text",
     "rooms[].exits[].label",
     "rooms[].exits[].locked_look",
+    "rooms[].exits[].first_ride[].text",
     "characters[].name",
     "characters[].ambient_topics[].label",
     "characters[].ambient_topics[].lines[].text",
@@ -508,6 +526,8 @@ INTERNAL_FIELDS = frozenset({
     "rooms[].hotspots[].visible_after[]", "rooms[].hotspots[].look_line_id", "rooms[].hotspots[].character_id",
     "rooms[].hotspots[].look_variants[].after", "rooms[].hotspots[].look_variants[].line_id",
     "rooms[].exits[].id", "rooms[].exits[].to", "rooms[].exits[].travel", "rooms[].exits[].requires_done[]",
+    "rooms[].exits[].first_ride[].speaker", "rooms[].exits[].first_ride[].line_id",
+    "characters[].ambient_topics[].excluded_done[]",
     "characters[].id", "characters[].age", "characters[].role", "characters[].voice", "characters[].design",
     "characters[].rooms[]", "characters[].ambient_topics[].id", "characters[].ambient_topics[].requires_done[]",
     "characters[].ambient_topics[].lines[].speaker", "characters[].ambient_topics[].lines[].line_id",
@@ -676,21 +696,30 @@ def load_sk_overrides(path: Path = SK_OVERRIDES) -> tuple[dict[str, SkOverride],
     return overrides, problems
 
 
-def apply_sk_overrides(entries: Iterable[TextEntry], overrides: dict[str, SkOverride]
+def apply_sk_overrides(entries: Iterable[TextEntry], overrides: dict[str, SkOverride],
+                       retired: Iterable[str] = (), overlay_keys: Iterable[str] = ()
                        ) -> tuple[list[TextEntry], list[str], list[str]]:
     """Entries with the accepted rewrites applied. Returns (entries, applied_keys, problems).
 
     A problem is an override whose key the scheme does not produce or whose game_json column no longer
     equals the game.json text (stale: the game.json text is kept until the override is reviewed).
+    Overrides of `retired` keys (handoff lines an overlay sequence dropped) are kept and ignored, so a
+    revert of the overlay needs no edit here; an override of an `overlay_keys` text is a problem (the
+    overlay holds that text: edit it there).
     """
     from dataclasses import replace
 
+    retired, overlay_keys = set(retired), set(overlay_keys)
     result, applied, problems = [], [], []
-    produced = set()
+    produced = set(retired)
     for entry in entries:
         produced.add(entry.key)
         override = overrides.get(entry.key)
-        if override is None:
+        if override is not None and entry.key in overlay_keys:
+            problems.append(f"sk override {entry.key!r}: this text comes from a content overlay; edit it in "
+                            "src/game/data/content_ext/ instead")
+            result.append(entry)
+        elif override is None:
             result.append(entry)
         elif override.game_json != entry.text:
             problems.append(f"stale sk override {entry.key!r}: game.json now says {entry.text[:60]!r}, "
@@ -703,3 +732,12 @@ def apply_sk_overrides(entries: Iterable[TextEntry], overrides: dict[str, SkOver
         if key not in produced:
             problems.append(f"sk override {key!r}: the key scheme does not produce this key")
     return result, applied, problems
+
+
+# --------------------------------------------------------------------------- content overlays
+
+def effective_game(game_path: Path = CANONICAL_GAME_JSON, use_overlays: bool = True):
+    """(effective game dict, content_ext.Overlay): game.json with the content overlays applied."""
+    import content_ext  # noqa: E402  (same folder)
+    overlay = content_ext.load_effective_game(game_path, use_overlays=use_overlays)
+    return overlay.game, overlay

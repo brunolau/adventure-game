@@ -1,0 +1,83 @@
+{
+  "format": "lastbell.travel_ext",
+  "version": 1,
+  "about": "Travel overlay on top of game.json (game.json is never edited). Owner rule 2026-10-06: far places are reached through their transport hub. Dúbravka 2020 is reached by bus from the Čierna Voda bus stop (S07) instead of the direct car transition from the street S02. The map shows regions first; fast travel is free inside a region, another region only through its hub. Schema: src/LastBell.Core/README.md section 13; decisions: docs/DECISIONS.md 'Control changes' item 7, design-doc/ISSUES.md TRAVEL-01. Texts and keys come from the C1 writing draft (docs/writing/out_v2/C1_ext.json 'travel').",
+  "remove_exits": [
+    { "exit": "S02.to_S51", "reason": "2020: the street of Chorvátsky Grob no longer leads straight to Dúbravka by car" },
+    { "exit": "S51.to_S02", "reason": "2020: the way back from Dúbravka is the bus to Čierna Voda" }
+  ],
+  "remove_connections": [
+    { "from": "S02", "to": "S51", "reason": "replaced by the bus S07 <-> S51" }
+  ],
+  "exits": [
+    {
+      "room": "S07",
+      "id": "S07.to_S51",
+      "to": "S51",
+      "travel": "bus",
+      "label": "Autobus do Dúbravky",
+      "locked_look": "Do Dúbravky zatiaľ nemám prečo ísť. Babka ma dnes potrebuje tu.",
+      "requires_done": [],
+      "rect": [960, 975, 55, 70],
+      "interaction_point": [985, 965],
+      "note": "template geometry (free middle slot); the natural blocking (data/blocking/S07.json) puts it at the kerb by the bus-stop sign",
+      "first_ride": {
+        "id": "travel.S07.to_S51.first",
+        "lines": [
+          { "key": "travel.S07.to_S51.first.001", "speaker": "ADAM", "sk": "Autobusom do mesta a potom prestup do Dúbravky. Rúško mám, lístok tiež." },
+          { "key": "travel.S07.to_S51.first.002", "speaker": "ADAM", "sk": "Autobus je skoro prázdny. Každý sedí pri svojom okne, akoby si ho rezervoval." }
+        ]
+      }
+    },
+    {
+      "room": "S51",
+      "id": "S51.to_S07",
+      "to": "S07",
+      "travel": "bus",
+      "label": "Autobus do Čiernej Vody",
+      "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+      "requires_done": [],
+      "rect": [50, 975, 55, 70],
+      "interaction_point": [130, 965],
+      "note": "takes the template slot of the removed S51.to_S02; the natural blocking (data/blocking/S51.json) keeps the platform end",
+      "first_ride": {
+        "id": "travel.S51.to_S07.first",
+        "lines": [
+          { "key": "travel.S51.to_S07.first.001", "speaker": "ADAM", "sk": "Späť do Čiernej Vody. Odtiaľ už do Grobu trafím aj poslepiačky." }
+        ]
+      }
+    }
+  ],
+  "connections": [
+    {
+      "from": "S07",
+      "to": "S51",
+      "bidirectional": true,
+      "travel": "bus",
+      "label": "Autobus Čierna Voda – Dúbravka",
+      "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+      "requires_done": []
+    }
+  ],
+  "regions": [
+    { "id": "Chorvátsky Grob", "era": 2020, "rooms": ["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08", "S09", "S10"], "hubs": ["S07"],
+      "note": "Čierna Voda is a part of the municipality Chorvátsky Grob; its bus stop S07 is the hub of the whole area" },
+    { "id": "Dúbravka", "era": 2020, "rooms": ["S51", "S52", "S53", "S54", "S55", "S56"], "hubs": ["S51"] },
+
+    { "id": "Dúbravka", "era": 1995, "rooms": ["S11", "S12", "S13", "S14", "S15", "S16", "S17", "S18"], "hubs": ["S11"] },
+    { "id": "Karlova Ves", "era": 1995, "rooms": ["S19", "S20"], "hubs": ["S19"] },
+    { "id": "Staré Mesto", "era": 1995, "rooms": ["S21", "S22", "S23", "S24"], "hubs": ["S21"] },
+    { "id": "Ružinov", "era": 1995, "rooms": ["S25", "S26", "S27"], "hubs": ["S25"] },
+    { "id": "Petržalka", "era": 1995, "rooms": ["S28", "S29", "S30"], "hubs": ["S28"] },
+
+    { "id": "Ivanka pri Dunaji", "era": 1960, "rooms": ["S31", "S32", "S33", "S34", "S35", "S36", "S37", "S38", "S39", "S40"], "hubs": ["S31"] },
+
+    { "id": "Jasná", "era": 2035, "rooms": ["S41", "S42", "S43", "S44", "S45", "S46"], "hubs": ["S41"],
+      "note": "Biela Púť, the Grand Jasná hotel and Vrbické pleso are one walkable area; the lower cable car station S41 is its hub" },
+    { "id": "Priehyba", "era": 2035, "rooms": ["S67"], "hubs": ["S67"] },
+    { "id": "Funitel", "era": 2035, "rooms": ["S68"], "hubs": ["S68"] },
+    { "id": "Chopok", "era": 2035, "rooms": ["S47", "S48", "S49", "S50"], "hubs": ["S47"] },
+
+    { "id": "Dúbravka", "era": 1982, "rooms": ["S57", "S58", "S59", "S60", "S61", "S62", "S63", "S64", "S65", "S66"], "hubs": ["S57"] }
+  ]
+}

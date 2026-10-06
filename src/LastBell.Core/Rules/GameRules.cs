@@ -55,8 +55,9 @@ public static class GameRules
     /// <summary>
     /// <c>resolveInteraction</c>: the single resolver used for hover preview and click.
     /// Right button: cancel selection first; else look at item/hotspot/exit; else toggle inventory.
-    /// Left button with a selected item: only an executable item rule resolves to an action;
-    /// anything else is a complete no-op that keeps the selection (no walk, no text, no state).
+    /// Left button with a selected item: only an executable item rule resolves to an action (its commit
+    /// clears the selection); anything else is a complete no-op that keeps the selection (no walk, no
+    /// text, no state).
     /// Left button without selection: select item, open NPC topics, run the single default action,
     /// look at props, travel through unlocked exits, read locked exits, walk on the floor.
     /// Only <see cref="GameMode.World"/> and <see cref="GameMode.Inventory"/> accept interactions.
@@ -150,7 +151,8 @@ public static class GameRules
     /// action. Validates guards, room and visibility, the puzzle answer (deep equality with the
     /// solution) and the item transaction, then: removes consumes, adds gives, appends the action id
     /// to done, records the journal entry, returns postgame evidence, recomputes side rewards, clears
-    /// a consumed selection, applies the special transition, and queues lines (then cutscene lines).
+    /// the selection after an item use (and a consumed selection), applies the special transition, and
+    /// queues lines (then cutscene lines).
     /// Nothing depends on the lines or the cutscene being watched. A repeated click or a load can
     /// never duplicate an item, because a done action fails validation.
     /// </summary>
@@ -187,7 +189,9 @@ public static class GameRules
             SideRewards = IdList.AddUnique(next.SideRewards,
                 content.Quests.Where(q => q.IsSide && next.IsDone(q.Completion)).Select(q => q.Id)),
         };
-        if (next.SelectedItem is not null && !next.Has(next.SelectedItem)) next = next with { SelectedItem = null };
+        // A successful item use clears the cursor item (orchestrator decision after the playtests, PT-F09 / PT-S16);
+        // a consumed selection is cleared too. Invalid item clicks never get here: they stay a no-op that keeps it.
+        if (next.SelectedItem is not null && (action.SelectedItem is not null || !next.Has(next.SelectedItem))) next = next with { SelectedItem = null };
 
         var lines = action.Lines.Select(l => l.LineId ?? "").Where(id => id.Length > 0).ToList();
         if (action.Cutscene is not null && content.FindCutscene(action.Cutscene) is { } cutscene)

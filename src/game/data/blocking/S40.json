@@ -4,64 +4,213 @@
   "status": "natural re-blocking (art/tools/PAINTING.md Natural mode), applied with last_bell/presentation/blocking = natural or --blocking natural",
   "note": "Technical archive loft: the unrenovated tiled-roof attic above the workshop in the manor outbuilding (S35/S36), June 1960 (type references: Melnicka Vrutice attic, Doubrava Lipova plank floor). Frontal camera ~1.7 m high looking along the attic to the brick gable with its small window: horizon y 470, perspective s(y) = (y - 470) / 545 (hero 1.7 m = 512 px at y 1015; ~160 px per metre at the table, foot y ~770). Safe plank floor (no climbing): a wooden staircase with a handrail comes up through an opening in the floor at the front left (exit to S39). A plain work table stands in the middle; its waxed paper sheets (until I11) and Rudo's forgotten script (Q7A until Q7B) are state patches over the bare table of the base painting; the steel archive box stands on an old chest to its right; a massive oak post with braces carries the tie beam; the empty old suitcase lies on the floor on the right. The walk polygon is the plank floor in front of the table, chest and suitcase, around the stair opening.",
   "background": "bg_natural/S40.webp",
-  "walk_polygon": [[495, 800], [1440, 800], [1440, 820], [1720, 820], [1720, 800], [1900, 800], [1900, 1015], [20, 1015], [20, 915], [350, 915], [350, 895]],
-  "walk_band": [800, 1015],
-  "actor_scale": [0.606, 1.0],
-  "spawn": [420, 950],
+  "walk_polygon": [
+    [
+      495,
+      800
+    ],
+    [
+      1440,
+      800
+    ],
+    [
+      1440,
+      820
+    ],
+    [
+      1720,
+      820
+    ],
+    [
+      1720,
+      800
+    ],
+    [
+      1900,
+      800
+    ],
+    [
+      1900,
+      1015
+    ],
+    [
+      20,
+      1015
+    ],
+    [
+      20,
+      915
+    ],
+    [
+      350,
+      915
+    ],
+    [
+      350,
+      895
+    ]
+  ],
+  "walk_band": [
+    800,
+    1015
+  ],
+  "actor_scale": [
+    0.606,
+    1.0
+  ],
+  "spawn": [
+    420,
+    950
+  ],
   "hotspots": {
     "S40.paper": {
-      "rect": [556, 598, 186, 58],
-      "interaction_point": [650, 850],
-      "label_anchor": [650, 588],
-      "reason": "small stack of waxed paper sheets on the left half of the work table (hidden after I11)"
+      "rect": [
+        556,
+        598,
+        186,
+        58
+      ],
+      "interaction_point": [
+        503,
+        850
+      ],
+      "label_anchor": [
+        650,
+        588
+      ],
+      "reason": "small stack of waxed paper sheets on the left half of the work table (hidden after I11); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
     },
     "S40.box": {
-      "rect": [1050, 560, 172, 112],
-      "interaction_point": [1135, 850],
-      "label_anchor": [1135, 550],
-      "reason": "grey-green steel archive box with a handle and a hasp, standing on the old chest right of the table"
+      "rect": [
+        1050,
+        560,
+        172,
+        112
+      ],
+      "interaction_point": [
+        985,
+        868
+      ],
+      "label_anchor": [
+        1135,
+        550
+      ],
+      "reason": "grey-green steel archive box with a handle and a hasp, standing on the old chest right of the table; I17 (M5-04 / PT-S06 rule): the hero stands left of the box chest and reaches right, so the box stays visible while Mira talks"
     },
     "S40.script": {
-      "rect": [796, 604, 158, 54],
-      "interaction_point": [875, 850],
-      "label_anchor": [875, 594],
-      "reason": "Rudo's forgotten amateur-theatre script lying on the right half of the work table (shown after Q7A until Q7B)"
+      "rect": [
+        796,
+        604,
+        158,
+        54
+      ],
+      "interaction_point": [
+        1007,
+        850
+      ],
+      "label_anchor": [
+        875,
+        594
+      ],
+      "reason": "Rudo's forgotten amateur-theatre script lying on the right half of the work table (shown after Q7A until Q7B); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands right of it and reaches sideways, so it stays visible while he uses it"
     },
     "S40.ambient 1": {
-      "rect": [1440, 668, 280, 140],
-      "interaction_point": [1580, 870],
-      "label_anchor": [1580, 658],
+      "rect": [
+        1440,
+        668,
+        280,
+        140
+      ],
+      "interaction_point": [
+        1580,
+        870
+      ],
+      "label_anchor": [
+        1580,
+        658
+      ],
       "reason": "old brown leather suitcase lying closed on the floor on the right"
     },
     "S40.ambient 2": {
-      "rect": [1290, 290, 74, 430],
-      "interaction_point": [1327, 850],
-      "label_anchor": [1327, 280],
+      "rect": [
+        1290,
+        290,
+        74,
+        430
+      ],
+      "interaction_point": [
+        1327,
+        850
+      ],
+      "label_anchor": [
+        1327,
+        280
+      ],
       "reason": "the massive oak post with two braces carrying the tie beam of the roof"
     }
   },
   "exits": {
     "S40.to_S39": {
-      "rect": [20, 560, 330, 345],
-      "interaction_point": [380, 935],
-      "label_anchor": [180, 550],
+      "rect": [
+        20,
+        560,
+        330,
+        345
+      ],
+      "interaction_point": [
+        380,
+        935
+      ],
+      "label_anchor": [
+        180,
+        550
+      ],
       "reason": "the wooden staircase with a solid handrail and newel post going down through the opening in the floor at the front left (v1 painting)"
     }
   },
   "state_patches": [
     {
       "texture": "variants_natural/S40_waxpaper.webp",
-      "pos": [548, 562],
+      "pos": [
+        548,
+        562
+      ],
       "after": [],
-      "until": ["I11"],
+      "until": [
+        "I11"
+      ],
       "reason": "the waxed paper stack on the table until I11 takes a sheet (cut from master v1; the exported base v2 shows the bare table)"
     },
     {
       "texture": "variants_natural/S40_script.webp",
-      "pos": [790, 586],
-      "after": ["Q7A"],
-      "until": ["Q7B"],
+      "pos": [
+        790,
+        586
+      ],
+      "after": [
+        "Q7A"
+      ],
+      "until": [
+        "Q7B"
+      ],
       "reason": "Rudo's forgotten script lies on the table after Q7A (Rudo mentions it) until Q7B takes it (cut from master v1)"
     }
-  ]
+  ],
+  "guests": {
+    "I17": [
+      {
+        "character": "MIRA60",
+        "enter": [
+          175,
+          975
+        ],
+        "stand": [
+          760,
+          880
+        ],
+        "facing": "right",
+        "reason": "rule: 'Mira 60 na povale: kratky prichod s dokumentmi' - she comes up the staircase at the front left (S40.to_S39), walks to the hero at the archive box, speaks her three lines and goes down again"
+      }
+    ]
+  }
 }

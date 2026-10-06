@@ -45,6 +45,7 @@ public partial class UiRoot : Control
     private MapScreen map = null!;
     private PauseScreen pause = null!;
     private PuzzleModal puzzle = null!;
+    private TopicMenuView? topicMenu;
 
     /// <summary>The puzzle modal (QA harness).</summary>
     public PuzzleModal PuzzleView => puzzle;
@@ -76,6 +77,17 @@ public partial class UiRoot : Control
 
     /// <summary>True while a UI-only modal (menu, dialog, settings ...) is open.</summary>
     public bool HasModal => stack.Count > 0;
+
+    /// <summary>
+    /// True when a screen lies under a canvas point or covers the scene: any UI-only modal (hints, menus, settings
+    /// ...), the journal, map, pause and puzzle screens, or the open bag's bar and detail card. The world hover label
+    /// hides there (orchestrator decision after the playtests, PT-S23).
+    /// </summary>
+    public bool ScreenCovers(Vector2 point) =>
+        HasModal || journal.Visible || map.Visible || pause.Visible || puzzle.Visible || inventory.CoversPoint(point);
+
+    /// <summary>The topic menu panel in canvas px while a conversation's menu is open, else null (toast placement).</summary>
+    public Rect2? TopicMenuRect => topicMenu?.PanelRect;
 
     /// <summary>The topmost UI-only modal, or null.</summary>
     public ModalScreen? TopModal => stack.Count > 0 ? stack[^1] : null;
@@ -111,6 +123,7 @@ public partial class UiRoot : Control
         scaled.AddChild(Hud);
         var topics = new TopicMenuView { Name = "TopicMenu" };
         scaled.AddChild(topics);
+        topicMenu = topics;
         inventory = new InventoryPanel { Name = "Inventory" };
         scaled.AddChild(inventory);
         inventory.Init(Hud);
@@ -469,7 +482,7 @@ public partial class UiRoot : Control
         int master = AudioServer.GetBusIndex("Master");
         if (master < 0) return;
         bool mute = what == (int)NotificationApplicationFocusOut && UiSettings.MuteUnfocused;
-        AudioServer.SetBusMute(master, mute || UiSettings.Volume[0] <= 0);
+        AudioServer.SetBusMute(master, mute || UiSettings.Volume[0] <= 0 || LastBell.Game.Diagnostics.QaWindow.Silent);
     }
 
     /// <summary>Keys while a UI-only modal is open: Esc closes the top one, everything else is kept from the world.</summary>

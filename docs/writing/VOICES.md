@@ -124,7 +124,7 @@ school sound club, in 2020 in quarantine behind a closed window, speaking by pho
 - **The same person at three ages:** the same rhythm in every era: a short statement, then a
   practical instruction or the reason (`Kľúč je v schránke pri okne. Do domu nechoď.`). Precise
   technical sentences, sharp observation, tenderness hidden in practical care. She never gushes.
-- **Mira 20 (1960):** quick, curious, direct, a little impatient with vague questions; already the
+- **Mira 22 (June 1962):** quick, curious, direct, a little impatient with vague questions; already the
   rule-maker (*čo sa nezhoduje, nechávame vedľa seba*).
 - **Mira 55 (1995):** energetic, a teacher's clarity, used to children; gives tasks in order.
 - **Mira 80 (2020):** dry, warm, refuses to be pitied, still the engineer.
@@ -150,7 +150,7 @@ caretaker; in 2020 the same caretaker at fifty behind the service window. He cho
   - Tóno 12: `Nakreslím to presne. Druhý rad zhora, tretí kameň zľava. A lastovičku k tomu.`
   - Tóno 50: `Búdky robím, aby deti po návrate našli niečo nové. Niečo, čo nie je na obrazovke.`
 
-### OTO / OTO82 – Oto Bielik (44 / 66)
+### OTO / OTO82 – Oto Bielik (46 / 66)
 
 Mechanic, co-author of the civil ZVON prototype in 1960; in 1982 Tóno's grandfather who helps with
 the school technical club and maintenance. Signs the materials and permissions; never a mad
@@ -160,7 +160,7 @@ scientist.
   softer and amused by time. Short workshop sentences.
 - **Address:** vy ↔ vy.
 - **Examples:**
-  - Oto 44: `Najprv sa pozrieme, až potom budeme rozprávať. Prístroj klame menej ako človek.`
+  - Oto 46: `Najprv sa pozrieme, až potom budeme rozprávať. Prístroj klame menej ako človek.`
   - Oto 66: `V Ivanke ste mali tú istú bundu. Ja som odvtedy vystriedal tri.`
 
 ### JANA82 / JANA95 / JANA20 / JANA35 – Jana Vargová (12 / 25 / 50 / 65)
@@ -369,7 +369,7 @@ Name: *Dezider, Dezidera, Deziderovi* (*Dezi* only from his friends).
 
 ---
 
-## 1960 – Ivanka pri Dunaji
+## 1960 – Ivanka pri Dunaji (shown as June 1962; Mira 22, Vera 24, Oto 46)
 
 ### OTO, MIRA60 → see the family section.
 

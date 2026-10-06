@@ -716,6 +716,7 @@ SFX = {
 }
 
 EVENTS = {name: name for name in SFX if not name.startswith(("item_soft", "paper", "tool_click", "soft_success"))}
+EVENTS.update({"travel_bus": "travel_bus", "travel_tram": "travel_tram"})  # WorldStage transport card
 
 
 def build_sfx() -> None:
@@ -747,6 +748,9 @@ def build_sfx() -> None:
             files.append(f"sfx/{sid}_{k + 1}.ogg")
         sounds[sid] = {"files": files, "db": db, "pitch": pitch, "cooldown": cooldown}
         print(f"sfx {sid:16s} {len(files)} file(s)")
+    # Transport rides (travel overlay, bus / tram exits) reuse the ambience spot takes built above.
+    for sid, spot in (("travel_bus", "bus_pass"), ("travel_tram", "tram_pass")):
+        sounds[sid] = {"files": [f"ambience/spots/{spot}_1.ogg"], "db": -3, "pitch": 0.0, "cooldown": 2.0}
     DATA.mkdir(parents=True, exist_ok=True)
     (DATA / "sfx.json").write_text(json.dumps({
         "note": "Sound effects: ids used by game.json actions[].sfx (item_soft, paper, tool_click, soft_success) and "

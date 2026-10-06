@@ -43,9 +43,10 @@ public partial class PortalChooser : ModalScreen
             var target = targets.FirstOrDefault(t => t.Year == era.Year);
             bool current = era.Year == game.State.Era;
             bool unlocked = Navigation.IsEraUnlocked(game.Content, game.State, era.Year);
-            string text = era.Year + " · " + TextService.Get(TextKeys.CardOf(era)) + " · " + TextService.Get(TextKeys.DateOf(era));
+            string shownYear = TextService.EraYear(era.Year);
+            string text = shownYear + " · " + TextService.Get(TextKeys.CardOf(era)) + " · " + TextService.Get(TextKeys.DateOf(era));
             string note = current ? Ui.T("ui.travel.era_current") : target is null ? Ui.T(unlocked ? "ui.map.unreachable" : "ui.travel.era_locked") : "";
-            if (!unlocked && !current) text = era.Year + " · " + Ui.T("ui.travel.era_locked");
+            if (!unlocked && !current) text = shownYear + " · " + Ui.T("ui.travel.era_locked");
             int year = era.Year;
             var b = Ui.Button(text + (note.Length > 0 && unlocked ? "  (" + note + ")" : ""), () =>
             {

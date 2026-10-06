@@ -8,16 +8,36 @@ namespace LastBell.Core.Tests.Support;
 public sealed record WalkthroughStep(int Step, string Quest, string Action, IReadOnlyList<string> TravelPath, string Target,
     string? Select, JsonNode? PuzzleSolution, IReadOnlyList<string> InventoryAfter, string RoomAfter);
 
-/// <summary>Shared fixtures: the canonical handoff files copied next to the test binaries.</summary>
+/// <summary>
+/// Shared fixtures: the canonical handoff files copied next to the test binaries. <see cref="Content"/> is the
+/// content the game plays: game.json with the content overlays of src/game/data/content_ext applied (Core README
+/// section 13). <see cref="BaseContent"/> is the handoff alone.
+/// </summary>
 public static class TestData
 {
     private static readonly Lazy<string> GameJsonText = new(() => File.ReadAllText(FixturePath("game.json")));
-    private static readonly Lazy<GameContent> LazyContent = new(() => GameContent.Load(GameJsonText.Value));
+    private static readonly Lazy<ContentOverlays> LazyOverlays = new(() => new ContentOverlays(
+        OverlayText(ContentOverlays.DialogueExtFile), OverlayText(ContentOverlays.TravelExtFile)));
+    private static readonly Lazy<GameContent> LazyContent = new(() => GameContent.Load(GameJsonText.Value, LazyOverlays.Value));
+    private static readonly Lazy<GameContent> LazyBaseContent = new(() => GameContent.Load(GameJsonText.Value));
     private static readonly Lazy<(IReadOnlyList<WalkthroughStep> Main, IReadOnlyList<string> Optional)> LazyWalkthrough = new(LoadWalkthrough);
     private static readonly Lazy<IReadOnlyList<GameState>> LazyMainStates = new(BuildMainStates);
 
-    /// <summary>Loaded content (shared, immutable).</summary>
+    /// <summary>Loaded content with the overlays (shared, immutable): what the game plays.</summary>
     public static GameContent Content => LazyContent.Value;
+
+    /// <summary>The handoff content without overlays.</summary>
+    public static GameContent BaseContent => LazyBaseContent.Value;
+
+    /// <summary>The overlay texts the tests load (src/game/data/content_ext).</summary>
+    public static ContentOverlays Overlays => LazyOverlays.Value;
+
+    /// <summary>Text of an overlay fixture, or null when the file is absent.</summary>
+    public static string? OverlayText(string fileName)
+    {
+        var path = FixturePath(Path.Combine("content_ext", fileName));
+        return File.Exists(path) ? File.ReadAllText(path) : null;
+    }
 
     /// <summary>Raw game.json text.</summary>
     public static string GameJson => GameJsonText.Value;

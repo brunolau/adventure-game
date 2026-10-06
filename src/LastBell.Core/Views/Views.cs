@@ -70,14 +70,33 @@ public sealed record InventoryItemView(string Id, TextRef Name, TextRef Look, Te
 /// <param name="IsCurrent">Current room.</param>
 /// <param name="CanFastTravel">Fast travel allowed right now (only meaningful in map mode).</param>
 /// <param name="IsAnchor">True for the era's time node.</param>
-public sealed record MapRoomView(string RoomId, TextRef Name, bool Visited, bool IsCurrent, bool CanFastTravel, bool IsAnchor);
+/// <param name="RegionId">Id of the map region the room belongs to.</param>
+/// <param name="IsHub">True when the region is entered from other regions through this room (stop or station).</param>
+public sealed record MapRoomView(string RoomId, TextRef Name, bool Visited, bool IsCurrent, bool CanFastTravel, bool IsAnchor,
+    string RegionId = "", bool IsHub = true);
+
+/// <summary>
+/// A region of one era sheet (the map shows the regions first, then the rooms of the chosen region). Fast travel
+/// is free inside the current region; another region is reached only through one of its hubs.
+/// </summary>
+/// <param name="Id">Region id.</param>
+/// <param name="Name">Region name (<c>region.&lt;id&gt;.name</c>).</param>
+/// <param name="Rooms">Room ids of the region (data order).</param>
+/// <param name="Hubs">Hub room ids.</param>
+/// <param name="IsCurrent">The hero is in this region.</param>
+/// <param name="Visited">At least one room of the region was visited.</param>
+/// <param name="CanTravel">At least one room of the region can be fast-travelled to right now.</param>
+/// <param name="Transport">Travel style used to reach the region from the current room (e.g. <c>bus</c>), or null.</param>
+public sealed record MapRegionView(string Id, TextRef Name, IReadOnlyList<string> Rooms, IReadOnlyList<string> Hubs, bool IsCurrent,
+    bool Visited, bool CanTravel, string? Transport);
 
 /// <summary>One era sheet of the map.</summary>
 /// <param name="Year">Year.</param>
 /// <param name="Date">Date text.</param>
 /// <param name="Unlocked">Era unlocked.</param>
 /// <param name="Rooms">Rooms of the era (data order).</param>
-public sealed record MapEraView(int Year, TextRef Date, bool Unlocked, IReadOnlyList<MapRoomView> Rooms);
+/// <param name="Regions">Regions of the era (data order of their first room).</param>
+public sealed record MapEraView(int Year, TextRef Date, bool Unlocked, IReadOnlyList<MapRoomView> Rooms, IReadOnlyList<MapRegionView> Regions);
 
 /// <summary>View model builders for the presentation layer. They never change state.</summary>
 public static class ViewBuilder
@@ -127,15 +146,33 @@ public static class ViewBuilder
         return true;
     }
 
-    /// <summary>The topological map: every era sheet with visited/grey rooms and fast-travel flags.</summary>
+    /// <summary>
+    /// The topological map: every era sheet with its regions and visited/grey rooms and fast-travel flags
+    /// (same rule as <see cref="Navigation.CanFastTravel"/>: visited, current era, reachable, and inside the current
+    /// region or a hub of another region).
+    /// </summary>
     public static IReadOnlyList<MapEraView> Map(GameContent content, GameState state)
     {
         var reachable = Navigation.ConnectedRooms(content, state, includePortals: false);
-        return content.Eras.Select(e => new MapEraView(e.Year, TextKeys.DateOf(e), Navigation.IsEraUnlocked(content, state, e.Year),
-            content.Rooms.Where(r => r.Era == e.Year).Select(r => new MapRoomView(r.Id, TextKeys.NameOf(r), state.Visited.Contains(r.Id),
+        var sheets = new List<MapEraView>();
+        foreach (var e in content.Eras)
+        {
+            var rooms = content.Rooms.Where(r => r.Era == e.Year).Select(r => new MapRoomView(r.Id, TextKeys.NameOf(r), state.Visited.Contains(r.Id),
                 r.Id == state.Room,
-                state.Visited.Contains(r.Id) && r.Era == state.Era && reachable.Contains(r.Id) && r.Id != state.Room,
-                r.Id == e.Anchor)).ToList())).ToList();
+                state.Visited.Contains(r.Id) && r.Era == state.Era && reachable.Contains(r.Id) && r.Id != state.Room &&
+                Navigation.IsRegionTarget(content, state.Room, r.Id),
+                r.Id == e.Anchor, content.RegionOf(r.Id).Id, content.IsHub(r.Id))).ToList();
+            var byId = rooms.ToDictionary(r => r.RoomId, StringComparer.Ordinal);
+            var regions = content.RegionsOf(e.Year)
+                .OrderBy(g => content.Rooms.ToList().FindIndex(r => g.Rooms.Contains(r.Id)))
+                .Select(g => new MapRegionView(g.Id, TextKeys.NameOf(g), g.Rooms, g.Hubs, g.Rooms.Contains(state.Room),
+                    g.Rooms.Any(state.Visited.Contains), g.Rooms.Any(id => byId[id].CanFastTravel),
+                    g.Rooms.Contains(state.Room) || e.Year != state.Era ? null
+                        : g.Hubs.Select(h => Navigation.TransportBetween(content, state, state.Room, h)).FirstOrDefault(t => t is not null)))
+                .ToList();
+            sheets.Add(new MapEraView(e.Year, TextKeys.DateOf(e), Navigation.IsEraUnlocked(content, state, e.Year), rooms, regions));
+        }
+        return sheets;
     }
 
     /// <summary>

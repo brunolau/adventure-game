@@ -16,7 +16,7 @@ namespace LastBell.Game.UI.Puzzles;
 /// built from <c>controls.type</c> (matching, rotate_overlay, digits, grid_choice), the clue, the
 /// feedback line, and the buttons Confirm (the data's confirm label), Start over (reset_allowed),
 /// Hint, Fill in correctly (only when Core's <see cref="Puzzles.CanFill"/>: hint_can_fill and the third
-/// hint level revealed) and the close cross. No timer, no penalty: a wrong answer only stores the
+/// hint level of the puzzle's step revealed) and the close cross. No timer, no penalty: a wrong answer only stores the
 /// draft and shows the wrong line; drafts are kept through Core on every change and on close.
 /// A correct answer commits the action atomically (GameRuntime.SubmitPuzzle) and the modal closes.
 /// </summary>

@@ -289,7 +289,7 @@ public partial class JournalScreen : ModalScreen
         if (nameCounts.GetValueOrDefault(name) < 2) return name;
         var content = GameRuntime.Instance.Content;
         var room = content.FindCharacter(person.CharacterId)?.Rooms.Select(content.FindRoom).FirstOrDefault(r => r is not null);
-        return room is null ? name : name + " (" + room.Era + ")";
+        return room is null ? name : name + " (" + TextService.EraYear(room.Era) + ")";
     }
 
     private static string Escape(string text) => text.Replace("[", "[lb]");
@@ -304,7 +304,7 @@ public partial class JournalScreen : ModalScreen
             var card = new PanelContainer { ThemeTypeVariation = era.Year == game.State.Era ? "HighlightCard" : "CardPanel" };
             var box = Ui.VBox(6);
             var head = Ui.HBox(14);
-            head.AddChild(Ui.Label(era.Year.ToString(), "TitleLabel"));
+            head.AddChild(Ui.Label(TextService.EraYear(era.Year), "TitleLabel"));
             var names = Ui.VBox(0);
             var eraDef = game.Content.FindEra(era.Year);
             if (eraDef is not null) names.AddChild(Ui.Label(Ui.T(TextKeys.CardOf(eraDef)), "SubheadingLabel"));

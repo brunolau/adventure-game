@@ -254,13 +254,17 @@ public partial class DebugHarness
             game.Load("m2_accept_cs");
             await Settle();
             await PerformActReal(a.Id);
-            bool sawCutscene = await WaitUntil(() => game.State.Mode == GameMode.Cutscene, 30);
+            // The action's lines come first; guest speakers walk in and out around them (PT-S18), so allow 90 s.
+            bool sawCutscene = await WaitUntil(() => game.State.Mode == GameMode.Cutscene, 90);
+            // Esc skips one line; a second Esc within 0.5 s skips the whole cutscene (PT-F13).
             await KeyReal(Godot.Key.Escape);
+            await KeyReal(Godot.Key.Escape);
+            bool skippedAtOnce = await WaitUntil(() => game.State.Mode != GameMode.Cutscene, 5);
             await WaitLinesReal(60);
             if (UiRoot.Instance!.TopModal is EndingSequence) await FinishEndingReal(replay: false);
             var skipped = game.State;
-            Check($"AT16_skip_{a.Cutscene}_same_state", sawCutscene && SameProgress(watched, skipped),
-                  $"cutscene_seen={sawCutscene} room={skipped.Room}/{watched.Room} done={skipped.Done.Length}/{watched.Done.Length} inv_same={skipped.Inventory.OrderBy(x => x).SequenceEqual(watched.Inventory.OrderBy(x => x))}");
+            Check($"AT16_skip_{a.Cutscene}_same_state", sawCutscene && skippedAtOnce && SameProgress(watched, skipped),
+                  $"cutscene_seen={sawCutscene} double_esc_skipped={skippedAtOnce} room={skipped.Room}/{watched.Room} done={skipped.Done.Length}/{watched.Done.Length} inv_same={skipped.Inventory.OrderBy(x => x).SequenceEqual(watched.Inventory.OrderBy(x => x))}");
         }
         GameRuntime.DeleteSlot("m2_accept_cs");
 
@@ -269,7 +273,7 @@ public partial class DebugHarness
         {
             await Prepare(id);
             await PerformActReal(id);
-            await WaitUntil(() => game.State.Mode == GameMode.Cutscene, 30);
+            await WaitUntil(() => game.State.Mode == GameMode.Cutscene, 90);
             await Seconds(0.3);
             string? line = game.State.ActiveLineId;
             game.Save("m2_accept_mid");
@@ -329,6 +333,13 @@ public partial class DebugHarness
         var sameEra = view.First(e => e.Year == game.State.Era).Rooms;
         bool flagsMatch = sameEra.All(r => !r.CanFastTravel || (r.Visited && Navigation.FindRoute(content, game.State, r.RoomId) is not null));
         string here = game.State.Room;
+        // Regions first: open the current region's rooms (its unvisited rooms are grey nodes there).
+        var hereRegion = view.First(e => e.Year == game.State.Era).Regions.First(r => r.IsCurrent).Id;
+        if (Descendants<MapGraph>(map).First() is { ShowsRegions: true } overview && overview.Nodes.TryGetValue(hereRegion, out var hereCard))
+        {
+            await ClickControl(hereCard, "map region " + hereRegion);
+            await Frames(6);
+        }
         var unvisited = Descendants<Button>(map).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == TextService.Ui("ui.map.unvisited"));
         if (unvisited is not null) await ClickControl(unvisited, "map unvisited node");
         await Frames(6);
@@ -337,6 +348,13 @@ public partial class DebugHarness
         bool travelled = false;
         if (target is not null)
         {
+            // The map shows the regions first (travel overlay, DECISIONS control change 7): open the target's region.
+            var graph = Descendants<MapGraph>(map).First();
+            if (graph.ShowsRegions && graph.Nodes.TryGetValue(target.RegionId, out var regionCard))
+            {
+                await ClickControl(regionCard, "map region " + target.RegionId);
+                await Frames(6);
+            }
             string name = TextService.Get(target.Name);
             var node = Descendants<Button>(map).FirstOrDefault(b => b.IsVisibleInTree() && b.Text == name);
             if (node is not null && await ClickControl(node, "map node " + target.RoomId))
@@ -346,6 +364,9 @@ public partial class DebugHarness
         Check("AT12_map_fast_travel_respects_gates", flagsMatch && stayed && (target is null || travelled),
               $"flags_match={flagsMatch} unvisited_click_stays={stayed} fast_travel={(target is null ? "-" : target.RoomId + ":" + travelled)}");
         await WaitLinesReal(20);
+
+        // ---------------------------------------------------------------- TR01-TR03: the bus to Dúbravka 2020 and the map regions (TravelAcceptance.cs)
+        await RunTravelChecks();
 
         // ---------------------------------------------------------------- AT15 (one order in the engine): ports in reverse order
         await Prepare("F12");

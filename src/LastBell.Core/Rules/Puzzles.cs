@@ -108,14 +108,16 @@ public static class Puzzles
             : new PuzzleSubmitResult(false, state, TextKeys.WrongOf(puzzle));
     }
 
-    /// <summary>True when the "fill in correctly" button may be shown: <c>hint_can_fill</c> and the third hint level of the owning quest revealed.</summary>
+    /// <summary>
+    /// True when the "fill in correctly" button may be shown: <c>hint_can_fill</c> and the third hint level of the
+    /// puzzle's own step revealed (hints are kept per step, <see cref="Hints"/>).
+    /// </summary>
     public static bool CanFill(GameContent content, GameState state, string puzzleId)
     {
         var puzzle = content.FindPuzzle(puzzleId);
         var action = ActionFor(content, puzzleId);
         if (puzzle is null || action is null || !puzzle.HintCanFill) return false;
-        var quest = content.GetQuestOf(action.Id);
-        return Hints.RevealedLevel(state, quest.Id) >= quest.Hints.Count && quest.Hints.Count > 0;
+        return Hints.StepLevel(state, action.Id) >= Hints.Levels;
     }
 
     /// <summary>Fills the draft with the solution (only when <see cref="CanFill"/>); the player must still confirm.</summary>
