@@ -94,6 +94,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | Ružinov | v Ružinove | do Ružinova | z Ružinova |
 | Miletičova | na Miletičovej, *na Miletičke* (speech) | na Miletičovu | z Miletičovej |
 | Petržalka | v Petržalke | do Petržalky | z Petržalky |
+| Starý most (the old bridge, S30) | na Starom moste | na Starý most | zo Starého mosta |
 | Ivanka pri Dunaji | v Ivanke | do Ivanky | z Ivanky |
 | Jasná | v Jasnej | do Jasnej | z Jasnej |
 | Biela Púť | na Bielej Púti | na Bielu Púť | z Bielej Púte |
@@ -118,7 +119,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | archívna študovňa | Karol; Mira's fond is registered here |
 | kazetový klub v suteréne | Juro, Ružinov |
 | Deziderova garáž | Petržalka, garage number 17 |
-| nábrežný merací prístrešok | the riverside measuring shelter by the Danube (P03) |
+| merací stánok na Starom moste | the small sheet-metal measuring booth on the footway of the old Starý most in 1995 (S30, P03); owner decision 2026-10-06 (it replaced the *nábrežný merací prístrešok*: no embankment, no shelter). Short forms: *v stánku*, *pri stánku* (the round table stands beside it), *na Starom moste*. Spelled *Starý most* (only the first word capitalised) |
 | skúšobná čerpacia búdka, meracia miestnosť | Ivanka 1960; the door (S38) leads to the room of the first ZVON (S39) |
 | povala technického archívu | Ivanka 1960, with the metal archive box |
 | servisné okno (školnícke) | the same window in 1982, 1995 and 2020 with Tóno's swallow |
@@ -162,7 +163,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | S27 | 1995 | Ružinov | Kazetový klub v suteréne | = |
 | S28 | 1995 | Petržalka | Petržalský podchod | = |
 | S29 | 1995 | Petržalka | Garáž rádioamatéra | = |
-| S30 | 1995 | Petržalka | Nábrežný merací prístrešok | = |
+| S30 | 1995 | Petržalka | **Merací stánok na Starom moste** | Nábrežný merací prístrešok |
 | S31 | 1960 | Ivanka pri Dunaji | Ivanská železničná zastávka | = |
 | S32 | 1960 | Ivanka pri Dunaji | Ivanská náves | = |
 | S33 | 1960 | Ivanka pri Dunaji | Pošta s prepážkou | = |
@@ -346,7 +347,7 @@ another line of the same exchange, say so in the note.
 |---|---|---|---|
 | **P01** Tri referenčné tvary (S10) | join equal shapes; colours do not matter | kruh–kruh, trojuholník–trojuholník, štvorec–štvorec | `look.S10.panel`, `action.G10.002/.003`, `action.G10.objective/.journal`, `puzzle.P01.*`, `journal.clue.P01`, `quest.M02.hint.3` |
 | **P02** Zarovnanie mapovej fólie (bag) | the base map and the overlay both show **dierka, dvojitý kríž, štvorec**; rotate until all three match | **180°** | `item.OVERLAY`, `action.B15.004`, `puzzle.P02.*`, `journal.clue.P02`, `quest.M06.hint.3` |
-| **P03** Nábrežná kalibrácia (S30) | the school-yard drawing says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the panel in the school yard and Emil has the metronome | **3–2–6** | `look.S17.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
+| **P03** Kalibrácia na Starom moste (S30) | the school-yard drawing says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the panel in the school yard and Emil has the metronome | **3–2–6** | `look.S17.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
 | **P04** Priradenie štyroch svedectiev (S49) | ports and items carry name and year; the journal repeats them | **Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035** (shown; value 1960) | `look.S39.plate`, `action.I13.001`, `action.C05.001`, `look.S49.port_*`, `action.F11.objective/.journal`, `action.F12.001`–`F15.001`, `puzzle.P04.*`, `journal.clue.P04`, `quest.M15.hint.2/.3` |
 | **P05** Dutina v tom istom múriku (S55) | grid **3 × 4**; **druhý rad zhora, tretí kameň zľava** = **rad 2, stĺpec 3**, written in Tóno's 1982 map and his 1995 note | row 2, column 3 | `action.E08.001`, `item.CACHEMAP`, `look.S61.niche`, `action.E11.006`, `item.KEEPERNOTE`, `action.D05.002`, `puzzle.P05.*`, `journal.clue.P05`, `quest.M11C.hint.3` |
 

@@ -2,7 +2,7 @@
   "version": 1,
   "room": "S13",
   "status": "natural re-blocking (product-owner decision 2026-10-05, all 68 rooms); L_HALL family base for S53 (2020) and S59 (1982)",
-  "note": "Entrance hall of ZS Sokolikova 2 behind the SW main entrance (type-reference hall, register S13). One-point perspective, camera 2.2 m high on the hall floor, focal 1500 px, horizon y 352, looking at the inner back wall (parallel to the picture) at 9.5 m: its floor line is y 700 (158 px per metre); the side walls are 8.4 m apart. Left wall = the glazed steel-framed facade with the entrance double door at the front (exit to S12) and window panels behind it (left_window); back wall = caretaker's door (behind the free-standing caretaker's desk), the middle double door to the classroom wing (exit to S14) under the wall clock, the cloakroom door and the yellow mesh cloakroom cages with the slipper bench; right wall = open doorway to the corridor with the staircase up (exit to S15, the physics cabinet is upstairs). Perspective scale s(y) = (y - 352) / 663: 0.55 at the back of the walk area, 1.0 at y 1015 (hero 1.7 m). Tono (seated sprite, chair included) sits right of his desk, turned to the hall.",
+  "note": "Entrance hall of ZS Sokolikova 2 behind the SW main entrance (type-reference hall, register S13). One-point perspective, camera 2.2 m high on the hall floor, focal 1500 px, horizon y 352, looking at the inner back wall (parallel to the picture) at 9.5 m: its floor line is y 700 (158 px per metre); the side walls are 8.4 m apart. Left wall = the glazed steel-framed facade with the entrance double door at the front (exit to S12) and window panels behind it (left_window); back wall = the wall key cabinet and the caretaker's door, a small wall-mounted lectern with the open visitor book right of that door (board x 600-693, y 517-556; owner 2026-10-06: no caretaker's desk in the hall), the middle double door to the classroom wing (exit to S14) under the wall clock, the cloakroom door and the yellow mesh cloakroom cages with the slipper bench; right wall = open doorway to the corridor with the staircase up (exit to S15, the physics cabinet is upstairs). Perspective scale s(y) = (y - 352) / 663: 0.55 at the back of the walk area, 1.0 at y 1015 (hero 1.7 m). Tono (seated sprite, chair included) sits on his chair right of the lectern, turned left to the visitor book and the entrance; the walk area is notched around his chair so the hero passes in front of him.",
   "background": "bg_natural/S13.webp",
   "anchors": {
     "terrazzo_line": [
@@ -32,15 +32,23 @@
       722
     ],
     [
-      378,
-      776
+      380,
+      716
     ],
     [
-      628,
-      776
+      682,
+      716
     ],
     [
-      662,
+      686,
+      792
+    ],
+    [
+      828,
+      792
+    ],
+    [
+      832,
       716
     ],
     [
@@ -109,36 +117,37 @@
         370,
         398
       ],
-      "reason": "wall key cabinet with bunches of keys behind the caretaker's desk (back wall left)"
+      "reason": "wall key cabinet with bunches of keys left of the caretaker's door (back wall left)"
     },
     "S13.TONO": {
       "rect": [
-        645,
+        690,
         515,
-        125,
+        132,
         262
       ],
       "interaction_point": [
-        835,
+        604,
         800
       ],
       "label_anchor": [
-        707,
+        756,
         505
       ],
-      "reason": "Tono seated right of his visitor-log desk, turned to the hall"
+      "reason": "Tono seated on his chair right of the wall lectern with the visitor book, turned left to it; the hero signs in at the lectern, left of him"
     }
   },
   "npcs": {
     "S13.TONO": {
       "variant": "seated",
       "feet": [
-        707,
+        772,
         777
       ],
-      "facing": "right",
+      "scale": 0.64,
+      "facing": "left",
       "z": "auto",
-      "reason": "docs/DECISIONS.md item 2: sits at the visitor log; the desk is left of him (background), the chair is part of the sprite"
+      "reason": "docs/DECISIONS.md item 2: sits at the visitor log; owner 2026-10-06: no desk - the open visitor book lies on the small wall lectern left of him (background), the chair is part of the sprite; explicit scale = room perspective at y 777 (0.64) because the walk area is notched around his chair"
     }
   },
   "exits": {

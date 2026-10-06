@@ -105,18 +105,22 @@ shot("CS02_2",
      characters=["ADAM"])
 
 # ----------------------------------------------------------------------------------------------- CS03 (B22, S30 1995)
+# S30 is the measuring booth on the old Starý most (owner decision 2026-10-06; bg_natural/S30). The shipped frame
+# (v4) was made from the 2026-10-05 frame by art/tools/cs03_starymost.py: new background, hand + counter kept.
 shot("CS03_1",
-     refs=[("photo:S30/tyrsovo-nabrezie_path_railing_castle-view_2008.jpg", "place reference: the real Danube "
-                                                                            "embankment path and railing in Bratislava"),
-           ("photo:S30/petrzalka-bank_view-across-danube_2008.jpg", "place reference: the view across the Danube"),
+     refs=[("src/game/assets/bg_natural/S30.webp", "place reference: our painting of room S30, the plank footway of "
+                                                   "the old Stary most in 1995 with the grey-green measuring booth, "
+                                                   "the riveted truss, the Danube, Most SNP and the castle"),
            ("item:CHRONO", "prop reference: the brass ZVON chronometer with its mechanical digit counter and four lights"),
            ADAM, STYLE_EXTERIOR],
      shot=("Close-up: Adam's hand holds the brass chronometer in the foreground, filling the left-centre of the frame; "
            "its mechanical digit counter has just clicked over and reads exactly 1962, the four small lights glowing "
-           "softly. Behind it, slightly out of focus, a small wooden riverside service shelter with a mechanical coil "
-           "on a stand that is slowing to a stop, a paper map pinned inside the shelter with two places circled; "
-           "beyond the railing the wide Danube and the far bank of Bratislava in 1995."),
-     light="Golden evening sun low over the river, glints on the water and on the brass.",
+           "softly. Behind it, slightly out of focus, the grey-green sheet-metal measuring booth on the bridge footway: "
+           "the copper measuring coil in its ring holder on the counter with a fading glow, the small circuit board, the "
+           "box with three number wheels, a paper map pinned inside the booth with two places circled; beside it the "
+           "round table with the wooden metronome; on the right the riveted grey truss with its gusset plate, beyond the "
+           "railing the Danube, Most SNP on the left and Bratislava Castle with ochre walls and dark roofs (1990s)."),
+     light="Warm late-afternoon sun, glints on the water and on the brass.",
      characters=[])
 
 shot("CS03_2",

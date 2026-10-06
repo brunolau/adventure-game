@@ -1,0 +1,83 @@
+{
+  "kind": "fix (local, polygon mask)",
+  "from_version": 2,
+  "instruction": "Remove the empty free-standing wooden desk that stands on the floor in front of the left part of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door), together with its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door and its brown frame down to the floor, the pale yellow wall with the darker yellow-ochre dado and the brown skirting board along the floor, and the polished terrazzo floor with the same tile joints and the same soft overcast winter light and reflections. The space there is simply empty wall and floor. Do not change the key cabinet, the red notice board, the doors, the window or anything else.",
+  "mask_polygons_game_px": [
+    {
+      "feather": 6.0,
+      "points": [
+        [
+          350.0,
+          588.0
+        ],
+        [
+          655.0,
+          588.0
+        ],
+        [
+          655.0,
+          700.0
+        ],
+        [
+          350.0,
+          700.0
+        ]
+      ]
+    },
+    {
+      "feather": 22.0,
+      "points": [
+        [
+          350.0,
+          690.0
+        ],
+        [
+          655.0,
+          690.0
+        ],
+        [
+          655.0,
+          860.0
+        ],
+        [
+          350.0,
+          860.0
+        ]
+      ]
+    }
+  ],
+  "mask_dilate_game_px": 4.0,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 1303609080,
+  "usd": 0.15,
+  "scope": "bg_natural/hall_nodesk/",
+  "spend_log_asset": "bg_natural/hall_nodesk/S59_from_v2_nodesk_a",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the empty free-standing wooden desk that stands on the floor in front of the left part of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door), together with its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door and its brown frame down to the floor, the pale yellow wall with the darker yellow-ochre dado and the brown skirting board along the floor, and the polished terrazzo floor with the same tile joints and the same soft overcast winter light and reflections. The space there is simply empty wall and floor. Do not change the key cabinet, the red notice board, the doors, the window or anything else. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S59_v2.png",
+    "art/backgrounds/entrance.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_hall_nodesk_S59_from_v2_nodesk_a_raw.png",
+  "note": "owner 2026-10-06: caretaker's desk removed; only the desk, its floor reflection and the revealed door/wall/skirting/floor come from the model output",
+  "started": "2026-10-06T11:53:53",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Vstupná chodba in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'terrazzo_line' stays exactly at x 960, y 700 (50 % from the left, 65 % from the top). The fixed landmark 'left_window' stays exactly at x 239, y 421 (12 % from the left, 39 % from the top). The fixed landmark 'middle_door' stays exactly at x 960, y 534 (50 % from the left, 49 % from the top).\n\nEra changes: the same entrance hall 13 years earlier, on Tuesday 7 December 1982 at about half past two in the afternoon. The building is only 8 years old: everything looks newer and cleaner, the bronze steel frames of the glazed wall and the honey wooden doors are fresh. Outside the glass it is early December: grey overcast winter light, the forecourt trees are much younger, thinner and completely bare (bare branches only, no leaves), thin patches of snow lie on the lawn. There is NO sunshine at all on this overcast December day: remove every sunbeam and every bright diagonal sun patch from the walls and from the floor of image 1; the hall is lit evenly and softly by the cool grey daylight from the glazed wall and by the ceiling fluorescent tubes, which are switched on; the polished terrazzo shows only soft reflections of the tubes, the doors and the windows. The walls keep the same plain soft yellow paint and darker dado (no murals).\nPeriod decoration: between the caretaker's door and the middle double door hangs a red-framed notice board of the school pioneer organisation (see prop 1); the clock above the middle door stays alone; above the right door and the cloakroom hangs a string of small triangular red paper pennants, each with a little yellow star (no letters, no banner, nothing on the right wall). The caretaker's desk is empty: nothing on it at all (no book, no lamp, no telephone). The cloakroom cages are full of children's dark winter coats, anoraks, knitted hats and scarves on hooks behind the mesh, and the shoe shelf of the bench holds rows of small winter boots instead of slippers. The key cabinet stays. Everything built - walls, doors, door frames, the clock, the ceiling fittings, the doorway and staircase at the right, the terrazzo floor - stays exactly where it is.\n\nInteractive props of 1982:\n1. the box labelled 'Pioniersky oznam' in image 2 (x 600-810, y 395-545 of the 1920x1080 frame (31-42 % from the left, 37-50 % from the top)): a red-framed notice board with a red felt background: a small red five-pointed star at the top, a big paper notice of the pioneer meeting with one headline of large red capital letters (illegible pseudo-letters) and lines of illegible handwriting, a drawing of a red pioneer neckerchief and two smaller pinned papers.\n2. the box labelled 'Terazzo' in image 2 (x 1140-1480, y 722-778 of the 1920x1080 frame (59-77 % from the left, 67-72 % from the top)): the terrazzo floor in front of the cloakroom door, freshly mopped: a wet, mirror-shiny patch of the reddish-brown and ochre terrazzo tiles with a few drying streaks (no bucket, no mop).\nThe glazed entrance double door stays the box labelled 'exit: Pred ZŠ Sokolíkova v roku 1982' in image 2 (x 30-190, y 290-835 of the 1920x1080 frame (2-10 % from the left, 27-77 % from the top)). The middle double door stays the box labelled 'exit: Trieda pred technickou výstavkou v roku 1982' in image 2 (x 849-1071, y 368-700 of the 1920x1080 frame (44-56 % from the left, 34-65 % from the top)). The open doorway with the staircase at the right stays the box labelled 'exit: Fyzikálny kabinet v roku 1982' in image 2 (x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 716-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) stays the open polished terrazzo floor with nothing standing on it.\nThis room has no NPC zones.\n\nFiction rules: the period decoration is invented scenery: no real portraits, no real names, no real emblems of today, no readable text anywhere (headlines and slogans are illegible pseudo-letters, notices illegible scribbles, no digits), no logos, no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S59",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S59.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T12:02:08"
+  }
+}

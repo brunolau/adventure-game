@@ -19,7 +19,8 @@ Checks on the EFFECTIVE room (game.json merged with the blocking file, exactly a
              window_bust / window_bust_glass or a variant name) and its sheets exist; bust variants have a sill_y
            - files: background, foreground mask, occluder textures and variant overlays exist and are 1920x1080
              (patches: inside the frame); state patch textures exist; the ambient file parses, its layer types are
-             known and every texture / sheet / mask it names exists; audio sounds exist in data/audio/ambience.json
+             known and every texture / sheet / mask it names exists with a valid Godot .import (not valid=false); audio
+             sounds exist in data/audio/ambience.json
   warnings - label boxes overlapping each other or pushed by the screen clamp, label far from its rect,
              exit rect far from its interaction point, NPC approach point not walkable, NPC scale far from the
              room perspective at its feet, rect mostly hidden, staging that differs from docs/DECISIONS.md item 2,
@@ -40,6 +41,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -808,6 +810,20 @@ def check_assets(rep: Report, room: dict, blocking: dict, game: dict, strict: bo
     check_audio(rep, blocking.get("audio"))
 
 
+def import_problem(image: Path) -> str | None:
+    """Why Godot cannot load an existing image, or None. The game loads ambient sprites through ResourceLoader, which
+    needs the image's .import sidecar; one written while the file was missing or half-written says valid=false and the
+    sprite is "not found" in the game even though the file is there (S51 tram_2020_mid, 2026-10-06). Godot does not
+    retry such an import on its own: rewrite the sidecar (or delete it) and run the headless --import."""
+    sidecar = image.with_name(image.name + ".import")
+    if not sidecar.exists():
+        return f"has no Godot import file {rel(sidecar)} (run the headless --import, then keep the .import with the file)"
+    text = sidecar.read_text(encoding="utf-8", errors="replace")
+    if re.search(r"^valid\s*=\s*false\s*$", text, re.MULTILINE) or not re.search(r"^path(\.\w+)?\s*=", text, re.MULTILINE):
+        return f"failed its Godot import ({rel(sidecar)} says valid=false / has no imported path): the game cannot load it"
+    return None
+
+
 def check_ambient(rep: Report, rid: str, blocking: dict, strict: bool, waive: dict) -> None:
     path = res_path(blocking["ambient"]) if blocking.get("ambient") else BLOCKING / "ambient" / f"{rid}.json"
     if not path.exists():
@@ -842,6 +858,8 @@ def check_ambient(rep: Report, rid: str, blocking: dict, strict: bool, waive: di
             image = full if full.suffix in (".webp", ".png") else full.with_name(full.name + ".webp")
             if not image.exists():
                 rep.error(f"ambient {lid}: {ref} does not exist ({rel(image)})")
+            elif problem := import_problem(image):
+                rep.error(f"ambient {lid}: {ref} {problem}")
             if ref == sheet and not image.with_suffix(".json").exists() and not ref.endswith((".webp", ".png")):
                 rep.error(f"ambient {lid}: sheet {ref} has no .json")
             parts = ref.split("/")

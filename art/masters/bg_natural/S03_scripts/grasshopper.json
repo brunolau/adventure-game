@@ -1,0 +1,126 @@
+{
+  "instruction_file": "art/masters/bg_natural/S03_scripts/grasshopper.txt",
+  "refs": [],
+  "style": "src/game/assets/bg_natural/S05.webp",
+  "feather": 6,
+  "protect_feather": 1.0,
+  "regions": [
+    {
+      "name": "gap right of the play tower, behind the slide",
+      "poly": [
+        [
+          168,
+          358
+        ],
+        [
+          258,
+          358
+        ],
+        [
+          258,
+          606
+        ],
+        [
+          152,
+          606
+        ],
+        [
+          152,
+          446
+        ],
+        [
+          168,
+          440
+        ]
+      ]
+    }
+  ],
+  "protect": [
+    {
+      "name": "green slide",
+      "hue_rect": [
+        126,
+        494,
+        140,
+        116
+      ],
+      "hue": [
+        95,
+        175
+      ],
+      "sat": 0.3,
+      "val": 0.12,
+      "grow": 1
+    },
+    {
+      "name": "front-left shelter post",
+      "rect": [
+        258,
+        358,
+        30,
+        250
+      ],
+      "grow": 0
+    },
+    {
+      "name": "standing stone",
+      "poly": [
+        [
+          150,
+          690
+        ],
+        [
+          138,
+          600
+        ],
+        [
+          140,
+          560
+        ],
+        [
+          158,
+          543
+        ],
+        [
+          182,
+          540
+        ],
+        [
+          198,
+          556
+        ],
+        [
+          204,
+          610
+        ],
+        [
+          200,
+          690
+        ]
+      ],
+      "grow": 1
+    },
+    {
+      "name": "roof eave",
+      "poly": [
+        [
+          190,
+          330
+        ],
+        [
+          300,
+          330
+        ],
+        [
+          300,
+          374
+        ],
+        [
+          200,
+          374
+        ]
+      ],
+      "grow": 0
+    }
+  ]
+}

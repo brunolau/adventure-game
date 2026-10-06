@@ -34,7 +34,7 @@ bottom tenth; no text unless quoted) + the canonical style-A sentence read from 
 | CS01_3 | v1 | S11 1995 stop, red-cream tram leaving, Adam alone |
 | CS02_1 | v1 | cassette deck reels, phone waveform, transcript; small PLAY/RECORD button labels |
 | CS02_2 | v1 | Adam silent; the 10-year-old in the yard with the same gesture |
-| CS03_1 | v1 | chronometer wheels read 1962 (NB2 crop edit 2026-10-06, `fixes/CS03_1_1962_v1`; Ivanka shown as 1962) at a Danube shelter, Bratislava castle and St Martin's across the river |
+| CS03_1 | v4 | the S30 booth on the Starý most behind the hand (section "CS03_1 on the Starý most" below); hand and chronometer pixel-identical to v1, whose wheels read 1962 (NB2 crop edit 2026-10-06, `fixes/CS03_1_1962_v1`) |
 | CS03_2 | v2 | v1 rejected: readable gibberish names; v2 ink scribbles, one row dissolving |
 | CS04_1 | v1 | 1960 attic, young Mira closes the box, Adam holds the imprint |
 | CS04_2 | v2 | triptych 1960s / 1995 / 2020 of the same box; v2 = v1 with the stray label "Matika '95" blanked |
@@ -128,3 +128,26 @@ June 1962 with the Slovak weekday row (`art/masters/bg_natural/S33.md`). The cal
 Bahnschrift (DIN-like, close to the painted digits) with the ink sampled from the old digits; the cells are refilled
 from their own paper and the ruled lines stay untouched. `cutscene_shots.py` (CS03_1, CS04_1, EPILOGUE_6, EPILOGUE_7)
 and `art/prompts/natural/S33.txt` say June 1962 (Mira 22); internal ids stay 1960.
+
+## CS03_1 on the Starý most (2026-10-06)
+
+Owner decision (docs/DECISIONS.md "Owner answers (2026-10-06, afternoon)"): S30 is the measuring booth on the old
+Starý most (`src/game/assets/bg_natural/S30.webp`, `art/masters/bg_natural/S30.md`), so CS03_1 (played in S30 after
+B22) shows that place instead of the retired Tyršovo nábrežie shelter. Tool `art/tools/cs03_starymost.py` (spend scope
+`cutscenes/reconcile/CS03_1/`, 2 paid calls, USD 0.30; reviews in `art/review/reconcile/`). Adam's hand and the
+chronometer (counter 1962, four lights) are pixel-identical to v1 in every version: the traced hand silhouette `HAND`
+is always taken from v1 (checked: max difference 0 inside it).
+
+| v | kind | seed | cost | result | verdict |
+|---|---|---|---|---|---|
+| v2 | full-frame edit of v1 + S30 in the state after B22 + a booth close-up; composite outside the hand silhouette | 608999577 | 0.15 | The grey-green sheet-metal booth with corrugated roof and red pennant, the copper coil glowing in its ring, the circuit board, the box with three blank wheels, the map with two red circles pinned inside, the round table with the metronome, the plank footway, the riveted X truss with the gusset plate on the right, a riveted member at the left edge, Most SNP with the saucer. Weak: the model repainted the hand smaller (its own hand edge shows left of the real one), the castle kept v1's white walls and red roofs, the far bank is v1's. | base |
+| v3 | crop edit (0,330)-(1333,1080) of v2: remove the duplicate hand edge | 1473881013 | 0.15 | The model ignored the crop and painted a new copy of the S30 scene with a small hand. | rejected (`rejected/CS03_1_v3*`) |
+| v4 | free retouch of v2 | - | 0 | The duplicate hand edge painted over from the footway beside it (plank joints continued along their direction, the sun-and-shadow surface above mirrored with a shear); the castle recoloured to its 1990s look of S30 (ochre walls, dark slate roofs and tower caps; sky, trees and windows untouched); the pseudo-letters inside the map circles blanked to paper. | **accepted** |
+
+Raw outputs `_CS03_1_v2_starymost_raw.png` (and the rejected v3 raw in `rejected/`). Lettering in the frame: only the
+1962 on the counter (the wheel box is blank, the map has lines, circles and a small compass rose). Not repainted: the far
+quay with the moored barge (v1's), which is plausible for 1995; the rows under the bottom letterbox bar (y > 972) at the
+left edge are only roughly cleaned. `cutscene_shots.py` CS03_1 now describes this view (reference `bg_natural/S30.webp`).
+In engine (hidden QA window, `--replay 32 --act B22 --fast-text --shots`): `build/screens/s30_stary_most/cs03/001_cs_CS03_beat1.jpg`
+(letterbox, subtitle „Ivanka pri Dunaji. 6. júna 1962.“).
+

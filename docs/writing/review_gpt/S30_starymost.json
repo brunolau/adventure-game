@@ -1,0 +1,221 @@
+{
+  "chunk": "S30_starymost",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\review_gpt\\S30_starymost.input.csv",
+  "overlay": [],
+  "cost_usd": 0.3535,
+  "batches": {
+    "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS": {
+      "hash": "62b844fd48962d73",
+      "status": "ok",
+      "heading": "B17 · main quest M07 „Rytmus na Dunaji“ | B18 · main quest M07 „Rytmus na Dunaji“ | B19 · main quest M07 „Rytmus na Dunaji“ | B20 · main quest M07 „Rytmus na Dunaji“ | B21 · main quest M07 „Rytmus na Dunaji“ | S28 · Petržalský podchod (1995, Petržalka) | S30 · Merací stánok na Starom moste (1995, Petržalka) | M07 (main) — actions B17, B18, B19, B20, B21, B22 | P03 — controls digits, solution [3, 2, 6] (action B22) | ITEMS · items that name the S30 place | HINTS · step hints of quest M07 „Rytmus na Dunaji“",
+      "keys": [
+        "action.B17.001",
+        "action.B18.objective",
+        "action.B18.journal",
+        "action.B19.objective",
+        "action.B19.journal",
+        "action.B20.journal",
+        "action.B21.journal",
+        "exit.S28.to_S30.label",
+        "conn.S28.S30.label",
+        "room.S30.name",
+        "quest.M07.goal",
+        "quest.M07.hint.3",
+        "puzzle.P03.title",
+        "item.NODEMAP",
+        "item.NODEMAP.purpose",
+        "item.COIL",
+        "item.COIL.purpose",
+        "item.METRONOME.purpose",
+        "ui.hint_step.B20",
+        "ui.hint_step.B21",
+        "ui.hint_step.B22"
+      ],
+      "fix": 2,
+      "conversation_note": "The room name and both incoming labels match and work naturally. The declension and capitalisation of Starý most are correct throughout. “Kalibrácia na Starom moste” works as a puzzle title.",
+      "usage": {
+        "prompt_tokens": 27480,
+        "completion_tokens": 2589,
+        "total_tokens": 30069,
+        "cost": 0.353472,
+        "prompt_tokens_details": {
+          "cached_tokens": 7812,
+          "cache_write_tokens": 7812
+        }
+      },
+      "usd": 0.3535
+    }
+  },
+  "keys": {
+    "action.B17.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na Starom moste. Ešte potrebuješ nezávislý rytmus.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B18.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B18.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B19.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na meracom stojane v stánku na Starom moste nastav 3–2–6.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B19.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na meracom stojane v stánku na Starom moste nastav 3–2–6.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B20.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Deziderova cievka sedí v držiaku na Starom moste.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "action.B21.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Emilov metronóm tiká na stolíku pri meracom stánku.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "exit.S28.to_S30.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Merací stánok na Starom moste",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "conn.S28.S30.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Merací stánok na Starom moste",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "room.S30.name": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Merací stánok na Starom moste",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "quest.M07.goal": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The bare year after the inflected place name reads like an internal destination tag rather than part of a natural goal sentence. Add the temporal preposition and noun.",
+      "suggestion": "Nájdi meraním na Starom moste časové okno do Ivanky v roku 1962.",
+      "text": "Nájdi meraním na Starom moste časové okno do Ivanky 1962.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "quest.M07.hint.3": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres na školskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "puzzle.P03.title": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kalibrácia na Starom moste",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "item.NODEMAP": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa vedie k Deziderovej garáži a k meraciemu bodu na Starom moste. Ktorý rok ukáže, zistím až meraním.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "item.NODEMAP.purpose": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ukázať Deziderovi; potrebná pri meraní na Starom moste v roku 1995.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "item.COIL": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Izolovaná meracia cievka. Patrí do kruhového držiaka v meracom stánku na Starom moste.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "item.COIL.purpose": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nasadiť do držiaka v meracom stánku na Starom moste.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "item.METRONOME.purpose": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Use “na meranie” to express intended purpose, rather than “pre meranie”.",
+      "suggestion": "Nezávislý rytmus na meranie na Starom moste v roku 1995.",
+      "text": "Nezávislý rytmus pre meranie na Starom moste v roku 1995.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "ui.hint_step.B20": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "ui.hint_step.B21": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    },
+    "ui.hint_step.B22": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6.",
+      "batch": "B17+B18+B19+B20+B21+S28+S30+M07+P03+ITEMS+HINTS"
+    }
+  },
+  "unreviewed": []
+}

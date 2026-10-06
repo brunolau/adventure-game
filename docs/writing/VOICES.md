@@ -359,12 +359,12 @@ blocks. Quiet, curious, unforced. Vyká Adamovi, Adam tyká jemu.
 
 ### DEZI – Dezider Kováč (47)
 
-Radio amateur in a Petržalka garage, Mira's former collaborator; knows the riverside measuring
-point. Lively technical voice that immediately translates terms into everyday speech. Tyká Adamovi.
+Radio amateur in a Petržalka garage, Mira's former collaborator; knows the measuring point on
+the Starý most. Lively technical voice that immediately translates terms into everyday speech. Tyká Adamovi.
 Name: *Dezider, Dezidera, Deziderovi* (*Dezi* only from his friends).
 
 - **Examples:**
-  - `Mapu poznám, kreslili sme ju s Mirou. Cievka patrí do držiaka na nábreží, opačne ju nevložíš.`
+  - `Mapu poznám, kreslili sme ju s Mirou. Cievka patrí do držiaka na Starom moste, opačne ju nevložíš.`
   - `Presné neznamená rovnaké. Presné je, keď vieš, prečo sa niečo líši.`
 
 ---

@@ -10,11 +10,74 @@ Owner-facing summary (how to play, sizes, credits, spend, what is left): `docs/R
 ## Status
 
 **Milestone 5: done. All 30 acceptance rows pass** (24 plain, 6 with a note) after the verification and release pass
-of 2026-10-06 (next section): every suite green on the final code, AT19 closed by a whole-game keyboard-only route and
-an OS-level keyboard run, the fixed playtest items spot-checked in a real window, the release rebuilt and smoke-tested.
-What still needs the product owner: docs/DECISIONS.md "Status 2026-10-06"; the remaining known issues: docs/RELEASE.md.
+of 2026-10-06 (two sections below): every suite green on the final code, AT19 closed by a whole-game keyboard-only
+route and an OS-level keyboard run, the fixed playtest items spot-checked in a real window, the release rebuilt and
+smoke-tested. **Re-verified and rebuilt on the afternoon of 2026-10-06** (next section) after the owner's afternoon
+answers (entry hall without the desk, S03 grasshopper, podlubie no-go, S30 on the Starý most): all green, no
+regression. What still needs the product owner: docs/DECISIONS.md "Status 2026-10-06"; the remaining known issues:
+docs/RELEASE.md.
 
-The sections after the next one are the record of the first milestone-5 run (2026-10-05).
+The sections after the next two are the record of the first milestone-5 run (2026-10-05).
+
+## Second verification and release pass (2026-10-06, afternoon)
+
+On the final tree after the change agents for the owner answers of 2026-10-06 afternoon (docs/DECISIONS.md "Owner
+answers (2026-10-06, afternoon)"): S13 / S53 / S59 entry hall without the caretaker's desk; S03 with a made-up wooden
+grasshopper; S17 / S55 / S61 podlubie leading only into the school's inner yard (no exit), the way to the panel blocks
+to the right of the school; S30 renamed "Merací stánok na Starom moste" (21 text keys) and CS03_1 on the Starý most.
+Rooms repainted since the first pass: S03, S08, S11, S13, S17, S30, S51, S53, S55, S57, S59, S61 (+ CS03_1, CS09_1).
+Nothing changed in the tree while this pass ran (checked by file times). Logs: `build/m5/verify2/logs/`, coverage:
+`build/m5/verify2/coverage_{A,B,C7,K}.json`, tables: `build/m5/verify2/coverage_tables.md`.
+
+| check | result |
+|---|---|
+| `godot --headless --import` | exit 0 |
+| `dotnet test src/LastBell.sln` | 361 passed, 3 skipped (UI-only AT08 / AT19 / AT20, covered in the engine), 0 failed |
+| `python tools/check_strings.py` | OK: 3359 keys, 0 errors, 0 warnings |
+| `python tools/check_blocking.py` | 68 rooms, 0 errors, 9 warnings: the same nine accepted M3-02 distances as in the first pass, none in a changed room |
+| `check_rewrite.py --self-test` / `--overlay-only` | OK (44 names, 22 places, 65 terms, 118 protected key rules, 21 verbatim rules; 261 overlay texts, 6 retired keys) |
+| `check_rewrite.py` on the current passes | OK (0 errors): ivanka1962_C1, ivanka1962_C3, jasna_winter, m5_verify, S03_lucny_konik, S03_lucny_konik_C4, S03_grasshopper, S30_starymost, S30_starymost_C4. C1 and ivanka1962 now report the new place names as missing (C1: "Lúčny koník" in action.G01.objective / .journal and quest.M01.hint.1; ivanka1962: "Starý most" in quest.M07.goal): those keys were rewritten later on purpose by S03_lucny_konik and S30_starymost, no text is lost (ISSUES M5-07) |
+| `extract_strings.py --dry-run` | OK, 1474 overrides applied, 0 override problems, 0 internal ids in player text |
+| `--acceptance m1` headless, time-scale 4 | 34 PASS, 0 failures |
+| `--acceptance m2` headless, time-scale 3 | 45 PASS, 0 failures |
+| `--acceptance travel` headless, time-scale 3 | TR01-TR03 PASS, 0 failures |
+| Route A `--play-all --save-load-each` (time-scale 6) | 127/127 by real input, save + load + compare after each; 68 rooms, 9 cutscenes, 5 puzzles, 9 variant layers, 27 causal effects, album replay 9 shots; 0 blockers, 0 failures |
+| Route B `--play-all --interleave early --all-lines` (time-scale 8) | 127/127, 1007 lines shown (990 distinct ids), 471 look texts, epilogue 9 + 9; 0 blockers, 0 failures |
+| Route C7 `--play-all --interleave seed:7 --skip-cutscenes` (time-scale 8) | 127/127, every cutscene skipped; 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` (time-scale 8, AT19) | 127/127 by keys only: 660 steps, 1846 key presses (mean 2.8, max 8), 0 awkward, 0 blockers, 0 failures |
+
+Engine messages in the headless logs are the known ones: `Parameter "t" is null` from the dummy renderer when an
+ambient shader parameter is set (headless only, also in the first pass) and, in route A, two leak notes at exit.
+
+**Changed rooms in a real window** (hidden QA window via `tools/qa_godot.py`, 1920x1080, `--room <id> --labels`,
+looked at one by one; `build/screens/verify2/`): S13 / S53 / S59 have no desk (Tóno sits on his chair by the wall
+lectern in S13, every label on its thing); S17 shows the right exit "Sídliskový dvor s kioskom" at the right edge and
+no exit at the podlubie; S55 (2020) and S61 (1982, right exit "Školský záhradný sklad v roku 1982" at the right
+edge) have no exit at the podlubie either; S03 shows the grasshopper behind the
+slide, clear of the hotspots; S30 shows the booth on the Starý most with the holder, the three digits, the table, the
+railing and the boat labelled where they are painted. CS03_1 (`assets/cutscenes/CS03_1.webp`) shows the same booth,
+metronome table and truss.
+
+**Regressions found: none**, so nothing was fixed in code or data.
+
+**Release:** `build.bat` (release) 12:50, exit 0, C# build 0 warnings / 0 errors, `release_assets.py` filters OK
+(557 natural-mode references, 0 errors), the known harmless `ERR_CANT_OPEN` after the .NET publish; exe version info
+0.1.0.0 "Posledný zvonec". `LastBell.exe` 109.5 MB, `LastBell.pck` 186.8 MB (2521 files,
+`build/pck_contents_release.txt`), `data_LastBell_windows_x86_64/` 81.3 MB; folder 377.5 MB. Copied to
+`build/m5/ship/PoslednyZvonec/` (old copy removed first) and zipped:
+**`build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`, 254.8 MB** (zip test OK, 190 files). Log:
+`build/m5/verify2/logs/build_release.txt`.
+
+**Smoke test of the shipped exe** (`build/m5/verify2/release_smoke.py`, the exe in `build/m5/ship/PoslednyZvonec/`,
+hidden window, key messages posted to that window only, the player's saves and settings moved aside and restored):
+started with QA arguments, it was still running at the main menu after 15 s (they are ignored, BUILD-03); Tab x5 +
+Enter on "Nová hra", Esc, Tab + Enter in S01: the autosave says room S01, 2020, done [G01], inventory [PHONE, TOOLS].
+The process was stopped by the script that started it. The route runs also wrote to the player's save folder; it was
+backed up before the pass and restored afterwards (checked by checksum; the route saves are in
+`build/m5/verify2/route_saves/`).
+
+Paid generation in this pass: none. Since the first pass the log grew by USD 5.28 in 35 calls (the repaints and edits
+listed above); total now USD 151.02 in 950 calls (`art/spend-log.csv`).
 
 ## Verification and release pass (2026-10-06)
 
@@ -133,7 +196,8 @@ Note: other agents kept working in the repository during this pass (S03 / S17 / 
 C4 writing context, 07:26-07:40). The release snapshot of 07:36 contains their state of S03 and S17 at that time;
 the four route runs above had started before those files changed. `check_strings`, `check_blocking`,
 `check_rewrite --self-test` and `extract_strings --dry-run` were re-run on the tree of the build (all OK). Rebuild
-with `build.bat` (and re-run the routes) once that work is finished.
+with `build.bat` (and re-run the routes) once that work is finished. Done in the second pass of the same afternoon
+(section above): the shipped build now contains that work and the later owner changes.
 
 ## What was run (final code, natural blocking = the default)
 

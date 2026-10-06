@@ -2,7 +2,7 @@
   "version": 1,
   "room": "S53",
   "status": "natural re-blocking, L_HALL 2020 derived from the accepted S13 master (art/tools/derive_era.py); anchors, walk_band and actor_scale identical to S13",
-  "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 29 October 2020: a free-standing plexiglass screen on chrome feet stands across the back of the hall (painted: feet y ~765, x 735-1670, about 2 m high; the walk area stops at y 778 in front of it): the classroom doors and the cloakroom are behind it (closed zone); the service route is the right corridor to the physics cabinet (S54). Return boxes on the caretaker's desk; sanitiser stand by the entrance (x 225-300, excluded from the walk area).",
+  "note": "Same camera as S13 (L_HALL): one-point perspective, camera 2.2 m, focal 1500 px, horizon y 352, back wall floor line y 700 (158 px per metre), s(y) = (y - 352) / 663. 29 October 2020: a free-standing plexiglass screen on chrome feet stands across the back of the hall (painted: feet y ~765, x 735-1670, about 2 m high; the walk area stops at y 778 in front of it): the classroom doors and the cloakroom are behind it (closed zone); the service route is the right corridor to the physics cabinet (S54). One return box with teaching aids (ruler, books) stands on the floor against the wall right of the caretaker's door (owner 2026-10-06: no caretaker's desk in the hall); sanitiser stand by the entrance (x 225-300, excluded from the walk area).",
   "background": "bg_natural/S53.webp",
   "walk_polygon": [
     [
@@ -74,20 +74,20 @@
     },
     "S53.ambient 2": {
       "rect": [
-        450,
-        510,
-        195,
-        105
+        574,
+        604,
+        114,
+        120
       ],
       "interaction_point": [
-        548,
+        631,
         805
       ],
       "label_anchor": [
-        548,
-        500
+        631,
+        594
       ],
-      "reason": "cardboard return boxes for borrowed teaching aids on the caretaker's desk"
+      "reason": "cardboard return box for borrowed teaching aids on the floor right of the caretaker's door, under the hand-washing notice (the caretaker's desk was removed, owner 2026-10-06)"
     }
   },
   "npcs": {},

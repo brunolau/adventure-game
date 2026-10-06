@@ -1,25 +1,27 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: Windows build of 2026-10-06, version 0.1.0 (the main menu and the exe say the same number). Language:
-Slovak only. Test record behind this page: `docs/MILESTONE5.md` (section "Verification and release pass").
+Version: Windows build of 2026-10-06 (rebuilt 12:50 after your afternoon answers), version 0.1.0 (the main menu and
+the exe say the same number). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections
+"Second verification and release pass" and "Verification and release pass").
 
 ## In short
 
 - The whole game is playable from a new game to the end credits and the postgame, on Windows 10/11 (64-bit).
-- Every automated check passes on the final code. All 127 story and side actions were played by real input events in
+- Every automated check passes on the final code (re-run in full on 2026-10-06 afternoon after the entry-hall,
+  grasshopper, podlubie and Starý most changes; no regression). All 127 story and side actions were played by real input events in
   four different orders: one saved and reloaded after every action, one showed every line, one skipped every
   cutscene, and one used **only the keyboard** for the whole game. The 2020 prologue was also played from the main
   menu with real Windows key presses only, with a save and a load on the way.
 - **All 30 handoff acceptance tests pass**, AT19 (keyboard only) included.
 - Open before a public release: your answer on the art licence (DECISIONS item 9) and the few points in
   docs/DECISIONS.md "Status 2026-10-06". None of them blocks play.
-- Paid generation so far: **USD 145.74** (915 calls, art/spend-log.csv). This verification pass added nothing.
+- Paid generation so far: **USD 151.02** (950 calls, art/spend-log.csv). The verification passes added nothing.
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (254.2 MB). Unpacked, it is the folder
-   `PoslednyZvonec/` (377.4 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
-   `LastBell.pck` (186.6 MB) and `data_LastBell_windows_x86_64/` (81.3 MB, the C# code and the .NET runtime).
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (254.8 MB). Unpacked, it is the folder
+   `PoslednyZvonec/` (377.5 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
+   `LastBell.pck` (186.8 MB) and `data_LastBell_windows_x86_64/` (81.3 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
 3. The exe is not code-signed, so Windows SmartScreen says "Windows protected your PC". Click "More info", then
@@ -157,9 +159,10 @@ docs/BUILD.md).
 
 ## Paid generation (art/spend-log.csv)
 
-**USD 145.74** in 915 calls: 2026-10-04 USD 2.10 (style tests), 2026-10-05 USD 109.80, 2026-10-06 USD 33.84 (winter
-Jasná, Ivanka 1962, the 2020 corrections and the writing reviews). The breakdown by model is in the log. The
-verification and release pass of 2026-10-06 cost nothing.
+**USD 151.02** in 950 calls: 2026-10-04 USD 2.10 (style tests), 2026-10-05 USD 109.80, 2026-10-06 USD 39.12 (winter
+Jasná, Ivanka 1962, the 2020 corrections, the writing reviews and the afternoon changes: entry hall without the
+desk, the S03 grasshopper, the podlubie, S30 and CS03_1 on the Starý most). The breakdown by model is in the log.
+Both verification and release passes of 2026-10-06 cost nothing.
 
 ## What waits for you
 

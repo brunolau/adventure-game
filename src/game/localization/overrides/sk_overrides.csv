@@ -16,7 +16,7 @@ look.S02.LENKA,"Lenka drží vôdzku. Bodka drží názor, že by ju držať nem
 exit.S02.to_S03.label,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,exit label equals the room name (glossary 3.3); drop: dobrovoľnícke
 exit.S02.to_S05.label,Mirkina bránka,Mirina bránka,glossary rename
 room.S03.name,Dobrovoľnícke výdajné miesto,Lúčny koník – výdajné miesto,owner 2026-10-06: S03 is the real playground Lúčny koník in Čierna Voda; room name = place name + what it is now; drop: dobrovoľnícke
-entry.S03.001,"Dobrovoľnícke centrum. Jediné call centrum, kde operátorka zároveň nosí zemiaky.","Lúčny koník. Pod prístreškom, kde sa inokedy griluje, teraz Ela vybavuje telefóny aj zemiaky naraz.","owner 2026-10-06: first entry names the place; the real shelter has a grill (picnic place), now the distribution point; keeps Ela's phones-and-potatoes line"
+entry.S03.001,"Dobrovoľnícke centrum. Jediné call centrum, kde operátorka zároveň nosí zemiaky.","Lúčny koník. Ten drevený na ihrisku sa díva, ako Ela pod prístreškom vybavuje telefóny aj zemiaky naraz.",owner 2026-10-06 (afternoon answers): the painting now has a generic wooden grasshopper figure on the playground; the first entry names the place and points at the figure; keeps Ela's phones-and-potatoes line; GPT ok (docs/writing/review_gpt/S03_grasshopper.json)
 look.S03.supplies,Tašky sú označené menom a súhlasom adresáta. Ela tu drží poriadok bez jedinej aktualizácie.,"Ku každej taške má Ela meno aj súhlas adresáta. Píše ceruzkou, objednávky sa menia do poslednej chvíle.","tone pass 2026-10-06, GPT unnatural flag adapted | editor: second 'bez aplikácie' joke in the same room as ambient 1"
 look.S03.ambient 1,Rozostupy sú jasné aj bez aplikácie.,"Páska na zemi ukazuje dva metre odstupu. Ela ich má odkrokované, ja by som trafil tak meter osemdesiat.","tone pass 2026-10-06, GPT joke flag adapted | "
 look.S03.ambient 2,Ela má na nej napísané NEDOLIEVAŤ POLIEVKU. Zrejme skúsenosť.,Na Elinej termoske je napísané NEDOLIEVAŤ POLIEVKU. To bude zo skúsenosti.,TEXT-04 rewrite
@@ -135,10 +135,12 @@ look.S28.mural,"Panel patrí klubovni a môže sa naň kresliť kriedou. Juraj m
 look.S28.mural.variant1,Rozsvietené okná spájajú paneláky do susedstva. Vedľa je Jurajov podpis a malá kresba kriedy.,Rozsvietené okná spojili paneláky do jedného susedstva. V rohu je Jurajov podpis a nakreslený kúsok kriedy.,TEXT-04 rewrite
 look.S28.ambient 1,Každá má trochu inú bielu. Normalizátor by tu skolaboval.,Každá kachlička má trochu inú bielu. A spolu aj tak tvoria stenu.,removed 'normalizátor' (Adam learns about it only in 2035)
 look.S28.ambient 2,Na dopravu naprieč epochami má príliš malé kolieska.,Skateboard. Na cestovanie v čase má priveľmi malé kolieska.,TEXT-04 rewrite
+exit.S28.to_S30.label,Nábrežný merací prístrešok,Merací stánok na Starom moste,exit label equals the room name (glossary 3.3); drop: nábrežný
 entry.S29.001,"Garáž číslo sedemnásť. Auto chýba, ale mohol by odtiaľto odštartovať satelit.",Garáž číslo sedemnásť. Namiesto auta je tu vysielačka a viac káblov ako v mojej dielni.,TEXT-04 rewrite
 look.S29.ambient 1,Dezider sa dovolá ďalej než môj mobil za plnú cenu.,S touto anténou sa Dezider dovolá ďalej ako ja z mobilu.,TEXT-04 rewrite
 look.S29.ambient 2,Operadlo drží rádiový kábel. Technická a bytová tvorivosť v rovnováhe.,Na operadle visí kábel. Stolička tu slúži aj ako vešiak.,TEXT-04 rewrite
 look.S29.DEZI,Dezider má pri každom kábli štítok. Mám chuť ho požiadať aj o pomoc s vlastným životom.,Dezider má na každom kábli štítok. Keby sa tak dal označiť aj môj dnešný deň.,TEXT-04 rewrite
+room.S30.name,Nábrežný merací prístrešok,Merací stánok na Starom moste,"owner 2026-10-06 (DECISIONS ""Owner answers"", afternoon): S30 is painted on the old Starý most (1995); room name chosen by the owner; drop: nábrežný, prístrešok"
 entry.S30.001,Dunaj tečie správnym smerom. Som tu teda najpodozrivejší dopravný prostriedok.,"Dunaj tečie, ako má. Z nás dvoch som tu ja ten, kto cestuje čudne.",TEXT-04 rewrite
 look.S30.coil,Tento kruhový držiak čaká na Deziderovu slučku. Je mechanicky kľúčovaný; opačne ju nevložím.,"Kruhový držiak na Deziderovu meraciu cievku. Má výrez, takže opačne ju nevložím.",slučka -> meracia cievka (deprecated)
 look.S30.metro,Držiak pre mechanický metronóm. Rytmus má byť nezávislý od elektrickej siete.,Stolík so značkou pre metronóm. Rytmus tu nesmie závisieť od elektriny.,TEXT-04 rewrite
@@ -323,6 +325,7 @@ conn.S05.S09.locked,Do dielne mám kľúč od Miry. Použijem ho na zámok pri b
 conn.S13.S15.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Kabinet je zamknutý. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
 conn.S15.S16.locked,Najprv sa ohlásim u Tóna a ukážem mu prístroj krúžku.,Zamknuté. Najprv sa ohlásim u školníka a ukážem mu chronometer.,TEXT-04 rewrite
 conn.S19.S20.label,Palova opravovňa,Paliho opravovňa,decided rename (glossary)
+conn.S28.S30.label,Nábrežný merací prístrešok,Merací stánok na Starom moste,connection label equals the room name (glossary 3.3); drop: nábrežný
 conn.S38.S39.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",TEXT-04 rewrite
 conn.S42.S43.label,Opravárenská kaviareň Druhý život,Lobby hotela Grand Jasná,map label now equals the room name; 'Opravárenská kaviareň' contradicted the lobby repair table
 conn.S42.S44.label,Verejná čitáreň záznamov,Výstavný salón hotela Grand Jasná,map label now equals the room name ('Verejná čitáreň záznamov' named no real place)
@@ -392,12 +395,12 @@ item.OVERLAY.name,Priehľadná mapa K-17,Priehľadná fólia K-17,decided rename
 item.OVERLAY,"Tri registračné body: dierka, dvojitý kríž a štvorec.","Tri registračné značky: dierka, dvojitý kríž a štvorec. Musia sedieť so značkami na mape.",TEXT-04 rewrite
 item.OVERLAY.purpose,Presne zarovnať s mapou.,Zarovnať s mapou uzlov.,TEXT-04 rewrite
 item.NODEMAP.name,Úplná mapa uzlov,Úplná mapa meracích uzlov,decided rename (glossary)
-item.NODEMAP,Zostava odkazuje na Deziderovu garáž a nábrežný merací bod. Chýbajúci rok sa zistí až kalibráciou.,"Mapa vedie k Deziderovej garáži a k meraciemu bodu na nábreží. Ktorý rok ukáže, zistím až meraním.",TEXT-04 rewrite
-item.NODEMAP.purpose,Identifikácia zariadenia a kalibrácia 1995.,Ukázať Deziderovi; potrebná pri meraní na nábreží v roku 1995.,TEXT-04 rewrite
-item.COIL,Izolovaná slučka určená do kruhového držiaka na nábreží.,Izolovaná meracia cievka. Patrí do kruhového držiaka v prístrešku na nábreží.,slučka -> meracia cievka
-item.COIL.purpose,Zachytiť staršiu časovú adresu.,Nasadiť do držiaka v nábrežnom meracom prístrešku.,TEXT-04 rewrite
+item.NODEMAP,Zostava odkazuje na Deziderovu garáž a nábrežný merací bod. Chýbajúci rok sa zistí až kalibráciou.,"Mapa vedie k Deziderovej garáži a k meraciemu bodu na Starom moste. Ktorý rok ukáže, zistím až meraním.",S30 is on the Starý most; drop: nábreží
+item.NODEMAP.purpose,Identifikácia zariadenia a kalibrácia 1995.,Ukázať Deziderovi; potrebná pri meraní na Starom moste v roku 1995.,S30 is on the Starý most; drop: nábreží
+item.COIL,Izolovaná slučka určená do kruhového držiaka na nábreží.,Izolovaná meracia cievka. Patrí do kruhového držiaka v meracom stánku na Starom moste.,S30 renamed (owner 2026-10-06); drop: prístrešok
+item.COIL.purpose,Zachytiť staršiu časovú adresu.,Nasadiť do držiaka v meracom stánku na Starom moste.,S30 renamed (owner 2026-10-06); drop: nábrežný
 item.METRONOME,Požičaný mechanický zdroj pravidelného rytmu. Po skončení merania ho Dezider vráti Emilovi mimo obrazu.,"Emilov metronóm, požičaný na meranie. Emilovi ho potom vráti Dezider.",removed 'mimo obrazu'
-item.METRONOME.purpose,Nezávislá časová referencia 1995.,Nezávislý rytmus pre meranie na nábreží v roku 1995.,TEXT-04 rewrite
+item.METRONOME.purpose,Nezávislá časová referencia 1995.,Nezávislý rytmus na meranie na Starom moste v roku 1995.,"S30 is on the Starý most; GPT: na (purpose), not pre; drop: nábreží"
 item.SUPPLYSLIP,Dve kožené manžety? Nie. Jedna predrezaná manžeta a malá súprava nitov.,Otov lístok pre Štefana: jedna predrezaná kožená manžeta a dva duté nity.,TEXT-04 rewrite
 item.SUPPLYSLIP.purpose,Výdaj potrebného materiálu.,Vyzdvihnúť u Štefana kožu a nity.,TEXT-04 rewrite
 item.LEATHER,Rozmer je pripravený; vyznačené otvory treba preraziť.,Koža je narezaná na mieru. Ešte treba preraziť dva vyznačené otvory.,TEXT-04 rewrite
@@ -635,25 +638,25 @@ action.B16.objective,Ukáž úplnú mapu Deziderovi v petržalskej garáži.,Uk�
 action.B16.001,Úplná mapa vedie do Petržalky. Deziderova garáž a merací stojan pri Dunaji.,Mapa je celá a vedie do Petržalky: k Deziderovej garáži a k meraciemu stojanu pri Dunaji.,TEXT-04 rewrite
 action.B16.002,Ten názov garáže sa mi páči. Žiadna skratka pre vesmírny program.,"Rádioamatér v garáži. Konečne niekto, kto hovorí mojou rečou.",old joke about the garage name ('no acronym for a space programme') made no sense
 action.B17.label,Ukázať úplnú mapu uzlov,Ukázať Deziderovi úplnú mapu,TEXT-04 rewrite
-action.B17.001,Na nábreží zostal izolovaný merací stojan. Tu máš jeho cievku. Potrebuješ aj nezávislý rytmus.,Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na nábreží. Ešte potrebuješ nezávislý rytmus.,added 'we drew it with Mira' (glossary role: Mira's former collaborator)
+action.B17.001,Na nábreží zostal izolovaný merací stojan. Tu máš jeho cievku. Potrebuješ aj nezávislý rytmus.,Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na Starom moste. Ešte potrebuješ nezávislý rytmus.,Dezider names the new place of the stand; rest unchanged; drop: nábreží
 action.B17.003,Emil v Karlovej Vsi má metronóm. A tri číslice nastavenia Mira prekreslila na panel na školskom dvore.,"Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice Mira nakreslila na panel na školskom dvore.",TEXT-04 rewrite
 action.B17.004,Takže sa vraciam na školský dvor úplne dobrovoľne. To si zapíšem.,Na školský dvor sa vraciam dobrovoľne. To sa mi ako žiakovi nestalo.,TEXT-04 rewrite
 action.B18.label,Požičať si metronóm na meranie,Metronóm na meranie,TEXT-04 rewrite
-action.B18.journal,Na nábrežný stojan nasaď cievku aj metronóm.,V nábrežnom prístrešku nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,TEXT-04 rewrite
-action.B18.objective,Na nábrežný stojan nasaď cievku aj metronóm.,V nábrežnom prístrešku nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,TEXT-04 rewrite
+action.B18.journal,Na nábrežný stojan nasaď cievku aj metronóm.,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,same as objective; drop: nábrežný
+action.B18.objective,Na nábrežný stojan nasaď cievku aj metronóm.,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,S30 renamed (owner 2026-10-06); journal stays identical; drop: nábrežný
 action.B18.001,Dezider potrebuje mechanický rytmus pre Mirino meranie.,"Dezider vraví, že na Mirino meranie potrebujem mechanický rytmus. Požičali by ste mi metronóm?",TEXT-04 rewrite
 action.B18.002,"Vezmi metronóm. Dezider mi ho vráti, poznáme sa.","Vezmi si ho. Dezider mi ho potom vráti, poznáme sa roky.",TEXT-04 rewrite
 action.B18.003,Zahrám vám za to niekedy budúcnosť.,Ďakujem. Raz vám za to pustím hudbu z budúcnosti.,TEXT-04 rewrite
 action.B18.004,Len ak nebude príliš hlasná.,Len nech nie je príliš hlasná.,TEXT-04 rewrite
 action.B19.label,Zapísať trojicu kalibračných číslic,Zapísať tri kalibračné číslice,TEXT-04 rewrite
-action.B19.journal,Nastavenie meracieho stojana je 3–2–6.,Na meracom stojane v nábrežnom prístrešku nastav 3–2–6.,TEXT-04 rewrite
-action.B19.objective,Nastavenie meracieho stojana je 3–2–6.,Na meracom stojane v nábrežnom prístrešku nastav 3–2–6.,TEXT-04 rewrite
+action.B19.journal,Nastavenie meracieho stojana je 3–2–6.,Na meracom stojane v stánku na Starom moste nastav 3–2–6.,same as objective; drop: nábrežný
+action.B19.objective,Nastavenie meracieho stojana je 3–2–6.,Na meracom stojane v stánku na Starom moste nastav 3–2–6.,S30 renamed (owner 2026-10-06); journal stays identical; drop: nábrežný
 action.B19.001,"Tri vlny, dva údery, šesť dielikov. Tri, dva, šesť.","„Tri vlny, dva údery, šesť dielikov.“ Čiže tri, dva, šesť.",TEXT-04 rewrite
 action.B19.002,Zapíšem to celé. Hádanka na pamäť by teraz bola dosť nevkusná.,Zapíšem si to. Vlastnej pamäti dnes veľmi neverím.,removed meta joke about puzzles
-action.B20.journal,Dokončené: Nasadiť meraciu cievku.,Deziderova cievka sedí v držiaku na nábreží.,TEXT-04 rewrite
+action.B20.journal,Dokončené: Nasadiť meraciu cievku.,Deziderova cievka sedí v držiaku na Starom moste.,S30 is on the Starý most; drop: nábreží
 action.B20.001,Cievka zapadla do držiaka. Izolovaný obvod je pripravený.,Cievka zapadla do držiaka. Obvod je pripravený.,TEXT-04 rewrite
 action.B21.label,Umiestniť mechanický metronóm,Postaviť metronóm na stolík,TEXT-04 rewrite
-action.B21.journal,Dokončené: Umiestniť mechanický metronóm.,Emilov metronóm tiká na stolíku v prístrešku.,TEXT-04 rewrite
+action.B21.journal,Dokončené: Umiestniť mechanický metronóm.,Emilov metronóm tiká na stolíku pri meracom stánku.,the round table stands at the railing beside the booth (bg_natural/S30); drop: prístrešok
 action.B21.001,"Metronóm je na stole. Tiká úplne nezávisle od všetkého, čo ma dnes dostalo do problémov.","Metronóm tiká. Konečne niečo, čo nepotrebuje elektrinu ani vysvetlenie.",TEXT-04 rewrite
 action.B22.label,Nastaviť a odmerať pôvodnú časovú adresu,Nastaviť číslice a nájsť pôvodnú kalibráciu,editor: 'odmerať pôvodný rok' was unclear; echoes Mira's B03.002 'nájdeme prvú kalibráciu'
 action.B22.journal,Na časovom uzle vyber Ivanku 1960 a nájdi Ota v mechanickej dielni.,Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi Ota v jeho mechanickej dielni.,"TEXT-04 rewrite; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
@@ -1352,9 +1355,9 @@ quest.M06.goal,Zložiť presnú mapu meracích uzlov.,Zlož úplnú mapu merací
 quest.M06.hint.1,Mira dala poverenie do študovne v centre.,S Mirinym poverením choď do archívnej študovne v Starom Meste.,TEXT-04 rewrite
 quest.M06.hint.2,"Negatív nechaj vyvolať; fotografia určí prílohu, ktorú drží antikvariát.","Negatív z archívu daj vyvolať Alene. Na fotografii je číslo fólie, ktorú má Viera v antikvariáte.",TEXT-04 rewrite
 quest.M06.hint.3,Poverenie na Karola S23 → negatív na Alenu S24 → fotografia na Vieru S22 → fólia + mapa → v P02 otočiť o 180° a potvrdiť.,Poverenie na Karola v archívnej študovni → negatív na Alenu vo fotoateliéri → fotografia na Vieru v antikvariáte → fólia + mapa v brašni → fóliu otoč o 180° a potvrď.,TEXT-04 rewrite
-quest.M07.goal,Prečítať adresu Ivanka 1960.,Nájdi meraním na nábreží časové okno do Ivanky 1962.,"adresa -> časové okno (glossary); editor: 'odmeraj cestu' was not idiomatic; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"
+quest.M07.goal,Prečítať adresu Ivanka 1960.,Nájdi meraním na Starom moste časové okno do Ivanky 1962.,"S30 is on the Starý most; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: nábreží, 1960"
 quest.M07.hint.1,S mapou choď za rádioamatérom v Petržalke.,S úplnou mapou choď za rádioamatérom Deziderom do Petržalky.,TEXT-04 rewrite
-quest.M07.hint.3,Mapa na Deziho → požičať metronóm → klik na rytmický nákres S17 → cievka na držiak S30 → metronóm na stolík → po získaní pôvodnej kazety nastaviť 3–2–6.,"Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres na školskom dvore → cievka na držiak v nábrežnom meracom prístrešku → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",Dezi -> Dezider; removed 'klik'
+quest.M07.hint.3,Mapa na Deziho → požičať metronóm → klik na rytmický nákres S17 → cievka na držiak S30 → metronóm na stolík → po získaní pôvodnej kazety nastaviť 3–2–6.,"Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres na školskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",S30 renamed (owner 2026-10-06); topic name unchanged; drop: nábrežný
 quest.M08.goal,Dostať sa povoleným vstupom k prvej kalibrácii.,Oprav Otovi ručnú pumpu a dostaň sa do meracej miestnosti.,TEXT-04 rewrite
 quest.M08.hint.1,Oto v dielni potrebuje obnoviť malý demonštračný obeh vody.,"Choď za Otom do mechanickej dielne. K meraniu ťa pustí, až keď opravíš ručnú pumpu.",TEXT-04 rewrite
 quest.M08.hint.2,Získaš kožu a nity podľa lístka; Lída požičia dierovač po oprave svorky kulisy.,"S Otovým lístkom vyzdvihni u Štefana kožu a nity. Lída v sále ti požičia dierovač, keď jej dotiahneš svorku kulisy.",TEXT-04 rewrite
@@ -1446,6 +1449,7 @@ puzzle.P01.clue,S10.panel: spoj rovnaké tvary. Farby nie sú rozhodujúce.,Spoj
 puzzle.P01.wrong,Tvary sa nezhodujú. Prístroj nič nespustil.,Tieto tvary k sebe nepatria. Schéma nad panelom spája rovnaký s rovnakým.,editor: wrong line now says where the clue is (style guide 6.11)
 puzzle.P02.clue,"Na podklade aj fólii sú dierka, dvojitý kríž a štvorec; v orientácii 180° sa všetky zhodujú. Bez pixelového presúvania.","Na mape aj na fólii je dierka, dvojitý kríž a štvorec. Prekryjú sa, keď fóliu otočíš o 180°.",removed 'bez pixelového presúvania'
 puzzle.P02.wrong,"Jedna značka sedí, ďalšie dve nie. Fólia bude otočená.","Jedna značka sedí, ďalšie dve nie. Fóliu treba ešte otočiť.",TEXT-04 rewrite
+puzzle.P03.title,Nábrežná kalibrácia,Kalibrácia na Starom moste,the puzzle is set in the booth on the Starý most; drop: nábrežná
 puzzle.P03.clue,"S17.rhythm a zápisník: TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV.","Rytmický nákres a zápisník: TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV.","TEXT-01: internal ids replaced by in-game names, same steps and meaning"
 puzzle.P03.wrong,Meranie nedáva zhodu. Číslice sú na nákrese zo školského dvora.,Nesedí to. Správne číslice sú na rytmickom nákrese na školskom dvore.,TEXT-04 rewrite
 puzzle.P03.success,"Pôvodná referencia nájdená: Ivanka pri Dunaji, 6. júna 1960.","Pôvodná referencia nájdená: Ivanka pri Dunaji, 6. júna 1962.","Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: 1960"

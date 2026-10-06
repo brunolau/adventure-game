@@ -36,3 +36,21 @@ Glossary: "Lúčny koník" added to GLOSSARY.md (3.1 forms, 3.2 named places, 3.
 glossary.json `places` (`Lúčn\w* koník\w*`), so the checker now protects the name in goals, hints and labels.
 
 Open questions for the owner: none.
+
+## Update 2026-10-06 afternoon: the wooden grasshopper (1 key)
+
+Owner answer (docs/DECISIONS.md "Owner answers (2026-10-06, afternoon)"): a generic wooden grasshopper figure was added to
+the S03 painting (v6, `art/masters/bg_natural/S03.md`). game.json has no hotspot for it and none was added, so the only
+fitting existing key is Adam's first-entry line:
+
+| key | new text |
+|---|---|
+| entry.S03.001 | Lúčny koník. Ten drevený na ihrisku sa díva, ako Ela pod prístreškom vybavuje telefóny aj zemiaky naraz. |
+
+Steps: draft `docs/writing/out/S03_grasshopper.csv` (check_rewrite 0 errors, 0 warnings; drop: the grill remark, to keep
+the line at 104 characters) -> GPT `docs/writing/review_gpt/S03_grasshopper.json` (instruction
+`S03_grasshopper.instruction.txt`, 1 key, 0 flags, USD 0.09) -> final control (Claude): "Lúčny koník" first names the
+place, "Ten drevený na ihrisku" is the figure the player sees beside the shelter, the phones-and-potatoes joke stays;
+natural spoken Slovak, no covid joke; decisions file empty, `--check-decisions` passes -> merged into
+`src/game/localization/overrides/sk_overrides.csv` (only this row), `extract_strings.py`, `check_strings.py`,
+`check_rewrite.py --self-test` OK; headless line dump (`--replay 1 --act G02 --lines`) plays it on the first arrival.

@@ -2,6 +2,10 @@
 
 Status: design, ready to implement (2026-10-06). Owner request of 2026-10-06: Zuzana becomes an important
 character of the Ivanka chapter, Adam meets her playing in the manor park, and Ivanka moves from 1960 to 1962.
+Updated 2026-10-06 (afternoon) by the owner's decision (docs/DECISIONS.md "Owner answers (2026-10-06, afternoon)"):
+**Zuzana appears only in 1962**; a possible appearance in Dúbravka 1995 waits for the owner's details (section 6.1);
+there is no appearance of or reference to her later life in 2020 or 2035, and the 2020 topic `MIRA20.extra Z` is
+dropped.
 Code, ids and this document are English; player-facing text is Slovak. Every Slovak line in this file is a
 **draft (writing step 1)**. It still goes through WRITING_METHOD.md steps 2–4 (GPT check, final control,
 automatic checks) like every other text.
@@ -34,10 +38,10 @@ automatic checks) like every other text.
   sedí*. Adam makes a new leather loop, and Zuzana rings the bell across the whole park. The ending is warm:
   *"A keď budete niekedy počuť zvoniť na konci roka, zamávajte. Ja to neuvidím, ale aj tak."*
 - **Payoff:** a credits shot at the end of June 1962. Zuzana rings the bell at the school door as the first
-  graders run out into the summer holidays: *"Posledný zvonec! A v septembri zase prvý."* In 2020, grandma
-  Mira remembers that June. When Adam asks what happened to Zuzana later, Mira says: *"To je jej príbeh, nie
-  môj."* **The game says nothing about Zuzana's later life.** The only facts are her name (Zuzana, no surname)
-  and that she was born in 1955 in Ivanka pri Dunaji.
+  graders run out into the summer holidays: *"Posledný zvonec! A v septembri zase prvý."* **She appears only
+  in 1962** (owner decision 2026-10-06): no other era shows her, and no line in 2020 or 2035 mentions her or her
+  later life. A possible 1995 Dúbravka appearance is pending with the owner (section 6.1). The only facts are her
+  name (Zuzana, no surname) and that she was born in 1955 in Ivanka pri Dunaji.
 - **Privacy:** the photo is used only as a likeness reference for the generated character. It is never
   copied into the repository or published, and the documents call it only "family photo supplied by the
   owner".
@@ -420,24 +424,29 @@ Art: a generic village school door (a game composite, not a claim about the real
 hopscotch is chalked on the path. The likeness comes from the generated ZUZANA sheet, not from the photo
 directly. `epilogue_rules` text: `Q1–Q9` → `Q1–Q10`.
 
-**Cross-era echo (2020, grandma Mira).** New topic `MIRA20.extra Z` „Zuzka z Ivanky" (S06, requires
-`Q10D` **and** `C01`, so Mira already knows that Adam was in Ivanka). It invents nothing about Zuzana's
-later life and says so:
-```
-ADAM:   Babka, pamätáš si v Ivanke malú Zuzku? Tú so zvončekom.
-MIRA20: Zuzku? Vtedy bývala cez dva domy od nás.
-MIRA20: V ten jún zvonila celé popoludnie. Oto vravel, že sa zľakol a pustil pilník.
-ADAM:   Ten zvonček som jej opravoval ja.
-MIRA20: Ja viem. Preto si to pamätám tak presne.
-ADAM:   A čo s ňou bolo potom?
-MIRA20: To je jej príbeh, nie môj. Ja ti viem rozprávať iba o tom júni.
-```
+**No cross-era echo with her name (owner decision 2026-10-06).** The 2020 topic `MIRA20.extra Z` „Zuzka z
+Ivanky" (grandma Mira remembering that June) is **dropped from the design**: Zuzana appears only in 1962, and no
+text, topic, look, journal entry, hint or picture of 2020 or 2035 shows her, names her or refers to her later
+life. Nothing in the other eras depends on Q10. The epilogue shot above (end of June 1962) is the payoff.
 Thematic echo with nothing added: in 1995 Adam hears the school's own bell and break noise on the tape.
 Zuzana's "zamávajte" is only a feeling for the player, not a data link.
 
-Not allowed (also for later writers): no adult Zuzana in any era, no surname, no job, family, address or
-fate, and no claim that she later went to Sokolíkova, knew Adam's family after 1962 or is "the reason"
-for anything in the main story.
+Not allowed (also for later writers): no appearance of Zuzana outside June 1962 and no mention of her in 1982,
+1995 (until the owner settles section 6.1), 2020 or 2035; no adult Zuzana unless the owner's 1995 details ask
+for one; no surname, no job, family, address or fate, and no claim that she later went to Sokolíkova, knew Adam's
+family after 1962 or is "the reason" for anything in the main story. Nothing about her real life is written into
+the repository.
+
+### 6.1 1995 (pending owner)
+
+The owner may add an appearance of Zuzana in Dúbravka 1995; the details are pending with the owner. Until they
+arrive, nothing is designed, written, painted or implemented for it, and no 1995 text names her. Open points for
+the owner's answer (the design follows the answer, it does not guess):
+- where in Dúbravka 1995 (an existing room S11–S18 or a new place) and in which part of the 1995 chapter;
+- what she does there, whether Adam speaks with her, and whether she recognises him from 1962;
+- how she looks then (a new character sheet would be needed; no photo of a real person is used without the
+  owner's explicit go-ahead, and the privacy rules of section 10 apply);
+- whether anything in 1995 links back to Q10 (the bell) or stays independent of it.
 
 ---
 
@@ -458,7 +467,8 @@ Rule for the shift: **birth years stay, ages go up by two.** Ages shown in text 
 | Štefan (`SKLAD`/`STEFAN`) | 51 → **53** | keeps children out of the yard (hand cart); *ujo Štefan* | honours her slip in Q10B |
 | Božo (`BOZO`) | 45 → **47** | lets her wave at the trains; *ujo Božo* | points to her in his topic |
 | Adam | 35 (2020 visitor) | a stranger "who sounds different" | never tells her he is from the future |
-| Tóno, Jana, Lea, Viktor | – | none | Zuzana never appears outside June 1962 |
+| Tóno, Jana, Lea, Viktor | – | none | Zuzana never appears outside June 1962 (1995 Dúbravka pending, section 6.1) |
+| Mira (`MIRA20`, 2020) | – | none in the game | she does not mention Zuzana (the `MIRA20.extra Z` topic is dropped) |
 
 Zuzana is **not** family of Adam, Mira or Oto. Repeated surnames are coincidences (GLOSSARY § 2), and she has
 none.
@@ -570,7 +580,7 @@ loaded like `travel_ext.json`). Field names are those of game.json. The Core age
    Q10D (Vera only speaks from her bench, nothing moves).
 5. `quests`: Q10 (4.3). `epilogue`: the Q10 entry (6). `epilogue_rules`: Q1–Q10.
 6. `sequences` / `topic_extensions`: I10, I09, I03, I14, BOZO.ambient 1 (3.2). New `topics`: BERTA.extra Z,
-   MIRA60.extra Z, MIRA20.extra Z.
+   MIRA60.extra Z (all in 1962; no topic in another era, section 6).
 7. `visual_variant_layers`: `S37_zuzana_bell` (bell on the grass when not Q10A or Q10D). Ambience layers
    `school_handbell_far` in S32/S38 after Q10D.
 8. Assets (`design-doc/assets.csv`, art pipeline): ZUZANA sprite set (in production: `art/tools/zuzana_set.py`),

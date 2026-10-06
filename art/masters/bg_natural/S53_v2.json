@@ -1,0 +1,128 @@
+{
+  "kind": "fix (local, polygon mask)",
+  "from_version": 1,
+  "instruction": "Remove the free-standing wooden desk on the left of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door) together with the green desk lamp on it, its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door with its brown frame down to the floor, the yellow wall with the darker yellow-ochre dado, the diagonal bands of sunlight on the wall, the brown skirting board and the polished terrazzo floor with the same tile joints, sun patches and reflections. Keep the two cardboard boxes with the rulers, books and the globe, but put them down on the floor: they now stand side by side directly on the terrazzo against the wall in the gap between the right edge of that single door's frame and the left chrome post of the plexiglass screen, right below the small hand-washing notice; they must not overlap the door frame or the post. Do not change the key cabinet, the sanitiser stand, the notice, the plexiglass screen, the doors or anything else.",
+  "mask_polygons_game_px": [
+    {
+      "feather": 6.0,
+      "points": [
+        [
+          346.0,
+          588.0
+        ],
+        [
+          386.0,
+          588.0
+        ],
+        [
+          386.0,
+          527.0
+        ],
+        [
+          460.0,
+          527.0
+        ],
+        [
+          460.0,
+          508.0
+        ],
+        [
+          656.0,
+          508.0
+        ],
+        [
+          656.0,
+          704.0
+        ],
+        [
+          346.0,
+          704.0
+        ]
+      ]
+    },
+    {
+      "feather": 22.0,
+      "points": [
+        [
+          346.0,
+          690.0
+        ],
+        [
+          659.0,
+          690.0
+        ],
+        [
+          659.0,
+          862.0
+        ],
+        [
+          346.0,
+          862.0
+        ]
+      ]
+    },
+    {
+      "feather": 2.0,
+      "points": [
+        [
+          574.0,
+          606.0
+        ],
+        [
+          683.0,
+          606.0
+        ],
+        [
+          683.0,
+          722.0
+        ],
+        [
+          690.0,
+          730.0
+        ],
+        [
+          690.0,
+          742.0
+        ],
+        [
+          572.0,
+          742.0
+        ]
+      ]
+    }
+  ],
+  "mask_dilate_game_px": 0.0,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 289533743,
+  "usd": 0.15,
+  "scope": "bg_natural/hall_nodesk/",
+  "spend_log_asset": "bg_natural/hall_nodesk/S53_from_v1_nodesk_a",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the free-standing wooden desk on the left of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door) together with the green desk lamp on it, its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door with its brown frame down to the floor, the yellow wall with the darker yellow-ochre dado, the diagonal bands of sunlight on the wall, the brown skirting board and the polished terrazzo floor with the same tile joints, sun patches and reflections. Keep the two cardboard boxes with the rulers, books and the globe, but put them down on the floor: they now stand side by side directly on the terrazzo against the wall in the gap between the right edge of that single door's frame and the left chrome post of the plexiglass screen, right below the small hand-washing notice; they must not overlap the door frame or the post. Do not change the key cabinet, the sanitiser stand, the notice, the plexiglass screen, the doors or anything else. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S53_v1.png",
+    "art/backgrounds/entrance.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_hall_nodesk_S53_from_v1_nodesk_a_raw.png",
+  "note": "owner 2026-10-06: caretaker's desk and lamp removed; of the model output only the desk area and the LEFT return box (now on the floor right of the caretaker's door) are used; the model's second box with the globe overlapped the plexiglass post and was not taken",
+  "started": "2026-10-06T11:55:41",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Vstupná chodba in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'terrazzo_line' stays exactly at x 960, y 700 (50 % from the left, 65 % from the top). The fixed landmark 'left_window' stays exactly at x 239, y 421 (12 % from the left, 39 % from the top). The fixed landmark 'middle_door' stays exactly at x 960, y 534 (50 % from the left, 49 % from the top).\n\nEra changes: the same entrance hall 25 years later, on Thursday 29 October 2020 at about half past three in the afternoon, during the pandemic, when the school is closed to pupils. Outside the glass the forecourt trees are in autumn colours (yellow and orange leaves, some already bare twigs) under a pale autumn sky; the sunlight through the glazed wall is lower, paler and cooler than in June, with softer, longer light patches on the floor, and the ceiling fluorescent tubes are switched on. The glazed facade wall keeps exactly the same divisions and the same door, but its old bronze steel frames are now plain white aluminium frames. The walls keep their plain soft yellow paint and darker dado, a little more scuffed; no murals.\nNew in 2020: a tall free-standing transparent plexiglass screen in clear panels on thin chrome feet stands across the back of the hall, right behind the caretaker's desk, from the desk's right end to the cloakroom's right end, about 1.9 m high: through it the middle double door, the right door and the cloakroom cages are still visible, but the cloakroom bench under it is empty (no slippers) and a red-and-white barrier tape is stretched across the middle double door behind the screen. A sheet of paper (the pick-up permit, illegible scribbles) is taped on the plexiglass in front of the middle door. On the caretaker's desk: two or three cardboard boxes with returned teaching aids instead of the visitor book; the green lamp and the telephone stay. Beside the entrance door, against the glazed wall near the floor, a slim grey stand with a hand-sanitiser dispenser. On the back wall beside the left door, a small notice with simple hand-washing pictograms (no text). The key cabinet stays. Everything built - walls, doors, door frames, the clock, the ceiling fittings, the doorway and staircase at the right, the terrazzo floor - stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Plexisklo' in image 2 (x 800-1120, y 405-721 of the 1920x1080 frame (42-58 % from the left, 38-67 % from the top)): the clear plexiglass screen panel in front of the middle double door, with its chrome edge profile, faint reflections and the taped permit sheet.\n2. the box labelled 'Krabica pomôcok' in image 2 (x 372-634, y 512-612 of the 1920x1080 frame (19-33 % from the left, 47-57 % from the top)): two or three brown cardboard boxes standing on the caretaker's desk, filled with returned teaching aids (rulers, a globe stand, books, a small microscope), one with a paper label of illegible scribbles.\nThe glazed entrance double door stays the box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 30-190, y 290-835 of the 1920x1080 frame (2-10 % from the left, 27-77 % from the top)). The open doorway with the staircase at the right stays the box labelled 'exit: Fyzikálny kabinet v roku 2020' in image 2 (x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top)).\n\nWalkable floor: the band at x 15-1905, y 718-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) stays the open polished terrazzo floor in front of the plexiglass screen, with nothing standing on it.\nThis room has no NPC zones.\n\nFiction rules: no logos, no brand names, no school name, no readable text anywhere (the permit and labels are illegible scribbles, no digits), no people, no animals.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S53",
+  "version": 2,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S53.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T12:02:07"
+  }
+}

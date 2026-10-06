@@ -1,0 +1,111 @@
+{
+  "kind": "fix (local, polygon mask)",
+  "from_version": 1,
+  "instruction": "Remove the free-standing wooden caretaker's desk on the left of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door) together with everything on it - the green desk lamp, the open book and the telephone - and its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door with its brown frame down to the floor, the yellow wall with the darker yellow-ochre dado, the diagonal bands of sunlight on the wall, the brown skirting board and the polished terrazzo floor with the same tile joints, sun patches and reflections; nothing stands on the floor there. Add one small new object instead: a small wall-mounted wooden lectern for the visitor book, on the yellow wall just right of that single door's frame (its left edge about a hand's width right of the frame, well left of the middle double door): a narrow slanted wooden board about half as wide as the door, fixed directly to the wall on one triangular bracket, with no legs, its upper edge at the height of the door handle. An open visitor book with illegible scribbled handwriting lies on the slanted board, and a pen on a short string hangs beside it. Do not change the key cabinet, the doors, the clock or anything else.",
+  "mask_polygons_game_px": [
+    {
+      "feather": 6.0,
+      "points": [
+        [
+          346.0,
+          588.0
+        ],
+        [
+          388.0,
+          588.0
+        ],
+        [
+          388.0,
+          527.0
+        ],
+        [
+          462.0,
+          527.0
+        ],
+        [
+          462.0,
+          580.0
+        ],
+        [
+          656.0,
+          580.0
+        ],
+        [
+          656.0,
+          704.0
+        ],
+        [
+          346.0,
+          704.0
+        ]
+      ]
+    },
+    {
+      "feather": 22.0,
+      "points": [
+        [
+          346.0,
+          690.0
+        ],
+        [
+          659.0,
+          690.0
+        ],
+        [
+          659.0,
+          862.0
+        ],
+        [
+          346.0,
+          862.0
+        ]
+      ]
+    },
+    {
+      "feather": 10.0,
+      "points": [
+        [
+          640.0,
+          711.0
+        ],
+        [
+          836.0,
+          711.0
+        ],
+        [
+          836.0,
+          758.0
+        ],
+        [
+          640.0,
+          758.0
+        ]
+      ]
+    }
+  ],
+  "mask_dilate_game_px": 0.0,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 863447893,
+  "usd": 0.15,
+  "scope": "bg_natural/hall_nodesk/",
+  "spend_log_asset": "bg_natural/hall_nodesk/S13_from_v1_nodesk_a",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: Remove the free-standing wooden caretaker's desk on the left of the back wall (below the key cabinet, in front of the lower half of the plain single wooden door) together with everything on it - the green desk lamp, the open book and the telephone - and its shadow and its reflection on the floor. Where it stood, continue exactly what is behind it: the lower part of that single door with its brown frame down to the floor, the yellow wall with the darker yellow-ochre dado, the diagonal bands of sunlight on the wall, the brown skirting board and the polished terrazzo floor with the same tile joints, sun patches and reflections; nothing stands on the floor there. Add one small new object instead: a small wall-mounted wooden lectern for the visitor book, on the yellow wall just right of that single door's frame (its left edge about a hand's width right of the frame, well left of the middle double door): a narrow slanted wooden board about half as wide as the door, fixed directly to the wall on one triangular bracket, with no legs, its upper edge at the height of the door handle. An open visitor book with illegible scribbled handwriting lies on the slanted board, and a pen on a short string hangs beside it. Do not change the key cabinet, the doors, the clock or anything else. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S13_v1.png",
+    "art/backgrounds/entrance.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_hall_nodesk_S13_from_v1_nodesk_a_raw.png",
+  "note": "owner 2026-10-06: caretaker's desk (lamp, book, phone) removed with its floor reflection and its cast shadow; the model's oversized wall lectern (x 628-775) was NOT taken; intermediate step before the lectern (v3)",
+  "started": "2026-10-06T11:57:42",
+  "parent_prompt": "You receive 5 images. Image 1 is the LAYOUT SKETCH of the finished 1920x1080 game screen: a crude flat-colour blocking that fixes the exact composition - camera, horizon, wall and floor lines, and the position, size and outline of every object. Repaint image 1 into a finished painting: keep every line and every block exactly where it is and exactly as large as it is, paint each block as the object described below, do not move, enlarge, shrink, add or remove anything, and leave no flat colour areas or hard geometric edges. Images 2-4 are photos of the real place (geography, architecture, materials and real details to paint from; they are references only, do not copy their camera, cars, people, signs or weather). Image 5 is a finished background painting from our game: use it ONLY as the reference for the painting technique (brushwork, palette, edge softness, level of detail, line quality); do not copy anything from its scene.\n\nPlace: the ground-floor entrance hall of ZŠ Sokolíkova 2 in Bratislava-Dúbravka, a typified Czechoslovak school opened in 1974. Image 2 is a real Slovak school hall of the same period (polished terrazzo floor of small square tiles in two warm tones, plain painted walls with a darker oil-paint dado, wooden doors in steel frames, steel-framed window wall on the left): paint the materials, colours and fittings from it, but NOT its camera, its long corridor, its plants, its banners or its posters. Image 3 is a real school cloakroom: yellow-painted steel mesh cage partitions with wooden benches - paint the cloakroom cages and the bench from it. Image 4 is the real ZŠ Sokolíkova seen from outside: the paved forecourt with mature maples and limes in front of the entrance - this is what the glazed left wall looks out on.\n\nBrief: the school entrance hall on a summer afternoon, Thursday 15 June 1995, around half past three: polished terrazzo floor, a bench with children's slippers by the cloakroom, the school caretaker's desk with the visitor book, bunches of keys, wooden doors. The building is 21 years old and well kept but worn: original 1970s fittings, no modern posters, no plastic windows. Warm late-afternoon sunlight comes in through the glazed left wall and lies in long bright patches across the terrazzo towards the right; the trees outside are in full green summer leaf. The walls are painted one plain colour, a soft warm yellow, with a slightly darker yellow-ochre glossy dado up to 1.45 m - no murals, no painted pictures on the walls.\n\nCamera: one-point perspective exactly as in the sketch. The camera stands in the hall about 2.2 m high and looks straight at the back wall, which is parallel to the picture; vertical lines stay vertical; the horizon is at y 352. Keep this exact geometry from the sketch: the back wall from x 300 to x 1620, its floor line at y 700 and its top edge at y 226; the left wall and the right wall recede towards the centre, their floor lines run from the back corners (300, 700) and (1620, 700) down to the frame edges at y 858; the ceiling above. This is a wide, fairly shallow hall, NOT a long corridor.\n\nWhat the sketch blocks are, left to right: the left wall is the glazed facade wall of dark bronze-brown steel frames: at its front (left frame edge) the glazed entrance double door with push bars, behind it tall window panels with a solid dado below; through the glass the sunny green crowns of the forecourt maples and limes and a bright sky. On the back wall: the open wooden key cabinet (described below); the left plain wooden door (the caretaker's room), partly hidden behind the caretaker's desk; the middle wooden double door with glass panes in its upper half, under a round school wall clock with a white dial, black numerals as simple ticks and black hour and minute hands; the right plain wooden door (the cloakroom); then the cloakroom: yellow-painted steel mesh cage partitions with a low wooden bench in front. All doors are light honey-coloured wood in brown steel frames. The right wall has an open doorway (no door leaf) into a bright side corridor where the first steps of a terrazzo staircase go up. Two rows of plain fluorescent tube fittings on the white ceiling. In front of the left part of the back wall stands the free-standing caretaker's desk: a solid wooden desk with drawers, a green desk lamp, a beige telephone and an open visitor book on it.\n\nInteractive props - each painted clearly inside its block, the same size as its block, easy to recognise at a glance:\n1. the block of the layout sketch at x 326-432, y 412-512 of the 1920x1080 frame (17-22 % from the left, 38-47 % from the top): an open wall-mounted wooden key cabinet (a shallow box with its door open) with several bunches of keys hanging on hooks, each bunch on a ring with a small wooden or plastic tag.\n2. the block of the layout sketch at x 1320-1600, y 620-715 of the 1920x1080 frame (69-83 % from the left, 57-66 % from the top): the low wooden cloakroom bench and the shoe shelf under it, with a row of children's indoor slippers in many colours (blue, red, white, green, yellow) standing on the shelf and on the bench.\nNPC zone at x 645-770, y 515-777 of the 1920x1080 frame (34-40 % from the left, 48-72 % from the top): an animated character sprite will stand here later, so paint only plain, uncluttered background in it - no person, no figure, no silhouette, no clothes on hooks that read as a person. The character's seat (chair, stool or bench) is part of the character sprite: paint only open floor at y 777 in this zone - no chair, stool or bench there. (Tóno, the young caretaker, will sit there on his own chair, beside the right end of his desk.)\nThe glazed entrance double door is the area of the layout sketch at x 0-128, y 284-854 of the 1920x1080 frame (0-7 % from the left, 26-79 % from the top). The middle double door is the area of the layout sketch at x 849-1071, y 368-700 of the 1920x1080 frame (44-56 % from the left, 34-65 % from the top). The open doorway in the right wall is the area of the layout sketch at x 1690-1882, y 306-836 of the 1920x1080 frame (88-98 % from the left, 28-77 % from the top).\n\nWalkable floor: the band at x 15-1905, y 716-1015 of the 1920x1080 frame (1-99 % from the left, 66-94 % from the top) is the polished terrazzo floor of the hall: small square tiles in two warm tones (reddish brown and ochre, speckled with stone chips) laid in a regular grid in perspective, with a dark terrazzo border strip along the back wall - one continuous flat floor with no step, no rug, no mat, no change of level, and nothing standing on it: no plants, no bins, no chairs, no benches, no bags, no buckets. Only light: the long warm sun patches from the glazed wall and soft reflections of the doors and windows in the polished floor.\nFixed architectural anchor 'terrazzo_line' at x 960, y 700. Fixed architectural anchor 'left_window' at x 239, y 421. Fixed architectural anchor 'middle_door' at x 960, y 534.\n\nFiction rules: the interior specifics are invented. No murals, no posters with readable text, no banners, no logos, no brand names, no school name, no signs on the doors, no numbers on the doors. Any paper shows only illegible scribbles, no digits. No people, no animals.\n\nThe layout sketch is a blocking aid only: paint over all of it. Do NOT draw frames, borders, outlines or boxes around objects, and keep no flat colour block. The finished picture contains no UI, no captions, no text except what is asked for above, no watermark and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S13",
+  "version": 2,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

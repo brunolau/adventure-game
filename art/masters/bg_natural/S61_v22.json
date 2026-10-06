@@ -1,0 +1,52 @@
+{
+  "kind": "fix",
+  "tool": "S17_scripts/podlubie_fix.py",
+  "from_version": 20,
+  "spec": "art/masters/bg_natural/S17_scripts/podlubie/S61_inner_yard.json",
+  "regions_game_px": [
+    {
+      "name": "far openings of the podlubie (bay 1 and, through the fence, bays 2-3)",
+      "rect": [
+        1158,
+        330,
+        290,
+        74
+      ]
+    }
+  ],
+  "protect_game_px": [],
+  "instruction": "Return the whole of image 1 with exactly the same framing, camera and content; only one small area changes. The picture shows the yard side of a 1970s Slovak housing-estate school on a December afternoon in 1982: thin snow, low pale winter sun, bare trees. Image 2 is the SAME view with the same camera, painted for June 1995, already showing the change wanted here. Make one small local change in the right half of the picture and nothing else.\n\nRight of the entrance canopy (about 58-75 % from the left, 30-37 % from the top) the ground floor of the long building is an open covered passage (\"podlubie\") on square pale pillars. At its far end it now shows a glimpse of pale panel blocks of flats and snowy shrubs. That is wrong: the passage only leads into the school's own small, enclosed inner courtyard. Replace that glimpse in every opening of the passage exactly as in image 2, but in the winter of image 1: behind the passage lies a small inner courtyard of the school - a strip of dull winter lawn with patches of thin snow and a few low bare shrubs with a little snow on them - and close behind it the plain fresh pale-yellowish rendered wall of another wing of the same school, with a row of the same white-framed windows as the main building; this wall fills each far opening right up to the passage ceiling. No panel blocks of flats, no tall buildings, no sky and no distant trees in the openings. It must read as a closed little courtyard, not as a way through.\n\nKeep everything else exactly as it is: the pillars, the dark passage ceiling, the brown side wall of the passage, the passage floor, the entrance canopy and steps, the upper floors, every post, rail and chain-link mesh panel of the dark-green fence in front of the two right openings, and the bare tree with all its branches that stands behind the fence in front of the building. No people, no text.\n\nImage 3 is another background from the same game: keep the same painting technique.",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 326818672,
+  "usd": 0.15,
+  "scope": "bg_natural/L_YARD_nogo/",
+  "spend_log_asset": "bg_natural/L_YARD_nogo/S61_v22_podlubie",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (painted, style A). Make exactly the local changes described below and change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no cars, no text, no letters, no logos, no frames. Return the whole of image 1 with exactly the same framing, camera and content; only one small area changes. The picture shows the yard side of a 1970s Slovak housing-estate school on a December afternoon in 1982: thin snow, low pale winter sun, bare trees. Image 2 is the SAME view with the same camera, painted for June 1995, already showing the change wanted here. Make one small local change in the right half of the picture and nothing else.\n\nRight of the entrance canopy (about 58-75 % from the left, 30-37 % from the top) the ground floor of the long building is an open covered passage (\"podlubie\") on square pale pillars. At its far end it now shows a glimpse of pale panel blocks of flats and snowy shrubs. That is wrong: the passage only leads into the school's own small, enclosed inner courtyard. Replace that glimpse in every opening of the passage exactly as in image 2, but in the winter of image 1: behind the passage lies a small inner courtyard of the school - a strip of dull winter lawn with patches of thin snow and a few low bare shrubs with a little snow on them - and close behind it the plain fresh pale-yellowish rendered wall of another wing of the same school, with a row of the same white-framed windows as the main building; this wall fills each far opening right up to the passage ceiling. No panel blocks of flats, no tall buildings, no sky and no distant trees in the openings. It must read as a closed little courtyard, not as a way through.\n\nKeep everything else exactly as it is: the pillars, the dark passage ceiling, the brown side wall of the passage, the passage floor, the entrance canopy and steps, the upper floors, every post, rail and chain-link mesh panel of the dark-green fence in front of the two right openings, and the bare tree with all its branches that stands behind the fence in front of the building. No people, no text.\n\nImage 3 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S61_v20.png",
+    "art/masters/bg_natural/S17_v12.png",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_L_YARD_nogo_S61_v22_podlubie_raw.png",
+  "started": "2026-10-06T12:03:01",
+  "parent_prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds (painted, style A). Make exactly the local changes described below and change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no cars, no text, no letters, no logos, no frames. The picture shows the yard side of a 1970s Slovak housing-estate school on a December afternoon in 1982: thin snow, wet asphalt, low pale winter sun, bare trees. Image 2 is the SAME view with the same camera, painted for June 1995, already showing exactly the two changes wanted here: copy the shape, position and size of both changes from image 2, but paint them in the winter of image 1. Make the two local changes, both in the right half of the picture, and nothing else.\n\nCHANGE 1 - lawn instead of the footpath. A paved footpath with snow along its edges runs from the foot of the entrance steps (about 57 % from the left, 40 % from the top) diagonally down to the right along the LEFT side of the tall dark-green chain-link fence, and widens into a paved area right of the low red-brick wall. Remove this footpath completely. Its whole area, from the grass bank below the entrance down to the yard, becomes lawn like the lawn left of it in image 1: dull winter grass with irregular patches of thin snow, a little more snow lying along the foot of the fence, reaching right up to the bottom rail of the fence. Towards the yard the new lawn ends in a straight low concrete kerb (as in image 2) that runs level at about 59 % from the top, from behind the right end of the brick wall, behind the red pipe, to the fence. In front of that kerb the wet asphalt with its snow patches stays exactly as it is. The brick wall with its snow cap and its stone panel with the open niche, the red pipe elbow with the snow on it and every fence post, rail and mesh panel stay exactly as they are. The short paved landing at the foot of the entrance steps and the path leading from it to the LEFT stay.\n\nCHANGE 2 - an open underpass right of the entrance, as in image 2. Image 3 is a photo of the real place taken in the 2020s (its colourful murals did not exist yet in 1982): right of the glass entrance doors the ground floor of the long building is not a wall but an open covered passage straight through the building (a \"podlubie\") to the panel blocks of flats behind the school; the upper floors rest on a row of square pillars, the space between the pillars is open and the passage behind them is deep and dim. In image 1, the three ground-floor bays right of the entrance canopy - the brick lower walls and the windows between the cream pillars, from the canopy's right edge (about 58 % from the left) to the third pillar to its right (about 75 % from the left), between about 29 % and 37 % from the top - become such an open passage exactly like in image 2: keep the pillars, the pale band above them and all the upper floors exactly where they are; remove the brick and the windows between the pillars; show the dark shaded underside of the first floor as the passage ceiling, the passage floor level with the entrance landing, and at the far end of the passage a small bright opening with a glimpse of the far side in winter: pale prefabricated panel blocks of flats with rows of windows, bare trees and a little snow. The pillars and the passage walls are plain fresh pale yellowish render like the rest of the building - no murals, no paintings, no graffiti, no gates, no signs. Two of the three bays are seen through the court fence, and the bare tree standing behind the fence in front of the building stays exactly where it is with all its branches: keep every fence post, rail and mesh panel and the tree in front of the passage exactly as they are.\n\nImage 4 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S61",
+  "version": 22,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S61.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T12:04:25"
+  }
+}

@@ -1,0 +1,22 @@
+keys,sk_new,note
+room.S30.name,Merací stánok na Starom moste,"owner 2026-10-06 (DECISIONS ""Owner answers"", afternoon): S30 is painted on the old Starý most (1995); room name chosen by the owner; drop: nábrežný, prístrešok"
+exit.S28.to_S30.label,Merací stánok na Starom moste,exit label equals the room name (glossary 3.3); drop: nábrežný
+conn.S28.S30.label,Merací stánok na Starom moste,connection label equals the room name (glossary 3.3); drop: nábrežný
+item.NODEMAP,"Mapa vedie k Deziderovej garáži a k meraciemu bodu na Starom moste. Ktorý rok ukáže, zistím až meraním.",S30 is on the Starý most; drop: nábreží
+item.NODEMAP.purpose,Ukázať Deziderovi; potrebná pri meraní na Starom moste v roku 1995.,S30 is on the Starý most; drop: nábreží
+item.COIL,Izolovaná meracia cievka. Patrí do kruhového držiaka v meracom stánku na Starom moste.,S30 renamed (owner 2026-10-06); drop: prístrešok
+item.COIL.purpose,Nasadiť do držiaka v meracom stánku na Starom moste.,S30 renamed (owner 2026-10-06); drop: nábrežný
+item.METRONOME.purpose,Nezávislý rytmus na meranie na Starom moste v roku 1995.,"S30 is on the Starý most; GPT: na (purpose), not pre; drop: nábreží"
+action.B17.001,Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na Starom moste. Ešte potrebuješ nezávislý rytmus.,Dezider names the new place of the stand; rest unchanged; drop: nábreží
+action.B18.objective,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,S30 renamed (owner 2026-10-06); journal stays identical; drop: nábrežný
+action.B18.journal,V stánku na Starom moste nasaď cievku do držiaka pri meracom stojane a metronóm polož na stolík.,same as objective; drop: nábrežný
+action.B19.objective,Na meracom stojane v stánku na Starom moste nastav 3–2–6.,S30 renamed (owner 2026-10-06); journal stays identical; drop: nábrežný
+action.B19.journal,Na meracom stojane v stánku na Starom moste nastav 3–2–6.,same as objective; drop: nábrežný
+action.B20.journal,Deziderova cievka sedí v držiaku na Starom moste.,S30 is on the Starý most; drop: nábreží
+action.B21.journal,Emilov metronóm tiká na stolíku pri meracom stánku.,the round table stands at the railing beside the booth (bg_natural/S30); drop: prístrešok
+quest.M07.goal,Nájdi meraním na Starom moste časové okno do Ivanky 1962.,"S30 is on the Starý most; Ivanka shown as June 1962 (owner 2026-10-06, docs/DECISIONS.md); era id stays 1960; drop: nábreží, 1960"
+quest.M07.hint.3,"Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres na školskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",S30 renamed (owner 2026-10-06); topic name unchanged; drop: nábrežný
+puzzle.P03.title,Kalibrácia na Starom moste,the puzzle is set in the booth on the Starý most; drop: nábrežná
+ui.hint_step.B20,Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.,S30 renamed (owner 2026-10-06); drop: nábrežný
+ui.hint_step.B21,Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.,the table stands beside the booth; drop: nábrežný
+ui.hint_step.B22,"Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6.",S30 renamed (owner 2026-10-06); drop: nábrežný
