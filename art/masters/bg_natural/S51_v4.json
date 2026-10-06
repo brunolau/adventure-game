@@ -1,0 +1,75 @@
+{
+  "room": "S51",
+  "version": 4,
+  "kind": "fix",
+  "from_version": 3,
+  "tool": "art/prompts/natural/L_STOP.right_tweak.py",
+  "note": "owner 2026-10-06: the medical centre lower (below the road, only its roof edge and upper windows show above the verge), the panel block behind it an 8-storey panelak",
+  "edit_region_game_px": "x >= 1262, y < crest(x) + 14 (crest 432 at x 1262 -> 478 at x 1920), 12 px seam",
+  "medical_centre": "column shift C_LOWER 0.5 x painted height (roof [(1262, 280.5), (1268, 279), (1578, 201), (1580, 190), (1708, 158), (1711, 147), (1920, 152)], foot [(1262, 428), (1578, 447), (1710, 471), (1920, 476)])",
+  "slab": {
+    "texture": "art/masters/bg_natural/_S11_right_s110601_raw.png",
+    "tex_params": {
+      "vp": [
+        812.0,
+        408.0
+      ],
+      "m_slab0": -0.4411,
+      "dm": 0.06428,
+      "par_top": 0.04028,
+      "floors": [
+        2,
+        3
+      ],
+      "module_w": [
+        0.001845,
+        0.0015974000000000001
+      ],
+      "attic_m": [
+        -0.4525,
+        -0.4411
+      ],
+      "attic_w": [
+        0.0011655011655011655,
+        0.001336898395721925
+      ]
+    },
+    "target": {
+      "m_top": -0.4579831932773109,
+      "scale": 0.622,
+      "x_far": 1288.0,
+      "lead": 0.75
+    },
+    "graded_to_room": true,
+    "snow": false
+  },
+  "mock": "art/masters/bg_natural/_S51_right_mock.png",
+  "model_output": "art/masters/bg_natural/_S51_band_s205111_raw.png",
+  "model_output_use": "only the verge strip crest-36..crest+12 (BAND_CROP crop edit)",
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 205111,
+  "usd": 0.15,
+  "scope": "bg_natural/svantnerova_tweak/",
+  "prompt": "Image 1 is a crop of one of our finished point-and-click adventure game backgrounds: a long low bluish medical centre whose upper floor shows above the grass verge of a street, a tall panel block behind it, lamp posts, a road with a railing in front. Along the crest of the verge, right in front of the medical centre's ribbon windows, there is a row of flat placeholder blobs: repaint ONLY them as a few low painted shrubs and the edge of the verge, late October 2020, a sunny autumn afternoon: the low shrubs are autumn-coloured (yellow, ochre and orange leaves, like the two bushes at the right edge), the grass of the verge yellow-green with fallen leaves. The shrubs stay as low as the blobs (they hide only the bottom of the windows) and at the same places. Keep everything else exactly as it is, pixel for pixel: the medical centre, its windows and tiles, the panel block, the lamp posts, the road, the cars, the railing, the two bushes at the right edge and the sky. No people, no animals, no text, no logos. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/review/natural/svantnerova_tweak/S51_band_input.png"
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "started": "2026-10-06T08:16:12",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S51.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T08:17:32"
+  }
+}

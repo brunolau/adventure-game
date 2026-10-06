@@ -1,7 +1,7 @@
 {
  "room": "S11",
  "source": "src/game/assets/bg_natural/S11.webp",
- "note": "Natural S11 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the lindens at the left beyond the west carriageway, the trees behind the shelter roof and the bushes in front of the medical centre (wind sway; the trees right of the platform end are hidden behind the standing T3), and the blue sky (mask for the drifting clouds; the shelter's blue roof, the clock, the pantograph, the point tower's windows and the bluish medical centre are excluded).",
+ "note": "Natural S11 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the lindens at the left beyond the west carriageway, the trees behind the shelter roof and the bushes in front of the medical centre (wind sway; the trees right of the platform end are hidden behind the standing T3), and the blue sky (mask for the drifting clouds; the shelter's blue roof, the clock, the pantograph, the point tower's windows and the bluish medical centre are excluded). 2026-10-06 svantnerova tweak (owner: medical centre lower, 8-storey panelak behind it): the new slab is excluded from the sky mask by a polygon along its roof line (1288,190)-(1726,0).",
  "items": [
   {
    "name": "trees_left",
@@ -165,22 +165,52 @@
     ],
     [
      [
-      1268,
-      140
-     ],
-     [
-      1920,
-      345
-     ]
-    ],
-    [
-     [
       350,
       38
      ],
      [
       536,
       262
+     ]
+    ],
+    [
+     [
+      1268,
+      140
+     ],
+     [
+      1286,
+      345
+     ]
+    ],
+    [
+     [
+      1286,
+      0
+     ],
+     [
+      1286,
+      189
+     ],
+     [
+      1290,
+      187
+     ],
+     [
+      1727,
+      -2
+     ],
+     [
+      1921,
+      -2
+     ],
+     [
+      1921,
+      346
+     ],
+     [
+      1286,
+      346
      ]
     ]
    ]

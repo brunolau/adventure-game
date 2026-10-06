@@ -1,14 +1,14 @@
 {
  "room": "S57",
  "source": "src/game/assets/bg_natural/S57.webp",
- "note": "Natural S57 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the bare winter trees at the left and in the middle distance (dark branches against the pale sky, wind sway) and the front of the waiting Ikarus-type bus (a faint engine-idle shake; the temporary bus-stop sign standing in front of it is left out so it stays still).",
+ "note": "Natural S57 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the bare winter trees at the left and in the middle distance (dark branches against the pale sky, wind sway) and the front of the waiting Ikarus-type bus (a faint engine-idle shake; the temporary bus-stop sign standing in front of it is left out so it stays still). 2026-10-06 svantnerova tweak (owner: medical centre lower, 8-storey panelak behind it): branches_mid stops at x 1287 (the new slab's far end and lamp post A).",
  "items": [
   {"name": "branches_left", "rect": [0, 90, 345, 230],
    "rules": [{"hue": [0, 75], "luma": [0.0, 0.5]}],
    "exclude": [[[350, 40], [536, 330]], [[0, 0], [90, 180]]], "clean": 0, "feather": 0.6},
   {"name": "branches_mid", "rect": [1150, 200, 150, 130],
    "rules": [{"hue": [0, 75], "luma": [0.0, 0.5]}],
-   "exclude": [[[1240, 180], [1262, 340]]], "clean": 0, "feather": 0.6},
+   "exclude": [[[1240, 180], [1262, 340]], [[1287, 180], [1310, 340]]], "clean": 0, "feather": 0.6},
   {"name": "bus_front", "rect": [80, 308, 326, 350], "feather": 0.8, "clean": 0, "pad": 2,
    "note": "the front of the waiting Ikarus (left of the stop post), for a faint engine-idle shake; the round bus-stop sign and its post in front of it are excluded",
    "include": [[[108, 312], [400, 312], [404, 560], [402, 656], [110, 656], [106, 560]], [[80, 370], [112, 425]]],
