@@ -430,3 +430,15 @@ manor park; docs/story/ZUZANA.md). Binding for everything the player sees of the
 - **Painted dates** follow: the form icons REGFORM / REGDOUBLE / REGISTERED (6. 6. 1962), the S33 wall calendar, the
   CS03_1 chronometer wheels and the EPILOGUE_6 calendar show 1962.
 - Writers: GLOSSARY.md section 6.3 and glossary.json carry the 1962 facts (`check_rewrite.py` enforces them).
+
+## Owner answers (2026-10-06, afternoon)
+
+- **Version** stays **0.1.0** for now.
+- **School entry hall (S13/S53/S59)**: the type-reference look is fine; **remove the caretaker's desk** in all eras.
+- **S03 Lúčny koník**: add a generic wooden grasshopper (clearly not the real sculpture) — approved.
+- **Podlubie (S17/S55/S61)**: it only leads to the school's small inner yard → **no-go** (not walkable, no exit).
+  The way to the panel blocks (S18 / S62) is **to the right of the school**.
+- **S30**: match cutscene frame CS03_1 to the Starý most view and rename the room to
+  „Merací stánok na Starom moste“ — approved.
+- **Zuzana**: appears only in 1962 (and possibly 1995 Dúbravka, details pending with the owner); no appearance or
+  reference to her later life in 2020 or 2035; the MIRA20 topic about her later life is dropped from the design.
