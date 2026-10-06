@@ -2,173 +2,32 @@
   "version": 1,
   "room": "S62",
   "family_base": "S18",
-  "status": "natural re-blocking (product-owner decision 2026-10-05). Same courtyard corner and camera as S18 (register: 'uses the S18 files'); painted as an era edit of the accepted S18 master (art/tools/derive_era.py machinery, see art/masters/bg_natural/S62.md).",
-  "note": "Same camera as S18 (courtyard of the early-1970s panel blocks Svantnerova / M. Schneidra-Trnavskeho, camera ~2.0 m on the courtyard path, horizon y 404, the block receding to the vanishing point x ~305; path back edge y 740, s(y) = (y - 404) / 611). Early December 1982: the blocks are ten years old, the linden is bare, thin snow. Where Zita's kiosk stands in 1995 there is a slightly larger single-storey shop pavilion of mixed goods with a bigger three-pane shop window (x 378-742, inner sill y 598, an outer ledge y 605-622 below it); Ruzena stands behind the centre pane; a wooden crate of empty preserving jars on the outer ledge at the left, a stack of crates with returnable bottles at the pavilion's right corner, a small radio behind the right pane.",
+  "status": "natural re-blocking (product-owner decision 2026-10-05). Owner feedback 2026-10-06: S62 is the S18 picture (the owner-loved Sokolikova-street style-test painting) in early December 1982 with the larger mixed-goods serving window in the kiosk's place. Painted in steps from the S18 master (winter derive, local fix, free shop transplant; art/masters/bg_natural/S62.md).",
+  "note": "Same camera as S18 (Sokolikova street, low eye-level camera ~1.45 m, horizon y ~703; px per metre at a ground point = (y - 703) / 1.45; hero scale (y - 703) / 436.7). Early December 1982 at dusk: thin snow, wet asphalt, the big tree bare, lit windows, a pale-blue period saloon parked far back. Where Zita's kiosk stands in 1995 there is the small mixed-goods shop (front on y 880, walls from beyond the left frame edge to x 361, pale green-grey with a brown base) with ONE large serving window (frame x 32-310, y 625-765; the counter ledge top y 760 with a narrow outer ledge under it): a crate of empty preserving jars on the outer ledge at the left, Ruzena behind the open middle of the window, an old radio on the counter at the right; two crates of empty returnable bottles stacked on the ground at the shop's right corner (x 285-376, y 785-900). The bench and the green wire fence (here running to the right edge, in front of the bare tree) stand on the lawn strip in front of the near block. Walk area: the side street in front of the shop, the road, the pavements and the front of the lawn strip below the fence.",
   "background": "bg_natural/S62.webp",
-  "walk_polygon": [
-    [
-      0,
-      748
-    ],
-    [
-      700,
-      748
-    ],
-    [
-      700,
-      778
-    ],
-    [
-      806,
-      778
-    ],
-    [
-      806,
-      748
-    ],
-    [
-      1920,
-      748
-    ],
-    [
-      1920,
-      1015
-    ],
-    [
-      0,
-      1015
-    ]
-  ],
-  "walk_band": [
-    740,
-    1015
-  ],
-  "actor_scale": [
-    0.55,
-    1.0
-  ],
-  "spawn": [
-    1100,
-    900
-  ],
+  "walk_polygon": [[0, 890], [280, 890], [280, 907], [390, 907], [398, 880], [424, 866], [1000, 866], [1240, 893], [1530, 938], [1612, 960], [1700, 968], [1800, 978], [1920, 997], [1920, 1015], [0, 1015]],
+  "walk_band": [866, 1015],
+  "actor_scale": [0.373, 0.714],
+  "spawn": [960, 950],
   "hotspots": {
-    "S62.jar": {
-      "rect": [
-        372,
-        546,
-        112,
-        66
-      ],
-      "interaction_point": [
-        428,
-        800
-      ],
-      "label_anchor": [
-        428,
-        536
-      ],
-      "reason": "wooden crate with six clean empty preserving jars standing on the outer window ledge at the left (painted x 378-478, y 555-605)"
-    },
-    "S62.ambient 1": {
-      "rect": [
-        700,
-        642,
-        102,
-        132
-      ],
-      "interaction_point": [
-        750,
-        800
-      ],
-      "label_anchor": [
-        820,
-        632
-      ],
-      "reason": "stacked wooden crates of empty returnable glass bottles at the pavilion's right front corner (painted x 708-798, y 645-770; the walk polygon has a notch around their foot)"
-    },
-    "S62.ambient 2": {
-      "rect": [
-        650,
-        530,
-        88,
-        70
-      ],
-      "interaction_point": [
-        694,
-        800
-      ],
-      "label_anchor": [
-        694,
-        520
-      ],
-      "reason": "small old radio receiver with a wooden case behind the right pane of the shop window (painted x 660-728, y 540-592)"
-    },
-    "S62.RUZENA": {
-      "rect": [
-        500,
-        462,
-        125,
-        138
-      ],
-      "interaction_point": [
-        562,
-        820
-      ],
-      "label_anchor": [
-        562,
-        440
-      ],
-      "reason": "Ruzena behind the glazed centre pane of the shop window, bust above the window's inner sill (painted frame bottom y 598)"
-    }
+    "S62.jar": { "rect": [36, 710, 80, 54], "interaction_point": [76, 935], "label_anchor": [150, 800],
+                 "reason": "small wooden crate with clean empty preserving jars on the outer ledge at the left of the serving window (painted x 40-112, y 719-762)" },
+    "S62.ambient 1": { "rect": [283, 782, 96, 120], "interaction_point": [332, 940], "label_anchor": [424, 776],
+                       "reason": "two wooden crates of empty returnable glass bottles stacked on the ground at the shop's right corner (painted x 285-376, y 785-900; the walk polygon has a notch around their foot)" },
+    "S62.ambient 2": { "rect": [230, 706, 74, 56], "interaction_point": [268, 935], "label_anchor": [268, 700],
+                       "reason": "old radio with a wooden case and a round speaker cloth on the counter inside the serving window, at the right (painted x 232-302, y 711-759)" },
+    "S62.RUZENA": { "rect": [132, 666, 88, 92], "interaction_point": [176, 925], "label_anchor": [176, 612],
+                    "reason": "Ruzena behind the open middle of the serving window, bust above the counter ledge (y 760)" }
   },
   "npcs": {
-    "S62.RUZENA": {
-      "variant": "window_bust_glass",
-      "feet": [
-        562,
-        735
-      ],
-      "scale": 0.55,
-      "sill_y": 598,
-      "z": "back",
-      "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); the painting shows a glazed shop window, so the closed-pane variant window_glass; feet = the shop floor just behind its front wall"
-    }
+    "S62.RUZENA": { "variant": "window_bust", "feet": [176, 877], "scale": 0.4, "sill_y": 760, "z": "back",
+                    "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); the middle of the window is open (her breath steams in the cold air, ambient), so the open-hatch variant 'window'; feet = the shop floor just behind its front wall (y 880), scale = the room perspective there" }
   },
   "exits": {
-    "S62.to_S57": {
-      "rect": [
-        0,
-        748,
-        60,
-        267
-      ],
-      "interaction_point": [
-        70,
-        880
-      ],
-      "label_anchor": [
-        200,
-        738
-      ],
-      "reason": "the courtyard path continues out of the left edge past the block ends towards the stop"
-    },
-    "S62.to_S65": {
-      "rect": [
-        1700,
-        748,
-        220,
-        267
-      ],
-      "interaction_point": [
-        1850,
-        880
-      ],
-      "label_anchor": [
-        1560,
-        738
-      ],
-      "reason": "the path continues out of the right edge along the block to the small service building by the kindergarten"
-    }
+    "S62.to_S57": { "rect": [0, 892, 60, 123], "interaction_point": [40, 950], "label_anchor": [200, 884],
+                    "reason": "the side street in front of the shop continues out of the left edge towards the stop" },
+    "S62.to_S65": { "rect": [1700, 971, 220, 44], "interaction_point": [1890, 1006], "label_anchor": [1560, 962],
+                    "reason": "the pavement below the fence continues out of the right edge towards the small service building by the school" }
   },
   "state_patches": []
 }

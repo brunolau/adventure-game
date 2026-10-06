@@ -1,14 +1,55 @@
 {
   "room": "S43",
   "source": "src/game/assets/bg_natural/S43.webp",
-  "note": "Natural S43 cut-outs (art/tools/ambient_cut.py --natural S43): the spruces seen through the lounge window and through the entrance glass (wind sway), and a mask of the entrance glass for a passer-by outside.",
+  "note": "Natural S43 cut-outs (art/tools/ambient_cut.py --natural S43): the spruces seen through the lounge window and through the entrance glass (wind sway), and a mask of the entrance glass for a passer-by outside. WINTER 2035 (owner 2026-10-06): the snow-laden trees behind the glass are not cut any more (no sway); winter sky mask; a glass mask for the fine snow dust outside.",
   "items": [
-    { "name": "window_spruces", "rect": [1775, 285, 125, 325],
-      "rules": [ { "hue": [60, 175], "sat": [0.2, 1], "val": [0.12, 0.85] } ], "feather": 1.0, "pad": 4 },
-    { "name": "door_spruces", "rect": [66, 426, 188, 272],
-      "rules": [ { "hue": [60, 175], "sat": [0.2, 1], "val": [0.12, 0.85] } ],
-      "exclude": [ [[150, 420], [170, 705]] ], "feather": 1.0, "pad": 4 },
-    { "name": "door_glass_mask", "kind": "mask", "rect": [66, 426, 188, 272],
-      "exclude": [ [[150, 420], [170, 705]] ], "feather": 1.0, "mask_rect": [60, 420, 200, 285], "scale": 1.0 }
+    {
+      "name": "door_glass_mask",
+      "kind": "mask",
+      "rect": [
+        66,
+        426,
+        188,
+        272
+      ],
+      "exclude": [
+        [
+          [
+            150,
+            420
+          ],
+          [
+            170,
+            705
+          ]
+        ]
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        60,
+        420,
+        200,
+        285
+      ],
+      "scale": 1.0
+    },
+    {
+      "name": "window_glass_mask",
+      "kind": "mask",
+      "rect": [
+        1778,
+        288,
+        118,
+        318
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        1770,
+        280,
+        130,
+        330
+      ],
+      "scale": 1.0
+    }
   ]
 }

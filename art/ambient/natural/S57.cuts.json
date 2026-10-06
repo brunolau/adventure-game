@@ -1,146 +1,17 @@
 {
  "room": "S57",
  "source": "src/game/assets/bg_natural/S57.webp",
- "note": "Natural S57 cut-outs: the bare winter trees at the left above the bus (dark branches against the pale sky, wind sway).",
+ "note": "Natural S57 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the bare winter trees at the left and in the middle distance (dark branches against the pale sky, wind sway) and the front of the waiting Ikarus-type bus (a faint engine-idle shake; the temporary bus-stop sign standing in front of it is left out so it stays still).",
  "items": [
-  {
-   "name": "branches_left",
-   "rect": [
-    0,
-    140,
-    340,
-    190
-   ],
-   "rules": [
-    {
-     "hue": [
-      0,
-      75
-     ],
-     "luma": [
-      0.0,
-      0.5
-     ]
-    }
-   ],
-   "clean": 0,
-   "feather": 0.6
-  },
-  {
-   "name": "bus_front",
-   "rect": [
-    124,
-    322,
-    250,
-    282
-   ],
-   "feather": 0.8,
-   "clean": 0,
-   "pad": 2,
-   "note": "the front of the waiting Ikarus left of the shelter post, for a faint engine-idle shake",
-   "include": [
-    [
-     [
-      148,
-      326
-     ],
-     [
-      372,
-      322
-     ],
-     [
-      374,
-      520
-     ],
-     [
-      372,
-      586
-     ],
-     [
-      150,
-      590
-     ],
-     [
-      146,
-      520
-     ]
-    ],
-    [
-     [
-      124,
-      372
-     ],
-     [
-      152,
-      372
-     ],
-     [
-      152,
-      418
-     ],
-     [
-      124,
-      418
-     ]
-    ]
-   ]
-  },
-  {
-   "name": "puddle",
-   "rect": [
-    396,
-    824,
-    312,
-    70
-   ],
-   "include": [
-    [
-     [
-      402,
-      840
-     ],
-     [
-      480,
-      832
-     ],
-     [
-      560,
-      828
-     ],
-     [
-      640,
-      834
-     ],
-     [
-      700,
-      842
-     ],
-     [
-      694,
-      866
-     ],
-     [
-      620,
-      884
-     ],
-     [
-      540,
-      892
-     ],
-     [
-      460,
-      888
-     ],
-     [
-      408,
-      876
-     ]
-    ]
-   ],
-   "feather": 5,
-   "clean": 0,
-   "pad": 0,
-   "note": "the meltwater puddle in front of the shelter (glints and a faint ripple)"
-  }
+  {"name": "branches_left", "rect": [0, 90, 345, 230],
+   "rules": [{"hue": [0, 75], "luma": [0.0, 0.5]}],
+   "exclude": [[[350, 40], [536, 330]], [[0, 0], [90, 180]]], "clean": 0, "feather": 0.6},
+  {"name": "branches_mid", "rect": [1150, 200, 150, 130],
+   "rules": [{"hue": [0, 75], "luma": [0.0, 0.5]}],
+   "exclude": [[[1240, 180], [1262, 340]]], "clean": 0, "feather": 0.6},
+  {"name": "bus_front", "rect": [80, 308, 326, 350], "feather": 0.8, "clean": 0, "pad": 2,
+   "note": "the front of the waiting Ikarus (left of the stop post), for a faint engine-idle shake; the round bus-stop sign and its post in front of it are excluded",
+   "include": [[[108, 312], [400, 312], [404, 560], [402, 656], [110, 656], [106, 560]], [[80, 370], [112, 425]]],
+   "exclude": [[[293, 340], [388, 440]], [[330, 436], [348, 660]]]}
  ]
 }

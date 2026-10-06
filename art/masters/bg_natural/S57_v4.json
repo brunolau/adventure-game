@@ -1,0 +1,56 @@
+{
+  "room": "S57",
+  "version": 4,
+  "kind": "retouch",
+  "usd": 0,
+  "from_version": 3,
+  "from_master": "art/masters/bg_natural/S57_v3.png",
+  "note": "S57 v3 -> v4 free retouch: removed the brand script on the bus's red front panel (cloned from the plain panel above it) and the number on its grille (cloned from the grille further left).",
+  "ops": [
+    {
+      "op": "clone",
+      "src": [
+        372,
+        735,
+        454,
+        755
+      ],
+      "dst": [
+        372,
+        755
+      ],
+      "feather": 2
+    },
+    {
+      "op": "clone",
+      "src": [
+        352,
+        820,
+        394,
+        836
+      ],
+      "dst": [
+        395,
+        820
+      ],
+      "feather": 2
+    }
+  ],
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking_file": "src/game/data/blocking/S57.json",
+  "prompt_file": "art/prompts/natural/S57.era.txt",
+  "derived_from": "S11",
+  "at": "2026-10-06T01:56:17",
+  "exported": {
+    "path": "src/game/assets/bg_natural/S57.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T01:57:32"
+  }
+}

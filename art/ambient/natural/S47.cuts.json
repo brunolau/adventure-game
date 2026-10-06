@@ -1,14 +1,141 @@
 {
   "room": "S47",
   "source": "src/game/assets/bg_natural/S47.webp",
-  "note": "Natural S47 cut-outs (art/tools/ambient_cut.py --natural S47): the window sky (cloud mask) and the window glass without mullions, panel and showcase (mask for the cabin on the ropes and the birds outside).",
+  "note": "Natural S47 cut-outs (art/tools/ambient_cut.py --natural S47): the window sky (cloud mask) and the window glass without mullions, panel and showcase (mask for the cabin on the ropes and the birds outside). WINTER 2035 (owner 2026-10-06): winter sky mask (deep blue only).",
   "items": [
-    { "name": "window_sky_mask", "kind": "mask", "rect": [0, 185, 1262, 140],
-      "rules": [ { "hue": [185, 235], "sat": [0.2, 1], "val": [0.45, 1] } ],
-      "feather": 1.0, "mask_rect": [0, 180, 1270, 150], "scale": 1.0 },
-    { "name": "window_glass_mask", "kind": "mask", "rect": [0, 185, 1262, 372],
-      "exclude": [ [[0, 185], [16, 557]], [[203, 185], [224, 557]], [[412, 185], [440, 557]], [[625, 185], [650, 557]],
-                   [[838, 185], [862, 557]], [[1050, 185], [1072, 557]], [[465, 355], [725, 740]], [[1000, 440], [1160, 740]] ],
-      "feather": 0.8, "mask_rect": [0, 180, 1270, 382], "scale": 1.0 }
+    {
+      "name": "window_sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        185,
+        1262,
+        140
+      ],
+      "rules": [
+        {
+          "hue": [
+            195,
+            238
+          ],
+          "sat": [
+            0.34,
+            1
+          ],
+          "val": [
+            0.35,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        0,
+        180,
+        1270,
+        150
+      ],
+      "scale": 1.0
+    },
+    {
+      "name": "window_glass_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        185,
+        1262,
+        372
+      ],
+      "exclude": [
+        [
+          [
+            0,
+            185
+          ],
+          [
+            16,
+            557
+          ]
+        ],
+        [
+          [
+            203,
+            185
+          ],
+          [
+            224,
+            557
+          ]
+        ],
+        [
+          [
+            412,
+            185
+          ],
+          [
+            440,
+            557
+          ]
+        ],
+        [
+          [
+            625,
+            185
+          ],
+          [
+            650,
+            557
+          ]
+        ],
+        [
+          [
+            838,
+            185
+          ],
+          [
+            862,
+            557
+          ]
+        ],
+        [
+          [
+            1050,
+            185
+          ],
+          [
+            1072,
+            557
+          ]
+        ],
+        [
+          [
+            465,
+            355
+          ],
+          [
+            725,
+            740
+          ]
+        ],
+        [
+          [
+            1000,
+            440
+          ],
+          [
+            1160,
+            740
+          ]
+        ]
+      ],
+      "feather": 0.8,
+      "mask_rect": [
+        0,
+        180,
+        1270,
+        382
+      ],
+      "scale": 1.0
+    }
   ]
 }

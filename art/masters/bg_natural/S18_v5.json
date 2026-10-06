@@ -1,0 +1,43 @@
+{
+  "kind": "edit",
+  "from_version": 4,
+  "spec": "s18_kiosk2",
+  "boxes_game_px": [
+    [
+      0,
+      470,
+      482,
+      945
+    ],
+    [
+      1590,
+      600,
+      1795,
+      995
+    ]
+  ],
+  "feather_master_px": 40,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2053672109,
+  "usd": 0.15,
+  "scope": "bg_natural/sokolikova_street/",
+  "spend_log_asset": "bg_natural/sokolikova_street/S18_v5_edit",
+  "prompt": "You receive 2 images. Image 1 is one of our finished point-and-click adventure game backgrounds: a street between early-1970s panel housing blocks in Dubravka, Bratislava, on a summer evening in 1995 at sunset. Image 2 is the same painting with flat colour placeholder shapes that ONLY show where two new objects must stand and how big they are. Edit image 1: add the two new objects exactly where and exactly as large as the placeholders in image 2, painted in the same loose painterly brushwork, palette and warm low evening sunlight as the rest of image 1 - not flat, not clean vector graphics: slightly weathered surfaces with soft brush texture, warm sunset light and dappled pine shadows on the sunlit front, cool shade on the side, soft long evening shadows on the ground. Keep everything else in image 1 exactly as it is: the sky, every building, balcony and staircase, the pine trees, the big tree at the right, the wooden bench on the lawn strip, the road, the kerbs, the little red car and the light.\n\n1. Far left (0 % to 21 % of the width, from 51 % to 81 % of the height, on the ground at 81 %): a small prefabricated NEWSPAPER KIOSK of 1995 standing on a small concrete apron at the corner of the lawn, in front of the pine trunks (the pine crowns stay visible above its roof). Cream-ochre wall panels with thin rust-brown trim, a little grime and a few rust streaks near the bottom, a flat roof with a dark overhanging edge, a plain blank fascia board with NO lettering. Its front faces the camera; its right side wall, in cool shadow, recedes towards the street. Above a plain lower panel the front has three openings side by side: on the left a glass display pane with newspapers and magazines hung on clips behind the glass; in the middle an OPEN sales hatch, an empty dim opening into the kiosk with a narrow light counter ledge whose top edge is one straight horizontal line at the bottom of the opening (70 % of the height); nobody is inside, the opening shows only dim shelves with stacked papers at the back; on the right a glass display pane with rows of colourful little packets of chewing gum and sweets.\n2. Right, between the bench and the big tree (83 % to 93 % of the width): a low green wire-mesh fence along the lawn strip that ends left of the big tree's trunk (the trunk stays fully visible), and behind it on the lawn the residents' steel drying racks: two thin grey T-shaped poles with three clothes lines between them, with real painted laundry hanging still in the evening air - a white bed sheet, a blue towel, a yellow towel and a small red shirt, with soft folds, the warm evening light on them.\n\nNO letters, words, digits, logos or brand names anywhere: the newspaper pages show only grey lines and small grey photo squares, the sweets packets only plain colour fields. No people, no animals; do not add or remove anything else. Image 2 is a positioning aid only: do not copy its flat shapes. The result is image 1 edited, same 16:9 framing, no frames, borders or captions.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S18_v4.png",
+    "the same + placeholder shapes (S18_scripts/edit_on_base.py spec s18_kiosk2, guide)"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_S18_v5_edit_raw.png",
+  "started": "2026-10-06T01:39:21",
+  "model_description": "",
+  "room": "S18",
+  "version": 5,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

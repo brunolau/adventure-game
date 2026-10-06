@@ -1,28 +1,50 @@
 {
   "room": "S51",
   "source": "src/game/assets/bg_natural/S51.webp",
-  "bg_sha1": "2a0821b0d5772ca8087cc081ad69c266c1317986",
+  "bg_sha1": "7b49b4288d78902789ff4174a6e514cb1df71d6d",
   "items": {
     "trees_left": {
       "kind": "cutout",
       "pos": [
         -12,
-        106
+        78
       ],
       "size": [
-        416,
-        354
+        369,
+        444
+      ]
+    },
+    "trees_mid": {
+      "kind": "cutout",
+      "pos": [
+        333,
+        148
+      ],
+      "size": [
+        324,
+        184
       ]
     },
     "trees_right": {
       "kind": "cutout",
       "pos": [
-        1288,
-        258
+        928,
+        188
       ],
       "size": [
-        644,
-        194
+        404,
+        274
+      ]
+    },
+    "bushes_right": {
+      "kind": "cutout",
+      "pos": [
+        1718,
+        383
+      ],
+      "size": [
+        214,
+        129
       ]
     },
     "sky_mask": {
@@ -31,7 +53,7 @@
         0,
         0,
         1920,
-        440
+        345
       ]
     }
   }

@@ -1,0 +1,384 @@
+{
+  "room": "S61",
+  "version": 11,
+  "kind": "derive",
+  "from_room": "S17",
+  "from_version": 8,
+  "from_master": "art/masters/bg_natural/S17_v8.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2138882165,
+  "usd": 0.15,
+  "scope": "bg_natural/L_YARD_relayout/",
+  "spend_log_asset": "bg_natural/L_YARD_relayout/S61_v11_derive",
+  "started": "2026-10-06T01:49:32",
+  "prompt_file": "art/prompts/natural/S61.era.txt",
+  "blocking_file": "src/game/data/blocking/S61.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dvor lipa a servisný múrik in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 431, y 185 (22 % from the left, 17 % from the top). The fixed landmark 'tree_trunk' stays exactly at x 620, y 690 (32 % from the left, 64 % from the top). The fixed landmark 'service_niche' stays exactly at x 1155, y 626 (60 % from the left, 58 % from the top). The fixed landmark 'pipe_axis' stays exactly at x 1382, y 705 (72 % from the left, 65 % from the top).\n\nEra changes: the same school yard thirteen years earlier, on an early-December afternoon in 1982. Winter: every tree is bare - the trees beside the gym wing and the woods of the hill show only grey-brown branches and twigs, no leaves; the lawn, the grass inside the running track, the grass bank and the grass bed are dull winter green-brown with thin patches of fresh snow; thin snow lies in places on the red clay running track, on the concrete basketball playground behind the fence, along the asphalt edges, on the roof edge, on the wall coping and on the bench; a pale, low winter sun under a high hazy sky, cold light, long soft shadows. The school is only eight years old: the same buildings with the same windows, the plain pale-yellow render clean and fresh, no stains. The fence keeps every post, rail and its chain-link mesh, freshly painted dark green. The basketball baskets on the concrete playground behind the fence are older painted wooden backboards with the same netless rings. The round galvanised steel dustbin stays where it is.\nREMOVE the freestanding art panel with the coloured shapes and its two posts at the left completely: it does not exist yet in 1982. In exactly its place - at the far left, on the asphalt directly in front of the red running track - stands the hand cart (prop 4), no bigger than the panel was: its two wheels stand at about y 640-655, the top of its load at about y 480, it spans about x 190-425. Nothing new stands in the foreground: the asphalt below y 700 stays empty. The linden is a freshly planted young sapling (prop 2) instead of the 1995 tree. The low red-brick service wall is brand new: crisp clean bricks, sharp mortar joints, a clean concrete coping. The red pipe elbow is freshly painted bright red.\n\nInteractive props of 1982:\n1. the box labelled 'Servisná dutina v múriku' in image 2 (x 1070-1240, y 560-685 of the 1920x1080 frame (56-65 % from the left, 52-63 % from the top)): the inset panel of 3 rows x 4 columns of grey stone blocks in the new brick wall; the stone in the SECOND row from the top and the THIRD column from the left is taken out and lies flat on the wall coping just above, so that a small dark, dry square cavity is open in its place; the other eleven stones are in place.\n2. the box labelled 'Mladá lipa' in image 2 (x 530-710, y 180-695 of the 1920x1080 frame (28-37 % from the left, 17-64 % from the top)): a young, freshly planted linden sapling in the same grass bed at the same trunk spot (x 620, y 690): a thin straight stem, NOT a tree - its few thin bare twigs end at about y 190 at the very top of its box, the whole sapling is no thicker than a broom handle, tied to a tall wooden support stake with a strip of rubber, no leaves; a small ring of dark loose soil around its foot. Where the 1995 tree's branches and crown were, the school facade, the track and the sky are visible again.\n3. the box labelled 'Červené potrubné koleno' in image 2 (x 1335-1435, y 598-712 of the 1920x1080 frame (70-75 % from the left, 55-66 % from the top)): the freshly painted bright red water-pipe elbow rising from the ground at the right end of the wall and bending sideways towards it, ending in a flange.\n4. the box labelled 'Ručný vozík' in image 2 (x 190-425, y 476-654 of the 1920x1080 frame (10-22 % from the left, 44-61 % from the top)): a small loaded two-wheeled steel hand cart with a wooden box body and two long handles pointing left, standing on the asphalt at the back edge of the yard, loaded with a few bags and laths, a little snow on it - the whole cart inside this box; from its wheels a pair of clearly visible dark muddy wheel ruts in the thin snow runs to the right along the front kerb of the grass bed (y ~710), passing right next to the sapling's stem, and fades out on the asphalt in front of the brick wall.\nThe asphalt runs out of the left edge (the box labelled 'exit: Pred ZŠ Sokolíkova v roku 1982' in image 2 (x 0-60, y 722-912 of the 1920x1080 frame (0-3 % from the left, 67-84 % from the top))), out of the bottom-left corner towards the camera (the box labelled 'exit: Tóno a dedo pri servisnom okne v roku 1982' in image 2 (x 0-260, y 930-1015 of the 1920x1080 frame (0-14 % from the left, 86-94 % from the top))) and out of the right edge (the box labelled 'exit: Školský záhradný sklad v roku 1982' in image 2 (x 1800-1920, y 722-1015 of the 1920x1080 frame (94-100 % from the left, 67-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays open asphalt with nothing standing on it: thin patches of snow and wet dark asphalt, no objects.\nThis room has no NPC zones.\n\nFiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no murals, no graffiti. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S17_v8.png (model geometry)",
+    "S17_v8.png + S61 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor building_corner": {
+        "at": [
+          431,
+          185
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.43,
+        "ok": true
+      },
+      "anchor tree_trunk": {
+        "at": [
+          620,
+          690
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.423,
+        "ok": true
+      },
+      "anchor service_niche": {
+        "at": [
+          1155,
+          626
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.646,
+        "ok": true
+      },
+      "anchor pipe_axis": {
+        "at": [
+          1382,
+          705
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.534,
+        "ok": true
+      },
+      "exit S61.to_S58": {
+        "at": [
+          30.0,
+          817.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.746,
+        "ok": true
+      },
+      "exit S61.to_S64": {
+        "at": [
+          130.0,
+          972.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.489,
+        "ok": true
+      },
+      "exit S61.to_S66": {
+        "at": [
+          1860.0,
+          868.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.716,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S61_v11_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S61",
+    "family_base": "S17",
+    "status": "natural re-blocking (product-owner decision 2026-10-05); relayout 2026-10-06 (owner satellite view). L_YARD family, derived from the S17 base painting with art/tools/derive_era.py (same camera: walk_band, actor_scale and anchors identical to S17).",
+    "note": "Same camera as S17 (relayout 2026-10-06 after the owner's satellite view): yard side of ZS Sokolikova 2, camera ~2.1 m on the yard asphalt at the SE corner of the court looking SW at the three-storey yard facade (corner x 431, yard door x 997-1055); horizon y 380, prop foot line y 700, s(y) = (y - 380) / 635; the red clay running track with grass inside on the LEFT, the court fence running away from the camera on the RIGHT (6.6 m right of the camera) with the court behind it, the paved way along the fence to the yard door, the round steel dustbin by the fence at the yard edge. December 1982: the school is eight years old (fresh plain pale-yellow render, original windows), bare trees, thin snow; behind the fence the concrete playground with basketball baskets (owner: 1995 and earlier). The young linden sapling stands in the grass bed (trunk foot 620,690), the freshly built low brick service wall with its 3x4 stone panel and the small service niche (row 2 from the top, column 3 from the left) at x 958-1332, the red water-pipe elbow at its right end (axis x 1382), the bench under the sapling; the loaded hand cart stands on the asphalt at the left where the art panel stands in 1995, its wheel ruts in the thin snow running right past the sapling's trunk.",
+    "background": "bg_natural/S61.webp",
+    "walk_polygon": [
+      [
+        0,
+        722
+      ],
+      [
+        1920,
+        722
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      720,
+      1015
+    ],
+    "actor_scale": [
+      0.535,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "anchors": {
+      "building_corner": [
+        431,
+        185
+      ],
+      "tree_trunk": [
+        620,
+        690
+      ],
+      "service_niche": [
+        1155,
+        626
+      ],
+      "pipe_axis": [
+        1382,
+        705
+      ]
+    },
+    "hotspots": {
+      "S61.niche": {
+        "rect": [
+          1070,
+          560,
+          170,
+          125
+        ],
+        "interaction_point": [
+          1300,
+          775
+        ],
+        "label_anchor": [
+          1155,
+          550
+        ],
+        "reason": "the 3x4 stone panel in the fresh brick wall; the stone in row 2 / column 3 is out and lies on the coping, the small dry cavity is open (closed after E08: variant S61_closed_niche); E08 (PT-S06 rule): the hero stands right of the niche block (left of the hydrant) and reaches left, so the niche stays visible while Tono and Oto watch"
+      },
+      "S61.tree": {
+        "rect": [
+          530,
+          180,
+          180,
+          515
+        ],
+        "interaction_point": [
+          455,
+          770
+        ],
+        "label_anchor": [
+          620,
+          170
+        ],
+        "reason": "the young freshly planted linden sapling tied to a stake in its grass bed (trunk foot 620,690, bare twigs up to y ~190; painted v7); the tree guard of E09 is the variant S61_tree_guard (playtest PT-S06: use point left of the guard; at the trunk Adam covered the new guard)"
+      },
+      "S61.ambient 1": {
+        "rect": [
+          1335,
+          598,
+          100,
+          114
+        ],
+        "interaction_point": [
+          1385,
+          765
+        ],
+        "label_anchor": [
+          1385,
+          588
+        ],
+        "reason": "the red water-pipe elbow rising from the ground at the wall's right end (axis x 1382), freshly painted in 1982"
+      },
+      "S61.ambient 2": {
+        "rect": [
+          190,
+          476,
+          235,
+          178
+        ],
+        "interaction_point": [
+          305,
+          765
+        ],
+        "label_anchor": [
+          305,
+          466
+        ],
+        "reason": "the loaded two-wheeled hand cart standing on the asphalt at the left; its muddy wheel tracks curve towards the corner of the sapling's bed (painted 1982 v3)"
+      }
+    },
+    "exits": {
+      "S61.to_S58": {
+        "rect": [
+          0,
+          722,
+          60,
+          190
+        ],
+        "interaction_point": [
+          70,
+          820
+        ],
+        "label_anchor": [
+          190,
+          712
+        ],
+        "reason": "the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main wing and around the school to the front entrance"
+      },
+      "S61.to_S64": {
+        "rect": [
+          0,
+          930,
+          260,
+          85
+        ],
+        "interaction_point": [
+          150,
+          975
+        ],
+        "label_anchor": [
+          300,
+          922
+        ],
+        "reason": "the asphalt runs out of the bottom-left corner towards the camera: back past the south end of the main wing to the service window on the street side (south part)"
+      },
+      "S61.to_S66": {
+        "rect": [
+          1800,
+          722,
+          120,
+          293
+        ],
+        "interaction_point": [
+          1850,
+          880
+        ],
+        "label_anchor": [
+          1700,
+          712
+        ],
+        "reason": "the yard asphalt continues out of the right edge past the near end of the court fence towards the garden shed at the east fence"
+      }
+    },
+    "variant_layers": {
+      "variants/S61_tree_guard.webp": {
+        "texture": "variants_natural/S61_tree_guard.webp",
+        "pos": [
+          430,
+          440
+        ]
+      },
+      "variants/S61_closed_niche.webp": {
+        "texture": "variants_natural/S61_closed_niche.webp",
+        "pos": [
+          1030,
+          505
+        ]
+      }
+    },
+    "state_patches": [
+      {
+        "texture": "variants_natural/S61_closed_niche.webp",
+        "pos": [
+          1030,
+          505
+        ],
+        "after": [
+          "E08"
+        ],
+        "until": [],
+        "reason": "playtest PT-S10: E08 hides the jar and Oto closes the service board at once (the visual_variant_layers overlay itself waits for the next room entry, Core rule)"
+      },
+      {
+        "texture": "variants_natural/S61_tree_guard.webp",
+        "pos": [
+          430,
+          440
+        ],
+        "after": [
+          "E09"
+        ],
+        "until": [],
+        "reason": "playtest PT-S10: E09 says the guard stands; show it immediately (same overlay as the variant layer)"
+      }
+    ],
+    "guests": {
+      "E08": [
+        {
+          "character": "TONO82",
+          "variant": "guest_standing",
+          "enter": [
+            -70,
+            985
+          ],
+          "stand": [
+            1000,
+            795
+          ],
+          "delay": 0.0,
+          "reason": "rule: 'Tono 82/Oto 82 pri S61: kratky prichod k ukrytu, potom navrat' - Tono (standing guest set, he holds the paper swallow) comes from the service window side (S61.to_S64, bottom-left corner), stands left of the hero at the cache niche, and walks back after the lines"
+        },
+        {
+          "character": "OTO82",
+          "variant": "standing",
+          "enter": [
+            -70,
+            1000
+          ],
+          "stand": [
+            850,
+            825
+          ],
+          "delay": 0.7,
+          "reason": "Oto (full figure, the 'full' variant of his window bust set) follows his grandson a moment later and stands behind him"
+        }
+      ]
+    }
+  },
+  "exported": {
+    "path": "src/game/assets/bg_natural/S61.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T01:50:13"
+  }
+}

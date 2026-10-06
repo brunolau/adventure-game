@@ -1,6 +1,6 @@
 {
   "room": "S57",
-  "notes": "Dubravka stop, early December 1982 (decision 3b; bg_natural/S57.webp): light snow falling, a few big near flakes drifting past in front (front plane), bare branches moving in the wind, the meltwater puddle in front of the shelter glinting, the waiting Ikarus idling (its front shakes faintly, exhaust vapour puffs from under it and drifts away behind the glass, the indicator lamps blink), the stop clock's second hand, pigeons on the platform, crows crossing the winter sky now and then. Bus sound via the blocking's audio override (bus_pass instead of tram brakes).",
+  "notes": "Svantnerova stop, early December 1982 (decision 3b; bg_natural/S57.webp, redesigned 2026-10-06): light snow falling, a few big near flakes drifting past in front (front plane), bare branches moving in the wind at the left and in the middle distance, the waiting Ikarus-type bus idling (its front shakes faintly, exhaust vapour puffs from under its side and drifts away, the indicator lamps blink), the stop clock's second hand, pigeons on the gravel of the tram-line building site, crows crossing the winter sky now and then. Bus sound via the blocking's audio override (bus_pass instead of tram brakes).",
   "layers": [
     {
       "id": "branches_left",
@@ -13,13 +13,14 @@
       "flutter_px": 0.4
     },
     {
-      "id": "puddle",
-      "type": "water",
-      "texture": "S57/natural/puddle.webp",
-      "amp_px": 0.4,
-      "speed": 0.8,
-      "glint": 0.45,
-      "glint_color": "#f4f6fa"
+      "id": "branches_mid",
+      "type": "sway",
+      "texture": "S57/natural/branches_mid.webp",
+      "anchor": 1.0,
+      "amp_px": 0.9,
+      "freq": 0.38,
+      "wavelength_px": 90,
+      "flutter_px": 0.3
     },
     {
       "id": "snow",
@@ -38,7 +39,7 @@
       "type": "tween_path",
       "texture": "S57/natural/bus_front.webp",
       "pivot": [0, 0],
-      "path": [[122, 320], [122.01, 320]],
+      "path": [[78, 306], [78.01, 306]],
       "duration_s": 100000,
       "every_s": [1, 1],
       "start_s": [0, 0],
@@ -52,7 +53,7 @@
       "id": "bus_indicator_left",
       "type": "flicker",
       "mode": "blink",
-      "rect": [150, 492, 28, 24],
+      "rect": [122, 529, 30, 20],
       "color": "#ffa030",
       "min": 0.0,
       "max": 0.8,
@@ -63,7 +64,7 @@
       "id": "bus_indicator_right",
       "type": "flicker",
       "mode": "blink",
-      "rect": [302, 494, 28, 24],
+      "rect": [341, 534, 32, 20],
       "color": "#ffa030",
       "min": 0.0,
       "max": 0.8,
@@ -74,7 +75,7 @@
       "id": "bus_exhaust",
       "type": "particles",
       "preset": "steam",
-      "emit_points": [[562, 590]],
+      "emit_points": [[585, 596]],
       "emit_jitter": [8, 2],
       "rate": 4.0,
       "size": [16, 28],
@@ -90,7 +91,7 @@
     {
       "id": "clock_seconds",
       "type": "rotor",
-      "pivot": [787, 133],
+      "pivot": [679, 147],
       "length": 42,
       "tail": 9,
       "width": 2,
@@ -103,11 +104,11 @@
       "type": "critters",
       "sheet": "common/pigeon_sheet",
       "count": 3,
-      "ground": [[1600, 830], [1860, 905]],
+      "ground": [[1150, 745], [1380, 820]],
       "scale": 0.22,
       "flee_radius": 330,
       "return_s": [12, 25],
-      "exit": [[2040, 200], [1700, -120]]
+      "exit": [[1500, -120], [2040, 200]]
     },
     {
       "id": "crows",

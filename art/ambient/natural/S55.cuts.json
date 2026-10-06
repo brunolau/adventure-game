@@ -1,28 +1,123 @@
 {
   "room": "S55",
   "source": "src/game/assets/bg_natural/S55.webp",
-  "note": "Natural S55 cut-outs (art/tools/ambient_cut.py --natural S55): the autumn poplar and the autumn trees of the estate above the court fence (wind sway), and the sky mask of the clouds. The big linden after E10 is cut from the variant overlay by art/ambient/natural/S17.variant_cuts.py S55.",
+  "note": "Natural S55 cut-outs, relayout 2026-10-06: the autumn trees beside the gym wing at the left (yellow/orange crowns) and a sky mask. The big linden after E10 is cut from the variant overlay by art/ambient/natural/S17.variant_cuts.py S55.",
   "items": [
     {
-      "name": "poplar",
-      "rect": [1270, 50, 120, 268],
-      "rules": [ { "hue": [20, 75], "sat": [0.3, 1], "val": [0.25, 1] }, { "hue": [75, 150], "sat": [0.2, 1], "val": [0.15, 1] } ],
-      "feather": 1.0
-    },
-    {
-      "name": "trees_back",
-      "rect": [1380, 205, 540, 112],
-      "rules": [ { "hue": [5, 75], "sat": [0.35, 1], "val": [0.2, 1] }, { "hue": [75, 160], "sat": [0.2, 1], "val": [0.12, 1] } ],
-      "feather": 1.0
+      "name": "trees_left",
+      "rect": [
+        0,
+        150,
+        440,
+        290
+      ],
+      "rules": [
+        {
+          "hue": [
+            18,
+            75
+          ],
+          "sat": [
+            0.35,
+            1
+          ],
+          "val": [
+            0.25,
+            1
+          ]
+        }
+      ],
+      "feather": 1.0,
+      "include": [
+        [
+          [
+            0,
+            150
+          ],
+          [
+            440,
+            150
+          ],
+          [
+            440,
+            300
+          ],
+          [
+            380,
+            330
+          ],
+          [
+            360,
+            400
+          ],
+          [
+            0,
+            400
+          ]
+        ]
+      ]
     },
     {
       "name": "sky_mask",
       "kind": "mask",
-      "rect": [0, 0, 1920, 200],
-      "rules": [ { "hue": [185, 235], "sat": [0.1, 1], "val": [0.55, 1] }, { "sat": [0, 0.12], "val": [0.85, 1] } ],
-      "include": [[[0, 0], [1920, 0], [1920, 132], [1655, 132], [1655, 180], [1250, 168], [0, 68]]],
+      "rect": [
+        0,
+        0,
+        1920,
+        210
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.08,
+            1
+          ],
+          "val": [
+            0.55,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.12
+          ],
+          "val": [
+            0.85,
+            1
+          ]
+        }
+      ],
       "scale": 0.5,
-      "feather": 2
+      "feather": 2,
+      "include": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            116
+          ],
+          [
+            431,
+            176
+          ],
+          [
+            0,
+            176
+          ]
+        ]
+      ]
     }
   ]
 }

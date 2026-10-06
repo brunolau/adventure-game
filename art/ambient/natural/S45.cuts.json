@@ -1,7 +1,7 @@
 {
   "room": "S45",
   "source": "src/game/assets/bg_natural/S45.webp",
-  "note": "Natural S45 cut-outs (art/tools/ambient_cut.py --natural S45): sky mask, the open lake water (ripples, duck mask), reed clumps, the rowan branches, the right spruce and the dark foreground grass blades at the bottom corners (front plane: drawn in front of the hero). Also a cumulus cloud of the S45 sky as a midday cloud sprite for the 2035 rooms.",
+  "note": "Natural S45 cut-outs, WINTER 2035 (owner 2026-10-06): winter sky mask, the dry golden reed clumps, the snow-laden right spruce (everything but the sky in its polygon), the small winter cloud cloud_w2; the frozen lake has no water layer, mask or ducks. cloud_b.webp is the committed summer cut, shared with S41-S68, and no longer re-cut.",
   "items": [
     {
       "name": "sky_mask",
@@ -15,25 +15,15 @@
       "rules": [
         {
           "hue": [
-            190,
-            235
+            195,
+            238
           ],
           "sat": [
-            0.25,
+            0.34,
             1
           ],
           "val": [
-            0.45,
-            1
-          ]
-        },
-        {
-          "sat": [
-            0,
-            0.18
-          ],
-          "val": [
-            0.82,
+            0.35,
             1
           ]
         }
@@ -49,143 +39,6 @@
       "scale": 0.5
     },
     {
-      "name": "lake",
-      "rect": [
-        280,
-        530,
-        1060,
-        170
-      ],
-      "include": [
-        [
-          [
-            285,
-            534
-          ],
-          [
-            1335,
-            534
-          ],
-          [
-            1335,
-            600
-          ],
-          [
-            1300,
-            690
-          ],
-          [
-            585,
-            690
-          ],
-          [
-            565,
-            610
-          ],
-          [
-            285,
-            600
-          ]
-        ]
-      ],
-      "exclude": [
-        [
-          [
-            292,
-            540
-          ],
-          [
-            575,
-            722
-          ]
-        ],
-        [
-          [
-            1198,
-            515
-          ],
-          [
-            1312,
-            722
-          ]
-        ]
-      ],
-      "feather": 1.0,
-      "pad": 4
-    },
-    {
-      "name": "lake_mask",
-      "kind": "mask",
-      "rect": [
-        280,
-        530,
-        1060,
-        170
-      ],
-      "include": [
-        [
-          [
-            285,
-            534
-          ],
-          [
-            1335,
-            534
-          ],
-          [
-            1335,
-            600
-          ],
-          [
-            1300,
-            690
-          ],
-          [
-            585,
-            690
-          ],
-          [
-            565,
-            610
-          ],
-          [
-            285,
-            600
-          ]
-        ]
-      ],
-      "exclude": [
-        [
-          [
-            292,
-            540
-          ],
-          [
-            575,
-            722
-          ]
-        ],
-        [
-          [
-            1198,
-            515
-          ],
-          [
-            1312,
-            722
-          ]
-        ]
-      ],
-      "feather": 1.0,
-      "mask_rect": [
-        280,
-        520,
-        1060,
-        190
-      ],
-      "scale": 1.0
-    },
-    {
       "name": "reeds_left",
       "rect": [
         0,
@@ -196,8 +49,8 @@
       "rules": [
         {
           "hue": [
-            45,
-            115
+            22,
+            58
           ],
           "sat": [
             0.3,
@@ -222,8 +75,8 @@
       "rules": [
         {
           "hue": [
-            45,
-            115
+            22,
+            58
           ],
           "sat": [
             0.3,
@@ -250,46 +103,6 @@
       "feather": 1.0
     },
     {
-      "name": "rowan",
-      "rect": [
-        0,
-        0,
-        470,
-        330
-      ],
-      "rules": [
-        {
-          "hue": [
-            55,
-            140
-          ],
-          "sat": [
-            0.25,
-            1
-          ],
-          "val": [
-            0.12,
-            1
-          ]
-        },
-        {
-          "hue": [
-            15,
-            45
-          ],
-          "sat": [
-            0.2,
-            0.8
-          ],
-          "val": [
-            0.1,
-            0.6
-          ]
-        }
-      ],
-      "feather": 1.0
-    },
-    {
       "name": "spruce_right",
       "rect": [
         1680,
@@ -299,17 +112,9 @@
       ],
       "rules": [
         {
-          "hue": [
-            60,
-            175
-          ],
           "sat": [
-            0.15,
+            0,
             1
-          ],
-          "val": [
-            0.05,
-            0.75
           ]
         }
       ],
@@ -357,67 +162,31 @@
           ]
         ]
       ],
-      "feather": 1.0
-    },
-    {
-      "name": "blades_left",
-      "rect": [
-        0,
-        790,
-        340,
-        290
-      ],
-      "rules": [
+      "feather": 1.0,
+      "except": [
         {
           "hue": [
-            40,
-            170
+            195,
+            238
           ],
           "sat": [
-            0.2,
+            0.34,
             1
           ],
           "val": [
-            0,
-            0.32
-          ]
-        }
-      ],
-      "feather": 0.8
-    },
-    {
-      "name": "blades_right",
-      "rect": [
-        1560,
-        790,
-        360,
-        290
-      ],
-      "rules": [
-        {
-          "hue": [
-            40,
-            170
-          ],
-          "sat": [
-            0.2,
+            0.35,
             1
-          ],
-          "val": [
-            0,
-            0.32
           ]
         }
-      ],
-      "feather": 0.8
+      ]
     },
     {
-      "name": "cloud_b",
+      "name": "cloud_w2",
       "rect": [
-        1230,
-        45,
-        450,
-        155
+        1278,
+        122,
+        205,
+        72
       ],
       "rules": [
         {

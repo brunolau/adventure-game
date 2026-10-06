@@ -1,0 +1,248 @@
+{
+  "room": "S62",
+  "version": 2,
+  "kind": "derive",
+  "from_room": "S18",
+  "from_version": 6,
+  "from_master": "art/masters/bg_natural/S18_v6.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1379639274,
+  "usd": 0.15,
+  "scope": "bg_natural/sokolikova_street/",
+  "spend_log_asset": "bg_natural/sokolikova_street/S62_v2_derive",
+  "started": "2026-10-06T01:51:59",
+  "prompt_file": "art/prompts/natural/S62.era.txt",
+  "blocking_file": "src/game/data/blocking/S62.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Sídliskový obchod v roku 1982 in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\n\n\nEra changes: the same street thirteen years earlier, early December 1982, at winter dusk shortly after sunset: a pale cold sky fading from soft pink-grey at the horizon to grey-blue above, no sun, cool bluish light with the last warm glow on the upper floors. Thin fresh snow lies on the lawns, the kerbs, the roofs, the balcony parapet tops, the bench and the fence; the road and the pavements are wet dark asphalt with a little slush and snow at their edges. The big deciduous tree at the right is bare: only its trunk and grey-brown branches and twigs, no leaves (the same trunk and the same main branches as in image 1). The pines and the two spruces at the left stay dark green with a little snow on their branches. The panel blocks are only ten years old: the same blocks with the same red balcony parapets, staircases and doors, but cleaner and fresher, without rust streaks; every loggia is open (no later aluminium glazing). A few windows are lit warm yellow from inside. No laundry outside in winter: the clothes line between the columns at the right is empty. The little red hatchback is replaced by a small boxy pale-blue saloon car of the late 1970s parked at the same place, without any badges.\nZita's newspaper kiosk is replaced, at the same place and on the same ground line, by a slightly bigger single-storey shop pavilion of mixed goods that continues beyond the left edge of the picture and ends on the right at the same place as the kiosk: plastered walls painted pale green-grey with a thin brown base, a flat roof with a brown edge and snow on it, a plain fascia board without any lettering. Its front has ONE large serving window with a wooden frame, as wide as the three kiosk openings together; its sliding middle pane is open; the light wooden counter ledge at its bottom is one straight horizontal line at y 757 (70 % of the height), with a narrow outer ledge just below it. Inside, a dim, warmly lit little shop with modest wooden shelves holding a few jars, tins, packets and bread, no labels; the place behind the open pane in the middle stays empty.\n\nInteractive props of 1982:\n1. the box labelled 'Prázdny zavárací pohár' in image 2 (x 58-132, y 704-760 of the 1920x1080 frame (3-7 % from the left, 65-70 % from the top)): a small wooden crate standing on the outer ledge at the left of the serving window, holding clean empty glass preserving jars with lids.\n2. the box labelled 'Vratné fľaše' in image 2 (x 344-410, y 792-884 of the 1920x1080 frame (18-21 % from the left, 73-82 % from the top)): two or three wooden crates full of empty returnable glass bottles (milk and beer bottles without labels) stacked on the ground at the pavilion's right front corner, a little snow on the top crate.\n3. the box labelled 'Rádiový prijímač' in image 2 (x 244-302, y 704-756 of the 1920x1080 frame (13-16 % from the left, 65-70 % from the top)): a small old radio receiver with a wooden case and a round speaker cloth standing on the counter inside the window, at the right.\nThe street continues out of the left edge (the box labelled 'exit: Dúbravská zastávka v roku 1982' in image 2 (x 0-60, y 892-1015 of the 1920x1080 frame (0-3 % from the left, 83-94 % from the top))) and the pavement out of the right edge (the box labelled 'exit: Výdajňa školského údržbového materiálu v roku 1982' in image 2 (x 1860-1920, y 970-1015 of the 1920x1080 frame (97-100 % from the left, 90-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 866-1015 of the 1920x1080 frame (0-100 % from the left, 80-94 % from the top) stays the open wet asphalt road and pavements with a little slush at the edges, with nothing standing on it.\nNPC zone at x 148-236, y 662-756 of the 1920x1080 frame (8-12 % from the left, 61-70 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character is seen through a window: paint the window sill exactly at y 757 across x 118-266; the opening above the sill shows a plain, dim interior, no person.\n\nFiction rules: no people, no animals, no lettering, no signs, no shop name, no posters, no house numbers, no number plates, no logos, no brand labels on goods. Keep everything that is not mentioned exactly as in image 1.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S18_v6.png (model geometry)",
+    "S18_v6.png + S62 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S62.to_S57": {
+        "at": [
+          30.0,
+          953.5
+        ],
+        "shift_px": [
+          0,
+          20
+        ],
+        "ncc": 0.336,
+        "ok": false
+      },
+      "exit S62.to_S65": {
+        "at": [
+          1890.0,
+          992.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.508,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S62_v2_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S62",
+    "family_base": "S18",
+    "status": "natural re-blocking (product-owner decision 2026-10-05). Owner feedback 2026-10-06: S62 is the S18 picture (the owner-loved Sokolikova-street style-test painting) in early December 1982 with the larger mixed-goods serving window in the kiosk's place; painted as an era edit of the accepted S18 master (art/masters/bg_natural/S62.md).",
+    "note": "Same camera as S18 (Sokolikova street, low eye-level camera ~1.45 m, horizon y ~703; px per metre at a ground point = (y - 703) / 1.45; hero scale (y - 703) / 436.7). Early December 1982 at dusk, thin snow. Where Zita's kiosk stands in 1995 there is a slightly bigger single-storey shop pavilion of mixed goods (front on y 880, from beyond the left frame edge to x ~350) with one large serving window (x ~50-310, its sill / counter ledge top y 757, a narrow outer ledge under it); Ruzena stands behind the open sliding pane in the middle; a wooden crate of empty preserving jars on the outer ledge at the left, a small radio on the counter inside at the right, crates of empty returnable bottles stacked on the ground at the pavilion's right corner.",
+    "background": "bg_natural/S62.webp",
+    "walk_polygon": [
+      [
+        0,
+        890
+      ],
+      [
+        412,
+        890
+      ],
+      [
+        424,
+        866
+      ],
+      [
+        1000,
+        866
+      ],
+      [
+        1240,
+        893
+      ],
+      [
+        1530,
+        938
+      ],
+      [
+        1610,
+        956
+      ],
+      [
+        1795,
+        972
+      ],
+      [
+        1920,
+        972
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      866,
+      1015
+    ],
+    "actor_scale": [
+      0.373,
+      0.714
+    ],
+    "spawn": [
+      960,
+      950
+    ],
+    "hotspots": {
+      "S62.jar": {
+        "rect": [
+          58,
+          704,
+          74,
+          56
+        ],
+        "interaction_point": [
+          96,
+          935
+        ],
+        "label_anchor": [
+          96,
+          694
+        ],
+        "reason": "wooden crate with clean empty preserving jars on the outer ledge at the left of the serving window"
+      },
+      "S62.ambient 1": {
+        "rect": [
+          344,
+          792,
+          66,
+          92
+        ],
+        "interaction_point": [
+          378,
+          935
+        ],
+        "label_anchor": [
+          400,
+          782
+        ],
+        "reason": "crates of empty returnable glass bottles stacked on the ground at the pavilion's right corner"
+      },
+      "S62.ambient 2": {
+        "rect": [
+          244,
+          704,
+          58,
+          52
+        ],
+        "interaction_point": [
+          272,
+          935
+        ],
+        "label_anchor": [
+          290,
+          694
+        ],
+        "reason": "small old radio with a wooden case on the counter inside the serving window, at the right"
+      },
+      "S62.RUZENA": {
+        "rect": [
+          148,
+          662,
+          88,
+          94
+        ],
+        "interaction_point": [
+          190,
+          925
+        ],
+        "label_anchor": [
+          190,
+          646
+        ],
+        "reason": "Ruzena behind the open serving window, bust above the counter ledge (y 757)"
+      }
+    },
+    "npcs": {
+      "S62.RUZENA": {
+        "variant": "window_bust",
+        "feet": [
+          190,
+          877
+        ],
+        "scale": 0.4,
+        "sill_y": 757,
+        "z": "back",
+        "reason": "DECISIONS item 2: Ruzena behind the serving window (bust); the sliding pane is open (her breath steams in the cold, ambient), so the open-hatch variant 'window'; feet = the shop floor just behind its front wall (y 880)"
+      }
+    },
+    "exits": {
+      "S62.to_S57": {
+        "rect": [
+          0,
+          892,
+          60,
+          123
+        ],
+        "interaction_point": [
+          40,
+          950
+        ],
+        "label_anchor": [
+          190,
+          884
+        ],
+        "reason": "the side street in front of the pavilion continues out of the left edge towards the stop"
+      },
+      "S62.to_S65": {
+        "rect": [
+          1860,
+          970,
+          60,
+          45
+        ],
+        "interaction_point": [
+          1885,
+          996
+        ],
+        "label_anchor": [
+          1700,
+          962
+        ],
+        "reason": "the pavement along the lawn strip continues out of the right edge towards the small service building by the school"
+      }
+    },
+    "state_patches": []
+  }
+}

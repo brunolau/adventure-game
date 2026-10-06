@@ -1,0 +1,254 @@
+{
+  "room": "S55",
+  "version": 11,
+  "kind": "composite",
+  "from_room": "S17",
+  "from_version": 10,
+  "from_master": "art/masters/bg_natural/S17_v8.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 776998410,
+  "usd": 0,
+  "scope": "bg_natural/L_YARD_relayout/",
+  "spend_log_asset": "bg_natural/L_YARD_relayout/S55_v9_derive",
+  "started": "2026-10-06T02:02:08",
+  "prompt_file": "art/prompts/natural/S55.era.txt",
+  "blocking_file": "src/game/data/blocking/S55.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dvor lipa a servisný múrik in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'building_corner' stays exactly at x 431, y 185 (22 % from the left, 17 % from the top). The fixed landmark 'tree_trunk' stays exactly at x 620, y 690 (32 % from the left, 64 % from the top). The fixed landmark 'service_niche' stays exactly at x 1155, y 626 (60 % from the left, 58 % from the top). The fixed landmark 'pipe_axis' stays exactly at x 1382, y 705 (72 % from the left, 65 % from the top).\n\nEra changes: the same school yard twenty-five years later, on a sunny late-October afternoon in 2020: warm low autumn sun, the trees beside the gym wing and the woods on the hill in yellow, orange and rust autumn colours, a few fallen yellow leaves on the asphalt and the lawn. The school is the same building with the same storeys, piers, door, canopy and steps, but renovated: the walls are now plain light grey with white bands, the windows are new white plastic windows, and the ground floor between the piers is painted with cheerful simple invented children's motifs (flowers, a sun, leaves) in bright colours; the gym wing is light grey with new white windows. The old red clay running track and its grass infield are still there, worn and faded, with weeds at the edges.\nBehind the fence: the concrete basketball playground is GONE - the whole area behind the fence is now a small football pitch with bright green ARTIFICIAL TURF, crisp white painted pitch lines and a small white football goal with a net at its far end; NO basketball baskets, poles or backboards any more. The fence keeps every post and rail where it is, but it is renewed: dark green welded-wire mesh panels, and a tall dark green ball-stop net above the far end of the pitch.\nOn the yard the corner has been cleared: the art panel, the young linden, its grass bed with the kerb, the wooden bench and the low red-brick wall are ALL GONE - in their place is plain grey patched asphalt reaching back to the lawn, with a slightly darker, newer rectangle of asphalt where the wall stood; of the red water pipe only a short red-painted stub sticks out of the asphalt at the same spot. No shade there. The old round steel dustbin by the fence is replaced by a green plastic wheelie bin with a lid at the same spot (prop 2).\n\nInteractive props of 2020:\n1. the box labelled 'Značky odstupu' in image 2 (x 480-900, y 738-794 of the 1920x1080 frame (25-47 % from the left, 68-74 % from the top)): temporary distance markings of a pickup point painted on the asphalt where the linden used to stand: a single row of five SHORT bright yellow dashes running from left to right at the same height, each dash only about one step long and a hand wide, evenly spaced about two steps apart, slightly worn; the first two dashes lie inside this box, the others continue to the right at the same height; no footprints, no letters, no digits, nothing else painted on the asphalt.\n2. the box labelled 'Koš' in image 2 (x 1725-1840, y 535-707 of the 1920x1080 frame (90-96 % from the left, 50-65 % from the top)): a green plastic wheelie litter bin with a lid, standing on the asphalt by the fence.\n3. the box labelled 'Miesto pôvodnej servisnej dutiny' in image 2 (x 1070-1240, y 560-685 of the 1920x1080 frame (56-65 % from the left, 52-63 % from the top)): here there is only plain patched asphalt and the darker rectangle where the wall stood - nothing standing.\nThe asphalt runs out of the left edge in front of the track (the box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 0-60, y 722-1015 of the 1920x1080 frame (0-3 % from the left, 67-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 722-1015 of the 1920x1080 frame (0-100 % from the left, 67-94 % from the top) stays open grey asphalt with nothing standing on it: cracks, patches, a few fallen yellow leaves, no objects, no other markings.\nThis room has no NPC zones.\n\nFiction rules: no people, no animals, no cars, no lettering, no signs, no posters, no house numbers, no logos, no sponsor boards, no graffiti, no satellite dishes. Murals are simple invented motifs only (no copied artwork). Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S17_v8.png (model geometry)",
+    "S17_v8.png + S55 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor building_corner": {
+        "at": [
+          431,
+          185
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.881,
+        "ok": true
+      },
+      "anchor tree_trunk": {
+        "at": [
+          620,
+          690
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.412,
+        "ok": true
+      },
+      "anchor service_niche": {
+        "at": [
+          1155,
+          626
+        ],
+        "shift_px": [
+          30,
+          26
+        ],
+        "ncc": 0.092,
+        "ok": false
+      },
+      "anchor pipe_axis": {
+        "at": [
+          1382,
+          705
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.6,
+        "ok": true
+      },
+      "exit S55.to_S52": {
+        "at": [
+          30.0,
+          868.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.961,
+        "ok": true
+      }
+    },
+    "camera_ok": false
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S55_v9_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S55",
+    "family_base": "S17",
+    "status": "natural re-blocking (product-owner decision 2026-10-05); relayout 2026-10-06 (owner satellite view). L_YARD family, derived from the S17 base painting with art/tools/derive_era.py (same camera: walk_band, actor_scale and anchors identical to S17).",
+    "note": "Same camera as S17 (relayout 2026-10-06 after the owner's satellite view): yard side of ZS Sokolikova 2, camera ~2.1 m on the yard asphalt at the SE corner of the court looking SW at the three-storey yard facade (corner x 431, yard door x 997-1055); horizon y 380, prop foot line y 700, s(y) = (y - 380) / 635; the red clay running track with grass inside on the LEFT, the court fence running away from the camera on the RIGHT (6.6 m right of the camera) with the court behind it, the paved way along the fence to the yard door, the round steel dustbin by the fence at the yard edge. Late October 2020, base state before E10: the art panel, the linden, its grass bed, the bench and the low service wall are gone - the corner is plain patched asphalt (only the short stub of the red pipe remains at its axis x 1382); temporary distance markings of the pickup point (a row of short yellow dashes at y ~765) are painted on the asphalt below the spot where the linden stood; behind the fence the court is now a football pitch with artificial turf (owner 2026-10-06; no basketball baskets any more); the dustbin by the fence is a green plastic wheelie bin ('Kos'). After E10 the variant S55_linden_and_wall puts back the big linden (trunk foot 620,690), its green bed, the bench and the preserved wall with the 3x4 stone panel (the cache in row 2 / column 3); D05 opens the cache (state patch S55_cache_open).",
+    "background": "bg_natural/S55.webp",
+    "walk_polygon": [
+      [
+        0,
+        722
+      ],
+      [
+        1920,
+        722
+      ],
+      [
+        1920,
+        1015
+      ],
+      [
+        0,
+        1015
+      ]
+    ],
+    "walk_band": [
+      720,
+      1015
+    ],
+    "actor_scale": [
+      0.535,
+      1.0
+    ],
+    "spawn": [
+      960,
+      900
+    ],
+    "anchors": {
+      "building_corner": [
+        431,
+        185
+      ],
+      "tree_trunk": [
+        620,
+        690
+      ],
+      "service_niche": [
+        1155,
+        626
+      ],
+      "pipe_axis": [
+        1382,
+        705
+      ]
+    },
+    "hotspots": {
+      "S55.cache": {
+        "rect": [
+          1070,
+          560,
+          170,
+          125
+        ],
+        "interaction_point": [
+          1022,
+          765
+        ],
+        "label_anchor": [
+          1155,
+          550
+        ],
+        "reason": "the 3x4 stone panel of the preserved wall at the same place as the 1982 niche (visible only after E10, when the variant overlay draws the wall; opened by D05); staging pass 2026-10-05 (M5-04 / PT-S06 rule, all actions): the hero stands left of it and reaches sideways, so it stays visible while he uses it"
+      },
+      "S55.ambient 1": {
+        "rect": [
+          480,
+          738,
+          420,
+          56
+        ],
+        "interaction_point": [
+          690,
+          840
+        ],
+        "label_anchor": [
+          690,
+          728
+        ],
+        "reason": "temporary distance markings of the pickup point painted on the asphalt at the back of the yard below the old linden spot: a row of yellow dashes at y ~765 (the rect holds the two left dashes so most of the row stays plain floor for walking)"
+      },
+      "S55.ambient 2": {
+        "rect": [
+          1725,
+          535,
+          115,
+          172
+        ],
+        "interaction_point": [
+          1690,
+          770
+        ],
+        "label_anchor": [
+          1782,
+          525
+        ],
+        "reason": "owner 2026-10-06: behind the fence there is a football pitch in 2020, so no basketball hoop is left; 'Kos' is the yard's litter bin by the court fence at the yard edge (green plastic wheelie bin in 2020; the same spot holds the round steel dustbin in 1982 and 1995, so it 'has a clear role in every era' as the look line says)"
+      }
+    },
+    "exits": {
+      "S55.to_S52": {
+        "rect": [
+          0,
+          722,
+          60,
+          293
+        ],
+        "interaction_point": [
+          70,
+          880
+        ],
+        "label_anchor": [
+          200,
+          712
+        ],
+        "reason": "the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main wing and around the school to the front entrance"
+      }
+    },
+    "variant_layers": {
+      "variants/S55_linden_and_wall.webp": {
+        "texture": "variants_natural/S55_linden_and_wall.webp",
+        "pos": [
+          0,
+          0
+        ]
+      }
+    },
+    "state_patches": [
+      {
+        "texture": "variants_natural/S55_cache_open.webp",
+        "pos": [
+          1140,
+          595
+        ],
+        "after": [
+          "D05"
+        ],
+        "until": [],
+        "reason": "D05 opens the preserved cache: the stone of row 2 / column 3 is out (cavity) and lies at the wall foot (free retouch S55 v8)"
+      }
+    ],
+    "waive": {
+      "patch:S55.cache": "visible_after E10 is drawn by the variant layer S55_linden_and_wall (game.json visual_variant_layers, after E10: the preserved wall with the cache); hide_after D05 has its own state patch S55_cache_open"
+    }
+  },
+  "retouch": "free pixel retouch (art/masters/bg_natural/S55_scripts/retouch_s55_markings.py): the derive's diagonal dashed line removed (S17 v8 asphalt, same camera, tone-matched) and five short transverse yellow distance stripes painted at y ~738-790 (game quads [[(493, 749), (514, 749), (472, 783), (449, 783)], [(739, 749), (760, 749), (741, 783), (718, 783)], [(985, 749), (1006, 749), (1010, 783), (987, 783)], [(1230, 749), (1251, 749), (1279, 783), (1256, 783)], [(1476, 749), (1497, 749), (1548, 783), (1525, 783)]])",
+  "composite": "free composite (art/masters/bg_natural/S55_scripts/composite_s55_e10.py): S55 v10 + linden crown (hue mask), trunk, grass bed, bench and low wall cut from S17 v9 (same L_YARD camera) - base for the E10 ageing fix"
+}

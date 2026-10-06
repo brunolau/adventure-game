@@ -2,46 +2,54 @@
   "version": 1,
   "room": "S57",
   "family_base": "S11",
-  "status": "natural re-blocking, camera family L_STOP: derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale); docs/DECISIONS.md item 3 option B",
-  "note": "Same L_STOP camera as the base S11 (Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615.) December 1982 (decision 3b): the tram line is under construction - the platform slabs are laid, the track bed is a building site behind a red-and-white barrier; an older simple shelter stands on the later shelter's footprint; an unbranded articulated bus waits at a temporary stop on the west carriageway at the left; a red slogan billboard stands on the green strip beyond the building site at the right.",
+  "status": "natural re-blocking, camera family L_STOP, redesigned 2026-10-06 with the S11 base (owner Dubravka corrections): derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale); docs/DECISIONS.md item 3 option B",
+  "note": "Same L_STOP camera as the base S11 (Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera (sketch generated from metres, log S11.md): eye 2.04 m above the platform, horizon y 400, f 1250 px, turned 4 deg right of the platform axis so the flat track vanishes at x ~873; from 22 m ahead the street and the tracks rise (slope up to 7 %) and crest at y ~333. Ground y = 400 + 2550 / Zc (Zc = depth along the view): the walk band bottom y 1015 is 4.15 m ahead, its back y 664 is 9.7 m ahead; ~300 px per metre at the bottom, ~130 at the back. Scale s(y) = (y - 400) / 615.) December 1982 (decision 3b): the tram line is under construction - the platform slabs are laid, the track bed is a building site behind a red-and-white barrier, traction poles without wires; an older simple shelter stands on the later shelter's footprint; an unbranded Ikarus-type articulated bus waits at a temporary stop on the west carriageway at the left; a red slogan billboard stands on the green strip beyond the building site; the low bluish medical centre (there since the early 1980s) and the red-balcony slab on the right already stand.",
   "background": "bg_natural/S57.webp",
-  "walk_polygon": [[0, 1015], [1449, 1015], [1230, 672], [928, 670], [850, 828], [339, 814], [65, 970], [0, 1000]],
-  "walk_band": [670, 1015],
-  "actor_scale": [0.44, 1.0],
-  "spawn": [1010, 900],
+  "walk_polygon": [[0, 1015], [0, 882], [90, 874], [204, 888], [362, 882], [366, 800], [628, 794], [660, 832], [700, 846], [742, 816], [744, 700], [750, 666], [1041, 664], [1262, 1015]],
+  "walk_band": [664, 1015],
+  "actor_scale": [0.43, 1.0],
+  "spawn": [1000, 900],
   "anchors": {
-    "curb": [262, 792],
-    "track_line": [1524, 813],
-    "clock_frame": [785, 134]
+    "curb": [236, 802],
+    "track_line": [1540, 774],
+    "clock_frame": [679, 147]
   },
   "hotspots": {
     "S57.ambient 1": {
-      "rect": [1418, 316, 156, 112],
-      "interaction_point": [1215, 705],
-      "label_anchor": [1496, 306],
-      "reason": "red period slogan billboard on two legs on the green strip beyond the building site, facing the stop"
+      "rect": [1014, 326, 230, 130],
+      "interaction_point": [1050, 720],
+      "label_anchor": [1129, 316],
+      "reason": "red period slogan billboard on two legs on the green strip beyond the building site, facing the stop (where the 1995 tram stands)"
     },
     "S57.ambient 2": {
-      "rect": [728, 452, 116, 136],
-      "interaction_point": [835, 862],
-      "label_anchor": [786, 442],
+      "rect": [614, 440, 128, 140],
+      "interaction_point": [800, 860],
+      "label_anchor": [640, 436],
       "reason": "paper timetable in the small glazed case on the stop post (same place as the 1995 timetable)"
     }
   },
   "exits": {
     "S57.to_S58": {
-      "rect": [40, 780, 215, 150],
-      "interaction_point": [205, 915],
-      "label_anchor": [205, 770],
-      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12)"
+      "rect": [0, 760, 250, 200],
+      "interaction_point": [110, 930],
+      "label_anchor": [200, 750],
+      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family)"
     },
     "S57.to_S62": {
-      "rect": [930, 520, 250, 140],
-      "interaction_point": [1075, 690],
-      "label_anchor": [1055, 510],
+      "rect": [780, 430, 240, 212],
+      "interaction_point": [880, 690],
+      "label_anchor": [900, 482],
       "reason": "the far end of the platform and the path to the housing-estate shop (same place as S11.to_S18)"
     }
   },
+  "occluders": [
+    {
+      "id": "stop_post",
+      "polygon": [[612, 80], [744, 80], [744, 214], [734, 230], [734, 580], [688, 590], [688, 818], [668, 818], [668, 590], [620, 580], [622, 230], [612, 214]],
+      "baseline": 817,
+      "texture": null
+    }
+  ],
   "audio": {
     "ambience": [
       {
@@ -66,5 +74,10 @@
     "ambience_mode": "replace",
     "reason": "docs/DECISIONS.md item 3b: no tram in Dubravka in 1982 - the tram brakes of ambience.json S57 are replaced by a bus passing; the transistor radio of the brief stays"
   },
-  "state_patches": []
+  "state_patches": [],
+  "time_node": {
+    "rect": [612, 81, 132, 132],
+    "interaction_point": [720, 860],
+    "reason": "the painted stop clock on its pole is the time node (DECISIONS 'The painted S11 clock is the time node', ISSUES PT-F10): a click walks to the pole and opens the era chooser, like the HUD clock button; active only while Core lists portal targets here"
+  }
 }

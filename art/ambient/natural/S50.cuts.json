@@ -1,17 +1,104 @@
 {
   "room": "S50",
   "source": "src/game/assets/bg_natural/S50.webp",
-  "note": "Natural S50 cut-outs (art/tools/ambient_cut.py --natural S50): sky mask for clouds, the dwarf pine on the Chopok peak slope (wind sway), the view behind the railing (mask for the Funitel cabin and the birds).",
+  "note": "Natural S50 cut-outs, WINTER 2035 (owner 2026-10-06): winter sky mask (deep blue only) and the view mask; the snow-covered dwarf pines are not cut any more.",
   "items": [
-    { "name": "sky_mask", "kind": "mask", "rect": [0, 0, 1920, 330],
-      "rules": [ { "hue": [190, 235], "sat": [0.25, 1], "val": [0.4, 1] }, { "sat": [0, 0.18], "val": [0.82, 1] } ],
-      "exclude": [ [[1280, 150], [1920, 330]], [[30, 315], [120, 330]] ],
-      "feather": 1.5, "grow": -1, "mask_rect": [0, 0, 1920, 340], "scale": 0.5 },
-    { "name": "pines_peak", "rect": [1100, 330, 820, 230],
-      "rules": [ { "hue": [50, 150], "sat": [0.3, 1], "val": [0.15, 0.8] } ],
-      "exclude": [ [[1385, 410], [1575, 560]], [[1600, 500], [1740, 560]] ], "feather": 1.0 },
-    { "name": "view_mask", "kind": "mask", "rect": [0, 300, 1240, 245],
-      "exclude": [ [[0, 310], [125, 545]], [[630, 455], [1010, 545]] ],
-      "feather": 1.0, "mask_rect": [0, 295, 1250, 255], "scale": 1.0 }
+    {
+      "name": "sky_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        0,
+        1920,
+        330
+      ],
+      "rules": [
+        {
+          "hue": [
+            195,
+            238
+          ],
+          "sat": [
+            0.34,
+            1
+          ],
+          "val": [
+            0.35,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1280,
+            150
+          ],
+          [
+            1920,
+            330
+          ]
+        ],
+        [
+          [
+            30,
+            315
+          ],
+          [
+            120,
+            330
+          ]
+        ]
+      ],
+      "feather": 1.5,
+      "grow": -1,
+      "mask_rect": [
+        0,
+        0,
+        1920,
+        340
+      ],
+      "scale": 0.5
+    },
+    {
+      "name": "view_mask",
+      "kind": "mask",
+      "rect": [
+        0,
+        300,
+        1240,
+        245
+      ],
+      "exclude": [
+        [
+          [
+            0,
+            310
+          ],
+          [
+            125,
+            545
+          ]
+        ],
+        [
+          [
+            630,
+            455
+          ],
+          [
+            1010,
+            545
+          ]
+        ]
+      ],
+      "feather": 1.0,
+      "mask_rect": [
+        0,
+        295,
+        1250,
+        255
+      ],
+      "scale": 1.0
+    }
   ]
 }

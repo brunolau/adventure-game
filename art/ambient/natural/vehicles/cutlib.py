@@ -77,3 +77,21 @@ def preview(rgba: Image.Image, path, bg=(255, 0, 255)) -> None:
     c = Image.new("RGBA", rgba.size, bg + (255,))
     c.alpha_composite(rgba)
     c.convert("RGB").save(path)
+
+
+def keep_connected(mask: np.ndarray, seeds: list, offset=(0, 0), bridge: int = 0) -> np.ndarray:
+    """Only the parts of mask connected (8-neighbourhood after an optional `bridge` px dilation) to one of the seed
+    points (full-image px; the nearest mask pixel within 40 px is used). Drops stray specks, e.g. bits of overhead wire
+    the edit repainted next to a pantograph."""
+    probe = morph(mask, grow=bridge) if bridge else mask
+    img = Image.fromarray((probe * 255).astype(np.uint8), "L").copy()   # a fromarray image may share the buffer
+    ys, xs = np.nonzero(probe)
+    for sx, sy in seeds:
+        sx, sy = sx - offset[0], sy - offset[1]
+        if not len(xs):
+            break
+        k = int(np.argmin((xs - sx) ** 2 + (ys - sy) ** 2))
+        if (xs[k] - sx) ** 2 + (ys[k] - sy) ** 2 > 1600:
+            continue
+        ImageDraw.floodfill(img, (int(xs[k]), int(ys[k])), 128, thresh=0)
+    return (np.asarray(img) == 128) & mask

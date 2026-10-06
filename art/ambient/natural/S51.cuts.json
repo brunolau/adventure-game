@@ -1,41 +1,15 @@
 {
  "room": "S51",
  "source": "src/game/assets/bg_natural/S51.webp",
- "note": "Natural S51 cut-outs: the autumn lindens at the left beyond the road and the autumn trees at the right beyond the green fence (wind sway), the blue sky (cloud mask).",
+ "note": "Natural S51 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the autumn lindens and maples at the left beyond the west carriageway, the autumn trees behind the shelter, the birches and bushes beyond the east carriageway in front of the medical centre (wind sway), and the blue sky (mask for the drifting clouds; the clock, the LED board, the panel towers, the traction poles and the medical centre are excluded).",
  "items": [
   {
    "name": "trees_left",
    "rect": [
     0,
-    118,
-    392,
-    330
-   ],
-   "rules": [
-    {
-     "hue": [
-      12,
-      62
-     ],
-     "sat": [
-      0.32,
-      1
-     ],
-     "val": [
-      0.28,
-      1
-     ]
-    }
-   ],
-   "feather": 1.0
-  },
-  {
-   "name": "trees_right",
-   "rect": [
-    1300,
-    270,
-    620,
-    170
+    90,
+    345,
+    420
    ],
    "rules": [
     {
@@ -56,64 +30,136 @@
    "exclude": [
     [
      [
-      1615,
-      300
+      228,
+      262
      ],
      [
-      1920,
-      440
+      345,
+      520
      ]
     ],
     [
      [
-      1570,
-      400
+      0,
+      0
      ],
      [
-      1920,
-      440
-     ]
-    ],
-    [
-     [
-      1220,
-      250
-     ],
-     [
-      1365,
-      330
-     ]
-    ],
-    [
-     [
-      1525,
-      250
-     ],
-     [
-      1705,
-      330
-     ]
-    ],
-    [
-     [
-      1775,
-      250
-     ],
-     [
-      1920,
-      330
-     ]
-    ],
-    [
-     [
-      1730,
-      255
-     ],
-     [
-      1805,
-      312
+      95,
+      200
      ]
     ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "trees_mid",
+   "rect": [
+    345,
+    160,
+    300,
+    160
+   ],
+   "rules": [
+    {
+     "hue": [
+      12,
+      62
+     ],
+     "sat": [
+      0.32,
+      1
+     ],
+     "val": [
+      0.28,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      350,
+      40
+     ],
+     [
+      536,
+      175
+     ]
+    ],
+    [
+     [
+      230,
+      262
+     ],
+     [
+      740,
+      330
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "trees_right",
+   "rect": [
+    940,
+    200,
+    380,
+    250
+   ],
+   "rules": [
+    {
+     "hue": [
+      12,
+      62
+     ],
+     "sat": [
+      0.32,
+      1
+     ],
+     "val": [
+      0.28,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      1140,
+      110
+     ],
+     [
+      1180,
+      460
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "bushes_right",
+   "rect": [
+    1730,
+    395,
+    190,
+    105
+   ],
+   "rules": [
+    {
+     "hue": [
+      12,
+      70
+     ],
+     "sat": [
+      0.3,
+      1
+     ],
+     "val": [
+      0.25,
+      1
+     ]
+    }
    ],
    "feather": 1.0
   },
@@ -123,7 +169,7 @@
     0,
     0,
     1920,
-    440
+    345
    ],
    "rules": [
     {
@@ -147,42 +193,52 @@
    "exclude": [
     [
      [
-      360,
-      210
+      600,
+      70
      ],
      [
-      1010,
-      440
+      830,
+      345
      ]
     ],
     [
      [
-      700,
-      50
+      350,
+      38
      ],
      [
-      870,
-      440
+      536,
+      262
      ]
     ],
     [
      [
-      1150,
-      0
+      1268,
+      140
      ],
      [
-      1420,
-      440
+      1920,
+      345
      ]
     ],
     [
      [
-      1800,
-      0
+      1140,
+      110
      ],
      [
-      1850,
-      440
+      1180,
+      345
+     ]
+    ],
+    [
+     [
+      230,
+      262
+     ],
+     [
+      740,
+      345
      ]
     ]
    ]

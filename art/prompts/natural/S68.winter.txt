@@ -1,0 +1,20 @@
+# S68 Kabina Funitelu medzi Priehybou a Chopkom (2035) - WINTER prompt body for art/tools/winter_jasna.py (owner 2026-10-06)
+# regions mode: only the window panes, the door glass and the floor in front of the right doors are taken from the model.
+Inside the cabin everything stays exactly as in image 1 (the ceiling with the light strip and the handrail, the window
+frames, the dark red padded bench, the cabin scheme poster {rect:S68.ambient 2}, the doors {exit:S68.to_S67}
+{exit:S68.to_S47}). Winter shows through the glass and on the floor:
+- The big middle pane ({rect:S68.ambient 1}) and the left pane: the Liptov plain far below is white with snow, the
+  lake frozen and white, the forested slopes are dark spruce forest loaded with snow, with groomed ski pistes (smooth
+  white bands through the forest) and a few tiny distant skiers; the two ropes stay where they are.
+- The right pane ({rect:S68.arrival}): the Rotunda keeps its exact shape and position (glass drum, red ring roof, stone
+  base) with thick snow on the red roof and rime on the railings, on a white summit slope with snow-covered dwarf pines
+  and spruces below.
+- The glass of the sliding doors at the right and the small window of the left door: spruces loaded with snow on a
+  white slope; frost rims along the edges of every pane.
+- Clear deep winter blue sky with a few small clouds.
+- On the floor in front of the right sliding doors: a little snow tracked in from the skiers' boots - small flat
+  clumps of melting snow and wet boot prints on the dark floor (flat, nothing standing).
+{npc_zones}
+Walkable floor: {walk} stays one open, flat cabin floor with nothing standing on it.
+
+Fiction rules: no new lettering, no logos, no people except the tiny distant skiers, no animals.

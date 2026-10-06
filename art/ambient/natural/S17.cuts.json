@@ -1,15 +1,15 @@
 {
   "room": "S17",
   "source": "src/game/assets/bg_natural/S17.webp",
-  "note": "Natural S17 cut-outs (art/tools/ambient_cut.py --natural S17): the weak linden's sparse crown (base state, before E10), the poplar and the tree tops of the estate above the court fence, and a sky mask for the clouds. The healthy crown after E10 is cut from the variant overlay by art/ambient/natural/S17_variant_cut.py (linden_healthy.webp, explicit pos in the ambient file).",
+  "note": "Natural S17 cut-outs, relayout 2026-10-06 (art/tools/ambient_cut.py --natural S17): the weak linden's sparse crown (base state, before E10), the trees on the hill beside the gym wing at the left, and a sky mask for the clouds (above the hill and the school roof). The healthy crown after E10 is cut from the variant overlay by art/ambient/natural/S17.variant_cuts.py (linden_healthy.webp, explicit pos in the ambient file).",
   "items": [
     {
       "name": "linden_weak",
       "rect": [
-        480,
-        80,
-        300,
-        352
+        470,
+        70,
+        340,
+        300
       ],
       "rules": [
         {
@@ -44,44 +44,18 @@
       "feather": 1.0
     },
     {
-      "name": "poplar",
+      "name": "trees_left",
       "rect": [
-        1268,
-        50,
-        115,
-        268
+        0,
+        150,
+        405,
+        140
       ],
       "rules": [
         {
           "hue": [
-            45,
+            40,
             150
-          ],
-          "sat": [
-            0.2,
-            1
-          ],
-          "val": [
-            0.15,
-            1
-          ]
-        }
-      ],
-      "feather": 1.0
-    },
-    {
-      "name": "trees_back",
-      "rect": [
-        1380,
-        205,
-        540,
-        112
-      ],
-      "rules": [
-        {
-          "hue": [
-            55,
-            160
           ],
           "sat": [
             0.2,
@@ -102,7 +76,7 @@
         0,
         0,
         1920,
-        200
+        210
       ],
       "rules": [
         {
@@ -111,7 +85,7 @@
             235
           ],
           "sat": [
-            0.1,
+            0.08,
             1
           ],
           "val": [
@@ -144,23 +118,15 @@
           ],
           [
             1920,
-            132
+            116
           ],
           [
-            1655,
-            132
-          ],
-          [
-            1655,
-            180
-          ],
-          [
-            1250,
-            168
+            431,
+            176
           ],
           [
             0,
-            68
+            176
           ]
         ]
       ]

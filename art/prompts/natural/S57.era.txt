@@ -1,18 +1,21 @@
 # S57 Dubravska zastavka v roku 1982 (1982) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S11, 1995)
-# Image 1 = the accepted S11 natural master (v1), image 2 = the same with the S57 blocking drawn on it.
+# Redesigned 2026-10-06 with the new S11 base (owner Dubravka corrections): image 1 = the accepted S11 natural master
+# (v3), image 2 = the same with the S57 blocking drawn on it.
 # docs/DECISIONS.md item 3, owner answer b: bus at the stop + tram line under construction (no tram in 1982).
+# Owner 2026-10-06: the bluish medical centre on the right has been there since the early 1980s -> also in 1982.
 # art_brief: same shot as S11/S51. Older shelter, paper timetable, a neat ideological slogan on the side board, period
 # clothes and cars. Early December: bare branches, thin snow in places, coats outside.
-Era changes: the same place on an early-December afternoon in 1982, cold and calm: pale low winter sun through a thin haze, soft long shadows, bare grey-brown trees and lindens, a thin layer of old snow lying on the lawns, along the kerbs, on the roofs and in the corners of the platform, the platform itself mostly clear and damp. The tram line to Dubravka does NOT exist yet - it is being built:
-- The track bed at the right is a building site: fresh gravel, the near track only partly laid (new concrete sleepers with rails on part of its length, then bare sleepers), the far track only a gravel bed with stacks of concrete sleepers and rails lying beside it, no overhead wires; the grey traction poles already stand but carry no wires. A low red-and-white striped wooden construction barrier runs along the platform's right edge, with one small white board on it with the black words STAVBA ELEKTRIČKOVEJ TRATE.
-- No tram: where the 1995 tram stood, paint the building site, the bare trees and the far road behind it.
-- The platform slabs are new concrete; the low road-side wall with its railing and its chipped end at the ramp are the same.
+Era changes: the same place on an early-December afternoon in 1982, cold and calm: pale low winter sun through a thin haze, soft long shadows, bare grey-brown lindens, maples and birches, a thin layer of old snow lying on the lawns, along the kerbs, on the roofs and in the corners of the platform, the platform itself mostly clear and damp. The tram line to Dubravka does NOT exist yet - it is being built:
+- The track bed at the right is a building site: fresh gravel and sand, a few of the big grey concrete track panels already laid on the near side, more concrete panels and rails stacked beside the far track, no rails on the far track yet, no overhead wires; the tall lamp posts stand, but no wires hang between them. A low red-and-white striped wooden construction barrier runs along the platform's right edge, with one small white board on it with the black words STAVBA ELEKTRIČKOVEJ TRATE.
+- No tram: where the 1995 tram stood, paint the building site, the bare trees, the east carriageway and the medical centre behind it.
+- The platform slabs are new concrete; the low concrete kerb block at the near left with its chipped corner, the ramp and the zebra crossing are the same.
 - An older, simpler shelter stands in exactly the same place and footprint: a plain dark green steel frame with a flat roof and clear glass panels, a simple wooden bench inside; through its glass the road behind shows.
-- On the west carriageway at the left, beyond the low wall, an articulated city bus of the period (Ikarus 280 type: boxy, cream-white upper body and dark red lower body, big flat windscreen, no logos, no number, blank destination box) waits at a temporary bus stop, its front towards the camera, its front part fully visible between the left frame edge and the shelter, the rest hidden behind the shelter; a small round temporary bus-stop sign on a post beside it (bus pictogram only).
+- On the west carriageway at the left, beside the platform, an articulated city bus of the period (Ikarus 280 type: boxy, cream-white upper body and dark red lower body, big flat windscreen, no logos, no number, blank destination box) waits at a temporary bus stop, its front towards the camera, its front part fully visible between the left frame edge and the shelter's near end, the rest hidden behind the shelter; a small round temporary bus-stop sign on a post beside it (bus pictogram only).
 - The stop post in the same place carries the same round brass clock on top, a small white plate with a bus pictogram, and a small glazed case with a paper timetable.
-- Beyond the building site at the right, on the green strip, a large red slogan billboard on two legs faces the stop, with neat white capital letters: ZA SPOLOČNÚ BUDÚCNOSŤ.
-- One or two period cars (small boxy 1970s sedans, beige and pale blue) parked on the far road at the right. No people.
-Everything else built (the platform, the ramp and zebra crossing, the road, the panel towers, the shopping pavilion) stays exactly where it is.
+- Beyond the building site, on the green strip in front of the medical centre, a large red slogan billboard on two legs faces the stop, with neat white capital letters: ZA SPOLOČNÚ BUDÚCNOSŤ.
+- The low bluish two-storey medical centre on the right (its long white ribbon windows and blue-grey mosaic tiles) and the long panel block with the red-orange balconies behind it already stand, new and clean, in exactly the same places.
+- One or two period cars (small boxy 1970s sedans, beige and pale blue) on the east carriageway at the right. No people.
+Everything else built (the platform, the kerb block, the ramp and zebra crossing, the roads rising up the hill, the towers, the medical centre, the lamp posts) stays exactly where it is.
 
 Interactive props of 1982:
 1. {rect:S57.ambient 1}: the red slogan billboard with the white words ZA SPOLOČNÚ BUDÚCNOSŤ, the whole billboard inside the box.
@@ -22,4 +25,4 @@ Interactive props of 1982:
 Walkable floor: {walk} stays the open, flat platform with nothing standing on it, only light, shadows and a few small patches of old snow at its edges.
 {npc_zones}
 
-Fiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop signs, no number plates, no people, no animals. Apart from the two inscriptions asked for above, any paper shows only illegible scribbles, no digits.
+Fiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop signs, no lettering on the medical centre, no number plates, no people, no animals. Apart from the two inscriptions asked for above, any paper shows only illegible scribbles, no digits.

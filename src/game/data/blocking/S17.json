@@ -1,41 +1,181 @@
 {
   "version": 1,
   "room": "S17",
-  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1). L_YARD family base: S61 (1982) and S55 (2020) are derived from this camera with identical walk_band, actor_scale and anchors.",
-  "note": "Yard side of ZS Sokolikova 2 as in the owner's photos (art/feedback/2026-10-05_owner_feedback.md): camera ~2.1 m high on the worn asphalt of the school yard, looking NW across the yard at the long three-storey yard facade (ground floor + two ribbon-window floors, plain yellowish render in 1982/1995) on its grass bank; the facade recedes from the left edge (~36 m, roof y 80, foot y 451) to its far end at x ~1250 (~54 m, roof y 180, foot y 428); the yard entrance door (the owner's class entrance) in the ground floor at x ~895 with a concrete path down the bank; right: the clay athletics track and the big lawn in front of the tall fence of the multi-sport court, trees and a panel block behind; the wooded Dubravka hill with villas behind the school. Horizon y 380, foot line of the prop row y 700 (~150 px per metre), front edge y 1015 (301 px per metre). Perspective scale s(y) = (y - 380) / 635. Props stand where they are in the yard: the linden in a small grass bed at the back edge of the yard with the bench under it, the low brick service wall with the 3x4 stone niche panel right of the bench, the red water-pipe elbow at the wall's right end, the freestanding art panel on two posts at the left, the basketball hoop at the right edge of the asphalt in front of the track.",
+  "status": "natural re-blocking (product-owner decision 2026-10-05, docs/DECISIONS.md item 1); relayout 2026-10-06 after the owner's satellite view (art/feedback/2026-10-05_owner_feedback.md, 'Dubravka corrections'). L_YARD family base: S61 (1982) and S55 (2020) are derived from this camera with identical walk_band, actor_scale and anchors.",
+  "note": "Yard side of ZS Sokolikova 2, camera ~2.1 m high on the worn yard asphalt at the SE corner of the court, looking SW at the long yard facade of the main wing (pinhole: focal 1220 px, horizon y 380, screen y = 380 + 1220 * (2.1 - height) / depth; prop foot line y 700 = 8 m, ~152 px per metre; front edge y 1015 = 4 m, 301 px per metre; s(y) = (y - 380) / 635). LEFT: the red clay running track ('antuka', owner) with grass inside it - the NW end curve of the oval (outer radius 17.5 m, centre 21 m left / 22 m ahead) sweeping from the left edge (y ~560-630) to its apex at x ~770, y ~495 and back as the far straight (y ~445-455) in front of the school. RIGHT: the court fence runs AWAY from the camera, perpendicular to the facade (owner: turned 90 deg against the first painting), 6.6 m to the right, from the right frame edge (foot y 685, top y 176) to the court's far end (foot 1228,465, top y 323); behind it the court (1995/1982 concrete playground with basketball baskets, 2020 artificial-turf football pitch) and its far fence. A paved way runs along the fence from the yard to the yard entrance door (x 997-1055, foot y 401, the owner's class entrance) with steps down the grass bank. BACKGROUND: the three-storey main wing on its 1.2 m grass bank from its SE corner (x 431, roof y 185, foot y 398, 60 m) to the right edge (roof y 120, foot y 404, 45 m), plain yellowish render in 1982/1995; left of the corner the lower gym wing; the wooded Dubravka hill with villas behind. Story props stand where they stood: the linden in a small grass bed at the back edge of the yard (trunk foot 620,690) with the bench under it, the low brick service wall with the 3x4 stone panel right of the bench, the red water-pipe elbow at the wall's right end, the freestanding art panel on two posts on the verge at the left in front of the track, the green litter bin by the fence at the yard edge (1745-1822, foot y 700; the S55 'Kos', the same bin in every era). Sketch generator: art/masters/bg_natural/S17_scripts/sketch_s17.py.",
   "background": "bg_natural/S17.webp",
-  "walk_polygon": [[0, 722], [1920, 722], [1920, 1015], [0, 1015]],
-  "walk_band": [720, 1015],
-  "actor_scale": [0.535, 1.0],
-  "spawn": [960, 900],
+  "walk_polygon": [
+    [
+      0,
+      722
+    ],
+    [
+      1920,
+      722
+    ],
+    [
+      1920,
+      1015
+    ],
+    [
+      0,
+      1015
+    ]
+  ],
+  "walk_band": [
+    720,
+    1015
+  ],
+  "actor_scale": [
+    0.535,
+    1.0
+  ],
+  "spawn": [
+    960,
+    900
+  ],
   "anchors": {
-    "building_corner": [1250, 180],
-    "tree_trunk": [620, 690],
-    "service_niche": [1155, 626],
-    "pipe_axis": [1382, 705]
+    "building_corner": [
+      431,
+      185
+    ],
+    "tree_trunk": [
+      620,
+      690
+    ],
+    "service_niche": [
+      1155,
+      626
+    ],
+    "pipe_axis": [
+      1382,
+      705
+    ]
   },
   "hotspots": {
-    "S17.rhythm": { "rect": [196, 436, 200, 144], "interaction_point": [470, 790], "label_anchor": [296, 426],
-                    "reason": "freestanding painted art panel on two steel posts at the left edge of the yard: four big shapes and a rhythmic pattern of waves and strokes (board y 442-574, posts to y 634); playtest 2026-10-05 (PT-F01): the hero reads it from the front right, the old point under its centre put him in front of the drawing" },
-    "S17.ambient 1": { "rect": [1535, 255, 170, 125], "interaction_point": [1620, 765], "label_anchor": [1620, 245],
-                       "reason": "basketball backboard and netless hoop on a steel pole at the right edge of the asphalt in front of the track (pole foot y 640)" },
-    "S17.ambient 2": { "rect": [505, 100, 232, 590], "interaction_point": [620, 765], "label_anchor": [620, 92],
-                       "reason": "the weak, damaged young linden in its grass bed at the back edge of the yard (trunk foot 620,690, thin sparse crown x 495-760 up to y ~95)" },
-    "S17.SONA": { "rect": [738, 517, 124, 278], "interaction_point": [690, 820], "label_anchor": [800, 505],
-                  "reason": "Sona standing with her album in front of the bench under the linden (child sprite, 420 px at scale 1)" }
+    "S17.rhythm": {
+      "rect": [
+        196,
+        436,
+        200,
+        144
+      ],
+      "interaction_point": [
+        470,
+        790
+      ],
+      "label_anchor": [
+        296,
+        426
+      ],
+      "reason": "freestanding painted art panel on two steel posts on the verge at the left edge of the yard, in front of the clay track: four big shapes and a rhythmic pattern of waves and strokes (board y 442-574, posts to y 634); playtest 2026-10-05 (PT-F01): the hero reads it from the front right, the old point under its centre put him in front of the drawing"
+    },
+    "S17.ambient 1": {
+      "rect": [
+        1560,
+        280,
+        140,
+        100
+      ],
+      "interaction_point": [
+        1620,
+        765
+      ],
+      "label_anchor": [
+        1630,
+        270
+      ],
+      "reason": "owner 2026-10-06: the basketball baskets stand on the concrete playground behind the court fence; the hotspot is the basket at the court's far end, seen through the fence mesh (white backboard ~1591-1669 x 301-346, netless ring at y ~340, pole foot y ~469)"
+    },
+    "S17.ambient 2": {
+      "rect": [
+        505,
+        100,
+        232,
+        590
+      ],
+      "interaction_point": [
+        620,
+        765
+      ],
+      "label_anchor": [
+        620,
+        92
+      ],
+      "reason": "the weak, damaged young linden in its grass bed at the back edge of the yard (trunk foot 620,690, thin sparse crown x 495-760 up to y ~95)"
+    },
+    "S17.SONA": {
+      "rect": [
+        738,
+        517,
+        124,
+        278
+      ],
+      "interaction_point": [
+        690,
+        820
+      ],
+      "label_anchor": [
+        800,
+        505
+      ],
+      "reason": "Sona standing with her album in front of the bench under the linden (child sprite, 420 px at scale 1)"
+    }
   },
   "npcs": {
-    "S17.SONA": { "variant": "standing", "feet": [800, 795],
-                  "reason": "brief: Sona with her album by the bench under the linden; her sprite is standing (no seated variant), DECISIONS item 2 lists no change for S17" }
+    "S17.SONA": {
+      "variant": "standing",
+      "feet": [
+        800,
+        795
+      ],
+      "reason": "brief: Sona with her album by the bench under the linden; her sprite is standing (no seated variant), DECISIONS item 2 lists no change for S17"
+    }
   },
   "exits": {
-    "S17.to_S12": { "rect": [0, 722, 60, 293], "interaction_point": [70, 880], "label_anchor": [160, 712],
-                    "reason": "the yard asphalt continues out of the left edge along the facade, around the school to the front entrance" },
-    "S17.to_S18": { "rect": [1860, 722, 60, 293], "interaction_point": [1850, 880], "label_anchor": [1750, 712],
-                    "reason": "the yard asphalt continues out of the right edge past the court towards the kindergarten fence and the housing-estate courtyard" }
+    "S17.to_S12": {
+      "rect": [
+        0,
+        722,
+        60,
+        293
+      ],
+      "interaction_point": [
+        70,
+        880
+      ],
+      "label_anchor": [
+        160,
+        712
+      ],
+      "reason": "the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main wing (its corner at x 431) and around the school to the front entrance"
+    },
+    "S17.to_S18": {
+      "rect": [
+        1860,
+        722,
+        60,
+        293
+      ],
+      "interaction_point": [
+        1850,
+        880
+      ],
+      "label_anchor": [
+        1750,
+        712
+      ],
+      "reason": "the yard asphalt continues out of the right edge past the near end of the court fence towards the housing-estate courtyard"
+    }
   },
   "variant_layers": {
-    "variants/S17_healthy_linden.webp": { "texture": "variants_natural/S17_healthy_linden.webp", "pos": [250, 0] }
+    "variants/S17_healthy_linden.webp": {
+      "texture": "variants_natural/S17_healthy_linden.webp",
+      "pos": [
+        410,
+        0
+      ]
+    }
   },
   "state_patches": []
 }

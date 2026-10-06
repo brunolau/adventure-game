@@ -1,0 +1,341 @@
+{
+  "room": "S51",
+  "version": 2,
+  "kind": "derive",
+  "from_room": "S11",
+  "from_version": 3,
+  "from_master": "art/masters/bg_natural/S11_v3.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 2020106,
+  "usd": 0.15,
+  "scope": "bg_natural/S51/",
+  "spend_log_asset": "bg_natural/S51/S51_v2_derive",
+  "started": "2026-10-06T01:50:28",
+  "prompt_file": "art/prompts/natural/S51.era.txt",
+  "blocking_file": "src/game/data/blocking/S51.json",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dúbravská zastávka in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'curb' stays exactly at x 236, y 802 (12 % from the left, 74 % from the top). The fixed landmark 'track_line' stays exactly at x 1540, y 774 (80 % from the left, 72 % from the top). The fixed landmark 'clock_frame' stays exactly at x 679, y 147 (35 % from the left, 14 % from the top).\n\nEra changes: the same stop on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight, long soft shadows, the lindens, maples and birches in yellow, orange and brown autumn colours, some fallen leaves on the platform and on the grass. The tram line was rebuilt in 2019-2020, so:\n- The old brown tube shelter with its blue roof and wooden back wall is gone. In exactly its place and footprint stands a modern shelter: a slim dark grey steel frame, a flat clear glass roof, clear glass back and side walls with thin vertical white stripes, a modern grey metal bench inside along the back. Through its glass the road, the lawn and the trees stay visible. A small paper notice with a face-mask pictogram (no text) is stuck on the glass.\n- The platform has new paving of light beige concrete tiles with a light tactile strip along the track edge. The old chipped concrete kerb block at the near left beside the shelter's corner is unchanged (still chipped, a little more weathered), and a red-and-white striped steel railing now guards the top of the ramp; the zebra crossing on the road is freshly painted.\n- The stop post is a modern dark grey post in the same place: on top the SAME round clock with its old polished brass frame (now around a new white dial), below the clock an LED departure board with orange dot-matrix dots that form no readable words or digits, and lower down a modern timetable panel with illegible print.\n- The track is rebuilt: new rails on concrete sleepers and fresh grey ballast instead of the old concrete panels, a low dark green steel mesh fence between the two tracks, new slim grey traction poles and overhead wires in the same places. NO tram: the near track in front of the platform is empty, so paint the track, the fence, the road and the medical centre that were hidden behind the old tram.\n- The red railing between the track bed and the east carriageway is now a newer galvanised steel railing; the tall rust-red lamp posts stand in the same places.\n- The low bluish two-storey medical centre on the right and the long panel block with the red-orange balconies behind it are the SAME buildings in the same places (the panel block now has insulated, freshly painted cream walls; the medical centre is a bit weathered).\n- Two or three modern cars (silver, dark blue, white) drive or stand on the east carriageway at the right (no number plates). No people.\nEverything else built (the platform's position and edges, the ramp and zebra crossing, the roads rising up the hill, the towers, the medical centre) stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Rám starých hodín' in image 2 (x 612-744, y 81-213 of the 1920x1080 frame (32-39 % from the left, 8-20 % from the top)): the round clock on top of the stop post: the old, slightly worn polished brass frame around a crisp new white dial with black ticks.\n2. the box labelled 'Starý obrubník' in image 2 (x 190-300, y 776-886 of the 1920x1080 frame (10-16 % from the left, 72-82 % from the top)): the old chipped corner of the low concrete kerb block at the near left beside the shelter's corner, at the top of the ramp - the same chip as before, a little more weathered.\n3. the box labelled 'Elektronická tabuľa' in image 2 (x 588-768, y 232-320 of the 1920x1080 frame (31-40 % from the left, 21-30 % from the top)): the black LED departure board on the stop post below the clock, glowing orange dot-matrix dots (no readable words or digits).\nthe box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 0-250, y 760-960 of the 1920x1080 frame (0-13 % from the left, 70-89 % from the top)) is the ramp and zebra crossing at the near left (towards the school). the box labelled 'exit: Autobus do Čiernej Vody' in image 2 (x 780-1020, y 430-642 of the 1920x1080 frame (41-53 % from the left, 40-59 % from the top)) is the far end of the platform (the way to the bus stop).\n\nWalkable floor: the band at x 0-1262, y 664-1015 of the 1920x1080 frame (0-66 % from the left, 61-94 % from the top) stays the open, flat platform with nothing standing on it, only light, shadows and a few fallen leaves.\nThis room has no NPC zones.\n\nFiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop or pharmacy signs, no petrol-station signs, no lettering on the medical centre, no number plates, no people, no animals. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S11_v3.png (model geometry)",
+    "S11_v3.png + S51 blocking boxes (guide)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "anchor curb": {
+        "at": [
+          236,
+          802
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.698,
+        "ok": true
+      },
+      "anchor track_line": {
+        "at": [
+          1540,
+          774
+        ],
+        "shift_px": [
+          -48,
+          -28
+        ],
+        "ncc": 0.256,
+        "ok": false
+      },
+      "anchor clock_frame": {
+        "at": [
+          679,
+          147
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.641,
+        "ok": true
+      },
+      "exit S51.to_S52": {
+        "at": [
+          125.0,
+          860.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.869,
+        "ok": true
+      },
+      "exit S51.to_S07": {
+        "at": [
+          900.0,
+          536.0
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.255,
+        "ok": true
+      }
+    },
+    "camera_ok": false
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S51_v2_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "blocking": {
+    "version": 1,
+    "room": "S51",
+    "family_base": "S11",
+    "status": "natural re-blocking, camera family L_STOP, redesigned 2026-10-06 with the S11 base (owner Dubravka corrections): derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+    "note": "Same L_STOP camera as the base S11 (Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera (sketch generated from metres, log S11.md): eye 2.04 m above the platform, horizon y 400, f 1250 px, turned 4 deg right of the platform axis so the flat track vanishes at x ~873; from 22 m ahead the street and the tracks rise (slope up to 7 %) and crest at y ~333. Ground y = 400 + 2550 / Zc (Zc = depth along the view): the walk band bottom y 1015 is 4.15 m ahead, its back y 664 is 9.7 m ahead; ~300 px per metre at the bottom, ~130 at the back. Scale s(y) = (y - 400) / 615.) 2020: the rebuilt stop (reconstruction 2019-2020) - a modern glass shelter on the old shelter's footprint, new paving with a tactile edge, red-and-white railings at the ramp, the track rebuilt on ballast with a green mesh fence between the tracks; the stop post carries the clock (old brass frame, new dial) and an LED departure board; the old chipped kerb block at the ramp survives; the low bluish medical centre and the red-balcony slab on the right are the same buildings.",
+    "background": "bg_natural/S51.webp",
+    "walk_polygon": [
+      [
+        0,
+        1015
+      ],
+      [
+        0,
+        882
+      ],
+      [
+        90,
+        874
+      ],
+      [
+        204,
+        888
+      ],
+      [
+        362,
+        882
+      ],
+      [
+        366,
+        800
+      ],
+      [
+        628,
+        794
+      ],
+      [
+        660,
+        832
+      ],
+      [
+        700,
+        846
+      ],
+      [
+        742,
+        816
+      ],
+      [
+        744,
+        700
+      ],
+      [
+        750,
+        666
+      ],
+      [
+        1041,
+        664
+      ],
+      [
+        1262,
+        1015
+      ]
+    ],
+    "walk_band": [
+      664,
+      1015
+    ],
+    "actor_scale": [
+      0.43,
+      1.0
+    ],
+    "spawn": [
+      1000,
+      900
+    ],
+    "anchors": {
+      "curb": [
+        236,
+        802
+      ],
+      "track_line": [
+        1540,
+        774
+      ],
+      "clock_frame": [
+        679,
+        147
+      ]
+    },
+    "hotspots": {
+      "S51.clock": {
+        "rect": [
+          612,
+          81,
+          132,
+          132
+        ],
+        "interaction_point": [
+          720,
+          860
+        ],
+        "label_anchor": [
+          678,
+          70
+        ],
+        "reason": "the round clock on top of the stop post: the old brass frame kept around the new dial (same place as the 1995 clock, anchor clock_frame)"
+      },
+      "S51.ambient 1": {
+        "rect": [
+          190,
+          776,
+          110,
+          110
+        ],
+        "interaction_point": [
+          300,
+          905
+        ],
+        "label_anchor": [
+          385,
+          838
+        ],
+        "reason": "the chipped end of the low concrete kerb block beside the shelter's near corner at the ramp (anchor curb), unchanged since 1995"
+      },
+      "S51.ambient 2": {
+        "rect": [
+          588,
+          232,
+          180,
+          88
+        ],
+        "interaction_point": [
+          800,
+          860
+        ],
+        "label_anchor": [
+          800,
+          330
+        ],
+        "reason": "the LED departure board on the stop post below the clock (where the 1995 stop plate was)"
+      }
+    },
+    "exits": {
+      "S51.to_S52": {
+        "rect": [
+          0,
+          760,
+          250,
+          200
+        ],
+        "interaction_point": [
+          110,
+          930
+        ],
+        "label_anchor": [
+          200,
+          750
+        ],
+        "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family)"
+      },
+      "S51.to_S07": {
+        "rect": [
+          780,
+          430,
+          240,
+          212
+        ],
+        "interaction_point": [
+          880,
+          690
+        ],
+        "label_anchor": [
+          930,
+          420
+        ],
+        "reason": "the far end of the platform and the path to the bus stop beyond it: the 2020 bus back to Cierna Voda (travel overlay content_ext/travel_ext.json replaces the car exit S51.to_S02 with S51.to_S07; same place as S11.to_S18)"
+      }
+    },
+    "occluders": [
+      {
+        "id": "stop_post",
+        "polygon": [
+          [
+            612,
+            80
+          ],
+          [
+            744,
+            80
+          ],
+          [
+            744,
+            214
+          ],
+          [
+            734,
+            230
+          ],
+          [
+            734,
+            580
+          ],
+          [
+            688,
+            590
+          ],
+          [
+            688,
+            818
+          ],
+          [
+            668,
+            818
+          ],
+          [
+            668,
+            590
+          ],
+          [
+            620,
+            580
+          ],
+          [
+            622,
+            230
+          ],
+          [
+            612,
+            214
+          ]
+        ],
+        "baseline": 817,
+        "texture": null
+      }
+    ],
+    "state_patches": [],
+    "time_node": {
+      "hotspot": "S51.clock",
+      "reason": "the anchor node's clock / node device S51.clock doubles as the time node (PT-F10): a plain left click that Core resolves as its look opens the era chooser instead (right click still looks; item uses such as D04 / C05 still work)"
+    }
+  }
+}

@@ -1,23 +1,28 @@
 # S51 Dubravska zastavka v roku 2020 (2020) - ERA DERIVATION prompt body for art/tools/derive_era.py (base S11, 1995)
-# Image 1 = the accepted S11 natural master (v1), image 2 = the same with the S51 blocking drawn on it.
+# Redesigned 2026-10-06 with the new S11 base (owner Dubravka corrections): image 1 = the accepted S11 natural master
+# (v3), image 2 = the same with the S51 blocking drawn on it.
 # location_families 2020: new shelter, display, masks, autumn leaves; the old frame stays part of the clock.
 # art_brief: exactly the same camera and basic geometry as S11 and S57. A more modern shelter, new paving, cars and
 # masks. The old time symbol is hidden in the metal frame of the reconstructed clock.
-Era changes: the same stop on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight, long soft shadows, the lindens and trees in yellow, orange and brown autumn colours, some fallen leaves on the platform and on the grass. The tram line was rebuilt in 2019-2020, so:
+# Real 2020 look (owner references, looked at only): rebuilt track on ballast with a green mesh fence between the
+# tracks, red-and-white railings at the crossing, the same bluish medical centre and red-balcony slab; no brands.
+Era changes: the same stop on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight, long soft shadows, the lindens, maples and birches in yellow, orange and brown autumn colours, some fallen leaves on the platform and on the grass. The tram line was rebuilt in 2019-2020, so:
 - The old brown tube shelter with its blue roof and wooden back wall is gone. In exactly its place and footprint stands a modern shelter: a slim dark grey steel frame, a flat clear glass roof, clear glass back and side walls with thin vertical white stripes, a modern grey metal bench inside along the back. Through its glass the road, the lawn and the trees stay visible. A small paper notice with a face-mask pictogram (no text) is stuck on the glass.
-- The platform has new paving of light beige concrete tiles, a terracotta-red strip along its middle and a light tactile edge strip along the track; the low road-side wall is new light concrete with galvanised steel railings, but its old chipped end at the ramp is unchanged.
+- The platform has new paving of light beige concrete tiles with a light tactile strip along the track edge. The old chipped concrete kerb block at the near left beside the shelter's corner is unchanged (still chipped, a little more weathered), and a red-and-white striped steel railing now guards the top of the ramp; the zebra crossing on the road is freshly painted.
 - The stop post is a modern dark grey post in the same place: on top the SAME round clock with its old polished brass frame (now around a new white dial), below the clock an LED departure board with orange dot-matrix dots that form no readable words or digits, and lower down a modern timetable panel with illegible print.
-- The track is rebuilt: new rails on new concrete sleepers and fresh grey ballast, a low dark green mesh fence on short posts between the two tracks, new slim grey traction poles and overhead wires in the same places. NO tram: the near track in front of the platform is empty, so paint the track, the grass strip, the far road and the trees that were hidden behind the old tram.
-- Two or three modern parked cars on the far road at the right (no number plates). No people.
-Everything else built (the platform's position and edges, the ramp and zebra crossing, the road, the panel towers, the shopping pavilion) stays exactly where it is.
+- The track is rebuilt: new rails on concrete sleepers and fresh grey ballast instead of the old concrete panels, a low dark green steel mesh fence between the two tracks, new slim grey traction poles and overhead wires in the same places. NO tram: the near track in front of the platform is empty, so paint the track, the fence, the road and the medical centre that were hidden behind the old tram.
+- The red railing between the track bed and the east carriageway is now a newer galvanised steel railing; the tall rust-red lamp posts stand in the same places.
+- The low bluish two-storey medical centre on the right and the long panel block with the red-orange balconies behind it are the SAME buildings in the same places (the panel block now has insulated, freshly painted cream walls; the medical centre is a bit weathered).
+- Two or three modern cars (silver, dark blue, white) drive or stand on the east carriageway at the right (no number plates). No people.
+Everything else built (the platform's position and edges, the ramp and zebra crossing, the roads rising up the hill, the towers, the medical centre) stays exactly where it is.
 
 Interactive props of 2020:
 1. {rect:S51.clock}: the round clock on top of the stop post: the old, slightly worn polished brass frame around a crisp new white dial with black ticks.
-2. {rect:S51.ambient 1}: the old chipped corner of the concrete kerb where the low road-side wall ends at the ramp - the same chip as before, a little more weathered.
+2. {rect:S51.ambient 1}: the old chipped corner of the low concrete kerb block at the near left beside the shelter's corner, at the top of the ramp - the same chip as before, a little more weathered.
 3. {rect:S51.ambient 2}: the black LED departure board on the stop post below the clock, glowing orange dot-matrix dots (no readable words or digits).
-{exit:S51.to_S52} is the ramp and zebra crossing at the near left (towards the school). {exit:S51.to_S02} is the far end of the platform.
+{exit:S51.to_S52} is the ramp and zebra crossing at the near left (towards the school). {exit:S51.to_S07} is the far end of the platform (the way to the bus stop).
 
 Walkable floor: {walk} stays the open, flat platform with nothing standing on it, only light, shadows and a few fallen leaves.
 {npc_zones}
 
-Fiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop signs, no number plates, no people, no animals. Any paper shows only illegible scribbles, no digits.
+Fiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop or pharmacy signs, no petrol-station signs, no lettering on the medical centre, no number plates, no people, no animals. Any paper shows only illegible scribbles, no digits.

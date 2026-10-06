@@ -2,51 +2,63 @@
   "version": 1,
   "room": "S51",
   "family_base": "S11",
-  "status": "natural re-blocking, camera family L_STOP: derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
-  "note": "Same L_STOP camera as the base S11 (Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615.) 2020: the rebuilt stop - a modern glass shelter on the old shelter's footprint, new beige paving, the stop post now carries the clock (old brass frame, new dial) and an LED departure board; the old chipped kerb corner at the ramp survives; the track is rebuilt and empty.",
+  "status": "natural re-blocking, camera family L_STOP, redesigned 2026-10-06 with the S11 base (owner Dubravka corrections): derived from the S11 natural master with derive_era.py (identical anchors, walk polygon, walk_band, actor_scale)",
+  "note": "Same L_STOP camera as the base S11 (Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera (sketch generated from metres, log S11.md): eye 2.04 m above the platform, horizon y 400, f 1250 px, turned 4 deg right of the platform axis so the flat track vanishes at x ~873; from 22 m ahead the street and the tracks rise (slope up to 7 %) and crest at y ~333. Ground y = 400 + 2550 / Zc (Zc = depth along the view): the walk band bottom y 1015 is 4.15 m ahead, its back y 664 is 9.7 m ahead; ~300 px per metre at the bottom, ~130 at the back. Scale s(y) = (y - 400) / 615.) 2020: the rebuilt stop (reconstruction 2019-2020) - a modern glass shelter on the old shelter's footprint, new paving with a tactile edge, red-and-white railings at the ramp, the track rebuilt on ballast with a green mesh fence between the tracks; the stop post carries the clock (old brass frame, new dial) and an LED departure board; the old chipped kerb block at the ramp survives; the low bluish medical centre and the red-balcony slab on the right are the same buildings.",
   "background": "bg_natural/S51.webp",
-  "walk_polygon": [[0, 1015], [1449, 1015], [1230, 672], [928, 670], [850, 828], [339, 814], [65, 970], [0, 1000]],
-  "walk_band": [670, 1015],
-  "actor_scale": [0.44, 1.0],
-  "spawn": [1010, 900],
+  "walk_polygon": [[0, 1015], [0, 882], [90, 874], [204, 888], [362, 882], [366, 800], [628, 794], [660, 832], [700, 846], [742, 816], [744, 700], [750, 666], [1041, 664], [1262, 1015]],
+  "walk_band": [664, 1015],
+  "actor_scale": [0.43, 1.0],
+  "spawn": [1000, 900],
   "anchors": {
-    "curb": [262, 792],
-    "track_line": [1524, 813],
-    "clock_frame": [785, 134]
+    "curb": [236, 802],
+    "track_line": [1540, 774],
+    "clock_frame": [679, 147]
   },
   "hotspots": {
     "S51.clock": {
-      "rect": [722, 68, 128, 132],
-      "interaction_point": [835, 862],
-      "label_anchor": [786, 58],
+      "rect": [612, 81, 132, 132],
+      "interaction_point": [720, 860],
+      "label_anchor": [678, 70],
       "reason": "the round clock on top of the stop post: the old brass frame kept around the new dial (same place as the 1995 clock, anchor clock_frame)"
     },
     "S51.ambient 1": {
-      "rect": [212, 738, 140, 112],
-      "interaction_point": [300, 872],
-      "label_anchor": [282, 728],
-      "reason": "the chipped concrete kerb corner where the platform's low road-side wall ends at the ramp (anchor curb)"
+      "rect": [190, 776, 110, 110],
+      "interaction_point": [300, 905],
+      "label_anchor": [385, 838],
+      "reason": "the chipped end of the low concrete kerb block beside the shelter's near corner at the ramp (anchor curb), unchanged since 1995"
     },
     "S51.ambient 2": {
-      "rect": [800, 224, 206, 96],
-      "interaction_point": [835, 862],
-      "label_anchor": [903, 214],
+      "rect": [622, 228, 194, 96],
+      "interaction_point": [800, 860],
+      "label_anchor": [860, 336],
       "reason": "the LED departure board on the stop post below the clock (where the 1995 stop plate was)"
     }
   },
   "exits": {
     "S51.to_S52": {
-      "rect": [40, 780, 215, 150],
-      "interaction_point": [205, 915],
-      "label_anchor": [205, 770],
-      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12)"
+      "rect": [0, 760, 250, 200],
+      "interaction_point": [110, 930],
+      "label_anchor": [200, 750],
+      "reason": "the ramp at the near left down to the zebra crossing, towards the school (same as S11.to_S12, L_STOP family)"
     },
-    "S51.to_S02": {
-      "rect": [930, 520, 250, 140],
-      "interaction_point": [1075, 690],
-      "label_anchor": [1055, 510],
-      "reason": "the far end of the platform and the path to the road where the car waits (same place as S11.to_S18)"
+    "S51.to_S07": {
+      "rect": [780, 430, 240, 212],
+      "interaction_point": [880, 690],
+      "label_anchor": [930, 420],
+      "reason": "the far end of the platform and the path to the bus stop beyond it: the 2020 bus back to Cierna Voda (travel overlay content_ext/travel_ext.json replaces the car exit S51.to_S02 with S51.to_S07; same place as S11.to_S18)"
     }
   },
-  "state_patches": []
+  "occluders": [
+    {
+      "id": "stop_post",
+      "polygon": [[612, 80], [744, 80], [744, 214], [734, 230], [734, 580], [688, 590], [688, 818], [668, 818], [668, 590], [620, 580], [622, 230], [612, 214]],
+      "baseline": 817,
+      "texture": null
+    }
+  ],
+  "state_patches": [],
+  "time_node": {
+    "hotspot": "S51.clock",
+    "reason": "the anchor node's clock / node device S51.clock doubles as the time node (PT-F10): a plain left click that Core resolves as its look opens the era chooser instead (right click still looks; item uses such as D04 / C05 still work)"
+  }
 }

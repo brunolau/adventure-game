@@ -1,0 +1,43 @@
+{
+  "kind": "edit",
+  "from_version": 2,
+  "spec": "s18_kiosk",
+  "boxes_game_px": [
+    [
+      0,
+      536,
+      480,
+      940
+    ],
+    [
+      1366,
+      640,
+      1792,
+      990
+    ]
+  ],
+  "feather_master_px": 40,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 106484221,
+  "usd": 0.15,
+  "scope": "bg_natural/sokolikova_street/",
+  "spend_log_asset": "bg_natural/sokolikova_street/S18_v3_edit",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds: a street between early-1970s panel housing blocks in Dubravka, Bratislava, on a summer evening in 1995 at sunset. Flat, untextured colour shapes have been pasted onto it as placeholders. Repaint ONLY those placeholder shapes as real painted objects, at exactly the same position, size and outline, in the same painting technique and in the same warm low evening sunlight as the rest of image 1. Everything that is not a placeholder must stay exactly as it is: the sky, every building, balcony, staircase, the pine trees, the big tree at the right, the road, the kerbs, the little red car and the light do not change.\n\nThe placeholders:\n1. The cream box with the dark brown roof at the far left (from 0 % to 21 % of the width, from 51 % to 81 % of the height): a small prefabricated NEWSPAPER KIOSK of 1995 standing on a small concrete apron at the corner of the lawn, in front of the pine trunks. Cream wall panels with thin dark maroon trim, a flat roof with a thin overhanging dark edge, a plain blank fascia board with NO lettering at all. Its front faces the camera; its right side wall, in shadow, recedes towards the street. Above a plain lower panel the front has three openings side by side: on the left a glass display pane with newspapers and magazines hung on clips behind the glass (only illegible grey scribble columns, no readable words, no digits); in the middle an OPEN sales hatch, an empty dim opening into the kiosk with a narrow light counter ledge whose top edge is one straight horizontal line at the bottom of the opening (70 % of the height); nobody is inside, the opening only shows dim shelves with stacked papers at the back; on the right a glass display pane with rows of colourful little packets of chewing gum and sweets in bright wrappers with NO brand names and no letters.\n2. The brown shape on the lawn strip in front of the near block at the right (73 % to 84 % of the width): a plain park bench of the housing estate with wooden slats on grey steel legs, standing on the grass parallel to the strip, empty.\n3. The green shape and the grey poles with coloured rectangles right of the bench (85 % to 93 % of the width): a low green wire-mesh fence along the lawn strip and, behind it on the lawn, the residents' steel drying racks (two T-shaped poles with clothes lines) with a few pieces of laundry - a white sheet, a blue towel, a yellow towel, a red shirt - hanging still in the evening air.\n\nEach new object casts a soft long evening shadow on the ground like the other objects in image 1. No people, no animals, no text, no letters, no numbers, no logos and no brand names anywhere; do not add or remove anything else. No frames, borders or captions. Image 2 is another background from the same game: keep the same painting technique.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S18_v2.png + placeholder shapes (art/masters/bg_natural/S18_scripts/edit_on_base.py spec s18_kiosk)",
+    "art/backgrounds/sokolikova-yard.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_S18_v3_edit_raw.png",
+  "started": "2026-10-06T01:35:45",
+  "model_description": "",
+  "room": "S18",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

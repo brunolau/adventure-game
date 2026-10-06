@@ -1,0 +1,26 @@
+# S48 Servisny pavilon vystavy Atlas (2035) - WINTER prompt body for art/tools/winter_jasna.py (owner 2026-10-06)
+Winter changes (Chopok summit plateau, about 2000 m, in deep winter):
+- The whole plateau is under deep, wind-shaped snow: smooth white drifts instead of the gravel, rocks and grass; the
+  dwarf pines left, right and behind the path are rounded snow-covered mounds with a few dark green needles showing;
+  the rocks are white humps.
+- The Rotunda complex keeps exactly its shape, size and position: the stone drum with the glass top and the red ring
+  roof, the two long dark station wings on stilts, the steel stairs, the stone base with the ROTUNDA CHOPOK lettering
+  (keep the lettering exactly). Thick snow lies on the red ring roof and on the flat roofs of both wings; white rime
+  ice coats the railings, the stilts, the steel stairs and the lift pylon at the left; icicles hang from the wings.
+- The lift pylon at the left carries the cable-car ropes with one cabin on them.
+- The distant mountain ridges on the horizon are white winter mountains.
+- The Atlas pavilion on the right keeps its larch boards and white panels; a thick cushion of snow lies on its flat
+  roof edge with icicles hanging from it, and a small drift lies along its foot. The open service bay stays open and
+  clear: the rugged terminal on its cart ({rect:S48.terminal}) with its glowing blue screen stays exactly the same;
+  the taped paper note ({rect:S48.ambient 2}) stays the same (scribbles only); the orange-black cable bundle
+  ({rect:S48.ambient 1}) lies clearly visible ON TOP of the packed snow, running from the bay to the junction box.
+- Sky: clear deep winter blue with one or two small clouds; low sun; sparkle on the snow; a little spindrift blowing
+  off the crest of a drift.
+
+Walkable floor: {walk} is a cleared, trodden path of packed snow (white, with footprints), ONE continuous flat open
+surface: no rocks, no drifts, no banks and nothing standing in it; the deep snow and the drifts lie only beside it.
+Exits: {exit:S48.to_S47} is the Rotunda entrance in the stone base, cleared of snow; {exit:S48.to_S50} is the steel
+stairs on the left wing with snow on the steps; {exit:S48.to_S49} is the pavilion door.
+{npc_zones}
+
+Fiction rules: keep the ROTUNDA CHOPOK lettering; no other new lettering, no logos, no people, no animals.

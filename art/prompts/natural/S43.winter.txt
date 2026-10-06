@@ -1,0 +1,17 @@
+# S43 Lobby hotela Grand Jasna (2035) - WINTER prompt body for art/tools/winter_jasna.py (owner 2026-10-06)
+# regions mode: only the entrance glass, the lounge window and the lounge corner are taken from the model.
+Inside the lobby everything stays exactly as in image 1 (the stone wall with its lettering, the white reception
+counter, the flowers, the suitcases, Tamara's teal table with its plaque, the pegboard, the radio, the lamp, the
+shelving, the coffee machine, the paintings, the floor). Winter shows only here:
+- Through the glazed entrance doors ({exit:S43.to_S42}) at the left: the snowy forecourt and deep snow, spruces loaded
+  with snow, a white winter mountain slope behind; a thin rim of frost on the glass edges and the bottom of the doors.
+- Through the tall lounge window at the right edge: spruces heavily loaded with snow against a clear winter blue sky,
+  deep snow on the ground; frost flowers at the corners of the panes.
+- Winter guests' things in the lounge corner at the right: a bright red ski jacket draped over the back of the left
+  beige armchair, a ski helmet and a pair of gloves on the small round table, and a pair of grey-and-blue ski boots
+  standing on the floor right beside the right armchair. The armchairs and the table keep their shape and position.
+- The coffee machine ({rect:S43.ambient 1}) and the parts shelving ({rect:S43.ambient 2}) stay exactly the same.
+{npc_zones}
+Walkable floor: {walk} stays the same open stone floor with nothing standing on it.
+
+Fiction rules: no new lettering, no logos, no people, no animals.

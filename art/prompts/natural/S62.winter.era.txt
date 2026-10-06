@@ -1,0 +1,11 @@
+# S62 step A (art/masters/bg_natural/S62_scripts/winter_derive.py): winter only, the kiosk stays. Placeholders refer to
+# the S18 blocking (the guide shows the kiosk's panes and hatch). Step B turns the kiosk into the 1982 shop (refit fix).
+Era changes: the same street thirteen years earlier, early December 1982, at winter dusk shortly after sunset: a pale cold sky fading from soft pink-grey at the horizon to grey-blue above, no sun, cool bluish light with the last warm glow on the upper floors. Thin fresh snow lies on the lawns, the kerbs, the roofs, the top edges of the balcony parapets, the bench, the fence and the kiosk roof; the road and the pavements are wet dark asphalt with a little slush and snow at their edges. The big deciduous tree at the right is bare: only its trunk and grey-brown branches and twigs, no leaves (the same trunk and main branches as in image 1). The pines and the two spruces at the left stay dark green with a little snow on their branches.
+Every building, balcony, parapet band, staircase, railing, door and window stays exactly where and as it is in image 1, with the same colours: the balcony parapet bands stay red-brown, the far block at the left stays yellow, the walls stay cream. Only a few windows are lit warm yellow from inside. No laundry outside in winter: the clothes line between the columns at the right is empty. The bench and the low green fence stay where they are. The little red hatchback is replaced by a small boxy pale-blue saloon car of the late 1970s parked at exactly the same place with the same size, without any badges.
+The small kiosk at the far left stays exactly where it is, with the same outline, size and roof, only with a little snow on its roof; its front stays as it is in this step: {rect:S18.ambient 2} and {rect:S18.ambient 1} are its two glass panes, dim, with a little frost in their corners.
+The street continues out of the left edge ({exit:S18.to_S11}) and the pavement out of the right edge ({exit:S18.to_S17}).
+
+Walkable floor: {walk} stays the open wet asphalt road and pavements with a little slush at the edges, with nothing standing on it.
+{npc_zones}
+
+Fiction rules: no people, no animals, no lettering, no signs, no posters, no house numbers, no number plates, no logos. Keep everything that is not mentioned exactly as in image 1.

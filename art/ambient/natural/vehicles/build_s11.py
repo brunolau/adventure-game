@@ -1,7 +1,7 @@
 """S11 (1995): cut the painted Tatra T3 out of the painting as a moving sprite and build the tramless patch.
 
-Free and local. Inputs: the S11 master art/masters/bg_natural/S11_v1.png and the paid edit
-S11_notram_v1_raw.png (the same painting with the tram removed, see edit.py). Outputs:
+Free and local. Inputs: the S11 master art/masters/bg_natural/S11_v3.png (redesigned 2026-10-06) and the paid edit
+S11_notram_v2_raw.png (the same painting with the tram removed, see edit.py). Outputs:
   src/game/assets/ambient/S11/natural/tram_t3.webp     the tram + its cast shadow (master resolution, RGBA)
   src/game/assets/ambient/S11/natural/track_empty.webp the empty track where the tram stands (game px, RGBA)
   art/ambient/natural/vehicles/S11_*.png               previews
@@ -25,20 +25,20 @@ import cutlib  # noqa: E402
 import paint_room  # noqa: E402
 
 OUT = ROOT / "src" / "game" / "assets" / "ambient" / "S11" / "natural"
-VP_GAME = (1035.0, 378.0)             # where the near track's rails converge (fitted to the painted rails)
-REGION = (1440, 90, 2330, 1000)       # master px: tram, pantograph, cast shadow
-BODY_POLY = [(1640, 520), (1690, 470), (1820, 425), (1835, 392), (2255, 388), (2302, 450), (2300, 600), (2294, 880),
-             (2240, 912), (2120, 915), (2085, 975), (1975, 975), (1940, 925), (1850, 880), (1700, 770), (1640, 720)]
-PANTO_BOX = [(1770, 100), (2100, 100), (2100, 400), (1770, 400)]
-SHADOW_POLY = [(1470, 680), (1660, 680), (1700, 770), (1850, 880), (1950, 940), (2330, 940), (2330, 1000),
-               (1460, 1000)]
+# 2026-10-06: redesigned S11 (owner Dubravka corrections) - master v3, edit S11_notram_v2_raw.png; the near track's
+# painted rails (measured on the empty-track edit) converge at (888, 407).
+VP_GAME = (888.0, 407.0)             # where the near track's rails converge (fitted to the painted rails)
+REGION = (863, 85, 2058, 996)       # master px: tram, pantograph, cast shadow on the platform
+BODY_POLY = [(1384, 498), (1421, 478), (1586, 424), (1646, 418), (1916, 421), (1938, 444), (1941, 590), (1973, 590), (1973, 666), (1941, 666), (1941, 913), (1859, 927), (1688, 930), (1600, 899), (1503, 873), (1384, 859)]
+PANTO_BOX = [(1535, 119), (1805, 119), (1805, 432), (1535, 432)]
+SHADOW_POLY = [(906, 666), (1387, 649), (1387, 862), (1574, 910), (1688, 933), (2030, 927), (2044, 996), (1574, 996), (920, 944)]
 TINT = np.array([22, 49, 98], dtype=np.float32)        # separates body (badly fitted) from shadow
 SHADE = np.array([34, 42, 66], dtype=np.float32)       # colour of the moving cast shadow
 
 
 def main() -> None:
-    o_full = Image.open(ROOT / "art/masters/bg_natural/S11_v1.png").convert("RGB")
-    e_full = Image.open(HERE / "S11_notram_v1_raw.png").convert("RGB")
+    o_full = Image.open(ROOT / "art/masters/bg_natural/S11_v3.png").convert("RGB")
+    e_full = Image.open(HERE / "S11_notram_v2_raw.png").convert("RGB")
     x0, y0, x1, y1 = REGION
     o = np.asarray(o_full, dtype=np.float32)[y0:y1, x0:x1]
     e = np.asarray(e_full, dtype=np.float32)[y0:y1, x0:x1]
@@ -51,7 +51,7 @@ def main() -> None:
     body = cutlib.morph(body, close=7)
     body = cutlib.fill_holes(body) & body_zone
     body = cutlib.morph(body, open_=2)
-    panto = (diff > 38) & panto_zone
+    panto = (diff > 28) & panto_zone
     lum_o = o @ np.array([0.299, 0.587, 0.114], dtype=np.float32)
     panto = cutlib.morph(panto, close=4) & ((lum_o < 140) | (diff > 38)) & panto_zone   # bridge the wire crossings
     rows = np.arange(shape[0])[:, None] + y0
@@ -68,7 +68,8 @@ def main() -> None:
     a_lum = np.clip((le - lo) / np.maximum(le - lc, 1.0), 0, 0.62)   # darkening that matches the painted luminance
     sh = np.where(shadow_zone, a_lum, 0.0)
     sh = np.where(sh > 0.08, sh, 0.0)
-    sh = np.asarray(Image.fromarray((sh * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(2.0)),
+    sh = np.minimum(sh, 0.5)
+    sh = np.asarray(Image.fromarray((sh * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(7.0)),
                     dtype=np.float32) / 255
     alpha = obj_a + (1 - obj_a) * sh
     col = (obj_a[..., None] * o + ((1 - obj_a) * sh)[..., None] * SHADE[None, None, :]) / np.maximum(alpha, 1e-4)[..., None]
@@ -95,10 +96,19 @@ def main() -> None:
     o_g = np.asarray(paint_room.fit_to_frame(o_full), dtype=np.float32)
     e_g = np.asarray(paint_room.fit_to_frame(e_full), dtype=np.float32)
     full_obj = np.zeros((1536, 2752), dtype=np.uint8)
-    full_obj[y0:y1, x0:x1] = (np.maximum(obj_a, (sh > 0.05).astype(np.float32)) > 0.3) * 255
+    # plus every pixel the edit changed noticeably inside the tram zones (pantograph parts the cut missed), but not
+    # the whole zones: the edit's sky and facade differ by a few grey levels and would show as a box
+    full_obj[y0:y1, x0:x1] = ((np.maximum(obj_a, (sh > 0.05).astype(np.float32)) > 0.3)
+                              | ((diff > 18) & (body_zone | panto_zone))) * 255
     mask_g = np.asarray(paint_room.fit_to_frame(Image.fromarray(full_obj, "L").convert("RGB")).convert("L")) > 60
     mask_g = cutlib.morph(mask_g, grow=10)
     pa = cutlib.soft(mask_g, 5)
+    # the stop-post occluder of data/blocking/S11.json is drawn from the painting above the patch: keep the painting's
+    # own pixels there, so the post and timetable case never change when the tram (and its shadow) leaves
+    occ = json.loads((ROOT / "src/game/data/blocking/S11.json").read_text(encoding="utf-8")).get("occluders") or []
+    if occ:
+        keep = cutlib.poly_mask((1080, 1920), [[tuple(q) for q in o_["polygon"]] for o_ in occ])
+        pa = pa * (1 - cutlib.soft(cutlib.morph(keep, grow=1), 1.0))
     ys, xs = np.nonzero(pa > 0.003)
     gx0, gy0, gx1, gy1 = xs.min(), ys.min(), xs.max() + 1, ys.max() + 1
     patch = np.dstack([e_g[gy0:gy1, gx0:gx1], pa[gy0:gy1, gx0:gx1] * 255]).clip(0, 255).astype(np.uint8)

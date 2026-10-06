@@ -1,0 +1,14 @@
+# S67 Priehyba pri prestupe na Funitel (2035) - WINTER prompt body for art/tools/winter_jasna.py (owner 2026-10-06)
+# regions mode: only the open side of the hall at the left and the platform corner below it are taken from the model.
+Inside the boarding hall everything stays exactly as in image 1 (the guide rail with the conveyor tyres, the red
+bullwheel, the two black Funitel cabins, the handrail {rect:S67.ambient 2}, the gate with the green arrow lamp
+{rect:S67.boarding}, the open cabin door {exit:S67.to_S68}, the pillar with the map {rect:S67.ambient 1}, the red steel
+frame). Winter shows only at the open left side of the hall ({exit:S67.to_S41}):
+- Outside: a white, snow-covered mountain slope with snowy spruces and a groomed ski piste under a clear winter blue
+  sky; the wooden railing outside carries a thick cap of snow with small icicles.
+- A little snow has blown in: a thin, flat dusting of snow on the concrete platform near the opening, fading out
+  towards the middle of the hall, and a few wet boot prints in it (flat, nothing standing on the floor).
+{npc_zones}
+Walkable floor: {walk} stays one open, flat platform with nothing standing on it.
+
+Fiction rules: no new lettering, no logos, no people, no animals.

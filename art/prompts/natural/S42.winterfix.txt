@@ -1,0 +1,11 @@
+# S42 winter fix (art/tools/winter_jasna.py run S42 --variant winterfix): clear the snow banks off the walkable forecourt
+The only change: the paved forecourt {walk} must be clear right to the left, right and bottom edges of the picture.
+Remove every snow bank, snow pile and drift that lies on the paving in the lower part of the picture - at the left
+edge, in the bottom left corner, along the bottom edge and at the right edge - and continue there the same grey
+paving stones with the same perspective tile lines, the same thin dusting of snow and a few faint footprints, so the
+forecourt is ONE continuous flat paved surface out of the left edge ({exit:S42.to_S41}), the bottom edge and the right
+edge. Keep the big spruce ({rect:S42.ambient 1}) and its long blue shadow on the paving exactly as they are, and the
+luggage trolley ({rect:S42.ambient 2}) exactly as it is. Keep the narrow low strip of snow
+along the foot of the stone walls and at the hotel wall. Everything above the forecourt (the hotel, the spruce, the
+walls, the banner, the table, the fountain, the trolley, the mountains, the sky) stays exactly as in image 1.
+{npc_zones}

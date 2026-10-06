@@ -1,6 +1,10 @@
 """Free retouch S55 v6 -> v8 (D05 state): open the cache in row 2 / column 3 of the stone panel (game x 1158-1193,
 y 612-643): a dark recess with an inner shadow and crumbled mortar edge, and the pulled stone lying flat on the asphalt
-at the foot of the wall. (The paid fix v7 removed four stones and changed the panel; rejected.)"""
+at the foot of the wall. (The paid fix v7 removed four stones and changed the panel; rejected.)
+
+Relayout 2026-10-06: the wall and its panel keep the same game position, so the same coordinates apply to the new E10
+master: python art/masters/bg_natural/S55_scripts/retouch_s55_open.py <preview.png> [SRC DST]   (relayout: 13 14;
+default 6 8 = the first layout)."""
 import json
 import sys
 from pathlib import Path
@@ -17,7 +21,8 @@ def g2m(x, y):
     return int(round((x + 7) * K)), int(round(y * K))
 
 
-im = Image.open(M / "S55_v6.png").convert("RGB")
+SRC, DST = (int(sys.argv[2]), int(sys.argv[3])) if len(sys.argv) > 3 else (6, 8)
+im = Image.open(M / f"S55_v{SRC}.png").convert("RGB")
 arr = np.asarray(im, dtype=np.float32).copy()
 x0, y0 = g2m(1156, 610)
 x1, y1 = g2m(1195, 645)
@@ -51,13 +56,13 @@ dark = Image.new("RGB", shadow.size, (40, 36, 34))
 out.paste(dark, (sx0 - 5, sy0 + 2), shadow)
 m = Image.new("L", flat.size, 255).filter(ImageFilter.GaussianBlur(0.6))
 out.paste(flat, (sx0, sy0), m)
-out.save(M / "S55_v8.png")
-meta = json.loads((M / "S55_v6.json").read_text(encoding="utf-8"))
-meta.update({"version": 8, "kind": "retouch", "usd": 0, "from_version": 6,
+out.save(M / f"S55_v{DST}.png")
+meta = json.loads((M / f"S55_v{SRC}.json").read_text(encoding="utf-8"))
+meta.update({"version": DST, "kind": "retouch", "usd": 0, "from_version": SRC,
              "retouch": "free pixel retouch (scratchpad retouch_s55_open.py): D05 state - cavity painted into stone row 2 / "
                         "column 3 (game x 1158-1193, y 612-643), the pulled stone lying flat at the wall foot (game ~1166,703)"})
 meta.pop("exported", None)
-(M / "S55_v8.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
+(M / f"S55_v{DST}.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 sys.path.insert(0, str(ROOT / "art" / "tools"))
 import paint_room  # noqa: E402
 paint_room.fit_to_frame(out).crop((1000, 500, 1320, 740)).resize((640, 480)).save(Path(sys.argv[1]))

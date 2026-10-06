@@ -1,0 +1,63 @@
+{
+  "room": "S62",
+  "version": 4,
+  "kind": "derive",
+  "step": "A (winter only, kiosk kept)",
+  "from_room": "S18",
+  "from_version": 6,
+  "from_master": "art/masters/bg_natural/S18_v6.png",
+  "model": "fal-ai/nano-banana-pro/edit",
+  "resolution": "2K",
+  "aspect_ratio": "16:9",
+  "seed": 1469332278,
+  "usd": 0.15,
+  "scope": "bg_natural/sokolikova_street/",
+  "spend_log_asset": "bg_natural/sokolikova_street/S62_v4_derive",
+  "started": "2026-10-06T01:56:26",
+  "prompt_file": "art/prompts/natural/S62.winter.era.txt",
+  "prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: a street of the Dubravka housing estate in Bratislava in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in December 1982, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\n\n\nEra changes: the same street thirteen years earlier, early December 1982, at winter dusk shortly after sunset: a pale cold sky fading from soft pink-grey at the horizon to grey-blue above, no sun, cool bluish light with the last warm glow on the upper floors. Thin fresh snow lies on the lawns, the kerbs, the roofs, the top edges of the balcony parapets, the bench, the fence and the kiosk roof; the road and the pavements are wet dark asphalt with a little slush and snow at their edges. The big deciduous tree at the right is bare: only its trunk and grey-brown branches and twigs, no leaves (the same trunk and main branches as in image 1). The pines and the two spruces at the left stay dark green with a little snow on their branches.\nEvery building, balcony, parapet band, staircase, railing, door and window stays exactly where and as it is in image 1, with the same colours: the balcony parapet bands stay red-brown, the far block at the left stays yellow, the walls stay cream. Only a few windows are lit warm yellow from inside. No laundry outside in winter: the clothes line between the columns at the right is empty. The bench and the low green fence stay where they are. The little red hatchback is replaced by a small boxy pale-blue saloon car of the late 1970s parked at exactly the same place with the same size, without any badges.\nThe small kiosk at the far left stays exactly where it is, with the same outline, size and roof, only with a little snow on its roof; its front stays as it is in this step: the box labelled 'Noviny' in image 2 (x 25-116, y 640-794 of the 1920x1080 frame (1-6 % from the left, 59-74 % from the top)) and the box labelled 'Žuvačkové obaly' in image 2 (x 239-326, y 644-792 of the 1920x1080 frame (12-17 % from the left, 60-73 % from the top)) are its two glass panes, dim, with a little frost in their corners.\nThe street continues out of the left edge (the box labelled 'exit: Dúbravská zastávka' in image 2 (x 0-60, y 892-1015 of the 1920x1080 frame (0-3 % from the left, 83-94 % from the top))) and the pavement out of the right edge (the box labelled 'exit: Školský dvor' in image 2 (x 1860-1920, y 970-1015 of the 1920x1080 frame (97-100 % from the left, 90-94 % from the top))).\n\nWalkable floor: the band at x 0-1920, y 866-1015 of the 1920x1080 frame (0-100 % from the left, 80-94 % from the top) stays the open wet asphalt road and pavements with a little slush at the edges, with nothing standing on it.\nNPC zone at x 134-226, y 652-756 of the 1920x1080 frame (7-12 % from the left, 60-70 % from the top): an animated character sprite will be drawn here later, so paint no person, figure or silhouette in it. The character is seen through a window: paint the window sill exactly at y 757 across x 104-256; the opening above the sill shows a plain, dim interior, no person.\n\nFiction rules: no people, no animals, no lettering, no signs, no posters, no house numbers, no number plates, no logos. Keep everything that is not mentioned exactly as in image 1.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S18_v6.png (model geometry)",
+    "S18_v6.png + S18 blocking boxes (guide: the kiosk stays)"
+  ],
+  "camera": {
+    "global_shift_master_px": [
+      0,
+      0
+    ],
+    "points": {
+      "exit S18.to_S11": {
+        "at": [
+          30.0,
+          953.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.378,
+        "ok": true
+      },
+      "exit S18.to_S17": {
+        "at": [
+          1890.0,
+          992.5
+        ],
+        "shift_px": [
+          0,
+          0
+        ],
+        "ncc": 0.519,
+        "ok": true
+      }
+    },
+    "camera_ok": true
+  },
+  "model_description": "",
+  "raw_model_output": "art/masters/bg_natural/_S62_v4_raw.png",
+  "output_size": [
+    2752,
+    1536
+  ],
+  "script": "art/masters/bg_natural/S62_scripts/winter_derive.py"
+}

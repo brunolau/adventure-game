@@ -1,30 +1,233 @@
 {
   "room": "S55",
-  "notes": "Natural S55 (bg_natural/S55.webp, late October 2020, the same yard camera as S17). Wind in the autumn poplar and the estate trees behind the court, yellow leaves blowing across the yard from them, clouds drifting over the hill (sky mask), birds crossing, pigeons on the asphalt by the hoop (they fly off when Adam comes near). After E10 (variant S55_linden_and_wall): the big linden's crown sways (cut from the overlay by art/ambient/natural/S17.variant_cuts.py) and drops heart-shaped yellow leaves onto the bench and the distance markings, and a few sparrows hop in its shade.",
+  "notes": "Natural S55 (bg_natural/S55.webp, late October 2020, relayout 2026-10-06, the same yard camera as S17). Wind in the autumn trees beside the gym wing (before E10; after E10 the big linden covers them), yellow leaves blowing across the yard from them, clouds drifting over the hill (sky mask), birds crossing, pigeons on the asphalt by the fence and the bin (they fly off when Adam comes near). After E10 (variant S55_linden_and_wall): the big linden's crown sways (cut from the overlay by art/ambient/natural/S17.variant_cuts.py S55) and drops yellow leaves onto the bench and the distance markings, and a few sparrows hop in its shade.",
   "layers": [
-    { "id": "clouds", "type": "clouds",
-      "textures": ["common/cloud_00.webp", "common/cloud_01.webp", "common/cloud_02.webp", "common/cloud_03.webp"],
-      "band": [8, 70], "count": 4, "speed_px_s": 5, "scale": [0.14, 0.24], "alpha": 0.55, "mask": "S55/natural/sky_mask.webp" },
-    { "id": "poplar_sway", "type": "sway", "texture": "S55/natural/poplar.webp",
-      "anchor": 1.0, "amp_px": 2.2, "freq": 0.32, "wavelength_px": 110, "flutter_px": 0.7 },
-    { "id": "trees_back_sway", "type": "sway", "texture": "S55/natural/trees_back.webp",
-      "anchor": 1.0, "amp_px": 1.4, "freq": 0.34, "wavelength_px": 100, "flutter_px": 0.5 },
-    { "id": "leaves_court", "type": "particles", "preset": "leaves",
-      "textures": ["common/leaf_00.webp", "common/leaf_02.webp", "common/leaf_05.webp", "common/leaf_08.webp", "common/leaf_11.webp"],
-      "emit_rect": [1300, 200, 600, 120], "rate": 0.25, "size": [10, 16], "speed_x": [-40, -12], "land_y": [730, 1000], "rest_s": [4, 8] },
-    { "id": "linden_sway", "type": "sway", "texture": "S55/natural/linden_big.webp", "pos": [118, -12], "if_done": ["E10"],
-      "anchor": 1.0, "amp_px": 2.4, "freq": 0.26, "wavelength_px": 160, "flutter_px": 1.0 },
-    { "id": "linden_leaves", "type": "particles", "preset": "leaves", "if_done": ["E10"],
-      "textures": ["common/leaf_01.webp", "common/leaf_03.webp", "common/leaf_06.webp", "common/leaf_09.webp", "common/leaf_12.webp"],
-      "emit_rect": [200, 40, 880, 300], "rate": 0.45, "size": [12, 18], "land_y": [700, 800], "rest_s": [5, 9] },
-    { "id": "pigeons", "type": "critters", "sheet": "common/pigeon_sheet", "count": 3,
-      "ground": [[1450, 712], [1800, 718]], "scale": 0.16, "flee_radius": 300, "return_s": [14, 26],
-      "exit": [[2040, 120], [1700, -120]] },
-    { "id": "sparrows_shade", "type": "critters", "sheet": "common/pigeon_sheet", "count": 2, "if_done": ["E10"],
-      "ground": [[460, 712], [700, 718]], "scale": 0.1, "modulate": "#9a7e62", "flee_radius": 260, "return_s": [10, 20],
-      "exit": [[300, 100], [700, -120]] },
-    { "id": "birds_sky", "type": "tween_path", "sheet": "common/pigeon_sheet", "frames": "fly", "fps": 11,
-      "path": [[-60, 40], [900, 20], [1980, 60]], "speed_px_s": 230, "scale": 0.08, "flock": 3, "flock_spread": [60, 25],
-      "bob_px": 4, "direction": "random", "every_s": [22, 45], "start_s": [5, 12] }
+    {
+      "id": "clouds",
+      "type": "clouds",
+      "textures": [
+        "common/cloud_00.webp",
+        "common/cloud_01.webp",
+        "common/cloud_02.webp",
+        "common/cloud_03.webp"
+      ],
+      "band": [
+        8,
+        80
+      ],
+      "count": 4,
+      "speed_px_s": 5,
+      "scale": [
+        0.14,
+        0.24
+      ],
+      "alpha": 0.55,
+      "mask": "S55/natural/sky_mask.webp"
+    },
+    {
+      "id": "trees_left_sway",
+      "type": "sway",
+      "texture": "S55/natural/trees_left.webp",
+      "unless_done": [
+        "E10"
+      ],
+      "anchor": 1.0,
+      "amp_px": 1.6,
+      "freq": 0.32,
+      "wavelength_px": 100,
+      "flutter_px": 0.6
+    },
+    {
+      "id": "leaves_left",
+      "type": "particles",
+      "preset": "leaves",
+      "textures": [
+        "common/leaf_00.webp",
+        "common/leaf_02.webp",
+        "common/leaf_05.webp",
+        "common/leaf_08.webp",
+        "common/leaf_11.webp"
+      ],
+      "emit_rect": [
+        0,
+        170,
+        420,
+        200
+      ],
+      "rate": 0.22,
+      "size": [
+        10,
+        16
+      ],
+      "speed_x": [
+        12,
+        40
+      ],
+      "land_y": [
+        730,
+        1000
+      ],
+      "rest_s": [
+        4,
+        8
+      ]
+    },
+    {
+      "id": "linden_sway",
+      "type": "sway",
+      "texture": "S55/natural/linden_big.webp",
+      "pos": [
+        48,
+        -12
+      ],
+      "if_done": [
+        "E10"
+      ],
+      "anchor": 1.0,
+      "amp_px": 2.4,
+      "freq": 0.26,
+      "wavelength_px": 160,
+      "flutter_px": 1.0
+    },
+    {
+      "id": "linden_leaves",
+      "type": "particles",
+      "preset": "leaves",
+      "if_done": [
+        "E10"
+      ],
+      "textures": [
+        "common/leaf_01.webp",
+        "common/leaf_03.webp",
+        "common/leaf_06.webp",
+        "common/leaf_09.webp",
+        "common/leaf_12.webp"
+      ],
+      "emit_rect": [
+        200,
+        40,
+        900,
+        300
+      ],
+      "rate": 0.45,
+      "size": [
+        12,
+        18
+      ],
+      "land_y": [
+        700,
+        800
+      ],
+      "rest_s": [
+        5,
+        9
+      ]
+    },
+    {
+      "id": "pigeons",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 3,
+      "ground": [
+        [
+          1420,
+          716
+        ],
+        [
+          1690,
+          722
+        ]
+      ],
+      "scale": 0.16,
+      "flee_radius": 300,
+      "return_s": [
+        14,
+        26
+      ],
+      "exit": [
+        [
+          2040,
+          120
+        ],
+        [
+          1700,
+          -120
+        ]
+      ]
+    },
+    {
+      "id": "sparrows_shade",
+      "type": "critters",
+      "sheet": "common/pigeon_sheet",
+      "count": 2,
+      "if_done": [
+        "E10"
+      ],
+      "ground": [
+        [
+          460,
+          716
+        ],
+        [
+          700,
+          722
+        ]
+      ],
+      "scale": 0.1,
+      "modulate": "#9a7e62",
+      "flee_radius": 260,
+      "return_s": [
+        10,
+        20
+      ],
+      "exit": [
+        [
+          300,
+          100
+        ],
+        [
+          700,
+          -120
+        ]
+      ]
+    },
+    {
+      "id": "birds_sky",
+      "type": "tween_path",
+      "sheet": "common/pigeon_sheet",
+      "frames": "fly",
+      "fps": 11,
+      "path": [
+        [
+          -60,
+          40
+        ],
+        [
+          900,
+          20
+        ],
+        [
+          1980,
+          60
+        ]
+      ],
+      "speed_px_s": 230,
+      "scale": 0.08,
+      "flock": 3,
+      "flock_spread": [
+        60,
+        25
+      ],
+      "bob_px": 4,
+      "direction": "random",
+      "every_s": [
+        22,
+        45
+      ],
+      "start_s": [
+        5,
+        12
+      ]
+    }
   ]
 }

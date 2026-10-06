@@ -1,7 +1,7 @@
 {
   "room": "S42",
   "source": "src/game/assets/bg_natural/S42.webp",
-  "note": "Natural S42 cut-outs (art/tools/ambient_cut.py --natural S42): sky mask for drifting clouds, the big spruce and the shrubs behind the stone wall for wind sway, the water of the small stone fountain.",
+  "note": "Natural S42 cut-outs, WINTER 2035 (owner 2026-10-06): winter sky mask (deep blue only) only; the snow-laden spruce and shrubs and the frozen fountain are not cut.",
   "items": [
     {
       "name": "sky_mask",
@@ -15,25 +15,15 @@
       "rules": [
         {
           "hue": [
-            190,
-            235
+            195,
+            238
           ],
           "sat": [
-            0.25,
+            0.34,
             1
           ],
           "val": [
-            0.45,
-            1
-          ]
-        },
-        {
-          "sat": [
-            0,
-            0.18
-          ],
-          "val": [
-            0.82,
+            0.35,
             1
           ]
         }
@@ -69,151 +59,6 @@
         340
       ],
       "scale": 0.5
-    },
-    {
-      "name": "spruce",
-      "rect": [
-        295,
-        45,
-        280,
-        600
-      ],
-      "rules": [
-        {
-          "hue": [
-            60,
-            170
-          ],
-          "sat": [
-            0.2,
-            1
-          ],
-          "val": [
-            0.1,
-            0.8
-          ]
-        }
-      ],
-      "exclude": [
-        [
-          [
-            415,
-            420
-          ],
-          [
-            450,
-            650
-          ]
-        ]
-      ],
-      "feather": 1.0,
-      "include": [
-        [
-          [
-            432,
-            48
-          ],
-          [
-            505,
-            200
-          ],
-          [
-            548,
-            380
-          ],
-          [
-            585,
-            640
-          ],
-          [
-            280,
-            640
-          ],
-          [
-            318,
-            380
-          ],
-          [
-            362,
-            200
-          ]
-        ]
-      ]
-    },
-    {
-      "name": "shrubs",
-      "rect": [
-        230,
-        585,
-        960,
-        75
-      ],
-      "rules": [
-        {
-          "hue": [
-            70,
-            160
-          ],
-          "sat": [
-            0.25,
-            1
-          ],
-          "val": [
-            0.12,
-            0.7
-          ]
-        }
-      ],
-      "exclude": [
-        [
-          [
-            295,
-            45
-          ],
-          [
-            575,
-            660
-          ]
-        ],
-        [
-          [
-            640,
-            560
-          ],
-          [
-            770,
-            660
-          ]
-        ]
-      ],
-      "feather": 1.0
-    },
-    {
-      "name": "fountain_water",
-      "rect": [
-        1345,
-        618,
-        95,
-        52
-      ],
-      "rules": [
-        {
-          "hue": [
-            170,
-            225
-          ],
-          "sat": [
-            0.12,
-            0.9
-          ],
-          "val": [
-            0.45,
-            1
-          ]
-        }
-      ],
-      "feather": 0.8,
-      "pad": 3
     }
   ]
 }

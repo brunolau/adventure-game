@@ -1,0 +1,45 @@
+{
+  "kind": "fix",
+  "from_version": 2,
+  "box_game_px": [
+    1280.0,
+    150.0,
+    640.0,
+    345.0
+  ],
+  "instruction": "The long low two-storey building on the right side of the picture, beyond the cars (a medical centre, built in the early 1980s), has the wrong colour: it must be bluish. Repaint only its walls in its real colours: the near right-hand part of the building is clad in small blue-grey and light-blue mosaic tiles, and the long part further away has bluish-teal wall panels between its two long white ribbon-window bands, slightly weathered. Keep its shape, size, flat roof line, windows and position exactly; keep the autumn trees and bushes in front of it, the lamp posts, the long panel block with the red-orange balconies behind it and the warm autumn afternoon light exactly as they are.",
+  "feather_master_px": 48,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 2020107,
+  "usd": 0.15,
+  "scope": "bg_natural/S51/",
+  "spend_log_asset": "bg_natural/S51/S51_v3_fix",
+  "prompt": "Image 1 is one of our finished point-and-click adventure game backgrounds. Make exactly this local change: The long low two-storey building on the right side of the picture, beyond the cars (a medical centre, built in the early 1980s), has the wrong colour: it must be bluish. Repaint only its walls in its real colours: the near right-hand part of the building is clad in small blue-grey and light-blue mosaic tiles, and the long part further away has bluish-teal wall panels between its two long white ribbon-window bands, slightly weathered. Keep its shape, size, flat roof line, windows and position exactly; keep the autumn trees and bushes in front of it, the lamp posts, the long panel block with the red-orange balconies behind it and the warm autumn afternoon light exactly as they are. Change nothing else: keep every other object, the camera, the composition, all positions, sizes, colours and the light exactly as in image 1. No people, no animals, no text, no logos, no frames. Image 2 is another background from the same game: keep the same painting technique. Style: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg/S51_v2.png",
+    "art/backgrounds/sokolikova-street.png"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_bg_natural_S51_S51_v3_fix_raw.png",
+  "started": "2026-10-06T01:52:50",
+  "model_description": "",
+  "parent_prompt": "You receive 2 images. Image 1 is a finished background painting of our point-and-click adventure game: Dúbravská zastávka in 1995. Image 2 is the same painting with coloured boxes that only mark where the interactive objects of the new version must be. Edit image 1 into the SAME PLACE in 2020, seen by the SAME CAMERA: keep the exact viewpoint, lens, horizon, perspective and framing, and keep the position, size and outline of every building, wall, kerb, step, door, window, pole, rail and tree trunk that exists in both eras. Change only what the time changes, as described below. Keep the painting technique, brushwork, palette handling and level of detail of image 1.\n\nThe fixed landmark 'curb' stays exactly at x 236, y 802 (12 % from the left, 74 % from the top). The fixed landmark 'track_line' stays exactly at x 1540, y 774 (80 % from the left, 72 % from the top). The fixed landmark 'clock_frame' stays exactly at x 679, y 147 (35 % from the left, 14 % from the top).\n\nEra changes: the same stop on Thursday 29 October 2020, a sunny autumn afternoon: warm low sunlight, long soft shadows, the lindens, maples and birches in yellow, orange and brown autumn colours, some fallen leaves on the platform and on the grass. The tram line was rebuilt in 2019-2020, so:\n- The old brown tube shelter with its blue roof and wooden back wall is gone. In exactly its place and footprint stands a modern shelter: a slim dark grey steel frame, a flat clear glass roof, clear glass back and side walls with thin vertical white stripes, a modern grey metal bench inside along the back. Through its glass the road, the lawn and the trees stay visible. A small paper notice with a face-mask pictogram (no text) is stuck on the glass.\n- The platform has new paving of light beige concrete tiles with a light tactile strip along the track edge. The old chipped concrete kerb block at the near left beside the shelter's corner is unchanged (still chipped, a little more weathered), and a red-and-white striped steel railing now guards the top of the ramp; the zebra crossing on the road is freshly painted.\n- The stop post is a modern dark grey post in the same place: on top the SAME round clock with its old polished brass frame (now around a new white dial), below the clock an LED departure board with orange dot-matrix dots that form no readable words or digits, and lower down a modern timetable panel with illegible print.\n- The track is rebuilt: new rails on concrete sleepers and fresh grey ballast instead of the old concrete panels, a low dark green steel mesh fence between the two tracks, new slim grey traction poles and overhead wires in the same places. NO tram: the near track in front of the platform is empty, so paint the track, the fence, the road and the medical centre that were hidden behind the old tram.\n- The red railing between the track bed and the east carriageway is now a newer galvanised steel railing; the tall rust-red lamp posts stand in the same places.\n- The low bluish two-storey medical centre on the right and the long panel block with the red-orange balconies behind it are the SAME buildings in the same places (the panel block now has insulated, freshly painted cream walls; the medical centre is a bit weathered).\n- Two or three modern cars (silver, dark blue, white) drive or stand on the east carriageway at the right (no number plates). No people.\nEverything else built (the platform's position and edges, the ramp and zebra crossing, the roads rising up the hill, the towers, the medical centre) stays exactly where it is.\n\nInteractive props of 2020:\n1. the box labelled 'Rám starých hodín' in image 2 (x 612-744, y 81-213 of the 1920x1080 frame (32-39 % from the left, 8-20 % from the top)): the round clock on top of the stop post: the old, slightly worn polished brass frame around a crisp new white dial with black ticks.\n2. the box labelled 'Starý obrubník' in image 2 (x 190-300, y 776-886 of the 1920x1080 frame (10-16 % from the left, 72-82 % from the top)): the old chipped corner of the low concrete kerb block at the near left beside the shelter's corner, at the top of the ramp - the same chip as before, a little more weathered.\n3. the box labelled 'Elektronická tabuľa' in image 2 (x 588-768, y 232-320 of the 1920x1080 frame (31-40 % from the left, 21-30 % from the top)): the black LED departure board on the stop post below the clock, glowing orange dot-matrix dots (no readable words or digits).\nthe box labelled 'exit: Pred ZŠ Sokolíkova v roku 2020' in image 2 (x 0-250, y 760-960 of the 1920x1080 frame (0-13 % from the left, 70-89 % from the top)) is the ramp and zebra crossing at the near left (towards the school). the box labelled 'exit: Autobus do Čiernej Vody' in image 2 (x 780-1020, y 430-642 of the 1920x1080 frame (41-53 % from the left, 40-59 % from the top)) is the far end of the platform (the way to the bus stop).\n\nWalkable floor: the band at x 0-1262, y 664-1015 of the 1920x1080 frame (0-66 % from the left, 61-94 % from the top) stays the open, flat platform with nothing standing on it, only light, shadows and a few fallen leaves.\nThis room has no NPC zones.\n\nFiction rules: no stop name, no transport-company logos, no line numbers, no brands, no shop or pharmacy signs, no petrol-station signs, no lettering on the medical centre, no number plates, no people, no animals. Any paper shows only illegible scribbles, no digits.\n\nImage 2 is a positioning aid only: do NOT draw any of its boxes, outlines, labels or captions. The result is image 1 edited, in the same 16:9 framing: no frames, no borders, no UI, no captions, no watermark, no text except what is asked for above, and no people or animals unless stated above.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "room": "S51",
+  "version": 3,
+  "output_size": [
+    2752,
+    1536
+  ],
+  "exported": {
+    "path": "src/game/assets/bg_natural/S51.webp",
+    "size": [
+      1920,
+      1080
+    ],
+    "quality": 90,
+    "at": "2026-10-06T01:53:20"
+  }
+}

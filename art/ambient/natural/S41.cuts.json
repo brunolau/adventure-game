@@ -1,172 +1,35 @@
 {
   "room": "S41",
   "source": "src/game/assets/bg_natural/S41.webp",
-  "note": "Natural S41 cut-outs (art/tools/ambient_cut.py --natural S41): sky mask for drifting clouds, the spruces on the rocky slope and the grass verge for wind sway. Also a cumulus cloud cut from the S41 sky (white with blue-grey shading) as a midday cloud sprite for all 2035 Jasna/Chopok rooms (the shared common/cloud_* are warm late-afternoon clouds).",
+  "note": "WINTER S41 cut-outs (art/tools/ambient_cut.py --natural S41, from the winter painting S41_winter_v6): the snow-laden spruces by the footbridge, next to Hotel Posta and on the slope top right for a gentle wind sway, the dark mountain stream for ripples. NOT re-cut here: cloud_a.webp (the summer midday cumulus that other 2035 rooms use as a shared sprite) stays untouched; its manifest entry is kept. Other S41 sprites (cabin_winter.webp, skier_a/b/c.webp) are made by a local script, see art/masters/bg_natural/S41.md.",
   "items": [
     {
-      "name": "sky_mask",
-      "kind": "mask",
-      "rect": [
-        0,
-        0,
-        1920,
-        330
-      ],
-      "rules": [
-        {
-          "hue": [
-            190,
-            235
-          ],
-          "sat": [
-            0.25,
-            1
-          ],
-          "val": [
-            0.45,
-            1
-          ]
-        },
-        {
-          "sat": [
-            0,
-            0.18
-          ],
-          "val": [
-            0.82,
-            1
-          ]
-        }
-      ],
-      "exclude": [
-        [
-          [
-            990,
-            95
-          ],
-          [
-            1215,
-            140
-          ]
-        ],
-        [
-          [
-            1085,
-            95
-          ],
-          [
-            1120,
-            330
-          ]
-        ]
-      ],
-      "feather": 1.5,
-      "grow": -1,
-      "mask_rect": [
-        0,
-        0,
-        1920,
-        340
-      ],
-      "scale": 0.5
+      "name": "spruces_bridge",
+      "rect": [330, 160, 245, 282],
+      "include": [[[412, 166], [430, 215], [446, 262], [468, 300], [490, 250], [508, 238], [526, 290], [546, 340], [560, 400], [568, 440], [345, 440], [338, 420], [350, 370], [365, 320], [380, 270], [396, 215]]],
+      "exclude": [[[438, 426], [526, 426], [526, 442], [438, 442]]],
+      "feather": 1.2
     },
     {
-      "name": "spruces_right",
-      "rect": [
-        1690,
-        20,
-        230,
-        420
-      ],
-      "rules": [
-        {
-          "hue": [
-            80,
-            175
-          ],
-          "sat": [
-            0.2,
-            1
-          ],
-          "val": [
-            0.08,
-            0.62
-          ]
-        }
-      ],
+      "name": "spruce_hotel",
+      "rect": [772, 220, 82, 150],
+      "include": [[[812, 224], [826, 262], [838, 300], [850, 340], [852, 368], [776, 368], [780, 330], [792, 292], [800, 258]]],
       "feather": 1.0
     },
     {
-      "name": "grass_verge",
-      "rect": [
-        240,
-        500,
-        980,
-        85
-      ],
-      "rules": [
-        {
-          "hue": [
-            50,
-            110
-          ],
-          "sat": [
-            0.3,
-            1
-          ],
-          "val": [
-            0.3,
-            1
-          ]
-        }
-      ],
-      "exclude": [
-        [
-          [
-            892,
-            500
-          ],
-          [
-            918,
-            585
-          ]
-        ],
-        [
-          [
-            1080,
-            500
-          ],
-          [
-            1125,
-            585
-          ]
-        ]
-      ],
+      "name": "spruce_slope",
+      "rect": [1838, 100, 82, 120],
+      "include": [[[1876, 104], [1890, 140], [1906, 175], [1918, 214], [1842, 214], [1852, 176], [1864, 140]]],
       "feather": 1.0
     },
     {
-      "name": "cloud_a",
-      "rect": [
-        140,
-        20,
-        440,
-        180
-      ],
-      "rules": [
-        {
-          "sat": [
-            0,
-            0.3
-          ],
-          "val": [
-            0.6,
-            1
-          ]
-        }
-      ],
+      "name": "stream",
+      "rect": [0, 560, 450, 175],
+      "rules": [{"hue": [170, 225], "sat": [0.18, 1], "val": [0.12, 0.62]}],
+      "include": [[[0, 566], [440, 566], [440, 600], [330, 624], [240, 646], [150, 672], [80, 704], [0, 730]]],
+      "exclude": [[[262, 570], [418, 570], [418, 632], [262, 632]]],
       "feather": 1.2,
-      "clean": 1,
-      "pad": 6
+      "clean": 1
     }
   ]
 }

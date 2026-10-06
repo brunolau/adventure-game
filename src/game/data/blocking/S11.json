@@ -1,51 +1,64 @@
 {
   "version": 1,
   "room": "S11",
-  "status": "natural re-blocking (docs/DECISIONS.md item 1, owner feedback 2026-10-05: the old Dubravka stop with the brown tube shelter and a red-cream Tatra T3); base of camera family L_STOP (S57 1982, S51 2020 are derived with identical anchors, walk_band and actor_scale)",
-  "note": "Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera: 2.04 m above the platform, horizon y 400, f ~1250 px, turned 4.6 deg left so the platform axis vanishes at x ~1060. Ground y = 400 + 2550 / Z (Z = metres ahead): the walk band bottom y 1015 is 4.15 m ahead, its back y 670 is 9.4 m ahead; ~300 px per metre at the bottom, ~133 at the back. Scale s(y) = (y - 400) / 615. The platform (X -3.6..1.6 m) runs from the bottom to the vanishing point: the long brown steel-tube shelter (solid back wall X -3.4, front tubes X -1.8, Z 6-20) with the bench inside at the left, the stop post with clock, stop plate and timetable case at the shelter's near front corner (Z 6.1), the light edge strip and the track at the right with the T3 standing at the platform (front at Z 10.5). The road (west carriageway) lies below the platform's left edge; the near-left ramp leads down to the zebra crossing towards the school.",
+  "status": "natural re-blocking, redesigned 2026-10-06 (owner Dubravka corrections: the real Svantnerova stop on M. Schneidra-Trnavskeho - the street rises slightly uphill, the tracks run right of the west carriageway on a concrete-panel bed with a red railing, the long curved brown tube shelter with the translucent blue roof, the low bluish medical centre on the right with the red-balcony panel slab behind it); base of camera family L_STOP (S57 1982, S51 2020 are derived with identical anchors, walk_band and actor_scale)",
+  "note": "Svantnerova tram stop, SW platform, looking NW along it. Pinhole camera (sketch generated from metres, log S11.md): eye 2.04 m above the platform, horizon y 400, f 1250 px, turned 4 deg right of the platform axis so the flat track vanishes at x ~873; from 22 m ahead the street and the tracks rise (slope up to 7 %) and crest at y ~333. Ground y = 400 + 2550 / Zc (Zc = depth along the view): the walk band bottom y 1015 is 4.15 m ahead, its back y 664 is 9.7 m ahead; ~300 px per metre at the bottom, ~130 at the back. Scale s(y) = (y - 400) / 615. Platform X -3.4..1.8 m (camera X 0): the long brown tube shelter (solid back wall X -3.2, front tubes X -1.3, Z 7-23) with the bench inside at the left, the stop post with clock, stop plate and timetable case at the shelter's near front corner (X -0.95, Z 6.2), the ramp gap in the low road-side wall at Z 4.4-6.9 (chipped wall end at Z 6.9), the light edge strip and the near track at the right with the T3 standing at the platform (front at Z 10.5); beyond the tracks the red railing, the east carriageway, the low bluish medical centre (X 21-33, Z 30-88) and the 8-storey red-balcony slab; left beyond the west carriageway lindens and a 12-storey point tower.",
   "background": "bg_natural/S11.webp",
-  "walk_polygon": [[0, 1015], [1449, 1015], [1230, 672], [928, 670], [850, 828], [339, 814], [65, 970], [0, 1000]],
-  "walk_band": [670, 1015],
-  "actor_scale": [0.44, 1.0],
-  "spawn": [1010, 900],
+  "walk_polygon": [[0, 1015], [0, 882], [90, 874], [204, 888], [362, 882], [366, 800], [628, 794], [660, 832], [700, 846], [742, 816], [744, 700], [750, 666], [1041, 664], [1262, 1015]],
+  "walk_band": [664, 1015],
+  "actor_scale": [0.43, 1.0],
+  "spawn": [1000, 900],
   "anchors": {
-    "curb": [262, 792],
-    "track_line": [1524, 813],
-    "clock_frame": [785, 134]
+    "curb": [236, 802],
+    "track_line": [1540, 774],
+    "clock_frame": [679, 147]
   },
   "hotspots": {
     "S11.ambient 1": {
-      "rect": [728, 452, 116, 136],
-      "interaction_point": [835, 862],
-      "label_anchor": [786, 442],
-      "reason": "glazed timetable case at eye height on the stop post at the shelter's near front corner (case H 1.15-1.75 m, Z 6.1 m)"
+      "rect": [614, 440, 128, 140],
+      "interaction_point": [800, 860],
+      "label_anchor": [640, 436],
+      "reason": "glazed timetable case at eye height on the stop post at the shelter's near front corner (case H 1.2-1.8 m, Z 6.2 m)"
     },
     "S11.ambient 2": {
-      "rect": [488, 538, 238, 222],
-      "interaction_point": [905, 762],
-      "label_anchor": [600, 528],
-      "reason": "the wooden slat bench along the inside of the shelter's back wall (Z 7-10 m); the gum sits under its seat"
+      "rect": [396, 504, 210, 204],
+      "interaction_point": [560, 832],
+      "label_anchor": [500, 494],
+      "reason": "the wooden slat bench along the inside of the shelter's back wall (Z 8.6-12.6 m); the gum sits under its seat"
     }
   },
   "exits": {
     "S11.to_S12": {
-      "rect": [40, 780, 215, 150],
-      "interaction_point": [205, 915],
-      "label_anchor": [150, 770],
-      "reason": "the short ramp at the near left down to the zebra crossing over the west carriageway, towards the school"
+      "rect": [0, 760, 250, 200],
+      "interaction_point": [110, 930],
+      "label_anchor": [125, 750],
+      "reason": "the short ramp at the near left down to the zebra crossing over the west carriageway, towards the school; the chipped end of the low concrete kerb block beside the shelter's near corner marks it (same in the whole L_STOP family S11/S51/S57)"
     },
     "S11.to_S18": {
-      "rect": [930, 520, 250, 140],
-      "interaction_point": [1075, 690],
-      "label_anchor": [1055, 510],
-      "reason": "the platform continues past the shelter to its far end and the path to the housing-estate yard"
+      "rect": [780, 430, 240, 212],
+      "interaction_point": [880, 690],
+      "label_anchor": [930, 420],
+      "reason": "the platform continues past the shelter to its far end and the path to the housing-estate yard (L_STOP family)"
     },
     "S11.to_S19": {
-      "rect": [1265, 270, 330, 355],
-      "interaction_point": [1215, 700],
-      "label_anchor": [1430, 262],
+      "rect": [1108, 300, 250, 330],
+      "interaction_point": [1050, 720],
+      "label_anchor": [1233, 290],
       "reason": "the red-cream tram standing at the platform: board it towards Karlova Ves"
     }
   },
-  "state_patches": []
+  "occluders": [
+    {
+      "id": "stop_post",
+      "polygon": [[622, 446], [737, 446], [737, 588], [686, 590], [686, 818], [671, 818], [671, 590], [622, 588]],
+      "baseline": 817,
+      "texture": null
+    }
+  ],
+  "state_patches": [],
+  "time_node": {
+    "rect": [612, 81, 132, 132],
+    "interaction_point": [720, 860],
+    "reason": "the painted stop clock on its pole is the time node (DECISIONS 'The painted S11 clock is the time node', ISSUES PT-F10): a click walks to the pole and opens the era chooser, like the HUD clock button; active only while Core lists portal targets here"
+  }
 }

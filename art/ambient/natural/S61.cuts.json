@@ -1,16 +1,69 @@
 {
   "room": "S61",
   "source": "src/game/assets/bg_natural/S61.webp",
-  "note": "Natural S61 cut-outs (art/tools/ambient_cut.py --natural S61): the pale December sky above the roof and the hill, as the mask of the clouds layer.",
+  "note": "Natural S61 cut-outs, relayout 2026-10-06: the sky mask for the hazy winter clouds.",
   "items": [
     {
       "name": "sky_mask",
       "kind": "mask",
-      "rect": [0, 0, 1920, 200],
-      "rules": [ { "sat": [0, 0.22], "val": [0.76, 1] }, { "hue": [185, 235], "sat": [0.05, 1], "val": [0.7, 1] } ],
-      "include": [[[0, 0], [1920, 0], [1920, 132], [1655, 132], [1655, 180], [1250, 168], [0, 68]]],
+      "rect": [
+        0,
+        0,
+        1920,
+        210
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            235
+          ],
+          "sat": [
+            0.08,
+            1
+          ],
+          "val": [
+            0.55,
+            1
+          ]
+        },
+        {
+          "sat": [
+            0,
+            0.12
+          ],
+          "val": [
+            0.85,
+            1
+          ]
+        }
+      ],
       "scale": 0.5,
-      "feather": 2
+      "feather": 2,
+      "include": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1920,
+            0
+          ],
+          [
+            1920,
+            110
+          ],
+          [
+            431,
+            172
+          ],
+          [
+            0,
+            172
+          ]
+        ]
+      ]
     }
   ]
 }

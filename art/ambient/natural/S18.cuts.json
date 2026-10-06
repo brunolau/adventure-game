@@ -1,105 +1,155 @@
 {
   "room": "S18",
   "source": "src/game/assets/bg_natural/S18.webp",
-  "note": "Natural S18 cut-outs (art/tools/ambient_cut.py --natural S18): the laundry on the drying-rack lines (hanging sway), the linden crown, the sky mask for the clouds.",
+  "note": "Natural S18 cut-outs (art/tools/ambient_cut.py --natural S18) from the Sokolikova-street painting (master v6): the sunset sky as the clouds' mask, the yellow towel and red shirt on the drying line (hanging sway), the big tree crown at the right, the pines and the two spruces at the left (wind), the white curtain behind the glazed loggia (hanging sway). The rug-shaking neighbour is a separate sheet (art/masters/bg_natural/S18_scripts/rug_sheet.py).",
   "items": [
     {
-      "name": "laundry",
+      "name": "sky_mask",
+      "kind": "mask",
       "rect": [
-        756,
-        414,
-        480,
-        126
+        0,
+        0,
+        1010,
+        410
+      ],
+      "rules": [
+        {
+          "hue": [
+            185,
+            240
+          ],
+          "sat": [
+            0.1,
+            1
+          ],
+          "val": [
+            0.45,
+            1
+          ]
+        },
+        {
+          "hue": [
+            0,
+            45
+          ],
+          "sat": [
+            0.04,
+            0.62
+          ],
+          "val": [
+            0.72,
+            1
+          ]
+        },
+        {
+          "hue": [
+            300,
+            360
+          ],
+          "sat": [
+            0.04,
+            0.5
+          ],
+          "val": [
+            0.72,
+            1
+          ]
+        }
       ],
       "include": [
         [
           [
-            761,
-            419
+            0,
+            0
           ],
           [
-            798,
-            491
+            1010,
+            0
+          ],
+          [
+            1010,
+            78
+          ],
+          [
+            812,
+            205
+          ],
+          [
+            700,
+            312
+          ],
+          [
+            668,
+            330
+          ],
+          [
+            540,
+            352
+          ],
+          [
+            478,
+            398
+          ],
+          [
+            372,
+            362
+          ],
+          [
+            200,
+            366
+          ],
+          [
+            0,
+            352
+          ]
+        ]
+      ],
+      "scale": 0.5,
+      "feather": 2
+    },
+    {
+      "name": "laundry",
+      "rect": [
+        1612,
+        622,
+        160,
+        124
+      ],
+      "include": [
+        [
+          [
+            1619,
+            636
+          ],
+          [
+            1689,
+            636
+          ],
+          [
+            1689,
+            740
+          ],
+          [
+            1619,
+            740
           ]
         ],
         [
           [
-            801,
-            441
+            1690,
+            626
           ],
           [
-            839,
-            523
-          ]
-        ],
-        [
-          [
-            852,
-            419
+            1766,
+            626
           ],
           [
-            888,
-            515
-          ]
-        ],
-        [
-          [
-            904,
-            442
+            1766,
+            712
           ],
           [
-            950,
-            511
-          ]
-        ],
-        [
-          [
-            961,
-            421
-          ],
-          [
-            999,
-            501
-          ]
-        ],
-        [
-          [
-            1031,
-            442
-          ],
-          [
-            1068,
-            535
-          ]
-        ],
-        [
-          [
-            1081,
-            422
-          ],
-          [
-            1119,
-            491
-          ]
-        ],
-        [
-          [
-            1131,
-            442
-          ],
-          [
-            1169,
-            524
-          ]
-        ],
-        [
-          [
-            1191,
-            420
-          ],
-          [
-            1228,
-            515
+            1690,
+            712
           ]
         ]
       ],
@@ -107,62 +157,113 @@
       "clean": 0
     },
     {
-      "name": "linden",
+      "name": "tree_crown",
       "rect": [
-        1320,
+        1266,
         0,
-        600,
-        520
+        654,
+        560
       ],
       "rules": [
         {
           "hue": [
-            55,
-            140
+            40,
+            150
           ],
           "sat": [
-            0.25,
+            0.22,
             1
           ],
           "val": [
-            0.15,
+            0.1,
+            0.85
+          ]
+        },
+        {
+          "hue": [
+            24,
+            40
+          ],
+          "sat": [
+            0.42,
             1
+          ],
+          "val": [
+            0.08,
+            0.5
           ]
         }
       ],
       "feather": 1.0
     },
     {
-      "name": "sky_mask",
-      "kind": "mask",
+      "name": "pines",
       "rect": [
         0,
         0,
-        660,
-        330
+        300,
+        570
       ],
       "rules": [
         {
           "hue": [
-            185,
-            235
+            24,
+            130
           ],
           "sat": [
-            0.12,
+            0.2,
             1
           ],
           "val": [
-            0.55,
-            1
+            0.07,
+            0.62
           ]
-        },
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "spruces",
+      "rect": [
+        298,
+        404,
+        168,
+        268
+      ],
+      "rules": [
+        {
+          "hue": [
+            24,
+            130
+          ],
+          "sat": [
+            0.16,
+            1
+          ],
+          "val": [
+            0.07,
+            0.6
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "curtain",
+      "rect": [
+        1204,
+        434,
+        48,
+        52
+      ],
+      "rules": [
         {
           "sat": [
             0,
-            0.1
+            0.3
           ],
           "val": [
-            0.88,
+            0.55,
             1
           ]
         }
@@ -170,33 +271,25 @@
       "include": [
         [
           [
-            0,
-            0
+            1207,
+            437
           ],
           [
-            660,
-            0
+            1249,
+            437
           ],
           [
-            660,
-            300
+            1249,
+            483
           ],
           [
-            380,
-            300
-          ],
-          [
-            370,
-            250
-          ],
-          [
-            0,
-            250
+            1207,
+            483
           ]
         ]
       ],
-      "scale": 0.5,
-      "feather": 2
+      "feather": 0.8,
+      "clean": 0
     }
   ]
 }

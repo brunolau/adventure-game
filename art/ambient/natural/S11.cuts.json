@@ -1,15 +1,15 @@
 {
  "room": "S11",
  "source": "src/game/assets/bg_natural/S11.webp",
- "note": "Natural S11 cut-outs (art/tools/ambient_cut.py --natural S11): the green lindens at the left beyond the road and the trees at the right beyond the tracks (wind sway), and the blue sky (mask for the drifting clouds).",
+ "note": "Natural S11 cut-outs, redesigned painting 2026-10-06 (owner Dubravka corrections): the lindens at the left beyond the west carriageway, the trees behind the shelter roof and the bushes in front of the medical centre (wind sway; the trees right of the platform end are hidden behind the standing T3), and the blue sky (mask for the drifting clouds; the shelter's blue roof, the clock, the pantograph, the point tower's windows and the bluish medical centre are excluded).",
  "items": [
   {
    "name": "trees_left",
    "rect": [
     0,
-    118,
-    392,
-    330
+    90,
+    345,
+    420
    ],
    "rules": [
     {
@@ -27,20 +27,70 @@
      ]
     }
    ],
+   "exclude": [
+    [
+     [
+      248,
+      250
+     ],
+     [
+      345,
+      510
+     ]
+    ]
+   ],
    "feather": 1.0
   },
   {
-   "name": "trees_right",
+   "name": "trees_mid",
    "rect": [
-    1588,
-    205,
-    332,
-    240
+    372,
+    160,
+    268,
+    96
    ],
    "rules": [
     {
      "hue": [
       52,
+      145
+     ],
+     "sat": [
+      0.22,
+      1
+     ],
+     "val": [
+      0.2,
+      1
+     ]
+    }
+   ],
+   "exclude": [
+    [
+     [
+      350,
+      40
+     ],
+     [
+      536,
+      175
+     ]
+    ]
+   ],
+   "feather": 1.0
+  },
+  {
+   "name": "bushes_right",
+   "rect": [
+    1730,
+    395,
+    190,
+    105
+   ],
+   "rules": [
+    {
+     "hue": [
+      45,
       145
      ],
      "sat": [
@@ -61,7 +111,7 @@
     0,
     0,
     1920,
-    440
+    345
    ],
    "rules": [
     {
@@ -85,42 +135,52 @@
    "exclude": [
     [
      [
-      340,
-      240
+      240,
+      248
      ],
      [
-      960,
-      440
+      820,
+      345
      ]
     ],
     [
      [
-      700,
-      50
+      600,
+      70
      ],
      [
-      870,
-      440
+      760,
+      345
      ]
     ],
     [
      [
-      1130,
+      1078,
       80
      ],
      [
-      1600,
-      440
+      1264,
+      345
      ]
     ],
     [
      [
-      1800,
-      0
+      1268,
+      140
      ],
      [
-      1850,
-      440
+      1920,
+      345
+     ]
+    ],
+    [
+     [
+      350,
+      38
+     ],
+     [
+      536,
+      262
      ]
     ]
    ]

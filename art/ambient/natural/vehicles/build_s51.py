@@ -1,4 +1,4 @@
-"""S51 (2020): cut the modern tram that the paid edit S51_tram_v2_raw.png painted into the S51 master (free, local).
+"""S51 (2020): cut the modern tram that the paid edit S51_tram_v4_raw.png painted into the S51 master v3 (free, local).
 
 The edit is the S51 painting with an unbranded modern low-floor tram standing at the platform (same place as the
 T3 in S11). The tram (with its pantograph and the shadow it casts) is the difference between the edit and the
@@ -20,20 +20,20 @@ sys.path.insert(0, str(HERE))
 import cutlib  # noqa: E402
 
 OUT = ROOT / "src" / "game" / "assets" / "ambient" / "S51" / "natural"
-VP_GAME = (1050.0, 390.0)            # near-track scaling point (between the rails' fit and the tram's own lines)
-REGION = (1430, 80, 2380, 1080)      # master px
-BODY_POLY = [(1618, 528), (1700, 488), (1880, 386), (1925, 352), (2205, 340), (2285, 398), (2312, 470), (2316, 700),
-             (2318, 800), (2318, 965), (2255, 995), (2000, 1005), (1900, 965), (1760, 862), (1620, 742), (1612, 560)]
-PANTO_BOX = [(1860, 85), (2130, 85), (2130, 372), (1860, 372)]
-SHADOW_POLY = [(1436, 690), (1600, 660), (1760, 862), (1900, 965), (2000, 1012), (2200, 1012), (2200, 1040),
-               (1436, 1040)]
+# 2026-10-06: redesigned S51 (owner Dubravka corrections) - master v3, edit S51_tram_v4_raw.png. Same L_STOP camera
+# as S11: the near track's painted rails converge at (888, 407) (measured on the S11 empty-track edit).
+VP_GAME = (888.0, 407.0)
+REGION = (1091, 28, 2186, 1060)      # master px
+BODY_POLY = [(1361, 491), (1432, 427), (1646, 350), (2072, 350), (2129, 427), (2129, 1027), (1660, 1030), (1574, 981), (1432, 825), (1361, 740)]
+PANTO_BOX = [(1567, 40), (1866, 40), (1866, 373), (1567, 373)]
+SHADOW_POLY = [(1119, 666), (1378, 666), (1378, 740), (1432, 825), (1574, 981), (1660, 1030), (1589, 1033), (1219, 927), (1119, 796)]
 TINT = np.array([22, 49, 98], dtype=np.float32)
 SHADE = np.array([40, 40, 58], dtype=np.float32)
 
 
 def main() -> None:
-    clean_full = Image.open(ROOT / "art/masters/bg_natural/S51_v1.png").convert("RGB")
-    veh_full = Image.open(HERE / "S51_tram_v2_raw.png").convert("RGB")
+    clean_full = Image.open(ROOT / "art/masters/bg_natural/S51_v3.png").convert("RGB")
+    veh_full = Image.open(HERE / "S51_tram_v4_raw.png").convert("RGB")
     x0, y0, x1, y1 = REGION
     c = np.asarray(clean_full, dtype=np.float32)[y0:y1, x0:x1]
     v = np.asarray(veh_full, dtype=np.float32)[y0:y1, x0:x1]
@@ -52,6 +52,10 @@ def main() -> None:
     panto = cutlib.morph(panto, close=3) & ((lum_v < 140) | (diff > 36)) & panto_zone
     sky = (v[..., 2] > v[..., 0] + 12) & (lum_v > 135)
     panto = cutlib.morph(panto & ~sky, close=1, open_=1)
+    # 2026-10-06: drop specks (repainted bits of overhead wire) not connected to the tram / its pantograph
+    body = cutlib.keep_connected(body, [cutlib.g2m(1320, 600)], (x0, y0))
+    panto = cutlib.keep_connected(panto | cutlib.morph(body, grow=2) & panto_zone, [cutlib.g2m(1219, 245), cutlib.g2m(1254, 146), cutlib.g2m(1163, 55)],
+                                  (x0, y0), bridge=2) & ~body
     obj = body | panto
     obj_a = np.maximum(cutlib.soft(body, 0.8), cutlib.soft(panto, 0.6))
     obj_a = np.where(obj, 1.0, obj_a)
