@@ -53,3 +53,37 @@ MODELS = {
     "eleven": ("elevenlabs/tts/eleven-v4", ELEVEN),
     "minimax": ("fal-ai/minimax/speech-2.8-hd", MINIMAX),
 }
+
+
+# --------------------------------------------------------------------------- recast 2026-10-06 (owner feedback)
+# Owner after the trial: swap the voices of Adam and Roman (Roman's voice is the better one for Adam), make the
+# four women clearly different from each other, and give the sarcastic lines a tiny touch more irony.
+# GEMINI above stays as the v1 record; GEMINI_V2 is the current casting (art/voice/tools/recast.py).
+
+GEMINI_V2 = {
+    # Adam takes Roman's v1 voice and a direction close to Roman's (relaxed, friendly, easy-going) plus his own traits.
+    "ADAM": {"voice": "Achird", "style": SK + "A 35-year-old repairman: relaxed, friendly, easy-going and warm, "
+             "conversational, medium pace, dry understated humour, never theatrical, never cynical."},
+    # Roman takes Adam's v1 voice, with the clear conversational pacing Adam's v1 direction had.
+    "ROMAN": {"voice": "Iapetus", "style": SK + "A 29-year-old courier: relaxed, warm and friendly, conversational, "
+              "medium pace, easy-going, never cynical."},
+    # Four women, spread in pitch, timbre and pace (chosen by the audition in art/voice/recast/audition/).
+    "ELA": {"voice": "Despina", "style": SK + "A woman in her mid-forties who runs the volunteer pick-up point: brisk "
+            "and energetic, quick pace but every word clear, firm, crisp and matter-of-fact, kind but busy, practical; "
+            "a bright, alert, slightly higher voice."},
+    "DANA": {"voice": "Vindemiatrix", "style": SK + "A woman in her early fifties, a village shop assistant at a counter "
+             "window: warm, lower and slightly husky voice with a little rasp, calm and unhurried, deadpan, dry "
+             "counter wisdom, friendly underneath."},
+    "MIRA20": {"voice": "Gacrux", "style": SK + "An 80-year-old grandmother, a retired engineer: an older woman's "
+               "voice, a little thinner with age, but alert, sharp and quick-witted; crisp, precise diction, a "
+               "steady natural pace (old, not slow), short sentences, dry and warm, no sentimentality."},
+    "LENKA": {"voice": "Leda", "style": SK + "A cheerful woman in her mid-thirties walking her dog: a bright, "
+              "light, youthful and higher voice, smiling and amused, lively intonation, easy-going, natural "
+              "medium-quick pace."},
+    "JOZEF": GEMINI["JOZEF"],
+    "SYSTEM": GEMINI["SYSTEM"],
+}
+
+# Added to the style prompt of the lines classified as dry irony / sarcasm (recast.DELIVERY).
+IRONY = (" Delivery for this line: a touch of dry irony, understated - just a slight knowing hint in the voice, "
+         "never theatrical, never mocking.")

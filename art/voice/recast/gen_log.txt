@@ -1,0 +1,77 @@
+217 done, 0 failed
+topic.ROMAN.ambient 1.001 [ADAM] [['', 'a'], ['adries', 'driez']] []
+   script: Veľa adries dnes?
+   scribe: Vela á driez dnes?
+topic.ROMAN.ambient 2.002 [ROMAN] [['mi', 'ti']] []
+   script: Presne tak. A ľudia mi ďakujú a mávajú cez okná. Zvláštne, ale milé.
+   scribe: Presne tak. A ľudia ti ďakujú a mávajú cez okná. Zvláštne, ale milé.
+topic.ROMAN.extra 2.003 [ADAM] [['a', '']] []
+   script: A v Čiernej Vode sú adresy normálne?
+   scribe: V Čiernej vode sú adresy normálne?
+action.Q1A.x01 [ADAM] [['', 'ho'], ['ju', 'ne'], ['nenasla', 'nasla']] ['rate 22.6 chars/s']
+   script: A ty si ju nenašla?
+   scribe: A ty si ho ne našla?
+topic.ELA.ambient 2.x01 [ADAM] [['vypila', ''], ['si', 'vybilas']] []
+   script: A vypila si ju?
+   scribe: A vybilas ju?
+topic.ELA.ambient 2.x02 [ELA] [['prvy', 'pre'], ['dusok', 'vidusok']] []
+   script: Prvý dúšok. Bola to dobrá polievka, len zlá káva.
+   scribe: Pre vidúšok. Bola to dobrá polievka, len zlá káva
+topic.ELA.extra 1.004 [ELA] [['uci', 'ci'], ['', 'po'], ['poobede', 'obede']] []
+   script: Ráno učí cez kameru, poobede balí tu. Vraví, že zemiaky aspoň nevypínajú kameru.
+   scribe: Ráno či cez kameru po obede balí tu. Vraví, že zemiaky aspoň nevypínajú kameru.
+topic.ELA.extra 2.006 [ELA] [['zoznamy', 'zoznam']] []
+   script: Má pätnásť. Nech plánuje, zoznamy jej zatiaľ požičiam.
+   scribe: Má pätnásť, nech plánuje. Zoznam jej zatiaľ požičiam.
+topic.ELA.extra 3.006 [ELA] [['si', 'syn']] []
+   script: Schválila. A navrhla piaty: kto nezdvíha telefón. Si na ňom prvý.
+   scribe: Schválila a navrhla piaty: Kto nezdvíha telefón. Syn na ňom prvý.
+topic.DANA.ambient 1.x03 [DANA] [['lebo', 'alebo'], ['ju', ''], ['setri', 'usetri']] []
+   script: Lebo si ju šetrí na teba.
+   scribe: Alebo si ušetrí na teba
+topic.DANA.extra 2.001 [ADAM] [['', 'a']] []
+   script: Ako sa ti predáva cez okienko?
+   scribe: A ako sa ti predáva cez okienko?
+topic.DANA.extra 2.003 [ADAM] [['', 'no']] []
+   script: A čo ti najviac chýba?
+   scribe: No a čo ti najviac chýba?
+action.G05.x03 [ADAM] [['my', 'mi'], ['my', 'mi']] []
+   script: My? Kto my?
+   scribe: Mí? Kto mí?
+topic.MIRA20.ambient 1.x01 [MIRA20] [['zozname', 'zazname']] []
+   script: Na Elinom zozname som prvá aj tak. Overila som si to.
+   scribe: Na Elinom zázname som prvá aj tak. Overila som si to
+topic.MIRA20.ambient 2.002 [ADAM] [['', 'hm']] []
+   script: A to je výhoda?
+   scribe: Hm, a to je výhoda?
+topic.MIRA20.ambient 2.x01 [ADAM] [['lyze', 'lise']] []
+   script: A tie tri lyže v dielni?
+   scribe: A tie tri líše v dielni?
+topic.MIRA20.extra 1.003 [ADAM] [['nespajkoval', 'nezspajkoval']] []
+   script: Lyžičku som nakoniec nespájkoval.
+   scribe: Lyžičku som nakoniec nezspajkoval
+topic.MIRA20.extra 2.003 [ADAM] [['zapla', 'za'], ['ho', 'plaho']] []
+   script: A zapla ho?
+   scribe: A za plaho?
+topic.JOZEF.ambient 1.x03 [JOZEF] [['ze', '']] []
+   script: Že všade. Tak som si nechal ten, čo ich má aspoň na jednom mieste.
+   scribe: Všade. Tak som si nechal ten, čo ich má aspoň na jednom mieste.
+action.Q2B.x03 [ELA] [['pripni', 'pripnij']] []
+   script: Len ho pripni správne. Raz ho tam niekto dal hore nohami a ľudia volali na čísla, ktoré neexistujú.
+   scribe: Len ho pripnij správne. Raz ho tam niekto dal hore nohami a ľudia volali na čísla, ktoré neexistujú.
+action.Q2C.002 [ADAM] [['je', '']] []
+   script: Aj telefónne číslo je veľkým písmom.
+   scribe: Aj telefónne číslo veľkým písmom
+action.Q1B.001 [ADAM] [['obhryzena', 'obhrizena']] []
+   script: Suchá a poriadne obhryzená. Majiteľ sa prihlási sám.
+   scribe: Suchá a poriadne obhrizená. Majiteľ sa prihlási sám
+action.G07.001 [ADAM] [['zvon', ''], ['a', 'zvona'], ['1995', '995']] []
+   script: ZVON a nálepka „Sokolíkova 1995“. Ten prístroj poznám zo školy. Vtedy sme naň nesmeli ani dýchnuť.
+   scribe: Zvona, nálepka Sokolíková 995. Ten prístroj poznám zo školy. Vtedy sme naň nesmeli ani dýchnuť
+action.G08.001 [ADAM] [['poistka', 'pojistka']] []
+   script: Najprv odpojím malý zdroj, potom dám dole kryt. Poistka je prepálená, hodnota sa dá prečítať.
+   scribe: Najprv odpojím malý zdroj, potom dám dole kryt. Pojistka je prepálená. Hodnota sa dá prečítať
+action.G09.002 [ADAM] [['ozyva', 'uziva']] []
+   script: Pri prístroji, ktorý sa ozýva bez prúdu, radšej neimprovizujem.
+   scribe: Pri prístroji, ktorý sa užíva bez prúdu, radšej neimprovizujem
+217 records, 182 verbatim, 25 with differences; recast spend $0.5967

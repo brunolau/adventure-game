@@ -2,7 +2,9 @@
 
 The owner asked whether AI voiceover is worth it for the dialogue. This trial voices **every spoken dialogue line
 of the first part of the game** with synthetic Slovak voices, checks them automatically and puts them on a
-listening page. Nothing has been copied into the game yet.
+listening page. **Recast 2026-10-06** (owner feedback after listening; section at the end): Adam and Roman swapped
+voices, the four women were recast, the dry or sarcastic lines got a touch of irony, and 217 lines were regenerated.
+The current files (v2 where recast, v1 elsewhere) are also in `src/game/assets/voice/`.
 
 - Listening page: `docs/voice/trial.html` (open it locally; it plays the OGG files by relative path)
 - Final files: `art/voice/trial/<line_id>.ogg` (237 files, 15.4 min, 9.7 MB) + `art/voice/trial/manifest.json`
@@ -100,7 +102,7 @@ MiniMax is a good second; its takes are kept in `art/voice/takes/minimax/` and t
 switch, so the owner can compare both on every line by ear. The final judgement must be by ear anyway: voice
 age, warmth and humour cannot be measured.
 
-## Casting (one consistent stock voice per character, no imitation of a real person)
+## Casting v1 (superseded for six characters by the recast at the end; one consistent stock voice per character, no imitation of a real person)
 
 | character | brief (VOICES.md, game.json) | Gemini voice + direction | MiniMax alternative |
 |---|---|---|---|
@@ -191,9 +193,170 @@ The AudioService already plays `res://assets/voice/<line_id>.ogg` on the Voice b
 3. checks with `-- --audio-report` that the lines play.
 
 **Text changes invalidate audio.** The trial was made from the texts of 2026-10-06 ~22:00. Before copying, compare
-`manifest.json` `text` with the current `dialogue.csv`; for every line whose text changed, regenerate
-(`python art/voice/tools/gen_all.py gemini --only "<line_id>"` after deleting its `art/voice/raw/gemini/<line_id>.json`,
-then `finalize.py gemini`). A future pipeline step should store the text hash next to each OGG.
+`manifest.json` `text` with the current `dialogue.csv`; for every line whose text changed, run
+`extract_lines.py`, then regenerate. Since the recast (manifest version 2): for Adam, Roman, the four women and the
+dry-irony lines delete `art/voice/raw/gemini_v2/<line_id>.json` and run
+`python art/voice/tools/recast.py gen --only "<line_id>"`, then `recast.py finalize` and `recast.py install`; for
+Jozef's other lines and SYSTEM use `gen_all.py gemini --only "<line_id>"` (it now skips recast lines) and copy the new
+`art/voice/takes/gemini/<line_id>.ogg` into `art/voice/trial/` by hand. `finalize.py` refuses to overwrite the v2
+manifest. A future pipeline step should store the text hash next to each OGG.
 
 Repository note: `art/voice/raw/` holds all raw takes (≈ 75 MB, mostly WAV) and their JSON check records; it is
 an intermediate folder and does not need to be committed (the JSON records are what `build_page.py` reads).
+
+## Recast 2026-10-06
+
+The owner listened to the trial and asked: swap the voices of Adam Hruška and Roman Kováč (Roman's voice is the
+better one, so Adam gets it); give sarcastic lines a little more irony ("not too much, just a tiny bit"); make the
+female voices more varied. Same model (Gemini 3.8 Flash TTS), same shared Slovak pronunciation prompt, same
+post-processing. Tools: `art/voice/tools/recast.py` (casting in `casting.py` → `GEMINI_V2`, `IRONY`),
+`audition.py`, `voice_features.py`, `recast_stats.py`.
+
+### New casting
+
+I cannot listen, so pitch, timbre and pace were measured on the raw takes (median per character; pitch by YIN,
+timbre as spectral centroid). In v1 three of the women sat within 2 semitones of each other (Lenka 153 Hz, Dana
+169 Hz, Ela 170 Hz), and Ela and Dana had the same pitch.
+
+| character | v1 voice | **v2 voice** | v2 direction (after the shared Slovak prompt) | pitch v1 → v2 | timbre v1 → v2 | pace v1 → v2 (chars/s) |
+|---|---|---|---|---|---|---|
+| Adam (35) | Iapetus | **Achird** (Roman's v1 voice) | 35-year-old repairman: relaxed, friendly, easy-going and warm, conversational, medium pace, dry understated humour, never theatrical, never cynical (Roman's v1 direction plus Adam's traits) | 110 → 115 Hz | 896 → 986 Hz | 14.3 → 15.7 |
+| Roman (29) | Achird | **Iapetus** (Adam's v1 voice) | 29-year-old courier: relaxed, warm and friendly, conversational, medium pace, easy-going, never cynical | 132 → 118 Hz | 901 → 992 Hz | 15.7 → 16.1 |
+| Lenka (30s, cheerful) | Callirrhoe | **Leda** (youthful) | cheerful woman in her mid-thirties: bright, light, youthful, higher voice, smiling and amused, lively intonation, natural medium-quick pace | 153 → **184 Hz** | 1004 → 1279 Hz | 13.4 → 13.5 |
+| Ela (40s, brisk) | Kore | **Despina** | woman in her mid-forties who runs the pick-up point: brisk and energetic, quick pace but every word clear, firm, crisp, matter-of-fact, kind but busy; bright, alert, slightly higher voice | 170 → **163 Hz** | 1118 → 1097 Hz | 18.5 → 16.9 |
+| Dana (50s, warm, a bit raspy) | Sulafat | **Vindemiatrix** (darkest timbre in the audition) | woman in her early fifties, shop assistant at a counter window: warm, lower, slightly husky voice with a little rasp, calm and unhurried, deadpan, friendly underneath | 169 → **137 Hz** | 1249 → **936 Hz** | 12.0 → 12.1 |
+| Mira 2020 (about 80, engineer) | Gacrux | **Gacrux** (kept: the only mature voice; new direction) | 80-year-old grandmother, retired engineer: older, a little thinner voice, but alert, sharp and quick-witted; crisp, precise diction, steady natural pace (old, not slow), short sentences, dry and warm | 129 → **124 Hz** | 1192 → 1177 Hz | 12.3 → 12.5 |
+| Jozef, SYSTEM | Algenib, Schedar | unchanged | unchanged | | | |
+
+The women now span 124–184 Hz, about 7 semitones. Lenka and Ela are 2 semitones apart, Ela and Dana 3. Dana and
+Mira are only 1.7 apart, but their timbre differs a lot: Dana is the darkest voice, Mira the thinnest, and Mira's
+lines outside S06 also have the phone EQ. Each woman also has her own pace. Ela is quick (16.9). Lenka is lively
+(13.5, with the widest melody in the audition). Dana and Mira are unhurried (12.1 / 12.5).
+
+**Audition** (`art/voice/recast/audition/`, playable on the page): one real line per role, spoken by each candidate
+stock voice with the role's new direction, then measured and checked by Scribe.
+
+- Lenka: Leda 211 Hz, Laomedeia 205, Aoede 193, Zephyr 173, Autonoe 173 → Leda (highest, widest melody).
+- Ela: Despina 175 Hz, Erinome 164, Kore 162, Pulcherrima 126 → Despina (midway between Lenka and Dana).
+- Dana: Sulafat 159 Hz, Achernar 155, Vindemiatrix 143 with the darkest timbre (852 Hz centroid) → Vindemiatrix.
+- Mira: Gacrux 134 Hz, Vindemiatrix 153, Achernar 162 → Gacrux. Her first new direction ("measured pace, slightly
+  creaky") made her too slow (9.3 chars/s against 12.5 in v1). I changed it to "steady natural pace (old, not
+  slow)" and re-auditioned: 11.5 chars/s.
+
+### Dry irony / sarcasm
+
+I read and classified every scoped line. A line counts when its humour lives in a wry twist the speaker means:
+self-irony, a dry comeback, mock-seriousness, an understatement or an ironic question. Set-up questions, sincere
+lines, instructions and plain information do not count. The lines that count get one extra sentence in the style
+prompt:
+
+> Delivery for this line: a touch of dry irony, understated - just a slight knowing hint in the voice, never
+> theatrical, never mocking.
+
+**69 lines** count: Adam 32, Ela 12, Mira 9, Dana 5, Lenka 5, Roman 3, Jozef 3. The manifest lists them (`delivery`
+per line, plus `recast.delivery_lines` with the kind of irony), and the page tags them "dry irony".
+
+- Adam: entry.S01.001, action.G01.001, topic.ROMAN.extra 2.003, action.Q1A.x04, topic.LENKA.ambient 1.003,
+  action.G02.003, topic.ELA.extra 2.003, topic.ELA.extra 2.005, topic.ELA.extra 3.005, action.G03.x04,
+  topic.DANA.ambient 1.003, topic.DANA.ambient 2.002, entry.S06.001, action.G05.x01, action.G05.x05,
+  topic.MIRA20.ambient 1.003, topic.MIRA20.ambient 2.002, action.G06.001, entry.S07.001, entry.S08.001,
+  action.Q1B.001, action.Q1C.001, action.Q1C.004, action.Q1C.x02, entry.S09.001, entry.S10.001, action.G08.002,
+  action.G09.002, action.G10.003, action.G11.002, cutscene.CS01.02.002, cutscene.CS01.03.001
+- Mira: action.G04.x03, action.G05.x02, action.G05.x04, topic.MIRA20.ambient 1.x01 / 1.x03 / 2.003 / 2.x02,
+  topic.MIRA20.extra 1.004 / 2.004
+- Ela: action.G02.x03, action.G02.004, action.G02.x05, topic.ELA.ambient 1.x01 / 1.x03 / 2.x02 / 2.x04,
+  topic.ELA.extra 1.006 / 2.002 / 3.004 / 3.006, action.Q2B.x03
+- Dana: action.G03.004, topic.DANA.ambient 1.x01 / 1.x03, topic.DANA.extra 1.004 / 3.004
+- Lenka: action.Q1A.001, action.Q1A.x02, topic.LENKA.extra 1.004 / 2.004, action.Q1C.x03
+- Roman (wry, never cynical): topic.ROMAN.ambient 1.x01 / 2.x02, topic.ROMAN.extra 2.004
+- Jozef (gentle irony about technology): action.Q2A.x02, topic.JOZEF.ambient 1.x03, action.Q2C.003
+
+Measured effect: the irony lines are a little slower (13.7 against 15.4 chars/s on average; Adam 13.6 against
+16.3). They also have a slightly longer beat before the punchline (Adam's mean longest pause 0.42 s against
+0.17 s). No irony line pauses longer than 1.1 s. Jozef's three lines changed the most (9.4 against 11.0 chars/s). Only
+an ear can tell whether that is "a tiny bit". The page has a Before / After switch and a "play before" button on
+every recast line.
+
+### Regeneration and check
+
+Only the lines whose voice or delivery changed were regenerated: **217 of 237** (all 214 lines of Adam, Roman, Ela,
+Dana, Mira and Lenka, plus Jozef's 3 ironic lines). Jozef's other 16 lines and the 4 SYSTEM lines stay v1.
+
+- Each line got one Gemini take and one ElevenLabs Scribe v2 check (no Whisper). A transcript counts as different
+  when a word is substituted, missing or garbled. Differences that are ignored: diacritics, punctuation, word
+  boundaries ("poobede" / "po obede") and known STT spellings ("Botka", digits).
+- 182 of the 217 first takes were transcribed verbatim. 19 lines got **exactly one retake**: the ones whose
+  transcript differed, plus "My? Kto my?", which came back with a lengthened vowel. Short lines (≤ 6 words) got the
+  v1 clarity hint "Pronounce every word fully and clearly, unhurried." The better take was kept. 14 of the 19
+  retakes fixed the line.
+- Result: 194 of 217 lines verbatim, Scribe WER 1.45 % (0.99 % ignoring diacritics). The same lines in v1: 1.24 %.
+- Post-processing is the same as in v1: trim, DC removal, phone EQ for Mira's G04 and CS01 lines, −16 LUFS, soft
+  limiter at −1.5 dBFS, fades, OGG q4. One change: Adam's new voice has sharper peaks, so a single limiter pass
+  left many of his lines at −17 to −19 LUFS. `recast.finish` now repeats the loudness step until the line is
+  within 0.3 LU of −16. Result: −16.0 to −16.9 LUFS (one 1.5 s line at −17.5), peaks ≤ −0.7 dBTP.
+
+**Flagged for the owner (8 lines, tagged "check" on the page, `recast.flagged` in the manifest):**
+
+Still different after the one retake (5):
+
+- `topic.ROMAN.ambient 1.001` Adam: "Veľa adries dnes?" heard as "Veľádrie dnes". "adries" may be swallowed (short
+  lines were a weak spot in v1 too).
+- `topic.ELA.ambient 2.x01` Adam: "A vypila si ju?" heard as "A vybilas ju?". "si" is reduced, and p sounds like b.
+- `topic.DANA.ambient 1.x03` Dana: "Lebo si ju šetrí na teba." heard as "Lebo si už šetrí".
+- `action.Q2B.x03` Ela: "pripni" heard as "pripnij" in both takes (and in v1 with Kore). Probably a glide before
+  "správne", but listen.
+- `action.G08.001` Adam: "Poistka" heard as "Pojistka" in both takes. The other "poistka" lines are fine. If it
+  sounds Czech, changing the spelling in the TTS input would fix it.
+
+Meaning unchanged, so no retake, but listen (3):
+
+- `topic.DANA.extra 2.001`: Scribe hears an extra "A" before Adam's question.
+- `topic.DANA.extra 2.003`: an extra "No".
+- `topic.MIRA20.ambient 2.002`: an extra "Hm," before the ironic question.
+
+Spelling-only differences (no action): `topic.MIRA20.extra 1.003` "nezspajkoval" and `action.Q1B.001` "obhrizená"
+(y and i sound the same). `action.Q2C.001` (Jozef, v1, not regenerated) keeps its v1 "check" tag.
+
+**Also listen for:**
+
+- Adam and Roman are now close in pitch: 116 Hz median on Adam's plain lines, 120 Hz for Roman. That matters in
+  Roman's topics, where they alternate.
+- Adam's Achird sits about 2 semitones lower than Roman's v1 lines in the same voice (132 Hz). The likely cause is
+  the age and dry-humour cues in Adam's direction.
+
+Possible fixes, if needed:
+
+- If Adam should sound exactly like v1 Roman: regenerate his 120 lines with Roman's v1 wording only (about $0.30
+  with Scribe).
+- If Roman needs more contrast: a younger, brighter direction for his 12 lines (about $0.03).
+
+### Files
+
+- `art/voice/trial/<line_id>.ogg`: the current files (v2 for the 217 recast lines).
+- `art/voice/trial/manifest.json`, fields per line: `version` (1 or 2), `voice`, `style_instructions`,
+  `delivery`, `delivery_kind`, `stt` (Scribe only for v2, plus `flag`) and `before` (v1 voice, file and STT). Top
+  level: `version: 2`, `versions` and `recast` (casting v1/v2, irony direction, delivery lines, flagged lines,
+  spend).
+- `art/voice/takes/gemini_v1/`: frozen v1 files of the 217 recast lines (the page's "Before").
+- `art/voice/takes/gemini_v2/` and `art/voice/raw/gemini_v2/`: the new takes and their JSON check records.
+- `art/voice/recast/`: audition, `flags.json`, measured features v1/v2, generation log.
+- `docs/voice/trial.html`, rebuilt. New on the page:
+  - a "Recast lines: Before / After" switch, and "play before/after" on each recast line;
+  - the filters "only recast lines" and "only dry-irony lines";
+  - the recast summary, the flags, casting v1 → v2, the measured features and the audition.
+- **Game:** the 217 regenerated OGGs replaced the trial files of the same names in `src/game/assets/voice/`. All
+  237 files there now match `art/voice/trial/`. Their `.ogg.import` files are unchanged; the next Godot import (not
+  run here) reimports the changed sources.
+
+Texts: all 237 lines were compared with `dialogue.csv` right before generation and again before the copy. No
+differences.
+
+### Cost
+
+| | USD |
+|---|---|
+| Audition (16 short TTS takes + Scribe) | 0.07 |
+| Gemini TTS for 217 lines + 19 retakes (11,645 chars) | 0.52 |
+| Scribe v2 checks (236 takes) | 0.13 |
+| **Recast total**, computed per call (art/spend-log.csv rounds each row to 3 decimals and shows 0.711 under `voice/recast/`) | **0.72** (cap 5) |
+| Trial + recast | ≈ 4.43 |

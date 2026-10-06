@@ -3,6 +3,8 @@
 The page is self-contained (inline CSS/JS, data embedded) and references the OGG files by relative paths:
 ../../art/voice/trial/<line_id>.ogg (chosen model), ../../art/voice/takes/<model>/<line_id>.ogg (other models),
 ../../art/voice/ab/<model>/<line_id>.ogg (A/B test).
+Recast 2026-10-06: the regenerated lines have a before/after toggle (before = ../../art/voice/takes/gemini_v1/),
+plus a recast section (casting v1 -> v2, measured voice features, the voice audition, irony lines, flags).
 """
 from __future__ import annotations
 
@@ -12,7 +14,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import voice_lib as V  # noqa: E402
-from casting import MODELS  # noqa: E402
+from casting import GEMINI, GEMINI_V2, MODELS, SK  # noqa: E402
 
 PAGE = V.ROOT / "docs/voice/trial.html"
 NAMES = {"ADAM": "Adam", "ELA": "Ela", "DANA": "Dana", "MIRA20": "Mira (babka)", "ROMAN": "Roman", "LENKA": "Lenka",
@@ -70,21 +72,46 @@ th{font-size:12px;color:var(--muted);font-weight:600}
 .stt{font-size:12px;color:var(--muted)}
 .good{color:var(--ok)}.bad{color:var(--warn)}
 p.note{color:var(--muted);font-size:14px}
+.seg{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--panel)}
+.seg span{padding:5px 8px;color:var(--muted);font-size:13px;border-right:1px solid var(--line)}
+.seg button{border:0;background:transparent;padding:5px 10px;cursor:pointer}
+.seg button.on{background:var(--accent);color:var(--accent-ink);font-weight:600}
+.tag.recast{color:var(--accent)}.tag.irony{color:var(--ok)}
+button.cmp{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:0 8px;margin-left:6px;font-size:11px;cursor:pointer;color:var(--muted)}
+button.cmp:hover{border-color:var(--accent);color:var(--ink)}
+.recastbox{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:14px 0}
+.recastbox p{margin:6px 0}
+ul.flags{margin:6px 0 0;padding-left:20px}ul.flags li{margin:3px 0}
+code{font-size:13px;background:var(--chip);padding:0 4px;border-radius:4px}
+#recastCast td:nth-child(2),#recastCast td:nth-child(3),#audition td:nth-child(n+3):nth-child(-n+6),#recastFeat td{white-space:nowrap}
 @media (max-width:620px){.who{width:78px;font-size:12px}.row{gap:8px;padding:7px 10px}}
 </style>
 </head>
 <body>
 <main>
 <h1>Voice trial: 2020 prologue</h1>
-<p class="sub">AI voiceover test for the dialogue of the first part (Chorvátsky Grob and Čierna Voda, S01–S10, CS01). Synthetic stock voices; nothing is in the game yet.</p>
+<p class="sub">AI voiceover test for the dialogue of the first part (Chorvátsky Grob and Čierna Voda, S01–S10, CS01). Synthetic stock voices. <b>Recast 2026-10-06</b>: Adam and Roman swapped voices, the four women were recast and the dry or sarcastic lines got a touch of irony; use <i>Recast lines: Before / After</i> to compare.</p>
 <div class="kpis" id="kpis"></div>
 <div class="bar">
   <label for="model">Takes from</label><select id="model"></select>
   <button class="ghost" id="stop">Stop</button>
+  <span class="seg" role="group" aria-label="Recast lines"><span>Recast lines</span><button id="vAfter" class="on" aria-pressed="true">After</button><button id="vBefore" aria-pressed="false">Before</button></span>
+  <label><input type="checkbox" id="onlyRecast"> only recast lines</label>
+  <label><input type="checkbox" id="onlyIrony"> only dry-irony lines</label>
   <label><input type="checkbox" id="showstt"> show the speech-to-text check</label>
 </div>
+<h2>Recast 2026-10-06</h2>
+<div class="recastbox" id="recastIntro"></div>
+<div class="recastbox"><b>Flagged for listening</b><ul class="flags" id="flags"></ul></div>
 <h2>Scenes in play order</h2>
 <div id="scenes"></div>
+<h2>Recast details</h2>
+<div class="tw"><table id="recastCast"></table></div>
+<p class="note" id="featNote" style="margin-top:12px"></p>
+<div class="tw"><table id="recastFeat"></table></div>
+<h3 style="margin-top:18px">Voice audition for the women</h3>
+<p class="note">One real line per role, spoken by each candidate stock voice with the role's new direction. The chosen voices are in bold.</p>
+<div class="tw"><table id="audition"></table></div>
 <h2>Casting</h2>
 <div class="tw"><table id="cast"></table></div>
 <h2>A/B test: same 6 lines, 3 models</h2>
@@ -100,7 +127,10 @@ const D = __DATA__;
 const PLAY='<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>', STOP='<svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10"/></svg>';
 const audio = new Audio(); let queue=[], curBtn=null, curRow=null;
 function enc(id){return encodeURIComponent(id).replace(/%2F/g,'/')}
-function src(id, model){model=model||sel.value; return model===D.chosen ? '../../art/voice/trial/'+enc(id)+'.ogg' : '../../art/voice/takes/'+model+'/'+enc(id)+'.ogg'}
+let ver='after';
+function isRecast(id){return !!D.recast.lines[id]}
+function srcV(id, v){return v==='before' && isRecast(id) ? '../../art/voice/takes/gemini_v1/'+enc(id)+'.ogg' : '../../art/voice/trial/'+enc(id)+'.ogg'}
+function src(id, model){model=model||sel.value; return model===D.chosen ? srcV(id, ver) : '../../art/voice/takes/'+model+'/'+enc(id)+'.ogg'}
 function mark(btn,row,on){ if(btn){btn.classList.toggle('on',on);btn.innerHTML=on?STOP:PLAY;} if(row) row.classList.toggle('now',on); }
 function stopAll(){queue=[];audio.pause();mark(curBtn,curRow,false);curBtn=curRow=null}
 function playOne(url,btn,row,next){ mark(curBtn,curRow,false); curBtn=btn; curRow=row; mark(btn,row,true);
@@ -114,12 +144,23 @@ try{const s=localStorage.getItem('voiceTrialModel'); if(s && D.models.some(m=>m.
 sel.onchange=()=>{stopAll(); try{localStorage.setItem('voiceTrialModel',sel.value)}catch(e){} render()};
 document.getElementById('stop').onclick=stopAll;
 const stt=document.getElementById('showstt'); stt.onchange=render;
+const onlyR=document.getElementById('onlyRecast'), onlyI=document.getElementById('onlyIrony'); onlyR.onchange=render; onlyI.onchange=render;
+const bA=document.getElementById('vAfter'), bB=document.getElementById('vBefore');
+function paintVer(){bA.classList.toggle('on',ver==='after'); bB.classList.toggle('on',ver==='before');
+  bA.setAttribute('aria-pressed',String(ver==='after')); bB.setAttribute('aria-pressed',String(ver==='before'))}
+function setVer(v){ver=v; paintVer(); try{localStorage.setItem('voiceTrialVer',v)}catch(e){} stopAll(); render()}
+bA.onclick=()=>setVer('after'); bB.onclick=()=>setVer('before');
+try{const v=localStorage.getItem('voiceTrialVer'); if(v==='before'||v==='after') ver=v}catch(e){}
+paintVer();
 function kpis(){const k=document.getElementById('kpis'); k.innerHTML='';
   D.kpis.forEach(([v,l])=>{const d=document.createElement('div');d.className='kpi';d.innerHTML='<b></b><span></span>';d.querySelector('b').textContent=v;d.querySelector('span').textContent=l;k.appendChild(d)})}
 function render(){
   const box=document.getElementById('scenes'); box.innerHTML='';
-  const per=D.perModel[sel.value]||{};
-  D.scenes.forEach(sc=>{
+  const isChosen=sel.value===D.chosen;
+  const per=(isChosen && ver==='before') ? Object.assign({}, D.perModel[D.chosen], D.perModel.gemini_v1) : (D.perModel[sel.value]||{});
+  D.scenes.forEach(sc0=>{
+    const sc=Object.assign({}, sc0, {lines: sc0.lines.filter(l=>(!onlyR.checked||isRecast(l.id)) && (!onlyI.checked||D.recast.irony[l.id]))});
+    if(!sc.lines.length) return;
     const card=document.createElement('section'); card.className='scenecard';
     const head=document.createElement('div'); head.className='scenehead';
     const dur=sc.lines.reduce((a,l)=>a+((per[l.id]||{}).d||0),0);
@@ -138,9 +179,16 @@ function render(){
       const p=document.createElement('div'); p.textContent=l.text; t.appendChild(p);
       const m=document.createElement('div'); m.className='meta'; m.textContent=l.id+' · '+(info.d||0).toFixed(1)+' s';
       if(l.phone){const g=document.createElement('span');g.className='tag phone';g.textContent='phone EQ';m.appendChild(g)}
-      if(info.ok===false){const g=document.createElement('span');g.className='tag warn';g.textContent='check';m.appendChild(g)}
+      if(isRecast(l.id) && isChosen){const g=document.createElement('span');g.className='tag recast';g.textContent=ver==='before'?'v1 (before)':'recast';m.appendChild(g)}
+      if(D.recast.irony[l.id]){const g=document.createElement('span');g.className='tag irony';g.title=D.recast.irony[l.id];g.textContent='dry irony';m.appendChild(g)}
+      if(info.ok===false){const g=document.createElement('span');g.className='tag warn';g.textContent='check';if(info.f)g.title=info.f;m.appendChild(g)}
+      if(isRecast(l.id) && isChosen){const c=document.createElement('button');c.className='cmp';const other=ver==='after'?'before':'after';
+        c.textContent='play '+other; c.setAttribute('aria-label','play the '+other+' version');
+        c.onclick=()=>{queue=[]; playOne(srcV(l.id,other),b,row)}; m.appendChild(c)}
       t.appendChild(m);
-      if(stt.checked && info.s){const s=document.createElement('div');s.className='stt';s.textContent='Scribe: '+info.s+'  |  Whisper: '+info.w+'  (WER '+info.ws+' / '+info.ww+')';t.appendChild(s)}
+      if(stt.checked && info.s){const s=document.createElement('div');s.className='stt';
+        s.textContent=(info.w==null ? 'Scribe: '+info.s+'  (WER '+info.ws+')' : 'Scribe: '+info.s+'  |  Whisper: '+info.w+'  (WER '+info.ws+' / '+info.ww+')')+(info.f?'  · '+info.f:'');
+        t.appendChild(s)}
       row.append(b,who,t); card.appendChild(row); rows.push([l,b,row]);
     });
     pb.onclick=()=>{stopAll(); queue=rows.map(([l,b,r])=>[src(l.id),b,r]); runQueue()};
@@ -166,6 +214,18 @@ table('cast',['Character','Brief (VOICES.md)'].concat(D.models.map(m=>m.label)),
 })();
 table('stats',['Measure'].concat(D.statModels.map(m=>m.label)), D.statRows);
 document.getElementById('cost').innerHTML=D.costHtml;
+document.getElementById('recastIntro').innerHTML=D.recast.introHtml;
+table('recastCast',['Character','v1 trial voice','v2 recast voice','v2 direction (after the shared Slovak pronunciation prompt)'], D.recast.cast);
+document.getElementById('featNote').textContent=D.recast.featNote;
+table('recastFeat',['Character','Median pitch v1 → v2','Pitch range v1 → v2','Timbre (spectral centroid) v1 → v2','Pace v1 → v2'], D.recast.feat);
+(function(){const rows=D.recast.audition.map(a=>{const c=document.createElement('div');c.className='abcell';
+  const b=btn(()=>{ if(curBtn===b){stopAll();return} queue=[]; playOne('../../art/voice/recast/audition/'+enc(a.tag)+'.ogg',b,null)});
+  const s=document.createElement('div'); s.textContent=a.voice+(a.chosen?' (chosen)':''); if(a.chosen) s.style.fontWeight='600'; c.append(b,s);
+  return [a.role,c,a.f0+' Hz',a.range+' st',a.cent+' Hz',a.cps+' chars/s',a.stt]});
+  table('audition',['Role','Voice','Pitch','Range','Timbre','Pace','Scribe transcript'],rows)})();
+(function(){const ul=document.getElementById('flags'); Object.entries(D.recast.flags).forEach(([id,why])=>{const li=document.createElement('li');
+  const c=document.createElement('code'); c.textContent=id; li.append(c, document.createTextNode(' — '+why)); ul.appendChild(li)});
+  if(!Object.keys(D.recast.flags).length){ul.innerHTML='<li>none</li>'}})();
 kpis(); render();
 </script>
 </body>
@@ -175,6 +235,69 @@ kpis(); render();
 
 def esc(s: str) -> str:
     return s.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+
+
+ORDER = ["ADAM", "ROMAN", "ELA", "DANA", "MIRA20", "LENKA", "JOZEF", "SYSTEM"]
+CHOSEN_AUDITION = {"LENKA.Leda", "ELA.Despina", "DANA.Vindemiatrix", "MIRA20.Gacrux.pace2"}
+
+
+def recast_data(man: dict, rc: dict) -> dict:
+    lines = {l["line_id"]: l for l in man["lines"]}
+    recast_lines = {lid: True for lid, l in lines.items() if l.get("version") == 2}
+    irony = {d["line_id"]: d["kind"] for d in rc.get("delivery_lines", [])}
+    flags = {f["line_id"]: f["why"] for f in rc.get("flagged", [])}
+    cast = []
+    for sp in ORDER:
+        v1, v2 = GEMINI[sp], GEMINI_V2[sp]
+        same = v1 == v2
+        cast.append([NAMES[sp], v1["voice"], v2["voice"] + (" (unchanged)" if same else ""),
+                     "unchanged" if same else v2["style"].replace(SK, "")])
+    f1 = json.loads((V.ROOT / "art/voice/recast/v1_features.json").read_text(encoding="utf-8"))
+    f2p = V.ROOT / "art/voice/recast/v2_features.json"
+    f2 = json.loads(f2p.read_text(encoding="utf-8")) if f2p.exists() else {}
+    feat = []
+    for sp in ["ADAM", "ROMAN", "LENKA", "ELA", "DANA", "MIRA20"]:
+        a, b = f1[sp], f2.get(sp)
+        if not b:
+            continue
+        feat.append([NAMES[sp], f"{a['f0_median_hz']:.0f} → {b['f0_median_hz']:.0f} Hz",
+                     f"{a['f0_range_semitones']:.1f} → {b['f0_range_semitones']:.1f} semitones",
+                     f"{a['centroid_hz']:.0f} → {b['centroid_hz']:.0f} Hz", f"{a['cps']:.1f} → {b['cps']:.1f} chars/s"])
+    aud = []
+    af = V.ROOT / "art/voice/recast/audition/audition.json"
+    for r in (json.loads(af.read_text(encoding="utf-8")) if af.exists() else []):
+        tag = f"{r['role']}.{r['voice']}" + (".pace2" if r.get("variant") else "")
+        label = r["voice"] + (" (final direction)" if r.get("variant") else (" (first direction: too slow)" if tag == "MIRA20.Gacrux" else ""))
+        f = r["features"]
+        aud.append({"tag": tag, "role": NAMES[r["role"]], "voice": label, "chosen": tag in CHOSEN_AUDITION,
+                    "f0": round(f["f0_median_hz"]), "range": f["f0_range_semitones"], "cent": f["centroid_hz"],
+                    "cps": r["measure"]["chars_per_s"], "stt": r["stt_scribe"]})
+    summ = f2.get("_summary", {})
+    n_flag_meaning = sum(1 for w in flags.values() if not w.startswith("listen"))
+    intro = (
+        "<p>After listening to the trial the owner asked for three changes. <b>1.</b> Adam and Roman swap voices: Adam now "
+        "speaks with Roman's former voice (Achird) and a relaxed, friendly direction close to Roman's; Roman got Adam's former "
+        "voice (Iapetus). <b>2.</b> The four women were recast so they differ clearly in pitch, timbre and pace "
+        "(audition below). <b>3.</b> Lines read as dry irony or sarcasm got one extra sentence in the style prompt: "
+        f"<i>{esc(rc.get('irony_direction', ''))}</i></p>"
+        f"<p>Only lines whose voice or delivery changed were regenerated: <b>{rc.get('regenerated', 0)}</b> of {man['count']} "
+        f"(all lines of Adam, Roman, Ela, Dana, Mira and Lenka, plus Jozef's three ironic lines); "
+        f"<b>{len(irony)}</b> lines carry the irony direction. Each new take was checked once by ElevenLabs Scribe v2 "
+        f"(no Whisper this time); {rc.get('retaken', 0)} lines whose transcript differed got one retake. "
+        f"{len(flags)} lines are flagged for listening ({n_flag_meaning} where the transcript still differs after the retake). "
+        "Same post-processing as the trial (phone EQ for Mira outside S06, −16 LUFS).</p>"
+        f"<p>Measured effect of the irony direction: those lines are a little slower ({summ.get('irony_mean_cps', '?')} vs "
+        f"{summ.get('plain_mean_cps', '?')} chars/s) with a slightly longer beat before the punchline; no line has a pause "
+        "over 1.4 s. Whether it is a <i>tiny</i> bit and not more can only be judged by ear: switch "
+        "<i>Recast lines</i> to Before / After, or use <i>play before</i> on a line. The before files are frozen in "
+        "<code>art/voice/takes/gemini_v1/</code>.</p>"
+        f"<p>Recast cost: <b>${rc.get('spend_usd', 0):.2f}</b> (audition ${rc.get('spend_usd_audition', 0):.2f}, TTS + Scribe "
+        "for the regenerated lines and retakes the rest). The A/B test and the model comparison further down are from the v1 trial.</p>")
+    note = ("Median per character over the regenerated takes, measured on the raw files (before phone EQ): pitch by YIN, "
+            "timbre as spectral centroid. In v1 Lenka, Ela and Dana sat within 2 semitones of each other (153–170 Hz) and "
+            "Ela and Dana had the same pitch.")
+    return {"lines": recast_lines, "irony": irony, "flags": flags, "cast": cast, "feat": feat, "featNote": note,
+            "audition": aud, "introHtml": intro}
 
 
 def main() -> None:
@@ -192,24 +315,40 @@ def main() -> None:
         scenes[idx[l["scene"]]]["lines"].append({"id": l["line_id"], "sp": l["speaker"], "text": l["text"],
                                                   "block": l["block"], "blockLabel": l["block_label"],
                                                   "phone": l["phone_eq"]})
+    recast_ids = [l["line_id"] for l in man["lines"] if l.get("version") == 2]
+
+    def v1_info(k: str, lid: str) -> dict | None:
+        f = V.ROOT / "art/voice/raw" / k / f"{lid}.json"
+        if not f.exists():
+            return None
+        r = json.loads(f.read_text(encoding="utf-8"))
+        b = r["best"]
+        return {"d": r["duration_s"], "ok": b["score"] <= 0.15, "s": b["stt_scribe"], "w": b["stt_wizper"],
+                "ws": b["wer_scribe"]["wer"], "ww": b["wer_wizper"]["wer"]}
     per_model = {}
     for k in model_keys:
         pm = {}
         for l in man["lines"]:
-            f = V.ROOT / "art/voice/raw" / k / f"{l['line_id']}.json"
-            if f.exists():
-                r = json.loads(f.read_text(encoding="utf-8"))
-                b = r["best"]
-                pm[l["line_id"]] = {"d": r["duration_s"], "ok": b["score"] <= 0.15, "s": b["stt_scribe"], "w": b["stt_wizper"],
-                                    "ws": b["wer_scribe"]["wer"], "ww": b["wer_wizper"]["wer"]}
+            if k == chosen and l.get("version") == 2:   # recast take: Scribe check only
+                st = l["stt"]
+                pm[l["line_id"]] = {"d": l["duration_s"], "ok": st["ok"], "s": st["scribe_v2"], "w": None,
+                                    "ws": st["wer_scribe"], "ww": None, "f": st.get("flag")}
+                continue
+            info = v1_info(k, l["line_id"])
+            if info:
+                pm[l["line_id"]] = info
         per_model[k] = pm
+    per_model["gemini_v1"] = {lid: v1_info("gemini", lid) for lid in recast_ids}
     # casting
     briefs = json.loads((V.ROOT / "art/voice/tools/briefs.json").read_text(encoding="utf-8"))
     cast = []
     for sp in ["ADAM", "ELA", "DANA", "MIRA20", "ROMAN", "LENKA", "JOZEF", "SYSTEM"]:
         row = [NAMES[sp], briefs[sp]]
         for k in model_keys:
-            v = MODELS[k][1][sp]
+            v = (GEMINI_V2 if k == "gemini" else MODELS[k][1])[sp]
+            if k == "gemini" and GEMINI[sp]["voice"] != v["voice"]:
+                row.append(f"{v['voice']} + style prompt (v1: {GEMINI[sp]['voice']})")
+                continue
             extra = ", ".join(f"{a} {b}" for a, b in v.items() if a not in ("voice", "style"))
             row.append(v["voice"] + (f" ({extra})" if extra else "") + (" + style prompt" if "style" in v else ""))
         cast.append(row)
@@ -265,20 +404,22 @@ def main() -> None:
         f"~2,500 lines (longer dialogues) ≈ <b>${est[2500]:.2f}</b>. The automatic STT check costs about $0.0005 per line "
         f"with Scribe v2 (≈ $1.30 for 2,500 lines); the Whisper second opinion is logged at a conservative $0.002 per call "
         f"(≈ $5 for 2,500 lines, real compute is lower). Money is not the constraint; the time to listen and fix lines is.</p>")
+    rc = man.get("recast", {})
     kpis = [
         (MODEL_LABEL[chosen], "chosen model"),
         (str(man["count"]), "lines voiced"),
-        (f"{c['audio_s'] / 60:.1f} min", "of dialogue"),
-        (pct(c["wer_scribe"]), "word error (STT check)"),
-        (f"${man['spend_voice_usd']:.2f}", "spent on the trial"),
+        (str(rc.get("regenerated", 0)), "lines recast 2026-10-06"),
+        (str(len(rc.get("delivery_lines", []))), "lines with a touch of dry irony"),
+        (f"${man['spend_voice_usd'] + rc.get('spend_usd', 0):.2f}", "spent (trial + recast)"),
         (f"≈ ${est[2500]:.0f}", "for ~2,500 game lines"),
     ]
+    recast = recast_data(man, rc)
     data = {"chosen": chosen, "names": NAMES,
             "models": [{"key": k, "label": MODEL_LABEL[k]} for k in model_keys],
             "scenes": scenes, "perModel": per_model, "cast": cast,
             "ab": {"models": ab_models, "labels": MODEL_LABEL, "lines": [ab_lines[k] for k in ab_lines], "summary": ab_summary},
             "statModels": [{"key": k, "label": MODEL_LABEL[k]} for k in model_keys], "statRows": stat_rows,
-            "costHtml": cost_html, "kpis": kpis}
+            "costHtml": cost_html, "kpis": kpis, "recast": recast}
     blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
     PAGE.parent.mkdir(parents=True, exist_ok=True)
     PAGE.write_text(HTML.replace("__DATA__", blob), encoding="utf-8")

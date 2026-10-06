@@ -75,6 +75,15 @@ def main() -> None:
     ap.add_argument("--reverse", action="store_true", help="work from the end (a second process can share the job)")
     a = ap.parse_args()
     lines = json.loads((V.ROOT / "art/voice/trial/lines.json").read_text(encoding="utf-8"))["lines"]
+    if a.model_key == "gemini":
+        # Recast 2026-10-06: Adam, Roman, the four women and the dry-irony lines use casting.GEMINI_V2 + IRONY;
+        # regenerate those with recast.py, never with the v1 casting here.
+        import recast
+        rec = {l["line_id"] for l in recast.to_regen(lines)}
+        skipped = [l["line_id"] for l in lines if l["line_id"] in rec and (not a.only or l["line_id"] in a.only)]
+        if skipped:
+            print(f"skipping {len(skipped)} recast lines (use recast.py gen --only ...):", skipped[:5], "...")
+        lines = [l for l in lines if l["line_id"] not in rec]
     if a.only:
         lines = [l for l in lines if l["line_id"] in a.only]
     if a.reverse:

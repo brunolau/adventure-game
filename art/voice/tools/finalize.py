@@ -54,6 +54,10 @@ def model_stats(key: str, lines: list[dict]) -> dict | None:
 
 def main() -> None:
     chosen = sys.argv[1]
+    cur = TRIAL / "manifest.json"
+    if cur.exists() and json.loads(cur.read_text(encoding="utf-8")).get("version") == 2 and "--force-v1" not in sys.argv:
+        sys.exit("manifest.json is the recast v2: this script would put the v1 takes back. Use recast.py finalize "
+                 "(after gen_all.py for Jozef/SYSTEM lines, copy their takes/gemini OGG by hand) or pass --force-v1.")
     data = json.loads((TRIAL / "lines.json").read_text(encoding="utf-8"))
     lines = data["lines"]
     stats = {k: s for k in MODELS if (s := model_stats(k, lines))}
