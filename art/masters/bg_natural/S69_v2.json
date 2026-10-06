@@ -1,0 +1,43 @@
+{
+  "kind": "edit",
+  "from_version": 1,
+  "spec": "bench_bike (guide mode)",
+  "boxes_game_px": [
+    [
+      1626,
+      744,
+      1920,
+      908
+    ],
+    [
+      1452,
+      836,
+      1664,
+      982
+    ]
+  ],
+  "feather_game_px": 30,
+  "drift_compensated_master_px": [
+    0,
+    0
+  ],
+  "model": "fal-ai/nano-banana-pro/edit",
+  "seed": 69150695,
+  "usd": 0.15,
+  "scope": "bg_natural/S69/",
+  "spend_log_asset": "bg_natural/S69/S69_v2_bench_bike",
+  "prompt": "You receive 2 images. Image 1 is one of our finished point-and-click adventure game backgrounds: the walled courtyard playground between early-1970s panel housing blocks on Sokolikova street in Dubravka, Bratislava, on a June afternoon in 1995 - a worn asphalt court surrounded by walls of upright concrete panels, a birch and a blue spruce behind the low back wall, a grass bank at the bottom right. Image 2 is the same painting with flat colour placeholder shapes that ONLY show where two new objects must stand and how big they are. Edit image 1: add the two new objects exactly where and exactly as large as the placeholders in image 2, painted in the same loose painterly brushwork, palette and warm afternoon light as the rest of image 1 - not flat, not clean vector graphics. Keep everything else in image 1 exactly as it is: the walls, the panels, the trees, the blocks, the lamp, the court, the grass bank, the light and the shadows.\n\n1. At the right edge of the court, where the grass bank begins (from 89 % to 100 % of the width, the seat at about 79 % of the height): a plain park bench of a 1990s Slovak housing estate, freshly painted: green-painted wooden slats on the seat and the backrest, two simple dark grey steel side frames as legs, standing on the asphalt with its backrest towards the grass bank, facing into the court towards the left, empty. Its right end may touch the long grass of the bank.\n2. Left of the bench on the asphalt (from 76 % to 85 % of the width, wheels on the ground at 87 % of the height): a small child's bicycle with 16-inch wheels and two little stabiliser wheels at the back, seen from its side, standing upright on its stabilisers with the front wheel to the left; a plain red frame without any brand or lettering, black tyres, a black saddle, a plain silver handlebar with a small round bell on the left grip whose top cap is missing.\n\nBoth objects stand firmly on the ground and cast soft shadows on the asphalt in the same direction and softness as the shadows already in image 1. No people, no animals, no text, no letters, no numbers, no logos and no brand names; do not add or remove anything else. Image 2 is a positioning aid only: do not copy its flat shapes. The result is image 1 edited, same 16:9 framing, no frames, borders or captions.\n\nStyle: classic 1990s hand-painted adventure game background. Rich painterly brushwork, slightly exaggerated cartoon proportions with gently curved lines, warm late-afternoon sunlight, saturated but harmonious colours, soft dappled shadows under the trees.",
+  "image_urls": [
+    "art/masters/bg_natural/S69_v1.png",
+    "the same + placeholder shapes (S69_scripts/s69_paint.py shapes, guide)"
+  ],
+  "raw_model_output": "art/masters/bg_natural/_S69_v2_bench_bike_raw.png",
+  "started": "2026-10-06T17:58:04",
+  "model_description": "",
+  "room": "S69",
+  "version": 2,
+  "output_size": [
+    2752,
+    1536
+  ]
+}

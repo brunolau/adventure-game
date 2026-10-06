@@ -1,0 +1,2395 @@
+{
+  "about": "Zuzana 1962 (Ivanka, S37, Q10) and 1995 (new room S69 Sokolíkovský dvor, Q11) and the relocation of the main step B19 into S69, as drafts in the Core overlay v2 shape. Specs: docs/story/ZUZANA.md, docs/story/SOKOLIKOVA_YARD.md. Every Slovak text is a first draft (WRITING_METHOD.md step 1); steps 2-4 (GPT check, final control, automatic checks) follow.",
+  "status": "draft 2026-10-06",
+  "chunk": "zuzana_yard",
+  "world_ext": {
+    "format": "lastbell.world_ext",
+    "version": 1,
+    "about": "DRAFT for src/game/data/content_ext/world_ext.json: Zuzana 1962 (S37, Q10) and 1995 (new room S69 Sokolíkovský dvor, Q11), relocation of B19 into S69. Specs: docs/story/ZUZANA.md, docs/story/SOKOLIKOVA_YARD.md.",
+    "schema": "Field names follow src/LastBell.Core/Content/ContentOverlay.World.cs as of 2026-10-06 16:55 (format lastbell.world_ext). Character rooms and room npc_ids are derived by Core and listed here only where they match. Layers of one room draw in list order.",
+    "characters": [
+      {
+        "id": "ZUZANA",
+        "name": "Zuzana",
+        "age": 7,
+        "role": "Sedemročné dievča z Ivanky pri Dunaji v júni 1962, končí prvú triedu; suseda mladej Miry. Pozná v Ivanke každý kút a ukazuje cestu podľa zvukov a vôní. Vedľajšia úloha Prvý posledný zvonec. Zo skutočného života iba meno a rok a miesto narodenia (1955, Ivanka pri Dunaji); všetko ostatné je fikcia o júni 1962.",
+        "voice": "Živá, keď niekomu dôveruje, zvedavá a všímavá; detská doslovnosť; všetko ráta. Adamovi vyká, dospelým hovorí teta a ujo, pánovi Baranovi pán.",
+        "design": "Krátke svetlohnedé vlasy s pešinkou na boku, okrúhla tvár, vážne láskavé oči; tmavomodré letné šatôčky s bielymi okrúhlymi gombíkmi, biele podkolienky, sandále, kúsok bielej kriedy.",
+        "rooms": [
+          "S37"
+        ]
+      },
+      {
+        "id": "ZUZANA95",
+        "name": "Zuzana",
+        "age": 40,
+        "role": "Zuzana z Ivanky o tridsaťtri rokov neskôr, v júni 1995 v Sokolíkovskom dvore (v hre býva na Sokolíkovej; nič ďalšie o jej živote sa nehovorí). Spozná Adama z parku v Ivanke, lebo nezostarol. Pomôže s rytmickým nákresom a s Kubovým zvončekom.",
+        "voice": "Pokojná, láskavá, s tichým humorom; stále všetko ráta. Adamovi vyká, Kubovi tyká; Adam jej vyká.",
+        "design": "Štyridsaťročná žena; tvár, oči a vlasy zrejme tie isté ako u sedemročnej Zuzany: krátke svetlohnedé vlasy s pešinkou na boku, okrúhla tvár, vážne láskavé oči; tmavomodrá blúzka s bielym okrúhlym golierikom, svetlá sukňa, sandále, kúsok bielej kriedy.",
+        "rooms": [
+          "S69"
+        ]
+      },
+      {
+        "id": "KUBO",
+        "name": "Kubo",
+        "age": 7,
+        "role": "Prvák zo susedného vchodu na Sokolíkovej v júni 1995; jazdí po dvore na bicykli, ktorému nezvoní zvonček. Vedľajšia úloha Druhý posledný zvonec.",
+        "voice": "Rýchla detská reč, berie veci doslova, je hrdý na to, čo vie. Adamovi vyká, Adam mu tyká.",
+        "design": "Sedemročný chlapec, krátke tmavé vlasy, odreté koleno, tričko s pruhom, krátke nohavice, plátenné tenisky bez značky.",
+        "rooms": [
+          "S69"
+        ]
+      }
+    ],
+    "items": [
+      {
+        "id": "BELL_MUTE",
+        "name": "Triedny zvonček bez pútka",
+        "look": "Mosadzný ručný zvonček s drevenou rúčkou. Srdce je zabalené v Zuzaninej vreckovke, pútko je roztrhnuté.",
+        "origin": "Q10A",
+        "purpose": "Zavesiť srdce na nové kožené pútko.",
+        "disposition": "retain",
+        "icon": "items/BELL_MUTE.webp"
+      },
+      {
+        "id": "ZUZA_SLIP",
+        "name": "Zuzanin lístok",
+        "look": "List z linajkového zošita, tlačeným písmom: LÍSTOK. PROSÍM JEDEN KÚSOK KOŽE NA ZVONČEK. ZUZANA, 1. TRIEDA.",
+        "origin": "Q10A",
+        "purpose": "Podať Štefanovi v hospodárskom dvore.",
+        "disposition": "retain",
+        "icon": "items/ZUZA_SLIP.webp"
+      },
+      {
+        "id": "STRAP",
+        "name": "Kožený odrezok",
+        "look": "Úzky pásik kože zo Štefanových odrezkov. Na pútko akurát, ani o kúsok viac.",
+        "origin": "Q10B",
+        "purpose": "Zavesiť naň srdce zvončeka.",
+        "disposition": "retain",
+        "icon": "items/STRAP.webp"
+      },
+      {
+        "id": "BELL_FIXED",
+        "name": "Opravený triedny zvonček",
+        "look": "Srdce visí na novom pútku, uzol je schovaný vnútri. Zvoní čisto.",
+        "origin": "Q10C",
+        "purpose": "Vrátiť Zuzane do parku.",
+        "disposition": "retain",
+        "icon": "items/BELL_FIXED.webp"
+      },
+      {
+        "id": "BELLCAP",
+        "name": "Vrchnák zvončeka",
+        "look": "Mosadzný vrchnák z detského zvončeka. Vnútri má zúbky, na boku škrabanec od obrubníka.",
+        "origin": "Q11B",
+        "purpose": "Naskrutkovať na Kubov zvonček.",
+        "disposition": "retain",
+        "icon": "items/BELLCAP.webp"
+      }
+    ],
+    "rooms": [
+      {
+        "id": "S69",
+        "name": "Sokolíkovský dvor",
+        "era": 1995,
+        "district": "Dúbravka",
+        "art_brief": "Ohradené ihrisko medzi panelákmi na Sokolíkovej v júni 1995 popoludní: múr z betónových panelov postavených na výšku, asfaltové ihrisko so škôlkou nakreslenou kriedou, breza a modrý smrek za múrom, guľová lampa, zelená lavička a pri nej detský bicykel, na troch paneloch pravého múru výtvarný nákres krúžku so štyrmi tvarmi a rytmom.",
+        "ambience": "Lopta o betón, detské hlasy, vrabce na múre, z balkóna rádio, vzdialená električka.",
+        "region": "Dúbravka",
+        "hub": false,
+        "first_entry": [
+          {
+            "key": "entry.S69.001",
+            "speaker": "ADAM",
+            "sk": "Tento dvor poznám. Raz som tu prehodil loptu cez múr a domov som prišiel až za tmy."
+          }
+        ],
+        "background_asset": "bg/S69.webp",
+        "music": "music/1995.ogg",
+        "walk_polygon": [
+          [
+            830,
+            800
+          ],
+          [
+            1000,
+            770
+          ],
+          [
+            1268,
+            702
+          ],
+          [
+            1385,
+            712
+          ],
+          [
+            1700,
+            748
+          ],
+          [
+            1860,
+            800
+          ],
+          [
+            1880,
+            880
+          ],
+          [
+            1640,
+            960
+          ],
+          [
+            1580,
+            1015
+          ],
+          [
+            1150,
+            1015
+          ],
+          [
+            1150,
+            885
+          ],
+          [
+            1000,
+            840
+          ],
+          [
+            830,
+            812
+          ]
+        ],
+        "spawn": [
+          1360,
+          985
+        ],
+        "camera_family": "S69",
+        "layer_order": [
+          "background",
+          "prop_state_variants",
+          "npc_shadows",
+          "npcs_and_adam_sorted_by_feet_y",
+          "foreground_mask",
+          "hotspot_labels",
+          "hud"
+        ],
+        "blocking_note": "TEMPLATE values in 1920x1080 (painting scaled to height 1080, 7 px cropped each side). The court is the walk area: bounded by the back wall foot, the right wall foot, the grass bank at the bottom right and, on the left, the TOP edge of the foreground wall (feet stay above it, so no foreground mask is needed unless the blocking pass lets the hero behind the wall). Hero scale about 0.21 at the back (y ~705) to ~0.55 at the bottom (y ~1015); the blocking pass measures it and runs tools/check_blocking.py.",
+        "hotspots": [
+          {
+            "id": "S69.wall",
+            "name": "Betónový múr",
+            "kind": "prop",
+            "look": "Múr z betónových panelov postavených na výšku. Lopta sa od neho nikdy neodrazí tam, kam chceš.",
+            "rect": [
+              240,
+              690,
+              900,
+              380
+            ],
+            "interaction_point": [
+              1185,
+              995
+            ],
+            "label_anchor": [
+              690,
+              680
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "the long wall of upright concrete panels in the foreground left (outer face); atmospheric"
+          },
+          {
+            "id": "S69.rhythm",
+            "name": "Rytmický nákres",
+            "kind": "prop",
+            "look": "Kruh, trojuholník, štvorec, fialové V a pod nimi TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV. To je nastavenie 3–2–6.",
+            "rect": [
+              1440,
+              585,
+              185,
+              125
+            ],
+            "interaction_point": [
+              1520,
+              790
+            ],
+            "label_anchor": [
+              1532,
+              575
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "the club's painting across three panels of the right wall next to the passage (repainted copy of the S17 sign content); target of the relocated B19"
+          },
+          {
+            "id": "S69.court",
+            "name": "Ihrisko so škôlkou",
+            "kind": "prop",
+            "look": "Asfaltové ihrisko a na ňom kriedou škôlka: osem políčok a hore polkruh. Čiary sú rovnejšie ako moje nákresy.",
+            "rect": [
+              1190,
+              790,
+              260,
+              100
+            ],
+            "interaction_point": [
+              1320,
+              930
+            ],
+            "label_anchor": [
+              1320,
+              780
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "chalk hopscotch decal painted on the court asphalt"
+          },
+          {
+            "id": "S69.birch",
+            "name": "Breza",
+            "kind": "prop",
+            "look": "Breza za múrom. Biela kôra, tenké vetvy a lístie sa trasie, aj keď vôbec nefúka.",
+            "rect": [
+              640,
+              20,
+              120,
+              660
+            ],
+            "interaction_point": [
+              900,
+              805
+            ],
+            "label_anchor": [
+              700,
+              30
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "birch behind the back wall"
+          },
+          {
+            "id": "S69.spruce",
+            "name": "Modrý smrek",
+            "kind": "prop",
+            "look": "Modrý smrek, pichľavý zo všetkých strán. Pod takými končia lopty, kriedy a odvaha.",
+            "rect": [
+              820,
+              40,
+              290,
+              600
+            ],
+            "interaction_point": [
+              1080,
+              760
+            ],
+            "label_anchor": [
+              965,
+              50
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [
+              {
+                "after": "Q11A",
+                "sk": "Pod smrekom sa medzi ihličím niečo leskne. Niečo mosadzné."
+              },
+              {
+                "after": "Q11B",
+                "sk": "Pod smrekom zostalo už len ihličie a jedna zabudnutá krieda."
+              }
+            ],
+            "note": "blue spruce behind the back wall; Q11B target (the bell cap lies under its lowest branches by the wall)"
+          },
+          {
+            "id": "S69.lamp",
+            "name": "Guľová lampa",
+            "kind": "prop",
+            "look": "Guľová lampa na stĺpe. Keď sa večer rozsvieti, deti vedia, že sa ide domov. Lepšie ako hodinky.",
+            "rect": [
+              305,
+              455,
+              60,
+              240
+            ],
+            "interaction_point": [
+              845,
+              806
+            ],
+            "label_anchor": [
+              335,
+              445
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "globe street lamp at the left behind the wall"
+          },
+          {
+            "id": "S69.bench",
+            "name": "Lavička",
+            "kind": "prop",
+            "look": "Zelená lavička, čerstvo natretá. Asi tá, na ktorú sa sťažujú pri kiosku.",
+            "rect": [
+              1590,
+              830,
+              240,
+              110
+            ],
+            "interaction_point": [
+              1580,
+              960
+            ],
+            "label_anchor": [
+              1710,
+              820
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "NEW painted prop: green bench on the right edge of the court where the grass bank begins (callback to Zita's ambient line about the freshly painted bench)"
+          },
+          {
+            "id": "S69.bike",
+            "name": "Kubov bicykel",
+            "kind": "prop",
+            "look": "Malý bicykel s prídavnými kolieskami. Na zvončeku chýba vrchnák, ostali len holé zúbky.",
+            "rect": [
+              1440,
+              860,
+              150,
+              100
+            ],
+            "interaction_point": [
+              1470,
+              985
+            ],
+            "label_anchor": [
+              1515,
+              850
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [
+              {
+                "after": "Q11C",
+                "sk": "Kubov bicykel. Zvonček má zase vrchnák a zvoní pri každom hrbole."
+              }
+            ],
+            "note": "NEW painted prop: child's bike leaning against the bench; Q11C target"
+          },
+          {
+            "id": "S69.gap",
+            "name": "Priechod medzi blokmi",
+            "kind": "prop",
+            "look": "Úzky priechod medzi blokmi. Vedie k ďalším vchodom a k ďalším múrom.",
+            "rect": [
+              1275,
+              600,
+              105,
+              100
+            ],
+            "interaction_point": [
+              1330,
+              720
+            ],
+            "label_anchor": [
+              1327,
+              590
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [],
+            "note": "the gap between the back wall and the right wall; atmospheric, no exit (one connection: S18)"
+          },
+          {
+            "id": "S69.ZUZANA95",
+            "name": "Zuzana",
+            "kind": "npc",
+            "character_id": "ZUZANA95",
+            "look": "Žena s kúskom kriedy v ruke si ma prezerá, akoby ma odniekiaľ poznala. Ja ju nepoznám. Asi.",
+            "rect": [
+              1600,
+              670,
+              120,
+              265
+            ],
+            "interaction_point": [
+              1560,
+              955
+            ],
+            "label_anchor": [
+              1660,
+              660
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [
+              {
+                "after": "I10",
+                "sk": "Zuzana z parku v Ivanke. Pre ňu prešlo tridsaťtri rokov, pre mňa oveľa menej."
+              }
+            ],
+            "note": "standing by the bench, feet ~[1660, 935]; template, final from the blocking pass"
+          },
+          {
+            "id": "S69.KUBO",
+            "name": "Kubo",
+            "kind": "npc",
+            "character_id": "KUBO",
+            "look": "Malý chlapec s odretým kolenom ťuká do zvončeka na bicykli. Zvonček mlčí.",
+            "rect": [
+              1355,
+              785,
+              90,
+              178
+            ],
+            "interaction_point": [
+              1330,
+              990
+            ],
+            "label_anchor": [
+              1400,
+              775
+            ],
+            "visible_after": [],
+            "hide_after": [],
+            "look_variants": [
+              {
+                "after": "Q11C",
+                "sk": "Kubo krúži okolo ihriska a zvoní v každej zákrute. Aj tam, kde žiadna nie je."
+              }
+            ],
+            "note": "child (350 px sheet) next to his bike, feet ~[1400, 960]"
+          }
+        ],
+        "exits": [
+          {
+            "id": "S69.to_S18",
+            "to": "S18",
+            "label": "Sídliskový dvor s kioskom",
+            "requires_done": [],
+            "travel": "walk",
+            "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+            "rect": [
+              1150,
+              1000,
+              430,
+              80
+            ],
+            "interaction_point": [
+              1360,
+              1000
+            ],
+            "note": "the court opens towards the camera between the end of the foreground wall and the grass bank: the way back out to the street with Zita's kiosk"
+          }
+        ]
+      }
+    ],
+    "hotspots": [
+      {
+        "room": "S37",
+        "id": "S37.ZUZANA",
+        "name": "Zuzana",
+        "kind": "npc",
+        "character_id": "ZUZANA",
+        "look": "Malá Zuzana skáče škôlku a každé políčko nahlas odpočíta. Vedľa v tráve leží zvonček, ktorý ani raz necinkol.",
+        "rect": [
+          270,
+          625,
+          125,
+          262
+        ],
+        "interaction_point": [
+          455,
+          905
+        ],
+        "label_anchor": [
+          332,
+          615
+        ],
+        "visible_after": [],
+        "hide_after": [],
+        "look_variants": [
+          {
+            "after": "Q10A",
+            "sk": "Zuzana kreslí kriedou ďalšiu škôlku, pre istotu aj s vchodom. Občas sa pozrie, či jej nesiem zvonček."
+          },
+          {
+            "after": "Q10D",
+            "sk": "Zuzana skáče škôlku a po každom desiatom skoku zazvoní. Vera už ani nedvíha hlavu."
+          }
+        ],
+        "note": "template: child feet ~[330, 885], scale ~0.74; right of Vera's bench on the front gravel path"
+      },
+      {
+        "room": "S37",
+        "id": "S37.hopscotch",
+        "name": "Škôlka kriedou",
+        "kind": "prop",
+        "look": "Škôlka nakreslená kriedou na chodníku: osem políčok a hore polkruh. Čiary má rovnejšie ako ja na nákresoch.",
+        "rect": [
+          90,
+          905,
+          330,
+          95
+        ],
+        "interaction_point": [
+          480,
+          960
+        ],
+        "label_anchor": [
+          255,
+          895
+        ],
+        "visible_after": [],
+        "hide_after": [],
+        "look_variants": [],
+        "note": "ground decal next to her"
+      },
+      {
+        "room": "S32",
+        "id": "S32.chalk_arrow",
+        "name": "Kriedová šípka",
+        "kind": "prop",
+        "look": "Na kameni pri studni je kriedou šípka a pod ňou PARK. Niekto v Ivanke robí orientačné tabule.",
+        "rect": [
+          250,
+          905,
+          140,
+          70
+        ],
+        "interaction_point": [
+          320,
+          960
+        ],
+        "label_anchor": [
+          320,
+          895
+        ],
+        "visible_after": [],
+        "hide_after": [],
+        "look_variants": [],
+        "note": "template near the well; the drawing is the layer variants/S32_chalk_arrow.webp"
+      },
+      {
+        "room": "S38",
+        "id": "S38.paper_boat",
+        "name": "Papierová loďka",
+        "kind": "prop",
+        "look": "Papierová loďka uviazla v tráve pri kanáli. Na boku má ceruzkou ZUZKA. Ďalej ju nepustili, správne.",
+        "rect": [
+          1340,
+          840,
+          120,
+          60
+        ],
+        "interaction_point": [
+          1400,
+          930
+        ],
+        "label_anchor": [
+          1400,
+          830
+        ],
+        "visible_after": [],
+        "hide_after": [],
+        "look_variants": [],
+        "note": "template at the canal edge; the boat is the layer variants/S38_paper_boat.webp"
+      }
+    ],
+    "exits": [
+      {
+        "room": "S18",
+        "id": "S18.to_S69",
+        "to": "S69",
+        "travel": "walk",
+        "label": "Sokolíkovský dvor",
+        "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+        "requires_done": [],
+        "rect": [
+          430,
+          850,
+          190,
+          45
+        ],
+        "interaction_point": [
+          525,
+          880
+        ],
+        "note": "the side road between the beige block and the pines runs away from the camera into the gap between the blocks (template; the blocking pass may extend the S18 walk polygon up the road)"
+      }
+    ],
+    "connections": [
+      {
+        "from": "S18",
+        "to": "S69",
+        "bidirectional": true,
+        "travel": "walk",
+        "label": "Sokolíkovský dvor",
+        "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+        "requires_done": [],
+        "note": "the only link of S69; no S17 <-> S69 link (S17's way to the right of the school is S17.to_S18; the podlubie stays a no-go, owner 2026-10-06)"
+      }
+    ],
+    "quests": [
+      {
+        "id": "Q10",
+        "title": "Prvý posledný zvonec",
+        "type": "side",
+        "actions": [
+          "Q10A",
+          "Q10B",
+          "Q10C",
+          "Q10D"
+        ],
+        "completion": "Q10D",
+        "missable": false,
+        "goal": "Oprav Zuzanin triedny zvonček, aby mohla na konci roka zvoniť.",
+        "reward": "Zuzana so zvončekom a jej kriedová škôlka v Adamovom albume.",
+        "hints": [
+          "Zuzana v parku pri kaštieli má zvonček, ktorý nezvoní.",
+          "Srdce treba zavesiť na nové kožené pútko. Kožené odrezky má Štefan v hospodárskom dvore a vydáva ich iba na lístok.",
+          "Zuzana v parku, téma zvonček → Zuzanin lístok Štefanovi → v brašni odrezok so zvončekom → opravený zvonček Zuzane."
+        ]
+      },
+      {
+        "id": "Q11",
+        "title": "Druhý posledný zvonec",
+        "type": "side",
+        "actions": [
+          "Q11A",
+          "Q11B",
+          "Q11C"
+        ],
+        "completion": "Q11C",
+        "missable": false,
+        "goal": "Oprav Kubov zvonček na bicykli, aby mohol na konci roka zvoniť s ostatnými deťmi.",
+        "reward": "Kubo so zvončekom a Zuzanina škôlka na Sokolíkovej v Adamovom albume.",
+        "hints": [
+          "Kubo v Sokolíkovskom dvore má na bicykli zvonček, ktorý nezvoní.",
+          "Vrchnák zvončeka sa odkotúľal pod modrý smrek a Zuzana videla kam. Naskrutkuješ ho náradím zo servisnej brašne.",
+          "Kubo, téma „Zvonček na bicykli“ → modrý smrek v dvore → vrchnák zvončeka na Kubov bicykel."
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "Q10A",
+        "room": "S37",
+        "target": "S37.ZUZANA",
+        "label": "Zvonček, ktorý nezvoní",
+        "kind": "topic",
+        "requires_done": [],
+        "requires_items": [],
+        "selected_item": null,
+        "gives": [
+          "BELL_MUTE",
+          "ZUZA_SLIP"
+        ],
+        "consumes": [],
+        "quest": "Q10",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": "Vyzdvihni u Štefana v hospodárskom dvore kožený odrezok na Zuzanin lístok.",
+        "animation": "talk",
+        "sfx": "item_soft",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Vyzdvihni u Štefana v hospodárskom dvore kožený odrezok na Zuzanin lístok.",
+        "staging": {
+          "guest_speakers": [],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q10A.001",
+            "speaker": "ZUZANA",
+            "sk": "Toto je zvonček našej triedy. Pozrite. Nič."
+          },
+          {
+            "key": "action.Q10A.002",
+            "speaker": "ADAM",
+            "sk": "Chýba mu srdce."
+          },
+          {
+            "key": "action.Q10A.003",
+            "speaker": "ZUZANA",
+            "sk": "Nechýba. Mám ho vo vreckovke. Len sa mu roztrhlo pútko."
+          },
+          {
+            "key": "action.Q10A.004",
+            "speaker": "ZUZANA",
+            "sk": "Na konci roka mám zvoniť ja. Učiteľka povedala, že mám najistejšiu ruku."
+          },
+          {
+            "key": "action.Q10A.005",
+            "speaker": "ADAM",
+            "sk": "A kto ho mal opraviť?"
+          },
+          {
+            "key": "action.Q10A.006",
+            "speaker": "ZUZANA",
+            "sk": "Ujo Oto. Ale ujo Oto má dnes štyri budíky a ani jednu voľnú ruku."
+          },
+          {
+            "key": "action.Q10A.007",
+            "speaker": "ZUZANA",
+            "sk": "Kožu má ujo Štefan. Ten dáva iba na lístok. Tak som mu lístok napísala."
+          },
+          {
+            "key": "action.Q10A.008",
+            "speaker": "ADAM",
+            "sk": "„Lístok. Prosím jeden kúsok kože na zvonček. Zuzana, prvá trieda.“"
+          },
+          {
+            "key": "action.Q10A.009",
+            "speaker": "ZUZANA",
+            "sk": "Aj podpis tam je. Ujo Štefan vraví, že bez podpisu nič."
+          },
+          {
+            "key": "action.Q10A.010",
+            "speaker": "ADAM",
+            "sk": "Kožu prinesiem a pútko spravím. Požičiaš mi zvonček?"
+          },
+          {
+            "key": "action.Q10A.011",
+            "speaker": "ZUZANA",
+            "sk": "Požičiam. Ale opatrne, je triedny, nie môj."
+          }
+        ],
+        "hint_step": "Porozprávaj sa so Zuzanou v parku o zvončeku, ktorý nezvoní."
+      },
+      {
+        "id": "Q10B",
+        "room": "S35",
+        "target": "S35.SKLAD",
+        "label": "Podať Štefanovi Zuzanin lístok",
+        "kind": "click",
+        "requires_done": [],
+        "requires_items": [
+          "ZUZA_SLIP"
+        ],
+        "selected_item": "ZUZA_SLIP",
+        "gives": [
+          "STRAP"
+        ],
+        "consumes": [
+          "ZUZA_SLIP"
+        ],
+        "quest": "Q10",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": "Zaves srdce zvončeka na nové pútko.",
+        "animation": "show_item",
+        "sfx": "paper",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Zaves srdce zvončeka na nové pútko.",
+        "staging": {
+          "guest_speakers": [],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q10B.001",
+            "speaker": "STEFAN",
+            "sk": "Lístok. „Prosím jeden kúsok kože na zvonček.“"
+          },
+          {
+            "key": "action.Q10B.002",
+            "speaker": "STEFAN",
+            "sk": "Podpis: Zuzana, prvá trieda."
+          },
+          {
+            "key": "action.Q10B.003",
+            "speaker": "ADAM",
+            "sk": "Platí?"
+          },
+          {
+            "key": "action.Q10B.004",
+            "speaker": "STEFAN",
+            "sk": "Lístok, podpis, materiál. Všetko sedí. Nikde nepíše, že podpis musí byť dospelý."
+          },
+          {
+            "key": "action.Q10B.005",
+            "speaker": "STEFAN",
+            "sk": "Úzky odrezok z remeňa. Na pútko akurát. Lístok si nechávam."
+          },
+          {
+            "key": "action.Q10B.006",
+            "speaker": "ADAM",
+            "sk": "Do evidencie?"
+          },
+          {
+            "key": "action.Q10B.007",
+            "speaker": "STEFAN",
+            "sk": "Na stenu. Taký pekný lístok som tu ešte nemal."
+          }
+        ],
+        "note": "S35.SKLAD also has I02 (selected SUPPLYSLIP) and Q6B (topic); Q10B is told apart by selected_item",
+        "hint_step": "Zuzanin lístok podaj Štefanovi v hospodárskom dvore."
+      },
+      {
+        "id": "Q10C",
+        "room": "inventory",
+        "target": "BELL_MUTE",
+        "label": "Zavesiť srdce zvončeka na nové pútko",
+        "kind": "combine",
+        "requires_done": [],
+        "requires_items": [
+          "BELL_MUTE",
+          "STRAP",
+          "TOOLS"
+        ],
+        "selected_item": "STRAP",
+        "gives": [
+          "BELL_FIXED"
+        ],
+        "consumes": [
+          "BELL_MUTE",
+          "STRAP"
+        ],
+        "quest": "Q10",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": "Vráť opravený zvonček Zuzane do parku.",
+        "animation": "inventory_combine",
+        "sfx": "item_soft",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Vráť opravený zvonček Zuzane do parku.",
+        "staging": {
+          "guest_speakers": [],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q10C.001",
+            "speaker": "ADAM",
+            "sk": "Pútko cez uško, srdce na miesto, uzol dovnútra, aby sa nešúchal."
+          },
+          {
+            "key": "action.Q10C.002",
+            "speaker": "ADAM",
+            "sk": "Skúšobne cinknem do dlane. Zvoní."
+          }
+        ],
+        "symmetric": true,
+        "hint_step": "V brašni spoj kožený odrezok so zvončekom."
+      },
+      {
+        "id": "Q10D",
+        "room": "S37",
+        "target": "S37.ZUZANA",
+        "label": "Vrátiť Zuzane opravený zvonček",
+        "kind": "click",
+        "requires_done": [],
+        "requires_items": [
+          "BELL_FIXED"
+        ],
+        "selected_item": "BELL_FIXED",
+        "gives": [],
+        "consumes": [
+          "BELL_FIXED"
+        ],
+        "quest": "Q10",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": null,
+        "animation": "show_item",
+        "sfx": "school_handbell",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Zuzana skúšobne zazvonila celému parku.",
+        "staging": {
+          "guest_speakers": [
+            "VERA60"
+          ],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q10D.001",
+            "speaker": "ZUZANA",
+            "sk": "Zvoní? Naozaj?"
+          },
+          {
+            "key": "action.Q10D.002",
+            "speaker": "ADAM",
+            "sk": "Skús. Ale pomaly, je triedny."
+          },
+          {
+            "key": "action.Q10D.003",
+            "speaker": "ZUZANA",
+            "sk": "Počuli ste? Takto bude znieť koniec roka."
+          },
+          {
+            "key": "action.Q10D.004",
+            "speaker": "VERA60",
+            "sk": "Zuzka, teraz celý park vie, že sa skončila hodina."
+          },
+          {
+            "key": "action.Q10D.005",
+            "speaker": "ZUZANA",
+            "sk": "Ešte sa neskončila. Ešte dvadsaťštyri dní. Toto bola skúška."
+          },
+          {
+            "key": "action.Q10D.006",
+            "speaker": "ADAM",
+            "sk": "Skúška vyšla."
+          },
+          {
+            "key": "action.Q10D.007",
+            "speaker": "ZUZANA",
+            "sk": "Ďakujem. Môžete si skočiť škôlku. Ale iba do štvorky, dospelí ďalej padajú."
+          },
+          {
+            "key": "action.Q10D.008",
+            "speaker": "ZUZANA",
+            "sk": "A keď budete niekedy počuť zvoniť na konci roka, zamávajte. To je dohoda."
+          },
+          {
+            "key": "action.Q10D.009",
+            "speaker": "ADAM",
+            "sk": "Dohoda."
+          }
+        ],
+        "note": "owner rule 2026-10-06: the earlier line 'Ja to neuvidím, ale aj tak.' (foreshadowing) is replaced by 'To je dohoda.'; the 'dohoda' pays off in 1995 (Q11C). sfx school_handbell (three short rings) plays before .003",
+        "hint_step": "Opravený zvonček použi na Zuzanu v parku."
+      },
+      {
+        "id": "Q11A",
+        "room": "S69",
+        "target": "S69.KUBO",
+        "label": "Zvonček na bicykli",
+        "kind": "topic",
+        "requires_done": [],
+        "requires_items": [],
+        "selected_item": null,
+        "gives": [],
+        "consumes": [],
+        "quest": "Q11",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+        "animation": "talk",
+        "sfx": null,
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+        "staging": {
+          "guest_speakers": [
+            "ZUZANA95"
+          ],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q11A.001",
+            "speaker": "ADAM",
+            "sk": "Prečo ťukáš do toho zvončeka?"
+          },
+          {
+            "key": "action.Q11A.002",
+            "speaker": "KUBO",
+            "sk": "Lebo nezvoní. Ťukám, ťukám a nič."
+          },
+          {
+            "key": "action.Q11A.003",
+            "speaker": "ADAM",
+            "sk": "Ukáž. Chýba mu vrchnák, ten, čo zvoní."
+          },
+          {
+            "key": "action.Q11A.004",
+            "speaker": "KUBO",
+            "sk": "Odskočil, keď som vyšiel na obrubník. A potom sa kotúľal."
+          },
+          {
+            "key": "action.Q11A.005",
+            "speaker": "ZUZANA95",
+            "sk": "Trikrát poskočil a zmizol pod modrým smrekom. Rátala som to."
+          },
+          {
+            "key": "action.Q11A.006",
+            "speaker": "KUBO",
+            "sk": "Ja som nerátal. Ja som padal."
+          },
+          {
+            "key": "action.Q11A.007",
+            "speaker": "KUBO",
+            "sk": "Na konci roka ideme všetci okolo dvora a zvoníme. Bez zvončeka sa to nepočíta."
+          },
+          {
+            "key": "action.Q11A.008",
+            "speaker": "ADAM",
+            "sk": "Vrchnák nájdem a naskrutkujem. Na konci roka budeš zvoniť."
+          }
+        ],
+        "hint_step": "V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli."
+      },
+      {
+        "id": "Q11B",
+        "room": "S69",
+        "target": "S69.spruce",
+        "label": "Pohľadať vrchnák pod smrekom",
+        "kind": "click",
+        "requires_done": [
+          "Q11A"
+        ],
+        "requires_items": [],
+        "selected_item": null,
+        "gives": [
+          "BELLCAP"
+        ],
+        "consumes": [],
+        "quest": "Q11",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": "Naskrutkuj vrchnák na zvonček Kubovho bicykla.",
+        "animation": "reach_low",
+        "sfx": "item_soft",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Naskrutkuj vrchnák na zvonček Kubovho bicykla.",
+        "staging": {
+          "guest_speakers": [],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q11B.001",
+            "speaker": "ADAM",
+            "sk": "Ihličie, dve kriedy, stará loptička a… mosadzný vrchnák."
+          },
+          {
+            "key": "action.Q11B.002",
+            "speaker": "ADAM",
+            "sk": "Trikrát poskočil a zastavil sa presne tu. Rátala dobre."
+          }
+        ],
+        "note": "a click on the spruce before Q11A is only its look",
+        "hint_step": "Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore."
+      },
+      {
+        "id": "Q11C",
+        "room": "S69",
+        "target": "S69.bike",
+        "label": "Naskrutkovať vrchnák na zvonček",
+        "kind": "click",
+        "requires_done": [],
+        "requires_items": [
+          "BELLCAP",
+          "TOOLS"
+        ],
+        "selected_item": "BELLCAP",
+        "gives": [],
+        "consumes": [
+          "BELLCAP"
+        ],
+        "quest": "Q11",
+        "puzzle": null,
+        "cutscene": null,
+        "once": true,
+        "objective": null,
+        "animation": "use_tool",
+        "sfx": "bike_bell",
+        "excluded_done": [],
+        "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+        "journal_text": "Kubov zvonček zvoní. So Zuzanou sme zamávali zvoneniu zo školy.",
+        "staging": {
+          "guest_speakers": [
+            "ZUZANA95",
+            "KUBO"
+          ],
+          "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+        },
+        "lines": [
+          {
+            "key": "action.Q11C.001",
+            "speaker": "ADAM",
+            "sk": "Zúbky do závitu, pootočiť a skrutkovačom jemne dotiahnuť. Je to zvonček, nie trezor."
+          },
+          {
+            "key": "action.Q11C.002",
+            "speaker": "KUBO",
+            "sk": "Zvoní! Teta Zuzana, počujete?"
+          },
+          {
+            "key": "action.Q11C.003",
+            "speaker": "ZUZANA95",
+            "sk": "Počujem. Celý dvor počuje."
+          },
+          {
+            "key": "action.Q11C.004",
+            "speaker": "ZUZANA95",
+            "sk": "A počujte aj toto. V škole práve zvonia."
+          },
+          {
+            "key": "action.Q11C.005",
+            "speaker": "ZUZANA95",
+            "sk": "Keď počujem zvoniť na konci roka, zamávam. Taká stará dohoda."
+          },
+          {
+            "key": "action.Q11C.006",
+            "speaker": "ADAM",
+            "sk": "S kým?"
+          },
+          {
+            "key": "action.Q11C.007",
+            "speaker": "ZUZANA95",
+            "sk": "S jedným opravárom zvončekov."
+          },
+          {
+            "key": "action.Q11C.008",
+            "speaker": "KUBO",
+            "sk": "Ale veď ešte nie je koniec roka."
+          },
+          {
+            "key": "action.Q11C.009",
+            "speaker": "ZUZANA95",
+            "sk": "Ešte pätnásť dní. Toto je skúška."
+          },
+          {
+            "key": "action.Q11C.010",
+            "speaker": "ADAM",
+            "sk": "Skúška vyšla. Mávam s vami."
+          },
+          {
+            "key": "action.Q11C.011",
+            "speaker": "KUBO",
+            "sk": "Komu mávate?"
+          },
+          {
+            "key": "action.Q11C.012",
+            "speaker": "ZUZANA95",
+            "sk": "Jednému zvončeku z Ivanky."
+          }
+        ],
+        "note": "two sounds: action sfx bike_bell before .002, cue school_bell_far (the ZŠ Sokolíkova electric bell, distant) before .004 (proposed per-line cue, see presentation). The line .004 says what is heard, so no meaning lives only in the sound. The 'stará dohoda' is Q10D's 'To je dohoda.': if the player has not done Q10 yet, it is a seed that pays off in 1962; Adam's lines are true in both orders",
+        "hint_step": "Vrchnák zvončeka použi na Kubov bicykel."
+      }
+    ],
+    "epilogue": [
+      {
+        "quest": "Q10",
+        "after": "Q10D",
+        "shot": "Koniec júna 1962. Zuzana zvoní triednym zvončekom a prváci vybiehajú na prázdniny.",
+        "line": "ZUZANA: Posledný zvonec! A v septembri zase prvý.",
+        "note": "keys epilogue.10.shot / epilogue.10.line (quest order); still EPILOGUE_10"
+      },
+      {
+        "quest": "Q11",
+        "after": "Q11C",
+        "shot": "Koniec júna 1995. Deti zo Sokolíkovej jazdia okolo dvora a Kubo zvoní najhlasnejšie.",
+        "line": "ZUZANA95: Posledný zvonec. A v septembri zase prvý.",
+        "note": "keys epilogue.11.shot / epilogue.11.line; still EPILOGUE_11; she says at 40 what she said at 7 (epilogue.10): the warm close of her thread; nothing about later years"
+      }
+    ],
+    "visual_variant_layers": [
+      {
+        "room": "S37",
+        "after": "B22",
+        "asset": "variants/S37_hopscotch.webp",
+        "change": "Kriedová škôlka na chodníku pri Verinej lavičke.",
+        "note": "B22 opens Ivanka, so 'after B22' = always in 1962"
+      },
+      {
+        "room": "S37",
+        "after": "B22",
+        "asset": "variants/S37_zuzana_bell.webp",
+        "change": "Triedny zvonček leží v tráve pri škôlke."
+      },
+      {
+        "room": "S37",
+        "after": "Q10A",
+        "asset": "variants/S37_zuzana_bell_gone.webp",
+        "change": "Tráva bez zvončeka (Adam ho nesie)."
+      },
+      {
+        "room": "S37",
+        "after": "Q10D",
+        "asset": "variants/S37_zuzana_bell_back.webp",
+        "change": "Opravený zvonček zase leží v tráve.",
+        "note": "same picture as S37_zuzana_bell, a separate file so the three layers stay distinct; drawn after the 'gone' patch"
+      },
+      {
+        "room": "S32",
+        "after": "B22",
+        "asset": "variants/S32_chalk_arrow.webp",
+        "change": "Kriedová šípka PARK na kameni pri studni."
+      },
+      {
+        "room": "S38",
+        "after": "B22",
+        "asset": "variants/S38_paper_boat.webp",
+        "change": "Papierová loďka v tráve pri kanáli."
+      },
+      {
+        "room": "S69",
+        "after": "Q11A",
+        "asset": "variants/S69_bellcap_glint.webp",
+        "change": "Pod najnižšími vetvami modrého smreka sa leskne mosadzný vrchnák."
+      },
+      {
+        "room": "S69",
+        "after": "Q11B",
+        "asset": "variants/S69_bellcap_gone.webp",
+        "change": "Pod smrekom už len ihličie."
+      },
+      {
+        "room": "S17",
+        "after": "G11",
+        "asset": "variants/S17_sign_shapes_only.webp",
+        "change": "Výtvarný panel v školskom dvore má už len štyri tvary; vlny, údery a dieliky sú na múre v Sokolíkovskom dvore.",
+        "note": "G11 opens 1995, so 'after G11' = always in S17; a patch layer instead of repainting bg_natural/S17.webp"
+      }
+    ],
+    "relocations": [
+      {
+        "action": "B19",
+        "to_hotspot": "S69.rhythm",
+        "retire_hotspot": false,
+        "hint_step": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+        "reason": "the target is a painted panel and the yard is a wall of concrete panels the school club painted; owner 2026-10-06: some puzzles move into the yard",
+        "note": "S17.rhythm stays as an atmospheric prop ('Výtvarný panel', texts via sk_overrides). walkthrough.json step 30 (S11 -> S12 -> S17, target S17.rhythm) is replayed as S11 -> S18 -> S69, target S69.rhythm"
+      }
+    ]
+  },
+  "dialogue_ext": {
+    "format": "lastbell.dialogue_ext",
+    "version": 1,
+    "chunk": "zuzana_yard",
+    "about": "DRAFT entries for src/game/data/content_ext/dialogue_ext.json (merge with tools/content_ext.py once world_ext.json is loaded). I10 and B19 need core_requests[0].",
+    "sequences": [
+      {
+        "id": "action.I10",
+        "action": "I10",
+        "kind": "action_lines",
+        "lines": [
+          "action.I10.001",
+          {
+            "key": "action.I10.z01",
+            "speaker": "ZUZANA",
+            "sk": "Tupé má teta Vera v puzdre. Ostré si nechá pre seba."
+          },
+          "action.I10.002",
+          "action.I10.003",
+          "action.I10.004",
+          {
+            "key": "action.I10.z02",
+            "speaker": "ZUZANA",
+            "sk": "A čo ešte potrebujete?"
+          },
+          {
+            "key": "action.I10.z03",
+            "speaker": "ADAM",
+            "sk": "Jeden list mám mať dvakrát, oba presne rovnaké."
+          },
+          {
+            "key": "action.I10.z04",
+            "speaker": "ZUZANA",
+            "sk": "Na to má pán Baran na pošte čierny papier. Píšete hore a dole sa to napíše samo."
+          },
+          {
+            "key": "action.I10.z05",
+            "speaker": "VERA60",
+            "sk": "Uhlový papier. Zuzka, ty by si mohla pracovať na úrade."
+          },
+          {
+            "key": "action.I10.z06",
+            "speaker": "ZUZANA",
+            "sk": "Nemohla. Ja chodím do školy."
+          }
+        ]
+      },
+      {
+        "id": "action.I09",
+        "action": "I09",
+        "kind": "action_lines",
+        "lines": [
+          "action.I09.001",
+          "action.I09.002",
+          "action.I09.003",
+          "action.I09.004",
+          "action.I09.005",
+          "action.I09.006",
+          "action.I09.007",
+          "action.I09.008",
+          {
+            "key": "action.I09.z01",
+            "speaker": "MIRA60",
+            "sk": "Vera kreslí v parku. Pri nej sa hrá naša malá suseda Zuzka."
+          },
+          {
+            "key": "action.I09.z02",
+            "speaker": "ADAM",
+            "sk": "Tú so škôlkou? Videl som ju cestou sem."
+          },
+          {
+            "key": "action.I09.z03",
+            "speaker": "MIRA60",
+            "sk": "Tak počúvaj, čo ti povie. V Ivanke sa ešte nestratila."
+          }
+        ],
+        "note": "true on every route: the way from the square to the booth S38/S39 leads through the park S37, where she always plays"
+      },
+      {
+        "id": "action.I03",
+        "action": "I03",
+        "kind": "action_lines",
+        "lines": [
+          "action.I03.001",
+          {
+            "key": "action.I03.z01",
+            "speaker": "LIDA",
+            "sk": "Presne to mi včera hovorila malá Zuzka. Že náš les sa kýve na jednej skrutke."
+          },
+          {
+            "key": "action.I03.z02",
+            "speaker": "ADAM",
+            "sk": "Mala pravdu."
+          },
+          {
+            "key": "action.I03.z03",
+            "speaker": "LIDA",
+            "sk": "Tá má pravdu skoro vždy. Len skrutkovač nemá."
+          },
+          "action.I03.002",
+          "action.I03.003",
+          "action.I03.004"
+        ]
+      },
+      {
+        "id": "action.I14",
+        "action": "I14",
+        "kind": "action_lines",
+        "lines": [
+          "action.I14.001",
+          {
+            "key": "action.I14.z01",
+            "speaker": "ALOJZ",
+            "sk": "Len opatrne, prosím. Farbí aj prsty. Malá Zuzka si ním u mňa obkresľuje ruky."
+          },
+          {
+            "key": "action.I14.z02",
+            "speaker": "ADAM",
+            "sk": "Tá malá so škôlkou v parku?"
+          },
+          {
+            "key": "action.I14.z03",
+            "speaker": "ALOJZ",
+            "sk": "Tá. Chodí si sem po známky. Kupuje iba tie, ktoré sa jej páčia."
+          },
+          "action.I14.002"
+        ]
+      },
+      {
+        "id": "action.B19",
+        "action": "B19",
+        "kind": "action_lines",
+        "lines": [
+          "action.B19.001",
+          {
+            "key": "action.B19.z01",
+            "speaker": "ZUZANA95",
+            "sk": "Sedí to. Šesť dielikov, rátala som ich, keď to deti maľovali."
+          },
+          {
+            "key": "action.B19.z02",
+            "speaker": "ADAM",
+            "sk": "Vy ste ich rátali?"
+          },
+          {
+            "key": "action.B19.z03",
+            "speaker": "ZUZANA95",
+            "sk": "Ja rátam všetko. Schody, dni do prázdnin aj lopty za múrom."
+          },
+          "action.B19.002",
+          {
+            "key": "action.B19.z04",
+            "speaker": "ZUZANA95",
+            "sk": "Zapíšte. Ja si to budem pamätať aj tak."
+          }
+        ],
+        "note": "the P03 words stay in .001 (protected P03-spoken-words); she repeats 'šesť dielikov', never a different number. If the C2 writing pass also extends B19 (x-lines), merge both into this one entry (an exchange is extended at most once)"
+      }
+    ],
+    "topic_extensions": [
+      {
+        "id": "topic.BOZO.ambient 1",
+        "topic": "BOZO.ambient 1",
+        "kind": "topic_lines",
+        "lines": [
+          "topic.BOZO.ambient 1.001",
+          {
+            "key": "topic.BOZO.ambient 1.z01",
+            "speaker": "BOZO",
+            "sk": "A keby ste predsa zablúdili, v parku skáče škôlku malá Zuzka."
+          },
+          {
+            "key": "topic.BOZO.ambient 1.z02",
+            "speaker": "ADAM",
+            "sk": "Ona pozná cestu?"
+          },
+          {
+            "key": "topic.BOZO.ambient 1.z03",
+            "speaker": "BOZO",
+            "sk": "Ona pozná v Ivanke každý kút. Lepšie ako ja cestovný poriadok, a ten viem naspamäť."
+          },
+          "topic.BOZO.ambient 1.002"
+        ]
+      }
+    ],
+    "topics": [
+      {
+        "id": "ZUZANA.extra 1",
+        "character": "ZUZANA",
+        "label": "Kto si?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 1.001",
+            "speaker": "ADAM",
+            "sk": "Ahoj. Ty hráš škôlku?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.002",
+            "speaker": "ZUZANA",
+            "sk": "Hrám. Ale do škôlky už nechodím. Chodím do prvej triedy."
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.003",
+            "speaker": "ZUZANA",
+            "sk": "Ešte dvadsaťštyri dní a mám za sebou celú prvú triedu."
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.004",
+            "speaker": "ADAM",
+            "sk": "Ty si to rátaš?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.005",
+            "speaker": "ZUZANA",
+            "sk": "Ja si rátam všetko. Políčka, schody aj to, koľkokrát ujo Rudo zabudne text."
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.006",
+            "speaker": "ADAM",
+            "sk": "Ja som Adam."
+          },
+          {
+            "key": "topic.ZUZANA.extra 1.007",
+            "speaker": "ZUZANA",
+            "sk": "Ja som Zuzana. Vy nie ste odtiaľto. Vy zniete inak."
+          }
+        ],
+        "note": "first meeting; always offered"
+      },
+      {
+        "id": "ZUZANA.extra 2",
+        "character": "ZUZANA",
+        "label": "Kde je Otova dielňa?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [
+          "I01"
+        ],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 2.001",
+            "speaker": "ADAM",
+            "sk": "Nevieš, kde má dielňu pán Bielik?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 2.002",
+            "speaker": "ZUZANA",
+            "sk": "Ujo Oto? Toho nájdete po zvuku."
+          },
+          {
+            "key": "topic.ZUZANA.extra 2.003",
+            "speaker": "ZUZANA",
+            "sk": "Z námestia choďte tam, kde vonia koža. To je dvor, tam je ujo Štefan."
+          },
+          {
+            "key": "topic.ZUZANA.extra 2.004",
+            "speaker": "ZUZANA",
+            "sk": "A za ním tam, kde to tiká zo všetkých strán. To je ujo Oto."
+          },
+          {
+            "key": "topic.ZUZANA.extra 2.005",
+            "speaker": "ADAM",
+            "sk": "Vôňa kože a potom tikanie. Zapamätám si to."
+          },
+          {
+            "key": "topic.ZUZANA.extra 2.006",
+            "speaker": "ZUZANA",
+            "sk": "Hlavne nechoďte tam, kde to kotkodáka. Tam sú len sliepky."
+          }
+        ],
+        "note": "pointer for I01 (route S32 -> S35 -> S36)"
+      },
+      {
+        "id": "ZUZANA.extra 3",
+        "character": "ZUZANA",
+        "label": "Kto má dierovač?",
+        "repeatable": true,
+        "requires_done": [
+          "I01"
+        ],
+        "excluded_done": [
+          "I03"
+        ],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 3.001",
+            "speaker": "ADAM",
+            "sk": "Nevieš, kde nájdem pani Lídu?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.002",
+            "speaker": "ZUZANA",
+            "sk": "Teta Lída je v sále. Tam, kde niekto kričí „Žiaden strach, miláčik!“"
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.003",
+            "speaker": "ZUZANA",
+            "sk": "Ten látkový les sa im celý deň kýve. Má voľnú svorku, ja som to videla."
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.004",
+            "speaker": "ADAM",
+            "sk": "A povedala si im to?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.005",
+            "speaker": "ZUZANA",
+            "sk": "Povedala. Ale skrutkovač mi nikto nepožičia, lebo som malá."
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.006",
+            "speaker": "ADAM",
+            "sk": "Ja jeden mám."
+          },
+          {
+            "key": "topic.ZUZANA.extra 3.007",
+            "speaker": "ZUZANA",
+            "sk": "Tak vám to skôr dovolia."
+          }
+        ],
+        "note": "pointer for I03"
+      },
+      {
+        "id": "ZUZANA.extra 4",
+        "character": "ZUZANA",
+        "label": "Čo je s pumpou?",
+        "repeatable": true,
+        "requires_done": [
+          "I01"
+        ],
+        "excluded_done": [
+          "I06"
+        ],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 4.001",
+            "speaker": "ADAM",
+            "sk": "Tá pumpa pri búdke za parkom…"
+          },
+          {
+            "key": "topic.ZUZANA.extra 4.002",
+            "speaker": "ZUZANA",
+            "sk": "Kvapká. Ráno som jej narátala sto kvapiek, potom som prestala."
+          },
+          {
+            "key": "topic.ZUZANA.extra 4.003",
+            "speaker": "ZUZANA",
+            "sk": "Teta Mira hovorí, že jej treba novú manžetu."
+          },
+          {
+            "key": "topic.ZUZANA.extra 4.004",
+            "speaker": "ZUZANA",
+            "sk": "Ja som myslela, že manžeta je na košeli. Pumpa predsa košeľu nemá."
+          },
+          {
+            "key": "topic.ZUZANA.extra 4.005",
+            "speaker": "ADAM",
+            "sk": "Táto je kožená. Drží vodu tam, kde má byť."
+          },
+          {
+            "key": "topic.ZUZANA.extra 4.006",
+            "speaker": "ZUZANA",
+            "sk": "Tak je to taký opasok pre vodu."
+          }
+        ],
+        "note": "pointer for I06"
+      },
+      {
+        "id": "ZUZANA.extra 5",
+        "character": "ZUZANA",
+        "label": "Poznáš Miru?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 5.001",
+            "speaker": "ADAM",
+            "sk": "Poznáš Miru Hruškovú?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 5.002",
+            "speaker": "ZUZANA",
+            "sk": "Teta Mira je naša suseda. Cez dva domy."
+          },
+          {
+            "key": "topic.ZUZANA.extra 5.003",
+            "speaker": "ZUZANA",
+            "sk": "Keď v búdke pri kanáli svieti, mamka povie: Mira zas meria čas."
+          },
+          {
+            "key": "topic.ZUZANA.extra 5.004",
+            "speaker": "ZUZANA",
+            "sk": "Neviem, kam ho potom dáva. Asi do zošita."
+          },
+          {
+            "key": "topic.ZUZANA.extra 5.005",
+            "speaker": "ADAM",
+            "sk": "Niekam, kde sa nestratí. Na to je veľmi poriadna."
+          },
+          {
+            "key": "topic.ZUZANA.extra 5.006",
+            "speaker": "ZUZANA",
+            "sk": "To je. Mne raz našla gombík, čo som stratila pred rokom."
+          }
+        ]
+      },
+      {
+        "id": "ZUZANA.extra 6",
+        "character": "ZUZANA",
+        "label": "Holub pri miske",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [
+          "Q6C"
+        ],
+        "speaks_first": "ZUZANA",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 6.001",
+            "speaker": "ZUZANA",
+            "sk": "Ten holub pri miske je poštový. Má na nohe krúžok."
+          },
+          {
+            "key": "topic.ZUZANA.extra 6.002",
+            "speaker": "ZUZANA",
+            "sk": "Dala som mu chlieb, ale nechcel. Asi je zvyknutý na lepšie."
+          },
+          {
+            "key": "topic.ZUZANA.extra 6.003",
+            "speaker": "ADAM",
+            "sk": "Možno chce svoje vlastné krmivo."
+          },
+          {
+            "key": "topic.ZUZANA.extra 6.004",
+            "speaker": "ZUZANA",
+            "sk": "To má ujo Štefan na dvore. Mne nedá, ja som malá. Vám dá."
+          }
+        ],
+        "note": "fixed vs. the first draft: Štefan gives Béla's feed without a slip (Q6B), so she no longer says 'only on a slip'"
+      },
+      {
+        "id": "ZUZANA.extra 7",
+        "character": "ZUZANA",
+        "label": "Ujo Rudo",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [
+          "Q7C"
+        ],
+        "speaks_first": "ZUZANA",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 7.001",
+            "speaker": "ZUZANA",
+            "sk": "Ja viem prvú vetu od uja Ruda. Žiaden strach, miláčik!"
+          },
+          {
+            "key": "topic.ZUZANA.extra 7.002",
+            "speaker": "ADAM",
+            "sk": "A druhú?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 7.003",
+            "speaker": "ZUZANA",
+            "sk": "Druhú nevie ani on. Je v scenári a scenár sa stratil."
+          },
+          {
+            "key": "topic.ZUZANA.extra 7.004",
+            "speaker": "ZUZANA",
+            "sk": "Teta Lída hovorí, že ak sa nenájde, bude to veľmi krátke divadlo."
+          }
+        ]
+      },
+      {
+        "id": "ZUZANA.extra 8",
+        "character": "ZUZANA",
+        "label": "Prázdniny",
+        "repeatable": true,
+        "requires_done": [
+          "I17"
+        ],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA.extra 8.001",
+            "speaker": "ADAM",
+            "sk": "Čo budeš robiť cez prázdniny?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 8.002",
+            "speaker": "ZUZANA",
+            "sk": "Budem sa pozerať na kanál. Kúpať sa v ňom nesmieme. Mamka hovorí, že voda nemá zábradlie."
+          },
+          {
+            "key": "topic.ZUZANA.extra 8.003",
+            "speaker": "ZUZANA",
+            "sk": "A budem chodiť na zastávku. Ujo Božo mi dovolí kývať vlakom do Bratislavy."
+          },
+          {
+            "key": "topic.ZUZANA.extra 8.004",
+            "speaker": "ADAM",
+            "sk": "Všetkým?"
+          },
+          {
+            "key": "topic.ZUZANA.extra 8.005",
+            "speaker": "ZUZANA",
+            "sk": "Iba tým, čo idú načas. Ostatným kýva on sám. Nahnevane."
+          }
+        ]
+      },
+      {
+        "id": "BERTA.extra Z",
+        "character": "BERTA",
+        "label": "Kto je tá malá?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.BERTA.extra Z.001",
+            "speaker": "ADAM",
+            "sk": "Kto je to malé dievča v parku?"
+          },
+          {
+            "key": "topic.BERTA.extra Z.002",
+            "speaker": "BERTA",
+            "sk": "Zuzka. Ráno v škole, poobede v parku, večer pri kanáli, kým ju mamka nezavolá."
+          },
+          {
+            "key": "topic.BERTA.extra Z.003",
+            "speaker": "ADAM",
+            "sk": "A čia je?"
+          },
+          {
+            "key": "topic.BERTA.extra Z.004",
+            "speaker": "BERTA",
+            "sk": "Predsa mamkina. Tu je každý niečí, mladý pán."
+          },
+          {
+            "key": "topic.BERTA.extra Z.005",
+            "speaker": "ADAM",
+            "sk": "Čí som ja, zatiaľ nikto neuhádol."
+          },
+          {
+            "key": "topic.BERTA.extra Z.006",
+            "speaker": "BERTA",
+            "sk": "Zuzka to zistí prvá. Uvidíte."
+          }
+        ]
+      },
+      {
+        "id": "MIRA60.extra Z",
+        "character": "MIRA60",
+        "label": "Suseda Zuzka",
+        "repeatable": true,
+        "requires_done": [
+          "I08"
+        ],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.MIRA60.extra Z.001",
+            "speaker": "ADAM",
+            "sk": "Vaša suseda Zuzka je všade, kam prídem."
+          },
+          {
+            "key": "topic.MIRA60.extra Z.002",
+            "speaker": "MIRA60",
+            "sk": "To robí každému. Aj tým, čo nevedia, že potrebujú sprievod."
+          },
+          {
+            "key": "topic.MIRA60.extra Z.003",
+            "speaker": "MIRA60",
+            "sk": "Včera sa ma pýtala, kam dávam ten čas, čo meriam."
+          },
+          {
+            "key": "topic.MIRA60.extra Z.004",
+            "speaker": "ADAM",
+            "sk": "A čo ste jej povedali?"
+          },
+          {
+            "key": "topic.MIRA60.extra Z.005",
+            "speaker": "MIRA60",
+            "sk": "Pravdu. Že ho zapisujem, aby sa nestratil."
+          }
+        ]
+      },
+      {
+        "id": "ZUZANA95.extra 1",
+        "character": "ZUZANA95",
+        "label": "Poznáme sa?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [
+          "I10"
+        ],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 1.001",
+            "speaker": "ADAM",
+            "sk": "Prepáčte, pozeráte sa na mňa, akoby sme sa poznali."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.002",
+            "speaker": "ZUZANA95",
+            "sk": "Lebo sa poznáme. Z parku v Ivanke, z júna šesťdesiatdva."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.003",
+            "speaker": "ADAM",
+            "sk": "Šesťdesiatdva? Vtedy som ešte nebol ani na svete."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.004",
+            "speaker": "ZUZANA95",
+            "sk": "Viem, ako to znie. Ale mali ste presne tieto topánky."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.005",
+            "speaker": "ADAM",
+            "sk": "Tieto topánky som si kúpil minulú jeseň."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.006",
+            "speaker": "ZUZANA95",
+            "sk": "A hľadali ste papier, ktorý píše dvakrát. Poslala som vás na poštu za pánom Baranom."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.007",
+            "speaker": "ADAM",
+            "sk": "To si zapamätám. Pre istotu."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.008",
+            "speaker": "ZUZANA95",
+            "sk": "Nebojte sa, nebudem sa pýtať, ako to robíte. Niektoré veci sú krajšie bez návodu."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.009",
+            "speaker": "ADAM",
+            "sk": "To hovoríte opravárovi."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 1.010",
+            "speaker": "ZUZANA95",
+            "sk": "Práve preto."
+          }
+        ],
+        "note": "phase 1 (Adam has not lived the guaranteed 1962 meeting I10 yet, e.g. the first 1995 visit): she remembers, he cannot; every Adam line is true in both cases (he was not born in 1962; he may or may not have been in Ivanka). Pays off in I10.z04"
+      },
+      {
+        "id": "ZUZANA95.extra 2",
+        "character": "ZUZANA95",
+        "label": "Park v Ivanke",
+        "repeatable": true,
+        "requires_done": [
+          "I10"
+        ],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 2.001",
+            "speaker": "ADAM",
+            "sk": "Už viem, odkiaľ sa poznáme. Z parku pri kaštieli."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.002",
+            "speaker": "ZUZANA95",
+            "sk": "Tak predsa. Už som si myslela, že sa mi to celé iba prisnilo."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.003",
+            "speaker": "ADAM",
+            "sk": "Vy ste ma vtedy poslali na poštu po uhlový papier."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.004",
+            "speaker": "ZUZANA95",
+            "sk": "A vy ste naozaj išli. Dospelí ma vtedy veľmi nepočúvali."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.005",
+            "speaker": "ADAM",
+            "sk": "Mali by. Ten papier zabral."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.006",
+            "speaker": "ZUZANA95",
+            "sk": "Pre mňa je to tridsaťtri rokov. A pre vás?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.007",
+            "speaker": "ADAM",
+            "sk": "Oveľa menej. Viac vám povedať neviem."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 2.008",
+            "speaker": "ZUZANA95",
+            "sk": "Nemusíte. Hlavne že ste prišli aj sem."
+          }
+        ],
+        "note": "phase 2: after the guaranteed 1962 meeting (I10 plays in S37 with her z-lines)"
+      },
+      {
+        "id": "ZUZANA95.extra 3",
+        "character": "ZUZANA95",
+        "label": "Triedny zvonček",
+        "repeatable": true,
+        "requires_done": [
+          "Q10D"
+        ],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 3.001",
+            "speaker": "ADAM",
+            "sk": "Ten triedny zvonček z Ivanky… Zazvonili ste ním na konci roka?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.002",
+            "speaker": "ZUZANA95",
+            "sk": "Zazvonila. Trieda vybehla na prázdniny skôr, ako som dozvonila."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.003",
+            "speaker": "ZUZANA95",
+            "sk": "Učiteľka povedala, že takto rýchlo ešte nikto prázdniny nezačal."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.004",
+            "speaker": "ADAM",
+            "sk": "A pútko vydržalo?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.005",
+            "speaker": "ZUZANA95",
+            "sk": "Celý jún. Potom som to už nerátala."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.006",
+            "speaker": "ADAM",
+            "sk": "Vy a nerátať? Tomu sa mi nechce veriť."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 3.007",
+            "speaker": "ZUZANA95",
+            "sk": "Boli prázdniny. Aj rátanie má raz za čas voľno."
+          }
+        ],
+        "note": "closes the 1962 thread; matches epilogue.10 (end of June 1962, she rings the bell at the school door). Nothing after the summer of 1962 is told"
+      },
+      {
+        "id": "ZUZANA95.extra 4",
+        "character": "ZUZANA95",
+        "label": "Nákres s vlnami",
+        "repeatable": true,
+        "requires_done": [
+          "B03"
+        ],
+        "excluded_done": [
+          "B19"
+        ],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 4.001",
+            "speaker": "ADAM",
+            "sk": "Nevideli ste tu niekde nákres s vlnami a čiarkami?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.002",
+            "speaker": "ZUZANA95",
+            "sk": "Videla. Na jar ho tu na múr maľovali deti zo školského krúžku s jednou pani."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.003",
+            "speaker": "ZUZANA95",
+            "sk": "Pani mala pod pazuchou magnetofón a z rukáva jej padala krieda."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.004",
+            "speaker": "ADAM",
+            "sk": "To bude ona. A na ktorom paneli to je?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.005",
+            "speaker": "ZUZANA95",
+            "sk": "Múr má tridsaťdva panelov. Nákres je na troch vpravo, hneď pri priechode."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.006",
+            "speaker": "ADAM",
+            "sk": "Vy ste tie panely rátali?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 4.007",
+            "speaker": "ZUZANA95",
+            "sk": "Ja rátam všetko. To mi zostalo."
+          }
+        ],
+        "note": "her help with the relocated main step B19: she points to the painted panel (direction only, never the digits)"
+      },
+      {
+        "id": "ZUZANA95.extra 5",
+        "character": "ZUZANA95",
+        "label": "Škôlka na asfalte",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 5.001",
+            "speaker": "ADAM",
+            "sk": "Tú škôlku na asfalte ste kreslili vy?"
+          },
+          {
+            "key": "topic.ZUZANA95.extra 5.002",
+            "speaker": "ZUZANA95",
+            "sk": "Ja. Kubo ju chcel, tak ju má. Osem políčok a hore polkruh."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 5.003",
+            "speaker": "ADAM",
+            "sk": "A rovné čiary. Ja by som na to potreboval pravítko."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 5.004",
+            "speaker": "ZUZANA95",
+            "sk": "Môžete si skočiť. Ale iba do štvorky, dospelí ďalej padajú."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 5.005",
+            "speaker": "ADAM",
+            "sk": "Tak radšej do trojky. Nech mám rezervu."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 5.006",
+            "speaker": "ZUZANA95",
+            "sk": "Rozumné. Kubo skáče až do osmičky, ale on ešte nevie, že by mal padať."
+          }
+        ],
+        "note": "callback to the 1962 hopscotch and to Q10D ('iba do štvorky'); works in every state"
+      },
+      {
+        "id": "ZUZANA95.extra 6",
+        "character": "ZUZANA95",
+        "label": "Koniec školského roka",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.ZUZANA95.extra 6.001",
+            "speaker": "ADAM",
+            "sk": "Deti sa už určite tešia na prázdniny."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.002",
+            "speaker": "ZUZANA95",
+            "sk": "Ešte pätnásť dní. Kubo si ich škrtá kriedou na múre, aby mu ani jeden neušiel."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.003",
+            "speaker": "ADAM",
+            "sk": "A vy mu ich pomáhate rátať."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.004",
+            "speaker": "ZUZANA95",
+            "sk": "Ja rátam stále. Schody, dni aj loptu, keď preletí cez múr."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.005",
+            "speaker": "ZUZANA95",
+            "sk": "Dnes preletela štyrikrát. Pani zo štvrtého poschodia ju zakaždým hodila späť nahnevanejšie."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.006",
+            "speaker": "ADAM",
+            "sk": "Tá by mohla chytať za družstvo."
+          },
+          {
+            "key": "topic.ZUZANA95.extra 6.007",
+            "speaker": "ZUZANA95",
+            "sk": "Ona chytá. Len proti nám."
+          }
+        ],
+        "note": "15 June 1995: fifteen days to the end of the school year (30 June). Last-bell motif"
+      },
+      {
+        "id": "KUBO.extra 1",
+        "character": "KUBO",
+        "label": "Prvá trieda",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.KUBO.extra 1.001",
+            "speaker": "ADAM",
+            "sk": "Do ktorej triedy chodíš?"
+          },
+          {
+            "key": "topic.KUBO.extra 1.002",
+            "speaker": "KUBO",
+            "sk": "Do prvej. Už viem čítať, písať a pískať na prstoch."
+          },
+          {
+            "key": "topic.KUBO.extra 1.003",
+            "speaker": "ADAM",
+            "sk": "A čo z toho ťa naučili v škole?"
+          },
+          {
+            "key": "topic.KUBO.extra 1.004",
+            "speaker": "KUBO",
+            "sk": "Čítať a písať. Pískať ma naučil brat, ale to sa na vysvedčenie nepíše."
+          },
+          {
+            "key": "topic.KUBO.extra 1.005",
+            "speaker": "ADAM",
+            "sk": "Škoda. Za to by si mal jednotku."
+          },
+          {
+            "key": "topic.KUBO.extra 1.006",
+            "speaker": "KUBO",
+            "sk": "Pani učiteľka by nesúhlasila. Ona to pískanie počula."
+          }
+        ]
+      },
+      {
+        "id": "KUBO.extra 2",
+        "character": "KUBO",
+        "label": "Prečo je tu taký múr?",
+        "repeatable": true,
+        "requires_done": [],
+        "excluded_done": [],
+        "speaks_first": "ADAM",
+        "lines": [
+          {
+            "key": "topic.KUBO.extra 2.001",
+            "speaker": "ADAM",
+            "sk": "Prečo je okolo ihriska taký vysoký múr?"
+          },
+          {
+            "key": "topic.KUBO.extra 2.002",
+            "speaker": "KUBO",
+            "sk": "Aby lopta neutekala na ulicu. Ale ona uteká aj tak, len vyššie."
+          },
+          {
+            "key": "topic.KUBO.extra 2.003",
+            "speaker": "ADAM",
+            "sk": "A kto pre ňu potom chodí?"
+          },
+          {
+            "key": "topic.KUBO.extra 2.004",
+            "speaker": "KUBO",
+            "sk": "Najmenší. Čiže ja."
+          },
+          {
+            "key": "topic.KUBO.extra 2.005",
+            "speaker": "KUBO",
+            "sk": "Pani zo štvrtého poschodia ju vždy hodí späť. Ale najprv nám povie, koľko muškátov sme zlomili."
+          },
+          {
+            "key": "topic.KUBO.extra 2.006",
+            "speaker": "ADAM",
+            "sk": "A koľko?"
+          },
+          {
+            "key": "topic.KUBO.extra 2.007",
+            "speaker": "KUBO",
+            "sk": "Všetky. Ale ona ich má veľa."
+          }
+        ]
+      }
+    ]
+  },
+  "core_requests": [
+    {
+      "id": "speakers-of-extended-existing-actions",
+      "need": "dialogue_ext sequences of two EXISTING actions add a speaker who stands in the room: I10 (target S37.VERA60) + ZUZANA, relocated B19 (target S69.rhythm, a prop) + ZUZANA95. Today's rule allows only the action's speakers, the target NPC's party and staging guests (game.json: none).",
+      "proposal": "either (a) let a sequence's new lines be spoken also by the NPCs standing in the action's effective room (as ContentOverlay.World already allows for new actions), or (b) a world_ext 'staging' patch for existing actions: {action, add_guest_speakers}. (a) is simpler and needs no data."
+    },
+    {
+      "id": "speaker-alias-in-new-actions",
+      "need": "Q10B is a new action on the existing NPC hotspot S35.SKLAD; its lines are spoken by STEFAN (the speaker id of SKLAD in every game.json line, like ARCHIVAR=KAROL, FOTO=ALENA, TRH=FERO, POSTA=ALOJZ). ContentOverlay.World allows the target's character id (SKLAD) and the room's NPC ids, not the alias.",
+      "proposal": "allow the target character's party (the same Party() set the dialogue overlay uses, which contains STEFAN), or map the five aliases"
+    },
+    {
+      "id": "epilogue-rules-text",
+      "need": "game.json epilogue_rules says 'Q1–Q9'; with Q10 and Q11 it should read 'Q1–Q11'. If the text is shown anywhere, rewrite it through sk_overrides, else ignore."
+    },
+    {
+      "id": "ambient-sounds",
+      "need": "ambient sound layers are presentation, not world data: data/audio (audio agent): S32 and S38 'school_handbell_far' after Q10D (at most every ~40 s), S69 'bike_bell' after Q11C (at most every ~30 s), and the per-line cue 'school_bell_far' before action.Q11C.004."
+    },
+    {
+      "id": "regions",
+      "need": "S69 carries region 'Dúbravka' (1995, not a hub); travel_ext.json lists the 1995 Dúbravka rooms explicitly, so add S69 there too if the room's region hint does not merge into it."
+    },
+    {
+      "id": "walkthrough-replay",
+      "need": "walkthrough.json step 30 B19 still says travel S11 -> S12 -> S17 and target S17.rhythm; the replayer recomputes the path to the relocated target (S11 -> S18 -> S69) like the travel overlay's S02 -> S51 hop; step 31 starts in S69."
+    }
+  ],
+  "sk_override_proposals": [
+    {
+      "key": "action.B17.003",
+      "sk": "Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr v Sokolíkovskom dvore.",
+      "note": "protected P03-source: its place pattern changes from 'školsk* dvor' to 'Sokolíkovsk* dvor*' (glossary.json, same commit)"
+    },
+    {
+      "key": "action.B17.004",
+      "sk": "Do Sokolíkovského dvora sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu."
+    },
+    {
+      "key": "action.B17.objective",
+      "sk": "Požičaj Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore."
+    },
+    {
+      "key": "action.B17.journal",
+      "sk": "Požičaj Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore."
+    },
+    {
+      "key": "quest.M07.hint.2",
+      "sk": "Dezider dá cievku, Emil metronóm. Tri číslice sú na múre v Sokolíkovskom dvore."
+    },
+    {
+      "key": "quest.M07.hint.3",
+      "sk": "Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres v Sokolíkovskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6."
+    },
+    {
+      "key": "puzzle.P03.wrong",
+      "sk": "Nesedí to. Správne číslice sú na rytmickom nákrese v Sokolíkovskom dvore."
+    },
+    {
+      "key": "look.S30.dial",
+      "sk": "Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a číslice z nákresu v Sokolíkovskom dvore."
+    },
+    {
+      "key": "hotspot.S17.rhythm.name",
+      "sk": "Výtvarný panel"
+    },
+    {
+      "key": "look.S17.rhythm",
+      "sk": "Kruh, trojuholník, štvorec a fialové V. Deti z krúžku maľovali vo veľkom.",
+      "note": "drop: 3–2–6; the clue moved to look.S69.rhythm. Only after the protected P03-words / P03-digits rules list look.S69.rhythm instead of look.S17.rhythm"
+    }
+  ],
+  "ui_csv": {
+    "ui.hint_step.B19": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+    "note": "Core shows the relocation's hint_step (key action.B19.hint_step) instead of ui.hint_step.B19; update ui.hint_step.B19 too so no stale text remains"
+  },
+  "glossary_change": {
+    "glossary.json protected P03-words.keys": "look.S17.rhythm -> look.S69.rhythm",
+    "glossary.json protected P03-digits.keys": "look.S17.rhythm -> look.S69.rhythm",
+    "glossary.json protected P03-source.require": "(?i)školsk\\w* dvor -> (?i)Sokolíkovsk\\w* dvor\\w*",
+    "glossary.json protected P03-wrong.require": "(?i)školsk\\w* dvor -> (?i)Sokolíkovsk\\w* dvor\\w*",
+    "GLOSSARY.md": "§ 6.1 P03 row (S69 painted wall, look.S69.rhythm), § 5 rooms table + S69 | 1995 | Dúbravka | Sokolíkovský dvor, § 7 step 30 B19 -> S69, § 2 rows ZUZANA / ZUZANA95 / KUBO",
+    "verified": "tools/check_rewrite.py on these sk_override_proposals with a glossary.json patched as above: 0 errors (2 acknowledged warnings on look.S17.rhythm)"
+  },
+  "presentation": {
+    "npc_staging": {
+      "S69.ZUZANA95": {
+        "variant": "standing",
+        "feet": [
+          1660,
+          935
+        ],
+        "facing": "left",
+        "optional_variant": "seated on the bench"
+      },
+      "S69.KUBO": {
+        "variant": "standing",
+        "feet": [
+          1400,
+          960
+        ],
+        "facing": "right"
+      },
+      "S37.ZUZANA": {
+        "variant": "playing",
+        "feet": [
+          330,
+          885
+        ]
+      }
+    },
+    "line_sound_cues": {
+      "action.Q11C.004": "school_bell_far",
+      "action.Q10D.003": "school_handbell (the action sfx, played before the line)"
+    },
+    "writing_tools": "tools/writing_bundles.py: add S69 to chunk C2 rooms; extract_strings / check_strings / check_rewrite must read world_ext.json"
+  },
+  "stats_after": {
+    "rooms": 69,
+    "main_actions": 94,
+    "side_actions": 40,
+    "characters": 53,
+    "items": 83,
+    "hotspots": 254,
+    "side_quests": 11,
+    "puzzles": 5,
+    "cutscenes": 9,
+    "note": "hotspots 239 + 4 (S37.ZUZANA, S37.hopscotch, S32.chalk_arrow, S38.paper_boat) + 11 (S69); Core recounts ambient props"
+  }
+}

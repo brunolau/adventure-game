@@ -75,6 +75,9 @@ public static class TextKeys
     /// <summary><c>action.&lt;id&gt;.objective</c>.</summary>
     public static string ActionObjective(string actionId) => $"action.{actionId}.objective";
 
+    /// <summary>Exact step hint of an action defined by the world overlay: <c>action.&lt;id&gt;.hint_step</c>.</summary>
+    public static string ActionHintStep(string actionId) => $"action.{actionId}.hint_step";
+
     /// <summary><c>char.&lt;id&gt;.name</c> (actors and non-actor speakers).</summary>
     public static string CharacterName(string characterId) => $"char.{characterId}.name";
 

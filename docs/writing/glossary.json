@@ -93,7 +93,9 @@
     "Dobrovič": "\\bDobrovič\\w*",
     "Ružena": "\\bRužen\\w*",
     "Marta": "\\bMart(a|y|e|u|ou|in\\w*)\\b",
-    "Šimon": "\\bŠimon\\w*"
+    "Šimon": "\\bŠimon\\w*",
+    "Zuzana": "\\bZuz\\w*",
+    "Kubo": "\\bKub(o|a|ovi|om|ko|kovi|ov\\w*)\\b"
   },
   "places": {
     "Chorvátsky Grob": "\\bGrob\\w*",
@@ -148,7 +150,7 @@
     "platňa": "\\bplat[ňn]\\w*",
     "rydlo": "\\brydl\\w*",
     "registračný list": "\\bregistr\\w*",
-    "uhlový papier": "\\buhlov\\w*",
+    "uhľový papier": "\\buh[lľ]ov\\w*",
     "schránka": "\\bschrán\\w*",
     "manžeta": "\\bmanžet\\w*",
     "koža": "\\bkož\\w*",
@@ -213,7 +215,7 @@
     },
     {
       "pattern": "\\bprepisov\\w* papier\\w*",
-      "use": "uhlový papier"
+      "use": "uhľový papier"
     },
     {
       "pattern": "\\bslučk\\w*",
@@ -361,9 +363,9 @@
     },
     {
       "id": "P03-words",
-      "why": "P03 clue text exactly as painted on the school yard panel",
+      "why": "P03 clue text exactly as painted on the courtyard wall panel (S69 Sokolíkovský dvor since content v2; B19 relocated from S17)",
       "keys": [
-        "look.S17.rhythm",
+        "look.S69.rhythm",
         "puzzle.P03.clue"
       ],
       "require": [
@@ -376,7 +378,7 @@
       "id": "P03-digits",
       "why": "P03 solution 3–2–6",
       "keys": [
-        "look.S17.rhythm",
+        "look.S69.rhythm",
         "journal.clue.P03",
         "action.B19.objective",
         "action.B19.journal",
@@ -418,18 +420,18 @@
         "Emil",
         "metronóm",
         "(?i)tri (číslic|čísl)|3 číslic",
-        "(?i)školsk\\w* dvor"
+        "(?i)Sokolíkovsk\\w* dvor\\w*"
       ]
     },
     {
       "id": "P03-wrong",
-      "why": "wrong line points to the school yard drawing",
+      "why": "wrong line points to the rhythm drawing in the Sokolíkovský dvor (S69)",
       "keys": [
         "puzzle.P03.wrong",
         "look.S30.dial"
       ],
       "require": [
-        "(?i)školsk\\w* dvor"
+        "(?i)Sokolíkovsk\\w* dvor\\w*"
       ]
     },
     {

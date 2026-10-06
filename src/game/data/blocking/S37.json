@@ -134,6 +134,40 @@
         536
       ],
       "reason": "Vera seated on her park bench (bench part of the sprite) on the lawn left of centre"
+    },
+    "S37.ZUZANA": {
+      "rect": [
+        204,
+        626,
+        118,
+        268
+      ],
+      "interaction_point": [
+        420,
+        905
+      ],
+      "label_anchor": [
+        263,
+        616
+      ],
+      "reason": "content v2: little Zuzana plays hopscotch on the park path left of Vera (feet 262, 892; 0.75 x 350 px = 263 px tall)"
+    },
+    "S37.hopscotch": {
+      "rect": [
+        150,
+        862,
+        600,
+        48
+      ],
+      "interaction_point": [
+        480,
+        925
+      ],
+      "label_anchor": [
+        520,
+        852
+      ],
+      "reason": "content v2: the chalk hopscotch along the park path (x 150-748, y 870-902, 2.6 x 0.7 m, half circle at the right end); layer variants_natural/S37_hopscotch.webp"
     }
   },
   "npcs": {
@@ -145,6 +179,16 @@
       ],
       "facing": "right",
       "reason": "docs/DECISIONS.md item 2: Vera seated with her bench (VERA60 posture seated, bench in the sprite); the painting leaves the spot free; scale from the room perspective (0.566)"
+    },
+    "S37.ZUZANA": {
+      "variant": "playing",
+      "feet": [
+        262,
+        892
+      ],
+      "facing": "right",
+      "z": "auto",
+      "reason": "ZUZANA.md 2: Zuzana plays hopscotch (actor variant 'playing') on the path left of Vera's bench, near her bell in the grass, away from the spawn and the bird bowl"
     }
   },
   "exits": {
@@ -195,6 +239,60 @@
       ],
       "until": [],
       "reason": "Q6C puts the seeds into the bird bowl (free retouch master v2, art/masters/bg_natural/S37.md); the pigeon itself is the ambient sprite 'pigeon' with unless_done Q6C"
+    },
+    {
+      "texture": "variants_natural/S37_zuzana_bell_gone.webp",
+      "pos": [
+        282,
+        912
+      ],
+      "after": [
+        "Q10A"
+      ],
+      "until": [],
+      "reason": "content v2: Adam takes Zuzana's mute class bell from the grass (Q10A); shows at once"
+    },
+    {
+      "texture": "variants_natural/S37_zuzana_bell_back.webp",
+      "pos": [
+        282,
+        912
+      ],
+      "after": [
+        "Q10D"
+      ],
+      "until": [],
+      "reason": "content v2: the repaired bell lies in the grass again after Zuzana rang it (Q10D); shows at once"
     }
-  ]
+  ],
+  "variant_layers": {
+    "variants/S37_hopscotch.webp": {
+      "texture": "variants_natural/S37_hopscotch.webp",
+      "pos": [
+        120,
+        846
+      ]
+    },
+    "variants/S37_zuzana_bell.webp": {
+      "texture": "variants_natural/S37_zuzana_bell.webp",
+      "pos": [
+        282,
+        912
+      ]
+    },
+    "variants/S37_zuzana_bell_gone.webp": {
+      "texture": "variants_natural/S37_zuzana_bell_gone.webp",
+      "pos": [
+        282,
+        912
+      ]
+    },
+    "variants/S37_zuzana_bell_back.webp": {
+      "texture": "variants_natural/S37_zuzana_bell_back.webp",
+      "pos": [
+        282,
+        912
+      ]
+    }
+  }
 }

@@ -88,10 +88,10 @@ public static class Quests
     }
 
     /// <summary>
-    /// Reward text key of a quest. game.json has no reward field, so the fallback is empty; the
-    /// actual side quest reward is the album entry (epilogue shot) and the visible change.
+    /// Reward text of a quest (<c>quest.&lt;id&gt;.reward</c>, fallback the data's <c>reward</c>, empty when the quest
+    /// has none); the actual side quest reward is the album entry (epilogue shot) and the visible change.
     /// </summary>
-    public static TextRef RewardOf(QuestDef quest) => new(TextKeys.QuestReward(quest.Id), "");
+    public static TextRef RewardOf(QuestDef quest) => new(TextKeys.QuestReward(quest.Id), quest.Reward);
 }
 
 /// <summary>A named value for a placeholder of a hint text (<c>{room}</c>, <c>{target}</c>).</summary>
@@ -187,8 +187,15 @@ public static class Hints
     {
         1 => new HintText(1, Direction(content, state, quest, step), Array.Empty<HintArg>()),
         2 => Place(content, step),
-        _ => new HintText(3, new TextRef(StepKey(step.Id), step.Label), Array.Empty<HintArg>()),
+        _ => new HintText(3, StepText(step), Array.Empty<HintArg>()),
     };
+
+    /// <summary>
+    /// The exact level-3 text of a step: the world overlay's <c>hint_step</c> (key <c>action.&lt;id&gt;.hint_step</c>,
+    /// world.csv) for its new and relocated actions, else <c>ui.hint_step.&lt;id&gt;</c> (ui.csv, fallback the label).
+    /// </summary>
+    public static TextRef StepText(ActionDef step) =>
+        step.HintStep is { } text ? new TextRef(TextKeys.ActionHintStep(step.Id), text) : new TextRef(StepKey(step.Id), step.Label);
 
     /// <summary>
     /// Level 1: the objective of the latest done action that enables the step (one of its required actions, or the

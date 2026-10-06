@@ -1,0 +1,640 @@
+{
+  "chunk": "C4_verify",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\review_gpt\\C4_v2_verify.input.csv",
+  "overlay": [],
+  "cost_usd": 1.957,
+  "batches": {
+    "F01+F03": {
+      "hash": "548621038ee4746c",
+      "status": "ok",
+      "heading": "F01 · main quest M12 „Prístup do Atlasu“ | F03 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.F01.003",
+        "action.F01.005",
+        "action.F01.x05",
+        "action.F01.x07",
+        "action.F01.x08",
+        "action.F03.005",
+        "action.F03.x04"
+      ],
+      "fix": 2,
+      "conversation_note": "If the displayed order is the actual playback order, the follow-ups are misplaced: Adam asks about the disappearing name only after Nina has listed the handoffs, and his greeting to Boris comes after their discussion of Lea. Place these existing lines beside the turns they introduce or answer.",
+      "usage": {
+        "prompt_tokens": 18796,
+        "completion_tokens": 2826,
+        "total_tokens": 21622,
+        "cost": 0.285781,
+        "prompt_tokens_details": {
+          "cached_tokens": 4831,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2858
+    },
+    "F04+J03+F08+F10+F16+Q8D": {
+      "hash": "d72c562f962e5093",
+      "status": "ok",
+      "heading": "F04 · main quest M12 „Prístup do Atlasu“ | J03 · main quest M12 „Prístup do Atlasu“ | F08 · main quest M13 „Zastaviť zápis“ | F10 · main quest M13 „Zastaviť zápis“ | F16 · main quest M15 „Štyria svedkovia“ | Q8D · side quest Q8 „Adresa nie je len súradnica“",
+      "keys": [
+        "action.F04.x02",
+        "action.J03.002",
+        "action.F08.x02",
+        "action.F10.x02",
+        "action.F16.x02",
+        "action.Q8D.x04"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 23842,
+        "completion_tokens": 802,
+        "total_tokens": 24644,
+        "cost": 0.23211,
+        "prompt_tokens_details": {
+          "cached_tokens": 7140,
+          "cache_write_tokens": 7140
+        }
+      },
+      "usd": 0.2321
+    },
+    "Q9F+S41+S42+S44+S46": {
+      "hash": "3898c8dc69df8497",
+      "status": "ok",
+      "heading": "Q9F · side quest Q9 „Nápad mimo predlohy“ | S41 · Biela Púť pri dolnej stanici (2035, Biela Púť) | S42 · Pred hotelom Grand Jasná (2035, Biela Púť) | S44 · Výstavný salón hotela Grand Jasná (2035, Grand Jasná) | S46 · Klientske centrum Biela Púť (2035, Biela Púť)",
+      "keys": [
+        "action.Q9F.x04",
+        "action.Q9F.x05",
+        "look.S41.ambient 2",
+        "look.S42.ambient 1",
+        "look.S44.ambient 2",
+        "look.S46.ambient 2"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 21792,
+        "completion_tokens": 1316,
+        "total_tokens": 23108,
+        "cost": 0.2426465,
+        "prompt_tokens_details": {
+          "cached_tokens": 6319,
+          "cache_write_tokens": 6319
+        }
+      },
+      "usd": 0.2426
+    },
+    "S47+S45+S50+S49": {
+      "hash": "a7219753b5a038b0",
+      "status": "ok",
+      "heading": "S47 · Chopok pri Rotunde (2035, Chopok) | S45 · Chodník pri Vrbickom plese (2035, Vrbické pleso) | S50 · Vyhliadková terasa pri Rotunde (2035, Chopok) | S49 · Chronokomora pavilónu Atlas (2035, Chopok)",
+      "keys": [
+        "entry.S47.001",
+        "look.S45.ambient 1",
+        "entry.S50.001",
+        "look.S50.ambient 2",
+        "look.S50.switch.variant1",
+        "entry.S49.001",
+        "look.S49.VIKTOR"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 21015,
+        "completion_tokens": 1329,
+        "total_tokens": 22344,
+        "cost": 0.237184,
+        "prompt_tokens_details": {
+          "cached_tokens": 6064,
+          "cache_write_tokens": 6064
+        }
+      },
+      "usd": 0.2372
+    },
+    "BORIS+IVAN+JANA35+NINA+ROBOT": {
+      "hash": "6ece939626d51274",
+      "status": "ok",
+      "heading": "BORIS · Boris Urban (64) — S44 | IVAN · Ivan Horský (44) — S67 | JANA35 · Jana Vargová (65) — S44 | NINA · Nina Švecová (30) — S42 | ROBOT · Doručovací robot Očko (model 2033) — S41",
+      "keys": [
+        "topic.BORIS.extra 1.006",
+        "topic.IVAN.ambient 1.x01",
+        "topic.IVAN.ambient 2.x01",
+        "topic.JANA35.extra 1.006",
+        "topic.NINA.extra 2.006",
+        "topic.ROBOT.extra 1.003",
+        "topic.ROBOT.extra 3.004"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22702,
+        "completion_tokens": 1702,
+        "total_tokens": 24404,
+        "cost": 0.253584,
+        "prompt_tokens_details": {
+          "cached_tokens": 6504,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2536
+    },
+    "SARA+TAMARA": {
+      "hash": "d415963f54d8e6b1",
+      "status": "ok",
+      "heading": "SARA · Sára Vrbová (28) — S46 | TAMARA · Tamara Kráľová (40) — S43",
+      "keys": [
+        "topic.SARA.extra 2.005",
+        "topic.SARA.extra 3.002",
+        "topic.TAMARA.ambient 2.x03",
+        "topic.TAMARA.extra 1.004",
+        "topic.TAMARA.extra 1.006",
+        "topic.TAMARA.extra 2.006"
+      ],
+      "fix": 3,
+      "conversation_note": "In TAMARA.ambient 2, the unreviewed x01 abruptly introduces a control light after Adam says everything is spinning. The comparison needs a brief setup there; changing x03 alone cannot repair that transition.",
+      "usage": {
+        "prompt_tokens": 18055,
+        "completion_tokens": 2468,
+        "total_tokens": 20523,
+        "cost": 0.261452,
+        "prompt_tokens_details": {
+          "cached_tokens": 4722,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2615
+    },
+    "TURISTA+VIKTOR": {
+      "hash": "11c421b197c31729",
+      "status": "ok",
+      "heading": "TURISTA · Miloš Polák (52) — S68 | VIKTOR · Viktor Korman (50) — S49",
+      "keys": [
+        "topic.TURISTA.ambient 1.001",
+        "topic.TURISTA.ambient 2.002",
+        "topic.TURISTA.extra 1.004",
+        "topic.TURISTA.extra 2.004",
+        "topic.VIKTOR.ambient 1.003",
+        "topic.VIKTOR.ambient 1.x01",
+        "topic.VIKTOR.ambient 2.001"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18500,
+        "completion_tokens": 1719,
+        "total_tokens": 20219,
+        "cost": 0.225068,
+        "prompt_tokens_details": {
+          "cached_tokens": 5098,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2251
+    },
+    "M14+CS01+CS05+CS06+CS07": {
+      "hash": "42fd0d0674c2a93a",
+      "status": "ok",
+      "heading": "M14 (main) — actions F11 | CS01 — after „Spojiť referenčné tvary“ (G11) in S10 Dielňa ZVON (2020) | CS05 — after „Overiť reťazec pôvodu a otvoriť rok 2035“ (C05) in S10 Dielňa ZVON (2020) | CS06 — after „Prehrať Viktorovi Leinu pôvodnú správu“ (F11) in S49 Chronokomora pavilónu Atlas (2035) | CS07 — after „Obnoviť záznamy a vrátiť sa domov“ (F17) in S49 Chronokomora pavilónu Atlas (2035)",
+      "keys": [
+        "quest.M14.hint.3",
+        "cutscene.CS01.01.001",
+        "cutscene.CS01.02.001",
+        "cutscene.CS05.02.002",
+        "cutscene.CS06.02.001",
+        "cutscene.CS07.01.003"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20919,
+        "completion_tokens": 1284,
+        "total_tokens": 22203,
+        "cost": 0.219129,
+        "prompt_tokens_details": {
+          "cached_tokens": 6029,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2191
+    }
+  },
+  "keys": {
+    "action.F01.003": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The spoken line exceeds the approximate 110-character target. Tighten it without losing the locations or the distinction between working cable cars and the malfunctioning device.",
+      "suggestion": "Atlas má výstavu v hoteli, pavilón na Chopku. Lanovky idú normálne, no náš prístroj spätne prepisuje záznamy ľudí.",
+      "text": "Atlas má výstavu v hoteli a pavilón hore na Chopku. Lanovky jazdia normálne, ale náš prístroj spätne prepisuje záznamy ľudí.",
+      "batch": "F01+F03"
+    },
+    "action.F01.005": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The line runs over the spoken-length target and packs the warning and three handoffs into one turn. Trim the wording while retaining every handoff.",
+      "suggestion": "Náš zakladateľ Viktor Korman. Varovala som ho, no nevypol ho. Čítačku dá Tamara, kartu fondu Boris, preukaz s lístkom Sára.",
+      "text": "Viktor Korman, náš zakladateľ. Nevypol ho ani po mojom varovaní. Čítačku vám dá Tamara, kartu fondu Boris, preukaz s lístkom Sára.",
+      "batch": "F01+F03"
+    },
+    "action.F01.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Traja ľudia. Kde ich nájdem?",
+      "batch": "F01+F03"
+    },
+    "action.F01.x07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čítačka, karta, preukaz a lístok. A ja som dnes ráno išiel len vymeniť poistku.",
+      "batch": "F01+F03"
+    },
+    "action.F01.x08": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poistku by som potrebovala aj ja. Takú, čo vypadne, keď niekto nepočúva varovania.",
+      "batch": "F01+F03"
+    },
+    "action.F03.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Áno. A práve preto mala jej správa zostať celá.",
+      "batch": "F01+F03"
+    },
+    "action.F03.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Normalizátoru áno. Smiech nemá kolónku, a čo nemá kolónku, to je preň šum.",
+      "batch": "F01+F03"
+    },
+    "action.F04.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Kartu poznám. Najprv vás zapíšem perom do knihy návštev. Odtiaľ mi nikto nezmizne.",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.J03.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Až v cieli? Výborne. Dnes som prešiel dosť dverí, za ktorými bol iný rok.",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.F08.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vidím ju. Je čistá, nič na nej netreba upravovať.",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.F10.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sedí pri stole a pozerá do pohára s vodou. Nalial si ju ešte pred spustením skúšky.",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.F16.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tie najmä. Babka by povedala: „Čo sa nezhoduje, necháme vedľa seba.“",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.Q8D.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Káva: nekompatibilná. Ponuku ukladám do priečinka Nepotrebné, ale milé.",
+      "batch": "F04+J03+F08+F10+F16+Q8D"
+    },
+    "action.Q9F.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To je ten zošit z výstavky?",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "action.Q9F.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nie ten. Štvrtý v poradí. Prvé tri sú plné.",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "look.S41.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Drevené šípky: Priehyba, Chopok, Biela Púť. Na Bielu Púť ma posiela šípka, pod ktorou práve stojím.",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "look.S42.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Smrek pred hotelom, viac snehu ako ihličia. Keby som doň štuchol, sneh by zasypal aj recepciu.",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "look.S44.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Červená záložka v otvorenej knihe na pulte. Niekto tu prestal čítať a kniha naňho počká.",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "look.S46.ambient 2": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Attaching the infinitive directly to ‘ruky ma svrbia’ is not idiomatic Slovak. Express the urge directly while keeping Adam's impulse to straighten the leaves.",
+      "suggestion": "Fikus má každý list otočený inam. Najradšej by som ich zarovnal, ale nechám ho tak.",
+      "text": "Fikus má každý list otočený inam. Ruky ma svrbia zarovnať ich, ale nechám ho tak.",
+      "batch": "Q9F+S41+S42+S44+S46"
+    },
+    "entry.S47.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rotunda a v nej výstava Atlasu. Výhľad je krásny, len z fotiek na stenách miznú ľudia.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "look.S45.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zametený ľad odráža les aj kopec za ním. Trochu nakrivo, ale patrí to sem.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "entry.S50.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pekný výhľad. Keby sa tak dali zachrániť aj všetci, čo sa naň pozerajú.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "look.S50.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sklenené zábradlie, celé v námraze. Opriem sa oň, až keď si natiahnem rukavice.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "look.S50.switch.variant1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepínač je zaistený v polohe MONITOR. Na ZÁPIS ho už nikto neprepne.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "entry.S49.001": {
+      "verdict": "fix",
+      "category": "tone",
+      "problem": "Being high above the years and yet carrying them all turns this into a lyrical speech. Adam would describe the same connection through the actual things in his bag.",
+      "suggestion": "Sme vysoko na Chopku. Veci zo všetkých rokov, ktoré som dnes navštívil, mám tu v brašni.",
+      "text": "Sme na Chopku, vysoko nad všetkými rokmi, ktoré som dnes navštívil. A predsa ich všetky nosím v brašni.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "look.S49.VIKTOR": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Viktor nespal a veľmi chce, aby to celé malo zmysel. Pri veľkom vypínači by nemal stáť sám.",
+      "batch": "S47+S45+S50+S49"
+    },
+    "topic.BORIS.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Obe. Sneh som overil cez okno a polievku včera v hotelovej reštaurácii.",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.IVAN.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Radšej do vnútorného vrecka. Hore fúka a lístky odlietajú ako vrabce.",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.IVAN.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The opening fragment does not follow from Adam's remark about repairing the wind; it sounds like an answer to a missing question.",
+      "suggestion": "Vietor nechajte tak. Radšej sa riaďte tým, čo vám poviem ja, nie oblakmi.",
+      "text": "Podľa toho, čo vám poviem ja. Oblakom by som tak neveril.",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.JANA35.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Povedala. Zapísal si to a pod čiaru pripísal: „Ďakujem.“",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.NINA.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Naživo prikývol, písomne poďakoval a na porade aj tak pustil skúšku.",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.ROBOT.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kto vás postavil späť na kolesá?",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.ROBOT.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Áno. Spýtal som sa jednej panej. Povedala, že som zlatý, a potom presne ukázala, kde to bolo.",
+      "batch": "BORIS+IVAN+JANA35+NINA+ROBOT"
+    },
+    "topic.SARA.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poviem. A dodám, nech si zapne bundu až po bradu.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo raz jedna káva skončila v knihe návštev. Mená z troch strán sa zliali do jednej škvrny.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.ambient 2.x03": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The cassette's 'honesty' is another closing ironic summary. Let Tamara react as a repairer rather than merely cap the comparison.",
+      "suggestion": "Presne tá. Keď kazeta stojí, vidím to hneď. A už beriem skrutkovač.",
+      "text": "Presne tá. Kazeta aspoň prizná, že stojí.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 1.004": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "“Opraví namiesto kontajnera” literally contrasts repairing the recorder with repairing the container. The missing action of throwing it away must be expressed.",
+      "suggestion": "Toľko, koľkokrát ho niekto radšej opraví, než vyhodí do kontajnera.",
+      "text": "Toľko, koľkokrát ho niekto opraví namiesto kontajnera.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 1.006": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The 'not a recorder but a patient' formula is a tacked-on comic verdict. Keep the medical image, but turn it into practical advice from one repairer to another.",
+      "suggestion": "Tak tomu magnetofónu založ kartu pacienta, nech pri ďalšej oprave vieš, čo už má za sebou.",
+      "text": "Tak to už nie je magnetofón. To je pacient s kartou.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malé skrutky mi odskakujú spod skrehnutých prstov. V snehu ich nenájdeš ani s magnetom.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TURISTA.ambient 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo aj tá patrí k výletu.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.TURISTA.ambient 2.002": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The expression “hlavne že” is not separated by a comma.",
+      "suggestion": "Hlavne že ten smiech vám zostal.",
+      "text": "Hlavne, že ten smiech vám zostal.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.TURISTA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hore je všetko drahé. Rezeň ma stál len desať minút pri sporáku.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.TURISTA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Výlety si pozriem aj o desať rokov. Parkovisko už nie.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.VIKTOR.ambient 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To hovoríte teraz. Keď vám zostane jediná nahrávka, začnete si všímať každý šum.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.VIKTOR.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "So šumom robím celý život. Väčšinou sa pod ním skrýva to najlepšie z nahrávky.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "topic.VIKTOR.ambient 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Záznamy budú mať uvedený pôvod aj verzie a ľudia budú môcť nesúhlasiť. A ja zverejním, čo som spustil.",
+      "batch": "TURISTA+VIKTOR"
+    },
+    "quest.M14.hint.3": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Leina nezmenená hlasová správa → Viktor v chronokomore. Potom nasleduje rozhovor a Viktorov súhlas s obnovou.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    },
+    "cutscene.CS01.01.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Adam, z tej starej fotky nám zmizol kúsok farby.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    },
+    "cutscene.CS01.02.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nositeľ stabilizovaný. Obsah stabilizovaný. Referencia 1995.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    },
+    "cutscene.CS05.02.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nezabudnem. Rok návratu mám tentoraz napísaný aj na prístroji.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    },
+    "cutscene.CS06.02.001": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Vyčistil som zo správy” is an unnatural construction for removing part of a recording. “Vymazal” expresses the action directly and keeps the emotional beat simple.",
+      "suggestion": "Vymazal som zo správy presne to, čo som si mal nechať.",
+      "text": "Vyčistil som zo správy presne to, čo som si mal nechať.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    },
+    "cutscene.CS07.01.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Konečne v tom vidím ľudí, nie tabuľku.",
+      "batch": "M14+CS01+CS05+CS06+CS07"
+    }
+  },
+  "unreviewed": []
+}

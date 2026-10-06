@@ -1,0 +1,4022 @@
+{
+ "about": "Chunk C2 v2 draft (1995 Bratislava: Dúbravka, Karlova Ves, Staré Mesto, Ružinov, Petržalka; the new room S69 Sokolíkovský dvor; Zuzana at 40 and Kubo; side quest Q11; the relocated main step B19). Combined draft: world_ext (merge with `tools/content_ext.py merge-world` together with chunk C3's 1962 part) and dialogue_ext (`tools/content_ext.py merge`). Existing keys: docs/writing/out_v2/C2.csv.",
+ "chunk": "C2",
+ "schema": "src/LastBell.Core/README.md section 13 (world_ext + dialogue_ext); new line keys action.<id>.xNN / zNN, topic.<topicId>.xNN, topic.<CHAR>.extra N.NNN; world texts keyed by Core from the ids.",
+ "world_ext": {
+  "format": "lastbell.world_ext",
+  "version": 1,
+  "about": "Chunk C2 (1995) part of the world overlay: new room S69 Sokolíkovský dvor with Zuzana (40) and Kubo, side quest Q11 with item BELLCAP and its epilogue shot, the relocation of the main step B19 into S69, and the S18 exit. Texts written per design-doc/WRITING_METHOD.md (C2 v2). The 1962 part (ZUZANA, Q10, S37/S32/S38 props) belongs to chunk C3; merge both parts into one world_ext.json with Q10's epilogue before Q11's (keys epilogue.10 / epilogue.11).",
+  "characters": [
+   {
+    "id": "ZUZANA95",
+    "name": "Zuzana",
+    "age": 40,
+    "role": "Zuzana z Ivanky o tridsaťtri rokov neskôr, v júni 1995 v Sokolíkovskom dvore (v hre býva na Sokolíkovej; nič ďalšie o jej živote sa nehovorí). Spozná Adama z parku v Ivanke, lebo nezostarol. Pomôže s rytmickým nákresom a s Kubovým zvončekom.",
+    "voice": "Pokojná, láskavá, s tichým humorom; stále všetko ráta. Adamovi vyká, Kubovi tyká; Adam jej vyká.",
+    "design": "Štyridsaťročná žena; tvár, oči a vlasy zrejme tie isté ako u sedemročnej Zuzany: krátke svetlohnedé vlasy s pešinkou na boku, okrúhla tvár, vážne láskavé oči; tmavomodrá blúzka s bielym okrúhlym golierikom, svetlá sukňa, sandále, kúsok bielej kriedy.",
+    "rooms": [
+     "S69"
+    ]
+   },
+   {
+    "id": "KUBO",
+    "name": "Kubo",
+    "age": 7,
+    "role": "Prvák zo susedného vchodu na Sokolíkovej v júni 1995; jazdí po dvore na bicykli, ktorému nezvoní zvonček. Vedľajšia úloha Druhý posledný zvonec.",
+    "voice": "Rýchla detská reč, berie veci doslova, je hrdý na to, čo vie. Adamovi vyká, Adam mu tyká.",
+    "design": "Sedemročný chlapec, krátke tmavé vlasy, odreté koleno, tričko s pruhom, krátke nohavice, plátenné tenisky bez značky.",
+    "rooms": [
+     "S69"
+    ]
+   }
+  ],
+  "items": [
+   {
+    "id": "BELLCAP",
+    "name": "Vrchnák zvončeka",
+    "look": "Mosadzný vrchnák z detského zvončeka. Vnútri má závit, na boku škrabanec od obrubníka.",
+    "origin": "Q11B",
+    "purpose": "Naskrutkovať na Kubov zvonček.",
+    "disposition": "retain",
+    "icon": "items/BELLCAP.webp"
+   }
+  ],
+  "rooms": [
+   {
+    "id": "S69",
+    "name": "Sokolíkovský dvor",
+    "era": 1995,
+    "district": "Dúbravka",
+    "art_brief": "Ohradené ihrisko medzi panelákmi na Sokolíkovej v júni 1995 popoludní: múr z betónových panelov postavených na výšku, asfaltové ihrisko so škôlkou nakreslenou kriedou, breza a modrý smrek za múrom, guľová lampa, zelená lavička a pri nej detský bicykel, na troch paneloch pravého múru výtvarný nákres krúžku so štyrmi tvarmi a rytmom.",
+    "ambience": "Lopta o betón, detské hlasy, vrabce na múre, z balkóna rádio, vzdialená električka.",
+    "region": "Dúbravka",
+    "hub": false,
+    "first_entry": [
+     {
+      "key": "entry.S69.001",
+      "speaker": "ADAM",
+      "sk": "Sokolíkovský dvor. Tu som raz prehodil loptu cez múr a hľadal som ju až do tmy."
+     }
+    ],
+    "background_asset": "bg/S69.webp",
+    "music": "music/1995.ogg",
+    "walk_polygon": [
+     [
+      830,
+      800
+     ],
+     [
+      1000,
+      770
+     ],
+     [
+      1268,
+      702
+     ],
+     [
+      1385,
+      712
+     ],
+     [
+      1700,
+      748
+     ],
+     [
+      1860,
+      800
+     ],
+     [
+      1880,
+      880
+     ],
+     [
+      1640,
+      960
+     ],
+     [
+      1580,
+      1015
+     ],
+     [
+      1150,
+      1015
+     ],
+     [
+      1150,
+      885
+     ],
+     [
+      1000,
+      840
+     ],
+     [
+      830,
+      812
+     ]
+    ],
+    "spawn": [
+     1360,
+     985
+    ],
+    "camera_family": "S69",
+    "layer_order": [
+     "background",
+     "prop_state_variants",
+     "npc_shadows",
+     "npcs_and_adam_sorted_by_feet_y",
+     "foreground_mask",
+     "hotspot_labels",
+     "hud"
+    ],
+    "blocking_note": "TEMPLATE values in 1920x1080 (painting scaled to height 1080, 7 px cropped each side). The court is the walk area: bounded by the back wall foot, the right wall foot, the grass bank at the bottom right and, on the left, the TOP edge of the foreground wall (feet stay above it, so no foreground mask is needed unless the blocking pass lets the hero behind the wall). Hero scale about 0.21 at the back (y ~705) to ~0.55 at the bottom (y ~1015); the blocking pass measures it and runs tools/check_blocking.py.",
+    "hotspots": [
+     {
+      "id": "S69.wall",
+      "name": "Betónový múr",
+      "kind": "prop",
+      "look": "Múr z betónových panelov postavených na výšku. Lopta sa od neho nikdy neodrazí tam, kam ju posielam.",
+      "rect": [
+       240,
+       690,
+       900,
+       380
+      ],
+      "interaction_point": [
+       1185,
+       995
+      ],
+      "label_anchor": [
+       690,
+       680
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "the long wall of upright concrete panels in the foreground left (outer face); atmospheric"
+     },
+     {
+      "id": "S69.rhythm",
+      "name": "Rytmický nákres",
+      "kind": "prop",
+      "look": "Kruh, trojuholník, štvorec, fialové V a pod nimi TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV. To je nastavenie 3–2–6.",
+      "rect": [
+       1440,
+       585,
+       185,
+       125
+      ],
+      "interaction_point": [
+       1520,
+       790
+      ],
+      "label_anchor": [
+       1532,
+       575
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "the club's painting across three panels of the right wall next to the passage (repainted copy of the S17 sign content); target of the relocated B19"
+     },
+     {
+      "id": "S69.court",
+      "name": "Ihrisko so škôlkou",
+      "kind": "prop",
+      "look": "Kriedou nakreslená škôlka: osem políčok a hore polkruh. Čiary sú rovnejšie ako na mojich nákresoch.",
+      "rect": [
+       1190,
+       790,
+       260,
+       100
+      ],
+      "interaction_point": [
+       1320,
+       930
+      ],
+      "label_anchor": [
+       1320,
+       780
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "chalk hopscotch decal painted on the court asphalt"
+     },
+     {
+      "id": "S69.birch",
+      "name": "Breza",
+      "kind": "prop",
+      "look": "Breza za múrom. Biela kôra, tenké vetvy a lístie, ktoré sa trasie, aj keď vôbec nefúka.",
+      "rect": [
+       640,
+       20,
+       120,
+       660
+      ],
+      "interaction_point": [
+       900,
+       805
+      ],
+      "label_anchor": [
+       700,
+       30
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "birch behind the back wall"
+     },
+     {
+      "id": "S69.spruce",
+      "name": "Modrý smrek",
+      "kind": "prop",
+      "look": "Modrý smrek, pichľavý zo všetkých strán. Pod takými končia lopty aj kriedy. Ruku tam nestrčí nikto rád.",
+      "rect": [
+       820,
+       40,
+       290,
+       600
+      ],
+      "interaction_point": [
+       1080,
+       760
+      ],
+      "label_anchor": [
+       965,
+       50
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [
+       {
+        "after": "Q11A",
+        "sk": "Pod smrekom sa medzi ihličím niečo leskne. Niečo mosadzné."
+       },
+       {
+        "after": "Q11B",
+        "sk": "Pod smrekom zostalo už len ihličie a jedna zabudnutá krieda."
+       }
+      ],
+      "note": "blue spruce behind the back wall; Q11B target (the bell cap lies under its lowest branches by the wall)"
+     },
+     {
+      "id": "S69.lamp",
+      "name": "Guľová lampa",
+      "kind": "prop",
+      "look": "Guľová lampa. Keď sa večer rozsvieti, deti vedia, že sa ide domov. Hodinky sa dajú zatajiť, lampa nie.",
+      "rect": [
+       305,
+       455,
+       60,
+       240
+      ],
+      "interaction_point": [
+       845,
+       806
+      ],
+      "label_anchor": [
+       335,
+       445
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "globe street lamp at the left behind the wall"
+     },
+     {
+      "id": "S69.bench",
+      "name": "Lavička",
+      "kind": "prop",
+      "look": "Zelená lavička, čerstvo natretá. Asi tá, na ktorú sa sťažujú pri kiosku.",
+      "rect": [
+       1590,
+       830,
+       240,
+       110
+      ],
+      "interaction_point": [
+       1580,
+       960
+      ],
+      "label_anchor": [
+       1710,
+       820
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "NEW painted prop: green bench on the right edge of the court where the grass bank begins (callback to Zita's ambient line about the freshly painted bench)"
+     },
+     {
+      "id": "S69.bike",
+      "name": "Kubov bicykel",
+      "kind": "prop",
+      "look": "Malý bicykel s prídavnými kolieskami. Zvončeku chýba vrchnák, trčí z neho len holý závit.",
+      "rect": [
+       1440,
+       860,
+       150,
+       100
+      ],
+      "interaction_point": [
+       1470,
+       985
+      ],
+      "label_anchor": [
+       1515,
+       850
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [
+       {
+        "after": "Q11C",
+        "sk": "Kubov bicykel. Zvonček má zase vrchnák a ozve sa pri každom hrbole."
+       }
+      ],
+      "note": "NEW painted prop: child's bike leaning against the bench; Q11C target"
+     },
+     {
+      "id": "S69.gap",
+      "name": "Priechod medzi blokmi",
+      "kind": "prop",
+      "look": "Úzky priechod medzi blokmi. Vedie k ďalším vchodom a k ďalším múrom.",
+      "rect": [
+       1275,
+       600,
+       105,
+       100
+      ],
+      "interaction_point": [
+       1330,
+       720
+      ],
+      "label_anchor": [
+       1327,
+       590
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [],
+      "note": "the gap between the back wall and the right wall; atmospheric, no exit (one connection: S18)"
+     },
+     {
+      "id": "S69.ZUZANA95",
+      "name": "Zuzana",
+      "kind": "npc",
+      "character_id": "ZUZANA95",
+      "look": "Žena s kúskom kriedy v ruke si ma prezerá, akoby ma odniekiaľ poznala. Ja ju nepoznám. Asi.",
+      "rect": [
+       1600,
+       670,
+       120,
+       265
+      ],
+      "interaction_point": [
+       1560,
+       955
+      ],
+      "label_anchor": [
+       1660,
+       660
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [
+       {
+        "after": "I10",
+        "sk": "Zuzana z parku v Ivanke. Pre ňu prešlo tridsaťtri rokov, pre mňa oveľa menej."
+       }
+      ],
+      "note": "standing by the bench, feet ~[1660, 935]; template, final from the blocking pass"
+     },
+     {
+      "id": "S69.KUBO",
+      "name": "Kubo",
+      "kind": "npc",
+      "character_id": "KUBO",
+      "look": "Malý chlapec s odretým kolenom ťuká do zvončeka na bicykli. Zvonček mlčí.",
+      "rect": [
+       1355,
+       785,
+       90,
+       178
+      ],
+      "interaction_point": [
+       1330,
+       990
+      ],
+      "label_anchor": [
+       1400,
+       775
+      ],
+      "visible_after": [],
+      "hide_after": [],
+      "look_variants": [
+       {
+        "after": "Q11C",
+        "sk": "Kubo krúži okolo ihriska a zvoní v každej zákrute. Aj tam, kde žiadna nie je."
+       }
+      ],
+      "note": "child (350 px sheet) next to his bike, feet ~[1400, 960]"
+     }
+    ],
+    "exits": [
+     {
+      "id": "S69.to_S18",
+      "to": "S18",
+      "label": "Sídliskový dvor s kioskom",
+      "requires_done": [],
+      "travel": "walk",
+      "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+      "rect": [
+       1150,
+       1000,
+       430,
+       80
+      ],
+      "interaction_point": [
+       1360,
+       1000
+      ],
+      "note": "the court opens towards the camera between the end of the foreground wall and the grass bank: the way back out to the street with Zita's kiosk"
+     }
+    ]
+   }
+  ],
+  "hotspots": [],
+  "exits": [
+   {
+    "room": "S18",
+    "id": "S18.to_S69",
+    "to": "S69",
+    "travel": "walk",
+    "label": "Sokolíkovský dvor",
+    "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+    "requires_done": [],
+    "rect": [
+     430,
+     850,
+     190,
+     45
+    ],
+    "interaction_point": [
+     525,
+     880
+    ],
+    "note": "the side road between the beige block and the pines runs away from the camera into the gap between the blocks (template; the blocking pass may extend the S18 walk polygon up the road)"
+   }
+  ],
+  "connections": [
+   {
+    "from": "S18",
+    "to": "S69",
+    "bidirectional": true,
+    "travel": "walk",
+    "label": "Sokolíkovský dvor",
+    "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+    "requires_done": [],
+    "note": "the only link of S69; no S17 <-> S69 link (S17's way to the right of the school is S17.to_S18; the podlubie stays a no-go, owner 2026-10-06)"
+   }
+  ],
+  "quests": [
+   {
+    "id": "Q11",
+    "title": "Druhý posledný zvonec",
+    "type": "side",
+    "actions": [
+     "Q11A",
+     "Q11B",
+     "Q11C"
+    ],
+    "completion": "Q11C",
+    "missable": false,
+    "goal": "Oprav Kubov zvonček na bicykli, aby mohol na konci roka zvoniť s ostatnými deťmi.",
+    "reward": "Kubo so zvončekom a Zuzanina škôlka na Sokolíkovej v Adamovom albume.",
+    "hints": [
+     "Kubo v Sokolíkovskom dvore má na bicykli zvonček, ktorý nezvoní.",
+     "Vrchnák zvončeka sa odkotúľal pod modrý smrek a Zuzana videla kam. Naskrutkuješ ho náradím zo servisnej brašne.",
+     "Téma „Zvonček na bicykli“ u Kuba → modrý smrek v Sokolíkovskom dvore → vrchnák zvončeka na Kubov bicykel."
+    ]
+   }
+  ],
+  "actions": [
+   {
+    "id": "Q11A",
+    "room": "S69",
+    "target": "S69.KUBO",
+    "label": "Zvonček na bicykli",
+    "kind": "topic",
+    "requires_done": [],
+    "requires_items": [],
+    "selected_item": null,
+    "gives": [],
+    "consumes": [],
+    "quest": "Q11",
+    "puzzle": null,
+    "cutscene": null,
+    "once": true,
+    "objective": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+    "animation": "talk",
+    "sfx": null,
+    "excluded_done": [],
+    "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+    "journal_text": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+    "staging": {
+     "guest_speakers": [
+      "ZUZANA95"
+     ],
+     "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+    },
+    "lines": [
+     {
+      "key": "action.Q11A.001",
+      "speaker": "ADAM",
+      "sk": "Prečo ťukáš do toho zvončeka?"
+     },
+     {
+      "key": "action.Q11A.002",
+      "speaker": "KUBO",
+      "sk": "Lebo nezvoní. Ťukám, ťukám a nič."
+     },
+     {
+      "key": "action.Q11A.003",
+      "speaker": "ADAM",
+      "sk": "Ukáž. Chýba mu vrchnák, presne ten, čo zvoní."
+     },
+     {
+      "key": "action.Q11A.004",
+      "speaker": "KUBO",
+      "sk": "Odskočil, keď som vyšiel na obrubník. A potom sa kotúľal."
+     },
+     {
+      "key": "action.Q11A.005",
+      "speaker": "ZUZANA95",
+      "sk": "Trikrát poskočil a zmizol pod modrým smrekom. Rátala som to."
+     },
+     {
+      "key": "action.Q11A.006",
+      "speaker": "KUBO",
+      "sk": "Ja som nerátal. Ja som padal."
+     },
+     {
+      "key": "action.Q11A.007",
+      "speaker": "ZUZANA95",
+      "sk": "Aj to som videla. Koleno to prežilo, zvonček zatiaľ nie."
+     },
+     {
+      "key": "action.Q11A.008",
+      "speaker": "KUBO",
+      "sk": "Na konci roka ideme všetci okolo dvora a zvoníme. Bez zvončeka sa to nepočíta."
+     },
+     {
+      "key": "action.Q11A.009",
+      "speaker": "ADAM",
+      "sk": "Vrchnák nájdem a naskrutkujem. Na konci roka budeš zvoniť."
+     }
+    ],
+    "hint_step": "V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli."
+   },
+   {
+    "id": "Q11B",
+    "room": "S69",
+    "target": "S69.spruce",
+    "label": "Pohľadať vrchnák pod smrekom",
+    "kind": "click",
+    "requires_done": [
+     "Q11A"
+    ],
+    "requires_items": [],
+    "selected_item": null,
+    "gives": [
+     "BELLCAP"
+    ],
+    "consumes": [],
+    "quest": "Q11",
+    "puzzle": null,
+    "cutscene": null,
+    "once": true,
+    "objective": "Naskrutkuj vrchnák na zvonček Kubovho bicykla.",
+    "animation": "reach_low",
+    "sfx": "item_soft",
+    "excluded_done": [],
+    "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+    "journal_text": "Naskrutkuj vrchnák na zvonček Kubovho bicykla.",
+    "staging": {
+     "guest_speakers": [],
+     "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+    },
+    "lines": [
+     {
+      "key": "action.Q11B.001",
+      "speaker": "ADAM",
+      "sk": "Ihličie, dve kriedy, stará loptička a mosadzný vrchnák."
+     },
+     {
+      "key": "action.Q11B.002",
+      "speaker": "ADAM",
+      "sk": "Trikrát poskočil a zastavil sa presne tu. Zuzana rátala dobre."
+     }
+    ],
+    "note": "a click on the spruce before Q11A is only its look",
+    "hint_step": "Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore."
+   },
+   {
+    "id": "Q11C",
+    "room": "S69",
+    "target": "S69.bike",
+    "label": "Naskrutkovať vrchnák na zvonček",
+    "kind": "click",
+    "requires_done": [],
+    "requires_items": [
+     "BELLCAP",
+     "TOOLS"
+    ],
+    "selected_item": "BELLCAP",
+    "gives": [],
+    "consumes": [
+     "BELLCAP"
+    ],
+    "quest": "Q11",
+    "puzzle": null,
+    "cutscene": null,
+    "once": true,
+    "objective": null,
+    "animation": "use_tool",
+    "sfx": "bike_bell",
+    "excluded_done": [],
+    "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
+    "journal_text": "Kubov zvonček zvoní. So Zuzanou sme zamávali, keď v škole zazvonilo.",
+    "staging": {
+     "guest_speakers": [
+      "ZUZANA95",
+      "KUBO"
+     ],
+     "rule": "Speakers stay where they are: NPC hotspots speak from their staged spot; guest speakers speak from their own spot in the same room, nobody walks in."
+    },
+    "lines": [
+     {
+      "key": "action.Q11C.001",
+      "speaker": "ADAM",
+      "sk": "Vrchnák na závit, pootočiť a skrutkovačom jemne dotiahnuť. Kubo, ešte neťukaj, mám tam prsty."
+     },
+     {
+      "key": "action.Q11C.002",
+      "speaker": "KUBO",
+      "sk": "Zvoní! Teta Zuzana, počujete?"
+     },
+     {
+      "key": "action.Q11C.003",
+      "speaker": "ZUZANA95",
+      "sk": "Počujem. Celý dvor počuje."
+     },
+     {
+      "key": "action.Q11C.004",
+      "speaker": "ZUZANA95",
+      "sk": "A teraz počúvajte aj toto. V škole práve zvonia."
+     },
+     {
+      "key": "action.Q11C.005",
+      "speaker": "ZUZANA95",
+      "sk": "Keď počujem zvoniť na konci roka, zamávam. Taká stará dohoda."
+     },
+     {
+      "key": "action.Q11C.006",
+      "speaker": "ADAM",
+      "sk": "S kým?"
+     },
+     {
+      "key": "action.Q11C.007",
+      "speaker": "ZUZANA95",
+      "sk": "S jedným opravárom zvončekov."
+     },
+     {
+      "key": "action.Q11C.008",
+      "speaker": "KUBO",
+      "sk": "Ale veď ešte nie je koniec roka."
+     },
+     {
+      "key": "action.Q11C.009",
+      "speaker": "ZUZANA95",
+      "sk": "Ešte pätnásť dní. Toto je skúška."
+     },
+     {
+      "key": "action.Q11C.010",
+      "speaker": "ADAM",
+      "sk": "Skúška vyšla. Mávam s vami."
+     },
+     {
+      "key": "action.Q11C.011",
+      "speaker": "KUBO",
+      "sk": "Komu mávate?"
+     },
+     {
+      "key": "action.Q11C.012",
+      "speaker": "ZUZANA95",
+      "sk": "Jednému zvončeku z Ivanky."
+     }
+    ],
+    "note": "two sounds: action sfx bike_bell before .002, cue school_bell_far (the ZŠ Sokolíkova electric bell, distant) before .004 (proposed per-line cue, see presentation). The line .004 says what is heard, so no meaning lives only in the sound. The 'stará dohoda' is Q10D's 'To je dohoda.': if the player has not done Q10 yet, it is a seed that pays off in 1962; Adam's lines are true in both orders",
+    "hint_step": "Vrchnák zvončeka použi na Kubov bicykel."
+   }
+  ],
+  "epilogue": [
+   {
+    "quest": "Q11",
+    "after": "Q11C",
+    "shot": "Koniec júna 1995. Deti zo Sokolíkovej jazdia okolo dvora a Kubo zvoní najhlasnejšie.",
+    "line": "ZUZANA95: Posledný zvonec. A v septembri zase prvý.",
+    "note": "keys epilogue.11.shot / epilogue.11.line; still EPILOGUE_11; she says at 40 what she said at 7 (epilogue.10): the warm close of her thread; nothing about later years"
+   }
+  ],
+  "visual_variant_layers": [
+   {
+    "room": "S69",
+    "after": "Q11A",
+    "asset": "variants/S69_bellcap_glint.webp",
+    "change": "Pod najnižšími vetvami modrého smreka sa leskne mosadzný vrchnák."
+   },
+   {
+    "room": "S69",
+    "after": "Q11B",
+    "asset": "variants/S69_bellcap_gone.webp",
+    "change": "Pod smrekom už len ihličie."
+   },
+   {
+    "room": "S17",
+    "after": "G11",
+    "asset": "variants/S17_sign_shapes_only.webp",
+    "change": "Výtvarný panel v školskom dvore má už len štyri tvary; vlny, údery a dieliky sú na múre v Sokolíkovskom dvore.",
+    "note": "G11 opens 1995, so 'after G11' = always in S17; a patch layer instead of repainting bg_natural/S17.webp"
+   }
+  ],
+  "relocations": [
+   {
+    "action": "B19",
+    "to_hotspot": "S69.rhythm",
+    "retire_hotspot": false,
+    "hint_step": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+    "reason": "the target is a painted panel and the yard is a wall of concrete panels the school club painted; owner 2026-10-06: some puzzles move into the yard",
+    "note": "S17.rhythm stays as an atmospheric prop ('Výtvarný panel', texts via sk_overrides). walkthrough.json step 30 (S11 -> S12 -> S17, target S17.rhythm) is replayed as S11 -> S18 -> S69, target S69.rhythm"
+   }
+  ]
+ },
+ "dialogue_ext": {
+  "format": "lastbell.dialogue_ext",
+  "version": 1,
+  "chunk": "C2",
+  "about": "C2 (1995 Bratislava + S69 Sokolíkovský dvor + Zuzana 1995) v2 dialogue overlay draft, written per design-doc/WRITING_METHOD.md.",
+  "sequences": [
+   {
+    "id": "action.B02",
+    "action": "B02",
+    "kind": "action_lines",
+    "lines": [
+     "action.B02.001",
+     {
+      "key": "action.B02.x01",
+      "speaker": "TONO",
+      "sk": "Na oznam? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby."
+     },
+     {
+      "key": "action.B02.x02",
+      "speaker": "ADAM",
+      "sk": "Holuby by vám magnetofón neopravili."
+     },
+     {
+      "key": "action.B02.x03",
+      "speaker": "TONO",
+      "sk": "Holuby nie. Ukážte, čo to máte."
+     },
+     "action.B02.002",
+     {
+      "key": "action.B02.x04",
+      "speaker": "TONO",
+      "sk": "Pero je na šnúrke. Minulý mesiac nám odišli tri, tak sme ho uviazali."
+     },
+     "action.B02.003",
+     "action.B02.004",
+     "action.B02.005",
+     {
+      "key": "action.B02.x05",
+      "speaker": "TONO",
+      "sk": "Dúfam, že vy si prezuvky nosíte. Ten malý ich zabúda každý druhý deň."
+     },
+     {
+      "key": "action.B02.x06",
+      "speaker": "ADAM",
+      "sk": "To mu zostane ešte dlho."
+     },
+     {
+      "key": "action.B02.x07",
+      "speaker": "TONO",
+      "sk": "Krúžok je v triede na konci chodby. Nahrávajú, tak tam hovorte potichu alebo rovno do mikrofónu."
+     }
+    ],
+    "note": "Tóno still says vy (before E11); the slippers pay off B01.002 (Adam at 10 forgot them)"
+   },
+   {
+    "id": "action.B03",
+    "action": "B03",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B03.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň, pani Hrušková. Volám sa Adam a potrebujem s niečím pomôcť."
+     },
+     {
+      "key": "action.B03.x02",
+      "speaker": "MIRA95",
+      "sk": "Tak si sadni a hovor. Najprv povedz, čo sa stalo, a potom, čo si už skúšal. V tomto poradí."
+     },
+     "action.B03.001",
+     {
+      "key": "action.B03.x03",
+      "speaker": "MIRA95",
+      "sk": "Ukáž. To je môj chronometer. A drží sa ťa, akoby ťa poznal."
+     },
+     {
+      "key": "action.B03.x04",
+      "speaker": "ADAM",
+      "sk": "Prístroje ma majú rady. S ľuďmi je to horšie."
+     },
+     "action.B03.002",
+     {
+      "key": "action.B03.x05",
+      "speaker": "ADAM",
+      "sk": "Spätný zápis? To znie ako niečo, čo by som v servise neprevzal ani za príplatok."
+     },
+     {
+      "key": "action.B03.x06",
+      "speaker": "MIRA95",
+      "sk": "Ani ja nie. Preto pôjdeme pekne po poradí."
+     },
+     "action.B03.003",
+     "action.B03.004",
+     {
+      "key": "action.B03.x07",
+      "speaker": "MIRA95",
+      "sk": "A poverenie nepokrč. Pán Merta v študovni ti vyčíta každý záhyb."
+     },
+     "action.B03.005",
+     "action.B03.006",
+     {
+      "key": "action.B03.x08",
+      "speaker": "MIRA95",
+      "sk": "Pokojné? Ten malý chce celé popoludnie nahrávať, ako cinká lyžička v jedálni."
+     },
+     {
+      "key": "action.B03.x09",
+      "speaker": "ADAM",
+      "sk": "Nech nahráva. Raz bude rád, že to má."
+     }
+    ],
+    "note": "Mira tyká, Adam vyká; numbered-order teacher gag; the spoon is ADAM10's idea (VOICES); the clue lines .002/.004 unchanged"
+   },
+   {
+    "id": "action.B05",
+    "action": "B05",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B05.x01",
+      "speaker": "ADAM",
+      "sk": "Ahoj. Ty si Pali? Potreboval by som remienok do školského magnetofónu."
+     },
+     {
+      "key": "action.B05.x02",
+      "speaker": "PALI",
+      "sk": "Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý."
+     },
+     "action.B05.001",
+     "action.B05.002",
+     "action.B05.003",
+     "action.B05.004",
+     "action.B05.005",
+     {
+      "key": "action.B05.x03",
+      "speaker": "ADAM",
+      "sk": "Ešte jedna vec. Máš na remienky nejaký trik?"
+     },
+     {
+      "key": "action.B05.x04",
+      "speaker": "PALI",
+      "sk": "Mám. Nechytaj ho mastnými prstami. Hovorím to každému dvadsať rokov a nikto to nedodrží."
+     }
+    ],
+    "note": "Pali's 'it still worked this morning' gag; ty/ty"
+   },
+   {
+    "id": "action.B07",
+    "action": "B07",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B07.x01",
+      "speaker": "ADAM",
+      "sk": "Ahoj. Ty budeš Juro. Potrebujem, aby si si vypočul túto kazetu."
+     },
+     {
+      "key": "action.B07.x02",
+      "speaker": "JURO",
+      "sk": "Juro Kazeta, to som ja. Podaj mi ju, ale drž ju za puzdro, nie za pásku. Páska si pamätá každý prst."
+     },
+     "action.B07.001",
+     "action.B07.002",
+     "action.B07.003",
+     {
+      "key": "action.B07.x03",
+      "speaker": "ADAM",
+      "sk": "Fero a Milada. Budú vedieť, o čo ide?"
+     },
+     {
+      "key": "action.B07.x04",
+      "speaker": "JURO",
+      "sk": "Fero mi predal prvý walkman a Milada mi obšila kábel od slúchadiel. Povedz, že ťa posielam ja."
+     },
+     "action.B07.004",
+     "action.B07.005",
+     {
+      "key": "action.B07.x05",
+      "speaker": "JURO",
+      "sk": "Prepísať sa dá hocičo. Ale čo raz prepíšeš, to už nikdy nepočuješ."
+     }
+    ],
+    "note": "keeps the clue (.003 Fero / Milada); the last line is the game's theme (read, never re-record)"
+   },
+   {
+    "id": "action.B08",
+    "action": "B08",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B08.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Posiela ma Juro, vraj máte dvojpólový konektor."
+     },
+     {
+      "key": "action.B08.x02",
+      "speaker": "FERO",
+      "sk": "Mám všetko. Len váha mi stojí, tak dnes predávam od oka."
+     },
+     "action.B08.001",
+     "action.B08.002",
+     {
+      "key": "action.B08.x03",
+      "speaker": "FERO",
+      "sk": "Dva dni na ňu nadávam a ty ju opravíš skôr, ako poviem klieštiky."
+     },
+     "action.B08.003",
+     "action.B08.004",
+     {
+      "key": "action.B08.x04",
+      "speaker": "FERO",
+      "sk": "Zavolať? Ráno tu bol po batérie a všetko mi vyrozprával."
+     },
+     {
+      "key": "action.B08.x05",
+      "speaker": "FERO",
+      "sk": "A keby niečo, konektor je originál. Len od iného výrobcu."
+     }
+    ],
+    "note": "Fero tyká, Adam vyká; .004 rewritten into a question; Fero's 'original' running gag closes"
+   },
+   {
+    "id": "action.B09",
+    "action": "B09",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B09.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň, pani Kyselová. Posiela ma Juro z kazetového klubu."
+     },
+     {
+      "key": "action.B09.x02",
+      "speaker": "MILADA",
+      "sk": "Juro? Tak to bude kábel. Juro mi nosí len káble. Raz priniesol aj jednu bundu, ale tá bola omyl."
+     },
+     "action.B09.001",
+     "action.B09.002",
+     "action.B09.003",
+     {
+      "key": "action.B09.x03",
+      "speaker": "MILADA",
+      "sk": "A nenaťahujte ho nasilu. Čo sa natiahne nasilu, to sa potom pára."
+     },
+     {
+      "key": "action.B09.x04",
+      "speaker": "ADAM",
+      "sk": "Platí to aj o kábloch?"
+     },
+     {
+      "key": "action.B09.x05",
+      "speaker": "MILADA",
+      "sk": "Hlavne o kábloch. Tak mi sľúbte, že ho nebudete ťahať."
+     }
+    ],
+    "note": "Milada explains everything as tailoring; vy/vy"
+   },
+   {
+    "id": "action.B13",
+    "action": "B13",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B13.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň! Prišiel som kvôli fondu pani Hruškovej."
+     },
+     {
+      "key": "action.B13.x02",
+      "speaker": "KAROL",
+      "sk": "Dobrý deň. Potichu, prosím. U nás sa aj pozdrav hovorí šeptom."
+     },
+     {
+      "key": "action.B13.x03",
+      "speaker": "ADAM",
+      "sk": "Prepáčte. Mám pre vás poverenie."
+     },
+     "action.B13.001",
+     {
+      "key": "action.B13.x04",
+      "speaker": "KAROL",
+      "sk": "Originály zostávajú v študovni. Kópie si môžete odniesť aj pokrčiť, ak už musíte."
+     },
+     "action.B13.002",
+     "action.B13.003",
+     "action.B13.004",
+     "action.B13.005",
+     {
+      "key": "action.B13.x05",
+      "speaker": "ADAM",
+      "sk": "Ďakujem. A prepáčte za ten hlasný pozdrav."
+     },
+     {
+      "key": "action.B13.x06",
+      "speaker": "KAROL",
+      "sk": "Zapísal som si ho. Ako výnimku."
+     }
+    ],
+    "note": "Karol's silence rule as the running gag; pays off Mira's 'nepokrč' (B03 x07); clue .003 unchanged"
+   },
+   {
+    "id": "action.B14",
+    "action": "B14",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B14.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Z archívu ma posielajú s týmto negatívom."
+     },
+     {
+      "key": "action.B14.x02",
+      "speaker": "ALENA",
+      "sk": "Dobrý deň. Pán Merta mi už volal. Vraj prídete a vraj potichu."
+     },
+     "action.B14.001",
+     "action.B14.002",
+     {
+      "key": "action.B14.x03",
+      "speaker": "ALENA",
+      "sk": "Tak chvíľu počkajte. Vyvolávanie sa nedá uponáhľať."
+     },
+     "action.B14.003",
+     "action.B14.004",
+     {
+      "key": "action.B14.x04",
+      "speaker": "ALENA",
+      "sk": "V telefóne? Telefónom sa volá. Fotí sa svetlom, preto sme Svetlo."
+     }
+    ],
+    "note": "Alena vy/vy; callback to Karol's silence; 1995 misunderstanding of 'phone' with a payoff on the studio name; clue .003 unchanged"
+   },
+   {
+    "id": "action.B15",
+    "action": "B15",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B15.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Hľadám jednu mapovú prílohu. Mám k nej fotografiu."
+     },
+     {
+      "key": "action.B15.x02",
+      "speaker": "VIERA",
+      "sk": "Prílohy sa hľadajú horšie ako knihy. Kniha má aspoň chrbát. Ukážte."
+     },
+     "action.B15.001",
+     "action.B15.002",
+     "action.B15.003",
+     {
+      "key": "action.B15.x03",
+      "speaker": "VIERA",
+      "sk": "Len ju nechytajte uprostred. Fólia si odtlačky pamätá lepšie ako ja tváre."
+     },
+     "action.B15.004",
+     {
+      "key": "action.B15.x04",
+      "speaker": "VIERA",
+      "sk": "Na mapu ju môžete priložiť hneď tu pri pulte."
+     }
+    ],
+    "note": "Viera's 'attachments get lost' voice; the last line nudges to the combination in S22 (B16) without solving it"
+   },
+   {
+    "id": "action.B17",
+    "action": "B17",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.B17.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Hľadám Dezidera Kováča. Mám mapu, ktorú ste vraj kreslili s pani Hruškovou."
+     },
+     {
+      "key": "action.B17.x02",
+      "speaker": "DEZI",
+      "sk": "Dezider som ja. Na vlnách mám iné meno, ale to nehovorím hocikomu. Ukáž."
+     },
+     "action.B17.001",
+     "action.B17.002",
+     "action.B17.003",
+     {
+      "key": "action.B17.x03",
+      "speaker": "DEZI",
+      "sk": "Nie ako čísla, ale ako vlny a údery. Vraj si deti obrázok zapamätajú lepšie ako číslo."
+     },
+     "action.B17.004",
+     {
+      "key": "action.B17.x04",
+      "speaker": "DEZI",
+      "sk": "A cievku nes opatrne. Pasuje len do jedného držiaka a len jedným smerom."
+     }
+    ],
+    "note": "Dezider tyká, Adam vyká; the clue stays in .003 (Emil, metronóm, three digits, Sokolíkovský dvor); x03 explains why the digits are a picture"
+   },
+   {
+    "id": "action.B18",
+    "action": "B18",
+    "kind": "action_lines",
+    "lines": [
+     "action.B18.001",
+     {
+      "key": "action.B18.x01",
+      "speaker": "EMIL",
+      "sk": "Dezider? Ten si ho požičiava každú jar. Vraj ladí antény, ja si myslím, že pri ňom zaspáva."
+     },
+     "action.B18.002",
+     {
+      "key": "action.B18.x02",
+      "speaker": "EMIL",
+      "sk": "Je nastavený na moje tempo. Pomalé, aby mi električky stihli dopĺňať rytmus."
+     },
+     {
+      "key": "action.B18.x03",
+      "speaker": "ADAM",
+      "sk": "Električky vám držia rytmus?"
+     },
+     {
+      "key": "action.B18.x04",
+      "speaker": "EMIL",
+      "sk": "Lepšie ako bubeník, s ktorým som kedysi hral. Ten neprišiel načas ani raz."
+     },
+     "action.B18.003",
+     "action.B18.004",
+     {
+      "key": "action.B18.x05",
+      "speaker": "EMIL",
+      "sk": "A nech sa pri nej dá čakať na električku."
+     }
+    ],
+    "note": "Emil: trams keep his tempo (VOICES); slow, soft"
+   },
+   {
+    "id": "action.B19",
+    "action": "B19",
+    "kind": "action_lines",
+    "lines": [
+     "action.B19.001",
+     {
+      "key": "action.B19.z01",
+      "speaker": "ZUZANA95",
+      "sk": "Sedí to. Šesť dielikov, aj keď ten šiesty maľovali deti dvakrát."
+     },
+     {
+      "key": "action.B19.z02",
+      "speaker": "ADAM",
+      "sk": "Prečo dvakrát?"
+     },
+     {
+      "key": "action.B19.z03",
+      "speaker": "ZUZANA95",
+      "sk": "Prvý raz ho namaľovali na susedný panel. Pani z krúžku ho dala premaľovať, aby bolo všetkých šesť pokope."
+     },
+     "action.B19.002",
+     {
+      "key": "action.B19.z04",
+      "speaker": "ZUZANA95",
+      "sk": "Zapíšte si. Ja si to zapamätám aj tak."
+     }
+    ],
+    "note": "B19 is relocated to S69.rhythm (world_ext relocations); ZUZANA95 stands in the room (Core: NPCs of the action's effective room may speak). She repeats 'šesť dielikov' only; the protected P03 words stay in .001. z-keys as in SOKOLIKOVA_YARD.md 3.2 (one sequence entry for B19)"
+   },
+   {
+    "id": "action.E11",
+    "action": "E11",
+    "kind": "action_lines",
+    "lines": [
+     "action.E11.001",
+     {
+      "key": "action.E11.x01",
+      "speaker": "TONO",
+      "sk": "Tú vetu som naposledy počul ako dvanásťročný."
+     },
+     "action.E11.002",
+     "action.E11.003",
+     "action.E11.004",
+     "action.E11.005",
+     "action.E11.006",
+     {
+      "key": "action.E11.x02",
+      "speaker": "ADAM",
+      "sk": "Ten istý rad, ten istý stĺpec. Len lastovička je nakreslená lepšie."
+     },
+     {
+      "key": "action.E11.x03",
+      "speaker": "TONO",
+      "sk": "Mal som čas trénovať."
+     },
+     "action.E11.007",
+     "action.E11.008",
+     "action.E11.009",
+     {
+      "key": "action.E11.x04",
+      "speaker": "TONO",
+      "sk": "Sadnime si tam na lavičku pri šatniach. Nemusíme nič hovoriť."
+     }
+    ],
+    "note": "serious beat: short plain lines, no jokes added; x01 is said before the switch to ty (neutral form); the P05 clue .006 unchanged"
+   },
+   {
+    "id": "action.Q3A",
+    "action": "Q3A",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q3A.001",
+     {
+      "key": "action.Q3A.x01",
+      "speaker": "ADAM",
+      "sk": "Družstva? Akého družstva?"
+     },
+     {
+      "key": "action.Q3A.x02",
+      "speaker": "SONA",
+      "sk": "Vybíjaná. Štvrtáci a piataci, vyhrali sme okresné kolo."
+     },
+     "action.Q3A.002",
+     "action.Q3A.003",
+     {
+      "key": "action.Q3A.x03",
+      "speaker": "SONA",
+      "sk": "Inak to nie je družstvo, len skupina. A skupina do albumu nepatrí."
+     },
+     {
+      "key": "action.Q3A.x04",
+      "speaker": "ADAM",
+      "sk": "Rozumiem. Celé družstvo, žiadna skupina."
+     }
+    ],
+    "note": "Soňa vyká, Adam tyká; her 'družstvo, nie skupina' gag (VOICES)"
+   },
+   {
+    "id": "action.Q3B",
+    "action": "Q3B",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q3B.001",
+     "action.Q3B.002",
+     "action.Q3B.003",
+     {
+      "key": "action.Q3B.x01",
+      "speaker": "ADAM",
+      "sk": "Tak mi povedzte, čo sa stane zajtra."
+     },
+     {
+      "key": "action.Q3B.x02",
+      "speaker": "ZITA",
+      "sk": "Zajtra pršať nebude, a aj tak mi tu niekto zabudne dáždnik."
+     },
+     {
+      "key": "action.Q3B.x03",
+      "speaker": "ADAM",
+      "sk": "Ja dáždnik nemám."
+     },
+     {
+      "key": "action.Q3B.x04",
+      "speaker": "ZITA",
+      "sk": "Vidíš. Tak to nebudeš ty."
+     }
+    ],
+    "note": "Zita's lost-things gag; Zita tyká, Adam vyká"
+   },
+   {
+    "id": "action.Q3C",
+    "action": "Q3C",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.Q3C.x01",
+      "speaker": "ADAM",
+      "sk": "Ešte jedna obálka. Tentoraz školská."
+     },
+     {
+      "key": "action.Q3C.x02",
+      "speaker": "ALENA",
+      "sk": "Konečne. Hľadala som ju dva týždne, kým som zistila, že je u Zity."
+     },
+     "action.Q3C.001",
+     "action.Q3C.002",
+     "action.Q3C.003",
+     "action.Q3C.004",
+     {
+      "key": "action.Q3C.x03",
+      "speaker": "ALENA",
+      "sk": "Poznáte ho?"
+     },
+     {
+      "key": "action.Q3C.x04",
+      "speaker": "ADAM",
+      "sk": "Z videnia. Hlavne v zrkadle."
+     },
+     {
+      "key": "action.Q3C.x05",
+      "speaker": "ALENA",
+      "sk": "Áno, podoba tam je. Hlavne v tom, ako sa pozeráte inam."
+     }
+    ],
+    "note": "Adam is the boy at the back (item.TEAMPHOTO); he never talks to his ten-year-old self; Alena takes it as family likeness"
+   },
+   {
+    "id": "action.Q3D",
+    "action": "Q3D",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q3D.001",
+     "action.Q3D.002",
+     "action.Q3D.003",
+     "action.Q3D.004",
+     {
+      "key": "action.Q3D.x01",
+      "speaker": "SONA",
+      "sk": "Teraz je to družstvo. Dám ju na dvanástu stranu, hneď vedľa diplomu."
+     },
+     {
+      "key": "action.Q3D.x02",
+      "speaker": "ADAM",
+      "sk": "Môžem k nej niečo pripísať?"
+     },
+     {
+      "key": "action.Q3D.x03",
+      "speaker": "SONA",
+      "sk": "Môžete. Ale pekne, je to album, nie zošit."
+     },
+     {
+      "key": "action.Q3D.x04",
+      "speaker": "ADAM",
+      "sk": "„Celé družstvo. Aj ten so zmrzlinou.“"
+     }
+    ],
+    "note": "pays off quest.Q3.reward (a short note by adult Adam in the album)"
+   },
+   {
+    "id": "action.Q4A",
+    "action": "Q4A",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q4A.001",
+     {
+      "key": "action.Q4A.x01",
+      "speaker": "ADAM",
+      "sk": "Prečo ste predali knihu s vlastnými notami?"
+     },
+     {
+      "key": "action.Q4A.x02",
+      "speaker": "EMIL",
+      "sk": "Nevedel som, že tam sú. Noty som zakladal do kníh ako záložky. Vtedy sa mi to zdalo praktické."
+     },
+     {
+      "key": "action.Q4A.x03",
+      "speaker": "ADAM",
+      "sk": "A ako to teraz hráte?"
+     },
+     {
+      "key": "action.Q4A.x04",
+      "speaker": "EMIL",
+      "sk": "Po tretiu zastávku z pamäti. Potom čakám, kým príde električka a skončí to za mňa."
+     },
+     "action.Q4A.002",
+     "action.Q4A.003"
+    ],
+    "note": "Adam vyká Emilovi, Emil tyká (VOICES); the clue (Viera, antikvariát) stays in .001"
+   },
+   {
+    "id": "action.Q4B",
+    "action": "Q4B",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q4B.001",
+     "action.Q4B.002",
+     {
+      "key": "action.Q4B.x01",
+      "speaker": "VIERA",
+      "sk": "Počíta sa. Ležali v knihe o vtákoch, medzi ďatľom a drozdom."
+     },
+     {
+      "key": "action.Q4B.x02",
+      "speaker": "ADAM",
+      "sk": "Emil si do kníh zakladal noty ako záložky."
+     },
+     {
+      "key": "action.Q4B.x03",
+      "speaker": "VIERA",
+      "sk": "Drahá záložka. Väčšina ľudí tam nechá lístok z električky."
+     }
+    ],
+    "note": "keeps the zastaví / zastávka pun of .001/.002 together"
+   },
+   {
+    "id": "action.Q4C",
+    "action": "Q4C",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.Q4C.x01",
+      "speaker": "ADAM",
+      "sk": "Noty od Viery. Ležali v knihe o vtákoch."
+     },
+     {
+      "key": "action.Q4C.x02",
+      "speaker": "EMIL",
+      "sk": "Moja záložka. Dvadsať rokov som tú skladbu hral len po tretiu zastávku."
+     },
+     "action.Q4C.001",
+     "action.Q4C.002",
+     "action.Q4C.003",
+     {
+      "key": "action.Q4C.x03",
+      "speaker": "EMIL",
+      "sk": "Keď pôjdeš okolo, zahrám ti ju celú. Aj s poslednou zastávkou."
+     }
+    ],
+    "note": "callback to Q4A / Q4B"
+   },
+   {
+    "id": "action.Q5A",
+    "action": "Q5A",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q5A.001",
+     {
+      "key": "action.Q5A.x01",
+      "speaker": "ADAM",
+      "sk": "Iná farba by nestačila?"
+     },
+     {
+      "key": "action.Q5A.x02",
+      "speaker": "JURAJ",
+      "sk": "Žltá je lampa, oranžová televízor. Biela je, keď niekto v kuchyni varí večeru. Tú nič nenahradí."
+     },
+     {
+      "key": "action.Q5A.x03",
+      "speaker": "ADAM",
+      "sk": "A v papiernictve?"
+     },
+     {
+      "key": "action.Q5A.x04",
+      "speaker": "JURAJ",
+      "sk": "Majú len farebné. Bielu vraj berú školy po krabiciach."
+     },
+     "action.Q5A.002",
+     "action.Q5A.003"
+    ],
+    "note": "Juraj vyká, Adam tyká; his quiet eye for the lights inside the blocks; leads to Adam's idea in .002"
+   },
+   {
+    "id": "action.Q5B",
+    "action": "Q5B",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q5B.001",
+     {
+      "key": "action.Q5B.x01",
+      "speaker": "TONO",
+      "sk": "Biela, nepoužitá. Tie použité sú kratšie ako malíček a učitelia ich aj tak nevracajú."
+     },
+     "action.Q5B.002",
+     "action.Q5B.003",
+     {
+      "key": "action.Q5B.x02",
+      "speaker": "ADAM",
+      "sk": "A kto zapíše, že krieda odišla do Petržalky?"
+     },
+     {
+      "key": "action.Q5B.x03",
+      "speaker": "TONO",
+      "sk": "Školník. Do zošita výdajov: jedna krieda, na umenie. Riaditeľka to na konci roka rada číta."
+     }
+    ],
+    "note": "Q5B can happen before or after E11: every new line is neutral (no ty/vy form)"
+   },
+   {
+    "id": "action.Q5C",
+    "action": "Q5C",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q5C.001",
+     {
+      "key": "action.Q5C.x01",
+      "speaker": "ADAM",
+      "sk": "Prečo práve tieto dve?"
+     },
+     {
+      "key": "action.Q5C.x02",
+      "speaker": "JURAJ",
+      "sk": "Tam bývajú dvaja bratia, čo sa cez balkóny dohadujú, kto má rozsvietiť prvý."
+     },
+     "action.Q5C.002",
+     "action.Q5C.003"
+    ],
+    "note": "a small real situation behind two lit windows"
+   },
+   {
+    "id": "action.Q9D",
+    "action": "Q9D",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q9D.001",
+     {
+      "key": "action.Q9D.x01",
+      "speaker": "ADAM",
+      "sk": "Plný zošit? Koľko schém v ňom je?"
+     },
+     {
+      "key": "action.Q9D.x02",
+      "speaker": "JANA95",
+      "sk": "Štyridsaťdva. Ale neostalo len pri schémach. Podľa každej som zapojila rádio a všetky hrajú."
+     },
+     {
+      "key": "action.Q9D.x03",
+      "speaker": "ADAM",
+      "sk": "A deťom tie rádiá hrajú?"
+     },
+     {
+      "key": "action.Q9D.x04",
+      "speaker": "JANA95",
+      "sk": "Skoro všetkým. Jednému chytá len taxikárov a on je z toho najšťastnejší."
+     },
+     "action.Q9D.002",
+     "action.Q9D.003"
+    ],
+    "note": "Jana corrects near-synonyms (VOICES); only after Q9C, so it reveals nothing that has not happened"
+   }
+  ],
+  "topic_extensions": [
+   {
+    "id": "topic.ARCHIVAR.ambient 1",
+    "topic": "ARCHIVAR.ambient 1",
+    "character": "ARCHIVAR",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ARCHIVAR.ambient 1.001",
+     "topic.ARCHIVAR.ambient 1.002",
+     "topic.ARCHIVAR.ambient 1.003",
+     {
+      "key": "topic.ARCHIVAR.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "A kedy je ten správny čas?"
+     },
+     {
+      "key": "topic.ARCHIVAR.ambient 1.x02",
+      "speaker": "KAROL",
+      "sk": "Ten ešte nenastal. Študovňa má dvadsaťdva rokov a kôš je stále nový."
+     }
+    ]
+   },
+   {
+    "id": "topic.ARCHIVAR.ambient 2",
+    "topic": "ARCHIVAR.ambient 2",
+    "character": "ARCHIVAR",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ARCHIVAR.ambient 2.001",
+     "topic.ARCHIVAR.ambient 2.002",
+     {
+      "key": "topic.ARCHIVAR.ambient 2.x01",
+      "speaker": "ADAM",
+      "sk": "Prepáčte. A šepkať sa smie?"
+     },
+     {
+      "key": "topic.ARCHIVAR.ambient 2.x02",
+      "speaker": "KAROL",
+      "sk": "Šepkať áno. Vzdychať nad poznámkami nie. To ruší najviac."
+     }
+    ]
+   },
+   {
+    "id": "topic.DEZI.ambient 1",
+    "topic": "DEZI.ambient 1",
+    "character": "DEZI",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.DEZI.ambient 1.001",
+     "topic.DEZI.ambient 1.002",
+     {
+      "key": "topic.DEZI.ambient 1.x01",
+      "speaker": "DEZI",
+      "sk": "Budúcnosť? Mne stačí prítomnosť bez šumu. Včera sa mi ozval chlapík z Nórska a hodinu sme riešili antény."
+     },
+     {
+      "key": "topic.DEZI.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Po nórsky?"
+     },
+     {
+      "key": "topic.DEZI.ambient 1.x03",
+      "speaker": "DEZI",
+      "sk": "Po anglicky a rukami. Cez rádio ruky nevidno, ale aj tak pomáhajú."
+     }
+    ]
+   },
+   {
+    "id": "topic.DEZI.ambient 2",
+    "topic": "DEZI.ambient 2",
+    "character": "DEZI",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.DEZI.ambient 2.001",
+     "topic.DEZI.ambient 2.002",
+     {
+      "key": "topic.DEZI.ambient 2.x01",
+      "speaker": "DEZI",
+      "sk": "Zapíš. Mira mi to raz napísala na kus kartónu a ten visí nad stolom dodnes."
+     },
+     {
+      "key": "topic.DEZI.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Pani Hrušková má na všetko pravidlo."
+     },
+     {
+      "key": "topic.DEZI.ambient 2.x03",
+      "speaker": "DEZI",
+      "sk": "A ku každému aj výnimku. Tú píše menším písmom, aby ju bolo treba hľadať."
+     }
+    ]
+   },
+   {
+    "id": "topic.EMIL.ambient 1",
+    "topic": "EMIL.ambient 1",
+    "character": "EMIL",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.EMIL.ambient 1.001",
+     "topic.EMIL.ambient 1.002",
+     {
+      "key": "topic.EMIL.ambient 1.x01",
+      "speaker": "EMIL",
+      "sk": "A zákazníci si to všimnú?"
+     },
+     {
+      "key": "topic.EMIL.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Kým to hrá, nie."
+     },
+     {
+      "key": "topic.EMIL.ambient 1.x03",
+      "speaker": "EMIL",
+      "sk": "To je aj moje pravidlo. Kým to hrá, nikto nechce vidieť noty."
+     }
+    ]
+   },
+   {
+    "id": "topic.EMIL.ambient 2",
+    "topic": "EMIL.ambient 2",
+    "character": "EMIL",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.EMIL.ambient 2.001",
+     "topic.EMIL.ambient 2.002",
+     {
+      "key": "topic.EMIL.ambient 2.x01",
+      "speaker": "EMIL",
+      "sk": "Možno. Dvakrát jej už električka ušla, kým som dohral."
+     },
+     {
+      "key": "topic.EMIL.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A nahnevala sa?"
+     },
+     {
+      "key": "topic.EMIL.ambient 2.x03",
+      "speaker": "EMIL",
+      "sk": "Nie. Počkala na ďalšiu a hodila mi do pohára korunu. Vraj za predĺženie."
+     }
+    ]
+   },
+   {
+    "id": "topic.FOTO.ambient 1",
+    "topic": "FOTO.ambient 1",
+    "character": "FOTO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.FOTO.ambient 1.001",
+     "topic.FOTO.ambient 1.002",
+     "topic.FOTO.ambient 1.003",
+     {
+      "key": "topic.FOTO.ambient 1.x01",
+      "speaker": "ALENA",
+      "sk": "Pri mokrom sa nečaká, tam sa máča. A kto tam čaká, vonia potom ustaľovačom celý týždeň."
+     }
+    ]
+   },
+   {
+    "id": "topic.FOTO.ambient 2",
+    "topic": "FOTO.ambient 2",
+    "character": "FOTO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.FOTO.ambient 2.001",
+     "topic.FOTO.ambient 2.002",
+     {
+      "key": "topic.FOTO.ambient 2.x01",
+      "speaker": "ALENA",
+      "sk": "Divadlo pre tých, čo sa usmievajú na povel. Ostatných fotím, keď si vydýchnu."
+     },
+     {
+      "key": "topic.FOTO.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Aj teraz?"
+     },
+     {
+      "key": "topic.FOTO.ambient 2.x03",
+      "speaker": "ALENA",
+      "sk": "Aj teraz by som. Len film do foťáka mi príde až zajtra."
+     }
+    ]
+   },
+   {
+    "id": "topic.JANA95.ambient 1",
+    "topic": "JANA95.ambient 1",
+    "character": "JANA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JANA95.ambient 1.001",
+     "topic.JANA95.ambient 1.002",
+     {
+      "key": "topic.JANA95.ambient 1.x01",
+      "speaker": "JANA95",
+      "sk": "Na nápady mám v šanóne zvláštnu priehradku. Zatiaľ je najplnšia."
+     },
+     {
+      "key": "topic.JANA95.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Aj na tie, čo nie sú podľa vzoru?"
+     },
+     {
+      "key": "topic.JANA95.ambient 1.x03",
+      "speaker": "JANA95",
+      "sk": "Hlavne na tie. Vzory sú v skrini, tie priehradku nepotrebujú."
+     }
+    ],
+    "note": "state-independent: nothing about her own club (that is Q9D)"
+   },
+   {
+    "id": "topic.JURAJ.ambient 1",
+    "topic": "JURAJ.ambient 1",
+    "character": "JURAJ",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JURAJ.ambient 1.001",
+     "topic.JURAJ.ambient 1.002",
+     {
+      "key": "topic.JURAJ.ambient 1.x01",
+      "speaker": "JURAJ",
+      "sk": "Väčšia. Len v našom bloku je dvesto okien a každý večer svietia iné."
+     },
+     {
+      "key": "topic.JURAJ.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A ktoré je tvoje?"
+     },
+     {
+      "key": "topic.JURAJ.ambient 1.x03",
+      "speaker": "JURAJ",
+      "sk": "Tretie zhora, vľavo. Keď kreslím, mama v ňom nechá svietiť, aby som trafil domov."
+     }
+    ]
+   },
+   {
+    "id": "topic.JURAJ.ambient 2",
+    "topic": "JURAJ.ambient 2",
+    "character": "JURAJ",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JURAJ.ambient 2.001",
+     "topic.JURAJ.ambient 2.002",
+     {
+      "key": "topic.JURAJ.ambient 2.x01",
+      "speaker": "JURAJ",
+      "sk": "S pečiatkou z úradu. A so súhlasom pani, čo tu umýva schody."
+     },
+     {
+      "key": "topic.JURAJ.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Jej súhlas je tiež potrebný?"
+     },
+     {
+      "key": "topic.JURAJ.ambient 2.x03",
+      "speaker": "JURAJ",
+      "sk": "Je dôležitejší. Ona ten podchod potom drhne."
+     }
+    ]
+   },
+   {
+    "id": "topic.JURO.ambient 1",
+    "topic": "JURO.ambient 1",
+    "character": "JURO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JURO.ambient 1.001",
+     "topic.JURO.ambient 1.002",
+     {
+      "key": "topic.JURO.ambient 1.x01",
+      "speaker": "JURO",
+      "sk": "A keď sa páska zamotá, stačí ceruzka. To pri inej technike neskúšaj."
+     },
+     {
+      "key": "topic.JURO.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Pri čom napríklad?"
+     },
+     {
+      "key": "topic.JURO.ambient 1.x03",
+      "speaker": "JURO",
+      "sk": "Pri platni. Tam ceruzkou poškriabeš celú stranu A."
+     }
+    ]
+   },
+   {
+    "id": "topic.JURO.ambient 2",
+    "topic": "JURO.ambient 2",
+    "character": "JURO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JURO.ambient 2.001",
+     "topic.JURO.ambient 2.002",
+     {
+      "key": "topic.JURO.ambient 2.x01",
+      "speaker": "JURO",
+      "sk": "Tak mu najprv pusti tú pesničku. Možno si začne pospevovať a na šum zabudne."
+     }
+    ],
+    "note": "a quiet foreshadowing of Viktor's normalizer (2035), no facts"
+   },
+   {
+    "id": "topic.LEA95.ambient 1",
+    "topic": "LEA95.ambient 1",
+    "character": "LEA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.LEA95.ambient 1.001",
+     "topic.LEA95.ambient 1.002",
+     "topic.LEA95.ambient 1.003",
+     {
+      "key": "topic.LEA95.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "A čo už nahrali?"
+     },
+     {
+      "key": "topic.LEA95.ambient 1.x02",
+      "speaker": "LEA95",
+      "sk": "Zvonenie na prestávku, kvapkajúci kohútik, pána, čo kŕmi holuby, a jedno kýchnutie."
+     },
+     {
+      "key": "topic.LEA95.ambient 1.x03",
+      "speaker": "LEA95",
+      "sk": "Za to kýchnutie sa ospravedlňovali celý týždeň. Na nahrávke je najlepšie."
+     }
+    ]
+   },
+   {
+    "id": "topic.LEA95.ambient 2",
+    "topic": "LEA95.ambient 2",
+    "character": "LEA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.LEA95.ambient 2.001",
+     "topic.LEA95.ambient 2.002",
+     {
+      "key": "topic.LEA95.ambient 2.x01",
+      "speaker": "LEA95",
+      "sk": "Tak nech je samostatná. Malý Adam z krúžku tiež mlčí najdlhšie zo všetkých."
+     },
+     {
+      "key": "topic.LEA95.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A čo povie potom?"
+     },
+     {
+      "key": "topic.LEA95.ambient 2.x03",
+      "speaker": "LEA95",
+      "sk": "Zvyčajne niečo, na čo stálo za to počkať."
+     }
+    ],
+    "note": "Lea speaks of the boy Adam (ADAM10); warm, no foreshadowing of 2032"
+   },
+   {
+    "id": "topic.LEA95.after",
+    "topic": "LEA95.after",
+    "character": "LEA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.LEA95.after.001",
+     "topic.LEA95.after.002",
+     {
+      "key": "topic.LEA95.after.x01",
+      "speaker": "LEA95",
+      "sk": "Jeden chlapec ju chce nahrať ako rozhlasovú hru. Všetky úlohy sám."
+     },
+     {
+      "key": "topic.LEA95.after.x02",
+      "speaker": "ADAM",
+      "sk": "A text má?"
+     },
+     {
+      "key": "topic.LEA95.after.x03",
+      "speaker": "LEA95",
+      "sk": "Zatiaľ len prvú vetu. Tú však hrá výborne."
+     }
+    ],
+    "note": "callback to Rudo (1962), who also knows only the first line of the play"
+   },
+   {
+    "id": "topic.MILADA.ambient 1",
+    "topic": "MILADA.ambient 1",
+    "character": "MILADA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.MILADA.ambient 1.001",
+     "topic.MILADA.ambient 1.002",
+     {
+      "key": "topic.MILADA.ambient 1.x01",
+      "speaker": "MILADA",
+      "sk": "Pri kabáte stačí párať a šiť. Pri takej vete treba najprv presvedčiť toho, kto ju nosí."
+     },
+     {
+      "key": "topic.MILADA.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A podarí sa to?"
+     },
+     {
+      "key": "topic.MILADA.ambient 1.x03",
+      "speaker": "MILADA",
+      "sk": "Raz za čas. Zvyčajne vtedy, keď mu ten kabát začne byť tesný."
+     }
+    ]
+   },
+   {
+    "id": "topic.MILADA.ambient 2",
+    "topic": "MILADA.ambient 2",
+    "character": "MILADA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.MILADA.ambient 2.001",
+     "topic.MILADA.ambient 2.002",
+     {
+      "key": "topic.MILADA.ambient 2.x01",
+      "speaker": "MILADA",
+      "sk": "Prvý kábel som obšila susedovi na gitaru. Gitara hrá dodnes, sused sa naučil dva akordy."
+     },
+     {
+      "key": "topic.MILADA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Dva akordy stačia na polovicu pesničiek."
+     },
+     {
+      "key": "topic.MILADA.ambient 2.x03",
+      "speaker": "MILADA",
+      "sk": "To mi hovorí každé leto pod oknom."
+     }
+    ]
+   },
+   {
+    "id": "topic.MIRA95.ambient 1",
+    "topic": "MIRA95.ambient 1",
+    "character": "MIRA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.MIRA95.ambient 1.001",
+     "topic.MIRA95.ambient 1.002",
+     "topic.MIRA95.ambient 1.003",
+     {
+      "key": "topic.MIRA95.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "A ako znie prestávka v deväťdesiatom piatom?"
+     },
+     {
+      "key": "topic.MIRA95.ambient 1.x02",
+      "speaker": "MIRA95",
+      "sk": "Najprv zvonček, potom tridsať stoličiek naraz, potom niekto, kto beží po chodbe, hoci sa nesmie."
+     },
+     {
+      "key": "topic.MIRA95.ambient 1.x03",
+      "speaker": "MIRA95",
+      "sk": "Toho posledného máme nahraného najviac."
+     }
+    ]
+   },
+   {
+    "id": "topic.MIRA95.ambient 2",
+    "topic": "MIRA95.ambient 2",
+    "character": "MIRA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.MIRA95.ambient 2.001",
+     {
+      "key": "topic.MIRA95.ambient 2.x01",
+      "speaker": "ADAM",
+      "sk": "Koho?"
+     },
+     {
+      "key": "topic.MIRA95.ambient 2.x02",
+      "speaker": "MIRA95",
+      "sk": "To ti nepoviem. Ešte by si ho začal napodobňovať."
+     },
+     "topic.MIRA95.ambient 2.002",
+     "topic.MIRA95.ambient 2.003"
+    ]
+   },
+   {
+    "id": "topic.MIRA95.after",
+    "topic": "MIRA95.after",
+    "character": "MIRA95",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.MIRA95.after.001",
+     "topic.MIRA95.after.002",
+     "topic.MIRA95.after.003",
+     {
+      "key": "topic.MIRA95.after.x01",
+      "speaker": "MIRA95",
+      "sk": "Aj tak si to zapíšem. Do registra pôjde Z-17 a do môjho zošita, že niekto pomohol."
+     },
+     {
+      "key": "topic.MIRA95.after.x02",
+      "speaker": "ADAM",
+      "sk": "Bez mena?"
+     },
+     {
+      "key": "topic.MIRA95.after.x03",
+      "speaker": "MIRA95",
+      "sk": "Meno dopíšem, keď si budem istá. Dopredu nepíšem nič."
+     }
+    ],
+    "note": "echoes the rule of the chapter: nothing is written in advance"
+   },
+   {
+    "id": "topic.PALI.ambient 1",
+    "topic": "PALI.ambient 1",
+    "character": "PALI",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.PALI.ambient 1.001",
+     "topic.PALI.ambient 1.002",
+     "topic.PALI.ambient 1.003",
+     {
+      "key": "topic.PALI.ambient 1.x01",
+      "speaker": "PALI",
+      "sk": "Dvom. Obaja odišli nahnevaní a jeden sa vrátil s lepšou vecou na opravu."
+     },
+     {
+      "key": "topic.PALI.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Takže úprimnosť sa oplatí."
+     },
+     {
+      "key": "topic.PALI.ambient 1.x03",
+      "speaker": "PALI",
+      "sk": "Oplatí. Len nie hneď."
+     }
+    ]
+   },
+   {
+    "id": "topic.PALI.ambient 2",
+    "topic": "PALI.ambient 2",
+    "character": "PALI",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.PALI.ambient 2.001",
+     "topic.PALI.ambient 2.002",
+     "topic.PALI.ambient 2.003",
+     {
+      "key": "topic.PALI.ambient 2.x01",
+      "speaker": "ADAM",
+      "sk": "Prepáč. Ešte sa to nestalo."
+     },
+     {
+      "key": "topic.PALI.ambient 2.x02",
+      "speaker": "PALI",
+      "sk": "A dúfam, že sa ani nestane. Lepidlo patrí do papiernictva, nie do opravovne."
+     }
+    ]
+   },
+   {
+    "id": "topic.SONA.ambient 1",
+    "topic": "SONA.ambient 1",
+    "character": "SONA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.SONA.ambient 1.001",
+     "topic.SONA.ambient 1.002",
+     "topic.SONA.ambient 1.003",
+     {
+      "key": "topic.SONA.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "A čo povedal tréner?"
+     },
+     {
+      "key": "topic.SONA.ambient 1.x02",
+      "speaker": "SONA",
+      "sk": "Že nabudúce hráme proti Karlovej Vsi a tí sú o hlavu vyšší."
+     },
+     {
+      "key": "topic.SONA.ambient 1.x03",
+      "speaker": "SONA",
+      "sk": "Tak trénujeme skákanie."
+     }
+    ]
+   },
+   {
+    "id": "topic.SONA.ambient 2",
+    "topic": "SONA.ambient 2",
+    "character": "SONA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.SONA.ambient 2.001",
+     "topic.SONA.ambient 2.002",
+     {
+      "key": "topic.SONA.ambient 2.x01",
+      "speaker": "SONA",
+      "sk": "Pani učiteľka Kormanová nie. Vraví, že aj chybu si treba vypočuť."
+     },
+     {
+      "key": "topic.SONA.ambient 2.x02",
+      "speaker": "SONA",
+      "sk": "Najviac sa smejeme na nahrávke, kde Adam zabudol, čo chcel povedať."
+     },
+     {
+      "key": "topic.SONA.ambient 2.x03",
+      "speaker": "ADAM",
+      "sk": "Ten Adam musí byť zábavný chlapec."
+     },
+     {
+      "key": "topic.SONA.ambient 2.x04",
+      "speaker": "SONA",
+      "sk": "Je. Len o tom ešte nevie."
+     }
+    ],
+    "note": "Soňa talks about the boy Adam (ADAM10); Adam never meets him"
+   },
+   {
+    "id": "topic.TONO.ambient 1",
+    "topic": "TONO.ambient 1",
+    "character": "TONO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TONO.ambient 1.001",
+     "topic.TONO.ambient 1.002",
+     "topic.TONO.ambient 1.003",
+     {
+      "key": "topic.TONO.ambient 1.x01",
+      "speaker": "TONO",
+      "sk": "Hlavne dvere na dvor. Majú pružinu, ktorá ich má zavrieť. Žiaci majú nohu, ktorá ich podoprie."
+     },
+     {
+      "key": "topic.TONO.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A kto vyhráva?"
+     },
+     {
+      "key": "topic.TONO.ambient 1.x03",
+      "speaker": "TONO",
+      "sk": "Zatiaľ noha. Pružinu meníme už tretíkrát."
+     }
+    ],
+    "note": "ambient topics of Tóno are heard before and after E11: no ty/vy forms"
+   },
+   {
+    "id": "topic.TONO.ambient 2",
+    "topic": "TONO.ambient 2",
+    "character": "TONO",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TONO.ambient 2.001",
+     "topic.TONO.ambient 2.002",
+     {
+      "key": "topic.TONO.ambient 2.x01",
+      "speaker": "TONO",
+      "sk": "A po chodbe sa nebehá. Platí to aj pre dospelých, čo meškajú."
+     },
+     {
+      "key": "topic.TONO.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Aj pre školníka?"
+     },
+     {
+      "key": "topic.TONO.ambient 2.x03",
+      "speaker": "TONO",
+      "sk": "Školník nebehá. Školník chodí skratkou."
+     }
+    ],
+    "note": "neutral ty/vy"
+   },
+   {
+    "id": "topic.TRH.ambient 1",
+    "topic": "TRH.ambient 1",
+    "character": "TRH",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TRH.ambient 1.001",
+     "topic.TRH.ambient 1.002",
+     {
+      "key": "topic.TRH.ambient 1.x01",
+      "speaker": "FERO",
+      "sk": "Záruka je, že ma tu nájdeš. Každý deň okrem nedele a okrem dažďa."
+     },
+     {
+      "key": "topic.TRH.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A keď prší v nedeľu?"
+     },
+     {
+      "key": "topic.TRH.ambient 1.x03",
+      "speaker": "FERO",
+      "sk": "Tak to máš smolu dvakrát. Ale konektor ti aj tak bude fungovať."
+     }
+    ]
+   },
+   {
+    "id": "topic.TRH.ambient 2",
+    "topic": "TRH.ambient 2",
+    "character": "TRH",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TRH.ambient 2.001",
+     "topic.TRH.ambient 2.002",
+     "topic.TRH.ambient 2.003",
+     {
+      "key": "topic.TRH.ambient 2.x01",
+      "speaker": "ADAM",
+      "sk": "Buchty?"
+     },
+     {
+      "key": "topic.TRH.ambient 2.x02",
+      "speaker": "FERO",
+      "sk": "Moja dcéra tam chodí. Je to jediné hlásenie, ktoré si zapamätá celé."
+     }
+    ]
+   },
+   {
+    "id": "topic.VIERA.ambient 1",
+    "topic": "VIERA.ambient 1",
+    "character": "VIERA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.VIERA.ambient 1.001",
+     "topic.VIERA.ambient 1.002",
+     "topic.VIERA.ambient 1.003",
+     {
+      "key": "topic.VIERA.ambient 1.x01",
+      "speaker": "VIERA",
+      "sk": "Prečo? Ste citlivý na včerajšok?"
+     },
+     {
+      "key": "topic.VIERA.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Skôr na zajtrajšok. Ten mám už za sebou."
+     },
+     {
+      "key": "topic.VIERA.ambient 1.x03",
+      "speaker": "VIERA",
+      "sk": "Tak vám odporučím niečo o záhradkárstve. Tam je každý rok rovnaký."
+     }
+    ]
+   },
+   {
+    "id": "topic.VIERA.ambient 2",
+    "topic": "VIERA.ambient 2",
+    "character": "VIERA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.VIERA.ambient 2.001",
+     "topic.VIERA.ambient 2.002",
+     {
+      "key": "topic.VIERA.ambient 2.x01",
+      "speaker": "VIERA",
+      "sk": "Na rodinné fotky je jediný systém: napísať na zadnú stranu, kto je kto."
+     },
+     {
+      "key": "topic.VIERA.ambient 2.x02",
+      "speaker": "VIERA",
+      "sk": "Inak o tridsať rokov nikto nevie, ktorá teta je ktorá."
+     }
+    ]
+   },
+   {
+    "id": "topic.ZITA.ambient 1",
+    "topic": "ZITA.ambient 1",
+    "character": "ZITA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ZITA.ambient 1.001",
+     "topic.ZITA.ambient 1.002",
+     {
+      "key": "topic.ZITA.ambient 1.x01",
+      "speaker": "ZITA",
+      "sk": "Tak si ich odlož. O dvadsaťpäť rokov sa na ne rád pozrieš."
+     },
+     {
+      "key": "topic.ZITA.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "To viem z vlastnej skúsenosti."
+     }
+    ]
+   },
+   {
+    "id": "topic.ZITA.ambient 2",
+    "topic": "ZITA.ambient 2",
+    "character": "ZITA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ZITA.ambient 2.001",
+     "topic.ZITA.ambient 2.002",
+     {
+      "key": "topic.ZITA.ambient 2.x01",
+      "speaker": "ZITA",
+      "sk": "Je to tá vo dvore za blokom. Prvý deň si na ňu sadli traja a odišli v zelených nohaviciach."
+     },
+     {
+      "key": "topic.ZITA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A nebola tam ceduľa?"
+     },
+     {
+      "key": "topic.ZITA.ambient 2.x03",
+      "speaker": "ZITA",
+      "sk": "Bola. Natreli aj tú."
+     }
+    ],
+    "note": "the bench is S69.bench (look callback); a gentle nudge to the new yard"
+   }
+  ],
+  "topics": [
+   {
+    "id": "ARCHIVAR.extra 1",
+    "character": "ARCHIVAR",
+    "label_key": "topic.ARCHIVAR.extra 1.label",
+    "label": "Najzvláštnejší dar",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his job and quirk; state-independent",
+    "lines": [
+     {
+      "key": "topic.ARCHIVAR.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo je najzvláštnejšie, čo vám kto daroval?"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 1.002",
+      "speaker": "KAROL",
+      "sk": "Krabica gombíkov a lístok: „Z kabátov našej ulice, 1948 až 1990.“"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A zaevidovali ste ju?"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 1.004",
+      "speaker": "KAROL",
+      "sk": "Každý gombík zvlášť. Trvalo to celú zimu."
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Načo je archívu krabica gombíkov?"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 1.006",
+      "speaker": "KAROL",
+      "sk": "Gombíky povedia, aké kabáty sa na našej ulici nosili. To v žiadnom dokumente nenájdete."
+     }
+    ]
+   },
+   {
+    "id": "ARCHIVAR.extra 2",
+    "character": "ARCHIVAR",
+    "label_key": "topic.ARCHIVAR.extra 2.label",
+    "label": "Výpožičný poriadok",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his running gag: the reading-room order",
+    "lines": [
+     {
+      "key": "topic.ARCHIVAR.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Môžem si odtiaľto niečo požičať domov?"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 2.002",
+      "speaker": "KAROL",
+      "sk": "Výpožičný poriadok, článok tri: originály študovňu neopúšťajú. Kópie áno."
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A keď kópiu stratím?"
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 2.004",
+      "speaker": "KAROL",
+      "sk": "Spravíme novú. Kópia je presne na to, aby sa dala stratiť."
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "Takže originál sa nesmie stratiť nikdy."
+     },
+     {
+      "key": "topic.ARCHIVAR.extra 2.006",
+      "speaker": "KAROL",
+      "sk": "Nikdy. Preto ho nepožičiavam ani sám sebe."
+     }
+    ]
+   },
+   {
+    "id": "DEZI.extra 1",
+    "character": "DEZI",
+    "label_key": "topic.DEZI.extra 1.label",
+    "label": "Spolupráca s Mirou",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "Dezider worked with Mira (role); no new facts",
+    "lines": [
+     {
+      "key": "topic.DEZI.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ako ste sa s pani Hruškovou spoznali?"
+     },
+     {
+      "key": "topic.DEZI.extra 1.002",
+      "speaker": "DEZI",
+      "sk": "Na stretnutí rádioamatérov. Opravila mi zdroj skôr, ako som jej stihol povedať, čo mu je."
+     },
+     {
+      "key": "topic.DEZI.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "To sa na ňu podobá."
+     },
+     {
+      "key": "topic.DEZI.extra 1.004",
+      "speaker": "DEZI",
+      "sk": "Potom sme spolu kreslili tú mapu. Ona kreslila, ja som držal pravítko a vysvetľoval, prečo je krivé."
+     },
+     {
+      "key": "topic.DEZI.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "A bolo krivé?"
+     },
+     {
+      "key": "topic.DEZI.extra 1.006",
+      "speaker": "DEZI",
+      "sk": "Nebolo. Ja som len potreboval niečo vysvetľovať."
+     }
+    ]
+   },
+   {
+    "id": "DEZI.extra 2",
+    "character": "DEZI",
+    "label_key": "topic.DEZI.extra 2.label",
+    "label": "Volacie znaky",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his running gag: call signs; no real call sign is named",
+    "lines": [
+     {
+      "key": "topic.DEZI.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Čo znamenajú tie písmená a čísla na stene?"
+     },
+     {
+      "key": "topic.DEZI.extra 2.002",
+      "speaker": "DEZI",
+      "sk": "Volacie znaky. Každý rádioamatér má svoj ako adresu vo vzduchu."
+     },
+     {
+      "key": "topic.DEZI.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A aký máte vy?"
+     },
+     {
+      "key": "topic.DEZI.extra 2.004",
+      "speaker": "DEZI",
+      "sk": "Ten ti nepoviem, ešte by si ma volal o polnoci. Susedia mi hovoria „ten s anténou“."
+     },
+     {
+      "key": "topic.DEZI.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "To je tiež volací znak."
+     },
+     {
+      "key": "topic.DEZI.extra 2.006",
+      "speaker": "DEZI",
+      "sk": "Najpresnejší, aký mám. Pozná ho celá Petržalka."
+     }
+    ]
+   },
+   {
+    "id": "EMIL.extra 1",
+    "character": "EMIL",
+    "label_key": "topic.EMIL.extra 1.label",
+    "label": "Karlova Ves",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "local colour: trams in Karlova Ves",
+    "lines": [
+     {
+      "key": "topic.EMIL.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Prečo hráte práve v Karlovej Vsi?"
+     },
+     {
+      "key": "topic.EMIL.extra 1.002",
+      "speaker": "EMIL",
+      "sk": "Lebo tu električky zastavujú pomaly. Ľudia stihnú počuť aspoň refrén."
+     },
+     {
+      "key": "topic.EMIL.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A v centre?"
+     },
+     {
+      "key": "topic.EMIL.extra 1.004",
+      "speaker": "EMIL",
+      "sk": "V centre sa ponáhľajú. Tam by som stihol iba úvod a poďakovanie."
+     }
+    ]
+   },
+   {
+    "id": "EMIL.extra 2",
+    "character": "EMIL",
+    "label_key": "topic.EMIL.extra 2.label",
+    "label": "Harmonika",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his own life; gentle",
+    "lines": [
+     {
+      "key": "topic.EMIL.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Odkedy hráte na harmonike?"
+     },
+     {
+      "key": "topic.EMIL.extra 2.002",
+      "speaker": "EMIL",
+      "sk": "Od desiatich rokov. Otec mi ju dal, aby som nebehal vonku."
+     },
+     {
+      "key": "topic.EMIL.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A pomohlo to?"
+     },
+     {
+      "key": "topic.EMIL.extra 2.004",
+      "speaker": "EMIL",
+      "sk": "Nie. Behal som vonku s harmonikou."
+     }
+    ]
+   },
+   {
+    "id": "FOTO.extra 1",
+    "character": "FOTO",
+    "label_key": "topic.FOTO.extra 1.label",
+    "label": "Temná komora",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her craft (VOICES: the darkroom)",
+    "lines": [
+     {
+      "key": "topic.FOTO.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ako dlho vydržíte v temnej komore?"
+     },
+     {
+      "key": "topic.FOTO.extra 1.002",
+      "speaker": "ALENA",
+      "sk": "Celé popoludnie. Po tme sa mi lepšie rozmýšľa, lebo nevidím neporiadok."
+     },
+     {
+      "key": "topic.FOTO.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A nič tam nehľadáte?"
+     },
+     {
+      "key": "topic.FOTO.extra 1.004",
+      "speaker": "ALENA",
+      "sk": "Nie. Všetko je na svojom mieste. Keď mi niekto niečo posunie, zistím to prstami."
+     }
+    ]
+   },
+   {
+    "id": "FOTO.extra 2",
+    "character": "FOTO",
+    "label_key": "topic.FOTO.extra 2.label",
+    "label": "Školské fotky",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "June 1995: school photos; pairs with Q3",
+    "lines": [
+     {
+      "key": "topic.FOTO.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Fotíte aj školské triedy?"
+     },
+     {
+      "key": "topic.FOTO.extra 2.002",
+      "speaker": "ALENA",
+      "sk": "Každý jún. Tridsať detí, tri rady a vždy jeden, čo kýchne."
+     },
+     {
+      "key": "topic.FOTO.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A čo s ním?"
+     },
+     {
+      "key": "topic.FOTO.extra 2.004",
+      "speaker": "ALENA",
+      "sk": "Nechám ho tak. Po dvadsiatich rokoch sa na takú fotku všetci pozerajú hlavne kvôli nemu."
+     }
+    ]
+   },
+   {
+    "id": "JANA95.extra 1",
+    "character": "JANA95",
+    "label_key": "topic.JANA95.extra 1.label",
+    "label": "Výstavka",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "role: she helps the school with the exhibition; her near-synonym correction gag; state-independent",
+    "lines": [
+     {
+      "key": "topic.JANA95.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo chystáte na výstavku?"
+     },
+     {
+      "key": "topic.JANA95.extra 1.002",
+      "speaker": "JANA95",
+      "sk": "Rozvrh, menovky a poradie. Bez poradia je výstavka len stôl s vecami."
+     },
+     {
+      "key": "topic.JANA95.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A čo bude na tom stole?"
+     },
+     {
+      "key": "topic.JANA95.extra 1.004",
+      "speaker": "JANA95",
+      "sk": "Rádiá, magnetofón a model mlyna, ktorý sa točí, len keď sa naň nikto nepozerá."
+     },
+     {
+      "key": "topic.JANA95.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "To poznám. U mňa v dielni tiež všetko funguje, kým tam nie je zákazník."
+     },
+     {
+      "key": "topic.JANA95.extra 1.006",
+      "speaker": "JANA95",
+      "sk": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí."
+     }
+    ]
+   },
+   {
+    "id": "JANA95.extra 2",
+    "character": "JANA95",
+    "label_key": "topic.JANA95.extra 2.label",
+    "label": "Papiere krúžku",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "callback to Tóno's key ring; state-independent",
+    "lines": [
+     {
+      "key": "topic.JANA95.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Toľko papierov kvôli jednému krúžku?"
+     },
+     {
+      "key": "topic.JANA95.extra 2.002",
+      "speaker": "JANA95",
+      "sk": "Prihlášky, súhlasy rodičov, rozpis miestností a jeden zoznam, kto má kľúč."
+     },
+     {
+      "key": "topic.JANA95.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Kľúč má predsa školník."
+     },
+     {
+      "key": "topic.JANA95.extra 2.004",
+      "speaker": "JANA95",
+      "sk": "Školník má zväzok. Zoznam je na to, aby sme vedeli, kto má ktorý kľúč zo zväzku."
+     }
+    ]
+   },
+   {
+    "id": "JURAJ.extra 1",
+    "character": "JURAJ",
+    "label_key": "topic.JURAJ.extra 1.label",
+    "label": "Petržalské okná",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his eye for the lights inside the blocks",
+    "lines": [
+     {
+      "key": "topic.JURAJ.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ktoré okno v Petržalke je najkrajšie?"
+     },
+     {
+      "key": "topic.JURAJ.extra 1.002",
+      "speaker": "JURAJ",
+      "sk": "To, kde sa svieti, aj keď už ostatní spia. Tam niekto číta alebo na niekoho čaká."
+     },
+     {
+      "key": "topic.JURAJ.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Alebo zabudol zhasnúť."
+     },
+     {
+      "key": "topic.JURAJ.extra 1.004",
+      "speaker": "JURAJ",
+      "sk": "Aj to je príbeh."
+     }
+    ]
+   },
+   {
+    "id": "JURAJ.extra 2",
+    "character": "JURAJ",
+    "label_key": "topic.JURAJ.extra 2.label",
+    "label": "Prečo krieda?",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "state-independent; no hint about where the chalk is",
+    "lines": [
+     {
+      "key": "topic.JURAJ.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Prečo kreslíš kriedou, a nie farbami?"
+     },
+     {
+      "key": "topic.JURAJ.extra 2.002",
+      "speaker": "JURAJ",
+      "sk": "Krieda sa dá zmyť. Keď sa niekto odsťahuje, zhasnem mu okno handrou."
+     },
+     {
+      "key": "topic.JURAJ.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "To je trochu smutné."
+     },
+     {
+      "key": "topic.JURAJ.extra 2.004",
+      "speaker": "JURAJ",
+      "sk": "Nie je. O mesiac sa tam niekto nasťahuje a ja mu okno zase rozsvietim."
+     }
+    ]
+   },
+   {
+    "id": "JURO.extra 1",
+    "character": "JURO",
+    "label_key": "topic.JURO.extra 1.label",
+    "label": "Najlepšia kazeta",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "cassette nerd (VOICES)",
+    "lines": [
+     {
+      "key": "topic.JURO.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ktorá je tvoja najlepšia kazeta?"
+     },
+     {
+      "key": "topic.JURO.extra 1.002",
+      "speaker": "JURO",
+      "sk": "Tá bez nálepky. Jednu noc v roku deväťdesiattri som na ňu nahral rádio a dodnes neviem, čo tam hrá."
+     },
+     {
+      "key": "topic.JURO.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Prečo nezistíš, čo tam hrá, a neoznačíš ju?"
+     },
+     {
+      "key": "topic.JURO.extra 1.004",
+      "speaker": "JURO",
+      "sk": "Lebo keby som vedel, čo tam hrá, prestal by som ju počúvať. Takto ma to stále láka."
+     }
+    ]
+   },
+   {
+    "id": "JURO.extra 2",
+    "character": "JURO",
+    "label_key": "topic.JURO.extra 2.label",
+    "label": "Klub v suteréne",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "local colour",
+    "lines": [
+     {
+      "key": "topic.JURO.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Prečo je klub práve v suteréne?"
+     },
+     {
+      "key": "topic.JURO.extra 2.002",
+      "speaker": "JURO",
+      "sk": "Lebo sem nedočuť električky. A susedia zase nepočujú nás."
+     },
+     {
+      "key": "topic.JURO.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Taká dohoda?"
+     },
+     {
+      "key": "topic.JURO.extra 2.004",
+      "speaker": "JURO",
+      "sk": "Skôr prímerie. Dohoda by bola, keby sme sa o tom niekedy porozprávali na schodoch."
+     }
+    ]
+   },
+   {
+    "id": "LEA95.extra 1",
+    "character": "LEA95",
+    "label_key": "topic.LEA95.extra 1.label",
+    "label": "Najkrajší zvuk",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her ordinary sounds; plain and warm",
+    "lines": [
+     {
+      "key": "topic.LEA95.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ktorý zvuk máte zo všetkých najradšej?"
+     },
+     {
+      "key": "topic.LEA95.extra 1.002",
+      "speaker": "LEA95",
+      "sk": "Keď deti po zvonení ešte chvíľu sedia a nikto nevie, kto vstane prvý."
+     },
+     {
+      "key": "topic.LEA95.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Veď to je ticho."
+     },
+     {
+      "key": "topic.LEA95.extra 1.004",
+      "speaker": "LEA95",
+      "sk": "Nie celkom. Je v ňom tridsať ľudí, čo sa práve rozhodujú."
+     }
+    ]
+   },
+   {
+    "id": "LEA95.extra 2",
+    "character": "LEA95",
+    "label_key": "topic.LEA95.extra 2.label",
+    "label": "Vaše deti",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "Viktor is 50 in 2035, so 10 in 1995 (game.json); a quiet echo of his wish to keep everything; nothing about 2032",
+    "lines": [
+     {
+      "key": "topic.LEA95.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Máte aj vlastné deti, alebo vám stačia tieto?"
+     },
+     {
+      "key": "topic.LEA95.extra 2.002",
+      "speaker": "LEA95",
+      "sk": "Mám syna, Viktora. Má desať ako niektorí tuto."
+     },
+     {
+      "key": "topic.LEA95.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A čo rád robí?"
+     },
+     {
+      "key": "topic.LEA95.extra 2.004",
+      "speaker": "LEA95",
+      "sk": "Doma mi rozoberá všetko, čo má skrutku. Chce vedieť, ako to funguje."
+     },
+     {
+      "key": "topic.LEA95.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "A poskladá to späť?"
+     },
+     {
+      "key": "topic.LEA95.extra 2.006",
+      "speaker": "LEA95",
+      "sk": "Zatiaľ nie. Ale každý diel starostlivo uloží do škatuľky."
+     }
+    ]
+   },
+   {
+    "id": "MILADA.extra 1",
+    "character": "MILADA",
+    "label_key": "topic.MILADA.extra 1.label",
+    "label": "Ružinov",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "local colour: Ružinov, the market next door",
+    "lines": [
+     {
+      "key": "topic.MILADA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ako dlho máte opravovňu v Ružinove?"
+     },
+     {
+      "key": "topic.MILADA.extra 1.002",
+      "speaker": "MILADA",
+      "sk": "Osemnásť rokov. Najprv som opravovala nohavice, teraz aj rozhodnutia z trhu."
+     },
+     {
+      "key": "topic.MILADA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Rozhodnutia?"
+     },
+     {
+      "key": "topic.MILADA.extra 1.004",
+      "speaker": "MILADA",
+      "sk": "Na Miletičke si každý kúpi nohavice o číslo menšie, lebo boli lacnejšie. Potom príde ku mne."
+     }
+    ]
+   },
+   {
+    "id": "MILADA.extra 2",
+    "character": "MILADA",
+    "label_key": "topic.MILADA.extra 2.label",
+    "label": "Jún v opravovni",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "June 1995",
+    "lines": [
+     {
+      "key": "topic.MILADA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Kto k vám chodí najčastejšie?"
+     },
+     {
+      "key": "topic.MILADA.extra 2.002",
+      "speaker": "MILADA",
+      "sk": "Mamy pred koncom školského roka. V júni sa trhajú všetky nohavice."
+     },
+     {
+      "key": "topic.MILADA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Prečo práve v júni?"
+     },
+     {
+      "key": "topic.MILADA.extra 2.004",
+      "speaker": "MILADA",
+      "sk": "Lebo v júni sa lezie na stromy. V septembri sa už sedí v laviciach."
+     }
+    ]
+   },
+   {
+    "id": "MIRA95.extra 1",
+    "character": "MIRA95",
+    "label_key": "topic.MIRA95.extra 1.label",
+    "label": "Zvukový krúžok",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "cross-era callback to Mira 2020's 'najprv počúvaj, až potom rozoberaj' (C1 G05)",
+    "lines": [
+     {
+      "key": "topic.MIRA95.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ako vás napadlo viesť zvukový krúžok?"
+     },
+     {
+      "key": "topic.MIRA95.extra 1.002",
+      "speaker": "MIRA95",
+      "sk": "Najprv som chcela deti učiť spájkovať. Potom som zistila, že najradšej počúvajú."
+     },
+     {
+      "key": "topic.MIRA95.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Takže spájkovanie ste vzdali?"
+     },
+     {
+      "key": "topic.MIRA95.extra 1.004",
+      "speaker": "MIRA95",
+      "sk": "Nevzdala, len posunula na druhé miesto. Najprv počúvať, potom rozoberať a spájkovať."
+     }
+    ]
+   },
+   {
+    "id": "MIRA95.extra 2",
+    "character": "MIRA95",
+    "label_key": "topic.MIRA95.extra 2.label",
+    "label": "Kazety v skrini",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "teacher energy, numbered rules",
+    "lines": [
+     {
+      "key": "topic.MIRA95.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Koľko kaziet už máte nahraných?"
+     },
+     {
+      "key": "topic.MIRA95.extra 2.002",
+      "speaker": "MIRA95",
+      "sk": "Štyridsaťsedem. Každá má nálepku: dátum, trieda a jedno slovo, o čom je."
+     },
+     {
+      "key": "topic.MIRA95.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Jedno slovo stačí?"
+     },
+     {
+      "key": "topic.MIRA95.extra 2.004",
+      "speaker": "MIRA95",
+      "sk": "Musí. Kto to nevie povedať jedným slovom, ide počúvať znova. Väčšiu nálepku nedostane nikto."
+     }
+    ]
+   },
+   {
+    "id": "MIRA95.extra 3",
+    "character": "MIRA95",
+    "label_key": "topic.MIRA95.extra 3.label",
+    "label": "Dúbravka teraz",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "local colour: Bratislava 1995 in motion",
+    "lines": [
+     {
+      "key": "topic.MIRA95.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Ako sa vám teraz žije v Dúbravke?"
+     },
+     {
+      "key": "topic.MIRA95.extra 3.002",
+      "speaker": "MIRA95",
+      "sk": "Rýchlo. Kde bol obchod, je kiosk, a kde bol kiosk, je zase obchod. Ledva stíham meniť cestu na nákup."
+     },
+     {
+      "key": "topic.MIRA95.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "A krúžok?"
+     },
+     {
+      "key": "topic.MIRA95.extra 3.004",
+      "speaker": "MIRA95",
+      "sk": "Krúžok je jediné, čo sa tu začína vždy o tretej. Na tom trvám."
+     }
+    ]
+   },
+   {
+    "id": "PALI.extra 1",
+    "character": "PALI",
+    "label_key": "topic.PALI.extra 1.label",
+    "label": "Najhoršia oprava",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "Pali's 'včera to ešte išlo' gag",
+    "lines": [
+     {
+      "key": "topic.PALI.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Aká bola tvoja najhoršia oprava?"
+     },
+     {
+      "key": "topic.PALI.extra 1.002",
+      "speaker": "PALI",
+      "sk": "Rádio, čo chytalo len jednu stanicu. Zákazník prisahal, že včera to ešte išlo."
+     },
+     {
+      "key": "topic.PALI.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A čo mu bolo?"
+     },
+     {
+      "key": "topic.PALI.extra 1.004",
+      "speaker": "PALI",
+      "sk": "Nič. Ladiaci gombík mu zjedol pes."
+     },
+     {
+      "key": "topic.PALI.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "A tá stanica?"
+     },
+     {
+      "key": "topic.PALI.extra 1.006",
+      "speaker": "PALI",
+      "sk": "Počúva ju dodnes. Vraj si zvykol."
+     }
+    ]
+   },
+   {
+    "id": "PALI.extra 2",
+    "character": "PALI",
+    "label_key": "topic.PALI.extra 2.label",
+    "label": "Remienky",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "pays off B04 ('celé zásuvky remienkov'); a wrong belt slows a deck down",
+    "lines": [
+     {
+      "key": "topic.PALI.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Koľko remienkov tu vlastne máš?"
+     },
+     {
+      "key": "topic.PALI.extra 2.002",
+      "speaker": "PALI",
+      "sk": "Tri zásuvky. Okrúhle, ploché a tie, čo vyzerajú ako gumička do vlasov."
+     },
+     {
+      "key": "topic.PALI.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A rozoznáš ich?"
+     },
+     {
+      "key": "topic.PALI.extra 2.004",
+      "speaker": "PALI",
+      "sk": "Ja áno. Dcéra si raz jeden zobrala do copu a vyťahala ho. Susedov magnetofón s ním potom spieval basom."
+     }
+    ]
+   },
+   {
+    "id": "SONA.extra 1",
+    "character": "SONA",
+    "label_key": "topic.SONA.extra 1.label",
+    "label": "Album",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her album; state-independent",
+    "lines": [
+     {
+      "key": "topic.SONA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo všetko máš v albume?"
+     },
+     {
+      "key": "topic.SONA.extra 1.002",
+      "speaker": "SONA",
+      "sk": "Fotky družstva, diplomy a lístok z autobusu na okresné kolo."
+     },
+     {
+      "key": "topic.SONA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Lístok z autobusu?"
+     },
+     {
+      "key": "topic.SONA.extra 1.004",
+      "speaker": "SONA",
+      "sk": "Bez neho by sme tam neboli. Aj to patrí k výhre."
+     }
+    ]
+   },
+   {
+    "id": "SONA.extra 2",
+    "character": "SONA",
+    "label_key": "topic.SONA.extra 2.label",
+    "label": "Prázdniny",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "15 June 1995: fifteen days to the holidays (same count as Zuzana and Kubo in S69)",
+    "lines": [
+     {
+      "key": "topic.SONA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Tešíš sa na prázdniny?"
+     },
+     {
+      "key": "topic.SONA.extra 2.002",
+      "speaker": "SONA",
+      "sk": "Ešte pätnásť dní. Ale nerátam ich, to robia len prváci."
+     },
+     {
+      "key": "topic.SONA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A ty?"
+     },
+     {
+      "key": "topic.SONA.extra 2.004",
+      "speaker": "SONA",
+      "sk": "Ja rátam, koľko fotiek mi ešte chýba do albumu. Dvanásť."
+     }
+    ]
+   },
+   {
+    "id": "TONO.extra 1",
+    "character": "TONO",
+    "label_key": "topic.TONO.extra 1.label",
+    "label": "Kotolňa",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "heard before and after E11: no ty/vy forms",
+    "lines": [
+     {
+      "key": "topic.TONO.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Kam vedú tie schody dolu?"
+     },
+     {
+      "key": "topic.TONO.extra 1.002",
+      "speaker": "TONO",
+      "sk": "Do kotolne. V zime je tam najteplejšie a v lete najtichšie."
+     },
+     {
+      "key": "topic.TONO.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A čo sa tam robí v lete?"
+     },
+     {
+      "key": "topic.TONO.extra 1.004",
+      "speaker": "TONO",
+      "sk": "Opravuje sa všetko, čo sa cez rok pokazilo. A občas sa tam aj obeduje."
+     },
+     {
+      "key": "topic.TONO.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Pri kotli?"
+     },
+     {
+      "key": "topic.TONO.extra 1.006",
+      "speaker": "TONO",
+      "sk": "Kotol je v lete najlepší sused. Nič nechce a nikomu nič nevyrozpráva."
+     }
+    ]
+   },
+   {
+    "id": "TONO.extra 2",
+    "character": "TONO",
+    "label_key": "topic.TONO.extra 2.label",
+    "label": "Hluk z krúžku",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "neutral ty/vy",
+    "lines": [
+     {
+      "key": "topic.TONO.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Je krúžok počuť až sem?"
+     },
+     {
+      "key": "topic.TONO.extra 2.002",
+      "speaker": "TONO",
+      "sk": "Dnes áno. Nahrávajú zvuky školy, tak deti skúšajú, ako znejú dvere."
+     },
+     {
+      "key": "topic.TONO.extra 2.003",
+      "speaker": "TONO",
+      "sk": "Dvere od telocvične zavreli už dvadsaťkrát. Vraj kvôli kvalite."
+     },
+     {
+      "key": "topic.TONO.extra 2.004",
+      "speaker": "ADAM",
+      "sk": "A dvere to vydržia?"
+     },
+     {
+      "key": "topic.TONO.extra 2.005",
+      "speaker": "TONO",
+      "sk": "Dvere áno. Školník menej."
+     }
+    ]
+   },
+   {
+    "id": "TONO.extra 3",
+    "character": "TONO",
+    "label_key": "topic.TONO.extra 3.label",
+    "label": "Zväzok kľúčov",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his key-ring running gag; neutral ty/vy",
+    "lines": [
+     {
+      "key": "topic.TONO.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Toľko kľúčov. Dajú sa vôbec rozoznať?"
+     },
+     {
+      "key": "topic.TONO.extra 3.002",
+      "speaker": "TONO",
+      "sk": "Dajú, podľa zúbkov. Každé dvere majú svoj trik: kabinet nadvihnúť, telocvičňa doľava, jedáleň s citom."
+     },
+     {
+      "key": "topic.TONO.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "A ktoré sú najťažšie?"
+     },
+     {
+      "key": "topic.TONO.extra 3.004",
+      "speaker": "TONO",
+      "sk": "Tie do riaditeľne. Kľúč pasuje, len ich nikto nechce otvárať."
+     }
+    ]
+   },
+   {
+    "id": "TRH.extra 1",
+    "character": "TRH",
+    "label_key": "topic.TRH.extra 1.label",
+    "label": "Miletička",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "local colour: the Miletičova market 1995",
+    "lines": [
+     {
+      "key": "topic.TRH.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo sa na Miletičke predáva najlepšie?"
+     },
+     {
+      "key": "topic.TRH.extra 1.002",
+      "speaker": "FERO",
+      "sk": "V lete slnečné okuliare, v zime rukavice a celý rok batérie."
+     },
+     {
+      "key": "topic.TRH.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Batérie?"
+     },
+     {
+      "key": "topic.TRH.extra 1.004",
+      "speaker": "FERO",
+      "sk": "Walkmany žerú batérie ako deti cukríky. Ja len dopĺňam zásoby."
+     }
+    ]
+   },
+   {
+    "id": "TRH.extra 2",
+    "character": "TRH",
+    "label_key": "topic.TRH.extra 2.label",
+    "label": "Opravená váha",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "B08"
+    ],
+    "note": "only after the repair B08",
+    "lines": [
+     {
+      "key": "topic.TRH.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Ako vám funguje váha?"
+     },
+     {
+      "key": "topic.TRH.extra 2.002",
+      "speaker": "FERO",
+      "sk": "Váži presne. Až tak presne, že ma zákazníčky podozrievajú."
+     },
+     {
+      "key": "topic.TRH.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Z čoho?"
+     },
+     {
+      "key": "topic.TRH.extra 2.004",
+      "speaker": "FERO",
+      "sk": "Že som ju opravil. Predtým im vždy kúsok pridala."
+     }
+    ]
+   },
+   {
+    "id": "VIERA.extra 1",
+    "character": "VIERA",
+    "label_key": "topic.VIERA.extra 1.label",
+    "label": "Kto vám nosí knihy?",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "the antiquariat after a move (VOICES)",
+    "lines": [
+     {
+      "key": "topic.VIERA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Odkiaľ máte toľko kníh?"
+     },
+     {
+      "key": "topic.VIERA.extra 1.002",
+      "speaker": "VIERA",
+      "sk": "Od ľudí, čo sa sťahujú. Po každom sťahovaní mám o tri police viac a o jednu stenu menej."
+     },
+     {
+      "key": "topic.VIERA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A čo predávajú najčastejšie?"
+     },
+     {
+      "key": "topic.VIERA.extra 1.004",
+      "speaker": "VIERA",
+      "sk": "Kuchárske knihy. V novom byte zistia, že sa dá variť aj bez nich."
+     }
+    ]
+   },
+   {
+    "id": "VIERA.extra 2",
+    "character": "VIERA",
+    "label_key": "topic.VIERA.extra 2.label",
+    "label": "Ako držať knihu",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her running gag (VOICES example)",
+    "lines": [
+     {
+      "key": "topic.VIERA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Ako sa správne drží stará kniha?"
+     },
+     {
+      "key": "topic.VIERA.extra 2.002",
+      "speaker": "VIERA",
+      "sk": "Zospodu ako mačiatko. Nikdy nie za chrbát."
+     },
+     {
+      "key": "topic.VIERA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Prečo nie za chrbát?"
+     },
+     {
+      "key": "topic.VIERA.extra 2.004",
+      "speaker": "VIERA",
+      "sk": "Ten chrbát pamätá viac ako my dvaja. Treba ho šetriť."
+     }
+    ]
+   },
+   {
+    "id": "ZITA.extra 1",
+    "character": "ZITA",
+    "label_key": "topic.ZITA.extra 1.label",
+    "label": "Zabudnuté veci",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "lost things end up at her kiosk (VOICES)",
+    "lines": [
+     {
+      "key": "topic.ZITA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo tu ľudia najčastejšie zabudnú?"
+     },
+     {
+      "key": "topic.ZITA.extra 1.002",
+      "speaker": "ZITA",
+      "sk": "Dáždniky, kľúče a obálky. Raz aj celú tortu."
+     },
+     {
+      "key": "topic.ZITA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Tortu?"
+     },
+     {
+      "key": "topic.ZITA.extra 1.004",
+      "speaker": "ZITA",
+      "sk": "Narodeninovú. Majiteľ sa vrátil o hodinu, keď sme so susedkou práve skúšali, či je čerstvá."
+     },
+     {
+      "key": "topic.ZITA.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "A bola?"
+     },
+     {
+      "key": "topic.ZITA.extra 1.006",
+      "speaker": "ZITA",
+      "sk": "Bola. Polovica mu ostala aj so sviečkami."
+     }
+    ]
+   },
+   {
+    "id": "ZITA.extra 2",
+    "character": "ZITA",
+    "label_key": "topic.ZITA.extra 2.label",
+    "label": "Čo je za blokom?",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "nudge to the new room S69 (direction only); the bench pays off ZITA.ambient 2",
+    "lines": [
+     {
+      "key": "topic.ZITA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Čo je tam za tým blokom?"
+     },
+     {
+      "key": "topic.ZITA.extra 2.002",
+      "speaker": "ZITA",
+      "sk": "Sokolíkovský dvor. Ihrisko, lavička a deti, čo prehadzujú loptu cez múr."
+     },
+     {
+      "key": "topic.ZITA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Dá sa tam prejsť?"
+     },
+     {
+      "key": "topic.ZITA.extra 2.004",
+      "speaker": "ZITA",
+      "sk": "Bočnou cestičkou medzi blokmi. Len si nesadaj na lavičku, je čerstvo natretá."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 1",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 1.label",
+    "label": "Odkiaľ ma poznáte?",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "excluded_done": [
+     "I10"
+    ],
+    "note": "recognition, phase 1 (SOKOLIKOVA_YARD.md 2.1): the game reaches 1995 before 1962, so she remembers and he cannot; Adam says only true things; pays off when little Zuzana sends him to pán Baran for the carbon paper in I10 (chunk C3, action.I10.z06). Label differs from MIRA95's 'Poznáme sa?'",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Prepáčte, pozeráte sa na mňa, akoby sme sa poznali."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.002",
+      "speaker": "ZUZANA95",
+      "sk": "Lebo sa poznáme. Z parku v Ivanke, z júna šesťdesiatdva."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Šesťdesiatdva? Vtedy som ešte nebol ani na svete."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.004",
+      "speaker": "ZUZANA95",
+      "sk": "Viem, ako to znie. Ale mali ste presne tieto topánky."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Tieto topánky som si kúpil minulú jeseň."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.006",
+      "speaker": "ZUZANA95",
+      "sk": "A hľadali ste papier, ktorý píše dvakrát. Poslala som vás na poštu za pánom Baranom."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.007",
+      "speaker": "ADAM",
+      "sk": "To si zapamätám. Pre istotu."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.008",
+      "speaker": "ZUZANA95",
+      "sk": "Nebojte sa, nebudem sa pýtať, ako to robíte. Niektoré veci sú krajšie bez návodu."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.009",
+      "speaker": "ADAM",
+      "sk": "To hovoríte opravárovi."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 1.010",
+      "speaker": "ZUZANA95",
+      "sk": "Práve preto."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 2",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 2.label",
+    "label": "Park v Ivanke",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "I10"
+    ],
+    "note": "recognition, phase 2 (after the 1962 meeting in I10); 1962 -> 1995 = 33 years; nothing about her life in between",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Už viem, odkiaľ sa poznáme. Z parku pri kaštieli."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.002",
+      "speaker": "ZUZANA95",
+      "sk": "Tak predsa. Už som si myslela, že sa mi to celé iba prisnilo."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Vy ste ma vtedy poslali na poštu po uhľový papier."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.004",
+      "speaker": "ZUZANA95",
+      "sk": "A vy ste naozaj išli. Na to, že som mala sedem, ste ma počúvali veľmi pozorne."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "Mal som prečo. Ten papier zabral."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.006",
+      "speaker": "ZUZANA95",
+      "sk": "Pre mňa je to tridsaťtri rokov. A pre vás?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.007",
+      "speaker": "ADAM",
+      "sk": "Oveľa menej. Viac vám povedať neviem."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 2.008",
+      "speaker": "ZUZANA95",
+      "sk": "Nemusíte. Hlavne že ste prišli aj sem."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 3",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 3.label",
+    "label": "Triedny zvonček",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "Q10D"
+    ],
+    "note": "closes the 1962 side quest Q10 (world_ext part of chunk C3, ZUZANA.md 4); time words stay inside June 1962",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Ten triedny zvonček z Ivanky… Zazvonili ste ním na konci roka?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.002",
+      "speaker": "ZUZANA95",
+      "sk": "Zazvonila. Trieda vybehla na prázdniny skôr, ako som dozvonila."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.003",
+      "speaker": "ZUZANA95",
+      "sk": "Učiteľka povedala, že takto rýchlo ešte nikto prázdniny nezačal."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.004",
+      "speaker": "ADAM",
+      "sk": "A pútko vydržalo?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.005",
+      "speaker": "ZUZANA95",
+      "sk": "Celý jún. Potom som to už nerátala."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.006",
+      "speaker": "ADAM",
+      "sk": "Vy a nerátať? Tomu sa mi nechce veriť."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 3.007",
+      "speaker": "ZUZANA95",
+      "sk": "Boli prázdniny. Aj rátanie má raz za čas voľno."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 4",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 4.label",
+    "label": "Nákres s vlnami",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "B17"
+    ],
+    "excluded_done": [
+     "B19"
+    ],
+    "note": "her help with B19: direction only (which panels), no digits; offered once Dezider has named the drawing (B17), until it is read (B19); the lady is Mira 1995, never named",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 4.001",
+      "speaker": "ADAM",
+      "sk": "Nevideli ste tu niekde nákres s vlnami a čiarkami?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.002",
+      "speaker": "ZUZANA95",
+      "sk": "Videla. Na jar ho na múr maľovali deti zo školského krúžku s jednou pani."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.003",
+      "speaker": "ZUZANA95",
+      "sk": "Pani mala pod pazuchou magnetofón a z rukáva jej padala krieda."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.004",
+      "speaker": "ADAM",
+      "sk": "To bude ona. A na ktorom paneli to je?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.005",
+      "speaker": "ZUZANA95",
+      "sk": "Múr má tridsaťdva panelov. Nákres je na troch vpravo, hneď pri priechode."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.006",
+      "speaker": "ADAM",
+      "sk": "Vy ste tie panely rátali?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 4.007",
+      "speaker": "ZUZANA95",
+      "sk": "Ja rátam všetko. To mi zostalo."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 5",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 5.label",
+    "label": "Škôlka na asfalte",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her 1962 hopscotch rule ('iba do štvorky', ZUZANA.md 4.2) returns; state-independent",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 5.001",
+      "speaker": "ADAM",
+      "sk": "Tú škôlku na asfalte ste kreslili vy?"
+     },
+     {
+      "key": "topic.ZUZANA95.extra 5.002",
+      "speaker": "ZUZANA95",
+      "sk": "Ja. Kubo ju chcel, tak ju má. Osem políčok a hore polkruh."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 5.003",
+      "speaker": "ADAM",
+      "sk": "A rovné čiary. Ja by som na to potreboval pravítko."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 5.004",
+      "speaker": "ZUZANA95",
+      "sk": "Môžete si skočiť. Ale iba do štvorky, dospelí ďalej padajú."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 5.005",
+      "speaker": "ADAM",
+      "sk": "Tak radšej do trojky. Nech mám rezervu."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 5.006",
+      "speaker": "ZUZANA95",
+      "sk": "Rozumné. Kubo skáče až do osmičky, ale on ešte nevie, že by mal padať."
+     }
+    ]
+   },
+   {
+    "id": "ZUZANA95.extra 6",
+    "character": "ZUZANA95",
+    "label_key": "topic.ZUZANA95.extra 6.label",
+    "label": "Koniec školského roka",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "15 June 1995: 15 days left; the last-bell motif; nothing beyond the afternoon",
+    "lines": [
+     {
+      "key": "topic.ZUZANA95.extra 6.001",
+      "speaker": "ADAM",
+      "sk": "Deti sa už určite tešia na prázdniny."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.002",
+      "speaker": "ZUZANA95",
+      "sk": "Ešte pätnásť dní. Kubo si ich škrtá kriedou na múre, aby mu ani jeden neušiel."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.003",
+      "speaker": "ADAM",
+      "sk": "A vy mu ich pomáhate rátať."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.004",
+      "speaker": "ZUZANA95",
+      "sk": "Pomáham. Ja rátam aj to, koľkokrát lopta preletí cez múr."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.005",
+      "speaker": "ZUZANA95",
+      "sk": "Dnes preletela štyrikrát. Pani zo štvrtého poschodia ju zakaždým hodila späť nahnevanejšie."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.006",
+      "speaker": "ADAM",
+      "sk": "Tá by mohla chytať za družstvo."
+     },
+     {
+      "key": "topic.ZUZANA95.extra 6.007",
+      "speaker": "ZUZANA95",
+      "sk": "Ona chytá. Len proti nám."
+     }
+    ]
+   },
+   {
+    "id": "KUBO.extra 1",
+    "character": "KUBO",
+    "label_key": "topic.KUBO.extra 1.label",
+    "label": "Prvá trieda",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "Kubo vyká, Adam tyká; a neighbour's child, never Zuzana's",
+    "lines": [
+     {
+      "key": "topic.KUBO.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Do ktorej triedy chodíš?"
+     },
+     {
+      "key": "topic.KUBO.extra 1.002",
+      "speaker": "KUBO",
+      "sk": "Do prvej. Už viem čítať, písať a pískať na prstoch."
+     },
+     {
+      "key": "topic.KUBO.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A čo z toho ťa naučili v škole?"
+     },
+     {
+      "key": "topic.KUBO.extra 1.004",
+      "speaker": "KUBO",
+      "sk": "Čítať a písať. Pískať ma naučil brat, ale to sa na vysvedčenie nepíše."
+     },
+     {
+      "key": "topic.KUBO.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Škoda. Za to by si mal jednotku."
+     },
+     {
+      "key": "topic.KUBO.extra 1.006",
+      "speaker": "KUBO",
+      "sk": "Pani učiteľka by mi jednotku nedala. Ona to pískanie počula."
+     }
+    ]
+   },
+   {
+    "id": "KUBO.extra 2",
+    "character": "KUBO",
+    "label_key": "topic.KUBO.extra 2.label",
+    "label": "Prečo je tu taký múr?",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "the fourth-floor neighbour gag (also in ZUZANA95.extra 6)",
+    "lines": [
+     {
+      "key": "topic.KUBO.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Prečo je okolo ihriska taký vysoký múr?"
+     },
+     {
+      "key": "topic.KUBO.extra 2.002",
+      "speaker": "KUBO",
+      "sk": "Aby lopta neutekala na ulicu. Ale ona uteká aj tak, len vyššie."
+     },
+     {
+      "key": "topic.KUBO.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A kto pre ňu potom chodí?"
+     },
+     {
+      "key": "topic.KUBO.extra 2.004",
+      "speaker": "KUBO",
+      "sk": "Najmenší. Čiže ja."
+     },
+     {
+      "key": "topic.KUBO.extra 2.005",
+      "speaker": "KUBO",
+      "sk": "Keď lopta spadne na balkón na štvrtom, pani ju hodí späť. Najprv nám ale povie, koľko muškátov sme zlomili."
+     },
+     {
+      "key": "topic.KUBO.extra 2.006",
+      "speaker": "ADAM",
+      "sk": "A koľko?"
+     },
+     {
+      "key": "topic.KUBO.extra 2.007",
+      "speaker": "KUBO",
+      "sk": "Všetky. Ale ona ich má veľa."
+     }
+    ]
+   },
+   {
+    "id": "KUBO.extra 3",
+    "character": "KUBO",
+    "label_key": "topic.KUBO.extra 3.label",
+    "label": "Zvonček zvoní",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "Q11C"
+    ],
+    "note": "after the side quest Q11",
+    "lines": [
+     {
+      "key": "topic.KUBO.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Tak čo, ako sa jazdí so zvončekom?"
+     },
+     {
+      "key": "topic.KUBO.extra 3.002",
+      "speaker": "KUBO",
+      "sk": "Rýchlejšie. Keď zvoním, každý uhne, aj holuby."
+     },
+     {
+      "key": "topic.KUBO.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "A pani zo štvrtého poschodia?"
+     },
+     {
+      "key": "topic.KUBO.extra 3.004",
+      "speaker": "KUBO",
+      "sk": "Tá nie. Tá nám z balkóna odzváňa lyžičkou o hrniec."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary_change": {
+  "glossary.json protected P03-words.keys": "look.S17.rhythm -> look.S69.rhythm",
+  "glossary.json protected P03-digits.keys": "look.S17.rhythm -> look.S69.rhythm",
+  "glossary.json protected P03-source.require": "(?i)školsk\\w* dvor -> (?i)Sokolíkovsk\\w* dvor\\w*",
+  "glossary.json protected P03-wrong.require": "(?i)školsk\\w* dvor -> (?i)Sokolíkovsk\\w* dvor\\w*",
+  "GLOSSARY.md": "§ 6.1 P03 row (S69 painted wall, look.S69.rhythm), § 5 rooms table + S69 | 1995 | Dúbravka | Sokolíkovský dvor, § 7 step 30 B19 -> S69, § 2 rows ZUZANA / ZUZANA95 / KUBO",
+  "verified": "tools/check_rewrite.py on these sk_override_proposals with a glossary.json patched as above: 0 errors (2 acknowledged warnings on look.S17.rhythm)"
+ },
+ "ui_csv": {
+  "ui.hint_step.B19": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+  "note": "apply together with the world overlay (the relocation's hint_step is shown; keep ui.csv equal so no stale text remains)"
+ },
+ "merge_notes": [
+  "Apply C2.csv rows for B17.003/.004/.objective/.journal, M07.hint.2/.3, P03.wrong, look.S30.dial, S17.rhythm only together with world_ext (relocation of B19) and the glossary_change; before that they would send the player to a wall that does not exist yet.",
+  "ZUZANA95.extra 3 requires Q10D, which the 1962 world part (chunk C3) adds.",
+  "Phrases shared with the 1962 Zuzana lines (chunk C3): 'iba do štvorky, dospelí ďalej padajú', 'Toto je skúška' / 'Skúška vyšla', the 'dohoda', 'papier, ktorý píše dvakrát' + pán Baran on the post office (I10.z06 in chunk C3). If C3 rewords them, keep these 1995 callbacks in step."
+ ]
+}

@@ -35,14 +35,48 @@ public static class Driver
             }
             else
             {
-                Assert.True(content.Overlay.RemovedConnections.Any(c => (c.From == s.Room && c.To == roomId) || (c.To == s.Room && c.From == roomId)),
+                // Recomputed under the overlays: a hop the travel overlay removed, or a path that starts where the
+                // walkthrough expects the hero although a relocated action (world overlay) took him to another room.
+                Assert.True(content.Overlay.RemovedConnections.Any(c => (c.From == s.Room && c.To == roomId) || (c.To == s.Room && c.From == roomId)) ||
+                            content.Overlay.Relocations.Count > 0,
                     $"No exit or portal from {s.Room} to {roomId}");
-                s = TravelTo(content, s, roomId); // recomputed under the travel overlay
+                s = TravelTo(content, s, roomId);
                 continue;
             }
             Assert.Equal(roomId, next.Room);
             s = Playback.FinishAll(content, next);
             Assert.Equal(GameMode.World, s.Mode);
+        }
+        return s;
+    }
+
+    /// <summary>
+    /// Gets ready for a walkthrough step: follows its travel path and, when the world overlay relocated the step's
+    /// action to another room, travels on to that room (walkthrough.json itself is never edited).
+    /// </summary>
+    public static GameState PrepareStep(GameContent content, GameState s, WalkthroughStep row)
+    {
+        s = FollowTravelPath(content, s, row.TravelPath);
+        var action = content.GetAction(row.Action);
+        return action.IsInventoryAction || s.Room == action.Room ? s : TravelTo(content, s, action.Room);
+    }
+
+    /// <summary>The room after a walkthrough step under the overlays: a relocated action ends in its new room.</summary>
+    public static string ExpectedRoomAfter(GameContent content, WalkthroughStep row) =>
+        content.FindRelocation(row.Action) is { } moved && row.RoomAfter == moved.FromRoom ? moved.ToRoom : row.RoomAfter;
+
+    /// <summary>
+    /// Performs every action that is still possible, in data order, until none is left (walkthrough.json does not know
+    /// the side quests of the world overlay).
+    /// </summary>
+    public static GameState PerformRemaining(GameContent content, GameState s)
+    {
+        for (var i = 0; i <= content.Actions.Count; i++)
+        {
+            var options = Enabled(content, s);
+            if (options.Count == 0) break;
+            s = Perform(content, s, options[0]);
+            AssertInvariants(content, s);
         }
         return s;
     }

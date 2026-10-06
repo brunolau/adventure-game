@@ -64,6 +64,9 @@ Rules:
 | RUDO | Rudolf Pavlík | Rudo | Ruda, Rudovi; Rudov scenár |
 | SKLAD / STEFAN | Štefan Haluška | Štefan | Štefana, Štefanovi |
 | VERA60 | Vera Nemcová | Vera | Very, Vere, Veru; Verino rydlo; 1960 draughtswoman, not Viera |
+| ZUZANA | Zuzana (no surname, ever) | Zuzana; *Zuzka* (Ivanka adults, 1962) | Zuzany, Zuzane, Zuzanu, Zuzanou; *Zuzanin lístok*; 7 years old in June 1962; only in Ivanka 1962 (S37, traces in S32/S38) and as ZUZANA95 in 1995; never in 1982, 2020, 2035 |
+| ZUZANA95 | Zuzana (no surname, ever) | Zuzana; *teta Zuzana* (Kubo); nobody says *Zuzka* in 1995 | as ZUZANA; 40 years old on 15 June 1995; only in S69 Sokolíkovský dvor; recognises Adam from the Ivanka park 1962; nothing about her life is ever stated |
+| KUBO | Kubo | Kubo, *Kubko* | Kuba, Kubovi, Kubom; *Kubov bicykel*; 7, first-grader from a neighbouring entrance (1995, S69); a neighbour's child, never Zuzana's |
 | DOBRO | učiteľ Dobrovič | súdruh učiteľ (pupils), pán učiteľ | Dobroviča, Dobrovičovi |
 | RUZENA | Ružena Malá | pani Malá | Ruženy, Ružene |
 | MARTA82 | Marta Dobiášová | pani Dobiášová | Marty, Marte |
@@ -128,7 +131,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | výstava Atlas, servisný pavilón, chronokomora | Atlas exhibition in the hotel salon; its own temporary pavilion and chamber by the Rotunda on Chopok |
 | klientske centrum Biela Púť | Sára |
 
-### 3.3 Rooms (68)
+### 3.3 Rooms (69)
 
 Room names are also exit labels and map labels; a rename changes every exit label that equals it. **Bold** = decided rename.
 
@@ -202,6 +205,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | S66 | 1982 | Dúbravka | Školský záhradný sklad v roku 1982 | = |
 | S67 | 2035 | Priehyba | Priehyba pri prestupe na Funitel | = |
 | S68 | 2035 | Funitel | Kabína Funitelu medzi Priehybou a Chopkom | = |
+| S69 | 1995 | Dúbravka | Sokolíkovský dvor | = (world overlay, content v2: the walled courtyard of the Sokolíkova estate, reached from S18; Zuzana 40, Kubo, Q11, B19) |
 
 
 ## 4. Devices and recurring concepts
@@ -223,7 +227,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | **kalibračná platňa** (mosadzná) | the brass plate of 1960 with PÔVOD, HLAS, SÚHLAS, NÁVRAT and the rule; it stays on the device | |
 | **odtlačok** → *nezvýraznený*, *čitateľný*, **overený odtlačok z roku 1962** | Adam's imprint of the plate on waxed paper, worked out with the blunt stylus, then registered | *kópia* (that is Mira's archive copy) |
 | **archívna kópia**, **kovová schránka** | Mira's clean copy, locked with the registration in the metal box in the attic | |
-| **registračný list**, **druhopis** (via **uhlový papier**), **pečiatka** | the post office confirms the date and existence of the record, not its truth | *prepisový papier* |
+| **registračný list**, **druhopis** (via **uhľový papier**), **pečiatka** | the post office confirms the date and existence of the record, not its truth | *prepisový papier*, *uhlový papier* (Czech form; Slovak *uhlový* means 'angular'; changed 2026-10-06 in the C3 final control, C2/C4 texts follow on their next pass) |
 | **pravidlo** `Rôzne údaje neznamenajú neplatné údaje.` | Mira's 1960 rule, engraved on the plate | |
 | **štyri svedectvá**: **Pôvod**, **Hlas**, **Súhlas**, **Návrat** | the four proofs and the four **porty** of the chamber: Pôvod = overený odtlačok 1960, Hlas = pôvodná školská kazeta 1995, Súhlas = potvrdené odovzdanie 2020, Návrat = obnovovací postup 2035 | *dôkaz Súhlas* (say *dôkaz súhlasu*) |
 | **pôvodná školská kazeta** | the 1995 sound-atlas tape with Lea and ten-year-old Adam; first *kazeta s rušenými stopami* (two tracks against each other) | |
@@ -249,7 +253,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | **chronokomora**, **panel obnovy** | the chamber where Viktor hears the message and the four proofs are inserted | *synchronizačná komora* |
 | **Leina pôvodná správa** | the full message of 2032; the normalizer left only `ozvi sa` | |
 
-## 5. Items (78)
+## 5. Items (83)
 
 Canonical inventory names. **Bold** = decided rename; dialogue, looks, goals and hints must use the same noun (declined). 'Got' = action that gives it, 'Used in' = actions that need it.
 
@@ -292,7 +296,7 @@ Canonical inventory names. **Bold** = decided rename; dialogue, looks, goals and
 | WAXPAPER | Voskovaný hárok | = | I11 (C3) | I12 |
 | PRESSED | Nezvýraznený odtlačok | = | I12 (C3) | I13 |
 | ORIGIN_RAW | Čitateľný odtlačok | = | I13 (C3) | I17 |
-| CARBON | Uhlový papier | = | I14 (C3) | I15 |
+| CARBON | **Uhľový papier** | Uhlový papier | I14 (C3) | I15 |
 | REGDOUBLE | Dve vyhotovenia listu | = | I15 (C3) | I16 |
 | REGISTERED | Potvrdený registračný list | = | I16 (C3) | I17 |
 | ORIGIN | Overený odtlačok z roku 1962 | = | I17 (C3) | C01, C05, F06, F12, E02 |
@@ -317,6 +321,11 @@ Canonical inventory names. **Bold** = decided rename; dialogue, looks, goals and
 | PLAY | Rudov scenár | = | Q7B (C3) | Q7C |
 | DELIVERY_NOTE | Očkova doručovacia požiadavka | = | Q8A (C4) | Q8B, Q8C |
 | DELIVERY_OK | Potvrdenie opravovne | = | Q8C (C4) | Q8D |
+| BELL_MUTE | Triedny zvonček bez pútka | = (world overlay) | Q10A (C3) | Q10C |
+| ZUZA_SLIP | Zuzanin lístok | = (world overlay) | Q10A (C3) | Q10B |
+| STRAP | Kožený odrezok | = (world overlay; not LEATHER) | Q10B (C3) | Q10C |
+| BELL_FIXED | Opravený triedny zvonček | = (world overlay) | Q10C (C3) | Q10D |
+| BELLCAP | Vrchnák zvončeka | = (world overlay) | Q11B (C2) | Q11C |
 | PHOTO2020 | Chránená fotografia dvora 2020 | = | D01 (C1) | E02 |
 | SCHOOLPASS | Povolenie prevziať Mirin technický majetok | = | D02 (C1) | — |
 | LOG1982 | Kópia servisného záznamu 1982 | = | D03 (C1) | D04, E02, E04 |
@@ -347,7 +356,7 @@ another line of the same exchange, say so in the note.
 |---|---|---|---|
 | **P01** Tri referenčné tvary (S10) | join equal shapes; colours do not matter | kruh–kruh, trojuholník–trojuholník, štvorec–štvorec | `look.S10.panel`, `action.G10.002/.003`, `action.G10.objective/.journal`, `puzzle.P01.*`, `journal.clue.P01`, `quest.M02.hint.3` |
 | **P02** Zarovnanie mapovej fólie (bag) | the base map and the overlay both show **dierka, dvojitý kríž, štvorec**; rotate until all three match | **180°** | `item.OVERLAY`, `action.B15.004`, `puzzle.P02.*`, `journal.clue.P02`, `quest.M06.hint.3` |
-| **P03** Kalibrácia na Starom moste (S30) | the school-yard drawing says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the panel in the school yard and Emil has the metronome | **3–2–6** | `look.S17.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
+| **P03** Kalibrácia na Starom moste (S30) | the rhythm drawing on the courtyard wall of the Sokolíkovský dvor (S69, content v2; B19 relocated from the school yard S17) says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the wall in the Sokolíkovský dvor and Emil has the metronome | **3–2–6** | `look.S69.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
 | **P04** Priradenie štyroch svedectiev (S49) | ports and items carry name and year; the journal repeats them | **Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035** (shown; value 1960) | `look.S39.plate`, `action.I13.001`, `action.C05.001`, `look.S49.port_*`, `action.F11.objective/.journal`, `action.F12.001`–`F15.001`, `puzzle.P04.*`, `journal.clue.P04`, `quest.M15.hint.2/.3` |
 | **P05** Dutina v tom istom múriku (S55) | grid **3 × 4**; **druhý rad zhora, tretí kameň zľava** = **rad 2, stĺpec 3**, written in Tóno's 1982 map and his 1995 note | row 2, column 3 | `action.E08.001`, `item.CACHEMAP`, `look.S61.niche`, `action.E11.006`, `item.KEEPERNOTE`, `action.D05.002`, `puzzle.P05.*`, `journal.clue.P05`, `quest.M11C.hint.3` |
 
@@ -454,7 +463,7 @@ Generated from walkthrough.json and game.json. Every hint level 3, objective and
 | 27 | B16 | S22 | Priehľadná mapa K-17 + Mapa bez priehľadnej vrstvy (hádanka, riešenie 180) | Úplná mapa uzlov |
 | 28 | B17 | S29 | Úplná mapa uzlov → Dezider Kováč | Deziderova meracia cievka |
 | 29 | B18 | S19 | téma u: Emil Belan | Emilov metronóm |
-| 30 | B19 | S17 | klik: Rytmický nákres | — |
+| 30 | B19 | S69 | klik: Rytmický nákres (relocated from S17 by the world overlay; walk S11 → S18 → S69) | — |
 | 31 | B20 | S30 | Deziderova meracia cievka → Držiak meracej cievky | — |
 | 32 | B21 | S30 | Emilov metronóm → Stolík s rytmickou značkou | — |
 | 33 | B22 | S30 | klik: Tri kalibračné číslice (hádanka, riešenie [3, 2, 6]) | — |
@@ -471,8 +480,8 @@ Generated from walkthrough.json and game.json. Every hint level 3, objective and
 | 44 | I11 | S40 | klik: Voskovaný papier | Voskovaný hárok |
 | 45 | I12 | S39 | Voskovaný hárok → Kalibračná mosadzná platňa | Nezvýraznený odtlačok |
 | 46 | I13 | S39 | Verino tupé rydlo + Nezvýraznený odtlačok | Čitateľný odtlačok |
-| 47 | I14 | S33 | klik: Prepisový papier | Uhlový papier |
-| 48 | I15 | S33 | Uhlový papier + Technický registračný list | Dve vyhotovenia listu |
+| 47 | I14 | S33 | klik: Uhľový papier | Uhľový papier |
+| 48 | I15 | S33 | Uhľový papier + Technický registračný list | Dve vyhotovenia listu |
 | 49 | I16 | S33 | Dve vyhotovenia listu → Alojz Baran | Potvrdený registračný list |
 | 50 | I17 | S40 | Potvrdený registračný list → Kovová archívna schránka | Overený odtlačok z roku 1960 |
 | 51 | C01 | S06 | Overený odtlačok z roku 1960 → Mira Hrušková | — |
@@ -552,6 +561,13 @@ Generated from walkthrough.json and game.json. Every hint level 3, objective and
 | + | Q9D | S15 | téma u: Jana Vargová | — |
 | + | Q9E | S54 | téma u: Jana Vargová | — |
 | + | Q9F | S44 | téma u: Jana Vargová | — |
+| + | Q10A | S37 | téma u: Zuzana | Triedny zvonček bez pútka, Zuzanin lístok |
+| + | Q10B | S35 | Zuzanin lístok → Štefan Haluška | Kožený odrezok |
+| + | Q10C | inventory | Kožený odrezok + Triedny zvonček bez pútka (needs Servisná brašna) | Opravený triedny zvonček |
+| + | Q10D | S37 | Opravený triedny zvonček → Zuzana | — |
+| + | Q11A | S69 | téma u: Kubo | — |
+| + | Q11B | S69 | klik: Modrý smrek | Vrchnák zvončeka |
+| + | Q11C | S69 | Vrchnák zvončeka → Kubov bicykel (needs Servisná brašna) | — |
 
 
 ## 8. Deprecated words (the checker warns)
@@ -564,7 +580,7 @@ Generated from walkthrough.json and game.json. Every hint level 3, objective and
 | *návlečka* | izolačný návlek |
 | *Palova opravovňa, Palovi* | Paliho opravovňa, Palimu |
 | *Dezi, Deziho* (outside friends' speech) | Dezider, Dezidera |
-| *prepisový papier* | uhlový papier |
+| *prepisový papier*, *uhlový papier* | uhľový papier |
 | *slučka* (the coil) | meracia cievka |
 | *časostroj* | chronometer / ZVON |
 | *Žiaden strach miláčik* | Žiaden strach, miláčik |

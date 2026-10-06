@@ -247,7 +247,7 @@ public sealed class AcceptanceTests
             var s = C.InitialState;
             foreach (var row in TestData.MainRoute)
             {
-                s = Driver.FollowTravelPath(C, s, row.TravelPath);
+                s = Driver.PrepareStep(C, s, row);
                 var a = C.GetAction(row.Action);
                 s = a.Puzzle is null ? GameRules.CommitAction(C, s, a.Id) : GameRules.CommitAction(C, Puzzles.Open(C, s, a.Id), a.Id, row.PuzzleSolution);
                 var guard = 0;
@@ -314,8 +314,8 @@ public sealed class AcceptanceTests
             Assert.Empty(WorldEffects.CausalEffectsAt(C, C.InitialState, room));
             Assert.Equal(expected, WorldEffects.CausalEffectsAt(C, all, room).Select(e => e.Effect));
         }
-        // No new quests appear: the quest list is fixed data.
-        Assert.Equal(27, C.Quests.Count);
+        // No new quests appear: the quest list is fixed data (game.json's 27 plus the world overlay's side quests).
+        Assert.Equal(27 + C.Overlay.AddedQuests.Count, C.Quests.Count);
     }
 
     [Fact]
@@ -347,12 +347,12 @@ public sealed class AcceptanceTests
     [Fact]
     public void AT24_content_audit()
     {
-        Assert.Equal(68, C.Rooms.Count);
+        Assert.Equal(68 + C.Overlay.AddedRooms.Count, C.Rooms.Count);
         var postgame = Navigation.ConnectedRooms(C, TestData.MainEnd, includePortals: true);
-        Assert.Equal(68, postgame.Count);
-        Assert.Equal(127, C.Actions.Count);
+        Assert.Equal(C.Rooms.Count, postgame.Count);
+        Assert.Equal(127 + C.Overlay.AddedActions.Count, C.Actions.Count);
         Assert.All(C.Actions, a => Assert.All(a.Lines, l => Assert.False(string.IsNullOrEmpty(l.LineId))));
-        Assert.Equal(9, C.Quests.Count(q => q.IsSide && q.Actions.Count >= 3));
+        Assert.Equal(9 + C.Overlay.AddedQuests.Count, C.Quests.Count(q => q.IsSide && q.Actions.Count >= 3));
         var texts = C.Actions.SelectMany(a => a.Lines.Select(l => l.Text)).Concat(C.Rooms.SelectMany(r => r.Hotspots.Select(h => h.Look)));
         Assert.DoesNotContain(texts, t => t.Contains("TODO", StringComparison.OrdinalIgnoreCase) || t.Contains("placeholder", StringComparison.OrdinalIgnoreCase) || t.Contains("lorem", StringComparison.OrdinalIgnoreCase));
     }

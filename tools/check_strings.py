@@ -230,6 +230,21 @@ def check_ui(game: dict, ui: dict[str, list[str]], findings: Findings, overlay=N
         elif not tk.UI_KEY_PATTERN.match(key):
             findings.error(f"ui.csv: key {key!r} does not follow ui.<area>.<name>")
 
+    # Step hints (Core Hints.StepText): every quest action has its exact step text, ui.hint_step.<id> in ui.csv for
+    # game.json's actions, actions[].hint_step (key action.<id>.hint_step, world.csv) for the world overlay's new and
+    # relocated ones; a ui.csv row that a relocation shadows is never shown again.
+    actions = {a["id"]: a for a in game.get("actions", [])}
+    for quest in game.get("quests", []):
+        for aid in quest.get("actions", []):
+            action = actions.get(aid, {})
+            if not action.get("hint_step") and f"ui.hint_step.{aid}" not in ui:
+                findings.error(f"ui.csv: missing step hint 'ui.hint_step.{aid}' (quest {quest['id']})")
+    for aid, action in actions.items():
+        key = f"ui.hint_step.{aid}"
+        if action.get("hint_step") and key in ui and ui[key][0] != action["hint_step"]:
+            findings.warn(f"ui.csv: {key!r} is shadowed by the world overlay's hint_step of {aid} "
+                          f"({action['hint_step'][:60]!r}); it is never shown, keep it equal or remove it")
+
     tabs = game.get("journal_contract", {}).get("tabs", [])
     if len(tabs) != len(tk.JOURNAL_TAB_KEYS):
         findings.error(f"journal_contract.tabs has {len(tabs)} tabs but JOURNAL_TAB_KEYS has "

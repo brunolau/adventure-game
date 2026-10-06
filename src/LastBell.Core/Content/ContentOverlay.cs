@@ -12,17 +12,40 @@ namespace LastBell.Core.Content;
 /// </summary>
 /// <param name="DialogueExt">Text of <c>dialogue_ext.json</c> (longer sequences, extra NPC topics), or null.</param>
 /// <param name="TravelExt">Text of <c>travel_ext.json</c> (exits, connections, map regions), or null.</param>
-public sealed record ContentOverlays(string? DialogueExt = null, string? TravelExt = null)
+/// <param name="WorldExt">
+/// Text of <c>world_ext.json</c> (new rooms, hotspots, characters, items, actions, side quests, epilogue shots,
+/// variant layers, connections, and relocations of existing actions to another room of the same era), or null.
+/// </param>
+public sealed record ContentOverlays(string? DialogueExt = null, string? TravelExt = null, string? WorldExt = null)
 {
     /// <summary>No overlay: the game plays exactly the handoff content.</summary>
     public static ContentOverlays None { get; } = new();
+
+    /// <summary>True when no overlay text is given (every text null, empty or whitespace).</summary>
+    public bool IsBlank => string.IsNullOrWhiteSpace(DialogueExt) && string.IsNullOrWhiteSpace(TravelExt) && string.IsNullOrWhiteSpace(WorldExt);
 
     /// <summary>File name of the dialogue overlay inside the content_ext folder.</summary>
     public const string DialogueExtFile = "dialogue_ext.json";
 
     /// <summary>File name of the travel overlay inside the content_ext folder.</summary>
     public const string TravelExtFile = "travel_ext.json";
+
+    /// <summary>File name of the world overlay inside the content_ext folder.</summary>
+    public const string WorldExtFile = "world_ext.json";
 }
+
+/// <summary>
+/// An existing action moved by the world overlay to a hotspot in another room of the same era. Its logic (guards,
+/// items, quest, puzzle, cutscene, lines) is unchanged; only <see cref="ActionDef.Room"/>, <see cref="ActionDef.Target"/>
+/// and the step hint (<see cref="ActionDef.HintStep"/>) differ.
+/// </summary>
+/// <param name="Action">Action id.</param>
+/// <param name="FromRoom">Room of the action in game.json.</param>
+/// <param name="FromHotspot">Target hotspot in game.json.</param>
+/// <param name="ToRoom">Room of the action now.</param>
+/// <param name="ToHotspot">Target hotspot now.</param>
+/// <param name="HotspotRetired">True when the old hotspot was removed from its room (it had no other action).</param>
+public sealed record RelocationInfo(string Action, string FromRoom, string FromHotspot, string ToRoom, string ToHotspot, bool HotspotRetired);
 
 /// <summary>
 /// A region of the map of one era: rooms that are reached from each other freely (fast travel inside the region),
@@ -69,20 +92,51 @@ public sealed class OverlayInfo
     /// <summary>Map regions defined by the travel overlay (eras without an entry use one region per district).</summary>
     public IReadOnlyList<RegionDef> Regions { get; init; } = Array.Empty<RegionDef>();
 
+    /// <summary>Rooms added by the world overlay.</summary>
+    public IReadOnlyList<string> AddedRooms { get; init; } = Array.Empty<string>();
+    /// <summary>Hotspots added by the world overlay (in new and in existing rooms).</summary>
+    public IReadOnlyList<string> AddedHotspots { get; init; } = Array.Empty<string>();
+    /// <summary>Characters added by the world overlay.</summary>
+    public IReadOnlyList<string> AddedCharacters { get; init; } = Array.Empty<string>();
+    /// <summary>Items added by the world overlay.</summary>
+    public IReadOnlyList<string> AddedItems { get; init; } = Array.Empty<string>();
+    /// <summary>Actions added by the world overlay.</summary>
+    public IReadOnlyList<string> AddedActions { get; init; } = Array.Empty<string>();
+    /// <summary>Side quests added by the world overlay.</summary>
+    public IReadOnlyList<string> AddedQuests { get; init; } = Array.Empty<string>();
+    /// <summary>Epilogue entries added by the world overlay (their quest ids, in data order after game.json's).</summary>
+    public IReadOnlyList<string> AddedEpilogue { get; init; } = Array.Empty<string>();
+    /// <summary>Visual variant layers added by the world overlay (their asset paths).</summary>
+    public IReadOnlyList<string> AddedVariantLayers { get; init; } = Array.Empty<string>();
+    /// <summary>Existing actions moved to another room of the same era.</summary>
+    public IReadOnlyList<RelocationInfo> Relocations { get; init; } = Array.Empty<RelocationInfo>();
+    /// <summary>Hotspots removed by a relocation (<c>retire_hotspot</c>).</summary>
+    public IReadOnlyList<string> RetiredHotspots { get; init; } = Array.Empty<string>();
+
+    /// <summary>True when the world overlay added or moved anything (the load then runs the playability check).</summary>
+    public bool HasWorldChanges => AddedRooms.Count > 0 || AddedHotspots.Count > 0 || AddedCharacters.Count > 0 || AddedItems.Count > 0 ||
+                                   AddedActions.Count > 0 || AddedQuests.Count > 0 || AddedEpilogue.Count > 0 ||
+                                   AddedVariantLayers.Count > 0 || Relocations.Count > 0;
+
     /// <summary>True when nothing was changed.</summary>
     public bool IsEmpty => ExtendedActions.Count == 0 && ExtendedTopics.Count == 0 && ExtendedFirstEntries.Count == 0 &&
                            AddedTopics.Count == 0 && RemovedExits.Count == 0 && AddedExits.Count == 0 &&
-                           RemovedConnections.Count == 0 && AddedConnections.Count == 0 && Regions.Count == 0;
+                           RemovedConnections.Count == 0 && AddedConnections.Count == 0 && Regions.Count == 0 && !HasWorldChanges;
+
+    /// <summary>The relocation of an action, or null when it plays where game.json puts it.</summary>
+    public RelocationInfo? RelocationOf(string actionId) => Relocations.FirstOrDefault(r => r.Action == actionId);
 }
 
 /// <summary>
-/// Validates and applies the content overlays to the parsed game.json. The dialogue overlay may only set lines,
+/// Validates and applies the content overlays to the parsed game.json, in the order world, dialogue, travel. The world
+/// overlay adds rooms, hotspots, characters, items, actions and side quests and relocates existing actions (new ids
+/// only, see ContentOverlay.World.cs). The dialogue overlay may only set lines,
 /// labels of new topics and their timing conditions (<c>requires_done</c> / <c>excluded_done</c> on existing action
 /// ids, <c>repeatable</c>); anything else (items, puzzles, quests, logic) is rejected with an error naming the JSON
 /// path. The travel overlay may remove and add exits and connections and define map regions; it is checked against
 /// the owner rule "far places are reached through their transport hub".
 /// </summary>
-internal static class OverlayApplier
+internal static partial class OverlayApplier
 {
     /// <summary>Travel styles the presentation knows (game.json's plus <c>bus</c> and <c>tram</c>).</summary>
     internal static readonly IReadOnlySet<string> TravelKinds = new HashSet<string>(StringComparer.Ordinal)
@@ -101,13 +155,24 @@ internal static class OverlayApplier
     public static GameData Apply(GameData data, ContentOverlays overlays, List<string> errors, out OverlayInfo info)
     {
         var builder = new InfoBuilder();
-        var baseLineIds = AllLineIds(data);
         var newLineIds = new HashSet<string>(StringComparer.Ordinal);
         var result = data;
+        var world = Parse(overlays.WorldExt, WorldRoot, errors);
+        if (world is not null) result = ApplyWorld(result, world, AllLineIds(data), newLineIds, builder, errors);
+        if (errors.Count > 0) { builder.AddedLineIds.AddRange(newLineIds); info = builder.Build(); return data; }
+        // Lines the world overlay added count as existing lines for the dialogue overlay (it may extend them).
+        var baseLineIds = AllLineIds(result);
         var dialogue = Parse(overlays.DialogueExt, "$dialogue_ext", errors);
         if (dialogue is not null) result = ApplyDialogue(result, dialogue, baseLineIds, newLineIds, builder, errors);
         var travel = Parse(overlays.TravelExt, "$travel_ext", errors);
         if (travel is not null) result = ApplyTravel(result, travel, baseLineIds, newLineIds, builder, errors);
+        foreach (var (roomId, hint) in builder.RegionHints.Where(h => !builder.ConsumedRegionHints.Contains(h.Key)))
+        {
+            var era = result.Rooms.FirstOrDefault(r => r.Id == roomId)?.Era;
+            if (errors.Any(e => e.Contains($"rooms({roomId}).region", StringComparison.Ordinal))) continue;
+            errors.Add($"{WorldRoot}.rooms({roomId}).region: {era} has no map regions in travel_ext.json; leave 'region' out " +
+                       "(the room joins the region of its district) or define the regions of that era");
+        }
         builder.AddedLineIds.AddRange(newLineIds);
         info = builder.Build();
         return result;
@@ -284,6 +349,9 @@ internal static class OverlayApplier
                     var allowed = new HashSet<string>(a.Lines.Select(l => l.Speaker), StringComparer.Ordinal) { "ADAM" };
                     if (hotspots.TryGetValue(a.Target, out var target) && target.IsNpc && target.CharacterId is not null) allowed.UnionWith(Party(target.CharacterId));
                     if (a.Staging is not null) allowed.UnionWith(a.Staging.GuestSpeakers);
+                    // People standing in the action's room may join in (its effective room: the world overlay may have
+                    // relocated the action or added an NPC to that room).
+                    if (rooms.TryGetValue(a.Room, out var actionRoom)) allowed.UnionWith(actionRoom.NpcIds);
                     owner = new Owner("action", a.Id, $"action.{a.Id}.", a.Lines, allowed);
                     expectedKind = "action_lines";
                     expectedId = $"action.{a.Id}";
@@ -508,107 +576,31 @@ internal static class OverlayApplier
         // Additions.
         var allExitIds = new HashSet<string>(data.Rooms.SelectMany(r => r.Exits).Select(e => e.Id), StringComparer.Ordinal);
         var addedExits = new List<(string Room, ExitDef Exit)>();
+        var addedConnections = new List<(string From, string To)>();
+        var speakers = new HashSet<string>(data.Characters.Select(c => c.Id).Concat(data.NonActorSpeakers.Keys), StringComparer.Ordinal);
         var exitsArr = Arr(root, "exits", rp, errors);
         for (var i = 0; exitsArr is not null && i < exitsArr.Count; i++)
         {
             var path = $"{rp}.exits[{i}]";
             if (exitsArr[i] is not JsonObject o) { errors.Add($"{path}: must be an object"); continue; }
-            var id = Str(o, "id", path, errors, required: true);
-            if (id is null) continue;
-            path += $"({id})";
-            CheckKeys(o, path, ExitKeys, errors);
-            var roomId = Str(o, "room", path, errors, required: true);
-            var to = Str(o, "to", path, errors, required: true);
-            var label = Str(o, "label", path, errors, required: true);
-            var locked = Str(o, "locked_look", path, errors, required: true);
-            var travel = Str(o, "travel", path, errors, required: true);
-            var requires = StrList(o, "requires_done", path, errors);
-            var rect = IntList(o, "rect", path, 4, errors);
-            var point = IntList(o, "interaction_point", path, 2, errors);
-            Str(o, "note", path, errors);
-            if (roomId is null || to is null || label is null || locked is null || travel is null || rect is null || point is null) continue;
-            if (!rooms.TryGetValue(roomId, out var room)) { errors.Add($"{path}.room: unknown room '{roomId}'"); continue; }
-            if (!rooms.TryGetValue(to, out var target)) { errors.Add($"{path}.to: unknown room '{to}'"); continue; }
-            if (to == roomId) errors.Add($"{path}.to: an exit cannot lead into its own room");
-            if (target.Era != room.Era) errors.Add($"{path}.to: '{to}' is in {target.Era}, not {room.Era}; eras are changed only by the chronometer");
-            if (id != $"{roomId}.to_{to}") errors.Add($"{path}.id: expected '{roomId}.to_{to}' (exit ids name their room and target)");
-            if (!allExitIds.Add(id) && !info.RemovedExits.Contains(id)) errors.Add($"{path}.id: exit '{id}' already exists");
-            if (exitsByRoom[roomId].Any(e => e.To == to)) errors.Add($"{path}: room '{roomId}' already has an exit to '{to}'");
-            if (!TravelKinds.Contains(travel)) errors.Add($"{path}.travel: unknown travel style '{travel}' (known: {string.Join(", ", TravelKinds)})");
-            for (var r = 0; r < requires.Count; r++) if (!actionIds.Contains(requires[r])) errors.Add($"{path}.requires_done[{r}]: unknown action '{requires[r]}'");
-            if (string.IsNullOrWhiteSpace(label)) errors.Add($"{path}.label: empty");
-            if (string.IsNullOrWhiteSpace(locked)) errors.Add($"{path}.locked_look: empty");
-            if (o.TryGetPropertyValue("first_ride", out var rideNode) && rideNode is not null)
-            {
-                var ridePath = path + ".first_ride";
-                if (rideNode is not JsonObject ride) errors.Add($"{ridePath}: must be {{lines: [...]}}");
-                else
-                {
-                    CheckKeys(ride, ridePath, new[] { "id", "lines", "note" }, errors);
-                    var rideId = Str(ride, "id", ridePath, errors);
-                    if (rideId is not null && rideId != $"travel.{id}.first") errors.Add($"{ridePath}.id: expected 'travel.{id}.first'");
-                    Str(ride, "note", ridePath, errors);
-                    var owner = new Owner("first ride", id, $"travel.{id}.first.", Array.Empty<LineDef>(), new HashSet<string>(StringComparer.Ordinal) { "ADAM" });
-                    var speakers = new HashSet<string>(data.Characters.Select(c => c.Id).Concat(data.NonActorSpeakers.Keys), StringComparer.Ordinal);
-                    var lines = ParseLines(ride, ridePath, owner, allowExisting: false, speakers, baseLineIds, newLineIds, errors);
-                    if (lines is not null) info.FirstRides[id] = lines;
-                }
-            }
-            var exit = new ExitDef { Id = id, To = to, Label = label, LockedLook = locked, Travel = travel, RequiresDone = requires, Rect = rect, InteractionPoint = point };
-            exitsByRoom[roomId].Add(exit);
-            addedExits.Add((roomId, exit));
-            info.AddedExits.Add(id);
+            var exit = ParseExit(o, path, null, rooms, exitsByRoom, allExitIds, info.RemovedExits, actionIds, speakers, baseLineIds, newLineIds, info, errors, out var roomId);
+            if (exit is not null) addedExits.Add((roomId!, exit));
         }
         var connArr = Arr(root, "connections", rp, errors);
         for (var i = 0; connArr is not null && i < connArr.Count; i++)
         {
             var path = $"{rp}.connections[{i}]";
             if (connArr[i] is not JsonObject o) { errors.Add($"{path}: must be an object"); continue; }
-            CheckKeys(o, path, ConnectionKeys, errors);
-            var from = Str(o, "from", path, errors, required: true);
-            var to = Str(o, "to", path, errors, required: true);
-            if (from is null || to is null) continue;
-            path += $"({from}->{to})";
-            var label = Str(o, "label", path, errors, required: true);
-            var locked = Str(o, "locked_look", path, errors, required: true);
-            var travel = Str(o, "travel", path, errors, required: true);
-            var requires = StrList(o, "requires_done", path, errors);
-            var bidirectional = Bool(o, "bidirectional", path, errors) ?? true;
-            Str(o, "note", path, errors);
-            if (label is null || locked is null || travel is null) continue;
-            if (!rooms.TryGetValue(from, out var a)) { errors.Add($"{path}.from: unknown room '{from}'"); continue; }
-            if (!rooms.TryGetValue(to, out var b)) { errors.Add($"{path}.to: unknown room '{to}'"); continue; }
-            if (a.Era != b.Era) errors.Add($"{path}: connections stay inside one era");
-            if (connections.Any(c => (c.From == from && c.To == to) || (c.From == to && c.To == from)))
-                errors.Add($"{path}: a connection between '{from}' and '{to}' already exists");
-            if (!TravelKinds.Contains(travel)) errors.Add($"{path}.travel: unknown travel style '{travel}'");
-            for (var r = 0; r < requires.Count; r++) if (!actionIds.Contains(requires[r])) errors.Add($"{path}.requires_done[{r}]: unknown action '{requires[r]}'");
-            if (string.IsNullOrWhiteSpace(label)) errors.Add($"{path}.label: empty");
-            if (string.IsNullOrWhiteSpace(locked)) errors.Add($"{path}.locked_look: empty");
-            connections.Add(new ConnectionDef { From = from, To = to, Bidirectional = bidirectional, Travel = travel, Label = label, LockedLook = locked, RequiresDone = requires });
-            info.AddedConnections.Add((from, to));
+            var c = ParseConnection(o, path, rooms, connections, actionIds, errors);
+            if (c is null) continue;
+            connections.Add(c);
+            addedConnections.Add((c.From, c.To));
+            info.AddedConnections.Add((c.From, c.To));
         }
         if (errors.Count > errorCount) return data;
 
         // Exits and connections stay consistent: the map graph (connections) and the room exits describe the same edges.
-        foreach (var (from, to) in info.AddedConnections)
-        {
-            var c = connections.First(x => x.From == from && x.To == to);
-            void Side(string a, string b)
-            {
-                var e = exitsByRoom[a].FirstOrDefault(x => x.To == b);
-                if (e is null) errors.Add($"{rp}.connections({from}->{to}): room '{a}' needs an exit to '{b}' in exits");
-                else if (e.Travel != c.Travel || !e.RequiresDone.SequenceEqual(c.RequiresDone))
-                    errors.Add($"{rp}.exits({e.Id}): travel and requires_done must equal those of connection {from}->{to}");
-            }
-            Side(from, to);
-            if (c.Bidirectional) Side(to, from);
-        }
-        foreach (var (roomId, exit) in addedExits)
-        {
-            if (!connections.Any(c => (c.From == roomId && c.To == exit.To) || (c.Bidirectional && c.From == exit.To && c.To == roomId)))
-                errors.Add($"{rp}.exits({exit.Id}): no connection leads from '{roomId}' to '{exit.To}'; add one in connections");
-        }
+        CheckEdges(rp, connections, exitsByRoom, addedConnections, addedExits, errors);
         foreach (var (from, to) in info.RemovedConnections)
         {
             foreach (var (a, b) in new[] { (from, to), (to, from) })
@@ -632,6 +624,127 @@ internal static class OverlayApplier
         };
 
         // Every room stays reachable from its era's time node over the (ungated) graph.
+        CheckReachable(rp, result, "can no longer be reached", errors);
+
+        ParseRegions(root, result, info, errors);
+        return result;
+    }
+
+    /// <summary>
+    /// Parses one added exit (travel_ext <c>exits[]</c>, world_ext <c>exits[]</c> and <c>rooms[].exits[]</c>). With
+    /// <paramref name="ownRoom"/> the exit belongs to that (new) room and has no <c>room</c> field. Registers the exit in
+    /// <paramref name="exitsByRoom"/> and <see cref="InfoBuilder.AddedExits"/>; returns null on an unusable entry.
+    /// </summary>
+    private static ExitDef? ParseExit(JsonObject o, string path, string? ownRoom, IReadOnlyDictionary<string, RoomDef> rooms,
+        Dictionary<string, List<ExitDef>> exitsByRoom, HashSet<string> allExitIds, IReadOnlyCollection<string> removedExits,
+        IReadOnlySet<string> actionIds, IReadOnlySet<string> speakers, IReadOnlySet<string> baseLineIds, HashSet<string> newLineIds,
+        InfoBuilder info, List<string> errors, out string? roomId)
+    {
+        roomId = ownRoom;
+        var id = Str(o, "id", path, errors, required: true);
+        if (id is null) return null;
+        path += $"({id})";
+        CheckKeys(o, path, ownRoom is null ? ExitKeys : ExitKeys.Where(k => k != "room").ToArray(), errors);
+        if (ownRoom is null) roomId = Str(o, "room", path, errors, required: true);
+        var to = Str(o, "to", path, errors, required: true);
+        var label = Str(o, "label", path, errors, required: true);
+        var locked = Str(o, "locked_look", path, errors, required: true);
+        var travel = Str(o, "travel", path, errors, required: true);
+        var requires = StrList(o, "requires_done", path, errors);
+        var rect = IntList(o, "rect", path, 4, errors);
+        var point = IntList(o, "interaction_point", path, 2, errors);
+        Str(o, "note", path, errors);
+        if (roomId is null || to is null || label is null || locked is null || travel is null || rect is null || point is null) return null;
+        if (!rooms.TryGetValue(roomId, out var room)) { errors.Add($"{path}.room: unknown room '{roomId}'"); return null; }
+        if (!rooms.TryGetValue(to, out var target)) { errors.Add($"{path}.to: unknown room '{to}'"); return null; }
+        if (to == roomId) errors.Add($"{path}.to: an exit cannot lead into its own room");
+        if (target.Era != room.Era) errors.Add($"{path}.to: '{to}' is in {target.Era}, not {room.Era}; eras are changed only by the chronometer");
+        if (id != $"{roomId}.to_{to}") errors.Add($"{path}.id: expected '{roomId}.to_{to}' (exit ids name their room and target)");
+        if (!allExitIds.Add(id) && !removedExits.Contains(id)) errors.Add($"{path}.id: exit '{id}' already exists");
+        if (exitsByRoom[roomId].Any(e => e.To == to)) errors.Add($"{path}: room '{roomId}' already has an exit to '{to}'");
+        if (!TravelKinds.Contains(travel)) errors.Add($"{path}.travel: unknown travel style '{travel}' (known: {string.Join(", ", TravelKinds)})");
+        for (var r = 0; r < requires.Count; r++) if (!actionIds.Contains(requires[r])) errors.Add($"{path}.requires_done[{r}]: unknown action '{requires[r]}'");
+        if (string.IsNullOrWhiteSpace(label)) errors.Add($"{path}.label: empty");
+        if (string.IsNullOrWhiteSpace(locked)) errors.Add($"{path}.locked_look: empty");
+        if (o.TryGetPropertyValue("first_ride", out var rideNode) && rideNode is not null)
+        {
+            var ridePath = path + ".first_ride";
+            if (rideNode is not JsonObject ride) errors.Add($"{ridePath}: must be {{lines: [...]}}");
+            else
+            {
+                CheckKeys(ride, ridePath, new[] { "id", "lines", "note" }, errors);
+                var rideId = Str(ride, "id", ridePath, errors);
+                if (rideId is not null && rideId != $"travel.{id}.first") errors.Add($"{ridePath}.id: expected 'travel.{id}.first'");
+                Str(ride, "note", ridePath, errors);
+                var owner = new Owner("first ride", id, $"travel.{id}.first.", Array.Empty<LineDef>(), new HashSet<string>(StringComparer.Ordinal) { "ADAM" });
+                var lines = ParseLines(ride, ridePath, owner, allowExisting: false, speakers, baseLineIds, newLineIds, errors);
+                if (lines is not null) info.FirstRides[id] = lines;
+            }
+        }
+        var exit = new ExitDef { Id = id, To = to, Label = label, LockedLook = locked, Travel = travel, RequiresDone = requires, Rect = rect, InteractionPoint = point };
+        exitsByRoom[roomId].Add(exit);
+        info.AddedExits.Add(id);
+        return exit;
+    }
+
+    /// <summary>Parses one added connection (travel_ext and world_ext <c>connections[]</c>); null on an unusable entry.</summary>
+    private static ConnectionDef? ParseConnection(JsonObject o, string path, IReadOnlyDictionary<string, RoomDef> rooms,
+        IReadOnlyList<ConnectionDef> connections, IReadOnlySet<string> actionIds, List<string> errors)
+    {
+        CheckKeys(o, path, ConnectionKeys, errors);
+        var from = Str(o, "from", path, errors, required: true);
+        var to = Str(o, "to", path, errors, required: true);
+        if (from is null || to is null) return null;
+        path += $"({from}->{to})";
+        var label = Str(o, "label", path, errors, required: true);
+        var locked = Str(o, "locked_look", path, errors, required: true);
+        var travel = Str(o, "travel", path, errors, required: true);
+        var requires = StrList(o, "requires_done", path, errors);
+        var bidirectional = Bool(o, "bidirectional", path, errors) ?? true;
+        Str(o, "note", path, errors);
+        if (label is null || locked is null || travel is null) return null;
+        if (!rooms.TryGetValue(from, out var a)) { errors.Add($"{path}.from: unknown room '{from}'"); return null; }
+        if (!rooms.TryGetValue(to, out var b)) { errors.Add($"{path}.to: unknown room '{to}'"); return null; }
+        if (a.Era != b.Era) errors.Add($"{path}: connections stay inside one era");
+        if (connections.Any(c => (c.From == from && c.To == to) || (c.From == to && c.To == from)))
+            errors.Add($"{path}: a connection between '{from}' and '{to}' already exists");
+        if (!TravelKinds.Contains(travel)) errors.Add($"{path}.travel: unknown travel style '{travel}'");
+        for (var r = 0; r < requires.Count; r++) if (!actionIds.Contains(requires[r])) errors.Add($"{path}.requires_done[{r}]: unknown action '{requires[r]}'");
+        if (string.IsNullOrWhiteSpace(label)) errors.Add($"{path}.label: empty");
+        if (string.IsNullOrWhiteSpace(locked)) errors.Add($"{path}.locked_look: empty");
+        return new ConnectionDef { From = from, To = to, Bidirectional = bidirectional, Travel = travel, Label = label, LockedLook = locked, RequiresDone = requires };
+    }
+
+    /// <summary>
+    /// Exits and connections describe the same edges: an added connection has an exit on each side (same travel style
+    /// and requires_done), an added exit has a connection.
+    /// </summary>
+    private static void CheckEdges(string rp, IReadOnlyList<ConnectionDef> connections, Dictionary<string, List<ExitDef>> exitsByRoom,
+        IEnumerable<(string From, string To)> addedConnections, IEnumerable<(string Room, ExitDef Exit)> addedExits, List<string> errors)
+    {
+        foreach (var (from, to) in addedConnections)
+        {
+            var c = connections.First(x => x.From == from && x.To == to);
+            void Side(string a, string b)
+            {
+                var e = exitsByRoom[a].FirstOrDefault(x => x.To == b);
+                if (e is null) errors.Add($"{rp}.connections({from}->{to}): room '{a}' needs an exit to '{b}' in exits");
+                else if (e.Travel != c.Travel || !e.RequiresDone.SequenceEqual(c.RequiresDone))
+                    errors.Add($"{rp}.exits({e.Id}): travel and requires_done must equal those of connection {from}->{to}");
+            }
+            Side(from, to);
+            if (c.Bidirectional) Side(to, from);
+        }
+        foreach (var (roomId, exit) in addedExits)
+        {
+            if (!connections.Any(c => (c.From == roomId && c.To == exit.To) || (c.Bidirectional && c.From == exit.To && c.To == roomId)))
+                errors.Add($"{rp}.exits({exit.Id}): no connection leads from '{roomId}' to '{exit.To}'; add one in connections");
+        }
+    }
+
+    /// <summary>Every room stays reachable from its era's time node over the (ungated) graph.</summary>
+    private static void CheckReachable(string rp, GameData data, string what, List<string> errors)
+    {
         foreach (var era in data.Eras)
         {
             var seen = new HashSet<string>(StringComparer.Ordinal) { era.Anchor };
@@ -639,18 +752,15 @@ internal static class OverlayApplier
             while (queue.Count > 0)
             {
                 var r = queue.Dequeue();
-                foreach (var c in connections)
+                foreach (var c in data.Connections)
                 {
                     if (c.From == r && seen.Add(c.To)) queue.Enqueue(c.To);
                     if (c.Bidirectional && c.To == r && seen.Add(c.From)) queue.Enqueue(c.From);
                 }
             }
             foreach (var r in data.Rooms.Where(r => r.Era == era.Year && !seen.Contains(r.Id)))
-                errors.Add($"{rp}: room '{r.Id}' can no longer be reached from the {era.Year} time node '{era.Anchor}'");
+                errors.Add($"{rp}: room '{r.Id}' {what} from the {era.Year} time node '{era.Anchor}'");
         }
-
-        ParseRegions(root, result, info, errors);
-        return result;
     }
 
     private static void ParseRegions(JsonObject root, GameData data, InfoBuilder info, List<string> errors)
@@ -662,6 +772,8 @@ internal static class OverlayApplier
         var years = new HashSet<int>(data.Eras.Select(e => e.Year));
         var regionOf = new Dictionary<string, RegionDef>(StringComparer.Ordinal);
         var regions = new List<RegionDef>();
+        // World overlay rooms name their region ("region", "hub"); they join the travel overlay's region of that id.
+        var hinted = info.RegionHints.Where(h => rooms.ContainsKey(h.Key)).ToDictionary(h => h.Key, h => h.Value, StringComparer.Ordinal);
         for (var i = 0; i < arr.Count; i++)
         {
             var path = $"{rp}.regions[{i}]";
@@ -678,6 +790,14 @@ internal static class OverlayApplier
             if (regions.Any(r => r.Era == era && r.Id == id)) errors.Add($"{path}.id: region '{id}' is defined twice in {era}");
             var list = StrList(o, "rooms", path, errors);
             var hubs = StrList(o, "hubs", path, errors);
+            foreach (var (roomId, hint) in hinted.Where(h => h.Value.Region == id && rooms[h.Key].Era == era).ToList())
+            {
+                if (!list.Contains(roomId)) list.Add(roomId);
+                if (hint.Hub && !hubs.Contains(roomId)) hubs.Add(roomId);
+                else if (!hint.Hub && hubs.Contains(roomId)) errors.Add($"{path}.hubs: '{roomId}' is a hub here but $world_ext.rooms({roomId}).hub is false");
+            }
+            foreach (var (roomId, hint) in hinted.Where(h => h.Value.Region != id && rooms[h.Key].Era == era && list.Contains(h.Key)))
+                errors.Add($"{path}.rooms: '{roomId}' is listed here but $world_ext.rooms({roomId}).region is '{hint.Region}'");
             if (list.Count == 0) errors.Add($"{path}.rooms: empty");
             if (hubs.Count == 0) errors.Add($"{path}.hubs: a region needs at least one hub (the stop or station it is entered through)");
             var region = new RegionDef(id, era, list, hubs, FromOverlay: true);
@@ -693,7 +813,10 @@ internal static class OverlayApplier
         }
         foreach (var era in regions.Select(r => r.Era).Distinct())
             foreach (var room in data.Rooms.Where(r => r.Era == era && !regionOf.ContainsKey(r.Id)))
-                errors.Add($"{rp}.regions: room '{room.Id}' of {era} belongs to no region (an era with regions lists every room)");
+                errors.Add(hinted.TryGetValue(room.Id, out var hint)
+                    ? $"{WorldRoot}.rooms({room.Id}).region: '{hint.Region}' is not a region of {era} in travel_ext.json (regions: {string.Join(", ", regions.Where(r => r.Era == era).Select(r => r.Id))})"
+                    : $"{rp}.regions: room '{room.Id}' of {era} belongs to no region (an era with regions lists every room)");
+        info.ConsumedRegionHints.UnionWith(hinted.Keys.Where(regionOf.ContainsKey));
 
         // Owner rule (2026-10-06): far places are reached through their transport hub. A connection between two
         // regions must join a hub of one region to a hub of the other.
@@ -715,6 +838,12 @@ internal static class OverlayApplier
         public readonly List<(string, string)> RemovedConnections = new(), AddedConnections = new();
         public readonly Dictionary<string, IReadOnlyList<LineDef>> FirstRides = new(StringComparer.Ordinal);
         public readonly List<RegionDef> Regions = new();
+        public readonly List<string> AddedRooms = new(), AddedHotspots = new(), AddedCharacters = new(), AddedItems = new(),
+            AddedActions = new(), AddedQuests = new(), AddedEpilogue = new(), AddedVariantLayers = new(), RetiredHotspots = new();
+        public readonly List<RelocationInfo> Relocations = new();
+        /// <summary>World overlay rooms with a "region" (and "hub"): joined to the travel overlay's region of that id.</summary>
+        public readonly Dictionary<string, (string Region, bool Hub)> RegionHints = new(StringComparer.Ordinal);
+        public readonly HashSet<string> ConsumedRegionHints = new(StringComparer.Ordinal);
 
         public OverlayInfo Build() => new()
         {
@@ -722,6 +851,9 @@ internal static class OverlayApplier
             AddedTopics = AddedTopics, AddedLineIds = AddedLineIds, RetiredLines = RetiredLines, RemovedExits = RemovedExits,
             AddedExits = AddedExits, RemovedConnections = RemovedConnections, AddedConnections = AddedConnections,
             FirstRides = FirstRides, Regions = Regions,
+            AddedRooms = AddedRooms, AddedHotspots = AddedHotspots, AddedCharacters = AddedCharacters, AddedItems = AddedItems,
+            AddedActions = AddedActions, AddedQuests = AddedQuests, AddedEpilogue = AddedEpilogue, AddedVariantLayers = AddedVariantLayers,
+            Relocations = Relocations, RetiredHotspots = RetiredHotspots,
         };
     }
 }

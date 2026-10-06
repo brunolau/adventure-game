@@ -14,6 +14,7 @@ public sealed class ContentTests
     [Fact]
     public void Loads_the_complete_canonical_content()
     {
+        var C = TestData.BaseContent; // the handoff's own numbers (the world overlay adds to them)
         Assert.Equal("2.0.0", C.Data.Version);
         Assert.Equal(68, C.Rooms.Count);
         Assert.Equal(127, C.Actions.Count);

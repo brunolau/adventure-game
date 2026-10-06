@@ -53,18 +53,21 @@ public sealed class ContentOverlayTests
         Assert.False(C.Overlay.IsEmpty);
         Assert.NotEmpty(C.Overlay.ExtendedActions);
         Assert.NotEmpty(C.Overlay.AddedTopics);
-        // Logic is untouched: every action keeps its guards, items, quest and puzzle.
+        // Logic is untouched: every action of game.json keeps its guards, items, quest and puzzle (a relocation of the
+        // world overlay changes only its room, target and step hint); the world overlay's actions come after them.
         static string Logic(ActionDef a) => System.Text.Json.JsonSerializer.Serialize(a with { Lines = Array.Empty<LineDef>() }, GameContent.JsonOptions);
+        Assert.Equal(Base.Actions.Select(a => a.Id).Concat(C.Overlay.AddedActions), C.Actions.Select(a => a.Id));
         foreach (var (a, b) in Base.Actions.Zip(C.Actions))
         {
             Assert.Equal(a.Id, b.Id);
-            Assert.Equal(Logic(a), Logic(b));
+            var moved = C.FindRelocation(a.Id);
+            Assert.Equal(Logic(a), Logic(moved is null ? b : b with { Room = a.Room, Target = a.Target, HintStep = a.HintStep }));
             Assert.Equal(a.Lines.Select(l => l.LineId).Where(id => !C.Overlay.RetiredLines.Any(r => r.Line.LineId == id)),
                 b.Lines.Select(l => l.LineId).Where(id => Base.FindLine(id!) is not null).OrderBy(id => a.Lines.ToList().FindIndex(l => l.LineId == id)));
         }
         string Json(object o) => System.Text.Json.JsonSerializer.Serialize(o, GameContent.JsonOptions);
-        Assert.Equal(Json(Base.Items), Json(C.Items));
-        Assert.Equal(Json(Base.Quests), Json(C.Quests));
+        Assert.Equal(Json(Base.Items), Json(C.Items.Take(Base.Items.Count)));
+        Assert.Equal(Json(Base.Quests), Json(C.Quests.Take(Base.Quests.Count)));
         Assert.Equal(Json(Base.Data.Puzzles), Json(C.Data.Puzzles));
         Assert.Equal(Json(Base.Data.Cutscenes), Json(C.Data.Cutscenes));
         // Every existing line keeps its speaker and text; new lines are listed.
@@ -336,5 +339,29 @@ public sealed class ContentOverlayTests
         foreach (var c in C.Data.Connections) Assert.True(world.ContainsKey(TextKeys.LabelOf(c).Key), TextKeys.LabelOf(c).Key);
         foreach (var removed in C.Overlay.RemovedExits) Assert.False(world.ContainsKey(TextKeys.ExitLabel(removed)), removed);
         foreach (var region in C.Regions) Assert.True(ui.ContainsKey(TextKeys.NameOf(region).Key), TextKeys.NameOf(region).Key);
+
+        // World overlay texts (new rooms, hotspots, characters, items, actions, quests, epilogue shots, step hints).
+        void Has(TextRef text) { Assert.True(world.ContainsKey(text.Key), $"world.csv has no {text.Key} (run tools/extract_strings.py)"); }
+        foreach (var id in C.Overlay.AddedRooms) Has(TextKeys.NameOf(C.GetRoom(id)));
+        foreach (var id in C.Overlay.AddedHotspots)
+        {
+            var h = C.FindHotspot(id)!.Hotspot;
+            Has(TextKeys.NameOf(h));
+            Has(TextKeys.BaseLookOf(h));
+            for (var i = 0; i < h.LookVariants.Count; i++) Has(TextKeys.LookVariantOf(h, i));
+        }
+        foreach (var id in C.Overlay.AddedCharacters) Has(TextKeys.NameOf(C.FindCharacter(id)!));
+        foreach (var id in C.Overlay.AddedItems) { var i = C.GetItem(id); Has(TextKeys.NameOf(i)); Has(TextKeys.LookOf(i)); Has(TextKeys.PurposeOf(i)); }
+        foreach (var id in C.Overlay.AddedActions)
+        {
+            var a = C.GetAction(id);
+            Has(TextKeys.LabelOf(a));
+            Has(TextKeys.JournalOf(a));
+            if (a.Objective is not null) Has(TextKeys.ObjectiveOf(a));
+        }
+        foreach (var a in C.Actions.Where(a => a.HintStep is not null)) Has(Hints.StepText(a));
+        foreach (var id in C.Overlay.AddedQuests) { var q = C.FindQuest(id)!; Has(TextKeys.TitleOf(q)); Has(TextKeys.GoalOf(q)); for (var i = 0; i < q.Hints.Count; i++) Has(TextKeys.HintOf(q, i)); }
+        for (var i = C.Data.Epilogue.Count - C.Overlay.AddedEpilogue.Count; i < C.Data.Epilogue.Count; i++) Has(TextKeys.ShotOf(C.Data.Epilogue[i], i));
+        foreach (var id in C.Overlay.RetiredHotspots) Assert.False(world.ContainsKey(TextKeys.HotspotName(id)), $"world.csv still has the retired {TextKeys.HotspotName(id)}");
     }
 }

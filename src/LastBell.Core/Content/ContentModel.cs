@@ -248,6 +248,12 @@ public sealed record ActionDef
     public string JournalText { get; init; } = "";
     /// <summary>Staging hints.</summary>
     public StagingDef? Staging { get; init; }
+    /// <summary>
+    /// The exact level-3 hint of this step (key <c>action.&lt;id&gt;.hint_step</c>). game.json never sets it (its step
+    /// texts are <c>ui.hint_step.&lt;id&gt;</c> in ui.csv); only the world overlay does, for its new actions and for
+    /// relocated ones (<c>content_ext/world_ext.json</c>, Core README section 13).
+    /// </summary>
+    public string? HintStep { get; init; }
 
     /// <summary>True for <c>kind == click</c>.</summary>
     [JsonIgnore] public bool IsClick => Kind == "click";
@@ -330,6 +336,8 @@ public sealed record QuestDef
     public string Completion { get; init; } = "";
     /// <summary>Three hint levels: direction, concrete steps, exact solution.</summary>
     public IReadOnlyList<string> Hints { get; init; } = Array.Empty<string>();
+    /// <summary>Slovak reward text (album), or empty.</summary>
+    public string Reward { get; init; } = "";
 
     /// <summary>True for main quests.</summary>
     [JsonIgnore] public bool IsMain => Type == "main";

@@ -34,6 +34,8 @@
     <None Include="..\game\localization\ui.csv" Link="fixtures\ui.csv" CopyToOutputDirectory="PreserveNewest" />
     <!-- Content overlays (game.json is never edited; Core applies them on load) and the generated text tables. -->
     <None Include="..\game\data\content_ext\*.json" Link="fixtures\content_ext\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
+    <!-- Test-only overlays (WorldOverlayTests): never shipped with the game. -->
+    <None Include="Overlays\*.json" Link="fixtures\overlays\%(Filename)%(Extension)" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\game\localization\dialogue.csv" Link="fixtures\dialogue.csv" CopyToOutputDirectory="PreserveNewest" />
     <None Include="..\game\localization\world.csv" Link="fixtures\world.csv" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>

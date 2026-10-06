@@ -1,0 +1,118 @@
+{
+  "format": "lastbell.world_ext",
+  "version": 1,
+  "about": "TEST FIXTURE (never shipped): a sample of every world-overlay feature on top of game.json. A new 1995 room S90 behind the school in Dúbravka with a new resident SAMPLE95, three new items, the side quest Q90 (topic, item use, combination, item use), its epilogue shot and a variant layer, a new atmospheric prop in the existing room S12, and two existing 1995 main actions relocated into the new room: B19 (the rhythm mark, prop click) and B22 (the P03 dial puzzle; its old hotspot S30.dial is retired). Schema: src/LastBell.Core/README.md section 13.",
+  "characters": [
+    { "id": "SAMPLE95", "name": "Pani z dvora", "age": 40, "role": "Test fixture: a resident of the yard.", "voice": "Pokojná.", "design": "Test." }
+  ],
+  "items": [
+    { "id": "SAMPLE_NOTE", "name": "Lístok od susedky", "look": "Lístok s adresou dvora. Písmo je úhľadné.", "purpose": "Pripnúť ho na nástenku vo dvore." },
+    { "id": "SAMPLE_STAMP", "name": "Pečiatka domovej dôvernice", "look": "Gumená pečiatka s nápisom DVOR.", "purpose": "Spojiť ju s náradím a opraviť držiak." },
+    { "id": "SAMPLE_CARD", "name": "Opečiatkovaná karta", "look": "Karta s čerstvou pečiatkou DVOR.", "purpose": "Vrátiť ju susedke." }
+  ],
+  "rooms": [
+    {
+      "id": "S90",
+      "name": "Vnútroblok za školou",
+      "era": 1995,
+      "district": "Dúbravka",
+      "art_brief": "Test fixture: a courtyard of panel houses with a carpet rack, a notice board and a measuring dial.",
+      "ambience": "Deti v diaľke, klepanie koberca.",
+      "background_asset": "bg/S90.webp",
+      "music": "music/1995.ogg",
+      "walk_polygon": [[90, 790], [1830, 790], [1830, 1015], [90, 1015]],
+      "spawn": [960, 935],
+      "first_entry": [
+        { "key": "entry.S90.001", "speaker": "ADAM", "sk": "Vnútroblok za školou. Klepač na koberce stojí ako pamätník." }
+      ],
+      "hotspots": [
+        { "id": "S90.SAMPLE95", "name": "Pani z dvora", "kind": "npc", "character_id": "SAMPLE95",
+          "look": "Susedka s košíkom kolíkov na prádlo.", "rect": [1300, 600, 150, 330], "interaction_point": [1375, 960] },
+        { "id": "S90.board", "name": "Domová nástenka", "look": "Nástenka s rozpisom upratovania schodov.",
+          "rect": [300, 500, 200, 200], "interaction_point": [400, 900],
+          "look_variants": [ { "after": "Q90B", "sk": "Na nástenke visí lístok od susedky." } ] },
+        { "id": "S90.dial", "name": "Merací ciferník na stĺpe", "look": "Tri mechanické číslice a ručička.",
+          "rect": [800, 500, 160, 160], "interaction_point": [880, 900] },
+        { "id": "S90.rhythm", "name": "Rytmická značka na múre", "look": "Kriedou nakreslené čiarky v pravidelnom rytme.",
+          "rect": [1050, 520, 140, 140], "interaction_point": [1120, 900] },
+        { "id": "S90.rack", "name": "Klepač na koberce", "look": "Kovový klepač. Na ňom visí jeden smutný koberec.",
+          "rect": [1550, 450, 200, 260], "interaction_point": [1650, 900], "visible_after": ["G11"] }
+      ],
+      "exits": [
+        { "id": "S90.to_S12", "to": "S12", "travel": "walk", "label": "Pred ZŠ Sokolíkova",
+          "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+          "rect": [50, 975, 55, 70], "interaction_point": [130, 965] }
+      ]
+    }
+  ],
+  "hotspots": [
+    { "room": "S12", "id": "S12.sample_sign", "name": "Šípka do dvora", "look": "Kriedou nakreslená šípka do vnútrobloku.",
+      "rect": [1100, 150, 120, 100], "interaction_point": [1160, 900],
+      "look_variants": [ { "after": "Q90D", "sk": "Šípku do dvora niekto obtiahol nanovo." } ] }
+  ],
+  "exits": [
+    { "room": "S12", "id": "S12.to_S90", "to": "S90", "travel": "walk", "label": "Vnútroblok za školou",
+      "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
+      "rect": [500, 975, 55, 70], "interaction_point": [527, 965] }
+  ],
+  "connections": [
+    { "from": "S12", "to": "S90", "bidirectional": true, "travel": "walk", "label": "Vnútroblok za školou",
+      "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.", "requires_done": [] }
+  ],
+  "quests": [
+    { "id": "Q90", "title": "Dvorová pečiatka", "goal": "Pomôcť susedke s kartou pre dvor.", "reward": "Fotka vnútrobloku v albume.",
+      "hints": [
+        "Susedka vo vnútrobloku za školou niečo hľadá.",
+        "Lístok patrí na domovú nástenku; pečiatka potrebuje náradie.",
+        "Susedka → lístok na nástenku → pečiatku s náradím v brašni → kartu susedke."
+      ],
+      "actions": ["Q90A", "Q90B", "Q90C", "Q90D"], "completion": "Q90D" }
+  ],
+  "actions": [
+    { "id": "Q90A", "room": "S90", "target": "S90.SAMPLE95", "kind": "topic", "label": "Čo hľadáte?", "quest": "Q90",
+      "gives": ["SAMPLE_NOTE"], "sfx": "item_soft",
+      "objective": "Pripni lístok od susedky na domovú nástenku.", "journal_text": "Pripni lístok od susedky na domovú nástenku.",
+      "hint_step": "Porozprávaj sa so susedkou vo vnútrobloku o tom, čo hľadá.",
+      "lines": [
+        { "key": "action.Q90A.001", "speaker": "ADAM", "sk": "Čo hľadáte?" },
+        { "key": "action.Q90A.002", "speaker": "SAMPLE95", "sk": "Miesto na nástenke. Tento lístok tam musí visieť do večera." },
+        { "key": "action.Q90A.003", "speaker": "ADAM", "sk": "Pripnem ho." }
+      ] },
+    { "id": "Q90B", "room": "S90", "target": "S90.board", "kind": "click", "label": "Pripnúť lístok na nástenku", "quest": "Q90",
+      "requires_items": ["SAMPLE_NOTE"], "selected_item": "SAMPLE_NOTE", "consumes": ["SAMPLE_NOTE"], "gives": ["SAMPLE_STAMP"], "sfx": "paper",
+      "objective": "V brašni spoj pečiatku s náradím.", "journal_text": "V brašni spoj pečiatku s náradím.",
+      "hint_step": "Lístok od susedky použi na domovú nástenku.",
+      "lines": [
+        { "key": "action.Q90B.001", "speaker": "ADAM", "sk": "Lístok visí. Za nástenkou bola zastrčená stará pečiatka." }
+      ] },
+    { "id": "Q90C", "room": "inventory", "target": "SAMPLE_STAMP", "kind": "combine", "label": "Opraviť pečiatku náradím", "quest": "Q90",
+      "requires_items": ["SAMPLE_STAMP", "TOOLS"], "selected_item": "TOOLS", "consumes": ["SAMPLE_STAMP"], "gives": ["SAMPLE_CARD"], "symmetric": true,
+      "objective": "Vráť opečiatkovanú kartu susedke.", "journal_text": "Vráť opečiatkovanú kartu susedke.",
+      "hint_step": "V brašni spoj pečiatku s náradím.",
+      "lines": [
+        { "key": "action.Q90C.001", "speaker": "ADAM", "sk": "Gumu na držiak, skrutku dotiahnuť. Pečiatka zase tlačí." }
+      ] },
+    { "id": "Q90D", "room": "S90", "target": "S90.SAMPLE95", "kind": "click", "label": "Dať susedke opečiatkovanú kartu", "quest": "Q90",
+      "requires_items": ["SAMPLE_CARD"], "selected_item": "SAMPLE_CARD", "consumes": ["SAMPLE_CARD"],
+      "journal_text": "Susedka má kartu pre dvor.",
+      "hint_step": "Opečiatkovanú kartu použi na susedku vo vnútrobloku.",
+      "lines": [
+        { "key": "action.Q90D.001", "speaker": "SAMPLE95", "sk": "Pečiatka DVOR. Teraz to platí." },
+        { "key": "action.Q90D.002", "speaker": "ADAM", "sk": "Platí to aj na schody?" },
+        { "key": "action.Q90D.003", "speaker": "SAMPLE95", "sk": "Na schody platí iba metla." }
+      ] }
+  ],
+  "epilogue": [
+    { "quest": "Q90", "after": "Q90D", "shot": "Vnútroblok za školou s opečiatkovanou kartou na nástenke.", "line": "SAMPLE95: Pečiatka DVOR. Platí." }
+  ],
+  "visual_variant_layers": [
+    { "room": "S90", "after": "Q90D", "asset": "variants/S90_card_on_board.webp", "change": "Karta visí na nástenke." }
+  ],
+  "relocations": [
+    { "action": "B19", "to_hotspot": "S90.rhythm", "hint_step": "Vo vnútrobloku za školou si prezri rytmickú značku na múre.",
+      "reason": "test: a prop click moves into the new room; S17.rhythm stays as a look-only prop" },
+    { "action": "B22", "to_hotspot": "S90.dial", "retire_hotspot": true,
+      "hint_step": "Vo vnútrobloku za školou nastav merací ciferník na stĺpe.",
+      "reason": "test: the P03 puzzle moves into the new room; its old hotspot S30.dial is retired" }
+  ]
+}

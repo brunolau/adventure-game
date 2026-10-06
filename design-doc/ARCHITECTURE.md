@@ -75,6 +75,8 @@ Key scheme (stable, derived from ids; spaces inside ids are kept as-is):
 | era card / date | `era.<year>.card` / `era.<year>.date` |
 | map region (a `rooms[].district`, kept verbatim, or a region id of `content_ext/travel_ext.json`) | `region.<district>.name` (ui.csv) |
 | new line of a content overlay sequence / new topic (`content_ext/dialogue_ext.json`) | its own stable key `<owner>.<n>`: `action.<id>.x01`, `topic.<topicId>.x01`, `entry.<roomId>.x01`, `topic.<newTopicId>.001` |
+| record added by the world overlay (`content_ext/world_ext.json`: rooms, hotspots, characters, items, actions, quests, epilogue) | the keys of the rows above (hotspot look `look.<hotspotId>`, variants `look.<hotspotId>.variant<n>`, item look `item.<id>`, lines `action.<id>.<n>` / `entry.<roomId>.<n>`, epilogue n after game.json's 9) |
+| exact step hint of a world-overlay action or of a relocated one | `action.<id>.hint_step` (world.csv; game.json's step hints are `ui.hint_step.<id>` in ui.csv) |
 | first-ride line of a transport exit (`content_ext/travel_ext.json`) | `travel.<exitId>.first.<n>` |
 | epilogue shot caption / line | `epilogue.<n>.shot` / `epilogue.<n>.line` (n from 1) |
 | UI | `ui.<area>.<name>` (e.g. `ui.menu.continue`) |
@@ -83,9 +85,12 @@ Core exposes these via a static `TextKeys` helper so both sides build identical 
 generates the tables from `game.json` + `dialogues.csv` and reports any visible string without a key.
 Accepted Slovak rewrites of game.json texts (ISSUES TEXT-01) live in `src/game/localization/overrides/sk_overrides.csv`
 and are applied by `extract_strings.py` while game.json still has the replaced text; `check_strings.py` verifies them.
-Longer sequences, extra topics and travel changes live in the content overlays `src/game/data/content_ext/`
-(`dialogue_ext.json`, `travel_ext.json`; schema in `src/LastBell.Core/README.md` section 13), applied by Core on load;
-the tools build the tables from game.json + overlays (`tools/content_ext.py`).
+Longer sequences, extra topics, travel changes and new content live in the content overlays
+`src/game/data/content_ext/` (`world_ext.json`: new rooms, hotspots, characters, items, actions, side quests and the
+relocation of existing actions within their era; `dialogue_ext.json`; `travel_ext.json`; schema in
+`src/LastBell.Core/README.md` section 13), applied by Core on load (world, dialogue, travel) and checked there down to a
+playability run of the whole game; the tools build the tables from game.json + overlays (`tools/content_ext.py`,
+`tools/content_world.py`).
 
 ## Language of code
 

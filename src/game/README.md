@@ -26,7 +26,8 @@ Windows export: `build.bat` → `build/windows/`; presets, templates and mobile 
 ```
 project.godot  LastBell.csproj  icon.svg  README.md
 data/game.json                  canonical data (tools/sync_data.py, never hand-edit)
-data/content_ext/*.json         content overlays applied by Core on load (dialogue_ext: longer sequences and extra
+data/content_ext/*.json         content overlays applied by Core on load (world_ext: new rooms, hotspots, characters,
+                                items, actions, side quests, relocations; dialogue_ext: longer sequences and extra
                                 topics; travel_ext: exits, connections, map regions; LastBell.Core/README.md section 13)
 data/art_overrides.json         visual-only corrections (schema in scripts/World/ArtOverrides.cs)
 data/debug/walkthrough.json     copy of design-doc/walkthrough.json for --replay/--play
@@ -243,6 +244,7 @@ work in every build.
 | flag | effect |
 |---|---|
 | `--room <id>` | dev jump into a room (after `--replay`, if given). Not a legal Core travel. |
+| `--content-ext <dir>` | read the content overlays from this folder (an OS path), file by file; a file missing there comes from `res://data/content_ext` as usual (`Runtime/LaunchArgs.cs`). For QA of overlay drafts, e.g. the Core tests' world sample (`src/LastBell.Core.Tests/Overlays/sample_world_ext.json`, with `"region": "Dúbravka"` on its room for the live travel overlay) |
 | `--replay <n>` | replay walkthrough steps 1..n through Core rules (same as the Core tests); checks inventory and room per step |
 | `--play <n>` | perform walkthrough actions (after `--replay`, up to step n) through the **input path**: travel by clicking exits / portals, select items, click targets, choose topics, solve puzzles |
 | `--act <actionId>` | (repeatable) resolve + commit one action through the input path; travels to its room first |

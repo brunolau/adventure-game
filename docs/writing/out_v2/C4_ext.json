@@ -1,0 +1,2026 @@
+{
+ "about": "C4 (2035 Jasná in winter, cutscenes, epilogue, system and UI texts) v2 overlay draft, written per design-doc/WRITING_METHOD.md (Polda tone, conversations 2-3x longer, 2-4 extra topics per speaking NPC). Existing keys: docs/writing/out_v2/C4.csv. Cutscene lines cannot be extended by the overlay (only action / topic / first-entry exchanges), so cutscenes are rewritten in place only.",
+ "schema": "dialogue overlay v1 (src/LastBell.Core/README.md section 13): sequences / topic_extensions list the FULL play order (plain string = existing line, object = new line); topics = new optional NPC topics; all under dialogue_ext (combined draft shape, merged with tools/content_ext.py merge). world_ext_patch is NOT a world overlay: it carries the C4-owned epilogue texts for the Q10/Q11 entries of the world overlay draft (apply them there; content_ext.py merge ignores it).",
+ "chunk": "C4",
+ "dialogue_ext": {
+  "format": "lastbell.dialogue_ext",
+  "version": 1,
+  "chunk": "C4",
+  "sequences": [
+   {
+    "id": "action.F01",
+    "action": "F01",
+    "kind": "action_lines",
+    "lines": [
+     "action.F01.001",
+     {
+      "key": "action.F01.x01",
+      "speaker": "ADAM",
+      "sk": "Rozpadá? Ako sa môže rozpadnúť meno?"
+     },
+     {
+      "key": "action.F01.x02",
+      "speaker": "NINA",
+      "sk": "Po písmenách. Pred minútou ste tu boli celý, teraz už len „Adam Hru“."
+     },
+     "action.F01.002",
+     "action.F01.003",
+     {
+      "key": "action.F01.x03",
+      "speaker": "ADAM",
+      "sk": "Spätne? Čiže opravuje aj to, čo sa už dávno stalo?"
+     },
+     {
+      "key": "action.F01.x04",
+      "speaker": "NINA",
+      "sk": "Na výstave sa tomu hovorí normalizácia. Čo si v záznamoch protirečí, prístroj zarovná. Aj mená."
+     },
+     "action.F01.004",
+     "action.F01.005",
+     {
+      "key": "action.F01.x05",
+      "speaker": "ADAM",
+      "sk": "Traja ľudia. Kde ich nájdem?"
+     },
+     {
+      "key": "action.F01.x06",
+      "speaker": "NINA",
+      "sk": "Tamara má stôl v lobby, Boris sedí vo výstavnom salóne a Sára je v klientskom centre."
+     },
+     {
+      "key": "action.F01.x07",
+      "speaker": "ADAM",
+      "sk": "Čítačka, karta, preukaz a lístok. A ja som dnes ráno išiel len vymeniť poistku."
+     },
+     {
+      "key": "action.F01.x08",
+      "speaker": "NINA",
+      "sk": "Poistku by som potrebovala aj ja. Takú, čo vypadne, keď niekto nepočúva varovania."
+     },
+     {
+      "key": "action.F01.x09",
+      "speaker": "ADAM",
+      "sk": "Takú ešte nikto nevyrobil. Ale skúsim to."
+     },
+     {
+      "key": "action.F01.x10",
+      "speaker": "NINA",
+      "sk": "Najprv tá čítačka. Hore v pavilóne sa vám ozvem cez servisný kanál."
+     }
+    ]
+   },
+   {
+    "id": "action.F02",
+    "action": "F02",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F02.x01",
+      "speaker": "TAMARA",
+      "sk": "Ahoj. Ty si opravár, však? Takto sa na môj stôl pozerajú len opravári a malé deti."
+     },
+     {
+      "key": "action.F02.x02",
+      "speaker": "ADAM",
+      "sk": "Opravár. Hlavne magnetofóny a všetko, čo hrá."
+     },
+     "action.F02.001",
+     {
+      "key": "action.F02.x03",
+      "speaker": "TAMARA",
+      "sk": "Ukáž. Ručne popísaná školská kazeta. Takú som v rukách nemala roky."
+     },
+     "action.F02.002",
+     "action.F02.003",
+     "action.F02.004",
+     {
+      "key": "action.F02.x04",
+      "speaker": "ADAM",
+      "sk": "Ty mi hovoríš, aby som niečo neopravoval?"
+     },
+     {
+      "key": "action.F02.x05",
+      "speaker": "TAMARA",
+      "sk": "Viem, že to bolí. Mňa tiež. Ale originál sa číta, neopravuje."
+     },
+     {
+      "key": "action.F02.x06",
+      "speaker": "ADAM",
+      "sk": "Dobre. Budem sa na ňu len pozerať a trpieť."
+     },
+     {
+      "key": "action.F02.x07",
+      "speaker": "TAMARA",
+      "sk": "Vitaj v klube. Ja si pri každom origináli sadám na ruky."
+     }
+    ]
+   },
+   {
+    "id": "action.F03",
+    "action": "F03",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F03.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Hľadám fond Z-17. Mám k nemu potvrdené odovzdanie z roku 2020."
+     },
+     {
+      "key": "action.F03.x02",
+      "speaker": "BORIS",
+      "sk": "Ukážte. Dva podpisy, dátum a súhlas majiteľky. Krajší papier si archivár nemôže priať."
+     },
+     "action.F03.001",
+     "action.F03.002",
+     "action.F03.003",
+     {
+      "key": "action.F03.x03",
+      "speaker": "ADAM",
+      "sk": "Aj smiech? Ten predsa nikomu neprekáža."
+     },
+     {
+      "key": "action.F03.x04",
+      "speaker": "BORIS",
+      "sk": "Normalizátoru áno. Smiech nemá kolónku, a čo nemá kolónku, to je preň šum."
+     },
+     "action.F03.004",
+     "action.F03.005",
+     {
+      "key": "action.F03.x05",
+      "speaker": "ADAM",
+      "sk": "Vie o tom Viktor?"
+     },
+     {
+      "key": "action.F03.x06",
+      "speaker": "BORIS",
+      "sk": "Vie, čo je v katalógu. Čo v ňom chýba, to sa v katalógu nedočíta nikto."
+     },
+     {
+      "key": "action.F03.x07",
+      "speaker": "ADAM",
+      "sk": "Ďakujem. Kartu ukážem Sáre."
+     },
+     {
+      "key": "action.F03.x08",
+      "speaker": "BORIS",
+      "sk": "Držte ju za okraje a ďaleko od kávy. Poznámka pod čiarou: káva je najväčší nepriateľ archívu."
+     }
+    ]
+   },
+   {
+    "id": "action.F04",
+    "action": "F04",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F04.x01",
+      "speaker": "ADAM",
+      "sk": "Dobrý deň. Boris ma posiela s touto kartou."
+     },
+     {
+      "key": "action.F04.x02",
+      "speaker": "SARA",
+      "sk": "Dobrý deň. Kartu poznám. Najprv vás zapíšem perom do knihy návštev. Odtiaľ mi nikto nezmizne."
+     },
+     "action.F04.001",
+     "action.F04.002",
+     "action.F04.003",
+     "action.F04.004",
+     "action.F04.005",
+     {
+      "key": "action.F04.x03",
+      "speaker": "ADAM",
+      "sk": "A keby som ho stratil?"
+     },
+     {
+      "key": "action.F04.x04",
+      "speaker": "SARA",
+      "sk": "Nestratíte. Lístky sú ako rukavice, vždy sa nájdu v tom druhom vrecku."
+     },
+     {
+      "key": "action.F04.x05",
+      "speaker": "ADAM",
+      "sk": "Ja mám v kabáte šesť vreciek."
+     },
+     {
+      "key": "action.F04.x06",
+      "speaker": "SARA",
+      "sk": "Tak máte päť šancí navyše. Šťastnú cestu."
+     }
+    ]
+   },
+   {
+    "id": "action.J03",
+    "action": "J03",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.J03.x01",
+      "speaker": "IVAN",
+      "sk": "Dobrý deň. Lístok, prosím. Lyže nemáte?"
+     },
+     {
+      "key": "action.J03.x02",
+      "speaker": "ADAM",
+      "sk": "Nemám. Len servisnú brašnu."
+     },
+     {
+      "key": "action.J03.x03",
+      "speaker": "IVAN",
+      "sk": "Aj to je výstroj. Len sa s ňou horšie zjazduje."
+     },
+     "action.J03.001",
+     "action.J03.002"
+    ]
+   },
+   {
+    "id": "action.J04",
+    "action": "J04",
+    "kind": "action_lines",
+    "lines": [
+     "action.J04.001",
+     "action.J04.002",
+     {
+      "key": "action.J04.x01",
+      "speaker": "TURISTA",
+      "sk": "Chladnejší a tichší. A telefón tam chytá horšie, to je na ňom najkrajšie."
+     },
+     {
+      "key": "action.J04.x02",
+      "speaker": "ADAM",
+      "sk": "Od signálu som si dnes už odvykol."
+     },
+     "action.J04.003"
+    ]
+   },
+   {
+    "id": "action.F06",
+    "action": "F06",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F06.x01",
+      "speaker": "NINA_REMOTE",
+      "sk": "Tu Nina. Počujete ma? Vidím vás pri termináli."
+     },
+     {
+      "key": "action.F06.x02",
+      "speaker": "ADAM",
+      "sk": "Počujem. Aj to, ako mi cvakajú zuby. Tu hore je poriadna zima."
+     },
+     "action.F06.001",
+     "action.F06.002",
+     "action.F06.003",
+     {
+      "key": "action.F06.x03",
+      "speaker": "ADAM",
+      "sk": "Zadržané údaje? Takže sa nestratili, len čakajú?"
+     },
+     {
+      "key": "action.F06.x04",
+      "speaker": "NINA_REMOTE",
+      "sk": "V zásobníku, kým niekto potvrdí zápis. Zatiaľ ho nepotvrdil nikto, ani Viktor."
+     },
+     "action.F06.004",
+     "action.F06.005",
+     "action.F06.006",
+     {
+      "key": "action.F06.x05",
+      "speaker": "ADAM",
+      "sk": "Ako sa k plesu dostanem?"
+     },
+     {
+      "key": "action.F06.x06",
+      "speaker": "NINA_REMOTE",
+      "sk": "Lanovkami dole a od hotela pešo. Stojan uvidíte hneď pri chodníku."
+     }
+    ]
+   },
+   {
+    "id": "action.F08",
+    "action": "F08",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F08.x01",
+      "speaker": "ADAM",
+      "sk": "Nina, stopa z plesa je v termináli."
+     },
+     {
+      "key": "action.F08.x02",
+      "speaker": "NINA_REMOTE",
+      "sk": "Vidím ju. Je čistá, nič na nej netreba upravovať."
+     },
+     "action.F08.001",
+     "action.F08.002",
+     "action.F08.003",
+     "action.F08.004",
+     {
+      "key": "action.F08.x03",
+      "speaker": "NINA_REMOTE",
+      "sk": "Presne. Kvôli tomu visí pri kábloch môj lístok."
+     },
+     {
+      "key": "action.F08.x04",
+      "speaker": "ADAM",
+      "sk": "Videl som ho. Viktor ho asi nečítal."
+     },
+     {
+      "key": "action.F08.x05",
+      "speaker": "NINA_REMOTE",
+      "sk": "Čítal. Len si myslel, že je pre ostatných."
+     }
+    ]
+   },
+   {
+    "id": "action.J05",
+    "action": "J05",
+    "kind": "action_lines",
+    "lines": [
+     "action.J05.001",
+     "action.J05.002",
+     {
+      "key": "action.J05.x01",
+      "speaker": "NINA_REMOTE",
+      "sk": "Ten mostík je starší ako ja."
+     },
+     {
+      "key": "action.J05.x02",
+      "speaker": "ADAM",
+      "sk": "O dosť. Do pohára som ho zapečatil v decembri 1982."
+     },
+     "action.J05.003",
+     {
+      "key": "action.J05.x03",
+      "speaker": "NINA_REMOTE",
+      "sk": "Tak ho odo mňa pozdravujte. A teraz prepínač."
+     }
+    ]
+   },
+   {
+    "id": "action.F09",
+    "action": "F09",
+    "kind": "action_lines",
+    "lines": [
+     "action.F09.001",
+     "action.F09.002",
+     "action.F09.003",
+     "action.F09.004",
+     {
+      "key": "action.F09.x01",
+      "speaker": "NINA_REMOTE",
+      "sk": "Zoznam návštevníkov sa prestal rozpadať. Ste v ňom zase celý."
+     },
+     {
+      "key": "action.F09.x02",
+      "speaker": "ADAM",
+      "sk": "Aj s mäkčeňom?"
+     },
+     {
+      "key": "action.F09.x03",
+      "speaker": "NINA_REMOTE",
+      "sk": "Aj s mäkčeňom. Teraz potvrďte na termináli vstup do komory."
+     }
+    ]
+   },
+   {
+    "id": "action.F10",
+    "action": "F10",
+    "kind": "action_lines",
+    "lines": [
+     "action.F10.001",
+     "action.F10.002",
+     {
+      "key": "action.F10.x01",
+      "speaker": "ADAM",
+      "sk": "Ako je na tom?"
+     },
+     {
+      "key": "action.F10.x02",
+      "speaker": "NINA_REMOTE",
+      "sk": "Sedí pri stole a pozerá do pohára s vodou. Nalial si ju ešte pred spustením skúšky."
+     },
+     "action.F10.003",
+     {
+      "key": "action.F10.x03",
+      "speaker": "NINA_REMOTE",
+      "sk": "Dobre. Budem na kanáli, ale nebudem rušiť."
+     }
+    ]
+   },
+   {
+    "id": "action.F11",
+    "action": "F11",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.F11.x01",
+      "speaker": "ADAM",
+      "sk": "Pán Korman, nesiem vám jednu nahrávku."
+     },
+     "action.F11.001",
+     "action.F11.002",
+     "action.F11.003",
+     {
+      "key": "action.F11.x02",
+      "speaker": "VIKTOR",
+      "sk": "Takto volávala vždy. Keď nemala čo povedať."
+     },
+     "action.F11.004",
+     "action.F11.005",
+     {
+      "key": "action.F11.x03",
+      "speaker": "VIKTOR",
+      "sk": "Normalizátor ich označil ako šum. Ja som to schválil."
+     },
+     "action.F11.006",
+     "action.F11.007",
+     "action.F11.008"
+    ]
+   },
+   {
+    "id": "action.F12",
+    "action": "F12",
+    "kind": "action_lines",
+    "lines": [
+     "action.F12.001",
+     "action.F12.002",
+     {
+      "key": "action.F12.x01",
+      "speaker": "VIKTOR",
+      "sk": "„Rôzne údaje neznamenajú neplatné údaje.“ Môj normalizátor by túto vetu vyradil ako prvú."
+     }
+    ]
+   },
+   {
+    "id": "action.F13",
+    "action": "F13",
+    "kind": "action_lines",
+    "lines": [
+     "action.F13.001",
+     "action.F13.002",
+     "action.F13.003",
+     {
+      "key": "action.F13.x01",
+      "speaker": "VIKTOR",
+      "sk": "Túto kazetu nahrávala moja mama. Poznám ten šum v pozadí."
+     },
+     {
+      "key": "action.F13.x02",
+      "speaker": "ADAM",
+      "sk": "Je na nej aj jej hlas. Celý."
+     }
+    ]
+   },
+   {
+    "id": "action.F14",
+    "action": "F14",
+    "kind": "action_lines",
+    "lines": [
+     "action.F14.001",
+     "action.F14.002",
+     {
+      "key": "action.F14.x01",
+      "speaker": "VIKTOR",
+      "sk": "Súhlas. Na ten som sa ja nikoho nepýtal."
+     }
+    ]
+   },
+   {
+    "id": "action.F15",
+    "action": "F15",
+    "kind": "action_lines",
+    "lines": [
+     "action.F15.001",
+     "action.F15.002",
+     {
+      "key": "action.F15.x01",
+      "speaker": "VIKTOR",
+      "sk": "Ninin podpis. Mal som ju počúvať už vtedy."
+     }
+    ]
+   },
+   {
+    "id": "action.F16",
+    "action": "F16",
+    "kind": "action_lines",
+    "lines": [
+     "action.F16.001",
+     "action.F16.002",
+     {
+      "key": "action.F16.x01",
+      "speaker": "VIKTOR",
+      "sk": "Aj tie, ktoré si odporujú?"
+     },
+     {
+      "key": "action.F16.x02",
+      "speaker": "ADAM",
+      "sk": "Tie najmä. Babka by povedala: „Čo sa nezhoduje, necháme vedľa seba.“"
+     },
+     "action.F16.003"
+    ]
+   },
+   {
+    "id": "action.F17",
+    "action": "F17",
+    "kind": "action_lines",
+    "lines": [
+     "action.F17.001",
+     {
+      "key": "action.F17.x01",
+      "speaker": "VIKTOR",
+      "sk": "Viktor Korman. Skúšku som spustil ja."
+     },
+     "action.F17.002",
+     "action.F17.003"
+    ]
+   },
+   {
+    "id": "action.Q8A",
+    "action": "Q8A",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q8A.001",
+     {
+      "key": "action.Q8A.x01",
+      "speaker": "ADAM",
+      "sk": "Lavička so psom? Akým psom?"
+     },
+     {
+      "key": "action.Q8A.x02",
+      "speaker": "ROBOT",
+      "sk": "Neuvedené. Psy v okolí: dva živé a jeden na plagáte. Žiadny nesedí na lavičke."
+     },
+     {
+      "key": "action.Q8A.x03",
+      "speaker": "ADAM",
+      "sk": "Možno ten pes nie je živý."
+     },
+     {
+      "key": "action.Q8A.x04",
+      "speaker": "ROBOT",
+      "sk": "Táto možnosť nebola v zadaní. Pravdepodobnosť úspechu zvyšujem na tridsať percent."
+     },
+     "action.Q8A.002",
+     "action.Q8A.003",
+     {
+      "key": "action.Q8A.x05",
+      "speaker": "ROBOT",
+      "sk": "Vy chodíte, ja čakám. V snehu mám úspešnosť jazdy štyridsať percent."
+     }
+    ]
+   },
+   {
+    "id": "action.Q8C",
+    "action": "Q8C",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.Q8C.x01",
+      "speaker": "ADAM",
+      "sk": "Tamara, nečakáš balík? Hľadá ťa doručovací robot Očko."
+     },
+     {
+      "key": "action.Q8C.x02",
+      "speaker": "TAMARA",
+      "sk": "Očko? Ten ma hľadá už od jesene. Ukáž tú požiadavku."
+     },
+     "action.Q8C.001",
+     "action.Q8C.002",
+     {
+      "key": "action.Q8C.x03",
+      "speaker": "TAMARA",
+      "sk": "A povedz mu, že keď príde, dostane kávu. Aj keď tvrdí, že ju nepije."
+     },
+     {
+      "key": "action.Q8C.x04",
+      "speaker": "ADAM",
+      "sk": "Kávu? Robotovi?"
+     },
+     {
+      "key": "action.Q8C.x05",
+      "speaker": "TAMARA",
+      "sk": "Každému, kto mi prinesie súčiastky. Pravidlo je pravidlo."
+     }
+    ]
+   },
+   {
+    "id": "action.Q8D",
+    "action": "Q8D",
+    "kind": "action_lines",
+    "lines": [
+     {
+      "key": "action.Q8D.x01",
+      "speaker": "ADAM",
+      "sk": "Tu je potvrdenie od Tamary. Už nesedí pri plese, je v lobby hotela."
+     },
+     "action.Q8D.001",
+     "action.Q8D.002",
+     {
+      "key": "action.Q8D.x02",
+      "speaker": "ROBOT",
+      "sk": "Zapisujem: posledných sto metrov, človek."
+     },
+     {
+      "key": "action.Q8D.x03",
+      "speaker": "ADAM",
+      "sk": "A Tamara vám posiela poďakovanie. Aj s kávou."
+     },
+     "action.Q8D.003",
+     {
+      "key": "action.Q8D.x04",
+      "speaker": "ROBOT",
+      "sk": "Káva: nekompatibilná. Ponuku ukladám do priečinka Nepotrebné, ale milé."
+     }
+    ]
+   },
+   {
+    "id": "action.Q9F",
+    "action": "Q9F",
+    "kind": "action_lines",
+    "lines": [
+     "action.Q9F.001",
+     "action.Q9F.002",
+     "action.Q9F.003",
+     "action.Q9F.004",
+     {
+      "key": "action.Q9F.x01",
+      "speaker": "JANA35",
+      "sk": "Mimochodom, zošit mám v taške. Niekto mi raz povedal, že by ho rád videl."
+     },
+     {
+      "key": "action.Q9F.x02",
+      "speaker": "ADAM",
+      "sk": "A ukážete mi ho?"
+     },
+     {
+      "key": "action.Q9F.x03",
+      "speaker": "JANA35",
+      "sk": "Len prvú stranu. Ostatné ešte dokresľujem."
+     },
+     {
+      "key": "action.Q9F.x04",
+      "speaker": "ADAM",
+      "sk": "To je ten zošit z výstavky?"
+     },
+     {
+      "key": "action.Q9F.x05",
+      "speaker": "JANA35",
+      "sk": "Nie ten. Štvrtý v poradí. Prvé tri sú plné."
+     }
+    ]
+   }
+  ],
+  "topic_extensions": [
+   {
+    "id": "topic.BORIS.ambient 1",
+    "topic": "BORIS.ambient 1",
+    "character": "BORIS",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.BORIS.ambient 1.001",
+     "topic.BORIS.ambient 1.002",
+     {
+      "key": "topic.BORIS.ambient 1.x01",
+      "speaker": "BORIS",
+      "sk": "Kópia vám povie, čo na papieri stálo. Originál aj to, kto ho držal a kde mu kvapla káva."
+     },
+     {
+      "key": "topic.BORIS.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A škvrna od kávy na kópii nie je?"
+     },
+     {
+      "key": "topic.BORIS.ambient 1.x03",
+      "speaker": "BORIS",
+      "sk": "Je. Ale normalizátor ju vyčistí. A s ňou aj dátum, ktorý bol pod ňou."
+     }
+    ]
+   },
+   {
+    "id": "topic.BORIS.ambient 2",
+    "topic": "BORIS.ambient 2",
+    "character": "BORIS",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.BORIS.ambient 2.001",
+     "topic.BORIS.ambient 2.002",
+     {
+      "key": "topic.BORIS.ambient 2.x01",
+      "speaker": "BORIS",
+      "sk": "Police sú v poriadku. Úzke je pravidlo, ktoré na ne niekto nalepil."
+     },
+     {
+      "key": "topic.BORIS.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A vy by ste na ne nalepili aké?"
+     },
+     {
+      "key": "topic.BORIS.ambient 2.x03",
+      "speaker": "BORIS",
+      "sk": "Žiadne. Na police patria čísla, nie názory."
+     }
+    ]
+   },
+   {
+    "id": "topic.IVAN.ambient 1",
+    "topic": "IVAN.ambient 1",
+    "character": "IVAN",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.IVAN.ambient 1.001",
+     "topic.IVAN.ambient 1.002",
+     {
+      "key": "topic.IVAN.ambient 1.x01",
+      "speaker": "IVAN",
+      "sk": "Radšej do vnútorného vrecka. Hore fúka a lístky odlietajú ako vrabce."
+     },
+     {
+      "key": "topic.IVAN.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Už vám nejaký odletel?"
+     },
+     {
+      "key": "topic.IVAN.ambient 1.x03",
+      "speaker": "IVAN",
+      "sk": "Minulý týždeň jednému pánovi. Našiel ho ratrakista o dva kilometre nižšie."
+     }
+    ]
+   },
+   {
+    "id": "topic.IVAN.ambient 2",
+    "topic": "IVAN.ambient 2",
+    "character": "IVAN",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.IVAN.ambient 2.001",
+     "topic.IVAN.ambient 2.002",
+     {
+      "key": "topic.IVAN.ambient 2.x01",
+      "speaker": "IVAN",
+      "sk": "Podľa toho, čo vám poviem ja. Oblakom by som tak neveril."
+     },
+     {
+      "key": "topic.IVAN.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A koľko je hore stupňov?"
+     },
+     {
+      "key": "topic.IVAN.ambient 2.x03",
+      "speaker": "IVAN",
+      "sk": "Mínus štrnásť a vietor, čiže obyčajný február. Šál si vytiahnite aj na nos."
+     }
+    ]
+   },
+   {
+    "id": "topic.JANA35.ambient 1",
+    "topic": "JANA35.ambient 1",
+    "character": "JANA35",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.JANA35.ambient 1.001",
+     "topic.JANA35.ambient 1.002",
+     {
+      "key": "topic.JANA35.ambient 1.x01",
+      "speaker": "JANA35",
+      "sk": "Tváre si pamätám zle. Výrazy presne."
+     },
+     {
+      "key": "topic.JANA35.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A ten môj je aký?"
+     },
+     {
+      "key": "topic.JANA35.ambient 1.x03",
+      "speaker": "JANA35",
+      "sk": "Ako keď sa niekto ide spýtať na cestu a namiesto toho niečo opraví."
+     }
+    ]
+   },
+   {
+    "id": "topic.NINA.ambient 1",
+    "topic": "NINA.ambient 1",
+    "character": "NINA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.NINA.ambient 1.001",
+     "topic.NINA.ambient 1.002",
+     {
+      "key": "topic.NINA.ambient 1.x01",
+      "speaker": "NINA",
+      "sk": "Ako úlohu číslo päť. Za nákupmi, liekmi, telefónmi a zoznamom zoznamov."
+     },
+     {
+      "key": "topic.NINA.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "A plní ju?"
+     },
+     {
+      "key": "topic.NINA.ambient 1.x03",
+      "speaker": "NINA",
+      "sk": "Odškrtáva. Vlani si ju odškrtla v októbri, za jeden víkend."
+     }
+    ]
+   },
+   {
+    "id": "topic.NINA.ambient 2",
+    "topic": "NINA.ambient 2",
+    "character": "NINA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.NINA.ambient 2.001",
+     "topic.NINA.ambient 2.002",
+     {
+      "key": "topic.NINA.ambient 2.x01",
+      "speaker": "NINA",
+      "sk": "Presne. Ľudia v kabínke rozprávajú. Polovicu výstavy sme nazbierali v rade na lanovku."
+     },
+     {
+      "key": "topic.NINA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "V rade na lanovku?"
+     },
+     {
+      "key": "topic.NINA.ambient 2.x03",
+      "speaker": "NINA",
+      "sk": "Kto stojí dvadsať minút s lyžami na pleci, ten vám rád povie, ako sem chodil s otcom."
+     }
+    ]
+   },
+   {
+    "id": "topic.NINA.after",
+    "topic": "NINA.after",
+    "character": "NINA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.NINA.after.001",
+     "topic.NINA.after.002",
+     "topic.NINA.after.003",
+     {
+      "key": "topic.NINA.after.x01",
+      "speaker": "ADAM",
+      "sk": "A Viktor?"
+     },
+     {
+      "key": "topic.NINA.after.x02",
+      "speaker": "NINA",
+      "sk": "Píše ju sám a nič z nej nevyškrtol. To je u neho novinka."
+     },
+     {
+      "key": "topic.NINA.after.x03",
+      "speaker": "ADAM",
+      "sk": "A vy?"
+     },
+     {
+      "key": "topic.NINA.after.x04",
+      "speaker": "NINA",
+      "sk": "Ja som si na zoznam pripísala dovolenku. Mama bude mať radosť."
+     }
+    ]
+   },
+   {
+    "id": "topic.ROBOT.ambient 1",
+    "topic": "ROBOT.ambient 1",
+    "character": "ROBOT",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ROBOT.ambient 1.001",
+     "topic.ROBOT.ambient 1.002",
+     {
+      "key": "topic.ROBOT.ambient 1.x01",
+      "speaker": "ROBOT",
+      "sk": "Zásielky s adresou od človeka. Napríklad: „ten vchod, kde šteká pes“. Pes nešteká stále."
+     },
+     {
+      "key": "topic.ROBOT.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "To by nenašiel ani človek."
+     },
+     {
+      "key": "topic.ROBOT.ambient 1.x03",
+      "speaker": "ROBOT",
+      "sk": "Človek áno, spýta sa iného človeka. Mne na otázku zvyčajne povedia, že som zlatý."
+     }
+    ]
+   },
+   {
+    "id": "topic.ROBOT.ambient 2",
+    "topic": "ROBOT.ambient 2",
+    "character": "ROBOT",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.ROBOT.ambient 2.001",
+     "topic.ROBOT.ambient 2.002",
+     {
+      "key": "topic.ROBOT.ambient 2.x01",
+      "speaker": "ADAM",
+      "sk": "A keď je batéria slabá?"
+     },
+     {
+      "key": "topic.ROBOT.ambient 2.x02",
+      "speaker": "ROBOT",
+      "sk": "Svetlá sa zúžia. Ľudia hovoria, že sa mračím. V zime sa mračím od štvrtej popoludní."
+     }
+    ]
+   },
+   {
+    "id": "topic.SARA.ambient 1",
+    "topic": "SARA.ambient 1",
+    "character": "SARA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.SARA.ambient 1.001",
+     "topic.SARA.ambient 1.002",
+     "topic.SARA.ambient 1.003",
+     {
+      "key": "topic.SARA.ambient 1.x01",
+      "speaker": "SARA",
+      "sk": "A dátum príchodu?"
+     },
+     {
+      "key": "topic.SARA.ambient 1.x02",
+      "speaker": "ADAM",
+      "sk": "Dnešný. Dúfam."
+     },
+     {
+      "key": "topic.SARA.ambient 1.x03",
+      "speaker": "SARA",
+      "sk": "Napíšem dnešný. Pero sa zatiaľ ešte nikdy nepomýlilo."
+     }
+    ]
+   },
+   {
+    "id": "topic.SARA.ambient 2",
+    "topic": "SARA.ambient 2",
+    "character": "SARA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.SARA.ambient 2.001",
+     "topic.SARA.ambient 2.002",
+     {
+      "key": "topic.SARA.ambient 2.x01",
+      "speaker": "SARA",
+      "sk": "Dvadsaťtri. Jeden pán chcel, aby som mu meno napísala aj s titulom."
+     },
+     {
+      "key": "topic.SARA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A napísali ste?"
+     },
+     {
+      "key": "topic.SARA.ambient 2.x03",
+      "speaker": "SARA",
+      "sk": "Napísala. Keď mu meno zmizlo zo systému, ostal mu tam len ten titul."
+     }
+    ]
+   },
+   {
+    "id": "topic.TAMARA.ambient 1",
+    "topic": "TAMARA.ambient 1",
+    "character": "TAMARA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TAMARA.ambient 1.001",
+     "topic.TAMARA.ambient 1.002",
+     "topic.TAMARA.ambient 1.003",
+     {
+      "key": "topic.TAMARA.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "A čo ti sem nosia najčastejšie?"
+     },
+     {
+      "key": "topic.TAMARA.ambient 1.x02",
+      "speaker": "TAMARA",
+      "sk": "V zime vyhrievané rukavice. Vždy hreje len ľavá a nikto nevie prečo."
+     },
+     {
+      "key": "topic.TAMARA.ambient 1.x03",
+      "speaker": "ADAM",
+      "sk": "Tipujem prelomený kábel v pravom palci."
+     },
+     {
+      "key": "topic.TAMARA.ambient 1.x04",
+      "speaker": "TAMARA",
+      "sk": "Tipuješ dobre. Ty si fakt opravár."
+     }
+    ]
+   },
+   {
+    "id": "topic.TAMARA.ambient 2",
+    "topic": "TAMARA.ambient 2",
+    "character": "TAMARA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TAMARA.ambient 2.001",
+     "topic.TAMARA.ambient 2.002",
+     {
+      "key": "topic.TAMARA.ambient 2.x01",
+      "speaker": "TAMARA",
+      "sk": "Vidíš kontrolku. A tá svieti, aj keď vnútri všetko spí."
+     },
+     {
+      "key": "topic.TAMARA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Tú poznám. Zelená a klame."
+     },
+     {
+      "key": "topic.TAMARA.ambient 2.x03",
+      "speaker": "TAMARA",
+      "sk": "Presne tá. Kazeta aspoň prizná, že stojí."
+     }
+    ]
+   },
+   {
+    "id": "topic.TURISTA.ambient 1",
+    "topic": "TURISTA.ambient 1",
+    "character": "TURISTA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TURISTA.ambient 1.001",
+     "topic.TURISTA.ambient 1.002",
+     {
+      "key": "topic.TURISTA.ambient 1.x01",
+      "speaker": "TURISTA",
+      "sk": "Pokojne. Je zadarmo ako hmla."
+     },
+     {
+      "key": "topic.TURISTA.ambient 1.x02",
+      "speaker": "TURISTA",
+      "sk": "Dnes je dole v doline more hmly a my ideme nad ňu. Na fotke bude oboje."
+     },
+     {
+      "key": "topic.TURISTA.ambient 1.x03",
+      "speaker": "ADAM",
+      "sk": "A ktorá časť sa vám páči viac?"
+     },
+     {
+      "key": "topic.TURISTA.ambient 1.x04",
+      "speaker": "TURISTA",
+      "sk": "Tá s hmlou. Jasno má na fotke každý."
+     }
+    ]
+   },
+   {
+    "id": "topic.TURISTA.ambient 2",
+    "topic": "TURISTA.ambient 2",
+    "character": "TURISTA",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.TURISTA.ambient 2.001",
+     "topic.TURISTA.ambient 2.002",
+     {
+      "key": "topic.TURISTA.ambient 2.x01",
+      "speaker": "TURISTA",
+      "sk": "Smial sa, lebo som mal celý deň lyže nakrivo."
+     },
+     {
+      "key": "topic.TURISTA.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "A dnes?"
+     },
+     {
+      "key": "topic.TURISTA.ambient 2.x03",
+      "speaker": "TURISTA",
+      "sk": "Dnes by som ich mal rovno. Keby som si ich nezabudol v aute."
+     }
+    ]
+   },
+   {
+    "id": "topic.VIKTOR.ambient 1",
+    "topic": "VIKTOR.ambient 1",
+    "character": "VIKTOR",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.VIKTOR.ambient 1.001",
+     "topic.VIKTOR.ambient 1.002",
+     "topic.VIKTOR.ambient 1.003",
+     {
+      "key": "topic.VIKTOR.ambient 1.x01",
+      "speaker": "ADAM",
+      "sk": "So šumom robím celý život. Väčšinou sa pod ním skrýva to najlepšie z nahrávky."
+     }
+    ]
+   },
+   {
+    "id": "topic.VIKTOR.ambient 2",
+    "topic": "VIKTOR.ambient 2",
+    "character": "VIKTOR",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.VIKTOR.ambient 2.001",
+     {
+      "key": "topic.VIKTOR.ambient 2.x01",
+      "speaker": "VIKTOR",
+      "sk": "Nina to chcela od začiatku. Ja som tomu hovoril neporiadok."
+     },
+     {
+      "key": "topic.VIKTOR.ambient 2.x02",
+      "speaker": "ADAM",
+      "sk": "Babka by tomu povedala poriadny archív."
+     },
+     {
+      "key": "topic.VIKTOR.ambient 2.x03",
+      "speaker": "VIKTOR",
+      "sk": "Mala by pravdu."
+     },
+     "topic.VIKTOR.ambient 2.002"
+    ]
+   },
+   {
+    "id": "topic.VIKTOR.after",
+    "topic": "VIKTOR.after",
+    "character": "VIKTOR",
+    "kind": "topic_lines",
+    "lines": [
+     "topic.VIKTOR.after.001",
+     {
+      "key": "topic.VIKTOR.after.x01",
+      "speaker": "VIKTOR",
+      "sk": "Štyri sekundy. Najdlhšie štyri sekundy, aké poznám."
+     },
+     "topic.VIKTOR.after.002",
+     "topic.VIKTOR.after.003"
+    ]
+   }
+  ],
+  "topics": [
+   {
+    "id": "NINA.extra 1",
+    "character": "NINA",
+    "label_key": "topic.NINA.extra 1.label",
+    "label": "Pamäť obyčajných dní",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "the exhibition's name from the S42 picture brief; local colour; state-independent",
+    "lines": [
+     {
+      "key": "topic.NINA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo si mám pod tým názvom predstaviť?"
+     },
+     {
+      "key": "topic.NINA.extra 1.002",
+      "speaker": "NINA",
+      "sk": "Obyčajné dni. Nákupné lístky, pohľadnice, nahrávky z kuchyne."
+     },
+     {
+      "key": "topic.NINA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "To ľudí zaujíma?"
+     },
+     {
+      "key": "topic.NINA.extra 1.004",
+      "speaker": "NINA",
+      "sk": "Najviac. Pri slávnych veciach postoja minútu, pri nákupnom lístku z roku 2020 aj dvadsať."
+     },
+     {
+      "key": "topic.NINA.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Prečo?"
+     },
+     {
+      "key": "topic.NINA.extra 1.006",
+      "speaker": "NINA",
+      "sk": "Lebo každý hľadá, či tam nie je jeho písmo."
+     }
+    ]
+   },
+   {
+    "id": "NINA.extra 2",
+    "character": "NINA",
+    "label_key": "topic.NINA.extra 2.label",
+    "label": "Kurátorka",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "F01"
+    ],
+    "note": "Nina names the limits of her authority (VOICES); the warning Viktor ignored (F11.006); after F01 so the problem is known",
+    "lines": [
+     {
+      "key": "topic.NINA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Čo všetko vlastne smiete ako kurátorka?"
+     },
+     {
+      "key": "topic.NINA.extra 2.002",
+      "speaker": "NINA",
+      "sk": "Vybrať, opísať a zavesiť. Vymazať nie, to nesmie nikto."
+     },
+     {
+      "key": "topic.NINA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Ani Viktor?"
+     },
+     {
+      "key": "topic.NINA.extra 2.004",
+      "speaker": "NINA",
+      "sk": "Ani on. Povedala som mu to ústne, písomne aj na porade."
+     },
+     {
+      "key": "topic.NINA.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "A on?"
+     },
+     {
+      "key": "topic.NINA.extra 2.006",
+      "speaker": "NINA",
+      "sk": "Naživo prikývol, písomne poďakoval a na porade aj tak pustil skúšku."
+     }
+    ]
+   },
+   {
+    "id": "NINA.extra 3",
+    "character": "NINA",
+    "label_key": "topic.NINA.extra 3.label",
+    "label": "Celý deň vonku",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "winter (owner: Jasná in winter) + cross-era callback to Ela's thermos (look.S03.ambient 2, 2020); state-independent",
+    "lines": [
+     {
+      "key": "topic.NINA.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Nie je vám tu zima? Stojíte vonku od rána."
+     },
+     {
+      "key": "topic.NINA.extra 3.002",
+      "speaker": "NINA",
+      "sk": "Mám tri vrstvy a termosku od mamy. Čaj mi nalieva, aj keď mám tridsať."
+     },
+     {
+      "key": "topic.NINA.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "Tá termoska nemá náhodou nápis na boku?"
+     },
+     {
+      "key": "topic.NINA.extra 3.004",
+      "speaker": "NINA",
+      "sk": "Má. NEDOLIEVAŤ POLIEVKU. Drží na nej od roku 2020."
+     },
+     {
+      "key": "topic.NINA.extra 3.005",
+      "speaker": "ADAM",
+      "sk": "Tak to je najstarší exponát na celej výstave."
+     },
+     {
+      "key": "topic.NINA.extra 3.006",
+      "speaker": "NINA",
+      "sk": "To nie je exponát, to je termoska. Ale mame to poviem, poteší sa."
+     }
+    ]
+   },
+   {
+    "id": "TAMARA.extra 1",
+    "character": "TAMARA",
+    "label_key": "topic.TAMARA.extra 1.label",
+    "label": "Druhý život",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her workshop (glossary Druhý život); repairer among repairers; ty",
+    "lines": [
+     {
+      "key": "topic.TAMARA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Prečo sa tvoja dielňa volá práve tak?"
+     },
+     {
+      "key": "topic.TAMARA.extra 1.002",
+      "speaker": "TAMARA",
+      "sk": "Lebo veci majú aj druhý život. Len im ho ľudia nedajú."
+     },
+     {
+      "key": "topic.TAMARA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A koľko životov má taký magnetofón?"
+     },
+     {
+      "key": "topic.TAMARA.extra 1.004",
+      "speaker": "TAMARA",
+      "sk": "Toľko, koľkokrát ho niekto radšej opraví, než vyhodí do kontajnera."
+     },
+     {
+      "key": "topic.TAMARA.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Ja som jeden opravoval už štvrtýkrát."
+     },
+     {
+      "key": "topic.TAMARA.extra 1.006",
+      "speaker": "TAMARA",
+      "sk": "Tak to je stály pacient. Založ mu kartu."
+     }
+    ]
+   },
+   {
+    "id": "TAMARA.extra 2",
+    "character": "TAMARA",
+    "label_key": "topic.TAMARA.extra 2.label",
+    "label": "Dielňa v hoteli",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "winter colour; gentle Q8 nudge (direction only, matches Q8C.001 'vlani pri plese'); state-independent",
+    "lines": [
+     {
+      "key": "topic.TAMARA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Ty tu v lobby opravuješ stále?"
+     },
+     {
+      "key": "topic.TAMARA.extra 2.002",
+      "speaker": "TAMARA",
+      "sk": "Len počas výstavy. Vlani som bola s dielňou vonku pri Vrbickom plese, pri lavičke so psom."
+     },
+     {
+      "key": "topic.TAMARA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A prečo nie aj teraz?"
+     },
+     {
+      "key": "topic.TAMARA.extra 2.004",
+      "speaker": "TAMARA",
+      "sk": "V zime by mi tam zamrzla káva aj skrutky."
+     },
+     {
+      "key": "topic.TAMARA.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "Skrutky zamrznú?"
+     },
+     {
+      "key": "topic.TAMARA.extra 2.006",
+      "speaker": "TAMARA",
+      "sk": "Skrutky nie, prsty áno. A skrutku, čo mi z nich vypadne, v snehu nenájdem ani magnetom."
+     }
+    ]
+   },
+   {
+    "id": "TAMARA.extra 3",
+    "character": "TAMARA",
+    "label_key": "topic.TAMARA.extra 3.label",
+    "label": "Sľúbená káva",
+    "speaks_first": "ADAM",
+    "repeatable": false,
+    "requires_done": [
+     "F09"
+    ],
+    "note": "payoff of F02.002 ('Kávu dostaneš, až mi z objednávok prestanú miznúť mená'); after F09 nothing vanishes any more; heard once",
+    "lines": [
+     {
+      "key": "topic.TAMARA.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Mená ti už z objednávok nemiznú. Ako je to s tou kávou?"
+     },
+     {
+      "key": "topic.TAMARA.extra 3.002",
+      "speaker": "TAMARA",
+      "sk": "Sľub je sľub. Tu máš, bez cukru."
+     },
+     {
+      "key": "topic.TAMARA.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "Ako vieš, že bez cukru?"
+     },
+     {
+      "key": "topic.TAMARA.extra 3.004",
+      "speaker": "TAMARA",
+      "sk": "Opravári nemajú čas miešať."
+     }
+    ]
+   },
+   {
+    "id": "BORIS.extra 1",
+    "character": "BORIS",
+    "label_key": "topic.BORIS.extra 1.label",
+    "label": "Najstarší exponát",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "footnote humour (VOICES); no historical claim about Jasná (postcard undated); state-independent",
+    "lines": [
+     {
+      "key": "topic.BORIS.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo je na výstave najstaršie?"
+     },
+     {
+      "key": "topic.BORIS.extra 1.002",
+      "speaker": "BORIS",
+      "sk": "Pohľadnica, ktorej pečiatka je staršia ako ja. Píše sa na nej, že sneh je dobrý a polievka drahá."
+     },
+     {
+      "key": "topic.BORIS.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A to stojí za vystavenie?"
+     },
+     {
+      "key": "topic.BORIS.extra 1.004",
+      "speaker": "BORIS",
+      "sk": "Stojí. Poznámka pod čiarou: niektoré správy sa nemenia ani za sto rokov."
+     },
+     {
+      "key": "topic.BORIS.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Ktorá časť? Sneh, alebo polievka?"
+     },
+     {
+      "key": "topic.BORIS.extra 1.006",
+      "speaker": "BORIS",
+      "sk": "Obe. Sneh som overil cez okno a polievku včera v hotelovej reštaurácii."
+     }
+    ]
+   },
+   {
+    "id": "BORIS.extra 2",
+    "character": "BORIS",
+    "label_key": "topic.BORIS.extra 2.label",
+    "label": "Rukávniky",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his sleeve protectors (game.json design 'rukávové záložky'); state-independent",
+    "lines": [
+     {
+      "key": "topic.BORIS.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Načo sú vám tie návleky na rukávoch?"
+     },
+     {
+      "key": "topic.BORIS.extra 2.002",
+      "speaker": "BORIS",
+      "sk": "Aby som archívu nič nepridal. Ani prach z vlastnej košele."
+     },
+     {
+      "key": "topic.BORIS.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A archív vám niečo pridá?"
+     },
+     {
+      "key": "topic.BORIS.extra 2.004",
+      "speaker": "BORIS",
+      "sk": "Stále. Rezné rany od papiera a dobré príbehy. V tomto poradí."
+     }
+    ]
+   },
+   {
+    "id": "JANA35.extra 1",
+    "character": "JANA35",
+    "label_key": "topic.JANA35.extra 1.label",
+    "label": "Popisky na výstave",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her exactness at every age (VOICES); true with and without Q9 (visitor either way); state-independent",
+    "lines": [
+     {
+      "key": "topic.JANA35.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo vás sem priviedlo?"
+     },
+     {
+      "key": "topic.JANA35.extra 1.002",
+      "speaker": "JANA35",
+      "sk": "Prišla som skontrolovať popisky. Profesionálna deformácia."
+     },
+     {
+      "key": "topic.JANA35.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A sedia?"
+     },
+     {
+      "key": "topic.JANA35.extra 1.004",
+      "speaker": "JANA35",
+      "sk": "Dva preklepy a jedno „cca“. Na výstave o pamäti by som čakala väčšiu presnosť."
+     },
+     {
+      "key": "topic.JANA35.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Povedali ste to Borisovi?"
+     },
+     {
+      "key": "topic.JANA35.extra 1.006",
+      "speaker": "JANA35",
+      "sk": "Povedala. Zapísal si to a pod čiaru pripísal: „Ďakujem.“"
+     }
+    ]
+   },
+   {
+    "id": "JANA35.extra 2",
+    "character": "JANA35",
+    "label_key": "topic.JANA35.extra 2.label",
+    "label": "Škola na Sokolíkovej",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "running gag from JANA20.extra 2 (C1, approved), changed a little; state-independent",
+    "lines": [
+     {
+      "key": "topic.JANA35.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Vy ste chodili do školy na Sokolíkovej, však?"
+     },
+     {
+      "key": "topic.JANA35.extra 2.002",
+      "speaker": "JANA35",
+      "sk": "Áno. S Tónom Farkašom do jednej triedy. Kreslil lietadlá do všetkých zošitov."
+     },
+     {
+      "key": "topic.JANA35.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Aj do vašich?"
+     },
+     {
+      "key": "topic.JANA35.extra 2.004",
+      "speaker": "JANA35",
+      "sk": "Aj. A ja som mu ich opravovala, krídla mali vždy zlý uhol."
+     },
+     {
+      "key": "topic.JANA35.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "Všetky?"
+     },
+     {
+      "key": "topic.JANA35.extra 2.006",
+      "speaker": "JANA35",
+      "sk": "Všetky okrem prvého. To mám dodnes v archíve. Na prvé verzie nesiaham, ani keď majú krivé krídla."
+     }
+    ]
+   },
+   {
+    "id": "SARA.extra 1",
+    "character": "SARA",
+    "label_key": "topic.SARA.extra 1.label",
+    "label": "Vaše pero",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "her running gag (the pen that never fell); state-independent",
+    "lines": [
+     {
+      "key": "topic.SARA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Píšete stále tým istým perom?"
+     },
+     {
+      "key": "topic.SARA.extra 1.002",
+      "speaker": "SARA",
+      "sk": "Tri roky. Ešte mi nikdy nespadlo ani sa nevypísalo."
+     },
+     {
+      "key": "topic.SARA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Ako to robíte?"
+     },
+     {
+      "key": "topic.SARA.extra 1.004",
+      "speaker": "SARA",
+      "sk": "Keď píšem, držím ho. Keď nepíšem, odložím ho. A náplň mením v pondelok."
+     },
+     {
+      "key": "topic.SARA.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "To by ste mohli učiť."
+     },
+     {
+      "key": "topic.SARA.extra 1.006",
+      "speaker": "SARA",
+      "sk": "Učím. Každého nového kolegu hneď prvý deň."
+     }
+    ]
+   },
+   {
+    "id": "SARA.extra 2",
+    "character": "SARA",
+    "label_key": "topic.SARA.extra 2.label",
+    "label": "Na čo sa ľudia pýtajú?",
+    "speaks_first": "SARA",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "client-centre colour in winter; Sára answers the label; state-independent",
+    "lines": [
+     {
+      "key": "topic.SARA.extra 2.001",
+      "speaker": "SARA",
+      "sk": "Kde sú toalety, kedy ide posledná kabínka a či je hore zima."
+     },
+     {
+      "key": "topic.SARA.extra 2.002",
+      "speaker": "ADAM",
+      "sk": "A je?"
+     },
+     {
+      "key": "topic.SARA.extra 2.003",
+      "speaker": "SARA",
+      "sk": "Vždy. Ale každý chce, aby som mu to povedala nahlas."
+     },
+     {
+      "key": "topic.SARA.extra 2.004",
+      "speaker": "ADAM",
+      "sk": "A poviete?"
+     },
+     {
+      "key": "topic.SARA.extra 2.005",
+      "speaker": "SARA",
+      "sk": "Poviem. A dodám, nech si zapne bundu až po bradu."
+     }
+    ]
+   },
+   {
+    "id": "SARA.extra 3",
+    "character": "SARA",
+    "label_key": "topic.SARA.extra 3.label",
+    "label": "Zákaz kávy",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "pays off look.S46.ambient 1 (zákaz kávy) and her paper visitors' book; state-independent",
+    "lines": [
+     {
+      "key": "topic.SARA.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Prečo je v návštevníckom poriadku najväčším písmom práve káva?"
+     },
+     {
+      "key": "topic.SARA.extra 3.002",
+      "speaker": "SARA",
+      "sk": "Lebo raz jedna káva skončila v knihe návštev. Mená z troch strán sa zliali do jednej škvrny."
+     },
+     {
+      "key": "topic.SARA.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "A tie mená?"
+     },
+     {
+      "key": "topic.SARA.extra 3.004",
+      "speaker": "SARA",
+      "sk": "Rozlúštila som ich aj cez škvrnu a prepísala perom, jedno po druhom. Odvtedy platí: káva vonku, pero dnu."
+     }
+    ]
+   },
+   {
+    "id": "ROBOT.extra 1",
+    "character": "ROBOT",
+    "label_key": "topic.ROBOT.extra 1.label",
+    "label": "Zima na Bielej Púti",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "winter (Očko has its snow variant); literal statistics; state-independent",
+    "lines": [
+     {
+      "key": "topic.ROBOT.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Ako sa vám jazdí v tomto snehu?"
+     },
+     {
+      "key": "topic.ROBOT.extra 1.002",
+      "speaker": "ROBOT",
+      "sk": "Rýchlosť: polovičná. Pády: dva tento týždeň. Dôstojnosť: zachovaná na sedemdesiat percent."
+     },
+     {
+      "key": "topic.ROBOT.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A kto vás postavil späť na kolesá?"
+     },
+     {
+      "key": "topic.ROBOT.extra 1.004",
+      "speaker": "ROBOT",
+      "sk": "Lyžiar a jedno dieťa. Dieťa mi pritom nakreslilo na veko úsmev."
+     },
+     {
+      "key": "topic.ROBOT.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Ešte ho tam máte."
+     },
+     {
+      "key": "topic.ROBOT.extra 1.006",
+      "speaker": "ROBOT",
+      "sk": "Áno. Podľa štatistiky mi s ním ľudia pomáhajú o tretinu ochotnejšie."
+     }
+    ]
+   },
+   {
+    "id": "ROBOT.extra 2",
+    "character": "ROBOT",
+    "label_key": "topic.ROBOT.extra 2.label",
+    "label": "Čo mažete?",
+    "speaks_first": "ROBOT",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his folder gag (VOICES), quiet counterpoint to the normalizer; set-up for Q8D.x03; state-independent",
+    "lines": [
+     {
+      "key": "topic.ROBOT.extra 2.001",
+      "speaker": "ROBOT",
+      "sk": "Všetko nepotrebné. Okrem jedného priečinka."
+     },
+     {
+      "key": "topic.ROBOT.extra 2.002",
+      "speaker": "ADAM",
+      "sk": "Akého?"
+     },
+     {
+      "key": "topic.ROBOT.extra 2.003",
+      "speaker": "ROBOT",
+      "sk": "Nepotrebné, ale milé. Obsah: tri poďakovania, jeden nakreslený úsmev a pesnička, ktorú pískal kuriér."
+     },
+     {
+      "key": "topic.ROBOT.extra 2.004",
+      "speaker": "ADAM",
+      "sk": "To nie je málo."
+     },
+     {
+      "key": "topic.ROBOT.extra 2.005",
+      "speaker": "ROBOT",
+      "sk": "Kapacita priečinka: neobmedzená. Nastavil som si ju sám."
+     }
+    ]
+   },
+   {
+    "id": "ROBOT.extra 3",
+    "character": "ROBOT",
+    "label_key": "topic.ROBOT.extra 3.label",
+    "label": "Najťažšia adresa",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "addresses described by history (his Q8 theme) without solving Q8; callback to ROBOT.ambient 1.x03; state-independent",
+    "lines": [
+     {
+      "key": "topic.ROBOT.extra 3.001",
+      "speaker": "ADAM",
+      "sk": "Ktorú adresu ste hľadali najdlhšie?"
+     },
+     {
+      "key": "topic.ROBOT.extra 3.002",
+      "speaker": "ROBOT",
+      "sk": "„Tam, kde bol kedysi stánok s langošmi.“ Stánky s langošmi v okolí: nula."
+     },
+     {
+      "key": "topic.ROBOT.extra 3.003",
+      "speaker": "ADAM",
+      "sk": "A našli ste to miesto?"
+     },
+     {
+      "key": "topic.ROBOT.extra 3.004",
+      "speaker": "ROBOT",
+      "sk": "Áno. Spýtal som sa jednej panej. Povedala, že som zlatý, a potom presne ukázala, kde to bolo."
+     }
+    ]
+   },
+   {
+    "id": "IVAN.extra 1",
+    "character": "IVAN",
+    "label_key": "topic.IVAN.extra 1.label",
+    "label": "Funitel",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "real lift (two ropes, wind-stable, matches look.S68.ambient 2); never broken or unsafe; state-independent",
+    "lines": [
+     {
+      "key": "topic.IVAN.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čím je ten Funitel iný ako kabínka zdola?"
+     },
+     {
+      "key": "topic.IVAN.extra 1.002",
+      "speaker": "IVAN",
+      "sk": "Visí na dvoch lanách naraz. Vietor sa s ním dohaduje oveľa ťažšie."
+     },
+     {
+      "key": "topic.IVAN.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "A koľko ľudí sa doň zmestí?"
+     },
+     {
+      "key": "topic.IVAN.extra 1.004",
+      "speaker": "IVAN",
+      "sk": "Celá lyžiarska škola aj s inštruktorom. A vždy ešte jeden, čo dobieha."
+     },
+     {
+      "key": "topic.IVAN.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "Ten je v každej kabíne?"
+     },
+     {
+      "key": "topic.IVAN.extra 1.006",
+      "speaker": "IVAN",
+      "sk": "V každej. Väčšinou má rozopnutú lyžiarku a jednu palicu."
+     }
+    ]
+   },
+   {
+    "id": "IVAN.extra 2",
+    "character": "IVAN",
+    "label_key": "topic.IVAN.extra 2.label",
+    "label": "Práca na Priehybe",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his work, calm understatement; state-independent",
+    "lines": [
+     {
+      "key": "topic.IVAN.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Nenudí vás celý deň tá istá stanica?"
+     },
+     {
+      "key": "topic.IVAN.extra 2.002",
+      "speaker": "IVAN",
+      "sk": "Stanica je tá istá, ľudia sú iní. Dnes sa ma už traja pýtali, kde je Chopok."
+     },
+     {
+      "key": "topic.IVAN.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Veď hore."
+     },
+     {
+      "key": "topic.IVAN.extra 2.004",
+      "speaker": "IVAN",
+      "sk": "Presne to som im povedal. Dvaja poďakovali, jeden sa urazil."
+     }
+    ]
+   },
+   {
+    "id": "TURISTA.extra 1",
+    "character": "TURISTA",
+    "label_key": "topic.TURISTA.extra 1.label",
+    "label": "Batoh",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "trip nostalgia (VOICES: what he packs, trips with his father); nothing about the father's later life; state-independent",
+    "lines": [
+     {
+      "key": "topic.TURISTA.extra 1.001",
+      "speaker": "ADAM",
+      "sk": "Čo nosíte v takom malom batohu?"
+     },
+     {
+      "key": "topic.TURISTA.extra 1.002",
+      "speaker": "TURISTA",
+      "sk": "Balím ako otec: termosku, rezne v alobale a náhradné rukavice."
+     },
+     {
+      "key": "topic.TURISTA.extra 1.003",
+      "speaker": "ADAM",
+      "sk": "Rezne na Chopok?"
+     },
+     {
+      "key": "topic.TURISTA.extra 1.004",
+      "speaker": "TURISTA",
+      "sk": "Hore je všetko drahé. Rezeň ma stál len desať minút pri sporáku."
+     },
+     {
+      "key": "topic.TURISTA.extra 1.005",
+      "speaker": "ADAM",
+      "sk": "A koľko ich máte?"
+     },
+     {
+      "key": "topic.TURISTA.extra 1.006",
+      "speaker": "TURISTA",
+      "sk": "Štyri. Otec vravel, že jeden sa vždy niekomu ujde."
+     }
+    ]
+   },
+   {
+    "id": "TURISTA.extra 2",
+    "character": "TURISTA",
+    "label_key": "topic.TURISTA.extra 2.label",
+    "label": "Fotoaparát",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [],
+    "note": "his camera (game.json design); state-independent",
+    "lines": [
+     {
+      "key": "topic.TURISTA.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Vy ešte fotíte fotoaparátom? Nie telefónom?"
+     },
+     {
+      "key": "topic.TURISTA.extra 2.002",
+      "speaker": "TURISTA",
+      "sk": "Telefónom si fotím, kde som zaparkoval. Fotoaparátom výlety."
+     },
+     {
+      "key": "topic.TURISTA.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "Aký je v tom rozdiel?"
+     },
+     {
+      "key": "topic.TURISTA.extra 2.004",
+      "speaker": "TURISTA",
+      "sk": "Výlety si pozriem aj o desať rokov. Parkovisko už nie."
+     }
+    ]
+   },
+   {
+    "id": "VIKTOR.extra 1",
+    "character": "VIKTOR",
+    "label_key": "topic.VIKTOR.extra 1.label",
+    "label": "Prečo obyčajné dni?",
+    "speaks_first": "VIKTOR",
+    "repeatable": true,
+    "requires_done": [],
+    "excluded_done": [
+     "F11"
+    ],
+    "note": "the purpose of Atlas in his own words, still convinced (VOICES); only before he hears his mother",
+    "lines": [
+     {
+      "key": "topic.VIKTOR.extra 1.001",
+      "speaker": "VIKTOR",
+      "sk": "Lebo z nich sa skladá väčšina života. A strácajú sa ako prvé."
+     },
+     {
+      "key": "topic.VIKTOR.extra 1.002",
+      "speaker": "ADAM",
+      "sk": "A preto ich čistíte?"
+     },
+     {
+      "key": "topic.VIKTOR.extra 1.003",
+      "speaker": "VIKTOR",
+      "sk": "Upratujem. Čo zostane, má byť čitateľné aj o sto rokov."
+     },
+     {
+      "key": "topic.VIKTOR.extra 1.004",
+      "speaker": "ADAM",
+      "sk": "Aj keď z toho zostane len kúsok?"
+     },
+     {
+      "key": "topic.VIKTOR.extra 1.005",
+      "speaker": "VIKTOR",
+      "sk": "Radšej čitateľný kúsok ako celok, ktorému nikto nerozumie."
+     }
+    ]
+   },
+   {
+    "id": "VIKTOR.extra 2",
+    "character": "VIKTOR",
+    "label_key": "topic.VIKTOR.extra 2.label",
+    "label": "Ninino varovanie",
+    "speaks_first": "ADAM",
+    "repeatable": true,
+    "requires_done": [
+     "F11"
+    ],
+    "note": "plain serious beat after F11; he owns the decision (glossary 6.5); no jokes",
+    "lines": [
+     {
+      "key": "topic.VIKTOR.extra 2.001",
+      "speaker": "ADAM",
+      "sk": "Prečo ste vtedy Ninu nepočúvali?"
+     },
+     {
+      "key": "topic.VIKTOR.extra 2.002",
+      "speaker": "VIKTOR",
+      "sk": "Počúval. Len som si myslel, že sa bojí niečoho, čo ja už poznám."
+     },
+     {
+      "key": "topic.VIKTOR.extra 2.003",
+      "speaker": "ADAM",
+      "sk": "A poznali ste to?"
+     },
+     {
+      "key": "topic.VIKTOR.extra 2.004",
+      "speaker": "VIKTOR",
+      "sk": "Poznal som len mamin hlas v upravenej verzii. Myslel som si, že mi stačí."
+     },
+     {
+      "key": "topic.VIKTOR.extra 2.005",
+      "speaker": "ADAM",
+      "sk": "A teraz?"
+     },
+     {
+      "key": "topic.VIKTOR.extra 2.006",
+      "speaker": "VIKTOR",
+      "sk": "Teraz viem, koľko z neho chýbalo."
+     }
+    ]
+   }
+  ]
+ },
+ "world_ext_patch": {
+  "about": "C4 owns the epilogue texts. These two entries replace the shot/line texts of the Q10/Q11 epilogue entries in the world overlay (docs/writing/out/content_v2_draft.json world_ext.epilogue -> src/game/data/content_ext/world_ext.json). Same quest/after; keys epilogue.10.* / epilogue.11.*.",
+  "epilogue": [
+   {
+    "quest": "Q10",
+    "after": "Q10D",
+    "shot": "Koniec júna 1962. Zuzana zvoní triednym zvončekom a prváci vybiehajú na prázdniny.",
+    "line": "ZUZANA: Posledný zvonec! A v septembri zase prvý.",
+    "note": "kept from the design draft after review: the game's title in a seven-year-old's mouth, about the school year only (no line about her later life); shot is a present-tense caption (STYLE_GUIDE 6.13)"
+   },
+   {
+    "quest": "Q11",
+    "after": "Q11C",
+    "shot": "Koniec júna 1995. Deti krúžia na bicykloch po dvore a Kubo zvoní najhlasnejšie.",
+    "line": "ZUZANA95: Posledný zvonec. A v septembri zase prvý.",
+    "note": "'krúžia na bicykloch po dvore' says what the children ride; shortened to the caption length (the bells are bike bells); her line repeats her 1962 epilogue line word for word (the warm close of her thread); nothing about later years"
+   }
+  ]
+ }
+}

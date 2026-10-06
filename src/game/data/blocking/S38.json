@@ -134,6 +134,23 @@
         490
       ],
       "reason": "big tuft of tall grass and reeds growing on the canal bank right of the irrigation model"
+    },
+    "S38.paper_boat": {
+      "rect": [
+        1376,
+        590,
+        72,
+        50
+      ],
+      "interaction_point": [
+        1415,
+        740
+      ],
+      "label_anchor": [
+        1412,
+        580
+      ],
+      "reason": "content v2: a paper boat stuck in the grass at the canal edge between the planting table and the reeds"
     }
   },
   "exits": {
@@ -172,5 +189,14 @@
       "reason": "lower part of the measuring-room door and its concrete threshold step (the door leaf above is the S38.door hotspot)"
     }
   },
-  "state_patches": []
+  "state_patches": [],
+  "variant_layers": {
+    "variants/S38_paper_boat.webp": {
+      "texture": "variants_natural/S38_paper_boat.webp",
+      "pos": [
+        1376,
+        588
+      ]
+    }
+  }
 }

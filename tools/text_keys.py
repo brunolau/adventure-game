@@ -28,9 +28,11 @@ docs/DECISIONS.md "Ivanka is shown as June 1962").
 Content overlays (src/game/data/content_ext/, tools/content_ext.py): the tools read the
 EFFECTIVE game, i.e. game.json with dialogue_ext.json / travel_ext.json applied
 (`effective_game()`), so overlay lines, new topic labels and new exits get their keys like any
-other text. One extra field exists only in the effective game:
+other text. Two extra fields exist only in the effective game:
 
     travel.<exitId>.first.<n>           rooms[].exits[].first_ride[] (first-ride lines, dialogue.csv)
+    action.<id>.hint_step               actions[].hint_step (world_ext.json: the exact step hint of a new or
+                                        relocated action; game.json's step texts are ui.hint_step.<id> in ui.csv)
 """
 from __future__ import annotations
 
@@ -194,6 +196,11 @@ def action_journal(action_id: str) -> str:
 
 def action_objective(action_id: str) -> str:
     return f"action.{action_id}.objective"
+
+
+def action_hint_step(action_id: str) -> str:
+    """Exact step hint of a world-overlay action (Core TextKeys.ActionHintStep / Hints.StepText)."""
+    return f"action.{action_id}.hint_step"
 
 
 def character_name(character_id: str) -> str:
@@ -397,6 +404,9 @@ def iter_text_entries(game: dict) -> Iterator[TextEntry]:
         if action.get("objective"):
             yield TextEntry(action_objective(action_id), action["objective"], world,
                             "actions[].objective", f"{src}.objective")
+        if action.get("hint_step"):  # world overlay only
+            yield TextEntry(action_hint_step(action_id), action["hint_step"], world,
+                            "actions[].hint_step", f"{src}.hint_step")
         yield from line_entries(action.get("lines", []), "actions[].lines[].text", f"{src}.lines")
 
     for character in game.get("characters", []):
@@ -490,6 +500,7 @@ KEYED_FIELDS = frozenset({
     "actions[].label",
     "actions[].objective",
     "actions[].journal_text",
+    "actions[].hint_step",
     "actions[].lines[].text",
     "puzzles[].title",
     "puzzles[].clue",

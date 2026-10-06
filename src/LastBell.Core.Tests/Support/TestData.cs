@@ -17,7 +17,7 @@ public static class TestData
 {
     private static readonly Lazy<string> GameJsonText = new(() => File.ReadAllText(FixturePath("game.json")));
     private static readonly Lazy<ContentOverlays> LazyOverlays = new(() => new ContentOverlays(
-        OverlayText(ContentOverlays.DialogueExtFile), OverlayText(ContentOverlays.TravelExtFile)));
+        OverlayText(ContentOverlays.DialogueExtFile), OverlayText(ContentOverlays.TravelExtFile), OverlayText(ContentOverlays.WorldExtFile)));
     private static readonly Lazy<GameContent> LazyContent = new(() => GameContent.Load(GameJsonText.Value, LazyOverlays.Value));
     private static readonly Lazy<GameContent> LazyBaseContent = new(() => GameContent.Load(GameJsonText.Value));
     private static readonly Lazy<(IReadOnlyList<WalkthroughStep> Main, IReadOnlyList<string> Optional)> LazyWalkthrough = new(LoadWalkthrough);
@@ -106,7 +106,7 @@ public static class TestData
         var s = Content.InitialState;
         foreach (var row in MainRoute)
         {
-            s = Driver.FollowTravelPath(Content, s, row.TravelPath);
+            s = Driver.PrepareStep(Content, s, row);
             s = Driver.Interact(Content, s, Content.GetAction(row.Action), row.PuzzleSolution);
             states.Add(s);
         }

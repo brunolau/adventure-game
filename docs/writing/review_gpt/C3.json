@@ -1,0 +1,6160 @@
+{
+  "chunk": "C3",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\review_gpt\\C3.input.csv",
+  "overlay": [
+    "docs\\writing\\review_gpt\\C3.input_dialogue.json",
+    "docs\\writing\\review_gpt\\C3.input_epilogue.json"
+  ],
+  "cost_usd": 9.5981,
+  "batches": {
+    "I01+I02": {
+      "hash": "fe805b0ef15fe1a2",
+      "status": "ok",
+      "heading": "I01 · main quest M08 „Ručná pumpa“ | I02 · main quest M08 „Ručná pumpa“",
+      "keys": [
+        "action.I01.x01",
+        "action.I01.x02",
+        "action.I01.x03",
+        "action.I01.x04",
+        "action.I01.x05",
+        "action.I01.x06",
+        "action.I01.x07",
+        "action.I02.x01",
+        "action.I02.x02",
+        "action.I02.x03",
+        "action.I02.x04",
+        "action.I02.x05"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 16675,
+        "completion_tokens": 1917,
+        "total_tokens": 18592,
+        "cost": 0.222838,
+        "prompt_tokens_details": {
+          "cached_tokens": 4418,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2228
+    },
+    "I03+I07+I09": {
+      "hash": "9ef4ec28b81e14b1",
+      "status": "ok",
+      "heading": "I03 · main quest M08 „Ručná pumpa“ | I07 · main quest M08 „Ručná pumpa“ | I09 · main quest M09 „Pôvodná veta“",
+      "keys": [
+        "action.I03.z01",
+        "action.I03.z02",
+        "action.I03.z03",
+        "action.I03.x01",
+        "action.I03.x02",
+        "action.I07.x01",
+        "action.I07.x02",
+        "action.I07.x03",
+        "action.I07.x04",
+        "action.I09.x01",
+        "action.I09.x02",
+        "action.I09.x03",
+        "action.I09.x04",
+        "action.I09.z01",
+        "action.I09.z02",
+        "action.I09.z03",
+        "action.I09.x05",
+        "action.I09.x06"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22657,
+        "completion_tokens": 3290,
+        "total_tokens": 25947,
+        "cost": 0.352291,
+        "prompt_tokens_details": {
+          "cached_tokens": 5966,
+          "cache_write_tokens": 5966
+        }
+      },
+      "usd": 0.3523
+    },
+    "I10+I13+I14": {
+      "hash": "c4c216d17e08a1a7",
+      "status": "ok",
+      "heading": "I10 · main quest M09 „Pôvodná veta“ | I13 · main quest M09 „Pôvodná veta“ | I14 · main quest M10 „Dokument musí prežiť“",
+      "keys": [
+        "action.I10.z01",
+        "action.I10.z02",
+        "action.I10.z03",
+        "action.I10.z04",
+        "action.I10.z05",
+        "action.I10.z06",
+        "action.I10.z07",
+        "action.I10.z08",
+        "action.I10.z09",
+        "action.I13.002",
+        "action.I14.002",
+        "action.I14.z01",
+        "action.I14.z02",
+        "action.I14.z03",
+        "action.I14.x01",
+        "action.I14.x02",
+        "action.I14.x03"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20059,
+        "completion_tokens": 3223,
+        "total_tokens": 23282,
+        "cost": 0.315525,
+        "prompt_tokens_details": {
+          "cached_tokens": 5135,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3155
+    },
+    "I16+I17+E01": {
+      "hash": "1e951a77a31df277",
+      "status": "ok",
+      "heading": "I16 · main quest M10 „Dokument musí prežiť“ | I17 · main quest M10 „Dokument musí prežiť“ | E01 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.I16.x01",
+        "action.I16.x02",
+        "action.I16.x03",
+        "action.I16.x04",
+        "action.I17.x01",
+        "action.I17.x02",
+        "action.I17.x03",
+        "action.E01.x01",
+        "action.E01.x02",
+        "action.E01.x03",
+        "action.E01.x04",
+        "action.E01.x05"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20303,
+        "completion_tokens": 999,
+        "total_tokens": 21302,
+        "cost": 0.2145,
+        "prompt_tokens_details": {
+          "cached_tokens": 5920,
+          "cache_write_tokens": 5920
+        }
+      },
+      "usd": 0.2145
+    },
+    "E02+E03": {
+      "hash": "b7b024d23e9126bc",
+      "status": "ok",
+      "heading": "E02 · main quest M11B „Človek, ktorý si to zapamätá“ | E03 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E02.x01",
+        "action.E02.x02",
+        "action.E02.x03",
+        "action.E02.x04",
+        "action.E02.x05",
+        "action.E02.x06",
+        "action.E02.x07",
+        "action.E03.x01",
+        "action.E03.x02",
+        "action.E03.x03",
+        "action.E03.x04",
+        "action.E03.x05"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18118,
+        "completion_tokens": 1274,
+        "total_tokens": 19392,
+        "cost": 0.198872,
+        "prompt_tokens_details": {
+          "cached_tokens": 5112,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1989
+    },
+    "E05+E07+E08": {
+      "hash": "fcf055b15e14f1b2",
+      "status": "ok",
+      "heading": "E05 · main quest M11B „Človek, ktorý si to zapamätá“ | E07 · main quest M11B „Človek, ktorý si to zapamätá“ | E08 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E05.x01",
+        "action.E05.x02",
+        "action.E05.x03",
+        "action.E05.x04",
+        "action.E05.x05",
+        "action.E07.x01",
+        "action.E07.x02",
+        "action.E07.x03",
+        "action.E08.x01",
+        "action.E08.x02",
+        "action.E08.x03",
+        "action.E08.x04",
+        "action.E08.x05"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 19566,
+        "completion_tokens": 2284,
+        "total_tokens": 21850,
+        "cost": 0.262313,
+        "prompt_tokens_details": {
+          "cached_tokens": 5283,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2623
+    },
+    "E10+Q6A+Q6B+Q6C": {
+      "hash": "a965cd5b31e46078",
+      "status": "ok",
+      "heading": "E10 · main quest M11B „Človek, ktorý si to zapamätá“ | Q6A · side quest Q6 „Béla sa vracia“ | Q6B · side quest Q6 „Béla sa vracia“ | Q6C · side quest Q6 „Béla sa vracia“",
+      "keys": [
+        "action.E10.x01",
+        "action.E10.x02",
+        "action.E10.x03",
+        "action.Q6A.x01",
+        "action.Q6A.x02",
+        "action.Q6A.x03",
+        "action.Q6A.x04",
+        "action.Q6B.x01",
+        "action.Q6B.x02",
+        "action.Q6B.x03",
+        "action.Q6B.x04",
+        "action.Q6C.002"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18174,
+        "completion_tokens": 1788,
+        "total_tokens": 19962,
+        "cost": 0.226221,
+        "prompt_tokens_details": {
+          "cached_tokens": 4991,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2262
+    },
+    "Q6D+Q7A+Q7C": {
+      "hash": "4e12fdfc92d4afec",
+      "status": "ok",
+      "heading": "Q6D · side quest Q6 „Béla sa vracia“ | Q7A · side quest Q7 „Žiaden strach, miláčik“ | Q7C · side quest Q7 „Žiaden strach, miláčik“",
+      "keys": [
+        "action.Q6D.002",
+        "action.Q6D.x01",
+        "action.Q6D.x02",
+        "action.Q6D.x03",
+        "action.Q7A.x01",
+        "action.Q7A.x02",
+        "action.Q7A.x03",
+        "action.Q7A.x04",
+        "action.Q7C.x01",
+        "action.Q7C.x02",
+        "action.Q7C.x03",
+        "action.Q7C.x04",
+        "action.Q7C.x05"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 17604,
+        "completion_tokens": 2343,
+        "total_tokens": 19947,
+        "cost": 0.251511,
+        "prompt_tokens_details": {
+          "cached_tokens": 4631,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2515
+    },
+    "Q9A+Q9B+Q9C": {
+      "hash": "f7d112e3d1349153",
+      "status": "ok",
+      "heading": "Q9A · side quest Q9 „Nápad mimo predlohy“ | Q9B · side quest Q9 „Nápad mimo predlohy“ | Q9C · side quest Q9 „Nápad mimo predlohy“",
+      "keys": [
+        "action.Q9A.x01",
+        "action.Q9A.x02",
+        "action.Q9A.x03",
+        "action.Q9A.x04",
+        "action.Q9A.x05",
+        "action.Q9A.x06",
+        "action.Q9B.x01",
+        "action.Q9B.x02",
+        "action.Q9B.x03",
+        "action.Q9B.x04",
+        "action.Q9C.x01",
+        "action.Q9C.x02",
+        "action.Q9C.x03",
+        "action.Q9C.x04"
+      ],
+      "fix": 0,
+      "conversation_note": "The inserted canteen comparison makes ‘druhý’ in the existing action.Q9C.003 sound as though Jana will draw another queue. Clarify the intended reference with ‘Tak nakreslím aj druhý návrh. Možno raz budem mať celý zošit.’",
+      "usage": {
+        "prompt_tokens": 18240,
+        "completion_tokens": 1582,
+        "total_tokens": 19822,
+        "cost": 0.228688,
+        "prompt_tokens_details": {
+          "cached_tokens": 5048,
+          "cache_write_tokens": 5048
+        }
+      },
+      "usd": 0.2287
+    },
+    "Q10A": {
+      "hash": "17733b828b9368dd",
+      "status": "ok",
+      "heading": "Q10A · side quest Q10 „Prvý posledný zvonec“",
+      "keys": [
+        "action.Q10A.label",
+        "action.Q10A.001",
+        "action.Q10A.002",
+        "action.Q10A.003",
+        "action.Q10A.004",
+        "action.Q10A.005",
+        "action.Q10A.006",
+        "action.Q10A.007",
+        "action.Q10A.008",
+        "action.Q10A.009",
+        "action.Q10A.010",
+        "action.Q10A.011",
+        "action.Q10A.objective",
+        "action.Q10A.journal",
+        "action.Q10A.hint_step"
+      ],
+      "fix": 2,
+      "conversation_note": "Lines 008 and 011 read as if they were written for the opposite speakers. The proposed fixes retain the assigned speakers and the intended handover; a brief acceptance from Adam after 011 would make the exchange feel complete.",
+      "usage": {
+        "prompt_tokens": 15805,
+        "completion_tokens": 2554,
+        "total_tokens": 18359,
+        "cost": 0.2602245,
+        "prompt_tokens_details": {
+          "cached_tokens": 3927,
+          "cache_write_tokens": 3927
+        }
+      },
+      "usd": 0.2602
+    },
+    "Q10B+Q10C": {
+      "hash": "f80706747a4bf853",
+      "status": "ok",
+      "heading": "Q10B · side quest Q10 „Prvý posledný zvonec“ | Q10C · side quest Q10 „Prvý posledný zvonec“",
+      "keys": [
+        "action.Q10B.label",
+        "action.Q10B.001",
+        "action.Q10B.002",
+        "action.Q10B.003",
+        "action.Q10B.004",
+        "action.Q10B.005",
+        "action.Q10B.006",
+        "action.Q10B.007",
+        "action.Q10B.objective",
+        "action.Q10B.journal",
+        "action.Q10B.hint_step",
+        "action.Q10C.label",
+        "action.Q10C.001",
+        "action.Q10C.002",
+        "action.Q10C.objective",
+        "action.Q10C.journal",
+        "action.Q10C.hint_step"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 15946,
+        "completion_tokens": 2404,
+        "total_tokens": 18350,
+        "cost": 0.243516,
+        "prompt_tokens_details": {
+          "cached_tokens": 4016,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2435
+    },
+    "Q10D": {
+      "hash": "34cfc34f81e13d6d",
+      "status": "ok",
+      "heading": "Q10D · side quest Q10 „Prvý posledný zvonec“",
+      "keys": [
+        "action.Q10D.label",
+        "action.Q10D.001",
+        "action.Q10D.002",
+        "action.Q10D.003",
+        "action.Q10D.004",
+        "action.Q10D.005",
+        "action.Q10D.006",
+        "action.Q10D.007",
+        "action.Q10D.008",
+        "action.Q10D.009",
+        "action.Q10D.journal",
+        "action.Q10D.hint_step"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 14827,
+        "completion_tokens": 2119,
+        "total_tokens": 16946,
+        "cost": 0.2296565,
+        "prompt_tokens_details": {
+          "cached_tokens": 3779,
+          "cache_write_tokens": 3779
+        }
+      },
+      "usd": 0.2297
+    },
+    "S32+S36+S37+S38+S40+S65": {
+      "hash": "9ab2f6f551f78258",
+      "status": "ok",
+      "heading": "S32 · Ivanská náves (1960, Ivanka pri Dunaji) | S36 · Otova mechanická dielňa (1960, Ivanka pri Dunaji) | S37 · Park pri kaštieli (1960, Ivanka pri Dunaji) | S38 · Pred skúšobnou čerpacou búdkou (1960, Ivanka pri Dunaji) | S40 · Povala technického archívu (1960, Ivanka pri Dunaji) | S65 · Výdajňa školského údržbového materiálu v roku 1982 (1982, Dúbravka)",
+      "keys": [
+        "look.S32.ambient 1",
+        "look.S32.chalk_arrow",
+        "look.S36.ambient 1",
+        "entry.S37.001",
+        "look.S37.ZUZANA",
+        "look.S37.ZUZANA.variant1",
+        "hotspot.S37.hopscotch.name",
+        "look.S37.hopscotch",
+        "look.S38.ambient 2",
+        "look.S38.paper_boat",
+        "look.S40.ambient 2",
+        "look.S65.ambient 2"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 26936,
+        "completion_tokens": 2406,
+        "total_tokens": 29342,
+        "cost": 0.320657,
+        "prompt_tokens_details": {
+          "cached_tokens": 7667,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3207
+    },
+    "BERTA": {
+      "hash": "66c0d97c0fbfaf3c",
+      "status": "ok",
+      "heading": "BERTA · Berta Kovárová (68) — S32",
+      "keys": [
+        "topic.BERTA.ambient 1.x01",
+        "topic.BERTA.ambient 1.x02",
+        "topic.BERTA.ambient 1.x03",
+        "topic.BERTA.ambient 1.x04",
+        "topic.BERTA.ambient 2.x01",
+        "topic.BERTA.ambient 2.x02",
+        "topic.BERTA.ambient 2.x03",
+        "topic.BERTA.extra 1.label",
+        "topic.BERTA.extra 1.001",
+        "topic.BERTA.extra 1.002",
+        "topic.BERTA.extra 1.003",
+        "topic.BERTA.extra 1.004",
+        "topic.BERTA.extra 1.005",
+        "topic.BERTA.extra 1.006",
+        "topic.BERTA.extra 2.label",
+        "topic.BERTA.extra 2.001",
+        "topic.BERTA.extra 2.002",
+        "topic.BERTA.extra 2.003",
+        "topic.BERTA.extra 2.004",
+        "topic.BERTA.extra 2.005",
+        "topic.BERTA.extra 2.006",
+        "topic.BERTA.extra 2.007"
+      ],
+      "fix": 4,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18067,
+        "completion_tokens": 3603,
+        "total_tokens": 21670,
+        "cost": 0.32113,
+        "prompt_tokens_details": {
+          "cached_tokens": 4410,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3211
+    },
+    "BOZO": {
+      "hash": "2c015597d499f396",
+      "status": "ok",
+      "heading": "BOZO · Božidar Fiala (45) — S31",
+      "keys": [
+        "topic.BOZO.ambient 1.z01",
+        "topic.BOZO.ambient 1.z02",
+        "topic.BOZO.ambient 1.z03",
+        "topic.BOZO.ambient 1.x01",
+        "topic.BOZO.ambient 2.x01",
+        "topic.BOZO.ambient 2.x02",
+        "topic.BOZO.extra 1.label",
+        "topic.BOZO.extra 1.001",
+        "topic.BOZO.extra 1.002",
+        "topic.BOZO.extra 1.003",
+        "topic.BOZO.extra 1.004",
+        "topic.BOZO.extra 1.005",
+        "topic.BOZO.extra 1.006",
+        "topic.BOZO.extra 2.label",
+        "topic.BOZO.extra 2.001",
+        "topic.BOZO.extra 2.002",
+        "topic.BOZO.extra 2.003",
+        "topic.BOZO.extra 2.004",
+        "topic.BOZO.extra 2.005",
+        "topic.BOZO.extra 2.006",
+        "topic.BOZO.extra 2.007",
+        "topic.BOZO.extra 3.label",
+        "topic.BOZO.extra 3.001",
+        "topic.BOZO.extra 3.002",
+        "topic.BOZO.extra 3.003",
+        "topic.BOZO.extra 3.004",
+        "topic.BOZO.extra 3.005",
+        "topic.BOZO.extra 3.006"
+      ],
+      "fix": 4,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20586,
+        "completion_tokens": 4353,
+        "total_tokens": 24939,
+        "cost": 0.379113,
+        "prompt_tokens_details": {
+          "cached_tokens": 4933,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3791
+    },
+    "DOBRO": {
+      "hash": "320cd507bdb54a5a",
+      "status": "ok",
+      "heading": "DOBRO · Učiteľ Dobrovič (39) — S60",
+      "keys": [
+        "topic.DOBRO.ambient 2.002",
+        "topic.DOBRO.ambient 1.x01",
+        "topic.DOBRO.ambient 1.x02",
+        "topic.DOBRO.ambient 1.x03",
+        "topic.DOBRO.ambient 2.x01",
+        "topic.DOBRO.ambient 2.x02",
+        "topic.DOBRO.ambient 2.x03",
+        "topic.DOBRO.extra 1.label",
+        "topic.DOBRO.extra 1.001",
+        "topic.DOBRO.extra 1.002",
+        "topic.DOBRO.extra 1.003",
+        "topic.DOBRO.extra 1.004",
+        "topic.DOBRO.extra 1.005",
+        "topic.DOBRO.extra 1.006",
+        "topic.DOBRO.extra 2.label",
+        "topic.DOBRO.extra 2.001",
+        "topic.DOBRO.extra 2.002",
+        "topic.DOBRO.extra 2.003",
+        "topic.DOBRO.extra 2.004",
+        "topic.DOBRO.extra 2.005",
+        "topic.DOBRO.extra 2.006",
+        "topic.DOBRO.extra 3.label",
+        "topic.DOBRO.extra 3.001",
+        "topic.DOBRO.extra 3.002",
+        "topic.DOBRO.extra 3.003",
+        "topic.DOBRO.extra 3.004"
+      ],
+      "fix": 6,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20362,
+        "completion_tokens": 4713,
+        "total_tokens": 25075,
+        "cost": 0.396313,
+        "prompt_tokens_details": {
+          "cached_tokens": 4773,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3963
+    },
+    "JANA82": {
+      "hash": "84819e039da428f6",
+      "status": "ok",
+      "heading": "JANA82 · Jana Vargová (12) — S60",
+      "keys": [
+        "topic.JANA82.ambient 2.002",
+        "topic.JANA82.ambient 1.x01",
+        "topic.JANA82.ambient 1.x02",
+        "topic.JANA82.ambient 1.x03",
+        "topic.JANA82.ambient 2.x01",
+        "topic.JANA82.ambient 2.x02",
+        "topic.JANA82.extra 1.label",
+        "topic.JANA82.extra 1.001",
+        "topic.JANA82.extra 1.002",
+        "topic.JANA82.extra 1.003",
+        "topic.JANA82.extra 1.004",
+        "topic.JANA82.extra 1.005",
+        "topic.JANA82.extra 2.label",
+        "topic.JANA82.extra 2.001",
+        "topic.JANA82.extra 2.002",
+        "topic.JANA82.extra 2.003",
+        "topic.JANA82.extra 2.004",
+        "topic.JANA82.extra 2.005",
+        "topic.JANA82.extra 2.006",
+        "topic.JANA82.extra 3.label",
+        "topic.JANA82.extra 3.001",
+        "topic.JANA82.extra 3.002",
+        "topic.JANA82.extra 3.003",
+        "topic.JANA82.extra 3.004"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18741,
+        "completion_tokens": 3167,
+        "total_tokens": 21908,
+        "cost": 0.3151515,
+        "prompt_tokens_details": {
+          "cached_tokens": 4709,
+          "cache_write_tokens": 4709
+        }
+      },
+      "usd": 0.3152
+    },
+    "LIDA": {
+      "hash": "68139c2d27e19fad",
+      "status": "ok",
+      "heading": "LIDA · Lída Fialová (43) — S34",
+      "keys": [
+        "topic.LIDA.ambient 1.x01",
+        "topic.LIDA.ambient 1.x02",
+        "topic.LIDA.ambient 2.x01",
+        "topic.LIDA.ambient 2.x02",
+        "topic.LIDA.ambient 2.x03",
+        "topic.LIDA.extra 1.label",
+        "topic.LIDA.extra 1.001",
+        "topic.LIDA.extra 1.002",
+        "topic.LIDA.extra 1.003",
+        "topic.LIDA.extra 1.004",
+        "topic.LIDA.extra 1.005",
+        "topic.LIDA.extra 1.006",
+        "topic.LIDA.extra 2.label",
+        "topic.LIDA.extra 2.001",
+        "topic.LIDA.extra 2.002",
+        "topic.LIDA.extra 2.003",
+        "topic.LIDA.extra 2.004",
+        "topic.LIDA.extra 2.005"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 16045,
+        "completion_tokens": 2339,
+        "total_tokens": 18384,
+        "cost": 0.250672,
+        "prompt_tokens_details": {
+          "cached_tokens": 4112,
+          "cache_write_tokens": 4112
+        }
+      },
+      "usd": 0.2507
+    },
+    "MARTA82": {
+      "hash": "d3a84f4c869b12ec",
+      "status": "ok",
+      "heading": "MARTA82 · Marta Dobiášová (56) — S65",
+      "keys": [
+        "topic.MARTA82.ambient 1.x01",
+        "topic.MARTA82.ambient 1.x02",
+        "topic.MARTA82.ambient 1.x03",
+        "topic.MARTA82.ambient 2.x01",
+        "topic.MARTA82.ambient 2.x02",
+        "topic.MARTA82.ambient 2.x03",
+        "topic.MARTA82.extra 1.label",
+        "topic.MARTA82.extra 1.001",
+        "topic.MARTA82.extra 1.002",
+        "topic.MARTA82.extra 1.003",
+        "topic.MARTA82.extra 1.004",
+        "topic.MARTA82.extra 2.label",
+        "topic.MARTA82.extra 2.001",
+        "topic.MARTA82.extra 2.002",
+        "topic.MARTA82.extra 2.003",
+        "topic.MARTA82.extra 2.004"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 15921,
+        "completion_tokens": 2145,
+        "total_tokens": 18066,
+        "cost": 0.229425,
+        "prompt_tokens_details": {
+          "cached_tokens": 4115,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2294
+    },
+    "MIRA60": {
+      "hash": "7e7aa6bdb1b3a66a",
+      "status": "ok",
+      "heading": "MIRA60 · Mira Hrušková (20) — S39",
+      "keys": [
+        "topic.MIRA60.ambient 1.x01",
+        "topic.MIRA60.ambient 1.x02",
+        "topic.MIRA60.ambient 1.x03",
+        "topic.MIRA60.ambient 2.x01",
+        "topic.MIRA60.ambient 2.x02",
+        "topic.MIRA60.ambient 2.x03",
+        "topic.MIRA60.extra 1.label",
+        "topic.MIRA60.extra 1.001",
+        "topic.MIRA60.extra 1.002",
+        "topic.MIRA60.extra 1.003",
+        "topic.MIRA60.extra 1.004",
+        "topic.MIRA60.extra 1.005",
+        "topic.MIRA60.extra 1.006",
+        "topic.MIRA60.extra 1.007",
+        "topic.MIRA60.extra 2.label",
+        "topic.MIRA60.extra 2.001",
+        "topic.MIRA60.extra 2.002",
+        "topic.MIRA60.extra 2.003",
+        "topic.MIRA60.extra 2.004",
+        "topic.MIRA60.extra 2.005",
+        "topic.MIRA60.extra 2.006",
+        "topic.MIRA60.extra 3.label",
+        "topic.MIRA60.extra 3.001",
+        "topic.MIRA60.extra 3.002",
+        "topic.MIRA60.extra 3.003",
+        "topic.MIRA60.extra 3.004"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 19717,
+        "completion_tokens": 3275,
+        "total_tokens": 22992,
+        "cost": 0.316055,
+        "prompt_tokens_details": {
+          "cached_tokens": 4985,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3161
+    },
+    "OTO": {
+      "hash": "43ab88f7548137e9",
+      "status": "ok",
+      "heading": "OTO · Oto Bielik (44) — S36",
+      "keys": [
+        "topic.OTO.ambient 1.x01",
+        "topic.OTO.ambient 1.x02",
+        "topic.OTO.ambient 1.x03",
+        "topic.OTO.ambient 2.x01",
+        "topic.OTO.ambient 2.x02",
+        "topic.OTO.ambient 2.x03",
+        "topic.OTO.extra 1.label",
+        "topic.OTO.extra 1.001",
+        "topic.OTO.extra 1.002",
+        "topic.OTO.extra 1.003",
+        "topic.OTO.extra 1.004",
+        "topic.OTO.extra 1.005",
+        "topic.OTO.extra 1.006",
+        "topic.OTO.extra 2.label",
+        "topic.OTO.extra 2.001",
+        "topic.OTO.extra 2.002",
+        "topic.OTO.extra 2.003",
+        "topic.OTO.extra 2.004",
+        "topic.OTO.extra 2.005",
+        "topic.OTO.extra 2.006",
+        "topic.OTO.extra 3.label",
+        "topic.OTO.extra 3.001",
+        "topic.OTO.extra 3.002",
+        "topic.OTO.extra 3.003",
+        "topic.OTO.extra 3.004"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18830,
+        "completion_tokens": 3443,
+        "total_tokens": 22273,
+        "cost": 0.330069,
+        "prompt_tokens_details": {
+          "cached_tokens": 4674,
+          "cache_write_tokens": 4674
+        }
+      },
+      "usd": 0.3301
+    },
+    "OTO82": {
+      "hash": "cedaf54e085a00f3",
+      "status": "ok",
+      "heading": "OTO82 · Oto Bielik (66) — S64",
+      "keys": [
+        "topic.OTO82.ambient 2.002",
+        "topic.OTO82.ambient 1.x01",
+        "topic.OTO82.ambient 1.x02",
+        "topic.OTO82.ambient 1.x03",
+        "topic.OTO82.ambient 2.x01",
+        "topic.OTO82.ambient 2.x02",
+        "topic.OTO82.ambient 2.x03",
+        "topic.OTO82.extra 1.label",
+        "topic.OTO82.extra 1.001",
+        "topic.OTO82.extra 1.002",
+        "topic.OTO82.extra 1.003",
+        "topic.OTO82.extra 1.004",
+        "topic.OTO82.extra 1.005",
+        "topic.OTO82.extra 1.006",
+        "topic.OTO82.extra 2.label",
+        "topic.OTO82.extra 2.001",
+        "topic.OTO82.extra 2.002",
+        "topic.OTO82.extra 2.003",
+        "topic.OTO82.extra 2.004",
+        "topic.OTO82.extra 3.label",
+        "topic.OTO82.extra 3.001",
+        "topic.OTO82.extra 3.002",
+        "topic.OTO82.extra 3.003",
+        "topic.OTO82.extra 3.004",
+        "topic.OTO82.extra 3.005",
+        "topic.OTO82.extra 3.006"
+      ],
+      "fix": 3,
+      "conversation_note": "The unlisted opening line topic.OTO82.ambient 2.001 also needs attention: “Nech si veci vyskúša a vysvetlí” awkwardly asks Tóno to explain things to himself, and “výrobu ... podpisujem” is not a natural collocation.",
+      "usage": {
+        "prompt_tokens": 19664,
+        "completion_tokens": 3861,
+        "total_tokens": 23525,
+        "cost": 0.346355,
+        "prompt_tokens_details": {
+          "cached_tokens": 4815,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3464
+    },
+    "POSTA": {
+      "hash": "5dd983805bb9c8dd",
+      "status": "ok",
+      "heading": "POSTA · Alojz Baran (54) — S33",
+      "keys": [
+        "topic.POSTA.ambient 2.002",
+        "topic.POSTA.ambient 1.x01",
+        "topic.POSTA.ambient 1.x02",
+        "topic.POSTA.ambient 1.x03",
+        "topic.POSTA.ambient 2.x01",
+        "topic.POSTA.ambient 2.x02",
+        "topic.POSTA.ambient 2.x03",
+        "topic.POSTA.extra 1.label",
+        "topic.POSTA.extra 1.001",
+        "topic.POSTA.extra 1.002",
+        "topic.POSTA.extra 1.003",
+        "topic.POSTA.extra 1.004",
+        "topic.POSTA.extra 1.005",
+        "topic.POSTA.extra 2.label",
+        "topic.POSTA.extra 2.001",
+        "topic.POSTA.extra 2.002",
+        "topic.POSTA.extra 2.003",
+        "topic.POSTA.extra 2.004"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18105,
+        "completion_tokens": 3796,
+        "total_tokens": 21901,
+        "cost": 0.342861,
+        "prompt_tokens_details": {
+          "cached_tokens": 4306,
+          "cache_write_tokens": 4306
+        }
+      },
+      "usd": 0.3429
+    },
+    "RUDO": {
+      "hash": "b4e7278ea0a970b4",
+      "status": "ok",
+      "heading": "RUDO · Rudolf Pavlík (34) — S34",
+      "keys": [
+        "topic.RUDO.ambient 1.x01",
+        "topic.RUDO.ambient 1.x02",
+        "topic.RUDO.ambient 1.x03",
+        "topic.RUDO.ambient 2.x01",
+        "topic.RUDO.ambient 2.x02",
+        "topic.RUDO.ambient 2.x03",
+        "topic.RUDO.extra 1.label",
+        "topic.RUDO.extra 1.001",
+        "topic.RUDO.extra 1.002",
+        "topic.RUDO.extra 1.003",
+        "topic.RUDO.extra 1.004",
+        "topic.RUDO.extra 1.005",
+        "topic.RUDO.extra 1.006",
+        "topic.RUDO.extra 2.label",
+        "topic.RUDO.extra 2.001",
+        "topic.RUDO.extra 2.002",
+        "topic.RUDO.extra 2.003",
+        "topic.RUDO.extra 2.004",
+        "topic.RUDO.extra 2.005"
+      ],
+      "fix": 0,
+      "conversation_note": "The humour follows Rudo’s theatrical manner and the immediate situation. The knees gag develops coherently; no forced closing quip or era-register problem needs correction.",
+      "usage": {
+        "prompt_tokens": 15496,
+        "completion_tokens": 1483,
+        "total_tokens": 16979,
+        "cost": 0.191517,
+        "prompt_tokens_details": {
+          "cached_tokens": 4177,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1915
+    },
+    "RUZENA": {
+      "hash": "ac005ae4dfdc290c",
+      "status": "ok",
+      "heading": "RUZENA · Ružena Malá (49) — S62",
+      "keys": [
+        "topic.RUZENA.ambient 1.002",
+        "topic.RUZENA.ambient 1.x01",
+        "topic.RUZENA.ambient 1.x02",
+        "topic.RUZENA.ambient 1.x03",
+        "topic.RUZENA.ambient 2.x01",
+        "topic.RUZENA.ambient 2.x02",
+        "topic.RUZENA.ambient 2.x03",
+        "topic.RUZENA.extra 1.label",
+        "topic.RUZENA.extra 1.001",
+        "topic.RUZENA.extra 1.002",
+        "topic.RUZENA.extra 1.003",
+        "topic.RUZENA.extra 1.004",
+        "topic.RUZENA.extra 1.005",
+        "topic.RUZENA.extra 1.006",
+        "topic.RUZENA.extra 2.label",
+        "topic.RUZENA.extra 2.001",
+        "topic.RUZENA.extra 2.002",
+        "topic.RUZENA.extra 2.003",
+        "topic.RUZENA.extra 2.004",
+        "topic.RUZENA.extra 3.label",
+        "topic.RUZENA.extra 3.001",
+        "topic.RUZENA.extra 3.002",
+        "topic.RUZENA.extra 3.003",
+        "topic.RUZENA.extra 3.004"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18163,
+        "completion_tokens": 3016,
+        "total_tokens": 21179,
+        "cost": 0.3028095,
+        "prompt_tokens_details": {
+          "cached_tokens": 4557,
+          "cache_write_tokens": 4557
+        }
+      },
+      "usd": 0.3028
+    },
+    "SIMON": {
+      "hash": "c3ef3496c114c44d",
+      "status": "ok",
+      "heading": "SIMON · Šimon Rybár (60) — S66",
+      "keys": [
+        "topic.SIMON.ambient 1.x01",
+        "topic.SIMON.ambient 1.x02",
+        "topic.SIMON.ambient 1.x03",
+        "topic.SIMON.ambient 2.x01",
+        "topic.SIMON.ambient 2.x02",
+        "topic.SIMON.ambient 2.x03",
+        "topic.SIMON.extra 1.label",
+        "topic.SIMON.extra 1.001",
+        "topic.SIMON.extra 1.002",
+        "topic.SIMON.extra 1.003",
+        "topic.SIMON.extra 1.004",
+        "topic.SIMON.extra 1.005",
+        "topic.SIMON.extra 1.006",
+        "topic.SIMON.extra 2.label",
+        "topic.SIMON.extra 2.001",
+        "topic.SIMON.extra 2.002",
+        "topic.SIMON.extra 2.003",
+        "topic.SIMON.extra 2.004"
+      ],
+      "fix": 3,
+      "conversation_note": "The practical tree-and-cart humour works best. Repeated closing maxims risk making Šimon sound like a dispenser of aphorisms rather than a gardener.",
+      "usage": {
+        "prompt_tokens": 17615,
+        "completion_tokens": 3603,
+        "total_tokens": 21218,
+        "cost": 0.3289805,
+        "prompt_tokens_details": {
+          "cached_tokens": 4203,
+          "cache_write_tokens": 4203
+        }
+      },
+      "usd": 0.329
+    },
+    "SKLAD": {
+      "hash": "a9bc1af6a5f89c30",
+      "status": "ok",
+      "heading": "SKLAD · Štefan Haluška (51) — S35",
+      "keys": [
+        "topic.SKLAD.ambient 1.002",
+        "topic.SKLAD.ambient 2.002",
+        "topic.SKLAD.ambient 1.x01",
+        "topic.SKLAD.ambient 1.x02",
+        "topic.SKLAD.ambient 1.x03",
+        "topic.SKLAD.ambient 2.x01",
+        "topic.SKLAD.ambient 2.x02",
+        "topic.SKLAD.ambient 2.x03",
+        "topic.SKLAD.extra 1.label",
+        "topic.SKLAD.extra 1.001",
+        "topic.SKLAD.extra 1.002",
+        "topic.SKLAD.extra 1.003",
+        "topic.SKLAD.extra 1.004",
+        "topic.SKLAD.extra 2.label",
+        "topic.SKLAD.extra 2.001",
+        "topic.SKLAD.extra 2.002",
+        "topic.SKLAD.extra 2.003",
+        "topic.SKLAD.extra 2.004",
+        "topic.SKLAD.extra 2.005"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 17599,
+        "completion_tokens": 3120,
+        "total_tokens": 20719,
+        "cost": 0.303689,
+        "prompt_tokens_details": {
+          "cached_tokens": 4354,
+          "cache_write_tokens": 4354
+        }
+      },
+      "usd": 0.3037
+    },
+    "TONO82": {
+      "hash": "398990870fae07b6",
+      "status": "ok",
+      "heading": "TONO82 · Anton Farkaš (12) — S64",
+      "keys": [
+        "topic.TONO82.ambient 1.x01",
+        "topic.TONO82.ambient 1.x02",
+        "topic.TONO82.ambient 2.x01",
+        "topic.TONO82.ambient 2.x02",
+        "topic.TONO82.ambient 2.x03",
+        "topic.TONO82.extra 1.label",
+        "topic.TONO82.extra 1.001",
+        "topic.TONO82.extra 1.002",
+        "topic.TONO82.extra 1.003",
+        "topic.TONO82.extra 1.004",
+        "topic.TONO82.extra 1.005",
+        "topic.TONO82.extra 1.006",
+        "topic.TONO82.extra 2.label",
+        "topic.TONO82.extra 2.001",
+        "topic.TONO82.extra 2.002",
+        "topic.TONO82.extra 2.003",
+        "topic.TONO82.extra 2.004",
+        "topic.TONO82.extra 2.005",
+        "topic.TONO82.extra 2.006",
+        "topic.TONO82.extra 3.label",
+        "topic.TONO82.extra 3.001",
+        "topic.TONO82.extra 3.002",
+        "topic.TONO82.extra 3.003",
+        "topic.TONO82.extra 3.004"
+      ],
+      "fix": 8,
+      "conversation_note": "The neutral-address rule has been applied to both speakers, as specified in the ambient-topic row. The existing labels “Čo vyrábaš?” and “Páči sa ti v škole?” also conflict with that rule but are outside the review keys. “U vás” in the Mikuláš question naturally refers to the household rather than formal address.",
+      "usage": {
+        "prompt_tokens": 21075,
+        "completion_tokens": 4675,
+        "total_tokens": 25750,
+        "cost": 0.399392,
+        "prompt_tokens_details": {
+          "cached_tokens": 5012,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3994
+    },
+    "VERA60": {
+      "hash": "9aff815fdfb4b529",
+      "status": "ok",
+      "heading": "VERA60 · Vera Nemcová (22) — S37",
+      "keys": [
+        "topic.VERA60.ambient 1.x01",
+        "topic.VERA60.ambient 1.x02",
+        "topic.VERA60.ambient 1.x03",
+        "topic.VERA60.ambient 2.x01",
+        "topic.VERA60.ambient 2.x02",
+        "topic.VERA60.extra 1.label",
+        "topic.VERA60.extra 1.001",
+        "topic.VERA60.extra 1.002",
+        "topic.VERA60.extra 1.003",
+        "topic.VERA60.extra 1.004",
+        "topic.VERA60.extra 2.label",
+        "topic.VERA60.extra 2.001",
+        "topic.VERA60.extra 2.002",
+        "topic.VERA60.extra 2.003",
+        "topic.VERA60.extra 2.004",
+        "topic.VERA60.extra 3.label",
+        "topic.VERA60.extra 3.001",
+        "topic.VERA60.extra 3.002",
+        "topic.VERA60.extra 3.003",
+        "topic.VERA60.extra 3.004"
+      ],
+      "fix": 4,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18989,
+        "completion_tokens": 4017,
+        "total_tokens": 23006,
+        "cost": 0.36123,
+        "prompt_tokens_details": {
+          "cached_tokens": 4540,
+          "cache_write_tokens": 4540
+        }
+      },
+      "usd": 0.3612
+    },
+    "Q10": {
+      "hash": "8710866c2a8c3fa8",
+      "status": "ok",
+      "heading": "Q10 (side) — actions Q10A, Q10B, Q10C, Q10D",
+      "keys": [
+        "quest.Q10.goal",
+        "quest.Q10.hint.1",
+        "quest.Q10.hint.2",
+        "quest.Q10.hint.3",
+        "quest.Q10.reward",
+        "quest.Q10.title"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11190,
+        "completion_tokens": 1133,
+        "total_tokens": 12323,
+        "cost": 0.149934,
+        "prompt_tokens_details": {
+          "cached_tokens": 2864,
+          "cache_write_tokens": 2864
+        }
+      },
+      "usd": 0.1499
+    },
+    "overlay:ZUZANA.extra 1": {
+      "hash": "2ac12b7f13d62705",
+      "status": "ok",
+      "heading": "overlay ZUZANA.extra 1",
+      "keys": [
+        "topic.ZUZANA.extra 1.label",
+        "topic.ZUZANA.extra 1.001",
+        "topic.ZUZANA.extra 1.002",
+        "topic.ZUZANA.extra 1.003",
+        "topic.ZUZANA.extra 1.004",
+        "topic.ZUZANA.extra 1.005",
+        "topic.ZUZANA.extra 1.006",
+        "topic.ZUZANA.extra 1.007",
+        "topic.ZUZANA.extra 1.008",
+        "topic.ZUZANA.extra 1.009",
+        "topic.ZUZANA.extra 1.010",
+        "topic.ZUZANA.extra 1.011"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13296,
+        "completion_tokens": 1437,
+        "total_tokens": 14733,
+        "cost": 0.1823005,
+        "prompt_tokens_details": {
+          "cached_tokens": 3463,
+          "cache_write_tokens": 3463
+        }
+      },
+      "usd": 0.1823
+    },
+    "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3": {
+      "hash": "00346ed6e457ad28",
+      "status": "ok",
+      "heading": "overlay ZUZANA.extra 2 | overlay ZUZANA.extra 3",
+      "keys": [
+        "topic.ZUZANA.extra 2.label",
+        "topic.ZUZANA.extra 2.001",
+        "topic.ZUZANA.extra 2.002",
+        "topic.ZUZANA.extra 2.003",
+        "topic.ZUZANA.extra 2.004",
+        "topic.ZUZANA.extra 2.005",
+        "topic.ZUZANA.extra 2.006",
+        "topic.ZUZANA.extra 3.label",
+        "topic.ZUZANA.extra 3.001",
+        "topic.ZUZANA.extra 3.002",
+        "topic.ZUZANA.extra 3.003",
+        "topic.ZUZANA.extra 3.004",
+        "topic.ZUZANA.extra 3.005",
+        "topic.ZUZANA.extra 3.006",
+        "topic.ZUZANA.extra 3.007"
+      ],
+      "fix": 0,
+      "conversation_note": "Both exchanges suit Zuzana's age and voice. The humour follows naturally from her sensory directions and literal reasoning; the forms of address are consistent.",
+      "usage": {
+        "prompt_tokens": 14663,
+        "completion_tokens": 1856,
+        "total_tokens": 16519,
+        "cost": 0.214886,
+        "prompt_tokens_details": {
+          "cached_tokens": 3776,
+          "cache_write_tokens": 3776
+        }
+      },
+      "usd": 0.2149
+    },
+    "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5": {
+      "hash": "2bd0b48ac5d51b8f",
+      "status": "ok",
+      "heading": "overlay ZUZANA.extra 4 | overlay ZUZANA.extra 5",
+      "keys": [
+        "topic.ZUZANA.extra 4.label",
+        "topic.ZUZANA.extra 4.001",
+        "topic.ZUZANA.extra 4.002",
+        "topic.ZUZANA.extra 4.003",
+        "topic.ZUZANA.extra 4.004",
+        "topic.ZUZANA.extra 4.005",
+        "topic.ZUZANA.extra 4.006",
+        "topic.ZUZANA.extra 4.007",
+        "topic.ZUZANA.extra 4.008",
+        "topic.ZUZANA.extra 5.label",
+        "topic.ZUZANA.extra 5.001",
+        "topic.ZUZANA.extra 5.002",
+        "topic.ZUZANA.extra 5.003",
+        "topic.ZUZANA.extra 5.004",
+        "topic.ZUZANA.extra 5.005",
+        "topic.ZUZANA.extra 5.006",
+        "topic.ZUZANA.extra 5.007"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 14728,
+        "completion_tokens": 1592,
+        "total_tokens": 16320,
+        "cost": 0.191915,
+        "prompt_tokens_details": {
+          "cached_tokens": 3885,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1919
+    },
+    "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7": {
+      "hash": "cede3580e334f61a",
+      "status": "ok",
+      "heading": "overlay ZUZANA.extra 6 | overlay ZUZANA.extra 7",
+      "keys": [
+        "topic.ZUZANA.extra 6.label",
+        "topic.ZUZANA.extra 6.001",
+        "topic.ZUZANA.extra 6.002",
+        "topic.ZUZANA.extra 6.003",
+        "topic.ZUZANA.extra 6.004",
+        "topic.ZUZANA.extra 6.005",
+        "topic.ZUZANA.extra 6.006",
+        "topic.ZUZANA.extra 7.label",
+        "topic.ZUZANA.extra 7.001",
+        "topic.ZUZANA.extra 7.002",
+        "topic.ZUZANA.extra 7.003",
+        "topic.ZUZANA.extra 7.004",
+        "topic.ZUZANA.extra 7.005",
+        "topic.ZUZANA.extra 7.006",
+        "topic.ZUZANA.extra 7.007"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 14931,
+        "completion_tokens": 2210,
+        "total_tokens": 17141,
+        "cost": 0.22597,
+        "prompt_tokens_details": {
+          "cached_tokens": 3760,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.226
+    },
+    "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)": {
+      "hash": "97de4733fbb286fd",
+      "status": "ok",
+      "heading": "overlay ZUZANA.extra 8 | overlay epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)",
+      "keys": [
+        "topic.ZUZANA.extra 8.label",
+        "topic.ZUZANA.extra 8.001",
+        "topic.ZUZANA.extra 8.002",
+        "topic.ZUZANA.extra 8.003",
+        "topic.ZUZANA.extra 8.004",
+        "topic.ZUZANA.extra 8.005",
+        "epilogue.10.shot",
+        "epilogue.10.line"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13452,
+        "completion_tokens": 1767,
+        "total_tokens": 15219,
+        "cost": 0.19137,
+        "prompt_tokens_details": {
+          "cached_tokens": 3500,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1914
+    }
+  },
+  "keys": {
+    "action.I01.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň, pán Bielik. Prepáčte, že ruším. Toto by ste mali vidieť.",
+      "batch": "I01+I02"
+    },
+    "action.I01.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Najprv sa pozrieme, až potom budeme rozprávať.",
+      "batch": "I01+I02"
+    },
+    "action.I01.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tomu zatiaľ nerozumiem. Ale prístroj klame menej ako človek a tento tvrdí, že hovoríte pravdu.",
+      "batch": "I01+I02"
+    },
+    "action.I01.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Takže mi pomôžete?",
+      "batch": "I01+I02"
+    },
+    "action.I01.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pumpu? Čo má pumpa spoločné s časom?",
+      "batch": "I01+I02"
+    },
+    "action.I01.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Chladí model v búdke. Kým neťahá vodu, meracia miestnosť zostane zamknutá.",
+      "batch": "I01+I02"
+    },
+    "action.I01.x07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A dierovač potom doneste mne. Líde ho vrátim sám, ona si požičané veci pamätá dlhšie ako text hry.",
+      "batch": "I01+I02"
+    },
+    "action.I02.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Posiela ma pán Bielik, tu je jeho lístok.",
+      "batch": "I01+I02"
+    },
+    "action.I02.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lístok, podpis, materiál. V tomto poradí.",
+      "batch": "I01+I02"
+    },
+    "action.I02.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Podpis je Otov, ten spoznám aj potme.",
+      "batch": "I01+I02"
+    },
+    "action.I02.x04": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The omitted object makes the question sound unfinished. Adding “to” naturally refers back to completing the work.",
+      "suggestion": "A keby som to do obeda nestihol?",
+      "text": "A keby som do obeda nestihol?",
+      "batch": "I01+I02"
+    },
+    "action.I02.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak o tretej je olovrant. Ten sa vydáva bez lístka.",
+      "batch": "I01+I02"
+    },
+    "action.I03.z01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Presne to mi včera hovorila malá Zuzka. Že náš les visí na jednej skrutke.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I03.z02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mala pravdu. Stačila jedna skrutka.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I03.z03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá má pravdu skoro vždy. Len skrutkovač jej nikto nepožičia.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I03.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Škoda. Prvá veta mi drží, ostatné sa kývu ako ten les.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I03.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo, ty sa drž textu. Les už drží.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I07.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pumpa ťahá. Nová manžeta sedí a nič nekvapká.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I07.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ukážte ruky. Suché. Tak to naozaj nekvapká.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I07.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď sa ma spýta, prečo mám také čudné topánky?",
+      "batch": "I03+I07+I09"
+    },
+    "action.I07.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mira sa na topánky nepozerá. Pozerá sa na to, čo človek robí rukami.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ty si ten, čo opravil pumpu? Oto vravel, že prídeš. Hovor, ja zatiaľ meriam.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x02": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Prepisuje to dozadu” is an awkward way to describe retroactive rewriting. “Spätne” expresses the intended temporal meaning naturally and precisely.",
+      "suggestion": "Dobrý deň. V budúcnosti niekto maže všetko, čo nesedí s jeho modelom. A prepisuje to spätne.",
+      "text": "Dobrý deň. V budúcnosti niekto maže všetko, čo nesedí s jeho modelom. A prepisuje to dozadu.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka by povedala to isté. Teda… jedna moja známa.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tvoja známa má rozum. Pozdravuj ju.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.z01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vera kreslí v parku na lavičke. Vedľa nej skáče škôlku malá Zuzka.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.z02": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Tá so škôlkou” awkwardly identifies the girl by an activity as though it were something she carries. Refer directly to her playing hopscotch.",
+      "suggestion": "Tá, čo skáče škôlku? Videl som ju cestou sem.",
+      "text": "Tá so škôlkou? Videl som ju cestou sem.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.z03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá. Ak budeš v Ivanke blúdiť, spýtaj sa jej. Ona sa tu ešte nestratila.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Takže papier z povaly, rydlo od Very a potom pošta.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I09.x06": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "“Papier nes rovno” does not clearly instruct Adam to keep the paper uncreased. Calling a creased impression worse than none substitutes an unsupported maxim for Mira’s practical advice.",
+      "suggestion": "A papier nepokrč, aby bol odtlačok čitateľný.",
+      "text": "A papier nes rovno. Pokrčený odtlačok je horší ako žiadny.",
+      "batch": "I03+I07+I09"
+    },
+    "action.I10.z01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tupé má teta Vera v puzdre. Ostré si nechá pre seba.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzka, ty poznáš moje puzdro lepšie ako ja.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z03": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "“Ho” refers to the case, but Zuzana counts the tools inside it, not the case itself.",
+      "suggestion": "Lebo tie rydlá rátam. Päť ostrých rydiel a jedno tupé.",
+      "text": "Lebo ho rátam. Päť ostrých rydiel a jedno tupé.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo ešte potrebujete?",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jeden list mám mať dvakrát. Oba presne rovnaké.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na to má pán Baran na pošte čierny papier. Píšete hore a dole sa to napíše samo.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Uhlový papier. Leží na pošte pri prepážke, pre každého.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z08": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The comma incorrectly separates the verb from its dative complement.",
+      "suggestion": "Ďakujem obom. Rydlo vám potom vrátim.",
+      "text": "Ďakujem, obom. Rydlo vám potom vrátim.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I10.z09": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Máte v Ivanke ciest dosť” is awkward for having plenty of walking or errands to do.",
+      "suggestion": "Nechajte ho potom Mire, ona mi ho vráti. Vy sa po Ivanke aj tak dosť nachodíte.",
+      "text": "Nechajte ho potom Mire, ona mi ho vráti. Vy máte v Ivanke ciest aj tak dosť.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I13.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Túto vetu poznám. Babka mi ju hovorila, keď som chcel vyhodiť pokazené rádio.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ďakujem. Vezmem si len jeden hárok a ruky si nechám čisté.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.z01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Len opatrne, prosím. Farbí aj prsty. Malá Zuzka si ním u mňa obkresľuje dlane.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.z02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá malá, čo skáče v parku škôlku?",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.z03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá. Chodí sa sem pozerať na nové známky. Kým si ich prezrie, má obkreslené obe ruky.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jeden hárok uhlového papiera. Zapíšem: vydaný jeden kus, na úradnú potrebu.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vy zapisujete aj uhlový papier?",
+      "batch": "I10+I13+I14"
+    },
+    "action.I14.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zapisujem všetko, prosím pekne. Inak by sa jedného dňa zistilo, že tu nič nebolo.",
+      "batch": "I10+I13+I14"
+    },
+    "action.I16.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Potreboval by som potvrdiť tento list. Mám ho v dvoch vyhotoveniach.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I16.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prosím pekne. Najprv si ho prečítam, až potom pečiatka. Inak by som potvrdzoval aj recepty na koláč.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I16.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To mi stačí. Pečiatka je presne to, čo potrebujem.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I16.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A neskladajte ho viackrát, ako treba. Papier sa najprv trhá na ohyboch.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I17.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poďakujte odo mňa aj Vere. A pánovi Baranovi.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I17.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poďakujem. V Ivanke sa o tebe aj tak bude ešte dlho hovoriť.",
+      "batch": "I16+I17+E01"
+    },
+    "action.I17.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To mi stačí.",
+      "batch": "I16+I17+E01"
+    },
+    "action.E01.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Ahoj. Môžem vám obom niečo ukázať?",
+      "batch": "I16+I17+E01"
+    },
+    "action.E01.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ak to nie je ďalší oznam o brigáde, tak áno.",
+      "batch": "I16+I17+E01"
+    },
+    "action.E01.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Akého dospelého? Ja som ešte dospelý nebol.",
+      "batch": "I16+I17+E01"
+    },
+    "action.E01.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tóno, prines pánovi stoličku. Toto bude dlhší rozhovor.",
+      "batch": "I16+I17+E01"
+    },
+    "action.E01.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Máme len jednu. A na tej sedím ja.",
+      "batch": "I16+I17+E01"
+    },
+    "action.E02.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z roku 2020? To je ešte ďalej ako rok 2000. A ten je strašne ďaleko.",
+      "batch": "E02+E03"
+    },
+    "action.E02.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A bude mať správne ťažisko?",
+      "batch": "E02+E03"
+    },
+    "action.E02.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bude. Visí úplne rovno.",
+      "batch": "E02+E03"
+    },
+    "action.E02.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stratí sa? U mňa sa veci nestrácajú.",
+      "batch": "E02+E03"
+    },
+    "action.E02.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "U vás nie. Ale škola sa bude ešte veľakrát sťahovať a prerábať.",
+      "batch": "E02+E03"
+    },
+    "action.E02.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z čoho?",
+      "batch": "E02+E03"
+    },
+    "action.E02.x07": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z dejepisu. Odteraz ho budem brať vážnejšie.",
+      "batch": "E02+E03"
+    },
+    "action.E03.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Mám tu výdajný lístok od pána Bielika.",
+      "batch": "E02+E03"
+    },
+    "action.E03.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ukážte. Pán Bielik píše lístky tak, že by ich prečítal aj nočný vrátnik bez okuliarov.",
+      "batch": "E02+E03"
+    },
+    "action.E03.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rýchle je to vtedy, keď je lístok v poriadku. Toto je ten prípad.",
+      "batch": "E02+E03"
+    },
+    "action.E03.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poviem mu. A keby predsa odletelo?",
+      "batch": "E02+E03"
+    },
+    "action.E03.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak ho zapíšem ako úbytok. Prvé lietadlo v mojej inventárnej knihe.",
+      "batch": "E02+E03"
+    },
+    "action.E05.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E05.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Vás tu nepoznám, a to poznám každého. Čo to bude?",
+      "batch": "E05+E07+E08"
+    },
+    "action.E05.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pohár je vratný. Keď ho donesiete späť, dostanete zálohu.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E05.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zálohu si radšej nechajte.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E05.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Verím. U nás doma je pohár od uhoriek starší ako ja.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E07.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Tá mladá lipa na dvore… Vozík chodí tesne popri nej.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E07.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako dlho bude potrebovať ohrádku?",
+      "batch": "E05+E07+E08"
+    },
+    "action.E07.x03": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The cart learning respect stretches the personification into a tacked-on comparison. Keep the humour grounded in people's habits when steering the cart.",
+      "suggestion": "Kým sa ju ľudia nenaučia obchádzať. Pešo im to trvá pár rokov, s vozíkom dlhšie.",
+      "text": "Kým si ju vozík nezačne vážiť. Pri ľuďoch to trvá pár rokov, pri vozíkoch dlhšie.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E08.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pekná mapa. Podľa tej by to našiel aj cudzí.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E08.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Cudzí to nájsť nemá. Preto je tam lastovička a nie šípka.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E08.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V ktorom?",
+      "batch": "E05+E07+E08"
+    },
+    "action.E08.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V tom, keď to budeme obaja potrebovať.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E08.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A teraz dosku späť a ruky do vreciek. Je december.",
+      "batch": "E05+E07+E08"
+    },
+    "action.E10.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zajtra tu bude ešte prútik. Príďte sa radšej pozrieť o pár desaťročí.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.E10.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Presne tak to mám v pláne.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.E10.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak dovidenia. A dvere od skladu za sebou privrite, nech mi sem nefúka.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6A.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A prečo sa nevráti sám?",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6A.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ráno som mu dal obyčajné zrno. Béla je zvyknutý na svoju zmes a vie to dať najavo.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6A.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak mu donesiem tú správnu.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6A.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Budem vám povďačný. Bez neho je pošta príliš tichá.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6B.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán Baran vraví, že tu máte krmivo pre jeho holuba.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6B.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Bélu lístok netreba. Ten je jediný, komu vydávam na slovo.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6B.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo práve jemu?",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6B.x04": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Calling the stare worse than a requisition slip does not explain the exception. The comparison should show that Béla's stare is more effective than paperwork.",
+      "suggestion": "Lebo keď nič nedostane, sadne si mi na okienko a pozerá. To na mňa zaberá viac než lístok.",
+      "text": "Lebo keď nič nedostane, sadne si mi na okienko a pozerá. To je horšie ako každý lístok.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6C.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Cestu domov má v hlave lepšie” is an unnatural collocation. A simple verb of knowing preserves the self-deprecating comparison.",
+      "suggestion": "Najedol sa, otriasol a letí rovno k pošte. Cestu domov pozná lepšie ako ja.",
+      "text": "Najedol sa, otriasol a letí rovno k pošte. Cestu domov má v hlave lepšie ako ja.",
+      "batch": "E10+Q6A+Q6B+Q6C"
+    },
+    "action.Q6D.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ďakujem. V zápisníku mám samé čísla a šípky. Toto bude prvá pekná strana.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q6D.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keby ste niekedy potrebovali poslať správu, Béla poletí. Nie ďaleko, ale ochotne.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q6D.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na moju adresu by asi netrafil.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q6D.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Béla netrafí na žiadnu adresu, prosím. Letí len domov. Preto je taký spoľahlivý.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7A.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A tá prvá veta je dobrá?",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7A.x02": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The opening line revealed later is reassurance, not a greeting. The station comparison should reflect what Rudo actually says.",
+      "suggestion": "Najlepšia! Len bez druhej znie ako utešovanie na stanici.",
+      "text": "Najlepšia! Len bez druhej znie ako pozdrav na stanici.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7A.x03": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Byť vďačný obyčajne” is an unnatural way to describe an untheatrical expression of thanks. Attach the manner to thanking instead.",
+      "suggestion": "Stačí, keď poďakujete celkom obyčajne.",
+      "text": "Stačí, keď budete vďačný obyčajne.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7A.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Obyčajne to neviem. Ale nacvičím to!",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7C.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Váš scenár. Ležal na povale pod Mirinými nákresmi.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7C.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Môj scenár! Celý! Aj s druhým dejstvom!",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7C.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo, scenár mi hneď daj. Do premiéry ho zamknem.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7C.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A z čoho sa budem učiť?",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q7C.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Odpíšem ti ho. Originál sa už z tejto sály nepohne.",
+      "batch": "Q6D+Q7A+Q7C"
+    },
+    "action.Q9A.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ahoj. Môžem sa pozrieť, čo máš pod tým vzorom?",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9A.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Môžete. Len sa, prosím, nesmejte.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9A.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oddelí? Ako?",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9A.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pôjde druhou cestou. Ako keď sa v jedálni rozdelí rad, aby sa malí nemuseli tlačiť s veľkými.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9A.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bez poznámok je to len čiara, ktorá vyzerá ako chyba.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9A.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poznámky pôjdu s ňou. Sľubujem.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9B.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán učiteľ, máte chvíľu? Toto nakreslila Jana.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9B.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na výstavku už máme všetko schválené. Ale ukážte.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9B.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Súdružka riaditeľka bude čítať každé slovo, tak nech to Jana napíše úhľadne.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9B.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Možno som na to čakal aj ja. Len som to nevedel.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9C.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu máš svoju schému. Pán učiteľ ti na ňu pripísal povolenie.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9C.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo poviem, keď sa niekto spýta, prečo je to inak ako vo vzore?",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9C.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To isté, čo mne. Aj s tým radom v jedálni.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q9C.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bude v ňom poriadok. Každá schéma aj s poznámkami.",
+      "batch": "Q9A+Q9B+Q9C"
+    },
+    "action.Q10A.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvonček, ktorý nezvoní",
+      "batch": "Q10A"
+    },
+    "action.Q10A.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toto je zvonček našej triedy. Pozrite, zatrasiem. Nič.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Chýba mu srdce.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nechýba. Mám ho vo vreckovke. Len sa mu roztrhlo pútko.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na konci roka mám zvoniť ja. Pani učiteľka povedala, že mám najistejšiu ruku.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kto ho mal opraviť?",
+      "batch": "Q10A"
+    },
+    "action.Q10A.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ujo Oto. Ale ujo Oto má dnes štyri budíky a ani jednu voľnú ruku.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kožu má ujo Štefan na dvore. Lenže deti tam nesmú.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.008": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Adam uses a feminine verb to claim he wrote Zuzana's note. Keep him as the speaker, but have him acknowledge that she wrote it.",
+      "suggestion": "Tak si mu napísala lístok. Ujo Štefan vždy hovorí: „Lístok, podpis, materiál.“",
+      "text": "Tak som mu napísala lístok. Ujo Štefan vždy hovorí: lístok, podpis, materiál.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.009": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "„Lístok. Prosím jeden kúsok kože na zvonček. Zuzana, prvá trieda.“",
+      "batch": "Q10A"
+    },
+    "action.Q10A.010": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj podpis tam je. Bez podpisu nič.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.011": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Zuzana offers to fetch leather from a yard she cannot enter and asks to borrow the bell she already holds. She should ask Adam to do the repair and offer him the bell, using formal address.",
+      "suggestion": "Prinesiete kožu a spravíte pútko? Požičiam vám zvonček.",
+      "text": "Kožu prinesiem a pútko spravím. Požičiaš mi zvonček?",
+      "batch": "Q10A"
+    },
+    "action.Q10A.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Daj Štefanovi na dvore dielne Zuzanin lístok a vyzdvihni si kožený odrezok.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Daj Štefanovi na dvore dielne Zuzanin lístok a vyzdvihni si kožený odrezok.",
+      "batch": "Q10A"
+    },
+    "action.Q10A.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porozprávaj sa so Zuzanou v parku o zvončeku, ktorý nezvoní.",
+      "batch": "Q10A"
+    },
+    "action.Q10B.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Podať Štefanovi Zuzanin lístok",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lístok. „Prosím jeden kúsok kože na zvonček.“",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Podpis: Zuzana, prvá trieda.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Platí?",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lístok, podpis, materiál. Všetko sedí. Nikde nie je napísané, že podpis musí byť dospelý.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Úzky odrezok z remeňa. Na pútko akurát. Lístok si nechávam.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Do evidencie?",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na stenu. Taký pekný lístok som tu ešte nemal.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z koženého odrezku sprav zvončeku nové pútko a zaves naň srdce.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z koženého odrezku sprav zvončeku nové pútko a zaves naň srdce.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10B.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzanin lístok podaj Štefanovi na dvore dielne.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zavesiť srdce zvončeka na nové pútko",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pútko cez uško, srdce na miesto, uzol dovnútra, aby sa nešúchal.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Cinknem do dlane” is not a natural way to describe gently testing a bell held in the palm.",
+      "suggestion": "Opatrne ním zacinkám v dlani. Zvoní. Ale poriadne zvoniť bude prvá Zuzana.",
+      "text": "Opatrne cinknem do dlane. Zvoní. Ale poriadne zvoniť bude prvá Zuzana.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť opravený zvonček Zuzane do parku.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť opravený zvonček Zuzane do parku.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10C.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V brašni spoj kožený odrezok s triednym zvončekom.",
+      "batch": "Q10B+Q10C"
+    },
+    "action.Q10D.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vrátiť Zuzane opravený zvonček",
+      "batch": "Q10D"
+    },
+    "action.Q10D.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvoní? Naozaj?",
+      "batch": "Q10D"
+    },
+    "action.Q10D.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Being a class bell does not explain why it must be rung slowly. Tie the caution to keeping the repaired bell working.",
+      "suggestion": "Skús. Ale jemne, nech vám triedny zvonček vydrží.",
+      "text": "Skús. Ale pomaly, je triedny.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Počuli ste? Takto bude znieť koniec roka.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzka, teraz celý park vie, že sa skončila hodina.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.005": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The feminine verb refers back to the lesson, making the twenty-four days sound like its remaining duration. Explicitly distinguish the school year from the lesson.",
+      "suggestion": "Ale školský rok sa ešte neskončil. Ešte dvadsaťštyri dní. Toto bola skúška.",
+      "text": "Ešte sa neskončila. Ešte dvadsaťštyri dní. Toto bola skúška.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Skúška vyšla.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ďakujem. Môžete si skočiť škôlku. Ale iba do štvorky, dospelí ďalej padajú.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.008": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď budete niekedy počuť zvoniť na konci roka, zamávajte. To je dohoda.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.009": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dohoda.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzana skúšobne zazvonila celému parku. Dohodli sme sa, že na konci roka zamávam.",
+      "batch": "Q10D"
+    },
+    "action.Q10D.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Opravený zvonček použi na Zuzanu v parku.",
+      "batch": "Q10D"
+    },
+    "look.S32.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Studňa s pevným dreveným krytom a vedrom na reťazi. Na návsi zrejme najdôležitejšie miesto na klebety.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S32.chalk_arrow": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na kameni pri studni je kriedová šípka a pod ňou PARK. Niekto v Ivanke myslí aj na cudzincov.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S36.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pilník s rúčkou ohladenou do lesku. Oto ho drží presne tam, kde ja držím ten svoj.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "entry.S37.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Park pri kaštieli. Na lavičke niekto kreslí, na chodníku niekto skáče škôlku. Tu sa nikto neponáhľa.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S37.ZUZANA": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Každé políčko nahlas odpočíta” is awkward for counting hopscotch squares aloud; “odpočítať” suggests subtraction or counting down.",
+      "suggestion": "Malá Zuzana skáče škôlku a nahlas ráta políčka. Vedľa v tráve leží zvonček, čo ešte necinkol.",
+      "text": "Malá Zuzana skáče škôlku a každé políčko nahlas odpočíta. Vedľa v tráve leží zvonček, čo ešte necinkol.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S37.ZUZANA.variant1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzana kreslí kriedou ďalšiu škôlku a počíta políčka. Občas sa pozrie, či už nesiem zvonček.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "hotspot.S37.hopscotch.name": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kriedová škôlka",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S37.hopscotch": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Škôlka kriedou na chodníku: osem políčok a hore polkruh. Čiary sú rovnejšie ako na mojich nákresoch.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S38.ambient 2": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "A worn path suggests regular visits, but provides no basis for claiming the visitor is punctual. The final phrase is an unsupported comic tag.",
+      "suggestion": "Tráva pri búdke je vyšliapaná do cestičky. Niekto sem chodí každý deň.",
+      "text": "Tráva pri búdke je vyšliapaná do cestičky. Niekto sem chodí každý deň, a určite načas.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S38.paper_boat": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Má ceruzkou ZUZKA” is an awkward ellipsis; the inscription needs “napísané”.",
+      "suggestion": "Papierová loďka uviazla v tráve pri kanáli. Na boku má ceruzkou napísané ZUZKA. Kapitánka zrejme ostala na brehu.",
+      "text": "Papierová loďka uviazla v tráve pri kanáli. Na boku má ceruzkou ZUZKA. Kapitánka zrejme ostala na brehu.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S40.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hrubý trám a na ňom ceruzkou čiarky s dátumami. Aj povala tu má svoj zápisník.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "look.S65.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hodiny nad pultom idú presne. Len keď človek čaká na výdaj, zdá sa, že stoja.",
+      "batch": "S32+S36+S37+S38+S40+S65"
+    },
+    "topic.BERTA.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A u koho by som tu mohol byť na návšteve?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To mi práve poviete vy. Ja som už vylúčila polovicu dediny.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A tú druhú polovicu?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 1.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tú vylúčim do večera.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka? Tá má dvadsaťdva rokov.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 2.x02": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Adam is quoting the word he used; quotation marks are needed to distinguish it from the surrounding sentence.",
+      "suggestion": "Povedal som „známa“.",
+      "text": "Povedal som známa.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.ambient 2.x03": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Berta is quoting Adam's exact word, which should be marked with Slovak quotation marks.",
+      "suggestion": "Najprv ste povedali „babka“. Ja počujem dobre, mladý pán.",
+      "text": "Najprv ste povedali babka. Ja počujem dobre, mladý pán.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dievčatko v parku",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kto je to malé dievča, čo skáče v parku škôlku?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.002": {
+      "verdict": "fix",
+      "category": "tone",
+      "problem": "The clause about Zuzka being called home breaches the binding restriction on references to her home. Remove only that clause.",
+      "suggestion": "Zuzka. Ráno v škole, poobede v parku a večer pri kanáli.",
+      "text": "Zuzka. Ráno v škole, poobede v parku a večer pri kanáli, kým ju nezavolajú domov.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyzerá, že vie o Ivanke všetko.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vie. Čo nevie Zuzka, viem ja. A čo neviem ja, to sa ešte nestalo.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A o mne už niečo viete?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Že nosíte čudné topánky. Zvyšok mi Zuzka povie do večera.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Novinky z dediny",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo je nové v Ivanke?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Susedia oproti majú nové rádio. Teraz celá ulica vie, kedy idú správy a kedy dychovka.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A to je dobre?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri správach áno. Dychovku by sme si vedeli zahrať aj sami.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A v sále bude premiéra. Ak Rudo nájde scenár. Stráca ho častejšie ako dáždnik.",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je vôbec niečo nové, čo by ste ešte nevedeli?",
+      "batch": "BERTA"
+    },
+    "topic.BERTA.extra 2.007": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Berta says this explains her questioning, but she has not asked Adam any questions in this exchange. Refer to her curiosity instead.",
+      "suggestion": "Vy, mladý pán. Preto som taká zvedavá.",
+      "text": "Vy, mladý pán. Preto sa tak pýtam.",
+      "batch": "BERTA"
+    },
+    "topic.BOZO.ambient 1.z01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keby ste predsa zablúdili, v parku skáče škôlku malá Zuzka.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.ambient 1.z02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ona pozná cestu?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.ambient 1.z03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Ivanke pozná každý kút. Lepšie ako ja cestovný poriadok, a ten viem naspamäť.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.ambient 1.x01": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Nothing in the exchange explains why an ordinary visitor could not ask for Hrušková. React to Adam's conspicuous claim instead of inventing a restriction on ordinary visitors.",
+      "suggestion": "Obyčajný návštevník? Myslel som, že idete za Hruškovou. Ale nech sa vám to darí.",
+      "text": "Obyčajný návštevník by sa nepýtal na Hruškovú. Ale nech sa vám to darí.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kde sedí to vedenie?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V Bratislave. Takže aj tak začnete u mňa.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vlaky",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koľko vlakov tu denne zastaví?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toľko, koľko je v cestovnom poriadku. Ani o jeden viac.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď niektorý mešká?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.004": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The final sentence offers being able to wait as a benefit, without a meaningful contrast. Making the benefit certainty about what he is waiting for connects it to Božo's subsequent dislike of uncertainty.",
+      "suggestion": "Tak je to ten istý vlak, len neskôr. Aspoň viem, na čo čakám.",
+      "text": "Tak je to ten istý vlak, len neskôr. Na ten sa dá aspoň čakať.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.005": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "When politely addressing one man, the verb is plural but the predicative adjective remains singular: 'máte rád'.",
+      "suggestion": "Vy máte rád aj meškanie?",
+      "text": "Vy máte radi aj meškanie?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nemám rád nejasnosti. Vlak, čo mešká, aspoň vie, kam ide.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ivanka",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je Ivanka veľká dedina?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Taká akurát. Kostol, kaštieľ s parkom, pošta a stanica. Všetko, čo človek potrebuje.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A Malý Dunaj kúsok za humnami. Keď fúka od vody, cítiť ho až na peróne.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A tie lietadlá nad nami?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Letisko je hneď vedľa. Kravy si zvykli skôr ako ľudia.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A vy?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 2.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja najrýchlejšie. Lietadlá majú tiež cestovný poriadok.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rada pre cestovateľa",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Máte nejakú radu pre človeka, čo veľa cestuje?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "'Bez nej' refers to the question, which Božo has already asked. What he needs before giving advice is the answer.",
+      "suggestion": "Kam ste namierený? To je prvá otázka. Bez odpovede vám nepredám ani radu.",
+      "text": "Kam ste namierený? To je prvá otázka. Bez nej vám nepredám ani radu.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Úprimne? Do roku… do dielne pána Bielika.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak máte šťastie. Tam sa chodí peši a cestovný poriadok netreba.",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keby som nevedel kam?",
+      "batch": "BOZO"
+    },
+    "topic.BOZO.extra 3.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak si sadnite na lavičku a počkajte, kým to budete vedieť. Vlaky chodia aj tak.",
+      "batch": "BOZO"
+    },
+    "topic.DOBRO.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri podpisy? Na jeden školský výkres?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 1.x01": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Bez šepkania od rodičov” is an awkward way to describe parents whispering prompts to their children.",
+      "suggestion": "Nahlas, pred komisiou a bez toho, aby im rodičia šepkali.",
+      "text": "Nahlas, pred komisiou a bez šepkania od rodičov.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rodičia šepkajú?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 1.x03": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Vysvetlil rádio” is an unnatural compression; the father explained how the radio worked.",
+      "suggestion": "Minulý rok mi jeden otec vysvetlil, ako funguje rádio, lepšie ako jeho syn. Syn mlčal a prikyvoval.",
+      "text": "Minulý rok mi jeden otec vysvetlil rádio lepšie ako jeho syn. Syn mlčal a prikyvoval.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Môj, riaditeľky a správcu budovy. Správca podpisuje, že výkres nespadne zo steny.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A spadol už niekedy?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Raz. Odvtedy je správca na každom tlačive.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Súdružka riaditeľka",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kto bude hodnotiť výstavku?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Súdružka riaditeľka. Číta každý štítok, aj ten pod stolom.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj pod stolom?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.004": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Finding a forgotten model does not explain putting labels under tables. Explicitly linking the labels to the models makes the bureaucratic absurdity follow from the incident.",
+      "suggestion": "Raz tam niekto zabudol model a ona ho našla. Odvtedy majú štítky aj modely pod stolmi.",
+      "text": "Raz tam niekto zabudol model a ona ho našla. Odvtedy sú štítky aj pod stolmi.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To je prísne.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 1.006": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Reading only what one dislikes does not define strictness. The abstract closing maxim loses the concrete connection to the headmistress and her inspection.",
+      "suggestion": "To je dôkladné. Prísna je, keď na štítku nájde niečo, čo sa jej nepáči.",
+      "text": "To je dôkladné. Prísne je, keď sa číta len to, čo sa nepáči.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý projekt",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aký je podľa vás dobrý žiacky projekt?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Taký, ktorý funguje a žiak vie povedať prečo. Podľa vzoru to vie urobiť každý.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.003": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Je mimo vzoru” is not a natural way to say that a project departs from the prescribed model.",
+      "suggestion": "A keď sa od vzoru líši?",
+      "text": "A keď je mimo vzoru?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Potom musí byť vysvetlenie ešte lepšie ako výkres. To sa nestáva často.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ale stáva sa.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stáva. A taký si človek pamätá dlhšie ako všetky vzory.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nová škola",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Škola vyzerá ešte nová.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 3.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "For fresh plaster drying naturally, Slovak uses “schne”, rather than “sa suší”.",
+      "suggestion": "Je nová. Omietka ešte schne a detí pribúda rýchlejšie ako lavíc.",
+      "text": "Je nová. Omietka sa ešte suší a detí pribúda rýchlejšie ako lavíc.",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toľko detí?",
+      "batch": "DOBRO"
+    },
+    "topic.DOBRO.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sídlisko rastie. Každý mesiac nový panelák a v septembri nová trieda.",
+      "batch": "DOBRO"
+    },
+    "topic.JANA82.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj večer, keď sa ladí najhoršie?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.ambient 1.x01": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Calling the textbook itself 'vyskúšaná' is awkward here; the tested thing is the design it contains.",
+      "suggestion": "Súdruh učiteľ vraví, že to, čo je v učebnici, je vyskúšané.",
+      "text": "Súdruh učiteľ vraví, že učebnica je vyskúšaná.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj tvoje sa dá vyskúšať.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja viem. Doma som to vyskúšala a funguje. Len to zatiaľ nikto nevie.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlavne večer. Večer je v éteri plno a slabé stanice sa strácajú.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.ambient 2.x02": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "A schematic does not 'throw out' radio stations. The wording obscures Jana's precise point about retaining weak signals.",
+      "suggestion": "V mojom zapojení sa ich signál nestratí. Je to inak ako vo vzore.",
+      "text": "Moja schéma ich nevyhodí. Je to inak ako vo vzore.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rádio doma",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Máš doma rádio?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Máme. Staré, so zeleným okom. Keď ho otec zapne, oko sa pomaly rozsvieti.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som zistila, prečo v ňom večer šumí. Ale otcovi som to ešte nepovedala.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo nie?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo by chcel, aby som ho opravila. A potom by som ho musela vedieť aj zložiť.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Výstavka",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tešíš sa na výstavku?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Trochu. Vystavím to, čo je podľa vzoru. To sa nemôže pokaziť.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A to svoje?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To je pod vzorom. Tam je v bezpečí.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V bezpečí, ale nikto to neuvidí.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja to vidím. Každý deň.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Druhá schéma",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Už kreslíš tú druhú schému?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kreslím. Tentoraz od začiatku po svojom a poznámky píšem hneď na okraj.",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aby si nezabudla, prečo to funguje?",
+      "batch": "JANA82"
+    },
+    "topic.JANA82.extra 3.004": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "'Pochopila od vás' is not an idiomatic way to credit someone for an insight.",
+      "suggestion": "Nie. Aby to vedel aj ten, kto to bude čítať. To som pochopila vďaka vám.",
+      "text": "Nie. Aby to vedel aj ten, kto to bude čítať. To som pochopila od vás.",
+      "batch": "JANA82"
+    },
+    "topic.LIDA.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kto ho napíše?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo, priamo na javisku. Prvú vetu už má.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vo svetri bude hrať Rudo. Jemu je na javisku zima vždy, keď zabudne text.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A divákom to neprekáža?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Diváci sú z Ivanky. Ten sveter poznajú a tlieskajú mu zvlášť.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "O čom je hra?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo vlastne v sále nacvičujete?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Nothing has gone wrong yet for the mayor to put right: “to” points back only to his promise. Clarify that he spends the rest of the play fixing what goes wrong.",
+      "suggestion": "Hru o richtárovi, čo na začiatku sľúbi, že všetko dobre dopadne. Zvyšok hry napráva, čo sa pokazí.",
+      "text": "Hru o richtárovi, čo na začiatku sľúbi, že všetko dobre dopadne. Zvyšok hry to musí napraviť.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Komédia?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pre divákov. Pre mňa je to tragédia o gombíkoch.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "O gombíkoch?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Richtár má na kabáte dvanásť gombíkov. Do premiéry ich musím nájsť aspoň osem.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudova tréma",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je pán Pavlík vždy taký… nadšený?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na javisku. Za javiskom sa schová za kulisu a čaká, kým ho zavolám.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Raz tam stál tak dlho, že sme ho zamkli v sále aj s lesom.",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo urobil?",
+      "batch": "LIDA"
+    },
+    "topic.LIDA.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Celú noc nacvičoval. Ráno vedel celú svoju úlohu. Vtedy ešte mal scenár.",
+      "batch": "LIDA"
+    },
+    "topic.MARTA82.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zaveďte. Ale začnite tým, čo už nemáte. To je najdlhší zoznam.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten by som písal do Vianoc.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som ho tu písala dva roky. Teraz chýba už len jeden kľúč od kotolne.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The wording says two minutes have elapsed, but Marta's subsequent reply treats them as time saved. State the saving here so the exchange follows logically.",
+      "suggestion": "Vidíte. Hneď sme ušetrili dve minúty.",
+      "text": "Vidíte. A už sme o dve minúty ďalej.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.ambient 2.x02": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The particle expressing relief is written as one word: „ešteže“.",
+      "suggestion": "Ešteže si tie minúty nezapisujete.",
+      "text": "Ešte že si tie minúty nezapisujete.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.ambient 2.x03": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Mark the column heading with quotation marks to distinguish it from the surrounding sentence.",
+      "suggestion": "Zapisujem. Do kolónky „ušetrené“.",
+      "text": "Zapisujem. Do kolónky ušetrené.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tónovo lietadlo",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je tu ešte to Tónovo lietadlo?",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je. Dala som ho na hornú policu, aby naň nikto nesadol.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zapísali ste ho do inventárnej knihy?",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ceruzkou. Je to cudzí majetok a ja ho len strážim. Perom by sa z neho stal náš.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toľko papierov",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nevadí vám toľko papierov?",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nevadí, keď majú zmysel. Výdajka povie, kto čo vzal a prečo. To je poriadok, nie trápenie.",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kedy je to trápenie?",
+      "batch": "MARTA82"
+    },
+    "topic.MARTA82.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Keď niekto chce tri podpisy na jednu skrutku. Taký papier hneď vraciam.",
+      "batch": "MARTA82"
+    },
+    "topic.MIRA60.ambient 1.x01": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The comparison introduced by „ako“ is not a separate clause and should not be preceded by a comma.",
+      "suggestion": "Preto ťa nevyhodím. Zapíšem ťa vedľa ako všetko, čo nesedí.",
+      "text": "Preto ťa nevyhodím. Zapíšem ťa vedľa, ako všetko, čo nesedí.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vedľa čoho?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vedľa všetkého ostatného. Tam je najviac miesta.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V akej rodine?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To je jedna z tých otázok, čo si nechávate otvorené.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobre. Ale túto si nechám otvorenú dokorán.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malá Zuzka",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá malá Zuzka z parku je všade, kam prídem.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To robí každému. Aj tým, čo nevedia, že potrebujú sprievod.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Včera sa ma pýtala, kam dávam ten čas, čo meriam.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo ste jej povedali?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pravdu. Že ho zapisujem, aby sa nestratil.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A stačilo jej to?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 1.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nie. Chcela vidieť zošit. Tak som jej ukázala stranu s jej škôlkou.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Meranie v búdke",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo vlastne v tej búdke meriate?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čas na viacerých miestach naraz. A rozdiely, ktoré by tam nemali byť.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A sú tam?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.004": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The bare „nie cez“ sounds unfinished: it does not specify what the new entries must not be written over.",
+      "suggestion": "Sú. Preto ich zapisujem vedľa. Čo nesedí, píšeme vedľa, nie cez pôvodné údaje.",
+      "text": "Sú. Preto ich zapisujem vedľa. Čo nesedí, píšeme vedľa, nie cez.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj keď to vyzerá ako chyba?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlavne vtedy. Vyhodiť to môžem vždy. Vrátiť už nie.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán Bielik",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán Bielik o vás hovorí s veľkým rešpektom.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oto o všetkom hovorí s rešpektom. Aj o skrutke, čo mu spadla pod stôl.",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A vy o ňom?",
+      "batch": "MIRA60"
+    },
+    "topic.MIRA60.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Že najprv meria a až potom rozpráva. Preto sa s ním tak dobre pracuje.",
+      "batch": "MIRA60"
+    },
+    "topic.OTO.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Až potom sme sa zľakli. V tomto poradí, inak by to nebolo poriadne.",
+      "batch": "OTO"
+    },
+    "topic.OTO.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo vám ten včerajšok povedal?",
+      "batch": "OTO"
+    },
+    "topic.OTO.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Že som zabudol vypnúť spájkovačku. Mal pravdu.",
+      "batch": "OTO"
+    },
+    "topic.OTO.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The simple alternatives within this question should not be separated by a comma.",
+      "suggestion": "Stroj alebo človek?",
+      "text": "Stroj, alebo človek?",
+      "batch": "OTO"
+    },
+    "topic.OTO.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Človek so strojom. To je horšie ako oboje zvlášť.",
+      "batch": "OTO"
+    },
+    "topic.OTO.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak nech ho niekto naučí najprv merať a až potom rozprávať.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Štyri budíky",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo máte v dielni štyri budíky?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Porovnávam ich. Každý ide trochu inak a ja chcem vedieť prečo.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ktorý ide správne?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Žiaden. Ale dva z nich sa mýlia rovnako, a to je už informácia.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ten štvrtý?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten zvoní. Je tu na to, aby som nezabudol na obed.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Moje topánky",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všimol som si, že sa mi pozeráte na topánky.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Najprv sa pozriem, až potom poviem. Takú podrážku som ešte nevidel.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sú pracovné.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja mám pracovné tiež. A predsa sa za mnou nikto neobzerá.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mám sa prezuť?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nie. Len nestojte pri pani Kovárovej dlhšie, ako musíte.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Práca s Mirou",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa vám pracuje s Mirou?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rýchlo. Ona dokončí moju vetu skôr, ako ju ja začnem.",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To vám nevadí?",
+      "batch": "OTO"
+    },
+    "topic.OTO.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vadí mi, keď ju dokončí lepšie. A to robí často.",
+      "batch": "OTO"
+    },
+    "topic.OTO82.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A Tóno s tým súhlasí?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som odvtedy vystriedal tri. A vy ste nestratili ani gombík.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 1.x02": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The wording awkwardly describes the buttons as happy rather than clearly presenting them as lucky charms.",
+      "suggestion": "Tie gombíky mi nosia šťastie.",
+      "text": "Gombíky mám šťastné.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak ich nikomu nepožičiavajte. Ani mne.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Súhlasí, kým nepotrebuje podpis na niečo svoje. Potom vyjednáva ako na trhu.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kto vyhráva?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.ambient 2.x03": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Oto first says Tóno wins, then says he only thinks he wins. Marking the first answer as Tóno's view makes the grandfather's teasing coherent.",
+      "suggestion": "Podľa neho on. Ale podpisujem ja, takže si len myslí, že vyhral.",
+      "text": "On. Ale podpisujem ja, takže si len myslí, že vyhral.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Technický krúžok",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vy tu vediete technický krúžok?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomáham. Deti majú nápady a ja mám kliešte. Spolu je z toho krúžok.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo teraz robíte?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rádio, lampu a jedno lietadlo, čo nevzlietne. To je Tónovo.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zatiaľ nevzlietne.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To isté hovorí aj on. Má to po mne.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Spomienky na Ivanku",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Spomínate si ešte na Ivanku?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na dielňu, na Miru a na vás. Na vás najviac, lebo ste zmizli bez rozlúčky.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepáčte. Ponáhľal som sa.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Do roku 1982. Rozumiem. Aspoň vám bunda vydržala, to je dobrá bunda.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sídlisko",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa vám tu na sídlisku žije?",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všade sa stavia. Ráno je tu blato, večer nový dom.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Električku sem tiež sľubujú. Zatiaľ chodí autobus a trať iba čaká.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Električka príde. Len si dá načas.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hovoríte to, akoby ste to vedeli.",
+      "batch": "OTO82"
+    },
+    "topic.OTO82.extra 3.006": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Repairing equipment does not entail predicting when things will arrive. Connecting the evasion to estimating waiting times gives Adam a plausible repairman's analogy.",
+      "suggestion": "Opravujem prístroje. Človek sa naučí odhadnúť, ako dlho bude na niečo čakať.",
+      "text": "Opravujem prístroje. Odhadnúť, kedy čo príde, patrí k remeslu.",
+      "batch": "OTO82"
+    },
+    "topic.POSTA.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A nosí niekedy aj listy?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To počujem zriedka, prosím. Väčšina ľudí chce, aby pečiatka potvrdila, že majú pravdu.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A to nevie?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pečiatka vie iba dátum. Pravdu si každý musí doniesť sám.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Občas lístok susedovi, keď mi chýba cukor. Úradnú poštu nosiť nesmie.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo nie?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nemá služobnú čiapku. A na tú by bol aj príliš pyšný.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Telegramy",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Posielajú sa odtiaľto aj telegramy?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pravidelne, prosím. Platí sa od slova, preto sú ľudia v telegramoch veľmi struční.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Najkratší, aký som odoslal, mal dve slová: PRÍDEM ZAJTRA.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A prišiel?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 1.005": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The last sentence is not idiomatic and leaves the unpaid word unidentified. Tie the joke directly to the established per-word charge.",
+      "suggestion": "Prišiel. O týždeň. Za „o týždeň“ by platil o slovo viac.",
+      "text": "Prišiel. O týždeň. Na to už slovo nezaplatil.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pečiatky",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koľko pečiatok tu vlastne máte?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 2.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Na každý druh istoty” is an opaque literary abstraction rather than charming clerical speech. State the stamps' distinct functions plainly.",
+      "suggestion": "Sedem, prosím. Každá potvrdzuje niečo iné.",
+      "text": "Sedem, prosím. Na každý druh istoty jednu.",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ktorú máte najradšej?",
+      "batch": "POSTA"
+    },
+    "topic.POSTA.extra 2.004": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The contrast between changing daily and telling the truth sounds like a written aphorism. Ground it in the clerk's daily handling of the date stamp.",
+      "suggestion": "Tú s dátumom. Každý deň hovorí pravdu, len ju nesmiem zabudnúť prestaviť.",
+      "text": "Tú s dátumom. Mení sa každý deň, a predsa vždy hovorí pravdu.",
+      "batch": "POSTA"
+    },
+    "topic.RUDO.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mimo javiska to neviem povedať. Mimo javiska sa vždy niečo pokazí.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Napríklad?",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Napríklad stratím scenár. Ale na javisku som presvedčivý!",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lída im to zakázala. Kolená, scenár aj klobúk zostávajú v Ivanke!",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A vy?",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja idem tam, kam moje kolená. Sme jeden súbor.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mimo javiska",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo robíte, keď práve nehráte?",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vážim obilie na družstve. Potichu. Tam sa nekričí.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vy a potichu?",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na javisku som kráľ. Pri váhe som len Rudo. A Rudo hovorí málo.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ktorý z nich je ten skutočný?",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten, čo vám práve odpovedá. Ale nehovorte to divákom!",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malá šepkárka",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Malá Zuzka z parku vraví, že vie vašu prvú vetu.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vie ju lepšie ako ja! A hovorí ju s väčším presvedčením!",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stojí každý deň vo dverách sály a šepká mi ju, keď zabudnem.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Takže máte vlastnú šepkárku.",
+      "batch": "RUDO"
+    },
+    "topic.RUDO.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Najmenšiu v okrese. A jedinú, čo si nepýta odmenu.",
+      "batch": "RUDO"
+    },
+    "topic.RUZENA.ambient 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď sa spýtam na niečo, čo nemáte?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak vám poviem, kedy to bude. A keď to neviem, poviem vám, kto to vie.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kto?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 1.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Šofér, čo vozí tovar. Ten vie všetko o deň skôr ako ja.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Schovať, ale aj zapísať kam. Najviac pohárov sa stratí v pivnici.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V pivnici?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Človek ich tam odloží tak dobre, že ich nájdu až vnúčatá.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stáli zákazníci",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poznáte tu každého?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Každého, kto si kupuje rožky. Ostatných podľa tašky.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Podľa tašky?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sieťovka je z tohto domu, igelitka z vedľajšieho. A kto chodí s košíkom, je zo starej Dúbravky.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.005": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Bare “som s čím” is awkward when asking what he has brought to the shop. Adding the arrival verb makes the question natural and preserves the joke.",
+      "suggestion": "A ja som prišiel s čím?",
+      "text": "A ja som s čím?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 1.006": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Vy ste s prázdnymi rukami” is an unnatural construction here; Slovak normally describes coming empty-handed.",
+      "suggestion": "Vy ste prišli s prázdnymi rukami. Takých si pamätám najlepšie, tí sa vždy na niečo pýtajú.",
+      "text": "Vy ste s prázdnymi rukami. Takých si pamätám najlepšie, tí sa vždy na niečo pýtajú.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vratné fľaše",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koľko fliaš vám ľudia denne vrátia?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 2.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Adam asks how many bottles are returned per day, but the reply only says when returns peak. A brief acknowledgment that it varies connects the answer to his question without inventing a count.",
+      "suggestion": "Ako kedy. Najviac v pondelok. Ráno je tu rad s fľašami až po dvere.",
+      "text": "Najviac v pondelok. Ráno je tu rad s fľašami až po dvere.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ktoré sa vracajú najčastejšie?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Od mlieka. Mlieko sa pije stále, aj keď sa nič neoslavuje.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vôňa pomarančov",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu to vonia pomarančmi.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ráno ich priviezli. Do desiatej to vedelo celé sídlisko.",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako to tak rýchlo zistili?",
+      "batch": "RUZENA"
+    },
+    "topic.RUZENA.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Susedka z prvého vchodu ich videla z balkóna. Tá je rýchlejšia ako rozhlas.",
+      "batch": "RUZENA"
+    },
+    "topic.SIMON.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Do piatku sa plánuje polievka. Strom sa plánuje na dve generácie.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď to nevyjde?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.ambient 1.x03": {
+      "verdict": "fix",
+      "category": "tone",
+      "problem": "The second sentence turns the gardener's practical reassurance into a philosophical maxim. It sounds written rather than like his calm, concrete speech.",
+      "suggestion": "Tak sme to aspoň skúsili. Len nech má lipa kde rásť.",
+      "text": "Tak sme to aspoň skúsili. Lipa sa nikdy nepýta, či má zmysel rásť.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The detour-as-enclosure comparison is a strained explanatory punchline after an otherwise natural response. Keep the humour grounded in making people take the longer route.",
+      "suggestion": "A vozíku obchádzku. Ľudia ho potom budú musieť tlačiť okolo.",
+      "text": "A vozíku obchádzku. Obchádzka je taká ohrádka pre ľudí.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bude sa to páčiť tomu, kto ho tlačí?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nebude. Ale o desať rokov si sadne do tieňa a zabudne.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Stromy na sídlisku",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koľko stromov tu bude, keď sídlisko dostavajú?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Toľko, koľko ich zasadíme a koľko prežije prvé tri zimy.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A koľko prežije?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Viac, keď ich nikto neprejde vozíkom. Preto sa o tú lipu tak bojím.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A potom?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Potom sa už bránia samy. Strom s hrubou kôrou sa bojí iba píly a ľudí s plánmi.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Školská záhrada",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo pestujete v školskej záhrade?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mrkvu, fazuľu a hrach. Deti ich na jar zasejú a v septembri sa čudujú, že niečo vyrástlo.",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A teraz v decembri?",
+      "batch": "SIMON"
+    },
+    "topic.SIMON.extra 2.004": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "Growing plans and then warning against trampling them stacks metaphors into a tacked-on closing quip. A concrete answer about winter planning fits the gardener better.",
+      "suggestion": "Teraz plánujeme, čo na jar zasejeme.",
+      "text": "Teraz pestujeme plány. Tie rastú aj v zime, len sa po nich nesmie šliapať.",
+      "batch": "SIMON"
+    },
+    "topic.SKLAD.ambient 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo nemáte?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo sa dá z takého kúska urobiť?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mosadzné skrutky s polguľatou hlavou, modrú farbu a jeden kľúč, čo si niekto požičal v päťdesiatom ôsmom.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ten kľúč hľadáte?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 1.x03": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The final sentence suggests that the borrower does not know where the key is. Clarify that he does not know Štefan knows.",
+      "suggestion": "Nie. Viem presne, kde je. Len ten človek ešte nevie, že o tom viem.",
+      "text": "Nie. Viem presne, kde je. Len to ten človek ešte nevie.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "“Z odrezka opraviť” uses the construction for making something out of material, not repairing something with it. Use the instrumental.",
+      "suggestion": "Podložku, tesnenie, pútko. Jedným odrezkom som raz opravil celé dvere od maštale.",
+      "text": "Podložku, tesnenie, pútko. Z jedného odrezka som raz opravil celé dvere od maštale.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Celé dvere?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pánt. Ale bez pántu sú dvere iba doska, takže celé.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Otove lístky",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pán Bielik píše lístky často?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 1.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Štefan issues materials against the slip, not the slip itself.",
+      "suggestion": "Každý týždeň. Úhľadne, s rozmermi a s podpisom. Na taký lístok je radosť vydávať materiál.",
+      "text": "Každý týždeň. Úhľadne, s rozmermi a s podpisom. Taký lístok je radosť vydať.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ktoré lístky nemáte radi?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tie, kde je napísané „niečo na opravu“. Niečo nemáme. Niečo nemá nikto.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Deti na dvore",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo sem deti nesmú?",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo tu je všetko ostré, ťažké alebo zapísané. Deti by to pomiešali.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jedno dievčatko mi raz cez plot porátalo vrecia. Mal som o dve viac, než som myslel.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak to je dobrá správa.",
+      "batch": "SKLAD"
+    },
+    "topic.SKLAD.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pre sklad nie. Ja som si myslel, že viem presne, čo máme.",
+      "batch": "SKLAD"
+    },
+    "topic.TONO82.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kde bude lastovička bývať?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na okne pri dedovi. Odtiaľ je vidieť celý dvor.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na hodine sa nesmie povedať „tá vec“. Musí sa povedať „súčiastka“ alebo „pomôcka“.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.ambient 2.x02": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "The explicit singular address conflicts with the table's requirement for neutral address in ambient topics.",
+      "suggestion": "A ako sa volá tá vec v ruke?",
+      "text": "A ako sa volá to, čo máš v ruke?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Doma krídlo. V škole technický model, časť prvá.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mikuláš",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bol včera u vás Mikuláš?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Bol. Doniesol mi čokoládu a uhlie. Dedo vraví, že uhlie je za ten rozobratý budík.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.003": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "The explicit singular address conflicts with the required neutral wording of ambient topics.",
+      "suggestion": "Budík? Naozaj?",
+      "text": "Ty si rozobral budík?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rozobral. Aj zložil. Len mi zostala jedna súčiastka navyše.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To sa stáva aj najlepším.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 1.006": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "“Tebe” makes Tóno use familiar address even before E02. This repeatable ambient exchange needs neutral wording.",
+      "suggestion": "Dedo hovorí, že najlepším nie. To je z vlastnej skúsenosti?",
+      "text": "Dedo hovorí, že najlepším nie. Ale tebe sa to asi tiež stáva, nie?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.label": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "The label uses explicit singular address rather than the neutral form required for ambient topics.",
+      "suggestion": "Budúce povolanie",
+      "text": "Keď vyrastieš",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.001": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "The question uses singular address, whereas the ambient-topic row requires neutral wording in both directions.",
+      "suggestion": "Čím byť v dospelosti?",
+      "text": "Čím chceš byť, keď vyrastieš?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Konštruktérom lietadiel. Alebo pilotom. Hlavne nie školníkom.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo nie školníkom?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Školník musí mať pri sebe sto kľúčov a vedieť, ktorý je od čoho. To by ma nebavilo.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hm. Kľúče vedia byť celkom zaujímavé.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 2.006": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "“Hovoríš” assumes that Tóno already uses familiar address with Adam. Ambient dialogue must also work before E02.",
+      "suggestion": "To znie ako dedo. Aj on tvrdí, že každé dvere majú svoj trik.",
+      "text": "Hovoríš ako dedo. Aj on tvrdí, že každé dvere majú svoj trik.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lastovičky",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 3.001": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "“Kreslíš” uses singular address instead of the neutral wording specified for ambient topics.",
+      "suggestion": "Prečo sú všade nakreslené lastovičky?",
+      "text": "Prečo kreslíš všade lastovičky?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo sa vracajú. Každú jar na to isté miesto, aj keď letia cez celé more.",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 3.003": {
+      "verdict": "fix",
+      "category": "tyvy",
+      "problem": "The explicit “ty by si” conflicts with the ambient-topic requirement for neutral address.",
+      "suggestion": "A ťahalo by to potom naspäť?",
+      "text": "A ty by si sa vracal?",
+      "batch": "TONO82"
+    },
+    "topic.TONO82.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som ešte nikde nebol. Ale keby som bol, tak určite.",
+      "batch": "TONO82"
+    },
+    "topic.VERA60.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo s ním robíte?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zapíšem si prvé zadanie. Keď sa vráti, ukážem mu, kde začal.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.ambient 1.x03": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The reversal leaves Vera's starting point undefined, so Oto's supposed comeback is unclear. Naming her first drawing makes the comparison intelligible.",
+      "suggestion": "To skúsim aj na Ota. Hoci on mi zas ukáže, ako vyzeral môj prvý nákres.",
+      "text": "To skúsim aj na Ota. Hoci on mi ukáže, kde som začala ja.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "Writing manuals and enclosing them are not alternatives, so the opening question does not support the joke. Asking whether anyone reads them leads naturally into losing them.",
+      "suggestion": "Tie niekto číta? Myslela som, že sa prikladajú, aby bolo čo stratiť.",
+      "text": "Tie sa píšu? Myslela som, že sa prikladajú, aby bolo čo stratiť.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V mojej dielni sa strácajú ako prvé.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzka",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzka vám tu robí spoločnosť každý deň?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Každý deň. Skáče, ráta a občas mi povie, že mám krivú čiaru.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A máte?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 1.004": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The causal link between a crooked line and letting Zuzka count is missing. Make it clear that counting keeps her occupied instead of inspecting Vera's lines.",
+      "suggestion": "Mám. Preto ju radšej nechávam rátať, nech mi nekontroluje čiary.",
+      "text": "Mám. Preto ju nechávam rátať.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Otove rozmery",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mení vám Oto rozmery naozaj tak často?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ráno mi povedal, že je to hotové. Na obed, že skoro hotové. Teraz je to návrh.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A čo s tým robíte?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 2.004": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The second sentence turns the practical answer into a closing ironic maxim. Keep the pencil-and-ink humour tied directly to the changing dimensions.",
+      "suggestion": "Kreslím ceruzkou. S atramentom počkám, kým sa rozmery prestanú meniť.",
+      "text": "Kreslím ceruzkou. Atrament je pre ľudí, ktorí sa už rozhodli.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo práve kreslíte?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo to máte na výkrese?",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prierez ZVONu. Aby ho raz vedel opraviť aj niekto, kto pri ňom nebol.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Napríklad ja.",
+      "batch": "VERA60"
+    },
+    "topic.VERA60.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Napríklad. Hoci vy vyzeráte, že ste pri ňom už boli.",
+      "batch": "VERA60"
+    },
+    "quest.Q10.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav Zuzanin triedny zvonček, aby mohla na konci roka zvoniť.",
+      "batch": "Q10"
+    },
+    "quest.Q10.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzana v parku pri kaštieli má zvonček, ktorý nezvoní.",
+      "batch": "Q10"
+    },
+    "quest.Q10.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Srdce zvončeka treba zavesiť na nové kožené pútko. Kožu má Štefan na dvore dielne a Zuzana mu už napísala lístok.",
+      "batch": "Q10"
+    },
+    "quest.Q10.hint.3": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "Using “na Štefana” and “na Zuzanu” as shorthand for handing over items is unnatural Slovak. Explicit handover verbs make the instructions clear.",
+      "suggestion": "Rozhovor so Zuzanou v parku o zvončeku → daj Zuzanin lístok Štefanovi → kožený odrezok + triedny zvonček → daj opravený zvonček Zuzane.",
+      "text": "Rozhovor so Zuzanou v parku o zvončeku → Zuzanin lístok na Štefana → kožený odrezok + triedny zvonček → opravený zvonček na Zuzanu.",
+      "batch": "Q10"
+    },
+    "quest.Q10.reward": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zuzana so zvončekom a jej kriedová škôlka v albume.",
+      "batch": "Q10"
+    },
+    "quest.Q10.title": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prvý posledný zvonec",
+      "batch": "Q10"
+    },
+    "topic.ZUZANA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kto si?",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ahoj. Ty hráš škôlku?",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hrám. Ale do škôlky už nechodím. Chodím do prvej triedy.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ešte dvadsaťštyri dní a mám za sebou celú prvú triedu.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ty si to rátaš?",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja si rátam všetko. Políčka, schody aj to, koľkokrát ujo Rudo zabudne text.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A koľkokrát ho dnes zabudol?",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zatiaľ jedenásťkrát. Ale ešte nie je večer.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.008": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som Adam.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.009": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Vy zniete inak” sounds translated rather than like a seven-year-old commenting on someone's speech. Use the ordinary verb for speaking.",
+      "suggestion": "Ja som Zuzana. Vy nie ste odtiaľto. Vy rozprávate inak.",
+      "text": "Ja som Zuzana. Vy nie ste odtiaľto. Vy zniete inak.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.010": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Inak? Ako?",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 1.011": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako rádio z Bratislavy. Pekne, ale rýchlo.",
+      "batch": "overlay:ZUZANA.extra 1"
+    },
+    "topic.ZUZANA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Otova dielňa",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nevieš, kde má dielňu pán Bielik?",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ujo Oto? Toho nájdete po zvuku.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z návsi choďte tam, kde vonia koža. To je dvor a tam je ujo Štefan.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A za ním tam, kde to tiká zo všetkých strán. To je ujo Oto.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vôňa kože a potom tikanie. To si zapamätám.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlavne nechoďte tam, kde to kotkodáka. Tam sú len sliepky.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pani Lída",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nevieš, kde nájdem pani Lídu z divadla?",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Teta Lída je v sále. Tam, kde niekto kričí „Žiaden strach, miláčik!“",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten látkový les sa im celý deň kýve. Jedna skrutka je voľná, ja som to videla.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A povedala si im to?",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Povedala. Ale skrutkovač mi nikto nepožičia, lebo som malá.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja jeden mám v brašni.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 3.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vám ho asi nevezmú. Vy ste veľký.",
+      "batch": "overlay:ZUZANA.extra 2+overlay:ZUZANA.extra 3"
+    },
+    "topic.ZUZANA.extra 4.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pumpa pri búdke",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tá pumpa pri búdke za parkom…",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kvapká. Ráno som jej narátala sto kvapiek, potom som prestala.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo si prestala?",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo za stovkou už nebolo nič zaujímavé. Len ďalšie kvapky.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Teta Mira hovorí, že pumpe treba novú manžetu.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som myslela, že manžeta je na košeli. Pumpa predsa košeľu nemá.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Táto je kožená. Drží vodu tam, kde má byť.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 4.008": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak je to taký opasok pre vodu.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mira Hrušková",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Poznáš Miru Hruškovú?",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tetu Miru z búdky? Tú pozná celá Ivanka.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.003": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The direct speech introduced by the colon needs Slovak quotation marks.",
+      "suggestion": "Keď v búdke pri kanáli svieti aj cez deň, dospelí povedia: „Mira zas meria čas.“",
+      "text": "Keď v búdke pri kanáli svieti aj cez deň, dospelí povedia: Mira zas meria čas.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ty vieš, čo to znamená?",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Neviem. Ale robí to veľmi presne. Raz mi zmerala, ako dlho skáčem škôlku.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A ako dlho?",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 5.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dvadsaťdva sekúnd. Teraz už dvadsaťjeden. Trénujem.",
+      "batch": "overlay:ZUZANA.extra 4+overlay:ZUZANA.extra 5"
+    },
+    "topic.ZUZANA.extra 6.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Holub pri miske",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ten holub pri miske je tvoj kamarát?",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nie, ten je pána Barana. Je poštový, má na nohe krúžok.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dala som mu chlieb, ale nechcel. Asi je zvyknutý na lepšie.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Možno chce svoje vlastné krmivo.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To bude mať ujo Štefan na dvore. On má všetko, čo sa sype.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 6.006": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "“Letí opačne” has no clear reference direction. State plainly that the pigeon flies away from whoever chases it.",
+      "suggestion": "A nenaháňajte ho. Keď ho niekto naháňa, letí od neho preč.",
+      "text": "A nenaháňajte ho. Holub, ktorého niekto naháňa, letí opačne.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo z divadla",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ty poznáš pána Ruda z divadla?",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.002": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Rudo's opening line is quoted verbatim and should be marked with Slovak quotation marks, rather than reading as Zuzana addressing Adam.",
+      "suggestion": "Ujo Rudo. Ja viem jeho prvú vetu: „Žiaden strach, miláčik!“",
+      "text": "Ujo Rudo. Ja viem jeho prvú vetu. Žiaden strach, miláčik!",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A druhú?",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Druhú nevie ani on. Je v scenári a scenár sa stratil.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Teta Lída hovorí, že ak sa nenájde, bude to veľmi krátke divadlo.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jedna veta a potom potlesk.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 7.007": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja by som tlieskala. Ale len trochu, aby si nemyslel, že to stačí.",
+      "batch": "overlay:ZUZANA.extra 6+overlay:ZUZANA.extra 7"
+    },
+    "topic.ZUZANA.extra 8.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prázdniny",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "topic.ZUZANA.extra 8.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Čo budeš robiť cez prázdniny?",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "topic.ZUZANA.extra 8.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Budem chodiť ku kanálu pozerať, ako tečie voda. Do vody nesmieme, iba pozerať.",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "topic.ZUZANA.extra 8.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A budem chodiť na zastávku. Ujo Božo mi dovolí kývať vlakom do Bratislavy.",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "topic.ZUZANA.extra 8.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všetkým?",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "topic.ZUZANA.extra 8.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Iba tým, čo idú načas. Tým ostatným kýva on sám. Nahnevane.",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "epilogue.10.shot": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Koniec júna 1962. Zuzana zvoní triednym zvončekom a prváci vybiehajú na prázdniny.",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    },
+    "epilogue.10.line": {
+      "verdict": "fix",
+      "category": "tone",
+      "problem": "The closing anticipation of September can hint at Zuzana’s own future, which her binding rules prohibit. State the school-calendar observation generally rather than looking ahead.",
+      "suggestion": "Posledný zvonec! Prvý býva v septembri.",
+      "text": "Posledný zvonec! A v septembri zase prvý.",
+      "batch": "overlay:ZUZANA.extra 8+overlay:epilogue.10 (Q10, after Q10D; written in C3 because all Zuzana 1962 content is C3)"
+    }
+  },
+  "unreviewed": []
+}

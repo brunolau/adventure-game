@@ -62,6 +62,8 @@ CHUNKS: "OrderedDict[str, dict]" = OrderedDict(
 )
 GENERIC_CHUNK = "C4"
 ROOM_CHUNK = {room: chunk for chunk, spec in CHUNKS.items() for room in spec["rooms"]}
+# Rooms added by the world overlay (content_ext/world_ext.json) join the chunk of their era.
+ERA_CHUNK = {2020: "C1", 1995: "C2", 1960: "C3", 1982: "C3", 2035: "C4"}
 
 # Default locked look of exits/connections that have no condition: the text is never shown.
 NEVER_SHOWN = "never_shown"
@@ -177,7 +179,11 @@ class Model:
 
     # ---- chunks
     def room_chunk(self, room: str | None) -> str:
-        return ROOM_CHUNK.get(room or "", GENERIC_CHUNK)
+        """The chunk of a room: the fixed lists above, else (rooms of the world overlay) the chunk of its era."""
+        if room in ROOM_CHUNK:
+            return ROOM_CHUNK[room]
+        era = self.rooms.get(room or "", {}).get("era")
+        return ERA_CHUNK.get(era, GENERIC_CHUNK)
 
     def action_chunk(self, aid: str) -> str:
         return self.room_chunk(self.action_room.get(aid))
@@ -396,6 +402,9 @@ def build_key_index(game: dict | None = None, walkthrough: dict | None = None,
                     "objective: the pinned 'current goal' sentence after this action")
             elif fld == "actions[].journal_text":
                 add(entry, model.action_chunk(aid), "story", KIND_GOAL, (ao, 3), "journal entry recorded by this action")
+            elif fld == "actions[].hint_step":
+                add(entry, model.action_chunk(aid), "story", KIND_HINT, (ao, 4),
+                    "exact step hint (hint level 3, H key; world overlay)")
         elif fld.startswith("characters[].ambient_topics[]"):
             cid = re.search(r"characters\[([^\]]+)\]", src).group(1)
             tid = re.search(r"ambient_topics\[([^\]]+)\]", src).group(1)

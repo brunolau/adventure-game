@@ -31,6 +31,9 @@ table. "→ Adam" is how the character addresses Adam; "Adam →" is how Adam ad
 | Juraj (19) | vy | ty | |
 | Everyone else (1960, 1982, 1995 officials, 2035) | vy | vy | including Viktor, Vera 1960, Viera 1995, Alena, Karol, Milada, Jana 25/50/65, Nina, Sára, Boris, Ivan, Miloš |
 | Lea 1995 | vy | vy | Lea to the 10-year-old Adam on the tape: ty |
+| Zuzana 1962 (ZUZANA, 7) | vy | ty | child; adults call her *Zuzka*; she says *teta / ujo* to adults, *pán Baran* |
+| Zuzana 1995 (ZUZANA95) | vy | vy | she tykne Kubo; Kubo says *teta Zuzana* |
+| Kubo (7, 1995) | vy | ty | child |
 
 ---
 
@@ -68,6 +71,9 @@ LEA_REC, ADAM10 and Bodka (who only barks).
 | LEA95 | gentle; the humour comes from what children say | "what the children say between sentences" | recordings with the class, ordinary sounds she collects, Viktor as a small boy |
 | SONA | child seriousness about grown-up rules | "družstvo, nie skupina"; guards the album | the album, the school team, the club |
 | ZITA | the kiosk as the estate's news agency | "správy sú zadarmo"; lost things end up at her kiosk | the housing estate in 1995, forgotten envelopes, who buys which paper |
+| ZUZANA | a seven-year-old's literal logic; serious little face that warms up | counts everything (days to the holidays, Rudo's forgotten lines, drops of the pump); directions by sound and smell | the hopscotch, the class bell, the people of Ivanka (pointers to the current goal), the summer holidays (only inside June 1962) |
+| ZUZANA95 | dry understatement, calm warmth; accepts the inexplicable | counts everything; *iba do štvorky, dospelí ďalej padajú*; the fourth-floor neighbour who throws the ball back | the hopscotch, the wall panels, the days to the holidays, the 1962 bell (only inside the two afternoons) |
+| KUBO | literal child logic, pride | the ball that escapes "only higher"; the fourth-floor neighbour | first grade, the wall, his bike bell |
 | EMIL | slow musician who hears rhythm in everything | the trams keep his tempo | his song „Štyri zastávky“, Karlova Ves, playing for passengers |
 | PALI | blunt colleague with repair verdicts | "neoplatí sa" verdicts; customers' "včera to ešte išlo" | his shop, the worst repair he ever did, belts and motors |
 | VIERA | ironic bookseller about books and readers | "prílohy sa strácajú"; don't hold it by the spine | the antiquariat, what people sell after a move, Emil's sheet music |
@@ -367,6 +373,27 @@ Name: *Dezider, Dezidera, Deziderovi* (*Dezi* only from his friends).
   - `Mapu poznám, kreslili sme ju s Mirou. Cievka patrí do držiaka na Starom moste, opačne ju nevložíš.`
   - `Presné neznamená rovnaké. Presné je, keď vieš, prečo sa niečo líši.`
 
+### ZUZANA95 – Zuzana (40), S69 Sokolíkovský dvor
+
+Zuzana from the Ivanka park of June 1962, on 15 June 1995 in the new courtyard room S69 (docs/story/ZUZANA.md,
+SOKOLIKOVA_YARD.md). Binding: she appears only in 1962 and 1995; nothing about her life (no job, family, home details,
+future) and no line that hints at her future. Calm, kind, quietly funny, short sentences; still counts everything
+(32 wall panels, balls over the wall, days to the holidays). She recognises Adam because he has not aged and never asks
+how (*Niektoré veci sú krajšie bez návodu.*). Vy ↔ vy with Adam; she tykne Kubo, he says *teta Zuzana*.
+
+- **Examples:**
+  - `Múr má tridsaťdva panelov. Nákres je na troch vpravo, hneď pri priechode.`
+  - `Nebojte sa, nebudem sa pýtať, ako to robíte. Niektoré veci sú krajšie bez návodu.`
+
+### KUBO – Kubo (7), S69
+
+A first-grader from a neighbouring entrance of the estate (never Zuzana's child); his bike bell is mute (side quest
+Q11). Quick child speech, takes things literally, proud of what he can do. Vyká Adamovi, Adam tyká jemu.
+
+- **Examples:**
+  - `Už viem čítať, písať a pískať na prstoch.`
+  - `Aby lopta neutekala na ulicu. Ale ona uteká aj tak, len vyššie.`
+
 ---
 
 ## 1960 – Ivanka pri Dunaji (shown as June 1962; Mira 22, Vera 24, Oto 46)
@@ -436,6 +463,19 @@ Slovak). Not to be confused with Viera Holubová (1995).
 - **Examples:**
   - `Vezmite si rydlo. Papier najprv pritlačte, potom obtiahnite hrany. Do platne neryte.`
   - `Kreslím vonku. Je tu svetlo a Oto mi tu nemôže každú chvíľu meniť rozmery.`
+
+---
+
+### ZUZANA – Zuzana (7), S37 Park pri kaštieli (June 1962)
+
+A girl finishing first grade who plays hopscotch next to Vera's bench (docs/story/ZUZANA.md; side quest „Prvý
+posledný zvonec“). Lively once she trusts you, curious, very observant; short plain child sentences, no baby talk.
+Vyká Adamovi, Adam tyká jej; adults say *Zuzka*. **Binding:** nothing about her family, home, job or later life,
+no line that hints at her future; she never appears or is mentioned in 1982, 2020 or 2035.
+
+- **Examples:**
+  - `Ujo Oto? Toho nájdete po zvuku. Tam, kde to tiká zo všetkých strán.`
+  - `Ja si rátam všetko. Políčka, schody aj to, koľkokrát ujo Rudo zabudne text.`
 
 ---
 

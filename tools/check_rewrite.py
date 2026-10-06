@@ -31,7 +31,9 @@ Warnings (exit code 0 unless --strict):
     room name it used to equal, a key that is never shown in play
 
 Content overlays (src/game/data/content_ext/, tools/content_ext.py) are checked too (the live
-dialogue_ext.json, or the draft given with --overlay, restricted to --chunk):
+overlays, or the drafts given with --overlay / --world, restricted to --chunk; the texts of the world
+overlay - new rooms, hotspots, items, characters, actions, quests, epilogue shots, step hints - are
+overlay texts like the new lines):
   * every new overlay text (new lines, new topic labels, new exit / connection texts, first-ride
     lines) gets the same per-text checks as a rewrite (length, internal ids, speaker prefix,
     deprecated words, jargon, anachronisms)
@@ -48,7 +50,7 @@ the game.json text) to PATH, and ui.csv rows to PATH.ui.csv; it never edits the 
 Usage:
     python tools/check_rewrite.py OUT.csv [--chunk C1] [--strict] [--verbose]
                                   [--overrides-out PATH] [--overlay DRAFT_ext.json]
-    python tools/check_rewrite.py --overlay-only [--overlay DRAFT_ext.json] [--chunk C1]
+    python tools/check_rewrite.py --overlay-only [--overlay DRAFT_ext.json] [--world WORLD.json] [--chunk C1]
     python tools/check_rewrite.py --self-test     (glossary rules must hold for the current texts,
                                                    the live overlay included)
 
@@ -494,7 +496,9 @@ def main() -> int:
     parser.add_argument("--overrides-out", type=Path, help="write the merged override table here (not the live file)")
     parser.add_argument("--glossary", type=Path, default=GLOSSARY_JSON)
     parser.add_argument("--self-test", action="store_true", help="check the glossary rules against the current texts")
-    parser.add_argument("--overlay", type=Path, help="check this dialogue overlay draft instead of the live dialogue_ext.json")
+    parser.add_argument("--overlay", type=Path, help="check this dialogue overlay draft instead of the live dialogue_ext.json "
+                        "(a combined draft {world_ext, dialogue_ext} checks both parts)")
+    parser.add_argument("--world", type=Path, help="check this world overlay draft instead of the live world_ext.json")
     parser.add_argument("--overlay-only", action="store_true", help="check only the content overlay (no CSV)")
     args = parser.parse_args()
     if not args.csv and not args.self_test and not args.overlay_only:
@@ -504,12 +508,22 @@ def main() -> int:
     try:
         import content_ext  # noqa: E402
         dialogue = args.overlay or content_ext.DIALOGUE_EXT
+        world = content_ext.read_overlay(args.world) if args.world else content_ext.read_overlay(content_ext.WORLD_EXT)
+        if args.world and isinstance(world, dict) and isinstance(world.get("world_ext"), dict):
+            world = world["world_ext"]
         if args.overlay:
             # A writing draft may carry a "travel" proposal; the travel overlay is checked from travel_ext.json.
             draft = json.loads(args.overlay.read_text(encoding="utf-8"))
+            if isinstance(draft.get("dialogue_ext"), dict):  # combined content draft
+                if isinstance(draft.get("world_ext"), dict) and not args.world:
+                    world = draft["world_ext"]
+                draft = draft["dialogue_ext"]
             draft.pop("travel", None)
             base = tk.load_json(tk.CANONICAL_GAME_JSON)
-            overlay = content_ext.apply_overlays(base, draft, content_ext.read_overlay(content_ext.TRAVEL_EXT))
+            overlay = content_ext.apply_overlays(base, draft, content_ext.read_overlay(content_ext.TRAVEL_EXT), world)
+        elif args.world:
+            base = tk.load_json(tk.CANONICAL_GAME_JSON)
+            overlay = content_ext.apply_overlays(base, content_ext.read_overlay(dialogue), content_ext.read_overlay(content_ext.TRAVEL_EXT), world)
         else:
             overlay = content_ext.load_effective_game(dialogue=dialogue)
         if overlay.errors:

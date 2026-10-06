@@ -18,10 +18,10 @@ public sealed class WalkthroughTests
         var s = C.InitialState;
         foreach (var row in TestData.MainRoute)
         {
-            s = Driver.FollowTravelPath(C, s, row.TravelPath);
+            s = Driver.PrepareStep(C, s, row);
             s = Driver.Interact(C, s, C.GetAction(row.Action), row.PuzzleSolution);
             Assert.Equal(row.InventoryAfter, s.Inventory.OrderBy(x => x, StringComparer.Ordinal).ToList());
-            Assert.Equal(row.RoomAfter, s.Room);
+            Assert.Equal(Driver.ExpectedRoomAfter(C, row), s.Room);
             Driver.AssertInvariants(C, s);
         }
         Assert.True(s.IsDone("F17"));
@@ -41,14 +41,15 @@ public sealed class WalkthroughTests
             s = Driver.Perform(C, s, C.GetAction(id));
             Driver.AssertInvariants(C, s);
         }
+        s = Driver.PerformRemaining(C, s); // side quests of the world overlay (not in walkthrough.json)
         Assert.Equal(C.Actions.Count, s.Done.Length);
-        Assert.Equal(9, s.SideRewards.Length);
+        Assert.Equal(C.Quests.Count(q => q.IsSide), s.SideRewards.Length);
         Assert.All(C.Quests, q => Assert.Equal(QuestStatus.Done, Quests.StatusOf(q, s)));
-        // All 68 rooms remain reachable in the postgame.
+        // All rooms (68 plus the world overlay's) remain reachable in the postgame.
         var reachable = Navigation.ConnectedRooms(C, s, includePortals: true);
         Assert.All(C.Rooms, r => Assert.Contains(r.Id, reachable));
         // New epilogue shots are added without repeating the final transaction.
-        Assert.Equal(9, Epilogue.Select(C, s).Count);
+        Assert.Equal(C.Data.Epilogue.Count, Epilogue.Select(C, s).Count);
         Assert.False(GameRules.ValidAction(C, s, C.GetAction("F17")));
     }
 
@@ -108,7 +109,7 @@ public sealed class WalkthroughTests
         var s = C.InitialState;
         foreach (var row in TestData.MainRoute)
         {
-            s = Driver.FollowTravelPath(C, s, row.TravelPath);
+            s = Driver.PrepareStep(C, s, row);
             var action = C.GetAction(row.Action);
             // Commit, then save in the middle of the lines (before they are played).
             var mid = action.Puzzle is null

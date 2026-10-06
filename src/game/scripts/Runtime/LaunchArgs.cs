@@ -39,4 +39,18 @@ public static class LaunchArgs
     /// background window mode; used with <c>--watch</c> by the OS-level keyboard check (docs/MILESTONE5.md, AT19).
     /// </summary>
     public static bool PlayerStart => Array.IndexOf(User, "--menu") >= 0;
+
+    /// <summary>
+    /// <c>--content-ext &lt;dir&gt;</c>: read the content overlays from this folder (an OS path) instead of
+    /// <c>res://data/content_ext</c>, file by file (an overlay file missing there is read from the project as usual).
+    /// QA only, e.g. the world-overlay sample of the Core tests (src/game/README.md "Content overlays").
+    /// </summary>
+    public static string? ContentExtDirectory
+    {
+        get
+        {
+            var i = Array.IndexOf(User, "--content-ext");
+            return i >= 0 && i + 1 < User.Length ? User[i + 1] : null;
+        }
+    }
 }

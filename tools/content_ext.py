@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 """Content-extension overlays (src/game/data/content_ext/): Python mirror of LastBell.Core's OverlayApplier.
 
-game.json is never edited. Two overlays are applied on top of it when content loads (Core:
+game.json is never edited. Three overlays are applied on top of it when content loads, in this order (Core:
 GameContent.Load(json, ContentOverlays); schema in src/LastBell.Core/README.md section 13):
 
+  world_ext.json     new rooms, hotspots (also in existing rooms), characters, items, actions, side quests with
+                     hints and step texts, epilogue shots, variant layers, exits and connections, and relocations
+                     of existing actions to a hotspot in another room of the same era (tools/content_world.py)
   dialogue_ext.json  longer sequences for existing exchanges (action lines, ambient topic lines,
                      first-entry lines: the full play order, a plain string = an existing line id of
                      that exchange, an object {key, speaker, sk} = a new line) and new optional NPC
@@ -20,18 +23,26 @@ applied), so every overlay text gets its key in dialogue.csv / world.csv like an
     new exit / connection        exit.<exitId>.label|locked, conn.<from>.<to>.label|locked
     first-ride line              travel.<exitId>.first.<n>  (effective game: rooms[].exits[].first_ride[])
     map region                   region.<regionId>.name (ui.csv)
+    world overlay                room / hotspot / item / character / action / quest / epilogue keys of the
+                                 usual scheme, plus action.<id>.hint_step (tools/content_world.py)
 
 Lines an overlay sequence drops and the texts of removed exits / connections are "retired": no
 table key any more (Core still resolves dropped lines for old saves); an sk override row for a
 retired key is kept and ignored, so a revert needs no edit.
 
 Usage:
-    python tools/content_ext.py check [--dialogue PATH] [--travel PATH]
-        validate the overlays against game.json (exit 1 on errors), print a summary
+    python tools/content_ext.py check [--dialogue PATH] [--travel PATH] [--world PATH]
+        validate the overlays against game.json (exit 1 on errors), print a summary. Core is the authority: it
+        also plays the whole game in several orders (no softlock); run `dotnet test src/LastBell.sln` after a change
+    python tools/content_ext.py merge-world DRAFT.json [--out PATH] [--dry-run]
+        write a draft's world overlay (the file itself, or its "world_ext" object, e.g.
+        docs/writing/out/content_v2_draft.json) to world_ext.json, validated against game.json and the live
+        dialogue / travel overlays; it replaces the whole world overlay (prints what is added or dropped)
     python tools/content_ext.py merge DRAFT_ext.json [...] [--out PATH] [--dry-run]
         merge writing drafts (docs/writing/out*/<chunk>_ext.json) into dialogue_ext.json losslessly:
         their sequences, topic_extensions and topics are copied verbatim (plus a "chunk" field);
-        entries of the same chunk already in the overlay are replaced, other chunks are kept.
+        entries of the same chunk already in the overlay are replaced, other chunks are kept. A combined draft
+        merges its "dialogue_ext" object (run merge-world first when it also has a "world_ext").
         A draft's "travel" proposal is not merged (travel_ext.json is edited by the Core owner).
 """
 from __future__ import annotations
@@ -49,9 +60,11 @@ CANONICAL_GAME_JSON = REPO_ROOT / "design-doc" / "game.json"
 OVERLAY_DIR = REPO_ROOT / "src" / "game" / "data" / "content_ext"
 DIALOGUE_EXT = OVERLAY_DIR / "dialogue_ext.json"
 TRAVEL_EXT = OVERLAY_DIR / "travel_ext.json"
+WORLD_EXT = OVERLAY_DIR / "world_ext.json"
 
 DIALOGUE_FORMAT = "lastbell.dialogue_ext"
 TRAVEL_FORMAT = "lastbell.travel_ext"
+WORLD_FORMAT = "lastbell.world_ext"
 TRAVEL_KINDS = {"walk", "map_transition", "car_transition", "bus", "tram", "cable_A6", "board_funitel", "arrive_funitel"}
 
 DIALOGUE_ROOT_KEYS = {"format", "version", "about", "schema", "chunk", "note", "sources", "sequences", "topic_extensions", "topics"}
@@ -86,8 +99,20 @@ class Overlay:
     added_exits: list[str] = field(default_factory=list)
     removed_connections: list[tuple[str, str]] = field(default_factory=list)
     added_connections: list[tuple[str, str]] = field(default_factory=list)
+    # world overlay
+    added_rooms: list[str] = field(default_factory=list)
+    added_hotspots: list[str] = field(default_factory=list)
+    added_characters: list[str] = field(default_factory=list)
+    added_items: list[str] = field(default_factory=list)
+    added_actions: list[str] = field(default_factory=list)
+    added_quests: list[str] = field(default_factory=list)
+    relocations: list[dict] = field(default_factory=list)
+    retired_hotspots: list[str] = field(default_factory=list)
+    region_hints: dict[str, tuple[str, bool]] = field(default_factory=dict)  # new room -> (region id, hub)
     used_dialogue: Path | None = None
     used_travel: Path | None = None
+    used_world: Path | None = None
+    consumed_region_hints: set[str] = field(default_factory=set)
 
     @property
     def ok(self) -> bool:
@@ -107,23 +132,24 @@ def read_overlay(path: Path | None) -> dict | None:
 
 
 def load_effective_game(game_path: Path = CANONICAL_GAME_JSON, dialogue: Path | None = DIALOGUE_EXT,
-                        travel: Path | None = TRAVEL_EXT, use_overlays: bool = True) -> Overlay:
+                        travel: Path | None = TRAVEL_EXT, use_overlays: bool = True,
+                        world: Path | None = WORLD_EXT) -> Overlay:
     game = json.loads(game_path.read_bytes().decode("utf-8"))
     if not use_overlays:
         return Overlay(game=game)
     errors: list[str] = []
-    try:
-        d = read_overlay(dialogue)
-    except json.JSONDecodeError as error:
-        d, _ = None, errors.append(f"$dialogue_ext: invalid JSON ({error})")
-    try:
-        t = read_overlay(travel)
-    except json.JSONDecodeError as error:
-        t, _ = None, errors.append(f"$travel_ext: invalid JSON ({error})")
-    result = apply_overlays(game, d, t)
+    parsed = {}
+    for name, path in (("dialogue", dialogue), ("travel", travel), ("world", world)):
+        try:
+            parsed[name] = read_overlay(path)
+        except json.JSONDecodeError as error:
+            parsed[name] = None
+            errors.append(f"${name}_ext: invalid JSON ({error})")
+    result = apply_overlays(game, parsed["dialogue"], parsed["travel"], parsed["world"])
     result.errors[:0] = errors
-    result.used_dialogue = dialogue if d is not None else None
-    result.used_travel = travel if t is not None else None
+    result.used_dialogue = dialogue if parsed["dialogue"] is not None else None
+    result.used_travel = travel if parsed["travel"] is not None else None
+    result.used_world = world if parsed["world"] is not None else None
     return result
 
 
@@ -240,16 +266,49 @@ def _parse_lines(seq: dict, path: str, kind: str, owner_id: str, prefix: str, ex
 
 # --------------------------------------------------------------------------- apply
 
-def apply_overlays(game: dict, dialogue: dict | None, travel: dict | None) -> Overlay:
-    """Return the effective game (a deep copy) and the overlay bookkeeping; errors mirror Core's messages."""
+class _Helpers:
+    """The shared parsers handed to tools/content_world.py (the same rules as the travel overlay)."""
+
+    header = staticmethod(lambda root, path, fmt, errors: _header(root, path, fmt, errors))
+    check_keys = staticmethod(lambda obj, path, allowed, errors, hint="": _check_keys(obj, path, allowed, errors, hint))
+
+    @staticmethod
+    def parse_lines(seq, path, kind, owner_id, prefix, existing, allowed, speakers, base_ids, new_ids, allow_existing, errors):
+        return _parse_lines(seq, path, kind, owner_id, prefix, existing, allowed, speakers, base_ids, new_ids,
+                            allow_existing, errors)
+
+    parse_exit = staticmethod(lambda *a: _parse_exit(*a))
+    parse_connection = staticmethod(lambda *a: _parse_connection(*a))
+    check_edges = staticmethod(lambda *a: _check_edges(*a))
+    check_reachable = staticmethod(lambda *a: _check_reachable(*a))
+
+
+def apply_overlays(game: dict, dialogue: dict | None, travel: dict | None, world: dict | None = None) -> Overlay:
+    """Return the effective game (a deep copy) and the overlay bookkeeping; errors mirror Core's messages.
+    Order as in Core: world, dialogue, travel."""
+    import content_world  # noqa: E402  (same folder)
+
     eff = copy.deepcopy(game)
     result = Overlay(game=eff)
-    base_ids = _all_line_ids(game)
     new_ids: set[str] = set()
+    if world is not None:
+        content_world.apply_world(eff, world, _all_line_ids(game), new_ids, result, _Helpers)
+        if result.errors:
+            result.added_line_keys |= new_ids
+            result.added_keys |= new_ids
+            return result
+    # Lines the world overlay added count as existing lines for the dialogue overlay (it may extend them).
+    base_ids = _all_line_ids(eff)
     if dialogue is not None:
         _apply_dialogue(eff, dialogue, base_ids, new_ids, result)
     if travel is not None:
         _apply_travel(eff, travel, base_ids, new_ids, result)
+    for room_id, (region, _hub) in result.region_hints.items():
+        if room_id in result.consumed_region_hints or any(f"rooms({room_id}).region" in e for e in result.errors):
+            continue
+        era = next((r["era"] for r in eff["rooms"] if r["id"] == room_id), None)
+        result.errors.append(f"$world_ext.rooms({room_id}).region: {era} has no map regions in travel_ext.json; leave 'region' "
+                             "out (the room joins the region of its district) or define the regions of that era")
     result.added_line_keys |= new_ids
     result.added_keys |= new_ids
     return result
@@ -316,6 +375,8 @@ def _apply_dialogue(eff: dict, root: dict, base_ids: set[str], new_ids: set[str]
                 if target and target.get("kind") == "npc" and target.get("character_id"):
                     allowed |= party(target["character_id"])
                 allowed |= set((a.get("staging") or {}).get("guest_speakers", []))
+                # people standing in the action's (effective) room may join in
+                allowed |= set(rooms.get(a.get("room"), {}).get("npc_ids", []))
                 kind, block, prefix, existing = "action", f"action.{oid}", f"action.{oid}.", a.get("lines", [])
                 expected_kind = "action_lines"
             elif anchor == "topic":
@@ -473,93 +534,30 @@ def _apply_travel(eff: dict, root: dict, base_ids: set[str], new_ids: set[str], 
         res.retired_keys |= {f"conn.{found['from']}.{found['to']}.label", f"conn.{found['from']}.{found['to']}.locked"}
 
     added_exits = []
+    exits_by_room = {rid: r["exits"] for rid, r in rooms.items()}
     for i, ex in enumerate(root.get("exits", [])):
         path = f"{rp}.exits[{i}]"
-        if not isinstance(ex, dict) or not isinstance(ex.get("id"), str):
+        if not isinstance(ex, dict):
             errors.append(f"{path}: must be an object with an id")
             continue
-        eid = ex["id"]
-        path += f"({eid})"
-        _check_keys(ex, path, EXIT_KEYS, errors)
-        missing = [k for k in ("room", "to", "label", "locked_look", "travel", "rect", "interaction_point") if k not in ex]
-        if missing:
-            errors.append(f"{path}: missing {', '.join(missing)}")
-            continue
-        room_id, to = ex["room"], ex["to"]
-        if room_id not in rooms or to not in rooms:
-            errors.append(f"{path}: unknown room {room_id if room_id not in rooms else to!r}")
-            continue
-        if to == room_id:
-            errors.append(f"{path}.to: an exit cannot lead into its own room")
-        if rooms[to]["era"] != rooms[room_id]["era"]:
-            errors.append(f"{path}.to: {to!r} is in another era; eras are changed only by the chronometer")
-        if eid != f"{room_id}.to_{to}":
-            errors.append(f"{path}.id: expected '{room_id}.to_{to}'")
-        if eid in all_exit_ids and eid not in res.removed_exits:
-            errors.append(f"{path}.id: exit {eid!r} already exists")
-        if any(e["to"] == to for e in rooms[room_id]["exits"]):
-            errors.append(f"{path}: room {room_id!r} already has an exit to {to!r}")
-        if ex["travel"] not in TRAVEL_KINDS:
-            errors.append(f"{path}.travel: unknown travel style {ex['travel']!r}")
-        requires = _str_list(ex, "requires_done", path, errors)
-        for n, a in enumerate(requires):
-            if a not in action_ids:
-                errors.append(f"{path}.requires_done[{n}]: unknown action {a!r}")
-        if not (isinstance(ex["rect"], list) and len(ex["rect"]) == 4 and all(isinstance(v, int) for v in ex["rect"])):
-            errors.append(f"{path}.rect: must have 4 integers")
-        if not (isinstance(ex["interaction_point"], list) and len(ex["interaction_point"]) == 2):
-            errors.append(f"{path}.interaction_point: must have 2 integers")
-        for k in ("label", "locked_look"):
-            if not isinstance(ex[k], str) or not ex[k].strip():
-                errors.append(f"{path}.{k}: empty")
-        new_exit = {"id": eid, "to": to, "label": ex["label"], "requires_done": requires, "travel": ex["travel"],
-                    "locked_look": ex["locked_look"], "rect": ex["rect"], "interaction_point": ex["interaction_point"]}
-        ride = ex.get("first_ride")
-        if ride is not None:
-            rpth = path + ".first_ride"
-            if not isinstance(ride, dict):
-                errors.append(f"{rpth}: must be {{lines: [...]}}")
-            else:
-                _check_keys(ride, rpth, {"id", "lines", "note"}, errors)
-                if "id" in ride and ride["id"] != f"travel.{eid}.first":
-                    errors.append(f"{rpth}.id: expected 'travel.{eid}.first'")
-                lines = _parse_lines(ride, rpth, "first ride", eid, f"travel.{eid}.first.", [], {"ADAM"},
-                                     _speakers(eff), base_ids, new_ids, False, errors)
-                if lines is not None:
-                    new_exit["first_ride"] = lines
-        rooms[room_id]["exits"].append(new_exit)
-        added_exits.append((room_id, new_exit))
-        res.added_exits.append(eid)
-        res.added_keys |= {f"exit.{eid}.label", f"exit.{eid}.locked"}
+        new_exit, room_id = _parse_exit(ex, path, None, rooms, exits_by_room, all_exit_ids, res.removed_exits,
+                                        action_ids, _speakers(eff), base_ids, new_ids, res)
+        if new_exit is not None:
+            added_exits.append((room_id, new_exit))
 
+    added_connections = []
     for i, c in enumerate(root.get("connections", [])):
         path = f"{rp}.connections[{i}]"
         if not isinstance(c, dict):
             errors.append(f"{path}: must be an object")
             continue
-        _check_keys(c, path, CONNECTION_KEYS, errors)
-        a, b = c.get("from"), c.get("to")
-        path += f"({a}->{b})"
-        if a not in rooms or b not in rooms:
-            errors.append(f"{path}: unknown room")
+        new_c = _parse_connection(c, path, rooms, connections, action_ids, errors)
+        if new_c is None:
             continue
-        if rooms[a]["era"] != rooms[b]["era"]:
-            errors.append(f"{path}: connections stay inside one era")
-        if any({x["from"], x["to"]} == {a, b} for x in connections):
-            errors.append(f"{path}: a connection between {a!r} and {b!r} already exists")
-        if c.get("travel") not in TRAVEL_KINDS:
-            errors.append(f"{path}.travel: unknown travel style {c.get('travel')!r}")
-        requires = _str_list(c, "requires_done", path, errors)
-        for n, x in enumerate(requires):
-            if x not in action_ids:
-                errors.append(f"{path}.requires_done[{n}]: unknown action {x!r}")
-        for k in ("label", "locked_look"):
-            if not isinstance(c.get(k), str) or not c[k].strip():
-                errors.append(f"{path}.{k}: missing or empty")
-        connections.append({"from": a, "to": b, "requires_done": requires, "bidirectional": c.get("bidirectional", True),
-                            "travel": c.get("travel"), "label": c.get("label", ""), "locked_look": c.get("locked_look", "")})
-        res.added_connections.append((a, b))
-        res.added_keys |= {f"conn.{a}.{b}.label", f"conn.{a}.{b}.locked"}
+        connections.append(new_c)
+        added_connections.append((new_c["from"], new_c["to"]))
+        res.added_connections.append((new_c["from"], new_c["to"]))
+        res.added_keys |= {f"conn.{new_c['from']}.{new_c['to']}.label", f"conn.{new_c['from']}.{new_c['to']}.locked"}
     if len(errors) > start:
         return
 
@@ -567,17 +565,7 @@ def _apply_travel(eff: dict, root: dict, base_ids: set[str], new_ids: set[str], 
         return any((c["from"] == x and c["to"] == y) or (c.get("bidirectional") and c["from"] == y and c["to"] == x)
                    for c in connections)
 
-    for a, b in res.added_connections:
-        c = next(x for x in connections if x["from"] == a and x["to"] == b)
-        for x, y in ((a, b), (b, a)) if c.get("bidirectional") else ((a, b),):
-            e = next((e for e in rooms[x]["exits"] if e["to"] == y), None)
-            if e is None:
-                errors.append(f"{rp}.connections({a}->{b}): room {x!r} needs an exit to {y!r} in exits")
-            elif e["travel"] != c["travel"] or e.get("requires_done", []) != c["requires_done"]:
-                errors.append(f"{rp}.exits({e['id']}): travel and requires_done must equal those of connection {a}->{b}")
-    for room_id, e in added_exits:
-        if not linked(room_id, e["to"]):
-            errors.append(f"{rp}.exits({e['id']}): no connection leads from {room_id!r} to {e['to']!r}")
+    _check_edges(rp, connections, exits_by_room, added_connections, added_exits, errors)
     for a, b in res.removed_connections:
         for x, y in ((a, b), (b, a)):
             stale = next((e for e in rooms[x]["exits"] if e["to"] == y), None)
@@ -588,20 +576,135 @@ def _apply_travel(eff: dict, root: dict, base_ids: set[str], new_ids: set[str], 
         if linked(room_id, e["to"]):
             errors.append(f"{rp}.remove_exits({exit_id}): connection {room_id}<->{e['to']} still exists")
 
+    _check_reachable(rp, eff, "can no longer be reached", errors)
+    _apply_regions(eff, root, res)
+
+
+def _parse_exit(ex: dict, path: str, own_room: str | None, rooms: dict, exits_by_room: dict, all_exit_ids: set,
+                removed: list, action_ids: set, speakers: set, base_ids: set, new_ids: set, res: Overlay):
+    """One added exit (travel_ext exits[], world_ext exits[] and rooms[].exits[]); returns (exit, room id) or (None, None)."""
+    errors = res.errors
+    if not isinstance(ex.get("id"), str):
+        errors.append(f"{path}: must be an object with an id")
+        return None, None
+    eid = ex["id"]
+    path += f"({eid})"
+    _check_keys(ex, path, EXIT_KEYS - {"room"} if own_room else EXIT_KEYS, errors)
+    required = ("to", "label", "locked_look", "travel", "rect", "interaction_point") + (() if own_room else ("room",))
+    missing = [k for k in required if k not in ex]
+    if missing:
+        errors.append(f"{path}: missing {', '.join(missing)}")
+        return None, None
+    room_id, to = own_room or ex["room"], ex["to"]
+    if room_id not in rooms or to not in rooms:
+        errors.append(f"{path}: unknown room {room_id if room_id not in rooms else to!r}")
+        return None, None
+    if to == room_id:
+        errors.append(f"{path}.to: an exit cannot lead into its own room")
+    if rooms[to]["era"] != rooms[room_id]["era"]:
+        errors.append(f"{path}.to: {to!r} is in another era; eras are changed only by the chronometer")
+    if eid != f"{room_id}.to_{to}":
+        errors.append(f"{path}.id: expected '{room_id}.to_{to}'")
+    if eid in all_exit_ids and eid not in removed:
+        errors.append(f"{path}.id: exit {eid!r} already exists")
+    all_exit_ids.add(eid)
+    if any(e["to"] == to for e in exits_by_room[room_id]):
+        errors.append(f"{path}: room {room_id!r} already has an exit to {to!r}")
+    if ex["travel"] not in TRAVEL_KINDS:
+        errors.append(f"{path}.travel: unknown travel style {ex['travel']!r}")
+    requires = _str_list(ex, "requires_done", path, errors)
+    for n, a in enumerate(requires):
+        if a not in action_ids:
+            errors.append(f"{path}.requires_done[{n}]: unknown action {a!r}")
+    ok = True
+    if not (isinstance(ex["rect"], list) and len(ex["rect"]) == 4 and all(isinstance(v, int) for v in ex["rect"])):
+        errors.append(f"{path}.rect: must have 4 integers")
+        ok = False
+    if not (isinstance(ex["interaction_point"], list) and len(ex["interaction_point"]) == 2):
+        errors.append(f"{path}.interaction_point: must have 2 integers")
+        ok = False
+    for k in ("label", "locked_look"):
+        if not isinstance(ex[k], str) or not ex[k].strip():
+            errors.append(f"{path}.{k}: empty")
+    new_exit = {"id": eid, "to": to, "label": ex["label"], "requires_done": requires, "travel": ex["travel"],
+                "locked_look": ex["locked_look"], "rect": ex["rect"], "interaction_point": ex["interaction_point"]}
+    ride = ex.get("first_ride")
+    if ride is not None:
+        rpth = path + ".first_ride"
+        if not isinstance(ride, dict):
+            errors.append(f"{rpth}: must be {{lines: [...]}}")
+        else:
+            _check_keys(ride, rpth, {"id", "lines", "note"}, errors)
+            if "id" in ride and ride["id"] != f"travel.{eid}.first":
+                errors.append(f"{rpth}.id: expected 'travel.{eid}.first'")
+            lines = _parse_lines(ride, rpth, "first ride", eid, f"travel.{eid}.first.", [], {"ADAM"},
+                                 speakers, base_ids, new_ids, False, errors)
+            if lines is not None:
+                new_exit["first_ride"] = lines
+    exits_by_room[room_id].append(new_exit)
+    res.added_exits.append(eid)
+    res.added_keys |= {f"exit.{eid}.label", f"exit.{eid}.locked"}
+    return (new_exit, room_id) if ok else (None, None)
+
+
+def _parse_connection(c: dict, path: str, rooms: dict, connections: list, action_ids: set, errors: list[str]):
+    """One added connection (travel_ext and world_ext connections[]); None on an unusable entry."""
+    _check_keys(c, path, CONNECTION_KEYS, errors)
+    a, b = c.get("from"), c.get("to")
+    path += f"({a}->{b})"
+    if a not in rooms or b not in rooms:
+        errors.append(f"{path}: unknown room")
+        return None
+    if rooms[a]["era"] != rooms[b]["era"]:
+        errors.append(f"{path}: connections stay inside one era")
+    if any({x["from"], x["to"]} == {a, b} for x in connections):
+        errors.append(f"{path}: a connection between {a!r} and {b!r} already exists")
+    if c.get("travel") not in TRAVEL_KINDS:
+        errors.append(f"{path}.travel: unknown travel style {c.get('travel')!r}")
+    requires = _str_list(c, "requires_done", path, errors)
+    for n, x in enumerate(requires):
+        if x not in action_ids:
+            errors.append(f"{path}.requires_done[{n}]: unknown action {x!r}")
+    for k in ("label", "locked_look"):
+        if not isinstance(c.get(k), str) or not c[k].strip():
+            errors.append(f"{path}.{k}: missing or empty")
+    return {"from": a, "to": b, "requires_done": requires, "bidirectional": c.get("bidirectional", True),
+            "travel": c.get("travel"), "label": c.get("label", ""), "locked_look": c.get("locked_look", "")}
+
+
+def _check_edges(rp: str, connections: list, exits_by_room: dict, added_connections, added_exits, errors: list[str]) -> None:
+    """Exits and connections describe the same edges (Core CheckEdges)."""
+    def linked(x: str, y: str) -> bool:
+        return any((c["from"] == x and c["to"] == y) or (c.get("bidirectional") and c["from"] == y and c["to"] == x)
+                   for c in connections)
+
+    for a, b in added_connections:
+        c = next(x for x in connections if x["from"] == a and x["to"] == b)
+        for x, y in ((a, b), (b, a)) if c.get("bidirectional") else ((a, b),):
+            e = next((e for e in exits_by_room[x] if e["to"] == y), None)
+            if e is None:
+                errors.append(f"{rp}.connections({a}->{b}): room {x!r} needs an exit to {y!r} in exits")
+            elif e["travel"] != c["travel"] or e.get("requires_done", []) != c["requires_done"]:
+                errors.append(f"{rp}.exits({e['id']}): travel and requires_done must equal those of connection {a}->{b}")
+    for room_id, e in added_exits:
+        if not linked(room_id, e["to"]):
+            errors.append(f"{rp}.exits({e['id']}): no connection leads from {room_id!r} to {e['to']!r}; add one in connections")
+
+
+def _check_reachable(rp: str, eff: dict, what: str, errors: list[str]) -> None:
+    """Every room stays reachable from its era's time node over the (ungated) graph."""
     for era in eff["eras"]:
         seen, todo = {era["anchor"]}, [era["anchor"]]
         while todo:
             r = todo.pop()
-            for c in connections:
+            for c in eff["connections"]:
                 for x, y in ((c["from"], c["to"]), (c["to"], c["from"]) if c.get("bidirectional") else (None, None)):
                     if x == r and y not in seen:
                         seen.add(y)
                         todo.append(y)
         for r in eff["rooms"]:
             if r["era"] == era["year"] and r["id"] not in seen:
-                errors.append(f"{rp}: room {r['id']!r} can no longer be reached from the {era['year']} time node {era['anchor']!r}")
-
-    _apply_regions(eff, root, res)
+                errors.append(f"{rp}: room {r['id']!r} {what} from the {era['year']} time node {era['anchor']!r}")
 
 
 def _apply_regions(eff: dict, root: dict, res: Overlay) -> None:
@@ -611,6 +714,7 @@ def _apply_regions(eff: dict, root: dict, res: Overlay) -> None:
     years = {e["year"] for e in eff["eras"]}
     region_of: dict[str, dict] = {}
     regions: list[dict] = []
+    hinted = {r: h for r, h in res.region_hints.items() if r in rooms}
     for i, g in enumerate(root.get("regions", [])):
         path = f"{rp}.regions[{i}]"
         if not isinstance(g, dict) or not isinstance(g.get("id"), str):
@@ -626,8 +730,20 @@ def _apply_regions(eff: dict, root: dict, res: Overlay) -> None:
             errors.append(f"{path}.id: a region id is a plain name without dots")
         if any(r["era"] == era and r["id"] == g["id"] for r in regions):
             errors.append(f"{path}.id: region {g['id']!r} is defined twice in {era}")
-        members = _str_list(g, "rooms", path, errors)
-        hubs = _str_list(g, "hubs", path, errors)
+        members = list(_str_list(g, "rooms", path, errors))
+        hubs = list(_str_list(g, "hubs", path, errors))
+        for room_id, (region, hub) in hinted.items():
+            if rooms[room_id]["era"] != era:
+                continue
+            if region == g["id"]:
+                if room_id not in members:
+                    members.append(room_id)
+                if hub and room_id not in hubs:
+                    hubs.append(room_id)
+                elif not hub and room_id in hubs:
+                    errors.append(f"{path}.hubs: {room_id!r} is a hub here but $world_ext.rooms({room_id}).hub is false")
+            elif room_id in members:
+                errors.append(f"{path}.rooms: {room_id!r} is listed here but $world_ext.rooms({room_id}).region is {region!r}")
         if not members:
             errors.append(f"{path}.rooms: empty")
         if not hubs:
@@ -649,7 +765,13 @@ def _apply_regions(eff: dict, root: dict, res: Overlay) -> None:
     for era in {r["era"] for r in regions}:
         for room in eff["rooms"]:
             if room["era"] == era and room["id"] not in region_of:
-                errors.append(f"{rp}.regions: room {room['id']!r} of {era} belongs to no region")
+                if room["id"] in hinted:
+                    names = ", ".join(r["id"] for r in regions if r["era"] == era)
+                    errors.append(f"$world_ext.rooms({room['id']}).region: {hinted[room['id']][0]!r} is not a region of {era} "
+                                  f"in travel_ext.json (regions: {names})")
+                else:
+                    errors.append(f"{rp}.regions: room {room['id']!r} of {era} belongs to no region")
+    res.consumed_region_hints |= {r for r in hinted if r in region_of}
     for c in eff["connections"]:
         a, b = region_of.get(c["from"]), region_of.get(c["to"])
         if a is None or b is None or a is b:
@@ -670,19 +792,31 @@ def region_ids(overlay: Overlay) -> set[str]:
 
 # --------------------------------------------------------------------------- CLI
 
+def _shown(path: Path | None) -> str:
+    if path is None:
+        return "-"
+    try:
+        return path.resolve().relative_to(REPO_ROOT).as_posix()
+    except ValueError:
+        return path.as_posix()
+
+
 def _summary(o: Overlay) -> None:
-    print(f"dialogue overlay: {o.used_dialogue.relative_to(REPO_ROOT).as_posix() if o.used_dialogue else '-'}; "
-          f"travel overlay: {o.used_travel.relative_to(REPO_ROOT).as_posix() if o.used_travel else '-'}")
+    print(f"dialogue overlay: {_shown(o.used_dialogue)}; travel overlay: {_shown(o.used_travel)}")
     blocks = [b for b in o.sequences if not any(b == f"topic.{t}" for t in o.new_topics)]
     print(f"extended exchanges: {len(blocks)} ({sum(1 for b in blocks if b.startswith('action.'))} actions, "
           f"{sum(1 for b in blocks if b.startswith('topic.'))} topics, {sum(1 for b in blocks if b.startswith('entry.'))} first entries); "
           f"new topics: {len(o.new_topics)}; new lines: {len(o.added_line_keys)}; retired handoff lines: {len(o.retired_keys)}")
     print(f"exits removed {o.removed_exits}, added {o.added_exits}; connections removed {o.removed_connections}, "
           f"added {o.added_connections}; regions: {len(o.regions)}")
+    print(f"world overlay: {_shown(o.used_world)}; rooms +{o.added_rooms}, "
+          f"hotspots +{len(o.added_hotspots)}, characters +{o.added_characters}, items +{o.added_items}, "
+          f"actions +{o.added_actions}, quests +{o.added_quests}, relocations "
+          f"{[r['action'] + ' ' + r['from_room'] + '->' + r['to_room'] for r in o.relocations]}, retired hotspots {o.retired_hotspots}")
 
 
 def cmd_check(args) -> int:
-    o = load_effective_game(dialogue=args.dialogue, travel=args.travel)
+    o = load_effective_game(dialogue=args.dialogue, travel=args.travel, world=args.world)
     _summary(o)
     for e in o.errors:
         print(f"  ERROR {e}")
@@ -705,9 +839,11 @@ def cmd_merge(args) -> int:
         "topics": list(current.get("topics", [])),
     }
     for draft_path in args.drafts:
-        draft = json.loads(draft_path.read_text(encoding="utf-8"))
-        chunk = draft.get("chunk") or draft_path.stem.replace("_ext", "")
-        rel = draft_path.resolve().relative_to(REPO_ROOT).as_posix()
+        whole = json.loads(draft_path.read_text(encoding="utf-8"))
+        # A combined content draft carries its dialogue part as "dialogue_ext" (the "world_ext" part: merge-world).
+        draft = whole["dialogue_ext"] if isinstance(whole.get("dialogue_ext"), dict) else whole
+        chunk = draft.get("chunk") or whole.get("chunk") or draft_path.stem.replace("_ext", "")
+        rel = _shown(draft_path)
         for key in ("sequences", "topic_extensions", "topics"):
             merged[key] = [e for e in merged[key] if e.get("chunk") != chunk]
             for entry in draft.get(key, []):
@@ -716,15 +852,19 @@ def cmd_merge(args) -> int:
                 merged[key].append(e)
         merged["sources"] = [s for s in merged["sources"] if s.get("chunk") != chunk] + [{"chunk": chunk, "file": rel}]
         skipped = [k for k in draft if k not in DIALOGUE_ROOT_KEYS]
+        if draft is not whole:
+            skipped += [k for k in whole if k not in ("dialogue_ext", "chunk")]
         print(f"{rel}: chunk {chunk}: {len(draft.get('sequences', []))} sequences, "
               f"{len(draft.get('topic_extensions', []))} topic extensions, {len(draft.get('topics', []))} topics"
-              + (f"; not merged: {skipped} (travel texts go to travel_ext.json)" if skipped else ""))
+              + (f"; not merged: {skipped} (world_ext: merge-world; travel texts go to travel_ext.json)" if skipped else ""))
     # Validate the result before writing.
     game = json.loads(CANONICAL_GAME_JSON.read_text(encoding="utf-8"))
-    check = apply_overlays(game, merged, read_overlay(TRAVEL_EXT))
+    check = apply_overlays(game, merged, read_overlay(TRAVEL_EXT), read_overlay(WORLD_EXT))
     for e in check.errors:
         print(f"  ERROR {e}")
     if check.errors:
+        if any(isinstance(json.loads(p.read_text(encoding="utf-8")).get("world_ext"), dict) for p in args.drafts):
+            print("  hint: the draft has a world_ext part; run `python tools/content_ext.py merge-world <draft>` first")
         print("RESULT: FAILED (nothing written)")
         return 1
     text = json.dumps(merged, ensure_ascii=False, indent=1) + "\n"
@@ -738,18 +878,54 @@ def cmd_merge(args) -> int:
     return 0
 
 
+def cmd_merge_world(args) -> int:
+    """Write a draft's world overlay (the whole file, or its "world_ext" part) to world_ext.json after validation."""
+    whole = json.loads(args.draft.read_text(encoding="utf-8"))
+    draft = whole["world_ext"] if isinstance(whole.get("world_ext"), dict) else whole
+    draft = {"format": WORLD_FORMAT, "version": 1, **{k: v for k, v in draft.items() if k not in ("format", "version")}}
+    current = read_overlay(args.out) or {}
+    game = json.loads(CANONICAL_GAME_JSON.read_text(encoding="utf-8"))
+    check = apply_overlays(game, read_overlay(DIALOGUE_EXT), read_overlay(TRAVEL_EXT), draft)
+    for e in check.errors:
+        print(f"  ERROR {e}")
+    before = apply_overlays(game, None, None, current) if current else Overlay(game=game)
+    for what in ("added_rooms", "added_characters", "added_items", "added_actions", "added_quests"):
+        old, new = set(getattr(before, what)), set(getattr(check, what))
+        if old != new:
+            print(f"{what[6:]}: +{sorted(new - old)} -{sorted(old - new)}")
+    print(f"relocations: {[r['action'] + ' ' + r['from_room'] + '->' + r['to_room'] for r in check.relocations]}")
+    if check.errors:
+        print("RESULT: FAILED (nothing written)")
+        return 1
+    text = json.dumps(draft, ensure_ascii=False, indent=1) + "\n"
+    if args.dry_run:
+        print(f"would write {_shown(args.out)} ({len(text)} bytes)")
+    else:
+        args.out.parent.mkdir(parents=True, exist_ok=True)
+        args.out.write_bytes(text.encode("utf-8"))
+        print(f"wrote {_shown(args.out)} (replaces the whole world overlay)")
+    print("RESULT: OK (Core also checks playability: run dotnet test src/LastBell.sln, then tools/extract_strings.py)")
+    return 0
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = parser.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("check", help="validate the overlays")
     p.add_argument("--dialogue", type=Path, default=DIALOGUE_EXT)
     p.add_argument("--travel", type=Path, default=TRAVEL_EXT)
+    p.add_argument("--world", type=Path, default=WORLD_EXT)
     p.set_defaults(func=cmd_check)
     p = sub.add_parser("merge", help="merge writing drafts into dialogue_ext.json")
     p.add_argument("drafts", nargs="+", type=Path)
     p.add_argument("--out", type=Path, default=DIALOGUE_EXT)
     p.add_argument("--dry-run", action="store_true")
     p.set_defaults(func=cmd_merge)
+    p = sub.add_parser("merge-world", help="write a draft's world overlay to world_ext.json (validated)")
+    p.add_argument("draft", type=Path)
+    p.add_argument("--out", type=Path, default=WORLD_EXT)
+    p.add_argument("--dry-run", action="store_true")
+    p.set_defaults(func=cmd_merge_world)
     args = parser.parse_args()
     return args.func(args)
 

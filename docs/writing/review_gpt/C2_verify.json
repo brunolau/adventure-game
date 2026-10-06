@@ -1,0 +1,1237 @@
+{
+  "chunk": "C2",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\out_v2\\C2.csv",
+  "overlay": [
+    "docs\\writing\\out_v2\\C2_ext.json"
+  ],
+  "cost_usd": 3.0737,
+  "batches": {
+    "B01+B03+B05+B07+B08": {
+      "hash": "7da922b6abebc6f2",
+      "status": "ok",
+      "heading": "B01 · main quest M03 „Späť v škole“ | B03 · main quest M03 „Späť v škole“ | B05 · main quest M04 „Mechanika kazety“ | B07 · main quest M05 „Hlasy sa nerušia“ | B08 · main quest M05 „Hlasy sa nerušia“",
+      "keys": [
+        "action.B01.001",
+        "action.B01.002",
+        "action.B03.x02",
+        "action.B03.x05",
+        "action.B05.x02",
+        "action.B07.x02",
+        "action.B07.x05",
+        "action.B08.004",
+        "action.B08.x04"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22569,
+        "completion_tokens": 1677,
+        "total_tokens": 24246,
+        "cost": 0.2673745,
+        "prompt_tokens_details": {
+          "cached_tokens": 6487,
+          "cache_write_tokens": 6487
+        }
+      },
+      "usd": 0.2674
+    },
+    "B09+B12+B14+B15": {
+      "hash": "1ce7699d26f3ae3c",
+      "status": "ok",
+      "heading": "B09 · main quest M05 „Hlasy sa nerušia“ | B12 · main quest M05 „Hlasy sa nerušia“ | B14 · main quest M06 „Mapa v troch kusoch“ | B15 · main quest M06 „Mapa v troch kusoch“",
+      "keys": [
+        "action.B09.x02",
+        "action.B09.x03",
+        "action.B09.x05",
+        "action.B12.001",
+        "action.B14.003",
+        "action.B14.x03",
+        "action.B15.004",
+        "action.B15.x04"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 17614,
+        "completion_tokens": 1413,
+        "total_tokens": 19027,
+        "cost": 0.2146605,
+        "prompt_tokens_details": {
+          "cached_tokens": 4943,
+          "cache_write_tokens": 4943
+        }
+      },
+      "usd": 0.2147
+    },
+    "B16+B17+B18+B21+B22": {
+      "hash": "098368f21559f569",
+      "status": "ok",
+      "heading": "B16 · main quest M06 „Mapa v troch kusoch“ | B17 · main quest M07 „Rytmus na Dunaji“ | B18 · main quest M07 „Rytmus na Dunaji“ | B21 · main quest M07 „Rytmus na Dunaji“ | B22 · main quest M07 „Rytmus na Dunaji“",
+      "keys": [
+        "action.B16.002",
+        "action.B17.003",
+        "action.B17.004",
+        "action.B17.objective",
+        "action.B17.journal",
+        "action.B18.x02",
+        "action.B21.001",
+        "action.B22.001"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18662,
+        "completion_tokens": 1717,
+        "total_tokens": 20379,
+        "cost": 0.226084,
+        "prompt_tokens_details": {
+          "cached_tokens": 5154,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2261
+    },
+    "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11": {
+      "hash": "23b45ed8dbdb2cd9",
+      "status": "ok",
+      "heading": "E11 · main quest M11C „Tridsaťosem rokov v jednom pohári“ | Q5C · side quest Q5 „Mapa rozsvietených okien“ | Q9D · side quest Q9 „Nápad mimo predlohy“ | Q11A · side quest Q11 „Druhý posledný zvonec“ | Q11B · side quest Q11 „Druhý posledný zvonec“ | Q11C · side quest Q11 „Druhý posledný zvonec“ | S11 · Dúbravská zastávka (1995, Dúbravka)",
+      "keys": [
+        "action.E11.x04",
+        "action.Q5C.003",
+        "action.Q9D.x02",
+        "topic.Q11A.label",
+        "topic.Q11B.label",
+        "topic.Q11C.label",
+        "action.Q11C.001",
+        "look.S11.ambient 1",
+        "look.S11.ambient 2"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 26253,
+        "completion_tokens": 2269,
+        "total_tokens": 28522,
+        "cost": 0.308525,
+        "prompt_tokens_details": {
+          "cached_tokens": 7495,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3085
+    },
+    "S12+S13+S14+S15": {
+      "hash": "cd2d9a46c1c7d762",
+      "status": "ok",
+      "heading": "S12 · Pred ZŠ Sokolíkova (1995, Dúbravka) | S13 · Školská vstupná chodba (1995, Dúbravka) | S14 · Trieda pamäťového krúžku (1995, Dúbravka) | S15 · Fyzikálny kabinet (1995, Dúbravka)",
+      "keys": [
+        "look.S12.ambient 1",
+        "look.S12.ambient 2",
+        "entry.S13.001",
+        "look.S13.ambient 1",
+        "look.S14.ambient 1",
+        "look.S15.ambient 1",
+        "look.S15.ambient 2",
+        "look.S15.register"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 18643,
+        "completion_tokens": 1881,
+        "total_tokens": 20524,
+        "cost": 0.247447,
+        "prompt_tokens_details": {
+          "cached_tokens": 5082,
+          "cache_write_tokens": 5082
+        }
+      },
+      "usd": 0.2474
+    },
+    "S16+S20+S26+S24+S28": {
+      "hash": "5818e76b48cb15c9",
+      "status": "ok",
+      "heading": "S16 · Miestnosť školského rozhlasu (1995, Dúbravka) | S20 · Paliho opravovňa (1995, Karlova Ves) | S26 · Opravovňa odevov (1995, Ružinov) | S24 · Fotoateliér Svetlo (1995, Staré Mesto) | S28 · Petržalský podchod (1995, Petržalka)",
+      "keys": [
+        "look.S16.socket",
+        "look.S20.ambient 2",
+        "entry.S26.001",
+        "look.S26.MILADA",
+        "entry.S24.001",
+        "look.S24.FOTO",
+        "look.S28.JURAJ",
+        "look.S28.ambient 1"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 17846,
+        "completion_tokens": 941,
+        "total_tokens": 18787,
+        "cost": 0.179286,
+        "prompt_tokens_details": {
+          "cached_tokens": 5136,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.1793
+    },
+    "S29+S17+S30+ARCHIVAR+DEZI+EMIL": {
+      "hash": "00c973acd1810835",
+      "status": "ok",
+      "heading": "S29 · Garáž rádioamatéra (1995, Petržalka) | S17 · Školský dvor (1995, Dúbravka) | S30 · Merací stánok na Starom moste (1995, Petržalka) | ARCHIVAR · Karol Merta (53) — S23 | DEZI · Dezider Kováč (47) — S29 | EMIL · Emil Belan (61) — S19",
+      "keys": [
+        "look.S29.DEZI",
+        "look.S17.rhythm",
+        "look.S30.dial",
+        "topic.ARCHIVAR.ambient 1.x01",
+        "topic.ARCHIVAR.extra 1.006",
+        "topic.DEZI.ambient 1.001",
+        "topic.DEZI.extra 1.003",
+        "topic.EMIL.extra 2.002",
+        "topic.EMIL.extra 2.004"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22297,
+        "completion_tokens": 1175,
+        "total_tokens": 23472,
+        "cost": 0.222977,
+        "prompt_tokens_details": {
+          "cached_tokens": 6527,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.223
+    },
+    "FOTO+JANA95+JURAJ": {
+      "hash": "ae7a8f17f3073057",
+      "status": "ok",
+      "heading": "FOTO · Alena Svobodová (38) — S24 | JANA95 · Jana Vargová (25) — S15 | JURAJ · Juraj Križan (19) — S28",
+      "keys": [
+        "topic.FOTO.ambient 1.003",
+        "topic.FOTO.ambient 2.x03",
+        "topic.JANA95.ambient 1.x01",
+        "topic.JANA95.extra 1.005",
+        "topic.JANA95.extra 1.006",
+        "topic.JANA95.extra 2.004",
+        "topic.JURAJ.ambient 2.002",
+        "topic.JURAJ.ambient 2.x01",
+        "topic.JURAJ.ambient 2.x02",
+        "topic.JURAJ.ambient 2.x03",
+        "topic.JURAJ.extra 1.002",
+        "topic.JURAJ.extra 1.004"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 19951,
+        "completion_tokens": 2390,
+        "total_tokens": 22341,
+        "cost": 0.2841765,
+        "prompt_tokens_details": {
+          "cached_tokens": 5359,
+          "cache_write_tokens": 5359
+        }
+      },
+      "usd": 0.2842
+    },
+    "JURO+KUBO+LEA95": {
+      "hash": "1c076eae68031cf6",
+      "status": "ok",
+      "heading": "JURO · Juraj Malík zvaný Juro Kazeta (26) — S27 | KUBO · Kubo (7) — S69 | LEA95 · Lea Kormanová (33) — S14",
+      "keys": [
+        "topic.JURO.ambient 1.x01",
+        "topic.JURO.ambient 2.x01",
+        "topic.JURO.extra 1.004",
+        "topic.JURO.extra 2.004",
+        "topic.KUBO.extra 2.005",
+        "topic.LEA95.after.001",
+        "topic.LEA95.after.002",
+        "topic.LEA95.after.x01"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 19101,
+        "completion_tokens": 2967,
+        "total_tokens": 22068,
+        "cost": 0.3062945,
+        "prompt_tokens_details": {
+          "cached_tokens": 5087,
+          "cache_write_tokens": 5087
+        }
+      },
+      "usd": 0.3063
+    },
+    "MILADA+MIRA95+PALI+SONA": {
+      "hash": "34583f435110d1f5",
+      "status": "ok",
+      "heading": "MILADA · Milada Kyselová (57) — S26 | MIRA95 · Mira Hrušková (55) — S14 | PALI · Pavol Drobný (42) — S20 | SONA · Soňa Urbanová (11) — S17",
+      "keys": [
+        "topic.MILADA.extra 1.004",
+        "topic.MIRA95.ambient 1.001",
+        "topic.MIRA95.ambient 2.001",
+        "topic.MIRA95.extra 3.002",
+        "topic.PALI.ambient 1.003",
+        "topic.PALI.extra 2.004",
+        "topic.SONA.ambient 1.x02",
+        "topic.SONA.ambient 2.x01"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 20466,
+        "completion_tokens": 1640,
+        "total_tokens": 22106,
+        "cost": 0.234739,
+        "prompt_tokens_details": {
+          "cached_tokens": 5769,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2347
+    },
+    "TONO+TRH+VIERA+ZITA": {
+      "hash": "fdb84887f5dc3334",
+      "status": "ok",
+      "heading": "TONO · Anton Farkaš (25) — S13 | TRH · Fero Lánik (50) — S25 | VIERA · Viera Holubová (64) — S22 | ZITA · Zita Ondrušová (46) — S18",
+      "keys": [
+        "topic.TONO.ambient 2.001",
+        "topic.TONO.extra 3.002",
+        "topic.TRH.ambient 1.002",
+        "topic.TRH.ambient 2.003",
+        "topic.TRH.extra 1.004",
+        "topic.TRH.extra 2.001",
+        "topic.VIERA.ambient 2.002",
+        "topic.ZITA.ambient 2.002",
+        "topic.ZITA.ambient 1.x01",
+        "topic.ZITA.ambient 2.x01"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22317,
+        "completion_tokens": 2462,
+        "total_tokens": 24779,
+        "cost": 0.306373,
+        "prompt_tokens_details": {
+          "cached_tokens": 6138,
+          "cache_write_tokens": 6138
+        }
+      },
+      "usd": 0.3064
+    },
+    "ZUZANA95+M04+M06+M07": {
+      "hash": "6d06dfec3f4077a6",
+      "status": "ok",
+      "heading": "ZUZANA95 · Zuzana (40) — S69 | M04 (main) — actions B04, B05, B06 | M06 (main) — actions B13, B14, B15, B16 | M07 (main) — actions B17, B18, B19, B20, B21, B22",
+      "keys": [
+        "topic.ZUZANA95.extra 2.003",
+        "topic.ZUZANA95.extra 6.004",
+        "quest.M04.hint.2",
+        "quest.M06.hint.1",
+        "quest.M06.hint.2",
+        "quest.M07.goal",
+        "quest.M07.hint.2",
+        "quest.M07.hint.3"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 16472,
+        "completion_tokens": 1112,
+        "total_tokens": 17584,
+        "cost": 0.190277,
+        "prompt_tokens_details": {
+          "cached_tokens": 4622,
+          "cache_write_tokens": 4622
+        }
+      },
+      "usd": 0.1903
+    },
+    "M11C+P03": {
+      "hash": "8465e982227fc85a",
+      "status": "ok",
+      "heading": "M11C (main) — actions E11, D05, D06, D07 | P03 — controls digits, solution [3, 2, 6] (action B22)",
+      "keys": [
+        "quest.M11C.hint.2",
+        "puzzle.P03.wrong"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9562,
+        "completion_tokens": 264,
+        "total_tokens": 9826,
+        "cost": 0.085366,
+        "prompt_tokens_details": {
+          "cached_tokens": 2606,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0854
+    }
+  },
+  "keys": {
+    "action.B01.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "„Magnetofón neprehráva, pomoc opravára vítaná.“ Tak to som tu správne, len o dvadsaťpäť rokov skôr.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B01.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Hlásiť sa treba u školníka. Ako žiak som k nemu chodil len po zabudnuté prezuvky.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B03.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak si sadni a hovor. Najprv povedz, čo sa stalo, a potom, čo si už skúšal. V tomto poradí.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B03.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Spätný zápis? To znie ako niečo, čo by som v servise neprevzal ani za príplatok.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B05.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B07.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Juro Kazeta, to som ja. Podaj mi ju, ale drž ju za puzdro, nie za pásku. Páska si pamätá každý prst.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B07.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepísať sa dá hocičo. Ale čo raz prepíšeš, to už nikdy nepočuješ.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B08.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Juro vám už stihol zavolať?",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B08.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zavolať? Ráno tu bol po batérie a všetko mi vyrozprával.",
+      "batch": "B01+B03+B05+B07+B08"
+    },
+    "action.B09.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Juro? Tak to bude kábel. Juro mi nosí len káble. Raz priniesol aj jednu bundu, ale tá bola omyl.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B09.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A nenaťahujte ho nasilu. Čo sa natiahne nasilu, to sa potom pára.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B09.x05": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "The warning about fabric unravelling applies to the textile sleeve, not especially to cables. Keep Milada's tailoring comparison anchored to the sleeve.",
+      "suggestion": "O ich textilných návlekoch určite. Tak mi sľúbte, že ho nebudete ťahať.",
+      "text": "Hlavne o kábloch. Tak mi sľúbte, že ho nebudete ťahať.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B12.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prepojka je v servisnom vstupe. Vložím kazetu a len ju prehrám, nič na ňu nenahrám.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B14.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu je pozitív. Na stole je číslo K-17. Mapové prílohy má Viera v antikvariáte. Negatív vrátim archívu.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B14.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak chvíľu počkajte. Vyvolávanie sa nedá uponáhľať.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B15.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri registračné značky: dierka, dvojitý kríž a štvorec. Musia sedieť so značkami na mape.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B15.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na mapu ju môžete priložiť hneď tu pri pulte.",
+      "batch": "B09+B12+B14+B15"
+    },
+    "action.B16.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rádioamatér v garáži. Po študovni a antikvariáte konečne miesto, kde sa môže hovoriť nahlas.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B17.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr v Sokolíkovskom dvore.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B17.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Do Sokolíkovského dvora sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B17.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Požičaj si Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B17.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Požičaj si Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B18.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je nastavený na moje tempo. Pomalé, aby mi električky stihli dopĺňať rytmus.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B21.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Metronóm tiká pomaly, Emilovým tempom. Nepotrebuje elektrinu, len rovný stolík.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.B22.001": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Kazeta hrá ako referencia” is an awkward technical formulation in spoken Slovak. Express its role as a comparison source plainly.",
+      "suggestion": "Tri, dva, šesť. Mapa sedí. Kazeta hrá, aby som mal s čím porovnávať.",
+      "text": "Tri, dva, šesť. Mapa sedí a kazeta hrá ako referencia.",
+      "batch": "B16+B17+B18+B21+B22"
+    },
+    "action.E11.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sadnime si tam na lavičku pri šatniach. Nemusíme nič hovoriť.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "action.Q5C.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Presne. Už to nie je len obrázok paneláka.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "action.Q9D.x02": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "One wires a radio according to a schematic, not the schematic itself. The repeated wording about wiring is also clumsy for Jana's precise voice.",
+      "suggestion": "Štyridsaťdva. Ale neostalo len pri schémach. Podľa každej som zapojila rádio a všetky hrajú.",
+      "text": "Štyridsaťdva. Ale nie sú to len schémy. Každú som aj zapojila a zapojenie aj hrá.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "topic.Q11A.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zvonček na bicykli",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "topic.Q11B.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pohľadať vrchnák pod smrekom",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "topic.Q11C.label": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The topic label exceeds the 28-character limit.",
+      "suggestion": "Nasadiť vrchnák na zvonček",
+      "text": "Naskrutkovať vrchnák na zvonček",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "action.Q11C.001": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The safe comparison is a tacked-on ironic punchline with no situational setup. The practical repair description works without it.",
+      "suggestion": "Vrchnák na závit, pootočiť a skrutkovačom jemne dotiahnuť.",
+      "text": "Vrchnák na závit, pootočiť a skrutkovačom jemne dotiahnuť. Je to zvonček, nie trezor.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "look.S11.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Papierový cestovný poriadok, meškania sú dopísané perom. Aj tu niekto vedie vlastnú štatistiku.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "look.S11.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Žuvačky z niekoľkých školských rokov. Jedna z nich je možno moja.",
+      "batch": "E11+Q5C+Q9D+Q11A+Q11B+Q11C+S11"
+    },
+    "look.S12.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ťažký betónový kvetináč a v ňom jeden statočný muškát. Tým kvetináčom nepohne ani školník.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S12.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Erb aj nápis školy visia, kde majú. Ako prvák som si myslel, že ten erb kreslil sám riaditeľ.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "entry.S13.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na tú vôňu sa nedá zabudnúť: leštidlo, prezuvky a strach z písomky.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S13.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prezuvky v rade ako vojsko. Moje stáli vždy na kraji, lebo som chodil posledný.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S14.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zelená tabuľa. Stačí sa na ňu pozrieť a mám pocit, že som sa zabudol učiť.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S15.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Model oka. Pozerá na mňa ako fyzikárka, keď som nevedel Ohmov zákon.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S15.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sklenený hranol rozloží svetlo na farby. Fyzikárka nám ním kedysi robila dúhu na strope.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S15.register": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Babka škole požičala krabicu so záznamami meraní a magnetofón. Mapa uzlov je v jej fonde v študovni, negatív pri nej.",
+      "batch": "S12+S13+S14+S15"
+    },
+    "look.S16.socket": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu by sa dala kazeta prehrať. Dve stopy sa však navzájom rušia; krížový adaptér by jednej obrátil polaritu.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S20.ambient 2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "„NEOPRAVUJEM VZŤAHY.“ A pod tým menším písmom: „Ani televízory po búrke.“",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "entry.S26.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Krajčírstvo. Tu sa zachraňujú nohavice aj svadobné šaty na poslednú chvíľu.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S26.MILADA": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Milada najprv zmeria, až potom sľúbi. Krajčírsky meter nosí okolo krku ako lekár slúchadlá.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "entry.S24.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Fotky sa tu ešte vyvolávajú. Ľudia na nich vyzerajú, akoby sa na fotenie dlho pripravovali.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S24.FOTO": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Alena na prvý pohľad vidí, či je záber dobre exponovaný. Ja zas vidím, či je spoj dobre zaspájkovaný.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S28.JURAJ": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Juraj kreslí paneláky tak, že v nich vidno domovy.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S28.ambient 1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Každá kachlička má trochu inú bielu. Niektoré zrejme vymieňali po jednej.",
+      "batch": "S16+S20+S26+S24+S28"
+    },
+    "look.S29.DEZI": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dezider má štítok na každom kábli. Aj na tom, čo nikam nevedie: NIKAM.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "look.S17.rhythm": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Výtvarný panel krúžku: kruh, trojuholník, štvorec a fialové V. Tri z tých tvarov poznám z babkinej dielne.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "look.S30.dial": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a číslice z nákresu v Sokolíkovskom dvore.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.ARCHIVAR.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A kedy je ten správny čas?",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.ARCHIVAR.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Gombíky povedia, aké kabáty sa na našej ulici nosili. To v žiadnom dokumente nenájdete.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.DEZI.ambient 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ľudí, ktorí volajú do sveta a pýtajú sa, či ich niekto počuje.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.DEZI.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To sa na ňu podobá.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.EMIL.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Od desiatich rokov. Otec mi ju dal, aby som nebehal vonku.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.EMIL.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nie. Behal som vonku s harmonikou.",
+      "batch": "S29+S17+S30+ARCHIVAR+DEZI+EMIL"
+    },
+    "topic.FOTO.ambient 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri suchom pulte? Takže pri mokrom sa nečaká?",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.FOTO.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj teraz by som. Len film do foťáka mi príde až zajtra.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JANA95.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na nápady mám v šanóne zvláštnu priehradku. Zatiaľ je najplnšia.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JANA95.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To poznám. U mňa v dielni tiež všetko funguje, kým tam nie je zákazník.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JANA95.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JANA95.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Školník má zväzok. Zoznam je na to, aby sme vedeli, kto má ktorý kľúč zo zväzku.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj s pečiatkou? Na kreslenie kriedou?",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "S pečiatkou z úradu. A so súhlasom pani, čo tu umýva schody.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.ambient 2.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jej súhlas je tiež potrebný?",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.ambient 2.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Je dôležitejší. Ona ten podchod potom drhne.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.extra 1.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Saying everyone is asleep clashes with the next sentence's image of someone reading or waiting. Specifying everyone else resolves this with a one-word change.",
+      "suggestion": "To, kde sa svieti, aj keď už ostatní spia. Tam niekto číta alebo na niekoho čaká.",
+      "text": "To, kde sa svieti, aj keď už všetci spia. Tam niekto číta alebo na niekoho čaká.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURAJ.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj to je príbeh.",
+      "batch": "FOTO+JANA95+JURAJ"
+    },
+    "topic.JURO.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keď sa páska zamotá, stačí ceruzka. To pri inej technike neskúšaj.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.JURO.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "Adam refers to one unspecified person with „niekomu“, but Juro switches to plural pronouns and verbs.",
+      "suggestion": "Tak mu najprv pusti tú pesničku. Možno si začne pospevovať a na šum zabudne.",
+      "text": "Tak im najprv pusti tú pesničku. Možno si začnú pospevovať a na šum zabudnú.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.JURO.extra 1.004": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Putting a label on the cassette would not itself identify the music. The reply needs the missing link between identifying its contents and losing interest.",
+      "suggestion": "Najprv by som musel zistiť, čo tam hrá. Potom by som ju prestal počúvať. Takto ma to stále láka.",
+      "text": "Lebo by som ju prestal počúvať. Kým neviem, čo tam hrá, stále ma to láka.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.JURO.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Skôr prímerie. Dohoda by bola, keby sme sa o tom niekedy porozprávali na schodoch.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.KUBO.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Keď jej spadne na balkón, pani zo štvrtého ju hodí späť. Najprv nám ale povie, koľko muškátov sme zlomili.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.LEA95.after.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mira raz priniesla z Ivanky program k hre „Žiaden strach, miláčik!“ Deti sa tomu názvu smejú dodnes.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.LEA95.after.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Program prežil. A hrá tú hru ešte niekto?",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.LEA95.after.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jeden chlapec ju chce nahrať ako rozhlasovú hru. Všetky úlohy sám.",
+      "batch": "JURO+KUBO+LEA95"
+    },
+    "topic.MILADA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na Miletičke si každý kúpi nohavice o číslo menšie, lebo boli lacnejšie. Potom príde ku mne.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.MIRA95.ambient 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Budovy sa fotia. Ale ako znie prestávka, to o dvadsať rokov nikto nebude vedieť.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.MIRA95.ambient 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Skrutkovač držíš zvláštnym spôsobom. Poznám niekoho podobného.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.MIRA95.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rýchlo. Kde bol obchod, je kiosk, a kde bol kiosk, je zase obchod. Ledva stíham meniť cestu na nákup.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.PALI.ambient 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A koľkým si to dnes povedal?",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.PALI.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja áno. Dcéra si raz jeden zobrala do copu a vyťahala ho. Susedov magnetofón s ním potom spieval basom.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.SONA.ambient 1.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Že nabudúce hráme proti Karlovej Vsi a tí sú o hlavu vyšší.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.SONA.ambient 2.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pani učiteľka Kormanová nie. Vraví, že aj chybu si treba vypočuť.",
+      "batch": "MILADA+MIRA95+PALI+SONA"
+    },
+    "topic.TONO.ambient 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zapísať sa, chodiť len do kabinetu a do triedy pamäťového krúžku. A deti nefotiť.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.TONO.extra 3.002": {
+      "verdict": "fix",
+      "category": "nonsense",
+      "problem": "Adam asks whether the keys can be distinguished, but Tóno skips the answer and describes the doors. A brief acknowledgement makes the transition work.",
+      "suggestion": "Dajú. Každé dvere majú svoj trik. Kabinetové treba nadvihnúť, telocvičňa sa odomyká doľava, jedáleň s citom.",
+      "text": "Každé dvere majú svoj trik. Dvere kabinetu treba nadvihnúť, telocvičňa sa odomyká doľava, jedáleň len s citom.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.TRH.ambient 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A záruka?",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.TRH.ambient 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Písomky nech oznamuje potichu. Buchty nahlas.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.TRH.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Walkmany žerú batérie ako deti cukríky. Ja len dopĺňam zásoby.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.TRH.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako vám funguje váha?",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.VIERA.ambient 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A na rodinné fotky máte tiež nejaký systém?",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.ZITA.ambient 2.002": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "“Typická oprava” adds a stock sarcastic verdict to an otherwise situational observation. Removing it keeps Adam's reaction grounded in the bench.",
+      "suggestion": "Lavičku opravili, a aj tak sa na ňu nedá sadnúť.",
+      "text": "Typická oprava. Lavičku opravili, a aj tak sa na ňu nedá sadnúť.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.ZITA.ambient 1.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak si ich odlož. O dvadsaťpäť rokov sa na ne rád pozrieš.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.ZITA.ambient 2.x01": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The accusative fragment “Tú vo dvore za blokom” sounds like an answer to a missing question about which bench was repaired. Make the location a complete spoken sentence.",
+      "suggestion": "Je to tá vo dvore za blokom. Prvý deň si na ňu sadli traja a odišli v zelených nohaviciach.",
+      "text": "Tú vo dvore za blokom. Prvý deň si na ňu sadli traja a odišli v zelených nohaviciach.",
+      "batch": "TONO+TRH+VIERA+ZITA"
+    },
+    "topic.ZUZANA95.extra 2.003": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The correct Slovak spelling for carbon paper is „uhlový papier“, without the caron on l.",
+      "suggestion": "Vy ste ma vtedy poslali na poštu po uhlový papier.",
+      "text": "Vy ste ma vtedy poslali na poštu po uhľový papier.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "topic.ZUZANA95.extra 6.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pomáham. Ja rátam aj to, koľkokrát lopta preletí cez múr.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M04.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Náradím zo servisnej brašne vyber rozpadnutý remienok. Pali v Karlovej Vsi ti podľa neho dá nový.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M06.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "S Miriným poverením choď do archívnej študovne v Starom Meste.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M06.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Z negatívu z archívu ti Alena spraví fotografiu. Na nej je číslo fólie, ktorú má Viera v antikvariáte.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M07.goal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi meraním na Starom moste časové okno do Ivanky v roku 1962.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M07.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dezider dá cievku, Emil metronóm. Tri číslice sú na múre v Sokolíkovskom dvore.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M07.hint.3": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres v Sokolíkovskom dvore → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",
+      "batch": "ZUZANA95+M04+M06+M07"
+    },
+    "quest.M11C.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Školský dvor vyzerá v roku 2020 po záchrane lipy inak, ale kamene v múriku stále tvoria pôvodnú mriežku.",
+      "batch": "M11C+P03"
+    },
+    "puzzle.P03.wrong": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nesedí to. Správne číslice sú na rytmickom nákrese v Sokolíkovskom dvore.",
+      "batch": "M11C+P03"
+    }
+  },
+  "unreviewed": []
+}

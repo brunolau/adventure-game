@@ -37,6 +37,7 @@ public partial class AmbiencePlayer : Node
     private readonly List<LayerSet> sets = new();
     private readonly RandomNumberGenerator rng = new();
     private LayerSet? current;
+    private string? silentKey;
     private float masterDb;
     private float masterTargetDb;
     private double clock;
@@ -92,9 +93,11 @@ public partial class AmbiencePlayer : Node
         var layers = ActiveLayers(roomId, state);
         string key = roomId + "|" + string.Join(",", layers.Select(l => l.Sound));
         if (current is not null && current.Key == key) return;
+        if (current is null && layers.Count == 0 && silentKey == key) return; // already silent (e.g. a room without ambience data)
         if (current is not null) current.Target = 0f;
         current = null;
         CurrentRoom = roomId;
+        silentKey = layers.Count == 0 ? key : null;
         if (layers.Count == 0)
         {
             AudioService.Log($"ambience -> {roomId}: (none)");

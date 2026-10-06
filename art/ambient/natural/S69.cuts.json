@@ -1,0 +1,259 @@
+{
+  "room": "S69",
+  "source": "src/game/assets/bg_natural/S69.webp",
+  "note": "Natural S69 cut-outs (art/tools/ambient_cut.py --natural S69) from the Sokolikova-yard painting (master S69_v4): the blue spruce and the birch behind the low back wall (the birch's leaves 'tremble even when there is no wind', look.S69.birch), the big tree crowns at the left and the right, and the branches hanging into the frame over the right wall (hanging sway). The yard ball (ambient ball layer) is the BALL95 scene sprite of the content v2 icon grid (S69_scripts/s69_build.py ambient).",
+  "items": [
+    {
+      "name": "spruce",
+      "rect": [
+        836,
+        20,
+        280,
+        612
+      ],
+      "feather": 2.0,
+      "include": [
+        [
+          [
+            1000,
+            24
+          ],
+          [
+            1032,
+            90
+          ],
+          [
+            1062,
+            200
+          ],
+          [
+            1090,
+            330
+          ],
+          [
+            1108,
+            450
+          ],
+          [
+            1112,
+            560
+          ],
+          [
+            1100,
+            612
+          ],
+          [
+            850,
+            612
+          ],
+          [
+            842,
+            560
+          ],
+          [
+            858,
+            450
+          ],
+          [
+            898,
+            300
+          ],
+          [
+            948,
+            150
+          ],
+          [
+            985,
+            50
+          ]
+        ]
+      ]
+    },
+    {
+      "name": "birch",
+      "rect": [
+        606,
+        0,
+        410,
+        476
+      ],
+      "rules": [
+        {
+          "hue": [
+            55,
+            125
+          ],
+          "sat": [
+            0.25,
+            1
+          ],
+          "val": [
+            0.4,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            640,
+            470
+          ],
+          [
+            705,
+            470
+          ],
+          [
+            705,
+            300
+          ],
+          [
+            690,
+            120
+          ],
+          [
+            660,
+            120
+          ],
+          [
+            650,
+            300
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "tree_left",
+      "rect": [
+        0,
+        0,
+        612,
+        700
+      ],
+      "rules": [
+        {
+          "hue": [
+            55,
+            150
+          ],
+          "sat": [
+            0.22,
+            1
+          ],
+          "val": [
+            0.08,
+            0.92
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            300,
+            440
+          ],
+          [
+            372,
+            440
+          ],
+          [
+            372,
+            700
+          ],
+          [
+            300,
+            700
+          ]
+        ]
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "trees_right",
+      "rect": [
+        1100,
+        0,
+        820,
+        580
+      ],
+      "rules": [
+        {
+          "hue": [
+            45,
+            150
+          ],
+          "sat": [
+            0.22,
+            1
+          ],
+          "val": [
+            0.08,
+            0.95
+          ]
+        },
+        {
+          "hue": [
+            24,
+            45
+          ],
+          "sat": [
+            0.4,
+            1
+          ],
+          "val": [
+            0.08,
+            0.5
+          ]
+        }
+      ],
+      "feather": 1.0
+    },
+    {
+      "name": "branches_right",
+      "rect": [
+        1640,
+        560,
+        280,
+        330
+      ],
+      "rules": [
+        {
+          "hue": [
+            55,
+            150
+          ],
+          "sat": [
+            0.3,
+            1
+          ],
+          "val": [
+            0.3,
+            1
+          ]
+        }
+      ],
+      "exclude": [
+        [
+          [
+            1530,
+            730
+          ],
+          [
+            1810,
+            725
+          ],
+          [
+            1810,
+            900
+          ],
+          [
+            1530,
+            960
+          ]
+        ]
+      ],
+      "feather": 0.8
+    }
+  ]
+}

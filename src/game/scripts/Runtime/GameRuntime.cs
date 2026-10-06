@@ -24,8 +24,9 @@ public partial class GameRuntime : Node
     public const string GameDataPath = "res://data/game.json";
 
     /// <summary>
-    /// Folder of the content overlays applied on top of game.json (dialogue_ext.json, travel_ext.json; Core README
-    /// section 13). A missing file means no overlay of that kind; an invalid one fails the load like a broken game.json.
+    /// Folder of the content overlays applied on top of game.json (world_ext.json, dialogue_ext.json, travel_ext.json;
+    /// Core README section 13). A missing file means no overlay of that kind; an invalid one fails the load like a broken
+    /// game.json. QA runs may read them from another folder (<see cref="LaunchArgs.ContentExtDirectory"/>).
     /// </summary>
     public const string ContentExtDirectory = "res://data/content_ext";
 
@@ -162,12 +163,22 @@ public partial class GameRuntime : Node
 
     private static ContentOverlays LoadOverlays()
     {
-        static string? Read(string name)
+        string? qa = LaunchArgs.ContentExtDirectory;
+        string? Read(string name)
         {
+            if (qa is not null)
+            {
+                string other = System.IO.Path.Combine(qa, name);
+                if (System.IO.File.Exists(other))
+                {
+                    GD.Print($"LastBell: content overlay {name} from {other} (--content-ext)");
+                    return System.IO.File.ReadAllText(other);
+                }
+            }
             string path = ContentExtDirectory + "/" + name;
             return Godot.FileAccess.FileExists(path) ? Godot.FileAccess.GetFileAsString(path) : null;
         }
-        return new ContentOverlays(Read(ContentOverlays.DialogueExtFile), Read(ContentOverlays.TravelExtFile));
+        return new ContentOverlays(Read(ContentOverlays.DialogueExtFile), Read(ContentOverlays.TravelExtFile), Read(ContentOverlays.WorldExtFile));
     }
 
     private void AttachSession(GameSession session)

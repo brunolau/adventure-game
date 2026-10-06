@@ -201,7 +201,10 @@ public partial class DebugHarness
     private static List<string> SideOrder()
     {
         var root = JsonNode.Parse(Godot.FileAccess.GetFileAsString(WalkthroughReplayer.Path))!;
-        return root["postgame_optional_route"]!.AsArray().Select(n => n!.GetValue<string>()).ToList();
+        var order = root["postgame_optional_route"]!.AsArray().Select(n => n!.GetValue<string>()).ToList();
+        // Side quests of the world overlay (content_ext/world_ext.json) are not in walkthrough.json: their data order.
+        order.AddRange(GameRuntime.Instance.Content.Overlay.AddedActions.Where(a => !order.Contains(a)));
+        return order;
     }
 
     /// <summary>Before a main action: side actions at legal points (greedy or seeded random).</summary>

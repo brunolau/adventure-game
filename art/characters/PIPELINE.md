@@ -614,3 +614,44 @@ are under `ambient/jasna_winter/`). Tool: `art/tools/npc_winter.py` (paid `redre
 | 3 gestures (NB2 2K) | 0.36 |
 | 3 Hailuo Pro idle loops | 1.44 |
 | **total** | **2.16** |
+
+## Zuzana at 40 and Kubo, Sokolíkovský dvor 15 June 1995 (2026-10-06, evening): ZUZANA95, KUBO (S69)
+
+Content v2 art run (task budget USD 12 for S69, both actors, icons, state layers and the two epilogue stills; this
+part **USD 1.95**, 15 calls, spend-log prefixes `characters/ZUZANA95/`, `characters/KUBO/`; guard
+`art/tools/content_v2_budget.py`). Tool: `art/tools/zuzana95_set.py` (paid `sheet`, `faces`, `face`, `gesture`,
+`video`, free `choose`) on top of `npc_batch.py` (free `build`, `idle`, `export` unchanged). Briefs in
+`characters.json` (no profession, no ring, jewellery, watch, glasses or bag; Kubo is a neighbour's child). Shipped:
+`src/game/assets/actors/ZUZANA95/` (512 px, adult) and `src/game/assets/actors/KUBO/` (350 px, like ZUZANA at 7),
+each npc still set idle / blink / talk_a / talk_b / gesture + a 36-cell Hailuo idle; staged standing in S69
+(`art/masters/bg_natural/S69.md`), so no seated set.
+
+- **Likeness (ZUZANA95).** Pro 2K edit with ADAM's 3/4 cast anchor first, the approved 7-year-old ZUZANA sheet
+  second as the identity reference ("the same person 33 years later": face shape, eyes, brows, nose, mouth, hair
+  colour and parting), and the family photo supplied by the owner last, handled exactly as for the child (private,
+  git-ignored, in-memory data URI only; its likeness note for this sheet is kept next to the photo, sidecars carry a
+  placeholder). Take A (seed 1955) **chosen**: clearly the girl grown up (round face, the same eyes and mouth, the
+  parted bob), a warm small smile, early-1990s navy blouse with the small round white collar, beige skirt, sandals,
+  one chalk stick. Take B (seed 4015) **rejected** (`rejected/`): a longer, older-looking face that reads 50 rather
+  than 40 and loses the child's roundness.
+- **Kubo.** Pro 2K with the cast anchor and the ZUZANA (7) sheet for child-of-seven proportions only: first take
+  usable (red T-shirt with one white band, navy shorts, white socks, plain blue canvas shoes, a graze on the knee).
+- **Faces / gestures (NB2).** 6/6 face frames usable first time, transplanted in the eye / mouth bands (bodies
+  bit-identical). ZUZANA95 gesture take 1 **rejected** (`rejected/`): the pointing hand also held a second chalk
+  stick (two chalks); the brief now points with the empty far hand while the near hand keeps the one chalk; the
+  retake's first download broke after billing (USD 0.12 lost, logged), the next retake (`_r3`) is the shipped gesture.
+  Kubo's tap-the-bell gesture first time.
+- **Idles (Hailuo-02 768p, 6 s, start = end).** Both calm on the first take with the minimal-motion prompts (feet
+  planted, one blink, no turn, no bow): shipped whole as `idle`.
+- **Download hiccups:** fal media reads stalled twice in this run; `content_v2_budget.py` now routes every save of
+  the run through `hero_coat.save_result` / `robust_download` (raw result JSON first, curl with retries).
+- Looked at: `ZUZANA95/review/faces.jpg`, `idle_strip.jpg`, the head lineup child | take A | take B, `KUBO/review/*`,
+  and in engine (`build/screens/content_v2/S69/`).
+
+| spend | USD |
+|---|---:|
+| base sheets: ZUZANA95 takes A + B, KUBO (Pro 2K) | 0.45 |
+| face frames 6 x NB2 1K | 0.48 |
+| gestures 2 x NB2 2K + 2 ZUZANA95 retakes (one lost in the download) | 0.48 |
+| idle videos 2 x Hailuo 768p | 0.54 |
+| **total** | **1.95** |

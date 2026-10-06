@@ -9,6 +9,7 @@
   "actor_scale": [0.333, 1.0],
   "spawn": [960, 900],
   "hotspots": {
+    "S32.chalk_arrow": {"rect": [206, 640, 140, 66], "interaction_point": [290, 760], "label_anchor": [300, 726], "reason": "content v2: chalk arrow (pointing right, to the park exit) and PARK on the front of the well's stone ring"},
     "S32.ambient 1": {
       "rect": [165, 420, 210, 292],
       "interaction_point": [270, 760],
@@ -68,5 +69,6 @@
       "reason": "the path leaves the green to the right in front of the big linden (east, towards the manor park)"
     }
   },
-  "state_patches": []
+  "state_patches": [],
+  "variant_layers": {"variants/S32_chalk_arrow.webp": {"texture": "variants_natural/S32_chalk_arrow.webp", "pos": [206, 640]}}
 }

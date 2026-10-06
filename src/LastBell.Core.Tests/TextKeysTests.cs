@@ -123,6 +123,7 @@ public sealed class TextKeysTests
         Assert.Equal(Hints.BagFallback, ui[Hints.BagKey]);
         foreach (var id in C.Quests.SelectMany(q => q.Actions))
         {
+            if (C.GetAction(id).HintStep is not null) continue; // the world overlay's own step text (world.csv, ContentOverlayTests)
             Assert.True(ui.ContainsKey(Hints.StepKey(id)), $"ui.csv has no {Hints.StepKey(id)}");
             Assert.NotEqual(C.GetAction(id).Label, ui[Hints.StepKey(id)]); // a written step, not the label fallback
         }

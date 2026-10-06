@@ -202,9 +202,11 @@ public sealed class GameContent
     public static GameContent Load(string json) => Load(json, null);
 
     /// <summary>
-    /// Loads content from the text of game.json and applies the content overlays (<c>content_ext/dialogue_ext.json</c>,
-    /// <c>content_ext/travel_ext.json</c>; README section 13). Throws <see cref="ContentLoadException"/> when game.json
-    /// or an overlay is invalid; overlay errors name the overlay path (<c>$dialogue_ext...</c>, <c>$travel_ext...</c>).
+    /// Loads content from the text of game.json and applies the content overlays (<c>content_ext/world_ext.json</c>,
+    /// <c>content_ext/dialogue_ext.json</c>, <c>content_ext/travel_ext.json</c>, in this order; README section 13).
+    /// Throws <see cref="ContentLoadException"/> when game.json or an overlay is invalid; overlay errors name the overlay
+    /// path (<c>$world_ext...</c>, <c>$dialogue_ext...</c>, <c>$travel_ext...</c>) and a softlock found by
+    /// <see cref="ContentPlayability"/> names the order that got stuck (<c>$playability(...)</c>).
     /// </summary>
     public static GameContent Load(string json, ContentOverlays? overlays)
     {
@@ -223,7 +225,7 @@ public sealed class GameContent
         if (errors.Count > 0) throw new ContentLoadException(errors);
 
         var overlay = OverlayInfo.Empty;
-        if (overlays is not null && (!string.IsNullOrWhiteSpace(overlays.DialogueExt) || !string.IsNullOrWhiteSpace(overlays.TravelExt)))
+        if (overlays is not null && !overlays.IsBlank)
         {
             var overlayErrors = new List<string>();
             var effective = OverlayApplier.Apply(data, overlays, overlayErrors, out overlay);
@@ -241,6 +243,12 @@ public sealed class GameContent
         catch (Save.SaveValidationException ex)
         {
             throw new ContentLoadException(new[] { "$.initial_state: " + ex.Reason });
+        }
+        // New rooms, items, actions and relocations must leave the game finishable in every order the check tries.
+        if (overlay.HasWorldChanges)
+        {
+            var softlocks = ContentPlayability.Check(content);
+            if (softlocks.Count > 0) throw new ContentLoadException(softlocks);
         }
         return content;
     }
@@ -308,6 +316,9 @@ public sealed class GameContent
 
     /// <summary>All line ids the content plays (retired overlay lines excluded).</summary>
     public IEnumerable<string> AllLineIds => lines.Keys;
+
+    /// <summary>The world overlay's relocation of an action (it plays in another room than game.json says), or null.</summary>
+    public RelocationInfo? FindRelocation(string actionId) => Overlay.RelocationOf(actionId);
 
     /// <summary>First-ride lines of a transport exit (travel overlay), or an empty list.</summary>
     public IReadOnlyList<LineDef> FirstRideLines(string exitId) =>

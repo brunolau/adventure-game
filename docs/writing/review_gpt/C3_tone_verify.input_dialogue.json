@@ -1,0 +1,809 @@
+{
+ "format": "lastbell.dialogue_ext",
+ "version": 1,
+ "chunk": "C3",
+ "about": "C3 v2 dialogue overlay draft: longer sequences of the 1962/1982 story exchanges, longer ambient topics, new optional topics (2-4 per speaking NPC, Zuzana's 1962 topics). New line keys: xNN (writing pass), zNN (Zuzana-related lines inside existing exchanges, ZUZANA.md 3.2).",
+ "sequences": [
+  {
+   "id": "action.I01",
+   "action": "I01",
+   "kind": "action_lines",
+   "note": "first meeting with Oto; his gag 'najprv sa pozrieme' opens it; why the pump matters (locked room) is now said; the punch goes back via Oto (as I07)",
+   "lines": [
+    {
+     "key": "action.I01.x01",
+     "speaker": "ADAM",
+     "sk": "Dobrý deň, pán Bielik. Prepáčte, že ruším. Toto by ste mali vidieť."
+    },
+    {
+     "key": "action.I01.x02",
+     "speaker": "OTO",
+     "sk": "Najprv sa pozrieme, až potom budeme rozprávať."
+    },
+    "action.I01.001",
+    "action.I01.002",
+    {
+     "key": "action.I01.x03",
+     "speaker": "OTO",
+     "sk": "Tomu zatiaľ nerozumiem. Ale prístroj klame menej ako človek a tento tvrdí, že hovoríte pravdu."
+    },
+    {
+     "key": "action.I01.x04",
+     "speaker": "ADAM",
+     "sk": "Takže mi pomôžete?"
+    },
+    "action.I01.003",
+    {
+     "key": "action.I01.x05",
+     "speaker": "ADAM",
+     "sk": "Pumpu? Čo má pumpa spoločné s časom?"
+    },
+    {
+     "key": "action.I01.x06",
+     "speaker": "OTO",
+     "sk": "Chladí model v búdke. Kým neťahá vodu, meracia miestnosť zostane zamknutá."
+    },
+    "action.I01.004",
+    "action.I01.005",
+    {
+     "key": "action.I01.x07",
+     "speaker": "OTO",
+     "sk": "A dierovač potom doneste mne. Líde ho vrátim sám. Požičané veci si pamätá lepšie ako Rudo svoj text."
+    }
+   ]
+  },
+  {
+   "id": "action.I09",
+   "action": "I09",
+   "kind": "action_lines",
+   "note": "first meeting with Mira at 22 (she tyká at once); the 'babka… teda známa' slip returns once, changed; merged Zuzana lines z01-z03 (true on every route: S38/S39 are reached through the park)",
+   "lines": [
+    {
+     "key": "action.I09.x01",
+     "speaker": "MIRA60",
+     "sk": "Ty si ten, čo opravil pumpu? Oto vravel, že prídeš. Hovor, ja zatiaľ meriam."
+    },
+    {
+     "key": "action.I09.x02",
+     "speaker": "ADAM",
+     "sk": "Dobrý deň. V budúcnosti niekto maže všetko, čo nesedí s jeho modelom. A prepisuje to spätne."
+    },
+    "action.I09.001",
+    "action.I09.002",
+    "action.I09.003",
+    "action.I09.004",
+    "action.I09.005",
+    "action.I09.006",
+    "action.I09.007",
+    {
+     "key": "action.I09.x03",
+     "speaker": "ADAM",
+     "sk": "Babka by povedala to isté. Teda… jedna moja známa."
+    },
+    {
+     "key": "action.I09.x04",
+     "speaker": "MIRA60",
+     "sk": "Tvoja známa má rozum. Pozdravuj ju."
+    },
+    "action.I09.008",
+    {
+     "key": "action.I09.z01",
+     "speaker": "MIRA60",
+     "sk": "Vera kreslí v parku na lavičke. Vedľa nej skáče škôlku malá Zuzka."
+    },
+    {
+     "key": "action.I09.z02",
+     "speaker": "ADAM",
+     "sk": "Tá, čo skáče škôlku? Videl som ju cestou sem."
+    },
+    {
+     "key": "action.I09.z03",
+     "speaker": "MIRA60",
+     "sk": "Tá. Ak budeš v Ivanke blúdiť, spýtaj sa jej. Ona tu trafí všade aj so zavretými očami."
+    },
+    {
+     "key": "action.I09.x05",
+     "speaker": "ADAM",
+     "sk": "Takže papier z povaly, rydlo od Very a potom pošta."
+    },
+    {
+     "key": "action.I09.x06",
+     "speaker": "MIRA60",
+     "sk": "A hárok nepokrč. Na pokrčenom by bol odtlačok čitateľný len napoly."
+    }
+   ]
+  },
+  {
+   "id": "action.I10",
+   "action": "I10",
+   "kind": "action_lines",
+   "note": "merged Zuzana lines (ZUZANA.md 3.2). z06 is the line Zuzana quotes back in 1995 (carbon paper at pán Baran's post office) and must stay. The draft's 'mohla by si pracovať na úrade' was cut: it speculated about her future (owner rule). z09 matches I17.003 (Mira returns the stylus to Vera)",
+   "lines": [
+    "action.I10.001",
+    {
+     "key": "action.I10.z01",
+     "speaker": "ZUZANA",
+     "sk": "Tupé má teta Vera v puzdre. Ostré si nechá pre seba."
+    },
+    {
+     "key": "action.I10.z02",
+     "speaker": "VERA60",
+     "sk": "Zuzka, ty poznáš moje puzdro lepšie ako ja."
+    },
+    {
+     "key": "action.I10.z03",
+     "speaker": "ZUZANA",
+     "sk": "Lebo tie rydlá rátam. Päť ostrých rydiel a jedno tupé."
+    },
+    "action.I10.002",
+    "action.I10.003",
+    "action.I10.004",
+    {
+     "key": "action.I10.z04",
+     "speaker": "ZUZANA",
+     "sk": "A čo ešte potrebujete?"
+    },
+    {
+     "key": "action.I10.z05",
+     "speaker": "ADAM",
+     "sk": "Jeden list mám mať dvakrát. Oba presne rovnaké."
+    },
+    {
+     "key": "action.I10.z06",
+     "speaker": "ZUZANA",
+     "sk": "Na to má pán Baran na pošte čierny papier. Píšete hore a dole sa to napíše samo."
+    },
+    {
+     "key": "action.I10.z07",
+     "speaker": "VERA60",
+     "sk": "Uhľový papier. Leží na pošte pri prepážke, pre každého."
+    },
+    {
+     "key": "action.I10.z08",
+     "speaker": "ADAM",
+     "sk": "Ďakujem obom. Rydlo vám potom vrátim."
+    },
+    {
+     "key": "action.I10.z09",
+     "speaker": "VERA60",
+     "sk": "Nechajte ho potom Mire, ona mi ho vráti. Vy sa po Ivanke aj tak dosť nachodíte."
+    }
+   ]
+  },
+  {
+   "id": "action.I14",
+   "action": "I14",
+   "kind": "action_lines",
+   "note": "merged Zuzana lines (state-independent: I10 may come before or after I14); Alojz's charming officialese closes it",
+   "lines": [
+    "action.I14.001",
+    {
+     "key": "action.I14.z01",
+     "speaker": "ALOJZ",
+     "sk": "Len opatrne, prosím. Farbí aj prsty. Malá Zuzka si ním u mňa obkresľuje dlane."
+    },
+    {
+     "key": "action.I14.z02",
+     "speaker": "ADAM",
+     "sk": "Tá malá, čo skáče v parku škôlku?"
+    },
+    {
+     "key": "action.I14.z03",
+     "speaker": "ALOJZ",
+     "sk": "Tá. Chodí sa sem pozerať na nové známky. Kým si ich prezrie, má obkreslené obe ruky."
+    },
+    "action.I14.002",
+    {
+     "key": "action.I14.x01",
+     "speaker": "ALOJZ",
+     "sk": "Jeden hárok uhľového papiera. Zapíšem: vydaný jeden kus, na úradnú potrebu."
+    },
+    {
+     "key": "action.I14.x02",
+     "speaker": "ADAM",
+     "sk": "Vy zapisujete aj uhľový papier?"
+    },
+    {
+     "key": "action.I14.x03",
+     "speaker": "ALOJZ",
+     "sk": "Zapisujem všetko, prosím pekne. Inak by sa jedného dňa zistilo, že tu nič nebolo."
+    }
+   ]
+  },
+  {
+   "id": "action.I16",
+   "action": "I16",
+   "kind": "action_lines",
+   "note": "Z-17 and the 73 years stay in .001-.003; opening and closing in Alojz's voice",
+   "lines": [
+    {
+     "key": "action.I16.x01",
+     "speaker": "ADAM",
+     "sk": "Dobrý deň. Potreboval by som potvrdiť tento list. Mám ho v dvoch vyhotoveniach."
+    },
+    {
+     "key": "action.I16.x02",
+     "speaker": "ALOJZ",
+     "sk": "Prosím pekne. Najprv si ho prečítam, až potom pečiatka. Inak by som potvrdzoval aj recepty na koláč."
+    },
+    "action.I16.001",
+    "action.I16.002",
+    "action.I16.003",
+    {
+     "key": "action.I16.x03",
+     "speaker": "ADAM",
+     "sk": "To mi stačí. O doručenie sa postarám sám."
+    },
+    {
+     "key": "action.I16.x04",
+     "speaker": "ALOJZ",
+     "sk": "A neskladajte ho viackrát, ako treba. Papier sa najprv trhá na ohyboch."
+    }
+   ]
+  },
+  {
+   "id": "action.E03",
+   "action": "E03",
+   "kind": "action_lines",
+   "note": "Marta: exact, no needless trouble; the model plane (E03.003) gets a payoff",
+   "lines": [
+    {
+     "key": "action.E03.x01",
+     "speaker": "ADAM",
+     "sk": "Dobrý deň. Mám tu výdajný lístok od pána Bielika."
+    },
+    {
+     "key": "action.E03.x02",
+     "speaker": "MARTA82",
+     "sk": "Ukážte. Pán Bielik píše lístky tak, že by ich prečítal aj nočný vrátnik bez okuliarov."
+    },
+    "action.E03.001",
+    "action.E03.002",
+    {
+     "key": "action.E03.x03",
+     "speaker": "MARTA82",
+     "sk": "Keď je lístok v poriadku, ide to rýchlo. A tento je, nech sa páči."
+    },
+    "action.E03.003",
+    {
+     "key": "action.E03.x04",
+     "speaker": "ADAM",
+     "sk": "Poviem mu. A keby predsa odletelo?"
+    },
+    {
+     "key": "action.E03.x05",
+     "speaker": "MARTA82",
+     "sk": "Tak ho zapíšem ako úbytok. Prvé lietadlo v mojej inventárnej knihe."
+    }
+   ]
+  },
+  {
+   "id": "action.Q9B",
+   "action": "Q9B",
+   "kind": "action_lines",
+   "note": "Dobrovič formal at first, then human (VOICES); 'súdružka riaditeľka' is his period phrase; C3 tone pass: x03 moved after x04 so .004 follows the permission",
+   "lines": [
+    {
+     "key": "action.Q9B.x01",
+     "speaker": "ADAM",
+     "sk": "Pán učiteľ, máte chvíľu? Toto nakreslila Jana."
+    },
+    {
+     "key": "action.Q9B.x02",
+     "speaker": "DOBRO",
+     "sk": "Na výstavku už máme všetko schválené. Ale ukážte."
+    },
+    "action.Q9B.001",
+    "action.Q9B.002",
+    "action.Q9B.003",
+    "action.Q9B.004",
+    {
+     "key": "action.Q9B.x04",
+     "speaker": "DOBRO",
+     "sk": "Možno som na takýto návrh čakal aj ja. Len som to nevedel."
+    },
+    {
+     "key": "action.Q9B.x03",
+     "speaker": "DOBRO",
+     "sk": "Súdružka riaditeľka bude čítať každé slovo, tak nech Jana píše vysvetlenie úhľadne."
+    }
+   ]
+  }
+ ],
+ "topic_extensions": [
+  {
+   "id": "topic.MIRA60.ambient 1",
+   "topic": "MIRA60.ambient 1",
+   "character": "MIRA60",
+   "kind": "topic_lines",
+   "lines": [
+    "topic.MIRA60.ambient 1.001",
+    "topic.MIRA60.ambient 1.002",
+    "topic.MIRA60.ambient 1.003",
+    {
+     "key": "topic.MIRA60.ambient 1.x01",
+     "speaker": "MIRA60",
+     "sk": "Preto ťa nevyhodím. Zapíšem ťa vedľa ako všetko, čo nesedí."
+    },
+    {
+     "key": "topic.MIRA60.ambient 1.x02",
+     "speaker": "ADAM",
+     "sk": "Vedľa čoho?"
+    },
+    {
+     "key": "topic.MIRA60.ambient 1.x03",
+     "speaker": "MIRA60",
+     "sk": "Vedľa pôvodných údajov, na okraj. Okraje mám popísané hustejšie ako strany."
+    }
+   ]
+  },
+  {
+   "id": "topic.MIRA60.ambient 2",
+   "topic": "MIRA60.ambient 2",
+   "character": "MIRA60",
+   "kind": "topic_lines",
+   "lines": [
+    "topic.MIRA60.ambient 2.001",
+    "topic.MIRA60.ambient 2.002",
+    {
+     "key": "topic.MIRA60.ambient 2.x01",
+     "speaker": "MIRA60",
+     "sk": "V akej rodine?"
+    },
+    {
+     "key": "topic.MIRA60.ambient 2.x02",
+     "speaker": "ADAM",
+     "sk": "To je jedna z tých otázok, čo si nechávate otvorené."
+    },
+    {
+     "key": "topic.MIRA60.ambient 2.x03",
+     "speaker": "MIRA60",
+     "sk": "Dobre. Ale nemysli si, že sa na tú rodinu zabudnem opýtať."
+    }
+   ]
+  },
+  {
+   "id": "topic.OTO.ambient 1",
+   "topic": "OTO.ambient 1",
+   "character": "OTO",
+   "kind": "topic_lines",
+   "lines": [
+    "topic.OTO.ambient 1.001",
+    "topic.OTO.ambient 1.002",
+    "topic.OTO.ambient 1.003",
+    {
+     "key": "topic.OTO.ambient 1.x01",
+     "speaker": "OTO",
+     "sk": "Až potom sme sa zľakli."
+    },
+    {
+     "key": "topic.OTO.ambient 1.x02",
+     "speaker": "ADAM",
+     "sk": "A čo vám ten včerajšok povedal?"
+    },
+    {
+     "key": "topic.OTO.ambient 1.x03",
+     "speaker": "OTO",
+     "sk": "Že som zabudol vypnúť spájkovačku. Mal pravdu."
+    }
+   ]
+  },
+  {
+   "id": "topic.POSTA.ambient 1",
+   "topic": "POSTA.ambient 1",
+   "character": "POSTA",
+   "kind": "topic_lines",
+   "lines": [
+    "topic.POSTA.ambient 1.001",
+    "topic.POSTA.ambient 1.002",
+    {
+     "key": "topic.POSTA.ambient 1.x01",
+     "speaker": "ALOJZ",
+     "sk": "To počujem zriedka, prosím. Väčšina ľudí chce, aby pečiatka potvrdila, že majú pravdu."
+    },
+    {
+     "key": "topic.POSTA.ambient 1.x02",
+     "speaker": "ADAM",
+     "sk": "A to nevie?"
+    },
+    {
+     "key": "topic.POSTA.ambient 1.x03",
+     "speaker": "ALOJZ",
+     "sk": "Pečiatka vie iba dátum, prosím. Pravdu si musí každý priniesť so sebou."
+    }
+   ]
+  },
+  {
+   "id": "topic.POSTA.ambient 2",
+   "topic": "POSTA.ambient 2",
+   "character": "POSTA",
+   "kind": "topic_lines",
+   "lines": [
+    "topic.POSTA.ambient 2.001",
+    "topic.POSTA.ambient 2.002",
+    {
+     "key": "topic.POSTA.ambient 2.x01",
+     "speaker": "ALOJZ",
+     "sk": "Občas lístok susedovi, keď mi chýba cukor. Úradnú poštu nosiť nesmie."
+    },
+    {
+     "key": "topic.POSTA.ambient 2.x02",
+     "speaker": "ADAM",
+     "sk": "Prečo nie?"
+    },
+    {
+     "key": "topic.POSTA.ambient 2.x03",
+     "speaker": "ALOJZ",
+     "sk": "Nemá služobnú čiapku. A keby ju dostal, chcel by aj služobný holubník."
+    }
+   ]
+  }
+ ],
+ "topics": [
+  {
+   "id": "BERTA.extra 1",
+   "character": "BERTA",
+   "label_key": "topic.BERTA.extra 1.label",
+   "label": "Dievčatko v parku",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "Zuzka seen by the village (ZUZANA.md 3.2 'čí je' gag, rewritten without inventing family)",
+   "lines": [
+    {
+     "key": "topic.BERTA.extra 1.001",
+     "speaker": "ADAM",
+     "sk": "Kto je to malé dievča, čo skáče v parku škôlku?"
+    },
+    {
+     "key": "topic.BERTA.extra 1.002",
+     "speaker": "BERTA",
+     "sk": "Zuzka. Ráno v škole, poobede v parku a večer pri kanáli."
+    },
+    {
+     "key": "topic.BERTA.extra 1.003",
+     "speaker": "ADAM",
+     "sk": "Vyzerá to, že vie o Ivanke všetko."
+    },
+    {
+     "key": "topic.BERTA.extra 1.004",
+     "speaker": "BERTA",
+     "sk": "Vie. Čo nevie Zuzka, viem ja. A čo neviem ja, to sa ešte nestalo."
+    },
+    {
+     "key": "topic.BERTA.extra 1.005",
+     "speaker": "ADAM",
+     "sk": "A o mne už niečo viete?"
+    },
+    {
+     "key": "topic.BERTA.extra 1.006",
+     "speaker": "BERTA",
+     "sk": "Že nosíte čudné topánky. Zvyšok mi Zuzka povie do večera."
+    }
+   ]
+  },
+  {
+   "id": "BOZO.extra 1",
+   "character": "BOZO",
+   "label_key": "topic.BOZO.extra 1.label",
+   "label": "Vlaky",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "his timetable philosophy (VOICES): he likes clear destinations",
+   "lines": [
+    {
+     "key": "topic.BOZO.extra 1.001",
+     "speaker": "ADAM",
+     "sk": "Koľko vlakov tu denne zastaví?"
+    },
+    {
+     "key": "topic.BOZO.extra 1.002",
+     "speaker": "BOZO",
+     "sk": "Toľko, koľko je v cestovnom poriadku. Ani o jeden viac."
+    },
+    {
+     "key": "topic.BOZO.extra 1.003",
+     "speaker": "ADAM",
+     "sk": "A keď niektorý mešká?"
+    },
+    {
+     "key": "topic.BOZO.extra 1.004",
+     "speaker": "BOZO",
+     "sk": "Tak je to ten istý vlak, len neskôr. Iný vlak z neho nebude."
+    },
+    {
+     "key": "topic.BOZO.extra 1.005",
+     "speaker": "ADAM",
+     "sk": "Vy máte rád aj meškanie?"
+    },
+    {
+     "key": "topic.BOZO.extra 1.006",
+     "speaker": "BOZO",
+     "sk": "Nemám rád nejasnosti. Vlak, čo mešká, aspoň vie, kam ide."
+    }
+   ]
+  },
+  {
+   "id": "RUDO.extra 2",
+   "character": "RUDO",
+   "label_key": "topic.RUDO.extra 2.label",
+   "label": "Malá šepkárka",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "Zuzka knows his first line (ZUZANA.md 5); pairs with her topic 'Kto si?' (she counts his forgotten lines)",
+   "lines": [
+    {
+     "key": "topic.RUDO.extra 2.001",
+     "speaker": "ADAM",
+     "sk": "Vašu prvú vetu vraj vie celá Ivanka."
+    },
+    {
+     "key": "topic.RUDO.extra 2.002",
+     "speaker": "RUDO",
+     "sk": "Celá nie! Ale malá Zuzka z parku ju vie lepšie ako ja. A hovorí ju s väčším presvedčením!"
+    },
+    {
+     "key": "topic.RUDO.extra 2.003",
+     "speaker": "RUDO",
+     "sk": "Stojí každý deň vo dverách sály a šepká mi ju, keď zabudnem."
+    },
+    {
+     "key": "topic.RUDO.extra 2.004",
+     "speaker": "ADAM",
+     "sk": "Takže máte vlastnú šepkárku."
+    },
+    {
+     "key": "topic.RUDO.extra 2.005",
+     "speaker": "RUDO",
+     "sk": "Najmenšiu v okrese. A jedinú, čo si nepýta odmenu."
+    }
+   ]
+  },
+  {
+   "id": "SKLAD.extra 1",
+   "character": "SKLAD",
+   "label_key": "topic.SKLAD.extra 1.label",
+   "label": "Otove lístky",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "his slip gag; 'niečo nemáme' turns his 'presne viem, čo nemáme' around",
+   "lines": [
+    {
+     "key": "topic.SKLAD.extra 1.001",
+     "speaker": "ADAM",
+     "sk": "Pán Bielik píše lístky často?"
+    },
+    {
+     "key": "topic.SKLAD.extra 1.002",
+     "speaker": "STEFAN",
+     "sk": "Každý týždeň. Úhľadne, s rozmermi a s podpisom. Na taký lístok je radosť vydávať materiál."
+    },
+    {
+     "key": "topic.SKLAD.extra 1.003",
+     "speaker": "ADAM",
+     "sk": "A ktoré lístky nemáte radi?"
+    },
+    {
+     "key": "topic.SKLAD.extra 1.004",
+     "speaker": "STEFAN",
+     "sk": "Tie, kde je napísané „niečo na opravu“. Položku „niečo“ nevedieme. Tú nemá nikto."
+    }
+   ]
+  },
+  {
+   "id": "VERA60.extra 1",
+   "character": "VERA60",
+   "label_key": "topic.VERA60.extra 1.label",
+   "label": "Dievčatko so škôlkou",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "Vera's dry fondness for the child at her bench",
+   "lines": [
+    {
+     "key": "topic.VERA60.extra 1.001",
+     "speaker": "ADAM",
+     "sk": "To dievčatko so škôlkou vám tu robí spoločnosť každý deň?"
+    },
+    {
+     "key": "topic.VERA60.extra 1.002",
+     "speaker": "VERA60",
+     "sk": "Zuzka? Každý deň. Skáče, ráta a občas mi povie, že mám krivú čiaru."
+    },
+    {
+     "key": "topic.VERA60.extra 1.003",
+     "speaker": "ADAM",
+     "sk": "A máte?"
+    },
+    {
+     "key": "topic.VERA60.extra 1.004",
+     "speaker": "VERA60",
+     "sk": "Mám. Preto ju radšej nechávam rátať, nech mi nekontroluje čiary."
+    }
+   ]
+  },
+  {
+   "id": "VERA60.extra 3",
+   "character": "VERA60",
+   "label_key": "topic.VERA60.extra 3.label",
+   "label": "Čo práve kreslíte?",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "the ZVON documentation; Vera notices Adam seems to know the device",
+   "lines": [
+    {
+     "key": "topic.VERA60.extra 3.001",
+     "speaker": "ADAM",
+     "sk": "Čo to máte na výkrese?"
+    },
+    {
+     "key": "topic.VERA60.extra 3.002",
+     "speaker": "VERA60",
+     "sk": "Prierez ZVONu. Aby ho raz vedel opraviť aj niekto, kto pri ňom nebol."
+    },
+    {
+     "key": "topic.VERA60.extra 3.003",
+     "speaker": "ADAM",
+     "sk": "Napríklad ja."
+    },
+    {
+     "key": "topic.VERA60.extra 3.004",
+     "speaker": "VERA60",
+     "sk": "Napríklad. Hoci vy vyzeráte, akoby ste pri ňom už boli."
+    }
+   ]
+  },
+  {
+   "id": "OTO82.extra 2",
+   "character": "OTO82",
+   "label_key": "topic.OTO82.extra 2.label",
+   "label": "Spomienky na Ivanku",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "Oto remembers Ivanka 1962 (dielňa, Mira, Adam); NO mention of Zuzana (owner rule: 1962 and 1995 only)",
+   "lines": [
+    {
+     "key": "topic.OTO82.extra 2.001",
+     "speaker": "ADAM",
+     "sk": "Spomínate si ešte na Ivanku?"
+    },
+    {
+     "key": "topic.OTO82.extra 2.002",
+     "speaker": "OTO82",
+     "sk": "Na dielňu, na Miru a na vás. Na vás najviac, lebo ste zmizli bez rozlúčky."
+    },
+    {
+     "key": "topic.OTO82.extra 2.003",
+     "speaker": "ADAM",
+     "sk": "Prepáčte. Ponáhľal som sa."
+    },
+    {
+     "key": "topic.OTO82.extra 2.004",
+     "speaker": "OTO82",
+     "sk": "Ponáhľali ste sa dvadsať rokov. U vás je to asi bežná rýchlosť."
+    }
+   ]
+  },
+  {
+   "id": "OTO82.extra 3",
+   "character": "OTO82",
+   "label_key": "topic.OTO82.extra 3.label",
+   "label": "Sídlisko",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "1982 Dúbravka: the estate being built, the bus while the tram line is not there yet (owner decision 3b); vague on dates on purpose",
+   "lines": [
+    {
+     "key": "topic.OTO82.extra 3.001",
+     "speaker": "ADAM",
+     "sk": "Ako sa vám tu na sídlisku žije?"
+    },
+    {
+     "key": "topic.OTO82.extra 3.002",
+     "speaker": "OTO82",
+     "sk": "Všade sa stavia. Ráno je tu blato, večer nový dom."
+    },
+    {
+     "key": "topic.OTO82.extra 3.003",
+     "speaker": "OTO82",
+     "sk": "Domy sú rovnaké, len čísla iné. Prvý týždeň som zvonil u suseda."
+    },
+    {
+     "key": "topic.OTO82.extra 3.004",
+     "speaker": "ADAM",
+     "sk": "Zvyknete si. O pár rokov tu bude samá zeleň."
+    },
+    {
+     "key": "topic.OTO82.extra 3.005",
+     "speaker": "OTO82",
+     "sk": "Hovoríte to, akoby ste to vedeli."
+    },
+    {
+     "key": "topic.OTO82.extra 3.006",
+     "speaker": "ADAM",
+     "sk": "Tuším. A vy predsa viete, odkiaľ chodím."
+    }
+   ]
+  },
+  {
+   "id": "DOBRO.extra 3",
+   "character": "DOBRO",
+   "label_key": "topic.DOBRO.extra 3.label",
+   "label": "Nová škola",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "1982 colour: a new school on a growing estate",
+   "lines": [
+    {
+     "key": "topic.DOBRO.extra 3.001",
+     "speaker": "ADAM",
+     "sk": "Škola vyzerá, akoby ju práve postavili."
+    },
+    {
+     "key": "topic.DOBRO.extra 3.002",
+     "speaker": "DOBRO",
+     "sk": "Je nová. Omietka ešte schne a detí pribúda rýchlejšie ako lavíc."
+    },
+    {
+     "key": "topic.DOBRO.extra 3.003",
+     "speaker": "ADAM",
+     "sk": "Toľko detí?"
+    },
+    {
+     "key": "topic.DOBRO.extra 3.004",
+     "speaker": "DOBRO",
+     "sk": "Sídlisko rastie. Každý mesiac nový panelák a v septembri nová trieda."
+    }
+   ]
+  },
+  {
+   "id": "RUZENA.extra 2",
+   "character": "RUZENA",
+   "label_key": "topic.RUZENA.extra 2.label",
+   "label": "Vratné fľaše",
+   "speaks_first": "ADAM",
+   "repeatable": true,
+   "requires_done": [],
+   "excluded_done": [],
+   "note": "1982 colour: returnable bottles",
+   "lines": [
+    {
+     "key": "topic.RUZENA.extra 2.001",
+     "speaker": "ADAM",
+     "sk": "Koľko fliaš vám ľudia denne vrátia?"
+    },
+    {
+     "key": "topic.RUZENA.extra 2.002",
+     "speaker": "RUZENA",
+     "sk": "Ako kedy. Najviac v pondelok. Ráno je tu rad ľudí s fľašami až po dvere."
+    },
+    {
+     "key": "topic.RUZENA.extra 2.003",
+     "speaker": "ADAM",
+     "sk": "A ktoré sa vracajú najčastejšie?"
+    },
+    {
+     "key": "topic.RUZENA.extra 2.004",
+     "speaker": "RUZENA",
+     "sk": "Od mlieka. Mlieko sa pije stále, aj keď sa nič neoslavuje."
+    }
+   ]
+  }
+ ]
+}

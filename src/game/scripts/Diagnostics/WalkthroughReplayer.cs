@@ -55,13 +55,17 @@ public static class WalkthroughReplayer
         foreach (var step in steps.Take(Math.Clamp(count, 0, steps.Count)))
         {
             s = FollowTravelPath(content, s, step);
+            // The world overlay may have relocated the step's action to another room of the same era.
+            var action = content.GetAction(step.Action);
+            if (!action.IsInventoryAction && s.Room != action.Room) s = Walk(content, s, action.Room, step);
             s = Interact(content, s, step);
             var inventory = s.Inventory.OrderBy(x => x, StringComparer.Ordinal).ToList();
             var expected = step.InventoryAfter.OrderBy(x => x, StringComparer.Ordinal).ToList();
             if (!inventory.SequenceEqual(expected))
                 throw new InvalidOperationException($"step {step.Step} {step.Action}: inventory [{string.Join(",", inventory)}] != expected [{string.Join(",", expected)}]");
-            if (s.Room != step.RoomAfter)
-                throw new InvalidOperationException($"step {step.Step} {step.Action}: room {s.Room} != expected {step.RoomAfter}");
+            var roomAfter = content.FindRelocation(step.Action) is { } moved && step.RoomAfter == moved.FromRoom ? moved.ToRoom : step.RoomAfter;
+            if (s.Room != roomAfter)
+                throw new InvalidOperationException($"step {step.Step} {step.Action}: room {s.Room} != expected {roomAfter}");
             log?.Invoke($"replay step {step.Step,2} {step.Action,-4} ok -> {s.Room} [{string.Join(",", s.Inventory)}]");
         }
         return s;
@@ -86,18 +90,26 @@ public static class WalkthroughReplayer
             }
             else
             {
-                // A hop the travel overlay removed (2020: the car S02 -> S51 became the bus from S07): recompute it.
+                // A hop the travel overlay removed (2020: the car S02 -> S51 became the bus from S07), or a path that
+                // starts where walkthrough.json expects the hero although a relocated action took him elsewhere: recompute it.
                 string from = s.Room;
-                if (!content.Overlay.RemovedConnections.Any(c => (c.From == from && c.To == roomId) || (c.To == from && c.From == roomId)))
+                if (!content.Overlay.RemovedConnections.Any(c => (c.From == from && c.To == roomId) || (c.To == from && c.From == roomId)) &&
+                    content.Overlay.Relocations.Count == 0)
                     throw new InvalidOperationException($"step {step.Step}: no exit or portal from {s.Room} to {roomId}");
-                var route = Navigation.FindRoute(content, s, roomId) ?? throw new InvalidOperationException($"step {step.Step}: no route from {s.Room} to {roomId}");
-                foreach (var hop in route) s = Playback.FinishAll(content, Navigation.ApplyStep(content, s, hop));
-                if (s.Room != roomId) throw new InvalidOperationException($"step {step.Step}: travel to {roomId} failed");
+                s = Walk(content, s, roomId, step);
                 continue;
             }
             if (next.Room != roomId) throw new InvalidOperationException($"step {step.Step}: travel to {roomId} failed");
             s = Playback.FinishAll(content, next);
         }
+        return s;
+    }
+
+    private static GameState Walk(GameContent content, GameState s, string roomId, WalkthroughStep step)
+    {
+        var route = Navigation.FindRoute(content, s, roomId) ?? throw new InvalidOperationException($"step {step.Step}: no route from {s.Room} to {roomId}");
+        foreach (var hop in route) s = Playback.FinishAll(content, Navigation.ApplyStep(content, s, hop));
+        if (s.Room != roomId) throw new InvalidOperationException($"step {step.Step}: travel to {roomId} failed");
         return s;
     }
 

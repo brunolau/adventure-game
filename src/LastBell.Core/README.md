@@ -277,22 +277,161 @@ action (reopen that modal), otherwise it closes with the draft kept (ISSUES GAME
 
 ## 13. Content overlays (`src/game/data/content_ext/`)
 
-game.json is never edited. Two optional overlays are applied on top of it when content loads:
+game.json is never edited. Three optional overlays are applied on top of it when content loads, in the order
+world, dialogue, travel (so the dialogue overlay can extend world lines and give new characters topics, and the
+travel overlay's map regions see the new rooms):
 
 ```csharp
 var overlays = new ContentOverlays(
     FileAccess.GetFileAsString("res://data/content_ext/dialogue_ext.json"),   // or null
-    FileAccess.GetFileAsString("res://data/content_ext/travel_ext.json"));    // or null
+    FileAccess.GetFileAsString("res://data/content_ext/travel_ext.json"),     // or null
+    FileAccess.GetFileAsString("res://data/content_ext/world_ext.json"));     // or null
 GameContent content = GameContent.Load(gameJson, overlays);
 ```
 
-`GameRuntime` does this (a missing file means no overlay of that kind). `GameContent.Load(json)` alone is
-the handoff. An empty overlay (`{}`, or empty lists) is valid and changes nothing; to revert, remove an
-entry or the whole file. Load validates everything and throws `ContentLoadException`; overlay errors name
-the overlay path, e.g. `$dialogue_ext.sequences[3](G02).lines[2].speaker: 'TONO20' does not take part in
-action 'G02'`. After load, `content.Data` is the effective content (game.json + overlays) and
-`content.Overlay` (`OverlayInfo`) lists what changed. The Python mirror is `tools/content_ext.py`
-(`check`, `merge`); the localization tools build their tables from the effective game.
+`GameRuntime` does this (a missing file means no overlay of that kind; QA runs can read them from another
+folder with `-- --content-ext <dir>`). `GameContent.Load(json)` alone is the handoff. An empty overlay (`{}`, or
+empty lists) is valid and changes nothing; to revert, remove an entry or the whole file. Load validates
+everything and throws `ContentLoadException`; overlay errors name the overlay path, e.g.
+`$dialogue_ext.sequences[3](G02).lines[2].speaker: 'TONO20' does not take part in action 'G02'` or
+`$world_ext.actions(Q90D): needs 'SAMPLE_NOTE', which 'Q90B' consumes; ...`. After load, `content.Data` is the
+effective content (game.json + overlays) and `content.Overlay` (`OverlayInfo`) lists what changed. The Python
+mirror is `tools/content_ext.py` (`check`, `merge`, `merge-world`; the world part in `tools/content_world.py`);
+the localization and writing tools build their tables from the effective game.
+
+### world_ext.json: new rooms, hotspots, characters, items, actions, side quests; relocations
+
+The world overlay adds content with **new ids only** and may move an existing action to another room of the same
+era. Everything it adds has the game.json record shape, so the rules, views, journal, hints, map, saves and the
+localization tools treat it like handoff content. Every list is optional; the order of the lists does not matter
+(references may point forward). Field names are game.json's; texts are Slovak strings on one line.
+
+```jsonc
+{
+  "format": "lastbell.world_ext", "version": 1,             // optional; "about", "note", "schema" are free text
+  "characters": [ { "id": "ZUZANA95", "name": "Zuzana", "age": 40, "role": "…", "voice": "…", "design": "…" } ],
+                                                            // rooms are derived from the NPC hotspots (key char.<id>.name);
+                                                            // optional topics go in dialogue_ext.json "topics"
+  "items": [ { "id": "BELL_MUTE", "name": "…", "look": "…", "purpose": "…",
+               "icon": "items/BELL_MUTE.webp" } ],          // icon default items/<id>.webp; origin is derived (the one
+                                                            // action that gives it); disposition always "retain"
+                                                            // keys item.<id>.name, item.<id> (look), item.<id>.purpose
+  "rooms": [ {
+      "id": "S69", "name": "Sokolíkovský dvor", "era": 1995, "district": "Dúbravka",
+      "region": "Dúbravka", "hub": false,                   // only when travel_ext.json defines regions for the era:
+                                                            // the room joins that region (else: the district's region)
+      "background_asset": "bg/S69.webp", "music": "music/1995.ogg",
+      "art_brief": "…", "ambience": "…", "blocking_note": "…", // production notes (not shown)
+      "walk_polygon": [[90, 790], [1830, 790], [1830, 1015], [90, 1015]], "spawn": [960, 935],
+      "camera_family": "S69", "layer_order": [ … ],         // defaults: own id, game.json's 7 layers
+      "first_entry": [ { "key": "entry.S69.001", "speaker": "ADAM", "sk": "…" } ],   // Adam and the room's NPCs
+      "hotspots": [                                          // ids <room>.<name>; NPC hotspots <room>.<CHARACTER>
+        { "id": "S69.ZUZANA95", "name": "Zuzana", "kind": "npc", "character_id": "ZUZANA95", "look": "…",
+          "rect": [1600, 670, 120, 265], "interaction_point": [1560, 955] },
+        { "id": "S69.rhythm", "name": "…", "look": "…", "rect": [1440, 585, 185, 125], "interaction_point": [1520, 790],
+          "label_anchor": [1532, 575],                       // default: 10 px above the rect's centre
+          "visible_after": [], "hide_after": [],
+          "look_variants": [ { "after": "B19", "sk": "…" } ] }   // keys look.<id>, look.<id>.variant<n>
+      ],
+      "exits": [ { "id": "S69.to_S18", "to": "S18", "travel": "walk", "label": "…", "locked_look": "…",
+                   "requires_done": [], "rect": [1150, 1000, 430, 80], "interaction_point": [1360, 1000] } ]
+  } ],                                                       // npc_ids derived (if given they must match)
+  "hotspots": [ { "room": "S37", "id": "S37.ZUZANA", "kind": "npc", "character_id": "ZUZANA", … } ],
+                                                            // new hotspots in EXISTING rooms (same fields + "room")
+  "exits": [ { "room": "S18", "id": "S18.to_S69", "to": "S69", "travel": "walk", "label": "…", "locked_look": "…",
+               "rect": [430, 850, 190, 45], "interaction_point": [525, 880] } ],   // exits of existing rooms
+  "connections": [ { "from": "S18", "to": "S69", "bidirectional": true, "travel": "walk", "label": "…",
+                     "locked_look": "…", "requires_done": [] } ],                  // as in travel_ext.json
+  "quests": [ { "id": "Q10", "title": "…", "goal": "…", "reward": "…",
+                "hints": ["direction", "place", "the whole chain"],                // exactly three
+                "actions": ["Q10A", "Q10B", "Q10C", "Q10D"], "completion": "Q10D" } ],  // side quests only
+  "actions": [ { "id": "Q10A", "room": "S37", "target": "S37.ZUZANA", "kind": "topic", "label": "…", "quest": "Q10",
+                 "requires_done": [], "excluded_done": [], "requires_items": [], "selected_item": null,
+                 "gives": ["BELL_MUTE", "ZUZA_SLIP"], "consumes": [],
+                 "objective": "…", "journal_text": "…",
+                 "hint_step": "…",                           // required: the exact level-3 hint (action.<id>.hint_step)
+                 "animation": "talk", "sfx": "item_soft",    // defaults: talk / show_item / reach_mid / inventory_combine
+                 "staging": { "guest_speakers": [], "rule": "" }, "symmetric": false,   // symmetric: combine only
+                 "lines": [ { "key": "action.Q10A.001", "speaker": "ZUZANA", "sk": "…" } ] } ],
+                                                            // once: true and commit_policy (atomic...) are fixed;
+                                                            // puzzle / cutscene must stay null
+  "epilogue": [ { "quest": "Q10", "after": "Q10D", "shot": "…", "line": "ZUZANA: …" } ],  // keys epilogue.<n>,
+                                                            // n continues after game.json's 9 (picture EPILOGUE_<n>.webp)
+  "visual_variant_layers": [ { "room": "S69", "after": "Q11C", "asset": "variants/S69_bike_bell.webp", "change": "…" } ],
+  "relocations": [ { "action": "B19", "to_hotspot": "S69.rhythm", "retire_hotspot": false,
+                     "hint_step": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.", "reason": "…" } ]
+}
+```
+
+Rules checked on load (every error names its `$world_ext...` path):
+
+- **Ids.** New and unique (also across kinds' lists): rooms `S<nn>`, hotspots `<room>.<name>` (NPCs
+  `<room>.<CHARACTER>`), characters / items / actions upper case (`ZUZANA`, `BELL_MUTE`, `Q10A`), quests `Q<n>`.
+  A game.json id is refused ("adds new ids only"); to move an existing action use `relocations`. Text keys come
+  from the ids (table above), new line keys are `action.<id>.<n>` / `entry.<room>.<n>` like game.json's.
+- **References.** Rooms, hotspots, characters, items, actions and quests resolve (game.json's or the overlay's);
+  a topic targets an NPC and takes no item; a click on an NPC uses an item; a combination has room `inventory`,
+  targets an item and names the other one in `selected_item`; an action's target lies in its room. Speakers:
+  Adam, the target character and everyone who speaks for it in game.json (a counter's `SKLAD` speaks as
+  `STEFAN`), the NPCs standing in the room and the staging guests.
+- **Geometry.** Walk polygon of at least 3 points inside 1920x1080; spawn, every new hotspot's and exit's
+  interaction point inside the room's walk polygon; rects at least 44x44 px on screen; asset paths under
+  `bg/`, `music/`, `items/`, `variants/`.
+- **Graph.** Exits and connections describe the same edges (as in travel_ext.json); every room keeps an exit and
+  stays reachable from its era's time node; with map regions in travel_ext.json a new room names its region.
+- **Items flow.** A new item has exactly one origin (the action giving it); new actions give and consume new items
+  only (game.json items keep their one origin and are never used up by new content, so no main step can lose an
+  item); every needed item is obtainable before the action (no cycle through prerequisites or item givers); a new
+  item is consumed at most once; an item consumed by one action and needed by another forces an order (the
+  consumer requires the other), so no order of play loses it.
+- **One logical action per target.** Two actions with the same trigger (the same hotspot without an item, the
+  same item on the same hotspot, the same pair of items) must never be possible at once.
+- **Quests.** A new side quest consists of exactly its new actions (canonical order), its completion is one of
+  them, three hints, at most one epilogue shot; every new action has a `hint_step`.
+- **Relocations.** An existing, non-inventory action moves to a hotspot in another room of the **same era**; the
+  target keeps its kind (prop stays prop, an NPC stays the same character); nothing else may be set (guards,
+  items, quest, puzzle, cutscene and lines stay); `hint_step` is required (the old `ui.hint_step.<id>` names the old
+  place). `retire_hotspot: true` removes the old hotspot when no other action targets it (props only).
+- **No softlock** (`ContentPlayability`): whenever the world overlay adds or moves anything, the load plays the
+  whole game, ending and side quests included, through the real rules in eight orders (data order, side quests
+  first, overlay first, overlay last, four seeded random orders; the hero is put into any room reachable over open
+  exits and portals). An order that gets stuck is an error: `$playability(data order): softlock after 128 actions
+  (...): 3 action(s) can never be done: Q90B (target S90.board is hidden); ...`. `ContentPlayability.Check` also
+  runs on the handoff in the tests.
+- **Walkthrough and saves.** walkthrough.json stays untouched; the test driver and the in-engine replayer follow
+  its travel paths, recompute a hop the hero cannot take because a relocated action put him elsewhere, travel to
+  a relocated action's room and expect it as `room_after`. Saves from before the overlay load (no unknown ids)
+  and continue there (a relocated step is done in its new room); a save with overlay ids is refused by content
+  without the overlay (`ui.save.corrupted`, the current game untouched).
+
+`OverlayInfo` lists `AddedRooms`, `AddedHotspots`, `AddedCharacters`, `AddedItems`, `AddedActions`, `AddedQuests`,
+`AddedEpilogue`, `AddedVariantLayers`, `Relocations` (`RelocationInfo`: action, from room / hotspot, to room /
+hotspot, retired), `RetiredHotspots` and `HasWorldChanges`; `content.FindRelocation(actionId)`.
+`ActionDef.HintStep` holds the step text; `Hints.StepText(action)` returns it (key `action.<id>.hint_step`, world.csv)
+or, for game.json's actions, `ui.hint_step.<id>` (ui.csv). `QuestDef.Reward` is game.json's reward text
+(`Quests.RewardOf`).
+
+How to add …
+
+- **a room**: an entry in `rooms` with its hotspots and exits, the way back as an exit of the neighbouring room in
+  `exits`, the edge in `connections`; `region` when its era has map regions. Art: `bg/<id>.webp` (or
+  `data/blocking/<id>.json` + `bg_natural/<id>.webp` for natural blocking), optional `data/ambient/<id>.json`; a
+  room without a painting shows the dev blockout. Its texts get keys with `python tools/extract_strings.py`; a new
+  district also needs its `region.<district>.name` row in ui.csv.
+- **an item**: an entry in `items` and the one action that `gives` it; `items/<id>.webp` for the icon (until it
+  exists the bag shows a paper token with the item's initials).
+- **an action**: an entry in `actions` with `quest` = a new side quest that lists it; `hint_step`; lines with keys
+  `action.<id>.<n>`; the target is a hotspot of that room (new or game.json's), a combination targets an item.
+- **a quest**: an entry in `quests` (three hints, its actions, completion), usually an `epilogue` shot
+  (`EPILOGUE_<n>.webp`, n = 9 + its position) and the album reward text.
+- **a relocation**: an entry in `relocations` (`action`, `to_hotspot` in another room of the same era, `hint_step`,
+  optionally `retire_hotspot`); then move protected facts / looks that named the old place with `sk_overrides.csv`.
+
+Then `python tools/content_ext.py check` (fast mirror), `dotnet test src/LastBell.sln` (Core: everything above
+plus the playability check and the walkthrough), `python tools/extract_strings.py`, `python tools/check_strings.py`,
+`python tools/check_rewrite.py --self-test`, `python tools/check_blocking.py`. A combined writing draft
+(`{"world_ext": {...}, "dialogue_ext": {...}}`) goes in with `python tools/content_ext.py merge-world DRAFT` and
+then `python tools/content_ext.py merge DRAFT`.
 
 ### dialogue_ext.json: longer sequences and extra NPC topics
 
@@ -335,8 +474,9 @@ Rules checked on load:
   line uses them) and stable: the key is the localization key (`Tr(key)`, Slovak fallback = `sk`).
 - Speakers: Adam, the speakers already in that exchange, and for conversations with a character (its
   topics and the actions on its NPC hotspots) that character and everyone already speaking with it (Bodka
-  next to Lenka); for actions also the staging guest speakers. An existing line keeps its speaker and text
-  (its text comes from the tables / `sk_overrides.csv`).
+  next to Lenka); for actions also the staging guest speakers and the NPCs standing in the action's room (its
+  effective room: a relocated action's new room, NPCs added by the world overlay). An existing line keeps its
+  speaker and text (its text comes from the tables / `sk_overrides.csv`).
 - An exchange is extended at most once; `lines` is never empty; a new topic id is unique and its character
   has an NPC hotspot.
 - Dropped handoff lines are "retired" (`OverlayInfo.RetiredLines`): never queued again, not in
@@ -405,9 +545,18 @@ Run `dotnet test src/LastBell.sln`. The suite covers:
 - the content overlays (`ContentOverlayTests`): empty overlays, the live C1 sequences and topics in play order,
   timing conditions, retired lines and old saves, every rejected field and broken key, the travel overlay
   (bus S07 <-> S51, first rides, the hub rule, region fast travel, map regions) and that every overlay text
-  has its key in the generated tables
+  (world overlay texts included) has its key in the generated tables
+- the world overlay (`WorldOverlayTests`, sample `Overlays/sample_world_ext.json`, test only: a new 1995 room S90
+  with an NPC, three items, the side quest Q90, an epilogue shot, a variant layer, a prop in S12, and the
+  relocation of B19 and of the P03 puzzle B22 into S90): every added record and key, the quest through the
+  resolver to the album and the ending, hints, the relocated puzzle, the walkthrough with recomputed paths and
+  all side quests, 24 random legal orders, the playability check on the handoff, the live content and the
+  sample, every 1995 prop action relocatable without a false alarm, dialogue / travel overlays on top (room
+  NPCs speaking, a counter's speaker alias, map region hints), old and new saves, and 80 broken overlays
 
 `TestData.Content` is the content the game plays (game.json + `src/game/data/content_ext/*.json`, copied
 to the test fixtures); `TestData.BaseContent` is the handoff alone. The walkthrough replay follows
 `walkthrough.json` (never edited); a hop that the travel overlay removed (S02 -> S51) is recomputed as the
-shortest legal route under the overlay (`Driver.FollowTravelPath`, by bus from S07).
+shortest legal route under the overlay (`Driver.FollowTravelPath`, by bus from S07), and a relocated step travels
+on to its new room (`Driver.PrepareStep`, `Driver.ExpectedRoomAfter`); side quests of the world overlay, which
+walkthrough.json does not know, are played after its optional route (`Driver.PerformRemaining`).

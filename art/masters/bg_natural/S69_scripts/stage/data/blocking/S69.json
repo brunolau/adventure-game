@@ -1,0 +1,438 @@
+{
+  "version": 1,
+  "room": "S69",
+  "status": "natural blocking of the new 1995 room S69 (content v2 world overlay; docs/story/SOKOLIKOVA_YARD.md). Base: the owner-loved style-test painting art/backgrounds/sokolikova-yard.png, kept pixel-for-pixel outside the added bench, bike, wall painting, chalk tally and hopscotch (art/masters/bg_natural/S69.md).",
+  "note": "The walled courtyard playground between the Sokolikova panel blocks on a June afternoon in 1995, seen from the lawn outside the near wall. Two-point perspective: the right wall's lines meet at VP (-1146, 478), the back wall's at (2836, 470); horizon y ~475, focal ~1988 px (nearly level camera). Camera ~2.45 m above the court (the bench and the 16-inch bike painted by the edit, the right wall ~1.3 m, the low back wall ~0.7 m, the near wall ~1.4 m, the passage ~1.1 m): px per metre at a ground point = (y - 475) / 2.45, hero scale (y - 475) / 729 (0.31 at the passage y 700, 0.74 at the bottom y 1015). The bike was painted ~1.5x too large by the edit and is placed at 0.66 of its perspective size (handlebar ~0.7 m). The court is ~9 m along the back wall. The near wall in the foreground left is always in front of every actor (foreground mask); the walk area is the court behind it (the left strip between the low back wall and the near wall's top edge, the open centre, the right wall's foot) and stops short of the bench footprint and the overhanging branches at the right. The bike in the left strip is a y-sorted occluder (baseline 836).",
+  "background": "bg_natural/S69.webp",
+  "walk_polygon": [
+    [
+      792,
+      790
+    ],
+    [
+      850,
+      766
+    ],
+    [
+      900,
+      758
+    ],
+    [
+      950,
+      748
+    ],
+    [
+      1000,
+      740
+    ],
+    [
+      1050,
+      731
+    ],
+    [
+      1100,
+      723
+    ],
+    [
+      1150,
+      716
+    ],
+    [
+      1200,
+      710
+    ],
+    [
+      1270,
+      704
+    ],
+    [
+      1330,
+      701
+    ],
+    [
+      1380,
+      706
+    ],
+    [
+      1450,
+      715
+    ],
+    [
+      1550,
+      722
+    ],
+    [
+      1640,
+      732
+    ],
+    [
+      1560,
+      790
+    ],
+    [
+      1480,
+      852
+    ],
+    [
+      1432,
+      888
+    ],
+    [
+      1420,
+      940
+    ],
+    [
+      1418,
+      1015
+    ],
+    [
+      1215,
+      1015
+    ],
+    [
+      1185,
+      950
+    ],
+    [
+      1166,
+      902
+    ],
+    [
+      1112,
+      880
+    ],
+    [
+      1076,
+      852
+    ],
+    [
+      1070,
+      812
+    ],
+    [
+      938,
+      812
+    ],
+    [
+      932,
+      840
+    ],
+    [
+      850,
+      826
+    ],
+    [
+      810,
+      812
+    ]
+  ],
+  "walk_band": [
+    701,
+    1015
+  ],
+  "actor_scale": [
+    0.31,
+    0.741
+  ],
+  "spawn": [
+    1260,
+    1000
+  ],
+  "hotspots": {
+    "S69.wall": {
+      "rect": [
+        240,
+        880,
+        860,
+        190
+      ],
+      "interaction_point": [
+        1200,
+        955
+      ],
+      "label_anchor": [
+        700,
+        870
+      ],
+      "reason": "the near wall of upright concrete panels in the foreground left (the lower half of its panels; the upper half stays the walk area's backdrop); the hero looks at it from the court beside its end panel"
+    },
+    "S69.rhythm": {
+      "rect": [
+        1376,
+        582,
+        178,
+        128
+      ],
+      "interaction_point": [
+        1465,
+        732
+      ],
+      "label_anchor": [
+        1490,
+        540
+      ],
+      "reason": "B19 target: the school club's painting on the three right-wall panels next to the passage (x 1381-1549): four shapes / three waves over two strokes / six pieces; the hero reads it from the wall foot"
+    },
+    "S69.court": {
+      "rect": [
+        1100,
+        812,
+        225,
+        84
+      ],
+      "interaction_point": [
+        1250,
+        905
+      ],
+      "label_anchor": [
+        1212,
+        802
+      ],
+      "reason": "the chalk hopscotch on the asphalt (8 squares + half circle, 0.8 x 3.0 m, quad 1098-1462 x 814-894); the rect covers its near half so Zuzana's rect stays clear"
+    },
+    "S69.birch": {
+      "rect": [
+        610,
+        20,
+        230,
+        620
+      ],
+      "interaction_point": [
+        838,
+        800
+      ],
+      "label_anchor": [
+        700,
+        300
+      ],
+      "reason": "the birch behind the low back wall at the left (trunk x ~650-705, drooping crown up to x ~1000); looked at from the left tip of the court"
+    },
+    "S69.spruce": {
+      "rect": [
+        846,
+        40,
+        262,
+        590
+      ],
+      "interaction_point": [
+        870,
+        795
+      ],
+      "label_anchor": [
+        980,
+        300
+      ],
+      "reason": "Q11B target: the blue spruce behind the low back wall; the cap lies at the wall foot under its lowest branches, left of the bike (glint patch at 877, 752); the hero reaches low from the left strip"
+    },
+    "S69.lamp": {
+      "rect": [
+        300,
+        448,
+        72,
+        250
+      ],
+      "interaction_point": [
+        830,
+        798
+      ],
+      "label_anchor": [
+        336,
+        438
+      ],
+      "reason": "the globe street lamp behind the near wall at the left (globe 311-358 x 457-505, post down to the wall top)"
+    },
+    "S69.bench": {
+      "rect": [
+        1430,
+        740,
+        362,
+        200
+      ],
+      "interaction_point": [
+        1395,
+        975
+      ],
+      "label_anchor": [
+        1610,
+        730
+      ],
+      "reason": "the green bench painted by the edit at the right edge of the court where the grass bank begins (seat and backrest x 1428-1790, y 738-1035, facing the court's open bottom); the hero stands at its left end"
+    },
+    "S69.bike": {
+      "rect": [
+        935,
+        720,
+        135,
+        122
+      ],
+      "interaction_point": [
+        1040,
+        802
+      ],
+      "label_anchor": [
+        1000,
+        710
+      ],
+      "reason": "Q11C target: Kubo's small red bike with stabilisers in the left strip in front of the low back wall (x 945-1063, wheels on y ~836); the hero stands behind its handlebar (the bike occluder hides his legs) to screw the cap on the bell"
+    },
+    "S69.ZUZANA95": {
+      "rect": [
+        1345,
+        595,
+        110,
+        285
+      ],
+      "interaction_point": [
+        1280,
+        905
+      ],
+      "label_anchor": [
+        1392,
+        586
+      ],
+      "reason": "Zuzana by the left end of the bench (feet 1400, 880; 0.56 x 512 px = 285 px tall); the hero talks to her from her left, on the court"
+    },
+    "S69.KUBO": {
+      "rect": [
+        1068,
+        669,
+        76,
+        184
+      ],
+      "interaction_point": [
+        1205,
+        868
+      ],
+      "label_anchor": [
+        1106,
+        659
+      ],
+      "reason": "Kubo at the front wheel of his bike (feet 1105, 852; 0.52 x 350 px = 181 px tall); the hero talks to him from his right, on the court"
+    },
+    "S69.gap": {
+      "rect": [
+        1272,
+        600,
+        110,
+        102
+      ],
+      "interaction_point": [
+        1325,
+        712
+      ],
+      "label_anchor": [
+        1336,
+        642
+      ],
+      "reason": "the narrow passage between the end of the back wall and the right wall (x 1270-1378); a look, not an exit"
+    }
+  },
+  "exits": {
+    "S69.to_S18": {
+      "rect": [
+        1190,
+        985,
+        225,
+        85
+      ],
+      "interaction_point": [
+        1300,
+        1008
+      ],
+      "label_anchor": [
+        1302,
+        975
+      ],
+      "reason": "the court opens towards the camera between the end of the near wall (x 1150) and the bench / grass bank: the way back out to the kiosk street"
+    }
+  },
+  "npcs": {
+    "S69.ZUZANA95": {
+      "variant": "standing",
+      "feet": [
+        1400,
+        880
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "SOKOLIKOVA_YARD.md 2: Zuzana stands by the green bench (just left of its left end), chalk in hand, facing the court and the player coming in from the bottom; the hopscotch she drew lies behind her to the left"
+    },
+    "S69.KUBO": {
+      "variant": "standing",
+      "feet": [
+        1105,
+        852
+      ],
+      "facing": "left",
+      "z": "auto",
+      "reason": "SOKOLIKOVA_YARD.md 2.3: Kubo stands at the front wheel of his bike in the left strip, facing it (the handlebar with the mute bell is at its right end); in front of the bike (feet below its baseline)"
+    }
+  },
+  "occluders": [
+    {
+      "id": "bike",
+      "polygon": [
+        [
+          930,
+          715
+        ],
+        [
+          1075,
+          715
+        ],
+        [
+          1075,
+          846
+        ],
+        [
+          930,
+          846
+        ]
+      ],
+      "baseline": 836,
+      "texture": "fg_natural/S69_bike_occluder.webp"
+    }
+  ],
+  "foreground_mask": "fg_natural/S69.webp",
+  "state_patches": [
+    {
+      "texture": "variants_natural/S69_bellcap_glint.webp",
+      "pos": [
+        846,
+        728
+      ],
+      "after": [
+        "Q11A"
+      ],
+      "until": []
+    },
+    {
+      "texture": "variants_natural/S69_bellcap_gone.webp",
+      "pos": [
+        846,
+        728
+      ],
+      "after": [
+        "Q11B"
+      ],
+      "until": []
+    }
+  ],
+  "variant_layers": {
+    "variants/S69_bellcap_glint.webp": {
+      "texture": "variants_natural/S69_bellcap_glint.webp",
+      "pos": [
+        846,
+        728
+      ]
+    },
+    "variants/S69_bellcap_gone.webp": {
+      "texture": "variants_natural/S69_bellcap_gone.webp",
+      "pos": [
+        846,
+        728
+      ]
+    }
+  },
+  "ambient": "res://data/blocking/ambient/S69.json"
+}

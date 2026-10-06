@@ -15,9 +15,10 @@ still exist; keys whose Slovak text changed are listed so the translation can
 be reviewed.
 
 The tables are built from the EFFECTIVE game: game.json with the content overlays of
-src/game/data/content_ext/ applied (dialogue_ext.json: longer sequences and extra topics;
-travel_ext.json: exits, connections, first-ride lines; tools/content_ext.py). An invalid overlay
-fails the run. --no-overlays builds the handoff tables alone (comparison only).
+src/game/data/content_ext/ applied (world_ext.json: new rooms, hotspots, characters, items, actions,
+side quests, relocations; dialogue_ext.json: longer sequences and extra topics; travel_ext.json:
+exits, connections, first-ride lines; tools/content_ext.py). An invalid overlay fails the run.
+--no-overlays builds the handoff tables alone (comparison only).
 
 Accepted Slovak rewrites (ISSUES.md TEXT-01) live in
 src/game/localization/overrides/sk_overrides.csv (keys,game_json,sk,note): the
@@ -220,11 +221,15 @@ def main() -> int:
     # ------------------------------------------------------------------ report
     verb = "would write" if args.dry_run else "wrote"
     print(f"source: {display_path(args.game)} + {display_path(args.dialogues)} ({len(dialogue_rows)} rows)")
-    if overlay.used_dialogue or overlay.used_travel:
+    if overlay.used_dialogue or overlay.used_travel or overlay.used_world:
         print(f"content overlays: {len(overlay.sequences) - len(overlay.new_topics)} extended exchanges, "
               f"{len(overlay.new_topics)} new topics, {len(overlay.added_keys)} overlay keys, "
               f"{len(overlay.retired_keys)} retired keys; exits -{len(overlay.removed_exits)} +{len(overlay.added_exits)}, "
-              f"connections -{len(overlay.removed_connections)} +{len(overlay.added_connections)}, regions {len(overlay.regions)}")
+              f"connections -{len(overlay.removed_connections)} +{len(overlay.added_connections)}, regions {len(overlay.regions)}; "
+              f"world: rooms +{len(overlay.added_rooms)}, hotspots +{len(overlay.added_hotspots)}, "
+              f"characters +{len(overlay.added_characters)}, items +{len(overlay.added_items)}, "
+              f"actions +{len(overlay.added_actions)}, quests +{len(overlay.added_quests)}, "
+              f"relocations {len(overlay.relocations)}, retired hotspots {len(overlay.retired_hotspots)}")
     for table, table_entries in tables.items():
         print(f"{verb} {tk.TABLE_FILE_NAMES[table]}: {len(table_entries)} keys")
     by_prefix = Counter(e.key.split(".", 1)[0] for e in entries)

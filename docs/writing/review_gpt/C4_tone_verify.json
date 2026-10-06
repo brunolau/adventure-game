@@ -1,0 +1,670 @@
+{
+  "chunk": "C4",
+  "model": "openai/gpt-6-astra-pro",
+  "overrides": "docs\\writing\\review_gpt\\C4_tone_verify.input.csv",
+  "overlay": [
+    "docs\\writing\\review_gpt\\C4_tone_verify.input_dialogue.json"
+  ],
+  "cost_usd": 1.2152,
+  "batches": {
+    "F02+F04+F06": {
+      "hash": "73d8e63d991d4112",
+      "status": "ok",
+      "heading": "F02 · main quest M12 „Prístup do Atlasu“ | F04 · main quest M12 „Prístup do Atlasu“ | F06 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.F02.x01",
+        "action.F02.x02",
+        "action.F02.x03",
+        "action.F02.x04",
+        "action.F02.x05",
+        "action.F02.x06",
+        "action.F02.x07",
+        "action.F04.004",
+        "action.F04.x01",
+        "action.F04.x02",
+        "action.F04.x03",
+        "action.F04.x04",
+        "action.F04.x05",
+        "action.F04.x06",
+        "action.F06.x01",
+        "action.F06.x02",
+        "action.F06.x03",
+        "action.F06.x04",
+        "action.F06.x05",
+        "action.F06.x06"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 22189,
+        "completion_tokens": 2793,
+        "total_tokens": 24982,
+        "cost": 0.307819,
+        "prompt_tokens_details": {
+          "cached_tokens": 5969,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.3078
+    },
+    "Q8C+S43+S48+S45+S50+JANA35": {
+      "hash": "1851ed8e2c2f20df",
+      "status": "ok",
+      "heading": "Q8C · side quest Q8 „Adresa nie je len súradnica“ | S43 · Lobby hotela Grand Jasná (2035, Grand Jasná) | S48 · Servisný pavilón výstavy Atlas (2035, Chopok) | S45 · Chodník pri Vrbickom plese (2035, Vrbické pleso) | S50 · Vyhliadková terasa pri Rotunde (2035, Chopok) | JANA35 · Jana Vargová (65) — S44",
+      "keys": [
+        "action.Q8C.002",
+        "action.Q8C.x01",
+        "action.Q8C.x02",
+        "action.Q8C.x03",
+        "action.Q8C.x04",
+        "action.Q8C.x05",
+        "entry.S43.001",
+        "look.S48.terminal",
+        "look.S45.ambient 1",
+        "entry.S50.001",
+        "topic.JANA35.extra 2.label",
+        "topic.JANA35.extra 2.001",
+        "topic.JANA35.extra 2.002",
+        "topic.JANA35.extra 2.003",
+        "topic.JANA35.extra 2.004",
+        "topic.JANA35.extra 2.005",
+        "topic.JANA35.extra 2.006"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 27610,
+        "completion_tokens": 3866,
+        "total_tokens": 31476,
+        "cost": 0.402341,
+        "prompt_tokens_details": {
+          "cached_tokens": 7451,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.4023
+    },
+    "SARA+TAMARA": {
+      "hash": "4a3add182dbb1c6e",
+      "status": "ok",
+      "heading": "SARA · Sára Vrbová (28) — S46 | TAMARA · Tamara Kráľová (40) — S43",
+      "keys": [
+        "topic.SARA.extra 1.label",
+        "topic.SARA.extra 1.001",
+        "topic.SARA.extra 1.002",
+        "topic.SARA.extra 1.003",
+        "topic.SARA.extra 1.004",
+        "topic.SARA.extra 1.005",
+        "topic.SARA.extra 1.006",
+        "topic.SARA.extra 3.label",
+        "topic.SARA.extra 3.001",
+        "topic.SARA.extra 3.002",
+        "topic.SARA.extra 3.003",
+        "topic.SARA.extra 3.004",
+        "topic.TAMARA.extra 2.label",
+        "topic.TAMARA.extra 2.001",
+        "topic.TAMARA.extra 2.002",
+        "topic.TAMARA.extra 2.003",
+        "topic.TAMARA.extra 2.004",
+        "topic.TAMARA.extra 2.005",
+        "topic.TAMARA.extra 2.006"
+      ],
+      "fix": 1,
+      "conversation_note": "The exchanges already have character-led humour and useful conversational setups. Tamara immediately corrects the deliberately absurd claim about freezing screws; it should not be treated as an isolated factual error.",
+      "usage": {
+        "prompt_tokens": 17683,
+        "completion_tokens": 3020,
+        "total_tokens": 20703,
+        "cost": 0.288311,
+        "prompt_tokens_details": {
+          "cached_tokens": 4391,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.2883
+    },
+    "CS03+save+settings+tutorial+hint+cutscene": {
+      "hash": "dd08d55b671eaf15",
+      "status": "ok",
+      "heading": "CS03 — after „Nastaviť číslice a nájsť pôvodnú kalibráciu“ (B22) in S30 Merací stánok na Starom moste (1995) | save | settings | tutorial | hint | cutscene",
+      "keys": [
+        "cutscene.CS03.02.001",
+        "ui.save.corrupted",
+        "ui.save.newer_version",
+        "ui.save.import_failed",
+        "ui.settings.hotspot_key_hint_desc",
+        "ui.tutorial.touch_eye",
+        "ui.hint.choose_quest",
+        "ui.cutscene.skip_prompt"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 19205,
+        "completion_tokens": 1206,
+        "total_tokens": 20411,
+        "cost": 0.2167885,
+        "prompt_tokens_details": {
+          "cached_tokens": 5471,
+          "cache_write_tokens": 5471
+        }
+      },
+      "usd": 0.2168
+    }
+  },
+  "keys": {
+    "action.F02.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ahoj. Ty si opravár, však? Takto sa na môj stôl pozerajú len opravári a malé deti.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Opravár. Hlavne magnetofóny a všetko, čo hrá.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ukáž. Ručne popísaná školská kazeta. Takú som v rukách nemala roky.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ty mi hovoríš, aby som niečo neopravoval?",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Viem, že to bolí. Mňa tiež. Ale originál sa číta, neopravuje.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobre. Budem sa na ňu len pozerať a trpieť.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F02.x07": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The stock closing quip repeats the suffering joke without developing it. Give Tamara a concrete repairer's response to the temptation instead.",
+      "suggestion": "Pri každom origináli, čo mi sem prinesú, si musím sadnúť na ruky.",
+      "text": "Vitaj v klube. Ja takto trpím pri každom origináli, čo mi sem prinesú.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Obyčajný prestup, žiadny skok cez desaťročia? Na taký som dnes čakal celý deň.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Boris ma posiela s touto kartou.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dobrý deň. Kartu poznám. Najprv vás zapíšem perom do knihy návštev. Odtiaľ mi nikto nezmizne.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A keby som ho stratil?",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nestratíte. Lístky sú ako rukavice, vždy sa nájdu v tom druhom vrecku.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ja mám v kabáte šesť vreciek.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F04.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tak máte päť šancí navyše. Šťastnú cestu.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu Nina. Počujete ma? Vidím vás pri termináli.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Počujem. Aj to, ako mi cvakajú zuby. Tu hore je poriadna zima.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zadržané údaje? Takže sa nestratili, len čakajú?",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V zásobníku, kým niekto potvrdí zápis. Zatiaľ ho nepotvrdil nikto, ani Viktor.",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako sa k plesu dostanem?",
+      "batch": "F02+F04+F06"
+    },
+    "action.F06.x06": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lanovkami dole a od hotela pešo. Stojan uvidíte hneď pri chodníku.",
+      "batch": "F02+F04+F06"
+    },
+    "action.Q8C.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zanesiem mu ju. Nová adresa a žiadna lavička so psom, to Očko zvládne.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "action.Q8C.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tamara, nečakáš balík? Hľadá ťa doručovací robot Očko.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "action.Q8C.x02": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Očko? Ten ma hľadá už od jesene. Ukáž tú požiadavku.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "action.Q8C.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A povedz mu, že keď príde, dostane kávu. Aj keď tvrdí, že ju nepije.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "action.Q8C.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kávu? Robotovi?",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "action.Q8C.x05": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Každému, kto mi prinesie súčiastky. Pravidlo je pravidlo.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "entry.S43.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Opravársky stôl v hotelovom lobby. Nabudúce si na dovolenku zbalím aj pokazený magnetofón.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "look.S48.terminal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Sem pripojím čítačku a porovnám pôvodný a upravený záznam. Nina povolila diagnostiku, nie mazanie.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "look.S45.ambient 1": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Môj horizont” awkwardly assigns ownership to the horizon rather than to Adam's photographic work. Make his responsibility for the crooked photograph clear.",
+      "suggestion": "Zametený ľad odráža les aj kopec za ním. Trochu nakrivo, ako horizont na fotke, čo som urobil babke.",
+      "text": "Zametený ľad odráža les aj kopec za ním. Trochu nakrivo, ako môj horizont na babkinej fotke.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "entry.S50.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pekný výhľad. Keby tak Atlas nechal v záznamoch aj ľudí, ktorí sa naň pozerajú.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Škola na Sokolíkovej",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vy ste chodili do školy na Sokolíkovej, však?",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Áno. S Tónom Farkašom do jednej triedy. Kreslil lietadlá do všetkých zošitov.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj do vašich?",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Aj. A ja som mu ich opravovala, krídla mali vždy zlý uhol.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Všetky?",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.JANA35.extra 2.006": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The closing maxim about first versions reads like a polished punchline appended to the memory. Keep Jana's archival quirk, but tie it directly to the imperfect drawing she kept.",
+      "suggestion": "Všetky okrem prvého. To mám dodnes v archíve. Na prvé verzie nesiaham, ani keď majú krivé krídla.",
+      "text": "Všetky okrem prvého. To mám dodnes. Prvé verzie sa neopravujú, tie sa archivujú.",
+      "batch": "Q8C+S43+S48+S45+S50+JANA35"
+    },
+    "topic.SARA.extra 1.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vaše pero",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Píšete stále tým istým perom?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri roky. Ešte mi nikdy nespadlo ani sa nevypísalo.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ako to robíte?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Keď píšem, držím ho. Keď nepíšem, odložím ho. A náplň mením v pondelok.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "To by ste mohli učiť.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 1.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Učím. Každého nového kolegu hneď prvý deň.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zákaz kávy",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Prečo je v návštevníckom poriadku najväčším písmom práve káva?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lebo raz jedna káva skončila v knihe návštev. Mená z troch strán sa zliali do jednej škvrny.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A tie mená?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.SARA.extra 3.004": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Vylúštila som ich spod škvrny” unnaturally treats deciphering as extracting something from beneath the stain. Say she deciphered the names despite the stain.",
+      "suggestion": "Rozlúštila som ich aj cez škvrnu a prepísala perom, jedno po druhom. Odvtedy platí: káva vonku, pero dnu.",
+      "text": "Vylúštila som ich spod škvrny a prepísala perom, jedno po druhom. Odvtedy platí: káva vonku, pero dnu.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dielňa v hoteli",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ty tu v lobby opravuješ stále?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Len počas výstavy. Vlani som bola s dielňou vonku pri Vrbickom plese, pri lavičke so psom.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A prečo nie aj teraz?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "V zime by mi tam zamrzla káva aj skrutky.",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.005": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Skrutky zamrznú?",
+      "batch": "SARA+TAMARA"
+    },
+    "topic.TAMARA.extra 2.006": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Skrutky nie, prsty áno. A skrutku, čo mi z nich vypadne, v snehu nenájdem ani magnetom.",
+      "batch": "SARA+TAMARA"
+    },
+    "cutscene.CS03.02.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A musím to stihnúť, kým jej meno nezmizne aj z neskorších zápisov.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.save.corrupted": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Chybný súbor uloženia. Rozohraná hra beží ďalej.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.save.newer_version": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Uloženie pochádza z novšej verzie hry a nedá sa načítať. Rozohraná hra beží ďalej.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.save.import_failed": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Súbor sa nepodarilo importovať. Rozohraná hra beží ďalej.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.settings.hotspot_key_hint_desc": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Spodný panel pripomenie, že keď podržíš Space, ukážu sa všetky miesta, na ktoré sa dá kliknúť.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.tutorial.touch_eye": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Podrž dva prsty na obrazovke alebo použi tlačidlo Oko. Uvidíš všetky miesta, na ktoré môžeš ťuknúť.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.hint.choose_quest": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "S čím ti mám poradiť?",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    },
+    "ui.cutscene.skip_prompt": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Dvojité Esc” is awkward shorthand for pressing the key twice. Name the action explicitly in this control instruction.",
+      "suggestion": "Stlačením Esc preskočíš titulok, dvojitým stlačením Esc celú scénu.",
+      "text": "Esc preskočí titulok, dvojité Esc celú scénu.",
+      "batch": "CS03+save+settings+tutorial+hint+cutscene"
+    }
+  },
+  "unreviewed": []
+}

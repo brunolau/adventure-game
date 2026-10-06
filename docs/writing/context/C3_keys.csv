@@ -1,226 +1,272 @@
 keys,sk_current,kind,speaker
 action.I01.label,Ukázať prenosný chronometer,label,
-action.I01.001,To je náš návrh. Len opotrebovaný o niekoľko desaťročí.,line,OTO
-action.I01.002,"Potrebujem pôvodnú kalibráciu. Niekto v budúcnosti odstraňuje všetko, čo sa nezhoduje.",line,ADAM
-action.I01.003,"Mira je pri zariadení. Najprv musíme obnoviť ručný chladiaci model. Tu je lístok na kožu a nity. Líde v sále požičaj ruky, ona ti požičia dierovač.",line,OTO
-action.I01.004,Na cestu v čase je tu veľmi veľa remeselnej výroby.,line,ADAM
-action.I01.005,Pretože má fungovať.,line,OTO
-action.I01.objective,Vyzdvihni manžetu a nity v hospodárskej dielni; získaj Lídin dierovač.,goal,
-action.I01.journal,Vyzdvihni manžetu a nity v hospodárskej dielni; získaj Lídin dierovač.,goal,
+action.I01.001,"Toto je náš návrh. Lenže vyzerá, akoby ho niekto nosil desaťročia.",line,OTO
+action.I01.002,"Nosil. Potrebujem jeho pôvodnú kalibráciu. V budúcnosti niekto maže všetko, čo sa nezhoduje.",line,ADAM
+action.I01.003,"Mira je pri prístroji. Najprv však treba opraviť ručnú pumpu. Tu je lístok na kožu a nity. Dierovač vám požičia Lída v sále, ak jej pomôžete.",line,OTO
+action.I01.004,"Myslel som, že pri cestovaní v čase bude menej kože a nitov.",line,ADAM
+action.I01.005,Preto funguje.,line,OTO
+action.I01.objective,Vyzdvihni manžetu a nity u Štefana na dvore dielne a od Lídy si požičaj dierovač.,goal,
+action.I01.journal,Vyzdvihni manžetu a nity u Štefana na dvore dielne a od Lídy si požičaj dierovač.,goal,
 action.I02.label,Vyzdvihnúť materiál podľa Otovho lístka,label,
-action.I02.001,"Predrezaná koža, nity. Označené miesta treba preraziť, potom zopnúť. Lístok si nechávam.",line,STEFAN
-action.I02.002,Jednoduché. Máte takýto návod aj na celý deň?,line,ADAM
-action.I02.003,Na celý deň mám len obed.,line,STEFAN
-action.I02.journal,Dokončené: Vyzdvihnúť materiál podľa Otovho lístka.,goal,
-action.I03.label,Dotiahnuť bezpečne položenú kulisu,label,
-action.I03.001,Táto svorka potrebuje len dotiahnuť. Drží.,line,ADAM
-action.I03.002,Ďakujem. Oto vravel o manžete. Vezmite si dierovač. Oto mi ho potom prinesie.,line,LIDA
-action.I03.003,Mne by mohol niekto dotiahnuť pamäť.,line,RUDO
-action.I03.004,Na to zatiaľ nemám hrot.,line,ADAM
-action.I03.journal,Dokončené: Dotiahnuť bezpečne položenú kulisu.,goal,
+action.I02.001,"Predrezaná koža na manžetu a dva nity. Najprv prerazte označené miesta, potom zanitujte. Lístok si nechám.",line,STEFAN
+action.I02.002,Jasný postup. Nemáte taký aj na môj celý deň?,line,ADAM
+action.I02.003,Na celý deň mám len jeden: o dvanástej obed.,line,STEFAN
+action.I02.journal,Štefan mi podľa Otovho lístka vydal kožu na manžetu a dva nity.,goal,
+action.I03.label,Dotiahnuť svorku kulisy,label,
+action.I03.001,Stačilo dotiahnuť skrutku na svorke. Kulisa drží.,line,ADAM
+action.I03.002,"Ďakujem. Oto vravel, že potrebujete dierovať manžetu. Tu je dierovač, Oto mi ho potom vráti.",line,LIDA
+action.I03.003,Keby mi tak niekto dotiahol aj pamäť!,line,RUDO
+action.I03.004,Na to nemám v brašni správny kľúč.,line,ADAM
+action.I03.journal,Svorka kulisy je dotiahnutá. Lída mi požičala dierovač.,goal,
 action.I04.label,Preraziť vyznačené otvory v koži,label,
-action.I04.001,"Dva označené body, dva otvory. Ani o jeden viac.",line,ADAM
-action.I04.journal,Dokončené: Preraziť vyznačené otvory v koži.,goal,
+action.I04.001,"Dve značky, dva otvory. Ani o jeden navyše.",line,ADAM
+action.I04.journal,Do kože na manžetu som prerazil dva otvory.,goal,
 action.I05.label,Spojiť manžetu nitmi,label,
-action.I05.001,Nity zacvakli. Obvod je uzavretý a mäkký okraj zostal rovný.,line,ADAM
-action.I05.objective,Nasaď hotovú manžetu na demonštračnú ručnú pumpu.,goal,
-action.I05.journal,Nasaď hotovú manžetu na demonštračnú ručnú pumpu.,goal,
+action.I05.001,Nity sedia. Manžeta je uzavretá a okraj zostal rovný.,line,ADAM
+action.I05.objective,Nasaď hotovú manžetu na ručnú pumpu pred skúšobnou búdkou za parkom.,goal,
+action.I05.journal,Nasaď hotovú manžetu na ručnú pumpu pred skúšobnou búdkou za parkom.,goal,
 action.I06.label,Vymeniť manžetu ručnej pumpy,label,
-action.I06.001,"Stará manžeta von, nová dnu. Pár pokojných pohybov. Voda obieha.",line,ADAM
-action.I06.002,Oto môže odomknúť miestnosť.,line,ADAM
-action.I06.objective,"Oznám Otovi, že demonštračný model funguje.",goal,
-action.I06.journal,"Oznám Otovi, že demonštračný model funguje.",goal,
-action.I07.label,Oznámiť opravenú pumpu,label,
-action.I07.001,"Výborne. Tu je kľúč. Dierovač mi nechajte, vrátim ho Líde.",line,OTO
-action.I07.002,A môžem Mire povedať pravdu?,line,ADAM
-action.I07.003,"Povedzte jej, čo ste pozorovali. Pravdu si z toho poskladáme spoločne.",line,OTO
-action.I07.objective,Odomkni dvere pri skúšobnej pumpe.,goal,
-action.I07.journal,Odomkni dvere pri skúšobnej pumpe.,goal,
+action.I06.001,"Stará manžeta von, nová dnu. Pár ťahov pumpou a voda znova obieha.",line,ADAM
+action.I06.002,Teraz môže Oto otvoriť meraciu miestnosť.,line,ADAM
+action.I06.objective,"Povedz Otovi v dielni, že ručná pumpa znova funguje.",goal,
+action.I06.journal,"Povedz Otovi v dielni, že ručná pumpa znova funguje.",goal,
+action.I07.label,Pumpa je opravená,label,
+action.I07.001,"Výborne. Tu je kľúč od meracej miestnosti. Dierovač mi nechajte, vrátim ho Líde.",line,OTO
+action.I07.002,"Môžem Mire povedať, kto som a odkiaľ prichádzam?",line,ADAM
+action.I07.003,"Povedzte jej, čo ste videli. Pravdu si z toho poskladáme spolu.",line,OTO
+action.I07.objective,Odomkni dvere meracej miestnosti pri ručnej pumpe.,goal,
+action.I07.journal,Odomkni dvere meracej miestnosti pri ručnej pumpe.,goal,
 action.I08.label,Odomknúť meraciu miestnosť,label,
-action.I08.001,Poklop do minulosti by som čakal zložitejší. Toto sú našťastie len normálne dvere.,line,ADAM
-action.I08.objective,Porozprávaj sa s dvadsaťročnou Mirou.,goal,
-action.I08.journal,Porozprávaj sa s dvadsaťročnou Mirou.,goal,
-action.I09.label,Vysvetliť vymazávanie výnimiek,label,
-action.I09.001,"Ak spätný zápis odmietne pôvodný rozdiel, začne odmietať aj jeho pôvodcu. Preto máme návratový buffer.",line,MIRA60
-action.I09.002,Zatiaľ teda nie sú preč?,line,ADAM
-action.I09.003,"Kým sa zápis neuzavrie, sú odložené. Zariadenie ich musí vedieť vrátiť.",line,MIRA60
-action.I09.004,Potrebujem dôkaz pôvodného pravidla.,line,ADAM
-action.I09.005,"Urob odtlačok platne. Papier je na povale, tupé rydlo má Vera v parku. Tu je podpísaný registračný list. Pošta potvrdí dátum a kópiu uložíme.",line,MIRA60
-action.I09.006,Vy mi veríte?,line,ADAM
-action.I09.007,"Verím tomu, že si prišiel veci zachovať, nie prepísať.",line,MIRA60
-action.I09.008,"Prikladám aj druhý podpísaný hárok na prepis. Obsah bude zhodný, skontrolujeme ho spolu.",line,MIRA60
-action.I09.objective,Urob čitateľný odtlačok platne a vybav dvojmo potvrdený registračný list.,goal,
-action.I09.journal,Urob čitateľný odtlačok platne a vybav dvojmo potvrdený registračný list.,goal,
-action.I10.label,Požičať si tupé rydlo,label,
-action.I10.001,Mira potrebuje odtlačok kalibračnej platne.,line,ADAM
-action.I10.002,"Vezmi rydlo. Najprv papier pritlač, potom zvýrazni hrany. Nery do platne.",line,VERA60
-action.I10.003,"Za dnes je to prvý pokyn, ktorý zahŕňa slovo nery.",line,ADAM
-action.I10.004,Ten býva univerzálny.,line,VERA60
-action.I10.journal,Dokončené: Požičať si tupé rydlo.,goal,
+action.I08.001,Čakal som tajný vchod do minulosti. Sú to obyčajné dvere a obyčajný kľúč.,line,ADAM
+action.I08.objective,Porozprávaj sa s dvadsaťdvaročnou Mirou v meracej miestnosti.,goal,
+action.I08.journal,Porozprávaj sa s dvadsaťdvaročnou Mirou v meracej miestnosti.,goal,
+action.I09.label,Mazanie výnimiek v budúcnosti,label,
+action.I09.001,"Takže spätný zápis. Keď zahodí pôvodný rozdiel, časom zahodí aj toho, kto ho spôsobil. Preto máme návratový zásobník.",line,MIRA60
+action.I09.002,"Čiže to, čo zmizlo, ešte nie je úplne preč?",line,ADAM
+action.I09.003,"Kým sa zápis neuzavrie, je to len odložené. Prístroj to musí vedieť vrátiť.",line,MIRA60
+action.I09.004,"Potom potrebujem dôkaz, ako znelo pôvodné pravidlo.",line,ADAM
+action.I09.005,"Urob odtlačok platne. Papier je na povale, tupé rydlo má Vera v parku. A tu je registračný list: pošta potvrdí dátum, kópiu uložíme.",line,MIRA60
+action.I09.006,Vy mi len tak veríte?,line,ADAM
+action.I09.007,"Verím, že si prišiel veci zachovať, nie prepisovať.",line,MIRA60
+action.I09.008,"Tu máš aj druhý podpísaný hárok na druhopis. Obsah musí byť zhodný, skontrolujeme ho spolu.",line,MIRA60
+action.I09.objective,Urob čitateľný odtlačok platne a na pošte daj potvrdiť registračný list v dvoch vyhotoveniach.,goal,
+action.I09.journal,Urob čitateľný odtlačok platne a na pošte daj potvrdiť registračný list v dvoch vyhotoveniach.,goal,
+action.I10.label,Tupé rydlo,label,
+action.I10.001,Mira ma posiela za vami. Robím odtlačok kalibračnej platne a potrebujem niečo tupé.,line,ADAM
+action.I10.002,"Tak si vezmite moje rydlo. Papier najprv pritlačte, potom obtiahnite hrany. Do platne neryte.",line,VERA60
+action.I10.003,"Rydlo, ktorým sa nemá ryť. To si zapamätám.",line,ADAM
+action.I10.004,Preto je tupé. Zapamätá si to za vás.,line,VERA60
+action.I10.journal,Vera mi požičala tupé rydlo. Do platne sa nesmie ryť.,goal,
 action.I11.label,Vziať voskovaný hárok,label,
-action.I11.001,Jeden čistý hárok na reliéfny odtlačok. Udržím ho rovný; aj čas má rád čitateľný papier.,line,ADAM
-action.I11.journal,Dokončené: Vziať voskovaný hárok.,goal,
-action.I12.label,Vytlačiť reliéf platne do papiera,label,
-action.I12.001,Pritlačím papier na studenú platňu. Všetky štyri polia sú zachytené.,line,ADAM
-action.I12.002,"Originál necháme tam, kde vznikol. Odniesť môžeš pracovný odtlačok.",line,MIRA60
-action.I12.journal,Dokončené: Vytlačiť reliéf platne do papiera.,goal,
-action.I13.label,Zvýrazniť reliéf tupým rydlom,label,
-action.I13.001,Pôvod. Hlas. Súhlas. Návrat. A veta: Rôzne údaje neznamenajú neplatné údaje.,line,ADAM
-action.I13.002,Technická dokumentácia s väčším rozumom než niektoré celé porady.,line,ADAM
-action.I13.journal,Dokončené: Zvýrazniť reliéf tupým rydlom.,goal,
+action.I11.001,"Čistý voskovaný hárok. K platni ho musím doniesť rovný, nie pokrčený.",line,ADAM
+action.I11.journal,Na povale som našiel voskovaný hárok na odtlačok.,goal,
+action.I12.label,Pritlačiť hárok na platňu,label,
+action.I12.001,Pritlačím hárok na studenú platňu. Všetky štyri polia sa obtlačili.,line,ADAM
+action.I12.002,"Platňa zostane tu, kde vznikla. Ty si odnesieš odtlačok.",line,MIRA60
+action.I12.journal,"Na voskovanom hárku je odtlačok platne, zatiaľ slabý.",goal,
+action.I13.label,Obtiahnuť odtlačok tupým rydlom,label,
+action.I13.001,Pôvod. Hlas. Súhlas. Návrat. A pod tým: „Rôzne údaje neznamenajú neplatné údaje.“,line,ADAM
+action.I13.002,Jedna veta na mosadzi. Rozumnejšia než niektoré celé porady.,line,ADAM
+action.I13.journal,Tupým rydlom som obtiahol odtlačok. Štyri slová aj Mirino pravidlo sú čitateľné.,goal,
 action.I14.label,Vziať uhlový papier na druhopis,label,
-action.I14.001,Uhlový papier je na prepážke pre formuláre. Nech sa páči.,line,ALOJZ
-action.I14.002,Synchronizácia dokumentov bez internetu.,line,ADAM
-action.I14.journal,Dokončené: Vziať uhlový papier na druhopis.,goal,
+action.I14.001,"Uhlový papier je pri prepážke, pre všetky tlačivá. Nech sa páči, poslúžte si.",line,ALOJZ
+action.I14.002,Kopírovanie bez tlačiarne. A bez zaseknutého papiera.,line,ADAM
+action.I14.journal,Na pošte som si vzal uhlový papier na druhopis.,goal,
 action.I15.label,Vyhotoviť druhopis registračného listu,label,
-action.I15.001,"Podložíme uhlový papier, prepíšeme text. Mira oba listy vlastnoručne podpísala pri príprave formulára; teraz kontrolujem obsah. Použitý papier odložím do pripraveného odpadu.",line,ADAM
-action.I15.journal,Dokončené: Vyhotoviť druhopis registračného listu.,goal,
-action.I16.label,Potvrdiť dátum technického registračného listu,label,
-action.I16.001,Dve vyhotovenia. Evidenčné číslo Z-17. Dnešný dátum a prijatie do evidencie.,line,ALOJZ
-action.I16.002,"Potrebujem, aby o sedemdesiatpäť rokov vedeli, že to existovalo.",line,ADAM
-action.I16.003,Na to neviem dať dodaciu lehotu. Ale pečiatka drží.,line,ALOJZ
-action.I16.objective,Ulož registrovanú dokumentáciu do kovovej schránky na povale.,goal,
-action.I16.journal,Ulož registrovanú dokumentáciu do kovovej schránky na povale.,goal,
-action.I17.label,Uložiť registrovanú kópiu kalibrácie,label,
-action.I17.001,Tu je čistá archívna kópia podľa tvojho odtlačku. Priložíme registračný list a zavrieme ju do schránky.,line,MIRA60
-action.I17.002,Odtlačok si nechám. Potrebujem ho ďalej.,line,ADAM
-action.I17.003,"Doplním naň číslo uloženia. Originál aj prvopis zostávajú tu. Rydlo mi nechaj, vrátim ho Vere.",line,MIRA60
+action.I15.001,"Vložím uhlový papier medzi hárky a prepíšem text. Mira podpísala oba vopred, ja kontrolujem, či sa zhodujú. Papier potom do koša.",line,ADAM
+action.I15.journal,"Registračný list mám v dvoch vyhotoveniach, oba s Miriným podpisom.",goal,
+action.I16.label,Dať potvrdiť dátum registračného listu,label,
+action.I16.001,"Dve vyhotovenia, obsah zhodný. Evidenčné číslo Z-17, dnešný dátum, pečiatka.",line,ALOJZ
+action.I16.002,"Potrebujem, aby aj o sedemdesiattri rokov bolo jasné, že tento papier existoval.",line,ADAM
+action.I16.003,O sedemdesiattri rokov vám doručenie nezaručím. Ale pečiatka vydrží.,line,ALOJZ
+action.I16.objective,Odnes potvrdený registračný list a odtlačok ku kovovej schránke na povale.,goal,
+action.I16.journal,Odnes potvrdený registračný list a odtlačok ku kovovej schránke na povale.,goal,
+action.I17.label,Uložiť registračný list do schránky,label,
+action.I17.001,Podľa tvojho odtlačku som urobila čistú archívnu kópiu. Priložíme k nej registračný list a zamkneme ju do schránky.,line,MIRA60
+action.I17.002,Odtlačok si beriem so sebou. Ešte ho budem potrebovať.,line,ADAM
+action.I17.003,"Tak naň dopíšem číslo uloženia. Platňa aj prvopis zostávajú tu. Rydlo mi nechaj, vrátim ho Vere.",line,MIRA60
 action.I17.004,Budete si na mňa pamätať?,line,ADAM
-action.I17.005,"Skôr než tvoju tvár si zapamätám, čo sme spravili.",line,MIRA60
-action.I17.objective,Vráť sa do Grobu 2020 a ukáž Mire overený odtlačok.,goal,
-action.I17.journal,Vráť sa do Grobu 2020 a ukáž Mire overený odtlačok.,goal,
-action.E01.label,Ukázať pôvodný chronometer,label,
-action.E01.001,To vyrobil môj dedo s pani Hruškovou. Len tento vyzerá oveľa starší.,line,TONO82
+action.I17.005,"Tvár možno zabudnem. To, čo sme spolu urobili, nie.",line,MIRA60
+action.I17.objective,Vráť sa do Grobu v roku 2020 a ukáž Mire cez okno overený odtlačok.,goal,
+action.I17.journal,Vráť sa do Grobu v roku 2020 a ukáž Mire cez okno overený odtlačok.,goal,
+action.E01.label,Ukázať prenosný chronometer,label,
+action.E01.001,To vyrobil môj dedo s pani Hruškovou. Ale tento vyzerá oveľa starší.,line,TONO82
 action.E01.002,Ty si Tóno?,line,ADAM
 action.E01.003,Áno. Vy ma poznáte?,line,TONO82
-action.E01.004,Trochu. Zatiaľ skôr neskoršieho.,line,ADAM
-action.E01.005,"Tohto pána si pamätám z Ivanky. Vidím, že s rokmi stále zaobchádza zvláštne.",line,OTO82
-action.E01.objective,Povedz Tónovi pravdu a ukáž mu fotografiu tej istej školy 2020.,goal,
-action.E01.journal,Povedz Tónovi pravdu a ukáž mu fotografiu tej istej školy 2020.,goal,
-action.E02.label,Priznať cestovanie v čase a ukázať školu 2020,label,
+action.E01.004,Trochu. Zatiaľ skôr toho dospelého.,line,ADAM
+action.E01.005,"Tohto pána si pamätám z Ivanky. Odvtedy som zostarol ja, on nie.",line,OTO82
+action.E01.objective,Povedz Tónovi pravdu a ukáž mu fotografiu školského dvora z roku 2020.,goal,
+action.E01.journal,Povedz Tónovi pravdu a ukáž mu fotografiu školského dvora z roku 2020.,goal,
+action.E02.label,Povedať pravdu a ukázať fotografiu 2020,label,
 action.E02.001,"Som Adam, vnuk pani Hruškovej. Narodím sa o tri roky. Prichádzam z roku 2020.",line,ADAM
 action.E02.002,Tak to som od teba vlastne starší.,line,TONO82
-action.E02.003,V bežnom poradí áno.,line,ADAM
+action.E02.003,"Ak to rátame normálne, tak áno.",line,ADAM
 action.E02.004,A škola ešte stojí?,line,TONO82
-action.E02.005,Pozri. To isté okno. Len tvoja lastovička je raz z kovu.,line,ADAM
-action.E02.006,Tú kovovú som ešte neurobil.,line,TONO82
+action.E02.005,"Pozri, to isté okno. Aj tvoja lastovička tam je, len už kovová.",line,ADAM
+action.E02.006,Kovovú som ešte nerobil. Tak ju teda raz urobím.,line,TONO82
 action.E02.007,Fotografia sedí a prístroj poznám. Čo potrebujete zachovať?,line,OTO82
-action.E02.008,"Jeden návratový mostík. Niečo mi hovorí, že normálne uložený kus sa stratí.",line,ADAM
-action.E02.009,Výrobu a materiál vybavím ja. Tu je podpísaný lístok. Neškodnú rezervu môžeme uložiť v servisnej dutine.,line,OTO82
-action.E02.010,"Ja nakreslím mapu. A keď sa stretneme potom, povedz lastovička sa vracia.",line,TONO82
-action.E02.011,Platí. Len nemusíš kvôli tomu prestať normálne žiť.,line,ADAM
-action.E02.012,Neboj. Zajtra máme aj tak písomku.,line,TONO82
-action.E02.objective,S Otovým povolením priprav mostík; s Tónom dohodni presný úkryt.,goal,
-action.E02.journal,S Otovým povolením priprav mostík; s Tónom dohodni presný úkryt.,goal,
-action.E03.label,Vyzdvihnúť riadne vypísaný materiál,label,
-action.E03.001,"Otov školský výdajný lístok. Keramická pätica a tri prepojky. Dospelý zodpovedný pracovník je podpísaný, materiál vydávam.",line,MARTA82
-action.E03.002,Ďakujem.,line,ADAM
-action.E03.003,"Tónovi pozdravte, že nám tu minule nechal model lietadla. Výdajne už vzlietajú aj bez neho.",line,MARTA82
-action.E03.journal,Dokončené: Vyzdvihnúť riadne vypísaný materiál.,goal,
+action.E02.008,"Jeden návratový mostík. Ten, čo uložíte normálne, sa do roku 2020 stratí.",line,ADAM
+action.E02.009,Materiál a výrobu beriem na seba. Tu je podpísaný lístok do výdajne. Rezervný kus môžeme schovať do servisnej dutiny v múriku.,line,OTO82
+action.E02.010,"Ja nakreslím mapu. A keď sa raz zase stretneme, povedz: „Lastovička sa vracia.“",line,TONO82
+action.E02.011,Platí. Ale kvôli tomu nemusíš prestať normálne žiť.,line,ADAM
+action.E02.012,Neboj sa. Zajtra aj tak píšeme písomku.,line,TONO82
+action.E02.objective,"Vo výdajni u Marty vyzdvihni diely podľa Otovho lístka, zostav mostík a s Tónom ho ukry.",goal,
+action.E02.journal,"Vo výdajni u Marty vyzdvihni diely podľa Otovho lístka, zostav mostík a s Tónom ho ukry.",goal,
+action.E03.label,Vyzdvihnúť diely podľa Otovho lístka,label,
+action.E03.001,"Výdajný lístok od pána Bielika. Keramická pätica a tri prepojky. Podpis je, materiál vydávam.",line,MARTA82
+action.E03.002,Ďakujem. To bolo rýchle.,line,ADAM
+action.E03.003,"Pozdravujte Tóna. Minule tu nechal model lietadla, nech si poňho príde, kým mi neodletí.",line,MARTA82
+action.E03.journal,Marta mi vydala keramickú päticu a tri prepojky.,goal,
 action.E04.label,Zostaviť keramický návratový mostík,label,
-action.E04.001,"Otov pôvodný nákres, tri odlíšené kontakty. Zapojím to na odpojenej servisnej doske a premeriam.",line,ADAM
-action.E04.002,"Tóno na papierový štítok nakreslil lastovičku. Teraz vieme, čí príbeh ten kus ponesie.",line,ADAM
-action.E04.journal,Dokončené: Zostaviť keramický návratový mostík.,goal,
-action.E05.label,Požiadať o suchý pohár na školský materiál,label,
-action.E05.001,Oto potrebuje pre školu suchý pohár s tesnením na keramickú súčiastku.,line,ADAM
-action.E05.002,"Tu máte čistý pohár aj suchý baliaci papier. Nie všetko musí byť nové, aby to dobre slúžilo.",line,RUZENA
-action.E05.003,Tento bude slúžiť mimoriadne dlho.,line,ADAM
-action.E05.journal,Dokončené: Požiadať o suchý pohár na školský materiál.,goal,
-action.E06.label,Utesniť mostík do suchého pohára,label,
-action.E06.001,"Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Oto skontroloval závit.",line,ADAM
-action.E06.002,"Teraz príde tá časť, ktorú si Tóno zapamätá dlhšie než ja.",line,ADAM
-action.E06.journal,Dokončené: Utesniť mostík do suchého pohára.,goal,
-action.E07.label,Dohodnúť ochranu mladej lipy,label,
-action.E07.001,"Vozík už o sadenicu raz zavadil. Tu máte hotovú ohrádku. Keď ju postavíte, zakreslím obchádzku.",line,SIMON
-action.E07.002,V budúcnosti by tu mohol byť príjemný tieň.,line,ADAM
-action.E07.003,Na to ju sadíme. Nech nie je každá dobrá vec iba na papieri.,line,SIMON
-action.E07.journal,Dokončené: Dohodnúť ochranu mladej lipy.,goal,
+action.E04.001,"Podľa Otovho nákresu: tri kontakty, každý iného tvaru. Doska je bez prúdu, zapojím a premeriam.",line,ADAM
+action.E04.002,Tóno nakreslil na štítok lastovičku. S iným mostíkom si ho už nikto nepomýli.,line,ADAM
+action.E04.journal,Na servisnej doske som zostavil nový keramický návratový mostík. Na štítku má Tónovu lastovičku.,goal,
+action.E05.label,Suchý pohár pre školu,label,
+action.E05.001,Nemali by ste pohár s tesnením? Pán Bielik potrebuje pre školu uložiť jednu súčiastku v suchu.,line,ADAM
+action.E05.002,"Tu máte čistý pohár s viečkom a suchý baliaci papier. Nie je nový, ale dobre poslúži.",line,RUZENA
+action.E05.003,"Tento vydrží dlhšie, než by ste verili.",line,ADAM
+action.E05.journal,Ružena mi dala čistý pohár s viečkom a tesnením.,goal,
+action.E06.label,Uložiť mostík do pohára a utesniť,label,
+action.E06.001,"Suchá výplň, mostík so štítkom lastovičky, tesnenie a viečko. Závit dotiahnem dvakrát.",line,ADAM
+action.E06.002,Teraz to treba schovať. Tóno si to miesto bude pamätať dlhšie ako ja.,line,ADAM
+action.E06.journal,Mostík je zapečatený v suchom pohári.,goal,
+action.E07.label,Ochrana mladej lipy,label,
+action.E07.001,"Máte pravdu, vozík o ňu už raz zavadil. Tu je hotová ohrádka. Postavte ju a ja zakreslím vozíku obchádzku.",line,SIMON
+action.E07.002,Raz by tu mohol byť pekný tieň.,line,ADAM
+action.E07.003,"Preto ju sadíme. Lenže lipa, ktorú prejde vozík, tieň nedá.",line,SIMON
+action.E07.journal,"Šimon mi dal ohrádku pre mladú lipu. Keď ju postavím, zakreslí vozíku obchádzku.",goal,
 action.E08.label,Schovať zapečatený mostík do servisnej dutiny,label,
 action.E08.001,"Pohár ukladám za servisnú dosku. Druhý rad zhora, tretí kameň zľava.",line,ADAM
-action.E08.002,Tu je moja mapa. Lastovičku som nakreslil tiež.,line,TONO82
-action.E08.003,Uloženie je zapísané medzi neškodné technické rezervy. Nevyberajte to pri každej návšteve.,line,OTO82
-action.E08.004,"Ja si zapamätám, kde to je.",line,TONO82
+action.E08.002,Tu je moja mapa. Nakreslil som tam aj lastovičku.,line,TONO82
+action.E08.003,Zapíšem to ako neškodnú technickú rezervu. Len to nevyberajte pri každej návšteve.,line,OTO82
+action.E08.004,Ja si to miesto zapamätám. Sľubujem.,line,TONO82
 action.E08.005,A ja sa pokúsim prísť v správnom roku.,line,ADAM
-action.E08.objective,Ochráň lipu a nechaj Šimona potvrdiť bezpečnú trasu vozíka.,goal,
-action.E08.journal,Ochráň lipu a nechaj Šimona potvrdiť bezpečnú trasu vozíka.,goal,
-action.E09.label,Postaviť ochrannú ohrádku pre sadenicu,label,
-action.E09.001,"Hotové diely ohrádky sú okolo stromu, mimo chodníka. Vozík pôjde obchádzkou, ktorú Šimon označil.",line,ADAM
-action.E09.002,"Nie je to veľký zásah. Práve preto ma zaujíma, čo spraví neskôr.",line,ADAM
-action.E09.journal,Dokončené: Postaviť ochrannú ohrádku pre sadenicu.,goal,
-action.E10.label,Potvrdiť ochranu stromu a servisného múrika,label,
-action.E10.001,"Zapísané: zdravá lipa, ohrádka a trasa vozíka mimo koreňov. Pri múriku zostane prístup k servisu.",line,SIMON
-action.E10.002,Takže miesto nebude pri najbližšej úprave iba kus nevyužitej plochy.,line,ADAM
-action.E10.003,"Až ten strom narastie, ľudia to budú vedieť aj bez zápisu.",line,SIMON
-action.E10.004,Pôjdem sa na to pozrieť.,line,ADAM
-action.E10.objective,V roku 1995 sa znovu stretni s Tónom a povedz dohodnutú vetu.,goal,
-action.E10.journal,V roku 1995 sa znovu stretni s Tónom a povedz dohodnutú vetu.,goal,
-action.Q6A.label,Spýtať sa na nevráteného holuba,label,
-action.Q6A.001,"Béla zostal v parku. Keď mu dáte do misky trochu jeho krmiva, pôjde za mnou. Štefan má zmes.",line,ALOJZ
-action.Q6A.002,Takže nemusím po parku naháňať poštu.,line,ADAM
-action.Q6A.003,To by nebolo dôstojné pre nikoho.,line,ALOJZ
-action.Q6A.journal,Dokončené: Spýtať sa na nevráteného holuba.,goal,
-action.Q6B.label,Vyžiadať trochu Bélovho krmiva,label,
-action.Q6B.001,"Pre Alojzovho holuba? Tu je jeho zmes. Len do misky, nech ho nestresujete.",line,STEFAN
-action.Q6B.002,"Prvý raz som dostal návod, ktorému rozumie aj adresát.",line,ADAM
-action.Q6B.journal,Dokončené: Vyžiadať trochu Bélovho krmiva.,goal,
+action.E08.objective,Postav pri mladej lipe ohrádku a daj Šimonovi potvrdiť novú trasu vozíka.,goal,
+action.E08.journal,Postav pri mladej lipe ohrádku a daj Šimonovi potvrdiť novú trasu vozíka.,goal,
+action.E09.label,Postaviť ohrádku okolo lipy,label,
+action.E09.001,"Ohrádka stojí okolo stromčeka. Vozík odteraz pôjde obchádzkou, ktorú zakreslí Šimon.",line,ADAM
+action.E09.002,"Malá vec. Práve preto som zvedavý, čo z nej bude o pár desaťročí.",line,ADAM
+action.E09.journal,Okolo mladej lipy stojí ohrádka. Vozík ju bude obchádzať.,goal,
+action.E10.label,Zapíšete lipu aj múrik?,label,
+action.E10.001,"Zapísal som to: lipa s ohrádkou, vozík pôjde mimo koreňov. A k múriku bude stále prístup kvôli servisu.",line,SIMON
+action.E10.002,Takže pri najbližšej úprave dvora to tu nezaleje asfalt.,line,ADAM
+action.E10.003,"Keď lipa vyrastie, ľudia si to tu ustrážia aj bez môjho zápisu.",line,SIMON
+action.E10.004,Prídem sa pozrieť. Pre mňa to bude zajtra.,line,ADAM
+action.E10.objective,V roku 1995 nájdi Tóna v škole a povedz mu dohodnutú vetu.,goal,
+action.E10.journal,V roku 1995 nájdi Tóna v škole a povedz mu dohodnutú vetu.,goal,
+action.Q6A.label,Kde je váš holub?,label,
+action.Q6A.001,Béla zostal v parku. Nasypte mu do misky jeho krmivo a vráti sa domov. Zmes má Štefan na dvore dielne.,line,ALOJZ
+action.Q6A.002,Takže nebudem po parku naháňať poštu.,line,ADAM
+action.Q6A.003,"To by nebolo dôstojné ani pre vás, ani pre poštu.",line,ALOJZ
+action.Q6A.journal,Alojzov holub Béla zostal v parku. Krmivo preň má Štefan.,goal,
+action.Q6B.label,Krmivo pre Bélu,label,
+action.Q6B.001,"Pre Alojzovho Bélu? Tu je jeho zmes. Len ju nasypte do misky a odstúpte, nech sa nesplaší.",line,STEFAN
+action.Q6B.002,Dva kroky a žiaden lístok. To zvládnem.,line,ADAM
+action.Q6B.journal,Štefan mi dal hrsť krmiva pre Bélu.,goal,
 action.Q6C.label,Položiť krmivo do misky,label,
-action.Q6C.001,Krmivo je tu. Ja odstúpim.,line,ADAM
-action.Q6C.002,Najedol sa a letí k pošte. Funguje lepšie než moje pripomienky.,line,ADAM
-action.Q6C.journal,Dokončené: Položiť krmivo do misky.,goal,
-action.Q6D.label,Potvrdiť Bélov návrat,label,
-action.Q6D.001,"Béla je doma. Do zápisníka vám dám odtlačok starej pečiatky. Len pamiatku, nie nové úradné oprávnenie.",line,ALOJZ
-action.Q6D.002,Dnes beriem aj neúradné dobré správy.,line,ADAM
-action.Q6D.journal,Dokončené: Potvrdiť Bélov návrat.,goal,
-action.Q7A.label,Ponúknuť pomoc so scenárom,label,
-action.Q7A.001,Scenár som požičal Mire ako podložku pod nákres. Teraz mám len prvú vetu.,line,RUDO
-action.Q7A.002,Kde mala nákresy?,line,ADAM
-action.Q7A.003,"Na povale pri meracej miestnosti. Ak ho nájdete, budem veľmi dramaticky vďačný.",line,RUDO
-action.Q7A.journal,Dokončené: Ponúknuť pomoc so scenárom.,goal,
-action.Q7B.label,Zobrať Rudov zabudnutý scenár,label,
-action.Q7B.001,"Žiaden strach, miláčik. Dnes by sa hodil ako pracovný názov celého dňa.",line,ADAM
-action.Q7B.journal,Dokončené: Zobrať Rudov zabudnutý scenár.,goal,
-action.Q7C.label,Vrátiť scenár ochotníkovi,label,
+action.Q6C.001,"Krmivo je v miske. Odstúpim, nech má Béla pokoj.",line,ADAM
+action.Q6C.002,Najedol sa a letí rovno k pošte. Spoľahlivejšie ako niektoré zásielky.,line,ADAM
+action.Q6C.journal,Béla zjedol krmivo z misky a odletel k pošte.,goal,
+action.Q6D.label,Bélov návrat,label,
+action.Q6D.001,"Béla je doma, vďaka vám. Do zápisníka vám dám odtlačok starej pečiatky. Na pamiatku, úradne to neplatí.",line,ALOJZ
+action.Q6D.002,Neúradné dobré správy beriem najradšej.,line,ADAM
+action.Q6D.journal,Béla je doma. Alojz mi na pamiatku dal do zápisníka odtlačok starej pečiatky.,goal,
+action.Q7A.label,Môžem pomôcť so scenárom?,label,
+action.Q7A.001,"Ach, scenár! Požičal som ho Mire ako podložku pod nákresy. A teraz viem naspamäť len prvú vetu!",line,RUDO
+action.Q7A.002,A kde Mira kreslila?,line,ADAM
+action.Q7A.003,"Na povale pri meracej miestnosti. Ak ho nájdete, budem vám vďačný. Veľmi dramaticky!",line,RUDO
+action.Q7A.journal,Rudo požičal scenár Mire ako podložku. Mal by byť na povale technického archívu.,goal,
+action.Q7B.label,Vziať Rudov scenár,label,
+action.Q7B.001,"„Žiaden strach, miláčik!“ Hodilo by sa to ako názov môjho dnešného dňa.",line,ADAM
+action.Q7B.journal,Na povale som našiel Rudov scenár.,goal,
+action.Q7C.label,Vrátiť scenár Rudovi,label,
 action.Q7C.001,"Žiaden strach, miláčik! Všetko dobre dopadne!",line,RUDO
-action.Q7C.002,To je prvá veta?,line,ADAM
-action.Q7C.003,"Áno. Potom sa tri dejstvá ukazuje, že som preháňal.",line,RUDO
-action.Q7C.004,Hlavne ju neškrtajte.,line,ADAM
-action.Q7C.journal,Dokončené: Vrátiť scenár ochotníkovi.,goal,
-action.Q9A.label,Vypočuť a prevziať Janin vlastný návrh,label,
-action.Q9A.001,"Môj návrh nie je rovnaký ako predloha. Ale slabý signál nezahodí, len ho oddelí od rušenia.",line,JANA82
-action.Q9A.002,To vieš vysvetliť veľmi presne. Môžem to s tvojím súhlasom ukázať učiteľovi?,line,ADAM
-action.Q9A.003,"Áno. Len nech vidí aj moje poznámky, nielen čistú schému.",line,JANA82
-action.Q9A.journal,Dokončené: Vypočuť a prevziať Janin vlastný návrh.,goal,
-action.Q9B.label,Ukázať vysvetlený vlastný návrh,label,
+action.Q7C.002,To je tá prvá veta?,line,ADAM
+action.Q7C.003,"Áno. A potom celé tri dejstvá dokazujem, že som to prehnal.",line,RUDO
+action.Q7C.004,Tú vetu hlavne neškrtajte.,line,ADAM
+action.Q7C.journal,Rudo má späť svoj scenár. Premiéra teda bude.,goal,
+action.Q9A.label,Janin vlastný návrh,label,
+action.Q9A.001,"Nie je to podľa predlohy. Ale slabý signál sa tu nezahodí, len sa oddelí od rušenia.",line,JANA82
+action.Q9A.002,Vysvetlila si to presne. Môžem to ukázať učiteľovi? Iba ak súhlasíš.,line,ADAM
+action.Q9A.003,"Áno. Ale nech vidí aj moje poznámky, nielen čistú schému.",line,JANA82
+action.Q9A.journal,"Jana mi požičala svoju schému, aby som ju ukázal učiteľovi Dobrovičovi.",goal,
+action.Q9B.label,Ukázať Janinu schému učiteľovi,label,
 action.Q9B.001,Zapojenie sa líši od vzoru. Prečo?,line,DOBRO
-action.Q9B.002,Jana to napísala sem. Namiesto vyradenia slabého signálu ho zachová v druhej vetve.,line,ADAM
-action.Q9B.003,To dáva zmysel. Nech to na výstavke vysvetlí vlastnými slovami. Pripisujem povolenie.,line,DOBRO
-action.Q9B.004,Presne na to čakala.,line,ADAM
-action.Q9B.journal,Dokončené: Ukázať vysvetlený vlastný návrh.,goal,
-action.Q9C.label,Vrátiť Jane uznanú vlastnú schému,label,
-action.Q9C.001,Môžem to ukázať aj takto?,line,JANA82
+action.Q9B.002,"Jana to vysvetľuje tu v poznámkach. Slabý signál nevyradí, pošle ho druhou vetvou.",line,ADAM
+action.Q9B.003,To je logické. Nech to na výstavke vysvetlí vlastnými slovami. Pripíšem povolenie.,line,DOBRO
+action.Q9B.004,Na to presne čakala.,line,ADAM
+action.Q9B.journal,Učiteľ Dobrovič pripísal na Janinu schému povolenie na výstavku.,goal,
+action.Q9C.label,Vrátiť Jane schému s povolením,label,
+action.Q9C.001,"Naozaj to môžem ukázať takto, po svojom?",line,JANA82
 action.Q9C.002,"Práve takto. Je to tvoj návrh a vieš, prečo funguje.",line,ADAM
 action.Q9C.003,Tak nakreslím aj druhý. Možno raz budem mať celý zošit.,line,JANA82
-action.Q9C.004,"Myslím, že sa naň ešte niekedy pozriem.",line,ADAM
-action.Q9C.objective,"Voliteľne sa s Janou porozprávaj v 1995,2020 aj 2035 a pozri si dosah jednej podpory.",goal,
-action.Q9C.journal,"Voliteľne sa s Janou porozprávaj v 1995,2020 aj 2035 a pozri si dosah jednej podpory.",goal,
+action.Q9C.004,Ten zošit by som raz rád videl.,line,ADAM
+action.Q9C.objective,"Ak chceš, nájdi Janu aj v rokoch 1995, 2020 a 2035 a pozri sa, čo jej tá podpora dala.",goal,
+action.Q9C.journal,"Ak chceš, nájdi Janu aj v rokoch 1995, 2020 a 2035 a pozri sa, čo jej tá podpora dala.",goal,
+action.Q10A.label,"Zvonček, ktorý nezvoní",label,
+action.Q10A.001,Toto je zvonček našej triedy. Pozrite. Nič.,line,ZUZANA
+action.Q10A.002,Chýba mu srdce.,line,ADAM
+action.Q10A.003,Nechýba. Mám ho vo vreckovke. Len sa mu roztrhlo pútko.,line,ZUZANA
+action.Q10A.004,"Na konci roka mám zvoniť ja. Učiteľka povedala, že mám najistejšiu ruku.",line,ZUZANA
+action.Q10A.005,A kto ho mal opraviť?,line,ADAM
+action.Q10A.006,Ujo Oto. Ale ujo Oto má dnes štyri budíky a ani jednu voľnú ruku.,line,ZUZANA
+action.Q10A.007,Kožu má ujo Štefan. Ten dáva iba na lístok. Tak som mu lístok napísala.,line,ZUZANA
+action.Q10A.008,"„Lístok. Prosím jeden kúsok kože na zvonček. Zuzana, prvá trieda.“",line,ADAM
+action.Q10A.009,"Aj podpis tam je. Ujo Štefan vraví, že bez podpisu nič.",line,ZUZANA
+action.Q10A.010,Kožu prinesiem a pútko spravím. Požičiaš mi zvonček?,line,ADAM
+action.Q10A.011,"Požičiam. Ale opatrne, je triedny, nie môj.",line,ZUZANA
+action.Q10A.objective,Vyzdvihni u Štefana v hospodárskom dvore kožený odrezok na Zuzanin lístok.,goal,
+action.Q10A.journal,Vyzdvihni u Štefana v hospodárskom dvore kožený odrezok na Zuzanin lístok.,goal,
+action.Q10A.hint_step,"Porozprávaj sa so Zuzanou v parku o zvončeku, ktorý nezvoní.",hint,
+action.Q10B.label,Podať Štefanovi Zuzanin lístok,label,
+action.Q10B.001,Lístok. „Prosím jeden kúsok kože na zvonček.“,line,STEFAN
+action.Q10B.002,"Podpis: Zuzana, prvá trieda.",line,STEFAN
+action.Q10B.003,Platí?,line,ADAM
+action.Q10B.004,"Lístok, podpis, materiál. Všetko sedí. Nikde nepíše, že podpis musí byť dospelý.",line,STEFAN
+action.Q10B.005,Úzky odrezok z remeňa. Na pútko akurát. Lístok si nechávam.,line,STEFAN
+action.Q10B.006,Do evidencie?,line,ADAM
+action.Q10B.007,Na stenu. Taký pekný lístok som tu ešte nemal.,line,STEFAN
+action.Q10B.objective,Zaves srdce zvončeka na nové pútko.,goal,
+action.Q10B.journal,Zaves srdce zvončeka na nové pútko.,goal,
+action.Q10B.hint_step,Zuzanin lístok podaj Štefanovi v hospodárskom dvore.,hint,
+action.Q10C.label,Zavesiť srdce zvončeka na nové pútko,label,
+action.Q10C.001,"Pútko cez uško, srdce na miesto, uzol dovnútra, aby sa nešúchal.",line,ADAM
+action.Q10C.002,Skúšobne cinknem do dlane. Zvoní.,line,ADAM
+action.Q10C.objective,Vráť opravený zvonček Zuzane do parku.,goal,
+action.Q10C.journal,Vráť opravený zvonček Zuzane do parku.,goal,
+action.Q10C.hint_step,V brašni spoj kožený odrezok so zvončekom.,hint,
+action.Q10D.label,Vrátiť Zuzane opravený zvonček,label,
+action.Q10D.001,Zvoní? Naozaj?,line,ZUZANA
+action.Q10D.002,"Skús. Ale pomaly, je triedny.",line,ADAM
+action.Q10D.003,Počuli ste? Takto bude znieť koniec roka.,line,ZUZANA
+action.Q10D.004,"Zuzka, teraz celý park vie, že sa skončila hodina.",line,VERA60
+action.Q10D.005,Ešte sa neskončila. Ešte dvadsaťštyri dní. Toto bola skúška.,line,ZUZANA
+action.Q10D.006,Skúška vyšla.,line,ADAM
+action.Q10D.007,"Ďakujem. Môžete si skočiť škôlku. Ale iba do štvorky, dospelí ďalej padajú.",line,ZUZANA
+action.Q10D.008,"A keď budete niekedy počuť zvoniť na konci roka, zamávajte. To je dohoda.",line,ZUZANA
+action.Q10D.009,Dohoda.,line,ADAM
+action.Q10D.journal,Zuzana skúšobne zazvonila celému parku.,goal,
+action.Q10D.hint_step,Opravený zvonček použi na Zuzanu v parku.,hint,
 room.S31.name,Ivanská železničná zastávka,name,
-entry.S31.001,"Rok šesťdesiat. Telefón sa tvári rovnako ako v deväťdesiatom piatom, len ja menej pokojne.",line,ADAM
+entry.S31.001,"Ivanka, rok 1962. Telefón je tu rovnako zbytočný ako v roku 1995. Ja som o niečo nervóznejší.",line,ADAM
 hotspot.S31.BOZO.name,Božidar Fiala,name,
-look.S31.BOZO,Božo pozná každý príchod okrem môjho.,look,
+look.S31.BOZO,"Božo pozná každý vlak, čo tu zastaví. Môj príchod v cestovnom poriadku nemá.",look,
 hotspot.S31.ambient 1.name,Batožinový vozík,name,
-look.S31.ambient 1,Prenosný kufor so zárukou na svaly.,look,
+look.S31.ambient 1,"Drevený vozík na batožinu. Škrípe, ale prežije každý môj kufor na kolieskach.",look,
 hotspot.S31.ambient 2.name,Mechanické hodiny,name,
-look.S31.ambient 2,Žiadne pripojenie. Napriek tomu ma vedia dostať do problému.,look,
+look.S31.ambient 2,"Mechanické hodiny. Bez siete a bez batérie, a predsa idú presne.",look,
 exit.S31.to_S32.label,Ivanská náves,name,
 conn.S31.S32.label,Ivanská náves,name,
 room.S32.name,Ivanská náves,name,
-entry.S32.001,"Tu sa každý každého opýta, čí je. V mojom prípade je to vedecký problém.",line,ADAM
+entry.S32.001,"Tu sa každý každého pýta, čí je. U mňa by to bola dlhá odpoveď.",line,ADAM
 hotspot.S32.BERTA.name,Berta Kovárová,name,
-look.S32.BERTA,Berta má práve prestávku medzi dvoma veľmi presnými pozorovaniami.,look,
+look.S32.BERTA,Pani Kovárová si ma premeriava od topánok nahor. Nič jej neujde.,look,
 hotspot.S32.ambient 1.name,Kryt studne,name,
-look.S32.ambient 1,Bezpečne prikrytá. Túto záhadu rád nechám zavretú.,look,
+look.S32.ambient 1,Studňa je pevne prikrytá. Aspoň do nej nikto nespadne.,look,
 hotspot.S32.ambient 2.name,Bicykel,name,
-look.S32.ambient 2,Veľmi úsporný stroj času: za hodinu o kus ďalej.,look,
+look.S32.ambient 2,"Bicykel s blatníkmi a zvončekom. Tiež cestuje v čase, ale iba dopredu a pomaly.",look,
+hotspot.S32.chalk_arrow.name,Kriedová šípka,name,
+look.S32.chalk_arrow,Na kameni pri studni je kriedou šípka a pod ňou PARK. Niekto v Ivanke robí orientačné tabule.,look,
 exit.S32.to_S31.label,Ivanská železničná zastávka,name,
 exit.S32.to_S33.label,Pošta s prepážkou,name,
 exit.S32.to_S34.label,Kultúrna sála pred skúškou,name,
@@ -231,79 +277,87 @@ conn.S32.S34.label,Kultúrna sála pred skúškou,name,
 conn.S32.S35.label,Dvor hospodárskej dielne,name,
 conn.S32.S37.label,Park pri kaštieli,name,
 room.S35.name,Dvor hospodárskej dielne,name,
-entry.S35.001,"Materiál vydávajú na papier. Keby mi došiel čas, možno naň tiež existuje tlačivo.",line,ADAM
+entry.S35.001,"Materiál sa tu vydáva iba na lístok. Keby som potreboval viac času, aj naň by tu mali tlačivo.",line,ADAM
 hotspot.S35.SKLAD.name,Štefan Haluška,name,
-look.S35.SKLAD,"Štefan má evidenciu aj na kúsky, ktoré by som nazval odpad.",look,
+look.S35.SKLAD,"Štefan eviduje aj kúsky, ktoré by som ja vyhodil.",look,
 hotspot.S35.ambient 1.name,Vrece obilia,name,
-look.S35.ambient 1,Potravinový sklad bez nutnosti prijať cookies.,look,
+look.S35.ambient 1,Vrece obilia. Tu sa ešte nič nebalí do plastu.,look,
 hotspot.S35.ambient 2.name,Ručný vozík,name,
-look.S35.ambient 2,"Všetky aktualizácie robí ten, kto tlačí.",look,
+look.S35.ambient 2,"Ručný vozík. Jediný motor je ten, kto ho tlačí.",look,
 exit.S35.to_S32.label,Ivanská náves,name,
 exit.S35.to_S36.label,Otova mechanická dielňa,name,
 conn.S35.S36.label,Otova mechanická dielňa,name,
 room.S36.name,Otova mechanická dielňa,name,
-entry.S36.001,"Hodiny ukazujú štyri časy. Oto tvrdí, že všetky sú pracovné.",line,ADAM
+entry.S36.001,"Otova dielňa. Prikrytý sústruh, vôňa oleja a tikot budíkov z každého rohu.",line,ADAM
 hotspot.S36.OTO.name,Oto Bielik,name,
-look.S36.OTO,"Oto si cudzie zariadenie najprv prezrie. Presne viem, prečo ho babka mala rada.",look,
+look.S36.OTO,"Oto si každú vec najprv prezrie a až potom niečo povie. Chápem, prečo s ním babka rada pracovala.",look,
 hotspot.S36.ambient 1.name,Pilník,name,
-look.S36.ambient 1,Nástroj s dlhou podporou a nulovou batériou.,look,
+look.S36.ambient 1,Pilník bez batérie a bez aktualizácií. Vydrží dlhšie ako ja.,look,
 hotspot.S36.ambient 2.name,Štyri budíky,name,
-look.S36.ambient 2,"Oto tvrdí, že čas je relatívny. Každý budík má vlastný názor.",look,
+look.S36.ambient 2,"Každý budík ukazuje iný čas. Oto vraví, že presne o to ide.",look,
 exit.S36.to_S35.label,Dvor hospodárskej dielne,name,
 room.S34.name,Kultúrna sála pred skúškou,name,
-entry.S34.001,"Divadlo pred skúškou. Každý tu vie, že niečo nie je skutočné. Konečne primerané prostredie.",line,ADAM
+entry.S34.001,Sála pred skúškou. Tu sa každý hrá na niekoho iného. Aspoň nebudem jediný.,line,ADAM
 hotspot.S34.LIDA.name,Lída Fialová,name,
-look.S34.LIDA,"Lída rieši javisko aj všetko, čo je pred ním a za ním.",look,
+look.S34.LIDA,"Lída má na starosti kostýmy, kulisy aj hercov. Všetko naraz a pokojne.",look,
 hotspot.S34.RUDO.name,Rudolf Pavlík,name,
 look.S34.RUDO,Rudo drží dramatickú pauzu. Zrejme už dvadsať minút.,look,
 hotspot.S34.ambient 1.name,Kulisa lesa,name,
 look.S34.ambient 1,Les z látky má príjemne predvídateľné počasie.,look,
 hotspot.S34.ambient 2.name,Klobúk,name,
-look.S34.ambient 2,Rudo v ňom hrá richtára. Klobúk hrá bez pripomienok.,look,
+look.S34.ambient 2,"Richtársky klobúk. Rudo v ňom hrá richtára, klobúk hrá seba.",look,
 hotspot.S34.clamp.name,Svorka kulisy,name,
-look.S34.clamp,"Ručná stolová svorka má povolenú skrutku. Kulisa je položená na zemi, nehrozí pád na nikoho.",look,
+look.S34.clamp,"Svorka kulisy má povolenú skrutku, preto sa kulisa pri každom dotyku kýve. Náradie na to mám v brašni.",look,
 exit.S34.to_S32.label,Ivanská náves,name,
 room.S37.name,Park pri kaštieli,name,
 entry.S37.001,Park vyzerá pokojne. Na rozdiel od môjho rodokmeňa.,line,ADAM
 hotspot.S37.VERA60.name,Vera Nemcová,name,
 look.S37.VERA60,"Vera kreslí veci tak, aby ich niekto ďalší vedel opraviť. Momentálne môj obľúbený druh umenia.",look,
+hotspot.S37.ZUZANA.name,Zuzana,name,
+look.S37.ZUZANA,"Malá Zuzana skáče škôlku a každé políčko nahlas odpočíta. Vedľa v tráve leží zvonček, ktorý ani raz necinkol.",look,
+look.S37.ZUZANA.variant1,"Zuzana kreslí kriedou ďalšiu škôlku, pre istotu aj s vchodom. Občas sa pozrie, či jej nesiem zvonček.",look,
+look.S37.ZUZANA.variant2,Zuzana skáče škôlku a po každom desiatom skoku zazvoní. Vera už ani nedvíha hlavu.,look,
 hotspot.S37.ambient 1.name,Lavička,name,
-look.S37.ambient 1,V parku je dovolené sedieť bez produktivity.,look,
+look.S37.ambient 1,Lavička v tieni. Sadnúť si a nič nerobiť je tu ešte normálne.,look,
 hotspot.S37.ambient 2.name,Kaštieľ,name,
-look.S37.ambient 2,Reálna dominanta Ivanky; náš merací príbeh je vymyslený.,look,
+look.S37.ambient 2,Kaštieľ nad parkom. Stál tu dávno pred ZVONom a bude stáť aj po ňom.,look,
 hotspot.S37.bird.name,Poštový holub,name,
-look.S37.bird,Holub s krúžkom sa usadil pri prázdnej miske. Netreba ho naháňať; stačí jedlo na bezpečnom mieste.,look,
+look.S37.bird,"Holub s krúžkom na nohe sedí pri prázdnej miske. Naháňať ho nebudem, skôr by mu pomohlo krmivo.",look,
+hotspot.S37.hopscotch.name,Škôlka kriedou,name,
+look.S37.hopscotch,Škôlka nakreslená kriedou na chodníku: osem políčok a hore polkruh. Čiary má rovnejšie ako ja na nákresoch.,look,
 exit.S37.to_S32.label,Ivanská náves,name,
 exit.S37.to_S38.label,Pred skúšobnou čerpacou búdkou,name,
 conn.S37.S38.label,Pred skúšobnou čerpacou búdkou,name,
 room.S38.name,Pred skúšobnou čerpacou búdkou,name,
-entry.S38.001,Časový výskum vyzerá zo začiatku dosť ako záhradkárčenie.,line,ADAM
+entry.S38.001,"Búdka, pumpa a vedro. Výskum času sa začína ako záhradkárčenie.",line,ADAM
 hotspot.S38.ambient 1.name,Vedro,name,
-look.S38.ambient 1,Kalibrované podľa značky ceruzkou. Výskum sa niekde začať musí.,look,
+look.S38.ambient 1,Vedro so značkou ceruzkou. Aj kalibrácia sa musí niekde začať.,look,
 hotspot.S38.ambient 2.name,Tráva,name,
-look.S38.ambient 2,Rastie vlastným tempom. Zatiaľ ju nikto nesynchronizoval.,look,
+look.S38.ambient 2,Tráva rastie vlastným tempom. Aspoň niečo tu nikto nemeria.,look,
 hotspot.S38.door.name,Dvere meracej miestnosti,name,
-look.S38.door,Oto sprístupní meraciu miestnosť po obnovení obehu vody v skúšobnom modeli.,look,
+look.S38.door,"Pevné dvere s novým zámkom. Za nimi je meracia miestnosť, kľúč má Oto.",look,
+hotspot.S38.paper_boat.name,Papierová loďka,name,
+look.S38.paper_boat,"Papierová loďka uviazla v tráve pri kanáli. Na boku má ceruzkou ZUZKA. Ďalej ju nepustili, správne.",look,
 hotspot.S38.pump.name,Demonštračná ručná pumpa,name,
-look.S38.pump,Kožená manžeta prepúšťa. Zostava nie je pripojená k verejnému vodovodu ani k elektrickej sieti.,look,
+look.S38.pump,Kožená manžeta na pumpe prepúšťa a voda neobieha. Treba novú manžetu.,look,
 exit.S38.to_S37.label,Park pri kaštieli,name,
 exit.S38.to_S39.label,Miestnosť prvého ZVONu,name,
-exit.S38.to_S39.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,look,
+exit.S38.to_S39.locked,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",look,
 conn.S38.S39.label,Miestnosť prvého ZVONu,name,
-conn.S38.S39.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,look,
+conn.S38.S39.locked,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",look,
 room.S39.name,Miestnosť prvého ZVONu,name,
 entry.S39.001,"Babka ešte nie je babka. Ale už má pohľad, ktorým sa vypínajú zbytočné otázky.",line,ADAM
 hotspot.S39.MIRA60.name,Mira Hrušková,name,
-look.S39.MIRA60,"Je o pätnásť rokov mladšia než ja a stále vyzerá, že ma o chvíľu pošle umyť si ruky.",look,
+look.S39.MIRA60,"Je o trinásť rokov mladšia než ja a stále vyzerá, že ma o chvíľu pošle umyť si ruky.",look,
 hotspot.S39.ambient 1.name,Lampa,name,
-look.S39.ambient 1,Žiarovka hreje viac než celé moje moderné rádio.,look,
+look.S39.ambient 1,"Žiarovka hreje viac, než svieti. Babka by povedala: zlá účinnosť.",look,
 hotspot.S39.ambient 2.name,Zápisník na stole,name,
-look.S39.ambient 2,"Mira preškrtáva, ale nič nevytrháva. Dôležité rozhodnutie.",look,
+look.S39.ambient 2,"Mira v zápisníku škrtá, ale žiadnu stranu nevytrhla. Už teraz si všetko necháva.",look,
 hotspot.S39.plate.name,Kalibračná mosadzná platňa,name,
-look.S39.plate,"PÔVOD, HLAS, SÚHLAS, NÁVRAT. Pod tým: rôzne údaje neznamenajú neplatné údaje. Chýba mi prenosný čitateľný odtlačok.",look,
-look.S39.plate.variant1,Platňa ostala nepoškodená na svojom mieste. Jej pravidlo nesiem ďalej v čitateľnom odtlačku.,look,
+look.S39.plate,"PÔVOD, HLAS, SÚHLAS, NÁVRAT. Pod tým: „Rôzne údaje neznamenajú neplatné údaje.“ Platňa zostane tu, potrebujem jej odtlačok.",look,
+look.S39.plate.variant1,"Platňa zostala na svojom mieste, bez škrabanca. Jej pravidlo si nesiem v odtlačku.",look,
 exit.S39.to_S38.label,Pred skúšobnou čerpacou búdkou,name,
-exit.S39.to_S38.locked,Oto dá kľúč po oprave ručnej pumpy. Dvere odomknem pri nej.,look,
+exit.S39.to_S38.locked,"Zamknuté. Kľúč mi Oto dá, až keď bude ručná pumpa opravená.",look,
 exit.S39.to_S40.label,Povala technického archívu,name,
 conn.S39.S40.label,Povala technického archívu,name,
 room.S40.name,Povala technického archívu,name,
@@ -311,101 +365,101 @@ entry.S40.001,"Povala. Miesto, kde sú veci dočasne uložené až do ďalšieho
 hotspot.S40.ambient 1.name,Starý kufor,name,
 look.S40.ambient 1,Prázdny. Aj to je v tejto rodine vzácny jav.,look,
 hotspot.S40.ambient 2.name,Trám,name,
-look.S40.ambient 2,Nesie strechu a nič k tomu nepíše.,look,
+look.S40.ambient 2,Trám nesie strechu a nesťažuje sa.,look,
 hotspot.S40.box.name,Kovová archívna schránka,name,
-look.S40.box,Mira do nej uloží overenú kópiu aj poštovú registráciu. Originál platne zostane na zariadení.,look,
-look.S40.box.variant1,Registrovaná kópia je bezpečne uložená. Mira ju neskôr presunie do svojho školského fondu.,look,
+look.S40.box,Kovová archívna schránka. Mira do nej zamkne kópiu s registračným listom. Platňa zostane na prístroji.,look,
+look.S40.box.variant1,Kópia aj registračný list sú zamknuté v schránke. Raz ich Mira presunie do svojho fondu.,look,
 hotspot.S40.paper.name,Voskovaný papier,name,
-look.S40.paper,Hárok vhodný na reliéfny odtlačok. Nesmie sa dotknúť horúcej lampy; pracovný stôl je pripravený vedľa.,look,
+look.S40.paper,Voskovaný papier. Na odtlačok platne ako stvorený.,look,
 hotspot.S40.script.name,Ochotnícky scenár,name,
-look.S40.script,"Na obale je RUDO a ŽIADEN STRACH, MILÁČIK. Text nemá nič spoločné s fyzikou, čo je príjemná zmena.",look,
+look.S40.script,"Na obale stojí RUDO a ŽIADEN STRACH, MILÁČIK. Konečne papier bez jedinej rovnice.",look,
 exit.S40.to_S39.label,Miestnosť prvého ZVONu,name,
 room.S33.name,Pošta s prepážkou,name,
-entry.S33.001,Doporučený list. Jediný cestovateľ v čase s doručenkou.,line,ADAM
+entry.S33.001,"Malá pošta s prepážkou. Tu sa každý papier odváži, opečiatkuje a zapíše.",line,ADAM
 hotspot.S33.POSTA.name,Alojz Baran,name,
 look.S33.POSTA,"Alojz zarovná okraj papiera ešte skôr, než sa pozrie na obsah.",look,
 hotspot.S33.ambient 1.name,Známky,name,
-look.S33.ambient 1,Malé obrázky s veľkým názorom na cenu doručenia.,look,
+look.S33.ambient 1,"Známky v hárkoch. Malé obrázky, od ktorých závisí, či list odíde.",look,
 hotspot.S33.ambient 2.name,Kalendár,name,
-look.S33.ambient 2,Rok 1960. Žiadne automatické preklopenie na správny rok.,look,
-hotspot.S33.carbon.name,Prepisový papier,name,
-look.S33.carbon,Voľný uhlový papier na vyhotovenie druhej kópie tlačiva. Pošta ho poskytuje pri prepážke.,look,
+look.S33.ambient 2,Nástenný kalendár: jún 1962. Môj telefón by s ním nesúhlasil.,look,
+hotspot.S33.carbon.name,Uhlový papier,name,
+look.S33.carbon,Uhlový papier pre zákazníkov. S ním urobím druhé vyhotovenie listu.,look,
 exit.S33.to_S32.label,Ivanská náves,name,
 room.S57.name,Dúbravská zastávka v roku 1982,name,
-entry.S57.001,Rok osemdesiatdva. Ešte ani nie som v pláne a už mám problém s termínom.,line,ADAM
+entry.S57.001,"Dúbravka, rok 1982. Narodím sa až o tri roky a už som tu.",line,ADAM
 hotspot.S57.ambient 1.name,Dobové heslo,name,
-look.S57.ambient 1,Veľké písmo o spoločnej budúcnosti. O mojej konkrétnej ceste radšej nič.,look,
+look.S57.ambient 1,Veľké písmená o spoločnej budúcnosti. Ja som z nej práve prišiel a nikomu to nehovorím.,look,
 hotspot.S57.ambient 2.name,Papierový poriadok,name,
-look.S57.ambient 2,"Platí dovtedy, kým ho niekto neprepíše. Analógový softvér.",look,
+look.S57.ambient 2,Cestovný poriadok na papieri. Aktualizuje sa perom.,look,
 exit.S57.to_S58.label,Pred ZŠ Sokolíkova v roku 1982,name,
 exit.S57.to_S62.label,Sídliskový obchod v roku 1982,name,
 conn.S57.S58.label,Pred ZŠ Sokolíkova v roku 1982,name,
 conn.S57.S62.label,Sídliskový obchod v roku 1982,name,
 room.S58.name,Pred ZŠ Sokolíkova v roku 1982,name,
-entry.S58.001,"Škola je mladšia než väčšina mojich spotrebičov. Aj tak už vyzerá, že vie, čo som zabudol.",line,ADAM
+entry.S58.001,"Moja škola, ešte skoro nová. Vyzerá prísnejšie, než si ju pamätám.",line,ADAM
 hotspot.S58.ambient 1.name,Nástenka brigády,name,
-look.S58.ambient 1,Dobový kolektívny jazyk prikrýva veľmi bežnú robotu: niekto musí preniesť dosky.,look,
+look.S58.ambient 1,Výzva na brigádu veľkými slovami. V skratke: v sobotu treba preniesť dosky.,look,
 hotspot.S58.ambient 2.name,Štátny znak,name,
-look.S58.ambient 2,ČSSR v dobovej školskej výzdobe. Dátum je zreteľný aj bez mobilu.,look,
+look.S58.ambient 2,"Štátny znak ČSSR nad vchodom. Ktorý je rok, viem aj bez telefónu.",look,
 exit.S58.to_S57.label,Dúbravská zastávka v roku 1982,name,
 exit.S58.to_S59.label,Školská chodba v roku 1982,name,
 exit.S58.to_S61.label,Školský dvor s mladou lipou v roku 1982,name,
 conn.S58.S59.label,Školská chodba v roku 1982,name,
 conn.S58.S61.label,Školský dvor s mladou lipou v roku 1982,name,
 room.S61.name,Školský dvor s mladou lipou v roku 1982,name,
-entry.S61.001,Lipa je ešte malá. O to väčšie následky môže mať úplne malá oprava.,line,ADAM
+entry.S61.001,"Ten istý dvor, len lipa je ešte prútik. Na mojej fotke z roku 2020 tu nie je vôbec.",line,ADAM
 hotspot.S61.ambient 1.name,Červené potrubné koleno,name,
-look.S61.ambient 1,Toto bude po rokoch kratšie viditeľné. Múrik a počet radov sú spoľahlivejšie než výška trávy.,look,
+look.S61.ambient 1,Červené koleno potrubia. Po rokoch ho možno prefarbia. Múrik a rady kameňov ostanú.,look,
 hotspot.S61.ambient 2.name,Ručný vozík,name,
 look.S61.ambient 2,"Jeho trasa rozhoduje o tom, či tu raz bude tieň alebo horúci asfalt.",look,
 hotspot.S61.niche.name,Servisná dutina v múriku,name,
-look.S61.niche,Tóno súhlasí s uložením neškodnej technickej rezervy. Kameň v druhom rade zhora a treťom stĺpci zľava uzatvára suchú dutinu.,look,
-look.S61.niche.variant1,"Mostík je uložený. V tomto okne ho znovu nevyberiem, lebo som ho rezervoval pre svoje neskoršie vyzdvihnutie.",look,
+look.S61.niche,"Suchá dutina za servisnou doskou: druhý rad zhora, tretí kameň zľava. Oto aj Tóno s úkrytom súhlasia.",look,
+look.S61.niche.variant1,"Pohár s mostíkom je v dutine. Teraz ho nechám tak, vyberiem ho až v roku 2020.",look,
 hotspot.S61.tree.name,Mladá lipa,name,
-look.S61.tree,Stopa ručného vozíka vedie rovno pri kmeni. Ochranná ohrádka by sadenicu uchránila. Nejde o zakliaty strom; je to obyčajná príčina budúceho tieňa.,look,
-look.S61.tree.variant1,Ohrádka chráni sadenicu. Vozík pôjde mimo; Šimon má potvrdiť trvalú trasu.,look,
+look.S61.tree,Koľaj od ručného vozíka vedie tesne pri kmeni. Mladú lipu by uchránila ohrádka.,look,
+look.S61.tree.variant1,"Ohrádka stojí, vozík pôjde okolo. Ešte to musí Šimon zapísať do plánu.",look,
 exit.S61.to_S58.label,Pred ZŠ Sokolíkova v roku 1982,name,
 exit.S61.to_S64.label,Tóno a dedo pri servisnom okne v roku 1982,name,
 exit.S61.to_S66.label,Školský záhradný sklad v roku 1982,name,
 conn.S61.S64.label,Okno školníckej dielne v roku 1982,name,
 conn.S61.S66.label,Školský záhradný sklad v roku 1982,name,
 room.S64.name,Tóno a dedo pri servisnom okne v roku 1982,name,
-entry.S64.001,"Ten chlapec je Tóno. Školník, ktorý ma pred chvíľou zapisoval do knihy návštev, má teraz školskú tašku.",line,ADAM
+entry.S64.001,Ten chlapec je Tóno. Pred chvíľou ma ako školník zapisoval do knihy návštev a teraz nosí školskú tašku.,line,ADAM
 hotspot.S64.OTO82.name,Oto Bielik,name,
-look.S64.OTO82,Oto zostarol o dvadsaťdva rokov. Nákresy má stále rovné.,look,
+look.S64.OTO82,Oto zostarol o dvadsať rokov. Čiary na nákresoch ťahá stále rovno.,look,
 hotspot.S64.TONO82.name,Anton Farkaš,name,
-look.S64.TONO82,"Dvanásťročný Tóno. Má tú istú sústredenú tvár ako školník 1995, len mu ešte chýba zväzok kľúčov.",look,
-hotspot.S64.ambient 1.name,Kovová lastovička,name,
+look.S64.TONO82,"Dvanásťročný Tóno. Rovnako sústredený ako školník v roku 1995, len bez zväzku kľúčov.",look,
+hotspot.S64.ambient 1.name,Drevená lastovička,name,
 look.S64.ambient 1,Drevený model lastovičky je Tónov. Raz podľa neho vyrobí kovovú ozdobu na to isté okno.,look,
 hotspot.S64.ambient 2.name,Čerstvá omietka,name,
-look.S64.ambient 2,Na pohľad nová. Z hľadiska cestovateľa už spomienka.,look,
+look.S64.ambient 2,Omietka je ešte čerstvá. V roku 2020 bude o poznanie šedšia.,look,
 exit.S64.to_S61.label,Školský dvor s mladou lipou v roku 1982,name,
 room.S62.name,Sídliskový obchod v roku 1982,name,
-entry.S62.001,Obchod má menej značiek. Pani za okienkom o to viac pozná značky ľudí.,line,ADAM
+entry.S62.001,Malý obchod na sídlisku. Predavačka pozná každého zákazníka po mene.,line,ADAM
 hotspot.S62.RUZENA.name,Ružena Malá,name,
-look.S62.RUZENA,"Ružena vie zohnať obyčajnú nádobu bez toho, aby z nej spravila celú politickú udalosť.",look,
+look.S62.RUZENA,"Pani Malá za pultom. Hovorí na rovinu, ale s úsmevom.",look,
 hotspot.S62.ambient 1.name,Vratné fľaše,name,
-look.S62.ambient 1,Návrat funguje aj mimo fyzikálneho výskumu.,look,
+look.S62.ambient 1,Vratné fľaše. Tu sa veci vracajú bez akejkoľvek fyziky.,look,
 hotspot.S62.ambient 2.name,Rádiový prijímač,name,
 look.S62.ambient 2,Hrá potichu. Predavačka aj tak počuje všetko dôležité.,look,
 hotspot.S62.jar.name,Prázdny zavárací pohár,name,
-look.S62.jar,Čistý pohár so skrutkovacím viečkom a gumovým tesnením. Ružena ho môže vydať na školskú údržbu.,look,
+look.S62.jar,Čistý zavárací pohár s viečkom a gumovým tesnením. Spýtam sa naň pani Malej za pultom.,look,
 exit.S62.to_S57.label,Dúbravská zastávka v roku 1982,name,
 exit.S62.to_S65.label,Výdajňa školského údržbového materiálu v roku 1982,name,
 conn.S62.S65.label,Výdajňa školského údržbového materiálu v roku 1982,name,
 room.S65.name,Výdajňa školského údržbového materiálu v roku 1982,name,
 entry.S65.001,Súčiastka je malá. Papier na jej vydanie má ambície.,line,ADAM
 hotspot.S65.MARTA82.name,Marta Dobiášová,name,
-look.S65.MARTA82,"Marta má razítko, ale nepoužíva ho ako zbraň.",look,
+look.S65.MARTA82,"Pani Dobiášová má pečiatku, ale nemáva ňou ako palicou.",look,
 hotspot.S65.ambient 1.name,Inventárna kniha,name,
-look.S65.ambient 1,"Riadok sa vypĺňa trikrát. Budúcnosť raz vymyslí formulár, ktorý to spraví päťkrát sám.",look,
+look.S65.ambient 1,"Každá súčiastka je zapísaná perom, trikrát. Budúcnosť to zautomatizuje: päťkrát.",look,
 hotspot.S65.ambient 2.name,Nástenné hodiny,name,
 look.S65.ambient 2,Tu sa čas neposúva. Tu sa čaká.,look,
 exit.S65.to_S62.label,Sídliskový obchod v roku 1982,name,
 room.S59.name,Školská chodba v roku 1982,name,
-entry.S59.001,"Človek sa tu cíti zapisovaný do knihy, aj keď nikto nedrží pero.",line,ADAM
+entry.S59.001,"Školská chodba. Ticho, terazzo a pocit, že ma niekto zapisuje do triednej knihy.",line,ADAM
 hotspot.S59.ambient 1.name,Pioniersky oznam,name,
-look.S59.ambient 1,"Schôdzka, nástenka, povinné veľké písmená. Aj dobrodružstvo má svoju dobovú administratívu.",look,
+look.S59.ambient 1,"Oznam o pionierskej schôdzke. Veľké písmená, dátum, hodina, všetko podľa poriadku.",look,
 hotspot.S59.ambient 2.name,Terazzo,name,
 look.S59.ambient 2,"Podlaha, po ktorej budem o trinásť rokov utekať na zvonenie.",look,
 exit.S59.to_S58.label,Pred ZŠ Sokolíkova v roku 1982,name,
@@ -414,33 +468,33 @@ exit.S59.to_S63.label,Fyzikálny kabinet v roku 1982,name,
 conn.S59.S60.label,Trieda pred technickou výstavkou v roku 1982,name,
 conn.S59.S63.label,Fyzikálny kabinet v roku 1982,name,
 room.S63.name,Fyzikálny kabinet v roku 1982,name,
-entry.S63.001,"Toto je tá istá skriňa. Už vtedy sa tvárila, že vie viac než ja.",line,ADAM
+entry.S63.001,"Tá istá skriňa ako v roku 2020. Už teraz vyzerá, že vie viac než ja.",line,ADAM
 hotspot.S63.ambient 1.name,Skriňový pánt,name,
-look.S63.ambient 1,"Tu vzniká odrenina, ktorú budem o desaťročia považovať za orientačný bod.",look,
+look.S63.ambient 1,"Tu raz vznikne odrenina, podľa ktorej sa budem o desaťročia orientovať.",look,
 hotspot.S63.ambient 2.name,Glóbus,name,
-look.S63.ambient 2,Mladší než ten v roku 2020. O niečo menej povrchových skúseností.,look,
+look.S63.ambient 2,Glóbus s hranicami roku 1982. O pár rokov bude zastaraný.,look,
 hotspot.S63.workbench.name,Servisná doska,name,
-look.S63.workbench,"Tri konektory návratového mostíka sú mechanicky odlíšené tvarom. Náradie je pripravené, zdroj odpojený.",look,
+look.S63.workbench,"Tri konektory pre mostík, každý iného tvaru. Doska je bez prúdu, náradie pripravené.",look,
 exit.S63.to_S59.label,Školská chodba v roku 1982,name,
 room.S66.name,Školský záhradný sklad v roku 1982,name,
 entry.S66.001,Tu sa skladuje budúci tieň. Zatiaľ vo forme troch dosiek.,line,ADAM
 hotspot.S66.SIMON.name,Šimon Rybár,name,
-look.S66.SIMON,"Šimon vie, kam strom dorastie. Ja sa mu dnes môžem pozrieť do výsledku.",look,
+look.S66.SIMON,"Šimon vie, ako vysoko raz lipa dorastie. Ja som videl dvor, kde nedorástla.",look,
 hotspot.S66.ambient 1.name,Plán chodníka,name,
-look.S66.ambient 1,Šimon môže legálne zakresliť ochrannú ohrádku a odklonenie vozíka.,look,
+look.S66.ambient 1,Plán chodníkov na dvore. Šimon doň môže zakresliť ohrádku aj novú trasu vozíka.,look,
 hotspot.S66.ambient 2.name,Lopata,name,
-look.S66.ambient 2,Je tu ako kulisa. Nebudeme kopať pod školou tajný tunel.,look,
+look.S66.ambient 2,"Lopata. Kopať nebudem, nijaký tunel pod školou nechystám.",look,
 exit.S66.to_S61.label,Školský dvor s mladou lipou v roku 1982,name,
 room.S60.name,Trieda pred technickou výstavkou v roku 1982,name,
-entry.S60.001,"Výstavka techniky. Keby som vytiahol mobil, skončí buď v kabinete, alebo v hlásení.",line,ADAM
+entry.S60.001,Technická výstavka žiakov. Telefón nechám radšej vo vrecku.,line,ADAM
 hotspot.S60.DOBRO.name,Učiteľ Dobrovič,name,
-look.S60.DOBRO,"Učiteľ kontroluje, či je všetko podľa vzoru. Zatiaľ aj vlastnú trpezlivosť.",look,
+look.S60.DOBRO,"Učiteľ Dobrovič porovnáva každú prácu so vzorom. Prísne, ale so záujmom.",look,
 hotspot.S60.JANA82.name,Jana Vargová,name,
 look.S60.JANA82,Jana si vlastný nápad zatiaľ nechala pod vzorovým papierom.,look,
 hotspot.S60.ambient 1.name,Vzorová schéma,name,
-look.S60.ambient 1,"Pri vzore je napísané DODRŽAŤ POSTUP. Jana sa práve pýta, čo ak vie lepší.",look,
+look.S60.ambient 1,"Vzorová schéma s nápisom DODRŽAŤ POSTUP. Jana vyzerá, že by vedela aj lepší.",look,
 hotspot.S60.ambient 2.name,Mapa ČSSR,name,
-look.S60.ambient 2,Mapa sveta sa mení. Táto zatiaľ správne patrí do roku 1982.,look,
+look.S60.ambient 2,"Školská mapa ČSSR. Presne taká, aká má v roku 1982 byť.",look,
 hotspot.S60.drawing.name,Janina schéma rádia,name,
 look.S60.drawing,"Jana nakreslila vlastný zlepšený návrh. Bojí sa ho ukázať, lebo nie je rovnaký ako vzor.",look,
 exit.S60.to_S59.label,Školská chodba v roku 1982,name,
@@ -448,227 +502,245 @@ topic.BERTA.ambient 1.001,Vidím. Také topánky tu nikto nemá.,line,BERTA
 topic.BERTA.ambient 1.002,Sú pracovné.,line,ADAM
 topic.BERTA.ambient 1.003,"To hovoria všetci, čo si nechcú zašpiniť slávnostné.",line,BERTA
 topic.BERTA.ambient 1.label,Som tu na návšteve,topic_label,
-topic.BERTA.ambient 2.001,Pokojná. Len tá mladá pri parku občas rozsvieti búdku uprostred dňa.,line,BERTA
-topic.BERTA.ambient 2.002,Mohla by aspoň večer ušetriť lampu.,line,ADAM
-topic.BERTA.ambient 2.label,Pokojná obec,topic_label,
+topic.BERTA.ambient 2.001,Väčšinou áno. Len tá mladá Hrušková zas svieti v búdke za parkom aj za bieleho dňa.,line,BERTA
+topic.BERTA.ambient 2.002,"To bude babka. Teda, jedna moja známa.",line,ADAM
+topic.BERTA.ambient 2.label,Je tu vždy taký pokoj?,topic_label,
 topic.BOZO.ambient 1.001,Mladú Hruškovú? Pri meraní za parkom. Oto v dielni vám povie viac.,line,BOZO
-topic.BOZO.ambient 1.002,Ďakujem. Ja sa zatiaľ pokúsim pôsobiť ako normálny návštevník.,line,ADAM
+topic.BOZO.ambient 1.002,Ďakujem. Zatiaľ sa budem tváriť ako obyčajný návštevník.,line,ADAM
 topic.BOZO.ambient 1.label,Kde nájdem Miru?,topic_label,
-topic.BOZO.ambient 2.001,Predávate spiatočné?,line,ADAM
+topic.BOZO.ambient 2.001,Predávate aj spiatočné lístky?,line,ADAM
 topic.BOZO.ambient 2.002,Samozrejme.,line,BOZO
 topic.BOZO.ambient 2.003,Aj na úplne iný rok?,line,ADAM
-topic.BOZO.ambient 2.004,To už by bolo na vedenie.,line,BOZO
-topic.BOZO.ambient 2.label,Spiatočný lístok,topic_label,
-topic.DOBRO.ambient 1.001,"Ukázať, že žiaci rozumejú postupu.",line,DOBRO
-topic.DOBRO.ambient 1.002,"A keď tomu rozumejú natoľko, že ho zlepšia?",line,ADAM
-topic.DOBRO.ambient 1.003,Tak to musia vedieť vysvetliť.,line,DOBRO
+topic.BOZO.ambient 2.004,S tým sa obráťte na vedenie. Ja predávam iba do Bratislavy.,line,BOZO
+topic.BOZO.ambient 2.label,Cesta späť,topic_label,
+topic.DOBRO.ambient 1.001,"Ukázať, že žiaci ovládajú schválený postup.",line,DOBRO
+topic.DOBRO.ambient 1.002,"A keď ho ovládajú tak dobre, že ho vylepšia?",line,ADAM
+topic.DOBRO.ambient 1.003,Potom to musia vedieť aj vysvetliť.,line,DOBRO
 topic.DOBRO.ambient 1.label,Čo je cieľom výstavky?,topic_label,
 topic.DOBRO.ambient 2.001,Vec môže byť dobrá a zároveň potrebovať tri podpisy.,line,DOBRO
-topic.DOBRO.ambient 2.002,Táto veta bude mať veľmi dlhú životnosť.,line,ADAM
-topic.DOBRO.ambient 2.label,Veľa tlačív,topic_label,
+topic.DOBRO.ambient 2.002,Tá veta bude platiť aj o štyridsať rokov.,line,ADAM
+topic.DOBRO.ambient 2.label,Načo toľko tlačív?,topic_label,
 topic.JANA82.ambient 1.001,Áno. Ale nevyzerá to ako v učebnici.,line,JANA82
-topic.JANA82.ambient 1.002,Možno preto stojí za to sa na to pozrieť.,line,ADAM
-topic.JANA82.ambient 1.label,To ste nakreslili vy?,topic_label,
-topic.JANA82.ambient 2.001,Aby to menej šumelo a stále bolo počuť celé vysielanie.,line,JANA82
-topic.JANA82.ambient 2.002,To je mimoriadne dobré zadanie.,line,ADAM
+topic.JANA82.ambient 1.002,Možno práve preto sa oplatí pozrieť.,line,ADAM
+topic.JANA82.ambient 1.label,To si nakreslila ty?,topic_label,
+topic.JANA82.ambient 2.001,Menej to šumí a pritom počuť celé vysielanie.,line,JANA82
+topic.JANA82.ambient 2.002,"To by chcel každý, kto kedy ladil rádio.",line,ADAM
 topic.JANA82.ambient 2.label,Čo to zlepší?,topic_label,
-topic.LIDA.ambient 1.001,"Bude, keď Rudo nájde scenár.",line,LIDA
+topic.LIDA.ambient 1.001,Keď Rudo nájde scenár.,line,LIDA
 topic.LIDA.ambient 1.002,A keď nenájde?,line,ADAM
-topic.LIDA.ambient 1.003,Bude nové dielo.,line,LIDA
-topic.LIDA.ambient 1.label,Premiéra,topic_label,
-topic.LIDA.ambient 2.001,"Šesť hercov, štyri kabáty, dve prestávky.",line,LIDA
-topic.LIDA.ambient 2.002,To je normálna inventárová hádanka.,line,ADAM
+topic.LIDA.ambient 1.003,Tak bude premiéra úplne nového diela.,line,LIDA
+topic.LIDA.ambient 1.label,Kedy je premiéra?,topic_label,
+topic.LIDA.ambient 2.001,Šesť hercov a štyri kabáty. A dve prestávky na prezliekanie.,line,LIDA
+topic.LIDA.ambient 2.002,Takže niekto bude v druhom dejstve hrať vo svetri.,line,ADAM
 topic.LIDA.ambient 2.label,Koľko kostýmov?,topic_label,
-topic.MARTA82.ambient 1.001,"Čo prišlo a čo odišlo. Keď sa to potom hľadá, ľahšie sa dýcha.",line,MARTA82
-topic.MARTA82.ambient 1.002,To by mala byť medzinárodná zásada.,line,ADAM
-topic.MARTA82.ambient 1.label,Čo sa eviduje?,topic_label,
-topic.MARTA82.ambient 2.001,"Tak mi povedzte presne, čo potrebujete. Rýchlejšie to býva než vysvetľovať, ako sa ponáhľate.",line,MARTA82
-topic.MARTA82.ambient 2.002,Rozumné.,line,ADAM
+topic.MARTA82.ambient 1.001,"Všetko, čo prišlo, aj čo odišlo. Keď sa potom niečo hľadá, ľahšie sa dýcha.",line,MARTA82
+topic.MARTA82.ambient 1.002,To by som zaviedol aj vo svojej dielni.,line,ADAM
+topic.MARTA82.ambient 1.label,Čo všetko zapisujete?,topic_label,
+topic.MARTA82.ambient 2.001,"Tak mi povedzte presne, čo potrebujete. To je rýchlejšie, ako mi vysvetľovať, že sa ponáhľate.",line,MARTA82
+topic.MARTA82.ambient 2.002,Máte pravdu. Už nevysvetľujem.,line,ADAM
 topic.MARTA82.ambient 2.label,Ponáhľam sa,topic_label,
 topic.MIRA60.ambient 1.001,"Niečo, čo nezapadá do modelu. To ešte neznamená, že to neexistuje.",line,MIRA60
 topic.MIRA60.ambient 1.002,Takže ja?,line,ADAM
-topic.MIRA60.ambient 1.003,Ty veľmi výrazne.,line,MIRA60
+topic.MIRA60.ambient 1.003,Ty obzvlášť.,line,MIRA60
 topic.MIRA60.ambient 1.label,Čo je výnimka?,topic_label,
 topic.MIRA60.ambient 2.001,"Pýtam sa na to, čo viem overiť. Zvyšok si nechávam otvorený.",line,MIRA60
-topic.MIRA60.ambient 2.002,To by sa malo dediť.,line,ADAM
-topic.MIRA60.ambient 2.label,Pýtate sa málo,topic_label,
-topic.OTO.ambient 1.001,Mal porovnať hodiny na viacerých miestach. Potom sa ozval včerajšok.,line,OTO
-topic.OTO.ambient 1.002,A nezavreli ste dielňu?,line,ADAM
+topic.MIRA60.ambient 2.002,Tak to sa u nás v rodine bude dediť.,line,ADAM
+topic.MIRA60.ambient 2.label,Prečo sa ma nič nepýtate?,topic_label,
+topic.OTO.ambient 1.001,Mal porovnávať hodiny na viacerých miestach naraz. A potom sa nám ozval včerajšok.,line,OTO
+topic.OTO.ambient 1.002,A vy ste z dielne neutiekli?,line,ADAM
 topic.OTO.ambient 1.003,Najprv sme skontrolovali zapojenie.,line,OTO
 topic.OTO.ambient 1.label,Načo je ZVON?,topic_label,
 topic.OTO.ambient 2.001,"Nebezpečné je myslieť si, že vieme všetko. Stroj sám si to nemyslí.",line,OTO
-topic.OTO.ambient 2.002,Jeden z budúcnosti k tomu má dosť blízko.,line,ADAM
-topic.OTO.ambient 2.label,Nebezpečný objav,topic_label,
+topic.OTO.ambient 2.002,"V budúcnosti poznám jedného, čo si to myslí.",line,ADAM
+topic.OTO.ambient 2.label,Nie je to nebezpečné?,topic_label,
 topic.OTO82.ambient 1.001,V Ivanke ste sa pýtali na budúcnosť. Teraz ju vidím na vlastnom vnukovi.,line,OTO82
-topic.OTO82.ambient 1.002,A ja na vašich hodinách.,line,ADAM
-topic.OTO82.ambient 1.003,Tie idú stále každé po svojom.,line,OTO82
+topic.OTO82.ambient 1.002,A ja som odvtedy nezostarol ani o deň.,line,ADAM
+topic.OTO82.ambient 1.003,Všimol som si. Aj bundu máte tú istú.,line,OTO82
 topic.OTO82.ambient 1.label,Vy si ma pamätáte?,topic_label,
-topic.OTO82.ambient 2.001,Nech si veci vyskúša a vysvetlí. Ale výrobu a papierovanie podpisujem ja.,line,OTO82
-topic.OTO82.ambient 2.002,To je rozumné rozdelenie práce.,line,ADAM
-topic.OTO82.ambient 2.label,Tóno a technika,topic_label,
-topic.POSTA.ambient 1.001,"Potvrdí, že dokument bol dnes tu. Nie že je jeho obsah pravda.",line,ALOJZ
-topic.POSTA.ambient 1.002,To je veľmi dôležitý rozdiel.,line,ADAM
-topic.POSTA.ambient 1.label,Čo robí pečiatka?,topic_label,
-topic.POSTA.ambient 2.001,Béla nie je služobný. To je moja osobná doprava radosti.,line,ALOJZ
-topic.POSTA.ambient 2.002,Tá zvykne meškať najmenej.,line,ADAM
-topic.POSTA.ambient 2.label,Holub a pošta,topic_label,
-topic.RUDO.ambient 1.001,"Mám vstúpiť a povedať, že všetko dobre dopadne.",line,RUDO
+topic.OTO82.ambient 2.001,Pomáha. Nech si veci vyskúša a vysvetlí. Ale výrobu a papiere podpisujem ja.,line,OTO82
+topic.OTO82.ambient 2.002,"Spravodlivé. On má nápady, vy podpis.",line,ADAM
+topic.OTO82.ambient 2.label,Pomáha vám Tóno?,topic_label,
+topic.POSTA.ambient 1.001,"Že dokument bol dnes tu, na pošte. Či je pravdivý, to nech posúdi niekto múdrejší.",line,ALOJZ
+topic.POSTA.ambient 1.002,Presne toto potrebujem.,line,ADAM
+topic.POSTA.ambient 1.label,Čo potvrdí pečiatka?,topic_label,
+topic.POSTA.ambient 2.001,Béla nie je služobný holub. Je to moja súkromná radosť s krídlami.,line,ALOJZ
+topic.POSTA.ambient 2.002,Radosť s krídlami asi nikdy nemešká.,line,ADAM
+topic.POSTA.ambient 2.label,Béla je poštový holub?,topic_label,
+topic.RUDO.ambient 1.001,"Vstúpim a zvolám, že všetko dobre dopadne!",line,RUDO
 topic.RUDO.ambient 1.002,To by som teraz rád počul aj mimo javiska.,line,ADAM
 topic.RUDO.ambient 1.label,Aká je vaša úloha?,topic_label,
-topic.RUDO.ambient 2.001,Ja trému nemám. Len si moje kolená pripravujú vlastné predstavenie.,line,RUDO
-topic.RUDO.ambient 2.002,Hlavne nech neodídu na zájazd.,line,ADAM
-topic.RUDO.ambient 2.label,Tréma,topic_label,
+topic.RUDO.ambient 2.001,Ja? Nikdy! Iba moje kolená si nacvičujú vlastné predstavenie.,line,RUDO
+topic.RUDO.ambient 2.002,Hlavne nech vám neodídu na zájazd.,line,ADAM
+topic.RUDO.ambient 2.label,Máte trému?,topic_label,
 topic.RUZENA.ambient 1.001,"To, čo vidíte. Čo nevidíte, na to sa spýtajte.",line,RUZENA
-topic.RUZENA.ambient 1.002,Takýto systém by fungoval aj o veľa rokov.,line,ADAM
-topic.RUZENA.ambient 1.label,Čo máte na pulte?,topic_label,
+topic.RUZENA.ambient 1.002,Tak jasne to nevysvetlí ani internetový obchod.,line,ADAM
+topic.RUZENA.ambient 1.label,Čo dnes máte?,topic_label,
 topic.RUZENA.ambient 2.001,Dobrý pohár slúži roky. Ak ho človek nestratí.,line,RUZENA
-topic.RUZENA.ambient 2.002,Ja ho plánujem stratiť organizovane.,line,ADAM
-topic.RUZENA.ambient 2.label,Poháre,topic_label,
+topic.RUZENA.ambient 2.002,Tak ho treba dobre schovať.,line,ADAM
+topic.RUZENA.ambient 2.label,Koľko vydrží taký pohár?,topic_label,
 topic.SIMON.ambient 1.001,Lebo pod ňou raz bude niekto rád sedieť.,line,SIMON
-topic.SIMON.ambient 1.002,To je veľmi presný dlhodobý plán.,line,ADAM
-topic.SIMON.ambient 1.label,Prečo lipa?,topic_label,
-topic.SIMON.ambient 2.001,Ľudia chodia najkratšie. Mladý strom na to zatiaľ nemá odpoveď.,line,SIMON
+topic.SIMON.ambient 1.002,Na desaťročia dopredu. Ja plánujem tak do piatku.,line,ADAM
+topic.SIMON.ambient 1.label,Prečo práve lipa?,topic_label,
+topic.SIMON.ambient 2.001,Ľudia chodia najkratšou cestou. Mladý strom sa zatiaľ nevie brániť.,line,SIMON
 topic.SIMON.ambient 2.002,Tak mu spravíme ohrádku.,line,ADAM
-topic.SIMON.ambient 2.label,Trasa vozíka,topic_label,
-topic.SKLAD.ambient 1.001,"Nie. Ale viem, čo nemáme.",line,STEFAN
-topic.SKLAD.ambient 1.002,Aj to je dobrý skladový systém.,line,ADAM
+topic.SIMON.ambient 2.label,Prečo ide vozík tadiaľto?,topic_label,
+topic.SKLAD.ambient 1.001,"Všetko nie. Ale presne viem, čo nemáme.",line,STEFAN
+topic.SKLAD.ambient 1.002,"To je viac, ako vie väčšina skladov.",line,ADAM
 topic.SKLAD.ambient 1.label,Máte všetko?,topic_label,
-topic.SKLAD.ambient 2.001,Veľká vec sa bez malej často nepohne.,line,STEFAN
-topic.SKLAD.ambient 2.002,To platí aj o celom mojom dnešku.,line,ADAM
-topic.SKLAD.ambient 2.label,Načo odrezky?,topic_label,
-topic.TONO82.ambient 1.001,"Lastovičku. Dedo hovorí, že aj vec musí mať správne ťažisko.",line,TONO82
+topic.SKLAD.ambient 2.001,Bez malých kúskov sa veľká vec často nepohne.,line,STEFAN
+topic.SKLAD.ambient 2.002,Presne tak vyzerá celý môj dnešný deň.,line,ADAM
+topic.SKLAD.ambient 2.label,Načo vám tie odrezky?,topic_label,
+topic.TONO82.ambient 1.001,"Lastovičku. Dedo hovorí, že aj model musí mať správne ťažisko.",line,TONO82
 topic.TONO82.ambient 1.002,Aj človek. Len sa to horšie meria.,line,ADAM
 topic.TONO82.ambient 1.003,Tak mu spravíme stojan.,line,TONO82
 topic.TONO82.ambient 1.label,Čo vyrábaš?,topic_label,
-topic.TONO82.ambient 2.001,"V kabinete áno. Tam veci robia to, prečo tam sú.",line,TONO82
+topic.TONO82.ambient 2.001,"V kabinete áno. Tam každá vec robí to, na čo je.",line,TONO82
 topic.TONO82.ambient 2.002,A inde?,line,ADAM
-topic.TONO82.ambient 2.003,Inde sa to najprv musí povedať správnymi slovami.,line,TONO82
+topic.TONO82.ambient 2.003,Inde treba najprv všetko povedať správnymi slovami.,line,TONO82
 topic.TONO82.ambient 2.label,Páči sa ti v škole?,topic_label,
-topic.VERA60.ambient 1.001,Svetlo. A Oto tu nemôže každé tri minúty zmeniť rozmer.,line,VERA60
-topic.VERA60.ambient 1.002,Poznám tento pracovný postup.,line,ADAM
+topic.VERA60.ambient 1.001,Pre svetlo. A Oto mi tu nemôže každé tri minúty meniť rozmery.,line,VERA60
+topic.VERA60.ambient 1.002,"Zákazníka, ktorý mení zadanie, poznám tiež.",line,ADAM
 topic.VERA60.ambient 1.label,Prečo kreslíte vonku?,topic_label,
 topic.VERA60.ambient 2.001,"Taký, pri ktorom ďalší človek nemusí hádať, čo sme chceli povedať.",line,VERA60
-topic.VERA60.ambient 2.002,Mali by ste písať zadania.,line,ADAM
+topic.VERA60.ambient 2.002,Mali by ste písať návody k spotrebičom.,line,ADAM
 topic.VERA60.ambient 2.label,Čo je presný nákres?,topic_label,
-item.SUPPLYSLIP,Dve kožené manžety? Nie. Jedna predrezaná manžeta a malá súprava nitov.,look,
+item.SUPPLYSLIP,Otov lístok pre Štefana: jedna predrezaná kožená manžeta a dva duté nity.,look,
 item.SUPPLYSLIP.name,Otov výdajný lístok,name,
-item.SUPPLYSLIP.purpose,Výdaj potrebného materiálu.,goal,
-item.LEATHER,Rozmer je pripravený; vyznačené otvory treba preraziť.,look,
+item.SUPPLYSLIP.purpose,Vyzdvihnúť u Štefana kožu a nity.,goal,
+item.LEATHER,Koža je narezaná na mieru. Ešte treba preraziť dva vyznačené otvory.,look,
 item.LEATHER.name,Predrezaná kožená manžeta,name,
-item.LEATHER.purpose,Výroba tesnenia demonštračnej pumpy.,goal,
-item.RIVETS,Bezpečné ručné zaklapávacie nity pre túto malú manžetu.,look,
+item.LEATHER.purpose,Vyrobiť novú manžetu na ručnú pumpu.,goal,
+item.RIVETS,Dva duté nity. Spoja manžetu do kruhu.,look,
 item.RIVETS.name,Dva duté nity,name,
-item.RIVETS.purpose,Uzavretie manžety.,goal,
+item.RIVETS.purpose,Spojiť dierovanú manžetu.,goal,
 item.PUNCH,Dierovač a kliešte v jednom. Oto ho po práci vráti Líde.,look,
 item.PUNCH.name,Lídin ručný dierovač,name,
-item.PUNCH.purpose,Otvory v koženej manžete.,goal,
-item.CUFF_OPEN,"Má presné otvory, ostáva uzavrieť obvod nitmi.",look,
+item.PUNCH.purpose,Preraziť otvory v koženej manžete.,goal,
+item.CUFF_OPEN,Otvory sú prerazené. Teraz ju ešte spojím nitmi.,look,
 item.CUFF_OPEN.name,Dierovaná manžeta,name,
-item.CUFF_OPEN.purpose,Spojiť s nitmi.,goal,
-item.CUFF,Tesnenie pre studenú ručnú pumpu.,look,
+item.CUFF_OPEN.purpose,Spojiť nitmi.,goal,
+item.CUFF,Nová kožená manžeta. Sedí presne na piest ručnej pumpy.,look,
 item.CUFF.name,Hotová manžeta,name,
-item.CUFF.purpose,Obnovenie obehu v skúšobnom modeli.,goal,
-item.PUMPKEY,Oto povoľuje vstup po oprave demonštračného modelu.,look,
+item.CUFF.purpose,"Nasadiť na ručnú pumpu, aby voda znova obiehala.",goal,
+item.PUMPKEY,Otov kľúč od meracej miestnosti. Dostal som ho za opravenú pumpu.,look,
 item.PUMPKEY.name,Kľúč od meracej miestnosti,name,
-item.PUMPKEY.purpose,Dvere pri pumpe.,goal,
-item.REGFORM,Mira podpísala formulár s dnešným dátumom a súpisom merania. Treba čitateľný druhopis a nové vlastnoručné potvrdenie oboch vyhotovení.,look,
+item.PUMPKEY.purpose,Odomknúť dvere meracej miestnosti pri pumpe.,goal,
+item.REGFORM,Mirin podpísaný list s dnešným dátumom a súpisom merania. Potrebujem druhopis a poštovú pečiatku.,look,
 item.REGFORM.name,Technický registračný list,name,
-item.REGFORM.purpose,Poštové potvrdenie existencie dokumentu v 1960.,goal,
-item.STYLUS,Tupý nástroj na zvýraznenie reliéfneho odtlačku.,look,
+item.REGFORM.purpose,"Dať na pošte potvrdiť, že dokument v roku 1962 existoval.",goal,
+item.STYLUS,Verino tupé rydlo. Obtiahne hrany odtlačku a platňu nepoškriabe.,look,
 item.STYLUS.name,Verino tupé rydlo,name,
 item.STYLUS.purpose,Dokončiť čitateľný odtlačok bez poškodenia platne.,goal,
-item.WAXPAPER,"Mäkký hárok na mechanický odtlačok, žiadna fotografia z budúcnosti.",look,
+item.WAXPAPER,"Mäkký voskovaný hárok. Odtlačok bez fotoaparátu, po starom.",look,
 item.WAXPAPER.name,Voskovaný hárok,name,
 item.WAXPAPER.purpose,Pritlačiť na kalibračnú platňu.,goal,
-item.PRESSED,Reliéf je zachytený. Tupé rydlo zvýrazní hrany symbolov.,look,
+item.PRESSED,"Reliéf platne je na papieri, ale slabý. Hrany treba obtiahnuť tupým rydlom.",look,
 item.PRESSED.name,Nezvýraznený odtlačok,name,
-item.PRESSED.purpose,Dokončenie odtlačku.,goal,
-item.ORIGIN_RAW,Štyri významy a podpisy Miry a Ota. Poštová registrácia ešte nie je pripojená.,look,
+item.PRESSED.purpose,"Obtiahnuť odtlačok rydlom, aby bol čitateľný.",goal,
+item.ORIGIN_RAW,"Štyri slová, pravidlo a podpisy Miry a Ota. Chýba ešte potvrdenie z pošty.",look,
 item.ORIGIN_RAW.name,Čitateľný odtlačok,name,
-item.ORIGIN_RAW.purpose,Pripojiť k registrovanému archívnemu uloženiu.,goal,
-item.CARBON,Pracovná pomôcka z pošty. Po použití zostane v poštovom odpade.,look,
+item.ORIGIN_RAW.purpose,Uložiť s potvrdeným registračným listom do kovovej schránky.,goal,
+item.CARBON,Uhlový papier z pošty. Vložím ho medzi dva hárky a mám dve rovnaké vyhotovenia.,look,
 item.CARBON.name,Uhlový papier,name,
 item.CARBON.purpose,Druhé vyhotovenie registračného listu.,goal,
-item.REGDOUBLE,Oba listy majú rovnaký obsah a podpis Miry.,look,
+item.REGDOUBLE,"Dva rovnaké listy, oba s Miriným podpisom. Teraz ešte pečiatka.",look,
 item.REGDOUBLE.name,Dve vyhotovenia listu,name,
-item.REGDOUBLE.purpose,Potvrdenie dátumu u Alojza.,goal,
-item.REGISTERED,Dátum a existencia dokumentu sú potvrdené. Nejde o pečiatku potvrdzujúcu pravdivosť fyzikálnej teórie.,look,
+item.REGDOUBLE.purpose,Dať potvrdiť dátum u Alojza na pošte.,goal,
+item.REGISTERED,"Pečiatka a číslo Z-17. Pošta potvrdila, že list dnes existoval, nie či je fyzika správna.",look,
 item.REGISTERED.name,Potvrdený registračný list,name,
 item.REGISTERED.purpose,Uložiť s kópiou do kovovej schránky.,goal,
-item.ORIGIN,Stabilizovaný odtlačok s poznámkou o registrácii. Pôvodná platňa aj registrovaná kópia ostali v 1960; v brašni je cestovná pracovná kópia.,look,
-item.ORIGIN.name,Overený odtlačok z roku 1960,name,
-item.ORIGIN.purpose,Dôkaz Pôvod vo finále.,goal,
-item.PARTSNOTE,Riadna žiadosť podpísaná dospelým Otom Bielikom na keramickú päticu a prepojky. Tóno ako dieťa nič úradne nepovoľuje.,look,
+item.ORIGIN,"Odtlačok s číslom uloženia. Platňa aj archívna kópia zostali v roku 1962, ja nesiem tento.",look,
+item.ORIGIN.name,Overený odtlačok z roku 1962,name,
+item.ORIGIN.purpose,Dôkaz pôvodu pre záverečnú obnovu.,goal,
+item.PARTSNOTE,"Výdajný lístok na keramickú päticu a tri prepojky. Podpísal ho Oto, nie Tóno.",look,
 item.PARTSNOTE.name,Otov školský výdajný lístok,name,
-item.PARTSNOTE.purpose,Získať diely vo výdajni 1982.,goal,
-item.CERAMICPARTS,"Keramická pätica a tri označené medené prepojky. Bez elektronickej batérie, vhodné na dlhé uloženie.",look,
+item.PARTSNOTE.purpose,Vyzdvihnúť u Marty vo výdajni diely mostíka.,goal,
+item.CERAMICPARTS,"Keramická pätica a tri označené medené prepojky. Nič, čo by za roky vytieklo alebo zhrdzavelo.",look,
 item.CERAMICPARTS.name,Diely návratového mostíka,name,
-item.CERAMICPARTS.purpose,Zostavenie servisného mostíka.,goal,
-item.BRIDGE_NEW,"Nízkoprúdová signálová prepojka; bez batérie. Vyrobená podľa Otovho vlastného nákresu, nie podľa informácie bez pôvodu.",look,
+item.CERAMICPARTS.purpose,Zostaviť mostík na servisnej doske v kabinete.,goal,
+item.BRIDGE_NEW,"Keramický mostík podľa Otovho nákresu, bez batérie, na štítku Tónova lastovička. Ukryjem ho v suchom pohári.",look,
 item.BRIDGE_NEW.name,Nový keramický mostík,name,
 item.BRIDGE_NEW.purpose,Uložiť do suchého vzduchotesného pohára.,goal,
-item.JAR,"Čistý suchý pohár, tesniaci krúžok, zabalovací papier; Oto pridá vysušenú výplň bez potreby ďalšej hádanky.",look,
+item.JAR,Suchý pohár s gumovým tesnením a baliaci papier. Vysušenú výplň pridá Oto.,look,
 item.JAR.name,Pohár s viečkom a tesnením,name,
-item.JAR.purpose,Chrániť kovové vývody počas 38 rokov v dutine.,goal,
-item.SEALED_NEW,"Oto skontroloval uzavretie. Schovať do servisnej dutiny, nie zakopať do vlhkej zeme.",look,
+item.JAR.purpose,Udržať mostík v dutine suchý 38 rokov.,goal,
+item.SEALED_NEW,"Pohár je zapečatený, Oto skontroloval viečko. Patrí do suchej dutiny v múriku, nie do zeme.",look,
 item.SEALED_NEW.name,Zapečatený pohár s mostíkom,name,
-item.SEALED_NEW.purpose,Medzičasová skrýša 1982→2020.,goal,
-item.TREEGUARD,Tri hotové diely ohrádky. Šimon súhlasí aj s posunutím trasy ručného vozíka.,look,
+item.SEALED_NEW.purpose,"Ukryť do servisnej dutiny, aby vydržal od roku 1982 do roku 2020.",goal,
+item.TREEGUARD,Tri hotové diely ohrádky. Šimon súhlasí aj s novou trasou vozíka.,look,
 item.TREEGUARD.name,Ochranná ohrádka pre lipu,name,
-item.TREEGUARD.purpose,Zachrániť sadenicu a neskorší tieň.,goal,
+item.TREEGUARD.purpose,Postaviť okolo mladej lipy.,goal,
 item.CACHEMAP,"Tónov detský, no presný nákres schválený Otom. Druhý rad zhora, tretí kameň zľava. Malá lastovička namiesto podpisu.",look,
 item.CACHEMAP.name,Nákres servisnej dutiny,name,
-item.CACHEMAP.purpose,Rovnaký úkryt v neskoršom premenenom dvore.,goal,
-item.SEEDS,Štefan dovolil malé množstvo vhodného krmiva pre chovaného holuba.,look,
+item.CACHEMAP.purpose,Nájsť ten istý úkryt na dvore v roku 2020.,goal,
+item.SEEDS,Hrsť Bélovej zmesi od Štefana. Na jedno kŕmenie stačí.,look,
 item.SEEDS.name,Hrsť semien pre Bélu,name,
 item.SEEDS.purpose,Položiť do misky v parku.,goal,
-item.PLAY,"Originál s vlastnými poznámkami; názov Žiaden strach, miláčik je fiktívny.",look,
+item.PLAY,"Rudov scenár „Žiaden strach, miláčik!“ Okraje sú plné poznámok.",look,
 item.PLAY.name,Rudov scenár,name,
-item.PLAY.purpose,Vrátiť ochotníkovi.,goal,
-item.JANA_DRAWING,"Schéma s vlastným zlepšením a vysvetlením, prečo neodrezáva slabé časti signálu.",look,
+item.PLAY.purpose,Vrátiť Rudovi v kultúrnej sále.,goal,
+item.JANA_DRAWING,"Janina schéma s poznámkami. Vysvetľuje, prečo slabý signál neodreže.",look,
 item.JANA_DRAWING.name,Janina pôvodná schéma,name,
 item.JANA_DRAWING.purpose,Po dohode s Janou ukázať učiteľovi.,goal,
-item.JANA_APPROVED,"Učiteľ uznal funkčný návrh na základe vysvetlenia, nie politického triku.",look,
+item.JANA_APPROVED,Na schéme je pripísané povolenie na výstavku. Učiteľa presvedčilo Janino vysvetlenie.,look,
 item.JANA_APPROVED.name,Schéma s povolením na výstavku,name,
-item.JANA_APPROVED.purpose,Vrátiť Jane ako povzbudenie k vlastnej práci.,goal,
-quest.M08.goal,Dostať sa povoleným vstupom k prvej kalibrácii.,goal,
-quest.M08.hint.1,Oto v dielni potrebuje obnoviť malý demonštračný obeh vody.,hint,
-quest.M08.hint.2,Získaš kožu a nity podľa lístka; Lída požičia dierovač po oprave svorky kulisy.,hint,
-quest.M08.hint.3,Chronometer na Ota → lístok na Štefana → náradie na svorku v kultúrnej sále → dierovač + koža → nity + dierovaná manžeta → manžeta na pumpu → Oto dá kľúč → kľúč na dvere skúšobnej čerpacej búdky.,hint,
+item.JANA_APPROVED.purpose,"Vrátiť Jane, nech vystaví svoj vlastný návrh.",goal,
+item.BELL_MUTE,"Mosadzný ručný zvonček s drevenou rúčkou. Srdce je zabalené v Zuzaninej vreckovke, pútko je roztrhnuté.",look,
+item.BELL_MUTE.name,Triedny zvonček bez pútka,name,
+item.BELL_MUTE.purpose,Zavesiť srdce na nové kožené pútko.,goal,
+item.ZUZA_SLIP,"List z linajkového zošita, tlačeným písmom: LÍSTOK. PROSÍM JEDEN KÚSOK KOŽE NA ZVONČEK. ZUZANA, 1. TRIEDA.",look,
+item.ZUZA_SLIP.name,Zuzanin lístok,name,
+item.ZUZA_SLIP.purpose,Podať Štefanovi v hospodárskom dvore.,goal,
+item.STRAP,"Úzky pásik kože zo Štefanových odrezkov. Na pútko akurát, ani o kúsok viac.",look,
+item.STRAP.name,Kožený odrezok,name,
+item.STRAP.purpose,Zavesiť naň srdce zvončeka.,goal,
+item.BELL_FIXED,"Srdce visí na novom pútku, uzol je schovaný vnútri. Zvoní čisto.",look,
+item.BELL_FIXED.name,Opravený triedny zvonček,name,
+item.BELL_FIXED.purpose,Vrátiť Zuzane do parku.,goal,
+quest.M08.goal,Oprav Otovi ručnú pumpu a dostaň sa do meracej miestnosti.,goal,
+quest.M08.hint.1,"Choď za Otom do mechanickej dielne. K meraniu ťa pustí, až keď opravíš ručnú pumpu.",hint,
+quest.M08.hint.2,"S Otovým lístkom vyzdvihni u Štefana kožu a nity. Lída v sále ti požičia dierovač, keď jej dotiahneš svorku kulisy.",hint,
+quest.M08.hint.3,Chronometer na Ota → Otov výdajný lístok na Štefana → servisná brašna na svorku kulisy v sále → dierovač + koža → nity + dierovaná manžeta → hotová manžeta na ručnú pumpu → rozhovor s Otom → kľúč na dvere meracej miestnosti.,hint,
 quest.M08.title,Ručná pumpa,name,
-quest.M09.goal,Vyrobiť čitateľnú prenosnú kópiu pravidla bez odnesenia originálu.,goal,
-quest.M09.hint.1,"Mira vysvetlí, kde je základná kalibračná platňa.",hint,
-quest.M09.hint.2,"Na povale je papier, v parku má Vera tupé rydlo.",hint,
-quest.M09.hint.3,Rozhovor s Mirou v miestnosti prvého ZVONu → rydlo od Very v parku pri kaštieli → papier z povaly → papier na platňu v miestnosti prvého ZVONu → rydlo + odtlačok.,hint,
+quest.M09.goal,"Urob čitateľný odtlačok kalibračnej platne, platňa pritom zostane na mieste.",goal,
+quest.M09.hint.1,Porozprávaj sa s mladou Mirou pri kalibračnej platni v miestnosti prvého ZVONu.,hint,
+quest.M09.hint.2,"Voskovaný papier nájdeš na povale, tupé rydlo ti požičia Vera v parku.",hint,
+quest.M09.hint.3,Rozhovor s Mirou v miestnosti prvého ZVONu → tupé rydlo od Very v parku pri kaštieli → voskovaný hárok z povaly → hárok na kalibračnú platňu → tupé rydlo + nezvýraznený odtlačok.,hint,
 quest.M09.title,Pôvodná veta,name,
-quest.M10.goal,Doložiť a uchovať pôvod kalibrácie.,goal,
-quest.M10.hint.1,"Pošta potvrdí, že dokument v tomto roku skutočne existuje.",hint,
-quest.M10.hint.2,Registračný list treba dvojmo; uhlový papier je na poštovej prepážke.,hint,
-quest.M10.hint.3,"Uhlový papier na pošte → papier + registračný list → dvojitý list na Alojza → potvrdený list na kovovú schránku na povale technického archívu, keď máš aj čitateľný odtlačok.",hint,
+quest.M10.goal,Daj na pošte potvrdiť registračný list a ulož ho do kovovej schránky ako doklad pôvodu.,goal,
+quest.M10.hint.1,"Na pošte ti potvrdia, že registračný list v roku 1962 naozaj existoval.",hint,
+quest.M10.hint.2,Registračný list treba v dvoch vyhotoveniach. Uhlový papier nájdeš pri prepážke na pošte.,hint,
+quest.M10.hint.3,Uhlový papier pri prepážke → uhlový papier + technický registračný list → dve vyhotovenia listu na Alojza → potvrdený registračný list na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.,hint,
 quest.M10.title,Dokument musí prežiť,name,
-quest.M11B.goal,"V 1982 povedať Tónovi pravdu, pripraviť rezervu a zachovať miesto úkrytu.",goal,
-quest.M11B.hint.1,Tóno a jeho dedo chcú vidieť dôkaz a počuť konkrétnu prosbu.,hint,
-quest.M11B.hint.2,"Ukáž mu modernú fotografiu toho istého okna. Potrebuješ diely, suchý pohár a ochrannú ohrádku.",hint,
-quest.M11B.hint.3,Chronometer na malého Tóna → chránená fotografia dvora 2020 na malého Tóna → lístok Marte vo výdajni údržbového materiálu → diely na stôl vo fyzikálnom kabinete → pohár od Ruženy v sídliskovom obchode → pohár + nový keramický mostík → ohrádka od Šimona v záhradnom sklade → zapečatený pohár na dutinu v múriku dvora → ohrádka na lipu → potvrdiť Šimonovi.,hint,
-quest.M11B.title,Človek ktorý si to zapamätá,name,
-quest.Q6.goal,Pomôcť holubovi vrátiť sa bez naháňania.,goal,
-quest.Q6.hint.1,Alojz spomenie Bélu.,hint,
-quest.Q6.hint.2,Štefan má jeho krmivo a v parku je miska.,hint,
-quest.Q6.hint.3,Alojz na pošte → Štefan na dvore dielne → semená na holubiu misku v parku → ozvi sa Alojzovi.,hint,
-quest.Q6.reward,Pamätný neúradný odtlačok poštovej pečiatky v albume.,goal,
+quest.M11B.goal,"V roku 1982 povedz Tónovi pravdu, ukry s ním rezervný mostík a ochráň mladú lipu.",goal,
+quest.M11B.hint.1,"Tóno a jeho dedo sú pri servisnom okne. Musíš im dokázať, odkiaľ prichádzaš.",hint,
+quest.M11B.hint.2,"Ukáž Tónovi chránenú fotografiu dvora 2020. Potom zožeň diely mostíka, suchý pohár a ohrádku pre lipu.",hint,
+quest.M11B.hint.3,Chronometer na Tóna → fotografia dvora 2020 na Tóna → Otov lístok na Martu vo výdajni → diely na servisnú dosku v kabinete → pohár od Ruženy v obchode → pohár + nový mostík → ohrádka od Šimona v sklade → zapečatený pohár na dutinu v múriku → ohrádka na lipu → znova Šimon.,hint,
+quest.M11B.title,"Človek, ktorý si to zapamätá",name,
+quest.Q6.goal,Pomôž Alojzovmu holubovi Bélovi vrátiť sa na poštu.,goal,
+quest.Q6.hint.1,"Spýtaj sa Alojza na pošte, kde je jeho holub Béla.",hint,
+quest.Q6.hint.2,"Bélovo krmivo má Štefan na dvore dielne, miska je v parku pri kaštieli.",hint,
+quest.Q6.hint.3,Rozhovor s Alojzom na pošte → rozhovor so Štefanom na dvore dielne → hrsť semien do misky pri holubovi v parku → znova Alojz.,hint,
+quest.Q6.reward,"Odtlačok starej poštovej pečiatky na pamiatku, v albume.",goal,
 quest.Q6.title,Béla sa vracia,name,
-quest.Q7.goal,Vrátiť Rudovi scenár na ochotnícku skúšku.,goal,
-quest.Q7.hint.1,Rudo v sále požičal scenár Mire.,hint,
-quest.Q7.hint.2,Po sprístupnení meracej miestnosti ho nájdeš na povale.,hint,
-quest.Q7.hint.3,Rudo v kultúrnej sále → scenár na povale archívu → scenár na Ruda.,hint,
-quest.Q7.reward,Záznam Rudovej prvej vety a malý dobový program v albume.,goal,
-quest.Q7.title,Žiaden strach miláčik,name,
-quest.Q9.goal,Podporiť Janin vlastný technický návrh a sledovať jeho dôsledky v troch neskorších obdobiach.,goal,
-quest.Q9.hint.1,Jana v triede 1982 schováva svoju schému pod predlohu.,hint,
-quest.Q9.hint.2,"So súhlasom Jany ju ukáž učiteľovi aj s vysvetlením, nie ako vlastný vynález.",hint,
-quest.Q9.hint.3,"Jana v triede pred výstavkou → Janina schéma na Dobroviča → schéma s povolením na Janu. Potom voliteľne rozhovory s Janou vo fyzikálnom kabinete 1995, v kabinete 2020 a vo výstavnom salóne 2035.",hint,
-quest.Q9.reward,"Janina schéma v albume, dielenský krúžok 1995, repasovanie notebookov 2020 a generačná výstavka v Grand Jasná 2035.",goal,
+quest.Q7.goal,Nájdi Rudov stratený scenár a vráť mu ho pred skúškou.,goal,
+quest.Q7.hint.1,Porozprávaj sa s Rudom v kultúrnej sále. Scenár požičal Mire.,hint,
+quest.Q7.hint.2,"Scenár leží na povale technického archívu, kam sa dostaneš z meracej miestnosti.",hint,
+quest.Q7.hint.3,Rozhovor s Rudom v kultúrnej sále → Rudov scenár na povale technického archívu → scenár na Ruda.,hint,
+quest.Q7.reward,Rudova prvá veta a malý program predstavenia v albume.,goal,
+quest.Q7.title,"Žiaden strach, miláčik",name,
+quest.Q9.goal,"Pomôž Jane ukázať jej vlastný návrh a pozri sa, čo to zmení v jej neskoršom živote.",goal,
+quest.Q9.hint.1,Jana v triede pred výstavkou v roku 1982 schováva svoju schému pod vzorom.,hint,
+quest.Q9.hint.2,"So súhlasom Jany ukáž jej schému učiteľovi Dobrovičovi. Je to jej nápad, nie tvoj.",hint,
+quest.Q9.hint.3,"Rozhovor s Janou v triede pred výstavkou → Janina pôvodná schéma na Dobroviča → schéma s povolením na Janu. Ak chceš, potom nájdi Janu vo fyzikálnom kabinete v rokoch 1995 a 2020 a vo výstavnom salóne v roku 2035.",hint,
+quest.Q9.reward,"Janina schéma v albume, krúžok 1995, notebooky pre deti 2020 a výstavka v Grand Jasná 2035.",goal,
 quest.Q9.title,Nápad mimo predlohy,name,
+quest.Q10.goal,"Oprav Zuzanin triedny zvonček, aby mohla na konci roka zvoniť.",goal,
+quest.Q10.hint.1,"Zuzana v parku pri kaštieli má zvonček, ktorý nezvoní.",hint,
+quest.Q10.hint.2,Srdce treba zavesiť na nové kožené pútko. Kožené odrezky má Štefan v hospodárskom dvore a vydáva ich iba na lístok.,hint,
+quest.Q10.hint.3,"Zuzana v parku, téma zvonček → Zuzanin lístok Štefanovi → v brašni odrezok so zvončekom → opravený zvonček Zuzane.",hint,
+quest.Q10.reward,Zuzana so zvončekom a jej kriedová škôlka v Adamovom albume.,goal,
+quest.Q10.title,Prvý posledný zvonec,name,
 char.BERTA.name,Berta Kovárová,name,
 char.BOZO.name,Božidar Fiala,name,
 char.DOBRO.name,Učiteľ Dobrovič,name,
@@ -685,3 +757,4 @@ char.SIMON.name,Šimon Rybár,name,
 char.SKLAD.name,Štefan Haluška,name,
 char.TONO82.name,Anton Farkaš,name,
 char.VERA60.name,Vera Nemcová,name,
+char.ZUZANA.name,Zuzana,name,
