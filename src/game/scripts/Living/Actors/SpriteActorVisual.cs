@@ -16,6 +16,8 @@ namespace LastBell.Game.Living.Actors;
 /// random; still NPC idles blink at random intervals and breathe procedurally; video idles may
 /// play an occasional fidget loop (<c>idle_fidget</c>).</item>
 /// <item>Talk: lip-flap loop while the line is revealed; it stops on the next rest mouth frame.</item>
+/// <item>Conversation: while engaged (<see cref="IActorVisual.SetEngaged"/>) an NPC whose manifest has an
+/// <c>idle_engaged</c> clip stands in it instead of its activity idle (Zuzana's hopscotch) and plays no fidget.</item>
 /// <item>One-shot actions from <c>actions[].animation</c>: forward, hold, reversed back to idle.</item>
 /// <item>Variants: the hero's 2020 face mask where <see cref="ActorStaging"/> says so; NPC window
 /// busts (pivot on the sill line) from <c>data/ambient/actors.json</c>.</item>
@@ -52,6 +54,7 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
 
     private bool walking;
     private bool talking;
+    private bool engaged;
     private float talkTail;
     private float talkOwed; // talk time that came while a one-shot action played (lines start with the commit)
     private bool verticalWalk;
@@ -181,6 +184,13 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
     }
 
     /// <inheritdoc />
+    public void SetEngaged(bool isEngaged)
+    {
+        engaged = isEngaged;
+        if (engaged) fidgeting = false;
+    }
+
+    /// <inheritdoc />
     public void PlayGesture(string animation)
     {
         if (string.IsNullOrEmpty(animation) || animation == "talk") return;
@@ -256,6 +266,7 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
                 : set.Get("talk");
             if (talk is not null) return talk;
         }
+        if (engaged && set.Get("idle_engaged") is { } still) return still;
         if (fidgeting && set.Get("idle_fidget") is { } fidget) return fidget;
         Clip? idle = set.IsDirectional
             ? facing switch { Facing.Front => set.Get("idle_front"), Facing.Back => set.Get("idle_back"), _ => set.Get("idle_right") }
@@ -301,7 +312,7 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
     {
         loopCount++;
         blinkThisLoop = rng.Randf() < ActorStaging.HeroBlinkChance;
-        if (!walking && !talking && current is not null && current.Name == "idle" && current.Frames.Length > 1 && fidgetTimer <= 0
+        if (!walking && !talking && !engaged && current is not null && current.Name == "idle" && current.Frames.Length > 1 && fidgetTimer <= 0
             && set.Get("idle_fidget") is not null)
         {
             fidgeting = true;
@@ -321,7 +332,7 @@ public partial class SpriteActorVisual : Node2D, IActorVisual
         if (walking) talkOwed = 0;
         if (fidgetTimer > 0) fidgetTimer -= dt;
         // Random blinks on still idles (the NPC still sheets have a blink cell).
-        if (current.Frames.Length == 1 && current.Name is "idle" or "idle_still" && set.Get("blink") is { } blink)
+        if (current.Frames.Length == 1 && current.Name is "idle" or "idle_still" or "idle_engaged" && set.Get("blink") is { } blink)
         {
             if (blinkLeft > 0) blinkLeft -= dt;
             else if ((blinkTimer -= dt) <= 0)

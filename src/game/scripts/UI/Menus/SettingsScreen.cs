@@ -11,7 +11,7 @@ using LastBell.Game.UI.Theme;
 namespace LastBell.Game.UI.Menus;
 
 /// <summary>
-/// Settings: game (the difficulty of the running game, saved with it; docs/DECISIONS.md "Difficulty settings"), audio (master, music, ambience, effects, voices), text and subtitles (speed,
+/// Settings: game (the difficulty of the running game, saved with it; docs/DECISIONS.md "Difficulty settings"), audio (master, music, ambience, effects, voices, voice-over on/off), text and subtitles (speed,
 /// auto-advance, subtitles on/off, size with preview, contrast background, speaker names,
 /// language), display (fullscreen / windowed, HUD scale 100–200 % for AT08) and accessibility
 /// (reduced motion, high-contrast labels, cursor highlight, Space reminder, tips again), plus the
@@ -21,6 +21,10 @@ public partial class SettingsScreen : ModalScreen
 {
     /// <summary>The tab shown on the next open (UI-only memory).</summary>
     public static int LastTab { get; set; }
+    // Voice-over toggle: draft rows in docs/writing/out_v4/ui_voice.csv; the table wins once the rows are in ui.csv.
+    private static readonly UiString VoiceOverLabel = new("ui.settings.voice_over", "Hovorené dialógy");
+    private static readonly UiString VoiceOverDesc = new("ui.settings.voice_over_desc",
+        "Postavy hovoria nahlas. Keď sú vypnuté, titulky sa posúvajú podľa dĺžky textu.");
     private readonly List<Button> tabs = new();
     private VBoxContainer content = null!;
     private int tab;
@@ -108,6 +112,8 @@ public partial class SettingsScreen : ModalScreen
                     int bus = i;
                     content.AddChild(SliderRow(Ui.T(volumeKeys[i]), 0, 100, 5, () => UiSettings.Volume[bus], v => UiSettings.Volume[bus] = (int)v,
                         v => Ui.T("ui.settings.volume_value", ("percent", ((int)v).ToString()))));
+                    if (volumeKeys[i] == "ui.settings.volume_voice") // voice-over on/off right under the Voice volume
+                        content.AddChild(ToggleRow(Ui.T(VoiceOverLabel), Ui.T(VoiceOverDesc), () => UiSettings.VoiceOver, v => UiSettings.VoiceOver = v));
                 }
                 content.AddChild(ToggleRow(Ui.T("ui.settings.mute_unfocused"), "", () => UiSettings.MuteUnfocused, v => UiSettings.MuteUnfocused = v));
                 break;

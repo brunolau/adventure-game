@@ -40,8 +40,12 @@ UI code changed), `item_select`, `item_deselect`, `item_added`, `new_goal` (acti
 `puzzle_success`, `puzzle_fail` (`GameRuntime.PuzzleSubmitted`), `era_transition` (`EraChanged`),
 `cutscene_start` (mode `Cutscene`), `saved`.
 
-Voice (reserved): when a line is shown and `res://assets/voice/<line_id>.ogg` exists it plays on the
-Voice bus (music ducks −5 dB) and stops when the line changes or is skipped. No voice files yet.
+Voice: when a line is shown and `res://assets/voice/<line_id>.ogg` exists it plays on the
+Voice bus (music ducks −5 dB) and stops when the line changes or is skipped; the dialogue presenter waits for it
+before auto-advancing (`AudioService.VoicePlaying`). The epilogue shots play `epilogue.<n>.line.ogg` through
+`AudioService.PlayVoice(id)` (EndingSequence). Settings → Audio "Hovorené dialógy" (`UiSettings.VoiceOver`, saved as
+`audio/voice_over`, default on): off = no voice line plays (log `AUDIO voice off <id>`), so lines advance on the text
+timing only. Harness override for one run: `-- --voice-over off`. Files and casting: `docs/voice/FULL.md`.
 
 ## API for other code
 

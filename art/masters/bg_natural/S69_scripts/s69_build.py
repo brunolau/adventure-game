@@ -36,7 +36,7 @@ ASSETS = ROOT / "src" / "game" / "assets"
 DATA = ROOT / "src" / "game" / "data"
 STAGE = HERE / "stage"
 REVIEW = ROOT / "art" / "review" / "natural"
-FINAL_VERSION = 6
+FINAL_VERSION = 7   # v7 = v6 relit to the S18 sunset (s69_relight.py, 2026-10-07)
 WORLD_EXT = DATA / "content_ext" / "world_ext.json"
 
 
@@ -197,7 +197,7 @@ BLOCKING = {
     "version": 1,
     "room": "S69",
     "status": "natural blocking of the new 1995 room S69 (content v2 world overlay; docs/story/SOKOLIKOVA_YARD.md). Base: the owner-loved style-test painting art/backgrounds/sokolikova-yard.png, kept pixel-for-pixel outside the added bench, bike, wall painting, chalk tally and hopscotch (art/masters/bg_natural/S69.md).",
-    "note": "The walled courtyard playground between the Sokolikova panel blocks on a June afternoon in 1995, seen from the lawn outside the near wall. Two-point perspective: the right wall's lines meet at VP (-1146, 478), the back wall's at (2836, 470); horizon y ~475, focal ~1988 px (nearly level camera). Camera ~2.45 m above the court (the bench and the 16-inch bike painted by the edit, the right wall ~1.3 m, the low back wall ~0.7 m, the near wall ~1.4 m, the passage ~1.1 m): px per metre at a ground point = (y - 475) / 2.45, hero scale (y - 475) / 729 (0.31 at the passage y 700, 0.74 at the bottom y 1015). The bike was painted ~1.5x too large by the edit and is placed at 0.66 of its perspective size (handlebar ~0.7 m). The court is ~9 m along the back wall. The near wall in the foreground left is always in front of every actor (foreground mask); the walk area is the court behind it (the left strip between the low back wall and the near wall's top edge, the open centre, the right wall's foot) and stops short of the bench footprint and the overhanging branches at the right. The bike in the left strip is a y-sorted occluder (baseline 836).",
+    "note": "The walled courtyard playground between the Sokolikova panel blocks on a June evening in 1995 at sunset (relit 2026-10-07 to the light of S18 next door, art/masters/bg_natural/S69_v7), seen from the lawn outside the near wall. Two-point perspective: the right wall's lines meet at VP (-1146, 478), the back wall's at (2836, 470); horizon y ~475, focal ~1988 px (nearly level camera). Camera ~2.45 m above the court (the bench and the 16-inch bike painted by the edit, the right wall ~1.3 m, the low back wall ~0.7 m, the near wall ~1.4 m, the passage ~1.1 m): px per metre at a ground point = (y - 475) / 2.45, hero scale (y - 475) / 729 (0.31 at the passage y 700, 0.74 at the bottom y 1015). The bike was painted ~1.5x too large by the edit and is placed at 0.66 of its perspective size (handlebar ~0.7 m). The court is ~9 m along the back wall. The near wall in the foreground left is always in front of every actor (foreground mask); the walk area is the court behind it (the left strip between the low back wall and the near wall's top edge, the open centre, the right wall's foot) and stops short of the bench footprint and the overhanging branches at the right. The bike in the left strip is a y-sorted occluder (baseline 836).",
     "background": "bg_natural/S69.webp",
     "walk_polygon": WALK,
     "walk_band": [701, 1015],

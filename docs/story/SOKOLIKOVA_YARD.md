@@ -44,7 +44,7 @@ overlay shape, `core_requests`, `sk_override_proposals`, `glossary_change`). Eve
 |---|---|
 | id / name | `S69` „Sokolíkovský dvor" (≤ 32; the exit label into it is the same) |
 | era / district / region | 1995 · Dúbravka · map region **Dúbravka 1995** (hub stays S11; S69 is not a hub) |
-| time | 15 June 1995, afternoon (the painting's warm late light; S18 next door is at sunset – acceptable, the walk takes a while; a later S18/S69 light match is optional) |
+| time | 15 June 1995, evening at sunset: the painting was relit on 2026-10-07 to the light of S18 next door (art/masters/bg_natural/S69_v7, S69.md; owner request) |
 | what it is | the walled courtyard ihrisko between the early-1970s panel blocks of Sokolíkova: a long wall of upright concrete panels in the foreground left, a low back wall, a right wall, a worn asphalt court, a birch and a blue spruce behind the back wall, a globe street lamp, the blocks with balconies behind the trees |
 | added to the painting | a green wooden bench on the right edge of the court where the grass bank begins; a small child's bike with stabiliser wheels leaning on it; a chalk hopscotch (8 squares and a half-circle) on the court; the school club's painting (four shapes; three waves, two strokes, six pieces – the same content and colours as the S17 sign) across three panels of the right wall next to the passage; a column of chalk tally marks on one panel (Kubo's days to the holidays) |
 | background asset | `bg/S69.webp` (1920 × 1080 from the 2752 × 1536 painting: scale to height 1080, crop 7 px each side), music `music/1995.ogg`, camera family `S69` (its own) |

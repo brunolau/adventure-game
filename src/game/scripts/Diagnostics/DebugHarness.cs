@@ -22,7 +22,7 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>dblclick</c>/<c>move</c>/<c>keyev</c>/<c>keydown</c>/<c>keyup</c> inject real input events through Godot's pipeline, GUI first),
 /// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--perf [n]</c> / <c>--no-preload</c> (PerfProbe.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
-/// <c>--markers</c> (Space markers on, as if Space were held), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
+/// <c>--markers</c> (Space markers on, as if Space were held), <c>--clips</c> (log each NPC's clip per screenshot frame), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--voice-over on|off</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
 /// (resolver, walking, re-resolve on arrival, commit). Autosave is off unless <c>--autosave</c>.
 /// Prints <c>HARNESS ...</c> lines to stdout for scripts. Only debug and editor builds read these
@@ -102,6 +102,11 @@ public partial class DebugHarness : Node
             PresentationSettings.AutoAdvanceBaseSeconds = 0.25f;
             PresentationSettings.AutoAdvancePerCharSeconds = 0.004f;
             PresentationSettings.CutsceneMinDurationScale = 0f;
+        }
+        if (Get("voice-over") is { } vo) // QA: --voice-over on|off overrides the setting for this run (not saved)
+        {
+            LastBell.Game.UI.Settings.UiSettings.VoiceOver = vo != "off";
+            Log($"voice-over {(LastBell.Game.UI.Settings.UiSettings.VoiceOver ? "on" : "off")}");
         }
         if (Has("lines") && DialoguePresenter.Instance is { } presenter)
             presenter.LineShown += l => Log($"line {l.Line.LineId} [{l.Line.SpeakerId}] {l.Speaker}: {l.Text}");
@@ -425,7 +430,17 @@ public partial class DebugHarness : Node
             await ToSignal(RenderingServer.Singleton, RenderingServerInstance.SignalName.FramePostDraw);
             string file = frames == 1 ? path : NumberedPath(path, i);
             SaveViewport(file);
+            if (Has("clips")) LogClips(file); // QA: which clip each NPC shows in this frame (idle / idle_engaged / talk)
         }
+    }
+
+    private static void LogClips(string file)
+    {
+        if (WorldStage.Instance?.Current is not { } room) return;
+        var line = DialoguePresenter.ShowingLineId ?? "-";
+        foreach (var (id, actor) in room.Npcs)
+            if (actor.Visual is LastBell.Game.Living.Actors.SpriteActorVisual v)
+                Log($"clip {System.IO.Path.GetFileName(file)} {id} {v.CurrentClip} line={line}");
     }
 
     private static string NumberedPath(string path, int index)

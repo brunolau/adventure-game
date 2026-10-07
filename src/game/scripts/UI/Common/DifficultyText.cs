@@ -4,14 +4,13 @@ namespace LastBell.Game.UI.Common;
 
 /// <summary>A ui.csv key with the Slovak text the code shows until the row exists in ui.csv.</summary>
 /// <param name="Key">ui.csv key.</param>
-/// <param name="Fallback">Slovak fallback (the draft text).</param>
+/// <param name="Fallback">Slovak fallback (equal to the approved ui.csv text).</param>
 public readonly record struct UiString(string Key, string Fallback);
 
 /// <summary>
-/// UI strings of the difficulty settings (docs/DECISIONS.md "Difficulty settings"). They are DRAFTS waiting for the
-/// owner's approval: the same rows are in <c>docs/writing/out_v3/ui_difficulty.csv</c> (keys,sk_new,note). Until the
-/// orchestrator adds them to ui.csv, <see cref="Theme.Ui.T(UiString, (string, string)[])"/> shows these fallbacks; after
-/// the apply the table wins, so a fallback here never needs to change with an approved wording.
+/// UI strings of the difficulty settings (docs/DECISIONS.md "Difficulty settings"). Approved by the owner on 2026-10-07
+/// (round 2, <c>docs/writing/out_v3/ui_difficulty.csv</c>) and live in ui.csv; the table wins over these fallbacks
+/// (<see cref="Theme.Ui.T(UiString, (string, string)[])"/>), which are kept equal to the approved texts.
 /// </summary>
 public static class DifficultyText
 {
@@ -53,7 +52,7 @@ public static class DifficultyText
 
     /// <summary>Hint screen: Standard after both levels.</summary>
     public static readonly UiString StandardEnd = new("ui.hint.standard_end",
-        "Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže ľahká obťažnosť – prepneš ju v nastaveniach na karte Hra.");
+        "Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže nápoveda na ľahkej obťažnosti – prepneš na ňu v nastaveniach na karte Hra.");
 
     /// <summary>Hint screen: Hard while the nudge is not open yet ({time} = m:ss).</summary>
     public static readonly UiString HardWait = new("ui.hint.hard_wait", "Do postrčenia zostáva {time}.");
@@ -85,7 +84,7 @@ public static class DifficultyText
     /// <summary>One-line description of a difficulty.</summary>
     public static UiString Description(Difficulty d) => d switch
     {
-        Difficulty.Easy => new("ui.difficulty.easy_desc", "Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie vyplní."),
+        Difficulty.Easy => new("ui.difficulty.easy_desc", "Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie doplní."),
         Difficulty.Hard => new("ui.difficulty.hard_desc", "Iba krátke postrčenie, a to až po troch minútach bez pokroku. Hádanky bez pomoci."),
         _ => new("ui.difficulty.standard_desc", "Nápoveda ťa postrčí a povie, kde hľadať. Riešenie nechá na tebe."),
     };

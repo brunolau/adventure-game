@@ -11,6 +11,7 @@ using LastBell.Game.Runtime;
 using LastBell.Game.UI;
 using LastBell.Game.UI.Cutscenes;
 using LastBell.Game.UI.Menus;
+using LastBell.Game.UI.Settings;
 
 namespace LastBell.Game.Audio;
 
@@ -117,6 +118,7 @@ public partial class AudioService : Node
         WorldHooks.RoomBuilt += OnRoomBuilt;
         WorldHooks.RoomRefreshed += OnRoomRefreshed;
         GetTree().NodeAdded += OnNodeAdded;
+        UiSettings.Changed += OnSettingsChanged;
         CallDeferred(MethodName.LateInit);
         Log($"ready: {Catalog.Tracks.Count} music tracks, {Catalog.AmbienceLibrary.Count} ambience sounds in {Catalog.RoomAmbience.Count} rooms, {Catalog.Sfx.Count} sfx ids");
     }
@@ -133,6 +135,7 @@ public partial class AudioService : Node
     public override void _ExitTree()
     {
         if (Instance == this) Instance = null;
+        UiSettings.Changed -= OnSettingsChanged;
         foreach (var player in FindChildren("*", "AudioStreamPlayer", true, false).Concat(FindChildren("*", "AudioStreamPlayer2D", true, false)))
         {
             if (player is AudioStreamPlayer p) { p.Stop(); p.Stream = null; }
@@ -305,16 +308,37 @@ public partial class AudioService : Node
     private void OnLineShown(SubtitleLine line)
     {
         if (line.Line.IsCutscene) cutsceneId = line.Line.SourceId;
-        voiceLine = line.Line.LineId;
-        string path = $"voice/{line.Line.LineId}.ogg";
-        if (!string.IsNullOrEmpty(line.Line.LineId) && AudioStreams.Exists(path) && AudioStreams.GetOneShot(path) is { } stream)
+        PlayVoiceLine(line.Line.LineId);
+    }
+
+    /// <summary>
+    /// Plays <c>assets/voice/&lt;lineId&gt;.ogg</c> on the Voice bus (null or a missing file stops the voice). Used by the
+    /// dialogue presenter's lines and by screens that show a line themselves (the epilogue shots). Nothing plays while
+    /// the voice-over setting is off (<see cref="UiSettings.VoiceOver"/>).
+    /// </summary>
+    public static void PlayVoice(string? lineId) => Instance?.PlayVoiceLine(lineId);
+
+    private void PlayVoiceLine(string? lineId)
+    {
+        voiceLine = lineId;
+        string path = $"voice/{lineId}.ogg";
+        if (UiSettings.VoiceOver && !string.IsNullOrEmpty(lineId) && AudioStreams.Exists(path) && AudioStreams.GetOneShot(path) is { } stream)
         {
             voice.Stream = stream;
             voice.Play();
             music.SetDuck(-5f);
-            Log($"voice {line.Line.LineId}");
+            Log($"voice {lineId}");
         }
-        else StopVoice();
+        else
+        {
+            if (!UiSettings.VoiceOver && !string.IsNullOrEmpty(lineId) && AudioStreams.Exists(path)) Log($"voice off {lineId}");
+            StopVoice();
+        }
+    }
+
+    private void OnSettingsChanged()
+    {
+        if (!UiSettings.VoiceOver && voice.Playing) StopVoice(); // switched off while a line was speaking
     }
 
     private void OnActiveLineChanged(string? lineId)

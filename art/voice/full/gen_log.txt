@@ -1,0 +1,753 @@
+1974 lines to take, 101482 chars; logged spend so far $0.538
+100 done, spend $0.538
+200 done, spend $0.863
+300 done, spend $1.140
+400 done, spend $1.428
+500 done, spend $1.734
+600 done, spend $2.025
+700 done, spend $2.313
+800 done, spend $2.577
+900 done, spend $2.848
+FAILED topic.LIDA.ambient 1.x02 google/gemini-3.8-flash-tts failed: HTTP 504: {"detail":[{"loc":["body"],"msg":"Downstream service unavailable","type":"downstream_service_unavailable","url":"https://docs.fal.ai/errors#downstream_service_unavailable","input":{"prompt":"Rudo, priamo na javisku. Prvú vetu už má.","style_instructions"
+1000 done, spend $3.131
+1100 done, spend $3.405
+1200 done, spend $3.692
+1300 done, spend $4.009
+1400 done, spend $4.299
+FAILED topic.BORIS.extra 1.001 google/gemini-3.8-flash-tts failed: HTTP 504: {"detail":[{"loc":["body"],"msg":"Downstream service unavailable","type":"downstream_service_unavailable","url":"https://docs.fal.ai/errors#downstream_service_unavailable","input":{"prompt":"Čo je na výstave najstaršie?","style_instructions":"Speak natur
+1500 done, spend $4.570
+1600 done, spend $4.875
+1700 done, spend $5.159
+1800 done, spend $5.417
+1900 done, spend $5.724
+1972 done, 2 failed: ['topic.LIDA.ambient 1.x02', 'topic.BORIS.extra 1.001']
+action.C03.x03 [ROMAN] [['niesol', 'nesol'], ['ju', 'ho']] []
+   script: Niesol som ju ako chladničku, len chladničku je aspoň za čo chytiť.
+   scribe: Nesol som ho ako chladničku, len chladničku je aspoň za čo chytiť
+action.C04.001 [ELA] [['prevzatie', 'prevzate']] []
+   script: Prevzatie sedí. Dopíšem vydanie a súhlas tvojej babky. Zvláštne, jej meno pred chvíľou bledlo. Teraz drží.
+   scribe: Prevzate sedí, dopíšem vydanie a súhlas tvojej babky. Zvláštne, jej meno pred chvíľou bledlo. Teraz drží.
+topic.ELA.extra 2.001 [ADAM] [['ako', 'aka'], ['sa', 'som']] []
+   script: Ako sa má malá? Teda, asi už nie taká malá.
+   scribe: Aká som ma malá? Teda asi už nie taká malá
+action.C01.x01 [ADAM] [['babka', 'mapka']] []
+   script: Babka, som späť. Aspoň v správnom roku. Musím ti niečo ukázať.
+   scribe: Mapka, som späť. Aspoň v správnom roku. Musím ti niečo ukázať
+action.C01.006 [ADAM] [] ['rate 23.5 chars/s']
+   script: Tak sa za ním zastavím.
+   scribe: Tak sa za ním zastavím.
+topic.MIRA20.extra 3.001 [ADAM] [['aky', 'ake']] ['rate 22.4 chars/s']
+   script: Aký bol Oto, keď ste spolu robili?
+   scribe: Aké bolo to, keď ste spolu robili?
+topic.MIRA20.extra 3.002 [MIRA20] [['', 'o'], ['oto', 'tom']] []
+   script: Presný. Mala som dvadsaťdva a myslela som si, že viem všetko. Oto ma každý deň opravil.
+   scribe: Presný. Mala som dvadsaťdva a myslela som si, že viem všetko. O tom ma každý deň opravil
+action.C05.x01 [ADAM] [['odtlacok', 'otlacok']] []
+   script: Odtlačok, kazeta, protokol a mostík. Babka, teraz to všetko priložím k tvojmu prístroju.
+   scribe: Otláčok, kazeta, protokol a mostík. Babka, teraz to všetko priložím k tvojmu prístroju
+action.C05.001 [SYSTEM] [] ['rate 4.3 chars/s']
+   script: Pôvod 1962. Hlas 1995. Súhlas 2020. Cieľ fondu: Atlas, Jasná, 2035.
+   scribe: Pôvod 1962, hlas 1995, súhlas 2020. Cieľ fondu Atlas Jasná 2035
+action.C05.k01 [SYSTEM] [['grand', 'grant']] []
+   script: Kurátorka fondu: Nina Švecová, Grand Jasná.
+   scribe: Kurátorka fondu Nina Švecová, Grant Jasná
+action.C05.x02 [ADAM] [['hovori', 'hovorim']] []
+   script: To nie je ozvena, babka. To je tvoj prístroj. Hovorí o roku 2035.
+   scribe: To nie je Ozvena, babka. To je tvoj prístroj. Hovorím o roku 2035
+cutscene.CS05.01.001 [SYSTEM] [] ['rate 6.8 chars/s']
+   script: Následný správca fondu: Atlas. Jasná. Rok 2035.
+   scribe: Následný správca fondu Atlas, Jasná, rok 2035.
+travel.S51.to_S07.first.001 [ADAM] [['grobu', 'hrobu']] []
+   script: Späť do Čiernej Vody. Odtiaľ už do Grobu trafím aj poslepiačky.
+   scribe: Späť do Čiernej Vody. Odtiaľ už do hrobu trafím aj poslepiačky
+action.D04.001 [SYSTEM] [] ['rate 6.7 chars/s']
+   script: Zhodná lokálna referencia. Dúbravka, 7. decembra 1982.
+   scribe: Zhodná lokálna referencia: Dúbravka, 7. decembra 1982.
+action.D02.x03 [ADAM] [['ako', 'jak']] []
+   script: Na diaľku? Ako sa človek púšťa do kabinetu na diaľku?
+   scribe: Na diaľku? Jak sa človek púšťa do kabinetu na diaľku?
+topic.TONO20.extra 3.004 [TONO20] [['lebo', 'alebo']] []
+   script: Lebo sa vracia na to isté miesto. Mne sa to v dvanástich zdalo ako dobrý plán.
+   scribe: Alebo sa vracia na to isté miesto. Mne sa to v dvanástich zdalo ako dobrý plán
+entry.S53.001 [ADAM] [['prezuviek', 'prezuvok']] []
+   script: Keď som sem chodil, bez prezuviek ma nepustili. Dnes zas bez rúška a dezinfekcie.
+   scribe: Keď som sem chodil, bez prezúvok ma nepustili. Dnes zas bez rúška a dezinfekcie
+action.D03.001 [ADAM] [['siedmeho', '7'], ['oto', 'otto']] []
+   script: Siedmeho decembra 1982, zapísal Oto Bielik. Poznámka: pri príprave pomáhal vnuk Anton.
+   scribe: 7. decembra 1982 zapísal Otto Bielik. Poznámka: Pri príprave pomáhal vnuk Anton.
+topic.JANA20.ambient 1.x01 [JANA20] [['kazde', 'kazda']] []
+   script: Stratí. Ale kedysi sme mesiac hľadali mikroskop a teraz viem, kde je každé pravítko.
+   scribe: Stráti. Ale kedysi sme mesiac hľadali mikroskop a teraz viem, kde je každá pravítko
+action.B01.002 [ADAM] [['hlasit', 'ale'], ['sa', 'asi'], ['ako', 'akoze'], ['ziak', 'jak']] []
+   script: Hlásiť sa treba u školníka. Ako žiak som k nemu chodil len po zabudnuté prezuvky.
+   scribe: Ale asi treba u školníka. Akože jak som k nemu chodil len po zabudnuté prezúvky
+action.B02.x01 [TONO] [['na', ''], ['oznam', 'naozaj']] []
+   script: Na oznam? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby.
+   scribe: Naozaj? Ten visí od pondelka. Myslel som, že ho čítajú už len holuby.
+action.B02.x03 [TONO] [['holuby', ''], ['nie', 'holubine']] []
+   script: Holuby nie. Ukážte, čo to máte.
+   scribe: Holubiné. Ukážte, čo to máte.
+action.E11.006 [TONO] [['detskom', 'deckom']] []
+   script: Keď menili lavičku, nedal som dutinu zamurovať. Tu je nový nákres: rad dva, stĺpec tri, ako na mojom detskom.
+   scribe: Keď menili lavičku, nedal som dutinu zamurovať. Tu je nový nákres. Rad dva, stĺpec tri. Ako na mojom deckom
+action.Q5B.x01 [TONO] [['ako', 'jak']] []
+   script: Biela, nepoužitá. Tie použité sú kratšie ako malíček a učitelia ich aj tak nevracajú.
+   scribe: Biela, nepoužitá. Tie použité sú kratšie jak malíček a učitelia ich aj tak nevracajú
+topic.TONO.ambient 1.002 [ADAM] [['', 'ved'], ['veci', 'si']] []
+   script: Veci?
+   scribe: Veď si.
+topic.TONO.extra 2.001 [ADAM] [['pocut', ''], ['az', 'pocujes']] []
+   script: Je krúžok počuť až sem?
+   scribe: Je krúžok počuješ sem?
+topic.TONO.extra 2.002 [TONO] [['ako', 'jak']] []
+   script: Dnes áno. Nahrávajú zvuky školy, tak deti skúšajú, ako znejú dvere.
+   scribe: Dnes áno. Nahrávajú zvuky školy, tak deti skúšajú, jak znejú dvere.
+topic.TONO.extra 3.003 [ADAM] [['a', 'na']] []
+   script: A ktoré sú najťažšie?
+   scribe: Na ktoré sú najťažšie?
+action.B03.x09 [ADAM] [['raz', 'mraz']] []
+   script: Nech nahráva. Raz bude rád, že to má.
+   scribe: Nech nahráva. Mráz bude rád, že to má
+topic.MIRA95.ambient 1.002 [ADAM] [] ['rate 22.3 chars/s']
+   script: Ja to počujem dodnes.
+   scribe: Ja to počujem dodnes
+topic.MIRA95.ambient 1.x01 [ADAM] [['a', '']] []
+   script: A ako znie prestávka v deväťdesiatom piatom?
+   scribe: Ako znie prestávka v deväťdesiatom piatom?
+topic.MIRA95.ambient 2.002 [ADAM] [['rodinna', 'rodina']] []
+   script: Možno rodinná chyba.
+   scribe: Možno rodina chyba
+topic.MIRA95.ambient 2.003 [MIRA95] [['', 'je'], ['ju', 'on'], ['neopravuj', 'neopravovy']] []
+   script: Tak ju neopravuj. Funguje.
+   scribe: Tak je on neopravový. Funguje?
+topic.MIRA95.extra 3.001 [ADAM] [] ['rate 22.9 chars/s']
+   script: Ako sa vám teraz žije v Dúbravke?
+   scribe: Ako sa vám teraz žije v Dúbravke?
+topic.LEA95.ambient 1.x02 [LEA95] [['', 'pan'], ['pana', 'na']] []
+   script: Zvonenie na prestávku, kvapkajúci kohútik, pána, čo kŕmi holuby, a jedno kýchnutie.
+   scribe: Zvonenie na prestávku, kvapkajúci kohútik, pán, na čo kŕmi holuby a jedno kýchnutie.
+topic.LEA95.ambient 1.x03 [LEA95] [['je', '']] []
+   script: Za to kýchnutie sa ospravedlňovali celý týždeň. Na nahrávke je najlepšie.
+   scribe: Za to kýchnutie sa ospravedlňovali celý týždeň. Na nahrávke najlepšie.
+topic.LEA95.after.x02 [ADAM] [] ['rate 6.7 chars/s']
+   script: A text má?
+   scribe: A text má?
+entry.S15.001 [ADAM] [['ako', 'akoze'], ['ziak', 'jak']] []
+   script: Fyzikálny kabinet. Ako žiak som sa tu nesmel ničoho dotknúť. Teraz to bude moja práca.
+   scribe: Fyzikálny kabinet. Akože jak som sa tu nesmel ničoho dotknúť. Hm, teraz to bude moja práca
+action.Q9D.002 [ADAM] [['hrubsi', 'hrubsie']] []
+   script: Ten zošit bude ešte hrubší.
+   scribe: Ten zošit bude ešte hrubšie.
+action.B12.002 [ADAM] [['ju', 'mu'], ['k', '']] []
+   script: Potom ju dám do brašne k chronometru. Jeho pole ju ochráni.
+   scribe: Potom mu dám do brašne chronometru. Jeho pole ju ochráni
+action.Q4A.001 [EMIL] [] ['pause 1.88 s']
+   script: Štyri zastávky, moja vlastná skladba. Koniec som mal zapísaný v knihe a tú som predal Viere do antikvariátu.
+   scribe: Štyri zastávky. Moja vlastná skladba. Koniec som mal zapísaný v knihe a tú som predal Viere do antikvariátu
+action.Q4A.002 [ADAM] [['jej', 'aj']] []
+   script: Tak sa jej na tie noty spýtam.
+   scribe: Tak sa aj na tie noty spýtam.
+action.Q4C.x01 [ADAM] [['noty', 'tie']] []
+   script: Noty od Viery. Ležali v knihe o vtákoch.
+   scribe: No tie od Viery ležali v knihe o vtákoch.
+topic.EMIL.ambient 1.x01 [EMIL] [['a', '']] []
+   script: A zákazníci si to všimnú?
+   scribe: Zákazníci si to všimnú?
+topic.EMIL.ambient 2.x02 [ADAM] [['nahnevala', 'nanevala']] []
+   script: A nahnevala sa?
+   scribe: A naňevala sa?
+topic.EMIL.extra 2.004 [EMIL] [['s', 'za']] []
+   script: Nie. Behal som vonku s harmonikou.
+   scribe: Nie. Behal som vonku za harmonikou
+action.B05.x02 [PALI] [['ja', '']] []
+   script: Ja som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý.
+   scribe: Som Pali. A magnetofón ešte ráno hral, však? To mi tu hovorí každý.
+action.B05.k03 [PALI] [['jurom', 'jurajom']] []
+   script: Za Jurom do kazetového klubu v Ružinove. S páskami čaruje, nie nadarmo mu hovoria Juro Kazeta.
+   scribe: Za Jurajom do kazetového klubu v Ružinove. S páskami čaruje, nie nadarmo mu hovoria Juro Kazeta.
+topic.PALI.ambient 1.001 [ADAM] [['aku', 'kudy'], ['davas', 'mas']] []
+   script: Akú dávaš záruku?
+   scribe: A kudy máš záruku?
+topic.PALI.extra 1.003 [ADAM] [['a', ''], ['co', 'o'], ['mu', 'comu']] []
+   script: A čo mu bolo?
+   scribe: O čomu bolo?
+topic.PALI.extra 1.006 [PALI] [['pocuva', 'pocuvaj'], ['ju', 'ho']] []
+   script: Počúva ju dodnes. Vraj si zvykol.
+   scribe: Počúvaj ho dodnes. Vraj si zvykol
+topic.PALI.extra 2.004 [PALI] [['ja', 'hej']] []
+   script: Ja áno. Dcéra si raz jeden zobrala do copu a vyťahala ho. Susedov magnetofón s ním potom spieval basom.
+   scribe: Héj áno, dcéra si raz jeden zobrala do copu a vyťahala ho. Susedov magnetofón s ním potom spieval basom.
+entry.S25.001 [ADAM] [['naco', 'na'], ['mi', 'com']] []
+   script: Miletička. Tu nájdem každú súčiastku aj predavača, ktorý sa spýta, načo mi je.
+   scribe: Miletička. Tu nájdem každú súčiastku aj predávača, ktorý sa spýta, na čom je
+topic.TRH.ambient 1.x02 [ADAM] [['prsi', 'prisli']] []
+   script: A keď prší v nedeľu?
+   scribe: A keď prišli v nedeľu
+topic.TRH.ambient 2.001 [FERO] [['ako', 'jak']] []
+   script: Záleží, ako veľmi ich človek potrebuje. Ale školskému rozhlasu pomôžeme.
+   scribe: Záleží, jak veľmi ich človek potrebuje, ale školskému rozhlasu pomôžeme
+topic.TRH.extra 1.004 [FERO] [['ako', 'jak']] []
+   script: Walkmany žerú batérie ako deti cukríky. Ja len dopĺňam zásoby.
+   scribe: Walkmany žerú batérie jak deti cukríky. Ja len doplňam zásoby
+action.B07.x02 [JURO] [['podaj', 'podej']] []
+   script: Juro Kazeta, to som ja. Podaj mi ju, ale drž ju za puzdro, nie za pásku. Páska si pamätá každý prst.
+   scribe: Juro, kazeta, to som ja. Podej mi ju, ale drž ju za puzdro, nie za pásku. Páska si pamätá každý prst.
+action.B07.x04 [JURO] [['sluchadiel', 'sluchadok']] []
+   script: Fero mi predal prvý walkman a Milada mi obšila kábel od slúchadiel. Povedz, že ťa posielam ja.
+   scribe: Fero mi predal prvý walkman a Milada mi obšila kábel od slúchadok. Povedz, že ťa posielam ja.
+topic.JURO.ambient 1.001 [JURO] [['priznaju', 'priznavaju']] []
+   script: Majú stranu A aj B. Aspoň priznajú, že sa na vec dá pozrieť z dvoch strán.
+   scribe: Majú stranu A aj B. Aspoň priznávajú, že sa na vec dá pozrieť z dvoch strán.
+topic.JURO.ambient 1.x03 [JURO] [['poskriabes', 'poskrabes']] []
+   script: Pri platni. Tam ceruzkou poškriabeš celú stranu A.
+   scribe: Pri platni tam ceruzkou poškrabeš celú stranu a
+topic.JURO.extra 2.002 [JURO] [['zase', 'zasa']] []
+   script: Lebo sem nedočuť električky. A susedia zase nepočujú nás.
+   scribe: Lebo sem nedočuť električky a susedia zasa nepočujú nás
+topic.MILADA.ambient 1.001 [MILADA] [['vetu', 'ved']] []
+   script: Vetu „vždy to tak bolo“.
+   scribe: Veď vždy to tak bolo
+topic.MILADA.ambient 1.x01 [MILADA] [['ju', 'ho']] []
+   script: Pri kabáte stačí párať a šiť. Pri takej vete treba najprv presvedčiť toho, kto ju nosí.
+   scribe: Pri kabáte stačí párať a šiť. Pri takej vete treba najprv presvedčiť toho, kto ho nosí
+topic.MILADA.extra 1.002 [MILADA] [['z', ''], ['trhu', 'sudu']] []
+   script: Osemnásť rokov. Najprv som opravovala nohavice, teraz aj rozhodnutia z trhu.
+   scribe: Osemnásť rokov. Najprv som opravovala nohavice, teraz aj rozhodnutia súdu.
+topic.MILADA.extra 2.002 [MILADA] [['mamy', 'mame']] []
+   script: Mamy pred koncom školského roka. V júni sa trhajú všetky nohavice.
+   scribe: Máme pred koncom školského roka. V júni sa trhajú všetky nohavice
+topic.MILADA.extra 2.003 [ADAM] [['v', 'vy'], ['juni', 'uni']] []
+   script: Prečo práve v júni?
+   scribe: Prečo práve vy, Uni?
+action.B13.x01 [ADAM] [['fondu', 'fonu']] []
+   script: Dobrý deň! Prišiel som kvôli fondu pani Hruškovej.
+   scribe: Dobrý deň, prišiel som kvôli fonu pani Hruškovej.
+action.B13.004 [ADAM] [['ako', 'jak']] []
+   script: Archív je ako servis. Vždy niečo chýba.
+   scribe: Archív je jak servis. Vždy niečo chýba
+topic.ARCHIVAR.extra 1.002 [KAROL] [] ['rate 6.2 chars/s']
+   script: Krabica gombíkov a lístok: „Z kabátov našej ulice, 1948 až 1990.“
+   scribe: Krabica gombíkov a lístok z kabátov našej ulice 1948 až 1990.
+topic.ARCHIVAR.extra 2.001 [ADAM] [] ['rate 23.2 chars/s']
+   script: Môžem si odtiaľto niečo požičať domov?
+   scribe: Môžem si odtiaľto niečo požičať domov?
+action.B14.001 [ALENA] [['', 'je']] []
+   script: Technický záber, nie súkromná fotka. Pani Hrušková s vyvolaním súhlasila už pri uložení.
+   scribe: Technický záber nie je súkromná fotka. Pani Hrušková s vyvolaním súhlasila už pri uložení
+action.Q3C.004 [ADAM] [['to', 'a'], ['mu', 'tomu']] []
+   script: To mu zostalo.
+   scribe: A tomu zostalo
+topic.FOTO.ambient 2.x02 [ADAM] [['aj', 'a']] []
+   script: Aj teraz?
+   scribe: A teraz?
+topic.JURAJ.ambient 1.x02 [ADAM] [['a', 'aaa'], ['ktore', 'ktora'], ['tvoje', 'tvoja']] []
+   script: A ktoré je tvoje?
+   scribe: Aaa ktorá je tvoja?
+topic.JURAJ.ambient 2.002 [ADAM] [['na', ''], ['kreslenie', 'nakreslene']] []
+   script: Aj s pečiatkou? Na kreslenie kriedou?
+   scribe: Aj s pečiatkou? Nakreslené kriedou?
+topic.JURAJ.ambient 2.x03 [JURAJ] [['', 'lebo'], ['ona', 'na']] []
+   script: Je dôležitejší. Ona ten podchod potom drhne.
+   scribe: Je dôležitejší, lebo na ten podchod potom drhne
+topic.JURAJ.extra 1.003 [ADAM] [['zhasnut', 'zasnut']] []
+   script: Alebo zabudol zhasnúť.
+   scribe: Alebo zabudol zasnúť
+topic.JURAJ.extra 2.002 [JURAJ] [['zhasnem', ''], ['mu', 'zasiem']] []
+   script: Krieda sa dá zmyť. Keď sa niekto odsťahuje, zhasnem mu okno handrou.
+   scribe: Krieda sa dá zmyť. Keď sa niekto odsťahuje, zásiem okno handrou.
+action.B17.001 [DEZI] [['mirou', 'mirom'], ['stojanu', 'stojanovi']] []
+   script: Túto mapu sme kreslili s Mirou. Tu máš cievku k stojanu na Starom moste. Ešte potrebuješ nezávislý rytmus.
+   scribe: Túto mapu sme kreslili s Mirom. Tu máš cievku k Stojanovi na Starom moste. Ešte potrebuješ nezávislý rytmus
+action.B17.004 [ADAM] [['ako', 'akoze'], ['ziak', 'ak']] []
+   script: Do Sokolíkovského dvora sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu.
+   scribe: Do Sokolíkovského dvora sa vraciam dobrovoľne. Akože ak som tam chodil iba po loptu
+topic.DEZI.ambient 1.x01 [DEZI] [['mne', ''], ['staci', 'nestaci']] []
+   script: Budúcnosť? Mne stačí prítomnosť bez šumu. Včera sa mi ozval chlapík z Nórska a hodinu sme riešili antény.
+   scribe: Budúcnosť? Nestačí prítomnosť bez šumu. Včera sa mi ozval chlapík z Nórska a hodinu sme riešili antény
+topic.DEZI.ambient 2.x03 [DEZI] [['pise', 'pisem']] []
+   script: A ku každému aj výnimku. Tú píše menším písmom, aby ju bolo treba hľadať.
+   scribe: A ku každému aj výnimku. Tú píšem menším písmom, aby ju bolo treba hľadať.
+topic.DEZI.extra 2.003 [ADAM] [['aky', 'aki']] []
+   script: A aký máte vy?
+   scribe: A akí máte vy?
+topic.DEZI.extra 2.006 [DEZI] [['najpresnejsi', 'najpresnejsie']] []
+   script: Najpresnejší, aký mám. Pozná ho celá Petržalka.
+   scribe: Najpresnejšie, aký mám. Pozná ho celá Petržalka
+action.Q3D.x04 [ADAM] [['aj', ''], ['ten', 'najiten']] []
+   script: „Celé družstvo. Aj ten so zmrzlinou.“
+   scribe: Celé družstvo najitén so zmrzlinou
+action.Q11A.009 [ADAM] [['vrchnak', 'vrchnaka']] []
+   script: Vrchnák nájdem a naskrutkujem. Na konci roka budeš zvoniť.
+   scribe: Vrchnáka nájdem a naskrútkujem. Na konci roka budeš zvoniť
+action.Q11C.006 [ADAM] [['s', ''], ['kym', 'scheem']] []
+   script: S kým?
+   scribe: Scheem?
+action.Q11C.010 [ADAM] [['mavam', 'mam']] []
+   script: Skúška vyšla. Mávam s vami.
+   scribe: Skúška vyšla a mám s vami
+topic.ZUZANA95.extra 1.001 [ADAM] [['prepacte', 'prepasce']] []
+   script: Prepáčte, pozeráte sa na mňa, akoby sme sa poznali.
+   scribe: Prepašče, pozeráte sa na mňa, akoby sme sa poznali
+topic.ZUZANA95.extra 5.004 [ZUZANA95] [['mozete', 'mozte']] []
+   script: Môžete si skočiť. Ale iba do štvorky, dospelí ďalej padajú.
+   scribe: Môžte si skočiť, ale iba do štvorky. Dospelí ďalej padajú.
+topic.KUBO.extra 1.003 [ADAM] [['z', 'ste'], ['toho', 'o']] ['rate 22.5 chars/s']
+   script: A čo z toho ťa naučili v škole?
+   scribe: A čo ste o ťa naučili v škole?
+topic.KUBO.extra 2.001 [ADAM] [['ihriska', 'iriska']] []
+   script: Prečo je okolo ihriska taký vysoký múr?
+   scribe: Prečo je okolo Íriska taký vysoký múr?
+topic.KUBO.extra 2.006 [ADAM] [['kolko', 'kokom']] []
+   script: A koľko?
+   scribe: A kokom?
+cutscene.CS03.01.001 [SYSTEM] [] ['rate 5.9 chars/s']
+   script: Ivanka pri Dunaji. 6. júna 1962.
+   scribe: Ivanka pri Dunaji, 6. júna 1962
+action.Q3B.x03 [ADAM] [['', 'to'], ['', 'az'], ['dazdnik', 'nikde']] []
+   script: Ja dáždnik nemám.
+   scribe: Ja to až nikde nemám
+topic.ZITA.ambient 1.001 [ZITA] [['cerstve', 'vcerajsie']] ['rate 23.5 chars/s']
+   script: Čerstvé správy máš v novinách za pár korún. Tie včerajšie ti poviem zadarmo.
+   scribe: Včerajšie správy máš v novinách za pár korún. Tie včerajšie ti poviem zadarmo.
+topic.ZITA.ambient 2.x01 [ZITA] [['vo', ''], ['dvore', 'vodovre']] []
+   script: Je to tá vo dvore za blokom. Prvý deň si na ňu sadli traja a odišli v zelených nohaviciach.
+   scribe: Je to tá vodovre za blokom. Prvý deň si na ňu sadli traja a odišli v zelených nohaviciach
+topic.ZITA.ambient 2.x03 [ZITA] [['', 'nateraz'], ['natreli', 'je']] []
+   script: Bola. Natreli aj tú.
+   scribe: Bola. Nateraz je aj tu.
+topic.ZITA.extra 1.001 [ADAM] [['tu', 'ty']] []
+   script: Čo tu ľudia najčastejšie zabudnú?
+   scribe: Čo ty ľudia najčastejšie zabudnú?
+topic.ZITA.extra 1.002 [ZITA] [['dazdniky', 'dazdniki']] []
+   script: Dáždniky, kľúče a obálky. Raz aj celú tortu.
+   scribe: Dáždniki, kľúče a obálky. Raz aj celú tortu
+topic.ZITA.extra 2.004 [ZITA] [['nesadaj', 'nesedaj']] []
+   script: Bočnou cestičkou medzi blokmi. Len si nesadaj na lavičku, je čerstvo natretá.
+   scribe: Bočnou cestičkou medzi blokmi. Len si nesedaj na lavičku, je čerstvo natretá.
+entry.S31.001 [ADAM] [] ['pause 1.48 s']
+   script: Ivanka, rok 1962. Telefón je tu rovnako zbytočný ako v roku 1995. Ja som o niečo nervóznejší.
+   scribe: Ivanka, rok 1962. Telefón je tu rovnako zbytočný ako v roku 1995. Ja som o niečo nervóznejší
+topic.BOZO.ambient 1.z01 [BOZO] [['skolku', 'skvolku']] []
+   script: A keby ste predsa zablúdili, v parku skáče škôlku malá Zuzka.
+   scribe: A keby ste predsa zablúdili, v parku skáče škvôlku malá Zuzka.
+topic.BOZO.extra 2.003 [BOZO] [['a', ''], ['humnami', 'hubami']] []
+   script: A Malý Dunaj kúsok za humnami. Keď fúka od vody, cítiť ho až na peróne.
+   scribe: Malý Dunaj kúsok za Hubami. Keď fúka od vody, cítiť ho až na peróne.
+topic.BOZO.extra 2.007 [BOZO] [['ja', 'a']] []
+   script: Ja najrýchlejšie. Lietadlá majú tiež cestovný poriadok.
+   scribe: A najrýchlejšie. Lietadlá majú tiež cestovný poriadok
+topic.BOZO.extra 3.002 [BOZO] [['namiereny', 'namiereni']] []
+   script: Kam ste namierený? To je prvá otázka. Bez odpovede vám nepredám ani radu.
+   scribe: Kam ste namierení? To je prvá otázka. Bez odpovede vám nepredám ani radu.
+topic.BOZO.extra 3.003 [ADAM] [['roku', 'rohu']] []
+   script: Úprimne? Do roku… do dielne pána Bielika.
+   scribe: Úprimne? Do rohu, do dielne pána Bielika
+topic.BERTA.ambient 1.x01 [ADAM] [] ['rate 23.0 chars/s']
+   script: A u koho by som tu mohol byť na návšteve?
+   scribe: A u koho by som tu mohol byť na návšteve?
+topic.BERTA.ambient 1.x04 [BERTA] [['tu', 'to']] []
+   script: Tú vylúčim do večera.
+   scribe: To vylúčim do večera
+topic.BERTA.extra 2.003 [ADAM] [['to', ''], ['je', 'ty']] []
+   script: A to je dobre?
+   scribe: A ty dobre?
+topic.BERTA.extra 2.004 [BERTA] [['dychovku', 'dychalku']] []
+   script: Pri správach áno. Dychovku by sme si vedeli zahrať aj sami.
+   scribe: Pri správach áno. Dýchalku by sme si vedeli zahrať aj sami
+action.I02.x03 [STEFAN] [['otov', 'otto']] []
+   script: Podpis je Otov, ten spoznám aj potme.
+   scribe: Podpis je Otto. Ten spoznám aj po tme
+action.I02.001 [STEFAN] [['nity', 'nyty']] []
+   script: Predrezaná koža na manžetu a dva nity. Najprv prerazte označené miesta, potom zanitujte. Lístok si nechám.
+   scribe: Predrezaná koža na manžetu a dva nýty. Najprv prerazte označené miesta, potom zanitujte. Lístok si nechám.
+action.I02.x05 [STEFAN] [['tretej', 'tretie']] []
+   script: Tak o tretej je olovrant. Ten sa vydáva bez lístka.
+   scribe: Tak o tretie je olovrant. Ten sa vydáva bez lístka
+action.Q6B.001 [STEFAN] [['alojzovho', 'alozovho']] []
+   script: Pre Alojzovho Bélu? Tu je jeho zmes. Len ju nasypte do misky a odstúpte, nech sa nesplaší.
+   scribe: Pre Alozovho Belu tu je jeho zmes. Len ju nasypte do misky a odstúpte, nech sa nesplaší.
+action.Q6B.x02 [STEFAN] [['belu', 'bielu']] []
+   script: Na Bélu lístok netreba. Ten je jediný, komu vydávam na slovo.
+   scribe: Na Bielu lístok netreba. Ten je jediný, komu vydávam na slovo.
+action.Q6B.x03 [ADAM] [['jemu', 'emo']] []
+   script: Prečo práve jemu?
+   scribe: Prečo práve emo?
+topic.SKLAD.extra 1.004 [STEFAN] [['nevedieme', 'nevieme']] []
+   script: Tie, kde je napísané „niečo na opravu“. Položku „niečo“ nevedieme. Tú nemá nikto.
+   scribe: Tie, kde je napísané niečo na opravu. Položku niečo nevieme. Tú nemá nikto
+topic.SKLAD.extra 2.005 [STEFAN] [['pre', 'presne'], ['sklad', 'tak'], ['', 'je']] []
+   script: Pre sklad nie. Ja som si myslel, že viem presne, čo máme.
+   scribe: Presne tak nie je. Ja som si myslel, že viem presne, čo máme
+entry.S36.001 [ADAM] [['otova', 'ottova']] []
+   script: Otova dielňa. Prikrytý sústruh, vôňa oleja a tikot budíkov z každého rohu.
+   scribe: Ottova dielňa. Prikrytý sústruh, vôňa oleja a tikot budíkov z každého rohu
+action.I01.002 [ADAM] [['nosil', 'sel']] []
+   script: Nosil. Potrebujem jeho pôvodnú kalibráciu. V budúcnosti niekto maže všetko, čo sa nezhoduje.
+   scribe: No sel. Potrebujem jeho pôvodnú kalibráciu. V budúcnosti niekto maže všetko, čo sa nezhoduje.
+topic.OTO.ambient 1.002 [ADAM] [['a', ''], ['vy', 'aby']] []
+   script: A vy ste z dielne neutiekli?
+   scribe: Aby ste z dielne neutiekli?
+topic.OTO.extra 3.001 [ADAM] [['mirou', 'mirom']] []
+   script: Ako sa vám pracuje s Mirou?
+   scribe: Ako sa vám pracuje s Mirom?
+action.I03.001 [ADAM] [['', 'gula'], ['kulisa', 'sa']] []
+   script: Stačilo dotiahnuť skrutku na svorke. Kulisa drží.
+   scribe: Stačilo dotiahnuť skrutku na svorke. Guľa sa drží.
+action.I03.z02 [ADAM] [['skrutka', 'skratka']] []
+   script: Mala pravdu. Stačila jedna skrutka.
+   scribe: Mala pravdu. Stačila jedna skratka.
+action.I03.004 [ADAM] [['na', 'a']] []
+   script: Na to nemám v brašni správny kľúč.
+   scribe: A to nemám v brašni správny kľúč
+action.I04.001 [ADAM] [['otvory', 'otvori']] []
+   script: Dve značky, dva otvory. Ani o jeden navyše.
+   scribe: Dve značky, dva otvori, ani o jeden navyše
+action.Q7C.x03 [LIDA] [['hned', ''], ['daj', 'nedaj']] []
+   script: Rudo, scenár mi hneď daj. Do premiéry ho zamknem.
+   scribe: Rudo, scenár mi nedaj, do premiéry ho zamknem.
+topic.LIDA.ambient 2.x03 [LIDA] [['', 'tlieska'], ['tlieskaju', 'mu']] []
+   script: Diváci sú z Ivanky. Ten sveter poznajú a tlieskajú mu zvlášť.
+   scribe: Diváci sú z Ivanky. Ten sveter poznajú a tlieska mu mu zvlášť
+topic.LIDA.extra 1.005 [ADAM] [['o', 'no']] []
+   script: O gombíkoch?
+   scribe: No gombíkoch?
+topic.LIDA.extra 2.001 [ADAM] [] ['pause 1.48 s']
+   script: Je pán Pavlík vždy taký… nadšený?
+   scribe: Je pán Pavlík vždy taký nadšený?
+topic.RUDO.extra 1.003 [ADAM] [['vy', 'dvij']] []
+   script: Vy a potichu?
+   scribe: Dvíj a potichu?
+topic.RUDO.extra 1.004 [RUDO] [['vahe', 'bahe']] []
+   script: Na javisku som kráľ. Pri váhe som len Rudo. A Rudo hovorí málo.
+   scribe: Na javisku som kráľ. Pri báhe som len Rudo. A Rudo hovorí málo.
+entry.S37.001 [ADAM] [['skolku', 'svulku']] []
+   script: Park pri kaštieli. Na lavičke niekto kreslí, na chodníku niekto skáče škôlku. Tu sa nikto neponáhľa.
+   scribe: Park pri kaštieli. Na lavičke niekto kreslí, na chodníku niekto skáče švúľku. Tu sa nikto neponáhľa
+action.I10.002 [VERA60] [['rydlo', 'ridlo']] []
+   script: Tak si vezmite moje rydlo. Papier najprv pritlačte, potom obtiahnite hrany. Do platne neryte.
+   scribe: Tak si vezmite moje ridlo. Papier najprv pritlačte, potom obtiahnite hrany. Doplatne neryte
+action.I10.003 [ADAM] [['rydlo', 'ridlo'], ['ryt', 'rit']] []
+   script: Rydlo, ktorým sa nemá ryť. To si zapamätám.
+   scribe: Ridlo, ktorým sa nemá riť. To si zapamätám
+action.I10.z08 [ADAM] [['rydlo', 'ridlo']] []
+   script: Ďakujem obom. Rydlo vám potom vrátim.
+   scribe: Ďakujem obom. Rídlo vám potom vrátim
+action.Q10A.012 [ZUZANA] [['poziciam', 'podiciam']] []
+   script: Požičiam. Ale opatrne, je triedny, nie môj.
+   scribe: Podičiam, ale opatrne. Je triedny, nie môj.
+action.Q10D.006 [ADAM] [['skuska', 'zkuska']] []
+   script: Skúška vyšla.
+   scribe: Zkúška vyšla
+action.Q10D.007 [ZUZANA] [['mozete', 'mozte'], ['skolku', 'kolku']] []
+   script: Ďakujem. Môžete si zaskákať škôlku. Ale iba do štvorky, dospelí ďalej padajú.
+   scribe: Ďakujem. Môžte si zaskákať kôlku, ale iba do štvorky. Dospelí ďalej padajú.
+topic.VERA60.extra 1.001 [ADAM] [['skolku', 'skulku']] []
+   script: To dievčatko, čo skáče škôlku, vám tu robí spoločnosť každý deň?
+   scribe: To dievčatko, čo skáče škuľku vám tu robí spoločnosť každý deň?
+topic.VERA60.extra 2.003 [ADAM] [['a', 'tak']] []
+   script: A čo s tým robíte?
+   scribe: Tak čo s tým robíte?
+topic.ZUZANA.extra 2.003 [ZUZANA] [['z', 'zna'], ['navsi', 'v'], ['chodte', 'psichote']] []
+   script: Z návsi choďte tam, kde vonia koža. To je dvor a tam je ujo Štefan.
+   scribe: Zná v psichote tam, kde vonia koža. To je dvor a tam je ujo Štefan.
+topic.ZUZANA.extra 2.004 [ZUZANA] [['tika', 'tyka']] []
+   script: A za ním tam, kde to tiká zo všetkých strán. To je ujo Oto.
+   scribe: A za ním, tam, kde to tyká zo všetkých strán. To je ujo Oto.
+topic.ZUZANA.extra 2.005 [ADAM] [['tikanie', 'tykanie']] []
+   script: Vôňa kože a potom tikanie. To si zapamätám.
+   scribe: Vôňa kože a potom tykanie. To si zapamätám
+topic.ZUZANA.extra 5.004 [ADAM] [] ['rate 24.0 chars/s']
+   script: A ty vieš, čo to znamená?
+   scribe: A ty vieš, čo to znamená?
+topic.ZUZANA.extra 8.001 [ADAM] [] ['rate 22.3 chars/s']
+   script: Čo budeš robiť cez prázdniny?
+   scribe: Čo budeš robiť cez prázdniny?
+topic.ZUZANA.extra 7.006 [ADAM] [['a', '']] []
+   script: Jedna veta a potom potlesk.
+   scribe: Jedna veta, potom potlesk
+action.I06.001 [ADAM] [['par', ''], ['tahov', 'partaho']] []
+   script: Stará manžeta von, nová dnu. Pár ťahov pumpou a voda znova obieha.
+   scribe: Stará manžeta von, nová dnu, parťaho pumpou a voda znova obieha
+action.I06.002 [ADAM] [['oto', 'otto']] []
+   script: Teraz môže Oto otvoriť meraciu miestnosť.
+   scribe: Teraz môže Otto otvoriť meraciu miestnosť.
+action.I09.005 [MIRA60] [['tupe', ''], ['rydlo', 'tuperidlo']] []
+   script: Urob odtlačok platne. Papier je na povale, tupé rydlo má Vera v parku. A tu je registračný list: pošta potvrdí dátum, kópiu uložíme.
+   scribe: Urob odtlačok platne. Papier je na povale, tuperidlo má Vera v parku a tu je registračný list. Pošta potvrdí dátum, kópiu uložíme.
+action.I09.x04 [MIRA60] [['pozdravuj', ''], ['ju', 'pozdravuju']] []
+   script: Tvoja známa má rozum. Pozdravuj ju.
+   scribe: Tvoja známa má rozum. Pozdravujú
+action.I09.z02 [ADAM] [['skolku', 'skvalku']] []
+   script: Tá, čo skáče škôlku? Videl som ju cestou sem.
+   scribe: Tá, čo skáče škválku? Videl som ju cestou sem.
+action.I09.x05 [ADAM] [['rydlo', 'ridlo']] []
+   script: Takže papier z povaly, rydlo od Very a potom pošta.
+   scribe: Takže papier z povaly, rídlo od véry a potom pošta
+action.I09.x06 [MIRA60] [['napoly', 'napoli']] []
+   script: A hárok nepokrč. Na pokrčenom by bol odtlačok čitateľný len napoly.
+   scribe: A hárok nepokrč. Na pokrčenom by bol odtlačok čitateľný len napoli.
+topic.MIRA60.extra 1.001 [ADAM] [['z', ''], ['parku', ''], ['je', 'sparkuje']] []
+   script: Tá malá Zuzka z parku je všade, kam prídem.
+   scribe: Tá malá Zuzka sparkuje všade, kam prídem
+topic.MIRA60.extra 1.004 [ADAM] [] ['rate 22.9 chars/s']
+   script: A čo ste jej povedali?
+   scribe: A čo ste jej povedali?
+topic.MIRA60.extra 3.001 [ADAM] [['bielik', ''], ['o', 'bieligo']] []
+   script: Pán Bielik o vás hovorí s veľkým rešpektom.
+   scribe: Pán Bieligo vás hovorí s veľkým rešpektom
+action.I17.002 [ADAM] [['odtlacok', 'otlacok']] []
+   script: Odtlačok si beriem so sebou. Ešte ho budem potrebovať.
+   scribe: Otláčok si beriem so sebou, ešte ho budem potrebovať
+action.I17.003 [MIRA60] [['rydlo', 'ridlo']] []
+   script: Tak naň dopíšem číslo uloženia. Platňa aj prvopis zostávajú tu. Rydlo mi nechaj, vrátim ho Vere.
+   scribe: Tak naň dopíšem číslo uloženia. Plaťňa aj prvopis zostávajú tu. Ridlo mi nechaj, vrátim ho Vere.
+action.I14.z03 [ALOJZ] [['ta', 'taaak']] []
+   script: Tá. Chodí sa sem pozerať na nové známky. Kým si ich prezrie, má obkreslené obe ruky.
+   scribe: Taaak, chodí sa sem pozerať na nové známky. Kým si ich prezrie, má obkreslené obe ruky
+action.Q6D.x01 [ALOJZ] [['', 'je']] []
+   script: A keby ste niekedy potrebovali poslať správu, Béla poletí. Nie ďaleko, ale ochotne.
+   scribe: A keby ste niekedy potrebovali poslať správu, Béla poletí. Nie je ďaleko, ale ochotne
+action.Q6D.x03 [ALOJZ] [['bela', 'bla']] []
+   script: Béla netrafí na žiadnu adresu, prosím. Letí len domov. Preto je taký spoľahlivý.
+   scribe: BLA netrafí na žiadnu adresu, prosím. Letí len domov. Preto je taký spoľahlivý
+entry.S41.001 [ADAM] [['jasna', 'jasne']] []
+   script: Jasná o pätnásť rokov neskôr, v plnej zime. Dobre, že mám ešte kabát z decembra 1982.
+   scribe: Jasné, o pätnásť rokov neskôr, v plnej zime. Dobre, že mám ešte kabát z decembra 1982.
+action.Q8A.x04 [ROBOT] [['percent', '%']] []
+   script: Táto možnosť nebola v zadaní. Pravdepodobnosť úspechu zvyšujem na tridsať percent.
+   scribe: Táto možnosť nebola v zadaní. Pravdepodobnosť úspechu zvyšujem na 30 %.
+action.Q8A.x05 [ROBOT] [['percent', '%']] []
+   script: Vy chodíte, ja čakám. V snehu mám úspešnosť jazdy štyridsať percent.
+   scribe: Vy chodíte, ja čakám. V snehu mám úspešnosť jazdy 40 %.
+action.Q8D.001 [ROBOT] [['prijemkyna', 'primenka']] []
+   script: Príjemkyňa potvrdená. Nový bod: opravársky stôl v lobby hotela Grand Jasná.
+   scribe: Prímenka potvrdená. Nový bod: opravársky stôl v lobby hotela Grand Jasná
+topic.ROBOT.ambient 1.001 [ROBOT] [['percent', '%']] []
+   script: Doručené zásielky: deväťdesiatdeväť percent. Pokoj: neznáma veličina.
+   scribe: Doručené zásielky 99 %. Pokoj neznáma veličina.
+topic.ROBOT.ambient 1.002 [ADAM] [['percento', '%']] []
+   script: A to jedno percento?
+   scribe: A to 1 %?
+topic.ROBOT.extra 1.001 [ADAM] [['ako', 'jak']] []
+   script: Ako sa vám jazdí v tomto snehu?
+   scribe: Jak sa vám jazdí v tomto snehu?
+topic.ROBOT.extra 1.004 [ROBOT] [['pritom', 'preto']] []
+   script: Lyžiar a jedno dieťa. Dieťa mi pritom nakreslilo na veko úsmev.
+   scribe: Lyžiar a jedno dieťa. Dieťa mi preto nakreslilo na veko úsmev
+topic.ROBOT.extra 1.006 [ROBOT] [['mi', ''], ['s', ''], ['nim', 'mysnim']] []
+   script: Áno. Podľa štatistiky mi s ním ľudia pomáhajú o tretinu ochotnejšie.
+   scribe: Áno, podľa štatistiky myšním ľudia pomáhajú o tretinu ochotnejšie.
+topic.ROBOT.extra 2.002 [ADAM] [['akeho', 'co']] []
+   script: Akého?
+   scribe: No a čo?
+topic.ROBOT.extra 2.004 [ADAM] [['nie', ''], ['je', 'neni']] []
+   script: To nie je málo.
+   scribe: To neni málo
+action.F01.x02 [NINA] [['hru', 'hr']] []
+   script: Po písmenách. Pred minútou ste tu boli celý, teraz už len „Adam Hru“.
+   scribe: Po písmenách. Pred minútou ste tu boli celý, teraz už len Adam Hr.
+action.F01.003 [NINA] [['vystavu', 'vystavbu']] []
+   script: Atlas má výstavu v hoteli a pavilón na Chopku. Lanovky idú normálne, ale náš prístroj spätne prepisuje záznamy ľudí.
+   scribe: Atlas má výstavbu v hoteli a pavilón na Chopku. Lanovky idú normálne, ale náš prístroj spätne prepisuje záznamy ľudí
+topic.NINA.ambient 1.x02 [ADAM] [['plni', ''], ['ju', 'planuju']] []
+   script: A plní ju?
+   scribe: A plánujú?
+entry.S43.001 [ADAM] [['zbalim', ''], ['aj', 'zbalime']] []
+   script: Opravársky stôl v hotelovom lobby. Nabudúce si na dovolenku zbalím aj pokazený magnetofón.
+   scribe: Opravársky stôl v hotelovom lobby. Nabudúce si na dovolenku zbalíme pokazený magnetofón
+action.F02.x07 [TAMARA] [['', 'mne'], ['', 'to'], ['vitaj', 'je']] []
+   script: Vitaj v klube. Ja si pri každom origináli sadám na ruky.
+   scribe: Mne to je v klube. Ja si pri každom origináli sadám na ruky
+topic.TAMARA.ambient 1.x04 [TAMARA] [['', 'dobre'], ['opravar', 'var']] []
+   script: Tipuješ dobre. Ty si fakt opravár.
+   scribe: Tipuješ dobre. Ty si fakt dobré var.
+topic.TAMARA.ambient 2.001 [TAMARA] [['na', 'nakaze'], ['kazete', 'ta'], ['vidis', 'vidi']] []
+   script: Na kazete aspoň vidíš, že sa niečo točí.
+   scribe: Nakaze ťa aspoň vidí, že sa niečo točí
+topic.TAMARA.ambient 2.x01 [TAMARA] [['a', '']] []
+   script: Vidíš kontrolku. A tá svieti, aj keď vnútri všetko spí.
+   scribe: Vidíš kontrolku? Tá svieti, aj keď vnútri všetko spí.
+topic.TAMARA.extra 3.002 [TAMARA] [['tu', ''], ['mas', 'tomas']] []
+   script: Sľub je sľub. Tu máš, bez cukru.
+   scribe: Sľub je sľub. Tomáš bez cukru
+topic.TAMARA.extra 3.004 [TAMARA] [['opravari', 'hopravari']] []
+   script: Opravári nemajú čas miešať.
+   scribe: Hopravári nemajú čas miešať
+action.F03.x02 [BORIS] [['priat', 'prijat']] []
+   script: Ukážte. Dva podpisy, dátum a súhlas majiteľky. Krajší papier si archivár nemôže priať.
+   scribe: Ukážte. Dva podpisy, dátum a súhlas majiteľky. Krajší papier si archivár nemôže prijať
+action.F03.x04 [BORIS] [['normalizatoru', 'normalizatorovi']] []
+   script: Normalizátoru áno. Smiech nemá kolónku, a čo nemá kolónku, to je preň šum.
+   scribe: No normalizátorovi áno. Smiech nemá kolónku a čo nemá kolónku, to je preň šum
+action.F03.x05 [ADAM] [['vie', 'viete']] []
+   script: Vie o tom Viktor?
+   scribe: Viete o tom Viktor?
+topic.BORIS.ambient 1.x02 [ADAM] [['kopii', 'kupi']] []
+   script: A škvrna od kávy na kópii nie je?
+   scribe: A škvrna od kávy na kupi nie je?
+topic.JANA35.extra 2.004 [JANA35] [['a', 'aj'], ['mu', 'u']] []
+   script: Aj. A ja som mu ich opravovala, krídla mali vždy zlý uhol.
+   scribe: Aj, aj ja som u ich opravovala. Krídla mali vždy zlý uhol
+topic.SARA.ambient 2.001 [SARA] [['mena', 'menam']] []
+   script: Keď mená miznú zo systému, zapisujem ich sem perom.
+   scribe: Keď menám miznu zo systému, zapisujem ich Semperom.
+topic.SARA.extra 3.003 [ADAM] [['tie', 'ty']] []
+   script: A tie mená?
+   scribe: A ty mená?
+entry.S67.001 [ADAM] [['priehyba', 'prehyba'], ['prestupujem', 'prestupim']] []
+   script: Priehyba. Tentoraz prestupujem len na inú lanovku, nie do iného roku.
+   scribe: Prehyba. Tentoraz prestúpim len na inú lanovku, nie do iného roku
+action.J03.x01 [IVAN] [['lyze', 'lyzenie'], ['nemate', 'mate']] []
+   script: Dobrý deň. Lístok, prosím. Lyže nemáte?
+   scribe: Dobrý deň, lístok prosím. Lyženie máte?
+action.J03.002 [ADAM] [['dveri', 'dvere']] []
+   script: Až v cieli? Výborne. Dnes som prešiel cez dosť dverí, za ktorými bol iný rok.
+   scribe: Až v cieli? Výborne. Dnes som prešiel cez dosť dvere, za ktorými bol iný rok.
+topic.IVAN.ambient 2.002 [ADAM] [['a', '']] []
+   script: A keď sa zatiahne, podľa čoho sa mám riadiť?
+   scribe: Keď sa zatiahne, podľa čoho sa mám riadiť?
+topic.IVAN.ambient 2.x03 [IVAN] [['vytiahnite', 'vytiahnete']] []
+   script: Mínus štrnásť a vietor, čiže obyčajný február. Šál si vytiahnite aj na nos.
+   scribe: Mínus štrnásť a vietor, čiže obyčajný február. Šál si vytiahnete aj na nos.
+topic.IVAN.extra 1.002 [IVAN] [['dohaduje', 'dohada']] []
+   script: Visí na dvoch lanách naraz. Vietor sa s ním dohaduje oveľa ťažšie.
+   scribe: Visí na dvoch lanách naraz. Vietor sa s ním doháda oveľa ťažšie
+topic.IVAN.extra 1.005 [ADAM] [['ten', 'ty'], ['je', 'nie']] []
+   script: Ten je v každej kabíne?
+   scribe: Ty nie v každej kabíne?
+topic.IVAN.extra 2.003 [ADAM] [['', 'da'], ['ved', 'sa'], ['hore', 'hovorit']] []
+   script: Veď hore.
+   scribe: Dá sa hovoriť.
+topic.TURISTA.ambient 1.x04 [TURISTA] [['jasno', 'jasnu']] []
+   script: Tá s hmlou. Jasno má na fotke každý.
+   scribe: Tá s hmlou. Jasnú má na fotke každý
+topic.TURISTA.ambient 2.001 [TURISTA] [['otcom', 'ockom']] []
+   script: S otcom. Nepamätám si, kde sme jedli. Pamätám si, že sa smial.
+   scribe: S Ockom. Nepamätám si, kde sme jedli. Pamätám si, že sa smial
+topic.TURISTA.ambient 2.x01 [TURISTA] [['lyze', 'lize']] []
+   script: Smial sa, lebo som mal celý deň lyže nakrivo.
+   scribe: Smial sa, lebo som mal celý deň líže nakrivo
+topic.TURISTA.extra 1.002 [TURISTA] [['ako', 'jak']] []
+   script: Balím ako otec: termosku, rezne v alobale a náhradné rukavice.
+   scribe: Balím jak otec. Termosku, rezne v alobale a náhradné rukavice.
+topic.TURISTA.extra 1.003 [ADAM] [['rezne', 'rezna']] []
+   script: Rezne na Chopok?
+   scribe: Rezňa na Chopok?
+action.F05.002 [ADAM] [['babkinej', 'babkine']] []
+   script: Presný opak babkinej vety. Chyba nie je v spomienkach. Je v pravidle.
+   scribe: Presný opak babkine vety. Chyba nie je v spomienkach, je v pravidle
+action.F07.001 [ADAM] [['vystavy', 'vystavi']] []
+   script: Stojan výstavy na chodníku pri plese. Chronometer si z neho prečíta stopu tohto miesta.
+   scribe: Stojan vystaví na chodníku pri plese. Chronometer si z neho prečíta stopu tohto miesta.
+action.J05.001 [ADAM] [['otov', 'ottov']] []
+   script: Samostatný konektor Atlasu. Otov mostík s Tónovou lastovičkou, tridsaťosem rokov v suchu.
+   scribe: Samostatný konektor Atlasu. Ottov mostík s tónovou lastovičkou. Tridsaťosem rokov v suchu
+action.F09.x01 [NINA_REMOTE] [['cely', 'celi']] []
+   script: Zoznam návštevníkov sa prestal rozpadať. Ste v ňom zase celý.
+   scribe: Zoznam návštevníkov sa prestal rozpadať. Ste v ňom zase celí.
+action.F09.x02 [ADAM] [['aj', 'a'], ['s', 'je'], ['makcenom', 'zmakcena']] []
+   script: Aj s mäkčeňom?
+   scribe: A je zmäkčená?
+action.F09.x03 [NINA_REMOTE] [['makcenom', 'makcenim']] []
+   script: Aj s mäkčeňom. Teraz potvrďte na termináli vstup do komory.
+   scribe: Aj s mäkčením. Teraz potvrďte na termináli vstup do komory
+action.F11.x03 [VIKTOR] [['to', 'tas']] []
+   script: Normalizátor ich označil ako šum. Ja som to schválil.
+   scribe: Normalizátor ich označil ako šum. Ja som tas schválil
+action.F11.008 [VIKTOR] [] ['pause 1.44 s']
+   script: Súhlasím. Zápis vypneme natrvalo a originály vrátime. A zverejním, čo som urobil.
+   scribe: Súhlasím. Zápis vypneme natrvalo a originály vrátime. A zverejním, čo som urobil
+cutscene.CS06.02.001 [VIKTOR] [['vycistil', 'vycital']] []
+   script: Vyčistil som zo správy presne to, čo som si mal nechať.
+   scribe: Vyčítal som zo správy presne to, čo som si mal nechať.
+cutscene.CS06.02.002 [ADAM] [['', 'zas'], ['zaznam', 'nam']] []
+   script: Záznam tam ešte je.
+   scribe: Zas nám tam ešte je.
+action.F13.003 [ADAM] [['dnes', 'za']] []
+   script: Dnes áno. A zostane to celé.
+   scribe: Nie za áno a zostane to celé
+topic.VIKTOR.ambient 2.001 [VIKTOR] [['a', 'aj']] []
+   script: Záznamy budú mať uvedený pôvod aj verzie a ľudia budú môcť nesúhlasiť. A ja zverejním, čo som spustil.
+   scribe: Záznamy budú mať uvedený pôvod aj verzie a ľudia budú môcť nesúhlasiť. Aj ja zverejním, čo som spustil.
+action.E08.005 [ADAM] [['a', 'no']] []
+   script: A ja sa pokúsim prísť v správnom roku.
+   scribe: No ja sa pokúsim prísť v správnom roku
+action.E01.002 [ADAM] [['', 'to'], ['tono', 'ono']] []
+   script: Ty si Tóno?
+   scribe: Ty si to ono?
+topic.OTO82.ambient 2.002 [ADAM] [['tono', 'tonos']] []
+   script: A Tóno s tým súhlasí?
+   scribe: A Tónos s tým súhlasí?
+topic.OTO82.extra 1.004 [OTO82] [['', 'to'], ['tonovo', 'ono']] []
+   script: Rádio, lampu a jedno lietadlo, čo nevzlietne. To je Tónovo.
+   scribe: Rádio, lampu a jedno lietadlo, čo nevzlietne. To je to ono.
+topic.OTO82.extra 2.004 [OTO82] [['ponahlali', 'onahlali']] []
+   script: Ponáhľali ste sa dvadsať rokov. Tentoraz sa so mnou aspoň rozlúčte.
+   scribe: Onáhľali ste sa dvadsať rokov. Tentoraz sa so mnou aspoň rozlúčte.
+action.E05.001 [ADAM] [['bielik', 'biely']] []
+   script: Nemali by ste pohár s tesnením? Pán Bielik potrebuje pre školu uložiť jednu súčiastku v suchu.
+   scribe: Nemali by ste pohár s tesnením? Pán Biely potrebuje pre školu uložiť jednu súčiastku v suchu
+action.E06.002 [ADAM] [['', 'to'], ['tono', 'ono']] []
+   script: Teraz to treba schovať. Tóno si to miesto bude pamätať dlhšie ako ja.
+   scribe: Teraz to treba schovať. To ono si to miesto bude pamätať dlhšie ako ja
+topic.RUZENA.ambient 1.x02 [ADAM] [['kto', 'gda']] []
+   script: Kto?
+   scribe: Gda?
+topic.RUZENA.ambient 2.002 [ADAM] [['tak', ''], ['ho', 'tego']] ['rate 25.0 chars/s']
+   script: Tak ho treba dobre schovať.
+   scribe: Tego treba dobre schovať
+topic.RUZENA.extra 2.001 [ADAM] [['vratia', 'vrata']] []
+   script: Koľko fliaš vám ľudia denne vrátia?
+   scribe: Koľko fliaš vám ľudia denne vráťa?
+entry.S65.001 [ADAM] [['papier', ''], ['na', ''], ['jej', 'papierne']] []
+   script: Súčiastka je malá. Papier na jej vydanie má ambície.
+   scribe: Súčiastka je malá, papierné vydanie má ambície
+action.E03.x01 [ADAM] [['vydajny', 'vydany']] []
+   script: Dobrý deň. Mám tu výdajný lístok od pána Bielika.
+   scribe: Dobrý deň, mám tu vydaný lístok od pána Bielika.
+action.E03.x04 [ADAM] [] ['pause 1.44 s']
+   script: Poviem mu. A keby predsa odletel?
+   scribe: Poviem mu: A keby predsa odletel?
+topic.MARTA82.ambient 1.002 [ADAM] [] ['rate 24.4 chars/s']
+   script: To by som zaviedol aj vo svojej dielni.
+   scribe: To by som zaviedol aj vo svojej dielni
+topic.MARTA82.extra 1.001 [ADAM] [['je', 'etu'], ['tu', 'je'], ['tonovo', 'nove']] []
+   script: Je tu ešte to Tónovo lietadlo?
+   scribe: Etu je ešte to nové lietadlo?
+topic.MARTA82.extra 1.004 [MARTA82] [['ceruzkou', 'ceruskou']] []
+   script: Ceruzkou. Je to cudzí majetok a ja ho len strážim. Perom by sa z neho stal náš.
+   scribe: Ceruskou. Je to cudzí majetok a ja ho len strážim. Perom by sa z neho stal náš.
+entry.S59.001 [ADAM] [['terazzo', 'teraco']] []
+   script: Školská chodba. Ticho, terazzo a pocit, že ma niekto zapisuje do triednej knihy.
+   scribe: Školská chodba, ticho, teraco a pocit, že ma niekto zapisuje do triednej knihy
+action.E04.001 [ADAM] [['otovho', 'toho']] []
+   script: Podľa Otovho nákresu: tri kontakty, každý iného tvaru. Doska je bez prúdu, zapojím a premeriam.
+   scribe: Podľa toho nákresu tri kontakty, každý iného tvaru. Doska je bez prúdu. Zapojím a premeriam
+action.E10.001 [SIMON] [['ohradkou', 'obratkou']] []
+   script: Zapísal som to: lipa s ohrádkou, vozík pôjde mimo koreňov. A k múriku bude stále prístup kvôli servisu.
+   scribe: Zapísal som to. Lipa s obrátkou, vozík pôjde mimo koreňov. A k Múriku bude stále prístup kvôli servisu.
+cutscene.CS08.01.001 [ADAM] [['tri', ''], ['dosky', 'stridovsky'], ['a', 'ma']] []
+   script: Tri dosky a vozík, ktorý chodí trochu oklukou. O pár desaťročí tu bude miesto, kde si ľudia sadnú.
+   scribe: Stridovský má vozík, ktorý chodí trochu oklukou. O pár desaťročí tu bude miesto, kde si ľudia sadnú.
+cutscene.CS08.01.002 [ADAM] [['opravuje', 'prejavuje']] []
+   script: Takto sa opravuje čas. Po kúsku, nie naraz.
+   scribe: Takto sa prejavuje čas. Po kúsku, nie naraz
+topic.SIMON.extra 1.006 [SIMON] [['samy', 'sami']] []
+   script: Potom sa už bránia samy. Strom s hrubou kôrou sa bojí iba píly a ľudí s plánmi.
+   scribe: Potom sa už bránia sami. Strom s hrubou kôrou sa bojí iba píly a ľudí s plánmi
+topic.DOBRO.ambient 1.x02 [ADAM] [['rodicia', 'robite'], ['sepkaju', 'sipku']] []
+   script: Rodičia šepkajú?
+   scribe: Robíte šipku?
+topic.DOBRO.ambient 2.x02 [ADAM] [['a', '']] []
+   script: A spadol už niekedy?
+   scribe: Spadol už niekedy?
+topic.DOBRO.extra 1.003 [ADAM] [['', 'i'], ['aj', 'put'], ['pod', 'the'], ['stolom', 'lump']] []
+   script: Aj pod stolom?
+   scribe: I put the lump
+topic.DOBRO.extra 2.006 [DOBRO] [['stava', 'vstava']] []
+   script: Stáva. A taký si človek pamätá dlhšie ako všetky vzory.
+   scribe: Vstáva a taký si človek pamätá dlhšie ako všetky vzory
+topic.DOBRO.extra 3.002 [DOBRO] [['ako', 'a'], ['lavic', 'kolabic']] []
+   script: Je nová. Omietka ešte schne a detí pribúda rýchlejšie ako lavíc.
+   scribe: Je nová. Omietka ešte schne a detí pribúda rýchlejšie a kolabíc
+1972 records, 1615 verbatim, 243 with differences (223 meaning); spend (per call) $5.6825; logged $5.9020

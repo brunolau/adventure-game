@@ -15,6 +15,7 @@ is 420 px). Crouched (drawing): 204.3 px, same head size.
 | crouch_sheet | idle, blink, talk_a, talk_b, gesture | crouched stills, chalk on the ground; gesture = pointing ahead from the crouch |
 | draw_sheet | 36 at 6.1 fps | crouched, drawing small chalk strokes, loop |
 
-Variants: `playing` (default: idle = play loop; talk and gesture standing), `full` (standing video idle, one
+Variants: `playing` (default: idle = play loop; talk and gesture standing; in a conversation she stands in
+`idle_engaged` = the calm video idle and hops again when it ends, owner 2026-10-07), `full` (standing video idle, one
 hopscotch round as idle_fidget every 12-25 s), `drawing` (the crouched set). Select with `variant` in
 `data/blocking/S37.json`. Chalk marks and hopscotch squares are not part of the sprite.

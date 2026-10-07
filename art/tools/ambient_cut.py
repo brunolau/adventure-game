@@ -14,7 +14,8 @@ whose background changed since they were cut.
 
 Natural re-blocking (per room, art/tools/PAINTING.md "Natural mode"; nothing shared is touched):
   python art/tools/ambient_cut.py --natural S05 [--preview]
-reads art/ambient/natural/<room>.cuts.json (a list of items, same format as one room of cuts.json), cuts from
+reads art/ambient/natural/<room>.cuts.json (a list of items, same format as one room of cuts.json; optional top-level
+"select_source": the image whose colours the rules read, e.g. the painting before a relight), cuts from
 src/game/assets/bg_natural/<room>.webp and writes src/game/assets/ambient/<room>/natural/<name>.webp plus that folder's
 own manifest.json (pos, size, mask_rect, patch_pos; read by AmbientContext.CutInfo for paths "<room>/natural/<name>").
 Reference them in data/blocking/ambient/<room>.json as "<room>/natural/<name>.webp". `--natural S05 --check` reports
@@ -162,8 +163,10 @@ def save_webp(img: Image.Image, path: Path) -> None:
     img.save(path, "WEBP", lossless=True, quality=100, method=6)
 
 
-def build_room_item(room: str, item: dict, rgb_full: np.ndarray, preview: bool) -> dict:
-    alpha, (x, y, w, h) = select(rgb_full, item)
+def build_room_item(room: str, item: dict, rgb_full: np.ndarray, preview: bool, rgb_select: np.ndarray | None = None) -> dict:
+    # rgb_select: the colours the selection rules read (natural spec "select_source", e.g. the painting before a
+    # relight with the same geometry); the cut-out's pixels always come from rgb_full.
+    alpha, (x, y, w, h) = select(rgb_full if rgb_select is None else rgb_select, item)
     kind = item.get("kind", "cutout")
     name = item["name"]
     pad = item.get("pad", 12 if kind == "cutout" else 0)
@@ -297,9 +300,16 @@ def cut_natural(room: str, preview: bool, check: bool) -> None:
     spec = json.loads(spec_path.read_text(encoding="utf-8"))
     items = spec.get("items", []) if isinstance(spec, dict) else spec
     rgb = np.asarray(Image.open(bg_path).convert("RGB"))
+    # "select_source": an image with the painting's geometry whose colours the rules read (after a relight the
+    # shapes stay those the rules were tuned on; the pixels are the new painting's).
+    rgb_select = None
+    if isinstance(spec, dict) and spec.get("select_source"):
+        rgb_select = np.asarray(Image.open(ROOT / spec["select_source"]).convert("RGB"))
+        if rgb_select.shape != rgb.shape:
+            raise SystemExit(f"{spec['select_source']}: size {rgb_select.shape[1::-1]} differs from the painting")
     infos = {}
     for item in items:
-        infos[item["name"]] = build_room_item(f"{room}/natural", item, rgb, preview)
+        infos[item["name"]] = build_room_item(f"{room}/natural", item, rgb, preview, rgb_select)
         if "patch_pos" in infos[item["name"]]:
             infos[item["name"] + "_patch"] = {"kind": "patch", "pos": infos[item["name"]]["patch_pos"]}
         print(f"{room}/natural/{item['name']}", infos[item["name"]])

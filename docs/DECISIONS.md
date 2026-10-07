@@ -535,3 +535,17 @@ Example: in B06 Adam said „To je robota pre Jura z kazetového klubu v Ružino
 B06.002 becomes „…Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ + „Pali spomínal Jura z kazetového klubu
 v Ružinove. Ten by to mohol vedieť.“ General rule for WRITING_METHOD.md: every person, place or item Adam names must
 have been introduced to the player earlier in every legal order of play; a knowledge-state audit runs over all eras.
+
+## Round 2 approved and applied (owner 2026-10-07)
+
+On his approval page (`docs/writing/approval/changes_r2.json`, scenes `R2-…`) the owner answered "i guess ok" with no
+card marked: every round-2 text is approved as drafted. Applied on 2026-10-07 (docs/MILESTONE5.md "Round 2 applied"):
+the knowledge fixes (`docs/writing/out_v3/knowledge.csv` -> sk_overrides.csv / ui.csv, `knowledge_ext.json` ->
+dialogue_ext.json, the superseded C1-C4 entries of the same 13 ids removed first), the 268 Standard / Hard step hints
+(`hints.csv` -> ui.csv `hint.nudge.*` / `hint.where.*`; B07's hint together with the B05 / B06 Juro fix) and the 24
+difficulty UI strings (`ui_difficulty.csv` -> ui.csv; the code fallbacks follow them). The open questions of
+`docs/writing/review_gpt/out_v3_decisions.md` § 5 are taken as answered by the approval: B06.002 keeps „zhlasním“, the
+written props on the S30 stand and under the S45 bench sign stay, M08's title is „Dielňa v Ivanke“. The rule "Adam
+never knows what he has not learned" is still to be added to design-doc/WRITING_METHOD.md by the owner (only he
+changes that file). The two promised cosmetic fixes went in at the same time: little Zuzana (S37) stands still while
+anyone talks to her and hops again when the conversation ends; S69 is relit to the S18 sunset (USD 0.15).

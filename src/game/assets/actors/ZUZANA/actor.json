@@ -115,6 +115,11 @@
         "idle"
       ]
     },
+    "idle_engaged": {
+      "sheet": "idle",
+      "loop": true,
+      "note": "in a conversation (Adam talks to her, her topic menu, an action aimed at her): the calm standing video idle instead of the hopscotch; talk and gesture cut in from it. Owner 2026-10-07: she stands still while she talks and hops only when idle."
+    },
     "blink": {
       "sheet": "npc",
       "frames": [
@@ -163,7 +168,7 @@
   "variants": {
     "playing": {
       "height_px": 350,
-      "note": "default in the park: hopscotch hops on the spot (a 5.9 s loop with two hop rounds and a short pause; cell 0 = the standing still idle, so talk and gesture cut in cleanly at the loop boundary). The hopscotch squares belong to the background or a ground decal.",
+      "note": "default in the park: hopscotch hops on the spot (a 5.9 s loop with two hop rounds and a short pause; cell 0 = the standing still idle, so talk and gesture cut in cleanly at the loop boundary). The hopscotch squares belong to the background or a ground decal. In a conversation she stands in idle_engaged (the calm video idle) and hops again when it ends.",
       "animations": {
         "idle": {
           "sheet": "play",
@@ -243,6 +248,13 @@
           "hold_ms": 1200,
           "oneshot": true,
           "note": "alias of gesture"
+        },
+        "idle_engaged": {
+          "sheet": "crouch",
+          "frames": [
+            "idle"
+          ],
+          "note": "in a conversation: the crouched still (she stops drawing while she talks)"
         }
       }
     }

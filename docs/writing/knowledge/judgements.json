@@ -1,5 +1,5 @@
 {
- "about": "Claude's verdicts for tools/knowledge_audit.py (key|entity). problem: why, earliest_intro, fix_type (a source line / b question-observation / c look-journal-goal-hint text), fix (draft wording; drafts go to docs/writing/out_v3/, nothing is live before the owner approves), severity, group (one root fix per group). acceptable: reason. Rows the tool marks introduced / background need no entry.",
+ "about": "Claude's verdicts for tools/knowledge_audit.py (key|entity). problem: why, earliest_intro, fix_type (a source line / b question-observation / c look-journal-goal-hint text), fix (draft wording; drafts go to docs/writing/out_v3/, nothing is live before the owner approves), severity, group (one root fix per group). acceptable: reason. Rows the tool marks introduced / background need no entry. 'retired': verdicts of texts that no longer exist (replaced by the round-2 texts, 2026-10-07).",
  "entries": {
   "action.B04.001|item:remienok": {
    "verdict": "acceptable",
@@ -10,215 +10,116 @@
    "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
   },
   "action.B04.002|person:Pali": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G02-pali",
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Same pattern as the owner's example: alone in the radio room Adam knows that Pali in Karlova Ves has drawers full of belts („Pali v Karlovej Vsi mal…“). Nobody has mentioned Pali; the objective and journal repeat it.",
-   "earliest_intro": "none before B04: the exit label 'Paliho opravovňa' in S19 (story step 15.5, after B04, and not on every route), Pali's hover label in S20.",
-   "fix": "Tóno names Pali in B02 (guaranteed before B04: the radio room opens with B02). New TONO line after action.B02.x07 (vy): „A keby vám ten magnetofón zjedol remienok, Pali v Karlovej Vsi ich má celé zásuvky.“ B04.002 becomes „Úplne sa rozpadol. Tóno spomínal Paliho v Karlovej Vsi, vraj má na remienky celé zásuvky.“ Objective / journal then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G02-pali); now introduced before: TONO in B02 (line 14) [action.B02.k02]"
   },
   "action.B04.journal|person:Pali": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G02-pali",
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Same pattern as the owner's example: alone in the radio room Adam knows that Pali in Karlova Ves has drawers full of belts („Pali v Karlovej Vsi mal…“). Nobody has mentioned Pali; the objective and journal repeat it.",
-   "earliest_intro": "none before B04: the exit label 'Paliho opravovňa' in S19 (story step 15.5, after B04, and not on every route), Pali's hover label in S20.",
-   "fix": "Tóno names Pali in B02 (guaranteed before B04: the radio room opens with B02). New TONO line after action.B02.x07 (vy): „A keby vám ten magnetofón zjedol remienok, Pali v Karlovej Vsi ich má celé zásuvky.“ B04.002 becomes „Úplne sa rozpadol. Tóno spomínal Paliho v Karlovej Vsi, vraj má na remienky celé zásuvky.“ Objective / journal then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G02-pali); now introduced before: TONO in B02 (line 14) [action.B02.k02]"
   },
   "action.B04.label|item:remienok": {
    "verdict": "acceptable",
    "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
   },
   "action.B04.objective|person:Pali": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G02-pali",
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Same pattern as the owner's example: alone in the radio room Adam knows that Pali in Karlova Ves has drawers full of belts („Pali v Karlovej Vsi mal…“). Nobody has mentioned Pali; the objective and journal repeat it.",
-   "earliest_intro": "none before B04: the exit label 'Paliho opravovňa' in S19 (story step 15.5, after B04, and not on every route), Pali's hover label in S20.",
-   "fix": "Tóno names Pali in B02 (guaranteed before B04: the radio room opens with B02). New TONO line after action.B02.x07 (vy): „A keby vám ten magnetofón zjedol remienok, Pali v Karlovej Vsi ich má celé zásuvky.“ B04.002 becomes „Úplne sa rozpadol. Tóno spomínal Paliho v Karlovej Vsi, vraj má na remienky celé zásuvky.“ Objective / journal then fine unchanged."
-  },
-  "action.B06.002|org:kazetový klub": {
-   "verdict": "problem",
-   "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
-  },
-  "action.B06.002|person:Juro": {
-   "verdict": "problem",
-   "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G02-pali); now introduced before: TONO in B02 (line 14) [action.B02.k02]"
   },
   "action.B06.journal|org:kazetový klub": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
   },
   "action.B06.journal|person:Juro": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
   },
   "action.B06.objective|org:kazetový klub": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
   },
   "action.B06.objective|person:Juro": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
   },
   "action.B13.journal|person:Alena": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G05-alena",
-   "severity": "medium",
-   "fix_type": "a",
-   "why": "Karol only says „Ateliér je cez námestie“; the objective, journal and the negative's purpose already name Alena.",
-   "earliest_intro": "Alena's hover label in S24 (story step 24.5, after B13).",
-   "fix": "(a) Karol extends B13.003 or adds a line after it (vy): „Ateliér Svetlo je cez námestie. Pani Alena Svobodová vám z negatívu spraví pozitív.“ Objective / purpose then fine."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G05-alena); now introduced before: KAROL in B13 (line 10) [action.B13.k01]"
   },
   "action.B13.objective|person:Alena": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G05-alena",
-   "severity": "medium",
-   "fix_type": "a",
-   "why": "Karol only says „Ateliér je cez námestie“; the objective, journal and the negative's purpose already name Alena.",
-   "earliest_intro": "Alena's hover label in S24 (story step 24.5, after B13).",
-   "fix": "(a) Karol extends B13.003 or adds a line after it (vy): „Ateliér Svetlo je cez námestie. Pani Alena Svobodová vám z negatívu spraví pozitív.“ Objective / purpose then fine."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G05-alena); now introduced before: KAROL in B13 (line 10) [action.B13.k01]"
   },
   "action.B13.x01|item:Mirin fond / krabica": {
    "verdict": "acceptable",
    "reason": "Generic archive word; Mira gave him the authorisation for her records (B03)."
   },
-  "action.B16.001|person:Dezider": {
-   "verdict": "problem",
-   "group": "G06-dezider",
-   "severity": "medium",
-   "fix_type": "b",
-   "why": "When the map is complete Adam says it leads „k Deziderovej garáži“; nothing shows that the map names Dezider, and nobody has mentioned him. Objective, journal and M07 hint 1 follow.",
-   "earliest_intro": "the exit label in S28 (story step 27.5, after B16); Dezider speaks in B17.",
-   "fix": "(b) Make it an observation of the map: B16.001 „Mapa je celá a vedie do Petržalky. Pri garáži číslo 17 je drobným písmom: D. Kováč, rádioamatér.“ (item look NODEMAP may say the same). Objective / journal / hint then fine."
-  },
   "action.B16.journal|person:Dezider": {
-   "verdict": "problem",
+   "verdict": "acceptable",
+   "reason": "Journal of B16: the name was read off the map in action.B16.k01 of the same exchange.",
    "group": "G06-dezider",
-   "severity": "medium",
-   "fix_type": "b",
-   "why": "When the map is complete Adam says it leads „k Deziderovej garáži“; nothing shows that the map names Dezider, and nobody has mentioned him. Objective, journal and M07 hint 1 follow.",
-   "earliest_intro": "the exit label in S28 (story step 27.5, after B16); Dezider speaks in B17.",
-   "fix": "(b) Make it an observation of the map: B16.001 „Mapa je celá a vedie do Petržalky. Pri garáži číslo 17 je drobným písmom: D. Kováč, rádioamatér.“ (item look NODEMAP may say the same). Objective / journal / hint then fine."
+   "judged": "2026-10-07 apply_r2"
   },
   "action.B16.objective|person:Dezider": {
-   "verdict": "problem",
+   "verdict": "acceptable",
+   "reason": "Objective of B16: the name was read off the map in action.B16.k01 of the same exchange.",
    "group": "G06-dezider",
-   "severity": "medium",
-   "fix_type": "b",
-   "why": "When the map is complete Adam says it leads „k Deziderovej garáži“; nothing shows that the map names Dezider, and nobody has mentioned him. Objective, journal and M07 hint 1 follow.",
-   "earliest_intro": "the exit label in S28 (story step 27.5, after B16); Dezider speaks in B17.",
-   "fix": "(b) Make it an observation of the map: B16.001 „Mapa je celá a vedie do Petržalky. Pri garáži číslo 17 je drobným písmom: D. Kováč, rádioamatér.“ (item look NODEMAP may say the same). Objective / journal / hint then fine."
+   "judged": "2026-10-07 apply_r2"
   },
   "action.B19.journal|fact:3–2–6": {
    "verdict": "acceptable",
    "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
   },
-  "action.B19.journal|place:merací stánok": {
-   "verdict": "problem",
-   "group": "G26-starymost-early",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Order-dependent: Starý most (S30) and the Sokolíkovský dvor (S69) are open before Dezider (B17). The dial look then knows the digits are on a drawing in the Sokolíkovský dvor, and reading the drawing (B19) before B17 already sends Adam to „merací stojan v stánku na Starom moste“.",
-   "earliest_intro": "Dezider in B17 (in the walkthrough B17 comes first).",
-   "fix": "(c) B19 objective / journal (must keep 3–2–6, protected P03-digits): „Číslice 3–2–6 si zapíš. Patria k meraciemu stojanu z Mirinej mapy.“ look.S30.dial is protected (P03-wrong: it must name the Sokolíkovský dvor, which is also Adam's school neighbourhood): keep the place, drop the claim that the digits are there, e.g. „Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a tri číslice. Mira kreslila deťom nákresy aj v Sokolíkovskom dvore.“ — or (owner's call) leave it: it is also the wrong-answer nudge."
-  },
   "action.B19.objective|fact:3–2–6": {
    "verdict": "acceptable",
    "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
   },
-  "action.B19.objective|place:merací stánok": {
-   "verdict": "problem",
-   "group": "G26-starymost-early",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Order-dependent: Starý most (S30) and the Sokolíkovský dvor (S69) are open before Dezider (B17). The dial look then knows the digits are on a drawing in the Sokolíkovský dvor, and reading the drawing (B19) before B17 already sends Adam to „merací stojan v stánku na Starom moste“.",
-   "earliest_intro": "Dezider in B17 (in the walkthrough B17 comes first).",
-   "fix": "(c) B19 objective / journal (must keep 3–2–6, protected P03-digits): „Číslice 3–2–6 si zapíš. Patria k meraciemu stojanu z Mirinej mapy.“ look.S30.dial is protected (P03-wrong: it must name the Sokolíkovský dvor, which is also Adam's school neighbourhood): keep the place, drop the claim that the digits are there, e.g. „Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a tri číslice. Mira kreslila deťom nákresy aj v Sokolíkovskom dvore.“ — or (owner's call) leave it: it is also the wrong-answer nudge."
-  },
   "action.B22.journal|person:Oto": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G03-oto-before-ivanka",
-   "severity": "high",
-   "fix_type": "c (or a)",
-   "why": "Right after the Starý most measurement (still in 1995) the objective says „nájdi Ota v jeho mechanickej dielni“ and the next quest's title / goal / hint 1 say „Ručná pumpa“, „Oprav Otovi ručnú pumpu“. Nobody has named Oto (Mira in G05 only says „jeden šikovný človek“) and the pump appears only in I01.",
-   "earliest_intro": "Oto: the exit label 'Otova mechanická dielňa' in S35 (story step 33.6, in 1962) or Božo's optional topic; the pump: Oto in I01 (story step 34).",
-   "fix": "(c) B22 objective/journal: „Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi tam mechanickú dielňu, kde vznikol ZVON.“ M08 title „Meracia miestnosť“, goal „Dostaň sa v Ivanke do meracej miestnosti prvého ZVONu.“, hint 1 „V Ivanke sa pýtaj na mechanickú dielňu. Tam sa dozvieš, ako sa dostať k meraniu.“ Alternative (a): Mira (G05.x04) names her partner: „Ja a Oto Bielik, mechanik z Ivanky.“ — then only the pump needs (c)."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G03-oto-before-ivanka); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
   },
   "action.B22.objective|person:Oto": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G03-oto-before-ivanka",
-   "severity": "high",
-   "fix_type": "c (or a)",
-   "why": "Right after the Starý most measurement (still in 1995) the objective says „nájdi Ota v jeho mechanickej dielni“ and the next quest's title / goal / hint 1 say „Ručná pumpa“, „Oprav Otovi ručnú pumpu“. Nobody has named Oto (Mira in G05 only says „jeden šikovný človek“) and the pump appears only in I01.",
-   "earliest_intro": "Oto: the exit label 'Otova mechanická dielňa' in S35 (story step 33.6, in 1962) or Božo's optional topic; the pump: Oto in I01 (story step 34).",
-   "fix": "(c) B22 objective/journal: „Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi tam mechanickú dielňu, kde vznikol ZVON.“ M08 title „Meracia miestnosť“, goal „Dostaň sa v Ivanke do meracej miestnosti prvého ZVONu.“, hint 1 „V Ivanke sa pýtaj na mechanickú dielňu. Tam sa dozvieš, ako sa dostať k meraniu.“ Alternative (a): Mira (G05.x04) names her partner: „Ja a Oto Bielik, mechanik z Ivanky.“ — then only the pump needs (c)."
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G03-oto-before-ivanka); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
   },
   "action.C01.002|item:mostík": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G04-mostik",
-   "severity": "high",
-   "fix_type": "b + c",
-   "why": "Back in 2020 Adam asks Mira for „bezpečný návratový mostík“ although nobody has told him such a thing exists or is needed (story bible: Mira explains it). The M11A goal names the lost bridge as soon as the quest becomes current, before the talk.",
-   "earliest_intro": "Mira's answer C01.003 (Oto built one in 1982); otherwise Tóno 50 in D02.",
-   "fix": "(b) Swap the roles in C01: new MIRA20 line before C01.002: „Na bezpečný zásah potrebuješ ešte návratový mostík. Fyzický, keramický, nie ďalší prístroj.“ C01.002 becomes „Mostík? Kde ho vezmem?“ (C01.003 answers unchanged). (c) M11A goal: „Zisti od Miry, čo ešte treba na bezpečný návrat, a nájdi to v Dúbravke v roku 2020.“"
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G04-mostik); now introduced before: MIRA20 in C01 (line 7) [action.C01.k01]"
   },
   "action.C05.journal|person:Nina": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G08-nina-2035",
-   "severity": "medium",
-   "fix_type": "a (or c)",
-   "why": "The C05 objective says „nájdi kurátorku Ninu“ and M12 hint 1 „Nina čaká pred hotelom“; the device only says „Cieľ fondu: Atlas, Jasná, 2035“. Nina is named nowhere before (only in Ela's optional topic, as a fifteen-year-old).",
-   "earliest_intro": "Nina's hover label in S42 (story step 73.5, after C05).",
-   "fix": "(a) A device line after C05.001 (SYSTEM, the P04 line itself stays verbatim): „Kurátorka fondu: Nina Švecová, Grand Jasná.“ — or (c) objective „…a nájdi kurátorku fondu pred hotelom Grand Jasná“, M12 hint 1 „Kurátorka fondu čaká pred hotelom Grand Jasná. Výstava Atlasu je v hoteli aj hore pri Rotunde.“"
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G08-nina-2035); now introduced before: SYSTEM in C05 (line 3) [action.C05.k01]"
   },
   "action.C05.objective|person:Nina": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G08-nina-2035",
-   "severity": "medium",
-   "fix_type": "a (or c)",
-   "why": "The C05 objective says „nájdi kurátorku Ninu“ and M12 hint 1 „Nina čaká pred hotelom“; the device only says „Cieľ fondu: Atlas, Jasná, 2035“. Nina is named nowhere before (only in Ela's optional topic, as a fifteen-year-old).",
-   "earliest_intro": "Nina's hover label in S42 (story step 73.5, after C05).",
-   "fix": "(a) A device line after C05.001 (SYSTEM, the P04 line itself stays verbatim): „Kurátorka fondu: Nina Švecová, Grand Jasná.“ — or (c) objective „…a nájdi kurátorku fondu pred hotelom Grand Jasná“, M12 hint 1 „Kurátorka fondu čaká pred hotelom Grand Jasná. Výstava Atlasu je v hoteli aj hore pri Rotunde.“"
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G08-nina-2035); now introduced before: SYSTEM in C05 (line 3) [action.C05.k01]"
   },
   "action.D01.001|item:lastovička": {
    "verdict": "acceptable",
@@ -233,22 +134,16 @@
    "reason": "Arithmetic Adam can do: 1982 → 2020 (he told Tóno he comes from 2020)."
   },
   "action.E02.journal|person:Marta": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G10-marta",
-   "severity": "low",
-   "fix_type": "a",
-   "why": "Oto gives „lístok do výdajne“; objective, journal and the slip's purpose say „u Marty“.",
-   "earliest_intro": "Marta's hover label in S65 (story step 57.5, after E02).",
-   "fix": "(a) Oto at the end of E02.009 or a new line after it (vy): „Vo výdajni je pani Marta, tá vám to vydá.“"
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G10-marta); now introduced before: OTO82 in E02 (line 15) [action.E02.k01]"
   },
   "action.E02.objective|person:Marta": {
-   "verdict": "problem",
+   "verdict": "fine",
    "group": "G10-marta",
-   "severity": "low",
-   "fix_type": "a",
-   "why": "Oto gives „lístok do výdajne“; objective, journal and the slip's purpose say „u Marty“.",
-   "earliest_intro": "Marta's hover label in S65 (story step 57.5, after E02).",
-   "fix": "(a) Oto at the end of E02.009 or a new line after it (vy): „Vo výdajni je pani Marta, tá vám to vydá.“"
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G10-marta); now introduced before: OTO82 in E02 (line 15) [action.E02.k01]"
   },
   "action.E08.001|fact:rad 2, stĺpec 3": {
    "verdict": "acceptable",
@@ -258,27 +153,9 @@
    "verdict": "acceptable",
    "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
   },
-  "action.E08.journal|person:Šimon": {
-   "verdict": "problem",
-   "group": "G29-simon",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "E08 can be done before E07 (the gardener's own step); the objective then names Šimon unseen.",
-   "earliest_intro": "Šimon's hover label in S66 / Šimon in E07.",
-   "fix": "(c) „Postav pri mladej lipe ohrádku a daj záhradníkovi potvrdiť novú trasu vozíka.“"
-  },
   "action.E08.objective|item:ohrádka": {
    "verdict": "acceptable",
    "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
-  },
-  "action.E08.objective|person:Šimon": {
-   "verdict": "problem",
-   "group": "G29-simon",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "E08 can be done before E07 (the gardener's own step); the objective then names Šimon unseen.",
-   "earliest_intro": "Šimon's hover label in S66 / Šimon in E07.",
-   "fix": "(c) „Postav pri mladej lipe ohrádku a daj záhradníkovi potvrdiť novú trasu vozíka.“"
   },
   "action.F01.journal|item:katalógová karta": {
    "verdict": "acceptable",
@@ -296,33 +173,6 @@
    "verdict": "acceptable",
    "reason": "Read off the public normalisation panel he is looking at."
   },
-  "action.G01.journal|person:Ela": {
-   "verdict": "problem",
-   "group": "G11-ela-start",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "The very first objective and the first hint send the player „u Ely“ before Ela has been seen or named (journal goals may name a person only after someone mentioned them).",
-   "earliest_intro": "Ela's hover label in S03 (story step 1.5).",
-   "fix": "(c) G01 objective/journal „Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.“; M01 hint 1 „Začni na výdajnom mieste pri Lúčnom koníku.“"
-  },
-  "action.G01.objective|person:Ela": {
-   "verdict": "problem",
-   "group": "G11-ela-start",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "The very first objective and the first hint send the player „u Ely“ before Ela has been seen or named (journal goals may name a person only after someone mentioned them).",
-   "earliest_intro": "Ela's hover label in S03 (story step 1.5).",
-   "fix": "(c) G01 objective/journal „Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.“; M01 hint 1 „Začni na výdajnom mieste pri Lúčnom koníku.“"
-  },
-  "action.G07.label|item:chronometer": {
-   "verdict": "problem",
-   "group": "G12-chrono-name",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "The case says ZVON; „chronometer“ is first shown as the item name after G07. The action sentence, the exact-step hint and the S10 cradle look (S10 can be entered before G07) already use the word.",
-   "earliest_intro": "item CHRONO in the bag (G07).",
-   "fix": "(c) G07 label „Vybrať prístroj z puzdra“; ui.hint_step.G07 „V predsieni dielne vyber prístroj z mosadzného puzdra.“; look.S10.chrono „…Prenosný diel patrí doprostred…“."
-  },
   "action.I05.journal|place:čerpacia búdka": {
    "verdict": "acceptable",
    "reason": "Oto told him the pump cools the model „v búdke“ (I01.x06); the journal only adds where it stands."
@@ -334,24 +184,6 @@
   "action.I13.001|fact:Mirina veta": {
    "verdict": "acceptable",
    "reason": "Read off the brass plate he is looking at / imprinting."
-  },
-  "action.J03.journal|person:Miloš": {
-   "verdict": "problem",
-   "group": "G18-milos",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "The objective names the fellow passenger before the cabin is entered.",
-   "earliest_intro": "Miloš's hover label in S68 (right after J03).",
-   "fix": "(c) „Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.“"
-  },
-  "action.J03.objective|person:Miloš": {
-   "verdict": "problem",
-   "group": "G18-milos",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "The objective names the fellow passenger before the cabin is entered.",
-   "earliest_intro": "Miloš's hover label in S68 (right after J03).",
-   "fix": "(c) „Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.“"
   },
   "action.Q11A.003|item:vrchnák": {
    "verdict": "acceptable",
@@ -405,15 +237,6 @@
    "verdict": "acceptable",
    "reason": "The large-print notice is Adam's own idea in Q2A (Jozef needs the hours in large letters)."
   },
-  "action.Q3A.journal|item:negatív": {
-   "verdict": "problem",
-   "group": "G32-q3-negative",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Soňa only speaks of an envelope with a lost photo; the journal and Q3 hint already know it holds a negative and that Alena will develop it (Q3 can start before B13/B14).",
-   "earliest_intro": "Zita in Q3B (the envelope), Karol / Alena in B13–B14.",
-   "fix": "(c) journal „Soňa hľadá fotografiu družstva. Obálku vraj našla Zita pri kiosku.“; hint 2 „Obálku má Zita pri kiosku. S fotkou ti pomôžu vo fotoateliéri.“"
-  },
   "action.Q4A.x01|item:noty": {
    "verdict": "acceptable",
    "reason": "Emil just said the ending was written in the book he sold."
@@ -439,22 +262,465 @@
    "reason": "He reads the sign DRUHÝ ŽIVOT on the bench."
   },
   "action.Q8B.001|person:Tamara": {
-   "verdict": "problem",
+   "verdict": "acceptable",
+   "reason": "Adam reads the note under the bench sign („Tamara, počas výstavy v lobby…“); owner-approved round-2 fix G15.",
    "group": "G15-tamara-bench",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Q8 can be followed to the bench at Vrbické pleso before Adam meets Tamara in the lobby; the bench look, Q8B and the journal then name Tamara and know that her workshop moved to the lobby.",
-   "earliest_intro": "Tamara's hover label in S43 (not on every route before S45).",
-   "fix": "(c) Let the bench itself be the source: look.S45.bench „Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Pod ním lístok: Počas výstavy v lobby hotela Grand Jasná.“; Q8B.001 „Keramický pes a nápis DRUHÝ ŽIVOT. Lístok posiela dielňu do lobby hotela.“; journal / hint „…patrila putovnej dielni, ktorá je teraz v lobby hotela…“."
+   "judged": "2026-10-07 apply_r2"
   },
   "action.Q8B.journal|person:Tamara": {
-   "verdict": "problem",
+   "verdict": "acceptable",
+   "reason": "Journal of Q8B: the name was read off the note on the bench in Q8B.001 of the same exchange.",
    "group": "G15-tamara-bench",
+   "judged": "2026-10-07 apply_r2"
+  },
+  "conn.S52.S53.locked|person:Tóno": {
+   "verdict": "acceptable",
+   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
+  },
+  "conn.S52.S55.locked|person:Tóno": {
+   "verdict": "acceptable",
+   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
+  },
+  "exit.S52.to_S53.locked|person:Tóno": {
+   "verdict": "acceptable",
+   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
+  },
+  "exit.S52.to_S55.locked|person:Tóno": {
+   "verdict": "acceptable",
+   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
+  },
+  "item.CHRONO|item:ochranné pole": {
+   "verdict": "acceptable",
+   "reason": "The device text of G07 („Nositeľ rozpoznaný. Jeho pamäť je chránená.“) tells him; device text counts as told."
+  },
+  "item.JAR.purpose|fact:38 rokov": {
+   "verdict": "acceptable",
+   "reason": "Arithmetic Adam can do: 1982 → 2020 (he told Tóno he comes from 2020)."
+  },
+  "item.NEGATIVE.purpose|person:Alena": {
+   "verdict": "fine",
+   "group": "G05-alena",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G05-alena); now introduced before: KAROL in B13 (line 10) [action.B13.k01]"
+  },
+  "item.PARTSNOTE.purpose|person:Marta": {
+   "verdict": "fine",
+   "group": "G10-marta",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G10-marta); now introduced before: OTO82 in E02 (line 15) [action.E02.k01]"
+  },
+  "item.PATCH.purpose|fact:svedectvá Pôvod/Hlas/Súhlas/Návrat": {
+   "verdict": "acceptable",
+   "reason": "The four names are on the 1962 plate and the device listed them in C05; „port“ is his technical reading."
+  },
+  "item.TAPE_RAW.purpose|item:adaptér": {
+   "verdict": "acceptable",
+   "reason": "Repairman's general knowledge: two tracks in opposite phase need a cross adapter; no named source involved."
+  },
+  "item.TAPE_RAW.purpose|person:Juro": {
+   "verdict": "fine",
+   "group": "G01-juro",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
+  },
+  "journal.clue.P03|fact:3–2–6": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "journal.clue.P05|fact:rad 2, stĺpec 3": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "look.S02.LENKA|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "look.S08.ambient 1|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "look.S15.register|item:Mirin fond / krabica": {
+   "verdict": "acceptable",
+   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
+  },
+  "look.S15.register|item:mapa uzlov": {
+   "verdict": "acceptable",
+   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
+  },
+  "look.S15.register|item:negatív": {
+   "verdict": "acceptable",
+   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
+  },
+  "look.S16.deck|item:remienok": {
+   "verdict": "acceptable",
+   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
+  },
+  "look.S16.socket|item:adaptér": {
+   "verdict": "acceptable",
+   "reason": "Repairman's general knowledge: two tracks in opposite phase need a cross adapter; no named source involved."
+  },
+  "look.S30.dial|item:mapa uzlov": {
+   "verdict": "acceptable",
+   "reason": "Mira asked for the tape and the map in B03; both are known."
+  },
+  "look.S30.dial|place:Sokolíkovský dvor": {
+   "verdict": "acceptable",
+   "reason": "Adam reads Mira's label on the stand he is looking at („Číslice – nákres v Sokolíkovskom dvore.“); the place is also his own school neighbourhood; owner-approved round-2 fix G26.",
+   "group": "G26-starymost-early",
+   "judged": "2026-10-07 apply_r2"
+  },
+  "look.S30.metro|item:metronóm": {
+   "verdict": "acceptable",
+   "reason": "He reads the marked place on the table; a metronome is a common object."
+  },
+  "look.S37.bird|item:krmivo": {
+   "verdict": "acceptable",
+   "reason": "He sees the pigeon at the empty bowl; feed is the obvious idea."
+  },
+  "look.S39.plate|fact:Mirina veta": {
+   "verdict": "acceptable",
+   "reason": "Read off the brass plate he is looking at / imprinting."
+  },
+  "look.S39.plate|fact:svedectvá Pôvod/Hlas/Súhlas/Návrat": {
+   "verdict": "acceptable",
+   "reason": "Read off the brass plate he is looking at / imprinting."
+  },
+  "look.S45.bench|org:Druhý život": {
+   "verdict": "acceptable",
+   "reason": "He reads the sign DRUHÝ ŽIVOT on the bench."
+  },
+  "look.S45.bench|person:Tamara": {
+   "verdict": "acceptable",
+   "reason": "Adam reads the note under the bench sign he is looking at („Tamara, počas výstavy v lobby hotela Grand Jasná.“); owner-approved round-2 fix G15.",
+   "group": "G15-tamara-bench",
+   "judged": "2026-10-07 apply_r2"
+  },
+  "look.S47.filter|fact:ROZDIEL = ZAHODIŤ": {
+   "verdict": "acceptable",
+   "reason": "Read off the public normalisation panel he is looking at."
+  },
+  "look.S52.photo|item:lastovička": {
+   "verdict": "acceptable",
+   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
+  },
+  "look.S52.photo|item:múrik": {
+   "verdict": "acceptable",
+   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
+  },
+  "look.S56.ambient 1|item:lastovička": {
+   "verdict": "acceptable",
+   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
+  },
+  "look.S61.niche|fact:rad 2, stĺpec 3": {
+   "verdict": "acceptable",
+   "reason": "He sees the cavity and puts the jar there himself (Oto and Tóno agree in E02)."
+  },
+  "look.S61.tree|item:ohrádka": {
+   "verdict": "acceptable",
+   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
+  },
+  "look.S66.ambient 1|item:ohrádka": {
+   "verdict": "acceptable",
+   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
+  },
+  "look.S69.bike|item:vrchnák": {
+   "verdict": "acceptable",
+   "reason": "The missing bell cap is visible on Kubo's bike (look of the bike itself)."
+  },
+  "look.S69.rhythm|fact:3–2–6": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "puzzle.P03.clue|fact:3–2–6": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "puzzle.P05.clue|fact:rad 2, stĺpec 3": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "quest.M05.hint.1|org:kazetový klub": {
+   "verdict": "fine",
+   "group": "G01-juro",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
+  },
+  "quest.M05.hint.1|person:Juro": {
+   "verdict": "fine",
+   "group": "G01-juro",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G01-juro); now introduced before: PALI in B05 (line 12) [action.B05.k03]"
+  },
+  "quest.M07.hint.1|person:Dezider": {
+   "verdict": "acceptable",
+   "reason": "M07 becomes current only after B16 (M06 completion), where Adam read the name off the map (action.B16.k01).",
+   "group": "G06-dezider",
+   "judged": "2026-10-07 apply_r2"
+  },
+  "quest.M08.goal|person:Oto": {
+   "verdict": "fine",
+   "group": "G03-oto-before-ivanka",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G03-oto-before-ivanka); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "quest.M08.hint.1|person:Oto": {
+   "verdict": "fine",
+   "group": "G03-oto-before-ivanka",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G03-oto-before-ivanka); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "quest.M11C.title|fact:38 rokov": {
+   "verdict": "acceptable",
+   "reason": "Arithmetic Adam can do: 1982 → 2020 (he told Tóno he comes from 2020)."
+  },
+  "quest.M12.hint.1|person:Nina": {
+   "verdict": "fine",
+   "group": "G08-nina-2035",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G08-nina-2035); now introduced before: SYSTEM in C05 (line 3) [action.C05.k01]"
+  },
+  "quest.Q2.hint.2|item:oznam": {
+   "verdict": "acceptable",
+   "reason": "The large-print notice is Adam's own idea in Q2A (Jozef needs the hours in large letters)."
+  },
+  "quest.Q2.reward|item:odtlačok": {
+   "verdict": "acceptable",
+   "reason": "„Odtlačok“ here means a printed copy of the notice, not the 1962 imprint."
+  },
+  "quest.Q5.hint.2|person:Tóno": {
+   "verdict": "acceptable",
+   "reason": "His own school: Tóno has been the caretaker of ZŠ Sokolíkova since Adam was a pupil (C01.004 „Náš školník?“); Adam himself said „spýtam sa školníka“."
+  },
+  "quest.Q7.hint.2|item:Mirin fond / krabica": {
+   "verdict": "acceptable",
+   "reason": "Rudo told him „na povale pri meracej miestnosti“; the journal uses the attic's room name."
+  },
+  "quest.Q7.title|fact:Žiaden strach, miláčik": {
+   "verdict": "fine",
+   "group": "G33-q7-title",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G33-q7-title); now introduced before: RUDO in Q7A (line 3) [action.Q7A.x02]"
+  },
+  "topic.BOZO.ambient 2.001|item:lístok na oba úseky": {
+   "verdict": "acceptable",
+   "reason": "A return ticket at a railway station is general knowledge (not the 2035 lift ticket)."
+  },
+  "topic.BOZO.extra 3.003|person:Oto": {
+   "verdict": "fine",
+   "group": "G20-oto-topics-1962",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G20-oto-topics-1962); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "topic.LENKA.ambient 1.001|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.LENKA.ambient 1.003|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.LENKA.ambient 1.label|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.LENKA.ambient 2.label|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.LENKA.extra 1.001|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.LENKA.extra 3.001|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "topic.PALI.extra 2.001|item:remienok": {
+   "verdict": "acceptable",
+   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
+  },
+  "topic.PALI.extra 2.label|item:remienok": {
+   "verdict": "acceptable",
+   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
+  },
+  "topic.SIMON.ambient 2.002|item:ohrádka": {
+   "verdict": "acceptable",
+   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
+  },
+  "topic.VERA60.extra 2.001|person:Oto": {
+   "verdict": "fine",
+   "group": "G20-oto-topics-1962",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G20-oto-topics-1962); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "topic.ZUZANA.extra 2.001|person:Oto": {
+   "verdict": "fine",
+   "group": "G20-oto-topics-1962",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G20-oto-topics-1962); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "topic.ZUZANA.extra 2.label|person:Oto": {
+   "verdict": "fine",
+   "group": "G20-oto-topics-1962",
+   "resolved": "round 2 (owner approved 2026-10-07, applied)",
+   "reason": "Fixed by the round-2 texts (G20-oto-topics-1962); now introduced before: MIRA20 in G05 (line 9) [action.G05.x04]"
+  },
+  "topic.ZUZANA.extra 6.004|item:krmivo": {
+   "verdict": "acceptable",
+   "reason": "He sees the pigeon at the empty bowl; feed is the obvious idea."
+  },
+  "ui.hint_step.B22|fact:3–2–6": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "ui.hint_step.D05|fact:rad 2, stĺpec 3": {
+   "verdict": "acceptable",
+   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
+  },
+  "ui.hint_step.Q1A|person:Bodka": {
+   "verdict": "acceptable",
+   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
+  },
+  "ui.hint_step.Q2B|item:oznam": {
+   "verdict": "acceptable",
+   "reason": "The large-print notice is Adam's own idea in Q2A (Jozef needs the hours in large letters)."
+  },
+  "ui.hint_step.Q7A|item:scenár": {
+   "verdict": "acceptable",
+   "reason": "The play rehearsal is visible in the hall (Rudo, Lída, the stage); asking about the script is natural."
+  },
+  "action.B16.k01|person:Dezider": {
+   "verdict": "acceptable",
+   "reason": "Adam reads the name off the map he is holding (Mira's legend and the second signature 'Dezider Kováč, rádioamatér, garáž 17'); owner-approved round-2 fix G06.",
+   "group": null,
+   "judged": "2026-10-07 apply_r2"
+  },
+  "action.Q8B.002|person:Tamara": {
+   "verdict": "acceptable",
+   "reason": "Follows Q8B.001 in the same exchange, where Adam reads Tamara's name off the note on the bench.",
+   "group": null,
+   "judged": "2026-10-07 apply_r2"
+  }
+ },
+ "retired": {
+  "action.B06.002|org:kazetový klub": {
+   "verdict": "problem",
+   "group": "G01-juro",
+   "owner_example": true,
+   "severity": "high",
+   "fix_type": "a+b",
+   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
+   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
+   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+  },
+  "action.B06.002|person:Juro": {
+   "verdict": "problem",
+   "group": "G01-juro",
+   "owner_example": true,
+   "severity": "high",
+   "fix_type": "a+b",
+   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
+   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
+   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
+  },
+  "action.B16.001|person:Dezider": {
+   "verdict": "problem",
+   "group": "G06-dezider",
+   "severity": "medium",
+   "fix_type": "b",
+   "why": "When the map is complete Adam says it leads „k Deziderovej garáži“; nothing shows that the map names Dezider, and nobody has mentioned him. Objective, journal and M07 hint 1 follow.",
+   "earliest_intro": "the exit label in S28 (story step 27.5, after B16); Dezider speaks in B17.",
+   "fix": "(b) Make it an observation of the map: B16.001 „Mapa je celá a vedie do Petržalky. Pri garáži číslo 17 je drobným písmom: D. Kováč, rádioamatér.“ (item look NODEMAP may say the same). Objective / journal / hint then fine."
+  },
+  "action.B19.journal|place:merací stánok": {
+   "verdict": "problem",
+   "group": "G26-starymost-early",
    "severity": "low",
    "fix_type": "c",
-   "why": "Q8 can be followed to the bench at Vrbické pleso before Adam meets Tamara in the lobby; the bench look, Q8B and the journal then name Tamara and know that her workshop moved to the lobby.",
-   "earliest_intro": "Tamara's hover label in S43 (not on every route before S45).",
-   "fix": "(c) Let the bench itself be the source: look.S45.bench „Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Pod ním lístok: Počas výstavy v lobby hotela Grand Jasná.“; Q8B.001 „Keramický pes a nápis DRUHÝ ŽIVOT. Lístok posiela dielňu do lobby hotela.“; journal / hint „…patrila putovnej dielni, ktorá je teraz v lobby hotela…“."
+   "why": "Order-dependent: Starý most (S30) and the Sokolíkovský dvor (S69) are open before Dezider (B17). The dial look then knows the digits are on a drawing in the Sokolíkovský dvor, and reading the drawing (B19) before B17 already sends Adam to „merací stojan v stánku na Starom moste“.",
+   "earliest_intro": "Dezider in B17 (in the walkthrough B17 comes first).",
+   "fix": "(c) B19 objective / journal (must keep 3–2–6, protected P03-digits): „Číslice 3–2–6 si zapíš. Patria k meraciemu stojanu z Mirinej mapy.“ look.S30.dial is protected (P03-wrong: it must name the Sokolíkovský dvor, which is also Adam's school neighbourhood): keep the place, drop the claim that the digits are there, e.g. „Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a tri číslice. Mira kreslila deťom nákresy aj v Sokolíkovskom dvore.“ — or (owner's call) leave it: it is also the wrong-answer nudge."
+  },
+  "action.B19.objective|place:merací stánok": {
+   "verdict": "problem",
+   "group": "G26-starymost-early",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "Order-dependent: Starý most (S30) and the Sokolíkovský dvor (S69) are open before Dezider (B17). The dial look then knows the digits are on a drawing in the Sokolíkovský dvor, and reading the drawing (B19) before B17 already sends Adam to „merací stojan v stánku na Starom moste“.",
+   "earliest_intro": "Dezider in B17 (in the walkthrough B17 comes first).",
+   "fix": "(c) B19 objective / journal (must keep 3–2–6, protected P03-digits): „Číslice 3–2–6 si zapíš. Patria k meraciemu stojanu z Mirinej mapy.“ look.S30.dial is protected (P03-wrong: it must name the Sokolíkovský dvor, which is also Adam's school neighbourhood): keep the place, drop the claim that the digits are there, e.g. „Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a tri číslice. Mira kreslila deťom nákresy aj v Sokolíkovskom dvore.“ — or (owner's call) leave it: it is also the wrong-answer nudge."
+  },
+  "action.E08.journal|person:Šimon": {
+   "verdict": "problem",
+   "group": "G29-simon",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "E08 can be done before E07 (the gardener's own step); the objective then names Šimon unseen.",
+   "earliest_intro": "Šimon's hover label in S66 / Šimon in E07.",
+   "fix": "(c) „Postav pri mladej lipe ohrádku a daj záhradníkovi potvrdiť novú trasu vozíka.“"
+  },
+  "action.E08.objective|person:Šimon": {
+   "verdict": "problem",
+   "group": "G29-simon",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "E08 can be done before E07 (the gardener's own step); the objective then names Šimon unseen.",
+   "earliest_intro": "Šimon's hover label in S66 / Šimon in E07.",
+   "fix": "(c) „Postav pri mladej lipe ohrádku a daj záhradníkovi potvrdiť novú trasu vozíka.“"
+  },
+  "action.G01.journal|person:Ela": {
+   "verdict": "problem",
+   "group": "G11-ela-start",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "The very first objective and the first hint send the player „u Ely“ before Ela has been seen or named (journal goals may name a person only after someone mentioned them).",
+   "earliest_intro": "Ela's hover label in S03 (story step 1.5).",
+   "fix": "(c) G01 objective/journal „Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.“; M01 hint 1 „Začni na výdajnom mieste pri Lúčnom koníku.“"
+  },
+  "action.G01.objective|person:Ela": {
+   "verdict": "problem",
+   "group": "G11-ela-start",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "The very first objective and the first hint send the player „u Ely“ before Ela has been seen or named (journal goals may name a person only after someone mentioned them).",
+   "earliest_intro": "Ela's hover label in S03 (story step 1.5).",
+   "fix": "(c) G01 objective/journal „Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.“; M01 hint 1 „Začni na výdajnom mieste pri Lúčnom koníku.“"
+  },
+  "action.G07.label|item:chronometer": {
+   "verdict": "problem",
+   "group": "G12-chrono-name",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "The case says ZVON; „chronometer“ is first shown as the item name after G07. The action sentence, the exact-step hint and the S10 cradle look (S10 can be entered before G07) already use the word.",
+   "earliest_intro": "item CHRONO in the bag (G07).",
+   "fix": "(c) G07 label „Vybrať prístroj z puzdra“; ui.hint_step.G07 „V predsieni dielne vyber prístroj z mosadzného puzdra.“; look.S10.chrono „…Prenosný diel patrí doprostred…“."
+  },
+  "action.J03.journal|person:Miloš": {
+   "verdict": "problem",
+   "group": "G18-milos",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "The objective names the fellow passenger before the cabin is entered.",
+   "earliest_intro": "Miloš's hover label in S68 (right after J03).",
+   "fix": "(c) „Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.“"
+  },
+  "action.J03.objective|person:Miloš": {
+   "verdict": "problem",
+   "group": "G18-milos",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "The objective names the fellow passenger before the cabin is entered.",
+   "earliest_intro": "Miloš's hover label in S68 (right after J03).",
+   "fix": "(c) „Počas jazdy sa môžeš pozerať von alebo sa porozprávať so spolucestujúcim; potom dokonči jazdu.“"
+  },
+  "action.Q3A.journal|item:negatív": {
+   "verdict": "problem",
+   "group": "G32-q3-negative",
+   "severity": "low",
+   "fix_type": "c",
+   "why": "Soňa only speaks of an envelope with a lost photo; the journal and Q3 hint already know it holds a negative and that Alena will develop it (Q3 can start before B13/B14).",
+   "earliest_intro": "Zita in Q3B (the envelope), Karol / Alena in B13–B14.",
+   "fix": "(c) journal „Soňa hľadá fotografiu družstva. Obálku vraj našla Zita pri kiosku.“; hint 2 „Obálku má Zita pri kiosku. S fotkou ti pomôžu vo fotoateliéri.“"
   },
   "conn.S38.S39.locked|person:Oto": {
    "verdict": "problem",
@@ -491,14 +757,6 @@
    "why": "The pavilion opens with F04; clicking the chamber door before F06 already names the MONITOR mode, which the device first shows in F06.",
    "earliest_intro": "SYSTEM in F06.",
    "fix": "(c) „Komora je zamknutá. Otvorí ju až servisný terminál.“"
-  },
-  "conn.S52.S53.locked|person:Tóno": {
-   "verdict": "acceptable",
-   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
-  },
-  "conn.S52.S55.locked|person:Tóno": {
-   "verdict": "acceptable",
-   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
   },
   "entry.S25.001|item:konektor": {
    "verdict": "problem",
@@ -545,44 +803,6 @@
    "earliest_intro": "SYSTEM in F06.",
    "fix": "(c) „Komora je zamknutá. Otvorí ju až servisný terminál.“"
   },
-  "exit.S52.to_S53.locked|person:Tóno": {
-   "verdict": "acceptable",
-   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
-  },
-  "exit.S52.to_S55.locked|person:Tóno": {
-   "verdict": "acceptable",
-   "reason": "His own school's caretaker (C01.004 „Tóno? Náš školník?“); the window with Tóno (S56) is next to S52. Optional tweak if the owner wants it stricter: „Najprv sa ohlásim pri servisnom okne.“"
-  },
-  "item.CHRONO|item:ochranné pole": {
-   "verdict": "acceptable",
-   "reason": "The device text of G07 („Nositeľ rozpoznaný. Jeho pamäť je chránená.“) tells him; device text counts as told."
-  },
-  "item.JAR.purpose|fact:38 rokov": {
-   "verdict": "acceptable",
-   "reason": "Arithmetic Adam can do: 1982 → 2020 (he told Tóno he comes from 2020)."
-  },
-  "item.NEGATIVE.purpose|person:Alena": {
-   "verdict": "problem",
-   "group": "G05-alena",
-   "severity": "medium",
-   "fix_type": "a",
-   "why": "Karol only says „Ateliér je cez námestie“; the objective, journal and the negative's purpose already name Alena.",
-   "earliest_intro": "Alena's hover label in S24 (story step 24.5, after B13).",
-   "fix": "(a) Karol extends B13.003 or adds a line after it (vy): „Ateliér Svetlo je cez námestie. Pani Alena Svobodová vám z negatívu spraví pozitív.“ Objective / purpose then fine."
-  },
-  "item.PARTSNOTE.purpose|person:Marta": {
-   "verdict": "problem",
-   "group": "G10-marta",
-   "severity": "low",
-   "fix_type": "a",
-   "why": "Oto gives „lístok do výdajne“; objective, journal and the slip's purpose say „u Marty“.",
-   "earliest_intro": "Marta's hover label in S65 (story step 57.5, after E02).",
-   "fix": "(a) Oto at the end of E02.009 or a new line after it (vy): „Vo výdajni je pani Marta, tá vám to vydá.“"
-  },
-  "item.PATCH.purpose|fact:svedectvá Pôvod/Hlas/Súhlas/Návrat": {
-   "verdict": "acceptable",
-   "reason": "The four names are on the 1962 plate and the device listed them in C05; „port“ is his technical reading."
-  },
   "item.READER.purpose|item:terminál / stojan / stopa / postup": {
    "verdict": "problem",
    "group": "G17-reader-terminal",
@@ -610,36 +830,6 @@
    "earliest_intro": "SYSTEM in C05 („Cieľ fondu: Atlas, Jasná, 2035“), Nina in F01.",
    "fix": "(c) TAPE purpose „Dôkaz hlasu z roku 1995.“; RETURNBRIDGE purpose „Uschovať na bezpečný zásah. Kam ho zapojiť, ukáže až cieľ fondu.“ (A later, more exact purpose would need a variant after C05 / F08.)"
   },
-  "item.TAPE_RAW.purpose|item:adaptér": {
-   "verdict": "acceptable",
-   "reason": "Repairman's general knowledge: two tracks in opposite phase need a cross adapter; no named source involved."
-  },
-  "item.TAPE_RAW.purpose|person:Juro": {
-   "verdict": "problem",
-   "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
-  },
-  "journal.clue.P03|fact:3–2–6": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
-  "journal.clue.P05|fact:rad 2, stĺpec 3": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
-  "look.S02.LENKA|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "look.S08.ambient 1|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
   "look.S10.chrono|item:chronometer": {
    "verdict": "problem",
    "group": "G12-chrono-name",
@@ -648,26 +838,6 @@
    "why": "The case says ZVON; „chronometer“ is first shown as the item name after G07. The action sentence, the exact-step hint and the S10 cradle look (S10 can be entered before G07) already use the word.",
    "earliest_intro": "item CHRONO in the bag (G07).",
    "fix": "(c) G07 label „Vybrať prístroj z puzdra“; ui.hint_step.G07 „V predsieni dielne vyber prístroj z mosadzného puzdra.“; look.S10.chrono „…Prenosný diel patrí doprostred…“."
-  },
-  "look.S15.register|item:Mirin fond / krabica": {
-   "verdict": "acceptable",
-   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
-  },
-  "look.S15.register|item:mapa uzlov": {
-   "verdict": "acceptable",
-   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
-  },
-  "look.S15.register|item:negatív": {
-   "verdict": "acceptable",
-   "reason": "Adam reads the donation record in S15 (what he names is written on it)."
-  },
-  "look.S16.deck|item:remienok": {
-   "verdict": "acceptable",
-   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
-  },
-  "look.S16.socket|item:adaptér": {
-   "verdict": "acceptable",
-   "reason": "Repairman's general knowledge: two tracks in opposite phase need a cross adapter; no named source involved."
   },
   "look.S28.mural|item:krieda": {
    "verdict": "problem",
@@ -682,27 +852,6 @@
    "verdict": "acceptable",
    "reason": "Mira asked for the tape and the map in B03; both are known."
   },
-  "look.S30.dial|item:mapa uzlov": {
-   "verdict": "acceptable",
-   "reason": "Mira asked for the tape and the map in B03; both are known."
-  },
-  "look.S30.dial|place:Sokolíkovský dvor": {
-   "verdict": "problem",
-   "group": "G26-starymost-early",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Order-dependent: Starý most (S30) and the Sokolíkovský dvor (S69) are open before Dezider (B17). The dial look then knows the digits are on a drawing in the Sokolíkovský dvor, and reading the drawing (B19) before B17 already sends Adam to „merací stojan v stánku na Starom moste“.",
-   "earliest_intro": "Dezider in B17 (in the walkthrough B17 comes first).",
-   "fix": "(c) B19 objective / journal (must keep 3–2–6, protected P03-digits): „Číslice 3–2–6 si zapíš. Patria k meraciemu stojanu z Mirinej mapy.“ look.S30.dial is protected (P03-wrong: it must name the Sokolíkovský dvor, which is also Adam's school neighbourhood): keep the place, drop the claim that the digits are there, e.g. „Tri kolieska od 0 po 9. Potrebujem mapu uzlov, pôvodnú kazetu a tri číslice. Mira kreslila deťom nákresy aj v Sokolíkovskom dvore.“ — or (owner's call) leave it: it is also the wrong-answer nudge."
-  },
-  "look.S30.metro|item:metronóm": {
-   "verdict": "acceptable",
-   "reason": "He reads the marked place on the table; a metronome is a common object."
-  },
-  "look.S37.bird|item:krmivo": {
-   "verdict": "acceptable",
-   "reason": "He sees the pigeon at the empty bowl; feed is the obvious idea."
-  },
   "look.S38.door|person:Oto": {
    "verdict": "problem",
    "group": "G22-oto-key-1962",
@@ -711,14 +860,6 @@
    "why": "The test booth S38 is reachable through the park before Oto's workshop; the door look and the locked look then know that Oto has the key and wants the pump repaired.",
    "earliest_intro": "Oto in I01 (key after the pump: I01.x06).",
    "fix": "(c) door look „Pevné dvere s novým zámkom. Za nimi je meracia miestnosť.“; locked look „Zamknuté. Kľúč má niekto z dielne.“"
-  },
-  "look.S39.plate|fact:Mirina veta": {
-   "verdict": "acceptable",
-   "reason": "Read off the brass plate he is looking at / imprinting."
-  },
-  "look.S39.plate|fact:svedectvá Pôvod/Hlas/Súhlas/Návrat": {
-   "verdict": "acceptable",
-   "reason": "Read off the brass plate he is looking at / imprinting."
   },
   "look.S40.box|item:registračný list": {
    "verdict": "problem",
@@ -747,23 +888,6 @@
    "earliest_intro": "Nina in F01 („preukaz s lístkom Sára“, „Sára je v klientskom centre“).",
    "fix": "(c) look.S41.gate „Turniket kabínkovej lanovky na Priehybu. Bez platného lístka ma nepustí.“; locked look (exit + connection) „Na lanovku potrebujem platný lístok. Ten zatiaľ nemám.“"
   },
-  "look.S45.bench|org:Druhý život": {
-   "verdict": "acceptable",
-   "reason": "He reads the sign DRUHÝ ŽIVOT on the bench."
-  },
-  "look.S45.bench|person:Tamara": {
-   "verdict": "problem",
-   "group": "G15-tamara-bench",
-   "severity": "low",
-   "fix_type": "c",
-   "why": "Q8 can be followed to the bench at Vrbické pleso before Adam meets Tamara in the lobby; the bench look, Q8B and the journal then name Tamara and know that her workshop moved to the lobby.",
-   "earliest_intro": "Tamara's hover label in S43 (not on every route before S45).",
-   "fix": "(c) Let the bench itself be the source: look.S45.bench „Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Pod ním lístok: Počas výstavy v lobby hotela Grand Jasná.“; Q8B.001 „Keramický pes a nápis DRUHÝ ŽIVOT. Lístok posiela dielňu do lobby hotela.“; journal / hint „…patrila putovnej dielni, ktorá je teraz v lobby hotela…“."
-  },
-  "look.S47.filter|fact:ROZDIEL = ZAHODIŤ": {
-   "verdict": "acceptable",
-   "reason": "Read off the public normalisation panel he is looking at."
-  },
   "look.S51.clock|item:chronometer": {
    "verdict": "problem",
    "group": "G13-chrono-clock-2020",
@@ -772,46 +896,6 @@
    "why": "Dúbravka 2020 can be reached by bus at the very start; the clock look already talks about the chronometer finding 1982, a year nobody has mentioned until D03/D04.",
    "earliest_intro": "item CHRONO (G07); 1982: Tóno 50 in D02.",
    "fix": "(c) „Pri rekonštrukcii nechali pôvodný mosadzný rám hodín. Taký by sa babke páčil.“ (the 1982 remark could return as a look variant after D03 — data change, owner's call)."
-  },
-  "look.S52.photo|item:lastovička": {
-   "verdict": "acceptable",
-   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
-  },
-  "look.S52.photo|item:múrik": {
-   "verdict": "acceptable",
-   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
-  },
-  "look.S56.ambient 1|item:lastovička": {
-   "verdict": "acceptable",
-   "reason": "Visible: the metal swallow on the window; the missing tree and wall are compared with the 1995 yard he has seen."
-  },
-  "look.S61.niche|fact:rad 2, stĺpec 3": {
-   "verdict": "acceptable",
-   "reason": "He sees the cavity and puts the jar there himself (Oto and Tóno agree in E02)."
-  },
-  "look.S61.tree|item:ohrádka": {
-   "verdict": "acceptable",
-   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
-  },
-  "look.S66.ambient 1|item:ohrádka": {
-   "verdict": "acceptable",
-   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
-  },
-  "look.S69.bike|item:vrchnák": {
-   "verdict": "acceptable",
-   "reason": "The missing bell cap is visible on Kubo's bike (look of the bike itself)."
-  },
-  "look.S69.rhythm|fact:3–2–6": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
-  "puzzle.P03.clue|fact:3–2–6": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
-  "puzzle.P05.clue|fact:rad 2, stĺpec 3": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
   },
   "quest.M01.hint.1|person:Ela": {
    "verdict": "problem",
@@ -822,35 +906,6 @@
    "earliest_intro": "Ela's hover label in S03 (story step 1.5).",
    "fix": "(c) G01 objective/journal „Pomôž Mire s nákupom: zastav sa na výdajnom mieste pri Lúčnom koníku.“; M01 hint 1 „Začni na výdajnom mieste pri Lúčnom koníku.“"
   },
-  "quest.M05.hint.1|org:kazetový klub": {
-   "verdict": "problem",
-   "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
-  },
-  "quest.M05.hint.1|person:Juro": {
-   "verdict": "problem",
-   "group": "G01-juro",
-   "owner_example": true,
-   "severity": "high",
-   "fix_type": "a+b",
-   "why": "Adam names Juro and the cassette club in Ružinov while he is alone in the school radio room; nobody has mentioned either. The objective, the journal, the tape's purpose and the M05 level-1 hint repeat the name right after it. (Owner's example.)",
-   "earliest_intro": "none before B06: Juro's own hover label in S27 and the exit label 'Kazetový klub v suteréne' in S25 (story step 17.6, after B06); Juro first speaks in B07.",
-   "fix": "Owner's fix: Pali names Juro in B05 (new line after action.B05.x04, Pali, ty): „S páskami čaruje Juro Kazeta v klube v Ružinove.“ B06.002 becomes „Hlasy takmer nepočuť, hoci páska prázdna nie je. Kazetu by to chcelo opraviť, ale ako ju zhlasním?“ plus a new Adam line „Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť.“ B05 is guaranteed before B06 (B06 needs the new belt), so the objective, journal, TAPE_RAW purpose and M05 hint 1 are then fine unchanged."
-  },
-  "quest.M07.hint.1|person:Dezider": {
-   "verdict": "problem",
-   "group": "G06-dezider",
-   "severity": "medium",
-   "fix_type": "b",
-   "why": "When the map is complete Adam says it leads „k Deziderovej garáži“; nothing shows that the map names Dezider, and nobody has mentioned him. Objective, journal and M07 hint 1 follow.",
-   "earliest_intro": "the exit label in S28 (story step 27.5, after B16); Dezider speaks in B17.",
-   "fix": "(b) Make it an observation of the map: B16.001 „Mapa je celá a vedie do Petržalky. Pri garáži číslo 17 je drobným písmom: D. Kováč, rádioamatér.“ (item look NODEMAP may say the same). Objective / journal / hint then fine."
-  },
   "quest.M08.goal|item:pumpa / manžeta": {
    "verdict": "problem",
    "group": "G03-oto-before-ivanka",
@@ -860,25 +915,7 @@
    "earliest_intro": "Oto: the exit label 'Otova mechanická dielňa' in S35 (story step 33.6, in 1962) or Božo's optional topic; the pump: Oto in I01 (story step 34).",
    "fix": "(c) B22 objective/journal: „Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi tam mechanickú dielňu, kde vznikol ZVON.“ M08 title „Meracia miestnosť“, goal „Dostaň sa v Ivanke do meracej miestnosti prvého ZVONu.“, hint 1 „V Ivanke sa pýtaj na mechanickú dielňu. Tam sa dozvieš, ako sa dostať k meraniu.“ Alternative (a): Mira (G05.x04) names her partner: „Ja a Oto Bielik, mechanik z Ivanky.“ — then only the pump needs (c)."
   },
-  "quest.M08.goal|person:Oto": {
-   "verdict": "problem",
-   "group": "G03-oto-before-ivanka",
-   "severity": "high",
-   "fix_type": "c (or a)",
-   "why": "Right after the Starý most measurement (still in 1995) the objective says „nájdi Ota v jeho mechanickej dielni“ and the next quest's title / goal / hint 1 say „Ručná pumpa“, „Oprav Otovi ručnú pumpu“. Nobody has named Oto (Mira in G05 only says „jeden šikovný človek“) and the pump appears only in I01.",
-   "earliest_intro": "Oto: the exit label 'Otova mechanická dielňa' in S35 (story step 33.6, in 1962) or Božo's optional topic; the pump: Oto in I01 (story step 34).",
-   "fix": "(c) B22 objective/journal: „Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi tam mechanickú dielňu, kde vznikol ZVON.“ M08 title „Meracia miestnosť“, goal „Dostaň sa v Ivanke do meracej miestnosti prvého ZVONu.“, hint 1 „V Ivanke sa pýtaj na mechanickú dielňu. Tam sa dozvieš, ako sa dostať k meraniu.“ Alternative (a): Mira (G05.x04) names her partner: „Ja a Oto Bielik, mechanik z Ivanky.“ — then only the pump needs (c)."
-  },
   "quest.M08.hint.1|item:pumpa / manžeta": {
-   "verdict": "problem",
-   "group": "G03-oto-before-ivanka",
-   "severity": "high",
-   "fix_type": "c (or a)",
-   "why": "Right after the Starý most measurement (still in 1995) the objective says „nájdi Ota v jeho mechanickej dielni“ and the next quest's title / goal / hint 1 say „Ručná pumpa“, „Oprav Otovi ručnú pumpu“. Nobody has named Oto (Mira in G05 only says „jeden šikovný človek“) and the pump appears only in I01.",
-   "earliest_intro": "Oto: the exit label 'Otova mechanická dielňa' in S35 (story step 33.6, in 1962) or Božo's optional topic; the pump: Oto in I01 (story step 34).",
-   "fix": "(c) B22 objective/journal: „Na časovom uzle Dúbravskej zastávky vyber Ivanku 1962 a nájdi tam mechanickú dielňu, kde vznikol ZVON.“ M08 title „Meracia miestnosť“, goal „Dostaň sa v Ivanke do meracej miestnosti prvého ZVONu.“, hint 1 „V Ivanke sa pýtaj na mechanickú dielňu. Tam sa dozvieš, ako sa dostať k meraniu.“ Alternative (a): Mira (G05.x04) names her partner: „Ja a Oto Bielik, mechanik z Ivanky.“ — then only the pump needs (c)."
-  },
-  "quest.M08.hint.1|person:Oto": {
    "verdict": "problem",
    "group": "G03-oto-before-ivanka",
    "severity": "high",
@@ -932,27 +969,6 @@
    "earliest_intro": "the 1995 lime tree hotspot (S17, optional) / the 1982 yard S61.",
    "fix": "(c) „V roku 1982 povedz Tónovi pravdu a ukry s ním rezervný mostík. Školský dvor si pritom dobre prezri.“"
   },
-  "quest.M11C.title|fact:38 rokov": {
-   "verdict": "acceptable",
-   "reason": "Arithmetic Adam can do: 1982 → 2020 (he told Tóno he comes from 2020)."
-  },
-  "quest.M12.hint.1|person:Nina": {
-   "verdict": "problem",
-   "group": "G08-nina-2035",
-   "severity": "medium",
-   "fix_type": "a (or c)",
-   "why": "The C05 objective says „nájdi kurátorku Ninu“ and M12 hint 1 „Nina čaká pred hotelom“; the device only says „Cieľ fondu: Atlas, Jasná, 2035“. Nina is named nowhere before (only in Ela's optional topic, as a fifteen-year-old).",
-   "earliest_intro": "Nina's hover label in S42 (story step 73.5, after C05).",
-   "fix": "(a) A device line after C05.001 (SYSTEM, the P04 line itself stays verbatim): „Kurátorka fondu: Nina Švecová, Grand Jasná.“ — or (c) objective „…a nájdi kurátorku fondu pred hotelom Grand Jasná“, M12 hint 1 „Kurátorka fondu čaká pred hotelom Grand Jasná. Výstava Atlasu je v hoteli aj hore pri Rotunde.“"
-  },
-  "quest.Q2.hint.2|item:oznam": {
-   "verdict": "acceptable",
-   "reason": "The large-print notice is Adam's own idea in Q2A (Jozef needs the hours in large letters)."
-  },
-  "quest.Q2.reward|item:odtlačok": {
-   "verdict": "acceptable",
-   "reason": "„Odtlačok“ here means a printed copy of the notice, not the 1962 imprint."
-  },
   "quest.Q3.hint.2|item:negatív": {
    "verdict": "problem",
    "group": "G32-q3-negative",
@@ -971,23 +987,6 @@
    "earliest_intro": "Zita in Q3B (the envelope), Karol / Alena in B13–B14.",
    "fix": "(c) journal „Soňa hľadá fotografiu družstva. Obálku vraj našla Zita pri kiosku.“; hint 2 „Obálku má Zita pri kiosku. S fotkou ti pomôžu vo fotoateliéri.“"
   },
-  "quest.Q5.hint.2|person:Tóno": {
-   "verdict": "acceptable",
-   "reason": "His own school: Tóno has been the caretaker of ZŠ Sokolíkova since Adam was a pupil (C01.004 „Náš školník?“); Adam himself said „spýtam sa školníka“."
-  },
-  "quest.Q7.hint.2|item:Mirin fond / krabica": {
-   "verdict": "acceptable",
-   "reason": "Rudo told him „na povale pri meracej miestnosti“; the journal uses the attic's room name."
-  },
-  "quest.Q7.title|fact:Žiaden strach, miláčik": {
-   "verdict": "problem",
-   "group": "G33-q7-title",
-   "severity": "low",
-   "fix_type": "a",
-   "why": "The quest title quotes the play's first line (protected text), which Rudo never says in Q7A — he only says he knows the first sentence by heart.",
-   "earliest_intro": "Zuzana's optional topic extra 7, Rudo in Q7C.",
-   "fix": "(a) Rudo says it in Q7A (new line after Q7A.x01, RUDO): „„Žiaden strach, miláčik!“ Lepšia prvá veta neexistuje.“ The title stays verbatim."
-  },
   "quest.Q8.hint.2|person:Tamara": {
    "verdict": "problem",
    "group": "G15-tamara-bench",
@@ -996,19 +995,6 @@
    "why": "Q8 can be followed to the bench at Vrbické pleso before Adam meets Tamara in the lobby; the bench look, Q8B and the journal then name Tamara and know that her workshop moved to the lobby.",
    "earliest_intro": "Tamara's hover label in S43 (not on every route before S45).",
    "fix": "(c) Let the bench itself be the source: look.S45.bench „Na operadle je keramický pes a nápis DRUHÝ ŽIVOT. Pod ním lístok: Počas výstavy v lobby hotela Grand Jasná.“; Q8B.001 „Keramický pes a nápis DRUHÝ ŽIVOT. Lístok posiela dielňu do lobby hotela.“; journal / hint „…patrila putovnej dielni, ktorá je teraz v lobby hotela…“."
-  },
-  "topic.BOZO.ambient 2.001|item:lístok na oba úseky": {
-   "verdict": "acceptable",
-   "reason": "A return ticket at a railway station is general knowledge (not the 2035 lift ticket)."
-  },
-  "topic.BOZO.extra 3.003|person:Oto": {
-   "verdict": "problem",
-   "group": "G20-oto-topics-1962",
-   "severity": "low",
-   "fix_type": "b",
-   "why": "Optional Ivanka topics in which Adam names Oto / pán Bielik although he may not have met him or seen his workshop sign yet (the topics are open from arrival; Vera's extra 2 can be picked before her ambient 1 that names Oto).",
-   "earliest_intro": "Božo's ambient 1, Vera's ambient 1 (optional), exit label 'Otova mechanická dielňa' in S35.",
-   "fix": "(b) Božo extra 3 „Úprimne? Do roku… do mechanickej dielne.“; Zuzana extra 2 label „Mechanická dielňa“, „Nevieš, kde je tu mechanická dielňa?“ (her answer „Ujo Oto? …“ then introduces him); Vera extra 2 label „Časté zmeny rozmerov“, „Menia vám tu rozmery naozaj tak často?“ (her answer names Oto)."
   },
   "topic.ELA.extra 2.001|person:Nina": {
    "verdict": "problem",
@@ -1046,38 +1032,6 @@
    "earliest_intro": "Jana's answer in the same topic.",
    "fix": "(b) label „Čo chystáte?“; „Čo to tu chystáte?“ — Jana: „Výstavku. Rozvrh, menovky a poradie…“."
   },
-  "topic.LENKA.ambient 1.001|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.LENKA.ambient 1.003|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.LENKA.ambient 1.label|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.LENKA.ambient 2.label|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.LENKA.extra 1.001|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.LENKA.extra 3.001|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "topic.PALI.extra 2.001|item:remienok": {
-   "verdict": "acceptable",
-   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
-  },
-  "topic.PALI.extra 2.label|item:remienok": {
-   "verdict": "acceptable",
-   "reason": "He sees the broken belt in the deck (and a repair shop sells belts); repairman's general knowledge."
-  },
   "topic.POSTA.ambient 2.label|person:Béla": {
    "verdict": "problem",
    "group": "G23-bela",
@@ -1086,10 +1040,6 @@
    "why": "The topic label names the pigeon Béla before Alojz does (his first line of the topic).",
    "earliest_intro": "Alojz in this topic (first line) or in Q6A.",
    "fix": "(b) label „Váš holub?“"
-  },
-  "topic.SIMON.ambient 2.002|item:ohrádka": {
-   "verdict": "acceptable",
-   "reason": "The tree guard is Adam's own idea when he sees the cart track next to the young tree."
   },
   "topic.TAMARA.extra 1.label|org:Druhý život": {
    "verdict": "problem",
@@ -1109,15 +1059,6 @@
    "earliest_intro": "Juro in B07.",
    "fix": "(b) entry „Miletička. Tu sa dá zohnať každá súčiastka aj predavač, ktorý sa spýta, načo mi je.“; Fero's label „Koľko stoja súčiastky?“ (or show the topic only after B07: requires_done B07 — data change)."
   },
-  "topic.VERA60.extra 2.001|person:Oto": {
-   "verdict": "problem",
-   "group": "G20-oto-topics-1962",
-   "severity": "low",
-   "fix_type": "b",
-   "why": "Optional Ivanka topics in which Adam names Oto / pán Bielik although he may not have met him or seen his workshop sign yet (the topics are open from arrival; Vera's extra 2 can be picked before her ambient 1 that names Oto).",
-   "earliest_intro": "Božo's ambient 1, Vera's ambient 1 (optional), exit label 'Otova mechanická dielňa' in S35.",
-   "fix": "(b) Božo extra 3 „Úprimne? Do roku… do mechanickej dielne.“; Zuzana extra 2 label „Mechanická dielňa“, „Nevieš, kde je tu mechanická dielňa?“ (her answer „Ujo Oto? …“ then introduces him); Vera extra 2 label „Časté zmeny rozmerov“, „Menia vám tu rozmery naozaj tak často?“ (her answer names Oto)."
-  },
   "topic.VERA60.extra 2.label|person:Oto": {
    "verdict": "problem",
    "group": "G20-oto-topics-1962",
@@ -1126,28 +1067,6 @@
    "why": "Optional Ivanka topics in which Adam names Oto / pán Bielik although he may not have met him or seen his workshop sign yet (the topics are open from arrival; Vera's extra 2 can be picked before her ambient 1 that names Oto).",
    "earliest_intro": "Božo's ambient 1, Vera's ambient 1 (optional), exit label 'Otova mechanická dielňa' in S35.",
    "fix": "(b) Božo extra 3 „Úprimne? Do roku… do mechanickej dielne.“; Zuzana extra 2 label „Mechanická dielňa“, „Nevieš, kde je tu mechanická dielňa?“ (her answer „Ujo Oto? …“ then introduces him); Vera extra 2 label „Časté zmeny rozmerov“, „Menia vám tu rozmery naozaj tak často?“ (her answer names Oto)."
-  },
-  "topic.ZUZANA.extra 2.001|person:Oto": {
-   "verdict": "problem",
-   "group": "G20-oto-topics-1962",
-   "severity": "low",
-   "fix_type": "b",
-   "why": "Optional Ivanka topics in which Adam names Oto / pán Bielik although he may not have met him or seen his workshop sign yet (the topics are open from arrival; Vera's extra 2 can be picked before her ambient 1 that names Oto).",
-   "earliest_intro": "Božo's ambient 1, Vera's ambient 1 (optional), exit label 'Otova mechanická dielňa' in S35.",
-   "fix": "(b) Božo extra 3 „Úprimne? Do roku… do mechanickej dielne.“; Zuzana extra 2 label „Mechanická dielňa“, „Nevieš, kde je tu mechanická dielňa?“ (her answer „Ujo Oto? …“ then introduces him); Vera extra 2 label „Časté zmeny rozmerov“, „Menia vám tu rozmery naozaj tak často?“ (her answer names Oto)."
-  },
-  "topic.ZUZANA.extra 2.label|person:Oto": {
-   "verdict": "problem",
-   "group": "G20-oto-topics-1962",
-   "severity": "low",
-   "fix_type": "b",
-   "why": "Optional Ivanka topics in which Adam names Oto / pán Bielik although he may not have met him or seen his workshop sign yet (the topics are open from arrival; Vera's extra 2 can be picked before her ambient 1 that names Oto).",
-   "earliest_intro": "Božo's ambient 1, Vera's ambient 1 (optional), exit label 'Otova mechanická dielňa' in S35.",
-   "fix": "(b) Božo extra 3 „Úprimne? Do roku… do mechanickej dielne.“; Zuzana extra 2 label „Mechanická dielňa“, „Nevieš, kde je tu mechanická dielňa?“ (her answer „Ujo Oto? …“ then introduces him); Vera extra 2 label „Časté zmeny rozmerov“, „Menia vám tu rozmery naozaj tak často?“ (her answer names Oto)."
-  },
-  "topic.ZUZANA.extra 6.004|item:krmivo": {
-   "verdict": "acceptable",
-   "reason": "He sees the pigeon at the empty bowl; feed is the obvious idea."
   },
   "topic.ZUZANA.extra 7.001|person:Rudo": {
    "verdict": "problem",
@@ -1167,14 +1086,6 @@
    "earliest_intro": "Rudo's hover label in S34.",
    "fix": "(b) label „Divadlo v sále“; „Ty poznáš tých z divadla v kultúrnej sále?“ (Zuzana's „Ujo Rudo…“ introduces him)."
   },
-  "ui.hint_step.B22|fact:3–2–6": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
-  "ui.hint_step.D05|fact:rad 2, stĺpec 3": {
-   "verdict": "acceptable",
-   "reason": "Read off the painted drawing (TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV) / Tóno's map; the clue repeats what was read."
-  },
   "ui.hint_step.G07|item:chronometer": {
    "verdict": "problem",
    "group": "G12-chrono-name",
@@ -1183,18 +1094,6 @@
    "why": "The case says ZVON; „chronometer“ is first shown as the item name after G07. The action sentence, the exact-step hint and the S10 cradle look (S10 can be entered before G07) already use the word.",
    "earliest_intro": "item CHRONO in the bag (G07).",
    "fix": "(c) G07 label „Vybrať prístroj z puzdra“; ui.hint_step.G07 „V predsieni dielne vyber prístroj z mosadzného puzdra.“; look.S10.chrono „…Prenosný diel patrí doprostred…“."
-  },
-  "ui.hint_step.Q1A|person:Bodka": {
-   "verdict": "acceptable",
-   "reason": "Bodka is the neighbour's dog on Lenka's leash in the same picture; the village knows Adam since childhood (VOICES ty/ty table), so knowing the dog's name is his home background."
-  },
-  "ui.hint_step.Q2B|item:oznam": {
-   "verdict": "acceptable",
-   "reason": "The large-print notice is Adam's own idea in Q2A (Jozef needs the hours in large letters)."
-  },
-  "ui.hint_step.Q7A|item:scenár": {
-   "verdict": "acceptable",
-   "reason": "The play rehearsal is visible in the hall (Rudo, Lída, the stage); asking about the script is natural."
   }
  }
 }

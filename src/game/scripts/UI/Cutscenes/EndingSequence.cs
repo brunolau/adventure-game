@@ -113,6 +113,7 @@ public partial class EndingSequence : ModalScreen
         speaker ??= shot.SpeakerId;
         line.Text = (speaker is null ? "" : Ui.SpeakerName(speaker) + ": ") + "„" + text + "“";
         counter.Text = (index + 1) + " / " + shots.Count;
+        LastBell.Game.Audio.AudioService.PlayVoice($"epilogue.{shot.Index + 1}.line"); // the shot's line, voiced (TextKeys.EpilogueLine)
         if (!UiSettings.ReducedMotion)
         {
             Body.Modulate = new Color(1, 1, 1, 0);
@@ -134,6 +135,7 @@ public partial class EndingSequence : ModalScreen
     {
         if (rolling) return;
         rolling = true;
+        LastBell.Game.Audio.AudioService.PlayVoice(null);
         bool replay = Replay;
         Back();
         UiRoot.Instance?.OpenCredits(rolling: true, done: () =>

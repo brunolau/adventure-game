@@ -1,12 +1,22 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: Windows build of 2026-10-06 (rebuilt 23:14 with the approved content v2: Zuzana in 1962 and 1995, the new
-Sokolíkovský dvor S69 and all new texts; also the exit-layout and "inventár" changes of the same evening), version 0.1.0 (the main menu and
-the exe say the same number). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections
-"Content v2 applied", "Second verification and release pass" and "Verification and release pass").
+Version: Windows build of 2026-10-07 08:17 (rebuilt with the approved round 2: the knowledge fixes, the difficulty
+settings with their written hints, Zuzana standing still in conversations and S69 at sunset; it also carries the
+committed changes since the last build: the voice clips, the exits by real geography and the difficulty engine;
+before that, 2026-10-06 23:14 with content v2), version 0.1.0 (the main menu and the exe say the same number). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections
+"Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification and release pass").
 
 ## In short
 
+- **Round 2 is in** (you approved it on 2026-10-07: "i guess ok"): Adam no longer names people, places or things
+  before the game has shown or told them (Juro, Pali, Oto, Dezider, Alena, Nina, the return bridge and the rest; the
+  audit of every text in every legal order now finds **0 problems**). **Difficulty**: at New Game you choose Ľahká,
+  Štandardná (recommended) or Ťažká, and you can change it in Settings, tab "Hra". Easy gives the exact step as
+  before; Standard gives a nudge in Adam's voice and where to look, never the solution; Hard gives only the nudge,
+  after three minutes without progress, and no puzzle help. 268 hint texts were written for this.
+- The two cosmetic fixes you were promised: little Zuzana in the Ivanka park stands still while she talks to Adam
+  (and while he talks) and goes back to her hopscotch when the conversation ends; the Sokolíkovský dvor S69 is now
+  in the same sunset light as the kiosk street S18 next to it (the painting relit, nothing moved).
 - The whole game is playable from a new game to the end credits and the postgame, on Windows 10/11 (64-bit).
 - **Content v2 is in** (you approved it on 2026-10-06: "ok, they are good"): Zuzana at seven in the Ivanka park with
   her side quest (the class bell, 4 steps), Zuzana at forty and Kubo in the new room S69 Sokolíkovský dvor (reached
@@ -24,9 +34,10 @@ the exe say the same number). Language: Slovak only. Test record behind this pag
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (259.1 MB). Unpacked, it is the folder
-   `PoslednyZvonec/` (382.6 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
-   `LastBell.pck` (191.7 MB) and `data_LastBell_windows_x86_64/` (81.4 MB, the C# code and the .NET runtime).
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (346.8 MB). Unpacked, it is the folder
+   `PoslednyZvonec/` (482.2 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
+   `LastBell.pck` (291.3 MB, of it 98.9 MB voice clips) and `data_LastBell_windows_x86_64/` (81.4 MB, the C# code
+   and the .NET runtime).
    The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
 3. The exe is not code-signed, so Windows SmartScreen says "Windows protected your PC". Click "More info", then
@@ -68,8 +79,11 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
   chose and approved era by era (docs/writing/approval/). The puzzles and solutions did not change; the one main step
   that moved is the rhythm drawing (B19), now on the wall of the Sokolíkovský dvor.
 - Original music: one theme per period plus menu, puzzle, tension and epilogue (9 tracks). About 105 sound effects
-  and ambience loops. Subtitles for everything. **No voice acting yet.**
-- Journal with goals and three hint levels per quest, a map with fast travel, an era chooser, 8 save slots plus an
+  and ambience loops. Subtitles for everything. Spoken lines: the voice clips in `src/game/assets/voice/` at build
+  time (2217 clips; a separate voice task was regenerating clips while this build was made, so some lines may still
+  have older takes or none).
+- Three difficulty levels that change only the hints (Easy / Standard / Hard, saved with each save file),
+  journal with goals and hints per step, a map with fast travel, an era chooser, 8 save slots plus an
   autosave, and settings: volumes, text speed, subtitle size and background, fullscreen/window, HUD scale, walk speed
   100/125/150 %, reduced motion, key rebinding.
 
@@ -94,8 +108,6 @@ found is fixed (selection after use, hints per step, the painted time-node clock
 Esc = one line, Mira in the attic, the CS07 symbols, Adam's winter coat, RECEPCIA, toasts and hover label over
 screens, the S05 door, staging in front of props, the version number), except:
 
-- Little Zuzana (S37) goes on with her hopscotch animation while she talks, and S69 is painted in afternoon light while
-  the kiosk street S18 next to it is at sunset (both cosmetic; noted in docs/story/SOKOLIKOVA_YARD.md).
 - Tóno is "Anton Farkaš" in hover labels and topic headers, Tóno in every line (PT-S25, your choice N9).
 - The first workshop goal says "kolíska stolového uzla ZVON" before anything explains it (PT-F14, N14).
 - An exit click while you deliberately keep an item selected does nothing (the handoff rule; N2 b). After a
@@ -106,6 +118,7 @@ screens, the S05 door, staging in front of props, the version number), except:
   painting and never leaves (LIVING-05). Crowd murmur in a few rooms is not Slovak (AUDIO-04).
 - The credits list every photo, sound, font and the engine, but not yet the licence of the game's own art (waits
   for decision 9).
+- The S69 painting is now at sunset, but the people in it are drawn in daylight colours (as in S18).
 - Not checked by us: sound by ear (our test runs are muted), laptops with integrated graphics, other screen shapes
   than 16:9.
 
@@ -159,7 +172,8 @@ docs/BUILD.md).
 
 ### Voice acting
 - Already in the engine: when `assets/voice/<line_id>.ogg` exists, it plays on the Voice bus, the music ducks,
-  and the clip stops when the line is skipped. No voice files exist yet.
+  and the clip stops when the line is skipped. Voice clips are installed (voice recast, commit 6b6d141) and a voice
+  task is still working on them; the new round-2 lines need their clips from that task.
 - Needed: casting and recording, or a decision on synthetic voices, for 756 dialogue lines across about 50
   characters. Many characters appear at two or three ages (Mira, Tóno, Jana, Oto). A script per character can be
   exported from `src/game/localization/dialogue.csv` by line id.
@@ -167,6 +181,10 @@ docs/BUILD.md).
   the music (-16 LUFS).
 
 ## Paid generation (art/spend-log.csv)
+
+Read 2026-10-07 08:25: **USD 249.80** (8174 rows; another task was adding voice rows while this was read). On
+2026-10-07 so far: writing round 2 GPT reviews USD 2.31, the S37 exit-geometry fixes USD 0.30, **the S69 relight
+USD 0.15** (the only paid call of applying round 2), voice USD 6.48. Earlier state:
 
 **USD 239.75** (3112 log rows): 2026-10-04 USD 2.10 (style tests), 2026-10-05 USD 109.80, 2026-10-06 USD 127.85 (winter
 Jasná, Ivanka 1962, the 2020 corrections, the writing and its GPT reviews for all eras, Zuzana's sprites, Kubo, the

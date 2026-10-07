@@ -23,6 +23,10 @@ Debug args after `--`: `--reduced-motion`, `--no-ambient`, `--ambient-report` (p
     (0.5 % vertical scale); video idles play `idle_fidget` now and then at a loop boundary;
   - talk loop while the presenter says the line is being revealed; stops on a rest mouth frame; talk time
     that arrives during a one-shot action is played after it; the back view turns side-on to talk;
+  - conversation (`IActorVisual.SetEngaged`, set by `DialoguePresenter` for the NPC of the topic menu, the
+    speaker of a line, the NPC an action's lines are aimed at, until the conversation ends + 0.35 s): an NPC
+    whose manifest has an `idle_engaged` clip stands in it instead of an activity idle and plays no fidget
+    (ZUZANA's hopscotch, owner 2026-10-07); `--clips` logs each NPC's clip per harness screenshot frame;
   - one-shots from `actions[].animation` (`reach_low|mid|high`, `use_tool`, `show_item`, `inventory_combine`,
     NPC `gesture`): forward, hold (`action_hold_s`, overrides per animation), reversed back; walking cancels;
   - every clip switch cross-fades for 80 ms.

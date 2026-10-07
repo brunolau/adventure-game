@@ -35,6 +35,12 @@ public static class UiSettings
     /// <summary>Mute while the game window is not focused.</summary>
     public static bool MuteUnfocused { get; set; }
 
+    /// <summary>
+    /// Voice-over on (default). Off: AudioService plays no voice lines and the dialogue presenter advances on the
+    /// text timing only (it waits only while a voice line plays).
+    /// </summary>
+    public static bool VoiceOver { get; set; } = true;
+
     /// <summary>Text speed.</summary>
     public static TextSpeed TextSpeed { get; set; } = TextSpeed.Normal;
 
@@ -96,6 +102,7 @@ public static class UiSettings
         if (cfg.Load(FilePath) != Error.Ok) return;
         for (int i = 0; i < Buses.Length; i++) Volume[i] = Math.Clamp((int)cfg.GetValue("audio", Buses[i], Volume[i]), 0, 100);
         MuteUnfocused = (bool)cfg.GetValue("audio", "mute_unfocused", MuteUnfocused);
+        VoiceOver = (bool)cfg.GetValue("audio", "voice_over", VoiceOver);
         TextSpeed = (TextSpeed)Math.Clamp((int)cfg.GetValue("text", "speed", (int)TextSpeed), 0, 3);
         AutoAdvance = (bool)cfg.GetValue("text", "auto_advance", AutoAdvance);
         AutoAdvancePace = Math.Clamp((float)cfg.GetValue("text", "auto_advance_pace", AutoAdvancePace), 0.4f, 2f);
@@ -120,6 +127,7 @@ public static class UiSettings
         var cfg = new ConfigFile();
         for (int i = 0; i < Buses.Length; i++) cfg.SetValue("audio", Buses[i], Volume[i]);
         cfg.SetValue("audio", "mute_unfocused", MuteUnfocused);
+        cfg.SetValue("audio", "voice_over", VoiceOver);
         cfg.SetValue("text", "speed", (int)TextSpeed);
         cfg.SetValue("text", "auto_advance", AutoAdvance);
         cfg.SetValue("text", "auto_advance_pace", AutoAdvancePace);
@@ -145,6 +153,7 @@ public static class UiSettings
         int[] defaults = { 80, 70, 80, 80, 90 };
         Array.Copy(defaults, Volume, defaults.Length);
         MuteUnfocused = false;
+        VoiceOver = true;
         TextSpeed = TextSpeed.Normal;
         AutoAdvance = true;
         AutoAdvancePace = 1f;

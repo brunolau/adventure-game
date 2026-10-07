@@ -17,10 +17,72 @@ answers (entry hall without the desk, S03 grasshopper, podlubie no-go, S30 on th
 regression. What still needs the product owner: docs/DECISIONS.md "Status 2026-10-06"; the remaining known issues:
 docs/RELEASE.md.
 
-**Content v2 applied and re-verified on the evening of 2026-10-06** (next section): the owner-approved texts, Zuzana
+**Content v2 applied and re-verified on the evening of 2026-10-06** (section "Content v2 applied"): the owner-approved texts, Zuzana
 1962 / 1995, the room S69 and side quests Q10 / Q11 are in the game; 134/134 actions in all four routes, release rebuilt.
 
-The sections after the next three are the record of the first milestone-5 run (2026-10-05).
+**Round 2 applied and re-verified on 2026-10-07** (next section): the knowledge fixes, the Standard / Hard hint texts
+and the difficulty UI are live, Zuzana stands still in conversations, S69 is at sunset; all suites and four routes
+green (134/134), release rebuilt and smoke-tested.
+
+The sections after the next four are the record of the first milestone-5 run (2026-10-05).
+
+## Round 2 applied (2026-10-07)
+
+The owner reviewed round 2 on his approval page and answered "i guess ok" with no card marked: every text of
+`docs/writing/approval/changes_r2.json` is approved (docs/DECISIONS.md "Round 2 approved and applied"). ISSUES
+`APPLY-R2`, `COSM-ZUZANA-TALK`, `COSM-S69-LIGHT`.
+
+| what | where | count |
+|---|---|---|
+| knowledge rewrites of existing keys | `out_v3/knowledge.csv` -> `check_rewrite.py --overrides-out` -> `sk_overrides.csv`; `ui.hint_step.G07` -> ui.csv | 48 rows: 3 new + 44 changed override rows, 1 ui row; 1519 overrides applied (1521 rows, 2 retired) |
+| knowledge overlay | `out_v3/knowledge_ext.json` -> `dialogue_ext.json`: the 13 live C1-C4 entries of the same ids removed first (merge note), then `content_ext.py merge` | 11 sequences (B02, B05, B06, B13, B16, B22, C01, C05, E02, G05, Q7A), 5 topics (ELA.extra 2, JANA95.extra 1, VERA60.extra 2, ZUZANA.extra 7, TAMARA.extra 1); 1453 overlay lines in all |
+| Standard / Hard hints | `out_v3/hints.csv` -> ui.csv `hint.nudge.<id>` / `hint.where.<id>` (Core `Hints.NudgeKey` / `WhereKey`) | 268 rows (134 steps); B07's hint went live together with the B05 / B06 Juro fix |
+| difficulty UI | `out_v3/ui_difficulty.csv` -> ui.csv; `DifficultyText.cs` fallbacks follow `easy_desc` / `standard_end` | 24 rows; ui.csv 768 keys |
+
+| check | result |
+|---|---|
+| `extract_strings.py` | OK, 1519 overrides, 0 problems, 0 internal ids; 5090 keys (dialogue 2209, world 2113, ui 768) |
+| `check_strings.py` | OK, 0 errors, 0 warnings |
+| `check_rewrite.py` `--self-test` / `--overlay-only` / out_v3 knowledge, hints, ui_difficulty / `--overlay-only --overlay knowledge_ext.json` | all OK, 0 errors, 0 warnings (1712 overlay texts, 18 retired keys) |
+| `content_ext.py check` | OK |
+| `knowledge_audit.py --simulate 200 --write --write-md` | 200 random legal orders, 0 must-set violations; **0 problems, 0 unjudged** (2174 fine, 150 acceptable). The tool now also audits the live `hint.nudge.*` / `hint.where.*` (292 more mentions, all introduced or background). The 29 fixed rows stay as *fine* with `resolved`; the 6 known "Adam reads it off something he sees" rows (B16.k01 Dezider on the map, look.S30.dial Mira's label, look.S45.bench and Q8B.001 / Q8B.002 / Q8B.journal Tamara's note) and the 3 that follow B16.k01 (B16 objective / journal, M07 hint 1) are acceptable; 55 verdicts of replaced texts moved to `retired`. `docs/writing/knowledge/AUDIT.md` |
+| `check_blocking.py` | 69 rooms, 0 errors, 15 warnings (the known exit-point distances, none in S69 / S37); `--strict S69 S18` clean |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `--acceptance m1` / `m2` / `travel` (headless) | 34 PASS / 46 PASS / 4 PASS, 0 failures |
+| Route A `--play-all --save-load-each` | 134/134, save + load + compare after each, 9 cutscenes, 5 puzzles, 18 variant layers, 27 causal effects; 0 blockers, 0 failures |
+| Route B `--play-all --interleave early --all-lines` | 134/134, 2148 distinct lines, 500 looks; 0 blockers, 0 failures |
+| Route C7 `--play-all --interleave seed:7 --skip-cutscenes` | 134/134; 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` | 134/134 by keys only: 697 steps, 1982 key presses (mean 2.8, max 7), 0 awkward, 0 blockers, 0 failures |
+| hint check, Standard (harness `--ui difficulty:standard`, two reveals) | steps G02, B07, I01, D01, F02 (replay 1 / 17 / 33 / 51 / 74): "Postrčenie" + "Kde hľadať" shown, then "Viac sa na štandardnej obťažnosti nedozvieš…", never the exact step |
+| hint check, Hard | B07 with 20 s idle: "Ešte nie (2:39)" + the countdown, no text; with 200 s idle: the nudge only + "Na ťažkej obťažnosti je to všetko…" |
+
+Logs: `build/apply_r2/logs/` (`build/apply_r2/run_verify.sh`), coverage `build/apply_r2/coverage_{A,B,C7,K}.json`.
+
+**Cosmetic fixes.** (1) Zuzana: `IActorVisual.SetEngaged` + `DialoguePresenter` mark the NPCs of the running
+conversation; `SpriteActorVisual` then plays the manifest clip `idle_engaged` (ZUZANA: the calm video idle) instead of
+her hopscotch loop. New harness flag `--clips` logs each NPC's clip per screenshot frame: in Q10A she shows `talk`
+while she speaks and `idle_engaged` while Adam speaks, and her hop loop `idle` again after the conversation. (2) S69:
+one paid relight guide (nano-banana-pro, USD 0.15, S18 as the light reference) transferred as low-frequency light onto
+v6 (`S69_scripts/s69_relight.py`), so no pixel moved (blocking, rects, the 3-2-6 panels, hopscotch, bench and bike are
+identical); foreground mask, bike occluder and bell-cap patches rebuilt; ambient re-cut with identical shapes
+(`ambient_cut.py` `select_source`). art/masters/bg_natural/S69.md.
+
+**Screens** (hidden QA window 1920x1080, `build/screens/apply_r2/`, all looked at): `S37_zuzana_talk_*`,
+`S37_zuzana_seq_*` and `S37_zuzana_talk_strip.png` (standing during Q10A), `S37_zuzana_after_strip.png` (hopping again);
+`S18_evening.png`, `S69_evening.png`, `S18_S69_side_by_side.png`; `hint_standard_step{1,17,33,51,74}.png` +
+`hint_standard_montage.png`, `hint_hard_waiting.png`, `hint_hard_after_wait.png`, `hint_easy.png`;
+`new_game_picker.png` (the approved texts, "…riešenie hádanky ti na požiadanie doplní.").
+
+**Release.** `build.bat` 08:07-08:17, exit 0 (C# 0 errors, release filters OK: 576 natural-mode references, 0 errors;
+the known harmless `ERR_CANT_OPEN` of the icon pass, second pass applied). `LastBell.exe` 109.5 MB, `LastBell.pck`
+291.3 MB (7026 files; 98.9 MB of it the voice clips present at build time, while a separate voice task was still
+regenerating them), `data_LastBell_windows_x86_64/` 81.4 MB; copied to `build/m5/ship/PoslednyZvonec/` (482.2 MB) and
+zipped: **`build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`, 346.8 MB** (zip test OK, 190 files). Smoke test
+(`build/apply_r2/release_smoke.py`, hidden window, key messages to that window only, player profile moved aside and
+restored): QA arguments ignored (still running after `--quit-after 1`, no jump to S44), Nová hra -> the difficulty
+step (Standard preselected) -> Začať hru -> S01 -> G01, autosave S01 / 2020 / [G01] / [PHONE, TOOLS]. The player's
+save folder was backed up before the runs (`build/apply_r2/saves_backup/`) and restored afterwards (identical).
+Paid generation in this pass: USD 0.15 (the S69 relight guide).
 
 ## Content v2 applied (2026-10-06, evening)
 

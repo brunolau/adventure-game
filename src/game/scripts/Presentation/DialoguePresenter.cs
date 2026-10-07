@@ -52,6 +52,14 @@ public partial class DialoguePresenter : Node
     private string? resumeHotspot;
     private string? resumeRoom;
     private PlaceholderTopicMenu placeholderMenu = null!;
+
+    /// <summary>NPC actors that take part in the running conversation (<see cref="Actor.SetEngaged"/>).</summary>
+    private readonly System.Collections.Generic.HashSet<Actor> engaged = new();
+
+    /// <summary>Seconds without a conversation before the engaged NPCs are released (no flicker between two lines).</summary>
+    private const float EngagedReleaseSeconds = 0.35f;
+
+    private float engagedIdle;
     private PlaceholderCutsceneFrame placeholderCutscene = null!;
 
     /// <summary>Frames whose delta is ignored after a session replacement (load / new game).</summary>
@@ -91,7 +99,7 @@ public partial class DialoguePresenter : Node
         placeholderMenu = new PlaceholderTopicMenu { Name = "PlaceholderTopicMenu" };
         layer.AddChild(placeholderMenu);
         GameRuntime.Instance.SessionReplaced += ResetAll;
-        GameRuntime.Instance.RoomChanged += (_, _) => { HideBark(); resumeHotspot = null; };
+        GameRuntime.Instance.RoomChanged += (_, _) => { HideBark(); resumeHotspot = null; engaged.Clear(); };
     }
 
     private void ResetAll()
@@ -162,6 +170,7 @@ public partial class DialoguePresenter : Node
 
         ResumeConversation(game);
         UpdateTopicMenu(game.State);
+        UpdateEngaged(game, dt);
 
         if (barkLeft > 0)
         {
@@ -347,6 +356,50 @@ public partial class DialoguePresenter : Node
         barkLeft = 0;
         View.HideBark();
     }
+
+    // ------------------------------------------------------------------ conversation partners
+
+    /// <summary>
+    /// Marks the NPCs of the running conversation as engaged, so an NPC whose idle is an activity stands still while
+    /// either side speaks (owner 2026-10-07: Zuzana hopped through her talks): the NPC of the topic menu, the speaker of
+    /// each non-cutscene line, the NPC an action's lines are aimed at, and the NPC whose menu reopens. They stay engaged
+    /// until nothing of the conversation is left for <see cref="EngagedReleaseSeconds"/>.
+    /// </summary>
+    private void UpdateEngaged(GameRuntime game, float dt)
+    {
+        var room = WorldStage.Instance?.Current;
+        var state = game.State;
+        bool lineOn = shown is not null && !shown.IsCutscene && !ReferenceEquals(shown, preface);
+        bool active = room is not null && (state.Mode == GameMode.Dialogue || lineOn || resumeHotspot is not null);
+        if (active && room is not null)
+        {
+            engagedIdle = 0;
+            void Add(Actor? a)
+            {
+                if (a is null || a.IsHero || !engaged.Add(a)) return;
+                a.SetEngaged(true);
+            }
+            string? talk = InteractionController.Instance?.TalkHotspotId;
+            if ((state.Mode == GameMode.Dialogue || (lineOn && shown!.Source == LineSource.Topic)) && talk is not null)
+                Add(NpcOf(room, talk));
+            if (resumeHotspot is not null) Add(NpcOf(room, resumeHotspot));
+            if (lineOn)
+            {
+                if (speakingActor is not null) Add(speakingActor);
+                if (shown!.Source == LineSource.Action && game.Content.FindAction(shown.SourceId) is { } action)
+                    Add(NpcOf(room, action.Target));
+            }
+            return;
+        }
+        if (engaged.Count == 0) return;
+        engagedIdle += dt;
+        if (room is not null && engagedIdle < EngagedReleaseSeconds) return;
+        foreach (var a in engaged)
+            if (IsInstanceValid(a)) a.SetEngaged(false);
+        engaged.Clear();
+    }
+
+    private static Actor? NpcOf(Room room, string id) => room.Npcs.TryGetValue(id, out var actor) ? actor : null;
 
     // ------------------------------------------------------------------ topic menu
 

@@ -159,6 +159,9 @@ public partial class Actor : Node2D
     /// <summary>Talk animation on/off.</summary>
     public void SetTalking(bool talking) => Visual.SetTalking(talking);
 
+    /// <summary>Marks the actor as a party of the running conversation (<see cref="IActorVisual.SetEngaged"/>).</summary>
+    public void SetEngaged(bool engaged) => Visual.SetEngaged(engaged);
+
     /// <inheritdoc />
     public override void _Process(double delta)
     {

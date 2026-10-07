@@ -42,6 +42,13 @@ public interface IActorVisual
     void SetTalking(bool talking);
 
     /// <summary>
+    /// True while the figure takes part in a conversation (topic menu, the lines of a topic or of an action aimed at
+    /// it), also while the other party speaks: an NPC whose idle is an activity (Zuzana's hopscotch) then stands
+    /// still and resumes the activity when the conversation ends (manifest clip <c>idle_engaged</c>). Default: no-op.
+    /// </summary>
+    void SetEngaged(bool engaged) { }
+
+    /// <summary>
     /// One-shot body animation named by <c>actions[].animation</c> (reach_mid, use_tool, show_item,
     /// inventory_combine, talk ...). Unknown names are ignored. Never blocks rules: the action is
     /// already committed when this plays.
