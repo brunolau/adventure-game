@@ -101,3 +101,14 @@ The owner granted permission to use all imgur photos he supplied. Applied as fol
 - **S07** (done 2026-10-06): the shop S04 at the bottom left on the road; the bus to Dúbravka higher on the road, pointing up.
 - General: every "next location" arrow points where that place really lies from the camera's real position and heading;
   the return exit in the target room is on the opposite side. Uncertain rooms go to the owner's exit review page.
+
+## Update 2026-10-07 (owner): answers to the exit review + new notes
+
+- Exit questions: S51 ok, S17 ok, S28 ok, S02 ok (keep as they are).
+- **S07:** the exit to Potraviny cez okienko (S04) points DOWN. The stop is in a suburban (urban) area: behind it the
+  painting must show small family houses, not open fields (cf. the friend's photo `imgur_jweYNjd.jpg`).
+- **S18 / S62:** in reality the stop is on the LEFT and the school yard on the RIGHT.
+- **S69 is not "Sokolíkovský dvor" — its name is „Pri LEALe“ in the whole game** (local name; declension: pri LEALe,
+  k LEALu, od LEALu).
+- **S21:** too many exits; keep them, but Petržalský podchod (S28) goes to the lower right corner, pointing right.
+- **Voices:** keep Fero's dialect; the narrator must be a FEMALE voice with a more interested, engaged tone.
