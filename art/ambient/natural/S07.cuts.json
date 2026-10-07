@@ -1,7 +1,7 @@
 {
   "room": "S07",
   "source": "src/game/assets/bg_natural/S07.webp",
-  "note": "Natural S07 cut-outs (art/tools/ambient_cut.py --natural S07): the young autumn trees (right of the board, left along the road) for wind sway, the hanging magnifier (swings on its string, with an inpainted patch under it), the pinned notices (flutter, hidden after Q2C when the readable notice patch covers them) and a sky mask for the clouds.",
+  "note": "Natural S07 cut-outs (art/tools/ambient_cut.py --natural S07): the young autumn trees (right of the board, left along the road) for wind sway, the hanging magnifier (swings on its string, with an inpainted patch under it), the pinned notices (flutter, hidden after Q2C when the readable notice patch covers them) and a sky mask for the clouds. Re-cut 2026-10-07 for master v4 (suburban houses behind the left verge trees): trees_left now keeps only the four verge-tree crowns (include polygons) and hue >= 29, so the new orange roofs (hue 21-27), house walls, doors and garden shrubs stay still.",
   "items": [
     {
       "name": "tree_right",
@@ -40,7 +40,7 @@
       "rules": [
         {
           "hue": [
-            22,
+            29,
             70
           ],
           "sat": [
@@ -53,19 +53,145 @@
           ]
         }
       ],
-      "exclude": [
+      "feather": 1.2,
+      "include": [
         [
           [
-            600,
-            255
+            0,
+            170
           ],
           [
-            680,
-            405
+            30,
+            125
+          ],
+          [
+            90,
+            116
+          ],
+          [
+            150,
+            138
+          ],
+          [
+            174,
+            200
+          ],
+          [
+            172,
+            280
+          ],
+          [
+            152,
+            342
+          ],
+          [
+            20,
+            347
+          ],
+          [
+            0,
+            300
+          ]
+        ],
+        [
+          [
+            193,
+            230
+          ],
+          [
+            213,
+            183
+          ],
+          [
+            265,
+            173
+          ],
+          [
+            312,
+            193
+          ],
+          [
+            327,
+            250
+          ],
+          [
+            324,
+            332
+          ],
+          [
+            302,
+            352
+          ],
+          [
+            208,
+            352
+          ],
+          [
+            193,
+            300
+          ]
+        ],
+        [
+          [
+            331,
+            280
+          ],
+          [
+            348,
+            238
+          ],
+          [
+            385,
+            223
+          ],
+          [
+            422,
+            243
+          ],
+          [
+            434,
+            300
+          ],
+          [
+            427,
+            360
+          ],
+          [
+            343,
+            362
+          ]
+        ],
+        [
+          [
+            441,
+            300
+          ],
+          [
+            458,
+            260
+          ],
+          [
+            490,
+            253
+          ],
+          [
+            517,
+            278
+          ],
+          [
+            520,
+            340
+          ],
+          [
+            507,
+            367
+          ],
+          [
+            448,
+            367
           ]
         ]
-      ],
-      "feather": 1.2
+      ]
     },
     {
       "name": "magnifier",

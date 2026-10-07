@@ -1,13 +1,26 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: Windows build of 2026-10-07 08:17 (rebuilt with the approved round 2: the knowledge fixes, the difficulty
-settings with their written hints, Zuzana standing still in conversations and S69 at sunset; it also carries the
-committed changes since the last build: the voice clips, the exits by real geography and the difficulty engine;
-before that, 2026-10-06 23:14 with content v2), version 0.1.0 (the main menu and the exe say the same number). Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections
-"Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification and release pass").
+Version: Windows build of 2026-10-07 20:20 (rebuilt with your answers of 2026-10-07 evening: S07, S18 / S62 and S21
+exits, the room S69 renamed „Pri LEALe“ in the whole game, and the new female narrator; before that, 08:17 with the
+approved round 2 and 2026-10-06 23:14 with content v2), version 0.1.0 (the main menu and the exe say the same number).
+Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections "Owner feedback of 2026-10-07
+evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification and
+release pass").
 
 ## In short
 
+- **Your notes of 2026-10-07 evening are in:**
+  - **S07** (bus stop, 2020): the way to Potraviny cez okienko now points **down**, and behind the stop the painting
+    shows small family houses of the suburb instead of open fields.
+  - **S18 / S62** (kiosk street 1995 / shop street 1982): the stop is on the **left**, the school yard on the
+    **right**.
+  - **S69 is „Pri LEALe“ everywhere** (room name, map, exit labels, journal, hints and every line; „k LEALu“, „od
+    LEALu“). The four spoken lines that say the name were re-recorded.
+  - **S21** (Kamenné námestie): the other exits stay; Petržalský podchod is now in the **lower right corner, pointing
+    right**.
+  - **Narrator**: a **female voice** (Callirrhoe) with a warmer, more interested delivery reads the two narrator lines
+    (the 1962 cutscenes CS04 and CS07). Fero's dialect is unchanged.
+  - S51, S17, S28 and S02 stay as they were (your "ok").
 - **Round 2 is in** (you approved it on 2026-10-07: "i guess ok"): Adam no longer names people, places or things
   before the game has shown or told them (Juro, Pali, Oto, Dezider, Alena, Nina, the return bridge and the rest; the
   audit of every text in every legal order now finds **0 problems**). **Difficulty**: at New Game you choose Ľahká,
@@ -15,28 +28,31 @@ before that, 2026-10-06 23:14 with content v2), version 0.1.0 (the main menu and
   before; Standard gives a nudge in Adam's voice and where to look, never the solution; Hard gives only the nudge,
   after three minutes without progress, and no puzzle help. 268 hint texts were written for this.
 - The two cosmetic fixes you were promised: little Zuzana in the Ivanka park stands still while she talks to Adam
-  (and while he talks) and goes back to her hopscotch when the conversation ends; the Sokolíkovský dvor S69 is now
+  (and while he talks) and goes back to her hopscotch when the conversation ends; S69 Pri LEALe is now
   in the same sunset light as the kiosk street S18 next to it (the painting relit, nothing moved).
 - The whole game is playable from a new game to the end credits and the postgame, on Windows 10/11 (64-bit).
 - **Content v2 is in** (you approved it on 2026-10-06: "ok, they are good"): Zuzana at seven in the Ivanka park with
-  her side quest (the class bell, 4 steps), Zuzana at forty and Kubo in the new room S69 Sokolíkovský dvor (reached
+  her side quest (the class bell, 4 steps), Zuzana at forty and Kubo in the new room S69 Pri LEALe (reached
   from the kiosk street S18) with the side quest of Kubo's bike bell (3 steps), the rhythm drawing of the main story
   now on the yard wall, two new epilogue pictures, and every new conversation and topic of 1995, 1962, 1982 and 2035.
-- Every automated check passes on the final code (re-run in full on 2026-10-06 evening with content v2). All 134 story
+- Every automated check passes on the final code (re-run on 2026-10-07 evening after your notes: tests, text checks,
+  knowledge audit with 0 problems, blocking, acceptance and the save/load and keyboard-only routes; the full set of
+  four routes last ran in the morning with round 2). All 134 story
   and side actions were played by real input events in four different orders: one saved and reloaded after every action, one showed every line, one skipped every
   cutscene, and one used **only the keyboard** for the whole game. The 2020 prologue was also played from the main
   menu with real Windows key presses only, with a save and a load on the way.
 - **All 30 handoff acceptance tests pass**, AT19 (keyboard only) included.
 - Open before a public release: your answer on the art licence (DECISIONS item 9) and the few points in
   docs/DECISIONS.md "Status 2026-10-06". None of them blocks play.
-- Paid generation so far: **USD 239.75** (3112 log rows, art/spend-log.csv, read 2026-10-06 23:20). Applying content v2 and
-  this verification added nothing.
+- Paid generation so far: **USD 250.11** (8228 log rows, art/spend-log.csv, read 2026-10-07 20:25). Your evening notes
+  cost USD 0.31 (the S07 painting edit USD 0.15, the GPT check of the renamed texts USD 0.06, the new voice takes and
+  their checks USD 0.10); this verification added nothing.
 
 ## How to install and play (Windows)
 
 1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (346.8 MB). Unpacked, it is the folder
    `PoslednyZvonec/` (482.2 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
-   `LastBell.pck` (291.3 MB, of it 98.9 MB voice clips) and `data_LastBell_windows_x86_64/` (81.4 MB, the C# code
+   `LastBell.pck` (291.2 MB, of it 98.9 MB voice clips) and `data_LastBell_windows_x86_64/` (81.4 MB, the C# code
    and the .NET runtime).
    The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
@@ -72,16 +88,15 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
   Every room is painted in style A from its real place, has 3-24 ambient animations, and uses the natural layout
   (decision 1b).
 - **94 main and 40 side actions** in 29 quests, **11 side quests** (new: Q10 "the class bell" in Ivanka 1962, Q11 in
-  the Sokolíkovský dvor 1995), **5 puzzles**, **9 cutscenes**, an epilogue
+  Pri LEALe 1995), **5 puzzles**, **9 cutscenes**, an epilogue
   whose pictures follow the side quests you did, end credits, and a postgame with the album (replay the ending and
   the cutscenes).
 - About 4 790 player texts: 2 196 spoken lines, 2 113 world texts and 476 UI texts, rewritten in the Polda tone you
   chose and approved era by era (docs/writing/approval/). The puzzles and solutions did not change; the one main step
-  that moved is the rhythm drawing (B19), now on the wall of the Sokolíkovský dvor.
+  that moved is the rhythm drawing (B19), now on the wall of the yard Pri LEALe.
 - Original music: one theme per period plus menu, puzzle, tension and epilogue (9 tracks). About 105 sound effects
   and ambience loops. Subtitles for everything. Spoken lines: the voice clips in `src/game/assets/voice/` at build
-  time (2217 clips; a separate voice task was regenerating clips while this build was made, so some lines may still
-  have older takes or none).
+  time (2217 clips, all imported; the narrator is the female voice Callirrhoe since 2026-10-07, docs/voice/FULL.md).
 - Three difficulty levels that change only the hints (Easy / Standard / Hard, saved with each save file),
   journal with goals and hints per step, a map with fast travel, an era chooser, 8 save slots plus an
   autosave, and settings: volumes, text speed, subtitle size and background, fullscreen/window, HUD scale, walk speed
@@ -172,8 +187,8 @@ docs/BUILD.md).
 
 ### Voice acting
 - Already in the engine: when `assets/voice/<line_id>.ogg` exists, it plays on the Voice bus, the music ducks,
-  and the clip stops when the line is skipped. Voice clips are installed (voice recast, commit 6b6d141) and a voice
-  task is still working on them; the new round-2 lines need their clips from that task.
+  and the clip stops when the line is skipped. Voice clips are installed for every spoken line (voice recast, commit
+  6b6d141; the narrator recast to a female voice and the „Pri LEALe“ lines re-recorded on 2026-10-07, docs/voice/FULL.md).
 - Needed: casting and recording, or a decision on synthetic voices, for 756 dialogue lines across about 50
   characters. Many characters appear at two or three ages (Mira, Tóno, Jana, Oto). A script per character can be
   exported from `src/game/localization/dialogue.csv` by line id.
@@ -181,6 +196,10 @@ docs/BUILD.md).
   the music (-16 LUFS).
 
 ## Paid generation (art/spend-log.csv)
+
+Read 2026-10-07 20:25: **USD 250.11** (8228 rows). Since the morning read: the S07 painting edit (suburb houses)
+USD 0.15, the GPT check of the „Pri LEALe“ texts USD 0.06, the narrator auditions and the re-recorded lines with their
+speech-to-text checks USD 0.10. The exits and this verification and release pass cost nothing.
 
 Read 2026-10-07 08:25: **USD 249.80** (8174 rows; another task was adding voice rows while this was read). On
 2026-10-07 so far: writing round 2 GPT reviews USD 2.31, the S37 exit-geometry fixes USD 0.30, **the S69 relight

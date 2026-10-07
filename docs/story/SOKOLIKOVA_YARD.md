@@ -1,4 +1,6 @@
-# S69 Sokolíkovský dvor – the walled courtyard between the Sokolíkova blocks (1995)
+# S69 Pri LEALe – the walled courtyard between the Sokolíkova blocks (1995)
+
+> **Renamed 2026-10-07 (owner):** the room is not „Sokolíkovský dvor“; its name in the whole game is the local name **„Pri LEALe“** (LEAL always in capitals; *pri LEALe, k LEALu, od LEALu*). Every player-visible text, the protected-fact rules (`P03-source`, `P03-wrong` now require `\bLEAL\w*`) and this document were updated; the changed keys are listed in `docs/writing/out_v5/leal_rename.csv`. Older drafts and review records under `docs/writing/out*/` and `review_gpt/` keep the old name as history.
 
 Status: **design, ready to implement** (2026-10-06, evening). Owner request of 2026-10-06: "Sokolíkova yard – do it,
 you can place Zuzana there and a minority of some of the game's puzzles", and "Zuzana in the game – do it, 1962
@@ -14,7 +16,7 @@ overlay shape, `core_requests`, `sk_override_proposals`, `glossary_change`). Eve
 
 ## 0. Summary for the owner
 
-- **New room S69 „Sokolíkovský dvor"** (1995, Dúbravka, 15 June afternoon): your painting of the walled ihrisko
+- **New room S69 „Pri LEALe"** (1995, Dúbravka, 15 June afternoon): your painting of the walled ihrisko
   between the panel blocks, with three things added: a green bench, a child's bike and a chalk hopscotch on the
   court. You reach it from the kiosk street S18 through the gap between the blocks (the way to the right of the
   school, not through the podlubie).
@@ -42,7 +44,7 @@ overlay shape, `core_requests`, `sk_override_proposals`, `glossary_change`). Eve
 
 | | |
 |---|---|
-| id / name | `S69` „Sokolíkovský dvor" (≤ 32; the exit label into it is the same) |
+| id / name | `S69` „Pri LEALe" (≤ 32; the exit label into it is the same) |
 | era / district / region | 1995 · Dúbravka · map region **Dúbravka 1995** (hub stays S11; S69 is not a hub) |
 | time | 15 June 1995, evening at sunset: the painting was relit on 2026-10-07 to the light of S18 next door (art/masters/bg_natural/S69_v7, S69.md; owner request) |
 | what it is | the walled courtyard ihrisko between the early-1970s panel blocks of Sokolíkova: a long wall of upright concrete panels in the foreground left, a low back wall, a right wall, a worn asphalt court, a birch and a blue spruce behind the back wall, a globe street lamp, the blocks with balconies behind the trees |
@@ -67,7 +69,7 @@ of the same view (keeping its look) before blocking: that is the one open camera
 
 | exit | in room | rect / interaction point (template) | label | travel |
 |---|---|---|---|---|
-| `S18.to_S69` | S18 (kiosk street) | `[430, 850, 190, 45]` / `[525, 880]`: the side road between the beige block and the pines that runs into the gap between the blocks | „Sokolíkovský dvor" | walk |
+| `S18.to_S69` | S18 (kiosk street) | `[430, 850, 190, 45]` / `[525, 880]`: the side road between the beige block and the pines that runs into the gap between the blocks | „Pri LEALe" | walk |
 | `S69.to_S18` | S69 | `[1150, 1000, 430, 80]` / `[1360, 1000]`: the court opens towards the camera between the end of the foreground wall and the grass bank | „Sídliskový dvor s kioskom" | walk |
 
 Connection `S18 ↔ S69`, bidirectional, walk, no condition. **No S17 ↔ S69 link:** S17's one way to the right of the
@@ -232,9 +234,9 @@ KUBO: Všetky. Ale ona ich má veľa.
 |---|---|---|
 | action | `B19` (quest M07, main, kind click, `requires_done [B03]`, no items, gives nothing) | **identical** |
 | target | `S17.rhythm` (freestanding painted sign on two posts in the school yard) | `S69.rhythm` (the same painting across three panels of the courtyard wall) |
-| room | S17 Školský dvor | S69 Sokolíkovský dvor |
+| room | S17 Školský dvor | S69 Pri LEALe |
 | clue | TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV → 3–2–6 | identical, in `look.S69.rhythm` and `action.B19.001` |
-| hint step | `ui.hint_step.B19` | relocation `hint_step`: *V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.* (key `action.B19.hint_step`) |
+| hint step | `ui.hint_step.B19` | relocation `hint_step`: *Pri LEALe si prečítaj rytmický nákres na múre.* (key `action.B19.hint_step`) |
 
 World overlay record: `{"action": "B19", "to_hotspot": "S69.rhythm", "retire_hotspot": false, "hint_step": …}`.
 `S17.rhythm` stays in S17 as an atmospheric prop (its sign keeps the four shapes), so no S17 hotspot disappears.
@@ -269,16 +271,16 @@ request (a): ZUZANA95 must be allowed to speak in B19 (an NPC standing in the ac
 
 | key | now (in the game) | proposed |
 |---|---|---|
-| `action.B17.003` (Dezider, **protected P03-source**) | … Tri číslice Mira nakreslila na panel na školskom dvore. | Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr v Sokolíkovskom dvore. |
-| `action.B17.004` (Adam) | Na školský dvor sa vraciam dobrovoľne. To sa mi ako žiakovi nestalo. | Do Sokolíkovského dvora sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu. |
-| `action.B17.objective` = `.journal` | … prečítaj rytmický nákres na školskom dvore. | Požičaj Emilov metronóm a prečítaj rytmický nákres v Sokolíkovskom dvore. |
-| `quest.M07.hint.2` | … Tri číslice sú na paneli na školskom dvore. | Dezider dá cievku, Emil metronóm. Tri číslice sú na múre v Sokolíkovskom dvore. |
-| `quest.M07.hint.3` | … prečítaj rytmický nákres na školskom dvore … | the same chain with *v Sokolíkovskom dvore* |
-| `puzzle.P03.wrong` (protected P03-wrong) | … na rytmickom nákrese na školskom dvore. | Nesedí to. Správne číslice sú na rytmickom nákrese v Sokolíkovskom dvore. |
-| `look.S30.dial` (protected P03-wrong) | … číslice z nákresu na školskom dvore. | … a číslice z nákresu v Sokolíkovskom dvore. |
+| `action.B17.003` (Dezider, **protected P03-source**) | … Tri číslice Mira nakreslila na panel na školskom dvore. | Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr pri LEALe. |
+| `action.B17.004` (Adam) | Na školský dvor sa vraciam dobrovoľne. To sa mi ako žiakovi nestalo. | K LEALu sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu. |
+| `action.B17.objective` = `.journal` | … prečítaj rytmický nákres na školskom dvore. | Požičaj Emilov metronóm a prečítaj rytmický nákres pri LEALe. |
+| `quest.M07.hint.2` | … Tri číslice sú na paneli na školskom dvore. | Dezider dá cievku, Emil metronóm. Tri číslice sú na múre pri LEALe. |
+| `quest.M07.hint.3` | … prečítaj rytmický nákres na školskom dvore … | the same chain with *pri LEALe* |
+| `puzzle.P03.wrong` (protected P03-wrong) | … na rytmickom nákrese na školskom dvore. | Nesedí to. Správne číslice sú na rytmickom nákrese pri LEALe. |
+| `look.S30.dial` (protected P03-wrong) | … číslice z nákresu na školskom dvore. | … a číslice z nákresu pri LEALe. |
 | `hotspot.S17.rhythm.name` | Rytmický nákres | Výtvarný panel |
 | `look.S17.rhythm` (protected P03-words/-digits move to `look.S69.rhythm`) | Pod nákresom je napísané TRI VLNY … 3–2–6 … | Kruh, trojuholník, štvorec a fialové V. Deti z krúžku maľovali vo veľkom. |
-| `ui.hint_step.B19` (ui.csv) | Na školskom dvore si prečítaj rytmický nákres. | V Sokolíkovskom dvore si prečítaj rytmický nákres na múre. (Core shows the relocation's `hint_step`; keep ui.csv equal so no stale text remains) |
+| `ui.hint_step.B19` (ui.csv) | Na školskom dvore si prečítaj rytmický nákres. | Pri LEALe si prečítaj rytmický nákres na múre. (Core shows the relocation's `hint_step`; keep ui.csv equal so no stale text remains) |
 
 Checked and **not** affected: `puzzle.P03.clue` (*Rytmický nákres a zápisník …*, no place), `journal.clue.P03`
 (3–2–6), `action.B19.001/.002/.label/.objective/.journal` (no place), `action.B22.001`, Soňa's and the 2020/1982 school
@@ -289,9 +291,9 @@ M07.hint.3/P03.wrong/look.S30.dial/look.S17.rhythm rows: update them, or the nex
 ### 3.4 Glossary change (same commit as the overrides)
 
 - `glossary.json` protected `P03-words.keys` and `P03-digits.keys`: `look.S17.rhythm` → `look.S69.rhythm`.
-- `glossary.json` protected `P03-source.require` and `P03-wrong.require`: `(?i)školsk\w* dvor` → `(?i)Sokolíkovsk\w* dvor\w*`.
+- `glossary.json` protected `P03-source.require` and `P03-wrong.require`: `(?i)školsk\w* dvor` → `(?i)Sokolíkovsk\w* dvor\w*` → (owner rename 2026-10-07) `\bLEAL\w*`.
 - GLOSSARY.md § 6.1 P03 row (the courtyard wall, `look.S69.rhythm`), the rooms table (+ `S69 | 1995 | Dúbravka |
-  Sokolíkovský dvor`), the walkthrough table row 30 (B19 → S69), the people rows ZUZANA / ZUZANA95 / KUBO.
+  Pri LEALe`), the walkthrough table row 30 (B19 → S69), the people rows ZUZANA / ZUZANA95 / KUBO.
 - **Verified:** `tools/check_rewrite.py` on the ten proposed rows with a glossary patched as above: **0 errors**
   (two acknowledged warnings on `look.S17.rhythm`, note `drop: 3–2–6`). With today's glossary the same rows fail
   exactly on the four old-place rules, as expected.
@@ -320,8 +322,8 @@ the credits. Items and logic in `world_ext` (all `quest: "Q11"`, `once`, atomic 
 
 | id | room | target | kind | requires | selected | gives / consumes | animation / sfx | label | objective / journal | hint_step |
 |---|---|---|---|---|---|---|---|---|---|---|
-| `Q11A` | S69 | `S69.KUBO` | topic | – | – | – | talk | Zvonček na bicykli | Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka. | V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli. |
-| `Q11B` | S69 | `S69.spruce` | click | done Q11A | – | gives `BELLCAP` | reach_low / item_soft | Pohľadať vrchnák pod smrekom | Naskrutkuj vrchnák na zvonček Kubovho bicykla. | Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore. |
+| `Q11A` | S69 | `S69.KUBO` | topic | – | – | – | talk | Zvonček na bicykli | Pod modrým smrekom pri LEALe nájdi vrchnák Kubovho zvončeka. | Pri LEALe sa porozprávaj s Kubom o zvončeku na bicykli. |
+| `Q11B` | S69 | `S69.spruce` | click | done Q11A | – | gives `BELLCAP` | reach_low / item_soft | Pohľadať vrchnák pod smrekom | Naskrutkuj vrchnák na zvonček Kubovho bicykla. | Pohľadaj vrchnák zvončeka pod modrým smrekom pri LEALe. |
 | `Q11C` | S69 | `S69.bike` | click | items BELLCAP, TOOLS | BELLCAP | consumes `BELLCAP` | use_tool / **bike_bell** (new) | Naskrutkovať vrchnák na zvonček | journal: Kubov zvonček zvoní. So Zuzanou sme zamávali zvoneniu zo školy. | Vrchnák zvončeka použi na Kubov bicykel. |
 
 New item `BELLCAP` „Vrchnák zvončeka": *Mosadzný vrchnák z detského zvončeka. Vnútri má zúbky, na boku škrabanec od
@@ -365,7 +367,7 @@ ZUZANA95: Jednému zvončeku z Ivanky.
 
 Quest record: title „Druhý posledný zvonec"; goal *Oprav Kubov zvonček na bicykli, aby mohol na konci roka zvoniť
 s ostatnými deťmi.*; reward *Kubo so zvončekom a Zuzanina škôlka na Sokolíkovej v Adamovom albume.*; hints
-1 *Kubo v Sokolíkovskom dvore má na bicykli zvonček, ktorý nezvoní.* · 2 *Vrchnák zvončeka sa odkotúľal pod modrý
+1 *Kubo pri LEALe má na bicykli zvonček, ktorý nezvoní.* · 2 *Vrchnák zvončeka sa odkotúľal pod modrý
 smrek a Zuzana videla kam. Naskrutkuješ ho náradím zo servisnej brašne.* · 3 *Kubo, téma „Zvonček na bicykli" →
 modrý smrek v dvore → vrchnák zvončeka na Kubov bicykel.*
 

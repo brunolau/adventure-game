@@ -65,7 +65,7 @@ Rules:
 | SKLAD / STEFAN | Štefan Haluška | Štefan | Štefana, Štefanovi |
 | VERA60 | Vera Nemcová | Vera | Very, Vere, Veru; Verino rydlo; 1960 draughtswoman, not Viera |
 | ZUZANA | Zuzana (no surname, ever) | Zuzana; *Zuzka* (Ivanka adults, 1962) | Zuzany, Zuzane, Zuzanu, Zuzanou; *Zuzanin lístok*; 7 years old in June 1962; only in Ivanka 1962 (S37, traces in S32/S38) and as ZUZANA95 in 1995; never in 1982, 2020, 2035 |
-| ZUZANA95 | Zuzana (no surname, ever) | Zuzana; *teta Zuzana* (Kubo); nobody says *Zuzka* in 1995 | as ZUZANA; 40 years old on 15 June 1995; only in S69 Sokolíkovský dvor; recognises Adam from the Ivanka park 1962; nothing about her life is ever stated |
+| ZUZANA95 | Zuzana (no surname, ever) | Zuzana; *teta Zuzana* (Kubo); nobody says *Zuzka* in 1995 | as ZUZANA; 40 years old on 15 June 1995; only in S69 Pri LEALe; recognises Adam from the Ivanka park 1962; nothing about her life is ever stated |
 | KUBO | Kubo | Kubo, *Kubko* | Kuba, Kubovi, Kubom; *Kubov bicykel*; 7, first-grader from a neighbouring entrance (1995, S69); a neighbour's child, never Zuzana's |
 | DOBRO | učiteľ Dobrovič | súdruh učiteľ (pupils), pán učiteľ | Dobroviča, Dobrovičovi |
 | RUZENA | Ružena Malá | pani Malá | Ruženy, Ružene |
@@ -92,6 +92,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | Lúčny koník (playground, S03) | pri Lúčnom koníku, *na Lúčnom koníku* (speech) | k Lúčnemu koníku, *na Lúčny koník* (speech) | od Lúčneho koníka |
 | Dúbravka | v Dúbravke | do Dúbravky | z Dúbravky |
 | ZŠ Sokolíkova | na Sokolíkovej, v škole na Sokolíkovej | na Sokolíkovu | zo Sokolíkovej |
+| Pri LEALe (S69, the walled courtyard by the school) | pri LEALe | k LEALu | od LEALu |
 | Karlova Ves | v Karlovej Vsi | do Karlovej Vsi | z Karlovej Vsi |
 | Staré Mesto | v Starom Meste | do Starého Mesta | zo Starého Mesta |
 | Ružinov | v Ružinove | do Ružinova | z Ružinova |
@@ -113,6 +114,7 @@ Boris and Soňa) are coincidences. Do not suggest relationships.
 | Canonical | Notes |
 |---|---|
 | ZŠ Sokolíkova | the real school in Dúbravka; interiors, people and experiments are invented |
+| Pri LEALe | the walled courtyard ihrisko between the Sokolíkova blocks (S69, 1995). Owner decision 2026-10-07: its name in the whole game is the local name *Pri LEALe*, never *Sokolíkovský dvor*. LEAL is always in capitals and declined *pri LEALe, k LEALu, od LEALu*; room name, exit and map labels *Pri LEALe*, inside a sentence *pri LEALe* (*pod modrým smrekom pri LEALe*). No text explains what LEAL is. The plain word *dvor* for the courtyard itself stays fine (*celý dvor počuje*) |
 | Lúčny koník | the real playground with the timber picnic shelter in Čierna Voda (Rekreapark by Javorová alej, opened 2015); owner decision 2026-10-06: S03 is painted there and named after it. Spelled *Lúčny koník* (only the first word capitalised), *pri Lúčnom koníku* |
 | výdajné miesto (pri Lúčnom koníku) | Ela's outdoor pick-up point in the shelter of Lúčny koník (2020); the old *dobrovoľnícke výdajné miesto* stays fine in speech, goals and hints say *výdajné miesto pri Lúčnom koníku* |
 | Mirina záhradná dielňa | the empty garden workshop (*predsieň* S09 + *dielňa ZVON* S10) |
@@ -205,7 +207,7 @@ Room names are also exit labels and map labels; a rename changes every exit labe
 | S66 | 1982 | Dúbravka | Školský záhradný sklad v roku 1982 | = |
 | S67 | 2035 | Priehyba | Priehyba pri prestupe na Funitel | = |
 | S68 | 2035 | Funitel | Kabína Funitelu medzi Priehybou a Chopkom | = |
-| S69 | 1995 | Dúbravka | Sokolíkovský dvor | = (world overlay, content v2: the walled courtyard of the Sokolíkova estate, reached from S18; Zuzana 40, Kubo, Q11, B19) |
+| S69 | 1995 | Dúbravka | Pri LEALe | = (world overlay, content v2: the walled courtyard of the Sokolíkova estate, reached from S18; Zuzana 40, Kubo, Q11, B19; local name decided by the owner 2026-10-07, was *Sokolíkovský dvor*) |
 
 
 ## 4. Devices and recurring concepts
@@ -356,7 +358,7 @@ another line of the same exchange, say so in the note.
 |---|---|---|---|
 | **P01** Tri referenčné tvary (S10) | join equal shapes; colours do not matter | kruh–kruh, trojuholník–trojuholník, štvorec–štvorec | `look.S10.panel`, `action.G10.002/.003`, `action.G10.objective/.journal`, `puzzle.P01.*`, `journal.clue.P01`, `quest.M02.hint.3` |
 | **P02** Zarovnanie mapovej fólie (bag) | the base map and the overlay both show **dierka, dvojitý kríž, štvorec**; rotate until all three match | **180°** | `item.OVERLAY`, `action.B15.004`, `puzzle.P02.*`, `journal.clue.P02`, `quest.M06.hint.3` |
-| **P03** Kalibrácia na Starom moste (S30) | the rhythm drawing on the courtyard wall of the Sokolíkovský dvor (S69, content v2; B19 relocated from the school yard S17) says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the wall in the Sokolíkovský dvor and Emil has the metronome | **3–2–6** | `look.S69.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
+| **P03** Kalibrácia na Starom moste (S30) | the rhythm drawing on the courtyard wall pri LEALe (S69, content v2; B19 relocated from the school yard S17) says `TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV`; Dezider says the three digits are on the wall pri LEALe and Emil has the metronome | **3–2–6** | `look.S69.rhythm`, `action.B17.003`, `action.B19.001/.objective/.journal`, `action.B22.001`, `look.S30.dial`, `puzzle.P03.*`, `journal.clue.P03`, `quest.M07.hint.2/.3` |
 | **P04** Priradenie štyroch svedectiev (S49) | ports and items carry name and year; the journal repeats them | **Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035** (shown; value 1960) | `look.S39.plate`, `action.I13.001`, `action.C05.001`, `look.S49.port_*`, `action.F11.objective/.journal`, `action.F12.001`–`F15.001`, `puzzle.P04.*`, `journal.clue.P04`, `quest.M15.hint.2/.3` |
 | **P05** Dutina v tom istom múriku (S55) | grid **3 × 4**; **druhý rad zhora, tretí kameň zľava** = **rad 2, stĺpec 3**, written in Tóno's 1982 map and his 1995 note | row 2, column 3 | `action.E08.001`, `item.CACHEMAP`, `look.S61.niche`, `action.E11.006`, `item.KEEPERNOTE`, `action.D05.002`, `puzzle.P05.*`, `journal.clue.P05`, `quest.M11C.hint.3` |
 
@@ -591,6 +593,7 @@ Generated from walkthrough.json and game.json. Every hint level 3, objective and
 | *Tóno 12, Tónovi 2020, Jana 82* | dvanásťročný Tóno, Tóno pri servisnom okne, Jana v triede v roku 1982 |
 | *dôkaz Súhlas / Pôvod …* | dôkaz súhlasu / pôvodu …; port Súhlas |
 | *odblokovanie časovej adresy* | otvorí cestu do roku 2035 / otvorí časové okno |
+| *Sokolíkovský dvor, v Sokolíkovskom dvore* (S69) | Pri LEALe (room name), pri LEALe, k LEALu, od LEALu (owner 2026-10-07) |
 
 Design jargon (*v hre, herný, fiktívny, mimo obrazu, pixel, zoom, servisný krok, pôvodná línia,
 motýlí efekt, finále, klik, inventár, kombinácia, hádanka, v denníku*) is listed in

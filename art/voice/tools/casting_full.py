@@ -138,8 +138,15 @@ CAST: dict[str, dict] = {
                 "missing."),
     "VERA60": c("Kore", "Vera Nemcová (draughtswoman)", 22,
                 "A 22-year-old technical draughtswoman: calm, practical, matter-of-fact, a young clear voice."),
-    "NARRATOR": c("Charon", "narrator (closing captions)", None,
-                  "A calm narrator: reflective, warm and quiet, even pace, no drama, no jokes."),
+    # Recast 2026-10-07 (owner: the male narrator was "incredibly boring"; a FEMALE voice with a more interested,
+    # engaged tone). Audition audition_narrator.py: Callirrhoe, Autonoe, Laomedeia on three narrator lines; Callirrhoe
+    # is the most distinct from the rest of the female cast (Autonoe sits close to Kore = Nina, who speaks in CS07;
+    # Laomedeia close to Despina = Ela) and far from Gacrux (Mira) of both narrator cutscenes. Was Charon.
+    "NARRATOR": c("Callirrhoe", "narrator (female storyteller, closing captions)", None,
+                  "A female narrator of about forty telling the closing moment of a story she loves: warm, engaged "
+                  "and genuinely interested, as if sharing a small discovery with the listener; a lively, varied "
+                  "natural melody with gentle rises and falls, a slight smile in the voice, medium pace, clear and "
+                  "close; never flat or monotone, never theatrical, no exaggerated drama, no jokes."),
 
     # ------------------------------------------------------------------ 1982 Dúbravka
     "DOBRO": c("Orus", "teacher Dobrovič", 39,

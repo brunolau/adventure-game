@@ -1,0 +1,210 @@
+{
+  "chunk": "leal_rename",
+  "model": "openai/gpt-6.1-sol-pro",
+  "cost_usd": 0.0596,
+  "about": "Owner rename 2026-10-07: S69 „Sokolíkovský dvor“ -> „Pri LEALe“ in the whole game. One batch with every changed text and its context (scratch prompt: rename brief, B17 garage exchange, Zita topic, hints); Claude's final decisions in leal_rename.decisions.csv.",
+  "keys": {
+    "look.S30.dial": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tri kolieska: 0–9. Štítok písala babka: „Číslice – nákres pri LEALe.“ Treba aj mapu uzlov a kazetu.",
+      "batch": "leal_rename"
+    },
+    "action.B17.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Požičaj si Emilov metronóm a prečítaj rytmický nákres pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "action.B17.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Požičaj si Emilov metronóm a prečítaj rytmický nákres pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "action.B17.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Lepší bude metronóm, má ho Emil v Karlovej Vsi. Tri číslice namaľovala Mira na múr pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "action.B17.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "K LEALu sa vraciam dobrovoľne. Ako žiak som tam chodil iba po loptu.",
+      "batch": "leal_rename"
+    },
+    "quest.M07.hint.2": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dezider dá cievku, Emil metronóm. Tri číslice sú na múre pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "quest.M07.hint.3": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Mapa na Dezidera → téma „Metronóm na meranie“ u Emila → prečítaj rytmický nákres pri LEALe → cievka na držiak na Starom moste → metronóm na stolík → keď máš pôvodnú kazetu, nastav 3–2–6.",
+      "batch": "leal_rename"
+    },
+    "puzzle.P03.wrong": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nesedí to. Správne číslice sú na rytmickom nákrese pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "ui.hint_step.B19": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe si prečítaj rytmický nákres na múre.",
+      "batch": "leal_rename"
+    },
+    "hint.where.B19": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe, na múre.",
+      "batch": "leal_rename"
+    },
+    "hint.where.Q11A": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe, na dvore medzi blokmi.",
+      "batch": "leal_rename"
+    },
+    "hint.where.Q11B": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe, pod pichľavým stromom, kde končia lopty.",
+      "batch": "leal_rename"
+    },
+    "hint.where.Q11C": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe, u Kuba.",
+      "batch": "leal_rename"
+    },
+    "room.S69.name": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe",
+      "batch": "leal_rename"
+    },
+    "exit.S18.to_S69.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe",
+      "batch": "leal_rename"
+    },
+    "conn.S18.S69.label": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe",
+      "batch": "leal_rename"
+    },
+    "entry.S69.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe. Tu som raz prehodil loptu cez múr a hľadal som ju až do tmy.",
+      "batch": "leal_rename"
+    },
+    "topic.ZITA.extra 2.002": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Tomu hovoríme pri LEALe” awkwardly treats a locative expression as the complement of “hovoríme”. A direct statement of location sounds natural here.",
+      "suggestion": "Tam? To je pri LEALe. Ihrisko, lavička a deti, čo prehadzujú loptu cez múr.",
+      "text": "Tam? Tomu hovoríme pri LEALe. Ihrisko, lavička a deti, čo prehadzujú loptu cez múr.",
+      "batch": "leal_rename"
+    },
+    "quest.Q11.hint.1": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Kubo pri LEALe má na bicykli zvonček, ktorý nezvoní.",
+      "batch": "leal_rename"
+    },
+    "quest.Q11.hint.3": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Téma „Zvonček na bicykli“ u Kuba → modrý smrek pri LEALe → vrchnák zvončeka na Kubov bicykel.",
+      "batch": "leal_rename"
+    },
+    "action.Q11A.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pod modrým smrekom pri LEALe nájdi vrchnák Kubovho zvončeka.",
+      "batch": "leal_rename"
+    },
+    "action.Q11A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pod modrým smrekom pri LEALe nájdi vrchnák Kubovho zvončeka.",
+      "batch": "leal_rename"
+    },
+    "action.Q11A.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe sa porozprávaj s Kubom o zvončeku na bicykli.",
+      "batch": "leal_rename"
+    },
+    "action.Q11B.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pohľadaj vrchnák zvončeka pod modrým smrekom pri LEALe.",
+      "batch": "leal_rename"
+    },
+    "action.B19.hint_step": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri LEALe si prečítaj rytmický nákres na múre.",
+      "batch": "leal_rename"
+    }
+  },
+  "unreviewed": [],
+  "conversation_note": ""
+}

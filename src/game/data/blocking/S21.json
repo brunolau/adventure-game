@@ -1,6 +1,6 @@
 {
  "status": "natural re-blocking (bratislava1995 painter), applied with --blocking natural / presentation/blocking = natural",
- "note": "Kamenne namestie at ground level, artistically shortened (brief): camera ~2.2 m on the open plaza, horizon y 360, the walk area ends at y 700 (~156 px per metre) where the map board, the map stall and the small fountain stand. Perspective s(y) = (y - 360) / 655. Behind them the open square: the white 1968 department store with Hotel Kyjev rising behind it, the round pavilion among plane trees and lawns, the tram and bus street with 1930s facades on the right. Exits: the side street at the far left (Old Town, S22), the street beside the store (Obchodna, S24), the bus stop (S28), the door of the cream city block (archive, S23), the plaza edges (S19 left, S25 right).",
+ "note": "Kamenne namestie at ground level, artistically shortened (brief): camera ~2.2 m on the open plaza, horizon y 360, the walk area ends at y 700 (~156 px per metre) where the map board, the map stall and the small fountain stand. Perspective s(y) = (y - 360) / 655. Behind them the open square: the white 1968 department store with Hotel Kyjev rising behind it, the round pavilion among plane trees and lawns, the tram and bus street with 1930s facades on the right. Exits (exit geography 2026-10-07, owner answers 2026-10-07): the side street at the far left (Obchodna, S24, up), the street beside the store (tram to Ruzinov, S25, up), the door of the cream city block (archive, S23, up), the plaza towards the viewer at the bottom left (Venturska, S22, down), the left edge (tram to Karlova Ves, S19) and the lower right corner (bus to Petrzalka, S28, right).",
  "background": "bg_natural/S21.webp",
  "walk_polygon": [
   [
@@ -160,21 +160,21 @@
   },
   "S21.to_S28": {
    "rect": [
-    1385,
-    375,
-    175,
-    325
+    1800,
+    790,
+    120,
+    225
    ],
    "interaction_point": [
-    1470,
-    760
+    1860,
+    930
    ],
    "label_anchor": [
-    1470,
-    367
+    1790,
+    780
    ],
-   "reason": "exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the department store and Hotel Kyjev): the bus stop pole at the edge of the square: the bus to Petrzalka leaves towards the viewer, south over the Danube bridge (behind the camera). Was 'up'",
-   "side": "down"
+   "reason": "exit layout 2026-10-07 (owner: Petrzalsky podchod goes to the lower right corner, pointing right; docs/navigation/EXITS.md, docs/navigation/compass/S21.json): the plaza paving runs out of the lower right corner towards the street where the bus to Petrzalka leaves, south-south-east towards the Danube (the corner lies between screen right 120 deg and towards the viewer 210 deg; Petrzalka is south across the river). Was the painted bus-stop pole at the back right (side down), which crowded the back row of exits; the pole stays as scenery",
+   "side": "right"
   },
   "S21.to_S23": {
    "rect": [

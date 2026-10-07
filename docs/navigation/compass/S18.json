@@ -10,30 +10,33 @@
   "evidence": [
     "the painting is the owner-loved style test art/backgrounds/sokolikova-street.png (Sokolikova panel row, from carl_eric's Flickr 'Block'; its geotag 48.184687,17.03473 accuracy 13 lies ~400 m NW of the school, not on Sokolikova street) - no reliable real camera position or heading",
     "the register row still describes the superseded courtyard between Svantnerova 3-7 and M. Schneidra-Trnavskeho 1-5 (between the school grounds and the stop)",
-    "layout follows the game's chain and the owner statement (S17: the way to the blocks is right of the school): the school side on the left, the stop on the right, S69 up the side road"
+    "owner 2026-10-07 (binding, art/feedback/2026-10-05_owner_feedback.md 'answers to the exit review'): in reality the stop is on the LEFT and the school yard on the RIGHT of this picture",
+    "the heading stays undetermined (the painting has no real camera position); the sides follow the owner fact: left = towards the Svantnerova stop, right = towards the school grounds, up = the side road into the gap between the blocks (S69 'Pri LEALe', kept). Read as a fiction camera this faces roughly south (stop east, school yard west)",
+    "superseded 2026-10-07: the 2026-10-06 layout (school side left, stop right) followed walking continuity with S17.to_S18 (right edge) instead of the real sides"
   ],
   "exits": [
     {
-      "id": "S18.to_S17",
-      "to": "S17",
-      "side": "left",
-      "change": "unchanged",
-      "why": "school side (continuity with S17.to_S18 right)"
-    },
-    {
       "id": "S18.to_S11",
       "to": "S11",
+      "side": "left",
+      "change": "right -> left",
+      "why": "owner fact: the stop is on the left; the side street in front of the kiosk out of the left edge (S11.to_S18 is the far end of its platform, side up)"
+    },
+    {
+      "id": "S18.to_S17",
+      "to": "S17",
       "side": "right",
-      "change": "unchanged",
-      "why": "towards the stop (S11.to_S18 is the far end of its platform)"
+      "change": "left -> right",
+      "why": "owner fact: the school yard is on the right; the pavement along the lawn strip past the big tree out of the right edge. S17.to_S18 also leaves the yard out of its right edge (owner-confirmed S17): accepted CONTINUITY, the yard camera looks SW, so its right edge (NW) leads round the main wing and Adam comes into this picture from the school side, its right"
     },
     {
       "id": "S18.to_S69",
       "to": "S69",
       "side": "up",
       "change": "unchanged",
-      "why": "the side road between the kiosk and the red car into the gap between the blocks"
+      "why": "the side road between the kiosk and the red car into the gap between the blocks; no collision with the left-edge exit (different painted way, 340 px apart)"
     }
   ],
-  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+  "checked": "2026-10-07 owner answers to the exit review (stop left, school yard right)",
+  "owner_fact": "stop LEFT, school yard RIGHT (2026-10-07)"
 }

@@ -18,7 +18,8 @@
   "evidence": [
     "painting: the white department store and the Hotel Kyjev tower fill the view ahead, i.e. the camera faces NE/NNE from the plaza (bearings from the plaza: store 35-65 deg, Kyjev 20-35 deg)",
     "the painting is a composite (Kyjev drawn right of the store; from the real plaza it stands left of it), hence medium confidence; every exit decision below holds for any heading between 0 and 60 deg",
-    "OSM tram network: the Ruzinov trams leave north-east along Spitalska (ways 44350529, 240726809 towards Americke nam. and Zahradnicka); the Karlova Ves trams leave west via Nam. SNP (ways 244491374, 257076647) to the castle tunnel / the embankment; the buses to Petrzalka go south over the Danube"
+    "OSM tram network: the Ruzinov trams leave north-east along Spitalska (ways 44350529, 240726809 towards Americke nam. and Zahradnicka); the Karlova Ves trams leave west via Nam. SNP (ways 244491374, 257076647) to the castle tunnel / the embankment; the buses to Petrzalka go south over the Danube",
+    "owner 2026-10-07 (binding, art/feedback/2026-10-05_owner_feedback.md 'answers to the exit review'): too many exits here; keep them all, but Petrzalsky podchod (S28) goes to the LOWER RIGHT corner, pointing right"
   ],
   "exits": {
     "S21.to_S19": {
@@ -53,8 +54,9 @@
       "target": "S28 Petrzalka underpass",
       "route": "bus south over the Danube",
       "route_bearing_deg": 212,
-      "side": "down (named, at the painted bus-stop pole)",
-      "was": "up"
+      "side": "right (owner fact: the lower right corner; the plaza paving runs out there)",
+      "was": "down (named, at the painted bus-stop pole at the back right, among the three 'up' exits)",
+      "why": "owner override 2026-10-07. The corner reads as south-south-east (between screen right 120 and towards the viewer 210), towards the river; it is no longer in the back row with S25 / S23, and the return S28.to_S21 (left edge) now continues the walk (right -> left)"
     },
     "S21.to_S23": {
       "target": "S23 archive reading room, Spitalska",
@@ -64,5 +66,6 @@
       "was": "up"
     }
   },
-  "source": "worker bratislava1995, exit geography pass 2026-10-07"
+  "source": "worker bratislava1995, exit geography pass 2026-10-07",
+  "checked": "2026-10-07 owner answers to the exit review (S28 lower right corner)"
 }

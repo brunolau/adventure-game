@@ -373,7 +373,7 @@ Name: *Dezider, Dezidera, Deziderovi* (*Dezi* only from his friends).
   - `Mapu poznám, kreslili sme ju s Mirou. Cievka patrí do držiaka na Starom moste, opačne ju nevložíš.`
   - `Presné neznamená rovnaké. Presné je, keď vieš, prečo sa niečo líši.`
 
-### ZUZANA95 – Zuzana (40), S69 Sokolíkovský dvor
+### ZUZANA95 – Zuzana (40), S69 Pri LEALe
 
 Zuzana from the Ivanka park of June 1962, on 15 June 1995 in the new courtyard room S69 (docs/story/ZUZANA.md,
 SOKOLIKOVA_YARD.md). Binding: she appears only in 1962 and 1995; nothing about her life (no job, family, home details,

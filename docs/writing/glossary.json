@@ -103,6 +103,7 @@
     "Lúčny koník": "Lúčn\\w* koník\\w*",
     "Dúbravka": "Dúbrav\\w*",
     "Sokolíkova": "Sokolíkov\\w*",
+    "LEAL": "\\bLEAL\\w*",
     "Karlova Ves": "Karlov\\w*",
     "Staré Mesto": "Star\\w* Mest\\w*",
     "Ružinov": "Ružinov\\w*",
@@ -244,6 +245,10 @@
     {
       "pattern": "\\bspomienkov\\w* kotv\\w*",
       "use": "pamäť nositeľa (hlásenie chronometra)"
+    },
+    {
+      "pattern": "Sokolíkovsk\\w* dvor\\w*",
+      "use": "pri LEALe / k LEALu / od LEALu (S69, the local name; owner decision 2026-10-07)"
     }
   ],
   "jargon": [
@@ -363,7 +368,7 @@
     },
     {
       "id": "P03-words",
-      "why": "P03 clue text exactly as painted on the courtyard wall panel (S69 Sokolíkovský dvor since content v2; B19 relocated from S17)",
+      "why": "P03 clue text exactly as painted on the courtyard wall panel (S69 Pri LEALe since content v2; B19 relocated from S17)",
       "keys": [
         "look.S69.rhythm",
         "puzzle.P03.clue"
@@ -420,18 +425,18 @@
         "Emil",
         "metronóm",
         "(?i)tri (číslic|čísl)|3 číslic",
-        "(?i)Sokolíkovsk\\w* dvor\\w*"
+        "\\bLEAL\\w*"
       ]
     },
     {
       "id": "P03-wrong",
-      "why": "wrong line points to the rhythm drawing in the Sokolíkovský dvor (S69)",
+      "why": "wrong line points to the rhythm drawing pri LEALe (S69; owner rename 2026-10-07, was Sokolíkovský dvor)",
       "keys": [
         "puzzle.P03.wrong",
         "look.S30.dial"
       ],
       "require": [
-        "(?i)Sokolíkovsk\\w* dvor\\w*"
+        "\\bLEAL\\w*"
       ]
     },
     {

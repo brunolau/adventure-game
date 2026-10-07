@@ -2,7 +2,7 @@
 
 Self-contained (inline CSS/JS, data embedded); the OGG files are referenced by relative paths
 (../../art/voice/full/<line_id>.ogg, prologue: ../../art/voice/trial/<line_id>.ogg), so open it locally.
-Sections: summary, flagged lines first, casting table (family voices, ages), the child/age audition, then every era
+Sections: summary, the lines re-voiced on 2026-10-07 (before/now) with the narrator audition, flagged lines, casting table (family voices, ages), the child/age audition, then every era
 and scene in play order with "play scene" (plays the scene's lines in sequence).
 """
 from __future__ import annotations
@@ -97,6 +97,16 @@ Slovak direction), checked once by ElevenLabs Scribe v2. Open this file locally:
   <button class="ghost" id="stop">Stop</button>
 </div>
 
+<h2 id="r2">New on 7 October 2026: a female narrator and „Pri LEALe“</h2>
+<p class="sub">The owner asked for a female narrator with a more interested, engaged tone (it was the male voice Charon), and
+S69 is now called „Pri LEALe“. These lines were voiced again. Fero's dialect is unchanged. Play "before" and "now" to compare.</p>
+<div class="tw"><table id="r2t"><thead><tr><th>line</th><th>text now</th><th>before</th><th>now</th><th>why</th></tr></thead><tbody></tbody></table></div>
+<h3 style="margin-top:18px">Narrator audition</h3>
+<p class="sub">Three female stock voices with the new narrator direction, on the game's two narrator lines and one narrator-style
+caption (epilogue shot 5, audition only), two takes each. Median pitch, pitch range (10th–90th percentile), and the
+Scribe transcript. The chosen voice is in bold.</p>
+<div class="tw"><table id="naud"><thead><tr><th>voice</th><th>line</th><th class="num">pitch Hz</th><th class="num">range st</th><th>play</th><th>Scribe</th></tr></thead><tbody></tbody></table></div>
+
 <h2 id="flags">Flagged lines (listen first)</h2>
 <p class="sub">The transcript differed after the one allowed retake, a filler word was heard, or the pace was unusual. Meaning
 differences come first.</p>
@@ -121,6 +131,7 @@ Chosen voice in bold.</p>
 const MAN = __MANIFEST__;
 const CAST = __CASTING__;
 const AUD = __AUDITION__;
+const NAUD = __NAUDITION__;
 const ERA_LABEL = __ERAS__;
 const PLAY = '<svg viewBox="0 0 16 16"><path d="M4 2l10 6-10 6z"/></svg>';
 const STOPI = '<svg viewBox="0 0 16 16"><rect x="3" y="3" width="10" height="10"/></svg>';
@@ -182,6 +193,17 @@ $('#cast tbody').innerHTML = order.map(s => { const x = CAST[s];
 const fam = {}; order.forEach(s => { const f = CAST[s].family; if (f) (fam[f] = fam[f] || []).push(s + ' ' + (CAST[s].age ?? '') + ' → ' + CAST[s].voice); });
 $('#castnote').innerHTML = '<b>Same person, other age:</b> ' + Object.entries(fam).map(([f, v]) => esc(f) + ': ' + esc(v.join(', '))).join(' · ') +
   '<br><b>Voices shared by two speakers in one scene:</b> ' + (Object.keys(MAN.voice_clashes_in_scene).length ? esc(JSON.stringify(MAN.voice_clashes_in_scene)) : 'none');
+// re-voiced 2026-10-07 and the narrator audition
+$('#r2t tbody').innerHTML = MAN.lines.filter(l => l.revoiced).map(l => '<tr><td><b>' + esc(l.speaker) + '</b><div class="fam">' + esc(l.line_id) +
+  '</div></td><td>' + esc(l.text) + (l.stt && l.stt.flag ? '<div class="stt">check: ' + esc(l.stt.flag) + '</div>' : '') + '</td><td>' +
+  (l.revoiced.before_file ? '<button class="play aud" title="before (' + esc(l.revoiced.before_voice) + ')" data-src="../../art/voice/full/before_r2/' +
+  encodeURIComponent(l.line_id) + '.ogg">' + PLAY + '</button><div class="fam">' + esc(l.revoiced.before_voice) + '</div>' : '') +
+  '</td><td><button class="play aud" title="now" data-src="' + src(l.file) + '">' + PLAY + '</button><div class="fam">' + esc(l.voice) +
+  '</div></td><td class="dir">' + esc(l.revoiced.why) + '</td></tr>').join('');
+$('#naud tbody').innerHTML = NAUD.map(r => { const chosen = CAST.NARRATOR && CAST.NARRATOR.voice === r.voice;
+  return '<tr><td>' + (chosen ? '<b>' + esc(r.voice) + '</b>' : esc(r.voice)) + '</td><td class="fam">' + esc(r.line_id) + ' · take ' + r.k +
+  '</td><td class="num">' + r.f0.toFixed(0) + '</td><td class="num">' + r.range.toFixed(1) + '</td><td><button class="play aud" data-src="../../art/voice/full/audition/narrator/' +
+  encodeURIComponent(r.file) + '">' + PLAY + '</button></td><td class="stt">' + esc(r.stt) + '</td></tr>'; }).join('');
 // audition
 const audBody = AUD.map(r => { const chosen = CAST[r.role] && CAST[r.role].voice === r.voice;
   return '<tr><td>' + esc(r.role) + '</td><td>' + (chosen ? '<b>' + esc(r.voice) + '</b>' : esc(r.voice)) + '</td><td class="num">' + r.f0.toFixed(0) +
@@ -243,6 +265,13 @@ def main() -> None:
         for r in sorted(json.loads(af.read_text(encoding="utf-8")), key=lambda r: (r["role"], r["voice"], r["k"])):
             aud.append({"role": r["role"], "voice": r["voice"], "tag": f"{r['role']}.{r['voice']}.{r['k']}",
                         "f0": r["features"]["f0_median_hz"], "stt": r["stt_scribe"]})
+    naud = []
+    nf = FULL / "audition/narrator/audition.json"
+    if nf.exists():
+        for r in sorted(json.loads(nf.read_text(encoding="utf-8"))["takes"], key=lambda r: (r["voice"], r["line_id"], r["k"])):
+            naud.append({"voice": r["voice"], "line_id": r["line_id"], "k": r["k"], "file": r["file"],
+                         "f0": r["features"]["f0_median_hz"], "range": r["features"]["f0_range_semitones"],
+                         "stt": r["stt_scribe"]})
     slim = dict(man)
     slim["lines"] = [{k: v for k, v in l.items() if k not in ("style_instructions", "tts_text", "text_sha1")}
                      for l in man["lines"]]
@@ -250,6 +279,7 @@ def main() -> None:
     page = (HTML.replace("__MANIFEST__", json.dumps(slim, ensure_ascii=False))
             .replace("__CASTING__", json.dumps(cast, ensure_ascii=False))
             .replace("__AUDITION__", json.dumps(aud, ensure_ascii=False))
+            .replace("__NAUDITION__", json.dumps(naud, ensure_ascii=False))
             .replace("__ERAS__", json.dumps(ERA_LABEL, ensure_ascii=False)))
     page = page.replace("</script>\n</body>", "</script>\n</body>")  # keep
     PAGE.parent.mkdir(parents=True, exist_ok=True)

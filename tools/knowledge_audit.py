@@ -68,13 +68,14 @@ CHRONO = "CHRONO"
 
 # --------------------------------------------------------------------------- entities
 # (id, type, regex, flags, background, note). Order matters: earlier (more specific) patterns mask their match
-# so that later, broader ones do not see it again ("Sokolíkovský dvor" before "Sokolíkova").
+# so that later, broader ones do not see it again (e.g. "Kamenné námestie" before a district name).
 CS, CI = 0, re.IGNORECASE
 B = True   # Adam's background: acceptable without an introduction
 
 ENTITY_SPECS: list[tuple[str, str, str, int, bool, str]] = [
     # ---- specific places / organisations first (they contain names of people or districts)
-    ("place:Sokolíkovský dvor", "place", r"Sokolíkovsk\w* dvor\w*", CS, False, "S69 courtyard (content v2)"),
+    ("place:LEAL", "place", r"\bLEAL\w*", CS, False,
+     "S69 courtyard „Pri LEALe“ (content v2; owner rename 2026-10-07, was Sokolíkovský dvor)"),
     ("org:kazetový klub", "org", r"kazetov\w* klub\w*|\bklub\w* v suteréne", CI, False, "Juro's club, S27"),
     ("org:opravovňa odevov", "org", r"opravovň\w* odevov", CI, False, "Milada, S26"),
     ("org:antikvariát", "org", r"antikvariát\w*|Pod druhou rukou", CI, False, "Viera, S22"),

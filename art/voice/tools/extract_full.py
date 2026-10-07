@@ -1,9 +1,9 @@
 """Collect EVERY spoken line of the game (all eras) for the full voice-over, in play order by era and scene.
 
-Text = the approved final text: the live tables (src/game/localization/dialogue.csv, the effective game with
-src/game/data/content_ext/dialogue_ext.json) with the approved knowledge drafts applied on top
-(docs/writing/out_v3/knowledge.csv rewrites, docs/writing/out_v3/knowledge_ext.json sequences/topics that replace
-the live overlay entries with the same id). Epilogue lines come from world.csv (epilogue.<n>.line).
+Text = the live tables (src/game/localization/dialogue.csv, the effective game with
+src/game/data/content_ext/dialogue_ext.json). The approved knowledge drafts (docs/writing/out_v3/knowledge.csv,
+knowledge_ext.json) are merged into those tables since 2026-10-07, so they only fill keys/ids the live tables lack;
+the live text always wins (e.g. the „Pri LEALe“ rename). Epilogue lines come from world.csv (epilogue.<n>.line).
 
 Read-only on the game. Writes art/voice/full/lines.json:
   lines[]   line_id, speaker, text, era, scene, scene_name, block, block_label, fx (None/phone/tape/device/radio),
@@ -44,10 +44,12 @@ def merged_dialogue_overlay() -> Path:
     live = json.loads(content_ext.DIALOGUE_EXT.read_bytes().decode("utf-8-sig"))
     know = json.loads(KNOW_EXT.read_text(encoding="utf-8"))
     out = copy.deepcopy(live)
+    # The knowledge drafts were merged into the live overlay on 2026-10-07; since then the live entry wins (a later
+    # live edit such as the „Pri LEALe“ rename must not be undone by the older draft). Only ids that the live overlay
+    # does not have are taken from the draft.
     for sect in ("sequences", "topics", "topic_extensions"):
-        new = know.get(sect) or []
-        ids = {e["id"] for e in new}
-        out[sect] = [e for e in out.get(sect, []) if e.get("id") not in ids] + new
+        have = {e.get("id") for e in out.get(sect, [])}
+        out[sect] = out.get(sect, []) + [e for e in know.get(sect) or [] if e["id"] not in have]
     p = FULL / "_effective_dialogue_ext.json"
     p.write_text(json.dumps(out, ensure_ascii=False, indent=1), encoding="utf-8")
     return p
@@ -60,7 +62,8 @@ def texts_and_overlay_sk(overlay: dict) -> dict[str, str]:
             for l in e.get("lines", []):
                 if isinstance(l, dict) and l.get("key") and l.get("sk") and l["key"] not in t:
                     t[l["key"]] = l["sk"]
-    t.update({k: v for k, v in read_csv(KNOW_CSV, "sk_new").items() if v.strip()})
+    # knowledge.csv rewrites are merged into the live tables (2026-10-07); the live text wins, drafts fill gaps only
+    t.update({k: v for k, v in read_csv(KNOW_CSV, "sk_new").items() if v.strip() and k not in t})
     return t
 
 

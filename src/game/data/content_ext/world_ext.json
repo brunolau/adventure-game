@@ -1,7 +1,7 @@
 {
  "format": "lastbell.world_ext",
  "version": 1,
- "about": "Content v2 world overlay (2026-10-06): Zuzana 1962 in the manor park S37 with side quest Q10 and her traces in S32/S38; the new 1995 room S69 Sokolíkovský dvor with Zuzana (40), Kubo and side quest Q11; the main step B19 relocated to the courtyard wall S69.rhythm; epilogue shots 10 and 11. Texts are the reviewed chunk texts (docs/writing/out_v2/C2_ext.json, C3_ext.json; epilogue C4_ext.json world_ext_patch); design docs/story/ZUZANA.md and SOKOLIKOVA_YARD.md. Schema src/LastBell.Core/README.md section 13.",
+ "about": "Content v2 world overlay (2026-10-06): Zuzana 1962 in the manor park S37 with side quest Q10 and her traces in S32/S38; the new 1995 room S69 Pri LEALe (owner rename 2026-10-07, was Sokolíkovský dvor) with Zuzana (40), Kubo and side quest Q11; the main step B19 relocated to the courtyard wall S69.rhythm; epilogue shots 10 and 11. Texts are the reviewed chunk texts (docs/writing/out_v2/C2_ext.json, C3_ext.json; epilogue C4_ext.json world_ext_patch); design docs/story/ZUZANA.md and SOKOLIKOVA_YARD.md. Schema src/LastBell.Core/README.md section 13.",
  "characters": [
   {
    "id": "ZUZANA",
@@ -18,7 +18,7 @@
    "id": "ZUZANA95",
    "name": "Zuzana",
    "age": 40,
-   "role": "Zuzana z Ivanky o tridsaťtri rokov neskôr, v júni 1995 v Sokolíkovskom dvore (v hre býva na Sokolíkovej; nič ďalšie o jej živote sa nehovorí). Spozná Adama z parku v Ivanke, lebo nezostarol. Pomôže s rytmickým nákresom a s Kubovým zvončekom.",
+   "role": "Zuzana z Ivanky o tridsaťtri rokov neskôr, v júni 1995 pri LEALe (v hre býva na Sokolíkovej; nič ďalšie o jej živote sa nehovorí). Spozná Adama z parku v Ivanke, lebo nezostarol. Pomôže s rytmickým nákresom a s Kubovým zvončekom.",
    "voice": "Pokojná, láskavá, s tichým humorom; stále všetko ráta. Adamovi vyká, Kubovi tyká; Adam jej vyká.",
    "design": "Štyridsaťročná žena; tvár, oči a vlasy zrejme tie isté ako u sedemročnej Zuzany: krátke svetlohnedé vlasy s pešinkou na boku, okrúhla tvár, vážne láskavé oči; tmavomodrá blúzka s bielym okrúhlym golierikom, svetlá sukňa, sandále, kúsok bielej kriedy.",
    "rooms": [
@@ -87,7 +87,7 @@
  "rooms": [
   {
    "id": "S69",
-   "name": "Sokolíkovský dvor",
+   "name": "Pri LEALe",
    "era": 1995,
    "district": "Dúbravka",
    "art_brief": "Ohradené ihrisko medzi panelákmi na Sokolíkovej v júni 1995 popoludní: múr z betónových panelov postavených na výšku, asfaltové ihrisko so škôlkou nakreslenou kriedou, breza a modrý smrek za múrom, guľová lampa, zelená lavička a pri nej detský bicykel, na troch paneloch pravého múru výtvarný nákres krúžku so štyrmi tvarmi a rytmom.",
@@ -98,7 +98,7 @@
     {
      "key": "entry.S69.001",
      "speaker": "ADAM",
-     "sk": "Sokolíkovský dvor. Tu som raz prehodil loptu cez múr a hľadal som ju až do tmy."
+     "sk": "Pri LEALe. Tu som raz prehodil loptu cez múr a hľadal som ju až do tmy."
     }
    ],
    "background_asset": "bg/S69.webp",
@@ -605,7 +605,7 @@
    "id": "S18.to_S69",
    "to": "S69",
    "travel": "walk",
-   "label": "Sokolíkovský dvor",
+   "label": "Pri LEALe",
    "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
    "requires_done": [],
    "rect": [
@@ -627,7 +627,7 @@
    "to": "S69",
    "bidirectional": true,
    "travel": "walk",
-   "label": "Sokolíkovský dvor",
+   "label": "Pri LEALe",
    "locked_look": "Tadiaľto sa teraz nedostanem. Ďalší krok mám v zápisníku.",
    "requires_done": [],
    "note": "the only link of S69; no S17 <-> S69 link (S17's way to the right of the school is S17.to_S18; the podlubie stays a no-go, owner 2026-10-06)"
@@ -668,9 +668,9 @@
    "goal": "Oprav Kubov zvonček na bicykli, aby mohol na konci roka zvoniť s ostatnými deťmi.",
    "reward": "Kubo so zvončekom a Zuzanina škôlka na Sokolíkovej v Adamovom albume.",
    "hints": [
-    "Kubo v Sokolíkovskom dvore má na bicykli zvonček, ktorý nezvoní.",
+    "Kubo pri LEALe má na bicykli zvonček, ktorý nezvoní.",
     "Vrchnák zvončeka sa odkotúľal pod modrý smrek a Zuzana videla kam. Naskrutkuješ ho náradím zo servisnej brašne.",
-    "Téma „Zvonček na bicykli“ u Kuba → modrý smrek v Sokolíkovskom dvore → vrchnák zvončeka na Kubov bicykel."
+    "Téma „Zvonček na bicykli“ u Kuba → modrý smrek pri LEALe → vrchnák zvončeka na Kubov bicykel."
    ]
   }
  ],
@@ -993,12 +993,12 @@
    "puzzle": null,
    "cutscene": null,
    "once": true,
-   "objective": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+   "objective": "Pod modrým smrekom pri LEALe nájdi vrchnák Kubovho zvončeka.",
    "animation": "talk",
    "sfx": null,
    "excluded_done": [],
    "commit_policy": "atomic_after_validation_and_puzzle_before_lines",
-   "journal_text": "Pod modrým smrekom v Sokolíkovskom dvore nájdi vrchnák Kubovho zvončeka.",
+   "journal_text": "Pod modrým smrekom pri LEALe nájdi vrchnák Kubovho zvončeka.",
    "staging": {
     "guest_speakers": [
      "ZUZANA95"
@@ -1052,7 +1052,7 @@
      "sk": "Vrchnák nájdem a naskrutkujem. Na konci roka budeš zvoniť."
     }
    ],
-   "hint_step": "V Sokolíkovskom dvore sa porozprávaj s Kubom o zvončeku na bicykli."
+   "hint_step": "Pri LEALe sa porozprávaj s Kubom o zvončeku na bicykli."
   },
   {
    "id": "Q11B",
@@ -1096,7 +1096,7 @@
     }
    ],
    "note": "a click on the spruce before Q11A is only its look",
-   "hint_step": "Pohľadaj vrchnák zvončeka pod modrým smrekom v Sokolíkovskom dvore."
+   "hint_step": "Pohľadaj vrchnák zvončeka pod modrým smrekom pri LEALe."
   },
   {
    "id": "Q11C",
@@ -1268,7 +1268,7 @@
    "room": "S17",
    "after": "G11",
    "asset": "variants/S17_sign_shapes_only.webp",
-   "change": "Výtvarný panel v školskom dvore má už len štyri tvary; vlny, údery a dieliky sú na múre v Sokolíkovskom dvore.",
+   "change": "Výtvarný panel v školskom dvore má už len štyri tvary; vlny, údery a dieliky sú na múre pri LEALe.",
    "note": "G11 opens 1995, so 'after G11' = always in S17; a patch layer instead of repainting bg_natural/S17.webp"
   }
  ],
@@ -1277,7 +1277,7 @@
    "action": "B19",
    "to_hotspot": "S69.rhythm",
    "retire_hotspot": false,
-   "hint_step": "V Sokolíkovskom dvore si prečítaj rytmický nákres na múre.",
+   "hint_step": "Pri LEALe si prečítaj rytmický nákres na múre.",
    "reason": "the target is a painted panel and the yard is a wall of concrete panels the school club painted; owner 2026-10-06: some puzzles move into the yard",
    "note": "S17.rhythm stays as an atmospheric prop ('Výtvarný panel', texts via sk_overrides). walkthrough.json step 30 (S11 -> S12 -> S17, target S17.rhythm) is replayed as S11 -> S18 -> S69, target S69.rhythm"
   }

@@ -7,7 +7,7 @@ Status: **final design, ready to implement** (2026-10-06, evening). History:
   reference to her later life in 2020 or 2035; the 2020 topic `MIRA20.extra Z` is dropped.
 - **2026-10-06 evening (owner): "Zuzana in the game – do it, 1962 Ivanka and 1995 Dúbravka."** She appears in
   exactly two places: **June 1962, age 7**, in the manor park of Ivanka (S37), and **15 June 1995, age 40**, in the
-  new room S69 *Sokolíkovský dvor* (spec of the room and of her 1995 part: [SOKOLIKOVA_YARD.md](SOKOLIKOVA_YARD.md)).
+  new room S69 *Pri LEALe* (renamed by the owner 2026-10-07, was *Sokolíkovský dvor*; spec of the room and of her 1995 part: [SOKOLIKOVA_YARD.md](SOKOLIKOVA_YARD.md)).
   The 1962 line that foreshadowed her future (*„Ja to neuvidím, ale aj tak."*) is replaced (section 4.2, Q10D).
 
 Code, ids and this document are English; player-facing text is Slovak. Every Slovak line here is a **draft
@@ -34,7 +34,7 @@ automatic checks) like every other text. The exact data for both eras is in
 - **1962 epilogue shot.** End of June 1962: she rings the class bell and the first graders run out into the
   holidays: *„Posledný zvonec! A v septembri zase prvý."*
 - **1995 (age 40).** She is a resident of the Sokolíkova estate (game fiction) whom Adam meets in the walled
-  courtyard *Sokolíkovský dvor*. She recognises him as the man from the Ivanka park in June 1962, because he has
+  courtyard *Pri LEALe*. She recognises him as the man from the Ivanka park in June 1962, because he has
   not aged: the shoes, and the carbon paper she once sent him for. Because the game visits 1995 **before** 1962,
   the first time they meet she remembers and he cannot; after Ivanka he can. She is warm, gentle and light.
 - **Her 1995 role.** She helps with the main step "read the rhythm drawing" (B19), which moves from the school

@@ -24,7 +24,52 @@ docs/RELEASE.md.
 and the difficulty UI are live, Zuzana stands still in conversations, S69 is at sunset; all suites and four routes
 green (134/134), release rebuilt and smoke-tested.
 
-The sections after the next four are the record of the first milestone-5 run (2026-10-05).
+**Owner feedback of 2026-10-07 evening verified and released** (next section): S07, S18 / S62, S21 exits, „Pri LEALe“,
+the female narrator; all suites green, routes A and K 134/134, release rebuilt (20:20) and smoke-tested.
+
+The sections after the next five are the record of the first milestone-5 run (2026-10-05).
+
+## Owner feedback of 2026-10-07 evening (verified and released)
+
+The owner's notes (art/feedback/2026-10-05_owner_feedback.md, "answers to the exit review + new notes") were applied
+by separate tasks: S07 exit `S07.to_S04` side `down` and the paint edit with suburb houses behind the stop (1 call,
+USD 0.15); S18 / S62 stop on the left and school yard on the right, S21 `S21.to_S28` in the lower right corner pointing
+right (blocking + compass only, USD 0); S69 renamed „Pri LEALe“ in every player text (25 texts, GPT check USD 0.0596;
+`docs/writing/out_v5/leal_rename.csv`); narrator recast to the female voice Callirrhoe with a warmer direction and the
+four „Pri LEALe“ lines re-voiced (docs/voice/FULL.md). This pass verified everything and rebuilt the release.
+
+| check | result |
+|---|---|
+| Godot `--headless --import` | exit 0; the re-voiced clips (CS04.02.001, CS07.05.001, B17.003 / .004, entry.S69.001, ZITA extra 2.002) and the translations re-imported |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `check_strings.py` | OK, 5092 keys, 0 errors, 0 warnings |
+| `check_rewrite.py --self-test` / `--overlay-only` | OK, 1712 overlay texts, 0 errors, 0 warnings |
+| `content_ext.py check` | OK |
+| `check_blocking.py --strict` (all 69 rooms) | 0 errors, 15 warnings (11 known exit-point distances / S48 crowding, 4 owner-accepted continuity pairs S11/S51/S57 -> school, S17 <-> S18) |
+| `knowledge_audit.py --simulate 200` | 200 legal orders, 0 must-set violations, **0 problems, 0 unjudged** (no new candidate) |
+| `--acceptance m1` / `m2` / `travel` (headless) | 34 / 46 / 4 PASS, 0 failures |
+| Route A `--play-all --save-load-each` (headless, x6) | 134/134, 9 cutscenes, 5 puzzles, 18 variant layers, 27 causal effects; 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` (headless, x8) | 134/134: 697 steps, 1982 key presses (mean 2.8, max 7), 0 awkward, 0 blockers, 0 failures |
+
+Both routes walked the changed exits (S07.to_S04, S18.to_S11 / S17 / S69, S21.to_S28 and the returns). Hidden
+1920x1080 screenshots `build/screens/verify_1007/` (S07, S18, S21 with labels; `S07_markers*` / `S21_markers*`): the
+S07 shop badge points down, S18 "Dúbravská zastávka" left / "Školský dvor" right / "Pri LEALe" at the courtyard,
+S21 "Petržalský podchod" bottom right with a right arrow.
+
+**Regression found and fixed (ISSUES QA-VOICE-SPEED).** The first route runs timed out after 60 minutes (exit 124 at
+about 94 of 134 actions, no failure): with the full voice set imported each route played about 1000 voice clips, and
+auto-advance waits for a clip that plays at real speed whatever `--time-scale` is. QA-only fix in `DebugHarness.cs`:
+`--fast-text` runs with a time scale above 1 set `AudioServer.PlaybackSpeedScale` to the time scale. Re-run: both
+routes green, no `WARN lines still playing`. First-attempt logs: `build/verify_1007/logs/first_attempt/`.
+
+**Release.** `build.bat` 20:09-20:20, exit 0 (C# 0 errors; release filters OK, 576 natural-mode references, 0 errors;
+the known `ERR_CANT_OPEN` icon pass, second pass applied). `LastBell.exe` 109.5 MB, `LastBell.pck` 291.2 MB (7026
+files, 98.9 MB voice), `data_LastBell_windows_x86_64/` 81.4 MB; `build/m5/ship/PoslednyZvonec/` refreshed (482.2 MB, 190
+files, no `*.TMP`) and zipped: **`build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`, 346.8 MB** (zip test OK).
+Smoke test (`build/verify_1007/release_smoke.py`, hidden window, key messages to that window only): QA arguments
+ignored, Nová hra -> difficulty -> Začať hru -> S01 -> G01, autosave S01 / 2020 / [G01] / [PHONE, TOOLS]. The player's
+save folder was backed up (`build/verify_1007/saves_backup/`) and is identical afterwards. Logs: `build/verify_1007/logs/`
+(`run_verify.sh`). Paid generation in this pass: none.
 
 ## Round 2 applied (2026-10-07)
 

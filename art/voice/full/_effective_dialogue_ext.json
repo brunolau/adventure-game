@@ -790,7 +790,7 @@
      "sk": "A cievku nes opatrne. Pasuje len do jedného držiaka a len jedným smerom."
     }
    ],
-   "note": "Dezider tyká, Adam vyká; the clue stays in .003 (Emil, metronóm, three digits, Sokolíkovský dvor); x03 explains why the digits are a picture"
+   "note": "Dezider tyká, Adam vyká; the clue stays in .003 (Emil, metronóm, three digits, the place pri LEALe); x03 explains why the digits are a picture"
   },
   {
    "chunk": "C2",
@@ -2738,6 +2738,7 @@
    ]
   },
   {
+   "chunk": "knowledge",
    "id": "action.B05",
    "action": "B05",
    "kind": "action_lines",
@@ -2784,10 +2785,10 @@
      "note": "FINAL CONTROL: owner's wording \"S páskami čaruje Juro Kazeta\" (DECISIONS.md) worked in; matches hint.nudge.B07; was: Za Jurom do kazetového klubu v Ružinove. Nie nadarmo mu hovoria Juro Kazeta."
     }
    ],
-   "note": "KNOWLEDGE G01-juro (a), era 1995. OWNER'S EXAMPLE: Pali (ty/ty, blunt verdicts) names Juro and the cassette club in Ružinov. B05 is guaranteed before B06 (B06 needs BELT_NEW from B05), so B06, its objective/journal, TAPE_RAW purpose and M05 hint 1 are then introduced. B07.x01 'Ty budeš Juro' / x02 'Juro Kazeta, to som ja' pay this off. Supersedes the live dialogue_ext.json entry action.B05 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
-   "chunk": "knowledge"
+   "note": "KNOWLEDGE G01-juro (a), era 1995. OWNER'S EXAMPLE: Pali (ty/ty, blunt verdicts) names Juro and the cassette club in Ružinov. B05 is guaranteed before B06 (B06 needs BELT_NEW from B05), so B06, its objective/journal, TAPE_RAW purpose and M05 hint 1 are then introduced. B07.x01 'Ty budeš Juro' / x02 'Juro Kazeta, to som ja' pay this off. Supersedes the live dialogue_ext.json entry action.B05 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "action": "B06",
    "id": "action.B06",
    "kind": "action_lines",
@@ -2800,10 +2801,10 @@
      "sk": "Pali spomínal Jura z kazetového klubu v Ružinove. Ten by to mohol vedieť."
     }
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G01-juro (b), era 1995. OWNER'S EXAMPLE, text exactly as the owner phrased it; B06.002 is rewritten in knowledge.csv with the owner's text. Adam recalls Pali's B05.k03. New sequence (no live overlay entry)."
   },
   {
+   "chunk": "knowledge",
    "id": "action.B02",
    "action": "B02",
    "kind": "action_lines",
@@ -2859,10 +2860,10 @@
      "sk": "Keby ste potrebovali nový, choďte za Palim do Karlovej Vsi. Má ich plné zásuvky."
     }
    ],
-   "note": "KNOWLEDGE G02-pali (a), era 1995. Tóno 25 says vy (before E11). B02 opens the radio room, so it is guaranteed before B04; B04.002 (knowledge.csv) cites Tóno. The exchange still ends on a practical tip. Supersedes the live dialogue_ext.json entry action.B02 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
-   "chunk": "knowledge"
+   "note": "KNOWLEDGE G02-pali (a), era 1995. Tóno 25 says vy (before E11). B02 opens the radio room, so it is guaranteed before B04; B04.002 (knowledge.csv) cites Tóno. The exchange still ends on a practical tip. Supersedes the live dialogue_ext.json entry action.B02 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "id": "action.G05",
    "action": "G05",
    "kind": "action_lines",
@@ -2899,10 +2900,10 @@
      "sk": "Tak idem pre kľúč. A o kondenzátore sa ešte porozprávame."
     }
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G03-oto-before-ivanka (a), era 2020. Only action.G05.x04 changed (see the line note); Mira's withholding joke stays. G05 gives the shed key and is guaranteed before B22 and all of Ivanka, so the B22 objective ('nájdi Ota v jeho mechanickej dielni') and the optional 1962 topics that say 'pán Bielik' (Božo extra 3, Zuzana extra 2) are then introduced. Supersedes the live dialogue_ext.json entry action.G05 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "action": "B22",
    "id": "action.B22",
    "kind": "action_lines",
@@ -2917,10 +2918,10 @@
     },
     "action.B22.004"
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G03-oto-before-ivanka (a), era 1995. Adam recalls Mira's G05.x04 (story step 4) right before the objective sends him to Oto's workshop (story step 33). Protected P03-spoken-digits stays in B22.001. New sequence (no live overlay entry)."
   },
   {
+   "chunk": "knowledge",
    "id": "action.C01",
    "action": "C01",
    "kind": "action_lines",
@@ -2989,10 +2990,10 @@
      "sk": "Áno. Odfoť si školský dvor, presne taký, aký je dnes."
     }
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G04-mostik (a), era 2020. Story bible: 'Po návrate do 2020 Mira vysvetlí, že pre bezpečný zásah treba aj fyzický keramický návratový mostík'. C01.002 (Adam) becomes 'Mostík? A kde ho vezmem?' (knowledge.csv); C01.003 answers unchanged. 'Bez neho ťa nikam nepustím' is Mira's grandma-rules running gag in a serious key. Supersedes the live dialogue_ext.json entry action.C01 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "id": "action.B13",
    "action": "B13",
    "kind": "action_lines",
@@ -3038,10 +3039,10 @@
      "sk": "Zapísal som si ho. Ako výnimku."
     }
    ],
-   "note": "KNOWLEDGE G05-alena (a), era 1995. Karol (vy) completes 'Ateliér je cez námestie' (B13.003) with the name; his silence gag continues. The B13 objective/journal and the NEGATIVE purpose ('Alene') are then introduced in the same exchange; B14.x02 'Pán Merta mi už volal' fits. Supersedes the live dialogue_ext.json entry action.B13 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'.",
-   "chunk": "knowledge"
+   "note": "KNOWLEDGE G05-alena (a), era 1995. Karol (vy) completes 'Ateliér je cez námestie' (B13.003) with the name; his silence gag continues. The B13 objective/journal and the NEGATIVE purpose ('Alene') are then introduced in the same exchange; B14.x02 'Pán Merta mi už volal' fits. Supersedes the live dialogue_ext.json entry action.B13 (chunk C2): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "action": "B16",
    "id": "action.B16",
    "kind": "action_lines",
@@ -3054,10 +3055,10 @@
     },
     "action.B16.002"
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G06-dezider (b), era 1995. B16.001 (knowledge.csv) no longer names Dezider; Adam reads it off the map (a visible text counts as an introduction). Garage 17 matches the protected entry.S29.001. B16.002 'Rádioamatér v garáži…' reacts; B17.x01 'ktorú ste vraj kreslili s pani Hruškovou' is now grounded in the two signatures. Objective/journal/M07 hint 1 then fine. New sequence (no live overlay entry)."
   },
   {
+   "chunk": "knowledge",
    "id": "action.C05",
    "action": "C05",
    "kind": "action_lines",
@@ -3087,10 +3088,10 @@
     },
     "action.C05.004"
    ],
-   "chunk": "knowledge",
    "note": "KNOWLEDGE G08-nina-2035 (a), era 2020. C05.001 (protected P04-chain) stays verbatim; the device adds the curator, so C05.002 'Adresu už mám' follows naturally and the C05 objective/journal and M12 hint 1 ('Nina … pred hotelom Grand Jasná') are introduced. Terse device style (STYLE_GUIDE 6.12). Supersedes the live dialogue_ext.json entry action.C05 (chunk C1): full play order, live overlay lines copied unchanged unless their note says 'text changed'."
   },
   {
+   "chunk": "knowledge",
    "id": "action.E02",
    "action": "E02",
    "kind": "action_lines",
@@ -3148,10 +3149,10 @@
      "speaker": "TONO82",
      "sk": "Z dejepisu. Odteraz ho budem brať vážnejšie."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   },
   {
+   "chunk": "knowledge",
    "id": "action.Q7A",
    "action": "Q7A",
    "kind": "action_lines",
@@ -3181,8 +3182,7 @@
      "speaker": "RUDO",
      "sk": "Obyčajne to neviem. Ale nacvičím to!"
     }
-   ],
-   "chunk": "knowledge"
+   ]
   }
  ],
  "topic_extensions": [
@@ -7677,7 +7677,7 @@
     {
      "key": "topic.ZITA.extra 2.002",
      "speaker": "ZITA",
-     "sk": "Sokolíkovský dvor. Ihrisko, lavička a deti, čo prehadzujú loptu cez múr."
+     "sk": "Tam? To je pri LEALe. Ihrisko, lavička a deti, čo prehadzujú loptu cez múr."
     },
     {
      "key": "topic.ZITA.extra 2.003",
@@ -10948,6 +10948,7 @@
    ]
   },
   {
+   "chunk": "knowledge",
    "id": "ELA.extra 2",
    "character": "ELA",
    "label_key": "topic.ELA.extra 2.label",
@@ -10989,10 +10990,10 @@
      "speaker": "ELA",
      "sk": "Má pätnásť. Nech plánuje, zoznamy jej zatiaľ požičiam."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   },
   {
+   "chunk": "knowledge",
    "id": "JANA95.extra 1",
    "character": "JANA95",
    "label_key": "topic.JANA95.extra 1.label",
@@ -11034,10 +11035,10 @@
      "speaker": "JANA95",
      "sk": "Model nie je na opravu. Je to exponát a exponát sa točiť nemusí."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   },
   {
+   "chunk": "knowledge",
    "id": "VERA60.extra 2",
    "character": "VERA60",
    "label_key": "topic.VERA60.extra 2.label",
@@ -11070,10 +11071,10 @@
      "speaker": "VERA60",
      "sk": "Kreslím ceruzkou. Atrament si nechám na deň, keď Oto prestane meniť rozmery."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   },
   {
+   "chunk": "knowledge",
    "id": "ZUZANA.extra 7",
    "character": "ZUZANA",
    "label_key": "topic.ZUZANA.extra 7.label",
@@ -11123,10 +11124,10 @@
      "speaker": "ZUZANA",
      "sk": "Ja by som tlieskala. Ale len trochu, aby si nemyslel, že to stačí."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   },
   {
+   "chunk": "knowledge",
    "id": "TAMARA.extra 1",
    "character": "TAMARA",
    "label_key": "topic.TAMARA.extra 1.label",
@@ -11168,8 +11169,7 @@
      "speaker": "TAMARA",
      "sk": "Tak to je stály pacient. Založ mu kartu."
     }
-   ],
-   "chunk": "knowledge"
+   ]
   }
  ]
 }

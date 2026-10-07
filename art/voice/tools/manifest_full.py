@@ -31,6 +31,34 @@ def audition_spend() -> float:
     return sum(r["usd_tts"] + r["usd_stt"] for r in json.loads(f.read_text(encoding="utf-8")))
 
 
+SUPERSEDED = V.ROOT / "art/voice/raw/full/superseded_r2"   # records replaced by the 2026-10-07 re-voice (round r2)
+
+
+def superseded() -> dict[str, dict]:
+    """Old records of the lines re-voiced in round r2 (narrator recast, „Pri LEALe“ rename); their spend still counts."""
+    if not SUPERSEDED.exists():
+        return {}
+    return {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in SUPERSEDED.glob("*.json")}
+
+
+def narrator_audition_spend() -> float:
+    f = FULL / "audition/narrator/audition.json"
+    return json.loads(f.read_text(encoding="utf-8"))["usd"] if f.exists() else 0.0
+
+
+def revoiced_of(lid: str, rec: dict, old: dict | None) -> dict | None:
+    if not old:
+        return None
+    if old["voice"] != rec["voice"]:
+        why = f"recast 2026-10-07: {old['voice']} -> {rec['voice']} (owner: female narrator, more engaged tone)"
+    elif old["text"] != rec["text"]:
+        why = "text changed 2026-10-07 (S69 renamed „Pri LEALe“)"
+    else:
+        why = "re-voiced 2026-10-07"
+    return {"why": why, "before_voice": old["voice"], "before_text": old["text"],
+            "before_file": f"before_r2/{lid}.ogg" if (FULL / "before_r2" / f"{lid}.ogg").exists() else None}
+
+
 def flag_of(rec: dict) -> str | None:
     c = rec["best"]["check"]
     why = []
@@ -40,6 +68,9 @@ def flag_of(rec: dict) -> str | None:
         why.append(("still different after the one retake: " if rec["retaken"] else "different: ") + pairs)
     if c["timing"]:
         why.append("timing: " + ", ".join(c["timing"]))
+    heard = [w.strip(".,?!") for w in rec["best"]["stt_scribe"].split() if w.lower().startswith("leá")]
+    if "LEAL" in rec["text"] and heard:
+        why.append(f"check by ear: Scribe wrote the name as „{heard[0]}“ (a long or stressed „á“?)")
     if c.get("minor"):
         why.append("extra filler word heard (meaning unchanged, no retake): "
                    + ", ".join(f"„{b}“" for _, b in c["minor"]))
@@ -68,6 +99,7 @@ def build() -> dict:
     trial = {l["line_id"]: l for l in json.loads((TRIAL / "manifest.json").read_text(encoding="utf-8"))["lines"]}
     sys_rerender = {r["line_id"]: r for r in rerender_prologue_system(lines)}
     out, flags, missing = [], {}, []
+    old_recs = superseded()
     for l in lines:
         lid = l["line_id"]
         base = {k: l[k] for k in ("line_id", "speaker", "text", "era", "scene", "scene_name", "block", "block_label",
@@ -105,9 +137,12 @@ def build() -> dict:
                             "meaning_errors": b["check"]["meaning_errors"], "minor": b["check"].get("minor", []),
                             "timing": b["check"]["timing"], "chars_per_s": b["measure"].get("chars_per_s"),
                             "ok": f is None, "flag": f}})
+        rv = revoiced_of(lid, r, old_recs.get(src))
+        if rv:
+            out[-1]["revoiced"] = rv
     new = [e for e in out if e["source"] == "full"]
     rs = list(recs.values())
-    spend = G.spend(rs) + audition_spend()
+    spend = G.spend(rs) + G.spend(list(old_recs.values())) + audition_spend() + narrator_audition_spend()
     # casting table
     by_spk: dict[str, dict] = defaultdict(lambda: {"eras": Counter(), "lines": 0, "irony": 0, "fx": Counter()})
     for e in out:
@@ -133,7 +168,9 @@ def build() -> dict:
     man = {
         "version": 1, "date": "2026-10-07", "model": G.MODEL,
         "about": "Full voice-over of every spoken line (new lines: gen_full.py; prologue: art/voice/trial/, approved). "
-                 "Text = live tables + docs/writing/out_v3/knowledge*.",
+                 "Text = the live tables (the knowledge drafts of docs/writing/out_v3/ are merged into them). "
+                 "Round r2 (2026-10-07): female narrator (Callirrhoe) and the „Pri LEALe“ lines re-voiced; "
+                 "see 'revoiced' on those lines.",
         "counts": {"lines": len(out), "new": len(new), "prologue": len(out) - len(new),
                    "aliases": sum(1 for e in new if e.get("alias_of")),
                    "by_era_new": dict(Counter(str(e["era"]) for e in new)),
@@ -142,7 +179,8 @@ def build() -> dict:
                    "irony_new": sum(1 for e in new if e.get("delivery")),
                    "minutes_new": round(sum(e["duration_s"] for e in new) / 60, 1),
                    "chars_new": sum(len(e["text"]) for e in new)},
-        "spend_usd": round(spend, 4), "spend_usd_audition": round(audition_spend(), 4),
+        "spend_usd": round(spend, 4), "spend_usd_audition": round(audition_spend() + narrator_audition_spend(), 4),
+        "spend_r2_logged_usd": round(V.fal_api.logged_spend("voice/full/r2/"), 4),
         "spend_logged_usd": round(V.fal_api.logged_spend(G.BUDGET[0]), 3),
         "missing": missing, "voice_clashes_in_scene": clashes,
         "irony_direction": G.IRONY_DIRECTION.strip(), "skipped": json.loads((FULL / "lines.json").read_text(
@@ -165,10 +203,16 @@ def install() -> None:
     stale = [e["line_id"] for e in man["lines"] if live.get(e["line_id"]) != e["text"]]
     if stale:
         raise SystemExit(f"{len(stale)} lines changed since generation, not installing: {stale[:10]}")
-    n = 0
+    import filecmp
+    n, same, copied = 0, 0, []
     for e in man["lines"]:
         if e["source"] == "prologue":
             continue  # already in the game, unchanged
-        shutil.copyfile(FULL / e["file"], G.GAME / f"{e['line_id']}.ogg")
+        dst = G.GAME / f"{e['line_id']}.ogg"
+        if dst.exists() and filecmp.cmp(FULL / e["file"], dst, shallow=False):
+            same += 1  # identical file: not touched, so Godot does not re-import it
+            continue
+        shutil.copyfile(FULL / e["file"], dst)
         n += 1
-    print("copied", n, "files to", G.GAME)
+        copied.append(e["line_id"])
+    print("copied", n, "changed files to", G.GAME, f"({same} identical, untouched):", copied[:20])

@@ -102,6 +102,14 @@ public partial class DebugHarness : Node
             PresentationSettings.AutoAdvanceBaseSeconds = 0.25f;
             PresentationSettings.AutoAdvancePerCharSeconds = 0.004f;
             PresentationSettings.CutsceneMinDurationScale = 0f;
+            // Voice clips hold auto-advance while they play, and audio plays at real speed regardless of --time-scale:
+            // with the full voice set imported (2026-10-07) a time-scaled route waited in real time for every clip and
+            // ran past its timeout (ISSUES QA-VOICE-SPEED). Audio follows the time scale in fast-text runs instead.
+            if (Engine.TimeScale > 1.0)
+            {
+                AudioServer.PlaybackSpeedScale = (float)Engine.TimeScale;
+                Log($"audio playback speed x{Engine.TimeScale:0.##} (fast-text, follows --time-scale)");
+            }
         }
         if (Get("voice-over") is { } vo) // QA: --voice-over on|off overrides the setting for this run (not saved)
         {

@@ -36,6 +36,8 @@ from irony_full import IRONY  # noqa: E402
 
 MODEL = "google/gemini-3.8-flash-tts"
 BUDGET = ("voice/full/", 15.0)            # owner-approved cap for the full voice-over (USD)
+ASSET = "voice/full/"                     # spend-log prefix of the calls; a later round uses its own scope and cap
+#                                          (gen/retake --scope r2 --cap 3: prefix voice/full/r2/, cap USD 3)
 FULL = V.ROOT / "art/voice/full"
 RAW = V.ROOT / "art/voice/raw/full"
 GAME = V.ROOT / "src/game/assets/voice"
@@ -50,6 +52,18 @@ SPOKEN = {
     "K-17": "ká sedemnásť",
     "„cca“": "cé cé á",
 }
+
+
+LEAL = re.compile(r"\bLEAL(\w*)")
+
+
+def name_hint(text: str) -> str:
+    """Phonetic hint for the retake of a line with the place name „Pri LEALe“ (owner 2026-10-07; declined pri LEALe,
+    k LEALu, od LEALu). The subtitle text keeps the capitals; only the direction tells the voice how to say it."""
+    forms = sorted({m.group(0) for m in LEAL.finditer(text)})
+    return "".join(f" The place name „{w}“ is one ordinary word: say „{w.capitalize()}“ clearly with all its "
+                   f"syllables (le-a-l{m.lower()}), as a separate word, never spelled letter by letter."
+                   for w, m in ((w, w[4:]) for w in forms))
 
 
 def spoken(text: str) -> str:
@@ -177,14 +191,14 @@ def take(line: dict, n: int, extra: str = "") -> dict:
     voice["style"] += extra
     usd = len(text) / 1000 * V.TTS_PRICE[MODEL]
     res = V.fal_api.run(MODEL, {"prompt": text, "voice": voice["voice"], "style_instructions": voice["style"]},
-                        f"voice/full/gemini/{lid}#t{n}", usd, budget=BUDGET, poll_s=1.0)
+                        f"{ASSET}gemini/{lid}#t{n}", usd, budget=BUDGET, poll_s=1.0)
     url = res["audio"]["url"]
     raw = V.fal_api.download(url, RAW / f"{lid}.t{n}.wav")
     x = V.load_mono(raw)
     m = {k: (float(v) if hasattr(v, "item") else v) for k, v in V.measure(x, text).items()}
     usd_stt = max(float(m["raw_s"]), 1.0) / 60 * 0.008
     sc = V.fal_api.run(V.SCRIBE, {"audio_url": url, "language_code": "slk", "diarize": False,
-                                  "tag_audio_events": False}, f"voice/full/stt-scribe/{lid}#t{n}", usd_stt,
+                                  "tag_audio_events": False}, f"{ASSET}stt-scribe/{lid}#t{n}", usd_stt,
                        budget=BUDGET, poll_s=1.0).get("text", "").strip()
     return {"take": n, "raw": raw.name, "measure": m, "stt_scribe": sc, "wer_scribe": V.wer(line["text"], sc),
             "check": check(line, sc, m), "usd_tts": round(usd, 5), "usd_stt": round(usd_stt, 5),
@@ -329,7 +343,7 @@ def cmd_retake(a) -> None:
             print("already retaken once:", lid)
             return
         short = len(V.norm_words(rec["text"])) <= 6
-        t = take(lines[lid], rec["takes"] + 1, R.CLEAR if short else VERBATIM)
+        t = take(lines[lid], rec["takes"] + 1, (R.CLEAR if short else VERBATIM) + name_hint(rec["text"]))
         rec["all_takes"].append(t)
         rec["takes"] += 1
         rec["retaken"] = True
@@ -373,14 +387,26 @@ def main() -> None:
     g.add_argument("--only", nargs="*")
     g.add_argument("--limit", type=int, default=0)
     sub.add_parser("report")
+    for sp in (g,):
+        sp.add_argument("--scope", default="", help="own spend-log scope voice/full/<scope>/ with its own --cap")
+        sp.add_argument("--cap", type=float, default=0.0)
     sub.add_parser("rerender")
     sub.add_parser("recheck")
     r = sub.add_parser("retake")
     r.add_argument("ids", nargs="*")
     r.add_argument("--all-flagged", action="store_true")
+    r.add_argument("--scope", default="")
+    r.add_argument("--cap", type=float, default=0.0)
     sub.add_parser("finalize")
     sub.add_parser("install")
     a = ap.parse_args()
+    if getattr(a, "scope", ""):
+        global ASSET, BUDGET
+        if not a.cap:
+            raise SystemExit("--scope needs --cap")
+        ASSET = f"voice/full/{a.scope.strip('/')}/"
+        BUDGET = (ASSET, a.cap)
+        print("spend scope", ASSET, "cap", a.cap, "logged so far", round(V.fal_api.logged_spend(ASSET), 4))
     {"gen": cmd_gen, "report": cmd_report, "rerender": cmd_rerender, "recheck": cmd_recheck, "retake": cmd_retake,
      "finalize": cmd_finalize, "install": cmd_install}[a.cmd](a)
 

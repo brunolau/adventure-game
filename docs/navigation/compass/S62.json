@@ -10,23 +10,26 @@
   "evidence": [
     "the painting is the owner-loved style test art/backgrounds/sokolikova-street.png (Sokolikova panel row, from carl_eric's Flickr 'Block'; its geotag 48.184687,17.03473 accuracy 13 lies ~400 m NW of the school, not on Sokolikova street) - no reliable real camera position or heading",
     "the register row still describes the superseded courtyard between Svantnerova 3-7 and M. Schneidra-Trnavskeho 1-5 (between the school grounds and the stop)",
-    "layout follows the game's chain and the owner statement (S17: the way to the blocks is right of the school): the school side on the left, the stop on the right, S69 up the side road"
+    "owner 2026-10-07 (binding, art/feedback/2026-10-05_owner_feedback.md 'answers to the exit review'): in reality the stop is on the LEFT and the school yard on the RIGHT of this picture",
+    "the heading stays undetermined (the painting has no real camera position); the sides follow the owner fact: left = towards the Svantnerova stop, right = towards the school grounds, up = the side road into the gap between the blocks (S69 'Pri LEALe', kept). Read as a fiction camera this faces roughly south (stop east, school yard west)",
+    "superseded 2026-10-07: the 2026-10-06 layout (school side left, stop right) followed walking continuity with S17.to_S18 (right edge) instead of the real sides"
   ],
   "exits": [
     {
-      "id": "S62.to_S65",
-      "to": "S65",
-      "side": "left",
-      "change": "unchanged",
-      "why": "school side, as S18.to_S17"
-    },
-    {
       "id": "S62.to_S57",
       "to": "S57",
+      "side": "left",
+      "change": "right -> left",
+      "why": "owner fact (as S18.to_S11): the stop is on the left; the side street in front of the shop out of the left edge (S57.to_S62 is the far end of its platform, side up)"
+    },
+    {
+      "id": "S62.to_S65",
+      "to": "S65",
       "side": "right",
-      "change": "unchanged",
-      "why": "as S18.to_S11"
+      "change": "left -> right",
+      "why": "owner fact (as S18.to_S17): the school side is on the right; the pavement below the fence out of the right edge towards the school's service building. S65's way back is a door (exempt from continuity). Note: the register point of S65 (east edge of the school grounds, ~50 m from the stop) is not used for this side, because the S18/S62 painting has no real camera position"
     }
   ],
-  "checked": "2026-10-07 exit-geography pass (owner: every next-location arrow points where the place really lies)"
+  "checked": "2026-10-07 owner answers to the exit review (stop left, school yard right)",
+  "owner_fact": "stop LEFT, school yard RIGHT (2026-10-07)"
 }

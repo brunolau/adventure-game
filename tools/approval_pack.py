@@ -143,8 +143,8 @@ def main():
             if e.get(field):
                 new_lines.append({"key": f"epilogue.new{n}.{field}", "speaker": "Epilóg", "old": "", "new": e[field], "state": "new"})
     for i in range(0, len(new_lines), 30):
-        scenes.append({"id": scene_id("NEW", str(i // 30)), "chunk": "NEW", "era": "Zuzana a Sokolíkovský dvor",
-                       "kind": "Nový obsah", "title": f"Zuzana, Sokolíkovský dvor, nové predmety a úlohy ({i // 30 + 1})",
+        scenes.append({"id": scene_id("NEW", str(i // 30)), "chunk": "NEW", "era": "Zuzana a Pri LEALe",
+                       "kind": "Nový obsah", "title": f"Zuzana, Pri LEALe, nové predmety a úlohy ({i // 30 + 1})",
                        "where": "", "lines": [l for l in new_lines[i:i + 30] if l["new"]]})
 
     # The five 2020 entry lines already applied today (for the record; they can still be vetoed).

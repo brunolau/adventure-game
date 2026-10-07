@@ -16,7 +16,7 @@
   "confidence": "high",
   "evidence": [
     "reference art/source/rooms/S07/triangel_stop_kartaview_281.jpg = KartaView photo 2630554650 (48.232618,17.257003, heading 293.2 deg; frame 277: 291 deg): on the north platform of the Triangel stop looking WNW along Hlavna, the road on the left, the shelter on the right",
-    "OWNER FACT 2026-10-06/07 (binding, keep as is): the shop S04 bottom left on the road towards the viewer, the bus to Dubravka higher on the road pointing up",
+    "OWNER FACT 2026-10-06/07 (binding): the shop S04 bottom left on the road towards the viewer, its arrow pointing DOWN (2026-10-07); the bus to Dubravka higher on the road pointing up",
     "for the owner review: in reality the shop (Centrum MONAR, 290 deg, 550 m) lies ahead along the road, the same way as the bus to Bratislava (WNW via Pezinska / Vajnorska); kept as the owner set it"
   ],
   "exits": [
@@ -33,13 +33,13 @@
     {
       "id": "S07.to_S04",
       "to": "S04",
-      "side": "left",
-      "change": "unchanged (owner)",
-      "why": "owner layout: bottom left on the road. Real direction ahead (rel -3); listed for the owner review page",
+      "side": "down",
+      "change": "left -> down (owner 2026-10-07: the exit to Potraviny cez okienko points DOWN)",
+      "why": "owner layout: bottom left on the road, towards the viewer; the arrow points down (owner 2026-10-07). Real direction ahead (rel -3), kept as the owner set it",
       "real_bearing_deg": 290,
       "distance_m": 548,
       "relative_to_heading_deg": -3
     }
   ],
-  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies)"
+  "checked": "2026-10-07 exit-geography pass, region grob2020 (owner: every next-location arrow points where the place really lies); 2026-10-07 owner exit answers: S07.to_S04 side down"
 }

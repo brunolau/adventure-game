@@ -19,16 +19,104 @@ one retake only when its transcript differed in meaning. No Whisper and no GPT w
   - `casting_full.py` holds the casting.
   - `irony_full.py` lists the dry-irony lines.
   - `audition_full.py` runs the child and age audition.
+  - `audition_narrator.py` runs the narrator audition of round 2 (see below).
   - `gen_full.py` handles `gen`, `report`, `recheck`, `retake`, `rerender`, `finalize` and `install`.
   - `manifest_full.py` and `build_full_page.py` build the manifest and the page.
   - These reuse `voice_lib.py`, `recast.py` (text check) and `casting.py` (the prologue casting and the irony prompt).
 
+## Round 2 (2026-10-07, evening): female narrator and „Pri LEALe“
+
+The owner's feedback (`art/feedback/2026-10-05_owner_feedback.md`, newest section) said to keep Fero's dialect, which
+is unchanged, and asked for two other changes. The narrator should be a **female** voice with a more interested,
+engaged tone, because the male narrator was "incredibly boring". S69 is renamed **„Pri LEALe“** everywhere. Eight
+spoken lines were voiced again, and nothing else changed.
+
+**Narrator.** The game has exactly **two** NARRATOR lines. Searching the live tables, the overlays, the cutscenes and
+the epilogue found no others:
+
+- `cutscene.CS04.02.001` „Jeden predmet. Veľa rúk. Ani jedna z nich nie je chyba v zázname.“
+- `cutscene.CS07.05.001` „Nie všetko treba opraviť. Niečo si treba nechať.“
+
+All 14 female Gemini stock voices already speak somebody. The audition therefore tried the three voices the cast uses
+least, none of which speaks in the narrator's eras (1962, 2035):
+
+- Callirrhoe: only Alena, 1995.
+- Autonoe: only Adam at 10, with a child direction on the 1995 tape.
+- Laomedeia: only Soňa (11), with a child direction.
+
+Each voice read the two narrator lines plus one narrator-style caption that is never voiced in the game (epilogue shot
+5, used for the audition only). It got two takes per line and one Scribe check per take
+(`art/voice/full/audition/narrator/`, on the page). The new direction for every voice was: "A female narrator of about
+forty telling the closing moment of a story she loves: warm, engaged and genuinely interested, as if sharing a small
+discovery with the listener; a lively, varied natural melody with gentle rises and falls, a slight smile in the voice,
+medium pace, clear and close; never flat or monotone, never theatrical, no exaggerated drama, no jokes."
+
+| voice | median pitch | pitch range | Scribe (6 takes) | closest other cast voice (timbre distance) |
+|---|---|---|---|---|
+| **Callirrhoe (chosen)** | 167 Hz | 8.9 st | 5 verbatim, 1 word boundary („spod chodu“) | Sulafat / Zuzana 1.21; Gacrux / Mira 1.89, Kore / Nina 1.90 |
+| Autonoe | 172 Hz | 9.6 st | 5 verbatim, 1 word boundary | **Kore / Nina 0.94**, and Nina speaks in CS07 |
+| Laomedeia | 179 Hz | 9.0 st | 5 verbatim, 1 inserted „a“ | **Despina / Ela 0.90** |
+| old narrator Charon (male) | 101–116 Hz | | | |
+
+The timbre distance compares the mean log-mel spectrum with the level removed. It is a crude measure, but it is the
+only one available without listening. All three candidates are livelier than a flat read and differ little in pitch
+range. Callirrhoe won because it stays furthest from every other woman in the cast. It is also far from Mira (Gacrux),
+who speaks in both narrator cutscenes, and from Nina (Kore), who speaks in CS07. Alena uses the same stock voice, but
+only in 1995 and never in a narrator scene; there are no voice clashes in any scene. Both final narrator takes are
+verbatim. If the owner prefers another candidate, he can listen to all of them on the page; switching the voice in
+`casting_full.py` and running `gen` again costs under $0.01.
+
+**„Pri LEALe“.** Four spoken lines changed with the rename (`docs/writing/out_v5/leal_rename.csv`). The other renamed
+texts are looks, UI, hints or the journal, which are not voiced.
+
+| line | speaker / voice | Scribe heard |
+|---|---|---|
+| `action.B17.003` | Dezider / Rasalgethi | „… na múr pri Leale“ (take 1, verbatim) |
+| `action.B17.004` | Adam / Achird | „K Leálu sa vraciam dobrovoľne. Ako žiak …“ (retake) |
+| `entry.S69.001` | Adam / Achird | „Pri Leale, tu som raz …“ (take 1, verbatim) |
+| `topic.ZITA.extra 2.002` | Zita / Pulcherrima | „Tam? To je pri Leále. …“ (retake) |
+
+The TTS reads the mixed-case „LEALe“ / „LEALu“ as a word and does not spell it. The subtitle text is unchanged. Two
+lines needed their one retake:
+
+- Zita's first take swallowed the name („prileá“).
+- Adam's first take said „Akože ja“ instead of „Ako žiak“.
+
+The retake direction gets a phonetic hint (`gen_full.name_hint`): "The place name „LEALe“ is one ordinary word: say
+„Leale“ clearly with all its syllables (le-a-le) …". Both retakes are verbatim. Scribe spelled the name „Leále“ /
+„Leálu“, though, so those two lines are flagged "check by ear" in case the „a“ sounds long or stressed.
+
+**Everything else.** The rest of the script was extracted again from the live tables and compared with
+`art/voice/full/manifest.json` and `art/voice/trial/manifest.json`. No other spoken text had changed. Since S69 is
+renamed, 92 manifest lines changed only their `scene_name`.
+
+**How it was done:**
+
+- The old takes were moved to `art/voice/raw/full/superseded_r2/` and the old OGGs to `art/voice/full/before_r2/`;
+  the page plays "before" and "now" next to each other.
+- The new takes and the audition used their own spend scope (`gen_full.py gen|retake --scope r2 --cap 3`, logged
+  under `voice/full/r2/`).
+- Post-processing was the same as before: −16.0 to −16.3 LUFS and OGG.
+- The manifest marks every re-voiced line with `revoiced` (why, the voice and text before, and the "before" file).
+- `extract_full.py` now prefers the live text. The knowledge drafts are merged into the live tables, so the stale
+  draft of `look.S30.dial` can no longer win; drafts only fill keys the live tables lack.
+- `install` now copies only files whose content changed. It copied ten: the 8 re-voiced lines, plus the 4 prologue
+  SYSTEM lines, which `finalize` re-renders from the same raw take every time. Their audio is identical, but an OGG
+  re-encode never produces the same bytes.
+- **The Godot import is still to do.** Until `build.bat` (or `--headless --path src/game --import`) runs, the game
+  plays the old imported audio of these 10 files. The import was not run here because a Godot process started by
+  someone else was running.
+
+**Spend of round 2:** narrator audition (18 takes + Scribe) $0.064, plus 6 new takes, 2 retakes and 8 Scribe checks
+$0.039, for **$0.103** in total (budget $3).
+
 ## Text and scope
 
 The text of each line is the approved final text. That is the live tables (`src/game/localization/dialogue.csv`,
-including `src/game/data/content_ext/dialogue_ext.json` through `tools/content_ext.load_effective_game`) with
-`docs/writing/out_v3/knowledge.csv` and `knowledge_ext.json` applied on top. A knowledge sequence or topic replaces the
-live overlay entry with the same id, and new keys take their `sk` from the draft. Epilogue lines come from
+including `src/game/data/content_ext/dialogue_ext.json` through `tools/content_ext.load_effective_game`). The
+knowledge drafts (`docs/writing/out_v3/knowledge.csv` and `knowledge_ext.json`) were applied on top for the first run.
+They are merged into the live tables now, so since round 2 the live text wins and a draft only fills a key or id that
+the live tables lack. Epilogue lines come from
 `world.csv` (`epilogue.<n>.line`) and their speakers from game.json `epilogue[].line`. Right before the install, the
 script was extracted again from the live tables and compared line by line: nothing had changed.
 
@@ -93,7 +181,7 @@ first syllable and clear long vowels; no foreign accent. Read the text verbatim.
 |---|---|
 | 2020 | Ela Despina, Dana Vindemiatrix, Roman Iapetus, Lenka Leda, Jozef Algenib, SYSTEM Schedar. All unchanged from the trial. |
 | 1995 | Soňa (11) Laomedeia, Kubo (7) Zephyr, Zita Pulcherrima, Emil Enceladus, Pali Umbriel, Viera Vindemiatrix, Karol (archive) Charon, Alena (photo) Callirrhoe, Fero (market) Algenib, Milada Despina, Juro Sadachbia, Juraj Zubenelgenubi, Dezider Rasalgethi |
-| 1962 | Božo Charon, Berta Pulcherrima, Alojz (post office) Algieba, Lída Aoede, Rudo Fenrir, Štefan (store) Alnilam, Vera Kore, narrator Charon |
+| 1962 | Božo Charon, Berta Pulcherrima, Alojz (post office) Algieba, Lída Aoede, Rudo Fenrir, Štefan (store) Alnilam, Vera Kore; the narrator (CS04 and CS07) was Charon and is **Callirrhoe** (female) since round 2 |
 | 1982 | teacher Dobrovič Orus, Ružena Aoede, Marta Kore, Šimon Algenib |
 | 2035 | Viktor **Orus** (serious, controlled, low; no humour, no irony direction), Tamara Aoede, Boris Algieba, Sára Zephyr, Ivan Alnilam, Miloš (fellow passenger) Umbriel, Očko the robot Iapetus (synthetic, polite, with the device colour) |
 
@@ -249,7 +337,8 @@ not play in the game.
 | Gemini TTS: 1,974 first takes + 196 retakes (111,673 characters) | 5.02 |
 | Scribe v2: 2,170 checks | 1.23 |
 | **Total, computed per call** | **6.45** |
-| Logged in `art/spend-log.csv` under `voice/full/` (each row rounded to 3 decimals; includes about 16 takes lost when a first run hit a post-processing bug and was stopped and resumed) | 6.48 |
+| Round 2 (narrator audition, narrator and „Pri LEALe“ re-voice), logged under `voice/full/r2/` | 0.10 |
+| Logged in `art/spend-log.csv` under `voice/full/` (each row rounded to 3 decimals; includes about 16 takes lost when a first run hit a post-processing bug and was stopped and resumed) | 6.48 (6.58 with round 2) |
 | Cap | 15.00 |
 
-Trial, recast and full voice-over together come to ≈ $10.9.
+Trial, recast and full voice-over together come to ≈ $11.0, round 2 included.

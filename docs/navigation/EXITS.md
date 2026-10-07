@@ -37,6 +37,28 @@ explicit `"arrival": [x, y]`). The step always ends when the transition ends (`R
 harness start from a standing hero; reduced motion places him at once. Map fast travel, portals, special transitions,
 new game and load use the room's spawn.
 
+## Owner answers to the exit review 2026-10-07
+
+Owner (art/feedback/2026-10-05_owner_feedback.md, "answers to the exit review + new notes"): *"S18 - in reality zastavka
+is on the left, skolsky dvor on the right"*; *"S21 - too many navigations overall … to save what we have "Petrzalsky
+podchod" place in the lower right corner facing right"*. S51, S17, S28 and S02 were confirmed as they are. Blocking files
+and `docs/navigation/compass/<room>.json` only; no paint edit (the ways are already painted), spend USD 0.
+
+| room | exit | side | why |
+|---|---|---|---|
+| S18 | S18.to_S11 → S11 | right → left | Owner fact: the stop is on the LEFT. The side street in front of the kiosk out of the left edge (the rect, point and label of the former school-yard exit). |
+| S18 | S18.to_S17 → S17 | left → right | Owner fact: the school yard is on the RIGHT. The pavement along the lawn strip past the big tree out of the right edge (the former stop exit's zone). |
+| S18 | S18.to_S69 → S69 | up (kept) | The side road between the kiosk and the red car; no collision with the left edge (different painted way). |
+| S62 | S62.to_S57 → S57 | right → left | Same camera as S18: the stop on the left (side street in front of the shop). |
+| S62 | S62.to_S65 → S65 | left → right | Same camera as S18: the school side on the right (pavement below the fence); S65's way back is a door. |
+| S21 | S21.to_S28 → S28 | down → right | Owner: the lower right corner, pointing right; the plaza paving runs out there. It left the back row of exits (S25 / S23 up, ex-pole at x 1470), so the back now has three `up` exits and the front three edge / bottom exits (S19 left, S22 down at the bottom left, S28 right at the bottom right). The return S28.to_S21 (left edge) now continues the walk. The painted bus-stop pole stays as scenery. |
+| S07 | S07.to_S04 → S04 | left → down | Owner: the exit to Potraviny cez okienko points DOWN (same zone at the bottom left on the road, towards the viewer; S04's way back stays its left edge). The same answer moved the painting into the suburb: family houses instead of open fields behind the stop (master v4, USD 0.15, `art/masters/bg_natural/S07.md`). |
+
+Return exits checked: S11.to_S18 and S57.to_S62 stay the far end of the platform (`up`, a different painted way from the
+crossing to the school on the left); S17.to_S18 stays the right edge (owner: S17 ok), which makes S17 ↔ S18 a
+same-edge pair, accepted below as geographic; S61 (1982 yard) has no link to S62 (the 1982 shop's school side leads to
+S65), so nothing changes there.
+
 ## Exit-geography pass 2026-10-07
 
 Owner request 2026-10-07: *"rerun workflows focusing on proper 'next location' arrow placements … on zastávka
@@ -47,8 +69,8 @@ the painted landmarks and OpenStreetMap (`docs/navigation/compass/<room>.json`);
 `docs/navigation/exits_review.html` (regenerate: `python tools/exits_review_page.py`; open questions listed there).
 
 **Owner facts:** Švantnerova stop S11 / S51 / S57: ZŠ Sokolíkova (S12 / S52 / S58) on the LEFT. Karlova Ves S19 / S20:
-Dúbravka on the RIGHT, the city (Staré Mesto, Ružinov, Petržalka) on the LEFT. S07: the shop S04 bottom left on the road,
-the bus to Dúbravka higher on the road pointing up (kept).
+Dúbravka on the RIGHT, the city (Staré Mesto, Ružinov, Petržalka) on the LEFT. S07: the shop S04 bottom left on the road
+(arrow DOWN since the owner's 2026-10-07 answer), the bus to Dúbravka higher on the road pointing up (kept).
 
 25 exits in 15 rooms changed (blocking files only, plus one paint edit: S37 master v5 adds the footpath to
 the square). Same-camera families (L_STOP, L_SCHOOL_FRONT, L_HALL, L_CLASS, L_CABINET, L_YARD, L_WINDOW, S18/S62) have
@@ -142,6 +164,11 @@ the localization tables are theirs).
   accepted: `S57.to_S58` / accepted: `S58.to_S57` — `CONTINUITY` (both left edges) is geographic: the stop camera looks NW,
   the school-front camera NE (85° apart). Adam leaves the stop westwards over the zebra crossing (owner: left), walks
   round the north end of the school and comes into the forecourt from the NW, which is the school picture's left edge.
+- accepted: `S17.to_S18` / accepted: `S18.to_S17` — `CONTINUITY` (both right edges) is the owner's layout (2026-10-07: from
+  S18 the stop is on the left and the school yard on the right; S17's right edge is the way to the blocks, owner-confirmed).
+  The yard camera looks SW, so its right edge leads NW along the court and round the main wing; Adam then comes into the
+  S18 street from the school side, which is that picture's right (read as a fiction camera, S18 faces roughly south: the
+  stop east = left, the school yard west = right; docs/navigation/compass/S18.json).
 - `COMPASS` advisories that stay (the register's straight line differs from the route): S17 / S55 / S61 lead left to the
   front (S12 / S52 / S58), round the SE end of the main wing (owner-confirmed yard layout; the right side is the way to
   the blocks); S28.to_S21 (the bus leaves NW along Rusovská cesta, S21 itself lies NNE); S07.to_S04 (owner layout, the
@@ -179,7 +206,7 @@ the localization tables are theirs).
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S04.to_S03 | right (named) | the courtyard paving continues out of the right edge along the arcade, towards Javorová alej and the park w... | [1850, 805, 70, 210] → [1845, 905] | S03 | walk | 202° 1187 m (→ up) | S03.to_S04 (left) | ok |
-| S04.to_S07 | left (named) | the courtyard paving continues out of the left edge along the arcade, out to the road and on to the bus sto... | [0, 805, 70, 210] → [75, 905] | S07 | walk | 110° 548 m (→ left) | S07.to_S04 (left) | ok |
+| S04.to_S07 | left (named) | the courtyard paving continues out of the left edge along the arcade, out to the road and on to the bus sto... | [0, 805, 70, 210] → [75, 905] | S07 | walk | 110° 548 m (→ left) | S07.to_S04 (down) | ok |
 
 **S05 Mirkina bránka** — camera 325° (medium confidence; into the picture = north-west, screen right = north-east, towards the viewer = south-east, screen left = south-west; docs/navigation/compass/S05.json)
 
@@ -200,7 +227,7 @@ the localization tables are theirs).
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S07.to_S51 | up (named) | owner 2026-10-06: the bus to Dúbravka higher on the road by the bus-stop sign, direction up the road | [450, 440, 260, 130] → [655, 640] | S51 | bus | 251° 17009 m (→ left) | S51.to_S07 (down) | ok |
-| S07.to_S04 | left (named) | owner 2026-10-06: back to the shop (S04) at the bottom left, on the road towards the viewer | [30, 800, 360, 200] → [470, 965] | S04 | walk | 290° 548 m (→ up) | S04.to_S07 (left) | ok |
+| S07.to_S04 | down (named) | owner 2026-10-06/07: back to the shop (S04) at the bottom left, on the road towards the viewer | [30, 800, 360, 200] → [470, 965] | S04 | walk | 290° 548 m (→ up) | S04.to_S07 (left) | ok |
 
 **S08 Chodník pri retenčnej nádrži** — camera 67° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S08.json)
 
@@ -270,7 +297,7 @@ the localization tables are theirs).
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S11.to_S12 | left (named) | exit geography 2026-10-07 | [0, 760, 250, 200] → [110, 930] | S12 | walk | 257° 274 m (→ left) | S12.to_S11 (left) | CONTINUITY |
-| S11.to_S18 | up | the platform continues past the shelter to its far end and the path to the housing-estate yard (L_STOP family) | [780, 430, 240, 212] → [880, 690] | S18 | walk | 277° 85 m (→ left) | S18.to_S11 (right) | ok |
+| S11.to_S18 | up | the platform continues past the shelter to its far end and the path to the housing-estate yard (L_STOP family) | [780, 430, 240, 212] → [880, 690] | S18 | walk | 277° 85 m (→ left) | S18.to_S11 (left) | ok |
 | S11.to_S19 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S11.json): the red-cream tram standing at the platform f... | [1108, 300, 250, 330] → [1050, 720] | S19 | map_transition | 162° 2652 m (→ down) | S19.to_S11 (right) | ok |
 
 **S12 Pred ZŠ Sokolíkova** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S12.json)
@@ -313,14 +340,14 @@ the localization tables are theirs).
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S17.to_S12 | left | the yard asphalt continues out of the left edge in front of the running track, past the SE end of the main... | [0, 722, 60, 293] → [70, 880] | S12 | walk | 271° 93 m (→ right) | S12.to_S17 (right) | COMPASS |
-| S17.to_S18 | right | the yard asphalt continues out of the right edge past the near end of the court fence: the way to the housi... | [1860, 722, 60, 293] → [1850, 880] | S18 | walk | 50° 117 m (→ down) | S18.to_S17 (left) | ok |
+| S17.to_S18 | right | the yard asphalt continues out of the right edge past the near end of the court fence: the way to the housi... | [1860, 722, 60, 293] → [1850, 880] | S18 | walk | 50° 117 m (→ down) | S18.to_S17 (right) | CONTINUITY |
 
 **S18 Sídliskový dvor s kioskom** — camera heading not determinable (low confidence; docs/navigation/compass/S18.json)
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S18.to_S11 | right (named) | the pavement along the lawn strip continues out of the right edge, past the big tree, towards the tram stop... | [1800, 930, 120, 85] → [1880, 995] | S11 | walk | 97° 85 m | S11.to_S18 (up) | ok |
-| S18.to_S17 | left (named) | the side street in front of the kiosk continues out of the left edge towards the school yard (S17.to_S18 le... | [0, 892, 60, 123] → [40, 950] | S17 | walk | 230° 117 m | S17.to_S18 (right) | ok |
+| S18.to_S11 | left (named) | the side street in front of the kiosk continues out of the left edge towards the Svantnerova tram stop (S11... | [0, 892, 60, 123] → [40, 950] | S11 | walk | 97° 85 m | S11.to_S18 (up) | ok |
+| S18.to_S17 | right (named) | the pavement along the lawn strip continues out of the right edge, past the big tree, towards the school ya... | [1800, 930, 120, 85] → [1880, 995] | S17 | walk | 230° 117 m | S17.to_S18 (right) | CONTINUITY |
 | S18.to_S69 | up | the side road between the kiosk and the parked red car runs back into the gap between the blocks, towards t... | [360, 800, 160, 66] → [440, 878] | S69 | walk | 241° 51 m | S69.to_S18 (down) | ok |
 
 **S19 Karloveské nástupište** — camera 245° (high confidence; into the picture = south-west, screen right = north-west, towards the viewer = north-east, screen left = south-east; docs/navigation/compass/S19.json)
@@ -346,7 +373,7 @@ the localization tables are theirs).
 | S21.to_S23 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [1645, 372, 90, 328] → [1690, 760] | S23 | walk | 22° 293 m (→ up) | S23.to_S21 (up) | ok |
 | S21.to_S24 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [0, 370, 128, 330] → [80, 760] | S24 | walk | 350° 456 m (→ left) | S24.to_S21 (up) | ok |
 | S21.to_S25 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [770, 352, 130, 348] → [835, 760] | S25 | map_transition | 59° 1959 m (→ up) | S25.to_S21 (left) | ok |
-| S21.to_S28 | down (named) | exit geography 2026-10-07 (docs/navigation/compass/S21.json, camera on the plaza facing ~NNE towards the de... | [1385, 375, 175, 325] → [1470, 760] | S28 | map_transition | 212° 2485 m (→ down) | S28.to_S21 (left) | ok |
+| S21.to_S28 | right (named) | the plaza paving runs out of the lower right corner towards the street where the bus to Petrzalka leaves, s... | [1800, 790, 120, 225] → [1860, 930] | S28 | map_transition | 212° 2485 m (→ down) | S28.to_S21 (left) | ok |
 
 **S22 Antikvariát Pod druhou rukou** — camera heading not determinable (low confidence; docs/navigation/compass/S22.json)
 
@@ -390,7 +417,7 @@ the localization tables are theirs).
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S28.to_S21 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [0, 790, 60, 225] → [70, 900] | S21 | map_transition | 32° 2485 m (→ right) | S21.to_S28 (down) | COMPASS |
+| S28.to_S21 | left (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [0, 790, 60, 225] → [70, 900] | S21 | map_transition | 32° 2485 m (→ right) | S21.to_S28 (right) | COMPASS |
 | S28.to_S29 | right (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [1380, 170, 540, 535] → [1395, 760] | S29 | walk | 136° 1428 m (→ down) | S29.to_S28 (left) | ok |
 | S28.to_S30 | up (named) | exit geography 2026-10-07 (docs/navigation/compass/S28.json, camera on the Petrzalka side looking ~N throug... | [812, 330, 300, 365] → [960, 740] | S30 | walk | 49° 2030 m (→ right) | S30.to_S28 (left) | ok |
 
@@ -576,7 +603,7 @@ the localization tables are theirs).
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
 | S57.to_S58 | left (named) | exit geography 2026-10-07 | [0, 760, 250, 200] → [110, 930] | S58 | walk | 257° 274 m (→ left) | S58.to_S57 (left) | CONTINUITY |
-| S57.to_S62 | up | the far end of the platform and the path to the housing-estate shop (same place as S11.to_S18) | [780, 430, 240, 212] → [880, 690] | S62 | walk | 277° 85 m (→ left) | S62.to_S57 (right) | ok |
+| S57.to_S62 | up | the far end of the platform and the path to the housing-estate shop (same place as S11.to_S18) | [780, 430, 240, 212] → [880, 690] | S62 | walk | 277° 85 m (→ left) | S62.to_S57 (left) | ok |
 
 **S58 Pred ZŠ Sokolíkova v roku 1982** — camera 55° (medium confidence; into the picture = north-east, screen right = south-east, towards the viewer = south-west, screen left = north-west; docs/navigation/compass/S58.json)
 
@@ -612,8 +639,8 @@ the localization tables are theirs).
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S62.to_S57 | right (named) | the pavement below the fence continues out of the right edge towards the stop (S57.to_S62 is the far end of... | [1700, 971, 220, 44] → [1890, 1006] | S57 | walk | 97° 85 m | S57.to_S62 (up) | ok |
-| S62.to_S65 | left (named) | the side street in front of the shop continues out of the left edge towards the small service building by t... | [0, 892, 60, 123] → [40, 950] | S65 | walk | 135° 76 m | S65.to_S62 (left) | ok |
+| S62.to_S57 | left (named) | the side street in front of the shop continues out of the left edge towards the Svantnerova stop (S57.to_S6... | [0, 892, 60, 123] → [40, 950] | S57 | walk | 97° 85 m | S57.to_S62 (up) | ok |
+| S62.to_S65 | right (named) | the pavement below the fence continues out of the right edge towards the school grounds and the small servi... | [1700, 971, 220, 44] → [1890, 1006] | S65 | walk | 135° 76 m | S65.to_S62 (left) | ok |
 
 **S63 Fyzikálny kabinet v roku 1982** — camera heading not determinable (low confidence; docs/navigation/compass/S63.json)
 
@@ -631,7 +658,7 @@ the localization tables are theirs).
 
 | exit | side | painted way | zone / point | to | travel | real direction | return exit | flags |
 |---|---|---|---|---|---|---|---|---|
-| S65.to_S62 | left | the half-glazed entrance door in the back wall at the left, out to the courtyard and the shop | [90, 362, 200, 380] → [190, 785] | S62 | walk | 315° 76 m | S62.to_S65 (left) | ok |
+| S65.to_S62 | left | the half-glazed entrance door in the back wall at the left, out to the courtyard and the shop | [90, 362, 200, 380] → [190, 785] | S62 | walk | 315° 76 m | S62.to_S65 (right) | ok |
 
 **S66 Školský záhradný sklad v roku 1982** — camera 90° (medium confidence; into the picture = east, screen right = south, towards the viewer = west, screen left = north; docs/navigation/compass/S66.json)
 
