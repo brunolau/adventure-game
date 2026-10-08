@@ -171,6 +171,14 @@ title row (`ModalScreen.ShowStatus`, e.g. "Uložené"). The main menu shows the 
 game.json `version` is the internal content data version, M5-03). Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
 two-finger hold = Space held, double tap = double click; the GUI gets emulated taps first, gestures fire on release in the world.
 
+**Touch mode** (phones and tablets; `Runtime/TouchMode.cs`, on only for the feature tag `mobile` or the QA flag `--touch`,
+so the PC controls above never change; docs/PORTS.md "Touch controls"): a finger on the picture shows the name of the
+place under it above the finger (the hover label), lifting without a slide is the tap and acts at once (the label stays
+1.6 s), a slide only moves the label, holding 0.5 s looks. HUD: finger-sized buttons with captions, the eye latches for
+6 s. Inventory: a tap takes the item in hand and closes the drawer, holding an item looks at it. A first start picks the
+HUD scale and subtitle size from the screen's dpi; UI inside the display's safe area; system Back = Esc; autosave when
+the app goes to the background and the pause menu when it comes back (`UI/Common/MobileLifecycle.cs`).
+
 ## Room build, movement, perspective
 
 - `Room.Build` uses `RoomView.LayerOrder`; unknown layer names get an empty node (warning).
@@ -257,7 +265,7 @@ work in every build.
 | `--play <n>` | perform walkthrough actions (after `--replay`, up to step n) through the **input path**: travel by clicking exits / portals, select items, click targets, choose topics, solve puzzles |
 | `--act <actionId>` | (repeatable) resolve + commit one action through the input path; travels to its room first |
 | `--input <spec>` | (repeatable, in order) `key:<LogicalCommand>`, `select:<ITEM>`, `portal:<year>`, `click:x,y`, `rclick:x,y`, `hover:x,y`, `wait:<ms>`; real Godot input events (GUI first, then the InputRouter): `mouse:x,y` (left), `rmouse:x,y` (right), `dblclick:x,y` (two left clicks), `move:x,y` (mouse motion: hover label, cursor), `keyev:<Godot Key>` (press + release), `keydown:<Key>` / `keyup:<Key>` (e.g. `keydown:Space` holds the markers for a screenshot), touch `tap:x,y`, `longpress:x,y`, `twotap:x,y` (two-finger hold and release) — coordinates are canvas px (1920x1080) at any window size |
-| `--acceptance [m1\|m2]` | in-engine acceptance checks through real input events; both sets by default. `m1`: the prologue input rules (right click, Space, invalid item no-op, re-check on arrival, save/load without duplicates, P01, arrival in S11; `scripts/Diagnostics/PrologueAcceptance.cs`, docs/MILESTONE1.md). `m2`: the acceptance_tests.csv rows beyond the prologue (AT02-AT09, AT11, AT12, AT15-AT26, AT29 and parts of AT19/AT24; `ContentAcceptance.cs`, docs/MILESTONE2.md). Prints `HARNESS PASS/FAIL`, exit code 1 on a failure. Frame-timed m1 checks want `--time-scale` ≤ 4 in a window |
+| `--acceptance [m1\|m2]` | in-engine acceptance checks through real input events; both sets by default. `m1`: the prologue input rules (right click, Space, invalid item no-op, re-check on arrival, save/load without duplicates, P01, arrival in S11; `scripts/Diagnostics/PrologueAcceptance.cs`, docs/MILESTONE1.md). `m2`: the acceptance_tests.csv rows beyond the prologue (AT02-AT09, AT11, AT12, AT15-AT26, AT29 and parts of AT19/AT24; `ContentAcceptance.cs`, docs/MILESTONE2.md). Prints `HARNESS PASS/FAIL`, exit code 1 on a failure. Frame-timed m1 checks want `--time-scale` ≤ 4 in a window; run `m2` with `--time-scale 3` (AT29 waits 30 s of wall-clock time for 34 s of lines). `--acceptance travel`: TR01-TR03 and NAV04 alone. `--touch --acceptance touch`: the touch controls of the phone ports (TC01-TC16, `Diagnostics/TouchAcceptance.cs`) |
 | `--real` | acts (`--act`, `--play`) use real Godot input events only: the target is clicked at a point where the room's hit test returns it and no GUI control is on top (else `HARNESS BLOCKER`), items are picked from the drawer's slot buttons, topics from the topic menu's buttons, puzzles by clicking the modal's controls and confirm button, portals with T and the era button; lines play out by auto-advance (`scripts/Diagnostics/RealInputDriver.cs`) |
 | `--play-all` | (implies `--real`) all 94 main actions, the ending (epilogue shots, credits, postgame note by clicks/keys), all 33 side actions after the credits, then the postgame checks (era tour through the portals, cable cars after F09, re-entry of every room with a triggered causal effect / variant layer, album replay of the ending, CS07 replay from the journal); exit code 1 on a blocker or failure (`ContentQa.cs`) |
 | `--play-side` | the same ending + side + postgame part after `--play`/`--replay` |
@@ -282,6 +290,7 @@ work in every build.
 | `--skip-lines` | skip remaining lines after the acts |
 | `--quit-after <s>` | quit after s seconds (headless runs) |
 | `--autosave` | keep autosave on (off by default in harness runs) |
+| `--touch` (`--touch-mm <mm>`, `--safe-area l,t,r,b`) | touch mode on the desktop (`Runtime/TouchMode.cs`): emulates a 6.3 inch phone (HUD 200 %, 42 px subtitles; `--touch-mm 0.118` = mm per canvas px of a 10.5 inch tablet), `--safe-area` a display cutout in canvas px. Further `--input` kinds for it: `doubletap:x,y`, `touchdown:x,y` / `touchup:x,y` (a finger resting on the picture), `slide:x1,y1,x2,y2` (logs `HARNESS slide label '<name>'` before lifting), `app:pause` / `app:resume` / `app:back` (what a phone tells the app: background, return, Back button). Use a window of 2400x1080 for a phone's letterbox |
 | `--perf [n]` (`--perf-dwell <s>`, `--no-preload`) | release-engineering probe (`Diagnostics/PerfProbe.cs`): from the first room walk n rooms (default 20) through their exits (dev jumps, unvisited neighbours first), stay `--perf-dwell` s (1.5) in each; logs per hop the room build time, the longest frame of the transition and in the room before, then process / Godot / texture memory (`HARNESS perf …`). `--no-preload` turns `World/RoomPreloader.cs` off for comparison. Needs a window for real texture uploads; numbers in docs/BUILD.md "Performance" |
 
 For speed, add Godot's own engine flag `--time-scale <k>` before `--` (walking, fades and timers run

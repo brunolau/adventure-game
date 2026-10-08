@@ -8,7 +8,7 @@ sections below for what each one still needs.
 |---|---|---|
 | Windows x86_64 | `Windows Desktop` (release) / `Windows Desktop (QA)` | built by `build.bat` / `build.bat debug`; release PCK 176 MB; prologue G01-G11 by real input on the release PCK, 67-room perf tour, 0 missing-asset warnings |
 | macOS universal | `macOS (not built)` | preset only; needs signing + notarization for distribution (Mac or rcodesign) |
-| Android arm64 | `Android arm64 (not built)` | a debug APK exported once (176 MB, debug-signed, before the size work) but **never run on a device**; C# on Android is experimental (net9.0) |
+| Android arm64 | `Android`, `Android AAB`, `Android (QA x86_64)` | **built 2026-10-08** by `tools/build_ports.py` (release APK, Play bundle, emulator APK), touch controls, played on a headless Android 16 emulator, not on a real device yet: **docs/PORTS.md "Android"** replaces the "Android arm64 (later)" section below |
 | iOS arm64 | `iOS (not built)` | preset only; needs a Mac with Xcode (C# on iOS is experimental, NativeAOT) |
 
 Milestone 5 (2026-10-05, docs/MILESTONE5.md): `build.bat` re-run on the final code and the release exe played by real
@@ -232,6 +232,9 @@ Master: `art/ui/icon/icon_master_v1.png` (nano-banana-pro, USD 0.15, logged in `
 - Saves go to `~/Library/Application Support/LastBell/saves` (`user://`, custom user dir).
 
 ## Android arm64 (later)
+
+**Superseded 2026-10-08 by docs/PORTS.md "Android" and "Touch controls"** (toolchain in `.tools/android`, build
+commands, package `eu.inviton.lastbell`, tests, known limits). The notes below are the state of 2026-10-05.
 
 - Preset `Android arm64 (not built)`: arm64-v8a only, package `eu.lastbell.poslednyzvonec` (placeholder),
   immersive mode, adaptive icon layers, ETC2/ASTC textures, no permissions.

@@ -235,8 +235,10 @@ public partial class InteractionController : Node
                 Game.Session.Apply(resolution);
                 return;
             case Resolution.SelectItem:
-                // Keep the drawer open so a recipe can be tried; clicking the scene closes it.
-                Game.Session.Apply(resolution, combineMode: state.Mode == GameMode.Inventory);
+                // Keep the drawer open so a recipe can be tried; clicking the scene closes it. Touch mode: the drawer
+                // of a phone covers the scene, there is no "outside" to tap, so taking an item closes the drawer (Core's
+                // own default); a second item is combined by opening the drawer again and tapping it.
+                Game.Session.Apply(resolution, combineMode: state.Mode == GameMode.Inventory && !TouchMode.Enabled);
                 return;
             case Resolution.Look look when button == PointerButton.Right || hit is Hit.Item:
                 ShowLook(look, room, hit);

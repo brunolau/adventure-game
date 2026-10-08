@@ -14,7 +14,9 @@ Windows stays with build.bat (build/windows/). This script writes everything to 
 Targets: linux (x86_64), linux-arm64, macos (universal .app in a zip), android (signed release APK, arm64-v8a),
 android-aab (Google Play bundle, gradle build), android-qa (debug APK, x86_64, for an emulator), ios (Xcode project;
 macOS host only: C# on iOS is compiled ahead of time with Xcode tools).
-Options: --skip-import (the projects are already imported), --no-lock (do not wait for tools/godot_lock.py).
+Options: --skip-import (the projects are already imported), --no-lock (do not wait for tools/godot_lock.py),
+--keep-stage (Android / iOS: export the staging copy as it is, without refreshing it from src/game; for trying a change
+in the copy first).
 
 How it works:
 - Desktop ports export from src/game with the same release settings as Windows: release template (the QA harness is
@@ -24,12 +26,21 @@ How it works:
   Universal instead of Lossy WebP: the GPU keeps them block-compressed (ASTC 4x4 / ETC2, 1 byte per pixel instead of
   4), which is what phones need (ISSUES BUILD-06). The desktop project and its imports are never changed. The copy
   keeps its own .godot/imported, so a second run only re-imports what changed.
-- Every Godot process runs under tools/godot_lock.py (label "ports"): parallel agents share the project folder.
+- Every Godot process on src/game runs under tools/godot_lock.py (label "ports"): parallel agents share the project
+  folder. Godot processes on the staging copy use their own lock (build/locks/godot_stage.lock) and run at
+  below-normal priority (the first Basis Universal import keeps every core busy for a long time).
+- Android toolchain (docs/PORTS.md "Android"): a JDK 17 in .tools/android/jdk-17 and the Android SDK in
+  .tools/android/sdk (platform-tools, build-tools 36.1.0, platforms;android-36) are preferred; JAVA_HOME /
+  ANDROID_HOME and the usual install folders are the fallback. Godot reads both paths only from its EDITOR settings
+  (export/android/java_sdk_path, android_sdk_path), and every Godot editor process rewrites that file when it
+  exits, so on Windows the Android exports get their own Godot configuration: .tools/android/godot_appdata is passed
+  as APPDATA and holds editor_settings-4.7.tres (written here: the two paths and the debug keystore) and a
+  directory junction to the installed export templates. The user's own editor settings are never changed.
 - Android signing: the release keystore and its password live in .tools/android/keystore.json (git-ignored, made
   by "keystores"); they are handed to Godot through GODOT_ANDROID_KEYSTORE_RELEASE_* environment variables, never
   written into export_presets.cfg.
 Needs: Godot 4.7.2 .NET + its export templates (see build.bat), .NET SDK 8+ (9 for Android), Python 3, for Android a
-JDK 17 and the Android SDK (Godot editor settings export/android/*), for the AAB internet access once (Gradle).
+JDK 17 and the Android SDK (see above), internet access for the first .NET Android restore and for the AAB (Gradle).
 """
 from __future__ import annotations
 
@@ -57,6 +68,8 @@ LOGS = OUT / "logs"
 STAGE = OUT / "_stage" / "src"
 STAGE_GAME = STAGE / "game"
 TOOLS = ROOT / ".tools"
+ANDROID_TOOLS = TOOLS / "android"                 # jdk-17/, sdk/, keystores, keystore.json, godot_appdata/
+GODOT_APPDATA = ANDROID_TOOLS / "godot_appdata"   # private Godot editor configuration of the Android exports
 VERSION = "0.2.0"
 APP = "PoslednyZvonec"
 GODOT_VERSION = "4.7.2.stable.mono"
@@ -118,16 +131,20 @@ def templates_dir() -> Path:
     return Path.home() / ".local" / "share" / "godot" / "export_templates" / GODOT_VERSION
 
 
-def run(cmd: list[str], log_file: Path | None = None, env: dict | None = None, cwd: Path | None = None, check: bool = True) -> int:
+def run(cmd: list[str], log_file: Path | None = None, env: dict | None = None, cwd: Path | None = None, check: bool = True,
+        low_priority: bool = False) -> int:
     shown = " ".join(str(c) for c in cmd)
     log(f"$ {shown}" + (f"  (log: {log_file.relative_to(ROOT)})" if log_file else ""))
     full_env = dict(os.environ, **(env or {}))
+    extra: dict = {}
+    if low_priority and is_windows():
+        extra["creationflags"] = 0x00004000  # BELOW_NORMAL_PRIORITY_CLASS (inherited by the dotnet / Gradle children)
     if log_file:
         log_file.parent.mkdir(parents=True, exist_ok=True)
         with log_file.open("w", encoding="utf-8", errors="replace") as fh:
-            rc = subprocess.run([str(c) for c in cmd], stdout=fh, stderr=subprocess.STDOUT, env=full_env, cwd=cwd).returncode
+            rc = subprocess.run([str(c) for c in cmd], stdout=fh, stderr=subprocess.STDOUT, env=full_env, cwd=cwd, **extra).returncode
     else:
-        rc = subprocess.run([str(c) for c in cmd], env=full_env, cwd=cwd).returncode
+        rc = subprocess.run([str(c) for c in cmd], env=full_env, cwd=cwd, **extra).returncode
     if check and rc != 0:
         tail = log_file.read_text(encoding="utf-8", errors="replace").splitlines()[-30:] if log_file else []
         print("\n".join(tail))
@@ -136,26 +153,50 @@ def run(cmd: list[str], log_file: Path | None = None, env: dict | None = None, c
 
 
 class Lock:
-    """tools/godot_lock.py around one Godot process (re-entrant within this script)."""
+    """tools/godot_lock.py around one Godot process (re-entrant within this script). src/game shares the agents'
+    lock; the staging copy has its own lock file, so a mobile import never waits for (or blocks) work on src/game."""
 
     enabled = True
-    depth = 0
+    depth: dict[Path, int] = {}
+
+    def __init__(self, stage: bool = False):
+        self.path = godot_lock.LOCK.with_name("godot_stage.lock") if stage else godot_lock.LOCK
+
+    def _call(self, fn, *args):
+        main_lock = godot_lock.LOCK
+        godot_lock.LOCK = self.path
+        try:
+            return fn(*args)
+        finally:
+            godot_lock.LOCK = main_lock
 
     def __enter__(self):
-        if Lock.enabled and Lock.depth == 0:
-            godot_lock.acquire("ports")
-        Lock.depth += 1
+        if Lock.enabled and Lock.depth.get(self.path, 0) == 0:
+            self._call(godot_lock.acquire, "ports")
+        Lock.depth[self.path] = Lock.depth.get(self.path, 0) + 1
         return self
 
     def __exit__(self, *exc):
-        Lock.depth -= 1
-        if Lock.enabled and Lock.depth == 0:
-            godot_lock.release()
+        Lock.depth[self.path] -= 1
+        if Lock.enabled and Lock.depth[self.path] == 0:
+            self._call(godot_lock.release)
+
+
+def is_stage(project: Path) -> bool:
+    return STAGE.resolve() in project.resolve().parents
+
+
+# Godot's console wrapper waits for every process of its job, also for the build servers a C# export can leave behind
+# (the Roslyn compiler server and MSBuild worker nodes stay alive for 10 to 15 minutes; seen 2026-10-08: the export was
+# done, the script waited for VBCSCompiler). The C# build of a Godot run therefore uses no shared servers.
+NO_BUILD_SERVERS = {"UseSharedCompilation": "false", "MSBUILDDISABLENODEREUSE": "1", "DOTNET_CLI_USE_MSBUILD_SERVER": "0"}
 
 
 def godot(project: Path, args: list[str], log_name: str, env: dict | None = None, check: bool = True) -> int:
-    with Lock():
-        return run([godot_exe(), "--headless", "--path", project, *args], LOGS / f"{log_name}.log", env=env, check=check)
+    stage = is_stage(project)
+    with Lock(stage):
+        return run([godot_exe(), "--headless", "--path", project, *args], LOGS / f"{log_name}.log",
+                   env={**NO_BUILD_SERVERS, **(env or {})}, check=check, low_priority=stage)
 
 
 # ------------------------------------------------------------------ prerequisites
@@ -174,12 +215,17 @@ def prechecks(need_android: bool) -> None:
     run(py + [str(ROOT / "tools" / "release_assets.py"), "filter", "--check"])
     run(py + [str(ROOT / "art" / "tools" / "regrid_sheets.py"), "--check"])
     if need_android and java_home() is None:
-        raise SystemExit("A JDK 17 is required for Android (JAVA_HOME, or C:\\Program Files\\Java\\jdk-17).")
+        raise SystemExit("A JDK 17 is required for Android: unpack one into .tools/android/jdk-17 (docs/PORTS.md), or set JAVA_HOME.")
+    if need_android and android_sdk() is None:
+        raise SystemExit("The Android SDK is required for Android: .tools/android/sdk with platform-tools, build-tools;36.1.0 and "
+                         "platforms;android-36 (docs/PORTS.md), or set ANDROID_HOME.")
 
 
 def java_home() -> Path | None:
-    for cand in [os.environ.get("JAVA_HOME"), r"C:\Program Files\Java\jdk-17", "/usr/lib/jvm/java-17-openjdk-amd64",
-                 "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home", str(TOOLS / "jdk-17")]:
+    """The JDK 17 for keytool, apksigner and Gradle: the one in .tools first, then JAVA_HOME and the usual places."""
+    for cand in [str(ANDROID_TOOLS / "jdk-17"), os.environ.get("JAVA_HOME"), r"C:\Program Files\Java\jdk-17",
+                 "/usr/lib/jvm/java-17-openjdk-amd64", "/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home",
+                 str(TOOLS / "jdk-17")]:
         if cand and (Path(cand) / "bin" / ("keytool.exe" if is_windows() else "keytool")).exists():
             return Path(cand)
     return None
@@ -191,9 +237,10 @@ def build_csharp(project_dir: Path) -> None:
 
 # ------------------------------------------------------------------ desktop
 
-def export(project: Path, preset: str, target: Path, log_name: str, debug: bool = False, env: dict | None = None) -> None:
+def export(project: Path, preset: str, target: Path, log_name: str, debug: bool = False, env: dict | None = None,
+           extra: list[str] | None = None) -> None:
     target.parent.mkdir(parents=True, exist_ok=True)
-    godot(project, ["--export-debug" if debug else "--export-release", preset, str(target)], log_name, env=env)
+    godot(project, [*(extra or []), "--export-debug" if debug else "--export-release", preset, str(target)], log_name, env=env)
     if not target.exists():
         raise SystemExit(f"[ports] export of '{preset}' produced no {target}")
 
@@ -281,6 +328,38 @@ def mobile_import_text(source_rel: str, text: str) -> str:
     return new
 
 
+IMPORTED_BASE = re.compile(r'res://\.godot/imported/([^"/]+?-[0-9a-f]{32})\.')
+
+
+def import_params(text: str) -> str:
+    return text.split("[params]", 1)[1].strip() if "[params]" in text else ""
+
+
+def staged_import_is_basis(import_text: str) -> bool:
+    """True when every imported file of a staged texture is a Basis Universal .ctex."""
+    folder = STAGE_GAME / ".godot" / "imported"
+    bases = set(IMPORTED_BASE.findall(import_text))
+    for base in bases:
+        files = [f for f in (folder / (base + ext) for ext in (".ctex", ".s3tc.ctex", ".bptc.ctex", ".etc2.ctex", ".astc.ctex")) if f.exists()]
+        if not files or not (folder / f"{base}.md5").exists():
+            return False
+        for ctex in files:
+            info = ctex_info(ctex)
+            if info is None or info[2] != 3:
+                return False
+    return bool(bases)
+
+
+def forget_staged_import(import_text: str) -> None:
+    """Make Godot import a staged resource again. Godot trusts its file cache (modification times) and the stored
+    md5s; it never notices changed [params] in a .import file. A missing imported file is what makes it look again
+    (project setting editor/import/reimport_missing_imported_files, on by default), and without the .md5 it imports."""
+    folder = STAGE_GAME / ".godot" / "imported"
+    for base in set(IMPORTED_BASE.findall(import_text)):
+        for ext in (".md5", ".ctex", ".s3tc.ctex", ".bptc.ctex", ".etc2.ctex", ".astc.ctex"):
+            (folder / (base + ext)).unlink(missing_ok=True)
+
+
 def stage_mobile(skip_import: bool) -> None:
     """Refresh build/ports/_stage/src (project copy with the mobile texture set) and import it."""
     log("mobile staging copy: " + str(STAGE_GAME.relative_to(ROOT)))
@@ -304,7 +383,7 @@ def stage_mobile(skip_import: bool) -> None:
     if manifest.get("_policy") != MOBILE_POLICY:
         manifest = {"_policy": MOBILE_POLICY}
     wanted: set[str] = set()
-    written = basis = 0
+    written = basis = queued = 0
     for imp in GAME.rglob("*.import"):
         rel = imp.relative_to(GAME).as_posix()
         if rel.startswith((".godot/", "android/")) or "/bin/" in rel or "/obj/" in rel:
@@ -312,21 +391,34 @@ def stage_mobile(skip_import: bool) -> None:
         wanted.add(rel)
         text = imp.read_text(encoding="utf-8")
         mobile = mobile_import_text(rel[: -len(".import")], text)
-        if mobile != text:
+        in_set = mobile != text
+        if in_set:
             basis += 1
         digest = hashlib.sha1(text.encode("utf-8")).hexdigest()
         target = STAGE_GAME / rel
         if manifest.get(rel) == digest and target.exists():
-            continue  # unchanged since the last staging: keep the copy's own (re-imported) .import file
+            # Unchanged since the last staging: keep the copy's own (re-imported) .import file. A texture of the mobile
+            # set whose imported file is still the desktop one (seeded copy, interrupted import) is queued again.
+            if in_set and not staged_import_is_basis(mobile):
+                forget_staged_import(mobile)
+                queued += 1
+            continue
+        old = target.read_text(encoding="utf-8") if target.exists() else None
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(mobile, encoding="utf-8", newline="\n")
         manifest[rel] = digest
         written += 1
+        # The imported files seeded from the desktop project fit every .import that is used as it is. They do not fit
+        # the mobile texture set, and a staged resource whose import parameters changed must be imported again too.
+        if (in_set and not staged_import_is_basis(mobile)) or (old is not None and import_params(old) != import_params(mobile)):
+            forget_staged_import(mobile)
+            queued += 1
     for rel in [k for k in manifest if k != "_policy" and k not in wanted]:
         (STAGE_GAME / rel).unlink(missing_ok=True)
         del manifest[rel]
     manifest_path.write_text(json.dumps(manifest, indent=0, sort_keys=True), encoding="utf-8")
-    log(f"mobile staging: {len(wanted)} .import files, {basis} in the mobile texture set (Basis Universal), {written} (re)written")
+    log(f"mobile staging: {len(wanted)} .import files, {basis} in the mobile texture set (Basis Universal), {written} (re)written, "
+        f"{queued} queued for a new import")
     build_csharp(STAGE_GAME)
     if not skip_import:
         t0 = time.time()
@@ -336,7 +428,7 @@ def stage_mobile(skip_import: bool) -> None:
 
 # ------------------------------------------------------------------ Android
 
-KEYSTORE_JSON = TOOLS / "android" / "keystore.json"
+KEYSTORE_JSON = ANDROID_TOOLS / "keystore.json"
 
 
 def keytool() -> Path:
@@ -348,7 +440,7 @@ def keytool() -> Path:
 
 def make_keystores() -> dict:
     """Debug + release keystores in .tools/android/ (git-ignored). Never overwrites an existing release keystore."""
-    folder = TOOLS / "android"
+    folder = ANDROID_TOOLS
     folder.mkdir(parents=True, exist_ok=True)
     if KEYSTORE_JSON.exists():
         info = json.loads(KEYSTORE_JSON.read_text(encoding="utf-8"))
@@ -365,12 +457,47 @@ def make_keystores() -> dict:
         ks = info[kind]
         if Path(ks["path"]).exists():
             continue
+        # The password goes through the environment, so it is neither in the printed command line nor in a process list.
         run([keytool(), "-genkeypair", "-v", "-keystore", ks["path"], "-alias", ks["alias"], "-keyalg", "RSA", "-keysize", "2048",
-             "-validity", "10000", "-storepass", ks["password"], "-keypass", ks["password"], "-dname", dname],
-            LOGS / f"keytool_{kind}.log")
+             "-validity", "10000", "-storepass:env", "LASTBELL_KEYSTORE_PASSWORD", "-keypass:env", "LASTBELL_KEYSTORE_PASSWORD",
+             "-dname", dname], LOGS / f"keytool_{kind}.log", env={"LASTBELL_KEYSTORE_PASSWORD": ks["password"]})
         log(f"created the {kind} keystore {ks['path']}")
     KEYSTORE_JSON.write_text(json.dumps(info, indent=2), encoding="utf-8")
     return info
+
+
+def godot_string(value: object) -> str:
+    return '"' + str(value).replace("\\", "/").replace('"', '\\"') + '"'
+
+
+def android_godot_config(info: dict) -> dict:
+    """The Godot editor configuration of the Android exports (see the module docstring): returns the environment that
+    selects it. Windows hosts only; elsewhere Godot's own editor settings must name the JDK and the SDK."""
+    jdk, sdk = java_home(), android_sdk()
+    if not is_windows() or jdk is None or sdk is None:
+        return {}
+    config = GODOT_APPDATA / "Godot"
+    config.mkdir(parents=True, exist_ok=True)
+    link = config / "export_templates" / GODOT_VERSION
+    if not (link / "version.txt").exists():
+        link.parent.mkdir(parents=True, exist_ok=True)
+        rc = subprocess.run(["cmd", "/c", "mklink", "/J", str(link), str(templates_dir())], stdout=subprocess.DEVNULL).returncode
+        if rc != 0 or not (link / "version.txt").exists():
+            raise SystemExit(f"[ports] could not link the export templates into {link}")
+    wanted = {
+        "export/android/java_sdk_path": godot_string(jdk),
+        "export/android/android_sdk_path": godot_string(sdk),
+        "export/android/debug_keystore": godot_string(info["debug"]["path"]),
+        "export/android/debug_keystore_user": godot_string(info["debug"]["alias"]),
+        "export/android/debug_keystore_pass": godot_string(info["debug"]["password"]),
+    }
+    major_minor = ".".join(GODOT_VERSION.split(".")[:2])
+    settings = config / f"editor_settings-{major_minor}.tres"
+    lines = settings.read_text(encoding="utf-8").splitlines() if settings.exists() else ['[gd_resource type="EditorSettings" format=3]', "", "[resource]"]
+    lines = [l for l in lines if l.split(" = ", 1)[0] not in wanted]
+    lines += [f"{k} = {v}" for k, v in wanted.items()]
+    settings.write_text("\n".join(lines) + "\n", encoding="utf-8", newline="\n")
+    return {"APPDATA": str(GODOT_APPDATA)}
 
 
 def android_env() -> dict:
@@ -382,10 +509,22 @@ def android_env() -> dict:
         "GODOT_ANDROID_KEYSTORE_DEBUG_PATH": dbg["path"], "GODOT_ANDROID_KEYSTORE_DEBUG_USER": dbg["alias"],
         "GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD": dbg["password"],
         "GRADLE_USER_HOME": str(TOOLS / "gradle"),
+        "ANDROID_USER_HOME": str(ANDROID_TOOLS / "home"),  # Gradle plugin state, not the user's ~/.android
+        # The Godot editor polls "adb devices" while it runs and stops the adb server when it exits: on a port of its
+        # own, so neither the user's adb server (5037) nor the one of tools/android_qa.py (5039) is ever touched.
+        "ANDROID_ADB_SERVER_PORT": "5041",
     }
-    jh = java_home()
+    (ANDROID_TOOLS / "home").mkdir(parents=True, exist_ok=True)
+    # No Gradle daemon: it would stay alive for three hours, and Godot's console wrapper waits for every child process
+    # (seen 2026-10-08: the AAB was written, the script waited for the daemon).
+    (TOOLS / "gradle").mkdir(parents=True, exist_ok=True)
+    (TOOLS / "gradle" / "gradle.properties").write_text("org.gradle.daemon=false\n", encoding="utf-8")
+    jh, sdk = java_home(), android_sdk()
     if jh:
         env["JAVA_HOME"] = str(jh)
+    if sdk:
+        env["ANDROID_HOME"] = env["ANDROID_SDK_ROOT"] = str(sdk)
+    env.update(android_godot_config(info))
     return env
 
 
@@ -393,6 +532,7 @@ def build_android(kind: str, skip_import: bool, staged: list[bool]) -> Path:
     if not staged[0]:
         stage_mobile(skip_import)
         staged[0] = True
+    build_csharp(STAGE_GAME)  # also with --keep-stage: the exported assemblies come from this build
     env = android_env()
     folder = OUT / ("android_qa" if kind == "qa" else "android")
     folder.mkdir(parents=True, exist_ok=True)
@@ -400,10 +540,11 @@ def build_android(kind: str, skip_import: bool, staged: list[bool]) -> Path:
         target = folder / f"{APP}-{VERSION}.apk"
         export(STAGE_GAME, "Android", target, "export_android_apk", env=env)
     elif kind == "aab":
-        if not (STAGE_GAME / "android" / "build" / "build.gradle").exists():
-            godot(STAGE_GAME, ["--install-android-build-template"], "android_build_template")
+        # The Gradle build needs Godot's Android build template in <project>/android/build. The option that installs it
+        # only works together with an export (alone it starts the editor and never returns).
+        extra = [] if (STAGE_GAME / "android" / "build" / "build.gradle").exists() else ["--install-android-build-template"]
         target = folder / f"{APP}-{VERSION}.aab"
-        export(STAGE_GAME, "Android AAB", target, "export_android_aab", env=env)
+        export(STAGE_GAME, "Android AAB", target, "export_android_aab", env=env, extra=extra)
     else:
         target = folder / "LastBell-qa-x86_64.apk"
         export(STAGE_GAME, "Android (QA x86_64)", target, "export_android_qa", debug=True, env=env)
@@ -529,7 +670,8 @@ def aapt() -> Path | None:
 
 
 def android_sdk() -> Path | None:
-    for cand in [os.environ.get("ANDROID_HOME"), os.environ.get("ANDROID_SDK_ROOT"),
+    """The Android SDK: the one in .tools first, then ANDROID_HOME / ANDROID_SDK_ROOT and the usual places."""
+    for cand in [str(ANDROID_TOOLS / "sdk"), os.environ.get("ANDROID_HOME"), os.environ.get("ANDROID_SDK_ROOT"),
                  str(Path(os.environ.get("LOCALAPPDATA", "")) / "Android" / "Sdk"), str(Path.home() / "Library/Android/sdk"),
                  str(Path.home() / "Android" / "Sdk")]:
         if cand and Path(cand, "platform-tools").exists():
@@ -675,6 +817,7 @@ def main() -> int:
     ap.add_argument("targets", nargs="*", help="linux linux-arm64 macos android android-aab android-qa ios | stage keystores verify texture-report")
     ap.add_argument("--skip-import", action="store_true")
     ap.add_argument("--no-lock", action="store_true")
+    ap.add_argument("--keep-stage", action="store_true")
     a = ap.parse_args()
     Lock.enabled = not a.no_lock
     OUT.mkdir(parents=True, exist_ok=True)
@@ -699,7 +842,7 @@ def main() -> int:
         build_csharp(GAME)
         if not a.skip_import:
             godot(GAME, ["--import"], "import_desktop")
-    staged = [False]
+    staged = [a.keep_stage and STAGE_GAME.exists()]
     built: list[Path] = []
     for t in targets:
         if t == "linux":

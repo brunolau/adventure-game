@@ -138,6 +138,7 @@ public partial class DebugHarness : Node
             if (Has("acceptance"))
             {
                 if (Get("acceptance") is "travel") { realInput = true; GameRuntime.Instance.NewGame(); await Settle(); await WaitLinesReal(20); await RunTravelChecks(); } // TravelAcceptance.cs only (TR01-TR03)
+                else if (Get("acceptance") is "touch") await RunTouchChecks(); // TouchAcceptance.cs (with --touch: phones and tablets)
                 else
                 {
                     if (Get("acceptance") is not "m2") await RunPrologueAcceptance();
@@ -354,6 +355,47 @@ public partial class DebugHarness : Node
                 // Real touch events (Godot emulates finger 0 as a mouse): tap = left, long press = right,
                 // two-finger tap = Space (PlayerInput/TouchGestures.cs).
                 await RawTouch(Point(), kind);
+                break;
+            case "doubletap":
+                // Two taps at the same point inside the double-click threshold (skips the walk).
+                await RawTouch(Point(), "tap");
+                await RawTouch(Point(), "tap");
+                break;
+            case "touchdown" or "touchup":
+                // Half a tap: touchdown:x,y leaves the finger on the picture (touch mode: its label shows) for a screenshot.
+                Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 0, Position = GetTree().Root.GetFinalTransform() * Point(), Pressed = kind == "touchdown" });
+                await Frames(2);
+                break;
+            case "slide":
+                // slide:x1,y1,x2,y2 — finger down at the first point, slides to the second in steps and lifts there.
+                {
+                    var c = value.Split(',').Select(v => float.Parse(v, CultureInfo.InvariantCulture)).ToArray();
+                    var xform = GetTree().Root.GetFinalTransform();
+                    Vector2 from = xform * new Vector2(c[0], c[1]), to = xform * new Vector2(c[2], c[3]);
+                    Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 0, Position = from, Pressed = true });
+                    await Frames(2);
+                    const int steps = 8;
+                    for (int i = 1; i <= steps; i++)
+                    {
+                        var at = from.Lerp(to, i / (float)steps);
+                        Godot.Input.ParseInputEvent(new InputEventScreenDrag { Index = 0, Position = at, Relative = (to - from) / steps });
+                        await Frames(2);
+                    }
+                    Log($"slide label '{LastBell.Game.UI.UiRoot.Instance?.HoverLabel.ShownName}'");
+                    Godot.Input.ParseInputEvent(new InputEventScreenTouch { Index = 0, Position = to, Pressed = false });
+                    await Frames(2);
+                }
+                break;
+            case "app":
+                // What a phone tells the app (UI/Common/MobileLifecycle): app:pause (to the background), app:resume, app:back.
+                {
+                    var life = LastBell.Game.UI.Common.MobileLifecycle.Instance;
+                    if (value == "pause") life?.Background();
+                    else if (value == "resume") life?.Foreground();
+                    else if (value == "back") life?.Back();
+                    else throw new InvalidOperationException("unknown --input " + input);
+                    await Frames(2);
+                }
                 break;
             case "keyev" when Enum.TryParse<Key>(value, true, out var key):
                 // A real key press + release (InputMap actions, GUI shortcuts).

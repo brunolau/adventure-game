@@ -21,6 +21,11 @@ namespace LastBell.Game.PlayerInput;
 /// <c>_Input</c>, so no GUI can swallow it) or losing the window focus = <see cref="LogicalCommand.HideMarkers"/>.
 /// The second press of a world double click (or double Enter) that already acted is not passed on to a line that
 /// started from it (no accidental skip of the first line).
+/// Touch mode (<see cref="TouchMode"/>, phones and tablets; there is no hover): the name of what is under the finger
+/// shows as soon as the finger is down (the hover label, drawn above the finger) and follows a sliding finger; lifting
+/// without a slide is the tap and acts at once, the label stays for <see cref="TouchLabelSeconds"/> as the confirmation
+/// of what was hit; lifting after a slide does nothing; holding still is the long press (look). One tap is one action,
+/// as one click is on the PC: a second tap on the same target is the double tap that skips the walk.
 /// </summary>
 public partial class InputRouter : Node2D
 {
@@ -28,6 +33,11 @@ public partial class InputRouter : Node2D
     public static InputRouter? Instance { get; private set; }
 
     private readonly TouchGestures touch = new();
+
+    /// <summary>Touch mode: how long the label of a tapped target stays after the finger is lifted.</summary>
+    public const double TouchLabelSeconds = 1.6;
+
+    private double touchLabelUntil = -1;
 
     private const int EmulatedDevice = (int)InputEvent.DeviceIdEmulation;
 
@@ -86,7 +96,25 @@ public partial class InputRouter : Node2D
     /// <inheritdoc />
     public override void _Process(double delta)
     {
-        if (touch.Poll(Now) is { } gesture) Dispatch(gesture.Command, gesture.Position);
+        if (touch.Poll(Now) is { } gesture)
+        {
+            if (TouchMode.Enabled) HideTouchLabel(); // the long press looks: its text replaces the name
+            Dispatch(gesture.Command, gesture.Position);
+        }
+        if (touchLabelUntil >= 0 && Now >= touchLabelUntil) HideTouchLabel();
+    }
+
+    /// <summary>Touch mode: the finger is on the picture at a canvas point (down or sliding): the label of what is under it.</summary>
+    private void ShowTouchLabel(Vector2 canvasPosition)
+    {
+        touchLabelUntil = -1; // stays while the finger is down
+        InteractionController.Instance?.PointerMoved(canvasPosition);
+    }
+
+    private void HideTouchLabel()
+    {
+        touchLabelUntil = -1;
+        HoverPresenter.Hide();
     }
 
     /// <inheritdoc />
@@ -94,13 +122,30 @@ public partial class InputRouter : Node2D
     {
         if (e is InputEventMouseMotion motion)
         {
-            if (motion.Device == EmulatedDevice) touch.Drag(0, ToCanvas(motion.Position));
+            if (motion.Device == EmulatedDevice)
+            {
+                touch.Drag(0, ToCanvas(motion.Position));
+                if (TouchMode.Enabled)
+                {
+                    if (touch.Active) ShowTouchLabel(ToCanvas(motion.Position)); // the label follows the sliding finger
+                    return;
+                }
+            }
             InteractionController.Instance?.PointerMoved(Pointer());
             return;
         }
         if (e is InputEventMouseButton { Device: EmulatedDevice, ButtonIndex: MouseButton.Left } finger)
         {
-            if (touch.Touch(0, ToCanvas(finger.Position), finger.Pressed, Now) is { } gesture) Dispatch(gesture.Command, gesture.Position);
+            var at = ToCanvas(finger.Position);
+            if (TouchMode.Enabled && finger.Pressed) ShowTouchLabel(at);
+            var done = touch.Touch(0, at, finger.Pressed, Now);
+            if (done is { } gesture) Dispatch(gesture.Command, gesture.Position);
+            if (TouchMode.Enabled && !finger.Pressed)
+            {
+                // A tap acted: its label stays for a moment (what was hit). A slide or a long press ends without one.
+                if (done?.Command == LogicalCommand.Primary) touchLabelUntil = Now + TouchLabelSeconds;
+                else HideTouchLabel();
+            }
             GetViewport().SetInputAsHandled();
             return;
         }

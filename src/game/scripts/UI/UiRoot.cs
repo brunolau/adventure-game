@@ -46,6 +46,9 @@ public partial class UiRoot : Control
     private PauseScreen pause = null!;
     private PuzzleModal puzzle = null!;
     private TopicMenuView? topicMenu;
+    private SubtitleView subtitleView = null!;
+    private Vector4 safeInsets;
+    private double safePoll;
 
     /// <summary>The puzzle modal (QA harness).</summary>
     public PuzzleModal PuzzleView => puzzle;
@@ -117,6 +120,11 @@ public partial class UiRoot : Control
         AddChild(cutscene);
         var subtitles = new SubtitleView { Name = "Subtitles" };
         AddChild(subtitles);
+        subtitleView = subtitles;
+        AddChild(new MobileLifecycle { Name = "MobileLifecycle" }); // Back button, autosave + pause in the background (phones)
+        // Phones: where the safe area pushes a full-screen menu in from the edge, the strip beside it is black like the
+        // bars around the picture (the engine's grey clear colour never shows on the desktop: the menus cover it).
+        if (TouchMode.Enabled) RenderingServer.SetDefaultClearColor(Colors.Black);
 
         // Scaled: HUD and screens.
         scaled = new Control { Name = "Scaled", MouseFilter = MouseFilterEnum.Ignore };
@@ -439,7 +447,8 @@ public partial class UiRoot : Control
         if (slot == GameRuntime.AutosaveSlot)
         {
             Toasts.ShowAutosave();
-            SaveThumbnail(slot, CaptureFrame());
+            // A phone app on its way to the background keeps the thumbnail it has: its surface may already be gone.
+            if (!MobileLifecycle.SavingInBackground) SaveThumbnail(slot, CaptureFrame());
         }
         else if (slot == SaveSlots.Quick && !HasModal) SaveThumbnail(slot, CaptureFrame()); // F5 from the scene
     }
@@ -473,12 +482,30 @@ public partial class UiRoot : Control
     {
         float s = UiSettings.HudScale;
         var viewport = GetViewportRect().Size;
-        if (Math.Abs(s - appliedScale) > 0.001f || scaled.Size != viewport / s)
+        // Phones: the HUD, every screen and the subtitles stay inside the display's safe area (notch, camera hole);
+        // the painting and the cutscene frame keep the whole picture. The insets are zero on the desktop and on most
+        // phones (the black bars beside the 16:9 picture are wider than the cutout), see TouchMode.SafeInsets.
+        if (TouchMode.Enabled && (safePoll -= delta) <= 0)
+        {
+            safePoll = 1.0;
+            var insets = TouchMode.SafeInsets();
+            if (insets != safeInsets)
+            {
+                safeInsets = insets;
+                subtitleView.OffsetLeft = insets.X;
+                subtitleView.OffsetTop = insets.Y;
+                subtitleView.OffsetRight = -insets.Z;
+                subtitleView.OffsetBottom = -insets.W;
+                GD.Print($"LastBell: safe area insets (canvas px) left {insets.X:0} top {insets.Y:0} right {insets.Z:0} bottom {insets.W:0}");
+            }
+        }
+        var area = new Rect2(safeInsets.X, safeInsets.Y, viewport.X - safeInsets.X - safeInsets.Z, viewport.Y - safeInsets.Y - safeInsets.W);
+        if (Math.Abs(s - appliedScale) > 0.001f || scaled.Size != area.Size / s || scaled.Position != area.Position)
         {
             appliedScale = s;
             scaled.Scale = new Vector2(s, s);
-            scaled.Position = Vector2.Zero;
-            scaled.Size = viewport / s;
+            scaled.Position = area.Position;
+            scaled.Size = area.Size / s;
         }
         if (endingPending)
         {

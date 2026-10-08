@@ -9,6 +9,9 @@ namespace LastBell.Game.UI.Common;
 /// to the scene, AT22), a centred paper panel with a title row and the visible close cross, and a
 /// content box. The panel size is the preferred size clamped to the available logical area, so
 /// the same screen works from 1280x720 to 4K and at 200 % HUD scale (content scrolls).
+/// Touch mode (<see cref="LastBell.Game.Runtime.TouchMode"/>): a phone runs the UI at 200 %, a logical screen of 960x540.
+/// A panel whose content cannot scroll and needs more than that (the difficulty step, a long confirmation, a puzzle)
+/// is scaled down as a whole until it is on screen; nothing is ever cut off or out of reach.
 /// </summary>
 public partial class ModalScreen : Control
 {
@@ -168,7 +171,8 @@ public partial class ModalScreen : Control
 
     private void Layout(bool force)
     {
-        if (!force && Size == lastSize && !FitHeight) return;
+        bool fit = LastBell.Game.Runtime.TouchMode.Enabled; // checked every frame: wrapped texts settle a frame late
+        if (!force && Size == lastSize && !FitHeight && !fit) return;
         lastSize = Size;
         var avail = Size - new Vector2(48, 48);
         var size = new Vector2(Math.Min(PreferredSize.X, avail.X), Math.Min(PreferredSize.Y, avail.Y));
@@ -182,5 +186,12 @@ public partial class ModalScreen : Control
         panel.Size = size;
         panel.CustomMinimumSize = size;
         panel.Position = (Size - size) / 2;
+        if (!fit) return;
+        // Godot has grown the panel to its content's minimum by now; scale it back into the screen if that is too much.
+        var room = Size - new Vector2(16, 16);
+        var actual = panel.Size;
+        float k = Mathf.Min(1f, Mathf.Min(room.X / Mathf.Max(1f, actual.X), room.Y / Mathf.Max(1f, actual.Y)));
+        panel.Scale = new Vector2(k, k);
+        panel.Position = (Size - actual * k) / 2;
     }
 }

@@ -106,11 +106,26 @@ public static class UiSettings
     /// <summary>HUD scale as a factor.</summary>
     public static float HudScale => Math.Clamp(HudScalePercent, 100, 200) / 100f;
 
-    /// <summary>Loads the file (missing file: defaults).</summary>
+    /// <summary>
+    /// Phones and tablets (<see cref="TouchMode"/>): HUD scale and subtitle size that fit the physical screen, so the
+    /// first start already has finger-sized buttons and readable text (a 6.3 inch phone: 200 % and 42 px). The player
+    /// can change both in the settings afterwards. Nothing changes on the desktop.
+    /// </summary>
+    public static void ApplyDeviceDefaults()
+    {
+        if (!TouchMode.Enabled) return;
+        (HudScalePercent, SubtitleSize) = TouchMode.DeviceDefaults(TouchMode.MmPerCanvasPx());
+    }
+
+    /// <summary>Loads the file (missing file: defaults; on a phone or tablet the defaults of its screen).</summary>
     public static void Load()
     {
         var cfg = new ConfigFile();
-        if (cfg.Load(FilePath) != Error.Ok) return;
+        if (cfg.Load(FilePath) != Error.Ok)
+        {
+            ApplyDeviceDefaults();
+            return;
+        }
         for (int i = 0; i < Buses.Length; i++) Volume[i] = Math.Clamp((int)cfg.GetValue("audio", Buses[i], Volume[i]), 0, 100);
         MuteUnfocused = (bool)cfg.GetValue("audio", "mute_unfocused", MuteUnfocused);
         VoiceOver = (bool)cfg.GetValue("audio", "voice_over", VoiceOver);
@@ -130,6 +145,8 @@ public static class UiSettings
         WalkSpeedPercent = Math.Clamp((int)cfg.GetValue("access", "walk_speed", WalkSpeedPercent), 100, 150);
         HotspotKeyHint = (bool)cfg.GetValue("access", "hotspot_key_hint", HotspotKeyHint);
         TipsShown = (bool)cfg.GetValue("tips", "shown", TipsShown);
+        // A QA run that emulates a phone on the desktop (--touch) shows that phone's sizes, not this PC's settings.
+        if (TouchMode.Enabled && !TouchMode.IsMobile) ApplyDeviceDefaults();
     }
 
     /// <summary>Writes the file.</summary>
@@ -179,6 +196,7 @@ public static class UiSettings
         CursorHighlight = false;
         WalkSpeedPercent = 125;
         HotspotKeyHint = true;
+        ApplyDeviceDefaults();
     }
 
     /// <summary>Characters per second of a preset.</summary>
@@ -219,7 +237,9 @@ public static class UiSettings
         PresentationSettings.HighContrastLabels = HighContrastLabels;
         PresentationSettings.WalkSpeedFactor = Math.Clamp(WalkSpeedPercent, 100, 150) / 100f;
         if (TextService.Locale != Locale) TextService.SetLocale(Locale);
-        if (applyWindow && DisplayServer.GetName() != "headless" && !LastBell.Game.Diagnostics.QaWindow.Background)
+        // Not on Android / iOS: there the window mode is the immersive mode of the export preset, and "windowed"
+        // (the default of this setting) would bring the system bars back over the game.
+        if (applyWindow && !TouchMode.IsMobile && DisplayServer.GetName() != "headless" && !LastBell.Game.Diagnostics.QaWindow.Background)
         {
             var mode = DisplayServer.WindowGetMode();
             bool isFull = mode is DisplayServer.WindowMode.Fullscreen or DisplayServer.WindowMode.ExclusiveFullscreen;

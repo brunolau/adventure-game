@@ -17,12 +17,18 @@ namespace LastBell.Game.UI.Hud;
 /// is over a GUI control, over the open bag (bar and detail card) and while any screen is open (hints, menus, journal
 /// ..., <see cref="UiRoot.ScreenCovers"/>, PT-S23). Keyboard focus (Tab): the label is centred at the focused target. Inventory slots keep their
 /// own hover line in the drawer. Lives in the cursor layer (CanvasLayer 70, canvas px), mouse-transparent.
+/// Touch mode (<see cref="TouchMode"/>): there is no cursor, the label belongs to the finger. It is centred above the
+/// touch point (<see cref="FingerLiftMm"/> higher, so the finger does not cover it), anchored at the position the
+/// input router reports (not at Godot's mouse position) and not hidden by a stale "hovered control".
 /// </summary>
 public partial class HoverLabel : Control
 {
     private const int NameSize = 40;
     private const int ActionSize = 32;
     private const int Outline = 12;
+
+    /// <summary>Touch mode: how far above the touch point the label's bottom edge sits (a fingertip is about 8 mm).</summary>
+    public const float FingerLiftMm = 8f;
     private HudView? hud;
     private string nameText = "";
     private string actionText = "";
@@ -69,12 +75,14 @@ public partial class HoverLabel : Control
         var payload = hud?.CurrentHover;
         var state = GameRuntime.Instance.IsReady ? GameRuntime.Instance.State : null;
         var mouse = LastBell.Game.Diagnostics.QaWindow.ViewportPointer(GetViewport()); // Godot's mouse position (QA: last event)
+        bool finger = TouchMode.Enabled && payload is { FromKeyboard: false };
         var next = payload is { FromKeyboard: true } ? payload.ScreenPosition
+            : finger ? payload!.ScreenPosition - new Vector2(0, Mathf.Clamp(TouchMode.MmToCanvasPx(FingerLiftMm, 90f), 60f, 150f))
             : LastBell.Game.Diagnostics.QaWindow.UseEventPointer ? GetGlobalTransformWithCanvas().AffineInverse() * mouse : GetLocalMousePosition();
         bool want = payload is { FromInventory: false } && (nameText.Length > 0 || actionText.Length > 0) &&
                     state?.Mode is GameMode.World or GameMode.Inventory && state.ActiveLineId is null &&
-                    (payload.FromKeyboard || GetViewport().GuiGetHoveredControl() is null) &&
-                    !(UiRoot.Instance?.ScreenCovers(mouse) ?? false);
+                    (payload.FromKeyboard || finger || GetViewport().GuiGetHoveredControl() is null) &&
+                    !(UiRoot.Instance?.ScreenCovers(finger ? payload.ScreenPosition : mouse) ?? false);
         if (want != shown || (want && next != origin))
         {
             shown = want;
@@ -120,7 +128,7 @@ public partial class HoverLabel : Control
         var actionDim = actionText.Length > 0 ? actionFont.GetStringSize(actionText, HorizontalAlignment.Left, -1, actionSize) : Vector2.Zero;
         var block = new Vector2(Mathf.Max(nameDim.X, actionDim.X), nameDim.Y + actionDim.Y);
         var payload = hud?.CurrentHover;
-        bool atTarget = payload?.FromKeyboard == true;
+        bool atTarget = payload?.FromKeyboard == true || TouchMode.Enabled; // touch: centred above the finger
         float windowScale = Mathf.Max(0.01f, GetTree().Root.GetFinalTransform().Scale.Y);
         float cursorPx = (CursorSet.CurrentSize > 0 ? CursorSet.CurrentSize : 48) / windowScale;
         float bottomReserve = HudView.StripHeight * UiSettings.HudScale + 8;

@@ -10,11 +10,17 @@ namespace LastBell.Game.UI.Common;
 /// <summary>
 /// The three first-start context bubbles (PRIBEH_A_PRAVIDLA: shown once; the same text is in the
 /// Help menu). They are mouse-transparent, so no bubble ever consumes the first game click, and
-/// they wait until the opening lines have played.
+/// they wait until the opening lines have played. Phones and tablets (<see cref="TouchMode"/>) get the touch tips
+/// (tap, hold, the Eye button) instead of the mouse and keyboard ones, wrapped to the narrower logical screen.
 /// </summary>
 public partial class TipsOverlay : Control
 {
-    private static readonly string[] Keys = { "ui.tutorial.left_click", "ui.tutorial.right_click", "ui.tutorial.space", "ui.tutorial.help_menu" };
+    private static readonly string[] MouseKeys = { "ui.tutorial.left_click", "ui.tutorial.right_click", "ui.tutorial.space", "ui.tutorial.help_menu" };
+    private static readonly string[] TouchKeys = { "ui.tutorial.touch_tap", "ui.tutorial.touch_hold", "ui.tutorial.touch_eye", "ui.tutorial.help_menu" };
+
+    /// <summary>The tips of this device: mouse and keyboard, or touch.</summary>
+    public static string[] Keys => TouchMode.Enabled ? TouchKeys : MouseKeys;
+
     private PanelContainer bubble = null!;
     private Label label = null!;
     private int index = -1;
@@ -75,8 +81,16 @@ public partial class TipsOverlay : Control
             return;
         }
         label.Text = Ui.T(Keys[index]);
+        if (TouchMode.Enabled)
+        {
+            // A phone runs the UI at up to 200 %: the logical screen is 960 px wide and a long tip must wrap.
+            float room = Mathf.Max(240f, Size.X - 200f);
+            float needed = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size")).X;
+            label.AutowrapMode = needed > room ? TextServer.AutowrapMode.WordSmart : TextServer.AutowrapMode.Off;
+            label.CustomMinimumSize = new Vector2(needed > room ? room : 0, 0);
+        }
         bubble.Visible = true;
         bubble.ResetSize();
-        left = 5.5;
+        left = TouchMode.Enabled ? 7.0 : 5.5;
     }
 }

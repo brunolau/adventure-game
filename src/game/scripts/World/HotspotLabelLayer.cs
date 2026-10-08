@@ -165,7 +165,8 @@ public partial class HotspotLabelLayer : Node2D
         // Subtle pulse, phase-shifted per target so the room does not blink in unison.
         float phase = (t.Id.GetHashCode() & 0xff) / 255f * Mathf.Tau;
         float pulse = still ? 1f : 1f + 0.07f * Mathf.Sin(time * Mathf.Tau / 1.3f + phase);
-        float size = MarkerSize * pulse;
+        // Phones: a 54 px marker is about 3 mm; half as big again is easier to see (the tap target is the hotspot's rect).
+        float size = MarkerSize * pulse * (TouchMode.Enabled ? 1.5f : 1f);
         var rect = new Rect2(p - new Vector2(size, size) / 2, new Vector2(size, size));
         var texture = t.Kind == TargetKind.Exit ? exitMarker ?? marker : marker;
         DrawCircle(p + new Vector2(0, 3), MarkerSize * 0.5f, new Color(0, 0, 0, 0.28f));

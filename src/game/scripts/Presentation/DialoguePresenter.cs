@@ -103,6 +103,12 @@ public partial class DialoguePresenter : Node
         GameRuntime.Instance.RoomChanged += (_, _) => { HideBark(); resumeHotspot = null; engaged.Clear(); };
     }
 
+    /// <summary>
+    /// The next frames do not count as reading time (as after a load): a phone app that comes back from the
+    /// background may report the whole time away as one frame's delta (UI/Common/MobileLifecycle).
+    /// </summary>
+    public void SkipFrameTime() => settleFrames = Math.Max(settleFrames, 2);
+
     private void ResetAll()
     {
         settleFrames = 2;

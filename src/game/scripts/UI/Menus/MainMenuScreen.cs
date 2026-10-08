@@ -10,7 +10,9 @@ namespace LastBell.Game.UI.Menus;
 /// Title screen (claims UiPanel.MainMenu, so Main does not auto-start): POSLEDNÝ ZVONEC with the
 /// brass ring of four symbols, then Continue (hidden without a valid save), New game (then the difficulty picker), Load,
 /// Settings, Album, Credits, Quit. The background is a painted room (dimmed) until the dedicated
-/// "closed bag on a table" painting exists.
+/// "closed bag on a table" painting exists. Phones and tablets (<see cref="TouchMode"/>) get two columns, the emblem
+/// and the title beside the buttons, and the buttons scroll if they must: at the 200 % HUD scale of a phone the
+/// logical screen is 960x540, less than the one-column screen is high.
 /// </summary>
 public partial class MainMenuScreen : ModalScreen
 {
@@ -23,7 +25,7 @@ public partial class MainMenuScreen : ModalScreen
     /// <summary>Godot constructor.</summary>
     public MainMenuScreen()
     {
-        PreferredSize = new Vector2(760, 1000);
+        PreferredSize = TouchMode.Enabled ? new Vector2(1500, 900) : new Vector2(760, 1000);
         Closable = false;
         Dim = 0.35f;
     }
@@ -53,15 +55,17 @@ public partial class MainMenuScreen : ModalScreen
         MoveChild(backdrop, 1);
 
         Panel.AddThemeStyleboxOverride("panel", UiTheme.Box(new Color(UiTheme.Wood, 0.72f), new Color(UiTheme.Brass, 0.6f), 2, 22, 34));
-        var emblem = new Emblem { CustomMinimumSize = new Vector2(0, 170) };
-        Body.AddChild(emblem);
+        bool columns = TouchMode.Enabled;
+        var emblem = new Emblem { CustomMinimumSize = new Vector2(0, columns ? 140 : 170) };
         var title = Ui.Label(TextService.Get("game.title", GameRuntime.Instance.Content?.Data.Title ?? ""), "TitleLabel");
         title.HorizontalAlignment = HorizontalAlignment.Center;
-        title.AddThemeFontSizeOverride("font_size", 64);
+        title.AddThemeFontSizeOverride("font_size", columns ? 50 : 64);
         title.AddThemeColorOverride("font_color", UiTheme.BrassLight);
         title.Text = title.Text.ToUpperInvariant();
-        Body.AddChild(title);
-        Body.AddChild(Ui.Spacer(vertical: true));
+        var head = columns ? Ui.VBox(10) : Body;
+        head.AddChild(emblem);
+        head.AddChild(title);
+        if (!columns) Body.AddChild(Ui.Spacer(vertical: true));
         var list = Ui.VBox(12);
         continueButton = Add(list, "ui.menu.continue", Continue);
         continueButton.AddThemeFontOverride("font", UiTheme.BodyBold);
@@ -71,14 +75,37 @@ public partial class MainMenuScreen : ModalScreen
         album = Add(list, "ui.menu.album", OpenAlbum);
         Add(list, "ui.menu.credits", () => UiRoot.Instance?.OpenCredits(rolling: false));
         Add(list, "ui.menu.quit", () => UiRoot.Instance?.Confirm(Ui.T("ui.menu.quit_confirm"), Ui.T("ui.menu.quit"), () => GetTree().Quit()));
-        Body.AddChild(list);
-        Body.AddChild(Ui.Spacer(vertical: true));
+        if (columns)
+        {
+            // Left: emblem, title on two lines, version. Right: the buttons in a scroll area. The title breaks at its
+            // last space by hand: an autowrapped label reports a huge minimum height while it is still narrow, and the
+            // panel would keep that height.
+            emblem.SizeFlagsVertical = SizeFlags.ExpandFill;
+            TitleRow.Visible = false; // the empty title row of the base screen: its height belongs to the buttons here
+            int space = title.Text.LastIndexOf(' ');
+            if (space > 0) title.Text = title.Text[..space] + '\n' + title.Text[(space + 1)..];
+            head.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+            head.SizeFlagsStretchRatio = 0.8f;
+            var row = Ui.HBox(28);
+            row.SizeFlagsVertical = SizeFlags.ExpandFill;
+            row.AddChild(head);
+            var scroll = Ui.Scroll(list);
+            list.SizeFlagsVertical = SizeFlags.ExpandFill;
+            list.Alignment = BoxContainer.AlignmentMode.Center;
+            row.AddChild(scroll);
+            Body.AddChild(row);
+        }
+        else
+        {
+            Body.AddChild(list);
+            Body.AddChild(Ui.Spacer(vertical: true));
+        }
         // The game (release) version (ISSUES M5-03): project.godot application/config/version is the single source; the
         // export presets leave their version fields empty, so the exe takes the same number. game.json's version is the
         // content data version and stays internal.
         var version = Ui.Label(Ui.T("ui.menu.version", ("version", GameVersion)), "OnDarkCaption");
         version.HorizontalAlignment = HorizontalAlignment.Center;
-        Body.AddChild(version);
+        head.AddChild(version);
     }
 
     /// <summary>The game version from project.godot (application/config/version), e.g. "0.1.0".</summary>

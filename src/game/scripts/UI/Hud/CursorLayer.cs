@@ -66,7 +66,8 @@ public partial class CursorLayer : Control
         var kind = Decide(state, item);
         int size = CursorSet.SizeFor(WindowScale, UiSettings.HudScale);
         bool hardware = CursorSet.Apply(kind, size, itemTexture, item ?? "");
-        icon.Visible = item is not null && !hardware && !SoftwareCursor;
+        // Touch mode: there is no pointer the icon could follow; the HUD chip shows the selected item.
+        icon.Visible = item is not null && !hardware && !SoftwareCursor && !TouchMode.Enabled;
         var mouse = PointerLocal();
         if (icon.Visible) icon.Position = mouse + new Vector2(18, 18);
         if (UiSettings.CursorHighlight || SoftwareCursor || icon.Visible) QueueRedraw();

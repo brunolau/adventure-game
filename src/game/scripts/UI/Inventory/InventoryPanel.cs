@@ -19,6 +19,13 @@ namespace LastBell.Game.UI.Inventory;
 /// recipe can be tried) or, with an item selected, combines through Core's resolver; right click
 /// (or the "look" button / Backspace) looks without closing the drawer; Enter selects. A wrong pair
 /// is a complete no-op. Everything goes through <see cref="WorldInput"/>.
+/// Touch mode (<see cref="TouchMode"/>): a slot acts when the finger is lifted, so that holding the finger on it
+/// (<see cref="TouchGestures.LongPressSeconds"/>) can look at the item, as the right click does; a finger that slides
+/// (scrolling the bar) does neither. The detail card's "look" button stays as the other way. The detail card is wide
+/// and short there (icon | name, look, hint | buttons) and lies across the screen above the bar, and the bar takes the
+/// height of one row of slots: at the 200 % HUD scale of a phone the logical screen is 960x540 and the tall card of
+/// the PC layout does not fit above the bar. The hints name the touch gestures. Taking an item closes the drawer there
+/// (<see cref="LastBell.Game.World.InteractionController.Submit"/>): the drawer covers the scene, and the HUD chip shows the item in hand.
 /// </summary>
 public partial class InventoryPanel : Control
 {
@@ -39,6 +46,10 @@ public partial class InventoryPanel : Control
     private string? detailItem;
     private HudView hud = null!;
     private readonly Dictionary<string, Button> slotButtons = new(StringComparer.Ordinal);
+    private string? heldSlot;
+    private double heldSince;
+    private Vector2 heldAt;
+    private bool heldLooked;
 
     /// <summary>Wires the HUD hover source.</summary>
     public void Init(HudView hudView)
@@ -54,28 +65,54 @@ public partial class InventoryPanel : Control
         MouseFilter = MouseFilterEnum.Ignore;
 
         // Detail card (above the bar, right side)
+        bool touchUi = TouchMode.Enabled;
         detail = new PanelContainer();
-        detail.AddThemeStyleboxOverride("panel", UiTheme.PaperPanel(22));
-        var d = Ui.VBox(8);
-        var head = Ui.HBox(14);
+        detail.AddThemeStyleboxOverride("panel", UiTheme.PaperPanel(touchUi ? 16 : 22));
         detailIcon = new ItemIcon(96);
-        head.AddChild(detailIcon);
         detailName = Ui.Label("", "HeadingLabel", wrap: true);
         detailName.VerticalAlignment = VerticalAlignment.Center;
-        head.AddChild(detailName);
-        d.AddChild(head);
         detailLook = Ui.Para("", "ItalicLabel");
         detailHint = Ui.Para("", "CaptionLabel");
         detailHint.AddThemeColorOverride("font_color", UiTheme.Focus);
-        d.AddChild(detailLook);
-        d.AddChild(detailHint);
-        var actions = Ui.HBox(10);
         selectButton = Ui.Button(Ui.T("ui.inventory.select"), OnSelectButton);
         lookButton = Ui.Button(Ui.T("ui.inventory.look"), () => { if (detailItem is { } id) WorldInput.Submit(new Hit.Item(id), PointerButton.Right); });
-        actions.AddChild(selectButton);
-        actions.AddChild(lookButton);
-        d.AddChild(actions);
-        detail.AddChild(d);
+        if (touchUi)
+        {
+            // Wide and short: icon | name, look (at most three lines; "look" says the whole text), hint | buttons.
+            var row = Ui.HBox(16);
+            detailIcon.SizeFlagsVertical = SizeFlags.ShrinkCenter;
+            row.AddChild(detailIcon);
+            var texts = Ui.VBox(4);
+            texts.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+            texts.Alignment = BoxContainer.AlignmentMode.Center;
+            detailLook.MaxLinesVisible = 3;
+            detailLook.TextOverrunBehavior = TextServer.OverrunBehavior.TrimEllipsis;
+            texts.AddChild(detailName);
+            texts.AddChild(detailLook);
+            texts.AddChild(detailHint);
+            row.AddChild(texts);
+            var column = Ui.VBox(8);
+            column.Alignment = BoxContainer.AlignmentMode.Center;
+            column.AddChild(selectButton);
+            column.AddChild(lookButton);
+            row.AddChild(column);
+            detail.AddChild(row);
+        }
+        else
+        {
+            var d = Ui.VBox(8);
+            var head = Ui.HBox(14);
+            head.AddChild(detailIcon);
+            head.AddChild(detailName);
+            d.AddChild(head);
+            d.AddChild(detailLook);
+            d.AddChild(detailHint);
+            var actions = Ui.HBox(10);
+            actions.AddChild(selectButton);
+            actions.AddChild(lookButton);
+            d.AddChild(actions);
+            detail.AddChild(d);
+        }
         AddChild(detail);
 
         // Bar
@@ -141,6 +178,16 @@ public partial class InventoryPanel : Control
     public override void _Process(double delta)
     {
         if (!Visible) return;
+        if (heldSlot is { } held)
+        {
+            // Touch: a finger held on a slot looks at the item; a finger lifted elsewhere (scrolling) ends the hold.
+            if (!Input.IsMouseButtonPressed(MouseButton.Left)) heldSlot = null;
+            else if (!heldLooked && Time.GetTicksMsec() / 1000.0 - heldSince >= TouchGestures.LongPressSeconds)
+            {
+                heldLooked = true;
+                WorldInput.Submit(new Hit.Item(held), PointerButton.Right);
+            }
+        }
         Layout();
         var state = GameRuntime.Instance.State;
         string sig = string.Join(",", state.Inventory) + "|" + state.SelectedItem + "|" + showArchived + "|" + state.Done.Length;
@@ -149,6 +196,18 @@ public partial class InventoryPanel : Control
 
     private void Layout()
     {
+        if (TouchMode.Enabled)
+        {
+            // The bar as high as its title row and one row of slots; the card across the screen above it.
+            float wide = Math.Min(1700, Size.X - 40);
+            bar.CustomMinimumSize = new Vector2(wide, 0);
+            bar.ResetSize();
+            bar.Position = new Vector2((Size.X - wide) / 2, Size.Y - bar.Size.Y - 12);
+            detail.CustomMinimumSize = new Vector2(wide, 0);
+            detail.ResetSize();
+            detail.Position = new Vector2(bar.Position.X, Math.Max(8, bar.Position.Y - detail.Size.Y - 10));
+            return;
+        }
         float width = Math.Min(1700, Size.X - 60);
         float barHeight = Math.Min(300, Size.Y * 0.42f);
         bar.Size = new Vector2(width, barHeight);
@@ -255,6 +314,28 @@ public partial class InventoryPanel : Control
 
     private void OnSlotInput(string id, InputEvent e)
     {
+        if (TouchMode.Enabled && e is InputEventMouseButton { ButtonIndex: MouseButton.Left } finger && finger.Device == (int)InputEvent.DeviceIdEmulation)
+        {
+            AcceptEvent();
+            if (finger.Pressed)
+            {
+                heldSlot = id;
+                heldSince = Time.GetTicksMsec() / 1000.0;
+                heldAt = finger.GlobalPosition;
+                heldLooked = false;
+            }
+            else if (heldSlot == id)
+            {
+                heldSlot = null;
+                if (!heldLooked) WorldInput.Submit(new Hit.Item(id), PointerButton.Left);
+            }
+            return;
+        }
+        if (TouchMode.Enabled && heldSlot == id && e is InputEventMouseMotion slide && slide.GlobalPosition.DistanceTo(heldAt) > TouchGestures.SlopPx)
+        {
+            heldSlot = null; // the finger scrolls the bar
+            return;
+        }
         if (e is InputEventMouseButton { Pressed: true } mb && mb.ButtonIndex is MouseButton.Left or MouseButton.Right)
         {
             AcceptEvent();
@@ -289,8 +370,12 @@ public partial class InventoryPanel : Control
         detailLook.Text = TextService.Get(view.Look);
         // items[].purpose is a design note (what the item is for); players see only the name and Adam's look.
         bool somethingSelected = state.SelectedItem is not null;
-        detailHint.Text = view.IsSelected ? Ui.T("ui.inventory.combine_hint")
+        bool touchUi = TouchMode.Enabled; // the hints name the gestures of the device
+        detailHint.Text = view.IsSelected
+                ? (touchUi ? TouchMode.Text("ui.inventory.combine_hint_touch", "Ťukni na druhý predmet a spoja sa, alebo inventár zavri a ťukni ním na niečo v scéne.",
+                    "Tap a second item to combine them, or close the Inventory and tap it on something in the scene.") : Ui.T("ui.inventory.combine_hint"))
             : somethingSelected ? ""
+            : touchUi ? TouchMode.Text("ui.inventory.look_hint_touch", "Podržaním prsta predmet prezrieš.", "Hold your finger on the item to look at it.")
             : Ui.T("ui.inventory.look_hint");
         detailHint.Visible = detailHint.Text.Length > 0;
         selectButton.Text = view.IsSelected ? Ui.T("ui.inventory.deselect") : somethingSelected ? Ui.T("ui.inventory.combine") : Ui.T("ui.inventory.select");

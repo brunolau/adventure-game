@@ -25,13 +25,26 @@ namespace LastBell.Game.UI.Hud;
 /// <see cref="HoverChanged"/>) for the label at the cursor (<see cref="HoverLabel"/>, owner control changes 2026-10-05:
 /// no hover text in the strip any more) and the inventory drawer's hover line. The strip centre only shows the
 /// optional "hold Space" key hint. The eye button shows the markers while it is held, like Space.
+/// Touch mode (<see cref="TouchMode"/>, phones and tablets): the buttons are finger-sized (<see cref="TouchMode.HudButton"/>
+/// logical px; with the HUD scale a first start picks from the screen size that is about 9 mm) and carry their name
+/// under the glyph, because a tooltip needs a hover; the wooden band is not drawn, so the painting shows between the
+/// buttons; the two groups keep their distance from the edges of the picture in canvas px at any HUD scale; no key
+/// hint; and the eye latches: one tap shows the markers for <see cref="EyeLatchSeconds"/> s, a second tap hides them
+/// at once (a finger that holds a button down cannot tap a marker).
 /// </summary>
 public partial class HudView : Control, IHoverView
 {
     /// <summary>Height of the strip in logical px.</summary>
     public const float StripHeight = 82;
 
+    /// <summary>Touch mode: seconds the markers stay after a tap on the eye.</summary>
+    public const double EyeLatchSeconds = 6;
+
     private Control strip = null!;
+    private HBoxContainer leftGroup = null!;
+    private HBoxContainer rightGroup = null!;
+    private double eyeLatch;
+    private float edgeScale = -1;
     private Label keyHint = null!;
     private VBoxContainer centre = null!;
     private bool? narrowLayout;
@@ -66,7 +79,8 @@ public partial class HudView : Control, IHoverView
         strip.SetAnchorsAndOffsetsPreset(LayoutPreset.BottomWide);
         strip.OffsetTop = -StripHeight;
         AddChild(strip);
-        var band = new Panel { MouseFilter = MouseFilterEnum.Ignore };
+        bool touchUi = TouchMode.Enabled;
+        var band = new Panel { MouseFilter = MouseFilterEnum.Ignore, Visible = !touchUi };
         var bandStyle = new StyleBoxFlat { BgColor = new Color(UiTheme.Wood, 0.62f), BorderColor = new Color(UiTheme.Brass, 0.45f), BorderWidthTop = 2 };
         band.AddThemeStyleboxOverride("panel", bandStyle);
         band.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
@@ -74,17 +88,26 @@ public partial class HudView : Control, IHoverView
 
         // Left group (starts right of the left exit zone).
         var left = Ui.HBox(10);
+        leftGroup = left;
         left.MouseFilter = MouseFilterEnum.Ignore;
         left.SetAnchorsAndOffsetsPreset(LayoutPreset.LeftWide);
         left.OffsetLeft = 120;
-        left.OffsetTop = 8;
-        left.OffsetBottom = -8;
+        left.OffsetTop = touchUi ? 4 : 8;
+        left.OffsetBottom = touchUi ? -4 : -8;
         strip.AddChild(left);
         left.AddChild(HudButton(GlyphKind.Bag, "ui.hud.inventory", "I", () => WorldInput.Dispatch(LogicalCommand.Inventory)));
-        // Hold to show, like Space (press = markers on, release = off).
-        eyeButton = HudButton(GlyphKind.Eye, "ui.hud.show_hotspots", "Space", () => { });
-        eyeButton.ButtonDown += () => WorldInput.Dispatch(LogicalCommand.ShowMarkers);
-        eyeButton.ButtonUp += () => WorldInput.Dispatch(LogicalCommand.HideMarkers);
+        if (touchUi)
+        {
+            // Touch: the eye latches (see the class comment); two fingers held on the picture still work like Space.
+            eyeButton = HudButton(GlyphKind.Eye, "ui.hud.show_hotspots", "Space", ToggleMarkersLatch);
+        }
+        else
+        {
+            // Hold to show, like Space (press = markers on, release = off).
+            eyeButton = HudButton(GlyphKind.Eye, "ui.hud.show_hotspots", "Space", () => { });
+            eyeButton.ButtonDown += () => WorldInput.Dispatch(LogicalCommand.ShowMarkers);
+            eyeButton.ButtonUp += () => WorldInput.Dispatch(LogicalCommand.HideMarkers);
+        }
         left.AddChild(eyeButton);
 
         chip = new PanelContainer { ThemeTypeVariation = "DarkPanel", MouseFilter = MouseFilterEnum.Ignore };
@@ -120,14 +143,15 @@ public partial class HudView : Control, IHoverView
 
         // Right group (ends left of the right exit zone).
         var right = Ui.HBox(10);
+        rightGroup = right;
         right.MouseFilter = MouseFilterEnum.Ignore;
         right.Alignment = BoxContainer.AlignmentMode.End;
         right.SetAnchorsAndOffsetsPreset(LayoutPreset.RightWide);
         right.GrowHorizontal = GrowDirection.Begin;
         right.OffsetRight = -76;
         right.OffsetLeft = -560;
-        right.OffsetTop = 8;
-        right.OffsetBottom = -8;
+        right.OffsetTop = touchUi ? 4 : 8;
+        right.OffsetBottom = touchUi ? -4 : -8;
         strip.AddChild(right);
         portalButton = HudButton(GlyphKind.Clock, "ui.travel.choose_era", "T", () => PortalPressed?.Invoke());
         portalButton.Visible = false;
@@ -142,9 +166,25 @@ public partial class HudView : Control, IHoverView
 
     private static Button HudButton(GlyphKind glyph, string key, string hotkey, Action pressed)
     {
+        if (TouchMode.Enabled)
+        {
+            // Finger-sized, with the name under the glyph (no hover, so no tooltip and no key name).
+            var touch = Ui.GlyphButton(glyph, Ui.T(key), pressed, "HudButton", TouchMode.HudButton, Ui.T(key));
+            touch.FocusMode = FocusModeEnum.None;
+            foreach (var node in touch.FindChildren("*", "Label", true, false))
+                if (node is Label caption) caption.AddThemeFontSizeOverride("font_size", 15);
+            return touch;
+        }
         var button = Ui.GlyphButton(glyph, Ui.T(key) + " (" + hotkey + ")", pressed, "HudButton", UiTheme.MinHit);
         button.FocusMode = FocusModeEnum.None;
         return button;
+    }
+
+    private void ToggleMarkersLatch()
+    {
+        bool shown = GameRuntime.Instance.State.HotspotLabels;
+        eyeLatch = shown ? 0 : EyeLatchSeconds;
+        WorldInput.Dispatch(shown ? LogicalCommand.HideMarkers : LogicalCommand.ShowMarkers);
     }
 
     private static void OpenPause()
@@ -162,6 +202,14 @@ public partial class HudView : Control, IHoverView
         var game = GameRuntime.Instance;
         if (!game.IsReady) return;
         var state = game.State;
+        if (eyeLatch > 0 && (eyeLatch -= delta) <= 0) WorldInput.Dispatch(LogicalCommand.HideMarkers); // touch: the latch ran out
+        if (TouchMode.Enabled && edgeScale != UiSettings.HudScale)
+        {
+            // The same distance from the edges of the picture in canvas px at every HUD scale (a phone runs at 200 %).
+            edgeScale = UiSettings.HudScale;
+            leftGroup.OffsetLeft = 120 / edgeScale;
+            rightGroup.OffsetRight = -76 / edgeScale;
+        }
         bool show = StripWanted && state.Mode is GameMode.World or GameMode.Inventory && WorldStage.Instance?.Current is not null;
         strip.Visible = show && state.Mode == GameMode.World;
         if (!show) return;
@@ -222,7 +270,7 @@ public partial class HudView : Control, IHoverView
         }
         UpdateHintButton(delta);
         // Hidden while an item is selected: the chip and a long item name ran into the centred hint (playtest PT-F02).
-        keyHint.Visible = !narrow && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels && state.SelectedItem is null;
+        keyHint.Visible = !narrow && !TouchMode.Enabled && UiSettings.HotspotKeyHint && CurrentHover is null && !state.HotspotLabels && state.SelectedItem is null;
     }
 
     /// <summary>
