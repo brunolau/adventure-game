@@ -15,7 +15,8 @@ Milestone 5 (2026-10-05, docs/MILESTONE5.md): `build.bat` re-run on the final co
 input through the prologue. Verification and release pass (2026-10-06): rebuilt (exe 109.5 MB, PCK 186.6 MB with 2511
 files, data 81.3 MB, folder 377.4 MB), smoke-tested by real key presses (QA arguments ignored, new game, first action,
 autosave); distributable `build/m5/ship/PoslednyZvonec/` and `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip`
-(254.2 MB).
+(254.2 MB). Version 0.2.0 (2026-10-08): exe 109.5 MB, PCK 320.8 MB with 7874 files (127.9 MB voice), data 81.4 MB,
+folder 511.7 MB, `build/m5/ship/PoslednyZvonec-0.2.0-windows-x64.zip` 373.2 MB (docs/MILESTONE5.md "Version 0.2.0").
 
 ## Windows (build now)
 

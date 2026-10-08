@@ -167,7 +167,7 @@ lines the same conversation's topic menu opens again until "Ukončiť rozhovor" 
 play and while any screen is open (bag, puzzle, journal, map, pause, menus, hints, ending), at most three at once; beside
 an open topic menu only in a slot that does not touch it (PT-S22, M5-05). Screens show their own confirmations in the
 title row (`ModalScreen.ShowStatus`, e.g. "Uložené"). The main menu shows the game version from project.godot
-`application/config/version` (0.1.0; the export presets leave their version fields empty and take the same number;
+`application/config/version` (0.2.0; the Windows preset leaves its version fields empty and takes the same number, the macOS, Android and iOS presets repeat it;
 game.json `version` is the internal content data version, M5-03). Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
 two-finger hold = Space held, double tap = double click; the GUI gets emulated taps first, gestures fire on release in the world.
 

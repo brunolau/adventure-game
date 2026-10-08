@@ -24,10 +24,73 @@ docs/RELEASE.md.
 and the difficulty UI are live, Zuzana stands still in conversations, S69 is at sunset; all suites and four routes
 green (134/134), release rebuilt and smoke-tested.
 
-**Owner feedback of 2026-10-07 evening verified and released** (next section): S07, S18 / S62, S21 exits, „Pri LEALe“,
+**Owner feedback of 2026-10-07 evening verified and released** (section of that name): S07, S18 / S62, S21 exits, „Pri LEALe“,
 the female narrator; all suites green, routes A and K 134/134, release rebuilt (20:20) and smoke-tested.
 
-The sections after the next five are the record of the first milestone-5 run (2026-10-05).
+**Version 0.2.0 verified and released on 2026-10-08** (next section): the less revealing Standard / Hard texts,
+English, the voiced look texts; all suites green, routes A, EN (English) and K 134/134, Windows, Linux and macOS
+built, published as `v0.2.0`.
+
+The sections after the next six are the record of the first milestone-5 run (2026-10-05).
+
+## Version 0.2.0 (2026-10-08, verified and released)
+
+What changed since 0.1.0 (each applied by its own task, commits f9283b2c to f3fccb25):
+
+- **Standard / Hard texts** (owner: "the game is still hinting way too much…"; approved "yup, good adjustments"): 163
+  `<key>.std` variants in `src/game/localization/overrides/guidance_std.csv` (30 dialogue lines, 133 world texts).
+  `TextService.VariantKey` picks them unless the difficulty is Easy; the voice follows (`<key>.std.ogg`, 32 takes).
+- **English**: all 5,255 keys (`overrides/en.csv`, docs/translation/README.md), the language follows the system on a
+  first start, `--locale sk|en` for QA runs; English place names by the owner's rule (`tools/en_place_names.py`).
+- **Voiced look texts**: 567 keys, 390 takes (`assets/voice/aliases.json` maps repeated sentences to one take).
+- Tóno's label, the first workshop goal (docs/DECISIONS.md "Owner answers 2026-10-08").
+
+| check | result |
+|---|---|
+| Godot `--headless --import` | exit 0, 0 errors; the three `.en.translation` files re-imported with the place names |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `check_strings.py` | OK, 5255 keys, 0 errors, 0 warnings (placeholders checked in both languages) |
+| `check_rewrite.py --self-test` / `--overlay-only` | OK, 1712 overlay texts, 0 errors, 0 warnings |
+| `content_ext.py check` | OK |
+| `check_blocking.py --strict` (all 69 rooms) | 0 errors, 15 warnings (the same known ones as on 2026-10-07) |
+| `knowledge_audit.py --simulate 200` | 200 legal orders, 0 must-set violations, 0 problems, 0 unjudged |
+| `--acceptance m1` / `travel` (headless) | 34 / 4 PASS, 0 failures |
+| `--acceptance m2` (headless, x3, Standard difficulty: the `.std` lines and their voices play) | 46 PASS, 0 failures (second run, see below) |
+| Route A `--play-all` (headless, x6) | 134/134, 9 cutscenes, 5 puzzles, 18 variant layers, 27 causal effects; 0 blockers, 0 failures |
+| Route EN `--play-all --locale en --lines` (headless, x6) | 134/134 in English, 1001 lines shown, 0 blockers, 0 failures |
+| Route K `--play-all --keyboard` (headless, x8) | 134/134: 697 steps, 1982 key presses, 0 awkward, 0 blockers, 0 failures |
+| English with the final place names: `--locale en --lines --real --play 14` | 14 actions (prologue and the first of 1995), 98 lines, 0 errors; "the Grasshopper playground" shown, no Slovak spelling left in the lines |
+
+Order of the runs, said plainly: m1, travel and the three routes ran on commit f5c4bd88 (the variants and English wired
+in). The place-name commit f3fccb25 changed English texts only; after it ran the import, the static checks, m2, the
+short English run, the builds and the smoke tests. Logs: `build/verify_1008/logs/`, `build/verify_1008b/logs/`.
+
+**First m2 run failed, not a game bug (ISSUES QA-CPU-STARVE).** 32 PASS, then `AT16_skip_CS03_same_state` failed after
+`WARN lines still playing after 120s` (action.B22.k01) and AT15 stopped at `item CHAIN: no visible slot in the drawer`
+after `lines still playing after 30s` (action.F15.x01). QA runs start at below-normal priority and the harness's line
+waits count wall-clock time; at that moment other work kept every core busy (the Android staging import and export,
+and another project's test runs on the same PC), so the game got almost no CPU. Re-run alone with `--qa-priority
+normal`: 46 PASS, 0 failures, the two checks included. The release smoke test hit the same thing (no window within
+60 s at below-normal priority) and passed at normal priority.
+
+**Release (Windows).** `build.bat` 22:25-22:28, exit 0 (C# 0 warnings, 0 errors; release filters OK, 576 natural-mode
+references, 0 errors; the known `ERR_CANT_OPEN` icon pass, second pass applied). `LastBell.exe` 109.5 MB,
+`LastBell.pck` 320.8 MB (7874 files; 127.9 MB voice, the six `.translation` files), `data_LastBell_windows_x86_64/`
+81.4 MB; `build/m5/ship/PoslednyZvonec/` refreshed (511.7 MB, 190 files) and zipped:
+**`build/m5/ship/PoslednyZvonec-0.2.0-windows-x64.zip`, 373.2 MB** (373,201,659 bytes, zip test OK, sha256
+`ec878759…8e1455`). Smoke test (`build/verify_1008b/release_smoke.py`, the shipped copy, hidden window, key messages
+to that window only, the player's profile moved aside and restored): QA arguments ignored, Nová hra -> difficulty ->
+Začať hru -> S01 -> G01, autosave S01 / 2020 / [G01] / [PHONE, TOOLS]. On this PC (English Windows) the fresh profile
+started in English (`locale="en"`), as designed; the owner's own profile has `locale="sk"` and keeps it.
+
+**Linux and macOS** (`python tools/build_ports.py linux macos --skip-import`, then `verify`):
+`PoslednyZvonec-0.2.0-linux-x86_64.tar.gz` 362.2 MB (sha256 `dc043ade…a67b7d`), unpacked and started with
+`--headless --quit-after 900` in an `ubuntu:24.04` container: exit 0, no error line, `~/.local/share/LastBell`
+created. `PoslednyZvonec-0.2.0-macos.zip` 429.6 MB (sha256 `4eeaee9e…d3e48d`): bundle id eu.inviton.lastbell,
+version 0.2.0, x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK 320.6 MB; not started on a Mac.
+
+The player's save folder is identical to its backup (`build/verify_1008/saves_backup/`) after all runs. Published as
+GitHub release `v0.2.0` (three files). Paid generation in this pass: none.
 
 ## Owner feedback of 2026-10-07 evening (verified and released)
 

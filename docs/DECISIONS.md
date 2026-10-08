@@ -569,3 +569,22 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
   'metronóm má Emil' and stuff like that". Decision: Standard and Hard show less revealing `.std` versions of
   dialogue lines, goals and journal entries (design-doc/WRITING_METHOD.md "Guidance by difficulty"); Easy keeps the
   explicit texts. First pass: 163 variants over all eras (docs/writing/guidance/), waiting for the owner's approval.
+  **Approved 2026-10-08** ("yup, good adjustments"): the 163 variants are live
+  (`src/game/localization/overrides/guidance_std.csv`), 32 of them with their own voice take.
+
+### English and version 0.2.0 (owner 2026-10-08)
+
+- **English** needs no owner approval for now ("make the translations using your model so we don't use confirmation
+  for now"): translated and checked by Claude, LanguageTool en-GB on this computer, no fal.ai
+  (docs/translation/README.md). Voices stay Slovak with English subtitles; painted signs stay Slovak.
+- **English place names** ("translate the location names too … some like Ružinov turn into Ruzinov … for others like
+  Lúčny koník find a proper English name"; the list was shown and approved: "all good, go ahead"): real geographic
+  names lose their diacritics (Dubravka, Ruzinov, Petrzalka, Jasna, Cierna Voda, Chorvatsky Grob, Biela Put,
+  Sokolikova, Mileticova); names with a meaning are English (the Old Town, the Old Bridge, Kamenne Square, Lake
+  Vrbicke, the Grasshopper playground, LEAL Court, Light photo studio). People's names keep their Slovak spelling
+  (`tools/en_place_names.py`).
+- **Version 0.2.0** on GitHub Releases for Windows, Linux and macOS (approved with the same answer): English, the
+  Standard / Hard texts and the voiced look texts.
+- **Dezider's voice** stays as it is (owner: "whatever… it does not matter"). No ethnic caricature voice and no clone
+  of a real person's voice without consent.
+- **Android** build and touch controls: a separate agent, after the 0.2.0 desktop release.

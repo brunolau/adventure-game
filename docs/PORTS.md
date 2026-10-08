@@ -4,12 +4,12 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-08)
+## Status (2026-10-08, version 0.2.0)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
-| Linux x86_64 | yes | headless start in an Ubuntu 24.04 container: .NET loads (hostfxr, GodotPlugins), no errors, user folder created, exit 0 | `PoslednyZvonec-0.1.0-linux-x86_64.tar.gz`, 335.9 MB |
-| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.1.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.1.0-macos.zip`, 403.3 MB |
+| Linux x86_64 | yes | 0.2.0: start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.2.0-linux-x86_64.tar.gz`, 362.2 MB |
+| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.2.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.2.0-macos.zip`, 429.6 MB |
 | Linux arm64 | preset only | — | — |
 | Android | presets (APK, AAB, x86_64 QA APK), mobile texture staging in the script | not built yet | — |
 | iOS | preset | not possible on Windows | — |

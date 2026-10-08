@@ -18,7 +18,7 @@ Options: --skip-import (the projects are already imported), --no-lock (do not wa
 
 How it works:
 - Desktop ports export from src/game with the same release settings as Windows: release template (the QA harness is
-  off, ISSUES BUILD-03), version 0.1.0, Lossy texture import and the release export filter (tools/release_assets.py).
+  off, ISSUES BUILD-03), version 0.2.0, Lossy texture import and the release export filter (tools/release_assets.py).
 - Android and iOS export from a staging copy of the project, build/ports/_stage/src/game (git-ignored), in which
   the large painted textures (backgrounds, actor sheets, cutscenes, ambient cut-outs) are imported as Basis
   Universal instead of Lossy WebP: the GPU keeps them block-compressed (ASTC 4x4 / ETC2, 1 byte per pixel instead of
@@ -57,7 +57,7 @@ LOGS = OUT / "logs"
 STAGE = OUT / "_stage" / "src"
 STAGE_GAME = STAGE / "game"
 TOOLS = ROOT / ".tools"
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 APP = "PoslednyZvonec"
 GODOT_VERSION = "4.7.2.stable.mono"
 

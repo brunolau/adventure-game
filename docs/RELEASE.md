@@ -1,14 +1,33 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: Windows build of 2026-10-07 20:20 (rebuilt with your answers of 2026-10-07 evening: S07, S18 / S62 and S21
-exits, the room S69 renamed „Pri LEALe“ in the whole game, and the new female narrator; before that, 08:17 with the
-approved round 2 and 2026-10-06 23:14 with content v2), version 0.1.0 (the main menu and the exe say the same number).
-Language: Slovak only. Test record behind this page: `docs/MILESTONE5.md` (sections "Owner feedback of 2026-10-07
-evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification and
-release pass").
+Version: **0.2.0**, built 2026-10-08 late evening for Windows, Linux and macOS (the main menu and the exe say the same
+number), published on GitHub Releases as `v0.2.0`. Before it: 0.1.0 of 2026-10-07 20:20 (your answers of 2026-10-07
+evening: S07, S18 / S62 and S21 exits, the room S69 renamed „Pri LEALe“, the female narrator), published on
+2026-10-08 as `v0.1.0`.
+Languages: Slovak and English (voices Slovak). Test record behind this page: `docs/MILESTONE5.md` (sections "Version
+0.2.0", "Owner feedback of 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and
+release pass" and "Verification and release pass").
 
 ## In short
 
+- **New in 0.2.0 (2026-10-08):**
+  - **Standard and Hard give less away** (your note: "the game is still hinting way too much… I don't want
+    'metronóm má Emil'"; approved: "yup, good adjustments"). On these two difficulties 163 lines, goals and journal
+    entries have a second version that says what is needed, not who has it or where to go. The answer is still
+    findable in the world. Easy keeps the explicit texts. 32 of the changed lines are spoken and were re-recorded.
+  - **English.** All 5,255 texts are translated (Settings, tab "Text a titulky": *Jazyk*). A first start follows the
+    system language: Slovak or Czech gets Slovak, everything else English. A profile that already played 0.1.0 keeps
+    its language. The voices stay Slovak with English subtitles. The window title follows the language (*The Last
+    Bell*). Place names follow your rule: Dubravka, Ruzinov, Petrzalka, Jasna; the Old Town, the Old Bridge, Kamenne
+    Square, Lake Vrbicke, the Grasshopper playground, LEAL Court, Light photo studio. Painted signs stay Slovak. The
+    English was translated and checked without a human proofreader (`docs/translation/review.html` shows every text
+    in both languages).
+  - **Adam's look texts are voiced**: everything he says when you look at a room, a thing, an item or a locked exit
+    (567 texts, 390 recordings), on top of the 2,217 dialogue lines. The setting "Hovorené dialógy" switches all of
+    it.
+  - **Linux and macOS preview builds** next to the Windows one. Linux was started in an Ubuntu 24.04 container
+    without a screen; macOS was checked by its structure only, because there is no Mac here.
+  - Tóno is "Tóno" in hover labels and topic headers, and the first workshop goal no longer uses unexplained terms.
 - **Your notes of 2026-10-07 evening are in:**
   - **S07** (bus stop, 2020): the way to Potraviny cez okienko now points **down**, and behind the stop the painting
     shows small family houses of the suburb instead of open fields.
@@ -50,10 +69,10 @@ release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.1.0-windows-x64.zip` (346.8 MB). Unpacked, it is the folder
-   `PoslednyZvonec/` (482.2 MB). It holds three things that must stay together: `LastBell.exe` (109.5 MB),
-   `LastBell.pck` (291.2 MB, of it 98.9 MB voice clips) and `data_LastBell_windows_x86_64/` (81.4 MB, the C# code
-   and the .NET runtime).
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.2.0-windows-x64.zip` (373.2 MB; the same file is on the GitHub
+   release page). Unpacked, it is the folder `PoslednyZvonec/` (511.7 MB). It holds three things that must stay
+   together: `LastBell.exe` (109.5 MB), `LastBell.pck` (320.8 MB, of it 127.9 MB voice clips) and
+   `data_LastBell_windows_x86_64/` (81.4 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
 3. The exe is not code-signed, so Windows SmartScreen says "Windows protected your PC". Click "More info", then
@@ -91,13 +110,16 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
   Pri LEALe 1995), **5 puzzles**, **9 cutscenes**, an epilogue
   whose pictures follow the side quests you did, end credits, and a postgame with the album (replay the ending and
   the cutscenes).
-- About 4 790 player texts: 2 196 spoken lines, 2 113 world texts and 476 UI texts, rewritten in the Polda tone you
-  chose and approved era by era (docs/writing/approval/). The puzzles and solutions did not change; the one main step
+- 5,255 player texts in Slovak and English: 2,239 spoken lines, 2,246 world texts and 770 UI texts (163 of them the
+  less revealing Standard / Hard versions), written in the Polda tone you chose and approved era by era
+  (docs/writing/approval/). The puzzles and solutions did not change; the one main step
   that moved is the rhythm drawing (B19), now on the wall of the yard Pri LEALe.
 - Original music: one theme per period plus menu, puzzle, tension and epilogue (9 tracks). About 105 sound effects
-  and ambience loops. Subtitles for everything. Spoken lines: the voice clips in `src/game/assets/voice/` at build
-  time (2217 clips, all imported; the narrator is the female voice Callirrhoe since 2026-10-07, docs/voice/FULL.md).
-- Three difficulty levels that change only the hints (Easy / Standard / Hard, saved with each save file),
+  and ambience loops. Subtitles for everything. Spoken lines: 2,639 voice clips in `src/game/assets/voice/` (2,217
+  dialogue lines, 390 look texts, 32 Standard / Hard versions; the narrator is the female voice Callirrhoe since
+  2026-10-07, docs/voice/FULL.md).
+- Three difficulty levels (Easy / Standard / Hard, saved with each save file): they change the hints and, since
+  0.2.0, how much the texts give away,
   journal with goals and hints per step, a map with fast travel, an era chooser, 8 save slots plus an
   autosave, and settings: volumes, text speed, subtitle size and background, fullscreen/window, HUD scale, walk speed
   100/125/150 %, reduced motion, key rebinding.
@@ -109,7 +131,7 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
 | OS | Windows 10 or 11, 64-bit | Windows 11 Pro 26200 |
 | graphics | OpenGL 3.3 GPU (Godot "Compatibility" renderer), 1 GB VRAM | AMD Radeon RX 7600 |
 | memory | 4 GB RAM (the game uses about 1.2 GB) | desktop with Ryzen 9 7900X |
-| disk | 400 MB free, plus the 260 MB download | - |
+| disk | 520 MB free, plus the 373 MB download | - |
 | screen | 1280x720 or larger (16:9; other shapes get bars) | 1280x720 and 1920x1080 windows |
 
 Measured on the test PC: main menu 0.8 s after start, a room change takes about 0.7 s (fade included), 406-446 MB
@@ -171,31 +193,33 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ## What is left
 
-### macOS, Android, iOS
-All three have a ready export preset, icons and touch input. None is built or tested yet (details in
-docs/BUILD.md).
-- **macOS:** needs an Apple Developer account (USD 99/year) and a Developer ID certificate, then signing with the
-  hardened runtime and notarization. A Mac is needed to test. The C# entitlements are already set.
-- **Android:** a debug APK exported once but never ran on a device, because no arm64 phone was available. Next
-  steps: create the release keystore (keep it safe), test on a real phone (start-up, touch, saves), build an
-  `.aab` for Google Play, and lower memory use (hero sheets are about 230 MB decoded, BUILD-06; ambience at
-  mobile quality, AUDIO-07). C# on Android is experimental in Godot 4.7 and needs net9.0, which is already handled.
+### Linux, macOS, Android, iOS
+Details and the test record of each port: docs/PORTS.md.
+- **Linux x86_64 (preview, released):** `PoslednyZvonec-0.2.0-linux-x86_64.tar.gz` (362.2 MB). Started without a
+  screen in an Ubuntu 24.04 container; nobody has played it on a Linux desktop yet.
+- **macOS, Apple Silicon and Intel (preview, released):** `PoslednyZvonec-0.2.0-macos.zip` (429.6 MB). Not
+  notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
+  needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
+  test on.
+- **Android:** in work (a separate task builds the APK and the touch controls and tests them in an emulator). It
+  still needs a test on a real phone. C# on Android is experimental in Godot 4.7.
 - **iOS:** needs a Mac with Xcode, an Apple Developer team id and provisioning profiles. C# on iOS is
   experimental (NativeAOT), so check that it works.
-- Touch design still needed for all mobile ports: a finger cannot hover, so the "use X on Y" sentence needs a tap
-  equivalent (DECISIONS item 11). The HUD buttons also need a check on small phones.
 
 ### Voice acting
 - Already in the engine: when `assets/voice/<line_id>.ogg` exists, it plays on the Voice bus, the music ducks,
   and the clip stops when the line is skipped. Voice clips are installed for every spoken line (voice recast, commit
   6b6d141; the narrator recast to a female voice and the „Pri LEALe“ lines re-recorded on 2026-10-07, docs/voice/FULL.md).
-- Needed: casting and recording, or a decision on synthetic voices, for 756 dialogue lines across about 50
-  characters. Many characters appear at two or three ages (Mira, Tóno, Jana, Oto). A script per character can be
-  exported from `src/game/localization/dialogue.csv` by line id.
-- Then: lip flap timed to the clip (LIVING-03), line duration taken from the audio, and loudness mastering like
-  the music (-16 LUFS).
+- The voices are synthetic (Gemini TTS through fal.ai, each take checked by speech-to-text). Since 0.2.0 the look
+  texts and the Standard / Hard versions are voiced too. 33 look takes are flagged for a listen (docs/voice/).
+- Open: human voice actors if you want them (about 50 characters, several at two or three ages), English voices,
+  lip flap timed to the clip (LIVING-03) and loudness mastering like the music (-16 LUFS).
 
 ## Paid generation (art/spend-log.csv)
+
+Read 2026-10-08 22:40: **USD 253.51** (9294 rows). On 2026-10-08: USD 3.29 (the voices of the look texts USD 1.97,
+the GPT check of the Standard / Hard texts USD 1.09, their 32 voice takes and the Dezider auditions the rest). The
+English translation, its LanguageTool check, the ports and this verification cost nothing.
 
 Read 2026-10-07 20:25: **USD 250.11** (8228 rows). Since the morning read: the S07 painting edit (suburb houses)
 USD 0.15, the GPT check of the „Pri LEALe“ texts USD 0.06, the narrator auditions and the re-recorded lines with their
