@@ -61,7 +61,9 @@ What the script does for the Android targets:
   `APPDATA=.tools/android/godot_appdata`: a private Godot configuration with `export/android/java_sdk_path`,
   `android_sdk_path` and the debug keystore, plus a directory junction to the installed export templates. The user's
   own Godot editor settings (which point at `C:\Program Files\Java\jdk-17` and `%LOCALAPPDATA%\Android\Sdk`) are not
-  changed. The exports also use their own adb server port (5041).
+  changed. The exports also use their own adb server port (5041). The junction
+  `.tools/android/godot_appdata/Godot/export_templates/4.7.2.stable.mono` points at the real templates folder in
+  `%APPDATA%`: remove it with `rmdir`, never with a recursive delete that follows links.
 - **Signing.** `python tools/build_ports.py keystores` creates `.tools/android/lastbell-debug.keystore` and
   `lastbell-release.keystore` once; the generated release password is in `.tools/android/keystore.json`. Both stay
   out of git (`.tools/` is ignored). **Keep a copy of the release keystore and of keystore.json somewhere safe:** an
