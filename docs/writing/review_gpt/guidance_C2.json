@@ -3,7 +3,7 @@
   "model": "openai/gpt-6.1-sol-pro",
   "overrides": "docs\\writing\\guidance\\std_C2.csv",
   "overlay": [],
-  "cost_usd": 0.0406,
+  "cost_usd": 0.4458,
   "batches": {
     "B01+B02": {
       "hash": "3b05af78430bb2ac",
@@ -51,6 +51,336 @@
         }
       },
       "usd": 0.0181
+    },
+    "B05+B06": {
+      "hash": "9f1ed40c7ffa40b5",
+      "status": "ok",
+      "heading": "B05 · main quest M04 „Mechanika kazety“ | B06 · main quest M04 „Mechanika kazety“",
+      "keys": [
+        "action.B05.objective",
+        "action.B05.journal",
+        "action.B06.objective",
+        "action.B06.journal"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12334,
+        "completion_tokens": 1063,
+        "total_tokens": 13397,
+        "cost": 0.0290888,
+        "prompt_tokens_details": {
+          "cached_tokens": 3268,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0291
+    },
+    "B07": {
+      "hash": "7ca4b6f4c4327098",
+      "status": "ok",
+      "heading": "B07 · main quest M05 „Hlasy sa nerušia“",
+      "keys": [
+        "action.B07.003",
+        "action.B07.x01",
+        "action.B07.x03",
+        "action.B07.x04",
+        "action.B07.objective",
+        "action.B07.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "In the stated playback order, the greeting and request to hear the cassette come after its diagnosis. Place x01–x02 before 001, and x03–x04 directly after 003 so the follow-up question refers clearly to the two sources.",
+      "usage": {
+        "prompt_tokens": 12884,
+        "completion_tokens": 1986,
+        "total_tokens": 14870,
+        "cost": 0.0395689,
+        "prompt_tokens_details": {
+          "cached_tokens": 3189,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0396
+    },
+    "B08+B09": {
+      "hash": "2dc9317b0026df15",
+      "status": "ok",
+      "heading": "B08 · main quest M05 „Hlasy sa nerušia“ | B09 · main quest M05 „Hlasy sa nerušia“",
+      "keys": [
+        "action.B08.objective",
+        "action.B08.journal",
+        "action.B09.objective",
+        "action.B09.journal"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12972,
+        "completion_tokens": 667,
+        "total_tokens": 13639,
+        "cost": 0.0257626,
+        "prompt_tokens_details": {
+          "cached_tokens": 3606,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0258
+    },
+    "B11": {
+      "hash": "fd2e7301dc886940",
+      "status": "ok",
+      "heading": "B11 · main quest M05 „Hlasy sa nerušia“",
+      "keys": [
+        "action.B11.objective",
+        "action.B11.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 8763,
+        "completion_tokens": 137,
+        "total_tokens": 8900,
+        "cost": 0.015564,
+        "prompt_tokens_details": {
+          "cached_tokens": 2380,
+          "cache_write_tokens": 2380
+        }
+      },
+      "usd": 0.0156
+    },
+    "B13": {
+      "hash": "a1199d8269991405",
+      "status": "ok",
+      "heading": "B13 · main quest M06 „Mapa v troch kusoch“",
+      "keys": [
+        "action.B13.003",
+        "action.B13.objective",
+        "action.B13.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11114,
+        "completion_tokens": 769,
+        "total_tokens": 11883,
+        "cost": 0.0242997,
+        "prompt_tokens_details": {
+          "cached_tokens": 2957,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0243
+    },
+    "B14": {
+      "hash": "e088ceed480f4b90",
+      "status": "ok",
+      "heading": "B14 · main quest M06 „Mapa v troch kusoch“",
+      "keys": [
+        "action.B14.003",
+        "action.B14.objective",
+        "action.B14.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11080,
+        "completion_tokens": 932,
+        "total_tokens": 12012,
+        "cost": 0.0259681,
+        "prompt_tokens_details": {
+          "cached_tokens": 2901,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.026
+    },
+    "B15+B16": {
+      "hash": "47dfae477106f770",
+      "status": "ok",
+      "heading": "B15 · main quest M06 „Mapa v troch kusoch“ | B16 · main quest M06 „Mapa v troch kusoch“",
+      "keys": [
+        "action.B15.objective",
+        "action.B15.journal",
+        "action.B16.objective",
+        "action.B16.journal"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11863,
+        "completion_tokens": 663,
+        "total_tokens": 12526,
+        "cost": 0.0258158,
+        "prompt_tokens_details": {
+          "cached_tokens": 3243,
+          "cache_write_tokens": 3243
+        }
+      },
+      "usd": 0.0258
+    },
+    "B17": {
+      "hash": "ce6c6fa2ba64d58b",
+      "status": "ok",
+      "heading": "B17 · main quest M07 „Rytmus na Dunaji“",
+      "keys": [
+        "action.B17.003",
+        "action.B17.004",
+        "action.B17.objective",
+        "action.B17.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13044,
+        "completion_tokens": 2731,
+        "total_tokens": 15775,
+        "cost": 0.0491238,
+        "prompt_tokens_details": {
+          "cached_tokens": 3053,
+          "cache_write_tokens": 3053
+        }
+      },
+      "usd": 0.0491
+    },
+    "B18+B19": {
+      "hash": "0561b18b6516b6f6",
+      "status": "ok",
+      "heading": "B18 · main quest M07 „Rytmus na Dunaji“ | B19 · main quest M07 „Rytmus na Dunaji“",
+      "keys": [
+        "action.B18.objective",
+        "action.B18.journal",
+        "action.B19.objective",
+        "action.B19.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13187,
+        "completion_tokens": 371,
+        "total_tokens": 13558,
+        "cost": 0.0248172,
+        "prompt_tokens_details": {
+          "cached_tokens": 3762,
+          "cache_write_tokens": 3762
+        }
+      },
+      "usd": 0.0248
+    },
+    "B22+Q3A": {
+      "hash": "ed7b045dd2c95996",
+      "status": "ok",
+      "heading": "B22 · main quest M07 „Rytmus na Dunaji“ | Q3A · side quest Q3 „Celý tím na jednej fotke“",
+      "keys": [
+        "action.B22.objective",
+        "action.B22.journal",
+        "action.Q3A.001",
+        "action.Q3A.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13039,
+        "completion_tokens": 1207,
+        "total_tokens": 14246,
+        "cost": 0.0332872,
+        "prompt_tokens_details": {
+          "cached_tokens": 3472,
+          "cache_write_tokens": 3472
+        }
+      },
+      "usd": 0.0333
+    },
+    "Q3B+Q4A": {
+      "hash": "061ed26d12414c6f",
+      "status": "ok",
+      "heading": "Q3B · side quest Q3 „Celý tím na jednej fotke“ | Q4A · side quest Q4 „Štyri zastávky“",
+      "keys": [
+        "action.Q3B.001",
+        "action.Q3B.journal",
+        "action.Q4A.001",
+        "action.Q4A.journal"
+      ],
+      "fix": 2,
+      "conversation_note": "In Q4A, Adam's „jej“ and Emil's „ona“ have no established human referent in the supplied exchange. This is a continuity problem rather than a reason to make the reviewed clue more explicit.",
+      "usage": {
+        "prompt_tokens": 14012,
+        "completion_tokens": 2889,
+        "total_tokens": 16901,
+        "cost": 0.0520854,
+        "prompt_tokens_details": {
+          "cached_tokens": 3449,
+          "cache_write_tokens": 3449
+        }
+      },
+      "usd": 0.0521
+    },
+    "Q5A": {
+      "hash": "cb2f78ac776d91e1",
+      "status": "ok",
+      "heading": "Q5A · side quest Q5 „Mapa rozsvietených okien“",
+      "keys": [
+        "action.Q5A.002",
+        "action.Q5A.003",
+        "action.Q5A.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10324,
+        "completion_tokens": 663,
+        "total_tokens": 10987,
+        "cost": 0.0220929,
+        "prompt_tokens_details": {
+          "cached_tokens": 2729,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0221
+    },
+    "Q11A+Q11B": {
+      "hash": "2fe7b26b1dffc6c3",
+      "status": "ok",
+      "heading": "Q11A · side quest Q11 „Druhý posledný zvonec“ | Q11B · side quest Q11 „Druhý posledný zvonec“",
+      "keys": [
+        "action.Q11A.objective",
+        "action.Q11A.journal",
+        "action.Q11B.objective",
+        "action.Q11B.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12647,
+        "completion_tokens": 233,
+        "total_tokens": 12880,
+        "cost": 0.0207289,
+        "prompt_tokens_details": {
+          "cached_tokens": 3629,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0207
+    },
+    "S19": {
+      "hash": "1f7ea5620d40fcee",
+      "status": "ok",
+      "heading": "S19 · Karloveské nástupište (1995, Karlova Ves)",
+      "keys": [
+        "look.S19.EMIL"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9410,
+        "completion_tokens": 171,
+        "total_tokens": 9581,
+        "cost": 0.0169068,
+        "prompt_tokens_details": {
+          "cached_tokens": 2588,
+          "cache_write_tokens": 2588
+        }
+      },
+      "usd": 0.0169
     }
   },
   "keys": {
@@ -109,6 +439,406 @@
       "suggestion": "",
       "text": "Zožeň nový remienok rovnakého rozmeru.",
       "batch": "B04"
+    },
+    "action.B05.objective": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Vráť“ implies putting back a belt that was previously there, but this belt is new. Use a neutral placement verb.",
+      "suggestion": "Daj do magnetofónu nový remienok.",
+      "text": "Vráť do magnetofónu nový remienok.",
+      "batch": "B05+B06"
+    },
+    "action.B05.journal": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Vráť“ implies putting back a belt that was previously there, but this belt is new. Use a neutral placement verb.",
+      "suggestion": "Daj do magnetofónu nový remienok.",
+      "text": "Vráť do magnetofónu nový remienok.",
+      "batch": "B05+B06"
+    },
+    "action.B06.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi niekoho, kto vie zachrániť hlasy na páske.",
+      "batch": "B05+B06"
+    },
+    "action.B06.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi niekoho, kto vie zachrániť hlasy na páske.",
+      "batch": "B05+B06"
+    },
+    "action.B07.003": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The spoken line exceeds the hard limit of 160 characters. It can be shortened while retaining the adapter's missing parts, both sources and the jokes.",
+      "suggestion": "Tu máš krížový adaptér. Dvojpólový konektor zoženieš na trhu so súčiastkami aj historkami, chýbajúcu izoláciu u krajčírky, čo šije kabáty aj káblom.",
+      "text": "Tu máš krížový adaptér. Chýba mu dvojpólový konektor a izolácia. Konektor zoženieš na trhu, kde majú súčiastky aj historky, a izoláciu u krajčírky, čo šije kabáty aj káblom.",
+      "batch": "B07"
+    },
+    "action.B07.x01": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ahoj. Vraj tu niekto s páskami čaruje. Potrebujem, aby si si vypočul túto kazetu.",
+      "batch": "B07"
+    },
+    "action.B07.x03": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "A budú vedieť, o čo ide?",
+      "batch": "B07"
+    },
+    "action.B07.x04": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Na trhu mi predali prvý walkman a krajčírka vedľa mi obšila kábel od slúchadiel. Povedz, že ťa posielam ja.",
+      "batch": "B07"
+    },
+    "action.B07.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň pre adaptér konektor a izoláciu.",
+      "batch": "B07"
+    },
+    "action.B07.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň pre adaptér konektor a izoláciu.",
+      "batch": "B07"
+    },
+    "action.B08.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Adaptér ešte potrebuje izoláciu.",
+      "batch": "B08+B09"
+    },
+    "action.B08.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Adaptér ešte potrebuje izoláciu.",
+      "batch": "B08+B09"
+    },
+    "action.B09.objective": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Zostav hotovú” awkwardly asks the player to assemble something already described as finished. Remove the redundant adjective.",
+      "suggestion": "Zostav zvukovú prepojku.",
+      "text": "Zostav hotovú zvukovú prepojku.",
+      "batch": "B08+B09"
+    },
+    "action.B09.journal": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Zostav hotovú” awkwardly asks the player to assemble something already described as finished. Remove the redundant adjective.",
+      "suggestion": "Zostav zvukovú prepojku.",
+      "text": "Zostav hotovú zvukovú prepojku.",
+      "batch": "B08+B09"
+    },
+    "action.B11.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyskúšaj prepojku tam, kde sa kazeta dá prehrať.",
+      "batch": "B11"
+    },
+    "action.B11.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyskúšaj prepojku tam, kde sa kazeta dá prehrať.",
+      "batch": "B11"
+    },
+    "action.B13.003": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "„Treba ho uvidieť“ is awkward here: the intended action is reading the number, not merely catching sight of it.",
+      "suggestion": "Priehľadnú fóliu od nej kedysi oddelili. Jej číslo je na negatíve, len ho treba prečítať v pozitíve.",
+      "text": "Priehľadnú fóliu od nej kedysi oddelili. Jej číslo je na negatíve, len ho treba uvidieť v pozitíve.",
+      "batch": "B13"
+    },
+    "action.B13.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zisti z negatívu číslo chýbajúcej fólie.",
+      "batch": "B13"
+    },
+    "action.B13.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zisti z negatívu číslo chýbajúcej fólie.",
+      "batch": "B13"
+    },
+    "action.B14.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Tu je pozitív. Na stole je číslo K-17. Mapové prílohy sa zvyknú túlať po antikvariátoch. Negatív vrátim archívu.",
+      "batch": "B14"
+    },
+    "action.B14.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi priehľadnú fóliu s číslom K-17.",
+      "batch": "B14"
+    },
+    "action.B14.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi priehľadnú fóliu s číslom K-17.",
+      "batch": "B14"
+    },
+    "action.B15.objective": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The final position of „celú“ makes the instruction sound awkward. Place it before „mapu“ for natural Slovak word order.",
+      "suggestion": "Zlož celú mapu meracích uzlov.",
+      "text": "Zlož mapu meracích uzlov celú.",
+      "batch": "B15+B16"
+    },
+    "action.B15.journal": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The final position of „celú“ makes the instruction sound awkward. Place it before „mapu“ for natural Slovak word order.",
+      "suggestion": "Zlož celú mapu meracích uzlov.",
+      "text": "Zlož mapu meracích uzlov celú.",
+      "batch": "B15+B16"
+    },
+    "action.B16.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zisti, čo znamenajú miesta na mape.",
+      "batch": "B15+B16"
+    },
+    "action.B16.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zisti, čo znamenajú miesta na mape.",
+      "batch": "B15+B16"
+    },
+    "action.B17.003": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "At 135 characters, the spoken line exceeds the approximate 110-character target. It can be tightened without making the clue more explicit.",
+      "suggestion": "Metronóm nosí každý poriadny muzikant, aj keď hrá električkám. Mira tri číslice deťom na múr nakreslila, nenapísala.",
+      "text": "Lepší bude metronóm. Ten nosí každý poriadny muzikant, aj ten, čo hrá električkám. A tri číslice Mira nenapísala, nakreslila ich deťom na múr.",
+      "batch": "B17"
+    },
+    "action.B17.004": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Múr s obrázkami. V Dúbravke ich je viac, ako by človek chcel. Pri jednom som ako žiak hľadal loptu až do tmy.",
+      "batch": "B17"
+    },
+    "action.B17.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň mechanický rytmus a nájdi tri číslice, ktoré Mira nakreslila na múr.",
+      "batch": "B17"
+    },
+    "action.B17.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň mechanický rytmus a nájdi tri číslice, ktoré Mira nakreslila na múr.",
+      "batch": "B17"
+    },
+    "action.B18.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Priprav meranie na Starom moste.",
+      "batch": "B18+B19"
+    },
+    "action.B18.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Priprav meranie na Starom moste.",
+      "batch": "B18+B19"
+    },
+    "action.B19.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Číslice 3–2–6 mám zapísané. Ešte treba nájsť, kde sa nastavujú.",
+      "batch": "B18+B19"
+    },
+    "action.B19.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Číslice 3–2–6 mám zapísané. Ešte treba nájsť, kde sa nastavujú.",
+      "batch": "B18+B19"
+    },
+    "action.B22.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyber sa do Ivanky v roku 1962 a nájdi Ota Bielika.",
+      "batch": "B22+Q3A"
+    },
+    "action.B22.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyber sa do Ivanky v roku 1962 a nájdi Ota Bielika.",
+      "batch": "B22+Q3A"
+    },
+    "action.Q3A.001": {
+      "verdict": "fix",
+      "category": "joke",
+      "problem": "The closing paradox feels tacked on rather than arising from Soňa's missing photograph. Tie the kiosk's supposed reputation directly to her frustration.",
+      "suggestion": "Fotka nášho družstva sa stratila niekde medzi ateliérom a kioskom. Pri kiosku vraj nájdu všetko. Len našu fotku nie.",
+      "text": "Fotka nášho družstva sa stratila niekde medzi ateliérom a kioskom. Pri kiosku sa vraj všetko nájde skôr, ako sa to stratí.",
+      "batch": "B22+Q3A"
+    },
+    "action.Q3A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Soňa hľadá fotografiu družstva. Stratila sa niekde medzi ateliérom a kioskom.",
+      "batch": "B22+Q3A"
+    },
+    "action.Q3B.001": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "The last sentence awkwardly describes whether someone will look at the negative, rather than whether anything can be seen on it before development.",
+      "suggestion": "Soňa ťa posiela? Nech sa páči, obálka s negatívom družstva. Bez vyvolania na ňom nič neuvidíš.",
+      "text": "Soňa ťa posiela? Nech sa páči, obálka s negatívom družstva. Na negatív sa však nikto nepozrie, kým ho niekto nevyvolá.",
+      "batch": "Q3B+Q4A"
+    },
+    "action.Q3B.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zita mi dala obálku s negatívom družstva. Treba ho vyvolať.",
+      "batch": "Q3B+Q4A"
+    },
+    "action.Q4A.001": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The spoken line exceeds the approximate 110-character target. It can be tightened while retaining the information and Emil's gentle image.",
+      "suggestion": "„Štyri zastávky“, moja skladba. Koniec som zapísal do knihy a tú predal do antikvariátu. Vraj tam knihy nemiznú, len čakajú.",
+      "text": "Štyri zastávky, moja vlastná skladba. Koniec som mal zapísaný v knihe a tú som predal do antikvariátu. Knihy sa tam vraj nestrácajú, len čakajú.",
+      "batch": "Q3B+Q4A"
+    },
+    "action.Q4A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Emil predal knihu s koncom svojej skladby do antikvariátu.",
+      "batch": "Q3B+Q4A"
+    },
+    "action.Q5A.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Biela krieda po krabiciach… To mi niečo pripomína.",
+      "batch": "Q5A"
+    },
+    "action.Q5A.003": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ale len s dovolením, prosím. Nechcem, aby kvôli mne niekde niečo chýbalo.",
+      "batch": "Q5A"
+    },
+    "action.Q5A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Jurajovi došla biela krieda na mapu svetiel. Bielu vraj berú školy po krabiciach.",
+      "batch": "Q5A"
+    },
+    "action.Q11A.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi vrchnák Kubovho zvončeka.",
+      "batch": "Q11A+Q11B"
+    },
+    "action.Q11A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi vrchnák Kubovho zvončeka.",
+      "batch": "Q11A+Q11B"
+    },
+    "action.Q11B.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť vrchnák na Kubov zvonček.",
+      "batch": "Q11A+Q11B"
+    },
+    "action.Q11B.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť vrchnák na Kubov zvonček.",
+      "batch": "Q11A+Q11B"
+    },
+    "look.S19.EMIL": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Emil drží tempo, aj keď mesto okolo neho nie. Na puzdre mu pritom tiká metronóm.",
+      "batch": "S19"
     }
   },
   "unreviewed": []

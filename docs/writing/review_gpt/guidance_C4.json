@@ -1,0 +1,283 @@
+{
+  "chunk": "C4",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\guidance\\std_C4.csv",
+  "overlay": [],
+  "cost_usd": 0.1072,
+  "batches": {
+    "F01": {
+      "hash": "4ffe07567bb0fe5f",
+      "status": "ok",
+      "heading": "F01 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.F01.005",
+        "action.F01.objective",
+        "action.F01.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11035,
+        "completion_tokens": 1344,
+        "total_tokens": 12379,
+        "cost": 0.0302527,
+        "prompt_tokens_details": {
+          "cached_tokens": 2767,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0303
+    },
+    "F03+F04": {
+      "hash": "728bfb7aebfa319d",
+      "status": "ok",
+      "heading": "F03 · main quest M12 „Prístup do Atlasu“ | F04 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.F03.objective",
+        "action.F03.journal",
+        "action.F04.objective",
+        "action.F04.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11813,
+        "completion_tokens": 319,
+        "total_tokens": 12132,
+        "cost": 0.0204871,
+        "prompt_tokens_details": {
+          "cached_tokens": 3331,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0205
+    },
+    "J02+J04": {
+      "hash": "f44f09ff15d66c5f",
+      "status": "ok",
+      "heading": "J02 · main quest M12 „Prístup do Atlasu“ | J04 · main quest M12 „Prístup do Atlasu“",
+      "keys": [
+        "action.J02.objective",
+        "action.J02.journal",
+        "action.J04.objective",
+        "action.J04.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 10923,
+        "completion_tokens": 225,
+        "total_tokens": 11148,
+        "cost": 0.0182801,
+        "prompt_tokens_details": {
+          "cached_tokens": 3061,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0183
+    },
+    "F06+F07": {
+      "hash": "431972c3ac858b84",
+      "status": "ok",
+      "heading": "F06 · main quest M12 „Prístup do Atlasu“ | F07 · main quest M13 „Zastaviť zápis“",
+      "keys": [
+        "action.F06.objective",
+        "action.F06.journal",
+        "action.F07.objective",
+        "action.F07.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11740,
+        "completion_tokens": 225,
+        "total_tokens": 11965,
+        "cost": 0.0193992,
+        "prompt_tokens_details": {
+          "cached_tokens": 3332,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0194
+    },
+    "F08+F09": {
+      "hash": "0780a59edc07b85b",
+      "status": "ok",
+      "heading": "F08 · main quest M13 „Zastaviť zápis“ | F09 · main quest M13 „Zastaviť zápis“",
+      "keys": [
+        "action.F08.objective",
+        "action.F08.journal",
+        "action.F09.objective",
+        "action.F09.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11258,
+        "completion_tokens": 225,
+        "total_tokens": 11483,
+        "cost": 0.0187392,
+        "prompt_tokens_details": {
+          "cached_tokens": 3172,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0187
+    }
+  },
+  "keys": {
+    "action.F01.005": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The spoken line exceeds the preferred length of about 110 characters. The final phrase also awkwardly attaches the ticket to the service pass rather than listing it as a separate requirement.",
+      "suggestion": "Viktor Korman, náš zakladateľ. Varovala som ho, no nevypol ho. Do pavilónu treba čítačku na kazetu, kartu fondu, servisný preukaz a lístok.",
+      "text": "Viktor Korman, náš zakladateľ. Nevypol ho ani po mojom varovaní. Do pavilónu sa dostanete s čítačkou na kazetu, kartou fondu a servisným preukazom s lístkom.",
+      "batch": "F01"
+    },
+    "action.F01.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň čítačku, kartu fondu Z-17, servisný preukaz a lístok na lanovku.",
+      "batch": "F01"
+    },
+    "action.F01.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň čítačku, kartu fondu Z-17, servisný preukaz a lístok na lanovku.",
+      "batch": "F01"
+    },
+    "action.F03.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vybav si servisný preukaz a lístok na lanovku.",
+      "batch": "F03+F04"
+    },
+    "action.F03.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vybav si servisný preukaz a lístok na lanovku.",
+      "batch": "F03+F04"
+    },
+    "action.F04.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyber sa lanovkou k pavilónu.",
+      "batch": "F03+F04"
+    },
+    "action.F04.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyber sa lanovkou k pavilónu.",
+      "batch": "F03+F04"
+    },
+    "action.J02.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pokračuj na Chopok.",
+      "batch": "J02+J04"
+    },
+    "action.J02.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pokračuj na Chopok.",
+      "batch": "J02+J04"
+    },
+    "action.J04.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Rotunde sa pozri, čo Atlas ukazuje verejne, a potom choď do servisného pavilónu.",
+      "batch": "J02+J04"
+    },
+    "action.J04.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Pri Rotunde sa pozri, čo Atlas ukazuje verejne, a potom choď do servisného pavilónu.",
+      "batch": "J02+J04"
+    },
+    "action.F06.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zachyť pri Vrbickom plese miestnu referenčnú stopu.",
+      "batch": "F06+F07"
+    },
+    "action.F06.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zachyť pri Vrbickom plese miestnu referenčnú stopu.",
+      "batch": "F06+F07"
+    },
+    "action.F07.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dones referenčnú stopu do pavilónu.",
+      "batch": "F06+F07"
+    },
+    "action.F07.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dones referenčnú stopu do pavilónu.",
+      "batch": "F06+F07"
+    },
+    "action.F08.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zastav spätný zápis.",
+      "batch": "F08+F09"
+    },
+    "action.F08.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zastav spätný zápis.",
+      "batch": "F08+F09"
+    },
+    "action.F09.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dostaň sa do chronokomory.",
+      "batch": "F08+F09"
+    },
+    "action.F09.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dostaň sa do chronokomory.",
+      "batch": "F08+F09"
+    }
+  },
+  "unreviewed": []
+}

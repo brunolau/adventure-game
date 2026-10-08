@@ -1,0 +1,471 @@
+{
+  "chunk": "C3",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\guidance\\std_C3.csv",
+  "overlay": [],
+  "cost_usd": 0.2206,
+  "batches": {
+    "I01": {
+      "hash": "0667f7b3e7f1d1c7",
+      "status": "ok",
+      "heading": "I01 · main quest M08 „Ručná pumpa“",
+      "keys": [
+        "action.I01.003",
+        "action.I01.objective",
+        "action.I01.journal"
+      ],
+      "fix": 1,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11427,
+        "completion_tokens": 1467,
+        "total_tokens": 12894,
+        "cost": 0.0320995,
+        "prompt_tokens_details": {
+          "cached_tokens": 2855,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0321
+    },
+    "I05+I06": {
+      "hash": "834a022dc7ff8623",
+      "status": "ok",
+      "heading": "I05 · main quest M08 „Ručná pumpa“ | I06 · main quest M08 „Ručná pumpa“",
+      "keys": [
+        "action.I05.objective",
+        "action.I05.journal",
+        "action.I06.objective",
+        "action.I06.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9855,
+        "completion_tokens": 225,
+        "total_tokens": 10080,
+        "cost": 0.016811,
+        "prompt_tokens_details": {
+          "cached_tokens": 2710,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0168
+    },
+    "I07": {
+      "hash": "a7be5c99c5a2d49f",
+      "status": "ok",
+      "heading": "I07 · main quest M08 „Ručná pumpa“",
+      "keys": [
+        "action.I07.objective",
+        "action.I07.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9513,
+        "completion_tokens": 137,
+        "total_tokens": 9650,
+        "cost": 0.0167196,
+        "prompt_tokens_details": {
+          "cached_tokens": 2626,
+          "cache_write_tokens": 2626
+        }
+      },
+      "usd": 0.0167
+    },
+    "I09": {
+      "hash": "524ebec25cafbfc5",
+      "status": "ok",
+      "heading": "I09 · main quest M09 „Pôvodná veta“",
+      "keys": [
+        "action.I09.005",
+        "action.I09.objective",
+        "action.I09.journal"
+      ],
+      "fix": 3,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12540,
+        "completion_tokens": 1452,
+        "total_tokens": 13992,
+        "cost": 0.0334763,
+        "prompt_tokens_details": {
+          "cached_tokens": 3223,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0335
+    },
+    "I16+I17": {
+      "hash": "75730e872b9ec8b9",
+      "status": "ok",
+      "heading": "I16 · main quest M10 „Dokument musí prežiť“ | I17 · main quest M10 „Dokument musí prežiť“",
+      "keys": [
+        "action.I16.objective",
+        "action.I16.journal",
+        "action.I17.objective",
+        "action.I17.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12896,
+        "completion_tokens": 225,
+        "total_tokens": 13121,
+        "cost": 0.0228424,
+        "prompt_tokens_details": {
+          "cached_tokens": 3714,
+          "cache_write_tokens": 3714
+        }
+      },
+      "usd": 0.0228
+    },
+    "E01+E02": {
+      "hash": "e3fc1a913d54bb9a",
+      "status": "ok",
+      "heading": "E01 · main quest M11B „Človek, ktorý si to zapamätá“ | E02 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E01.objective",
+        "action.E01.journal",
+        "action.E02.objective",
+        "action.E02.journal"
+      ],
+      "fix": 2,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 14360,
+        "completion_tokens": 786,
+        "total_tokens": 15146,
+        "cost": 0.0289363,
+        "prompt_tokens_details": {
+          "cached_tokens": 4023,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0289
+    },
+    "E08+E10": {
+      "hash": "1e104b5e4fae83d1",
+      "status": "ok",
+      "heading": "E08 · main quest M11B „Človek, ktorý si to zapamätá“ | E10 · main quest M11B „Človek, ktorý si to zapamätá“",
+      "keys": [
+        "action.E08.objective",
+        "action.E08.journal",
+        "action.E10.objective",
+        "action.E10.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13410,
+        "completion_tokens": 225,
+        "total_tokens": 13635,
+        "cost": 0.0216923,
+        "prompt_tokens_details": {
+          "cached_tokens": 3883,
+          "cache_write_tokens": 0
+        }
+      },
+      "usd": 0.0217
+    },
+    "Q6A+Q7A": {
+      "hash": "6998726d96feb533",
+      "status": "ok",
+      "heading": "Q6A · side quest Q6 „Béla sa vracia“ | Q7A · side quest Q7 „Žiaden strach, miláčik“",
+      "keys": [
+        "action.Q6A.001",
+        "action.Q6A.journal",
+        "action.Q7A.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 11192,
+        "completion_tokens": 551,
+        "total_tokens": 11743,
+        "cost": 0.0236212,
+        "prompt_tokens_details": {
+          "cached_tokens": 3052,
+          "cache_write_tokens": 3052
+        }
+      },
+      "usd": 0.0236
+    },
+    "Q10A+Q10B": {
+      "hash": "d64a50dcd34d3ef8",
+      "status": "ok",
+      "heading": "Q10A · side quest Q10 „Prvý posledný zvonec“ | Q10B · side quest Q10 „Prvý posledný zvonec“",
+      "keys": [
+        "action.Q10A.objective",
+        "action.Q10A.journal",
+        "action.Q10B.objective",
+        "action.Q10B.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 13438,
+        "completion_tokens": 306,
+        "total_tokens": 13744,
+        "cost": 0.0245236,
+        "prompt_tokens_details": {
+          "cached_tokens": 3866,
+          "cache_write_tokens": 3866
+        }
+      },
+      "usd": 0.0245
+    }
+  },
+  "keys": {
+    "action.I01.003": {
+      "verdict": "fix",
+      "category": "length",
+      "problem": "The spoken line is well over the approximate 110-character target and packs several instructions into one turn. It can be shortened somewhat without removing any facts.",
+      "suggestion": "Mira je pri prístroji. Najprv opravte ručnú pumpu. Tu je lístok; kožu a nity vydajú na dvore. Dierovač majú tí, čo v sále šijú kostýmy.",
+      "text": "Mira je pri prístroji. Najprv však treba opraviť ručnú pumpu. Tu je lístok na kožu a nity, vydajú vám ich na dvore. Dierovač majú tí, čo v sále šijú kostýmy.",
+      "batch": "I01"
+    },
+    "action.I01.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav ručnú pumpu: potrebuješ manžetu, nity a dierovač.",
+      "batch": "I01"
+    },
+    "action.I01.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav ručnú pumpu: potrebuješ manžetu, nity a dierovač.",
+      "batch": "I01"
+    },
+    "action.I05.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav ručnú pumpu.",
+      "batch": "I05+I06"
+    },
+    "action.I05.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav ručnú pumpu.",
+      "batch": "I05+I06"
+    },
+    "action.I06.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Daj Otovi vedieť, že pumpa ťahá.",
+      "batch": "I05+I06"
+    },
+    "action.I06.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Daj Otovi vedieť, že pumpa ťahá.",
+      "batch": "I05+I06"
+    },
+    "action.I07.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dostaň sa do meracej miestnosti.",
+      "batch": "I07"
+    },
+    "action.I07.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Dostaň sa do meracej miestnosti.",
+      "batch": "I07"
+    },
+    "action.I09.005": {
+      "verdict": "fix",
+      "category": "unnatural",
+      "problem": "“Niekto úradný” is not a natural way to refer to an official. The spoken line is also long; tighten it without removing any instructions.",
+      "suggestion": "Urob odtlačok platne. Treba voskovaný papier a niečo tupé, čo neškriabe. Tu je registračný list. Úradník musí potvrdiť dátum. Kópiu uložíme.",
+      "text": "Urob odtlačok platne. Treba na to voskovaný papier a niečo tupé, čo neškriabe. A tu je registračný list: niekto úradný musí potvrdiť dátum, kópiu uložíme.",
+      "batch": "I09"
+    },
+    "action.I09.objective": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The comma unnecessarily separates “v dvoch vyhotoveniach” from the registration form it qualifies.",
+      "suggestion": "Urob čitateľný odtlačok platne a daj úradne potvrdiť registračný list v dvoch vyhotoveniach.",
+      "text": "Urob čitateľný odtlačok platne a daj úradne potvrdiť registračný list, v dvoch vyhotoveniach.",
+      "batch": "I09"
+    },
+    "action.I09.journal": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The comma unnecessarily separates “v dvoch vyhotoveniach” from the registration form it qualifies.",
+      "suggestion": "Urob čitateľný odtlačok platne a daj úradne potvrdiť registračný list v dvoch vyhotoveniach.",
+      "text": "Urob čitateľný odtlačok platne a daj úradne potvrdiť registračný list, v dvoch vyhotoveniach.",
+      "batch": "I09"
+    },
+    "action.I16.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ulož doklady tam, kde ich Mira chce mať v bezpečí.",
+      "batch": "I16+I17"
+    },
+    "action.I16.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ulož doklady tam, kde ich Mira chce mať v bezpečí.",
+      "batch": "I16+I17"
+    },
+    "action.I17.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť sa k Mire do roku 2020.",
+      "batch": "I16+I17"
+    },
+    "action.I17.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vráť sa k Mire do roku 2020.",
+      "batch": "I16+I17"
+    },
+    "action.E01.objective": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The verb „presvedčiť“ cannot naturally take an „odkiaľ“ clause directly. Use a verb that accepts this clause.",
+      "suggestion": "Dokáž Tónovi, odkiaľ prichádzaš.",
+      "text": "Presvedč Tóna, odkiaľ prichádzaš.",
+      "batch": "E01+E02"
+    },
+    "action.E01.journal": {
+      "verdict": "fix",
+      "category": "grammar",
+      "problem": "The verb „presvedčiť“ cannot naturally take an „odkiaľ“ clause directly. Use a verb that accepts this clause.",
+      "suggestion": "Dokáž Tónovi, odkiaľ prichádzaš.",
+      "text": "Presvedč Tóna, odkiaľ prichádzaš.",
+      "batch": "E01+E02"
+    },
+    "action.E02.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyrob rezervný mostík a s Tónom ho ukry tak, aby vydržal do roku 2020.",
+      "batch": "E01+E02"
+    },
+    "action.E02.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Vyrob rezervný mostík a s Tónom ho ukry tak, aby vydržal do roku 2020.",
+      "batch": "E01+E02"
+    },
+    "action.E08.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zariaď, aby mladá lipa prežila.",
+      "batch": "E08+E10"
+    },
+    "action.E08.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zariaď, aby mladá lipa prežila.",
+      "batch": "E08+E10"
+    },
+    "action.E10.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Over si v roku 1995, či si Tóno dohodu pamätá.",
+      "batch": "E08+E10"
+    },
+    "action.E10.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Over si v roku 1995, či si Tóno dohodu pamätá.",
+      "batch": "E08+E10"
+    },
+    "action.Q6A.001": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Béla zostal v parku a obyčajné zrno nechce. Jeho zmes vydávajú tam, kde sa v Ivanke všetko vydáva na lístok.",
+      "batch": "Q6A+Q7A"
+    },
+    "action.Q6A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Alojzov holub Béla zostal v parku. Potrebuje svoju zmes.",
+      "batch": "Q6A+Q7A"
+    },
+    "action.Q7A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Rudo požičal scenár Mire ako podložku pod nákresy.",
+      "batch": "Q6A+Q7A"
+    },
+    "action.Q10A.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň kúsok kože na pútko.",
+      "batch": "Q10A+Q10B"
+    },
+    "action.Q10A.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň kúsok kože na pútko.",
+      "batch": "Q10A+Q10B"
+    },
+    "action.Q10B.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav Zuzanin zvonček.",
+      "batch": "Q10A+Q10B"
+    },
+    "action.Q10B.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Oprav Zuzanin zvonček.",
+      "batch": "Q10A+Q10B"
+    }
+  },
+  "unreviewed": []
+}

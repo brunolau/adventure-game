@@ -33,7 +33,7 @@ def live() -> dict[str, str]:
 
 def main() -> None:
     sk = live()
-    with (LOC / "overrides/guidance_std.csv").open(encoding="utf-8", newline="") as h:
+    with (ROOT / "docs/writing/guidance/guidance_std.draft.csv").open(encoding="utf-8", newline="") as h:
         variants = {r["keys"][:-4]: r for r in csv.DictReader(h)}
     cards: list[dict] = []
     seen: set[str] = set()
