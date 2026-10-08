@@ -224,3 +224,29 @@ same `Tr(key)` / Slovak-fallback path as every other text.
   (`--check-decisions` passes), the read-through done, review notes written.
 - check_strings OK, tests green, the headless line dump read.
 - Spend logged in `art/spend-log.csv`.
+
+## Guidance by difficulty (owner 2026-10-08, binding)
+
+The owner: "the game is still hinting way too much in the texts and dialogues [middle difficulty]. It basically tells
+me what to do next". So every text the player sees **without asking for a hint** follows these rules on Standard and
+Hard; Easy keeps the explicit base text.
+
+- **Where:** a less revealing version of a base key goes into `src/game/localization/overrides/guidance_std.csv` as
+  `<key>.std` (keys,sk,note). The game shows it unless the difficulty is Easy (`TextService.VariantKey`), and the
+  voice-over plays `<key>.std.ogg` for it. English: the same `.std` key in the English source.
+- **Characters say what is needed, not who has it, where, or with what.** At most one vague pointer per line (a kind of
+  place, a trade, a description), never name + place + item together. Example (the owner's): not „Lepší bude metronóm,
+  má ho Emil v Karlovej Vsi.“ but „Lepší bude metronóm. Ten nosí každý poriadny muzikant, aj ten, čo hrá električkám.“
+- **The answer must stay findable in the world**: an exit label, a look text, another character's topic, a sign. When a
+  pointer is removed from a line, add the clue somewhere the player will plausibly look (e.g. look.S19.EMIL.std: the
+  metronome ticking on Emil's case). Never remove the only path.
+- **Adam does not solve it out loud** ("Pali spomínal Jura z klubu v Ružinove…" → "Pali spomínal niekoho, kto s páskami
+  čaruje").
+- **Goals (objective / journal) say what to achieve, not how or where** („Zožeň mechanický rytmus a nájdi tri číslice,
+  ktoré Mira nakreslila na múr.“).
+- **The knowledge rule still holds on the Standard path**: a `.std` line that drops a name means later lines may not use
+  that name either until someone introduces it (e.g. B07.x01.std: Adam does not know Juro's name yet).
+- Optional conversation topics may still answer a direct question the player chose to ask; the hint screen
+  (nudge / where) is the player's own request and stays as it is.
+- Same stack: Claude writes → GPT language check (`tools/gpt_review.py --instruction docs/writing/guidance/gpt_instruction.txt`)
+  → Claude decides → the owner approves → apply. Worksheet: `tools/spoiler_audit.py` → docs/writing/guidance/spoilers.md.

@@ -562,3 +562,10 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
 - **Known flaws** (S69 people in daylight colours, non-Slovak crowd murmur, far exit labels): accepted for now.
 - **Next:** ports to macOS, Linux, Android and iOS (one agent); English translation drafted by Claude and checked by
   Claude without fal.ai (another agent), text in art "variablized" where sensible.
+
+### Guidance by difficulty (owner 2026-10-08)
+
+- Owner: "the game is still hinting way too much in the texts and dialogues [middle difficulty]… I don't want
+  'metronóm má Emil' and stuff like that". Decision: Standard and Hard show less revealing `.std` versions of
+  dialogue lines, goals and journal entries (design-doc/WRITING_METHOD.md "Guidance by difficulty"); Easy keeps the
+  explicit texts. First pass: 163 variants over all eras (docs/writing/guidance/), waiting for the owner's approval.

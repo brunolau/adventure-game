@@ -10,6 +10,7 @@ one retake only when its transcript differed in meaning. No Whisper and no GPT w
   organised by era and scene in play order, and each scene has a "Play scene" button. The flagged lines come first,
   then the casting table and the child/age audition. There are filters for era, speaker, flagged only, dry irony only
   and hiding the prologue.
+- **Looks and items (2026-10-08):** 567 look-bubble keys (390 takes, 37.5 min). See „Looks and items“ below.
 - **Files:** `art/voice/full/<line_id>.ogg` (1,983 new lines plus the 4 re-rendered prologue SYSTEM lines),
   `art/voice/full/manifest.json` (all 2,217 spoken lines, the prologue included), `casting.json`, `flags.json`,
   `lines.json` (the extracted script), `audition/`.
@@ -23,6 +24,85 @@ one retake only when its transcript differed in meaning. No Whisper and no GPT w
   - `gen_full.py` handles `gen`, `report`, `recheck`, `retake`, `rerender`, `finalize` and `install`.
   - `manifest_full.py` and `build_full_page.py` build the manifest and the page.
   - These reuse `voice_lib.py`, `recast.py` (text check) and `casting.py` (the prologue casting and the irony prompt).
+
+## Looks and items (2026-10-08): „Pohľady a predmety“
+
+Everything Adam says in a look bubble is voiced now. All of it is Adam (Achird) with his existing direction. The
+recast's dry-irony sentence ("a touch of dry irony, understated …") goes only on the clearly ironic looks: 119 of 390
+takes, almost all of them room looks. The place names shown when looking at an open exit are not voiced.
+
+| kind | keys | takes | min |
+|---|---|---|---|
+| room looks `look.*` | 254 | 254 | 24.3 |
+| changed looks later in the story (`look.*.variantN`) | 24 | 24 | 2.4 |
+| inventory item descriptions `item.<ID>` | 83 | 83 | 8.8 |
+| locked exits `exit.*.locked` | 130 | 18 | 1.3 |
+| locked routes `conn.*.locked` | 65 | 0 (all 13 sentences equal an exit sentence) | – |
+| puzzle solved / wrong answer `puzzle.P0n.success / .wrong` | 10 | 10 | 0.8 |
+| „Tadiaľto neprejdem.“ `ui.system.path_blocked` | 1 | 1 | 0.0 |
+| **total** | **567** | **390** | **37.5** |
+
+**Same sentence, one take.** The 177 keys whose text equals an earlier key's text get no file of their own. The game
+reads them from `src/game/assets/voice/aliases.json` (key → file stem, for example
+`"conn.S02.S03.locked": "exit.S01.to_S02.locked"`).
+
+**Method.** It is the same as for the dialogue: Gemini 3.8 Flash TTS, one ElevenLabs Scribe v2 check per take, and
+exactly one retake when the transcript differed in meaning. That was 56 retakes. Post-processing was trim, −16 LUFS
+(−16.0 to −16.6) and OGG. The text comes from the live tables (`world.csv`, `ui.csv`), which is what `TextService`
+shows. These spoken forms were added to `gen_full.SPOKEN`, and none of them occurs in a dialogue line:
+
+- „ČSSR“ → „čé-es-es-er“
+- „ZVONom“ → „Zvonom“
+- „3 × 4“, „0–9“, „9–17“ and „3–2–6“ are spelled out in words.
+
+- **Tools:**
+  - `extract_full.py` writes `art/voice/full/looks.json` (`write_looks`).
+  - `looks_full.py gen | report | retake | finalize | install` reuses gen_full's take, check and render. It has its own
+    spend scope `voice/full/looks/` with `--cap 3` and its raw takes in `art/voice/raw/full/looks/`.
+  - `manifest_full.py` adds the `looks` list, `counts_looks` and the flags to `manifest.json` and `flags.json`, and
+    the `look_*` counts to Adam's row in `casting.json`.
+- **Page:** `docs/voice/full.html` has a new section "Pohľady a predmety" right after the summary. It lists the flagged
+  takes first, then one card per kind with play buttons and "Play all", and filters for kind, flagged and dry irony.
+- **Result:**
+  - 291 of 390 takes are verbatim.
+  - **33 are flagged:** 24 still differ in meaning after the one retake, 7 have a filler word, 1 has a long pause and
+    1 is the „LEALe“ ear check.
+  - Many of the 24 are Scribe misspelling names („Alojz“ → „Alois“, „Mirin“ → „Miriam“, „Bélovej“ → „Bellovej“) or
+    joining words („pre neho“ → „preňho“).
+  - **Listen to these first:**
+    - `look.S01.ambient 1`: „Neroztriedené“ heard as „No roztriedené“, which flips the joke.
+    - `item.ORIGIN_RAW`: „Miry a Ota“ heard as „Miriota“.
+    - `item.LOG1982`: „Otov nákres“.
+    - `exit.S48.to_S50.locked`: „Na terasu“ heard as „A teraz sa“.
+    - `item.CONNECTOR`: „Od Fera“.
+    - `look.S58.ambient 2`: „Ktorý je rok“ heard as „Kedy je rok“.
+    - `look.S50.switch`: „mení“ heard as „zmení“.
+    - `exit.S47.to_S48.locked`: „od Sáry“.
+    - `look.S54.ambient 2`: „potom hry“.
+    - `look.S03.ambient 2`: „Elinej“.
+- **Game:**
+  - `DialoguePresenter.ShowBark` (room looks, an item's "look" in the inventory, locked exits, the path-blocked line)
+    plays the voice through `AudioService.PlayLook(textKey)`. This respects „Hovorené dialógy“ and the Voice bus.
+  - The bubble stays at least as long as the voice (+0.4 s).
+  - `HideBark` stops the voice with `AudioService.StopVoice(key)`, which stops only that key. Another line's voice
+    replaces it.
+  - The puzzle's wrong answer is spoken by `PuzzleModal` and stops when the draft changes or the modal closes.
+  - The success line (the preface line) is voiced by its text key.
+  - Harness: `--input look:<hotspot | exit | item id>`.
+  - Not covered: the Standard/Hard `.std` text variants that the guidance work added the same day, among them two
+    looks (`look.S03.supplies.std`, `look.S19.EMIL.std`). `AudioService` looks up the `.std` key, finds no file, and
+    stays silent, so a bubble never plays the wrong sentence. To voice them, add the keys to `write_looks` and run
+    `looks_full.py gen`.
+- **Check:**
+  - Godot import ran through the lock, and every OGG has its `.import`.
+  - A headless harness run with `--voice-over on` logged `AUDIO voice <key>` for 10 hotspot looks in S05 and S69, 3
+    items (TOOLS, GROCERIES, PHONE) and 2 locked exits (S05.to_S06, S05.to_S09). With `off`, it logged
+    `AUDIO voice off <key>` for the same 15.
+  - An aliased exit (`exit.S06.to_S05.locked`, which uses the file `exit.S05.to_S06.locked`) also played.
+  - `dotnet test`: 506 passed, 3 skipped.
+- **Spend:** $1.97 logged under `voice/full/looks/` (cap $3). That is 393 first takes, 3 of them lost to a stalled
+  download or a Scribe HTTP 500 and taken again, 57 retakes and 446 Scribe checks. Computed per kept call it is
+  $1.90.
 
 ## Round 2 (2026-10-07, evening): female narrator and „Pri LEALe“
 
@@ -134,7 +214,7 @@ What was not voiced:
 
 - the 234 prologue lines whose text is unchanged (they stay as approved);
 - Bodka's 3 `Haf!` lines (non-verbal);
-- looks, UI and the journal.
+- UI and the journal. Looks were added on 2026-10-08; see „Looks and items“ above.
 
 Three prologue lines changed in the knowledge drafts and were regenerated with the recast voices (Adam / Ela / Mira):
 `topic.ELA.extra 2.001`, `topic.ELA.extra 2.002`, `action.G05.x04`.
@@ -149,7 +229,7 @@ Three prologue lines changed in the knowledge drafts and were regenerated with t
 | epilogue | 11 |
 | **total** | **1,983** lines, 101,600 characters, **129 min** of audio |
 
-The game now has 2,217 spoken lines in all, about 2 h 25 min of audio.
+The game now has 2,217 spoken lines in all, about 2 h 25 min of audio. The look bubbles of 2026-10-08 add 567 keys (390 takes, 37.5 min), so the total is about 3 h 2 min.
 
 Nine lines are the **same take reused**, because the same person says the same words. Examples: Adam's tape line
 `action.F13.002` is the very recording of `cutscene.CS02.01.002`, and short repeats such as "A vy?" or "Sú pracovné."
@@ -338,7 +418,8 @@ not play in the game.
 | Scribe v2: 2,170 checks | 1.23 |
 | **Total, computed per call** | **6.45** |
 | Round 2 (narrator audition, narrator and „Pri LEALe“ re-voice), logged under `voice/full/r2/` | 0.10 |
+| Looks and items (390 takes + 56 retakes + Scribe), logged under `voice/full/looks/`, cap 3 | 1.97 |
 | Logged in `art/spend-log.csv` under `voice/full/` (each row rounded to 3 decimals; includes about 16 takes lost when a first run hit a post-processing bug and was stopped and resumed) | 6.48 (6.58 with round 2) |
 | Cap | 15.00 |
 
-Trial, recast and full voice-over together come to ≈ $11.0, round 2 included.
+Trial, recast and full voice-over together come to ≈ $11.0, round 2 included; ≈ $13.0 with the looks.

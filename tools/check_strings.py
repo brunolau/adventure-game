@@ -137,6 +137,9 @@ def check_scheme(game: dict, tables: dict[str, dict[str, list[str]]], findings: 
     retired = overlay.retired_keys if overlay is not None else ()
     overlay_keys = overlay.added_keys if overlay is not None else ()
     effective, applied, stale = tk.apply_sk_overrides(tk.iter_text_entries(game), overrides, retired, overlay_keys)
+    variants, variant_problems = tk.load_guidance_variants()  # Standard/Hard texts (<key>.std)
+    effective, _variant_keys, variant_add_problems = tk.add_guidance_variants(effective, variants)
+    problems = problems + variant_problems + variant_add_problems
     for problem in problems + stale:
         findings.error(problem)
     if applied:

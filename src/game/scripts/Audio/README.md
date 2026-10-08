@@ -46,6 +46,12 @@ before auto-advancing (`AudioService.VoicePlaying`). The epilogue shots play `ep
 `AudioService.PlayVoice(id)` (EndingSequence). Settings → Audio "Hovorené dialógy" (`UiSettings.VoiceOver`, saved as
 `audio/voice_over`, default on): off = no voice line plays (log `AUDIO voice off <id>`), so lines advance on the text
 timing only. Harness override for one run: `-- --voice-over off`. Files and casting: `docs/voice/FULL.md`.
+Look bubbles speak too (2026-10-08): `DialoguePresenter.ShowBark` (room looks, item descriptions from the inventory's
+"look", locked exits, "Tadiaľto neprejdem.") calls `AudioService.PlayLook(textKey)`, keeps the bubble at least as long as
+the voice and stops it when the bubble closes (`AudioService.StopVoice(key)` stops only that key); the puzzle's wrong
+answer is spoken by `PuzzleModal`, its success line as the preface line (voice keyed by its text key). Identical
+sentences share one file through `res://assets/voice/aliases.json` (text key → file stem). Harness: `--input look:<id>`
+(a hotspot or exit of the room, or a carried item).
 
 ## API for other code
 

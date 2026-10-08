@@ -308,7 +308,51 @@ public partial class AudioService : Node
     private void OnLineShown(SubtitleLine line)
     {
         if (line.Line.IsCutscene) cutsceneId = line.Line.SourceId;
-        PlayVoiceLine(line.Line.LineId);
+        // A preface line (the puzzle's success line) has no line id of its own: its voice is keyed by its text key.
+        PlayVoiceLine(line.Line.LineId == DialoguePresenter.PrefaceLineId ? line.Line.Text.Key : line.Line.LineId);
+    }
+
+    /// <summary>
+    /// Speaks a look bubble (room look, item description, locked exit, "path blocked", the puzzle's wrong answer) by
+    /// its text key, like a dialogue line (setting, Voice bus, ducking). Returns the voice length in seconds, so the
+    /// bubble can stay at least that long; 0 when nothing plays (voice-over off, or no file for the key).
+    /// </summary>
+    public static float PlayLook(string? key)
+    {
+        if (Instance is not { } s) return 0f;
+        s.PlayVoiceLine(key);
+        return s.voiceLength;
+    }
+
+    /// <summary>Length in seconds of the voice line the last <see cref="PlayVoiceLine"/> started (0 when it started none).</summary>
+    private float voiceLength;
+
+    /// <summary>Stops the voice when it is still speaking <paramref name="key"/> (the bubble closed); another line's voice keeps playing.</summary>
+    public static void StopVoice(string? key)
+    {
+        if (Instance is { } s && !string.IsNullOrEmpty(key) && s.voiceLine == TextService.VariantKey(key)) s.StopVoice();
+    }
+
+    /// <summary>
+    /// Text keys that share one recording with another key (assets/voice/aliases.json, key → file stem): the same
+    /// sentence on many locked exits is one take, not a copy per key.
+    /// </summary>
+    private Dictionary<string, string>? voiceAliases;
+
+    private string VoiceFile(string lineId)
+    {
+        if (voiceAliases is null)
+        {
+            voiceAliases = new Dictionary<string, string>(StringComparer.Ordinal);
+            const string aliasPath = "res://assets/voice/aliases.json";
+            if (FileAccess.FileExists(aliasPath))
+            {
+                var parsed = Json.ParseString(FileAccess.GetFileAsString(aliasPath));
+                if (parsed.VariantType == Variant.Type.Dictionary)
+                    foreach (var (k, v) in parsed.AsGodotDictionary()) voiceAliases[k.AsString()] = v.AsString();
+            }
+        }
+        return voiceAliases.TryGetValue(lineId, out var file) ? file : lineId;
     }
 
     /// <summary>
@@ -320,18 +364,21 @@ public partial class AudioService : Node
 
     private void PlayVoiceLine(string? lineId)
     {
+        if (!string.IsNullOrEmpty(lineId)) lineId = TextService.VariantKey(lineId); // Standard/Hard: the .std recording
         voiceLine = lineId;
-        string path = $"voice/{lineId}.ogg";
+        string path = string.IsNullOrEmpty(lineId) ? "" : $"voice/{VoiceFile(lineId)}.ogg";
         if (UiSettings.VoiceOver && !string.IsNullOrEmpty(lineId) && AudioStreams.Exists(path) && AudioStreams.GetOneShot(path) is { } stream)
         {
             voice.Stream = stream;
             voice.Play();
+            voiceLength = (float)stream.GetLength();
             music.SetDuck(-5f);
             Log($"voice {lineId}");
         }
         else
         {
             if (!UiSettings.VoiceOver && !string.IsNullOrEmpty(lineId) && AudioStreams.Exists(path)) Log($"voice off {lineId}");
+            voiceLength = 0f;
             StopVoice();
         }
     }

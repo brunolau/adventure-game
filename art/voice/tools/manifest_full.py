@@ -187,6 +187,18 @@ def build() -> dict:
             encoding="utf-8"))["skipped"],
         "lines": out,
     }
+    # 2026-10-08: the look bubbles (looks_full.py): own list, so the scene layout of the spoken lines stays as it was
+    import looks_full
+    if (FULL / "looks.json").exists():
+        looks, lflags, lcounts, lmissing = looks_full.manifest_part(flag_of)
+        man["about"] += (" 2026-10-08: the look bubbles (room looks, changed looks, item descriptions, locked exits and "
+                         "routes, puzzle lines, path blocked) are in 'looks', all Adam; identical sentences share one "
+                         "take (alias_of; the game reads src/game/assets/voice/aliases.json).")
+        man["looks"], man["counts_looks"], man["missing_looks"] = looks, lcounts, lmissing
+        flags.update(lflags)
+        if "ADAM" in casting:
+            casting["ADAM"].update(look_keys=lcounts["keys"], look_takes=lcounts["takes"],
+                                   look_irony_takes=lcounts["irony"], look_minutes=lcounts["minutes"])
     (FULL / "manifest.json").write_text(json.dumps(man, ensure_ascii=False, indent=1), encoding="utf-8")
     (FULL / "casting.json").write_text(json.dumps(casting, ensure_ascii=False, indent=1), encoding="utf-8")
     (FULL / "flags.json").write_text(json.dumps(flags, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -216,3 +228,6 @@ def install() -> None:
         n += 1
         copied.append(e["line_id"])
     print("copied", n, "changed files to", G.GAME, f"({same} identical, untouched):", copied[:20])
+    if man.get("looks"):
+        import looks_full
+        looks_full.install()

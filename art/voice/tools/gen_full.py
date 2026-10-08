@@ -51,6 +51,13 @@ SPOKEN = {
     "Z-17": "zet sedemnásť",
     "K-17": "ká sedemnásť",
     "„cca“": "cé cé á",
+    # look texts (2026-10-08, looks_full.py); none of these occurs in a dialogue line
+    "ČSSR": "čé-es-es-er",
+    "ZVONom": "Zvonom",
+    "3 × 4": "tri krát štyri",
+    "0–9": "nula až deväť",
+    "9–17": "deväť až sedemnásť",
+    "3–2–6": "tri – dva – šesť",
 }
 
 

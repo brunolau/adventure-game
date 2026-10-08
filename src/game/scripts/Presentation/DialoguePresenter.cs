@@ -35,6 +35,7 @@ public partial class DialoguePresenter : Node
     private float lineElapsed;
     private Actor? speakingActor;
     private float barkLeft;
+    private string? barkVoice;
     private string? cutsceneId;
     private int cutsceneBeat = -1;
     private bool menuOpen;
@@ -334,7 +335,10 @@ public partial class DialoguePresenter : Node
 
     // ------------------------------------------------------------------ barks (looks)
 
-    /// <summary>Shows a non-blocking look text above the speaker (normally the hero).</summary>
+    /// <summary>
+    /// Shows a non-blocking look text above the speaker (normally the hero) and speaks it (voice keyed by the text key,
+    /// <see cref="LastBell.Game.Audio.AudioService.PlayLook"/>); the bubble stays at least as long as the voice.
+    /// </summary>
     public void ShowBark(TextRef text, string speakerId)
     {
         string translated = TextService.Get(text);
@@ -343,6 +347,8 @@ public partial class DialoguePresenter : Node
         var actor = room?.FindActor(speakerId) ?? room?.Hero;
         var anchor = actor?.HeadPosition ?? new Vector2(960, 700);
         float seconds = PresentationSettings.HoldSecondsFor(translated) + 0.6f;
+        barkVoice = text.Key;
+        seconds = Math.Max(seconds, LastBell.Game.Audio.AudioService.PlayLook(text.Key) + 0.4f);
         barkLeft = seconds;
         View.ShowBark(new BarkLine(translated, speakerId, anchor, seconds));
     }
@@ -354,6 +360,8 @@ public partial class DialoguePresenter : Node
     public void HideBark()
     {
         barkLeft = 0;
+        LastBell.Game.Audio.AudioService.StopVoice(barkVoice);
+        barkVoice = null;
         View.HideBark();
     }
 

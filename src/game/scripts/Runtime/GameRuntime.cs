@@ -136,6 +136,7 @@ public partial class GameRuntime : Node
         Instance = this;
         ProcessMode = ProcessModeEnum.Always;
         LastBell.Game.Diagnostics.QaWindow.ApplyBackgroundMode(); // QA runs: off-screen, no focus (owner request)
+        TextService.ReducedGuidance = () => Session is not null && State.Difficulty != Difficulty.Easy;
         if (TranslationServer.GetLocale() is var locale && !locale.StartsWith("sk")) TranslationServer.SetLocale("sk");
         LoadContent();
     }

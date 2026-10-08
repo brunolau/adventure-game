@@ -2,7 +2,7 @@
 
 Self-contained (inline CSS/JS, data embedded); the OGG files are referenced by relative paths
 (../../art/voice/full/<line_id>.ogg, prologue: ../../art/voice/trial/<line_id>.ogg), so open it locally.
-Sections: summary, the lines re-voiced on 2026-10-07 (before/now) with the narrator audition, flagged lines, casting table (family voices, ages), the child/age audition, then every era
+Sections: summary, the look bubbles of 2026-10-08 („Pohľady a predmety“, flagged first), the lines re-voiced on 2026-10-07 (before/now) with the narrator audition, flagged lines, casting table (family voices, ages), the child/age audition, then every era
 and scene in play order with "play scene" (plays the scene's lines in sequence).
 """
 from __future__ import annotations
@@ -96,6 +96,21 @@ Slovak direction), checked once by ElevenLabs Scribe v2. Open this file locally:
   <label><input type="checkbox" id="fNew"> hide prologue</label>
   <button class="ghost" id="stop">Stop</button>
 </div>
+
+<h2 id="looks">Pohľady a predmety (8. 10. 2026)</h2>
+<p class="sub">Everything Adam says in a look bubble: room looks, looks that change later in the story, inventory item
+descriptions, locked exits and routes, the puzzle lines and „Tadiaľto neprejdem.“ Adam's voice (Achird) with his direction;
+a touch of dry irony only on the clearly ironic ones. The same sentence is one take shared by every key that shows it.
+The flagged takes come first. Not voiced: the place names shown when looking at an open exit.</p>
+<div class="kpis" id="lkpis"></div>
+<div class="bar" style="position:static">
+  <label>Kind <select id="lKind"><option value="">all</option></select></label>
+  <label><input type="checkbox" id="lFlag"> only flagged</label>
+  <label><input type="checkbox" id="lIrony"> only dry irony</label>
+</div>
+<h3 style="margin-top:14px">Flagged (listen first)</h3>
+<div class="scenecard" id="lookflags"></div>
+<div id="lookkinds"></div>
 
 <h2 id="r2">New on 7 October 2026: a female narrator and „Pri LEALe“</h2>
 <p class="sub">The owner asked for a female narrator with a more interested, engaged tone (it was the male voice Charon), and
@@ -210,6 +225,56 @@ const audBody = AUD.map(r => { const chosen = CAST[r.role] && CAST[r.role].voice
   '</td><td><button class="play aud" data-src="../../art/voice/full/audition/' + encodeURIComponent(r.tag) + '.ogg">' + PLAY + '</button></td><td class="stt">' + esc(r.stt) + '</td></tr>'; });
 $('#aud tbody').innerHTML = audBody.join('');
 document.querySelectorAll('button.aud').forEach(b => b.onclick = () => { stop(); player.src = b.dataset.src; player.play(); });
+// look bubbles (2026-10-08)
+const LOOKS = MAN.looks || [];
+const LC = MAN.counts_looks || null;
+const KIND_ORDER = ['look', 'look_changed', 'item', 'locked_exit', 'locked_route', 'puzzle', 'system'];
+const lookTakes = LOOKS.filter(l => !l.alias_of);
+const usedBy = {}; LOOKS.forEach(l => { const t = l.alias_of || l.line_id; (usedBy[t] = usedBy[t] || []).push(l); });
+lookTakes.forEach(l => byId[l.line_id] = l);
+if (LC) {
+  $('#lkpis').innerHTML = [[LC.keys, 'keys voiced'], [LC.takes, 'distinct takes'], [LC.minutes + ' min', 'audio'],
+    [LC.flagged, 'flagged'], [LC.retaken, 'retakes'], [LC.irony, 'dry irony'], ['$' + LC.spend_logged_usd.toFixed(2), 'spend (logged)']]
+    .map(([b, s]) => '<div class="kpi"><b>' + esc(b) + '</b><span>' + esc(s) + '</span></div>').join('');
+} else { $('#looks').classList.add('hidden'); }
+function lookRow(l){
+  const keys = usedBy[l.line_id] || [l];
+  const tags = [];
+  tags.push('<span class="tag">' + esc(l.kind_label) + '</span>');
+  if (l.delivery) tags.push('<span class="tag irony">dry irony</span>');
+  if (l.stt && l.stt.flag) tags.push('<span class="tag flag">check: ' + esc(l.stt.flag) + '</span>');
+  if (l.retaken) tags.push('<span class="tag">retake</span>');
+  tags.push('<span class="tag">' + esc(l.voice) + ' · ' + l.duration_s.toFixed(1) + ' s</span>');
+  if (l.scene) tags.push('<span class="tag">' + esc(l.scene + ' ' + (l.scene_name || '')) + '</span>');
+  const keyList = keys.length > 1 ? '<div class="stt">' + keys.length + ' keys: ' + esc(keys.map(k => k.line_id).join(', ')) + '</div>'
+    : '<div class="stt">' + esc(l.line_id) + (l.label ? ' · ' + esc(l.label) : '') + '</div>';
+  const stt = (l.stt && l.stt.flag) ? '<div class="stt">Scribe: ' + esc(l.stt.scribe_v2) + '</div>' : '';
+  return '<div class="row" data-id="' + esc(l.line_id) + '" data-kind="' + esc(l.kind) + '" data-flag="' + (l.stt && l.stt.flag ? 1 : 0) +
+    '" data-irony="' + (l.delivery ? 1 : 0) + '"><button class="play" title="play">' + PLAY + '</button><div class="txt">' + esc(l.text) +
+    '<div class="tags">' + tags.join('') + '</div>' + keyList + stt + '</div></div>';
+}
+const lflagged = lookTakes.filter(l => l.stt && l.stt.flag).sort((a, b) =>
+  ((b.stt.meaning_errors || []).length > 0) - ((a.stt.meaning_errors || []).length > 0));
+$('#lookflags').innerHTML = (lflagged.length ? '' : '<div class="row">No flagged look lines.</div>') + lflagged.map(lookRow).join('');
+let lhtml = '';
+KIND_ORDER.forEach(k => { const ls = lookTakes.filter(l => l.kind === k); if (!ls.length) return;
+  const nkeys = LOOKS.filter(l => l.kind === k).length, mins = ls.reduce((a, l) => a + l.duration_s, 0) / 60;
+  lhtml += '<div class="scenecard" data-kind="' + k + '"><div class="scenehead"><div><h3>' + esc(ls[0].kind_label) + '</h3><small>' + nkeys +
+    ' keys · ' + ls.length + ' takes · ' + mins.toFixed(1) + ' min</small></div><button class="scene">Play all</button></div>';
+  let sc = null;
+  ls.forEach(l => { if (l.scene !== sc && (k === 'look' || k === 'look_changed' || k === 'locked_exit')) { sc = l.scene;
+    lhtml += '<div class="block">' + esc((l.scene || '') + ' · ' + (l.scene_name || '')) + '</div>'; } lhtml += lookRow(l); });
+  lhtml += '</div>'; });
+$('#lookkinds').innerHTML = lhtml;
+KIND_ORDER.forEach(k => { const l = lookTakes.find(x => x.kind === k); if (!l) return;
+  const o = document.createElement('option'); o.value = k; o.textContent = l.kind_label; $('#lKind').appendChild(o); });
+function applyLookFilters(){
+  const k = $('#lKind').value;
+  document.querySelectorAll('#lookkinds .row, #lookflags .row[data-id]').forEach(r => r.classList.toggle('hidden',
+    !((!k || r.dataset.kind === k) && (!$('#lFlag').checked || r.dataset.flag === '1') && (!$('#lIrony').checked || r.dataset.irony === '1'))));
+  document.querySelectorAll('#lookkinds .scenecard').forEach(c => c.classList.toggle('hidden', !c.querySelector('.row:not(.hidden)')));
+}
+['lKind', 'lFlag', 'lIrony'].forEach(id => $('#' + id).addEventListener('change', applyLookFilters));
 // eras and scenes
 const eras = []; const scenes = {};
 MAN.lines.forEach(l => { const e = String(l.era); if (!eras.includes(e)) eras.push(e);
@@ -276,6 +341,8 @@ def main() -> None:
     slim["lines"] = [{k: v for k, v in l.items() if k not in ("style_instructions", "tts_text", "text_sha1")}
                      for l in man["lines"]]
     slim.pop("skipped", None)
+    if man.get("looks"):
+        slim["looks"] = [{k: v for k, v in l.items() if k not in ("tts_text", "text_sha1")} for l in man["looks"]]
     page = (HTML.replace("__MANIFEST__", json.dumps(slim, ensure_ascii=False))
             .replace("__CASTING__", json.dumps(cast, ensure_ascii=False))
             .replace("__AUDITION__", json.dumps(aud, ensure_ascii=False))

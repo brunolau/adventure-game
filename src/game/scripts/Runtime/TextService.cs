@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Godot;
 using LastBell.Core.Text;
@@ -12,10 +13,32 @@ namespace LastBell.Game.Runtime;
 /// </summary>
 public static class TextService
 {
-    /// <summary>Translated text of <paramref name="key"/>, else <paramref name="fallback"/>.</summary>
+    /// <summary>Suffix of the less revealing Standard/Hard version of a text (localization/overrides/guidance_std.csv).</summary>
+    public const string StdSuffix = ".std";
+
+    /// <summary>
+    /// True when the game shows the less revealing <c>&lt;key&gt;.std</c> texts: on Standard and Hard difficulty (owner
+    /// 2026-10-08, "the game is hinting way too much in the texts and dialogues"). Set by GameRuntime; Easy keeps the base texts.
+    /// </summary>
+    public static Func<bool>? ReducedGuidance { get; set; }
+
+    /// <summary>
+    /// The key actually shown for <paramref name="key"/>: its <c>.std</c> variant when <see cref="ReducedGuidance"/> is on and
+    /// the variant exists in the tables, else the key itself. The voice-over uses the same key for its file name.
+    /// </summary>
+    public static string VariantKey(string key)
+    {
+        if (string.IsNullOrEmpty(key) || key.EndsWith(StdSuffix) || ReducedGuidance?.Invoke() != true) return key;
+        string variant = key + StdSuffix;
+        string translated = TranslationServer.Translate(variant).ToString();
+        return string.IsNullOrEmpty(translated) || translated == variant ? key : variant;
+    }
+
+    /// <summary>Translated text of <paramref name="key"/> (its Standard/Hard variant when shown), else <paramref name="fallback"/>.</summary>
     public static string Get(string key, string fallback = "")
     {
         if (string.IsNullOrEmpty(key)) return fallback ?? "";
+        key = VariantKey(key);
         string translated = TranslationServer.Translate(key).ToString();
         if (string.IsNullOrEmpty(translated) || translated == key) return fallback ?? "";
         return translated;

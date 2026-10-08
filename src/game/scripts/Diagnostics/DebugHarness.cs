@@ -19,7 +19,7 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--room &lt;id&gt;</c>, <c>--replay &lt;n&gt;</c>, <c>--play &lt;n&gt;</c> (walkthrough actions up to step n through the input path),
 /// <c>--act &lt;actionId&gt;</c> (repeatable),
 /// <c>--screenshot &lt;path.png&gt;</c>, <c>--frames &lt;k&gt;</c>, <c>--interval &lt;ms&gt;</c>, <c>--wait &lt;ms&gt;</c>,
-/// <c>--input key:Inventory|select:ITEM|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
+/// <c>--input key:Inventory|select:ITEM|look:ID|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>dblclick</c>/<c>move</c>/<c>keyev</c>/<c>keydown</c>/<c>keyup</c> inject real input events through Godot's pipeline, GUI first),
 /// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--perf [n]</c> / <c>--no-preload</c> (PerfProbe.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
 /// <c>--markers</c> (Space markers on, as if Space were held), <c>--clips</c> (log each NPC's clip per screenshot frame), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--voice-over on|off</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
@@ -297,6 +297,17 @@ public partial class DebugHarness : Node
                 break;
             case "select":
                 WorldInput.Submit(new Hit.Item(value), PointerButton.Left); // as the inventory UI does
+                break;
+            case "look":
+                // Right click (look) on a carried item, an exit or a hotspot of the room by id, as the inventory's
+                // "look" button and the world's right click do (voice-over QA of the look bubbles).
+                {
+                    var game = GameRuntime.Instance;
+                    Hit hit = game.State.Has(value) ? new Hit.Item(value)
+                        : game.Content.GetRoom(game.State.Room).Exits.Any(e => e.Id == value) ? new Hit.Exit(value)
+                        : new Hit.Hotspot(value);
+                    WorldInput.Submit(hit, PointerButton.Right);
+                }
                 break;
             case "portal":
                 // What the era chooser does on choice.

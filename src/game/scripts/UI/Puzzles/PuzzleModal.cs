@@ -28,6 +28,7 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
     private VBoxContainer controlHost = null!;
     private Label clue = null!;
     private Label feedback = null!;
+    private string? wrongVoice;
     private Button confirm = null!;
     private Button reset = null!;
     private Button fill = null!;
@@ -117,6 +118,7 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
     /// <inheritdoc />
     public void Close()
     {
+        LastBell.Game.Audio.AudioService.StopVoice(wrongVoice);
         Dismiss();
         if (control is not null) control.Changed -= StoreDraft;
         control = null;
@@ -154,6 +156,7 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
         var draft = control.Draft;
         game.Update(s => LastBell.Core.Rules.Puzzles.UpdateDraft(game.Content, s, id, draft));
         feedback.Text = "";
+        LastBell.Game.Audio.AudioService.StopVoice(wrongVoice);
     }
 
     private void Submit()
@@ -170,6 +173,8 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
         else
         {
             feedback.Text = shown;
+            wrongVoice = result.Feedback.Key; // Adam says the wrong-answer line (stops when the feedback clears)
+            LastBell.Game.Audio.AudioService.PlayLook(wrongVoice);
             if (!Settings.UiSettings.ReducedMotion)
             {
                 feedback.Modulate = new Color(1, 1, 1, 0.2f);

@@ -668,6 +668,11 @@ def read_table(path: Path) -> tuple[list[str], list[list[str]]]:
 # still equals the row's "game_json" column. If game.json changes that text, the override is stale and
 # both tools report it (review the rewrite). The folder carries a .gdignore, so Godot does not import it.
 SK_OVERRIDES = LOCALIZATION_DIR / "overrides" / "sk_overrides.csv"
+# Less revealing texts for Standard and Hard difficulty (owner 2026-10-08: "the game is hinting way too much in the
+# texts and dialogues"): <base key>.std rows; the game shows them unless the difficulty is Easy (TextService.VariantKey).
+GUIDANCE_VARIANTS = LOCALIZATION_DIR / "overrides" / "guidance_std.csv"
+VARIANT_SUFFIX = ".std"
+VARIANT_HEADER = ("keys", "sk", "note")
 OVERRIDE_HEADER = ("keys", "game_json", "sk", "note")
 
 
@@ -752,3 +757,61 @@ def effective_game(game_path: Path = CANONICAL_GAME_JSON, use_overlays: bool = T
     import content_ext  # noqa: E402  (same folder)
     overlay = content_ext.load_effective_game(game_path, use_overlays=use_overlays)
     return overlay.game, overlay
+
+
+def load_guidance_variants(path: Path = GUIDANCE_VARIANTS) -> tuple[dict[str, str], list[str]]:
+    """Read the Standard/Hard variants ({key}.std -> sk). A missing file means no variants."""
+    if not path.exists():
+        return {}, []
+    try:
+        header, rows = read_table(path)
+    except ValueError as error:
+        return {}, [str(error)]
+    if tuple(header) != VARIANT_HEADER:
+        return {}, [f"{path.name}: header must be exactly {','.join(VARIANT_HEADER)!r}, got {','.join(header)!r}"]
+    variants: dict[str, str] = {}
+    problems: list[str] = []
+    for line_no, row in enumerate(rows, start=2):
+        if len(row) != len(VARIANT_HEADER):
+            problems.append(f"{path.name}:{line_no}: expected {len(VARIANT_HEADER)} fields, got {len(row)}")
+            continue
+        key, sk, _note = row
+        if not key.endswith(VARIANT_SUFFIX):
+            problems.append(f"{path.name}:{line_no}: {key!r} must end with {VARIANT_SUFFIX!r}")
+        elif key in variants:
+            problems.append(f"{path.name}:{line_no}: duplicate key {key!r}")
+        elif not sk.strip():
+            problems.append(f"{path.name}:{line_no}: {key!r}: empty text")
+        else:
+            variants[key] = sk
+    return variants, problems
+
+
+def add_guidance_variants(entries: Iterable[TextEntry], variants: dict[str, str]
+                          ) -> tuple[list[TextEntry], list[str], list[str]]:
+    """Entries with each <base>.std variant inserted right after its base key (same table and speaker)."""
+    from dataclasses import replace
+
+    entries = list(entries)
+    base_keys = {e.key for e in entries}
+    by_base: dict[str, str] = {}
+    problems: list[str] = []
+    for key, sk in variants.items():
+        base = key[: -len(VARIANT_SUFFIX)]
+        if base not in base_keys:
+            problems.append(f"guidance variant {key!r}: base key {base!r} does not exist")
+        else:
+            by_base[base] = key
+    result, added = [], []
+    for entry in entries:
+        result.append(entry)
+        vkey = by_base.get(entry.key)
+        if vkey is None:
+            continue
+        if variants[vkey] == entry.text:
+            problems.append(f"guidance variant {vkey!r}: same text as the base key")
+            continue
+        result.append(replace(entry, key=vkey, text=variants[vkey], field=entry.field + VARIANT_SUFFIX,
+                              source=entry.source + VARIANT_SUFFIX, line_id=None, extension=True))
+        added.append(vkey)
+    return result, added, problems

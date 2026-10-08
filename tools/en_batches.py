@@ -169,7 +169,7 @@ def cmd_check(_a) -> int:
             errs.append(f"{k}: placeholders/markup differ: {PLACEHOLDER.findall(sk[k])} vs {PLACEHOLDER.findall(en)}")
         if re.search(r"[áäčďéíĺľňóôŕšťúýž]", en.lower()) and not k.startswith(("char.", "room.", "hotspot.")):
             words = re.findall(r"\b\w*[áäčďéíĺľňóôŕšťúýžÁČĎÉÍĽŇÓŠŤÚÝŽ]\w*\b", en)
-            allow = set(json.loads(GLOSSARY.read_text(encoding="utf-8")).get("spellcheck_allow", [])) | {"café", "cafés", "naïve", "déjà", "façade"}
+            allow = set(json.loads(GLOSSARY.read_text(encoding="utf-8")).get("spellcheck_allow", [])) | {"café", "cafés", "naïve", "déjà", "façade", "š", "lángos", "život"}
             odd = [w for w in words if w not in allow and not w[0].isupper()]
             if odd:
                 errs.append(f"{k}: lowercase Slovak-looking words {odd}")

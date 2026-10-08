@@ -201,6 +201,9 @@ def main() -> int:
     overrides, override_problems = tk.load_sk_overrides(args.overrides)
     entries, overridden, stale = tk.apply_sk_overrides(entries, overrides, overlay.retired_keys, overlay.added_keys)
     override_problems += stale
+    variants, variant_problems = tk.load_guidance_variants()
+    entries, variant_keys, variant_add_problems = tk.add_guidance_variants(entries, variants)
+    override_problems += variant_problems + variant_add_problems
     id_hits = find_internal_ids(entries, game)
 
     tables = {table: [e for e in entries if e.table == table] for table in tk.GENERATED_TABLES}
@@ -264,6 +267,7 @@ def main() -> int:
         print_list(f"  {name}", items, fmt, args.verbose)
     print()
     print(f"sk overrides applied (TEXT-01, {display_path(args.overrides)}): {len(overridden)}")
+    print(f"Standard/Hard guidance variants ({display_path(tk.GUIDANCE_VARIANTS)}): {len(variant_keys)}")
     print_list("sk override problems", override_problems, str, args.verbose)
     print_list("content warning: internal ids inside player-visible texts", id_hits,
                lambda h: f"{h[0]} {h[1]}: {h[2][:90]!r}", args.verbose)

@@ -1,0 +1,115 @@
+{
+  "chunk": "C2",
+  "model": "openai/gpt-6.1-sol-pro",
+  "overrides": "docs\\writing\\guidance\\std_C2.csv",
+  "overlay": [],
+  "cost_usd": 0.0406,
+  "batches": {
+    "B01+B02": {
+      "hash": "3b05af78430bb2ac",
+      "status": "ok",
+      "heading": "B01 · main quest M03 „Späť v škole“ | B02 · main quest M03 „Späť v škole“",
+      "keys": [
+        "action.B01.objective",
+        "action.B01.journal",
+        "action.B02.objective",
+        "action.B02.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 12306,
+        "completion_tokens": 284,
+        "total_tokens": 12590,
+        "cost": 0.0225394,
+        "prompt_tokens_details": {
+          "cached_tokens": 3509,
+          "cache_write_tokens": 3509
+        }
+      },
+      "usd": 0.0225
+    },
+    "B04": {
+      "hash": "ddf737aee7c1b5c9",
+      "status": "ok",
+      "heading": "B04 · main quest M04 „Mechanika kazety“",
+      "keys": [
+        "action.B04.002",
+        "action.B04.objective",
+        "action.B04.journal"
+      ],
+      "fix": 0,
+      "conversation_note": "",
+      "usage": {
+        "prompt_tokens": 9033,
+        "completion_tokens": 340,
+        "total_tokens": 9373,
+        "cost": 0.0180976,
+        "prompt_tokens_details": {
+          "cached_tokens": 2406,
+          "cache_write_tokens": 2406
+        }
+      },
+      "usd": 0.0181
+    }
+  },
+  "keys": {
+    "action.B01.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ohlás sa v škole tak, ako žiada oznam.",
+      "batch": "B01+B02"
+    },
+    "action.B01.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Ohlás sa v škole tak, ako žiada oznam.",
+      "batch": "B01+B02"
+    },
+    "action.B02.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi krúžok, ktorý hľadá opravára.",
+      "batch": "B01+B02"
+    },
+    "action.B02.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Nájdi krúžok, ktorý hľadá opravára.",
+      "batch": "B01+B02"
+    },
+    "action.B04.002": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Úplne sa rozpadol. Taký remienok nezoženiem v papiernictve, ale v opravovni, kde nič nevyhadzujú.",
+      "batch": "B04"
+    },
+    "action.B04.objective": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň nový remienok rovnakého rozmeru.",
+      "batch": "B04"
+    },
+    "action.B04.journal": {
+      "verdict": "ok",
+      "category": "",
+      "problem": "",
+      "suggestion": "",
+      "text": "Zožeň nový remienok rovnakého rozmeru.",
+      "batch": "B04"
+    }
+  },
+  "unreviewed": []
+}

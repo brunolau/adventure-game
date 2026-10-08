@@ -9,6 +9,9 @@ Read-only on the game. Writes art/voice/full/lines.json:
   lines[]   line_id, speaker, text, era, scene, scene_name, block, block_label, fx (None/phone/tape/device/radio),
             prologue (True when the trial file exists and its text is unchanged -> not regenerated)
   skipped[] non-verbal lines (Bodka)
+and art/voice/full/looks.json (2026-10-08, write_looks): every text Adam says in a look bubble, keyed by its text key
+(look.* room looks and changed looks, item.<ID> descriptions, exit/conn locked lines, puzzle success/wrong lines and
+ui.system.path_blocked); not the place names shown when looking at an open exit.
 """
 from __future__ import annotations
 
@@ -198,6 +201,8 @@ def main() -> None:
             emit("S10", f"epilogue.{i + 1}", "Epilóg", [{"line_id": lid, "speaker": spk, "text": world.get(lid)}],
                  "epilogue")
 
+    write_looks(eff, world, order, era_of_room, room_name)
+
     out.sort(key=lambda l: l["era"] == "epilog")  # stable: epilogue lines last, in quest order
     (FULL / "lines.json").write_text(json.dumps({"lines": out, "skipped": skipped}, ensure_ascii=False, indent=1),
                                      encoding="utf-8")
@@ -209,6 +214,56 @@ def main() -> None:
     print("by speaker:", Counter(l["speaker"] for l in new).most_common())
     print("fx:", Counter(l["fx"] for l in new))
     print("skipped:", len(skipped))
+
+
+LOOK_KIND_LABEL = {"look": "Pohľad", "look_changed": "Zmenený pohľad", "item": "Predmet", "locked_exit": "Zamknutý východ",
+                   "locked_route": "Zamknutá cesta", "puzzle": "Hádanka", "system": "Systémová hláška"}
+
+
+def write_looks(eff: dict, world: dict[str, str], order: list[str], era_of_room: dict, room_name: dict) -> None:
+    """art/voice/full/looks.json: the look-bubble texts Adam says (2026-10-08), text = the live table (world.csv /
+    ui.csv, what TextService shows), else the data fallback. Same text -> one take (alias_of, by gen through gen_full)."""
+    ui = read_csv(LOC / "ui.csv")
+    rooms = {r["id"]: r for r in eff["rooms"]}
+    out: list[dict] = []
+
+    def add(kind: str, key: str, fallback: str | None, room: str | None, label: str) -> None:
+        text = world.get(key) or ui.get(key) or fallback or ""
+        if not text.strip():
+            print("look text empty:", key)
+            return
+        out.append({"line_id": key, "speaker": "ADAM", "text": text, "kind": kind, "kind_label": LOOK_KIND_LABEL[kind],
+                    "era": era_of_room.get(room) if room else None, "scene": room,
+                    "scene_name": room_name.get(room, room) if room else None, "label": label, "fx": None,
+                    "prologue": False})
+
+    for rid in order:
+        r = rooms[rid]
+        for h in r.get("hotspots", []):
+            name = world.get(f"hotspot.{h['id']}.name") or h.get("name") or h["id"]
+            add("look", h.get("look_line_id") or f"hotspot.{h['id']}.look", h.get("look"), rid, name)
+            for i, v in enumerate(h.get("look_variants") or []):
+                add("look_changed", v.get("line_id") or f"hotspot.{h['id']}.look.{i + 1}", v.get("text"), rid,
+                    f"{name} (po {v.get('after')})")
+        for e in r.get("exits", []):
+            lab = world.get(f"exit.{e['id']}.label") or e.get("label") or e["id"]
+            add("locked_exit", f"exit.{e['id']}.locked", e.get("locked_look"), rid, f"→ {lab}")
+    for c in eff.get("connections", []):
+        lab = world.get(f"conn.{c['from']}.{c['to']}.label") or c.get("label") or ""
+        add("locked_route", f"conn.{c['from']}.{c['to']}.locked", c.get("locked_look"), c["from"],
+            f"{c['from']} ↔ {c['to']} {lab}".strip())
+    for it in eff.get("items", []):
+        add("item", it.get("look_line_id") or f"item.{it['id']}.look", it.get("look"), None,
+            world.get(f"item.{it['id']}.name") or it.get("name") or it["id"])
+    for p in eff.get("puzzles", []):
+        title = world.get(f"puzzle.{p['id']}.title") or p.get("title") or p["id"]
+        add("puzzle", f"puzzle.{p['id']}.success", p.get("success_line"), None, f"{title}: vyriešené")
+        add("puzzle", f"puzzle.{p['id']}.wrong", p.get("wrong_line"), None, f"{title}: zlá odpoveď")
+    add("system", "ui.system.path_blocked", "Tadiaľto neprejdem.", None, "Cesta zablokovaná")
+    distinct = {l["text"] for l in out}
+    (FULL / "looks.json").write_text(json.dumps({"lines": out}, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("looks:", len(out), "keys,", len(distinct), "distinct texts,", sum(len(t) for t in distinct), "chars;",
+          dict(Counter(l["kind"] for l in out)))
 
 
 if __name__ == "__main__":
