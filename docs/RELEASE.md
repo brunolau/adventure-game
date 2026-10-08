@@ -123,8 +123,8 @@ found is fixed (selection after use, hints per step, the painted time-node clock
 Esc = one line, Mira in the attic, the CS07 symbols, Adam's winter coat, RECEPCIA, toasts and hover label over
 screens, the S05 door, staging in front of props, the version number), except:
 
-- Tóno is "Anton Farkaš" in hover labels and topic headers, Tóno in every line (PT-S25, your choice N9).
-- The first workshop goal says "kolíska stolového uzla ZVON" before anything explains it (PT-F14, N14).
+- (fixed 2026-10-08) Tóno is now "Tóno" in hover labels and topic headers too.
+- (fixed 2026-10-08) The first workshop goal no longer names the cradle before it is explained.
 - An exit click while you deliberately keep an item selected does nothing (the handoff rule; N2 b). After a
   successful use the item is no longer selected, so this is now rare.
 - Keyboard play: with a full bag, reaching an item takes up to 7 key presses; the map's room cards up to 8. Tab

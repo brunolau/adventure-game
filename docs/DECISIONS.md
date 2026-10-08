@@ -549,3 +549,16 @@ written props on the S30 stand and under the S45 bench sign stay, M08's title is
 never knows what he has not learned" is still to be added to design-doc/WRITING_METHOD.md by the owner (only he
 changes that file). The two promised cosmetic fixes went in at the same time: little Zuzana (S37) stands still while
 anyone talks to her and hops again when the conversation ends; S69 is relit to the S18 sunset (USD 0.15).
+
+### Owner answers 2026-10-08
+
+- **N9 / PT-S25 Tóno's label:** hover labels and topic headers say **Tóno** in every era (char.TONO*.name and the
+  three hotspot names, sk_overrides.csv).
+- **N2 b, exit click with an item selected:** stays as it is (nothing happens).
+- **N14 / PT-F14 first workshop goal:** reworded so it no longer names *kolíska* / *stolový uzol* before the S10 look
+  explains them: quest.M02.goal „Zisti, prečo sa odpojený ZVON v záhradnej dielni ozýva, a rozchoď ho.“, G07
+  objective/journal „…servisnú časť prístroja ZVON.“
+- **Publishing:** GitHub Releases for now; release the current build as v0.1.0.
+- **Known flaws** (S69 people in daylight colours, non-Slovak crowd murmur, far exit labels): accepted for now.
+- **Next:** ports to macOS, Linux, Android and iOS (one agent); English translation drafted by Claude and checked by
+  Claude without fal.ai (another agent), text in art "variablized" where sensible.
