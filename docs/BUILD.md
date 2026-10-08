@@ -1,8 +1,8 @@
 # Building Posledný zvonec (LastBell)
 
-Status 2026-10-06: **Windows x86_64 is built and tested** (the exported exe, not the editor).
-macOS, Android (arm64) and iOS have prepared export presets but are **not built**. See the per-platform
-sections below for what each one still needs.
+Status 2026-10-09: **Windows x86_64 is built and tested** (the exported exe, not the editor). Linux, macOS and
+Android are built by `tools/build_ports.py` (docs/PORTS.md has their test record); iOS has a prepared export preset
+but is **not built**. See the per-platform sections below for what each one still needs.
 
 | platform | preset (`src/game/export_presets.cfg`) | status |
 |---|---|---|

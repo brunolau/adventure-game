@@ -157,6 +157,15 @@ APK is 584 MB while the same build with the desktop textures is 412 MB.
 - **Desktop unchanged:** `dotnet test` 506 passed, `check_strings.py` OK, `--acceptance m1` 34 PASS, `m2` 46 PASS
   (with `--time-scale 3`, as the release verification runs it; without it AT29 waits 30 s for 34 s of lines),
   `travel` 4 PASS after the touch changes (logs `build/ports/logs/acceptance_*.txt`).
+- **Review and second run (2026-10-09, before the push):** the two Android commits were read change by change
+  (every touch branch hangs on `TouchMode.Enabled`, which a release desktop build can never turn on), no keystore
+  or password is tracked or in a build log, and the release APK was checked again with `aapt2` and `apksigner`
+  (package, version code 2, arm64-v8a, minimum API 24, no permission, signed by the release key). Run again from the
+  committed state at normal priority: `dotnet test` 506 passed / 3 skipped, `check_strings.py` OK, `--acceptance m1`
+  34, `travel` 4, `m2` 46 (x3), `--touch --acceptance touch` 16, 0 failures. The known headless-only engine line
+  `Parameter "t" is null` (dummy renderer, room change) appeared once in m1 and three times in m2; its count changes
+  from run to run and it was there before these changes. The player's save folder is unchanged. Logs:
+  `build/verify_1009/logs/`. One new flaw from the emulator screenshots: ISSUES ANDROID-11.
 - **Not tested:** a real phone or tablet. The release APK is arm64-v8a and the emulator is x86_64, so the release APK
   itself was only checked statically (`build_ports.py verify`: ABI, package, signature with the release key, C#
   assemblies inside); it is the same project and code as the debug APK that was played. Performance, battery use,

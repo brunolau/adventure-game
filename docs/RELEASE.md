@@ -201,8 +201,13 @@ Details and the test record of each port: docs/PORTS.md.
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android:** in work (a separate task builds the APK and the touch controls and tests them in an emulator). It
-  still needs a test on a real phone. C# on Android is experimental in Godot 4.7.
+- **Android (built 2026-10-09, not released):** `build/ports/PoslednyZvonec-0.2.0.apk` (584.3 MB, arm64, Android 7.0
+  or newer, no permissions) and a Google Play bundle (520.6 MB). Touch controls are in: tap acts, hold looks, the
+  Eye button shows the markers, system Back is Esc, autosave when the app leaves the screen. Played only in an
+  Android 16 emulator (touch smoke test 10 of 10); **never on a real phone or tablet**. Not on the GitHub release
+  page: it waits for your test on a phone and for your approval of 11 new Slovak touch texts
+  (`docs/writing/out_v6/ui_touch.csv`). Google Play needs a developer account (USD 25, once). C# on Android is
+  experimental in Godot 4.7.
 - **iOS:** needs a Mac with Xcode, an Apple Developer team id and provisioning profiles. C# on iOS is
   experimental (NativeAOT), so check that it works.
 
