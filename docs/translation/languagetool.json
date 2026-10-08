@@ -1,0 +1,1419 @@
+{
+ "item.FILTER_PHOTO.name": {
+  "text": "Normalisation panel photo",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “Normalization”? The spelling ‘Normalisation’ is also correct.",
+    "word": "Normalisation",
+    "replacements": [
+     "Normalization"
+    ],
+    "context": "Normalisation panel photo"
+   }
+  ]
+ },
+ "hotspot.S47.filter.name": {
+  "text": "Normalisation panel",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “Normalization”? The spelling ‘Normalisation’ is also correct.",
+    "word": "Normalisation",
+    "replacements": [
+     "Normalization"
+    ],
+    "context": "Normalisation panel"
+   }
+  ]
+ },
+ "action.G04.x03": {
+  "text": "On Monday, before the quarantine. I’m an engineer, not a fortune teller.",
+  "matches": [
+   {
+    "rule": "EN_COMPOUNDS_FORTUNE_TELLER",
+    "message": "This word is normally spelled with a hyphen.",
+    "word": "fortune teller",
+    "replacements": [
+     "fortune-teller"
+    ],
+    "context": "... the quarantine. I’m an engineer, not a fortune teller."
+   }
+  ]
+ },
+ "action.G07.002": {
+  "text": "Wearer recognised. Wearer’s memory protected.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “recognized”? The spelling ‘recognised’ is also correct.",
+    "word": "recognised",
+    "replacements": [
+     "recognized"
+    ],
+    "context": "Wearer recognised. Wearer’s memory protected."
+   }
+  ]
+ },
+ "action.C01.x03": {
+  "text": "And those shoes. In Ivanka they talked about them until Christmas.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "Ivanka",
+    "replacements": [
+     "Ivanka,"
+    ],
+    "context": "And those shoes. In Ivanka they talked about them until Christmas...."
+   }
+  ]
+ },
+ "action.C01.x07": {
+  "text": "To the school it’s property. To me it’s a box of things nobody but me knows how to plug in.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "me",
+    "replacements": [
+     "me,"
+    ],
+    "context": "To the school it’s property. To me it’s a box of things nobody but me know..."
+   }
+  ]
+ },
+ "action.D07.003": {
+  "text": "For me it’s been a few hours.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "me",
+    "replacements": [
+     "me,"
+    ],
+    "context": "For me it’s been a few hours."
+   }
+  ]
+ },
+ "look.S05.ambient 2": {
+  "text": "The WELCOME mat is turned with the lettering towards the door. Since March it only welcomes people who are leaving.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "March",
+    "replacements": [
+     "March,"
+    ],
+    "context": "...h the lettering towards the door. Since March it only welcomes people who are leaving..."
+   }
+  ]
+ },
+ "entry.S09.001": {
+  "text": "Gran calls this ‘a few things’. A storeman would call it ‘a small warehouse’.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "storeman",
+    "replacements": [
+     "Stoneman",
+     "store man"
+    ],
+    "context": "Gran calls this ‘a few things’. A storeman would call it ‘a small warehouse’."
+   }
+  ]
+ },
+ "topic.DANA.extra 2.002": {
+  "text": "People argue less. Through glass it doesn’t have the same effect.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "glass",
+    "replacements": [
+     "glass,"
+    ],
+    "context": "People argue less. Through glass it doesn’t have the same effect."
+   }
+  ]
+ },
+ "topic.LENKA.extra 3.003": {
+  "text": "And did you?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And did you?"
+   }
+  ]
+ },
+ "topic.LENKA.extra 3.004": {
+  "text": "No. But I apologise to him every time.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “apologize”? The spelling ‘apologise’ is also correct.",
+    "word": "apologise",
+    "replacements": [
+     "apologize"
+    ],
+    "context": "No. But I apologise to him every time."
+   }
+  ]
+ },
+ "topic.TONO20.ambient 2.001": {
+  "text": "It has to be, for now. But it won’t be empty for ever.",
+  "matches": [
+   {
+    "rule": "FOR_EVER_CA",
+    "message": "It is more common to spell this adverb as one word.",
+    "word": "for ever",
+    "replacements": [
+     "forever"
+    ],
+    "context": "...s to be, for now. But it won’t be empty for ever."
+   }
+  ]
+ },
+ "topic.TONO20.ambient 2.x01": {
+  "text": "And every door. At last I know which ones need oiling.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "last",
+    "replacements": [
+     "last,"
+    ],
+    "context": "And every door. At last I know which ones need oiling."
+   }
+  ]
+ },
+ "item.PHOTO2020": {
+  "text": "The yard in 2020: a tarmac corner with no lime tree and the service window with the metal swallow. Tóno will recognise that swallow.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “recognize”? The spelling ‘recognise’ is also correct.",
+    "word": "recognise",
+    "replacements": [
+     "recognize"
+    ],
+    "context": "...indow with the metal swallow. Tóno will recognise that swallow."
+   }
+  ]
+ },
+ "action.B03.004": {
+  "text": "The tape from the school PA and the node map from the reading room in the centre. Here’s my letter of authority – with it they’ll give you copies.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "it",
+    "replacements": [
+     "it,"
+    ],
+    "context": "...e. Here’s my letter of authority – with it they’ll give you copies."
+   }
+  ]
+ },
+ "action.B14.004": {
+  "text": "Thank you. At home I’d just zoom in on my phone. Here you need an entire darkroom for it.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "home",
+    "replacements": [
+     "home,"
+    ],
+    "context": "Thank you. At home I’d just zoom in on my phone. Here you ..."
+   }
+  ]
+ },
+ "action.B17.004": {
+  "text": "Back to Pri LEALe, voluntarily this time. At school I only went there to fetch the ball.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "school",
+    "replacements": [
+     "school,"
+    ],
+    "context": "...to Pri LEALe, voluntarily this time. At school I only went there to fetch the ball."
+   }
+  ]
+ },
+ "action.B17.x02": {
+  "text": "I’m Dezider. On the airwaves I go by another name, but I don’t tell that to just anyone. Let’s see.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "airwaves",
+    "replacements": [
+     "air waves"
+    ],
+    "context": "I’m Dezider. On the airwaves I go by another name, but I don’t tell ..."
+   }
+  ]
+ },
+ "action.Q3A.x03": {
+  "text": "Otherwise it’s not a team, just a group. And a group doesn’t go in the album.",
+  "matches": [
+   {
+    "rule": "SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA",
+    "message": "A comma may be missing after the conjunctive/linking adverb ‘Otherwise’.",
+    "word": "Otherwise",
+    "replacements": [
+     "Otherwise,"
+    ],
+    "context": "Otherwise it’s not a team, just a group. And a gr..."
+   }
+  ]
+ },
+ "action.Q9D.001": {
+  "text": "At my first exhibition, someone told me a different design isn’t a wrong one. Since then I’ve filled a whole notebook, and I teach children to build radios.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "then",
+    "replacements": [
+     "then,"
+    ],
+    "context": "...fferent design isn’t a wrong one. Since then I’ve filled a whole notebook, and I tea..."
+   }
+  ]
+ },
+ "look.S19.EMIL": {
+  "text": "Emil keeps the tempo, even when the city around him doesn’t.",
+  "matches": [
+   {
+    "rule": "NOUN_AROUND_IT",
+    "message": "Consider using “the surrounding city”.",
+    "word": "the city around him",
+    "replacements": [
+     "the surrounding city"
+    ],
+    "context": "Emil keeps the tempo, even when the city around him doesn’t."
+   }
+  ]
+ },
+ "look.S29.ambient 2": {
+  "text": "A cable hangs over the back of the chair. Here the chair doubles as a coat hook.",
+  "matches": [
+   {
+    "rule": "THERE_MISSING_VERB",
+    "message": "A verb may be missing.",
+    "word": "Here",
+    "replacements": [
+     "Here are"
+    ],
+    "context": "...cable hangs over the back of the chair. Here the chair doubles as a coat hook."
+   }
+  ]
+ },
+ "look.S17.SONA": {
+  "text": "Soňa keeps her album better organised than I keep my accounts.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “organized”? The spelling ‘organised’ is also correct.",
+    "word": "organised",
+    "replacements": [
+     "organized"
+    ],
+    "context": "Soňa keeps her album better organised than I keep my accounts."
+   }
+  ]
+ },
+ "look.S69.bike": {
+  "text": "A small bike with stabilisers. The bell is missing its cap; only the bare thread sticks out.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “stabilizers”? The spelling ‘stabilisers’ is also correct.",
+    "word": "stabilisers",
+    "replacements": [
+     "stabilizers"
+    ],
+    "context": "A small bike with stabilisers. The bell is missing its cap; only the ..."
+   }
+  ]
+ },
+ "topic.LEA95.ambient 1.x03": {
+  "text": "They apologised for that sneeze all week. It’s the best thing on the tape.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “apologized”? The spelling ‘apologised’ is also correct.",
+    "word": "apologised",
+    "replacements": [
+     "apologized"
+    ],
+    "context": "They apologised for that sneeze all week. It’s the best..."
+   }
+  ]
+ },
+ "topic.LEA95.ambient 2.002": {
+  "text": "Mine would fill a cassette of their own.",
+  "matches": [
+   {
+    "rule": "FILL_OF_WITH",
+    "message": "The usual preposition to use after “fill” is “with”, not “a”. Did you mean “fill a cassette with”?",
+    "word": "fill a cassette of",
+    "replacements": [
+     "fill a cassette with"
+    ],
+    "context": "Mine would fill a cassette of their own."
+   }
+  ]
+ },
+ "topic.LEA95.extra 2.004": {
+  "text": "At home he takes apart everything that has a screw in it. He wants to know how it works.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "home",
+    "replacements": [
+     "home,"
+    ],
+    "context": "At home he takes apart everything that has a sc..."
+   }
+  ]
+ },
+ "topic.MILADA.extra 2.004": {
+  "text": "Because in June children climb trees. In September they’re back sitting at their desks.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "September",
+    "replacements": [
+     "September,"
+    ],
+    "context": "...ecause in June children climb trees. In September they’re back sitting at their desks."
+   }
+  ]
+ },
+ "topic.MIRA95.extra 1.002": {
+  "text": "At first I wanted to teach the children to solder. Then I found out what they like best is listening.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "first",
+    "replacements": [
+     "first,"
+    ],
+    "context": "At first I wanted to teach the children to solde..."
+   }
+  ]
+ },
+ "topic.SONA.extra 1.004": {
+  "text": "Without it we wouldn’t have got there. That’s part of winning too.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "it",
+    "replacements": [
+     "it,"
+    ],
+    "context": "Without it we wouldn’t have got there. That’s part..."
+   }
+  ]
+ },
+ "topic.TONO.ambient 2.x03": {
+  "text": "The caretaker doesn’t run. The caretaker takes a short cut.",
+  "matches": [
+   {
+    "rule": "SHORT_CUT",
+    "message": "Did you mean “shortcut”?",
+    "word": "short cut",
+    "replacements": [
+     "shortcut"
+    ],
+    "context": "...aker doesn’t run. The caretaker takes a short cut."
+   }
+  ]
+ },
+ "topic.TONO.extra 1.002": {
+  "text": "To the boiler room. In winter it’s the warmest place, and in summer the quietest.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "winter",
+    "replacements": [
+     "winter,"
+    ],
+    "context": "To the boiler room. In winter it’s the warmest place, and in summer t..."
+   }
+  ]
+ },
+ "topic.TRH.ambient 2.001": {
+  "text": "Depends how badly you need them. But we’ll help the school PA.",
+  "matches": [
+   {
+    "rule": "DEPEND_ON",
+    "message": "The verb ‘depend’ requires the preposition ‘on’ (or ‘upon’).",
+    "word": "Depends",
+    "replacements": [
+     "Depends on"
+    ],
+    "context": "Depends how badly you need them. But we’ll help..."
+   }
+  ]
+ },
+ "topic.VIERA.ambient 2.x02": {
+  "text": "Otherwise in thirty years nobody knows which auntie is which.",
+  "matches": [
+   {
+    "rule": "SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA",
+    "message": "A comma may be missing after the conjunctive/linking adverb ‘Otherwise’.",
+    "word": "Otherwise",
+    "replacements": [
+     "Otherwise,"
+    ],
+    "context": "Otherwise in thirty years nobody knows which aunt..."
+   }
+  ]
+ },
+ "topic.ZITA.ambient 1.002": {
+  "text": "Today’s will do. For me it’s twenty-five years old anyway.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "me",
+    "replacements": [
+     "me,"
+    ],
+    "context": "Today’s will do. For me it’s twenty-five years old anyway."
+   }
+  ]
+ },
+ "topic.ZITA.extra 1.005": {
+  "text": "And was it?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And was it?"
+   }
+  ]
+ },
+ "topic.ZUZANA95.extra 2.006": {
+  "text": "For me it’s been thirty-three years. And for you?",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "me",
+    "replacements": [
+     "me,"
+    ],
+    "context": "For me it’s been thirty-three years. And for y..."
+   }
+  ]
+ },
+ "action.I03.z03": {
+  "text": "She’s right nearly always. It’s just that nobody will lend her a screwdriver.",
+  "matches": [
+   {
+    "rule": "ADVERB_WORD_ORDER",
+    "message": "The adverb ‘'s’ is usually not used at the end of a sentence if refers to a subject pronoun that comes before it.",
+    "word": "always",
+    "replacements": [],
+    "context": "She’s right nearly always. It’s just that nobody will lend her a ..."
+   }
+  ]
+ },
+ "action.I09.003": {
+  "text": "Until the write is closed, it’s only set aside. The device has to be able to bring it back.",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘the’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "the write",
+    "replacements": [
+     "to write",
+     "the White",
+     "the trite"
+    ],
+    "context": "Until the write is closed, it’s only set aside. The dev..."
+   }
+  ]
+ },
+ "action.I14.x03": {
+  "text": "I record everything, if you please. Otherwise one day somebody would find that nothing was ever here.",
+  "matches": [
+   {
+    "rule": "SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA",
+    "message": "A comma may be missing after the conjunctive/linking adverb ‘Otherwise’.",
+    "word": "Otherwise",
+    "replacements": [
+     "Otherwise,"
+    ],
+    "context": "I record everything, if you please. Otherwise one day somebody would find that nothin..."
+   }
+  ]
+ },
+ "action.I16.x02": {
+  "text": "Certainly. First I read it, then the stamp. Otherwise I’d be confirming cake recipes.",
+  "matches": [
+   {
+    "rule": "SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA",
+    "message": "A comma may be missing after the conjunctive/linking adverb ‘Otherwise’.",
+    "word": "Otherwise",
+    "replacements": [
+     "Otherwise,"
+    ],
+    "context": "...ainly. First I read it, then the stamp. Otherwise I’d be confirming cake recipes."
+   }
+  ]
+ },
+ "action.E01.005": {
+  "text": "I remember this gentleman from Ivanka. Since then I’ve got older, and he hasn’t.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "then",
+    "replacements": [
+     "then,"
+    ],
+    "context": "...ember this gentleman from Ivanka. Since then I’ve got older, and he hasn’t."
+   }
+  ]
+ },
+ "action.E05.x05": {
+  "text": "I believe you. At home we’ve got a gherkin jar that’s older than I am.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "home",
+    "replacements": [
+     "home,"
+    ],
+    "context": "I believe you. At home we’ve got a gherkin jar that’s older th..."
+   }
+  ]
+ },
+ "action.E07.x03": {
+  "text": "Until people learn to walk round it. On foot it takes them a few years; with a cart, longer.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "foot",
+    "replacements": [
+     "foot,"
+    ],
+    "context": "...Until people learn to walk round it. On foot it takes them a few years; with a cart,..."
+   }
+  ]
+ },
+ "action.E10.x03": {
+  "text": "Goodbye, then. And pull the store door to behind you, so I don’t get a draught.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "draught",
+    "replacements": [
+     "drought",
+     "fraught",
+     "dr aught"
+    ],
+    "context": "...re door to behind you, so I don’t get a draught."
+   }
+  ]
+ },
+ "look.S33.carbon": {
+  "text": "Carbon paper for customers. With it I can make a second copy of the form.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "it",
+    "replacements": [
+     "it,"
+    ],
+    "context": "Carbon paper for customers. With it I can make a second copy of the form."
+   }
+  ]
+ },
+ "look.S61.tree": {
+  "text": "The handcart’s rut runs right past the trunk. A guard would protect the young lime.",
+  "matches": [
+   {
+    "rule": "TRUNK_BOOT",
+    "message": "In the context of cars (automobiles), ‘trunk’ is American English. For British English use “boot”.",
+    "word": "trunk",
+    "replacements": [
+     "boot"
+    ],
+    "context": "The handcart’s rut runs right past the trunk. A guard would protect the young lime."
+   }
+  ]
+ },
+ "topic.BERTA.ambient 1.003": {
+  "text": "That’s what everyone says who doesn’t want to dirty their Sunday best.",
+  "matches": [
+   {
+    "rule": "RELATIVE_CLAUSE_AGREEMENT",
+    "message": "Did you mean “do”? Alternatively, check whether the singular of ‘says’ should be used.",
+    "word": "does",
+    "replacements": [
+     "do"
+    ],
+    "context": "That’s what everyone says who doesn’t want to dirty their Sunday best."
+   }
+  ]
+ },
+ "topic.BOZO.ambient 1.002": {
+  "text": "Thank you. For now I’ll pretend to be an ordinary visitor.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "now",
+    "replacements": [
+     "now,"
+    ],
+    "context": "Thank you. For now I’ll pretend to be an ordinary visitor...."
+   }
+  ]
+ },
+ "topic.JANA82.ambient 2.x01": {
+  "text": "Especially in the evening. In the evening the airwaves are crowded and the weak stations get lost.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "airwaves",
+    "replacements": [
+     "air waves"
+    ],
+    "context": "...ally in the evening. In the evening the airwaves are crowded and the weak stations get l..."
+   }
+  ]
+ },
+ "topic.LIDA.extra 1.004": {
+  "text": "For the audience. For me it’s a tragedy about buttons.",
+  "matches": [
+   {
+    "rule": "PRP_COMMA",
+    "message": "Consider adding a comma here to clarify the structure of the sentence.",
+    "word": "me",
+    "replacements": [
+     "me,"
+    ],
+    "context": "For the audience. For me it’s a tragedy about buttons."
+   }
+  ]
+ },
+ "topic.LIDA.extra 2.005": {
+  "text": "He rehearsed all night. By morning he knew his whole part. He still had the script back then.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "morning",
+    "replacements": [
+     "morning,"
+    ],
+    "context": "He rehearsed all night. By morning he knew his whole part. He still had th..."
+   }
+  ]
+ },
+ "topic.MARTA82.extra 1.004": {
+  "text": "In pencil. It’s somebody else’s property and I’m only minding it. In pen it would become ours.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "pen",
+    "replacements": [
+     "pen,"
+    ],
+    "context": "...’s property and I’m only minding it. In pen it would become ours."
+   }
+  ]
+ },
+ "topic.MIRA60.extra 2.004": {
+  "text": "They are. That’s why I note them alongside. What doesn’t fit, we write alongside, not over the original data.",
+  "matches": [
+   {
+    "rule": "QUESTION_MARK",
+    "message": "Did you mean “?”?",
+    "word": ".",
+    "replacements": [
+     "?"
+    ],
+    "context": "...te alongside, not over the original data."
+   }
+  ]
+ },
+ "topic.OTO82.ambient 1.001": {
+  "text": "In Ivanka you asked about the future. Now I’m watching it in my own grandson.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "Ivanka",
+    "replacements": [
+     "Ivanka,"
+    ],
+    "context": "In Ivanka you asked about the future. Now I’m wat..."
+   }
+  ]
+ },
+ "topic.RUDO.ambient 1.002": {
+  "text": "I’d like to hear that off stage too, right now.",
+  "matches": [
+   {
+    "rule": "EN_COMPOUNDS_OFF_STAGE",
+    "message": "This expression is normally spelled as one or with a hyphen.",
+    "word": "off stage",
+    "replacements": [
+     "off-stage",
+     "offstage"
+    ],
+    "context": "I’d like to hear that off stage too, right now."
+   }
+  ]
+ },
+ "topic.RUDO.extra 1.004": {
+  "text": "On stage I’m a king. At the scales I’m just Rudo. And Rudo says very little.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "stage",
+    "replacements": [
+     "stage,"
+    ],
+    "context": "On stage I’m a king. At the scales I’m just Rudo..."
+   }
+  ]
+ },
+ "topic.TONO82.ambient 2.003": {
+  "text": "Elsewhere you have to say everything with the right words first.",
+  "matches": [
+   {
+    "rule": "SENT_START_CONJUNCTIVE_LINKING_ADVERB_COMMA",
+    "message": "A comma may be missing after the conjunctive/linking adverb ‘Elsewhere’.",
+    "word": "Elsewhere",
+    "replacements": [
+     "Elsewhere,"
+    ],
+    "context": "Elsewhere you have to say everything with the rig..."
+   }
+  ]
+ },
+ "topic.TONO82.ambient 2.x01": {
+  "text": "In lessons you mustn’t say ‘that thing’. You have to say ‘component’ or ‘teaching aid’.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "lessons",
+    "replacements": [
+     "lessons,"
+    ],
+    "context": "In lessons you mustn’t say ‘that thing’. You have ..."
+   }
+  ]
+ },
+ "topic.VERA60.extra 1.003": {
+  "text": "And is it?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And is it?"
+   }
+  ]
+ },
+ "action.F01.x04": {
+  "text": "At the exhibition they call it normalisation. Whatever contradicts itself in the records, the device evens out. Names included.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "At the exhibition they call it normalisation. Whatever contradicts itself in the rec..."
+   }
+  ]
+ },
+ "action.F03.x04": {
+  "text": "It bothers the normaliser. Laughter has no column, and anything without a column is noise to it.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "It bothers the normaliser. Laughter has no column, and anything w..."
+   }
+  ]
+ },
+ "action.J04.objective": {
+  "text": "By the Rotunda, photograph the normalisation panel with your phone, then go to the Atlas service pavilion.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "By the Rotunda, photograph the normalisation panel with your phone, then go to the A..."
+   }
+  ]
+ },
+ "action.J04.journal": {
+  "text": "By the Rotunda, photograph the normalisation panel with your phone, then go to the Atlas service pavilion.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "By the Rotunda, photograph the normalisation panel with your phone, then go to the A..."
+   }
+  ]
+ },
+ "action.F05.label": {
+  "text": "Photograph the normalisation panel",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "Photograph the normalisation panel"
+   }
+  ]
+ },
+ "action.F05.journal": {
+  "text": "The normalisation panel is photographed: DIFFERENCE = DISCARD, the exact opposite of Mira’s rule.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "The normalisation panel is photographed: DIFFERENCE = DIS..."
+   }
+  ]
+ },
+ "action.F06.x04": {
+  "text": "In the buffer, until someone confirms the write. So far nobody has confirmed it, not even Viktor.",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘the’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "the write",
+    "replacements": [
+     "to write",
+     "the White",
+     "the trite"
+    ],
+    "context": "In the buffer, until someone confirms the write. So far nobody has confirmed it, not ev..."
+   }
+  ]
+ },
+ "action.F11.001": {
+  "text": "You’ve switched off the write. Do you know how much could be lost now?",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘the’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "the write",
+    "replacements": [
+     "to write",
+     "the White",
+     "the trite"
+    ],
+    "context": "You’ve switched off the write. Do you know how much could be lost now..."
+   }
+  ]
+ },
+ "action.F11.008": {
+  "text": "I agree. We’ll switch off the write for good and return the originals. And I’ll make public what I did.",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘the’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "the write",
+    "replacements": [
+     "to write",
+     "the White",
+     "the trite"
+    ],
+    "context": "I agree. We’ll switch off the write for good and return the originals. And ..."
+   }
+  ]
+ },
+ "action.F11.x03": {
+  "text": "The normaliser flagged them as noise. I approved it.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "The normaliser flagged them as noise. I approved it."
+   }
+  ]
+ },
+ "action.F12.002": {
+  "text": "Gran’s rule. It was here long before the normaliser.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "...ran’s rule. It was here long before the normaliser."
+   }
+  ]
+ },
+ "action.F12.x01": {
+  "text": "‘Different data are not invalid data.’ My normaliser would have thrown that sentence out first.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "...ifferent data are not invalid data.’ My normaliser would have thrown that sentence out fir..."
+   }
+  ]
+ },
+ "action.F15.002": {
+  "text": "The procedure is signed and the write is stopped at the switch.",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘the’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "the write",
+    "replacements": [
+     "to write",
+     "the White",
+     "the trite"
+    ],
+    "context": "The procedure is signed and the write is stopped at the switch."
+   }
+  ]
+ },
+ "topic.BORIS.ambient 1.x03": {
+  "text": "It is. But the normaliser cleans it off. And with it, the date that was underneath.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "It is. But the normaliser cleans it off. And with it, the date th..."
+   }
+  ]
+ },
+ "topic.NINA.extra 2.006": {
+  "text": "In person he nodded, in writing he said thank you, and at the meeting he ran the test anyway.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "person",
+    "replacements": [
+     "person,"
+    ],
+    "context": "In person he nodded, in writing he said thank you..."
+   }
+  ]
+ },
+ "topic.ROBOT.ambient 2.x02": {
+  "text": "The lights narrow. People say I am frowning. In winter I frown from four in the afternoon.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "winter",
+    "replacements": [
+     "winter,"
+    ],
+    "context": "...ts narrow. People say I am frowning. In winter I frown from four in the afternoon."
+   }
+  ]
+ },
+ "topic.ROBOT.extra 3.002": {
+  "text": "‘Where the lángos stall used to be.’ Lángos stalls in the area: zero.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "lángos",
+    "replacements": [
+     "Lagos",
+     "mangos",
+     "tangos"
+    ],
+    "context": "‘Where the lángos stall used to be.’ Lángos stalls in the..."
+   }
+  ]
+ },
+ "topic.SARA.ambient 2.x02": {
+  "text": "And did you?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And did you?"
+   }
+  ]
+ },
+ "topic.SARA.extra 2.002": {
+  "text": "And is it?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And is it?"
+   }
+  ]
+ },
+ "topic.SARA.extra 2.004": {
+  "text": "And do you?",
+  "matches": [
+   {
+    "rule": "COMMA_TAG_QUESTION",
+    "message": "A comma should precede the tag question (i.e., the yes/no-question at the end).",
+    "word": "And",
+    "replacements": [
+     "And,"
+    ],
+    "context": "And do you?"
+   }
+  ]
+ },
+ "topic.TAMARA.extra 1.002": {
+  "text": "Druhý život – Second Life. Because things have a second life too; people just don’t give it to them.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "život",
+    "replacements": [
+     "pivot",
+     "divot"
+    ],
+    "context": "Druhý život – Second Life. Because things have a se..."
+   }
+  ]
+ },
+ "item.LEA_MESSAGE.purpose": {
+  "text": "Play it to Viktor so he hears what the normaliser deleted.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalizer”? The spelling ‘normaliser’ is also correct.",
+    "word": "normaliser",
+    "replacements": [
+     "normalizer"
+    ],
+    "context": "Play it to Viktor so he hears what the normaliser deleted."
+   }
+  ]
+ },
+ "quest.M12.goal": {
+  "text": "Get authorised access to the Atlas buffer and find the faulty rule.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “authorized”? The spelling ‘authorised’ is also correct.",
+    "word": "authorised",
+    "replacements": [
+     "authorized"
+    ],
+    "context": "Get authorised access to the Atlas buffer and find the..."
+   }
+  ]
+ },
+ "quest.M12.hint.3": {
+  "text": "Nina outside the hotel → original school cassette on Tamara in the lobby → confirmed handover 2020 on Boris in the exhibition room → catalogue card on Sára at the customer centre → return ticket on the reader at the bottom station → board the Funitel at Priehyba → finish the ride → phone on the normalisation panel by the Rotunda → local audio reader on the service terminal in the Atlas pavilion.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "...iehyba → finish the ride → phone on the normalisation panel by the Rotunda → local audio read..."
+   }
+  ]
+ },
+ "cutscene.CS01.02.001": {
+  "text": "Wearer stabilised. Contents stabilised. Reference 1995.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “stabilized”? The spelling ‘stabilised’ is also correct.",
+    "word": "stabilised",
+    "replacements": [
+     "stabilized"
+    ],
+    "context": "Wearer stabilised. Contents stabilised. Reference 1995."
+   },
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “stabilized”? The spelling ‘stabilised’ is also correct.",
+    "word": "stabilised",
+    "replacements": [
+     "stabilized"
+    ],
+    "context": "Wearer stabilised. Contents stabilised. Reference 1995."
+   }
+  ]
+ },
+ "cutscene.CS04.01.001": {
+  "text": "What doesn’t match, we put side by side. We don’t throw it away.",
+  "matches": [
+   {
+    "rule": "QUESTION_MARK",
+    "message": "Did you mean “?”?",
+    "word": ".",
+    "replacements": [
+     "?"
+    ],
+    "context": "What doesn’t match, we put side by side. We don’t throw it away."
+   }
+  ]
+ },
+ "cutscene.CS07.01.003": {
+  "text": "At last I see people in it, not a spreadsheet.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "last",
+    "replacements": [
+     "last,"
+    ],
+    "context": "At last I see people in it, not a spreadsheet."
+   }
+  ]
+ },
+ "ui.hint_step.F05": {
+  "text": "Use the phone on the normalisation panel by the Rotunda.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “normalization”? The spelling ‘normalisation’ is also correct.",
+    "word": "normalisation",
+    "replacements": [
+     "normalization"
+    ],
+    "context": "Use the phone on the normalisation panel by the Rotunda."
+   }
+  ]
+ },
+ "hint.nudge.B05": {
+  "text": "The drive belt has perished into pieces. I’ll only get an identical one at a repair shop that keeps belts by the drawerful.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "drawerful",
+    "replacements": [
+     "prayerful"
+    ],
+    "context": "...t a repair shop that keeps belts by the drawerful."
+   }
+  ]
+ },
+ "hint.nudge.B11": {
+  "text": "The contacts match, but the leads are bare. Without insulation I won’t plug it into the school PA.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "insulation",
+    "replacements": [
+     "insulation,"
+    ],
+    "context": "... match, but the leads are bare. Without insulation I won’t plug it into the school PA."
+   }
+  ]
+ },
+ "hint.where.I02": {
+  "text": "In the farm workshop yard, with the storeman.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "storeman",
+    "replacements": [
+     "Stoneman",
+     "store man"
+    ],
+    "context": "In the farm workshop yard, with the storeman."
+   }
+  ]
+ },
+ "hint.nudge.E01": {
+  "text": "In 1982 little Tóno helped Oto. They might both recognise the device I’m carrying.",
+  "matches": [
+   {
+    "rule": "OXFORD_SPELLING_Z_NOT_S",
+    "message": "Would you like to use the Oxford spelling “recognize”? The spelling ‘recognise’ is also correct.",
+    "word": "recognise",
+    "replacements": [
+     "recognize"
+    ],
+    "context": "...little Tóno helped Oto. They might both recognise the device I’m carrying."
+   }
+  ]
+ },
+ "hint.nudge.E11": {
+  "text": "Little Tóno wanted me to say the agreed sentence when we next met. In 1995 he’s the caretaker.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "1995",
+    "replacements": [
+     "1995,"
+    ],
+    "context": "...he agreed sentence when we next met. In 1995 he’s the caretaker."
+   }
+  ]
+ },
+ "hint.nudge.F10": {
+  "text": "The write has stopped. The system will only let me into the chamber with Viktor once I confirm it.",
+  "matches": [
+   {
+    "rule": "A_INFINITIVE",
+    "message": "The verb ‘write’ does not usually follow articles like ‘The’. Check that ‘write’ is spelled correctly; using ‘write’ as a noun may be non-standard.",
+    "word": "The write",
+    "replacements": [
+     "To write",
+     "The White",
+     "The trite"
+    ],
+    "context": "The write has stopped. The system will only let m..."
+   }
+  ]
+ },
+ "hint.where.Q6B": {
+  "text": "In the farm workshop yard, with the storeman.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "storeman",
+    "replacements": [
+     "Stoneman",
+     "store man"
+    ],
+    "context": "In the farm workshop yard, with the storeman."
+   }
+  ]
+ },
+ "hint.nudge.Q9F": {
+  "text": "Jana wanted a whole notebook of schematics one day. In 2035 I’d like to see what came of it.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "2035",
+    "replacements": [
+     "2035,"
+    ],
+    "context": "...hole notebook of schematics one day. In 2035 I’d like to see what came of it."
+   }
+  ]
+ },
+ "hint.where.Q10B": {
+  "text": "In the farm workshop yard, with the storeman.",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "storeman",
+    "replacements": [
+     "Stoneman",
+     "store man"
+    ],
+    "context": "In the farm workshop yard, with the storeman."
+   }
+  ]
+ },
+ "ui.dev.blockout": {
+  "text": "Development blockout {room}: {name} ({era}) – painted background still missing",
+  "matches": [
+   {
+    "rule": "MORFOLOGIK_RULE_EN_GB",
+    "message": "Possible spelling mistake found.",
+    "word": "blockout",
+    "replacements": [
+     "blackout",
+     "lockout",
+     "block out"
+    ],
+    "context": "Development blockout X: X (X) – painted background still mis..."
+   }
+  ]
+ }
+}

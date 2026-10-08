@@ -21,7 +21,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import en_batches as E  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "docs/translation/en/languagetool.json"
+OUT = ROOT / "docs/translation/languagetool.json"
 # Style rules that do not apply to game text (short labels, curly typography, deliberate fragments).
 DISABLED = {"EN_QUOTES", "WHITESPACE_RULE", "UPPERCASE_SENTENCE_START", "DASH_RULE", "PUNCTUATION_PARAGRAPH_END",
             "SENTENCE_FRAGMENT", "EN_UNPAIRED_QUOTES", "EN_UNPAIRED_BRACKETS", "ELLIPSIS", "ENGLISH_WORD_REPEAT_BEGINNING_RULE",

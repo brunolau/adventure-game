@@ -83,8 +83,19 @@ public static class UiSettings
     /// <summary>Remind the Space key in the HUD strip.</summary>
     public static bool HotspotKeyHint { get; set; } = true;
 
-    /// <summary>Locale ("sk" or "en").</summary>
-    public static string Locale { get; set; } = "sk";
+    /// <summary>
+    /// Locale ("sk" or "en"). Until the player chooses one in Settings it follows the system language: Slovak or Czech
+    /// get Slovak, every other language English (owner 2026-10-08). QA runs start in Slovak (--locale overrides it).
+    /// </summary>
+    public static string Locale { get; set; } = DefaultLocale();
+
+    /// <summary>The locale of a first start: Slovak for a Slovak or Czech system, else English; Slovak for QA runs.</summary>
+    public static string DefaultLocale()
+    {
+        if (LastBell.Game.Runtime.LaunchArgs.Any) return "sk";
+        string language = OS.GetLocaleLanguage();
+        return language is "sk" or "cs" ? "sk" : "en";
+    }
 
     /// <summary>The first-start tips were shown.</summary>
     public static bool TipsShown { get; set; }

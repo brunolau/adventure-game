@@ -671,6 +671,8 @@ SK_OVERRIDES = LOCALIZATION_DIR / "overrides" / "sk_overrides.csv"
 # Less revealing texts for Standard and Hard difficulty (owner 2026-10-08: "the game is hinting way too much in the
 # texts and dialogues"): <base key>.std rows; the game shows them unless the difficulty is Easy (TextService.VariantKey).
 GUIDANCE_VARIANTS = LOCALIZATION_DIR / "overrides" / "guidance_std.csv"
+# The English source (keys,en), written by tools/en_batches.py merge; extract_strings puts it into the en column.
+EN_SOURCE = LOCALIZATION_DIR / "overrides" / "en.csv"
 VARIANT_SUFFIX = ".std"
 VARIANT_HEADER = ("keys", "sk", "note")
 OVERRIDE_HEADER = ("keys", "game_json", "sk", "note")
@@ -815,3 +817,13 @@ def add_guidance_variants(entries: Iterable[TextEntry], variants: dict[str, str]
                               source=entry.source + VARIANT_SUFFIX, line_id=None, extension=True))
         added.append(vkey)
     return result, added, problems
+
+
+def load_en_source(path: Path = EN_SOURCE) -> dict[str, str]:
+    """{key: english} from the English source file (empty when it does not exist)."""
+    if not path.exists():
+        return {}
+    header, rows = read_table(path)
+    if tuple(header[:2]) != ("keys", "en"):
+        raise ValueError(f"{path.name}: header must start with keys,en")
+    return {r[0]: r[1] for r in rows if len(r) >= 2 and r[1].strip()}

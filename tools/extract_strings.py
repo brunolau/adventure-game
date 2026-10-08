@@ -132,8 +132,10 @@ def read_existing_translations(path: Path) -> tuple[list[str], dict[str, list[st
     return extra, existing
 
 
-def build_rows(entries: list[tk.TextEntry], path: Path) -> tuple[list[str], list[list[str]], list[str]]:
-    """Rows for one table, keeping existing translations. Returns (header, rows, keys_with_changed_sk)."""
+def build_rows(entries: list[tk.TextEntry], path: Path, english: dict[str, str] | None = None
+               ) -> tuple[list[str], list[list[str]], list[str]]:
+    """Rows for one table, keeping existing translations; the en column comes from the English source
+    (overrides/en.csv) when it has the key. Returns (header, rows, keys_with_changed_sk)."""
     extra, existing = read_existing_translations(path)
     locales = list(tk.HEADER[2:]) + [locale for locale in extra if locale not in tk.HEADER]
     header = [tk.HEADER[0], tk.SOURCE_LOCALE] + locales
@@ -146,6 +148,8 @@ def build_rows(entries: list[tk.TextEntry], path: Path) -> tuple[list[str], list
             translations = [old_by_locale.get(locale, "") for locale in locales]
             if old[0] != entry.text and any(translations):
                 changed.append(entry.key)
+        if english and entry.key in english and "en" in locales:
+            translations[locales.index("en")] = english[entry.key]
         rows.append([entry.key, entry.text] + translations)
     return header, rows, changed
 
@@ -207,13 +211,14 @@ def main() -> int:
     id_hits = find_internal_ids(entries, game)
 
     tables = {table: [e for e in entries if e.table == table] for table in tk.GENERATED_TABLES}
+    english = tk.load_en_source()
     changed_translations: dict[str, list[str]] = {}
     if not args.dry_run:
         args.out_dir.mkdir(parents=True, exist_ok=True)
     for table, table_entries in tables.items():
         path = args.out_dir / tk.TABLE_FILE_NAMES[table]
         try:
-            header, rows, changed = build_rows(table_entries, path)
+            header, rows, changed = build_rows(table_entries, path, english)
         except ValueError as error:
             print(f"ERROR: {error}", file=sys.stderr)
             return 2

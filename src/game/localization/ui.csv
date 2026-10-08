@@ -1,771 +1,771 @@
 keys,sk,en
-ui.common.ok,OK,
-ui.common.yes,Áno,
-ui.common.no,Nie,
-ui.common.cancel,Zrušiť,
-ui.common.back,Späť,
-ui.common.close,Zavrieť,
-ui.common.confirm,Potvrdiť,
-ui.common.apply,Použiť,
-ui.common.on,Zapnuté,
-ui.common.off,Vypnuté,
-ui.common.loading,Načítava sa…,
-ui.common.press_any_key,Stlač ľubovoľný kláves,
-ui.menu.new_game,Nová hra,
-ui.menu.continue,Pokračovať,
-ui.menu.load,Načítať,
-ui.menu.save,Uložiť,
-ui.menu.settings,Nastavenia,
-ui.menu.album,Album,
-ui.menu.help,Pomoc,
-ui.menu.credits,Autori,
-ui.menu.quit,Ukončiť,
-ui.menu.new_game_confirm,Začať novú hru? Postup od posledného uloženia sa stratí.,
-ui.menu.quit_confirm,Naozaj chceš ukončiť hru?,
-ui.menu.version,Verzia {version},
-ui.pause.title,Pauza,
-ui.pause.resume,Pokračovať v hre,
-ui.pause.save,Uložiť hru,
-ui.pause.load,Načítať hru,
-ui.pause.settings,Nastavenia,
-ui.pause.help,Pomoc,
-ui.pause.main_menu,Hlavné menu,
-ui.pause.main_menu_confirm,Vrátiť sa do hlavného menu? Postup od posledného uloženia sa stratí.,
-ui.pause.quit,Ukončiť hru,
-ui.pause.quit_confirm,Ukončiť hru? Postup od posledného uloženia sa stratí.,
-ui.save.title_save,Uložiť hru,
-ui.save.title_load,Načítať hru,
-ui.save.manual_section,Uložené hry,
-ui.save.autosave_section,Automatické uloženia,
-ui.save.slot,Pozícia {n},
-ui.save.slot_empty,Prázdna pozícia,
-ui.save.autosave,Automatické uloženie {n},
-ui.save.checkpoint_finale,Kontrolný bod pred záverom,
-ui.save.slot_summary,{place} · {year},
-ui.save.saved_at,Uložené {datetime},
-ui.save.playtime,Herný čas {time},
-ui.save.overwrite_confirm,Prepísať uloženú hru na pozícii {n}?,
-ui.save.overwrite,Prepísať,
-ui.save.delete,Vymazať,
-ui.save.delete_confirm,Naozaj vymazať uloženú hru na pozícii {n}?,
-ui.save.load_confirm,Načítať túto hru? Postup od posledného uloženia sa stratí.,
-ui.save.saving,Ukladá sa…,
-ui.save.saved,Hra je uložená.,
-ui.save.save_failed,Hru sa nepodarilo uložiť. Skús to znova alebo vyber inú pozíciu.,
-ui.save.cannot_save_now,Teraz sa nedá uložiť. Skús to po dokončení aktuálnej akcie.,
-ui.save.corrupted,Chybný súbor uloženia. Rozohraná hra beží ďalej.,
-ui.save.corrupted_slot,Chybný súbor uloženia,
-ui.save.newer_version,Uloženie pochádza z novšej verzie hry a nedá sa načítať. Rozohraná hra beží ďalej.,
-ui.save.migrated,Uloženie zo staršej verzie hry bolo prevedené na novú verziu.,
-ui.save.no_saves,Zatiaľ nemáš uloženú žiadnu hru.,
-ui.save.export,Exportovať uloženie,
-ui.save.import,Importovať uloženie,
-ui.save.export_done,Uloženie je exportované.,
-ui.save.import_done,Uloženie je importované.,
-ui.save.import_failed,Súbor sa nepodarilo importovať. Rozohraná hra beží ďalej.,
-ui.settings.title,Nastavenia,
-ui.settings.tab_audio,Zvuk,
-ui.settings.tab_display,Obraz,
-ui.settings.tab_text,Text a titulky,
-ui.settings.tab_controls,Ovládanie,
-ui.settings.tab_accessibility,Prístupnosť,
-ui.settings.language,Jazyk,
-ui.settings.language_sk,Slovenčina,
-ui.settings.language_en,English,
-ui.settings.volume_master,Celková hlasitosť,
-ui.settings.volume_music,Hudba,
-ui.settings.volume_ambience,Zvuky prostredia,
-ui.settings.volume_sfx,Efekty,
-ui.settings.volume_voice,Hlasy,
-ui.settings.volume_value,{percent} %,
-ui.settings.mute_unfocused,"Stlmiť zvuk, keď okno hry nie je aktívne",
-ui.settings.text_speed,Rýchlosť textu,
-ui.settings.text_speed_slow,Pomalá,
-ui.settings.text_speed_normal,Normálna,
-ui.settings.text_speed_fast,Rýchla,
-ui.settings.text_speed_instant,Okamžitá,
-ui.settings.auto_advance,Automatický posun titulkov,
-ui.settings.auto_advance_speed,Rýchlosť automatického posunu,
-ui.settings.subtitles,Zobrazovať titulky,
-ui.settings.subtitle_size,Veľkosť titulkov,
-ui.settings.subtitle_size_value,{size} px,
-ui.settings.subtitle_preview,Takto budú vyzerať titulky.,
-ui.settings.subtitle_background,Kontrastné pozadie titulkov,
-ui.settings.speaker_names,Zobrazovať meno hovoriaceho,
-ui.settings.window_mode,Zobrazenie,
-ui.settings.fullscreen,Celá obrazovka,
-ui.settings.windowed,V okne,
-ui.settings.vsync,Vertikálna synchronizácia,
-ui.settings.hud_scale,Veľkosť rozhrania,
-ui.settings.cursor_highlight,Zvýraznený kurzor,
-ui.settings.walk_speed,Rýchlosť chôdze,
-ui.settings.walk_speed_calm,Pokojná,
-ui.settings.walk_speed_brisk,Svižná,
-ui.settings.reduced_motion,Obmedziť pohyb,
-ui.settings.reduced_motion_desc,"Vypne paralaxu, trasenie a záblesky. Presun časom nahradí stmavnutie s letopočtom.",
-ui.settings.high_contrast_labels,Kontrastné menovky objektov,
-ui.settings.high_contrast_labels_desc,Popis pri kurzore dostane tmavé pozadie a väčšie písmo.,
-ui.settings.hotspot_key_hint,Pripomínať kláves na zobrazenie objektov,
-ui.settings.hotspot_key_hint_desc,"Spodný panel pripomenie, že keď podržíš Space, ukážu sa všetky miesta, na ktoré sa dá kliknúť.",
-ui.settings.reset_tips,Znova zobraziť úvodné rady,
-ui.settings.reset_defaults,Obnoviť predvolené,
-ui.settings.reset_confirm,Vrátiť všetky nastavenia na predvolené hodnoty?,
-ui.settings.restart_required,Zmena sa prejaví po reštarte hry.,
-ui.controls.title,Ovládanie,
-ui.controls.left_click,"Ľavý klik – akcia, chôdza, rozhovor",
-ui.controls.right_click,"Pravý klik – prezrieť objekt, na voľnom mieste otvoriť inventár",
-ui.controls.right_click_selected,Pravý klik s vybratým predmetom – zrušiť výber,
-ui.controls.space,Space (podržať) – ukázať značky na všetkých miestach na kliknutie,
-ui.controls.double_click,Dvojklik – preskočiť chôdzu (Adam je hneď na mieste),
-ui.controls.inventory,I – inventár,
-ui.controls.map,M – mapa,
-ui.controls.journal,J – denník,
-ui.controls.hint,H – nápoveda,
-ui.controls.escape,"Esc – preskočiť titulok (dvakrát rýchlo: celý rozhovor), zavrieť panel alebo pozastaviť hru",
-ui.controls.enter,Enter – ďalší titulok,
-ui.controls.tab,Tab – prechádzať zoznam objektov,
-ui.controls.shift_enter,Shift+Enter alebo dvakrát Enter – vykonať akciu a preskočiť chôdzu,
-ui.tutorial.left_click,Ľavým klikom vykonáš akciu.,
-ui.tutorial.right_click,Pravým klikom prezrieš objekt; na voľnom mieste otvoríš inventár.,
-ui.tutorial.space,"Kým držíš Space, značky ukážu všetky miesta, na ktoré môžeš kliknúť.",
-ui.tutorial.help_menu,Tieto rady nájdeš aj v menu Pomoc.,
-ui.tutorial.touch_tap,Ťuknutím vykonáš akciu.,
-ui.tutorial.touch_hold,Podržaním prsta prezrieš objekt.,
-ui.tutorial.touch_eye,"Podrž dva prsty na obrazovke alebo použi tlačidlo Oko. Uvidíš všetky miesta, na ktoré môžeš ťuknúť.",
-ui.tutorial.got_it,Rozumiem,
-ui.hud.inventory,Inventár,
-ui.hud.journal,Denník,
-ui.hud.map,Mapa,
-ui.hud.hint,Nápoveda,
-ui.hud.menu,Menu,
-ui.hud.show_hotspots,Oko,
-ui.hud.hotspots_on,Zobrazené všetky miesta na kliknutie,
-ui.hud.hotspots_off,Miesta na kliknutie sú skryté,
-ui.hud.hotspot_key_hint,"Podrž Space – ukážu sa miesta, na ktoré sa dá kliknúť",
-ui.hud.current_goal,Aktuálny cieľ,
-ui.hud.hide_goal,Skryť cieľ,
-ui.hud.goal_updated,Nový cieľ v denníku,
-ui.inventory.title,Inventár,
-ui.inventory.tab_items,Predmety,
-ui.inventory.tab_archived,Archivované,
-ui.inventory.empty,Inventár je prázdny.,
-ui.inventory.archived_empty,Zatiaľ tu nie sú žiadne archivované dokumenty.,
-ui.inventory.archived_badge,Archivované,
-ui.inventory.selected,Vybraný predmet: {item},
-ui.inventory.selection_cleared,Výber zrušený,
-ui.inventory.combine,Spojiť predmety,
-ui.inventory.combine_hint,Klikni ním na niečo v scéne alebo vyber druhý predmet a spoj ich.,
-ui.inventory.look_hint,Pravým klikom predmet prezrieš.,
-ui.inventory.item_added,Do inventára pribudlo: {item},
-ui.inventory.item_removed,Z inventára ubudlo: {item},
-ui.inventory.evidence_returned,Dôkazy sú späť v inventári.,
-ui.inventory.scroll_up,Posunúť nahor,
-ui.inventory.scroll_down,Posunúť nadol,
-ui.inventory.page,{current}/{total},
-ui.journal.title,Denník,
-ui.journal.tab_goals,Ciele,
-ui.journal.tab_findings,Zistenia,
-ui.journal.tab_people,Ľudia,
-ui.journal.tab_time_map,Mapa času,
-ui.journal.tab_album,Album,
-ui.journal.main_story,Hlavný príbeh,
-ui.journal.side_quests,Vedľajšie úlohy,
-ui.journal.state_open,Nezačatá,
-ui.journal.state_in_progress,Rozpracovaná,
-ui.journal.state_done,Hotová,
-ui.journal.pin,Pripnúť,
-ui.journal.unpin,Odopnúť,
-ui.journal.pinned_main,Pripnutá hlavná úloha,
-ui.journal.pinned_side,Pripnutá vedľajšia úloha,
-ui.journal.observations,Pozorovania,
-ui.journal.clues,Vodidlá,
-ui.journal.transcripts,Prepisy rozhovorov,
-ui.journal.progress_log,Záznamy postupu,
-ui.journal.reward,Odmena: {reward},
-ui.journal.empty,Zatiaľ tu nič nie je.,
-ui.journal.new_entry,Nový záznam v denníku,
-ui.journal.people_empty,Zatiaľ si nikoho nestretol.,
-ui.journal.time_map_current,Práve si tu,
-ui.journal.time_map_locked,Zatiaľ neotvorené časové okno,
-ui.journal.album_empty,"Album sa zaplní, keď pomôžeš ľuďom vo vedľajších úlohách.",
-ui.journal.replay_ending,Znova prehrať záver,
-ui.map.title,Mapa,
-ui.map.node,Uzol,
-ui.map.node_tooltip,Rýchly presun k časovému uzlu tohto roku,
-ui.map.fast_travel,Rýchly presun,
-ui.map.travel_to,Presunúť sa: {place},
-ui.map.you_are_here,Tu si,
-ui.map.unvisited,Nenavštívené miesto,
-ui.map.unreachable,Sem sa teraz nedostaneš.,
-ui.map.fast_travel_rule,"Rýchly presun vedie len na navštívené miesta, kam sa práve dá dostať.",
-ui.map.sheet_year,Rok {year},
-ui.map.legend,Legenda,
-ui.map.regions_title,Oblasti,
-ui.map.back_to_regions,Späť na oblasti,
-ui.map.region_rule,"V rámci oblasti sa presúvaš voľne, do inej oblasti len cez jej zastávku.",
-ui.map.region_unvisited,Neznáma oblasť,
-ui.map.region_rooms,Miesta: {visited} z {total},
-ui.map.region_hub,Zastávka: {hub},
-ui.map.hub,Zastávka,
-ui.map.via_hub,Do inej oblasti sa dostaneš len cez jej zastávku: {hub}.,
-ui.map.travel_by,Presunúť sa: {place} ({transport}),
-ui.travel.walk,Pešo,
-ui.travel.map_transition,Skrátený presun,
-ui.travel.car_transition,Autom,
-ui.travel.cable_A6,Kabínkovou lanovkou,
-ui.travel.board_funitel,Nástup na Funitel,
-ui.travel.arrive_funitel,Výstup z Funitelu,
-ui.travel.bus,Autobusom,
-ui.travel.tram,Električkou,
-ui.travel.card,{transport} · {place},
-ui.travel.finish_ride,Dokončiť jazdu,
-ui.travel.choose_era,Kam sa presunieš?,
-ui.travel.time_node,Hodiny časového uzla – výber obdobia,
-ui.travel.era_option,Rok {year},
-ui.travel.era_locked,Toto časové okno ešte nie je otvorené.,
-ui.travel.era_current,Práve si tu,
-ui.travel.jump,Presunúť sa,
-ui.travel.new_era_unlocked,Otvorilo sa nové časové okno: {year},
-era.1960.card,Ivanka pri Dunaji,
-era.1960.date,6. júna 1962,
-era.1960.year,1962,
-era.1982.card,Dúbravka,
-era.1982.date,7. decembra 1982,
-era.1982.year,1982,
-era.1995.card,Bratislava,
-era.1995.date,15. júna 1995,
-era.1995.year,1995,
-era.2020.card,Chorvátsky Grob a Dúbravka,
-era.2020.date,29. októbra 2020,
-era.2020.year,2020,
-era.2035.card,Jasná,
-era.2035.date,6. februára 2035,
-era.2035.year,2035,
-ui.hint.title,Nápoveda,
-ui.hint.level_1,Smer,
-ui.hint.level_2,Postup,
-ui.hint.level_3,Riešenie,
-ui.hint.next,Ďalšia nápoveda,
-ui.hint.show_solution,Ukázať presné riešenie,
-ui.hint.main_quest,Hlavná úloha,
-ui.hint.side_quest,Vedľajšia úloha,
-ui.hint.choose_quest,S čím ti mám poradiť?,
-ui.hint.none,Teraz nie je k dispozícii žiadna nápoveda.,
-ui.hint.all_done,Všetko podstatné je hotové.,
-ui.hint.step_place,{room}. Zameraj sa na: {target}.,
-ui.hint.step_bag,"Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš.",
-ui.difficulty.title,Obťažnosť,
-ui.difficulty.pick_title,Nová hra,
-ui.difficulty.pick_intro,"Vyber si, ako veľmi ti má nápoveda pomáhať. Obťažnosť mení iba nápovedu a kedykoľvek ju zmeníš v nastaveniach.",
-ui.difficulty.start,Začať hru,
-ui.difficulty.recommended,odporúčaná,
-ui.settings.tab_game,Hra,
-ui.settings.difficulty_desc,Platí pre rozohranú hru a uloží sa spolu s ňou.,
-ui.settings.difficulty_menu,Obťažnosť si vyberieš pri novej hre. Počas hry ju zmeníš tu a každá uložená hra si pamätá svoju.,
-ui.hint.difficulty,Obťažnosť: {difficulty},
-ui.hint.level_nudge,Postrčenie,
-ui.hint.level_where,Kde hľadať,
-ui.hint.standard_end,Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže nápoveda na ľahkej obťažnosti – prepneš na ňu v nastaveniach na karte Hra.,
-ui.hint.hard_wait,Do postrčenia zostáva {time}.,
-ui.hint.hard_wait_note,Na ťažkej obťažnosti sa nápoveda otvorí po troch minútach bez pokroku.,
-ui.hint.hard_wait_button,Ešte nie ({time}),
-ui.hint.hard_end,"Na ťažkej obťažnosti je to všetko, čo nápoveda povie.",
-ui.hint.hard_no_puzzle,Na ťažkej obťažnosti hádanky riešiš bez pomoci.,
-ui.hud.hint_wait,Nápoveda (H): zostáva {time},
-ui.difficulty.easy,Ľahká,
-ui.difficulty.hard,Ťažká,
-ui.difficulty.standard,Štandardná,
-ui.difficulty.easy_desc,Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie doplní.,
-ui.difficulty.hard_desc,"Iba krátke postrčenie, a to až po troch minútach bez pokroku. Hádanky bez pomoci.",
-ui.difficulty.standard_desc,"Nápoveda ťa postrčí a povie, kde hľadať. Riešenie nechá na tebe.",
-ui.hint_step.G01,V garáži vezmi servisnú brašnu.,
-ui.hint_step.G02,Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Babkin nákup“.,
-ui.hint_step.G03,Mirin nákupný lístok použi na Danu v potravinách.,
-ui.hint_step.G04,Tašku s nákupom polož na stolík pred Mirinou bránkou.,
-ui.hint_step.G05,Pod zatvoreným oknom sa s Mirou porozprávaj o téme „Potrebuješ ešte niečo?“,
-ui.hint_step.G06,Kľúč od dielne použi na dvere záhradnej dielne.,
-ui.hint_step.G07,V predsieni dielne vyber prístroj z mosadzného puzdra.,
-ui.hint_step.G08,Servisnú brašnu použi na stolový uzol ZVON v dielni.,
-ui.hint_step.G09,V garáži vezmi náhradnú poistku zo zásuvky.,
-ui.hint_step.G10,Náhradnú poistku použi na stolový uzol ZVON v dielni.,
-ui.hint_step.G11,Na tvarovom paneli spoj každý tvar s rovnakým tvarom podľa schémy nad ním.,
-ui.hint_step.B01,Pred školou si prečítaj oznam na nástenke krúžku.,
-ui.hint_step.B02,Prenosný chronometer ZVON použi na Tóna vo vstupnej chodbe.,
-ui.hint_step.B03,V triede pamäťového krúžku sa s Mirou porozprávaj o téme „Problém s chronometrom“.,
-ui.hint_step.B04,Servisnú brašnu použi na kazetový mechanizmus v miestnosti školského rozhlasu.,
-ui.hint_step.B05,Rozpadnutý remienok použi na Paliho v jeho opravovni v Karlovej Vsi.,
-ui.hint_step.B06,Nový remienok použi na kazetový mechanizmus v miestnosti školského rozhlasu.,
-ui.hint_step.B07,Kazetu s rušenými stopami použi na Jura v kazetovom klube v Ružinove.,
-ui.hint_step.B08,Servisnú brašnu použi na zaseknutú stolovú váhu u Fera na Miletičovej.,
-ui.hint_step.B09,V opravovni odevov sa s Miladou porozprávaj o téme „Návlek na kábel“.,
-ui.hint_step.B10,V inventári spoj dvojpólový konektor s krížovým adaptérom.,
-ui.hint_step.B11,V inventári spoj textilný izolačný návlek s adaptérom s konektorom.,
-ui.hint_step.B12,Hotovú zvukovú prepojku použi na servisný zvukový vstup v miestnosti školského rozhlasu.,
-ui.hint_step.B13,Mirino poverenie použi na Karola v archívnej študovni.,
-ui.hint_step.B14,Technický fotografický negatív použi na Alenu vo fotoateliéri Svetlo.,
-ui.hint_step.B15,Fotografiu kalibračného stojana použi na Vieru v antikvariáte Pod druhou rukou; podľa nej ti dá fóliu K-17.,
-ui.hint_step.B16,"V inventári spoj priehľadnú fóliu K-17 s mapou uzlov, fóliu otoč o 180° a potvrď.",
-ui.hint_step.B17,Úplnú mapu meracích uzlov použi na Dezidera v jeho garáži v Petržalke.,
-ui.hint_step.B18,Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Metronóm na meranie“.,
-ui.hint_step.B19,Pri LEALe si prečítaj rytmický nákres na múre.,
-ui.hint_step.B20,Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.,
-ui.hint_step.B21,Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.,
-ui.hint_step.B22,"Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6.",
-ui.hint_step.I01,Prenosný chronometer ZVON použi na Ota v jeho mechanickej dielni.,
-ui.hint_step.I02,Otov výdajný lístok použi na Štefana na dvore dielne.,
-ui.hint_step.I03,Servisnú brašnu použi na svorku kulisy v kultúrnej sále.,
-ui.hint_step.I04,V inventári spoj Lídin ručný dierovač s predrezanou koženou manžetou.,
-ui.hint_step.I05,V inventári spoj dva duté nity s dierovanou manžetou.,
-ui.hint_step.I06,Hotovú manžetu použi na demonštračnú ručnú pumpu pred skúšobnou búdkou.,
-ui.hint_step.I07,V dielni sa s Otom porozprávaj o téme „Pumpa je opravená“.,
-ui.hint_step.I08,Kľúč od meracej miestnosti použi na jej dvere pri ručnej pumpe.,
-ui.hint_step.I09,V miestnosti prvého ZVONu sa s Mirou porozprávaj o téme „Mazanie výnimiek v budúcnosti“.,
-ui.hint_step.I10,V parku pri kaštieli sa s Verou porozprávaj o téme „Tupé rydlo“.,
-ui.hint_step.I11,Na povale technického archívu vezmi voskovaný papier.,
-ui.hint_step.I12,Voskovaný hárok použi na kalibračnú mosadznú platňu v miestnosti prvého ZVONu.,
-ui.hint_step.I13,V inventári spoj Verino tupé rydlo s nezvýrazneným odtlačkom.,
-ui.hint_step.I14,Na pošte vezmi uhlový papier pri prepážke.,
-ui.hint_step.I15,V inventári spoj uhlový papier s technickým registračným listom.,
-ui.hint_step.I16,Dve vyhotovenia listu použi na Alojza na pošte.,
-ui.hint_step.I17,Potvrdený registračný list použi na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.,
-ui.hint_step.C01,Overený odtlačok z roku 1962 použi na Miru pod zatvoreným oknom v Grobe.,
-ui.hint_step.D01,Telefón použi na roh dvora so servisným oknom pred školou v roku 2020.,
-ui.hint_step.D02,Prenosný chronometer ZVON použi na Tóna pri školníckom servisnom okne v roku 2020.,
-ui.hint_step.D03,Vo fyzikálnom kabinete v roku 2020 si prečítaj servisnú knihu z roku 1982.,
-ui.hint_step.D04,Kópiu servisného záznamu 1982 použi na rám starých hodín na Dúbravskej zastávke v roku 2020.,
-ui.hint_step.E01,Prenosný chronometer ZVON použi na Tóna pri servisnom okne v roku 1982.,
-ui.hint_step.E02,Chránenú fotografiu dvora 2020 použi na Tóna pri servisnom okne.,
-ui.hint_step.E03,Otov školský výdajný lístok použi na Martu vo výdajni údržbového materiálu; vchod do nej je zo sídliskového obchodu pri zastávke.,
-ui.hint_step.E04,Diely návratového mostíka použi na servisnú dosku vo fyzikálnom kabinete v roku 1982.,
-ui.hint_step.E05,V sídliskovom obchode sa s Ruženou porozprávaj o téme „Suchý pohár pre školu“.,
-ui.hint_step.E06,V inventári spoj nový keramický mostík s pohárom s viečkom a tesnením.,
-ui.hint_step.E07,V školskom záhradnom sklade sa so Šimonom porozprávaj o téme „Ochrana mladej lipy“.,
-ui.hint_step.E08,Zapečatený pohár s mostíkom použi na servisnú dutinu v múriku na školskom dvore.,
-ui.hint_step.E09,Ochrannú ohrádku pre lipu použi na mladú lipu na školskom dvore.,
-ui.hint_step.E10,V záhradnom sklade sa znova porozprávaj so Šimonom o téme „Zapíšete lipu aj múrik?“,
-ui.hint_step.E11,V roku 1995 sa porozprávaj s Tónom vo vstupnej chodbe a vyber tému s heslom „Lastovička sa vracia“.,
-ui.hint_step.D05,"V roku 2020 použi servisnú brašnu na miesto pôvodnej servisnej dutiny na školskom dvore; v múriku vyber rad 2, stĺpec 3.",
-ui.hint_step.D06,V inventári použi servisnú brašnu na pohár vyzdvihnutý po 38 rokoch.,
-ui.hint_step.D07,Zachovaný návratový mostík použi na Tóna pri školníckom servisnom okne v roku 2020.,
-ui.hint_step.C02,Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Protokol k babkinej krabici“.,
-ui.hint_step.C03,Protokol o odovzdaní použi na Romana na ulici medzi plotmi.,
-ui.hint_step.C04,Protokol s Romanovým podpisom použi na Elu na výdajnom mieste.,
-ui.hint_step.C05,Potvrdené odovzdanie 2020 použi na stolový uzol ZVON v dielni; mostík musí byť v inventári.,
-ui.hint_step.F01,Pred hotelom Grand Jasná sa s Ninou porozprávaj o téme „Prichádzam kvôli fondu Z-17“.,
-ui.hint_step.F02,Pôvodnú školskú kazetu použi na Tamaru v lobby hotela Grand Jasná.,
-ui.hint_step.F03,Potvrdené odovzdanie 2020 použi na Borisa vo výstavnom salóne hotela; podľa neho nájde fond Z-17.,
-ui.hint_step.F04,Katalógovú kartu fondu Z-17 použi na Sáru v klientskom centre Biela Púť.,
-ui.hint_step.J02,Spiatočný lístok na oba úseky použi na čítačku platného lístka pri dolnej stanici.,
-ui.hint_step.J03,Na Priehybe nastúp na Funitel smer Chopok.,
-ui.hint_step.J04,V kabíne Funitelu dokonči jazdu pri vrcholovej stanici za oknom.,
-ui.hint_step.F05,Telefón použi na panel normalizácie pri Rotunde.,
-ui.hint_step.F06,Lokálnu zvukovú čítačku použi na servisný terminál v pavilóne Atlasu.,
-ui.hint_step.F07,Prenosný chronometer ZVON použi na pasívny stojan pri chodníku pri Vrbickom plese.,
-ui.hint_step.F08,Miestnu referenčnú stopu použi na servisný terminál v pavilóne Atlasu.,
-ui.hint_step.J05,Zachovaný návratový mostík použi na oddelený návratový konektor Atlasu na vyhliadkovej terase.,
-ui.hint_step.F09,Na vyhliadkovej terase prepni prepínač zápisu na MONITOR.,
-ui.hint_step.F10,V servisnom pavilóne potvrď na servisnom termináli vstup do chronokomory.,
-ui.hint_step.F11,Leinu nezmenenú hlasovú správu použi na Viktora v chronokomore.,
-ui.hint_step.F12,Overený odtlačok z roku 1962 vlož do portu Pôvod.,
-ui.hint_step.F13,Pôvodnú školskú kazetu vlož do portu Hlas.,
-ui.hint_step.F14,Potvrdené odovzdanie 2020 vlož do portu Súhlas.,
-ui.hint_step.F15,Podpísaný obnovovací postup vlož do portu Návrat.,
-ui.hint_step.F16,"Na paneli obnovy priraď roky: Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035.",
-ui.hint_step.F17,Na paneli obnovy potvrď obnovu záznamov.,
-ui.hint_step.Q1A,Na ulici medzi plotmi sa s Lenkou porozprávaj o téme „Čo je s Bodkom?“,
-ui.hint_step.Q1B,Pri retenčnej nádrži vezmi červenú loptičku.,
-ui.hint_step.Q1C,Bodkovu loptičku použi na Lenku na ulici medzi plotmi.,
-ui.hint_step.Q2A,Pri výveske v Čiernej Vode sa s pánom Jozefom porozprávaj o téme „Pomôcť vám s oznamom?“,
-ui.hint_step.Q2B,Na výdajnom mieste sa s Elou porozprávaj o téme „Máš oznam veľkým písmom?“,
-ui.hint_step.Q2C,Veľký čitateľný oznam použi na komunitnú vývesku v Čiernej Vode.,
-ui.hint_step.Q3A,Na školskom dvore sa so Soňou porozprávaj o téme „Hľadáš nejakú fotografiu?“,
-ui.hint_step.Q3B,Pri kiosku sa so Zitou porozprávaj o téme „Máte obálku pre školu?“,
-ui.hint_step.Q3C,Obálku s tímovým negatívom použi na Alenu vo fotoateliéri Svetlo.,
-ui.hint_step.Q3D,Fotografiu družstva použi na Soňu na školskom dvore.,
-ui.hint_step.Q4A,Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Prečo tá melódia nekončí?“,
-ui.hint_step.Q4B,V antikvariáte sa s Vierou porozprávaj o téme „Máte Emilove noty?“,
-ui.hint_step.Q4C,Noty k Emilovej skladbe použi na Emila na Karloveskom nástupišti.,
-ui.hint_step.Q5A,V petržalskom podchode sa s Jurajom porozprávaj o téme „Čo chýba mape svetiel?“,
-ui.hint_step.Q5B,"Keď ťa školník zapíše ako návštevu, porozprávaj sa s Tónom vo vstupnej chodbe o téme „Kúsok kriedy na panel?“",
-ui.hint_step.Q5C,Bielu školskú kriedu použi na povolený výtvarný panel v podchode.,
-ui.hint_step.Q6A,Na pošte sa s Alojzom porozprávaj o téme „Kde je váš holub?“,
-ui.hint_step.Q6B,Na dvore dielne sa so Štefanom porozprávaj o téme „Krmivo pre Bélu“.,
-ui.hint_step.Q6C,Hrsť semien pre Bélu použi na poštového holuba v parku pri kaštieli.,
-ui.hint_step.Q6D,Na pošte sa znova porozprávaj s Alojzom o téme „Bélov návrat“.,
-ui.hint_step.Q7A,V kultúrnej sále sa s Rudom porozprávaj o téme „Môžem pomôcť so scenárom?“,
-ui.hint_step.Q7B,Na povale technického archívu vezmi ochotnícky scenár.,
-ui.hint_step.Q7C,Rudov scenár použi na Ruda v kultúrnej sále.,
-ui.hint_step.Q8A,Pri dolnej stanici sa s Očkom porozprávaj o téme „Kam máte doručiť balík?“,
-ui.hint_step.Q8B,Pri Vrbickom plese si prezri lavičku so psom.,
-ui.hint_step.Q8C,Očkovu doručovaciu požiadavku použi na Tamaru v lobby hotela Grand Jasná.,
-ui.hint_step.Q8D,Potvrdenie opravovne použi na Očka pri dolnej stanici.,
-ui.hint_step.Q9A,V triede pred výstavkou v roku 1982 sa s Janou porozprávaj o téme „Janin vlastný návrh“.,
-ui.hint_step.Q9B,Janinu pôvodnú schému použi na učiteľa Dobroviča.,
-ui.hint_step.Q9C,Schému s povolením na výstavku použi na Janu.,
-ui.hint_step.Q9D,Vo fyzikálnom kabinete v roku 1995 sa s Janou porozprávaj o téme „Čo bolo s vašou schémou?“,
-ui.hint_step.Q9E,Vo fyzikálnom kabinete v roku 2020 sa s Janou porozprávaj o téme „Čo robíte s notebookmi?“,
-ui.hint_step.Q9F,"Vo výstavnom salóne hotela Grand Jasná sa s Janou porozprávaj o téme „Jana, čo je s vašou schémou?“",
-hint.nudge.G01,Dnes idem babke na nákup a potom do jej dielne. Bez náradia z domu nevyrazím.,
-hint.where.G01,"Hneď tu, v mojej garáži.",
-hint.nudge.G02,"Babkin nákup nevybavím sám. Kto komu v obci nosí nákup, to vedia na výdajnom mieste.",
-hint.where.G02,Na výdajnom mieste pri Lúčnom koníku.,
-hint.nudge.G03,"Babkin lístok mám, tašku s nákupom zatiaľ nie. Vraj už na mňa niekde čaká pripravená.",
-hint.where.G03,"V potravinách cez okienko, u Dany.",
-hint.nudge.G04,"Taška je plná. Babkine pravidlo znie: do domu nechodím, nákup nechám vonku.",
-hint.where.G04,Pri Mirinej bránke.,
-hint.nudge.G05,"Nákup je doručený. Babka mi ešte niečo chcela povedať, ale až pri okne.",
-hint.where.G05,Pod babkiným zatvoreným oknom. Cez sklo ma nepočuje.,
-hint.nudge.G06,V babkinej dielni sa ozýva odpojený prístroj. A kľúč od nej už nosím pri sebe.,
-hint.where.G06,Dielňa stojí v záhrade za Mirinou bránkou.,
-hint.nudge.G07,"V predsieni leží niečo, čo vyzerá veľmi dôležito, a pritom to nie je zamknuté.",
-hint.where.G07,V predsieni záhradnej dielne.,
-hint.nudge.G08,"Stolový uzol nesvieti. Dobrý opravár najprv zistí prečo, až potom niečo mení.",
-hint.where.G08,"V zadnej miestnosti dielne, kde stojí ZVON.",
-hint.nudge.G09,Prepálenú poistku mám v ruke. Rovnakú náhradu mám určite niekde doma.,
-hint.where.G09,V mojej garáži.,
-hint.nudge.G10,"Náhradná poistka má rovnaké hodnoty ako prepálená. Patrí presne tam, odkiaľ som tú starú vybral.",
-hint.where.G10,V zadnej miestnosti babkinej dielne.,
-hint.nudge.G11,"Prístroj chce tri referenčné tvary. Vyzerá to ako stavebnica pre škôlkarov, len drahšia.",
-hint.where.G11,"Na farbách nezáleží, rozhoduje tvar. Schéma nad panelom ukazuje, čo patrí k čomu.",
-hint.nudge.B01,"Prístroj ma poslal pred moju starú školu. Skôr než niekam vtrhnem, zistím, čo sa tu dnes deje.",
-hint.where.B01,"Pred ZŠ Sokolíkova, pri nástenke.",
-hint.nudge.B02,Hlásiť sa treba u školníka. Cudzieho človeka z ulice však len tak ďalej nepustí.,
-hint.where.B02,"Vo vstupnej chodbe školy, u školníka.",
-hint.nudge.B03,"Ten prístroj je babkin. Ak niekto vie, čo sa s ním deje, je to ona, aj v roku 1995.",
-hint.where.B03,V triede pamäťového krúžku na konci chodby.,
-hint.nudge.B04,Babka chce kazetu zo školského rozhlasu. Magnetofón ju však drží a nechce ju pustiť.,
-hint.where.B04,"V miestnosti školského rozhlasu, pri magnetofóne.",
-hint.nudge.B05,"Remienok sa rozpadol na kúsky. Rovnaký zoženiem len v opravovni, kde majú remienky po zásuvkách.",
-hint.where.B05,V opravovni v Karlovej Vsi.,
-hint.nudge.B06,Nový remienok je presne na mieru. Starý som vyťahoval z jedného tvrdohlavého magnetofónu.,
-hint.where.B06,Späť v miestnosti školského rozhlasu.,
-hint.nudge.B07,"Hlasy na páske takmer nepočuť. Pali spomínal niekoho, kto s páskami vie čarovať.",
-hint.where.B07,"V kazetovom klube v Ružinove, u Jura.",
-hint.nudge.B08,Adaptéru chýba konektor a ten má Fero. Opravár sa na trhu vždy zíde.,
-hint.where.B08,"Na Miletičovej medzi stánkami, u Fera.",
-hint.nudge.B09,"Holé vývody do školského rozhlasu nezapojím. Juro vravel, kto má izolačný návlek.",
-hint.where.B09,"V opravovni odevov vedľa trhu, u Milady.",
-hint.nudge.B10,"Všetky diely prepojky mám. Teraz ich treba poskladať, kontakty majú zhodné značky.",
-hint.where.B10,"Toto poskladám z vecí, ktoré už nosím v brašni.",
-hint.nudge.B11,"Kontakty sedia, ale vývody sú holé. Bez izolácie to do školského rozhlasu nezapojím.",
-hint.where.B11,"Aj toto doladím v brašni, nikam nemusím chodiť.",
-hint.nudge.B12,"Prepojka je hotová. Kazetu treba prehrať tak, aby sa stopy nerušili, a nič na ňu nenahrať.",
-hint.where.B12,"V miestnosti školského rozhlasu, pri magnetofóne.",
-hint.nudge.B13,Babka mi dala poverenie. S ním mi niekde v centre vydajú kópiu mapy.,
-hint.where.B13,"V archívnej študovni v Starom Meste, u pána Mertu.",
-hint.nudge.B14,Číslo chýbajúcej fólie je na negatíve. Ten však musí najprv niekto vyvolať.,
-hint.where.B14,Vo fotoateliéri Svetlo na druhej strane námestia.,
-hint.nudge.B15,"Na fotke je číslo K-17. Alena vravela, kto má staré mapové prílohy.",
-hint.where.B15,"V antikvariáte Pod druhou rukou, u Viery.",
-hint.nudge.B16,"Mapa je takmer celá. Chýbajúca vrstva je už v brašni, len ešte nesedí.",
-hint.where.B16,"Dierka na dierku, kríž na kríž, štvorec na štvorec. Keď značky nesedia, fóliu otoč.",
-hint.nudge.B17,"Mapa je celá. Teraz ju musí prečítať niekto, kto ju kedysi pomáhal kresliť.",
-hint.where.B17,Mapa vedie do jednej garáže v Petržalke.,
-hint.nudge.B18,"Na meranie treba rytmus, ktorý nezávisí od prúdu. Dezider vravel, kto má metronóm.",
-hint.where.B18,"Na Karloveskom nástupišti, u Emila.",
-hint.nudge.B19,Tri číslice pre stojan babka nenapísala ako čísla. Namaľovala ich ako obrázok.,
-hint.where.B19,"Pri LEALe, na múre.",
-hint.nudge.B20,Dezider mi dal cievku. Bez nej sa na mieste merania nič nenameria.,
-hint.where.B20,V meracom stánku na Starom moste.,
-hint.nudge.B21,"Metronóm mám. Meranie potrebuje rytmus a rovné miesto, kde ho nič nerozhýbe.",
-hint.where.B21,"Pri meracom stánku na Starom moste, vedľa stojana.",
-hint.nudge.B22,"Stojan chce tri číslice, ktoré babka na múr nakreslila. Kazetu a mapu pritom musím mať pri sebe.",
-hint.where.B22,"Každé koliesko je jedna číslica z rytmického nákresu: vlny, údery, dieliky, v tomto poradí.",
-hint.nudge.I01,"Som v Ivanke v roku 1962. ZVON odtiaľto pochádza, tak hľadám dielňu, kde ho stavali.",
-hint.where.I01,V mechanickej dielni v Ivanke.,
-hint.nudge.I02,Oto mi dal lístok na kožu a nity. Materiál tu vydávajú len na lístok s podpisom.,
-hint.where.I02,"Na dvore hospodárskej dielne, u skladníka.",
-hint.nudge.I03,"Dierovač má Lída v sále. Podľa Ota mi ho požičia, ak jej s niečím pomôžem.",
-hint.where.I03,"V kultúrnej sále, kde sa chystá skúška.",
-hint.nudge.I04,"Koža na manžetu je predrezaná, ale vyznačené otvory ešte nie sú prerazené.",
-hint.where.I04,"To spravím v brašni s tým, čo už mám pri sebe.",
-hint.nudge.I05,Otvory sú prerazené. Manžeta však zatiaľ drží pokope len dobrou vôľou.,
-hint.where.I05,Aj toto dokončím v brašni.,
-hint.nudge.I06,"Manžeta je hotová. Zostáva vrátiť sa k tomu, čo bez nej netesní.",
-hint.where.I06,Pred búdkou za parkom.,
-hint.nudge.I07,"Voda znova obieha. To by mal vedieť ten, kto drží kľúč od meracej miestnosti.",
-hint.where.I07,"V mechanickej dielni, u Ota.",
-hint.nudge.I08,Kľúč od meracej miestnosti mám. Jej dvere som dnes už videl.,
-hint.where.I08,Pred búdkou za parkom.,
-hint.nudge.I09,"Za dverami pracuje mladá babka. Musím jej povedať, čo sa v budúcnosti robí s pôvodnými údajmi.",
-hint.where.I09,"V meracej miestnosti, u mladej Miry.",
-hint.nudge.I10,"Na odtlačok treba aj tupé rydlo. Mira vravela, kto ho nosí v puzdre.",
-hint.where.I10,"V parku pri kaštieli, u Very na lavičke.",
-hint.nudge.I11,"Odtlačok sa nerobí na hocijaký papier. Mira vie, kde leží ten správny.",
-hint.where.I11,Na povale technického archívu.,
-hint.nudge.I12,Platňa musí zostať na mieste. Odnesiem si iba jej odtlačok.,
-hint.where.I12,V miestnosti prvého ZVONu.,
-hint.nudge.I13,"Reliéf je na papieri, ale hrany sú slabé. Na zvýraznenie hrán mám požičaný nástroj.",
-hint.where.I13,To dorobím v brašni.,
-hint.nudge.I14,Registračný list musím mať dvakrát a presne rovnako. Prepisovať ho rukou nebudem.,
-hint.where.I14,"Na pošte, pri prepážke.",
-hint.nudge.I15,"Druhé vyhotovenie listu si urobím sám. Všetko, čo na to treba, už mám pri sebe.",
-hint.where.I15,To urobím v brašni.,
-hint.nudge.I16,Oba listy sú rovnaké. Dátum im však musí potvrdiť niekto s pečiatkou.,
-hint.where.I16,"Na pošte, u pána Barana za prepážkou.",
-hint.nudge.I17,"List je potvrdený. Teraz ho treba uložiť tak, aby prežil desaťročia. Odtlačok si nechám pri sebe.",
-hint.where.I17,Na povale technického archívu.,
-hint.nudge.C01,"Odtlačok z roku 1962 je overený. Čo ďalej, bude vedieť babka, aj keď ju uvidím len cez sklo.",
-hint.where.C01,"V Grobe, pod babkiným zatvoreným oknom.",
-hint.nudge.D01,"Babka chcela, aby som si zapamätal školský dvor presne taký, aký je dnes. Pamäti neverím, telefónu áno.",
-hint.where.D01,Pred školou na Sokolíkovej v roku 2020.,
-hint.nudge.D02,"Tóno vie, že prídem po babkine veci. Ešte mu ukážem, že nie som hocikto z ulice.",
-hint.where.D02,Pri školníckom servisnom okne v roku 2020.,
-hint.nudge.D03,Mostík postavil Oto v roku 1982. Taký majster si určite všetko zapísal.,
-hint.where.D03,Vo fyzikálnom kabinete v roku 2020.,
-hint.nudge.D04,"Záznam má presný dátum. Na cestu do toho roku mi chýbajú hodiny, ktoré ho pamätajú.",
-hint.where.D04,Na Dúbravskej zastávke v roku 2020.,
-hint.nudge.E01,"V roku 1982 pomáhal Otovi malý Tóno. Prístroj, ktorý nosím, by mohli spoznať obaja.",
-hint.where.E01,"Pri servisnom okne školy v roku 1982, u Tóna a jeho deda.",
-hint.nudge.E02,"Dvanásťročnému chlapcovi nestačí povedať, že som z budúcnosti. Musí to vidieť.",
-hint.where.E02,"Pri servisnom okne, u malého Tóna.",
-hint.nudge.E03,Oto podpísal lístok na diely mostíka. Teraz mi ich niekto musí vydať.,
-hint.where.E03,Vo výdajni školského materiálu. Vchádza sa do nej cez sídliskový obchod pri zastávke.,
-hint.nudge.E04,Diely aj Otov nákres mám. Mostík sa však sám nezloží a na kolenách ho skladať nebudem.,
-hint.where.E04,Vo fyzikálnom kabinete v roku 1982.,
-hint.nudge.E05,"Mostík bude v múriku čakať desaťročia. Potrebuje suchý obal, ktorý sa dá poriadne zavrieť.",
-hint.where.E05,V sídliskovom obchode pri zastávke.,
-hint.nudge.E06,"Mostík nesmie zvlhnúť. Všetko, čo ho ochráni, už nosím v brašni.",
-hint.where.E06,"Toto urobím v brašni, nikam nemusím chodiť.",
-hint.nudge.E07,"Na mojej fotke z roku 2020 tu lipa nie je. Vozík, čo jazdí tesne pri nej, jej nepomáha.",
-hint.where.E07,V školskom záhradnom sklade pri dvore.,
-hint.nudge.E08,"Pohár je zapečatený. Oto spomínal miesto, kde zostane do roku 2020 nedotknutý.",
-hint.where.E08,Na školskom dvore s mladou lipou.,
-hint.nudge.E09,Diely ohrádky nosím so sebou. Na dvore však zatiaľ nič nechránia.,
-hint.where.E09,Na školskom dvore s mladou lipou.,
-hint.nudge.E10,"Ohrádka stojí a pohár je ukrytý. Aby to prežilo ďalšie úpravy dvora, niekto to musí zapísať.",
-hint.where.E10,"V záhradnom sklade, u Šimona.",
-hint.nudge.E11,"Malý Tóno chcel, aby som mu pri ďalšom stretnutí povedal dohodnutú vetu. V roku 1995 je z neho školník.",
-hint.where.E11,"V roku 1995 vo vstupnej chodbe školy, u Tóna.",
-hint.nudge.D05,"Pohár čaká v múriku na dvore od roku 1982. Tónove nákresy presne hovoria, za ktorým kameňom.",
-hint.where.D05,"Nákres aj Tónova poznámka platia aj v roku 2020: rad počítaj zhora, kameň zľava.",
-hint.nudge.D06,Pohár je von a tesnenie drží. Viečko však po toľkých rokoch holou rukou nepovolí.,
-hint.where.D06,"Toto urobím v brašni, nikam nemusím chodiť.",
-hint.nudge.D07,"Mostík prežil. Prvý by ho mal vidieť ten, kto si to miesto pamätal celý život.",
-hint.where.D07,"Pri školníckom servisnom okne v roku 2020, u Tóna.",
-hint.nudge.C02,"Babka chcela, aby sme s Elou dotiahli papiere k jej krabici. Tie papiere stále chýbajú.",
-hint.where.C02,"Na výdajnom mieste pri Lúčnom koníku, u Ely.",
-hint.nudge.C03,Na protokole chýbajú podpisy. Krabicu predsa niekto vlastnými rukami niesol.,
-hint.where.C03,"Na ulici medzi plotmi, pri Romanovej dodávke.",
-hint.nudge.C04,"Roman podpísal prevzatie. Druhý podpis patrí tej, ktorá krabicu vydala.",
-hint.where.C04,"Na výdajnom mieste, u Ely.",
-hint.nudge.C05,"Dôkazy sú pokope. Prístroj, s ktorým sa to celé začalo, by mal vedieť, čo s nimi.",
-hint.where.C05,V babkinej záhradnej dielni.,
-hint.nudge.F01,Babkin fond Z-17 skončil v Atlase v Jasnej. Niekto tam za ten fond musí zodpovedať.,
-hint.where.F01,Pred hotelom Grand Jasná.,
-hint.nudge.F02,"Kazetu z roku 1995 bez čítačky s ničím neporovnám. Nina vravela, kto mi ju požičia.",
-hint.where.F02,"V lobby hotela Grand Jasná, u Tamary.",
-hint.nudge.F03,"Kartu fondu Z-17 mi vydajú, keď ukážem, že babkinu krabicu vždy odovzdali tak, ako mali.",
-hint.where.F03,"Vo výstavnom salóne hotela, u Borisa.",
-hint.nudge.F04,"Na lanovku a do pavilónu potrebujem preukaz aj lístok. Nina vravela, kto ich vybavuje.",
-hint.where.F04,"V klientskom centre Biela Púť, u Sáry.",
-hint.nudge.J02,Lístok mám. Pavilón je hore pri Rotunde a pešo sa tam dnes nevyberiem.,
-hint.where.J02,Pri dolnej stanici na Bielej Púti.,
-hint.nudge.J03,"Prvý úsek mám za sebou. Na Chopok sa ide ďalej, len inou lanovkou.",
-hint.where.J03,"Na Priehybe, pri nástupe na Funitel.",
-hint.nudge.J04,"Kabína ide hore. Vystúpiť sa dá, až keď dorazí do vrcholovej stanice.",
-hint.where.J04,"V kabíne Funitelu, pri okne.",
-hint.nudge.F05,"Nina hovorila, že prístroj záznamy zarovnáva. Podľa akého pravidla? To by som chcel mať čierne na bielom.",
-hint.where.F05,Pri Rotunde na Chopku.,
-hint.nudge.F06,"Mám kazetu, odtlačok aj fotku pravidla. Treba porovnať pôvodný hlas s tým, čo z neho ostalo.",
-hint.where.F06,V servisnom pavilóne Atlasu pri Rotunde.,
-hint.nudge.F07,"Terminálu ešte chýba miestna stopa. Nina povedala, kde ju zachytím bez jediného zásahu.",
-hint.where.F07,"Pri Vrbickom plese, pri chodníku. Lanovkami dole a od hotela pešo.",
-hint.nudge.F08,Stopa z plesa je v chronometri. Nina ju potrebuje vidieť hore v pavilóne.,
-hint.where.F08,"V servisnom pavilóne Atlasu, pri termináli.",
-hint.nudge.J05,"Prepínač nič nezmení, kým nebude návrat bezpečný. Na to som si v roku 1982 niečo odložil.",
-hint.where.J05,Na vyhliadkovej terase pri Rotunde.,
-hint.nudge.F09,Návrat je istený. Teraz treba zastaviť samotné mazanie. Nina povedala ako.,
-hint.where.F09,"Na vyhliadkovej terase, pri prepínači.",
-hint.nudge.F10,"Zápis stojí. Systém ma pustí do komory za Viktorom, až keď mu to potvrdím.",
-hint.where.F10,"V servisnom pavilóne, pri termináli.",
-hint.nudge.F11,"Viktor musí počuť, čo jeho systém zahodil. Celé, aj s pauzami.",
-hint.where.F11,"V chronokomore, u Viktora.",
-hint.nudge.F12,"Štyri porty, štyri dôkazy. Prvý patrí tomu, ako sa to celé začalo.",
-hint.where.F12,"V chronokomore, pri portoch panelu obnovy.",
-hint.nudge.F13,"Ďalší port chce hlas. Originál, nie zhrnutie.",
-hint.where.F13,"V chronokomore, pri portoch panelu obnovy.",
-hint.nudge.F14,"Ďalší port chce dôkaz, že babka s presunom svojho fondu súhlasila.",
-hint.where.F14,"V chronokomore, pri portoch panelu obnovy.",
-hint.nudge.F15,"Posledný port patrí tomu, ako veci vrátiť späť. Ten papier podpísala Nina.",
-hint.where.F15,"V chronokomore, pri portoch panelu obnovy.",
-hint.nudge.F16,Panel chce ku každému portu rok. Každý dôkaz si ten svoj nesie so sebou.,
-hint.where.F16,"Ku každému portu patrí rok dôkazu, ktorý v ňom je. Pomôžu predmety a zápisník.",
-hint.nudge.F17,Všetko je na svojom mieste. Zostáva posledné potvrdenie a potom domov.,
-hint.where.F17,"V chronokomore, pri paneli obnovy.",
-hint.nudge.Q1A,"Susedin pes vyzerá smutnejšie, než by mal. Niečo mu chýba.",
-hint.where.Q1A,"Na ulici medzi plotmi, pri susede so psom.",
-hint.nudge.Q1B,"Bodka stratil loptičku. Lenka vie, kde ju naposledy videla.",
-hint.where.Q1B,"Pri retenčnej nádrži v Čiernej Vode, kde končí cyklochodník.",
-hint.nudge.Q1C,Loptička je suchá a poriadne obhryzená. Niekomu chlpatému už určite chýba.,
-hint.where.Q1C,"Na ulici medzi plotmi, u Lenky.",
-hint.nudge.Q2A,Starší pán pri výveske sa márne snaží niečo prečítať.,
-hint.where.Q2A,Pri výveske v Čiernej Vode.,
-hint.nudge.Q2B,Pán Jozef potrebuje oznam na papieri a veľkými písmenami. Oznamy v obci chystá Ela.,
-hint.where.Q2B,"Na výdajnom mieste pri Lúčnom koníku, u Ely.",
-hint.nudge.Q2C,"Oznam veľkým písmom mám. Pán Jozef si ho prečíta, len keď bude visieť tam, kam sa pozerá.",
-hint.where.Q2C,Pri výveske v Čiernej Vode.,
-hint.nudge.Q3A,Dievča na školskom dvore listuje v albume a niečo v ňom chýba.,
-hint.where.Q3A,Na školskom dvore.,
-hint.nudge.Q3B,Soňa hľadá fotku celého družstva. Zabudnutá obálka s ňou vraj skončila pri kiosku.,
-hint.where.Q3B,"Pri kiosku na sídliskovom dvore, u Zity.",
-hint.nudge.Q3C,V obálke je len negatív. Do albumu treba fotografiu.,
-hint.where.Q3C,"Vo fotoateliéri Svetlo, u Aleny.",
-hint.nudge.Q3D,"Fotka je hotová a je na nej celé družstvo. Aj jeden chlapec, ktorého poznám zo zrkadla.",
-hint.where.Q3D,"Na školskom dvore, u Sone.",
-hint.nudge.Q4A,Muzikant na nástupišti hrá stále tú istú melódiu a nikdy ju nedohrá.,
-hint.where.Q4A,"Na Karloveskom nástupišti, u muzikanta.",
-hint.nudge.Q4B,"Emil zabudol, ako jeho skladba končí. Noty by mohli ležať tam, kam sa dostanú staré knihy.",
-hint.where.Q4B,"V antikvariáte Pod druhou rukou, u Viery.",
-hint.nudge.Q4C,Noty sa našli. Štyri zastávky môžu konečne dôjsť až na koniec.,
-hint.where.Q4C,"Na Karloveskom nástupišti, u Emila.",
-hint.nudge.Q5A,Mladý maliar v Petržalke stojí pred nedokončeným panelom a niečo mu chýba.,
-hint.where.Q5A,"V Petržalke, pri nedokončenom paneli.",
-hint.nudge.Q5B,Jurajovi chýba biela krieda. Školy jej majú celé krabice a školník ich má pod kľúčom.,
-hint.where.Q5B,"V škole na Sokolíkovej, u školníka Tóna.",
-hint.nudge.Q5C,"Kriedu mám aj s povolením. Juraj má skicu, chýbajú len svetlá v oknách.",
-hint.where.Q5C,"V petržalskom podchode, kde maľuje Juraj.",
-hint.nudge.Q6A,"Pán za poštovou prepážkou vyzerá, akoby mu niekto chýbal.",
-hint.where.Q6A,Na pošte v Ivanke.,
-hint.nudge.Q6B,"Béla nepriletí na obyčajné zrno. Jeho zmes bude mať ten, kto v Ivanke vydáva materiál.",
-hint.where.Q6B,"Na dvore hospodárskej dielne, u skladníka.",
-hint.nudge.Q6C,"Bélovu zmes mám. Naháňať ho nebudem, stačí ho nájsť.",
-hint.where.Q6C,V parku pri kaštieli.,
-hint.nudge.Q6D,"Béla odletel smerom k pošte. Pán Baran by mal vedieť, že je späť.",
-hint.where.Q6D,"Na pošte, u pána Barana za prepážkou.",
-hint.nudge.Q7A,Herec v sále drží dramatickú pauzu podozrivo dlho. Akoby mu niečo chýbalo.,
-hint.where.Q7A,"V Ivanke, kde sa chystá divadelná skúška.",
-hint.nudge.Q7B,"Rudo stratil scenár tam, kde kreslila Mira.",
-hint.where.Q7B,Na povale pri meracej miestnosti.,
-hint.nudge.Q7C,Scenár sa našiel. Bez neho skúška nezačne.,
-hint.where.Q7C,"V kultúrnej sále, u Ruda.",
-hint.nudge.Q8A,Doručovací robot pri stanici stojí v snehu s balíkom a nehýbe sa.,
-hint.where.Q8A,Pri dolnej stanici na Bielej Púti.,
-hint.nudge.Q8B,"Adresa na balíku nie je ulica, ale opis miesta. Treba sa ísť pozrieť, čo tam je dnes.",
-hint.where.Q8B,"Pri Vrbickom plese, na chodníku.",
-hint.nudge.Q8C,"Putovná dielňa už pri plese nie je. Pri lavičke som sa dozvedel, kam sa presunula.",
-hint.where.Q8C,V lobby hotela Grand Jasná.,
-hint.nudge.Q8D,Príjemkyňa je overená. Očko stále stojí v snehu a čaká na správu.,
-hint.where.Q8D,"Pri dolnej stanici na Bielej Púti, u Očka.",
-hint.nudge.Q9A,Dievča v triede schováva svoj návrh pod vzorovou schémou.,
-hint.where.Q9A,V jednej triede školy v roku 1982.,
-hint.nudge.Q9B,"Jana súhlasí, aby jej návrh videl učiteľ. Aj s poznámkami.",
-hint.where.Q9B,"V tej istej triede, u učiteľa Dobroviča.",
-hint.nudge.Q9C,Učiteľ schválil Janin návrh na výstavku. Jana to ešte nevie.,
-hint.where.Q9C,"V triede pred výstavkou, u Jany.",
-hint.nudge.Q9D,"Zaujíma ma, čo z Janinho návrhu zostalo o trinásť rokov neskôr.",
-hint.where.Q9D,Vo fyzikálnom kabinete v roku 1995.,
-hint.nudge.Q9E,"Aj v roku 2020 by som sa Jany rád spýtal, čo robí.",
-hint.where.Q9E,Vo fyzikálnom kabinete v roku 2020.,
-hint.nudge.Q9F,"Jana chcela mať raz celý zošit schém. V roku 2035 by som rád videl, čo z neho vzniklo.",
-hint.where.Q9F,Vo výstavnom salóne hotela Grand Jasná.,
-hint.nudge.Q10A,"Malá Zuzana má v tráve zvonček, ktorý necinká.",
-hint.where.Q10A,"V Ivanke v parku, u Zuzany.",
-hint.nudge.Q10B,Zuzana napísala lístok na kúsok kože. Kto v Ivanke vydáva materiál na lístok?,
-hint.where.Q10B,"Na dvore hospodárskej dielne, u skladníka.",
-hint.nudge.Q10C,"Zvonček potrebuje nové pútko. Všetko, čo na to treba, už nosím pri sebe.",
-hint.where.Q10C,To opravím v brašni.,
-hint.nudge.Q10D,"Zvonček znova zvoní. Škoda, že prvé zazvonenie počujem iba ja.",
-hint.where.Q10D,"V parku pri kaštieli, u Zuzany.",
-hint.nudge.Q11A,Chlapec s bicyklom ťuká do zvončeka a zvonček mlčí.,
-hint.where.Q11A,"Pri LEALe, na dvore medzi blokmi.",
-hint.nudge.Q11B,"Zo zvončeka odskočil kus. Zuzana videla, kam sa zakotúľal.",
-hint.where.Q11B,"Pri LEALe, pod pichľavým stromom, kde končia lopty.",
-hint.nudge.Q11C,Vrchnák mám. Bez neho zvonček na konci roka nezazvoní.,
-hint.where.Q11C,"Pri LEALe, u Kuba.",
-ui.puzzle.confirm,Potvrdiť,
-ui.puzzle.reset,Začať odznova,
-ui.puzzle.close,Zavrieť,
-ui.puzzle.hint_fill,Vyplniť správne,
-ui.puzzle.hint_fill_done,Riešenie je vyplnené. Stačí ho potvrdiť.,
-ui.puzzle.clue,Vodidlo,
-ui.puzzle.rotate_left,Otočiť doľava,
-ui.puzzle.rotate_right,Otočiť doprava,
-ui.puzzle.rotation_value,{degrees}°,
-ui.puzzle.digit,Číslica {n},
-ui.puzzle.digit_up,Zvýšiť,
-ui.puzzle.digit_down,Znížiť,
-ui.puzzle.grid_cell,"Rad {row}, stĺpec {column}",
-ui.puzzle.match_instruction,Vyber položku vľavo a potom k nej patriacu položku vpravo.,
-ui.puzzle.match_clear,Zrušiť spojenie,
-ui.dialogue.continue,Pokračovať,
-ui.dialogue.end,Ukončiť rozhovor,
-ui.dialogue.topics,Témy,
-ui.dialogue.transcript,Prepis rozhovoru,
-ui.dialogue.history,História titulkov,
-ui.dialogue.recording_year,Záznam z roku {year},
-ui.cutscene.skip,Preskočiť,
-ui.cutscene.skip_prompt,"Esc preskočí titulok, dvakrát Esc celú scénu.",
-ui.cutscene.skip_confirm,Preskočiť scénu? Postup sa nezmení.,
-ui.cutscene.resume_title,Hra sa obnovila po prerušení,
-ui.cutscene.resume_question,Dokončiť prerušenú scénu alebo ju preskočiť?,
-ui.cutscene.resume_play,Dokončiť scénu,
-ui.cutscene.the_end,Koniec príbehu,
-ui.credits.title,Autori,
-ui.credits.photo_sources,Zdroje fotografií a licencie,
-ui.credits.thanks,Ďakujeme za hranie.,
-ui.postgame.free_play,"Príbeh sa skončil. Časové okná ostávajú otvorené, takže môžeš dokončiť vedľajšie úlohy.",
-ui.postgame.continue,Pokračovať vo voľnom hraní,
-ui.a11y.hotspot_list,Zoznam objektov,
-ui.a11y.group_characters,Postavy,
-ui.a11y.group_progress,Dôležité objekty,
-ui.a11y.group_ambient,Ostatné objekty,
-ui.a11y.group_exits,Východy,
-ui.a11y.exit,Východ: {label},
-ui.a11y.locked,Zatiaľ zamknuté,
-ui.system.path_blocked,Tadiaľto neprejdem.,
-ui.system.loading_scene,Načítava sa scéna…,
-ui.system.autosaved,Automaticky uložené,
-ui.system.invalid_state,Hra sa dostala do chybného stavu a vráti sa k poslednému funkčnému kontrolnému bodu.,
-ui.system.return_to_checkpoint,Vrátiť sa ku kontrolnému bodu,
-ui.system.content_error,Chyba v obsahu hry: chýba {id} ({path}).,
-ui.system.error_title,Chyba,
-ui.system.unknown_error,Nastala neočakávaná chyba.,
-ui.dev.blockout,Vývojový náčrt {room}: {name} ({era}) – maľované pozadie zatiaľ chýba,
-ui.dev.variant_missing,Stavový variant bez maľby: {asset},
-ui.dev.causal_active,Príčinná zmena po {after}: {change},
-ui.dev.solve,Vyriešiť (iba vývoj),
-ui.dev.quick_saved,Rýchle uloženie hotové.,
-ui.dev.no_save,Uložená hra neexistuje.,
-ui.controls.back,Backspace – prezrieť objekt vybraný klávesom Tab,
-ui.controls.travel,T – presun v čase pri časovom uzle,
-ui.cutscene.scene_n,Scéna {n},
-ui.dev.shot,Záber (vývojová poznámka): {shot},
-ui.dialogue.heard,už prebraté,
-ui.inventory.deselect,Zrušiť výber,
-ui.inventory.look,Prezrieť,
-ui.inventory.select,Vybrať,
-ui.journal.scene_n,Scéna {n},
-ui.journal.scenes,Prehrať scény znova,
-ui.journal.scene_cs01,Prvý skok: Dúbravka 1995,
-ui.journal.scene_cs02,Kazeta zo školského rozhlasu,
-ui.journal.scene_cs03,Cesta do Ivanky 1962,
-ui.journal.scene_cs04,"Jeden predmet, veľa rúk",
-ui.journal.scene_cs05,Stopa vedie do Jasnej 2035,
-ui.journal.scene_cs06,Leina správa,
-ui.journal.scene_cs07,Mená sú späť,
-ui.journal.scene_cs08,Lipa a múrik,
-ui.journal.scene_cs09,Lanovkou na Chopok,
-ui.save.quick,Rýchle uloženie,
-ui.settings.tips_reset_done,Úvodné rady sa zobrazia pri ďalšej novej hre.,
-ui.credits.fonts,Písma,
-ui.credits.engine,Herný engine,
-region.Chorvátsky Grob.name,Chorvátsky Grob,
-region.Čierna Voda.name,Čierna Voda,
-region.Dúbravka.name,Dúbravka,
-region.Karlova Ves.name,Karlova Ves,
-region.Staré Mesto.name,Staré Mesto,
-region.Ružinov.name,Ružinov,
-region.Petržalka.name,Petržalka,
-region.Ivanka pri Dunaji.name,Ivanka pri Dunaji,
-region.Biela Púť.name,Biela Púť,
-region.Grand Jasná.name,Grand Jasná,
-region.Vrbické pleso.name,Vrbické pleso,
-region.Chopok.name,Chopok,
-region.Priehyba.name,Priehyba,
-region.Funitel.name,Funitel,
-region.Jasná.name,Jasná,
-ui.credits.music,"Hudba (pôvodná, vytvorená pomocou AI)",
-ui.credits.sounds,Zvukové efekty a zvuky prostredia (CC0),
-ui.settings.voice_over,Hovorené dialógy,
-ui.settings.voice_over_desc,"Postavy hovoria nahlas. Keď sú vypnuté, titulky sa posúvajú podľa dĺžky textu.",
+ui.common.ok,OK,OK
+ui.common.yes,Áno,Yes
+ui.common.no,Nie,No
+ui.common.cancel,Zrušiť,Cancel
+ui.common.back,Späť,Back
+ui.common.close,Zavrieť,Close
+ui.common.confirm,Potvrdiť,Confirm
+ui.common.apply,Použiť,Apply
+ui.common.on,Zapnuté,On
+ui.common.off,Vypnuté,Off
+ui.common.loading,Načítava sa…,Loading…
+ui.common.press_any_key,Stlač ľubovoľný kláves,Press any key
+ui.menu.new_game,Nová hra,New game
+ui.menu.continue,Pokračovať,Continue
+ui.menu.load,Načítať,Load
+ui.menu.save,Uložiť,Save
+ui.menu.settings,Nastavenia,Settings
+ui.menu.album,Album,Album
+ui.menu.help,Pomoc,Help
+ui.menu.credits,Autori,Credits
+ui.menu.quit,Ukončiť,Quit
+ui.menu.new_game_confirm,Začať novú hru? Postup od posledného uloženia sa stratí.,Start a new game? Progress since your last save will be lost.
+ui.menu.quit_confirm,Naozaj chceš ukončiť hru?,Do you really want to quit the game?
+ui.menu.version,Verzia {version},Version {version}
+ui.pause.title,Pauza,Paused
+ui.pause.resume,Pokračovať v hre,Resume
+ui.pause.save,Uložiť hru,Save game
+ui.pause.load,Načítať hru,Load game
+ui.pause.settings,Nastavenia,Settings
+ui.pause.help,Pomoc,Help
+ui.pause.main_menu,Hlavné menu,Main menu
+ui.pause.main_menu_confirm,Vrátiť sa do hlavného menu? Postup od posledného uloženia sa stratí.,Return to the main menu? Progress since your last save will be lost.
+ui.pause.quit,Ukončiť hru,Quit game
+ui.pause.quit_confirm,Ukončiť hru? Postup od posledného uloženia sa stratí.,Quit the game? Progress since your last save will be lost.
+ui.save.title_save,Uložiť hru,Save game
+ui.save.title_load,Načítať hru,Load game
+ui.save.manual_section,Uložené hry,Saved games
+ui.save.autosave_section,Automatické uloženia,Autosaves
+ui.save.slot,Pozícia {n},Slot {n}
+ui.save.slot_empty,Prázdna pozícia,Empty slot
+ui.save.autosave,Automatické uloženie {n},Autosave {n}
+ui.save.checkpoint_finale,Kontrolný bod pred záverom,Checkpoint before the ending
+ui.save.slot_summary,{place} · {year},{place} · {year}
+ui.save.saved_at,Uložené {datetime},Saved {datetime}
+ui.save.playtime,Herný čas {time},Play time {time}
+ui.save.overwrite_confirm,Prepísať uloženú hru na pozícii {n}?,Overwrite the saved game in slot {n}?
+ui.save.overwrite,Prepísať,Overwrite
+ui.save.delete,Vymazať,Delete
+ui.save.delete_confirm,Naozaj vymazať uloženú hru na pozícii {n}?,Really delete the saved game in slot {n}?
+ui.save.load_confirm,Načítať túto hru? Postup od posledného uloženia sa stratí.,Load this game? Progress since your last save will be lost.
+ui.save.saving,Ukladá sa…,Saving…
+ui.save.saved,Hra je uložená.,Game saved.
+ui.save.save_failed,Hru sa nepodarilo uložiť. Skús to znova alebo vyber inú pozíciu.,The game couldn’t be saved. Try again or choose another slot.
+ui.save.cannot_save_now,Teraz sa nedá uložiť. Skús to po dokončení aktuálnej akcie.,You can’t save right now. Try again once the current action has finished.
+ui.save.corrupted,Chybný súbor uloženia. Rozohraná hra beží ďalej.,Damaged save file. Your current game carries on.
+ui.save.corrupted_slot,Chybný súbor uloženia,Damaged save file
+ui.save.newer_version,Uloženie pochádza z novšej verzie hry a nedá sa načítať. Rozohraná hra beží ďalej.,This save comes from a newer version of the game and can’t be loaded. Your current game carries on.
+ui.save.migrated,Uloženie zo staršej verzie hry bolo prevedené na novú verziu.,A save from an older version of the game has been converted to the new version.
+ui.save.no_saves,Zatiaľ nemáš uloženú žiadnu hru.,You haven’t saved a game yet.
+ui.save.export,Exportovať uloženie,Export save
+ui.save.import,Importovať uloženie,Import save
+ui.save.export_done,Uloženie je exportované.,The save has been exported.
+ui.save.import_done,Uloženie je importované.,The save has been imported.
+ui.save.import_failed,Súbor sa nepodarilo importovať. Rozohraná hra beží ďalej.,The file couldn’t be imported. Your current game carries on.
+ui.settings.title,Nastavenia,Settings
+ui.settings.tab_audio,Zvuk,Sound
+ui.settings.tab_display,Obraz,Display
+ui.settings.tab_text,Text a titulky,Text and subtitles
+ui.settings.tab_controls,Ovládanie,Controls
+ui.settings.tab_accessibility,Prístupnosť,Accessibility
+ui.settings.language,Jazyk,Language
+ui.settings.language_sk,Slovenčina,Slovenčina
+ui.settings.language_en,English,English
+ui.settings.volume_master,Celková hlasitosť,Master volume
+ui.settings.volume_music,Hudba,Music
+ui.settings.volume_ambience,Zvuky prostredia,Ambient sound
+ui.settings.volume_sfx,Efekty,Effects
+ui.settings.volume_voice,Hlasy,Voices
+ui.settings.volume_value,{percent} %,{percent}%
+ui.settings.mute_unfocused,"Stlmiť zvuk, keď okno hry nie je aktívne",Mute the sound when the game window isn’t active
+ui.settings.text_speed,Rýchlosť textu,Text speed
+ui.settings.text_speed_slow,Pomalá,Slow
+ui.settings.text_speed_normal,Normálna,Normal
+ui.settings.text_speed_fast,Rýchla,Fast
+ui.settings.text_speed_instant,Okamžitá,Instant
+ui.settings.auto_advance,Automatický posun titulkov,Auto-advance subtitles
+ui.settings.auto_advance_speed,Rýchlosť automatického posunu,Auto-advance speed
+ui.settings.subtitles,Zobrazovať titulky,Show subtitles
+ui.settings.subtitle_size,Veľkosť titulkov,Subtitle size
+ui.settings.subtitle_size_value,{size} px,{size} px
+ui.settings.subtitle_preview,Takto budú vyzerať titulky.,This is how the subtitles will look.
+ui.settings.subtitle_background,Kontrastné pozadie titulkov,High-contrast subtitle background
+ui.settings.speaker_names,Zobrazovať meno hovoriaceho,Show speaker names
+ui.settings.window_mode,Zobrazenie,Display mode
+ui.settings.fullscreen,Celá obrazovka,Full screen
+ui.settings.windowed,V okne,Windowed
+ui.settings.vsync,Vertikálna synchronizácia,Vertical sync
+ui.settings.hud_scale,Veľkosť rozhrania,Interface size
+ui.settings.cursor_highlight,Zvýraznený kurzor,Highlighted cursor
+ui.settings.walk_speed,Rýchlosť chôdze,Walking speed
+ui.settings.walk_speed_calm,Pokojná,Leisurely
+ui.settings.walk_speed_brisk,Svižná,Brisk
+ui.settings.reduced_motion,Obmedziť pohyb,Reduce motion
+ui.settings.reduced_motion_desc,"Vypne paralaxu, trasenie a záblesky. Presun časom nahradí stmavnutie s letopočtom.","Turns off parallax, shaking and flashes. Time travel is shown as a fade to black with the year."
+ui.settings.high_contrast_labels,Kontrastné menovky objektov,High-contrast object labels
+ui.settings.high_contrast_labels_desc,Popis pri kurzore dostane tmavé pozadie a väčšie písmo.,The label at the cursor gets a dark background and larger text.
+ui.settings.hotspot_key_hint,Pripomínať kláves na zobrazenie objektov,Remind me of the show-objects key
+ui.settings.hotspot_key_hint_desc,"Spodný panel pripomenie, že keď podržíš Space, ukážu sa všetky miesta, na ktoré sa dá kliknúť.",The bottom bar reminds you that holding Space shows every place you can click on.
+ui.settings.reset_tips,Znova zobraziť úvodné rady,Show the starting tips again
+ui.settings.reset_defaults,Obnoviť predvolené,Restore defaults
+ui.settings.reset_confirm,Vrátiť všetky nastavenia na predvolené hodnoty?,Reset all settings to their defaults?
+ui.settings.restart_required,Zmena sa prejaví po reštarte hry.,The change takes effect after restarting the game.
+ui.controls.title,Ovládanie,Controls
+ui.controls.left_click,"Ľavý klik – akcia, chôdza, rozhovor","Left click – action, walk, talk"
+ui.controls.right_click,"Pravý klik – prezrieť objekt, na voľnom mieste otvoriť inventár","Right click – look at an object; on an empty spot, open the Inventory"
+ui.controls.right_click_selected,Pravý klik s vybratým predmetom – zrušiť výber,Right click with an item selected – cancel the selection
+ui.controls.space,Space (podržať) – ukázať značky na všetkých miestach na kliknutie,Space (hold) – show markers on every place you can click
+ui.controls.double_click,Dvojklik – preskočiť chôdzu (Adam je hneď na mieste),Double-click – skip walking (Adam is there at once)
+ui.controls.inventory,I – inventár,I – Inventory
+ui.controls.map,M – mapa,M – map
+ui.controls.journal,J – denník,J – journal
+ui.controls.hint,H – nápoveda,H – hints
+ui.controls.escape,"Esc – preskočiť titulok (dvakrát rýchlo: celý rozhovor), zavrieť panel alebo pozastaviť hru","Esc – skip a subtitle (twice quickly: the whole conversation), close a panel or pause the game"
+ui.controls.enter,Enter – ďalší titulok,Enter – next subtitle
+ui.controls.tab,Tab – prechádzať zoznam objektov,Tab – cycle through objects
+ui.controls.shift_enter,Shift+Enter alebo dvakrát Enter – vykonať akciu a preskočiť chôdzu,Shift+Enter or Enter twice – perform the action and skip walking
+ui.tutorial.left_click,Ľavým klikom vykonáš akciu.,Left-click to perform an action.
+ui.tutorial.right_click,Pravým klikom prezrieš objekt; na voľnom mieste otvoríš inventár.,Right-click to look at an object; on an empty spot it opens the Inventory.
+ui.tutorial.space,"Kým držíš Space, značky ukážu všetky miesta, na ktoré môžeš kliknúť.","While you hold Space, markers show every place you can click."
+ui.tutorial.help_menu,Tieto rady nájdeš aj v menu Pomoc.,You’ll also find these tips in the Help menu.
+ui.tutorial.touch_tap,Ťuknutím vykonáš akciu.,Tap to perform an action.
+ui.tutorial.touch_hold,Podržaním prsta prezrieš objekt.,Hold your finger down to look at an object.
+ui.tutorial.touch_eye,"Podrž dva prsty na obrazovke alebo použi tlačidlo Oko. Uvidíš všetky miesta, na ktoré môžeš ťuknúť.",Hold two fingers on the screen or use the Eye button to see every place you can tap.
+ui.tutorial.got_it,Rozumiem,Got it
+ui.hud.inventory,Inventár,Inventory
+ui.hud.journal,Denník,Journal
+ui.hud.map,Mapa,Map
+ui.hud.hint,Nápoveda,Hints
+ui.hud.menu,Menu,Menu
+ui.hud.show_hotspots,Oko,Eye
+ui.hud.hotspots_on,Zobrazené všetky miesta na kliknutie,All clickable places shown
+ui.hud.hotspots_off,Miesta na kliknutie sú skryté,Clickable places hidden
+ui.hud.hotspot_key_hint,"Podrž Space – ukážu sa miesta, na ktoré sa dá kliknúť",Hold Space to show the places you can click
+ui.hud.current_goal,Aktuálny cieľ,Current goal
+ui.hud.hide_goal,Skryť cieľ,Hide goal
+ui.hud.goal_updated,Nový cieľ v denníku,New goal in the journal
+ui.inventory.title,Inventár,Inventory
+ui.inventory.tab_items,Predmety,Items
+ui.inventory.tab_archived,Archivované,Archived
+ui.inventory.empty,Inventár je prázdny.,The Inventory is empty.
+ui.inventory.archived_empty,Zatiaľ tu nie sú žiadne archivované dokumenty.,There are no archived documents yet.
+ui.inventory.archived_badge,Archivované,Archived
+ui.inventory.selected,Vybraný predmet: {item},Selected item: {item}
+ui.inventory.selection_cleared,Výber zrušený,Selection cleared
+ui.inventory.combine,Spojiť predmety,Combine items
+ui.inventory.combine_hint,Klikni ním na niečo v scéne alebo vyber druhý predmet a spoj ich.,"Click it on something in the scene, or choose a second item to combine them."
+ui.inventory.look_hint,Pravým klikom predmet prezrieš.,Right-click to look at the item.
+ui.inventory.item_added,Do inventára pribudlo: {item},Added to the Inventory: {item}
+ui.inventory.item_removed,Z inventára ubudlo: {item},Removed from the Inventory: {item}
+ui.inventory.evidence_returned,Dôkazy sú späť v inventári.,The evidence is back in your Inventory.
+ui.inventory.scroll_up,Posunúť nahor,Scroll up
+ui.inventory.scroll_down,Posunúť nadol,Scroll down
+ui.inventory.page,{current}/{total},{current}/{total}
+ui.journal.title,Denník,Journal
+ui.journal.tab_goals,Ciele,Goals
+ui.journal.tab_findings,Zistenia,Findings
+ui.journal.tab_people,Ľudia,People
+ui.journal.tab_time_map,Mapa času,Time map
+ui.journal.tab_album,Album,Album
+ui.journal.main_story,Hlavný príbeh,Main story
+ui.journal.side_quests,Vedľajšie úlohy,Side quests
+ui.journal.state_open,Nezačatá,Not started
+ui.journal.state_in_progress,Rozpracovaná,In progress
+ui.journal.state_done,Hotová,Done
+ui.journal.pin,Pripnúť,Pin
+ui.journal.unpin,Odopnúť,Unpin
+ui.journal.pinned_main,Pripnutá hlavná úloha,Pinned main quest
+ui.journal.pinned_side,Pripnutá vedľajšia úloha,Pinned side quest
+ui.journal.observations,Pozorovania,Observations
+ui.journal.clues,Vodidlá,Clues
+ui.journal.transcripts,Prepisy rozhovorov,Conversation transcripts
+ui.journal.progress_log,Záznamy postupu,Progress log
+ui.journal.reward,Odmena: {reward},Reward: {reward}
+ui.journal.empty,Zatiaľ tu nič nie je.,Nothing here yet.
+ui.journal.new_entry,Nový záznam v denníku,New journal entry
+ui.journal.people_empty,Zatiaľ si nikoho nestretol.,You haven’t met anyone yet.
+ui.journal.time_map_current,Práve si tu,You are here
+ui.journal.time_map_locked,Zatiaľ neotvorené časové okno,Time window not open yet
+ui.journal.album_empty,"Album sa zaplní, keď pomôžeš ľuďom vo vedľajších úlohách.",The album fills up as you help people in side quests.
+ui.journal.replay_ending,Znova prehrať záver,Replay the ending
+ui.map.title,Mapa,Map
+ui.map.node,Uzol,Node
+ui.map.node_tooltip,Rýchly presun k časovému uzlu tohto roku,Fast travel to this year’s time node
+ui.map.fast_travel,Rýchly presun,Fast travel
+ui.map.travel_to,Presunúť sa: {place},Go to {place}
+ui.map.you_are_here,Tu si,You are here
+ui.map.unvisited,Nenavštívené miesto,Place not visited yet
+ui.map.unreachable,Sem sa teraz nedostaneš.,You can’t get there right now.
+ui.map.fast_travel_rule,"Rýchly presun vedie len na navštívené miesta, kam sa práve dá dostať.",Fast travel only goes to places you’ve visited and can reach right now.
+ui.map.sheet_year,Rok {year},{year}
+ui.map.legend,Legenda,Key
+ui.map.regions_title,Oblasti,Areas
+ui.map.back_to_regions,Späť na oblasti,Back to areas
+ui.map.region_rule,"V rámci oblasti sa presúvaš voľne, do inej oblasti len cez jej zastávku.",Within an area you move freely; to another area only via its stop.
+ui.map.region_unvisited,Neznáma oblasť,Unknown area
+ui.map.region_rooms,Miesta: {visited} z {total},Places: {visited} of {total}
+ui.map.region_hub,Zastávka: {hub},Stop: {hub}
+ui.map.hub,Zastávka,Stop
+ui.map.via_hub,Do inej oblasti sa dostaneš len cez jej zastávku: {hub}.,You can only reach another area via its stop: {hub}.
+ui.map.travel_by,Presunúť sa: {place} ({transport}),Go to {place} ({transport})
+ui.travel.walk,Pešo,On foot
+ui.travel.map_transition,Skrátený presun,Quick journey
+ui.travel.car_transition,Autom,By car
+ui.travel.cable_A6,Kabínkovou lanovkou,By gondola
+ui.travel.board_funitel,Nástup na Funitel,Board the Funitel
+ui.travel.arrive_funitel,Výstup z Funitelu,Leave the Funitel
+ui.travel.bus,Autobusom,By bus
+ui.travel.tram,Električkou,By tram
+ui.travel.card,{transport} · {place},{transport} · {place}
+ui.travel.finish_ride,Dokončiť jazdu,Finish the ride
+ui.travel.choose_era,Kam sa presunieš?,Where to?
+ui.travel.time_node,Hodiny časového uzla – výber obdobia,Time-node clock – choose a year
+ui.travel.era_option,Rok {year},{year}
+ui.travel.era_locked,Toto časové okno ešte nie je otvorené.,This time window isn’t open yet.
+ui.travel.era_current,Práve si tu,You are here
+ui.travel.jump,Presunúť sa,Travel
+ui.travel.new_era_unlocked,Otvorilo sa nové časové okno: {year},A new time window has opened: {year}
+era.1960.card,Ivanka pri Dunaji,Ivanka pri Dunaji
+era.1960.date,6. júna 1962,6 June 1962
+era.1960.year,1962,1962
+era.1982.card,Dúbravka,Dúbravka
+era.1982.date,7. decembra 1982,7 December 1982
+era.1982.year,1982,1982
+era.1995.card,Bratislava,Bratislava
+era.1995.date,15. júna 1995,15 June 1995
+era.1995.year,1995,1995
+era.2020.card,Chorvátsky Grob a Dúbravka,Chorvátsky Grob and Dúbravka
+era.2020.date,29. októbra 2020,29 October 2020
+era.2020.year,2020,2020
+era.2035.card,Jasná,Jasná
+era.2035.date,6. februára 2035,6 February 2035
+era.2035.year,2035,2035
+ui.hint.title,Nápoveda,Hints
+ui.hint.level_1,Smer,Direction
+ui.hint.level_2,Postup,Steps
+ui.hint.level_3,Riešenie,Solution
+ui.hint.next,Ďalšia nápoveda,Next hint
+ui.hint.show_solution,Ukázať presné riešenie,Show the exact solution
+ui.hint.main_quest,Hlavná úloha,Main quest
+ui.hint.side_quest,Vedľajšia úloha,Side quest
+ui.hint.choose_quest,S čím ti mám poradiť?,What do you need help with?
+ui.hint.none,Teraz nie je k dispozícii žiadna nápoveda.,No hint is available right now.
+ui.hint.all_done,Všetko podstatné je hotové.,Everything important is done.
+ui.hint.step_place,{room}. Zameraj sa na: {target}.,{room}. Focus on: {target}.
+ui.hint.step_bag,"Tento krok urobíš v inventári: spoj dva predmety, ktoré už máš.",You do this step in the Inventory: combine two items you already have.
+ui.difficulty.title,Obťažnosť,Difficulty
+ui.difficulty.pick_title,Nová hra,New game
+ui.difficulty.pick_intro,"Vyber si, ako veľmi ti má nápoveda pomáhať. Obťažnosť mení iba nápovedu a kedykoľvek ju zmeníš v nastaveniach.","Choose how much the hints should help you. Difficulty only changes the hints, and you can change it any time in the settings."
+ui.difficulty.start,Začať hru,Start game
+ui.difficulty.recommended,odporúčaná,recommended
+ui.settings.tab_game,Hra,Game
+ui.settings.difficulty_desc,Platí pre rozohranú hru a uloží sa spolu s ňou.,Applies to the current game and is saved with it.
+ui.settings.difficulty_menu,Obťažnosť si vyberieš pri novej hre. Počas hry ju zmeníš tu a každá uložená hra si pamätá svoju.,"You choose the difficulty when starting a new game. During the game you change it here, and every save remembers its own."
+ui.hint.difficulty,Obťažnosť: {difficulty},Difficulty: {difficulty}
+ui.hint.level_nudge,Postrčenie,Nudge
+ui.hint.level_where,Kde hľadať,Where to look
+ui.hint.standard_end,Viac sa na štandardnej obťažnosti nedozvieš. Presný krok ukáže nápoveda na ľahkej obťažnosti – prepneš na ňu v nastaveniach na karte Hra.,"That’s all Standard difficulty will tell you. The hints on Easy show the exact step – you can switch in the settings, on the Game tab."
+ui.hint.hard_wait,Do postrčenia zostáva {time}.,Nudge available in {time}.
+ui.hint.hard_wait_note,Na ťažkej obťažnosti sa nápoveda otvorí po troch minútach bez pokroku.,"On Hard difficulty, hints open after three minutes without progress."
+ui.hint.hard_wait_button,Ešte nie ({time}),Not yet ({time})
+ui.hint.hard_end,"Na ťažkej obťažnosti je to všetko, čo nápoveda povie.","On Hard difficulty, that’s all the hints will say."
+ui.hint.hard_no_puzzle,Na ťažkej obťažnosti hádanky riešiš bez pomoci.,On Hard difficulty you solve the puzzles without help.
+ui.hud.hint_wait,Nápoveda (H): zostáva {time},Hints (H): {time} left
+ui.difficulty.easy,Ľahká,Easy
+ui.difficulty.hard,Ťažká,Hard
+ui.difficulty.standard,Štandardná,Standard
+ui.difficulty.easy_desc,Nápoveda ukáže aj presný krok a riešenie hádanky ti na požiadanie doplní.,"The hints show the exact step too, and fill in a puzzle’s solution for you on request."
+ui.difficulty.hard_desc,"Iba krátke postrčenie, a to až po troch minútach bez pokroku. Hádanky bez pomoci.","Only a short nudge, and only after three minutes without progress. Puzzles without help."
+ui.difficulty.standard_desc,"Nápoveda ťa postrčí a povie, kde hľadať. Riešenie nechá na tebe.",The hints nudge you and tell you where to look. The solution is up to you.
+ui.hint_step.G01,V garáži vezmi servisnú brašnu.,"In the garage, take the tool bag."
+ui.hint_step.G02,Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Babkin nákup“.,"At the pick-up point by Lúčny koník, talk to Ela about the topic ‘Gran’s shopping’."
+ui.hint_step.G03,Mirin nákupný lístok použi na Danu v potravinách.,Use Mira’s shopping list on Dana at the shop.
+ui.hint_step.G04,Tašku s nákupom polož na stolík pred Mirinou bránkou.,Put the bag of shopping on the little table outside Mira’s gate.
+ui.hint_step.G05,Pod zatvoreným oknom sa s Mirou porozprávaj o téme „Potrebuješ ešte niečo?“,"Below the closed window, talk to Mira about the topic ‘Anything else you need?’"
+ui.hint_step.G06,Kľúč od dielne použi na dvere záhradnej dielne.,Use the workshop key on the garden workshop door.
+ui.hint_step.G07,V predsieni dielne vyber prístroj z mosadzného puzdra.,"In the workshop porch, take the device out of the brass case."
+ui.hint_step.G08,Servisnú brašnu použi na stolový uzol ZVON v dielni.,Use the tool bag on the ZVON base node in the workshop.
+ui.hint_step.G09,V garáži vezmi náhradnú poistku zo zásuvky.,"In the garage, take a spare fuse from the drawer."
+ui.hint_step.G10,Náhradnú poistku použi na stolový uzol ZVON v dielni.,Use the spare fuse on the ZVON base node in the workshop.
+ui.hint_step.G11,Na tvarovom paneli spoj každý tvar s rovnakým tvarom podľa schémy nad ním.,"On the shape panel, connect each shape to the matching shape as the diagram above it shows."
+ui.hint_step.B01,Pred školou si prečítaj oznam na nástenke krúžku.,"Outside the school, read the club’s notice on the noticeboard."
+ui.hint_step.B02,Prenosný chronometer ZVON použi na Tóna vo vstupnej chodbe.,Use the portable ZVON chronometer on Tóno in the entrance hall.
+ui.hint_step.B03,V triede pamäťového krúžku sa s Mirou porozprávaj o téme „Problém s chronometrom“.,"In the memory club classroom, talk to Mira about the topic ‘Trouble with the chronometer’."
+ui.hint_step.B04,Servisnú brašnu použi na kazetový mechanizmus v miestnosti školského rozhlasu.,Use the tool bag on the cassette deck in the school PA room.
+ui.hint_step.B05,Rozpadnutý remienok použi na Paliho v jeho opravovni v Karlovej Vsi.,Use the perished drive belt on Pali in his repair shop in Karlova Ves.
+ui.hint_step.B06,Nový remienok použi na kazetový mechanizmus v miestnosti školského rozhlasu.,Use the new drive belt on the cassette deck in the school PA room.
+ui.hint_step.B07,Kazetu s rušenými stopami použi na Jura v kazetovom klube v Ružinove.,Use the cassette with clashing tracks on Juro at the cassette club in Ružinov.
+ui.hint_step.B08,Servisnú brašnu použi na zaseknutú stolovú váhu u Fera na Miletičovej.,Use the tool bag on Fero’s stuck scales at Miletičova.
+ui.hint_step.B09,V opravovni odevov sa s Miladou porozprávaj o téme „Návlek na kábel“.,"At the tailor’s, talk to Milada about the topic ‘A sleeve for the cable’."
+ui.hint_step.B10,V inventári spoj dvojpólový konektor s krížovým adaptérom.,"In the Inventory, combine the two-pin connector with the cross adaptor."
+ui.hint_step.B11,V inventári spoj textilný izolačný návlek s adaptérom s konektorom.,"In the Inventory, combine the cloth insulating sleeve with the adaptor with connector."
+ui.hint_step.B12,Hotovú zvukovú prepojku použi na servisný zvukový vstup v miestnosti školského rozhlasu.,Use the finished audio lead on the service audio input in the school PA room.
+ui.hint_step.B13,Mirino poverenie použi na Karola v archívnej študovni.,Use Mira’s letter of authority on Karol in the archive reading room.
+ui.hint_step.B14,Technický fotografický negatív použi na Alenu vo fotoateliéri Svetlo.,Use the technical photo negative on Alena at the Svetlo photo studio.
+ui.hint_step.B15,Fotografiu kalibračného stojana použi na Vieru v antikvariáte Pod druhou rukou; podľa nej ti dá fóliu K-17.,Use the photo of the calibration stand on Viera at the Second Hand bookshop; she’ll give you overlay K-17 for it.
+ui.hint_step.B16,"V inventári spoj priehľadnú fóliu K-17 s mapou uzlov, fóliu otoč o 180° a potvrď.","In the Inventory, combine transparent overlay K-17 with the node map, turn the overlay 180° and confirm."
+ui.hint_step.B17,Úplnú mapu meracích uzlov použi na Dezidera v jeho garáži v Petržalke.,Use the complete map of measuring nodes on Dezider in his garage in Petržalka.
+ui.hint_step.B18,Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Metronóm na meranie“.,"At the Karlova Ves tram stop, talk to Emil about the topic ‘A metronome for measuring’."
+ui.hint_step.B19,Pri LEALe si prečítaj rytmický nákres na múre.,"At Pri LEALe, read the rhythm drawing on the wall."
+ui.hint_step.B20,Deziderovu meraciu cievku použi na držiak v meracom stánku na Starom moste.,Use Dezider’s measuring coil on the holder in the measuring booth on Starý most.
+ui.hint_step.B21,Emilov metronóm polož na stolík s rytmickou značkou pri meracom stánku na Starom moste.,Put Emil’s metronome on the little table with the rhythm mark by the measuring booth on Starý most.
+ui.hint_step.B22,"Keď máš zachránenú kazetu aj úplnú mapu, nastav na meracom stojane v stánku na Starom moste 3–2–6.","Once you have the saved cassette and the complete map, set 3–2–6 on the measuring stand in the booth on Starý most."
+ui.hint_step.I01,Prenosný chronometer ZVON použi na Ota v jeho mechanickej dielni.,Use the portable ZVON chronometer on Oto in his mechanical workshop.
+ui.hint_step.I02,Otov výdajný lístok použi na Štefana na dvore dielne.,Use Oto’s requisition slip on Štefan in the workshop yard.
+ui.hint_step.I03,Servisnú brašnu použi na svorku kulisy v kultúrnej sále.,Use the tool bag on the stage flat clamp in the village hall.
+ui.hint_step.I04,V inventári spoj Lídin ručný dierovač s predrezanou koženou manžetou.,"In the Inventory, combine Lída’s hand punch with the pre-cut leather cuff."
+ui.hint_step.I05,V inventári spoj dva duté nity s dierovanou manžetou.,"In the Inventory, combine the two hollow rivets with the punched cuff."
+ui.hint_step.I06,Hotovú manžetu použi na demonštračnú ručnú pumpu pred skúšobnou búdkou.,Use the finished cuff on the demonstration hand pump outside the test hut.
+ui.hint_step.I07,V dielni sa s Otom porozprávaj o téme „Pumpa je opravená“.,"In the workshop, talk to Oto about the topic ‘The pump’s mended’."
+ui.hint_step.I08,Kľúč od meracej miestnosti použi na jej dvere pri ručnej pumpe.,Use the measuring room key on its door by the hand pump.
+ui.hint_step.I09,V miestnosti prvého ZVONu sa s Mirou porozprávaj o téme „Mazanie výnimiek v budúcnosti“.,"In the room of the first ZVON, talk to Mira about the topic ‘What the future erases’."
+ui.hint_step.I10,V parku pri kaštieli sa s Verou porozprávaj o téme „Tupé rydlo“.,"In the manor house park, talk to Vera about the topic ‘The blunt stylus’."
+ui.hint_step.I11,Na povale technického archívu vezmi voskovaný papier.,"In the technical archive loft, take the waxed paper."
+ui.hint_step.I12,Voskovaný hárok použi na kalibračnú mosadznú platňu v miestnosti prvého ZVONu.,Use the waxed sheet on the brass calibration plate in the room of the first ZVON.
+ui.hint_step.I13,V inventári spoj Verino tupé rydlo s nezvýrazneným odtlačkom.,"In the Inventory, combine Vera’s blunt stylus with the faint imprint."
+ui.hint_step.I14,Na pošte vezmi uhlový papier pri prepážke.,"At the post office, take the carbon paper by the counter."
+ui.hint_step.I15,V inventári spoj uhlový papier s technickým registračným listom.,"In the Inventory, combine the carbon paper with the technical registration form."
+ui.hint_step.I16,Dve vyhotovenia listu použi na Alojza na pošte.,Use the form in duplicate on Alojz at the post office.
+ui.hint_step.I17,Potvrdený registračný list použi na kovovú archívnu schránku na povale; čitateľný odtlačok musíš mať pri sebe.,Use the stamped registration form on the metal archive box in the loft; you must have the legible imprint with you.
+ui.hint_step.C01,Overený odtlačok z roku 1962 použi na Miru pod zatvoreným oknom v Grobe.,Use the verified imprint from 1962 on Mira below the closed window in Grob.
+ui.hint_step.D01,Telefón použi na roh dvora so servisným oknom pred školou v roku 2020.,Use the phone on the corner of the yard with the service window outside the school in 2020.
+ui.hint_step.D02,Prenosný chronometer ZVON použi na Tóna pri školníckom servisnom okne v roku 2020.,Use the portable ZVON chronometer on Tóno at the caretaker’s service window in 2020.
+ui.hint_step.D03,Vo fyzikálnom kabinete v roku 2020 si prečítaj servisnú knihu z roku 1982.,"In the physics prep room in 2020, read the service logbook from 1982."
+ui.hint_step.D04,Kópiu servisného záznamu 1982 použi na rám starých hodín na Dúbravskej zastávke v roku 2020.,Use the copy of the 1982 service record on the frame of the old clock at the Dúbravka stop in 2020.
+ui.hint_step.E01,Prenosný chronometer ZVON použi na Tóna pri servisnom okne v roku 1982.,Use the portable ZVON chronometer on Tóno at the service window in 1982.
+ui.hint_step.E02,Chránenú fotografiu dvora 2020 použi na Tóna pri servisnom okne.,Use the protected photo of the 2020 yard on Tóno at the service window.
+ui.hint_step.E03,Otov školský výdajný lístok použi na Martu vo výdajni údržbového materiálu; vchod do nej je zo sídliskového obchodu pri zastávke.,Use Oto’s school requisition slip on Marta at the maintenance store; you get in through the estate shop by the stop.
+ui.hint_step.E04,Diely návratového mostíka použi na servisnú dosku vo fyzikálnom kabinete v roku 1982.,Use the return bridge parts on the service board in the physics prep room in 1982.
+ui.hint_step.E05,V sídliskovom obchode sa s Ruženou porozprávaj o téme „Suchý pohár pre školu“.,"In the estate shop, talk to Ružena about the topic ‘A dry jar for the school’."
+ui.hint_step.E06,V inventári spoj nový keramický mostík s pohárom s viečkom a tesnením.,"In the Inventory, combine the new ceramic bridge with the jar with lid and seal."
+ui.hint_step.E07,V školskom záhradnom sklade sa so Šimonom porozprávaj o téme „Ochrana mladej lipy“.,"In the school garden shed, talk to Šimon about the topic ‘Protecting the young lime’."
+ui.hint_step.E08,Zapečatený pohár s mostíkom použi na servisnú dutinu v múriku na školskom dvore.,Use the sealed jar with the bridge on the service cavity in the low wall in the school yard.
+ui.hint_step.E09,Ochrannú ohrádku pre lipu použi na mladú lipu na školskom dvore.,Use the guard for the lime tree on the young lime in the school yard.
+ui.hint_step.E10,V záhradnom sklade sa znova porozprávaj so Šimonom o téme „Zapíšete lipu aj múrik?“,"In the garden shed, talk to Šimon again about the topic ‘Record the lime and the wall?’"
+ui.hint_step.E11,V roku 1995 sa porozprávaj s Tónom vo vstupnej chodbe a vyber tému s heslom „Lastovička sa vracia“.,"In 1995, talk to Tóno in the entrance hall and choose the topic ‘Password: ‘The swallow comes back’’."
+ui.hint_step.D05,"V roku 2020 použi servisnú brašnu na miesto pôvodnej servisnej dutiny na školskom dvore; v múriku vyber rad 2, stĺpec 3.","In 2020, use the tool bag on the place of the original service cavity in the school yard; in the low wall, choose row 2, column 3."
+ui.hint_step.D06,V inventári použi servisnú brašnu na pohár vyzdvihnutý po 38 rokoch.,"In the Inventory, use the tool bag on the jar recovered after 38 years."
+ui.hint_step.D07,Zachovaný návratový mostík použi na Tóna pri školníckom servisnom okne v roku 2020.,Use the preserved return bridge on Tóno at the caretaker’s service window in 2020.
+ui.hint_step.C02,Na výdajnom mieste pri Lúčnom koníku sa s Elou porozprávaj o téme „Protokol k babkinej krabici“.,"At the pick-up point by Lúčny koník, talk to Ela about the topic ‘A form for Gran’s box’."
+ui.hint_step.C03,Protokol o odovzdaní použi na Romana na ulici medzi plotmi.,Use the handover record on Roman in the lane between the fences.
+ui.hint_step.C04,Protokol s Romanovým podpisom použi na Elu na výdajnom mieste.,Use the record signed by Roman on Ela at the pick-up point.
+ui.hint_step.C05,Potvrdené odovzdanie 2020 použi na stolový uzol ZVON v dielni; mostík musí byť v inventári.,Use the confirmed handover 2020 on the ZVON base node in the workshop; the bridge must be in your Inventory.
+ui.hint_step.F01,Pred hotelom Grand Jasná sa s Ninou porozprávaj o téme „Prichádzam kvôli fondu Z-17“.,"Outside Hotel Grand Jasná, talk to Nina about the topic ‘About collection Z-17’."
+ui.hint_step.F02,Pôvodnú školskú kazetu použi na Tamaru v lobby hotela Grand Jasná.,Use the original school cassette on Tamara in the lobby of Hotel Grand Jasná.
+ui.hint_step.F03,Potvrdené odovzdanie 2020 použi na Borisa vo výstavnom salóne hotela; podľa neho nájde fond Z-17.,Use the confirmed handover 2020 on Boris in the hotel’s exhibition room; he’ll find collection Z-17 with it.
+ui.hint_step.F04,Katalógovú kartu fondu Z-17 použi na Sáru v klientskom centre Biela Púť.,Use the catalogue card for collection Z-17 on Sára at the Biela Púť customer centre.
+ui.hint_step.J02,Spiatočný lístok na oba úseky použi na čítačku platného lístka pri dolnej stanici.,Use the return ticket for both sections on the valid-ticket reader at the bottom station.
+ui.hint_step.J03,Na Priehybe nastúp na Funitel smer Chopok.,"At Priehyba, board the Funitel towards Chopok."
+ui.hint_step.J04,V kabíne Funitelu dokonči jazdu pri vrcholovej stanici za oknom.,"In the Funitel cabin, finish the ride by the top station outside the window."
+ui.hint_step.F05,Telefón použi na panel normalizácie pri Rotunde.,Use the phone on the normalisation panel by the Rotunda.
+ui.hint_step.F06,Lokálnu zvukovú čítačku použi na servisný terminál v pavilóne Atlasu.,Use the local audio reader on the service terminal in the Atlas pavilion.
+ui.hint_step.F07,Prenosný chronometer ZVON použi na pasívny stojan pri chodníku pri Vrbickom plese.,Use the portable ZVON chronometer on the passive stand by the path at Vrbické pleso.
+ui.hint_step.F08,Miestnu referenčnú stopu použi na servisný terminál v pavilóne Atlasu.,Use the local reference trace on the service terminal in the Atlas pavilion.
+ui.hint_step.J05,Zachovaný návratový mostík použi na oddelený návratový konektor Atlasu na vyhliadkovej terase.,Use the preserved return bridge on Atlas’s separate return connector on the viewing terrace.
+ui.hint_step.F09,Na vyhliadkovej terase prepni prepínač zápisu na MONITOR.,"On the viewing terrace, set the write switch to MONITOR."
+ui.hint_step.F10,V servisnom pavilóne potvrď na servisnom termináli vstup do chronokomory.,"In the service pavilion, confirm entry to the chronochamber at the service terminal."
+ui.hint_step.F11,Leinu nezmenenú hlasovú správu použi na Viktora v chronokomore.,Use Lea’s unaltered voice message on Viktor in the chronochamber.
+ui.hint_step.F12,Overený odtlačok z roku 1962 vlož do portu Pôvod.,Put the verified imprint from 1962 into the Origin port.
+ui.hint_step.F13,Pôvodnú školskú kazetu vlož do portu Hlas.,Put the original school cassette into the Voice port.
+ui.hint_step.F14,Potvrdené odovzdanie 2020 vlož do portu Súhlas.,Put the confirmed handover 2020 into the Consent port.
+ui.hint_step.F15,Podpísaný obnovovací postup vlož do portu Návrat.,Put the signed restore procedure into the Return port.
+ui.hint_step.F16,"Na paneli obnovy priraď roky: Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035.","On the restore panel, assign the years: Origin 1962, Voice 1995, Consent 2020, Return 2035."
+ui.hint_step.F17,Na paneli obnovy potvrď obnovu záznamov.,"On the restore panel, confirm the restore of the records."
+ui.hint_step.Q1A,Na ulici medzi plotmi sa s Lenkou porozprávaj o téme „Čo je s Bodkom?“,"In the lane between the fences, talk to Lenka about the topic ‘What’s up with Bodka?’"
+ui.hint_step.Q1B,Pri retenčnej nádrži vezmi červenú loptičku.,"By the retention pond, take the red ball."
+ui.hint_step.Q1C,Bodkovu loptičku použi na Lenku na ulici medzi plotmi.,Use Bodka’s ball on Lenka in the lane between the fences.
+ui.hint_step.Q2A,Pri výveske v Čiernej Vode sa s pánom Jozefom porozprávaj o téme „Pomôcť vám s oznamom?“,"By the noticeboard in Čierna Voda, talk to Mr Jozef about the topic ‘Help with the notice?’"
+ui.hint_step.Q2B,Na výdajnom mieste sa s Elou porozprávaj o téme „Máš oznam veľkým písmom?“,"At the pick-up point, talk to Ela about the topic ‘Got a notice in large print?’"
+ui.hint_step.Q2C,Veľký čitateľný oznam použi na komunitnú vývesku v Čiernej Vode.,Use the large-print notice on the community noticeboard in Čierna Voda.
+ui.hint_step.Q3A,Na školskom dvore sa so Soňou porozprávaj o téme „Hľadáš nejakú fotografiu?“,"In the school yard, talk to Soňa about the topic ‘Looking for a photo?’"
+ui.hint_step.Q3B,Pri kiosku sa so Zitou porozprávaj o téme „Máte obálku pre školu?“,"At the kiosk, talk to Zita about the topic ‘An envelope for the school?’"
+ui.hint_step.Q3C,Obálku s tímovým negatívom použi na Alenu vo fotoateliéri Svetlo.,Use the envelope with the team negative on Alena at the Svetlo photo studio.
+ui.hint_step.Q3D,Fotografiu družstva použi na Soňu na školskom dvore.,Use the team photo on Soňa in the school yard.
+ui.hint_step.Q4A,Na Karloveskom nástupišti sa s Emilom porozprávaj o téme „Prečo tá melódia nekončí?“,"At the Karlova Ves tram stop, talk to Emil about the topic ‘Why doesn’t the tune end?’"
+ui.hint_step.Q4B,V antikvariáte sa s Vierou porozprávaj o téme „Máte Emilove noty?“,"At the bookshop, talk to Viera about the topic ‘Have you got Emil’s music?’"
+ui.hint_step.Q4C,Noty k Emilovej skladbe použi na Emila na Karloveskom nástupišti.,Use the sheet music for Emil’s song on Emil at the Karlova Ves tram stop.
+ui.hint_step.Q5A,V petržalskom podchode sa s Jurajom porozprávaj o téme „Čo chýba mape svetiel?“,"In the Petržalka underpass, talk to Juraj about the topic ‘What’s missing from the map?’"
+ui.hint_step.Q5B,"Keď ťa školník zapíše ako návštevu, porozprávaj sa s Tónom vo vstupnej chodbe o téme „Kúsok kriedy na panel?“","Once the caretaker has signed you in as a visitor, talk to Tóno in the entrance hall about the topic ‘Chalk for the panel?’"
+ui.hint_step.Q5C,Bielu školskú kriedu použi na povolený výtvarný panel v podchode.,Use the white school chalk on the approved art panel in the underpass.
+ui.hint_step.Q6A,Na pošte sa s Alojzom porozprávaj o téme „Kde je váš holub?“,"At the post office, talk to Alojz about the topic ‘Where’s your pigeon?’"
+ui.hint_step.Q6B,Na dvore dielne sa so Štefanom porozprávaj o téme „Krmivo pre Bélu“.,"In the workshop yard, talk to Štefan about the topic ‘Feed for Béla’."
+ui.hint_step.Q6C,Hrsť semien pre Bélu použi na poštového holuba v parku pri kaštieli.,Use the handful of seed for Béla on the carrier pigeon in the manor house park.
+ui.hint_step.Q6D,Na pošte sa znova porozprávaj s Alojzom o téme „Bélov návrat“.,"At the post office, talk to Alojz again about the topic ‘Béla’s return’."
+ui.hint_step.Q7A,V kultúrnej sále sa s Rudom porozprávaj o téme „Môžem pomôcť so scenárom?“,"In the village hall, talk to Rudo about the topic ‘Can I help with the script?’"
+ui.hint_step.Q7B,Na povale technického archívu vezmi ochotnícky scenár.,"In the technical archive loft, take the amateur theatre script."
+ui.hint_step.Q7C,Rudov scenár použi na Ruda v kultúrnej sále.,Use Rudo’s script on Rudo in the village hall.
+ui.hint_step.Q8A,Pri dolnej stanici sa s Očkom porozprávaj o téme „Kam máte doručiť balík?“,"At the bottom station, talk to Očko about the topic ‘Where’s the parcel going?’"
+ui.hint_step.Q8B,Pri Vrbickom plese si prezri lavičku so psom.,"By Vrbické pleso, look at the bench with the dog."
+ui.hint_step.Q8C,Očkovu doručovaciu požiadavku použi na Tamaru v lobby hotela Grand Jasná.,Use Očko’s delivery request on Tamara in the lobby of Hotel Grand Jasná.
+ui.hint_step.Q8D,Potvrdenie opravovne použi na Očka pri dolnej stanici.,Use the repair shop’s confirmation on Očko at the bottom station.
+ui.hint_step.Q9A,V triede pred výstavkou v roku 1982 sa s Janou porozprávaj o téme „Janin vlastný návrh“.,"In the classroom before the exhibition in 1982, talk to Jana about the topic ‘Jana’s own design’."
+ui.hint_step.Q9B,Janinu pôvodnú schému použi na učiteľa Dobroviča.,"Use Jana’s original schematic on Mr Dobrovič, the teacher."
+ui.hint_step.Q9C,Schému s povolením na výstavku použi na Janu.,Use the exhibition-approved schematic on Jana.
+ui.hint_step.Q9D,Vo fyzikálnom kabinete v roku 1995 sa s Janou porozprávaj o téme „Čo bolo s vašou schémou?“,"In the physics prep room in 1995, talk to Jana about the topic ‘What became of your schematic?’"
+ui.hint_step.Q9E,Vo fyzikálnom kabinete v roku 2020 sa s Janou porozprávaj o téme „Čo robíte s notebookmi?“,"In the physics prep room in 2020, talk to Jana about the topic ‘What are the laptops for?’"
+ui.hint_step.Q9F,"Vo výstavnom salóne hotela Grand Jasná sa s Janou porozprávaj o téme „Jana, čo je s vašou schémou?“","In the exhibition room of Hotel Grand Jasná, talk to Jana about the topic ‘Jana, how’s your schematic?’"
+hint.nudge.G01,Dnes idem babke na nákup a potom do jej dielne. Bez náradia z domu nevyrazím.,Today I’m doing Gran’s shopping and then going to her workshop. I don’t leave home without my tools.
+hint.where.G01,"Hneď tu, v mojej garáži.","Right here, in my garage."
+hint.nudge.G02,"Babkin nákup nevybavím sám. Kto komu v obci nosí nákup, to vedia na výdajnom mieste.",I can’t sort out Gran’s shopping on my own. The pick-up point knows who carries whose shopping round here.
+hint.where.G02,Na výdajnom mieste pri Lúčnom koníku.,At the pick-up point by Lúčny koník.
+hint.nudge.G03,"Babkin lístok mám, tašku s nákupom zatiaľ nie. Vraj už na mňa niekde čaká pripravená.","I’ve got Gran’s list, but not the bag of shopping yet. Apparently it’s waiting for me somewhere, ready."
+hint.where.G03,"V potravinách cez okienko, u Dany.","At the shop at the hatch, with Dana."
+hint.nudge.G04,"Taška je plná. Babkine pravidlo znie: do domu nechodím, nákup nechám vonku.",The bag is full. Gran’s rule: I don’t go into the house; I leave the shopping outside.
+hint.where.G04,Pri Mirinej bránke.,At Mira’s garden gate.
+hint.nudge.G05,"Nákup je doručený. Babka mi ešte niečo chcela povedať, ale až pri okne.","The shopping’s delivered. Gran wanted to tell me something else, but only at the window."
+hint.where.G05,Pod babkiným zatvoreným oknom. Cez sklo ma nepočuje.,Below Gran’s closed window. She can’t hear me through the glass.
+hint.nudge.G06,V babkinej dielni sa ozýva odpojený prístroj. A kľúč od nej už nosím pri sebe.,An unplugged device is making noises in Gran’s workshop. And I’m already carrying the key.
+hint.where.G06,Dielňa stojí v záhrade za Mirinou bránkou.,The workshop stands in the garden behind Mira’s gate.
+hint.nudge.G07,"V predsieni leží niečo, čo vyzerá veľmi dôležito, a pritom to nie je zamknuté.","In the porch there’s something that looks very important, and yet it isn’t locked."
+hint.where.G07,V predsieni záhradnej dielne.,In the porch of the garden workshop.
+hint.nudge.G08,"Stolový uzol nesvieti. Dobrý opravár najprv zistí prečo, až potom niečo mení.","The base node isn’t lit. A good repairer finds out why first, and only then changes anything."
+hint.where.G08,"V zadnej miestnosti dielne, kde stojí ZVON.","In the back room of the workshop, where ZVON stands."
+hint.nudge.G09,Prepálenú poistku mám v ruke. Rovnakú náhradu mám určite niekde doma.,I’ve got the blown fuse in my hand. I’m sure I have an identical replacement somewhere at home.
+hint.where.G09,V mojej garáži.,In my garage.
+hint.nudge.G10,"Náhradná poistka má rovnaké hodnoty ako prepálená. Patrí presne tam, odkiaľ som tú starú vybral.",The spare fuse has the same ratings as the blown one. It belongs exactly where I took the old one out.
+hint.where.G10,V zadnej miestnosti babkinej dielne.,In the back room of Gran’s workshop.
+hint.nudge.G11,"Prístroj chce tri referenčné tvary. Vyzerá to ako stavebnica pre škôlkarov, len drahšia.","The device wants three reference shapes. It looks like a building set for nursery children, only pricier."
+hint.where.G11,"Na farbách nezáleží, rozhoduje tvar. Schéma nad panelom ukazuje, čo patrí k čomu.",The colours don’t matter; the shape does. The diagram above the panel shows what goes with what.
+hint.nudge.B01,"Prístroj ma poslal pred moju starú školu. Skôr než niekam vtrhnem, zistím, čo sa tu dnes deje.","The device has sent me to my old school. Before I barge in anywhere, I’ll find out what’s going on here today."
+hint.where.B01,"Pred ZŠ Sokolíkova, pri nástenke.","Outside Sokolíkova School, by the noticeboard."
+hint.nudge.B02,Hlásiť sa treba u školníka. Cudzieho človeka z ulice však len tak ďalej nepustí.,You report to the caretaker. But he won’t just let a stranger off the street any further.
+hint.where.B02,"Vo vstupnej chodbe školy, u školníka.","In the school’s entrance hall, with the caretaker."
+hint.nudge.B03,"Ten prístroj je babkin. Ak niekto vie, čo sa s ním deje, je to ona, aj v roku 1995.","That device is Gran’s. If anyone knows what’s happening to it, it’s her, even in 1995."
+hint.where.B03,V triede pamäťového krúžku na konci chodby.,In the memory club classroom at the end of the corridor.
+hint.nudge.B04,Babka chce kazetu zo školského rozhlasu. Magnetofón ju však drží a nechce ju pustiť.,Gran wants the tape from the school PA. But the tape recorder is holding on to it and won’t let go.
+hint.where.B04,"V miestnosti školského rozhlasu, pri magnetofóne.","In the school PA room, by the tape recorder."
+hint.nudge.B05,"Remienok sa rozpadol na kúsky. Rovnaký zoženiem len v opravovni, kde majú remienky po zásuvkách.",The drive belt has perished into pieces. I’ll only get an identical one at a repair shop that keeps belts by the drawerful.
+hint.where.B05,V opravovni v Karlovej Vsi.,At the repair shop in Karlova Ves.
+hint.nudge.B06,Nový remienok je presne na mieru. Starý som vyťahoval z jedného tvrdohlavého magnetofónu.,The new drive belt is a perfect fit. I pulled the old one out of one very stubborn tape recorder.
+hint.where.B06,Späť v miestnosti školského rozhlasu.,Back in the school PA room.
+hint.nudge.B07,"Hlasy na páske takmer nepočuť. Pali spomínal niekoho, kto s páskami vie čarovať.",You can hardly hear the voices on the tape. Pali mentioned someone who can work magic with tapes.
+hint.where.B07,"V kazetovom klube v Ružinove, u Jura.","At the cassette club in Ružinov, with Juro."
+hint.nudge.B08,Adaptéru chýba konektor a ten má Fero. Opravár sa na trhu vždy zíde.,"The adaptor is missing a connector, and Fero has one. A repairer always comes in handy at the market."
+hint.where.B08,"Na Miletičovej medzi stánkami, u Fera.","At Miletičova among the stalls, with Fero."
+hint.nudge.B09,"Holé vývody do školského rozhlasu nezapojím. Juro vravel, kto má izolačný návlek.",I won’t plug bare leads into the school PA. Juro said who has an insulating sleeve.
+hint.where.B09,"V opravovni odevov vedľa trhu, u Milady.","At the tailor’s next to the market, with Milada."
+hint.nudge.B10,"Všetky diely prepojky mám. Teraz ich treba poskladať, kontakty majú zhodné značky.",I have all the parts of the lead. Now they need putting together; the contacts have matching marks.
+hint.where.B10,"Toto poskladám z vecí, ktoré už nosím v brašni.",I can put this together from things I’m already carrying in my bag.
+hint.nudge.B11,"Kontakty sedia, ale vývody sú holé. Bez izolácie to do školského rozhlasu nezapojím.","The contacts match, but the leads are bare. Without insulation I won’t plug it into the school PA."
+hint.where.B11,"Aj toto doladím v brašni, nikam nemusím chodiť.",I can finish this in my bag too; no need to go anywhere.
+hint.nudge.B12,"Prepojka je hotová. Kazetu treba prehrať tak, aby sa stopy nerušili, a nič na ňu nenahrať.","The lead is finished. The tape has to be played so the tracks don’t cancel out, without recording anything on it."
+hint.where.B12,"V miestnosti školského rozhlasu, pri magnetofóne.","In the school PA room, by the tape recorder."
+hint.nudge.B13,Babka mi dala poverenie. S ním mi niekde v centre vydajú kópiu mapy.,"Gran gave me a letter of authority. With it, somewhere in the centre, they’ll give me a copy of the map."
+hint.where.B13,"V archívnej študovni v Starom Meste, u pána Mertu.","In the archive reading room in Staré Mesto, with Mr Merta."
+hint.nudge.B14,Číslo chýbajúcej fólie je na negatíve. Ten však musí najprv niekto vyvolať.,The number of the missing overlay is on the negative. But someone has to develop it first.
+hint.where.B14,Vo fotoateliéri Svetlo na druhej strane námestia.,"At the Svetlo photo studio, on the other side of the square."
+hint.nudge.B15,"Na fotke je číslo K-17. Alena vravela, kto má staré mapové prílohy.",The photo shows the number K-17. Alena said who has the old map supplements.
+hint.where.B15,"V antikvariáte Pod druhou rukou, u Viery.","At the Second Hand bookshop, with Viera."
+hint.nudge.B16,"Mapa je takmer celá. Chýbajúca vrstva je už v brašni, len ešte nesedí.",The map is almost complete. The missing layer is already in my bag; it just doesn’t line up yet.
+hint.where.B16,"Dierka na dierku, kríž na kríž, štvorec na štvorec. Keď značky nesedia, fóliu otoč.","Hole on hole, cross on cross, square on square. If the marks don’t line up, turn the overlay."
+hint.nudge.B17,"Mapa je celá. Teraz ju musí prečítať niekto, kto ju kedysi pomáhal kresliť.",The map is complete. Now someone who helped draw it once needs to read it.
+hint.where.B17,Mapa vedie do jednej garáže v Petržalke.,The map leads to a garage in Petržalka.
+hint.nudge.B18,"Na meranie treba rytmus, ktorý nezávisí od prúdu. Dezider vravel, kto má metronóm.",The measurement needs a rhythm that doesn’t depend on electricity. Dezider said who has a metronome.
+hint.where.B18,"Na Karloveskom nástupišti, u Emila.","At the Karlova Ves tram stop, with Emil."
+hint.nudge.B19,Tri číslice pre stojan babka nenapísala ako čísla. Namaľovala ich ako obrázok.,Gran didn’t write the three digits for the stand as numbers. She painted them as a picture.
+hint.where.B19,"Pri LEALe, na múre.","At Pri LEALe, on the wall."
+hint.nudge.B20,Dezider mi dal cievku. Bez nej sa na mieste merania nič nenameria.,"Dezider gave me a coil. Without it, nothing gets measured at the measuring point."
+hint.where.B20,V meracom stánku na Starom moste.,In the measuring booth on Starý most.
+hint.nudge.B21,"Metronóm mám. Meranie potrebuje rytmus a rovné miesto, kde ho nič nerozhýbe.",I have the metronome. The measurement needs a rhythm and a level spot where nothing will rock it.
+hint.where.B21,"Pri meracom stánku na Starom moste, vedľa stojana.","By the measuring booth on Starý most, next to the stand."
+hint.nudge.B22,"Stojan chce tri číslice, ktoré babka na múr nakreslila. Kazetu a mapu pritom musím mať pri sebe.",The stand wants the three digits Gran drew on the wall. I need the tape and the map with me as well.
+hint.where.B22,"Každé koliesko je jedna číslica z rytmického nákresu: vlny, údery, dieliky, v tomto poradí.","Each dial is one digit from the rhythm drawing: waves, beats, segments, in that order."
+hint.nudge.I01,"Som v Ivanke v roku 1962. ZVON odtiaľto pochádza, tak hľadám dielňu, kde ho stavali.","I’m in Ivanka in 1962. ZVON comes from here, so I’m looking for the workshop where they built it."
+hint.where.I01,V mechanickej dielni v Ivanke.,In the mechanical workshop in Ivanka.
+hint.nudge.I02,Oto mi dal lístok na kožu a nity. Materiál tu vydávajú len na lístok s podpisom.,Oto gave me a slip for leather and rivets. Here materials are only issued against a signed slip.
+hint.where.I02,"Na dvore hospodárskej dielne, u skladníka.","In the farm workshop yard, with the storeman."
+hint.nudge.I03,"Dierovač má Lída v sále. Podľa Ota mi ho požičia, ak jej s niečím pomôžem.",Lída in the hall has the punch. Oto says she’ll lend it to me if I help her with something.
+hint.where.I03,"V kultúrnej sále, kde sa chystá skúška.","In the village hall, where a rehearsal is being prepared."
+hint.nudge.I04,"Koža na manžetu je predrezaná, ale vyznačené otvory ešte nie sú prerazené.","The leather for the cuff is pre-cut, but the marked holes haven’t been punched yet."
+hint.where.I04,"To spravím v brašni s tým, čo už mám pri sebe.",I’ll do this in my bag with what I’ve already got.
+hint.nudge.I05,Otvory sú prerazené. Manžeta však zatiaľ drží pokope len dobrou vôľou.,The holes are punched. But for now the cuff is held together only by goodwill.
+hint.where.I05,Aj toto dokončím v brašni.,I can finish this in my bag too.
+hint.nudge.I06,"Manžeta je hotová. Zostáva vrátiť sa k tomu, čo bez nej netesní.",The cuff is finished. All that’s left is to go back to the thing that leaks without it.
+hint.where.I06,Pred búdkou za parkom.,Outside the hut behind the park.
+hint.nudge.I07,"Voda znova obieha. To by mal vedieť ten, kto drží kľúč od meracej miestnosti.",The water is circulating again. Whoever holds the key to the measuring room should know.
+hint.where.I07,"V mechanickej dielni, u Ota.","In the mechanical workshop, with Oto."
+hint.nudge.I08,Kľúč od meracej miestnosti mám. Jej dvere som dnes už videl.,I have the key to the measuring room. I’ve already seen its door today.
+hint.where.I08,Pred búdkou za parkom.,Outside the hut behind the park.
+hint.nudge.I09,"Za dverami pracuje mladá babka. Musím jej povedať, čo sa v budúcnosti robí s pôvodnými údajmi.","Behind the door, young Gran is at work. I have to tell her what the future does to original data."
+hint.where.I09,"V meracej miestnosti, u mladej Miry.","In the measuring room, with young Mira."
+hint.nudge.I10,"Na odtlačok treba aj tupé rydlo. Mira vravela, kto ho nosí v puzdre.",The imprint needs a blunt stylus too. Mira said who carries one in a case.
+hint.where.I10,"V parku pri kaštieli, u Very na lavičke.","In the manor house park, with Vera on the bench."
+hint.nudge.I11,"Odtlačok sa nerobí na hocijaký papier. Mira vie, kde leží ten správny.",You don’t take an imprint on just any paper. Mira knows where the right kind is.
+hint.where.I11,Na povale technického archívu.,In the technical archive loft.
+hint.nudge.I12,Platňa musí zostať na mieste. Odnesiem si iba jej odtlačok.,The plate has to stay where it is. I’ll only take its imprint away.
+hint.where.I12,V miestnosti prvého ZVONu.,In the room of the first ZVON.
+hint.nudge.I13,"Reliéf je na papieri, ale hrany sú slabé. Na zvýraznenie hrán mám požičaný nástroj.","The relief is on the paper, but the edges are faint. I have a borrowed tool for bringing out edges."
+hint.where.I13,To dorobím v brašni.,I’ll finish this in my bag.
+hint.nudge.I14,Registračný list musím mať dvakrát a presne rovnako. Prepisovať ho rukou nebudem.,"I need the registration form twice, exactly the same. I’m not copying it out by hand."
+hint.where.I14,"Na pošte, pri prepážke.","At the post office, by the counter."
+hint.nudge.I15,"Druhé vyhotovenie listu si urobím sám. Všetko, čo na to treba, už mám pri sebe.",I can make the second copy of the form myself. I already have everything I need for it.
+hint.where.I15,To urobím v brašni.,I’ll do this in my bag.
+hint.nudge.I16,Oba listy sú rovnaké. Dátum im však musí potvrdiť niekto s pečiatkou.,Both forms are the same. But someone with a stamp has to confirm their date.
+hint.where.I16,"Na pošte, u pána Barana za prepážkou.","At the post office, with Mr Baran behind the counter."
+hint.nudge.I17,"List je potvrdený. Teraz ho treba uložiť tak, aby prežil desaťročia. Odtlačok si nechám pri sebe.",The form is stamped. Now it needs storing so it survives for decades. I’m keeping the imprint with me.
+hint.where.I17,Na povale technického archívu.,In the technical archive loft.
+hint.nudge.C01,"Odtlačok z roku 1962 je overený. Čo ďalej, bude vedieť babka, aj keď ju uvidím len cez sklo.","The imprint from 1962 is verified. Gran will know what comes next, even if I only see her through the glass."
+hint.where.C01,"V Grobe, pod babkiným zatvoreným oknom.","In Grob, below Gran’s closed window."
+hint.nudge.D01,"Babka chcela, aby som si zapamätal školský dvor presne taký, aký je dnes. Pamäti neverím, telefónu áno.","Gran wanted me to remember the school yard exactly as it is today. I don’t trust my memory, but I trust my phone."
+hint.where.D01,Pred školou na Sokolíkovej v roku 2020.,Outside the school on Sokolíkova in 2020.
+hint.nudge.D02,"Tóno vie, že prídem po babkine veci. Ešte mu ukážem, že nie som hocikto z ulice.",Tóno knows I’m coming for Gran’s things. I’ll just show him I’m not some stranger off the street.
+hint.where.D02,Pri školníckom servisnom okne v roku 2020.,At the caretaker’s service window in 2020.
+hint.nudge.D03,Mostík postavil Oto v roku 1982. Taký majster si určite všetko zapísal.,Oto built the bridge in 1982. A craftsman like him will have written everything down.
+hint.where.D03,Vo fyzikálnom kabinete v roku 2020.,In the physics prep room in 2020.
+hint.nudge.D04,"Záznam má presný dátum. Na cestu do toho roku mi chýbajú hodiny, ktoré ho pamätajú.","The record has an exact date. To travel to that year, I need a clock that remembers it."
+hint.where.D04,Na Dúbravskej zastávke v roku 2020.,At the Dúbravka stop in 2020.
+hint.nudge.E01,"V roku 1982 pomáhal Otovi malý Tóno. Prístroj, ktorý nosím, by mohli spoznať obaja.",In 1982 little Tóno helped Oto. They might both recognise the device I’m carrying.
+hint.where.E01,"Pri servisnom okne školy v roku 1982, u Tóna a jeho deda.","At the school’s service window in 1982, with Tóno and his grandad."
+hint.nudge.E02,"Dvanásťročnému chlapcovi nestačí povedať, že som z budúcnosti. Musí to vidieť.",It isn’t enough to tell a twelve-year-old boy I’m from the future. He has to see it.
+hint.where.E02,"Pri servisnom okne, u malého Tóna.","At the service window, with little Tóno."
+hint.nudge.E03,Oto podpísal lístok na diely mostíka. Teraz mi ich niekto musí vydať.,Oto has signed a slip for the bridge parts. Now someone has to issue them to me.
+hint.where.E03,Vo výdajni školského materiálu. Vchádza sa do nej cez sídliskový obchod pri zastávke.,At the school maintenance store. You get in through the estate shop by the stop.
+hint.nudge.E04,Diely aj Otov nákres mám. Mostík sa však sám nezloží a na kolenách ho skladať nebudem.,"I have the parts and Oto’s drawing. But the bridge won’t assemble itself, and I’m not building it on my knees."
+hint.where.E04,Vo fyzikálnom kabinete v roku 1982.,In the physics prep room in 1982.
+hint.nudge.E05,"Mostík bude v múriku čakať desaťročia. Potrebuje suchý obal, ktorý sa dá poriadne zavrieť.",The bridge will wait in the low wall for decades. It needs a dry container that closes properly.
+hint.where.E05,V sídliskovom obchode pri zastávke.,At the estate shop by the stop.
+hint.nudge.E06,"Mostík nesmie zvlhnúť. Všetko, čo ho ochráni, už nosím v brašni.",The bridge mustn’t get damp. Everything that will protect it is already in my bag.
+hint.where.E06,"Toto urobím v brašni, nikam nemusím chodiť.",I’ll do this in my bag; no need to go anywhere.
+hint.nudge.E07,"Na mojej fotke z roku 2020 tu lipa nie je. Vozík, čo jazdí tesne pri nej, jej nepomáha.",On my photo from 2020 there’s no lime tree here. A cart that runs right past it isn’t helping.
+hint.where.E07,V školskom záhradnom sklade pri dvore.,In the school garden shed by the yard.
+hint.nudge.E08,"Pohár je zapečatený. Oto spomínal miesto, kde zostane do roku 2020 nedotknutý.",The jar is sealed. Oto mentioned a place where it will stay untouched until 2020.
+hint.where.E08,Na školskom dvore s mladou lipou.,In the school yard with the young lime.
+hint.nudge.E09,Diely ohrádky nosím so sebou. Na dvore však zatiaľ nič nechránia.,I’m carrying the parts of the tree guard. But in the yard they aren’t protecting anything yet.
+hint.where.E09,Na školskom dvore s mladou lipou.,In the school yard with the young lime.
+hint.nudge.E10,"Ohrádka stojí a pohár je ukrytý. Aby to prežilo ďalšie úpravy dvora, niekto to musí zapísať.","The guard is up and the jar is hidden. For it to survive future changes to the yard, someone has to write it down."
+hint.where.E10,"V záhradnom sklade, u Šimona.","In the garden shed, with Šimon."
+hint.nudge.E11,"Malý Tóno chcel, aby som mu pri ďalšom stretnutí povedal dohodnutú vetu. V roku 1995 je z neho školník.",Little Tóno wanted me to say the agreed sentence when we next met. In 1995 he’s the caretaker.
+hint.where.E11,"V roku 1995 vo vstupnej chodbe školy, u Tóna.","In 1995, in the school’s entrance hall, with Tóno."
+hint.nudge.D05,"Pohár čaká v múriku na dvore od roku 1982. Tónove nákresy presne hovoria, za ktorým kameňom.",The jar has been waiting in the low wall in the yard since 1982. Tóno’s sketches say exactly behind which stone.
+hint.where.D05,"Nákres aj Tónova poznámka platia aj v roku 2020: rad počítaj zhora, kameň zľava.",The sketch and Tóno’s note still apply in 2020: count the row from the top and the stone from the left.
+hint.nudge.D06,Pohár je von a tesnenie drží. Viečko však po toľkých rokoch holou rukou nepovolí.,"The jar is out and the seal is holding. But after so many years, the lid won’t give by hand."
+hint.where.D06,"Toto urobím v brašni, nikam nemusím chodiť.",I’ll do this in my bag; no need to go anywhere.
+hint.nudge.D07,"Mostík prežil. Prvý by ho mal vidieť ten, kto si to miesto pamätal celý život.",The bridge survived. The first to see it should be the one who remembered the place all his life.
+hint.where.D07,"Pri školníckom servisnom okne v roku 2020, u Tóna.","At the caretaker’s service window in 2020, with Tóno."
+hint.nudge.C02,"Babka chcela, aby sme s Elou dotiahli papiere k jej krabici. Tie papiere stále chýbajú.",Gran wanted Ela and me to finish the paperwork for her box. That paperwork is still missing.
+hint.where.C02,"Na výdajnom mieste pri Lúčnom koníku, u Ely.","At the pick-up point by Lúčny koník, with Ela."
+hint.nudge.C03,Na protokole chýbajú podpisy. Krabicu predsa niekto vlastnými rukami niesol.,The record is missing its signatures. Someone did carry that box with their own hands.
+hint.where.C03,"Na ulici medzi plotmi, pri Romanovej dodávke.","In the lane between the fences, by Roman’s van."
+hint.nudge.C04,"Roman podpísal prevzatie. Druhý podpis patrí tej, ktorá krabicu vydala.",Roman has signed for the collection. The second signature belongs to the woman who handed the box over.
+hint.where.C04,"Na výdajnom mieste, u Ely.","At the pick-up point, with Ela."
+hint.nudge.C05,"Dôkazy sú pokope. Prístroj, s ktorým sa to celé začalo, by mal vedieť, čo s nimi.",The evidence is all together. The device this all started with should know what to do with it.
+hint.where.C05,V babkinej záhradnej dielni.,In Gran’s garden workshop.
+hint.nudge.F01,Babkin fond Z-17 skončil v Atlase v Jasnej. Niekto tam za ten fond musí zodpovedať.,Gran’s collection Z-17 ended up with Atlas at Jasná. Someone there must be responsible for it.
+hint.where.F01,Pred hotelom Grand Jasná.,Outside Hotel Grand Jasná.
+hint.nudge.F02,"Kazetu z roku 1995 bez čítačky s ničím neporovnám. Nina vravela, kto mi ju požičia.",Without a reader I can’t compare the 1995 tape with anything. Nina said who would lend me one.
+hint.where.F02,"V lobby hotela Grand Jasná, u Tamary.","In the lobby of Hotel Grand Jasná, with Tamara."
+hint.nudge.F03,"Kartu fondu Z-17 mi vydajú, keď ukážem, že babkinu krabicu vždy odovzdali tak, ako mali.",They’ll issue the card for collection Z-17 once I show that Gran’s box was always handed over as it should be.
+hint.where.F03,"Vo výstavnom salóne hotela, u Borisa.","In the hotel’s exhibition room, with Boris."
+hint.nudge.F04,"Na lanovku a do pavilónu potrebujem preukaz aj lístok. Nina vravela, kto ich vybavuje.",For the cable car and the pavilion I need a pass and a ticket. Nina said who arranges them.
+hint.where.F04,"V klientskom centre Biela Púť, u Sáry.","At the Biela Púť customer centre, with Sára."
+hint.nudge.J02,Lístok mám. Pavilón je hore pri Rotunde a pešo sa tam dnes nevyberiem.,"I have the ticket. The pavilion is up by the Rotunda, and I’m not walking up there today."
+hint.where.J02,Pri dolnej stanici na Bielej Púti.,At the bottom station at Biela Púť.
+hint.nudge.J03,"Prvý úsek mám za sebou. Na Chopok sa ide ďalej, len inou lanovkou.","The first section is done. You carry on to Chopok, just on a different cable car."
+hint.where.J03,"Na Priehybe, pri nástupe na Funitel.","At Priehyba, where you board the Funitel."
+hint.nudge.J04,"Kabína ide hore. Vystúpiť sa dá, až keď dorazí do vrcholovej stanice.",The cabin is going up. You can only get out once it reaches the top station.
+hint.where.J04,"V kabíne Funitelu, pri okne.","In the Funitel cabin, by the window."
+hint.nudge.F05,"Nina hovorila, že prístroj záznamy zarovnáva. Podľa akého pravidla? To by som chcel mať čierne na bielom.",Nina said the device evens out records. By what rule? I’d like to have that in black and white.
+hint.where.F05,Pri Rotunde na Chopku.,By the Rotunda on Chopok.
+hint.nudge.F06,"Mám kazetu, odtlačok aj fotku pravidla. Treba porovnať pôvodný hlas s tým, čo z neho ostalo.","I have the tape, the imprint and the photo of the rule. Now I need to compare the original voice with what’s left of it."
+hint.where.F06,V servisnom pavilóne Atlasu pri Rotunde.,In the Atlas service pavilion by the Rotunda.
+hint.nudge.F07,"Terminálu ešte chýba miestna stopa. Nina povedala, kde ju zachytím bez jediného zásahu.",The terminal still lacks a local trace. Nina said where I can capture it without touching anything.
+hint.where.F07,"Pri Vrbickom plese, pri chodníku. Lanovkami dole a od hotela pešo.","By Vrbické pleso, at the path. Down by cable car, then on foot from the hotel."
+hint.nudge.F08,Stopa z plesa je v chronometri. Nina ju potrebuje vidieť hore v pavilóne.,The trace from the lake is in the chronometer. Nina needs to see it up in the pavilion.
+hint.where.F08,"V servisnom pavilóne Atlasu, pri termináli.","In the Atlas service pavilion, at the terminal."
+hint.nudge.J05,"Prepínač nič nezmení, kým nebude návrat bezpečný. Na to som si v roku 1982 niečo odložil.",The switch won’t change anything until the return is safe. I put something aside for that back in 1982.
+hint.where.J05,Na vyhliadkovej terase pri Rotunde.,On the viewing terrace by the Rotunda.
+hint.nudge.F09,Návrat je istený. Teraz treba zastaviť samotné mazanie. Nina povedala ako.,The return is secured. Now the erasing itself has to stop. Nina said how.
+hint.where.F09,"Na vyhliadkovej terase, pri prepínači.","On the viewing terrace, at the switch."
+hint.nudge.F10,"Zápis stojí. Systém ma pustí do komory za Viktorom, až keď mu to potvrdím.",The write has stopped. The system will only let me into the chamber with Viktor once I confirm it.
+hint.where.F10,"V servisnom pavilóne, pri termináli.","In the service pavilion, at the terminal."
+hint.nudge.F11,"Viktor musí počuť, čo jeho systém zahodil. Celé, aj s pauzami.","Viktor has to hear what his system threw away. All of it, pauses and all."
+hint.where.F11,"V chronokomore, u Viktora.","In the chronochamber, with Viktor."
+hint.nudge.F12,"Štyri porty, štyri dôkazy. Prvý patrí tomu, ako sa to celé začalo.","Four ports, four pieces of evidence. The first belongs to how it all began."
+hint.where.F12,"V chronokomore, pri portoch panelu obnovy.","In the chronochamber, at the ports of the restore panel."
+hint.nudge.F13,"Ďalší port chce hlas. Originál, nie zhrnutie.","The next port wants a voice. The original, not a summary."
+hint.where.F13,"V chronokomore, pri portoch panelu obnovy.","In the chronochamber, at the ports of the restore panel."
+hint.nudge.F14,"Ďalší port chce dôkaz, že babka s presunom svojho fondu súhlasila.",The next port wants proof that Gran consented to her collection being moved.
+hint.where.F14,"V chronokomore, pri portoch panelu obnovy.","In the chronochamber, at the ports of the restore panel."
+hint.nudge.F15,"Posledný port patrí tomu, ako veci vrátiť späť. Ten papier podpísala Nina.",The last port belongs to how things get put back. Nina signed that piece of paper.
+hint.where.F15,"V chronokomore, pri portoch panelu obnovy.","In the chronochamber, at the ports of the restore panel."
+hint.nudge.F16,Panel chce ku každému portu rok. Každý dôkaz si ten svoj nesie so sebou.,The panel wants a year for each port. Each piece of evidence carries its own.
+hint.where.F16,"Ku každému portu patrí rok dôkazu, ktorý v ňom je. Pomôžu predmety a zápisník.",Each port gets the year of the evidence inside it. The items and the notebook will help.
+hint.nudge.F17,Všetko je na svojom mieste. Zostáva posledné potvrdenie a potom domov.,"Everything is in its place. One last confirmation, and then home."
+hint.where.F17,"V chronokomore, pri paneli obnovy.","In the chronochamber, at the restore panel."
+hint.nudge.Q1A,"Susedin pes vyzerá smutnejšie, než by mal. Niečo mu chýba.",The neighbour’s dog looks sadder than he should. Something’s missing.
+hint.where.Q1A,"Na ulici medzi plotmi, pri susede so psom.","In the lane between the fences, by the neighbour with the dog."
+hint.nudge.Q1B,"Bodka stratil loptičku. Lenka vie, kde ju naposledy videla.",Bodka has lost his ball. Lenka knows where she last saw it.
+hint.where.Q1B,"Pri retenčnej nádrži v Čiernej Vode, kde končí cyklochodník.","By the retention pond in Čierna Voda, where the cycle path ends."
+hint.nudge.Q1C,Loptička je suchá a poriadne obhryzená. Niekomu chlpatému už určite chýba.,The ball is dry and thoroughly chewed. Someone furry must be missing it.
+hint.where.Q1C,"Na ulici medzi plotmi, u Lenky.","In the lane between the fences, with Lenka."
+hint.nudge.Q2A,Starší pán pri výveske sa márne snaží niečo prečítať.,An elderly gentleman by the noticeboard is trying in vain to read something.
+hint.where.Q2A,Pri výveske v Čiernej Vode.,By the noticeboard in Čierna Voda.
+hint.nudge.Q2B,Pán Jozef potrebuje oznam na papieri a veľkými písmenami. Oznamy v obci chystá Ela.,"Mr Jozef needs a notice on paper, in large print. Ela makes the notices round here."
+hint.where.Q2B,"Na výdajnom mieste pri Lúčnom koníku, u Ely.","At the pick-up point by Lúčny koník, with Ela."
+hint.nudge.Q2C,"Oznam veľkým písmom mám. Pán Jozef si ho prečíta, len keď bude visieť tam, kam sa pozerá.",I have a large-print notice. Mr Jozef will only read it once it’s hanging where he looks.
+hint.where.Q2C,Pri výveske v Čiernej Vode.,By the noticeboard in Čierna Voda.
+hint.nudge.Q3A,Dievča na školskom dvore listuje v albume a niečo v ňom chýba.,"A girl in the school yard is leafing through an album, and something is missing from it."
+hint.where.Q3A,Na školskom dvore.,In the school yard.
+hint.nudge.Q3B,Soňa hľadá fotku celého družstva. Zabudnutá obálka s ňou vraj skončila pri kiosku.,Soňa is looking for a photo of the whole team. A forgotten envelope with it apparently ended up at the kiosk.
+hint.where.Q3B,"Pri kiosku na sídliskovom dvore, u Zity.","At the kiosk in the estate courtyard, with Zita."
+hint.nudge.Q3C,V obálke je len negatív. Do albumu treba fotografiu.,There’s only a negative in the envelope. The album needs a photo.
+hint.where.Q3C,"Vo fotoateliéri Svetlo, u Aleny.","At the Svetlo photo studio, with Alena."
+hint.nudge.Q3D,"Fotka je hotová a je na nej celé družstvo. Aj jeden chlapec, ktorého poznám zo zrkadla.",The photo is ready and the whole team is in it. Including one boy I know from the mirror.
+hint.where.Q3D,"Na školskom dvore, u Sone.","In the school yard, with Soňa."
+hint.nudge.Q4A,Muzikant na nástupišti hrá stále tú istú melódiu a nikdy ju nedohrá.,The musician at the tram stop keeps playing the same tune and never finishes it.
+hint.where.Q4A,"Na Karloveskom nástupišti, u muzikanta.","At the Karlova Ves tram stop, with the musician."
+hint.nudge.Q4B,"Emil zabudol, ako jeho skladba končí. Noty by mohli ležať tam, kam sa dostanú staré knihy.",Emil has forgotten how his song ends. The music might be wherever old books end up.
+hint.where.Q4B,"V antikvariáte Pod druhou rukou, u Viery.","At the Second Hand bookshop, with Viera."
+hint.nudge.Q4C,Noty sa našli. Štyri zastávky môžu konečne dôjsť až na koniec.,The music has turned up. Four Stops can finally make it to the end of the line.
+hint.where.Q4C,"Na Karloveskom nástupišti, u Emila.","At the Karlova Ves tram stop, with Emil."
+hint.nudge.Q5A,Mladý maliar v Petržalke stojí pred nedokončeným panelom a niečo mu chýba.,"A young artist in Petržalka is standing in front of an unfinished panel, and something is missing."
+hint.where.Q5A,"V Petržalke, pri nedokončenom paneli.","In Petržalka, by the unfinished panel."
+hint.nudge.Q5B,Jurajovi chýba biela krieda. Školy jej majú celé krabice a školník ich má pod kľúčom.,"Juraj needs white chalk. Schools have whole boxes of it, and the caretaker keeps them under lock and key."
+hint.where.Q5B,"V škole na Sokolíkovej, u školníka Tóna.","At the school on Sokolíkova, with Tóno the caretaker."
+hint.nudge.Q5C,"Kriedu mám aj s povolením. Juraj má skicu, chýbajú len svetlá v oknách.","I have the chalk, with permission. Juraj has a sketch; only the lights in the windows are missing."
+hint.where.Q5C,"V petržalskom podchode, kde maľuje Juraj.","In the Petržalka underpass, where Juraj paints."
+hint.nudge.Q6A,"Pán za poštovou prepážkou vyzerá, akoby mu niekto chýbal.",The man behind the post office counter looks as if he’s missing someone.
+hint.where.Q6A,Na pošte v Ivanke.,At the post office in Ivanka.
+hint.nudge.Q6B,"Béla nepriletí na obyčajné zrno. Jeho zmes bude mať ten, kto v Ivanke vydáva materiál.",Béla won’t fly in for ordinary grain. His mix will be with whoever issues materials in Ivanka.
+hint.where.Q6B,"Na dvore hospodárskej dielne, u skladníka.","In the farm workshop yard, with the storeman."
+hint.nudge.Q6C,"Bélovu zmes mám. Naháňať ho nebudem, stačí ho nájsť.",I have Béla’s mix. I won’t chase him; I just need to find him.
+hint.where.Q6C,V parku pri kaštieli.,In the manor house park.
+hint.nudge.Q6D,"Béla odletel smerom k pošte. Pán Baran by mal vedieť, že je späť.",Béla flew off towards the post office. Mr Baran ought to know he’s back.
+hint.where.Q6D,"Na pošte, u pána Barana za prepážkou.","At the post office, with Mr Baran behind the counter."
+hint.nudge.Q7A,Herec v sále drží dramatickú pauzu podozrivo dlho. Akoby mu niečo chýbalo.,The actor in the hall is holding a dramatic pause for suspiciously long. As if something were missing.
+hint.where.Q7A,"V Ivanke, kde sa chystá divadelná skúška.","In Ivanka, where a theatre rehearsal is being prepared."
+hint.nudge.Q7B,"Rudo stratil scenár tam, kde kreslila Mira.",Rudo lost his script where Mira was drawing.
+hint.where.Q7B,Na povale pri meracej miestnosti.,In the loft by the measuring room.
+hint.nudge.Q7C,Scenár sa našiel. Bez neho skúška nezačne.,The script has turned up. The rehearsal can’t start without it.
+hint.where.Q7C,"V kultúrnej sále, u Ruda.","In the village hall, with Rudo."
+hint.nudge.Q8A,Doručovací robot pri stanici stojí v snehu s balíkom a nehýbe sa.,A delivery robot by the station is standing in the snow with a parcel and not moving.
+hint.where.Q8A,Pri dolnej stanici na Bielej Púti.,At the bottom station at Biela Púť.
+hint.nudge.Q8B,"Adresa na balíku nie je ulica, ale opis miesta. Treba sa ísť pozrieť, čo tam je dnes.","The address on the parcel isn’t a street, it’s a description of a place. I need to go and see what’s there today."
+hint.where.Q8B,"Pri Vrbickom plese, na chodníku.","By Vrbické pleso, on the path."
+hint.nudge.Q8C,"Putovná dielňa už pri plese nie je. Pri lavičke som sa dozvedel, kam sa presunula.",The travelling workshop isn’t by the lake any more. At the bench I found out where it moved to.
+hint.where.Q8C,V lobby hotela Grand Jasná.,In the lobby of Hotel Grand Jasná.
+hint.nudge.Q8D,Príjemkyňa je overená. Očko stále stojí v snehu a čaká na správu.,"The recipient is confirmed. Očko is still standing in the snow, waiting for news."
+hint.where.Q8D,"Pri dolnej stanici na Bielej Púti, u Očka.","At the bottom station at Biela Púť, with Očko."
+hint.nudge.Q9A,Dievča v triede schováva svoj návrh pod vzorovou schémou.,A girl in a classroom is hiding her design under the template schematic.
+hint.where.Q9A,V jednej triede školy v roku 1982.,In one of the school’s classrooms in 1982.
+hint.nudge.Q9B,"Jana súhlasí, aby jej návrh videl učiteľ. Aj s poznámkami.",Jana agrees that her teacher can see her design. Notes and all.
+hint.where.Q9B,"V tej istej triede, u učiteľa Dobroviča.","In the same classroom, with Mr Dobrovič, the teacher."
+hint.nudge.Q9C,Učiteľ schválil Janin návrh na výstavku. Jana to ešte nevie.,The teacher has approved Jana’s design for the exhibition. Jana doesn’t know yet.
+hint.where.Q9C,"V triede pred výstavkou, u Jany.","In the classroom before the exhibition, with Jana."
+hint.nudge.Q9D,"Zaujíma ma, čo z Janinho návrhu zostalo o trinásť rokov neskôr.",I’d like to know what became of Jana’s design thirteen years later.
+hint.where.Q9D,Vo fyzikálnom kabinete v roku 1995.,In the physics prep room in 1995.
+hint.nudge.Q9E,"Aj v roku 2020 by som sa Jany rád spýtal, čo robí.","In 2020 too, I’d like to ask Jana what she’s doing."
+hint.where.Q9E,Vo fyzikálnom kabinete v roku 2020.,In the physics prep room in 2020.
+hint.nudge.Q9F,"Jana chcela mať raz celý zošit schém. V roku 2035 by som rád videl, čo z neho vzniklo.",Jana wanted a whole notebook of schematics one day. In 2035 I’d like to see what came of it.
+hint.where.Q9F,Vo výstavnom salóne hotela Grand Jasná.,In the exhibition room of Hotel Grand Jasná.
+hint.nudge.Q10A,"Malá Zuzana má v tráve zvonček, ktorý necinká.",Little Zuzana has a bell in the grass that won’t ring.
+hint.where.Q10A,"V Ivanke v parku, u Zuzany.","In the park in Ivanka, with Zuzana."
+hint.nudge.Q10B,Zuzana napísala lístok na kúsok kože. Kto v Ivanke vydáva materiál na lístok?,Zuzana has written a slip for a bit of leather. Who in Ivanka issues materials against a slip?
+hint.where.Q10B,"Na dvore hospodárskej dielne, u skladníka.","In the farm workshop yard, with the storeman."
+hint.nudge.Q10C,"Zvonček potrebuje nové pútko. Všetko, čo na to treba, už nosím pri sebe.",The bell needs a new loop. I’m already carrying everything I need for it.
+hint.where.Q10C,To opravím v brašni.,I’ll fix this in my bag.
+hint.nudge.Q10D,"Zvonček znova zvoní. Škoda, že prvé zazvonenie počujem iba ja.",The bell rings again. Pity I’m the only one to hear its first ring.
+hint.where.Q10D,"V parku pri kaštieli, u Zuzany.","In the manor house park, with Zuzana."
+hint.nudge.Q11A,Chlapec s bicyklom ťuká do zvončeka a zvonček mlčí.,"A boy with a bike is tapping his bell, and the bell stays silent."
+hint.where.Q11A,"Pri LEALe, na dvore medzi blokmi.","At Pri LEALe, in the courtyard between the blocks."
+hint.nudge.Q11B,"Zo zvončeka odskočil kus. Zuzana videla, kam sa zakotúľal.",A piece popped off the bell. Zuzana saw where it rolled.
+hint.where.Q11B,"Pri LEALe, pod pichľavým stromom, kde končia lopty.","At Pri LEALe, under the prickly tree where the balls end up."
+hint.nudge.Q11C,Vrchnák mám. Bez neho zvonček na konci roka nezazvoní.,"I have the cap. Without it, the bell won’t ring at the end of the year."
+hint.where.Q11C,"Pri LEALe, u Kuba.","At Pri LEALe, with Kubo."
+ui.puzzle.confirm,Potvrdiť,Confirm
+ui.puzzle.reset,Začať odznova,Start again
+ui.puzzle.close,Zavrieť,Close
+ui.puzzle.hint_fill,Vyplniť správne,Fill in the answer
+ui.puzzle.hint_fill_done,Riešenie je vyplnené. Stačí ho potvrdiť.,The solution is filled in. Just confirm it.
+ui.puzzle.clue,Vodidlo,Clue
+ui.puzzle.rotate_left,Otočiť doľava,Rotate left
+ui.puzzle.rotate_right,Otočiť doprava,Rotate right
+ui.puzzle.rotation_value,{degrees}°,{degrees}°
+ui.puzzle.digit,Číslica {n},Digit {n}
+ui.puzzle.digit_up,Zvýšiť,Up
+ui.puzzle.digit_down,Znížiť,Down
+ui.puzzle.grid_cell,"Rad {row}, stĺpec {column}","Row {row}, column {column}"
+ui.puzzle.match_instruction,Vyber položku vľavo a potom k nej patriacu položku vpravo.,"Choose an item on the left, then the item on the right that goes with it."
+ui.puzzle.match_clear,Zrušiť spojenie,Clear the link
+ui.dialogue.continue,Pokračovať,Continue
+ui.dialogue.end,Ukončiť rozhovor,End conversation
+ui.dialogue.topics,Témy,Topics
+ui.dialogue.transcript,Prepis rozhovoru,Conversation transcript
+ui.dialogue.history,História titulkov,Subtitle history
+ui.dialogue.recording_year,Záznam z roku {year},Recording from {year}
+ui.cutscene.skip,Preskočiť,Skip
+ui.cutscene.skip_prompt,"Esc preskočí titulok, dvakrát Esc celú scénu.",Esc skips a subtitle; Esc twice skips the whole scene.
+ui.cutscene.skip_confirm,Preskočiť scénu? Postup sa nezmení.,Skip the scene? Your progress won’t change.
+ui.cutscene.resume_title,Hra sa obnovila po prerušení,The game has resumed after an interruption
+ui.cutscene.resume_question,Dokončiť prerušenú scénu alebo ju preskočiť?,Finish the interrupted scene or skip it?
+ui.cutscene.resume_play,Dokončiť scénu,Finish the scene
+ui.cutscene.the_end,Koniec príbehu,The End
+ui.credits.title,Autori,Credits
+ui.credits.photo_sources,Zdroje fotografií a licencie,Photo sources and licences
+ui.credits.thanks,Ďakujeme za hranie.,Thank you for playing.
+ui.postgame.free_play,"Príbeh sa skončil. Časové okná ostávajú otvorené, takže môžeš dokončiť vedľajšie úlohy.","The story is over. The time windows stay open, so you can finish the side quests."
+ui.postgame.continue,Pokračovať vo voľnom hraní,Carry on in free play
+ui.a11y.hotspot_list,Zoznam objektov,Object list
+ui.a11y.group_characters,Postavy,Characters
+ui.a11y.group_progress,Dôležité objekty,Important objects
+ui.a11y.group_ambient,Ostatné objekty,Other objects
+ui.a11y.group_exits,Východy,Exits
+ui.a11y.exit,Východ: {label},Exit: {label}
+ui.a11y.locked,Zatiaľ zamknuté,Locked for now
+ui.system.path_blocked,Tadiaľto neprejdem.,I can’t get through this way.
+ui.system.loading_scene,Načítava sa scéna…,Loading the scene…
+ui.system.autosaved,Automaticky uložené,Autosaved
+ui.system.invalid_state,Hra sa dostala do chybného stavu a vráti sa k poslednému funkčnému kontrolnému bodu.,The game has got into an invalid state and will return to the last working checkpoint.
+ui.system.return_to_checkpoint,Vrátiť sa ku kontrolnému bodu,Return to the checkpoint
+ui.system.content_error,Chyba v obsahu hry: chýba {id} ({path}).,Error in the game’s content: {id} is missing ({path}).
+ui.system.error_title,Chyba,Error
+ui.system.unknown_error,Nastala neočakávaná chyba.,An unexpected error has occurred.
+ui.dev.blockout,Vývojový náčrt {room}: {name} ({era}) – maľované pozadie zatiaľ chýba,Development blockout {room}: {name} ({era}) – painted background still missing
+ui.dev.variant_missing,Stavový variant bez maľby: {asset},State variant without a painting: {asset}
+ui.dev.causal_active,Príčinná zmena po {after}: {change},Causal change after {after}: {change}
+ui.dev.solve,Vyriešiť (iba vývoj),Solve (development only)
+ui.dev.quick_saved,Rýchle uloženie hotové.,Quick save done.
+ui.dev.no_save,Uložená hra neexistuje.,No saved game exists.
+ui.controls.back,Backspace – prezrieť objekt vybraný klávesom Tab,Backspace – look at the object selected with Tab
+ui.controls.travel,T – presun v čase pri časovom uzle,T – travel in time at a time node
+ui.cutscene.scene_n,Scéna {n},Scene {n}
+ui.dev.shot,Záber (vývojová poznámka): {shot},Shot (development note): {shot}
+ui.dialogue.heard,už prebraté,already discussed
+ui.inventory.deselect,Zrušiť výber,Deselect
+ui.inventory.look,Prezrieť,Look at
+ui.inventory.select,Vybrať,Select
+ui.journal.scene_n,Scéna {n},Scene {n}
+ui.journal.scenes,Prehrať scény znova,Replay scenes
+ui.journal.scene_cs01,Prvý skok: Dúbravka 1995,First Jump: Dúbravka 1995
+ui.journal.scene_cs02,Kazeta zo školského rozhlasu,The Tape from the School PA
+ui.journal.scene_cs03,Cesta do Ivanky 1962,"The Road to Ivanka, 1962"
+ui.journal.scene_cs04,"Jeden predmet, veľa rúk","One Object, Many Hands"
+ui.journal.scene_cs05,Stopa vedie do Jasnej 2035,"The Trail Leads to Jasná, 2035"
+ui.journal.scene_cs06,Leina správa,Lea’s Message
+ui.journal.scene_cs07,Mená sú späť,The Names Are Back
+ui.journal.scene_cs08,Lipa a múrik,The Lime Tree and the Wall
+ui.journal.scene_cs09,Lanovkou na Chopok,By Cable Car to Chopok
+ui.save.quick,Rýchle uloženie,Quick save
+ui.settings.tips_reset_done,Úvodné rady sa zobrazia pri ďalšej novej hre.,The opening tips will show at the next new game.
+ui.credits.fonts,Písma,Fonts
+ui.credits.engine,Herný engine,Game engine
+region.Chorvátsky Grob.name,Chorvátsky Grob,Chorvátsky Grob
+region.Čierna Voda.name,Čierna Voda,Čierna Voda
+region.Dúbravka.name,Dúbravka,Dúbravka
+region.Karlova Ves.name,Karlova Ves,Karlova Ves
+region.Staré Mesto.name,Staré Mesto,Staré Mesto
+region.Ružinov.name,Ružinov,Ružinov
+region.Petržalka.name,Petržalka,Petržalka
+region.Ivanka pri Dunaji.name,Ivanka pri Dunaji,Ivanka pri Dunaji
+region.Biela Púť.name,Biela Púť,Biela Púť
+region.Grand Jasná.name,Grand Jasná,Grand Jasná
+region.Vrbické pleso.name,Vrbické pleso,Vrbické pleso
+region.Chopok.name,Chopok,Chopok
+region.Priehyba.name,Priehyba,Priehyba
+region.Funitel.name,Funitel,The Funitel
+region.Jasná.name,Jasná,Jasná
+ui.credits.music,"Hudba (pôvodná, vytvorená pomocou AI)","Music (original, made with AI)"
+ui.credits.sounds,Zvukové efekty a zvuky prostredia (CC0),Sound effects and ambient sound (CC0)
+ui.settings.voice_over,Hovorené dialógy,Spoken dialogue
+ui.settings.voice_over_desc,"Postavy hovoria nahlas. Keď sú vypnuté, titulky sa posúvajú podľa dĺžky textu.","Characters speak aloud. When it’s off, subtitles move on according to the length of the text."

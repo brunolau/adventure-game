@@ -22,7 +22,7 @@ namespace LastBell.Game.Diagnostics;
 /// <c>--input key:Inventory|select:ITEM|look:ID|portal:YEAR|click:x,y|rclick:x,y|hover:x,y|move:x,y|wait:ms|mouse:x,y|rmouse:x,y|dblclick:x,y|keyev:Space|keydown:Space|keyup:Space|tap:x,y|longpress:x,y|twotap:x,y</c> (repeatable, in order;
 /// <c>mouse</c>/<c>rmouse</c>/<c>dblclick</c>/<c>move</c>/<c>keyev</c>/<c>keydown</c>/<c>keyup</c> inject real input events through Godot's pipeline, GUI first),
 /// <c>--acceptance</c> (prologue input-rule checks, see PrologueAcceptance.cs), <c>--perf [n]</c> / <c>--no-preload</c> (PerfProbe.cs), <c>--blocking natural|template</c>, <c>--labels</c> (QA text labels),
-/// <c>--markers</c> (Space markers on, as if Space were held), <c>--clips</c> (log each NPC's clip per screenshot frame), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--voice-over on|off</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
+/// <c>--markers</c> (Space markers on, as if Space were held), <c>--clips</c> (log each NPC's clip per screenshot frame), <c>--soft-cursor</c> (draw the cursor into screenshots), <c>--dev</c>, <c>--lines</c>, <c>--voice-over on|off</c>, <c>--locale sk|en</c>, <c>--fast-text</c>, <c>--skip-lines</c>, <c>--quit-after &lt;s&gt;</c>, <c>--autosave</c>.
 /// It never grants items: replays go through Core rules and acts through the normal input path
 /// (resolver, walking, re-resolve on arrival, commit). Autosave is off unless <c>--autosave</c>.
 /// Prints <c>HARNESS ...</c> lines to stdout for scripts. Only debug and editor builds read these
@@ -110,6 +110,12 @@ public partial class DebugHarness : Node
                 AudioServer.PlaybackSpeedScale = (float)Engine.TimeScale;
                 Log($"audio playback speed x{Engine.TimeScale:0.##} (fast-text, follows --time-scale)");
             }
+        }
+        if (Get("locale") is { } locale) // QA: --locale sk|en overrides the language for this run (not saved)
+        {
+            LastBell.Game.UI.Settings.UiSettings.Locale = locale;
+            LastBell.Game.Runtime.TextService.SetLocale(locale);
+            Log($"locale {locale}");
         }
         if (Get("voice-over") is { } vo) // QA: --voice-over on|off overrides the setting for this run (not saved)
         {

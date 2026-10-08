@@ -2,7 +2,7 @@
 
 The translator (Claude) works through the context bundles of tools/writing_bundles.py (docs/translation/context/
 C1-C4.md, story order, speakers and situations) in batches. Translations are stored per batch as JSON
-(docs/translation/en/<chunk>_<NNN>.json, {key: english}); `merge` writes the persistent source
+(docs/translation/en/<chunk>_<NNN>.json, {key: english}; every JSON file in that folder is read); `merge` writes the persistent source
 src/game/localization/overrides/en.csv (keys,en), which tools/extract_strings.py puts into the en column.
 
     python tools/en_batches.py prefill            fixed renderings from docs/translation/glossary_en.json
@@ -188,6 +188,23 @@ def cmd_merge(_a) -> None:
         w.writerow(["keys", "en"])
         w.writerows(rows)
     print(f"wrote {EN_CSV.relative_to(ROOT)}: {len(rows)} of {len(sk)} keys")
+    # ui.csv is hand-written (extract_strings does not generate it): fill its en column here.
+    ui = LOC / "ui.csv"
+    with ui.open(encoding="utf-8-sig", newline="") as h:
+        table = list(csv.reader(h))
+    header, body = table[0], table[1:]
+    en_col = header.index("en")
+    filled = 0
+    for row in body:
+        if row and row[0] in have and have[row[0]].strip():
+            row += [""] * (len(header) - len(row))
+            row[en_col] = have[row[0]]
+            filled += 1
+    with ui.open("w", encoding="utf-8", newline="") as h:
+        w = csv.writer(h, lineterminator="\n")
+        w.writerow(header)
+        w.writerows(body)
+    print(f"filled the en column of ui.csv: {filled} of {len(body)} keys")
 
 
 def main() -> int:

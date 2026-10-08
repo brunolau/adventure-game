@@ -81,7 +81,13 @@ public static class TextService
     public static string Locale => TranslationServer.GetLocale();
 
     /// <summary>Switches the locale (e.g. "sk", "en"); missing entries still fall back to Slovak.</summary>
-    public static void SetLocale(string locale) => TranslationServer.SetLocale(locale);
+    public static void SetLocale(string locale)
+    {
+        TranslationServer.SetLocale(locale);
+        // The window title follows the language ("Posledný zvonec" / "The Last Bell").
+        if (Engine.GetMainLoop() is SceneTree tree && tree.Root is { } root)
+            root.Title = Get("game.title", root.Title);
+    }
 
     private static readonly HashSet<string> WarnedKeys = new();
 }
