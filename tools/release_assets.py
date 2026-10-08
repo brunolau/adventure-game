@@ -49,11 +49,16 @@ LOSSY_FOLDERS = ("assets/bg_natural/", "assets/bg/", "assets/bg_options/", "asse
 
 # Preset name -> its own excludes; "release" = also the release excludes below.
 PRESET_BASE = {
-    "Windows Desktop": ("*.md, assets/ui/icon/icon_android_*", True),
+    "Windows Desktop": ("*.md, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
     "Windows Desktop (QA)": ("*.md, assets/ui/icon/icon_android_*", False),
-    "macOS (not built)": ("*.md, assets/ui/icon/icon_android_*", True),
-    "Android arm64 (not built)": ("*.md, icon.ico", True),
-    "iOS (not built)": ("*.md, icon.ico, assets/ui/icon/icon_android_*", True),
+    # Ports (docs/PORTS.md, tools/build_ports.py). Android and iOS are exported from the mobile staging copy.
+    "macOS": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
+    "Linux x86_64": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
+    "Linux arm64": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
+    "Android": ("*.md, icon.ico, assets/ui/launch/*", True),
+    "Android AAB": ("*.md, icon.ico, assets/ui/launch/*", True),
+    "Android (QA x86_64)": ("*.md, icon.ico, assets/ui/launch/*", True),
+    "iOS": ("*.md, icon.ico, assets/ui/icon/icon_android_*", True),
 }
 INCLUDE = "*.json, localization/*.translation, assets/ui/fonts/*.txt"
 RELEASE_FOLDERS = ["assets/bg/*", "assets/variants/*", "assets/fg/*", "assets/bg_options/*", "data/debug/*", "data/ambient/S*.json"]

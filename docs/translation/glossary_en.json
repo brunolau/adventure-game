@@ -1,0 +1,6142 @@
+{
+ "about": "English glossary for The Last Bell (Posledný zvonec). Binding for every English text (the en column of src/game/localization/*.csv). Human-readable rules: docs/translation/GLOSSARY_EN.md. Built from the live Slovak tables on 2026-10-08; regenerate the sk side when the Slovak tables change. Every mapping is sk -> en; one English rendering per term.",
+ "version": 1,
+ "date": "2026-10-08",
+ "variant": {
+  "language": "en-GB",
+  "spelling": "British (-ise, -our, -re, catalogue, programme, travelled, grey, kerb, tyre)",
+  "register": "contemporary, natural spoken English; dry, understated humour",
+  "typography": {
+   "apostrophe": "’ (U+2019)",
+   "quotes": "‘…’ (U+2018/U+2019), nested “…”",
+   "dash": "spaced en dash ‘ – ’; unspaced in ranges 9–17, 3–2–6",
+   "ellipsis": "… (one character)",
+   "multiplication": "3 × 4",
+   "codes": "K-17, Z-17 keep the hyphen",
+   "dates": "6 June 1962 (no ordinal, no comma)",
+   "titles": "Mr, Mrs, Ms, Dr without a full stop",
+   "serial_comma": "no Oxford comma unless needed for clarity",
+   "case": "sentence case for rooms, hotspots, items, exits, labels and UI; title case for the game title, quest titles and cutscene titles"
+  },
+  "limits": {
+   "line": {
+    "soft": 110,
+    "hard": 160
+   },
+   "look": {
+    "soft": 110,
+    "hard": 160
+   },
+   "name": {
+    "soft": 32,
+    "hard": 50
+   },
+   "label": {
+    "soft": 45,
+    "hard": 60
+   },
+   "topic_label": {
+    "soft": 28,
+    "hard": 40
+   },
+   "goal": {
+    "soft": 100,
+    "hard": 140
+   },
+   "hint": {
+    "soft": 200,
+    "hard": 360
+   },
+   "clue": {
+    "soft": 130,
+    "hard": 160
+   },
+   "option": {
+    "soft": 20,
+    "hard": 24
+   },
+   "caption": {
+    "soft": 90,
+    "hard": 110
+   }
+  },
+  "limits_note": "same limits as Slovak (docs/writing/glossary.json → limits); English is usually a little shorter, so a line near the hard limit is a sign of padding"
+ },
+ "title": {
+  "sk": "Posledný zvonec",
+  "en": "The Last Bell"
+ },
+ "speaker_labels": {
+  "ADAM": {
+   "key": "char.ADAM.name",
+   "sk": "Adam Hruška",
+   "en": "Adam Hruška"
+  },
+  "ELA": {
+   "key": "char.ELA.name",
+   "sk": "Ela Švecová",
+   "en": "Ela Švecová"
+  },
+  "DANA": {
+   "key": "char.DANA.name",
+   "sk": "Dana Valová",
+   "en": "Dana Valová"
+  },
+  "ROMAN": {
+   "key": "char.ROMAN.name",
+   "sk": "Roman Kováč",
+   "en": "Roman Kováč"
+  },
+  "LENKA": {
+   "key": "char.LENKA.name",
+   "sk": "Lenka Bartošová",
+   "en": "Lenka Bartošová"
+  },
+  "JOZEF": {
+   "key": "char.JOZEF.name",
+   "sk": "Jozef Mlynár",
+   "en": "Jozef Mlynár"
+  },
+  "MIRA20": {
+   "key": "char.MIRA20.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "TONO": {
+   "key": "char.TONO.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "MIRA95": {
+   "key": "char.MIRA95.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "LEA95": {
+   "key": "char.LEA95.name",
+   "sk": "Lea Kormanová",
+   "en": "Lea Kormanová"
+  },
+  "SONA": {
+   "key": "char.SONA.name",
+   "sk": "Soňa Urbanová",
+   "en": "Soňa Urbanová"
+  },
+  "ZITA": {
+   "key": "char.ZITA.name",
+   "sk": "Zita Ondrušová",
+   "en": "Zita Ondrušová"
+  },
+  "EMIL": {
+   "key": "char.EMIL.name",
+   "sk": "Emil Belan",
+   "en": "Emil Belan"
+  },
+  "PALI": {
+   "key": "char.PALI.name",
+   "sk": "Pavol Drobný",
+   "en": "Pavol Drobný"
+  },
+  "VIERA": {
+   "key": "char.VIERA.name",
+   "sk": "Viera Holubová",
+   "en": "Viera Holubová"
+  },
+  "ARCHIVAR": {
+   "key": "char.ARCHIVAR.name",
+   "sk": "Karol Merta",
+   "en": "Karol Merta"
+  },
+  "FOTO": {
+   "key": "char.FOTO.name",
+   "sk": "Alena Svobodová",
+   "en": "Alena Svobodová"
+  },
+  "TRH": {
+   "key": "char.TRH.name",
+   "sk": "Fero Lánik",
+   "en": "Fero Lánik"
+  },
+  "MILADA": {
+   "key": "char.MILADA.name",
+   "sk": "Milada Kyselová",
+   "en": "Milada Kyselová"
+  },
+  "JURO": {
+   "key": "char.JURO.name",
+   "sk": "Juro Kazeta",
+   "en": "Juro Cassette"
+  },
+  "JURAJ": {
+   "key": "char.JURAJ.name",
+   "sk": "Juraj Križan",
+   "en": "Juraj Križan"
+  },
+  "DEZI": {
+   "key": "char.DEZI.name",
+   "sk": "Dezider Kováč",
+   "en": "Dezider Kováč"
+  },
+  "BOZO": {
+   "key": "char.BOZO.name",
+   "sk": "Božidar Fiala",
+   "en": "Božidar Fiala"
+  },
+  "BERTA": {
+   "key": "char.BERTA.name",
+   "sk": "Berta Kovárová",
+   "en": "Berta Kovárová"
+  },
+  "POSTA": {
+   "key": "char.POSTA.name",
+   "sk": "Alojz Baran",
+   "en": "Alojz Baran"
+  },
+  "LIDA": {
+   "key": "char.LIDA.name",
+   "sk": "Lída Fialová",
+   "en": "Lída Fialová"
+  },
+  "RUDO": {
+   "key": "char.RUDO.name",
+   "sk": "Rudolf Pavlík",
+   "en": "Rudolf Pavlík"
+  },
+  "SKLAD": {
+   "key": "char.SKLAD.name",
+   "sk": "Štefan Haluška",
+   "en": "Štefan Haluška"
+  },
+  "OTO": {
+   "key": "char.OTO.name",
+   "sk": "Oto Bielik",
+   "en": "Oto Bielik"
+  },
+  "VERA60": {
+   "key": "char.VERA60.name",
+   "sk": "Vera Nemcová",
+   "en": "Vera Nemcová"
+  },
+  "MIRA60": {
+   "key": "char.MIRA60.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "NINA": {
+   "key": "char.NINA.name",
+   "sk": "Nina Švecová",
+   "en": "Nina Švecová"
+  },
+  "TAMARA": {
+   "key": "char.TAMARA.name",
+   "sk": "Tamara Kráľová",
+   "en": "Tamara Kráľová"
+  },
+  "BORIS": {
+   "key": "char.BORIS.name",
+   "sk": "Boris Urban",
+   "en": "Boris Urban"
+  },
+  "SARA": {
+   "key": "char.SARA.name",
+   "sk": "Sára Vrbová",
+   "en": "Sára Vrbová"
+  },
+  "ROBOT": {
+   "key": "char.ROBOT.name",
+   "sk": "Doručovací robot Očko",
+   "en": "Očko the delivery robot"
+  },
+  "VIKTOR": {
+   "key": "char.VIKTOR.name",
+   "sk": "Viktor Korman",
+   "en": "Viktor Korman"
+  },
+  "TONO82": {
+   "key": "char.TONO82.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "TONO20": {
+   "key": "char.TONO20.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "DOBRO": {
+   "key": "char.DOBRO.name",
+   "sk": "Učiteľ Dobrovič",
+   "en": "Mr Dobrovič"
+  },
+  "RUZENA": {
+   "key": "char.RUZENA.name",
+   "sk": "Ružena Malá",
+   "en": "Ružena Malá"
+  },
+  "MARTA82": {
+   "key": "char.MARTA82.name",
+   "sk": "Marta Dobiášová",
+   "en": "Marta Dobiášová"
+  },
+  "SIMON": {
+   "key": "char.SIMON.name",
+   "sk": "Šimon Rybár",
+   "en": "Šimon Rybár"
+  },
+  "JANA82": {
+   "key": "char.JANA82.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "JANA95": {
+   "key": "char.JANA95.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "JANA20": {
+   "key": "char.JANA20.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "JANA35": {
+   "key": "char.JANA35.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "IVAN": {
+   "key": "char.IVAN.name",
+   "sk": "Ivan Horský",
+   "en": "Ivan Horský"
+  },
+  "TURISTA": {
+   "key": "char.TURISTA.name",
+   "sk": "Miloš Polák",
+   "en": "Miloš Polák"
+  },
+  "OTO82": {
+   "key": "char.OTO82.name",
+   "sk": "Oto Bielik",
+   "en": "Oto Bielik"
+  },
+  "ZUZANA": {
+   "key": "char.ZUZANA.name",
+   "sk": "Zuzana",
+   "en": "Zuzana"
+  },
+  "ZUZANA95": {
+   "key": "char.ZUZANA95.name",
+   "sk": "Zuzana",
+   "en": "Zuzana"
+  },
+  "KUBO": {
+   "key": "char.KUBO.name",
+   "sk": "Kubo",
+   "en": "Kubo"
+  },
+  "KAROL": {
+   "key": "char.KAROL.name",
+   "sk": "Karol Merta",
+   "en": "Karol Merta"
+  },
+  "ALENA": {
+   "key": "char.ALENA.name",
+   "sk": "Alena Svobodová",
+   "en": "Alena Svobodová"
+  },
+  "FERO": {
+   "key": "char.FERO.name",
+   "sk": "Fero Lánik",
+   "en": "Fero Lánik"
+  },
+  "STEFAN": {
+   "key": "char.STEFAN.name",
+   "sk": "Štefan Haluška",
+   "en": "Štefan Haluška"
+  },
+  "ALOJZ": {
+   "key": "char.ALOJZ.name",
+   "sk": "Alojz Baran",
+   "en": "Alojz Baran"
+  },
+  "LEA_REC": {
+   "key": "char.LEA_REC.name",
+   "sk": "Lea Kormanová (správa z roku 2032)",
+   "en": "Lea Kormanová (message from 2032)"
+  },
+  "ADAM10": {
+   "key": "char.ADAM10.name",
+   "sk": "Adam (10 rokov, nahrávka 1995)",
+   "en": "Adam (aged 10, 1995 recording)"
+  },
+  "SYSTEM": {
+   "key": "char.SYSTEM.name",
+   "sk": "Zariadenie",
+   "en": "Device"
+  },
+  "BODKA": {
+   "key": "char.BODKA.name",
+   "sk": "Bodka",
+   "en": "Bodka"
+  },
+  "NARRATOR": {
+   "key": "char.NARRATOR.name",
+   "sk": "Rozprávač",
+   "en": "Narrator"
+  },
+  "NINA_REMOTE": {
+   "key": "char.NINA_REMOTE.name",
+   "sk": "Nina (na diaľku)",
+   "en": "Nina (remote)"
+  }
+ },
+ "people": [
+  {
+   "ids": "ADAM",
+   "en": "Adam Hruška",
+   "speech": "Adam; Mr Hruška (officials)",
+   "address": "—",
+   "notes": "35 in every era; repairman; British register: dry, self-ironic, contractions"
+  },
+  {
+   "ids": "ADAM10",
+   "en": "Adam (aged 10, 1995 recording)",
+   "speech": "—",
+   "address": "Lea → him: first name",
+   "notes": "a child’s voice on the tape"
+  },
+  {
+   "ids": "MIRA20, MIRA95, MIRA60",
+   "en": "Mira Hrušková",
+   "speech": "Gran (Adam in 2020 only); Mrs Hrušková (neighbours, 1995 adults, Tóno 50); Mira (Oto, Vera, colleagues, system texts); young Hrušková (Ivanka villagers 1962)",
+   "address": "she → Adam: ‘Adam’, familiar; Adam → Mira 1995: polite, ‘Mrs Hrušková’ when he must; Adam → Mira 1962: polite, no title",
+   "notes": "never Granny, Grandma, Nan, Mirka; system texts (goals, journal, hints, items, rooms) say Mira"
+  },
+  {
+   "ids": "TONO82, TONO, TONO20",
+   "en": "Tóno",
+   "speech": "Tóno; Mr Farkaš (Adam in D02 before the 1982 trip, officials); the caretaker",
+   "address": "see § 4.3: the switch from polite to first name is a story beat",
+   "notes": "full name Anton Farkaš; label is ‘Tóno’ in every era"
+  },
+  {
+   "ids": "OTO, OTO82",
+   "en": "Oto Bielik",
+   "speech": "Oto; Mr Bielik (Adam, Marta, Ružena); Grandad (Tóno 12 only); Uncle Oto (Zuzana)",
+   "address": "polite both ways",
+   "notes": "Oto’s workshop, Oto’s slip"
+  },
+  {
+   "ids": "JANA82, JANA95, JANA20, JANA35",
+   "en": "Jana Vargová",
+   "speech": "Jana; Mrs Vargová (1995), Ms Vargová (2020, 2035) when formal",
+   "address": "Jana 12 → Adam: polite, no name; Adam → Jana 12: first name; later polite both ways",
+   "notes": "Jana’s schematic"
+  },
+  {
+   "ids": "LEA95, LEA_REC",
+   "en": "Lea Kormanová",
+   "speech": "Mrs Kormanová; Miss (pupils addressing her); Miss Lea (pupils talking about her)",
+   "address": "polite both ways; she → the 10-year-old Adam: first name",
+   "notes": "her message of 2032 is verbatim (§ 10.4)"
+  },
+  {
+   "ids": "VIKTOR",
+   "en": "Viktor Korman",
+   "speech": "Viktor; Mr Korman",
+   "address": "polite both ways",
+   "notes": "Lea’s son; never a villain"
+  },
+  {
+   "ids": "NINA, NINA_REMOTE",
+   "en": "Nina Švecová",
+   "speech": "Nina; Ms Švecová",
+   "address": "polite both ways",
+   "notes": "Ela’s daughter"
+  },
+  {
+   "ids": "ELA",
+   "en": "Ela Švecová",
+   "speech": "Ela",
+   "address": "first names both ways",
+   "notes": ""
+  },
+  {
+   "ids": "DANA",
+   "en": "Dana Valová",
+   "speech": "Dana",
+   "address": "first names both ways",
+   "notes": ""
+  },
+  {
+   "ids": "ROMAN",
+   "en": "Roman Kováč",
+   "speech": "Roman",
+   "address": "first names both ways",
+   "notes": "Roman’s signature"
+  },
+  {
+   "ids": "LENKA",
+   "en": "Lenka Bartošová",
+   "speech": "Lenka",
+   "address": "first names both ways",
+   "notes": ""
+  },
+  {
+   "ids": "BODKA",
+   "en": "Bodka",
+   "speech": "Bodka",
+   "address": "—",
+   "notes": "a male dog: he/him; Bodka’s ball; only barks: ‘Woof!’"
+  },
+  {
+   "ids": "JOZEF",
+   "en": "Jozef Mlynár",
+   "speech": "Mr Jozef (Adam; first name kept on purpose: respectful and warm)",
+   "address": "he → Adam: ‘young man’, familiar; Adam → him: polite",
+   "notes": ""
+  },
+  {
+   "ids": "SONA",
+   "en": "Soňa Urbanová",
+   "speech": "Soňa",
+   "address": "she → Adam: polite, no name; Adam → her: first name",
+   "notes": "11"
+  },
+  {
+   "ids": "ZITA",
+   "en": "Zita Ondrušová",
+   "speech": "Zita",
+   "address": "she → Adam: familiar; Adam → her: polite",
+   "notes": ""
+  },
+  {
+   "ids": "EMIL",
+   "en": "Emil Belan",
+   "speech": "Emil",
+   "address": "he → Adam: familiar; Adam → him: polite",
+   "notes": "Emil’s song ‘Four Stops’"
+  },
+  {
+   "ids": "PALI",
+   "en": "Pavol Drobný",
+   "speech": "Pali",
+   "address": "first names both ways (fellow repairmen)",
+   "notes": "Pali’s repair shop (never ‘Pavol’s’)"
+  },
+  {
+   "ids": "VIERA",
+   "en": "Viera Holubová",
+   "speech": "Viera; Mrs Holubová",
+   "address": "polite both ways",
+   "notes": "1995 bookseller; never confuse with Vera (1962)"
+  },
+  {
+   "ids": "ARCHIVAR / KAROL",
+   "en": "Karol Merta",
+   "speech": "Mr Merta; Karol (hints)",
+   "address": "polite both ways",
+   "notes": "head of the archive reading room"
+  },
+  {
+   "ids": "FOTO / ALENA",
+   "en": "Alena Svobodová",
+   "speech": "Alena; Mrs Svobodová",
+   "address": "polite both ways",
+   "notes": ""
+  },
+  {
+   "ids": "TRH / FERO",
+   "en": "Fero Lánik",
+   "speech": "Fero",
+   "address": "he → Adam: familiar; Adam → him: polite",
+   "notes": "Fero’s scales"
+  },
+  {
+   "ids": "MILADA",
+   "en": "Milada Kyselová",
+   "speech": "Milada; Mrs Kyselová",
+   "address": "polite both ways",
+   "notes": "tailor"
+  },
+  {
+   "ids": "JURO",
+   "en": "Juraj Malík, known as Juro Cassette",
+   "speech": "Juro",
+   "address": "first names both ways",
+   "notes": "label ‘Juro Cassette’; never ‘Juraj’ (that is the painter)"
+  },
+  {
+   "ids": "JURAJ",
+   "en": "Juraj Križan",
+   "speech": "Juraj",
+   "address": "he → Adam: polite; Adam → him: first name",
+   "notes": "19; Juraj’s sketch"
+  },
+  {
+   "ids": "DEZI",
+   "en": "Dezider Kováč",
+   "speech": "Dezider; Dezi (only his friends)",
+   "address": "he → Adam: familiar; Adam → him: polite",
+   "notes": "the radio ham; Dezider’s garage, coil"
+  },
+  {
+   "ids": "BOZO",
+   "en": "Božidar Fiala",
+   "speech": "Božo; Mr Fiala; Uncle Božo (Zuzana)",
+   "address": "polite both ways",
+   "notes": "station worker"
+  },
+  {
+   "ids": "BERTA",
+   "en": "Berta Kovárová",
+   "speech": "Mrs Kovárová; Berta; Auntie Berta (Zuzana)",
+   "address": "polite both ways; she → Adam: ‘young man’",
+   "notes": ""
+  },
+  {
+   "ids": "POSTA / ALOJZ",
+   "en": "Alojz Baran",
+   "speech": "Mr Baran; Alojz (hints)",
+   "address": "polite both ways",
+   "notes": "the only one allowed charming officialese"
+  },
+  {
+   "ids": "—",
+   "en": "Béla",
+   "speech": "Béla",
+   "address": "—",
+   "notes": "Alojz’s carrier pigeon (he); Béla’s feed"
+  },
+  {
+   "ids": "LIDA",
+   "en": "Lída Fialová",
+   "speech": "Lída; Auntie Lída (Zuzana)",
+   "address": "polite both ways",
+   "notes": "Lída’s hand punch"
+  },
+  {
+   "ids": "RUDO",
+   "en": "Rudolf Pavlík",
+   "speech": "Rudo; Uncle Rudo (Zuzana)",
+   "address": "polite both ways",
+   "notes": "Rudo’s script"
+  },
+  {
+   "ids": "SKLAD / STEFAN",
+   "en": "Štefan Haluška",
+   "speech": "Štefan; Uncle Štefan (Zuzana)",
+   "address": "polite both ways",
+   "notes": "storekeeper"
+  },
+  {
+   "ids": "VERA60",
+   "en": "Vera Nemcová",
+   "speech": "Vera; Auntie Vera (Zuzana)",
+   "address": "polite both ways",
+   "notes": "Vera’s blunt stylus; 1962 draughtswoman, not Viera"
+  },
+  {
+   "ids": "ZUZANA",
+   "en": "Zuzana",
+   "speech": "Zuzana; Zuzka (Ivanka adults in 1962 only)",
+   "address": "she → Adam: polite, ‘mister’ at most; Adam → her: first name",
+   "notes": "7 in June 1962; no surname, ever; § 14"
+  },
+  {
+   "ids": "ZUZANA95",
+   "en": "Zuzana",
+   "speech": "Zuzana; Auntie Zuzana (Kubo only)",
+   "address": "polite both ways; she → Kubo: first name",
+   "notes": "40 on 15 June 1995; nobody says Zuzka in 1995"
+  },
+  {
+   "ids": "KUBO",
+   "en": "Kubo",
+   "speech": "Kubo; Kubko (diminutive, adults to him)",
+   "address": "he → Adam: polite, ‘mister’ at most; Adam → him: first name",
+   "notes": "7; a neighbour’s child, never Zuzana’s; Kubo’s bike"
+  },
+  {
+   "ids": "DOBRO",
+   "en": "Mr Dobrovič",
+   "speech": "Comrade Teacher (pupils, 1982); Mr Dobrovič (Adam, adults)",
+   "address": "polite both ways",
+   "notes": "1982 teacher; no first name"
+  },
+  {
+   "ids": "RUZENA",
+   "en": "Ružena Malá",
+   "speech": "Mrs Malá",
+   "address": "polite both ways",
+   "notes": ""
+  },
+  {
+   "ids": "MARTA82",
+   "en": "Marta Dobiášová",
+   "speech": "Mrs Dobiášová",
+   "address": "polite both ways",
+   "notes": ""
+  },
+  {
+   "ids": "SIMON",
+   "en": "Šimon Rybár",
+   "speech": "Šimon; Mr Rybár",
+   "address": "polite both ways",
+   "notes": "school gardener"
+  },
+  {
+   "ids": "TAMARA",
+   "en": "Tamara Kráľová",
+   "speech": "Tamara",
+   "address": "first names both ways",
+   "notes": "her travelling workshop ‘Second Life’"
+  },
+  {
+   "ids": "BORIS",
+   "en": "Boris Urban",
+   "speech": "Mr Urban; Boris",
+   "address": "polite both ways",
+   "notes": "Boris’s footnotes"
+  },
+  {
+   "ids": "SARA",
+   "en": "Sára Vrbová",
+   "speech": "Sára; Ms Vrbová",
+   "address": "polite both ways",
+   "notes": ""
+  },
+  {
+   "ids": "ROBOT",
+   "en": "Očko the delivery robot",
+   "speech": "Očko (it)",
+   "address": "it → Adam: polite",
+   "notes": "Očko’s delivery request"
+  },
+  {
+   "ids": "IVAN",
+   "en": "Ivan Horský",
+   "speech": "Ivan",
+   "address": "polite both ways",
+   "notes": "cable-car staff"
+  },
+  {
+   "ids": "TURISTA",
+   "en": "Miloš Polák",
+   "speech": "Miloš",
+   "address": "polite both ways",
+   "notes": ""
+  }
+ ],
+ "places": [
+  {
+   "sk": "Chorvátsky Grob",
+   "en": "Chorvátsky Grob",
+   "in_sentence": "in Chorvátsky Grob; ‘Grob’ in speech",
+   "note": "Adam’s village"
+  },
+  {
+   "sk": "Čierna Voda",
+   "en": "Čierna Voda",
+   "in_sentence": "in Čierna Voda",
+   "note": ""
+  },
+  {
+   "sk": "Lúčny koník",
+   "en": "Lúčny koník",
+   "in_sentence": "at Lúčny koník",
+   "note": "real playground; not translated (‘meadow grasshopper’)"
+  },
+  {
+   "sk": "Dúbravka; Dúbravská zastávka",
+   "en": "Dúbravka; Dúbravka stop",
+   "in_sentence": "in Dúbravka",
+   "note": "adjectives become the place name"
+  },
+  {
+   "sk": "ZŠ Sokolíkova",
+   "en": "Sokolíkova School",
+   "in_sentence": "at Sokolíkova",
+   "note": "the painted sign ZÁKLADNÁ ŠKOLA SOKOLÍKOVA stays Slovak"
+  },
+  {
+   "sk": "Pri LEALe",
+   "en": "Pri LEALe",
+   "in_sentence": "at Pri LEALe; back to Pri LEALe; the wall at Pri LEALe",
+   "note": "owner’s local name; LEAL always capitals; never explained, never ‘by the LEAL’"
+  },
+  {
+   "sk": "Karlova Ves",
+   "en": "Karlova Ves",
+   "in_sentence": "in Karlova Ves",
+   "note": ""
+  },
+  {
+   "sk": "Staré Mesto",
+   "en": "Staré Mesto",
+   "in_sentence": "in Staré Mesto; ‘the Old Town’ only in speech",
+   "note": ""
+  },
+  {
+   "sk": "Kamenné námestie",
+   "en": "Kamenné námestie",
+   "in_sentence": "on Kamenné námestie",
+   "note": "no article"
+  },
+  {
+   "sk": "Ružinov",
+   "en": "Ružinov",
+   "in_sentence": "in Ružinov",
+   "note": ""
+  },
+  {
+   "sk": "Miletičova (Miletička)",
+   "en": "Miletičova",
+   "in_sentence": "on Miletičova; the Miletičova market",
+   "note": "the colloquial ‘Miletička’ is not used in English"
+  },
+  {
+   "sk": "Petržalka",
+   "en": "Petržalka",
+   "in_sentence": "in Petržalka",
+   "note": ""
+  },
+  {
+   "sk": "Starý most",
+   "en": "Starý most",
+   "in_sentence": "on Starý most",
+   "note": "no article; never ‘the old Starý most’"
+  },
+  {
+   "sk": "Dunaj",
+   "en": "the Danube",
+   "in_sentence": "",
+   "note": "exonym"
+  },
+  {
+   "sk": "Ivanka pri Dunaji (Ivanka; Ivanská …)",
+   "en": "Ivanka pri Dunaji (Ivanka)",
+   "in_sentence": "in Ivanka",
+   "note": ""
+  },
+  {
+   "sk": "kanál (Šúrsky kanál)",
+   "en": "the canal",
+   "in_sentence": "",
+   "note": ""
+  },
+  {
+   "sk": "Jasná",
+   "en": "Jasná",
+   "in_sentence": "in Jasná",
+   "note": ""
+  },
+  {
+   "sk": "Biela Púť",
+   "en": "Biela Púť",
+   "in_sentence": "at Biela Púť",
+   "note": ""
+  },
+  {
+   "sk": "Priehyba",
+   "en": "Priehyba",
+   "in_sentence": "at Priehyba",
+   "note": ""
+  },
+  {
+   "sk": "Chopok",
+   "en": "Chopok",
+   "in_sentence": "on Chopok",
+   "note": ""
+  },
+  {
+   "sk": "Rotunda",
+   "en": "the Rotunda",
+   "in_sentence": "by the Rotunda",
+   "note": ""
+  },
+  {
+   "sk": "Grand Jasná (v Grande)",
+   "en": "Hotel Grand Jasná; the Grand Jasná",
+   "in_sentence": "‘the Grand’ in speech",
+   "note": ""
+  },
+  {
+   "sk": "Vrbické pleso",
+   "en": "Vrbické pleso",
+   "in_sentence": "by Vrbické pleso; ‘the lake’",
+   "note": "pleso → lake (not ‘tarn’)"
+  },
+  {
+   "sk": "Funitel",
+   "en": "the Funitel",
+   "in_sentence": "on the Funitel",
+   "note": "real lift type"
+  },
+  {
+   "sk": "Tatry; Nízke Tatry",
+   "en": "the Tatras; the Low Tatras",
+   "in_sentence": "",
+   "note": "exonyms"
+  },
+  {
+   "sk": "ČSSR; Československo",
+   "en": "Czechoslovakia (‘ČSSR’ only where painted or quoted)",
+   "in_sentence": "",
+   "note": ""
+  },
+  {
+   "sk": "Bratislava",
+   "en": "Bratislava",
+   "in_sentence": "",
+   "note": ""
+  },
+  {
+   "sk": "sídlisko; panelák",
+   "en": "housing estate (the estate); block of flats (the blocks)",
+   "in_sentence": "",
+   "note": "British"
+  }
+ ],
+ "businesses": [
+  {
+   "sk": "Antikvariát Pod druhou rukou",
+   "en": "the Second Hand bookshop",
+   "note": "fictional, no lettering in the art: translated so the pun survives (second-hand books, the clock’s second hand)"
+  },
+  {
+   "sk": "Fotoateliér Svetlo",
+   "en": "the Svetlo photo studio",
+   "note": "kept: Alena explains the name (‘Svetlo means light’), see § 13"
+  },
+  {
+   "sk": "Druhý život / plaque DRUHÝ ŽIVOT",
+   "en": "Second Life / plaque SECOND LIFE",
+   "note": "Tamara’s travelling workshop; the meaning is the point; plaque is a variablisation candidate (§ 11)"
+  },
+  {
+   "sk": "Paliho opravovňa",
+   "en": "Pali’s repair shop",
+   "note": ""
+  },
+  {
+   "sk": "kazetový klub v suteréne",
+   "en": "the basement cassette club",
+   "note": ""
+  },
+  {
+   "sk": "Deziderova garáž (číslo 17)",
+   "en": "Dezider’s garage (number 17)",
+   "note": ""
+  },
+  {
+   "sk": "Otova (mechanická) dielňa",
+   "en": "Oto’s (mechanical) workshop",
+   "note": ""
+  },
+  {
+   "sk": "archívna študovňa",
+   "en": "the archive reading room",
+   "note": ""
+  },
+  {
+   "sk": "klientske centrum Biela Púť",
+   "en": "the Biela Púť customer centre",
+   "note": ""
+  },
+  {
+   "sk": "Potraviny (sign POTRAVINY)",
+   "en": "the shop (sign stays POTRAVINY)",
+   "note": "real Slovak signage"
+  },
+  {
+   "sk": "kultúrna sála",
+   "en": "the village hall",
+   "note": ""
+  },
+  {
+   "sk": "hospodársky dvor; sklad",
+   "en": "the farm yard; the store",
+   "note": ""
+  }
+ ],
+ "regions": {
+  "Chorvátsky Grob": {
+   "key": "region.Chorvátsky Grob.name",
+   "sk": "Chorvátsky Grob",
+   "en": "Chorvátsky Grob"
+  },
+  "Čierna Voda": {
+   "key": "region.Čierna Voda.name",
+   "sk": "Čierna Voda",
+   "en": "Čierna Voda"
+  },
+  "Dúbravka": {
+   "key": "region.Dúbravka.name",
+   "sk": "Dúbravka",
+   "en": "Dúbravka"
+  },
+  "Karlova Ves": {
+   "key": "region.Karlova Ves.name",
+   "sk": "Karlova Ves",
+   "en": "Karlova Ves"
+  },
+  "Staré Mesto": {
+   "key": "region.Staré Mesto.name",
+   "sk": "Staré Mesto",
+   "en": "Staré Mesto"
+  },
+  "Ružinov": {
+   "key": "region.Ružinov.name",
+   "sk": "Ružinov",
+   "en": "Ružinov"
+  },
+  "Petržalka": {
+   "key": "region.Petržalka.name",
+   "sk": "Petržalka",
+   "en": "Petržalka"
+  },
+  "Ivanka pri Dunaji": {
+   "key": "region.Ivanka pri Dunaji.name",
+   "sk": "Ivanka pri Dunaji",
+   "en": "Ivanka pri Dunaji"
+  },
+  "Biela Púť": {
+   "key": "region.Biela Púť.name",
+   "sk": "Biela Púť",
+   "en": "Biela Púť"
+  },
+  "Grand Jasná": {
+   "key": "region.Grand Jasná.name",
+   "sk": "Grand Jasná",
+   "en": "Grand Jasná"
+  },
+  "Vrbické pleso": {
+   "key": "region.Vrbické pleso.name",
+   "sk": "Vrbické pleso",
+   "en": "Vrbické pleso"
+  },
+  "Chopok": {
+   "key": "region.Chopok.name",
+   "sk": "Chopok",
+   "en": "Chopok"
+  },
+  "Priehyba": {
+   "key": "region.Priehyba.name",
+   "sk": "Priehyba",
+   "en": "Priehyba"
+  },
+  "Funitel": {
+   "key": "region.Funitel.name",
+   "sk": "Funitel",
+   "en": "Funitel"
+  },
+  "Jasná": {
+   "key": "region.Jasná.name",
+   "sk": "Jasná",
+   "en": "Jasná"
+  }
+ },
+ "eras": {
+  "era.1960.card": {
+   "sk": "Ivanka pri Dunaji",
+   "en": "Ivanka pri Dunaji"
+  },
+  "era.1960.date": {
+   "sk": "6. júna 1962",
+   "en": "6 June 1962"
+  },
+  "era.1960.year": {
+   "sk": "1962",
+   "en": "1962"
+  },
+  "era.1982.card": {
+   "sk": "Dúbravka",
+   "en": "Dúbravka"
+  },
+  "era.1982.date": {
+   "sk": "7. decembra 1982",
+   "en": "7 December 1982"
+  },
+  "era.1982.year": {
+   "sk": "1982",
+   "en": "1982"
+  },
+  "era.1995.card": {
+   "sk": "Bratislava",
+   "en": "Bratislava"
+  },
+  "era.1995.date": {
+   "sk": "15. júna 1995",
+   "en": "15 June 1995"
+  },
+  "era.1995.year": {
+   "sk": "1995",
+   "en": "1995"
+  },
+  "era.2020.card": {
+   "sk": "Chorvátsky Grob a Dúbravka",
+   "en": "Chorvátsky Grob and Dúbravka"
+  },
+  "era.2020.date": {
+   "sk": "29. októbra 2020",
+   "en": "29 October 2020"
+  },
+  "era.2020.year": {
+   "sk": "2020",
+   "en": "2020"
+  },
+  "era.2035.card": {
+   "sk": "Jasná",
+   "en": "Jasná"
+  },
+  "era.2035.date": {
+   "sk": "6. februára 2035",
+   "en": "6 February 2035"
+  },
+  "era.2035.year": {
+   "sk": "2035",
+   "en": "2035"
+  }
+ },
+ "rooms": {
+  "S01": {
+   "key": "room.S01.name",
+   "sk": "Adamova garáž",
+   "en": "Adam’s garage"
+  },
+  "S02": {
+   "key": "room.S02.name",
+   "sk": "Ulica medzi plotmi",
+   "en": "Lane between the fences"
+  },
+  "S03": {
+   "key": "room.S03.name",
+   "sk": "Lúčny koník – výdajné miesto",
+   "en": "Lúčny koník – pick-up point"
+  },
+  "S04": {
+   "key": "room.S04.name",
+   "sk": "Potraviny cez okienko",
+   "en": "Shop at the hatch"
+  },
+  "S05": {
+   "key": "room.S05.name",
+   "sk": "Mirina bránka",
+   "en": "Mira’s garden gate"
+  },
+  "S06": {
+   "key": "room.S06.name",
+   "sk": "Pod zatvoreným oknom",
+   "en": "Below the closed window"
+  },
+  "S07": {
+   "key": "room.S07.name",
+   "sk": "Čierna Voda pri výveske",
+   "en": "Čierna Voda, by the notice board"
+  },
+  "S08": {
+   "key": "room.S08.name",
+   "sk": "Chodník pri retenčnej nádrži",
+   "en": "Path by the retention pond"
+  },
+  "S09": {
+   "key": "room.S09.name",
+   "sk": "Predsieň záhradnej dielne",
+   "en": "Garden workshop porch"
+  },
+  "S10": {
+   "key": "room.S10.name",
+   "sk": "Dielňa ZVON",
+   "en": "ZVON workshop"
+  },
+  "S11": {
+   "key": "room.S11.name",
+   "sk": "Dúbravská zastávka",
+   "en": "Dúbravka stop"
+  },
+  "S12": {
+   "key": "room.S12.name",
+   "sk": "Pred ZŠ Sokolíkova",
+   "en": "Outside Sokolíkova School"
+  },
+  "S13": {
+   "key": "room.S13.name",
+   "sk": "Školská vstupná chodba",
+   "en": "School entrance hall"
+  },
+  "S14": {
+   "key": "room.S14.name",
+   "sk": "Trieda pamäťového krúžku",
+   "en": "Memory club classroom"
+  },
+  "S15": {
+   "key": "room.S15.name",
+   "sk": "Fyzikálny kabinet",
+   "en": "Physics prep room"
+  },
+  "S16": {
+   "key": "room.S16.name",
+   "sk": "Miestnosť školského rozhlasu",
+   "en": "School PA room"
+  },
+  "S17": {
+   "key": "room.S17.name",
+   "sk": "Školský dvor",
+   "en": "School yard"
+  },
+  "S18": {
+   "key": "room.S18.name",
+   "sk": "Sídliskový dvor s kioskom",
+   "en": "Estate courtyard with kiosk"
+  },
+  "S19": {
+   "key": "room.S19.name",
+   "sk": "Karloveské nástupište",
+   "en": "Karlova Ves tram stop"
+  },
+  "S20": {
+   "key": "room.S20.name",
+   "sk": "Paliho opravovňa",
+   "en": "Pali’s repair shop"
+  },
+  "S21": {
+   "key": "room.S21.name",
+   "sk": "Kamenné námestie",
+   "en": "Kamenné námestie"
+  },
+  "S22": {
+   "key": "room.S22.name",
+   "sk": "Antikvariát Pod druhou rukou",
+   "en": "Second Hand bookshop"
+  },
+  "S23": {
+   "key": "room.S23.name",
+   "sk": "Archívna študovňa",
+   "en": "Archive reading room"
+  },
+  "S24": {
+   "key": "room.S24.name",
+   "sk": "Fotoateliér Svetlo",
+   "en": "Svetlo photo studio"
+  },
+  "S25": {
+   "key": "room.S25.name",
+   "sk": "Miletičova medzi stánkami",
+   "en": "Miletičova market"
+  },
+  "S26": {
+   "key": "room.S26.name",
+   "sk": "Opravovňa odevov",
+   "en": "Tailor’s repair shop"
+  },
+  "S27": {
+   "key": "room.S27.name",
+   "sk": "Kazetový klub v suteréne",
+   "en": "Basement cassette club"
+  },
+  "S28": {
+   "key": "room.S28.name",
+   "sk": "Petržalský podchod",
+   "en": "Petržalka underpass"
+  },
+  "S29": {
+   "key": "room.S29.name",
+   "sk": "Garáž rádioamatéra",
+   "en": "Radio ham’s garage"
+  },
+  "S30": {
+   "key": "room.S30.name",
+   "sk": "Merací stánok na Starom moste",
+   "en": "Measuring booth on Starý most"
+  },
+  "S31": {
+   "key": "room.S31.name",
+   "sk": "Ivanská železničná zastávka",
+   "en": "Ivanka railway station"
+  },
+  "S32": {
+   "key": "room.S32.name",
+   "sk": "Ivanská náves",
+   "en": "Ivanka village green"
+  },
+  "S33": {
+   "key": "room.S33.name",
+   "sk": "Pošta s prepážkou",
+   "en": "Post office counter"
+  },
+  "S34": {
+   "key": "room.S34.name",
+   "sk": "Kultúrna sála pred skúškou",
+   "en": "Village hall before rehearsal"
+  },
+  "S35": {
+   "key": "room.S35.name",
+   "sk": "Dvor hospodárskej dielne",
+   "en": "Farm workshop yard"
+  },
+  "S36": {
+   "key": "room.S36.name",
+   "sk": "Otova mechanická dielňa",
+   "en": "Oto’s mechanical workshop"
+  },
+  "S37": {
+   "key": "room.S37.name",
+   "sk": "Park pri kaštieli",
+   "en": "Manor house park"
+  },
+  "S38": {
+   "key": "room.S38.name",
+   "sk": "Pred skúšobnou čerpacou búdkou",
+   "en": "Outside the test pump hut"
+  },
+  "S39": {
+   "key": "room.S39.name",
+   "sk": "Miestnosť prvého ZVONu",
+   "en": "Room of the first ZVON"
+  },
+  "S40": {
+   "key": "room.S40.name",
+   "sk": "Povala technického archívu",
+   "en": "Technical archive loft"
+  },
+  "S41": {
+   "key": "room.S41.name",
+   "sk": "Biela Púť pri dolnej stanici",
+   "en": "Biela Púť, bottom station"
+  },
+  "S42": {
+   "key": "room.S42.name",
+   "sk": "Pred hotelom Grand Jasná",
+   "en": "Outside Hotel Grand Jasná"
+  },
+  "S43": {
+   "key": "room.S43.name",
+   "sk": "Lobby hotela Grand Jasná",
+   "en": "Hotel Grand Jasná lobby"
+  },
+  "S44": {
+   "key": "room.S44.name",
+   "sk": "Výstavný salón hotela Grand Jasná",
+   "en": "Grand Jasná exhibition room"
+  },
+  "S45": {
+   "key": "room.S45.name",
+   "sk": "Chodník pri Vrbickom plese",
+   "en": "Path by Vrbické pleso"
+  },
+  "S46": {
+   "key": "room.S46.name",
+   "sk": "Klientske centrum Biela Púť",
+   "en": "Biela Púť customer centre"
+  },
+  "S47": {
+   "key": "room.S47.name",
+   "sk": "Chopok pri Rotunde",
+   "en": "Chopok, by the Rotunda"
+  },
+  "S48": {
+   "key": "room.S48.name",
+   "sk": "Servisný pavilón výstavy Atlas",
+   "en": "Atlas exhibition service pavilion"
+  },
+  "S49": {
+   "key": "room.S49.name",
+   "sk": "Chronokomora pavilónu Atlas",
+   "en": "Atlas pavilion chronochamber"
+  },
+  "S50": {
+   "key": "room.S50.name",
+   "sk": "Vyhliadková terasa pri Rotunde",
+   "en": "Viewing terrace by the Rotunda"
+  },
+  "S51": {
+   "key": "room.S51.name",
+   "sk": "Dúbravská zastávka v roku 2020",
+   "en": "Dúbravka stop, 2020"
+  },
+  "S52": {
+   "key": "room.S52.name",
+   "sk": "Pred ZŠ Sokolíkova v roku 2020",
+   "en": "Outside Sokolíkova School, 2020"
+  },
+  "S53": {
+   "key": "room.S53.name",
+   "sk": "Školské zádverie v roku 2020",
+   "en": "School entrance lobby, 2020"
+  },
+  "S54": {
+   "key": "room.S54.name",
+   "sk": "Fyzikálny kabinet v roku 2020",
+   "en": "Physics prep room, 2020"
+  },
+  "S55": {
+   "key": "room.S55.name",
+   "sk": "Školský dvor v roku 2020",
+   "en": "School yard, 2020"
+  },
+  "S56": {
+   "key": "room.S56.name",
+   "sk": "Školnícke servisné okno v roku 2020",
+   "en": "Caretaker’s service window, 2020"
+  },
+  "S57": {
+   "key": "room.S57.name",
+   "sk": "Dúbravská zastávka v roku 1982",
+   "en": "Dúbravka stop, 1982"
+  },
+  "S58": {
+   "key": "room.S58.name",
+   "sk": "Pred ZŠ Sokolíkova v roku 1982",
+   "en": "Outside Sokolíkova School, 1982"
+  },
+  "S59": {
+   "key": "room.S59.name",
+   "sk": "Školská chodba v roku 1982",
+   "en": "School corridor, 1982"
+  },
+  "S60": {
+   "key": "room.S60.name",
+   "sk": "Trieda pred technickou výstavkou v roku 1982",
+   "en": "Classroom before the exhibition, 1982"
+  },
+  "S61": {
+   "key": "room.S61.name",
+   "sk": "Školský dvor s mladou lipou v roku 1982",
+   "en": "School yard with a young lime, 1982"
+  },
+  "S62": {
+   "key": "room.S62.name",
+   "sk": "Sídliskový obchod v roku 1982",
+   "en": "Estate shop, 1982"
+  },
+  "S63": {
+   "key": "room.S63.name",
+   "sk": "Fyzikálny kabinet v roku 1982",
+   "en": "Physics prep room, 1982"
+  },
+  "S64": {
+   "key": "room.S64.name",
+   "sk": "Tóno a dedo pri servisnom okne v roku 1982",
+   "en": "Tóno and Grandad at the service window, 1982"
+  },
+  "S65": {
+   "key": "room.S65.name",
+   "sk": "Výdajňa školského údržbového materiálu v roku 1982",
+   "en": "School maintenance store, 1982"
+  },
+  "S66": {
+   "key": "room.S66.name",
+   "sk": "Školský záhradný sklad v roku 1982",
+   "en": "School garden shed, 1982"
+  },
+  "S67": {
+   "key": "room.S67.name",
+   "sk": "Priehyba pri prestupe na Funitel",
+   "en": "Priehyba, change for the Funitel"
+  },
+  "S68": {
+   "key": "room.S68.name",
+   "sk": "Kabína Funitelu medzi Priehybou a Chopkom",
+   "en": "Funitel cabin, Priehyba to Chopok"
+  },
+  "S69": {
+   "key": "room.S69.name",
+   "sk": "Pri LEALe",
+   "en": "Pri LEALe"
+  }
+ },
+ "exit_labels_note": "exit.*.label / conn.*.label that equal a room name use the English room name; the others are translated with the hotspot/room vocabulary",
+ "exit_labels_not_room_names": [
+  "Autobus do Dúbravky",
+  "Autobus do Čiernej Vody",
+  "Autobus Čierna Voda – Dúbravka",
+  "Funitel na Chopok",
+  "Lanovka Biela Púť – Priehyba",
+  "Okno školníckej dielne v roku 1982",
+  "Príchod na Chopok"
+ ],
+ "terms": [
+  {
+   "sk": "ZVON (ZVONu, ZVONom)",
+   "en": "ZVON",
+   "speech": "ZVON’s; ‘the ZVON’ only in hints as the device",
+   "note": "device name, always capitals, never translated; the bell pun is carried once by Mira (G05.005) and by the title (§ 2)"
+  },
+  {
+   "sk": "prenosný chronometer (ZVON)",
+   "en": "portable chronometer; Portable ZVON chronometer (item)",
+   "speech": "the chronometer",
+   "note": "never ‘time machine’, ‘watch’, ‘chronograph’"
+  },
+  {
+   "sk": "ochranné pole chronometra",
+   "en": "the chronometer’s protective field",
+   "speech": "the field",
+   "note": "protects Adam, his bag and what he carries"
+  },
+  {
+   "sk": "nositeľ; pamäť nositeľa",
+   "en": "wearer; the wearer’s memory",
+   "speech": "",
+   "note": "device voice: ‘Wearer recognised. Wearer’s memory protected.’"
+  },
+  {
+   "sk": "stolový uzol ZVON",
+   "en": "ZVON base node",
+   "speech": "the base node",
+   "note": "the stationary unit in Mira’s garden workshop; pairs with the portable chronometer"
+  },
+  {
+   "sk": "kolíska",
+   "en": "cradle",
+   "speech": "",
+   "note": "the chronometer docks in the base node’s cradle"
+  },
+  {
+   "sk": "tvarový panel; tvarový prepojovací panel",
+   "en": "shape panel; shape patch panel",
+   "speech": "",
+   "note": "P01"
+  },
+  {
+   "sk": "časový uzol; uzlové hodiny (speech); UI Uzol",
+   "en": "time node; the node clock; UI ‘Node’",
+   "speech": "",
+   "note": "the old clock frames at the stops"
+  },
+  {
+   "sk": "časové okno; otvoriť časové okno",
+   "en": "time window; open a time window",
+   "speech": "",
+   "note": "a year open for travel"
+  },
+  {
+   "sk": "časová adresa / referencia (device)",
+   "en": "reference (device only)",
+   "speech": "",
+   "note": "‘time address’ is never used in goals, hints or journal; device: ‘Reference 1995 restored.’"
+  },
+  {
+   "sk": "spätný zápis",
+   "en": "write-back",
+   "speech": "Atlas’s write-back",
+   "note": "never ‘retroactive write’"
+  },
+  {
+   "sk": "zápis (Atlas’s process); ZÁPIS (switch)",
+   "en": "the write; WRITE (switch)",
+   "speech": "",
+   "note": "‘WRITE off, MONITOR on.’"
+  },
+  {
+   "sk": "normalizátor; panel normalizácie; normalizácia",
+   "en": "normaliser; normalisation panel; normalisation",
+   "speech": "",
+   "note": "British -ise; the panel shows DIFFERENCE = DISCARD"
+  },
+  {
+   "sk": "návratový zásobník (zásobník)",
+   "en": "return buffer (the buffer)",
+   "speech": "",
+   "note": "the Slovak ban on ‘buffer’ does not apply: in English it is the natural word"
+  },
+  {
+   "sk": "Atlas (Atlasu)",
+   "en": "Atlas",
+   "speech": "Atlas’s",
+   "note": "Viktor’s organisation and exhibition (2035); never the 1995 tape"
+  },
+  {
+   "sk": "výstava Atlas; servisný pavilón; chronokomora; panel obnovy",
+   "en": "the Atlas exhibition; service pavilion; chronochamber; restore panel",
+   "speech": "",
+   "note": "never ‘synchronisation chamber’"
+  },
+  {
+   "sk": "Zvukový atlas našej školy; krúžok; pamäťový krúžok",
+   "en": "Our School’s Sound Atlas (tape label); the club; the memory club",
+   "speech": "the sound atlas",
+   "note": "Mira’s and Lea’s 1995 after-school club"
+  },
+  {
+   "sk": "značka krúžku",
+   "en": "the club’s emblem",
+   "speech": "",
+   "note": "the small bell emblem on the chronometer"
+  },
+  {
+   "sk": "Mirin fond; fond Z-17; krabica Z-17",
+   "en": "Mira’s collection; collection Z-17; box Z-17",
+   "speech": "",
+   "note": "archive sense; never ‘fonds’, ‘fund’"
+  },
+  {
+   "sk": "kalibračná platňa (mosadzná)",
+   "en": "brass calibration plate",
+   "speech": "the plate",
+   "note": "stays in 1962 on the device"
+  },
+  {
+   "sk": "odtlačok → nezvýraznený, čitateľný, overený odtlačok z roku 1962",
+   "en": "imprint → faint imprint, legible imprint, verified imprint from 1962",
+   "speech": "",
+   "note": "never ‘copy’ (that is Mira’s archive copy)"
+  },
+  {
+   "sk": "archívna kópia; kovová schránka",
+   "en": "archive copy; metal archive box",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "registračný list; druhopis; uhľový papier; pečiatka",
+   "en": "registration form; duplicate; carbon paper; stamp",
+   "speech": "",
+   "note": "the post office confirms the date, not the truth"
+  },
+  {
+   "sk": "pravidlo ‘Rôzne údaje neznamenajú neplatné údaje.’",
+   "en": "the rule ‘Different data are not invalid data.’",
+   "speech": "Mira’s rule, Mira’s sentence",
+   "note": "engraved on the plate; spoken variant ‘What doesn’t match, we keep side by side.’"
+  },
+  {
+   "sk": "štyri svedectvá: Pôvod, Hlas, Súhlas, Návrat",
+   "en": "the four testimonies: Origin, Voice, Consent, Return",
+   "speech": "proof of origin / consent",
+   "note": "port names; capitals on the plate and in device texts: ORIGIN, VOICE, CONSENT, RETURN"
+  },
+  {
+   "sk": "port Pôvod / Hlas / Súhlas / Návrat",
+   "en": "Origin port / Voice port / Consent port / Return port",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "pôvodná školská kazeta; kazeta s rušenými stopami",
+   "en": "original school cassette; cassette with clashing tracks",
+   "speech": "‘tape’ allowed in speech",
+   "note": ""
+  },
+  {
+   "sk": "kazeta; magnetofón; kazetový mechanizmus",
+   "en": "cassette; tape recorder; cassette deck",
+   "speech": "tape (speech)",
+   "note": ""
+  },
+  {
+   "sk": "remienok",
+   "en": "drive belt (belt)",
+   "speech": "",
+   "note": "rozpadnutý = perished"
+  },
+  {
+   "sk": "krížový adaptér; dvojpólový konektor; izolačný návlek; zvuková prepojka; servisný zvukový vstup",
+   "en": "cross adaptor; two-pin connector; insulating sleeve; audio lead; service audio input",
+   "speech": "",
+   "note": "British ‘adaptor’ and ‘lead’"
+  },
+  {
+   "sk": "mapa meracích uzlov; priehľadná fólia K-17; tri registračné značky (dierka, dvojitý kríž, štvorec)",
+   "en": "map of measuring nodes (node map); transparent overlay K-17; three registration marks (a hole, a double cross, a square)",
+   "speech": "",
+   "note": "P02; ‘double cross’ without a hyphen (not the betrayal)"
+  },
+  {
+   "sk": "meracia cievka; metronóm; rytmický nákres; tri kalibračné číslice",
+   "en": "measuring coil; metronome; rhythm drawing; three calibration digits",
+   "speech": "",
+   "note": "P03; never ‘loop’ for the coil"
+  },
+  {
+   "sk": "merací stánok na Starom moste",
+   "en": "the measuring booth on Starý most",
+   "speech": "the booth",
+   "note": ""
+  },
+  {
+   "sk": "ručná pumpa; demonštračný chladiaci model; kožená manžeta; nity; dierovač; svorka kulisy",
+   "en": "hand pump; demonstration cooling model; leather cuff; rivets; hand punch; stage flat clamp",
+   "speech": "",
+   "note": "‘cuff’ keeps Zuzana’s shirt-cuff joke"
+  },
+  {
+   "sk": "skúšobná čerpacia búdka; meracia miestnosť",
+   "en": "test pump hut; measuring room",
+   "speech": "the hut",
+   "note": ""
+  },
+  {
+   "sk": "povala technického archívu",
+   "en": "technical archive loft",
+   "speech": "the loft",
+   "note": ""
+  },
+  {
+   "sk": "návratový mostík (keramický); keramická pätica; tri prepojky; servisná doska",
+   "en": "return bridge (ceramic); ceramic base; three copper links; service board",
+   "speech": "the bridge",
+   "note": "never ‘jumper’ for prepojky (avoids a clash with the audio lead)"
+  },
+  {
+   "sk": "zavárací pohár s tesnením; zapečatený pohár",
+   "en": "preserving jar with a seal; sealed jar",
+   "speech": "the jar",
+   "note": ""
+  },
+  {
+   "sk": "servisná dutina v múriku; mriežka 3 × 4",
+   "en": "service cavity in the low wall; 3 × 4 grid",
+   "speech": "the cavity; ‘hiding place’ only in Tóno’s speech",
+   "note": "second row from the top, third stone from the left = row 2, column 3"
+  },
+  {
+   "sk": "múrik",
+   "en": "the low wall",
+   "speech": "the wall",
+   "note": ""
+  },
+  {
+   "sk": "lastovička",
+   "en": "swallow",
+   "speech": "",
+   "note": "Tóno’s swallow: wooden in 1982, metal in 1995 and 2020"
+  },
+  {
+   "sk": "heslo ‘Lastovička sa vracia.’",
+   "en": "the password ‘The swallow comes back.’",
+   "speech": "",
+   "note": "verbatim; echoed by Q6 ‘Béla Comes Back’"
+  },
+  {
+   "sk": "mladá lipa; ochranná ohrádka; trasa ručného vozíka",
+   "en": "young lime tree; tree guard; the handcart’s route",
+   "speech": "the lime",
+   "note": "British ‘lime tree’, never ‘linden’; never ‘butterfly effect’"
+  },
+  {
+   "sk": "chránená fotografia dvora 2020",
+   "en": "protected photo of the 2020 yard",
+   "speech": "",
+   "note": "does not change"
+  },
+  {
+   "sk": "servisné okno (školnícke)",
+   "en": "service window (the caretaker’s)",
+   "speech": "",
+   "note": "the same window in 1982, 1995, 2020"
+  },
+  {
+   "sk": "školník",
+   "en": "caretaker",
+   "speech": "",
+   "note": "never ‘janitor’"
+  },
+  {
+   "sk": "fyzikálny kabinet",
+   "en": "physics prep room",
+   "speech": "the prep room",
+   "note": "British school term; never ‘cabinet’"
+  },
+  {
+   "sk": "školský rozhlas",
+   "en": "school PA",
+   "speech": "",
+   "note": "never the brand ‘Tannoy’"
+  },
+  {
+   "sk": "servisná kniha z roku 1982; kópia servisného záznamu 1982",
+   "en": "1982 service logbook; copy of the 1982 service record",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "protokol o odovzdaní; potvrdené odovzdanie 2020",
+   "en": "handover record; confirmed handover 2020",
+   "speech": "the handover",
+   "note": "recorded after it really happened"
+  },
+  {
+   "sk": "poverenie",
+   "en": "letter of authority",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "výdajný lístok; výdajka",
+   "en": "requisition slip",
+   "speech": "slip",
+   "note": ""
+  },
+  {
+   "sk": "lokálna (zvuková) čítačka; katalógová karta; servisný preukaz; spiatočný lístok na oba úseky",
+   "en": "local audio reader; catalogue card; service visitor pass; return ticket for both sections",
+   "speech": "the reader; the pass; the ticket",
+   "note": ""
+  },
+  {
+   "sk": "kabínková lanovka; Funitel; dolná / vrcholová stanica",
+   "en": "gondola (cable car in general speech); the Funitel; bottom / top station",
+   "speech": "",
+   "note": "they always work; never part of a trick"
+  },
+  {
+   "sk": "servisný terminál; pasívny stojan; miestna referenčná stopa; podpísaný obnovovací postup",
+   "en": "service terminal; passive stand; local reference trace; signed restore procedure",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "oddelený konektor Atlasu; prepínač ZÁPIS / MONITOR",
+   "en": "Atlas’s separate connector; the WRITE / MONITOR switch",
+   "speech": "",
+   "note": "MONITOR only reads"
+  },
+  {
+   "sk": "Leina pôvodná správa",
+   "en": "Lea’s original message",
+   "speech": "",
+   "note": "the normaliser left only ‘call me’"
+  },
+  {
+   "sk": "výdajné miesto (pri Lúčnom koníku)",
+   "en": "pick-up point (at Lúčny koník)",
+   "speech": "",
+   "note": "Ela’s outdoor point"
+  },
+  {
+   "sk": "servisná brašna",
+   "en": "tool bag",
+   "speech": "the bag",
+   "note": "the in-world word for what the UI calls Inventory is ‘bag’"
+  },
+  {
+   "sk": "brašňa (inventory in hints)",
+   "en": "bag",
+   "speech": "‘in the bag’",
+   "note": "hints say ‘In the bag, combine …’; the UI says Inventory"
+  },
+  {
+   "sk": "denník",
+   "en": "journal",
+   "speech": "",
+   "note": "in-world: Adam’s notes; UI: Journal"
+  },
+  {
+   "sk": "zápisník",
+   "en": "notebook",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "nápoveda (UI)",
+   "en": "Hints",
+   "speech": "",
+   "note": ""
+  },
+  {
+   "sk": "Mirina záhradná dielňa; predsieň; dielňa ZVON",
+   "en": "Mira’s garden workshop; porch; ZVON workshop",
+   "speech": "the workshop",
+   "note": "Adam may call it ‘Gran’s workshop’"
+  },
+  {
+   "sk": "hádanka (UI only)",
+   "en": "puzzle (UI only)",
+   "speech": "",
+   "note": "never in in-world text"
+  }
+ ],
+ "tech_terms": [
+  {
+   "sk": "kondenzátor",
+   "en": "capacitor"
+  },
+  {
+   "sk": "poistka; prepálená",
+   "en": "fuse; blown"
+  },
+  {
+   "sk": "zdroj",
+   "en": "power supply"
+  },
+  {
+   "sk": "kryt",
+   "en": "cover"
+  },
+  {
+   "sk": "napätie",
+   "en": "voltage"
+  },
+  {
+   "sk": "elektroodpad",
+   "en": "e-waste"
+  },
+  {
+   "sk": "stopa (zvuková)",
+   "en": "track"
+  },
+  {
+   "sk": "šum",
+   "en": "hiss"
+  },
+  {
+   "sk": "vývody",
+   "en": "leads"
+  },
+  {
+   "sk": "spájkovať",
+   "en": "solder"
+  },
+  {
+   "sk": "meradlo",
+   "en": "multimeter"
+  },
+  {
+   "sk": "skrutkovač; klieštiky",
+   "en": "screwdriver; pliers"
+  },
+  {
+   "sk": "remienok",
+   "en": "drive belt"
+  },
+  {
+   "sk": "motor sa točí naprázdno",
+   "en": "the motor spins freely"
+  },
+  {
+   "sk": "piest",
+   "en": "piston"
+  },
+  {
+   "sk": "srdce zvončeka; pútko",
+   "en": "clapper; loop"
+  },
+  {
+   "sk": "vrchnák zvončeka",
+   "en": "bell cap"
+  }
+ ],
+ "items": {
+  "PHONE": {
+   "key": "item.PHONE.name",
+   "sk": "Adamov telefón",
+   "en": "Adam’s phone"
+  },
+  "TOOLS": {
+   "key": "item.TOOLS.name",
+   "sk": "Servisná brašna",
+   "en": "Tool bag"
+  },
+  "ORDER": {
+   "key": "item.ORDER.name",
+   "sk": "Mirin nákupný lístok",
+   "en": "Mira’s shopping list"
+  },
+  "GROCERIES": {
+   "key": "item.GROCERIES.name",
+   "sk": "Taška s nákupom",
+   "en": "Bag of shopping"
+  },
+  "SHEDKEY": {
+   "key": "item.SHEDKEY.name",
+   "sk": "Kľúč od dielne",
+   "en": "Workshop key"
+  },
+  "CHRONO": {
+   "key": "item.CHRONO.name",
+   "sk": "Prenosný chronometer ZVON",
+   "en": "Portable ZVON chronometer"
+  },
+  "FUSE_OLD": {
+   "key": "item.FUSE_OLD.name",
+   "sk": "Prerušená poistka",
+   "en": "Blown fuse"
+  },
+  "FUSE": {
+   "key": "item.FUSE.name",
+   "sk": "Náhradná poistka",
+   "en": "Spare fuse"
+  },
+  "LETTER": {
+   "key": "item.LETTER.name",
+   "sk": "Mirino poverenie",
+   "en": "Mira’s letter of authority"
+  },
+  "BELT_OLD": {
+   "key": "item.BELT_OLD.name",
+   "sk": "Rozpadnutý remienok",
+   "en": "Perished drive belt"
+  },
+  "BELT_NEW": {
+   "key": "item.BELT_NEW.name",
+   "sk": "Nový remienok",
+   "en": "New drive belt"
+  },
+  "TAPE_RAW": {
+   "key": "item.TAPE_RAW.name",
+   "sk": "Kazeta s rušenými stopami",
+   "en": "Cassette with clashing tracks"
+  },
+  "ADAPTER": {
+   "key": "item.ADAPTER.name",
+   "sk": "Krížový adaptér bez konektora",
+   "en": "Cross adaptor, no connector"
+  },
+  "CONNECTOR": {
+   "key": "item.CONNECTOR.name",
+   "sk": "Dvojpólový konektor",
+   "en": "Two-pin connector"
+  },
+  "BRAID": {
+   "key": "item.BRAID.name",
+   "sk": "Textilný izolačný návlek",
+   "en": "Cloth insulating sleeve"
+  },
+  "LINK_OPEN": {
+   "key": "item.LINK_OPEN.name",
+   "sk": "Adaptér s konektorom bez izolácie",
+   "en": "Adaptor with connector, uninsulated"
+  },
+  "STEREOLINK": {
+   "key": "item.STEREOLINK.name",
+   "sk": "Hotová zvuková prepojka",
+   "en": "Finished audio lead"
+  },
+  "TAPE": {
+   "key": "item.TAPE.name",
+   "sk": "Pôvodná školská kazeta",
+   "en": "Original school cassette"
+  },
+  "DIAGRAM": {
+   "key": "item.DIAGRAM.name",
+   "sk": "Mapa uzlov bez fólie",
+   "en": "Node map without overlay"
+  },
+  "NEGATIVE": {
+   "key": "item.NEGATIVE.name",
+   "sk": "Technický fotografický negatív",
+   "en": "Technical photo negative"
+  },
+  "CALPHOTO": {
+   "key": "item.CALPHOTO.name",
+   "sk": "Fotografia kalibračného stojana",
+   "en": "Photo of the calibration stand"
+  },
+  "OVERLAY": {
+   "key": "item.OVERLAY.name",
+   "sk": "Priehľadná fólia K-17",
+   "en": "Transparent overlay K-17"
+  },
+  "NODEMAP": {
+   "key": "item.NODEMAP.name",
+   "sk": "Úplná mapa meracích uzlov",
+   "en": "Complete map of measuring nodes"
+  },
+  "COIL": {
+   "key": "item.COIL.name",
+   "sk": "Deziderova meracia cievka",
+   "en": "Dezider’s measuring coil"
+  },
+  "METRONOME": {
+   "key": "item.METRONOME.name",
+   "sk": "Emilov metronóm",
+   "en": "Emil’s metronome"
+  },
+  "SUPPLYSLIP": {
+   "key": "item.SUPPLYSLIP.name",
+   "sk": "Otov výdajný lístok",
+   "en": "Oto’s requisition slip"
+  },
+  "LEATHER": {
+   "key": "item.LEATHER.name",
+   "sk": "Predrezaná kožená manžeta",
+   "en": "Pre-cut leather cuff"
+  },
+  "RIVETS": {
+   "key": "item.RIVETS.name",
+   "sk": "Dva duté nity",
+   "en": "Two hollow rivets"
+  },
+  "PUNCH": {
+   "key": "item.PUNCH.name",
+   "sk": "Lídin ručný dierovač",
+   "en": "Lída’s hand punch"
+  },
+  "CUFF_OPEN": {
+   "key": "item.CUFF_OPEN.name",
+   "sk": "Dierovaná manžeta",
+   "en": "Punched cuff"
+  },
+  "CUFF": {
+   "key": "item.CUFF.name",
+   "sk": "Hotová manžeta",
+   "en": "Finished cuff"
+  },
+  "PUMPKEY": {
+   "key": "item.PUMPKEY.name",
+   "sk": "Kľúč od meracej miestnosti",
+   "en": "Measuring room key"
+  },
+  "REGFORM": {
+   "key": "item.REGFORM.name",
+   "sk": "Technický registračný list",
+   "en": "Technical registration form"
+  },
+  "STYLUS": {
+   "key": "item.STYLUS.name",
+   "sk": "Verino tupé rydlo",
+   "en": "Vera’s blunt stylus"
+  },
+  "WAXPAPER": {
+   "key": "item.WAXPAPER.name",
+   "sk": "Voskovaný hárok",
+   "en": "Waxed sheet"
+  },
+  "PRESSED": {
+   "key": "item.PRESSED.name",
+   "sk": "Nezvýraznený odtlačok",
+   "en": "Faint imprint"
+  },
+  "ORIGIN_RAW": {
+   "key": "item.ORIGIN_RAW.name",
+   "sk": "Čitateľný odtlačok",
+   "en": "Legible imprint"
+  },
+  "CARBON": {
+   "key": "item.CARBON.name",
+   "sk": "Uhľový papier",
+   "en": "Carbon paper"
+  },
+  "REGDOUBLE": {
+   "key": "item.REGDOUBLE.name",
+   "sk": "Dve vyhotovenia listu",
+   "en": "Form in duplicate"
+  },
+  "REGISTERED": {
+   "key": "item.REGISTERED.name",
+   "sk": "Potvrdený registračný list",
+   "en": "Stamped registration form"
+  },
+  "ORIGIN": {
+   "key": "item.ORIGIN.name",
+   "sk": "Overený odtlačok z roku 1962",
+   "en": "Verified imprint from 1962"
+  },
+  "HANDOVER": {
+   "key": "item.HANDOVER.name",
+   "sk": "Protokol o odovzdaní",
+   "en": "Handover record"
+  },
+  "HANDOVER_R": {
+   "key": "item.HANDOVER_R.name",
+   "sk": "Protokol s Romanovým podpisom",
+   "en": "Handover record signed by Roman"
+  },
+  "CHAIN": {
+   "key": "item.CHAIN.name",
+   "sk": "Potvrdené odovzdanie 2020",
+   "en": "Confirmed handover 2020"
+  },
+  "READER": {
+   "key": "item.READER.name",
+   "sk": "Lokálna zvuková čítačka",
+   "en": "Local audio reader"
+  },
+  "CATALOG": {
+   "key": "item.CATALOG.name",
+   "sk": "Katalógová karta fondu Z-17",
+   "en": "Catalogue card, collection Z-17"
+  },
+  "PASS": {
+   "key": "item.PASS.name",
+   "sk": "Servisný návštevnícky preukaz",
+   "en": "Service visitor pass"
+  },
+  "FILTER_PHOTO": {
+   "key": "item.FILTER_PHOTO.name",
+   "sk": "Záznam panelu normalizácie",
+   "en": "Normalisation panel photo"
+  },
+  "LEA_MESSAGE": {
+   "key": "item.LEA_MESSAGE.name",
+   "sk": "Leina nezmenená hlasová správa",
+   "en": "Lea’s unaltered voice message"
+  },
+  "DIAGNOSTIC": {
+   "key": "item.DIAGNOSTIC.name",
+   "sk": "Diagnostický protokol",
+   "en": "Diagnostic report"
+  },
+  "PULSE": {
+   "key": "item.PULSE.name",
+   "sk": "Miestna referenčná stopa",
+   "en": "Local reference trace"
+  },
+  "PATCH": {
+   "key": "item.PATCH.name",
+   "sk": "Podpísaný obnovovací postup",
+   "en": "Signed restore procedure"
+  },
+  "BALL": {
+   "key": "item.BALL.name",
+   "sk": "Bodkova loptička",
+   "en": "Bodka’s ball"
+  },
+  "FLYER": {
+   "key": "item.FLYER.name",
+   "sk": "Veľký čitateľný oznam",
+   "en": "Large-print notice"
+  },
+  "TEAMNEG": {
+   "key": "item.TEAMNEG.name",
+   "sk": "Obálka s tímovým negatívom",
+   "en": "Envelope with the team negative"
+  },
+  "TEAMPHOTO": {
+   "key": "item.TEAMPHOTO.name",
+   "sk": "Fotografia družstva",
+   "en": "Team photo"
+  },
+  "SCORE": {
+   "key": "item.SCORE.name",
+   "sk": "Noty k Emilovej skladbe",
+   "en": "Sheet music for Emil’s song"
+  },
+  "CHALK": {
+   "key": "item.CHALK.name",
+   "sk": "Biela školská krieda",
+   "en": "White school chalk"
+  },
+  "SEEDS": {
+   "key": "item.SEEDS.name",
+   "sk": "Hrsť semien pre Bélu",
+   "en": "Handful of seed for Béla"
+  },
+  "PLAY": {
+   "key": "item.PLAY.name",
+   "sk": "Rudov scenár",
+   "en": "Rudo’s script"
+  },
+  "DELIVERY_NOTE": {
+   "key": "item.DELIVERY_NOTE.name",
+   "sk": "Očkova doručovacia požiadavka",
+   "en": "Očko’s delivery request"
+  },
+  "DELIVERY_OK": {
+   "key": "item.DELIVERY_OK.name",
+   "sk": "Potvrdenie opravovne",
+   "en": "Workshop’s confirmation"
+  },
+  "PHOTO2020": {
+   "key": "item.PHOTO2020.name",
+   "sk": "Chránená fotografia dvora 2020",
+   "en": "Protected photo of the 2020 yard"
+  },
+  "SCHOOLPASS": {
+   "key": "item.SCHOOLPASS.name",
+   "sk": "Povolenie prevziať Mirin technický majetok",
+   "en": "Permit to collect Mira’s equipment"
+  },
+  "LOG1982": {
+   "key": "item.LOG1982.name",
+   "sk": "Kópia servisného záznamu 1982",
+   "en": "Copy of the 1982 service record"
+  },
+  "PARTSNOTE": {
+   "key": "item.PARTSNOTE.name",
+   "sk": "Otov školský výdajný lístok",
+   "en": "Oto’s school requisition slip"
+  },
+  "CERAMICPARTS": {
+   "key": "item.CERAMICPARTS.name",
+   "sk": "Diely návratového mostíka",
+   "en": "Return bridge parts"
+  },
+  "BRIDGE_NEW": {
+   "key": "item.BRIDGE_NEW.name",
+   "sk": "Nový keramický mostík",
+   "en": "New ceramic bridge"
+  },
+  "JAR": {
+   "key": "item.JAR.name",
+   "sk": "Pohár s viečkom a tesnením",
+   "en": "Jar with lid and seal"
+  },
+  "SEALED_NEW": {
+   "key": "item.SEALED_NEW.name",
+   "sk": "Zapečatený pohár s mostíkom",
+   "en": "Sealed jar with the bridge"
+  },
+  "TREEGUARD": {
+   "key": "item.TREEGUARD.name",
+   "sk": "Ochranná ohrádka pre lipu",
+   "en": "Guard for the lime tree"
+  },
+  "CACHEMAP": {
+   "key": "item.CACHEMAP.name",
+   "sk": "Nákres servisnej dutiny",
+   "en": "Sketch of the service cavity"
+  },
+  "KEEPERNOTE": {
+   "key": "item.KEEPERNOTE.name",
+   "sk": "Tónova poznámka z roku 1995",
+   "en": "Tóno’s note from 1995"
+  },
+  "SEALED_OLD": {
+   "key": "item.SEALED_OLD.name",
+   "sk": "Pohár vyzdvihnutý po 38 rokoch",
+   "en": "Jar recovered after 38 years"
+  },
+  "RETURNBRIDGE": {
+   "key": "item.RETURNBRIDGE.name",
+   "sk": "Zachovaný návratový mostík",
+   "en": "Preserved return bridge"
+  },
+  "LIFT_TICKET": {
+   "key": "item.LIFT_TICKET.name",
+   "sk": "Spiatočný lístok na oba úseky",
+   "en": "Return ticket for both sections"
+  },
+  "JANA_DRAWING": {
+   "key": "item.JANA_DRAWING.name",
+   "sk": "Janina pôvodná schéma",
+   "en": "Jana’s original schematic"
+  },
+  "JANA_APPROVED": {
+   "key": "item.JANA_APPROVED.name",
+   "sk": "Schéma s povolením na výstavku",
+   "en": "Exhibition-approved schematic"
+  },
+  "BELL_MUTE": {
+   "key": "item.BELL_MUTE.name",
+   "sk": "Triedny zvonček bez pútka",
+   "en": "Class bell without its loop"
+  },
+  "ZUZA_SLIP": {
+   "key": "item.ZUZA_SLIP.name",
+   "sk": "Zuzanin lístok",
+   "en": "Zuzana’s slip"
+  },
+  "STRAP": {
+   "key": "item.STRAP.name",
+   "sk": "Kožený odrezok",
+   "en": "Leather offcut"
+  },
+  "BELL_FIXED": {
+   "key": "item.BELL_FIXED.name",
+   "sk": "Opravený triedny zvonček",
+   "en": "Mended class bell"
+  },
+  "BELLCAP": {
+   "key": "item.BELLCAP.name",
+   "sk": "Vrchnák zvončeka",
+   "en": "Bell cap"
+  }
+ },
+ "quests": {
+  "M01": {
+   "key": "quest.M01.title",
+   "sk": "Nákup pre babku",
+   "en": "Shopping for Gran"
+  },
+  "M02": {
+   "key": "quest.M02.title",
+   "sk": "Prístroj v záhrade",
+   "en": "The Device in the Garden"
+  },
+  "M03": {
+   "key": "quest.M03.title",
+   "sk": "Späť v škole",
+   "en": "Back at School"
+  },
+  "M04": {
+   "key": "quest.M04.title",
+   "sk": "Mechanika kazety",
+   "en": "The Cassette Deck"
+  },
+  "M05": {
+   "key": "quest.M05.title",
+   "sk": "Hlasy sa nerušia",
+   "en": "No Interference",
+   "note": "Slovak ‘nerušiť’ = interfere / do not disturb; English keeps the technical sense"
+  },
+  "M06": {
+   "key": "quest.M06.title",
+   "sk": "Mapa v troch kusoch",
+   "en": "A Map in Three Pieces"
+  },
+  "M07": {
+   "key": "quest.M07.title",
+   "sk": "Rytmus na Dunaji",
+   "en": "Rhythm on the Danube"
+  },
+  "M08": {
+   "key": "quest.M08.title",
+   "sk": "Dielňa v Ivanke",
+   "en": "The Workshop in Ivanka"
+  },
+  "M09": {
+   "key": "quest.M09.title",
+   "sk": "Pôvodná veta",
+   "en": "The Original Words"
+  },
+  "M10": {
+   "key": "quest.M10.title",
+   "sk": "Dokument musí prežiť",
+   "en": "The Document Must Survive"
+  },
+  "M11A": {
+   "key": "quest.M11A.title",
+   "sk": "Tá istá škola o štvrťstoročie neskôr",
+   "en": "The Same School, 25 Years Later",
+   "note": "‘štvrťstoročie’ is the quarter-century; digits keep the title short"
+  },
+  "M11B": {
+   "key": "quest.M11B.title",
+   "sk": "Človek, ktorý si to zapamätá",
+   "en": "Someone Who’ll Remember"
+  },
+  "M11C": {
+   "key": "quest.M11C.title",
+   "sk": "Tridsaťosem rokov v jednom pohári",
+   "en": "Thirty-Eight Years in a Jar"
+  },
+  "M11D": {
+   "key": "quest.M11D.title",
+   "sk": "Skutočné odovzdanie počas karantény",
+   "en": "A Real Handover in Quarantine"
+  },
+  "M12": {
+   "key": "quest.M12.title",
+   "sk": "Prístup do Atlasu",
+   "en": "Getting into Atlas"
+  },
+  "M13": {
+   "key": "quest.M13.title",
+   "sk": "Zastaviť zápis",
+   "en": "Stop the Write-Back",
+   "note": "zápis / spätný zápis = the write-back (§ 6)"
+  },
+  "M14": {
+   "key": "quest.M14.title",
+   "sk": "Čo z hlasu zostalo",
+   "en": "What Was Left of a Voice"
+  },
+  "M15": {
+   "key": "quest.M15.title",
+   "sk": "Štyria svedkovia",
+   "en": "Four Witnesses"
+  },
+  "Q1": {
+   "key": "quest.Q1.title",
+   "sk": "Bodka bez bodky",
+   "en": "Bodka Drops the Ball",
+   "note": "Slovak pun: Bodka (= dot) without his ‘dot’ (the red ball); English idiom ‘drop the ball’, literally true here"
+  },
+  "Q2": {
+   "key": "quest.Q2.title",
+   "sk": "Výveska pre všetkých",
+   "en": "A Notice Everyone Can Read"
+  },
+  "Q3": {
+   "key": "quest.Q3.title",
+   "sk": "Celý tím na jednej fotke",
+   "en": "The Whole Team in One Photo"
+  },
+  "Q4": {
+   "key": "quest.Q4.title",
+   "sk": "Štyri zastávky",
+   "en": "Four Stops"
+  },
+  "Q5": {
+   "key": "quest.Q5.title",
+   "sk": "Mapa rozsvietených okien",
+   "en": "A Map of Lit Windows"
+  },
+  "Q6": {
+   "key": "quest.Q6.title",
+   "sk": "Béla sa vracia",
+   "en": "Béla Comes Back",
+   "note": "echoes the password ‘The swallow comes back.’ exactly as the Slovak ‘Béla sa vracia’ / ‘Lastovička sa vracia’ do"
+  },
+  "Q7": {
+   "key": "quest.Q7.title",
+   "sk": "Žiaden strach, miláčik",
+   "en": "Never Fear, Darling"
+  },
+  "Q8": {
+   "key": "quest.Q8.title",
+   "sk": "Adresa nie je len súradnica",
+   "en": "An Address Isn’t Just Coordinates"
+  },
+  "Q9": {
+   "key": "quest.Q9.title",
+   "sk": "Nápad mimo predlohy",
+   "en": "Not by the Book",
+   "note": "predloha / schválený vzor = the approved model; idiom ‘by the book’"
+  },
+  "Q10": {
+   "key": "quest.Q10.title",
+   "sk": "Prvý posledný zvonec",
+   "en": "The First Last Bell",
+   "note": "keeps the paradox; Zuzana’s line ‘Last bell! And in September, the first one again.’"
+  },
+  "Q11": {
+   "key": "quest.Q11.title",
+   "sk": "Druhý posledný zvonec",
+   "en": "Another Last Bell",
+   "note": "not ‘The Second Last Bell’: in British English ‘second last’ means ‘penultimate’"
+  }
+ },
+ "cutscene_titles": {
+  "ui.journal.scene_cs01": {
+   "sk": "Prvý skok: Dúbravka 1995",
+   "en": "First Jump: Dúbravka 1995"
+  },
+  "ui.journal.scene_cs02": {
+   "sk": "Kazeta zo školského rozhlasu",
+   "en": "The Tape from the School PA"
+  },
+  "ui.journal.scene_cs03": {
+   "sk": "Cesta do Ivanky 1962",
+   "en": "The Road to Ivanka, 1962"
+  },
+  "ui.journal.scene_cs04": {
+   "sk": "Jeden predmet, veľa rúk",
+   "en": "One Object, Many Hands"
+  },
+  "ui.journal.scene_cs05": {
+   "sk": "Stopa vedie do Jasnej 2035",
+   "en": "The Trail Leads to Jasná, 2035"
+  },
+  "ui.journal.scene_cs06": {
+   "sk": "Leina správa",
+   "en": "Lea’s Message"
+  },
+  "ui.journal.scene_cs07": {
+   "sk": "Mená sú späť",
+   "en": "The Names Are Back"
+  },
+  "ui.journal.scene_cs08": {
+   "sk": "Lipa a múrik",
+   "en": "The Lime Tree and the Wall"
+  },
+  "ui.journal.scene_cs09": {
+   "sk": "Lanovkou na Chopok",
+   "en": "By Cable Car to Chopok"
+  }
+ },
+ "topic_labels": {
+  "G02": {
+   "key": "action.G02.label",
+   "sk": "Babkin nákup",
+   "en": "Gran’s shopping"
+  },
+  "G05": {
+   "key": "action.G05.label",
+   "sk": "Potrebuješ ešte niečo?",
+   "en": "Anything else you need?"
+  },
+  "B03": {
+   "key": "action.B03.label",
+   "sk": "Problém s chronometrom",
+   "en": "Trouble with the chronometer"
+  },
+  "B09": {
+   "key": "action.B09.label",
+   "sk": "Návlek na kábel",
+   "en": "A sleeve for the cable"
+  },
+  "B18": {
+   "key": "action.B18.label",
+   "sk": "Metronóm na meranie",
+   "en": "A metronome for measuring"
+  },
+  "I07": {
+   "key": "action.I07.label",
+   "sk": "Pumpa je opravená",
+   "en": "The pump’s mended"
+  },
+  "I09": {
+   "key": "action.I09.label",
+   "sk": "Mazanie výnimiek v budúcnosti",
+   "en": "What the future erases"
+  },
+  "I10": {
+   "key": "action.I10.label",
+   "sk": "Tupé rydlo",
+   "en": "The blunt stylus"
+  },
+  "C02": {
+   "key": "action.C02.label",
+   "sk": "Protokol k babkinej krabici",
+   "en": "A form for Gran’s box"
+  },
+  "F01": {
+   "key": "action.F01.label",
+   "sk": "Prichádzam kvôli fondu Z-17",
+   "en": "About collection Z-17"
+  },
+  "Q1A": {
+   "key": "action.Q1A.label",
+   "sk": "Čo je s Bodkom?",
+   "en": "What’s up with Bodka?"
+  },
+  "Q2A": {
+   "key": "action.Q2A.label",
+   "sk": "Pomôcť vám s oznamom?",
+   "en": "Help with the notice?"
+  },
+  "Q2B": {
+   "key": "action.Q2B.label",
+   "sk": "Máš oznam veľkým písmom?",
+   "en": "Got a notice in large print?"
+  },
+  "Q3A": {
+   "key": "action.Q3A.label",
+   "sk": "Hľadáš nejakú fotografiu?",
+   "en": "Looking for a photo?"
+  },
+  "Q3B": {
+   "key": "action.Q3B.label",
+   "sk": "Máte obálku pre školu?",
+   "en": "An envelope for the school?"
+  },
+  "Q4A": {
+   "key": "action.Q4A.label",
+   "sk": "Prečo tá melódia nekončí?",
+   "en": "Why doesn’t the tune end?"
+  },
+  "Q4B": {
+   "key": "action.Q4B.label",
+   "sk": "Máte Emilove noty?",
+   "en": "Have you got Emil’s music?"
+  },
+  "Q5A": {
+   "key": "action.Q5A.label",
+   "sk": "Čo chýba mape svetiel?",
+   "en": "What’s missing from the map?"
+  },
+  "Q5B": {
+   "key": "action.Q5B.label",
+   "sk": "Kúsok kriedy na panel?",
+   "en": "Chalk for the panel?"
+  },
+  "Q6A": {
+   "key": "action.Q6A.label",
+   "sk": "Kde je váš holub?",
+   "en": "Where’s your pigeon?"
+  },
+  "Q6B": {
+   "key": "action.Q6B.label",
+   "sk": "Krmivo pre Bélu",
+   "en": "Feed for Béla"
+  },
+  "Q6D": {
+   "key": "action.Q6D.label",
+   "sk": "Bélov návrat",
+   "en": "Béla’s return"
+  },
+  "Q7A": {
+   "key": "action.Q7A.label",
+   "sk": "Môžem pomôcť so scenárom?",
+   "en": "Can I help with the script?"
+  },
+  "Q8A": {
+   "key": "action.Q8A.label",
+   "sk": "Kam máte doručiť balík?",
+   "en": "Where’s the parcel going?"
+  },
+  "E05": {
+   "key": "action.E05.label",
+   "sk": "Suchý pohár pre školu",
+   "en": "A dry jar for the school"
+  },
+  "E07": {
+   "key": "action.E07.label",
+   "sk": "Ochrana mladej lipy",
+   "en": "Protecting the young lime"
+  },
+  "E10": {
+   "key": "action.E10.label",
+   "sk": "Zapíšete lipu aj múrik?",
+   "en": "Record the lime and the wall?"
+  },
+  "E11": {
+   "key": "action.E11.label",
+   "sk": "Heslo „Lastovička sa vracia“",
+   "en": "Password: ‘The swallow comes back’"
+  },
+  "Q9A": {
+   "key": "action.Q9A.label",
+   "sk": "Janin vlastný návrh",
+   "en": "Jana’s own design"
+  },
+  "Q9D": {
+   "key": "action.Q9D.label",
+   "sk": "Čo bolo s vašou schémou?",
+   "en": "What became of your schematic?"
+  },
+  "Q9E": {
+   "key": "action.Q9E.label",
+   "sk": "Čo robíte s notebookmi?",
+   "en": "What are the laptops for?"
+  },
+  "Q9F": {
+   "key": "action.Q9F.label",
+   "sk": "Jana, čo je s vašou schémou?",
+   "en": "Jana, how’s your schematic?"
+  },
+  "Q10A": {
+   "key": "action.Q10A.label",
+   "sk": "Zvonček, ktorý nezvoní",
+   "en": "The bell that won’t ring"
+  },
+  "Q11A": {
+   "key": "action.Q11A.label",
+   "sk": "Zvonček na bicykli",
+   "en": "The bell on the bike"
+  }
+ },
+ "hotspots": {
+  "S01.tools": {
+   "key": "hotspot.S01.tools.name",
+   "sk": "Servisná brašna",
+   "en": "Tool bag"
+  },
+  "S01.fuse": {
+   "key": "hotspot.S01.fuse.name",
+   "sk": "Zásuvka s poistkami",
+   "en": "Fuse drawer"
+  },
+  "S01.ambient 1": {
+   "key": "hotspot.S01.ambient 1.name",
+   "sk": "Hrniec so skrutkami",
+   "en": "Pot of screws"
+  },
+  "S01.ambient 2": {
+   "key": "hotspot.S01.ambient 2.name",
+   "sk": "Staré rádio",
+   "en": "Old radio"
+  },
+  "S02.ambient 1": {
+   "key": "hotspot.S02.ambient 1.name",
+   "sk": "Plotová ozdoba",
+   "en": "Fence ornament"
+  },
+  "S02.ambient 2": {
+   "key": "hotspot.S02.ambient 2.name",
+   "sk": "Schránka",
+   "en": "Letterbox"
+  },
+  "S02.ROMAN": {
+   "key": "hotspot.S02.ROMAN.name",
+   "sk": "Roman Kováč",
+   "en": "Roman Kováč"
+  },
+  "S02.LENKA": {
+   "key": "hotspot.S02.LENKA.name",
+   "sk": "Lenka Bartošová",
+   "en": "Lenka Bartošová"
+  },
+  "S03.supplies": {
+   "key": "hotspot.S03.supplies.name",
+   "sk": "Výdajný stôl",
+   "en": "Pick-up table"
+  },
+  "S03.ambient 1": {
+   "key": "hotspot.S03.ambient 1.name",
+   "sk": "Páska na zemi",
+   "en": "Floor tape"
+  },
+  "S03.ambient 2": {
+   "key": "hotspot.S03.ambient 2.name",
+   "sk": "Termoska",
+   "en": "Flask"
+  },
+  "S03.ELA": {
+   "key": "hotspot.S03.ELA.name",
+   "sk": "Ela Švecová",
+   "en": "Ela Švecová"
+  },
+  "S04.ambient 1": {
+   "key": "hotspot.S04.ambient 1.name",
+   "sk": "Cenovka",
+   "en": "Price card"
+  },
+  "S04.ambient 2": {
+   "key": "hotspot.S04.ambient 2.name",
+   "sk": "Zemiaky",
+   "en": "Potatoes"
+  },
+  "S04.DANA": {
+   "key": "hotspot.S04.DANA.name",
+   "sk": "Dana Valová",
+   "en": "Dana Valová"
+  },
+  "S05.tray": {
+   "key": "hotspot.S05.tray.name",
+   "sk": "Stolík pred bránkou",
+   "en": "Table by the gate"
+  },
+  "S05.shed_door": {
+   "key": "hotspot.S05.shed_door.name",
+   "sk": "Dvere záhradnej dielne",
+   "en": "Garden workshop door"
+  },
+  "S05.ambient 1": {
+   "key": "hotspot.S05.ambient 1.name",
+   "sk": "Vinič",
+   "en": "Grapevine"
+  },
+  "S05.ambient 2": {
+   "key": "hotspot.S05.ambient 2.name",
+   "sk": "Rohožka",
+   "en": "Doormat"
+  },
+  "S06.photo": {
+   "key": "hotspot.S06.photo.name",
+   "sk": "Rodinná fotografia za oknom",
+   "en": "Family photo behind the window"
+  },
+  "S06.ambient 1": {
+   "key": "hotspot.S06.ambient 1.name",
+   "sk": "Muškát",
+   "en": "Geranium"
+  },
+  "S06.ambient 2": {
+   "key": "hotspot.S06.ambient 2.name",
+   "sk": "Záclona",
+   "en": "Net curtain"
+  },
+  "S06.MIRA20": {
+   "key": "hotspot.S06.MIRA20.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "S07.board": {
+   "key": "hotspot.S07.board.name",
+   "sk": "Komunitná výveska",
+   "en": "Community notice board"
+  },
+  "S07.ambient 1": {
+   "key": "hotspot.S07.ambient 1.name",
+   "sk": "Plagát krúžku",
+   "en": "Club poster"
+  },
+  "S07.ambient 2": {
+   "key": "hotspot.S07.ambient 2.name",
+   "sk": "Lupa",
+   "en": "Magnifying glass"
+  },
+  "S07.JOZEF": {
+   "key": "hotspot.S07.JOZEF.name",
+   "sk": "Jozef Mlynár",
+   "en": "Jozef Mlynár"
+  },
+  "S08.ball": {
+   "key": "hotspot.S08.ball.name",
+   "sk": "Červená loptička",
+   "en": "Red ball"
+  },
+  "S08.ambient 1": {
+   "key": "hotspot.S08.ambient 1.name",
+   "sk": "Kačka",
+   "en": "Duck"
+  },
+  "S08.ambient 2": {
+   "key": "hotspot.S08.ambient 2.name",
+   "sk": "Lavička",
+   "en": "Bench"
+  },
+  "S09.case": {
+   "key": "hotspot.S09.case.name",
+   "sk": "Mosadzné puzdro",
+   "en": "Brass case"
+  },
+  "S09.ambient 1": {
+   "key": "hotspot.S09.ambient 1.name",
+   "sk": "Lyže",
+   "en": "Skis"
+  },
+  "S09.ambient 2": {
+   "key": "hotspot.S09.ambient 2.name",
+   "sk": "Školský glóbus",
+   "en": "School globe"
+  },
+  "S10.chrono": {
+   "key": "hotspot.S10.chrono.name",
+   "sk": "Stolový uzol ZVON",
+   "en": "ZVON base node"
+  },
+  "S10.panel": {
+   "key": "hotspot.S10.panel.name",
+   "sk": "Tvarový prepojovací panel",
+   "en": "Shape patch panel"
+  },
+  "S10.ambient 1": {
+   "key": "hotspot.S10.ambient 1.name",
+   "sk": "Pohár na ceruzky",
+   "en": "Pencil pot"
+  },
+  "S10.ambient 2": {
+   "key": "hotspot.S10.ambient 2.name",
+   "sk": "Varovná cedulka",
+   "en": "Warning card"
+  },
+  "S11.ambient 1": {
+   "key": "hotspot.S11.ambient 1.name",
+   "sk": "Cestovný poriadok",
+   "en": "Timetable"
+  },
+  "S11.ambient 2": {
+   "key": "hotspot.S11.ambient 2.name",
+   "sk": "Žuvačka pod lavičkou",
+   "en": "Chewing gum under the bench"
+  },
+  "S12.notice": {
+   "key": "hotspot.S12.notice.name",
+   "sk": "Nástenka krúžku",
+   "en": "Club notice board"
+  },
+  "S12.ambient 1": {
+   "key": "hotspot.S12.ambient 1.name",
+   "sk": "Betónový kvetináč",
+   "en": "Concrete planter"
+  },
+  "S12.ambient 2": {
+   "key": "hotspot.S12.ambient 2.name",
+   "sk": "Školský erb",
+   "en": "School crest"
+  },
+  "S13.ambient 1": {
+   "key": "hotspot.S13.ambient 1.name",
+   "sk": "Prezuvky",
+   "en": "Indoor shoes"
+  },
+  "S13.ambient 2": {
+   "key": "hotspot.S13.ambient 2.name",
+   "sk": "Zväzok kľúčov",
+   "en": "Bunch of keys"
+  },
+  "S13.TONO": {
+   "key": "hotspot.S13.TONO.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "S14.ambient 1": {
+   "key": "hotspot.S14.ambient 1.name",
+   "sk": "Zelená tabuľa",
+   "en": "Green chalkboard"
+  },
+  "S14.ambient 2": {
+   "key": "hotspot.S14.ambient 2.name",
+   "sk": "Hubka",
+   "en": "Board sponge"
+  },
+  "S14.MIRA95": {
+   "key": "hotspot.S14.MIRA95.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "S14.LEA95": {
+   "key": "hotspot.S14.LEA95.name",
+   "sk": "Lea Kormanová",
+   "en": "Lea Kormanová"
+  },
+  "S15.register": {
+   "key": "hotspot.S15.register.name",
+   "sk": "Darovací záznam",
+   "en": "Donation record"
+  },
+  "S15.ambient 1": {
+   "key": "hotspot.S15.ambient 1.name",
+   "sk": "Model oka",
+   "en": "Model eye"
+  },
+  "S15.ambient 2": {
+   "key": "hotspot.S15.ambient 2.name",
+   "sk": "Sklenený hranol",
+   "en": "Glass prism"
+  },
+  "S15.JANA95": {
+   "key": "hotspot.S15.JANA95.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "S16.deck": {
+   "key": "hotspot.S16.deck.name",
+   "sk": "Kazetový mechanizmus",
+   "en": "Cassette deck"
+  },
+  "S16.socket": {
+   "key": "hotspot.S16.socket.name",
+   "sk": "Servisný zvukový vstup",
+   "en": "Service audio input"
+  },
+  "S16.ambient 1": {
+   "key": "hotspot.S16.ambient 1.name",
+   "sk": "Mikrofón",
+   "en": "Microphone"
+  },
+  "S16.ambient 2": {
+   "key": "hotspot.S16.ambient 2.name",
+   "sk": "Hlásenie jedálne",
+   "en": "Canteen announcement"
+  },
+  "S17.rhythm": {
+   "key": "hotspot.S17.rhythm.name",
+   "sk": "Výtvarný panel",
+   "en": "Art panel"
+  },
+  "S17.ambient 1": {
+   "key": "hotspot.S17.ambient 1.name",
+   "sk": "Basketbalový kôš",
+   "en": "Basketball hoop"
+  },
+  "S17.ambient 2": {
+   "key": "hotspot.S17.ambient 2.name",
+   "sk": "Lipa",
+   "en": "Lime tree"
+  },
+  "S17.SONA": {
+   "key": "hotspot.S17.SONA.name",
+   "sk": "Soňa Urbanová",
+   "en": "Soňa Urbanová"
+  },
+  "S18.ambient 1": {
+   "key": "hotspot.S18.ambient 1.name",
+   "sk": "Žuvačkové obaly",
+   "en": "Gum wrappers"
+  },
+  "S18.ambient 2": {
+   "key": "hotspot.S18.ambient 2.name",
+   "sk": "Noviny",
+   "en": "Newspapers"
+  },
+  "S18.ZITA": {
+   "key": "hotspot.S18.ZITA.name",
+   "sk": "Zita Ondrušová",
+   "en": "Zita Ondrušová"
+  },
+  "S19.ambient 1": {
+   "key": "hotspot.S19.ambient 1.name",
+   "sk": "Puzdro harmoniky",
+   "en": "Accordion case"
+  },
+  "S19.ambient 2": {
+   "key": "hotspot.S19.ambient 2.name",
+   "sk": "Papierový pohár",
+   "en": "Paper cup"
+  },
+  "S19.EMIL": {
+   "key": "hotspot.S19.EMIL.name",
+   "sk": "Emil Belan",
+   "en": "Emil Belan"
+  },
+  "S20.ambient 1": {
+   "key": "hotspot.S20.ambient 1.name",
+   "sk": "Televízor",
+   "en": "Television"
+  },
+  "S20.ambient 2": {
+   "key": "hotspot.S20.ambient 2.name",
+   "sk": "Ceduľa o opravách",
+   "en": "Repairs sign"
+  },
+  "S20.PALI": {
+   "key": "hotspot.S20.PALI.name",
+   "sk": "Pavol Drobný",
+   "en": "Pavol Drobný"
+  },
+  "S21.map": {
+   "key": "hotspot.S21.map.name",
+   "sk": "Mapa mesta",
+   "en": "City map"
+  },
+  "S21.ambient 1": {
+   "key": "hotspot.S21.ambient 1.name",
+   "sk": "Holub",
+   "en": "Pigeon"
+  },
+  "S21.ambient 2": {
+   "key": "hotspot.S21.ambient 2.name",
+   "sk": "Skladaná mapa",
+   "en": "Folding map"
+  },
+  "S22.ambient 1": {
+   "key": "hotspot.S22.ambient 1.name",
+   "sk": "Rebrík",
+   "en": "Ladder"
+  },
+  "S22.ambient 2": {
+   "key": "hotspot.S22.ambient 2.name",
+   "sk": "Kniha o upratovaní",
+   "en": "Book about tidying"
+  },
+  "S22.VIERA": {
+   "key": "hotspot.S22.VIERA.name",
+   "sk": "Viera Holubová",
+   "en": "Viera Holubová"
+  },
+  "S23.ambient 1": {
+   "key": "hotspot.S23.ambient 1.name",
+   "sk": "Pečiatka",
+   "en": "Rubber stamp"
+  },
+  "S23.ambient 2": {
+   "key": "hotspot.S23.ambient 2.name",
+   "sk": "Hodiny",
+   "en": "Clock"
+  },
+  "S23.ARCHIVAR": {
+   "key": "hotspot.S23.ARCHIVAR.name",
+   "sk": "Karol Merta",
+   "en": "Karol Merta"
+  },
+  "S24.ambient 1": {
+   "key": "hotspot.S24.ambient 1.name",
+   "sk": "Rodinný portrét",
+   "en": "Family portrait"
+  },
+  "S24.ambient 2": {
+   "key": "hotspot.S24.ambient 2.name",
+   "sk": "Šnúra na fotky",
+   "en": "Drying line"
+  },
+  "S24.FOTO": {
+   "key": "hotspot.S24.FOTO.name",
+   "sk": "Alena Svobodová",
+   "en": "Alena Svobodová"
+  },
+  "S25.scale": {
+   "key": "hotspot.S25.scale.name",
+   "sk": "Zaseknutá stolová váha",
+   "en": "Jammed counter scales"
+  },
+  "S25.ambient 1": {
+   "key": "hotspot.S25.ambient 1.name",
+   "sk": "Petržlen",
+   "en": "Parsley"
+  },
+  "S25.ambient 2": {
+   "key": "hotspot.S25.ambient 2.name",
+   "sk": "Slnečník",
+   "en": "Parasol"
+  },
+  "S25.TRH": {
+   "key": "hotspot.S25.TRH.name",
+   "sk": "Fero Lánik",
+   "en": "Fero Lánik"
+  },
+  "S26.ambient 1": {
+   "key": "hotspot.S26.ambient 1.name",
+   "sk": "Figurína",
+   "en": "Tailor’s dummy"
+  },
+  "S26.ambient 2": {
+   "key": "hotspot.S26.ambient 2.name",
+   "sk": "Krabica gombíkov",
+   "en": "Box of buttons"
+  },
+  "S26.MILADA": {
+   "key": "hotspot.S26.MILADA.name",
+   "sk": "Milada Kyselová",
+   "en": "Milada Kyselová"
+  },
+  "S27.ambient 1": {
+   "key": "hotspot.S27.ambient 1.name",
+   "sk": "Plagát kapely",
+   "en": "Band poster"
+  },
+  "S27.ambient 2": {
+   "key": "hotspot.S27.ambient 2.name",
+   "sk": "Puzdro bez kazety",
+   "en": "Empty cassette case"
+  },
+  "S27.JURO": {
+   "key": "hotspot.S27.JURO.name",
+   "sk": "Juro Kazeta",
+   "en": "Juro Cassette"
+  },
+  "S28.mural": {
+   "key": "hotspot.S28.mural.name",
+   "sk": "Povolený výtvarný panel",
+   "en": "Permitted art panel"
+  },
+  "S28.ambient 1": {
+   "key": "hotspot.S28.ambient 1.name",
+   "sk": "Kachličky",
+   "en": "Tiles"
+  },
+  "S28.ambient 2": {
+   "key": "hotspot.S28.ambient 2.name",
+   "sk": "Skateboard",
+   "en": "Skateboard"
+  },
+  "S28.JURAJ": {
+   "key": "hotspot.S28.JURAJ.name",
+   "sk": "Juraj Križan",
+   "en": "Juraj Križan"
+  },
+  "S29.ambient 1": {
+   "key": "hotspot.S29.ambient 1.name",
+   "sk": "Anténa",
+   "en": "Aerial"
+  },
+  "S29.ambient 2": {
+   "key": "hotspot.S29.ambient 2.name",
+   "sk": "Stolička",
+   "en": "Stool"
+  },
+  "S29.DEZI": {
+   "key": "hotspot.S29.DEZI.name",
+   "sk": "Dezider Kováč",
+   "en": "Dezider Kováč"
+  },
+  "S30.coil": {
+   "key": "hotspot.S30.coil.name",
+   "sk": "Držiak meracej cievky",
+   "en": "Measuring coil holder"
+  },
+  "S30.metro": {
+   "key": "hotspot.S30.metro.name",
+   "sk": "Stolík s rytmickou značkou",
+   "en": "Table with the rhythm mark"
+  },
+  "S30.dial": {
+   "key": "hotspot.S30.dial.name",
+   "sk": "Tri kalibračné číslice",
+   "en": "Three calibration digits"
+  },
+  "S30.ambient 1": {
+   "key": "hotspot.S30.ambient 1.name",
+   "sk": "Loď",
+   "en": "Boat"
+  },
+  "S30.ambient 2": {
+   "key": "hotspot.S30.ambient 2.name",
+   "sk": "Zábradlie",
+   "en": "Railing"
+  },
+  "S31.ambient 1": {
+   "key": "hotspot.S31.ambient 1.name",
+   "sk": "Batožinový vozík",
+   "en": "Luggage trolley"
+  },
+  "S31.ambient 2": {
+   "key": "hotspot.S31.ambient 2.name",
+   "sk": "Mechanické hodiny",
+   "en": "Mechanical clock"
+  },
+  "S31.BOZO": {
+   "key": "hotspot.S31.BOZO.name",
+   "sk": "Božidar Fiala",
+   "en": "Božidar Fiala"
+  },
+  "S32.ambient 1": {
+   "key": "hotspot.S32.ambient 1.name",
+   "sk": "Kryt studne",
+   "en": "Well cover"
+  },
+  "S32.ambient 2": {
+   "key": "hotspot.S32.ambient 2.name",
+   "sk": "Bicykel",
+   "en": "Bicycle"
+  },
+  "S32.BERTA": {
+   "key": "hotspot.S32.BERTA.name",
+   "sk": "Berta Kovárová",
+   "en": "Berta Kovárová"
+  },
+  "S32.chalk_arrow": {
+   "key": "hotspot.S32.chalk_arrow.name",
+   "sk": "Kriedová šípka",
+   "en": "Chalk arrow"
+  },
+  "S33.carbon": {
+   "key": "hotspot.S33.carbon.name",
+   "sk": "Uhľový papier",
+   "en": "Carbon paper"
+  },
+  "S33.ambient 1": {
+   "key": "hotspot.S33.ambient 1.name",
+   "sk": "Známky",
+   "en": "Stamps"
+  },
+  "S33.ambient 2": {
+   "key": "hotspot.S33.ambient 2.name",
+   "sk": "Kalendár",
+   "en": "Calendar"
+  },
+  "S33.POSTA": {
+   "key": "hotspot.S33.POSTA.name",
+   "sk": "Alojz Baran",
+   "en": "Alojz Baran"
+  },
+  "S34.clamp": {
+   "key": "hotspot.S34.clamp.name",
+   "sk": "Svorka kulisy",
+   "en": "Stage flat clamp"
+  },
+  "S34.ambient 1": {
+   "key": "hotspot.S34.ambient 1.name",
+   "sk": "Kulisa lesa",
+   "en": "Forest flat"
+  },
+  "S34.ambient 2": {
+   "key": "hotspot.S34.ambient 2.name",
+   "sk": "Klobúk",
+   "en": "Hat"
+  },
+  "S34.LIDA": {
+   "key": "hotspot.S34.LIDA.name",
+   "sk": "Lída Fialová",
+   "en": "Lída Fialová"
+  },
+  "S34.RUDO": {
+   "key": "hotspot.S34.RUDO.name",
+   "sk": "Rudolf Pavlík",
+   "en": "Rudolf Pavlík"
+  },
+  "S35.ambient 1": {
+   "key": "hotspot.S35.ambient 1.name",
+   "sk": "Vrece obilia",
+   "en": "Sack of grain"
+  },
+  "S35.ambient 2": {
+   "key": "hotspot.S35.ambient 2.name",
+   "sk": "Ručný vozík",
+   "en": "Handcart"
+  },
+  "S35.SKLAD": {
+   "key": "hotspot.S35.SKLAD.name",
+   "sk": "Štefan Haluška",
+   "en": "Štefan Haluška"
+  },
+  "S36.ambient 1": {
+   "key": "hotspot.S36.ambient 1.name",
+   "sk": "Pilník",
+   "en": "File"
+  },
+  "S36.ambient 2": {
+   "key": "hotspot.S36.ambient 2.name",
+   "sk": "Štyri budíky",
+   "en": "Four alarm clocks"
+  },
+  "S36.OTO": {
+   "key": "hotspot.S36.OTO.name",
+   "sk": "Oto Bielik",
+   "en": "Oto Bielik"
+  },
+  "S37.bird": {
+   "key": "hotspot.S37.bird.name",
+   "sk": "Poštový holub",
+   "en": "Carrier pigeon"
+  },
+  "S37.ambient 1": {
+   "key": "hotspot.S37.ambient 1.name",
+   "sk": "Lavička",
+   "en": "Bench"
+  },
+  "S37.ambient 2": {
+   "key": "hotspot.S37.ambient 2.name",
+   "sk": "Kaštieľ",
+   "en": "Manor house"
+  },
+  "S37.VERA60": {
+   "key": "hotspot.S37.VERA60.name",
+   "sk": "Vera Nemcová",
+   "en": "Vera Nemcová"
+  },
+  "S37.ZUZANA": {
+   "key": "hotspot.S37.ZUZANA.name",
+   "sk": "Zuzana",
+   "en": "Zuzana"
+  },
+  "S37.hopscotch": {
+   "key": "hotspot.S37.hopscotch.name",
+   "sk": "Kriedová škôlka",
+   "en": "Chalk hopscotch"
+  },
+  "S38.pump": {
+   "key": "hotspot.S38.pump.name",
+   "sk": "Demonštračná ručná pumpa",
+   "en": "Demonstration hand pump"
+  },
+  "S38.door": {
+   "key": "hotspot.S38.door.name",
+   "sk": "Dvere meracej miestnosti",
+   "en": "Measuring room door"
+  },
+  "S38.ambient 1": {
+   "key": "hotspot.S38.ambient 1.name",
+   "sk": "Vedro",
+   "en": "Bucket"
+  },
+  "S38.ambient 2": {
+   "key": "hotspot.S38.ambient 2.name",
+   "sk": "Tráva",
+   "en": "Grass"
+  },
+  "S38.paper_boat": {
+   "key": "hotspot.S38.paper_boat.name",
+   "sk": "Papierová loďka",
+   "en": "Paper boat"
+  },
+  "S39.plate": {
+   "key": "hotspot.S39.plate.name",
+   "sk": "Kalibračná mosadzná platňa",
+   "en": "Brass calibration plate"
+  },
+  "S39.ambient 1": {
+   "key": "hotspot.S39.ambient 1.name",
+   "sk": "Lampa",
+   "en": "Lamp"
+  },
+  "S39.ambient 2": {
+   "key": "hotspot.S39.ambient 2.name",
+   "sk": "Zápisník na stole",
+   "en": "Notebook on the table"
+  },
+  "S39.MIRA60": {
+   "key": "hotspot.S39.MIRA60.name",
+   "sk": "Mira Hrušková",
+   "en": "Mira Hrušková"
+  },
+  "S40.paper": {
+   "key": "hotspot.S40.paper.name",
+   "sk": "Voskovaný papier",
+   "en": "Waxed paper"
+  },
+  "S40.box": {
+   "key": "hotspot.S40.box.name",
+   "sk": "Kovová archívna schránka",
+   "en": "Metal archive box"
+  },
+  "S40.script": {
+   "key": "hotspot.S40.script.name",
+   "sk": "Ochotnícky scenár",
+   "en": "Amateur dramatics script"
+  },
+  "S40.ambient 1": {
+   "key": "hotspot.S40.ambient 1.name",
+   "sk": "Starý kufor",
+   "en": "Old suitcase"
+  },
+  "S40.ambient 2": {
+   "key": "hotspot.S40.ambient 2.name",
+   "sk": "Trám",
+   "en": "Roof beam"
+  },
+  "S41.ambient 1": {
+   "key": "hotspot.S41.ambient 1.name",
+   "sk": "Lavičky",
+   "en": "Benches"
+  },
+  "S41.ambient 2": {
+   "key": "hotspot.S41.ambient 2.name",
+   "sk": "Tabuľa smerov",
+   "en": "Signpost"
+  },
+  "S41.ROBOT": {
+   "key": "hotspot.S41.ROBOT.name",
+   "sk": "Doručovací robot Očko",
+   "en": "Očko the delivery robot"
+  },
+  "S41.gate": {
+   "key": "hotspot.S41.gate.name",
+   "sk": "Čítačka platného lístka",
+   "en": "Ticket reader"
+  },
+  "S42.ambient 1": {
+   "key": "hotspot.S42.ambient 1.name",
+   "sk": "Zasnežený smrek",
+   "en": "Snowy spruce"
+  },
+  "S42.ambient 2": {
+   "key": "hotspot.S42.ambient 2.name",
+   "sk": "Batožinový vozík",
+   "en": "Luggage trolley"
+  },
+  "S42.NINA": {
+   "key": "hotspot.S42.NINA.name",
+   "sk": "Nina Švecová",
+   "en": "Nina Švecová"
+  },
+  "S43.ambient 1": {
+   "key": "hotspot.S43.ambient 1.name",
+   "sk": "Kávovar",
+   "en": "Coffee machine"
+  },
+  "S43.ambient 2": {
+   "key": "hotspot.S43.ambient 2.name",
+   "sk": "Police súčiastok",
+   "en": "Parts shelves"
+  },
+  "S43.TAMARA": {
+   "key": "hotspot.S43.TAMARA.name",
+   "sk": "Tamara Kráľová",
+   "en": "Tamara Kráľová"
+  },
+  "S44.ambient 1": {
+   "key": "hotspot.S44.ambient 1.name",
+   "sk": "Papierové knihy",
+   "en": "Paper books"
+  },
+  "S44.ambient 2": {
+   "key": "hotspot.S44.ambient 2.name",
+   "sk": "Záložka",
+   "en": "Bookmark"
+  },
+  "S44.BORIS": {
+   "key": "hotspot.S44.BORIS.name",
+   "sk": "Boris Urban",
+   "en": "Boris Urban"
+  },
+  "S44.JANA35": {
+   "key": "hotspot.S44.JANA35.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "S45.sensor": {
+   "key": "hotspot.S45.sensor.name",
+   "sk": "Pasívny stojan pri chodníku",
+   "en": "Passive stand by the path"
+  },
+  "S45.bench": {
+   "key": "hotspot.S45.bench.name",
+   "sk": "Lavička so psom",
+   "en": "Bench with the dog"
+  },
+  "S45.ambient 1": {
+   "key": "hotspot.S45.ambient 1.name",
+   "sk": "Zamrznuté pleso",
+   "en": "Frozen lake"
+  },
+  "S45.ambient 2": {
+   "key": "hotspot.S45.ambient 2.name",
+   "sk": "Turistické značenie",
+   "en": "Trail marker"
+  },
+  "S46.ambient 1": {
+   "key": "hotspot.S46.ambient 1.name",
+   "sk": "Návštevnícky poriadok",
+   "en": "Visitor rules"
+  },
+  "S46.ambient 2": {
+   "key": "hotspot.S46.ambient 2.name",
+   "sk": "Fikus",
+   "en": "Ficus"
+  },
+  "S46.SARA": {
+   "key": "hotspot.S46.SARA.name",
+   "sk": "Sára Vrbová",
+   "en": "Sára Vrbová"
+  },
+  "S47.filter": {
+   "key": "hotspot.S47.filter.name",
+   "sk": "Panel normalizácie",
+   "en": "Normalisation panel"
+  },
+  "S47.ambient 1": {
+   "key": "hotspot.S47.ambient 1.name",
+   "sk": "Prázdny rám",
+   "en": "Empty frame"
+  },
+  "S47.ambient 2": {
+   "key": "hotspot.S47.ambient 2.name",
+   "sk": "Vitrína zvončeka",
+   "en": "Bell display case"
+  },
+  "S48.terminal": {
+   "key": "hotspot.S48.terminal.name",
+   "sk": "Servisný terminál",
+   "en": "Service terminal"
+  },
+  "S48.ambient 1": {
+   "key": "hotspot.S48.ambient 1.name",
+   "sk": "Káble",
+   "en": "Cables"
+  },
+  "S48.ambient 2": {
+   "key": "hotspot.S48.ambient 2.name",
+   "sk": "Papierová poznámka",
+   "en": "Paper note"
+  },
+  "S49.port_origin": {
+   "key": "hotspot.S49.port_origin.name",
+   "sk": "Port Pôvod",
+   "en": "Origin port"
+  },
+  "S49.port_voice": {
+   "key": "hotspot.S49.port_voice.name",
+   "sk": "Port Hlas",
+   "en": "Voice port"
+  },
+  "S49.port_consent": {
+   "key": "hotspot.S49.port_consent.name",
+   "sk": "Port Súhlas",
+   "en": "Consent port"
+  },
+  "S49.port_return": {
+   "key": "hotspot.S49.port_return.name",
+   "sk": "Port Návrat",
+   "en": "Return port"
+  },
+  "S49.confirm": {
+   "key": "hotspot.S49.confirm.name",
+   "sk": "Panel obnovy",
+   "en": "Restore panel"
+  },
+  "S49.ambient 1": {
+   "key": "hotspot.S49.ambient 1.name",
+   "sk": "Pohár vody",
+   "en": "Glass of water"
+  },
+  "S49.ambient 2": {
+   "key": "hotspot.S49.ambient 2.name",
+   "sk": "Núdzová lampa",
+   "en": "Emergency lamp"
+  },
+  "S49.VIKTOR": {
+   "key": "hotspot.S49.VIKTOR.name",
+   "sk": "Viktor Korman",
+   "en": "Viktor Korman"
+  },
+  "S50.switch": {
+   "key": "hotspot.S50.switch.name",
+   "sk": "Prepínač zápisu",
+   "en": "Write switch"
+  },
+  "S50.ambient 1": {
+   "key": "hotspot.S50.ambient 1.name",
+   "sk": "Tatry",
+   "en": "The Tatras"
+  },
+  "S50.ambient 2": {
+   "key": "hotspot.S50.ambient 2.name",
+   "sk": "Plné zábradlie",
+   "en": "Solid railing"
+  },
+  "S50.bridge": {
+   "key": "hotspot.S50.bridge.name",
+   "sk": "Oddelený návratový konektor Atlasu",
+   "en": "Atlas’s separate return connector"
+  },
+  "S51.clock": {
+   "key": "hotspot.S51.clock.name",
+   "sk": "Rám starých hodín",
+   "en": "Old clock frame"
+  },
+  "S51.ambient 1": {
+   "key": "hotspot.S51.ambient 1.name",
+   "sk": "Starý obrubník",
+   "en": "Old kerb"
+  },
+  "S51.ambient 2": {
+   "key": "hotspot.S51.ambient 2.name",
+   "sk": "Elektronická tabuľa",
+   "en": "Electronic departure board"
+  },
+  "S52.photo": {
+   "key": "hotspot.S52.photo.name",
+   "sk": "Roh dvora a servisné okno",
+   "en": "Yard corner and service window"
+  },
+  "S52.ambient 1": {
+   "key": "hotspot.S52.ambient 1.name",
+   "sk": "Vstupný oznam",
+   "en": "Entrance notice"
+  },
+  "S52.ambient 2": {
+   "key": "hotspot.S52.ambient 2.name",
+   "sk": "Kvetináč",
+   "en": "Planter"
+  },
+  "S53.ambient 1": {
+   "key": "hotspot.S53.ambient 1.name",
+   "sk": "Plexisklo",
+   "en": "Plastic screen"
+  },
+  "S53.ambient 2": {
+   "key": "hotspot.S53.ambient 2.name",
+   "sk": "Krabica pomôcok",
+   "en": "Box of school supplies"
+  },
+  "S54.log": {
+   "key": "hotspot.S54.log.name",
+   "sk": "Servisná kniha z roku 1982",
+   "en": "Service logbook from 1982"
+  },
+  "S54.ambient 1": {
+   "key": "hotspot.S54.ambient 1.name",
+   "sk": "Stará skriňa",
+   "en": "Old cupboard"
+  },
+  "S54.ambient 2": {
+   "key": "hotspot.S54.ambient 2.name",
+   "sk": "Notebook",
+   "en": "Laptop"
+  },
+  "S54.JANA20": {
+   "key": "hotspot.S54.JANA20.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "S55.cache": {
+   "key": "hotspot.S55.cache.name",
+   "sk": "Miesto pôvodnej servisnej dutiny",
+   "en": "Site of the original service cavity"
+  },
+  "S55.ambient 1": {
+   "key": "hotspot.S55.ambient 1.name",
+   "sk": "Značky odstupu",
+   "en": "Distancing markers"
+  },
+  "S55.ambient 2": {
+   "key": "hotspot.S55.ambient 2.name",
+   "sk": "Kôš",
+   "en": "Bin"
+  },
+  "S56.ambient 1": {
+   "key": "hotspot.S56.ambient 1.name",
+   "sk": "Okenná rímsa",
+   "en": "Window ledge"
+  },
+  "S56.ambient 2": {
+   "key": "hotspot.S56.ambient 2.name",
+   "sk": "Ručne opravená búdka",
+   "en": "Hand-mended bird box"
+  },
+  "S56.TONO20": {
+   "key": "hotspot.S56.TONO20.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "S57.ambient 1": {
+   "key": "hotspot.S57.ambient 1.name",
+   "sk": "Dobové heslo",
+   "en": "Period slogan"
+  },
+  "S57.ambient 2": {
+   "key": "hotspot.S57.ambient 2.name",
+   "sk": "Papierový poriadok",
+   "en": "Paper timetable"
+  },
+  "S58.ambient 1": {
+   "key": "hotspot.S58.ambient 1.name",
+   "sk": "Nástenka brigády",
+   "en": "Brigade notice board"
+  },
+  "S58.ambient 2": {
+   "key": "hotspot.S58.ambient 2.name",
+   "sk": "Štátny znak",
+   "en": "State emblem"
+  },
+  "S59.ambient 1": {
+   "key": "hotspot.S59.ambient 1.name",
+   "sk": "Pioniersky oznam",
+   "en": "Pioneer notice"
+  },
+  "S59.ambient 2": {
+   "key": "hotspot.S59.ambient 2.name",
+   "sk": "Terazzo",
+   "en": "Terrazzo floor"
+  },
+  "S60.drawing": {
+   "key": "hotspot.S60.drawing.name",
+   "sk": "Janina schéma rádia",
+   "en": "Jana’s radio schematic"
+  },
+  "S60.ambient 1": {
+   "key": "hotspot.S60.ambient 1.name",
+   "sk": "Vzorová schéma",
+   "en": "Model schematic"
+  },
+  "S60.ambient 2": {
+   "key": "hotspot.S60.ambient 2.name",
+   "sk": "Mapa ČSSR",
+   "en": "Map of Czechoslovakia"
+  },
+  "S60.DOBRO": {
+   "key": "hotspot.S60.DOBRO.name",
+   "sk": "Učiteľ Dobrovič",
+   "en": "Mr Dobrovič"
+  },
+  "S60.JANA82": {
+   "key": "hotspot.S60.JANA82.name",
+   "sk": "Jana Vargová",
+   "en": "Jana Vargová"
+  },
+  "S61.niche": {
+   "key": "hotspot.S61.niche.name",
+   "sk": "Servisná dutina v múriku",
+   "en": "Service cavity in the low wall"
+  },
+  "S61.tree": {
+   "key": "hotspot.S61.tree.name",
+   "sk": "Mladá lipa",
+   "en": "Young lime tree"
+  },
+  "S61.ambient 1": {
+   "key": "hotspot.S61.ambient 1.name",
+   "sk": "Červené potrubné koleno",
+   "en": "Red pipe elbow"
+  },
+  "S61.ambient 2": {
+   "key": "hotspot.S61.ambient 2.name",
+   "sk": "Ručný vozík",
+   "en": "Handcart"
+  },
+  "S62.jar": {
+   "key": "hotspot.S62.jar.name",
+   "sk": "Prázdny zavárací pohár",
+   "en": "Empty preserving jar"
+  },
+  "S62.ambient 1": {
+   "key": "hotspot.S62.ambient 1.name",
+   "sk": "Vratné fľaše",
+   "en": "Returnable bottles"
+  },
+  "S62.ambient 2": {
+   "key": "hotspot.S62.ambient 2.name",
+   "sk": "Rádiový prijímač",
+   "en": "Radio set"
+  },
+  "S62.RUZENA": {
+   "key": "hotspot.S62.RUZENA.name",
+   "sk": "Ružena Malá",
+   "en": "Ružena Malá"
+  },
+  "S63.workbench": {
+   "key": "hotspot.S63.workbench.name",
+   "sk": "Servisná doska",
+   "en": "Service board"
+  },
+  "S63.ambient 1": {
+   "key": "hotspot.S63.ambient 1.name",
+   "sk": "Skriňový pánt",
+   "en": "Cupboard hinge"
+  },
+  "S63.ambient 2": {
+   "key": "hotspot.S63.ambient 2.name",
+   "sk": "Glóbus",
+   "en": "Globe"
+  },
+  "S64.ambient 1": {
+   "key": "hotspot.S64.ambient 1.name",
+   "sk": "Drevená lastovička",
+   "en": "Wooden swallow"
+  },
+  "S64.ambient 2": {
+   "key": "hotspot.S64.ambient 2.name",
+   "sk": "Čerstvá omietka",
+   "en": "Fresh plaster"
+  },
+  "S64.TONO82": {
+   "key": "hotspot.S64.TONO82.name",
+   "sk": "Tóno",
+   "en": "Tóno"
+  },
+  "S64.OTO82": {
+   "key": "hotspot.S64.OTO82.name",
+   "sk": "Oto Bielik",
+   "en": "Oto Bielik"
+  },
+  "S65.ambient 1": {
+   "key": "hotspot.S65.ambient 1.name",
+   "sk": "Inventárna kniha",
+   "en": "Stock ledger"
+  },
+  "S65.ambient 2": {
+   "key": "hotspot.S65.ambient 2.name",
+   "sk": "Nástenné hodiny",
+   "en": "Wall clock"
+  },
+  "S65.MARTA82": {
+   "key": "hotspot.S65.MARTA82.name",
+   "sk": "Marta Dobiášová",
+   "en": "Marta Dobiášová"
+  },
+  "S66.ambient 1": {
+   "key": "hotspot.S66.ambient 1.name",
+   "sk": "Plán chodníka",
+   "en": "Path plan"
+  },
+  "S66.ambient 2": {
+   "key": "hotspot.S66.ambient 2.name",
+   "sk": "Lopata",
+   "en": "Spade"
+  },
+  "S66.SIMON": {
+   "key": "hotspot.S66.SIMON.name",
+   "sk": "Šimon Rybár",
+   "en": "Šimon Rybár"
+  },
+  "S67.boarding": {
+   "key": "hotspot.S67.boarding.name",
+   "sk": "Nástup na Funitel",
+   "en": "Funitel boarding"
+  },
+  "S67.ambient 1": {
+   "key": "hotspot.S67.ambient 1.name",
+   "sk": "Mapa dvoch úsekov",
+   "en": "Map of the two sections"
+  },
+  "S67.ambient 2": {
+   "key": "hotspot.S67.ambient 2.name",
+   "sk": "Madlo",
+   "en": "Handrail"
+  },
+  "S67.IVAN": {
+   "key": "hotspot.S67.IVAN.name",
+   "sk": "Ivan Horský",
+   "en": "Ivan Horský"
+  },
+  "S68.arrival": {
+   "key": "hotspot.S68.arrival.name",
+   "sk": "Príchod do vrcholovej stanice",
+   "en": "Arrival at the top station"
+  },
+  "S68.ambient 1": {
+   "key": "hotspot.S68.ambient 1.name",
+   "sk": "Panoráma svahov",
+   "en": "View of the slopes"
+  },
+  "S68.ambient 2": {
+   "key": "hotspot.S68.ambient 2.name",
+   "sk": "Schéma kabíny",
+   "en": "Cabin diagram"
+  },
+  "S68.TURISTA": {
+   "key": "hotspot.S68.TURISTA.name",
+   "sk": "Miloš Polák",
+   "en": "Miloš Polák"
+  },
+  "S69.wall": {
+   "key": "hotspot.S69.wall.name",
+   "sk": "Betónový múr",
+   "en": "Concrete wall"
+  },
+  "S69.rhythm": {
+   "key": "hotspot.S69.rhythm.name",
+   "sk": "Rytmický nákres",
+   "en": "Rhythm drawing"
+  },
+  "S69.court": {
+   "key": "hotspot.S69.court.name",
+   "sk": "Ihrisko so škôlkou",
+   "en": "Playground with hopscotch"
+  },
+  "S69.birch": {
+   "key": "hotspot.S69.birch.name",
+   "sk": "Breza",
+   "en": "Birch"
+  },
+  "S69.spruce": {
+   "key": "hotspot.S69.spruce.name",
+   "sk": "Modrý smrek",
+   "en": "Blue spruce"
+  },
+  "S69.lamp": {
+   "key": "hotspot.S69.lamp.name",
+   "sk": "Guľová lampa",
+   "en": "Globe lamp"
+  },
+  "S69.bench": {
+   "key": "hotspot.S69.bench.name",
+   "sk": "Lavička",
+   "en": "Bench"
+  },
+  "S69.bike": {
+   "key": "hotspot.S69.bike.name",
+   "sk": "Kubov bicykel",
+   "en": "Kubo’s bike"
+  },
+  "S69.gap": {
+   "key": "hotspot.S69.gap.name",
+   "sk": "Priechod medzi blokmi",
+   "en": "Passage between the blocks"
+  },
+  "S69.ZUZANA95": {
+   "key": "hotspot.S69.ZUZANA95.name",
+   "sk": "Zuzana",
+   "en": "Zuzana"
+  },
+  "S69.KUBO": {
+   "key": "hotspot.S69.KUBO.name",
+   "sk": "Kubo",
+   "en": "Kubo"
+  }
+ },
+ "ui": {
+  "ui.common.ok": {
+   "sk": "OK",
+   "en": "OK"
+  },
+  "ui.common.yes": {
+   "sk": "Áno",
+   "en": "Yes"
+  },
+  "ui.common.no": {
+   "sk": "Nie",
+   "en": "No"
+  },
+  "ui.common.cancel": {
+   "sk": "Zrušiť",
+   "en": "Cancel"
+  },
+  "ui.common.back": {
+   "sk": "Späť",
+   "en": "Back"
+  },
+  "ui.common.close": {
+   "sk": "Zavrieť",
+   "en": "Close"
+  },
+  "ui.common.confirm": {
+   "sk": "Potvrdiť",
+   "en": "Confirm"
+  },
+  "ui.common.apply": {
+   "sk": "Použiť",
+   "en": "Apply"
+  },
+  "ui.common.on": {
+   "sk": "Zapnuté",
+   "en": "On"
+  },
+  "ui.common.off": {
+   "sk": "Vypnuté",
+   "en": "Off"
+  },
+  "ui.common.loading": {
+   "sk": "Načítava sa…",
+   "en": "Loading…"
+  },
+  "ui.common.press_any_key": {
+   "sk": "Stlač ľubovoľný kláves",
+   "en": "Press any key"
+  },
+  "ui.menu.new_game": {
+   "sk": "Nová hra",
+   "en": "New game"
+  },
+  "ui.menu.continue": {
+   "sk": "Pokračovať",
+   "en": "Continue"
+  },
+  "ui.menu.load": {
+   "sk": "Načítať",
+   "en": "Load"
+  },
+  "ui.menu.save": {
+   "sk": "Uložiť",
+   "en": "Save"
+  },
+  "ui.menu.settings": {
+   "sk": "Nastavenia",
+   "en": "Settings"
+  },
+  "ui.menu.album": {
+   "sk": "Album",
+   "en": "Album"
+  },
+  "ui.menu.help": {
+   "sk": "Pomoc",
+   "en": "Help"
+  },
+  "ui.menu.credits": {
+   "sk": "Autori",
+   "en": "Credits"
+  },
+  "ui.menu.quit": {
+   "sk": "Ukončiť",
+   "en": "Quit"
+  },
+  "ui.menu.version": {
+   "sk": "Verzia {version}",
+   "en": "Version {version}"
+  },
+  "ui.pause.title": {
+   "sk": "Pauza",
+   "en": "Paused"
+  },
+  "ui.pause.resume": {
+   "sk": "Pokračovať v hre",
+   "en": "Resume"
+  },
+  "ui.pause.save": {
+   "sk": "Uložiť hru",
+   "en": "Save game"
+  },
+  "ui.pause.load": {
+   "sk": "Načítať hru",
+   "en": "Load game"
+  },
+  "ui.pause.settings": {
+   "sk": "Nastavenia",
+   "en": "Settings"
+  },
+  "ui.pause.help": {
+   "sk": "Pomoc",
+   "en": "Help"
+  },
+  "ui.pause.main_menu": {
+   "sk": "Hlavné menu",
+   "en": "Main menu"
+  },
+  "ui.pause.quit": {
+   "sk": "Ukončiť hru",
+   "en": "Quit game"
+  },
+  "ui.save.title_save": {
+   "sk": "Uložiť hru",
+   "en": "Save game"
+  },
+  "ui.save.title_load": {
+   "sk": "Načítať hru",
+   "en": "Load game"
+  },
+  "ui.save.manual_section": {
+   "sk": "Uložené hry",
+   "en": "Saved games"
+  },
+  "ui.save.autosave_section": {
+   "sk": "Automatické uloženia",
+   "en": "Autosaves"
+  },
+  "ui.save.slot": {
+   "sk": "Pozícia {n}",
+   "en": "Slot {n}"
+  },
+  "ui.save.slot_empty": {
+   "sk": "Prázdna pozícia",
+   "en": "Empty slot"
+  },
+  "ui.save.autosave": {
+   "sk": "Automatické uloženie {n}",
+   "en": "Autosave {n}"
+  },
+  "ui.save.checkpoint_finale": {
+   "sk": "Kontrolný bod pred záverom",
+   "en": "Checkpoint before the ending"
+  },
+  "ui.save.slot_summary": {
+   "sk": "{place} · {year}",
+   "en": "{place} · {year}"
+  },
+  "ui.save.saved_at": {
+   "sk": "Uložené {datetime}",
+   "en": "Saved {datetime}"
+  },
+  "ui.save.playtime": {
+   "sk": "Herný čas {time}",
+   "en": "Play time {time}"
+  },
+  "ui.save.overwrite": {
+   "sk": "Prepísať",
+   "en": "Overwrite"
+  },
+  "ui.save.delete": {
+   "sk": "Vymazať",
+   "en": "Delete"
+  },
+  "ui.save.saving": {
+   "sk": "Ukladá sa…",
+   "en": "Saving…"
+  },
+  "ui.save.saved": {
+   "sk": "Hra je uložená.",
+   "en": "Game saved."
+  },
+  "ui.save.export": {
+   "sk": "Exportovať uloženie",
+   "en": "Export save"
+  },
+  "ui.save.import": {
+   "sk": "Importovať uloženie",
+   "en": "Import save"
+  },
+  "ui.save.quick": {
+   "sk": "Rýchle uloženie",
+   "en": "Quick save"
+  },
+  "ui.settings.title": {
+   "sk": "Nastavenia",
+   "en": "Settings"
+  },
+  "ui.settings.tab_audio": {
+   "sk": "Zvuk",
+   "en": "Sound"
+  },
+  "ui.settings.tab_display": {
+   "sk": "Obraz",
+   "en": "Display"
+  },
+  "ui.settings.tab_text": {
+   "sk": "Text a titulky",
+   "en": "Text and subtitles"
+  },
+  "ui.settings.tab_controls": {
+   "sk": "Ovládanie",
+   "en": "Controls"
+  },
+  "ui.settings.tab_accessibility": {
+   "sk": "Prístupnosť",
+   "en": "Accessibility"
+  },
+  "ui.settings.tab_game": {
+   "sk": "Hra",
+   "en": "Game"
+  },
+  "ui.settings.language": {
+   "sk": "Jazyk",
+   "en": "Language"
+  },
+  "ui.settings.language_sk": {
+   "sk": "Slovenčina",
+   "en": "Slovenčina"
+  },
+  "ui.settings.language_en": {
+   "sk": "English",
+   "en": "English"
+  },
+  "ui.settings.volume_master": {
+   "sk": "Celková hlasitosť",
+   "en": "Master volume"
+  },
+  "ui.settings.volume_music": {
+   "sk": "Hudba",
+   "en": "Music"
+  },
+  "ui.settings.volume_ambience": {
+   "sk": "Zvuky prostredia",
+   "en": "Ambient sound"
+  },
+  "ui.settings.volume_sfx": {
+   "sk": "Efekty",
+   "en": "Effects"
+  },
+  "ui.settings.volume_voice": {
+   "sk": "Hlasy",
+   "en": "Voices"
+  },
+  "ui.settings.volume_value": {
+   "sk": "{percent} %",
+   "en": "{percent}%"
+  },
+  "ui.settings.text_speed": {
+   "sk": "Rýchlosť textu",
+   "en": "Text speed"
+  },
+  "ui.settings.text_speed_slow": {
+   "sk": "Pomalá",
+   "en": "Slow"
+  },
+  "ui.settings.text_speed_normal": {
+   "sk": "Normálna",
+   "en": "Normal"
+  },
+  "ui.settings.text_speed_fast": {
+   "sk": "Rýchla",
+   "en": "Fast"
+  },
+  "ui.settings.text_speed_instant": {
+   "sk": "Okamžitá",
+   "en": "Instant"
+  },
+  "ui.settings.auto_advance": {
+   "sk": "Automatický posun titulkov",
+   "en": "Auto-advance subtitles"
+  },
+  "ui.settings.auto_advance_speed": {
+   "sk": "Rýchlosť automatického posunu",
+   "en": "Auto-advance speed"
+  },
+  "ui.settings.subtitles": {
+   "sk": "Zobrazovať titulky",
+   "en": "Show subtitles"
+  },
+  "ui.settings.subtitle_size": {
+   "sk": "Veľkosť titulkov",
+   "en": "Subtitle size"
+  },
+  "ui.settings.subtitle_size_value": {
+   "sk": "{size} px",
+   "en": "{size} px"
+  },
+  "ui.settings.subtitle_background": {
+   "sk": "Kontrastné pozadie titulkov",
+   "en": "High-contrast subtitle background"
+  },
+  "ui.settings.speaker_names": {
+   "sk": "Zobrazovať meno hovoriaceho",
+   "en": "Show speaker names"
+  },
+  "ui.settings.window_mode": {
+   "sk": "Zobrazenie",
+   "en": "Display mode"
+  },
+  "ui.settings.fullscreen": {
+   "sk": "Celá obrazovka",
+   "en": "Full screen"
+  },
+  "ui.settings.windowed": {
+   "sk": "V okne",
+   "en": "Windowed"
+  },
+  "ui.settings.vsync": {
+   "sk": "Vertikálna synchronizácia",
+   "en": "Vertical sync"
+  },
+  "ui.settings.hud_scale": {
+   "sk": "Veľkosť rozhrania",
+   "en": "Interface size"
+  },
+  "ui.settings.cursor_highlight": {
+   "sk": "Zvýraznený kurzor",
+   "en": "Highlighted cursor"
+  },
+  "ui.settings.walk_speed": {
+   "sk": "Rýchlosť chôdze",
+   "en": "Walking speed"
+  },
+  "ui.settings.walk_speed_calm": {
+   "sk": "Pokojná",
+   "en": "Leisurely"
+  },
+  "ui.settings.walk_speed_brisk": {
+   "sk": "Svižná",
+   "en": "Brisk"
+  },
+  "ui.settings.reduced_motion": {
+   "sk": "Obmedziť pohyb",
+   "en": "Reduce motion"
+  },
+  "ui.settings.high_contrast_labels": {
+   "sk": "Kontrastné menovky objektov",
+   "en": "High-contrast object labels"
+  },
+  "ui.settings.hotspot_key_hint": {
+   "sk": "Pripomínať kláves na zobrazenie objektov",
+   "en": "Remind me of the show-objects key"
+  },
+  "ui.settings.reset_tips": {
+   "sk": "Znova zobraziť úvodné rady",
+   "en": "Show the starting tips again"
+  },
+  "ui.settings.reset_defaults": {
+   "sk": "Obnoviť predvolené",
+   "en": "Restore defaults"
+  },
+  "ui.settings.voice_over": {
+   "sk": "Hovorené dialógy",
+   "en": "Spoken dialogue"
+  },
+  "ui.controls.title": {
+   "sk": "Ovládanie",
+   "en": "Controls"
+  },
+  "ui.tutorial.got_it": {
+   "sk": "Rozumiem",
+   "en": "Got it"
+  },
+  "ui.hud.inventory": {
+   "sk": "Inventár",
+   "en": "Inventory"
+  },
+  "ui.hud.journal": {
+   "sk": "Denník",
+   "en": "Journal"
+  },
+  "ui.hud.map": {
+   "sk": "Mapa",
+   "en": "Map"
+  },
+  "ui.hud.hint": {
+   "sk": "Nápoveda",
+   "en": "Hints"
+  },
+  "ui.hud.menu": {
+   "sk": "Menu",
+   "en": "Menu"
+  },
+  "ui.hud.show_hotspots": {
+   "sk": "Oko",
+   "en": "Eye"
+  },
+  "ui.hud.current_goal": {
+   "sk": "Aktuálny cieľ",
+   "en": "Current goal"
+  },
+  "ui.hud.hide_goal": {
+   "sk": "Skryť cieľ",
+   "en": "Hide goal"
+  },
+  "ui.hud.goal_updated": {
+   "sk": "Nový cieľ v denníku",
+   "en": "New goal in the journal"
+  },
+  "ui.inventory.title": {
+   "sk": "Inventár",
+   "en": "Inventory"
+  },
+  "ui.inventory.tab_items": {
+   "sk": "Predmety",
+   "en": "Items"
+  },
+  "ui.inventory.tab_archived": {
+   "sk": "Archivované",
+   "en": "Archived"
+  },
+  "ui.inventory.archived_badge": {
+   "sk": "Archivované",
+   "en": "Archived"
+  },
+  "ui.inventory.combine": {
+   "sk": "Spojiť predmety",
+   "en": "Combine items"
+  },
+  "ui.inventory.deselect": {
+   "sk": "Zrušiť výber",
+   "en": "Deselect"
+  },
+  "ui.inventory.look": {
+   "sk": "Prezrieť",
+   "en": "Look at"
+  },
+  "ui.inventory.select": {
+   "sk": "Vybrať",
+   "en": "Select"
+  },
+  "ui.inventory.selection_cleared": {
+   "sk": "Výber zrušený",
+   "en": "Selection cleared"
+  },
+  "ui.inventory.scroll_up": {
+   "sk": "Posunúť nahor",
+   "en": "Scroll up"
+  },
+  "ui.inventory.scroll_down": {
+   "sk": "Posunúť nadol",
+   "en": "Scroll down"
+  },
+  "ui.inventory.page": {
+   "sk": "{current}/{total}",
+   "en": "{current}/{total}"
+  },
+  "ui.journal.title": {
+   "sk": "Denník",
+   "en": "Journal"
+  },
+  "ui.journal.tab_goals": {
+   "sk": "Ciele",
+   "en": "Goals"
+  },
+  "ui.journal.tab_findings": {
+   "sk": "Zistenia",
+   "en": "Findings"
+  },
+  "ui.journal.tab_people": {
+   "sk": "Ľudia",
+   "en": "People"
+  },
+  "ui.journal.tab_time_map": {
+   "sk": "Mapa času",
+   "en": "Time map"
+  },
+  "ui.journal.tab_album": {
+   "sk": "Album",
+   "en": "Album"
+  },
+  "ui.journal.main_story": {
+   "sk": "Hlavný príbeh",
+   "en": "Main story"
+  },
+  "ui.journal.side_quests": {
+   "sk": "Vedľajšie úlohy",
+   "en": "Side quests"
+  },
+  "ui.journal.state_open": {
+   "sk": "Nezačatá",
+   "en": "Not started"
+  },
+  "ui.journal.state_in_progress": {
+   "sk": "Rozpracovaná",
+   "en": "In progress"
+  },
+  "ui.journal.state_done": {
+   "sk": "Hotová",
+   "en": "Done"
+  },
+  "ui.journal.pin": {
+   "sk": "Pripnúť",
+   "en": "Pin"
+  },
+  "ui.journal.unpin": {
+   "sk": "Odopnúť",
+   "en": "Unpin"
+  },
+  "ui.journal.pinned_main": {
+   "sk": "Pripnutá hlavná úloha",
+   "en": "Pinned main quest"
+  },
+  "ui.journal.pinned_side": {
+   "sk": "Pripnutá vedľajšia úloha",
+   "en": "Pinned side quest"
+  },
+  "ui.journal.observations": {
+   "sk": "Pozorovania",
+   "en": "Observations"
+  },
+  "ui.journal.clues": {
+   "sk": "Vodidlá",
+   "en": "Clues"
+  },
+  "ui.journal.transcripts": {
+   "sk": "Prepisy rozhovorov",
+   "en": "Conversation transcripts"
+  },
+  "ui.journal.progress_log": {
+   "sk": "Záznamy postupu",
+   "en": "Progress log"
+  },
+  "ui.journal.reward": {
+   "sk": "Odmena: {reward}",
+   "en": "Reward: {reward}"
+  },
+  "ui.journal.new_entry": {
+   "sk": "Nový záznam v denníku",
+   "en": "New journal entry"
+  },
+  "ui.journal.time_map_current": {
+   "sk": "Práve si tu",
+   "en": "You are here"
+  },
+  "ui.journal.time_map_locked": {
+   "sk": "Zatiaľ neotvorené časové okno",
+   "en": "Time window not open yet"
+  },
+  "ui.journal.replay_ending": {
+   "sk": "Znova prehrať záver",
+   "en": "Replay the ending"
+  },
+  "ui.journal.scenes": {
+   "sk": "Prehrať scény znova",
+   "en": "Replay scenes"
+  },
+  "ui.journal.scene_n": {
+   "sk": "Scéna {n}",
+   "en": "Scene {n}"
+  },
+  "ui.map.title": {
+   "sk": "Mapa",
+   "en": "Map"
+  },
+  "ui.map.node": {
+   "sk": "Uzol",
+   "en": "Node"
+  },
+  "ui.map.node_tooltip": {
+   "sk": "Rýchly presun k časovému uzlu tohto roku",
+   "en": "Fast travel to this year’s time node"
+  },
+  "ui.map.fast_travel": {
+   "sk": "Rýchly presun",
+   "en": "Fast travel"
+  },
+  "ui.map.travel_to": {
+   "sk": "Presunúť sa: {place}",
+   "en": "Go to {place}"
+  },
+  "ui.map.you_are_here": {
+   "sk": "Tu si",
+   "en": "You are here"
+  },
+  "ui.map.unvisited": {
+   "sk": "Nenavštívené miesto",
+   "en": "Place not visited yet"
+  },
+  "ui.map.sheet_year": {
+   "sk": "Rok {year}",
+   "en": "{year}"
+  },
+  "ui.map.legend": {
+   "sk": "Legenda",
+   "en": "Key"
+  },
+  "ui.map.regions_title": {
+   "sk": "Oblasti",
+   "en": "Areas"
+  },
+  "ui.map.back_to_regions": {
+   "sk": "Späť na oblasti",
+   "en": "Back to areas"
+  },
+  "ui.map.region_unvisited": {
+   "sk": "Neznáma oblasť",
+   "en": "Unknown area"
+  },
+  "ui.map.region_rooms": {
+   "sk": "Miesta: {visited} z {total}",
+   "en": "Places: {visited} of {total}"
+  },
+  "ui.map.region_hub": {
+   "sk": "Zastávka: {hub}",
+   "en": "Stop: {hub}"
+  },
+  "ui.map.hub": {
+   "sk": "Zastávka",
+   "en": "Stop"
+  },
+  "ui.map.travel_by": {
+   "sk": "Presunúť sa: {place} ({transport})",
+   "en": "Go to {place} ({transport})"
+  },
+  "ui.travel.walk": {
+   "sk": "Pešo",
+   "en": "On foot"
+  },
+  "ui.travel.map_transition": {
+   "sk": "Skrátený presun",
+   "en": "Quick journey"
+  },
+  "ui.travel.car_transition": {
+   "sk": "Autom",
+   "en": "By car"
+  },
+  "ui.travel.cable_A6": {
+   "sk": "Kabínkovou lanovkou",
+   "en": "By gondola"
+  },
+  "ui.travel.board_funitel": {
+   "sk": "Nástup na Funitel",
+   "en": "Board the Funitel"
+  },
+  "ui.travel.arrive_funitel": {
+   "sk": "Výstup z Funitelu",
+   "en": "Leave the Funitel"
+  },
+  "ui.travel.bus": {
+   "sk": "Autobusom",
+   "en": "By bus"
+  },
+  "ui.travel.tram": {
+   "sk": "Električkou",
+   "en": "By tram"
+  },
+  "ui.travel.card": {
+   "sk": "{transport} · {place}",
+   "en": "{transport} · {place}"
+  },
+  "ui.travel.finish_ride": {
+   "sk": "Dokončiť jazdu",
+   "en": "Finish the ride"
+  },
+  "ui.travel.choose_era": {
+   "sk": "Kam sa presunieš?",
+   "en": "Where to?"
+  },
+  "ui.travel.time_node": {
+   "sk": "Hodiny časového uzla – výber obdobia",
+   "en": "Time-node clock – choose a year"
+  },
+  "ui.travel.era_option": {
+   "sk": "Rok {year}",
+   "en": "{year}"
+  },
+  "ui.travel.era_current": {
+   "sk": "Práve si tu",
+   "en": "You are here"
+  },
+  "ui.travel.jump": {
+   "sk": "Presunúť sa",
+   "en": "Travel"
+  },
+  "ui.travel.new_era_unlocked": {
+   "sk": "Otvorilo sa nové časové okno: {year}",
+   "en": "A new time window has opened: {year}"
+  },
+  "ui.hint.title": {
+   "sk": "Nápoveda",
+   "en": "Hints"
+  },
+  "ui.hint.level_1": {
+   "sk": "Smer",
+   "en": "Direction"
+  },
+  "ui.hint.level_2": {
+   "sk": "Postup",
+   "en": "Steps"
+  },
+  "ui.hint.level_3": {
+   "sk": "Riešenie",
+   "en": "Solution"
+  },
+  "ui.hint.next": {
+   "sk": "Ďalšia nápoveda",
+   "en": "Next hint"
+  },
+  "ui.hint.show_solution": {
+   "sk": "Ukázať presné riešenie",
+   "en": "Show the exact solution"
+  },
+  "ui.hint.main_quest": {
+   "sk": "Hlavná úloha",
+   "en": "Main quest"
+  },
+  "ui.hint.side_quest": {
+   "sk": "Vedľajšia úloha",
+   "en": "Side quest"
+  },
+  "ui.hint.choose_quest": {
+   "sk": "S čím ti mám poradiť?",
+   "en": "What do you need help with?"
+  },
+  "ui.hint.level_nudge": {
+   "sk": "Postrčenie",
+   "en": "Nudge"
+  },
+  "ui.hint.level_where": {
+   "sk": "Kde hľadať",
+   "en": "Where to look"
+  },
+  "ui.hint.difficulty": {
+   "sk": "Obťažnosť: {difficulty}",
+   "en": "Difficulty: {difficulty}"
+  },
+  "ui.difficulty.title": {
+   "sk": "Obťažnosť",
+   "en": "Difficulty"
+  },
+  "ui.difficulty.pick_title": {
+   "sk": "Nová hra",
+   "en": "New game"
+  },
+  "ui.difficulty.start": {
+   "sk": "Začať hru",
+   "en": "Start game"
+  },
+  "ui.difficulty.recommended": {
+   "sk": "odporúčaná",
+   "en": "recommended"
+  },
+  "ui.difficulty.easy": {
+   "sk": "Ľahká",
+   "en": "Easy"
+  },
+  "ui.difficulty.standard": {
+   "sk": "Štandardná",
+   "en": "Standard"
+  },
+  "ui.difficulty.hard": {
+   "sk": "Ťažká",
+   "en": "Hard"
+  },
+  "ui.puzzle.confirm": {
+   "sk": "Potvrdiť",
+   "en": "Confirm"
+  },
+  "ui.puzzle.reset": {
+   "sk": "Začať odznova",
+   "en": "Start again"
+  },
+  "ui.puzzle.close": {
+   "sk": "Zavrieť",
+   "en": "Close"
+  },
+  "ui.puzzle.hint_fill": {
+   "sk": "Vyplniť správne",
+   "en": "Fill in the answer"
+  },
+  "ui.puzzle.clue": {
+   "sk": "Vodidlo",
+   "en": "Clue"
+  },
+  "ui.puzzle.rotate_left": {
+   "sk": "Otočiť doľava",
+   "en": "Rotate left"
+  },
+  "ui.puzzle.rotate_right": {
+   "sk": "Otočiť doprava",
+   "en": "Rotate right"
+  },
+  "ui.puzzle.rotation_value": {
+   "sk": "{degrees}°",
+   "en": "{degrees}°"
+  },
+  "ui.puzzle.digit": {
+   "sk": "Číslica {n}",
+   "en": "Digit {n}"
+  },
+  "ui.puzzle.digit_up": {
+   "sk": "Zvýšiť",
+   "en": "Up"
+  },
+  "ui.puzzle.digit_down": {
+   "sk": "Znížiť",
+   "en": "Down"
+  },
+  "ui.puzzle.grid_cell": {
+   "sk": "Rad {row}, stĺpec {column}",
+   "en": "Row {row}, column {column}"
+  },
+  "ui.puzzle.match_clear": {
+   "sk": "Zrušiť spojenie",
+   "en": "Clear the link"
+  },
+  "ui.dialogue.continue": {
+   "sk": "Pokračovať",
+   "en": "Continue"
+  },
+  "ui.dialogue.end": {
+   "sk": "Ukončiť rozhovor",
+   "en": "End conversation"
+  },
+  "ui.dialogue.topics": {
+   "sk": "Témy",
+   "en": "Topics"
+  },
+  "ui.dialogue.transcript": {
+   "sk": "Prepis rozhovoru",
+   "en": "Conversation transcript"
+  },
+  "ui.dialogue.history": {
+   "sk": "História titulkov",
+   "en": "Subtitle history"
+  },
+  "ui.dialogue.recording_year": {
+   "sk": "Záznam z roku {year}",
+   "en": "Recording from {year}"
+  },
+  "ui.dialogue.heard": {
+   "sk": "už prebraté",
+   "en": "already discussed"
+  },
+  "ui.cutscene.skip": {
+   "sk": "Preskočiť",
+   "en": "Skip"
+  },
+  "ui.cutscene.resume_play": {
+   "sk": "Dokončiť scénu",
+   "en": "Finish the scene"
+  },
+  "ui.cutscene.the_end": {
+   "sk": "Koniec príbehu",
+   "en": "The End"
+  },
+  "ui.cutscene.scene_n": {
+   "sk": "Scéna {n}",
+   "en": "Scene {n}"
+  },
+  "ui.credits.title": {
+   "sk": "Autori",
+   "en": "Credits"
+  },
+  "ui.credits.photo_sources": {
+   "sk": "Zdroje fotografií a licencie",
+   "en": "Photo sources and licences"
+  },
+  "ui.credits.thanks": {
+   "sk": "Ďakujeme za hranie.",
+   "en": "Thank you for playing."
+  },
+  "ui.credits.fonts": {
+   "sk": "Písma",
+   "en": "Fonts"
+  },
+  "ui.credits.engine": {
+   "sk": "Herný engine",
+   "en": "Game engine"
+  },
+  "ui.credits.music": {
+   "sk": "Hudba (pôvodná, vytvorená pomocou AI)",
+   "en": "Music (original, made with AI)"
+  },
+  "ui.credits.sounds": {
+   "sk": "Zvukové efekty a zvuky prostredia (CC0)",
+   "en": "Sound effects and ambient sound (CC0)"
+  },
+  "ui.postgame.continue": {
+   "sk": "Pokračovať vo voľnom hraní",
+   "en": "Carry on in free play"
+  },
+  "ui.a11y.hotspot_list": {
+   "sk": "Zoznam objektov",
+   "en": "Object list"
+  },
+  "ui.a11y.group_characters": {
+   "sk": "Postavy",
+   "en": "Characters"
+  },
+  "ui.a11y.group_progress": {
+   "sk": "Dôležité objekty",
+   "en": "Important objects"
+  },
+  "ui.a11y.group_ambient": {
+   "sk": "Ostatné objekty",
+   "en": "Other objects"
+  },
+  "ui.a11y.group_exits": {
+   "sk": "Východy",
+   "en": "Exits"
+  },
+  "ui.a11y.exit": {
+   "sk": "Východ: {label}",
+   "en": "Exit: {label}"
+  },
+  "ui.a11y.locked": {
+   "sk": "Zatiaľ zamknuté",
+   "en": "Locked for now"
+  },
+  "ui.system.path_blocked": {
+   "sk": "Tadiaľto neprejdem.",
+   "en": "I can’t get through this way."
+  },
+  "ui.system.autosaved": {
+   "sk": "Automaticky uložené",
+   "en": "Autosaved"
+  },
+  "ui.system.error_title": {
+   "sk": "Chyba",
+   "en": "Error"
+  },
+  "ui.system.return_to_checkpoint": {
+   "sk": "Vrátiť sa ku kontrolnému bodu",
+   "en": "Return to the checkpoint"
+  },
+  "ui.system.loading_scene": {
+   "sk": "Načítava sa scéna…",
+   "en": "Loading the scene…"
+  }
+ },
+ "ui_phrases": [
+  {
+   "sk": "Inventár",
+   "en": "Inventory (UI only)"
+  },
+  {
+   "sk": "Denník",
+   "en": "Journal"
+  },
+  {
+   "sk": "Nápoveda",
+   "en": "Hints / hint"
+  },
+  {
+   "sk": "Oko (touch button)",
+   "en": "Eye"
+  },
+  {
+   "sk": "Obťažnosť: Ľahká / Štandardná / Ťažká",
+   "en": "Difficulty: Easy / Standard / Hard"
+  },
+  {
+   "sk": "Smer / Postup / Riešenie (Easy)",
+   "en": "Direction / Steps / Solution"
+  },
+  {
+   "sk": "Postrčenie / Kde hľadať (Standard, Hard)",
+   "en": "Nudge / Where to look"
+  },
+  {
+   "sk": "Ciele / Zistenia / Ľudia / Mapa času / Album",
+   "en": "Goals / Findings / People / Time map / Album"
+  },
+  {
+   "sk": "Pozorovania / Vodidlá / Prepisy rozhovorov / Záznamy postupu",
+   "en": "Observations / Clues / Conversation transcripts / Progress log"
+  },
+  {
+   "sk": "hlavná úloha / vedľajšia úloha",
+   "en": "main quest / side quest (UI only; in-world text never says ‘quest’)"
+  },
+  {
+   "sk": "Témy; už prebraté",
+   "en": "Topics; already discussed"
+  },
+  {
+   "sk": "ľavý klik / pravý klik / dvojklik",
+   "en": "left-click / right-click / double-click"
+  },
+  {
+   "sk": "prezrieť (objekt)",
+   "en": "look at"
+  },
+  {
+   "sk": "ťuknúť; podržať prst",
+   "en": "tap; press and hold"
+  },
+  {
+   "sk": "Space (podržať)",
+   "en": "hold Space"
+  },
+  {
+   "sk": "miesta na kliknutie",
+   "en": "clickable spots"
+  },
+  {
+   "sk": "objekt",
+   "en": "object"
+  },
+  {
+   "sk": "značky",
+   "en": "markers"
+  },
+  {
+   "sk": "rýchly presun",
+   "en": "fast travel"
+  },
+  {
+   "sk": "zastávka (hub)",
+   "en": "stop"
+  },
+  {
+   "sk": "oblasť",
+   "en": "area"
+  },
+  {
+   "sk": "pozícia (uloženia)",
+   "en": "slot"
+  },
+  {
+   "sk": "automatické uloženie",
+   "en": "autosave"
+  },
+  {
+   "sk": "kontrolný bod",
+   "en": "checkpoint"
+  },
+  {
+   "sk": "rozohraná hra",
+   "en": "the game in progress"
+  },
+  {
+   "sk": "voľné hranie",
+   "en": "free play"
+  },
+  {
+   "sk": "úvodné rady",
+   "en": "starting tips"
+  },
+  {
+   "sk": "Legenda (mapa)",
+   "en": "Key"
+  },
+  {
+   "sk": "titulky",
+   "en": "subtitles"
+  },
+  {
+   "sk": "hovoriaci",
+   "en": "speaker"
+  }
+ ],
+ "protected": [
+  {
+   "fact": "annex number on the photo, Viera’s shelf mark",
+   "sk": "K-17",
+   "en": "K-17",
+   "where": "B14, B15, item.CALPHOTO, item.OVERLAY.name"
+  },
+  {
+   "fact": "registration number of Mira’s box / collection",
+   "sk": "Z-17",
+   "en": "Z-17",
+   "where": "I16, C03, HANDOVER, CHAIN, CATALOG, F01, F03"
+  },
+  {
+   "fact": "Dezider’s garage",
+   "sk": "číslo 17",
+   "en": "number 17",
+   "where": "entry.S29.001"
+  },
+  {
+   "fact": "help-line hours on the notice",
+   "sk": "9–17 (od deviatej do piatej)",
+   "en": "9–17 (speech: ‘nine till five’)",
+   "where": "item.FLYER, Q2C"
+  },
+  {
+   "fact": "the four meanings on the plate",
+   "sk": "PÔVOD, HLAS, SÚHLAS, NÁVRAT",
+   "en": "ORIGIN, VOICE, CONSENT, RETURN",
+   "where": "P04"
+  },
+  {
+   "fact": "Mira’s rule (plate)",
+   "sk": "Rôzne údaje neznamenajú neplatné údaje.",
+   "en": "Different data are not invalid data.",
+   "where": "look.S39.plate, action.I13.001; F05 calls the panel rule its opposite"
+  },
+  {
+   "fact": "Mira’s rule (spoken)",
+   "sk": "Čo sa nezhoduje, necháme vedľa seba.",
+   "en": "What doesn’t match, we keep side by side.",
+   "where": "CS04, F16"
+  },
+  {
+   "fact": "the faulty rule",
+   "sk": "ROZDIEL = ZAHODIŤ",
+   "en": "DIFFERENCE = DISCARD",
+   "where": "item.FILTER_PHOTO, F05, look.S47.filter"
+  },
+  {
+   "fact": "warning sign in the workshop",
+   "sk": "NEPREPISOVAŤ ORIGINÁL",
+   "en": "DO NOT OVERWRITE THE ORIGINAL",
+   "where": "look.S10.ambient 2, entry.S10.001 (Adam: ‘I’m more used to DO NOT OPEN.’)"
+  },
+  {
+   "fact": "switch positions",
+   "sk": "ZÁPIS, MONITOR",
+   "en": "WRITE, MONITOR",
+   "where": "F06–F10, J05, look.S50.switch"
+  },
+  {
+   "fact": "restore procedure",
+   "sk": "ZACHOVAŤ VÝNIMKY",
+   "en": "KEEP EXCEPTIONS",
+   "where": "item.PATCH"
+  },
+  {
+   "fact": "the password",
+   "sk": "Lastovička sa vracia.",
+   "en": "The swallow comes back.",
+   "where": "E02, E11, D07, M11C hints"
+  },
+  {
+   "fact": "play title / first line",
+   "sk": "Žiaden strach, miláčik!",
+   "en": "Never fear, darling!",
+   "where": "Q7, look.S40.script, topic.LEA95.after, epilogue 7"
+  },
+  {
+   "fact": "Emil’s song",
+   "sk": "Štyri zastávky",
+   "en": "Four Stops (in quotes: ‘Four Stops’)",
+   "where": "Q4, epilogue 4"
+  },
+  {
+   "fact": "Tamara’s workshop",
+   "sk": "Druhý život / DRUHÝ ŽIVOT",
+   "en": "Second Life / SECOND LIFE",
+   "where": "Q8, look.S45.bench, S43"
+  },
+  {
+   "fact": "sign on the thermos",
+   "sk": "NEDOLIEVAŤ POLIEVKU",
+   "en": "DO NOT TOP UP WITH SOUP",
+   "where": "look.S03.ambient 2, topic.ELA.ambient 2"
+  },
+  {
+   "fact": "rhythm drawing",
+   "sk": "TRI VLNY, DVA ÚDERY, ŠESŤ DIELIKOV",
+   "en": "THREE WAVES, TWO BEATS, SIX NOTCHES",
+   "where": "look.S69.rhythm, B19, puzzle.P03.clue"
+  },
+  {
+   "fact": "P03 solution",
+   "sk": "3–2–6",
+   "en": "3–2–6",
+   "where": ""
+  },
+  {
+   "fact": "P02 solution",
+   "sk": "180°",
+   "en": "180°",
+   "where": ""
+  },
+  {
+   "fact": "P05 cell",
+   "sk": "rad 2, stĺpec 3; druhý rad zhora, tretí kameň zľava; mriežka 3 × 4",
+   "en": "row 2, column 3; second row from the top, third stone from the left; 3 × 4 grid",
+   "where": ""
+  },
+  {
+   "fact": "notice headline",
+   "sk": "SUSEDSKÁ POMOC 9–17",
+   "en": "NEIGHBOURLY HELP 9–17",
+   "where": "item.FLYER"
+  },
+  {
+   "fact": "Zuzana’s slip",
+   "sk": "LÍSTOK. PROSÍM JEDEN KÚSOK KOŽE NA ZVONČEK. ZUZANA, 1. TRIEDA.",
+   "en": "SLIP. PLEASE ONE PIECE OF LEATHER FOR THE BELL. ZUZANA, FIRST YEAR.",
+   "where": "item.ZUZA_SLIP, Q10A, Q10B (the child’s grammar stays)"
+  },
+  {
+   "fact": "Očko’s folder",
+   "sk": "Nepotrebné, ale milé",
+   "en": "Not needed, but nice",
+   "where": "ROBOT lines"
+  },
+  {
+   "fact": "thank-you card",
+   "sk": "ĎAKUJEM",
+   "en": "THANK YOU",
+   "where": "epilogue 8, look.S19.ambient 2"
+  },
+  {
+   "fact": "device: chronometer recognises Adam",
+   "sk": "Nositeľ rozpoznaný. Jeho pamäť je chránená.",
+   "en": "Wearer recognised. Wearer’s memory protected.",
+   "where": "action.G07.002"
+  },
+  {
+   "fact": "time windows",
+   "sk": "6. júna 1962; 7. decembra 1982; 15. júna 1995; 29. októbra 2020; 6. februára 2035 (shown)",
+   "en": "6 June 1962; 7 December 1982; 15 June 1995; 29 October 2020; 6 February 2035",
+   "where": "era.*.date; game.json keeps 2035-06-06, the shown date is February (winter)"
+  },
+  {
+   "fact": "ages and spans",
+   "sk": "Adam 35 (1985), 10 on the tape; Mira 22/55/80; Tóno 12/25/50; Oto 46/66; Jana 12/25/50/65; jar 38 rokov; Tóno’s wait 13 rokov; 58 / 73 rokov; meškám o dvadsaťpäť rokov",
+   "en": "identical values: ‘thirty-eight years’ in speech, ‘38 years’ in goals and hints; ‘a quarter of a century’",
+   "where": "GLOSSARY.md § 6.3"
+  }
+ ],
+ "verbatim": {
+  "action.F11.003": {
+   "sk": "Viktor? To som ja. Len ti volám. Nemusíš nič opravovať. Keď budeš mať čas, ozvi sa.",
+   "en": "Viktor? It’s me. I’m just ringing. You don’t have to fix anything. When you have time, call me."
+  },
+  "action.F11.004": {
+   "sk": "V upravenej verzii zostalo len „ozvi sa“.",
+   "en": "must quote exactly ‘call me’ (the last two words of F11.003)"
+  },
+  "action.D07.006": {
+   "sk": "Nečakal som. Žil som. Len som si pamätal miesto.",
+   "en": "I didn’t wait. I lived. I just remembered the place."
+  },
+  "cutscene.CS07.04.001": {
+   "sk": "Čaj ti spravím, keď bude možné prísť normálne.",
+   "en": "I’ll make you a cup of tea when you can come round properly."
+  },
+  "cutscene.CS07.04.002": {
+   "sk": "Tentoraz počkám.",
+   "en": "This time I’ll wait."
+  },
+  "journal.clue.P04": {
+   "sk": "Pôvod 1962, Hlas 1995, Súhlas 2020, Návrat 2035",
+   "en": "Origin 1962, Voice 1995, Consent 2020, Return 2035"
+  },
+  "game.title": {
+   "sk": "Posledný zvonec",
+   "en": "The Last Bell"
+  },
+  "puzzle.P01.left/right.*": {
+   "sk": "kruh, trojuholník, štvorec",
+   "en": "circle, triangle, square"
+  },
+  "puzzle.P04.left.*": {
+   "sk": "Pôvod, Hlas, Súhlas, Návrat",
+   "en": "Origin, Voice, Consent, Return"
+  },
+  "puzzle.P04.right.*": {
+   "sk": "2020, 1962, 2035, 1995",
+   "en": "unchanged digits"
+  }
+ },
+ "signs_in_art": [
+  {
+   "where": "S45 bench plaque, S43 plaque on Tamara’s table",
+   "painted": "DRUHÝ ŽIVOT",
+   "en": "SECOND LIFE",
+   "decision": "variablise (story text quotes it)"
+  },
+  {
+   "where": "S50 switch",
+   "painted": "ZÁPIS / MONITOR",
+   "en": "WRITE / MONITOR",
+   "decision": "variablise (story-critical)"
+  },
+  {
+   "where": "item icon FLYER",
+   "painted": "SUSEDSKÁ POMOC, 9–17",
+   "en": "NEIGHBOURLY HELP, 9–17",
+   "decision": "variablise (the look quotes it)"
+  },
+  {
+   "where": "item icon ORDER",
+   "painted": "čaj / zemiaky / ovsené vločky",
+   "en": "tea / potatoes / porridge oats",
+   "decision": "variablise if cheap; otherwise keep (handwriting)"
+  },
+  {
+   "where": "S12, S52, S58 school name board",
+   "painted": "ZÁKLADNÁ ŠKOLA SOKOLÍKOVA / ZŠ SOKOLÍKOVA",
+   "en": "—",
+   "decision": "keep: real signage"
+  },
+  {
+   "where": "S04 shop sign",
+   "painted": "POTRAVINY",
+   "en": "—",
+   "decision": "keep: real Slovak signage; texts say ‘the shop’"
+  },
+  {
+   "where": "S32 / S33 post office sign",
+   "painted": "POŠTA",
+   "en": "—",
+   "decision": "keep"
+  },
+  {
+   "where": "S31 station board",
+   "painted": "IVANKA PRI DUNAJI",
+   "en": "—",
+   "decision": "keep"
+  },
+  {
+   "where": "S05 doormat",
+   "painted": "VITAJTE",
+   "en": "‘welcome’",
+   "decision": "keep; a look may gloss it"
+  },
+  {
+   "where": "S65 banner (1982)",
+   "painted": "SPOLOČNOU PRÁCOU",
+   "en": "‘through common work’",
+   "decision": "keep: period slogan; the look gives the meaning"
+  },
+  {
+   "where": "S47, S50, S67, S68",
+   "painted": "CHOPOK, ROTUNDA CHOPOK",
+   "en": "—",
+   "decision": "keep: real place names"
+  },
+  {
+   "where": "S42 gable",
+   "painted": "Grand Jasná",
+   "en": "—",
+   "decision": "keep"
+  },
+  {
+   "where": "S43 wall",
+   "painted": "RECEPTION",
+   "en": "—",
+   "decision": "already English"
+  },
+  {
+   "where": "S29 garage, S33 calendar, CHRONO counter, CATALOG / HANDOVER Z-17",
+   "painted": "17, June 1962, 2020, Z-17",
+   "en": "—",
+   "decision": "language-neutral"
+  },
+  {
+   "where": "text-only signs (art shows scribbles or pictograms)",
+   "painted": "NEPREPISOVAŤ ORIGINÁL, NEDOLIEVAŤ POLIEVKU, ROZDIEL = ZAHODIŤ, TRI VLNY…, PÔVOD…",
+   "en": "§ 10 renderings",
+   "decision": "nothing to variablise: English text quotes the English rendering"
+  }
+ ],
+ "era_terms": {
+  "1962 Ivanka pri Dunaji": [
+   {
+    "sk": "pán, pani; mladý pán",
+    "en": "Mr, Mrs; ‘young man’",
+    "note": ""
+   },
+   {
+    "sk": "prosím pekne; nech sa páči; ráčte (Alojz)",
+    "en": "if you please; here you are; would you care to",
+    "note": "Alojz’s charming officialese"
+   },
+   {
+    "sk": "telegram; známky; pečiatka; prepážka",
+    "en": "telegram; stamps; stamp; counter",
+    "note": ""
+   },
+   {
+    "sk": "rádio (večerná zábava)",
+    "en": "the wireless (older villagers), the radio",
+    "note": ""
+   },
+   {
+    "sk": "náves; kultúrna sála; ochotnícke divadlo; kulisa",
+    "en": "village green; village hall; amateur dramatics; flat",
+    "note": ""
+   },
+   {
+    "sk": "hospodársky dvor; sklad; výdajný lístok",
+    "en": "farm yard; store; requisition slip",
+    "note": ""
+   },
+   {
+    "sk": "JRD (jednotné roľnícke družstvo)",
+    "en": "the collective farm (‘JRD’ only if painted or quoted)",
+    "note": "keep the idea, explain by the English noun"
+   },
+   {
+    "sk": "MNV (miestny národný výbor)",
+    "en": "the local council",
+    "note": ""
+   },
+   {
+    "sk": "škôlka (hra); prvá trieda; vysvedčenie; prázdniny; mamka",
+    "en": "hopscotch; the first year; school report; the holidays; Mum",
+    "note": "Zuzana; never ‘comrade’"
+   },
+   {
+    "sk": "avoid",
+    "en": "OK, stress, system, info, mobile, display, any modern word in an NPC’s mouth",
+    "note": ""
+   }
+  ],
+  "1982 Dúbravka": [
+   {
+    "sk": "súdruh učiteľ; súdružka riaditeľka (pupils)",
+    "en": "Comrade Teacher; Comrade Headmistress",
+    "note": "never as a joke"
+   },
+   {
+    "sk": "pionieri; pionierska schôdzka; pionierska šatka",
+    "en": "the Pioneers; Pioneer meeting; Pioneer neckerchief",
+    "note": ""
+   },
+   {
+    "sk": "brigáda",
+    "en": "work brigade (Saturday work brigade)",
+    "note": ""
+   },
+   {
+    "sk": "schválený vzor; výstavka; výdajka; formulár",
+    "en": "the approved model; the exhibition; requisition slip; form",
+    "note": ""
+   },
+   {
+    "sk": "vratné fľaše / poháre; záloha",
+    "en": "returnable bottles / jars; deposit",
+    "note": ""
+   },
+   {
+    "sk": "ROH",
+    "en": "the trade union (ROH)",
+    "note": "only if it appears"
+   },
+   {
+    "sk": "národný podnik (n. p.)",
+    "en": "national enterprise",
+    "note": "only if it appears"
+   },
+   {
+    "sk": "Jednota",
+    "en": "the Jednota co-op shop, then ‘Jednota’",
+    "note": "only if it appears"
+   },
+   {
+    "sk": "Tuzex; bony",
+    "en": "Tuzex, the hard-currency shop; Tuzex vouchers",
+    "note": "explain once, then the name"
+   },
+   {
+    "sk": "ČSSR; štátny znak",
+    "en": "Czechoslovakia; state emblem",
+    "note": ""
+   },
+   {
+    "sk": "MS vo futbale 1982; večerná rozprávka",
+    "en": "the 1982 World Cup; the bedtime story on telly",
+    "note": ""
+   },
+   {
+    "sk": "avoid",
+    "en": "slogans as punchlines, secret police, ‘nothing in the shops’ jokes, modern words",
+    "note": ""
+   }
+  ],
+  "1995 Bratislava": [
+   {
+    "sk": "koruny (Sk)",
+    "en": "crowns",
+    "note": "never ‘korunas’"
+   },
+   {
+    "sk": "kiosk; noviny; telefónna karta; pevná linka",
+    "en": "kiosk; papers; phonecard; landline",
+    "note": ""
+   },
+   {
+    "sk": "kazeta; walkman; magnetofón",
+    "en": "cassette, tape; personal stereo (never the brand Walkman); tape recorder",
+    "note": ""
+   },
+   {
+    "sk": "trh na Miletičovej; stánky",
+    "en": "the Miletičova market; stalls",
+    "note": ""
+   },
+   {
+    "sk": "električka; podchod; paneláky",
+    "en": "tram; underpass; the blocks",
+    "note": ""
+   },
+   {
+    "sk": "fakt, kamoš, frajer (sparingly)",
+    "en": "really, mate, show-off (sparingly)",
+    "note": ""
+   },
+   {
+    "sk": "avoid",
+    "en": "smartphones, internet talk, today’s slang, forced 90s brands",
+    "note": ""
+   }
+  ],
+  "2020 Chorvátsky Grob, Čierna Voda, Dúbravka": [
+   {
+    "sk": "rúško; odstup; dezinfekcia",
+    "en": "mask; distance (two metres); hand sanitiser",
+    "note": ""
+   },
+   {
+    "sk": "karanténa; dištančné vyučovanie",
+    "en": "quarantine; remote learning",
+    "note": ""
+   },
+   {
+    "sk": "výdajné miesto; dobrovoľníci; oznam; výveska",
+    "en": "pick-up point; volunteers; notice; notice board",
+    "note": ""
+   },
+   {
+    "sk": "kuriér; cez okno; na diaľku; QR kód; aplikácia",
+    "en": "courier; through the window; remotely; QR code; app",
+    "note": ""
+   },
+   {
+    "sk": "avoid",
+    "en": "illness jokes, ‘corona’ puns, office English (‘touch base’, ‘going forward’)",
+    "note": ""
+   }
+  ],
+  "2035 Jasná": [
+   {
+    "sk": "kurátorka; výstava; pavilón",
+    "en": "curator; exhibition; pavilion",
+    "note": ""
+   },
+   {
+    "sk": "čítačka; terminál; servisný režim; servisný kanál; servisná pamäť",
+    "en": "reader; terminal; service mode; service channel; service memory",
+    "note": ""
+   },
+   {
+    "sk": "normalizátor; zásobník; spätný zápis; diagnostika",
+    "en": "normaliser; buffer; write-back; diagnostics",
+    "note": ""
+   },
+   {
+    "sk": "lístok; skipas; lanovka; kabínka; Funitel",
+    "en": "ticket; ski pass; cable car; gondola cabin; the Funitel",
+    "note": ""
+   },
+   {
+    "sk": "návštevnícka kniha (papierová)",
+    "en": "the paper visitors’ book",
+    "note": ""
+   },
+   {
+    "sk": "avoid",
+    "en": "cyberpunk, invented jargon, claims that the lifts are unsafe",
+    "note": ""
+   }
+  ]
+ },
+ "puns": [
+  {
+   "where": "title, ZVON, zvonček",
+   "sk": "Posledný zvonec / ZVON (= bell) / triedny zvonček",
+   "en": "‘The Last Bell’; ZVON stays; Mira glosses it once in G05.005 (‘Like a bell. Zvon.’); every school or bike bell is ‘bell’, so the motif survives"
+  },
+  {
+   "where": "Q1 title",
+   "sk": "Bodka bez bodky (Bodka = dot)",
+   "en": "‘Bodka Drops the Ball’"
+  },
+  {
+   "where": "S22 bookshop",
+   "sk": "Pod druhou rukou (second-hand)",
+   "en": "‘Second Hand’: second-hand books and the clock’s second hand"
+  },
+  {
+   "where": "Alena (B14.x04)",
+   "sk": "Fotí sa svetlom, preto sme Svetlo.",
+   "en": "keep the name and gloss it: ‘Photos are made with light. Svetlo means light. Hence the name.’"
+  },
+  {
+   "where": "Vera / Adam (I10.003–.004)",
+   "sk": "Rydlo, ktorým sa nemá ryť (rydlo from ryť)",
+   "en": "‘A scratching tool that mustn’t scratch. I’ll remember that.’ – ‘That’s why it’s blunt. It remembers for you.’"
+  },
+  {
+   "where": "Zuzana (extra 4)",
+   "sk": "manžeta on a pump vs. on a shirt",
+   "en": "works in English with ‘cuff’; ‘So it’s a belt for water.’"
+  },
+  {
+   "where": "Zuzana (extra 1)",
+   "sk": "škôlka = hopscotch and nursery school",
+   "en": "pun lost; keep her pride: ‘Hopscotch, yes. But I’m not in the infants any more. I’m in the first year.’"
+  },
+  {
+   "where": "Zuzana (Q10A)",
+   "sk": "Chýba mu srdce (srdce = heart and clapper)",
+   "en": "‘It’s missing its clapper.’ – ‘No it isn’t. It’s in my hanky.’ (no heart pun)"
+  },
+  {
+   "where": "M05 title",
+   "sk": "Hlasy sa nerušia (nerušiť = do not disturb)",
+   "en": "‘No Interference’"
+  },
+  {
+   "where": "Soňa",
+   "sk": "družstvo, nie skupina",
+   "en": "‘a team, not just a group’"
+  },
+  {
+   "where": "Štefan",
+   "sk": "Lístok, podpis, materiál.",
+   "en": "‘Slip, signature, supplies. In that order.’"
+  },
+  {
+   "where": "Ela’s flask",
+   "sk": "NEDOLIEVAŤ POLIEVKU",
+   "en": "‘DO NOT TOP UP WITH SOUP’"
+  },
+  {
+   "where": "Q10 / Q11 / epilogues",
+   "sk": "Prvý / Druhý posledný zvonec; ‘Posledný zvonec! A v septembri zase prvý.’",
+   "en": "‘The First Last Bell’ / ‘Another Last Bell’; ‘Last bell! And in September, the first one again.’"
+  },
+  {
+   "where": "Q6 / password",
+   "sk": "Béla sa vracia / Lastovička sa vracia",
+   "en": "‘Béla Comes Back’ / ‘The swallow comes back.’"
+  },
+  {
+   "where": "Juro (B07.x02)",
+   "sk": "Juro Kazeta, to som ja.",
+   "en": "‘Juro Cassette, that’s me.’"
+  },
+  {
+   "where": "Mira (G04.x03)",
+   "sk": "Som inžinierka, nie veštica.",
+   "en": "‘I’m an engineer, not a fortune teller.’ (works as is)"
+  },
+  {
+   "where": "Boris",
+   "sk": "poznámka pod čiarou",
+   "en": "‘Footnote: …’"
+  },
+  {
+   "where": "Zuzana 1995",
+   "sk": "Niektoré veci sú krajšie bez návodu.",
+   "en": "‘Some things are nicer without the instructions.’"
+  },
+  {
+   "where": "Lea’s message (F11)",
+   "sk": "ozvi sa",
+   "en": "‘call me’ – serious beat, no joke"
+  }
+ ],
+ "running_gags": [
+  {
+   "speaker": "ADAM",
+   "en": "I only wanted to change a fuse."
+  },
+  {
+   "speaker": "MIRA20",
+   "en": "Gran’s rules: carry it by both handles; don’t come in."
+  },
+  {
+   "speaker": "MIRA95",
+   "en": "First … then …"
+  },
+  {
+   "speaker": "MIRA60",
+   "en": "If it doesn’t fit, we write it alongside."
+  },
+  {
+   "speaker": "TONO82",
+   "en": "Grandad says …"
+  },
+  {
+   "speaker": "OTO",
+   "en": "First we look."
+  },
+  {
+   "speaker": "JANA82",
+   "en": "It’s different from the model."
+  },
+  {
+   "speaker": "JANA95 / JANA20 / JANA35",
+   "en": "the exact word: ‘not a list – a register’"
+  },
+  {
+   "speaker": "ELA",
+   "en": "lists of lists"
+  },
+  {
+   "speaker": "DANA",
+   "en": "I don’t sell that. (patience, luck, time)"
+  },
+  {
+   "speaker": "ROMAN",
+   "en": "the house that used to be yellow"
+  },
+  {
+   "speaker": "JOZEF",
+   "en": "in big letters; ‘young man’"
+  },
+  {
+   "speaker": "SONA",
+   "en": "a team, not just a group"
+  },
+  {
+   "speaker": "ZITA",
+   "en": "The news is free."
+  },
+  {
+   "speaker": "ZUZANA, ZUZANA95",
+   "en": "counts everything; ‘only up to four – grown-ups fall over after that’"
+  },
+  {
+   "speaker": "KUBO",
+   "en": "the ball escapes ‘only higher’"
+  },
+  {
+   "speaker": "EMIL",
+   "en": "the trams keep my tempo"
+  },
+  {
+   "speaker": "PALI",
+   "en": "Not worth it.; ‘It was working yesterday.’"
+  },
+  {
+   "speaker": "VIERA",
+   "en": "Books sell, inserts go missing."
+  },
+  {
+   "speaker": "KAROL",
+   "en": "the reading-room rules"
+  },
+  {
+   "speaker": "ALENA",
+   "en": "People look best when they think I’ve stopped."
+  },
+  {
+   "speaker": "FERO",
+   "en": "Original. Just from a different maker."
+  },
+  {
+   "speaker": "MILADA",
+   "en": "like with a coat; ‘it’s always been like that’"
+  },
+  {
+   "speaker": "JURO",
+   "en": "people as tracks on a mixtape"
+  },
+  {
+   "speaker": "JURAJ",
+   "en": "never has white chalk"
+  },
+  {
+   "speaker": "DEZI",
+   "en": "Exact doesn’t mean the same."
+  },
+  {
+   "speaker": "BOZO",
+   "en": "Where are you headed?"
+  },
+  {
+   "speaker": "BERTA",
+   "en": "young Hrušková’s lit up again"
+  },
+  {
+   "speaker": "ALOJZ",
+   "en": "Béla isn’t a service pigeon."
+  },
+  {
+   "speaker": "LIDA",
+   "en": "six actors, four coats"
+  },
+  {
+   "speaker": "RUDO",
+   "en": "Never fear, darling!"
+  },
+  {
+   "speaker": "STEFAN",
+   "en": "Slip, signature, supplies."
+  },
+  {
+   "speaker": "VERA60",
+   "en": "Oto keeps changing the dimensions."
+  },
+  {
+   "speaker": "DOBRO",
+   "en": "the approved model"
+  },
+  {
+   "speaker": "RUZENA",
+   "en": "What you see is what we’ve got."
+  },
+  {
+   "speaker": "MARTA82",
+   "en": "without any fuss"
+  },
+  {
+   "speaker": "SIMON",
+   "en": "thinks in decades"
+  },
+  {
+   "speaker": "NINA",
+   "en": "lists, like her mother"
+  },
+  {
+   "speaker": "TAMARA",
+   "en": "The system works."
+  },
+  {
+   "speaker": "BORIS",
+   "en": "Footnote: …"
+  },
+  {
+   "speaker": "SARA",
+   "en": "the pen that has never fallen"
+  },
+  {
+   "speaker": "ROBOT",
+   "en": "Confidence: sixty per cent.; folder ‘Not needed, but nice’"
+  },
+  {
+   "speaker": "IVAN",
+   "en": "I’ll tell you, not the weather."
+  },
+  {
+   "speaker": "TURISTA",
+   "en": "photographs the fog"
+  }
+ ],
+ "deprecated_en": [
+  {
+   "do_not_write": "time machine, time-travel device",
+   "write": "ZVON / the chronometer"
+  },
+  {
+   "do_not_write": "linden",
+   "write": "lime tree"
+  },
+  {
+   "do_not_write": "janitor",
+   "write": "caretaker"
+  },
+  {
+   "do_not_write": "cabinet (fyzikálny kabinet)",
+   "write": "physics prep room"
+  },
+  {
+   "do_not_write": "retroactive write, retro-write",
+   "write": "write-back"
+  },
+  {
+   "do_not_write": "synchronisation chamber",
+   "write": "chronochamber"
+  },
+  {
+   "do_not_write": "time address (goals, hints, journal)",
+   "write": "time window / ‘opens the way to 2035’"
+  },
+  {
+   "do_not_write": "Grandma, Granny, Nan, Mirka",
+   "write": "Gran (Adam, 2020) / Mira / Mrs Hrušková"
+  },
+  {
+   "do_not_write": "Grandpa, Granddad",
+   "write": "Grandad (Tóno 12 only)"
+  },
+  {
+   "do_not_write": "Mom, mommy",
+   "write": "Mum"
+  },
+  {
+   "do_not_write": "Mr., Mrs., Ms., Dr.",
+   "write": "Mr, Mrs, Ms, Dr (no full stop)"
+  },
+  {
+   "do_not_write": "Pavol’s repair shop, Juraj (for Juro)",
+   "write": "Pali’s repair shop, Juro"
+  },
+  {
+   "do_not_write": "Dezi (outside friends’ speech)",
+   "write": "Dezider"
+  },
+  {
+   "do_not_write": "by the LEAL, the LEAL courtyard, Sokolíkova courtyard",
+   "write": "Pri LEALe"
+  },
+  {
+   "do_not_write": "Tóno 12, Jana 82",
+   "write": "twelve-year-old Tóno, Jana in 1982"
+  },
+  {
+   "do_not_write": "proof Consent / Origin",
+   "write": "proof of consent / of origin; the Consent port"
+  },
+  {
+   "do_not_write": "loop (the coil), transparent map",
+   "write": "measuring coil, transparent overlay K-17"
+  },
+  {
+   "do_not_write": "fonds, fund",
+   "write": "collection"
+  },
+  {
+   "do_not_write": "Second Hand Life, Second Wind",
+   "write": "Second Life (Tamara’s workshop)"
+  },
+  {
+   "do_not_write": "Walkman, Tannoy, Thermos, Perspex, Kilner (brands)",
+   "write": "personal stereo, PA, flask, plastic screen, preserving jar"
+  },
+  {
+   "do_not_write": "korunas, Slovak crowns",
+   "write": "crowns"
+  },
+  {
+   "do_not_write": "subway (underpass)",
+   "write": "underpass"
+  },
+  {
+   "do_not_write": "color, center, organize, realize, analyze, program (except software), catalog, traveled, gray, aluminum, tire, curb, license (noun), practice (verb), defense, mom",
+   "write": "colour, centre, organise, realise, analyse, programme, catalogue, travelled, grey, aluminium, tyre, kerb, licence, practise, defence, mum"
+  },
+  {
+   "do_not_write": "gotten, fall (autumn), vacation, sidewalk, apartment, elevator, flashlight, trash / garbage, mail, zip code, soccer, math, cookie, candy, line (queue), parking lot, cell phone, faucet, eraser",
+   "write": "got, autumn, holidays, pavement, flat, lift, torch, rubbish / bin, post, postcode, football, maths, biscuit, sweets, queue, car park, mobile, tap, rubber (only where unambiguous)"
+  },
+  {
+   "do_not_write": "awesome, cool (adults before 1995), OK (1962, 1982 NPCs), guys, y’all",
+   "write": "great, good, fine, everyone"
+  }
+ ],
+ "jargon_en": [
+  "in the game",
+  "in-game",
+  "player",
+  "quest",
+  "NPC",
+  "hotspot",
+  "pixel",
+  "zoom",
+  "click",
+  "inventory",
+  "puzzle",
+  "level",
+  "unlock",
+  "timeline",
+  "original line",
+  "butterfly effect",
+  "finale",
+  "combine",
+  "in the journal",
+  "save game",
+  "cutscene",
+  "fictional",
+  "off-screen",
+  "game"
+ ],
+ "zuzana_banned_en": [
+  "I won’t see it",
+  "I won’t be here",
+  "while I’m still here",
+  "while I’m around",
+  "one day I’ll be gone",
+  "when I’m gone",
+  "to remember me by",
+  "as a keepsake",
+  "in memory of",
+  "the last time I",
+  "never again",
+  "when I grow old",
+  "my husband",
+  "my children",
+  "my job"
+ ],
+ "spellcheck_allow": [
+  "ZVON",
+  "ZVON’s",
+  "LEAL",
+  "LEALe",
+  "Pri",
+  "Hruška",
+  "Hrušková",
+  "Hruškovej",
+  "Tóno",
+  "Tóno’s",
+  "Farkaš",
+  "Bielik",
+  "Vargová",
+  "Kormanová",
+  "Korman",
+  "Švecová",
+  "Valová",
+  "Kováč",
+  "Bartošová",
+  "Bodka",
+  "Bodka’s",
+  "Mlynár",
+  "Jozef",
+  "Soňa",
+  "Urbanová",
+  "Zita",
+  "Ondrušová",
+  "Belan",
+  "Pali",
+  "Pali’s",
+  "Pavol",
+  "Drobný",
+  "Viera",
+  "Holubová",
+  "Merta",
+  "Alena",
+  "Svobodová",
+  "Fero",
+  "Lánik",
+  "Milada",
+  "Kyselová",
+  "Juro",
+  "Juraj",
+  "Malík",
+  "Križan",
+  "Dezider",
+  "Dezider’s",
+  "Dezi",
+  "Božidar",
+  "Božo",
+  "Fiala",
+  "Berta",
+  "Kovárová",
+  "Alojz",
+  "Baran",
+  "Béla",
+  "Béla’s",
+  "Lída",
+  "Lída’s",
+  "Fialová",
+  "Rudo",
+  "Rudo’s",
+  "Rudolf",
+  "Pavlík",
+  "Štefan",
+  "Haluška",
+  "Oto",
+  "Oto’s",
+  "Vera",
+  "Vera’s",
+  "Nemcová",
+  "Nina",
+  "Tamara",
+  "Kráľová",
+  "Boris",
+  "Sára",
+  "Vrbová",
+  "Očko",
+  "Očko’s",
+  "Viktor",
+  "Dobrovič",
+  "Ružena",
+  "Malá",
+  "Marta",
+  "Dobiášová",
+  "Šimon",
+  "Rybár",
+  "Jana",
+  "Jana’s",
+  "Ivan",
+  "Horský",
+  "Miloš",
+  "Polák",
+  "Zuzana",
+  "Zuzana’s",
+  "Zuzka",
+  "Kubo",
+  "Kubo’s",
+  "Kubko",
+  "Karol",
+  "Lea",
+  "Lea’s",
+  "Mira",
+  "Mira’s",
+  "Ela",
+  "Dana",
+  "Roman",
+  "Roman’s",
+  "Lenka",
+  "Emil",
+  "Emil’s",
+  "Anton",
+  "Dúbravka",
+  "Karlova",
+  "Ves",
+  "Staré",
+  "Mesto",
+  "Ružinov",
+  "Petržalka",
+  "Miletičova",
+  "Kamenné",
+  "námestie",
+  "Starý",
+  "most",
+  "Ivanka",
+  "Dunaji",
+  "Chorvátsky",
+  "Grob",
+  "Čierna",
+  "Voda",
+  "Lúčny",
+  "koník",
+  "Sokolíkova",
+  "Jasná",
+  "Biela",
+  "Púť",
+  "Priehyba",
+  "Priehybou",
+  "Chopok",
+  "Chopkom",
+  "Rotunda",
+  "Vrbické",
+  "pleso",
+  "Funitel",
+  "Svetlo",
+  "Atlas",
+  "Bratislava",
+  "Tatras",
+  "ČSSR",
+  "Slovenčina",
+  "Grand",
+  "JRD",
+  "ROH",
+  "Jednota",
+  "Tuzex",
+  "MNV",
+  "POTRAVINY",
+  "POŠTA",
+  "VITAJTE",
+  "SPOLOČNOU",
+  "PRÁCOU",
+  "ZÁKLADNÁ",
+  "ŠKOLA",
+  "SOKOLÍKOVA",
+  "DRUHÝ",
+  "ŽIVOT",
+  "ZŠ",
+  "zvon",
+  "Z-17",
+  "K-17",
+  "chronochamber",
+  "normaliser",
+  "write-back"
+ ]
+}

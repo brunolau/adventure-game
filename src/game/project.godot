@@ -7,6 +7,9 @@ config_version=5
 [application]
 
 config/name="game.title"
+; Bundle / executable name of the Apple ports (the window title is set at runtime from game.title, GameRuntime).
+config/name.macos="Posledný zvonec"
+config/name.ios="Posledný zvonec"
 config/description="Point-and-click adventure (code name LastBell). The name is the localization key game.title; Godot translates it for the window title."
 config/version="0.1.0"
 run/main_scene="res://scenes/Main.tscn"
@@ -29,6 +32,7 @@ window/size/window_height_override=900
 window/size/resizable=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep"
+window/handheld/orientation=4
 
 [dotnet]
 
