@@ -1071,3 +1071,18 @@ real person would (Lída may call the costume count a puzzle).
   Slovak; lengths within `variant.limits`.
 - **Words:** no `deprecated_en`, no `jargon_en` in in-world text, no `zuzana_banned_en` in ZUZANA / ZUZANA95 lines
   or about her; American spellings flagged by LanguageTool (`MORFOLOGIK_RULE_EN_GB`) are fixed, not ignored.
+
+## Update 2026-10-08 (owner): place names in English
+
+The owner: "translate the location names too … some like Ružinov turn into Ruzinov … for others like Lúčny koník find
+a proper English name". This replaces key decisions 10 and 11 above (`tools/en_place_names.py`, batch
+`en/C7_place_names.json`):
+
+- **Real geographic names lose their diacritics:** Dubravka, Ruzinov, Petrzalka, Jasna, Cierna Voda, Chorvatsky Grob,
+  Biela Put, Sokolikova, Mileticova / Mileticka, Hotel Grand Jasna. Karlova Ves, Ivanka pri Dunaji, Chopok, Priehyba
+  are unchanged.
+- **Names that mean something get an English name:** Staré Mesto → the Old Town; Starý most → the Old Bridge;
+  Kamenné námestie → Kamenne Square; Vrbické pleso → Lake Vrbicke; Lúčny koník → the Grasshopper playground;
+  Pri LEALe → LEAL Court; Fotoateliér Svetlo → Light photo studio (the "look for the light" joke works again).
+- **People's names keep their Slovak spelling** (Adam Hruška, Tóno, Soňa …). A painted sign quoted in a line keeps its
+  Slovak text with the English meaning next to it (DRUHÝ ŽIVOT – ‘second life’).
