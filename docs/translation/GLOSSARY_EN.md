@@ -1086,3 +1086,18 @@ a proper English name". This replaces key decisions 10 and 11 above (`tools/en_p
   Pri LEALe → LEAL Court; Fotoateliér Svetlo → Light photo studio (the "look for the light" joke works again).
 - **People's names keep their Slovak spelling** (Adam Hruška, Tóno, Soňa …). A painted sign quoted in a line keeps its
   Slovak text with the English meaning next to it (DRUHÝ ŽIVOT – ‘second life’).
+
+## Update 2026-10-09 (owner): English names of people
+
+The owner: "in english - also change the character names .. Bodka => Dotty ... and come up with English sounding
+names". This replaces key decisions 4 and 5, § 3.1, § 3.2 and the names in § 3.4 and § 3.5 above, and the last
+sentence of the 2026-10-08 update ("People's names keep their Slovak spelling"). The rules and the full table are in
+`docs/translation/README.md` ("English names of people"); the table itself lives in `tools/en_person_names.py`
+(batch `en/C8_person_names.json`).
+
+- The tables above and `glossary_en.json` still show the Slovak names: a translator writes the Slovak name, and the
+  tool turns it into the English one (Tóno → Tony, Hrušková → Perry, Bodka → Dotty, Béla → Barnaby, Očko → Blinky).
+- What stays from § 3 and § 4: who may use which nickname (Susie only from Ivanka adults in 1962, Des only from
+  Desmond's friends), the family words (Gran, Grandad, Mum), the forms of address (*Mr Joseph*, *Uncle Otto*,
+  *Auntie Lydia*, *Miss Leah*), the possessive of names in -s (*Aloysius’s*, *Charles’s*), and every Zuzana rule.
+- The epithet is *Jerry Cassette*. Quest titles follow: *Dotty Drops the Ball*, *Barnaby Comes Back*.

@@ -28,6 +28,11 @@ release pass" and "Verification and release pass").
   - **Linux and macOS preview builds** next to the Windows one. Linux was started in an Ubuntu 24.04 container
     without a screen; macOS was checked by its structure only, because there is no Mac here.
   - Tóno is "Tóno" in hover labels and topic headers, and the first workshop goal no longer uses unexplained terms.
+- **After 0.2.0, on main only (not in a released build):** the characters have English names in the English texts
+  (your note of 2026-10-09: "Bodka => Dotty ... and come up with English sounding names"): Tony, Otto, Jane, Mrs
+  Perry, Dotty the dog, Barnaby the pigeon, Blinky the robot. Slovak texts and voices are unchanged. The full list is
+  in `docs/translation/README.md` ("English names of people"). The 0.2.0 downloads still show the Slovak names in
+  English.
 - **Your notes of 2026-10-07 evening are in:**
   - **S07** (bus stop, 2020): the way to Potraviny cez okienko now points **down**, and behind the stop the painting
     shows small family houses of the suburb instead of open fields.

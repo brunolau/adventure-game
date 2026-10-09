@@ -18,6 +18,100 @@ confirmation for now, then recheck yourself using some of your language plugins 
 4. **Standard/Hard variants** – `en/C6_guidance_std.json` (the `<key>.std` texts of
    `src/game/localization/overrides/guidance_std.csv`).
 
+## English names of people (owner 2026-10-09)
+
+The owner: "in english - also change the character names .. Bodka => Dotty ... and come up with English sounding
+names". Since then the English texts use English names for the (all fictional) characters. The Slovak texts and the
+Slovak voices are unchanged, so a player with English subtitles hears *Tóno* and reads *Tony*.
+
+Rules (`tools/en_person_names.py` holds the table and applies it; batch `en/C8_person_names.json`):
+
+- **First names:** the natural English form where there is one (Tóno / Anton → Tony / Anthony, Jana → Jane, Fero →
+  Frank, Karol → Charles, Viera → Faith). A name that already reads as English stays: Adam, Mira, Nina, Dana, Roman,
+  Emil, Vera, Tamara, Boris.
+- **Pet forms:** one English form for all Slovak pet forms of a name, plus at most one English nickname
+  (Zuzana / Zuzka → Susanna / Susie; Dezider / Dezi → Desmond / Des; Božidar / Božo → Theodore / Ted;
+  Rudolf / Rudo → Rudolph / Rudy; Pavol / Pali → Paul / Paulie).
+- **Surnames:** the meaning where it gives a common English surname (Hruška → Perry, Kováč → Smith, Mlynár →
+  Miller, Rybár → Fisher, Kráľová → King), else an English surname that sounds close (Vargová → Varley, Merta →
+  Merton). The feminine *-ová* goes. The same Slovak surname gives the same English one, so the coincidences of the
+  original stay (two Smiths, two Urbans, two Fieldings).
+- **Animals and the robot:** Bodka → **Dotty** (fixed by the owner), Béla → Barnaby, Očko → Blinky.
+- **No two characters share a first name** (Juro Kazeta is *Jerry Cassette* because Juraj the painter is *George*;
+  Viera is *Faith* because Vera is the draughtswoman of 1962), and **no person's name keeps a diacritic**.
+- **Not renamed:** real people (credits, photo sources), historical figures, bands, brands, and the place names
+  (`tools/en_place_names.py`). Zuzana has no surname in English either, and nothing else about her lines changed.
+
+Four texts were rewritten by hand, because a joke hangs on the spelling of a name (`CUSTOM` in the tool):
+
+| key | Slovak | English |
+|---|---|---|
+| `action.F01.x02` | … teraz už len „Adam Hru“. | … now you’re just ‘Adam Per’. |
+| `action.F09.x02` | Aj s mäkčeňom? | With both r’s? |
+| `action.F09.x03` | Aj s mäkčeňom. Teraz potvrďte … | Both r’s. Now confirm … |
+| `topic.LENKA.ambient 1.002` | Lebo keď poviem „dosť, bodka“, on má vždy ešte jedno hafnutie navyše. | … he always has one more woof to add. With him, it’s never just the one dot. |
+
+Names that are written on something follow the same table: the brass case reads *M. Perry* (`look.S09.case`), the
+child's slip is signed *SUSANNA, FIRST YEAR* (`item.ZUZA_SLIP`), the paper boat says *SUSIE* (`look.S38.paper_boat`)
+and the script cover *RUDY* (`look.S40.script`). None of these names is painted in the art (the case shows a bell,
+the slip, the boat and the cover show scribbles), so no English name contradicts a picture. Codes and puzzle answers
+do not depend on a name (Z-17, K-17, 3–2–6, the password "The swallow comes back").
+
+| character | Slovak | English | note |
+|---|---|---|---|
+| ADAM | Adam · Hruška | Adam · Perry | hruška = pear; Perry is the pear-tree surname |
+| MIRA | Mira · Hrušková | Mira · Perry | Gran; the case in S09 reads M. Perry |
+| TONO | Tóno · Anton · Farkaš | Tony · Anthony · Wolfe | farkas = wolf |
+| OTO | Oto · Bielik | Otto · Whitlock | biely = white |
+| JANA | Jana · Vargová | Jane · Varley |  |
+| LEA | Lea · Kormanová | Leah · Korman |  |
+| VIKTOR | Viktor · Korman | Victor · Korman | Leah's son |
+| NINA | Nina · Švecová | Nina · Swift |  |
+| ELA | Ela | Ella | Nina's mother, also Swift |
+| DANA | Dana · Valová | Dana · Vale |  |
+| ROMAN | Roman · Kováč | Roman · Smith | kováč = smith |
+| LENKA | Lenka · Bartošová | Helen · Bartlett | Bartoš = Bartholomew, as in Bartlett |
+| BODKA | Bodka | Dotty | the dog; fixed by the owner (bodka = dot) |
+| JOZEF | Jozef · Mlynár | Joseph · Miller | mlynár = miller; Mr Joseph |
+| SONA | Soňa · Urbanová | Sonia · Urban |  |
+| ZITA | Zita · Ondrušová | Rita · Andrews | Ondruš = Andrew |
+| EMIL | Emil · Belan | Emil · Bellamy |  |
+| PALI | Pali · Pavol · Drobný | Paulie · Paul · Small | drobný = small |
+| VIERA | Viera · Holubová | Faith · Holbrook | viera = faith; not Vera, who is the 1962 draughtswoman |
+| KAROL | Karol · Merta | Charles · Merton |  |
+| ALENA | Alena · Svobodová | Elaine · Freeman | svoboda = freedom |
+| FERO | Fero · Lánik | Frank · Furlong | lán = an old measure of land |
+| MILADA | Milada · Kyselová | Mildred · Sowerby | kyslý = sour |
+| JURO | Juro | Jerry | Juro Kazeta -> Jerry Cassette; not George, who is the painter |
+| JURAJ | Juraj · Križan | George · Crossley | kríž = cross |
+| DEZI | Dezider · Dezi | Desmond · Des | also Smith (Kováč) |
+| BOZO | Božidar · Božo · Fiala | Theodore · Ted · Fielding | both names mean 'gift of God' |
+| BERTA | Berta · Kovárová | Bertha · Smithson |  |
+| ALOJZ | Alojz · Baran | Aloysius · Ramsey | baran = ram |
+| BELA | Béla | Barnaby | the carrier pigeon |
+| LIDA | Lída · Fialová | Lydia · Fielding |  |
+| RUDO | Rudolf · Rudo · Pavlík | Rudolph · Rudy · Pawley |  |
+| STEFAN | Štefan · Haluška | Stephen · Hallam |  |
+| VERA60 | Vera · Nemcová | Vera · Norman |  |
+| ZUZANA | Zuzana · Zuzka | Susanna · Susie | no surname, as in Slovak |
+| KUBO | Kubo · Kubko | Jake | Jakub = Jacob |
+| DOBRO | Dobrovič | Goodwin | dobro = good; no first name |
+| RUZENA | Ružena · Malá | Rose · Little | ruža = rose, malá = little |
+| MARTA82 | Marta · Dobiášová | Martha · Dobson |  |
+| SIMON | Šimon · Rybár | Simon · Fisher | rybár = fisherman |
+| TAMARA | Tamara · Kráľová | Tamara · King | kráľ = king |
+| BORIS | Boris · Urban | Boris · Urban |  |
+| SARA | Sára · Vrbová | Sarah · Willows | vŕba = willow |
+| ROBOT | Očko | Blinky | the delivery robot (očko = little eye) |
+| IVAN | Ivan · Horský | Ian · Hill | Ivan = John = Ian; horský = of the hills |
+| TURISTA | Miloš · Polák | Miles · Pollard |  |
+
+Order of a full regeneration: translation batches → `python tools/en_place_names.py` → `python
+tools/en_person_names.py` → `python tools/en_batches.py merge` → `python tools/extract_strings.py` → Godot `--import`.
+New English texts are still written with the Slovak names of GLOSSARY_EN.md; the two tools turn them into the
+English place and person names. `python tools/en_person_names.py --check` fails when a Slovak name form or a
+person's name with a diacritic is left in an English text.
+
 ## In the game
 
 - `tools/extract_strings.py` puts `overrides/en.csv` into the en column of `dialogue.csv` and `world.csv`;

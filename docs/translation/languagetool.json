@@ -27,20 +27,6 @@
    }
   ]
  },
- "action.G04.x03": {
-  "text": "On Monday, before the quarantine. I’m an engineer, not a fortune teller.",
-  "matches": [
-   {
-    "rule": "EN_COMPOUNDS_FORTUNE_TELLER",
-    "message": "This word is normally spelled with a hyphen.",
-    "word": "fortune teller",
-    "replacements": [
-     "fortune-teller"
-    ],
-    "context": "... the quarantine. I’m an engineer, not a fortune teller."
-   }
-  ]
- },
  "action.G07.002": {
   "text": "Wearer recognised. Wearer’s memory protected.",
   "matches": [
@@ -197,7 +183,7 @@
   ]
  },
  "item.PHOTO2020": {
-  "text": "The yard in 2020: a tarmac corner with no lime tree and the service window with the metal swallow. Tóno will recognise that swallow.",
+  "text": "The yard in 2020: a tarmac corner with no lime tree and the service window with the metal swallow. Tony will recognise that swallow.",
   "matches": [
    {
     "rule": "OXFORD_SPELLING_Z_NOT_S",
@@ -206,7 +192,7 @@
     "replacements": [
      "recognize"
     ],
-    "context": "...indow with the metal swallow. Tóno will recognise that swallow."
+    "context": "...indow with the metal swallow. Tony will recognise that swallow."
    }
   ]
  },
@@ -239,7 +225,7 @@
   ]
  },
  "action.B17.004": {
-  "text": "Back to Pri LEALe, voluntarily this time. At school I only went there to fetch the ball.",
+  "text": "Back to LEAL Court, voluntarily this time. At school I only went there to fetch the ball.",
   "matches": [
    {
     "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
@@ -248,12 +234,12 @@
     "replacements": [
      "school,"
     ],
-    "context": "...to Pri LEALe, voluntarily this time. At school I only went there to fetch the ball."
+    "context": "...o LEAL Court, voluntarily this time. At school I only went there to fetch the ball."
    }
   ]
  },
  "action.B17.x02": {
-  "text": "I’m Dezider. On the airwaves I go by another name, but I don’t tell that to just anyone. Let’s see.",
+  "text": "I’m Desmond. On the airwaves I go by another name, but I don’t tell that to just anyone. Let’s see.",
   "matches": [
    {
     "rule": "MORFOLOGIK_RULE_EN_GB",
@@ -262,7 +248,7 @@
     "replacements": [
      "air waves"
     ],
-    "context": "I’m Dezider. On the airwaves I go by another name, but I don’t tell ..."
+    "context": "I’m Desmond. On the airwaves I go by another name, but I don’t tell ..."
    }
   ]
  },
@@ -323,7 +309,7 @@
   ]
  },
  "look.S17.SONA": {
-  "text": "Soňa keeps her album better organised than I keep my accounts.",
+  "text": "Sonia keeps her album better organised than I keep my accounts.",
   "matches": [
    {
     "rule": "OXFORD_SPELLING_Z_NOT_S",
@@ -332,7 +318,7 @@
     "replacements": [
      "organized"
     ],
-    "context": "Soňa keeps her album better organised than I keep my accounts."
+    "context": "Sonia keeps her album better organised than I keep my accounts."
    }
   ]
  },
@@ -361,20 +347,6 @@
      "apologized"
     ],
     "context": "They apologised for that sneeze all week. It’s the best..."
-   }
-  ]
- },
- "topic.LEA95.ambient 2.002": {
-  "text": "Mine would fill a cassette of their own.",
-  "matches": [
-   {
-    "rule": "FILL_OF_WITH",
-    "message": "The usual preposition to use after “fill” is “with”, not “a”. Did you mean “fill a cassette with”?",
-    "word": "fill a cassette of",
-    "replacements": [
-     "fill a cassette with"
-    ],
-    "context": "Mine would fill a cassette of their own."
    }
   ]
  },
@@ -431,20 +403,6 @@
      "it,"
     ],
     "context": "Without it we wouldn’t have got there. That’s part..."
-   }
-  ]
- },
- "topic.TONO.ambient 2.x03": {
-  "text": "The caretaker doesn’t run. The caretaker takes a short cut.",
-  "matches": [
-   {
-    "rule": "SHORT_CUT",
-    "message": "Did you mean “shortcut”?",
-    "word": "short cut",
-    "replacements": [
-     "shortcut"
-    ],
-    "context": "...aker doesn’t run. The caretaker takes a short cut."
    }
   ]
  },
@@ -529,18 +487,6 @@
      "me,"
     ],
     "context": "For me it’s been thirty-three years. And for y..."
-   }
-  ]
- },
- "action.I03.z03": {
-  "text": "She’s right nearly always. It’s just that nobody will lend her a screwdriver.",
-  "matches": [
-   {
-    "rule": "ADVERB_WORD_ORDER",
-    "message": "The adverb ‘'s’ is usually not used at the end of a sentence if refers to a subject pronoun that comes before it.",
-    "word": "always",
-    "replacements": [],
-    "context": "She’s right nearly always. It’s just that nobody will lend her a ..."
    }
   ]
  },
@@ -646,6 +592,20 @@
    }
   ]
  },
+ "action.Q6B.x02": {
+  "text": "For Barnaby you don’t need a slip. He’s the only one I issue to on his word.",
+  "matches": [
+   {
+    "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
+    "message": "A comma is probably missing here.",
+    "word": "Barnaby",
+    "replacements": [
+     "Barnaby,"
+    ],
+    "context": "For Barnaby you don’t need a slip. He’s the only on..."
+   }
+  ]
+ },
  "look.S33.carbon": {
   "text": "Carbon paper for customers. With it I can make a second copy of the form.",
   "matches": [
@@ -671,20 +631,6 @@
      "boot"
     ],
     "context": "The handcart’s rut runs right past the trunk. A guard would protect the young lime."
-   }
-  ]
- },
- "topic.BERTA.ambient 1.003": {
-  "text": "That’s what everyone says who doesn’t want to dirty their Sunday best.",
-  "matches": [
-   {
-    "rule": "RELATIVE_CLAUSE_AGREEMENT",
-    "message": "Did you mean “do”? Alternatively, check whether the singular of ‘says’ should be used.",
-    "word": "does",
-    "replacements": [
-     "do"
-    ],
-    "context": "That’s what everyone says who doesn’t want to dirty their Sunday best."
    }
   ]
  },
@@ -786,23 +732,8 @@
    }
   ]
  },
- "topic.RUDO.ambient 1.002": {
-  "text": "I’d like to hear that off stage too, right now.",
-  "matches": [
-   {
-    "rule": "EN_COMPOUNDS_OFF_STAGE",
-    "message": "This expression is normally spelled as one or with a hyphen.",
-    "word": "off stage",
-    "replacements": [
-     "off-stage",
-     "offstage"
-    ],
-    "context": "I’d like to hear that off stage too, right now."
-   }
-  ]
- },
  "topic.RUDO.extra 1.004": {
-  "text": "On stage I’m a king. At the scales I’m just Rudo. And Rudo says very little.",
+  "text": "On stage I’m a king. At the scales I’m just Rudy. And Rudy says very little.",
   "matches": [
    {
     "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
@@ -811,7 +742,7 @@
     "replacements": [
      "stage,"
     ],
-    "context": "On stage I’m a king. At the scales I’m just Rudo..."
+    "context": "On stage I’m a king. At the scales I’m just Rudy..."
    }
   ]
  },
@@ -942,7 +873,7 @@
   ]
  },
  "action.F06.x04": {
-  "text": "In the buffer, until someone confirms the write. So far nobody has confirmed it, not even Viktor.",
+  "text": "In the buffer, until someone confirms the write. So far nobody has confirmed it, not even Victor.",
   "matches": [
    {
     "rule": "A_INFINITIVE",
@@ -1163,7 +1094,7 @@
   ]
  },
  "item.LEA_MESSAGE.purpose": {
-  "text": "Play it to Viktor so he hears what the normaliser deleted.",
+  "text": "Play it to Victor so he hears what the normaliser deleted.",
   "matches": [
    {
     "rule": "OXFORD_SPELLING_Z_NOT_S",
@@ -1172,7 +1103,7 @@
     "replacements": [
      "normalizer"
     ],
-    "context": "Play it to Viktor so he hears what the normaliser deleted."
+    "context": "Play it to Victor so he hears what the normaliser deleted."
    }
   ]
  },
@@ -1191,7 +1122,7 @@
   ]
  },
  "quest.M12.hint.3": {
-  "text": "Nina outside the hotel → original school cassette on Tamara in the lobby → confirmed handover 2020 on Boris in the exhibition room → catalogue card on Sára at the customer centre → return ticket on the reader at the bottom station → board the Funitel at Priehyba → finish the ride → phone on the normalisation panel by the Rotunda → local audio reader on the service terminal in the Atlas pavilion.",
+  "text": "Nina outside the hotel → original school cassette on Tamara in the lobby → confirmed handover 2020 on Boris in the exhibition room → catalogue card on Sarah at the customer centre → return ticket on the reader at the bottom station → board the Funitel at Priehyba → finish the ride → phone on the normalisation panel by the Rotunda → local audio reader on the service terminal in the Atlas pavilion.",
   "matches": [
    {
     "rule": "OXFORD_SPELLING_Z_NOT_S",
@@ -1313,7 +1244,7 @@
   ]
  },
  "hint.nudge.E01": {
-  "text": "In 1982 little Tóno helped Oto. They might both recognise the device I’m carrying.",
+  "text": "In 1982 little Tony helped Otto. They might both recognise the device I’m carrying.",
   "matches": [
    {
     "rule": "OXFORD_SPELLING_Z_NOT_S",
@@ -1322,12 +1253,12 @@
     "replacements": [
      "recognize"
     ],
-    "context": "...little Tóno helped Oto. They might both recognise the device I’m carrying."
+    "context": "...ittle Tony helped Otto. They might both recognise the device I’m carrying."
    }
   ]
  },
  "hint.nudge.E11": {
-  "text": "Little Tóno wanted me to say the agreed sentence when we next met. In 1995 he’s the caretaker.",
+  "text": "Little Tony wanted me to say the agreed sentence when we next met. In 1995 he’s the caretaker.",
   "matches": [
    {
     "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
@@ -1341,7 +1272,7 @@
   ]
  },
  "hint.nudge.F10": {
-  "text": "The write has stopped. The system will only let me into the chamber with Viktor once I confirm it.",
+  "text": "The write has stopped. The system will only let me into the chamber with Victor once I confirm it.",
   "matches": [
    {
     "rule": "A_INFINITIVE",
@@ -1372,7 +1303,7 @@
   ]
  },
  "hint.nudge.Q9F": {
-  "text": "Jana wanted a whole notebook of schematics one day. In 2035 I’d like to see what came of it.",
+  "text": "Jane wanted a whole notebook of schematics one day. In 2035 I’d like to see what came of it.",
   "matches": [
    {
     "rule": "MISSING_COMMA_AFTER_INTRODUCTORY_PHRASE",
@@ -1413,6 +1344,34 @@
      "block out"
     ],
     "context": "Development blockout X: X (X) – painted background still mis..."
+   }
+  ]
+ },
+ "action.B07.003.std": {
+  "text": "Here’s a cross adaptor. You’ll find a two-pin connector at the market with the parts and the stories, and the missing insulation at a tailor’s who sews coats and cables alike.",
+  "matches": [
+   {
+    "rule": "APOSTROPHE_PLURAL_",
+    "message": "Consider using the plural form here.",
+    "word": "tailor’s",
+    "replacements": [
+     "tailors"
+    ],
+    "context": "...tories, and the missing insulation at a tailor’s who sews coats and cables alike."
+   }
+  ]
+ },
+ "look.S19.EMIL.std": {
+  "text": "Emil keeps the tempo, even when the city around him doesn’t. A metronome ticks along on his case.",
+  "matches": [
+   {
+    "rule": "NOUN_AROUND_IT",
+    "message": "Consider using “the surrounding city”.",
+    "word": "the city around him",
+    "replacements": [
+     "the surrounding city"
+    ],
+    "context": "Emil keeps the tempo, even when the city around him doesn’t. A metronome ticks along on his..."
    }
   ]
  }

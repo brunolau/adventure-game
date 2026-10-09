@@ -3,10 +3,11 @@ for others like Lúčny koník find a proper English name").
 
 Rules: real geographic names lose their diacritics (Dubravka, Ruzinov, Petrzalka, Jasna, Cierna Voda …); names that
 mean something get an English name (the Old Town, the Old Bridge, Kamenne Square, Lake Vrbicke, the Grasshopper
-playground, LEAL Court, Light photo studio). People's names keep their Slovak spelling.
+playground, LEAL Court, Light photo studio). People's names: tools/en_person_names.py (since 2026-10-09).
 
 Rewrites every English text that contains one of the names and stores the result in
-docs/translation/en/C7_place_names.json (read after the other batches). Run `en_batches.py merge` afterwards.
+docs/translation/en/C7_place_names.json (read after the translation batches). Run `en_person_names.py` and then
+`en_batches.py merge` afterwards.
 
     python tools/en_place_names.py [--show]
 """
@@ -66,14 +67,12 @@ def convert(text: str) -> str:
 
 
 def main() -> None:
-    have = E.done()
-    if OUT.exists():  # start from the texts without this file's own earlier output
-        own = json.loads(OUT.read_text(encoding="utf-8"))
-        base = {}
-        for p in sorted(E.OUT.glob("*.json")):
-            if p != OUT:
-                base.update(json.loads(p.read_text(encoding="utf-8")))
-        have = base
+    # Start from the batches that sort before this file's own output: neither its earlier output nor the files
+    # derived from it (C8_person_names.json of tools/en_person_names.py, which must be regenerated after this one).
+    have = {}
+    for p in sorted(E.OUT.glob("*.json")):
+        if p.name < OUT.name and not p.name.startswith("_meta"):
+            have.update(json.loads(p.read_text(encoding="utf-8")))
     out = {}
     for k, v in have.items():
         new = CUSTOM.get(k) or convert(v)

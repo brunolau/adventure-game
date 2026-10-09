@@ -588,3 +588,22 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
 - **Dezider's voice** stays as it is (owner: "whatever… it does not matter"). No ethnic caricature voice and no clone
   of a real person's voice without consent.
 - **Android** build and touch controls: a separate agent, after the 0.2.0 desktop release.
+
+### English names of the characters (owner 2026-10-09)
+
+- **Request:** "in english - also change the character names .. Bodka => Dotty ... and come up with English sounding
+  names". Only **Bodka → Dotty** is the owner's own choice; every other name was chosen by Claude and has **not been
+  shown to the owner yet** (English needs no approval for now, see above).
+- **Rule:** the natural English form of a first name where there is one (Tóno → Tony, Jana → Jane, Fero → Frank,
+  Viera → Faith); a name that already reads as English stays (Adam, Mira, Nina, Vera, Boris …); surnames by meaning
+  where that gives a common English surname (Hruška → Perry, Kováč → Smith, Mlynár → Miller), else by sound; Béla →
+  Barnaby, Očko → Blinky; no two characters share a first name; no diacritics. This replaces "People's names keep
+  their Slovak spelling" of 2026-10-08. Full table: docs/translation/README.md "English names of people";
+  `tools/en_person_names.py`.
+- **Scope:** English texts only (896 of 5,255). Slovak texts and the Slovak voices are unchanged, so with English
+  subtitles the voice says *Tóno* and the subtitle *Tony*. Real people (credits, photo sources), brands and place
+  names are not renamed. Zuzana is *Susanna* (*Susie* where the Slovak says Zuzka); nothing else about her changed.
+- **Not in a released build yet:** 0.2.0 on GitHub still has the Slovak names in English.
+- **Open for the owner:** the names themselves (any of them can be changed in one line of the tool), in particular
+  Mira and the other names left as they are, *Aloysius* for Alojz, *Jerry Cassette* for Juro Kazeta, and the family
+  name *Perry*.
