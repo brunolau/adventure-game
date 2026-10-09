@@ -4,12 +4,12 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-09, version 0.2.1; the Linux and macOS rows are filled in by the 0.2.1 release pass)
+## Status (2026-10-09, version 0.2.1; built, not published: the GitHub release page has 0.2.0)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
-| Linux x86_64 | yes | 0.2.0: start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.2.0-linux-x86_64.tar.gz`, 362.2 MB |
-| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.2.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.2.0-macos.zip`, 429.6 MB |
+| Linux x86_64 | yes | 0.2.1 (as 0.2.0): start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.2.1-linux-x86_64.tar.gz`, 362.2 MB |
+| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.2.1), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.2.1-macos.zip`, 429.6 MB |
 | Linux arm64 | preset only | — | — |
 | Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.2.1: debug APK played on a headless Android 16 emulator, smoke test 11 of 11 (title screen, a list scrolled by a finger, new game, touch controls, autosave); release APK and bundle checked statically only. The owner tried 0.2.0 on a phone on 2026-10-09 (first report: lists did not scroll, fixed in 0.2.1); **0.2.1 has not been on a real device yet** | `PoslednyZvonec-0.2.1.apk`, 584.3 MB; `PoslednyZvonec-0.2.1.aab`, 520.6 MB |
 | iOS | preset | not possible on Windows | — |

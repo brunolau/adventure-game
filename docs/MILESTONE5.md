@@ -31,7 +31,66 @@ the female narrator; all suites green, routes A and K 134/134, release rebuilt (
 English, the voiced look texts; all suites green, routes A, EN (English) and K 134/134, Windows, Linux and macOS
 built, published as `v0.2.0`.
 
-The sections after the next six are the record of the first milestone-5 run (2026-10-05).
+**Version 0.2.1 verified and built on 2026-10-09** (next section): English names of the characters, the Android
+build with touch controls and the list scrolling the owner asked for after his first test on a phone; all suites
+green, the English route 134/134, Windows, Linux, macOS and Android built. **Not published yet** (the owner decides).
+
+The sections after the next seven are the record of the first milestone-5 run (2026-10-05).
+
+## Version 0.2.1 (2026-10-09, verified and built; not published)
+
+What changed since 0.2.0 (commits bb1c97c0 to ec9646a1):
+
+- **Android port and touch controls** (owner: "in other agent work on the android build"): docs/PORTS.md "Android"
+  and "Touch controls". Touch mode exists only on phones and tablets (feature tag `mobile`) and in QA runs with
+  `--touch`; a desktop build cannot turn it on.
+- **Lists scroll with a finger** (owner, first test of the 0.2.0 APK on a phone: "none of the things that are meant
+  to be scrollable is actually scrollable"): `UI/Common/TouchScroller.cs`, sliders, the settings layout on phones
+  (ISSUES ANDROID-12, -13).
+- **English names of the characters** (owner: "Bodka => Dotty ... and come up with English sounding names", "for all
+  platforms of course"): `tools/en_person_names.py`, 896 of 5,255 English texts; the Slovak column is byte-identical
+  (docs/translation/README.md "English names of people").
+
+| check | result |
+|---|---|
+| Godot `--headless --import` (after the names) | exit 0, 0 errors; only the three `.en.translation` files changed |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `check_strings.py` | OK, 5255 keys, 0 errors, 0 warnings |
+| `en_person_names.py --check` | OK, 0 leftovers in 5255 texts |
+| `--acceptance m1` / `travel` (headless) | 34 / 4 PASS, 0 failures |
+| `--acceptance m2` (headless, x3) | 46 PASS, 0 failures |
+| `--touch --acceptance touch` (headless, private profile) | 20 PASS, 0 failures (TC17 to TC20 are the scroll and slider checks) |
+| Route EN `--play-all --locale en --lines` (headless, x6) | 134/134 actions, 1001 lines, the ending and the album replay (11 shots), 0 warnings, exit 0; the lines show the new names ("Adam Perry", "Mira Perry") |
+| Android emulator (Android 16, x86_64, no window): `android_qa.py smoke` on the 0.2.1 debug APK | 11 of 11 with real touch events, the new scroll check included |
+
+Said plainly: routes A (Slovak) and K (keyboard only) were **not** run again; no Slovak text and no PC input code
+changed (the scroller, the phone settings layout and the hover change exist in touch mode only; `SettingsScreen.Build`
+was rearranged, its PC branch builds the same tree). The English route ran without `--coverage`, so there is no
+coverage file for it; the counts above are from its log. Known headless-only engine lines in the logs, as before:
+`Parameter "t" is null` (dummy renderer, room change; 4 times in the English route, once with `wrong RID` /
+`Parameter "mem" is null` in front of it). Logs: `build/verify_1009/logs/` (review run of the Android commits),
+`build/verify_1009/logs2/` (this pass), `build/verify_1009/android/`.
+
+**Windows.** `build.bat` exit 0 (C# 0 warnings, 0 errors; release filters OK, 576 natural-mode references, 0 errors;
+the known `ERR_CANT_OPEN` icon pass). `LastBell.exe` 109.5 MB (file version 0.2.1.0), `LastBell.pck` 320.8 MB,
+`data_LastBell_windows_x86_64/` 81.5 MB; `build/m5/ship/PoslednyZvonec/` 511.8 MB, 190 files, zipped as
+**`build/m5/ship/PoslednyZvonec-0.2.1-windows-x64.zip`, 373.2 MB** (373,220,212 bytes, zip test OK, sha256
+`b9762101…658b2512`). Smoke test of the shipped copy (`build/verify_1008b/release_smoke.py`, hidden window, the
+player's profile moved aside and restored): QA arguments ignored, new game, first action, autosave S01 / 2020 /
+[G01] / [PHONE, TOOLS].
+
+**Linux and macOS** (`build_ports.py linux macos --skip-import`, `verify`): `PoslednyZvonec-0.2.1-linux-x86_64.tar.gz`
+362.2 MB (sha256 `cadb24eb…e231018b`), started with `--headless --quit-after 900` in an `ubuntu:24.04` container:
+exit 0, no error line, user folder created. `PoslednyZvonec-0.2.1-macos.zip` 429.6 MB (sha256 `8641bdef…8ee5ac0f`),
+structure verified, not started on a Mac.
+
+**Android** (`build_ports.py android-qa android android-aab`): `PoslednyZvonec-0.2.1.apk` 584.3 MB (sha256
+`0173d1a0…ef38346a`; version code 3, arm64-v8a, minimum API 24, no permission, release key) and
+`PoslednyZvonec-0.2.1.aab` 520.6 MB. The arm64 APK itself was checked statically; what was played is the x86_64
+debug APK of the same project. **0.2.1 has not been on a real phone yet.**
+
+The player's save folder is identical to its state before the runs. Nothing was published: the GitHub release page
+still has `v0.2.0`. Paid generation in this pass: none.
 
 ## Version 0.2.0 (2026-10-08, verified and released)
 

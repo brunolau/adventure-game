@@ -1,15 +1,27 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: **0.2.0**, built 2026-10-08 late evening for Windows, Linux and macOS (the main menu and the exe say the same
-number), published on GitHub Releases as `v0.2.0`. Before it: 0.1.0 of 2026-10-07 20:20 (your answers of 2026-10-07
-evening: S07, S18 / S62 and S21 exits, the room S69 renamed „Pri LEALe“, the female narrator), published on
-2026-10-08 as `v0.1.0`.
+Version: **0.2.1**, built 2026-10-09 for Windows, Linux, macOS and Android (the main menu and the exe say the same
+number). **Not published yet:** the GitHub release page still offers `v0.2.0` (2026-10-08, Windows, Linux, macOS);
+0.2.1 waits for your word. Before that: 0.1.0 of 2026-10-07, published on 2026-10-08 as `v0.1.0`.
 Languages: Slovak and English (voices Slovak). Test record behind this page: `docs/MILESTONE5.md` (sections "Version
-0.2.0", "Owner feedback of 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and
-release pass" and "Verification and release pass").
+0.2.1", "Version 0.2.0", "Owner feedback of 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second
+verification and release pass" and "Verification and release pass").
 
 ## In short
 
+- **New in 0.2.1 (2026-10-09):**
+  - **English names for the characters, on every platform** (your notes: "Bodka => Dotty ... and come up with
+    English sounding names", "for all platforms of course"): Adam and Mira Perry, Tony, Otto, Jane, Leah and Victor
+    Korman, Dotty the dog, Barnaby the pigeon, Blinky the robot and the rest. Only Dotty is your own choice; the
+    others are proposals you have not seen yet (full table: `docs/translation/README.md`, "English names of people";
+    any name is one line to change). 896 of the 5,255 English texts changed. Slovak texts and the Slovak voices are
+    unchanged, so with English subtitles the voice says *Tóno* and the subtitle says *Tony*.
+  - **Android: lists scroll with a finger** (your first report from the phone: "none of the things that are meant to
+    be scrollable is actually scrollable"). A finger that slides over a list scrolls it, also when it went down on a
+    button; a short touch is still a tap. Volume sliders no longer jump when a finger passes over them. The settings
+    have their tabs in a column on phones, so four rows fit instead of two. Nothing of this changes the PC version.
+  - **Android build** (new since 0.2.0, see "Linux, macOS, Android, iOS" below): an APK for phones and a Google Play
+    bundle, with touch controls.
 - **New in 0.2.0 (2026-10-08):**
   - **Standard and Hard give less away** (your note: "the game is still hinting way too much… I don't want
     'metronóm má Emil'"; approved: "yup, good adjustments"). On these two difficulties 163 lines, goals and journal
@@ -28,11 +40,6 @@ release pass" and "Verification and release pass").
   - **Linux and macOS preview builds** next to the Windows one. Linux was started in an Ubuntu 24.04 container
     without a screen; macOS was checked by its structure only, because there is no Mac here.
   - Tóno is "Tóno" in hover labels and topic headers, and the first workshop goal no longer uses unexplained terms.
-- **After 0.2.0, on main only (not in a released build):** the characters have English names in the English texts
-  (your note of 2026-10-09: "Bodka => Dotty ... and come up with English sounding names"): Tony, Otto, Jane, Mrs
-  Perry, Dotty the dog, Barnaby the pigeon, Blinky the robot. Slovak texts and voices are unchanged. The full list is
-  in `docs/translation/README.md` ("English names of people"). The 0.2.0 downloads still show the Slovak names in
-  English.
 - **Your notes of 2026-10-07 evening are in:**
   - **S07** (bus stop, 2020): the way to Potraviny cez okienko now points **down**, and behind the stop the painting
     shows small family houses of the suburb instead of open fields.
@@ -74,8 +81,8 @@ release pass" and "Verification and release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.2.0-windows-x64.zip` (373.2 MB; the same file is on the GitHub
-   release page). Unpacked, it is the folder `PoslednyZvonec/` (511.7 MB). It holds three things that must stay
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.2.1-windows-x64.zip` (373.2 MB; the GitHub release page still has
+   0.2.0). Unpacked, it is the folder `PoslednyZvonec/` (511.8 MB). It holds three things that must stay
    together: `LastBell.exe` (109.5 MB), `LastBell.pck` (320.8 MB, of it 127.9 MB voice clips) and
    `data_LastBell_windows_x86_64/` (81.4 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
@@ -200,17 +207,19 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ### Linux, macOS, Android, iOS
 Details and the test record of each port: docs/PORTS.md.
-- **Linux x86_64 (preview, released):** `PoslednyZvonec-0.2.0-linux-x86_64.tar.gz` (362.2 MB). Started without a
-  screen in an Ubuntu 24.04 container; nobody has played it on a Linux desktop yet.
-- **macOS, Apple Silicon and Intel (preview, released):** `PoslednyZvonec-0.2.0-macos.zip` (429.6 MB). Not
+- **Linux x86_64 (preview):** `build/ports/PoslednyZvonec-0.2.1-linux-x86_64.tar.gz` (362.2 MB). 0.2.0 is on the
+  release page and was started without a screen in an Ubuntu 24.04 container; nobody has played either on a Linux
+  desktop yet.
+- **macOS, Apple Silicon and Intel (preview):** `build/ports/PoslednyZvonec-0.2.1-macos.zip` (429.6 MB). Not
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android (built 2026-10-09, not released):** `build/ports/PoslednyZvonec-0.2.0.apk` (584.3 MB, arm64, Android 7.0
-  or newer, no permissions) and a Google Play bundle (520.6 MB). Touch controls are in: tap acts, hold looks, the
-  Eye button shows the markers, system Back is Esc, autosave when the app leaves the screen. Played only in an
-  Android 16 emulator (touch smoke test 10 of 10); **never on a real phone or tablet**. Not on the GitHub release
-  page: it waits for your test on a phone and for your approval of 11 new Slovak touch texts
+- **Android (not released):** `build/ports/PoslednyZvonec-0.2.1.apk` (584.3 MB, arm64, Android 7.0 or newer, no
+  permissions) and a Google Play bundle (520.6 MB). It installs over 0.2.0 and keeps the saves. Touch controls: tap
+  acts, hold looks, a slide scrolls lists, the Eye button shows the markers, system Back is Esc, autosave when the
+  app leaves the screen. You tried 0.2.0 on your phone on 2026-10-09 (lists did not scroll; fixed). 0.2.1 was played
+  only in an Android 16 emulator (touch smoke test 11 of 11); **it has not been on a real phone yet**. Not on the
+  GitHub release page: it waits for your test and for your approval of 11 new Slovak touch texts
   (`docs/writing/out_v6/ui_touch.csv`). Google Play needs a developer account (USD 25, once). C# on Android is
   experimental in Godot 4.7.
 - **iOS:** needs a Mac with Xcode, an Apple Developer team id and provisioning profiles. C# on iOS is
