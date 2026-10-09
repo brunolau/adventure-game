@@ -36,7 +36,11 @@ public partial class SettingsScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.settings.title"));
-        var row = new HFlowContainer();
+        // Phones (touch mode, UI at 200 %): the tabs stand in a column beside the rows. In a row they wrap to two lines
+        // and leave the list a strip of two rows (seen on the emulator 2026-10-09); beside it the list has the whole
+        // height of the panel. "Restore defaults" goes under the tabs.
+        bool columns = TouchMode.Enabled;
+        Container row = columns ? Ui.VBox(8) : new HFlowContainer();
         row.AddThemeConstantOverride("h_separation", 10);
         row.AddThemeConstantOverride("v_separation", 10);
         var group = new ButtonGroup();
@@ -50,17 +54,30 @@ public partial class SettingsScreen : ModalScreen
             tabs.Add(b);
             row.AddChild(b);
         }
-        Body.AddChild(row);
         content = Ui.VBox(18);
-        Body.AddChild(Ui.Scroll(content));
-        var bottom = Ui.HBox(12);
-        bottom.AddChild(Ui.Spacer());
-        bottom.AddChild(Ui.Button(Ui.T("ui.settings.reset_defaults"), () => UiRoot.Instance?.Confirm(Ui.T("ui.settings.reset_confirm"), Ui.T("ui.settings.reset_defaults"), () =>
+        var reset = Ui.Button(Ui.T("ui.settings.reset_defaults"), () => UiRoot.Instance?.Confirm(Ui.T("ui.settings.reset_confirm"), Ui.T("ui.settings.reset_defaults"), () =>
         {
             UiSettings.ResetDefaults();
             Commit();
             Rebuild();
-        }), "FlatButton"));
+        }), "FlatButton");
+        if (columns)
+        {
+            row.AddChild(reset);
+            var tabList = Ui.Scroll(row);
+            tabList.SizeFlagsHorizontal = SizeFlags.Fill; // as wide as the widest tab
+            var split = Ui.HBox(22);
+            split.SizeFlagsVertical = SizeFlags.ExpandFill;
+            split.AddChild(tabList);
+            split.AddChild(Ui.Scroll(content));
+            Body.AddChild(split);
+            return;
+        }
+        Body.AddChild(row);
+        Body.AddChild(Ui.Scroll(content));
+        var bottom = Ui.HBox(12);
+        bottom.AddChild(Ui.Spacer());
+        bottom.AddChild(reset);
         Body.AddChild(bottom);
     }
 
@@ -184,7 +201,9 @@ public partial class SettingsScreen : ModalScreen
         var box = Ui.VBox(4);
         var row = Ui.HBox(20);
         var l = Ui.Label(label, "SubheadingLabel", wrap: true);
-        l.CustomMinimumSize = new Vector2(420, 0);
+        // Phones: the logical screen is 960 px wide and the tabs take a column of it; a narrower label (it wraps) and a
+        // shorter slider keep a row inside the panel, so the panel is not scaled down as a whole (ModalScreen).
+        l.CustomMinimumSize = new Vector2(TouchMode.Enabled ? 220 : 420, 0);
         l.SizeFlagsHorizontal = SizeFlags.Fill;
         l.VerticalAlignment = VerticalAlignment.Center;
         row.AddChild(l);
@@ -198,7 +217,7 @@ public partial class SettingsScreen : ModalScreen
     private static Control SliderRow(string label, double min, double max, double step, Func<double> get, Action<double> set, Func<double, string> format)
     {
         var row = Ui.HBox(16);
-        var slider = new HSlider { MinValue = min, MaxValue = max, Step = step, Value = get(), CustomMinimumSize = new Vector2(360, UiTheme.MinHit), SizeFlagsHorizontal = SizeFlags.ExpandFill, SizeFlagsVertical = SizeFlags.ShrinkCenter };
+        var slider = new HSlider { MinValue = min, MaxValue = max, Step = step, Value = get(), CustomMinimumSize = new Vector2(TouchMode.Enabled ? 200 : 360, UiTheme.MinHit), SizeFlagsHorizontal = SizeFlags.ExpandFill, SizeFlagsVertical = SizeFlags.ShrinkCenter };
         var value = Ui.Label(format(get()), "");
         value.CustomMinimumSize = new Vector2(110, 0);
         value.VerticalAlignment = VerticalAlignment.Center;

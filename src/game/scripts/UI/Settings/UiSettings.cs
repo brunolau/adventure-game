@@ -149,9 +149,13 @@ public static class UiSettings
         if (TouchMode.Enabled && !TouchMode.IsMobile) ApplyDeviceDefaults();
     }
 
-    /// <summary>Writes the file.</summary>
+    /// <summary>
+    /// Writes the file. Not in a QA run that emulates a phone on the desktop (<c>--touch</c>): it runs with that phone's
+    /// HUD scale and subtitle size, and those must never land in this PC's settings.
+    /// </summary>
     public static void Save()
     {
+        if (TouchMode.Enabled && !TouchMode.IsMobile) return;
         var cfg = new ConfigFile();
         for (int i = 0; i < Buses.Length; i++) cfg.SetValue("audio", Buses[i], Volume[i]);
         cfg.SetValue("audio", "mute_unfocused", MuteUnfocused);

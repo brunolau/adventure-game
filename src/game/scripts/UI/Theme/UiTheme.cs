@@ -297,6 +297,14 @@ public static class UiTheme
         t.SetStylebox("panel", "TooltipPanel", DarkPanel(0.95f, 12, 10));
         t.SetColor("font_color", "TooltipLabel", Cream);
         t.SetFontSize("font_size", "TooltipLabel", 24);
+        // Touch mode: a finger leaves no pointer behind, but Godot keeps the last button it touched "hovered" (the mouse
+        // it makes of the finger stays there), and the hover look reads as a selection. Hover looks like normal there.
+        if (LastBell.Game.Runtime.TouchMode.Enabled)
+        {
+            foreach (var type in new[] { "Button", "TabButton", "HudButton", "FlatButton" })
+                t.SetStylebox("hover", type, t.GetStylebox("normal", type));
+            t.SetColor("icon_hover_color", "HudButton", Cream);
+        }
         return t;
     }
 

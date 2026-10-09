@@ -180,8 +180,9 @@ public partial class InventoryPanel : Control
         if (!Visible) return;
         if (heldSlot is { } held)
         {
-            // Touch: a finger held on a slot looks at the item; a finger lifted elsewhere (scrolling) ends the hold.
-            if (!Input.IsMouseButtonPressed(MouseButton.Left)) heldSlot = null;
+            // Touch: a finger held on a slot looks at the item; a finger lifted elsewhere or a slide that scrolls the
+            // bar (UI/Common/TouchScroller keeps those moves from the slots) ends the hold.
+            if (!Input.IsMouseButtonPressed(MouseButton.Left) || LastBell.Game.UI.Common.TouchScroller.ScrolledThisTouch) heldSlot = null;
             else if (!heldLooked && Time.GetTicksMsec() / 1000.0 - heldSince >= TouchGestures.LongPressSeconds)
             {
                 heldLooked = true;
@@ -327,7 +328,7 @@ public partial class InventoryPanel : Control
             else if (heldSlot == id)
             {
                 heldSlot = null;
-                if (!heldLooked) WorldInput.Submit(new Hit.Item(id), PointerButton.Left);
+                if (!heldLooked && !LastBell.Game.UI.Common.TouchScroller.ScrolledThisTouch) WorldInput.Submit(new Hit.Item(id), PointerButton.Left);
             }
             return;
         }

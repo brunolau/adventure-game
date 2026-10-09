@@ -4,14 +4,14 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-08, version 0.2.0)
+## Status (2026-10-09, version 0.2.1; the Linux and macOS rows are filled in by the 0.2.1 release pass)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
 | Linux x86_64 | yes | 0.2.0: start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.2.0-linux-x86_64.tar.gz`, 362.2 MB |
 | macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.2.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.2.0-macos.zip`, 429.6 MB |
 | Linux arm64 | preset only | — | — |
-| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | debug APK played on a headless Android 16 emulator: smoke test 10 of 10 (title screen, new game, touch controls, autosave); release APK and bundle checked statically only; **no real device yet** | `PoslednyZvonec-0.2.0.apk`, 584.3 MB; `PoslednyZvonec-0.2.0.aab`, 520.6 MB |
+| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.2.1: debug APK played on a headless Android 16 emulator, smoke test 11 of 11 (title screen, a list scrolled by a finger, new game, touch controls, autosave); release APK and bundle checked statically only. The owner tried 0.2.0 on a phone on 2026-10-09 (first report: lists did not scroll, fixed in 0.2.1); **0.2.1 has not been on a real device yet** | `PoslednyZvonec-0.2.1.apk`, 584.3 MB; `PoslednyZvonec-0.2.1.aab`, 520.6 MB |
 | iOS | preset | not possible on Windows | — |
 
 ## Running the desktop ports
@@ -24,19 +24,20 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 
 ## Android (2026-10-08)
 
-Package `eu.inviton.lastbell`, version 0.2.0 (code 2), landscape, immersive (no system bars), no permissions, minimum
+Package `eu.inviton.lastbell`, version 0.2.1 (code 3; 0.2.0 was code 2), landscape, immersive (no system bars), no permissions, minimum
 Android 7.0 (API 24), target API 36. C# runs on the .NET 9 Mono runtime inside the APK (Godot 4.7.2, experimental).
 
 ### Artifacts
 
 | File | What | Size |
 |---|---|---|
-| `build/ports/PoslednyZvonec-0.2.0.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key | 584.3 MB |
-| `build/ports/PoslednyZvonec-0.2.0.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 520.6 MB |
+| `build/ports/PoslednyZvonec-0.2.1.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key | 584.3 MB |
+| `build/ports/PoslednyZvonec-0.2.1.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 520.6 MB |
 | `build/ports/android_qa/LastBell-qa-x86_64.apk` | debug APK for the emulator: x86_64, debug key, QA harness arguments honoured | 586.7 MB |
 
 Install the APK on a phone: copy it over and open it (Android asks once to allow installs from that app), or
-`adb install -r build/ports/PoslednyZvonec-0.2.0.apk`. The game needs about 1.2 GB free for the install.
+`adb install -r build/ports/PoslednyZvonec-0.2.1.apk`. It installs over 0.2.0 (same key, higher version code) and keeps
+the saves. The game needs about 1.2 GB free for the install.
 
 ### Build
 
@@ -166,7 +167,16 @@ APK is 584 MB while the same build with the desktop textures is 412 MB.
   `Parameter "t" is null` (dummy renderer, room change) appeared once in m1 and three times in m2; its count changes
   from run to run and it was there before these changes. The player's save folder is unchanged. Logs:
   `build/verify_1009/logs/`. One new flaw from the emulator screenshots: ISSUES ANDROID-11.
-- **Not tested:** a real phone or tablet. The release APK is arm64-v8a and the emulator is x86_64, so the release APK
+- **0.2.1 (2026-10-09), after the owner's first report from a phone** ("none of the things that are meant to be
+  scrollable is actually scrollable"): reproduced on the emulator with real Android touch events (the title menu of a
+  game with a save: six buttons, "Quit" cut off, a swipe did nothing: `scroll_r02_menu.png`,
+  `scroll_r03_menu_after_swipe.png`); with the fix the same swipe brings "Quit" into view
+  (`scroll_f02_menu_after_swipe.png`). `android_qa.py smoke` has a scroll check now (a slide that starts on a tab of
+  the settings scrolls the tab column to its end and presses nothing): **11 of 11**. Desktop `--touch --acceptance
+  touch`: **20 of 20** (new: TC17 tap on a tab, TC18 slide over buttons scrolls and presses nothing, TC19 slider
+  along / across, TC20 tap on a slider). Release APK 0.2.1 checked with `aapt2` / `apksigner` (version code 3,
+  arm64-v8a, release key). The emulator needed a cold start that morning (ISSUES ANDROID-14).
+- **Not tested:** 0.2.1 on a real phone or tablet. The release APK is arm64-v8a and the emulator is x86_64, so the release APK
   itself was only checked statically (`build_ports.py verify`: ABI, package, signature with the release key, C#
   assemblies inside); it is the same project and code as the debug APK that was played. Performance, battery use,
   audio latency and real GPU memory are unknown until someone plays it on a device.
@@ -220,6 +230,8 @@ feature tag `mobile`), so the PC controls are exactly as before. On a PC with a 
 | system Back | Esc: skip a line, close a screen, cancel the item, pause; on the title screen: quit? | Esc |
 | inventory: tap an item | takes it in hand and closes the inventory (the HUD shows it with a cancel cross); open the inventory again and tap a second item to combine | click the item, click outside |
 | inventory: hold an item | look at it (also the "Prezrieť" button of the card) | right click |
+| slide over a list | scrolls it, also when the finger went down on a button; the list coasts after the lift and a touch stops it. A finger that moves less than 28 canvas px is still a tap | mouse wheel |
+| slider: slide along it / tap it | moves the value by that distance / sets it at that point; a slide across it scrolls the list (a touch alone changes nothing) | drag the slider |
 
 **Why a tap acts at once** (and not "first tap shows the label, second tap acts"): the game has one action per place
 and no verb to choose, nothing a tap does can be lost, and a second tap on the same place is already the double tap
@@ -234,7 +246,15 @@ Also in touch mode:
   screen dpi): a 6.3 inch phone gets 200 % (buttons 9.0 mm) and 42 px subtitles (2.6 mm), an 8 inch tablet 150 %, a
   10 inch tablet 100 to 125 %. Both stay adjustable in the settings.
 - **Screens:** the title screen has two columns, the inventory a wide card above one row of slots, tips wrap; panels
-  that would not fit are scaled down (`ModalScreen`).
+  that would not fit are scaled down (`ModalScreen`). The settings have their tabs in a column on the left and the
+  rows beside it over the whole height (0.2.1; in a row the tabs wrapped and left the list two rows of room).
+- **Lists (0.2.1, `UI/Common/TouchScroller.cs`):** Godot's own touch scrolling only starts when the press reaches the
+  scroll container, and a press never passes a button; nearly every list here is made of buttons, so on a phone
+  nothing scrolled (owner, 2026-10-09). The scroller works from the mouse events Godot makes of the first finger,
+  before the GUI sees them: past the tap slop the buttons give up their press (NOTIFICATION_SCROLL_BEGIN) and the
+  content follows the finger. It exists in touch mode only.
+- **No hover look (0.2.1):** the last button a finger touched stayed highlighted (Godot keeps the emulated mouse
+  there); in touch mode the hover style is the normal style.
 - **Safe area:** HUD, screens and subtitles keep inside the display's safe area (`TouchMode.SafeInsets`); the painting
   uses the whole picture. On phones wider than 16:9 the cutout is in the black bar and the inset is zero.
 - **Aspect ratios:** stretch aspect `keep`: bars left and right on phones, above and below on 4:3 tablets.

@@ -5,10 +5,15 @@ emulator / adb state in .tools/android/home, and an adb server of its own on por
 Android Studio or adb of the user is never touched. The emulator always runs with -no-window -no-audio -no-boot-anim.
 
     python tools/android_qa.py create                 the AVD "lastbell_qa" (Pixel 7 profile 1080x2400, API 36, x86_64)
-    python tools/android_qa.py start [--gpu MODE]     boot the emulator and wait for Android. Default GPU mode "host":
+    python tools/android_qa.py start [--gpu MODE] [--cold] [--normal-priority]
+                                                      boot the emulator and wait for Android. Default GPU mode "host":
                                                       the GPU of the PC renders off-screen (no window). The software
                                                       mode (swiftshader_indirect) cannot run the game: its GLES allows
                                                       261 fragment uniform vectors, the canvas shader of Godot needs more.
+                                                      --cold: do not load the quick-boot snapshot (a start that loads it
+                                                      can hang: the device is listed but no shell command answers, seen
+                                                      2026-10-09). --normal-priority: when other work keeps the CPU busy
+                                                      (the default is below normal).
     python tools/android_qa.py stop                   shut the emulator and the private adb server down
     python tools/android_qa.py install [apk]          default: build/ports/android_qa/LastBell-qa-x86_64.apk
     python tools/android_qa.py launch [-- QA args]    start the game; QA harness arguments after -- (debug APK only)
@@ -25,7 +30,7 @@ Android Studio or adb of the user is never touched. The emulator always runs wit
     python tools/android_qa.py meminfo                dumpsys meminfo of the game
     python tools/android_qa.py adb ARGS...            raw adb against the emulator
     python tools/android_qa.py smoke [--keep-data]    the touch smoke test (phone profile, debug APK installed): title
-                                                      screen, Back, new game, slide label, tap = take the tool bag, eye
+                                                      screen, Back, scrolling a list, new game, slide label, tap = take the tool bag, eye
                                                       markers, long press = look, inventory, item in hand, pause by Back,
                                                       double tap through the exit, Home + return (autosave, pause menu).
                                                       Screenshots build/screens/android/smoke_*.png; exit code 1 on a
@@ -120,7 +125,10 @@ def cmd_start(args: list[str]) -> int:
     log.parent.mkdir(parents=True, exist_ok=True)
     cmd = [str(EMULATOR), "-avd", AVD_NAME, "-no-window", "-no-audio", "-no-boot-anim", "-no-metrics",
            "-gpu", gpu, "-port", str(CONSOLE_PORT), "-netfast"]
-    flags = NO_WINDOW | (0x00004000 if os.name == "nt" else 0)  # below-normal priority
+    if "--cold" in args:
+        cmd.append("-no-snapshot-load")
+    priority = 0x00000020 if "--normal-priority" in args else 0x00004000  # normal / below normal
+    flags = NO_WINDOW | (priority if os.name == "nt" else 0)
     with log.open("wb") as fh:
         subprocess.Popen(cmd, env=env(), stdout=fh, stderr=subprocess.STDOUT, stdin=subprocess.DEVNULL, creationflags=flags)
     print(f"emulator starting (log: {log.relative_to(ROOT)}), waiting for Android to boot ...", flush=True)
@@ -256,6 +264,20 @@ def cmd_smoke(args: list[str]) -> int:
     cmd_shot("smoke_02_back_asks_to_quit")
     check("Back on the title screen is one request", len(re.findall(r"Back request, mode", game_log())) == 1)
     back()  # closes the question
+    # Lists: a finger that slides over a column of buttons scrolls it (UI/Common/TouchScroller; owner report
+    # 2026-10-09: nothing scrolled, because a press on a button never reaches Godot's scroll container). Here: the
+    # tabs of the settings, a column of seven buttons with room for five; the slide starts on the "Display" tab and
+    # must not press it.
+    tap(1350, 538, 1.5)  # Settings (a fresh install has no Continue button above it)
+    cmd_shot("smoke_02b_settings")
+    x1, y1 = to_device(350, 790)
+    x2, y2 = to_device(380, 360)
+    shell(f"input touchscreen swipe {x1} {y1} {x2} {y2} 450")
+    time.sleep(2.5)
+    cmd_shot("smoke_02c_settings_scrolled")
+    ends = re.findall(r"touch scroll of \S+ ended at (\d+),(\d+)", game_log())
+    check("a finger slide over buttons scrolls the list", bool(ends) and int(ends[-1][1]) > 0, f"scroll ended at {ends[-1] if ends else None}")
+    back()  # closes the settings
     tap(1350, 225, 2.5)  # New game
     cmd_shot("smoke_03_new_game")
     tap(1470, 968, 1.0)  # Start game

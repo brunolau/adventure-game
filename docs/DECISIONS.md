@@ -603,7 +603,24 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
 - **Scope:** English texts only (896 of 5,255). Slovak texts and the Slovak voices are unchanged, so with English
   subtitles the voice says *Tóno* and the subtitle *Tony*. Real people (credits, photo sources), brands and place
   names are not renamed. Zuzana is *Susanna* (*Susie* where the Slovak says Zuzka); nothing else about her changed.
-- **Not in a released build yet:** 0.2.0 on GitHub still has the Slovak names in English.
+- **All platforms** (owner, same morning: "those english sounding names are for all platforms of cours"): the names
+  are in the one English text table every platform ships, so Windows, Linux, macOS and Android all get them with
+  version 0.2.1. 0.2.0 on GitHub still has the Slovak names in English.
 - **Open for the owner:** the names themselves (any of them can be changed in one line of the tool), in particular
   Mira and the other names left as they are, *Aloysius* for Alojz, *Jerry Cassette* for Juro Kazeta, and the family
   name *Perry*.
+
+### Android: first test on a phone, version 0.2.1 (owner 2026-10-09)
+
+- **Report:** "first issue i see is that that none of the things that are meant to be scrollable is actually scrollable
+  [android]". Reproduced on the emulator and fixed (design-doc/ISSUES.md ANDROID-12; docs/PORTS.md "Touch controls"):
+  a sliding finger scrolls a list wherever it went down, a tap is still a tap. Sliders follow a slide along them and
+  no longer jump when a finger passes over them.
+- **Decided by Claude along the way** (touch mode only, the PC is unchanged): the settings tabs stand in a column on
+  phones (ANDROID-13); no hover highlight on touch screens; the version is **0.2.1** (Android version code 3), so the
+  owner can tell the new APK from the one already on the phone.
+- **APK size** (owner: "is it normal for game on android to have 0.5gb?"): answered, no change. The pictures are
+  stored in the GPU's own format, which costs disk space and saves memory (ISSUES ANDROID-04); the choice waits for
+  the test on a real phone.
+- **Still waiting for the owner:** the 11 Slovak touch texts (docs/writing/out_v6/ui_touch.csv), the test of 0.2.1 on
+  the phone, and whether 0.2.1 is published on GitHub.

@@ -6,6 +6,7 @@ using LastBell.Core.State;
 using LastBell.Game.PlayerInput;
 using LastBell.Game.Runtime;
 using LastBell.Game.UI;
+using LastBell.Game.UI.Common;
 using LastBell.Game.UI.Hud;
 using LastBell.Game.UI.Settings;
 using LastBell.Game.World;
@@ -176,6 +177,111 @@ public partial class DebugHarness
         bool arrived = await WaitUntil(() => game.State.Room == "S02", 10);
         controller.WalkSkipped -= OnSkip;
         Check("TC16_double_tap_skips_the_walk", skipped && arrived, $"walk skipped={skipped} room={game.State.Room}");
+        await RunTouchScrollChecks();
         Log($"acceptance touch: {acceptanceFailures} failure(s)");
+    }
+
+    /// <summary>
+    /// Lists on a phone (UI/Common/TouchScroller; owner report 2026-10-09: nothing scrolled): the settings screen at the
+    /// phone's 200 % has more rows than room. A tap on a tab presses it, a slide that starts on a button of the list
+    /// scrolls the list and presses nothing, a slider follows a slide along it and lets a slide across it scroll.
+    /// The settings are not written in this run (UiSettings.Save, desktop touch emulation).
+    /// </summary>
+    private async Task RunTouchScrollChecks()
+    {
+        await SkipLines(20);
+        await Seconds(0.5);
+        var ui = UiRoot.Instance!;
+        ui.OpenSettings();
+        await Frames(8);
+        var screen = ui.TopModal;
+        Button? TabOf(string key) => screen is null ? null
+            : Descendants<Button>(screen).FirstOrDefault(b => b.IsVisibleInTree() && b.ToggleMode && b.Text == TextService.Ui(key));
+        // The rows (the widest scroll area; on a phone the tabs stand in a narrow scroll column of their own beside it).
+        ScrollContainer? ListOf() => screen is null ? null
+            : Descendants<ScrollContainer>(screen).Where(c => c.IsVisibleInTree()).OrderByDescending(c => c.Size.X).FirstOrDefault();
+        static double Room(ScrollContainer list) => list.GetVScrollBar().MaxValue - list.GetVScrollBar().Page;
+
+        // ---------------------------------------------------------------- a tap on a button of a row of tabs
+        var accessTab = TabOf("ui.settings.tab_accessibility");
+        if (accessTab is not null) await RawTouch(accessTab.GetGlobalRect().GetCenter(), "tap");
+        await Frames(8);
+        Check("TC17_a_tap_on_a_tab_still_presses_it", accessTab is { ButtonPressed: true }, $"tab found={accessTab is not null} pressed={accessTab?.ButtonPressed}");
+
+        // ---------------------------------------------------------------- a slide that starts on a button scrolls the list
+        var list = ListOf();
+        var view = list?.GetGlobalRect() ?? new Rect2();
+        float scale = list?.GetGlobalTransformWithCanvas().Scale.Y ?? 1f;
+        var buttons = list is null ? new System.Collections.Generic.List<BaseButton>()
+            : Descendants<BaseButton>(list).Where(b => b.IsVisibleInTree() && view.HasPoint(b.GetGlobalRect().GetCenter())).ToList();
+        var startButton = buttons.OrderByDescending(b => b.GetGlobalRect().GetCenter().Y).FirstOrDefault();
+        int presses = 0;
+        void OnPress() => presses++;
+        foreach (var b in buttons) b.Pressed += OnPress;
+        var from = startButton?.GetGlobalRect().GetCenter() ?? view.GetCenter();
+        var to = new Vector2(from.X + 12, Mathf.Max(20, from.Y - 260)); // the finger may leave the list: the scroll goes on
+        double room = list is null ? 0 : Room(list);
+        int before = list?.ScrollVertical ?? 0;
+        await Finger(from, true);
+        await SlideFinger(from, to);
+        int dragged = (list?.ScrollVertical ?? 0) - before;
+        bool scrolledFlag = TouchScroller.ScrolledThisTouch;
+        await Finger(to, false);
+        await Seconds(1.5); // the list coasts and stops
+        foreach (var b in buttons) if (IsInstanceValid(b)) b.Pressed -= OnPress;
+        double slide = (from.Y - to.Y) / scale;
+        double least = Math.Min(room, (from.Y - to.Y - 2 * TouchGestures.SlopPx) / scale) * 0.8;
+        Check("TC18_a_slide_that_starts_on_a_button_scrolls_the_list_and_presses_nothing",
+            list is not null && startButton is not null && room > 40 && dragged >= least && dragged <= slide + 2 && presses == 0 && scrolledFlag,
+            $"list={list is not null} start on a button={startButton is not null} room={room:0} slide={slide:0} scrolled={dragged} (at least {least:0}) presses={presses} flag={scrolledFlag}");
+
+        // ---------------------------------------------------------------- sliders: along = the value, across = the list
+        var soundTab = TabOf("ui.settings.tab_audio");
+        if (soundTab is not null) await RawTouch(soundTab.GetGlobalRect().GetCenter(), "tap");
+        await Frames(8);
+        list = ListOf();
+        if (list is not null) list.ScrollVertical = 0;
+        await Frames(3);
+        view = list?.GetGlobalRect() ?? new Rect2();
+        var knob = list is null ? null : Descendants<HSlider>(list).FirstOrDefault(k => k.IsVisibleInTree() && view.HasPoint(k.GetGlobalRect().GetCenter()));
+        double volume = knob?.Value ?? 0;
+        var knobAt = knob?.GetGlobalRect().GetCenter() ?? Vector2.Zero;
+        float side = knob is null || knob.Value > (knob.MinValue + knob.MaxValue) / 2 ? -1 : 1; // towards the free half
+        var along = knobAt + new Vector2(side * 170, 8);
+        await Finger(knobAt, true);
+        double onTouch = knob?.Value ?? 0; // a touch alone changes nothing
+        await SlideFinger(knobAt, along);
+        await Finger(along, false);
+        await Frames(4);
+        double slid = knob?.Value ?? 0;
+        int listAfterAlong = list?.ScrollVertical ?? -1;
+        if (knob is not null) knob.Value = volume;
+        await Frames(3);
+        var across = new Vector2(knobAt.X + 10, Mathf.Min(view.End.Y - 8, knobAt.Y + 40));
+        var acrossTo = new Vector2(across.X, Mathf.Max(20, across.Y - 240));
+        await Finger(across, true);
+        await SlideFinger(across, acrossTo);
+        int acrossScrolled = list?.ScrollVertical ?? 0;
+        await Finger(acrossTo, false);
+        await Seconds(1.5);
+        double afterAcross = knob?.Value ?? 0;
+        Check("TC19_a_slide_along_a_slider_moves_its_value_and_a_slide_across_it_scrolls_the_list",
+            knob is not null && onTouch == volume && Math.Abs(slid - volume) >= 5 && Math.Sign(slid - volume) == Math.Sign(side) && listAfterAlong == 0 &&
+            acrossScrolled > 20 && afterAcross == volume,
+            $"slider={knob is not null} value {volume:0} touch {onTouch:0} along {slid:0} (list at {listAfterAlong}); across: list at {acrossScrolled}, value {afterAcross:0}");
+
+        // ---------------------------------------------------------------- a tap on a slider sets the value at that point
+        if (list is not null) list.ScrollVertical = 0;
+        await Frames(3);
+        var bar = knob?.GetGlobalRect() ?? new Rect2();
+        await RawTouch(new Vector2(bar.Position.X + bar.Size.X * 0.3f, bar.GetCenter().Y), "tap");
+        await Frames(4);
+        double tapped = knob?.Value ?? -1;
+        double third = knob is null ? 0 : knob.MinValue + 0.3 * (knob.MaxValue - knob.MinValue);
+        Check("TC20_a_tap_on_a_slider_sets_the_value_at_that_point", knob is not null && Math.Abs(tapped - third) <= 12, $"value {tapped:0}, the point is at {third:0}");
+        if (knob is not null) knob.Value = volume;
+        await Frames(3);
+        ui.TopModal?.Back();
+        await Frames(6);
     }
 }

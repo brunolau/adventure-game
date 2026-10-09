@@ -122,6 +122,7 @@ public partial class UiRoot : Control
         AddChild(subtitles);
         subtitleView = subtitles;
         AddChild(new MobileLifecycle { Name = "MobileLifecycle" }); // Back button, autosave + pause in the background (phones)
+        if (TouchMode.Enabled) AddChild(new TouchScroller { Name = "TouchScroller" }); // a sliding finger scrolls the lists
         // Phones: where the safe area pushes a full-screen menu in from the edge, the strip beside it is black like the
         // bars around the picture (the engine's grey clear colour never shows on the desktop: the menus cover it).
         if (TouchMode.Enabled) RenderingServer.SetDefaultClearColor(Colors.Black);

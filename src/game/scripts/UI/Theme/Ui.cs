@@ -73,6 +73,7 @@ public static class Ui
             box.AddChild(label);
         }
         button.AddChild(box);
+        if (LastBell.Game.Runtime.TouchMode.Enabled) return button; // no hover look on a touch screen (it would stay after the tap)
         button.MouseEntered += () => glyph.Color = dark ? UiTheme.BrassLight : UiTheme.Accent;
         button.MouseExited += () => glyph.Color = dark ? UiTheme.Cream : UiTheme.Ink;
         return button;
