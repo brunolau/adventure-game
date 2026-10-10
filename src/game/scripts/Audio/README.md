@@ -53,6 +53,17 @@ answer is spoken by `PuzzleModal`, its success line as the preface line (voice k
 sentences share one file through `res://assets/voice/aliases.json` (text key → file stem). Harness: `--input look:<id>`
 (a hotspot or exit of the room, or a carried item).
 
+Dubbing languages (2026-10-10): the Slovak original is in `assets/voice/`, the English dub in `assets/voice_en/`, each
+with its own `aliases.json` (the file also tells the game that the build carries that dub:
+`AudioService.VoiceLanguagesInBuild`). `AudioService.VoiceLanguage` picks the dub of a line: the player's choice
+(Settings → Sound „Jazyk dabingu“: as the texts / Slovenčina / English; `UiSettings.VoiceLanguage`, saved as
+`audio/voice_language`, default `auto` = the language of the texts), and when the build does not carry it, the dub it
+does carry. The row only shows in builds with both dubs. The Android presets leave `assets/voice/*` out
+(`tools/release_assets.py`), so a phone always plays the English dub, with Slovak or English subtitles. The log says
+`LastBell: dubs in this build: sk,en` at start and `LastBell: first voice line <id> [<language>]` once per run; QA runs
+log every English line as `AUDIO voice <id> [en]`. Harness: `-- --voice-lang sk|en|auto`. Files, casting and checks of
+the English dub: `docs/voice/ENGLISH.md`.
+
 ## API for other code
 
 ```csharp

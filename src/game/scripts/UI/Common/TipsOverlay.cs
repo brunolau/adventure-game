@@ -64,6 +64,11 @@ public partial class TipsOverlay : Control
             Next();
         }
         if (index < 0) return;
+        // Phones: at 200 % the bubble covered the second slot of the open inventory (ISSUES ANDROID-11). There it
+        // steps aside while the inventory or a screen is open, and its time does not run meanwhile.
+        bool covered = TouchMode.Enabled && (GameRuntime.Instance.State.Mode != GameMode.World || (UiRoot.Instance?.HasModal ?? false));
+        bubble.Visible = !covered;
+        if (covered) return;
         left -= delta;
         if (left <= 0) Next();
         bubble.Position = new Vector2((Size.X - bubble.Size.X) / 2, Size.Y - Hud.HudView.StripHeight - bubble.Size.Y - 40);

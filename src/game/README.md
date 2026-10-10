@@ -167,7 +167,7 @@ lines the same conversation's topic menu opens again until "Ukončiť rozhovor" 
 play and while any screen is open (bag, puzzle, journal, map, pause, menus, hints, ending), at most three at once; beside
 an open topic menu only in a slot that does not touch it (PT-S22, M5-05). Screens show their own confirmations in the
 title row (`ModalScreen.ShowStatus`, e.g. "Uložené"). The main menu shows the game version from project.godot
-`application/config/version` (0.2.1; the Windows preset leaves its version fields empty and takes the same number, the macOS, Android and iOS presets repeat it;
+`application/config/version` (0.3.0; the Windows preset leaves its version fields empty and takes the same number, the macOS, Android and iOS presets repeat it;
 game.json `version` is the internal content data version, M5-03). Touch (`PlayerInput/TouchGestures.cs`, docs/BUILD.md): tap = left, long press 0.5 s = right,
 two-finger hold = Space held, double tap = double click; the GUI gets emulated taps first, gestures fire on release in the world.
 
@@ -317,7 +317,7 @@ python tools/qa_godot.py --path src/game --resolution 1920x1080 -- --skip-lines 
 - Status of milestone 1 (prologue G01–G11, P01, CS01, arrival in S11): see `docs/MILESTONE1.md`.
 - The UI agent's screens (scripts/UI) and the living-world sprites (scripts/Living) have replaced the
   placeholders; the placeholders stay as fallbacks.
-- Audio: see `scripts/Audio/README.md` (music, ambience, sfx; voice lines play from `assets/voice/<line_id>.ogg` once they exist). QA: `-- --audio-report`.
+- Audio: see `scripts/Audio/README.md` (music, ambience, sfx; voice lines play from `assets/voice/<line_id>.ogg`, the English dub from `assets/voice_en/`). QA: `-- --audio-report`.
 - A save made while a puzzle modal is open reopens that modal on load (`open_puzzle`, ISSUES GAME-02); a save
   made in pause / map / journal resumes in the scene (`GameRules.ResumeAfterLoad`, UI-05).
 - Space is not part of Godot's `ui_accept` (removed in `InputActions.EnsureDefaults`): Enter accepts in the GUI,

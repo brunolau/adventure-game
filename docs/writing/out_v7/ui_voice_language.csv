@@ -1,0 +1,3 @@
+keys,sk,en,note
+ui.settings.voice_language,Jazyk dabingu,Voice language,"DRAFT, new ui.csv row: Settings > Sound, the row under „Hovorené dialógy“. Shown only in builds that carry both dubs (Windows, Linux, macOS; the Android build has only the English one). Code fallback in src/game/scripts/UI/Menus/SettingsScreen.cs (VoiceLanguageLabel)"
+ui.settings.voice_language_auto,Ako texty,Same as the text,"DRAFT, new ui.csv row: the first choice of that row (the dub follows the language of the texts); the other two choices reuse ui.settings.language_sk / ui.settings.language_en. Code fallback in SettingsScreen.cs (VoiceLanguageAuto)"

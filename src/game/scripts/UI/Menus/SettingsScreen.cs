@@ -25,12 +25,16 @@ public partial class SettingsScreen : ModalScreen
     private static readonly UiString VoiceOverLabel = new("ui.settings.voice_over", "Hovorené dialógy");
     private static readonly UiString VoiceOverDesc = new("ui.settings.voice_over_desc",
         "Postavy hovoria nahlas. Keď sú vypnuté, titulky sa posúvajú podľa dĺžky textu.");
+    // Dubbing language (2026-10-10): draft rows in docs/writing/out_v7/ui_voice_language.csv, shown from here until
+    // the owner approved the Slovak and the rows are in ui.csv.
+    private static readonly (string Key, string Sk, string En) VoiceLanguageLabel = ("ui.settings.voice_language", "Jazyk dabingu", "Voice language");
+    private static readonly (string Key, string Sk, string En) VoiceLanguageAuto = ("ui.settings.voice_language_auto", "Ako texty", "Same as the text");
     private readonly List<Button> tabs = new();
     private VBoxContainer content = null!;
     private int tab;
 
     /// <summary>Godot constructor.</summary>
-    public SettingsScreen() { PreferredSize = new Vector2(1500, 940); }
+    public SettingsScreen() { PreferredSize = new Vector2(1500, 1020); } // 1020: the Sound tab with its dubbing row fits without scrolling
 
     /// <inheritdoc />
     protected override void Build()
@@ -130,7 +134,19 @@ public partial class SettingsScreen : ModalScreen
                     content.AddChild(SliderRow(Ui.T(volumeKeys[i]), 0, 100, 5, () => UiSettings.Volume[bus], v => UiSettings.Volume[bus] = (int)v,
                         v => Ui.T("ui.settings.volume_value", ("percent", ((int)v).ToString()))));
                     if (volumeKeys[i] == "ui.settings.volume_voice") // voice-over on/off right under the Voice volume
+                    {
                         content.AddChild(ToggleRow(Ui.T(VoiceOverLabel), Ui.T(VoiceOverDesc), () => UiSettings.VoiceOver, v => UiSettings.VoiceOver = v));
+                        // Only where there is a choice: the Android build carries one dub.
+                        if (LastBell.Game.Audio.AudioService.VoiceLanguagesInBuild.Count > 1)
+                            content.AddChild(ChoiceRow(TouchMode.Text(VoiceLanguageLabel.Key, VoiceLanguageLabel.Sk, VoiceLanguageLabel.En),
+                                new[]
+                                {
+                                    (TouchMode.Text(VoiceLanguageAuto.Key, VoiceLanguageAuto.Sk, VoiceLanguageAuto.En), 0),
+                                    (Ui.T("ui.settings.language_sk"), 1), (Ui.T("ui.settings.language_en"), 2),
+                                },
+                                () => UiSettings.VoiceLanguage switch { "sk" => 1, "en" => 2, _ => 0 },
+                                v => UiSettings.VoiceLanguage = v switch { 1 => "sk", 2 => "en", _ => "auto" }));
+                    }
                 }
                 content.AddChild(ToggleRow(Ui.T("ui.settings.mute_unfocused"), "", () => UiSettings.MuteUnfocused, v => UiSettings.MuteUnfocused = v));
                 break;

@@ -1,14 +1,32 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: **0.2.1**, built 2026-10-09 for Windows, Linux, macOS and Android (the main menu and the exe say the same
+Version: **0.3.0**, built 2026-10-10 for Windows, Linux, macOS and Android (the main menu and the exe say the same
 number). **Not published yet:** the GitHub release page still offers `v0.2.0` (2026-10-08, Windows, Linux, macOS);
-0.2.1 waits for your word. Before that: 0.1.0 of 2026-10-07, published on 2026-10-08 as `v0.1.0`.
-Languages: Slovak and English (voices Slovak). Test record behind this page: `docs/MILESTONE5.md` (sections "Version
-0.2.1", "Version 0.2.0", "Owner feedback of 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second
-verification and release pass" and "Verification and release pass").
+0.3.0 waits for your word (0.2.1 of 2026-10-09 was built and never published). Before that: 0.1.0 of 2026-10-07,
+published on 2026-10-08 as `v0.1.0`.
+Languages: Slovak and English, texts and voices (Android: both text languages, English voices only). Test record
+behind this page: `docs/MILESTONE5.md` (sections "Version 0.3.0", "Version 0.2.1", "Version 0.2.0", "Owner feedback of
+2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification
+and release pass").
 
 ## In short
 
+- **New in 0.3.0 (2026-10-10):**
+  - **English dub** (your note: "now make english dubbing"). Everything that is spoken in Slovak is now spoken in
+    English too: 2,217 dialogue lines, Adam's look texts and the Standard / Hard versions (2,622 recordings, 3 h
+    15 min). Every character keeps the voice it has in Slovak, speaking British English. With English texts the game
+    plays the English voices, with Slovak texts the Slovak ones. Settings → Zvuk has a new row *Jazyk dabingu* (Ako
+    texty / Slovenčina / English), so English subtitles with the original Slovak voices are one click away. **Nobody
+    has listened to the English dub yet.** The checks were automatic; 57 recordings are marked for a listen. Listening
+    page: `docs/voice/en.html` (open it from the repository folder); record: `docs/voice/ENGLISH.md`.
+  - **Android has only the English dub** (your note: "for the android version include only english dubbing"). The
+    phone plays English voices with Slovak or English subtitles; *Hovorené dialógy* still switches them off.
+  - **Android: the exit arrows stand above the buttons** (your note: "ensure the location navigation buttons dont
+    collide the the control buttons … they need to be raised a bit up"). The arrow badges the Eye shows sat on or
+    behind the row of buttons at the bottom, and two exits (the Grasshopper playground → the lane, LEAL Court →
+    Sokolikova) lay completely under the buttons and could not be tapped at all. The badges are now above the row,
+    and a tap on a badge goes through its exit. Nothing of this changes the PC version.
+  - Android, small: a first-start tip no longer covers a slot of the open inventory.
 - **New in 0.2.1 (2026-10-09):**
   - **English names for the characters, on every platform** (your notes: "Bodka => Dotty ... and come up with
     English sounding names", "for all platforms of course"): Adam and Mira Perry, Tony, Otto, Jane, Leah and Victor
@@ -81,10 +99,10 @@ verification and release pass" and "Verification and release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.2.1-windows-x64.zip` (373.2 MB; the GitHub release page still has
-   0.2.0). Unpacked, it is the folder `PoslednyZvonec/` (511.8 MB). It holds three things that must stay
-   together: `LastBell.exe` (109.5 MB), `LastBell.pck` (320.8 MB, of it 127.9 MB voice clips) and
-   `data_LastBell_windows_x86_64/` (81.4 MB, the C# code and the .NET runtime).
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip` (487.2 MB; the GitHub release page still has
+   0.2.0). Unpacked, it is the folder `PoslednyZvonec/` (639.7 MB). It holds three things that must stay
+   together: `LastBell.exe` (109.5 MB), `LastBell.pck` (448.7 MB, of it 127.9 MB Slovak and 127.2 MB English voice
+   clips) and `data_LastBell_windows_x86_64/` (81.5 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
 2. Unpack it anywhere, for example in Documents, and double-click `LastBell.exe`. There is no installer.
 3. The exe is not code-signed, so Windows SmartScreen says "Windows protected your PC". Click "More info", then
@@ -127,9 +145,10 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
   (docs/writing/approval/). The puzzles and solutions did not change; the one main step
   that moved is the rhythm drawing (B19), now on the wall of the yard Pri LEALe.
 - Original music: one theme per period plus menu, puzzle, tension and epilogue (9 tracks). About 105 sound effects
-  and ambience loops. Subtitles for everything. Spoken lines: 2,639 voice clips in `src/game/assets/voice/` (2,217
-  dialogue lines, 390 look texts, 32 Standard / Hard versions; the narrator is the female voice Callirrhoe since
-  2026-10-07, docs/voice/FULL.md).
+  and ambience loops. Subtitles for everything. Spoken lines: 2,639 Slovak voice clips in `src/game/assets/voice/`
+  (2,217 dialogue lines, 390 look texts, 32 Standard / Hard versions; the narrator is the female voice Callirrhoe
+  since 2026-10-07, docs/voice/FULL.md) and, since 0.3.0, 2,622 English ones in `src/game/assets/voice_en/` for the
+  same lines (docs/voice/ENGLISH.md).
 - Three difficulty levels (Easy / Standard / Hard, saved with each save file): they change the hints and, since
   0.2.0, how much the texts give away,
   journal with goals and hints per step, a map with fast travel, an era chooser, 8 save slots plus an
@@ -143,7 +162,7 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
 | OS | Windows 10 or 11, 64-bit | Windows 11 Pro 26200 |
 | graphics | OpenGL 3.3 GPU (Godot "Compatibility" renderer), 1 GB VRAM | AMD Radeon RX 7600 |
 | memory | 4 GB RAM (the game uses about 1.2 GB) | desktop with Ryzen 9 7900X |
-| disk | 520 MB free, plus the 373 MB download | - |
+| disk | 640 MB free, plus the 487 MB download | - |
 | screen | 1280x720 or larger (16:9; other shapes get bars) | 1280x720 and 1920x1080 windows |
 
 Measured on the test PC: main menu 0.8 s after start, a room change takes about 0.7 s (fade included), 406-446 MB
@@ -207,19 +226,21 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ### Linux, macOS, Android, iOS
 Details and the test record of each port: docs/PORTS.md.
-- **Linux x86_64 (preview):** `build/ports/PoslednyZvonec-0.2.1-linux-x86_64.tar.gz` (362.2 MB). 0.2.0 is on the
-  release page and was started without a screen in an Ubuntu 24.04 container; nobody has played either on a Linux
+- **Linux x86_64 (preview):** `build/ports/PoslednyZvonec-0.3.0-linux-x86_64.tar.gz` (476.2 MB). 0.2.0 is on the
+  release page; 0.3.0 was started without a screen in an Ubuntu 24.04 container. Nobody has played either on a Linux
   desktop yet.
-- **macOS, Apple Silicon and Intel (preview):** `build/ports/PoslednyZvonec-0.2.1-macos.zip` (429.6 MB). Not
+- **macOS, Apple Silicon and Intel (preview):** `build/ports/PoslednyZvonec-0.3.0-macos.zip` (543.6 MB). Not
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android (not released):** `build/ports/PoslednyZvonec-0.2.1.apk` (584.3 MB, arm64, Android 7.0 or newer, no
-  permissions) and a Google Play bundle (520.6 MB). It installs over 0.2.0 and keeps the saves. Touch controls: tap
-  acts, hold looks, a slide scrolls lists, the Eye button shows the markers, system Back is Esc, autosave when the
-  app leaves the screen. You tried 0.2.0 on your phone on 2026-10-09 (lists did not scroll; fixed). 0.2.1 was played
-  only in an Android 16 emulator (touch smoke test 11 of 11); **it has not been on a real phone yet**. Not on the
-  GitHub release page: it waits for your test and for your approval of 11 new Slovak touch texts
+- **Android (not released):** `build/ports/PoslednyZvonec-0.3.0.apk` (584.9 MB, arm64, Android 7.0 or newer, no
+  permissions) and a Google Play bundle (521.2 MB). It installs over 0.2.0 or 0.2.1 and keeps the saves. English
+  voices only (the Slovak recordings are left out of the Android build). Touch controls: tap acts, hold looks, a
+  slide scrolls lists, the Eye button shows the markers (the exit arrows stand above the buttons), system Back is
+  Esc, autosave when the app leaves the screen. You tried the earlier builds on your phone (2026-10-09: lists did not
+  scroll, fixed in 0.2.1; 2026-10-10: the exit arrows collided with the buttons, fixed in 0.3.0). 0.3.0 was played
+  only in an Android 16 emulator (touch smoke test 13 of 13); **it has not been on a real phone yet**. Not on the
+  GitHub release page: it waits for your test and for your approval of 11 Slovak touch texts
   (`docs/writing/out_v6/ui_touch.csv`). Google Play needs a developer account (USD 25, once). C# on Android is
   experimental in Godot 4.7.
 - **iOS:** needs a Mac with Xcode, an Apple Developer team id and provisioning profiles. C# on iOS is
@@ -231,10 +252,17 @@ Details and the test record of each port: docs/PORTS.md.
   6b6d141; the narrator recast to a female voice and the „Pri LEALe“ lines re-recorded on 2026-10-07, docs/voice/FULL.md).
 - The voices are synthetic (Gemini TTS through fal.ai, each take checked by speech-to-text). Since 0.2.0 the look
   texts and the Standard / Hard versions are voiced too. 33 look takes are flagged for a listen (docs/voice/).
-- Open: human voice actors if you want them (about 50 characters, several at two or three ages), English voices,
-  lip flap timed to the clip (LIVING-03) and loudness mastering like the music (-16 LUFS).
+- **English voices since 0.3.0** (docs/voice/ENGLISH.md): the same synthetic voices speaking British English, one
+  recording per Slovak one; 57 takes are flagged for a listen, and the pronunciation of the Slovak place names
+  (Dubravka, Cierna Voda, Vrbicke …) needs an ear.
+- Open: human voice actors if you want them (about 50 characters, several at two or three ages), lip flap timed to
+  the clip (LIVING-03) and loudness mastering like the music (-16 LUFS).
 
 ## Paid generation (art/spend-log.csv)
+
+Read 2026-10-10 05:00: **USD 263.48**. On 2026-10-10: the English dub USD 9.97 (2,622 voice takes, 141 retakes and
+a transcript of each: USD 9.96; an accent check of 23 pilot takes by an audio model: USD 0.01). The Android fixes,
+the builds and this verification cost nothing.
 
 Read 2026-10-08 22:40: **USD 253.51** (9294 rows). On 2026-10-08: USD 3.29 (the voices of the look texts USD 1.97,
 the GPT check of the Standard / Hard texts USD 1.09, their 32 voice takes and the Dezider auditions the rest). The

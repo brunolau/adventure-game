@@ -19,6 +19,9 @@ autosave); distributable `build/m5/ship/PoslednyZvonec/` and `build/m5/ship/Posl
 folder 511.7 MB, `build/m5/ship/PoslednyZvonec-0.2.0-windows-x64.zip` 373.2 MB (docs/MILESTONE5.md "Version 0.2.0").
 Version 0.2.1 (2026-10-09, English names; no new assets): exe 109.5 MB, PCK 320.8 MB, data 81.5 MB, folder 511.8 MB,
 `build/m5/ship/PoslednyZvonec-0.2.1-windows-x64.zip` 373.2 MB (docs/MILESTONE5.md "Version 0.2.1").
+Version 0.3.0 (2026-10-10, the English dub: 2,622 more voice clips): exe 109.5 MB, PCK 448.7 MB with 13,123 files
+(127.9 MB Slovak and 127.2 MB English voice), data 81.5 MB, folder 639.7 MB,
+`build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip` 487.2 MB (docs/MILESTONE5.md "Version 0.3.0").
 
 ## Windows (build now)
 

@@ -4,14 +4,14 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-09, version 0.2.1; built, not published: the GitHub release page has 0.2.0)
+## Status (2026-10-10, version 0.3.0; built, not published: the GitHub release page has 0.2.0)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
-| Linux x86_64 | yes | 0.2.1 (as 0.2.0): start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.2.1-linux-x86_64.tar.gz`, 362.2 MB |
-| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.2.1), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.2.1-macos.zip`, 429.6 MB |
+| Linux x86_64 | yes | 0.3.0 (as 0.2.0 and 0.2.1): start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.3.0-linux-x86_64.tar.gz`, 476.2 MB |
+| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.3.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.3.0-macos.zip`, 543.6 MB |
 | Linux arm64 | preset only | — | — |
-| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.2.1: debug APK played on a headless Android 16 emulator, smoke test 11 of 11 (title screen, a list scrolled by a finger, new game, touch controls, autosave); release APK and bundle checked statically only. The owner tried 0.2.0 on a phone on 2026-10-09 (first report: lists did not scroll, fixed in 0.2.1); **0.2.1 has not been on a real device yet** | `PoslednyZvonec-0.2.1.apk`, 584.3 MB; `PoslednyZvonec-0.2.1.aab`, 520.6 MB |
+| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.3.0: debug APK played on a headless Android 16 emulator, smoke test 13 of 13 (title screen, only the English dub in the build, a list scrolled by a finger, new game, the opening line spoken in English, touch controls, autosave); release APK and bundle checked statically only. The owner tried the earlier builds on a phone (2026-10-09: lists did not scroll, fixed in 0.2.1; 2026-10-10: the exit badges collided with the buttons, fixed in 0.3.0); **0.3.0 has not been on a real device yet** | `PoslednyZvonec-0.3.0.apk`, 584.9 MB; `PoslednyZvonec-0.3.0.aab`, 521.2 MB |
 | iOS | preset | not possible on Windows | — |
 
 ## Running the desktop ports
@@ -24,19 +24,19 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 
 ## Android (2026-10-08)
 
-Package `eu.inviton.lastbell`, version 0.2.1 (code 3; 0.2.0 was code 2), landscape, immersive (no system bars), no permissions, minimum
+Package `eu.inviton.lastbell`, version 0.3.0 (code 4; 0.2.1 was code 3, 0.2.0 code 2), landscape, immersive (no system bars), no permissions, minimum
 Android 7.0 (API 24), target API 36. C# runs on the .NET 9 Mono runtime inside the APK (Godot 4.7.2, experimental).
 
 ### Artifacts
 
 | File | What | Size |
 |---|---|---|
-| `build/ports/PoslednyZvonec-0.2.1.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key | 584.3 MB |
-| `build/ports/PoslednyZvonec-0.2.1.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 520.6 MB |
-| `build/ports/android_qa/LastBell-qa-x86_64.apk` | debug APK for the emulator: x86_64, debug key, QA harness arguments honoured | 586.7 MB |
+| `build/ports/PoslednyZvonec-0.3.0.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key; English dub only | 584.9 MB |
+| `build/ports/PoslednyZvonec-0.3.0.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 520.6 MB |
+| `build/ports/android_qa/LastBell-qa-x86_64.apk` | debug APK for the emulator: x86_64, debug key, QA harness arguments honoured; English dub only | 587.3 MB |
 
 Install the APK on a phone: copy it over and open it (Android asks once to allow installs from that app), or
-`adb install -r build/ports/PoslednyZvonec-0.2.1.apk`. It installs over 0.2.0 (same key, higher version code) and keeps
+`adb install -r build/ports/PoslednyZvonec-0.3.0.apk`. It installs over 0.2.0 and 0.2.1 (same key, higher version code) and keeps
 the saves. The game needs about 1.2 GB free for the install.
 
 ### Build
@@ -176,7 +176,17 @@ APK is 584 MB while the same build with the desktop textures is 412 MB.
   touch`: **20 of 20** (new: TC17 tap on a tab, TC18 slide over buttons scrolls and presses nothing, TC19 slider
   along / across, TC20 tap on a slider). Release APK 0.2.1 checked with `aapt2` / `apksigner` (version code 3,
   arm64-v8a, release key). The emulator needed a cold start that morning (ISSUES ANDROID-14).
-- **Not tested:** 0.2.1 on a real phone or tablet. The release APK is arm64-v8a and the emulator is x86_64, so the release APK
+- **0.3.0 (2026-10-10): English dub only, exit badges above the buttons.** The three Android presets leave
+  `assets/voice/*` (the Slovak recordings) out and carry `assets/voice_en/`; the game plays the dub the build has
+  (docs/voice/ENGLISH.md). After the owner's note from the phone ("ensure the location navigation buttons dont
+  collide the the control buttons … they need to be raised a bit up"; ISSUES ANDROID-15): reproduced in the desktop
+  touch emulation (`build/verify_1010/shots/before_S07.png`, `before_S18.png`: badges on and behind the buttons; two
+  exits completely under them), fixed, `after_S03.png`, `after_S18.png`. Desktop `--touch --acceptance touch`: **22
+  of 22** (new: TC21 no badge on a button, TC22 an exit under the buttons answers at its raised badge).
+  `android_qa.py smoke` on the 0.3.0 debug APK: **13 of 13** (new: the build carries only the English dub, the opening
+  line is spoken in English). Release APK 0.3.0 checked with `aapt2` / `apksigner` (version code 4, arm64-v8a,
+  release key).
+- **Not tested:** 0.3.0 on a real phone or tablet. The release APK is arm64-v8a and the emulator is x86_64, so the release APK
   itself was only checked statically (`build_ports.py verify`: ABI, package, signature with the release key, C#
   assemblies inside); it is the same project and code as the debug APK that was played. Performance, battery use,
   audio latency and real GPU memory are unknown until someone plays it on a device.
@@ -225,6 +235,7 @@ feature tag `mobile`), so the PC controls are exactly as before. On a PC with a 
 | hold 0.5 s | look; on empty floor the inventory; with an item in hand: cancel it | right click |
 | second tap on the same place within 0.35 s | skip the walk | double click |
 | Eye button | markers on every place for 6 s (a second tap hides them); with an item in hand only where it can be used | hold Space |
+| tap on a marker | the same as a tap on its place; this is how an exit under the row of buttons is reached (0.3.0) | — |
 | two fingers held | markers while they are held | hold Space |
 | tap during a line | next line | click / Enter |
 | system Back | Esc: skip a line, close a screen, cancel the item, pause; on the title screen: quit? | Esc |
@@ -248,6 +259,14 @@ Also in touch mode:
 - **Screens:** the title screen has two columns, the inventory a wide card above one row of slots, tips wrap; panels
   that would not fit are scaled down (`ModalScreen`). The settings have their tabs in a column on the left and the
   rows beside it over the whole height (0.2.1; in a row the tabs wrapped and left the list two rows of room).
+- **Exits near the bottom edge (0.3.0, ISSUES ANDROID-15):** the row of buttons covers the bottom 164 canvas px on a
+  phone, twice the PC strip. The markers keep above it at every HUD scale (`PresentationSettings.BottomReservePx`,
+  `HotspotLabelLayer.MarkerPoint`). While the Eye shows the markers, a tap within 74 canvas px of a marker (about
+  9 mm across) is a tap on its place. An exit whose marker the buttons pushed up also answers at that spot when the
+  markers are off, after people and things (`Room.HitTest`); without this the exits S03 → S02 and S69 → S18, whose
+  areas lie completely under the buttons, could not be tapped.
+- **Dub (0.3.0):** the Android presets carry only the English recordings (`assets/voice_en/`); the game plays the dub
+  the build has, with Slovak or English subtitles (docs/voice/ENGLISH.md).
 - **Lists (0.2.1, `UI/Common/TouchScroller.cs`):** Godot's own touch scrolling only starts when the press reaches the
   scroll container, and a press never passes a button; nearly every list here is made of buttons, so on a phone
   nothing scrolled (owner, 2026-10-09). The scroller works from the mouse events Godot makes of the first finger,

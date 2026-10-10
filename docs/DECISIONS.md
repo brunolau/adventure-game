@@ -624,3 +624,33 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
   the test on a real phone.
 - **Still waiting for the owner:** the 11 Slovak touch texts (docs/writing/out_v6/ui_touch.csv), the test of 0.2.1 on
   the phone, and whether 0.2.1 is published on GitHub.
+
+### English dub and version 0.3.0 (owner 2026-10-10)
+
+- **Request:** "now make english dubbing, for the android version include only english dubbing".
+- **Done:** every key the Slovak dub speaks has an English recording (2,816 keys, 2,622 recordings, 3 h 15 min):
+  docs/voice/ENGLISH.md, listening page docs/voice/en.html. The recordings are in `src/game/assets/voice_en/`.
+- **Decided by Claude, reversible:**
+  - *Same voice per character.* The English dub uses the stock voice and the character direction of the Slovak dub
+    for all 58 roles, so a person sounds like the same person in both languages.
+  - *British English*, neutral accent, because the English texts are British.
+  - *Slovak names are said the Slovak way* (Dubravka, Ivanka, Cierna Voda …): the voice gets a pronunciation hint.
+  - *Which dub plays:* the dub of the text language; Settings → Sound has a new row „Jazyk dabingu“ (Ako texty /
+    Slovenčina / English) in builds that carry both dubs. The two Slovak texts are drafts
+    (docs/writing/out_v7/ui_voice_language.csv) and wait for the owner like the touch texts.
+  - *Android:* the three Android presets leave the Slovak recordings out. A phone therefore always plays the English
+    dub, also with Slovak subtitles („Hovorené dialógy“ still switches the voices off), and the row above is hidden.
+    iOS is not built; its preset still has both dubs.
+  - *Version 0.3.0* (Android version code 4): a new dub is more than a fix, and the owner can tell the new APK from
+    0.2.1 on the phone.
+- **Not judged by anyone yet:** the acting and the pronunciation. The checks are automatic (transcript of every take,
+  an audio model's verdict on the accent of 23 pilot takes). 57 takes are flagged for a listen.
+
+### Android: exit badges above the buttons (owner 2026-10-10)
+
+- **Report:** "on android ensure the location navigation buttons dont collide the the control buttons that are down
+  below....on android they need to be raised a bit up". Reproduced in the desktop touch emulation and fixed
+  (design-doc/ISSUES.md ANDROID-15): the badges stand above the row of buttons, and a tap on a badge goes through its
+  exit. Two exits that lay completely under the buttons (S03 → S02, S69 → S18) can be tapped again.
+- **Decided by Claude along the way** (touch mode only): the first-start tip bubble steps aside while the inventory or
+  a screen is open (ANDROID-11, found on 2026-10-09).

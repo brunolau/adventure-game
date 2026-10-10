@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 using Godot;
+using LastBell.Core.Rules;
 using LastBell.Core.State;
 using LastBell.Game.PlayerInput;
 using LastBell.Game.Runtime;
@@ -177,8 +178,51 @@ public partial class DebugHarness
         bool arrived = await WaitUntil(() => game.State.Room == "S02", 10);
         controller.WalkSkipped -= OnSkip;
         Check("TC16_double_tap_skips_the_walk", skipped && arrived, $"walk skipped={skipped} room={game.State.Room}");
+        await RunTouchExitChecks();
         await RunTouchScrollChecks();
         Log($"acceptance touch: {acceptanceFailures} failure(s)");
+    }
+
+    /// <summary>
+    /// Exits under the phone's HUD buttons (owner report 2026-10-10: the exit badges collided with the buttons at the
+    /// bottom). S03 has the worst case: the rect of its exit to S02 lies completely under the Hint and Journal buttons.
+    /// The badges sit above the buttons, a finger on a badge names its exit while the Eye shows the badges, and the
+    /// raised spot of a covered exit answers when the badges are off too.
+    /// </summary>
+    private async Task RunTouchExitChecks()
+    {
+        var game = GameRuntime.Instance;
+        const string room = "S03", covered = "S03.to_S02";
+        JumpTo(game, room);
+        await WaitUntil(() => WorldStage.Instance?.Current?.RoomId == room && WorldStage.Instance.IsSettled, 10);
+        await Seconds(0.5);
+        var labels = CurrentRoom.Labels;
+        var buttons = Descendants<Button>(UiRoot.Instance!.Hud).Where(b => b.IsVisibleInTree()).Select(b => b.GetGlobalRect()).ToList();
+        float radius = HotspotLabelLayer.MarkerSize * HotspotLabelLayer.MarkerScale / 2;
+        var under = CurrentRoom.Targets.Where(t => buttons.Any(b => b.Grow(radius).HasPoint(labels.MarkerPoint(t)))).Select(t => t.Id).ToList();
+        Check("TC21_no_badge_sits_on_a_hud_button", buttons.Count >= 6 && under.Count == 0,
+            $"{buttons.Count} buttons, badges on a button: {(under.Count == 0 ? "none" : string.Join(", ", under))}");
+
+        bool known = CurrentRoom.TryGetTarget(covered, out var exit);
+        var spot = known ? labels.MarkerPoint(exit) : Vector2.Zero;
+        bool rectCovered = known && buttons.Any(b => b.Intersects(exit.Rect)) && exit.Rect.Position.Y >= Room.CanvasSize.Y - PresentationSettings.BottomReservePx;
+        string exitName = known ? TextService.Get(exit.Name) : "";
+        await Finger(spot, true);
+        string off = ShownLabel;
+        await SlideFinger(spot, spot + new Vector2(0, -260));
+        await Finger(spot + new Vector2(0, -260), false);
+        await Seconds(0.3);
+        WorldInput.Dispatch(LogicalCommand.ShowMarkers);
+        await Frames(4);
+        await Finger(spot, true);
+        string on = ShownLabel;
+        await SlideFinger(spot, spot + new Vector2(0, -260));
+        await Finger(spot + new Vector2(0, -260), false);
+        WorldInput.Dispatch(LogicalCommand.HideMarkers);
+        await Frames(4);
+        Check("TC22_an_exit_under_the_buttons_answers_at_its_raised_badge", known && rectCovered && exitName.Length > 0 && off == exitName && on == exitName &&
+            CurrentRoom.HitTest(spot) is Hit.Exit { Id: covered } && game.State.Room == room,
+            $"exit known={known} rect under the buttons={rectCovered} badge at {spot.X:0},{spot.Y:0} name='{exitName}' finger with badges off='{off}' on='{on}' room={game.State.Room}");
     }
 
     /// <summary>

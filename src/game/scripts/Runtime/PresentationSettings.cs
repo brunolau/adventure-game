@@ -76,6 +76,13 @@ public static class PresentationSettings
     /// </summary>
     public static bool QaTextLabels { get; set; }
 
+    /// <summary>
+    /// Canvas px at the bottom of the picture that the HUD strip covers: 86 for the PC strip; the finger-sized strip of
+    /// a phone is about twice as tall (set by the UI settings from the HUD scale). The hotspot markers and the raised
+    /// tap spots of the exits stay above it.
+    /// </summary>
+    public static float BottomReservePx { get; set; } = 86f;
+
     /// <summary>Room fade duration in seconds (each direction).</summary>
     public static float RoomFadeSeconds { get; set; } = 0.35f;
 

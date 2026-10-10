@@ -230,11 +230,35 @@ public partial class Room : Node2D
     /// Hit test at a canvas point: NPC rects first, then props (later data entries on top), then
     /// exits, then the walk polygon (floor), else empty background.
     /// </summary>
+    /// <remarks>
+    /// Phones (<see cref="TouchMode"/>): the strip of finger-sized HUD buttons covers the bottom 170 px of the picture
+    /// and with it many exits (two of them completely, owner report 2026-10-10). While the markers show (the Eye), a
+    /// tap on a marker is a tap on its target. An exit whose marker the strip pushed up also answers at that spot
+    /// when the markers are off, after the rects, so it never takes a tap from a person or a thing.
+    /// </remarks>
     public Hit HitTest(Vector2 point)
     {
+        bool touch = TouchMode.Enabled && Labels is not null;
+        if (touch && Labels!.MarkersVisible && MarkerAt(point, exitsRaisedOnly: false) is { } shown) return shown.ToHit();
         foreach (var id in hitOrder)
             if (targets[id].Rect.HasPoint(point)) return targets[id].ToHit();
+        if (touch && MarkerAt(point, exitsRaisedOnly: true) is { } raised) return raised.ToHit();
         return Walk.Contains(point) ? new Hit.Floor(point.X, point.Y) : new Hit.Empty();
+    }
+
+    /// <summary>The target whose marker point is nearest to <paramref name="point"/> within the tap radius, or null.</summary>
+    private TargetInfo? MarkerAt(Vector2 point, bool exitsRaisedOnly)
+    {
+        TargetInfo? best = null;
+        float bestDistance = HotspotLabelLayer.TapRadius;
+        foreach (var id in hitOrder)
+        {
+            var t = targets[id];
+            if (exitsRaisedOnly ? t.Kind != TargetKind.Exit || !Labels.IsRaised(t) : !HotspotLabelLayer.IsMarkable(t)) continue;
+            float distance = Labels.MarkerPoint(t).DistanceTo(point);
+            if (distance <= bestDistance) (best, bestDistance) = (t, distance);
+        }
+        return best;
     }
 
     /// <summary>Gap in px between an NPC's hotspot rect and the hero's feet when he stands beside the NPC.</summary>

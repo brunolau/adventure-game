@@ -41,6 +41,12 @@ public static class UiSettings
     /// </summary>
     public static bool VoiceOver { get; set; } = true;
 
+    /// <summary>
+    /// Dubbing language: "auto" (default: the language of the texts), "sk" or "en". A build that carries only one
+    /// dub plays that one whatever this says (<see cref="LastBell.Game.Audio.AudioService.VoiceLanguage"/>).
+    /// </summary>
+    public static string VoiceLanguage { get; set; } = "auto";
+
     /// <summary>Text speed.</summary>
     public static TextSpeed TextSpeed { get; set; } = TextSpeed.Normal;
 
@@ -129,6 +135,7 @@ public static class UiSettings
         for (int i = 0; i < Buses.Length; i++) Volume[i] = Math.Clamp((int)cfg.GetValue("audio", Buses[i], Volume[i]), 0, 100);
         MuteUnfocused = (bool)cfg.GetValue("audio", "mute_unfocused", MuteUnfocused);
         VoiceOver = (bool)cfg.GetValue("audio", "voice_over", VoiceOver);
+        VoiceLanguage = (string)cfg.GetValue("audio", "voice_language", VoiceLanguage) is ("sk" or "en") and var chosen ? chosen : "auto";
         TextSpeed = (TextSpeed)Math.Clamp((int)cfg.GetValue("text", "speed", (int)TextSpeed), 0, 3);
         AutoAdvance = (bool)cfg.GetValue("text", "auto_advance", AutoAdvance);
         AutoAdvancePace = Math.Clamp((float)cfg.GetValue("text", "auto_advance_pace", AutoAdvancePace), 0.4f, 2f);
@@ -160,6 +167,7 @@ public static class UiSettings
         for (int i = 0; i < Buses.Length; i++) cfg.SetValue("audio", Buses[i], Volume[i]);
         cfg.SetValue("audio", "mute_unfocused", MuteUnfocused);
         cfg.SetValue("audio", "voice_over", VoiceOver);
+        cfg.SetValue("audio", "voice_language", VoiceLanguage);
         cfg.SetValue("text", "speed", (int)TextSpeed);
         cfg.SetValue("text", "auto_advance", AutoAdvance);
         cfg.SetValue("text", "auto_advance_pace", AutoAdvancePace);
@@ -186,6 +194,7 @@ public static class UiSettings
         Array.Copy(defaults, Volume, defaults.Length);
         MuteUnfocused = false;
         VoiceOver = true;
+        VoiceLanguage = "auto";
         TextSpeed = TextSpeed.Normal;
         AutoAdvance = true;
         AutoAdvancePace = 1f;
@@ -240,6 +249,10 @@ public static class UiSettings
         PresentationSettings.ReducedMotion = ReducedMotion;
         PresentationSettings.HighContrastLabels = HighContrastLabels;
         PresentationSettings.WalkSpeedFactor = Math.Clamp(WalkSpeedPercent, 100, 150) / 100f;
+        // Phones: the strip of finger-sized buttons is taller than the PC strip, so the exit badges move up with it.
+        PresentationSettings.BottomReservePx = TouchMode.Enabled
+            ? LastBell.Game.UI.Hud.HudView.StripHeight * HudScale + 6f
+            : LastBell.Game.World.HotspotLabelLayer.BottomReserve;
         if (TextService.Locale != Locale) TextService.SetLocale(Locale);
         // Not on Android / iOS: there the window mode is the immersive mode of the export preset, and "windowed"
         // (the default of this setting) would bring the system bars back over the game.

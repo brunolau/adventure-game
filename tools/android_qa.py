@@ -258,6 +258,9 @@ def cmd_smoke(args: list[str]) -> int:
     adb("logcat", "-c")
     shell(f"am start -W -n {PACKAGE}/{ACTIVITY}")
     check("the game starts and draws its first frame", wait_log(r"LastBell: first frame drawn", 120))
+    # Android ships only the English dub (owner 2026-10-10; export filter assets/voice/* in tools/release_assets.py).
+    dubs = re.findall(r"LastBell: dubs in this build: (\S+)", game_log())
+    check("the build carries only the English dub", dubs[-1:] == ["en"], f"dubs {dubs[-1] if dubs else None}")
     time.sleep(4)
     cmd_shot("smoke_01_title")
     back()
@@ -287,6 +290,8 @@ def cmd_smoke(args: list[str]) -> int:
         tap(960, 300, 0.8)  # the opening lines
     time.sleep(1.5)
     cmd_shot("smoke_04_room_s01")
+    spoken = re.findall(r"LastBell: first voice line (.+?) \[(\w+)\] ([\d.,]+) s", game_log())
+    check("the opening line is spoken in English", bool(spoken) and spoken[0][1] == "en", f"first voice line {spoken[0] if spoken else None}")
     # A finger sliding across the picture: the names follow it, lifting does nothing.
     x1, y1 = to_device(300, 700)
     x2, y2 = to_device(1500, 620)
@@ -307,7 +312,7 @@ def cmd_smoke(args: list[str]) -> int:
     check("a tap takes the tool bag (autosave: TOOLS, G01 done)", "TOOLS" in save.get("inventory", []) and "G01" in save.get("done", []),
           f"inventory {save.get('inventory')}")
     tap(361, 998, 0.8)  # the Eye button latches
-    cmd_shot("smoke_07_eye_markers")
+    cmd_shot("smoke_07_eye_markers")  # the exit badges stand above the row of buttons (owner 2026-10-10)
     time.sleep(6.5)
     hold(520, 650)  # the pot of screws: look
     cmd_shot("smoke_08_long_press_look")

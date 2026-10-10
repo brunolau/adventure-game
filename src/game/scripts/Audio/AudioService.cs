@@ -18,8 +18,9 @@ namespace LastBell.Game.Audio;
 /// <summary>
 /// The game's audio (node "AudioService" under Main): music per room/era with crossfades and cues
 /// (main menu, puzzle, cutscene and room overrides, epilogue), ambience per room, sound effects by
-/// id for <c>actions[].sfx</c> and UI/game events, and the voice bus for future voice lines
-/// (<c>res://assets/voice/&lt;line_id&gt;.ogg</c> when present). Buses: Master, Music, Ambience, SFX,
+/// id for <c>actions[].sfx</c> and UI/game events, and the voice lines on the Voice bus
+/// (<c>res://assets/voice/&lt;line_id&gt;.ogg</c> Slovak, <c>res://assets/voice_en/&lt;line_id&gt;.ogg</c> English; see
+/// <see cref="VoiceLanguage"/>). Buses: Master, Music, Ambience, SFX,
 /// Voice (default_bus_layout.tres); their volumes are set by the settings UI (UiSettings.Apply), the
 /// service only routes players to them. Data: data/audio/{music,ambience,sfx}.json.
 /// Presentation only: never changes game state.
@@ -103,6 +104,7 @@ public partial class AudioService : Node
         AddChild(ambience);
         AddChild(sfx);
         AddChild(voice);
+        GD.Print($"LastBell: dubs in this build: {(VoiceLanguagesInBuild.Count == 0 ? "none" : string.Join(",", VoiceLanguagesInBuild))}");
 
         var game = GameRuntime.Instance;
         game.SessionReplaced += OnSessionReplaced;
@@ -333,32 +335,65 @@ public partial class AudioService : Node
         if (Instance is { } s && !string.IsNullOrEmpty(key) && s.voiceLine == TextService.VariantKey(key)) s.StopVoice();
     }
 
-    /// <summary>
-    /// Text keys that share one recording with another key (assets/voice/aliases.json, key → file stem): the same
-    /// sentence on many locked exits is one take, not a copy per key.
-    /// </summary>
-    private Dictionary<string, string>? voiceAliases;
+    /// <summary>The dubbing languages the game knows, the original first.</summary>
+    public static readonly string[] VoiceLanguages = { "sk", "en" };
 
-    private string VoiceFile(string lineId)
+    /// <summary>Folder of a dubbing language under res://assets/ ("voice" for the Slovak original, "voice_en").</summary>
+    public static string VoiceFolder(string language) => language == "sk" ? "voice" : "voice_" + language;
+
+    private static string[]? voiceLanguagesInBuild;
+
+    /// <summary>
+    /// The dubbing languages this build carries: a language is there when its folder has its <c>aliases.json</c>
+    /// (written with the recordings). The Android build ships only the English dub (owner 2026-10-10), the desktop
+    /// builds both.
+    /// </summary>
+    public static IReadOnlyList<string> VoiceLanguagesInBuild =>
+        voiceLanguagesInBuild ??= VoiceLanguages.Where(l => FileAccess.FileExists($"res://assets/{VoiceFolder(l)}/aliases.json")).ToArray();
+
+    /// <summary>
+    /// The dubbing language that plays now: the player's choice (<see cref="UiSettings.VoiceLanguage"/>), else the
+    /// language of the texts; when this build does not carry it, the one it does carry.
+    /// </summary>
+    public static string VoiceLanguage
     {
-        if (voiceAliases is null)
+        get
         {
-            voiceAliases = new Dictionary<string, string>(StringComparer.Ordinal);
-            const string aliasPath = "res://assets/voice/aliases.json";
+            var inBuild = VoiceLanguagesInBuild;
+            string wanted = UiSettings.VoiceLanguage is "sk" or "en" ? UiSettings.VoiceLanguage
+                : TextService.Locale.StartsWith("en", StringComparison.Ordinal) ? "en" : "sk";
+            return inBuild.Count == 0 || inBuild.Contains(wanted) ? wanted : inBuild[0];
+        }
+    }
+
+    /// <summary>
+    /// Per dubbing language: text keys that share one recording with another key (aliases.json in the language's
+    /// folder, key → file stem). The same sentence on many locked exits is one take, not a copy per key.
+    /// </summary>
+    private readonly Dictionary<string, Dictionary<string, string>> voiceAliases = new(StringComparer.Ordinal);
+    private bool firstVoiceLogged;
+
+    private string VoiceFile(string language, string lineId)
+    {
+        if (!voiceAliases.TryGetValue(language, out var aliases))
+        {
+            voiceAliases[language] = aliases = new Dictionary<string, string>(StringComparer.Ordinal);
+            string aliasPath = $"res://assets/{VoiceFolder(language)}/aliases.json";
             if (FileAccess.FileExists(aliasPath))
             {
                 var parsed = Json.ParseString(FileAccess.GetFileAsString(aliasPath));
                 if (parsed.VariantType == Variant.Type.Dictionary)
-                    foreach (var (k, v) in parsed.AsGodotDictionary()) voiceAliases[k.AsString()] = v.AsString();
+                    foreach (var (k, v) in parsed.AsGodotDictionary()) aliases[k.AsString()] = v.AsString();
             }
         }
-        return voiceAliases.TryGetValue(lineId, out var file) ? file : lineId;
+        return aliases.TryGetValue(lineId, out var file) ? file : lineId;
     }
 
     /// <summary>
-    /// Plays <c>assets/voice/&lt;lineId&gt;.ogg</c> on the Voice bus (null or a missing file stops the voice). Used by the
-    /// dialogue presenter's lines and by screens that show a line themselves (the epilogue shots). Nothing plays while
-    /// the voice-over setting is off (<see cref="UiSettings.VoiceOver"/>).
+    /// Plays the recording of <paramref name="lineId"/> in the current dubbing language (<see cref="VoiceLanguage"/>)
+    /// on the Voice bus; null or a missing file stops the voice. Used by the dialogue presenter's lines and by screens
+    /// that show a line themselves (the epilogue shots). Nothing plays while the voice-over setting is off
+    /// (<see cref="UiSettings.VoiceOver"/>).
     /// </summary>
     public static void PlayVoice(string? lineId) => Instance?.PlayVoiceLine(lineId);
 
@@ -366,14 +401,21 @@ public partial class AudioService : Node
     {
         if (!string.IsNullOrEmpty(lineId)) lineId = TextService.VariantKey(lineId); // Standard/Hard: the .std recording
         voiceLine = lineId;
-        string path = string.IsNullOrEmpty(lineId) ? "" : $"voice/{VoiceFile(lineId)}.ogg";
+        string language = VoiceLanguage;
+        string path = string.IsNullOrEmpty(lineId) ? "" : $"{VoiceFolder(language)}/{VoiceFile(language, lineId)}.ogg";
         if (UiSettings.VoiceOver && !string.IsNullOrEmpty(lineId) && AudioStreams.Exists(path) && AudioStreams.GetOneShot(path) is { } stream)
         {
             voice.Stream = stream;
             voice.Play();
             voiceLength = (float)stream.GetLength();
             music.SetDuck(-5f);
-            Log($"voice {lineId}");
+            Log($"voice {lineId}{(language == "sk" ? "" : " [" + language + "]")}");
+            if (!firstVoiceLogged)
+            {
+                // Once per run, also in release builds: the phone test reads it from the device log.
+                firstVoiceLogged = true;
+                GD.Print($"LastBell: first voice line {lineId} [{language}] {voiceLength:0.0} s");
+            }
         }
         else
         {

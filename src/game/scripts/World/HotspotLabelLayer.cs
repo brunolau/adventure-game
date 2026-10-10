@@ -41,8 +41,20 @@ public partial class ShadowLayer : Node2D
 /// </summary>
 public partial class HotspotLabelLayer : Node2D
 {
-    /// <summary>Canvas px kept free at the bottom for the HUD strip (markers sit above it).</summary>
+    /// <summary>
+    /// Canvas px kept free at the bottom for the PC's HUD strip (markers sit above it). A phone's strip is taller:
+    /// the live value is <see cref="PresentationSettings.BottomReservePx"/>.
+    /// </summary>
     public const float BottomReserve = 86f;
+
+    /// <summary>Phones: a marker is drawn half as big again (a 54 px marker is about 3 mm there).</summary>
+    public static float MarkerScale => TouchMode.Enabled ? 1.5f : 1f;
+
+    /// <summary>
+    /// Phones: how far from a marker's point a tap still counts as a tap on the marker (canvas px): half a comfortable
+    /// touch target, and never less than the drawn badge.
+    /// </summary>
+    public static float TapRadius => Mathf.Max(MarkerSize * 1.5f * 0.6f, TouchMode.MmToCanvasPx(TouchMode.TargetMm * 0.5f, 74f));
 
     /// <summary>Drawn marker diameter in canvas px (1920x1080).</summary>
     public const float MarkerSize = 54f;
@@ -106,10 +118,16 @@ public partial class HotspotLabelLayer : Node2D
             return p;
         }
         var c = t.Rect.GetCenter();
-        float r = MarkerSize * 0.7f;
-        // Above the HUD strip (82 px at the bottom): the template exit zones sit at the very bottom edge.
-        return new Vector2(Mathf.Clamp(c.X, r, Room.CanvasSize.X - r), Mathf.Clamp(c.Y, r, Room.CanvasSize.Y - BottomReserve - r));
+        float r = MarkerSize * MarkerScale * 0.7f;
+        // Above the HUD strip (82 px at the bottom, twice that on a phone): many exit zones sit at the very bottom edge.
+        return new Vector2(Mathf.Clamp(c.X, r, Room.CanvasSize.X - r), Mathf.Clamp(c.Y, r, Room.CanvasSize.Y - PresentationSettings.BottomReservePx - r));
     }
+
+    /// <summary>
+    /// True when the HUD strip pushed the target's marker up from the middle of its rect: on a phone the buttons then
+    /// cover (part of) the rect, so the marker's spot answers to a tap as well (<see cref="Room.HitTest"/>).
+    /// </summary>
+    public bool IsRaised(TargetInfo t) => t.Kind != TargetKind.Npc && MarkerPoint(t).Y < t.Rect.GetCenter().Y - 1f;
 
     /// <inheritdoc />
     public override void _Process(double delta)
@@ -166,7 +184,7 @@ public partial class HotspotLabelLayer : Node2D
         float phase = (t.Id.GetHashCode() & 0xff) / 255f * Mathf.Tau;
         float pulse = still ? 1f : 1f + 0.07f * Mathf.Sin(time * Mathf.Tau / 1.3f + phase);
         // Phones: a 54 px marker is about 3 mm; half as big again is easier to see (the tap target is the hotspot's rect).
-        float size = MarkerSize * pulse * (TouchMode.Enabled ? 1.5f : 1f);
+        float size = MarkerSize * pulse * MarkerScale;
         var rect = new Rect2(p - new Vector2(size, size) / 2, new Vector2(size, size));
         var texture = t.Kind == TargetKind.Exit ? exitMarker ?? marker : marker;
         DrawCircle(p + new Vector2(0, 3), MarkerSize * 0.5f, new Color(0, 0, 0, 0.28f));

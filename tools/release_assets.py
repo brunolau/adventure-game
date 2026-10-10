@@ -47,6 +47,8 @@ PRESETS = GAME / "export_presets.cfg"
 LOSSY_QUALITY = 0.9
 LOSSY_FOLDERS = ("assets/bg_natural/", "assets/bg/", "assets/bg_options/", "assets/cutscenes/", "assets/actors/")
 
+NO_SLOVAK_DUB = "assets/voice/*"
+
 # Preset name -> its own excludes; "release" = also the release excludes below.
 PRESET_BASE = {
     "Windows Desktop": ("*.md, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
@@ -55,9 +57,11 @@ PRESET_BASE = {
     "macOS": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
     "Linux x86_64": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
     "Linux arm64": ("*.md, icon.ico, assets/ui/icon/icon_android_*, assets/ui/launch/*", True),
-    "Android": ("*.md, icon.ico, assets/ui/launch/*", True),
-    "Android AAB": ("*.md, icon.ico, assets/ui/launch/*", True),
-    "Android (QA x86_64)": ("*.md, icon.ico, assets/ui/launch/*", True),
+    # Android ships only the English dub (owner 2026-10-10): the Slovak recordings (assets/voice/, 120 MB) stay out;
+    # the English ones are in assets/voice_en/ and the game plays the dub the build carries (AudioService.VoiceLanguage).
+    "Android": ("*.md, icon.ico, assets/ui/launch/*, " + NO_SLOVAK_DUB, True),
+    "Android AAB": ("*.md, icon.ico, assets/ui/launch/*, " + NO_SLOVAK_DUB, True),
+    "Android (QA x86_64)": ("*.md, icon.ico, assets/ui/launch/*, " + NO_SLOVAK_DUB, True),
     "iOS": ("*.md, icon.ico, assets/ui/icon/icon_android_*", True),
 }
 INCLUDE = "*.json, localization/*.translation, assets/ui/fonts/*.txt"

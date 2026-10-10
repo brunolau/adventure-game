@@ -35,7 +35,75 @@ built, published as `v0.2.0`.
 build with touch controls and the list scrolling the owner asked for after his first test on a phone; all suites
 green, the English route 134/134, Windows, Linux, macOS and Android built. **Not published yet** (the owner decides).
 
-The sections after the next seven are the record of the first milestone-5 run (2026-10-05).
+**Version 0.3.0 verified and built on 2026-10-10** (next section): the English dub (every Slovak recording has an
+English one; Android carries only the English dub), a dubbing-language setting, and on phones the exit badges above
+the row of buttons; all suites green, the Slovak and the English route 134/134, Windows, Linux, macOS and Android
+built. **Not published yet** (the owner decides).
+
+The sections after the next eight are the record of the first milestone-5 run (2026-10-05).
+
+## Version 0.3.0 (2026-10-10, verified and built; not published)
+
+What changed since 0.2.1:
+
+- **English dub** (owner: "now make english dubbing, for the android version include only english dubbing"):
+  2,816 spoken keys, 2,622 recordings, 195 min, in `src/game/assets/voice_en/` with its own `aliases.json`
+  (docs/voice/ENGLISH.md; tools `art/voice/tools/en_dub*.py`). The same stock voice and direction per character as
+  in Slovak, British English. `AudioService.VoiceLanguage` plays the dub of the text language, the player's choice
+  (Settings → Sound, new row „Jazyk dabingu“, `audio/voice_language`), or the only dub a build carries. The three
+  Android presets leave `assets/voice/*` out (`tools/release_assets.py`).
+- **Phones: exit badges above the buttons** (owner: "ensure the location navigation buttons dont collide the the
+  control buttons that are down below … they need to be raised a bit up"; ISSUES ANDROID-15): `HotspotLabelLayer`,
+  `Room.HitTest`, `PresentationSettings.BottomReservePx`. Touch mode only.
+- Small, touch mode only: the first-start tip steps aside while the inventory or a screen is open (ANDROID-11).
+- The settings panel is 80 px taller, so the Sound tab with its new row fits without scrolling.
+
+| check | result |
+|---|---|
+| English dub, automatic | every take transcribed (Scribe v2); 141 retaken once; 2,555 of 2,622 clean; 57 flagged for the ear (24 differ, 27 an added word, 6 timing); accent of 23 pilot takes judged British by an audio model |
+| Godot `--headless --import` (after the install of the dub) | exit 0, 0 errors; 2,622 `.ogg.import` files in `assets/voice_en/` |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `check_strings.py` / `en_person_names.py --check` | OK, 5255 keys, 0 errors, 0 warnings / OK, 0 leftovers |
+| `--acceptance m1` / `travel` (headless) | 34 / 4 PASS, 0 failures |
+| `--acceptance m2` (headless, x3) | 46 PASS, 0 failures |
+| `--acceptance m1` / `m2` again on the final code (after the taller settings panel) | 34 PASS, 0 failures / 46 PASS, 0 failures |
+| `--touch --acceptance touch` (headless) | 22 PASS, 0 failures (new: TC21 no badge on a HUD button, TC22 the exit S03 → S02, which lies under the buttons, answers at its raised badge with the badges on and off) |
+| Route A, Slovak: `--play-all --lines` (headless, x6) | 134/134 actions, 1001 lines, 1010 voice lines, the ending and the album replay, exit 0 |
+| Route EN: `--play-all --locale en --lines` (headless, x6) | 134/134 actions, 1001 lines, **1010 voice lines, all of them the English dub**; the same 997 keys speak as in the Slovak route, none is silent; exit 0 |
+| Dub choice (`--replay 1 --act G02 --lines`) | English texts: `AUDIO voice … [en]`; Slovak texts with `--voice-lang en`: 11 lines `[en]`; English texts with `--voice-lang sk`: 0 lines `[en]` |
+| Settings screenshots (hidden window) | Sound tab on the PC in Slovak and English with the new row (`build/verify_1010/shots/pc_settings_sound_*.png`), phone layout (`touch_settings_sound.png`) |
+| Android emulator (Android 16, x86_64, no window): `android_qa.py smoke` on the 0.3.0 debug APK | 13 of 13 with real touch events (new: "the build carries only the English dub", "the opening line is spoken in English": `entry.S01.001 [en]`) |
+| Android emulator, by hand with real taps | the Eye shows the exit badge above the Menu button (`build/screens/android/v030_s02_eye_markers.png`); a double tap on the raised badge went S02 → S03; with the badges off, a double tap on the spot of the exit that lay under the buttons went S03 → S02 |
+
+Said plainly: route K (keyboard only) was **not** run again; the keyboard code did not change (the hit test only
+changes in touch mode). The first m1 / travel / m2 runs, both routes and the touch suite ran before the settings
+panel was made 80 px taller; m1 and m2 were run again after it (row above), the routes and the touch suite were not.
+Nobody has listened to the English dub. Known headless-only engine lines in the logs, as before: `Parameter "t" is
+null` (dummy renderer, room change; twice in each route) and one `RID allocations … leaked at exit` in the Slovak
+route. Logs: `build/verify_1010/logs/`, screenshots `build/verify_1010/shots/`, emulator `build/verify_1010/android/`.
+
+**Windows.** `build.bat` exit 0 (C# 0 warnings, 0 errors; release filters OK, 576 natural-mode references, 0 errors;
+the known `ERR_CANT_OPEN` icon pass). `LastBell.exe` 109.5 MB, `LastBell.pck` 448.7 MB with 13,123 files (127.9 MB
+Slovak and 127.2 MB English voice), `data_LastBell_windows_x86_64/` 81.5 MB; `build/m5/ship/PoslednyZvonec/`
+639.7 MB, 190 files, zipped as **`build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip`, 487.2 MB** (487,211,115
+bytes, zip test OK, sha256 `8b0b2c57…6b2b2c94`). Smoke test of the shipped copy (`build/verify_1008b/release_smoke.py`,
+hidden window, a private profile folder): QA arguments ignored, new game, first action, autosave S01 / 2020 / [G01] /
+[PHONE, TOOLS]. Both dubs and both `aliases.json` are in the PCK.
+
+**Linux and macOS** (`build_ports.py linux macos --skip-import`, `verify`): `PoslednyZvonec-0.3.0-linux-x86_64.tar.gz`
+476.2 MB (sha256 `17328fbd…8fe009b9`), started with `--headless --quit-after 900` in an `ubuntu:24.04` container:
+exit 0, no error line, `dubs in this build: sk,en`, user folder created. `PoslednyZvonec-0.3.0-macos.zip` 543.6 MB
+(sha256 `54ecd82b…e1ca8a05`), structure verified, not started on a Mac.
+
+**Android** (`build_ports.py android-qa android android-aab`): `PoslednyZvonec-0.3.0.apk` 584.9 MB (sha256
+`82338725…25b8f580`; version code 4, arm64-v8a, minimum API 24, no permission, release key; 2,622 English recordings
+and no Slovak one inside) and `PoslednyZvonec-0.3.0.aab` 521.2 MB. The size is that of 0.2.1, because one dub
+replaced the other. The arm64 APK itself was checked statically; what was played is the x86_64 debug APK of the same
+project. **0.3.0 has not been on a real phone yet.**
+
+All Godot runs of this pass used a private profile folder (`build/verify_1010/appdata`); the player's save folder is
+identical to its state before the runs. Nothing was published: the GitHub release page still has `v0.2.0`. Paid
+generation in this pass: USD 9.97 (the English dub), total USD 263.48.
 
 ## Version 0.2.1 (2026-10-09, verified and built; not published)
 
