@@ -654,3 +654,23 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
   exit. Two exits that lay completely under the buttons (S03 → S02, S69 → S18) can be tapped again.
 - **Decided by Claude along the way** (touch mode only): the first-start tip bubble steps aside while the inventory or
   a screen is open (ANDROID-11, found on 2026-10-09).
+
+### 0.3.0 published; the touch and dubbing-language texts approved (owner 2026-10-10)
+
+- **Asked:** try the 0.3.0 APK on the phone; listen to the English dub; approve the two Slovak labels „Jazyk dabingu“
+  and „Ako texty“ and the 11 touch texts; say whether 0.3.0 is published on GitHub and whether the APK goes on that
+  page. **Answer:** "all good, do it".
+- **Taken as:** the 13 Slovak UI texts are approved, and 0.3.0 is published with the APK.
+- **Done:** release `v0.3.0` (tag on commit `ded16482`, the commit the files were built from) with the Windows,
+  Linux, macOS and Android downloads (docs/MILESTONE5.md "Version 0.3.0", end). The 13 rows are in
+  `src/game/localization/ui.csv` with their English (batch `docs/translation/en/C9_ui_touch_voice.json`); the two
+  draft files are marked approved.
+- **Decided by Claude, reversible:**
+  - *The APK is on the page as a preview*, with the plain sentence that this version was tested in an emulator and
+    earlier builds on one phone. Removing it is one command (`gh release delete-asset v0.3.0 PoslednyZvonec-0.3.0.apk`).
+  - *The Play bundle is not on the page* (it is only useful to Google Play).
+  - *No rebuild for the text rows:* the published build shows the same 13 texts from its code fallbacks.
+- **Not said by the owner:** which lines of the dub were listened to, and whether 0.3.0 ran on the phone. The records
+  keep saying what was checked automatically; the 57 flagged takes stay listed (docs/voice/en.html).
+- **Still open:** the language switch in the settings (ISSUES UI-07), the PC wording of some hints on phones
+  (ANDROID-08 b), the art licence (item 9), the English names other than Dotty.

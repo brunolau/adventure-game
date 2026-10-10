@@ -32,17 +32,17 @@ English, the voiced look texts; all suites green, routes A, EN (English) and K 1
 built, published as `v0.2.0`.
 
 **Version 0.2.1 verified and built on 2026-10-09** (next section): English names of the characters, the Android
-build with touch controls and the list scrolling the owner asked for after his first test on a phone; all suites
+build with touch controls and the list scrolling the owner asked for after their first test on a phone; all suites
 green, the English route 134/134, Windows, Linux, macOS and Android built. **Not published yet** (the owner decides).
 
 **Version 0.3.0 verified and built on 2026-10-10** (next section): the English dub (every Slovak recording has an
 English one; Android carries only the English dub), a dubbing-language setting, and on phones the exit badges above
 the row of buttons; all suites green, the Slovak and the English route 134/134, Windows, Linux, macOS and Android
-built. **Not published yet** (the owner decides).
+built. **Published on 2026-10-10 as `v0.3.0`** (owner: "all good, do it"; end of the next section).
 
 The sections after the next eight are the record of the first milestone-5 run (2026-10-05).
 
-## Version 0.3.0 (2026-10-10, verified and built; not published)
+## Version 0.3.0 (2026-10-10, verified, built and published)
 
 What changed since 0.2.1:
 
@@ -102,8 +102,45 @@ replaced the other. The arm64 APK itself was checked statically; what was played
 project. **0.3.0 has not been on a real phone yet.**
 
 All Godot runs of this pass used a private profile folder (`build/verify_1010/appdata`); the player's save folder is
-identical to its state before the runs. Nothing was published: the GitHub release page still has `v0.2.0`. Paid
-generation in this pass: USD 9.97 (the English dub), total USD 263.48.
+identical to its state before the runs. Nothing was published in that pass (the GitHub release page still had
+`v0.2.0`). Paid generation in this pass: USD 9.97 (the English dub), total USD 263.48.
+
+**Published on 2026-10-10** (owner, to the four open points — test the APK, listen to the dub, the Slovak labels,
+publish and whether the APK goes on the page: "all good, do it"). Release `v0.3.0`, tag on commit `ded16482` (the
+commit the files were built from): https://github.com/brunolau/game-lastbell/releases/tag/v0.3.0
+
+| file on the release page | bytes | sha256 (local file = GitHub's digest) |
+|---|---|---|
+| `PoslednyZvonec-0.3.0-windows-x64.zip` | 487,211,115 | `8b0b2c57…6b2b2c94` |
+| `PoslednyZvonec-0.3.0-linux-x86_64.tar.gz` | 476,164,553 | `17328fbd…8fe009b9` |
+| `PoslednyZvonec-0.3.0-macos.zip` | 543,618,973 | `54ecd82b…e1ca8a05` |
+| `PoslednyZvonec-0.3.0.apk` | 584,877,163 | `82338725…25b8f580` |
+
+The four files were hashed again before the upload (equal to the records above), uploaded to a draft, compared by
+size and digest, and only then published; the APK link answers without a login. The Play bundle (`.aab`) was not
+uploaded. The release text calls Linux, macOS and Android previews and says how each was tested.
+
+**After the release: the 13 approved Slovak UI texts are in the table.** The two rows of
+`docs/writing/out_v7/ui_voice_language.csv` and the 11 of `docs/writing/out_v6/ui_touch.csv` went into
+`src/game/localization/ui.csv` (783 rows) with their English through the batch
+`docs/translation/en/C9_ui_touch_voice.json` and `en_batches.py merge`. The published 0.3.0 shows the same texts from
+its code fallbacks, so it was not rebuilt; the next build reads them from the table.
+
+| check (after the rows went in) | result |
+|---|---|
+| `check_strings.py` / `en_batches.py check` / `en_person_names.py --check` / `extract_strings.py --dry-run` | OK, 5268 keys, 0 errors, 0 warnings / OK, 0 issues / OK, 0 leftovers / OK |
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| Godot `--headless --import` | exit 0, 0 errors; `ui.sk.translation` and `ui.en.translation` regenerated |
+| the imported tables read back by a script (`build/verify_1010/tr_check.gd`) | 13 of 13 keys in Slovak and 13 of 13 in English, the approved texts |
+| `--touch --acceptance touch` (headless) | 22 PASS, 0 failures |
+| `--acceptance m1` (headless) | 34 PASS, 0 failures |
+| C# build of the game (three comments changed) | 0 warnings, 0 errors |
+
+One run is not a result: the touch suite with `--locale en` reported 5 failures (the Eye button and the settings
+tabs "not found"). The QA flag switches the language after the screens are built, so the buttons still carry Slovak
+texts while the suite looks for the English ones. That is the known flaw UI-07 seen through the test, not something
+the new rows caused; a real English start sets the language before the screens are built. The routes, m2, the
+emulator smoke test and the exports were not repeated for this change (text rows with unchanged wording).
 
 ## Version 0.2.1 (2026-10-09, verified and built; not published)
 

@@ -4,8 +4,8 @@ Owner, 2026-10-10: "now make english dubbing, for the android version include on
 
 Every key the Slovak dub speaks now has an English recording: the 2,217 dialogue lines, the 567 look bubbles (room
 looks, item descriptions, locked exits, puzzle answers) and the 32 Standard/Hard variants. Each character keeps the
-voice of the Slovak dub; only the language changed. Nobody has listened to it yet: the checks below are automatic, and
-the owner's ear decides.
+voice of the Slovak dub; only the language changed. The checks below are automatic. The dub went out with version
+0.3.0 on 2026-10-10 (owner: "all good, do it"); no line was named for a retake, and the flagged takes stay listed.
 
 - **Listening page:** `docs/voice/en.html`. Open it from the repository folder, because it plays the recordings by
   relative path from `src/game/assets/`. "EN" plays the English take and "SK" the Slovak original beside it. The takes
@@ -31,8 +31,8 @@ not carry that dub, the one it carries. A build "carries" a dub when its folder 
 presets leave out `assets/voice/*` (`tools/release_assets.py`, `NO_SLOVAK_DUB`). iOS is not built; its preset still
 has both.
 
-The two new Slovak UI texts („Jazyk dabingu“, „Ako texty“) are drafts in `docs/writing/out_v7/ui_voice_language.csv`.
-They show from code until the owner approves them, like the touch texts.
+The two new Slovak UI texts („Jazyk dabingu“, „Ako texty“, `docs/writing/out_v7/ui_voice_language.csv`) were
+approved by the owner on 2026-10-10 and are in `ui.csv`; 0.3.0, built before that, shows the same texts from code.
 
 ## Method
 

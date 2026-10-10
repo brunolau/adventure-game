@@ -1,9 +1,10 @@
 # Posledný zvonec - release notes for the product owner
 
 Version: **0.3.0**, built 2026-10-10 for Windows, Linux, macOS and Android (the main menu and the exe say the same
-number). **Not published yet:** the GitHub release page still offers `v0.2.0` (2026-10-08, Windows, Linux, macOS);
-0.3.0 waits for your word (0.2.1 of 2026-10-09 was built and never published). Before that: 0.1.0 of 2026-10-07,
-published on 2026-10-08 as `v0.1.0`.
+number). **Published on 2026-10-10 as `v0.3.0`** (your "all good, do it"):
+https://github.com/brunolau/game-lastbell/releases/tag/v0.3.0 with the Windows, Linux and macOS downloads and, for
+the first time, the Android APK. Before that: `v0.2.0` of 2026-10-08 (Windows, Linux, macOS) and `v0.1.0` (built
+2026-10-07, published 2026-10-08); 0.2.1 of 2026-10-09 was built and never published.
 Languages: Slovak and English, texts and voices (Android: both text languages, English voices only). Test record
 behind this page: `docs/MILESTONE5.md` (sections "Version 0.3.0", "Version 0.2.1", "Version 0.2.0", "Owner feedback of
 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification
@@ -11,6 +12,15 @@ and release pass").
 
 ## In short
 
+- **Published and approved on 2026-10-10** (your answer "all good, do it" to: test the APK, listen to the dub, the
+  two new Slovak labels and the 11 touch texts, publish 0.3.0 and whether the APK goes on the page):
+  - 0.3.0 is on the GitHub release page with four downloads: Windows, Linux, macOS and the Android APK (marked as a
+    preview). The Google Play bundle is not there; it is only for Play.
+  - The 13 Slovak UI texts are approved and are now in the text table (`ui.csv`, 783 rows; 5,268 texts in all):
+    *Jazyk dabingu*, *Ako texty* and the 11 touch texts of the help and the inventory. The published build already
+    shows exactly these texts, so nothing was rebuilt.
+  - You named no line of the English dub to redo. The 57 recordings marked for a listen stay listed in
+    `docs/voice/en.html`; any of them can be re-recorded later.
 - **New in 0.3.0 (2026-10-10):**
   - **English dub** (your note: "now make english dubbing"). Everything that is spoken in Slovak is now spoken in
     English too: 2,217 dialogue lines, Adam's look texts and the Standard / Hard versions (2,622 recordings, 3 h
@@ -99,8 +109,8 @@ and release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip` (487.2 MB; the GitHub release page still has
-   0.2.0). Unpacked, it is the folder `PoslednyZvonec/` (639.7 MB). It holds three things that must stay
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip` (487.2 MB; the same file is on the GitHub
+   release page as `v0.3.0`). Unpacked, it is the folder `PoslednyZvonec/` (639.7 MB). It holds three things that must stay
    together: `LastBell.exe` (109.5 MB), `LastBell.pck` (448.7 MB, of it 127.9 MB Slovak and 127.2 MB English voice
    clips) and `data_LastBell_windows_x86_64/` (81.5 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
@@ -140,7 +150,7 @@ Touch input is built in for the mobile ports: tap, long press = right click, two
   Pri LEALe 1995), **5 puzzles**, **9 cutscenes**, an epilogue
   whose pictures follow the side quests you did, end credits, and a postgame with the album (replay the ending and
   the cutscenes).
-- 5,255 player texts in Slovak and English: 2,239 spoken lines, 2,246 world texts and 770 UI texts (163 of them the
+- 5,268 player texts in Slovak and English: 2,239 spoken lines, 2,246 world texts and 783 UI texts (163 of them the
   less revealing Standard / Hard versions), written in the Polda tone you chose and approved era by era
   (docs/writing/approval/). The puzzles and solutions did not change; the one main step
   that moved is the rhythm drawing (B19), now on the wall of the yard Pri LEALe.
@@ -226,23 +236,23 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ### Linux, macOS, Android, iOS
 Details and the test record of each port: docs/PORTS.md.
-- **Linux x86_64 (preview):** `build/ports/PoslednyZvonec-0.3.0-linux-x86_64.tar.gz` (476.2 MB). 0.2.0 is on the
-  release page; 0.3.0 was started without a screen in an Ubuntu 24.04 container. Nobody has played either on a Linux
-  desktop yet.
-- **macOS, Apple Silicon and Intel (preview):** `build/ports/PoslednyZvonec-0.3.0-macos.zip` (543.6 MB). Not
+- **Linux x86_64 (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.0-linux-x86_64.tar.gz`
+  (476.2 MB). It was started without a screen in an Ubuntu 24.04 container. Nobody has played it on a Linux desktop
+  yet.
+- **macOS, Apple Silicon and Intel (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.0-macos.zip` (543.6 MB). Not
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android (not released):** `build/ports/PoslednyZvonec-0.3.0.apk` (584.9 MB, arm64, Android 7.0 or newer, no
+- **Android (preview, on the release page since 0.3.0):** `build/ports/PoslednyZvonec-0.3.0.apk` (584.9 MB, arm64, Android 7.0 or newer, no
   permissions) and a Google Play bundle (521.2 MB). It installs over 0.2.0 or 0.2.1 and keeps the saves. English
   voices only (the Slovak recordings are left out of the Android build). Touch controls: tap acts, hold looks, a
   slide scrolls lists, the Eye button shows the markers (the exit arrows stand above the buttons), system Back is
   Esc, autosave when the app leaves the screen. You tried the earlier builds on your phone (2026-10-09: lists did not
   scroll, fixed in 0.2.1; 2026-10-10: the exit arrows collided with the buttons, fixed in 0.3.0). 0.3.0 was played
-  only in an Android 16 emulator (touch smoke test 13 of 13); **it has not been on a real phone yet**. Not on the
-  GitHub release page: it waits for your test and for your approval of 11 Slovak touch texts
-  (`docs/writing/out_v6/ui_touch.csv`). Google Play needs a developer account (USD 25, once). C# on Android is
-  experimental in Godot 4.7.
+  only in an Android 16 emulator (touch smoke test 13 of 13); no report from a real phone is recorded for 0.3.0. The
+  APK is on the GitHub release page since 2026-10-10 (your "all good, do it"), and the 11 Slovak touch texts
+  (`docs/writing/out_v6/ui_touch.csv`) are approved and in the text table. Google Play needs a developer account
+  (USD 25, once). C# on Android is experimental in Godot 4.7.
 - **iOS:** needs a Mac with Xcode, an Apple Developer team id and provisioning profiles. C# on iOS is
   experimental (NativeAOT), so check that it works.
 

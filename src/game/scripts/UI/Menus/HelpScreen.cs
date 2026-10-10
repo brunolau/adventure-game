@@ -19,8 +19,8 @@ public partial class HelpScreen : ModalScreen
     };
 
     /// <summary>
-    /// The controls of a phone or tablet (<see cref="TouchMode"/>): key, Slovak and English text. The rows wait in
-    /// docs/writing/out_v6/ui_touch.csv for the text owner; until they are in ui.csv the text comes from here.
+    /// The controls of a phone or tablet (<see cref="TouchMode"/>): key, Slovak and English text. The owner approved
+    /// the rows (docs/writing/out_v6/ui_touch.csv) on 2026-10-10 and ui.csv has them; the texts here are the fallback.
     /// </summary>
     public static readonly (string Key, string Sk, string En)[] TouchControls =
     {

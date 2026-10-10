@@ -25,8 +25,8 @@ public partial class SettingsScreen : ModalScreen
     private static readonly UiString VoiceOverLabel = new("ui.settings.voice_over", "Hovorené dialógy");
     private static readonly UiString VoiceOverDesc = new("ui.settings.voice_over_desc",
         "Postavy hovoria nahlas. Keď sú vypnuté, titulky sa posúvajú podľa dĺžky textu.");
-    // Dubbing language (2026-10-10): draft rows in docs/writing/out_v7/ui_voice_language.csv, shown from here until
-    // the owner approved the Slovak and the rows are in ui.csv.
+    // Dubbing language (2026-10-10): the owner approved the rows (docs/writing/out_v7/ui_voice_language.csv) and
+    // ui.csv has them; the texts here are the fallback.
     private static readonly (string Key, string Sk, string En) VoiceLanguageLabel = ("ui.settings.voice_language", "Jazyk dabingu", "Voice language");
     private static readonly (string Key, string Sk, string En) VoiceLanguageAuto = ("ui.settings.voice_language_auto", "Ako texty", "Same as the text");
     private readonly List<Button> tabs = new();

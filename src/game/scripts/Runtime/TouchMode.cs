@@ -151,8 +151,8 @@ public static class TouchMode
     }
 
     /// <summary>
-    /// A touch-only UI text that is not in ui.csv yet (docs/writing/out_v6/ui_touch.csv): the table row when it
-    /// exists, else the fallback of the current language from code.
+    /// A touch-only UI text: the ui.csv row when it exists (the rows of docs/writing/out_v6/ui_touch.csv are in the
+    /// table since 2026-10-10), else the fallback of the current language from code.
     /// </summary>
     public static string Text(string key, string slovak, string english) =>
         TextService.UiOr(key, TextService.Locale.StartsWith("en", StringComparison.Ordinal) ? english : slovak);

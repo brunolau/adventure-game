@@ -4,7 +4,7 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-10, version 0.3.0; built, not published: the GitHub release page has 0.2.0)
+## Status (2026-10-10, version 0.3.0; published on GitHub as `v0.3.0`: Linux, macOS and the Android APK next to Windows)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
@@ -280,7 +280,9 @@ Also in touch mode:
 - **Background:** when the app leaves the screen the game is autosaved at once; when it returns from the scene the
   pause menu is open (`UI/Common/MobileLifecycle.cs`). The window mode setting is ignored (it would end the immersive mode).
 - **Texts:** `ui.tutorial.touch_tap / touch_hold / touch_eye` from ui.csv; 11 further rows (the control list and two
-  inventory hints) have Slovak and English fallbacks in code and wait in `docs/writing/out_v6/ui_touch.csv`.
+  inventory hints, `docs/writing/out_v6/ui_touch.csv`) were approved by the owner on 2026-10-10 and are in ui.csv
+  too. Their Slovak and English texts in code stay as the fallback (0.3.0 was built before the rows were in the
+  table and shows the same texts from there).
 
 QA on the desktop: `python tools/qa_godot.py --path <project> --resolution 2400x1080 -- --touch …` emulates a
 6.3 inch phone (`--touch-mm 0.118` a 10.5 inch tablet, `--safe-area l,t,r,b` a cutout); touch events:
