@@ -144,6 +144,7 @@ public partial class DebugHarness : Node
             {
                 if (Get("acceptance") is "travel") { realInput = true; GameRuntime.Instance.NewGame(); await Settle(); await WaitLinesReal(20); await RunTravelChecks(); } // TravelAcceptance.cs only (TR01-TR03)
                 else if (Get("acceptance") is "touch") await RunTouchChecks(); // TouchAcceptance.cs (with --touch: phones and tablets)
+                else if (Get("acceptance") is "language") await RunLanguageChecks(); // LanguageAcceptance.cs (the language switch, ISSUES UI-07)
                 else
                 {
                     if (Get("acceptance") is not "m2") await RunPrologueAcceptance();

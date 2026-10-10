@@ -674,3 +674,23 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
   keep saying what was checked automatically; the 57 flagged takes stay listed (docs/voice/en.html).
 - **Still open:** the language switch in the settings (ISSUES UI-07), the PC wording of some hints on phones
   (ANDROID-08 b), the art licence (item 9), the English names other than Dotty.
+
+### Version 0.3.1: the language switch; the upright tablet is not a defect (owner 2026-10-10)
+
+- **Asked:** "ok is there anything left, really ?" - answered with the whole list; recommended a 0.3.1 with the
+  language switch and the upright tablet. **Answer:** "go for the fixes".
+- **Language switch (ISSUES UI-07): fixed.** The HUD, the inventory and every screen are made again when the language
+  changes (`UiRoot.Relocalize`). The other way out, a note "restart the game", would have needed a new Slovak text
+  and the owner's approval, and would have left the flaw in place.
+- **Upright tablet (ISSUES ANDROID-07): closed without a change; the diagnosis was wrong.** What the emulator and
+  `dumpsys` show: Android's behaviour on large screens for landscape-only apps (`ignoreOrientationRequest`), not the Android 16
+  rule for API 36 (games are exempt). The manifest property named in the issue would do nothing. Turning the tablet
+  fills the screen. Drawing the game turned by 90 degrees inside an upright window is the only thing that would
+  change the picture; it means a second coordinate system for every screen and for input, and is not planned.
+- **Decided by Claude, reversible:**
+  - *Version 0.3.1* (Android version code 5), so the fixed build can be told from the published 0.3.0.
+  - *Not published.* The owner said "go for the fixes"; every release so far was published on an explicit word.
+  - *A subtitle on screen at the moment of the switch keeps its language*; the next line is in the new one.
+- **Also asked the same day:** which two source photos are non-commercial - answered: "Block" and "Yard" by
+  carl_eric on Flickr (Sokolikova, 2012, CC BY-NC-SA 2.0), `art/source/CREDITS.md`.
+

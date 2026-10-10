@@ -24,6 +24,18 @@ Esc/J/M/I for them stay with the world's input router (Core `Escape`/`CloseOverl
 a stack in `UiRoot`; while one is open `UiRoot._ShortcutInput` closes the top one on Esc and keeps
 every other key from the scene, and the backdrop swallows clicks (AT22). The keyboard focus stays in the top screen (`UiRoot.FocusScope`: the top UI modal, else the open puzzle, pause, journal or map): Tab / Shift+Tab wrap at its ends and a focus that lands outside (arrow keys, deferred focus calls) is brought back, so Enter never presses a button hidden under the hints or the save slots (AT19 keyboard pass 2026-10-06).
 
+## Language change
+
+Texts are resolved when a label or button is made, so a change of the language (settings, or the QA flag `--locale`)
+makes the UI again: `TextService.LocaleChanged` → `UiRoot.Relocalize` (end of the frame) → `HudView.Relocalize`,
+`InventoryPanel.Relocalize` and `ModalScreen.Relocalize` for every screen, open or not. Rules that follow from it:
+
+- `ModalScreen.Build()` can run more than once. Start the lists it fills empty (`tabs.Clear()`), and keep nothing
+  from an earlier call.
+- A screen that is filled by something other than `Refresh()` overrides `Reopened()` (the puzzle window).
+- A view outside `ModalScreen` that reads a text in `_Ready` gets a `Relocalize()` and a call from `UiRoot.Relocalize`.
+- Check: `--acceptance language` (LG01-LG07) searches every label, button and tooltip for texts of the old language.
+
 ## Screens
 
 | file | what |

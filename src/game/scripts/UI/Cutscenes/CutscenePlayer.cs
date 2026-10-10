@@ -42,6 +42,11 @@ public partial class CutscenePlayer : Control, ICutsceneView
     /// <summary>Path of a beat picture.</summary>
     public static string BeatPath(string cutsceneId, int beatIndex) => $"res://assets/cutscenes/{cutsceneId}_{beatIndex + 1}.webp";
 
+    private static string SkipText => Ui.T("ui.cutscene.skip") + "  (2× Esc)";
+
+    /// <summary>The language changed (ISSUES UI-07): the one text made in _Ready.</summary>
+    public void Relocalize() => skip.Text = SkipText;
+
     /// <inheritdoc />
     public override void _Ready()
     {
@@ -98,7 +103,7 @@ public partial class CutscenePlayer : Control, ICutsceneView
         AddChild(bottom);
 
         // The button skips the whole cutscene (like a double Esc); a single Esc skips one line (PT-F13).
-        skip = Ui.Button(Ui.T("ui.cutscene.skip") + "  (2× Esc)", () => LastBell.Game.Presentation.DialoguePresenter.Instance?.Skip(), "HudButton");
+        skip = Ui.Button(SkipText, () => LastBell.Game.Presentation.DialoguePresenter.Instance?.Skip(), "HudButton");
         skip.FocusMode = FocusModeEnum.None;
         skip.AddThemeFontSizeOverride("font_size", 24);
         AddChild(skip);

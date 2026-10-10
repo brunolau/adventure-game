@@ -38,6 +38,7 @@ public partial class CreditsScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.credits.title"));
+        built = false; // Build runs again after a change of the language: the list is filled again on the next open
         list = Ui.VBox(8);
         scroll = Ui.Scroll(list);
         Body.AddChild(scroll);

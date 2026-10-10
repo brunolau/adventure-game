@@ -34,6 +34,8 @@ public partial class DifficultyPicker : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T(DifficultyText.PickTitle));
+        choices.Clear(); // Build runs again after a change of the language (ModalScreen.Relocalize)
+        texts.Clear();
         Body.AddChild(Ui.Para(Ui.T(DifficultyText.PickIntro)));
         Body.AddChild(Ui.Label(Ui.T(DifficultyText.Title), "SubheadingLabel"));
         var group = new ButtonGroup();

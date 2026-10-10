@@ -106,6 +106,9 @@ public static class UiSettings
     /// <summary>The first-start tips were shown.</summary>
     public static bool TipsShown { get; set; }
 
+    /// <summary>QA: nothing is written (a suite that changes settings through the screen, e.g. the language).</summary>
+    public static bool QaNoSave { get; set; }
+
     /// <summary>Raised after <see cref="Apply"/>.</summary>
     public static event Action? Changed;
 
@@ -162,7 +165,7 @@ public static class UiSettings
     /// </summary>
     public static void Save()
     {
-        if (TouchMode.Enabled && !TouchMode.IsMobile) return;
+        if (QaNoSave || (TouchMode.Enabled && !TouchMode.IsMobile)) return;
         var cfg = new ConfigFile();
         for (int i = 0; i < Buses.Length; i++) cfg.SetValue("audio", Buses[i], Volume[i]);
         cfg.SetValue("audio", "mute_unfocused", MuteUnfocused);

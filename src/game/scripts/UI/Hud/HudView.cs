@@ -74,8 +74,34 @@ public partial class HudView : Control, IHoverView
     {
         SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
         MouseFilter = MouseFilterEnum.Ignore;
+        BuildStrip();
+    }
 
-        strip = new Control { MouseFilter = MouseFilterEnum.Ignore };
+    /// <summary>
+    /// The language changed (ISSUES UI-07): the strip is made again, because the names and tooltips of its buttons and
+    /// the key hint were read when it was made. What _Process remembers about the old strip starts over.
+    /// </summary>
+    public void Relocalize()
+    {
+        foreach (var child in GetChildren())
+        {
+            RemoveChild(child);
+            child.QueueFree();
+        }
+        edgeScale = -1;
+        narrowLayout = null;
+        hintWaiting = null;
+        hintStateLeft = 0;
+        labelsShown = null;
+        chipItem = null;
+        portalAvailable = false;
+        BuildStrip();
+    }
+
+    private void BuildStrip()
+    {
+        // Hidden until _Process has decided (next frame): a strip made again under an open screen must not flash.
+        strip = new Control { MouseFilter = MouseFilterEnum.Ignore, Visible = false };
         strip.SetAnchorsAndOffsetsPreset(LayoutPreset.BottomWide);
         strip.OffsetTop = -StripHeight;
         AddChild(strip);

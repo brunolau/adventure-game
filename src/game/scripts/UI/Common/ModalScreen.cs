@@ -21,6 +21,7 @@ public partial class ModalScreen : Control
     private Label status = null!;
     private double statusLeft;
     private Vector2 lastSize;
+    private string builtLocale = "";
 
     /// <summary>Preferred panel size in logical px (clamped to the screen).</summary>
     protected Vector2 PreferredSize { get; set; } = new(1400, 860);
@@ -57,6 +58,14 @@ public partial class ModalScreen : Control
     {
         SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
         MouseFilter = MouseFilterEnum.Stop;
+        Construct();
+        Visible = false;
+    }
+
+    /// <summary>The backdrop, the panel with its title row and close cross, and the content of <see cref="Build"/>.</summary>
+    private void Construct()
+    {
+        close = null;
         var backdrop = new ColorRect { Color = new Color(0.06f, 0.04f, 0.03f, Dim), MouseFilter = MouseFilterEnum.Ignore };
         backdrop.SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
         AddChild(backdrop);
@@ -86,11 +95,37 @@ public partial class ModalScreen : Control
         TitleRow.AddChild(status);
         if (close is not null) TitleRow.AddChild(close);
         if (title.Text.Length == 0 && close is null && TitleRow.GetChildCount() == 1) TitleRow.Visible = false;
-        Visible = false;
+        builtLocale = LastBell.Game.Runtime.TextService.Locale;
     }
 
-    /// <summary>Builds the static content (called once from _Ready).</summary>
+    /// <summary>
+    /// The language changed (ISSUES UI-07): everything <see cref="Build"/> made is thrown away and made again in the
+    /// new language, and a screen that is open is filled again (<see cref="Reopened"/>). Returns false when the screen
+    /// was already made in this language. The keyboard focus is the caller's business (only the top screen takes it).
+    /// </summary>
+    public bool Relocalize()
+    {
+        if (builtLocale == LastBell.Game.Runtime.TextService.Locale) return false;
+        foreach (var child in GetChildren())
+        {
+            RemoveChild(child);
+            child.QueueFree();
+        }
+        Construct();
+        if (!Visible) return true;
+        Reopened();
+        Layout(true);
+        return true;
+    }
+
+    /// <summary>
+    /// Builds the static content. Called from _Ready and again from <see cref="Relocalize"/>, so it must not assume a
+    /// first call: lists it fills start empty here, and nothing made by an earlier call is used again.
+    /// </summary>
     protected virtual void Build() { }
+
+    /// <summary>An open screen was made again by <see cref="Relocalize"/>: fill it (default: <see cref="Refresh"/>).</summary>
+    protected virtual void Reopened() => Refresh();
 
     /// <summary>Refreshes the content from the current state (called on every open).</summary>
     protected virtual void Refresh() { }

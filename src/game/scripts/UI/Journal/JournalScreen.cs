@@ -36,6 +36,7 @@ public partial class JournalScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.journal.title"));
+        tabs.Clear(); // Build runs again after a change of the language (ModalScreen.Relocalize)
         var group = new ButtonGroup();
         var row = new HFlowContainer();
         row.AddThemeConstantOverride("h_separation", 10);

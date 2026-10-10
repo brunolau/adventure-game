@@ -85,17 +85,28 @@ public partial class TipsOverlay : Control
             UiSettings.Save();
             return;
         }
-        label.Text = Ui.T(Keys[index]);
-        if (TouchMode.Enabled)
-        {
-            // A phone runs the UI at up to 200 %: the logical screen is 960 px wide and a long tip must wrap.
-            float room = Mathf.Max(240f, Size.X - 200f);
-            float needed = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size")).X;
-            label.AutowrapMode = needed > room ? TextServer.AutowrapMode.WordSmart : TextServer.AutowrapMode.Off;
-            label.CustomMinimumSize = new Vector2(needed > room ? room : 0, 0);
-        }
+        SetTipText();
         bubble.Visible = true;
         bubble.ResetSize();
         left = TouchMode.Enabled ? 7.0 : 5.5;
+    }
+
+    private void SetTipText()
+    {
+        label.Text = Ui.T(Keys[index]);
+        if (!TouchMode.Enabled) return;
+        // A phone runs the UI at up to 200 %: the logical screen is 960 px wide and a long tip must wrap.
+        float room = Mathf.Max(240f, Size.X - 200f);
+        float needed = label.GetThemeFont("font").GetStringSize(label.Text, HorizontalAlignment.Left, -1, label.GetThemeFontSize("font_size")).X;
+        label.AutowrapMode = needed > room ? TextServer.AutowrapMode.WordSmart : TextServer.AutowrapMode.Off;
+        label.CustomMinimumSize = new Vector2(needed > room ? room : 0, 0);
+    }
+
+    /// <summary>The language changed (ISSUES UI-07): the tip on screen is shown in the new language; its time runs on.</summary>
+    public void Relocalize()
+    {
+        if (index < 0 || index >= Keys.Length) return;
+        SetTipText();
+        bubble.ResetSize();
     }
 }

@@ -39,6 +39,9 @@ public partial class HintScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.hint.title"));
+        waitLabel = null; // Build runs again after a change of the language (ModalScreen.Relocalize)
+        waitButton = null;
+        shownGate = null;
         var row = Ui.HBox(24);
         row.SizeFlagsVertical = SizeFlags.ExpandFill;
         var left = Ui.VBox(8);

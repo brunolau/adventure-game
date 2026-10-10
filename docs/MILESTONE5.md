@@ -38,9 +38,68 @@ green, the English route 134/134, Windows, Linux, macOS and Android built. **Not
 **Version 0.3.0 verified and built on 2026-10-10** (next section): the English dub (every Slovak recording has an
 English one; Android carries only the English dub), a dubbing-language setting, and on phones the exit badges above
 the row of buttons; all suites green, the Slovak and the English route 134/134, Windows, Linux, macOS and Android
-built. **Published on 2026-10-10 as `v0.3.0`** (owner: "all good, do it"; end of the next section).
+built. **Published on 2026-10-10 as `v0.3.0`** (owner: "all good, do it"; end of its section).
 
-The sections after the next eight are the record of the first milestone-5 run (2026-10-05).
+**Version 0.3.1 verified and built on 2026-10-10** (next section; owner: "go for the fixes"): the language switch in
+the settings makes the HUD and every screen again (ISSUES UI-07), and the upright-tablet issue is closed as
+Android's own behaviour on large screens (ANDROID-07, no change). All suites green, the new language suite included, the Slovak, the
+English and the keyboard-only route 134/134, Windows, Linux, macOS and Android built. **Not published** (the owner
+decides).
+
+The sections after the next nine are the record of the first milestone-5 run (2026-10-05).
+
+## Version 0.3.1 (2026-10-10, verified and built; not published)
+
+What changed since 0.3.0:
+
+- **The language switch rebuilds the UI** (ISSUES UI-07; owner: "go for the fixes"). `TextService.LocaleChanged` →
+  `UiRoot.Relocalize`: the HUD strip, the inventory and all 14 screens are made again, an open screen is filled
+  again, the focus returns to the language button. 16 UI files, no rule and no text changed.
+- **The 13 approved UI rows** (11 touch texts, 2 dubbing-language labels) come from `ui.csv` now (they were code
+  fallbacks in 0.3.0; same wording).
+- Version 0.3.1, Android version code 5. No new assets.
+- Not changed: ANDROID-07 (the upright tablet). Reproduced on the emulator, found to be Android's behaviour on
+  large screens for landscape-only apps, closed with the evidence in ISSUES.md.
+
+| check | result |
+|---|---|
+| `dotnet test src/LastBell.sln` | 506 passed, 3 skipped, 0 failed |
+| `check_strings.py` / `en_batches.py check` / `en_person_names.py --check` | OK, 5268 keys, 0 errors, 0 warnings / OK, 0 issues / OK, 0 leftovers |
+| C# build of the game / Godot `--headless --import` | 0 warnings, 0 errors / exit 0, 0 errors |
+| `--acceptance language` (new, headless; LG01-LG07) | 7 PASS, 0 failures: the language changed by a real click in the settings from the pause menu and from the title screen; 21 views, 372 texts in the new language, none in the old |
+| the same with `--touch` (phone layout, real taps) | 7 PASS, 0 failures |
+| the same started in English (`--locale en`: English → Slovak → English) | 7 PASS, 0 failures |
+| the same suite with the rebuild switched off (one line commented out, then restored) | 4 FAIL as it must: 121 leftover Slovak texts named (journal, pause, map …) |
+| `--acceptance m1` / `travel` (headless) | 34 / 4 PASS, 0 failures |
+| `--acceptance m2` (headless, x3) | 46 PASS, 0 failures |
+| `--touch --acceptance touch` (headless) | 22 PASS, 0 failures |
+| `--touch --locale en --acceptance touch` | 22 PASS, 0 failures (5 failures before the fix: the Eye button and the settings tabs kept Slovak texts) |
+| Route A, Slovak: `--play-all --lines` (headless, x6) | 134/134 actions, 1001 lines, 1010 voice lines, the ending and the album replay, 0 blockers, 0 failures, exit 0 |
+| Route EN: `--play-all --locale en --lines` (headless, x6; the run starts with a rebuild of the UI in English) | 134/134 actions, 1001 lines, 1010 voice lines, all of them the English dub, 0 blockers, 0 failures, exit 0 |
+| Route K: `--play-all --keyboard` (headless, x8) | 134/134: 697 steps, 1982 key presses, 0 awkward, 0 blockers, 0 failures (the numbers of the 0.2.0 run) |
+| Screenshots after a live switch (hidden window) | settings on the PC and in the phone layout, HUD with the inventory: all English (`build/verify_1010b/shots/`) |
+| Android emulator (Android 16, x86_64, no window): `android_qa.py smoke` on the 0.3.1 debug APK | 13 of 13 with real touch events (the title screen says 0.3.1, only the English dub, the opening line spoken in English) |
+| Android emulator, by hand with real taps | from the pause menu of the running game: Settings, tab *Text and subtitles*, one tap on *Slovenčina*. The title, the tabs and the rows are Slovak at once and the list stays at the language row (device log: `language 'sk', HUD and 14 screens made again`); the pause menu and, after *Pokračovať v hre*, the captions of the HUD buttons are Slovak; no error line in the device log (`build/screens/android/lang_01` … `lang_05`) |
+| Android emulator, upright tablet (1536x2048, on 0.3.0) | letterboxed by the device (`letterboxReason=FIXED_ORIENTATION`, `ignoreOrientationRequest=true`); full screen when turned; the display turns by itself with the policy off (ISSUES ANDROID-07) |
+
+Said plainly: the release exe was not driven through the language switch (its QA arguments are off by design, and the smoke test plays the first action in the starting language); the switch was exercised in the editor runtime (headless suites, hidden-window screenshots) and in the debug APK on the emulator, which run the same code. No real phone, Mac or Linux desktop was used. A subtitle that is on screen when the language changes keeps its language. The first emulator smoke run failed 8 of 13, and that was the test setup: after the tablet experiment I had forced the orientation override on (`wm set-ignore-orientation-request true`), so the game stood in a box on the upright phone screen and the taps missed; after `wm set-ignore-orientation-request reset` the same APK passed 13 of 13. The first Windows export waited ten minutes after its work was done: Godot's console wrapper waits for its child processes, and the export had started a compiler server (`VBCSCompiler`, idle time ten minutes); a compiler server started outside the build before the exports avoids the wait. Known headless-only engine line `Parameter "t" is null`: once in the English and once in the keyboard route, none in the Slovak one.
+
+**Windows.** `build.bat` exit 0. `LastBell.exe` 109.5 MB, `LastBell.pck` 448.7 MB with 13,124 files,
+`data_LastBell_windows_x86_64/` 81.5 MB; `build/m5/ship/PoslednyZvonec/` 639.8 MB, 190 files, zipped as
+**`build/m5/ship/PoslednyZvonec-0.3.1-windows-x64.zip`, 487.2 MB** (487,223,205 bytes, zip test OK, sha256
+`284674d0…cf568ced`). Smoke test of the shipped copy (`build/verify_1008b/release_smoke.py`, hidden window, a private profile
+folder): QA arguments ignored, new game, first action, autosave S01 / 2020 / [G01] / [PHONE, TOOLS]. `LastBell.dll` carries the new code and `project.binary` says 0.3.1.
+
+**Linux and macOS** (`build_ports.py linux macos --skip-import`, `verify`): `PoslednyZvonec-0.3.1-linux-x86_64.tar.gz`
+476.2 MB (sha256 `7d3f1511…fc982cfa`), started with `--headless --quit-after 900` in an `ubuntu:24.04` container: exit 0, no error line, `dubs in this build: sk,en`, user folder created. `PoslednyZvonec-0.3.1-macos.zip` 543.6 MB
+(sha256 `66299d16…735fe201`), structure verified, not started on a Mac.
+
+**Android** (`build_ports.py android-qa android android-aab`): `PoslednyZvonec-0.3.1.apk` 584.9 MB (sha256
+`77a4a6f1…cac8271e`; version code 5, arm64-v8a, minimum API 24, target API 36, no permission, the release certificate of 0.3.0 (`395d15e5…9988a767`), 2,622 English recordings and no Slovak one inside) and `PoslednyZvonec-0.3.1.aab` 521.2 MB. The arm64 APK itself was checked statically;
+what was played is the x86_64 debug APK of the same project.
+
+All Godot runs of this pass used a private profile folder (`build/verify_1010/appdata`); none of them wrote into the player's folder. That folder did change during the pass, by the owner's own play: its log shows a normal windowed session from 16:22 (no QA line), a new game, and the language switched to English in the settings (`language 'en', HUD and 14 screens made again`), with `settings.cfg` and the autosave written at 16:25 and 16:26. Nothing was
+published: the GitHub release page has `v0.3.0`. Paid generation in this pass: none (total USD 263.48).
 
 ## Version 0.3.0 (2026-10-10, verified, built and published)
 

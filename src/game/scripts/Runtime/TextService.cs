@@ -80,13 +80,21 @@ public static class TextService
     /// <summary>The active locale (default "sk").</summary>
     public static string Locale => TranslationServer.GetLocale();
 
+    /// <summary>
+    /// Raised after the language really changed (ISSUES UI-07). A text is resolved when its label or button is made,
+    /// so what was made before keeps the old language: <c>UiRoot</c> listens and makes the HUD and every screen again.
+    /// </summary>
+    public static event Action? LocaleChanged;
+
     /// <summary>Switches the locale (e.g. "sk", "en"); missing entries still fall back to Slovak.</summary>
     public static void SetLocale(string locale)
     {
+        bool changed = TranslationServer.GetLocale() != locale;
         TranslationServer.SetLocale(locale);
         // The window title follows the language ("Posledný zvonec" / "The Last Bell").
         if (Engine.GetMainLoop() is SceneTree tree && tree.Root is { } root)
             root.Title = Get("game.title", root.Title);
+        if (changed) LocaleChanged?.Invoke();
     }
 
     private static readonly HashSet<string> WarnedKeys = new();

@@ -20,7 +20,7 @@ in the copy first).
 
 How it works:
 - Desktop ports export from src/game with the same release settings as Windows: release template (the QA harness is
-  off, ISSUES BUILD-03), version 0.3.0, Lossy texture import and the release export filter (tools/release_assets.py).
+  off, ISSUES BUILD-03), version 0.3.1, Lossy texture import and the release export filter (tools/release_assets.py).
 - Android and iOS export from a staging copy of the project, build/ports/_stage/src/game (git-ignored), in which
   the large painted textures (backgrounds, actor sheets, cutscenes, ambient cut-outs) are imported as Basis
   Universal instead of Lossy WebP: the GPU keeps them block-compressed (ASTC 4x4 / ETC2, 1 byte per pixel instead of
@@ -70,7 +70,7 @@ STAGE_GAME = STAGE / "game"
 TOOLS = ROOT / ".tools"
 ANDROID_TOOLS = TOOLS / "android"                 # jdk-17/, sdk/, keystores, keystore.json, godot_appdata/
 GODOT_APPDATA = ANDROID_TOOLS / "godot_appdata"   # private Godot editor configuration of the Android exports
-VERSION = "0.3.0"
+VERSION = "0.3.1"
 APP = "PoslednyZvonec"
 GODOT_VERSION = "4.7.2.stable.mono"
 

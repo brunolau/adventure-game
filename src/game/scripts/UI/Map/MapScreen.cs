@@ -55,6 +55,8 @@ public partial class MapScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.map.title"));
+        graphs.Clear(); // Build runs again after a change of the language (ModalScreen.Relocalize)
+        sectionOf.Clear();
         tabRow = new HFlowContainer();
         tabRow.AddThemeConstantOverride("h_separation", 10);
         Body.AddChild(tabRow);

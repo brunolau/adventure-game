@@ -32,6 +32,8 @@ public partial class SettingsScreen : ModalScreen
     private readonly List<Button> tabs = new();
     private VBoxContainer content = null!;
     private int tab;
+    private Control? languageRow;
+    private bool refocusLanguage;
 
     /// <summary>Godot constructor.</summary>
     public SettingsScreen() { PreferredSize = new Vector2(1500, 1020); } // 1020: the Sound tab with its dubbing row fits without scrolling
@@ -40,6 +42,7 @@ public partial class SettingsScreen : ModalScreen
     protected override void Build()
     {
         SetTitle(Ui.T("ui.settings.title"));
+        tabs.Clear(); // Build runs again after a change of the language (ModalScreen.Relocalize)
         // Phones (touch mode, UI at 200 %): the tabs stand in a column beside the rows. In a row they wrap to two lines
         // and leave the list a strip of two rows (seen on the emulator 2026-10-09); beside it the list has the whole
         // height of the panel. "Restore defaults" goes under the tabs.
@@ -94,7 +97,34 @@ public partial class SettingsScreen : ModalScreen
     }
 
     /// <inheritdoc />
-    protected override Control? InitialFocus() => tabs[tab];
+    protected override Control? InitialFocus()
+    {
+        // The player changed the language and the screen was made again (ISSUES UI-07): the focus goes back to the
+        // choice just made, not to the tab.
+        if (refocusLanguage)
+        {
+            refocusLanguage = false;
+            if (languageRow is not null && IsInstanceValid(languageRow) && PressedChoice(languageRow) is { } chosen) return chosen;
+        }
+        return tabs[tab];
+    }
+
+    private static Button? PressedChoice(Node root)
+    {
+        foreach (var child in root.GetChildren())
+        {
+            if (child is Button { ToggleMode: true, ButtonPressed: true } button) return button;
+            if (PressedChoice(child) is { } inner) return inner;
+        }
+        return null;
+    }
+
+    /// <inheritdoc />
+    public override void Open()
+    {
+        refocusLanguage = false;
+        base.Open();
+    }
 
     private static void Commit()
     {
@@ -174,9 +204,15 @@ public partial class SettingsScreen : ModalScreen
                 content.AddChild(previewPanel);
                 content.AddChild(ToggleRow(Ui.T("ui.settings.subtitle_background"), "", () => UiSettings.SubtitleBackground, v => UiSettings.SubtitleBackground = v));
                 content.AddChild(ToggleRow(Ui.T("ui.settings.speaker_names"), "", () => UiSettings.SpeakerNames, v => UiSettings.SpeakerNames = v));
-                content.AddChild(ChoiceRow(Ui.T("ui.settings.language"),
+                // The change rebuilds the HUD and every screen, this one included (UiRoot.Relocalize, ISSUES UI-07).
+                languageRow = ChoiceRow(Ui.T("ui.settings.language"),
                     new[] { (Ui.T("ui.settings.language_sk"), 0), (Ui.T("ui.settings.language_en"), 1) },
-                    () => UiSettings.Locale == "en" ? 1 : 0, v => UiSettings.Locale = v == 1 ? "en" : "sk"));
+                    () => UiSettings.Locale == "en" ? 1 : 0, v =>
+                    {
+                        refocusLanguage = true;
+                        UiSettings.Locale = v == 1 ? "en" : "sk";
+                    });
+                content.AddChild(languageRow);
                 break;
             case 3:
                 if (!TouchMode.IsMobile) // a phone has no window mode

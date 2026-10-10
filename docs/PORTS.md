@@ -4,14 +4,14 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-10, version 0.3.0; published on GitHub as `v0.3.0`: Linux, macOS and the Android APK next to Windows)
+## Status (2026-10-10, version 0.3.1 built and not published; `v0.3.0` is on GitHub: Linux, macOS and the Android APK next to Windows)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|
-| Linux x86_64 | yes | 0.3.0 (as 0.2.0 and 0.2.1): start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.3.0-linux-x86_64.tar.gz`, 476.2 MB |
-| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.3.0), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.3.0-macos.zip`, 543.6 MB |
+| Linux x86_64 | yes | 0.3.1 (as 0.2.0, 0.2.1 and 0.3.0): start without a screen in an Ubuntu 24.04 container (`--headless --quit-after 900`): exit 0, no error line, user folder `~/.local/share/LastBell` created. Nobody has played it on a Linux desktop | `PoslednyZvonec-0.3.1-linux-x86_64.tar.gz`, 476.2 MB |
+| macOS (universal: Apple Silicon + Intel) | yes | `build_ports.py verify` only (no Mac here): bundle structure, Info.plist (eu.inviton.lastbell, 0.3.1), x86_64 + arm64 executable and .NET runtime, ad-hoc signature, icon, PCK | `PoslednyZvonec-0.3.1-macos.zip`, 543.6 MB |
 | Linux arm64 | preset only | — | — |
-| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.3.0: debug APK played on a headless Android 16 emulator, smoke test 13 of 13 (title screen, only the English dub in the build, a list scrolled by a finger, new game, the opening line spoken in English, touch controls, autosave); release APK and bundle checked statically only. The owner tried the earlier builds on a phone (2026-10-09: lists did not scroll, fixed in 0.2.1; 2026-10-10: the exit badges collided with the buttons, fixed in 0.3.0); **0.3.0 has not been on a real device yet** | `PoslednyZvonec-0.3.0.apk`, 584.9 MB; `PoslednyZvonec-0.3.0.aab`, 521.2 MB |
+| Android | yes: release APK (arm64-v8a), Google Play bundle, debug APK (x86_64) | 0.3.1: debug APK played on a headless Android 16 emulator, smoke test 13 of 13; the language changed in the settings by real taps (title, tabs, rows and the title screen in the new language); before that 0.3.0: smoke test 13 of 13 (title screen, only the English dub in the build, a list scrolled by a finger, new game, the opening line spoken in English, touch controls, autosave); release APK and bundle checked statically only. The owner tried the earlier builds on a phone (2026-10-09: lists did not scroll, fixed in 0.2.1; 2026-10-10: the exit badges collided with the buttons, fixed in 0.3.0); **neither 0.3.0 nor 0.3.1 has a recorded run on a real device** | `PoslednyZvonec-0.3.1.apk`, 584.9 MB; `PoslednyZvonec-0.3.1.aab`, 521.2 MB |
 | iOS | preset | not possible on Windows | — |
 
 ## Running the desktop ports
@@ -24,19 +24,19 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 
 ## Android (2026-10-08)
 
-Package `eu.inviton.lastbell`, version 0.3.0 (code 4; 0.2.1 was code 3, 0.2.0 code 2), landscape, immersive (no system bars), no permissions, minimum
+Package `eu.inviton.lastbell`, version 0.3.1 (code 5; 0.3.0 was code 4, 0.2.1 code 3, 0.2.0 code 2), landscape, immersive (no system bars), no permissions, minimum
 Android 7.0 (API 24), target API 36. C# runs on the .NET 9 Mono runtime inside the APK (Godot 4.7.2, experimental).
 
 ### Artifacts
 
 | File | What | Size |
 |---|---|---|
-| `build/ports/PoslednyZvonec-0.3.0.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key; English dub only | 584.9 MB |
-| `build/ports/PoslednyZvonec-0.3.0.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 520.6 MB |
+| `build/ports/PoslednyZvonec-0.3.1.apk` | release APK for sideloading and GitHub: arm64-v8a, signed with the local release key; English dub only | 584.9 MB |
+| `build/ports/PoslednyZvonec-0.3.1.aab` | Google Play bundle (Gradle build), signed with the same key: base module 29 MB, the game data (488 MB) in an install-time asset pack | 521.2 MB |
 | `build/ports/android_qa/LastBell-qa-x86_64.apk` | debug APK for the emulator: x86_64, debug key, QA harness arguments honoured; English dub only | 587.3 MB |
 
 Install the APK on a phone: copy it over and open it (Android asks once to allow installs from that app), or
-`adb install -r build/ports/PoslednyZvonec-0.3.0.apk`. It installs over 0.2.0 and 0.2.1 (same key, higher version code) and keeps
+`adb install -r build/ports/PoslednyZvonec-0.3.1.apk`. It installs over 0.2.0, 0.2.1 and 0.3.0 (same key, higher version code) and keeps
 the saves. The game needs about 1.2 GB free for the install.
 
 ### Build
@@ -204,8 +204,12 @@ APK is 584 MB while the same build with the desktop textures is 412 MB.
 - **Small screens (ANDROID-06):** a phone runs the UI at 200 %, which is a logical screen of 960x540. Every screen fits (panels
   that cannot scroll are scaled down as a whole: the difficulty step, the map, puzzles), but the map and the settings
   tabs show little at once, and puzzle controls end up smaller than 9 mm.
-- **Tablets with Android 16 or newer (ANDROID-07)** ignore the landscape lock of an app that targets API 36: held upright, the
-  game is a letterboxed strip. A manifest property can opt out until API 37 (needs the Gradle build).
+- **Tablets held upright (ANDROID-07, corrected 2026-10-10):** on large screens Android does not turn the screen for an
+  app that asks for landscape; it shows the app in a landscape box on the upright screen (`ignoreOrientationRequest`,
+  on by default on the Android 16 emulator once the display is 600 dp or wider; `letterboxReason=FIXED_ORIENTATION`). The game is then a strip as wide as the screen; turned, the tablet shows it
+  full screen. Devices with that setting off turn the screen by themselves. This is the device's treatment of every
+  landscape-only game, not the Android 16 rule for API 36 (games are exempt from that one), so there is nothing to
+  change in the manifest. Measured on the emulator at 1536x2048; nothing was changed in the game.
 - **Texts that name the mouse (ANDROID-08):** hint and dialogue lines written for the PC ("klikni", "pravým tlačidlom") are shown
   as they are; only the tutorial, the help and the inventory hints have touch wording.
 - **No haptics** (it would need the VIBRATE permission) and no gamepad mapping.

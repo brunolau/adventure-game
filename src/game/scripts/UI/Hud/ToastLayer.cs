@@ -110,6 +110,9 @@ public partial class ToastLayer : Control
         }
     }
 
+    /// <summary>The language changed (ISSUES UI-07): the one text made in _Ready.</summary>
+    public void Relocalize() => autosave.Text = Ui.T("ui.system.autosaved");
+
     /// <summary>Flashes the autosave indicator.</summary>
     public void ShowAutosave()
     {

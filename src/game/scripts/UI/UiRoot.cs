@@ -47,6 +47,8 @@ public partial class UiRoot : Control
     private PuzzleModal puzzle = null!;
     private TopicMenuView? topicMenu;
     private SubtitleView subtitleView = null!;
+    private CutscenePlayer cutscenePlayer = null!;
+    private bool relocalizePending;
     private Vector4 safeInsets;
     private double safePoll;
 
@@ -118,6 +120,7 @@ public partial class UiRoot : Control
         // Unscaled: cutscene frame under the subtitles.
         var cutscene = new CutscenePlayer { Name = "CutscenePlayer" };
         AddChild(cutscene);
+        cutscenePlayer = cutscene;
         var subtitles = new SubtitleView { Name = "Subtitles" };
         AddChild(subtitles);
         subtitleView = subtitles;
@@ -189,6 +192,7 @@ public partial class UiRoot : Control
             UiBus.Claim(panel);
 
         UiBus.OpenRequested += OnOpenRequested;
+        TextService.LocaleChanged += OnLocaleChanged;
         UiBus.Notice += key => Toasts.Show(TextService.Ui(key));
         Hud.PortalPressed += () => OnOpenRequested(UiPanel.Portal);
         UiSettings.Changed += () => appliedScale = -1;
@@ -218,7 +222,42 @@ public partial class UiRoot : Control
     public override void _ExitTree()
     {
         UiBus.OpenRequested -= OnOpenRequested;
+        TextService.LocaleChanged -= OnLocaleChanged;
         if (Instance == this) Instance = null;
+    }
+
+    // ------------------------------------------------------------------ language (ISSUES UI-07)
+
+    /// <summary>
+    /// The language changed (the settings, or the QA flag <c>--locale</c>). The rebuild waits for the end of the frame:
+    /// the change comes from a button of the settings screen, and that button is one of the things made again.
+    /// </summary>
+    private void OnLocaleChanged()
+    {
+        if (relocalizePending) return;
+        relocalizePending = true;
+        Callable.From(Relocalize).CallDeferred();
+    }
+
+    /// <summary>
+    /// Makes again everything that read its texts when it was built: the HUD strip, the inventory, the journal, map,
+    /// pause and puzzle screens and every UI-only modal, open or not; an open screen is filled again and the top one
+    /// gets the keyboard focus back. What is filled on every open (lists, cards, the topic menu, notices) needs
+    /// nothing. Not touched: a subtitle that is on screen right now (the next line is in the new language).
+    /// </summary>
+    public void Relocalize()
+    {
+        relocalizePending = false;
+        Hud.Relocalize();
+        inventory.Relocalize();
+        Toasts.Relocalize();
+        tips.Relocalize();
+        cutscenePlayer.Relocalize();
+        int rebuilt = 0;
+        foreach (var screen in new ModalScreen[] { journal, map, pause, puzzle }.Concat(modalLayer.GetChildren().OfType<ModalScreen>()))
+            if (!screen.IsQueuedForDeletion() && screen.Relocalize()) rebuilt++;
+        if (FocusScope is ModalScreen top) top.FocusDefault();
+        GD.Print($"LastBell: language '{TextService.Locale}', HUD and {rebuilt} screens made again");
     }
 
     // ------------------------------------------------------------------ modal stack

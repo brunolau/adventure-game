@@ -130,6 +130,13 @@ public partial class PuzzleModal : ModalScreen, IPuzzleView
     public override void Back() => GameRuntime.Instance.ClosePuzzle();
 
     /// <inheritdoc />
+    protected override void Reopened()
+    {
+        // Made again after a change of the language: the title, the clue and the controls come from Open, not Refresh.
+        if (actionId is { } action && puzzle is { } def) Open(action, def);
+    }
+
+    /// <inheritdoc />
     protected override Control? InitialFocus() => control is null ? confirm : FirstFocusable(control) ?? confirm;
 
     /// <summary>Re-reads the draft from Core (after an external change, e.g. the QA harness).</summary>

@@ -1,17 +1,29 @@
 # Posledný zvonec - release notes for the product owner
 
-Version: **0.3.0**, built 2026-10-10 for Windows, Linux, macOS and Android (the main menu and the exe say the same
-number). **Published on 2026-10-10 as `v0.3.0`** (your "all good, do it"):
-https://github.com/brunolau/game-lastbell/releases/tag/v0.3.0 with the Windows, Linux and macOS downloads and, for
-the first time, the Android APK. Before that: `v0.2.0` of 2026-10-08 (Windows, Linux, macOS) and `v0.1.0` (built
+Version: **0.3.1**, built 2026-10-10 for Windows, Linux, macOS and Android (the main menu and the exe say the same
+number). **0.3.1 is not published:** the GitHub release page offers `v0.3.0` (published 2026-10-10, your "all good,
+do it": https://github.com/brunolau/game-lastbell/releases/tag/v0.3.0, Windows, Linux, macOS and the Android APK);
+0.3.1 waits for your word. Before that: `v0.2.0` of 2026-10-08 (Windows, Linux, macOS) and `v0.1.0` (built
 2026-10-07, published 2026-10-08); 0.2.1 of 2026-10-09 was built and never published.
 Languages: Slovak and English, texts and voices (Android: both text languages, English voices only). Test record
-behind this page: `docs/MILESTONE5.md` (sections "Version 0.3.0", "Version 0.2.1", "Version 0.2.0", "Owner feedback of
+behind this page: `docs/MILESTONE5.md` (sections "Version 0.3.1", "Version 0.3.0", "Version 0.2.1", "Version 0.2.0", "Owner feedback of
 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification
 and release pass").
 
 ## In short
 
+- **New in 0.3.1 (2026-10-10, your "go for the fixes"; built, not published):**
+  - **The language switch works at once.** Changing *Jazyk* in the settings left the title, the tabs, the bottom
+    bar and the menus in the old language until the game was started again. Now the bottom bar, the inventory and
+    every menu are made again in the new language the moment you choose it, from the pause menu and from the title
+    screen, on the PC and on phones. The settings stay open on the same tab. One thing is left as it is: a subtitle
+    that is on screen at that moment; the next line is in the new language. A new automatic check changes the
+    language by a real click and then searches every label, button and tooltip of 21 views for leftover texts.
+  - **The upright tablet: nothing to fix in the game.** I had told you that a tablet held upright shows the game as
+    a narrow strip and that a manifest setting would fix it. That was wrong. I reproduced it in the emulator and read
+    what Android does: on a large screen it does not turn the display for a landscape-only game and shows it in a
+    box instead; the manifest setting I meant is about something else, and games are already exempt from it. Turned,
+    the tablet shows the game full screen. Nothing was changed.
 - **Published and approved on 2026-10-10** (your answer "all good, do it" to: test the APK, listen to the dub, the
   two new Slovak labels and the 11 touch texts, publish 0.3.0 and whether the APK goes on the page):
   - 0.3.0 is on the GitHub release page with four downloads: Windows, Linux, macOS and the Android APK (marked as a
@@ -109,8 +121,8 @@ and release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.0-windows-x64.zip` (487.2 MB; the same file is on the GitHub
-   release page as `v0.3.0`). Unpacked, it is the folder `PoslednyZvonec/` (639.7 MB). It holds three things that must stay
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.1-windows-x64.zip` (487.2 MB; the GitHub release page has
+   0.3.0). Unpacked, it is the folder `PoslednyZvonec/` (639.8 MB). It holds three things that must stay
    together: `LastBell.exe` (109.5 MB), `LastBell.pck` (448.7 MB, of it 127.9 MB Slovak and 127.2 MB English voice
    clips) and `data_LastBell_windows_x86_64/` (81.5 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
@@ -236,20 +248,21 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ### Linux, macOS, Android, iOS
 Details and the test record of each port: docs/PORTS.md.
-- **Linux x86_64 (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.0-linux-x86_64.tar.gz`
+- **Linux x86_64 (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1-linux-x86_64.tar.gz`
   (476.2 MB). It was started without a screen in an Ubuntu 24.04 container. Nobody has played it on a Linux desktop
   yet.
-- **macOS, Apple Silicon and Intel (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.0-macos.zip` (543.6 MB). Not
+- **macOS, Apple Silicon and Intel (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1-macos.zip` (543.6 MB). Not
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android (preview, on the release page since 0.3.0):** `build/ports/PoslednyZvonec-0.3.0.apk` (584.9 MB, arm64, Android 7.0 or newer, no
-  permissions) and a Google Play bundle (521.2 MB). It installs over 0.2.0 or 0.2.1 and keeps the saves. English
+- **Android (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1.apk` (584.9 MB, arm64, Android 7.0 or newer, no
+  permissions) and a Google Play bundle (521.2 MB). It installs over 0.2.0, 0.2.1 or 0.3.0 and keeps the saves. English
   voices only (the Slovak recordings are left out of the Android build). Touch controls: tap acts, hold looks, a
   slide scrolls lists, the Eye button shows the markers (the exit arrows stand above the buttons), system Back is
   Esc, autosave when the app leaves the screen. You tried the earlier builds on your phone (2026-10-09: lists did not
-  scroll, fixed in 0.2.1; 2026-10-10: the exit arrows collided with the buttons, fixed in 0.3.0). 0.3.0 was played
-  only in an Android 16 emulator (touch smoke test 13 of 13); no report from a real phone is recorded for 0.3.0. The
+  scroll, fixed in 0.2.1; 2026-10-10: the exit arrows collided with the buttons, fixed in 0.3.0). 0.3.0 and 0.3.1 were played
+  only in an Android 16 emulator (13 of 13 with real touch events (the title screen says 0.3.1, only the English dub, the opening line spoken in English); in 0.3.1 also the language switch by real taps); no report from a real phone is recorded for either. A tablet
+  held upright shows the game in a box until it is turned (Android's behaviour on large screens, see docs/PORTS.md). The
   APK is on the GitHub release page since 2026-10-10 (your "all good, do it"), and the 11 Slovak touch texts
   (`docs/writing/out_v6/ui_touch.csv`) are approved and in the text table. Google Play needs a developer account
   (USD 25, once). C# on Android is experimental in Godot 4.7.

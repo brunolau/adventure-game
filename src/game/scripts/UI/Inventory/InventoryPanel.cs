@@ -63,7 +63,32 @@ public partial class InventoryPanel : Control
     {
         SetAnchorsAndOffsetsPreset(LayoutPreset.FullRect);
         MouseFilter = MouseFilterEnum.Ignore;
+        BuildPanel();
+        Visible = false;
+    }
 
+    /// <summary>
+    /// The language changed (ISSUES UI-07): the bar and the detail card are made again, because their title, tabs and
+    /// buttons were read when they were made. The slots follow on the next frame the inventory is open.
+    /// </summary>
+    public void Relocalize()
+    {
+        foreach (var child in GetChildren())
+        {
+            RemoveChild(child);
+            child.QueueFree();
+        }
+        slotButtons.Clear();
+        heldSlot = null;
+        bool archived = showArchived;
+        BuildPanel();
+        if (archived) tabArchived.ButtonPressed = true;
+        signature = "";
+        if (Visible) Rebuild();
+    }
+
+    private void BuildPanel()
+    {
         // Detail card (above the bar, right side)
         bool touchUi = TouchMode.Enabled;
         detail = new PanelContainer();
@@ -149,7 +174,6 @@ public partial class InventoryPanel : Control
         box.AddChild(scroll);
         bar.AddChild(box);
         AddChild(bar);
-        Visible = false;
     }
 
     /// <summary>True when the open drawer (bar or detail card) covers a canvas point (the world hover label hides there, PT-S23).</summary>
