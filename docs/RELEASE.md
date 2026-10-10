@@ -1,10 +1,11 @@
 # Posledný zvonec - release notes for the product owner
 
 Version: **0.3.1**, built 2026-10-10 for Windows, Linux, macOS and Android (the main menu and the exe say the same
-number). **0.3.1 is not published:** the GitHub release page offers `v0.3.0` (published 2026-10-10, your "all good,
-do it": https://github.com/brunolau/game-lastbell/releases/tag/v0.3.0, Windows, Linux, macOS and the Android APK);
-0.3.1 waits for your word. Before that: `v0.2.0` of 2026-10-08 (Windows, Linux, macOS) and `v0.1.0` (built
-2026-10-07, published 2026-10-08); 0.2.1 of 2026-10-09 was built and never published.
+number). **Published on 2026-10-11 as `v0.3.1`** (your "yes"): https://github.com/brunolau/game-lastbell/releases/tag/v0.3.1
+with the Windows, Linux, macOS and Android downloads; it is the release GitHub shows as the latest. Before that:
+`v0.3.0` of 2026-10-10 (your "all good, do it", the first with the Android APK), `v0.2.0` of 2026-10-08 (Windows,
+Linux, macOS) and `v0.1.0` (built 2026-10-07, published 2026-10-08); 0.2.1 of 2026-10-09 was built and never
+published.
 Languages: Slovak and English, texts and voices (Android: both text languages, English voices only). Test record
 behind this page: `docs/MILESTONE5.md` (sections "Version 0.3.1", "Version 0.3.0", "Version 0.2.1", "Version 0.2.0", "Owner feedback of
 2026-10-07 evening", "Round 2 applied", "Content v2 applied", "Second verification and release pass" and "Verification
@@ -12,7 +13,7 @@ and release pass").
 
 ## In short
 
-- **New in 0.3.1 (2026-10-10, your "go for the fixes"; built, not published):**
+- **New in 0.3.1 (built 2026-10-10 on your "go for the fixes", published 2026-10-11 on your "yes"):**
   - **The language switch works at once.** Changing *Jazyk* in the settings left the title, the tabs, the bottom
     bar and the menus in the old language until the game was started again. Now the bottom bar, the inventory and
     every menu are made again in the new language the moment you choose it, from the pause menu and from the title
@@ -121,8 +122,8 @@ and release pass").
 
 ## How to install and play (Windows)
 
-1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.1-windows-x64.zip` (487.2 MB; the GitHub release page has
-   0.3.0). Unpacked, it is the folder `PoslednyZvonec/` (639.8 MB). It holds three things that must stay
+1. Take the zip `build/m5/ship/PoslednyZvonec-0.3.1-windows-x64.zip` (487.2 MB; the same file is on the GitHub
+   release page as `v0.3.1`). Unpacked, it is the folder `PoslednyZvonec/` (639.8 MB). It holds three things that must stay
    together: `LastBell.exe` (109.5 MB), `LastBell.pck` (448.7 MB, of it 127.9 MB Slovak and 127.2 MB English voice
    clips) and `data_LastBell_windows_x86_64/` (81.5 MB, the C# code and the .NET runtime).
    The same files are in `build/windows/`.
@@ -248,14 +249,14 @@ CS08_1, CS08_2, EPILOGUE_11) len na nekomerčné použitie. Zdroje a autori sú 
 
 ### Linux, macOS, Android, iOS
 Details and the test record of each port: docs/PORTS.md.
-- **Linux x86_64 (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1-linux-x86_64.tar.gz`
+- **Linux x86_64 (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.1-linux-x86_64.tar.gz`
   (476.2 MB). It was started without a screen in an Ubuntu 24.04 container. Nobody has played it on a Linux desktop
   yet.
-- **macOS, Apple Silicon and Intel (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1-macos.zip` (543.6 MB). Not
+- **macOS, Apple Silicon and Intel (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.1-macos.zip` (543.6 MB). Not
   notarised and never started on a real Mac: the player opens it with right-click, Open. For a normal install it
   needs an Apple Developer account (USD 99/year), a Developer ID certificate, signing and notarization, and a Mac to
   test on.
-- **Android (preview; 0.3.0 is on the release page):** `build/ports/PoslednyZvonec-0.3.1.apk` (584.9 MB, arm64, Android 7.0 or newer, no
+- **Android (preview, on the release page):** `build/ports/PoslednyZvonec-0.3.1.apk` (584.9 MB, arm64, Android 7.0 or newer, no
   permissions) and a Google Play bundle (521.2 MB). It installs over 0.2.0, 0.2.1 or 0.3.0 and keeps the saves. English
   voices only (the Slovak recordings are left out of the Android build). Touch controls: tap acts, hold looks, a
   slide scrolls lists, the Eye button shows the markers (the exit arrows stand above the buttons), system Back is

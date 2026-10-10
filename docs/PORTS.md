@@ -4,7 +4,7 @@ Windows stays with `build.bat` (build/windows/). Every other platform is built b
 `build/ports/<platform>/` (see the script's docstring for all targets and options). Every Godot process runs under
 `tools/godot_lock.py`, because parallel agents share the project folder.
 
-## Status (2026-10-10, version 0.3.1 built and not published; `v0.3.0` is on GitHub: Linux, macOS and the Android APK next to Windows)
+## Status (2026-10-11, version 0.3.1; published on GitHub as `v0.3.1`: Linux, macOS and the Android APK next to Windows)
 
 | Platform | Built | Tested | Artifact |
 |---|---|---|---|

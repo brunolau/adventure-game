@@ -694,3 +694,16 @@ anyone talks to her and hops again when the conversation ends; S69 is relit to t
 - **Also asked the same day:** which two source photos are non-commercial - answered: "Block" and "Yard" by
   carl_eric on Flickr (Sokolikova, 2012, CC BY-NC-SA 2.0), `art/source/CREDITS.md`.
 
+### 0.3.1 published (owner 2026-10-11)
+
+- **Asked:** "Do you want 0.3.1 published on GitHub in place of 0.3.0 as the latest download?" **Answer:** "yes".
+- **Done:** release `v0.3.1` (tag on commit `5e7878ba`) with the Windows, Linux, macOS and Android downloads, marked
+  as the latest (docs/MILESTONE5.md "Version 0.3.1", end).
+- **Decided by Claude, reversible:**
+  - *`v0.3.0` stays on the page as an older release.* "In place of ... as the latest download" was taken as: 0.3.1
+    becomes the one GitHub offers first; nothing was deleted. Removing the old release is one command
+    (`gh release delete v0.3.0`), if wanted.
+  - *The APK is on the page again as a preview*, as for 0.3.0; the Play bundle is not.
+  - *The release text tells tablet users to turn the tablet* (the game is landscape-only; ISSUES ANDROID-07).
+- **Still open:** the PC wording of some hints on phones (ANDROID-08 b), the art licence (item 9), the English names
+  other than Dotty, a run of 0.3.1 on a real phone, Mac or Linux desktop.

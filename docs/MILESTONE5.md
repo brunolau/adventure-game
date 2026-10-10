@@ -43,12 +43,12 @@ built. **Published on 2026-10-10 as `v0.3.0`** (owner: "all good, do it"; end of
 **Version 0.3.1 verified and built on 2026-10-10** (next section; owner: "go for the fixes"): the language switch in
 the settings makes the HUD and every screen again (ISSUES UI-07), and the upright-tablet issue is closed as
 Android's own behaviour on large screens (ANDROID-07, no change). All suites green, the new language suite included, the Slovak, the
-English and the keyboard-only route 134/134, Windows, Linux, macOS and Android built. **Not published** (the owner
-decides).
+English and the keyboard-only route 134/134, Windows, Linux, macOS and Android built. **Published on 2026-10-11 as
+`v0.3.1`** (owner: "yes"; end of its section).
 
 The sections after the next nine are the record of the first milestone-5 run (2026-10-05).
 
-## Version 0.3.1 (2026-10-10, verified and built; not published)
+## Version 0.3.1 (2026-10-10, verified and built; published 2026-10-11)
 
 What changed since 0.3.0:
 
@@ -99,7 +99,25 @@ folder): QA arguments ignored, new game, first action, autosave S01 / 2020 / [G0
 what was played is the x86_64 debug APK of the same project.
 
 All Godot runs of this pass used a private profile folder (`build/verify_1010/appdata`); none of them wrote into the player's folder. That folder did change during the pass, by the owner's own play: its log shows a normal windowed session from 16:22 (no QA line), a new game, and the language switched to English in the settings (`language 'en', HUD and 14 screens made again`), with `settings.cfg` and the autosave written at 16:25 and 16:26. Nothing was
-published: the GitHub release page has `v0.3.0`. Paid generation in this pass: none (total USD 263.48).
+published in that pass (the GitHub release page had `v0.3.0`). Paid generation in this pass: none (total USD 263.48).
+
+**Published on 2026-10-11** (asked: "Do you want 0.3.1 published on GitHub in place of 0.3.0 as the latest
+download?"; owner: "yes"). Release `v0.3.1`, tag on commit `5e7878ba` (the commit that holds the code the files were
+built from): https://github.com/brunolau/game-lastbell/releases/tag/v0.3.1
+(GitHub's time stamp is 2026-10-10 23:04 UTC, which is 01:04 on 2026-10-11 here.)
+
+| file on the release page | bytes | sha256 (local file = GitHub's digest) |
+|---|---|---|
+| `PoslednyZvonec-0.3.1-windows-x64.zip` | 487,223,205 | `284674d0…cf568ced` |
+| `PoslednyZvonec-0.3.1-linux-x86_64.tar.gz` | 476,166,063 | `7d3f1511…fc982cfa` |
+| `PoslednyZvonec-0.3.1-macos.zip` | 543,641,932 | `66299d16…735fe201` |
+| `PoslednyZvonec-0.3.1.apk` | 584,889,545 | `77a4a6f1…cac8271e` |
+
+The four files were hashed again before the upload (equal to the records above), uploaded to a draft, compared by
+size and digest, and only then published as the latest release; the APK link answers without a login. `v0.3.0` stays
+on the page as an older release. The Play bundle (`.aab`) was not uploaded. The release text names the one fix, calls
+Linux, macOS and Android previews, says how each was tested, and tells tablet users that the game is landscape-only.
+Nothing was rebuilt or re-tested for the publication: the files are the ones of the pass above.
 
 ## Version 0.3.0 (2026-10-10, verified, built and published)
 
